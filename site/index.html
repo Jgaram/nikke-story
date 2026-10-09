@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NIKKE 스토리 지도</title>
-  <meta name="description" content="NIKKE 스토리 간 연관관계 분석 · 시각화 — 비공식 · 개인 분석 · 대사 본문 없음">
+  <meta name="description" content="NIKKE 스토리의 읽는 순서 · 연결 · 떡밥 · 인물 · 연대기를 한눈에">
   <meta name="color-scheme" content="light dark">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27%232a78d6%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%275%27 fill=%27%23fcfcfb%27/%3E%3C/svg%3E">
   <script>
@@ -23,29 +23,27 @@
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
   <header class="topbar">
-    <div class="brand">
-      <a class="brand-name" href="#tab=order">NIKKE 스토리 지도</a>
-      <span class="brand-sub">비공식 · 개인 분석 · 대사 본문 없음</span>
-    </div>
+    <a class="brand" href="#tab=order" aria-label="NIKKE 스토리 지도 — 처음으로">
+      <svg class="brand-mark" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="var(--accent)"/><circle cx="12" cy="12" r="4" fill="var(--surface)"/></svg>
+      <span class="brand-name"><span class="brand-game">NIKKE </span>스토리 지도</span>
+    </a>
     <div class="search" role="search">
-      <label class="sr-only" for="search">검색 — 인물 · 대상 · 줄기 · 단위 · 기록 문장</label>
-      <input id="search" type="search" placeholder="검색: 인물 · 대상 · 줄기 · 단위 · 기록 문장 (/)" autocomplete="off" spellcheck="false">
+      <label class="sr-only" for="search">검색</label>
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+      <input id="search" type="search" placeholder="검색" autocomplete="off" spellcheck="false">
+      <kbd class="search-key" aria-hidden="true">/</kbd>
       <div id="search-results" class="search-results" hidden></div>
     </div>
     <div id="cutoff" class="ctl cutoff"></div>
-    <div id="layers" class="ctl layers" role="group" aria-label="층 거르개"></div>
-    <button id="theme-btn" type="button" class="btn theme-btn" aria-label="테마 바꾸기">◐ 자동</button>
+    <div id="layers" class="ctl layers" role="group" aria-label="범위"></div>
+    <button id="theme-btn" type="button" class="btn theme-btn" aria-label="테마 바꾸기"></button>
   </header>
   <nav id="tabs" class="tabs" role="tablist" aria-label="탭"></nav>
+  <p id="d3-notice" class="notice notice-warn banner" hidden>그래프를 불러오지 못했다 — 새로고침하면 될 수 있다</p>
   <div class="layout">
     <main id="main" class="main" role="tabpanel" tabindex="-1"></main>
     <aside id="reader" class="reader" hidden></aside>
   </div>
-  <footer class="foot">
-    <p id="d3-notice" class="notice notice-warn" hidden>d3(CDN)를 불러오지 못했다 — 그래프 · 타임라인 탭이 안 그려질 수 있다.</p>
-    <p id="data-basis">데이터 기준: 불러오는 중…</p>
-    <p>출처: 게임 안 스토리(블라링크 공개 CDN)와 팬 사이트 금서고의 원문을 읽고 남긴 기록 · 공식 공지의 공개 순서. 모든 숫자 · 등급은 기록 ID → 씬 ID#줄로 내려간다.</p>
-    <p>게임 저작권은 SHIFT UP · 이 사이트는 비공식 개인 분석으로 대사 원문을 싣지 않습니다.</p>
-  </footer>
+  <footer class="foot"><p id="data-basis"></p></footer>
 </body>
 </html>

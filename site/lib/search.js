@@ -1,13 +1,13 @@
 /**
- * 상단 검색(W1) — 입력 하나로 인물 · 대상 · 줄기 · 단위 · 기록 문장. 대사 본문 검색은 없다(공개 규칙).
- * 기록 문장(records*.json)은 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건, 입력 디바운스 150ms.
+ * 상단 검색(W1) — 입력 하나로 스토리 · 인물 · 세계(대상) · 떡밥 · 분석 메모 문장. 대사 본문 검색은 없다(공개 규칙).
+ * 메모 문장(records*.json)은 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건, 입력 디바운스 150ms.
  * 키보드: ↑ ↓ 이동 · Enter 열기 · Esc 닫기. 고르면 `state.set({ sel, tab })` — unit → 읽기 순서, person → 인물, target → 세계, thread → 떡밥, record → 지금 탭.
  *
  *   init({ input, container, state, data, fmt, ui })
  */
 const MAX = 50;
 const GROUPS = [
-  ['unit', '단위'], ['person', '인물'], ['target', '대상'], ['thread', '줄기'], ['record', '기록'],
+  ['unit', '스토리'], ['person', '인물'], ['target', '세계'], ['thread', '떡밥'], ['record', '분석 메모'],
 ];
 const TAB_FOR = { unit: 'order', person: 'persons', target: 'world', thread: 'threads' };
 
@@ -29,10 +29,10 @@ export function init({ input, container, state, data, fmt, ui }) {
       const type = t.type === 'person' ? 'person' : 'target';
       entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub: `${fmt.TARGET_TYPE[t.type] ?? t.type}${t.kind ? ` · ${t.kind}` : ''}`, keys: [norm(t.name), ...(t.aliases ?? []).map((a) => norm(a.name)), norm(t.id)] });
     }
-    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: `${j.id} ${j.title}`, sub: `${j.weight} · 의문 ${j.questions?.length ?? 0}`, keys: [norm(j.title), norm(j.text), norm(j.id)] });
+    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: `${fmt.THREAD_WEIGHT[j.weight]?.label ?? j.weight} · 의문 ${j.questions?.length ?? 0}`, keys: [norm(j.title), norm(j.text), norm(j.id)] });
   };
   const buildRecords = (idx) => {
-    recordEntries = idx.recordList.map((r) => ({ type: 'record', sel: `record:${r.id}`, label: `${r.id} ${fmt.recordText(r)}`, sub: `${fmt.recordLabel(r)} · ${fmt.unitTitle(r.unit)}`, tick: r.tick, keys: [norm(r.id), norm(fmt.recordText(r))] }));
+    recordEntries = idx.recordList.map((r) => ({ type: 'record', sel: `record:${r.id}`, label: fmt.recordText(r), sub: `${fmt.recordLabel(r)} · ${fmt.unitTitle(r.unit)}`, id: r.id, tick: r.tick, keys: [norm(r.id), norm(fmt.recordText(r))] }));
   };
 
   const search = (q) => {
@@ -75,7 +75,8 @@ export function init({ input, container, state, data, fmt, ui }) {
     items = list;
     active = -1;
     if (!list.length && !recordsLoading) {
-      container.append(ui.empty(q ? '맞는 것이 없다' : '인물 · 대상 · 줄기 · 단위 · 기록 문장을 찾는다'));
+      if (!q) return close();
+      container.append(ui.empty('결과 없음'));
     }
     const t = state.get().t;
     let i = 0;
@@ -87,11 +88,12 @@ export function init({ input, container, state, data, fmt, ui }) {
         const k = i++;
         const after = e.tick != null && !state.visible(e.tick, t);
         const node = ui.el('div', { class: ['search-item', after ? 'after-cutoff' : ''], role: 'option', id: `search-opt-${k}`, 'aria-selected': 'false', dataset: { i: String(k) }, onMousedown: (ev) => { ev.preventDefault(); choose(e); } },
-          ui.el('span', { class: 'search-label' }, e.label), ui.el('span', { class: 'search-sub' }, `${e.sub}${after ? ' · 컷오프 뒤' : ''}`));
+          ui.el('span', { class: 'search-label' }, e.label),
+          ui.el('span', { class: 'search-sub' }, e.sub, after ? ' · 스포일러' : null, e.id ? [' · ', ui.el('span', { class: 'mono' }, e.id)] : null));
         container.append(node);
       }
     }
-    if (recordsLoading) container.append(ui.spinner('기록 문장 불러오는 중…'));
+    if (recordsLoading) container.append(ui.spinner('불러오는 중…'));
     container.hidden = false;
     input.setAttribute('aria-expanded', 'true');
   };

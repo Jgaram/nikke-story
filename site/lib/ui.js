@@ -4,7 +4,7 @@
  *   configure({ navigate })                     link()가 쓸 이동 함수(app.js가 state.set({ sel })를 넘긴다)
  *   el(tag, attrs, ...children)                 attrs: class · id · dataset{} · style{} · aria-* · on<Event>(함수) · 그 밖 속성. children: 문자열 · 노드 · 배열 · null
  *   clear(node)
- *   chip(kind, value, label?)                   kind: 'kind' | 'grade' | 'layer' | 'state' | 'record' | 'confidence' | 'plain' → span.chip (색은 CSS 변수)
+ *   chip(kind, value, label?)                   kind: 'kind' | 'grade' | 'layer' | 'state' | 'record' | 'confidence' | 'plain' → span.chip (색은 CSS 변수, 글자·툴팁은 format.js의 라벨 · 정의)
  *   legend(items)                               [{ label, color }] → div.legend
  *   table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption }) → { el, update(rows), setSelected(key) }
  *       columns: [{ key, label, num, nowrap, render(row) → 노드|문자열, sort(a, b), sortable, width, title }]  — num이면 오른쪽 정렬 · 숫자 정렬, nowrap이면 줄 안 바꿈
@@ -12,10 +12,13 @@
  *   tooltip(target, content)                    hover · focus에 뜨는 말풍선(content: 문자열 · 노드 · 함수)
  *   panel(title, body, { actions, class })      section.panel
  *   details(summary, body, { open, class })     접는 블록
- *   empty(text) · spinner(text) · notice(text, kind)
+ *   empty(text, action?) · spinner(text) · notice(text, kind)     empty의 action = { label, onClick } → 문구 옆 링크 모양 버튼
  *   toggle({ label, checked, onChange, id })    스위치(role=switch)
- *   segmented({ options: [{ value, label }], value, onChange, label }) → { el, set(value) }
+ *   segmented({ options: [{ value, label, title? }], value, onChange, label }) → { el, set(value) }
+ *   icon(name, attrs?)                          인라인 SVG 아이콘(search · close · sun · moon · auto · arrow · chevron) → span.icon
  */
+import * as fmt from './format.js';
+
 let navigate = (sel) => {
   location.hash = `#sel=${sel}`;
 };
@@ -55,15 +58,17 @@ const CHIP_VAR = {
   layer: (v) => `var(--layer-${v})`,
   state: (v) => `var(--state-${{ 열림: 'open', 일부: 'partial', 풀림: 'solved', 뒤집힘: 'reversed', 암시만: 'hint', 아직: 'none', 앎: 'known' }[v] ?? 'none'})`,
 };
-const CHIP_LABEL = {
-  kind: { main: '메인', event: '이벤트', episode: '호감도', sub: '서브퀘스트', relic: '유실물', side: '사이드', erelic: '이벤트 유실물', elevator: '엘리베이터', other: '그 밖' },
-  layer: { 1: '1층', 2: '2층', 3: '3층' },
-  state: { 일부: '일부 회수' },
-  record: { F: '사실', Q: '의문', 'F-k': '사실 사건', 'Q-k': '의문 사건', S: '시점', I: '암시 언급', E: '떡밥', D: '인물 변화', U: '생활상', O: '마무리', H: '합류' },
+const CHIP_TEXT = {
+  kind: (v) => fmt.KIND[v]?.label,
+  grade: (v) => fmt.GRADE[v]?.label,
+  layer: (v) => fmt.LAYER[v]?.label,
+  state: (v) => fmt.STATE[v]?.label,
+  record: (v) => fmt.RECORD_KIND[v]?.label,
 };
 export function chip(kind, value, label) {
-  const text = label ?? CHIP_LABEL[kind]?.[value] ?? String(value ?? '');
-  const node = el('span', { class: ['chip', `chip-${kind}`, kind === 'confidence' && value === '추정' ? 'chip-dashed' : ''], dataset: { value: String(value ?? '') } }, text);
+  const text = label ?? CHIP_TEXT[kind]?.(value) ?? String(value ?? '');
+  const tip = kind === 'plain' ? '' : fmt.help(kind, value);
+  const node = el('span', { class: ['chip', `chip-${kind}`, kind === 'confidence' && value === '추정' ? 'chip-dashed' : ''], dataset: { value: String(value ?? '') }, title: tip || null }, text);
   const color = CHIP_VAR[kind]?.(value);
   if (color) node.style.setProperty('--chip', color);
   return node;
@@ -93,7 +98,8 @@ export function panel(title, body, { actions = null, class: cls = '' } = {}) {
 export function details(summary, body, { open = false, class: cls = '' } = {}) {
   return el('details', { class: ['details', cls], open }, el('summary', {}, summary), el('div', { class: 'details-body' }, body));
 }
-export const empty = (text = '없음') => el('div', { class: 'empty' }, text);
+/** 빈 상태 — 짧은 문구 + 선택적 행동 버튼(action: { label, onClick }) 예: empty('가린 스토리 120', { label: '전부 보기', onClick }) */
+export const empty = (text = '없음', action = null) => el('div', { class: 'empty' }, text, action ? [' ', el('button', { type: 'button', class: 'link-btn', onClick: action.onClick }, action.label)] : null);
 export const spinner = (text = '불러오는 중…') => el('div', { class: 'spinner', role: 'status', 'aria-live': 'polite' }, el('i', { 'aria-hidden': 'true' }), text);
 export const notice = (text, kind = 'info') => el('div', { class: ['notice', `notice-${kind}`], role: kind === 'error' ? 'alert' : 'status' }, text);
 
@@ -124,7 +130,7 @@ export function segmented({ options, value, onChange, label } = {}) {
     if (fire) onChange?.(v);
   };
   for (const o of options) {
-    const b = el('button', { type: 'button', role: 'radio', 'aria-checked': 'false', class: 'seg', onClick: () => set(o.value, true) }, o.label);
+    const b = el('button', { type: 'button', role: 'radio', 'aria-checked': 'false', class: 'seg', title: o.title, onClick: () => set(o.value, true) }, o.label);
     b.addEventListener('keydown', (e) => {
       const keys = [...buttons.keys()];
       const i = keys.indexOf(o.value);
@@ -136,6 +142,23 @@ export function segmented({ options, value, onChange, label } = {}) {
   }
   set(value ?? options[0]?.value);
   return { el: node, set: (v) => set(v, false) };
+}
+
+const ICONS = {
+  search: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/>',
+  moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/>',
+  auto: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  chevron: '<path d="m9 6 6 6-6 6"/>',
+};
+/** 인라인 SVG 아이콘 — 색은 currentColor, 크기는 1em. 장식이라 aria-hidden */
+export function icon(name, attrs = {}) {
+  const t = document.createElement('template');
+  t.innerHTML = `<svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[name] ?? ''}</svg>`;
+  const svg = t.content.firstElementChild;
+  return el('span', { class: ['icon', `icon-${name}`, attrs.class], 'aria-hidden': 'true' }, svg);
 }
 
 export function tooltip(target, content) {
@@ -251,7 +274,7 @@ export function table({ columns, rows = [], sortable = true, pageSize = 50, onRo
         el('span', { class: 'table-count' }, `${num(page * pageSize + 1)}–${num(Math.min(total, (page + 1) * pageSize))} / ${num(total)}건`),
         el('button', { type: 'button', class: 'btn', disabled: page >= pages - 1, onClick: () => { page++; render(); } }, '다음'),
       );
-    } else if (total) foot.append(el('span', { class: 'table-count' }, `${num(total)}건`));
+    }
   }
   render();
   return {
