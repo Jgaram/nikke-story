@@ -1,0 +1,79 @@
+# GitHub Pages 배포 — 커밋된 site/(HTML · JS · 내보낸 JSON)를 빌드 없이 그대로 올린다.
+# CI에는 DB도 원문(private 서브모듈)도 없다 — site/data/*.json은 내보내기(node tools/site/export.mjs)를 한 뒤 커밋해 둔 것이다.
+# 켜는 법(한 번): 저장소 Settings → Pages → Build and deployment → Source를 "GitHub Actions"로.
+name: Pages 배포
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포는 한 번에 하나만 — 진행 중인 배포는 끊지 않고 다음 것을 기다린다
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 받기 (site/만 — 서브모듈은 받지 않는다)
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: false
+          sparse-checkout: site
+          persist-credentials: false
+
+      - name: 공개 검사 (본문 칼럼 이름 없음 · 파일 20MB 이하 · JSON 파싱)
+        run: |
+          node - <<'JS'
+          const fs = require('fs');
+          const path = require('path');
+          const dir = 'site/data';
+          const MAX = 20 * 1024 * 1024;
+          const FORBIDDEN = new Set(['quest_name', 'scenario_localkey']);
+          let bad = 0;
+          const walk = (v, file) => {
+            if (Array.isArray(v)) { for (const x of v) walk(x, file); return; }
+            if (!v || typeof v !== 'object') return;
+            for (const [k, x] of Object.entries(v)) {
+              if (FORBIDDEN.has(k)) { console.error(`${file}: 금지 키 ${k}`); bad++; }
+              walk(x, file);
+            }
+          };
+          const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json'));
+          if (!files.length) { console.error('site/data/*.json이 없다 — 내보내기를 하고 커밋했는지 본다'); process.exit(1); }
+          for (const f of files) {
+            const p = path.join(dir, f);
+            const size = fs.statSync(p).size;
+            if (size > MAX) { console.error(`${f}: ${(size / 1048576).toFixed(1)}MB — 20MB 초과`); bad++; }
+            try { walk(JSON.parse(fs.readFileSync(p, 'utf8')), f); } catch (err) { console.error(`${f}: JSON 오류 ${err.message}`); bad++; }
+          }
+          if (!fs.existsSync('site/index.html')) { console.error('site/index.html이 없다'); bad++; }
+          if (bad) process.exit(1);
+          console.log(`공개 검사 통과 — JSON ${files.length}개`);
+          JS
+
+      - name: Pages 설정
+        uses: actions/configure-pages@v5.0.0
+
+      - name: site/ 올리기
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: site
+
+      - name: 배포
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5

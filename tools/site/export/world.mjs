@@ -32,6 +32,26 @@ export const HUB_SHARE = 0.1;
 /** 항목에 잇는 기록 종류(about으로) — 문장은 싣지 않고 ID · 공개 자리 · 층만 */
 const REC_KINDS = ['F', 'Q', 'U', 'E', 'I', 'D'];
 
+/**
+ * 사전 메모 · 주의 문장의 작업 표기를 걷어 화면에 보일 문장으로 만든다.
+ * 걷는 것: 근거 괄호((R12 … 에서 더함) · (d_main_01_01#3) · (ep:… #12)) · "R03 ch12에서 더함 —" 머리 · "— 별칭은 R01에서 더함" 꼬리 ·
+ * 사전을 어떻게 만들었는지 적은 문장(1회독 · 의문 번호 · 별칭으로 두지 않았다 …). 남는 게 없으면 null.
+ */
+export function cleanNote(raw) {
+  if (raw == null) return null;
+  let t = String(raw);
+  t = t.replace(/\s*\([^()]*\bR\d+\b[^()]*\)/g, '');
+  t = t.replace(/\s*\([^()]*\b(?:d_[a-z0-9_]+|ep:[\w가-힣]+|event_[a-z0-9_]+|sub:\S+|fl:\S+|relic:\S+|side:\S+)\s*#\d[^()]*\)/g, '');
+  t = t.replace(/^R\d+ [^—]*에서 더함\s*—\s*/, '');
+  t = t.replace(/\s*[—-]\s*별칭은 R\d+에서 더함\s*$/, '');
+  t = t.replace(/[.\s]*R\d+ \S+에서 더함\.?\s*$/, '');
+  const process = /1회독|2회독|Q-[A-Z]*\d*-?\d+|RV\d|speakers\.json|별칭으로|약칭으로|넣지 않았|두지 않았|대상은 따로|낱말 앞/;
+  const sentences = t.split(/(?<=[.)])\s+(?=[^\s)])/).filter((x) => x.trim() && !process.test(x));
+  t = sentences.join(' ').replace(/\s+([,.])/g, '$1').replace(/\s{2,}/g, ' ').trim();
+  t = t.replace(/\s*[—-]\s*$/, '').trim();
+  return t || null;
+}
+
 /** 사전 파일 다섯을 읽어 id → 항목(메모 · 다른 이름 · 근거 줄) */
 function readDictionary(warn) {
   const out = new Map();
@@ -60,6 +80,8 @@ export async function run(ctx) {
   const unitInfo = new Map(common.units.map((u) => [u.key, u]));
   const placeOf = (key) => common.placeOf.get(key) ?? {};
   const layerOf = (key) => unitInfo.get(key)?.layer ?? null;
+  /** 메모 속 단위 키(event_claymore · sub:세르반_00 …)를 단위 제목으로 — 아는 키만 바꾼다 */
+  const withTitles = (text) => (text ? text.replace(/\b(?:event_[a-z0-9_]+|(?:sub|fl|relic|side|erelic|ep):[^\s,.)·"']+)/g, (k) => unitInfo.get(k)?.title ?? k) : text);
 
   // ── 항목 — 공용 대상 중 인물이 아닌 것. 사전 파일의 메모 · 다른 이름(caution 포함) · 근거 줄을 덧붙인다 ──
   const entries = new Map();
@@ -68,10 +90,10 @@ export async function run(ctx) {
     const d = dict.get(t.id);
     if (!d) warn({ where: 'world', msg: `DB 대상 ${t.id}가 사전 파일에 없다(사전 메모 · 근거 줄 없이 싣는다)` });
     const aliases = Array.isArray(d?.names) && d.names.length
-      ? d.names.map((n) => compact({ name: n.name, how: n.how, caution: n.caution || undefined }))
+      ? d.names.map((n) => compact({ name: n.name, how: n.how, caution: cleanNote(n.caution) || undefined }))
       : t.aliases;
     entries.set(t.id, {
-      id: t.id, type: t.type, name: t.name, kind: t.kind ?? d?.kind, note: t.note ?? d?.note ?? null,
+      id: t.id, type: t.type, name: t.name, kind: t.kind ?? d?.kind, note: withTitles(cleanNote(t.note ?? d?.note)),
       aliases, evidence: evidenceOut(d?.evidence), stories: t.stories, lines: t.lines,
       recs: Object.fromEntries(REC_KINDS.map((k) => [k, []])), unitCount: new Map(), neighbors: [], threads: [],
     });
