@@ -183,6 +183,8 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
   원문을 파일로 뽑을 일이 있으면 scratchpad나 git 제외 경로(`data/normalized/` 등)에 둔다.
 - **기록 · 문서 속 원문 인용은 짧게** — 근거는 씬 ID · 줄 번호로 대고, 따옴표 인용은 40자 미만(분석의 부속). 2026-10-09 공개 때 잰 최장 인용은 38자.
   `node tools/check-quotes.mjs`가 원문과 40자 이상 겹치는 커밋 대상 파일을 찾는다(테스트 `tests/quotes.test.mjs`도 같은 검사).
+- **push 전 훅이 막는다** (`.claude/hooks/no-raw-public.mjs`): origin에 없는 커밋에 원문과 40자 이상 겹치는 파일 · `data/raw/` 안 파일 · `data/normalized/` · DB · 5MB 넘는 파일이 있으면 `git push`를 거절한다.
+  나중 커밋으로 지워도 히스토리에 남아 공개되므로, push 전이면 그 커밋을 고쳐서 뺀다. GitHub MCP로 이 레포에 파일을 바로 쓰는 것도 막는다(검사를 건너뛰므로). 레포 안에 원문이 있는 것 자체는 괜찮다 — 공개만 막는다.
 - `nikke-story-raw`의 public 전환, 원문을 다른 remote · 레포 밖에 게시하는 것(gist, 공개 페이지 등)은 모두 재배포다.
 
 **공개 사이트(W, 2026-10-09)** 도 이 규칙 안에서 한다: 이 레포의 GitHub Pages로 `site/`(HTML · JS · 내보낸 JSON)를 올리고,

@@ -51,6 +51,23 @@ export function publicFiles() {
   return [...new Set(out.split('\n'))].filter((f) => f && f !== 'data/raw' && !f.startsWith('data/raw/'));
 }
 
+/** 글 하나에서 원문과 겹치는 가장 긴 구간(공백 뺀 글자 수)과 그 조각. 겹침이 없으면 null. */
+export function overlapIn(windows, text) {
+  const t = squeeze(text);
+  let run = 0;
+  let best = 0;
+  let end = 0;
+  for (let i = 0; i + WIN <= t.length; i++) {
+    if (windows.has(fnv(t.slice(i, i + WIN)))) {
+      run++;
+      if (run > best) [best, end] = [run, i + WIN];
+    } else run = 0;
+  }
+  if (!best) return null;
+  const length = best + WIN - 1;
+  return { length, sample: t.slice(end - length, end) };
+}
+
 /** 파일마다 원문과 겹치는 가장 긴 구간(공백 뺀 글자 수)과 그 조각. 겹침이 없는 파일은 뺀다. */
 export function longestOverlaps(windows, files = publicFiles()) {
   const found = [];
@@ -63,20 +80,8 @@ export function longestOverlaps(windows, files = publicFiles()) {
     } catch {
       continue;
     }
-    const t = squeeze(text);
-    let run = 0;
-    let best = 0;
-    let end = 0;
-    for (let i = 0; i + WIN <= t.length; i++) {
-      if (windows.has(fnv(t.slice(i, i + WIN)))) {
-        run++;
-        if (run > best) [best, end] = [run, i + WIN];
-      } else run = 0;
-    }
-    if (best) {
-      const length = best + WIN - 1;
-      found.push({ file: f, length, sample: t.slice(end - length, end) });
-    }
+    const o = overlapIn(windows, text);
+    if (o) found.push({ file: f, ...o });
   }
   return found.sort((a, b) => b.length - a.length);
 }

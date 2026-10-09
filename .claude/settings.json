@@ -24,6 +24,21 @@
             "type": "command",
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/single-branch.mjs\" pre-push",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/no-raw-public.mjs\" pre-push",
+            "timeout": 180
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__github__create_or_update_file|mcp__github__push_files|mcp__github__delete_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/no-raw-public.mjs\" pre-mcp",
+            "timeout": 15
           }
         ]
       }
