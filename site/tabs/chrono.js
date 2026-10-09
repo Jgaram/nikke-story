@@ -25,7 +25,7 @@
  *   앞뒤만 앎 · 시점 불명은 작중순 아래 접이식 칸에 따로(출시순에는 그 시점 묶음 안에 그대로 나온다).
  *   컷오프(state.t): 출시 시점이 그보다 뒤인 스토리는 숨기고 "스포일러로 가린 스토리 N — 전부 보기". 층 · 거르개로 가린 수도 따로. 모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지).
  *   종류 칩의 숫자 = 지금 보이는(여기까지 읽음 · 범위 · 찾기 · 어긋남 거르개 안) 스토리 수. 목록(작중순)에는 "읽은 곳으로" 버튼이 여기까지 읽음 선으로 보낸다.
- *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래에 "자리 근거" 카드(작중 자리 · 정한 방법 · 시점 기록 · 회상 장면 · 좁힘 근거 · 출시 시점 · 출시순과 비교). 같은 줄을 다시 누르면 닫는다.
+ *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래에 "작중 자리" 카드(작중 자리 · 정한 방법 · 시점 기록 · 회상 장면 · 추정한 이유 · 출시 시점 · 출시순과 비교). 같은 줄을 다시 누르면 닫는다.
  */
 export const meta = { id: 'chrono', title: '연대기', blurb: '작중 시간순 · 출시순' };
 
@@ -59,9 +59,9 @@ const LABELS = {
   shown: (n, total) => `${n} / ${total}`,
   emptyAll: '보이는 스토리가 없다', clearFilters: '거르개 풀기',
   emptyPlaced: '자리가 정해진 스토리가 가려졌다 — 아래 앞뒤만 앎 · 시점 불명을 본다',
-  noClue: '단서 없음', clueNone: '단서 없음 — 억지로 끼우지 않았다',
+  noClue: '단서 없음', clueNone: '단서 없음',
   card: {
-    place: '작중 시점', how: '정한 방법', records: '시점 단서', narrow: '좁힌 근거', close: '닫기',
+    place: '작중 시점', how: '정한 방법', records: '시점 단서', narrow: '추정한 이유', close: '닫기',
   },
   bandHead: '스토리', eraLegend: '시대 기준점',
 };
@@ -338,7 +338,7 @@ export async function mount(root, ctx) {
             subEl.textContent = `${LABELS.era}${point.years ? ` · 약 ${point.years}년 전` : ''}`;
             whyEl = el('div', { class: 'cr-why' }, point.reason ? el('p', {}, withLinks(point.reason)) : null, point.basis?.length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink), ' · ')) : null);
             whyEl.hidden = true;
-            head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, fmt.TERM.evidence));
+            head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, '설명'));
           }
           g = { slot: e.slot, point, el: groupShell(head, [whyEl, bodyEl]), body: bodyEl, countEl, rows: [] };
           groups.push(g);
@@ -567,7 +567,7 @@ export async function mount(root, ctx) {
     syncSelection({ scroll: false });
   }
 
-  // ══ 자리 근거 카드(선택한 줄 바로 아래) ═══════════════════════════════════════
+  // ══ 작중 자리 카드(선택한 줄 바로 아래) ═══════════════════════════════════════
   let cardEl = null;
   const kv = (rows) => el('dl', { class: 'kvs cr-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [el('dt', {}, k), el('dd', {}, v)]));
   function buildCard(key) {
@@ -657,14 +657,13 @@ export async function mount(root, ctx) {
   };
   function tipNode(c) {
     const u = c.u;
-    const basis = c.records?.length
-      ? `${c.records.slice(0, 3).join(' · ')}${c.relations ? ` — ${relText(c.relations)}` : ''}`
-      : c.narrows[0]?.reason ? clip(c.narrows[0].reason, 80) : c.via === '메인' ? LABELS.via.메인 : LABELS.noClue;
+    // 추정으로 좁힌 자리만 그 이유를 한 줄 — 시간 단서 · 메인 챕터 자리는 설명 없이
+    const guess = !c.records?.length && c.narrows[0]?.reason ? clip(c.narrows[0].reason, 80) : null;
     return el('div', { class: 'cr-tip' },
       el('div', { class: 'cr-tip-title' }, u.title),
       el('div', {}, `${fmt.KIND[u.kind].label} · ${classLabel(c.class)}${spanText(c) ? ` · ${c.multi ? LABELS.multi : spanText(c)}` : ''}`),
       el('div', {}, `${relLabel(u.tick)}${u.date ? ` · ${u.date}` : ''}${c.drift ? ` · ${driftLabel(c.drift)}` : ''}`),
-      el('div', { class: 'cr-tip-basis' }, `${fmt.TERM.evidence} ${basis}`));
+      guess ? el('div', { class: 'cr-tip-basis' }, guess) : null);
   }
   const showTip = (row, x, y) => {
     if (tipRow === row) return;

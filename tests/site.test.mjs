@@ -61,7 +61,9 @@ test('단위 481 · 공개 자리 158 · 씬 단위 매핑 · 키 이름은 영�
     assert.ok([1, 2, 3].includes(u.layer), `${u.key} layer ${u.layer}`);
   }
   assert.equal(units.find((u) => u.key === 'ch07').title, 'CH.07 재회');
-  assert.equal(units.find((u) => u.key === 'fl:for_rest').replaces, 'event_forrest');
+  // 원문 출처(금서고 · 블라링크)는 사이트에 싣지 않는다 — 호감도 제목엔 편수를 붙이지 않는다(종류 칩으로 안다)
+  assert.ok(units.every((u) => u.library === undefined && u.replaces === undefined));
+  assert.ok(units.filter((u) => u.kind === 'episode').every((u) => !/호감도/.test(u.title)));
   assert.ok(units.filter((u) => u.grade === '척추').length >= 10);
   assert.ok(scenes.length > 3900);
   for (const s of scenes) assert.ok(keys.has(s.unit), `${s.id} → ${s.unit}`);

@@ -92,7 +92,7 @@ export async function run(ctx) {
     const u = unitByKey.get(key);
     if (u?.source === 'main') return `CH.${String(u.num).padStart(2, '0')} ${u.cat.name}`;
     if (u?.source === 'archive') return events.get(key)?.name || u.title;
-    if (u?.source === 'episode') return `${u.cat.name} (호감도 ${scenesOf.get(key)?.length ?? 0}편)`;
+    if (u?.source === 'episode') return u.cat.name;
     if (u) return u.title;
     const s = storyById.get(key);
     if (!s) return key;
@@ -108,7 +108,6 @@ export async function run(ctx) {
     const im = importance.get(key);
     const r2 = read2.get(key);
     const ch = chrono.get(key);
-    const ev = events.get(key);
     const scs = scenesOf.get(key) ?? [];
     const grade = kind === 'main' ? '메인' : spine.has(key) ? '척추' : im?.grade || null;
     return compact({
@@ -116,8 +115,6 @@ export async function run(ctx) {
       order: num(r.order), tick: num(r.tick), date: r.date, date_confidence: r.confidence || undefined, via: r.via || undefined,
       grade, layer: num(r2?.layer), chars: num(r2?.chars), scenes: scs.length, lines: scs.reduce((n, s) => n + (s.lines ?? 0), 0),
       chrono: ch ? compact({ class: ch.class, place: ch.place, lo: num(ch.lo), hi: num(ch.hi), release_main: ch.release_main, drift: ch.drift }) : undefined,
-      library: u?.library || key.startsWith('sub:') ? true : undefined,
-      replaces: u?.gameKey || ev?.substitute || undefined,
       judgment: im?.judgment || undefined, spine: spine.has(key) ? true : undefined,
     });
   });

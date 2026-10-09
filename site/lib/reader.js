@@ -218,7 +218,7 @@ function linksPanel(idx, { sel, tabAct, pick, build, emptyText }) {
   });
 }
 
-/** 스토리 패널의 분류 칸 — 메인 · 본편은 "본편" 표시만, 나머지는 그 시점 등급 · 왜 이 등급인가 */
+/** 스토리 패널의 분류 칸 — 메인 · 본편은 "본편" 표시만, 나머지는 그 시점 등급 · 이유 */
 function classPanel(u, idx) {
   const j = orderMap?.get(u.key);
   const action = tabAction('order', {}, { sel: `unit:${u.key}` });
@@ -235,16 +235,10 @@ function classPanel(u, idx) {
   else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? `${spineName(j.from)} 앞에서는 ${fmt.GRADE[j.before ?? j.grade]?.label}` : `${spineName(j.from)}부터`));
   const full = fmt.plain(j.reason ?? '');
   const short = clipText(full, 90);
-  const basis = j.basis ? [
-    /^J\d/.test(j.basis) ? ui.link(`thread:${j.basis}`, j.basis, { class: 'mono' }) : ui.link(`record:${j.basis}`, j.basis, { class: 'mono' }),
-    j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene, j.basis_line), { class: 'mono' })] : null,
-  ] : null;
-  const why = full
-    ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, withLinks(full))))
-    : ui.el('span', { class: 'muted' }, '근거 메모 없음');
+  const why = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, withLinks(full)))) : null;
   return ui.panel(fmt.TERM.judgment, kv([
     row(t == null ? '등급' : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
-    row(fmt.TERM.basis, ui.el('div', {}, why, basis ? ui.el('div', { class: 'rd-link-ev' }, '근거: ', basis) : null)),
+    row(fmt.TERM.basis, why),
   ]), { actions: action });
 }
 
@@ -277,8 +271,7 @@ function recordLine(r, { showUnit = false } = {}) {
     ui.el('div', { class: 'chips' },
       ui.chip('record', r.kind, fmt.recordLabel(r)),
       r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
-      st && st !== '앎' ? ui.chip('state', st) : null,
-      r.user ? ui.chip('plain', 'user', '사용자 확정') : null),
+      st && st !== '앎' ? ui.chip('state', st) : null),
     ui.el('div', { class: 'record-text' }, fmt.recordText(r)),
     ui.el('div', { class: 'record-ref' },
       showUnit && r.unit ? [ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)), ' · '] : null,
@@ -336,8 +329,6 @@ const RENDER = {
       row(fmt.TERM.release, u.tick != null ? `${fmt.tickLabel(u.tick)}${u.date_confidence === '추정' ? ' (날짜 추정)' : ''}${u.via === '딸림' ? ' · 딸린 챕터 기준' : ''}` : null),
       row(fmt.TERM.chronoPlace, chronoText(u)),
       row('분량', `${u.scenes}씬 · ${fmt.num(u.lines)}줄${u.chars != null ? ` · ${fmt.num(u.chars)}자` : ''}`),
-      row(fmt.TERM.source, u.library ? tip(ui.chip('plain', 'library', fmt.TERM.library), fmt.TERM_HELP.library) : null),
-      row('대신하는 스토리', u.replaces ? (idx.units.get(u.replaces) ? ui.link(`unit:${u.replaces}`, fmt.unitTitle(u.replaces)) : mono(u.replaces)) : null),
     ])));
     const cls = classPanel(u, idx);
     if (cls) root.append(cls);
@@ -374,7 +365,7 @@ const RENDER = {
     if (!r) return root.append(head('찾을 수 없음'), ui.empty(`메모 없음: ${id}`));
     const hidden = !state.visible(r.tick);
     const st = fmt.stateAt(r, T());
-    root.append(head(fmt.recordLabel(r), [r.confidence === '추정' ? ui.chip('confidence', '추정') : null, st && st !== '앎' ? ui.chip('state', st) : null, r.user ? ui.chip('plain', 'user', '사용자 확정') : null], mono(r.id)));
+    root.append(head(fmt.recordLabel(r), [r.confidence === '추정' ? ui.chip('confidence', '추정') : null, st && st !== '앎' ? ui.chip('state', st) : null], mono(r.id)));
     const recLinks = (ids) => ids?.length ? joinNodes(ids.map((c) => ui.link(`record:${c}`, c, { class: 'mono' }))) : null;
     const body = ui.el('div', {});
     body.append(ui.el('p', { class: 'record-full' }, fmt.recordText(r)));
@@ -390,8 +381,9 @@ const RENDER = {
     if (r.kind === 'O') body.append(kv([row('흐름', r.chain), row('쌓인 곳', r.built?.length ? joinNodes(r.built.map((b) => (/^[A-Z]\d/.test(b) ? ui.link(`record:${b}`, b, { class: 'mono' }) : ui.link(`unit:${b}`, fmt.unitTitle(b))))) : null), row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('닫은 메모', recLinks(r.closing))]));
     if (r.kind === 'H') body.append(kv([row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('함께 맺는 메모', recLinks(r.members))]));
     if (r.points?.length) body.append(kv([row('가리키는 메모', recLinks(r.points))]));
-    body.append(ui.panel(fmt.TERM.evidence, r.evidence?.length ? ui.el('ul', { class: 'plain' }, r.evidence.map((e) => ui.el('li', {}, ui.link(`scene:${e.scene}`, fmt.ref(e.scene, e.lines), { class: 'mono' }), ' ', ui.el('span', { class: 'muted' }, idx.scenes.get(e.scene)?.title ?? '')))) : ui.empty('근거 씬 없음')));
-    if (r.reason) body.append(ui.panel('왜 이렇게 읽었나', ui.el('p', { class: 'reason' }, r.reason)));
+    if (r.evidence?.length) body.append(ui.panel('장면', ui.el('ul', { class: 'plain' }, r.evidence.map((e) => ui.el('li', {}, ui.link(`scene:${e.scene}`, fmt.ref(e.scene, e.lines), { class: 'mono' }), ' ', ui.el('span', { class: 'muted' }, idx.scenes.get(e.scene)?.title ?? ''))))));
+    // 해석 이유는 추정일 때만 — 확실한 메모는 문장만으로 읽힌다
+    if (r.reason && r.confidence === '추정') body.append(ui.panel('추정한 이유', ui.el('p', { class: 'reason' }, r.reason)));
     if (r.about?.length) body.append(ui.panel('관련', ui.el('p', {}, joinNodes(r.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) body.append(ui.panel(fmt.TERM.thread, ui.el('p', {}, joinNodes(r.threads.map((j) => ui.link(`thread:${j}`, idx.threads.get(j)?.title ?? j))))));
     const rootId = r.parent ?? ((r.kind === 'F' || r.kind === 'Q') ? r.id : null);

@@ -808,7 +808,7 @@ export async function mount(root, ctx) {
   };
   const colLabel = (u) => {
     if (u.kind === 'main') return String(u.title).split(' ')[0];
-    return String(u.title).replace(/\s*\(호감도 5편\)$/, '');
+    return String(u.title);
   };
 
   const stateChipFor = (lane) => {

@@ -384,6 +384,8 @@
 - Pages는 이 레포에서 `site/`(HTML · JS · 내보낸 JSON)를 올린다(Actions로 `site/`만 배포). 코드 · 문서 · `annotations/` 기록은 레포에 공개돼 있고, `data/raw/`(원문 · 외부 참고 표) · DB는 공개되지 않는다.
 - **싣는 것**: 게임 메타데이터(단위 · 씬 ID · 제목 · 종류 · 공개일 · 선행 조건) · 우리가 쓴 기록 문장(사실 · 의문 · 변화 · 생활상 · 마무리) · 등급 · 줄기 · 관계선 · 집계 숫자 · 인물 · 개념 이름.
 - **싣지 않는 것**: 대사 본문(블라링크 · 금서고 모두) · 게임 이미지 · 아이콘 · 로고. "씬 전체 보기"는 없다.
+  원문을 어디서 읽었는지(블라링크 · 금서고)도 화면 · JSON에 싣지 않는다(사용자, 2026-10-09 — `units.json`에 `library` · `replaces` 없음).
+- **화면 문구는 간결하게**(사용자, 2026-10-09): "근거" · "왜 이렇게 읽었나" 같은 해석 설명은 추정일 때만 붙인다 — 메모 패널의 이유는 `추정`인 메모만("추정한 이유"), 근거 씬 목록은 "장면". 종류 칩으로 아는 말(호감도 제목의 "(호감도 5편)")은 되풀이하지 않는다.
 - **근거 줄 인용**: 기록 하나에 한 줄, 길이 상한(80자, 넘으면 자름) · 출처(씬#줄) 표시. 인용은 분석의 부속이지 본문이 아니다(공표된 저작물의 인용 — 비평 · 연구 목적 · 정당한 범위 · 출처 표시).
 - **내보내기가 막는다**: `export.mjs`는 허용 칼럼만 고르고 대사 본문 칼럼(`quest_name` · `scenario_localkey` · DB `lines.text`)은 **읽지 않는다**. 기록 문장 안 따옴표 인용이 40자를 넘으면 경고로 뽑아 사람이 본다.
 - 게임사 가이드라인 — 확인함(2026-10-09, Claude): [시프트업 2차 창작 가이드라인](https://policy.shiftup.co.kr/ip/kr/index.html)(개정 2023-07-14 · 2023-09-05 · 2024-03-26, 문의 ugc@shiftup.co.kr).
@@ -425,7 +427,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 
 | 파일 | 건 | 칸 |
 |---|---|---|
-| `units.json` | 481 | `key` · `kind`(main · event · episode · sub · relic · side · erelic · elevator) · `title`(CH.07 재회 · OVER ZONE · 라피 (호감도 5편) · 칠리페퍼 1) · `name` `num`(메인만) · `order`(읽는 자리 1–481) · `tick`(공개 자리 1–158) · `date` · `date_confidence`(확실 · 추정) · `via`(공개일 · 딸림) · `grade`(메인 · 척추 · 필수 · 보강 · 참고 · 독립) · `layer`(1–3) · `chars` · `scenes` · `lines` · `chrono{class(판별 · 범위 · 상대 · 불명), place, lo, hi, release_main, drift}` · `library`(금서고 원문) · `replaces`(금서고 단위가 대신하는 블라링크 키 — `fl:for_rest` → `event_forrest`) · `judgment`(층 판정 K-ID) · `spine` |
+| `units.json` | 481 | `key` · `kind`(main · event · episode · sub · relic · side · erelic · elevator) · `title`(CH.07 재회 · OVER ZONE · 라피 · 칠리페퍼 1) · `name` `num`(메인만) · `order`(읽는 자리 1–481) · `tick`(공개 자리 1–158) · `date` · `date_confidence`(확실 · 추정) · `via`(공개일 · 딸림) · `grade`(메인 · 척추 · 필수 · 보강 · 참고 · 독립) · `layer`(1–3) · `chars` · `scenes` · `lines` · `chrono{class(판별 · 범위 · 상대 · 불명), place, lo, hi, release_main, drift}` · `judgment`(층 판정 K-ID) · `spine` |
 | `ticks.json` | 158 | `tick` · `date` · `main`(그 자리의 메인 챕터 키, 없으면 칸 없음) · `upto`(그 자리까지의 마지막 메인 챕터 — 라벨용) · `count` · `units[]` |
 | `scenes.json` | 3,923 | `id` · `unit` · `seq`(단위 안 1부터) · `title` · `lines` · `has_text`(0일 때만) · `part`(이벤트 파트 이름) · `level`(호감도 레벨). 본문 없음. 금서고로 대신된 블라링크 이벤트의 본문 없는 씬 43은 뺐다 |
 | `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
@@ -473,7 +475,7 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
 **컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · layer · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body, { actions })` · `details(summary, body, { open })` · `empty(text, action)` · `spinner` · `notice(text, kind)` · `hiddenNote(text, onShowAll, { action })`(스포일러 · 범위 밖 안내 한 모양) · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }` · `icon(name)`. 모두 키보드 · aria 기본값 포함.
 
 **리더(`lib/reader.js`)** — `open(sel)` · `close()` · `isOpen()`. app.js가 `sel` 변화에 맞춰 부르므로 탭은 `state.set({ sel })`만 하면 된다. 단위(메타 · **분류** · **연결** · 씬 목록 · 분석 메모 요약 · 설정 오류 메모) · 씬(메타 · **연결** · 그 씬의 분석 메모 종류별 · 앞뒤 씬) · 분석 메모(전문 · 근거 · 이유 · 대상 · 떡밥 · 같은 뿌리) · 인물 · 항목(사전 · 분석 메모) · 떡밥(의문 · 사실 · 관계) · 출시 시점.
-- **분류**(스토리 패널): `order.json`(작아서 패널을 열 때 같이 받는다)의 등급 칩 — 지금 읽은 데까지의 등급(`fmt.gradeAt`, 나중에 오르면 "→ CH.27부터 추천") · **왜 이 등급인가** 한 줄(이유를 90자로 줄이고 눌러 전문, 메모 ID는 링크 · `fmt.plain`으로 화면 말) · 근거 메모 · 씬 링크 · "읽기 순서 탭에서 보기"(`#tab=order&sel=unit:<키>`). 본편(메인 · 척추)은 "본편" 칩만.
+- **분류**(스토리 패널): `order.json`(작아서 패널을 열 때 같이 받는다)의 등급 칩 — 지금 읽은 데까지의 등급(`fmt.gradeAt`, 나중에 오르면 "→ CH.27부터 추천") · **이유** 한 줄(90자로 줄이고 눌러 전문, 메모 ID는 링크 · `fmt.plain`으로 화면 말) · "읽기 순서 탭에서 보기"(`#tab=order&sel=unit:<키>`). 본편(메인 · 척추)은 "본편" 칩만.
 - **연결**: `links-scenes.json`(처음 열 때 한 번 받아 씬 · 스토리별로 색인한다 — 받는 동안 spinner). 스토리 패널은 상대 스토리마다 한 줄(선 종류별 묶음 — `fmt.LINK_TYPE_ORDER` 순, 종류마다 5줄 뒤는 "더 보기") · 강도(`fmt.LINK_LEVEL`) · 가장 센 선의 근거(분석 메모 링크 · 씬 `fl` → `tl` 줄) · 씬 쌍이 여럿이면 "씬 N쌍"; 한 스토리 안 선행(호감도 1편 → 2편)은 뺀다. 씬 패널은 그 씬의 선 한 줄씩(상대 씬 · 상대 스토리 · 이 씬 줄 ↔ 상대 줄 · 분석 메모). 여기까지 읽음 뒤의 상대는 "스포일러 보기" 접이로. 머리의 "연결 탭에서 보기" = `#tab=links&p.c=<스토리 키>`.
 - 인물 패널 "인물 탭에서 보기"(`#tab=persons&p.who=<id>`) · 항목(인물 아닌 것) "세계 탭에서 보기"(`#tab=world&p.item=<id>`) · 떡밥 패널 "떡밥 탭에서 보기"(`#tab=threads&p.j=<id>`). 탭 링크는 탭을 바꾸고 리더를 닫는다(`sel` 비움; 분류의 읽기 순서 링크만 `sel`을 싣는다).
 
@@ -497,7 +499,7 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 
 | 탭 | 쓰는 JSON | 파라미터 | 보기 모드 |
 |---|---|---|---|
-| **읽기 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `kind`(스토리 종류) · `find` · `rows`(지도 행: grade · kind) · `leads`(1이면 주역 명단 펼침) | 목록(등급별 묶음 표, 한 줄 = 출시 시점 · 종류 · 스토리 · 왜 이 등급인가 · 글자 · 범위) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
+| **읽기 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `kind`(스토리 종류) · `find` · `rows`(지도 행: grade · kind) · `leads`(1이면 주역 명단 펼침) | 목록(등급별 묶음 표, 한 줄 = 출시 시점 · 종류 · 스토리 · 이유 · 글자 · 범위) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
 | **연결** `links` (W3) | `links.json` · `links-scenes.json`(근거) | `m`(ego · net · chain) · `c`(가운데 스토리) · `n` · `pr` · `lt` · `ty`(선 종류) · `s`(연결 강도 1–3) · `tg`(인물 · 항목) · `th`(떡밥) · `kd`(스토리 종류) · `nn` · `mm` | 이웃(가운데 스토리 + 앞 · 뒤 카드, 기본) / 전체(읽는 순서 축 위 점 · 선) / 연작(다음 편 사슬). 선을 누르면 씬 → 씬 근거. 인물 · 떡밥 거르개 후보는 여기까지 읽음 안의 선에 걸린 것만 |
 | **떡밥** `threads` (W4) | `threads-flow.json` · `threads-map.json` · 공용 `threads.json` | `j`(떡밥 ID) · `axis`(story면 작중 시간순) · `f`(unsolved · solved · fact) · `map`(rel · item · list) · `c` · `common` · `hints` · `sort`(open · start) | 왼쪽 떡밥 지도(떡밥끼리 · 항목 · 목록) + 오른쪽 떡밥 하나의 흐름(의문 · 사실 줄마다 던짐 → 복선 → 일부 회수 → 회수 · 뒤집힘, 출시 순서 / 작중 시간순) |
 | **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |

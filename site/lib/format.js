@@ -12,7 +12,7 @@
  *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · layer · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
- *   unitTitle(u | key)              'CH.07 재회' · '라피 (호감도 5편)'
+ *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
  *   tickLabel(tick, { date })       'CH.20 시점 · 2023-01-12' / 'CH.17 이후 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
@@ -45,7 +45,7 @@ export const KIND_ORDER = ['main', 'event', 'episode', 'sub', 'relic', 'side', '
 export const KIND_HELP = {
   main: '메인 스토리 챕터',
   event: '기간 한정 이벤트 스토리',
-  episode: '니케마다 호감도로 열리는 개인 스토리 5편',
+  episode: '니케마다 호감도로 열리는 개인 스토리',
   sub: '서브퀘스트 메신저 대화',
   relic: '지역에 흩어진 유실물 문서',
   side: '사이드 스토리',
@@ -262,7 +262,7 @@ export const TERM = {
   gradeAt: '지금 읽은 데까지의 등급',
   judgment: '분류',
   judgmentHistory: '분류가 바뀐 기록',
-  basis: '왜 이 등급인가',
+  basis: '이유',
   lead: '주역',
   origin: '첫 이야기',
   thread: '떡밥',
@@ -277,12 +277,9 @@ export const TERM = {
   inverted: '출시순과 반대',
   piece: '다른 때의 장면',
   evidence: '근거',
-  source: '출처',
-  library: '금서고',
   spoiler: '스포일러',
 };
 export const TERM_HELP = {
-  library: '팬 사이트 금서고의 원문 — 서술 · 독백 구분과 게임 씬 ID가 없다',
   cutoff: '이 시점까지 나온 이야기만 보여 스포일러를 막는다',
   scope: '핵심 · 넓게 · 전부 — 보여 줄 스토리의 범위',
 };

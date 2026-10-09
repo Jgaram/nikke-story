@@ -52,12 +52,6 @@
 .tab-order .order-rise { font-size: 12px; color: var(--ink-muted); }
 .tab-order .order-rise.is-future { color: var(--link); font-weight: 600; }
 .tab-order .order-basis { min-width: 0; }
-.tab-order .order-ref { display: flex; flex-wrap: wrap; align-items: center; gap: 0 2px; font: 11.5px/1.5 var(--mono); color: var(--ink-muted); }
-.tab-order .order-scene { overflow-wrap: anywhere; }
-.tab-order .order-fl {
-  display: inline-block; margin-left: 4px; padding: 0 6px; font: 11px/16px var(--font); color: var(--ink-2);
-  border: 1px solid var(--line-2); border-radius: 8px;
-}
 .tab-order .order-why { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: var(--ink-2); }
 
 /* ── 지도 ── */
@@ -144,7 +138,7 @@
   .tab-order .order-lane-label { padding: 0 8px 0 4px; font-size: 12px; }
   .tab-order .order-lane-label b { white-space: normal; }
 }
-/* 표 → 카드형 행: 출시 시점 · 종류 · 스토리 / 왜 이 등급인가 */
+/* 표 → 카드형 행: 출시 시점 · 종류 · 스토리 / 이유 */
 @container order-group (max-width: 840px) {
   .tab-order .order-group .table, .tab-order .order-group .table tbody { display: block; }
   .tab-order .order-group .table thead { display: none; }

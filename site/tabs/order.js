@@ -18,12 +18,12 @@
  *   그 시점의 등급 gradeAt(u, T) — tools/views/importance.mjs와 같다: T가 없으면(전부 보기) 최종 등급, T < 출시 시점이면 아직 없음(가림),
  *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급. 내려가는 일은 없다.
  *   여기까지 읽음 뒤 스토리(tick > T) · 범위 거르개 밖 스토리는 숨기고 개수만 보인다("스포일러로 가린 N — 전부 보기").
- *   목록: 등급별 묶음 표(묶음 제목 옆 ⓘ = 등급 뜻). 한 줄 = 출시 시점 · 종류 · 제목(+ 뒤에 오를 등급) · 왜 이 등급인가(근거 메모 ID 줄 + 이유 한 줄 말줄임) · 글자 · 범위.
- *     390px 폭에서는 카드형(출시 시점 · 종류 · 제목 / 근거)으로 접는다.
+ *   목록: 등급별 묶음 표(묶음 제목 옆 ⓘ = 등급 뜻). 한 줄 = 출시 시점 · 종류 · 제목(+ 뒤에 오를 등급) · 이유(한 줄 말줄임) · 글자 · 범위.
+ *     390px 폭에서는 카드형(출시 시점 · 종류 · 제목 / 이유)으로 접는다.
  *   지도: 본편 60곳(메인 49 + 본편 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 본편 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
  *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 그 시점의 등급(파랑 램프), 점 크기는 같다.
  *     나중에 등급이 오르는 점은 오를 등급 색 테두리. 본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
- *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 등급 변화 · 왜 이 등급인가 · 이유 · 떡밥 · 주역 · 분류가 바뀐 기록).
+ *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 등급 변화 · 이유 · 관련 메모 · 떡밥 · 주역 · 분류가 바뀐 기록).
  *   색은 등급 램프(--grade-*)만 — 종류는 칩 · 행 이름으로 (종류 색과 등급 색을 한 차트에 같이 쓰지 않는다).
  *   키보드: 점 421개를 모두 탭 정지점으로 만들지 않는다(축 60칸만 tabindex 0) — 같은 내용을 목록 모드의 표(줄마다 초점)가 준다.
  *   표 → 카드형 행은 화면이 아니라 묶음 폭(컨테이너 쿼리 840px)으로 접힌다 — 리더 패널이 열려 본문이 좁아져도 가로로 넘치지 않는다.
@@ -40,8 +40,7 @@ const LABELS = {
   kind: '종류', allKinds: '전체',
   find: '제목 · 이유 검색', findAria: '스토리 검색',
   count: (rows, total) => `${rows} / ${total}`,
-  cols: { release: '출시 시점', kind: '종류', title: '스토리', why: '왜 이 등급인가', chars: '글자', scope: '범위' },
-  noBasis: '근거 메모 없음',
+  cols: { release: '출시 시점', kind: '종류', title: '스토리', why: '이유', chars: '글자', scope: '범위' },
   riseTo: (at, grade) => `→ ${at}부터 ${grade}`, riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   rowsGrade: '등급별', rowsKind: '종류별', rows: '행',
   legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' }, legendRise: '테두리 = 나중에 오를 등급',
@@ -51,14 +50,14 @@ const LABELS = {
   emptyEarly: (at, next) => `${at}까지는 메인 밖 스토리가 아직 없다${next ? ` — ${next}부터 나온다` : ''}.`, goNext: (at) => `${at}까지 읽음으로`, emptyFilter: '거르개에 맞는 스토리가 없다.',
   clearFilter: '거르개 풀기', outScope: '범위 밖',
   leads: '주역', leadsHelp: '스토리의 주인 · 카운터스 · 지휘관 — 주역마다 첫 이야기(정체 · 동기의 원점이 처음, 가장 온전히 나오는 메인 밖 스토리) 하나가 필수다',
-  leadCols: { person: '인물', from: '주역이 되는 시점', origin: '첫 이야기', arcs: '범위', basis: '근거', conf: '확신' },
+  leadCols: { person: '인물', from: '주역이 되는 시점', origin: '첫 이야기', arcs: '범위', basis: '메모', conf: '확신' },
   inMain: '메인 안', notYet: '아직', leadsEmpty: '여기까지 읽음 안에 주역이 되는 인물이 없다',
   card: '분류', cardClose: '닫기',
   rows2: {
-    grade: '등급', why: '왜 이 등급인가', reason: '이유', judg: '분류', threads: '떡밥', lead: '주역', origins: '첫 이야기', endings: '결말', history: '분류가 바뀐 기록',
+    grade: '등급', why: '관련 메모', reason: '이유', judg: '분류', threads: '떡밥', lead: '주역', origins: '첫 이야기', endings: '결말', history: '분류가 바뀐 기록',
     release: '출시 시점', climbs: '여기서 등급이 오르는 스토리', touched: '여기에 닿는 스토리', touch: '닿는 본편',
   },
-  none: '없음', noBasisLong: '없음 — 본편이 말하지 않은 세계 · 본편 인물 메모가 없다(독립)',
+  none: '없음',
   after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
   trailNone: '바뀐 적 없다',
 };
@@ -83,7 +82,6 @@ function S(tag, attrs = {}, ...kids) {
   for (const c of kids.flat()) if (c != null) n.append(c);
   return n;
 }
-const isLibrary = (scene) => /^(side|sub|relic|erelic|fl):/.test(scene ?? '');
 
 export async function mount(root, ctx) {
   const { state, data, fmt, ui, idx } = ctx;
@@ -138,16 +136,13 @@ export async function mount(root, ctx) {
     if (curT < j.from_tick) return ui.el('div', { class: 'order-rise is-future', title: `${at}에서 이 스토리를 다루기 시작하면 ${gl(j.grade)}` }, LABELS.riseTo(at, gl(j.grade)));
     return ui.el('div', { class: 'order-rise' }, LABELS.riseSince(at));
   };
-  const basisRef = (j) => ui.el('div', { class: 'order-ref' },
-    j.basis ? [recId(j.basis), j.basis_scene ? [' · ', ui.el('span', { class: 'order-scene' }, fmt.ref(j.basis_scene, j.basis_line))] : null] : ui.el('span', { class: 'muted' }, LABELS.noBasis),
-    isLibrary(j.basis_scene) ? ui.el('span', { class: 'order-fl', title: fmt.TERM_HELP?.library }, TERM.library) : null);
   const columns = () => [
     { key: 'tick', label: LABELS.cols.release, width: '6.6em', nowrap: true, render: (j) => ui.el('span', { title: fmt.tickLabel(j.tick) }, fmt.tickShort(j.tick)), sort: (a, b) => a.tick - b.tick || a.unit.order - b.unit.order },
     { key: 'kind', label: LABELS.cols.kind, width: '9.2em', render: (j) => ui.chip('kind', j.unit.kind), sort: (a, b) => fmt.KIND_ORDER.indexOf(a.unit.kind) - fmt.KIND_ORDER.indexOf(b.unit.kind) },
     { key: 'title', label: LABELS.cols.title, width: '17em', render: (j) => ui.el('div', { class: 'order-title' }, ui.link(`unit:${j.key}`, j.unit.title), riseNote(j)), sort: (a, b) => a.unit.title.localeCompare(b.unit.title, 'ko') },
     { key: 'why', label: LABELS.cols.why, sortable: false, render: (j) => {
       // 한 줄로 줄이고(CSS 말줄임) 전문은 title · 분류 카드 · 리더 패널에 — 칸마다 초점이 생기지 않게 ui.tooltip 대신 title
-      return ui.el('div', { class: 'order-basis' }, basisRef(j), ui.el('div', { class: 'order-why', title: j.reason ? plain(j.reason) : null }, plain(j.reason ?? '')));
+      return ui.el('div', { class: 'order-basis' }, ui.el('div', { class: 'order-why', title: j.reason ? plain(j.reason) : null }, plain(j.reason ?? '')));
     } },
     { key: 'chars', label: LABELS.cols.chars, width: '6em', num: true, render: (j) => fmt.num(j.unit.chars), sort: (a, b) => (a.unit.chars ?? 0) - (b.unit.chars ?? 0) },
     { key: 'layer', label: LABELS.cols.scope, width: '5.6em', render: (j) => (j.unit.layer ? ui.chip('layer', j.unit.layer) : ''), sort: (a, b) => (a.unit.layer ?? 9) - (b.unit.layer ?? 9) },
@@ -390,7 +385,7 @@ export async function mount(root, ctx) {
       ui.el('div', { class: 'order-tip-title' }, j.unit.title),
       ui.el('div', {}, `${fmt.KIND[j.unit.kind].label} · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자`),
       ui.el('div', {}, [gl(g), rises ? ` ${LABELS.riseTo(spineLabel(j.from), gl(j.grade))}` : j.from_tick ? ` (${LABELS.riseSince(spineLabel(j.from))})` : '']),
-      ui.el('div', { class: 'order-tip-basis' }, j.basis ? `${j.basis}${j.basis_scene ? ` ${fmt.ref(j.basis_scene, j.basis_line)}` : ''} — ${clip(plain(j.reason), 110)}` : clip(plain(j.reason ?? LABELS.noBasis), 110)));
+      j.reason ? ui.el('div', { class: 'order-tip-basis' }, clip(plain(j.reason), 110)) : null);
   };
 
   // ── 분류 카드 ──
@@ -426,15 +421,14 @@ export async function mount(root, ctx) {
     else if (g !== j.grade) gradeRow.push(' ', ui.el('span', {}, '→ ', ui.link(`unit:${j.from}`, spineLabel(j.from)), '부터 ', ui.chip('grade', j.grade)));
     else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, T == null ? LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade)) : LABELS.riseSince(spineLabel(j.from))));
     const basisText = ui.el('div', { class: 'order-basis-text' });
-    const basisRow = j.basis ? [recId(j.basis), j.basis_kind ? [' ', ui.chip('record', j.basis_kind)] : null, j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene, j.basis_line))] : null,
-      isLibrary(j.basis_scene) ? [' ', ui.el('span', { class: 'order-fl' }, TERM.library)] : null, basisText] : ui.el('span', { class: 'muted' }, LABELS.noBasisLong);
+    const basisRow = j.basis ? [recId(j.basis), j.basis_kind ? [' ', ui.chip('record', j.basis_kind)] : null, j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene, j.basis_line))] : null, basisText] : null;
     const histBox = ui.el('div', { class: 'order-history' }, j.trail ? j.trail.map((x, i) => [i ? ' → ' : null, ui.chip('grade', x)]) : ui.el('span', { class: 'muted' }, LABELS.trailNone));
     card.append(
       ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', j.unit.kind), ' ', ui.link(`unit:${j.key}`, j.unit.title), ui.el('span', { class: 'muted order-card-sub' }, ` · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자 · ${fmt.num(j.unit.scenes)}${LABELS.scene}`)), close),
       kv([
         [T == null ? R.grade : TERM.gradeAt, gradeRow],
-        [R.why, basisRow],
-        [R.reason, j.reason ? withLinks(j.reason) : ui.el('span', { class: 'muted' }, LABELS.none)],
+        j.reason ? [R.reason, withLinks(j.reason)] : null,
+        basisRow ? [R.why, basisRow] : null,
         [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, ' ', j.unit.layer ? ui.chip('layer', j.unit.layer) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],
         j.from && !j.from_tick ? [R.touch, ui.link(`unit:${j.from}`, spineLabel(j.from))] : null,
         j.threads?.length ? [R.threads, j.threads.map((t, i) => [i ? ' · ' : null, ui.link(`thread:${t}`, idx.threads.get(t)?.title ?? t)])] : null,
@@ -442,7 +436,7 @@ export async function mount(root, ctx) {
         j.closures ? [R.endings, withLinks(j.closures)] : null,
         [R.history, histBox],
       ]));
-    // 근거 문장 · 검토 기록은 따로 받는다(처음 한 번)
+    // 관련 메모 문장 · 검토 기록은 따로 받는다(처음 한 번)
     detail().then((d) => {
       if (card.dataset.key !== key) return;
       const x = d.units?.[key];
