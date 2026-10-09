@@ -10,6 +10,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import path from 'node:path';
 
 const BRANCH = 'main';
 const REMOTE = 'origin';
@@ -164,7 +165,8 @@ const OPTS_WITH_VALUE = new Set(['-o', '--push-option', '--repo', '--receive-pac
 
 /** 명령 맨 앞의 `git push`만 본다. 앞에 올 수 있는 셸 키워드·래퍼·환경 변수 대입은 건너뛴다. */
 const LEAD = String.raw`(?:(?:if|elif|while|until|do|then|else|time|command|exec|nohup|sudo|!|\(|\{|timeout\s+\S+|[A-Za-z_]\w*=\S*)\s+)*`;
-const GIT_PUSH = new RegExp(String.raw`^\s*${LEAD}git(?:\s+-C\s+\S+)?\s+push\b(.*)$`);
+const GIT_PUSH = new RegExp(String.raw`^\s*${LEAD}git(?:\s+-C\s+(\S+))?\s+push\b(.*)$`);
+const CD = /^\s*cd\s+(\S+)\s*$/;
 
 /**
  * 명령에서 실제로 실행될 셸 코드만 남긴다.
@@ -187,13 +189,20 @@ function shellCode(command) {
     .replace(/\d*>&\d+|&>>?\s*\S+|\d*>>?\s*\S+|\d*<\s*\S+/g, ' ');
 }
 
-/** 명령 안의 git push가 향하는 브랜치 이름들. 삭제와 태그 push는 브랜치를 늘리지 않으므로 뺀다. */
-function pushTargets(command, current) {
+/**
+ * 명령 안의 git push가 향하는 브랜치 이름들. 삭제와 태그 push는 브랜치를 늘리지 않으므로 뺀다.
+ * 대상을 안 적은 push(`HEAD` 포함)는 그 push가 도는 곳의 브랜치다 — `git -C data/raw push` · `cd data/raw && git push`는 서브모듈의 브랜치.
+ */
+function pushTargets(command, branchIn) {
   const targets = [];
+  let dir = null;
   for (const segment of shellCode(command).split(/&&|\|\||[;|&\n]/)) {
+    const cd = segment.match(CD);
+    if (cd) dir = path.resolve(dir ?? cwd, cd[1]);
     const m = segment.match(GIT_PUSH);
     if (!m) continue;
-    const tokens = m[1]
+    const current = branchIn(m[1] ? path.resolve(dir ?? cwd, m[1]) : dir) ?? 'HEAD';
+    const tokens = m[2]
       .split(/\s+/)
       .map((t) => t.replace(/[)}`]+$/, ''))
       .filter(Boolean);
@@ -225,7 +234,7 @@ function pushTargets(command, current) {
 function prePush(input) {
   const command = input.tool_input?.command ?? '';
   if (!/\bgit\b[\s\S]*\bpush\b/.test(command)) return;
-  const bad = [...new Set(pushTargets(command, currentBranch() ?? 'HEAD').filter((t) => t !== BRANCH))];
+  const bad = [...new Set(pushTargets(command, (d) => (d ? tryGit(['-C', d, 'branch', '--show-current']) || null : currentBranch())).filter((t) => t !== BRANCH))];
   if (!bad.length) return;
   emit({
     hookSpecificOutput: {

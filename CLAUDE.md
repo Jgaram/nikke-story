@@ -39,11 +39,13 @@
   프록시에서 403), main에 머지된 브랜치는 사용자에게 GitHub에서 지워 달라고 하고 머지 안 된 브랜치는 어떻게 할지 묻는다.
 - 원격 세션에서는 훅이 강제한다 (`.claude/settings.json` → `.claude/hooks/single-branch.mjs`):
   - SessionStart — 세션을 main으로 옮기고 origin/main까지 fast-forward한다.
-  - PreToolUse(Bash) — main이 아닌 브랜치로 가는 `git push`를 막는다. 삭제(`--delete`)는 허용한다.
+  - PreToolUse(Bash) — main이 아닌 브랜치로 가는 `git push`를 막는다(`git -C data/raw push`처럼 서브모듈 push도). 삭제(`--delete`)는 허용한다.
   - Stop — main에 안 올라간 커밋이 있으면 턴을 끝내지 못한다. 커밋 안 된 변경은 경고만 한다. `data/raw/`도 같이 본다.
 - **`data/raw/`는 서브모듈이다**(private 레포 `Jgaram/nikke-story-raw`, 그쪽도 main 하나). 수집기로 원문이 바뀌면
   `git -C data/raw add -A && git -C data/raw commit -m … && git -C data/raw push origin main`으로 **먼저** 원본 레포에 올리고,
   그다음 이 레포에서 `git add data/raw`(포인터)를 커밋 · push한다. 순서를 바꾸면 남이 받을 수 없는 포인터가 올라간다.
+  원본 레포도 `main` 하나만 쓴다. 세션에 원본 레포를 붙이면 클라우드가 따로 클론(`/home/user/nikke-story-raw`, 배정 브랜치)을 만들 수 있는데,
+  **그 클론에서는 작업하지 않는다** — 원본 레포에는 훅이 없다. 원문 작업은 언제나 이 레포의 `data/raw/`에서 한다(여기서는 훅이 서브모듈 push도 main으로만 보낸다).
 - SessionStart 훅(`.claude/hooks/ensure-db.mjs`)이 서브모듈을 받고 main에 붙인 뒤 DB를 만든다. 원본 레포를 못 받으면
   (세션에 `Jgaram/nikke-story-raw`가 없으면) 그렇게 알려 온다 — `add_repo`로 붙이고 `node .claude/hooks/ensure-db.mjs`를 다시 돌린다.
 
