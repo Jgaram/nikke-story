@@ -5,7 +5,8 @@
  *   links.json         { edges, chains, targets }
  *     edges[]   단위 쌍 × 타입(3,370) — from · to(단위 키, 읽는 순서 앞 → 뒤) · type(prereq · sequel · setup_payoff · callback · reversal · character · keyword) ·
  *               count(씬 엣지 수 = 선 굵기) · strength(1–3) · origin(auto · record · manual · game-condition) · records[](기록 ID) · targets[](대상 ID —
- *               대상 공유는 그 대상, 기록 엣지는 기록의 about) · threads[](기록의 줄기) · unconfirmed(후보로 만든 수, 0이면 칸 없음) · note(까닭 한 줄 — 수동 연작의 reason · 자동 규칙 이름)
+ *               대상 공유는 그 대상, 기록 엣지는 기록의 about) · threads[](기록의 줄기) · unconfirmed(후보로 만든 수, 0이면 칸 없음) · note(까닭 한 줄 — 수동 연작의 reason · 자동 규칙 이름) ·
+ *               weak(count 중 세기 1인 씬 엣지 수 = 자주 나오는 대상만 나눈 것, 0이면 칸 없음 — 세기 2 이상만 볼 때 선 굵기에서 뺀다)
  *     chains[]  연작 — 메인 밖 sequel 엣지의 연결 성분. units[](읽는 순서) · edges[{ from, to, strength, origin, record, note }] · linear(갈래 없는 한 줄이면 true)
  *     targets[] 중심 대상 — id · spread(그 대상이 중심인 단위 수) · common(흔한 대상 = 읽기 단위의 10%를 넘음 → 화면 기본값에서 숨김)
  *   links-scenes.json  씬 엣지(6,257) — 선 하나의 근거. type · origin · s(세기) · from · fl(앞 씬 · 줄) · to · tl(뒤 씬 · 줄) · fu · tu(앞 · 뒤 단위) ·
@@ -73,6 +74,14 @@ export async function run(ctx) {
     if (!noteOf.has(k)) noteOf.set(k, e.note);
   }
 
+  // 단위 쌍 · 타입마다 세기 1인 씬 엣지 수(자주 나오는 대상만 나눈 약한 연결)
+  const weakOf = new Map();
+  for (const e of scenes) {
+    if (e.s !== 1 || e.fu === e.tu) continue;
+    const k = `${e.fu}\t${e.tu}\t${e.type}`;
+    weakOf.set(k, (weakOf.get(k) ?? 0) + 1);
+  }
+
   // ── 단위 엣지 ──
   const unitRows = csv('data/views/links/unit-edges.csv');
   let unknownUnit = 0;
@@ -89,6 +98,7 @@ export async function run(ctx) {
       from: r.from_unit, to: r.to_unit, type: r.type, count: num(r.count), strength: num(r.strength), origin: r.origins.split(/\s+/)[0],
       records, targets: [...targets].sort(), threads: [...threads].sort(), unconfirmed: num(r.unconfirmed) || undefined,
       note: noteOf.get(`${r.from_unit}\t${r.to_unit}\t${r.type}`),
+      weak: weakOf.get(`${r.from_unit}\t${r.to_unit}\t${r.type}`) || undefined,
     });
   });
   if (unknownUnit) warn({ where: 'links', msg: `units.json에 없는 단위가 끝점인 단위 엣지 ${unknownUnit}건` });
