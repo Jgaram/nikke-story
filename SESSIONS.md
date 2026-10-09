@@ -2478,7 +2478,7 @@ X3(중요도 · 인물별 집계 — T3-6 · T3-8 · T4-8)은 한 세션에 크�
   - 인계(2026-10-09): Sonnet 에이전트. `site/tabs/world.js/.css` · `tools/site/export/world.mjs`(사전 메모의 작업 표기 `R14 …에서 더함` · 씬 근거 괄호 · `Q-A2-3` 제거 `cleanNote`, 단위 키를 제목으로) → `world.json`(항목 225 = 개념 63 · 사건 10 · 물건 20 · 조직 86 · 장소 46, 세계의 모습 449 · 분류 8). 테스트 `tests/site-world.test.mjs`.
     - 화면: 사전(종류 칩 · 정렬 · 목록 → 상세: 설명 · 다른 이름 · 사실 · 의문 · 세계의 모습 · 떡밥 · 함께 나온 항목(고리 그림) · 나온 스토리, 기본 니케) / 세계의 모습(분류별 묶음). 파라미터 `p.mode/item/type/sort/find/topic/hubs`. 종류는 색 없이 글자 칩(5색 범주를 새로 만들지 않음).
     - 공개: `.github/workflows/pages.yml` — `site/`만 빌드 없이 Pages에(서브모듈 안 받음 · 배포 전 본문 칼럼 이름 · 20MB 검사). Pages가 안 켜진 채 push마다 실패 알림이 와서(사용자 보고) **수동 실행만**으로 바꿔 둠 — 켠 뒤 push 트리거 주석을 푼다. 하위 경로(`/nikke-story/`)에서 도는 것 확인, 절대 경로 없음.
-    - 👤 남은 것(사용자): 게임사 2차 창작 가이드라인 확인 · Settings → Pages → Source "GitHub Actions" 켜기(주소 `https://jgaram.github.io/nikke-story/`).
+    - 👤 남은 것(사용자): Settings → Pages → Source "GitHub Actions" 켜기(주소 `https://jgaram.github.io/nikke-story/`). 가이드라인 확인은 Claude가 함(2026-10-09 — docs/views.md "공개 규칙", 하단 표기 고침).
   - 통합 점검(2026-10-09, Sonnet 에이전트): 리더 패널에 연결(`links-scenes.json` 지연 로드, 선 종류별) · 분류(그 시점 등급 · 왜 이 등급인가) · 탭 링크 섹션, 첫 방문 선택 바("어디까지 읽으셨나요?" — 메인 챕터 선택 · 전부 보기 · 나중에, localStorage), 스포일러 상태 줄을 `ui.hiddenNote` 한 모양으로 통일, 연대기 축 라벨 겹침 · 연결 탭 거르개 후보의 스포일러 누출 고침, `fmt.plain`(분석 문장 속 척추 · 줄기 · 단위 → 화면 말). docs/views.md W1 절 갱신 + "탭별 (W2–W7)" 표. 테스트 162 통과 · 원문 겹침 0.
     - 남은 것: 상단 검색은 컷오프와 무관하게 이름을 보인다(의도) · 분석 메모 문장 속 내부 ID · 옛 용어는 데이터라 그대로(용어만 `fmt.plain`으로 바꿔 보임). N2(신작 절차 준비)는 나중에 할 일 — 신작마다 `node tools/site/export.mjs` 뒤 `site/data/` 커밋.
 

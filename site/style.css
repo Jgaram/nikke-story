@@ -416,6 +416,9 @@ th[aria-sort="descending"] .sort-mark::after { content: "↓"; color: var(--ink)
 /* ── 하단 ── */
 .foot { padding: 20px 20px 28px; text-align: center; font-size: var(--fs-small); color: var(--ink-muted); }
 .foot p { max-width: none; margin: 0; }
+.foot p + p { margin-top: 4px; }
+.foot p:empty { display: none; }
+.foot a { color: inherit; }
 
 /* ── 좁은 폭 ── */
 @media (max-width: 1180px) {

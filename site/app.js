@@ -172,7 +172,7 @@ function tabNav() {
 
 function footer(idx) {
   const d = idx.manifest?.last_date;
-  $('#data-basis').textContent = `${d ? `데이터 ${d} 기준 · ` : ''}© SHIFT UP · 비공식 팬 분석`;
+  $('#data-basis').textContent = d ? `데이터 ${d} 기준` : '';
 }
 
 let unmount = null;
