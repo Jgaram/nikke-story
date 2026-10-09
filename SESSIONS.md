@@ -2430,12 +2430,18 @@ X3(중요도 · 인물별 집계 — T3-6 · T3-8 · T4-8)은 한 세션에 크�
       비밀값 · 사용자 메일 없음(커밋 작성자는 Claude noreply).
     - 훅: SessionStart가 서브모듈을 받아 main에 붙인 뒤 DB를 만든다(못 받으면 add_repo 안내). Stop이 서브모듈의 push 안 된 커밋도 막는다. 규칙은 CLAUDE.md "브랜치 규칙" · "저작물 취급".
     - 새 세션은 두 레포를 다 고르고 연다(원본 레포가 없으면 DB를 못 만든다). W7 사이트는 이 레포의 Pages로 바뀌었다(docs/views.md "공개 규칙").
-- [ ] **W1 내보내기 + 사이트 뼈대** — T5-5 · T5-7 · T5-8
+- [x] **W1 내보내기 + 사이트 뼈대** — T5-5 · T5-7 · T5-8 (2026-10-09)
   - `tools/site/export.mjs`: `data/views/` CSV · DB → `site/data/*.json`(탭별 · 단위 · 씬 메타 · 기록 · 엣지). 허용 칼럼만 고르고 대사 본문 칼럼은 읽지 않는다. 인용 길이 검사(40자 경고 · 80자 자름).
     테스트: 내보낸 JSON에 본문 칼럼 이름 · 긴 인용이 없는지.
   - `site/index.html` + ES 모듈: 탭 틀 여섯(빈 탭), 상단 컷오프 슬라이더(기본 켬 · 메인 챕터 이름) · 층 거르개 · 검색(인물 · 대상 · 줄기 · 단위 · 기록 문장) · 씬 리더 패널(기록 · 엣지 · 메모 · 근거 한 줄) · URL 상태.
     d3 CDN 버전 고정. 로컬 확인은 `node tools/site/serve.mjs`(표준 http) 또는 파일로 연다.
   - 끝나면 docs/views.md "사이트 구성"에 파일 배치 · 실행법을 적는다.
+  - 인계(2026-10-09): 사용자 지시("시각화 작업 진행 — W 계획을 에이전트로 병렬 · 순차로 끝까지")로 **W1–W7을 한 세션에서** 관리자 세션이 에이전트 하나씩에 맡겨 했다("한 세션에 한 항목"의 예외, 사용자 지시). 원문은 읽지 않았다.
+    - 만든 것: `tools/site/export.mjs`(`--only` · `--out` · `--warnings`) · `lib.mjs`(csv · 허용 칼럼 `pick` · 인용 검사 · 기록 로딩) · `export/common.mjs` + 탭 모듈 틀 · `serve.mjs`. `site/`(index.html · style.css · app.js · `lib/{d3,state,data,format,ui,reader,search}.js` · `tabs/<6>.js/.css`) · `site/data/*.json`(6.6MB, 커밋) · `tests/site.test.mjs`(8개 — 금지 칼럼 · 긴 인용 · 건수). 규약 · 실행법은 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
+    - 건수: units 481 · ticks 158 · scenes 3,923(본문 없는 43 제외) · records 4,070(F · Q · F-k · Q-k · S) + records2 5,121(I · E · D · U · O · H) · threads 60 + 관계 44 · targets 611 · slips 7.
+    - 정한 것(Claude): URL 상태는 해시 하나(`#tab=&t=&layers=&q=&sel=종류:ID&p.<key>=`). 컷오프 기본 = CH.00 자리, 바꾼 값은 localStorage, `t=all` = 전부 보기. 컷오프 뒤 기록은 지우지 않고 가린다(리더 "컷오프 뒤 — 스포일러" 펼치기). 팔레트는 dataviz 스킬 규칙(종류 8색 범주 · 등급 램프 · 층 램프 · 라이트/다크 토큰 따로).
+    - 경고: 따옴표 인용 40자 초과 170건은 전부 패러프레이즈(check-quotes 원문 겹침 최장 38자 · 40자 이상 0), 80자 초과 2건(F2145 · F2568)은 자동으로 잘림. 테스트 133 통과.
+    - 남은 것: 리더 패널의 "관계선" 칸은 W3의 links JSON을 잇는다(통합 때). records 두 파일 6MB는 처음 필요할 때만 받는다.
 - [ ] **W2 탭 1 읽기 순서** — 화면 1 (T5-2 · T5-8)
   - 척추 가로축 + 메인 밖 단위를 등급 색으로. 컷오프를 움직이면 자리별 등급(`units.csv` `from` · `before` · `grade_path`). 단위 → 등급을 정한 한 건(기록 → 씬#줄) · 닿는 챕터 · 줄기 · 판정 이력 · 주역 명단. 자료: `data/views/importance/` · `leads/`.
 - [ ] **W3 탭 2 연결** — 화면 2 (T5-2)

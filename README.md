@@ -97,6 +97,13 @@ node tools/records.mjs progress         # 단위별 진행률
 node tools/records.mjs handoff          # 인계 파일 (annotations/read1/HANDOFF.md)
 ```
 
+공개 사이트(W — GitHub Pages, 빌드 도구 없는 정적 사이트. 배치 · 규약은 [docs/views.md](docs/views.md) "파일 배치 · 모듈 규약 · 실행법 (W1)"):
+
+```bash
+node tools/site/export.mjs              # data/views/ CSV · DB · 기록 → site/data/*.json (본문 칼럼은 읽지 않고, 40자 넘는 인용은 경고 · 80자는 자른다)
+node tools/site/serve.mjs --port 8765   # 로컬 확인용 정적 서버 → http://localhost:8765/
+```
+
 블라링크에 없는 스토리(사이드 스토리 · 서브퀘스트 · 유실물 · 이벤트 유실물 · 최근 이벤트)는 팬 사이트 **금서고**에서
 보조로 받는다(`tools/forbidden-library/fetch.mjs`, 규칙은 CLAUDE.md "금서고 요청 규칙"). 블라링크에 들어오면 블라링크로 돌아간다.
 

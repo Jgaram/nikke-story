@@ -389,6 +389,84 @@
 - 공개 전(W7)에 게임사의 2차 창작 · 팬 콘텐츠 가이드라인을 확인한다(👤 — 사용자 계정으로 보는 쪽이 맞다). 비영리 개인 분석 사이트 범위를 벗어나지 않는다.
 - Pages 켜기는 사용자가 GitHub 설정에서 한다(👤, W7 — Settings → Pages → Source "GitHub Actions"). 배포 워크플로는 W7에서 Claude가 쓴다.
 
+## 파일 배치 · 모듈 규약 · 실행법 (W1, 2026-10-09)
+
+W1이 만든 뼈대. **탭 에이전트(W2–W7)는 이 절과 `site/lib/*.js` 머리말 주석만 읽고 시작한다.** 공용 파일(`site/lib/` · `site/app.js` · `site/style.css` · `site/index.html` · `tools/site/lib.mjs` · `tools/site/export.mjs` · `tools/site/export/common.mjs`)은 고치지 않고,
+자기 `site/tabs/<name>.js` · `site/tabs/<name>.css` · `tools/site/export/<name>.mjs`만 만진다. 공용에 필요한 것(새 칸 · 새 컴포넌트 · 버그)은 인계 메모에 적어 보고한다.
+
+```
+tools/site/
+  export.mjs            node tools/site/export.mjs [--only <name>,…] [--out <dir>] [--warnings <파일>] [--quiet]
+                        → site/data/*.json + manifest.json. 경고(40자 넘는 따옴표 인용 등)는 stdout, 80자 넘는 인용은 자른다
+  lib.mjs               readCsv · writeJson(compact) · num · list · compact · pick(허용 칼럼) · quotesIn · quoteWarnings · clipQuotes · publishText ·
+                        loadRecords(annotations 전체 → { ds, membership, confirmed, byId }) · firstRef · evidenceOut · inputsFingerprint
+  export/common.mjs     공용 데이터(아래) — 늘 먼저 돈다. 결과를 ctx.common에 둔다
+  export/<name>.mjs     탭별(order · links · threads · persons · chrono · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
+  serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
+site/
+  index.html            뼈대 — 상단 바(이름 · 검색 · 컷오프 · 층 · 테마) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 출처 · 저작권)
+  style.css             디자인 토큰(라이트/다크 둘 다 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
+  app.js                부팅: data.index() → fmt.use(idx) → state.init → 상단 바 · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
+  lib/d3.js             export * from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm' — 브라우저 쪽 유일한 외부 의존성. 탭은 ctx.d3로 쓴다
+  lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
+  tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈. W1은 자리 표시 — 탭 에이전트가 갈아 끼운다
+  data/*.json           내보낸 데이터(커밋한다 — Pages가 그대로 낸다)
+tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest 건수 · 단위 481 · 자리 158 · 본문 칼럼 이름 없음 · 인용 80자 이하 · 40자 초과는 경고 · 소스 정적 검사 · 정적 서버
+```
+
+**실행법** — `node tools/site/export.mjs` → `node tools/check-quotes.mjs`(원문과 40자 이상 겹침 0인지) → `node --test` → `node tools/site/serve.mjs` 뒤 `http://localhost:8765/`.
+탭 하나만 다시 뽑을 때는 `--only links`(공용 데이터는 늘 계산하되 그 모듈 파일만 쓴다). 파일로 직접 열면(`file://`) fetch가 막히므로 서버로 본다.
+
+**공용 데이터 파일(`site/data/`, export/common.mjs)** — 키 이름은 영문 소문자, 빈 값은 칸 자체가 없다(`compact`), 숫자는 숫자.
+
+| 파일 | 건 | 칸 |
+|---|---|---|
+| `units.json` | 481 | `key` · `kind`(main · event · episode · sub · relic · side · erelic · elevator) · `title`(CH.07 재회 · OVER ZONE · 라피 (호감도 5편) · 칠리페퍼 1) · `name` `num`(메인만) · `order`(읽는 자리 1–481) · `tick`(공개 자리 1–158) · `date` · `date_confidence`(확실 · 추정) · `via`(공개일 · 딸림) · `grade`(메인 · 척추 · 필수 · 보강 · 참고 · 독립) · `layer`(1–3) · `chars` · `scenes` · `lines` · `chrono{class(판별 · 범위 · 상대 · 불명), place, lo, hi, release_main, drift}` · `library`(금서고 원문) · `replaces`(금서고 단위가 대신하는 블라링크 키 — `fl:for_rest` → `event_forrest`) · `judgment`(층 판정 K-ID) · `spine` |
+| `ticks.json` | 158 | `tick` · `date` · `main`(그 자리의 메인 챕터 키, 없으면 칸 없음) · `upto`(그 자리까지의 마지막 메인 챕터 — 라벨용) · `count` · `units[]` |
+| `scenes.json` | 3,923 | `id` · `unit` · `seq`(단위 안 1부터) · `title` · `lines` · `has_text`(0일 때만) · `part`(이벤트 파트 이름) · `level`(호감도 레벨). 본문 없음. 금서고로 대신된 블라링크 이벤트의 본문 없는 씬 43은 뺐다 |
+| `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
+| `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다 |
+| `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
+| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how}]` · `same_as[]`(확정 정체 연결) · `lines` · `stories` |
+| `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
+| `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}` · `warnings` |
+
+기록 공통 칸: `id` · `kind` · `unit` · `scene`(첫 근거 씬) · `line`(첫 근거 첫 줄) · `evidence[{scene, lines[]}]`(줄은 숫자 또는 "12-17") · `text` · `about[]` · `confidence` · `tick` · `order`(단위의 자리) · `threads[]` · `reason`(왜 이렇게 읽었나) · `user`(사용자가 확정했으면 true).
+종류별: F · Q는 `state`(열림 · 일부 · 풀림 · 뒤집힘) · `first_tick` · `hint_tick` · `partial_tick` · `solved_tick` · `reversed_tick` · `replaced_by` · `last_tick` · `reinforce` · `callbacks`(timeline/records.csv);
+F-k · Q-k는 `act` · `parent` · `answer` · `degree` · `replaced_by`; S는 `time_kind` · `ref` · `subject` · `at` · `years`; I는 `target` · `speaker`(text 없음); E는 `act` · `points[]`; D는 `person` · `aspect` · `act` · `before` · `after` · `with[]` · `trigger` · `time` · `points[]`(변화는 text 없음 — `fmt.recordText`가 전 → 후로 만든다); U는 `topic` · `points[]`; O는 `type` · `chain` · `built[]` · `end` · `closing[]`(unit = end, scene 없음); H는 `title` · `end` · `members[]`.
+기각 · 후보 기록은 싣지 않는다. 기록 문장 속 따옴표 인용은 80자에서 잘린다(…).
+
+**URL 상태(`lib/state.js`)** — 해시 하나: `#tab=order&t=20&layers=1,2&q=라피&sel=unit:ch07&p.kind=event`.
+`tab`(여섯 중 하나) · `t`(컷오프 공개 자리, `all` = 끔) · `layers`(없으면 셋 다) · `q`(검색어) · `sel`(`종류:ID` — `unit:ch07` · `scene:d_main_07_02` · `record:F203` · `person:person:라피` · `target:place:방주` · `thread:J1` · `tick:20`; 있으면 리더가 열린다) · `p.<key>`(지금 탭의 파라미터 — 탭을 바꾸면 지워진다).
+API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 number[], `p`는 객체) · `set(patch, { replace })`(history를 쌓는다, replace면 덮는다) · `subscribe(fn)`(fn(state, changed: Set) — 바뀐 키만) · `param(tab, key)` · `setParam(tab, key, value)` · `parseSel` · `makeSel` · `visible(tick, t?)` · `lastCutoff()`.
+**컷오프 규칙**: 처음 열면 CH.00의 자리(1). 사용자가 바꾼 값은 `localStorage['nikke-story.t']`에 남아 다음 방문에 쓴다(URL의 `t`가 있으면 그것이 이긴다). "전부 보기" 스위치 = `t=all`. 단위 · 기록은 `tick ≤ t`면 보이고, 뒤의 것은 **지우지 않고 가린다**(리더: 흐림 + "컷오프 뒤 — 스포일러" 펼치기). 숨긴 개수 표시는 탭 몫. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
+
+**데이터(`lib/data.js`)** — `load(name)`(fetch + 캐시, `./data/<name>.json`, 실패 시 한국어 Error) · `loadRecords()` · `index({ records })` → `idx`: `unitList` · `units`(Map) · `tickList` · `ticks` · `mainTicks` · `scenes` · `scenesOf(unit → scene[])` · `tickOf(key)` · `unitOf(sceneId)` · `targets` · `targetList` · `threads` · `threadList` · `relations` · `slips` · `slipsOf` · `manifest`,
+기록은 `idx.withRecords()`(또는 `index({ records: true })`) 뒤에 `records`(Map) · `recordList` · `recordsOf(scene)` · `recordsOfUnit` · `eventsOf(root)` · `recordsOfThread` · `recordsAbout(target)`. 기록 두 파일(6MB)은 처음 필요할 때 받는다 — 탭은 꼭 필요할 때만 `withRecords()`를 부른다.
+탭 전용 JSON은 `ctx.data.load('<name>')`으로 받는다(자기 export 모듈이 만든 파일).
+
+**표기 · 색(`lib/format.js`)** — `KIND` · `KIND_ORDER` · `GRADE` · `GRADE_ORDER` · `LAYER` · `STATE` · `RECORD_KIND` · `RECORD_ORDER` · `TARGET_TYPE` · `CONFIDENCE` · `THREAD_WEIGHT` · `CHRONO_CLASS`(라벨 + `color: 'var(--…)'`) · `use(idx)` · `unitTitle(u | key)` · `tickLabel(tick, { date })`(`CH.20까지 · 2023-01-12` / `CH.17 뒤 · 2022-11-10`) · `tickShort(tick)`(`CH.20` / `CH.17+`) · `ref(scene, line)` · `evidence(ev[])` · `targetName(id)` · `recordText(r)` · `recordLabel(r)` · `stateAt(r, T)` · `num` · `pct`.
+색 값은 `style.css`의 `:root` 토큰 한 곳에만 있다(라이트 · 다크 각각, dataviz 스킬의 검증 팔레트): 종류 8색은 범주(`--kind-main` 파랑 · `--kind-event` 주황 · `--kind-episode` 청록 · `--kind-sub` 노랑 · `--kind-relic` 자홍 · `--kind-side` 초록 · `--kind-erelic` 보라 · `--kind-elevator` 빨강 — 고정 순서, 돌려 쓰지 않는다), 등급은 파랑 한 색의 순서 램프(`--grade-must` > `--grade-support` > `--grade-ref` > `--grade-standalone`, 척추 · 메인은 잉크 `--grade-spine` · `--grade-main`), 층은 주황 램프(`--layer-1` > `--layer-2` > `--layer-3`), 상태는 고정(`--state-open` 열림 · `--state-partial` 일부 · `--state-solved` 풀림 · `--state-reversed` 뒤집힘 · `--state-hint` 암시만 · `--state-none` 아직).
+바탕 · 잉크 · 선: `--bg` `--surface` `--surface-2` `--ink` `--ink-2` `--ink-muted` `--line` `--line-2` `--accent` `--link` `--focus`. 규칙: 종류 색과 등급 색을 한 차트에 같이 쓰지 않는다(파랑이 겹친다) · 색만으로 뜻을 전하지 않는다(칩 · 범례 · 직접 라벨) · 다크는 자동 반전이 아니라 토큰에 따로 있다 · 차트의 글자는 잉크 토큰.
+
+**컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · layer · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body)` · `details(summary, body, { open })` · `empty` · `spinner` · `notice(text, kind)` · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }`. 모두 키보드 · aria 기본값 포함.
+
+**리더(`lib/reader.js`)** — `open(sel)` · `close()` · `isOpen()`. app.js가 `sel` 변화에 맞춰 부르므로 탭은 `state.set({ sel })`만 하면 된다. 단위(메타 · 씬 목록 · 기록 요약 · 설정 오류 메모) · 씬(메타 · 그 씬의 기록 종류별 · 앞뒤 씬) · 기록(전문 · 근거 · 이유 · 대상 · 줄기 · 같은 뿌리) · 인물 · 대상(사전 · 기록) · 줄기(의문 · 사실 · 관계) · 공개 자리. 관계선 칸은 "W3" 자리만 — W3가 `links.json`을 만들면 리더의 관계선 칸을 채우는 것은 W3 몫(공용 파일이라 보고 뒤 W1 규약대로 고친다).
+
+**검색(`lib/search.js`)** — 상단 입력 하나(단축키 `/`). 단위 · 인물 · 대상(별칭 포함) · 줄기는 바로, 기록 문장은 처음 검색할 때 받는다. 종류별 묶음 · 최대 50건 · ↑↓ Enter Esc. 고르면 `sel`로 열고 unit → 읽기 순서, person → 인물, target → 세계, thread → 떡밥 탭으로(record는 지금 탭).
+
+**탭 모듈 규약(`site/tabs/<name>.js`)**
+
+```js
+export const meta = { id: 'order', title: '읽기 순서', blurb: '한 줄 설명' };
+export async function mount(root, ctx) { /* root(main)에 그린다 */ return () => { /* 정리: 구독 해제 · 타이머 */ }; }
+```
+`ctx = { state, data, fmt, ui, reader, d3, idx }` — `idx`는 `data.index()` 결과(기록은 `idx.withRecords()` 뒤), `d3`는 CDN을 못 받으면 null(탭이 안내문을 보인다).
+탭은 `state.subscribe`로 `t` · `layers` · `sel` · `p` 변화를 받아 **부분 갱신**한다(전체 재마운트 말고 — `table.update(rows)` · `setSelected`). 자기 파라미터는 `state.param(meta.id, key)` · `setParam`. 탭 CSS는 `tabs/<name>.css`에만, 클래스는 `.tab-<name> …`로 범위를 가둔다(main에 `tab-<name>` 클래스가 붙는다). 스타일 값은 토큰(`var(--…)`)만 쓴다.
+탭 전용 데이터는 `tools/site/export/<name>.mjs`의 `run(ctx)`가 만든다 — `ctx = { db, csv(path), records, units, unitByKey, common, out, warn }`. `ctx.common`(units · ticks · scenes · records · threads · relations · targets · slips · scenesOf · placeOf)을 가져다 쓰고 다시 만들지 않는다. DB는 `lib.mjs`의 `pick()`으로 허용 칼럼만(`stories`는 id · kind · source · category_id · title · order_index · has_text · line_count · attractive_level, `lines` 테이블은 열지 않는다) · 외부 참고 표(`sheet_*` · `sheet_rows` · `data/raw/imported/`)는 열지 않는다 — `tests/site.test.mjs`가 소스를 정적으로 검사한다. 기록 문장을 실을 때는 `publishText(text, where, ctx.warn)`로 인용을 검사 · 자른다. 탭 JSON의 건수는 manifest에 자동으로 든다.
+
+**확인(W1, 2026-10-09)** — 헤드리스 크로미움(CDP)으로: 표 줄 클릭 → `sel=unit:…` · 리더 열림 → 씬 · 기록 링크 → `sel` 바뀜 · 뒤로 가기 복원 · 컷오프 슬라이더 → `t` + localStorage · 전부 보기 → `t=all` · 층 → `layers=1,2` · 세그먼트 → `p.kind` · 검색(단위 · 인물 · 줄기 · 기록 묶음) → 고르면 탭 이동 + 리더 · 여섯 탭 모두 마운트 · 컷오프 뒤 단위 · 기록은 스포일러 접힘. 콘솔 오류 0. 라이트 · 다크 · 390px(가로 스크롤 없음, 리더는 아래 시트) 스크린샷 확인.
+
 ## 1층 끝 시안 (C1, 2026-10-08) — 1회독 + 2회독
 
 [data/views/read2/report.md](../data/views/read2/report.md) — 1층 240단위(원문 대사 280만 자)를 2회독한 뒤. 2회독 기록 3,524(암시 언급 484 · 떡밥 1,243 · 인물 변화 1,348 · 생활상 449, 추정 17%) ·
