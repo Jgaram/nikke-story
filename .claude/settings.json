@@ -5,13 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/single-branch.mjs\" session-start",
-            "timeout": 90
-          },
-          {
-            "type": "command",
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ensure-db.mjs\"",
-            "timeout": 300
+            "timeout": 420
           }
         ]
       }

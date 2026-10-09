@@ -90,7 +90,41 @@ function sessionStart() {
   });
 }
 
+/** origin/main과 공통 조상이 있는가. 얕은 클론은 connectShallowHistory()로 먼저 이어 둔다. */
+const connected = (ref) => tryGit(['merge-base', ref, TRACKING]) !== null;
+
+/**
+ * origin/main과 이어지지 않는 로컬 히스토리(HEAD · main)를 치운다.
+ * 2026-10-09: 재사용된 컨테이너에 공개 전환(새 히스토리) 전의 옛 클론이 남아, 로컬 main이 원문이 든 옛 커밋 50개를
+ * "push 안 된 커밋"으로 들고 있었다. 이걸 rebase · push하면 원문이 public 레포로 나간다.
+ * 그래서 push하라고 안내하지 않고, 로컬 백업 브랜치(stale/*)만 남긴 채 origin/main으로 맞춘다. 백업은 push하지 않는다.
+ */
+function dropUnrelatedHistory() {
+  const current = currentBranch();
+  const refs = [];
+  if (count(`${TRACKING}..HEAD`) && !connected('HEAD')) refs.push(['HEAD', current ?? 'detached']);
+  const main = `refs/heads/${BRANCH}`;
+  if (current !== BRANCH && hasRef(main) && count(`${TRACKING}..${main}`) && !connected(main)) refs.push([main, BRANCH]);
+  if (!refs.length) return null;
+
+  const stamp = new Date().toISOString().replace(/\D/g, '').slice(0, 12);
+  const kept = refs.map(([ref, name]) => {
+    const backup = `stale/${name}-${stamp}`;
+    git(['branch', '-f', backup, ref]);
+    return `${name}(${count(`${TRACKING}..${backup}`)}커밋) → ${backup}`;
+  });
+  const dirty = dirtyCount();
+  if (dirty) tryGit(['stash', 'push', '--quiet', '-m', `stale ${stamp}`]);
+  git(['checkout', '--quiet', '--force', '-B', BRANCH, TRACKING]);
+  return [
+    `- 로컬 히스토리가 origin/main과 공통 조상이 없다(재사용된 컨테이너의 옛 클론). push하지 말 것 — 원문이 든 옛 커밋일 수 있다.`,
+    `  origin/main으로 맞추고 옛 쪽은 로컬 백업만 남겼다: ${kept.join(', ')}${dirty ? ` · 커밋 안 된 변경 ${dirty}개는 git stash` : ''}.`,
+  ];
+}
+
 function moveToMain() {
+  const dropped = dropUnrelatedHistory();
+  if (dropped) return dropped;
   const current = currentBranch();
   const ahead = count(`${TRACKING}..HEAD`);
   const behind = count(`HEAD..${TRACKING}`);
