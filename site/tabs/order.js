@@ -21,8 +21,8 @@
  *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급. 내려가는 일은 없다.
  *   여기까지 읽음 뒤 스토리(tick > T) · 범위 거르개 밖 스토리는 숨기고 개수만 보인다("스포일러로 가린 N — 전부 보기").
  *   목록: 감상 순서 한 줄(ol). 본편 줄(메인 챕터는 굵은 구분 줄, 본편 이벤트 · 사이드는 '본편' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
- *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 이유(한 줄 말줄임) · 글자. 거르개는 그 시점의 등급(gradeAt)으로 본다.
- *     본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 제목 / 이유로 접는다.
+ *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 글자. 이유(분석 문장)는 목록에 싣지 않고 분류 카드 · 리더에만(사용자 — 목록이 설명으로 길어진다).
+ *     거르개는 그 시점의 등급(gradeAt)으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
  *   지도: 본편 60곳(메인 49 + 본편 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 본편 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
  *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 그 시점의 등급(파랑 램프), 점 크기는 같다.
  *     나중에 등급이 오르는 점은 오를 등급 색 테두리. 본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
@@ -179,14 +179,14 @@ export async function mount(root, ctx) {
       attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}`;
       return ui.el('li', attrs, num,
         ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind)),
-        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title)), ui.el('span', { class: 'order-why' }), chars);
+        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title)), chars);
     }
     const g = gradeAt(item, T);
     attrs.class = 'order-row is-extra';
     return ui.el('li', attrs, num,
       ui.el('span', { class: 'order-badges' }, ui.chip('grade', g), ui.chip('kind', unit.kind)),
       ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), riseNote(item)),
-      ui.el('span', { class: 'order-why', title: item.reason ? plain(item.reason) : null }, plain(item.reason ?? '')), chars);
+      chars);
   };
   const markSelected = (key) => {
     for (const li of listEl.children) { const on = li.dataset.key === key; li.classList.toggle('is-selected', on); li.setAttribute('aria-current', on ? 'true' : 'false'); }

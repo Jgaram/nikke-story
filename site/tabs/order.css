@@ -48,7 +48,7 @@
 .tab-order .order-list { container: order-seq / inline-size; }
 .tab-order .order-seq { margin: 0 0 22px; padding: 0; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 .tab-order .order-row {
-  display: grid; grid-template-columns: 2.6em 9.5em minmax(8em, 20em) minmax(0, 1fr) 5.2em; align-items: baseline; gap: 0 10px;
+  display: grid; grid-template-columns: 2.6em 9.5em minmax(0, 1fr) 5.2em; align-items: baseline; gap: 0 10px;
   padding: 6px 12px; border-top: 1px solid var(--line); cursor: pointer;
 }
 .tab-order .order-row:first-child { border-top: 0; }
@@ -61,24 +61,19 @@
 .tab-order .order-chars { color: var(--ink-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 .tab-order .order-rise { display: block; font-size: 12px; color: var(--ink-muted); }
 .tab-order .order-rise.is-future { color: var(--link); font-weight: 600; }
-.tab-order .order-why { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: var(--ink-2); }
 /* 본편 — 메인 챕터는 굵은 구분 줄(제목이 칩 칸까지 넓게), 본편 이벤트 · 사이드는 본편 칩 */
 .tab-order .order-row.is-main { padding-top: 9px; padding-bottom: 9px; background: var(--surface-2); border-top-color: var(--line-2); }
 .tab-order .order-row.is-main .order-badges { display: none; }
-.tab-order .order-row.is-main .order-title { grid-column: 2 / 5; font-weight: 700; font-size: 15px; }
-.tab-order .order-row.is-main .order-why { display: none; }
+.tab-order .order-row.is-main .order-title { grid-column: 2 / 4; font-weight: 700; font-size: 15px; }
 .tab-order .order-row.is-main.is-selected { background: color-mix(in srgb, var(--accent) 13%, var(--surface-2)); }
 .tab-order .order-row.is-spine .order-title { font-weight: 600; }
-.tab-order .order-row.is-spine .order-why { display: none; }
-.tab-order .order-row.is-spine .order-title { grid-column: 3 / 5; }
 
 @container order-seq (max-width: 640px) {
-  .tab-order .order-row { grid-template-columns: 2.2em minmax(0, 1fr) auto; grid-template-areas: "n badges chars" "n title title" "n why why"; gap: 2px 8px; }
+  .tab-order .order-row { grid-template-columns: 2.2em minmax(0, 1fr) auto; grid-template-areas: "n badges chars" "n title title"; gap: 2px 8px; }
   .tab-order .order-n { grid-area: n; }
   .tab-order .order-badges { grid-area: badges; }
   .tab-order .order-chars { grid-area: chars; }
   .tab-order .order-title, .tab-order .order-row.is-spine .order-title { grid-area: title; grid-column: auto; }
-  .tab-order .order-why { grid-area: why; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; }
   .tab-order .order-row.is-main { grid-template-areas: "n title chars"; }
   .tab-order .order-row.is-main .order-title { grid-area: title; grid-column: auto; }
 }
