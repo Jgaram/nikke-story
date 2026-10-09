@@ -1,2 +1,228 @@
-/* 탭 persons 스타일 — W5가 채운다. 클래스는 .tab-persons 아래에만 둔다(공용 style.css를 고치지 않는다). */
-.tab-persons {}
+/* 탭 persons(W5) — 클래스는 .tab-persons 아래에만. 색은 style.css 토큰, 히트맵 5단계만 여기 토큰(--pm-*)을 둔다(라이트 · 다크 둘 다). */
+.tab-persons {
+  /* 파랑 한 색의 순서 램프(말한 줄 수) — 라이트: 옅음 → 진함 */
+  --pm-0: #ebeae4;      /* 스토리는 있는데 안 나온 칸 */
+  --pm-1: #cfe0f6;
+  --pm-2: #9fc3ee;
+  --pm-3: #5f9fe6;
+  --pm-4: #2a78d6;
+  --pm-5: #0d366b;
+  --pm-name: #b3b1a7;   /* 이름만 나온 스토리 */
+  --pm-inv: #c27d00;    /* 출시순과 반대 */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tab-persons {
+    --pm-0: #262625; --pm-1: #1f3a5f; --pm-2: #25508a; --pm-3: #3987e5; --pm-4: #6da7ec; --pm-5: #b8d6f8;
+    --pm-name: #5d5c57; --pm-inv: #fab219;
+  }
+}
+:root[data-theme="dark"] .tab-persons {
+  --pm-0: #262625; --pm-1: #1f3a5f; --pm-2: #25508a; --pm-3: #3987e5; --pm-4: #6da7ec; --pm-5: #b8d6f8;
+  --pm-name: #5d5c57; --pm-inv: #fab219;
+}
+
+/* ── 도구줄 · 숨김 안내 ── */
+.tab-persons .pm-bar { margin-top: 4px; gap: 10px 14px; }
+.tab-persons .pm-find { width: 220px; max-width: 100%; height: 34px; }
+.tab-persons .pm-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: -4px 0 10px; font-size: 13px; color: var(--ink-2); }
+.tab-persons .pm-note::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--spoiler); flex: none; }
+.tab-persons .pm-note .btn { height: 26px; padding: 0 10px; font-size: 12.5px; }
+
+/* ── 배치: 왼쪽 목록 + 오른쪽 상세 (좁으면 위아래) ── */
+.tab-persons .pm-wrap { container-type: inline-size; container-name: pm; }
+.tab-persons .pm-body { display: grid; grid-template-columns: 248px minmax(0, 1fr); gap: 20px; align-items: start; }
+.tab-persons .pm-listbox { position: sticky; top: calc(var(--topbar-h, 56px) + var(--tabs-h, 44px) + 12px); min-width: 0; }
+.tab-persons .pm-listpanel {
+  display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius, 10px); box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - var(--topbar-h, 56px) - var(--tabs-h, 44px) - 32px); overflow: hidden;
+}
+.tab-persons .pm-listhead { display: flex; align-items: center; gap: 8px; padding: 8px 8px 6px; border-bottom: 1px solid var(--line); }
+.tab-persons .pm-select { flex: 1 1 auto; min-width: 0; height: 30px; font-size: 13px; padding: 0 8px; }
+.tab-persons .pm-listcount { flex: none; font-size: 12.5px; }
+.tab-persons .pm-list { overflow: auto; padding: 4px; outline-offset: -2px; }
+.tab-persons .pm-item { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: baseline; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
+.tab-persons .pm-item:hover { background: var(--surface-2); }
+.tab-persons .pm-item.is-sel { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); box-shadow: inset 2px 0 0 var(--accent); }
+.tab-persons .pm-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+.tab-persons .pm-item.is-sel .pm-item-name { font-weight: 600; }
+.tab-persons .pm-item-kind { font-size: 11.5px; color: var(--ink-muted); }
+.tab-persons .pm-item-metric { min-width: 2.2em; text-align: right; font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tab-persons .pm-empty { padding: 14px 10px; }
+.tab-persons .pm-pick { display: none; width: 100%; justify-content: space-between; align-items: center; gap: 8px; height: 40px; }
+.tab-persons .pm-pick .pm-pick-chev { margin-left: auto; color: var(--ink-muted); }
+.tab-persons .pm-pick strong { font-weight: 600; }
+
+/* ── 상세 머리 ── */
+.tab-persons .pm-detail { min-width: 0; }
+.tab-persons .pm-head { container-type: inline-size; container-name: pmh; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius, 10px); box-shadow: var(--shadow-sm); padding: 16px 18px 14px; }
+.tab-persons .pm-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.tab-persons .pm-title h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.tab-persons .pm-title .chips { margin: 0; }
+.tab-persons .pm-title-link { margin-left: auto; font-size: 13px; }
+.tab-persons .pm-sub { margin-top: 6px; font-size: 13px; color: var(--ink); display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.tab-persons .pm-sep { color: var(--ink-muted); }
+.tab-persons .pm-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.tab-persons .pm-stat { padding: 8px 12px; background: var(--surface-2); border-radius: var(--radius-sm, 8px); border-left: 3px solid transparent; min-width: 0; }
+.tab-persons .pm-stat.is-open { border-left-color: var(--state-open); }
+.tab-persons .pm-stat-v { font-size: 20px; font-weight: 650; line-height: 1.25; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.tab-persons .pm-stat-l { font-size: 12px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tab-persons .pm-span { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: 13.5px; }
+.tab-persons .pm-head .notice { margin: 12px 0 8px; }
+
+/* ── 접는 칸 ── */
+.tab-persons .pm-sec { margin-top: 12px; padding: 2px 18px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius, 10px); box-shadow: var(--shadow-sm); }
+.tab-persons .pm-sec > summary { padding: 10px 0 6px; font-size: 15px; font-weight: 650; color: var(--ink); }
+.tab-persons .pm-sec:not([open]) > summary { padding-bottom: 10px; }
+.tab-persons .pm-sec-sum { display: flex; flex: 1; align-items: baseline; gap: 10px; min-width: 0; }
+.tab-persons .pm-count { margin-left: auto; font-size: 13px; font-weight: 400; color: var(--ink-2); }
+.tab-persons .pm-sec .details-body { padding-top: 2px; }
+.tab-persons .pm-sectools { margin: 2px 0 10px; gap: 8px 14px; }
+.tab-persons .pm-hint { font-size: 12.5px; margin-top: 4px; }
+.tab-persons .pm-subhead { margin: 16px 0 6px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.tab-persons .mono { font-family: var(--mono); font-size: 12px; }
+
+/* ── SVG 공통 ── */
+.tab-persons svg text { font-family: var(--font); }
+.tab-persons .pm-svg-label { fill: var(--ink-2); font-size: 11.5px; }
+.tab-persons .pm-svg-note { fill: var(--ink-muted); font-size: 12px; }
+.tab-persons .pm-axis { stroke: var(--line-2); stroke-width: 1; }
+.tab-persons .pm-axis-tick { stroke: var(--line-2); stroke-width: 1; }
+
+/* ── 히트맵 ── */
+.tab-persons .pm-heat-frame { overflow: hidden; }
+.tab-persons .pm-heat { display: block; width: 100%; height: auto; touch-action: manipulation; }
+.tab-persons .pm-heat-bg { fill: var(--pm-0); }
+.tab-persons .pm-cell.pm-b1 { fill: var(--pm-1); }
+.tab-persons .pm-cell.pm-b2 { fill: var(--pm-2); }
+.tab-persons .pm-cell.pm-b3 { fill: var(--pm-3); }
+.tab-persons .pm-cell.pm-b4 { fill: var(--pm-4); }
+.tab-persons .pm-cell.pm-b5 { fill: var(--pm-5); }
+.tab-persons .pm-cell.pm-name { fill: var(--pm-name); }
+.tab-persons .pm-cell.is-picked { stroke: var(--ink); stroke-width: 1.5; }
+.tab-persons .pm-unread { fill: url(#pm-hatch); }
+.tab-persons .pm-hatch-line { stroke: var(--line-2); stroke-width: 1; opacity: 0.8; }
+.tab-persons .pm-cursor { fill: none; stroke: var(--ink); stroke-width: 1.5; pointer-events: none; }
+.tab-persons .pm-topunits { margin-top: 8px; font-size: 13px; }
+.tab-persons .legend { margin: 8px 0 0; }
+
+/* ── 함께 나온 인물 ── */
+.tab-persons .pm-partners { list-style: none; margin: 0; padding: 0; }
+.tab-persons .pm-partner { display: grid; grid-template-columns: minmax(96px, 168px) minmax(0, 1fr) 76px; align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.tab-persons .pm-partner:last-child { border-bottom: 0; }
+.tab-persons .pm-partner-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+.tab-persons .pm-partner-kind { font-size: 11.5px; }
+.tab-persons .pm-bar-track { display: block; height: 10px; border-radius: 5px; background: var(--pm-0); overflow: hidden; }
+.tab-persons .pm-bar-fill { display: block; height: 100%; background: var(--pm-3); border-radius: 5px; overflow: hidden; }
+.tab-persons .pm-bar-talk { display: block; height: 100%; background: var(--pm-5); }
+.tab-persons .pm-partner-n { text-align: right; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tab-persons .pm-more { margin-top: 8px; }
+.tab-persons .pm-graph-frame { overflow: hidden; }
+.tab-persons .pm-graph { display: block; width: 100%; height: auto; }
+.tab-persons .pm-edge { fill: none; stroke-linecap: round; transition: opacity 0.12s; }
+.tab-persons .pm-edge-c { stroke: var(--pm-3); opacity: 0.6; }
+.tab-persons .pm-edge-pp { stroke: var(--line-2); opacity: 0.95; }
+.tab-persons .pm-graph.has-hot .pm-edge { opacity: 0.1; }
+.tab-persons .pm-graph.has-hot .pm-edge.is-hot { opacity: 1; }
+.tab-persons .pm-graph.has-hot .pm-edge-c.is-hot { stroke: var(--pm-5); }
+.tab-persons .pm-node { cursor: pointer; outline: none; }
+.tab-persons .pm-node-hit { fill: transparent; }
+.tab-persons .pm-node-dot { fill: var(--pm-4); stroke: var(--surface); stroke-width: 2; transition: fill 0.12s; }
+.tab-persons .pm-node:hover .pm-node-dot, .tab-persons .pm-node.is-hot .pm-node-dot { fill: var(--pm-5); }
+.tab-persons .pm-node:focus-visible .pm-node-dot { stroke: var(--focus); stroke-width: 3; }
+.tab-persons .pm-node-label, .tab-persons .pm-center-label { fill: var(--ink); font-size: 12.5px; paint-order: stroke; stroke: var(--surface); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
+.tab-persons .pm-center-label { font-size: 14px; font-weight: 700; }
+.tab-persons .pm-center { fill: var(--ink); stroke: var(--surface); stroke-width: 3; }
+
+/* ── 변화 ── */
+.tab-persons .pm-chg-frame { overflow-x: auto; overflow-y: hidden; }
+.tab-persons .pm-chg { display: block; max-width: none; }
+.tab-persons .pm-lane { stroke: var(--line); stroke-width: 1; }
+.tab-persons .pm-band { fill: var(--surface-2); opacity: 0.7; }
+.tab-persons .pm-gap { stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 3 3; }
+.tab-persons .pm-dot { cursor: pointer; outline: none; }
+.tab-persons .pm-dot-hit { fill: transparent; }
+.tab-persons .pm-dot.is-change .pm-dot-mark { fill: var(--pm-4); stroke: var(--surface); stroke-width: 1.5; }
+.tab-persons .pm-dot.is-base .pm-dot-mark { fill: var(--surface); stroke: var(--pm-4); stroke-width: 2; }
+.tab-persons .pm-dot-inv { fill: none; stroke: var(--pm-inv); stroke-width: 2.2; }
+.tab-persons .pm-flag { fill: var(--ink); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.tab-persons .pm-dot:hover .pm-dot-mark, .tab-persons .pm-dot:focus-visible .pm-dot-mark, .tab-persons .pm-dot.is-hot .pm-dot-mark { stroke: var(--ink); stroke-width: 2; }
+.tab-persons .pm-dot.is-picked .pm-dot-mark { stroke: var(--ink); stroke-width: 2.5; }
+.tab-persons .pm-legend2 { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; margin: 2px 0 4px; }
+.tab-persons .pm-key { display: inline-flex; align-items: center; gap: 4px; }
+.tab-persons .pm-key svg { display: block; }
+.tab-persons .pm-key-base { fill: var(--surface); stroke: var(--pm-4); stroke-width: 2; }
+.tab-persons .pm-key-change { fill: var(--pm-4); }
+.tab-persons .pm-key-inv { fill: none; stroke: var(--pm-inv); stroke-width: 2.2; }
+.tab-persons .pm-key-flag { fill: var(--ink); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
+.tab-persons .legend .swatch { border-radius: 50%; }
+
+.tab-persons ol.pm-changes, .tab-persons .pm-recs, .tab-persons .pm-closures, .tab-persons .pm-threads { list-style: none; margin: 10px 0 0; padding: 0; }
+.tab-persons .pm-change { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; padding: 8px 6px; border-bottom: 1px solid var(--line); cursor: pointer; border-radius: 6px; }
+.tab-persons .pm-change:last-child, .tab-persons .pm-rec:last-child { border-bottom: 0; }
+.tab-persons .pm-change:hover, .tab-persons .pm-change.is-hot, .tab-persons .pm-rec:hover, .tab-persons .pm-closure:hover { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.tab-persons .pm-change.is-picked, .tab-persons .pm-rec.is-picked, .tab-persons .pm-closure.is-picked { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.tab-persons .pm-change-n { text-align: right; font-size: 12px; color: var(--ink-muted); padding-top: 2px; }
+.tab-persons .pm-change-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 13.5px; }
+.tab-persons .pm-act { font-weight: 600; }
+.tab-persons .pm-change-text { margin: 3px 0 2px; font-size: 14px; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.tab-persons .pm-change-meta, .tab-persons .pm-rec-meta { font-size: 12.5px; }
+.tab-persons .pm-tag { display: inline-flex; align-items: center; height: 19px; padding: 0 7px; font-size: 11.5px; color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 10px; white-space: nowrap; }
+.tab-persons .pm-tag.is-inv { border-color: var(--pm-inv); }
+.tab-persons .pm-tag.is-end { border-color: var(--ink-2); color: var(--ink); }
+
+/* ── 결말 · 사실 · 의문 · 떡밥 ── */
+.tab-persons .pm-closure, .tab-persons .pm-rec { padding: 9px 8px; border-bottom: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.tab-persons .pm-closure:last-child { border-bottom: 0; }
+.tab-persons .pm-with { margin: 2px 0 4px; font-size: 13.5px; }
+.tab-persons .pm-rec { border-left: 3px solid transparent; }
+.tab-persons .pm-rec.is-open { border-left-color: var(--state-open); background: color-mix(in srgb, var(--state-open) 7%, var(--surface)); }
+.tab-persons .pm-rec-text { font-size: 14px; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.tab-persons .pm-rec-text .chip { vertical-align: 1px; }
+.tab-persons .pm-group { padding: 12px 8px 2px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+.tab-persons .pm-group:first-child { padding-top: 2px; }
+.tab-persons .pm-open-note { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink); }
+.tab-persons .pm-dot-open { width: 8px; height: 8px; border-radius: 50%; background: var(--state-open); display: inline-block; }
+.tab-persons .pm-thread { padding: 8px 4px; border-bottom: 1px solid var(--line); }
+.tab-persons .pm-thread:last-child { border-bottom: 0; }
+.tab-persons .pm-thread-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 14px; }
+
+/* ── 말풍선 ── */
+.pm-tip, .pm-ctip { max-width: 340px; }
+.pm-tip-title { font-weight: 650; margin-bottom: 2px; }
+.pm-tip-sub { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+
+/* ── 전체 표 ── */
+.tab-persons .pm-tablebox .table-wrap { max-height: calc(100vh - 220px); }
+.tab-persons .pm-tablebox td .chip { margin-left: 2px; }
+
+/* ── 좁은 칸: 목록은 접는 선택기로 ── */
+@container pm (max-width: 760px) {
+  .tab-persons .pm-body { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .tab-persons .pm-listbox { position: static; }
+  .tab-persons .pm-pick { display: flex; }
+  .tab-persons .pm-listpanel { display: none; margin-top: 6px; max-height: 56vh; }
+  .tab-persons .pm-listbox.is-open .pm-listpanel { display: flex; }
+}
+@container pm (max-width: 520px) {
+  .tab-persons .pm-head { padding: 14px 14px 12px; }
+  .tab-persons .pm-title h3 { font-size: 20px; }
+  .tab-persons .pm-sec { padding: 0 14px 10px; }
+  .tab-persons .pm-partner { grid-template-columns: minmax(80px, 110px) minmax(0, 1fr) 64px; gap: 8px; }
+  .tab-persons .pm-stat { padding: 6px 8px; }
+  .tab-persons .pm-stat-v { font-size: 18px; }
+}
+@media (max-width: 600px) {
+  .tab-persons .pm-find { width: 100%; }
+}
+.tab-persons .pm-center-pill { fill: var(--surface); stroke: var(--line-2); stroke-width: 1; }
+.tab-persons .pm-center-label { stroke: none; }
+.tab-persons .pm-thread { cursor: pointer; }
+.tab-persons .pm-thread:hover { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+@container pmh (max-width: 620px) {
+  .tab-persons .pm-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.tab-persons .pm-same > summary { padding: 0; font-size: 13px; }
+.tab-persons .pm-same .details-body { padding: 2px 0 0 14px; font-size: 13px; }
+
+.tab-persons .pm-axis-note { margin-left: auto; font-size: 12px; color: var(--ink-muted); }

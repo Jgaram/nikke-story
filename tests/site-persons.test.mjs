@@ -1,0 +1,85 @@
+/**
+ * 사이트 탭 "인물"(W5) — 내보낸 persons*.json의 모양, 쌍 by[]의 합이 시안 표(pairs.csv)와 같은지, 탭의 합산 함수가 여기까지 읽음 · 범위를 따르는지.
+ *
+ *   node --test tests/site-persons.test.mjs
+ *
+ * site/data/를 그대로 읽는다(내보내기를 다시 돌리지 않는다 — `node tools/site/export.mjs --only persons` 뒤에 본다).
+ */
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { bucketOf, pairTotals } from '../site/tabs/persons.js';
+import { readCsv } from '../tools/site/lib.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', f), 'utf8'));
+const persons = read('persons.json');
+const detail = read('persons-detail.json');
+const pairs = read('persons-pairs.json');
+const units = read('units.json');
+const unitByKey = new Map(units.map((u) => [u.key, u]));
+const personIds = new Set(persons.map((p) => p.id));
+
+test('persons.json — 인물 386, 중복 없음, 이름 · 집계 칸', () => {
+  assert.equal(persons.length, 386);
+  assert.equal(personIds.size, persons.length);
+  for (const p of persons) {
+    assert.ok(p.id.startsWith('person:') && p.name, p.id);
+    assert.ok(Number.isFinite(p.scenes) && Number.isFinite(p.lines), p.id);
+    assert.ok(!('text' in p) && !('quest_name' in p), `${p.id}: 본문 칼럼 없음`);
+  }
+  assert.deepEqual(persons.filter((p) => p.common).map((p) => p.name).sort(), ['네온', '라피', '아니스', '지휘관']);
+});
+
+test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 순서대로, 합이 인물 표와 같다', () => {
+  const byId = new Map(persons.map((p) => [p.id, p]));
+  for (const d of detail) {
+    const p = byId.get(d.id);
+    assert.ok(p, d.id);
+    let last = 0;
+    let scenes = 0;
+    let lines = 0;
+    for (const e of d.units) {
+      const u = unitByKey.get(e.unit);
+      assert.ok(u, `${d.id} ${e.unit}`);
+      assert.ok(u.order >= last, `${d.id}: 읽는 순서`);
+      last = u.order;
+      scenes += e.scenes;
+      lines += e.lines;
+    }
+    assert.equal(scenes, p.scenes, `${d.id} 씬`);
+    assert.equal(lines, p.lines, `${d.id} 줄`);
+    assert.equal(d.changes.length, (p.baselines ?? 0) + (p.changes ?? 0), `${d.id} 변화`);
+    for (const c of d.changes) assert.ok(['기준', '변화'].includes(c.act) && c.aspect && unitByKey.has(c.unit), `${d.id} ${c.id}`);
+  }
+});
+
+test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리]의 합이 pairs.csv와 같다', () => {
+  const csv = new Map(readCsv(path.join(ROOT, 'data/views/persons/pairs.csv')).map((r) => [`${r.a}\t${r.b}`, r]));
+  assert.equal(pairs.length, csv.size);
+  const layersAll = [1, 2, 3];
+  for (const pr of pairs) {
+    assert.ok(personIds.has(pr.a) && personIds.has(pr.b) && pr.a < pr.b, `${pr.a} ${pr.b}`);
+    const row = csv.get(`${pr.a}\t${pr.b}`);
+    assert.ok(row, `${pr.a} ${pr.b}`);
+    for (const x of pr.by) assert.equal(x.length, 5);
+    const tot = pairTotals(pr.by, null, layersAll);
+    assert.equal(tot.scenes, Number(row.scenes), `${pr.a} ${pr.b} 씬`);
+    assert.equal(tot.talk, Number(row.talk_scenes), `${pr.a} ${pr.b} 대화`);
+    for (let i = 1; i < pr.by.length; i++) assert.ok(pr.by[i][0] >= pr.by[i - 1][0], '자리순');
+  }
+});
+
+test('pairTotals — 여기까지 읽음과 범위가 합을 줄인다', () => {
+  const by = [[1, 1, 2, 1, 1], [3, 2, 4, 3, 2], [3, 3, 1, 0, 1], [9, 1, 5, 5, 1]];
+  assert.deepEqual(pairTotals(by, null, [1, 2, 3]), { scenes: 12, talk: 9, units: 5 });
+  assert.deepEqual(pairTotals(by, 3, [1, 2, 3]), { scenes: 7, talk: 4, units: 4 });
+  assert.deepEqual(pairTotals(by, 3, [1]), { scenes: 2, talk: 1, units: 1 });
+  assert.deepEqual(pairTotals(by, 0, [1, 2, 3]), { scenes: 0, talk: 0, units: 0 });
+});
+
+test('bucketOf — 말한 줄 수 5단계(0은 말한 줄 없음)', () => {
+  assert.deepEqual([0, 1, 4, 5, 19, 20, 59, 60, 179, 180, 900].map(bucketOf), [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]);
+});
