@@ -29,6 +29,8 @@
  *   표 → 카드형 행은 화면이 아니라 묶음 폭(컨테이너 쿼리 840px)으로 접힌다 — 리더 패널이 열려 본문이 좁아져도 가로로 넘치지 않는다.
  *   용어는 fmt(GRADE · LAYER · TERM · help · hiddenLabel · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
  */
+import { gradeAt, plain } from '../lib/format.js';
+
 export const meta = { id: 'order', title: '읽기 순서', blurb: '여기까지 읽었다면 다음에 읽을 스토리' };
 
 /** fmt에 없는 화면 말 — 고칠 때는 여기 한 곳만 */
@@ -59,8 +61,6 @@ const LABELS = {
   none: '없음', noBasisLong: '없음 — 본편이 말하지 않은 세계 · 본편 인물 메모가 없다(독립)',
   after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
   trailNone: '바뀐 적 없다',
-  /** 분석 문장 속 레포 용어 → 화면 말(표시할 때만 바꾼다 — 데이터는 그대로) */
-  terms: [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '본편'], ['줄기', '떡밥'], ['원점', '첫 이야기']],
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
 
@@ -73,24 +73,9 @@ const AXIS_H = 46; // 축(표시 + 라벨) 높이
 const AXIS_LABEL_W = 36; // `CH.07` 한 라벨이 차지하는 폭(11px 숫자 + 여백)
 const SVGNS = 'http://www.w3.org/2000/svg';
 
-/** 그 시점 T에서의 등급(tools/views/importance.mjs gradeAt) — null이면 아직 안 나왔다 */
-export function gradeAt(u, T) {
-  if (T == null) return u.grade;
-  if (T < u.tick) return null;
-  if (u.from_tick && T < u.from_tick) return u.before ?? u.grade;
-  return u.grade;
-}
+export { gradeAt }; // 계산은 lib/format.js 한 곳(리더의 분류 칸도 같이 쓴다)
 
 const clip = (s, n) => (typeof s === 'string' && [...s].length > n ? `${[...s].slice(0, n).join('')}…` : s ?? '');
-/** 받침 있는 말인가(조사 고르기) */
-const hasFinal = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 && c % 28 !== 0; };
-const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
-/** 분석 문장 속 레포 용어를 화면 말로(바뀐 말에 맞춰 조사도 고친다: 척추가 → 본편이) */
-const plain = (text) => LABELS.terms.reduce((t, [a, b]) => t.replace(new RegExp(`${a}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
-  if (!j) return b;
-  const pick = JOSA.find((x) => x[0] === j);
-  return b + (hasFinal(b) ? pick[1] : pick[2]);
-}), String(text ?? ''));
 /** SVG 요소 만들기(d3 없이도 지도가 그려진다) */
 function S(tag, attrs = {}, ...kids) {
   const n = document.createElementNS(SVGNS, tag);
@@ -244,7 +229,7 @@ export async function mount(root, ctx) {
     const hiddenLayer = inCut.length - inLayer.length;
     ui.clear(status);
     status.append(ui.el('span', { class: 'order-count' }, LABELS.count(fmt.num(rows.length), fmt.num(judged.length))));
-    if (hiddenCut) status.append(' · ', ui.el('span', { class: 'order-hidden' }, fmt.hiddenLabel(hiddenCut)), ' ', ui.el('button', { type: 'button', class: 'order-unhide', onClick: () => state.set({ t: null }) }, TERM.showAll));
+    if (hiddenCut) status.append(' ', ui.hiddenNote(fmt.hiddenLabel(hiddenCut), () => state.set({ t: null })));
     if (hiddenLayer) status.append(' · ', ui.el('span', { class: 'muted' }, `${LABELS.outScope} ${fmt.num(hiddenLayer)}`));
     // 목록
     const sel = state.parseSel(s.sel);

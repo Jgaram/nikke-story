@@ -87,7 +87,7 @@ export async function run(ctx) {
     if (!r.grade) { warn({ where: `order ${key}`, msg: '등급이 비어 있다' }); continue; }
     if (r.grade in counts) counts[r.grade]++;
     const basis = recordById.get(r.basis);
-    if (r.basis && !basis) warn({ where: `order ${key}`, msg: `결정 근거 기록 ${r.basis}이 확정 기록에 없다` });
+    if (r.basis && !basis && !/^J\d+$/.test(r.basis)) warn({ where: `order ${key}`, msg: `결정 근거 기록 ${r.basis}이 확정 기록에 없다` });
     const tick = num(r.pos);
     const fromTick = num(r.from_pos);
     units.push(compact({

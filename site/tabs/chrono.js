@@ -44,11 +44,11 @@ const LABELS = {
   },
   via: {
     메인: '메인 챕터 — 번호 순으로 고정',
-    단위: '시점 기록으로 정함',
+    단위: '시간 단서로 정함',
     좁힘: '다른 스토리와의 관계로 좁힘',
-    '단위 · 좁힘': '시점 기록 + 다른 스토리와의 관계로 좁힘',
-    회상: '회상 장면의 시점 기록으로 정함',
-    조각: '여러 장면의 시점 기록으로 정함',
+    '단위 · 좁힘': '시간 단서 + 다른 스토리와의 관계로 좁힘',
+    회상: '회상 장면의 시간 단서로 정함',
+    조각: '여러 장면의 시간 단서로 정함',
     없음: '정할 단서가 없다',
   },
   era: '시대 기준점', eraZone: '시대', chapterZone: '메인 챕터',
@@ -194,9 +194,9 @@ export async function mount(root, ctx) {
   };
 
   const statusText = el('span', { class: 'cr-status-text' });
-  const statusAction = el('button', { type: 'button', class: 'btn cr-showall', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll);
+  const statusNote = el('span', { class: 'cr-status-note' });
   const jumpBtn = el('button', { type: 'button', class: 'btn cr-jump', onClick: () => document.querySelector('.cr-cutline:not([hidden])')?.scrollIntoView({ block: 'center' }) }, LABELS.jump);
-  root.append(el('div', { class: 'cr-status', role: 'status', 'aria-live': 'polite' }, statusText, statusAction, jumpBtn));
+  root.append(el('div', { class: 'cr-status', role: 'status', 'aria-live': 'polite' }, statusText, statusNote, jumpBtn));
 
   // 범례 — 모양 · 기호는 줄 · 띠 그림과 같다
   const legendItem = (icon, label, hint) => el('span', { class: 'cr-leg', title: hint }, icon, label);
@@ -539,13 +539,12 @@ export async function mount(root, ctx) {
   function updateStatus(s) {
     const total = units.length;
     const parts = [];
-    if (s.t != null) parts.push(`${fmt.TERM.cutoff} ${fmt.tickShort(s.t)}`);
-    parts.push(`${fmt.TERM.unit} ${LABELS.shown(fmt.num(counts.shown), fmt.num(total))}`);
-    if (counts.cut) parts.push(fmt.hiddenLabel(counts.cut));
+    parts.push(LABELS.shown(fmt.num(counts.shown), fmt.num(total)));
     if (counts.layer) parts.push(LABELS.hiddenLayer(fmt.num(counts.layer)));
     if (counts.filter) parts.push(LABELS.hiddenFilter(fmt.num(counts.filter)));
     statusText.textContent = parts.join(' · ');
-    statusAction.hidden = !(counts.cut && s.t != null);
+    ui.clear(statusNote);
+    if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut), () => state.set({ t: null })));
     jumpBtn.hidden = !(cur.view === 'list' && cur.axis === 'story' && cutSlot != null && counts.shown > 0);
     ui.clear(emptyBox);
     const placedShown = (cur.axis === 'story' ? byStory : units).some((c) => isOk(c.unit));

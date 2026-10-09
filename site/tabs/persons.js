@@ -407,7 +407,7 @@ export async function mount(root, ctx) {
       }
     }
     const out = view === 'person' && a?.visible ? a.out : 0;
-    if (parts.length) note.append(el('span', {}, `${TERM.spoiler ?? '스포일러'}로 가린 ${parts.join(' · ')}`), ' ', el('button', { type: 'button', class: 'btn pm-showall', onClick: () => state.set({ t: null }) }, TERM.showAll ?? '전부 보기'));
+    if (parts.length) note.append(ui.hiddenNote(`${TERM.spoiler ?? '스포일러'}로 가린 ${parts.join(' · ')}`, () => state.set({ t: null })));
     if (out) note.append(el('span', { class: 'muted pm-out' }, `${parts.length ? ' · ' : ''}${LABELS.hiddenOut} ${T_UNIT} ${fmt.num(out)}`));
     note.hidden = !note.childNodes.length;
   };

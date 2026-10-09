@@ -1,5 +1,5 @@
 /**
- * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 · 범위 · 테마) · 탭 nav → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
+ * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 · 범위 · 테마) · 탭 nav · 첫 방문 선택 바 → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
  * 탭 모듈 규약 · ctx는 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)". 화면에 보이는 말은 lib/format.js의 라벨을 쓴다.
  */
 import * as state from './lib/state.js';
@@ -9,14 +9,7 @@ import * as ui from './lib/ui.js';
 import * as reader from './lib/reader.js';
 import * as search from './lib/search.js';
 
-const TAB_META = [
-  { id: 'order', title: '읽기 순서', hint: '지금까지 읽은 데서 다음에 읽을 스토리' },
-  { id: 'links', title: '연결', hint: '스토리 사이의 연결' },
-  { id: 'threads', title: '떡밥', hint: '복선과 떡밥이 이어지는 흐름' },
-  { id: 'persons', title: '인물', hint: '인물별 등장과 변화' },
-  { id: 'chrono', title: '연대기', hint: '작중 시간순으로 본 스토리' },
-  { id: 'world', title: '세계', hint: '용어 · 장소 · 조직 · 세계의 모습' },
-];
+const TAB_META = fmt.TAB_ORDER.map((id) => ({ id, title: fmt.TAB[id].title, hint: fmt.TAB[id].hint }));
 const THEME_KEY = 'nikke-story.theme';
 const $ = (sel) => document.querySelector(sel);
 
@@ -102,6 +95,37 @@ function scopeControl() {
   });
   wrap.append(ui.el('span', { class: 'ctl-name', title: fmt.TERM_HELP.scope }, fmt.TERM.scope), seg.el);
   state.subscribe((s, changed) => { if (changed.has('layers')) seg.set(fmt.scopeOf(s.layers)); });
+}
+
+// ── 첫 방문 선택 바 — 처음 열면 어디까지 읽었는지 묻는다(컷오프 기본이 CH.00이라 탭이 거의 비어 보인다) ──
+const FV_LATER_KEY = 'nikke-story.fv-later';
+function firstVisitBar(idx, wanted) {
+  const bar = $('#first-visit');
+  let later = false;
+  try { later = Boolean(sessionStorage.getItem(FV_LATER_KEY)); } catch { /* 없음 */ }
+  if (!wanted || later) return;
+  const V = fmt.FIRST_VISIT;
+  const hide = () => { bar.hidden = true; };
+  const select = ui.el('select', { id: 'fv-select', class: 'fv-select', 'aria-label': V.pick },
+    ui.el('option', { value: '', selected: true, disabled: true }, V.pick),
+    idx.mainTicks.map((t) => ui.el('option', { value: t.tick }, fmt.unitTitle(t.main))));
+  select.addEventListener('change', () => {
+    if (!select.value) return;
+    state.set({ t: Number(select.value) });
+    hide();
+  });
+  bar.append(
+    ui.el('span', { class: 'fv-ask' }, V.ask),
+    ui.el('span', { class: 'fv-pick' }, select),
+    ui.el('span', { class: 'fv-btns' },
+      ui.el('button', { type: 'button', class: 'btn', title: V.allHelp, onClick: () => { state.set({ t: null }); hide(); } }, V.all),
+      ui.el('button', { type: 'button', class: 'btn btn-quiet', onClick: () => {
+        try { sessionStorage.setItem(FV_LATER_KEY, '1'); } catch { /* 없음 */ }
+        hide();
+      } }, V.later)));
+  bar.hidden = false;
+  // 위 슬라이더 · 다른 경로로 컷오프를 고르면 바는 할 일을 다 한 것
+  state.subscribe((s, changed) => { if (changed.has('t')) hide(); });
 }
 
 // ── 탭 nav ──
@@ -194,7 +218,9 @@ async function boot() {
   }
   fmt.use(idx);
   const ch00 = idx.mainTicks.find((t) => t.main === 'ch00')?.tick ?? idx.tickList[0]?.tick ?? 1;
+  const firstVisit = !state.cutoffChosen(); // init이 URL에 t를 쓰기 전에 본다
   state.init({ defaultCutoff: ch00 });
+  firstVisitBar(idx, firstVisit);
   cutoffControl(idx);
   scopeControl();
   tabNav();

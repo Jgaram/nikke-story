@@ -391,8 +391,9 @@
 
 ## 파일 배치 · 모듈 규약 · 실행법 (W1, 2026-10-09)
 
-W1이 만든 뼈대. **탭 에이전트(W2–W7)는 이 절과 `site/lib/*.js` 머리말 주석만 읽고 시작한다.** 공용 파일(`site/lib/` · `site/app.js` · `site/style.css` · `site/index.html` · `tools/site/lib.mjs` · `tools/site/export.mjs` · `tools/site/export/common.mjs`)은 고치지 않고,
+W1이 만든 뼈대에 탭 여섯(W2–W7)과 통합 점검(2026-10-09)이 더해진 지금 상태. **탭 에이전트는 이 절과 `site/lib/*.js` 머리말 주석만 읽고 시작한다.** 공용 파일(`site/lib/` · `site/app.js` · `site/style.css` · `site/index.html` · `tools/site/lib.mjs` · `tools/site/export.mjs` · `tools/site/export/common.mjs`)은 고치지 않고,
 자기 `site/tabs/<name>.js` · `site/tabs/<name>.css` · `tools/site/export/<name>.mjs`만 만진다. 공용에 필요한 것(새 칸 · 새 컴포넌트 · 버그)은 인계 메모에 적어 보고한다.
+통합 점검에서 공용에 더해진 것: 리더의 **분류 · 연결** 칸과 "OO 탭에서 보기" 링크, **첫 방문 선택 바**, 모든 탭이 같이 쓰는 스포일러 안내(`ui.hiddenNote`), 공용 계산(`fmt.gradeAt` · `fmt.plain`) · 탭 이름(`fmt.TAB`).
 
 ```
 tools/site/
@@ -404,12 +405,12 @@ tools/site/
   export/<name>.mjs     탭별(order · links · threads · persons · chrono · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
-  index.html            뼈대 — 상단 바(이름 · 검색 · 컷오프 · 층 · 테마) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 출처 · 저작권)
+  index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 · 범위 · 테마) · 탭 nav · 첫 방문 선택 바 · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
   style.css             디자인 토큰(라이트/다크 둘 다 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
-  app.js                부팅: data.index() → fmt.use(idx) → state.init → 상단 바 · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
+  app.js                부팅: data.index() → fmt.use(idx) → state.init(그 전에 첫 방문인지 본다) → 상단 바 · 첫 방문 선택 바 · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
   lib/d3.js             export * from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm' — 브라우저 쪽 유일한 외부 의존성. 탭은 ctx.d3로 쓴다
   lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
-  tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈. W1은 자리 표시 — 탭 에이전트가 갈아 끼운다
+  tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈 여섯(order · links · threads · persons · chrono · world) — 아래 "탭별 (W2–W7)"
   data/*.json           내보낸 데이터(커밋한다 — Pages가 그대로 낸다)
 tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest 건수 · 단위 481 · 자리 158 · 본문 칼럼 이름 없음 · 인용 80자 이하 · 40자 초과는 경고 · 소스 정적 검사 · 정적 서버
 ```
@@ -429,7 +430,18 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
 | `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how}]` · `same_as[]`(확정 정체 연결) · `lines` · `stories` |
 | `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
-| `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}` · `warnings` |
+| `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}`(공용 8 + 탭 JSON 11 전부) · `warnings` |
+
+**탭 전용 JSON(`tools/site/export/<name>.mjs` → `site/data/`, 탭을 열 때 그 탭 것만 받는다)** — 칸 설명은 각 탭 머리말 주석.
+
+| 탭 | 파일 · 건수 |
+|---|---|
+| order | `order.json`(판정 단위 421 · 본편 자리 60 · 주역 20 · 224KB) · `order-detail.json`(분류 카드를 처음 열 때 — 근거 문장 · 검토 기록 · 메모 86 · 293KB) |
+| links | `links.json`(스토리 쌍 선 3,370 · 연작 40 · 항목 537 · 580KB) · `links-scenes.json`(씬 선 6,257 — 선을 누르거나 리더의 연결 칸을 열 때 처음 받는다 · 1.4MB) |
+| threads | `threads-flow.json`(떡밥 60개의 흐름 · 426KB) · `threads-map.json`(떡밥 ↔ 항목 · 결말 · 함께 맺음 · 100KB) |
+| persons | `persons.json`(인물 386 · 225KB) · `persons-detail.json`(인물마다 히트맵 · 변화 · 기록 ID · 888KB) · `persons-pairs.json`(함께 나온 쌍 7,174 — 처음 열 때 · 1.0MB) |
+| chrono | `chrono.json`(작중 축 57 · 스토리 481 · 회상 장면 109 · 좁힘 근거 366 · 242KB) |
+| world | `world.json`(항목 225 · 세계의 모습 449 · 분류 8 · 542KB) |
 
 기록 공통 칸: `id` · `kind` · `unit` · `scene`(첫 근거 씬) · `line`(첫 근거 첫 줄) · `evidence[{scene, lines[]}]`(줄은 숫자 또는 "12-17") · `text` · `about[]` · `confidence` · `tick` · `order`(단위의 자리) · `threads[]` · `reason`(왜 이렇게 읽었나) · `user`(사용자가 확정했으면 true).
 종류별: F · Q는 `state`(열림 · 일부 · 풀림 · 뒤집힘) · `first_tick` · `hint_tick` · `partial_tick` · `solved_tick` · `reversed_tick` · `replaced_by` · `last_tick` · `reinforce` · `callbacks`(timeline/records.csv);
@@ -439,19 +451,28 @@ F-k · Q-k는 `act` · `parent` · `answer` · `degree` · `replaced_by`; S는 `
 **URL 상태(`lib/state.js`)** — 해시 하나: `#tab=order&t=20&layers=1,2&q=라피&sel=unit:ch07&p.kind=event`.
 `tab`(여섯 중 하나) · `t`(컷오프 공개 자리, `all` = 끔) · `layers`(없으면 셋 다) · `q`(검색어) · `sel`(`종류:ID` — `unit:ch07` · `scene:d_main_07_02` · `record:F203` · `person:person:라피` · `target:place:방주` · `thread:J1` · `tick:20`; 있으면 리더가 열린다) · `p.<key>`(지금 탭의 파라미터 — 탭을 바꾸면 지워진다).
 API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 number[], `p`는 객체) · `set(patch, { replace })`(history를 쌓는다, replace면 덮는다) · `subscribe(fn)`(fn(state, changed: Set) — 바뀐 키만) · `param(tab, key)` · `setParam(tab, key, value)` · `parseSel` · `makeSel` · `visible(tick, t?)` · `lastCutoff()`.
-**컷오프 규칙**: 처음 열면 CH.00의 자리(1). 사용자가 바꾼 값은 `localStorage['nikke-story.t']`에 남아 다음 방문에 쓴다(URL의 `t`가 있으면 그것이 이긴다). "전부 보기" 스위치 = `t=all`. 단위 · 기록은 `tick ≤ t`면 보이고, 뒤의 것은 **지우지 않고 가린다**(리더: 흐림 + "컷오프 뒤 — 스포일러" 펼치기). 숨긴 개수 표시는 탭 몫. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
+**컷오프 규칙(화면 말 "여기까지 읽음")**: 처음 열면 CH.00의 자리(1). 사용자가 바꾼 값은 `localStorage['nikke-story.t']`에 남아 다음 방문에 쓴다(URL의 `t`가 있으면 그것이 이긴다). "전부 보기" 스위치 = `t=all`. 단위 · 기록은 `tick ≤ t`면 보이고, 뒤의 것은 **지우지 않고 가린다**(리더: 흐림 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기). 숨긴 개수는 모든 탭이 `ui.hiddenNote(fmt.hiddenLabel(n), 전부 보기)` 한 모양("● 스포일러로 가린 N [전부 보기]")으로 보인다. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
+
+**상단 바 · 범위 · 첫 방문 선택 바**
+- 상단 바 한 줄(`index.html` · `app.js` · `style.css`): 이름("NIKKE 스토리 지도") · 검색("검색", 단축키 `/`) · **여기까지 읽음**(슬라이더 + 챕터 이름 + 날짜 + "전부 보기" 스위치) · **범위** · 테마(자동 · 라이트 · 다크). 960px 아래에서는 두 줄, 640px 아래에서는 [로고 · 검색 · 범위 · 테마] / [여기까지 읽음]으로 접힌다. 슬라이더 눈금은 메인 챕터(`idx.mainTicks`).
+- **범위 세그먼트** = 핵심 · 넓게 · 전부(`fmt.SCOPE`) ↔ URL `layers`(1 · 1,2 · 생략). 다른 조합이 들어오면 "전부". 라벨에 "층"은 쓰지 않는다.
+- 라벨: 슬라이더 값은 메인 챕터 자리면 `CH.20`(`fmt.tickShort`), 그 밖은 `CH.17+`. 길게는 `fmt.tickLabel(tick)` = `CH.20 시점 · 2023-01-12` / `CH.17 이후 · 2022-11-10`(메인 챕터 사이 자리).
+- **첫 방문 선택 바**(탭 nav 아래 한 줄, 좁으면 두 줄): "어디까지 읽으셨나요? [메인 챕터 선택 ▾(CH.00 … CH.48, 메인만)] [전부 보기] [나중에]". 처음 방문 = URL에 `t`가 없고 `localStorage['nikke-story.t']`도 없을 때(`state.cutoffChosen()` — `state.init` 전에 본다). 챕터를 고르면 `t` = 그 챕터의 자리, "전부 보기"는 `t=all`; 둘 다 localStorage에 남고 바는 사라진다. "나중에"는 `sessionStorage['nikke-story.fv-later']`로 이번 탭 세션만 숨긴다. 위 슬라이더 · 스위치로 컷오프를 바꿔도 바는 닫힌다. 문구는 `fmt.FIRST_VISIT`.
 
 **데이터(`lib/data.js`)** — `load(name)`(fetch + 캐시, `./data/<name>.json`, 실패 시 한국어 Error) · `loadRecords()` · `index({ records })` → `idx`: `unitList` · `units`(Map) · `tickList` · `ticks` · `mainTicks` · `scenes` · `scenesOf(unit → scene[])` · `tickOf(key)` · `unitOf(sceneId)` · `targets` · `targetList` · `threads` · `threadList` · `relations` · `slips` · `slipsOf` · `manifest`,
 기록은 `idx.withRecords()`(또는 `index({ records: true })`) 뒤에 `records`(Map) · `recordList` · `recordsOf(scene)` · `recordsOfUnit` · `eventsOf(root)` · `recordsOfThread` · `recordsAbout(target)`. 기록 두 파일(6MB)은 처음 필요할 때 받는다 — 탭은 꼭 필요할 때만 `withRecords()`를 부른다.
 탭 전용 JSON은 `ctx.data.load('<name>')`으로 받는다(자기 export 모듈이 만든 파일).
 
-**표기 · 색(`lib/format.js`)** — `KIND` · `KIND_ORDER` · `GRADE` · `GRADE_ORDER` · `LAYER` · `STATE` · `RECORD_KIND` · `RECORD_ORDER` · `TARGET_TYPE` · `CONFIDENCE` · `THREAD_WEIGHT` · `CHRONO_CLASS`(라벨 + `color: 'var(--…)'`) · `use(idx)` · `unitTitle(u | key)` · `tickLabel(tick, { date })`(`CH.20까지 · 2023-01-12` / `CH.17 뒤 · 2022-11-10`) · `tickShort(tick)`(`CH.20` / `CH.17+`) · `ref(scene, line)` · `evidence(ev[])` · `targetName(id)` · `recordText(r)` · `recordLabel(r)` · `stateAt(r, T)` · `num` · `pct`.
+**표기 · 색(`lib/format.js`)** — 화면에 보이는 말은 전부 여기 한 곳(레포 용어 → 화면 말은 키는 그대로, 라벨만 바꾼다). `KIND` · `KIND_ORDER` · `GRADE`(필수 · 추천(키 보강) · 참고 · 독립 · 본편(키 척추) · 메인) · `GRADE_ORDER` · `LAYER` · `SCOPE` · `scopeOf` · `STATE` · `RECORD_KIND` · `RECORD_ORDER` · `TARGET_TYPE` · `CONFIDENCE` · `THREAD_WEIGHT`(핵심 · 보조 · 곁가지) · `CHRONO_CLASS`(시점 확정 · 대략 범위 · 앞뒤만 앎 · 시점 불명) · `DRIFT` · `ACT` · `LINK_TYPE` · `LINK_LEVEL`(약함 · 보통 · 강함) · `TAB`(탭 이름 · 한 줄 설명) · `TERM` · `FIRST_VISIT` · 라벨마다 정의 `*_HELP` · `help(group, key)`(툴팁) · `use(idx)` · `unitTitle(u | key)` · `tickLabel(tick, { date })` · `tickShort(tick)` · `placeLabel(place)` · `ref(scene, line)` · `linesLabel(lines)` · `evidence(ev[])` · `targetName(id)` · `recordText(r)` · `recordLabel(r)` · `stateAt(r, T)` · `gradeAt(unit, T)`(order.json 단위의 그 시점 등급 — `tools/views/importance.mjs`와 같은 계산) · `plain(text)`(분석 문장 속 레포 용어 — 척추 · 줄기 · 단위 · 판정 …을 화면 말로, 표시할 때만) · `hiddenLabel(n)` · `openInTab(tab)` · `num` · `pct`.
 색 값은 `style.css`의 `:root` 토큰 한 곳에만 있다(라이트 · 다크 각각, dataviz 스킬의 검증 팔레트): 종류 8색은 범주(`--kind-main` 파랑 · `--kind-event` 주황 · `--kind-episode` 청록 · `--kind-sub` 노랑 · `--kind-relic` 자홍 · `--kind-side` 초록 · `--kind-erelic` 보라 · `--kind-elevator` 빨강 — 고정 순서, 돌려 쓰지 않는다), 등급은 파랑 한 색의 순서 램프(`--grade-must` > `--grade-support` > `--grade-ref` > `--grade-standalone`, 척추 · 메인은 잉크 `--grade-spine` · `--grade-main`), 층은 주황 램프(`--layer-1` > `--layer-2` > `--layer-3`), 상태는 고정(`--state-open` 열림 · `--state-partial` 일부 · `--state-solved` 풀림 · `--state-reversed` 뒤집힘 · `--state-hint` 암시만 · `--state-none` 아직).
 바탕 · 잉크 · 선: `--bg` `--surface` `--surface-2` `--ink` `--ink-2` `--ink-muted` `--line` `--line-2` `--accent` `--link` `--focus`. 규칙: 종류 색과 등급 색을 한 차트에 같이 쓰지 않는다(파랑이 겹친다) · 색만으로 뜻을 전하지 않는다(칩 · 범례 · 직접 라벨) · 다크는 자동 반전이 아니라 토큰에 따로 있다 · 차트의 글자는 잉크 토큰.
 
-**컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · layer · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body)` · `details(summary, body, { open })` · `empty` · `spinner` · `notice(text, kind)` · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }`. 모두 키보드 · aria 기본값 포함.
+**컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · layer · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body, { actions })` · `details(summary, body, { open })` · `empty(text, action)` · `spinner` · `notice(text, kind)` · `hiddenNote(text, onShowAll, { action })`(스포일러 · 범위 밖 안내 한 모양) · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }` · `icon(name)`. 모두 키보드 · aria 기본값 포함.
 
-**리더(`lib/reader.js`)** — `open(sel)` · `close()` · `isOpen()`. app.js가 `sel` 변화에 맞춰 부르므로 탭은 `state.set({ sel })`만 하면 된다. 단위(메타 · 씬 목록 · 기록 요약 · 설정 오류 메모) · 씬(메타 · 그 씬의 기록 종류별 · 앞뒤 씬) · 기록(전문 · 근거 · 이유 · 대상 · 줄기 · 같은 뿌리) · 인물 · 대상(사전 · 기록) · 줄기(의문 · 사실 · 관계) · 공개 자리. 관계선 칸은 "W3" 자리만 — W3가 `links.json`을 만들면 리더의 관계선 칸을 채우는 것은 W3 몫(공용 파일이라 보고 뒤 W1 규약대로 고친다).
+**리더(`lib/reader.js`)** — `open(sel)` · `close()` · `isOpen()`. app.js가 `sel` 변화에 맞춰 부르므로 탭은 `state.set({ sel })`만 하면 된다. 단위(메타 · **분류** · **연결** · 씬 목록 · 분석 메모 요약 · 설정 오류 메모) · 씬(메타 · **연결** · 그 씬의 분석 메모 종류별 · 앞뒤 씬) · 분석 메모(전문 · 근거 · 이유 · 대상 · 떡밥 · 같은 뿌리) · 인물 · 항목(사전 · 분석 메모) · 떡밥(의문 · 사실 · 관계) · 출시 시점.
+- **분류**(스토리 패널): `order.json`(작아서 패널을 열 때 같이 받는다)의 등급 칩 — 지금 읽은 데까지의 등급(`fmt.gradeAt`, 나중에 오르면 "→ CH.27부터 추천") · **왜 이 등급인가** 한 줄(이유를 90자로 줄이고 눌러 전문, 메모 ID는 링크 · `fmt.plain`으로 화면 말) · 근거 메모 · 씬 링크 · "읽기 순서 탭에서 보기"(`#tab=order&sel=unit:<키>`). 본편(메인 · 척추)은 "본편" 칩만.
+- **연결**: `links-scenes.json`(처음 열 때 한 번 받아 씬 · 스토리별로 색인한다 — 받는 동안 spinner). 스토리 패널은 상대 스토리마다 한 줄(선 종류별 묶음 — `fmt.LINK_TYPE_ORDER` 순, 종류마다 5줄 뒤는 "더 보기") · 강도(`fmt.LINK_LEVEL`) · 가장 센 선의 근거(분석 메모 링크 · 씬 `fl` → `tl` 줄) · 씬 쌍이 여럿이면 "씬 N쌍"; 한 스토리 안 선행(호감도 1편 → 2편)은 뺀다. 씬 패널은 그 씬의 선 한 줄씩(상대 씬 · 상대 스토리 · 이 씬 줄 ↔ 상대 줄 · 분석 메모). 여기까지 읽음 뒤의 상대는 "스포일러 보기" 접이로. 머리의 "연결 탭에서 보기" = `#tab=links&p.c=<스토리 키>`.
+- 인물 패널 "인물 탭에서 보기"(`#tab=persons&p.who=<id>`) · 항목(인물 아닌 것) "세계 탭에서 보기"(`#tab=world&p.item=<id>`) · 떡밥 패널 "떡밥 탭에서 보기"(`#tab=threads&p.j=<id>`). 탭 링크는 탭을 바꾸고 리더를 닫는다(`sel` 비움; 분류의 읽기 순서 링크만 `sel`을 싣는다).
 
 **검색(`lib/search.js`)** — 상단 입력 하나(단축키 `/`). 단위 · 인물 · 대상(별칭 포함) · 줄기는 바로, 기록 문장은 처음 검색할 때 받는다. 종류별 묶음 · 최대 50건 · ↑↓ Enter Esc. 고르면 `sel`로 열고 unit → 읽기 순서, person → 인물, target → 세계, thread → 떡밥 탭으로(record는 지금 탭).
 
@@ -466,6 +487,19 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 탭 전용 데이터는 `tools/site/export/<name>.mjs`의 `run(ctx)`가 만든다 — `ctx = { db, csv(path), records, units, unitByKey, common, out, warn }`. `ctx.common`(units · ticks · scenes · records · threads · relations · targets · slips · scenesOf · placeOf)을 가져다 쓰고 다시 만들지 않는다. DB는 `lib.mjs`의 `pick()`으로 허용 칼럼만(`stories`는 id · kind · source · category_id · title · order_index · has_text · line_count · attractive_level, `lines` 테이블은 열지 않는다) · 외부 참고 표(`sheet_*` · `sheet_rows` · `data/raw/imported/`)는 열지 않는다 — `tests/site.test.mjs`가 소스를 정적으로 검사한다. 기록 문장을 실을 때는 `publishText(text, where, ctx.warn)`로 인용을 검사 · 자른다. 탭 JSON의 건수는 manifest에 자동으로 든다.
 
 **확인(W1, 2026-10-09)** — 헤드리스 크로미움(CDP)으로: 표 줄 클릭 → `sel=unit:…` · 리더 열림 → 씬 · 기록 링크 → `sel` 바뀜 · 뒤로 가기 복원 · 컷오프 슬라이더 → `t` + localStorage · 전부 보기 → `t=all` · 층 → `layers=1,2` · 세그먼트 → `p.kind` · 검색(단위 · 인물 · 줄기 · 기록 묶음) → 고르면 탭 이동 + 리더 · 여섯 탭 모두 마운트 · 컷오프 뒤 단위 · 기록은 스포일러 접힘. 콘솔 오류 0. 라이트 · 다크 · 390px(가로 스크롤 없음, 리더는 아래 시트) 스크린샷 확인.
+
+**확인(통합 점검, 2026-10-09)** — 헤드리스 크로미움(CDP)으로 여섯 탭 × (기본 · 여기까지 읽음 CH.26 · 스토리 선택) + 첫 방문 바 · 390px · 다크 · 리더(스토리 · 씬 · 인물 · 항목 · 떡밥)를 보았다. 콘솔 오류 0 · 가로 넘침 0 · 짧은 라벨 · 툴팁에 옛 내부 용어 0(분석 메모 문장 속 말은 데이터라 `fmt.plain`으로 줄여 보일 뿐 고치지 않는다). 리더의 "OO 탭에서 보기" 링크 · 첫 방문 바(고르기 · 전부 보기 · 나중에 · URL의 t · 저장된 컷오프) 동작 확인.
+
+**탭별 (W2–W7)** — 쓰는 JSON · URL 파라미터(`p.<키>`, 탭을 바꾸면 지워진다) · 보기 모드. 그리는 규칙 · 칸 설명은 각 `site/tabs/<name>.js` 머리말 주석.
+
+| 탭 | 쓰는 JSON | 파라미터 | 보기 모드 |
+|---|---|---|---|
+| **읽기 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `kind`(스토리 종류) · `find` · `rows`(지도 행: grade · kind) · `leads`(1이면 주역 명단 펼침) | 목록(등급별 묶음 표, 한 줄 = 출시 시점 · 종류 · 스토리 · 왜 이 등급인가 · 글자 · 범위) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
+| **연결** `links` (W3) | `links.json` · `links-scenes.json`(근거) | `m`(ego · net · chain) · `c`(가운데 스토리) · `n` · `pr` · `lt` · `ty`(선 종류) · `s`(연결 강도 1–3) · `tg`(인물 · 항목) · `th`(떡밥) · `kd`(스토리 종류) · `nn` · `mm` | 이웃(가운데 스토리 + 앞 · 뒤 카드, 기본) / 전체(읽는 순서 축 위 점 · 선) / 연작(다음 편 사슬). 선을 누르면 씬 → 씬 근거. 인물 · 떡밥 거르개 후보는 여기까지 읽음 안의 선에 걸린 것만 |
+| **떡밥** `threads` (W4) | `threads-flow.json` · `threads-map.json` · 공용 `threads.json` | `j`(떡밥 ID) · `axis`(story면 작중 시간순) · `f`(unsolved · solved · fact) · `map`(rel · item · list) · `c` · `common` · `hints` · `sort`(open · start) | 왼쪽 떡밥 지도(떡밥끼리 · 항목 · 목록) + 오른쪽 떡밥 하나의 흐름(의문 · 사실 줄마다 던짐 → 복선 → 일부 회수 → 회수 · 뒤집힘, 출시 순서 / 작중 시간순) |
+| **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |
+| **연대기** `chrono` (W6) | `chrono.json` | `axis`(story 기본 · release) · `view`(list · band) · `by`(kind) · `kind` · `find` · `drift`(1) | 목록(작중순: 칸마다 묶음 + "여기까지 읽음" 선 / 출시순: 출시 시점별 묶음 + 출시순과 비교) / 띠 그림(가로 = 작중 축, 줄 = 스토리). 줄을 누르면 "자리 근거" 카드 |
+| **세계** `world` (W7) | `world.json` | `mode`(dict · life) · `item`(항목 ID) · `type`(concept · incident · item · org · place) · `sort`(facts · name · first · open) · `find` · `topic` · `hubs`(1) | 사전(항목 목록 + 상세: 사실 · 의문 · 함께 나온 항목 · 나온 스토리 · 떡밥) / 세계의 모습(분류별 목록) |
 
 ## 1층 끝 시안 (C1, 2026-10-08) — 1회독 + 2회독
 

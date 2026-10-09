@@ -21,6 +21,11 @@
  *   recordText(r) · recordLabel(r)  메모 한 줄 · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   hiddenLabel(n)                  '스포일러로 가린 N'
+ *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
+ *   LINK_LEVEL                      연결 강도 1–3 → 약함 · 보통 · 강함
+ *   FIRST_VISIT                     첫 방문 선택 바의 문구
+ *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
+ *   plain(text)                     분석 문장 속 레포 용어(척추 · 줄기 …)를 화면 말로(조사도 맞춘다). 표시할 때만 — 데이터는 그대로
  *   num(n) · pct(x) · date(s)
  */
 
@@ -220,6 +225,30 @@ export const LINK_TYPE_HELP = {
   keyword: '같은 소재 · 용어를 다루는 스토리',
 };
 
+/** 연결 강도(세기 1–3) */
+export const LINK_LEVEL = { 1: '약함', 2: '보통', 3: '강함' };
+
+// ── 탭 ──
+export const TAB = {
+  order: { title: '읽기 순서', hint: '지금까지 읽은 데서 다음에 읽을 스토리' },
+  links: { title: '연결', hint: '스토리 사이의 연결' },
+  threads: { title: '떡밥', hint: '복선과 떡밥이 이어지는 흐름' },
+  persons: { title: '인물', hint: '인물별 등장과 변화' },
+  chrono: { title: '연대기', hint: '작중 시간순으로 본 스토리' },
+  world: { title: '세계', hint: '용어 · 장소 · 조직 · 세계의 모습' },
+};
+export const TAB_ORDER = Object.keys(TAB);
+export const openInTab = (tab) => `${TAB[tab]?.title ?? tab} 탭에서 보기`;
+
+/** 첫 방문 선택 바 */
+export const FIRST_VISIT = {
+  ask: '어디까지 읽으셨나요?',
+  pick: '메인 챕터 선택',
+  all: '전부 보기',
+  later: '나중에',
+  allHelp: '스포일러를 가리지 않고 모든 시점의 이야기를 본다',
+};
+
 /** 자주 쓰는 말 — 탭은 하드코딩하지 말고 여기서 가져다 쓴다 */
 export const TERM = {
   site: 'NIKKE 스토리 지도',
@@ -242,6 +271,7 @@ export const TERM = {
   togetherScenes: '같이 나온 장면',
   talkScenes: '대화한 장면',
   commonTargets: '자주 나오는 인물',
+  link: '연결',
   strength: '연결 강도',
   chronoPlace: '작중 시점',
   inverted: '출시순과 반대',
@@ -334,6 +364,24 @@ export const ref = (scene, line) => {
 export const evidence = (ev) => (Array.isArray(ev) ? ev.map((e) => ref(e.scene, e.lines)).join(' · ') : '');
 
 export const hiddenLabel = (n) => `스포일러로 가린 ${num(n)}`;
+
+/** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */
+export function gradeAt(u, T) {
+  if (T == null) return u.grade;
+  if (T < u.tick) return null;
+  if (u.from_tick && T < u.from_tick) return u.before ?? u.grade;
+  return u.grade;
+}
+
+/** 분석 문장 속 레포 용어 → 화면 말(표시할 때만 바꾼다 — 데이터는 그대로). 바뀐 말에 맞춰 조사도 고친다: 척추가 → 본편이 */
+const PLAIN_TERMS = [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '본편'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '자동으로 찾지 못해 직접 더한']];
+const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
+const hasFinal = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 && c % 28 !== 0; };
+export const plain = (text) => PLAIN_TERMS.reduce((t, [a, b]) => t.replace(new RegExp(`${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
+  if (!j) return b;
+  const pick = JOSA.find((x) => x[0] === j);
+  return b + (hasFinal(b) ? pick[1] : pick[2]);
+}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천'));
 
 export function targetName(id) {
   if (!id) return '';

@@ -187,6 +187,24 @@ export async function mount(root, ctx) {
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
   const threadList = [...threadUse].map(([id, n]) => ({ id, n, title: idx.threads.get(id)?.title ?? id }))
     .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
+  /** 거르개 후보는 여기까지 읽음 안(양 끝 스토리가 보이는) 선에 걸린 것만 — 이름 · 떡밥 제목이 스포일러라서 */
+  const candidatesFor = (T) => {
+    if (T == null) return { targets: targetList, threads: threadList };
+    const tu = new Map();
+    const hu = new Map();
+    for (const e of edges) {
+      if (e.a.tick != null && e.a.tick > T) continue;
+      if (e.b.tick != null && e.b.tick > T) continue;
+      for (const t of e.targets) tu.set(t, (tu.get(t) ?? 0) + 1);
+      for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
+    }
+    return {
+      targets: targetList.filter((t) => tu.has(t.id)).map((t) => ({ ...t, n: tu.get(t.id) })).sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko')),
+      threads: threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) })),
+    };
+  };
+  let cand = candidatesFor(state.get().t);
+  let candT = state.get().t;
 
   // ── 거르개 (URL 파라미터 → F) ──
   const listParam = (v, allowed) => {
@@ -415,12 +433,12 @@ export async function mount(root, ctx) {
       let items;
       const toItem = (t, group) => ({ value: t.id, label: t.name, sub: fmt.TARGET_TYPE[t.type] ?? '', n: t.n, dim: t.common, group });
       if (!q) {
-        const top = targetList.filter((t) => !t.common).slice(0, 10).map((t) => toItem(t, LABELS.targetTop));
-        const common = targetList.filter((t) => t.common).map((t) => toItem(t, TERM.commonTargets));
+        const top = cand.targets.filter((t) => !t.common).slice(0, 10).map((t) => toItem(t, LABELS.targetTop));
+        const common = cand.targets.filter((t) => t.common).map((t) => toItem(t, TERM.commonTargets));
         items = [...top, ...common];
       } else {
         const f = fold(q);
-        items = targetList.filter((t) => fold(t.name).includes(f)).slice(0, 30).map((t) => toItem(t));
+        items = cand.targets.filter((t) => fold(t.name).includes(f)).slice(0, 30).map((t) => toItem(t));
       }
       return { items, empty: LABELS.centerNone };
     },
@@ -430,7 +448,8 @@ export async function mount(root, ctx) {
   // 떡밥 고르기
   const threadSelect = h('select', { class: 'lk-select', 'aria-label': LABELS.thread, onChange: (e) => setP({ th: e.target.value || null, n: null, lt: null, pr: null }) },
     h('option', { value: '' }, LABELS.threadAll),
-    threadList.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
+    cand.threads.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
+  const rebuildThreadOptions = () => threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...cand.threads.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
 
   // 연결 강도
   const strengthSeg = ui.segmented({ label: TERM.strength, options: LABELS.strength.map((o) => ({ ...o, title: fill(o.title) })), value: '2', onChange: (v) => setP({ s: v === '2' ? null : v, n: null, lt: null }) });
@@ -508,7 +527,7 @@ export async function mount(root, ctx) {
   detail.hidden = true;
   const inner = h('details', { class: 'details lk-inner' });
   inner.hidden = true;
-  root.append(h('div', { class: 'lk-head' }, h('h2', {}, meta.title), modeSeg.el), controls, summary, body, detail, inner);
+  root.append(h('div', { class: 'lk-head' }, h('h2', { class: 'sr-only' }, meta.title), modeSeg.el), controls, summary, body, detail, inner);
 
   // 실행 중 상태
   let F = readF(state.get()); // 지금 거르개
@@ -525,7 +544,7 @@ export async function mount(root, ctx) {
   /** 숨김 안내 한 줄(컷오프 · 범위) + 행동 단추 */
   function hiddenNote(cut, range) {
     const out = [];
-    if (cut > 0) out.push(h('span', { class: 'lk-hidden' }, fmt.hiddenLabel(cut), ' ', h('button', { type: 'button', class: 'btn lk-btn', onClick: showAll }, LABELS.showAll)));
+    if (cut > 0) out.push(ui.hiddenNote(fmt.hiddenLabel(cut), showAll));
     if (range > 0) out.push(h('span', { class: 'lk-hidden lk-hidden-range' }, LABELS.hiddenRange(range)));
     return out;
   }
@@ -816,7 +835,7 @@ export async function mount(root, ctx) {
 
   /** 기록이 만든 선의 "왜" — 메모 문장 + 가리키는 의문 · 사실 + 답 */
   function whyOf(r) {
-    if (r.origin === 'manual') return [h('p', { class: 'lk-note' }, r.note ?? '')];
+    if (r.origin === 'manual') return [h('p', { class: 'lk-note' }, fmt.plain(r.note ?? ''))];
     if (r.origin === 'game-condition') return [];
     if (r.type === 'character' || r.type === 'keyword') {
       const basis = (s) => String(s ?? '').replace(/말함 (\d+)줄/, '말한 줄 $1').replace(/이름 (\d+)줄/, '이름 $1줄');
@@ -1216,7 +1235,7 @@ export async function mount(root, ctx) {
     const noteRows = es.map((e) => h('li', { class: 'lk-chain-note' },
       h('span', { class: 'lk-chain-pair' }, units.get(e.from)?.title, h('span', { class: 'lk-darrow' }, ui.icon('arrow')), units.get(e.to)?.title),
       ' ', h('span', { class: 'muted' }, `${ORIGIN[e.origin] ?? e.origin} · ${TERM.strength} ${LABELS.level[e.strength]}`),
-      e.note ? h('p', { class: 'lk-note' }, e.note) : null,
+      e.note ? h('p', { class: 'lk-note' }, fmt.plain(e.note)) : null,
       e.record ? h('span', { class: 'mono lk-rid' }, e.record) : null));
     return h('article', { class: 'lk-chain' },
       h('header', { class: 'lk-chain-head' }, h('strong', {}, `${fmt.num(shown.length)}편`), ch.linear ? null : h('span', { class: 'muted' }, '갈래 있음'),
@@ -1241,6 +1260,7 @@ export async function mount(root, ctx) {
     modeSeg.set(F.mode);
     strengthSeg.set(String(F.minS));
     targetCombo.set(F.tg ? fmt.targetName(F.tg) : '');
+    if (candT !== F.T) { candT = F.T; cand = candidatesFor(F.T); rebuildThreadOptions(); }
     threadSelect.value = F.th ?? '';
     kindChips.sync(F.kinds);
     typeChips.sync(F.types);

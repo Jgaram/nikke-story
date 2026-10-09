@@ -19,6 +19,7 @@
  *   param(tab, key) / setParam(tab, key, value, { replace })   탭 파라미터(tab이 지금 탭이 아니면 undefined · 무시)
  *   parseSel(sel) → { type, id } | null,  makeSel(type, id)
  *   visible(tick) → boolean          컷오프 안인가(t가 null이면 늘 true)
+ *   cutoffChosen()                   URL에 t가 실려 왔거나 localStorage에 고른 컷오프가 있나 — init() **전에** 불러야 한다(init이 URL에 t를 쓴다). 첫 방문 선택 바가 쓴다
  */
 export const TABS = ['order', 'links', 'threads', 'persons', 'chrono', 'world'];
 export const ALL_LAYERS = [1, 2, 3];
@@ -185,6 +186,12 @@ export const makeSel = (type, id) => `${type}:${id}`;
 /** 공개 자리 tick이 컷오프 안인가. tick이 없으면(공개일 모름) 보인다 */
 export function visible(tick, t = state.t) {
   return t == null || tick == null || tick <= t;
+}
+
+/** 처음 방문인가의 반대 — URL의 t 또는 저장된 컷오프가 있다. init() 전에만 뜻이 있다 */
+export function cutoffChosen() {
+  if (parseT(new URLSearchParams(location.hash.replace(/^#/, '')).get('t')) !== undefined) return true;
+  return readStorage() !== undefined;
 }
 
 /** 컷오프를 끄기 전의 값(전부 보기를 풀 때 돌아갈 자리) */

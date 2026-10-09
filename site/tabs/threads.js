@@ -44,7 +44,7 @@ const LABELS = {
   maskedBar: (n) => `복선만 나온 줄 ${n}`, maskedShow: '보기', maskedHide: '숨기기',
   maskedQ: '아직 던져지지 않은 떡밥', maskedF: '아직 밝혀지지 않은 사실',
   details: '자세히', legend: '범례', sortName: '정렬', sortWeight: '중요도순', sortOpen: '미해결 많은 순', sortStart: '먼저 나온 순', pick: '떡밥 고르기',
-  hiddenThreads: '떡밥', hiddenSteps: '이 떡밥의 단계', hiddenMemo: '스포일러로 가림',
+  hiddenThreads: '떡밥', hiddenSteps: '이 떡밥의 단계', hiddenMemo: '스포일러로 가린',
   notStarted: '아직 시작하지 않은 떡밥', noneStarted: '여기까지 읽은 범위에는 아직 떡밥이 없다',
   startsAt: (t) => `${t}부터 나온다`, startsCount: (t, n) => `${t}부터 떡밥 ${n}개가 나온다`, raiseCutoff: (t) => `${t}까지 읽음으로`,
   stories: '스토리', unsolved: '미해결', itemsOf: '다루는 항목', related: '이어진 떡밥', moreItems: (n) => `+${n}`,
@@ -1119,14 +1119,10 @@ export async function mount(root, ctx) {
     const hiddenThreads = T == null ? 0 : threads.filter((t) => !stats.get(t.id).started).length;
     const hiddenSteps = T == null ? 0 : model?.hidden ?? 0;
     if (hiddenThreads || hiddenSteps) {
-      noteEl.append(ui.el('span', { class: 'thr-note-part' },
-        ui.el('span', { class: 'thr-note-text' }, `${LABELS.hiddenMemo} `, hiddenThreads ? `${LABELS.hiddenThreads} ${fmt.num(hiddenThreads)}` : null, hiddenThreads && hiddenSteps ? ' · ' : null, hiddenSteps ? `${LABELS.hiddenSteps} ${fmt.num(hiddenSteps)}` : null),
-        ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
+      noteEl.append(ui.hiddenNote(`${LABELS.hiddenMemo} ${[hiddenThreads ? `${LABELS.hiddenThreads} ${fmt.num(hiddenThreads)}` : null, hiddenSteps ? `${LABELS.hiddenSteps} ${fmt.num(hiddenSteps)}` : null].filter(Boolean).join(' · ')}`, () => state.set({ t: null })));
     }
     if (model?.hiddenL) {
-      noteEl.append(ui.el('span', { class: 'thr-note-part' },
-        ui.el('span', { class: 'thr-note-text' }, `${fmt.TERM.scope} 밖 ${LABELS.hiddenSteps} ${fmt.num(model.hiddenL)}`),
-        ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ layers: [1, 2, 3] }) }, `${fmt.TERM.scope} ${fmt.SCOPE.at(-1).label}`)));
+      noteEl.append(ui.hiddenNote(`${fmt.TERM.scope} 밖 ${LABELS.hiddenSteps} ${fmt.num(model.hiddenL)}`, () => state.set({ layers: [1, 2, 3] }), { action: `${fmt.TERM.scope} ${fmt.SCOPE.at(-1).label}` }));
     }
   };
 

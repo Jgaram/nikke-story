@@ -159,8 +159,8 @@ export async function mount(root, ctx) {
   const hiddenNote = (cutHidden, layerHidden) => {
     if (!cutHidden && !layerHidden) return null;
     return h('div', { class: 'w-hidden' },
-      cutHidden ? h('span', {}, fmt.hiddenLabel(cutHidden), ' — ', h('button', { type: 'button', class: 'w-linkbtn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)) : null,
-      layerHidden ? h('span', {}, `${fmt.TERM.scope} 밖 ${fmt.num(layerHidden)}`, ' — ', h('button', { type: 'button', class: 'w-linkbtn', onClick: () => state.set({ layers: state.ALL_LAYERS }) }, `${fmt.TERM.scope} 넓히기`)) : null);
+      cutHidden ? ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null })) : null,
+      layerHidden ? ui.hiddenNote(`${fmt.TERM.scope} 밖 ${fmt.num(layerHidden)}`, () => state.set({ layers: state.ALL_LAYERS }), { action: `${fmt.TERM.scope} 넓히기` }) : null);
   };
   const evidenceLinks = (ev, max = 3) => (ev ?? []).slice(0, max).map((x, i) => [i ? ' · ' : null, ui.link(`scene:${x.scene}`, fmt.ref(x.scene, x.lines), { class: 'mono w-ref' })]);
   const itemLink = (id) => {
@@ -261,7 +261,7 @@ export async function mount(root, ctx) {
     if (narrow && paramsOf().mode === 'dict') picker.open = true;
     findTimer = setTimeout(() => setP({ find: findInput.value.trim() || null }), 140);
   });
-  const head = h('div', { class: 'w-head' }, h('h2', {}, meta.title), modeSeg.el, h('label', { class: 'w-find' }, ui.icon('search'), findInput));
+  const head = h('div', { class: 'w-head' }, h('h2', { class: 'sr-only' }, meta.title), modeSeg.el, h('label', { class: 'w-find' }, ui.icon('search'), findInput));
 
   const dictView = h('div', { class: 'w-split' });
   const lifeView = h('div', { class: 'w-life' });

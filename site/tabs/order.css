@@ -18,10 +18,7 @@
 }
 .tab-order .order-status { margin-left: auto; color: var(--ink-2); font-size: 13px; }
 .tab-order .order-count { font-weight: 600; color: var(--ink); }
-.tab-order .order-unhide {
-  font: inherit; font-size: 13px; padding: 0; color: var(--link); background: none; border: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px;
-}
-.tab-order .order-unhide:hover { color: var(--ink); }
+.tab-order .order-status .hidden-note { margin-left: 10px; }
 
 /* ⓘ — 작은 도움말 단추(툴팁) */
 .tab-order .order-info {

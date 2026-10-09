@@ -6,6 +6,8 @@
  *   open(sel)                              sel = state의 sel 형식(unit: · scene: · record: · person: · target: · thread: · tick:)
  *   close() · isOpen()
  *
+ * 스토리 패널: 분류(order.json — 등급 · 왜 이 등급인가 · 읽기 순서 탭 링크) · 연결(links-scenes.json — 선 종류별 상대 스토리 · 근거 줄 · 분석 메모 · 강도, 처음 열 때 받는다).
+ * 씬 패널: 연결(그 씬의 선). 인물 · 떡밥 · 세계 항목 패널: 해당 탭에서 보기 링크. 탭 링크는 탭을 바꾸고 리더를 닫는다.
  * "여기까지 읽음" 뒤의 메모는 지우지 않고 가린다 — 흐리게 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기.
  * 패널 안 링크는 모두 ui.link(sel) → state.set({ sel })이라 뒤로 가기가 된다. 메모 ID(F203 등)는 근거 줄에 작은 모노스페이스로만.
  */
@@ -44,6 +46,7 @@ export async function open(sel) {
         await idx.withRecords();
       }
     }
+    if (parsed.type === 'unit') await loadOrder(); // 분류 칸 — 작은 파일(order.json)이라 같이 기다린다
     if (current !== sel) return; // 그새 다른 것을 골랐다
     ui.clear(root);
     const render = RENDER[parsed.type];
@@ -58,6 +61,191 @@ export async function open(sel) {
     ui.clear(root);
     root.append(head('오류'), ui.notice(err.message, 'error'));
   }
+}
+
+// ── 다른 탭으로 · 연결 · 분류 ──
+/** "OO 탭에서 보기" — 탭을 바꾸고 그 탭의 파라미터(p)·선택(sel)을 싣는다. sel이 없으면 리더는 닫는다 */
+function tabLink(tab, p = {}, { sel = '' } = {}) {
+  const href = `#tab=${tab}${sel ? `&sel=${encodeURIComponent(sel)}` : ''}${Object.entries(p).map(([k, v]) => `&p.${k}=${encodeURIComponent(v)}`).join('')}`;
+  return ui.el('a', {
+    href, class: 'link tab-link', title: fmt.TAB[tab]?.hint,
+    onClick: (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      state.set({ tab, p, sel });
+    },
+  }, fmt.openInTab(tab), ui.icon('arrow'));
+}
+/** 패널 머리 오른쪽에 다는 "OO 탭에서 보기" */
+const tabAction = (tab, p, opts) => ui.el('span', { class: 'panel-action' }, tabLink(tab, p, opts));
+
+let orderMap = null;
+async function loadOrder() {
+  if (orderMap) return orderMap;
+  try {
+    const o = await data.load('order');
+    orderMap = new Map(o.units.map((j) => [j.key, j]));
+  } catch {
+    orderMap = new Map(); // 못 받아도 리더는 쓴다
+  }
+  return orderMap;
+}
+
+let linkIndex = null;
+/** links-scenes.json — 처음 열 때 한 번 받아 씬 · 스토리별로 색인한다 */
+async function loadLinks() {
+  if (linkIndex) return linkIndex;
+  const list = await data.load('links-scenes');
+  const byScene = new Map();
+  const byUnit = new Map();
+  const push = (m, k, e) => { if (k == null) return; const a = m.get(k); if (a) a.push(e); else m.set(k, [e]); };
+  for (const e of list) {
+    push(byScene, e.from, e);
+    if (e.to !== e.from) push(byScene, e.to, e);
+    push(byUnit, e.fu, e);
+    if (e.tu !== e.fu) push(byUnit, e.tu, e);
+  }
+  linkIndex = { byScene, byUnit };
+  return linkIndex;
+}
+
+const LINK_CAP = 5; // 선 종류마다 먼저 보이는 줄 수 — 나머지는 "더 보기"
+const levelText = (s) => fmt.LINK_LEVEL[s] ?? '';
+/** 메모 ID(F203 · J1 …)가 든 문장을 링크로 */
+const withLinks = (text) => String(text ?? '').split(/\b([FQSIEDUOH]\d+(?:-\d+)?|J\d+)\b/).map((p, i) => (i % 2 ? (/^J\d/.test(p) ? ui.link(`thread:${p}`, p, { class: 'mono' }) : ui.link(`record:${p}`, p, { class: 'mono' })) : p));
+const clipText = (s, n) => ([...String(s ?? '')].length > n ? `${[...s].slice(0, n).join('')}…` : String(s ?? ''));
+
+/** 선 한 줄의 근거 — 분석 메모(있으면) · 씬 줄 */
+function linkEvidence(e, idx) {
+  const parts = [];
+  if (e.record) parts.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
+  const scene = (id, line) => (idx.scenes.get(id) ? ui.link(`scene:${id}`, fmt.ref(id, line), { class: 'mono' }) : ui.el('span', { class: 'mono' }, fmt.ref(id, line)));
+  if (parts.length) parts.push(' · ');
+  parts.push(scene(e.from, e.fl), ' → ', scene(e.to, e.tl));
+  return parts;
+}
+
+/** 선들을 선 종류별로 묶어 그린다 — rows: [{ type, node, s, n, order }]. 종류마다 LINK_CAP줄, 나머지는 접는다 */
+function linkGroups(rows) {
+  const out = [];
+  for (const type of fmt.LINK_TYPE_ORDER) {
+    const list = rows.filter((r) => r.type === type).sort((a, b) => b.s - a.s || b.n - a.n || a.order - b.order);
+    if (!list.length) continue;
+    const head = ui.el('h4', { class: 'rd-type', title: fmt.help('link', type) }, fmt.LINK_TYPE[type].label, ui.el('span', { class: 'muted' }, ` ${list.length}`));
+    const first = list.slice(0, LINK_CAP);
+    const rest = list.slice(LINK_CAP);
+    out.push(ui.el('div', { class: 'rd-group' }, head,
+      ui.el('ul', { class: 'rd-links' }, first.map((r) => r.node)),
+      rest.length ? ui.details(`더 보기 (${rest.length})`, ui.el('ul', { class: 'rd-links' }, rest.map((r) => r.node))) : null));
+  }
+  return out;
+}
+
+/** 연결 칸을 채운다 — 컷오프 뒤 상대는 스포일러 접이로 */
+function fillLinks(body, rows, emptyText) {
+  ui.clear(body);
+  if (!rows.length) { body.append(ui.empty(emptyText)); return; }
+  const before = rows.filter((r) => !r.after);
+  const after = rows.filter((r) => r.after);
+  if (before.length) body.append(...linkGroups(before)); else body.append(ui.empty('여기까지 읽은 범위엔 없음'));
+  if (after.length) body.append(ui.details(spoilerSummary(after.length), linkGroups(after), { class: 'spoiler' }));
+}
+
+/** 스토리 패널의 연결: 상대 스토리마다 한 줄(선 종류별) — 가장 센 선의 근거 */
+function unitLinkRows(key, edges, idx) {
+  const groups = new Map(); // `${type}|${other}` → { type, other, edges[] }
+  for (const e of edges) {
+    const other = e.fu === key ? e.tu : e.fu;
+    if (other === key && e.type === 'prereq') continue; // 한 스토리 안 순서(호감도 1편 → 2편 …)는 연결이 아니다
+    const id = `${e.type}|${other}`;
+    const g = groups.get(id);
+    if (g) g.edges.push(e); else groups.set(id, { type: e.type, other, edges: [e] });
+  }
+  return [...groups.values()].map((g) => {
+    const best = [...g.edges].sort((a, b) => b.s - a.s || (b.record ? 1 : 0) - (a.record ? 1 : 0) || (b.fl != null ? 1 : 0) - (a.fl != null ? 1 : 0))[0];
+    const u = idx.units.get(g.other);
+    const self = g.other === key;
+    const s = best.s;
+    const node = ui.el('li', { class: ['rd-link', u && !state.visible(u.tick) ? 'after-cutoff' : ''] },
+      ui.el('div', { class: 'rd-link-main' },
+        self ? ui.el('span', {}, '이 스토리 안') : (u ? ui.link(`unit:${g.other}`, u.title) : ui.el('span', { class: 'mono' }, g.other)),
+        ui.el('span', { class: 'rd-link-meta' }, `${levelText(s)}${g.edges.length > 1 ? ` · 씬 ${g.edges.length}쌍` : ''}`)),
+      ui.el('div', { class: 'rd-link-ev' }, linkEvidence(best, idx), g.edges.length > 1 ? ui.el('span', { class: 'muted' }, ` 외 ${g.edges.length - 1}`) : null));
+    return { type: g.type, node, s, n: g.edges.length, order: u?.order ?? 9999, after: Boolean(u) && !state.visible(u.tick) };
+  });
+}
+
+/** 씬 패널의 연결: 선 하나가 한 줄 — 상대 씬 · 상대 스토리 · 내 줄 ↔ 상대 줄 */
+function sceneLinkRows(id, edges, idx) {
+  return edges.map((e) => {
+    const mine = e.from === id;
+    const other = mine ? e.to : e.from;
+    const otherUnit = mine ? e.tu : e.fu;
+    const myLine = mine ? e.fl : e.tl;
+    const theirLine = mine ? e.tl : e.fl;
+    const sc = idx.scenes.get(other);
+    const u = idx.units.get(otherUnit);
+    const hidden = Boolean(u) && !state.visible(u.tick);
+    const ev = [];
+    if (e.record) ev.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
+    if (myLine != null || theirLine != null) {
+      if (ev.length) ev.push(' · ');
+      ev.push(myLine != null ? `이 씬 ${fmt.linesLabel(myLine)}` : '이 씬', ' ↔ ', theirLine != null ? fmt.linesLabel(theirLine) : '상대 씬');
+    }
+    const node = ui.el('li', { class: ['rd-link', hidden ? 'after-cutoff' : ''] },
+      ui.el('div', { class: 'rd-link-main' },
+        sc ? ui.link(`scene:${other}`, sc.title ?? other) : ui.el('span', { class: 'mono' }, other),
+        u ? ui.el('span', { class: 'rd-link-meta' }, [ui.link(`unit:${otherUnit}`, u.title), ` · ${levelText(e.s)}`]) : ui.el('span', { class: 'rd-link-meta' }, levelText(e.s))),
+      ev.length ? ui.el('div', { class: 'rd-link-ev' }, ev) : null);
+    return { type: e.type, node, s: e.s, n: 1, order: u?.order ?? 9999, after: hidden };
+  });
+}
+
+/** 연결 패널 — 자리를 먼저 잡고(spinner) links-scenes.json이 오면 채운다. 제목의 숫자 = 줄 수 */
+function linksPanel(idx, { sel, tabAct, pick, build, emptyText }) {
+  const body = ui.el('div', { class: 'rd-lazy' }, ui.spinner());
+  const panel = ui.panel('연결', body, { actions: tabAct });
+  root.append(panel);
+  loadLinks().then((li) => {
+    if (current !== sel) return;
+    const rows = build(pick(li), idx);
+    panel.querySelector('h3').textContent = rows.length ? `연결 ${rows.length}` : '연결';
+    fillLinks(body, rows, emptyText);
+  }).catch((err) => {
+    if (current !== sel) return;
+    ui.clear(body);
+    body.append(ui.empty(`연결을 불러오지 못함 — ${err.message}`));
+  });
+}
+
+/** 스토리 패널의 분류 칸 — 메인 · 본편은 "본편" 표시만, 나머지는 그 시점 등급 · 왜 이 등급인가 */
+function classPanel(u, idx) {
+  const j = orderMap?.get(u.key);
+  const action = tabAction('order', {}, { sel: `unit:${u.key}` });
+  if (!j) {
+    if (u.grade === '메인' || u.grade === '척추') return ui.panel(fmt.TERM.judgment, ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), { actions: action });
+    return null;
+  }
+  const t = T();
+  const g = fmt.gradeAt(j, t);
+  const spineName = (k) => { const s = idx.units.get(k); return s?.kind === 'main' ? fmt.tickShort(s.tick) : fmt.unitTitle(k); };
+  const gradeRow = [ui.chip('grade', g ?? j.grade)];
+  if (g == null) gradeRow.push(' ', ui.el('span', { class: 'muted' }, '여기까지 읽음 뒤에 나온 스토리'));
+  else if (g !== j.grade) gradeRow.push(' ', ui.el('span', { class: 'muted' }, ['→ ', ui.link(`unit:${j.from}`, spineName(j.from)), '부터 '], ui.chip('grade', j.grade)));
+  else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? `${spineName(j.from)} 앞에서는 ${fmt.GRADE[j.before ?? j.grade]?.label}` : `${spineName(j.from)}부터`));
+  const full = fmt.plain(j.reason ?? '');
+  const short = clipText(full, 90);
+  const basis = j.basis ? [
+    /^J\d/.test(j.basis) ? ui.link(`thread:${j.basis}`, j.basis, { class: 'mono' }) : ui.link(`record:${j.basis}`, j.basis, { class: 'mono' }),
+    j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene, j.basis_line), { class: 'mono' })] : null,
+  ] : null;
+  const why = full
+    ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, withLinks(full))))
+    : ui.el('span', { class: 'muted' }, '근거 메모 없음');
+  return ui.panel(fmt.TERM.judgment, kv([
+    row(t == null ? '등급' : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
+    row(fmt.TERM.basis, ui.el('div', {}, why, basis ? ui.el('div', { class: 'rd-link-ev' }, '근거: ', basis) : null)),
+  ]), { actions: action });
 }
 
 const needsRecords = (type) => ['scene', 'record', 'unit', 'person', 'target', 'thread'].includes(type);
@@ -150,8 +338,10 @@ const RENDER = {
       row('분량', `${u.scenes}씬 · ${fmt.num(u.lines)}줄${u.chars != null ? ` · ${fmt.num(u.chars)}자` : ''}`),
       row(fmt.TERM.source, u.library ? tip(ui.chip('plain', 'library', fmt.TERM.library), fmt.TERM_HELP.library) : null),
       row('대신하는 스토리', u.replaces ? (idx.units.get(u.replaces) ? ui.link(`unit:${u.replaces}`, fmt.unitTitle(u.replaces)) : mono(u.replaces)) : null),
-      row('분류 근거', u.judgment ? mono(u.judgment) : null),
     ])));
+    const cls = classPanel(u, idx);
+    if (cls) root.append(cls);
+    linksPanel(idx, { sel: current, tabAct: tabAction('links', { c: key }), pick: (li) => li.byUnit.get(key) ?? [], build: (edges) => unitLinkRows(key, edges, idx), emptyText: '이어진 스토리 없음' });
     root.append(ui.panel(`씬 ${scenes.length}`, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
       ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? s.id}`), ui.el('span', { class: 'muted' }, ` ${s.lines}줄${s.part ? ` · ${s.part}` : ''}${s.level ? ` · Lv.${s.level}` : ''} · 메모 ${(idx.recordsOf.get(s.id) ?? []).length}`)))) : ui.empty('씬 없음')));
     root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, [ui.el('p', { class: 'muted' }, countByKind(recs) || '없음'), recs.length > 80 ? ui.el('p', { class: 'muted' }, '씬을 고르면 그 씬의 메모만 나온다') : recordList(recs)]));
@@ -174,6 +364,7 @@ const RENDER = {
       row(fmt.TERM.release, u?.tick != null ? fmt.tickLabel(u.tick) : null),
       row('이동', ui.el('span', { class: 'nav' }, prev ? ui.link(`scene:${prev.id}`, `← ${prev.title ?? prev.id}`) : null, prev && next ? ' · ' : null, next ? ui.link(`scene:${next.id}`, `${next.title ?? next.id} →`) : null)),
     ])));
+    linksPanel(idx, { sel: current, tabAct: u ? tabAction('links', { c: u.key }) : null, pick: (li) => li.byScene.get(id) ?? [], build: (edges) => sceneLinkRows(id, edges, idx), emptyText: '이 씬에 걸린 연결 없음' });
     root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, recordList(recs)));
     slipsPanel((idx.slipsOf.get(s.unit) ?? []).filter((x) => !x.scenes?.length || x.scenes.includes(id)));
   },
@@ -222,6 +413,7 @@ const RENDER = {
     const t = idx.targets.get(id);
     if (!t) return root.append(head('찾을 수 없음'), ui.empty(`찾는 항목 없음: ${id}`));
     root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null], mono(id)));
+    root.append(ui.el('div', { class: 'rd-open' }, t.type === 'person' ? tabLink('persons', { who: id }) : tabLink('world', { item: id })));
     const recs = idx.recordsAbout.get(id) ?? [];
     const units = new Set(recs.map((r) => r.unit).filter(Boolean));
     root.append(ui.panel(null, kv([
@@ -238,6 +430,7 @@ const RENDER = {
     const j = idx.threads.get(id);
     if (!j) return root.append(head('찾을 수 없음'), ui.empty(`떡밥 없음: ${id}`));
     root.append(head(j.title, [ui.chip('plain', j.weight, fmt.THREAD_WEIGHT[j.weight]?.label ?? j.weight), j.confidence === '추정' ? ui.chip('confidence', '추정') : null], mono(j.id)));
+    root.append(ui.el('div', { class: 'rd-open' }, tabLink('threads', { j: id })));
     root.append(ui.panel(null, [
       ui.el('p', {}, j.text),
       kv([
