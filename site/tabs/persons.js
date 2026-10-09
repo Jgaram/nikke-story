@@ -67,7 +67,7 @@ const LABELS = {
   firstHow: { '이름표로 말함': '직접 말함', 이름: '이름만 나옴', '다른 이름': '다른 이름으로', '암시 언급': '숨은 등장' },
   sec: { heat: '등장', partners: '함께 나온 인물', changes: '변화', closure: '결말', records: '사실 · 의문', threads: '떡밥' },
   units: (n) => `${n}스토리`,
-  heatHint: '가로 = 읽는 순서 · 칸 색 = 말한 줄 수',
+  heatHint: '가로 = 감상 순서 · 칸 색 = 말한 줄 수',
   heatBuckets: ['1–4줄', '5–19', '20–59', '60–179', '180줄 이상'],
   nameOnly: '이름만 나옴',
   unread: '아직 안 읽은 부분',

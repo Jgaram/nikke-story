@@ -1,6 +1,7 @@
 /**
- * 탭 1 읽기 순서(W2) — 화면 1 "스토리 중요도 분류"(docs/views.md 1절, 판정 카드 docs/importance.md).
- * 첫 쓸모: "CH.N까지 읽었으면 다음에 뭘 읽나" — 여기까지 읽음 T에서 그 시점의 등급(필수 → 추천 → 참고 → 독립)으로 묶은 메인 밖 스토리 목록.
+ * 탭 1 감상 순서(W2) — 화면 1 "스토리 중요도 분류"(docs/views.md 1절, 판정 카드 docs/importance.md).
+ * 첫 쓸모: 스토리를 다 보지 않고 중요한 것만 빠르게 — 본편(메인 챕터 + 본편 이벤트 · 사이드)을 출시순 한 줄로 두고,
+ *   등급 거르개(기본 필수 · 추천)에 든 메인 밖 스토리를 그 사이사이 제자리(읽는 자리 units.json order)에 끼워 넣은 감상 순서.
  *
  * 쓰는 JSON
  *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](본편 자리) · leads[20](주역 명단) · counts
@@ -9,7 +10,8 @@
  *
  * URL 파라미터(p.*)
  *   mode   list(목록, 기본) | map(지도)
- *   kind   종류 거르개(event · episode · sub · relic · side · erelic · elevator), 없으면 전체
+ *   g      등급 거르개(쉼표 목록: 필수 · 보강 · 참고 · 독립), 없으면 필수 · 보강(DEFAULT_GRADES) — 지도에도 쓴다
+ *   k      종류 거르개(쉼표 목록: event · episode · sub · relic · side · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다
  *   find   제목 · 키 · 이유 안 낱말 검색
  *   rows   지도의 행: grade(등급별, 기본) | kind(종류별)
  *   leads  1이면 주역 명단을 펼친다
@@ -18,8 +20,9 @@
  *   그 시점의 등급 gradeAt(u, T) — tools/views/importance.mjs와 같다: T가 없으면(전부 보기) 최종 등급, T < 출시 시점이면 아직 없음(가림),
  *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급. 내려가는 일은 없다.
  *   여기까지 읽음 뒤 스토리(tick > T) · 범위 거르개 밖 스토리는 숨기고 개수만 보인다("스포일러로 가린 N — 전부 보기").
- *   목록: 등급별 묶음 표(묶음 제목 옆 ⓘ = 등급 뜻). 한 줄 = 출시 시점 · 종류 · 제목(+ 뒤에 오를 등급) · 이유(한 줄 말줄임) · 글자 · 범위.
- *     390px 폭에서는 카드형(출시 시점 · 종류 · 제목 / 이유)으로 접는다.
+ *   목록: 감상 순서 한 줄(ol). 본편 줄(메인 챕터는 굵은 구분 줄, 본편 이벤트 · 사이드는 '본편' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
+ *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 이유(한 줄 말줄임) · 글자. 거르개는 그 시점의 등급(gradeAt)으로 본다.
+ *     본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 제목 / 이유로 접는다.
  *   지도: 본편 60곳(메인 49 + 본편 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 본편 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
  *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 그 시점의 등급(파랑 램프), 점 크기는 같다.
  *     나중에 등급이 오르는 점은 오를 등급 색 테두리. 본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
@@ -31,17 +34,18 @@
  */
 import { gradeAt, plain } from '../lib/format.js';
 
-export const meta = { id: 'order', title: '읽기 순서', blurb: '여기까지 읽었다면 다음에 읽을 스토리' };
+export const meta = { id: 'order', title: '감상 순서', blurb: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' };
 
 /** fmt에 없는 화면 말 — 고칠 때는 여기 한 곳만 */
 const LABELS = {
-  title: '읽기 순서',
+  title: '감상 순서',
+  lede: '메인 스토리를 순서대로 두고, 고른 등급의 스토리를 그 사이사이 볼 자리에 끼워 넣었다. 기본은 필수 · 추천만 — 등급 · 종류를 켜면 늘어난다.',
   view: '보기', list: '목록', map: '지도',
-  kind: '종류', allKinds: '전체',
+  grade: '등급', kind: '종류',
   find: '제목 · 이유 검색', findAria: '스토리 검색',
-  count: (rows, total) => `${rows} / ${total}`,
-  cols: { release: '출시 시점', kind: '종류', title: '스토리', why: '이유', chars: '글자', scope: '범위' },
-  riseTo: (at, grade) => `→ ${at}부터 ${grade}`, riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
+  count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(본편 포함)와 대사 글자 수',
+  extras: (n) => `본편 밖 ${n}`,
+  riseTo: (at, grade) => `→ ${at}부터 ${grade}`, riseByList: (at) => `${at} 전까지 보면 된다`, riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   rowsGrade: '등급별', rowsKind: '종류별', rows: '행',
   legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' }, legendRise: '테두리 = 나중에 오를 등급',
   mapHint: '점을 누르면 분류 · 아래 축을 누르면 그 시점까지 읽은 것으로 둔다',
@@ -62,6 +66,10 @@ const LABELS = {
   trailNone: '바뀐 적 없다',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
+const DEFAULT_GRADES = ['필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
+const OFF_KINDS = ['relic', 'erelic']; // 유실물은 기본으로 뺀다(사용자, 2026-10-09)
+/** 쉼표 목록 파라미터 → 고른 값(없으면 기본값). 모르는 값은 버린다 */
+const listParam = (v, all, dflt) => (v == null ? dflt : v.split(',').filter((x) => all.includes(x)));
 
 const DOT_R = 4; // 점 반지름(지름 8px — dataviz 최소)
 const STEP = DOT_R * 2 + 1; // 점 사이 간격
@@ -110,10 +118,31 @@ export async function mount(root, ctx) {
   let curT = state.get().t;
 
   // ── 머리 · 도구 줄 ──
-  root.append(ui.el('div', { class: 'tab-head order-head' }, ui.el('h2', {}, LABELS.title)));
+  root.append(ui.el('div', { class: 'tab-head order-head' }, ui.el('h2', {}, LABELS.title)), ui.el('p', { class: 'order-lede muted' }, LABELS.lede));
   const status = ui.el('span', { class: 'order-status', role: 'status', 'aria-live': 'polite' });
   const modeSeg = ui.segmented({ label: LABELS.view, options: [{ value: 'list', label: LABELS.list }, { value: 'map', label: LABELS.map }], value: state.param('order', 'mode') ?? 'list', onChange: (v) => state.setParam('order', 'mode', v === 'list' ? null : v) });
-  const kindSeg = ui.segmented({ label: LABELS.kind, options: [{ value: 'all', label: LABELS.allKinds }, ...kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k) }))], value: state.param('order', 'kind') ?? 'all', onChange: (v) => state.setParam('order', 'kind', v === 'all' ? null : v) });
+  /** 여러 개를 켜고 끄는 칩 줄(aria-pressed). 기본값과 같으면 URL에서 지운다 */
+  const picks = ({ label, param, options, dflt }) => {
+    const btns = new Map();
+    const box = ui.el('div', { class: 'order-picks', role: 'group', 'aria-label': label }, ui.el('span', { class: 'order-picks-label' }, label));
+    const cur = () => listParam(state.param('order', param), options.map((o) => o.value), dflt);
+    for (const o of options) {
+      const b = ui.el('button', { type: 'button', class: 'order-pick', 'aria-pressed': 'false', title: o.title, dataset: { v: o.value } }, o.dot ? ui.el('i', { class: 'order-pick-dot', style: { background: o.dot }, 'aria-hidden': 'true' }) : null, o.label);
+      b.addEventListener('click', () => {
+        const on = new Set(cur());
+        if (on.has(o.value)) on.delete(o.value); else on.add(o.value);
+        const next = options.map((x) => x.value).filter((v) => on.has(v));
+        const same = next.length === dflt.length && next.every((v) => dflt.includes(v));
+        state.setParam('order', param, same ? null : next.join(',') || '-'); // '-' = 하나도 안 고름(기본값과 구별)
+      });
+      btns.set(o.value, b);
+      box.append(b);
+    }
+    return { el: box, cur, sync: () => { const on = new Set(cur()); for (const [v, b] of btns) b.setAttribute('aria-pressed', String(on.has(v))); } };
+  };
+  const gradePick = picks({ label: LABELS.grade, param: 'g', dflt: DEFAULT_GRADES, options: GRADES.map((g) => ({ value: g, label: gl(g), title: fmt.help('grade', g), dot: fmt.GRADE[g].color })) });
+  const kindDefault = kindsPresent.filter((k) => !OFF_KINDS.includes(k));
+  const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: kindDefault, options: kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k) })) });
   const find = ui.el('input', { type: 'search', class: 'order-find', placeholder: LABELS.find, 'aria-label': LABELS.findAria, value: state.param('order', 'find') ?? '' });
   let findTimer = null;
   let findPending = false; // 입력 뒤 URL에 싣기 전 — 그 사이 다른 거르개가 바뀌어도 입력칸을 되돌리지 않는다
@@ -122,42 +151,46 @@ export async function mount(root, ctx) {
     findPending = true;
     findTimer = setTimeout(() => { findPending = false; state.setParam('order', 'find', find.value.trim() || null); }, 200);
   });
-  root.append(ui.el('div', { class: 'toolbar order-toolbar' }, modeSeg.el, ui.el('div', { class: 'order-kinds' }, kindSeg.el), find, status));
+  root.append(ui.el('div', { class: 'toolbar order-toolbar' }, modeSeg.el, gradePick.el, ui.el('div', { class: 'order-kinds' }, kindPick.el), find, status));
   const emptyBox = ui.el('div', { class: 'order-empty' });
   emptyBox.hidden = true;
   root.append(emptyBox);
 
-  // ── 목록 ──
+  // ── 목록(감상 순서 한 줄) ──
   const listView = ui.el('div', { class: 'order-list' });
+  const listEl = ui.el('ol', { class: 'order-seq' });
+  listView.append(listEl);
   const riseNote = (j) => {
     if (!j.from_tick) return null;
     const at = spineLabel(j.from);
-    if (curT == null) return ui.el('div', { class: 'order-rise' }, LABELS.riseBefore(at, gl(j.before ?? j.grade)));
-    if (curT < j.from_tick) return ui.el('div', { class: 'order-rise is-future', title: `${at}에서 이 스토리를 다루기 시작하면 ${gl(j.grade)}` }, LABELS.riseTo(at, gl(j.grade)));
-    return ui.el('div', { class: 'order-rise' }, LABELS.riseSince(at));
+    if (curT == null) return ui.el('span', { class: 'order-rise', title: LABELS.riseBefore(at, gl(j.before ?? j.grade)) }, LABELS.riseByList(at));
+    if (curT < j.from_tick) return ui.el('span', { class: 'order-rise is-future', title: `${at}에서 이 스토리를 다루기 시작하면 ${gl(j.grade)}` }, LABELS.riseTo(at, gl(j.grade)));
+    return ui.el('span', { class: 'order-rise' }, LABELS.riseSince(at));
   };
-  const columns = () => [
-    { key: 'tick', label: LABELS.cols.release, width: '6.6em', nowrap: true, render: (j) => ui.el('span', { title: fmt.tickLabel(j.tick) }, fmt.tickShort(j.tick)), sort: (a, b) => a.tick - b.tick || a.unit.order - b.unit.order },
-    { key: 'kind', label: LABELS.cols.kind, width: '9.2em', render: (j) => ui.chip('kind', j.unit.kind), sort: (a, b) => fmt.KIND_ORDER.indexOf(a.unit.kind) - fmt.KIND_ORDER.indexOf(b.unit.kind) },
-    { key: 'title', label: LABELS.cols.title, width: '17em', render: (j) => ui.el('div', { class: 'order-title' }, ui.link(`unit:${j.key}`, j.unit.title), riseNote(j)), sort: (a, b) => a.unit.title.localeCompare(b.unit.title, 'ko') },
-    { key: 'why', label: LABELS.cols.why, sortable: false, render: (j) => {
-      // 한 줄로 줄이고(CSS 말줄임) 전문은 title · 분류 카드 · 리더 패널에 — 칸마다 초점이 생기지 않게 ui.tooltip 대신 title
-      return ui.el('div', { class: 'order-basis' }, ui.el('div', { class: 'order-why', title: j.reason ? plain(j.reason) : null }, plain(j.reason ?? '')));
-    } },
-    { key: 'chars', label: LABELS.cols.chars, width: '6em', num: true, render: (j) => fmt.num(j.unit.chars), sort: (a, b) => (a.unit.chars ?? 0) - (b.unit.chars ?? 0) },
-    { key: 'layer', label: LABELS.cols.scope, width: '5.6em', render: (j) => (j.unit.layer ? ui.chip('layer', j.unit.layer) : ''), sort: (a, b) => (a.unit.layer ?? 9) - (b.unit.layer ?? 9) },
-  ];
-  const groups = new Map();
-  for (const g of GRADES) {
-    const countEl = ui.el('span', { class: 'order-group-count' });
-    const info = ui.el('button', { type: 'button', class: 'order-info', 'aria-label': `${gl(g)} — ${fmt.help('grade', g)}` }, 'i');
-    ui.tooltip(info, fmt.help('grade', g));
-    const head = ui.el('h3', { class: 'order-group-head' }, ui.chip('grade', g), countEl, info);
-    const tbl = ui.table({ rowKey: 'key', pageSize: 40, onRow: (j) => state.set({ sel: `unit:${j.key}` }), columns: columns(), empty: LABELS.none });
-    const sec = ui.el('section', { class: 'order-group', 'data-grade': g }, head, tbl.el);
-    groups.set(g, { sec, countEl, tbl });
-    listView.append(sec);
-  }
+  /** 감상 순서의 한 줄. 본편이면 sp, 메인 밖이면 j */
+  const seqRow = (item, n, T) => {
+    const { key, unit } = item;
+    const go = () => state.set({ sel: `unit:${key}` });
+    const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', title: fmt.tickLabel(item.tick), onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
+    const num = ui.el('span', { class: 'order-n' }, String(n));
+    const chars = ui.el('span', { class: 'order-chars' }, fmt.num(unit.chars));
+    if (item.spine) {
+      const isMain = unit.kind === 'main';
+      attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}`;
+      return ui.el('li', attrs, num,
+        ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind)),
+        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title)), ui.el('span', { class: 'order-why' }), chars);
+    }
+    const g = gradeAt(item, T);
+    attrs.class = 'order-row is-extra';
+    return ui.el('li', attrs, num,
+      ui.el('span', { class: 'order-badges' }, ui.chip('grade', g), ui.chip('kind', unit.kind)),
+      ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), riseNote(item)),
+      ui.el('span', { class: 'order-why', title: item.reason ? plain(item.reason) : null }, plain(item.reason ?? '')), chars);
+  };
+  const markSelected = (key) => {
+    for (const li of listEl.children) { const on = li.dataset.key === key; li.classList.toggle('is-selected', on); li.setAttribute('aria-current', on ? 'true' : 'false'); }
+  };
   root.append(listView);
 
   // ── 지도 ──
@@ -204,45 +237,51 @@ export async function mount(root, ctx) {
   root.append(card);
 
   // ── 거르기 ──
-  const match = (j, s) => {
-    const kind = s.p.kind ?? 'all';
-    if (kind !== 'all' && j.unit.kind !== kind) return false;
+  const findOk = (x, s) => {
     const q = (s.p.find ?? '').toLowerCase();
-    if (q && !`${j.unit.title} ${j.key} ${plain(j.reason ?? '')}`.toLowerCase().includes(q)) return false;
-    return true;
+    return !q || `${x.unit.title} ${x.key} ${plain(x.reason ?? '')}`.toLowerCase().includes(q);
   };
+  const match = (j, s, kinds) => kinds.includes(j.unit.kind) && findOk(j, s);
   let current = { rows: [], T: null };
-  const clearFilters = () => state.set({ p: { kind: null, find: null } }, { replace: true });
+  const clearFilters = () => state.set({ p: { g: null, k: null, find: null } }, { replace: true });
   const apply = (s) => {
     const T = s.t;
     curT = T;
+    const grades = gradePick.cur();
+    const kinds = kindPick.cur();
+    gradePick.sync();
+    kindPick.sync();
     const inCut = judged.filter((j) => state.visible(j.tick, T));
     const inLayer = inCut.filter((j) => j.unit.layer == null || s.layers.includes(j.unit.layer));
-    const rows = inLayer.filter((j) => match(j, s));
-    current = { rows, T };
-    const hiddenCut = judged.length - inCut.length;
+    const rows = inLayer.filter((j) => match(j, s, kinds));
+    // 감상 순서: 본편(늘) + 고른 등급의 메인 밖 스토리, 읽는 자리 순서
+    const spineRows = spine.filter((sp) => state.visible(sp.tick, T) && findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
+    const extras = rows.filter((j) => grades.includes(gradeAt(j, T)));
+    current = { rows: extras, T }; // 지도도 같은 거르개
+    const seq = [...spineRows, ...extras].sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
+    const hiddenCut = judged.length - inCut.length + spine.length - spine.filter((sp) => state.visible(sp.tick, T)).length;
     const hiddenLayer = inCut.length - inLayer.length;
+    const mode = s.p.mode ?? 'list';
     ui.clear(status);
-    status.append(ui.el('span', { class: 'order-count' }, LABELS.count(fmt.num(rows.length), fmt.num(judged.length))));
+    if (mode === 'list') {
+      const chars = seq.reduce((m, x) => m + (x.unit.chars ?? 0), 0);
+      const cnt = ui.el('span', { class: 'order-count', title: LABELS.countHelp }, LABELS.count(fmt.num(seq.length), fmt.num(chars)));
+      status.append(cnt, ' ', ui.el('span', { class: 'muted' }, `(${LABELS.extras(fmt.num(extras.length))})`));
+    } else status.append(ui.el('span', { class: 'order-count' }, `${fmt.num(extras.length)} / ${fmt.num(judged.length)}`));
     if (hiddenCut) status.append(' ', ui.hiddenNote(fmt.hiddenLabel(hiddenCut), () => state.set({ t: null })));
     if (hiddenLayer) status.append(' · ', ui.el('span', { class: 'muted' }, `${LABELS.outScope} ${fmt.num(hiddenLayer)}`));
     // 목록
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
-    for (const [g, { sec, countEl, tbl }] of groups) {
-      const list = rows.filter((j) => gradeAt(j, T) === g).sort((a, b) => a.tick - b.tick || a.unit.order - b.unit.order);
-      countEl.textContent = fmt.num(list.length);
-      sec.hidden = list.length === 0;
-      tbl.update(list);
-      tbl.setSelected(selKey);
-    }
-    const empty = rows.length === 0;
+    listEl.replaceChildren(...seq.map((x, i) => seqRow(x, i + 1, T)));
+    markSelected(selKey);
+    const empty = mode === 'list' ? seq.length === 0 : extras.length === 0;
     emptyBox.hidden = !empty;
     if (empty) {
       ui.clear(emptyBox);
-      if (inCut.length === 0 && T != null) {
+      if (inCut.length === 0 && T != null && mode === 'map') {
         // 여기까지 읽음 안에 스토리가 없다 — 처음 나오는 시점으로 가는 단추를 준다
-        const first = judged.filter((j) => (j.unit.layer == null || s.layers.includes(j.unit.layer)) && match(j, s)).reduce((m, j) => Math.min(m, j.tick), Infinity);
+        const first = judged.filter((j) => (j.unit.layer == null || s.layers.includes(j.unit.layer)) && match(j, s, kinds)).reduce((m, j) => Math.min(m, j.tick), Infinity);
         const at = Number.isFinite(first) ? fmt.tickShort(first) : null;
         emptyBox.append(ui.notice(LABELS.emptyEarly(fmt.tickShort(T), at)), at ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: first }) }, LABELS.goNext(at)) : null, ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, TERM.showAll));
       } else emptyBox.append(ui.notice(LABELS.emptyFilter), ui.el('button', { type: 'button', class: 'btn', onClick: clearFilters }, LABELS.clearFilter));
@@ -253,9 +292,7 @@ export async function mount(root, ctx) {
     leadsHidden.textContent = leadRows.length < order.leads.length ? fmt.hiddenLabel(order.leads.length - leadRows.length) : '';
     leadsHidden.hidden = !leadsHidden.textContent;
     // 모드 · 지도
-    const mode = s.p.mode ?? 'list';
     modeSeg.set(mode);
-    kindSeg.set(s.p.kind ?? 'all');
     rowsSeg.set(s.p.rows ?? 'grade');
     if (!findPending && find.value !== (s.p.find ?? '') && document.activeElement !== find) find.value = s.p.find ?? '';
     listView.hidden = mode !== 'list' || empty;
@@ -270,7 +307,7 @@ export async function mount(root, ctx) {
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
     const byKind = (s.p.rows ?? 'grade') === 'kind';
-    const lanes = byKind ? kindsPresent.map((k) => ({ id: k, label: fmt.KIND[k].label, help: fmt.help('kind', k) })) : GRADES.map((g) => ({ id: g, label: gl(g), help: fmt.help('grade', g) }));
+    const lanes = byKind ? kindsPresent.map((k) => ({ id: k, label: fmt.KIND[k].label, help: fmt.help('kind', k) })) : GRADES.filter((g) => gradePick.cur().includes(g)).map((g) => ({ id: g, label: gl(g), help: fmt.help('grade', g) }));
     const laneOf = (j) => (byKind ? j.unit.kind : gradeAt(j, T));
     const n = spine.length;
     const pad = 12;
@@ -459,7 +496,7 @@ export async function mount(root, ctx) {
     else if (changed.has('sel')) {
       const sel = state.parseSel(s.sel);
       const key = sel?.type === 'unit' ? sel.id : null;
-      for (const { tbl } of groups.values()) tbl.setSelected(key);
+      markSelected(key);
       for (const c of svg.querySelectorAll('.order-dot')) c.classList.toggle('is-selected', c.dataset.key === key);
       renderCard(s);
     }

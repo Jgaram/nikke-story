@@ -230,7 +230,7 @@ export const LINK_LEVEL = { 1: '약함', 2: '보통', 3: '강함' };
 
 // ── 탭 ──
 export const TAB = {
-  order: { title: '읽기 순서', hint: '지금까지 읽은 데서 다음에 읽을 스토리' },
+  order: { title: '감상 순서', hint: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' },
   links: { title: '연결', hint: '스토리 사이의 연결' },
   threads: { title: '떡밥', hint: '복선과 떡밥이 이어지는 흐름' },
   persons: { title: '인물', hint: '인물별 등장과 변화' },
@@ -253,7 +253,7 @@ export const FIRST_VISIT = {
 export const TERM = {
   site: 'NIKKE 스토리 지도',
   unit: '스토리',
-  order: '읽는 순서',
+  order: '감상 순서',
   release: '출시 시점',
   cutoff: '여기까지 읽음',
   showAll: '전부 보기',

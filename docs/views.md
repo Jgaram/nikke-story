@@ -359,7 +359,7 @@
 
 | 탭 | 화면 | 보는 것 | 세션 |
 |---|---|---|---|
-| 1 읽기 순서 | 1 | 척추(메인 챕터 + 척추 이벤트 · 사이드)를 가로축으로, 메인 밖 단위를 그 자리에 등급 색(필수 · 보강 · 참고 · 독립)으로. 단위 → 등급을 정한 한 건 · 닿는 챕터 · 줄기 · 판정 이력. "CH.N까지 읽었으면 다음에 뭘 읽나"가 첫 쓸모라 첫 탭 | W2 |
+| 1 감상 순서 | 1 | 척추(메인 챕터 + 척추 이벤트 · 사이드)를 출시순 한 줄로, 고른 등급(기본 필수 · 보강)의 메인 밖 단위를 그 사이사이 읽는 자리에 끼워 넣은 감상 순서(지도 모드는 척추를 가로축으로 등급 색 점). 단위 → 등급을 정한 한 건 · 닿는 챕터 · 줄기 · 판정 이력. "CH.N까지 읽었으면 다음에 뭘 읽나"가 첫 쓸모라 첫 탭 | W2 |
 | 2 연결 | 2 | 단위 그래프(줌인하면 씬). 타입 · 인물 · 대상 · 줄기 · 층 · 세기 거르개. 선 → 만든 기록 · 근거 줄 | W3 |
 | 3 떡밥 | 3 · 4 | 왼쪽 줄기 지도(줄기 ↔ 줄기 · 줄기 ↔ 개념), 줄기 하나를 고르면 오른쪽에 제기 → 암시 → 일부 회수 → 회수 · 뒤집음 흐름. 열린 의문 강조. 축 공개순 · 작중순 전환 | W4 |
 | 4 인물 | 5 | 전체 표(등장 · 기록 · 줄기) → 인물 하나: 등장 히트맵 · 함께 나온 인물 네트워크 · 사실 · 의문 · 줄기 · 변화 타임라인(작중 순서) · 마무리 | W5 |
@@ -476,16 +476,16 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
 **컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · layer · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body, { actions })` · `details(summary, body, { open })` · `empty(text, action)` · `spinner` · `notice(text, kind)` · `hiddenNote(text, onShowAll, { action })`(스포일러 · 범위 밖 안내 한 모양) · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }` · `icon(name)`. 모두 키보드 · aria 기본값 포함.
 
 **리더(`lib/reader.js`)** — `open(sel)` · `close()` · `isOpen()`. app.js가 `sel` 변화에 맞춰 부르므로 탭은 `state.set({ sel })`만 하면 된다. 단위(메타 · **분류** · **연결** · 씬 목록 · 분석 메모 요약 · 설정 오류 메모) · 씬(메타 · **연결** · 그 씬의 분석 메모 종류별 · 앞뒤 씬) · 분석 메모(전문 · 근거 · 이유 · 대상 · 떡밥 · 같은 뿌리) · 인물 · 항목(사전 · 분석 메모) · 떡밥(의문 · 사실 · 관계) · 출시 시점.
-- **분류**(스토리 패널): `order.json`(작아서 패널을 열 때 같이 받는다)의 등급 칩 — 지금 읽은 데까지의 등급(`fmt.gradeAt`, 나중에 오르면 "→ CH.27부터 추천") · **이유** 한 줄(90자로 줄이고 눌러 전문, 메모 ID는 링크 · `fmt.plain`으로 화면 말) · "읽기 순서 탭에서 보기"(`#tab=order&sel=unit:<키>`). 본편(메인 · 척추)은 "본편" 칩만.
+- **분류**(스토리 패널): `order.json`(작아서 패널을 열 때 같이 받는다)의 등급 칩 — 지금 읽은 데까지의 등급(`fmt.gradeAt`, 나중에 오르면 "→ CH.27부터 추천") · **이유** 한 줄(90자로 줄이고 눌러 전문, 메모 ID는 링크 · `fmt.plain`으로 화면 말) · "감상 순서 탭에서 보기"(`#tab=order&sel=unit:<키>`). 본편(메인 · 척추)은 "본편" 칩만.
 - **연결**: `links-scenes.json`(처음 열 때 한 번 받아 씬 · 스토리별로 색인한다 — 받는 동안 spinner). 스토리 패널은 상대 스토리마다 한 줄(선 종류별 묶음 — `fmt.LINK_TYPE_ORDER` 순, 종류마다 5줄 뒤는 "더 보기") · 강도(`fmt.LINK_LEVEL`) · 가장 센 선의 근거(분석 메모 링크 · 씬 `fl` → `tl` 줄) · 씬 쌍이 여럿이면 "씬 N쌍"; 한 스토리 안 선행(호감도 1편 → 2편)은 뺀다. 씬 패널은 그 씬의 선 한 줄씩(상대 씬 · 상대 스토리 · 이 씬 줄 ↔ 상대 줄 · 분석 메모). 여기까지 읽음 뒤의 상대는 "스포일러 보기" 접이로. 머리의 "연결 탭에서 보기" = `#tab=links&p.c=<스토리 키>`.
-- 인물 패널 "인물 탭에서 보기"(`#tab=persons&p.who=<id>`) · 항목(인물 아닌 것) "세계 탭에서 보기"(`#tab=world&p.item=<id>`) · 떡밥 패널 "떡밥 탭에서 보기"(`#tab=threads&p.j=<id>`). 탭 링크는 탭을 바꾸고 리더를 닫는다(`sel` 비움; 분류의 읽기 순서 링크만 `sel`을 싣는다).
+- 인물 패널 "인물 탭에서 보기"(`#tab=persons&p.who=<id>`) · 항목(인물 아닌 것) "세계 탭에서 보기"(`#tab=world&p.item=<id>`) · 떡밥 패널 "떡밥 탭에서 보기"(`#tab=threads&p.j=<id>`). 탭 링크는 탭을 바꾸고 리더를 닫는다(`sel` 비움; 분류의 감상 순서 링크만 `sel`을 싣는다).
 
-**검색(`lib/search.js`)** — 상단 입력 하나(단축키 `/`). 단위 · 인물 · 대상(별칭 포함) · 줄기는 바로, 기록 문장은 처음 검색할 때 받는다. 종류별 묶음 · 최대 50건 · ↑↓ Enter Esc. 고르면 `sel`로 열고 unit → 읽기 순서, person → 인물, target → 세계, thread → 떡밥 탭으로(record는 지금 탭).
+**검색(`lib/search.js`)** — 상단 입력 하나(단축키 `/`). 단위 · 인물 · 대상(별칭 포함) · 줄기는 바로, 기록 문장은 처음 검색할 때 받는다. 종류별 묶음 · 최대 50건 · ↑↓ Enter Esc. 고르면 `sel`로 열고 unit → 감상 순서, person → 인물, target → 세계, thread → 떡밥 탭으로(record는 지금 탭).
 
 **탭 모듈 규약(`site/tabs/<name>.js`)**
 
 ```js
-export const meta = { id: 'order', title: '읽기 순서', blurb: '한 줄 설명' };
+export const meta = { id: 'order', title: '감상 순서', blurb: '한 줄 설명' };
 export async function mount(root, ctx) { /* root(main)에 그린다 */ return () => { /* 정리: 구독 해제 · 타이머 */ }; }
 ```
 `ctx = { state, data, fmt, ui, reader, d3, idx }` — `idx`는 `data.index()` 결과(기록은 `idx.withRecords()` 뒤), `d3`는 CDN을 못 받으면 null(탭이 안내문을 보인다).
@@ -496,11 +496,15 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 
 **확인(통합 점검, 2026-10-09)** — 헤드리스 크로미움(CDP)으로 여섯 탭 × (기본 · 여기까지 읽음 CH.26 · 스토리 선택) + 첫 방문 바 · 390px · 다크 · 리더(스토리 · 씬 · 인물 · 항목 · 떡밥)를 보았다. 콘솔 오류 0 · 가로 넘침 0 · 짧은 라벨 · 툴팁에 옛 내부 용어 0(분석 메모 문장 속 말은 데이터라 `fmt.plain`으로 줄여 보일 뿐 고치지 않는다). 리더의 "OO 탭에서 보기" 링크 · 첫 방문 바(고르기 · 전부 보기 · 나중에 · URL의 t · 저장된 컷오프) 동작 확인.
 
+**감상 순서로 바꿈(2026-10-09, 사용자)** — 첫 탭 이름을 "읽기 순서" → "감상 순서"로. 등급별 묶음 표(본편이 안 보이고 추천 · 독립이 따로 놓임)가 직관적이지 않다는 피드백에 따라,
+본편을 출시순 한 줄로 두고 고른 등급의 메인 밖 스토리를 사이사이 끼워 넣는 한 목록으로 바꿨다. 기본 거르개는 필수 · 추천(중요한 것만 빠르게), 유실물 · 이벤트 유실물은 기본으로 빼고 사용자가 켠다.
+끼우는 자리는 판정의 `from`(오르는 시점)이 아니라 읽는 자리(`units.json` `order`)다 — 뒤에 오르는 스토리는 제자리에 두고 "CH.27 전까지 보면 된다"를 단다.
+
 **탭별 (W2–W7)** — 쓰는 JSON · URL 파라미터(`p.<키>`, 탭을 바꾸면 지워진다) · 보기 모드. 그리는 규칙 · 칸 설명은 각 `site/tabs/<name>.js` 머리말 주석.
 
 | 탭 | 쓰는 JSON | 파라미터 | 보기 모드 |
 |---|---|---|---|
-| **읽기 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `kind`(스토리 종류) · `find` · `rows`(지도 행: grade · kind) · `leads`(1이면 주역 명단 펼침) | 목록(등급별 묶음 표, 한 줄 = 출시 시점 · 종류 · 스토리 · 이유 · 글자 · 범위) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
+| **감상 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `g`(등급, 쉼표 목록 — 기본 필수 · 보강) · `k`(스토리 종류, 쉼표 목록 — 기본 유실물 · 이벤트 유실물을 뺀 전부) · `find` · `rows`(지도 행: grade · kind) · `leads`(1이면 주역 명단 펼침) | 목록(감상 순서 한 줄 — 본편 줄은 늘, 그 사이에 거르개에 든 메인 밖 스토리를 읽는 자리 순서로 끼운다. 한 줄 = 순번 · 등급 · 종류 · 스토리 · 이유 · 글자, 머리에 편 수 · 글자 합) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
 | **연결** `links` (W3) | `links.json` · `links-scenes.json`(근거) | `m`(ego · net · chain) · `c`(가운데 스토리) · `n` · `pr` · `lt` · `ty`(선 종류) · `s`(연결 강도 1–3) · `tg`(인물 · 항목) · `th`(떡밥) · `kd`(스토리 종류) · `nn` · `mm` | 이웃(가운데 스토리 + 앞 · 뒤 카드, 기본) / 전체(읽는 순서 축 위 점 · 선) / 연작(다음 편 사슬). 선을 누르면 씬 → 씬 근거. 인물 · 떡밥 거르개 후보는 여기까지 읽음 안의 선에 걸린 것만 |
 | **떡밥** `threads` (W4) | `threads-flow.json` · `threads-map.json` · 공용 `threads.json` | `j`(떡밥 ID) · `axis`(story면 작중 시간순) · `f`(unsolved · solved · fact) · `map`(rel · item · list) · `c` · `common` · `hints` · `sort`(open · start) | 왼쪽 떡밥 지도(떡밥끼리 · 항목 · 목록) + 오른쪽 떡밥 하나의 흐름(의문 · 사실 줄마다 던짐 → 복선 → 일부 회수 → 회수 · 뒤집힘, 출시 순서 / 작중 시간순) |
 | **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |

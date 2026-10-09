@@ -1,7 +1,7 @@
 /**
  * 상단 검색(W1) — 입력 하나로 스토리 · 인물 · 세계(대상) · 떡밥 · 분석 메모 문장. 대사 본문 검색은 없다(공개 규칙).
  * 메모 문장(records*.json)은 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건, 입력 디바운스 150ms.
- * 키보드: ↑ ↓ 이동 · Enter 열기 · Esc 닫기. 고르면 `state.set({ sel, tab })` — unit → 읽기 순서, person → 인물, target → 세계, thread → 떡밥, record → 지금 탭.
+ * 키보드: ↑ ↓ 이동 · Enter 열기 · Esc 닫기. 고르면 `state.set({ sel, tab })` — unit → 감상 순서, person → 인물, target → 세계, thread → 떡밥, record → 지금 탭.
  *
  *   init({ input, container, state, data, fmt, ui })
  */

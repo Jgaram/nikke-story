@@ -45,7 +45,7 @@ export const meta = { id: 'links', title: '연결', blurb: '스토리 사이의 
 /** 이 탭 말(fmt에 없는 것만). 용어 → 사람 말 대응은 docs 2차 지시 기준 */
 const LABELS = {
   mode: { ego: '이웃', net: '전체', chain: '연작' },
-  modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '거르개로 줄인 전체 연결을 읽는 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
+  modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '거르개로 줄인 전체 연결을 감상 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
   center: '중심 스토리',
   centerPh: '스토리 이름으로 찾기',
   filters: '거르개',
@@ -79,7 +79,7 @@ const LABELS = {
   hiddenRange: (n) => `범위 설정에서 빠진 스토리 ${n}`,
   showAll: '전부 보기',
   widthKey: '굵기 = 연결된 씬 수',
-  flowKey: '왼쪽 → 오른쪽이 읽는 순서',
+  flowKey: '왼쪽 → 오른쪽이 감상 순서',
   candKey: '긴 점선 = 확정 전 후보',
   noNeighbors: '이 스토리와 이어진 스토리가 없다',
   noNeighborsFiltered: '거르개에 걸리는 연결이 없다',
