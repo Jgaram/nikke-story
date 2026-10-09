@@ -231,7 +231,7 @@ export async function mount(root, ctx) {
     if (/^[A-Z](-[a-z])?\d+$/.test(b)) return recLink(b);
     const base = b.split('#')[0];
     const sceneId = [base, base.replace(/^ep:/, ''), `ep:${base}`].find((x) => idx.scenes.has(x));
-    return sceneId ? ui.link(`scene:${sceneId}`, b, { class: 'mono cr-recid' }) : el('span', { class: 'mono cr-recid' }, b);
+    return sceneId ? ui.link(`scene:${sceneId}`, fmt.ref(sceneId)) : el('span', { class: 'mono cr-recid' }, b);
   };
   const joinNodes = (nodes, sep = ' ') => nodes.flatMap((n, i) => (i ? [sep, n] : [n]));
 

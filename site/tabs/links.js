@@ -322,11 +322,10 @@ export async function mount(root, ctx) {
   const typeKey = (t) => h('i', { class: `lk-key lk-t-${TYPE_CLASS[t]}`, 'aria-hidden': 'true' });
   /** 기록 ID 칩(근거 표시) */
   const recordLink = (id) => (id && /^[A-Z]+\d/.test(id) && !/^Y\d/.test(id) ? ui.link(`record:${id}`, id, { class: 'mono lk-rid' }) : id ? h('span', { class: 'mono lk-rid' }, id) : null);
-  const sceneLink = (id, line) => {
+  const sceneLink = (id) => {
     const title = sceneTitle(id);
-    const l = line != null ? fmt.linesLabel(line) : '';
-    if (!idx.scenes.has(id)) return h('span', { class: 'lk-scene' }, h('span', { class: 'mono lk-sref' }, `${id} ${l}`.trim())); // 애장품 등 씬 목록에 없는 끝점
-    return h('span', { class: 'lk-scene' }, ui.link(`scene:${id}`, title ?? id, { title: id }), h('span', { class: 'mono lk-sref' }, title ? `${id} ${l}`.trim() : l));
+    if (!idx.scenes.has(id)) return h('span', { class: 'lk-scene' }, title ?? id); // 애장품 등 씬 목록에 없는 끝점
+    return h('span', { class: 'lk-scene' }, ui.link(`scene:${id}`, fmt.ref(id)));
   };
   const kindText = (u) => h('span', { class: 'lk-kind' }, kindLabel(u.kind));
 
@@ -866,9 +865,9 @@ export async function mount(root, ctx) {
         h('span', { class: 'lk-origin muted', title: fill(LABELS.originHelp[r.origin] ?? '') }, ORIGIN[r.origin] ?? r.origin),
         r.s ? h('span', { class: 'lk-lvl muted', title: fill(LABELS.levelHelp[r.s]) }, `${TERM.strength} ${LABELS.level[r.s]}`) : null),
       h('div', { class: 'lk-ev-scenes' },
-        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.first), sceneLink(r.from, r.fl)),
+        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.first), sceneLink(r.from)),
         h('span', { class: 'lk-ev-arrow', 'aria-hidden': 'true' }, ui.icon('arrow')),
-        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.second), sceneLink(r.to, r.tl))),
+        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.second), sceneLink(r.to))),
       ...whyOf(r));
   }
 

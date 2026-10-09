@@ -829,7 +829,7 @@ export async function mount(root, ctx) {
       tipLine(`${fmt.unitTitle(p.u)} · ${when(u?.tick)}`),
       p.rel === '앞' && (p.s === '암시' || p.s === '재언급') ? tipLine(ui.el('span', { class: 'muted' }, LABELS.gapFirst)) : null,
       p.bu ? tipLine(ui.el('span', { class: 'thr-tip-bu' }, p.bu === '복선의 답' ? LABELS.hintAnswer : LABELS.long), p.gap ? ` · ${p.gap}` : '') : null,
-      p.sc ? tipLine(ui.el('span', { class: 'mono' }, fmt.ref(p.sc, p.ln)), p.c === '추정' ? ` · ${fmt.CONFIDENCE.추정.label}` : '') : null,
+      p.sc ? tipLine(ui.el('span', {}, fmt.ref(p.sc)), p.c === '추정' ? ` · ${fmt.CONFIDENCE.추정.label}` : '') : null,
       !lane.masked && r ? tipLine(ui.el('span', { class: 'thr-tip-text' }, clip(fmt.recordText(r), 120))) : null,
       !lane.masked && p.a && rec(p.a) ? tipLine(ui.el('span', { class: 'muted' }, `${LABELS.answer}: `), clip(fmt.recordText(rec(p.a)), 90)) : null);
     return body;

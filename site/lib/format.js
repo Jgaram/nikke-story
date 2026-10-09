@@ -16,7 +16,7 @@
  *   tickLabel(tick, { date })       'CH.20 시점 · 2023-01-12' / 'CH.17 이후 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
- *   ref(scene, line)                'd_main_07_02 12줄'   linesLabel(lines) → '12–17줄'   evidence(ev[]) → 'd_main_07_02 12–17줄 · d_main_07_03 8줄'
+ *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
  *   recordText(r) · recordLabel(r)  메모 한 줄 · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
@@ -348,17 +348,21 @@ export function placeLabel(place) {
     .join(' 또는 ');
 }
 
-/** 줄 번호(숫자 · "12-17" · 배열) → '12줄' · '12–17줄' · '12, 15줄' */
-export function linesLabel(lines) {
-  const list = (Array.isArray(lines) ? lines : [lines]).filter((x) => x != null && x !== '');
-  if (!list.length) return '';
-  return `${list.map((x) => String(x).replace(/\s*-\s*/g, '–')).join(', ')}줄`;
-}
-export const ref = (scene, line) => {
-  const l = linesLabel(line);
-  return l ? `${scene} ${l}` : String(scene ?? '');
+/** 장면 표시 — 'CH.14 여행 · 18장면 「에닉」'. 씬 ID · 줄 번호는 화면에 내지 않는다(원문이 없어 확인할 수 없고, ID는 작업용 키) */
+export const ref = (scene) => {
+  const s = idx?.scenes.get(scene);
+  if (!s) return String(scene ?? '');
+  const u = idx.units.get(s.unit);
+  return `${u ? `${u.title} · ` : ''}${sceneName(scene)}`;
 };
-export const evidence = (ev) => (Array.isArray(ev) ? ev.map((e) => ref(e.scene, e.lines)).join(' · ') : '');
+/** 그 스토리 안의 장면이면 스토리 이름 없이, 다른 스토리면 붙여서 */
+export const refIn = (scene, unit) => (idx?.scenes.get(scene)?.unit === unit ? sceneName(scene) : ref(scene));
+/** 스토리 이름을 이미 보일 때 — '18장면 「에닉」' */
+export const sceneName = (scene) => {
+  const s = idx?.scenes.get(scene);
+  return s ? `${s.seq}장면${s.title ? ` 「${s.title}」` : ''}` : String(scene ?? '');
+};
+export const evidence = (ev) => (Array.isArray(ev) ? [...new Set(ev.map((e) => e.scene))].map((s) => ref(s)).join(' · ') : '');
 
 export const hiddenLabel = (n) => `스포일러로 가린 ${num(n)}`;
 
@@ -374,11 +378,22 @@ export function gradeAt(u, T) {
 const PLAIN_TERMS = [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '본편'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '자동으로 찾지 못해 직접 더한']];
 const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
 const hasFinal = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 && c % 28 !== 0; };
-export const plain = (text) => PLAIN_TERMS.reduce((t, [a, b]) => t.replace(new RegExp(`${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
+export const plain = (text) => keysToNames(PLAIN_TERMS.reduce((t, [a, b]) => t.replace(new RegExp(`${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
   if (!j) return b;
   const pick = JOSA.find((x) => x[0] === j);
   return b + (hasFinal(b) ? pick[1] : pick[2]);
-}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천'));
+}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천')));
+/** 문장 속 작업용 키 → 화면 이름: 메인 챕터 'ch21' → 'CH.21', 그 밖 스토리 키 → 제목, 씬 ID → 장면 표시. 모르는 키는 그대로 */
+const KEY_RE = /\b(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[A-Za-z0-9_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2})\b/g;
+function keysToNames(text) {
+  if (!idx) return text;
+  return text.replace(KEY_RE, (k) => {
+    if (/^ch\d{2}$/.test(k)) return idx.units.has(k) ? `CH.${k.slice(2)}` : k;
+    if (idx.units.has(k)) return unitTitle(k);
+    if (idx.scenes.has(k)) return ref(k);
+    return k;
+  });
+}
 
 export function targetName(id) {
   if (!id) return '';

@@ -162,7 +162,7 @@ export async function mount(root, ctx) {
       cutHidden ? ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null })) : null,
       layerHidden ? ui.hiddenNote(`${fmt.TERM.scope} 밖 ${fmt.num(layerHidden)}`, () => state.set({ layers: state.ALL_LAYERS }), { action: `${fmt.TERM.scope} 넓히기` }) : null);
   };
-  const evidenceLinks = (ev, max = 3) => (ev ?? []).slice(0, max).map((x, i) => [i ? ' · ' : null, ui.link(`scene:${x.scene}`, fmt.ref(x.scene, x.lines), { class: 'mono w-ref' })]);
+  const evidenceLinks = (ev, max = 3) => (ev ?? []).slice(0, max).map((x, i) => [i ? ' · ' : null, ui.link(`scene:${x.scene}`, fmt.ref(x.scene), { class: 'w-ref' })]);
   const itemLink = (id) => {
     if (byId.has(id)) {
       return h('a', { href: '#', class: 'link w-about', dataset: { item: id }, onClick: (ev) => { ev.preventDefault(); gotoItem(id); } }, nameOf(id));
@@ -192,7 +192,7 @@ export async function mount(root, ctx) {
         u ? ui.link(`unit:${r.unit}`, u.title, { class: 'w-unit' }) : null,
         u && u.kind !== 'main' ? h('span', { class: 'muted' }, whenLabel(r.tick)) : null,
         r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
-        ev ? ui.link(`scene:${ev.scene}`, fmt.ref(ev.scene, ev.lines?.[0]), { class: 'mono w-ref' }) : null,
+        ev ? ui.link(`scene:${ev.scene}`, fmt.ref(ev.scene), { class: 'w-ref' }) : null,
         ui.link(`record:${r.id}`, r.id, { class: 'mono w-ref' }),
       ])),
       showAbout && aboutIds?.length ? h('div', { class: 'w-meta w-aboutline' }, aboutIds.map((a) => itemLink(a))) : null);

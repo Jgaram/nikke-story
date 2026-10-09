@@ -119,9 +119,9 @@ const clipText = (s, n) => ([...String(s ?? '')].length > n ? `${[...s].slice(0,
 function linkEvidence(e, idx) {
   const parts = [];
   if (e.record) parts.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
-  const scene = (id, line) => (idx.scenes.get(id) ? ui.link(`scene:${id}`, fmt.ref(id, line), { class: 'mono' }) : ui.el('span', { class: 'mono' }, fmt.ref(id, line)));
+  const scene = (id) => (idx.scenes.get(id) ? ui.link(`scene:${id}`, fmt.ref(id)) : ui.el('span', {}, fmt.ref(id)));
   if (parts.length) parts.push(' · ');
-  parts.push(scene(e.from, e.fl), ' → ', scene(e.to, e.tl));
+  parts.push(scene(e.from), ' → ', scene(e.to));
   return parts;
 }
 
@@ -181,17 +181,11 @@ function sceneLinkRows(id, edges, idx) {
     const mine = e.from === id;
     const other = mine ? e.to : e.from;
     const otherUnit = mine ? e.tu : e.fu;
-    const myLine = mine ? e.fl : e.tl;
-    const theirLine = mine ? e.tl : e.fl;
     const sc = idx.scenes.get(other);
     const u = idx.units.get(otherUnit);
     const hidden = Boolean(u) && !state.visible(u.tick);
     const ev = [];
     if (e.record) ev.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
-    if (myLine != null || theirLine != null) {
-      if (ev.length) ev.push(' · ');
-      ev.push(myLine != null ? `이 씬 ${fmt.linesLabel(myLine)}` : '이 씬', ' ↔ ', theirLine != null ? fmt.linesLabel(theirLine) : '상대 씬');
-    }
     const node = ui.el('li', { class: ['rd-link', hidden ? 'after-cutoff' : ''] },
       ui.el('div', { class: 'rd-link-main' },
         sc ? ui.link(`scene:${other}`, sc.title ?? other) : ui.el('span', { class: 'mono' }, other),
@@ -275,7 +269,7 @@ function recordLine(r, { showUnit = false } = {}) {
     ui.el('div', { class: 'record-text' }, fmt.recordText(r)),
     ui.el('div', { class: 'record-ref' },
       showUnit && r.unit ? [ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)), ' · '] : null,
-      r.evidence?.length ? joinNodes(r.evidence.map((e) => ui.link(`scene:${e.scene}`, fmt.ref(e.scene, e.lines), { class: 'mono' }))) : null,
+      r.evidence?.length ? joinNodes([...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.link(`scene:${sc}`, fmt.refIn(sc, r.unit)))) : null,
       ' ', ui.link(`record:${r.id}`, r.id, { class: 'mono rec-id', title: '메모 자세히' })));
 }
 
@@ -320,7 +314,7 @@ const RENDER = {
     const u = idx.units.get(key);
     if (!u) return root.append(head('찾을 수 없음'), ui.empty(`스토리 없음: ${key}`));
     const hidden = !state.visible(u.tick);
-    root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null], mono(key)));
+    root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null]));
     if (hidden) root.append(ui.notice(`여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
     const scenes = idx.scenesOf.get(key) ?? [];
     const recs = idx.recordsOfUnit.get(key) ?? [];
@@ -344,7 +338,7 @@ const RENDER = {
     if (!s) return root.append(head('찾을 수 없음'), ui.empty(`씬 없음: ${id}`));
     const u = idx.units.get(s.unit);
     const recs = idx.recordsOf.get(id) ?? [];
-    root.append(head(s.title ?? id, [u ? ui.chip('kind', u.kind) : null], mono(id)));
+    root.append(head(s.title ?? fmt.sceneName(id), [u ? ui.chip('kind', u.kind) : null]));
     const siblings = idx.scenesOf.get(s.unit) ?? [];
     const prev = siblings[s.seq - 2];
     const next = siblings[s.seq];
@@ -381,9 +375,9 @@ const RENDER = {
     if (r.kind === 'O') body.append(kv([row('흐름', r.chain), row('쌓인 곳', r.built?.length ? joinNodes(r.built.map((b) => (/^[A-Z]\d/.test(b) ? ui.link(`record:${b}`, b, { class: 'mono' }) : ui.link(`unit:${b}`, fmt.unitTitle(b))))) : null), row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('닫은 메모', recLinks(r.closing))]));
     if (r.kind === 'H') body.append(kv([row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('함께 맺는 메모', recLinks(r.members))]));
     if (r.points?.length) body.append(kv([row('가리키는 메모', recLinks(r.points))]));
-    if (r.evidence?.length) body.append(ui.panel('장면', ui.el('ul', { class: 'plain' }, r.evidence.map((e) => ui.el('li', {}, ui.link(`scene:${e.scene}`, fmt.ref(e.scene, e.lines), { class: 'mono' }), ' ', ui.el('span', { class: 'muted' }, idx.scenes.get(e.scene)?.title ?? ''))))));
+    if (r.evidence?.length) body.append(ui.panel('장면', ui.el('ul', { class: 'plain' }, [...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.el('li', {}, ui.link(`scene:${sc}`, fmt.ref(sc)))))));
     // 해석 이유는 추정일 때만 — 확실한 메모는 문장만으로 읽힌다
-    if (r.reason && r.confidence === '추정') body.append(ui.panel('추정한 이유', ui.el('p', { class: 'reason' }, r.reason)));
+    if (r.reason && r.confidence === '추정') body.append(ui.panel('추정한 이유', ui.el('p', { class: 'reason' }, fmt.plain(r.reason))));
     if (r.about?.length) body.append(ui.panel('관련', ui.el('p', {}, joinNodes(r.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) body.append(ui.panel(fmt.TERM.thread, ui.el('p', {}, joinNodes(r.threads.map((j) => ui.link(`thread:${j}`, idx.threads.get(j)?.title ?? j))))));
     const rootId = r.parent ?? ((r.kind === 'F' || r.kind === 'Q') ? r.id : null);
@@ -393,7 +387,7 @@ const RENDER = {
       const others = [rootRec, ...events].filter((x) => x && x.id !== r.id);
       if (others.length) body.append(ui.panel('이어진 메모', recordList(others, { showUnit: true })));
     }
-    body.append(ui.panel('나온 곳', kv([row(fmt.TERM.unit, r.unit ? ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)) : null), row('씬', r.scene ? ui.link(`scene:${r.scene}`, r.scene, { class: 'mono' }) : null), row(fmt.TERM.release, r.tick != null ? fmt.tickLabel(r.tick) : null), row(fmt.TERM.order, r.order != null ? `${r.order}번째` : null)])));
+    body.append(ui.panel('나온 곳', kv([row(fmt.TERM.unit, r.unit ? ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)) : null), row('장면', r.scene ? ui.link(`scene:${r.scene}`, fmt.sceneName(r.scene)) : null), row(fmt.TERM.release, r.tick != null ? fmt.tickLabel(r.tick) : null), row(fmt.TERM.order, r.order != null ? `${r.order}번째` : null)])));
     if (hidden) root.append(ui.details(spoilerSummary(), body, { class: 'spoiler' }));
     else root.append(body);
   },

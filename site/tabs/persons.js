@@ -853,8 +853,8 @@ export async function mount(root, ctx) {
           inv_(c), ends.has(c.id) ? [' ', el('span', { class: 'pm-tag is-end', title: fmt.help?.('record', 'O') }, fmt.RECORD_KIND.O.label)] : null,
           cls && c.class !== '판별' ? [' ', el('span', { class: 'pm-tag', title: fmt.help?.('chrono', c.class) }, cls)] : null),
         text ? el('div', { class: 'pm-change-text' }, text) : el('div', { class: 'pm-change-text muted' }, R ? '' : LABELS.needRecords),
-        el('div', { class: 'pm-change-meta muted' }, unitLink(c.unit), ` · ${atLabel(c.tick)}`, ' · ', el('span', { class: 'mono' }, c.id, r?.scene ? ` ${fmt.ref(r.scene, r.line)}` : ''),
-          r?.trigger?.length ? [` · ${LABELS.trigger} `, el('span', { class: 'mono' }, fmt.evidence(r.trigger))] : null))));
+        el('div', { class: 'pm-change-meta muted' }, unitLink(c.unit), ` · ${atLabel(c.tick)}`, ' · ', el('span', { class: 'mono' }, c.id), r?.scene ? ` · ${fmt.sceneName(r.scene)}` : '',
+          r?.trigger?.length ? [` · ${LABELS.trigger} `, el('span', {}, fmt.evidence(r.trigger))] : null))));
     });
     sec.body.append(ul);
     if (list.length > chgLimit) sec.body.append(showMore(list.length - chgLimit, () => { chgLimit += 25; paintSection(sec); }));
@@ -870,7 +870,7 @@ export async function mount(root, ctx) {
       el('div', { class: 'pm-tip-sub' }, `${fmt.unitTitle(c.unit)} · ${atLabel(c.tick)}`),
       c.inverted?.length ? el('div', { class: 'pm-tip-sub' }, `${T_INV} — 먼저 공개된 변화 ${c.inverted.length}개보다 작중으로 앞`) : null,
       endRec ? el('div', { class: 'pm-tip-sub' }, `${fmt.RECORD_KIND.O.label} — ${clip(endRec.text, 60)}`) : null,
-      el('div', { class: 'pm-tip-sub mono' }, `${c.id}${r?.scene ? ` ${fmt.ref(r.scene, r.line)}` : ''}`));
+      el('div', { class: 'pm-tip-sub' }, `${c.id}${r?.scene ? ` · ${fmt.sceneName(r.scene)}` : ''}`));
   }
   function hotDot(cid, on) {
     secChanges.body.querySelector(`.pm-dot[data-cid="${CSS.escape(cid)}"]`)?.classList.toggle('is-hot', on);
@@ -934,7 +934,7 @@ export async function mount(root, ctx) {
       return el('li', { class: ['pm-rec', st === '열림' ? 'is-open' : ''], dataset: { sel: `record:${r.id}` }, tabindex: 0, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `record:${r.id}` }); },
         onKeydown: (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); state.set({ sel: `record:${r.id}` }); } } },
       el('div', { class: 'pm-rec-text' }, showState ? [ui.chip('state', st), ' '] : null, label ? [el('span', { class: 'pm-act' }, label), ' '] : null, fmt.recordText(r)),
-      el('div', { class: 'pm-rec-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)} · `, el('span', { class: 'mono' }, r.id, r.scene ? ` ${fmt.ref(r.scene, r.line)}` : ''), r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null));
+      el('div', { class: 'pm-rec-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)} · `, el('span', { class: 'mono' }, r.id), r.scene ? ` · ${fmt.sceneName(r.scene)}` : '', r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null));
     };
     const limit = fqLimit[tab];
     const shown = list.slice(0, limit);
