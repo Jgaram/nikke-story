@@ -41,7 +41,7 @@ test('내보낸 JSON이 모두 파싱되고 manifest의 건수와 맞는다', ()
   for (const [file, info] of Object.entries(m.files)) {
     const data = read(file);
     if (typeof info.count === 'number') assert.equal(Array.isArray(data) ? data.length : 1, info.count, file);
-    else for (const [k, n] of Object.entries(info.count)) assert.equal(data[k].length, n, `${file} ${k}`);
+    else for (const [k, n] of Object.entries(info.count)) assert.equal(Array.isArray(data[k]) ? data[k].length : 1, n, `${file} ${k}`);
   }
   assert.equal(m.warnings, result.warnings.length);
 });
