@@ -1,0 +1,122 @@
+{
+  "unit": "erelic:old_tales_lost",
+  "session": "R52",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "OLD TALES의 유실물 — 침식 보고서. 공식 보고서 I–VI(_00–_04): 촉수로 찔러 니케를 잠깐 마비시키는 랩쳐 기술 침식은 NIMPH에 '행동 정지' 강제 명령을 내리는 것이고, 백신은 듣지 않고 NIMPH의 방어로 곧 사멸해 연구가 잠정 중단된다. 비공식 보고서 I–VIII(_05–_12)는 상부가 금지한 연구를 몰래 이어 간 이(레드 슈즈)의 기록 — 침식 랩쳐와 양산형 니케로 실험실을 꾸려 명령을 심고(실험체 13 · 49), V.T.C. 인맥으로 넘겨받은 자기 인격 데이터를 심어 니케가 랩쳐를 지키게 하고(실험체 134), 랩쳐 10기에 심어 돌려보낸 뒤 강해진 침식을 보고 페어리 테일 모델(신데렐라)에 시험하려 한다. _13 '됐다됐다' 광기의 글, _14 '당신은 퀸에게 선택받았어요' — 헬레틱은 퀸이 고른 니케만 될 수 있고 인격 박리와 '저를 기반으로 한' 인격 데이터가 이끈다는, 신데렐라에게 남긴 글.",
+  "facts": [
+    {
+      "id": "F1699",
+      "text": "공식 침식 보고서에 따르면 침식은 랩쳐가 촉수 장비를 니케에게 찔러 일으키는 전염성 없는 짧은 마비로 여겨졌다가 NIMPH에 [행동 정지] 강제 명령을 내리는 것(언령과 일맥상통)으로 확정되었고, 백신은 듣지 않고 NIMPH의 자체 방어로 곧 사멸해 NIMPH 블랙박스가 해석될 때까지 치료 연구가 잠정 중단되었다",
+      "about": ["concept:침식", "concept:NIMPH", "concept:랩쳐"],
+      "evidence": [
+        { "scene": "erelic:old_tales_lost_00", "lines": ["0-4"] },
+        { "scene": "erelic:old_tales_lost_01", "lines": ["0-3"] },
+        { "scene": "erelic:old_tales_lost_03", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_lost_04", "lines": ["0-4"] }
+      ],
+      "reason": "보고서 I · II · IV · VI",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1700",
+      "text": "비공식 보고서의 필자(레드 슈즈)는 상부가 철저히 금지한 침식-NIMPH 연구를 몰래 이어, 침식 유발 랩쳐와 양산형 니케로 개인 실험실을 꾸리고 침식에 명령을 심어 실험체들이 따르게 했다(실험체 13은 3분간 소리를 지르고, 49는 스스로를 해쳤다) — 침식은 NIMPH를 변형시키는 절대 명령권이었지만 지속 시간이 짧았다",
+      "about": ["person:레드_슈즈", "concept:침식", "concept:NIMPH", "concept:양산형_니케"],
+      "evidence": [
+        { "scene": "erelic:old_tales_lost_05", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_lost_06", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_lost_07", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_lost_08", "lines": ["0-3"] }
+      ],
+      "reason": "필자는 이름이 없지만 '화합' · 개인 실험실 · 인격 데이터 · '신데렐라는 어떻게 될까'로 레드 슈즈의 고백(event_oldtales2_intermission_01)과 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M23",
+          "note": "2회독: 필자 = 레드 슈즈 — 2_intermission_01#25-65 고백(코드 해석 · 명령 주입 · 인격 데이터 · 랩쳐에게 돌려보냄)과 맞는다",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1701",
+      "text": "필자(레드 슈즈)는 V.T.C. 인맥으로 자기 인격 데이터를 넘겨받으며 화합의 꿈을 들킨 이를 '순교'시켰고, 그 데이터를 심은 침식에 걸린 실험체 134는 랩쳐를 지키고 니케를 적대했으며 랩쳐도 그를 공격하지 않았다 — 풀리자마자 자살하는 등 오래가지 않자, 랩쳐 10기에 심어 돌려보냈고 이후 침식은 지속 · 발현 · 행동 양식이 크게 강해졌다",
+      "about": ["person:레드_슈즈", "concept:침식", "concept:랩쳐", "org:V.T.C."],
+      "evidence": [
+        { "scene": "erelic:old_tales_lost_09", "lines": ["0-8"] },
+        { "scene": "erelic:old_tales_lost_10", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_lost_11", "lines": ["0-7"] }
+      ],
+      "reason": "비공식 보고서 V–VII. 침식에 걸린 니케가 NIMPH의 저항으로 마지막 말 · 행동을 되풀이한다는 보고도 적혀 있다(_11 #5-6)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M23",
+          "note": "2회독: 필자 = 레드 슈즈 — 2_intermission_01#25-65 고백(코드 해석 · 명령 주입 · 인격 데이터 · 랩쳐에게 돌려보냄)과 맞는다",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1702",
+      "text": "침식이 완벽해졌다고 본 필자는 마지막 단계로 페어리 테일 모델이 침식에 걸리면 랩쳐가 일회용으로 쓰지 않으리라 기대하며 '신데렐라는 어떻게 될까'라 적었고, 이어 '됐다'를 되풀이하며 '아름다운 아나키오르 · 화합의 길로 이끌어 주소서'라 썼다",
+      "about": ["person:레드_슈즈", "person:신데렐라", "person:아나키오르", "concept:페어리_테일", "concept:침식"],
+      "evidence": [{ "scene": "erelic:old_tales_lost_12", "lines": ["0-8"] }, { "scene": "erelic:old_tales_lost_13", "lines": ["0-4"] }],
+      "reason": "보고서 VIII과 광기의 글",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1703",
+      "text": "신데렐라에게 남긴 글에 따르면 헬레틱은 아무나 될 수 없고 랩쳐의 퀸에게 선택받은 니케만 될 수 있으며, 인격 박리와 '저를 기반으로 한 더욱 진화된 인격 데이터'가 정성스럽게 헬레틱으로 이끈다 — 글은 신데렐라가 아나키오르였을 때 가장 아름다웠다고 맺는다",
+      "about": ["concept:헬레틱", "person:퀸", "person:신데렐라", "person:아나키오르", "person:레드_슈즈", "concept:침식"],
+      "evidence": [{ "scene": "erelic:old_tales_lost_14", "lines": ["0-9"] }],
+      "reason": "제목이 깨진 글. '저를 기반으로 한 인격 데이터'로 필자를 레드 슈즈로 읽었다(인격 데이터를 심은 이는 그녀뿐)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "Q220-2",
+      "act": "회수",
+      "answer": "F1703",
+      "degree": "전부",
+      "evidence": [{ "scene": "erelic:old_tales_lost_14", "lines": ["4-5"] }],
+      "reason": "미러 = 인격 박리 속에서 말을 거는, 레드 슈즈를 기반으로 더 진화한 인격 데이터",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S185",
+      "kind": "회상",
+      "text": "2세대 실전 배치 전 — 침식 연구 중단부터 레드 슈즈의 비공식 실험 · 랩쳐에게 돌려보낸 침식이 강해진 시기",
+      "ref": "S180",
+      "at": [["뒤", "S180"], ["전", "S182"]],
+      "evidence": [{ "scene": "erelic:old_tales_lost_04", "lines": [4] }, { "scene": "erelic:old_tales_lost_12", "lines": ["0-8"] }],
+      "reason": "보고서 순서. 신데렐라 침식(S180) 직전에서 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": []
+}

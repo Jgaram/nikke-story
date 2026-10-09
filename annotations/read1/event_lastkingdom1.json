@@ -1,0 +1,691 @@
+{
+  "unit": "event_lastkingdom1",
+  "session": "R42",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "LAST KINGDOM(1 · 2부) — 크라운 왕국 방어전. 지상 테스트 중 대파된 헤비그램의 킬로와 로봇 T.A.L.O.S.를 크라운 · 차임이 장식으로 여겨 고성으로 끌고 와 백성으로 삼는다(F1422). 킬로는 서른두 번 스쿼드를 옮긴 자기를 탈로스의 부품이라 여긴다(F1423). 탈로스가 마리안을 헬레틱 모더니아로 알아보지만 마리안의 경고에 킬로는 신고를 접는다(F1426). 탈로스의 새어 나간 구조 신호로 랩쳐가 몰려오고, 따라온 인디빌리아 · 토커티브가 고성에 숨긴 것을 캐려 한다(F1429). 고성 냉동 창고에는 인류가 지상을 되찾을 날을 위한 하이퍼 푸드 씨앗이 있다(F1427 · F1428). 토커티브는 마리안을 알아본다(F1431). 정탐하던 차임이 붙잡혀 침식의 비밀을 듣고도(F1433) 입을 다물어 목이 잘려 오고, 크라운이 인디빌리아를 짓밟고 몸을 찾아와 탈로스 · 라푼젤이 살린다(F1432 · F1434). 봉화로 온 필그림 셋이 합류(F1435). 인디빌리아의 에블라 입자는 크라운에게 독(F1436). 크라운 · 차임의 첫 만남 회상(F1437 · S144). 킬로는 탈로스의 마음을 알고 남기로 한다(F1439). 마리안은 토커티브의 말 뒤 혼란에 빠지지만 크라운이 받아 준다(F1441 · F1442). 최종 방어전 — 토커티브가 나노머신으로 화룡의 머리를 단 모습이 되지만(F1444) 킬로가 코어를 직결해 각성한 탈로스로 머리를 뽑아 던지고(F1445), 크라운은 에블라 입자를 모아 온 네이키드 킹으로 랩쳐를 쓸고 차임이 인디빌리아의 목을 벤다(F1446 · F1447). 필그림은 나유타의 소집으로 떠나고(F1450), 크라운은 불길한 예감에 마리안을 지휘관에게 보내려 한다(F1451). 그날 밤 마리안 앞에 인디빌리아 · 토커티브가 무릎 꿇고 '여왕님'이라 부른다(F1453).",
+  "scenes": [
+    {
+      "scene": "event_lastkingdom1_prologue",
+      "text": "대파된 탈로스 안에서 슬립 모드로 구조를 기다리던 킬로를 크라운 · 차임이 장식으로 끌고 와, 구해 줬다며 왕국의 백성으로 삼는다"
+    },
+    {
+      "scene": "event_lastkingdom1_01_s",
+      "text": "왕국의 일과 백성 82명 설명. 킬로는 사이비 같다며 도망치려 하지만 탈로스는 성벽 차폐력으로 안전하다며 말린다"
+    },
+    {
+      "scene": "event_lastkingdom1_01_e",
+      "text": "마리안의 거미 요리에 킬로 기절. 탈로스가 마리안을 헬레틱 모더니아로 알아보지만 마리안의 경고에 신고를 취소"
+    },
+    {
+      "scene": "event_lastkingdom1_02_s",
+      "text": "탈로스의 스캔 · 3D 프린터로 수집 · 성벽 보수를 해치워 '일등 백성'이 된다. 왕국은 관광지였던 인공섬의 고성"
+    },
+    {
+      "scene": "event_lastkingdom1_02_e",
+      "text": "방어 시스템을 최신식으로 바꿨다는 차임. 킬로는 탈로스에게 탈주를 상정한 미래를 묻고 '네가 그렇겠지, 내가 아니라'"
+    },
+    {
+      "scene": "event_lastkingdom1_03_s",
+      "text": "일주일 뒤 술자리 — 킬로가 서른두 번 스쿼드를 옮긴 처지와 '탈로스의 부품'이라는 자괴감을 털어놓고, 크라운은 창으로 답한다"
+    },
+    {
+      "scene": "event_lastkingdom1_03_e",
+      "text": "마리안 '저도 그래요, 힘내요'. 랩쳐 대군 습격에 크라운은 이곳은 반드시 지켜야 한다며 봉화를 올린다"
+    },
+    {
+      "scene": "event_lastkingdom1_b01_e",
+      "text": "첫 방어전 승리. 멀리 고지대의 인디빌리아 · 토커티브"
+    },
+    {
+      "scene": "event_lastkingdom1_intermission",
+      "text": "인디빌리아 · 토커티브가 고성에 무엇이 있는지 캐려 광학미채 랩쳐를 쓰기로. 랩쳐는 탈로스의 구조 신호를 따라온 듯 — 크라운은 킬로에게 남을지 정하라 한다"
+    },
+    {
+      "scene": "event_lastkingdom1_b02_s",
+      "text": "또 습격"
+    },
+    {
+      "scene": "event_lastkingdom1_b02_e",
+      "text": "랩쳐에 지휘 체계 — 헬레틱 이상 급. 사흘에 다섯 번 습격, 포위. 보구 창고에 유탄"
+    },
+    {
+      "scene": "event_lastkingdom1_04_s",
+      "text": "크라운이 킬로에게 냉동 창고의 문을 열어 보인다 — 하이퍼 푸드 씨앗"
+    },
+    {
+      "scene": "event_lastkingdom1_04_e",
+      "text": "하이퍼 푸드 설명, 지상을 되찾을 날의 식량. 차임이 적진 정탐에 나서고, 토커티브는 마리안을 알아본다"
+    },
+    {
+      "scene": "event_lastkingdom1_05_s",
+      "text": "크라운의 꿈(차임과의 첫 만남). 광학미채 랩쳐 발견. 차임은 인디빌리아 · 토커티브에게 붙잡힌다"
+    },
+    {
+      "scene": "event_lastkingdom1_05_e",
+      "text": "귀를 잘리고 침식으로 위협받아도 차임은 왕국을 배신하지 않는다 — 토커티브 '하지만, 부럽군'"
+    },
+    {
+      "scene": "event_lastkingdom1_06_s",
+      "text": "크라운이 구하러 나서려는데 성벽 너머로 날아온 강철 상자 속 차임의 머리"
+    },
+    {
+      "scene": "event_lastkingdom1_06_e",
+      "text": "크라운이 트롬베로 인디빌리아를 들이받고 짓밟은 뒤 차임의 몸을 찾아온다. 탈로스의 백팩에 머리 보관(1시간)"
+    },
+    {
+      "scene": "event_lastkingdom1_b03_s",
+      "text": "마리안 · 킬로 둘이서 방어"
+    },
+    {
+      "scene": "event_lastkingdom1_b03_e",
+      "text": "필그림 셋 도착. 라푼젤 · 탈로스가 차임 봉합에 나선다"
+    },
+    {
+      "scene": "event_lastkingdom2_01_s",
+      "text": "필그림 · 크라운의 작전 회의(그것은 1년 더 모아야). 킬로는 비밀 통로를 두고 남겠다 한다. 차임 봉합 성공"
+    },
+    {
+      "scene": "event_lastkingdom2_01_e",
+      "text": "필그림의 승산 계산 — 언체인드 없음 · 도령 연락 안 됨 · 에덴 반대. 인디빌리아 · 토커티브 총공격 결정(마리안은 건드리지 말 것)"
+    },
+    {
+      "scene": "event_lastkingdom2_b01_s",
+      "text": "습격 시작"
+    },
+    {
+      "scene": "event_lastkingdom2_b01_e",
+      "text": "인디빌리아가 거대화 충격파로 성벽을 뚫고 둘이 입성"
+    },
+    {
+      "scene": "event_lastkingdom2_02_s",
+      "text": "홍련이 인디빌리아를, 크라운이 토커티브를 맡는다"
+    },
+    {
+      "scene": "event_lastkingdom2_02_e",
+      "text": "토커티브가 마리안에게 '네가 누구인지 기억하라'. 크라운에게 마리안을 아는지 묻고 떠난다. 마리안 두통"
+    },
+    {
+      "scene": "event_lastkingdom2_03_s",
+      "text": "홍련이 꼬리 검을 벤다. 인디빌리아의 에블라 입자에 크라운이 쓰러진다 — 독. 차임이 깨어남"
+    },
+    {
+      "scene": "event_lastkingdom2_03_e",
+      "text": "차임의 분함과 크라운의 '후회하게 만들어 줘요'. 킬로는 탈로스를 남기려 하고, 차임의 지면 붕괴 작전"
+    },
+    {
+      "scene": "event_lastkingdom2_intermission",
+      "text": "떠나겠다는 킬로에게 크라운 '탈로스의 가슴에 물어보라' — 조종석만 멀쩡한 까닭과 탈로스의 고백"
+    },
+    {
+      "scene": "event_lastkingdom2_04_s",
+      "text": "킬로가 남기로. 크라운 · 차임의 첫 만남 회상, 공허한 왕. 탈로스가 인디빌리아의 꼬리 칼날을 차임에게 준다"
+    },
+    {
+      "scene": "event_lastkingdom2_04_e",
+      "text": "마리안이 총을 겨누다 거둔다 — 헬레틱이던 과거를 모르는 마리안, 크라운은 떠나도 백성이라 한다"
+    },
+    {
+      "scene": "event_lastkingdom2_b02_s",
+      "text": "폭탄으로 정문 외 성벽 앞 지면 붕괴, 탈로스 확성기로 선전포고"
+    },
+    {
+      "scene": "event_lastkingdom2_b02_e",
+      "text": "토커티브 입성, 마리안도 싸움에 나선다('미안해요')"
+    },
+    {
+      "scene": "event_lastkingdom2_05_s",
+      "text": "필그림 셋 · 킬로 대 토커티브(헬레틱에 가까운 몸)"
+    },
+    {
+      "scene": "event_lastkingdom2_05_e",
+      "text": "마리안을 본 토커티브의 격분과 화룡 변신. 킬로가 코어를 직결해 각성한 탈로스로 토커티브의 머리를 뽑아 던진다"
+    },
+    {
+      "scene": "event_lastkingdom2_b03_s",
+      "text": "남은 헬레틱 — 짙어지는 에블라 입자"
+    },
+    {
+      "scene": "event_lastkingdom2_b03_e",
+      "text": "인디빌리아가 씨앗을 볼모로 크라운을 내려오게 한다"
+    },
+    {
+      "scene": "event_lastkingdom2_06_s",
+      "text": "인디빌리아가 마리안에게 '가짜 혹은 다른 무언가'. 크라운이 다시 트롬베로 들이받는다"
+    },
+    {
+      "scene": "event_lastkingdom2_06_e",
+      "text": "크라운이 지키는 까닭과 공허한 왕. 네이키드 킹 개방으로 랩쳐 전멸, 차임이 인디빌리아의 목을 벤다"
+    },
+    {
+      "scene": "event_lastkingdom2_epilogue",
+      "text": "필그림은 나유타의 소집으로 떠남. 마리안의 '두렵고 화가 났다'. 크라운의 불길한 예감. 밤에 마리안 앞에 헬레틱 둘이 무릎 꿇는다 — '여왕님'"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1422",
+      "text": "헤비그램 스쿼드의 킬로는 로봇 T.A.L.O.S.의 지상 테스트 중 기체가 대파되어 구조를 기다리던 중 — 스물한 번째 실패로 프로젝트 폐기를 걱정했다 — 장식으로 여긴 크라운 · 차임에게 트롬베로 끌려 고성(크라운 왕국)에 왔고, '구해 줬으니' 왕국의 백성이 되었다",
+      "about": ["person:킬로", "person:T.A.L.O.S.", "org:헤비그램", "person:크라운", "person:차임", "place:크라운_왕국"],
+      "evidence": [{ "scene": "event_lastkingdom1_prologue", "lines": ["1-21", "26-49", 113, 118, "122-131"] }],
+      "reason": "킬로의 독백(#18-21)과 자기소개(#113, #118), 크라운 · 차임의 백성 선언(#123-131)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1423",
+      "text": "킬로는 양산형보다 못한 스펙에 특화된 능력이 없어 서른두 번 스쿼드를 옮겨 다니다 탈로스의 파일럿이 되었고, 자기를 탈로스를 움직이게 하는 '부품'일 뿐이라 여긴다",
+      "about": ["person:킬로", "person:T.A.L.O.S."],
+      "evidence": [{ "scene": "event_lastkingdom1_03_s", "lines": ["62-82"] }],
+      "reason": "술에 취한 킬로 본인의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1424",
+      "text": "탈로스는 니케 코어를 동력원으로 쓰고 나노 코팅으로 자가 수복하며, 내장 A.I.가 상황을 지원하고 3D 프린터로 탄환 등을 만들며 킬로만 탈 수 있다",
+      "about": ["person:T.A.L.O.S.", "person:킬로"],
+      "evidence": [{ "scene": "event_lastkingdom1_02_s", "lines": ["31-47"] }],
+      "reason": "킬로의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1425",
+      "text": "크라운 왕국은 원래 관광지였던 인공섬의 고성으로 성벽의 신호 차폐력이 높아 랩쳐에게 잘 들키지 않으며, 크라운에 따르면 백성은 킬로까지 82명 — 왕국의 은혜를 입은 새 · 물고기 · 말까지 모두 백성이고 지상을 돌며 일한다",
+      "about": ["place:크라운_왕국", "person:크라운", "person:차임"],
+      "evidence": [{ "scene": "event_lastkingdom1_01_s", "lines": ["22-33", "54-55"] }, { "scene": "event_lastkingdom1_02_s", "lines": ["59-60"] }],
+      "reason": "차임 · 크라운의 말과 탈로스의 판단(01_s #54)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1426",
+      "text": "탈로스는 마리안을 방주에서 수배령이 내렸던 헬레틱 모더니아로 알아보았고, 방주에 알리려던 킬로에게 마리안은 소중한 이들을 위험에 빠뜨리는 이에게는 무슨 수를 써서라도 대가를 치르게 하겠다고 해 킬로는 명령을 취소했다",
+      "about": ["person:T.A.L.O.S.", "person:킬로", "person:마리안", "person:모더니아"],
+      "evidence": [{ "scene": "event_lastkingdom1_01_e", "lines": ["78-115"] }],
+      "reason": "탈로스 · 킬로 대화와 마리안의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1427",
+      "text": "고성 안 전자식 문 너머 냉동 창고에는 하이퍼 푸드 씨앗이 쌓여 있다 — 석 달이면 거두고 땅을 망치지 않으며 병충해에 강하고 땅을 가리지 않는 차세대 곡물로, 탈로스에 따르면 완성 기록 뒤로는 아무 기록이 없다",
+      "about": ["concept:하이퍼_푸드", "place:크라운_왕국", "person:T.A.L.O.S."],
+      "evidence": [{ "scene": "event_lastkingdom1_04_s", "lines": ["0-44"] }, { "scene": "event_lastkingdom1_04_e", "lines": ["0-15"] }],
+      "reason": "크라운 · 차임의 설명과 탈로스의 기록 조회(농업 종사자 과격 시위도 있었다, #12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1428",
+      "text": "크라운 · 차임은 인류가 지상을 되찾았을 때의 식량으로 하이퍼 푸드를 지킨다 — 지상에서는 퍼펙트 같은 정체불명의 음식이 아니라 지상의 것을 먹어야 지상의 주인이라며 — 차임은 방주로 가져가자는 킬로에게 '방주는 믿을 수 없다'고 했다가 말을 돌렸다",
+      "about": ["person:크라운", "person:차임", "concept:하이퍼_푸드", "concept:퍼펙트", "place:방주"],
+      "evidence": [{ "scene": "event_lastkingdom1_04_e", "lines": ["19-54"] }],
+      "reason": "차임 · 크라운의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1429",
+      "text": "랩쳐가 왕국으로 몰려온 것은 탈로스가 끄지 않은 재밍 · 구조 신호가 새어 나간 탓으로 보였고, 랩쳐를 따라온 인디빌리아 · 토커티브는 버려도 그만인 고성을 필그림이 목숨 걸고 지키는 것을 보고 무엇이 있는지 캐려 광학미채 소형 랩쳐를 들여보냈다",
+      "about": ["person:인디빌리아", "person:토커티브", "person:T.A.L.O.S.", "place:크라운_왕국"],
+      "evidence": [{ "scene": "event_lastkingdom1_intermission", "lines": ["0-53", "67-76"] }],
+      "reason": "인디빌리아 · 토커티브 대화와 탈로스의 보고 — 신호가 원인이라는 것은 킬로의 짐작(#75)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1430",
+      "text": "인디빌리아에 따르면 화룡(니힐리스타)을 먹은 뒤 토커티브는 힘이 눈에 띄게 강해지고 외형도 변할 조짐이 있다 — 토커티브는 '동족 포식'이라는 말을 싫어했다 — 인디빌리아는 아직 소형뿐이지만 광학미채를 탑재한 랩쳐를 만든다",
+      "about": ["person:토커티브", "person:니힐리스타", "person:인디빌리아"],
+      "evidence": [{ "scene": "event_lastkingdom1_intermission", "lines": ["6-12", "42-46"] }],
+      "reason": "인디빌리아의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1431",
+      "text": "토커티브는 고성을 엿보다 마리안이 있음을 알아채 '여기 있었나, 방주가 가만히 놔뒀을 리가 없지'라며 웃었고, 붙잡은 차임에게 마리안이 언제 왜 왕국에 왔는지 물었다",
+      "about": ["person:토커티브", "person:마리안", "person:차임"],
+      "evidence": [{ "scene": "event_lastkingdom1_04_e", "lines": ["78-87"] }, { "scene": "event_lastkingdom1_05_e", "lines": ["30-33"] }],
+      "reason": "토커티브의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1432",
+      "text": "정탐하다 붙잡힌 차임은 인디빌리아에게 귀를 잘리고 '사명에 목숨을 버리지 마라'는 토커티브의 회유에도 왕국의 백성이자 왕의 비서로서 배신하지 않는다며 입을 열지 않아, 목이 잘려 왕국에 보내졌다 — 토커티브는 '어리석다, 하지만 부럽군'이라 했다",
+      "about": ["person:차임", "person:인디빌리아", "person:토커티브"],
+      "evidence": [{ "scene": "event_lastkingdom1_05_e", "lines": ["2-8", "55-104"] }, { "scene": "event_lastkingdom1_06_s", "lines": ["42-47"] }],
+      "reason": "고문 장면과 강철 상자",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1433",
+      "text": "토커티브에 따르면 침식은 머리를 망가뜨리는 것으로 알려졌지만 실제로 의식은 멀쩡하고 말과 행동만 제어할 수 없어, 뚫을 수 없는 유리창 너머로 미친 짓을 하는 자기를 지켜보다 동료 손에 죽기까지 겪는다 — 손에서 솟는 가시가 침식 유발 장치다",
+      "about": ["concept:침식", "person:토커티브"],
+      "evidence": [{ "scene": "event_lastkingdom1_05_e", "lines": ["37-50"] }],
+      "reason": "토커티브가 '비밀'이라며 밝힌 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1434",
+      "text": "크라운은 트롬베로 적진을 뚫어 인디빌리아를 들이받고 짓밟은 뒤 차임의 몸을 찾아왔고, 탈로스가 초진동 나이프로 깨끗이 잘린 머리를 브레인 셸터를 겸한 백팩에 한 시간 보관한 뒤 라푼젤의 나노 머신 분사로 신경 센서 · 동력을 봉합해 차임을 살렸다(귀는 모양만)",
+      "about": ["person:크라운", "person:차임", "person:T.A.L.O.S.", "person:라푼젤", "person:인디빌리아", "item:브레인_셸터"],
+      "evidence": [
+        { "scene": "event_lastkingdom1_06_e", "lines": ["58-113"] },
+        { "scene": "event_lastkingdom1_b03_e", "lines": ["21-31"] },
+        { "scene": "event_lastkingdom2_01_s", "lines": ["90-96"] },
+        { "scene": "event_lastkingdom2_03_e", "lines": ["1-2"] }
+      ],
+      "reason": "장면과 탈로스 · 라푼젤의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1435",
+      "text": "봉화를 보고 온 필그림 스노우 화이트 · 홍련 · 라푼젤은 씨앗이 중요해 왕국을 버릴 수 없다며 함께 지켰다 — 스노우 화이트는 남은 언체인드를 줘 버려 헬레틱을 끝낼 수단이 없다 했고, 도령(지휘관)은 방주에 큰일이 나 연락이 닿지 않았으며 에덴은 스노우 화이트가 반대했다",
+      "about": ["person:스노우_화이트", "person:홍련", "person:라푼젤", "concept:언체인드", "person:지휘관", "place:에덴", "place:방주"],
+      "evidence": [
+        { "scene": "event_lastkingdom1_b03_e", "lines": ["0-3"] },
+        { "scene": "event_lastkingdom2_01_s", "lines": [55] },
+        { "scene": "event_lastkingdom2_01_e", "lines": ["3-16"] }
+      ],
+      "reason": "필그림 셋의 대화. '그 녀석'이 누구인지는 밝혀지지 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1436",
+      "text": "인디빌리아는 초고농도 에블라 입자를 뿜어 전기 신호를 끊어 니케를 굳게 하는데, 그것이 크라운에게 독임을 알아채 성벽 밖에서 에블라 입자를 뿌려 크라운을 천천히 독살하려 했다",
+      "about": ["person:인디빌리아", "person:크라운", "concept:에블라_입자"],
+      "evidence": [{ "scene": "event_lastkingdom2_03_s", "lines": ["43-75", "106-107"] }, { "scene": "event_lastkingdom2_04_s", "lines": ["6-8"] }],
+      "reason": "인디빌리아 · 홍련 · 차임의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1437",
+      "text": "차임이 처음 만났을 때 크라운은 지휘관과 스쿼드 멤버가 모두 죽은 뒤 혼자 하이퍼 푸드 창고를 — 얼마나 됐는지 기억나지 않을 만큼 — 지키고 있었고, 차임이 '왕이 되어 달라, 왕은 백성의 소원을 이루어 주는 존재'라 하자 그 사명을 받아들여 차임의 왕이 되었다",
+      "about": ["person:크라운", "person:차임", "concept:하이퍼_푸드"],
+      "evidence": [{ "scene": "event_lastkingdom1_05_s", "lines": ["0-15"] }, { "scene": "event_lastkingdom2_04_s", "lines": ["31-55"] }],
+      "reason": "크라운의 꿈과 차임의 회상 — 차임은 킬로에게 이야기하지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1438",
+      "text": "차임에 따르면 크라운은 차임 때문에 사명감의 주박에 사로잡혀 남의 소원은 이루어 주지만 자기는 아무것도 없는 공허한 왕이 되었다",
+      "about": ["person:크라운", "person:차임"],
+      "evidence": [{ "scene": "event_lastkingdom2_04_s", "lines": ["64-73"] }],
+      "reason": "차임의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1439",
+      "text": "탈로스는 T.A.V:H 조작 보조용 A.I.로, 킬로가 [탈로스]라는 이름을 붙여 준 날 자기를 정의하게 되어 킬로의 안전을 최우선으로 삼았다 — 그래서 조종석만 상처가 없다 — 탈로스를 질투하던 킬로는 사과하고 서로 포기하지 않기로 해 왕국에 남았다",
+      "about": ["person:T.A.L.O.S.", "person:킬로"],
+      "evidence": [{ "scene": "event_lastkingdom2_intermission", "lines": ["52-132"] }, { "scene": "event_lastkingdom2_04_s", "lines": ["18-23"] }],
+      "reason": "탈로스의 고백과 킬로의 대답",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1440",
+      "text": "킬로는 크라운의 강철 말 트롬베를 보고 'T.A.V:A가 아직 남아 있다니'라며 놀랐다",
+      "about": ["person:킬로", "person:크라운"],
+      "evidence": [{ "scene": "event_lastkingdom1_06_s", "lines": ["15-19"] }],
+      "reason": "킬로의 말 — 탈로스(T.A.V:H)와 같은 계열로 보이나 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1441",
+      "text": "토커티브에게서 '네가 누구인지, 기원을 기억하라'는 말을 들은 마리안은 두통 · 고열을 앓다 필그림에게 총을 겨누며 '여러분을 죽여야 할 것 같다'고 했고 — 라푼젤은 침식은 아니라 했다 — 크라운이 '자신이 누구인지는 자신이 결정한다'고 하자 총을 거두었다",
+      "about": ["person:마리안", "person:토커티브", "person:크라운", "person:라푼젤"],
+      "evidence": [{ "scene": "event_lastkingdom2_02_e", "lines": ["5-11", "51-53"] }, { "scene": "event_lastkingdom2_04_e", "lines": ["0-41"] }],
+      "reason": "장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1442",
+      "text": "마리안은 헬레틱이던 때와 토커티브와 함께한 과거를 전혀 기억하지 못하고, 크라운은 마리안이 헬레틱이었음을 알면서 랩쳐 편으로 돌아서도 마리안은 왕국의 백성이고 지키겠다고 했다 — 마리안은 모두가 소중하다며 떠나지 않기로 했다",
+      "about": ["person:마리안", "person:크라운", "concept:헬레틱"],
+      "evidence": [{ "scene": "event_lastkingdom2_02_e", "lines": ["39-44"] }, { "scene": "event_lastkingdom2_04_e", "lines": ["44-98"] }],
+      "reason": "마리안 · 크라운 · 스노우 화이트의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1443",
+      "text": "토커티브는 필그림 편에서 싸우는 마리안을 보고 '이미 인자가 활성화되었을 텐데, 운명이자 숙명을 거스를 수 없다'며 — 자기 사명 · 긍지 · 자리에 이어 꿈마저 빼앗느냐며 — 격분해 몸 안 나노머신을 활성화하고 양팔에 화룡의 머리를 단 모습으로 변했다",
+      "about": ["person:토커티브", "person:마리안", "person:니힐리스타"],
+      "evidence": [{ "scene": "event_lastkingdom2_05_s", "lines": ["23-25"] }, { "scene": "event_lastkingdom2_05_e", "lines": ["5-37"] }],
+      "reason": "토커티브의 말과 탈로스 분석(나노머신, #31) — 라푼젤: 몸 조직이 헬레틱에 가깝다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1444",
+      "text": "동력을 잃은 탈로스를 킬로가 케이블을 자기 가슴에 꽂아 두 코어를 직렬로 이어 3분 한정의 각성 상태로 되살렸고, 탈로스는 토커티브의 머리를 뽑아 성벽 너머로 던져 몸을 소멸시켰다",
+      "about": ["person:킬로", "person:T.A.L.O.S.", "person:토커티브"],
+      "evidence": [{ "scene": "event_lastkingdom2_05_e", "lines": ["44-153"] }],
+      "reason": "장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1445",
+      "text": "차임에 따르면 크라운의 무장 [네이키드 킹]은 에블라 입자를 빨아들여 열로 바꾸는 장치를 떠돌이 승려가 섬멸용으로 고친 것으로 — 크라운은 다가올 결전에 대비해 곳곳에서 몸에 에블라 입자를 모아 왔고 그 반발로 기침 · 통증을 앓았으며, 1년 더 모아야 했던 것을 인디빌리아의 입자로 앞당겼다",
+      "about": ["item:네이키드_킹", "person:크라운", "person:차임", "concept:에블라_입자", "person:인디빌리아"],
+      "evidence": [{ "scene": "event_lastkingdom2_06_e", "lines": ["87-108"] }, { "scene": "event_lastkingdom2_01_s", "lines": ["57-59"] }],
+      "reason": "차임의 설명 — 01_s의 '아직 1년은 더 모아야'와 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1446",
+      "text": "네이키드 킹을 연 크라운은 손짓만으로 성문 앞 랩쳐를 전멸시키고 인디빌리아를 짓뭉갰으며, 차임이 탈로스가 준 인디빌리아의 꼬리 칼날(1회용 초진동)로 인디빌리아의 목을 베어 복수했다",
+      "about": ["person:크라운", "item:네이키드_킹", "person:차임", "person:인디빌리아", "person:T.A.L.O.S."],
+      "evidence": [{ "scene": "event_lastkingdom2_04_s", "lines": ["74-88"] }, { "scene": "event_lastkingdom2_06_e", "lines": ["93-139"] }],
+      "reason": "장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1447",
+      "text": "크라운은 왕국을 미래를 위한 희망과 오랜 꿈 — 울지 않고 잠들 방 · 식당 · 텃밭 · 기도실, 저마다 자기 장소를 찾은 곳 — 이 있는 소중한 장소라 지킨다 했고, 남의 소원을 이루려면 왕은 공허해야 욕심이 섞이지 않는다고 했다",
+      "about": ["person:크라운", "place:크라운_왕국"],
+      "evidence": [{ "scene": "event_lastkingdom2_06_e", "lines": ["16-59"] }],
+      "reason": "크라운의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1448",
+      "text": "인디빌리아에 따르면 퀸의 정예인 헬레틱은 아틀라스 케이지 같은 것에 가려지지 않는 한 서로의 탄생 · 죽음 · 위치를 느끼는데, 헬레틱이 되었다 돌아왔다는 마리안에게서는 아무것도 느끼지 못해 '가짜, 혹은 다른 무언가'라 했다",
+      "about": ["person:인디빌리아", "concept:헬레틱", "person:마리안", "person:퀸"],
+      "evidence": [{ "scene": "event_lastkingdom2_06_s", "lines": ["4-26"] }],
+      "reason": "인디빌리아의 말 — 토커티브가 마리안을 '묘한 표현'으로 부른다고도 했다(#22)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1449",
+      "text": "나유타가 소집을 걸어 필그림 셋은 곧바로 떠났다 — 스노우 화이트는 느린 나유타가 소집했다면 큰 것, 높은 확률로 퀸에 대한 단서를 찾았을 것이라 했다",
+      "about": ["person:나유타", "person:스노우_화이트", "person:홍련", "person:라푼젤", "person:퀸"],
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["10-17"] }],
+      "reason": "필그림의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1450",
+      "text": "방어전 뒤 크라운은 불길한 예감이 든다며 마리안을 지휘관과 만나게 해야 할 것 같다고 차임에게 상담했다",
+      "about": ["person:크라운", "person:차임", "person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["74-85"] }],
+      "reason": "크라운의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1451",
+      "text": "랩쳐를 전멸시키자는 킬로의 말에 마리안 안에서 크라운의 활약이 '두렵고, 화가 났다'는 말이 흘러나왔고, 마리안은 놀라 피곤한 탓이라 얼버무렸다",
+      "about": ["person:마리안", "person:킬로", "person:크라운"],
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["52-68"] }],
+      "reason": "#62가 서술 줄(*)로 나오고 마리안이 놀란다(#63) — 마리안의 속말인지 다른 목소리인지 원문이 밝히지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1452",
+      "text": "그날 밤 활력이 돌며 자기에게서 '개화한 것'을 확인하려 랩쳐 대군을 뚫고 간 마리안이 인디빌리아 · 토커티브에게 왕국을 넘보지 말라 하자, 둘은 의지와 상관없이 본능으로 무릎을 꿇었고 토커티브는 '분부대로 하겠습니다, 여왕님'이라 했다",
+      "about": ["person:마리안", "person:인디빌리아", "person:토커티브"],
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["86-92", "115-139"] }],
+      "reason": "장면 서술(#136-137)과 토커티브의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1453",
+      "text": "인디빌리아에 따르면 토커티브는 그날 이후 포식으로 신체를 재구축할 수 있게 되어 랩쳐 무리 속에 던져진 머리로 살아났고, 인디빌리아는 만약을 위해 토커티브의 머리에 박아 둔 자기 코어 일부로 돌아왔지만 과거의 기억을 가졌을 뿐 자기가 아니게 되었다",
+      "about": ["person:인디빌리아", "person:토커티브"],
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["93-99"] }],
+      "reason": "인디빌리아의 말 — 차임에게 목이 베인 뒤 코어 조각에서 되살아난 것으로 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M18",
+          "note": "epilogue#96-99 인디빌리아가 직접 말한다 — 포식으로 재구축 · 코어 일부로 돌아와 자기가 아니게 됨",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q188",
+      "text": "토커티브가 말한, 마리안 안에서 이미 활성화되었을 '인자'와 거스를 수 없다는 '운명 · 숙명', 그리고 토커티브가 기다리는 '때'는 무엇인가?",
+      "evidence": [{ "scene": "event_lastkingdom2_02_e", "lines": [33, "47-48"] }, { "scene": "event_lastkingdom2_05_e", "lines": ["9-13"] }],
+      "reason": "토커티브가 밝히지 않고 떠난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q189",
+      "text": "헬레틱들은 왜 마리안 앞에 본능적으로 무릎 꿇고 '여왕님'이라 불렀나 — 헬레틱이 느끼지 못하는 마리안은 '가짜'인가 '다른 무언가'인가?",
+      "evidence": [{ "scene": "event_lastkingdom2_06_s", "lines": ["15-26"] }, { "scene": "event_lastkingdom2_epilogue", "lines": ["130-139"] }],
+      "reason": "인디빌리아도 까닭을 모른다(#130)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q190",
+      "text": "토커티브가 유사 인간들에게 빼앗겼다는 사명 · 긍지 · 자리와 꿈은 무엇인가 — 토커티브는 원래 무엇이었나?",
+      "evidence": [{ "scene": "event_lastkingdom2_05_e", "lines": ["22-26"] }, { "scene": "event_lastkingdom1_05_e", "lines": ["70-74", "102-104"] }],
+      "reason": "차임에게 '사명은 누구도 알아주지 않는다', '부럽군'이라 하고, 인디빌리아도 '유사 인간을 잘 안다, 역시나'(1_intermission #36-37)라 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q191",
+      "text": "크라운은 원래 어느 스쿼드의 니케였고, 지휘관 · 동료가 모두 죽은 뒤 왜 홀로 하이퍼 푸드 창고를 지키고 있었나?",
+      "evidence": [{ "scene": "event_lastkingdom1_05_s", "lines": ["0-15"] }],
+      "reason": "차임은 그 이야기를 둘만의 것이라며 하지 않는다(2_04_s #59-62)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q192",
+      "text": "나유타가 필그림을 소집하며 발견했다는 '큰 것'은 무엇인가 — 퀸의 단서인가?",
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["11-17"] }],
+      "reason": "스노우 화이트의 짐작만 있다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q179-2",
+      "act": "회수",
+      "answer": "F1445",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_lastkingdom2_06_e", "lines": ["101-104"] }],
+      "reason": "크라운이 에블라 입자에 앓는 까닭(네이키드 킹을 위해 몸에 모아 온 반발)을 차임이 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q29-2",
+      "act": "회수",
+      "answer": "F1452",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["138-139"] }],
+      "reason": "토커티브가 마리안을 '여왕님'이라 부른다 — ch06에서 그 부름에 모더니아가 내려왔다. 퀸과의 관계는 남는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "Q178-2",
+      "act": "회수",
+      "answer": "F1452",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["130-137"] }],
+      "reason": "랩쳐를 이끄는 헬레틱조차 마리안 앞에 본능으로 무릎 꿇는다 — 랩쳐가 마리안에게 덤비지 않은 까닭으로 읽었다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S143",
+      "kind": "기준점",
+      "text": "CH.26 뒤 — 레드 후드가 왕국을 떠나고 마리안이 왕국에서 성숙해진 뒤(side:second_affection 뒤)",
+      "ref": "ch26",
+      "at": [["뒤", "ch26"], ["뒤", "side:second_affection"]],
+      "evidence": [{ "scene": "event_lastkingdom1_01_s", "lines": ["14-16"] }, { "scene": "event_lastkingdom2_01_s", "lines": ["33-35"] }],
+      "reason": "'최근 아쉬운 백성(붉은색의 그분)을 잃었다', 홍련이 놀랄 만큼 어른스러워진 마리안. 방주에 큰일이 났다는 말(2_01_e #9)은 어느 사건인지 밝히지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M18",
+          "note": "01_s#14-16 '최근' 레드 후드를 잃음(ch26) · 2_01_s#33-37 홍련이 짧은 사이 어른스러워진 마리안에 놀람(side:second_affection F1367)",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "S144",
+      "kind": "회상",
+      "text": "크라운과 차임의 첫 만남 — 크라운이 홀로 하이퍼 푸드 창고를 지키던 때",
+      "ref": "person:크라운",
+      "at": [["전", "event_lastkingdom1"]],
+      "evidence": [{ "scene": "event_lastkingdom1_05_s", "lines": ["0-15"] }, { "scene": "event_lastkingdom2_04_s", "lines": ["31-55"] }],
+      "reason": "크라운의 꿈과 차임의 회상",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:킬로",
+      "evidence": [
+        {
+          "scene": "event_lastkingdom1_prologue",
+          "lines": [
+            1
+          ]
+        }
+      ],
+      "note": "헤비그램 스쿼드 니케 — 로봇 T.A.L.O.S.의 파일럿",
+      "new": false
+    },
+    {
+      "target": "person:T.A.L.O.S.",
+      "evidence": [
+        {
+          "scene": "event_lastkingdom1_prologue",
+          "lines": [
+            2
+          ]
+        }
+      ],
+      "note": "킬로의 탑승 로봇 · 조작 보조 A.I.(T.A.V:H)",
+      "new": false
+    },
+    {
+      "target": "org:헤비그램",
+      "evidence": [
+        {
+          "scene": "event_lastkingdom1_prologue",
+          "lines": [
+            113
+          ]
+        }
+      ],
+      "note": "킬로의 스쿼드",
+      "new": true
+    },
+    {
+      "target": "concept:하이퍼_푸드",
+      "evidence": [
+        {
+          "scene": "event_lastkingdom1_04_s",
+          "lines": [
+            41
+          ]
+        }
+      ],
+      "note": "크라운 왕국 냉동 창고의 차세대 곡물 씨앗",
+      "new": true
+    },
+    {
+      "target": "item:네이키드_킹",
+      "evidence": [
+        {
+          "scene": "event_lastkingdom2_06_e",
+          "lines": [
+            88
+          ]
+        }
+      ],
+      "note": "크라운의 에블라 입자 → 열충격파 무장",
+      "new": true
+    }
+  ]
+}

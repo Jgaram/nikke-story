@@ -1,0 +1,222 @@
+key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,status
+관계 person:세르반 ↔ person:지휘관,관계,sub:세르반_03,14,7,,,sub:세르반_01 sub:세르반_03,D67 D109,D109,O111,확정
+관계 person:미하라 ↔ person:지휘관,관계,char:161,17,13,1,,ch03 ch04 char:161,D30 D34 D1831,D1831,O1,확정
+관계 person:루피 ↔ person:지휘관,관계,char:203,21,4,,,char:200 char:203,D1803 D1804 D1972 D1973,D1972 D1973,O112,확정
+관계 person:자칼 ↔ person:지휘관,관계,char:111,26,9,1,,ch16 char:111,D133 D1989 D1990,D1989 D1990,O2,확정
+관계 person:블랑 ↔ person:지휘관,관계,char:270,37,0,,,event_BunnyX777 char:270 sub:코인_러시_00,D2031 D2033 D340,D2033,O113,확정
+관계 person:누아르 ↔ person:지휘관,관계,char:271,38,1,,,event_BunnyX777 char:271 sub:코인_러시_00,D2030 D2034 D339,D2034,O114,확정
+관계 person:메어리 ↔ person:지휘관,관계,char:132,40,23,,,char:130 event_bluewaterisland char:132,D1387 D1388 D262 D2040,D2040,O115,확정
+성장 person:메어리 신념,성장,event_bluewaterisland,40,23,,,char:130 event_bluewaterisland,D1389 D1390 D263,D263,O116,확정
+관계 person:유니 ↔ person:지휘관,관계,ch23,43,38,1,1,ch04 char:160 ch18 ch23,D33 D1902 D162 D277,D277,O3,확정
+관계 person:지휘관 ↔ person:콜렉터,관계,sub:콜렉터_02,43,36,,,sub:콜렉터_01 sub:콜렉터_02,D28 D279,D279,O117,기각
+관계 person:지휘관 ↔ person:크로우,관계,ch24,44,27,1,1,ch16 char:110 ch24,D130 D131 D1404 D284,D284,O4,기각
+성장 person:마스트 신념,성장,char:350,44,26,,,char:352 char:350,D1961 D2047 D2048,D2047 D2048,O118,기각
+연작 event_seayouagain1,연작,event_seayouagain1,45,5,,,event_bluewaterisland event_seayouagain1,,,O119,확정
+관계 person:지휘관 ↔ person:헬름,관계,char:353,46,28,,,char:352 char:353,D1955 D1958 D2058,D2058,O120,확정
+성장 person:헬름 신념,성장,char:353,46,28,,,char:352 event_seayouagain1 char:353,D1956 D1456 D2057,D2057,O121,확정
+관계 person:나가 ↔ person:티아,관계,char:450,51,0,,,event_dazzlingcupid char:450,D1474 D1475 D1477 D1478 D1479 D2072 D2071,D2071,O122,기각
+관계 person:니힐리스타 ↔ person:지휘관,관계,ch25,54,22,,1,char:261 ch25,D1426 D313,D313,O123,기각
+관계 person:도로시 ↔ person:레드_후드,관계,event_redash,55,1,1,1,ch25 ch26 event_redash,D316 D322 D327 D326 D351,D351,O5,확정
+관계 person:도로시 ↔ person:지휘관,관계,ch26,55,30,1,1,ch19 char:233 ch26 ch46,D176 D1433 D332 D1171,D332,O6,확정
+성장 person:도로시 성격,성장,ch26,55,29,1,1,ch20 event_overzone ch26,D189 D238 D324,D324,O7,기각
+성장 person:레드_후드 신념,성장,char:470,55,0,1,,ch26 event_redash char:470,D321 D350 D1482,D1482,O8,확정
+관계 person:루드밀라 ↔ person:토브,관계,char:192,56,0,,,event_alonesurvivor char:192,D1499 D1500 D2081 D2078,D2081 D2078,O124,확정
+관계 person:지휘관 ↔ person:토브,관계,char:192,56,0,,,event_alonesurvivor char:192,D1494 D1495 D2080,D2080,O125,확정
+성장 person:토브 신념,성장,char:192,56,0,,,event_alonesurvivor char:192,D1496 D1497 D2079,D2079,O126,확정
+관계 person:루드밀라 ↔ person:지휘관,관계,char:194,57,51,1,,ch05 char:190 char:194,D57 D1802 D2083,D2083,O9,확정
+성장 person:루드밀라 신념,성장,char:194,57,50,1,,ch06 event_neverland1 char:194,D61 D1510 D2082,D2082,O10,확정
+관계 person:미카 ↔ person:벨로타,관계,char:62,58,41,,,char:61 event_neverland1 char:62,D1826 D1838 D1827 D1506 D1508 D2086 D2085,D2086 D2085,O127,확정
+관계 person:미카 ↔ person:지휘관,관계,char:62,58,41,,,char:61 char:62,D1828 D1829 D2088,D2088,O128,기각
+성장 person:미카 성격,성장,char:62,58,41,,,char:61 event_neverland1 char:62,D1824 D1825 D1505 D2084,D2084,O129,확정
+성장 person:미카 신념,성장,char:62,58,1,,,event_neverland1 char:62,D1507 D2087,D2087,O130,확정
+관계 person:노이즈 ↔ person:지휘관,관계,event_newyearnewsword,59,42,,,char:430 event_newyearnewsword,D1788 D1789 D365,D365,O131,확정
+관계 person:지휘관 ↔ person:홍련,관계,event_newyearnewsword,59,42,,,char:222 event_newyearnewsword,D1413 D1415 D364,D364,O132,확정
+관계 person:레오나 ↔ person:티미,관계,char:382,61,0,,,event_lionheart char:382,D1521 D2089,D2089,O133,확정
+관계 person:슈가 ↔ person:지휘관,관계,event_dirtybackyard,62,45,,,char:140 event_dirtybackyard,D1395 D1396 D371,D371,O134,확정
+관계 person:랩칠리언 ↔ person:지휘관,관계,ch27,65,58,,1,sub:랩칠리언_00 sub:랩칠리언_06 ch27,D49 D51 D372,D372,O135,확정
+관계 person:엔더슨 ↔ person:지휘관,관계,ch27,65,60,1,1,ch04 ch25 ch27,D44 D305 D374,D374,O11,기각
+성장 person:솔린 신념,성장,char:820,69,52,,,char:71 char:820,D1858 D1860 D2101,D2101,O136,확정
+연작 event_liarsend,연작,event_liarsend,70,37,,,event_fullfoolday event_liarsend,,,O137,기각
+성장 person:마리안 성격,성장,side:second_affection,71,70,1,,ch00 ch07 ch14 event_firstaffection side:second_affection,D4 D69 D111 D2059 D417,D417,O12,확정
+관계 person:일레그 ↔ person:트로니,관계,char:501,74,8,,,event_boomsday event_darkhero char:501,D396 D399 D397 D474 D470 D2106 D2108,D2106 D2108,O138,확정
+성장 person:트로니 신념,성장,event_darkhero,74,8,,,event_boomsday event_darkhero,D394 D398 D469,D469,O139,확정
+관계 person:소다 ↔ person:지휘관,관계,char:314,75,46,,,char:312 char:314,D2004 D2005 D2109,D2109,O140,기각
+성장 person:소다 성격,성장,event_goldencoinrush1,75,47,,,event_maidinvalentine char:312 event_goldencoinrush1,D1423 D2003 D1549,D1549,O141,확정
+성장 person:앨리스 신념,성장,char:195,76,59,,,char:191 char:195,D1881 D1882 D2110,D2110,O142,확정
+연작 event_claymore,연작,event_claymore,77,6,,,event_onemoretime event_claymore,,,O143,확정
+관계 person:베이 ↔ person:클레이,관계,event_claymore,77,6,,,event_onemoretime event_claymore,D1541 D1538 D1539 D1563,D1563,O144,확정
+관계 person:사쿠라 ↔ person:지휘관,관계,event_beautyfullshot1,78,46,,,event_cherryblossom char:282 event_beautyfullshot1,D201 D202 D2017 D2019 D482,D482,O145,확정
+성장 person:사쿠라 신념,성장,char:284,78,46,,,event_cherryblossom char:282 char:284,D203 D2018 D2114,D2114,O146,확정
+관계 person:로산나 ↔ person:지휘관,관계,char:283,79,40,,,event_queensorder char:280 char:283,D1436 D1437 D1438 D2037 D2038 D2115,D2115,O147,확정
+관계 person:아인 ↔ person:츠바이,관계,event_colorless,82,1,,,event_juveniledays event_colorless,D1564 D1565 D1571 D1566 D1576,D1576,O148,확정
+성장 person:츠바이 신념,성장,char:390,82,0,,,event_colorless char:390,D1573 D1574 D2118,D2118,O149,확정
+성장 person:루주 신념,성장,char:272,86,0,,,event_jinxplayer char:272,D2128 D2130,D2130,O150,확정
+관계 person:미하라 ↔ person:유니,관계,side:wordless,89,85,1,,ch03 ch04 ch12 ch24 side:wordless,D29 D32 D98 D283 D282 D525 D527,D525 D527,O13,확정
+관계 person:슈엔 ↔ person:유니,관계,side:wordless,89,72,1,,ch16 ch17 side:wordless,D138 D151 D531,D531,O14,확정
+연작 event_oldtales1,연작,event_oldtales1,91,36,1,1,event_redash event_oldtales1,,,O15,확정
+관계 person:그레이브 ↔ person:라피,관계,ch34,91,18,1,1,ch30 ch31 ch32 ch33 ch34,D440 D442 D498 D501 D534 D551 D549,D551 D549,O16,확정
+관계 person:라피 ↔ person:은화,관계,ch34,91,86,1,1,ch04 ch32 ch34,D39 D516 D517 D550,D550,O17,확정
+성장 person:신데렐라 신념,성장,char:511,91,10,1,,sub:거울_공주_00 ch34 event_oldtales1 char:511,D521 D555 D577 D578 D2136,D2136,O18,확정
+관계 person:그레이브 ↔ person:신데렐라,관계,char:514,92,11,1,,ch32 sub:관짝이_01 ch34 char:511 char:514,D512 D511 D519 D553 D2135 D1599,D1599,O19,확정
+관계 person:지휘관 ↔ person:플로라,관계,char:411,93,0,,,event_secretgarden char:411,D1603 D1604 D2137,D2137,O151,기각
+연작 event_icedragonsaga1,연작,event_icedragonsaga1,94,28,,,event_boomsday event_darkhero event_icedragonsaga1,,,O152,확정
+관계 person:길로틴 ↔ person:메이든,관계,event_icedragonsaga1,94,51,1,,ch23 event_icedragonsaga1,D275 D1618 D1612 D1619 D1613,D1612 D1619 D1613,O20,확정
+성장 person:메이든 신념,성장,event_icedragonsaga1,94,77,,,char:181 event_darkhero event_icedragonsaga1,D1811 D1812 D477 D1616 D1617,D1616 D1617,O153,확정
+성장 person:길로틴 신념,성장,char:182,95,78,,,char:180 event_icedragonsaga1 char:182,D1356 D1611 D1614 D2138,D2138,O154,확정
+관계 person:라피 ↔ person:레드_후드,관계,event_footstepwalkrun1,96,42,1,1,ch25 ch34 event_footstepwalkrun1,D318 D562 D588 D589 D591,D589 D591,O21,확정
+관계 person:마나 ↔ person:지휘관,관계,char:290,98,0,,,event_wisdomspring char:290,D595 D2144,D2144,O155,확정
+관계 person:에테르 ↔ person:지휘관,관계,event_wisdomspring,98,81,,,char:291 event_wisdomspring,D1889 D1890 D596,D596,O156,기각
+연작 event_romanticvalentine,연작,event_romanticvalentine,99,71,,,event_maidinvalentine event_romanticvalentine,,,O157,확정
+관계 person:마스트 ↔ person:지휘관,관계,char:354,99,55,,,event_goldenship char:350 char:354,D1446 D2049 D2145,D2145,O158,확정
+관계 person:마스트 ↔ person:헬름,관계,char:354,99,81,,,char:352 event_seayouagain1 char:354,D1960 D1957 D1457 D2146,D2146,O159,확정
+성장 person:트로니 성격,성장,event_romanticvalentine,99,33,,,event_boomsday char:501 event_romanticvalentine,D393 D395 D2107 D1627,D1627,O160,기각
+관계 person:앵커 ↔ person:지휘관,관계,char:355,100,55,,,char:351 char:355,D2055 D2056 D2147,D2147,O161,확정
+관계 person:그레이브 ↔ person:지휘관,관계,ch35,101,29,1,1,ch29 ch30 ch32 char:514 ch35,D428 D437 D500 D1598 D606,D606,O22,확정
+관계 person:슈엔 ↔ person:지휘관,관계,ch35,101,94,1,1,sub:랩칠리언_05 ch12 ch15 ch18 ch25 ch26 ch35,D50 D100 D127 D157 D308 D334 D605,D605,O23,기각
+관계 person:라피 ↔ person:지휘관,관계,ch36,102,101,1,1,ch00 ch01 ch07 char:10 ch26 sub:피라_00 ch32 event_footstepwalkrun1 char:16 ch36,D6 D9 D73 D1379 D331 D381 D508 D592 D2140 D620,D620,O24,기각
+관계 person:브래디 ↔ person:지휘관,관계,char:520,105,0,,,event_newflavor char:520,D622 D623 D624 D2156,D2156,O162,확정
+연작 event_trueflavor,연작,event_trueflavor,107,2,,,event_newflavor event_trueflavor,,,O163,확정
+연작 event_unbreakablesphere1,연작,event_unbreakablesphere1,109,20,1,,side:wordless side:mudfish event_unbreakablesphere1,,,O25,확정
+관계 person:세이렌 ↔ person:신데렐라,관계,char:513,109,18,1,,event_oldtales1 char:513,D574 D575 D576 D573 D1638,D1638,O26,확정
+성장 person:라피 성격,성장,ch38,109,108,1,1,ch00 ch26 ch28 ch32 ch34 event_footstepwalkrun1 ch36 ch38,D2 D337 D385 D505 D546 D586 D615 D657,D657,O27,기각
+성장 person:세이렌 신념,성장,event_unbreakablesphere1,109,2,1,,side:mudfish event_unbreakablesphere1,D642 D686 D687,D686 D687,O28,확정
+성장 person:유니 신념,성장,event_unbreakablesphere1,109,92,,,char:160 event_unbreakablesphere1,D1901 D692,D692,O164,확정
+관계 person:K ↔ person:지휘관,관계,char:41,112,78,,,event_ltk event_lordforjustice char:41,D1432 D713 D2167,D2167,O165,확정
+성장 person:콤 신념,성장,char:851,114,1,,,event_ce006 char:851,D724 D727 D2171,D2171,O166,기각
+관계 person:도로시 ↔ person:피나,관계,fl:boom_the_ghost,116,80,1,,event_overzone fl:boom_the_ghost,D239 D245 D240 D760,D760,O29,확정
+관계 person:일레그 ↔ person:지휘관,관계,char:502,117,51,1,,event_boomsday char:500 ch29 char:502,D400 D2094 D430 D2175,D2175,O30,확정
+성장 person:랩칠리언 신념,성장,relic:정갈하게쓴기록,118,111,1,,sub:랩칠리언_00 ch27 relic:정갈하게쓴기록,D48 D373 D780,D780,O31,확정
+관계 person:베스티 ↔ person:은화,관계,fl:absolute,119,38,1,,ch32 fl:absolute,D503 D804 D811 D813 D806,D811 D813 D806,O32,확정
+관계 person:아니스 ↔ person:아비스타,관계,ch40,119,1,1,1,ch39 ch40,D774 D779 D799,D799,O33,확정
+관계 person:엠마 ↔ person:지휘관,관계,char:93,119,102,,,char:90 char:93,D1898 D1899 D2176,D2176,O167,확정
+성장 person:은화 신념,성장,fl:absolute,119,102,,,char:92 fl:absolute,D1916 D1919 D805,D805,O168,확정
+관계 person:은화 ↔ person:지휘관,관계,char:95,120,103,1,,char:92 ch31 char:95,D1915 D1918 D496 D2178,D2178,O34,확정
+관계 person:베스티 ↔ person:지휘관,관계,char:94,121,104,,,char:91 char:94,D1834 D1835 D1836 D2179,D2179,O169,확정
+성장 person:베스티 성격,성장,char:94,121,116,1,,ch04 char:91 ch32 fl:absolute char:94,D41 D1837 D502 D812 D2180,D2180,O35,확정
+관계 person:루주 ↔ person:지휘관,관계,fl:coins_in_rush,122,36,,,event_jinxplayer char:272 fl:coins_in_rush,D2129 D2131 D821 D822,D822,O170,확정
+관계 person:에이드 ↔ person:지휘관,관계,char:315,122,59,,,event_perfectmaid char:310 fl:coins_in_rush char:315,D1526 D1527 D2093 D816 D2182,D2182,O171,확정
+성장 person:베이 성격,성장,fl:coins_in_rush,122,51,,,event_onemoretime char:550 fl:coins_in_rush,D1534 D2102 D2103 D825,D825,O172,확정
+성장 person:에이드 성격,성장,char:315,122,59,,,event_perfectmaid char:310 char:315,D1523 D2092 D2181,D2181,O173,확정
+관계 person:밀크 ↔ person:지휘관,관계,char:143,123,106,,,char:141 fl:coins_in_rush char:143,D1833 D819 D2183,D2183,O174,확정
+성장 person:밀크 성격,성장,char:143,123,106,,,char:11 char:141 char:143,D1786 D1832 D2184,D2184,O175,기각
+연작 fl:reborn_evil,연작,fl:reborn_evil,124,90,,,event_ltk event_dirtybackyard event_killthelord event_lordforjustice fl:reborn_evil,,,O176,확정
+관계 person:D ↔ person:지휘관,관계,fl:reborn_evil,124,90,,,event_ltk char:40 event_killthelord char:43 fl:reborn_evil,D1429 D2021 D404 D2095 D839,D839,O177,확정
+연작 fl:go_ninja_thief,연작,fl:go_ninja_thief,126,39,,,event_phantomthiefvsdetective fl:go_ninja_thief,,,O178,기각
+관계 person:델타 ↔ person:지휘관,관계,char:23,126,109,,,char:20 char:23,D1795 D1796 D1797 D2188,D2188,O179,확정
+성장 person:델타 신념,성장,fl:go_ninja_thief,126,109,,,char:20 fl:go_ninja_thief,D1793 D1794 D1645,D1645,O180,기각
+관계 person:레비아탄 ↔ person:베히모스,관계,ch41,127,46,1,1,ch32 ch33 ch34 ch35 ch41,D507 D544 D543 D558 D604 D856,D856,O36,기각
+성장 person:라피 신념,성장,ch41,127,124,1,1,ch02 ch26 ch34 event_footstepwalkrun1 char:16 ch35 ch41,D18 D329 D547 D587 D590 D2141 D607 D854,D854,O37,확정
+관계 person:T.A.L.O.S. ↔ person:킬로,관계,event_goddessfall1,128,55,1,1,event_lastkingdom1 event_goddessfall1,D444 D468 D445 D922,D922,O38,확정
+관계 person:나유타 ↔ person:요한,관계,event_goddessfall1,128,2,1,1,side:eden_spear event_goddessfall1,D841 D924 D939,D924 D939,O39,확정
+관계 person:도로시 ↔ person:파피용,관계,event_goddessfall1,128,102,1,1,ch20 side:eden_spear event_goddessfall1,D198 D842 D938,D938,O40,기각
+관계 person:도로시 ↔ person:하란,관계,erelic:goddess_fall_mini,128,102,1,,ch20 side:eden_spear erelic:goddess_fall_mini,D190 D845 D962 D963,D963,O41,기각
+관계 person:라피 ↔ person:레비아탄,관계,ch42,128,37,1,1,ch34 ch37 ch38 ch41 ch42,D557 D655 D668 D853 D880,D880,O42,확정
+관계 person:레비아탄 ↔ person:세이렌,관계,ch42,128,26,1,1,ch36 side:mudfish ch41 ch42,D616 D639 D640 D634 D635 D641 D636 D857 D868 D873,D868 D873,O43,확정
+관계 person:레비아탄 ↔ person:지즈,관계,ch42,128,20,1,1,ch37 ch38 ch40 ch41 ch42,D651 D659 D786 D788 D848 D855 D875,D875,O44,확정
+관계 person:레비아탄 ↔ person:지휘관,관계,ch42,128,38,1,1,ch33 ch36 ch40 ch41 ch42,D542 D614 D617 D785 D849 D870,D870,O45,확정
+관계 person:마리안 ↔ person:스노우_화이트,관계,event_goddessfall1,128,57,,1,side:second_affection event_goddessfall1,D409 D410 D920,D920,O181,확정
+관계 person:마리안 ↔ person:토커티브,관계,event_goddessfall1,128,55,1,1,event_lastkingdom1 event_goddessfall1,D465 D905,D905,O46,기각
+관계 person:모리 ↔ person:지휘관,관계,ch42,128,19,,1,char:590 ch42,D2161 D2162 D887,D887,O182,확정
+관계 person:이사벨 ↔ person:지휘관,관계,event_goddessfall1,128,111,,1,char:231 sub:에덴_Notice_01 event_goddessfall1,D1401 D1402 D220 D930,D930,O183,확정
+관계 person:지휘관 ↔ person:하란,관계,event_goddessfall1,128,111,1,1,char:230 ch21 sub:에덴_Notice_02 event_goddessfall1,D1408 D1409 D1410 D216 D222 D933,D933,O47,확정
+관계 person:차임 ↔ person:크라운,관계,event_goddessfall1,128,74,1,1,ch25 event_lastkingdom1 event_goddessfall1,D320 D457 D454 D935,D935,O48,확정
+성장 person:노아 성격,성장,erelic:goddess_fall_mini,128,111,1,,char:232 ch21 side:eden_spear event_goddessfall1 erelic:goddess_fall_mini,D1357 D211 D844 D913 D966,D966,O49,확정
+성장 person:레비아탄 신념,성장,ch42,128,37,1,1,ch34 side:mudfish ch38 ch40 ch42,D556 D637 D672 D787 D867 D872,D867 D872,O50,확정
+성장 person:모리 성격,성장,ch42,128,19,,1,event_unbreakablesphere1 ch42,D674 D677 D682 D888,D888,O184,확정
+성장 person:요한 신념,성장,erelic:goddess_fall_mini,128,103,1,,ch19 ch20 event_goddessfall1 erelic:goddess_fall_mini,D172 D186 D955 D971,D971,O51,확정
+성장 person:하란 신념,성장,erelic:goddess_fall_mini,128,111,1,,char:230 event_goddessfall1 erelic:goddess_fall_mini,D1407 D919 D958,D958,O52,확정
+관계 person:솔린 ↔ person:지휘관,관계,char:74,130,113,,,char:71 char:74,D1857 D1861 D2193,D2193,O185,확정
+성장 person:솔린 성격,성장,char:74,130,113,,,char:71 fl:blank_ticket char:74,D1856 D1862 D1654 D2192,D2192,O186,확정
+연작 fl:terminus_ticket,연작,fl:terminus_ticket,131,1,,,fl:blank_ticket fl:terminus_ticket,,,O187,확정
+관계 person:디젤 ↔ person:지휘관,관계,char:75,131,114,,,char:72 char:75,D1369 D1370 D2195,D2195,O188,확정
+성장 person:노라 신념,성장,fl:terminus_ticket,131,1,,,fl:blank_ticket fl:terminus_ticket,D1652 D1653 D1661,D1661,O189,확정
+성장 person:브리드 신념,성장,fl:terminus_ticket,131,114,,,char:70 fl:terminus_ticket,D1849 D1850 D1660,D1660,O190,확정
+관계 person:브리드 ↔ person:지휘관,관계,char:73,132,115,,,char:70 char:73,D1847 D1848 D1851 D2198,D2198,O191,확정
+연작 fl:ark_guardian,연작,fl:ark_guardian,133,62,1,1,side:second_affection event_lastkingdom1 side:eden_spear event_goddessfall1 fl:ark_guardian,,,O53,확정
+관계 person:릴리바이스 ↔ person:스노우_화이트,관계,char:471,134,98,,,erelic:white_memory char:224 char:471,D256 D1486 D1489 D2199,D2199,O192,확정
+관계 person:레이블 ↔ person:지휘관,관계,char:582,135,0,,,fl:sin_editor char:582,D998 D999 D2203,D2203,O193,기각
+관계 person:벨벳 ↔ person:지휘관,관계,char:316,136,14,,,fl:coins_in_rush fl:fatal_maid char:316,D827 D828 D1676 D1677 D2204,D2204,O194,확정
+관계 person:네온 ↔ person:지엔,관계,ch44,138,1,1,1,ch43 ch44,D1031 D1032 D1070,D1070,O54,기각
+관계 person:레드_후드 ↔ person:스노우_화이트,관계,ch44,138,83,1,1,event_redash char:470 ch44,D345 D346 D347 D348 D1484 D1039,D1039,O55,확정
+관계 person:릴리바이스 ↔ person:엔더슨,관계,ch44,138,83,1,1,event_redash erelic:red_ash_lost fl:ark_guardian ch44,D342 D356 D991 D992 D1051,D1051,O56,확정
+관계 person:목단 ↔ person:슈가,관계,ch44,138,76,,1,event_dirtybackyard ch44,D368 D369 D1064 D1065,D1064,O195,기각
+관계 person:스노우_화이트 ↔ person:지휘관,관계,ch44,138,131,1,1,ch06 ch07 char:220 ch17 char:471 ch44,D64 D71 D1398 D148 D149 D2201 D1041,D1041,O57,확정
+성장 person:목단 신념,성장,ch44,138,106,,1,event_cherryblossom event_dirtybackyard event_lordforjustice ch44,D206 D367 D715 D1058,D1058,O196,확정
+성장 person:스노우_화이트 신념,성장,ch44,138,131,1,1,ch06 erelic:white_memory char:224 fl:ark_guardian char:471 ch44,D63 D257 D1490 D974 D988 D2200 D1043 D1044,D1043 D1044,O58,확정
+관계 person:E.H. ↔ person:바이퍼,관계,char:113,140,0,,,fl:enter_heaven char:113,D1074 D2206 D2207,D2206,O197,확정
+관계 person:E.H. ↔ person:지휘관,관계,char:113,140,0,,,fl:enter_heaven char:113,D1082 D1083 D2209,D2209,O198,확정
+관계 person:E.H. ↔ person:크로우,관계,fl:enter_heaven,140,96,1,,ch24 fl:enter_heaven,D288 D1079,D1079,O59,기각
+관계 person:바이퍼 ↔ person:지휘관,관계,fl:enter_heaven,140,123,1,,ch16 event_doutsiders char:112 ch24 fl:enter_heaven,D136 D199 D1997 D286 D1073,D1073,O60,확정
+연작 fl:2x2_love_2ch,연작,fl:2x2_love_2ch,141,0,,,fl:2x2_love_1ch fl:2x2_love_2ch,,,O199,기각
+관계 person:아르카나 ↔ person:지휘관,관계,char:583,141,30,,,event_arcanearchive char:581 fl:2x2_love_1ch fl:2x2_love_2ch char:583,D703 D704 D705 D2165 D1699 D1709 D1710 D1713 D1714 D1727 D1728 D1729 D1730 D2211,D2211,O200,확정
+관계 person:지휘관 ↔ person:프리바티,관계,fl:2x2_love_2ch,141,124,,,char:170 char:313 fl:2x2_love_1ch fl:2x2_love_2ch,D1939 D1940 D1942 D2091 D1703 D1704 D1705 D1706 D1707 D1708 D1718 D1719 D1720 D1722 D1723,D1718 D1719 D1720 D1722 D1723,O201,확정
+성장 person:아르카나 성격,성장,fl:2x2_love_2ch,141,30,,,event_arcanearchive fl:2x2_love_1ch fl:2x2_love_2ch,D698 D1700 D1712 D1726,D1726,O202,기각
+성장 person:에이미 신념,성장,fl:2x2_love_2ch,141,0,,,fl:2x2_love_1ch fl:2x2_love_2ch,D1715 D1716 D1724,D1724,O203,기각
+성장 person:프리바티 신념,성장,fl:2x2_love_2ch,141,126,1,,ch14 char:170 event_ce006 fl:2x2_love_2ch,D115 D1941 D739 D1721,D1721,O61,확정
+관계 person:백학 ↔ person:지휘관,관계,char:620,142,0,,,fl:good_world char:620,D1121 D1124 D1126 D1127 D2212,D2212,O204,확정
+성장 person:오스왈드 신념,성장,side:pretty_star,142,9,1,1,fl:ark_guardian side:pretty_star,D979 D996 D1086 D1118,D1086 D1118,O62,확정
+관계 person:리버린 ↔ person:프레자일,관계,ch45,143,71,1,1,ch29 ch30 ch44 ch45,D426 D433 D431 D432 D1062 D1145,D1145,O63,확정
+성장 person:E.H. 신념,성장,ch45,143,107,1,1,ch22 ch24 ch41 ch44 fl:enter_heaven char:113 ch45,D232 D294 D863 D1068 D1076 D2208 D1142,D1142,O64,확정
+성장 person:리버린 신념,성장,ch45,143,78,1,1,ch27 ch44 ch45,D380 D1063 D1143,D1143,O65,기각
+성장 person:아르카나 신념,성장,ch45,143,32,,1,event_arcanearchive char:581 fl:2x2_love_1ch char:583 ch45,D702 D2164 D1711 D2210 D1135,D1135,O205,확정
+성장 person:지휘관 신념,성장,ch45,143,141,1,1,ch01 char:110 ch17 ch21 ch28 ch45,D12 D1405 D150 D217 D384 D1132,D1132,O66,기각
+관계 person:네온 ↔ person:아니스,관계,event_staranis1,144,135,1,1,ch08 ch35 ch38 event_staranis1,D75 D602 D660 D667 D1239,D1239,O67,확정
+관계 person:도로시 ↔ person:라피,관계,ch46,144,28,,1,fl:boom_the_ghost ch46,D756 D758 D757 D759 D1169,D1169,O206,기각
+관계 person:라피 ↔ person:아니스,관계,event_staranis1,144,139,1,1,ch04 ch34 ch35 event_staranis1,D37 D561 D603 D1239,D1239,O68,확정
+관계 person:머스탱 ↔ person:한슨,관계,event_staranis1,144,2,1,1,side:pretty_star event_staranis1,D1092 D1091 D1106 D1184 D1196 D1197 D1227,D1184 D1196 D1197 D1227,O69,기각
+관계 person:아니스 ↔ person:지휘관,관계,char:17,144,143,1,,ch00 ch01 ch02 ch05 char:12 char:15 sub:트윙클_00 ch33 ch35 event_staranis1 char:17,D7 D10 D25 D59 D1399 D2050 D383 D536 D601 D1239 D2213,D2213,O70,확정
+성장 person:나유타 신념,성장,ch46,144,26,1,1,ch39 event_goddessfall1 ch46,D764 D904 D1152,D1152,O71,확정
+성장 person:민트 신념,성장,event_staranis1,144,17,1,1,ch41 event_staranis1,D860 D1207 D1211 D1222,D1207 D1211 D1222,O72,확정
+성장 person:아니스 신념,성장,char:17,144,141,1,,ch02 char:82 ch25 ch26 char:470 ch33 ch34 ch35 ch38 ch39 ch40 ch41 ch42 side:pretty_star ch45 event_staranis1 char:17,D21 D1809 D314 D325 D1485 D541 D560 D609 D666 D775 D798 D862 D892 D893 D1097 D1117 D1137 D1198 D1210 D1215 D1219 D1221 D1224 D1226 D1237 D1238 D2214,D2214,O73,확정
+성장 person:한슨 성격,성장,event_staranis1,144,2,1,1,side:pretty_star event_staranis1,D1115 D1201,D1201,O74,기각
+성장 person:한슨 신념,성장,event_staranis1,144,2,1,1,side:pretty_star event_staranis1,D1094 D1216 D1228,D1216 D1228,O75,확정
+관계 person:네온 ↔ person:지휘관,관계,char:18,145,142,1,,ch02 char:18,D20 D1732,D1732,O76,확정
+성장 person:네온 신념,성장,char:18,145,142,1,,ch02 char:14 ch45 char:18,D19 D2041 D1136 D1733,D1733,O77,확정
+관계 person:머스탱 ↔ person:지휘관,관계,fl:b-side_idol,146,47,,,event_romanticvalentine fl:coins_in_rush fl:b-side_idol,D1629 D832 D1738,D1738,O207,기각
+관계 person:민트 ↔ person:지휘관,관계,char:600,146,0,,,fl:b-side_idol char:600,D1734 D1735 D2217,D2217,O208,확정
+성장 person:민트 성격,성장,char:600,146,37,1,,ch38 ch41 fl:b-side_idol char:600,D661 D861 D1736 D2216,D2216,O78,기각
+연작 fl:bitter_spice,연작,fl:bitter_spice,147,5,1,,side:pretty_star event_staranis1 fl:b-side_idol fl:bitter_spice,,,O79,확정
+관계 person:민트 ↔ person:아니스,관계,fl:bitter_spice,147,38,1,,ch38 ch40 event_staranis1 fl:bitter_spice,D662 D665 D800 D1179 D1212 D1214 D1234 D1744,D1744,O80,확정
+관계 person:민트 ↔ person:프리카,관계,fl:bitter_spice,147,3,1,,event_staranis1 fl:bitter_spice,D1180 D1209 D1212 D1743 D1742,D1743 D1742,O81,확정
+관계 person:아니스 ↔ person:프리카,관계,fl:bitter_spice,147,130,1,,char:12 ch38 ch40 event_staranis1 fl:bitter_spice,D1400 D665 D664 D800 D801 D1180 D1209 D1214 D1235 D1744,D1744,O82,확정
+관계 person:지휘관 ↔ person:프리카,관계,char:601,147,0,,,fl:bitter_spice char:601,D1739 D1740 D2219,D2219,O209,확정
+성장 person:프리카 신념,성장,fl:bitter_spice,147,38,1,,ch38 event_staranis1 fl:bitter_spice,D663 D1213 D1223 D1741,D1741,O83,확정
+관계 person:소라 ↔ person:지휘관,관계,fl:ark_ranger,148,33,,,event_overthehorizon char:532 fl:ark_ranger,D744 D752 D745 D2172 D2173 D1271,D1271,O210,확정
+성장 person:아크레인저_블랙 신념,성장,fl:ark_ranger,148,74,,,event_darkhero fl:ark_ranger,D481 D1243 D1244 D1245 D1246 D1250 D1252 D1253,D1243 D1244 D1245 D1246 D1250 D1252 D1253,O211,확정
+연작 fl:wave_to_you,연작,fl:wave_to_you,149,99,,,event_schooloflock event_colorless fl:wave_to_you,,,O212,확정
+관계 person:그레텔 ↔ person:신데렐라,관계,fl:wave_to_you,149,58,1,,event_oldtales1 fl:wave_to_you,D574 D575 D576 D1755,D1755,O84,기각
+관계 person:신데렐라 ↔ person:지휘관,관계,char:515,149,68,1,,ch32 sub:거울_공주_00 ch35 char:515,D514 D522 D612 D2222,D2222,O85,확정
+관계 person:신데렐라 ↔ person:헨젤,관계,fl:wave_to_you,149,58,1,,event_oldtales1 fl:wave_to_you,D569 D574 D570 D575 D576 D571 D1755,D1755,O86,기각
+성장 person:나가 신념,성장,fl:wave_to_you,149,98,,,char:450 fl:wave_to_you,D2069 D2070 D1751,D1751,O213,확정
+성장 person:마르차나 신념,성장,fl:wave_to_you,149,99,,,event_schooloflock event_colorless char:833 fl:wave_to_you,D1459 D1460 D1579 D2119 D1750,D1750,O214,확정
+성장 person:모리 신념,성장,fl:wave_to_you,149,40,,,event_unbreakablesphere1 fl:wave_to_you,D678 D683 D1753,D1753,O215,기각
+관계 org:메티스 ↔ person:슈엔,관계,fl:project_matis,151,139,1,,ch11 ch17 fl:project_matis,D92 D152 D1288,D1288,O87,기각
+관계 person:라플라스 ↔ person:슈엔,관계,fl:project_matis,151,131,1,,ch18 ch36 fl:project_matis,D155 D156 D618 D1285 D1305 D1286 D1287 D1306,D1305 D1286 D1287 D1306,O88,기각
+관계 person:맥스웰 ↔ person:슈엔,관계,fl:project_matis,151,134,1,,char:102 ch35 ch37 fl:project_matis,D1383 D611 D645 D1272 D1290 D1308 D1291 D1307 D1292,D1290 D1308 D1291 D1307 D1292,O89,기각
+성장 person:라플라스 신념,성장,fl:project_matis,151,139,1,,ch11 ch18 char:100 ch35 fl:project_matis,D88 D153 D154 D1966 D613 D1302 D1303,D1302 D1303,O90,확정
+성장 person:슈엔 성격,성장,fl:project_matis,151,148,1,,ch02 ch18 ch37 fl:project_matis,D22 D158 D647 D1279 D1280,D1279 D1280,O91,기각
+성장 person:슈엔 신념,성장,fl:project_matis,151,146,1,,ch04 ch15 fl:project_matis,D45 D126 D1281 D1282 D1283 D1284,D1281 D1282 D1283 D1284,O92,기각
+관계 person:맥스웰 ↔ person:지휘관,관계,char:105,152,135,,,char:102 char:105,D1380 D1381 D1382 D2227,D2227,O216,확정
+성장 person:맥스웰 신념,성장,char:105,152,135,1,,ch16 ch38 char:105,D139 D656 D2226,D2226,O93,기각
+관계 person:도로시 ↔ person:버닝엄,관계,ch47,153,15,1,1,ch44 ch46 ch47,D1053 D1172 D1321,D1321,O94,확정
+관계 person:도로시 ↔ person:스노우_화이트,관계,ch47,153,117,1,1,event_overzone event_goddessfall1 ch47,D248 D249 D243 D956 D1311,D1311,O95,확정
+관계 person:세실 ↔ person:지휘관,관계,ch47,153,127,1,1,ch20 ch21 ch44 ch47,D194 D214 D1034 D1310,D1310,O96,기각
+관계 person:요한 ↔ person:지휘관,관계,ch47,153,128,1,1,ch19 ch20 ch21 sub:에덴_Notice_02 event_goddessfall1 ch44 ch47,D171 D187 D184 D188 D210 D221 D925 D1033 D1309,D1309,O97,확정
+성장 person:에닉 성격,성장,ch47,153,117,1,1,ch22 ch42 ch47,D224 D890 D891 D1323,D1323,O98,기각
+성장 person:에닉 신념,성장,ch47,153,117,1,1,ch22 ch25 ch45 ch47,D223 D310 D1141 D1324,D1324,O99,확정
+성장 person:온리_원 성격,성장,ch47,153,25,1,1,ch42 ch46 ch47,D883 D884 D1161 D1312,D1312,O100,기각
+연작 fl:persona_on_frontline,연작,fl:persona_on_frontline,154,32,,,fl:coins_in_rush fl:fatal_maid fl:persona_on_frontline,,,O217,확정
+관계 person:도로시 ↔ person:엔더슨,관계,ch48,154,10,1,1,ch46 ch47 ch48,D1174 D1175 D1320 D1344 D1347,D1344 D1347,O101,확정
+관계 person:마리안 ↔ person:지휘관,관계,ch48,154,107,,1,event_firstaffection ch48,D2060 D1343,D1343,O218,확정
+관계 person:스노우_화이트 ↔ person:홍련,관계,ch48,154,21,1,1,fl:ark_guardian ch48,D976 D1349,D1349,O102,확정
+관계 person:장화 ↔ person:홍련,관계,ch48,154,95,1,1,event_newyearnewsword event_goddessfall1 ch48,D361 D359 D360 D362 D907 D1332 D1331,D1332 D1331,O103,확정
+성장 person:도로시 신념,성장,ch48,154,129,1,1,ch19 event_overzone char:233 fl:ark_guardian ch45 ch46 ch47 ch48,D177 D237 D1434 D987 D1139 D1168 D1173 D1319 D1346,D1346,O104,확정
+성장 person:라푼젤 신념,성장,ch48,154,137,1,1,char:221 event_overzone char:226 ch48,D1376 D250 D1594 D1328,D1328,O105,기각
+성장 person:마리안 신념,성장,ch48,154,139,1,1,ch14 side:second_affection event_goddessfall1 ch47 ch48,D110 D419 D902 D1316 D1341,D1341,O106,확정
+성장 person:온리_원 신념,성장,ch48,154,1,1,1,ch47 ch48,D1314 D1336 D1337,D1336 D1337,O107,확정
+성장 person:파피용 신념,성장,ch48,154,26,1,1,event_goddessfall1 ch48,D926 D937 D1335,D1335,O108,확정
+성장 person:홍련 신념,성장,ch48,154,137,1,1,char:222 event_overzone char:225 ch48,D1412 D251 D1516 D1333,D1333,O109,확정
+관계 person:드레이크 ↔ person:지즈,관계,fl:great_villain_union,156,28,1,,ch42 fl:great_villain_union,D876 D1780 D1776 D1782 D1779,D1776 D1782 D1779,O110,확정
+관계 person:길티 ↔ person:지휘관,관계,char:404,157,131,,,char:400 char:404,D1979 D1980 D1981 D2232,D2232,O219,확정
+성장 person:길티 성격,성장,char:404,157,131,,,char:400 event_beautyfullshot1 char:404,D1976 D489 D2231,D2231,O220,확정
+관계 person:신 ↔ person:지휘관,관계,char:405,158,132,,,char:401 event_romanticvalentine char:405,D1985 D1986 D1628 D2234,D2234,O221,확정

@@ -1,0 +1,45 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M102\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:583",
+  "session": "M102",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2210",
+      "person": "person:아르카나",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "생명의 은인에게 받은 시간을 그냥 써 보고 싶다던",
+      "after": "학교에서 세상을 구경한 뒤 하고 싶던 것들을 찾아, 보육교사 자격증을 따 어린이집 봉사로 그 시간을 의미 있게 쓰는",
+      "evidence": [{ "scene": "ep:d_nikke_arcana_fortunemate_03", "lines": ["67-84"] }],
+      "time": "S309",
+      "points": ["F2537"],
+      "reason": "#68-69 '같이 학교 갔을 때 … 제대로 세상 구경' · #83-84 '소중하고 의미 있게 쓰고 싶었으니까요. 제 생명의 은인에게 받은 시간을'. 앞 모습은 D2164.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2211",
+      "person": "person:아르카나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "자기 전부를 아는 단 한 사람으로 곁에 두던",
+      "after": "출정 사이 하루씩 만나는 연인으로, 같은 운명을 공유한다며 그가 잘못되면 수천 수만 년이라도 그 기록을 지키겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_arcana_fortunemate_05", "lines": ["74-75"] }],
+      "evidence": [{ "scene": "ep:d_nikke_arcana_fortunemate_05", "lines": ["79-85", "111-117", "123-130"] }],
+      "time": "S309",
+      "points": ["F2538"],
+      "reason": "#83 '같은 운명을… 공유하는 사람들' · #114-117 '수천, 수만 년 동안이라도 … 기록을' · #130 '응. 약속!'. 앞 모습은 D2165.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음. 볼 거리 W59(연인 로맨스 · 아이들 케이티 · 에릭)는 D2210 · D2211로 적었다. 아이들은 이 단위에만 나오는 단역이라 적지 않았다. 동화 '도서관 밖으로 나가지 못하는 저주에 걸린 공주'(03#58)와 '처음 간 날이 에이미 만나서 놀았던 날'(04#107)은 줄기에 걸린 암시가 아니라 적지 않았다."
+}

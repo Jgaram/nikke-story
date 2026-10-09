@@ -1,0 +1,115 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch11",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E75",
+      "act": "암시",
+      "points": ["F312"],
+      "text": "가공 지형에서 솟은 촉수가 라피와 메티스의 몸을 함께 꿰뚫는다 — 라피는 침식되지 않아 뇌에 NIMPH가 없다는 것이 드러난다(F312)",
+      "about": ["person:라피", "org:메티스"],
+      "evidence": [{ "scene": "d_main_11_06_s", "lines": ["26-28"] }],
+      "reason": "#28. ch12에서 잉그리드가 '침식 촉수에 찔리고도' 침식되지 않은 라피를 짚는다(F312)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D88",
+      "person": "person:라플라스",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "모든 니케는 인간을 지키는 히어로여야 지상을 탈환할 수 있고, 인간의 도움을 받는 니케는 '히어로 실격'이라 니케와 인간은 전우가 될 수 없다고 믿는다",
+      "evidence": [{ "scene": "d_main_11_05", "lines": ["33-44"] }],
+      "points": ["F294"],
+      "reason": "#37-44",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D89",
+      "person": "person:라플라스",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'정의!' · '히어로의 사명'을 외치며 앞장서지만 덜렁대다 다리를 날려 먹고도 '사고였다'고 우기는 메티스 리더",
+      "evidence": [{ "scene": "d_main_11_03", "lines": ["1-38"] }],
+      "reason": "#13 '고의가 아니다' · #36-37. 11_01#25-32 · #67 불침번",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D90",
+      "person": "person:맥스웰",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "능청스럽게 속내를 털어놓고 라플라스 · 드레이크의 뒷수습을 하며, 슈엔이 자기들을 '성능 좋은 장난감'으로 본다고 담담히 짚는 현실적인 메티스",
+      "evidence": [{ "scene": "d_main_11_04", "lines": ["52-65"] }],
+      "reason": "#59-64. 11_01#20 '슈엔이 언제 우리 사정 봐줬나' · 11_03#12-38",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D91",
+      "person": "person:드레이크",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'돼지와 다름없지 않나!' 하고 큰소리치지만 슈엔 · 잉그리드는 무섭다며 꼬리를 내리고, 엉뚱한 때 웃어 분위기를 푸는 메티스",
+      "evidence": [{ "scene": "d_main_11_01", "lines": ["21-38"] }],
+      "reason": "#21-23 · 11_04#20-22 · 11_05#54-58",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D92",
+      "person": "person:슈엔",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["org:메티스"],
+      "text": "메티스를 '너흰 사과할 필요 없어, 앞으로도'라며 감싸 주지만, 배터리가 간당간당해도 막무가내로 지상에 올려 보내는 주인",
+      "evidence": [{ "scene": "d_main_11_04", "lines": ["25-47"] }],
+      "points": ["F292", "F293"],
+      "reason": "#28 · #32 · #34. 맥스웰 #59-64",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D93",
+      "person": "person:잉그리드",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:슈엔"],
+      "text": "미실리스를 '미사일스'라 부르며 어린아이 대하듯 약 올리고, 따라 나오라는 슈엔에게 '바라던 바다'라 맞서는 앙숙",
+      "evidence": [{ "scene": "d_main_11_04", "lines": ["33-49"] }],
+      "points": ["F292"],
+      "reason": "#36-45 · #49",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U68",
+      "topic": "기업 · 조직",
+      "text": "3대 기업은 서로의 최강 스쿼드를 감시하는 전담 정보부를 두어, 미실리스는 앱솔루트가 어디서 무엇을 하는지 다 보고받고 그 성과를 가로채려 한다",
+      "about": ["org:미실리스", "org:앱솔루트"],
+      "points": ["F290"],
+      "evidence": [{ "scene": "d_main_11_01", "lines": ["45-56"] }],
+      "reason": "#49-53 맥스웰 · #56 라플라스 '정보 활용은 전술의 기본'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

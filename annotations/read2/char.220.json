@@ -1,0 +1,53 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M55\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:220",
+  "session": "M55",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1272",
+      "act": "암시",
+      "points": ["F684", "F914"],
+      "text": "소원은 이미 없어졌을 거라며 '몇 번의 사고 전환을 겪었다'고 한다 — 사고 전환이 지운 기억 · 바꾼 성격",
+      "about": ["person:스노우_화이트"],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_03", "lines": ["107-110"] }],
+      "reason": "#110 '몇 번의 사고 전환' — 기억이 남지 않음(F684, ch17) · 성격이 바뀜(F914, OVER ZONE)을 먼저 흘린다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1273",
+      "act": "암시",
+      "points": ["F751", "J8"],
+      "text": "지상에 제대로 정비받을 곳은 없다더니 '…아니. 있긴 하지. 그런 곳이.'라 말을 고친다 — 지상의 에덴",
+      "about": ["place:에덴"],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_04", "lines": ["107-108"] }],
+      "reason": "#108 — 방주보다 앞선 기술로 필그림을 만든 지상 기지 에덴(F751, ch19)을 가리키는 듯하다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D1398",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "도와주는 대신 본 것을 잊으라는 낯선 구원자",
+      "after": "아무도 죽지 않길 바라는 '같은 결벽증'이라 맘에 들어 하고, 무기를 버려서라도 절대 죽게 두지 않겠다며 2주 길을 지켜 방주로 보내는",
+      "trigger": [{ "scene": "ep:d_nikke_snowwhite_04", "lines": ["128-133"] }],
+      "time": "S356",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_04", "lines": ["18-21", "134-135"] }],
+      "reason": "#21 '절대 죽게 두지 않는다' · #134-135 '그래서 난 네가 맘에 든다' — ch06 기준(D64) 뒤",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,64 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:거울_공주_00",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E465",
+      "act": "암시",
+      "points": ["F1632"],
+      "text": "그레이브가 은근 똑똑하고 기억력도 좋다는 말에 신데렐라가 '당연히…'라 하다가 '내 최고의 관객이니까'로 얼버무린다",
+      "about": ["person:신데렐라", "person:그레이브"],
+      "evidence": [{ "scene": "sub:거울_공주_00", "lines": ["73-80"] }],
+      "reason": "#76-78 · 아니스 '뭔가 수상한데' — 그레이브가 2세대 페어리 테일을 만든 천재(F1632, ch33)임을 감춘다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E466",
+      "act": "암시",
+      "points": ["F1703"],
+      "text": "신데렐라는 헬레틱 시절 갓데스를 모두 죽이는 것이 그들을 기쁘게 하고 구원하는 길이라 믿었다고 한다",
+      "about": ["person:신데렐라", "org:갓데스"],
+      "evidence": [{ "scene": "sub:거울_공주_00", "lines": ["136-139"] }],
+      "reason": "#137-139 — 그 믿음은 퀸이 고른 니케를 헬레틱으로 이끈 인격 데이터의 짓이었다(F1703, erelic).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D521",
+      "person": "person:신데렐라",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "헬레틱 시절 한 일은 침식 탓이어도 사라지지 않으니, 거울로 계속 확인하며 더 아름다워져야 한다는",
+      "evidence": [{ "scene": "sub:거울_공주_00", "lines": ["114-146"] }],
+      "reason": "#142-146 — 거울 집착(D513)의 까닭.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D522",
+      "person": "person:신데렐라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "유리 구두를 찾아 준 은인이라 '왕자님'이라 부르는",
+      "after": "헬레틱이었던 자기를 간단히 믿어 준 데 기뻐하고, '진심으로' 고맙다며 '친절한 나의 왕자님'이라 하는",
+      "trigger": [{ "scene": "sub:거울_공주_00", "lines": ["164-169"] }],
+      "evidence": [{ "scene": "sub:거울_공주_00", "lines": ["176-178", "202-214"] }],
+      "reason": "#177-178 '조금 기쁘네' · #204-207 한동안 답하지 못하다 '진심으로'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "life": []
+}

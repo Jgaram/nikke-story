@@ -1,0 +1,130 @@
+{
+  "unit": "event_romanticvalentine",
+  "session": "M68",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I567",
+      "target": "person:스윗_조니",
+      "speaker": true,
+      "evidence": [{ "scene": "event_romanticvalentine_prologue", "lines": ["0-8", 18, "37-41"] }],
+      "reason": "니케 휴대폰으로 데이터를 보내 방주에 들어오는 독백 — #42에서 같은 말투로 '관리자 스윗 조니'가 '[Sweets & Cocoa]에 어서 오세요'를 외친다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1416",
+      "act": "재언급",
+      "points": ["F808"],
+      "text": "다시 찾아온다더니 코빼기도 안 보였다며, 지휘관이 공장에 찾아왔을 때 나눈 이야기를 조니가 다시 꺼낸다",
+      "about": ["person:스윗_조니", "place:Sweets_&_Cocoa"],
+      "evidence": [{ "scene": "event_romanticvalentine_02_e", "lines": [26, 33, "56-62"] }],
+      "reason": "#33 '다시 찾아온다고 해놓고서' · #61 '자네가 찾아왔을 때' — Maid in Valentine의 공장 방문(F808)을 되짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "E1417",
+      "act": "재언급",
+      "points": ["F789", "F791"],
+      "text": "신이 지휘관을 '교관'이라 부르며 벌점 · 상점을 매기고, 갱생했다며 편한 것으로 바꾼 컨버터를 보여 준다",
+      "about": ["person:신"],
+      "evidence": [{ "scene": "event_romanticvalentine_01_e", "lines": [31, 34, 37, 152] }],
+      "reason": "#31 '교관' · #34 '벌점 10점' · #152 컨버터 — 갱생관 시절(char:401 F789 · F791)의 호칭 · 점수 · 컨버터를 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "E1418",
+      "act": "재언급",
+      "points": ["F810"],
+      "text": "밀크 · 프리바티가 지상 공장에서 본 조니를 알아본다",
+      "about": ["person:스윗_조니", "person:밀크", "person:프리바티"],
+      "evidence": [{ "scene": "event_romanticvalentine_epilogue", "lines": [64, "69-70", 77] }],
+      "reason": "#64 '예전에 그, 지상에 있던 공장' · #77 '지상의 공장에 본체가 있었을 텐데' — Maid in Valentine의 공장 방문(F810)을 되짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1625",
+      "person": "person:스윗_조니",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "공장에 남아 카카오를 지키며 방주로 옮기자는 제안을 거절한",
+      "after": "전투복을 입은 니케 소녀들의 로망을 도우려 스스로 데이터를 실어 방주로 들어온",
+      "points": ["F808", "F1780"],
+      "evidence": [{ "scene": "event_romanticvalentine_02_e", "lines": ["29-32", "66-77"] }],
+      "reason": "#66-69 예쁜 옷 대신 전투복 · #75-77 '도와주고 싶었다' — 공장에 남던 조니(F808)가 사명으로 방주행을 택했다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "D1626",
+      "person": "person:스윗_조니",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "지상 Sweets & Cocoa 공장의 관리 A.I.",
+      "after": "메이드 카페에 본체 · 홀로그램 단말이 설치된 비인가 A.I.(Ver.2.14)",
+      "points": ["F1780"],
+      "evidence": [{ "scene": "event_romanticvalentine_epilogue", "lines": [6, "92-93"] }],
+      "reason": "#6 본인 희망으로 메이드 카페에 본체 · 단말 설치, #93 '비인가 A.I.' — 소속 이동을 타임라인에 올린다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "D1627",
+      "person": "person:트로니",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "남과 마주하기를 겁내 숨던",
+      "after": "대화에 조금 익숙해져 더 어려운 메이드 일에 스스로 나선",
+      "evidence": [{ "scene": "event_romanticvalentine_02_s", "lines": ["72-84"] }],
+      "reason": "#80-81 '대화하는 거 조금 익숙해진 것 같아서 좀 더 어려운 걸' — 심사까지 통과해 메이드 카페에서 일한다(F1782).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "D1628",
+      "person": "person:신",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "벌점 · 상점으로 교관을 끌고 다니던 갱생관 흉악범",
+      "after": "나쁜 짓 않겠다 약속하고 벌점보다 상점을 더 주는 '기브 앤 테이크' 사이",
+      "evidence": [{ "scene": "event_romanticvalentine_03_e", "lines": ["40-45"] }],
+      "reason": "#43 '요새는 벌점보다 상점을 더 많이' · #44-45 '주인님이 잘해주니까… 기브 앤 테이크' — char:401(F791)과 달라진 모습.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    },
+    {
+      "id": "D1629",
+      "person": "person:머스탱",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "서로 믿고 움직이는 'Entertainment 관계'",
+      "after": "자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡기는",
+      "points": ["F1783"],
+      "evidence": [{ "scene": "event_romanticvalentine_05_s", "lines": ["13-19", "28-31"] }],
+      "reason": "#14 'Me는 사장이지 지휘관이 아니니까' · #29-30 'Nikke들을 잘 부탁합니다' — D832의 동업자 관계보다 한 걸음 맡기는 쪽.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    }
+  ],
+  "life": [],
+  "note": "생활상은 2층이라 적지 않았다. 신 · 앵커 · 마스트의 기준은 출시가 앞선 3층 호감도 스토리(char:401 · char:350 · char:351)에 맡겼다."
+}

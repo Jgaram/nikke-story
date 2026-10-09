@@ -1,0 +1,108 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M23\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:old_tales_dialog",
+  "session": "M23",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I207",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:old_tales_dialog_01", "lines": ["0-11"] }],
+      "reason": "기록 영상 속 지휘관: 줄 — 갓데스의 지휘관 = 엔더슨(F1695 · F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I208",
+      "target": "person:헨젤",
+      "evidence": [{ "scene": "erelic:old_tales_dialog_17", "lines": ["3-4"] }],
+      "reason": "#3-4 꿈속 '모르는 얼굴 셋 · 둘은 똑같이' — 쌍둥이 헨젤 · 그레텔과 세이렌(F1697)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I209",
+      "target": "person:그레텔",
+      "evidence": [{ "scene": "erelic:old_tales_dialog_17", "lines": ["3-4"] }],
+      "reason": "#3-4 꿈속 '모르는 얼굴 셋 · 둘은 똑같이' — 쌍둥이 헨젤 · 그레텔과 세이렌(F1697)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I210",
+      "target": "person:세이렌",
+      "evidence": [{ "scene": "erelic:old_tales_dialog_17", "lines": [3] }],
+      "reason": "#3 '모르는 얼굴 셋' 가운데 쌍둥이가 아닌 하나 — 2세대 동료 세이렌(F1697)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E550",
+      "act": "암시",
+      "points": ["F1708"],
+      "text": "헬레틱 연구소 연구원이 모든 부위가 재생된다며 '재밌습니다 · 뭐든 해볼 수 있을 것 같아요'라 한다",
+      "about": ["person:신데렐라"],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_09", "lines": ["0-9"] }],
+      "reason": "#6-7 — 연구원 일지에서 그가 고통을 궁금해하게 된다(F1708)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D584",
+      "person": "person:그레이브",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "2세대를 만든 기억을 그대로 지닌",
+      "after": "꿈에 나온 동료 셋(둘은 쌍둥이)의 얼굴을 알아보지 못하는",
+      "trigger": [{ "scene": "event_oldtales2_epilogue", "lines": ["54-89"] }],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_17", "lines": ["0-8"] }],
+      "time": "S184",
+      "points": ["F1697"],
+      "reason": "#2-4 — 머리를 다친 뒤의 일(F1693). 이름도 잊은 그레이브(ch30)로 가는 길",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D585",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:니힐리스타"],
+      "before": "동료인 줄 알았던",
+      "after": "신데렐라를 데려가려 한 헬레틱이라 겨우 달아나 숨어 기다리기로 한",
+      "trigger": [{ "scene": "erelic:old_tales_dialog_18", "lines": ["0-6"] }],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_18", "lines": ["0-12"] }],
+      "time": "S184",
+      "points": ["F1698"],
+      "reason": "#4-6 '동료가 아니었다. 헬레틱이었다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U243",
+      "topic": "구시대",
+      "text": "아나키오르에게 고향과 가족을 잃은 정부 간부 · 연구원들은 침식된 니케를 동정하지 말라며 연구를 빌미로 한 복수를 묵인했다",
+      "about": ["place:지상"],
+      "points": ["F1696"],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_08", "lines": ["0-26"] }],
+      "reason": "#5-7 · #17-26",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ]
+}

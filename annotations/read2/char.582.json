@@ -1,0 +1,54 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M102\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:582",
+  "session": "M102",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I687",
+      "target": "person:레이블",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_label_02", "lines": [33] }],
+      "reason": "문밖의 '…요….'에 '누구라고?' 묻자 #35 '레, 레, 레이… 블… 이요' — 같은 사람이 이어 답한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2202",
+      "person": "person:레이블",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "늘 변수를 예상 못 해 무너지고 '포기는 빠른 편'이라던",
+      "after": "'끝날 때까지 모르는 일'이라는 말에 먼저 포기하지 않겠다며 다시 힘내는",
+      "trigger": [{ "scene": "ep:d_nikke_label_03", "lines": ["26-30"] }],
+      "evidence": [{ "scene": "ep:d_nikke_label_03", "lines": ["31-41"] }],
+      "time": "S291",
+      "reason": "#22-25 '와르르 무너져버리고 … 포기는 빠른 편' → #35-36 '먼저 포기할 수는 없어요. 그래서는 안돼요' · #41 '더 힘낼게요'. 05편 제목 '끝날 때까지 끝난 게 아니다'로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2203",
+      "person": "person:레이블",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "구원자로 떠받들며 데이트를 망상 · 계획으로만 그리던",
+      "after": "처음 사적으로 함께한 날 '자료 조사' 핑계로 호텔에서 입술이 스치고, 다음을 약속받은",
+      "trigger": [{ "scene": "ep:d_nikke_label_04", "lines": ["124-127"] }],
+      "evidence": [{ "scene": "ep:d_nikke_label_05", "lines": ["99-106", "137-148"] }],
+      "time": "S291",
+      "reason": "01#30-63 의자와 키스 연습 · 03#37 '처음으로 사적으로 함께하는 날' → 05#105 '입술이 스쳤' · #137-145 '다음에 또' · '그때 부탁드릴게요'. 앞 모습은 D999.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "life": []
+}

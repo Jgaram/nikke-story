@@ -1,0 +1,56 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M97\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:511",
+  "session": "M97",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1616",
+      "act": "암시",
+      "points": ["F1903", "J12"],
+      "text": "신데렐라가 다시 만날 2세대 동료들이 그레이브처럼 기억이 없거나 '다른 생각을 갖고 있을 수도' 있다고 걱정한다 — 뒤에 헨젤 · 그레텔은 인류의 편이 아니게 된다",
+      "about": ["person:헨젤", "person:그레텔", "person:세이렌"],
+      "evidence": [{ "scene": "ep:d_nikke_cinderella_04", "lines": ["51-61"] }],
+      "reason": "04#60 '다들 이전과 다른 모습일 수도 있고, 다른 생각을 갖고 있을 수도'. 뒤 F1903(세이렌: 헨젤 · 그레텔은 더 이상 인류의 편이 아니다)과 같은 일이라는 확인은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2135",
+      "person": "person:신데렐라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:그레이브"],
+      "before": "그레이브에게 받기만 해 '아름다운 관계라 할 수 없다'던",
+      "after": "기억 없는 지금의 그에게 추억의 수프를 끓여 대접하고, 지휘관과 함께 새 추억을 쓰기로 한",
+      "trigger": [{ "scene": "ep:d_nikke_cinderella_04", "lines": ["62-73"] }],
+      "evidence": [{ "scene": "ep:d_nikke_cinderella_05", "lines": ["109-119", "132-134"] }],
+      "points": ["F1718"],
+      "reason": "01#4-5 '너무 받기만 한 것 같아' → 05#112-115 '나를 포기하지 않아준 네게 … 온기를 선물하고 싶었던 거니까'. D553의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    },
+    {
+      "id": "D2136",
+      "person": "person:신데렐라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "자기가 망친 것을 직접 수습하려 퀸을 치던 — 기억 잃은 이에게 추억은 의미 없지 않을까 걱정한",
+      "after": "'나만이 그때를 기억하니까' 동료 모두에게 먼저 수프를 끓여 추억을 일깨우거나 새로 쌓겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_cinderella_04", "lines": ["62-70"] }],
+      "evidence": [{ "scene": "ep:d_nikke_cinderella_04", "lines": ["75-89"] }],
+      "reason": "04#76 '의미가 없는 일이 아닐까, 걱정했었는데' → #79-81 '나만이 그때를 기억하고 있으니까, 더더욱 해야지'. D578의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S188(CH.32–34 무렵, 추정)은 원문이 더 좁히지 않아 그대로 두었다(01#26 바디 수리 · 03#112-130 주둔지 01). 신데렐라 → 지휘관은 05#133-134 감사가 D612에서 더 바뀐 것이 아니라 적지 않았다. 그레이브 쪽(05#97-108 미안 → 따뜻함)은 D1599 일상의 연장이라 적지 않았다."
+}

@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:저스틴_00",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U35",
+      "topic": "방주 사회",
+      "points": ["F199"],
+      "text": "방주의 세포 재생 치료는 비용과 시간이 너무 들어 아우터 림 사람들은 받을 수 없고, 리페어 센터 직원이 중앙 정부 눈을 피해 달마다 2세대 니케 부품을 몰래 이식해 준다",
+      "about": ["person:저스틴", "place:아우터_림"],
+      "evidence": [{ "scene": "sub:저스틴_00", "lines": ["67-75"] }],
+      "reason": "#68-69 · #70-71 '중앙 정부의 시선' · #73-74. 지상 병원도 예전에 같은 이식을 했다(#28-30, F198)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

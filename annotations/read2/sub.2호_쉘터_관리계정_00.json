@@ -1,0 +1,71 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M07\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:2호_쉘터_관리계정_00",
+  "session": "M07",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I65",
+      "target": "org:구원의_성화",
+      "evidence": [{ "scene": "sub:2호_쉘터_관리계정_00", "lines": ["9-17", "28-36"] }],
+      "reason": "관리자가 '무슨 종교인진 모르는' 사이비라 한 단체와 그 교도의 종말 기도 — 데이파라의 엄마가 빠진 구원의 성화(F757 · F902). 이 씬에 이름이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E181",
+      "act": "재언급",
+      "points": ["F402"],
+      "text": "교도가 '이치를 거슬러 새로운 인간을 만들어 하늘에서 차가운 심판자들이 내려왔다'며 종말을 빈다 — 랩쳐를 하늘의 심판자로 받드는 종말의 서 교리(F402)",
+      "about": ["org:구원의_성화"],
+      "evidence": [{ "scene": "sub:2호_쉘터_관리계정_00", "lines": ["28-36"] }],
+      "reason": "#29-30, #35-36",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    },
+    {
+      "id": "E182",
+      "act": "암시",
+      "points": ["F2134"],
+      "text": "교도가 그동안 신의 심판자들께 많은 제물을 바쳐 와 종말의 날에도 구원받는다고 한다 — 구원의 성화는 신도를 지상에 올려 랩쳐에게 제물로 바쳤다(F2134)",
+      "about": ["org:구원의_성화"],
+      "evidence": [{ "scene": "sub:2호_쉘터_관리계정_00", "lines": ["53-56"] }],
+      "reason": "#54-55. 무엇을 바쳤는지는 fl:reborn_evil에서 드러난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    },
+    {
+      "id": "E183",
+      "act": "재언급",
+      "points": ["F756"],
+      "text": "데이파라가 관리자를 통해 '조사는 어떻게 되었냐'고 묻고 지휘관은 아직 결과가 없다고 전한다 — 지상 제단의 죽음을 중앙 정부에 조사 요청한 일(F756)",
+      "about": ["person:데이파라"],
+      "evidence": [{ "scene": "sub:2호_쉘터_관리계정_00", "lines": ["96-103"] }],
+      "reason": "#97, #103",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U145",
+      "topic": "방주 사회",
+      "text": "침공의 부상자 · 사망자 0이라는 수치에 모두 매달려, 쉘터 실종자 하나도 크게 다뤄지고 관리자가 위에서 추궁받는다",
+      "about": ["place:방주"],
+      "points": ["F903"],
+      "evidence": [{ "scene": "sub:2호_쉘터_관리계정_00", "lines": ["83-87"] }],
+      "reason": "#85-87",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    }
+  ]
+}

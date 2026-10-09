@@ -1,0 +1,540 @@
+{
+  "unit": "event_overzone",
+  "session": "R22",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "OVER ZONE — 갓데스 스쿼드의 과거, 1차 침공 끝 방주 밀봉까지. 프롤로그는 리더 릴리바이스(릴리스)가 생명 신호가 꺼지면 동생들에게 가도록 남긴 유언 영상이다. 릴리스가 죽고 레드 후드도 없는 가운데, 리더 대행 도로시와 스노우 화이트(사고 전환으로 말투가 바뀜) · 라푼젤 · 홍련, 양산형 니케들이 방주 입구 임시 초소에서 두 달 뒤 밀봉까지 입구를 지킨다. 아크 가디언 작전(주요 인력의 방주 이주 보호, 달성률 72%)은 끝났고 방주에 보낸 음성은 답이 없다. 식량 창고가 소이탄에 타고, 도로시는 양산형 피나와 방주에 못 들어간 사람들의 캠프에서 식량을 뒤진다. 라푼젤은 기도에, 홍련은 물을 술인 척 마시며 무너지고, 피나가 알려 준 '도와줘요'로 도로시가 스노우 화이트에게 도움을 청하고 라푼젤 · 홍련을 일으켜 세운다(1_04–1_05). 목표를 생존으로 바꾼 날 랩쳐 대군이 오고, 도로시를 지키던 피나가 침식되어 도로시가 직접 쏜다(1_06). 방주가 드디어 연락해 지상의 문제(에블라 입자 발생 장치 · 랩쳐 부대 · 대형 엘리베이터)를 풀면 들여보내 주겠다고 하고, 도로시는 환각 속 피나와 함께 임무를 해 나간다 — 라푼젤의 로사리오에 죽은 이들의 기억이 흘러들고, 홍련은 싹을 보고 농사를 결심한다(2_01–2_03). 스노우 화이트는 도로시가 피나의 환각을 본다는 것을 알아채지만 그대로 두기로 한다(2_04_s). 밀봉이 끝나자 총책임자 오스왈드는 처음부터 들여보낼 생각이 없었다며 통신을 끊고, 도로시는 그와 후손을 가장 고통스럽게 죽이겠다고 한다(2_04_e). 넷은 퀸을 잡기로 하고 흩어지며, 도로시는 환각 피나와 임시 초소에 남았다가 피나가 사라진 뒤 실선을 넘어 떠나 방주 환영 간판 앞에서 '원래 우리 것이던 낙원을 빼앗겠다'고 맹세한다(2_05–2_06). 약 50년 뒤 필그림 도로시는 방주 소식을 모으고, 찾아온 스노우 화이트에게 방주가 자기를 찾게 만들겠다고 한다(에필로그).",
+  "scenes": [
+    {
+      "scene": "event_overzone_prologue",
+      "text": "릴리바이스의 유언 영상 — 동생들에게, 세상을 부탁하고 살아남아 달라"
+    },
+    {
+      "scene": "event_overzone1_01_s",
+      "text": "침식된 니케를 스노우 화이트가 보낸다. 밀봉까지 두 달. 릴리스의 죽음, 석관. 새벽 습격"
+    },
+    {
+      "scene": "event_overzone1_01_e",
+      "text": "도로시가 리더 대행으로 방주에 보고 — 아크 가디언 72%, 지상 인류 공식 0명, 밀봉 뒤 데려가 달라"
+    },
+    {
+      "scene": "event_overzone1_02_s",
+      "text": "답 없는 방주. 스노우 화이트는 경계를 떠나지 않는다. 식사 중 포격"
+    },
+    {
+      "scene": "event_overzone1_02_e",
+      "text": "식량 창고가 소이탄에 타고 양산형은 피나만 남음. 홍련이 씨앗을 흩뿌림. 도로시 · 피나가 캠프로"
+    },
+    {
+      "scene": "event_overzone1_03_s",
+      "text": "방주에 못 들어간 사람들의 캠프 — 시체 속에서 식량을 찾는다. 양산형은 인간 시절 기억이 없다"
+    },
+    {
+      "scene": "event_overzone1_03_e",
+      "text": "2주 뒤 식량이 바닥, 방주는 무응답. 라푼젤 · 홍련 · 도로시가 부딪히고 피나가 꾸짖는다"
+    },
+    {
+      "scene": "event_overzone1_intermission_01",
+      "text": "무너진 동료들. 도로시가 릴리스의 석관 앞에서 피나에게 '도와줘요'라는 말을 배운다"
+    },
+    {
+      "scene": "event_overzone1_04_s",
+      "text": "도로시가 스노우 화이트에게 도움을 청하고, 스노우 화이트가 수색에 나선다"
+    },
+    {
+      "scene": "event_overzone1_04_e",
+      "text": "도로시가 피나와 라푼젤 · 홍련을 일으켜 세우러 간다 — 우상으로 남고 싶다"
+    },
+    {
+      "scene": "event_overzone1_05_s",
+      "text": "도로시가 무덤 앞의 라푼젤을 일으켜 세운다 — 죽은 이의 목소리는 네 바람일 뿐"
+    },
+    {
+      "scene": "event_overzone1_05_e",
+      "text": "홍련의 술은 물이었다. 언니와 화무십일홍. 도로시가 싸우는 이유. 씨앗이 싹튼다. 방주에 '이상 없음' 보고"
+    },
+    {
+      "scene": "event_overzone1_06_s",
+      "text": "목표를 생존으로 — 수색 루트. 도로시 · 피나만 남은 초소에 랩쳐 대군"
+    },
+    {
+      "scene": "event_overzone1_06_e",
+      "text": "침식된 피나를 도로시가 보낸다. 방주에서 온 음성 파일"
+    },
+    {
+      "scene": "event_overzone2_01_s",
+      "text": "방주의 음성 — 지상의 세 문제를 풀면 밀봉되고 보상. 스노우 화이트가 도로시를 지켜보라 한다"
+    },
+    {
+      "scene": "event_overzone2_01_e",
+      "text": "이상향 — 라푼젤의 재밍 머리카락, 도로시는 살아남고 싶었다"
+    },
+    {
+      "scene": "event_overzone2_02_s",
+      "text": "에블라 입자 발생 장치 근처의 무덤, 랩쳐를 끌어들인다"
+    },
+    {
+      "scene": "event_overzone2_02_e",
+      "text": "무덤의 황금색 입자가 라푼젤의 로사리오로 — 죽은 이들의 기억. 라푼젤의 할 일"
+    },
+    {
+      "scene": "event_overzone2_03_s",
+      "text": "실시간 통신 — 밀봉 총책임자(이름 숨김). 갓데스의 지휘관 소식은 모른다. 무덤을 고향으로"
+    },
+    {
+      "scene": "event_overzone2_03_e",
+      "text": "홍련이 강한 까닭(검은 규격 외), 퀸의 목. 농사를 하고 싶다 — 텃밭"
+    },
+    {
+      "scene": "event_overzone2_intermission_01",
+      "text": "밀봉 3주 연장, 물자. 스노우 화이트가 도로시에게 피나는 죽었다고 말하지만 도로시는 농담으로 받는다(환각 재생)"
+    },
+    {
+      "scene": "event_overzone2_04_s",
+      "text": "셋이 도로시의 환각을 그대로 두기로 한다. 엘리베이터 파괴, 퍼펙트"
+    },
+    {
+      "scene": "event_overzone2_04_e",
+      "text": "3주의 생활, 밀봉 완료 — 오스왈드가 들여보낼 생각이 없었다고 밝힌다. 도로시의 복수 맹세"
+    },
+    {
+      "scene": "event_overzone2_05_s",
+      "text": "떠나자는 셋과 배신당했다는 도로시 — 스노우 화이트 '우리는 갓데스인가'"
+    },
+    {
+      "scene": "event_overzone2_05_e",
+      "text": "퀸을 잡으러 흩어짐, 한 달에 한 번. 도로시는 환각 피나와 초소에 남는다 — 여기가 우리 낙원"
+    },
+    {
+      "scene": "event_overzone2_06_s",
+      "text": "둘만의 생활, 릴리스 이야기. 피나가 사라진다"
+    },
+    {
+      "scene": "event_overzone2_06_e",
+      "text": "도로시가 실선을 넘어 떠나고, 방주 환영 간판 앞에서 낙원을 빼앗겠다고 한다"
+    },
+    {
+      "scene": "event_overzone2_epilogue",
+      "text": "약 50년 뒤 — 필그림 도로시가 방주 정보를 모으고, 스노우 화이트에게 목적을 밝힌다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F907",
+      "text": "갓데스 스쿼드의 리더 릴리바이스 소령(릴리스)은 1차 침공 끝 무렵, 방주 밀봉 전에 죽었다 — 도로시가 리더 대행을 맡았고, 릴리스는 방주 입구 임시 초소 근처에 홍련이 매끈한 돌을 잘라 만든 석관 안에 잠든 듯 평온하게 누워 있다",
+      "about": ["person:릴리스", "person:릴리바이스", "org:갓데스", "person:도로시"],
+      "evidence": [
+        { "scene": "event_overzone1_01_e", "lines": [29] },
+        { "scene": "event_overzone1_01_s", "lines": ["84-89"] },
+        { "scene": "event_overzone1_intermission_01", "lines": ["57-58"] },
+        { "scene": "event_overzone2_06_s", "lines": ["45-46"] }
+      ],
+      "reason": "도로시의 보고 '전 리더였던 릴리바이스 소령의 사망'(1_01_e#29)과 '릴리스가… 죽고 난 후에'(1_01_s#84). 방주 쪽 음성도 릴리바이스 소령의 사망을 애도한다(2_01_s#26). 레드 후드도 이때 없다(1_04_s#26)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F908",
+      "text": "릴리바이스는 자기 생명 신호가 꺼지면 동생들(갓데스)에게 자동으로 가는 유언 영상을 남겼다 — 지휘관을 만나 인류를 위해 싸웠고 동료와 가족을 떠나보냈다며, 인류를 지키고 세상을 구한 것에 자부심을 가지라 하고, 세상을 부탁하며 살아남아 달라고 했다",
+      "about": ["person:릴리바이스", "org:갓데스"],
+      "evidence": [{ "scene": "event_overzone_prologue", "lines": ["1-28"] }],
+      "reason": "영상 속 릴리바이스의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F909",
+      "text": "아크 가디언은 지상의 주요 인력이 거대 지하 도시 방주로 이주하는 것을 보호 · 가이드하는 작전으로 달성률 72%로 끝났고, 도로시는 지상에 남은 인류가 공식적으로 없다고 보고했다 — 갓데스와 양산형 니케들은 두 달 뒤 방주가 완전히 닫혀 밀봉될 때까지 입구의 임시 초소를 지켰다",
+      "about": ["incident:아크_가디언_작전", "org:갓데스", "place:방주", "concept:양산형_니케"],
+      "evidence": [{ "scene": "event_overzone1_01_e", "lines": ["29-36"] }],
+      "reason": "도로시의 공식 보고",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F910",
+      "text": "도로시는 밀봉 뒤 갓데스를 방주로 데려가 승리의 여신으로 대우해 달라고 거듭 약속을 청했지만 방주는 오래 답하지 않았고, 도로시는 보급과 인원이 줄어드는 위기에도 지원이 필요 없다고 보고하기도 했다",
+      "about": ["person:도로시", "org:갓데스", "place:방주"],
+      "evidence": [
+        { "scene": "event_overzone1_01_e", "lines": ["37-46"] },
+        { "scene": "event_overzone1_intermission_01", "lines": ["42-47"] },
+        { "scene": "event_overzone1_05_e", "lines": ["118-127"] }
+      ],
+      "reason": "도로시의 음성 보고 세 번",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F911",
+      "text": "방주에는 엄선된 인재만 들어갈 수 있었고 그 수는 인류 전체에 비해 극소수였다 — 들어가지 못한 사람들은 방주 입구에 캠프를 차리고 결원을 기다렸지만 빈자리는 다른 후보가 채웠고, 갈 곳 없던 그들은 그곳에서 죽었다",
+      "about": ["place:방주", "person:도로시"],
+      "evidence": [{ "scene": "event_overzone1_03_s", "lines": ["0-24", "34-35"] }],
+      "reason": "도로시의 설명과 캠프 텐트 속 시신",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F912",
+      "text": "피나에 따르면 양산형 니케는 대부분 인간 시절 기억이 없고 갓데스는 그대로 남아 있다 — 또 도로시에 따르면 프로토타입인 갓데스와 달리 양산형은 코어 동력만으로 먹지 않아도 되지만, 먹지 않아도 된다는 것을 당연하게 여기는 순간 사고 전환이 온다",
+      "about": ["concept:양산형_니케", "org:갓데스", "concept:사고_전환", "person:피나"],
+      "evidence": [{ "scene": "event_overzone1_03_s", "lines": ["41-44"] }, { "scene": "event_overzone1_06_s", "lines": ["35-42"] }],
+      "reason": "피나 · 도로시 · 라푼젤의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F913",
+      "text": "도로시에 따르면 니케는 인간일 때의 이상향에 따라 외형과 능력이 정해진다고 한다 — 라푼젤은 '최대한 멀쩡히 집으로 돌아가고 싶다'여서 머리카락 한 가닥 한 가닥이 소형 재밍 장치가 되었고, 도로시는 랩쳐가 지상을 유린하는 광경 앞에서 그저 살아남고 싶었다",
+      "about": ["concept:니케", "person:라푼젤", "person:도로시"],
+      "evidence": [{ "scene": "event_overzone2_01_e", "lines": ["9-24"] }],
+      "reason": "도로시 '…고 들었는데'(#12) — 전해 들은 말. 라푼젤 · 도로시 본인의 이상향",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F914",
+      "text": "갓데스 시절 스노우 화이트는 사고 전환을 겪어 말투와 성격이 바뀌었다 — 홍련은 이렇게 효율적인 사고 전환은 처음 본다 했고, 도로시는 그녀를 그녀로 있게 하는 것은 바뀌지 않았다고 했다",
+      "about": ["person:스노우_화이트", "concept:사고_전환"],
+      "evidence": [{ "scene": "event_overzone1_01_s", "lines": ["76-82"] }, { "scene": "event_overzone1_02_s", "lines": ["48-50"] }],
+      "reason": "홍련 · 도로시의 말. 잠도 자지 않고 경계를 선다(1_04_s#8-11). F684(사고 전환으로 기억이 많이 남지 않음)와 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F915",
+      "text": "홍련은 니케가 되기 전(또는 갓데스를 만나기 전) 언니와 검 한 자루로 랩쳐와 싸웠고, 언니가 죽으며 검 화무십일홍만 남겼다 — 도로시는 그 검을 침식된 니케를 보내는 데 쓰지 말라며 언니가 바라지 않을 것이라 했다",
+      "about": ["person:홍련"],
+      "evidence": [{ "scene": "event_overzone1_05_e", "lines": ["60-65"] }, { "scene": "event_overzone1_01_s", "lines": ["44-52"] }],
+      "reason": "홍련 본인 말(#62-63). 언니와 싸운 때가 인간 시절인지는 원문이 말하지 않아 '또는'으로 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F916",
+      "text": "홍련에 따르면 랩쳐와 싸운 지 5년쯤 되는 동안 니케와 랩쳐는 서로를 죽이려 진화했고 랩쳐는 총기를 쓰는 니케에 맞춰 진화했다 — 하나뿐인 검을 쓰는 니케에 맞춰 진화하는 것은 비효율적이라 홍련만 앞서 나가 강하며, 언젠가 그 검으로 퀸의 목을 베겠다고 한다",
+      "about": ["person:홍련", "concept:랩쳐", "person:퀸"],
+      "evidence": [{ "scene": "event_overzone2_03_e", "lines": ["6-31"] }],
+      "reason": "홍련 본인의 말. F660(근접 무장은 랩쳐가 진화하지 않음)의 옛 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F917",
+      "text": "홍련이 쓸데없다며 흩뿌린 씨앗이 황무지에서 싹을 틔우자, 홍련은 지상이 망가졌어도 죽지 않았음을 깨닫고 죽이는 것이 아니라 살리는 일로 농사(끝은 술)를 해 보고 싶다 했고, 도로시의 제안으로 임시 초소에 텃밭을 시작했다",
+      "about": ["person:홍련", "person:도로시"],
+      "evidence": [
+        { "scene": "event_overzone1_02_e", "lines": ["16-25"] },
+        { "scene": "event_overzone1_05_e", "lines": ["100-109"] },
+        { "scene": "event_overzone2_03_e", "lines": ["38-68"] }
+      ],
+      "reason": "원문 그대로 — F661(홍련의 텃밭)의 시작",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F918",
+      "text": "라푼젤이 기도를 올리던 무덤들에서 황금색 입자가 솟아 라푼젤의 로사리오로 들어가 먼저 떠난 이들의 기억이 흘러들어왔다 — 라푼젤은 그것을 영혼이나 다른 무언가라 하고, 죽은 이들의 고향을 찾아 주는 것을 자기 할 일로 정했다",
+      "about": ["person:라푼젤"],
+      "evidence": [{ "scene": "event_overzone2_02_e", "lines": ["12-56"] }],
+      "reason": "서술(#42-44)과 라푼젤의 말. 할 일(#39-41)은 말이 끊겼지만 앞의 '고향을 찾아주고 싶어요'(#29)와 에필로그 전 도로시의 당부(2_05_e#35)로 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M08",
+          "note": "2회독: 황금 입자가 로사리오로 들어가 기억이 흘러드는 것은 원문이 직접 보인다(2_02_e#42-56). 정체는 ch48 F2830(NIMPH)",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F919",
+      "text": "방주(중앙 정부 밀봉 프로젝트 총책임자)는 밀봉이 지상의 문제로 멈췄다며 갓데스에게 셋을 부탁했다 — 랩쳐의 교신을 방해하려 인류가 지은 에블라 입자 발생 장치가 너무 강해 방주까지 영향을 주니 파괴하고, 밀봉 좌표 근처의 대규모 랩쳐 부대를 섬멸하고, 랩쳐가 쓸 수 있는 방주 직통 물자 운반용 대형 엘리베이터를 파괴해 달라는 것이었다",
+      "about": ["place:방주", "org:중앙_정부", "concept:에블라_입자", "org:갓데스", "person:오스왈드"],
+      "evidence": [{ "scene": "event_overzone2_01_s", "lines": ["25-58"] }, { "scene": "event_overzone2_03_s", "lines": ["8-12"] }],
+      "reason": "방주 음성 파일. 에블라 입자 발생 장치를 부수자 통신이 된다(2_03_s#8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F920",
+      "text": "밀봉이 끝나자 총책임자 오스왈드는 처음부터 갓데스를 들여보낼 생각이 없었고 이는 모두의 선택이라 밝히고 통신을 끊었다 — 3세대 바디 개발이 막바지라 갓데스의 데이터도 곧 구식이 된다 했고, 대신 방주에 초대형 승리의 여신상을 세우고 갓데스를 신격화한 서적 · 광고를 퍼뜨리겠다고 했다",
+      "about": ["person:오스왈드", "org:갓데스", "place:방주", "org:중앙_정부"],
+      "evidence": [{ "scene": "event_overzone2_04_e", "lines": ["83-135"] }],
+      "reason": "오스왈드와 도로시 · 스노우 화이트의 대화. F687(방주에 전해지는 갓데스 이야기)의 실제",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F921",
+      "text": "도로시는 방주에 배신당하자 오스왈드에게, 가능하면 그를 · 안 되면 그 가족과 후손을 세상에서 가장 고통스럽게 죽이겠다고 약속했다",
+      "about": ["person:도로시", "person:오스왈드"],
+      "evidence": [{ "scene": "event_overzone2_04_e", "lines": ["92-100"] }],
+      "reason": "도로시 본인의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F922",
+      "text": "방주 밀봉 직전 오스왈드에 따르면 퍼펙트는 방주에서 주식으로 쓸 회반죽 같은 음식으로, 맛은 끔찍하지만 이론상 완벽한 식품이라 그것만 먹어도 장수할 수 있다",
+      "about": ["concept:퍼펙트", "person:오스왈드"],
+      "evidence": [{ "scene": "event_overzone2_04_s", "lines": ["40-44"] }],
+      "reason": "오스왈드의 말. 무엇으로 만드는지(Q78)는 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F923",
+      "text": "방주에 버려진 갓데스는 방주에 복수할 수 없다며 랩쳐가 입구로 몰리지 않도록 떠나, 랩쳐의 수장 퀸을 잡는다는 목적으로 흩어졌다 — 연락은 봉화, 라푼젤의 제안으로 한 달에 한 번 정해진 좌표에서 만나기로 했고, 도로시는 서두르지 말고 자신과 자부심을 잃지 말라고 당부했다",
+      "about": ["org:갓데스", "person:도로시", "person:스노우_화이트", "person:라푼젤", "person:홍련", "person:퀸"],
+      "evidence": [{ "scene": "event_overzone2_05_s", "lines": ["0-27"] }, { "scene": "event_overzone2_05_e", "lines": ["15-41"] }],
+      "reason": "원문 그대로. 스노우 화이트가 '우리는 갓데스인가'로 도로시를 붙잡는다(2_05_s#38-71)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F924",
+      "text": "양산형 니케 피나는 도로시의 뒤를 지키려 혼자서 거대한 침식 유발 랩쳐를 잡았지만 침식되었고, 죽여 달라는 부탁에 도로시가 직접 쏘아 보냈다 — 도로시는 그 뒤 탄창이 빈 총의 방아쇠를 계속 당겼다",
+      "about": ["person:피나", "person:도로시", "concept:침식"],
+      "evidence": [{ "scene": "event_overzone1_06_e", "lines": ["8-34", "41-73", "80-88"] }],
+      "reason": "침식된 피나의 말과 신호탄(#34), 홍련의 설명(#80-88). 쏜 장면은 서술 없이 총성 · 빈 방아쇠로 보인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F925",
+      "text": "피나를 잃은 도로시는 피나가 곁에 있다고 믿고 환각 속 피나와 대화하며 지냈다 — 스노우 화이트 · 라푼젤 · 홍련은 이를 알고도 도로시를 버티게 하니 그대로 두었고, 방주에 버려진 뒤 도로시는 환각 피나와 '우리 낙원'인 임시 초소에 남았다가 피나가 사라지자 떠났다",
+      "about": ["person:도로시", "person:피나", "person:스노우_화이트"],
+      "evidence": [
+        { "scene": "event_overzone2_intermission_01", "lines": ["68-81", "149-171"] },
+        { "scene": "event_overzone2_04_s", "lines": ["0-33"] },
+        { "scene": "event_overzone2_05_e", "lines": ["43-89"] },
+        { "scene": "event_overzone2_06_s", "lines": ["45-60"] }
+      ],
+      "reason": "스노우 화이트의 지적(intermission#70-81, #150-153)과 셋의 대화(2_04_s), 되풀이되는 장면에 피나가 끼어 있다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F926",
+      "text": "도로시는 평생 낙원만을 목적으로 살았다 — 임시 초소를 떠나 방주 환영 간판([인류 최후의 낙원. 방주는 여러분을 환영합니다.]) 앞에 선 그녀는 방주를 '우리가 만들어낸, 원래 우리 것이던 낙원'이라며 반드시 빼앗겠다고 했다",
+      "about": ["person:도로시", "place:방주"],
+      "evidence": [{ "scene": "event_overzone2_06_e", "lines": ["20-61"] }],
+      "reason": "서술(#25-28)과 도로시의 말(#57-61)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F927",
+      "text": "방주 밀봉 50년쯤 뒤 도로시는 방주에서 '소문의 필그림'으로 불리며, 구해 준 양산형 니케 같은 이들에게서 방주 소식을 모았다 — 그에 따르면 방주는 관리 A.I.가 너무 위험하다 판단해 방주의 두뇌들을 포섭하며 비밀리에 그 카운터를 준비하고 있었고, 도로시는 방주 최고의 두뇌를 지상으로 끌어올릴 방법을 궁리했다",
+      "about": ["person:도로시", "org:필그림", "place:방주", "concept:양산형_니케"],
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["7-36", "41-42"] }],
+      "reason": "양산형 니케의 말과 도로시의 혼잣말(#35-36). 스노우 화이트와 '50년 정도' 만에 만났다(#41-42)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "F928",
+      "text": "도로시는 스노우 화이트에게 방주가 갓데스를 배신했으니 방주가 자기를 찾고 원하게 만들어 빼앗겠다며, 그것을 위해 원래 우리 것인 방주의 모든 것을 이용하겠다고 했다 — 스노우 화이트는 도로시가 없으면 갓데스가 아니라서 갓데스라는 이름을 쓰지 않는다며 돌아오기를 기다리겠다 했고, 도로시는 이미 선을 넘었다고 했다",
+      "about": ["person:도로시", "person:스노우_화이트", "org:갓데스", "place:방주"],
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["49-93"] }],
+      "reason": "도로시 · 스노우 화이트의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q128",
+      "text": "방주가 관리 A.I.를 위험하다고 보아 방주의 두뇌들을 포섭하며 비밀리에 준비한 '카운터'는 무엇이고, 도로시가 지상으로 끌어올리려던 '방주 최고의 두뇌'는 누구인가?",
+      "about": ["place:방주", "person:도로시"],
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["17-22", "35-36"] }],
+      "reason": "양산형 니케의 소문과 도로시의 혼잣말. 관리 A.I.가 에닉인지도 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "Q129",
+      "text": "도로시가 그와 가족 · 후손까지 가장 고통스럽게 죽이겠다고 한 방주 밀봉 총책임자 오스왈드는 누구이고, 그 뒤 어떻게 되었나?",
+      "about": ["person:오스왈드", "person:도로시"],
+      "evidence": [{ "scene": "event_overzone2_04_e", "lines": ["92-100"] }],
+      "reason": "도로시의 맹세",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "Q130",
+      "text": "무덤에서 솟아 라푼젤의 로사리오로 들어간 황금색 입자 — 먼저 떠난 이들의 기억 — 는 무엇인가?",
+      "about": ["person:라푼젤"],
+      "evidence": [{ "scene": "event_overzone2_02_e", "lines": ["42-56"] }],
+      "reason": "라푼젤도 '영혼… 혹은 다른 무언가'라고만 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q33-3",
+      "act": "회수",
+      "answer": "F909",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_overzone1_01_e", "lines": ["29-36"] }],
+      "reason": "아크 가디언의 목표(주요 인력의 방주 이주 보호 · 가이드)와 갓데스의 정체(1차 침공의 스쿼드, 리더 릴리바이스 · 리더 대행 도로시)가 모두 나왔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "Q84-3",
+      "act": "회수",
+      "answer": "F907",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_overzone1_01_e", "lines": [29] }, { "scene": "event_overzone2_epilogue", "lines": ["49-68"] }],
+      "reason": "릴리스는 방주 밀봉 전에 죽었고(F907), 도로시는 방주에 배신당한 뒤 방주를 빼앗으려는 필그림이 되었다(F928)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "Q105-2",
+      "act": "회수",
+      "answer": "F928",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["7-8", "56-68"] }],
+      "reason": "방주에 버려진 갓데스의 리더 대행 도로시가 방주를 빼앗으려는 '소문의 필그림'이 되었다 — 에덴의 도로시(CH.19–22, '지상을 떠도는 필그림')는 갓데스의 도로시다. 지휘관의 기적을 전한 '옛 친구들'이 누구인지는 아직이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "Q120-2",
+      "act": "회수",
+      "answer": "F928",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["56-68"] }],
+      "reason": "도로시가 방주에 가려는 까닭 — 자기를 배신한 방주가 자기를 찾고 원하게 만들어 방주를 빼앗으려는 것 — 이 드러났다. 파피용 · 카운터스에게 원하는 '침묵과 비밀'은 아직이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S71",
+      "kind": "회상",
+      "text": "1차 침공 끝 — 아크 가디언 작전 직후 갓데스가 방주 입구를 지킨 두 달 남짓과 밀봉(연장 3주)까지, 랩쳐와 싸운 지 5년쯤",
+      "ref": "incident:아크_가디언_작전",
+      "at": [["뒤", "@아크_가디언_작전"], ["무렵", "@방주_밀봉"]],
+      "evidence": [
+        { "scene": "event_overzone1_01_e", "lines": ["31-36"] },
+        { "scene": "event_overzone1_05_e", "lines": [119] },
+        { "scene": "event_overzone2_03_e", "lines": [9] },
+        { "scene": "event_overzone2_04_e", "lines": ["73-76"] }
+      ],
+      "reason": "보고 '앞으로 두 달간', '아크 가디언 작전 이후 20일', 홍련 '5년 정도 지났나', 밀봉 완료",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+    },
+    {
+      "id": "S72",
+      "kind": "기준점",
+      "text": "에필로그 — 방주 밀봉 50년쯤 뒤, 도로시가 필그림으로 방주 정보를 모을 때",
+      "ref": "event_overzone2_04_e",
+      "subject": "구간",
+      "at": [["뒤", "@방주_밀봉", "50년"]],
+      "years": 45,
+      "evidence": [{ "scene": "event_overzone2_epilogue", "lines": ["41-42"] }],
+      "reason": "도로시 '몇 년 만이죠? 50년 정도?' — 스노우 화이트 '그 정도 된 것 같군'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M08",
+          "note": "2회독: 밀봉 직후 흩어진 뒤 '50년 정도' 만에 만났다(epilogue#41-42, 2_05_e) — 밀봉 50년쯤 뒤로 본다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:릴리바이스",
+      "evidence": [
+        {
+          "scene": "event_overzone_prologue",
+          "lines": [
+            1
+          ]
+        }
+      ],
+      "note": "갓데스 스쿼드의 리더 릴리바이스 소령 = 릴리스(L8) — 1차 침공 끝에 죽었다",
+      "new": false
+    },
+    {
+      "target": "person:피나",
+      "evidence": [
+        {
+          "scene": "event_overzone1_02_e",
+          "lines": [
+            63
+          ]
+        }
+      ],
+      "note": "갓데스와 함께 싸운 양산형 니케 — 침식되어 도로시가 보냈다",
+      "new": false
+    },
+    {
+      "target": "person:오스왈드",
+      "evidence": [
+        {
+          "scene": "event_overzone2_03_s",
+          "lines": [
+            "11-12"
+          ]
+        },
+        {
+          "scene": "event_overzone2_04_e",
+          "lines": [
+            96
+          ]
+        }
+      ],
+      "note": "중앙 정부의 방주 밀봉 프로젝트 총책임자 — 갓데스를 들여보내지 않았다",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

@@ -1,0 +1,81 @@
+{
+  "unit": "erelic:old_tales_dialog",
+  "session": "R52",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "OLD TALES의 필드 대화 19편 — 본편 사이사이의 짧은 장면. 2세대 시절(_00 · _02 에이브가 갓데스를 뛰어넘으라 함, _01 갓데스 지휘관의 기록 영상 '랩쳐는 그저 인류의 적'), 침식 무렵(_03 다친 동료들, _04 미러, _05 인류연합군 병사, _06 신데렐라), 헬레틱 연구소(_08 고향을 잃은 간부 · 연구원의 복수심, _09 모든 부위가 재생되는 헬레틱), 탈출 뒤(_07 · _10 · _11 · _12 레드 슈즈의 비웃음 — 신데렐라의 환상인지 불분명), 엘리베이터 추락 뒤 말이 끊긴 에이브(_13 자기 부품으로 신데렐라를 고침, _14 닦기, _15 꽃밭, _16 야영, _17 얼굴을 잊은 동료들의 꿈, _18 동료인 줄 알았던 화룡 니힐리스타가 헬레틱이었고 신데렐라를 데려가려 해 겨우 달아나 숨기로 함).",
+  "facts": [
+    {
+      "id": "F1695",
+      "text": "갓데스의 지휘관은 기록 영상에서 랩쳐가 무엇인지는 자기도 모르지만 우리를 멸망시키려는, 사상의 충돌 같은 인간적 이유로 생긴 적이 아닌 단순한 인류의 적이니 어떻게 때려잡을지를 고민하라고 했다",
+      "about": ["org:갓데스", "concept:랩쳐"],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_01", "lines": ["0-11"] }],
+      "reason": "이름표 '지휘관'(갓데스 시절 이야기 — Q-A1-1)의 기록 영상",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1696",
+      "text": "헬레틱 연구소의 중앙 정부 간부와 연구원들은 아나키오르에게 고향과 가족을 잃어(연구원의 고향 발리 카운티는 괴멸) 연구를 빌미로 한 복수를 묵인했고, 헬레틱은 잘라 내도 모든 부위가 재생되며 바디 출력이 떨어지지 않았다",
+      "about": ["person:아나키오르", "org:중앙_정부", "concept:헬레틱"],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_08", "lines": ["0-26"] }, { "scene": "erelic:old_tales_dialog_09", "lines": ["0-9"] }],
+      "reason": "간부와 연구원의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1697",
+      "text": "엘리베이터에서 떨어져 크게 망가진 신데렐라를 에이브는 부품이 없자 자기 몸의 부품으로 고쳤고, 깨어나 거울을 볼 그녀가 더럽지 않도록 늘 닦았다 — 꿈에 나온 동료 셋(둘은 똑같이 생긴)의 얼굴은 알아보지 못했다",
+      "about": ["person:에이브", "person:신데렐라"],
+      "evidence": [
+        { "scene": "erelic:old_tales_dialog_13", "lines": ["0-8"] },
+        { "scene": "erelic:old_tales_dialog_14", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_dialog_17", "lines": ["0-8"] }
+      ],
+      "reason": "말이 끊기게 된 뒤의 에이브(event_oldtales2_epilogue와 같은 말투). '모르는 얼굴 셋'은 헨젤 · 그레텔 · 세이렌으로 읽었다 — 기억을 잃은 것",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1698",
+      "text": "에이브는 동료인 줄 알았던 '화룡' 니힐리스타가 헬레틱이었고 신데렐라를 데려가려 해 겨우 달아났으며, 이길 수 없으니 숨어서 기다리고 신데렐라를 절대 돌아가게(아나키오르로) 두지 않겠다고 했다",
+      "about": ["person:에이브", "person:니힐리스타", "person:신데렐라", "concept:헬레틱"],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_18", "lines": ["0-12"] }],
+      "reason": "에이브의 혼잣말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "F1543-2",
+      "act": "드러냄",
+      "text": "'화룡' 니힐리스타가 신데렐라를 데려가려 해 에이브가 겨우 달아나 숨기로 했다",
+      "evidence": [{ "scene": "erelic:old_tales_dialog_18", "lines": ["0-12"] }],
+      "reason": "F1543(화룡에게 빼앗겼다 되찾은 적도 있어 수정 속에 숨김)의 한 장면으로 읽었다 — 빼앗긴 그 일인지는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S184",
+      "kind": "기준점",
+      "text": "에이브의 기다림 중(관을 만든 무렵 이후) — 말이 끊긴 에이브의 장면들, 니힐리스타와의 조우",
+      "ref": "S183",
+      "at": [["중", "S183"]],
+      "evidence": [{ "scene": "erelic:old_tales_dialog_13", "lines": ["0-8"] }, { "scene": "erelic:old_tales_dialog_18", "lines": ["0-12"] }],
+      "reason": "끊긴 말투는 에필로그에서 얼굴이 망가진 뒤의 것",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": []
+}

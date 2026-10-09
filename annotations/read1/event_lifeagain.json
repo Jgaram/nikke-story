@@ -1,0 +1,88 @@
+{
+  "unit": "event_lifeagain",
+  "session": "R50",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "이벤트 LIFE AGAIN — 방송 인터뷰에서 라이프 토닉의 트레이너 루마니는 니케가 되기 전 근육병을 앓아 운동을 꿈도 못 꿨다며, 극복하지 못한 자기 대신 누군가 극복하는 걸 보고 싶다고 한다(prologue). 루마니는 사고 수술 뒤 원인 불명으로 일어나지 못하는 새 회원 나디아의 멘탈 케어를 지휘관에게 부탁한다(01_s). 체육관 바디X바디에서 나디아는 '돈 벌려는 거짓말'이라며 환불을 요구하고, 루마니는 부모님 돈이라며 거절한다(01_e). 오기로 나온 나디아를 루마니는 운동장으로 데려가 '걷고 싶은 마음'부터 찾게 하고, 북부 기지 부품을 받으러 방주에 온 토브와 캐치볼 내기를 한다(02_s · 02_e). 루마니는 의자에 앉아 같은 조건으로도 이기고, 일상을 보여 주겠다며 식당 · 쇼핑몰을 돌다 나디아가 운동화 가게 앞에서 멈춘다 — 허들 사고 뒤 복귀한 트랙 앞에서 쥐가 나고 몸이 굳어 쓰러진 뒤로 일어나지 못하는 육상 유망주였다(03_s · 03_e). 루마니는 폴크방 · 에피넬을 불러 라이프 토닉의 가상 운동 공간(시뮬레이션 룸)에서 나디아의 신체 데이터 아바타와 감각을 링크하는 이미지 트레이닝 재활을 시작한다 — 라이프 토닉의 존재 의의는 인류 삶의 질 향상 · 스포츠 장려 · 인류를 케어할 의무(intermission · 04_s). 폴크방과의 달리기에서 진 나디아는 승부욕을 보이고(04_e · 05_s), 휠체어가 들썩일 만큼 나아지지만, 약이 올라 쓴 거짓 별점 1점 리뷰가 '갑질 · 강압 · 미환불 의혹' 기사 수백 건으로 번져 체육관이 위기에 빠지고 루마니는 '그만하자'고 한다(05_e). 지휘관의 말에 나디아가 사과하고, 루마니는 걷는 모습으로 보답하라며 재활을 다시 한다(06_s). 이어달리기 중 휠체어에서 넘어진 나디아가 스스로 일어나 걸어 루마니를 껴안는다(06_e). 에필로그 — 나디아는 테트라 스포츠 기자 프레스에게 리뷰가 거짓이었다고 직접 밝히고, 훗날 트랙 경기에 선수로 나선다.",
+  "scenes": [
+    { "scene": "event_lifeagain_prologue", "text": "방송 인터뷰 — 루마니는 니케가 되기 전 근육병을 앓았다" },
+    { "scene": "event_lifeagain_01_s", "text": "루마니가 새 회원 나디아의 멘탈 케어를 지휘관에게 부탁" },
+    { "scene": "event_lifeagain_01_e", "text": "바디X바디 첫 만남 — 나디아의 환불 요구, 루마니의 거절" },
+    { "scene": "event_lifeagain_02_s", "text": "운동장에서 '걷고 싶은 마음' 찾기, 토브와 만남 · 캐치볼 내기" },
+    { "scene": "event_lifeagain_02_e", "text": "3대1 캐치볼에서 루마니 승리, 같은 조건 대결 제안" },
+    { "scene": "event_lifeagain_03_s", "text": "의자에 앉은 루마니도 승리, 일상을 보여 주려는 루마니의 생각" },
+    { "scene": "event_lifeagain_03_e", "text": "운동화 가게 — 나디아는 허들 사고 트라우마로 못 걷는 육상 유망주" },
+    { "scene": "event_lifeagain_intermission_01", "text": "라이프 토닉의 가상 운동 공간 · 감각 링크 아바타 재활 계획" },
+    { "scene": "event_lifeagain_04_s", "text": "아바타 링크 · 트랙 시뮬레이션 재활 시작" },
+    { "scene": "event_lifeagain_04_e", "text": "폴크방과 달리기 — 진 나디아가 화내며 나감" },
+    { "scene": "event_lifeagain_05_s", "text": "승부욕 재활 · 이어달리기, 휠체어가 들썩임" },
+    { "scene": "event_lifeagain_05_e", "text": "거짓 1점 리뷰가 의혹 기사로 번짐 — 루마니 '그만하자'" },
+    { "scene": "event_lifeagain_06_s", "text": "나디아의 사과, 걷는 모습으로 보답하라" },
+    { "scene": "event_lifeagain_06_e", "text": "이어달리기 중 넘어진 나디아가 스스로 일어나 걸음" },
+    { "scene": "event_lifeagain_epilogue", "text": "나디아의 해명 인터뷰, 미래의 트랙 경기" }
+  ],
+  "facts": [
+    {
+      "id": "F1620",
+      "text": "라이프 토닉의 트레이너 루마니(체육관 바디X바디, 방주 최고 스포츠 스타로 불림)는 니케가 되기 전 근육병을 앓아 도와주는 사람 없이 운동을 꿈도 못 꿨고 극복하지 못했다 — 그래서 누군가 극복하는 걸 보고 싶어 하며, 지금의 근육은 니케가 된 뒤 노력으로 만든 것이라 한다",
+      "about": ["person:루마니", "org:라이프_토닉"],
+      "evidence": [
+        { "scene": "event_lifeagain_prologue", "lines": ["9-12", "18-24", 34] },
+        { "scene": "event_lifeagain_03_s", "lines": ["47-50"] },
+        { "scene": "event_lifeagain_05_e", "lines": [30] }
+      ],
+      "reason": "루마니 본인의 방송 인터뷰. '스포츠 스타'는 기사 제목(05_e #30)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R50", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1621",
+      "text": "루마니에 따르면 라이프 토닉의 존재 의의는 인류 삶의 질적 향상과 활력, 체육 · 스포츠를 장려해 인류가 건강한 삶을 살도록 돕는 것으로 '인류를 케어할 의무'가 있다 — 라이프 토닉에는 부상 등에 대비한 가상 운동 공간(시뮬레이션 룸, 가동비가 큼)이 있고, 신체 데이터로 만든 아바타와 감각을 링크해 생각대로 움직이게 할 수 있다",
+      "about": ["org:라이프_토닉", "person:루마니", "person:폴크방", "person:에피넬", "place:시뮬레이션_룸"],
+      "evidence": [
+        { "scene": "event_lifeagain_intermission_01", "lines": ["24-32", "46-57", "62-68"] },
+        { "scene": "event_lifeagain_04_s", "lines": ["11-14", "53-54"] }
+      ],
+      "reason": "루마니 · 폴크방 · 에피넬의 말과 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R50", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1622",
+      "text": "허들 사고 수술 뒤 복귀한 트랙 앞에서 쥐가 나고 몸이 굳어 쓰러진 뒤로 일어나지 못하던 육상 유망주 나디아는 루마니의 아바타 재활로 승부욕을 되찾아 스스로 일어나 걸었다 — 홧김에 쓴 거짓 1점 리뷰로 루마니가 갑질 의혹에 휩싸이자 나디아는 사과하고 기자 인터뷰로 직접 바로잡았으며, 훗날 육상 트랙에 다시 섰다",
+      "about": ["person:나디아", "person:루마니", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_lifeagain_03_e", "lines": ["103-114"] },
+        { "scene": "event_lifeagain_05_e", "lines": ["11-17", "28-35"] },
+        { "scene": "event_lifeagain_06_e", "lines": ["76-84"] },
+        { "scene": "event_lifeagain_epilogue", "lines": ["3-16", "43-55"] }
+      ],
+      "reason": "나디아 본인의 고백(03_e)과 장면. 지휘관은 루마니의 부탁으로 '심리치료 선생님' 역을 맡았다(01_e #6)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R50", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S365",
+      "kind": "기준점",
+      "text": "event_alonesurvivor 뒤 — 언리미티드에 들어간 토브가 북부 기지용 부품을 받으러 방주에 와 있다",
+      "ref": "event_alonesurvivor",
+      "at": [["뒤", "event_alonesurvivor"]],
+      "evidence": [{ "scene": "event_lifeagain_02_s", "lines": ["110-116"] }],
+      "reason": "#114 '방주에 북부 기지용 부품을 받으러 왔는데' — 토브의 언리미티드 합류(ALONE SURVIVOR, D1498) 뒤의 북부 기지(S152와 같은 기준).",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M65",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "targets": [
+    { "target": "person:나디아", "evidence": [{ "scene": "event_lifeagain_01_s", "lines": [24] }], "note": "허들 사고 트라우마로 걷지 못하던 인간 육상 유망주 — 루마니의 재활 회원", "new": false }
+  ]
+}

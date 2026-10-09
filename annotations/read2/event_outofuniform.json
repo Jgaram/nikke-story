@@ -1,0 +1,29 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M97\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_outofuniform",
+  "session": "M97",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2139",
+      "person": "person:츠바이",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "축제를 시간 낭비라 여겨 한 번도 가 본 적 없던",
+      "after": "아인에게 이끌려 처음 즐긴 축제의 불꽃을 '정말 아름답다'며 1년에 한 번쯤은 괜찮다고 하고, 데리고 나와 준 아인에게 고마워하는",
+      "trigger": [{ "scene": "event_outofuniform_01", "lines": ["76-81"] }],
+      "evidence": [{ "scene": "event_outofuniform_05", "lines": ["77-85"] }],
+      "time": "S199",
+      "points": ["F1766"],
+      "reason": "01#79 '솔직히 시간 낭비라고 생각했으니까요' → 05#80 '정말 아름답네요' · #85 '1년에 한 번 정도는 괜찮은 것 같아' · 06#60-61 '데리고 나와 준 것도'. D1574(함께 졸업)의 뒤 모습.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 아인 → 지휘관 '꼭 지휘관이라 부르겠다'(06#78-79)는 F1766에 있고 D1567에서 바뀐 것이 아니다. 나가가 티아를 잠시 두고 다니는 것(02#93-117)은 나가 → 티아(D2071) 안의 모습이라 적지 않았다. 벨로타의 장난은 기준 그대로. 시점 S199(event_colorless 뒤 새해, 추정) — 원문이 더 좁히지 않는다(라이 보충 수업 · 마르차나는 시점 실마리가 아니다)."
+}

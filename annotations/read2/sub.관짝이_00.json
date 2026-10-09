@@ -1,0 +1,39 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:관짝이_00",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E460",
+      "act": "암시",
+      "points": ["F1651"],
+      "text": "네온이 의료 기계를 다 다룬 그레이브에게 '니케 연구원이었다던가' 하고, 그레이브는 말없이 신데렐라를 고치는 것만 연구했다고 한다",
+      "about": ["person:그레이브", "person:네온"],
+      "evidence": [{ "scene": "sub:관짝이_00", "lines": ["102-113"] }],
+      "reason": "#108-111 — 농담이 ch34의 '그레이브는 전직 과학자'(F1651)로 맞아떨어진다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D518",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["org:카운터스"],
+      "before": "신데렐라를 만나게 도와 달라 부탁하는 외부인",
+      "after": "'이제 동료'라는 말을 '따뜻한 말'로 받고, 앞으로도 연락해도 되냐 묻는 동료",
+      "evidence": [{ "scene": "sub:관짝이_00", "lines": ["137-144", "159-160", "195-198"] }],
+      "reason": "#143-144 '함께… 동료… 따뜻한 말' · #159 '동료들 있어서'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "life": []
+}

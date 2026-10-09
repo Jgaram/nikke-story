@@ -1,0 +1,253 @@
+{
+  "unit": "event_seayouagain1",
+  "session": "R28",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "SEA, YOU, AGAIN — event_bluewaterisland 에필로그(F974 · Q135)의 후속. 엔더슨이 블루워터 아일랜드 근처 바닷속 거대 신호 확인을 맡기고 '확인 뒤 피서'를 허락한다. 헬름은 첫 정식 바다 임무라며 어드마이어 호 출전을 청하지만 버닝엄이 일주일 뒤 선상 파티 · 유지비 · 리스크로 거절해, 마스트 · 앵커가 파티를 맡고 헬름만 카운터스 · 카페 스위티(프림) · 리타 · 세라핌(메어리 · 페퍼) · 얀과 간다. 섬 바닷길은 일주일 간격으로 열려 6~7일 버틴다. 신호 지점엔 아무것도 없고 헬름에게만 진동이 들린다. 리타가 아니스의 휴대폰 GPS로 수상 관측기를 만들자 움직이는 신호가 잡히고, 타일런트 급 해상 랩쳐 [크라켄](바다의 블랙홀, 100년 넘게 발견 기록 없음)이 떠오른다(event_seayouagain1_05_s). 헬름에 따르면 해상 랩쳐는 동력 효율 때문에 사라졌고, 지난번 리타가 섬 전력을 살린 것이 깨운 원인으로 보인다. 크라켄은 바닷길 중간을 지켜 건너는 이를 치고 촉수로 섬을 감싸 일행을 가두며(리타: 먹이로), 재밍으로 통신이 끊긴다. 끊기기 전 구조 요청을 받은 엔더슨 · 잉그리드 · 버닝엄이 만장일치로 어드마이어 호 출전을 정하고(버닝엄이 책임을 지겠다), 마스트 · 앵커가 몰고 온다 — 상시 대기 점검 양산형 니케, 한 발뿐인 레이저포(이지스 캐논), 격납고째 엘리베이터. 섬에선 등대를 세우고 기다리다 바닷길이 닫히기 전 지휘관만이라도 건너보내려 돌파한다(2_03~2_05). 아니스가 끌려가던 헬름을 붙잡아 다치고, 헬름은 지휘관을 안고 바다로 피했다가 촉수에 맞아 가라앉는데, 목소리에 깨어 보니 어드마이어 호가 와 있다. 이지스 캐논 한 발 · 돌진 뒤 캐논이 저절로 200%까지 충전되어 크라켄을 격추한다(2_06). 통신 복구, 해상 랩쳐 정보 약 100년 만의 갱신, 부품은 얀이 회수, 일주일 휴가. 에필로그 — 공을 치하하는 선상 파티, 어드마이어 호는 큰돈을 들여 수리하되 수영장 자리에 둔다. 프롤로그 · 에필로그의 (독백)은 지휘관이 아니라 어드마이어 호 자신이다(epilogue #79-80).",
+  "scenes": [
+    { "scene": "event_seayouagain1_prologue", "text": "어드마이어 호의 독백 — 수영장에서 출전을 기다림" },
+    { "scene": "event_seayouagain1_01_s", "text": "엔더슨의 후속 임무 — 바닷속 이동 신호 확인 뒤 피서" },
+    { "scene": "event_seayouagain1_01_e", "text": "지난번 멤버 소집, 헬름 합류" },
+    { "scene": "event_seayouagain1_02_s", "text": "버닝엄이 어드마이어 호 출전을 거절" },
+    { "scene": "event_seayouagain1_02_e", "text": "마스트 · 앵커가 파티를 맡고 헬름만 출발" },
+    { "scene": "event_seayouagain1_03_s", "text": "섬 도착, 바닷길 일주일 주기, 신호 지점 이상 없음" },
+    { "scene": "event_seayouagain1_03_e", "text": "헬름의 잠수 — 헬름만 듣는 진동, 오신호로 종료" },
+    { "scene": "event_seayouagain1_intermission_01", "text": "바비큐 파티 · 아니스 휴대폰으로 수상 관측기" },
+    { "scene": "event_seayouagain1_04_s", "text": "노을 속 아니스 — 헬름은 바다보다 이지스가 소중" },
+    { "scene": "event_seayouagain1_04_e", "text": "헬름과 마스트의 통신, 관측기에 움직이는 신호" },
+    { "scene": "event_seayouagain1_05_s", "text": "크라켄 출현 — 타일런트 급 해상 랩쳐" },
+    { "scene": "event_seayouagain1_05_e", "text": "바닷길을 지키는 촉수 — 고립" },
+    { "scene": "event_seayouagain1_06_s", "text": "재밍 속 엔더슨에게 구조 요청, 불침번" },
+    { "scene": "event_seayouagain1_06_e", "text": "섬을 감싼 촉수 · 세 사람 만장일치로 어드마이어 호 출전" },
+    { "scene": "event_seayouagain2_01_s", "text": "마스트 · 앵커에게 임무 — 상시 대기 점검 니케" },
+    { "scene": "event_seayouagain2_01_e", "text": "레이저포 한 발 · 시동 키 · 격납고 엘리베이터로 출격" },
+    { "scene": "event_seayouagain2_02_s", "text": "크라켄이 섬을 가둠 — 먹이? 기다리기로, 등대 제안" },
+    { "scene": "event_seayouagain2_02_e", "text": "등대 · WELCOME — 어드마이어 호는 등대 같은 것" },
+    { "scene": "event_seayouagain2_03_s", "text": "며칠 뒤 바닷길이 잠기기 전 돌파 결정" },
+    { "scene": "event_seayouagain2_03_e", "text": "돌파 대형 — 지휘관 후방" },
+    { "scene": "event_seayouagain2_intermission_01", "text": "유인하며 전진, 본체 등장" },
+    { "scene": "event_seayouagain2_04_s", "text": "끌려가는 헬름을 아니스가 붙잡음" },
+    { "scene": "event_seayouagain2_04_e", "text": "헬름이 아니스를 업음, 라피가 지휘관을 들고 달림" },
+    { "scene": "event_seayouagain2_05_s", "text": "미사일 — 헬름이 지휘관을 안고 바다로" },
+    { "scene": "event_seayouagain2_05_e", "text": "촉수에 맞아 가라앉는 헬름 — 어드마이어 호 도착" },
+    { "scene": "event_seayouagain2_06_s", "text": "이지스 스쿼드의 전투 — 이지스 캐논, 돌진" },
+    { "scene": "event_seayouagain2_06_e", "text": "저절로 충전된 캐논으로 격추, 일주일 휴가" },
+    { "scene": "event_seayouagain2_epilogue", "text": "선상 파티 · 어드마이어 호는 수영장에 · 어드마이어 호의 독백" }
+  ],
+  "facts": [
+    {
+      "id": "F1048",
+      "text": "엔더슨은 블루워터 아일랜드 근처 바닷속에서 잡힌 거대 신호가 아주 미약하게 이동한다며, 만일에 대비해 지휘관에게 확인을 맡기고 별일 없으면 피서를 즐기고 오라고 했다 — 버닝엄은 헬름이 청한 어드마이어 호의 지상 출전을 일주일 뒤 선상 파티 · 유지비 · 리스크를 들어 거절해, 이지스에서는 헬름만 가고 마스트 · 앵커는 파티를 맡았다",
+      "about": ["person:엔더슨", "person:버닝엄", "person:헬름", "person:마스트", "person:앵커", "place:어드마이어_호", "place:블루워터_아일랜드", "org:이지스"],
+      "evidence": [
+        { "scene": "event_seayouagain1_01_s", "lines": ["16-34"] },
+        { "scene": "event_seayouagain1_02_s", "lines": ["45-81"] },
+        { "scene": "event_seayouagain1_02_e", "lines": ["13-20", "43-51"] }
+      ],
+      "reason": "엔더슨의 임무 설명(#19-27)과 버닝엄의 거절 이유(#56-72), 헬름의 결정(02_e #20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1049",
+      "text": "블루워터 아일랜드와 육지를 잇는 바닷길은 일주일 정도 간격으로 열려 6~7일쯤 지나면 잠기고 — 지난번 일행이 섬에 갇힌 것은 이를 몰라서였다 — 섬 안은 사방이 바다이고 유일한 길에 데코이를 두면 안전지대로 여겨졌다",
+      "about": ["place:블루워터_아일랜드"],
+      "evidence": [{ "scene": "event_seayouagain1_03_s", "lines": ["53-59", "63-67"] }],
+      "reason": "아니스 · 네온의 말. 지형 설정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1050",
+      "text": "섬에 온 날부터 헬름에게만 진동 소리가 들렸고, 리타가 아니스의 휴대폰 GPS 수신기로 만든 수상 관측기에 움직이는 신호가 잡힌 뒤 바닷속에서 섬만 한 랩쳐가 떠올랐다 — 헬름은 그것을 과거 '바다의 블랙홀'이라 불린 타일런트 급 해상 랩쳐 [크라켄]이라 했고, 기록상 마지막 발견은 100년도 더 전이다",
+      "about": ["concept:크라켄", "concept:타일런트_급", "person:헬름", "person:리타", "person:아니스"],
+      "evidence": [
+        { "scene": "event_seayouagain1_intermission_01", "lines": ["67-77", "130-162"] },
+        { "scene": "event_seayouagain1_04_e", "lines": ["93-106"] },
+        { "scene": "event_seayouagain1_05_s", "lines": ["8-43", "93-100"] }
+      ],
+      "reason": "진동을 헬름만 들음(03_e #48-54, intermission_01 #68-69), 관측기(04_e #101-106), 출현(05_s #37-41)과 헬름의 설명(#94-100)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1051",
+      "text": "헬름에 따르면 해상 랩쳐가 거의 사라진 것은 효율 때문이고, 동력을 찾기 힘든 크라켄은 오래 바닷속에 묻혀 있었을 것이다 — 헬름 · 지휘관은 지난번 리타가 섬 전력을 살린 것이 깨운 원인이라 보았고(리타는 그 전기로는 모자랐을 텐데 이상하다고 했다), 엔더슨도 전력 공급으로 임시로 눈뜬 1기라 해상 랩쳐의 부활은 아니라고 보았다",
+      "about": ["concept:크라켄", "concept:랩쳐", "person:헬름", "person:리타", "person:엔더슨", "place:블루워터_아일랜드"],
+      "evidence": [{ "scene": "event_seayouagain1_05_s", "lines": ["103-112"] }, { "scene": "event_seayouagain1_06_e", "lines": ["57-61"] }],
+      "reason": "헬름 · 지휘관 · 리타의 말과 엔더슨의 판단(06_e #59-61 '단언할 수는 없지'). 원인은 등장인물의 추정이라 추정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R28",
+          "note": "원문 대조 검토 — 200자 안으로 줄임",
+          "before": "헬름에 따르면 해상 랩쳐가 거의 사라진 것은 효율 때문이고, 덩치가 커 바다에서 동력을 찾기 힘든 크라켄은 오래 바닷속에 묻혀 있었을 것이다 — 헬름 · 지휘관은 지난번 리타가 섬의 전력을 살린 것이 깨운 원인이라 보았고(리타는 소규모 조력 발전소 전기로는 모자랐을 텐데 이상하다고 했다), 엔더슨도 섬에 전력이 공급되며 임시로 눈뜬 1기라 해상 랩쳐의 부활은 아니라고 보았다"
+        },
+        {
+          "decision": "확정",
+          "by": "사용자",
+          "date": "2026-10-08",
+          "session": "M59",
+          "note": "05_s#103-112 헬름 · 리타, 06_e#59-60 엔더슨이 원문 그대로 말한다 — 인물들의 추론을 그대로 적은 사실이라 확실",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1052",
+      "text": "크라켄은 섬 밖으로 나가는 바닷길 옆을 지키며 길을 건너려는 이를 촉수로 위협 · 공격하고 촉수로 섬 전체를 감싸 일행을 가두었다 — 에블라 입자 농도는 그대로인데 방주와의 통신이 끊겨 라피는 재밍 능력으로 보았고, 리타는 동력이 모자란 크라켄이 일행을 [먹이]로 가둔 것 같다고 했다",
+      "about": ["concept:크라켄", "person:라피", "person:리타", "place:블루워터_아일랜드"],
+      "evidence": [
+        { "scene": "event_seayouagain1_05_e", "lines": ["27-37", "57-80"] },
+        { "scene": "event_seayouagain1_06_s", "lines": ["2-5"] },
+        { "scene": "event_seayouagain2_02_s", "lines": ["21-24", "45-51"] }
+      ],
+      "reason": "헬름의 시험(05_e #78-79)과 잠수 확인(06_e #38-40, 2_02_s #22), 라피의 판단(06_s #4-5), 리타의 추측(2_02_s #49-51). 가둔 이유는 추측이라 문장에 '것 같다'로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1053",
+      "text": "지휘관의 끊기던 구조 요청을 받은 엔더슨은 잉그리드 · 버닝엄과 회의해 만장일치로 어드마이어 호 출전을 정했고 — 잉그리드에 따르면 크라켄은 1차 랩쳐 침공 이후 한 번도 보이지 않았으며, 버닝엄은 무슨 일이 생기면 자기가 감당하겠다며 출전을 허가해 달라고 했다 — 헬름이 없어 마스트 · 앵커가 임무를 전적으로 맡았다",
+      "about": ["person:엔더슨", "person:잉그리드", "person:버닝엄", "person:마스트", "person:앵커", "place:어드마이어_호", "concept:크라켄"],
+      "evidence": [
+        { "scene": "event_seayouagain1_06_s", "lines": ["12-28"] },
+        { "scene": "event_seayouagain1_06_e", "lines": ["44-82"] },
+        { "scene": "event_seayouagain2_01_s", "lines": ["18-35"] }
+      ],
+      "reason": "회의 장면 대사",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1054",
+      "text": "어드마이어 호에는 상시 대기하는 점검 담당 양산형 니케들(본체 · 엘리베이터 점검팀)이 있어 3시간 안에 출전 준비를 마쳤고, 시동은 이지스만 켤 수 있는 키로 걸며, 수영장이 있는 격납 공간 자체가 배를 지상 바다로 올리는 엘리베이터다 — 상부의 레이저포(이지스 캐논)는 한 번도 쓰이지 않아 한 발만 쏠 수 있었다",
+      "about": ["place:어드마이어_호", "concept:양산형_니케", "org:이지스", "person:마스트", "person:앵커"],
+      "evidence": [{ "scene": "event_seayouagain2_01_s", "lines": ["76-108"] }, { "scene": "event_seayouagain2_01_e", "lines": ["7-18", "49-57", "91-120"] }],
+      "reason": "점검 담당 31호의 설명과 헬름의 회상(01_e #51), 출격 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R28",
+          "note": "원문 대조 검토 — 200자 안으로 줄임",
+          "before": "어드마이어 호에는 빠른 보급 · 출전을 위해 상시 대기하는 점검 담당 양산형 니케들(어드마이어 호 점검팀 · 엘리베이터 점검팀)이 있어 3시간 안에 출전 준비를 마쳤고(헬름은 알고 있었다), 시동은 이지스 스쿼드만 켤 수 있는 키로 걸며, 수영장이 있는 격납 공간 자체가 배를 지상 바다 위로 올리는 엘리베이터다 — 상부의 레이저포(이지스 캐논)는 만들어진 뒤 한 번도 쓰이지 않아 한 발만 쏠 수 있었다"
+        }
+      ]
+    },
+    {
+      "id": "F1055",
+      "text": "바닷길 돌파 중 크라켄에게 끌려가던 헬름을 아니스가 다리를 다치면서도 놓지 않고 모두와 끌어올렸고, 헬름은 미사일을 피해 지휘관을 안고 바다로 들어가 지켰다가 촉수를 정면으로 맞고 가라앉았다 — '너는 바다 위에 군림해야 하는 이지스 스쿼드의 리더다'라는 목소리에 눈을 뜨자 어드마이어 호가 와 있었다",
+      "about": ["person:헬름", "person:아니스", "person:지휘관", "place:어드마이어_호", "concept:크라켄"],
+      "evidence": [
+        { "scene": "event_seayouagain2_04_s", "lines": ["8-56"] },
+        { "scene": "event_seayouagain2_04_e", "lines": ["10-38"] },
+        { "scene": "event_seayouagain2_05_s", "lines": ["46-80"] },
+        { "scene": "event_seayouagain2_05_e", "lines": ["13-15", "53-79"] }
+      ],
+      "reason": "서술과 헬름의 속말. 목소리의 주인은 원문이 밝히지 않음(Q147)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1056",
+      "text": "헬름 · 마스트 · 앵커는 어드마이어 호로 크라켄과 싸워 이지스 캐논 한 발로 본체를 뒤로 넘기고 최고 속도로 돌진했는데, 한 발뿐이던 이지스 캐논이 저절로 200%까지 충전되어 크라켄을 격추했다 — 크라켄의 부품은 얀이 어드마이어 호에 실어 회수했고, 엔더슨은 해상 랩쳐 정보가 약 100년 만에 갱신된다며 일주일 휴식을 허락했다",
+      "about": ["person:헬름", "person:마스트", "person:앵커", "place:어드마이어_호", "concept:크라켄", "person:얀", "person:엔더슨", "org:이지스"],
+      "evidence": [
+        { "scene": "event_seayouagain2_06_s", "lines": ["35-133"] },
+        { "scene": "event_seayouagain2_06_e", "lines": ["20-71", "99-127", "172-174"] }
+      ],
+      "reason": "전투 서술과 앵커의 '에너지 반응 소멸'(#70-71), 엔더슨과의 통신",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1057",
+      "text": "크라켄 격추 뒤 어드마이어 호는 '중요한 때 필요했다'는 의견과 '100년에 한 번 필요한 것은 쓸모없다'는 의견이 갈린 끝에, 돈이 많이 들어도 완전히 수리 · 보수하되 방주의 수영장 자리에 그대로 두기로 했고 — 버닝엄은 크라켄의 귀중한 자료를 확보했다며 공을 치하하는 선상 파티를 열었다",
+      "about": ["place:어드마이어_호", "person:버닝엄", "person:헬름", "concept:크라켄"],
+      "evidence": [{ "scene": "event_seayouagain2_epilogue", "lines": ["0-4", "28-37"] }],
+      "reason": "버닝엄 · 헬름의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q147",
+      "text": "바닷속에 가라앉던 헬름을 '이지스 스쿼드의 리더'라 부르며 깨운 목소리와, 한 발뿐이던 이지스 캐논을 저절로 200%까지 충전한 힘은 무엇인가 — 스스로를 이지스 스쿼드의 네 번째 멤버라 말하는 어드마이어 호에게 의지가 있나?",
+      "about": ["place:어드마이어_호", "person:헬름", "org:이지스"],
+      "evidence": [
+        { "scene": "event_seayouagain2_05_e", "lines": ["69-79"] },
+        { "scene": "event_seayouagain2_06_s", "lines": ["122-123"] },
+        { "scene": "event_seayouagain2_06_e", "lines": ["38-57"] },
+        { "scene": "event_seayouagain2_epilogue", "lines": ["72-84"] }
+      ],
+      "reason": "목소리는 이름표 없는 서술(`*`)로만 나오고, 캐논의 자동 충전은 마스트도 까닭을 모른다(06_e #44-45). 프롤로그 · 에필로그의 독백이 어드마이어 호 자신('내 이름은 [어드마이어 호]', epilogue #79)이라 의인화 연출인지 설정인지 원문이 말하지 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "사용자",
+          "date": "2026-10-08",
+          "session": "M59",
+          "note": "2_05_e#69-79 목소리 · 2_06_s#122-123 다시 들린 목소리 · 2_06_e#39-45 저절로 충전 · 에필로그 독백 — 원문이 의문을 분명히 남긴다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q135-2",
+      "act": "회수",
+      "answer": "F1050",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_seayouagain1_05_s", "lines": ["37-43", "93-100"] }],
+      "reason": "블루워터 아일랜드 해저의 거대 물체가 100년 넘게 보고되지 않은 해상 랩쳐 크라켄으로 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S88",
+      "kind": "기준점",
+      "text": "event_bluewaterisland 뒤 — 그때 약속한 블루워터 아일랜드 후속 임무, 섬 체류 약 열흘(바닷길이 닫히기 하루 전 격추 · 뒤 일주일 휴가)",
+      "ref": "event_bluewaterisland",
+      "at": [["뒤", "event_bluewaterisland"]],
+      "evidence": [{ "scene": "event_seayouagain1_01_s", "lines": ["16-17", "33-34"] }, { "scene": "event_seayouagain2_06_e", "lines": ["117-119"] }],
+      "reason": "엔더슨이 '그때 말했던 후속 임무'임을 확인(F973), 아니스의 '6월에' 수영복 언급(03_s #122)도 앞 이벤트 뒤임을 보인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "concept:크라켄",
+      "evidence": [{ "scene": "event_seayouagain1_05_s", "lines": [30] }],
+      "note": "타일런트 급 해상 랩쳐, '바다의 블랙홀' — 블루워터 아일랜드에서 깨어나 어드마이어 호에 격추됨",
+      "new": true
+    }
+  ],
+  "note": "프롤로그 · 에필로그의 `(독백)` 창은 지휘관이 아니라 어드마이어 호의 독백이다(epilogue #79-80 '내 이름은 [어드마이어 호]') — 이름표 규칙상 지휘관 독백 창이지만 문맥으로 읽었다(R25 · R26과 같은 판단). 헬름의 `[ ]` 대사는 속말.",
+  "revisit": []
+}

@@ -1,0 +1,1145 @@
+unit,part_order,part,seq,scene,title,has_text,lines
+event_nocallerid,1,STORY,1,event_nocallerid_prologue,,1,25
+event_nocallerid,1,STORY,2,event_nocallerid_01_s,,1,36
+event_nocallerid,1,STORY,3,event_nocallerid_01_e,,1,16
+event_nocallerid,1,STORY,4,event_nocallerid_02_s,,1,38
+event_nocallerid,1,STORY,5,event_nocallerid_02_e,,1,21
+event_nocallerid,1,STORY,6,event_nocallerid_intermission_01,,1,79
+event_nocallerid,1,STORY,7,event_nocallerid_03_s,,1,38
+event_nocallerid,1,STORY,8,event_nocallerid_03_e,,1,60
+event_nocallerid,1,STORY,9,event_nocallerid_04_s,,1,20
+event_nocallerid,1,STORY,10,event_nocallerid_04_e,,1,40
+event_nocallerid,1,STORY,11,event_nocallerid_05_s,,1,19
+event_nocallerid,1,STORY,12,event_nocallerid_05_e,,1,61
+event_nocallerid,1,STORY,13,event_nocallerid_epilogue,,1,28
+event_overzone,1,STORY I,1,event_overzone_prologue,,1,29
+event_overzone,1,STORY I,2,event_overzone1_01_s,,1,106
+event_overzone,1,STORY I,3,event_overzone1_01_e,,1,47
+event_overzone,1,STORY I,4,event_overzone1_02_s,,1,104
+event_overzone,1,STORY I,5,event_overzone1_02_e,,1,91
+event_overzone,1,STORY I,6,event_overzone1_03_s,,1,100
+event_overzone,1,STORY I,7,event_overzone1_03_e,,1,101
+event_overzone,1,STORY I,8,event_overzone1_intermission_01,,1,96
+event_overzone,1,STORY I,9,event_overzone1_04_s,,1,62
+event_overzone,1,STORY I,10,event_overzone1_04_e,,1,26
+event_overzone,1,STORY I,11,event_overzone1_05_s,,1,79
+event_overzone,1,STORY I,12,event_overzone1_05_e,,1,135
+event_overzone,1,STORY I,13,event_overzone1_06_s,,1,125
+event_overzone,1,STORY I,14,event_overzone1_06_e,,1,102
+event_overzone,2,STORY II,15,event_overzone2_01_s,,1,108
+event_overzone,2,STORY II,16,event_overzone2_01_e,,1,35
+event_overzone,2,STORY II,17,event_overzone2_02_s,,1,22
+event_overzone,2,STORY II,18,event_overzone2_02_e,,1,69
+event_overzone,2,STORY II,19,event_overzone2_03_s,,1,87
+event_overzone,2,STORY II,20,event_overzone2_03_e,,1,69
+event_overzone,2,STORY II,21,event_overzone2_intermission_01,,1,172
+event_overzone,2,STORY II,22,event_overzone2_04_s,,1,53
+event_overzone,2,STORY II,23,event_overzone2_04_e,,1,144
+event_overzone,2,STORY II,24,event_overzone2_05_s,,1,72
+event_overzone,2,STORY II,25,event_overzone2_05_e,,1,90
+event_overzone,2,STORY II,26,event_overzone2_06_s,,1,61
+event_overzone,2,STORY II,27,event_overzone2_06_e,,1,62
+event_overzone,2,STORY II,28,event_overzone2_epilogue,,1,95
+event_bowwowparadise,1,STORY,1,event_bowwowparadise_prologue,,1,73
+event_bowwowparadise,1,STORY,2,event_bowwowparadise_01_s,,1,46
+event_bowwowparadise,1,STORY,3,event_bowwowparadise_01_e,,1,41
+event_bowwowparadise,1,STORY,4,event_bowwowparadise_02_s,,1,104
+event_bowwowparadise,1,STORY,5,event_bowwowparadise_02_e,,1,39
+event_bowwowparadise,1,STORY,6,event_bowwowparadise_03_s,,1,55
+event_bowwowparadise,1,STORY,7,event_bowwowparadise_03_e,,1,71
+event_bowwowparadise,1,STORY,8,event_bowwowparadise_intermission_01,,1,102
+event_bowwowparadise,1,STORY,9,event_bowwowparadise_04_s,,1,31
+event_bowwowparadise,1,STORY,10,event_bowwowparadise_04_e,,1,77
+event_bowwowparadise,1,STORY,11,event_bowwowparadise_05_s,,1,121
+event_bowwowparadise,1,STORY,12,event_bowwowparadise_05_e,,1,83
+event_bowwowparadise,1,STORY,13,event_bowwowparadise_06_s,,1,50
+event_bowwowparadise,1,STORY,14,event_bowwowparadise_06_e,,1,41
+event_bowwowparadise,1,STORY,15,event_bowwowparadise_epilogue,,1,62
+event_ltk,1,STORY,1,event_ltk_prologue,,1,22
+event_ltk,1,STORY,2,event_ltk_01_s,,1,48
+event_ltk,1,STORY,3,event_ltk_01_e,,1,55
+event_ltk,1,STORY,4,event_ltk_02_s,,1,124
+event_ltk,1,STORY,5,event_ltk_02_e,,1,89
+event_ltk,1,STORY,6,event_ltk_03_s,,1,80
+event_ltk,1,STORY,7,event_ltk_03_e,,1,40
+event_ltk,1,STORY,8,event_ltk_intermission_01,,1,80
+event_ltk,1,STORY,9,event_ltk_04_s,,1,26
+event_ltk,1,STORY,10,event_ltk_04_e,,1,125
+event_ltk,1,STORY,11,event_ltk_05_s,,1,64
+event_ltk,1,STORY,12,event_ltk_05_e,,1,74
+event_ltk,1,STORY,13,event_ltk_06_s,,1,105
+event_ltk,1,STORY,14,event_ltk_06_e,,1,140
+event_ltk,1,STORY,15,event_ltk_epilogue,,1,40
+event_miraclesnow1,1,STORY I,1,event_miraclesnow1_prologue,,1,38
+event_miraclesnow1,1,STORY I,2,event_miraclesnow1_01_s,,1,30
+event_miraclesnow1,1,STORY I,3,event_miraclesnow1_01_e,,1,58
+event_miraclesnow1,1,STORY I,4,event_miraclesnow1_02_s,,1,63
+event_miraclesnow1,1,STORY I,5,event_miraclesnow1_02_e,,1,57
+event_miraclesnow1,1,STORY I,6,event_miraclesnow1_03_s,,1,64
+event_miraclesnow1,1,STORY I,7,event_miraclesnow1_03_e,,1,59
+event_miraclesnow1,1,STORY I,8,event_miraclesnow1_intermission_01,,1,76
+event_miraclesnow1,1,STORY I,9,event_miraclesnow1_04_s,,1,56
+event_miraclesnow1,1,STORY I,10,event_miraclesnow1_04_e,,1,25
+event_miraclesnow1,1,STORY I,11,event_miraclesnow1_05_s,,1,53
+event_miraclesnow1,1,STORY I,12,event_miraclesnow1_05_e,,1,74
+event_miraclesnow1,1,STORY I,13,event_miraclesnow1_06_s,,1,93
+event_miraclesnow1,1,STORY I,14,event_miraclesnow1_06_e,,1,54
+event_miraclesnow1,2,STORY II,15,event_miraclesnow2_01_s,,1,110
+event_miraclesnow1,2,STORY II,16,event_miraclesnow2_01_e,,1,66
+event_miraclesnow1,2,STORY II,17,event_miraclesnow2_02_s,,1,58
+event_miraclesnow1,2,STORY II,18,event_miraclesnow2_02_e,,1,54
+event_miraclesnow1,2,STORY II,19,event_miraclesnow2_03_s,,1,47
+event_miraclesnow1,2,STORY II,20,event_miraclesnow2_03_e,,1,23
+event_miraclesnow1,2,STORY II,21,event_miraclesnow2_04_s,,1,48
+event_miraclesnow1,2,STORY II,22,event_miraclesnow2_04_e,,1,67
+event_miraclesnow1,2,STORY II,23,event_miraclesnow2_intermission_01,,1,33
+event_miraclesnow1,2,STORY II,24,event_miraclesnow2_05_s,,1,79
+event_miraclesnow1,2,STORY II,25,event_miraclesnow2_05_e,,1,135
+event_miraclesnow1,2,STORY II,26,event_miraclesnow2_06_s,,1,89
+event_miraclesnow1,2,STORY II,27,event_miraclesnow2_06_e,,1,92
+event_miraclesnow1,2,STORY II,28,event_miraclesnow2_epilogue,,1,58
+event_queensorder,1,STORY,1,event_queensorder_prologue,,1,47
+event_queensorder,1,STORY,2,event_queensorder_01_s,,1,13
+event_queensorder,1,STORY,3,event_queensorder_01_e,,1,74
+event_queensorder,1,STORY,4,event_queensorder_02_s,,1,51
+event_queensorder,1,STORY,5,event_queensorder_02_e,,1,82
+event_queensorder,1,STORY,6,event_queensorder_03_s,,1,94
+event_queensorder,1,STORY,7,event_queensorder_03_e,,1,85
+event_queensorder,1,STORY,8,event_queensorder_intermission_01,,1,71
+event_queensorder,1,STORY,9,event_queensorder_04_s,,1,211
+event_queensorder,1,STORY,10,event_queensorder_04_e,,1,78
+event_queensorder,1,STORY,11,event_queensorder_05_s,,1,84
+event_queensorder,1,STORY,12,event_queensorder_05_e,,1,69
+event_queensorder,1,STORY,13,event_queensorder_06_s,,1,92
+event_queensorder,1,STORY,14,event_queensorder_06_e,,1,94
+event_queensorder,1,STORY,15,event_queensorder_epilogue,,1,80
+event_nyanyaparadise,1,STORY,1,event_nyanyaparadise_prologue,,1,42
+event_nyanyaparadise,1,STORY,2,event_nyanyaparadise_01_s,,1,74
+event_nyanyaparadise,1,STORY,3,event_nyanyaparadise_01_e,,1,53
+event_nyanyaparadise,1,STORY,4,event_nyanyaparadise_02_s,,1,87
+event_nyanyaparadise,1,STORY,5,event_nyanyaparadise_02_e,,1,93
+event_nyanyaparadise,1,STORY,6,event_nyanyaparadise_03_s,,1,139
+event_nyanyaparadise,1,STORY,7,event_nyanyaparadise_03_e,,1,96
+event_nyanyaparadise,1,STORY,8,event_nyanyaparadise_intermission_01,,1,45
+event_nyanyaparadise,1,STORY,9,event_nyanyaparadise_04_s,,1,91
+event_nyanyaparadise,1,STORY,10,event_nyanyaparadise_04_e,,1,70
+event_nyanyaparadise,1,STORY,11,event_nyanyaparadise_05_s,,1,122
+event_nyanyaparadise,1,STORY,12,event_nyanyaparadise_05_e,,1,90
+event_nyanyaparadise,1,STORY,13,event_nyanyaparadise_06_s,,1,71
+event_nyanyaparadise,1,STORY,14,event_nyanyaparadise_06_e,,1,63
+event_nyanyaparadise,1,STORY,15,event_nyanyaparadise_epilogue,,1,30
+event_cherryblossom,1,STORY,1,event_cherryblossom_prologue,,1,40
+event_cherryblossom,1,STORY,2,event_cherryblossom_01_s,,1,72
+event_cherryblossom,1,STORY,3,event_cherryblossom_01_e,,1,98
+event_cherryblossom,1,STORY,4,event_cherryblossom_02_s,,1,90
+event_cherryblossom,1,STORY,5,event_cherryblossom_02_e,,1,43
+event_cherryblossom,1,STORY,6,event_cherryblossom_03_s,,1,80
+event_cherryblossom,1,STORY,7,event_cherryblossom_03_e,,1,81
+event_cherryblossom,1,STORY,8,event_cherryblossom_intermission_01,,1,144
+event_cherryblossom,1,STORY,9,event_cherryblossom_04_s,,1,30
+event_cherryblossom,1,STORY,10,event_cherryblossom_04_e,,1,133
+event_cherryblossom,1,STORY,11,event_cherryblossom_05_s,,1,35
+event_cherryblossom,1,STORY,12,event_cherryblossom_05_e,,1,52
+event_cherryblossom,1,STORY,13,event_cherryblossom_06_s,,1,47
+event_cherryblossom,1,STORY,14,event_cherryblossom_06_e,,1,85
+event_cherryblossom,1,STORY,15,event_cherryblossom_epilogue,,1,64
+event_doutsiders,1,STORY,1,event_doutsiders_prologue,,1,16
+event_doutsiders,1,STORY,2,event_doutsiders_01_s,,1,38
+event_doutsiders,1,STORY,3,event_doutsiders_01_e,,1,45
+event_doutsiders,1,STORY,4,event_doutsiders_02_s,,1,24
+event_doutsiders,1,STORY,5,event_doutsiders_02_e,,1,70
+event_doutsiders,1,STORY,6,event_doutsiders_intermission_01,,1,59
+event_doutsiders,1,STORY,7,event_doutsiders_03,,1,76
+event_doutsiders,1,STORY,8,event_doutsiders_04_s,,1,55
+event_doutsiders,1,STORY,9,event_doutsiders_04_e,,1,68
+event_doutsiders,1,STORY,10,event_doutsiders_05_s,,1,43
+event_doutsiders,1,STORY,11,event_doutsiders_05_e,,1,48
+event_doutsiders,1,STORY,12,event_doutsiders_epilogue,,1,24
+event_maidinvalentine,1,STORY,1,event_maidinvalentine_prologue,,1,16
+event_maidinvalentine,1,STORY,2,event_maidinvalentine_01_s,,1,64
+event_maidinvalentine,1,STORY,3,event_maidinvalentine_01_e,,1,62
+event_maidinvalentine,1,STORY,4,event_maidinvalentine_02_s,,1,37
+event_maidinvalentine,1,STORY,5,event_maidinvalentine_02_e,,1,49
+event_maidinvalentine,1,STORY,6,event_maidinvalentine_03_s,,1,38
+event_maidinvalentine,1,STORY,7,event_maidinvalentine_03_e,,1,41
+event_maidinvalentine,1,STORY,8,event_maidinvalentine_intermission_01,,1,26
+event_maidinvalentine,1,STORY,9,event_maidinvalentine_04_s,,1,26
+event_maidinvalentine,1,STORY,10,event_maidinvalentine_04_e,,1,37
+event_maidinvalentine,1,STORY,11,event_maidinvalentine_05_s,,1,59
+event_maidinvalentine,1,STORY,12,event_maidinvalentine_05_e,,1,65
+event_maidinvalentine,1,STORY,13,event_maidinvalentine_06_s,,1,53
+event_maidinvalentine,1,STORY,14,event_maidinvalentine_06_e,,1,63
+event_maidinvalentine,1,STORY,15,event_maidinvalentine_epilogue,,1,92
+event_BunnyX777,1,STORY,1,event_BunnyX777_prologue,,1,12
+event_BunnyX777,1,STORY,2,event_BunnyX777_01_s,,1,52
+event_BunnyX777,1,STORY,3,event_BunnyX777_01_e,,1,75
+event_BunnyX777,1,STORY,4,event_BunnyX777_02_s,,1,113
+event_BunnyX777,1,STORY,5,event_BunnyX777_02_e,,1,53
+event_BunnyX777,1,STORY,6,event_BunnyX777_03_s,,1,67
+event_BunnyX777,1,STORY,7,event_BunnyX777_03_e,,1,107
+event_BunnyX777,1,STORY,8,event_BunnyX777_intermission_01,,1,78
+event_BunnyX777,1,STORY,9,event_BunnyX777_04_s,,1,107
+event_BunnyX777,1,STORY,10,event_BunnyX777_04_e,,1,144
+event_BunnyX777,1,STORY,11,event_BunnyX777_05_s,,1,142
+event_BunnyX777,1,STORY,12,event_BunnyX777_05_e,,1,83
+event_BunnyX777,1,STORY,13,event_BunnyX777_06_s,,1,105
+event_BunnyX777,1,STORY,14,event_BunnyX777_06_e,,1,109
+event_BunnyX777,1,STORY,15,event_BunnyX777_epilogue,,1,27
+event_schooloflock,1,STORY,1,event_schooloflock_prologue,,1,49
+event_schooloflock,1,STORY,2,event_schooloflock_01_s,,1,73
+event_schooloflock,1,STORY,3,event_schooloflock_01_e,,1,70
+event_schooloflock,1,STORY,4,event_schooloflock_02_s,,1,46
+event_schooloflock,1,STORY,5,event_schooloflock_02_e,,1,132
+event_schooloflock,1,STORY,6,event_schooloflock_03_s,,1,91
+event_schooloflock,1,STORY,7,event_schooloflock_03_e,,1,41
+event_schooloflock,1,STORY,8,event_schooloflock_intermission_01,,1,161
+event_schooloflock,1,STORY,9,event_schooloflock_04_s,,1,84
+event_schooloflock,1,STORY,10,event_schooloflock_04_e,,1,40
+event_schooloflock,1,STORY,11,event_schooloflock_05_s,,1,133
+event_schooloflock,1,STORY,12,event_schooloflock_05_e,,1,90
+event_schooloflock,1,STORY,13,event_schooloflock_06_s,,1,158
+event_schooloflock,1,STORY,14,event_schooloflock_06_e,,1,77
+event_schooloflock,1,STORY,15,event_schooloflock_epilogue,,1,92
+event_redash,1,STORY I,1,event_redash_prologue,,1,109
+event_redash,1,STORY I,2,event_redash1_01_s,,1,79
+event_redash,1,STORY I,3,event_redash1_01_e,,1,72
+event_redash,1,STORY I,4,event_redash1_02_s,,1,92
+event_redash,1,STORY I,5,event_redash1_02_e,,1,95
+event_redash,1,STORY I,6,event_redash1_03_s,,1,112
+event_redash,1,STORY I,7,event_redash1_03_e,,1,114
+event_redash,1,STORY I,8,event_redash1_intermission_01,,1,115
+event_redash,1,STORY I,9,event_redash1_04_s,,1,81
+event_redash,1,STORY I,10,event_redash1_04_e,,1,123
+event_redash,1,STORY I,11,event_redash1_05_s,,1,97
+event_redash,1,STORY I,12,event_redash1_05_e,,1,90
+event_redash,1,STORY I,13,event_redash1_06_s,,1,25
+event_redash,1,STORY I,14,event_redash1_06_e,,1,191
+event_redash,2,STORY II,15,event_redash2_01_s,,1,86
+event_redash,2,STORY II,16,event_redash2_01_e,,1,68
+event_redash,2,STORY II,17,event_redash2_02_s,,1,69
+event_redash,2,STORY II,18,event_redash2_02_e,,1,114
+event_redash,2,STORY II,19,event_redash2_03_s,,1,37
+event_redash,2,STORY II,20,event_redash2_03_e,,1,152
+event_redash,2,STORY II,21,event_redash2_intermission_01,,1,90
+event_redash,2,STORY II,22,event_redash2_04_s,,1,51
+event_redash,2,STORY II,23,event_redash2_04_e,,1,157
+event_redash,2,STORY II,24,event_redash2_05_s,,1,75
+event_redash,2,STORY II,25,event_redash2_05_e,,1,90
+event_redash,2,STORY II,26,event_redash2_06_s,,1,5
+event_redash,2,STORY II,27,event_redash2_06_e,,1,256
+event_redash,2,STORY II,28,event_redash2_epilogue,,1,82
+event_brandnewyear,1,STORY,1,event_brandnewyear_prologue,,1,23
+event_brandnewyear,1,STORY,2,event_brandnewyear_01_s,,1,44
+event_brandnewyear,1,STORY,3,event_brandnewyear_01_e,,1,48
+event_brandnewyear,1,STORY,4,event_brandnewyear_02_s,,1,52
+event_brandnewyear,1,STORY,5,event_brandnewyear_02_e,,1,33
+event_brandnewyear,1,STORY,6,event_brandnewyear_03_s,,1,41
+event_brandnewyear,1,STORY,7,event_brandnewyear_03_e,,1,39
+event_brandnewyear,1,STORY,8,event_brandnewyear_intermission_01,,1,40
+event_brandnewyear,1,STORY,9,event_brandnewyear_04_s,,1,41
+event_brandnewyear,1,STORY,10,event_brandnewyear_04_e,,1,40
+event_brandnewyear,1,STORY,11,event_brandnewyear_05_s,,1,54
+event_brandnewyear,1,STORY,12,event_brandnewyear_05_e,,1,47
+event_brandnewyear,1,STORY,13,event_brandnewyear_06_s,,1,38
+event_brandnewyear,1,STORY,14,event_brandnewyear_06_e,,1,60
+event_brandnewyear,1,STORY,15,event_brandnewyear_epilogue,,1,33
+event_hightechtoy,1,STORY,1,event_hightechtoy_prologue,,1,31
+event_hightechtoy,1,STORY,2,event_hightechtoy_01_s,,1,30
+event_hightechtoy,1,STORY,3,event_hightechtoy_01_e,,1,28
+event_hightechtoy,1,STORY,4,event_hightechtoy_02_s,,1,29
+event_hightechtoy,1,STORY,5,event_hightechtoy_02_e,,1,57
+event_hightechtoy,1,STORY,6,event_hightechtoy_03_s,,1,25
+event_hightechtoy,1,STORY,7,event_hightechtoy_03_e,,1,72
+event_hightechtoy,1,STORY,8,event_hightechtoy_intermission_01,,1,46
+event_hightechtoy,1,STORY,9,event_hightechtoy_04_s,,1,25
+event_hightechtoy,1,STORY,10,event_hightechtoy_04_e,,1,23
+event_hightechtoy,1,STORY,11,event_hightechtoy_05_s,,1,47
+event_hightechtoy,1,STORY,12,event_hightechtoy_05_e,,1,52
+event_hightechtoy,1,STORY,13,event_hightechtoy_06_s,,1,44
+event_hightechtoy,1,STORY,14,event_hightechtoy_06_e,,1,89
+event_hightechtoy,1,STORY,15,event_hightechtoy_epilogue,,1,74
+event_goldenship,1,STORY,1,event_goldenship_prologue,,1,31
+event_goldenship,1,STORY,2,event_goldenship_01_s,,1,108
+event_goldenship,1,STORY,3,event_goldenship_01_e,,1,47
+event_goldenship,1,STORY,4,event_goldenship_02_s,,1,63
+event_goldenship,1,STORY,5,event_goldenship_02_e,,1,55
+event_goldenship,1,STORY,6,event_goldenship_03_s,,1,65
+event_goldenship,1,STORY,7,event_goldenship_03_e,,1,99
+event_goldenship,1,STORY,8,event_goldenship_intermission_01,,1,95
+event_goldenship,1,STORY,9,event_goldenship_04_s,,1,96
+event_goldenship,1,STORY,10,event_goldenship_04_e,,1,68
+event_goldenship,1,STORY,11,event_goldenship_05_s,,1,51
+event_goldenship,1,STORY,12,event_goldenship_05_e,,1,56
+event_goldenship,1,STORY,13,event_goldenship_06_s,,1,46
+event_goldenship,1,STORY,14,event_goldenship_06_e,,1,147
+event_goldenship,1,STORY,15,event_goldenship_epilogue,,1,40
+event_dazzlingcupid,1,STORY,1,event_dazzlingcupid_prologue,,1,50
+event_dazzlingcupid,1,STORY,2,event_dazzlingcupid_01_s,,1,83
+event_dazzlingcupid,1,STORY,3,event_dazzlingcupid_01_e,,1,62
+event_dazzlingcupid,1,STORY,4,event_dazzlingcupid_02_s,,1,60
+event_dazzlingcupid,1,STORY,5,event_dazzlingcupid_02_e,,1,66
+event_dazzlingcupid,1,STORY,6,event_dazzlingcupid_03_s,,1,77
+event_dazzlingcupid,1,STORY,7,event_dazzlingcupid_03_e,,1,102
+event_dazzlingcupid,1,STORY,8,event_dazzlingcupid_intermission_01,,1,99
+event_dazzlingcupid,1,STORY,9,event_dazzlingcupid_04_s,,1,131
+event_dazzlingcupid,1,STORY,10,event_dazzlingcupid_04_e,,1,143
+event_dazzlingcupid,1,STORY,11,event_dazzlingcupid_05_s,,1,102
+event_dazzlingcupid,1,STORY,12,event_dazzlingcupid_05_e,,1,81
+event_dazzlingcupid,1,STORY,13,event_dazzlingcupid_06_s,,1,62
+event_dazzlingcupid,1,STORY,14,event_dazzlingcupid_06_e,,1,186
+event_dazzlingcupid,1,STORY,15,event_dazzlingcupid_epilogue,,1,59
+event_bluewaterisland,1,STORY I,1,event_bluewaterisland_prologue,,1,61
+event_bluewaterisland,1,STORY I,2,event_bluewaterisland1_01_s,,1,99
+event_bluewaterisland,1,STORY I,3,event_bluewaterisland1_01_e,,1,151
+event_bluewaterisland,1,STORY I,4,event_bluewaterisland1_02_s,,1,78
+event_bluewaterisland,1,STORY I,5,event_bluewaterisland1_02_e,,1,43
+event_bluewaterisland,1,STORY I,6,event_bluewaterisland1_03_s,,1,73
+event_bluewaterisland,1,STORY I,7,event_bluewaterisland1_03_e,,1,82
+event_bluewaterisland,1,STORY I,8,event_bluewaterisland1_intermission_01,,1,87
+event_bluewaterisland,1,STORY I,9,event_bluewaterisland1_04_s,,1,101
+event_bluewaterisland,1,STORY I,10,event_bluewaterisland1_04_e,,1,105
+event_bluewaterisland,1,STORY I,11,event_bluewaterisland1_05_s,,1,135
+event_bluewaterisland,1,STORY I,12,event_bluewaterisland1_05_e,,1,131
+event_bluewaterisland,1,STORY I,13,event_bluewaterisland1_06_s,,1,55
+event_bluewaterisland,1,STORY I,14,event_bluewaterisland1_06_e,,1,83
+event_bluewaterisland,2,STORY II,15,event_bluewaterisland2_01_s,,1,106
+event_bluewaterisland,2,STORY II,16,event_bluewaterisland2_01_e,,1,81
+event_bluewaterisland,2,STORY II,17,event_bluewaterisland2_02_s,,1,42
+event_bluewaterisland,2,STORY II,18,event_bluewaterisland2_02_e,,1,49
+event_bluewaterisland,2,STORY II,19,event_bluewaterisland2_03_s,,1,96
+event_bluewaterisland,2,STORY II,20,event_bluewaterisland2_03_e,,1,93
+event_bluewaterisland,2,STORY II,21,event_bluewaterisland2_intermission_01,,1,113
+event_bluewaterisland,2,STORY II,22,event_bluewaterisland2_04_s,,1,135
+event_bluewaterisland,2,STORY II,23,event_bluewaterisland2_04_e,,1,85
+event_bluewaterisland,2,STORY II,24,event_bluewaterisland2_05_s,,1,156
+event_bluewaterisland,2,STORY II,25,event_bluewaterisland2_05_e,,1,192
+event_bluewaterisland,2,STORY II,26,event_bluewaterisland2_06_s,,1,112
+event_bluewaterisland,2,STORY II,27,event_bluewaterisland2_06_e,,1,155
+event_bluewaterisland,2,STORY II,28,event_bluewaterisland2_epilogue,,1,61
+event_seayouagain1,1,STORY I,1,event_seayouagain1_prologue,,1,16
+event_seayouagain1,1,STORY I,2,event_seayouagain1_01_s,,1,44
+event_seayouagain1,1,STORY I,3,event_seayouagain1_01_e,,1,73
+event_seayouagain1,1,STORY I,4,event_seayouagain1_02_s,,1,89
+event_seayouagain1,1,STORY I,5,event_seayouagain1_02_e,,1,87
+event_seayouagain1,1,STORY I,6,event_seayouagain1_03_s,,1,175
+event_seayouagain1,1,STORY I,7,event_seayouagain1_03_e,,1,123
+event_seayouagain1,1,STORY I,8,event_seayouagain1_intermission_01,,1,207
+event_seayouagain1,1,STORY I,9,event_seayouagain1_04_s,,1,130
+event_seayouagain1,1,STORY I,10,event_seayouagain1_04_e,,1,117
+event_seayouagain1,1,STORY I,11,event_seayouagain1_05_s,,1,121
+event_seayouagain1,1,STORY I,12,event_seayouagain1_05_e,,1,112
+event_seayouagain1,1,STORY I,13,event_seayouagain1_06_s,,1,109
+event_seayouagain1,1,STORY I,14,event_seayouagain1_06_e,,1,87
+event_seayouagain1,2,STORY II,15,event_seayouagain2_01_s,,1,112
+event_seayouagain1,2,STORY II,16,event_seayouagain2_01_e,,1,124
+event_seayouagain1,2,STORY II,17,event_seayouagain2_02_s,,1,88
+event_seayouagain1,2,STORY II,18,event_seayouagain2_02_e,,1,79
+event_seayouagain1,2,STORY II,19,event_seayouagain2_03_s,,1,68
+event_seayouagain1,2,STORY II,20,event_seayouagain2_03_e,,1,66
+event_seayouagain1,2,STORY II,21,event_seayouagain2_intermission_01,,1,82
+event_seayouagain1,2,STORY II,22,event_seayouagain2_04_s,,1,64
+event_seayouagain1,2,STORY II,23,event_seayouagain2_04_e,,1,78
+event_seayouagain1,2,STORY II,24,event_seayouagain2_05_s,,1,89
+event_seayouagain1,2,STORY II,25,event_seayouagain2_05_e,,1,80
+event_seayouagain1,2,STORY II,26,event_seayouagain2_06_s,,1,134
+event_seayouagain1,2,STORY II,27,event_seayouagain2_06_e,,1,198
+event_seayouagain1,2,STORY II,28,event_seayouagain2_epilogue,,1,86
+event_freezeacpu,1,STORY,1,event_freezeacpu_prologue,,1,21
+event_freezeacpu,1,STORY,2,event_freezeacpu_01_s,,1,73
+event_freezeacpu,1,STORY,3,event_freezeacpu_01_e,,1,99
+event_freezeacpu,1,STORY,4,event_freezeacpu_02_s,,1,127
+event_freezeacpu,1,STORY,5,event_freezeacpu_02_e,,1,97
+event_freezeacpu,1,STORY,6,event_freezeacpu_03_s,,1,92
+event_freezeacpu,1,STORY,7,event_freezeacpu_03_e,,1,126
+event_freezeacpu,1,STORY,8,event_freezeacpu_intermission_01,,1,79
+event_freezeacpu,1,STORY,9,event_freezeacpu_04_s,,1,125
+event_freezeacpu,1,STORY,10,event_freezeacpu_04_e,,1,99
+event_freezeacpu,1,STORY,11,event_freezeacpu_05_s,,1,103
+event_freezeacpu,1,STORY,12,event_freezeacpu_05_e,,1,77
+event_freezeacpu,1,STORY,13,event_freezeacpu_06_s,,1,115
+event_freezeacpu,1,STORY,14,event_freezeacpu_06_e,,1,242
+event_freezeacpu,1,STORY,15,event_freezeacpu_epilogue,,1,37
+event_dirtybackyard,1,STORY,1,event_dirtybackyard_prologue,,1,74
+event_dirtybackyard,1,STORY,2,event_dirtybackyard_01_s,,1,36
+event_dirtybackyard,1,STORY,3,event_dirtybackyard_01_e,,1,90
+event_dirtybackyard,1,STORY,4,event_dirtybackyard_02_s,,1,108
+event_dirtybackyard,1,STORY,5,event_dirtybackyard_02_e,,1,73
+event_dirtybackyard,1,STORY,6,event_dirtybackyard_03_s,,1,53
+event_dirtybackyard,1,STORY,7,event_dirtybackyard_03_e,,1,88
+event_dirtybackyard,1,STORY,8,event_dirtybackyard_intermission_01,,1,90
+event_dirtybackyard,1,STORY,9,event_dirtybackyard_04_s,,1,84
+event_dirtybackyard,1,STORY,10,event_dirtybackyard_04_e,,1,46
+event_dirtybackyard,1,STORY,11,event_dirtybackyard_05_s,,1,85
+event_dirtybackyard,1,STORY,12,event_dirtybackyard_05_e,,1,241
+event_dirtybackyard,1,STORY,13,event_dirtybackyard_06_s,,1,67
+event_dirtybackyard,1,STORY,14,event_dirtybackyard_06_e,,1,78
+event_dirtybackyard,1,STORY,15,event_dirtybackyard_epilogue,,1,127
+event_lionheart,1,STORY,1,event_lionheart_prologue,,1,36
+event_lionheart,1,STORY,2,event_lionheart_01_s,,1,81
+event_lionheart,1,STORY,3,event_lionheart_01_e,,1,104
+event_lionheart,1,STORY,4,event_lionheart_02_s,,1,128
+event_lionheart,1,STORY,5,event_lionheart_02_e,,1,114
+event_lionheart,1,STORY,6,event_lionheart_03_s,,1,92
+event_lionheart,1,STORY,7,event_lionheart_03_e,,1,76
+event_lionheart,1,STORY,8,event_lionheart_intermission_01,,1,84
+event_lionheart,1,STORY,9,event_lionheart_04_s,,1,52
+event_lionheart,1,STORY,10,event_lionheart_04_e,,1,93
+event_lionheart,1,STORY,11,event_lionheart_05_s,,1,52
+event_lionheart,1,STORY,12,event_lionheart_05_e,,1,79
+event_lionheart,1,STORY,13,event_lionheart_06_s,,1,185
+event_lionheart,1,STORY,14,event_lionheart_06_e,,1,100
+event_lionheart,1,STORY,15,event_lionheart_epilogue,,1,52
+event_lastkingdom1,1,STORY I,1,event_lastkingdom1_prologue,,1,138
+event_lastkingdom1,1,STORY I,2,event_lastkingdom1_01_s,,1,85
+event_lastkingdom1,1,STORY I,3,event_lastkingdom1_01_e,,1,124
+event_lastkingdom1,1,STORY I,4,event_lastkingdom1_02_s,,1,102
+event_lastkingdom1,1,STORY I,5,event_lastkingdom1_02_e,,1,64
+event_lastkingdom1,1,STORY I,6,event_lastkingdom1_03_s,,1,124
+event_lastkingdom1,1,STORY I,7,event_lastkingdom1_03_e,,1,52
+event_lastkingdom1,1,STORY I,8,event_lastkingdom1_b01_e,,1,13
+event_lastkingdom1,1,STORY I,9,event_lastkingdom1_intermission,,1,119
+event_lastkingdom1,1,STORY I,10,event_lastkingdom1_b02_s,,1,5
+event_lastkingdom1,1,STORY I,11,event_lastkingdom1_b02_e,,1,51
+event_lastkingdom1,1,STORY I,12,event_lastkingdom1_04_s,,1,45
+event_lastkingdom1,1,STORY I,13,event_lastkingdom1_04_e,,1,88
+event_lastkingdom1,1,STORY I,14,event_lastkingdom1_05_s,,1,94
+event_lastkingdom1,1,STORY I,15,event_lastkingdom1_05_e,,1,105
+event_lastkingdom1,1,STORY I,16,event_lastkingdom1_06_s,,1,48
+event_lastkingdom1,1,STORY I,17,event_lastkingdom1_06_e,,1,114
+event_lastkingdom1,1,STORY I,18,event_lastkingdom1_b03_s,,1,7
+event_lastkingdom1,1,STORY I,19,event_lastkingdom1_b03_e,,1,45
+event_lastkingdom1,2,STORY II,20,event_lastkingdom2_01_s,,1,124
+event_lastkingdom1,2,STORY II,21,event_lastkingdom2_01_e,,1,43
+event_lastkingdom1,2,STORY II,22,event_lastkingdom2_b01_s,,1,14
+event_lastkingdom1,2,STORY II,23,event_lastkingdom2_b01_e,,1,16
+event_lastkingdom1,2,STORY II,24,event_lastkingdom2_02_s,,1,38
+event_lastkingdom1,2,STORY II,25,event_lastkingdom2_02_e,,1,77
+event_lastkingdom1,2,STORY II,26,event_lastkingdom2_03_s,,1,112
+event_lastkingdom1,2,STORY II,27,event_lastkingdom2_03_e,,1,129
+event_lastkingdom1,2,STORY II,28,event_lastkingdom2_intermission,,1,133
+event_lastkingdom1,2,STORY II,29,event_lastkingdom2_04_s,,1,90
+event_lastkingdom1,2,STORY II,30,event_lastkingdom2_04_e,,1,131
+event_lastkingdom1,2,STORY II,31,event_lastkingdom2_b02_s,,1,43
+event_lastkingdom1,2,STORY II,32,event_lastkingdom2_b02_e,,1,22
+event_lastkingdom1,2,STORY II,33,event_lastkingdom2_05_s,,1,29
+event_lastkingdom1,2,STORY II,34,event_lastkingdom2_05_e,,1,163
+event_lastkingdom1,2,STORY II,35,event_lastkingdom2_b03_s,,1,14
+event_lastkingdom1,2,STORY II,36,event_lastkingdom2_b03_e,,1,30
+event_lastkingdom1,2,STORY II,37,event_lastkingdom2_06_s,,1,61
+event_lastkingdom1,2,STORY II,38,event_lastkingdom2_06_e,,1,169
+event_lastkingdom1,2,STORY II,39,event_lastkingdom2_epilogue,,1,140
+event_newyearnewsword,1,STORY,1,event_newyearnewsword_prologue,,1,60
+event_newyearnewsword,1,STORY,2,event_newyearnewsword_01_s,,1,35
+event_newyearnewsword,1,STORY,3,event_newyearnewsword_01_e,,1,87
+event_newyearnewsword,1,STORY,4,event_newyearnewsword_02_s,,1,78
+event_newyearnewsword,1,STORY,5,event_newyearnewsword_02_e,,1,138
+event_newyearnewsword,1,STORY,6,event_newyearnewsword_03_s,,1,74
+event_newyearnewsword,1,STORY,7,event_newyearnewsword_03_e,,1,115
+event_newyearnewsword,1,STORY,8,event_newyearnewsword_intermission_01,,1,137
+event_newyearnewsword,1,STORY,9,event_newyearnewsword_04_s,,1,79
+event_newyearnewsword,1,STORY,10,event_newyearnewsword_04_e,,1,118
+event_newyearnewsword,1,STORY,11,event_newyearnewsword_05_s,,1,47
+event_newyearnewsword,1,STORY,12,event_newyearnewsword_05_e,,1,159
+event_newyearnewsword,1,STORY,13,event_newyearnewsword_06_s,,1,106
+event_newyearnewsword,1,STORY,14,event_newyearnewsword_06_e,,1,117
+event_newyearnewsword,1,STORY,15,event_newyearnewsword_epilogue,,1,73
+event_neverland1,1,STORY I,1,event_neverland1_prologue,,1,61
+event_neverland1,1,STORY I,2,event_neverland1_01_s,,1,77
+event_neverland1,1,STORY I,3,event_neverland1_01_e,,1,92
+event_neverland1,1,STORY I,4,event_neverland1_02_s,,1,76
+event_neverland1,1,STORY I,5,event_neverland1_02_e,,1,110
+event_neverland1,1,STORY I,6,event_neverland1_03_s,,1,99
+event_neverland1,1,STORY I,7,event_neverland1_03_e,,1,143
+event_neverland1,1,STORY I,8,event_neverland1_Intermission_01,,1,93
+event_neverland1,1,STORY I,9,event_neverland1_04_s,,1,133
+event_neverland1,1,STORY I,10,event_neverland1_04_e,,1,106
+event_neverland1,1,STORY I,11,event_neverland1_05_s,,1,175
+event_neverland1,1,STORY I,12,event_neverland1_05_e,,1,79
+event_neverland1,1,STORY I,13,event_neverland1_06_s,,1,41
+event_neverland1,1,STORY I,14,event_neverland1_06_e,,1,65
+event_neverland1,2,STORY II,15,event_neverland2_01_s,,1,112
+event_neverland1,2,STORY II,16,event_neverland2_01_e,,1,108
+event_neverland1,2,STORY II,17,event_neverland2_02_s,,1,39
+event_neverland1,2,STORY II,18,event_neverland2_02_e,,1,70
+event_neverland1,2,STORY II,19,event_neverland2_03_s,,1,101
+event_neverland1,2,STORY II,20,event_neverland2_03_e,,1,37
+event_neverland1,2,STORY II,21,event_neverland2_Intermission_01,,1,68
+event_neverland1,2,STORY II,22,event_neverland2_04_s,,1,67
+event_neverland1,2,STORY II,23,event_neverland2_04_e,,1,78
+event_neverland1,2,STORY II,24,event_neverland2_05_s,,1,60
+event_neverland1,2,STORY II,25,event_neverland2_05_e,,1,68
+event_neverland1,2,STORY II,26,event_neverland2_06_s,,1,72
+event_neverland1,2,STORY II,27,event_neverland2_06_e,,1,164
+event_neverland1,2,STORY II,28,event_neverland2_epilogue,,1,98
+event_darkhero,1,STORY,1,event_darkhero_prologue,,1,113
+event_darkhero,1,STORY,2,event_darkhero_01_s,,1,150
+event_darkhero,1,STORY,3,event_darkhero_01_e,,1,155
+event_darkhero,1,STORY,4,event_darkhero_02_s,,1,81
+event_darkhero,1,STORY,5,event_darkhero_02_e,,1,98
+event_darkhero,1,STORY,6,event_darkhero_03_s,,1,112
+event_darkhero,1,STORY,7,event_darkhero_03_e,,1,121
+event_darkhero,1,STORY,8,event_darkhero_intermission_01,,1,43
+event_darkhero,1,STORY,9,event_darkhero_04_s,,1,70
+event_darkhero,1,STORY,10,event_darkhero_04_e,,1,88
+event_darkhero,1,STORY,11,event_darkhero_05_s,,1,81
+event_darkhero,1,STORY,12,event_darkhero_05_e,,1,60
+event_darkhero,1,STORY,13,event_darkhero_06_s,,1,161
+event_darkhero,1,STORY,14,event_darkhero_06_e,,1,98
+event_darkhero,1,STORY,15,event_darkhero_epilogue,,1,48
+event_alonesurvivor,1,STORY,1,event_alonesurvivor_prologue,,1,54
+event_alonesurvivor,1,STORY,2,event_alonesurvivor_01_s,,1,76
+event_alonesurvivor,1,STORY,3,event_alonesurvivor_01_e,,1,46
+event_alonesurvivor,1,STORY,4,event_alonesurvivor_02_s,,1,77
+event_alonesurvivor,1,STORY,5,event_alonesurvivor_02_e,,1,89
+event_alonesurvivor,1,STORY,6,event_alonesurvivor_03_s,,1,44
+event_alonesurvivor,1,STORY,7,event_alonesurvivor_03_e,,1,110
+event_alonesurvivor,1,STORY,8,event_alonesurvivor_intermission_01,,1,94
+event_alonesurvivor,1,STORY,9,event_alonesurvivor_04_s,,1,132
+event_alonesurvivor,1,STORY,10,event_alonesurvivor_04_e,,1,64
+event_alonesurvivor,1,STORY,11,event_alonesurvivor_05_s,,1,75
+event_alonesurvivor,1,STORY,12,event_alonesurvivor_05_e,,1,92
+event_alonesurvivor,1,STORY,13,event_alonesurvivor_06_s,,1,149
+event_alonesurvivor,1,STORY,14,event_alonesurvivor_06_e,,1,110
+event_alonesurvivor,1,STORY,15,event_alonesurvivor_epilogue,,1,74
+event_perfectmaid,1,STORY,1,event_perfectmaid_prologue,,1,69
+event_perfectmaid,1,STORY,2,event_perfectmaid_01_s,,1,157
+event_perfectmaid,1,STORY,3,event_perfectmaid_01_e,,1,85
+event_perfectmaid,1,STORY,4,event_perfectmaid_02_s,,1,87
+event_perfectmaid,1,STORY,5,event_perfectmaid_02_e,,1,59
+event_perfectmaid,1,STORY,6,event_perfectmaid_03_s,,1,131
+event_perfectmaid,1,STORY,7,event_perfectmaid_03_e,,1,78
+event_perfectmaid,1,STORY,8,event_perfectmaid_intermission_01,,1,168
+event_perfectmaid,1,STORY,9,event_perfectmaid_04_s,,1,107
+event_perfectmaid,1,STORY,10,event_perfectmaid_04_e,,1,87
+event_perfectmaid,1,STORY,11,event_perfectmaid_05_s,,1,87
+event_perfectmaid,1,STORY,12,event_perfectmaid_05_e,,1,138
+event_perfectmaid,1,STORY,13,event_perfectmaid_06_s,,1,111
+event_perfectmaid,1,STORY,14,event_perfectmaid_06_e,,1,83
+event_perfectmaid,1,STORY,15,event_perfectmaid_epilogue,,1,119
+event_boomsday,1,STORY,1,event_boomsday_prologue,,1,23
+event_boomsday,1,STORY,2,event_boomsday_01_s,,1,116
+event_boomsday,1,STORY,3,event_boomsday_01_e,,1,107
+event_boomsday,1,STORY,4,event_boomsday_02_s,,1,72
+event_boomsday,1,STORY,5,event_boomsday_02_e,,1,80
+event_boomsday,1,STORY,6,event_boomsday_03_s,,1,142
+event_boomsday,1,STORY,7,event_boomsday_03_e,,1,58
+event_boomsday,1,STORY,8,event_boomsday_intermission_01,,1,54
+event_boomsday,1,STORY,9,event_boomsday_04_s,,1,141
+event_boomsday,1,STORY,10,event_boomsday_04_e,,1,74
+event_boomsday,1,STORY,11,event_boomsday_05_s,,1,54
+event_boomsday,1,STORY,12,event_boomsday_05_e,,1,70
+event_boomsday,1,STORY,13,event_boomsday_06_s,,1,55
+event_boomsday,1,STORY,14,event_boomsday_06_e,,1,55
+event_boomsday,1,STORY,15,event_boomsday_epilogue,,1,50
+event_onemoretime,1,STORY,1,event_onemoretime_prologue,,1,133
+event_onemoretime,1,STORY,2,event_onemoretime_01_s,,1,86
+event_onemoretime,1,STORY,3,event_onemoretime_01_e,,1,112
+event_onemoretime,1,STORY,4,event_onemoretime_02_s,,1,95
+event_onemoretime,1,STORY,5,event_onemoretime_02_e,,1,228
+event_onemoretime,1,STORY,6,event_onemoretime_03_s,,1,113
+event_onemoretime,1,STORY,7,event_onemoretime_03_e,,1,128
+event_onemoretime,1,STORY,8,event_onemoretime_intermission_01,,1,150
+event_onemoretime,1,STORY,9,event_onemoretime_04_s,,1,91
+event_onemoretime,1,STORY,10,event_onemoretime_04_e,,1,150
+event_onemoretime,1,STORY,11,event_onemoretime_05_s,,1,94
+event_onemoretime,1,STORY,12,event_onemoretime_05_e,,1,95
+event_onemoretime,1,STORY,13,event_onemoretime_06_s,,1,82
+event_onemoretime,1,STORY,14,event_onemoretime_06_e,,1,125
+event_onemoretime,1,STORY,15,event_onemoretime_epilogue,,1,48
+event_oldtales1,1,STORY I,1,event_oldtales1_prologue,,1,140
+event_oldtales1,1,STORY I,2,event_oldtales1_01_s,,1,84
+event_oldtales1,1,STORY I,3,event_oldtales1_01_e,,1,58
+event_oldtales1,1,STORY I,4,event_oldtales1_02_s,,1,64
+event_oldtales1,1,STORY I,5,event_oldtales1_02_e,,1,86
+event_oldtales1,1,STORY I,6,event_oldtales1_03_s,,1,123
+event_oldtales1,1,STORY I,7,event_oldtales1_03_e,,1,83
+event_oldtales1,1,STORY I,8,event_oldtales1_intermission_01,,1,102
+event_oldtales1,1,STORY I,9,event_oldtales1_04_s,,1,75
+event_oldtales1,1,STORY I,10,event_oldtales1_04_e,,1,177
+event_oldtales1,1,STORY I,11,event_oldtales1_05_s,,1,39
+event_oldtales1,1,STORY I,12,event_oldtales1_05_e,,1,134
+event_oldtales1,1,STORY I,13,event_oldtales1_06_s,,1,93
+event_oldtales1,1,STORY I,14,event_oldtales1_06_e,,1,123
+event_oldtales1,2,STORY II,15,event_oldtales2_01_s,,1,92
+event_oldtales1,2,STORY II,16,event_oldtales2_01_e,,1,125
+event_oldtales1,2,STORY II,17,event_oldtales2_02_s,,1,88
+event_oldtales1,2,STORY II,18,event_oldtales2_02_e,,1,82
+event_oldtales1,2,STORY II,19,event_oldtales2_03_s,,1,88
+event_oldtales1,2,STORY II,20,event_oldtales2_03_e,,1,69
+event_oldtales1,2,STORY II,21,event_oldtales2_intermission_01,,1,228
+event_oldtales1,2,STORY II,22,event_oldtales2_04_s,,1,39
+event_oldtales1,2,STORY II,23,event_oldtales2_04_e,,1,177
+event_oldtales1,2,STORY II,24,event_oldtales2_05_s,,1,134
+event_oldtales1,2,STORY II,25,event_oldtales2_05_e,,1,227
+event_oldtales1,2,STORY II,26,event_oldtales2_06_s,,1,158
+event_oldtales1,2,STORY II,27,event_oldtales2_06_e,,1,198
+event_oldtales1,2,STORY II,28,event_oldtales2_epilogue,,1,208
+event_killthelord,1,STORY,1,event_killthelord_prologue,,1,40
+event_killthelord,1,STORY,2,event_killthelord_01_s,,1,50
+event_killthelord,1,STORY,3,event_killthelord_01_e,,1,54
+event_killthelord,1,STORY,4,event_killthelord_02_s,,1,187
+event_killthelord,1,STORY,5,event_killthelord_02_e,,1,116
+event_killthelord,1,STORY,6,event_killthelord_03_s,,1,200
+event_killthelord,1,STORY,7,event_killthelord_03_e,,1,116
+event_killthelord,1,STORY,8,event_killthelord_intermission_01,,1,85
+event_killthelord,1,STORY,9,event_killthelord_04_s,,1,141
+event_killthelord,1,STORY,10,event_killthelord_04_e,,1,65
+event_killthelord,1,STORY,11,event_killthelord_05_s,,1,69
+event_killthelord,1,STORY,12,event_killthelord_05_e,,1,64
+event_killthelord,1,STORY,13,event_killthelord_06_s,,1,144
+event_killthelord,1,STORY,14,event_killthelord_06_e,,1,158
+event_killthelord,1,STORY,15,event_killthelord_epilogue,,1,28
+event_claymore,1,STORY,1,event_claymore_prologue,,1,30
+event_claymore,1,STORY,2,event_claymore_01_s,,1,137
+event_claymore,1,STORY,3,event_claymore_01_e,,1,30
+event_claymore,1,STORY,4,event_claymore_02_s,,1,142
+event_claymore,1,STORY,5,event_claymore_02_e,,1,116
+event_claymore,1,STORY,6,event_claymore_03_s,,1,78
+event_claymore,1,STORY,7,event_claymore_03_e,,1,120
+event_claymore,1,STORY,8,event_claymore_intermission_01,,1,68
+event_claymore,1,STORY,9,event_claymore_04_s,,1,47
+event_claymore,1,STORY,10,event_claymore_04_e,,1,118
+event_claymore,1,STORY,11,event_claymore_05_s,,1,123
+event_claymore,1,STORY,12,event_claymore_05_e,,1,85
+event_claymore,1,STORY,13,event_claymore_06_s,,1,147
+event_claymore,1,STORY,14,event_claymore_06_e,,1,161
+event_claymore,1,STORY,15,event_claymore_epilogue,,1,61
+event_juveniledays,1,STORY,1,event_juveniledays_prologue,,1,50
+event_juveniledays,1,STORY,2,event_juveniledays_01_s,,1,58
+event_juveniledays,1,STORY,3,event_juveniledays_01_e,,1,128
+event_juveniledays,1,STORY,4,event_juveniledays_02_s,,1,117
+event_juveniledays,1,STORY,5,event_juveniledays_02_e,,1,91
+event_juveniledays,1,STORY,6,event_juveniledays_03_s,,1,65
+event_juveniledays,1,STORY,7,event_juveniledays_03_e,,1,81
+event_juveniledays,1,STORY,8,event_juveniledays_intermission_01,,1,88
+event_juveniledays,1,STORY,9,event_juveniledays_04_s,,1,74
+event_juveniledays,1,STORY,10,event_juveniledays_04_e,,1,81
+event_juveniledays,1,STORY,11,event_juveniledays_05_s,,1,59
+event_juveniledays,1,STORY,12,event_juveniledays_05_e,,1,85
+event_juveniledays,1,STORY,13,event_juveniledays_06_s,,1,155
+event_juveniledays,1,STORY,14,event_juveniledays_06_e,,1,105
+event_juveniledays,1,STORY,15,event_juveniledays_epilogue,,1,67
+event_colorless,1,STORY,1,event_colorless_prologue,,1,54
+event_colorless,1,STORY,2,event_colorless_01_s,,1,154
+event_colorless,1,STORY,3,event_colorless_01_e,,1,100
+event_colorless,1,STORY,4,event_colorless_02_s,,1,80
+event_colorless,1,STORY,5,event_colorless_02_e,,1,111
+event_colorless,1,STORY,6,event_colorless_03_s,,1,112
+event_colorless,1,STORY,7,event_colorless_03_e,,1,73
+event_colorless,1,STORY,8,event_colorless_intermission_01,,1,118
+event_colorless,1,STORY,9,event_colorless_04_s,,1,83
+event_colorless,1,STORY,10,event_colorless_04_e,,1,40
+event_colorless,1,STORY,11,event_colorless_05_s,,1,101
+event_colorless,1,STORY,12,event_colorless_05_e,,1,72
+event_colorless,1,STORY,13,event_colorless_06_s,,1,122
+event_colorless,1,STORY,14,event_colorless_06_e,,1,85
+event_colorless,1,STORY,15,event_colorless_epilogue,,1,79
+event_beautyfullshot1,1,STORY I,1,event_beautyfullshot1_prologue,,1,63
+event_beautyfullshot1,1,STORY I,2,event_beautyfullshot1_01_s,,1,61
+event_beautyfullshot1,1,STORY I,3,event_beautyfullshot1_01_e,,1,77
+event_beautyfullshot1,1,STORY I,4,event_beautyfullshot1_02_s,,1,213
+event_beautyfullshot1,1,STORY I,5,event_beautyfullshot1_02_e,,1,67
+event_beautyfullshot1,1,STORY I,6,event_beautyfullshot1_03_s,,1,158
+event_beautyfullshot1,1,STORY I,7,event_beautyfullshot1_03_e,,1,152
+event_beautyfullshot1,1,STORY I,8,event_beautyfullshot1_intermission,,1,51
+event_beautyfullshot1,1,STORY I,9,event_beautyfullshot1_04_s,,1,93
+event_beautyfullshot1,1,STORY I,10,event_beautyfullshot1_04_e,,1,107
+event_beautyfullshot1,1,STORY I,11,event_beautyfullshot1_05_s,,1,57
+event_beautyfullshot1,1,STORY I,12,event_beautyfullshot1_05_e,,1,105
+event_beautyfullshot1,1,STORY I,13,event_beautyfullshot1_06_s,,1,76
+event_beautyfullshot1,1,STORY I,14,event_beautyfullshot1_06_e,,1,104
+event_beautyfullshot1,2,STORY II,15,event_beautyfullshot2_01_s,,1,70
+event_beautyfullshot1,2,STORY II,16,event_beautyfullshot2_01_e,,1,51
+event_beautyfullshot1,2,STORY II,17,event_beautyfullshot2_02_s,,1,75
+event_beautyfullshot1,2,STORY II,18,event_beautyfullshot2_02_e,,1,73
+event_beautyfullshot1,2,STORY II,19,event_beautyfullshot2_03_s,,1,86
+event_beautyfullshot1,2,STORY II,20,event_beautyfullshot2_03_e,,1,118
+event_beautyfullshot1,2,STORY II,21,event_beautyfullshot2_intermission,,1,152
+event_beautyfullshot1,2,STORY II,22,event_beautyfullshot2_04_s,,1,67
+event_beautyfullshot1,2,STORY II,23,event_beautyfullshot2_04_e,,1,112
+event_beautyfullshot1,2,STORY II,24,event_beautyfullshot2_05_s,,1,90
+event_beautyfullshot1,2,STORY II,25,event_beautyfullshot2_05_e,,1,103
+event_beautyfullshot1,2,STORY II,26,event_beautyfullshot2_06_s,,1,56
+event_beautyfullshot1,2,STORY II,27,event_beautyfullshot2_06_e,,1,120
+event_beautyfullshot1,2,STORY II,28,event_beautyfullshot2_epilogue,,1,78
+event_jinxplayer,1,STORY,1,event_jinxplayer_prologue,,1,44
+event_jinxplayer,1,STORY,2,event_jinxplayer_01_s,,1,64
+event_jinxplayer,1,STORY,3,event_jinxplayer_01_e,,1,107
+event_jinxplayer,1,STORY,4,event_jinxplayer_02_s,,1,91
+event_jinxplayer,1,STORY,5,event_jinxplayer_02_e,,1,128
+event_jinxplayer,1,STORY,6,event_jinxplayer_03_s,,1,106
+event_jinxplayer,1,STORY,7,event_jinxplayer_03_e,,1,99
+event_jinxplayer,1,STORY,8,event_jinxplayer_intermission_01,,1,80
+event_jinxplayer,1,STORY,9,event_jinxplayer_04_s,,1,105
+event_jinxplayer,1,STORY,10,event_jinxplayer_04_e,,1,107
+event_jinxplayer,1,STORY,11,event_jinxplayer_05_s,,1,109
+event_jinxplayer,1,STORY,12,event_jinxplayer_05_e,,1,109
+event_jinxplayer,1,STORY,13,event_jinxplayer_06_s,,1,102
+event_jinxplayer,1,STORY,14,event_jinxplayer_06_e,,1,179
+event_jinxplayer,1,STORY,15,event_jinxplayer_epilogue,,1,48
+event_goldencoinrush1,1,STORY I,1,event_goldencoinrush1_prologue,,1,57
+event_goldencoinrush1,1,STORY I,2,event_goldencoinrush1_01_s,,1,154
+event_goldencoinrush1,1,STORY I,3,event_goldencoinrush1_01_e,,1,87
+event_goldencoinrush1,1,STORY I,4,event_goldencoinrush1_02_s,,1,113
+event_goldencoinrush1,1,STORY I,5,event_goldencoinrush1_02_e,,1,146
+event_goldencoinrush1,1,STORY I,6,event_goldencoinrush1_03_s,,1,503
+event_goldencoinrush1,1,STORY I,7,event_goldencoinrush1_03_e,,1,109
+event_goldencoinrush1,1,STORY I,8,event_goldencoinrush1_b01_s,,1,108
+event_goldencoinrush1,1,STORY I,9,event_goldencoinrush1_b01_e,,1,95
+event_goldencoinrush1,1,STORY I,10,event_goldencoinrush1_intermission_01,,1,35
+event_goldencoinrush1,1,STORY I,11,event_goldencoinrush1_04_s,,1,64
+event_goldencoinrush1,1,STORY I,12,event_goldencoinrush1_04_e,,1,104
+event_goldencoinrush1,1,STORY I,13,event_goldencoinrush1_05_s,,1,25
+event_goldencoinrush1,1,STORY I,14,event_goldencoinrush1_05_e,,1,74
+event_goldencoinrush1,1,STORY I,15,event_goldencoinrush1_b02_s,,1,47
+event_goldencoinrush1,1,STORY I,16,event_goldencoinrush1_b02_e,,1,96
+event_goldencoinrush1,1,STORY I,17,event_goldencoinrush1_06_s,,1,75
+event_goldencoinrush1,1,STORY I,18,event_goldencoinrush1_06_e,,1,52
+event_goldencoinrush1,2,STORY II,19,event_goldencoinrush2_01_s,,1,43
+event_goldencoinrush1,2,STORY II,20,event_goldencoinrush2_01_e,,1,83
+event_goldencoinrush1,2,STORY II,21,event_goldencoinrush2_b01_s,,1,96
+event_goldencoinrush1,2,STORY II,22,event_goldencoinrush2_b01_e,,1,90
+event_goldencoinrush1,2,STORY II,23,event_goldencoinrush2_02_s,,1,132
+event_goldencoinrush1,2,STORY II,24,event_goldencoinrush2_02_e,,1,168
+event_goldencoinrush1,2,STORY II,25,event_goldencoinrush2_03_s,,1,97
+event_goldencoinrush1,2,STORY II,26,event_goldencoinrush2_03_e,,1,76
+event_goldencoinrush1,2,STORY II,27,event_goldencoinrush2_b02_s,,1,124
+event_goldencoinrush1,2,STORY II,28,event_goldencoinrush2_b02_e,,1,66
+event_goldencoinrush1,2,STORY II,29,event_goldencoinrush2_intermission_01,,1,73
+event_goldencoinrush1,2,STORY II,30,event_goldencoinrush2_04_s,,1,27
+event_goldencoinrush1,2,STORY II,31,event_goldencoinrush2_04_e,,1,44
+event_goldencoinrush1,2,STORY II,32,event_goldencoinrush2_05_s,,1,183
+event_goldencoinrush1,2,STORY II,33,event_goldencoinrush2_05_e,,1,36
+event_goldencoinrush1,2,STORY II,34,event_goldencoinrush2_b03_s,,1,100
+event_goldencoinrush1,2,STORY II,35,event_goldencoinrush2_b03_e,,1,91
+event_goldencoinrush1,2,STORY II,36,event_goldencoinrush2_06_s,,1,67
+event_goldencoinrush1,2,STORY II,37,event_goldencoinrush2_06_e,,1,146
+event_goldencoinrush1,2,STORY II,38,event_goldencoinrush2_epilogue,,1,95
+event_unbreakablesphere1,1,STORY I,1,event_unbreakablesphere1_prologue,,1,89
+event_unbreakablesphere1,1,STORY I,2,event_unbreakablesphere1_01_s,,1,98
+event_unbreakablesphere1,1,STORY I,3,event_unbreakablesphere1_01_e,,1,111
+event_unbreakablesphere1,1,STORY I,4,event_unbreakablesphere1_02_s,,1,111
+event_unbreakablesphere1,1,STORY I,5,event_unbreakablesphere1_02_e,,1,137
+event_unbreakablesphere1,1,STORY I,6,event_unbreakablesphere1_03_s,,1,77
+event_unbreakablesphere1,1,STORY I,7,event_unbreakablesphere1_03_e,,1,189
+event_unbreakablesphere1,1,STORY I,8,event_unbreakablesphere1_intermission_01,,1,244
+event_unbreakablesphere1,1,STORY I,9,event_unbreakablesphere1_04_s,,1,186
+event_unbreakablesphere1,1,STORY I,10,event_unbreakablesphere1_04_e,,1,130
+event_unbreakablesphere1,1,STORY I,11,event_unbreakablesphere1_05_s,,1,177
+event_unbreakablesphere1,1,STORY I,12,event_unbreakablesphere1_05_e,,1,75
+event_unbreakablesphere1,1,STORY I,13,event_unbreakablesphere1_06_s,,1,139
+event_unbreakablesphere1,1,STORY I,14,event_unbreakablesphere1_06_e,,1,73
+event_unbreakablesphere1,2,STORY II,15,event_unbreakablesphere2_01_s,,1,63
+event_unbreakablesphere1,2,STORY II,16,event_unbreakablesphere2_01_e,,1,136
+event_unbreakablesphere1,2,STORY II,17,event_unbreakablesphere2_02_s,,1,146
+event_unbreakablesphere1,2,STORY II,18,event_unbreakablesphere2_02_e,,1,100
+event_unbreakablesphere1,2,STORY II,19,event_unbreakablesphere2_03_s,,1,157
+event_unbreakablesphere1,2,STORY II,20,event_unbreakablesphere2_03_e,,1,159
+event_unbreakablesphere1,2,STORY II,21,event_unbreakablesphere2_intermission_01,,1,65
+event_unbreakablesphere1,2,STORY II,22,event_unbreakablesphere2_04_s,,1,289
+event_unbreakablesphere1,2,STORY II,23,event_unbreakablesphere2_04_e,,1,165
+event_unbreakablesphere1,2,STORY II,24,event_unbreakablesphere2_05_s,,1,58
+event_unbreakablesphere1,2,STORY II,25,event_unbreakablesphere2_05_e,,1,150
+event_unbreakablesphere1,2,STORY II,26,event_unbreakablesphere2_06_s,,1,171
+event_unbreakablesphere1,2,STORY II,27,event_unbreakablesphere2_06_e,,1,202
+event_unbreakablesphere1,2,STORY II,28,event_unbreakablesphere2_epilogue,,1,213
+event_phantomthiefvsdetective,1,STORY,1,event_phantomthiefvsdetective_prologue,,1,95
+event_phantomthiefvsdetective,1,STORY,2,event_phantomthiefvsdetective_01_s,,1,139
+event_phantomthiefvsdetective,1,STORY,3,event_phantomthiefvsdetective_01_e,,1,85
+event_phantomthiefvsdetective,1,STORY,4,event_phantomthiefvsdetective_02_s,,1,123
+event_phantomthiefvsdetective,1,STORY,5,event_phantomthiefvsdetective_02_e,,1,159
+event_phantomthiefvsdetective,1,STORY,6,event_phantomthiefvsdetective_03_s,,1,77
+event_phantomthiefvsdetective,1,STORY,7,event_phantomthiefvsdetective_03_e,,1,70
+event_phantomthiefvsdetective,1,STORY,8,event_phantomthiefvsdetective_intermission_01,,1,73
+event_phantomthiefvsdetective,1,STORY,9,event_phantomthiefvsdetective_04_s,,1,146
+event_phantomthiefvsdetective,1,STORY,10,event_phantomthiefvsdetective_04_e,,1,89
+event_phantomthiefvsdetective,1,STORY,11,event_phantomthiefvsdetective_05_s,,1,103
+event_phantomthiefvsdetective,1,STORY,12,event_phantomthiefvsdetective_05_e,,1,97
+event_phantomthiefvsdetective,1,STORY,13,event_phantomthiefvsdetective_06_s,,1,123
+event_phantomthiefvsdetective,1,STORY,14,event_phantomthiefvsdetective_06_e,,1,198
+event_phantomthiefvsdetective,1,STORY,15,event_phantomthiefvsdetective_epilogue,,1,88
+event_lifeagain,1,STORY,1,event_lifeagain_prologue,,1,38
+event_lifeagain,1,STORY,2,event_lifeagain_01_s,,1,84
+event_lifeagain,1,STORY,3,event_lifeagain_01_e,,1,96
+event_lifeagain,1,STORY,4,event_lifeagain_02_s,,1,167
+event_lifeagain,1,STORY,5,event_lifeagain_02_e,,1,77
+event_lifeagain,1,STORY,6,event_lifeagain_03_s,,1,56
+event_lifeagain,1,STORY,7,event_lifeagain_03_e,,1,174
+event_lifeagain,1,STORY,8,event_lifeagain_intermission_01,,1,76
+event_lifeagain,1,STORY,9,event_lifeagain_04_s,,1,81
+event_lifeagain,1,STORY,10,event_lifeagain_04_e,,1,100
+event_lifeagain,1,STORY,11,event_lifeagain_05_s,,1,131
+event_lifeagain,1,STORY,12,event_lifeagain_05_e,,1,114
+event_lifeagain,1,STORY,13,event_lifeagain_06_s,,1,136
+event_lifeagain,1,STORY,14,event_lifeagain_06_e,,1,129
+event_lifeagain,1,STORY,15,event_lifeagain_epilogue,,1,57
+event_icedragonsaga1,1,STORY I,1,event_icedragonsaga1_prologue,,1,89
+event_icedragonsaga1,1,STORY I,2,event_icedragonsaga1_01_s,,1,133
+event_icedragonsaga1,1,STORY I,3,event_icedragonsaga1_01_e,,1,127
+event_icedragonsaga1,1,STORY I,4,event_icedragonsaga1_02_s,,1,141
+event_icedragonsaga1,1,STORY I,5,event_icedragonsaga1_02_e,,1,170
+event_icedragonsaga1,1,STORY I,6,event_icedragonsaga1_03_s,,1,130
+event_icedragonsaga1,1,STORY I,7,event_icedragonsaga1_03_e,,1,81
+event_icedragonsaga1,1,STORY I,8,event_icedragonsaga1_intermission_01,,1,67
+event_icedragonsaga1,1,STORY I,9,event_icedragonsaga1_04_s,,1,82
+event_icedragonsaga1,1,STORY I,10,event_icedragonsaga1_04_e,,1,149
+event_icedragonsaga1,1,STORY I,11,event_icedragonsaga1_05_s,,1,96
+event_icedragonsaga1,1,STORY I,12,event_icedragonsaga1_05_e,,1,73
+event_icedragonsaga1,1,STORY I,13,event_icedragonsaga1_06_s,,1,99
+event_icedragonsaga1,1,STORY I,14,event_icedragonsaga1_06_e,,1,66
+event_icedragonsaga1,2,STORY II,15,event_icedragonsaga2_01_s,,1,103
+event_icedragonsaga1,2,STORY II,16,event_icedragonsaga2_01_e,,1,128
+event_icedragonsaga1,2,STORY II,17,event_icedragonsaga2_02_s,,1,151
+event_icedragonsaga1,2,STORY II,18,event_icedragonsaga2_02_e,,1,159
+event_icedragonsaga1,2,STORY II,19,event_icedragonsaga2_03_s,,1,90
+event_icedragonsaga1,2,STORY II,20,event_icedragonsaga2_03_e,,1,53
+event_icedragonsaga1,2,STORY II,21,event_icedragonsaga2_intermission_01,,1,55
+event_icedragonsaga1,2,STORY II,22,event_icedragonsaga2_04_s,,1,85
+event_icedragonsaga1,2,STORY II,23,event_icedragonsaga2_04_e,,1,212
+event_icedragonsaga1,2,STORY II,24,event_icedragonsaga2_05_s,,1,142
+event_icedragonsaga1,2,STORY II,25,event_icedragonsaga2_05_e,,1,81
+event_icedragonsaga1,2,STORY II,26,event_icedragonsaga2_06_s,,1,54
+event_icedragonsaga1,2,STORY II,27,event_icedragonsaga2_06_e,,1,94
+event_icedragonsaga1,2,STORY II,28,event_icedragonsaga2_epilogue,,1,86
+event_footstepwalkrun1,1,STORY I,1,event_footstepwalkrun1_prologue,,1,47
+event_footstepwalkrun1,1,STORY I,2,event_footstepwalkrun1_01_s,,1,112
+event_footstepwalkrun1,1,STORY I,3,event_footstepwalkrun1_01_e,,1,87
+event_footstepwalkrun1,1,STORY I,4,event_footstepwalkrun1_02_s,,1,42
+event_footstepwalkrun1,1,STORY I,5,event_footstepwalkrun1_02_e,,1,83
+event_footstepwalkrun1,1,STORY I,6,event_footstepwalkrun1_03_s,,1,68
+event_footstepwalkrun1,1,STORY I,7,event_footstepwalkrun1_03_e,,1,92
+event_footstepwalkrun1,1,STORY I,8,event_footstepwalkrun1_intermission_01,,1,102
+event_footstepwalkrun1,1,STORY I,9,event_footstepwalkrun1_04_s,,1,108
+event_footstepwalkrun1,1,STORY I,10,event_footstepwalkrun1_04_e,,1,86
+event_footstepwalkrun1,1,STORY I,11,event_footstepwalkrun1_05_s,,1,84
+event_footstepwalkrun1,1,STORY I,12,event_footstepwalkrun1_05_e,,1,69
+event_footstepwalkrun1,1,STORY I,13,event_footstepwalkrun1_06_s,,1,224
+event_footstepwalkrun1,1,STORY I,14,event_footstepwalkrun1_06_e,,1,145
+event_footstepwalkrun1,1,STORY I,15,event_footstepwalkrun2_01_s,,1,44
+event_footstepwalkrun1,1,STORY I,16,event_footstepwalkrun2_01_e,,1,95
+event_footstepwalkrun1,1,STORY I,17,event_footstepwalkrun2_02_s,,1,78
+event_footstepwalkrun1,1,STORY I,18,event_footstepwalkrun2_02_e,,1,62
+event_footstepwalkrun1,1,STORY I,19,event_footstepwalkrun2_03_s,,1,51
+event_footstepwalkrun1,1,STORY I,20,event_footstepwalkrun2_03_e,,1,72
+event_footstepwalkrun1,1,STORY I,21,event_footstepwalkrun2_intermission_01,,1,199
+event_footstepwalkrun1,1,STORY I,22,event_footstepwalkrun2_04_s,,1,73
+event_footstepwalkrun1,1,STORY I,23,event_footstepwalkrun2_04_e,,1,143
+event_footstepwalkrun1,1,STORY I,24,event_footstepwalkrun2_05_s,,1,48
+event_footstepwalkrun1,1,STORY I,25,event_footstepwalkrun2_05_e,,1,74
+event_footstepwalkrun1,1,STORY I,26,event_footstepwalkrun2_06_s,,1,179
+event_footstepwalkrun1,1,STORY I,27,event_footstepwalkrun2_06_e,,1,121
+event_footstepwalkrun1,1,STORY I,28,event_footstepwalkrun2_epilogue,,1,61
+event_romanticvalentine,1,STORY,1,event_romanticvalentine_prologue,,1,52
+event_romanticvalentine,1,STORY,2,event_romanticvalentine_01_s,,1,36
+event_romanticvalentine,1,STORY,3,event_romanticvalentine_01_e,,1,167
+event_romanticvalentine,1,STORY,4,event_romanticvalentine_02_s,,1,200
+event_romanticvalentine,1,STORY,5,event_romanticvalentine_02_e,,1,162
+event_romanticvalentine,1,STORY,6,event_romanticvalentine_03_s,,1,146
+event_romanticvalentine,1,STORY,7,event_romanticvalentine_03_e,,1,152
+event_romanticvalentine,1,STORY,8,event_romanticvalentine_intermission_01,,1,143
+event_romanticvalentine,1,STORY,9,event_romanticvalentine_04_s,,1,127
+event_romanticvalentine,1,STORY,10,event_romanticvalentine_04_e,,1,111
+event_romanticvalentine,1,STORY,11,event_romanticvalentine_05_s,,1,70
+event_romanticvalentine,1,STORY,12,event_romanticvalentine_05_e,,1,81
+event_romanticvalentine,1,STORY,13,event_romanticvalentine_06_s,,1,63
+event_romanticvalentine,1,STORY,14,event_romanticvalentine_06_e,,1,91
+event_romanticvalentine,1,STORY,15,event_romanticvalentine_epilogue,,1,102
+event_secretgarden,1,STORY,1,event_secretgarden_prologue,,1,99
+event_secretgarden,1,STORY,2,event_secretgarden_01_s,,1,91
+event_secretgarden,1,STORY,3,event_secretgarden_01_e,,1,91
+event_secretgarden,1,STORY,4,event_secretgarden_02_s,,1,62
+event_secretgarden,1,STORY,5,event_secretgarden_02_e,,1,121
+event_secretgarden,1,STORY,6,event_secretgarden_03_s,,1,44
+event_secretgarden,1,STORY,7,event_secretgarden_03_e,,1,130
+event_secretgarden,1,STORY,8,event_secretgarden_intermission_01,,1,123
+event_secretgarden,1,STORY,9,event_secretgarden_04_s,,1,92
+event_secretgarden,1,STORY,10,event_secretgarden_04_e,,1,100
+event_secretgarden,1,STORY,11,event_secretgarden_05_s,,1,103
+event_secretgarden,1,STORY,12,event_secretgarden_05_e,,1,130
+event_secretgarden,1,STORY,13,event_secretgarden_06_s,,1,142
+event_secretgarden,1,STORY,14,event_secretgarden_06_e,,1,153
+event_secretgarden,1,STORY,15,event_secretgarden_epilogue,,1,44
+event_wisdomspring,1,STORY,1,event_wisdomspring_prologue,,1,25
+event_wisdomspring,1,STORY,2,event_wisdomspring_01_s,,1,55
+event_wisdomspring,1,STORY,3,event_wisdomspring_01_e,,1,73
+event_wisdomspring,1,STORY,4,event_wisdomspring_02_s,,1,55
+event_wisdomspring,1,STORY,5,event_wisdomspring_02_e,,1,55
+event_wisdomspring,1,STORY,6,event_wisdomspring_03_s,,1,38
+event_wisdomspring,1,STORY,7,event_wisdomspring_03_e,,1,80
+event_wisdomspring,1,STORY,8,event_wisdomspring_intermission_01,,1,68
+event_wisdomspring,1,STORY,9,event_wisdomspring_04_s,,1,142
+event_wisdomspring,1,STORY,10,event_wisdomspring_04_e,,1,45
+event_wisdomspring,1,STORY,11,event_wisdomspring_05_s,,1,53
+event_wisdomspring,1,STORY,12,event_wisdomspring_05_e,,1,101
+event_wisdomspring,1,STORY,13,event_wisdomspring_06_s,,1,127
+event_wisdomspring,1,STORY,14,event_wisdomspring_06_e,,1,59
+event_wisdomspring,1,STORY,15,event_wisdomspring_epilogue,,1,115
+event_goddessfall1,1,STORY I,1,event_goddessfall1_prologue,,1,103
+event_goddessfall1,1,STORY I,2,event_goddessfall1_01_s,,1,165
+event_goddessfall1,1,STORY I,3,event_goddessfall1_01_e,,1,145
+event_goddessfall1,1,STORY I,4,event_goddessfall1_02_s,,1,133
+event_goddessfall1,1,STORY I,5,event_goddessfall1_02_e,,1,136
+event_goddessfall1,1,STORY I,6,event_goddessfall1_03_s,,1,125
+event_goddessfall1,1,STORY I,7,event_goddessfall1_03_e,,1,83
+event_goddessfall1,1,STORY I,8,event_goddessfall1_intermission_01,,1,142
+event_goddessfall1,1,STORY I,9,event_goddessfall1_04_s,,1,101
+event_goddessfall1,1,STORY I,10,event_goddessfall1_04_e,,1,235
+event_goddessfall1,1,STORY I,11,event_goddessfall1_05_s,,1,165
+event_goddessfall1,1,STORY I,12,event_goddessfall1_05_e,,1,201
+event_goddessfall1,1,STORY I,13,event_goddessfall1_06_s,,1,165
+event_goddessfall1,1,STORY I,14,event_goddessfall1_06_e,,1,144
+event_goddessfall1,2,STORY II,15,event_goddessfall2_01_s,,1,94
+event_goddessfall1,2,STORY II,16,event_goddessfall2_01_e,,1,113
+event_goddessfall1,2,STORY II,17,event_goddessfall2_02_s,,1,171
+event_goddessfall1,2,STORY II,18,event_goddessfall2_02_e,,1,92
+event_goddessfall1,2,STORY II,19,event_goddessfall2_03_s,,1,103
+event_goddessfall1,2,STORY II,20,event_goddessfall2_03_e,,1,168
+event_goddessfall1,2,STORY II,21,event_goddessfall2_intermission_01,,1,219
+event_goddessfall1,2,STORY II,22,event_goddessfall2_04_s,,1,134
+event_goddessfall1,2,STORY II,23,event_goddessfall2_04_e,,1,128
+event_goddessfall1,2,STORY II,24,event_goddessfall2_05_s,,1,234
+event_goddessfall1,2,STORY II,25,event_goddessfall2_05_e,,1,132
+event_goddessfall1,2,STORY II,26,event_goddessfall2_06_s,,1,75
+event_goddessfall1,2,STORY II,27,event_goddessfall2_06_e,,1,161
+event_goddessfall1,2,STORY II,28,event_goddessfall2_epilogue,,1,232
+event_lordforjustice,1,STORY,1,event_lordforjustice_prologue,,1,85
+event_lordforjustice,1,STORY,2,event_lordforjustice_01_s,,1,58
+event_lordforjustice,1,STORY,3,event_lordforjustice_01_e,,1,96
+event_lordforjustice,1,STORY,4,event_lordforjustice_02_s,,1,87
+event_lordforjustice,1,STORY,5,event_lordforjustice_02_e,,1,152
+event_lordforjustice,1,STORY,6,event_lordforjustice_03_s,,1,87
+event_lordforjustice,1,STORY,7,event_lordforjustice_03_e,,1,47
+event_lordforjustice,1,STORY,8,event_lordforjustice_intermission_01,,1,49
+event_lordforjustice,1,STORY,9,event_lordforjustice_04_s,,1,88
+event_lordforjustice,1,STORY,10,event_lordforjustice_04_e,,1,54
+event_lordforjustice,1,STORY,11,event_lordforjustice_05_s,,1,85
+event_lordforjustice,1,STORY,12,event_lordforjustice_05_e,,1,55
+event_lordforjustice,1,STORY,13,event_lordforjustice_06_s,,1,121
+event_lordforjustice,1,STORY,14,event_lordforjustice_06_e,,1,99
+event_lordforjustice,1,STORY,15,event_lordforjustice_epilogue,,1,91
+event_ce006,1,STORY I,1,event_ce006_1_prologue,,1,118
+event_ce006,1,STORY I,2,event_ce006_1_01_s,,1,79
+event_ce006,1,STORY I,3,event_ce006_1_01_e,,1,117
+event_ce006,1,STORY I,4,event_ce006_1_02_s,,1,45
+event_ce006,1,STORY I,5,event_ce006_1_02_e,,1,96
+event_ce006,1,STORY I,6,event_ce006_1_03_s,,1,143
+event_ce006,1,STORY I,7,event_ce006_1_03_e,,1,142
+event_ce006,1,STORY I,8,event_ce006_1_intermission_01,,1,76
+event_ce006,1,STORY I,9,event_ce006_1_04_s,,1,54
+event_ce006,1,STORY I,10,event_ce006_1_04_e,,1,82
+event_ce006,1,STORY I,11,event_ce006_1_05_s,,1,169
+event_ce006,1,STORY I,12,event_ce006_1_05_e,,1,80
+event_ce006,1,STORY I,13,event_ce006_1_06_s,,1,96
+event_ce006,1,STORY I,14,event_ce006_1_06_e,,1,100
+event_ce006,2,STORY II,15,event_ce006_2_01_s,,1,118
+event_ce006,2,STORY II,16,event_ce006_2_01_e,,1,41
+event_ce006,2,STORY II,17,event_ce006_2_02_s,,1,90
+event_ce006,2,STORY II,18,event_ce006_2_02_e,,1,48
+event_ce006,2,STORY II,19,event_ce006_2_03_s,,1,89
+event_ce006,2,STORY II,20,event_ce006_2_03_e,,1,119
+event_ce006,2,STORY II,21,event_ce006_2_intermission_01,,1,119
+event_ce006,2,STORY II,22,event_ce006_3_01_s,,1,53
+event_ce006,2,STORY II,23,event_ce006_3_01_e,,1,183
+event_ce006,2,STORY II,24,event_ce006_2_04_s,,1,77
+event_ce006,2,STORY II,25,event_ce006_2_04_e,,1,189
+event_ce006,2,STORY II,26,event_ce006_3_02_s,,1,78
+event_ce006,2,STORY II,27,event_ce006_3_02_e,,1,111
+event_ce006,2,STORY II,28,event_ce006_2_05_s,,1,198
+event_ce006,2,STORY II,29,event_ce006_2_05_e,,1,101
+event_ce006,2,STORY II,30,event_ce006_3_03_s,,1,153
+event_ce006,2,STORY II,31,event_ce006_3_03_e,,1,203
+event_ce006,2,STORY II,32,event_ce006_2_06_s,,1,205
+event_ce006,2,STORY II,33,event_ce006_2_06_e,,1,202
+event_ce006,2,STORY II,34,event_ce006_3_epilogue,,1,161
+event_overthehorizon,1,STORY,1,event_overthehorizon_prologue,,1,27
+event_overthehorizon,1,STORY,2,event_overthehorizon_01_s,,1,91
+event_overthehorizon,1,STORY,3,event_overthehorizon_01_e,,1,121
+event_overthehorizon,1,STORY,4,event_overthehorizon_02_s,,1,82
+event_overthehorizon,1,STORY,5,event_overthehorizon_02_e,,1,139
+event_overthehorizon,1,STORY,6,event_overthehorizon_03_s,,1,54
+event_overthehorizon,1,STORY,7,event_overthehorizon_03_e,,1,26
+event_overthehorizon,1,STORY,8,event_overthehorizon_intermission_01,,1,93
+event_overthehorizon,1,STORY,9,event_overthehorizon_04_s,,1,83
+event_overthehorizon,1,STORY,10,event_overthehorizon_04_e,,1,68
+event_overthehorizon,1,STORY,11,event_overthehorizon_05_s,,1,35
+event_overthehorizon,1,STORY,12,event_overthehorizon_05_e,,1,81
+event_overthehorizon,1,STORY,13,event_overthehorizon_06_s,,1,94
+event_overthehorizon,1,STORY,14,event_overthehorizon_06_e,,1,209
+event_overthehorizon,1,STORY,15,event_overthehorizon_epilogue,,1,60
+event_boomtheghost1,1,STORY I,1,event_boomtheghost1_prologue,,0,0
+event_boomtheghost1,1,STORY I,2,event_boomtheghost1_01_s,,0,0
+event_boomtheghost1,1,STORY I,3,event_boomtheghost1_01_e,,0,0
+event_boomtheghost1,1,STORY I,4,event_boomtheghost1_02_s,,0,0
+event_boomtheghost1,1,STORY I,5,event_boomtheghost1_02_e,,0,0
+event_boomtheghost1,1,STORY I,6,event_boomtheghost1_03_s,,0,0
+event_boomtheghost1,1,STORY I,7,event_boomtheghost1_03_e,,0,0
+event_boomtheghost1,1,STORY I,8,event_boomtheghost1_intermission_01,,0,0
+event_boomtheghost1,1,STORY I,9,event_boomtheghost1_04_s,,0,0
+event_boomtheghost1,1,STORY I,10,event_boomtheghost1_04_e,,0,0
+event_boomtheghost1,1,STORY I,11,event_boomtheghost1_05_s,,0,0
+event_boomtheghost1,1,STORY I,12,event_boomtheghost1_05_e,,0,0
+event_boomtheghost1,1,STORY I,13,event_boomtheghost1_06_s,,0,0
+event_boomtheghost1,1,STORY I,14,event_boomtheghost1_06_e,,0,0
+event_boomtheghost1,2,STORY II,15,event_boomtheghost2_01_s,,0,0
+event_boomtheghost1,2,STORY II,16,event_boomtheghost2_01_e,,0,0
+event_boomtheghost1,2,STORY II,17,event_boomtheghost2_02_s,,0,0
+event_boomtheghost1,2,STORY II,18,event_boomtheghost2_02_e,,0,0
+event_boomtheghost1,2,STORY II,19,event_boomtheghost2_03_s,,0,0
+event_boomtheghost1,2,STORY II,20,event_boomtheghost2_03_e,,0,0
+event_boomtheghost1,2,STORY II,21,event_boomtheghost2_intermission_01,,0,0
+event_boomtheghost1,2,STORY II,22,event_boomtheghost2_04_s,,0,0
+event_boomtheghost1,2,STORY II,23,event_boomtheghost2_04_e,,0,0
+event_boomtheghost1,2,STORY II,24,event_boomtheghost2_05_s,,0,0
+event_boomtheghost1,2,STORY II,25,event_boomtheghost2_05_e,,0,0
+event_boomtheghost1,2,STORY II,26,event_boomtheghost2_06_s,,0,0
+event_boomtheghost1,2,STORY II,27,event_boomtheghost2_06_e,,0,0
+event_boomtheghost1,2,STORY II,28,event_boomtheghost2_epilogue,,0,0
+event_forrest,1,STORY,1,event_forrest_prologue,,0,0
+event_forrest,1,STORY,2,event_forrest_01_s,,0,0
+event_forrest,1,STORY,3,event_forrest_01_e,,0,0
+event_forrest,1,STORY,4,event_forrest_02_s,,0,0
+event_forrest,1,STORY,5,event_forrest_02_e,,0,0
+event_forrest,1,STORY,6,event_forrest_03_s,,0,0
+event_forrest,1,STORY,7,event_forrest_03_e,,0,0
+event_forrest,1,STORY,8,event_forrest_intermission_01,,0,0
+event_forrest,1,STORY,9,event_forrest_04_s,,0,0
+event_forrest,1,STORY,10,event_forrest_04_e,,0,0
+event_forrest,1,STORY,11,event_forrest_05_s,,0,0
+event_forrest,1,STORY,12,event_forrest_05_e,,0,0
+event_forrest,1,STORY,13,event_forrest_06_s,,0,0
+event_forrest,1,STORY,14,event_forrest_06_e,,0,0
+event_forrest,1,STORY,15,event_forrest_epilogue,,0,0
+event_newflavor,1,STORY,1,event_newflavor_prologue,,1,42
+event_newflavor,1,STORY,2,event_newflavor_01_s,,1,81
+event_newflavor,1,STORY,3,event_newflavor_01_e,,1,77
+event_newflavor,1,STORY,4,event_newflavor_02_s,,1,94
+event_newflavor,1,STORY,5,event_newflavor_02_e,,1,91
+event_newflavor,1,STORY,6,event_newflavor_03_s,,1,119
+event_newflavor,1,STORY,7,event_newflavor_03_e,,1,104
+event_newflavor,1,STORY,8,event_newflavor_intermission_01,,1,123
+event_newflavor,1,STORY,9,event_newflavor_04_s,,1,74
+event_newflavor,1,STORY,10,event_newflavor_04_e,,1,89
+event_newflavor,1,STORY,11,event_newflavor_05_s,,1,126
+event_newflavor,1,STORY,12,event_newflavor_05_e,,1,70
+event_newflavor,1,STORY,13,event_newflavor_06_s,,1,103
+event_newflavor,1,STORY,14,event_newflavor_06_e,,1,211
+event_newflavor,1,STORY,15,event_newflavor_epilogue,,1,67
+event_trueflavor,1,STORY,1,event_trueflavor_prologue,,1,95
+event_trueflavor,1,STORY,2,event_trueflavor_01_s,,1,94
+event_trueflavor,1,STORY,3,event_trueflavor_01_e,,1,114
+event_trueflavor,1,STORY,4,event_trueflavor_02_s,,1,78
+event_trueflavor,1,STORY,5,event_trueflavor_02_e,,1,86
+event_trueflavor,1,STORY,6,event_trueflavor_03_s,,1,96
+event_trueflavor,1,STORY,7,event_trueflavor_03_e,,1,90
+event_trueflavor,1,STORY,8,event_trueflavor_intermission_01,,1,81
+event_trueflavor,1,STORY,9,event_trueflavor_04_s,,1,92
+event_trueflavor,1,STORY,10,event_trueflavor_04_e,,1,88
+event_trueflavor,1,STORY,11,event_trueflavor_05_s,,1,95
+event_trueflavor,1,STORY,12,event_trueflavor_05_e,,1,93
+event_trueflavor,1,STORY,13,event_trueflavor_06_s,,1,68
+event_trueflavor,1,STORY,14,event_trueflavor_06_e,,1,134
+event_trueflavor,1,STORY,15,event_trueflavor_epilogue,,1,100
+event_arcanearchive,1,STORY,1,event_arcanearchive_prologue,,1,43
+event_arcanearchive,1,STORY,2,event_arcanearchive_01_s,,1,54
+event_arcanearchive,1,STORY,3,event_arcanearchive_01_e,,1,62
+event_arcanearchive,1,STORY,4,event_arcanearchive_02_s,,1,147
+event_arcanearchive,1,STORY,5,event_arcanearchive_02_e,,1,111
+event_arcanearchive,1,STORY,6,event_arcanearchive_03_s,,1,112
+event_arcanearchive,1,STORY,7,event_arcanearchive_03_e,,1,124
+event_arcanearchive,1,STORY,8,event_arcanearchive_intermission_01,,1,63
+event_arcanearchive,1,STORY,9,event_arcanearchive_04_s,,1,99
+event_arcanearchive,1,STORY,10,event_arcanearchive_04_e,,1,118
+event_arcanearchive,1,STORY,11,event_arcanearchive_05_s,,1,122
+event_arcanearchive,1,STORY,12,event_arcanearchive_05_e,,1,113
+event_arcanearchive,1,STORY,13,event_arcanearchive_06_s,,1,140
+event_arcanearchive,1,STORY,14,event_arcanearchive_06_e,,1,198
+event_arcanearchive,1,STORY,15,event_arcanearchive_epilogue,,1,105
+event_staranis1,1,STORY I,1,event_staranis1_prologue,,1,151
+event_staranis1,1,STORY I,2,event_staranis1_01_s,,1,145
+event_staranis1,1,STORY I,3,event_staranis1_01_e,,1,140
+event_staranis1,1,STORY I,4,event_staranis1_02_s,,1,68
+event_staranis1,1,STORY I,5,event_staranis1_02_e,,1,148
+event_staranis1,1,STORY I,6,event_staranis1_03_s,,1,157
+event_staranis1,1,STORY I,7,event_staranis1_03_e,,1,224
+event_staranis1,1,STORY I,8,event_staranis1_intermission_01,,1,120
+event_staranis1,1,STORY I,9,event_staranis1_04_s,,1,140
+event_staranis1,1,STORY I,10,event_staranis1_04_e,,1,109
+event_staranis1,1,STORY I,11,event_staranis1_05_s,,1,188
+event_staranis1,1,STORY I,12,event_staranis1_05_e,,1,300
+event_staranis1,1,STORY I,13,event_staranis1_06_s,,1,248
+event_staranis1,1,STORY I,14,event_staranis1_06_e,,1,212
+event_staranis1,2,STORY II,15,event_staranis2_01_s,,1,178
+event_staranis1,2,STORY II,16,event_staranis2_01_e,,1,158
+event_staranis1,2,STORY II,17,event_staranis2_02_s,,1,188
+event_staranis1,2,STORY II,18,event_staranis2_02_e,,1,198
+event_staranis1,2,STORY II,19,event_staranis2_03_s,,1,132
+event_staranis1,2,STORY II,20,event_staranis2_03_e,,1,147
+event_staranis1,2,STORY II,21,event_staranis2_intermission_01,,1,88
+event_staranis1,2,STORY II,22,event_staranis2_04_s,,1,113
+event_staranis1,2,STORY II,23,event_staranis2_04_e,,1,188
+event_staranis1,2,STORY II,24,event_staranis2_05_s,,1,180
+event_staranis1,2,STORY II,25,event_staranis2_05_e,,1,161
+event_staranis1,2,STORY II,26,event_staranis2_06_s,,1,128
+event_staranis1,2,STORY II,27,event_staranis2_06_e,,1,78
+event_staranis1,2,STORY II,28,event_staranis2_epilogue,,1,105
+event_firstaffection,1,,1,event_firstaffection_01,,1,28
+event_firstaffection,1,,2,event_firstaffection_02,,1,47
+event_firstaffection,1,,3,event_firstaffection_03,,1,106
+event_firstaffection,1,,4,event_firstaffection_04,,1,38
+event_firstaffection,1,,5,event_firstaffection_05,,1,23
+event_firstaffection,1,,6,event_firstaffection_06,,1,21
+event_firstaffection,1,,7,event_firstaffection_07,,1,25
+event_firstaffection,1,,8,event_firstaffection_08,,1,77
+event_fullfoolday,1,,1,event_fullfoolday_01,,1,11
+event_fullfoolday,1,,2,event_fullfoolday_02,,1,8
+event_fullfoolday,1,,3,event_fullfoolday_03,,1,11
+event_fullfoolday,1,,4,event_fullfoolday_04,,1,31
+event_fullfoolday,1,,5,event_fullfoolday_05,,1,19
+event_fullfoolday,1,,6,event_fullfoolday_06,,1,27
+event_fullfoolday,1,,7,event_fullfoolday_07,,1,43
+event_fullfoolday,1,,8,event_fullfoolday_08,,1,97
+event_fullfoolday,1,,9,event_fullfoolday_09,,1,94
+event_fullfoolday,1,,10,event_fullfoolday_10,,1,99
+event_fullfoolday,1,,11,event_fullfoolday_11,,1,82
+event_fullfoolday,1,,12,event_fullfoolday_end,,1,66
+event_liarsend,1,,1,event_liarsend_01,,1,47
+event_liarsend,1,,2,event_liarsend_02,,1,43
+event_liarsend,1,,3,event_liarsend_03,,1,98
+event_liarsend,1,,4,event_liarsend_04,,1,49
+event_liarsend,1,,5,event_liarsend_05,,1,84
+event_liarsend,1,,6,event_liarsend_06,,1,92
+event_liarsend,1,,7,event_liarsend_07,,1,9
+event_liarsend,1,,8,event_liarsend_08,,1,14
+event_liarsend,1,,9,event_liarsend_09,,1,74
+event_liarsend,1,,10,event_liarsend_10,,1,13
+event_liarsend,1,,11,event_liarsend_11,,1,63
+event_liarsend,1,,12,event_liarsend_12,,1,84
+event_nonsensered,1,,1,event_nonsensered_1,,1,41
+event_nonsensered,1,,2,event_nonsensered_2,,1,67
+event_nonsensered,1,,3,event_nonsensered_3,,1,39
+event_nonsensered,1,,4,event_nonsensered_4,,1,70
+event_nonsensered,1,,5,event_nonsensered_5,,1,75
+event_nonsensered,1,,6,event_nonsensered_6,,1,52
+event_nonsensered,1,,7,event_nonsensered_7,,1,30
+event_outofuniform,1,,1,event_outofuniform_01,,1,98
+event_outofuniform,1,,2,event_outofuniform_02,,1,120
+event_outofuniform,1,,3,event_outofuniform_03,,1,117
+event_outofuniform,1,,4,event_outofuniform_04,,1,139
+event_outofuniform,1,,5,event_outofuniform_05,,1,130
+event_outofuniform,1,,6,event_outofuniform_06,,1,107
+event_foolburstday,1,,1,event_foolburstday_01,,1,92
+event_foolburstday,1,,2,event_foolburstday_02,,1,66
+event_foolburstday,1,,3,event_foolburstday_03,,1,88
+event_foolburstday,1,,4,event_foolburstday_04,,1,127
+event_foolburstday,1,,5,event_foolburstday_05,,1,106
+event_foolburstday,1,,6,event_foolburstday_06,,1,51
+event_foolburstday,1,,7,event_foolburstday_07,,1,83
+event_foolburstday,1,,8,event_foolburstday_08,,1,7
+event_foolburstday,1,,9,event_foolburstday_09,,1,15
+event_foolburstday,1,,10,event_foolburstday_10_s,,1,21
+event_foolburstday,1,,11,event_foolburstday_10_e,,1,30
+event_foolburstday,1,,12,event_foolburstday_11,,1,82
+event_foolburstday,1,,13,event_foolburstday_12_s,,1,11
+event_foolburstday,1,,14,event_foolburstday_12_e,,1,10
+event_foolburstday,1,,15,event_foolburstday_13,,1,44
+event_foolburstday,1,,16,event_foolburstday_14,,1,96

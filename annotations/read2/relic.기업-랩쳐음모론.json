@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:기업-랩쳐음모론",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U71",
+      "topic": "구시대",
+      "text": "침공 초기에는 랩쳐가 기업의 실패작이라는 '국가안보메일' 음모론이 돌았고, 기업 비리를 고발한 이는 방주 블랙리스트에 올라 출입을 거부당했다며 방주를 '사상과 언론이 통제되는 디스토피아'라 경고했다",
+      "about": ["place:방주", "org:미실리스"],
+      "points": ["F300", "F301"],
+      "evidence": [{ "scene": "relic:기업-랩쳐음모론_04", "lines": ["1-4"] }],
+      "reason": "_00 · _02 · _03 음모론, _04#1-4 출입 거부 · 디스토피아",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

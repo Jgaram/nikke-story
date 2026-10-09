@@ -1,0 +1,101 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M53\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:180",
+  "session": "M53",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I485",
+      "target": "person:길로틴",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": ["6-7"] }],
+      "reason": "'큭. 크크큭' · '크하하하하!' 웃음 뒤 #8에서 길로틴 이름표로 이어 말한다 — 등장 연출의 ???",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1248",
+      "act": "암시",
+      "points": ["F1681"],
+      "text": "침식된 니케가 '인간의 수호 · 랩쳐의 섬멸'을 뒤바꿔 말하자, 지휘관이 '인간의 자업자득'이냐 묻고 길로틴이 틀리지 않았다고 한다 — 침식을 랩쳐 기준의 사고로 키운 것이 사람(레드 슈즈)이었다",
+      "about": ["concept:침식"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["13-24"] }],
+      "reason": "#16-17 두 단어를 맞바꾼 랩쳐의 수 · #23 '벌을 받았다' — 침식의 대도약이 사람 손이었다는 F1681(oldtales)의 반어적 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1352",
+      "person": "person:길로틴",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'길로틴 드 메피스토' · [조직] · [협회] · 편익의 마왕 같은 거창한 설정으로 망상 결투를 벌이면서도, 허세가 안 먹히면 힐끔힐끔 눈치를 보는 중2병 니케",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": ["8-11", "75-77", "117-132"] }],
+      "reason": "출시 첫날 단위라 ch23의 성격 기준(D274)보다 앞선다 — 같은 모습이라 이쪽을 기준으로 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1353",
+      "person": "person:길로틴",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 [조직]의 개 · 에이스 요원이라 부르며 가상화 '망상 결투'를 거는 라이벌 놀이 상대로 대한다",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": [14, "62-63", "80-83"] }],
+      "reason": "#14 '[조직]의 개다운 패기' · #63 '[조직]의 에이스'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1354",
+      "person": "person:길로틴",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "망상 결투를 거는 [조직]의 에이스",
+      "after": "처분의 고통을 알아봐 준 그를 [협회] 예비 회원 · 서번트로 받아들이고 손등 키스에 얼굴을 붉히는",
+      "trigger": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["66-80"] }],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["127-145", "166-178"] }],
+      "reason": "#66 '너는 분명히 슬퍼 보였어' → #78-80 '맑은 눈' · #132 서번트로 받아들임 · #177 얼굴이 더 붉어짐",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1355",
+      "person": "person:길로틴",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:잉그리드"],
+      "text": "자기가 '임시 협회장'을 맡긴 잉그리드에게 안구 사용 허가를 전화로 조르다 잔소리를 듣고 거절당하는, 허가 없이는 힘을 쓰지 못하는 사이",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": ["112-132"] }],
+      "reason": "#119 '내 안구 사용 허가 좀' · #125 '잔소리 좀 그만해라' · #129 허가를 못 해준다 — 03#35-36 임시 협회장",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1356",
+      "person": "person:길로틴",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "처분하지 않으면 유가족 · 니케포비아 단체가 거리로 쏟아진다며, 살려 달라는 침식된 니케도 [협회]의 명령대로 처분하는 '도시괴담'의 일을 맡는다",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["34-38", "66-77"] }],
+      "reason": "#45 '내가 바로 그 도시괴담' · #68 '처분하지 않으면 반드시 후환' · #72-75 책임은 누가 지나",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,99 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M62\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:330",
+  "session": "M62",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1363",
+      "act": "암시",
+      "points": ["F1459"],
+      "text": "지휘관이 책상 위에서 [크라운 왕국]이 새겨진 말 모양 나뭇조각을 발견하고 백기사들과의 기억을 떠올린다",
+      "about": ["person:크라운"],
+      "evidence": [{ "scene": "ep:d_nikke_crown_01", "lines": ["2-8"] }],
+      "reason": "#4-6 → 05에서 크라운이 건넨 왕국의 [증표]임이 드러난다(F1459).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1364",
+      "act": "재언급",
+      "points": ["F1445"],
+      "text": "차임이 방벽을 넘은 랩쳐는 왕국 초기 말고는 없었다며 '아가씨가 가진 힘으로' 몰려오는 랩쳐를 늘 싹 다 물리쳤다고 자랑한다",
+      "about": ["person:크라운"],
+      "evidence": [{ "scene": "ep:d_nikke_crown_03", "lines": ["76-81"] }],
+      "reason": "#78-81 — 출시순으로 앞선 LAST KINGDOM이 밝힌 그 힘, 섬멸용 네이키드 킹(F1445). 작중으로는 그 전의 회상(S145).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1542",
+      "person": "person:크라운",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "니케마다 역할을 주어 지휘하는 모습을 탐나는 눈으로 지켜보다 크라운 왕국의 책사가 되어 달라 청하는",
+      "evidence": [{ "scene": "ep:d_nikke_crown_01", "lines": ["62-75"] }],
+      "reason": "#67-68 · #75. 레드 후드에게도 그랬다(#29-35, F1454).",
+      "confidence": "확실",
+      "time": "S145",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1543",
+      "person": "person:크라운",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "왕국을 지킬 책사로 삼으려 설득하던",
+      "after": "그의 [소원](마리안)을 보물처럼 아끼며 힘을 얻어 찾아오라고 '당신의 왕'으로서 기다리겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_crown_04", "lines": ["47-60"] }],
+      "time": "S145",
+      "points": ["F1459"],
+      "evidence": [{ "scene": "ep:d_nikke_crown_05", "lines": ["39-67"] }],
+      "reason": "#46-53 · #62-64. 마리안과의 약속을 들은 04가 계기(F1458).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1544",
+      "person": "person:크라운",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "백성의 소원을 들으려면 왕은 아무 소원도 가져선 안 된다는",
+      "after": "백성의 꿈을 이루는 것이 왕의 꿈이라 비어 있지 않다는 말을 '그렇게도 이야기할 수 있었다'며 받아들이는",
+      "trigger": [{ "scene": "ep:d_nikke_crown_04", "lines": ["112-115"] }],
+      "time": "S145",
+      "points": ["F1457"],
+      "evidence": [{ "scene": "ep:d_nikke_crown_04", "lines": ["116-119"] }],
+      "reason": "전: #106-111. 후: #117-119.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1545",
+      "person": "person:차임",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'이노옴'이라 호통치며 크라운 왕국 책사로 임명해 주니 영광인 줄 알라는, 거절하면 아가씨를 농락했다고 화내는",
+      "evidence": [{ "scene": "ep:d_nikke_crown_02", "lines": ["1-8"] }],
+      "reason": "#3-5 · #87-89. 03#55-57 과거를 캐는 계략가라 몰아세운다.",
+      "confidence": "확실",
+      "time": "S145",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "life": [],
+  "note": "F1458(추정) → 확실: '그날 밤 애타게 찾았던 사람'은 side:second_affection_11#40-45에서 크라운이 문밖에서 밤새 들은 마리안의 '지휘관…'(되짚어 읽기 — DB 검색). 05#12 '혼자 집을 보게 한' 이는 이름이 없어 적지 않았다."
+}

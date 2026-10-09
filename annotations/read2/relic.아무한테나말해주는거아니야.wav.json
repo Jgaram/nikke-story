@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M42\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:아무한테나말해주는거아니야.wav",
+  "session": "M42",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U368",
+      "topic": "방주 사회",
+      "text": "아우터 림에선 불쌍해 보이는 이를 어설프게 돕는 것이 가장 위험하다 — 도움받는 이도 지켜본 이도 \"호구\"로 찍어, 다 같이 불쌍한 처지에 동정은 사치다",
+      "about": ["place:아우터_림"],
+      "points": ["F2417"],
+      "evidence": [{ "scene": "relic:아무한테나말해주는거아니야.wav_01", "lines": ["0-6"] }],
+      "reason": "녹음 둘째 토막. 00 — 방주 출신은 두리번거리다 표적이 된다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "U369",
+      "topic": "방주 사회",
+      "text": "잘 때는 힘센 자 옆에서 자야 해서, 깨어 있는 동안 아부를 떨거나 공물을 바쳐 잘 보이고 다들 그 앞에 줄을 선다",
+      "about": ["place:아우터_림"],
+      "points": ["F2417"],
+      "evidence": [{ "scene": "relic:아무한테나말해주는거아니야.wav_02", "lines": ["6-15"] }],
+      "reason": "03#10 \"이 바닥에 공짜가 어디 있어\" — 강연료로 찌른다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "note": "독립 유실물 — 떡밥 · 인물 변화 없음(녹음 주인은 이름 없는 아우터 림 주민)."
+}

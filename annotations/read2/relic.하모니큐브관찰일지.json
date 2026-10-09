@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M17\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:하모니큐브관찰일지",
+  "session": "M17",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U217",
+      "topic": "지상",
+      "text": "랩쳐와 싸우다 흘러든 니케는 코어 출력이 바닥나 움직이지 못한 채 가상 키보드로 일지를 쓰며 죽음을 기다리고, 큐브의 재료가 되는 것도 '초석'이라 받아들인다",
+      "about": ["concept:니케", "item:하모니_큐브"],
+      "points": ["F1421"],
+      "evidence": [{ "scene": "relic:하모니큐브관찰일지_03", "lines": ["0-4"] }],
+      "reason": "_00#0-5 · _03#4 '초석이 된다고 생각하면 나쁘지 않겠네'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+    }
+  ]
+}

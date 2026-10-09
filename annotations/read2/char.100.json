@@ -1,0 +1,69 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M86\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:100",
+  "session": "M86",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1600",
+      "act": "암시",
+      "points": ["F2786"],
+      "about": ["person:라플라스"],
+      "text": "라플라스가 방화범의 손을 잡고 '히어로는 인간이 힘들고 어려울 때 혼자 내버려 두지 않는다 — 넌 혼자가 아니다'라 한다 — 도움을 외면당해 버려졌던 자기 과거의 반대말",
+      "evidence": [{ "scene": "ep:d_nikke_laplace_05", "lines": ["45-57"] }],
+      "reason": "#54 '혼자 내버려 두지 않는다' · #57 '네 곁엔 언제나 히어로가 있다'. fl:project_matis F2786(도움을 외면한 니케들에게 버려진 뒤 히어로를 맹세)의 메아리.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1964",
+      "person": "person:라플라스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '버드 보이'라 부르며 문 열기는 '부탁'이라 우기고, 팔이 멈춰도 돌봐 주겠다는 그의 도움은 '히어로의 마지막 자존심'이라 사양하는",
+      "evidence": [{ "scene": "ep:d_nikke_laplace_03", "lines": ["17-24", "70-71", "77-80"] }],
+      "reason": "#17 '버드 보이 문 좀 열어주겠나?' · #24 '부탁이었다' · #71 '인간의 도움은 사양한다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    },
+    {
+      "id": "D1965",
+      "person": "person:라플라스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "도움을 사양하는 '버드 보이'",
+      "after": "회복을 '버드 보이 네 덕분'이라 하고, 지켜본 인간에 대한 생각을 털어놓는",
+      "trigger": [{ "scene": "ep:d_nikke_laplace_03", "lines": ["84-120"] }],
+      "evidence": [{ "scene": "ep:d_nikke_laplace_04", "lines": ["12-14"] }],
+      "reason": "03 지휘관이 인간의 일상을 보여 줌 → 04#12 '이게 다 버드 보이 네 덕분이다' · #14 '언제든 나를 불러도 좋다'. 05#83 '버드 보이. 지켜본 결과'로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    },
+    {
+      "id": "D1966",
+      "person": "person:라플라스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "인간은 약하니 히어로가 지킬 뿐 인간의 도움은 받지 않는다는",
+      "after": "인간은 생각보다 제법이라 인정하되, 작은 일이라도 곁에서 손을 잡아 혼자 두지 않고 직접 돕겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_laplace_03", "lines": ["104-118"] }],
+      "evidence": [{ "scene": "ep:d_nikke_laplace_05", "lines": ["51-54", "83-87"] }],
+      "points": ["F721"],
+      "reason": "03#78-80 '히어로는 인간에게 도움받는 게 아니라 지켜줘야' → 03#113 시민들이 힘을 합쳐 구출 → 05#83 '인간은 생각보다 제법' · #86 '직접 도와줘야'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 정체 볼 줄 — 정할 수 없음: ep:d_nikke_laplace_04#71 (쇼핑몰 직원 — 다음 줄 '직원'), #91 · #94 (이름 없는 방화범 — 전 미실리스 책임 연구원, F722). 성격 기준 D89 · 신념 기준 D88(ch11)이 앞서 있어 다시 세우지 않았다. 팔이 멈춘 것(F720)은 일시적이라 신체 변화로 세우지 않았다. 아니스 · 네온 · 맥스웰은 짧게 나와 관계를 세우지 않았다."
+}

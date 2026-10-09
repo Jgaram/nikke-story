@@ -1,0 +1,159 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M08\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:white_memory",
+  "session": "M08",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I78",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_06", "lines": [0] }],
+      "reason": "#0 환각 버섯을 먹어도 희뿌연 '보고 싶은 그 얼굴' — 릴리스(F929)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "I79",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_11", "lines": ["2-9"] }],
+      "reason": "#2-9 [그녀]의 얼굴 · 이름을 떠올리지 못해 ■■(죽음)을 인정 못 한다 — 릴리스(F929)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "I80",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_12", "lines": ["9-15"] }],
+      "reason": "#9-10 [그녀]의 쪽지 '우리가 인류를 구원할 수 있기를' — 릴리스의 쪽지(F930)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "I81",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:white_memory_19", "lines": ["1-4"] }],
+      "reason": "#1 군번줄의 이름이 '그의 것', #4 '그가 그녀를 사랑했던 만큼' — 갓데스의 지휘관 엔더슨(Q131 회수 F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E205",
+      "act": "암시",
+      "points": ["F2558"],
+      "text": "추억의 캡슐에 '우리의 이름을 알아주는 날이 오길'이라는 쪽지가 있다(도로시의 것, F930-2) — 오스왈드가 지워진 갓데스의 기록을 몰래 써 남긴다(F2558)",
+      "about": ["org:갓데스"],
+      "evidence": [{ "scene": "erelic:white_memory_12", "lines": [4] }],
+      "reason": "#4. 쪽지 주인은 char:471에서 밝혀진다. 기록과 잇는 것은 주제의 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "E206",
+      "act": "암시",
+      "points": ["F1161"],
+      "text": "캡슐에 '고향의 밥과 술이 먹고 싶다!'는 쪽지가 있다(레드 후드의 것, F930-2) — 레드 후드는 고향 가던 길에 쓰러진다(F1161)",
+      "about": ["person:레드_후드"],
+      "evidence": [{ "scene": "erelic:white_memory_12", "lines": [5] }],
+      "reason": "#5. 쪽지 주인은 char:471. 고향행과 잇는 확인은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D255",
+      "person": "person:스노우_화이트",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "사고 전환으로 릴리스의 얼굴도 이름도 떠올리지 못해 관 앞 한 걸음을 떼지 못하는",
+      "after": "추억을 더듬어 '나의 언니, 나의 우상'을 기억해 내고 관에 꽃을 올려 [안녕]을 고한",
+      "trigger": [{ "scene": "erelic:white_memory_04", "lines": ["0-8"] }],
+      "time": "S73",
+      "points": ["F929", "F931"],
+      "evidence": [{ "scene": "erelic:white_memory_18", "lines": ["7-28"] }],
+      "reason": "#9-26. 앞 모습 06#0 · 11#1-12, 계기는 라푼젤이 알려 준 헤어지는 법(04)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "D256",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:릴리바이스"],
+      "text": "릴리바이스를 '나의 언니, 나의 동료, 나의 이해자', 빛나던 우상이라 부르며 그녀의 영광이 곧 자기 영광이었다는 동생",
+      "evidence": [{ "scene": "erelic:white_memory_18", "lines": ["10-25"] }],
+      "reason": "#5 '스노우 화이트의 우상', #13-14, #24-25. 17#4 '…언니'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "D257",
+      "person": "person:스노우_화이트",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "'우리는 인류를 지켜냈다'는 긍지로 퀸을 쫓아 지상을 도는",
+      "after": "지상의 모든 랩쳐를 섬멸하고 언니의 머리를 찾아 언니의 소원(인류 구원)을 이루겠다는",
+      "trigger": [{ "scene": "erelic:white_memory_20", "lines": ["0-16"] }],
+      "time": "S348",
+      "points": ["F934", "F2379"],
+      "evidence": [{ "scene": "erelic:white_memory_20", "lines": ["26-41"] }],
+      "reason": "#29-30, #40-41. 글자가 깨지는 #34 · #41은 두 번째 큰 사고 전환(F2379)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "D258",
+      "person": "person:릴리바이스",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "석관에 잠든 듯 온전히 누운",
+      "after": "관이 부서지고 머리를 빼앗겨 몸통만 남은",
+      "time": "S348",
+      "points": ["F933"],
+      "evidence": [{ "scene": "erelic:white_memory_20", "lines": ["0-4"] }],
+      "reason": "#1-2. 머리는 리버렐리오가 퀸에게 보냈다(Q132 회수 F2268)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "D259",
+      "person": "person:라푼젤",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:레드_후드"],
+      "text": "도색 잡지로 자기를 부끄럽게 하며 놀리던 레드 후드가 싫었지만, 떠난 뒤엔 그 부끄러움마저 그립다는 동료",
+      "evidence": [{ "scene": "erelic:white_memory_16", "lines": ["0-11"] }],
+      "reason": "#4, #7-8, #10-11",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U154",
+      "topic": "구시대",
+      "text": "밀봉 무렵 지상의 니케들은 사슴 사냥 · 덫 · 맨손 낚시 · 버려진 공장에서 통조림 깡통 요리로 먹을 것을 구하며 초소로 돌아왔다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "erelic:white_memory_02", "lines": ["0-7"] }],
+      "reason": "#0, #6-7. 01 사슴, 03 공장 안 수프, 07 덫도",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    }
+  ]
+}

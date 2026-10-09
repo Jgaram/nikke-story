@@ -1,0 +1,56 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M95\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:551",
+  "session": "M95",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "status": "확정",
+      "id": "I664",
+      "target": "person:베이",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_clay_01", "lines": [15] }],
+      "reason": "#15 `???: …클레이.` 바로 뒤 #17 '베, 베이?' · #18 '경기장 문 옆에서, 베이가 천천히 걸어 나왔다'.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2112",
+      "person": "person:클레이",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "쉴 때도 공연 영상 복습 · 안무 연습 · 체력 단련으로 스스로 몰아붙이고, 쉬는 것조차 '열심히 해야지' 하고 힘이 들어가던",
+      "after": "가장 좋아하는 응원 — 리와인드 공연 영상 보기 — 를 자기만의 휴식법으로 깨닫고 제 방식대로 쉬어 몸이 가벼워진",
+      "trigger": [{ "scene": "ep:d_nikke_clay_05", "lines": ["25-29"] }],
+      "evidence": [{ "scene": "ep:d_nikke_clay_05", "lines": ["57-70", "87-91"] }],
+      "time": "S156",
+      "reason": "01#58-60 · 04#5-6 '열심히 해야지잇! 하고 힘이 들어가는' → 05#64-65 '저만의 휴식법이 있었던 거군요' · #90 베이 '예전에는 쉴 때도 항상 스스로 몰아붙이는 느낌'.",
+      "points": ["F1505"],
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2113",
+      "person": "person:클레이",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "또 포기하려 하면 따끔하게 혼내 달라며 기대는 '코치님'",
+      "after": "쉬는 법을 함께 찾아 준 코치님에게 다음에도 힘들어지면 찾아가 같이 쉬자는",
+      "trigger": [{ "scene": "ep:d_nikke_clay_05", "lines": ["62-69"] }],
+      "evidence": [{ "scene": "ep:d_nikke_clay_05", "lines": ["97-104"] }],
+      "time": "S156",
+      "reason": "05#68 '코치님이 없었으면 계속 몰랐을 거예요' → #101-102 '다음에도 힘들어지면 찾아가도 될까요' — '또 같이 쉬자'. 기준 D1559(혼내 달라)에서 기대는 결이 바뀐다.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 베이의 '오랫동안 같이 뛰고 싶어'(01#31-33)는 D1563(없어서는 안 될 멤버)과 같은 모습이라 다시 세우지 않았다. 프림 · 엑시아 · 트로니 · 아니스 · 네온은 휴식 선생으로 잠깐 나오는 자리뿐. 무릎 관절(01#1)은 1회독 F1504로 충분하다(몸의 큰 변화가 아니다). 시점 S156(추정) 그대로."
+}

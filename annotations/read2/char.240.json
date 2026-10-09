@@ -1,0 +1,28 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M97\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:240",
+  "session": "M97",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2134",
+      "person": "person:루마니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "진지하지 않을 회원에겐 시간을 안 쓴다며 자세도 안 봐 주던 트레이너와 '회원님'",
+      "after": "자기 운동법이 옳다는 걸 증명하겠다는 그에게 반해 먼저 '사귀어요'라 고백한 연인",
+      "trigger": [{ "scene": "ep:d_nikke_rumani_03", "lines": ["84-89"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rumani_05", "lines": ["8-16", "58-66"] }],
+      "reason": "01#102-107 '진지하게 할 생각이 없으면 나도 딱히' → 03#87-89 '성격도 취향이야' → 05#58 '사귀어요 우리'. 기준 D1593(LIFE AGAIN)의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 지휘관의 근육 단련 · 대회 입상은 이 편 안의 개그라 지휘관 신체 변화로 적지 않았다. 루마니 '제가 옳으니까'(03#57-59)는 기준 D1592(노력과 근성)의 되풀이라 적지 않았다. 시점 실마리 없음(LIFE AGAIN과의 앞뒤를 원문이 말하지 않는다)."
+}

@@ -1,0 +1,46 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M103\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:601",
+  "session": "M103",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2218",
+      "person": "person:프리카",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "사랑스럽거나 애교 있는 쪽과는 거리가 멀다며 좁은 작업실 세계에 머물던",
+      "after": "파프리카도 달콤하다는 걸 처음 알고, 자기 안의 달콤함으로 사랑 노래 가사를 단숨에 써 내는",
+      "trigger": [{ "scene": "ep:d_nikke_prika_02", "lines": ["23-29", "79-87"] }],
+      "evidence": [{ "scene": "ep:d_nikke_prika_03", "lines": ["33-46"] }],
+      "time": "S330",
+      "points": ["F2725"],
+      "reason": "02#28 '사랑스럽거나, 애교가 있지는 않잖아, 나는' → 03#33-38 '파프리카는 달콤한 거였네 … 내 세계는 그렇게 넓지 않으니까' 뒤 가사가 자리잡는다. 은유라 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    },
+    {
+      "id": "D2219",
+      "person": "person:프리카",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "곡의 영감을 준 '뮤즈'",
+      "after": "절대 남에게 안 맡기던 작사 크레딧을 'Muse'로 올리고, 온전히 자기 마음을 담은 후속곡 [After Sweetness]를 긴장하며 들려주는",
+      "trigger": [{ "scene": "ep:d_nikke_prika_04", "lines": ["54-56", "69-73"] }],
+      "evidence": [{ "scene": "ep:d_nikke_prika_05", "lines": ["33-38", "59-88"] }],
+      "time": "S330",
+      "points": ["F2725"],
+      "reason": "04#54-55 '가사, 절대 남한테 안 맡기거든요' · 05#36 '평범한 감상이 듣고 싶었는데' · #73-74 '온전히 … 내 마음을 담아서'. 앞 모습은 D1740.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음. 시점 S330(fl:bitter_spice 뒤) 그대로. 줄기에 걸린 암시 없음(02#9-12 아니스 · 히든 트랙 언급은 줄기 사실을 가리키지 않는다)."
+}

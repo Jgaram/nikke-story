@@ -1,0 +1,69 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M82\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:431",
+  "session": "M82",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1842",
+      "person": "person:볼륨",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "무대에서 기타를 부수고 말리는 스태프에게 '돈 줄게, 얼마면 돼?' · '두 번 다시 여기서 공연 안 해'라는, 거칠고 오만한 슈퍼스타",
+      "evidence": [{ "scene": "ep:d_nikke_volume_01", "lines": ["40-45", "52-63"] }],
+      "points": ["F565"],
+      "reason": "01#43 기타를 내려침 · #57 '돈 줄게. 얼마면 돼?' · #62-63 'See You Never'. 볼륨 성격 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1843",
+      "person": "person:볼륨",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "음악을 한 계기는 돈이고, 대충 만들어도 팔리는 건 자기 실력이라 솔직히 말하는 게 낫다는",
+      "evidence": [{ "scene": "ep:d_nikke_volume_03", "lines": ["16-19"] }],
+      "points": ["F566"],
+      "reason": "03#16 '돈 때문이지' · #19 '대충 만들어도 결과만 좋으면 돈을 벌 수 있구나'(04#61-68에서 팬들에게도 되풀이). 볼륨 신념 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1844",
+      "person": "person:볼륨",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "길어야 일주일 버틴 매니저 자리에 온 지휘관에게 '며칠 할 거야? … 다음 스케줄 때도 버틸 수 있는지 보자'고 떠보는",
+      "evidence": [{ "scene": "ep:d_nikke_volume_01", "lines": ["77-94"] }],
+      "points": ["F565"],
+      "reason": "01#80 '제일 길게 버틴 게 일주일' · #94 '다음 스케줄 때도 버틸 수 있는지 한번 보자고'. 볼륨 → 지휘관 관계 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1845",
+      "person": "person:볼륨",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "얼마나 버티나 떠보는 새 매니저",
+      "after": "자기를 지키려 한 매니저가 마음에 들어 열애설을 익명 제보하고 'Yes'를 받아 연인이 된",
+      "trigger": [{ "scene": "ep:d_nikke_volume_04", "lines": ["85-95"] }],
+      "evidence": [{ "scene": "ep:d_nikke_volume_05", "lines": ["84-99"] }],
+      "points": ["F567"],
+      "reason": "04#89-91 '다른 매니저들은 … 관심 없었어' · '볼륨을 지켜주고 싶어' 뒤 05#86 '마음에 들어서 내가 직접 제보했어' · #93 'Yes'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "시점 실마리 없음(사장님 · 테트라 본사만 나온다)."
+}

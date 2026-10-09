@@ -1,0 +1,214 @@
+{
+  "unit": "erelic:red_ash_lost",
+  "session": "R32",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "RED ASH의 이벤트 유실물(빨간 USB) — 갓데스 시절 기록 21편을 재생하는 형식(#001–#007). 침식 치료 기록(_00–_02): 라푼젤이 레드 후드를 설득해 피를 뽑고 V.T.C.의 프로토타입 치료제를 먹이지만, 레드 후드는 라푼젤이 눈을 피하고 약에서 비타민 맛이 나자 치료가 안 됨을 알아채고 모른 척한다. 엘레강스&와일드(_03–_05): 앙숙 도로시 · 홍련이 같은 티타임 장소에서 금잔화 꽃차를 나눈다. 첫 만남(_06–_10): 지휘관과 릴리바이스 둘이던 갓데스에 페어리 테일 모델 2번 도로시 · 3번 라푼젤(V.T.C. 출신) · 4번 스노우 화이트 · 5번 레드 후드가 차례로 합류하고, 양산형 특수목적부대의 내전 현장에 홀로 남은 홍련을 릴리바이스가 한 방에 쓰러뜨려 영입한다. 참견쟁이(_11–_14) · 다른 세계로(_17–_18)는 레드 후드의 장난 · 라푼젤의 금서 코미디. 그 꽃, 릴리바이스(_15–_16): 프로토타입 릴리바이스를 베이스로 만든 1번(로스트 넘버)은 몸의 힘을 못 이겨 죽었고, 릴리바이스는 1번과 마지막으로 이야기한 꽃밭을 찾다 지휘관과 서로 죽지 말자고 약속한다. 비밀 메시지(_19–_20): 상부 호출 중 지휘관의 영상 메시지가 릴리스를 부르는 외침으로 끊기고, 릴리바이스가 유언 영상을 녹화한다.",
+  "scenes": [
+    { "scene": "erelic:red_ash_lost_00", "text": "라푼젤이 치료를 거부하는 레드 후드를 설득해 피를 뽑는다" },
+    { "scene": "erelic:red_ash_lost_01", "text": "V.T.C.의 프로토타입 침식 치료제(녹즙)를 마신 레드 후드가 토한다" },
+    { "scene": "erelic:red_ash_lost_02", "text": "라푼젤이 눈을 피하고 약에서 비타민 맛이 나자 레드 후드가 치료가 안 됨을 알아챈다" },
+    { "scene": "erelic:red_ash_lost_03", "text": "앙숙 도로시 · 홍련의 하루 26번째 싸움, 레드 후드가 스노우 화이트를 데리고 빠진다" },
+    { "scene": "erelic:red_ash_lost_04", "text": "릴리바이스가 난장판을 보고, 도로시 · 홍련이 서로 흉을 본다" },
+    { "scene": "erelic:red_ash_lost_05", "text": "같은 티타임 장소에서 만난 둘이 홍련이 볶은 금잔화 꽃차를 나눈다" },
+    { "scene": "erelic:red_ash_lost_06", "text": "페어리 테일 모델 2번 도로시의 합류와 테스트, 니케가 된 까닭" },
+    { "scene": "erelic:red_ash_lost_07", "text": "3번 라푼젤(V.T.C. 출신 성녀)의 합류와 능력" },
+    { "scene": "erelic:red_ash_lost_08", "text": "EMP에 먹통이 된 무기를 1분 만에 고친 4번 스노우 화이트의 합류" },
+    { "scene": "erelic:red_ash_lost_09", "text": "상자 속에서 나온 5번 레드 후드의 합류" },
+    { "scene": "erelic:red_ash_lost_10", "text": "양산형 특수목적부대 내전 현장의 홍련, 레드 후드와 싸우다 릴리바이스에게 영입" },
+    { "scene": "erelic:red_ash_lost_11", "text": "레드 후드가 스노우 화이트의 소총 개조를 돕다 망친다" },
+    { "scene": "erelic:red_ash_lost_12", "text": "레드 후드가 홍련을 부추겨 연료통을 베게 한다" },
+    { "scene": "erelic:red_ash_lost_13", "text": "도로시가 아가씨라 부르는 레드 후드를 절벽에서 양산으로 위협한다" },
+    { "scene": "erelic:red_ash_lost_14", "text": "고해소의 라푼젤에게 레드 후드가 욕구의 신 흉내를 낸다" },
+    { "scene": "erelic:red_ash_lost_15", "text": "릴리바이스가 이름 모를 꽃밭에서 페어리 테일 모델 1번에게 말을 건다" },
+    { "scene": "erelic:red_ash_lost_16", "text": "지휘관이 따라와 1번(로스트 넘버)의 죽음을 말하고 둘이 서로 죽지 말자고 약속한다" },
+    { "scene": "erelic:red_ash_lost_17", "text": "라푼젤이 레드 후드의 비디오 [몸의 대화]를 본다" },
+    { "scene": "erelic:red_ash_lost_18", "text": "라푼젤이 다시 보려다 비디오 플레이어를 부순다" },
+    { "scene": "erelic:red_ash_lost_19", "text": "상부 호출 중 지휘관의 영상 메시지 — 릴리스를 부르는 외침으로 끊긴다" },
+    { "scene": "erelic:red_ash_lost_20", "text": "릴리바이스가 생명 신호가 꺼지면 전송될 유언 영상을 녹화한다" }
+  ],
+  "facts": [
+    {
+      "id": "F1174",
+      "text": "라푼젤은 치료를 거부하던 레드 후드를 설득해 피를 뽑았고, V.T.C.가 쌓아 온 데이터와 레드 후드의 혈액으로 프로토타입 침식 치료제를 만들어 먹이며 경과를 V.T.C.에 알렸다",
+      "about": ["person:라푼젤", "person:레드_후드", "concept:침식", "org:V.T.C."],
+      "evidence": [{ "scene": "erelic:red_ash_lost_00", "lines": ["1-73"] }, { "scene": "erelic:red_ash_lost_01", "lines": ["1-21"] }],
+      "reason": "_00 설득 · 채혈, _01 라푼젤(#10-21)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1175",
+      "text": "시간이 지나 라푼젤이 피를 뽑지 않고 치료제 이야기를 피하며 눈을 마주치지 않고 약에서 비타민 맛이 나자, 레드 후드는 속으로 치료가 안 된다는 것을 깨닫고 모른 척 약을 마시며 그동안 고마웠다고 생각했다",
+      "about": ["person:레드_후드", "person:라푼젤", "concept:침식"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_02", "lines": ["1-64"] }],
+      "reason": "레드 후드의 속말(~ 줄, #1-2, #29-43, #54-64). 약이 가짜라는 것은 레드 후드의 짐작이지만 깨달음 자체는 원문 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1176",
+      "text": "도로시와 홍련은 만나면 싸우는 견원지간이었지만(하루 26번), 둘 다 같은 꽃밭을 티타임 장소로 삼고 있었고 도로시는 홍련이 직접 볶아 우린 금잔화 꽃차를 좋아한다고 했다",
+      "about": ["person:도로시", "person:홍련"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_03", "lines": ["1-27"] }, { "scene": "erelic:red_ash_lost_05", "lines": ["1-57"] }],
+      "reason": "_03 #26-27, _05 #19-54",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1177",
+      "text": "도로시는 페어리 테일 모델 2번으로 갓데스(그때는 지휘관과 릴리바이스뿐)에 배속되었다 — 릴리바이스가 ‘적합자가 실제로 있긴 있었다’며 놀랐고, 전투 · 사격 경험이 전혀 없었지만 테스트에서 놀라운 기록을 냈으며, 니케가 된 계기는 예전으로 돌아가고 싶어서라 했다",
+      "about": ["person:도로시", "person:릴리바이스", "org:갓데스", "concept:적합자", "concept:페어리_테일"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_06", "lines": ["1-4", "25-36", "50-71"] }],
+      "reason": "#1-4, #25-32, #57-62(회식비를 둘이서 쓰지 말라 함 — 둘뿐이었다), #67-70",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1178",
+      "text": "라푼젤은 페어리 테일 모델 3번으로, 거대 교단이 운용하는 의료 센터 V.T.C. 출신의 유력한 차기 여교황이었지만 기도보다 무기를 들 때라며 니케가 되어 왔다 — 지팡이로 잘게 쪼갠 갓데시움(니케 몸을 이루는 물질) 입자를 쏘아 니케의 부서진 몸을 메우고(사람은 못 고친다), 빔 왜곡 · 머리카락 재머 능력이 있다",
+      "about": ["person:라푼젤", "org:V.T.C.", "concept:갓데시움", "concept:페어리_테일"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_07", "lines": ["1-22", "36-59"] }],
+      "reason": "라푼젤 · 도로시 · 릴리바이스(#9-22, #36-59). event_redash1_04_e#85에서 레드 후드는 라푼젤이 제 뜻으로 니케가 된 게 아닐 거라 짐작했고 라푼젤은 답하지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1179",
+      "text": "스노우 화이트는 페어리 테일 모델 4번으로, 롤아웃 직후 갓데스에 합류하기로 되어 있었지만 자신이 없어 방에 틀어박혀 무기만 만들다가 전에 만난 릴리스 덕에 용기를 얻어 합류했다 — 첫 전투에서 EMP로 먹통이 된 모두의 무기를 1분 만에 고쳤고, 릴리바이스는 그녀를 최고의 무기 명장이라 했다",
+      "about": ["person:스노우_화이트", "person:릴리바이스", "org:갓데스", "concept:페어리_테일"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_08", "lines": ["3-31", "51-64"] }],
+      "reason": "#17-31, #55-64",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1180",
+      "text": "레드 후드는 페어리 테일 모델 5번으로, 서프라이즈를 한다며 상자에 숨어 갓데스가 지내는 비행선에 들어와 합류했다",
+      "about": ["person:레드_후드", "org:갓데스", "concept:페어리_테일"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_09", "lines": ["28-66"] }],
+      "reason": "#40-61",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1181",
+      "text": "홍련은 접근전용으로 강하게 커스터마이징된 검 쓰는 양산형 특수목적부대(극비)가 내전으로 궤멸한 현장에 홀로 남아 ‘내 친우들의 전장을 더럽히지 말라’며 갓데스를 막았다 — 레드 후드와 싸우며 봐주던 실력을 본 릴리바이스가 한 방에 쓰러뜨려 갓데스에 영입했고, 홍련은 페어리 테일 모델이 아니다",
+      "about": ["person:홍련", "concept:양산형_니케", "person:릴리바이스", "person:레드_후드", "org:갓데스"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_10", "lines": ["4-13", "21-95"] }, { "scene": "erelic:red_ash_lost_15", "lines": [24] }],
+      "reason": "_10 릴리바이스 · 스노우 화이트(#6-11), 홍련(#33), 영입(#69-95), _15 #24. 홍련이 내전의 주범인지 생존자인지는 원문이 말하지 않는다(도로시의 물음 #31에 답이 없다)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1182",
+      "text": "페어리 테일 모델 1번은 프로토타입 릴리바이스를 베이스로 마이너 그레이드 없이 만들어져 몸의 힘을 감당하지 못하고 흩뿌려지듯 죽었고(지휘관은 결번이라 ‘로스트 넘버’라 부른다), 2번부터는 적당히 마이너 그레이드를 해서 안전했다 — 동생들이 1번이 누구냐고 물으면 릴리바이스는 얼버무렸다",
+      "about": ["person:로스트_넘버", "person:릴리바이스", "concept:페어리_테일"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_15", "lines": ["35-39"] }, { "scene": "erelic:red_ash_lost_16", "lines": ["25-39"] }],
+      "reason": "지휘관(_16 #27, #33-39), 릴리바이스(_15 #36-38)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1183",
+      "text": "릴리바이스는 1번과 마지막으로 이야기한 이름 모를 꽃밭(릴리바이스 꽃이 한 송이 핀 곳)을 몰래 찾아가 인류의 희망이 되고 싶어 했던 1번에게 말을 걸곤 했다 — 따라온 지휘관이 그곳을 태우겠다고 하자 다시 오지 않고 마음에만 기억하기로 했고, 대신 서로 죽지 말자고 약속했다",
+      "about": ["person:릴리바이스", "person:로스트_넘버", "org:갓데스"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_15", "lines": ["18-43"] }, { "scene": "erelic:red_ash_lost_16", "lines": ["10-77"] }],
+      "reason": "_15 #20-41, _16 #17-19, #40-77",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1184",
+      "text": "상부에 불려 간 지휘관은 상황이 생각보다 나빠 돌아가는 데 시간이 더 걸린다는 영상 메시지를 녹화했다 — 리더 둘이 불려 간 것은 별것 아닌 이유가 아니라면서 자세한 사정은 말하지 않았고, 메시지는 지휘관이 다급히 릴리스를 부르는 소리로 끊겼다",
+      "about": ["person:릴리바이스", "org:갓데스"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_19", "lines": ["1-15"] }],
+      "reason": "#3-7, #13-15. event_redash2_04_s의 상부 호출 뒤로 보았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q159",
+      "text": "상부가 지휘관과 릴리스만 불러야 했던 ‘별것 아닌 이유가 아닌’ 사정은 무엇이고, 영상 메시지 끝에 릴리스에게 무슨 일이 일어났나?",
+      "about": ["person:릴리바이스", "org:갓데스"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_19", "lines": ["5-7", "13-15"] }],
+      "reason": "지휘관이 사정을 말할 수 없다며 숨기고(#7), 메시지가 ‘릴리스!’ 외침으로 끊긴다. 릴리스가 밀봉 전에 죽었다는 것(F907)은 알지만 무엇으로 죽었는지는 아직",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F908-2",
+      "act": "드러냄",
+      "text": "유언 영상을 녹화한 때 — 지휘관과 함께 상부 호출에 간 동안이었고, 녹화 뒤 ‘꼭 살아 돌아가요’ · ‘너와 함께 간다’를 주고받았다",
+      "evidence": [{ "scene": "erelic:red_ash_lost_20", "lines": ["1-42"] }],
+      "reason": "같은 유언 내용(#4-30)을 녹화하는 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q90-2",
+      "act": "회수",
+      "answer": "F1181",
+      "degree": "일부",
+      "evidence": [{ "scene": "erelic:red_ash_lost_10", "lines": ["4-13", "27-33"] }],
+      "reason": "홍련은 검 쓰는 접근전용 양산형 특수목적부대가 궤멸한 현장에 홀로 남은 이로 나온다(Q90의 ‘근접전용 스쿼드’와 맞는다) — 부대원이었는지 주범인지는 말하지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S106",
+      "kind": "기준점",
+      "text": "갓데스 결성기 — 지휘관 · 릴리바이스 둘에 페어리 테일 모델 2–5번과 홍련이 차례로 합류",
+      "ref": "org:갓데스",
+      "subject": "구간",
+      "at": [["무렵", "@갓데스_투입"]],
+      "evidence": [{ "scene": "erelic:red_ash_lost_06", "lines": ["1-4"] }, { "scene": "erelic:red_ash_lost_10", "lines": ["80-95"] }],
+      "reason": "첫 만남 I–V의 차례(도로시 2번 → 레드 후드 5번 → 홍련)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "S107",
+      "kind": "기준점",
+      "text": "event_redash2_04_s 상부 긴급 호출 뒤 — 방주 입구 방어전 중",
+      "ref": "event_redash2_04_s",
+      "subject": "구간",
+      "at": [["중", "S103"]],
+      "evidence": [{ "scene": "erelic:red_ash_lost_19", "lines": ["3-7"] }],
+      "reason": "‘상부에서 불렀다지만 리더 둘이 쪼르르 가버린 게’(#6)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "R32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:로스트_넘버",
+      "evidence": [{ "scene": "erelic:red_ash_lost_16", "lines": [25] }],
+      "note": "페어리 테일 모델 1번 — 프로토타입 릴리바이스를 베이스로 만들어져 몸의 힘을 못 이겨 죽었다",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

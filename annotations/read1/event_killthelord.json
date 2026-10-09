@@ -1,0 +1,218 @@
+{
+  "unit": "event_killthelord",
+  "session": "R39",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "KILL THE LORD — event_ltk의 후속. 저지스의 새 지령으로 K · D가 다시 지휘관을 결정권자로 데려간다. 타겟 [레이디] 카밀라 해링턴(24세, 중앙 정부 거물의 막내딸)은 남편이 앓아누운 뒤 파티광이 되었고, 그녀의 초대장 모임 참석자들이 잇따라 실종된다 — 높은 분의 딸이라 확증 없이 함부로 조사할 수 없어 지휘관에게 떠넘겼다(F1345). D와 지휘관은 신혼부부 로열(다이애나 · 스티브)로 위장해 로열 아파트에 들어가고, 옆집에 '로즈'로 위장한 로산나가 산다 — 로산나는 남편이 불치병이라며 카밀라에게 접근 중이었고, 스쿼드와 동료(목단)를 건드린 녀석이 그 모임과 연관 있다며 협력을 청한다(F1346). K의 조사로 실종자 대다수는 간절한 바람을 품고 자발적으로 떠났다(F1347). 카밀라 저택의 [화양연화] 모임 — 검은 스크린의 '구세주', 기적 증언, 휠체어 여자가 걷는 '기적', 붉은 디퓨저, 2층 기도방에 기거하는 실종자들(F1348). 3층 철문 너머 짙은 향에 지휘관은 탈환된 지상의 평화로운 일상을, D는 악행이 사라진 세상을 보는 환각을 겪고(니케에게도 듣는다), 침실의 이불 아래에는 벌레가 들끓는 남편의 시신 — 카밀라는 남편이 살아 있다고 믿는다(F1349). D는 인륜을 벗어난 짓이 없다며 죽이지 않고, 믿음을 깰지 지휘관에게 맡긴다 — 깨면 카밀라는 자살 시도 · 치료, 모임 해체, 남편 죽음은 조용히 처리. 두면 모임은 이어지고 환각 물건만 압수, 높은 분의 개입으로 처벌 없음(F1350). 에필로그: D가 로산나에게 디퓨저를 넘기고, 로산나는 미스트로 만든 디퓨저를 미끼로 식스오를 쫓겠다고 한다(F1351 · Q177).",
+  "scenes": [
+    {
+      "scene": "event_killthelord_prologue",
+      "text": "카밀라가 '남편'과 아침 기도를 올리고 철문을 잠근 채 외출"
+    },
+    {
+      "scene": "event_killthelord_01_s",
+      "text": "K · D의 새 지령 — 타겟 [레이디] 카밀라 해링턴, 모임 참석자 실종"
+    },
+    {
+      "scene": "event_killthelord_01_e",
+      "text": "다시 지휘관이 결정권자 — 높은 분의 딸이라 떠넘김, 신혼부부 위장"
+    },
+    {
+      "scene": "event_killthelord_02_s",
+      "text": "변장 · 로열 아파트 · 부부 설정 · 입주자 대표회장의 모임 추천"
+    },
+    {
+      "scene": "event_killthelord_02_e",
+      "text": "D의 밤샘 경호, 옆집 '로즈' = 로산나"
+    },
+    {
+      "scene": "event_killthelord_03_s",
+      "text": "부부 동반 모임 — 말이 안 맞는 부부들, 로산나가 지휘관을 알아봄, 카밀라의 초대"
+    },
+    {
+      "scene": "event_killthelord_03_e",
+      "text": "로산나의 방문 — 동료를 건드린 녀석을 쫓는다며 협력 제안"
+    },
+    {
+      "scene": "event_killthelord_intermission_01",
+      "text": "K의 보고 — 실종자 대다수는 간절한 바람을 품고 자발적으로 사라짐"
+    },
+    {
+      "scene": "event_killthelord_04_s",
+      "text": "카밀라 저택의 [화양연화] 모임 — 아픔 고백, 기적 증언, 구세주 소개"
+    },
+    {
+      "scene": "event_killthelord_04_e",
+      "text": "검은 스크린의 '구세주', 휠체어 여자가 걷는 '기적'"
+    },
+    {
+      "scene": "event_killthelord_05_s",
+      "text": "2층 기도방에 기거하는 실종자들, 붉은 디퓨저의 향"
+    },
+    {
+      "scene": "event_killthelord_05_e",
+      "text": "카밀라가 위장을 간파, D가 K에게 실종자 위치 전송 — 남은 실종자는 남편"
+    },
+    {
+      "scene": "event_killthelord_06_s",
+      "text": "3층 철문 — 지휘관 · D의 환각, 침실의 벌레 들끓는 침대, D는 죽이지 않기로"
+    },
+    {
+      "scene": "event_killthelord_06_e",
+      "text": "믿음을 깰지 둘지의 선택과 두 결말"
+    },
+    {
+      "scene": "event_killthelord_epilogue",
+      "text": "D가 로산나에게 디퓨저를 넘김 — 미스트로 만든 것, 식스오를 쫓는 미끼"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1345",
+      "text": "저지스의 새 지령 타겟 [레이디]는 중앙 정부 거물의 막내딸 카밀라 해링턴(24세)으로, 남편이 앓아누운 뒤 상류층 모임을 돌며 일주일에 한 번 초대장으로만 들어오는 사교 모임을 열었는데 그 참석자들이 잇따라 실종되었다 — 높은 분의 딸이라 확증 없이 함부로 조사할 수 없어 다시 지휘관에게 결정권을 떠넘겼다(조사가 발각돼도 탈이 없게 하려느냐는 지휘관의 말에 K는 그럴 수도 있다고 했다)",
+      "about": ["person:카밀라", "person:K", "person:D", "org:저지스"],
+      "evidence": [{ "scene": "event_killthelord_01_s", "lines": ["22-46"] }, { "scene": "event_killthelord_01_e", "lines": ["18-33"] }],
+      "reason": "K · D의 브리핑(01_s #22-46), 결정권자가 된 까닭을 K가 털어놓음(01_e #24-33)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R39",
+          "note": "원문 대조 검토 — '발각돼도 탈이 없도록'은 지휘관의 짐작에 K가 수긍한 것이라 고침",
+          "before": "저지스의 새 지령 타겟 [레이디]는 중앙 정부 거물의 막내딸 카밀라 해링턴(24세)으로, 남편이 앓아누운 뒤 상류층 모임을 돌며 일주일에 한 번 초대장으로만 들어오는 사교 모임을 열었는데 그 참석자들이 잇따라 실종되었다 — 높은 분의 딸이라 확증 없이 함부로 조사할 수 없어, 발각돼도 탈이 없도록 다시 지휘관을 결정권자로 삼았다"
+        }
+      ]
+    },
+    {
+      "id": "F1346",
+      "text": "D와 지휘관은 신혼부부 로열(다이애나 · 스티브)로 위장해 로열 전용 초고가 아파트에 들었고, 옆집에는 '로즈'로 위장한 로산나가 살며 남편이 불치병이라는 사연으로 카밀라에게 접근하고 있었다 — 로산나는 변장한 지휘관을 한눈에 알아보았고, 자기 스쿼드와 동료를 건드린 녀석이 그 모임과 연관된 것 같다며 협력을 청했다",
+      "about": ["person:로산나", "person:D", "person:카밀라"],
+      "evidence": [
+        { "scene": "event_killthelord_02_e", "lines": ["69-80", "105-111"] },
+        { "scene": "event_killthelord_03_s", "lines": ["49-57", "92-95", "139-163"] },
+        { "scene": "event_killthelord_03_e", "lines": ["95-115"] }
+      ],
+      "reason": "로산나 본인 말(03_e #106-107, 지휘관은 목단 · 모란회를 떠올림 #108-110), D의 설명(03_e #25)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1347",
+      "text": "K의 조사에 따르면 실종자 대다수는 납치가 아니라 가출처럼 스스로 잠적했고, 성공이나 아픈 가족의 회복처럼 간절히 바라는 무언가가 있었다는 공통점이 있었다 — 이유 없이 사라진 이도 있었다",
+      "about": ["person:K"],
+      "evidence": [{ "scene": "event_killthelord_intermission_01", "lines": ["14-31"] }],
+      "reason": "K의 보고",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1348",
+      "text": "카밀라가 자기 저택에서 여는 [화양연화] 모임에서는 신도들이 아픔을 고백하고 기적을 증언하며 검은 화면뿐인 스크린을 '구세주'로 섬겼고, 휠체어를 탄 여자가 특별 기도실에 들어갔다 걸어 나왔다 — 실종자들은 스스로 저택 2층 기도방에 기거하며 카밀라가 매일 나눠 주는 붉은 디퓨저의 향을 맡고 기도했다",
+      "about": ["org:화양연화", "person:카밀라"],
+      "evidence": [
+        { "scene": "event_killthelord_04_s", "lines": ["57-60", "109-137"] },
+        { "scene": "event_killthelord_04_e", "lines": ["3-54"] },
+        { "scene": "event_killthelord_05_s", "lines": ["19-48"] }
+      ],
+      "reason": "모임 장면 서술 · 신도들 말(05_s #33-46)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1349",
+      "text": "디퓨저가 가장 많이 쌓인 3층 철문 너머의 짙은 향에 지휘관은 지상이 탈환되어 카운터스 · 마리안과 평화롭게 사는 환각을, D는 악행이 사라져 왕관을 쓸 필요가 없어진 세상의 환각을 보았다(니케에게도 듣는다) — 꽃과 디퓨저로 악취를 덮은 침실의 이불 아래에는 벌레가 들끓는 남편의 시신이 있었고, 카밀라는 남편이 살아 있다고 믿었다",
+      "about": ["person:카밀라", "person:D", "org:화양연화"],
+      "evidence": [{ "scene": "event_killthelord_06_s", "lines": ["4-65", "81-136"] }, { "scene": "event_killthelord_06_e", "lines": ["26-36"] }],
+      "reason": "환각 서술(06_s #27-40, #55-65), 침실(#81-119), 이불을 찢은 결말(06_e #26-36). 프롤로그에서 대답하던 '카밀라의 남편'도 카밀라의 환각으로 읽힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1350",
+      "text": "D는 카밀라가 인륜을 벗어난 짓을 하지 않았고 실종자도 제 발로 왔다며 죽이지 않기로 하고, 카밀라와 신도들의 '구세주'를 빼앗을지를 지휘관에게 맡겼다 — 믿음을 깨면 카밀라는 자살 시도 뒤 치료를 받고 모임은 해체되며 남편의 죽음은 조용히 처리되고, 그대로 두면 환각 물건만 압수된 채 처벌 없이 모임이 이어져 늘어난다(둘 다 K는 높은 분의 개입으로 봄)",
+      "about": ["person:카밀라", "person:D", "org:화양연화"],
+      "evidence": [{ "scene": "event_killthelord_06_s", "lines": ["128-143"] }, { "scene": "event_killthelord_06_e", "lines": ["14-20", "40-51", "104-110"] }],
+      "reason": "D의 판단(06_s #131-133), 두 갈래의 결말 서술(06_e #40-51 · #104-110). 갈래 결말이라 둘 다 적음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1351",
+      "text": "D는 로산나에게 붉은 디퓨저를 넘기며 그 향이 니케에게까지 환각을 일으키지만 누가 무엇으로 왜 만들었는지는 모른다고 했고, 로산나는 그것이 미스트로 만든 디퓨저라며 식스오를 찾을 미끼로 삼겠다고 했다",
+      "about": ["person:로산나", "person:D", "concept:미스트", "person:식스오"],
+      "evidence": [{ "scene": "event_killthelord_epilogue", "lines": ["2-27"] }],
+      "reason": "D · 로산나의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q177",
+      "text": "미스트로 만든 환각 디퓨저는 누가 만들어 카밀라의 모임에 퍼뜨렸나 — 식스오의 짓인가, 무엇을 노렸나?",
+      "about": ["concept:미스트", "person:식스오", "org:화양연화"],
+      "evidence": [{ "scene": "event_killthelord_epilogue", "lines": ["5-11", "20-25"] }],
+      "reason": "D '누가 만든 건지 … 아무도 몰라', 로산나는 식스오를 지목하지만 증거는 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S136",
+      "kind": "기준점",
+      "text": "event_dirtybackyard 뒤 — event_ltk([사장] 건) 다음의 K · D 임무",
+      "ref": "event_dirtybackyard",
+      "at": [["뒤", "event_dirtybackyard"], ["뒤", "event_ltk"]],
+      "evidence": [
+        { "scene": "event_killthelord_01_e", "lines": [7, "18-21"] },
+        { "scene": "event_killthelord_03_e", "lines": ["106-110"] },
+        { "scene": "event_killthelord_intermission_01", "lines": [70] }
+      ],
+      "reason": "K '한 번 해봤으니까'(01_e #7), [사장] 임무를 떠올림(intermission #70), 로산나가 목단을 건드린 녀석을 쫓음(03_e #106-110 — 평판이 바닥난 모란회)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:카밀라",
+      "evidence": [
+        {
+          "scene": "event_killthelord_prologue",
+          "lines": [
+            1
+          ]
+        }
+      ],
+      "note": "카밀라 해링턴 — 중앙 정부 거물의 막내딸, [화양연화] 모임을 여는 타겟 [레이디]",
+      "new": false
+    },
+    {
+      "target": "org:화양연화",
+      "evidence": [
+        {
+          "scene": "event_killthelord_04_s",
+          "lines": [
+            130
+          ]
+        }
+      ],
+      "note": "카밀라의 '구세주' 기도 모임",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

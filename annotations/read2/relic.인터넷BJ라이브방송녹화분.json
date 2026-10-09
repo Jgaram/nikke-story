@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:인터넷BJ라이브방송녹화분",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U85",
+      "topic": "구시대",
+      "text": "침공 초기 인터넷 방송인은 외계인을 '조회 수 떡상' 콘텐츠로 삼아 시청자가 건 후원금을 받고 손수 만든 무기로 사냥 생방송에 나섰다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F385"],
+      "evidence": [{ "scene": "relic:인터넷BJ라이브방송녹화분_01", "lines": ["1-12"] }],
+      "reason": "#8 '외계인 부수면 100만 원? 오케이 콜' · _00#12-13",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

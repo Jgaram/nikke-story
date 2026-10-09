@@ -1,0 +1,39 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M100\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:93",
+  "session": "M100",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "status": "확정",
+      "id": "I677",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_emma_tactical_01", "lines": [50, 52] }],
+      "reason": "#51 '이 목소리는?!' 뒤 #53 문이 열리고 #54 엠마가 들어온다.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2176",
+      "person": "person:엠마",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "몸도 마음도 맡기라며 지휘관을 쉬게 해 주는",
+      "after": "처음으로 누군가와 함께 향수를 만들고, 달아오른 지휘관에게 '참지 않아도 돼'라며 곁을 내주고 더 같이 있자는",
+      "trigger": [{ "scene": "ep:d_nikke_emma_tactical_04", "lines": ["11-13"] }],
+      "evidence": [{ "scene": "ep:d_nikke_emma_tactical_04", "lines": ["73-84"] }],
+      "reason": "04#13 '누구랑 같이 향수를 만들어보는 건 처음' · #82 '괜찮아, 참지 않아도' · 05#48 '조금만 더 나랑 같이 있을까'. 앞 모습은 D1899.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 실마리 없음(택티컬 업 차림은 원문에 나오지 않는다) — 시점을 더하지 않았다. 엠마의 향수 취미는 F2111이 담아 성격 변화로 적지 않았다."
+}

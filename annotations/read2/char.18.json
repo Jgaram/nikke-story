@@ -1,0 +1,127 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M75\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:18",
+  "session": "M75",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I601",
+      "target": "person:프린세스",
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_03", "lines": [82] }],
+      "reason": "#82 '공주님이랑 마지막으로 함께 있었던 곳' — 네온의 되찾은 기억 속 프린세스(ch43).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "I602",
+      "target": "person:프린세스",
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["0-19", "41-69"] }],
+      "reason": "'공주님'을 묻고 격벽에서 말을 건넨다 — 안경을 씌우고 죽은 프린세스(F2407).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "I603",
+      "target": "person:프린세스",
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_05", "lines": [17, 55, 58] }],
+      "reason": "#58 '공주님께 건강한 눈을 받았으니' — 프린세스(F2407).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1522",
+      "act": "재언급",
+      "points": ["F2396"],
+      "text": "네온이 터널 바닥의 흐릿한 노란 선 한 칸을 가리키며 자고 짐 두던 [집]이었다고 한다",
+      "about": ["person:네온", "place:아우터_림"],
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_02", "lines": ["11-26", "46-50"] }],
+      "reason": "#12-14 노란 선 = 돈을 내고 사서 프린세스를 들였던 '집'(F2396).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "E1523",
+      "act": "재언급",
+      "points": ["F2406", "F2407"],
+      "text": "공주님과 마지막으로 있던 격벽에서 네온이 '건강하게 · 행복하게 살라고 해줘서' 고맙다며 기침도 안 하고 건강해졌다고 전한다",
+      "about": ["person:네온", "person:프린세스"],
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["21-27", "41-59"] }],
+      "reason": "#21-27 격벽 · 핏자국(F2406), #57-59 '빛을 보고 행복하게 살라'던 마지막 말(F2407).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "E1524",
+      "act": "재언급",
+      "points": ["F2893", "F2407"],
+      "text": "아우터 림에서는 밝고 반짝이는 것을 보고 싶어 찾아다녔다며, 공주님께 '건강한 눈'을 받았다고 한다",
+      "about": ["person:네온", "person:프린세스"],
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_05", "lines": ["42-58"] }],
+      "reason": "#45 밝은 것을 찾아다님(F2893) · #58 안경 = 건강한 눈(F2407).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1731",
+      "person": "person:네온",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:프린세스"],
+      "before": "마지막 한마디도 남기지 못하고 격벽에서 잃은",
+      "after": "그 자리를 다시 찾아 건강해진 모습을 전하고 '고마워요 · 보고 싶어요'라 작별을 건넨",
+      "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["35-38"] }],
+      "time": "S326",
+      "points": ["F2715"],
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["37-62", "73-77"] }],
+      "reason": "#37 '마지막 한마디도 남기지 못한 게 계속 마음에 걸렸는데 이제야' — 앞 관계는 D1027(ch43).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "D1732",
+      "person": "person:네온",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "화력의 극의를 깨달았다며 모시는 스승님",
+      "after": "'가족 같은 스승님' — 곁에 있어 아우터 림에 갈 용기를 낼 수 있었다는",
+      "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": [53] }],
+      "time": "S326",
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_05", "lines": ["30-41"] }],
+      "reason": "04#53 '가족 같은 스승님이랑 동료들' · 05#37 '스승님이 곁에 있어서 용기 낼 수 있었어요'. 앞 관계 D20.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    },
+    {
+      "id": "D1733",
+      "person": "person:네온",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "당장의 미래도 생각하지 않고 오늘만 버티며 살던",
+      "after": "공주님께 받은 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["41-60"] }],
+      "time": "S326",
+      "points": ["F2715"],
+      "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_05", "lines": ["51-59"] }],
+      "reason": "#51-54 '당장의 미래도 생각 안 했는데 … 미래를 볼 수 있게 된 거죠' · #58-59 '더 많은 걸 지키겠어요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+    }
+  ],
+  "life": [],
+  "note": "2층이라 볼 거리 W68(아우터 림 생활상)은 적지 않았다 — 생활상은 1층에서만. 시점은 1회독 S326(CH.43 이후, 새 바디)으로 충분하다. 01의 '예전엔 조용하고 차분했다'는 가리킬 1회독 사실이 없어 적지 않았다. 네온은 ch43의 스톨 3세(D1025–D1029)와 같은 인물이라 프린세스와의 관계 변화는 person:네온으로 이었다."
+}

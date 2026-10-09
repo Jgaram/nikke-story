@@ -1,0 +1,186 @@
+{
+  "_comment": [
+    "정리 시트의 표기와 blablalink 데이터의 표기를 잇는 표 (T2-8).",
+    "시트는 콜라보 캐릭터를 풀네임(성+이름)으로 쓰고, 게임 데이터는 단축명을 쓴다.",
+    "resourceId가 진짜 키다 — 이름은 충돌할 수 있다 (사쿠라 참고).",
+    "포맷은 JSON이다. 의존성 없이 읽기 위한 선택이며, 사람이 쓰는 산문 주석은 마크다운으로 둔다."
+  ],
+  "characters": [
+    {
+      "sheet": "니시키기 치사토",
+      "data": "치사토",
+      "resourceId": 860,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "이노우에 타키나",
+      "data": "타키나",
+      "resourceId": 861,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "마키나미 마리 일러스트리어스",
+      "data": "마리",
+      "resourceId": 832,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "시키나미 아스카 랑그레이",
+      "data": "아스카",
+      "resourceId": 830,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "시키나미 아스카 랑그레이 : WILLE",
+      "data": "아스카 : WILLE",
+      "resourceId": 835,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "아야나미 레이",
+      "data": "레이",
+      "resourceId": 831,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "아야나미 레이 (가칭)",
+      "data": "레이 (가칭)",
+      "resourceId": 834,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "카츠라기 미사토",
+      "data": "미사토",
+      "resourceId": 833,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "아마기 유키코",
+      "data": "유키코",
+      "resourceId": 871,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "에이다 웡",
+      "data": "에이다",
+      "resourceId": 840,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "질 발렌타인",
+      "data": "질",
+      "resourceId": 841,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "클레어 레드필드",
+      "data": "클레어",
+      "resourceId": 842,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "퀸(니지마 마코토)",
+      "data": "퀸(마코토)",
+      "resourceId": 870,
+      "note": "콜라보"
+    },
+    {
+      "sheet": "맥스웰 : 오디너리 메카닉",
+      "data": "맥스웰 : 오디너리 미케닉",
+      "resourceId": 105,
+      "note": "표기 차이. 데이터 쪽이 '미케닉'이다"
+    },
+    {
+      "sheet": "스즈하라 사쿠라",
+      "data": "사쿠라",
+      "resourceId": 836,
+      "note": "이름 충돌. 데이터에 '사쿠라'가 둘 있다 — rid282는 니케 사쿠라(d_nikke_sakura_*), rid836이 이쪽 콜라보(d_nikke_ce005_03_*). 이름으로 매칭하면 안 된다"
+    },
+    {
+      "sheet": "사쿠라",
+      "data": "사쿠라",
+      "resourceId": 282,
+      "note": "니케 사쿠라. 위 항목과 구분할 것"
+    }
+  ],
+  "events": [
+    {
+      "sheet": "License to Kill",
+      "idPrefix": "event_ltk",
+      "note": "약어"
+    },
+    {
+      "sheet": "A.C.P.U.! FREEZE!",
+      "idPrefix": "event_freezeacpu",
+      "note": "어순 반전"
+    },
+    {
+      "sheet": "MEMORIES TELLER",
+      "idPrefix": "event_ce006",
+      "note": "스텔라 블레이드 콜라보. ID가 콜라보 번호(ce006)라 제목으로는 절대 못 찾는다. 등장: 이브·릴리·아담·롬"
+    },
+    {
+      "sheet": "Bunny x 777",
+      "idPrefix": "event_BunnyX777",
+      "note": "ID에 대문자가 섞인 유일한 사례. 정규식을 [a-z]로 짜면 놓친다"
+    },
+    {
+      "sheet": "COIN IN RUSH",
+      "library": "fl:coins_in_rush",
+      "note": "금서고 · 공지 표기는 COINS IN RUSH"
+    },
+    {
+      "sheet": "EDEN SPHERE",
+      "library": "side:eden_spear",
+      "note": "사이드 스토리. 금서고 · 공지 표기는 EDEN SPEAR"
+    },
+    {
+      "sheet": "2X2 LOVE",
+      "library": "fl:2x2_love_1ch",
+      "note": "금서고는 1부 · 2부 두 단위다. 시트 행은 1부에 잇는다"
+    }
+  ],
+  "favorites": [
+    {
+      "sheet": "애착 베게",
+      "data": "애착 베개",
+      "itemId": 200301,
+      "note": "시트 오타(베게). 데이터 표기는 '애착 베개', 소유 캐릭터는 프림"
+    }
+  ],
+  "_bodyMissing": {
+    "_comment": "시트가 아카이브O로 표시했지만 CDN에 본문 파일이 없는 이벤트. 인게임에서는 읽히는데 blablalink는 안 준다. 총 43씬.",
+    "event_boomtheghost": {
+      "sheet": "BOOM! THE GHOST!",
+      "scenes": 28,
+      "note": "1부 14씬 + 2부 14씬"
+    },
+    "event_forrest": {
+      "sheet": "FOR REST",
+      "scenes": 15
+    }
+  },
+  "prereqTitleFixes": {
+    "_comment": [
+      "시트의 '추천 선행 스토리' 칼럼 표기 → '제목' 칼럼 표기.",
+      "같은 스토리를 두 칼럼에서 다르게 적은 경우다. 대상 제목이 시트에 실제로 존재하는 것만 넣었다.",
+      "자동 교정이 아니라 명시적 대응이다 — 새로 추가할 때도 대상 존재를 확인할 것."
+    ],
+    "UNBREKABLE SPHERE": "UNBREAKABLE SPHERE",
+    "PERFACT MAID": "PERFECT MAID",
+    "Maid in Valentain": "Maid in Valentine",
+    "ROMANTIC VALENTAIN": "ROMANTIC VALENTINE",
+    "COLORESS": "COLORLESS",
+    "COLOARLESS": "COLORLESS",
+    "LORD FOR JUSTICE": "LORD, FOR JUSTICE",
+    "SCHOOL OF LOCKS": "SCHOOL OF LOCK",
+    "BOOM THE GHOST": "BOOM! THE GHOST!",
+    "ARCANE ARCANA": "ARCANE ARCHIVE"
+  },
+  "prereqFreeform": {
+    "_comment": "스토리를 특정하지 않는 자유 서술. 엣지로 만들지 않고 메모로 남긴다.",
+    "items": [
+      "이전 콜라보 스토리 중 아무거나"
+    ]
+  }
+}

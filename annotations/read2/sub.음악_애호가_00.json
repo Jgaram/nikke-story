@@ -1,0 +1,50 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:음악_애호가_00",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E76",
+      "act": "암시",
+      "points": ["F1798", "J24"],
+      "text": "아니스가 들뜬 채 '트윙클 트라이 스타 노래도 틀 수 있어?'라 청하고, 나온 노래에 '걔넨 이런 노래는 부른 적 없는데?'라며 그들의 곡을 훤히 안다 — 아니스는 T.T.STAR(트윙클 트라이 스타)였다(F1798)",
+      "about": ["person:아니스"],
+      "evidence": [{ "scene": "sub:음악_애호가_00", "lines": ["51-58"] }],
+      "reason": "#53 · #57. ch35에서 아니스가 T.T.STAR였다고 밝혀진다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D94",
+      "person": "person:율리아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'저물어간 시대의 음악을 좇는 자'라 자처하며 시처럼 말하고, 지상의 낡은 주크박스를 '스승님'으로 모시는 니케",
+      "evidence": [{ "scene": "sub:음악_애호가_00", "lines": ["1-21"] }],
+      "reason": "#2-3 · #7-13 · #23-25 율리아 '아아, 스승님!'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U69",
+      "topic": "일상 · 문화",
+      "text": "방주 사람들은 트윙클 트라이 스타 같은 방주 가수의 노래를 듣고, 옛 지상의 노래는 지상에 남은 낡은 주크박스 같은 기계로나 들을 수 있다",
+      "about": ["place:지상"],
+      "points": ["F297"],
+      "evidence": [{ "scene": "sub:음악_애호가_00", "lines": ["53-59"] }],
+      "reason": "#58-59 네온 '트윙클 트라이 스타는 방주의 가수' · '지상의 노래만'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

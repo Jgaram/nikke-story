@@ -1,0 +1,262 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch07",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I10",
+      "target": "person:모더니아",
+      "speaker": true,
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": [10, 22, "24-31", "35-36", "39-40", "42-43"] }],
+      "reason": "바이저가 떨어진 뒤의 ??? 줄 — #25 '저는 모더니아. 퀸을 모시는…', #35 '실버건 스쿼드의 마리안'. 같은 씬 모더니아 이름표가 이어 말한다(L1)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "I11",
+      "target": "person:스노우_화이트",
+      "evidence": [{ "scene": "d_main_07af_01", "lines": ["7-13"] }],
+      "reason": "루드밀라가 '불꽃신호기를 들고 서 있던' 얼굴 없는 이를 말하고 아니스가 '약속을 지켰구나', 라피가 필그림이라 한다 — 외골격을 빌려 간 스노우 화이트(F211)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "I12",
+      "target": "person:마리안",
+      "evidence": [{ "scene": "d_main_07af_03", "lines": [9] }],
+      "reason": "엔더슨 '헬레틱이 된 이전 부하 니케와 조우한 것도 처음' — 마리안(L1). 이 씬에 이름은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "I13",
+      "target": "concept:헬레틱",
+      "evidence": [{ "scene": "d_main_07_03", "lines": ["18-25"] }],
+      "reason": "지휘관 '랩쳐를 입고 있는 니케' · 스노우 화이트 '배신자다. 패배자이기도' — 헬레틱(F125). 이 씬에 이름은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E53",
+      "act": "재언급",
+      "points": ["F2880"],
+      "text": "바이저 아래 얼굴을 본 지휘관에게 마리안의 말 — '저는 당신을 지키니까요' · '붕대를 감아주세요' · '붕대 고마웠어요' — 이 되살아난다",
+      "about": ["person:마리안"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["14-20"] }],
+      "reason": "#14-20 마리안 이름표 회상 줄. ch00–01의 붕대(F2880)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E54",
+      "act": "암시",
+      "points": ["F334"],
+      "text": "지휘관이 '마리안!'을 외치자 모더니아가 '지휘… 관?' 하고 알아보는 듯 멈춘다 — ch13에서 모더니아가 지휘관을 알아보고 붕대를 청하는 일(F334)",
+      "about": ["person:모더니아", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["41-44"] }],
+      "reason": "#43 '지휘… 관?'. ch13 F334에서 같은 일이 더 또렷이 되풀이된다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E55",
+      "act": "암시",
+      "points": ["Q68", "J1"],
+      "text": "마리안이라는 이름을 되뇌자 모더니아의 몸에서 검은 에너지가 일렁이다 터진다 — 돌아온 마리안이 지닌 검은 빛의 힘(Q68)",
+      "about": ["person:모더니아"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["32-38", "45-46"] }],
+      "reason": "#34 '검은 에너지가 일렁' · #46. 돌아온 마리안의 검은 빛(Q68 · F373)과 같은 모습",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E56",
+      "act": "재언급",
+      "points": ["Q13"],
+      "text": "스노우 화이트가 '왜 토커티브가 널 납치하고 있었지? 뭔가 있는 모양이군'이라 묻는다 — 토커티브가 지휘관을 노리는 까닭(Q13)",
+      "about": ["person:토커티브", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["20-22"] }],
+      "reason": "#20-22. ch04에서 든 Q13을 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E57",
+      "act": "암시",
+      "points": ["F494"],
+      "text": "1차 침공 때부터 지상에 있었다던 스노우 화이트가 '더는 묻지 마라. 말하고 싶지 않다'며 입을 닫는다 — 갓데스 스쿼드 시절(F494)",
+      "about": ["person:스노우_화이트"],
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["15-19"] }],
+      "reason": "#16 · #19. 숨긴 과거는 char:221에서 갓데스로 드러난다(F494)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E58",
+      "act": "암시",
+      "points": ["F2649", "J6"],
+      "text": "아니스가 오지 않는 스노우 화이트를 두고 '필그림은 인간에게 버림받은 니케들이니까'라 한다 — 방주가 갓데스를 버린 일(F2649)",
+      "about": ["org:필그림"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["106-107"] }],
+      "reason": "#107. 버림받은 까닭은 ch46에서 오스왈드가 갓데스를 일부러 버린 일로 드러난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D68",
+      "person": "person:마리안",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "실버건 스쿼드(04-F)의 니케",
+      "after": "'퀸을 모시는' 헬레틱 모더니아",
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["24-25"] }],
+      "points": ["F209"],
+      "time": "S15",
+      "reason": "#25 '저는 모더니아. 퀸을 모시는…'. 처분된 마리안(D8)이 헬레틱으로 나타났다(L1)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D69",
+      "person": "person:마리안",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "지휘관을 지키는 다정하고 헌신적인 니케",
+      "after": "공손한 말투로 '최대한 고통스럽게 죽여 드릴게요'라며 웃는 잔혹한 헬레틱",
+      "evidence": [{ "scene": "d_main_07_06_s", "lines": ["26-39"] }],
+      "time": "S15",
+      "reason": "#29-30 · #36-39 모더니아 이름표. 마리안 성격 기준 D4와 맞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D70",
+      "person": "person:마리안",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "지휘관과의 일을 기억하는 마리안",
+      "after": "자기를 모더니아로 알고 마리안이라는 이름은 '익숙한 울림'으로만 느끼며 흔들린다",
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["24-35"] }],
+      "time": "S15",
+      "reason": "#24 '착각하신 것 같네요' · #29 '익숙한 울림' · #35 되뇜",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D71",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "도와주는 대신 본 것을 잊으라는 낯선 구원자",
+      "after": "목숨 빚을 절대 잊지 않겠다며 때가 되면 연락하겠다는 사이",
+      "trigger": [{ "scene": "d_main_07_06_e", "lines": ["84-98"] }],
+      "evidence": [{ "scene": "d_main_07af_02", "lines": ["32-36"] }],
+      "time": "S15",
+      "reason": "외골격을 내주며 '난 널 믿어'(#94) → #34 '때가 되면 연락' · #36 '은혜는 절대 잊지 않겠다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D72",
+      "person": "person:스노우_화이트",
+      "aspect": "신체",
+      "act": "기준",
+      "text": "1차 침공 때부터 수십 년 정비를 받지 못해 몸이 상한 채 버틴다",
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["10-17"] }],
+      "points": ["F203"],
+      "reason": "#10-17. 모더니아도 '정비를 받지 못한 모양'(07_06_s#21) · '통각 센서도 고장'(#26)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D73",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "이 지휘관이 찾던 사람일지 기대를 거는 부하",
+      "after": "'몇 번이나 지키지 못했다'며 죽음으로 내몰 수 없다고 막아서고 몸으로 감싸 체온을 나누는 보호자",
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["75-79", "112-113"] }],
+      "time": "S15",
+      "reason": "#78-79 '절대 가게 두지 않습니다' · #112 '모두. 지휘관을 감싸자'. D9 뒤 지키지 못한 자책이 처음 말로 나온다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D74",
+      "person": "person:지휘관",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "전초 기지의 카운터스 지휘관",
+      "after": "부사령관 아래 누구도 명령할 수 없는 특수 별동대 지휘관",
+      "evidence": [{ "scene": "d_main_07af_03", "lines": ["10-19"] }],
+      "points": ["F214"],
+      "time": "S15",
+      "reason": "#12 '특수 별동대로 임명' · #15-19",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U37",
+      "topic": "지상",
+      "text": "필그림은 정비 없이 수십 년 죽어 버린 지상을 떠돌며 '실낱같은 희망을 찾아 헤매는 순례자'로 살고, 방주가 어떤 세계인지도 모른다",
+      "about": ["org:필그림"],
+      "points": ["F203", "F206"],
+      "evidence": [{ "scene": "d_main_07_05", "lines": ["11-19"] }],
+      "reason": "#11-19. 이룬 것 없이 돌아갈 수 없다는 마음(#2-9)도 함께",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "U38",
+      "topic": "방주 사회",
+      "text": "방주에서 헬레틱은 기록이 거의 없어 도시 괴담으로만 떠돌고, 물질 데이터베이스마저 지워져 중앙 정부 라이브러리 말고는 알 길이 없다",
+      "about": ["concept:헬레틱", "org:중앙_정부"],
+      "points": ["F215", "F216"],
+      "evidence": [{ "scene": "d_main_07af_04", "lines": ["14-23"] }],
+      "reason": "#17-23. 아니스도 필그림 · 헬레틱을 '전설의 존재'라 한다(07_06_s#87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "U39",
+      "topic": "방주 사회",
+      "text": "3대 기업 CEO는 지휘관을 함부로 대할 수 있을 만큼 힘이 세서, 부사령관이 특수 별동대의 특권에 그것을 막는 조항을 따로 넣는다",
+      "about": ["org:3대_기업"],
+      "points": ["F214"],
+      "evidence": [{ "scene": "d_main_07af_03", "lines": [19] }],
+      "reason": "#19 '3대 회사의 CEO도 함부로 대할 수 없게 되네. 내가 직접 건의'. 슈엔의 횡포(D50)와 같은 결",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

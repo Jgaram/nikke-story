@@ -1,0 +1,75 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M52\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:승리를_부르는_그림자",
+  "session": "M52",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I473",
+      "target": "place:승리의_날개_호",
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_00", "lines": ["5-9"] }],
+      "reason": "머리 위의 '거대한 함선' — 02#1-2에서 [승리의 날개 호]로 이름이 붙는다(F2821).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I474",
+      "target": "place:승리의_날개_호",
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_01", "lines": ["4-5"] }],
+      "reason": "다시 진 '거대한 그림자'의 함선 — 같은 함선(02#0 '나를 두 번이나 살려주었던').",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I475",
+      "target": "org:갓데스",
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_02", "lines": [2] }],
+      "reason": "'승리의 여신들' — 01#12-13이 갓데스 스쿼드라 부른다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I476",
+      "target": "org:갓데스",
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_03", "lines": [7] }],
+      "reason": "그림자 위의 '승리의 여신' — 갓데스 스쿼드(01#13).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1226",
+      "act": "재언급",
+      "points": ["F2815"],
+      "text": "갓데스의 이동 기지라 [승리의 날개 호]라 이름 붙은 함선",
+      "about": ["place:승리의_날개_호", "org:갓데스"],
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_02", "lines": ["1-2"] }],
+      "reason": "ch47 06#73-83 시엘로가 도로시에게 들려준 내력(F2815)을 그때 병사의 기록이 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U448",
+      "topic": "구시대",
+      "text": "날마다 전장에 나가 동료를 잃으며 이길 기대도 없던 병사들은, 머리 위에 승리의 날개 호의 그림자가 지기만을 바라며 버틴다",
+      "about": ["place:승리의_날개_호", "org:갓데스"],
+      "points": ["F2821"],
+      "evidence": [{ "scene": "relic:승리를_부르는_그림자_03", "lines": ["0-11"] }],
+      "reason": "#3 기대도 들지 않았다 · #4-8 그림자가 나타난 순간 잡념이 사라졌다. 01#14도.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    }
+  ],
+  "note": "미상 이름표 없음. 기록자는 이름 없는 병사라 적지 않는다."
+}

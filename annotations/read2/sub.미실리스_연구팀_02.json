@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:미실리스_연구팀_02",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D83",
+      "person": "person:리타",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'~느니라' 하는 노인 말투로 호통치지만, 지상은 혹독하고 외로운 곳이라며 로봇 개에게 함께 가자고 하고 남겠다니 집까지 지어 주는 정 많은 마이티 툴즈 니케",
+      "evidence": [{ "scene": "sub:미실리스_연구팀_02", "lines": ["76-93"] }],
+      "reason": "#78-82 · #87-90. 다음 편에서는 '도구는 도구일 뿐'이라며 가품을 망설임 없이 부순다(_03#67-73)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "D84",
+      "person": "person:센티",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'~슴다' 하며 큰 목소리로 씩씩하게 답하고, 눈 · 귀가 좋아 멀리 오는 랩쳐를 먼저 알아보는 손재주 좋은 리타의 후배",
+      "evidence": [{ "scene": "sub:미실리스_연구팀_02", "lines": ["54-63"] }],
+      "reason": "#56 · #61-63. 개집을 뚝딱 짓는다(#96)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": []
+}

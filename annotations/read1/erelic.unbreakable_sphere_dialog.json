@@ -1,0 +1,141 @@
+{
+  "unit": "erelic:unbreakable_sphere_dialog",
+  "session": "R61",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "event_unbreakablesphere1의 필드 대화 22편(금서고). 글러트니 목구멍 속 물거품 정원에서 — 기록하듯 따라다니는 물방울(00), 세이렌의 옛 기억이 담긴 물거품이 홀로그램처럼 보여 주는 장면들: 신데렐라의 머리카락 관리(01), 헨젤 · 그레텔의 시뮬레이션 룸 정리를 대신해 준 세이렌을 나무라는 에이브(04), 헨젤 · 그레텔의 꿈 이야기(07), 신데렐라의 '해피 엔딩으로 끝날 동화' 맹세(10), 물거품을 못 만들어 우울한 레비와 생선구이(12), 언령을 쓰는 이는 선해야 한다는 에이브의 말(13), 신데렐라 인형을 만들며 우는 세이렌(20). 일행의 일상 — 움직이지 않는 시소(02) · 물거품 침대에서 잠든 모리(03) · 미하라를 지키는 유니(06) · 셋이 떠난 뒤 놀이터 · 침대를 치우지 못하는 세이렌(08 · 09), AA 필러 에너지가 줄지 않아 더는 기다릴 수 없다는 세이렌(05), 공방 정리 — 밖에 내보낸 신데렐라 · 에이브 · 헨젤 · 그레텔 · 레비 · 자기를 닮은 물거품(11). 구출 뒤: 데리러 와 준 모리에게 고맙다(14), 언령을 제어하게 된 세이렌과 쉼터를 칭찬하는 그레이브(15), 물거품 보드게임(16 · 19), 물거품으로만 보던 신데렐라를 실제로 본 모리(17), 다시는 혼자 두지 않겠다는 미하라(18), 정원에 작별(21).",
+  "scenes": [
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_00",
+      "text": "기록하듯 찍는 물방울 · 멈추려면 없애야 한다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_01",
+      "text": "기억 물거품 — 신데렐라와 세이렌의 머리카락 관리"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_02",
+      "text": "움직이지 않는 시소 · 유니의 마음이 무겁다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_03",
+      "text": "물거품 침대에서 잠든 모리"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_04",
+      "text": "기억 — 헨젤 · 그레텔 대신 일한 세이렌을 나무라는 에이브 · 모리 '난 아닌데'"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_05",
+      "text": "AA 필러의 에너지가 줄지 않는다 · 더는 기다릴 수 없다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_06",
+      "text": "잠든 미하라 곁을 지킨 유니"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_07",
+      "text": "기억 — 헨젤과 그레텔의 해변 꿈"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_08",
+      "text": "조용한 놀이터 · 그네 타는 모리"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_09",
+      "text": "치우지 않는 물거품 침대"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_10",
+      "text": "기억 — 신데렐라의 해피 엔딩 맹세"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_11",
+      "text": "공방 정리 · 밖에 내보낸 친구들의 물거품 · 에이브가 준 능력"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_12",
+      "text": "기억 — 레비와 생선구이 · 자책하지 않기를"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_13",
+      "text": "기억 — 언령을 쓰는 사람은 선해야 한다는 에이브"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_14",
+      "text": "데리러 와 준 모리에게 고맙다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_15",
+      "text": "언령 제어 · 쉼터를 칭찬하는 그레이브 · 늦어서 미안하다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_16",
+      "text": "물거품 보드게임 — 에이브가 알려 준 것"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_17",
+      "text": "물거품으로만 보던 신데렐라를 실제로 본 모리"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_18",
+      "text": "미하라 '유니를 혼자 두고 떠나지 않는다'"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_19",
+      "text": "보드게임 모든 스테이지를 깬 그레이브"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_20",
+      "text": "기억 — 신데렐라 인형을 만들며 우는 세이렌 · 인형은 눈물로 만들어졌다"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_dialog_21",
+      "text": "물거품 정원에 작별"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1904",
+      "text": "글러트니 목구멍 속 물거품 정원에는 세이렌의 옛 기억이 담긴 물거품이 종종 생겨나 홀로그램처럼 그 장면을 보여 주었다 — 신데렐라 · 에이브 · 헨젤과 그레텔 · 레비와 지내던 날들이고, 모리는 그것으로 신데렐라의 얼굴을 먼저 알았다",
+      "about": ["person:세이렌", "person:신데렐라", "person:에이브", "person:헨젤", "person:그레텔", "person:레비", "person:모리"],
+      "evidence": [
+        { "scene": "erelic:unbreakable_sphere_dialog_01", "lines": ["0-3", "23-24"] },
+        { "scene": "erelic:unbreakable_sphere_dialog_07", "lines": ["1-2"] },
+        { "scene": "erelic:unbreakable_sphere_dialog_17", "lines": ["5-9"] }
+      ],
+      "reason": "미하라 '뭔가의 기록 … 기억 같기도'(01 #1-2), 세이렌 '또 여기에 기억 물거품이 생겼나 보네'(07 #1), 모리(17 #8-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1905",
+      "text": "세이렌은 공방에서 밖으로 내보낼 신데렐라 · 에이브 · 헨젤 · 그레텔 · 레비와 자기를 닮은 물거품을 만들었다 — 그 사람을 떠올리며 물거품에 언령을 넣었고, 에이브가 준 능력이니 자기가 사라져도 남으리라 믿었다 — 신데렐라는 그 인형들과 만났다며 눈물로 만든 것이었다고 했다",
+      "about": ["person:세이렌", "person:신데렐라", "person:에이브", "person:헨젤", "person:그레텔", "person:레비"],
+      "evidence": [
+        { "scene": "erelic:unbreakable_sphere_dialog_11", "lines": ["0-10"] },
+        { "scene": "erelic:unbreakable_sphere_dialog_20", "lines": ["2-19"] }
+      ],
+      "reason": "세이렌의 혼잣말(11 #2-10, 20 #2-12), 신데렐라 '네가 보낸 인형들과 만나서 다행이야'(20 #14-17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1906",
+      "text": "에이브는 세이렌이 처음 니케가 되었을 때 언령을 쓰는 이는 선해야 하고 그렇지 않으면 그 능력이 외롭게 만들 것이라 했고, 물거품 제어를 익히라고 물거품 보드게임을 알려 주었다 — 세이렌은 선하게 살아 외롭지 않게 되었다고 했다",
+      "about": ["person:에이브", "person:세이렌"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_dialog_13", "lines": ["2-19"] }, { "scene": "erelic:unbreakable_sphere_dialog_16", "lines": ["4-5"] }],
+      "reason": "기억 물거품 속 에이브 · 세이렌(13), 세이렌의 말(16 #4-5)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [],
+  "targets": [],
+  "revisit": []
+}

@@ -1,0 +1,123 @@
+{
+  "unit": "event_bowwowparadise",
+  "session": "R19",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "강아지 이벤트(가벼운 편). 비스킷이 돌보는 강아지 보호소에서 리더 격 강아지 맥스가 꾀병으로 문을 열게 해 강아지들을 데리고 탈주한다(prologue). 비스킷은 네로의 말대로 '훈련사님'(지휘관)에게 도움을 청한다 — 비스킷에 따르면 방주에서는 로열의 일부 특권층만 중앙 정부 허락을 받아 반려동물을 키울 수 있어 함부로 데려가면 엄벌이고, 보호소 강아지들은 방주에 나가 본 적이 없다(01). 시민들이 데려다준 강아지들이 경찰서에 모였지만 민원(배변 · 소음 등)을 남긴 채 맥스가 다시 데려가고(02), 쇼핑몰에서 강아지들을 잡은 뒤 비스킷은 강아지들에게서 맥스가 방주가 궁금해 나왔다는 것을 듣는다 — '보호라는 이름이 구속이었을 수도'(03). 공원에서 리타 · 볼트와 놀던 맥스를 붙잡은 비스킷은 방주처럼 자유롭게 뛰어놀 보호소를 만들겠다고 약속한다(intermission). 리타 · 센티가 공사를 시작했지만 미완성 보호소에 강아지들이 뛰어들어 무너지고(04), 비스킷 · 지휘관 · 강아지들이 강아지마다의 특성에 맞춰 다시 짓는다(05). 보호소 이름은 '바우 와우 파라다이스', 리타가 마무리한다(06). 에필로그 — 맥스의 독백: 이제 방주보다 이곳이 더 좋다, 우리의 낙원이자 고향.",
+  "scenes": [
+    {
+      "scene": "event_bowwowparadise_prologue",
+      "text": "보호소 — 맥스의 꾀병과 하울링, 강아지 대탈주"
+    },
+    {
+      "scene": "event_bowwowparadise_01_s",
+      "text": "네로의 조언 — '집사(훈련사님)한테 가보라냥'"
+    },
+    {
+      "scene": "event_bowwowparadise_01_e",
+      "text": "방주의 반려동물 규제 — 강아지들은 방주에 나가 본 적이 없다"
+    },
+    {
+      "scene": "event_bowwowparadise_02_s",
+      "text": "경찰서의 강아지들과 민원 — 맥스가 다시 데려감"
+    },
+    {
+      "scene": "event_bowwowparadise_02_e",
+      "text": "맥스를 추적 — 쇼핑몰 민원"
+    },
+    {
+      "scene": "event_bowwowparadise_03_s",
+      "text": "쇼핑몰에서 강아지 포획 — 맥스 '돌아가기 싫다'"
+    },
+    {
+      "scene": "event_bowwowparadise_03_e",
+      "text": "탈주 이유 = 방주가 궁금해서, '보호가 구속이었을 수도'"
+    },
+    {
+      "scene": "event_bowwowparadise_intermission_01",
+      "text": "공원의 리타 · 볼트 — 맥스 포획, 방주 같은 보호소 약속"
+    },
+    {
+      "scene": "event_bowwowparadise_04_s",
+      "text": "리타 · 센티의 보호소 대공사 시작"
+    },
+    {
+      "scene": "event_bowwowparadise_04_e",
+      "text": "미완성 보호소에 강아지들이 뛰어들어 붕괴"
+    },
+    {
+      "scene": "event_bowwowparadise_05_s",
+      "text": "풀 죽은 강아지들 — 함께 복구하기로"
+    },
+    {
+      "scene": "event_bowwowparadise_05_e",
+      "text": "강아지마다 특성에 맞춘 두 번째 공사"
+    },
+    {
+      "scene": "event_bowwowparadise_06_s",
+      "text": "보호소 이름 '바우 와우 파라다이스'"
+    },
+    {
+      "scene": "event_bowwowparadise_06_e",
+      "text": "리타의 마무리 — 자유롭게 뛰어노는 강아지들"
+    },
+    {
+      "scene": "event_bowwowparadise_epilogue",
+      "text": "맥스의 독백 — 방주보다 이곳이 좋다, 우리의 낙원"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F824",
+      "text": "비스킷에 따르면 방주에서는 로열의 일부 특권층만 중앙 정부의 허락을 받아 반려동물을 키울 수 있고 동물보호법이 까다롭고 무거워 함부로 데려가면 엄벌을 받는다 — 비스킷이 돌보는 보호소 강아지들은 방주에 한 번도 나가 본 적이 없었다",
+      "about": ["place:방주", "person:비스킷", "org:중앙_정부", "place:바우_와우_파라다이스"],
+      "evidence": [{ "scene": "event_bowwowparadise_01_e", "lines": ["11-21"] }],
+      "reason": "비스킷 말(#11–14, #17–21). 동물 사적 소유 금지(F621) · 허가제(F600)와 같은 규칙",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    },
+    {
+      "id": "F825",
+      "text": "보호소 강아지들의 리더 맥스는 비스킷에게 들은 방주가 궁금해 강아지들을 이끌고 탈주했고, 비스킷은 방주처럼 자유롭게 뛰어놀 수 있게 보호소를 고쳐 짓겠다고 약속해 리타 · 센티 · 지휘관 · 강아지들과 함께 '바우 와우 파라다이스'를 지었다 — 비스킷은 강아지들의 말을 알아듣는다",
+      "about": ["person:맥스", "person:비스킷", "place:바우_와우_파라다이스", "person:리타", "person:센티"],
+      "evidence": [
+        { "scene": "event_bowwowparadise_03_e", "lines": ["21-42"] },
+        { "scene": "event_bowwowparadise_intermission_01", "lines": ["63-97"] },
+        { "scene": "event_bowwowparadise_06_s", "lines": ["8-11"] }
+      ],
+      "reason": "비스킷(03_e #31–42, intermission #78–90), 리타(#95–97), 보호소 이름(06_s #9–11). 비스킷이 강아지 말을 옮기는 장면이 여러 번 나온다(02_s #69, 03_e #21–31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:바우_와우_파라다이스",
+      "evidence": [
+        {
+          "scene": "event_bowwowparadise_06_s",
+          "lines": [
+            9
+          ]
+        }
+      ],
+      "note": "비스킷의 강아지 보호소",
+      "new": true
+    },
+    {
+      "target": "person:맥스",
+      "evidence": [
+        {
+          "scene": "event_bowwowparadise_prologue",
+          "lines": [
+            3
+          ]
+        }
+      ],
+      "note": "보호소 강아지들의 리더(반장)",
+      "new": false
+    }
+  ]
+}

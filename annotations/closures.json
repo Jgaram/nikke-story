@@ -1,0 +1,5184 @@
+{
+  "session": "X3f-1d",
+  "by": "claude",
+  "date": "2026-10-09",
+  "closures": [
+    {
+      "id": "O1",
+      "type": "관계",
+      "chain": "관계 person:미하라 ↔ person:지휘관",
+      "about": ["person:미하라", "person:지휘관"],
+      "text": "슈엔 쪽 '쓸 만한' 지휘관을 돕겠다는 말로 믿게 된 미하라가 어울려 준 지휘관에게 옛 이야기를 털어놓고 날마다 찾아오는 사이로 자리 잡는다(ch24 기억 소거로 지워진다)",
+      "built": ["D30", "D34"],
+      "end": "char:161",
+      "closing": ["D1831"],
+      "reason": "D30 · D34(ch03 · 04)에 쌓인 믿음이 호감도 마지막 변화 D1831에서 털어놓음 · 가까워짐으로 자리 잡는다 — 이 쌍의 관계 변화는 뒤에 없고, 뒤의 끊김은 기억 소거(D291 ch24)라 관계 기록이 아니다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:미하라 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1831@char:161"
+        }
+      ]
+    },
+    {
+      "id": "O2",
+      "type": "관계",
+      "chain": "관계 person:자칼 ↔ person:지휘관",
+      "about": ["person:자칼", "person:지휘관"],
+      "text": "재킷 하나에 감동하던 자칼이 '절대 굶주리게 두지 않겠다'는 지휘관을 믿고 따르며, '기다리면 찾아온다'는 약속에 기다리기로 하는 사이로 자리 잡는다",
+      "built": ["D133"],
+      "end": "char:111",
+      "closing": ["D1989", "D1990"],
+      "reason": "D133(ch16)의 감동이 호감도 D1989 · D1990에서 믿음과 약속으로 자리 잡는다 — 이 쌍의 변화는 뒤에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:자칼 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1989 D1990@char:111"
+        }
+      ]
+    },
+    {
+      "id": "O3",
+      "type": "관계",
+      "chain": "관계 person:유니 ↔ person:지휘관",
+      "about": ["person:유니", "person:지휘관"],
+      "text": "자기를 구원해 줄 지휘관이라 매달리던 유니가 크로우의 말에 복수로 돌아서, 지휘관을 전기 충격으로 쓰러뜨리고 언체인드를 빼앗으며 관계가 끊긴다",
+      "built": ["D33", "D1902", "D162"],
+      "end": "ch23",
+      "closing": ["D277"],
+      "reason": "ch04 · 호감도 · ch18에 쌓인 기대와 원망이 ch23 D277 배신으로 끊긴다 — 이 쌍의 변화는 뒤에 없다(결별)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:유니 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D277@ch23"
+        }
+      ]
+    },
+    {
+      "id": "O4",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:크로우",
+      "about": ["person:지휘관", "person:크로우"],
+      "text": "(초안) 관계 person:지휘관 ↔ person:크로우의 끝",
+      "built": ["D130", "D131", "D1404"],
+      "end": "ch24",
+      "closing": ["D284"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D284@ch24",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ch24 D284는 크로우가 지휘관에게 품은 집착의 정체가 드러난 자리일 뿐 — 대립의 결판 · 자리 잡음이 아니고 열려 있다"
+        }
+      ]
+    },
+    {
+      "id": "O5",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:레드_후드",
+      "about": ["person:도로시", "person:레드_후드"],
+      "text": "죽은 줄 안 옛 동료로 다시 만나 부딪친 도로시와 레드 후드가, 마지막을 망쳤다고 뉘우친 끝에 '오래된 사이'로 작별을 주고받는다",
+      "built": ["D316", "D322", "D327", "D326"],
+      "end": "event_redash",
+      "closing": ["D351"],
+      "reason": "ch25 · 26의 재회 · 충돌 · 뉘우침(D316 · D322 · D326 · D327)이 RED ASH D351 작별 받아 줌으로 닫힌다 — 이별",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:레드_후드의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 3, 마지막 변화 D351@event_redash · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O6",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:지휘관",
+      "about": ["person:도로시", "person:지휘관"],
+      "text": "언체인드를 대가로 지휘관을 장기말로 쓰던 도로시가 라피를 죽이려다 '이번 한 번' 용서받고 '고마워요'라 하며 거래 · 적대를 내려놓는다",
+      "built": ["D176", "D1433"],
+      "end": "ch26",
+      "closing": ["D332"],
+      "reason": "ch19의 거래 상대 · 호감도의 애정(D176 · D1433)이 ch26 D332 용서로 결판난다 — ch46 D1171은 지휘관 쪽 기준(새 국면)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 2, 마지막 변화 D332@ch26"
+        }
+      ]
+    },
+    {
+      "id": "O7",
+      "type": "성장",
+      "chain": "성장 person:도로시 성격",
+      "about": ["person:도로시"],
+      "text": "(초안) 성장 person:도로시 성격의 끝",
+      "built": ["D189", "D238"],
+      "end": "ch26",
+      "closing": ["D324"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D324@ch26",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "D324는 갓데스 시절과 지금을 견준 변모(타락)의 드러남이고 D238은 한 걸음 — 결핍이 풀리거나 새 신념이 서는 이룸이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O8",
+      "type": "성장",
+      "chain": "성장 person:레드_후드 신념",
+      "about": ["person:레드_후드"],
+      "text": "죽은 과거가 지금을 빼앗을 수 없다던 레드 후드가 동료들과 작별을 마친 뒤, 남은 몫을 라피에게 사는 재미로 돌려주기로 하며 신념을 마무리한다",
+      "built": ["D321", "D350"],
+      "end": "char:470",
+      "closing": ["D1482"],
+      "reason": "ch26 D321 · RED ASH D350의 작별하러 돌아감이 호감도 D1482 '다 채웠으니'에서 닫힌다(같은 공개 자리)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:레드_후드 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1482@char:470"
+        }
+      ]
+    },
+    {
+      "id": "O9",
+      "type": "관계",
+      "chain": "관계 person:루드밀라 ↔ person:지휘관",
+      "about": ["person:루드밀라", "person:지휘관"],
+      "text": "니케와 지휘관은 주종이라며 '진짜'인지 떠보던 루드밀라가 귀한 차를 가져온 지휘관을 '진짜 시종'이라 인정하고 '이 몸이 졌다'고 한다",
+      "built": ["D57"],
+      "end": "char:190",
+      "closing": ["D1802"],
+      "reason": "ch05 D57의 떠보기가 char:190 D1802 인정으로 끝난다 — char:194 D2083(편지 · 둘만의 시간)은 설온장 이야기의 새 국면이라 끝을 앞당김",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:루드밀라 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2083@char:194 · 끝 char:194 · 닫는 기록 D2083 · 쌓인 자리 D57 D1802"
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "type": "성장",
+      "chain": "성장 person:루드밀라 신념",
+      "about": ["person:루드밀라"],
+      "text": "가문의 과거를 갚으려 설온장을 혼자 완벽히 관리하던 루드밀라가 '전해지지 않는 선의는 자기만족'이라며 관리를 나누고 부치지 못한 편지를 태워 보낸다",
+      "built": ["D1510"],
+      "end": "char:194",
+      "closing": ["D2082"],
+      "reason": "NEVERLAND D1510(가문이 살피지 않은 과거를 반복하지 않겠다)이 호감도 D2082에서 이룸에 닿는다 — ch06 D61(세계를 부수지 말라)은 다른 갈래라 쌓인 자리에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:루드밀라 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2082@char:194 · 쌓인 자리 D61 D1510"
+        }
+      ]
+    },
+    {
+      "id": "O11",
+      "type": "관계",
+      "chain": "관계 person:엔더슨 ↔ person:지휘관",
+      "about": ["person:엔더슨", "person:지휘관"],
+      "text": "(초안) 관계 person:엔더슨 ↔ person:지휘관의 끝",
+      "built": ["D44", "D305"],
+      "end": "ch27",
+      "closing": ["D374"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D374@ch27",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "뒷배 → 큰일을 맡김 → 전력으로 돕겠다는 선배로 계속 깊어지는 중 — '몸의 사정'은 아직 털어놓지 않았고 자리 잡는 끝이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O12",
+      "type": "성장",
+      "chain": "성장 person:마리안 성격",
+      "about": ["person:마리안"],
+      "text": "헬레틱에서 돌아와 아이처럼 떼쓰던 마리안이 크라운 왕국에서 지내며 굼벵이 요리 · 고전 영화를 즐기고 남을 챙기는, 차임이 놀랄 만큼 성숙한 모습에 이른다",
+      "built": ["D111", "D2059"],
+      "end": "side:second_affection",
+      "closing": ["D417"],
+      "reason": "ch14 D111(아이 같음) → FIRST AFFECTION D2059 → SECOND AFFECTION D417 · F1367(왕국에서 성숙, LAST KINGDOM이 재언급 E402) — ch00 · ch07(헌신 → 침식)은 다른 줄기라 쌓인 자리에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:마리안 성격의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D417@side:second_affection · 쌓인 자리 D4 D69 D111 D2059"
+        }
+      ]
+    },
+    {
+      "id": "O13",
+      "type": "관계",
+      "chain": "관계 person:미하라 ↔ person:유니",
+      "about": ["person:미하라", "person:유니"],
+      "text": "기억 소거로 어긋나 서로를 '가짜' · 흉악범으로 대하던 유니와 미하라가, 미하라가 자기에게 한 일을 용서하고 함께 속죄하며 살자고 하며 다시 짝으로 자리 잡는다",
+      "built": ["D29", "D32", "D98", "D283", "D282"],
+      "end": "side:wordless",
+      "closing": ["D525", "D527"],
+      "reason": "ch03–04의 짝(D29 · D32) → ch12 · ch24 어긋남(D98 · D282 · D283) → WORDLESS D525 · D527 용서 · 함께 속죄 — 뒤(UNBREAKABLE SPHERE)도 함께다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:미하라 ↔ person:유니의 끝 · 이유 (초안) 7건 · 단위 5 · 변화 5, 마지막 변화 D525 D527@side:wordless · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O14",
+      "type": "갈등",
+      "chain": "관계 person:슈엔 ↔ person:유니",
+      "about": ["person:슈엔", "person:유니"],
+      "text": "슈엔의 매질을 견디다 그 몰락을 바라게 된 유니와, 자기 니케들을 '쓰레기'라 내쫓은 슈엔이 갈라서며 — 슈엔은 혼자 무너지고 주려던 바디를 내준다",
+      "built": ["D138", "D151"],
+      "end": "side:wordless",
+      "closing": ["D531"],
+      "reason": "ch16–17의 학대 · 적대(D138 · D151)가 WORDLESS D531 내쫓음 · 결별로 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:슈엔 ↔ person:유니의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D531@side:wordless · 종류 관계"
+        }
+      ]
+    },
+    {
+      "id": "O15",
+      "type": "연작",
+      "chain": "연작 event_oldtales1",
+      "text": "RED ASH에서 갓데스의 강습을 빔으로 막고 사라진 신데렐라가 어떻게 아나키오르가 되었다가 돌아왔는지 OLD TALES가 반대편에서 밝혀, 1차 침공 회상 두 편을 닫는다",
+      "built": ["event_redash"],
+      "end": "event_oldtales1",
+      "reason": "links Y18(RED ASH → OLD TALES) — 1회독 요약: RED ASH는 강습 실패 · 신데렐라 실종으로 끝나고, OLD TALES가 침식 · 헬레틱 · 탈출을 닫는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 연작 event_redash → event_oldtales1의 결판 · 이유 (초안) 다음 편 사슬 event_redash → event_oldtales1의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O16",
+      "type": "관계",
+      "chain": "관계 person:그레이브 ↔ person:라피",
+      "about": ["person:그레이브", "person:라피"],
+      "text": "보물을 모욕했다며 라피를 죽이겠다던 그레이브가 사과를 받아 화해하고, 레드 후드를 이은 라피에게 세븐스 드워프와 계승의 뜻을 넘겨 북돋는 사이로 자리 잡는다",
+      "built": ["D440", "D442", "D498", "D501", "D534"],
+      "end": "ch34",
+      "closing": ["D551", "D549"],
+      "reason": "ch30 적대(D440 · D442) → ch31–32 오해 · 사과(D498 · D501) → ch33–34 맡김 · 북돋음 · 배움(D534 · D551 · D549)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:그레이브 ↔ person:라피의 끝 · 이유 (초안) 7건 · 단위 5 · 변화 5, 마지막 변화 D551 D549@ch34 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O17",
+      "type": "관계",
+      "chain": "관계 person:라피 ↔ person:은화",
+      "about": ["person:라피", "person:은화"],
+      "text": "말없이 떠난 라피를 '불량품'이라 깎아내리던 은화와 미안해 피해 다니던 라피가, 라피의 사과로 '또 보자'며 화해한다",
+      "built": ["D39"],
+      "end": "ch32",
+      "closing": ["D516", "D517"],
+      "reason": "ch04 D39의 앙금이 ch32 D516 · D517 사과 · 화해로 끝난다 — ch34 D550(OS를 건넴)은 화해 뒤의 모습이라 끝을 ch32로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:라피 ↔ person:은화의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D550@ch34 · 확신도 추정 · 끝 ch34 · 닫는 기록 D550 · 쌓인 자리 D39 D516 D517"
+        }
+      ]
+    },
+    {
+      "id": "O18",
+      "type": "성장",
+      "chain": "성장 person:신데렐라 신념",
+      "about": ["person:신데렐라"],
+      "text": "헬레틱 시절의 죄를 거울과 속죄로 갚으려던 신데렐라가 OLD TALES에서 망친 것을 직접 수습한 뒤, '나만이 그때를 기억하니까' 동료들의 추억을 일깨우고 새로 쌓겠다는 데 이른다",
+      "built": ["D521", "D555", "D577", "D578"],
+      "end": "char:511",
+      "closing": ["D2136"],
+      "reason": "거울 공주 D521 · ch34 D555 · OLD TALES D577 · D578(속죄 → 직접 수습)이 호감도 D2136의 새 신념으로 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:신데렐라 신념의 끝 · 이유 (초안) 5건 · 단위 4 · 변화 4, 마지막 변화 D2136@char:511"
+        }
+      ]
+    },
+    {
+      "id": "O19",
+      "type": "관계",
+      "chain": "관계 person:그레이브 ↔ person:신데렐라",
+      "about": ["person:그레이브", "person:신데렐라"],
+      "text": "관 속의 신데렐라를 살리려던 그레이브와 그를 '최고의 관객'이라 부르던 신데렐라가, 기억을 잃은 뒤에도 마주 보고 머리를 빗어 주는 일상으로 자리 잡는다",
+      "built": ["D512", "D511", "D519", "D553", "D2135"],
+      "end": "char:514",
+      "closing": ["D1599"],
+      "reason": "ch32 D511 · D512 → 관짝이 D519 → ch34 D553 · 호감도 D2135 → 호감도 D1599(관 대신 일상)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:그레이브 ↔ person:신데렐라의 끝 · 이유 (초안) 6건 · 단위 5 · 변화 4, 마지막 변화 D1599@char:514"
+        }
+      ]
+    },
+    {
+      "id": "O20",
+      "type": "관계",
+      "chain": "관계 person:길로틴 ↔ person:메이든",
+      "about": ["person:길로틴", "person:메이든"],
+      "text": "같은 저주 속 게으름뱅이라 여기던 메이든을 동료로 깨달은 길로틴과 자기와 겹쳐 보여 싫어하던 메이든이, 서로를 일으키고 파티를 맺어 함께 돌아간다",
+      "built": ["D275"],
+      "end": "event_icedragonsaga1",
+      "closing": ["D1612", "D1619", "D1613"],
+      "reason": "ch23 D275의 동료 깨달음이 ICE DRAGON SAGA D1612 · D1613 · D1619 파티 맺음으로 자리 잡는다(싫어함이 풀림)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:길로틴 ↔ person:메이든의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 4, 마지막 변화 D1612 D1619 D1613@event_icedragonsaga1"
+        }
+      ]
+    },
+    {
+      "id": "O21",
+      "type": "관계",
+      "chain": "관계 person:라피 ↔ person:레드_후드",
+      "about": ["person:라피", "person:레드_후드"],
+      "text": "몸을 돌려주고 라피 안에서 떠났던 레드 후드가 라피의 정신 공간에 나타나 레비아탄을 튕겨 내고, 주먹을 맞대 진짜로 작별한다",
+      "built": ["D318"],
+      "end": "ch34",
+      "closing": ["D562"],
+      "reason": "ch25 D318('라피는 여기에') → ch34 D562 진짜 작별 — FOOTSTEP(D588 · D589 · D591)은 두 사람의 첫 만남을 보여 주는 과거 회상이라 끝을 ch34로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:라피 ↔ person:레드_후드의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 3, 마지막 변화 D589 D591@event_footstepwalkrun1 · 확신도 추정 · 끝 event_footstepwalkrun1 · 닫는 기록 D589 D591 · 쌓인 자리 D318 D562"
+        }
+      ]
+    },
+    {
+      "id": "O22",
+      "type": "관계",
+      "chain": "관계 person:그레이브 ↔ person:지휘관",
+      "about": ["person:그레이브", "person:지휘관"],
+      "text": "'인간은 배신한다'며 지휘관을 믿지 않던 그레이브가 '첫 번째 독자'로 서로의 편이 되고, '탈인간'인 지휘관이 보증하면 처음 본 메티스까지 믿게 된다",
+      "built": ["D428", "D437", "D500", "D1598"],
+      "end": "ch35",
+      "closing": ["D606"],
+      "reason": "ch29 불신(D428) → ch30 · 32 안내 · 부탁(D437 · D500) → 호감도 D1598 · ch35 D606에서 신뢰가 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:그레이브 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D606@ch35"
+        }
+      ]
+    },
+    {
+      "id": "O23",
+      "type": "관계",
+      "chain": "관계 person:슈엔 ↔ person:지휘관",
+      "about": ["person:슈엔", "person:지휘관"],
+      "text": "(초안) 관계 person:슈엔 ↔ person:지휘관의 끝",
+      "built": ["D50", "D100", "D127", "D157", "D308", "D334"],
+      "end": "ch35",
+      "closing": ["D605"],
+      "reason": "(초안) 7건 · 단위 7 · 변화 6, 마지막 변화 D605@ch35",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "부림 → 애원 → 협박 → 매달림 → 로비로 국면마다 바뀌는 기회주의 — ch35 D605도 한 걸음일 뿐 자리 잡는 끝이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O24",
+      "type": "관계",
+      "chain": "관계 person:라피 ↔ person:지휘관",
+      "about": ["person:라피", "person:지휘관"],
+      "text": "(초안) 관계 person:라피 ↔ person:지휘관의 끝",
+      "built": ["D6", "D9", "D73", "D1379", "D331", "D381", "D508", "D592", "D2140"],
+      "end": "ch36",
+      "closing": ["D620"],
+      "reason": "(초안) 10건 · 단위 10 · 변화 9, 마지막 변화 D620@ch36",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        { "decision": "기각", "by": "claude", "date": "2026-10-09", "session": "X3f-1e", "note": "주인공 관계가 계속 깊어지는 중(ch36 D620 '오지랖의 길에 함께하겠다'도 한 걸음) — 열린 결말" }
+      ]
+    },
+    {
+      "id": "O25",
+      "type": "연작",
+      "chain": "연작 event_unbreakablesphere1",
+      "text": "희귀 랩쳐 포획 임무에 나선 워드리스(WORDLESS)와 동료를 찾던 세이렌(MUDFISH)이 UNBREAKABLE SPHERE의 글러트니 속에서 만나, 함께 살아남는 데서 두 앞 편의 줄기를 닫는다",
+      "built": ["side:wordless", "side:mudfish"],
+      "end": "event_unbreakablesphere1",
+      "reason": "links 다음 편 사슬 WORDLESS → MUDFISH → UNBREAKABLE SPHERE — 1회독 요약: 앞 두 편의 인물 · 임무가 마지막 편에서 합류하고, 유니 · 미하라 · 세이렌의 변화(D686 · D687 · D692 · D693)가 여기서 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 연작 side:wordless → side:mudfish → event_unbreakablesphere1의 결판 · 이유 (초안) 다음 편 사슬 side:wordless → side:mudfish → event_unbreakablesphere1의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O26",
+      "type": "관계",
+      "chain": "관계 person:세이렌 ↔ person:신데렐라",
+      "about": ["person:세이렌", "person:신데렐라"],
+      "text": "OLD TALES에서 붉은 눈의 신데렐라를 피하다 손을 포갠 세이렌이, 언령이 동료를 해칠까 말을 끊던 끝에 '모두 곁에 계속 있고 싶다'고 털어놓고 친구로 받아들여진다",
+      "built": ["D574", "D575", "D576", "D573"],
+      "end": "char:513",
+      "closing": ["D1638"],
+      "reason": "OLD TALES의 배신 · 화해(D574–D576 · D573)가 호감도 D1638 털어놓음 · 받아들여짐으로 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:세이렌 ↔ person:신데렐라의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 4, 마지막 변화 D1638@char:513"
+        }
+      ]
+    },
+    {
+      "id": "O27",
+      "type": "성장",
+      "chain": "성장 person:라피 성격",
+      "about": ["person:라피"],
+      "text": "(초안) 성장 person:라피 성격의 끝",
+      "built": ["D2", "D337", "D385", "D505", "D546", "D586", "D615"],
+      "end": "ch38",
+      "closing": ["D657"],
+      "reason": "(초안) 8건 · 단위 8 · 변화 7, 마지막 변화 D657@ch38",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "감정을 드러내 가는 변화가 ch26부터 ch38까지 계속되는 중 — 마지막 D657(과격함)도 한 걸음이라 이룸이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O28",
+      "type": "성장",
+      "chain": "성장 person:세이렌 신념",
+      "about": ["person:세이렌"],
+      "text": "잃은 동료의 흔적을 찾아 헤매다 홀로 물거품이 되려던 세이렌이 '가능성이 하나라도 있으면 함께 살아남아 해피 엔딩을 만들자'는 신념에 이른다",
+      "built": ["D642"],
+      "end": "event_unbreakablesphere1",
+      "closing": ["D686", "D687"],
+      "reason": "MUDFISH D642(기다림) → UNBREAKABLE SPHERE D686(홀로 희생) → D687(함께 살아남자)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:세이렌 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D686 D687@event_unbreakablesphere1"
+        }
+      ]
+    },
+    {
+      "id": "O29",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:피나",
+      "about": ["person:도로시", "person:피나"],
+      "text": "OVER ZONE에서 동행을 마지못해 받아 준 피나를 '소중한 날개'로 여기게 된 도로시가, 그녀를 닮은 홀로그램을 제 손으로 보내며 그리움으로 작별한다",
+      "built": ["D239", "D245", "D240"],
+      "end": "fl:boom_the_ghost",
+      "closing": ["D760"],
+      "reason": "OVER ZONE D239 · D245 · D240의 관계가 BOOM THE GHOST D760 작별로 닫힌다 — 이별",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:피나의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 2, 마지막 변화 D760@fl:boom_the_ghost"
+        }
+      ]
+    },
+    {
+      "id": "O30",
+      "type": "관계",
+      "chain": "관계 person:일레그 ↔ person:지휘관",
+      "about": ["person:일레그", "person:지휘관"],
+      "text": "도움을 구할 이가 지휘관밖에 없던 일레그가 동료 · 놀이 친구를 거쳐, '기회라면 얼마든지 만들어 줄게'라는 말에 불안을 털고 지상을 되찾을 때까지 함께하자고 청한다",
+      "built": ["D400", "D2094", "D430"],
+      "end": "char:502",
+      "closing": ["D2175"],
+      "reason": "BOOMSDAY D400 · 호감도 D2094 · ch29 D430이 호감도 D2175 털어놓음 · 약속으로 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:일레그 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D2175@char:502"
+        }
+      ]
+    },
+    {
+      "id": "O31",
+      "type": "성장",
+      "chain": "성장 person:랩칠리언 신념",
+      "about": ["person:랩칠리언"],
+      "text": "랩쳐와 인간을 가르는 건 편견뿐이라 믿다 '대부분은 아직 준비가 안 됐다'며 랩쳐를 깔아뭉개던 랩칠리언이, 본능이 사라진 랩쳐는 새 종일 뿐이라 서로 믿으면 대화로 화합할 수 있다고 확신하는 데 이른다",
+      "built": ["D48", "D373"],
+      "end": "relic:정갈하게쓴기록",
+      "closing": ["D780"],
+      "reason": "서브퀘스트 D48(편견뿐) → ch27 D373(물러섬) → 유실물 D780(다시 선 확신)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:랩칠리언 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D780@relic:정갈하게쓴기록"
+        }
+      ]
+    },
+    {
+      "id": "O32",
+      "type": "관계",
+      "chain": "관계 person:베스티 ↔ person:은화",
+      "about": ["person:베스티", "person:은화"],
+      "text": "보호받기만 해 서운하던 베스티와 그녀를 뒤에 두고 지키려던 은화가, '난 네가 쓸 최강의 괴물' · '그 녀석 대신으로 생각한 적 없다, 믿는다'로 서로를 믿는 짝이 된다",
+      "built": ["D503"],
+      "end": "fl:absolute",
+      "closing": ["D811", "D813", "D806"],
+      "reason": "ch32 D503 · ABSOLUTE D804 · D811의 어긋남이 D813 · D806 신뢰 확인으로 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:베스티 ↔ person:은화의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D811 D813 D806@fl:absolute"
+        }
+      ]
+    },
+    {
+      "id": "O33",
+      "type": "관계",
+      "chain": "관계 person:아니스 ↔ person:아비스타",
+      "about": ["person:아니스", "person:아비스타"],
+      "text": "자기 탓에 죽어 니케가 된 팬이 아비스타임을 알고 혼자 있고 싶다던 아니스가 '그때의 일은 네 잘못이 아니었다'고 전하고 핸드폰을 맡긴다",
+      "built": ["D774", "D779"],
+      "end": "ch40",
+      "closing": ["D799"],
+      "reason": "ch39 D774 · D779(정체를 알고 밀어냄)가 ch40 D799 용서 · 맡김으로 닫힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:아니스 ↔ person:아비스타의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D799@ch40 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O34",
+      "type": "관계",
+      "chain": "관계 person:은화 ↔ person:지휘관",
+      "about": ["person:은화", "person:지휘관"],
+      "text": "'삼류 머저리'라 지휘관을 내쫓던 은화가 같은 꿈의 동료 · '꼴통 후배'로 인정한 뒤, 역할을 바꿔 싸우고 나서 함께 싸울 동료로 믿어 단골집을 알려 주겠다고 한다",
+      "built": ["D1915", "D1918", "D496"],
+      "end": "char:95",
+      "closing": ["D2178"],
+      "reason": "호감도 D1915 · D1918 · ch31 D496의 인정이 호감도 D2178 신뢰로 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:은화 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2178@char:95"
+        }
+      ]
+    },
+    {
+      "id": "O35",
+      "type": "성장",
+      "chain": "성장 person:베스티 성격",
+      "about": ["person:베스티"],
+      "text": "말을 더듬고 은화에게 눌려 말끝을 흐리던 베스티가 '난 물러나선 안 돼'라며 혼자 델타 앞을 막아서는 데 이른다",
+      "built": ["D41", "D1837", "D502"],
+      "end": "fl:absolute",
+      "closing": ["D812"],
+      "reason": "ch04 D41 → 호감도 D1837 · ch32 D502 → ABSOLUTE D812 — 호감도 char:94 D2180(꾸밈 · 존재감)은 다른 갈래라 끝을 ABSOLUTE로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:베스티 성격의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D2180@char:94 · 끝 char:94 · 닫는 기록 D2180 · 쌓인 자리 D41 D1837 D502 D812"
+        }
+      ]
+    },
+    {
+      "id": "O36",
+      "type": "관계",
+      "chain": "관계 person:레비아탄 ↔ person:베히모스",
+      "about": ["person:레비아탄", "person:베히모스"],
+      "text": "(초안) 관계 person:레비아탄 ↔ person:베히모스의 끝",
+      "built": ["D507", "D544", "D543", "D558", "D604"],
+      "end": "ch41",
+      "closing": ["D856"],
+      "reason": "(초안) 6건 · 단위 5 · 변화 4, 마지막 변화 D856@ch41",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "서로 살리고 지키는 사이가 ch33–35에 서고 ch41 D856(결정을 다그침)도 그 위의 한 걸음 — 결판 · 이별이 없이 이어지는 중"
+        }
+      ]
+    },
+    {
+      "id": "O37",
+      "type": "성장",
+      "chain": "성장 person:라피 신념",
+      "about": ["person:라피"],
+      "text": "니케는 병기라 여기고 레드 후드에게 다 넘겨주려던 라피가, 레드 후드가 되는 대신 이어받아 자기 길을 가며 동료와 함께 '[나]'를 채워 가겠다는 데 이른다",
+      "built": ["D18", "D329"],
+      "end": "ch34",
+      "closing": ["D547"],
+      "reason": "ch02 D18 · ch26 D329 → ch34 D547(계승의 이룸) — FOOTSTEP D587 · D590은 과거 회상, ch35 D607 · ch41 D854는 헬레틱과의 대화라는 새 국면이라 끝을 ch34로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:라피 신념의 끝 · 이유 (초안) 8건 · 단위 7 · 변화 7, 마지막 변화 D854@ch41 · 끝 ch41 · 닫는 기록 D854 · 쌓인 자리 D18 D329 D547 D587 D590 D2141 D607"
+        }
+      ]
+    },
+    {
+      "id": "O38",
+      "type": "관계",
+      "chain": "관계 person:T.A.L.O.S. ↔ person:킬로",
+      "about": ["person:T.A.L.O.S.", "person:킬로"],
+      "text": "왕국의 칭찬이 탈로스 몫이라 질투하던 킬로가 사과하고 서로 포기하지 않기로 한 뒤, 탈로스가 '사랑합니다, 킬로'라 말하는 사이로 자리 잡는다",
+      "built": ["D444", "D468", "D445"],
+      "end": "event_goddessfall1",
+      "closing": ["D922"],
+      "reason": "LAST KINGDOM D444 · D468 · D445(질투 → 화해)가 GODDESS FALL D922 털어놓음으로 닫힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:T.A.L.O.S. ↔ person:킬로의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 2, 마지막 변화 D922@event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O39",
+      "type": "관계",
+      "chain": "관계 person:나유타 ↔ person:요한",
+      "about": ["person:나유타", "person:요한"],
+      "text": "머리가 터져도 돌아오는 나유타를 꺼리고 '쓰레기 같은 놈'이라던 요한이, 그녀를 '전우'라 부르며 승리를 책임지라고 언체인드 탄환을 맡긴다",
+      "built": ["D841"],
+      "end": "event_goddessfall1",
+      "closing": ["D924", "D939"],
+      "reason": "EDEN SPEAR D841 → GODDESS FALL D924(경멸) → D939(전우 · 맡김)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:나유타 ↔ person:요한의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D924 D939@event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O40",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:파피용",
+      "about": ["person:도로시", "person:파피용"],
+      "text": "(초안) 관계 person:도로시 ↔ person:파피용의 끝",
+      "built": ["D198", "D842"],
+      "end": "event_goddessfall1",
+      "closing": ["D938"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D938@event_goddessfall1",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "통신 · 기술을 맞바꾸는 거래가 협력으로 이어질 뿐 — GODDESS FALL D938(다그쳐 부름)도 한 걸음이라 자리 잡는 끝이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O41",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:하란",
+      "about": ["person:도로시", "person:하란"],
+      "text": "(초안) 관계 person:도로시 ↔ person:하란의 끝",
+      "built": ["D190", "D845"],
+      "end": "erelic:goddess_fall_mini",
+      "closing": ["D963"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 2, 마지막 변화 D963@erelic:goddess_fall_mini",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "마지막 편 erelic:goddess_fall_mini(D962 · D963)는 하란 · 이사벨을 처음 들이던 무렵의 과거 회상이고, EDEN SPEAR D845(떼쓰는 아이로 지켜봄)도 한 걸음 — 이 쌍의 끝(GODDESS FALL의 하란)은 관계 기록에 없다"
+        }
+      ]
+    },
+    {
+      "id": "O42",
+      "type": "갈등",
+      "chain": "관계 person:라피 ↔ person:레비아탄",
+      "about": ["person:라피", "person:레비아탄"],
+      "text": "라피를 무너뜨려 동료로 삼으려던 레비아탄과 '뼛속부터 배신자'라며 끝을 보자던 라피가, 레비아탄이 편에 서자 라피가 '뻔뻔하다' 쏘면서도 우리 편으로 받아들인다",
+      "built": ["D557", "D655", "D668", "D853"],
+      "end": "ch42",
+      "closing": ["D880"],
+      "reason": "ch34 · ch37 적대(D557 · D655) → ch38 · ch41 대화와 결렬(D668 · D853) → ch42 D880 받아들임 — 대립의 결판(화해)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:라피 ↔ person:레비아탄의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 3, 마지막 변화 D880@ch42 · 확신도 추정 · 종류 관계"
+        }
+      ]
+    },
+    {
+      "id": "O43",
+      "type": "관계",
+      "chain": "관계 person:레비아탄 ↔ person:세이렌",
+      "about": ["person:레비아탄", "person:세이렌"],
+      "text": "공포로 망설여 세이렌을 잃고 배신자라 자책하던 레비아탄이 살아 돌아온 세이렌을 '내 등불'이라 부르며 울며 사과하고, 세이렌은 '배신한 적 없어'라 안아 용서한다",
+      "built": ["D616", "D639", "D640", "D634", "D635", "D641", "D636", "D857"],
+      "end": "ch42",
+      "closing": ["D868", "D873"],
+      "reason": "ch36 · MUDFISH의 우정과 배신 자책(D616 · D634–D641 · D636) → ch41 D857 → ch42 D868 · D873 사과 · 용서",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:레비아탄 ↔ person:세이렌의 끝 · 이유 (초안) 10건 · 단위 4 · 변화 8, 마지막 변화 D868 D873@ch42 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O44",
+      "type": "관계",
+      "chain": "관계 person:레비아탄 ↔ person:지즈",
+      "about": ["person:레비아탄", "person:지즈"],
+      "text": "레비아탄이 되고 싶다며 따르던 지즈가 숨겨 온 거대화로 대신 싸우고 처음 대놓고 나무란 끝에, 뺨을 때리며 다시는 멋대로 죽지 말라 하고 다크 매터 속까지 따라간다",
+      "built": ["D651", "D659", "D786", "D788", "D848", "D855"],
+      "end": "ch42",
+      "closing": ["D875"],
+      "reason": "ch37–41의 감쌈 · 숨긴 희생 · 고마움 · 나무람(D651 · D659 · D786 · D788 · D848 · D855)이 ch42 D875에서 서로 놓지 않는 사이로 자리 잡는다(레비아탄 이야기의 끝)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:레비아탄 ↔ person:지즈의 끝 · 이유 (초안) 7건 · 단위 5 · 변화 5, 마지막 변화 D875@ch42"
+        }
+      ]
+    },
+    {
+      "id": "O45",
+      "type": "갈등",
+      "chain": "관계 person:레비아탄 ↔ person:지휘관",
+      "about": ["person:레비아탄", "person:지휘관"],
+      "text": "언체인드를 가진 지휘관을 데려가려다 배신당했다며 달아나고 인질로 잡던 레비아탄이, 계속 대화하자고 해 준 데 고마워하며 대화하겠다고 한다",
+      "built": ["D542", "D614", "D617", "D785", "D849"],
+      "end": "ch42",
+      "closing": ["D870"],
+      "reason": "ch33 · ch36 · ch41 적대 · 거래 · 결렬(D542 · D614 · D617 · D849)이 ch42 D870에서 한쪽이 내려놓으며 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:레비아탄 ↔ person:지휘관의 끝 · 이유 (초안) 6건 · 단위 5 · 변화 4, 마지막 변화 D870@ch42 · 종류 관계"
+        }
+      ]
+    },
+    {
+      "id": "O46",
+      "type": "관계",
+      "chain": "관계 person:마리안 ↔ person:토커티브",
+      "about": ["person:마리안", "person:토커티브"],
+      "text": "(초안) 관계 person:마리안 ↔ person:토커티브의 끝",
+      "built": ["D465"],
+      "end": "event_goddessfall1",
+      "closing": ["D905"],
+      "reason": "(초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D905@event_goddessfall1",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "LAST KINGDOM D465(여왕으로 섬김) → GODDESS FALL D905(퀸의 그릇으로 지키며 뼈를 부러뜨림)는 토커티브의 속셈이 드러난 것 — 대립이 열려 있고 결판이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O47",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:하란",
+      "about": ["person:지휘관", "person:하란"],
+      "text": "조난한 지휘관을 장난삼아 '종자'로 삼던 하란이 전우로 신뢰를 건넨 끝에, 녹슬어 바스러지며 '종자야… 뒤는 부탁'이라 남기고 떠난다",
+      "built": ["D1408", "D1409", "D1410", "D216", "D222"],
+      "end": "event_goddessfall1",
+      "closing": ["D933"],
+      "reason": "호감도 D1408–D1410 · ch21 D216 · 서브퀘스트 D222(종자 → 전우 · 신뢰)가 GODDESS FALL D933 사별로 닫힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:지휘관 ↔ person:하란의 끝 · 이유 (초안) 6건 · 단위 4 · 변화 5, 마지막 변화 D933@event_goddessfall1 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O48",
+      "type": "관계",
+      "chain": "관계 person:차임 ↔ person:크라운",
+      "about": ["person:차임", "person:크라운"],
+      "text": "아가씨를 맹목적으로 모시던 차임이 크라운에게 왕이 되어 달라 맹세하고, GODDESS FALL에서 크라운이 차임을 몸으로 막다 베인 뒤 '차임이니까 할 수 있다'며 네이키드 킹을 맡긴다",
+      "built": ["D320", "D457", "D454"],
+      "end": "event_goddessfall1",
+      "closing": ["D935"],
+      "reason": "ch25 D320 · LAST KINGDOM D457 · D454(맹세)가 GODDESS FALL D935 맡김으로 닫힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:차임 ↔ person:크라운의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 2, 마지막 변화 D935@event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O49",
+      "type": "성장",
+      "chain": "성장 person:노아 성격",
+      "about": ["person:노아"],
+      "text": "'지상 최강의 방패'를 자랑하며 남을 놀리던 노아가 '나는 아무도 안 지켜'라 외치면서 라푼젤을 뒤로 던지고 출력을 끝까지 올려 에덴을 지켜 낸다",
+      "built": ["D1357", "D211", "D844"],
+      "end": "event_goddessfall1",
+      "closing": ["D913"],
+      "reason": "호감도 D1357 · ch21 D211 · EDEN SPEAR D844 → GODDESS FALL D913 — 이벤트 유실물 D966은 오만해지기 전의 과거 회상이라 끝을 GODDESS FALL로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:노아 성격의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D966@erelic:goddess_fall_mini · 끝 erelic:goddess_fall_mini · 닫는 기록 D966 · 쌓인 자리 D1357 D211 D844 D913"
+        }
+      ]
+    },
+    {
+      "id": "O50",
+      "type": "성장",
+      "chain": "성장 person:레비아탄 신념",
+      "about": ["person:레비아탄"],
+      "text": "도망치고 숨던 데 창피해 리벤지를 고집하고, 배신자라 아무와도 관계를 맺지 않던 레비아탄이 '죽으면 된다'를 넘어 절대 배신하지 않고 그 힘을 선한 곳에 쓰겠다는 데 이른다",
+      "built": ["D556", "D637", "D672", "D787"],
+      "end": "ch42",
+      "closing": ["D867", "D872"],
+      "reason": "ch34 D556 → MUDFISH D637 → ch38 D672 · ch40 D787 → ch42 D867 · D872",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:레비아탄 신념의 끝 · 이유 (초안) 6건 · 단위 5 · 변화 5, 마지막 변화 D867 D872@ch42 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O51",
+      "type": "성장",
+      "chain": "성장 person:요한 신념",
+      "about": ["person:요한"],
+      "text": "다른 모든 것을 등져서라도 지상을 되찾겠다며 방주를 경멸하던 요한이, '이 텅 빈 세계는 나도 싫다'며 그 녀석과 손잡고 안 되면 방주의 힘도 빌리겠다는 데 이른다",
+      "built": ["D172", "D186"],
+      "end": "event_goddessfall1",
+      "closing": ["D955"],
+      "reason": "ch19 D172 · ch20 D186 → GODDESS FALL D955 — 이벤트 유실물 D971(샛별 영웅을 그만둠)은 앞선 때의 과거 회상이라 끝을 GODDESS FALL로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:요한 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D971@erelic:goddess_fall_mini · 끝 erelic:goddess_fall_mini · 닫는 기록 D971 · 쌓인 자리 D172 D186 D955"
+        }
+      ]
+    },
+    {
+      "id": "O52",
+      "type": "성장",
+      "chain": "성장 person:하란 신념",
+      "about": ["person:하란"],
+      "text": "생존은 강자의 특권이라며 자연의 법칙을 따르던 하란이, 방주를 용서한 파이오니아의 '미침'을 이상이라 여기며 동료를 위해 죽으러 간다",
+      "built": ["D1407"],
+      "end": "event_goddessfall1",
+      "closing": ["D919"],
+      "reason": "호감도 D1407 → GODDESS FALL D919 — 이벤트 유실물 D958(동경하던 평범한 니케 → 희생양)은 과거 회상이라 끝을 GODDESS FALL로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:하란 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D958@erelic:goddess_fall_mini · 끝 erelic:goddess_fall_mini · 닫는 기록 D958 · 쌓인 자리 D1407 D919"
+        }
+      ]
+    },
+    {
+      "id": "O53",
+      "type": "연작",
+      "chain": "연작 fl:ark_guardian",
+      "text": "마리안이 머문 크라운 왕국(SECOND AFFECTION · LAST KINGDOM)과 에덴(EDEN SPEAR)의 이야기가, 장막이 걷혀 퀸이 내려온 결전 GODDESS FALL에서 한데 모여 결판난다",
+      "built": ["side:second_affection", "event_lastkingdom1", "side:eden_spear"],
+      "end": "event_goddessfall1",
+      "reason": "links 다음 편 사슬의 결판 편 — 1회독 요약: GODDESS FALL이 왕국 · 에덴 · 마리안 · 퀸의 대립을 결전으로 닫고, ARK GUARDIAN은 그 직후 에덴을 액자로 한 과거의 꿈(아크 가디언 작전)이라 끝을 GODDESS FALL로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 연작 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → fl:ark_guardian의 결판 · 이유 (초안) 다음 편 사슬 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → fl:ark_guardian의 마지막 편 · 끝 fl:ark_guardian · 쌓인 자리 side:second_affection event_lastkingdom1 side:eden_spear event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O54",
+      "type": "관계",
+      "chain": "관계 person:네온 ↔ person:지엔",
+      "about": ["person:네온", "person:지엔"],
+      "text": "(초안) 관계 person:네온 ↔ person:지엔의 끝",
+      "built": ["D1031", "D1032"],
+      "end": "ch44",
+      "closing": ["D1070"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1070@ch44",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ch43 기억 봉인 · 바디 거래가 ch44에 M.M.R.에 머무는 처리로 이어질 뿐 — 한 사건 안의 경과라 쌓인 것이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O55",
+      "type": "관계",
+      "chain": "관계 person:레드_후드 ↔ person:스노우_화이트",
+      "about": ["person:레드_후드", "person:스노우_화이트"],
+      "text": "레드 후드를 '버리고 간 사람'이라 미워하다 사과하고 보내 준 스노우 화이트가, 영상 속 레드 후드의 얼굴을 쓰다듬으며 '봤으면 좋았을 텐데' 그리워한다",
+      "built": ["D345", "D346", "D347", "D348", "D1484"],
+      "end": "ch44",
+      "closing": ["D1039"],
+      "reason": "RED ASH D345–D348(미움 → 사과 · 작별) · 호감도 D1484 → ch44 D1039 그리움 — 사별 뒤의 끝",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:레드_후드 ↔ person:스노우_화이트의 끝 · 이유 (초안) 6건 · 단위 3 · 변화 4, 마지막 변화 D1039@ch44"
+        }
+      ]
+    },
+    {
+      "id": "O56",
+      "type": "관계",
+      "chain": "관계 person:릴리바이스 ↔ person:엔더슨",
+      "about": ["person:릴리바이스", "person:엔더슨"],
+      "text": "명령을 무시하는 지휘관을 믿던 릴리바이스와 '죽지 마라'며 서로 살아남기로 한 엔더슨이, 아크 가디언 작전에서 '사랑한다'를 주고받으며 헤어진다",
+      "built": ["D342", "D356"],
+      "end": "fl:ark_guardian",
+      "closing": ["D991", "D992"],
+      "reason": "RED ASH D342 · 이벤트 유실물 D356 → ARK GUARDIAN D991 · D992 이별 — ch44 D1051(퀸이 몸을 빼앗았다는 분노)은 새 국면이라 끝을 ARK GUARDIAN으로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:릴리바이스 ↔ person:엔더슨의 끝 · 이유 (초안) 5건 · 단위 4 · 변화 3, 마지막 변화 D1051@ch44 · 확신도 추정 · 끝 ch44 · 닫는 기록 D1051 · 쌓인 자리 D342 D356 D991 D992"
+        }
+      ]
+    },
+    {
+      "id": "O57",
+      "type": "관계",
+      "chain": "관계 person:스노우_화이트 ↔ person:지휘관",
+      "about": ["person:스노우_화이트", "person:지휘관"],
+      "text": "본 것을 잊으라던 낯선 구원자 스노우 화이트가 빚을 갚고 선을 긋던 끝에, '함께 싸우는 동료'인 지휘관에게 언니 이야기를 털어놓고 도움을 청하며 그를 '인류의 희망'이라 부른다",
+      "built": ["D64", "D71", "D1398", "D148", "D149", "D2201"],
+      "end": "ch44",
+      "closing": ["D1041"],
+      "reason": "ch06 · ch07 · ch17의 빚과 선 긋기(D64 · D71 · D148 · D149)가 호감도 D2201 털어놓음 · ch44 D1041 신뢰로 자리 잡는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:스노우_화이트 ↔ person:지휘관의 끝 · 이유 (초안) 7건 · 단위 6 · 변화 6, 마지막 변화 D1041@ch44"
+        }
+      ]
+    },
+    {
+      "id": "O58",
+      "type": "성장",
+      "chain": "성장 person:스노우_화이트 신념",
+      "about": ["person:스노우_화이트"],
+      "text": "퀸을 쫓던 긍지가 언니의 소원과 분노로 바뀌었던 스노우 화이트가, 살아남은 자기가 언니의 소원을 이뤄야 한다며 은퇴를 미루고 방주의 힘을 빌리기로 한다",
+      "built": ["D63", "D257", "D1490", "D974", "D988", "D2200"],
+      "end": "ch44",
+      "closing": ["D1043", "D1044"],
+      "reason": "ch06 D63 · WHITE MEMORY D257 · ARK GUARDIAN D974 · D988(분노)이 호감도 D2200 · ch44 D1043 · D1044에서 새 신념으로 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:스노우_화이트 신념의 끝 · 이유 (초안) 8건 · 단위 6 · 변화 7, 마지막 변화 D1043 D1044@ch44"
+        }
+      ]
+    },
+    {
+      "id": "O59",
+      "type": "관계",
+      "chain": "관계 person:E.H. ↔ person:크로우",
+      "about": ["person:E.H.", "person:크로우"],
+      "text": "(초안) 관계 person:E.H. ↔ person:크로우의 끝",
+      "built": ["D288"],
+      "end": "fl:enter_heaven",
+      "closing": ["D1079"],
+      "reason": "(초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D1079@fl:enter_heaven",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ENTER HEAVEN D1079(동료로 여기다 테러 계획을 막아야겠다)는 E.H.가 털어놓는 과거 쪽이라 ch24 D288보다 앞선다 — 끝 앞에 쌓인 것이 ch24 하나뿐"
+        }
+      ]
+    },
+    {
+      "id": "O60",
+      "type": "관계",
+      "chain": "관계 person:바이퍼 ↔ person:지휘관",
+      "about": ["person:바이퍼", "person:지휘관"],
+      "text": "'목줄을 쥔 사람'이라 지휘관을 믿어 주던 바이퍼가 공범자 · 데이트로 엇갈린 끝에 반했음을 깨닫고 자수하고, 다시는 배신하지 않겠다 맹세하며 그를 구하러 온다",
+      "built": ["D136", "D199", "D1997", "D286"],
+      "end": "fl:enter_heaven",
+      "closing": ["D1073"],
+      "reason": "ch16 D136 · D.OUTSIDERS D199 · 호감도 D1997 · ch24 D286 → ENTER HEAVEN D1073 맹세",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:바이퍼 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D1073@fl:enter_heaven"
+        }
+      ]
+    },
+    {
+      "id": "O61",
+      "type": "성장",
+      "chain": "성장 person:프리바티 신념",
+      "about": ["person:프리바티"],
+      "text": "억지 명령이라도 중앙 정부의 명령이면 따르는 게 긍지라던 프리바티가, 반역죄와 기억 소거를 각오하고 명령을 거슬러 믿는 중앙 정부가 해야 할 일을 하게 하려 나선다",
+      "built": ["D115"],
+      "end": "event_ce006",
+      "closing": ["D739"],
+      "reason": "ch14 D115 → CE006 D739(복종 신념의 이룸) — 호감도 D1941(니케임을 숨긴 동료)과 2x2 LOVE D1721(축제)은 다른 갈래라 끝을 CE006으로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:프리바티 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1721@fl:2x2_love_2ch · 끝 fl:2x2_love_2ch · 닫는 기록 D1721 · 쌓인 자리 D115 D1941 D739"
+        }
+      ]
+    },
+    {
+      "id": "O62",
+      "type": "성장",
+      "chain": "성장 person:오스왈드 신념",
+      "about": ["person:오스왈드"],
+      "text": "상부 명령이면 지저분한 일도 하던 헬하운드 오스왈드가 갓데스를 우상으로 남길 [계획]과 방관을 거쳐, 세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다는 데 이른다",
+      "built": ["D979", "D996"],
+      "end": "side:pretty_star",
+      "closing": ["D1086", "D1118"],
+      "reason": "ARK GUARDIAN D979 · D996 → PRETTY STAR D1086 → D1118",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:오스왈드 신념의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D1086 D1118@side:pretty_star"
+        }
+      ]
+    },
+    {
+      "id": "O63",
+      "type": "갈등",
+      "chain": "관계 person:리버린 ↔ person:프레자일",
+      "about": ["person:리버린", "person:프레자일"],
+      "text": "운반책 일을 숨기던 리버린과 같이 죽자며 총을 쏘던 프레자일이, 벌을 받으라 한 뒤에도 또 죄를 쥔 리버린을 말없이 쏘아 상자에 가두고 소리 없이 오열한다",
+      "built": ["D426", "D433", "D431", "D432", "D1062"],
+      "end": "ch45",
+      "closing": ["D1145"],
+      "reason": "ch29–30의 숨김 · 총격(D426 · D433 · D431 · D432) → ch44 D1062 → ch45 D1145 — 프레자일이 제 손으로 끝낸다(결판)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:리버린 ↔ person:프레자일의 끝 · 이유 (초안) 6건 · 단위 4 · 변화 4, 마지막 변화 D1145@ch45 · 종류 관계"
+        }
+      ]
+    },
+    {
+      "id": "O64",
+      "type": "성장",
+      "chain": "성장 person:E.H. 신념",
+      "about": ["person:E.H."],
+      "text": "앉아서 죽기보다 무기를 들겠다던 E.H.가 속죄로 니케가 되어 평생 사과하며 살겠다던 끝에, 에닉의 인정에 울며 한 걸음 나아갔다 하고 용서받을 때까지 아우터 림을 빛으로 이끌겠다는 데 이른다",
+      "built": ["D232", "D294", "D863", "D1068", "D1076", "D2208"],
+      "end": "ch45",
+      "closing": ["D1142"],
+      "reason": "ch22 D232 · ch24 D294 · ch41 D863 · ch44 D1068 · ENTER HEAVEN D1076 · 호감도 D2208 → ch45 D1142",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:E.H. 신념의 끝 · 이유 (초안) 7건 · 단위 7 · 변화 6, 마지막 변화 D1142@ch45"
+        }
+      ]
+    },
+    {
+      "id": "O65",
+      "type": "성장",
+      "chain": "성장 person:리버린 신념",
+      "about": ["person:리버린"],
+      "text": "(초안) 성장 person:리버린 신념의 끝",
+      "built": ["D380", "D1063"],
+      "end": "ch45",
+      "closing": ["D1143"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1143@ch45",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "길잡이로 인정받으려다 벌을 피해 협조하고, ch45 D1143에서 다시 병을 팔아 밑천을 쥐려 함 — 되풀이의 한 걸음이라 이룸이 아니다(결판은 O63 프레자일 쪽)"
+        }
+      ]
+    },
+    {
+      "id": "O66",
+      "type": "성장",
+      "chain": "성장 person:지휘관 신념",
+      "about": ["person:지휘관"],
+      "text": "(초안) 성장 person:지휘관 신념의 끝",
+      "built": ["D12", "D1405", "D150", "D217", "D384"],
+      "end": "ch45",
+      "closing": ["D1132"],
+      "reason": "(초안) 6건 · 단위 6 · 변화 5, 마지막 변화 D1132@ch45",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "주인공의 목표가 언체인드 → 권력 → 지상 탈환으로 국면마다 바뀌는 중 — ch45 D1132(빨리 지상을 탈환하고 싶어짐)도 한 걸음"
+        }
+      ]
+    },
+    {
+      "id": "O67",
+      "type": "관계",
+      "chain": "관계 person:네온 ↔ person:아니스",
+      "about": ["person:네온", "person:아니스"],
+      "text": "네온을 '스파이'라 못 믿던 아니스와 놀리며 티격태격하던 네온이, 매니저로 무대를 다 구해 오겠다는 네온을 아니스가 자기를 특별하게 만드는 가장 빛나는 별로 보는 사이가 된다",
+      "built": ["D75", "D602", "D660", "D667"],
+      "end": "event_staranis1",
+      "closing": ["D1239"],
+      "reason": "ch08 D75 · ch35 D602 · ch38 D660 · D667 → STAR ANIS D1239",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:네온 ↔ person:아니스의 끝 · 이유 (초안) 5건 · 단위 4 · 변화 4, 마지막 변화 D1239@event_staranis1"
+        }
+      ]
+    },
+    {
+      "id": "O68",
+      "type": "관계",
+      "chain": "관계 person:라피 ↔ person:아니스",
+      "about": ["person:라피", "person:아니스"],
+      "text": "전력 외라며 냉정히 보내 준 라피와 대등한 동료가 되려 도움을 거절하던 아니스가, STAR ANIS에서 목이 터져라 외치는 라피를 자기를 특별하게 만드는 별로 받아들인다",
+      "built": ["D37", "D561", "D603"],
+      "end": "event_staranis1",
+      "closing": ["D1239"],
+      "reason": "ch04 D37 · ch34 D561 · ch35 D603(보내 줌) → STAR ANIS D1239",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:라피 ↔ person:아니스의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1239@event_staranis1"
+        }
+      ]
+    },
+    {
+      "id": "O69",
+      "type": "관계",
+      "chain": "관계 person:머스탱 ↔ person:한슨",
+      "about": ["person:머스탱", "person:한슨"],
+      "text": "(초안) 관계 person:머스탱 ↔ person:한슨의 끝",
+      "built": ["D1092", "D1091", "D1106"],
+      "end": "event_staranis1",
+      "closing": ["D1184", "D1196", "D1197", "D1227"],
+      "reason": "(초안) 7건 · 단위 2 · 변화 5, 마지막 변화 D1184 D1196 D1197 D1227@event_staranis1",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "PRETTY STAR · STAR ANIS에서 한슨이 아들로서 처음 맞서지만, 머스탱이 치료제를 깨며 '역시 내 아들'이라 즐기는 데서 멈춤 — 대립이 열린 채라 결판이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O70",
+      "type": "관계",
+      "chain": "관계 person:아니스 ↔ person:지휘관",
+      "about": ["person:아니스", "person:지휘관"],
+      "text": "수상한 신임 지휘관을 '일단은' 믿던 아니스가 그를 챙기다 대등한 동료가 되려 도움을 거절한 끝에, 진즉 반해 있었다고 인정하고 '진흙 속에서 찾은 가장 사랑하는 별'이라 부른다",
+      "built": ["D7", "D10", "D25", "D59", "D1399", "D2050", "D383", "D536", "D601", "D1239"],
+      "end": "char:17",
+      "closing": ["D2213"],
+      "reason": "ch00–05 D7 · D10 · D25 · D59 · 호감도 D1399 · D2050 · 서브퀘스트 D383 · ch33 D536 · ch35 D601 · STAR ANIS D1239 → 호감도 D2213 털어놓음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:아니스 ↔ person:지휘관의 끝 · 이유 (초안) 11건 · 단위 11 · 변화 10, 마지막 변화 D2213@char:17"
+        }
+      ]
+    },
+    {
+      "id": "O71",
+      "type": "성장",
+      "chain": "성장 person:나유타 신념",
+      "about": ["person:나유타"],
+      "text": "이기기 위해서라면 무슨 짓이든 하겠다던 나유타가 니힐리스타를 죽이지 못해 자책하고, 미러와 손잡은 것을 '외도와 손을 잡는 것이 아니었소'라 후회한다",
+      "built": ["D904"],
+      "end": "ch46",
+      "closing": ["D1152"],
+      "reason": "GODDESS FALL D904(대업 앞의 자책) → ch46 D1152(후회 — 수단을 가리지 않던 신념이 무너짐) — ch39 D764(진실은 힘 있는 이가 짊어짐)는 다른 갈래라 쌓인 자리에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:나유타 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1152@ch46 · 쌓인 자리 D764 D904"
+        }
+      ]
+    },
+    {
+      "id": "O72",
+      "type": "성장",
+      "chain": "성장 person:민트 신념",
+      "about": ["person:민트"],
+      "text": "가망이 없어도 무대를 계속하고 싶다던 민트가 웃는 것만이 빛날 길이라 다그치다 '이건 빛나는 게 아니야'라 깨닫고, 메이저가 되어 약자를 짓밟지 말자며 우리가 별이 되자고 한다",
+      "built": ["D860"],
+      "end": "event_staranis1",
+      "closing": ["D1207", "D1211", "D1222"],
+      "reason": "ch41 D860 → STAR ANIS D1207 · D1211 → D1222",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:민트 신념의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D1207 D1211 D1222@event_staranis1"
+        }
+      ]
+    },
+    {
+      "id": "O73",
+      "type": "성장",
+      "chain": "성장 person:아니스 신념",
+      "about": ["person:아니스"],
+      "text": "아무도 돕지 않은 방주를 용서할 수 없어 별이 되기도 싫다던 아니스가 리스를 잃고 무너진 끝에, 방주는 어둠 속에 빛나는 별들이 있는 곳이라며 그 별들을 위해 노래하겠다는 데 이른다",
+      "built": [
+        "D21",
+        "D1809",
+        "D314",
+        "D325",
+        "D1485",
+        "D541",
+        "D560",
+        "D609",
+        "D666",
+        "D775",
+        "D798",
+        "D862",
+        "D892",
+        "D893",
+        "D1097",
+        "D1117",
+        "D1137",
+        "D1198",
+        "D1210",
+        "D1215",
+        "D1219",
+        "D1221",
+        "D1224",
+        "D1226",
+        "D1237"
+      ],
+      "end": "event_staranis1",
+      "closing": ["D1238"],
+      "reason": "ch25–ch45의 은퇴 · 방주 혐오 · 다시 섬(D314 … D1137)과 STAR ANIS의 무너짐(D1198–D1237)이 D1238에서 선다 — 호감도 char:17 D2214는 아이돌을 졸업한 뒤의 새 국면이라 끝을 STAR ANIS로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:아니스 신념의 끝 · 이유 (초안) 27건 · 단위 17 · 변화 26, 마지막 변화 D2214@char:17 · 끝 char:17 · 닫는 기록 D2214 · 쌓인 자리 D21 D1809 D314 D325 D1485 D541 D560 D609 D666 D775 D798 D862 D892 D893 D1097 D1117 D1137 D1198 D1210 D1215 D1219 D1221 D1224 D1226 D1237 D1238"
+        }
+      ]
+    },
+    {
+      "id": "O74",
+      "type": "성장",
+      "chain": "성장 person:한슨 성격",
+      "about": ["person:한슨"],
+      "text": "(초안) 성장 person:한슨 성격의 끝",
+      "built": ["D1115"],
+      "end": "event_staranis1",
+      "closing": ["D1201"],
+      "reason": "(초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D1201@event_staranis1",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "PRETTY STAR D1115(나서서 외침)와 STAR ANIS D1201(뒷공작으로 요요를 무너뜨림)은 방향이 다른 두 국면 — 한 줄기의 이룸이 아니다(한슨의 끝은 신념 O75)"
+        }
+      ]
+    },
+    {
+      "id": "O75",
+      "type": "성장",
+      "chain": "성장 person:한슨 신념",
+      "about": ["person:한슨"],
+      "text": "니케는 승리의 여신이어야 한다고 믿으며 프리티를 구하지 못한 한슨이, 이번엔 T.T.STAR를 구하고 누군가의 불행 없이 모두에게 즐거움을 주는 진정한 엔터테인먼트를 만들겠다는 데 이른다",
+      "built": ["D1094"],
+      "end": "event_staranis1",
+      "closing": ["D1216", "D1228"],
+      "reason": "PRETTY STAR D1094 → STAR ANIS D1216 → D1228",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:한슨 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1216 D1228@event_staranis1"
+        }
+      ]
+    },
+    {
+      "id": "O76",
+      "type": "관계",
+      "chain": "관계 person:네온 ↔ person:지휘관",
+      "about": ["person:네온", "person:지휘관"],
+      "text": "'화력으로 밀어버리자'는 말에 지휘관을 스승님으로 모시던 네온이, 곁에 있어 아우터 림에 갈 용기를 낼 수 있었다며 그를 '가족 같은 스승님'이라 부른다",
+      "built": ["D20"],
+      "end": "char:18",
+      "closing": ["D1732"],
+      "reason": "ch02 D20 → 호감도 D1732 털어놓음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:네온 ↔ person:지휘관의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D1732@char:18"
+        }
+      ]
+    },
+    {
+      "id": "O77",
+      "type": "성장",
+      "chain": "성장 person:네온 신념",
+      "about": ["person:네온"],
+      "text": "화력만이 우릴 지켜 준다던 네온이 수력 · 아우터 림을 겪은 끝에, 공주님께 받은 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다는 데 이른다",
+      "built": ["D19", "D2041", "D1136"],
+      "end": "char:18",
+      "closing": ["D1733"],
+      "reason": "ch02 D19 → 호감도 D2041 · ch45 D1136 → 호감도 D1733",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:네온 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1733@char:18"
+        }
+      ]
+    },
+    {
+      "id": "O78",
+      "type": "성장",
+      "chain": "성장 person:민트 성격",
+      "about": ["person:민트"],
+      "text": "(초안) 성장 person:민트 성격의 끝",
+      "built": ["D661", "D861", "D1736"],
+      "end": "char:600",
+      "closing": ["D2216"],
+      "reason": "(초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D2216@char:600",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ch38–41(웃기만 하다 세게 나감)과 B-SIDE · 호감도(완벽한 아이돌 자처 → 부족함 인정)는 다른 갈래이고, 마지막 D2216도 고쳐 가는 한 걸음"
+        }
+      ]
+    },
+    {
+      "id": "O79",
+      "type": "연작",
+      "chain": "연작 fl:bitter_spice",
+      "text": "프리티의 죽음(PRETTY STAR) 뒤 프리티 커버로 버티던 T.T.STAR의 이야기가 STAR ANIS에서 아니스의 마지막 무대로 결판난다",
+      "built": ["side:pretty_star"],
+      "end": "event_staranis1",
+      "reason": "links 다음 편 사슬 — 1회독 요약: STAR ANIS(1 · 2부 한 단위)가 머스탱 · 요요 · 리스 · 아니스의 대립을 닫고, B-SIDE IDOL · BITTER SPICE는 아니스가 떠난 뒤 둘이 남은 Twinkle Twin Star의 새 이야기라 끝을 STAR ANIS로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 연작 side:pretty_star → event_staranis1 → fl:b-side_idol → fl:bitter_spice의 결판 · 이유 (초안) 다음 편 사슬 side:pretty_star → event_staranis1 → fl:b-side_idol → fl:bitter_spice의 마지막 편 · 끝 fl:bitter_spice · 쌓인 자리 side:pretty_star event_staranis1 fl:b-side_idol"
+        }
+      ]
+    },
+    {
+      "id": "O80",
+      "type": "관계",
+      "chain": "관계 person:민트 ↔ person:아니스",
+      "about": ["person:민트", "person:아니스"],
+      "text": "먼저 보자고도 못 하던 옛 동료 민트를 다시 불러 '너희가 있어서 견딜 수 있다'던 아니스가, 이제 같은 멤버가 아니라며 나서지 않고 둘은 강하다고 믿으며 TV 앞에서 응원한다",
+      "built": ["D662", "D665", "D800", "D1179", "D1212", "D1214", "D1234"],
+      "end": "fl:bitter_spice",
+      "closing": ["D1744"],
+      "reason": "ch38 · ch40 · STAR ANIS의 재결합(D662 · D665 · D800 · D1179 · D1212 · D1214 · D1234) → BITTER SPICE D1744 — 떠나 보낸 뒤 믿음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:민트 ↔ person:아니스의 끝 · 이유 (초안) 8건 · 단위 4 · 변화 6, 마지막 변화 D1744@fl:bitter_spice"
+        }
+      ]
+    },
+    {
+      "id": "O81",
+      "type": "관계",
+      "chain": "관계 person:민트 ↔ person:프리카",
+      "about": ["person:민트", "person:프리카"],
+      "text": "STAR ANIS에서 아니스와 셋을 지키던 민트와 프리카가 둘이 남은 뒤 말이 안 통해 따로 다니다, 다투면서도 함께 곡을 마무리하고 서로 기대는 짝으로 자리 잡는다",
+      "built": ["D1180", "D1209", "D1212"],
+      "end": "fl:bitter_spice",
+      "closing": ["D1743", "D1742"],
+      "reason": "STAR ANIS D1180 · D1209 · D1212 → BITTER SPICE D1743 · D1742(불화가 풀림)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:민트 ↔ person:프리카의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 5, 마지막 변화 D1743 D1742@fl:bitter_spice"
+        }
+      ]
+    },
+    {
+      "id": "O82",
+      "type": "관계",
+      "chain": "관계 person:아니스 ↔ person:프리카",
+      "about": ["person:아니스", "person:프리카"],
+      "text": "'옛정에 해 주는 것'이라 차갑게 굴던 프리카와 굿즈만 몰래 모으던 아니스가 다시 셋이 무대에 선 뒤, 아니스는 이제 같은 멤버가 아니라며 둘은 강하다고 믿고 TV 앞에서 응원한다",
+      "built": ["D1400", "D665", "D664", "D800", "D801", "D1180", "D1209", "D1214", "D1235"],
+      "end": "fl:bitter_spice",
+      "closing": ["D1744"],
+      "reason": "호감도 D1400 · ch38 D664 · D665 · ch40 D800 · D801 · STAR ANIS D1214 · D1235 → BITTER SPICE D1744 — 떠나 보낸 뒤 믿음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:아니스 ↔ person:프리카의 끝 · 이유 (초안) 10건 · 단위 5 · 변화 7, 마지막 변화 D1744@fl:bitter_spice"
+        }
+      ]
+    },
+    {
+      "id": "O83",
+      "type": "성장",
+      "chain": "성장 person:프리카 신념",
+      "about": ["person:프리카"],
+      "text": "아이돌은 춤과 노래면 충분하다던 프리카가 친구들을 위해 웃고 별이 되자던 끝에, 이미 빛나고 있음을 깨닫고 아니스의 빈자리 대신 둘만의 하고 싶은 음악을 만들겠다는 데 이른다",
+      "built": ["D663", "D1213", "D1223"],
+      "end": "fl:bitter_spice",
+      "closing": ["D1741"],
+      "reason": "ch38 D663 → STAR ANIS D1213 · D1223 → BITTER SPICE D1741",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:프리카 신념의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D1741@fl:bitter_spice"
+        }
+      ]
+    },
+    {
+      "id": "O84",
+      "type": "관계",
+      "chain": "관계 person:그레텔 ↔ person:신데렐라",
+      "about": ["person:그레텔", "person:신데렐라"],
+      "text": "(초안) 관계 person:그레텔 ↔ person:신데렐라의 끝",
+      "built": ["D574", "D575", "D576"],
+      "end": "fl:wave_to_you",
+      "closing": ["D1755"],
+      "reason": "(초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D1755@fl:wave_to_you",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "OLD TALES의 배신 · 화해는 한 단위 안이고, WAVE TO YOU D1755는 적이 된 헨젤 · 그레텔을 피하지 않겠다는 다짐 — 만남 · 결판이 아직인 열린 결말"
+        }
+      ]
+    },
+    {
+      "id": "O85",
+      "type": "관계",
+      "chain": "관계 person:신데렐라 ↔ person:지휘관",
+      "about": ["person:신데렐라", "person:지휘관"],
+      "text": "유리 구두를 찾아 준 은인이라 '친절한 나의 왕자님'이라 부르며 부탁도 삼가던 신데렐라가, 먼저 다가가 입을 맞추며 '점점 더 욕심난다'는 연인이 된다",
+      "built": ["D514", "D522", "D612"],
+      "end": "char:515",
+      "closing": ["D2222"],
+      "reason": "ch32 D514 · 서브퀘스트 D522 · ch35 D612 → 호감도 D2222",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:신데렐라 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D2222@char:515"
+        }
+      ]
+    },
+    {
+      "id": "O86",
+      "type": "관계",
+      "chain": "관계 person:신데렐라 ↔ person:헨젤",
+      "about": ["person:신데렐라", "person:헨젤"],
+      "text": "(초안) 관계 person:신데렐라 ↔ person:헨젤의 끝",
+      "built": ["D569", "D574", "D570", "D575", "D576", "D571"],
+      "end": "fl:wave_to_you",
+      "closing": ["D1755"],
+      "reason": "(초안) 7건 · 단위 2 · 변화 5, 마지막 변화 D1755@fl:wave_to_you",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "OLD TALES의 겨눔 · 사과 · 화해(D569–D576 · D571)는 한 단위 안이고, WAVE TO YOU D1755는 적이 된 헨젤을 피하지 않겠다는 다짐 — 결판이 아직인 열린 결말"
+        }
+      ]
+    },
+    {
+      "id": "O87",
+      "type": "관계",
+      "chain": "관계 org:메티스 ↔ person:슈엔",
+      "about": ["org:메티스", "person:슈엔"],
+      "text": "(초안) 관계 org:메티스 ↔ person:슈엔의 끝",
+      "built": ["D92", "D152"],
+      "end": "fl:project_matis",
+      "closing": ["D1288"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1288@fl:project_matis",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "PROJECT MATIS는 메티스 결성의 과거 회상이 대부분이고 D1288(도구처럼 쉴 새 없이 부림)도 한 걸음 — 슈엔과 메티스 사이가 자리 잡는 끝이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O88",
+      "type": "관계",
+      "chain": "관계 person:라플라스 ↔ person:슈엔",
+      "about": ["person:라플라스", "person:슈엔"],
+      "text": "(초안) 관계 person:라플라스 ↔ person:슈엔의 끝",
+      "built": ["D155", "D156", "D618"],
+      "end": "fl:project_matis",
+      "closing": ["D1305", "D1286", "D1287", "D1306"],
+      "reason": "(초안) 8건 · 단위 3 · 변화 6, 마지막 변화 D1305 D1286 D1287 D1306@fl:project_matis",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "본편 쪽 끝 ch36 D618(슈엔을 바로잡겠다며 작전을 잇는 다짐)은 한 걸음이고, PROJECT MATIS D1305 · D1306은 첫 만남 · 히어로 약속의 과거 회상 — 관계의 끝이 아니라 그 내력(복선의 답 쪽)"
+        }
+      ]
+    },
+    {
+      "id": "O89",
+      "type": "관계",
+      "chain": "관계 person:맥스웰 ↔ person:슈엔",
+      "about": ["person:맥스웰", "person:슈엔"],
+      "text": "(초안) 관계 person:맥스웰 ↔ person:슈엔의 끝",
+      "built": ["D1383", "D611", "D645"],
+      "end": "fl:project_matis",
+      "closing": ["D1290", "D1308", "D1291", "D1307", "D1292"],
+      "reason": "(초안) 9건 · 단위 4 · 변화 7, 마지막 변화 D1290 D1308 D1291 D1307 D1292@fl:project_matis",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "PROJECT MATIS D1290–D1292(인간 맥스웰이 떠나고 니케가 됨)는 ch35 · ch37의 망설임보다 앞선 과거의 회상 — 관계의 끝이 아니라 그 내력(복선의 답 쪽)"
+        }
+      ]
+    },
+    {
+      "id": "O90",
+      "type": "성장",
+      "chain": "성장 person:라플라스 신념",
+      "about": ["person:라플라스"],
+      "text": "인간의 도움을 받으면 히어로 실격이라던 라플라스가 NIMPH 없이 무너졌다 '무서워하지 않는 히어로'를 맹세한 끝에, 소중한 이라도 세상이 악이라 부르면 망설임 없이 처단하겠다고 마음을 정한다",
+      "built": ["D88", "D153", "D154", "D1966"],
+      "end": "ch35",
+      "closing": ["D613"],
+      "reason": "ch11 D88 → ch18 D153 · D154 · 호감도 D1966 → ch35 D613 — PROJECT MATIS D1302 · D1303은 히어로를 맹세한 어린 날의 과거 회상이라 끝을 ch35로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:라플라스 신념의 끝 · 이유 (초안) 7건 · 단위 5 · 변화 6, 마지막 변화 D1302 D1303@fl:project_matis · 끝 fl:project_matis · 닫는 기록 D1302 D1303 · 쌓인 자리 D88 D153 D154 D1966 D613"
+        }
+      ]
+    },
+    {
+      "id": "O91",
+      "type": "성장",
+      "chain": "성장 person:슈엔 성격",
+      "about": ["person:슈엔"],
+      "text": "(초안) 성장 person:슈엔 성격의 끝",
+      "built": ["D22", "D158", "D647"],
+      "end": "fl:project_matis",
+      "closing": ["D1279", "D1280"],
+      "reason": "(초안) 5건 · 단위 4 · 변화 4, 마지막 변화 D1279 D1280@fl:project_matis",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "PROJECT MATIS D1279 · D1280은 그 성격이 생긴 어린 날의 과거 회상(내력)이고, 본편 쪽 끝 ch37 D647(잉그리드에게 무릎 꿇음)도 한 걸음"
+        }
+      ]
+    },
+    {
+      "id": "O92",
+      "type": "성장",
+      "chain": "성장 person:슈엔 신념",
+      "about": ["person:슈엔"],
+      "text": "(초안) 성장 person:슈엔 신념의 끝",
+      "built": ["D45", "D126"],
+      "end": "fl:project_matis",
+      "closing": ["D1281", "D1282", "D1283", "D1284"],
+      "reason": "(초안) 6건 · 단위 3 · 변화 5, 마지막 변화 D1281 D1282 D1283 D1284@fl:project_matis",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "본편 ch15 D126(기억 소거 없는 치료)은 한 걸음이고, PROJECT MATIS D1281–D1284는 그 신념의 과거 회상(내력 — 복선의 답 쪽)"
+        }
+      ]
+    },
+    {
+      "id": "O93",
+      "type": "성장",
+      "chain": "성장 person:맥스웰 신념",
+      "about": ["person:맥스웰"],
+      "text": "(초안) 성장 person:맥스웰 신념의 끝",
+      "built": ["D139", "D656"],
+      "end": "char:105",
+      "closing": ["D2226"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2226@char:105",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ch16(연구 소재만) · ch38(메티스다운 공적) · 호감도 D2226(과학으로 증명 못 할 '무언가')은 각각 다른 일의 변화 — 한 줄기가 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O94",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:버닝엄",
+      "about": ["person:도로시", "person:버닝엄"],
+      "text": "탈환전을 재촉하는 도로시의 속내를 '투명하다'며 짚던 버닝엄이, 조부 기록 속 승리의 여신이라 지켜봐 왔다며 사과하고 '방주는 너를 돕는다'고 경례한다",
+      "built": ["D1053"],
+      "end": "ch46",
+      "closing": ["D1172"],
+      "reason": "ch44 D1053 → ch46 D1172(사과 · 지지) — ch47 D1321(녹음을 들으며 환호)은 그 뒤의 모습이라 끝을 ch46으로",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:버닝엄의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1321@ch47 · 끝 ch47 · 닫는 기록 D1321 · 쌓인 자리 D1053 D1172"
+        }
+      ]
+    },
+    {
+      "id": "O95",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:스노우_화이트",
+      "about": ["person:도로시", "person:스노우_화이트"],
+      "text": "방주를 빼앗겠다며 갈라선 도로시를 기다리다 '정말 많이 변했구나'라 체념한 스노우 화이트가, 도로시가 선봉에 선다는 말에 기뻐하며 '고맙다'고 한다",
+      "built": ["D248", "D249", "D243", "D956"],
+      "end": "ch47",
+      "closing": ["D1311"],
+      "reason": "OVER ZONE D248 · D249 · D243(갈라섬) → GODDESS FALL D956(체념) → ch47 D1311 — 도로시가 방주 편 선봉으로 돌아와 갈라섬이 끝난다(ch47 D1321)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:스노우_화이트의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 4, 마지막 변화 D1311@ch47"
+        }
+      ]
+    },
+    {
+      "id": "O96",
+      "type": "관계",
+      "chain": "관계 person:세실 ↔ person:지휘관",
+      "about": ["person:세실", "person:지휘관"],
+      "text": "(초안) 관계 person:세실 ↔ person:지휘관의 끝",
+      "built": ["D194", "D214", "D1034"],
+      "end": "ch47",
+      "closing": ["D1310"],
+      "reason": "(초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1310@ch47",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "냉정한 조력자 → 지지자 → 기술 교환 → 늦은 인사로 이어지는 한 걸음들 — 자리 잡는 끝(털어놓음 · 신뢰 확인)이 뚜렷하지 않다"
+        }
+      ]
+    },
+    {
+      "id": "O97",
+      "type": "관계",
+      "chain": "관계 person:요한 ↔ person:지휘관",
+      "about": ["person:요한", "person:지휘관"],
+      "text": "랩쳐 밭에 던진 '애송이'를 선배로 키우며 뒷일까지 맡겼던 요한이, 직접 마중 나와 반가운 거냐는 물음에 '그래. 맞다'고 인정한다",
+      "built": ["D171", "D187", "D184", "D188", "D210", "D221", "D925", "D1033"],
+      "end": "ch47",
+      "closing": ["D1309"],
+      "reason": "ch19 · ch20 적대와 사과(D171 · D187 · D184 · D188) → ch21 · 서브퀘스트 · GODDESS FALL · ch44 신뢰(D210 · D221 · D925 · D1033) → ch47 D1309 털어놓음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:요한 ↔ person:지휘관의 끝 · 이유 (초안) 9건 · 단위 7 · 변화 7, 마지막 변화 D1309@ch47"
+        }
+      ]
+    },
+    {
+      "id": "O98",
+      "type": "성장",
+      "chain": "성장 person:에닉 성격",
+      "about": ["person:에닉"],
+      "text": "(초안) 성장 person:에닉 성격의 끝",
+      "built": ["D224", "D890", "D891"],
+      "end": "ch47",
+      "closing": ["D1323"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D1323@ch47",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        { "decision": "기각", "by": "claude", "date": "2026-10-09", "session": "X3f-1e", "note": "계산 밖의 마음을 인정하고 배워 가는 중 — ch47 D1323('학습하고 싶다' · 애매한 답)도 한 걸음" }
+      ]
+    },
+    {
+      "id": "O99",
+      "type": "성장",
+      "chain": "성장 person:에닉 신념",
+      "about": ["person:에닉"],
+      "text": "인간만 쉘터로 지키고 아우터 림은 방주가 아니라던 에닉이, 자체 판단으로 방주를 운용하고 아우터 림의 협조를 인정한 끝에 그 사람들까지 쉘터로 지키기로 한다",
+      "built": ["D223", "D310", "D1141"],
+      "end": "ch47",
+      "closing": ["D1324"],
+      "reason": "ch22 D223 → ch25 D310 → ch45 D1141 → ch47 D1324(초기 판단을 거둠)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:에닉 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1324@ch47"
+        }
+      ]
+    },
+    {
+      "id": "O100",
+      "type": "성장",
+      "chain": "성장 person:온리_원 성격",
+      "about": ["person:온리_원"],
+      "text": "(초안) 성장 person:온리_원 성격의 끝",
+      "built": ["D883", "D884", "D1161"],
+      "end": "ch47",
+      "closing": ["D1312"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D1312@ch47",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "이질적인 것 → 또래 아이(ch42) 뒤로 '죽일래'(ch46)와 웃으며 안김(ch47)을 오가는 중 — 결핍 · 상처가 풀리는 이룸이 아니라 한 걸음"
+        }
+      ]
+    },
+    {
+      "id": "O101",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:엔더슨",
+      "about": ["person:도로시", "person:엔더슨"],
+      "text": "살아 있던 옛 '지휘관' 엔더슨에게 울음을 터뜨린 도로시가 감방에서 끌려 나와 선봉을 맡은 끝에, 침식된 채 '믿을게요, 꼭 되돌려 주세요'라며 총을 버리고 '예, 지휘관'이라 한다",
+      "built": ["D1174", "D1175", "D1320"],
+      "end": "ch48",
+      "closing": ["D1344", "D1347"],
+      "reason": "ch46 재회(D1174 · D1175) → ch47 D1320 → ch48 D1344 · D1347 — 옛 지휘관과 부하로 신뢰가 되살아남",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:도로시 ↔ person:엔더슨의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 3, 마지막 변화 D1344 D1347@ch48"
+        }
+      ]
+    },
+    {
+      "id": "O102",
+      "type": "관계",
+      "chain": "관계 person:스노우_화이트 ↔ person:홍련",
+      "about": ["person:스노우_화이트", "person:홍련"],
+      "text": "실의에 빠진 아이로 여겨지던 스노우 화이트가 뇌만 남은 홍련을 살릴 수단을 찾던 끝에, 돌아온 홍련 · 라푼젤에게 '일찍일찍 좀 다녀라' 하고 '잘 돌아와 줘서 고맙다'고 한다",
+      "built": ["D976"],
+      "end": "ch48",
+      "closing": ["D1349"],
+      "reason": "ARK GUARDIAN D976(옛 전우) · 그 액자의 기다림 → ch48 D1349 — 기다림의 끝",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:스노우_화이트 ↔ person:홍련의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D1349@ch48"
+        }
+      ]
+    },
+    {
+      "id": "O103",
+      "type": "관계",
+      "chain": "관계 person:장화 ↔ person:홍련",
+      "about": ["person:장화", "person:홍련"],
+      "text": "100년 전 동생을 지키려 인류의 적이 되어 홍련의 검에 죽은 장화와 그 언니를 그리워하던 홍련이, 꿈속에서 등을 맞대 함께 벤 뒤 장화가 '행복하게 살아'라는 마지막 주박을 남긴다",
+      "built": ["D361", "D359", "D360", "D362", "D907"],
+      "end": "ch48",
+      "closing": ["D1332", "D1331"],
+      "reason": "NEW YEAR, NEW SWORD D359–D362 → GODDESS FALL D907 → ch48 D1331 · D1332 — 화해와 작별",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:장화 ↔ person:홍련의 끝 · 이유 (초안) 7건 · 단위 3 · 변화 5, 마지막 변화 D1332 D1331@ch48 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O104",
+      "type": "성장",
+      "chain": "성장 person:도로시 신념",
+      "about": ["person:도로시"],
+      "text": "배신한 방주를 빼앗겠다던 도로시가 사과와 경의에 복수심이 무너져 선봉을 맡은 끝에, 침식되자 '용서할 수 있어서 다행'이라 하는 데 이른다",
+      "built": ["D177", "D237", "D1434", "D987", "D1139", "D1168", "D1173", "D1319"],
+      "end": "ch48",
+      "closing": ["D1346"],
+      "reason": "ch19 · OVER ZONE · 호감도 · ARK GUARDIAN · ch45–47(D177 … D1319)의 복수와 무너짐이 ch48 D1346 용서로 선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:도로시 신념의 끝 · 이유 (초안) 9건 · 단위 8 · 변화 8, 마지막 변화 D1346@ch48 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O105",
+      "type": "성장",
+      "chain": "성장 person:라푼젤 신념",
+      "about": ["person:라푼젤"],
+      "text": "(초안) 성장 person:라푼젤 신념의 끝",
+      "built": ["D1376", "D250", "D1594"],
+      "end": "ch48",
+      "closing": ["D1328"],
+      "reason": "(초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1328@ch48",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "note": "ch48 D1328은 침식의 대도약이 사람 손이었음을 알고 '정복할 수 있다'는 희망이 생긴 시작 — 무덤을 만들어 주는 줄기(D1376 · D250)와 섞였고 이룸이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O106",
+      "type": "성장",
+      "chain": "성장 person:마리안 신념",
+      "about": ["person:마리안"],
+      "text": "쓰러진 랩쳐조차 불쌍하다던 마리안이 모두를 지키겠다는 데서 퀸으로 사랑의 세계를 만들려다 '잘 안됐다'며 길을 잃은 끝에, 누구도 죽지 않고 사랑하고 사랑받는 세계를 만들겠다고 '이제 완전히 안다'",
+      "built": ["D110", "D419", "D902", "D1316"],
+      "end": "ch48",
+      "closing": ["D1341"],
+      "reason": "ch14 D110 → SECOND AFFECTION D419 → GODDESS FALL D902 → ch47 D1316 → ch48 D1341",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:마리안 신념의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D1341@ch48"
+        }
+      ]
+    },
+    {
+      "id": "O107",
+      "type": "성장",
+      "chain": "성장 person:온리_원 신념",
+      "about": ["person:온리_원"],
+      "text": "퀸이 될 수 있는 자기는 뭔가 해야 한다며 언니들을 위해 퀸이 되려던 온리 원이 '퀸 정말 하기 싫어'라며 마리안에게 맡기고 안겨 사랑받으며 살기로 한다",
+      "built": ["D1314"],
+      "end": "ch48",
+      "closing": ["D1336", "D1337"],
+      "reason": "ch47 D1314 → ch48 D1336 → D1337(짐을 내려놓음)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:온리_원 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1336 D1337@ch48"
+        }
+      ]
+    },
+    {
+      "id": "O108",
+      "type": "성장",
+      "chain": "성장 person:파피용 신념",
+      "about": ["person:파피용"],
+      "text": "사는 것보다 중요한 건 없다며 달아나다 '미쳤나 봐 나'라며 에덴으로 되돌아간 파피용이, 스파이 짓부터 남은 것까지 '단 하나도 후회 안 해 — 그때의 나는 늘 최선이었다'고 한다",
+      "built": ["D926", "D937"],
+      "end": "ch48",
+      "closing": ["D1335"],
+      "reason": "GODDESS FALL D926 · D937 → ch48 D1335",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:파피용 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1335@ch48"
+        }
+      ]
+    },
+    {
+      "id": "O109",
+      "type": "성장",
+      "chain": "성장 person:홍련 신념",
+      "about": ["person:홍련"],
+      "text": "검만 휘두르다 떠나도 좋다던 홍련이 살리는 일 · 농사를 해 보고 싶어 하던 끝에, 언니의 마지막 주박대로 '반드시 행복하게 살겠다'고 한다",
+      "built": ["D251"],
+      "end": "ch48",
+      "closing": ["D1333"],
+      "reason": "OVER ZONE D251 → ch48 D1333 — 호감도 D1412 · D1516(지상 탈환의 의지 · 새 동료와 승리)은 다른 갈래라 쌓인 자리에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 성장 person:홍련 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1333@ch48 · 쌓인 자리 D1412 D251 D1516"
+        }
+      ]
+    },
+    {
+      "id": "O110",
+      "type": "관계",
+      "chain": "관계 person:드레이크 ↔ person:지즈",
+      "about": ["person:드레이크", "person:지즈"],
+      "text": "자기를 끌어 올리려던 지즈를 뿌리쳐 살리며 '빌런 연합에 넣어 주겠다'던 드레이크가 약속대로 지즈를 첫 합격자로 받고, 서로 '리더' · '최고의 동료'라 인정하는 사이가 된다",
+      "built": ["D876"],
+      "end": "fl:great_villain_union",
+      "closing": ["D1776", "D1782", "D1779"],
+      "reason": "ch42 D876(약속) → GREAT VILLAIN UNION D1780 · D1776 · D1782 · D1779",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1e",
+          "before": "(초안) 관계 person:드레이크 ↔ person:지즈의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D1776 D1782 D1779@fl:great_villain_union"
+        }
+      ]
+    },
+    {
+      "id": "O111",
+      "type": "관계",
+      "chain": "관계 person:세르반 ↔ person:지휘관",
+      "about": ["person:세르반", "person:지휘관"],
+      "text": "가짜 훈장 의뢰로 엮였다가 평판을 되찾아 준 '친애하는 후배님'에게, 세르반이 고맙다면서도 다시는 연락하지 말자며 각자의 세상으로 선을 긋는다",
+      "built": ["D67"],
+      "end": "sub:세르반_03",
+      "closing": ["D109"],
+      "reason": "서브퀘스트 연작 sub:세르반_01 D67(은인) → sub:세르반_03 D109(결별) — 이별로 자리 잡음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:세르반 ↔ person:지휘관의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D109@sub:세르반_03 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O112",
+      "type": "관계",
+      "chain": "관계 person:루피 ↔ person:지휘관",
+      "about": ["person:루피", "person:지휘관"],
+      "text": "하루 남자친구 연기를 졸라 맡기던 루피가 스토커 사건 뒤 사귀게 된 지휘관에게, 연말에 '우린 그 예외가 될 것'이라는 답과 첫 키스를 받고 '세상에서 제일 사랑한다'며 안긴다",
+      "built": ["D1803", "D1804"],
+      "end": "char:203",
+      "closing": ["D1972", "D1973"],
+      "reason": "호감도 char:200 D1804(연인이 됨) → char:203 D1972 · D1973(불안이 풀리고 약속 · 고백) — 호감도 마지막 편의 약속 · 고백은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:루피 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D1972 D1973@char:203"
+        }
+      ]
+    },
+    {
+      "id": "O113",
+      "type": "관계",
+      "chain": "관계 person:블랑 ↔ person:지휘관",
+      "about": ["person:블랑", "person:지휘관"],
+      "text": "BUNNY X777 우승 날 행운의 키스를 청한 블랑이, 스킨십할수록 커진 마음을 고백하고 '점장님의 행운의 토끼'가 되겠다고 한다",
+      "built": ["D2031"],
+      "end": "char:270",
+      "closing": ["D2033"],
+      "reason": "BUNNY X777 D2031(행운의 키스) → 호감도 char:270 D2033(고백) — 호감도 마지막 변화의 고백은 자리 잡음(판례 O1 · O85). 정식 고백은 뒤로 미뤘지만 마음은 털어놓았다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:블랑 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2033@char:270"
+        }
+      ]
+    },
+    {
+      "id": "O114",
+      "type": "관계",
+      "chain": "관계 person:누아르 ↔ person:지휘관",
+      "about": ["person:누아르", "person:지휘관"],
+      "text": "BUNNY X777에서 '진심이 담긴 선물'로 행운의 키스를 건넨 누아르가, 술 없이 고백해 서로 좋아함을 확인하고 둘만의 비밀을 만들어 가는 연인이 된다",
+      "built": ["D2030"],
+      "end": "char:271",
+      "closing": ["D2034"],
+      "reason": "BUNNY X777 D2030 → 호감도 char:271 D2034(서로 좋아함을 확인) — 호감도의 고백 · 확인은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:누아르 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2034@char:271"
+        }
+      ]
+    },
+    {
+      "id": "O115",
+      "type": "관계",
+      "chain": "관계 person:메어리 ↔ person:지휘관",
+      "about": ["person:메어리", "person:지휘관"],
+      "text": "꾀병 환자로 놀리다 죄를 나눠 지겠다는 지휘관을 '공범자 님'으로 받아들인 메어리가, 블루워터 아일랜드에서 그 품에 울고 뒤에 먼저 입 맞추며 '비밀이 또 생겼다'고 한다",
+      "built": ["D1387", "D1388", "D262"],
+      "end": "char:132",
+      "closing": ["D2040"],
+      "reason": "호감도 char:130 D1388(공범자) → BLUEWATER ISLAND D262(약속을 지키겠다며 욺) → 호감도 char:132 D2040(먼저 입맞춤) — 호감도의 고백은 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:메어리 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2040@char:132"
+        }
+      ]
+    },
+    {
+      "id": "O116",
+      "type": "성장",
+      "chain": "성장 person:메어리 신념",
+      "about": ["person:메어리"],
+      "text": "죽을 환자의 뇌를 팔아 니케로 만들던 인간 시절의 죄를 알고도 섬에 숨으려던 메어리가, 경멸받더라도 리페어 센터로 돌아가 속죄하겠다고 정한다",
+      "built": ["D1389", "D1390"],
+      "end": "event_bluewaterisland",
+      "closing": ["D263"],
+      "reason": "호감도 char:130 D1389 · D1390(죄를 알고 살아서 치료하겠다) → BLUEWATER ISLAND D263(리페어 센터로 돌아가 속죄) — 쌓인 죄책이 속죄의 결심으로 서서 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:메어리 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D263@event_bluewaterisland"
+        }
+      ]
+    },
+    {
+      "id": "O117",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:콜렉터",
+      "about": ["person:지휘관", "person:콜렉터"],
+      "text": "(초안) 관계 person:지휘관 ↔ person:콜렉터의 끝",
+      "built": ["D28"],
+      "end": "sub:콜렉터_02",
+      "closing": ["D279"],
+      "reason": "(초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D279@sub:콜렉터_02",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "sub:콜렉터_01에서 은혜를 금괴로 갚고 '그때가 오면 목숨 걸고 돕겠다'던 약속이 sub:콜렉터_02에서 다시 신세를 지며 되풀이될 뿐 — 약속이 쓰이는 자리가 없어 열린 결말"
+        }
+      ]
+    },
+    {
+      "id": "O118",
+      "type": "성장",
+      "chain": "성장 person:마스트 신념",
+      "about": ["person:마스트"],
+      "text": "(초안) 성장 person:마스트 신념의 끝",
+      "built": ["D1961"],
+      "end": "char:350",
+      "closing": ["D2047", "D2048"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2047 D2048@char:350",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "해적의 꿈은 처음부터 있던 것이고(char:352 D1961), 조롱에 꺾였다 다시 서는 D2047 · D2048은 한 호감도(char:350) 안의 경과 — 꿈이 이뤄지지도 새로 서지도 않은 다짐이라 열린 결말"
+        }
+      ]
+    },
+    {
+      "id": "O119",
+      "type": "연작",
+      "chain": "연작 event_seayouagain1",
+      "text": "BLUEWATER ISLAND 에필로그에 남은 바닷속 거대 신호가 SEA, YOU, AGAIN에서 섬 전력이 깨운 해상 랩쳐 크라켄으로 드러나, 어드마이어 호의 이지스 캐논에 격추되며 섬 이야기 두 편이 닫힌다",
+      "built": ["event_bluewaterisland"],
+      "end": "event_seayouagain1",
+      "reason": "links 다음 편 BLUEWATER ISLAND → SEA, YOU, AGAIN — 1회독 요약: SEA, YOU, AGAIN이 BLUEWATER 에필로그(F974 · Q135)의 후속으로 크라켄을 격추하고 통신 · 휴가로 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_bluewaterisland → event_seayouagain1의 결판 · 이유 (초안) 다음 편 사슬 event_bluewaterisland → event_seayouagain1의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O120",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:헬름",
+      "about": ["person:지휘관", "person:헬름"],
+      "text": "로비 · 추파를 의심하며 날을 세우다 '그를 믿는다'며 바다로 나가는 날 곁을 청한 헬름이, 처음부터 뛰던 마음을 털어놓고 입맞춤에 '하나부터 열까지 가르쳐 달라'며 연인이 된다",
+      "built": ["D1955", "D1958"],
+      "end": "char:353",
+      "closing": ["D2058"],
+      "reason": "호감도 char:352 D1955 · D1958(믿음) → 호감도 char:353 D2058(고백 · 연인) — 호감도의 털어놓음은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:지휘관 ↔ person:헬름의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2058@char:353"
+        }
+      ]
+    },
+    {
+      "id": "O121",
+      "type": "성장",
+      "chain": "성장 person:헬름 신념",
+      "about": ["person:헬름"],
+      "text": "방주 유일의 해군이라 쓸모를 증명하려 조급하고 처음부터 완벽해야 한다던 헬름이, 크라켄 격추 뒤 함께 있는 것만으로 충분함을 알고 엉망이어도 받아들여 주는 이들 곁에서 말없이 믿어 주는 리더가 되겠다고 한다",
+      "built": ["D1956", "D1456"],
+      "end": "char:353",
+      "closing": ["D2057"],
+      "reason": "호감도 char:352 D1956(약속을 지키려 고집) → SEA, YOU, AGAIN D1456(조급함이 풀림) → 호감도 char:353 D2057(완벽주의를 내려놓음) — 쌓인 조급함 · 완벽주의가 풀려 새 신념이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:헬름 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2057@char:353"
+        }
+      ]
+    },
+    {
+      "id": "O122",
+      "type": "관계",
+      "chain": "관계 person:나가 ↔ person:티아",
+      "about": ["person:나가", "person:티아"],
+      "text": "(초안) 관계 person:나가 ↔ person:티아의 끝",
+      "built": ["D1474", "D1475", "D1477", "D1478", "D1479"],
+      "end": "char:450",
+      "closing": ["D2071"],
+      "reason": "(초안) 7건 · 단위 2 · 변화 5, 마지막 변화 D2071@char:450",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "DAZZLING CUPID의 라이벌 선언 · 화해(D1475–D1479)는 한 단위 안의 경과이고, 같은 날 호감도 char:450의 '평생 단짝'(D2071 · D2072)은 둘이 단짝이 된 내력(과거) — 쌓인 것이 없다(판례 O54 · 과거 회상)"
+        }
+      ]
+    },
+    {
+      "id": "O123",
+      "type": "관계",
+      "chain": "관계 person:니힐리스타 ↔ person:지휘관",
+      "about": ["person:니힐리스타", "person:지휘관"],
+      "text": "(초안) 관계 person:니힐리스타 ↔ person:지휘관의 끝",
+      "built": ["D1426"],
+      "end": "ch25",
+      "closing": ["D313"],
+      "reason": "(초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D313@ch25",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "호감도 char:261 D1426('정이 들었다', 다시 정복하러 오겠다) → ch25 D313(살려 둔 지휘관에게 '모욕'이라 분노하다 우는 듯 웃음)은 적의와 미련이 엉킨 한 장면 — 결판도 자리 잡음도 아닌 열린 결말(판례 O4 · O46)"
+        }
+      ]
+    },
+    {
+      "id": "O124",
+      "type": "관계",
+      "chain": "관계 person:루드밀라 ↔ person:토브",
+      "about": ["person:루드밀라", "person:토브"],
+      "text": "엉뚱한 신입 토브를 미덥지 않게 보던 루드밀라가 ALONE SURVIVOR 구조 뒤 그 임기응변의 재능을 인정해 언리미티드의 허점을 맡기고, 토브도 선배들 방식을 바꿀 필요가 없음을 깨달아 서로의 다름을 받아들인다",
+      "built": ["D1499", "D1500"],
+      "end": "char:192",
+      "closing": ["D2081", "D2078"],
+      "reason": "ALONE SURVIVOR D1499 · D1500 → 같은 날 호감도 char:192 D2081 · D2078(서로 인정) — 이벤트와 호감도는 두 이야기(판례 O10), 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:루드밀라 ↔ person:토브의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2081 D2078@char:192"
+        }
+      ]
+    },
+    {
+      "id": "O125",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:토브",
+      "about": ["person:지휘관", "person:토브"],
+      "text": "문외한 지휘관을 살려 주겠다고 큰소리치던 토브가, 조난 속에서 많이 의지했다고 털어놓고 호감도에서 고민을 들어 준 '생존가님'을 멘토로 삼는다",
+      "built": ["D1494", "D1495"],
+      "end": "char:192",
+      "closing": ["D2080"],
+      "reason": "ALONE SURVIVOR D1494 · D1495(의지를 털어놓음) → 호감도 char:192 D2080(멘토) — 호감도의 털어놓음 · 약속은 자리 잡음(판례 O1 · O10)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:지휘관 ↔ person:토브의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2080@char:192"
+        }
+      ]
+    },
+    {
+      "id": "O126",
+      "type": "성장",
+      "chain": "성장 person:토브 신념",
+      "about": ["person:토브"],
+      "text": "프라이드는 있어도 실전마다 허둥대며 선배들보다 '스마트함'을 증명하려던 토브가, 사람을 살리는 구조자로서 가진 자원을 다 동원하는 것이 서바이벌의 본질이라는 신념에 이른다",
+      "built": ["D1496", "D1497"],
+      "end": "char:192",
+      "closing": ["D2079"],
+      "reason": "ALONE SURVIVOR D1496 · D1497(홰를 놓지 않음) → 호감도 char:192 D2079(구조자의 신념) — 증명하려던 조급함이 풀리고 새 신념이 선다(판례 O10)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:토브 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2079@char:192"
+        }
+      ]
+    },
+    {
+      "id": "O127",
+      "type": "관계",
+      "chain": "관계 person:미카 ↔ person:벨로타",
+      "about": ["person:미카", "person:벨로타"],
+      "text": "서로만 바라보며 떨어지지 못하던 미카와 벨로타가, NEVERLAND에서 미카가 벨로타를 지켜 낸 뒤 호감도에서 변한 미카를 벨로타가 받아들이고 '내 옆에는 벨로타가 있어야 해'라며 서로를 지키는 사이로 자리 잡는다",
+      "built": ["D1826", "D1838", "D1827", "D1506", "D1508"],
+      "end": "char:62",
+      "closing": ["D2086", "D2085"],
+      "reason": "호감도 char:61 D1826 · D1838 · D1827 → NEVERLAND D1506 · D1508 → 호감도 char:62 D2085 · D2086 — 의존이 풀리고 서로 지키는 사이가 된다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:미카 ↔ person:벨로타의 끝 · 이유 (초안) 7건 · 단위 3 · 변화 5, 마지막 변화 D2086 D2085@char:62"
+        }
+      ]
+    },
+    {
+      "id": "O128",
+      "type": "관계",
+      "chain": "관계 person:미카 ↔ person:지휘관",
+      "about": ["person:미카", "person:지휘관"],
+      "text": "(초안) 관계 person:미카 ↔ person:지휘관의 끝",
+      "built": ["D1828", "D1829"],
+      "end": "char:62",
+      "closing": ["D2088"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2088@char:62",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "char:61에서 두 번째 친구가 된 뒤(D1828 · D1829 — 한 단위 안), char:62 D2088의 '혼자 찾아와 단둘이 놀자'는 미카의 홀로서기(O129 · O130)가 지휘관에게 비친 한 걸음 — 관계가 새로 자리 잡는 끝이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O129",
+      "type": "성장",
+      "chain": "성장 person:미카 성격",
+      "about": ["person:미카"],
+      "text": "벨로타 말고는 다 무서운 사람이라 숨던 미카가, NEVERLAND에서 무너지는 다리를 달려 벨로타를 지키고 호감도에서 낯선 이들에게 거침없이 물어 가며 벨로타를 찾아 나선다",
+      "built": ["D1824", "D1825", "D1505"],
+      "end": "char:62",
+      "closing": ["D2084"],
+      "reason": "호감도 char:61 D1824 · D1825 → NEVERLAND D1505 → 호감도 char:62 D2084 — 쌓인 낯가림이 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:미카 성격의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2084@char:62"
+        }
+      ]
+    },
+    {
+      "id": "O130",
+      "type": "성장",
+      "chain": "성장 person:미카 신념",
+      "about": ["person:미카"],
+      "text": "크리스마스를 불행한 날로 여기며 영원한 어린아이로 남길 바라던 미카가, 소중한 것을 지키려면 그 세상을 나와야 한다며 먼저 나와 과거에 갇힌 벨로타도 꺼내겠다고 한다",
+      "built": ["D1507"],
+      "end": "char:62",
+      "closing": ["D2087"],
+      "reason": "NEVERLAND D1507(크리스마스는 행복한 날) → 호감도 char:62 D2087 — 새 신념이 서서 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "같은 끝 char:62 — O127(벨로타 관계) · O129(성격)과 합류(X3f-1g)",
+          "before": "(초안) 성장 person:미카 신념의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D2087@char:62"
+        }
+      ]
+    },
+    {
+      "id": "O131",
+      "type": "관계",
+      "chain": "관계 person:노이즈 ↔ person:지휘관",
+      "about": ["person:노이즈", "person:지휘관"],
+      "text": "머스탱 말만 믿고 찾아와 의심하며 따르던 노이즈가, 호감도에서 신곡을 '진심을 담은 사랑 노래'라 밝히고, NEW YEAR, NEW SWORD 무대에서 1년을 곁에서 도운 프로듀서에게 꽃을 건네며 볼에 입 맞춘다",
+      "built": ["D1788", "D1789"],
+      "end": "event_newyearnewsword",
+      "closing": ["D365"],
+      "reason": "호감도 char:430 D1788 · D1789(사랑 노래로 마음을 비침) → NEW YEAR, NEW SWORD D365(결혼 소문에 토라졌다 무대에서 마음을 드러냄) — 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:노이즈 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D365@event_newyearnewsword"
+        }
+      ]
+    },
+    {
+      "id": "O132",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:홍련",
+      "about": ["person:지휘관", "person:홍련"],
+      "text": "술을 얻어 마시러 드나들며 '도령'을 시험하던 홍련이, 외로움을 인정한 뒤 NEW YEAR, NEW SWORD에서 100년 동안 못 연 언니의 술을 함께 열어 준 그를 '참 좋은 도령'이라 부른다",
+      "built": ["D1413", "D1415"],
+      "end": "event_newyearnewsword",
+      "closing": ["D364"],
+      "reason": "호감도 char:222 D1413 · D1415(외로움을 인정) → NEW YEAR, NEW SWORD D364(언니의 술을 함께 엶) — 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:지휘관 ↔ person:홍련의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D364@event_newyearnewsword"
+        }
+      ]
+    },
+    {
+      "id": "O133",
+      "type": "관계",
+      "chain": "관계 person:레오나 ↔ person:티미",
+      "about": ["person:레오나", "person:티미"],
+      "text": "새끼 때부터 돌보던 티미가 제 발로 돌아오자 영원한 파트너로 지키겠다던 레오나가, 처음 강한 의지를 보인 티미를 '충분히 멋진 사자'라 북돋우며 재촉도 걱정도 없이 믿고 혼자 보낸다",
+      "built": ["D1521"],
+      "end": "char:382",
+      "closing": ["D2089"],
+      "reason": "LIONHEART D1521(곁을 택한 티미를 지키겠다) → 같은 날 호감도 char:382 D2089(믿고 놓아 보냄) — 이벤트와 호감도는 두 이야기(판례 O10), 보호가 믿음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:레오나 ↔ person:티미의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D2089@char:382"
+        }
+      ]
+    },
+    {
+      "id": "O134",
+      "type": "관계",
+      "chain": "관계 person:슈가 ↔ person:지휘관",
+      "about": ["person:슈가", "person:지휘관"],
+      "text": "농담과 커피향 키스로 받아넘기던 '파트너' 슈가가, DIRTY BACKYARD에서 그를 지키려 감정적으로 굴었다고 사과하고 떠올리기 싫은 과거와 식스오의 의뢰까지 털어놓는다",
+      "built": ["D1395", "D1396"],
+      "end": "event_dirtybackyard",
+      "closing": ["D371"],
+      "reason": "호감도 char:140 D1395 · D1396(파트너, 입맞춤) → DIRTY BACKYARD D371(과거를 털어놓음) — 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:슈가 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D371@event_dirtybackyard"
+        }
+      ]
+    },
+    {
+      "id": "O135",
+      "type": "관계",
+      "chain": "관계 person:랩칠리언 ↔ person:지휘관",
+      "about": ["person:랩칠리언", "person:지휘관"],
+      "text": "처음 송신이 닿은 지휘관을 '친구!'라 불러내던 랩칠리언이, 목숨이 걸린 구조 · 도주를 함께 넘긴 뒤 ch27에서 그를 '내 가장 소중한 친구'라 부르며 손수 그린 [바깥]의 지도를 선물한다",
+      "built": ["D49", "D51"],
+      "end": "ch27",
+      "closing": ["D372"],
+      "reason": "서브퀘스트 sub:랩칠리언_00 D49 → sub:랩칠리언_06 D51(구조에 감사) → ch27 D372(가장 소중한 친구, 지도 선물) — 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:랩칠리언 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D372@ch27"
+        }
+      ]
+    },
+    {
+      "id": "O136",
+      "type": "성장",
+      "chain": "성장 person:솔린 신념",
+      "about": ["person:솔린"],
+      "text": "어려 보이는 외형 탓에 쓸모를 증명하려 어른 흉내를 내던 솔린이, 버려지지 않는다는 약속을 받은 뒤 방송 실수의 자책을 넘어 자기만 잘하는 것을 소중히 여기며 솔린답게 크기로 한다",
+      "built": ["D1858", "D1860"],
+      "end": "char:820",
+      "closing": ["D2101"],
+      "reason": "호감도 char:71 D1858 · D1860(쓸모 증명 → 그냥 어른이 되고 싶다) → 호감도 char:820 D2101(흉내를 내려놓고 자기답게) — 쌓인 결핍이 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:솔린 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2101@char:820"
+        }
+      ]
+    },
+    {
+      "id": "O137",
+      "type": "연작",
+      "chain": "연작 event_liarsend",
+      "text": "(초안) 연작 event_fullfoolday → event_liarsend의 결판",
+      "built": ["event_fullfoolday"],
+      "end": "event_liarsend",
+      "reason": "(초안) 다음 편 사슬 event_fullfoolday → event_liarsend의 마지막 편",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "만우절 개그 두 편(FULL FOOL DAY → LIAR'S END) — 1회독 요약대로 줄거리 사실이 없고, LIAR'S END는 작년에 당한 지휘관의 되갚음일 뿐 닫을 물음 · 대립이 쌓이지 않았다"
+        }
+      ]
+    },
+    {
+      "id": "O138",
+      "type": "관계",
+      "chain": "관계 person:일레그 ↔ person:트로니",
+      "about": ["person:일레그", "person:트로니"],
+      "text": "몇 년째 문 앞에서 불러내는 일레그에게 받기만 하던 트로니가, DARK HERO에서 혐의를 혼자 뒤집어쓴 일레그에게 '내 손을 잡아'라며 달려가고, 호감도에서 바깥 일을 혼자 맡던 일레그가 '믿고 맡길 수 있다'며 제 몫을 나눈다",
+      "built": ["D396", "D399", "D397", "D474", "D470"],
+      "end": "char:501",
+      "closing": ["D2106", "D2108"],
+      "reason": "BOOMSDAY D396 · D399 · D397 → DARK HERO D474 · D470(서로를 구함) → 같은 날 호감도 char:501 D2106 · D2108(한쪽이 떠맡던 짐을 나눔) — 기울어 있던 사이가 서로 믿고 맡기는 사이로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:일레그 ↔ person:트로니의 끝 · 이유 (초안) 7건 · 단위 3 · 변화 5, 마지막 변화 D2106 D2108@char:501"
+        }
+      ]
+    },
+    {
+      "id": "O139",
+      "type": "성장",
+      "chain": "성장 person:트로니 신념",
+      "about": ["person:트로니"],
+      "text": "진짜 하늘의 진실은 가려진 편이 낫다며 틀어박혔던 트로니가, 동력원을 마주한 뒤 진짜 하늘을 보이겠다고 하고, DARK HERO에서 [방주의 히어로]라는 남의 기대를 거절하며 제 진심으로 친구에게 손 내미는 히어로가 되겠다고 한다",
+      "built": ["D394", "D398"],
+      "end": "event_darkhero",
+      "closing": ["D469"],
+      "reason": "BOOMSDAY D394 · D398(가린 진실을 마주함) → DARK HERO D469(동력원을 본 뒤의 '히어로' 짐을 내려놓고 제 신념) — 진실을 피하던 결핍이 풀려 새 신념이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:트로니 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D469@event_darkhero"
+        }
+      ]
+    },
+    {
+      "id": "O140",
+      "type": "관계",
+      "chain": "관계 person:소다 ↔ person:지휘관",
+      "about": ["person:소다", "person:지휘관"],
+      "text": "(초안) 관계 person:소다 ↔ person:지휘관의 끝",
+      "built": ["D2004", "D2005"],
+      "end": "char:314",
+      "closing": ["D2109"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2109@char:314",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "호감도 char:312의 상담 → 입맞춤(D2004 · D2005)은 한 단위 안의 경과이고, char:314 D2109는 같은 사이의 하루를 다시 보인 것 — 새로 털어놓거나 자리 잡는 끝이 없다(판례 O17 · O94의 '다시 보인 것')"
+        }
+      ]
+    },
+    {
+      "id": "O141",
+      "type": "성장",
+      "chain": "성장 person:소다 성격",
+      "about": ["person:소다"],
+      "text": "실수할 때마다 '흐엥' 울상이 되고 손님 기색을 살피다 미리 물러서던 덤벙이 메이드 소다가, GOLDEN COIN RUSH에서 긴장해도 동료와 자기를 믿고 최선을 다하겠다고 나선다",
+      "built": ["D1423", "D2003"],
+      "end": "event_goldencoinrush1",
+      "closing": ["D1549"],
+      "reason": "MAID IN VALENTINE D1423 → 호감도 char:312 D2003(의욕) → GOLDEN COIN RUSH D1549(자기를 믿음) — 쌓인 위축이 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:소다 성격의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1549@event_goldencoinrush1"
+        }
+      ]
+    },
+    {
+      "id": "O142",
+      "type": "성장",
+      "chain": "성장 person:앨리스 신념",
+      "about": ["person:앨리스"],
+      "text": "하트 여왕을 물리쳐야 갈 수 있는 행복한 세계를 찾던 앨리스가, 토끼 씨(지휘관)가 자기 낙원임을 깨달은 뒤, 자기도 누군가를 행복의 나라로 데려갈 수 있다는 데 이른다",
+      "built": ["D1881", "D1882"],
+      "end": "char:195",
+      "closing": ["D2110"],
+      "reason": "호감도 char:191 D1881 · D1882(토끼 씨가 낙원) → 호감도 char:195 D2110(데려가 주는 쪽이 됨) — 받기만 하던 행복을 나누는 신념이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:앨리스 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2110@char:195"
+        }
+      ]
+    },
+    {
+      "id": "O143",
+      "type": "연작",
+      "chain": "연작 event_claymore",
+      "text": "팀원이 다 떠나 둘만 남은 리와인드가 ONE MORE TIME에서 다시 선 뒤, CLAY, MORE!에서 클레이가 언더 아레나의 과거를 넘어서고 베이가 클레이를 없어서는 안 될 멤버라 하며 리와인드 두 편이 닫힌다",
+      "built": ["event_onemoretime"],
+      "end": "event_claymore",
+      "reason": "links 다음 편 ONE MORE TIME → CLAY, MORE! — 1회독 요약: claymore가 언더 아레나 운영 중단 · 나쁜 소문이 사라짐 · 베이의 인정(D1563)으로 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_onemoretime → event_claymore의 결판 · 이유 (초안) 다음 편 사슬 event_onemoretime → event_claymore의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O144",
+      "type": "관계",
+      "chain": "관계 person:베이 ↔ person:클레이",
+      "about": ["person:베이", "person:클레이"],
+      "text": "베이의 오랜 팬으로 리와인드에 들어와 실수를 거듭하던 클레이를 몰아세웠다 사과하고 처음부터 다시 하자던 베이가, CLAY, MORE! 끝에 클레이를 없어서는 안 될 중요한 멤버라고 처음 말해 준다",
+      "built": ["D1541", "D1538", "D1539"],
+      "end": "event_claymore",
+      "closing": ["D1563"],
+      "reason": "ONE MORE TIME D1541 · D1538 · D1539(갈등과 사과) → CLAY, MORE! D1563(인정) — 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:베이 ↔ person:클레이의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 2, 마지막 변화 D1563@event_claymore"
+        }
+      ]
+    },
+    {
+      "id": "O145",
+      "type": "관계",
+      "chain": "관계 person:사쿠라 ↔ person:지휘관",
+      "about": ["person:사쿠라", "person:지휘관"],
+      "text": "후계 재촉을 막으려 하루만 빌린 가짜 지아비에게 진심으로 영원을 약속하고 독점을 선언한 사쿠라가, BEAUTY FULL SHOT에서 조직과 그 사이에서 흔들린 끝에 둘 다 가질 방법을 찾을 때까지 기다렸다 지아비로 맞겠다고 정한다",
+      "built": ["D201", "D202", "D2017", "D2019"],
+      "end": "event_beautyfullshot1",
+      "closing": ["D482"],
+      "reason": "CHERRY BLOSSOM D201 · D202 → 호감도 char:282 D2017 · D2019(독점 선언) → BEAUTY FULL SHOT D482(조직과의 갈등을 기다림으로 매듭) — 약속으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:사쿠라 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 4, 마지막 변화 D482@event_beautyfullshot1"
+        }
+      ]
+    },
+    {
+      "id": "O146",
+      "type": "성장",
+      "chain": "성장 person:사쿠라 신념",
+      "about": ["person:사쿠라"],
+      "text": "폭력을 폭력으로 억누르며 '휘어질 방법을 모른다'던 당주 사쿠라가, 대안을 내놓아 부하를 납득시키려 하고 끝내 독꽃 화원을 제 손으로 불태워 '밝고 깨끗한' 세이메이카이를 되찾으려 한다",
+      "built": ["D203"],
+      "end": "char:282",
+      "closing": ["D2018"],
+      "reason": "CHERRY BLOSSOM D203(흔들림 없는 당주) → 같은 날 호감도 char:282 D2018(휘어져 납득시킴) — 판례 O10. char:284 D2114(무너진 모래성을 다시 쌓음)는 다른 갈래라 끝에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:사쿠라 신념의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2114@char:284 · 끝 char:284 · 닫는 기록 D2114 · 쌓인 자리 D203 D2018"
+        }
+      ]
+    },
+    {
+      "id": "O147",
+      "type": "관계",
+      "chain": "관계 person:로산나 ↔ person:지휘관",
+      "about": ["person:로산나", "person:지휘관"],
+      "text": "지켜서 돌려보낼 양지의 인간으로 대하던 로산나가 목을 맡기고 패밀리 묘지를 보여 준 '공범'에게 애인이 되어 달라 청해 연인이 되고, 뒤에 아무에게도 한 적 없는 인간 시절 이야기를 비밀로 털어놓는다",
+      "built": ["D1436", "D1437", "D1438", "D2037", "D2038"],
+      "end": "char:283",
+      "closing": ["D2115"],
+      "reason": "QUEEN'S ORDER D1436–D1438 → 호감도 char:280 D2037 · D2038(연인) → 호감도 char:283 D2115(인간 시절을 털어놓음) — 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:로산나 ↔ person:지휘관의 끝 · 이유 (초안) 6건 · 단위 3 · 변화 5, 마지막 변화 D2115@char:283"
+        }
+      ]
+    },
+    {
+      "id": "O148",
+      "type": "관계",
+      "chain": "관계 person:아인 ↔ person:츠바이",
+      "about": ["person:아인", "person:츠바이", "person:라이"],
+      "text": "친구라 부르지 못하고 소문이 옮을까 거리를 두던 아인이 리본을 내밀어 츠바이 · 라이와 친구가 되고, COLORLESS에서 아인을 밀어내던 츠바이가 사과하며 졸업하는 날 곁에 있겠다고 약속한다",
+      "built": ["D1564", "D1565", "D1571", "D1566"],
+      "end": "event_colorless",
+      "closing": ["D1576"],
+      "reason": "JUVENILE DAYS D1564 · D1565 · D1571 · D1566(친구가 됨) → COLORLESS D1576(사과와 약속) — 두 이벤트는 다른 사건(links), 약속으로 자리 잡음. 셋(라이 포함)의 관계라 합류는 X3f-1g",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:아인 ↔ person:츠바이의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D1576@event_colorless"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1g",
+          "note": "셋 이상의 관계 — 리본으로 맺은 아인 · 츠바이 · 라이 셋의 우정을 이 기록 하나가 닫는다(쌍 사슬은 아인 ↔ 츠바이뿐)",
+          "before": "대상 person:아인 person:츠바이"
+        }
+      ]
+    },
+    {
+      "id": "O149",
+      "type": "성장",
+      "chain": "성장 person:츠바이 신념",
+      "about": ["person:츠바이"],
+      "text": "색깔 없는 자기는 망가져도 된다며 아인 · 라이만 졸업시키려 홀로 무리하던 츠바이가, 함께 졸업하기로 하고 호감도에서 진로 희망에 '[트라이앵글]처럼 지내기'라는 시답잖은 바람을 적는다",
+      "built": ["D1573", "D1574"],
+      "end": "char:390",
+      "closing": ["D2118"],
+      "reason": "COLORLESS D1573 · D1574(함께 졸업) → 같은 날 호감도 char:390 D2118(바람을 적음) — 판례 O10, 자기 소멸의 결심이 풀리고 바람이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:츠바이 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2118@char:390"
+        }
+      ]
+    },
+    {
+      "id": "O150",
+      "type": "성장",
+      "chain": "성장 person:루주 신념",
+      "about": ["person:루주"],
+      "text": "자기 불운이 남에게 옮을까 징크스를 쌓으며 숨던 루주가, JINX PLAYER에서 실력이 이긴다는 초심을 되찾고, 호감도에서 동전 뒷면인 날에도 손님을 마주 보며 불운과 싸우는 걸 즐긴다",
+      "built": ["D2128"],
+      "end": "char:272",
+      "closing": ["D2130"],
+      "reason": "JINX PLAYER D2128(초심) → 같은 날 호감도 char:272 D2130(일상에서도) — 판례 O10, 쌓인 두려움이 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:루주 신념의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D2130@char:272"
+        }
+      ]
+    },
+    {
+      "id": "O151",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:플로라",
+      "about": ["person:지휘관", "person:플로라"],
+      "text": "(초안) 관계 person:지휘관 ↔ person:플로라의 끝",
+      "built": ["D1603", "D1604"],
+      "end": "char:411",
+      "closing": ["D2137"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2137@char:411",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "호감도 char:411 D2137은 낯선 정원사에서 '꽃님'이 되기까지를 처음부터 다시 그려(이벤트 기준 D1603이 이미 '꽃님') 이벤트에 이어 쌓이지 않고, 이벤트의 라일락 조화 · 산책(D1604)과 호감도의 '언젠가 함께 이름 짓기'는 가까워지는 걸음 — 쌓인 것 · 끝이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O152",
+      "type": "연작",
+      "chain": "연작 event_icedragonsaga1",
+      "text": "BOOMS DAY에서 동력원의 비밀을 본 일렉트릭 쇼크가 D.ARK HERO에서 중앙 정부에 쫓기고, 그 임무에 실패해 근신한 메이든이 ICE DRAGON SAGA에서 기억 소거 대신 벗을 택하며 세 편의 익스터너 갈등이 닫힌다(동력원의 정체는 열린 채)",
+      "built": ["event_boomsday", "event_darkhero"],
+      "end": "event_icedragonsaga1",
+      "reason": "links 다음 편 사슬 BOOMS DAY → D.ARK HERO → ICE DRAGON SAGA — 1회독 요약: icedragonsaga1이 darkhero의 근신에서 출발해 메이든의 기억 소거 각오(Q196)를 닫는다(D1616 · D1617)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_boomsday → event_darkhero → event_icedragonsaga1의 결판 · 이유 (초안) 다음 편 사슬 event_boomsday → event_darkhero → event_icedragonsaga1의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O153",
+      "type": "성장",
+      "chain": "성장 person:메이든 신념",
+      "about": ["person:메이든"],
+      "text": "둘뿐인 극비 스쿼드라 소속감을 바라던 메이든이, 명령을 어기고 트로니에게 길을 열어 준 뒤 기억 소거로 익스터너에 돌아가려다, ICE DRAGON SAGA에서 원칙 대신 벗에게 손을 내밀며 비밀 요원이 될 수 없음을 받아들인다",
+      "built": ["D1811", "D1812", "D477"],
+      "end": "event_icedragonsaga1",
+      "closing": ["D1616", "D1617"],
+      "reason": "호감도 char:181 D1811 · D1812(소속감) → D.ARK HERO D477(명령을 어김) → ICE DRAGON SAGA D1616 · D1617(벗을 택함) — 익스터너 원칙과 벗 사이의 갈등이 풀려 새 신념이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:메이든 신념의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 4, 마지막 변화 D1616 D1617@event_icedragonsaga1"
+        }
+      ]
+    },
+    {
+      "id": "O154",
+      "type": "성장",
+      "chain": "성장 person:길로틴 신념",
+      "about": ["person:길로틴"],
+      "text": "명령대로 침식된 니케를 처분하며 고독을 혼자 짊어지던 길로틴이, ICE DRAGON SAGA에서 클로이와 끝내지 못한 대서사시의 엔딩을 스스로 장식하고, 호감도에서 용사의 검을 돌려주며 동료들과 '니케 길로틴의 모험'을 이어 가겠다고 한다",
+      "built": ["D1356", "D1611", "D1614"],
+      "end": "char:182",
+      "closing": ["D2138"],
+      "reason": "호감도 char:180 D1356 → ICE DRAGON SAGA D1611 · D1614(엔딩을 장식) → 호감도 char:182 D2138(대서사시에서 놓여남) — 클로이의 이야기에 사로잡혀 혼자 지던 짐이 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:길로틴 신념의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2138@char:182"
+        }
+      ]
+    },
+    {
+      "id": "O155",
+      "type": "관계",
+      "chain": "관계 person:마나 ↔ person:지휘관",
+      "about": ["person:마나", "person:지휘관"],
+      "text": "도움을 주고받던 M.M.R. 연구원 마나가, WISDOM SPRING에서 한 니케로서 사심 없이 쉬게 지켜 준 뒤, 호감도에서 취해 옛 속내까지 털어놓고 술 마실 때 부르겠다는 술친구가 된다",
+      "built": ["D595"],
+      "end": "char:290",
+      "closing": ["D2144"],
+      "reason": "WISDOM SPRING D595 → 같은 날 호감도 char:290 D2144(털어놓음) — 판례 O10, 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:마나 ↔ person:지휘관의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D2144@char:290"
+        }
+      ]
+    },
+    {
+      "id": "O156",
+      "type": "관계",
+      "chain": "관계 person:에테르 ↔ person:지휘관",
+      "about": ["person:에테르", "person:지휘관"],
+      "text": "(초안) 관계 person:에테르 ↔ person:지휘관의 끝",
+      "built": ["D1889", "D1890"],
+      "end": "event_wisdomspring",
+      "closing": ["D596"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D596@event_wisdomspring",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "피실험체 '7호'(D1889)에서 '정의로운 모르모트'(D1890) · '아끼는 유일한 성공작'(WISDOM SPRING D596)으로 조금씩 정이 드는 걸음 — 털어놓음 · 결판 없이 계속되는 사이라 끝이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O157",
+      "type": "연작",
+      "chain": "연작 event_romanticvalentine",
+      "text": "지상 공장에 수십 년 홀로 남아 방주로 옮기자는 제안도 거절하던 A.I. 스윗 조니가, 다음 밸런타인에 스스로 방주로 숨어들어 메이드 카페에 본체와 단말이 설치되며 밸런타인 두 편이 닫힌다",
+      "built": ["event_maidinvalentine"],
+      "end": "event_romanticvalentine",
+      "reason": "links 다음 편 Maid in Valentine → ROMANTIC VALENTINE — 1회독 요약: 조니가 '다음 밸런타인에 또 오라'던 공장에서 방주로 와 에필로그에 카페에 설치된다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_maidinvalentine → event_romanticvalentine의 결판 · 이유 (초안) 다음 편 사슬 event_maidinvalentine → event_romanticvalentine의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O158",
+      "type": "관계",
+      "chain": "관계 person:마스트 ↔ person:지휘관",
+      "about": ["person:마스트", "person:지휘관"],
+      "text": "보물을 반으로 나누자던 모험 동료 마스트가, 로망을 되찾아 준 '선장 양반'을 해적단의 선장으로 삼고, 호감도에서 함께 보내는 시간도 자기 로망이라며 그만의 메이드가 되어 연인처럼 안긴다",
+      "built": ["D1446", "D2049"],
+      "end": "char:354",
+      "closing": ["D2145"],
+      "reason": "GOLDEN SHIP D1446 → 호감도 char:350 D2049(선장으로 삼음) → 호감도 char:354 D2145(고백) — 호감도의 고백은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:마스트 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2145@char:354"
+        }
+      ]
+    },
+    {
+      "id": "O159",
+      "type": "관계",
+      "chain": "관계 person:마스트 ↔ person:헬름",
+      "about": ["person:마스트", "person:앵커", "person:헬름"],
+      "text": "로열 출신이라 비꼬며 대드는 마스트와 금주 · 근신으로 다스리는 깐깐한 상관 헬름이, SEA, YOU, AGAIN에서 헬름이 '함께 있어 다행'이라 운 뒤, 마스트가 근신의 속뜻을 알아채고 선물을 챙기는 사이가 된다",
+      "built": ["D1960", "D1957", "D1457"],
+      "end": "char:354",
+      "closing": ["D2146"],
+      "reason": "호감도 char:352 D1960 · D1957 → SEA, YOU, AGAIN D1457 → 호감도 char:354 D2146(속뜻을 알아챔) — 반목이 풀려 자리 잡음. 앵커까지 셋의 관계라 합류는 X3f-1g",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:마스트 ↔ person:헬름의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 2, 마지막 변화 D2146@char:354"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1g",
+          "note": "셋 이상의 관계 — 함선 셋(마스트 · 헬름 · 앵커)의 사이를 이 기록 하나가 닫는다(쌍 사슬은 마스트 ↔ 헬름뿐)",
+          "before": "대상 person:마스트 person:헬름"
+        }
+      ]
+    },
+    {
+      "id": "O160",
+      "type": "성장",
+      "chain": "성장 person:트로니 성격",
+      "about": ["person:트로니"],
+      "text": "(초안) 성장 person:트로니 성격의 끝",
+      "built": ["D393", "D395", "D2107"],
+      "end": "event_romanticvalentine",
+      "closing": ["D1627"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D1627@event_romanticvalentine",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "틀어박혔다 문을 열고(BOOMSDAY D395) · '트로니는 트로니면 된다'를 받아들이고(char:501 D2107) · 대화에 조금 익숙해지는(ROMANTIC VALENTINE D1627) 걸음이 이어질 뿐 — 낯가림이 이뤄 끝나는 자리가 없는 '배워 가는 중'(판례 O98)"
+        }
+      ]
+    },
+    {
+      "id": "O161",
+      "type": "관계",
+      "chain": "관계 person:앵커 ↔ person:지휘관",
+      "about": ["person:앵커", "person:지휘관"],
+      "text": "가리키는 길을 믿고 따르던 '함장'을, 자기를 위해 물에 뛰어든 뒤 삶의 좋아하는 것들 속에 들인 앵커가, 호감도에서 '주인님만 있으면 된다'며 그를 독차지하려 한다",
+      "built": ["D2055", "D2056"],
+      "end": "char:355",
+      "closing": ["D2147"],
+      "reason": "호감도 char:351 D2055 · D2056(삶 속에 들임) → 호감도 char:355 D2147(독차지) — 마스트(O158)와 같은 잣대로, 마음을 드러내 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:앵커 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2147@char:355"
+        }
+      ]
+    },
+    {
+      "id": "O162",
+      "type": "관계",
+      "chain": "관계 person:브래디 ↔ person:지휘관",
+      "about": ["person:브래디", "person:지휘관"],
+      "text": "처음 본 지휘관을 퍼펙트 은폐의 '공범'으로 끌어들인 브래디가, 숨긴 사정을 털어놓고 처음 온전한 맛을 준 그를 '미미'라 부르며, 호감도에서 '내 최고의 코스 요리'라 부르는 사이가 된다",
+      "built": ["D622", "D623", "D624"],
+      "end": "char:520",
+      "closing": ["D2156"],
+      "reason": "NEW FLAVOR D622–D624(털어놓음) → 같은 날 호감도 char:520 D2156 — 판례 O10, 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:브래디 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2156@char:520"
+        }
+      ]
+    },
+    {
+      "id": "O163",
+      "type": "연작",
+      "chain": "연작 event_trueflavor",
+      "text": "퍼펙트의 맛이 사라진 NEW FLAVOR에서 지휘관에게 '온전한 맛'을 찾은 브래디 때문에 흔들린 크러스트가, TRUE FLAVOR에서 맛 없는 요리 연구를 그만두고 상대를 위한 '행복의 맛'을 깨달으며 쿠킹오일 두 편이 닫힌다",
+      "built": ["event_newflavor"],
+      "end": "event_trueflavor",
+      "reason": "links 다음 편 NEW FLAVOR → TRUE FLAVOR — 1회독 요약: trueflavor가 newflavor 뒤 크러스트의 흔들림을 에이드 · 티아의 깨우침과 연구 중단으로 닫는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_newflavor → event_trueflavor의 결판 · 이유 (초안) 다음 편 사슬 event_newflavor → event_trueflavor의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O164",
+      "type": "성장",
+      "chain": "성장 person:유니 신념",
+      "about": ["person:유니"],
+      "text": "살을 맞대고 때리는 것을 대화로, 가벼운 말 한마디로 생명을 끊는 것을 명령으로 여기던 유니가, 서로 주고받는 진짜 대화를 깨닫고 UNBREAKABLE SPHERE에서 두 생명의 무게로 죄를 느껴 미하라와 함께 속죄하려 한다",
+      "built": ["D1901"],
+      "end": "event_unbreakablesphere1",
+      "closing": ["D692"],
+      "reason": "호감도 char:160 D1901(진짜 대화) → UNBREAKABLE SPHERE D692(속죄) — 폭력을 놀이로 여기던 결핍이 풀려 새 신념이 선다(O25 연작의 끝과 같은 자리)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:유니 신념의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D692@event_unbreakablesphere1"
+        }
+      ]
+    },
+    {
+      "id": "O165",
+      "type": "관계",
+      "chain": "관계 person:K ↔ person:지휘관",
+      "about": ["person:K", "person:지휘관"],
+      "text": "'클라이언트'로 끌고 다니며 인간을 마음에 안 들어 하던 K가, LORD FOR JUSTICE에서 자기를 믿고 처분을 고르지 않은 지휘관의 정의를 참고하겠다 하고, 호감도에서 '너는 그렇게까지 싫지 않다'며 등에 기댄다",
+      "built": ["D1432", "D713"],
+      "end": "char:41",
+      "closing": ["D2167"],
+      "reason": "LTK D1432 → LORD FOR JUSTICE D713 → 같은 날 호감도 char:41 D2167(털어놓음) — 인간 불신 속 예외로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:K ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2167@char:41"
+        }
+      ]
+    },
+    {
+      "id": "O166",
+      "type": "성장",
+      "chain": "성장 person:콤 신념",
+      "about": ["person:콤"],
+      "text": "(초안) 성장 person:콤 신념의 끝",
+      "built": ["D724", "D727"],
+      "end": "char:851",
+      "closing": ["D2171"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2171@char:851",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "CE006 D727에서 파괴될 때까지 싸우려던 복수가 '살아남아 기억을 잇기'로 바뀌지만, 호감도 char:851 D2171에서도 '복수가 가장 중요하다'면서 외면하지 못하는 걸음 — 복수가 내려놓이지 않은 열린 결말"
+        }
+      ]
+    },
+    {
+      "id": "O167",
+      "type": "관계",
+      "chain": "관계 person:엠마 ↔ person:지휘관",
+      "about": ["person:엠마", "person:지휘관"],
+      "text": "과로하는 지휘관을 걱정해 무릎 베개와 '휴식의 낙원'을 내밀던 엠마가, 호감도에서 처음으로 누군가와 함께 향수를 만들고 '참지 않아도 돼'라며 곁을 내준다",
+      "built": ["D1898", "D1899"],
+      "end": "char:93",
+      "closing": ["D2176"],
+      "reason": "호감도 char:90 D1898 · D1899(가까운 사이) → 호감도 char:93 D2176(곁을 내줌) — 마스트(O158)와 같은 잣대로 마음을 드러내 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:엠마 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2176@char:93"
+        }
+      ]
+    },
+    {
+      "id": "O168",
+      "type": "성장",
+      "chain": "성장 person:은화 신념",
+      "about": ["person:은화"],
+      "text": "지상 탈환의 꿈을 관짝에 묻고 살아남을 쓸모만 가르치던 은화가, 그 꿈을 다른 방식으로 이룰 가능성을 본 뒤, ABSOLUTE에서 혼자 희생하는 승리 대신 이길 때까지 다 같이 싸우는 [우리]를 완벽이라 여긴다",
+      "built": ["D1916", "D1919"],
+      "end": "fl:absolute",
+      "closing": ["D805"],
+      "reason": "호감도 char:92 D1916 · D1919(꿈을 다시 봄) → ABSOLUTE D805([우리]) — 동료를 잃은 상처에서 묻은 꿈이 새 스쿼드의 신념으로 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:은화 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D805@fl:absolute"
+        }
+      ]
+    },
+    {
+      "id": "O169",
+      "type": "관계",
+      "chain": "관계 person:베스티 ↔ person:지휘관",
+      "about": ["person:베스티", "person:지휘관"],
+      "text": "친구 사귀는 법을 묻다 손가락 걸고 첫 친구가 된 지휘관에게 품은 마음이 사랑일까 울던 베스티가, 호감도에서 그가 특별하다는 것을 깨달아 '정말 좋아해'라 말한다",
+      "built": ["D1834", "D1835", "D1836"],
+      "end": "char:94",
+      "closing": ["D2179"],
+      "reason": "호감도 char:91 D1834–D1836 → 호감도 char:94 D2179(고백) — 호감도의 고백은 자리 잡음(판례 O1 · O85). '언젠가 진짜 감정을 전하겠다'는 뒤로 미룬 말이지만 마음은 털어놓았다(O113처럼)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:베스티 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2179@char:94"
+        }
+      ]
+    },
+    {
+      "id": "O170",
+      "type": "관계",
+      "chain": "관계 person:루주 ↔ person:지휘관",
+      "about": ["person:루주", "person:지휘관"],
+      "text": "불운이 옮을까 조심스레 도움을 받던 루주가, 방에서 끌어내 믿어 준 지휘관에게 행운의 주사위를 주고, 호감도에서 함께 불운을 시험해 준 그에게 다음 뒷면이 나올 때도 같이 게임해 달라고 청한다",
+      "built": ["D2129"],
+      "end": "char:272",
+      "closing": ["D2131"],
+      "reason": "JINX PLAYER D2129 → 같은 날 호감도 char:272 D2131(약속) — 판례 O10. fl:coins_in_rush D821 · D822(월권해 돕는다)는 결판 뒤 새 국면이라 끝을 char:272로(판례 O9 · O35)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:루주 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D822@fl:coins_in_rush · 끝 fl:coins_in_rush · 닫는 기록 D822 · 쌓인 자리 D2129 D2131"
+        }
+      ]
+    },
+    {
+      "id": "O171",
+      "type": "관계",
+      "chain": "관계 person:에이드 ↔ person:지휘관",
+      "about": ["person:에이드", "person:지휘관"],
+      "text": "너무 소중해 눈도 못 마주치던 주인님에게 [나만을 위한] 케이크로 다가가 메이드의 선을 넘어 안기고 싶어 한 에이드가, 코인 러시에서 곁을 지킨 뒤 호감도에서 커진 마음을 털어놓고 입을 맞춘다",
+      "built": ["D1526", "D1527", "D2093", "D816"],
+      "end": "char:315",
+      "closing": ["D2182"],
+      "reason": "PERFECT MAID D1526 · D1527 → 호감도 char:310 D2093 → COINS IN RUSH D816 → 호감도 char:315 D2182(고백) — 호감도의 고백은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:에이드 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 4 · 변화 4, 마지막 변화 D2182@char:315"
+        }
+      ]
+    },
+    {
+      "id": "O172",
+      "type": "성장",
+      "chain": "성장 person:베이 성격",
+      "about": ["person:베이"],
+      "text": "주목 공포증으로 폼폼 뒤에 숨고 쓰러지기까지 했던 리와인드 리더 베이가, 혼자 공연을 끝까지 해내고 눈을 피하지 않기로 한 뒤, COINS IN RUSH에서 코치님을 도우려 스스로 메인 홀의 시선을 끄는 치어리딩을 자청한다",
+      "built": ["D1534", "D2102", "D2103"],
+      "end": "fl:coins_in_rush",
+      "closing": ["D825"],
+      "reason": "ONE MORE TIME D1534 → 호감도 char:550 D2102 · D2103(눈을 피하지 않겠다) → COINS IN RUSH D825(시선을 자청) — 쌓인 공포증을 넘어서 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:베이 성격의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D825@fl:coins_in_rush"
+        }
+      ]
+    },
+    {
+      "id": "O173",
+      "type": "성장",
+      "chain": "성장 person:에이드 성격",
+      "about": ["person:에이드"],
+      "text": "완벽한 메이드가 되려 손님 기색만 살피며 괴로움을 혼자 삭이던 에이드가, 호감도에서 좋아하는 메뉴가 생기고 처음으로 남이 아닌 자기를 위한 내일을 기대한다",
+      "built": ["D1523"],
+      "end": "char:310",
+      "closing": ["D2092"],
+      "reason": "PERFECT MAID D1523 → 이웃 호감도 char:310 D2092(자기를 위함) — 판례 O10. char:315 D2181(특수요원 차림과 메이드를 나눔)은 COINS IN RUSH 뒤 새로 생긴 다른 갈래라 끝에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:에이드 성격의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2181@char:315 · 끝 char:315 · 닫는 기록 D2181 · 쌓인 자리 D1523 D2092"
+        }
+      ]
+    },
+    {
+      "id": "O174",
+      "type": "관계",
+      "chain": "관계 person:밀크 ↔ person:지휘관",
+      "about": ["person:밀크", "person:지휘관"],
+      "text": "함께 의뢰를 뛰는 '형씨'에게 고백해 곁에 붙은 밀크가, 이상형에 못 미칠까 남을 연기하다 '밀크라서' 다 좋다는 말에 귀찮은 자기 그대로 다가간다",
+      "built": ["D1833", "D819"],
+      "end": "char:143",
+      "closing": ["D2183"],
+      "reason": "호감도 char:141 D1833(고백) → 호감도 char:143 D2183(제 모습을 털어놓음) — 마스트(O158)와 같은 잣대로 자리 잡음. COINS IN RUSH D819는 해결사 파트너의 기준 모습",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:밀크 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2183@char:143"
+        }
+      ]
+    },
+    {
+      "id": "O175",
+      "type": "성장",
+      "chain": "성장 person:밀크 성격",
+      "about": ["person:밀크"],
+      "text": "(초안) 성장 person:밀크 성격의 끝",
+      "built": ["D1786", "D1832"],
+      "end": "char:143",
+      "closing": ["D2184"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2184@char:143",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "싸움 좋아하는 해결사(char:11 D1786) · '노력은 배신하지 않는다'(char:141 D1832) · 가끔 꾸며 보기(char:143 D2184)는 서로 다른 갈래 — 한 줄기로 쌓여 끝나는 성장이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O176",
+      "type": "연작",
+      "chain": "연작 fl:reborn_evil",
+      "text": "저지스의 판결 대행으로 이어진 License to Kill · DIRTY BACKYARD · KILL THE LORD의 이야기가, LORD, FOR JUSTICE에서 악을 존재하게 하려던 VII이 스스로 머리를 쏘고 K가 기억을 지우지 않은 채 정의를 되찾으며 결판난다",
+      "built": ["event_ltk", "event_dirtybackyard", "event_killthelord"],
+      "end": "event_lordforjustice",
+      "reason": "links 다음 편 사슬 — 1회독 요약: lordforjustice가 VII-1 안 · K의 선택을 닫고(06_e), REBORN EVIL은 그 에필로그의 사이비 조사를 이은 콜라보로 X의 속셈은 열린 채라 끝을 LORD, FOR JUSTICE로(판례 O53 · O79)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_ltk → event_dirtybackyard → event_killthelord → event_lordforjustice → fl:reborn_evil의 결판 · 이유 (초안) 다음 편 사슬 event_ltk → event_dirtybackyard → event_killthelord → event_lordforjustice → fl:reborn_evil의 마지막 편 · 끝 fl:reborn_evil · 쌓인 자리 event_ltk event_dirtybackyard event_killthelord event_lordforjustice"
+        }
+      ]
+    },
+    {
+      "id": "O177",
+      "type": "관계",
+      "chain": "관계 person:D ↔ person:지휘관",
+      "about": ["person:D", "person:지휘관"],
+      "text": "위장 신혼부부로 잠입하고 암살 타겟으로 며칠을 지켜본 지휘관을 '선한 길'로 믿게 된 D가, 함께해 준 데 고마워하다 REBORN EVIL에서 정체를 숨기고 죽어도 상관없다 — 이젠 기억해 줄 사람이 있다고 한다",
+      "built": ["D1429", "D2021", "D404", "D2095"],
+      "end": "fl:reborn_evil",
+      "closing": ["D839"],
+      "reason": "LTK D1429 → 호감도 char:40 D2021 → KILL THE LORD D404 → 호감도 char:43 D2095 → REBORN EVIL D839(털어놓음) — 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:D ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D839@fl:reborn_evil"
+        }
+      ]
+    },
+    {
+      "id": "O178",
+      "type": "연작",
+      "chain": "연작 fl:go_ninja_thief",
+      "text": "(초안) 연작 event_phantomthiefvsdetective → fl:go_ninja_thief의 결판",
+      "built": ["event_phantomthiefvsdetective"],
+      "end": "fl:go_ninja_thief",
+      "reason": "(초안) 다음 편 사슬 event_phantomthiefvsdetective → fl:go_ninja_thief의 마지막 편",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "GO! NINJA THIEF!는 정의 괴도단에 델타가 수습으로 드는 코미디 뒷이야기 — PHANTOM THIEF VS DETECTIVE의 물음(반지 · 유착 · 팬텀)을 잇거나 닫지 않고, 결판은 앞 편 안에서 나 쌓인 것이 없다"
+        }
+      ]
+    },
+    {
+      "id": "O179",
+      "type": "관계",
+      "chain": "관계 person:델타 ↔ person:지휘관",
+      "about": ["person:델타", "person:지휘관"],
+      "text": "깍듯한 부하에서 '완벽한 콤비'가 된 델타가 '존경하는 상관'에게 배운 로맨스대로 조심스레 다가가다, 호감도에서 24시간 감시를 자청해 한 침대에 눕는다",
+      "built": ["D1795", "D1796", "D1797"],
+      "end": "char:23",
+      "closing": ["D2188"],
+      "reason": "호감도 char:20 D1795–D1797 → 호감도 char:23 D2188 — 마스트(O158) · 앵커(O161)와 같은 잣대로 마음을 드러내 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:델타 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2188@char:23"
+        }
+      ]
+    },
+    {
+      "id": "O180",
+      "type": "성장",
+      "chain": "성장 person:델타 신념",
+      "about": ["person:델타"],
+      "text": "(초안) 성장 person:델타 신념의 끝",
+      "built": ["D1793", "D1794"],
+      "end": "fl:go_ninja_thief",
+      "closing": ["D1645"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1645@fl:go_ninja_thief",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "원수를 잡고 평범해지려는 신념(char:20 D1793 · D1794 — 한 호감도 안)과 동료의 힘을 배우려 수습으로 남는 GO! NINJA THIEF! D1645는 다른 갈래 — 한 줄기로 쌓인 끝이 없고, D1645도 '배워 가는 중'(판례 O98)"
+        }
+      ]
+    },
+    {
+      "id": "O181",
+      "type": "관계",
+      "chain": "관계 person:마리안 ↔ person:스노우_화이트",
+      "about": ["person:마리안", "person:스노우_화이트"],
+      "text": "'걸어라'만 되풀이하며 마리안을 몰아세우던 길잡이 스노우 화이트가 제 생선구이를 내주는 사이가 되고, GODDESS FALL에서 마리안의 퀸이라는 고백에 '바뀌는 건 없다'며 인류를 멸망시키려 하면 죽여 달라는 약속을 받는다",
+      "built": ["D409", "D410"],
+      "end": "event_goddessfall1",
+      "closing": ["D920"],
+      "reason": "SECOND AFFECTION D409 · D410 → GODDESS FALL D920(고백을 받아들이고 약속) — 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:마리안 ↔ person:스노우_화이트의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D920@event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O182",
+      "type": "관계",
+      "chain": "관계 person:모리 ↔ person:지휘관",
+      "about": ["person:모리", "person:지휘관"],
+      "text": "폐기를 앞두고 좋은 점수만 달라 매달리던 인큐베이터 니케 모리가, 소문에 휘둘리지 않고 믿어 준 '평가자님'에게 고마워하고, ch42에서 그 덕분에 애정을 주는 사람이 생겼다며 울먹인다",
+      "built": ["D2161", "D2162"],
+      "end": "ch42",
+      "closing": ["D887"],
+      "reason": "호감도 char:590 D2161 · D2162(믿어 줘서 고맙다) → ch42 D887(털어놓음) — 감사를 털어놓아 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:모리 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D887@ch42"
+        }
+      ]
+    },
+    {
+      "id": "O183",
+      "type": "관계",
+      "chain": "관계 person:이사벨 ↔ person:지휘관",
+      "about": ["person:이사벨", "person:지휘관"],
+      "text": "[그것]을 받은 뒤 서로 사랑한다 믿고 지휘관을 가두고 약까지 먹이던 이사벨이, 마음은 엽서로 전한다는 말에 받은 엽서를 간직하다, GODDESS FALL에서 빔에 삼켜져 전사하며 '사랑스러운 분, 당신을 다시 한번' 부른다",
+      "built": ["D1401", "D1402", "D220"],
+      "end": "event_goddessfall1",
+      "closing": ["D930"],
+      "reason": "호감도 char:231 D1401 · D1402(집착) → 서브퀘스트 sub:에덴_Notice_01 D220(엽서) → GODDESS FALL D930 · F2299 · F2315(전사) — 사별로 끝남. '사랑스러운 분'이 누구인지는 의문 Q304로 열려 있으나 2회독 D930은 지휘관으로 읽었다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:이사벨 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D930@event_goddessfall1"
+        }
+      ]
+    },
+    {
+      "id": "O184",
+      "type": "성장",
+      "chain": "성장 person:모리 성격",
+      "about": ["person:모리"],
+      "text": "이유 없는 친절을 경계하고 랩쳐가 무서워 늘 땅을 파고 숨던 모리가, UNBREAKABLE SPHERE에서 악의에 맞서고 총을 잡고 뛴 뒤, ch42에서 쓸모없다던 자신을 넘어 특훈을 받아들이고 '이제 진짜 괜찮다'고 한다",
+      "built": ["D674", "D677", "D682"],
+      "end": "ch42",
+      "closing": ["D888"],
+      "reason": "UNBREAKABLE SPHERE D674 · D677 · D682(맞서고 뜀) → ch42 D888(자신감) — 쌓인 두려움 · 자기 비하가 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:모리 성격의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D888@ch42"
+        }
+      ]
+    },
+    {
+      "id": "O185",
+      "type": "관계",
+      "chain": "관계 person:솔린 ↔ person:지휘관",
+      "about": ["person:솔린", "person:지휘관"],
+      "text": "사탕을 까 주는 지휘관에게 투덜대다 '나랑 연애해'라 청한 솔린이, 호감도에서 투정을 사과하고 직접 짠 데이트로 그를 행복하게 해 주려 하며 가끔이라도 만나자고 청한다",
+      "built": ["D1857", "D1861"],
+      "end": "char:74",
+      "closing": ["D2193"],
+      "reason": "호감도 char:71 D1857 · D1861(고백) → 호감도 char:74 D2193(사과와 약속) — 마스트(O158)와 같은 잣대로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:솔린 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2193@char:74"
+        }
+      ]
+    },
+    {
+      "id": "O186",
+      "type": "성장",
+      "chain": "성장 person:솔린 성격",
+      "about": ["person:솔린"],
+      "text": "애 취급에 발끈하며 유능함을 보이려다 사고를 치던 솔린이, 어린애여도 괜찮다 받아들이고 BLANK TICKET에서 제 말로 안내 방송을 도맡은 뒤, 호감도에서 겉만이 아니라 속까지 어른이 되어야 한다며 진심으로 사과한다",
+      "built": ["D1856", "D1862", "D1654"],
+      "end": "char:74",
+      "closing": ["D2192"],
+      "reason": "호감도 char:71 D1856 · D1862 → BLANK TICKET D1654(방송을 해냄) → 호감도 char:74 D2192(속까지 어른) — 쌓인 '어른인 척'이 풀려 그대로 간다(신념 쪽 O136과 같은 줄기)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:솔린 성격의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2192@char:74"
+        }
+      ]
+    },
+    {
+      "id": "O187",
+      "type": "연작",
+      "chain": "연작 fl:terminus_ticket",
+      "text": "방주에 갇혀 지상에서 눈 감기를 꿈꾸던 노인 노라가 BLANK TICKET에서 인피니티 레일을 만나 살아갈 이유를 얻고, TERMINUS TICKET에서 그 열차로 지상의 집에 닿아 루시안의 환영과 재회한 뒤 꽃밭에 묻히며 두 편이 닫힌다",
+      "built": ["fl:blank_ticket"],
+      "end": "fl:terminus_ticket",
+      "reason": "links 다음 편 BLANK TICKET → TERMINUS TICKET — 1회독 요약: terminus_ticket이 노라의 마지막 여행으로 집(종착역)에 닿아 묻히는 데서 끝난다(임무 성공)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 fl:blank_ticket → fl:terminus_ticket의 결판 · 이유 (초안) 다음 편 사슬 fl:blank_ticket → fl:terminus_ticket의 마지막 편 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "O188",
+      "type": "관계",
+      "chain": "관계 person:디젤 ↔ person:지휘관",
+      "about": ["person:디젤", "person:지휘관"],
+      "text": "역 의자에서 잠든 지휘관을 동생처럼 놀리던 디젤이 '누나가 되긴 싫다'며 입을 맞춘 뒤, 호감도에서 밤마다 찾아와 그를 쉬게 하며 앞으로 더 많은 걸 같이 하자고 한다",
+      "built": ["D1369", "D1370"],
+      "end": "char:75",
+      "closing": ["D2195"],
+      "reason": "호감도 char:72 D1369 · D1370(입맞춤) → 호감도 char:75 D2195(곁을 지킴 · 약속) — 마스트(O158)와 같은 잣대로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:디젤 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2195@char:75"
+        }
+      ]
+    },
+    {
+      "id": "O189",
+      "type": "성장",
+      "chain": "성장 person:노라 신념",
+      "about": ["person:노라"],
+      "text": "방주에 갇힌 운명을 벌로 여기며 순응하던 노라가, 바늘구멍만 한 가능성이라도 기다리겠다며 살아갈 이유를 얻고, TERMINUS TICKET에서 절벽에서 내리려다 집으로 갈 수 있다는 말에 조금만 더 살아 보기로 해 끝내 집에 닿는다",
+      "built": ["D1652", "D1653"],
+      "end": "fl:terminus_ticket",
+      "closing": ["D1661"],
+      "reason": "BLANK TICKET D1652 · D1653 → TERMINUS TICKET D1661(더 살아 보기로) — 두 편은 다른 여행(links), 순응이 풀려 꿈을 이룬다(1회독 요약: 집에 닿아 묻힘)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:노라 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1661@fl:terminus_ticket"
+        }
+      ]
+    },
+    {
+      "id": "O190",
+      "type": "성장",
+      "chain": "성장 person:브리드 신념",
+      "about": ["person:브리드"],
+      "text": "일이 무엇보다 중요해 일탈을 버리려던 기관사 브리드가, 좋아하는 사람이 더해진 행복을 알고 가끔의 일탈을 삶에 둔 뒤, TERMINUS TICKET에서 승객이 원하면 어디든 모시는 것이 기관사라며 선로를 벗어나 노라의 집으로 달린다",
+      "built": ["D1849", "D1850"],
+      "end": "fl:terminus_ticket",
+      "closing": ["D1660"],
+      "reason": "호감도 char:70 D1849 · D1850(일탈을 받아들임) → TERMINUS TICKET D1660(선로를 벗어남) — 규칙만 따르던 신념이 풀려 새 신념이 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:브리드 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1660@fl:terminus_ticket"
+        }
+      ]
+    },
+    {
+      "id": "O191",
+      "type": "관계",
+      "chain": "관계 person:브리드 ↔ person:지휘관",
+      "about": ["person:브리드", "person:지휘관"],
+      "text": "메신저로 하라던 사무적인 담당 니케 브리드가 커피 자판기 투어 끝에 지휘관을 '자기의 일탈'이라 부르는 연인이 되고, 호감도에서 함께한 시간이 쌓여 그가 자기 '일상'이 되었다고 한다",
+      "built": ["D1847", "D1848", "D1851"],
+      "end": "char:73",
+      "closing": ["D2198"],
+      "reason": "호감도 char:70 D1847 · D1848 · D1851(연인) → 호감도 char:73 D2198(일탈이 일상으로) — 마스트(O158)와 같은 잣대로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:브리드 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2198@char:73"
+        }
+      ]
+    },
+    {
+      "id": "O192",
+      "type": "관계",
+      "chain": "관계 person:릴리바이스 ↔ person:스노우_화이트",
+      "about": ["person:릴리바이스", "person:스노우_화이트"],
+      "text": "빛나는 우상이던 언니 릴리바이스에게 처음 '언니'라 부르며 무기가 되겠다 약속했던 스노우 화이트가, 짐이었고 마지막도 지키지 못했다는 자책 끝에 관 속 언니의 얼굴을 떠올려 언니가 동생들을 믿고 소원을 맡겼다고 받아들인다",
+      "built": ["D256", "D1486", "D1489"],
+      "end": "char:471",
+      "closing": ["D2199"],
+      "reason": "유실물 erelic:white_memory D256 · 호감도 char:224 D1486 · D1489(갓데스 시절) → 호감도 char:471 D2199(자책이 풀림) — 사별한 언니와의 관계가 받아들임으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:릴리바이스 ↔ person:스노우_화이트의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 2, 마지막 변화 D2199@char:471"
+        }
+      ]
+    },
+    {
+      "id": "O193",
+      "type": "관계",
+      "chain": "관계 person:레이블 ↔ person:지휘관",
+      "about": ["person:레이블", "person:지휘관"],
+      "text": "(초안) 관계 person:레이블 ↔ person:지휘관의 끝",
+      "built": ["D998", "D999"],
+      "end": "char:582",
+      "closing": ["D2203"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2203@char:582",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "기사로만 본 지휘관을 구원자로 떠받드는 집착이 털어놓음 뒤 더 심해지고(SIN EDITOR D999), 같은 날 호감도의 첫 데이트 · 다음 약속(char:582 D2203)도 그 집착의 걸음 — 자리 잡는 끝이 아닌 열린 결말(판례 O4)"
+        }
+      ]
+    },
+    {
+      "id": "O194",
+      "type": "관계",
+      "chain": "관계 person:벨벳 ↔ person:지휘관",
+      "about": ["person:벨벳", "person:지휘관"],
+      "text": "방주에서 제일 잘 나가는 지휘관과 '끈'을 원해 메이드로 눌러앉은 괴도 벨벳이, FATAL MAID에서 '주인님만의 메이드'로 남겠다며 진심의 초콜릿을 내밀고, 호감도에서 쓸모와 상관없이 곁에 있어 달라는 말에 오래오래 옆에 있고 싶다고 한다",
+      "built": ["D827", "D828", "D1676", "D1677"],
+      "end": "char:316",
+      "closing": ["D2204"],
+      "reason": "COINS IN RUSH D827 · D828 → FATAL MAID D1677(진심) → 같은 날 호감도 char:316 D2204(털어놓음) — 속셈으로 다가오던 사이가 진심으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:벨벳 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 3 · 변화 3, 마지막 변화 D2204@char:316"
+        }
+      ]
+    },
+    {
+      "id": "O195",
+      "type": "갈등",
+      "chain": "관계 person:목단 ↔ person:슈가",
+      "about": ["person:목단", "person:슈가"],
+      "text": "(초안) 관계 person:목단 ↔ person:슈가의 끝",
+      "built": ["D368", "D369"],
+      "end": "ch44",
+      "closing": ["D1064"],
+      "reason": "(초안) 4건 · 단위 2 · 변화 2, 마지막 변화 D1064@ch44",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "DIRTY BACKYARD에서 총을 겨눴다 누명을 풀어 주려 한 슈가가 ch44 D1064에서 모란회가 무너진 것을 사과하지만, 목단은 '아직 용서 못 해'(D1065)라 답한다 — 갈등이 풀리지 않은 열린 결말",
+          "before": "종류 관계"
+        }
+      ]
+    },
+    {
+      "id": "O196",
+      "type": "성장",
+      "chain": "성장 person:목단 신념",
+      "about": ["person:목단"],
+      "text": "아우터 림 사람도 협객이 될 수 있다며 의리로 구역을 지키던 목단이, 질서를 어긴 제 구역을 불태우고 괴로워한 끝에, LORD, FOR JUSTICE에서 부순 것도 묻은 이들도 후회하지 않고 잘못은 고치면 된다는 데 이른다",
+      "built": ["D206", "D367"],
+      "end": "event_lordforjustice",
+      "closing": ["D715"],
+      "reason": "CHERRY BLOSSOM D206 → DIRTY BACKYARD D367(괴로움) → LORD, FOR JUSTICE D715(고치면 된다) — 쌓인 괴로움이 풀려 새 신념이 선다. ch44 D1058(누명을 혼자 짊어짐)은 새 위기의 국면이라 끝을 LORD, FOR JUSTICE로(판례 O9 · O35)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:목단 신념의 끝 · 이유 (초안) 4건 · 단위 4 · 변화 3, 마지막 변화 D1058@ch44 · 끝 ch44 · 닫는 기록 D1058 · 쌓인 자리 D206 D367 D715"
+        }
+      ]
+    },
+    {
+      "id": "O197",
+      "type": "관계",
+      "chain": "관계 person:E.H. ↔ person:바이퍼",
+      "about": ["person:E.H.", "person:바이퍼", "person:자칼"],
+      "text": "크로우를 노리는 둘 사이에서 E.H. 편에 서서 리더로 따르던 바이퍼가, 호감도에서 속을 썩인 사과로 자칼과 새 리더의 환영 파티를 열고 '셋이서 제대로 시작해 보자'고 하며, E.H.도 좋은 동료를 만나 행복했다고 답한다",
+      "built": ["D1074"],
+      "end": "char:113",
+      "closing": ["D2206"],
+      "reason": "ENTER HEAVEN D1074 → 같은 날 호감도 char:113 D2206 · D2207 — 판례 O10, 새 스쿼드의 동료로 자리 잡음. 자칼까지 셋의 관계라 합류는 X3f-1g",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:E.H. ↔ person:바이퍼의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2206@char:113"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1g",
+          "note": "셋 이상의 관계 — 새 스쿼드 셋(E.H. · 바이퍼 · 자칼)의 시작을 이 기록 하나가 닫는다('셋이서 제대로 시작해 보자')",
+          "before": "대상 person:E.H. person:바이퍼"
+        }
+      ]
+    },
+    {
+      "id": "O198",
+      "type": "관계",
+      "chain": "관계 person:E.H. ↔ person:지휘관",
+      "about": ["person:E.H.", "person:지휘관"],
+      "text": "자기 일에 휘말리게 했다며 처음 과거를 털어놓고 판단을 맡긴 E.H.가, 다시 빛에 눈이 멀면 막아 달라 부탁한 뒤, 호감도에서 좋아하는 것을 찾아 준 지휘관을 좋은 동료로 꼽고 손을 내밀어 앞으로를 부탁한다",
+      "built": ["D1082", "D1083"],
+      "end": "char:113",
+      "closing": ["D2209"],
+      "reason": "ENTER HEAVEN D1082 · D1083(털어놓음) → 같은 날 호감도 char:113 D2209 — 판례 O10, 털어놓음 · 약속으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:E.H. ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2209@char:113"
+        }
+      ]
+    },
+    {
+      "id": "O199",
+      "type": "연작",
+      "chain": "연작 fl:2x2_love_2ch",
+      "text": "(초안) 연작 fl:2x2_love_1ch → fl:2x2_love_2ch의 결판",
+      "built": ["fl:2x2_love_1ch"],
+      "end": "fl:2x2_love_2ch",
+      "reason": "(초안) 다음 편 사슬 fl:2x2_love_1ch → fl:2x2_love_2ch의 마지막 편",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "2X2 LOVE 1부 · 2부는 같은 날 공개된 한 이벤트(1부에서 고른 갈래가 2부로 이어지는 연애 시뮬레이션)를 나눈 것 — 연작이 아니라 한 사건이라 쌓인 것이 없다(판례 O54)"
+        }
+      ]
+    },
+    {
+      "id": "O200",
+      "type": "관계",
+      "chain": "관계 person:아르카나 ↔ person:지휘관",
+      "about": ["person:아르카나", "person:지휘관"],
+      "text": "처음 본 '최애' 지휘관에게 새끼손가락 약속을 걸고 금서고에서 함께 기억하기로 한 아르카나가, 자기 전부를 아는 단 한 사람이라며 곁에 두고 2X2 LOVE의 꿈속 연애를 거쳐, 호감도에서 출정 사이 하루씩 만나며 그의 기록을 수천 년이라도 지키겠다는 연인이 된다",
+      "built": ["D703", "D704", "D705", "D2165", "D1699", "D1709", "D1710", "D1713", "D1714", "D1727", "D1728", "D1729", "D1730"],
+      "end": "char:583",
+      "closing": ["D2211"],
+      "reason": "ARCANE ARCHIVE D703–D705 → 호감도 char:581 D2165 → 2X2 LOVE D1699–D1730 → 호감도 char:583 D2211(연인 · 약속) — 털어놓음 · 약속으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:아르카나 ↔ person:지휘관의 끝 · 이유 (초안) 14건 · 단위 5 · 변화 13, 마지막 변화 D2211@char:583"
+        }
+      ]
+    },
+    {
+      "id": "O201",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:프리바티",
+      "about": ["person:지휘관", "person:프리바티"],
+      "text": "라피와의 대결을 핑계로 찾아와 깎아내리던 프리바티가 전초기지를 '니케 프리바티의 집'으로 받아들이고, 호감도에서 선을 넘기 전에 멈추던 마음을 털어놓아 '좋아해'라는 말에 졸업 기념 식사를 데이트로 받아들인다",
+      "built": ["D1939", "D1940", "D1942"],
+      "end": "char:313",
+      "closing": ["D2091"],
+      "reason": "호감도 char:170 D1939 · D1940 · D1942 → 호감도 char:313 D2091(털어놓음 · 데이트) — 자리 잡음. 2X2 LOVE D1703–D1723은 연애 시뮬레이션의 갈래(루트)마다 결말이 달라(고백 D1719 · D1722 / 멈춤 D1720 · D1723) 다른 갈래로 보고 끝에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:지휘관 ↔ person:프리바티의 끝 · 이유 (초안) 15건 · 단위 4 · 변화 14, 마지막 변화 D1718 D1719 D1720 D1722 D1723@fl:2x2_love_2ch · 끝 fl:2x2_love_2ch · 닫는 기록 D1718 D1719 D1720 D1722 D1723 · 쌓인 자리 D1939 D1940 D1942 D2091 D1703 D1704 D1705 D1706 D1707 D1708"
+        }
+      ]
+    },
+    {
+      "id": "O202",
+      "type": "성장",
+      "chain": "성장 person:아르카나 성격",
+      "about": ["person:아르카나"],
+      "text": "(초안) 성장 person:아르카나 성격의 끝",
+      "built": ["D698", "D1700", "D1712"],
+      "end": "fl:2x2_love_2ch",
+      "closing": ["D1726"],
+      "reason": "(초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D1726@fl:2x2_love_2ch",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "변화 D1700 · D1712 · D1726이 모두 2X2 LOVE(1 · 2부 한 이벤트, 연애 시뮬레이션의 갈래) 안 — ARCANE ARCHIVE의 기준(D698)에서 한 사건 안의 경과라 쌓인 것이 없다(판례 O54)"
+        }
+      ]
+    },
+    {
+      "id": "O203",
+      "type": "성장",
+      "chain": "성장 person:에이미 신념",
+      "about": ["person:에이미"],
+      "text": "(초안) 성장 person:에이미 신념의 끝",
+      "built": ["D1715", "D1716"],
+      "end": "fl:2x2_love_2ch",
+      "closing": ["D1724"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1724@fl:2x2_love_2ch",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "기준 D1715부터 변화 D1716 · D1724까지 2X2 LOVE 1 · 2부(같은 날 한 이벤트) 안의 경과 — 쌓인 것이 없다(판례 O54)"
+        }
+      ]
+    },
+    {
+      "id": "O204",
+      "type": "관계",
+      "chain": "관계 person:백학 ↔ person:지휘관",
+      "about": ["person:백학", "person:지휘관"],
+      "text": "TV로 알아본 '그 어렸던 아이'를 쓰다듬던 백학이, GOOD WORLD에서 속셈을 털어놓은 지휘관을 좋은 사람이라 믿고 그 세계를 곁에서 지켜보기로 한 뒤, 호감도에서 아이처럼 챙겨도 된다는 허락을 받아 핑계를 만들어 찾아온다",
+      "built": ["D1121", "D1124", "D1126", "D1127"],
+      "end": "char:620",
+      "closing": ["D2212"],
+      "reason": "GOOD WORLD D1121 · D1124 · D1126 · D1127 → 같은 날 호감도 char:620 D2212(허락) — 판례 O10, 신뢰를 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:백학 ↔ person:지휘관의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D2212@char:620"
+        }
+      ]
+    },
+    {
+      "id": "O205",
+      "type": "성장",
+      "chain": "성장 person:아르카나 신념",
+      "about": ["person:아르카나"],
+      "text": "남들의 절반뿐인 시간을 아끼려 쫓기듯 살던 아르카나가, 좋은 사람과 시간을 그냥 써 보고 싶어 하고 학생답게 지내 본 뒤, 호감도에서 하고 싶던 것을 찾아 보육교사 자격증을 따 어린이집 봉사로 그 시간을 의미 있게 쓴다",
+      "built": ["D2164", "D1711"],
+      "end": "char:583",
+      "closing": ["D2210"],
+      "reason": "호감도 char:581 D2164 → 2X2 LOVE D1711 → 호감도 char:583 D2210(이룸) — 쫓기던 시간이 풀려 새 신념이 선다. 자기 선택의 사명(ARCANE ARCHIVE D702 → ch45 D1135 아이리를 이끔)은 다른 갈래 — 척추에서 이어지는 중이라 끝에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:아르카나 신념의 끝 · 이유 (초안) 5건 · 단위 5 · 변화 4, 마지막 변화 D1135@ch45 · 끝 ch45 · 닫는 기록 D1135 · 쌓인 자리 D702 D2164 D1711 D2210"
+        }
+      ]
+    },
+    {
+      "id": "O206",
+      "type": "관계",
+      "chain": "관계 person:도로시 ↔ person:라피",
+      "about": ["person:도로시", "person:라피"],
+      "text": "(초안) 관계 person:도로시 ↔ person:라피의 끝",
+      "built": ["D756", "D758", "D757", "D759"],
+      "end": "ch46",
+      "closing": ["D1169"],
+      "reason": "(초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D1169@ch46",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "BOOM THE GHOST의 '잘못된 선택을 막아서겠다'는 친구 · 맞수(D757 · D759)가 ch46 D1169의 '같이 도반을 죽이고 짊어지겠다'로 깊어지는 걸음 — 주역 둘의 관계가 척추에서 계속 움직이는 중이라 열린 결말(판례 O24)"
+        }
+      ]
+    },
+    {
+      "id": "O207",
+      "type": "관계",
+      "chain": "관계 person:머스탱 ↔ person:지휘관",
+      "about": ["person:머스탱", "person:지휘관"],
+      "text": "(초안) 관계 person:머스탱 ↔ person:지휘관의 끝",
+      "built": ["D1629", "D832"],
+      "end": "fl:b-side_idol",
+      "closing": ["D1738"],
+      "reason": "(초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D1738@fl:b-side_idol",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "서로 믿고 니케를 맡기는 'Entertainment 관계'(ROMANTIC VALENTINE D1629) 위에 B-SIDE IDOL D1738의 '남자 대 남자로는 인정 못 한다'가 얹힌 걸음 — 결판 · 자리 잡음이 아니다"
+        }
+      ]
+    },
+    {
+      "id": "O208",
+      "type": "관계",
+      "chain": "관계 person:민트 ↔ person:지휘관",
+      "about": ["person:민트", "person:지휘관"],
+      "text": "자기를 알아보지 못하는 '아니스의 지휘관'에게 팬서비스로 관심을 끌려던 민트가, 빛나서 외로운 '급이 같은' 인터미션 짝으로 그를 받아들이고, 호감도에서 연습을 맡겨 함께 지낸 뒤 따로 고맙다고 인사한다",
+      "built": ["D1734", "D1735"],
+      "end": "char:600",
+      "closing": ["D2217"],
+      "reason": "B-SIDE IDOL D1734 · D1735 → 같은 날 호감도 char:600 D2217 — 판례 O10, 믿음을 확인해 자리 잡음. 아니스 · 민트 · 프리카 셋의 이야기라 합류는 X3f-1g",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:민트 ↔ person:지휘관의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2217@char:600"
+        }
+      ]
+    },
+    {
+      "id": "O209",
+      "type": "관계",
+      "chain": "관계 person:지휘관 ↔ person:프리카",
+      "about": ["person:지휘관", "person:프리카"],
+      "text": "작업에 방해된다며 '아니스의 지휘관'을 돌려보내던 프리카가, 곁을 지킨 다정함에서 곡을 얻어 그를 '뮤즈'라 부르고, 호감도에서 남에게 안 맡기던 작사 크레딧을 'Muse'로 올려 제 마음을 담은 후속곡을 들려준다",
+      "built": ["D1739", "D1740"],
+      "end": "char:601",
+      "closing": ["D2219"],
+      "reason": "BITTER SPICE D1739 · D1740 → 같은 날 호감도 char:601 D2219(마음을 담은 곡) — 판례 O10, 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:지휘관 ↔ person:프리카의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2219@char:601"
+        }
+      ]
+    },
+    {
+      "id": "O210",
+      "type": "관계",
+      "chain": "관계 person:소라 ↔ person:지휘관",
+      "about": ["person:소라", "person:지휘관"],
+      "text": "그날의 추억을 기다렸다며 '캡틴'을 부른 밀수꾼 소라가 승리의 날개 호를 찾으면 그만두겠다는 '진짜 거래'를 맺고 지상에서 손을 맞잡은 뒤, ARK RANGER에서 지휘관이 약속대로 승리의 날개 호의 캡틴으로 함께 날아오른다",
+      "built": ["D744", "D752", "D745", "D2172", "D2173"],
+      "end": "fl:ark_ranger",
+      "closing": ["D1271"],
+      "reason": "OVER THE HORIZON D744 · D752 · D745 → 호감도 char:532 D2172 · D2173 → ARK RANGER D1271(약속을 지킴) — 약속이 이뤄져 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:소라 ↔ person:지휘관의 끝 · 이유 (초안) 6건 · 단위 3 · 변화 4, 마지막 변화 D1271@fl:ark_ranger"
+        }
+      ]
+    },
+    {
+      "id": "O211",
+      "type": "성장",
+      "chain": "성장 person:아크레인저_블랙 신념",
+      "about": ["person:아크레인저_블랙"],
+      "text": "히어로란 남의 기대가 아니라 신념을 관철하는 자라던 아크레인저 블랙이, ARK RANGER에서 호프를 못 구해 'TV 속 광대'라 무너졌다가, TV 속 세계는 가짜여도 거기서 느끼는 감정은 진짜라며 용기를 주는 히어로로 다시 선다",
+      "built": ["D481"],
+      "end": "fl:ark_ranger",
+      "closing": ["D1243", "D1244", "D1245", "D1246", "D1250", "D1252", "D1253"],
+      "reason": "D.ARK HERO D481(히어로의 정의) → ARK RANGER D1243–D1253(진짜 히어로를 좇다 무너지고 다시 섬) — 앞 편에 세운 신념이 시험받아 새 신념으로 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:아크레인저_블랙 신념의 끝 · 이유 (초안) 8건 · 단위 2 · 변화 7, 마지막 변화 D1243 D1244 D1245 D1246 D1250 D1252 D1253@fl:ark_ranger"
+        }
+      ]
+    },
+    {
+      "id": "O212",
+      "type": "연작",
+      "chain": "연작 fl:wave_to_you",
+      "text": "학생을 지상 실전에 내모는 미미르 부속고의 학기말 시험(SCHOOL OF LOCK) · 필드 트립(COLORLESS)을 거친 통합 P반이, WAVE TO YOU에서 마르차나가 붙잡던 구속구를 부수고 나가 · 티아의 졸업을 축하하며 세 편이 닫힌다(학교의 실체는 열린 채)",
+      "built": ["event_schooloflock", "event_colorless"],
+      "end": "fl:wave_to_you",
+      "reason": "links 다음 편 사슬 SCHOOL OF LOCK → COLORLESS → WAVE TO YOU — 1회독 요약: wave_to_you가 졸업 여행의 아일랜드 이터 · 구속구를 풀고 졸업 축하로 끝난다(F2762 · F2763)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 event_schooloflock → event_colorless → fl:wave_to_you의 결판 · 이유 (초안) 다음 편 사슬 event_schooloflock → event_colorless → fl:wave_to_you의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O213",
+      "type": "성장",
+      "chain": "성장 person:나가 신념",
+      "about": ["person:나가"],
+      "text": "마르차나 같은 선생을 꿈꾸다 함께 살아남은 친구마저 떨어뜨리는 첫 시험을 보고 꿈을 접었던 나가가, WAVE TO YOU의 졸업 여행에서 선생님과 함께하며 그 꿈을 다시 꾸고 싶어진다",
+      "built": ["D2069", "D2070"],
+      "end": "fl:wave_to_you",
+      "closing": ["D1751"],
+      "reason": "호감도 char:450 D2069 · D2070(신입생 시절 꿈을 접음 — 내력) → WAVE TO YOU D1751(꿈을 되찾음) — 쌓인 상처가 풀려 꿈이 다시 선다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:나가 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1751@fl:wave_to_you"
+        }
+      ]
+    },
+    {
+      "id": "O214",
+      "type": "성장",
+      "chain": "성장 person:마르차나 신념",
+      "about": ["person:마르차나"],
+      "text": "학교의 커리큘럼 앞에 무력하던 마르차나가 손이 닿는 학생은 반드시 지켜내는 것을 선생의 역할로 삼고, 이미 훌륭한 선생이라는 말에 기운을 얻은 뒤, WAVE TO YOU에서 헤어짐이 두려워 붙잡던 구속구를 부수고 갈 곳과 돌아올 곳을 알려 주는 등대가 되려 한다",
+      "built": ["D1459", "D1460", "D2119"],
+      "end": "fl:wave_to_you",
+      "closing": ["D1750"],
+      "reason": "SCHOOL OF LOCK D1459 · D1460 → 호감도 char:833 D2119 → WAVE TO YOU D1750(놓아줌) — 붙잡는 지킴이 놓아주는 지킴으로 이룸. COLORLESS D1579(학교를 부술 열쇠)는 다른 갈래(학교 해방)라 쌓인 자리에서 뺌",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:마르차나 신념의 끝 · 이유 (초안) 5건 · 단위 4 · 변화 4, 마지막 변화 D1750@fl:wave_to_you · 쌓인 자리 D1459 D1460 D1579 D2119"
+        }
+      ]
+    },
+    {
+      "id": "O215",
+      "type": "성장",
+      "chain": "성장 person:모리 신념",
+      "about": ["person:모리"],
+      "text": "(초안) 성장 person:모리 신념의 끝",
+      "built": ["D678", "D683"],
+      "end": "fl:wave_to_you",
+      "closing": ["D1753"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1753@fl:wave_to_you",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "note": "악의에는 악의 → 선의에는 선의의 전환은 UNBREAKABLE SPHERE 안의 경과(D678 → D683)이고, WAVE TO YOU D1753의 '언젠가 혼자서도 괜찮다고 웃으려 강해지려는'은 새 다짐의 걸음 — 이뤄 끝나는 자리가 없다(판례 O54 · O98)"
+        }
+      ]
+    },
+    {
+      "id": "O216",
+      "type": "관계",
+      "chain": "관계 person:맥스웰 ↔ person:지휘관",
+      "about": ["person:맥스웰", "person:지휘관"],
+      "text": "지휘관을 속여 무기 테스트에 데려가던 맥스웰이 목숨 건 호의를 알고 남에게 뺏길 수 없는 귀한 실험체로 감춘 뒤, 호감도에서 실험 · 데이터를 떼고 그를 더 알고 싶어 입 맞추며 '이제 부정하지 않겠다'고 한다",
+      "built": ["D1380", "D1381", "D1382"],
+      "end": "char:105",
+      "closing": ["D2227"],
+      "reason": "호감도 char:102 D1380–D1382 → 호감도 char:105 D2227(고백) — 호감도의 고백은 자리 잡음(판례 O1 · O85)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:맥스웰 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2227@char:105"
+        }
+      ]
+    },
+    {
+      "id": "O217",
+      "type": "연작",
+      "chain": "연작 fl:persona_on_frontline",
+      "text": "코인 러시를 도박 소굴로 바꾸려다 지휘관에게 잡힌 국장이 FATAL MAID에서 벨벳을 노린 보복에 실패하고, PERSONA ON FRONTLINE에서 D-WAVE의 힘으로 재기를 노리다 체포되며 세 편의 국장 줄이 닫힌다",
+      "built": ["fl:coins_in_rush", "fl:fatal_maid"],
+      "end": "fl:persona_on_frontline",
+      "reason": "links 다음 편 사슬 COINS IN RUSH → FATAL MAID → PERSONA ON FRONTLINE — 링크 근거: 악역 앨든(국장)의 원한에서 사건이 시작되고 체포로 그의 줄이 끝난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 연작 fl:coins_in_rush → fl:fatal_maid → fl:persona_on_frontline의 결판 · 이유 (초안) 다음 편 사슬 fl:coins_in_rush → fl:fatal_maid → fl:persona_on_frontline의 마지막 편"
+        }
+      ]
+    },
+    {
+      "id": "O218",
+      "type": "관계",
+      "chain": "관계 person:마리안 ↔ person:지휘관",
+      "about": ["person:마리안", "person:지휘관"],
+      "text": "자기를 필그림에게 떠나보낸 지휘관을 원망하다 그 선택을 이해하고 찾으러 올 때까지 기다리겠다던 마리안이, ch48에서 기억을 되찾아 '이번에야말로 제가 반드시 지켜드릴게요'라며 돌아온다",
+      "built": ["D4", "D69", "D2060"],
+      "end": "ch48",
+      "closing": ["D1343"],
+      "reason": "FIRST AFFECTION D2060(이해하고 기다림) → ch48 D1343(재회 · 맹세) — 오랜 이별이 재회로 자리 잡음(ch48의 합류와 같은 자리)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:마리안 ↔ person:지휘관의 끝 · 이유 (초안) 2건 · 단위 2 · 변화 2, 마지막 변화 D1343@ch48"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1g",
+          "note": "갈려 나간 갈래(X3f-1g) — O12(마리안 성격)에서 뺀 ch00 D4(무슨 일이 있어도 지키겠다는 헌신) → ch07 D69(침식)의 갈래가 ch48 D1343 '이번에야말로 제가 반드시 지켜드릴게요'에서 끝난다 — 쌓인 자리에 더함",
+          "before": "쌓인 자리 D2060"
+        }
+      ]
+    },
+    {
+      "id": "O219",
+      "type": "관계",
+      "chain": "관계 person:길티 ↔ person:지휘관",
+      "about": ["person:길티", "person:지휘관"],
+      "text": "또 온 새 교관을 '안 올 거면서'라 의심하던 갱생수 길티가, 팔이 부러지고도 돌아온 그의 손을 집착하듯 쥐다가, 호감도에서 갱생해도 떠나지 않겠다는 말에 처음 진심으로 기뻐 웃고 부드럽게 안는 법을 익힌다",
+      "built": ["D1979", "D1980", "D1981"],
+      "end": "char:404",
+      "closing": ["D2232"],
+      "reason": "호감도 char:400 D1979–D1981 → 호감도 char:404 D2232(불안이 풀림) — 마음을 확인해 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:길티 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 3, 마지막 변화 D2232@char:404"
+        }
+      ]
+    },
+    {
+      "id": "O220",
+      "type": "성장",
+      "chain": "성장 person:길티 성격",
+      "about": ["person:길티"],
+      "text": "부수는 게 즐겁고 친절도 의심하던 흉악범 길티가, 만지면 다 부서진다는 걸 알고 손대기를 무서워하게 된 뒤, 호감도에서 쥔 주먹을 스스로 풀고 함께 해 온 일이 물거품이 되는 게 싫다며 거짓말을 그만둔다",
+      "built": ["D1976", "D489"],
+      "end": "char:404",
+      "closing": ["D2231"],
+      "reason": "호감도 char:400 D1976 → BEAUTY FULL SHOT D489(부수기를 두려워함) → 호감도 char:404 D2231(자제) — 파괴 충동과 의심이 갱생으로 풀려 그대로 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 성장 person:길티 성격의 끝 · 이유 (초안) 3건 · 단위 3 · 변화 2, 마지막 변화 D2231@char:404"
+        }
+      ]
+    },
+    {
+      "id": "O221",
+      "type": "관계",
+      "chain": "관계 person:신 ↔ person:지휘관",
+      "about": ["person:신", "person:지휘관"],
+      "text": "새 교관을 상점 · 벌점으로 꼭두각시처럼 부리던 신이, 독방을 두려워하는 속을 꿰뚫려 갱생을 고르고 '기브 앤 테이크' 사이가 된 뒤, 호감도에서 처음 '도와줘'라 청하고 컨버터를 벗어 진짜 목소리로 '고마워'를 전한다",
+      "built": ["D1985", "D1986", "D1628"],
+      "end": "char:405",
+      "closing": ["D2234"],
+      "reason": "호감도 char:401 D1985 · D1986 → ROMANTIC VALENTINE D1628 → 호감도 char:405 D2234(진짜 목소리로 털어놓음) — 털어놓음으로 자리 잡음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-09",
+          "session": "X3f-1f",
+          "before": "(초안) 관계 person:신 ↔ person:지휘관의 끝 · 이유 (초안) 4건 · 단위 3 · 변화 3, 마지막 변화 D2234@char:405"
+        }
+      ]
+    }
+  ],
+  "merges": [
+    {
+      "id": "H1",
+      "title": "WORDLESS — 유니가 슈엔을 떠나 미하라에게",
+      "end": "side:wordless",
+      "members": ["O13", "O14"],
+      "text": "슈엔의 매질을 견디던 유니가 슈엔과 갈라서고, 기억 소거로 어긋났던 미하라와 다시 짝이 되는 일이 WORDLESS의 한 결판에서 함께 닫힌다",
+      "reason": "O14(슈엔 ↔ 유니 갈등)의 결별과 O13(유니 ↔ 미하라 관계)의 화해가 WORDLESS 끝의 한 줄기 — 유니가 슈엔을 떠나 미하라에게 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H2",
+      "title": "라피의 레드 후드 계승",
+      "end": "ch34",
+      "members": ["O16", "O21", "O37"],
+      "text": "라피가 레드 후드가 되는 대신 그 뜻을 이어받는 ch34에서, 그레이브와의 화해 · 레드 후드와의 진짜 작별 · 라피 자신의 신념이 함께 닫힌다",
+      "reason": "O37(라피 신념 — 계승의 이룸)이 중심이고, O16(그레이브가 계승의 뜻을 넘김) · O21(레드 후드가 정신 공간에서 작별)이 같은 계승 장면의 양쪽이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H3",
+      "title": "UNBREAKABLE SPHERE — 글러트니 속에서 함께 살아남음",
+      "end": "event_unbreakablesphere1",
+      "members": ["O25", "O28", "O164"],
+      "text": "WORDLESS · MUDFISH의 두 줄기가 글러트니 속에서 만나 함께 살아남으며, 세이렌의 해피 엔딩 신념과 유니의 속죄가 같은 결판에서 닫힌다",
+      "reason": "O25(연작의 결판 편)가 닫는 생존 장면에서 O28(세이렌 — 함께 살아남자) · O164(유니 — 두 생명의 무게로 속죄)가 함께 이룸에 닿는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H4",
+      "title": "ABSOLUTE — 베스티와 은화의 [우리]",
+      "end": "fl:absolute",
+      "members": ["O32", "O35", "O168"],
+      "text": "델타 앞의 결전 ABSOLUTE에서 베스티가 물러서지 않고 막아서고, 은화가 혼자의 희생 대신 [우리]를 택하며, 둘이 서로를 믿는 짝이 되는 것이 함께 닫힌다",
+      "reason": "O32(베스티 ↔ 은화)의 닫는 기록 D806 · D811 · D813이 O35(베스티 D812) · O168(은화 D805)과 같은 결전의 이웃 장면 — 한 짝의 이야기",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H5",
+      "title": "GODDESS FALL 결전",
+      "end": "event_goddessfall1",
+      "members": ["O38", "O39", "O47", "O48", "O49", "O51", "O52", "O53", "O181", "O183"],
+      "text": "장막이 걷혀 퀸이 내려온 GODDESS FALL 결전에서 크라운 왕국 · 에덴 · 파이오니아의 연작과 그 인물들의 관계 · 성장 · 사별이 한꺼번에 결판난다",
+      "reason": "O53(크라운 왕국 · 에덴 연작의 결판)이 묶는 결전 하나에서 차임 · 크라운(O48) · 노아(O49) · 요한(O39 · O51) · 하란(O47 · O52) · 탈로스 · 킬로(O38) · 마리안 · 스노우 화이트(O181) · 이사벨(O183)의 끝이 모두 난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H6",
+      "title": "레비아탄이 우리 편에 섬",
+      "end": "ch42",
+      "members": ["O42", "O43", "O44", "O45", "O50"],
+      "text": "배신자라 자책하며 달아나던 레비아탄이 ch42에서 세이렌 · 지즈와 화해하고 라피 · 지휘관과의 대립을 끝내 우리 편에 서며, 그 힘을 선한 곳에 쓰겠다는 데 이른다",
+      "reason": "O50(레비아탄 성장)이 중심이고 O42 · O45(라피 · 지휘관과의 갈등) · O43(세이렌) · O44(지즈)가 같은 귀순 장면의 관계들 — 같은 ch42에서 끝나는 모리(O182 · O184)는 다른 이야기라 따로 묶는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H7",
+      "title": "모리가 특훈을 받아들임",
+      "end": "ch42",
+      "members": ["O182", "O184"],
+      "text": "폐기를 앞둔 인큐베이터 니케 모리가 ch42에서 쓸모없다던 자신을 넘어 특훈을 받아들이며, 믿어 준 지휘관에게 고마워하는 관계가 함께 닫힌다",
+      "reason": "O184(모리 성장 D888)와 O182(모리 ↔ 지휘관 D887)의 닫는 기록이 이웃한 한 장면 — 레비아탄의 귀순(같은 ch42)과는 다른 줄기",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H8",
+      "title": "스노우 화이트가 언니의 소원을 잇기로 함",
+      "end": "ch44",
+      "members": ["O55", "O57", "O58"],
+      "text": "스노우 화이트가 ch44에서 레드 후드를 그리워하며 지휘관에게 언니 이야기를 털어놓고, 은퇴를 미뤄 언니의 소원을 이루려 방주의 힘을 빌리기로 한다",
+      "reason": "O58(스노우 화이트 성장)이 중심이고, O55(레드 후드를 그리워함) · O57(지휘관에게 털어놓음)이 같은 고백 장면 — 스노우 화이트 한 사람의 이야기",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H9",
+      "title": "STAR ANIS — 아니스의 마지막 무대",
+      "end": "event_staranis1",
+      "members": ["O67", "O68", "O72", "O73", "O75", "O79"],
+      "text": "프리티의 죽음 뒤 이어진 T.T.STAR의 이야기가 아니스의 마지막 무대에서 결판나며, 아니스 · 민트 · 한슨의 이룸과 카운터스 셋(아니스 · 네온 · 라피)의 사이가 함께 닫힌다",
+      "reason": "O79(T.T.STAR 연작의 결판)가 묶는 무대 하나 — O67(네온) · O68(라피)은 같은 닫는 기록 D1239(아니스가 둘을 별로 받아들임)를 나눠 쓰는 셋의 관계라 여기서 하나가 된다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H10",
+      "title": "BITTER SPICE — 민트와 프리카 둘의 무대",
+      "end": "fl:bitter_spice",
+      "members": ["O80", "O81", "O82", "O83"],
+      "text": "셋이 다시 무대에 선 뒤 아니스가 TV 앞에서 응원하는 자리로 물러나고, 민트와 프리카가 둘만의 음악을 만드는 짝이 되며 T.T.STAR 셋의 관계가 함께 닫힌다",
+      "reason": "O80 · O82는 같은 닫는 기록 D1744(아니스가 나서지 않고 응원)를 나눠 쓰는 셋(아니스 · 민트 · 프리카)의 관계 — O81(민트 ↔ 프리카) · O83(프리카 성장)과 한 결판",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H11",
+      "title": "ICE DRAGON SAGA — 메이든이 벗을 택함",
+      "end": "event_icedragonsaga1",
+      "members": ["O20", "O152", "O153"],
+      "text": "익스터너 세 편의 갈등이 ICE DRAGON SAGA에서 닫히며, 메이든이 기억 소거 대신 벗을 택하고 길로틴과 서로를 일으켜 파티를 맺는다",
+      "reason": "O152(익스터너 연작의 결판)가 닫는 장면이 O153(메이든 — 원칙 대신 벗) · O20(길로틴 ↔ 메이든 — 파티를 맺음)의 끝과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H12",
+      "title": "퀸과의 결전과 귀환",
+      "end": "ch48",
+      "members": ["O101", "O102", "O103", "O104", "O106", "O107", "O108", "O109", "O218"],
+      "text": "퀸과의 결전 ch48에서 마리안이 기억을 되찾아 돌아오고, 도로시 · 온리 원 · 파피용 · 홍련 · 장화 · 스노우 화이트의 관계와 성장이 한꺼번에 닫힌다",
+      "reason": "메인 아크의 결판 챕터 하나 — 마리안(O106 · O218), 도로시(O101 · O104), 온리 원(O107), 파피용(O108), 홍련(O103 · O109), 스노우 화이트(O102)의 끝이 모두 같은 결전과 그 직후에 난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H13",
+      "title": "네온의 호감도 마지막 편",
+      "end": "char:18",
+      "members": ["O76", "O77"],
+      "text": "네온이 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다는 데 이르고, 지휘관을 '가족 같은 스승님'이라 부르는 사이가 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H14",
+      "title": "헬름의 호감도 마지막 편",
+      "end": "char:353",
+      "members": ["O120", "O121"],
+      "text": "헬름이 엉망이어도 받아들여 주는 이들 곁에서 믿어 주는 리더가 되겠다고 하고, 지휘관과 연인이 되는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H15",
+      "title": "토브의 호감도 마지막 편",
+      "end": "char:192",
+      "members": ["O124", "O125", "O126"],
+      "text": "토브가 구조자의 신념에 이르고, 루드밀라와 서로의 다름을 받아들이며 지휘관을 멘토로 삼는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H16",
+      "title": "미카의 호감도 마지막 편",
+      "end": "char:62",
+      "members": ["O127", "O129", "O130"],
+      "text": "미카가 낯선 이들에게 물어 가며 벨로타를 찾아 나서고 과거에 갇힌 벨로타를 꺼내겠다고 하며, 둘이 서로를 지키는 사이로 자리 잡는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나) — 미카의 성격(O129) · 신념(O130)은 사슬 초안이 측면으로 나눈 한 이룸이다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H17",
+      "title": "CLAY, MORE! — 리와인드 두 편의 결판",
+      "end": "event_claymore",
+      "members": ["O143", "O144"],
+      "text": "둘만 남았던 리와인드가 CLAY, MORE!에서 닫히며, 베이가 클레이를 없어서는 안 될 멤버라고 처음 말해 준다",
+      "reason": "O143(리와인드 연작의 결판)의 닫는 장면이 O144(베이 ↔ 클레이)의 닫는 기록 D1563이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H18",
+      "title": "루주의 호감도 마지막 편",
+      "end": "char:272",
+      "members": ["O150", "O170"],
+      "text": "루주가 불운과 싸우는 걸 즐기게 되고, 함께 불운을 시험해 준 지휘관에게 다음에도 같이 게임해 달라고 청하는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H19",
+      "title": "마스트의 호감도 마지막 편",
+      "end": "char:354",
+      "members": ["O158", "O159"],
+      "text": "마스트가 지휘관을 해적단의 선장으로 삼아 연인처럼 안기고, 헬름의 근신에 담긴 속뜻을 알아채 선물을 챙기는 사이가 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나) — 마스트 · 헬름 · 앵커 셋의 관계는 O159 하나가 닫는다(about에 앵커)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H20",
+      "title": "LORD, FOR JUSTICE — 판결 대행의 결판",
+      "end": "event_lordforjustice",
+      "members": ["O176", "O196"],
+      "text": "저지스의 판결 대행으로 이어진 이야기가 LORD, FOR JUSTICE에서 결판나며, 제 구역을 불태웠던 목단이 후회하지 않고 고쳐 나가겠다는 데 이른다",
+      "reason": "O176(연작의 결판)의 앞 편(DIRTY BACKYARD)에서 쌓인 목단의 괴로움(O196)이 같은 결판에서 닫힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H21",
+      "title": "솔린의 호감도 마지막 편",
+      "end": "char:74",
+      "members": ["O185", "O186"],
+      "text": "솔린이 속까지 어른이 되어야 한다며 진심으로 사과하고, 직접 짠 데이트로 지휘관을 행복하게 해 주려는 사이가 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H22",
+      "title": "E.H.의 호감도 마지막 편",
+      "end": "char:113",
+      "members": ["O197", "O198"],
+      "text": "E.H.가 새 스쿼드의 동료(바이퍼 · 자칼)와 다시 시작하고, 좋아하는 것을 찾아 준 지휘관에게 앞으로를 부탁하는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나) — E.H. · 바이퍼 · 자칼 셋의 관계는 O197 하나가 닫는다(about에 자칼)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H23",
+      "title": "TERMINUS TICKET — 노라의 귀향",
+      "end": "fl:terminus_ticket",
+      "members": ["O187", "O189", "O190"],
+      "text": "인피니티 레일 두 편이 TERMINUS TICKET에서 닫히며, 노라가 조금만 더 살아 보기로 해 끝내 지상의 집에 닿고 기관사 브리드가 선로를 벗어나 그 집으로 달린다",
+      "reason": "O187(연작의 결판)의 닫는 장면 하나에 O189(노라) · O190(브리드)의 이룸이 함께 있다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H24",
+      "title": "아르카나의 호감도 마지막 편",
+      "end": "char:583",
+      "members": ["O200", "O205"],
+      "text": "아르카나가 하고 싶던 일을 찾아 시간을 의미 있게 쓰고, 지휘관의 기록을 수천 년이라도 지키겠다는 연인이 되는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H25",
+      "title": "ARK RANGER — 진짜 히어로와 승리의 날개 호",
+      "end": "fl:ark_ranger",
+      "members": ["O210", "O211"],
+      "text": "애니힐리오의 방주 공격을 막는 ARK RANGER의 결전에서 아크레인저 블랙이 용기를 주는 히어로로 다시 서고, 지휘관이 소라와의 약속대로 승리의 날개 호의 캡틴으로 날아오른다",
+      "reason": "두 닫는 기록(O211 D1243–D1253 · O210 D1271)이 이벤트 한 편의 결전과 그 끝 — 블랙의 이야기에 소라의 배가 합류하는 한 사건으로 본다(소라는 앞 이벤트에서 쌓임)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H26",
+      "title": "WAVE TO YOU — P반의 졸업 여행",
+      "end": "fl:wave_to_you",
+      "members": ["O212", "O213", "O214"],
+      "text": "미미르 부속고 세 편이 WAVE TO YOU에서 닫히며, 마르차나가 붙잡던 구속구를 부숴 등대가 되려 하고 나가가 선생의 꿈을 다시 꾸고 싶어진다",
+      "reason": "O212(연작의 결판 — 티아의 졸업)의 졸업 여행 장면에서 O214(마르차나) · O213(나가)의 이룸이 함께 난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    },
+    {
+      "id": "H27",
+      "title": "길티의 호감도 마지막 편",
+      "end": "char:404",
+      "members": ["O219", "O220"],
+      "text": "길티가 쥔 주먹을 스스로 풀고 거짓말을 그만두며, 떠나지 않겠다는 교관에게 처음 진심으로 웃는 것이 함께 닫힌다",
+      "reason": "한 니케의 호감도 마지막 편이 그 니케의 관계와 성장을 한 장면에서 함께 닫는다(같은 닫는 장면 — 화면 5에서 그 니케의 이야기 끝 하나)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1g" }]
+    }
+  ]
+}

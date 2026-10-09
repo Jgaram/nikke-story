@@ -1,0 +1,53 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M12\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:로망티스트_01",
+  "session": "M12",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E276",
+      "act": "재언급",
+      "points": ["F774"],
+      "text": "박물관 낚싯대로 옥살이했던 로망티스트가 이번엔 지상행 엘리베이터를 몰래 타 또 옥살이 중이다",
+      "about": ["person:로망티스트"],
+      "evidence": [{ "scene": "sub:로망티스트_01", "lines": ["112-116"] }],
+      "reason": "#112 '지금 옥살이 중' · #115 — 앞 편의 옥살이(F774)를 되풀이",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D338",
+      "person": "person:로망티스트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "낚싯대를 구해 달라는 메신저 의뢰인",
+      "after": "낚싯대를 맡기고 출소하면 꼭 같이 낚시 가자고 약속한, 로-망을 아는 동지",
+      "trigger": [{ "scene": "sub:로망티스트_01", "lines": ["101-108"] }],
+      "evidence": [{ "scene": "sub:로망티스트_01", "lines": ["107-113", "121-126"] }],
+      "reason": "#107 '로-망을 아는 이가 하나 더' · #108 '다음에 꼭 같이 가자' · #113 '출소하면 꼭'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U178",
+      "topic": "방주 사회",
+      "text": "시민이 지상행 엘리베이터를 몰래 타면 곧바로 들켜 옥에 갇힌다 — 옥에서도 점호가 있고, 취미가 통하는 간수장은 수감자에게 핸드폰을 쓰게 해 주기도 한다",
+      "about": ["place:방주", "person:로망티스트"],
+      "points": ["F1136"],
+      "evidence": [{ "scene": "sub:로망티스트_01", "lines": ["115-118", 127] }],
+      "reason": "#115-116 몰래 탔다 바로 들킴 · #117-118 간수장 · #127 점호",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ]
+}

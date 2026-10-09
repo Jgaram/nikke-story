@@ -1,0 +1,52 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:칠리페퍼_01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E65",
+      "act": "암시",
+      "points": ["F380"],
+      "text": "칠리페퍼는 사과로 준 술병이 새것인 것을 아버지가 '내 사과를 받지 않았다'는 뜻으로 읽는다 — 아버지는 병을 비우기 전에 지상에서 죽었다(F380)",
+      "about": ["person:칠리페퍼"],
+      "evidence": [{ "scene": "sub:칠리페퍼_01", "lines": ["68-77"] }],
+      "reason": "#70-73. 다음 편에서 빈 병을 가져오면 용서한 걸로 알겠다던 약속과 아버지의 죽음이 드러난다 — 오해",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D77",
+      "person": "person:칠리페퍼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "보상을 걸고 까닭 없이 확인만 맡기는 메신저 의뢰인",
+      "after": "아버지의 일과 자기가 했던 못된 말까지 털어놓는 사이",
+      "evidence": [{ "scene": "sub:칠리페퍼_01", "lines": ["42-81"] }],
+      "reason": "#12-15 '의미 없는 확인?' → #44-77 아버지 · 술 · 사과 이야기",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U51",
+      "topic": "전초기지",
+      "text": "전초 기지는 방주와 지상을 잇는 허브로 지으려던 지하 도시였는데, 책임자 자리는 로비 · 아첨 · 돈다발로 오갔고 랩쳐가 기어 내려오자 엘리베이터 둘만 남기고 버려졌다",
+      "about": ["place:전초기지"],
+      "points": ["F239", "F240"],
+      "evidence": [{ "scene": "sub:칠리페퍼_01", "lines": ["50-67"] }],
+      "reason": "#54-56 로비 · #60-66 공사 중단",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

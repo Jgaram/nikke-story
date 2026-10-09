@@ -1,0 +1,193 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M62\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_onemoretime",
+  "session": "M62",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I537",
+      "target": "person:폴리",
+      "speaker": true,
+      "evidence": [{ "scene": "event_onemoretime_02_e", "lines": [225] }],
+      "reason": "'…건가영?!' 말투, 곧바로 지휘관이 '폴리!!'라 부르고 폴리가 답한다(#226-227).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1358",
+      "act": "암시",
+      "points": ["F1375"],
+      "text": "첫 연습에 클레이가 늦게까지 혼자 연습하다 1시간 40분 지각하고, 안 하던 실수로 넘어지고 베이와 부딪친다",
+      "about": ["person:클레이"],
+      "evidence": [{ "scene": "event_onemoretime_03_e", "lines": ["13-18", "83-110"] }],
+      "reason": "#15-18 · #110 → 새벽까지의 혼자 연습 · 지각 · 같은 동작 실수(F1375).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1359",
+      "act": "암시",
+      "points": ["F1375"],
+      "text": "신발을 갈아 신으러 간 지휘관이 밤늦게 혼자 연습하는 클레이를 보고, 다음 날 클레이는 새벽 세 시까지 연습해 또 지각하고 같은 구간에서 계속 넘어진다",
+      "about": ["person:클레이"],
+      "evidence": [{ "scene": "event_onemoretime_intermission_01", "lines": ["46-68", "99-137"] }],
+      "reason": "#68 · #100-103 → 04_s에서 베이가 진심이 아니라 단정해 몰아세운다(F1375).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1360",
+      "act": "암시",
+      "points": ["F1504"],
+      "text": "폴리가 클레이의 무릎에 어느 순간부터 멍이 잔뜩 들었다고 베이에게 전한다",
+      "about": ["person:클레이"],
+      "evidence": [{ "scene": "event_onemoretime_04_e", "lines": ["110-116"] }],
+      "reason": "#112-113 → 무릎 관절이 아슬아슬해져 부품 교체를 청하는 클레이(F1504, char:551).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1361",
+      "act": "암시",
+      "points": ["F1504"],
+      "text": "경기장에서 홀로 연습하던 클레이가 '왜 무릎이 시린 거 같지'라 중얼거린다",
+      "about": ["person:클레이"],
+      "evidence": [{ "scene": "event_onemoretime_05_s", "lines": [42] }],
+      "reason": "#42 → 무릎 관절 문제로 연습이 중지되는 char:551(F1504).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1362",
+      "act": "재언급",
+      "points": ["F1093"],
+      "text": "키리가 '눈이 안 좋아서' 치어리딩 시력이 필요한지 묻고, 안무를 못 따라 할 것 같다며 빠진다",
+      "about": ["person:키리"],
+      "evidence": [{ "scene": "event_onemoretime_03_s", "lines": ["7-8", "58-60"] }],
+      "reason": "#8 · #59 — 갈아 끼워도 그대로인 키리의 나쁜 시력(F1093).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1534",
+      "person": "person:베이",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "예전보다 나아졌어도 누가 오래 빤히 보면 힘든 주목 공포증이 남아 폼폼으로 얼굴을 가리지만, 무대에서는 카리스마 있게 팀을 이끄는 리더",
+      "evidence": [{ "scene": "event_onemoretime_prologue", "lines": ["41-54"] }],
+      "reason": "#42-44 · #52-54. 심사위원 #99-101.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1535",
+      "person": "person:베이",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "리와인드의 명성을 되찾으려 이번 대회에서 무조건 1등을 해야 한다는",
+      "evidence": [{ "scene": "event_onemoretime_prologue", "lines": ["62-64"] }],
+      "reason": "#63-64 · 01_s#60-61.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1536",
+      "person": "person:베이",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "명성을 되찾으려 무조건 1등을 해야 한다는",
+      "after": "2등이어도 완벽했으니 만족한다며, 상상 이상인 팀워크를 얻었다고 다음 기회에 다시 도전하자는",
+      "trigger": [{ "scene": "event_onemoretime_05_e", "lines": ["17-72"] }],
+      "time": "S363",
+      "points": ["F1376"],
+      "evidence": [{ "scene": "event_onemoretime_06_e", "lines": ["31-43", "91-94"] }],
+      "reason": "#33-35 · #94. 클레이와 화해(05_e)하고 처음부터 다시 하기로 한 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1537",
+      "person": "person:베이",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '코치님'이라 부르며 낮은 점수의 까닭을 객관적으로 판단해 달라고 청하는",
+      "evidence": [{ "scene": "event_onemoretime_01_s", "lines": ["76-82"] }],
+      "reason": "#20 · #76-79. 03_s#26-30 귓속말로 기대는 모습.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1538",
+      "person": "person:베이",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:클레이"],
+      "text": "오랜 팬인 줄은 몰랐지만 쇼맨십과 시선을 모으는 어빌리티를 보고 뽑은 유일한 팀원으로, 시선은 클레이가 맡아 주길 기대는",
+      "evidence": [{ "scene": "event_onemoretime_02_e", "lines": ["19-25"] }],
+      "reason": "#21-25 · 프롤로그#35-39.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1539",
+      "person": "person:베이",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:클레이"],
+      "before": "지각 · 실수를 참다 진심이 아닌 거냐고 날카롭게 몰아세운",
+      "after": "리더의 잘못이라 고개 숙여 사과하고 우는 클레이를 끌어안으며 처음부터 다시 하자는",
+      "trigger": [{ "scene": "event_onemoretime_05_s", "lines": ["37-48"] }],
+      "time": "S363",
+      "points": ["F1375"],
+      "evidence": [{ "scene": "event_onemoretime_05_e", "lines": ["17-32", "70-72", "92-94"] }],
+      "reason": "전: 04_s#23-38. 후: #21-24 · #70-71 — 홀로 연습하는 클레이를 본 것이 계기.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1540",
+      "person": "person:클레이",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "스스로 몸치 · 박치라면서 쇼맨십으로 관중을 웃기고 '~옷' 하며 늘 밝게 굴고, 무엇이든 포기하지 않으면 기회가 온다며 지치지 않는",
+      "evidence": [{ "scene": "event_onemoretime_02_e", "lines": ["15-28", "60-62"] }],
+      "reason": "#16 · #27 · #61-62. 실수해도 웃으며 다시 하는 모습(프롤로그#85-88).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1541",
+      "person": "person:클레이",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:베이"],
+      "text": "매번 서류에서 떨어지면서도 지원한 베이의 오랜 팬으로, 꿈에 그리던 팀에서 베이가 원하는 대로 리와인드를 일으키겠다는",
+      "evidence": [{ "scene": "event_onemoretime_02_e", "lines": ["15-28"] }],
+      "reason": "#15-16 · #28. 프롤로그#66-67 · 05_e#62 롤모델.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "life": [],
+  "note": "기준: 베이 성격 · 지휘관 관계 기준은 출시가 뒤인 fl:coins_in_rush(D824 · D823)보다 앞서 이번에 세웠다 — 같은 날 출시된 char:550(3층)이 출시순으로 더 앞서면 그쪽을 남긴다. 폴리는 2주 휴가로 잠깐 합류할 뿐이라(F1374) 변화를 적지 않았다."
+}

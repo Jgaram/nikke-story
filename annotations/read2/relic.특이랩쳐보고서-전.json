@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M06\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:특이랩쳐보고서-전",
+  "session": "M06",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E165",
+      "act": "재언급",
+      "points": ["F860"],
+      "text": "동력이 다해 가던 낡은 1세대 랩쳐가 죽은 이들의 머리 냄새를 맡다 쓰러졌다가 야생동물을 먹고 일어난다 — 1차 침공 때 랩쳐는 동력이 반영구가 아니어서 인간 · 동물을 재료로 삼았다(F860)",
+      "about": ["concept:랩쳐"],
+      "evidence": [{ "scene": "relic:특이랩쳐보고서-전_04", "lines": [0, "3-5"] }],
+      "reason": "앞 장 _01#7-9 · _02#3-6. 기록자는 '그런 얘기는 들은 적 없다'(#5) — 세실이 ch21에서 설명한 그대로다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U132",
+      "topic": "지상",
+      "text": "지상 임무에서 랩쳐와 동귀어진해 홀로 남은 이는 다리가 부서진 채 동굴에 숨어, 닿는지도 모를 구조 신호를 보내며 기록을 남긴다",
+      "about": ["place:지상"],
+      "points": ["F879"],
+      "evidence": [{ "scene": "relic:특이랩쳐보고서-전_00", "lines": ["0-5"] }],
+      "reason": "#1-5, _01#0-1",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+    }
+  ]
+}

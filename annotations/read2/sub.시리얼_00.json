@@ -1,0 +1,25 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:시리얼_00",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D60",
+      "person": "person:시리얼",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "친구가 없어 행운의 네잎클로버를 부탁하고, '오늘부터 우린 친구'라는 지휘관을 첫 친구로 맞는 말 더듬는 의뢰인",
+      "evidence": [{ "scene": "sub:시리얼_00", "lines": ["57-73"] }],
+      "reason": "#57-61 · #68-72 '내 첫 번째 친구가 되어줘서'. 다음 편 끝에서도 '지휘관은 내 친구 맞지?'(01#74)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "life": []
+}

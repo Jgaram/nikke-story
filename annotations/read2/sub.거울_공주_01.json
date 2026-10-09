@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:거울_공주_01",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E467",
+      "act": "재언급",
+      "points": ["F1569"],
+      "text": "잠이 안 온다는 신데렐라가 몸이 관에 익숙해졌다며 부서진 관을 '소중한 안식처'라 가져가 누워 보겠다고 한다",
+      "about": ["person:신데렐라"],
+      "evidence": [{ "scene": "sub:거울_공주_01", "lines": ["33-42", "114-135"] }],
+      "reason": "#118 '소중한 안식처' — 관짝이 2에서 관에 누운 신데렐라를 그레이브가 깨운 일(F1569)의 앞 이야기다(작중 시점은 앞, S164).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

@@ -1,0 +1,43 @@
+{
+  "unit": "char:283",
+  "session": "R46",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "로산나 : 시크 오션 호감도 스토리 5편 — 화보 촬영 섬(event_beautyfullshot1). 몰래 서핑하다 넘어지는 지휘관을 본 로산나가 '데이트 신청'이라며 엄하게 가르치기로 한다(01). 일어서기 수업은 안마로 흐물흐물해지고(02), 석양 아래 로산나는 방주의 석양이 더 정교한데도 지상의 석양에 마음이 간다며, 피비린내 나는 일상 · 지킬 사람이 있는 방주로 돌아가야 한다는 이성과 머물고 싶은 마음이 부딪힌다고 털어놓는다(03). 보트 위 데이트에서 보트 면허는 조직원 시절 시뮬레이션 룸에서, 서핑은 방주 수영장 · 파도풀에서 몰래 연습했다는 아무에게도 안 한 이야기를 지휘관과의 비밀로 한다(04). 돌아오는 길 바이퍼 · 자칼을 피해 숨고, '꿈 같은 하루'가 끝나는 게 아쉬운 로산나와 밤바다를 더 걷는다(05).",
+  "facts": [
+    {
+      "id": "F1521",
+      "text": "로산나는 인간일 때 조직원으로 동료들과의 내기에 보트 운전면허를 바로 땄고(온갖 면허를 시뮬레이션 룸에서 땄다), 서핑은 예전부터 흥미가 있어 방주의 수영장 · 파도풀에서 몰래 연습했다 — 진짜 바다는 이번이 처음이며 아무에게도 한 적 없는 이야기라 지휘관과의 비밀로 했다",
+      "about": ["person:로산나", "place:방주"],
+      "evidence": [{ "scene": "ep:d_nikke_rosanna_chicocean_04", "lines": ["10-45"] }],
+      "reason": "로산나 본인 말. event_beautyfullshot1에서 보트 운전을 언제 배웠냐는 물음에 '기억 안 나'라 한 것(event_beautyfullshot1_02_s #19-20)의 속사정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1522",
+      "text": "로산나는 방주에서 보는 석양이 더 정교한데도 지상의 석양에 마음이 간다며, 처음엔 지상의 호사가 불쾌하고 거부감이 들었지만 익숙해질수록 머물고 싶은 마음과 피비린내 나는 일상 · 지켜야 할 사람이 있는 방주로 빨리 돌아가야 한다는 이성이 부딪힌다고 털어놓았다",
+      "about": ["person:로산나", "place:방주"],
+      "evidence": [{ "scene": "ep:d_nikke_rosanna_chicocean_03", "lines": ["17-53", 60] }],
+      "reason": "로산나 본인 말. 방주의 석양은 인공 하늘의 것으로 읽힌다(#20-21)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S159",
+      "kind": "기준점",
+      "text": "event_beautyfullshot1의 섬 체류 중 — 로산나가 바이퍼에게 서핑을 가르친 날 뒤",
+      "ref": "event_beautyfullshot2_04_s",
+      "at": [["중", "event_beautyfullshot1"]],
+      "evidence": [{ "scene": "ep:d_nikke_rosanna_chicocean_03", "lines": ["6-8"] }, { "scene": "ep:d_nikke_rosanna_chicocean_05", "lines": ["14-16"] }],
+      "reason": "'독사는 하루 종일 연습시켜도 안 되던데'(03 #6) — event_beautyfullshot2_04_s의 서핑 · 보트 연습 뒤, 바이퍼 · 자칼이 함께 섬에 있다(05)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    }
+  ]
+}

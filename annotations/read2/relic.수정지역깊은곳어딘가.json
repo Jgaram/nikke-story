@@ -1,0 +1,34 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:수정지역깊은곳어딘가",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I191",
+      "target": "person:베히모스",
+      "evidence": [{ "scene": "relic:수정지역깊은곳어딘가_03", "lines": ["9-11"] }],
+      "reason": "기록자를 쓰러뜨려 끌고 간 '무언가' — 그곳은 베히모스가 지키는 유리 구두 앞(F1552).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E468",
+      "act": "재언급",
+      "points": ["F1552", "F1553"],
+      "text": "수정 지역 깊은 곳 꽃길 옆으로 갈수록 정교해지는 유리 방패들이 늘어서고, 가장 안쪽 수정 안에 그 원본이 있다",
+      "about": ["item:유리_구두"],
+      "evidence": [{ "scene": "relic:수정지역깊은곳어딘가_02", "lines": ["1-5"] }],
+      "reason": "#3-5 — ch32의 베히모스가 꾸민 꽃길(F1552)과 수정에 덮인 유리 구두 방패 넷(F1553).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

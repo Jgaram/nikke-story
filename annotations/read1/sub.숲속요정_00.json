@@ -1,0 +1,78 @@
+{
+  "unit": "sub:숲속요정_00",
+  "session": "R03",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "숲속요정이 '니케의 비밀'을 미끼로 멀쩡한 랩쳐 코어를 구해 달라고 한다 — 방주에 들어오는 코어는 다 정제되어 조사가 어렵다(#1-18). 자기를 M.M.R. 직원이라 하며, NIMPH는 나노머신으로 뇌를 주무르는 게 너무 앞서 인간 기술 같지 않고, 만드는 공정 · 필요 기술을 아무도 모르고 자료도 없다며, 니케의 뇌를 조종한다는 점에서 침식과 메커니즘이 같다고 추리한다(#20-55). 라피는 코어가 특별 관리 물품이라 보고 없이 들이면 불법이라 걱정하지만 카운터스는 코어를 성하게 떼어 온다(#58-87). 숲속요정은 처음 보는 멀쩡한 코어라며 기뻐하다 '손님이 왔다'고 한 뒤, 계정이 블록/삭제된다(#88-99).",
+  "facts": [
+    {
+      "id": "F326",
+      "text": "M.M.R. 직원이라는 숲속요정에 따르면 NIMPH를 만드는 공정 · 기술은 아무도 모르고 자료조차 없으며, 그는 NIMPH가 인간의 기술이 아니고 침식과 메커니즘이 같다고 추리한다",
+      "about": ["person:숲속요정", "concept:NIMPH", "concept:침식", "org:M.M.R."],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["29-46"] }],
+      "reason": "숲속요정의 말과 추리 — 확인된 사실이 아니다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F327",
+      "text": "랩쳐의 코어는 특별 관리 물품이라 중앙 정부에 보고하지 않고 방주로 가져가면 불법이고, 방주에 들어오는 코어는 모두 정제된 것이다",
+      "about": ["concept:랩쳐", "org:중앙_정부"],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["17-18", "59-60"] }],
+      "reason": "숲속요정 · 라피의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F328",
+      "text": "멀쩡한 랩쳐 코어를 받은 숲속요정은 '손님이 왔다'는 말을 남긴 직후 메신저 계정이 블록/삭제되어 연락이 끊겼다",
+      "about": ["person:숲속요정"],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["89-99"] }],
+      "reason": "원문 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q61",
+      "text": "NIMPH의 비밀을 캐던 숲속요정에게 찾아온 '손님'은 누구이고, 숲속요정은 어떻게 되었나?",
+      "about": ["person:숲속요정", "concept:NIMPH"],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["92-99"] }],
+      "reason": "손님이 왔다며 기다리라고 한 뒤 계정이 사라진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "Q62",
+      "text": "NIMPH는 누가 어떻게 만들었나 — 정말 인간의 기술이 아닌가?",
+      "about": ["concept:NIMPH"],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["29-37"] }],
+      "reason": "숲속요정이 던진 물음 — 만드는 법을 아무도 모른다고 한다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S29",
+      "kind": "기준점",
+      "text": "숲속요정_00은 지휘관이 NIMPH가 무엇인지 알게 된 뒤(ch09–12 이후)의 일이다",
+      "ref": "ch12",
+      "at": [["뒤", "ch12"]],
+      "evidence": [{ "scene": "sub:숲속요정_00", "lines": ["20-27"] }],
+      "reason": "지휘관이 NIMPH를 안다고, 무엇을 하는지도 안다고 답한다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

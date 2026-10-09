@@ -1,0 +1,303 @@
+{
+  "unit": "event_wisdomspring",
+  "session": "R56",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "마나 이름의 블라블라로 'M.M.R. 지휘관용 신식 무기 지급' 초대를 받은 지휘관이 M.M.R. 연구소에 간다(01_s — 네온 · 아니스가 지휘관의 이상한 회복력을 말한다). 에테르가 마나는 [심층부](LEVEL E — 통신 차단)에 있다며 손님용 출입증으로 엘리베이터에 태워 보낸다(01_e · 02). 심층부에서 어지럼증을 느끼던 지휘관이 마나를 만나지만 마나는 메시지를 보낸 적이 없고 신식 무기도 없다 — 출입증이 만료되어 갇힌다(03). 마나가 M.M.R. 연구원 다수가 니케인 까닭(기술 · 예술 · 과학의 보존, 니케의 뇌는 비밀을 숨기기 어렵다)을 말하고(intermission), 둘이 통신 기기를 찾아 헤매다(기도실 — 전신 단체의 종교색) 빈 수조가 있는 빈 연구실에서 지휘관은 기시감 · 두통 속에 태블릿의 [PROJECT. A.D.]('인간의 신체 강화를 목표로')를 보고 쓰러진다(04_s). 꿈 — 수조 속의 자신을 보며 마나 · 에테르가 '이분도 그 프로젝트 대상자', '아직 성공 사례가 없다', '실패하면 폐기'를 말한다(04_e). 깨어난 지휘관은 자기 몸의 이상함(니케를 업고 걷기 · 대함 라이플 · 치명상의 빠른 회복)을 들어 마나를 몰아붙이고 '나는 인간이야?'라 묻는데(05), 지엔이 마나의 입을 막는다 — 방주 깊은 곳의 [어둠](= 방주)이 지켜본다, 슈엔의 이복 언니, 지휘관을 '7호'라 부르며 자기가 불러들였다고 밝히고 출입증을 준다(06_s). LEVEL D에서 쓰러진 지휘관을 마나가 돌보며 '태어났기 때문이 아니라 살아왔기 때문'이 정체성이라 한다(06_e). 에필로그: 메시지는 지엔의 제안으로 에테르가 마나 계정을 복제해 보냈다 — [그들]과 총사령관만 승인한 비밀 프로젝트, 7호 = 유일한 성공작. 마나가 '지휘관도 아는…' 사람의 연구실이라 하다 끊긴 것(04_s #85-88)은 말끝 흐림이라 기록하지 않았다.",
+  "scenes": [
+    {
+      "scene": "event_wisdomspring_prologue",
+      "text": "M.M.R. 연구소에서 두통 속에 깨어난 지휘관 — 12시간 전을 떠올린다"
+    },
+    {
+      "scene": "event_wisdomspring_01_s",
+      "text": "마나 이름의 신식 무기 지급 초대 — 네온 · 아니스가 지휘관의 이상한 회복력을 말한다"
+    },
+    {
+      "scene": "event_wisdomspring_01_e",
+      "text": "에테르가 마나는 [심층부]에 있다며 데려다주겠다고 한다"
+    },
+    {
+      "scene": "event_wisdomspring_02_s",
+      "text": "M.M.R. 연구실은 모두 지하, 심층부(LEVEL E)는 더 아래 — 비밀을 땅에 묻는 곳, 통신 차단"
+    },
+    {
+      "scene": "event_wisdomspring_02_e",
+      "text": "손님용 출입증으로 엘리베이터(LEVEL D · E · P) — 에테르는 사유서 없이 못 들어간다"
+    },
+    {
+      "scene": "event_wisdomspring_03_s",
+      "text": "인기척 없는 회색 복도, 어지럼증 — 마나를 찾는다"
+    },
+    {
+      "scene": "event_wisdomspring_03_e",
+      "text": "마나는 메시지를 보낸 적이 없고 신식 무기도 없다 — 출입증 만료로 갇힌다"
+    },
+    {
+      "scene": "event_wisdomspring_intermission_01",
+      "text": "M.M.R.은 연구원도 믿지 않는다 — 연구원 다수가 니케인 까닭"
+    },
+    {
+      "scene": "event_wisdomspring_04_s",
+      "text": "통신 기기 찾기(기도실), 빈 수조의 빈 연구실 — 기시감 · [PROJECT. A.D.] 태블릿, 쓰러짐"
+    },
+    {
+      "scene": "event_wisdomspring_04_e",
+      "text": "꿈 — 수조 속의 자신, 마나 · 에테르의 '프로젝트' · '폐기' 대화"
+    },
+    {
+      "scene": "event_wisdomspring_05_s",
+      "text": "깨어난 지휘관이 꿈을 말하고 마나에게 예전에 만난 적이 있느냐고 묻는다"
+    },
+    {
+      "scene": "event_wisdomspring_05_e",
+      "text": "몸의 이상함을 들어 몰아붙임 — 마나는 아무것도 말할 수 없다, '나는 인간이야?'"
+    },
+    {
+      "scene": "event_wisdomspring_06_s",
+      "text": "지엔 등장 — 방주의 [어둠]은 방주, 슈엔의 이복 언니, '7호', 자기가 불러들였다"
+    },
+    {
+      "scene": "event_wisdomspring_06_e",
+      "text": "LEVEL D에서 링거 — 마나 '태어났기 때문이 아니라 살아왔기 때문'"
+    },
+    {
+      "scene": "event_wisdomspring_epilogue",
+      "text": "에테르가 마나 계정을 복제해 보냈다 — [그들] · 총사령관만 승인한 프로젝트, 7호 = 유일한 성공작"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1768",
+      "text": "M.M.R.의 연구실은 모두 지하에 있고, 그보다 더 깊은 [심층부](LEVEL E — 두 구역)는 전용 엘리베이터로만 가며 그 아래에 [LEVEL P]가 있다 — 에테르에 따르면 방주의 비밀스러운 부분을 땅에 묻어 봉인하는 곳이라 심층부 안에서만 소통하게 통신 자체를 막았고, 연구원도 사유서로 승인받은 시간대로만 드나든다",
+      "about": ["org:M.M.R.", "place:M.M.R._심층부", "person:에테르", "person:마나"],
+      "evidence": [
+        { "scene": "event_wisdomspring_02_s", "lines": ["4-14", "28-43"] },
+        { "scene": "event_wisdomspring_02_e", "lines": ["8-37"] },
+        { "scene": "event_wisdomspring_intermission_01", "lines": ["2-15"] }
+      ],
+      "reason": "에테르의 설명(02_s · 02_e)과 마나 '승인받은 시간대로만 움직여야 한다 … 연구원들조차 믿지 않는 것'(intermission #9-15)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1769",
+      "text": "마나에 따르면 M.M.R. 연구원 다수는 니케이고 마나 · 에테르도 M.M.R. 스쿼드의 니케다 — 방주 이주 뒤 기술 · 예술 · 과학 보존을 위해 뛰어난 예술가 · 기술자 · 과학자를 니케로 만들었고(자청한 이도 많다), 니케의 뇌는 스캔으로 비밀을 숨길 수 없어(사고 전환 · 블랙박스화 말고는) M.M.R.은 연구원조차 믿지 않는다",
+      "about": ["org:M.M.R.", "person:마나", "person:에테르", "concept:니케"],
+      "evidence": [{ "scene": "event_wisdomspring_intermission_01", "lines": ["19-60"] }],
+      "reason": "마나의 설명 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1770",
+      "text": "M.M.R. 심층부에는 M.M.R.의 전신 단체가 종교적 색채를 띠어 만들어 둔 기도실이 있다(지금은 거의 쓰이지 않는다)",
+      "about": ["org:M.M.R.", "place:M.M.R._심층부"],
+      "evidence": [{ "scene": "event_wisdomspring_04_s", "lines": ["13-22"] }],
+      "reason": "마나 '전신이 되는 단체가 종교적 색채를 띠고 있어서'(#20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1771",
+      "text": "마나 이름으로 온 'M.M.R. 지휘관용 신식 무기 지급' 블라블라는 가짜였다 — 지엔이 지휘관을 직접 보고 싶다며 데려오라 했고, 에테르가 마나의 계정을 복제해 메시지를 보내고 손님용 출입증(곧 만료)으로 지휘관을 심층부에 홀로 들여보냈다 — 에테르는 배가 뚫려 오는 지휘관을 실험대에 올려 건강 체크를 하고 싶었다고 했다",
+      "about": ["person:지엔", "person:에테르", "person:마나", "person:지휘관", "place:M.M.R._심층부"],
+      "evidence": [
+        { "scene": "event_wisdomspring_03_e", "lines": ["19-39", "68-79"] },
+        { "scene": "event_wisdomspring_06_s", "lines": ["86-105"] },
+        { "scene": "event_wisdomspring_epilogue", "lines": ["44-72"] }
+      ],
+      "reason": "마나는 보낸 적이 없고 신식 무기도 없다(03_e), 지엔 '데려오게 만든 게 저'(06_s #89), 마나가 흔적으로 에테르를 짚고 에테르가 인정(epilogue #47-71)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1772",
+      "text": "지휘관은 니케를 업고 걷고 대함 라이플을 쏘았으며 배가 뚫리는 치명상도 늘 살아남아 점점 더 빨리 낫는다 — 네온은 지휘관이 가끔 인간이 아닌 것처럼 느껴진다 하고, 아니스도 이상할 만큼 회복이 빠르다고 여겨 왔다",
+      "about": ["person:지휘관", "person:네온", "person:아니스"],
+      "evidence": [{ "scene": "event_wisdomspring_01_s", "lines": ["18-25"] }, { "scene": "event_wisdomspring_05_e", "lines": ["50-67"] }],
+      "reason": "지휘관 자신의 말(05_e #52-65)과 카운터스의 대화(01_s #21-24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1773",
+      "text": "빈 수조의 빈 연구실에서 기시감 · 두통을 느낀 지휘관은 태블릿의 [PROJECT. A.D.]('인간의 신체 강화를 목표로…')를 보고 쓰러져, 막 니케가 된 마나 · 에테르가 수조 속의 자기를 '그 프로젝트 대상자'로 보며 '아직 성공 사례가 없다' · '실패하면 폐기'를 말하는 꿈을 꾸었다 — 에테르는 과거의 일을 꿈으로 꾼 것이라 받아들였다",
+      "about": ["person:지휘관", "concept:PROJECT_A.D.", "person:마나", "person:에테르", "place:M.M.R._심층부"],
+      "evidence": [
+        { "scene": "event_wisdomspring_04_s", "lines": ["67-80", "120-141"] },
+        { "scene": "event_wisdomspring_04_e", "lines": ["9-41"] },
+        { "scene": "event_wisdomspring_epilogue", "lines": ["73-78"] }
+      ],
+      "reason": "꿈의 내용(04_e) — 마나 '이런 육체를 가지게 되었으니까', 에테르 '우리 둘 다 니케가 되었으니'(#26-28). 꿈이 과거라는 것은 에테르 '과거의 일을 꿈으로 꿨단 말이야?'(epilogue #77)와 마나의 반응으로 확인된다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1774",
+      "text": "[PROJECT. A.D.]가 이 연구실의 프로젝트이고 인간 신체 강화를 목표로 하느냐는 지휘관의 물음에 마나는 그 이름을 어떻게 아느냐며 놀랐고, '나는 인간이야?'라는 물음에 답하려다 지엔에게 입이 막혔다 — 마나는 M.M.R.의 모든 것은 저마다 비밀이 있고 말하지 않는 것이 규칙이라 아무것도 답할 수 없다고 했다",
+      "about": ["person:마나", "person:지휘관", "concept:PROJECT_A.D.", "person:지엔"],
+      "evidence": [{ "scene": "event_wisdomspring_05_e", "lines": ["38-49", "83-100"] }, { "scene": "event_wisdomspring_06_e", "lines": ["36-39"] }],
+      "reason": "마나 '그 이름을 지휘관이 어떻게…'(#47), 지엔 '가장 위험한 부분을 말할 뻔하셨어요'(06_s #1)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1775",
+      "text": "지엔은 방주 깊은 곳의 [어둠]이 언제 어디서든 지켜본다며 마나를 막았고, 그 [어둠]은 에닉이 아니라 '우리를 먹여주고 재워주고 보살펴 주는' 방주라 했다 — 지엔은 슈엔의 이복 언니이자 M.M.R. 연구원으로 지금은 밖에 나가면 시선을 끄는 처지라며, 지휘관을 '7호'라 부르고 방주와 자신에 대해 한 가지 더 알게 됐다고 속삭였다",
+      "about": ["person:지엔", "place:방주", "person:에닉", "person:슈엔", "person:지휘관"],
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["4-8", "26-45", "50-76", "89-113"] }],
+      "reason": "지엔의 말 그대로 — 슈엔과의 관계는 F1614(이복 언니)와 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1776",
+      "text": "마나 · 에테르에 따르면 [그 프로젝트]는 [그들]이 세상에 알리고 싶지 않아 부사령관들과 3대 CEO에게도 비밀로 한 채 [그들]과 총사령관의 승인만으로 M.M.R. 심층부에서 비밀리에 진행되었다 — 에테르는 지휘관을 '7호'라 부르는 까닭을, 1호부터 6호와 달리 실패하지도 도망치지도 않은 유일한 성공작이기 때문이라 했다",
+      "about": ["concept:PROJECT_A.D.", "person:지휘관", "person:에테르", "person:마나", "place:M.M.R._심층부"],
+      "evidence": [{ "scene": "event_wisdomspring_epilogue", "lines": ["79-100"] }],
+      "reason": "마나 '[그들]과 총사령관의 승인만으로 … 진행되었던 것 아니야?'에 에테르 '맞아'(#88-90), '유일한 성공작'(#92-95). 지휘관 = 그 프로젝트의 7호라는 것은 F1773의 꿈과 함께 읽은 것 — 원문이 둘을 한 줄로 잇지는 않지만 에테르의 말이 그대로 가리킨다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1777",
+      "text": "쓰러진 지휘관을 검진한 마나는 수치가 모두 정상이고 스트레스 · 긴장으로 인한 탈진이라 했고, 지휘관에게 한 '사심 없이 쉴 수 있게 지키겠다'는 약속 때문에 검진 자료를 에테르에게 주지 않았다 — 마나는 지휘관의 정체성은 그럴만한 사람으로 태어났기 때문이 아니라 살아왔기 때문이라 했다",
+      "about": ["person:마나", "person:지휘관", "person:에테르"],
+      "evidence": [{ "scene": "event_wisdomspring_06_e", "lines": ["13-16", "41-52"] }, { "scene": "event_wisdomspring_epilogue", "lines": ["9-15", "38-39"] }],
+      "reason": "마나의 말 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q225",
+      "text": "[PROJECT. A.D.]는 무엇이고, 지휘관은 어떻게 그 프로젝트의 '7호' — 유일한 성공작 — 가 되었나? 지휘관은 인간인가?",
+      "about": ["concept:PROJECT_A.D.", "person:지휘관"],
+      "evidence": [{ "scene": "event_wisdomspring_05_e", "lines": ["91-100"] }, { "scene": "event_wisdomspring_epilogue", "lines": ["92-95"] }],
+      "reason": "마나는 아무것도 답할 수 없다 하고 지엔이 '인간이냐'는 답을 막는다 — 프로젝트의 내용과 지휘관이 대상이 된 경위는 드러나지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q226",
+      "text": "[그 프로젝트]를 총사령관과 함께 승인하고 세상에 숨기는 [그들]은 누구이고, 지엔이 '방주'라 한 방주 깊은 곳의 [어둠]은 무엇인가?",
+      "about": ["concept:PROJECT_A.D.", "place:방주", "person:지엔"],
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["4-8", "50-63"] }, { "scene": "event_wisdomspring_epilogue", "lines": ["84-100"] }],
+      "reason": "[그들]은 방주 어디에나 눈과 귀가 있다고만 하고 정체를 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q227",
+      "text": "빈 연구실에 [PROJECT. A.D.] 태블릿을 놓아 둔 것은 누구인가 — 에테르가 아니라면 누가 지휘관에게 진실을 알리려 했나?",
+      "about": ["concept:PROJECT_A.D.", "person:지휘관"],
+      "evidence": [{ "scene": "event_wisdomspring_04_s", "lines": ["120-131"] }, { "scene": "event_wisdomspring_epilogue", "lines": ["105-107"] }],
+      "reason": "마나 '태블릿은 에테르가 놔둔 게 아닌 거겠네'(#105) — 에테르는 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q86-2",
+      "act": "회수",
+      "answer": "F1773",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_wisdomspring_04_e", "lines": ["9-24"] }, { "scene": "event_wisdomspring_epilogue", "lines": ["73-95"] }],
+      "reason": "지휘관이 기억하지 못하는 과거 — M.M.R. 심층부 수조 속에서 [PROJECT. A.D.]의 대상자였고(7호, 유일한 성공작) — 가 드러난다. 기억 소거인지 · 입원과 같은 일인지는 아직 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M24",
+          "note": "M24 — 에테르가 꿈을 '과거의 일'로 받아들여(epilogue#77) 흐릿한 기억 일부가 수조 속 프로젝트 대상자였음이 확실",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S201",
+      "kind": "기준점",
+      "text": "CH.34 이후 — 카운터스가 방주에 있을 때 · 지상 탈환 공로로 지휘관이 M.M.R.에 초대된다",
+      "ref": "event_footstepwalkrun1",
+      "at": [["뒤", "event_footstepwalkrun1"], ["뒤", "ch34"]],
+      "evidence": [{ "scene": "event_wisdomspring_01_s", "lines": ["8-11", 51] }],
+      "reason": "'지상 탈환의 공로'(#11)와 '방주 안인데'(#51) — 출시순과 지엔의 슈엔 언급(side:wordless 뒤)으로 고른 자리, 순서는 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "S202",
+      "kind": "회상",
+      "text": "지휘관의 꿈 — 막 니케가 된 마나 · 에테르가 M.M.R. 심층부 수조 속의 지휘관([그 프로젝트] 대상자)을 지켜보던 때",
+      "ref": "F1773",
+      "at": [["전", "ch00"]],
+      "evidence": [{ "scene": "event_wisdomspring_04_e", "lines": ["0-41"] }],
+      "reason": "에테르 '과거의 일을 꿈으로'(epilogue #77). 마나 · 에테르가 니케가 된 직후(#26-28) — 언제인지 연도는 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M24",
+          "note": "M24 — 04_e#28 '우리 둘 다 니케가 되었으니'가 막 니케가 된 때임을 보여 확실",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target": "concept:PROJECT_A.D.",
+      "evidence": [
+        {
+          "scene": "event_wisdomspring_04_s",
+          "lines": [
+            128
+          ]
+        }
+      ],
+      "note": "M.M.R. 심층부의 비밀 프로젝트 — '인간의 신체 강화를 목표로', 지휘관 = 7호(유일한 성공작)",
+      "new": true
+    },
+    {
+      "target": "place:M.M.R._심층부",
+      "evidence": [
+        {
+          "scene": "event_wisdomspring_02_s",
+          "lines": [
+            6
+          ]
+        }
+      ],
+      "note": "M.M.R. 지하 연구실보다 더 깊은 [LEVEL E] 구역 — 통신 차단, 승인제 출입",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

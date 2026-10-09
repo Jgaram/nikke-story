@@ -1,0 +1,54 @@
+{
+  "_comment": [
+    "공지 표기 → 스토리 데이터. tools/notices/release-order.mjs가 공지 속 이름을 이을 때 쓴다. data/release/report.md에 뜬 것만 넣는다.",
+    "characters: 공지는 콜라보 캐릭터를 풀네임으로 쓰고 게임 데이터는 단축명을 쓴다.",
+    "events: 게임 ID(event_…)로 안 이어지는 이벤트. 근거(reason)는 게임 데이터나 공지에서 댄다 — 시트 제목은 쓰지 않는다(docs/reference-table.md)."
+  ],
+  "characters": [
+    {
+      "notice": "시키나미 아스카 랑그레이 : WILLE",
+      "resourceId": 835
+    },
+    {
+      "notice": "아야나미 레이 (가칭)",
+      "resourceId": 834
+    },
+    {
+      "notice": "스즈하라 사쿠라",
+      "resourceId": 836
+    },
+    {
+      "notice": "니시키기 치사토",
+      "resourceId": 860
+    },
+    {
+      "notice": "이노우에 타키나",
+      "resourceId": 861
+    },
+    {
+      "notice": "퀸(니지마 마코토)",
+      "resourceId": 870
+    },
+    {
+      "notice": "아마기 유키코",
+      "resourceId": 871
+    }
+  ],
+  "events": [
+    {
+      "notice": "License to Kill",
+      "id": "event_ltk",
+      "reason": "ID가 약자다. 2026-04-23 공지 스토리 라인 목록이 'L.T.K -License to Kill-'로 적는다."
+    },
+    {
+      "notice": "A.C.P.U.! FREEZE!",
+      "id": "event_freezeacpu",
+      "reason": "ID가 같은 두 낱말(FREEZE · ACPU)을 순서만 바꿔 쓴다."
+    },
+    {
+      "notice": "MEMORIES TELLER",
+      "id": "event_ce006",
+      "reason": "원문 이름표 상위에 이브 · 릴리(스텔라 블레이드 콜라보)가 나온다. 2025-06-12 공지: '[릴리]는 스텔라 블레이드 콜라보 이벤트인 MEMORIES TELLER에서 획득'."
+    }
+  ]
+}

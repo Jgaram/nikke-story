@@ -1,0 +1,43 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M96\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:831",
+  "session": "M96",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2123",
+      "person": "person:레이",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "표정 없이 '응' · '모르겠어'로만 답해 속을 알 수 없지만, 좋은 건 '좋았어'라고 솔직하게 말하는",
+      "evidence": [{ "scene": "ep:d_nikke_ce004_02_05", "lines": [7, "10-17"] }],
+      "time": "S388",
+      "reason": "04#18-20 '전혀 생각을 알 수 없는 표정' → 05#14-17 '좋았어. 핫플 … 쇼핑도. 영화도.' 콜라보 단위의 주인공이라 기준을 세운다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    },
+    {
+      "id": "D2124",
+      "person": "person:아인",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:레이"],
+      "before": "선생님이 붙인, 조용해서 '불편해 죽겠다'던 버디",
+      "after": "'최선을 다해 즐기고 있었다'며 솔직하고 재밌는 녀석으로 알아보고 '내일부터 잘 부탁해, 버디!' 하는",
+      "trigger": [{ "scene": "ep:d_nikke_ce004_02_05", "lines": ["10-17"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ce004_02_05", "lines": ["25-31", "39-40"] }],
+      "time": "S388",
+      "points": ["F1599"],
+      "reason": "01#3-4 '불편해 죽겠네' → 05#26 '최선을 다해 즐기고 있었던 거구나' · #31 '솔직하고 재밌는 녀석' · #40 '잘 부탁해, 버디!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 기록이 없어 바로잡기로 S388(S169와 같은 콜라보 체류, 추정)을 1회독 파일에 더했다. 루피의 머리핀 선물(03#26-30)은 F1599에 있어 따로 적지 않았다. `???` 없음."
+}

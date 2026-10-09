@@ -1,0 +1,108 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M53\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:202",
+  "session": "M53",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I490",
+      "target": "person:도라",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_dolla_02", "lines": ["51-53"] }],
+      "reason": "약속 장소에서 '물건 사러 오신 분' 하고 부른 판매자 Royal도라 — #54부터 도라 이름표로 '불법 칩 구매자가 지휘관이었어?'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "I491",
+      "target": "person:도라",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_dolla_04", "lines": ["55-56"] }],
+      "reason": "폭파된 거래소에서 '감히 내 통수를 쳐?' — #57 지휘관이 '도라?' 부르자 #58 도라 이름표로 답한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "I492",
+      "target": "person:머스탱",
+      "evidence": [{ "scene": "ep:d_nikke_dolla_04", "lines": [49] }],
+      "reason": "업자들이 겁내는 '테트라 사장' — 도라의 '사장님' 머스탱(01#16). 이 씬엔 이름이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1252",
+      "act": "암시",
+      "points": ["F483"],
+      "text": "뉴스가 퇴근길 열차를 습격한 테러 집단 엔터 헤븐이 A.C.P.U.에 제압되었다고 전한다 — 열차를 노리는 엔터 헤븐",
+      "about": ["org:엔터_헤븐"],
+      "evidence": [{ "scene": "ep:d_nikke_dolla_04", "lines": [5] }],
+      "reason": "같은 날 디젤 호감도 스토리가 AFX 열차 테러로 열차를 노리는 엔터 헤븐의 위험이 드러나 인피니티 레일이 생겼다고 밝힌다(F483)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1362",
+      "person": "person:도라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "면담을 '의무적인 불량 체크'로 여겨 10분만 내주고 블랙넷 얘기엔 뒤를 캐지 말라 경고하면서도, 오지랖 부리는 지휘관에게 흥미를 보인다",
+      "evidence": [{ "scene": "ep:d_nikke_dolla_01", "lines": ["13-15", "30-36", "46-49"] }],
+      "reason": "#14 '불량 체크 같은 거지' · #33 '이런 오지랖은 안 부리거든' · #47 '누가 내 뒤를 캐고 다니는 건 딱 질색'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1363",
+      "person": "person:도라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "뒤를 캐지 말라던 '고객님'",
+      "after": "위기에 그 얼굴만 떠올랐다며 함께 있으면 안심된다는, 입을 맞추는 사이",
+      "trigger": [{ "scene": "ep:d_nikke_dolla_04", "lines": ["57-60"] }],
+      "evidence": [{ "scene": "ep:d_nikke_dolla_04", "lines": ["99-104", "124-127"] }],
+      "reason": "통신 불가 구역까지 구하러 온 지휘관에게 #102 '고객님과 있으면 왠지 안심이 돼' · #125 '고객님 얼굴 밖에 안 떠오르더라' — 05#105-107 입맞춤",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1364",
+      "person": "person:도라",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "제 힘으로 올라온 자리에서 방주의 꼭대기까지 갈 것이고, 그러려면 블랙넷이든 더 냄새나는 수단이든 가리지 않는다는",
+      "evidence": [{ "scene": "ep:d_nikke_dolla_02", "lines": ["89-93"] }],
+      "reason": "#90-92 '여태 내 노력만으로 … 쭉 꼭대기까지 … 가리지 않을 거야' — 05#76 · #98에서도 그대로(니케가 아니라 세기의 기업가로)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1365",
+      "person": "person:도라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:얀", "person:루피"],
+      "text": "같은 달란트의 얀 · 루피와는 임무만 같이 하는 비즈니스 관계라며, 잘 지내라는 건 개와 고양이를 붙이는 격이라 한다",
+      "evidence": [{ "scene": "ep:d_nikke_dolla_01", "lines": ["23-29"] }],
+      "reason": "#23 '임무를 같이 하는 비즈니스 관계' · #27 얀은 사업 방식을 거슬려 하고 루피는 신상에만 관심",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "life": []
+}

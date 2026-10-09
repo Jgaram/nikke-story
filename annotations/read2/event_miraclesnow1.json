@@ -1,0 +1,142 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M57\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_miraclesnow1",
+  "session": "M57",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I506",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "event_miraclesnow1_04_s", "lines": ["0-2"] }],
+      "reason": "'모두가 이걸 먹고 행복해졌으면' 하며 웃는 ??? — 같은 씬 #51-53에서 엠마가 손수 만든 쿠키를 나눠 주고, 그 쿠키가 미각을 잃게 한 음식이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1290",
+      "act": "암시",
+      "points": ["F729"],
+      "text": "앤이 기억하는 엄마의 얼굴 — 웃어 주던 얼굴 뒤에 '지쳐 가는 얼굴 · 포기를 결심한 그 얼굴'",
+      "about": ["person:앤", "person:안젤리나"],
+      "evidence": [{ "scene": "event_miraclesnow2_01_s", "lines": ["0-8"] }],
+      "reason": "#4-7 — 2년 동안 마음이 깎여 앤을 포기한 안젤리나(F729, 06_e#57-58 '앤을 포기했어')를 앞서 앤의 독백으로 흘린다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1291",
+      "act": "재언급",
+      "points": ["Q62"],
+      "text": "슈엔이 NIMPH의 오류를 모른다며 '애초에 저게 어디에서 온 건지는 아무도 모른다'고 한다",
+      "about": ["person:슈엔"],
+      "evidence": [{ "scene": "event_miraclesnow2_01_e", "lines": ["18-21"] }],
+      "reason": "#21 — 숲속요정이 연 'NIMPH는 누가 만들었나, 인간의 기술이 아닌가'(Q62)를 미실리스 CEO의 입으로 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1292",
+      "act": "암시",
+      "points": ["F728"],
+      "text": "안젤리나가 지휘관 일행을 미실리스에서 온 사람으로 알고 '하루만 더 기다려 달라, 바로 전달하겠다'고 한다",
+      "about": ["person:안젤리나", "org:리콜&릴리즈"],
+      "evidence": [{ "scene": "event_miraclesnow2_02_e", "lines": ["20-24"] }],
+      "reason": "#21-24 — 매달 돈을 받아 가던 리콜&릴리즈 관계자들의 갈취(F728)를 돈 이야기 없이 먼저 비춘다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1293",
+      "act": "암시",
+      "points": ["F730"],
+      "text": "앤이 '눈이 그치면 다 잊어버릴 것 같다'면서 수첩에 다 적었다며 '절대 안 잊어버리겠다'고 한다",
+      "about": ["person:앤"],
+      "evidence": [{ "scene": "event_miraclesnow2_06_s", "lines": ["49-61"] }],
+      "reason": "#53 · #58 — 눈이 그치며 지워진 기억과, 그래도 블랙박스로 남은 2주의 기억(F730)을 둘 다 앞서 말한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1294",
+      "act": "암시",
+      "points": ["F730", "Q100"],
+      "text": "루피가 앤이 '괜찮다'고만 하는 것은 곤란한 표정을 지은 누군가를 기억하는 것이라 하고, 앤도 엄마가 얼마나 힘들었는지 '기억났다'고 한다",
+      "about": ["person:앤", "person:루피"],
+      "evidence": [{ "scene": "event_miraclesnow2_06_e", "lines": ["11-20", "53-56"] }],
+      "reason": "#18 '기억하고 있는 거야' — 매일 리셋에도 무언가가 남는다는 그림이 3일 뒤 블랙박스로 남은 기억(F730)과 그 까닭(Q100)으로 이어진다. 같은 일이라는 확인이 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1295",
+      "act": "암시",
+      "points": ["F725"],
+      "text": "인간 때 기억 가운데 15년 전 가족과 트리를 만든 크리스마스만 남은 양산형 니케가 '차라리 아무것도 기억 못 했으면' 하고 괴로워한다",
+      "about": ["concept:니케"],
+      "evidence": [{ "scene": "event_miraclesnow1_06_s", "lines": ["54-67"] }],
+      "reason": "#55-60 — 가족 기억이 니케를 사람일 때에 묶는 '가장 강한 주박'이라 지운다는 엑시아의 설명(F725)을 앞서 한 니케의 모습으로 보인다. 모티프라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1416",
+      "person": "person:앤",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "매일 기억이 리셋되어 어제를 모르던",
+      "after": "눈 내린 2주의 기억이 블랙박스로 남아 깨어나자 엄마 · 루피 · 지휘관을 알아보는",
+      "trigger": [{ "scene": "event_miraclesnow2_06_e", "lines": ["68-77"] }],
+      "time": "S49",
+      "points": ["F730"],
+      "evidence": [{ "scene": "event_miraclesnow2_epilogue", "lines": ["19-21", "32-38"] }],
+      "reason": "#20 '엄마랑 루피 언니랑 선생님이 왜 여기 있어요?' — 슈엔 #32-38: 매일 리셋은 그대로지만 2주의 기억은 남는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1417",
+      "person": "person:앤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:안젤리나"],
+      "before": "엄마가 보고 싶어도 곤란해할까 '괜찮다'고만 하던",
+      "after": "엄마 품에 안겨 '포기하지 않아 줘서 고마워요 · 사랑해요'라 하는",
+      "trigger": [{ "scene": "event_miraclesnow2_06_e", "lines": ["38-43"] }],
+      "time": "S49",
+      "evidence": [{ "scene": "event_miraclesnow2_06_e", "lines": ["44-72"] }],
+      "reason": "앞서 03_s#29-39 '저는 루피 언니랑 선생님만 있어도 좋아요' — 안젤리나가 '이리 오렴' 하자 #45 · #56 · #72",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1418",
+      "person": "person:루피",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:앤"],
+      "text": "처음 만난 앤을 방송에서 '내 귀여운 여동생'이라 소개하고, 기억 소거에도 지지 않을 '최고로 특별한 날'을 만들어 주기로 결심한다",
+      "evidence": [{ "scene": "event_miraclesnow1_intermission_01", "lines": ["57-63"] }],
+      "reason": "#61-63 '앤에게 절대 지워지지 않는 기억을 만들어 버리기로' — 02_s#49 '내 귀여운 여동생 앤', 이후 엄마 찾기까지 앞장선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: event_miraclesnow2_05_e#81-83,86,93 (안젤리나에게 관리비를 요구한 이름 없는 리콜&릴리즈 관계자 — 무리 · 단역, F728). 시점은 S49(1회독) 그대로. 안젤리나는 이 단위에만 나와 인물 변화를 적지 않았다. 슈엔의 사과(05_s#55)는 회사 일 수습이라 관계 변화로 보지 않았다"
+}

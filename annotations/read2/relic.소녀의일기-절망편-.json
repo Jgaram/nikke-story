@@ -1,0 +1,86 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M21\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:소녀의일기-절망편-",
+  "session": "M21",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I195",
+      "target": "org:포비스트",
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_00", "lines": [0, 3] }],
+      "reason": "'우리 넷' · '헬레틱이 넷' — 직계에게 복수하려는 헬레틱 넷(ch33 F1636 · F1637)이 포비스트다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    },
+    {
+      "id": "I196",
+      "target": "person:니힐리스타",
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_01", "lines": [1] }],
+      "reason": "'N선배' — 포비스트가 짓밟혔다는 직계 셋(ch33 _08#40 니힐리스타 · 리버렐리오 · 인디빌리아)의 머리글자.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    },
+    {
+      "id": "I197",
+      "target": "person:리버렐리오",
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_01", "lines": [1] }],
+      "reason": "'L선배' — 직계 셋 가운데 리버렐리오의 머리글자(ch33 _08#40).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    },
+    {
+      "id": "I198",
+      "target": "person:인디빌리아",
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_01", "lines": [1] }],
+      "reason": "'I선배' — 직계 셋 가운데 인디빌리아의 머리글자(ch33 _08#40).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E488",
+      "act": "재언급",
+      "points": ["F838"],
+      "text": "일기를 쓴 헬레틱 소녀가 '나도 니케였을 때 얘기만 들어도 벌벌 떨었다'고 한다",
+      "about": ["concept:헬레틱"],
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_00", "lines": [2] }],
+      "reason": "#2 — 헬레틱은 모두 침식된 니케에서 시작했다는 니힐리스타의 말(F838).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    },
+    {
+      "id": "E489",
+      "act": "재언급",
+      "points": ["F1636"],
+      "text": "넷이 똘똘 뭉쳐 직계들에게 본때를 보여 주자며 복수를 정한다",
+      "about": ["org:포비스트"],
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_03", "lines": ["0-3"] }],
+      "reason": "ch33 베히모스가 밝힌 직계에 대한 복수(F1636)의 시작.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    },
+    {
+      "id": "E490",
+      "act": "암시",
+      "points": ["F1873"],
+      "text": "'너희가 그렇게 소중하게 여기는 걸, 우리가 빼앗아버릴 거야'",
+      "about": ["org:포비스트"],
+      "evidence": [{ "scene": "relic:소녀의일기-절망편-_03", "lines": [4] }],
+      "reason": "ch38 지휘관 · 라피는 포비스트의 복수가 자기들만의 퀸을 만드는 것이라 짐작한다(F1873). 빼앗을 것이 퀸인지는 원문이 말하지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M21" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "일기를 쓴 헬레틱 소녀(포비스트 넷 가운데 하나)와 '많이 다친 친구'가 누구인지 이 유실물만으로는 정할 수 없어 암시 언급으로 적지 않았다."
+}

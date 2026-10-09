@@ -1,0 +1,56 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M22\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:충격다크매터란무엇인가",
+  "session": "M22",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I202",
+      "target": "person:레비아탄",
+      "evidence": [{ "scene": "relic:충격다크매터란무엇인가_02", "lines": ["1-4"] }],
+      "reason": "다크 매터를 '물처럼 자유자재로' 쓰는 '나 정도 되는 훌륭한 헬레틱'이 닳으면 채워 준다 — 검은 물을 다루는 레비아탄(F1634), ch34_01_s#12-13 '충전 · 여분'. 이름은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+    },
+    {
+      "id": "I203",
+      "target": "org:포비스트",
+      "evidence": [{ "scene": "relic:충격다크매터란무엇인가_02", "lines": ["3-4"] }],
+      "reason": "다크 매터를 몸에 두르기만 하라는 '너희' = 다크 매터를 두른 다른 포비스트(F1647 — 베히모스 · 지즈 · 바하무트). 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E519",
+      "act": "재언급",
+      "points": ["F1635"],
+      "text": "'나노 머신이니까 언체인드에는 주의해야 한다 — 언체인드는 나노 머신을 죽이니까'",
+      "about": ["concept:언체인드", "concept:다크_매터"],
+      "evidence": [{ "scene": "relic:충격다크매터란무엇인가_03", "lines": ["0-1"] }],
+      "reason": "ch33 레비아탄 — 지휘관의 피가 나노머신을 죽인다(F1635).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U236",
+      "topic": "지상",
+      "text": "포비스트는 한 헬레틱이 다크 매터를 다루어 나머지에게 두르게 하고 닳으면 채워 주며, 설명서를 정말 읽었는지 불시에 '1111'로 확인하겠다고 할 만큼 넷이 엮여 산다",
+      "about": ["org:포비스트", "concept:다크_매터"],
+      "points": ["F1661"],
+      "evidence": [{ "scene": "relic:충격다크매터란무엇인가_02", "lines": ["0-4"] }],
+      "reason": "02#3-4 — 03#3-5의 '1111' 확인까지. 필자 · 독자는 I202 · I203(추정).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+    }
+  ]
+}

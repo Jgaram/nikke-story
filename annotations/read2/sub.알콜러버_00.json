@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:알콜러버_00",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U82",
+      "topic": "일상 · 문화",
+      "text": "방주의 웬만한 술은 다 마셔 본 애주가도 지상의 술은 구할 길이 없어, 메신저로 지휘관에게 웃돈을 얹어 부탁하고 맨정신에 한 모금씩 음미하겠다고 한다",
+      "about": ["place:방주", "place:지상"],
+      "points": ["F382"],
+      "evidence": [{ "scene": "sub:알콜러버_00", "lines": ["13-20"] }],
+      "reason": "#14-16 · #58-59",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

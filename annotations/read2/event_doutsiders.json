@@ -1,0 +1,124 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M05\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_doutsiders",
+  "session": "M05",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I58",
+      "target": "person:조셉",
+      "speaker": true,
+      "evidence": [{ "scene": "event_doutsiders_prologue", "lines": ["0-10", "13-15"] }],
+      "reason": "'방주의 모든 빛을 꺼뜨리기로 했다'는 익명 성명 — 이터널 스카이 테러는 조셉의 단독 범행(F780)이고 '빛 한 줄기'를 호소한다(05_s#24-31). 영상 속 목소리가 조셉이라는 말은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E151",
+      "act": "암시",
+      "points": ["F781"],
+      "text": "조셉이 정보를 넘기며 '엔터 헤븐의 친구'를 둘러대고, 체포 전에 '그 사람 쪽 이야기도 들어 보지 않겠냐'고 거듭 묻는다 — 그가 바로 단독범으로, 스스로 정체를 드러낸다(F781)",
+      "about": ["person:조셉"],
+      "evidence": [{ "scene": "event_doutsiders_04_s", "lines": ["19-38"] }],
+      "reason": "#31-32 · 36-38. 다음 씬 04_e에서 바이퍼가 단독범이라 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "E152",
+      "act": "암시",
+      "points": ["F781"],
+      "text": "크로우가 협조는 하되 '날 배신자로 만드는 형태는 아니었으면' 한다며 호위만 붙인다 — 일부러 지휘관을 조셉과 만나게 해 스스로 드러나게 한 계획(F781)",
+      "about": ["person:크로우"],
+      "evidence": [{ "scene": "event_doutsiders_01_e", "lines": ["18-33"] }],
+      "reason": "#24 · 31-33. 04_e#42 바이퍼가 같은 말로 되짚는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D199",
+      "person": "person:바이퍼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'지금은 우리 목줄을 쥔 사람'이라 믿어 주는",
+      "after": "숨긴 폭탄 앱을 따지고 핸드폰을 맞바꿔 '공범자'가 된 — 이용당한 줄 알면서 고맙다는 말에 '어이가 없다'면서 번호를 남기는 사이",
+      "trigger": [{ "scene": "event_doutsiders_03", "lines": ["42-46"] }],
+      "points": ["F779"],
+      "evidence": [{ "scene": "event_doutsiders_03", "lines": ["48-75"] }],
+      "reason": "#48-52 · 72-75. 끝은 05_e#7-23",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U117",
+      "topic": "방주 사회",
+      "text": "격벽으로 갈린 아우터 림에는 식량 공급도 빛도 없어, 주민들은 '하루 한 시간만이라도 빛을 쬐게 해 달라'고 호소하지만 방주 시민은 손해 볼 이유가 없어 외면한다",
+      "about": ["place:아우터_림"],
+      "points": ["F782"],
+      "evidence": [{ "scene": "event_doutsiders_05_s", "lines": ["17-42"] }],
+      "reason": "#17 · 24-31 조셉 · #33-42 크로우",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "U118",
+      "topic": "방주 사회",
+      "text": "방주 시민권은 칩 하나에 달려, 칩을 도난당한 회사원은 경찰에게 아우터 림 불법 탈출범으로 잡혀 하류인간 틈에 내던져진다 — 게이트 밖으로 잘못 나온 비시민권자는 사살된다",
+      "about": ["place:아우터_림", "place:방주"],
+      "points": ["F780", "F783"],
+      "evidence": [{ "scene": "event_doutsiders_intermission_01", "lines": ["20-29"] }],
+      "reason": "#25-29. 사살 안내는 05_e#43-45",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "U119",
+      "topic": "경제",
+      "text": "아우터 림의 마약 거래상은 물량을 못 맞추면 팔다리를 내놓으라 하고, 정부 첩보 스쿼드 이그조틱은 이들을 단속 대신 '관리'하며 정보부 앞에서 커버를 쳐 준다",
+      "about": ["place:아우터_림", "org:이그조틱"],
+      "points": ["F778"],
+      "evidence": [{ "scene": "event_doutsiders_02_e", "lines": ["18-47"] }],
+      "reason": "#23-24 · 46-47",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "U120",
+      "topic": "일상 · 문화",
+      "text": "아우터 림 최대 환락가 배드 드림에는 로열 로드의 부자부터 중앙 정부 간부까지 드나들고, 외부와 통신이 끊기는 곳이라 밀담 장소로도 쓰인다",
+      "about": ["place:아우터_림"],
+      "evidence": [{ "scene": "event_doutsiders_03", "lines": ["3-5"] }],
+      "reason": "#3-5 · 31",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "U121",
+      "topic": "기술",
+      "text": "방주의 하늘은 인공 조명 이터널 스카이라, 테러로 꺼지자 빛 한 점 없는 시내와 공원의 주민들이 패닉 · 폐소공포증 · 외상 후 장애를 호소했다",
+      "about": ["place:방주"],
+      "points": ["F777"],
+      "evidence": [{ "scene": "event_doutsiders_01_s", "lines": ["0-4"] }],
+      "reason": "#2-4",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ]
+}

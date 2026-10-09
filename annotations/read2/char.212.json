@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M80\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:212",
+  "session": "M80",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I628",
+      "target": "person:엑시아",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_novel_01", "lines": ["79-83"] }],
+      "reason": "새벽 라운지에서 무언가를 먹고 '이 맛은?!' — 05#72-74 엑시아가 밤새 게임하며 먹은 엠마 요리의 '알 수 없는 신맛'을 털어놓고, 05#83-85 라운지에 갔음을 인정한다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1787",
+      "person": "person:노벨",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'왓슨'이 곁에 있으면 [명탐정의 감]이 숨 쉬듯 발동한다며 전속 조수로 삼아 평생 끌고 다니겠다는",
+      "evidence": [{ "scene": "ep:d_nikke_novel_05", "lines": ["105-122", 147] }],
+      "reason": "05#116-117 '조수로 붙어 있던 동안만은 … 숨 쉬듯이 발동' · #122 '전속 조수가 될 생각은'. 노벨 → 지휘관 관계 기준이 아직 없다(성격 D82 · 팬텀 D1590뿐)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 엑시아(CCTV 해킹 · 초회 한정판) · 엠마(요리) · 네온의 모습은 기존 성격 기준(D76 · D85 · D13)대로라 적지 않았다. 01#13 퍼펙트는 이 씬이 의문 Q78의 제기 자리라 따로 적지 않았다. 시점 실마리 없음."
+}

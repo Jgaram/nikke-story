@@ -1,0 +1,350 @@
+{
+  "unit": "event_beautyfullshot1",
+  "session": "R46",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "BEAUTY FULL SHOT(1 · 2부 씬 28개). 방주 시내 무장 집단을 언더월드 퀸이 부하들로 쓸어버리다 사쿠라 · 로산나의 얼굴이 보도된다(01_s). 머스탱은 헛소문은 진위와 상관없이 진실이 된다며('Ark First Idol'이 왜 죽었는지 생각해 보라, Q198) 지상 해변에서 자기 잡지 아모르 테트라 화보를 찍어 몸을 피하고 소문을 덮게 한다(01_e). 동행은 카운터스 · 메어리, 촬영 지도 바이퍼와 보조 자칼, 싸움 말릴 길티, 길티 제어 · 호위용 안전요원 메이든 — 목단은 임시 통합 보스로 남는다(02_s). 코랄 아일랜드에서 라피 팀은 머스탱의 부탁으로 사람이 살 수 있는지 조사한다(03_e → 2_04_s, 인구 백여 명). 사쿠라는 분홍 돌고래 사랑 전설을 좇아 메이든식 '스페셜 미끼'로 돌고래를 불러내고(05_e), 바위섬 조난을 핑계로 지휘관과 하룻밤을 보내며 아버지의 병 · 은장도로 니케가 된 과거와, 조직과 지휘관을 다 가질 때까지 기다리겠다는 마음을 밝힌다(2_01 · 2_02). 같은 밤 바이퍼는 로산나에게 시비를 걸었다 넘어지고 핸드폰이 부서져 울며(2_03), 이그조틱 · 초커 족쇄 · 언더월드 퀸에 대한 질투를 드러낸다. 로산나는 히트맨 시절과 보스의 배신을 말하며 자기 폰을 주고 서핑을 가르친다(2_intermission). 길티는 메이든과 친구가 된다(2_05_e). 낚싯대에 걸린 황금 크라켄(장갑 약화)을 길티 · 자칼 · 바이퍼의 폰 폭탄 · 사쿠라의 저격 · 메이든의 [정지]로 격추하고, 황금 크라켄과 분홍 돌고래를 배경으로 단체샷을 찍는다(2_06). 에필로그 — 화보 덕에 갱스터 추측은 사라진다.",
+  "scenes": [
+    {
+      "scene": "event_beautyfullshot1_prologue",
+      "text": "지상 해변 — 바베큐 · 낚시 팀은 즐겁고, 사진기 앞의 사쿠라 · 로산나만 굳어 있다"
+    },
+    {
+      "scene": "event_beautyfullshot1_01_s",
+      "text": "며칠 전 방주 시내 — 언더월드 퀸이 무장 집단을 쓸어버리고, 두 수장의 사진이 보도된다"
+    },
+    {
+      "scene": "event_beautyfullshot1_01_e",
+      "text": "머스탱 — 소문은 진실이 된다(Ark First Idol), 지상 해변에서 아모르 테트라 화보를 찍어라"
+    },
+    {
+      "scene": "event_beautyfullshot1_02_s",
+      "text": "이틀 전 지휘관실 — 즉석사진기, 동행(바이퍼 · 자칼 · 길티 · 메이든), 섬 도착"
+    },
+    {
+      "scene": "event_beautyfullshot1_02_e",
+      "text": "갈아입기 — 바이퍼의 도발, 로산나 · 사쿠라가 지휘관을 탈의실 앞에 세운다"
+    },
+    {
+      "scene": "event_beautyfullshot1_03_s",
+      "text": "굳은 두 사람 — 해파리 사진에 둘이 웃고 같이 찍기로 한다"
+    },
+    {
+      "scene": "event_beautyfullshot1_03_e",
+      "text": "라피 팀의 코랄 아일랜드 조사 임무, 서핑하는 로산나, 백상아리 낚시 대결(메이든 · 길티)"
+    },
+    {
+      "scene": "event_beautyfullshot1_intermission",
+      "text": "사쿠라가 찾는 것 — 패션잡지의 분홍 돌고래 사랑 전설"
+    },
+    {
+      "scene": "event_beautyfullshot1_04_s",
+      "text": "메이든이 게임 지식으로 스페셜 미끼 레시피 · 유인제 · 낚싯대를 사쿠라에게 준다"
+    },
+    {
+      "scene": "event_beautyfullshot1_04_e",
+      "text": "바이퍼 · 로산나의 사진 자리 대결, 사쿠라가 익힌 미끼를 먹은 자칼이 탈이 난다"
+    },
+    {
+      "scene": "event_beautyfullshot1_05_s",
+      "text": "미끼 재료 — 플라밍고 발톱(네온의 사투)"
+    },
+    {
+      "scene": "event_beautyfullshot1_05_e",
+      "text": "메어리의 '작년 여름', 라플레시아에 빠진 아니스, 스페셜 미끼로 분홍 돌고래가 나타난다"
+    },
+    {
+      "scene": "event_beautyfullshot1_06_s",
+      "text": "분홍 돌고래를 두고 사쿠라 · 로산나 · 바이퍼가 맞서고, 바위를 든 길티가 말린다"
+    },
+    {
+      "scene": "event_beautyfullshot1_06_e",
+      "text": "로산나 · 바이퍼에게 미끼를 빼앗긴 사쿠라, 크라켄 모양 바위섬에서 '조난'"
+    },
+    {
+      "scene": "event_beautyfullshot2_01_s",
+      "text": "동굴 — 간조 · 만조를 아는 사쿠라가 차를 따르며 마음 가는 대로 하겠다고 한다"
+    },
+    {
+      "scene": "event_beautyfullshot2_01_e",
+      "text": "밤 해변 — 입맞춤, '여기만은 이 사쿠라만의 것'"
+    },
+    {
+      "scene": "event_beautyfullshot2_02_s",
+      "text": "모래성 — 아버지(선대 당주)의 병과 후계 소동, 당주가 눈 감은 날 니케가 됨"
+    },
+    {
+      "scene": "event_beautyfullshot2_02_e",
+      "text": "완성된 세계, 검은 쪽과 회색 — 조직과 지휘관을 다 가질 때까지 기다리겠다"
+    },
+    {
+      "scene": "event_beautyfullshot2_03_s",
+      "text": "로산나 · 바이퍼 — '악착같다'와 '양아치', 몸싸움"
+    },
+    {
+      "scene": "event_beautyfullshot2_03_e",
+      "text": "바이퍼의 독백(이그조틱 · 독사 · 질투), 초커 족쇄, 부서진 핸드폰, 우는 바이퍼"
+    },
+    {
+      "scene": "event_beautyfullshot2_intermission",
+      "text": "돌아가자는 로산나, 자칼의 '사진은 시간을 멈추는 것', 로산나의 과거와 핸드폰"
+    },
+    {
+      "scene": "event_beautyfullshot2_04_s",
+      "text": "보트 운전 연습, 라피의 섬 조사 결과 보고, 분홍 돌고래 단체 사진 계획"
+    },
+    {
+      "scene": "event_beautyfullshot2_04_e",
+      "text": "살인 배구 · 빨간 모래성 · 서핑 천재 자칼 · 살찐 아니스"
+    },
+    {
+      "scene": "event_beautyfullshot2_05_s",
+      "text": "바베큐 — 헤도니아의 자금 지원, 바이퍼의 '타고난 바람둥이' 경고"
+    },
+    {
+      "scene": "event_beautyfullshot2_05_e",
+      "text": "길티 · 메이든이 친구가 되고, 낚싯대에 황금 크라켄이 걸린다"
+    },
+    {
+      "scene": "event_beautyfullshot2_06_s",
+      "text": "30분 전 작전 회의 — 장갑이 약한 크라켄, 바이퍼의 사진 백업"
+    },
+    {
+      "scene": "event_beautyfullshot2_06_e",
+      "text": "크라켄 격추(폰 폭탄 · 저격 · [정지]), 황금 크라켄 · 분홍 돌고래 단체샷"
+    },
+    {
+      "scene": "event_beautyfullshot2_epilogue",
+      "text": "일상으로 — 잔당 소탕 · 메이든 임무 · 바이퍼의 거래 루트, 화보로 소문이 덮인다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1506",
+      "text": "방주 시내에서 최신식 무기로 난동을 부린 무장 집단을 사쿠라 · 로산나가 부하들을 시켜 쓸어버렸는데(사망 · 중상 없음), 현장 기자가 몰래 찍은 사진으로 두 사람이 세이메이카이 · 헤도니아 수장으로 짐작되어 폭력조직 간 다툼이라는 보도가 났다",
+      "about": ["person:사쿠라", "person:로산나", "person:목단", "org:세이메이카이", "org:헤도니아", "org:언더월드_퀸"],
+      "evidence": [{ "scene": "event_beautyfullshot1_01_s", "lines": ["0-12", 26, 27, "29-30", "40-44", "52-60"] }],
+      "reason": "뉴스와 두 사람의 대화(#1-12 인질을 잡기 전에 친다, #40 우리는 나서면 안 된다), 결과 보도(#55-60). 목단은 '뒷문'으로 빼돌렸다(#41-50)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1507",
+      "text": "머스탱에 따르면 대중은 진위와 상관없이 과장된 이야기를 퍼뜨려 진실로 만들고 그 정보가 일부 강경한 이들을 행동하게 하므로 숨을 수도 맞설 수도 없다 — 그래서 사쿠라 · 로산나가 지상 해변에서 머스탱의 잡지 아모르 테트라의 화보를 찍어 방주에서 몸을 피하고 헛소문을 덮게 했다",
+      "about": ["person:머스탱", "person:사쿠라", "person:로산나", "item:아모르_테트라", "org:언더월드_퀸"],
+      "evidence": [{ "scene": "event_beautyfullshot1_01_e", "lines": ["16-25", "46-49", "55-72"] }],
+      "reason": "머스탱의 말(#21-25 진위 상관없음, #48 강경한 이들, #62-71 화보 기획). 'Ark First Idol'의 죽음을 예로 들었다(#52, Q198)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1508",
+      "text": "화보 촬영에는 지휘관 · 카운터스 · 메어리와 함께, 아모르 테트라 첫 호 표지 모델인 바이퍼가 촬영 지도로 · 자칼이 보조로, 길티가 싸움을 말릴 물리력으로, 메이든이 '안전요원'(실은 머스탱이 잉그리드에게 부탁한 길티 제어 · 두 보스 감시 · 지휘관 호위)으로 동행했고, 목단은 언더월드 퀸 임시 통합 보스로 남았다",
+      "about": ["person:바이퍼", "person:자칼", "person:길티", "person:메이든", "person:목단", "person:머스탱", "person:잉그리드", "org:카운터스", "person:메어리", "item:아모르_테트라"],
+      "evidence": [{ "scene": "event_beautyfullshot1_02_s", "lines": ["30-40", "57-62", "88-96", "100-109", "125-136"] }],
+      "reason": "목단(#33-40, #57-62), 바이퍼(#88-96), 길티(#101-109), 메이든의 귓속말(#129-131), 지휘관(#136)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1509",
+      "text": "라피 · 아니스 · 네온 · 메어리는 머스탱의 따로 받은 부탁으로 코랄 아일랜드가 방주가 없어지는 최악의 경우 인간이 살 만한 곳인지 조사했다 — 독충 · 독초가 없고 과일은 먹을 수 있으며 섬이 다 잠기지 않고 위험한 물고기도 적고 약초가 있으며 바다라 랩쳐에게서 비교적 안전해, 인구 백여 명으로 한정되지만 살아갈 수 있다고 보고했다",
+      "about": ["person:라피", "person:아니스", "person:네온", "person:메어리", "person:머스탱", "place:코랄_아일랜드", "place:방주"],
+      "evidence": [{ "scene": "event_beautyfullshot1_03_e", "lines": ["8-22"] }, { "scene": "event_beautyfullshot2_04_s", "lines": ["16-36"] }],
+      "reason": "라피의 설명(03_e #11-18)과 조사 보고(2_04_s #19-36)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1510",
+      "text": "사쿠라는 '과거 지상에서는 분홍 돌고래와 사진을 찍으면 원하는 사랑이 이루어진다는 전설이 있었다'는 패션잡지 기사를 보고 섬에서 분홍 돌고래를 찾았고, 메이든이 게임에서 얻은 레시피대로 만든 스페셜 미끼로 실제로 분홍 돌고래 떼를 불러냈다 — 라피에 따르면 분홍 돌고래는 하루에 한 번 섬 근처를 지난다",
+      "about": ["person:사쿠라", "person:메이든", "person:라피", "place:코랄_아일랜드"],
+      "evidence": [
+        { "scene": "event_beautyfullshot1_intermission", "lines": ["20-31"] },
+        { "scene": "event_beautyfullshot1_04_s", "lines": ["45-72"] },
+        { "scene": "event_beautyfullshot1_05_e", "lines": ["76-104"] },
+        { "scene": "event_beautyfullshot1_06_s", "lines": ["0-5"] },
+        { "scene": "event_beautyfullshot2_04_s", "lines": [54, 55, 57] }
+      ],
+      "reason": "회상 속 잡지 기사(intermission #26-29), 미끼 레시피(04_s #56-72, 05_s #7), 돌고래 출현(05_e #102-104), 라피(2_04_s #54)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1511",
+      "text": "사쿠라는 어두워지면 길이 잠기는 크라켄 모양 바위섬에서 물이 무릎까지인 것을 알면서도 '조난'했다며 지휘관과 단둘이 하룻밤을 보냈다 — 보는 눈도 듣는 귀도 없으니 마음 가는 대로 하겠다며 입을 맞추고 '여기(가슴)만은 이 사쿠라만의 것'이라 했다",
+      "about": ["person:사쿠라", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_beautyfullshot1_06_e", "lines": ["77-102"] },
+        { "scene": "event_beautyfullshot2_01_s", "lines": ["0-9", "42-44", "65-69"] },
+        { "scene": "event_beautyfullshot2_01_e", "lines": ["42-49"] }
+      ],
+      "reason": "지휘관 독백(06_e #91 무릎 정도)과 사쿠라의 말(#95-102), 간조 · 만조를 알고 있었다(2_01_s #1-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1512",
+      "text": "사쿠라의 아버지는 세이메이카이 선대 당주로, 방주의 기술로도 고칠 수 없는 병에 걸리자 안팎에서 후계를 노린 중상모략이 일었고 다른 자식들은 모두 치기로 목숨을 버렸다 — 연약한 소녀였던 사쿠라는 당주가 눈을 감은 날 품의 은장도로 스스로 찔러 니케가 되었고, 침입자들을 물리쳐 선대의 부하들에게 충성을 받았다",
+      "about": ["person:사쿠라", "org:세이메이카이"],
+      "evidence": [{ "scene": "event_beautyfullshot2_02_s", "lines": ["53-74"] }, { "scene": "event_beautyfullshot2_02_e", "lines": ["0-6"] }],
+      "reason": "사쿠라 본인 말. F845(선대의 딸로 당주가 됨)에 니케가 된 경위를 더한다. F830의 '죽음 뒤 스스로 니케가 되기를 택했다'와 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1513",
+      "text": "사쿠라는 검은 쪽(조직)의 자신과 회색인 지휘관 사이에서 조직을 부숴서라도 지휘관을 갖고 싶어 흔들리지만, 조직과 지휘관을 모두 가질 방법을 찾을 때까지 기다리겠다며 그 확신이 드는 날 지휘관을 지아비로 맞이하겠다고 했다",
+      "about": ["person:사쿠라", "person:지휘관", "org:세이메이카이"],
+      "evidence": [{ "scene": "event_beautyfullshot2_02_e", "lines": ["22-40", "54-65"] }],
+      "reason": "사쿠라 본인 말. F837(영원은 약속하지 않음)의 뒤 이야기",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1514",
+      "text": "바이퍼에 따르면 이그조틱은 아우터 림에 상주하며 정보를 모아 중앙 정부에 보고하고 방주에 위협이 되지 않게, 아우터 림이 무너지지 않게 조율하는 일이다 — 바이퍼는 살아남으려 속이고 이간질하고 배신하다 '독사'라 불리게 되었고, 목의 초커는 제대로 안 하면 터뜨린다고 중앙 정부가 채운 족쇄라 선택권이 없었으며, 언더월드 퀸을 동경하다 질투하게 되었다",
+      "about": ["person:바이퍼", "org:이그조틱", "org:중앙_정부", "place:아우터_림", "org:언더월드_퀸"],
+      "evidence": [{ "scene": "event_beautyfullshot2_03_e", "lines": ["0-20", "31-35", "43-47"] }],
+      "reason": "바이퍼의 독백(#0-20)과 로산나에게 한 말(#31-35, #44-47 방주의 결정 때문에 이렇게 됐다). F778 · F779와 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1515",
+      "text": "로산나는 인간일 때 조직의 히트맨으로 보스의 눈에 들려 더러운 일을 도맡았는데, 손을 씻으려던 날 보스가 자기를 제치려 세력을 키운다고 착각해 총격을 받고 니케가 되었다 — 언더월드 퀸이 된 뒤 원래 조직을 쓸어버리고 쓸쓸했으며, 헤도니아의 보스로 방주의 어둠을 지우기만 하고 남기는 것이 없었다고 했다",
+      "about": ["person:로산나", "org:헤도니아", "org:언더월드_퀸"],
+      "evidence": [{ "scene": "event_beautyfullshot2_intermission", "lines": ["98-122"] }],
+      "reason": "로산나 본인 말. F950(전대 보스가 로산나의 목을 팔아 생을 연명하려 함 · 니케가 되어 그의 목을 찌름)과 함께 성립한다고 보고 뒤집음으로 잇지 않았다 — 보스의 동기가 다르게 말해진 것은 2회독 몫",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1516",
+      "text": "로산나에게 덤볐다 쓰러진 바이퍼는 '유일하게 내 것'이던 핸드폰이 부서져 밤새 울었고 — 바이퍼는 사진이 시간을 멈춰 찍을수록 진짜 내 것이 많아진다고 자칼에게 말해 왔다 — 로산나는 대가 없는 도움이라며 자기 핸드폰을 주고 서핑 · 보트 운전을 가르쳤다",
+      "about": ["person:바이퍼", "person:로산나", "person:자칼"],
+      "evidence": [
+        { "scene": "event_beautyfullshot2_03_e", "lines": ["91-117"] },
+        { "scene": "event_beautyfullshot2_intermission", "lines": ["60-81", "89-96", "126-148"] }
+      ],
+      "reason": "부서진 핸드폰(2_03_e #91-96), 자칼의 말(2_intermission #67-80), 로산나(#93-94, #129-131, #143-148)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1517",
+      "text": "길티는 만지는 것이 다 부서져 만지기가 무섭고, 같은 스쿼드인 신 · 퀀시도 친구라 부를 수 없어 친구가 없다고 했다 — 메이든은 자기는 길티보다 강해 부서지지 않는다며, 직업상 친구를 만들기 어렵지만 친구가 되었다",
+      "about": ["person:길티", "person:메이든", "person:신", "person:퀀시"],
+      "evidence": [{ "scene": "event_beautyfullshot2_05_e", "lines": ["8-40"] }],
+      "reason": "길티 · 메이든의 대화(#15-25 길티, #27-37 메이든). 길티가 다시 범죄를 저지르면 잡으러 오겠냐는 물음에 메이든은 답을 내지 못했다(#48-66)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1518",
+      "text": "메이든 · 길티의 낚싯대에 섬으로 다가오는 황금색 크라켄이 걸렸다 — 이전에 잡은 것과 다른 개체로, 외부 장갑이 터무니없이 약했고 금빛은 이끼 · 플랑크톤 같은 것이었으며, 길티 · 자칼이 장갑을 뜯고 바이퍼가 폭탄으로 만든 로산나의 핸드폰을 사쿠라가 쏘아 코어를 없앴고 마지막 강철 가시는 메이든의 [정지]로 막았다",
+      "about": ["concept:크라켄", "person:메이든", "person:길티", "person:자칼", "person:바이퍼", "person:사쿠라", "person:로산나", "person:라피"],
+      "evidence": [
+        { "scene": "event_beautyfullshot2_05_e", "lines": ["93-102"] },
+        { "scene": "event_beautyfullshot2_06_s", "lines": ["6-10", "24-34"] },
+        { "scene": "event_beautyfullshot2_06_e", "lines": ["0-51"] }
+      ],
+      "reason": "출현(2_05_e #93-102), 메어리 · 메이든(2_06_s #6-8 이전에 잡았던 게 아님), 탐색전(#29-33), 전투(2_06_e)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1519",
+      "text": "화보가 실린 아모르 테트라가 날개 돋친 듯 팔려 언더월드 퀸이 갱스터라는 추측은 사라지고 '지상에서 희귀 동물을 연구하는 소녀들'이라는 이미지가 되었다 — 머스탱은 이를 더 자극적인 다른 이슈로 또 덮어 얼굴 노출도 곧 잊히게 하겠다고 했다",
+      "about": ["person:머스탱", "item:아모르_테트라", "org:언더월드_퀸", "person:사쿠라", "person:로산나"],
+      "evidence": [{ "scene": "event_beautyfullshot2_epilogue", "lines": ["52-64"] }],
+      "reason": "머스탱의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q198",
+      "text": "머스탱이 '다시 일어나선 안 된다'며 든 방주 최초의 아이돌(Ark First Idol)은 누구이고, 왜 어떻게 죽었나?",
+      "about": ["person:머스탱"],
+      "evidence": [{ "scene": "event_beautyfullshot1_01_e", "lines": ["50-55"] }],
+      "reason": "머스탱이 과장된 소문이 강경한 이들을 움직인다는 예로 들고(#48, #52) 사쿠라 · 로산나가 말을 잃었다(#53-54). 소문 때문에 죽었다는 것은 맥락으로 읽은 것",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S157",
+      "kind": "기준점",
+      "text": "블루워터 아일랜드(event_bluewaterisland)의 이듬해 여름 · event_seayouagain1의 크라켄 격추 뒤",
+      "ref": "event_bluewaterisland",
+      "at": [["뒤", "event_bluewaterisland", "1년"], ["뒤", "event_seayouagain1"]],
+      "evidence": [
+        { "scene": "event_beautyfullshot1_02_s", "lines": [9, 10] },
+        { "scene": "event_beautyfullshot1_05_e", "lines": [31, 32] },
+        { "scene": "event_beautyfullshot2_06_s", "lines": ["6-8", "15-16"] }
+      ],
+      "reason": "'작년 여름엔 바베큐를 직접 구웠다며'(02_s #9-12 — 네온의 바베큐), 메어리의 '작년 여름이 최고의 여름'(05_e #31), '이전에 잡았던 크라켄 · 어드마이어 호'(2_06_s #7, #16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R46", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M19",
+          "note": "02_s#9-10 '작년 여름엔 바베큐'(블루워터) + beautyfullshot2_06_s#6-7,16 '이전에 잡았던 게 아니었군요 · 어드마이어 호가 있어 이겼지만' — 크라켄 격추 뒤임을 원문이 직접 말한다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:코랄_아일랜드",
+      "evidence": [
+        {
+          "scene": "event_beautyfullshot1_03_e",
+          "lines": [
+            12
+          ]
+        }
+      ],
+      "note": "지상 바다의 섬 무리 — 화보 촬영지, 머스탱이 거주 적합성 조사를 맡김",
+      "new": true
+    },
+    {
+      "target": "item:아모르_테트라",
+      "evidence": [
+        {
+          "scene": "event_beautyfullshot1_02_s",
+          "lines": [
+            90
+          ]
+        }
+      ],
+      "note": "머스탱이 펴낸 잡지 — 첫 호 표지 모델 바이퍼, 언더월드 퀸 화보",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

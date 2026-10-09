@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:스페이드_00",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U42",
+      "topic": "지상",
+      "text": "지상에는 랩쳐 부품이 어디에나 깔려 있지만 니케 바디는 보이는 족족 랩쳐나 콜렉터가 털어 가, 조난한 니케가 남아 있을 확률은 0에 가깝다",
+      "about": ["place:지상", "concept:니케"],
+      "points": ["F225"],
+      "evidence": [{ "scene": "sub:스페이드_00", "lines": ["32-35", 70] }],
+      "reason": "#34-35 아니스 · #70 지휘관",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "U43",
+      "topic": "방주 사회",
+      "text": "조난한 니케의 구조 요청은 대부분 무시되어, 스페이드는 상금 내기로 꾸며 지휘관을 보낸다",
+      "about": ["person:스페이드", "concept:니케"],
+      "points": ["F224"],
+      "evidence": [{ "scene": "sub:스페이드_00", "lines": ["74-79"] }],
+      "reason": "#76 '그러면 대부분들 무시하시던데' — 곧 '그냥 해본 말'이라 거둔다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

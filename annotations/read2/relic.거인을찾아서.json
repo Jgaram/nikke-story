@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M43\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:거인을찾아서",
+  "session": "M43",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U378",
+      "topic": "지상",
+      "text": "높은 곳으로 올라가길 바라는 조사원이 무섭다며 내려가자는 니케들을 데리고 지상의 흔적을 쫓는다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "relic:거인을찾아서_02", "lines": ["9-11"] }],
+      "reason": "_01#6 '좀 더 높은 곳으로' · _02#9-11",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+    }
+  ],
+  "note": "Q325(거대한 사람 발자국 · 팔다리 달린 형체)는 열림 — 뒤 원문(F2617 미러의 신생 랩쳐 설계 등)이 이 형체를 잇지 않아 떡밥으로 적지 않음."
+}

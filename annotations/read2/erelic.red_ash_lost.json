@@ -1,0 +1,251 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M13\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:red_ash_lost",
+  "session": "M13",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I131",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_03", "lines": [56] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I132",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_04", "lines": [2] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I133",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_06", "lines": ["5-38", "53-77"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I134",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_07", "lines": ["3-65"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I135",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_08", "lines": ["9-49"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I136",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_09", "lines": ["1-39", 68] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I137",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_10", "lines": ["13-19", 97] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I138",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_11", "lines": ["1-18"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I139",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_15", "lines": ["1-16"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I140",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_16", "lines": ["1-77"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I141",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_19", "lines": ["1-15"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I142",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_20", "lines": [11, "34-41"] }],
+      "reason": "지휘관: 줄 · 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I143",
+      "target": "person:레드_후드",
+      "speaker": true,
+      "evidence": [{ "scene": "erelic:red_ash_lost_14", "lines": [22, 25, "28-29", "35-37", "39-40", "45-48", "51-52", "54-55", 57, "59-60", 62] }],
+      "reason": "고해소 건너편의 '욕구의 신' ??? — 릴리바이스가 '레드 후드, 나와'라 하자 '들켰네'(#64-68)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I144",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_lost_14", "lines": ["59-60"] }],
+      "reason": "레드 후드가 라푼젤에게 덮치라는 '우리 중에 남자' — 갓데스에서 남자는 지휘관 엔더슨뿐",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "I145",
+      "target": "person:로스트_넘버",
+      "evidence": [{ "scene": "erelic:red_ash_lost_15", "lines": ["20-41"] }],
+      "reason": "릴리바이스가 꽃밭에서 말을 거는 '너' — 인류의 희망이 되고 싶어 했던 페어리 테일 모델 1번(F1182 · F1183)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E302",
+      "act": "재언급",
+      "points": ["F1125"],
+      "text": "도로시가 니케가 된 계기를 '예전으로 돌아가고 싶어서'라 하고 지휘관은 과거로는 못 돌아간다고 한다 — 100년 뒤 도로시는 레드 후드가 있으면 가장 빛났던 때로 돌아갈 수 있다고 꾀었다(F1125)",
+      "about": ["person:도로시"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_06", "lines": ["67-79"] }],
+      "reason": "#69,72-74. 과거로 돌아가려는 도로시의 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "E303",
+      "act": "암시",
+      "points": ["F1182"],
+      "text": "페어리 테일 모델 5번이라는 레드 후드가 '레드가 보통 1번이어야 하는 거잖아'라 한다 — 1번은 결번(로스트 넘버)이다(F1182)",
+      "about": ["person:레드_후드", "person:로스트_넘버"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_09", "lines": ["51-53"] }],
+      "reason": "#53. 같은 단위 _15 · _16에서 1번 이야기가 나온다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "E304",
+      "act": "암시",
+      "points": ["Q363"],
+      "text": "내전으로 궤멸한 근접전 특수목적부대 현장에서 '이 소동의 주범이 당신이냐'는 도로시에게 홍련이 답하지 않고 '내 친우들의 전장을 더럽히지 말라'고만 한다 — 그 스쿼드의 '인간을 직접 살해한 최초의 사례'(Q363)",
+      "about": ["person:홍련"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_10", "lines": ["27-33"] }],
+      "reason": "#28-33. 생존자냐는 물음에 '그렇게 보이는가'",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "E305",
+      "act": "재언급",
+      "points": ["F932"],
+      "text": "릴리바이스에게 죽지 말라며 지휘관이 '니들 죽으면 매년 성묘도 가고 대성통곡할 거다'라 한다 — 릴리스의 관 곁에는 그의 군번줄이 놓여 있었다(F932)",
+      "about": ["person:엔더슨", "person:릴리바이스"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_16", "lines": ["64-77"] }],
+      "reason": "#71-72. 군번줄과 성묘를 잇는 확인은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D354",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:도로시"],
+      "text": "청결과 전략에 집착하는 도로시의 콧대를 언젠가 정면에서 꺾어 주겠다며 매일 한 판 붙자고 덤비는 앙숙",
+      "evidence": [{ "scene": "erelic:red_ash_lost_04", "lines": ["30-42"] }],
+      "reason": "#32-41. _03 하루 26번 싸움",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "D355",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:홍련"],
+      "text": "야만적이라며 하나부터 열까지 마음에 안 든다면서도, 같은 꽃밭에서 홍련이 우린 금잔화 차만큼은 훌륭하다는 앙숙",
+      "evidence": [{ "scene": "erelic:red_ash_lost_05", "lines": ["43-56"] }],
+      "reason": "#48-56. _04#13-25 '마음에 안 들어'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    },
+    {
+      "id": "D356",
+      "person": "person:엔더슨",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:릴리바이스"],
+      "text": "로스트 넘버를 잊지 못하는 리더를 위로 대신 꽃밭을 태우겠다며 몰아붙이고, 매년 성묘하며 울 테니 죽지 말라며 서로 죽지 않기로 약속하는",
+      "evidence": [{ "scene": "erelic:red_ash_lost_16", "lines": ["17-77"] }],
+      "reason": "#17,30,71-77 (F1183)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U185",
+      "topic": "구시대",
+      "text": "1차 침공 때 세상은 생존이 우선되어 인간의 존엄성이 무너졌고, 교단의 차기 여교황조차 기도와 신앙으로는 할 수 있는 일이 없어 무기를 들었다",
+      "about": ["org:V.T.C."],
+      "points": ["F1178"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_07", "lines": ["15-21"] }],
+      "reason": "#16,21",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+    }
+  ],
+  "note": "정체 볼 줄 — _14 ??? 21줄 모두 레드 후드(I143). 금서고 원문이라 씬 키는 파일 안 순서."
+}

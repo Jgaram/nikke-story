@@ -1,0 +1,50 @@
+{
+  "unit": "char:93",
+  "session": "R68",
+  "by": "claude",
+  "date": "2026-10-03",
+  "summary": "엠마 : 택티컬 업 — 엠마가 지휘관에게 줄 향수를 조합하다 액화 재머용 감응 촉매제(감각 예민도를 올리는 용액)까지 섞고, 후각 센서를 끈 채 샤워도 잊고 찾아와 지휘관이 독한 냄새에 기절한다(01). 깨어난 지휘관에게 사정을 설명하고 무릎을 빌려 재운다(02). 하루를 꼬박 잔 지휘관이 엠마의 달콤한 향을 좋아하자 함께 향수를 만들기로 한다(03). 향수 조합은 엠마의 취미 — 나눠 준 사람이 행복해하면 자기도 행복하다. 감응 촉매제가 섞인 향수를 지휘관에게 쏟아 지휘관이 열이 오르고(04), 3시간 뒤 깨어난 지휘관에게 엠마는 향수와 용액을 따로 정리했다고 사과한다(05).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_emma_tactical_01",
+      "text": "감응 촉매제가 섞인 향수 — 독한 냄새에 기절한 지휘관"
+    },
+    {
+      "scene": "ep:d_nikke_emma_tactical_02",
+      "text": "엠마의 사정 설명 — 무릎베개와 자장가"
+    },
+    {
+      "scene": "ep:d_nikke_emma_tactical_03",
+      "text": "달콤한 향 — 함께 향수를 만들기로 함"
+    },
+    {
+      "scene": "ep:d_nikke_emma_tactical_04",
+      "text": "향수 조합은 엠마의 취미 — 촉매제 향수를 쏟아 열이 오른 지휘관"
+    },
+    {
+      "scene": "ep:d_nikke_emma_tactical_05",
+      "text": "3시간 뒤 — 향수와 용액을 나눠 정리했다는 엠마"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2111",
+      "text": "엠마는 향수를 직접 제작 · 조합해 주변 사람들에게 나눠 주는 것이 취미이고, 액화 재머 조합에는 감각 예민도를 올리는 용액 [감응 촉매제]가 쓰인다 — 지휘관은 그것이 섞인 향수 냄새에 한 번은 기절하고 한 번은 열이 올랐다",
+      "about": ["person:엠마"],
+      "evidence": [
+        { "scene": "ep:d_nikke_emma_tactical_04", "lines": ["3-8"] },
+        { "scene": "ep:d_nikke_emma_tactical_01", "lines": ["27-28"] },
+        { "scene": "ep:d_nikke_emma_tactical_02", "lines": ["33-38"] }
+      ],
+      "reason": "엠마의 말(04 #3-8 취미, 01 #27-28 · 02 #35-38 감응 촉매제)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R68" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [],
+  "targets": [],
+  "revisit": []
+}

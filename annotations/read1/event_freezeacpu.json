@@ -1,0 +1,150 @@
+{
+  "unit": "event_freezeacpu",
+  "session": "R30",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "방주 할로윈 소동극. prologue — TV가 10월 30일 저녁부터 밤새 중앙 공원에서 열리는 [캔디 고스트 파티]를 홍보하고, 누군가(???) '나만의 할로윈 사탕'을 완성해 나눠 주겠다며 웃는다. 01 — 인파로 A.C.P.U.에 단체 출동 명령이 떨어져 폴리가 카운터스에게 순찰을 부탁한다. 경찰서에서 새로 넘어온 키리(시력이 나빠 모니터에 인사함)를 만나고, 키리가 쇼핑에 따라나선다. 02 — 쇼핑몰: 할로윈 소품을 살인 증거로 의심하는 노벨을 키리가 달래 순찰에 합류시키고, 드레이크는 '빌런 사탕'(결국 귀여운 동물 사탕 20봉지)을 산다. 키리는 흐릿한 세상에서 지휘관만은 선명하게 보인다. 03 — 할로윈 전날 15시, 팀 배정(키리 · 지휘관 호러 존 / 폴리 · 아니스 디저트 존 / 미란다 · 라피 · 네온 게임 존). 디저트 존의 하이라이트는 마녀가 과자를 만들어 주는 과자 집. intermission — 호러 존에서 분장한 여자가 직접 만든 사탕 바구니를 키리에게 준다. 키리는 그 여자와 사탕이 이상하게 선명하게 보였다고 하고, 지휘관은 괴리감을 느낀다. 04 — 키리가 드레이크에게 그 사탕을 나눠 주고, 게임 존에서 그 사탕을 먹은 네온 · 노벨이 토하자 노벨이 '미각을 잃게 하는 사탕'이라 단정한다. 05 — 디저트 존 과자 집 앞에서 피칠갑 분장의 여자에게 받은 사탕을 먹고 아이가 토했다는 신고. 키리는 사탕을 다 나눠 주었고 지휘관도 먹어 버려 자책한다. 06 — 폴리는 드레이크 · 노벨의 '사탕 뺏기 이벤트' 방송으로 사탕을 묶어 두고, 키리가 선명하게 보이는 사탕을 따라 과자 집 창고의 숨은 방으로 들어간다. 범인은 아이들을 좋아해 맛없는 '함정' 사탕을 섞고 사탕 길로 숨은 공간을 꾸민 여자였고(키리를 경찰 옷 입은 아이로 여김), 미각 상실은 오해였다. 여자는 이벤트 측에 넘겨지고, 폴리는 키리의 공을 칭찬한다. epilogue — 드레이크는 이벤트가 끝난 줄 모르고 21시에도 사탕을 '뺏는' 척 나눠 준다.",
+  "scenes": [
+    {
+      "scene": "event_freezeacpu_prologue",
+      "text": "캔디 고스트 파티 홍보 — 누군가의 나만의 할로윈 사탕"
+    },
+    {
+      "scene": "event_freezeacpu_01_s",
+      "text": "폴리의 부탁 — 할로윈 순찰"
+    },
+    {
+      "scene": "event_freezeacpu_01_e",
+      "text": "새로 넘어온 키리 — 쇼핑 동행"
+    },
+    {
+      "scene": "event_freezeacpu_02_s",
+      "text": "할로윈 소품을 살인 증거로 의심하는 노벨"
+    },
+    {
+      "scene": "event_freezeacpu_02_e",
+      "text": "드레이크의 빌런 사탕"
+    },
+    {
+      "scene": "event_freezeacpu_03_s",
+      "text": "할로윈 전날 15시 — 팀과 구역 배정"
+    },
+    {
+      "scene": "event_freezeacpu_03_e",
+      "text": "디저트 존 과자 집 · 게임 존 · 호러 존"
+    },
+    {
+      "scene": "event_freezeacpu_intermission_01",
+      "text": "분장한 여자의 사탕 — 키리에게 선명하게 보인 사람"
+    },
+    {
+      "scene": "event_freezeacpu_04_s",
+      "text": "드레이크에게 넘어간 사탕 — 네온이 토함"
+    },
+    {
+      "scene": "event_freezeacpu_04_e",
+      "text": "노벨: 미각을 잃게 하는 사탕"
+    },
+    {
+      "scene": "event_freezeacpu_05_s",
+      "text": "과자 집 앞 신고 — 피칠갑 분장의 여자"
+    },
+    {
+      "scene": "event_freezeacpu_05_e",
+      "text": "지휘관이 먹은 사탕 — 자책하는 키리"
+    },
+    {
+      "scene": "event_freezeacpu_06_s",
+      "text": "사탕 뺏기 방송 — 키리가 A.C.P.U.의 눈"
+    },
+    {
+      "scene": "event_freezeacpu_06_e",
+      "text": "사탕 길 끝의 숨은 방 — 오해였던 미각 상실"
+    },
+    {
+      "scene": "event_freezeacpu_epilogue",
+      "text": "끝난 줄 모르는 빌런 드레이크"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1091",
+      "text": "A.C.P.U.에 새로 넘어온 니케 키리는 시력이 매우 나빠 사람과 사물을 흐릿하게만 보고(예전에 보급 상자를 랩쳐로 알고 폭파한 적도 있다) 엉뚱한 곳을 보고 인사해 불쾌하다는 말을 듣곤 하지만, 지휘관만은 선명하게 보여 순찰에서 지휘관과 한 팀이 되었다",
+      "about": ["person:키리", "org:A.C.P.U.", "person:지휘관", "person:폴리"],
+      "evidence": [
+        { "scene": "event_freezeacpu_01_e", "lines": ["13-21"] },
+        { "scene": "event_freezeacpu_03_s", "lines": ["22-23", 34] },
+        { "scene": "event_freezeacpu_03_e", "lines": ["117-119"] },
+        { "scene": "event_freezeacpu_06_s", "lines": ["88-95"] }
+      ],
+      "reason": "아니스 · 키리 · 폴리의 말. 인물",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R30", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1092",
+      "text": "할로윈 [캔디 고스트 파티](중앙 공원 · 10월 30일 밤새)에 A.C.P.U.가 카운터스의 도움으로 순찰했는데, 분장한 여자가 나눠 준 사탕이 '미각을 잃게 하는 사탕'이라는 소동이 났지만 — 아이들을 좋아하는 그 여자가 재미로 맛없는 함정 사탕을 섞고 과자 집 창고에 숨은 방을 꾸민 것이었고 미각을 잃은 사람은 없었다",
+      "about": ["org:A.C.P.U.", "person:폴리", "person:키리", "person:미란다", "person:노벨", "person:드레이크", "org:카운터스"],
+      "evidence": [
+        { "scene": "event_freezeacpu_prologue", "lines": ["0-7"] },
+        { "scene": "event_freezeacpu_01_s", "lines": ["43-48"] },
+        { "scene": "event_freezeacpu_04_e", "lines": ["76-84"] },
+        { "scene": "event_freezeacpu_06_e", "lines": ["124-175", "187-190"] }
+      ],
+      "reason": "줄거리. '미각을 잃는다'는 노벨의 단정(04_e #84)이었고 범인의 해명과 폴리의 확인으로 오해로 끝남(06_e #136-150, 195-196)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R30", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q148",
+      "text": "흐릿하게만 보는 키리의 눈에 왜 지휘관과 — 할로윈에 사탕을 준 분장한 여자와 그 사탕만 — 선명하게 보이나?",
+      "about": ["person:키리", "person:지휘관"],
+      "evidence": [{ "scene": "event_freezeacpu_intermission_01", "lines": ["51-67"] }, { "scene": "event_freezeacpu_03_e", "lines": ["117-119"] }],
+      "reason": "지휘관이 '알 수 없는 괴리감'을 느끼고 되묻지만 원문은 설명하지 않는다. 지휘관에게 있다는 '뭔가'(Q6)와 이어질 수도 있으나 잇지 않았다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R30", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S96",
+      "kind": "기준점",
+      "text": "방주의 할로윈 — 캔디 고스트 파티 첫날(10월 30일) 15시~21시",
+      "ref": "event_freezeacpu",
+      "at": [],
+      "evidence": [
+        { "scene": "event_freezeacpu_prologue", "lines": [5] },
+        { "scene": "event_freezeacpu_03_s", "lines": ["0-1"] },
+        { "scene": "event_freezeacpu_epilogue", "lines": [0] }
+      ],
+      "reason": "TV 홍보 · 자막(할로윈 데이 전날 · 현재 시각)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R30", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:키리",
+      "evidence": [
+        {
+          "scene": "event_freezeacpu_01_e",
+          "lines": [
+            3,
+            13
+          ]
+        }
+      ],
+      "note": "A.C.P.U.에 새로 넘어온 니케 경찰, 시력이 매우 나쁨",
+      "new": false
+    }
+  ],
+  "revisit": [],
+  "note": "prologue의 ??? 는 사탕을 만든 분장한 여자로 읽힌다(나만의 할로윈 사탕 · 나눠 줌) — 이름이 없어 정체 연결은 두지 않았다."
+}

@@ -1,0 +1,35 @@
+{
+  "_comment": "예시 — 실제 2회독 기록이 아니다. 2회독 형식(docs/annotations.md \"2회독 기록\")을 보인다: 암시 언급(I) · 떡밥 암시(E). pass는 P1 비교용 칸이다.",
+  "unit": "d_ex_elevator_01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-04",
+  "mentions": [
+    {
+      "id": "I1",
+      "target": "incident:갓데스_폴",
+      "evidence": [{ "scene": "d_ex_elevator_01", "lines": ["76-80"] }],
+      "reason": "'너희가 우릴 잊지 않는 이상'(#76) · '200명의 니케가 너흴 지켜줄게'(#80) — 이름 없이 갓데스 폴에서 죽은 니케들을 가리킨다",
+      "confidence": "확실",
+      "status": "후보",
+      "pass": 1
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1",
+      "act": "암시",
+      "points": ["Q3", "J2"],
+      "text": "'네온'이 70년 전 추락한 엘리베이터의 모델 넘버를 외워 말한다 — 함께 탄 '네온'이 네온이 아님을 미리 흘린다",
+      "about": ["person:네온"],
+      "evidence": [{ "scene": "d_ex_elevator_01", "lines": ["60-62", 66] }],
+      "reason": "'너 이제 그런 것도 외우고 다니냐?'(#62) — 네온이 알 리 없는 번호를 대고, 구석의 번호(#66)와 같다. 정체가 드러나는 #71 앞이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "예시" }],
+      "pass": 2
+    }
+  ],
+  "changes": [],
+  "life": []
+}

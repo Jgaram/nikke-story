@@ -1,0 +1,79 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M54\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:140",
+  "session": "M54",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1270",
+      "act": "암시",
+      "points": ["Q114", "J14"],
+      "text": "내전이 끝난 아우터 림에서 콜렉터들이 시체를 거두고, 죽어 가는 남자는 끌려가면 '골수 한 방울까지 짜인다'며 머리를 쏴 달라 한다 — 아우터 림 시체의 쓰임",
+      "about": ["place:아우터_림"],
+      "evidence": [{ "scene": "ep:d_nikke_sugar_05", "lines": ["3-7", "33-37"] }],
+      "reason": "#6 시체를 수거해 가는 이들 · #36 — 갱 전쟁으로 거둔 시체를 실험에 쓴다는 조셉의 말(Q114, event_doutsiders)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M54" }]
+    },
+    {
+      "id": "E1271",
+      "act": "암시",
+      "points": ["Q225", "J3"],
+      "text": "반나절 넘게 정크 마운틴을 뒤진 지휘관이 잠깐 쉬고 '벌써 다 회복됐어'라 하고, 슈가는 파트너가 사람이라는 걸 한 번씩 잊는다고 한다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_sugar_03", "lines": ["89-110"] }],
+      "reason": "#92 · #96 '파트너가 사람이라는걸' · #110 — 지휘관은 인간인가(Q225) · 재생 능력의 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M54" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1395",
+      "person": "person:슈가",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'파트너'라 부르며 아무에게나 맡길 수 없는 의뢰에 불러내고, 커피향 키스가 궁금하다며 힐끔거리는",
+      "evidence": [{ "scene": "ep:d_nikke_sugar_01", "lines": [8, "53-56", "124-127"] }],
+      "reason": "출시 첫날 단위라 BRAND NEW YEAR의 관계 기준(D168)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M54" }]
+    },
+    {
+      "id": "D1396",
+      "person": "person:슈가",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "키스를 졸라 대는 의뢰 파트너",
+      "after": "어떤 상황에도 굽히지 않는 그를 '그래서 파트너'라 멋있다 하고, 쓴 커피 뒤 입을 맞추는",
+      "trigger": [{ "scene": "ep:d_nikke_sugar_03", "lines": ["107-112"] }],
+      "time": "S355",
+      "evidence": [{ "scene": "ep:d_nikke_sugar_05", "lines": ["78-80", "155-160"] }],
+      "reason": "03 #112 '슈가만 고생시킬 수 없으니까' → 05 #79-80 · #159-160 '키스하자' '좋아'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M54" }]
+    },
+    {
+      "id": "D1397",
+      "person": "person:슈가",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "원하는 것은 무슨 수를 써서라도 손에 넣어야 언제 사그라들지 모르는 '우리'가 [사람]으로 남는다 — 자기가 원하는 건 남이 원하는 것을 이뤄 주는 것",
+      "evidence": [{ "scene": "ep:d_nikke_sugar_03", "lines": ["35-45"] }],
+      "reason": "출시 첫날 단위라 DIRTY BACKYARD의 신념 기준(D370)보다 앞선다 — #42 · #44",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M54" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: ep:d_nikke_sugar_01#68 (의뢰인 양산형 니케 — 이름 없는 단역, 다음 줄부터 '양산형 니케' 이름표) · ep:d_nikke_sugar_02#120 (조직의 지원군 — 무리)"
+}

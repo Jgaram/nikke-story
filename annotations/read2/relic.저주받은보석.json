@@ -1,0 +1,57 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M12\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:저주받은보석",
+  "session": "M12",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E278",
+      "act": "암시",
+      "points": ["F1297"],
+      "text": "수정이 박힌 마스터 급 특이 랩쳐가 아무 능력도 없이 너무 굼떴다 — 뒤에 수정이 닿은 것의 에너지를 빨아들인다고 밝혀진다",
+      "about": ["concept:마스터_급"],
+      "evidence": [{ "scene": "relic:저주받은보석_01", "lines": ["0-2"] }],
+      "reason": "#1 '움직임도 너무나 굼떴다' · #2 수정 — ch27 F1297(에너지를 빨아 전기로 저장)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    },
+    {
+      "id": "E279",
+      "act": "암시",
+      "points": ["F1297"],
+      "text": "죽은 니케가 쥐고 있던 수정을 '뚜둑' 뜯어내자 수정이 조금 커진 듯했다 — 뒤에 수정이 코어 쪽으로 파고들고 에너지를 먹어 자란다고 밝혀진다",
+      "evidence": [{ "scene": "relic:저주받은보석_02", "lines": ["0-8"] }],
+      "reason": "#3 '전원이 꺼진 듯' · #6 '뜯어내는 감촉' · #8 '조금 커진 듯' — F1297",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U180",
+      "topic": "방주 사회",
+      "text": "말단 지휘관은 능력 파악용 '버리는 패'가 될 걸 알면서도 보수가 좋은 특이 랩쳐 조사를 맡아, 한참 못 보낸 돈을 가족에게 부치려 한다",
+      "evidence": [{ "scene": "relic:저주받은보석_00", "lines": ["0-3"] }],
+      "reason": "#1 '버리는 패' · #2-3 보수 · 가족에게 돈",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    },
+    {
+      "id": "U181",
+      "topic": "방주 사회",
+      "text": "끔찍한 일을 겪은 뒤 지휘관은 휴가를 내고, 함께 살아남은 니케는 스스로 기억 소거를 희망한다",
+      "about": ["concept:기억_소거"],
+      "evidence": [{ "scene": "relic:저주받은보석_04", "lines": ["4-5"] }],
+      "reason": "#5 '휴가를 냈고 … 기억 소거를 희망했다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M96\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_jinxplayer",
+  "session": "M96",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I665",
+      "target": "person:벨로타",
+      "speaker": true,
+      "evidence": [{ "scene": "event_jinxplayer_04_s", "lines": ["103-104"] }],
+      "reason": "'아직 나랑 안 붙었어!'(04_s #104) 바로 다음 씬 04_e #0 벨로타가 '아저씨, 루주, 여기야 여기!'라며 같은 말을 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1613",
+      "act": "재언급",
+      "points": ["Q133", "J48"],
+      "text": "루주가 행동을 다 읽어도 '운이 그걸 다 커버해 준다'며 블랑 · 누아르를 '규격 외'라 한다 — 쌍둥이의 행운이 진짜인지 다시 꺼냄",
+      "about": ["person:블랑", "person:누아르"],
+      "evidence": [{ "scene": "event_jinxplayer_05_e", "lines": ["66-71"] }],
+      "reason": "#67 '이 두 사람은 규격 외예요' · #69 '운이 그걸 다 커버해 주는 느낌' — Q133(블랑이 나눠 주는 행운은 무엇인가)의 행운을 다시 그린다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2128",
+      "person": "person:루주",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "자기 불운이 남에게 옮을까 두려워 불운을 막는 징크스를 쌓고, 이겨도 '제가 운이 더 좋았다'고 여기던",
+      "after": "게임에서 중요한 건 실력이고 운은 일상에 100퍼센트 영향을 주지 않는다 — 뒷면이 나와도 두렵지 않고 '이기는 게 재밌다'는 초심을 되찾은",
+      "trigger": [{ "scene": "event_jinxplayer_04_e", "lines": ["42-49", "102-106"] }],
+      "evidence": [{ "scene": "event_jinxplayer_epilogue", "lines": ["20-26", "35-42"] }],
+      "points": ["F1602", "F1603"],
+      "reason": "intermission#37-39 '불운을 막는 쪽으로 징크스가' · 04_s#16-21 → 06_e#122 '게임에서 중요한 건 실력' · epi#22 '예전처럼 두렵거나 힘들지는 않아' · #35 '이기는 게 재밌어'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    },
+    {
+      "id": "D2129",
+      "person": "person:루주",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "제 불운이 옮을 수 있다며 '정말 위험하면 바로 얘기해 달라'고 조심스레 도움을 받던",
+      "after": "방에 틀어박힌 자기를 끌어내고 믿어 준 지휘관에게 말로 다 못할 감사와 행운의 주사위를 주고, '모든 것을 다 파악했다'며 무조건 이기겠다고 웃는",
+      "trigger": [{ "scene": "event_jinxplayer_05_e", "lines": ["95-105"] }],
+      "evidence": [{ "scene": "event_jinxplayer_06_e", "lines": ["145-151", "162-165", "175-178"] }],
+      "points": ["F1603"],
+      "reason": "02_e#93-105 '제 불운이 옮겨갈 수도' → 06_e#147-149 '틀어박혀서 체념하고 있던 제게 도움의 손을' · #176-178 '플레이어님의 모든 것을 다 파악'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 실마리 없음(벨로타가 살아 나오지만 니케 벨로타는 계속 산다 — S114는 인간 시절). 06_e의 '화려한 중년 여성'은 이름 없는 단골 손님이라 사전에 더하지 않았다. 블랑 · 누아르가 같은 제비를 고르는 것(03_s#63)은 F1219의 흔한 되풀이라 적지 않았다."
+}

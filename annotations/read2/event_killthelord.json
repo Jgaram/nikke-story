@@ -1,0 +1,289 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M16\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_killthelord",
+  "session": "M16",
+  "by": "claude",
+  "date": "2026-10-07",
+  "note": "event_killthelord_intermission_01#49-84의 이름표가 원문 데이터에서 어긋나 있다 — 'D(독백)'은 지휘관 독백, #52 · #57 · #59 · #68 · #71 · #79의 'D:'는 지휘관 대사(문맥상 D가 아님). 자동 언급(speaks)이 D로 세는 줄이다. 줄거리 설정 오류가 아니라 slips에 두지 않는다.",
+  "mentions": [
+    {
+      "id": "I162",
+      "target": "person:로산나",
+      "speaker": true,
+      "evidence": [{ "scene": "event_killthelord_02_e", "lines": ["69-70"] }],
+      "reason": "'옆집에 사는 사람' — 문을 열자 #74 로산나가 '로즈'로 인사한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "I163",
+      "target": "person:로산나",
+      "speaker": true,
+      "evidence": [{ "scene": "event_killthelord_03_e", "lines": [40] }],
+      "reason": "되던져진 도끼 뒤 부서진 문 너머로 로산나가 보이고(#46) '어이, 도끼녀'로 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "I164",
+      "target": "person:식스오",
+      "evidence": [{ "scene": "event_killthelord_03_e", "lines": [106, "108-111"] }],
+      "reason": "'우리 스쿼드와 내 동료를 건드린 녀석' · '목단을 건드린 것은…' — 에필로그#25에서 로산나가 식스오라 부른다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E353",
+      "act": "암시",
+      "points": ["F1349"],
+      "text": "카밀라가 꽃을 들고 남편과 아침 인사 · 기도를 나누고 몇 번이나 철문 잠금을 확인하고 나간다 — 그 남편은 이미 죽어 있다",
+      "about": ["person:카밀라"],
+      "evidence": [{ "scene": "event_killthelord_prologue", "lines": ["1-16", "31-39"] }],
+      "reason": "#3 · #9 남편의 대답은 카밀라의 환각 — 06_s에서 같은 철문 너머 침대에 시신(F1349).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E354",
+      "act": "암시",
+      "points": ["Q177"],
+      "text": "'힘들 때 큰 도움을 받았다, 그 덕에 당신이 살아 있다'며 받은 도움을 남에게 베풀러 나선다 — 그 도움이 누구에게서 왔는지는 말하지 않는다",
+      "about": ["person:카밀라"],
+      "evidence": [{ "scene": "event_killthelord_prologue", "lines": ["21-25"] }],
+      "reason": "#21-23 — 구세주 · 미스트 디퓨저를 누가 건넸는지(Q177)는 열려 있다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E355",
+      "act": "암시",
+      "points": ["F1351"],
+      "text": "로열 아파트 복도 곳곳에 붉은 디퓨저가 놓였고, 입주자 대표회장이 이웃에게 같은 디퓨저를 선물로 돌린다",
+      "about": ["concept:미스트"],
+      "evidence": [{ "scene": "event_killthelord_02_s", "lines": ["90-93", "131-136"] }],
+      "reason": "#91 · #134 — 에필로그에서 미스트로 만든 환각 디퓨저로 밝혀진다(F1351).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E356",
+      "act": "암시",
+      "points": ["F1349"],
+      "text": "모임의 로열 부부들은 남편의 사업 성공 · 딸의 존재를 서로 맞춰 가며 말하고, 회장은 남편이 사업가였다가 정치인이 된다",
+      "about": ["concept:로열"],
+      "evidence": [{ "scene": "event_killthelord_03_s", "lines": ["13-18", "28-38", "45-47"] }],
+      "reason": "#35 애가 있었나 · #47 말이 맞지 않음 — 06_e#44 단체로 환각을 보고 있었다(F1349의 향).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E357",
+      "act": "재언급",
+      "points": ["Q161"],
+      "text": "로산나가 자기 스쿼드와 동료를 건드린 녀석을 쫓아 모임에 왔다 하고, 지휘관은 평판이 바닥난 목단 · 모란회를 떠올린다",
+      "about": ["person:로산나", "person:목단", "person:식스오"],
+      "evidence": [{ "scene": "event_killthelord_03_e", "lines": ["105-111"] }],
+      "reason": "#106-110 — event_dirtybackyard에서 식스오가 목단에게 누명을 씌운 일(Q161).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E358",
+      "act": "재언급",
+      "points": ["F850"],
+      "text": "잠들기 전 지휘관이 지난 [사장] 임무 때의 결정을 떠올리며 이번에도 올바른 결정을 못 내릴까 걱정한다",
+      "about": ["person:지휘관", "person:D"],
+      "evidence": [{ "scene": "event_killthelord_intermission_01", "lines": ["68-71"] }],
+      "reason": "#70 — event_ltk에서 지휘관이 최종 결정권자가 된 사장 건(F850).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E359",
+      "act": "암시",
+      "points": ["F1349"],
+      "text": "남편이 앓던 병은 꽃도 방에 못 들일 만큼 기관지가 예민해지는 병이었다는데, 저택은 온통 생화와 디퓨저다",
+      "about": ["person:카밀라"],
+      "evidence": [{ "scene": "event_killthelord_05_e", "lines": ["10-14"] }],
+      "reason": "#12-14 — 꽃과 디퓨저는 시신의 악취를 덮는 것이었다(F1349, 06_s#118).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E360",
+      "act": "재언급",
+      "points": ["F852"],
+      "text": "D가 지휘관에게 '또 다른 왕관이 씌워졌다'며 선택을 맡기고, 끝나자 '이제 왕관은 내려놓아도 돼'라 한다",
+      "about": ["person:D", "person:지휘관"],
+      "evidence": [{ "scene": "event_killthelord_06_e", "lines": [18, "77-78"] }],
+      "reason": "#18 · #77 — event_ltk에서 D가 말한 [왕관](죽일 권한과 그 책임, F852).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D403",
+      "person": "person:D",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'왕관을 쓴 중요 인물'이라 밤새 침대 곁에 꼿꼿이 앉아 지키는 — 보호 겸 감시 대상으로 대하는 임무 동료",
+      "evidence": [{ "scene": "event_killthelord_02_e", "lines": ["26-51"] }],
+      "reason": "#41-43 보호 및 감시 — 앞의 D 기록은 성격 기준(D53)뿐.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M58", "note": "출시가 앞선 event_ltk D1429가 D → 지휘관 관계 기준 — D404 변화는 그대로" }
+      ]
+    },
+    {
+      "id": "D404",
+      "person": "person:D",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "보호 · 감시 대상",
+      "after": "잠 못 드는 지휘관의 손목을 잡아 재우고, 함께해 줘 고맙다며 다음에도 잘 부탁한다는",
+      "trigger": [{ "scene": "event_killthelord_intermission_01", "lines": ["76-84"] }],
+      "evidence": [{ "scene": "event_killthelord_06_e", "lines": [56, "79-83"] }],
+      "reason": "#80-83 고맙다 · 잘 부탁해(내버려 두는 갈래는 #151-153 '함께할 수 있어서 즐거웠어요').",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D405",
+      "person": "person:D",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "악행이 사라져 왕관을 쓸 필요가 없는 세상과 안식을 바라면서도, 허상을 붙들면 내일이 오지 않는다며 현실을 살아가야 한다고 믿는다",
+      "evidence": [{ "scene": "event_killthelord_06_s", "lines": ["55-61"] }],
+      "reason": "#57-61 환각 속 바람 — 06_e#68-75 '현실은 현실일 뿐'.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M58",
+          "note": "출시가 앞선 event_ltk D1428(선악의 저울)이 D 신념 기준 — 왕관 없는 세상의 바람은 F1349에 남는다"
+        }
+      ]
+    },
+    {
+      "id": "D406",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'미스터는 내 남자'라며 어떤 변장을 해도 한눈에 알아보고, 부부 위장에 질투하며 남편 삼고 싶은 사람은 미스터뿐이라 한다",
+      "evidence": [{ "scene": "event_killthelord_03_s", "lines": ["85-95", "109-110"] }],
+      "reason": "#86 · #94-95 · #110 — 02_e#99 문 앞에서 이미 웃었다.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M58",
+          "note": "출시가 앞선 event_queensorder D1436이 로산나 → 지휘관 관계 기준(KILL THE LORD의 '미스터는 내 남자'는 그 뒤 모습)"
+        }
+      ]
+    },
+    {
+      "id": "D407",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:D"],
+      "text": "D를 '도끼 살인마' · '도끼녀'라 부르며 재수 없다고 으르렁대면서도 이웃으로 엮였으니 손잡자고 제안하는",
+      "evidence": [{ "scene": "event_killthelord_03_e", "lines": ["47-48", "95-98", "114-115"] }],
+      "reason": "#47 도끼녀 · #98 '아주 진하게 엮여보자' — 03_s#98-99 도끼 살인마.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D408",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:D"],
+      "before": "재수 없는 도끼녀",
+      "after": "'여전히 재수 없지만 이번만큼은 진심으로 고맙다'",
+      "trigger": [{ "scene": "event_killthelord_epilogue", "lines": ["2-11"] }],
+      "evidence": [{ "scene": "event_killthelord_epilogue", "lines": ["13-16"] }],
+      "reason": "#15 — D가 식스오를 쫓을 미스트 디퓨저를 건넸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U206",
+      "topic": "방주 사회",
+      "text": "로열들은 낡은 건물을 다 헐고 다시 지은 초고가 아파트에 모여 살고 — 로열도 대부분 값 때문에 못 들어간다 — 부부 동반 사교 모임에서 사업 · 돈 이야기로 인맥을 넓힌다",
+      "about": ["concept:로열"],
+      "evidence": [{ "scene": "event_killthelord_02_s", "lines": ["55-58", "88-89", "152-155"] }],
+      "reason": "#56-58 · #89 · #154-155 — 02_e#7-12 '벌 만큼 벌었다는 기준은 없다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "U207",
+      "topic": "일상 · 문화",
+      "text": "생화는 구하기 어려운 귀한 것이라, 특수 용액으로 시들지 않게 한 프리저브드 플라워가 이웃 선물이 되고 생화로 꾸민 저택은 '진짜 부자'의 표시다",
+      "about": ["concept:로열"],
+      "evidence": [{ "scene": "event_killthelord_02_s", "lines": ["123-130"] }],
+      "reason": "#125-127 — 프롤로그#5 · 04_s#24-25도.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "U208",
+      "topic": "방주 사회",
+      "text": "간절한 바람이 있거나 집에서 맞고 사는 이들이 기적을 약속하는 모임을 찾아 스스로 집을 떠나 기도방에 기거하고, 정체가 밝혀져도 모임을 찾는 사람은 늘어난다",
+      "about": ["org:화양연화"],
+      "points": ["F1347", "F1350"],
+      "evidence": [{ "scene": "event_killthelord_05_s", "lines": ["33-48", "55-57"] }],
+      "reason": "#43 '집에 있어 봐야 맞기만' · #46 — 06_e#110 늘어나는 사람.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "U209",
+      "topic": "방주 사회",
+      "text": "높은 분의 딸 일은 조사도 남에게 떠넘기고, 남편의 죽음이나 환각 물건 사용도 높은 분의 입막음 · 개입으로 처벌 없이 조용히 처리된다",
+      "about": ["org:중앙_정부"],
+      "points": ["F1345", "F1350"],
+      "evidence": [{ "scene": "event_killthelord_06_e", "lines": ["49-51", "105-108"] }],
+      "reason": "#50-51 · #107-108 K의 예상 — 01_e#24-33 떠넘김.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M26\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_newflavor",
+  "session": "M26",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E634",
+      "act": "암시",
+      "points": ["F1839"],
+      "text": "지상에서 브래디가 '그래서 나, 지휘관을…' 하다 말이 끊긴다",
+      "about": ["person:브래디", "person:지휘관"],
+      "reason": "#50. 06_e#134-136 '처음에는 호기심이었는데 … 지휘관은 어떤 맛이 날지'가 이 말을 잇는다.",
+      "evidence": [{ "scene": "event_newflavor_04_s", "lines": ["44-50"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E635",
+      "act": "암시",
+      "points": ["F1839"],
+      "text": "털어놓은 뒤 브래디가 지휘관을 보며 '정말, 궁금하네'라 침을 삼킨다",
+      "about": ["person:브래디", "person:지휘관"],
+      "reason": "#101-102 '…꿀꺽'. 다음 씬 06_e#129 '지휘관을 맛보고 싶어'로 이어진다.",
+      "evidence": [{ "scene": "event_newflavor_06_s", "lines": ["100-102"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E636",
+      "act": "암시",
+      "points": ["F1839"],
+      "text": "브래디가 언젠가 맛보고 싶은 것으로 정보 · 이야기 · 감정 없는 '온전한 맛'을 꼽는다",
+      "about": ["person:브래디"],
+      "reason": "#25-27. 지휘관의 손에서 '평생 맛보고 싶었던 온전한 맛'을 찾는다(06_e#177, F1839).",
+      "evidence": [{ "scene": "event_newflavor_05_s", "lines": ["21-27"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E637",
+      "act": "암시",
+      "points": ["F1838"],
+      "text": "대체 식품을 구하러 간다는 말에 엔더슨이 쿠킹오일이 모른다는 게 '이상하군'이라며 '기대하지'라 하고, 지휘관은 찝찝해한다",
+      "about": ["person:엔더슨"],
+      "reason": "#10 · #13 · #15. 지휘관이 05_e#37 '올라오기 직전부터 느낀 이질감'으로 되짚고, 엔더슨은 '기대한 대로의 결과'라 한다(F1838).",
+      "evidence": [{ "scene": "event_newflavor_04_s", "lines": ["6-15"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E638",
+      "act": "암시",
+      "points": ["Q234"],
+      "text": "브래디가 퍼펙트 주재료는 지상은 아니지만 '불행하게도' 있다 하고 곧바로 공장에서 흔적 없이 사라진 양산형 니케를 말하며, 방주 재료는 '모두 같은 이야기를 한다'고 한다",
+      "about": ["concept:퍼펙트", "concept:양산형_니케"],
+      "reason": "#59-60 · #67-68 · #89. 재료와 사라진 니케를 잇달아 꺼내 재료가 니케와 얽혔음을 흘린다(W13) — 답은 아직 없다.",
+      "confidence": "추정",
+      "evidence": [{ "scene": "event_newflavor_06_s", "lines": ["57-68", 89] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E639",
+      "act": "암시",
+      "points": ["F1851"],
+      "text": "홀로 남은 크러스트가 '평범한 맛'이라며 브래디가 행복해하는 맛을 만들겠다고 요리를 거듭한다",
+      "about": ["person:크러스트", "person:브래디"],
+      "reason": "#62-66. 다음 이벤트에서 '기억도 정보도 없는 맛' 연구에 매달린다(F1851).",
+      "evidence": [{ "scene": "event_newflavor_epilogue", "lines": ["59-66"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D621",
+      "person": "person:브래디",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'응'으로 짧게 답하며 상대를 핥아 맛을 보고, 재료를 덤덤히 읊은 뒤 '총평'으로 요리에 담긴 마음까지 짚는",
+      "reason": "#57 할짝 · #85-89 '총평 … 애정이 듬뿍'. 03_e#40-45에서도 같은 총평.",
+      "evidence": [{ "scene": "event_newflavor_02_s", "lines": ["53-61", "84-92"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D622",
+      "person": "person:브래디",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "처음 본 지휘관에게 퍼펙트 은폐를 털어놓고 '공범을 만든 거지'라 하는",
+      "reason": "#12 '공범을 만든 거지'.",
+      "evidence": [{ "scene": "event_newflavor_03_s", "lines": ["7-12"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D623",
+      "person": "person:브래디",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "공범으로 끌어들인 처음 본 지휘관",
+      "after": "'공범이 되고 싶다'는 말에 숨긴 사정을 털어놓고 고마워하는",
+      "reason": "#35 '공범이 되고 싶을 뿐' · #98 '공범이 되어줘서 고마워'.",
+      "evidence": [{ "scene": "event_newflavor_06_s", "lines": ["32-37", "96-98"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D624",
+      "person": "person:브래디",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "사정을 털어놓은 공범",
+      "after": "처음 온전한 맛을 준 지휘관을 '미미'라 부르며 자주 맛보게 해 달라 조르는",
+      "points": ["F1839"],
+      "reason": "#182 '미미라고 부르겠어' · #197. epilogue#47-49 '자주 보자'.",
+      "evidence": [{ "scene": "event_newflavor_06_e", "lines": ["175-183", "196-202"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D625",
+      "person": "person:브래디",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "맛과 정보를 끊임없이 받아야 해 먹는 게 즐겁지 않지만, 언젠가 '온전한 맛'과 '나'의 맛을 보기를 설레며 사는",
+      "reason": "#23 '기대하고, 설레하면서 살고 있지' · #30 '나'.",
+      "evidence": [{ "scene": "event_newflavor_05_s", "lines": ["21-36"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D626",
+      "person": "person:크러스트",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'헤헤' 웃는 밝고 쉽게 긴장하는 요리사로, 음식 남기기를 싫어해 끔찍한 맛도 싹싹 긁어 먹는",
+      "reason": "#19 '싹싹 긁어 먹었네' · #45 '음식 남기는 걸 별로 안 좋아하잖아'.",
+      "evidence": [{ "scene": "event_newflavor_02_e", "lines": ["13-20", "43-45"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D627",
+      "person": "person:크러스트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "첫 요리에 '미미'라 극찬한 지휘관을 특별히 여겨 '미식가님'이라 부르는",
+      "reason": "#15-16 '미식가님이라 부르겠어요'.",
+      "evidence": [{ "scene": "event_newflavor_01_e", "lines": ["12-18"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D628",
+      "person": "person:크러스트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:브래디"],
+      "text": "브래디의 상태를 늘 살펴, 지상 재료가 모자라면 주운 지갑이라도 내밀어 무기력에서 끌어내는 리더",
+      "reason": "#56-57 '이 방법밖에 없거든요' · #68. 05_s#5에서도 상태를 부탁한다.",
+      "evidence": [{ "scene": "event_newflavor_05_s", "lines": ["46-57", "68-70"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D629",
+      "person": "person:크러스트",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "브래디가 행복해하는 맛을 만들어 내는 것이 첫 번째 목표",
+      "reason": "#65-66 '그게 나의 첫 번째 목표였으니까'.",
+      "evidence": [{ "scene": "event_newflavor_epilogue", "lines": ["61-66"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D630",
+      "person": "person:에이드",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "주문에 진심을 담는 메이드로, 재료 탓이어도 맛보지 않은 자기 잘못이라며 먼저 사과하는",
+      "reason": "#37 '맛을 보지 않은 저의 잘못' · #53. 03_s#103-104 브래디의 맛보기도 '진짜 메이드'.",
+      "evidence": [{ "scene": "event_newflavor_03_e", "lines": ["33-38", "52-53"] }],
+      "status": "기각",
+      "confidence": "확실",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M62",
+          "note": "출시가 앞선 event_perfectmaid(2024-02)의 에이드 기준(D1523 · D1526 · D1524)을 남긴다"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U261",
+      "topic": "방주 사회",
+      "text": "퍼펙트가 잘못되자 위에서는 '확인 중'으로 시간을 끌다 보관 기계 오작동이라 발표하고 손해 본 가게에 지원금을 줘, 불만은 들어가고 '대처 잘했다'는 말만 남는다",
+      "about": ["concept:퍼펙트", "place:방주"],
+      "points": ["F1836"],
+      "reason": "#26 아나운서 발표 · #114-115 지원금과 여론.",
+      "evidence": [{ "scene": "event_newflavor_06_e", "lines": ["26-28", "112-115"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "U262",
+      "topic": "경제",
+      "text": "맛 이상 소문이 돌자 음식점들은 이전 제조분 재료를 사재기한다",
+      "about": ["concept:퍼펙트"],
+      "reason": "#44 '음식점들이 벌써 사재기를 시작했다'.",
+      "evidence": [{ "scene": "event_newflavor_intermission_01", "lines": ["43-44"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "U263",
+      "topic": "일상 · 문화",
+      "text": "식당의 '이달의 추천 메뉴' 수비드 안심 스테이크도 소 안심을 흉내 낸 퍼펙트에 가니쉬를 곁들인 것이다",
+      "about": ["concept:퍼펙트", "place:방주"],
+      "points": ["F590"],
+      "reason": "#14 '소의 안심 부위를 모방한 퍼펙트'.",
+      "evidence": [{ "scene": "event_newflavor_prologue", "lines": [7, "14-16"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "U264",
+      "topic": "일상 · 문화",
+      "text": "니케들도 쿠킹오일의 요리 방송 [아삭바삭 쿠킹 클래스]를 보며 따라 요리한다",
+      "about": ["org:쿠킹오일", "person:엠마"],
+      "points": ["F1834"],
+      "reason": "#5 '요리할 때마다 보고 있는걸' · #37.",
+      "evidence": [{ "scene": "event_newflavor_02_s", "lines": ["2-5", "37-42"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "note": "W13(06_s 사라진 양산형 니케 · '불행하게도') → E638(추정, Q78 · Q234 열림이라 엣지 없음). 정체 볼 줄 없음. 01_s#48 크러스트의 '사장님'은 원문에 누구인지 없어 적지 않는다."
+}

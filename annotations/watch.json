@@ -1,0 +1,384 @@
+{
+  "_comment": "2회독 볼 거리 (B1b) — 1회독이 '2회독 몫'으로 넘긴 것(SESSIONS.md R 인계 · 기록 파일 이유 · 요약). 작업 메모라 후보가 아니다. 2회독 인계 파일이 그 단위 차례에 붙인다. 형식: docs/annotations.md \"2회독 볼 거리\"",
+  "session": "B1b",
+  "by": "claude",
+  "date": "2026-10-05",
+  "items": [
+    {
+      "id": "W1",
+      "unit": "char:222",
+      "kind": "떡밥",
+      "text": "홍련의 '먼 훗날 있을 도령의 선택' · '난 이미 선택해버렸네' — 뜻이 드러나지 않아 사실로 세우지 않았다",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_05", "lines": ["108-113"] }],
+      "points": ["F662"],
+      "from": "char.222.json F662 이유 (R14)"
+    },
+    {
+      "id": "W2",
+      "unit": "ch30",
+      "kind": "떡밥",
+      "text": "그레이브의 '거울을 봐라'에 라피 · 지휘관이 놀란 까닭 — 앞 원문에 같은 말이 있다(되짚지 않았다)",
+      "evidence": [{ "scene": "d_main_30_07_s" }],
+      "points": ["F1409"],
+      "from": "R41 인계"
+    },
+    {
+      "id": "W3",
+      "unit": "event_darkhero",
+      "kind": "떡밥",
+      "text": "마테리얼 H 보고서(방주의 축소판 · 니케로 에너지 생성)와 방주 동력원의 연결 — 보고서는 동력원이 니케로 에너지를 만든다고 말하지 않아 일레그의 결론만 적었다(Q59도 회수하지 않음)",
+      "evidence": [{ "scene": "event_darkhero_02_s" }],
+      "points": ["F1466", "Q59"],
+      "from": "R43 인계"
+    },
+    { "id": "W4", "unit": "char:195", "kind": "떡밥", "text": "'아무 꿈도 안 꾸고 푹 잤다' — 드러난 것이 없어 적지 않았다", "from": "R45 인계" },
+    {
+      "id": "W5",
+      "unit": "event_beautyfullshot1",
+      "kind": "떡밥",
+      "text": "'원래 조직을 쓸어버린 뒤 헤도니아의 보스'라는 말과 '헤도니아 전대 보스'의 관계 — 보스의 동기가 다르게 말해진 것(F1515와 F950은 함께 성립한다고 보고 뒤집음으로 잇지 않았다)",
+      "points": ["F1515", "F950", "F958"],
+      "from": "R46 인계 · event_beautyfullshot1.json F1515 이유"
+    },
+    {
+      "id": "W6",
+      "unit": "event_juveniledays",
+      "kind": "떡밥",
+      "text": "마르차나의 '마지막까지 함께 하실 수 있기를' — 암시라 적지 않았다",
+      "evidence": [{ "scene": "event_juveniledays_epilogue", "lines": ["65-66"] }],
+      "from": "R48 인계"
+    },
+    { "id": "W7", "unit": "ch34", "kind": "떡밥", "text": "신데렐라가 라피를 보며 배가 욱신거린다는 '옛날 일' — 암시", "evidence": [{ "scene": "d_main_34_af_01" }], "from": "R51 인계" },
+    { "id": "W8", "unit": "ch34", "kind": "떡밥", "text": "아니스의 '빛나는 별' — 암시", "evidence": [{ "scene": "d_main_34_05" }], "from": "R51 인계" },
+    {
+      "id": "W9",
+      "unit": "char:226",
+      "kind": "떡밥",
+      "text": "침식 코드를 고친 것이 레드 슈즈라는 연결 — 이 편은 말하지 않고 레드 슈즈의 반응만 보인다(독자는 F1681 · F1701로 안다)",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_04", "lines": [106] }, { "scene": "ep:d_nikke_rapunzel_puregrace_05", "lines": [9] }],
+      "points": ["F1714", "F1681", "F1701"],
+      "from": "R53 인계 · char.226.json F1714 이유"
+    },
+    {
+      "id": "W10",
+      "unit": "event_icedragonsaga1",
+      "kind": "떡밥",
+      "text": "에필로그 끝 엑시아 · 메이든의 레이드 '다른 파티원' — 암시",
+      "evidence": [{ "scene": "event_icedragonsaga2_epilogue" }],
+      "from": "R54 인계"
+    },
+    {
+      "id": "W11",
+      "unit": "event_footstepwalkrun1",
+      "kind": "떡밥",
+      "text": "인간 라피가 병원에 있었다는 것과 Q20(지휘관이 떠올린 병원의 소녀)의 연결 — 암시",
+      "evidence": [{ "scene": "event_footstepwalkrun1_01_s" }],
+      "points": ["F1738", "Q20"],
+      "from": "R55 인계"
+    },
+    {
+      "id": "W12",
+      "unit": "event_wisdomspring",
+      "kind": "떡밥",
+      "text": "마나가 '지휘관도 아는…' 사람의 연구실이라 하다 끊긴 것 — 말끝 흐림이라 요약에만 두었다",
+      "evidence": [{ "scene": "event_wisdomspring_04_s", "lines": ["85-88"] }],
+      "from": "R56 인계"
+    },
+    {
+      "id": "W13",
+      "unit": "event_newflavor",
+      "kind": "떡밥",
+      "text": "퍼펙트 공장의 양산형 니케가 사라진 것과 브래디의 '불행하게도' — 퍼펙트 재료에 대한 암시(사실에는 브래디의 말 그대로만 적었다)",
+      "evidence": [{ "scene": "event_newflavor_06_s" }],
+      "points": ["F1837", "Q234"],
+      "from": "R58 인계"
+    },
+    {
+      "id": "W14",
+      "unit": "ch38",
+      "kind": "떡밥",
+      "text": "지즈가 지휘관을 '남자'라며 '그거 받아 가자, 필요했잖아' — Q199(베히모스가 받아 가야 할 것)와 이어 보이지만 원문이 잇지 않아 F1877에 말 그대로만 적었다",
+      "evidence": [{ "scene": "d_main_38_08", "lines": ["160-163"] }],
+      "points": ["F1877", "Q199"],
+      "from": "R60 인계"
+    },
+    {
+      "id": "W15",
+      "unit": "ch38",
+      "kind": "떡밥",
+      "text": "아니스가 사람들의 뒷말 이야기에 식은땀을 흘린 것 — 묘사라 요약에서도 뺐다",
+      "evidence": [{ "scene": "d_main_38_05_s", "lines": ["34-50"] }],
+      "from": "R60 인계"
+    },
+    {
+      "id": "W16",
+      "unit": "event_unbreakablesphere1",
+      "kind": "떡밥",
+      "text": "미하라가 돌아왔을 때 유니가 느낀 '이질적인 감각' — 묘사라 뺐다",
+      "evidence": [{ "scene": "event_unbreakablesphere2_03_e", "lines": [96] }],
+      "from": "R61 인계"
+    },
+    {
+      "id": "W17",
+      "unit": "char:162",
+      "kind": "언급",
+      "text": "미하라의 '그 사람'(이름이 가려진 '■■■은', [누군가]의 얼굴) — 지휘관으로 보이지만 원문은 끝내 이름을 대지 않는다",
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": [66] }, { "scene": "ep:d_nikke_mihara_bondingchain_05", "lines": [29] }],
+      "points": ["Q246"],
+      "from": "R62 인계 · char.162.json Q246 이유"
+    },
+    {
+      "id": "W18",
+      "unit": "event_ce006",
+      "kind": "떡밥",
+      "text": "프로비던스가 동력원 파장으로 랩쳐만 겨누다 카운터스를 겨눈 일 — 릴리가 까닭을 모른 채 넘겨 의문으로만 두었다",
+      "evidence": [{ "scene": "event_ce006_2_06_s" }],
+      "points": ["Q254"],
+      "from": "R64 인계"
+    },
+    {
+      "id": "W19",
+      "unit": "event_ce006",
+      "kind": "변화",
+      "text": "프리바티 · 릴리의 '믿음' 대화와 일레그의 조언",
+      "evidence": [{ "scene": "event_ce006_1_04_e" }],
+      "from": "R64 인계"
+    },
+    {
+      "id": "W20",
+      "unit": "fl:boom_the_ghost",
+      "kind": "언급",
+      "text": "도로시가 BFG를 들기 전 '지금 라푼젤 앞에 서서 도움을 요청하는 제 목소리를 들어줘요'를 떠올리는 장면 — 누구의 말인지 원문이 밝히지 않는다",
+      "evidence": [{ "scene": "fl:boom_the_ghost_25", "lines": ["48-56"] }],
+      "from": "R66 인계"
+    },
+    {
+      "id": "W21",
+      "unit": "char:234",
+      "kind": "떡밥",
+      "text": "도로시의 목걸이 — 무엇인지 나오지 않는다",
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_serendipity_04", "lines": ["44-47"] }],
+      "from": "R66 인계 · char.234.json 요약"
+    },
+    {
+      "id": "W22",
+      "unit": "fl:absolute",
+      "kind": "변화",
+      "text": "앱솔루트 셋의 관계 변화(은화의 사과 · 엠마의 '변하지 않을게') — 줄거리에 필요한 만큼만 사실에 두었다",
+      "points": ["F2108", "F2109"],
+      "from": "R68 인계"
+    },
+    { "id": "W23", "unit": "fl:reborn_evil", "kind": "떡밥", "text": "지휘관이 본 세면대의 피", "evidence": [{ "scene": "fl:reborn_evil_02" }], "from": "R70 인계" },
+    { "id": "W24", "unit": "ch41", "kind": "변화", "text": "지즈의 '구제 불능'과 민트의 '진작 이럴걸' 같은 감정선", "from": "R72 인계" },
+    { "id": "W25", "unit": "ch42", "kind": "변화", "text": "레비아탄 · 세이렌 · 아니스의 감정선", "from": "R73 인계" },
+    { "id": "W26", "unit": "event_goddessfall1", "kind": "변화", "text": "홍련 · 이사벨 · 노아 · 라푼젤 · 파피용의 감정선, 파피용이 웃으며 달아나다 되돌아간 마음", "from": "R74 인계" },
+    { "id": "W27", "unit": "erelic:goddess_fall_mini", "kind": "변화", "text": "도로시의 허전함 · 하란과 이사벨의 약속 · 노아의 오만 연기", "from": "R75 인계" },
+    { "id": "W28", "unit": "char:262", "kind": "변화", "text": "리버렐리오와 지휘관의 감정선", "from": "R75 인계" },
+    { "id": "W29", "unit": "char:74", "kind": "변화", "text": "솔린과 지휘관의 감정선 · 관계 변화(줄거리에 새로 드러난 사실은 없다)", "from": "char.74.json 요약 (R75)" },
+    { "id": "W30", "unit": "fl:terminus_ticket", "kind": "생활상", "text": "노라 고향의 이마 인사 · 동요 [집으로 가는 길]", "from": "R76 인계" },
+    { "id": "W31", "unit": "fl:terminus_ticket", "kind": "변화", "text": "노라와 브리드의 감정선", "from": "R76 인계" },
+    { "id": "W32", "unit": "char:75", "kind": "변화", "text": "디젤의 감정선 · 관계 변화(줄거리에 새로 드러난 사실은 없다)", "from": "R76 인계 · char.75.json 요약" },
+    { "id": "W33", "unit": "char:73", "kind": "변화", "text": "브리드의 감정선 · 관계 변화 — '일탈'이 '일상'이 되기까지(줄거리에 새로 드러난 사실은 없다)", "from": "char.73.json 요약 (R76)" },
+    {
+      "id": "W34",
+      "unit": "fl:ark_guardian",
+      "kind": "변화",
+      "text": "도로시의 자기혐오 · 릴리바이스의 '죽기 싫다' · 스노우 화이트의 분노",
+      "evidence": [{ "scene": "fl:ark_guardian_09" }],
+      "from": "R77 인계"
+    },
+    { "id": "W35", "unit": "char:471", "kind": "변화", "text": "릴리바이스가 시작한 소원 쪽지와 스노우 화이트의 감정선(줄거리 사실은 F2379 · F930-2뿐)", "from": "R77 인계 · char.471.json 요약" },
+    { "id": "W36", "unit": "fl:sin_editor", "kind": "변화", "text": "레이블의 집착 · 아르카나와 팬텀의 다정함", "from": "R78 인계" },
+    { "id": "W37", "unit": "fl:fatal_maid", "kind": "변화", "text": "벨벳과 코코아(선배 · 후배) · 메이드들의 믿음", "from": "R78 인계" },
+    { "id": "W38", "unit": "ch43", "kind": "변화", "text": "프린세스와 스톨 3세 · 프리 랫 · 빅 마담의 감정선", "from": "R79 인계" },
+    { "id": "W39", "unit": "ch43", "kind": "떡밥", "text": "경비원의 초코맛 퍼펙트", "from": "R79 인계" },
+    { "id": "W40", "unit": "ch44", "kind": "변화", "text": "감정선 — 스노우 화이트 · 라피의 눈물, 버닝엄의 고백, 목단과 모란회, 프레자일과 리버린, E.H.의 속죄", "from": "R80 인계" },
+    { "id": "W41", "unit": "fl:lie_cause_recoil", "kind": "변화", "text": "제인 · 레인 · 치사토와 타키나 · 카페 스위티의 감정선", "from": "R81 인계" },
+    { "id": "W42", "unit": "char:860", "kind": "변화", "text": "치사토의 감정선(줄거리에 새로 드러난 사실은 없다)", "from": "char.860.json 요약 (R81)" },
+    { "id": "W43", "unit": "char:862", "kind": "떡밥", "text": "엑시아가 쿠루미에게 느낀 '친근감' — 성우 · 콜라보 장난일 수 있다", "from": "R81 인계" },
+    { "id": "W44", "unit": "char:862", "kind": "변화", "text": "쿠루미의 감정선(줄거리에 새로 드러난 사실은 없다)", "from": "char.862.json 요약 (R81)" },
+    { "id": "W45", "unit": "char:861", "kind": "변화", "text": "타키나 · 밀크의 감정선(줄거리에 새로 드러난 사실은 없다)", "from": "char.861.json 요약 (R81)" },
+    { "id": "W46", "unit": "fl:enter_heaven", "kind": "변화", "text": "바이퍼의 맹세와 추적기, E.H.의 '막아 달라' 부탁", "from": "R82 인계" },
+    {
+      "id": "W47",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "1-6",
+      "kind": "떡밥",
+      "text": "아르카나의 '제 꿈에 들어와 줘서' — 뜻이 분명하지 않아 의문으로 세우지 않았다",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_19", "lines": [184] }],
+      "from": "R83 인계"
+    },
+    {
+      "id": "W48",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "1-6",
+      "kind": "떡밥",
+      "text": "아르카나의 '이번엔 내가 먼저 없어졌구' — 뜻이 분명하지 않아 의문으로 세우지 않았다",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": [58] }],
+      "from": "R83 인계"
+    },
+    {
+      "id": "W49",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "1-6",
+      "kind": "떡밥",
+      "text": "연설에 슈엔이 왔다는 메시지 — 요약에만 두었다",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_04", "lines": [363] }],
+      "from": "R83 인계"
+    },
+    {
+      "id": "W50",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "1-6",
+      "kind": "떡밥",
+      "text": "학교에 남자가 없다 — 요약에만 두었다",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_10", "lines": [40] }],
+      "from": "R83 인계"
+    },
+    { "id": "W51", "unit": "fl:2x2_love_1ch", "parts": "1-6", "kind": "변화", "text": "로맨스 장면", "from": "R83 인계" },
+    {
+      "id": "W52",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "7-9",
+      "kind": "변화",
+      "text": "로맨스 장면 · 상황극",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_31" }, { "scene": "fl:2x2_love_1ch_35" }],
+      "from": "R84 인계 · fl.2x2_love_1ch.p7.json 요약"
+    },
+    {
+      "id": "W53",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "7-9",
+      "kind": "변화",
+      "text": "아르카나가 지어낸 첫사랑 이야기(도서관)",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_28" }],
+      "from": "R84 인계"
+    },
+    {
+      "id": "W54",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "10-12",
+      "kind": "떡밥",
+      "text": "'달콤한 [꿈]에 취해' — Q329(꿈 비유)를 다시 건드린다(회수가 아니라 재언급)",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_51" }],
+      "points": ["Q329"],
+      "from": "R84b 인계"
+    },
+    {
+      "id": "W55",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "10-12",
+      "kind": "떡밥",
+      "text": "지휘관이 '몸에 구멍 나도 멀쩡' — Q324 관련 재언급",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_44", "lines": [15, 32] }],
+      "points": ["Q324"],
+      "from": "R84b 인계"
+    },
+    {
+      "id": "W56",
+      "unit": "fl:2x2_love_1ch",
+      "parts": "10-12",
+      "kind": "변화",
+      "text": "로맨스 장면 · 이상형 질문 · 술자리",
+      "from": "R84b 인계 · fl.2x2_love_1ch.p10.json 요약"
+    },
+    {
+      "id": "W57",
+      "unit": "fl:2x2_love_2ch",
+      "parts": "1-5",
+      "kind": "변화",
+      "text": "고백 · 반지 같은 로맨스 결말 — 사실로 적지 않았다",
+      "from": "R85 인계 · fl.2x2_love_2ch.p1.json 요약"
+    },
+    {
+      "id": "W58",
+      "unit": "fl:2x2_love_2ch",
+      "parts": "6-10",
+      "kind": "변화",
+      "text": "결혼식 장난 · 질투 · 노래방 · 놀이터 고백 · 메이드복 같은 로맨스",
+      "evidence": [{ "scene": "fl:2x2_love_2ch_44" }, { "scene": "fl:2x2_love_2ch_39" }, { "scene": "fl:2x2_love_2ch_42" }, { "scene": "fl:2x2_love_2ch_59" }],
+      "from": "R86 인계"
+    },
+    { "id": "W59", "unit": "char:583", "kind": "변화", "text": "연인 아르카나의 로맨스 · 아이들 에피소드(케이티 · 에릭)", "from": "char.583.json 요약 (R86)" },
+    {
+      "id": "W60",
+      "unit": "side:pretty_star",
+      "kind": "떡밥",
+      "text": "오스왈드의 손자가 버닝엄이라 도로시의 '후손까지 죽이겠다'와 이어진다 — 해석이라 적지 않았다",
+      "points": ["F921"],
+      "from": "R87 인계"
+    },
+    { "id": "W61", "unit": "fl:good_world", "kind": "변화", "text": "지휘관의 선택지 답 · 백학의 쓰다듬기", "from": "R88 인계" },
+    { "id": "W62", "unit": "char:620", "kind": "변화", "text": "백학의 로맨스 · 일상(줄거리 사실은 F2571뿐)", "from": "R88 인계 · char.620.json 요약" },
+    { "id": "W63", "unit": "ch45", "kind": "떡밥", "text": "아르카나가 외친 금지가 아이리의 길잡이가 된 것(타로 · '내 선택이 틀리지 않길') — 고의로 보인다", "from": "R89 인계" },
+    { "id": "W64", "unit": "event_staranis1", "parts": "1-3", "kind": "떡밥", "text": "아니스의 꿈(어두운 방 · 떨어짐 · 웃는 요요)", "from": "R91 인계" },
+    { "id": "W65", "unit": "event_staranis1", "parts": "1-3", "kind": "변화", "text": "리스 · 아니스의 '플라스틱 별' 대화, 민트 · 프리카의 우정", "from": "R91 인계" },
+    {
+      "id": "W66",
+      "unit": "event_staranis1",
+      "parts": "4-6",
+      "kind": "변화",
+      "text": "민트 · 프리카 · 아니스의 속마음",
+      "evidence": [{ "scene": "event_staranis2_02_e" }],
+      "from": "R92 인계"
+    },
+    {
+      "id": "W67",
+      "unit": "event_staranis1",
+      "parts": "4-6",
+      "kind": "변화",
+      "text": "방주 사람을 다시 보는 아니스",
+      "evidence": [{ "scene": "event_staranis2_06_s" }],
+      "from": "R92 인계"
+    },
+    { "id": "W68", "unit": "char:18", "kind": "생활상", "text": "아우터 림 생활상", "from": "R92 인계" },
+    {
+      "id": "W69",
+      "unit": "fl:b-side_idol",
+      "kind": "변화",
+      "text": "민트의 속마음 · 지휘관과의 관계 변화 — '급이 같은 사람'",
+      "evidence": [{ "scene": "fl:b-side_idol_06" }],
+      "from": "R93 인계"
+    },
+    { "id": "W70", "unit": "char:600", "kind": "변화", "text": "민트의 속마음 · 지휘관과의 관계 변화(로맨스 · 일상극)", "from": "R93 인계" },
+    {
+      "id": "W71",
+      "unit": "fl:bitter_spice",
+      "kind": "변화",
+      "text": "프리카의 속마음 — '살기 위한 음악'에서 벗어나기",
+      "evidence": [{ "scene": "fl:bitter_spice_09" }],
+      "from": "R93 인계"
+    },
+    { "id": "W72", "unit": "char:601", "kind": "변화", "text": "프리카의 속마음 · 지휘관과의 관계 변화(로맨스 · 일상극)", "from": "R93 인계" },
+    { "id": "W73", "unit": "fl:ark_ranger", "kind": "변화", "text": "블랙의 신념 · 레드 · 블루의 히어로관과 블랙의 마지막 독백, 감독 · 루크 이야기", "from": "R94 인계" },
+    {
+      "id": "W74",
+      "unit": "fl:wave_to_you",
+      "kind": "떡밥",
+      "text": "지휘관이 손대자 기계가 꺼진 일 — 사실 문장에만 넣고 의문으로 세우지 않았다(라피의 농담뿐)",
+      "evidence": [{ "scene": "fl:wave_to_you_23", "lines": ["47-48"] }],
+      "from": "R95 인계"
+    },
+    {
+      "id": "W75",
+      "unit": "fl:wave_to_you",
+      "kind": "변화",
+      "text": "마르차나의 '나는 등대가 아니라 구속구', 신데렐라 · 세이렌 · 모리의 마음(세이렌의 지휘관 호감, 모리의 '강해지려는 까닭')",
+      "from": "R95 인계"
+    },
+    { "id": "W76", "unit": "fl:project_matis", "kind": "변화", "text": "슈엔 · 맥스웰 · 라플라스의 마음(애정 · 괴물론 · 정의관)과 어린 슈엔 환영, 니케 맥스웰의 '창조주로서 고마움'", "from": "R96 인계" },
+    {
+      "id": "W77",
+      "unit": "ch47",
+      "kind": "변화",
+      "text": "마리안 · 온리 원의 마음 — 온리 원이 자기 안에서 마리안과 대화한다",
+      "evidence": [{ "scene": "d_main_47_05" }],
+      "from": "R97 인계"
+    },
+    { "id": "W78", "unit": "ch48", "kind": "변화", "text": "마리안 · 온리 원의 마음", "evidence": [{ "scene": "d_main_48_05" }], "from": "R97 인계" },
+    { "id": "W79", "unit": "ch48", "kind": "변화", "text": "장화 · 홍련 자매, 레드 슈즈의 '화합' 신념(d_main_48_03 #116), 맥스웰의 변화 — 메모에 단위가 없어 ch48에 둔다", "from": "R97 인계" },
+    { "id": "W80", "unit": "fl:persona_on_frontline", "kind": "변화", "text": "은화의 훈련, 아이기스의 '소중한 사람', 모나의 '인간' 정의, 에이드의 요원 일", "from": "R98 인계" },
+    { "id": "W81", "unit": "fl:great_villain_union", "kind": "변화", "text": "리더의 무게를 깨닫는 드레이크, 신의 '제대로 된 방식'과 거절", "from": "R99 인계" },
+    { "id": "W82", "unit": "char:404", "kind": "변화", "text": "길티의 '갱생하면 떠날까' — 갱생과 지휘관 곁에 남는 것을 잇는 마음", "from": "R99 인계 · char.404.json 요약" }
+  ]
+}

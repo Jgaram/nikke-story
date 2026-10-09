@@ -1,0 +1,45 @@
+{
+  "_comment": "떡밥 줄기 예시 — 형식 · 규칙은 docs/annotations.md \"떡밥 줄기\". 실제 줄기는 annotations/threads.json",
+  "session": "B0b",
+  "by": "claude",
+  "date": "2026-10-04",
+  "threads": [
+    {
+      "id": "J1",
+      "title": "로망티스트의 낚시",
+      "text": "로망티스트는 방주에서 사라진 낚시를 지상에서 다시 할 수 있을까",
+      "weight": "독립",
+      "questions": ["Q1", "Q2", "Q4"],
+      "about": ["person:로망티스트"],
+      "reason": "서브퀘스트 두 편 안에서 던지고 회수한다 — 메인과 닿지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "B0b" }]
+    },
+    {
+      "id": "J2",
+      "title": "엘리베이터의 가짜 네온",
+      "text": "갓데스 폴 엘리베이터에 함께 탄 '네온'은 누구였나",
+      "weight": "보강",
+      "questions": ["Q3"],
+      "facts": ["F5"],
+      "about": ["incident:갓데스_폴"],
+      "reason": "갓데스 폴(F5)은 메인 세계관의 사건이지만 이 줄기의 수수께끼는 한 편 안에서 풀린다",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ],
+  "relations": [
+    {
+      "id": "G1",
+      "type": "맞물림",
+      "a": "J1",
+      "b": "J2",
+      "text": "둘 다 지상행 엘리베이터를 몰래 탄 이야기다",
+      "evidence": ["F4", "F5"],
+      "reason": "예시 — 같은 장치(지상행 엘리베이터)를 함께 쓴다",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

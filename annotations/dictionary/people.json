@@ -1,0 +1,602 @@
+{
+  "_comment": [
+    "인물 사전 중 손으로 정한 것 (A1 · T2-6). 나머지 인물 대상은 빌드가 만든다:",
+    "  니케 — 니케 목록(characters)에서, 앞 이름이 같은 것(`라피` · `라피 : 레드 후드`)을 한 인물로 묶는다",
+    "  그 밖 — speakers.json의 인물 · 랩쳐 이름표에서 (`person:<이름표>`)",
+    "persons: 자동으로 만들면 안 되거나(동명이인) 이름표가 없거나 메모가 필요한 인물. id가 자동 대상과 같으면 그 대상에 name · kind · note를 덮는다.",
+    "  resourceIds를 적으면 그 니케 목록 행은 자동 묶음에서 빠지고 이 인물에 붙는다.",
+    "candidates: 정체 연결 후보(같은 인물로 드러남 등). 1회독에서 근거를 읽을 때 Claude가 확정 · 기각한다(사용자, RV1 2026-09-29 — CLAUDE.md).",
+    "  칸: id(L<번호> — 전체에서 하나, 바꾸지 않는다) · type(same_as) · a · b(대상 ID, a는 `이름표:<이름표>`도 된다) · status(후보/확정/기각) · confidence(확실/추정) ·",
+    "  reason · evidence([{scene, lines}], 비면 1회독이 채운다) · by(기록자) · reviews(리뷰 도구가 붙이는 검토 기록). 형식은 docs/schema.md \"정체 연결 후보\".",
+    "  새 후보는 다음 번호(node tools/records.mjs next)로 더하고, 상태는 손으로 바꾸지 않는다 — node tools/records.mjs set L3 확정 (docs/annotations.md)"
+  ],
+  "persons": [
+    {
+      "id": "person:지휘관",
+      "name": "지휘관",
+      "kind": "인물",
+      "note": "플레이어가 맡는 지휘관(주인공). 말은 이름표 없이 Self 창, 속마음은 Monologue 창으로 나온다. 이름표 `지휘관`(924줄, 거의 과거 이야기)은 이 대상에 잇지 않았다 — Q-A1-1"
+    },
+    {
+      "id": "person:사쿠라_콜라보",
+      "name": "사쿠라",
+      "kind": "니케",
+      "resourceIds": [836],
+      "note": "니케 목록의 두 번째 사쿠라(rid 836, ABNORMAL = 콜라보). 호감도 스토리(char:836)에만 나오고 이름표 코드는 ce005_03. 출시는 아스카 : WILLE와 같은 2025-02-20 업데이트 공지(releases char:836). TETRA 사쿠라(person:사쿠라, rid 282 · 284)와 다른 인물"
+    },
+    {
+      "id": "person:스윗_조니",
+      "name": "스윗 조니",
+      "kind": "인물",
+      "note": "이름표 `관리자 스윗 조니`(event_maidinvalentine · event_romanticvalentine)와 `스윗 조니 Ver.2.14`(event_romanticvalentine)를 잇는 대상. 이름표만 `스윗 조니`인 줄은 없다"
+    },
+    {
+      "id": "person:릴리바이스",
+      "name": "릴리바이스",
+      "kind": "인물",
+      "note": "이름표 코드가 liliweiss(706줄)인데, event_overzone_prologue의 28줄만 코드가 lilith다. 이름표는 모두 릴리바이스"
+    },
+    {
+      "id": "person:릴리스",
+      "name": "릴리스",
+      "kind": "니케",
+      "note": "R06 char:221에서 더함 — 라푼젤이 말한 갓데스 스쿼드의 리더 · 맏언니(ep:d_nikke_rapunzel_04#61-72). 본문 '릴리스' 151줄. 릴리바이스의 이름표 코드 lilith(event_overzone_prologue)와 같은 인물인지는 L8(후보)",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [62] }]
+    },
+    {
+      "id": "person:샛별",
+      "name": "샛별",
+      "kind": "인물",
+      "note": "R17 relic:데일리아크기사스크랩에서 더함 — 2차 지상 탈환전의 영웅 지휘관 별명(relic:데일리아크기사스크랩_02#3). 뒤에 갱생관에 송치된다. 본인 이름은 □□로 가려져 있다",
+      "evidence": [{ "scene": "relic:데일리아크기사스크랩_02", "lines": [3] }],
+      "caution": "일반 낱말 '샛별'(금성 · 떠오르는 인물)로도 쓰인다"
+    },
+    {
+      "id": "person:마일즈",
+      "name": "마일즈",
+      "kind": "인물",
+      "note": "R17 relic:데일리아크기사스크랩에서 더함 — 2차 지상 탈환전 무렵 중앙 정부 부사령관(relic:데일리아크기사스크랩_00#2)",
+      "evidence": [{ "scene": "relic:데일리아크기사스크랩_00", "lines": [2] }]
+    },
+    {
+      "id": "person:퀸",
+      "name": "퀸",
+      "kind": "랩쳐",
+      "note": "A2에서 더함 — 랩쳐의 퀸(\"퀸의 직속. 이단…!\" d_main_06_08_e#25, \"함께 퀸을 치자는 거래\" d_main_46_10#50). 이름표는 없다(말하는 줄 0). 본문 '퀸'은 퀸(마코토)(fl:persona_on_frontline) · 언더월드 퀸(org) · 퀸 스쿼드와도 겹친다. 한 개체라 인물로 뒀다 — Q-A2-2"
+    },
+    {
+      "id": "person:글러트니",
+      "name": "글러트니",
+      "kind": "랩쳐",
+      "note": "R52 event_oldtales1에서 더함 — ICBM을 집어삼켜 그 에너지를 그대로 뱉어낸 랩쳐의 코드 네임. 이 때문에 전략 병기가 봉인되다시피 했다(event_oldtales1_02_s#22-24). 이름표는 없다",
+      "evidence": [{ "scene": "event_oldtales1_02_s", "lines": [22] }]
+    },
+    {
+      "id": "person:프리티",
+      "name": "프리티",
+      "kind": "니케",
+      "note": "R55 event_footstepwalkrun1에서 더함 — 방주 최초의 니케 연예인(아이돌). 복귀 무대 중 니케포비아에게 살해당했다(event_footstepwalkrun1_06_s#108-110). 이름표는 없다",
+      "evidence": [{ "scene": "event_footstepwalkrun1_04_e", "lines": [18] }]
+    },
+    {
+      "id": "person:레이첼_호프",
+      "name": "레이첼 호프",
+      "kind": "인물",
+      "note": "R02 relic:통화기록028594에서 더함 — 갓데스처럼 되고 싶어 미실리스 연구소에 뇌를 기증해 니케 실험에 참가한 사람. 이름표는 없다",
+      "evidence": [{ "scene": "relic:통화기록028594_00", "lines": [3] }]
+    },
+    {
+      "id": "person:제이드_한슨",
+      "name": "제이드 한슨",
+      "kind": "인물",
+      "note": "R03 sub:든_셀_00에서 더함 — 1차 침공기 말에 복무한 군인. 그의 옛 핸드폰의 구조 문자가 수십 년 뒤 지휘관에게 깨진 채 들어왔다(메신저 대화명 든?셀). 이름표는 없다",
+      "evidence": [{ "scene": "sub:든_셀_00", "lines": [57] }]
+    },
+    {
+      "id": "person:JohnD",
+      "name": "JohnD",
+      "kind": "인물",
+      "note": "R04 ch16에서 더함 — 미실리스 전 연구원을 자칭하며 NIMPH · 언체인드 음모론을 퍼뜨린 인터넷 닉네임. 실제로는 이그조틱이 엔터 헤븐을 시켜 만든 가명(d_main_16af_03). 이름표는 없다",
+      "evidence": [{ "scene": "d_main_16_10", "lines": [10] }]
+    },
+    {
+      "id": "person:로스트_넘버",
+      "name": "로스트 넘버",
+      "kind": "인물",
+      "note": "R32 erelic:red_ash_lost에서 더함 — 페어리 테일 모델 1번. 프로토타입 릴리바이스를 베이스로 마이너 그레이드 없이 만들어져 몸의 힘을 감당 못 하고 죽었다(지휘관이 '결번'이라 부른 이름). 이름표는 없다",
+      "evidence": [{ "scene": "erelic:red_ash_lost_16", "lines": [25, 33, 34] }]
+    },
+    {
+      "id": "person:언노운",
+      "name": "언노운",
+      "kind": "인물",
+      "note": "R38 ch28에서 더함 — 수정에 잠식된 구 도심에서 관 모양 강철 상자(세븐스 드워프)를 메고 나타난, 데이터베이스에 없는 신원 미상의 존재. 시프티가 '언노운'으로 명명했다(d_main_28_08_e#8). 이름표는 `???`",
+      "evidence": [{ "scene": "d_main_28_08_e", "lines": [6, 8] }]
+    },
+    {
+      "id": "person:이안_맥스",
+      "name": "이안 맥스",
+      "kind": "인물",
+      "note": "R38 sub:핸섬_커맨더_00에서 더함 — 23년 전 사관학교를 졸업해 지휘관이 되었다가 11년 만에 휴직한 사람(시프티 조회). 메신저 대화명 핸섬 커맨더(L15)",
+      "evidence": [{ "scene": "sub:핸섬_커맨더_00", "lines": [21, 45] }]
+    },
+    {
+      "id": "person:세이렌",
+      "name": "세이렌",
+      "kind": "인물",
+      "note": "R47 sub:거울_공주_01에서 더함 — 신데렐라와 같은 스쿼드의 2세대 페어리 테일 니케(헨젤 · 그레텔과 함께)",
+      "evidence": [{ "scene": "sub:거울_공주_01", "lines": [79] }]
+    },
+    {
+      "id": "person:마오",
+      "name": "마오",
+      "kind": "인물",
+      "note": "R66 fl:boom_the_ghost에서 더함 — 유토피아 호에 타 마지막까지 탑승객을 돕고 알프레드의 친구로 남았다 끝내 떠난 양산형 니케. 그 모습을 흉내 낸 '이레귤러 홀로그램'이 배를 떠돌았다(도로시는 피나라 불렀다). 이름표는 없다",
+      "evidence": [{ "scene": "fl:boom_the_ghost_21", "lines": [0, 85] }]
+    },
+    {
+      "id": "person:이터니티",
+      "name": "이터니티",
+      "kind": "인물",
+      "note": "R67 ch39에서 더함 — 에닉이 아우터 림에 감시역으로 보낸 니케 둘 가운데 하나(다른 하나는 엔드리스). 에닉과 꼭 닮았고, 방주에 적의를 품고 무장한 이를 가리지 않고 없앤다. 이 장에서는 이름표가 없다",
+      "evidence": [{ "scene": "d_main_39_af_03", "lines": [6] }]
+    },
+    {
+      "id": "person:로지",
+      "name": "로지",
+      "kind": "니케",
+      "note": "R72 ch41에서 더함 — #000000(식스오)이 부리는, 텅 빈 눈의 마음이 없는 듯한 니케. 리버린이 아는 사이로 보인다. 이 장에서는 이름표가 없다",
+      "evidence": [{ "scene": "d_main_41_af_05", "lines": [47, 51, 53] }]
+    },
+    {
+      "id": "person:총사령관",
+      "name": "총사령관",
+      "kind": "인물",
+      "note": "R88 fl:good_world에서 더함 — 방주(중앙 정부)의 총사령관. 지휘관은 만난 적이 없다. 백학에 따르면 [재단]을 세우고 프로젝트 A.D.를 시작한 그분이고, 지금은 아무도 만날 수 없이 방주를 위해 희생 중이다(fl:good_world_12#83-85 · _13#5,13-14)",
+      "evidence": [{ "scene": "fl:good_world_12", "lines": [85] }],
+      "caution": "직함이라 다른 조직 · 시대의 총사령관(갓데스 시절 인류연합군 등)에도 쓰인다"
+    },
+    {
+      "id": "person:레오",
+      "name": "레오",
+      "kind": "인물",
+      "note": "R88 fl:good_world에서 더함 — 총사령관의 [재단]이 후원한 전쟁고아 셋 중 하나. 계약 종료 직전 노환으로 죽어 백학이 납골당에서 편지를 대신 읽었다(fl:good_world_10)",
+      "evidence": [{ "scene": "fl:good_world_09", "lines": [121] }],
+      "caution": "레오나의 앞부분과 겹친다"
+    },
+    {
+      "id": "person:앨든",
+      "name": "앨든",
+      "kind": "인물",
+      "note": "R98 fl:persona_on_frontline에서 더함 — 이름표 '인자해 보이는 남자'(fl:coins_in_rush · fl:fatal_maid · fl:persona_on_frontline). 아우터 림 출신으로 재정부 브라이언의 뒷배를 얻어 방주로 옮긴 유령 단체 [푸른내일지속가능기획지원사무국]의 국장. 정체 연결 L29",
+      "evidence": [{ "scene": "fl:persona_on_frontline_20", "lines": [9] }]
+    },
+    {
+      "id": "person:브라이언",
+      "name": "브라이언",
+      "kind": "인물",
+      "note": "M71 fl:fatal_maid에서 더함 — 국장 앨든을 뒤에서 지원하는 재정부 공무원. 감사가 예정되어 있다(fl:fatal_maid_11 · fl:persona_on_frontline_19–20). 이름만 나온다",
+      "evidence": [{ "scene": "fl:fatal_maid_11", "lines": [51] }]
+    },
+    {
+      "id": "person:디젤의_동생",
+      "name": "디젤의 동생",
+      "kind": "인물",
+      "note": "M53 char:72에서 더함 — 인간 디젤의 남동생. 지휘관이 되고 싶어 했고, 누나와 로열 로드로 가던 AFX 열차 테러로 죽었다(F484). 이름표 '어린 아이'(ep:d_nikke_diesel_05#1-17) · ???(ep:d_nikke_diesel_04#6). char:821(F1355)에도 나온다",
+      "evidence": [{ "scene": "ep:d_nikke_diesel_05", "lines": ["1-17"] }],
+      "caution": "이름이 없어 자동 언급이 없다 — 암시 언급으로 적는다"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "L1",
+      "type": "same_as",
+      "a": "person:모더니아",
+      "b": "person:마리안",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "사용자가 A1에서 예로 든 '정체가 나중에 밝혀지는 연결'. 이름표 코드는 서로 다르다(modenia · modenia_v / marian · marian_p · marian_q · marian_f). R02 ch07: 모더니아의 바이저가 깨지자 어디서 본 듯한 얼굴이 나오고(#7-9), 지휘관이 마리안이라 부르자 '저는 모더니아. 퀸을 모시는…'이라다 이름을 되뇌며 '실버건… 스쿼드의…. 마리안이라고… 합니다'라고 한다(#21-35, 이름표 ???). 지휘관 독백 '마리안은 헬레틱이 되어 있었다'(d_main_07af_04#0), 엔더슨 '헬레틱이 된 이전 부하 니케'(d_main_07af_03#9)",
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["7-9", "21-35", "41-44"] }, { "scene": "d_main_07af_04", "lines": [0, 1] }],
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-29",
+          "session": "R02",
+          "note": "CH.07에서 드러남 — 바이저 아래 얼굴과 '실버건 스쿼드의 마리안'(d_main_07_06_e), 지휘관 독백(d_main_07af_04#0)"
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "type": "same_as",
+      "a": "person:모나",
+      "b": "person:모르가나",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "퀸(마코토)이 '지금까지는 코드 네임으로 불렀지만'이라며 본명을 밝히자 바로 '이 몸은 모르가나다'라고 한다. 이 뒤로 이름표가 모나에서 모르가나로 바뀐다(모나는 _09–_26#145, 모르가나는 _26#182부터)",
+      "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": [179, 180, 182] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R98", "note": "R98 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L3",
+      "type": "same_as",
+      "a": "이름표:곰…?",
+      "b": "person:곰",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R98 fl:persona_on_frontline: 레오나가 보호한다는 지퍼 달린 말하는 곰(이름표 '곰…?', _03)을 유키코가 '일단은… 곰이라고 불러주세요'라 하자 바로 '곰은 곰곰이다곰!'이라 하며 이름표가 곰으로 바뀐다(_04 #39-41). 이름표 '곰…?'은 이 두 씬에만 나온다",
+      "evidence": [
+        { "scene": "fl:persona_on_frontline_03", "lines": [5, 10, 35, 36, 38, 43, 50, 52, 56, 61, 66] },
+        { "scene": "fl:persona_on_frontline_04", "lines": [35, 37, "39-41"] }
+      ],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R98", "note": "R98 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L4",
+      "type": "same_as",
+      "a": "이름표:퀸이라 불린 소녀",
+      "b": "person:퀸(마코토)",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R98 fl:persona_on_frontline: 에이드가 '퀸 아가씨'라 부른 소녀(이름표 '퀸이라 불린 소녀')가 '제대로 인사할게'라 한 다음 줄부터 이름표가 퀸(마코토)으로 바뀌어 '[퀸]이라고 부르면 돼'라 한다(_09 #36-39). 뒤에 본명 니지마 마코토를 밝힌다(_26 #180)",
+      "evidence": [{ "scene": "fl:persona_on_frontline_09", "lines": [7, 10, 28, 30, 34, "36-39"] }, { "scene": "fl:persona_on_frontline_26", "lines": [180] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R98", "note": "R98 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L5",
+      "type": "same_as",
+      "a": "이름표:노인",
+      "b": "person:헤르민",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "이름표 `노인`(event_ce006에만 9줄)의 코드가 oldman_h다(다른 이벤트의 `중년 남자`는 oldman). R64 1회독: 문 너머 어둠 속의 노인(2_01_s)이 제단 앞에서 '안녕하십니까'라 하고(노인, 2_01_e #33 · #38) 바로 이어 '헤르민이라고 합니다 · 이곳을 지키고 있던 보잘것없는 예술가'라 이름을 댄다(이름표 헤르민, #39-40). 이어지는 대화에서 휠체어 · 140 중반 인간이 같은 인물임이 이어진다(2_02_s #10-23)",
+      "evidence": [
+        { "scene": "event_ce006_2_01_s", "lines": [0, 1, 2, 4, 9, 11, 12] },
+        { "scene": "event_ce006_2_01_e", "lines": [33, 38, "39-40"] },
+        { "scene": "event_ce006_2_02_s", "lines": ["10-23"] }
+      ],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R64", "note": "R64 1회독 — 노인이 헤르민이라 이름을 댐(2_01_e #39)" }]
+    },
+    {
+      "id": "L6",
+      "type": "same_as",
+      "a": "person:든?셀",
+      "b": "person:제이드_한슨",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R03 sub:든_셀_00: 깨진 메신저 대화명 든?셀이 보낸 문자(#1-4, 좌표 GJF 30.55)가 지상에서 찾은 제이드 한슨의 옛 핸드폰 전송 내역(#30-35)과 개수 · 좌표 · 수신 번호가 같다(아니스 #40-42). 엑시아가 핸드폰 주인을 제이드 한슨으로 확인(#57)",
+      "evidence": [{ "scene": "sub:든_셀_00", "lines": ["1-4", "30-35", "40-42", 57] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "sub:든_셀_00 — 전송 내역과 받은 문자가 같다(#40-42), 주인 확인(#57)" }]
+    },
+    {
+      "id": "L7",
+      "type": "same_as",
+      "a": "person:음악_애호가",
+      "b": "person:율리아",
+      "status": "확정",
+      "confidence": "추정",
+      "reason": "R03 sub:음악_애호가_01: 메신저 대화명 음악 애호가가 스승에게 새 음률을 선물하고 싶다고 하자, 서술이 '율리아는 뮤직 마스터에게 새로운 음악을 들려주고 싶어 하는 것 같다'고 받는다(#15). 음악 애호가의 연극조 말투가 율리아와 같고 '마에(스트로)'라 부르다 고친다(_00#78). 다만 _00에서 음악 애호가는 율리아를 '저의 사제'라 3인칭으로 부른다(#16, #19) — 자기를 남처럼 부른 것으로 읽었다",
+      "evidence": [{ "scene": "sub:음악_애호가_01", "lines": ["12-15"] }, { "scene": "sub:음악_애호가_00", "lines": [16, 19, 78] }],
+      "by": "claude",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "서술이 음악 애호가의 부탁을 율리아의 바람으로 받는다(sub:음악_애호가_01#15) — 추정으로 확정" }
+      ]
+    },
+    {
+      "id": "L8",
+      "type": "same_as",
+      "a": "person:릴리스",
+      "b": "person:릴리바이스",
+      "status": "확정",
+      "confidence": "추정",
+      "reason": "갓데스 스쿼드의 리더 릴리스(ep:d_nikke_rapunzel_04#61-72)와, 이름표 코드가 event_overzone_prologue에서만 lilith인 릴리바이스(person:릴리바이스 note). 코드 하나뿐이라 근거가 약하다 — 릴리바이스가 나오는 단위(R22 event_overzone 등)를 읽을 때 확정 · 기각한다",
+      "evidence": [
+        { "scene": "event_overzone_prologue", "lines": ["1-2", 28] },
+        { "scene": "event_overzone1_01_e", "lines": [29] },
+        { "scene": "event_overzone1_01_s", "lines": ["84-85"] },
+        { "scene": "event_overzone2_01_s", "lines": [26] }
+      ],
+      "note": "R22 event_overzone: 도로시가 리더 대행 보고에서 '전 리더였던 릴리바이스 소령의 사망'이라 하고(1_01_e#29), 같은 죽음을 '릴리스가… 죽고 난 후에'라 부른다(1_01_s#84-85). 유언 영상의 이름표 릴리바이스가 갓데스를 '내 사랑하는 동생들'이라 부른다(prologue#28) — 같은 인물로 확정",
+      "by": "claude",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22", "note": "event_overzone — 릴리바이스 소령 = 릴리스(1_01_e#29, 1_01_s#84)" }
+      ]
+    },
+    {
+      "id": "L9",
+      "type": "same_as",
+      "a": "person:N102",
+      "b": "person:앤",
+      "status": "확정",
+      "confidence": "추정",
+      "reason": "N102 호감도 스토리에서 지휘관이 N102를 줄곧 '앤'이라 부른다(ep:d_nikke_n102_01#16-25). person:앤은 니케 목록의 [앤 : 미라클 페어리](char:121)라 같은 인물의 다른 모습으로 보이나 이 편만으로는 알 수 없다 — char:121 · event_miraclesnow1(R16)을 읽을 때 확정 · 기각한다",
+      "evidence": [
+        { "scene": "ep:d_nikke_n102_01", "lines": ["16-25"] },
+        { "scene": "event_miraclesnow1_01_e", "lines": ["31-43"] },
+        { "scene": "event_miraclesnow1_intermission_01", "lines": ["16-23", 43] },
+        { "scene": "event_miraclesnow2_06_e", "lines": ["77-82"] }
+      ],
+      "note": "R16 event_miraclesnow1: 이름표 N102인 인물을 모두가 앤이라 부르고, 기억이 이어진 동안 이름표가 앤으로 바뀌었다가(intermission_01 #43) 기억이 지워지자 다시 N102가 된다(2_06_e #82) — 같은 인물로 확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16", "note": "event_miraclesnow1에서 이름표 N102 ↔ 앤이 같은 인물로 오간다" }]
+    },
+    {
+      "id": "L10",
+      "type": "same_as",
+      "a": "person:E.H.",
+      "b": "person:엘리시온_하퍼",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R22 ch22: 목단이 E.H.를 '엘리시온 하퍼!'라 부르자 E.H.가 '그 이름으로 부르지 말아 줬으면 해. 버린 지 오래된 이름이야'라고 한다(d_main_22_09#4-7). 목단 · 로산나는 뒤에서도 그를 하퍼라 부른다(d_main_22_10#2,87)",
+      "evidence": [{ "scene": "d_main_22_09", "lines": ["4-7"] }, { "scene": "d_main_22_10", "lines": [2, 87] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22", "note": "ch22 d_main_22_09#4-7 — 옛 이름이라고 본인이 말함" }]
+    },
+    {
+      "id": "L11",
+      "type": "same_as",
+      "a": "person:신데렐라",
+      "b": "person:아나키오르",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R32 event_redash: 실종된 2세대 페어리 테일 모델 신데렐라가 랩쳐와의 융합 · 침식으로 인류를 적대하게 되어 '정식 코드 네임이 붙었어. [아나키오르]라고'(event_redash2_02_s#7-8, #16-21). 뒤에서 홍련이 아나키오르에게 '안녕하신가. 신데렐라'라 부른다(event_redash2_06_e#15-16). 이름표는 아나키오르로 따로다",
+      "evidence": [{ "scene": "event_redash2_02_s", "lines": ["7-8", "16-21"] }, { "scene": "event_redash2_06_e", "lines": [15, 16] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R32", "note": "event_redash2_02_s#7-8 코드 네임 부여, 2_06_e#16 홍련의 호칭" }]
+    },
+    {
+      "id": "L12",
+      "type": "same_as",
+      "a": "person:피라",
+      "b": "person:라피",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R37 sub:피라_00: 메신저 대화명 피라가 '라피입니다'라 밝히고, 같은 계정으로 같은 닉네임의 id는 만들 수 없어서라 한다(#1-2, #6-7). 이어지는 장면에서 라피가 직접 동행한다(#23-24)",
+      "evidence": [{ "scene": "sub:피라_00", "lines": ["1-8", "23-24"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R37", "note": "sub:피라_00#2 '라피입니다'" }]
+    },
+    {
+      "id": "L13",
+      "type": "same_as",
+      "a": "person:트윙클",
+      "b": "person:아니스",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R37 sub:트윙클_00: 지휘관이 아니스냐고 묻자 '정답~'(#13), 네온이냐고 물어도 '아니스인 거 알아'로 이어진다(#22). 라피(피라)처럼 다른 계정을 만든 것이라 하고(#4-5, #27-32), 이어지는 장면에서 아니스가 직접 동행한다(#55)",
+      "evidence": [{ "scene": "sub:트윙클_00", "lines": ["4-5", 13, 22, "27-32", 55] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R37", "note": "sub:트윙클_00#13 '정답~'" }]
+    },
+    {
+      "id": "L14",
+      "type": "same_as",
+      "a": "person:택티컬티택",
+      "b": "person:잉그리드",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R38 sub:택틱컬틱택: 탈주 니케가 의뢰인을 '교관'(= 잉그리드, F291)이라 부르고(_00#59), 택티컬티택은 '나를 아니 엘리시온의 대표를 믿지 않는다고'(_00#123-124), '레드 후드의 존재를 숨기기 위해 … 둘의 기억을 소거한 것'(_01#70-72 — ch13 F347의 잉그리드)이라 말한다",
+      "evidence": [{ "scene": "sub:택틱컬틱택_00", "lines": [59, "123-124"] }, { "scene": "sub:택틱컬틱택_01", "lines": ["69-73"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "sub:택틱컬틱택_01#70-72 레드 후드 · 기억 소거" }]
+    },
+    {
+      "id": "L15",
+      "type": "same_as",
+      "a": "person:핸섬_커맨더",
+      "b": "person:이안_맥스",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R38 sub:핸섬_커맨더_00: 대화명 핸섬 커맨더가 이름을 '이안'이라 밝히고(#21-22), 시프티가 '이안 맥스'를 찾아 지휘관 경력을 확인한다(#45-50). 이어지는 에테르의 의뢰도 '이안 맥스의 사적인 의뢰'라 부른다(sub:MMR지킴이_00#6)",
+      "evidence": [{ "scene": "sub:핸섬_커맨더_00", "lines": ["21-25", "44-50"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "대화명 본인 확인 · 이어지는 장면" }]
+    },
+    {
+      "id": "L16",
+      "type": "same_as",
+      "a": "person:MMR지킴이",
+      "b": "person:에테르",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R38 sub:MMR지킴이_00: 지휘관을 '7호'라 부르고(#1 — 에테르가 지휘관을 7호라 부름, F615), 지휘관이 '에테르야?'라 묻자 '한번에 알아보네?'라 한다(#2-5). 이어지는 장면에서 '에테르가 알려준 좌표'라 한다(#36, #49)",
+      "evidence": [{ "scene": "sub:MMR지킴이_00", "lines": ["1-5", 36, 49] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "대화명 본인 확인 · 이어지는 장면" }]
+    },
+    {
+      "id": "L17",
+      "type": "same_as",
+      "a": "person:언노운",
+      "b": "person:그레이브",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R41 ch30: 지휘관 · 라피를 안내하는 ???(관 · 상자, 끊어진 말투, 은혜를 갚는다 — d_main_30_06_s #38-51)가 이름을 잊었다며 '그레이브'로 불러 달라 하고, 그 뒤 이름표가 '그레이브'로 바뀐다(d_main_30_06_e #1-12). 시프티는 앞서 그 포격을 '언노운'이라 했다(d_main_30_05 #60)",
+      "evidence": [{ "scene": "d_main_30_06_e", "lines": ["1-12"] }, { "scene": "d_main_30_06_s", "lines": ["38-51"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R41", "note": "이름표 변화 · 같은 장면" }]
+    },
+    {
+      "id": "L18",
+      "type": "same_as",
+      "a": "person:관짝이",
+      "b": "person:그레이브",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R47 sub:관짝이_00: 메신저 대화명 관짝이에게 지휘관이 '설마 그레이브야?'라 묻자 '그렇다' — 신데렐라가 관을 가지고 다니는 모습이 반짝거린다고 해 붙인 이름(#3-11), 이어지는 장면의 이름표가 그레이브(#46)",
+      "evidence": [{ "scene": "sub:관짝이_00", "lines": ["3-11", 46] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R47", "note": "대화명 확인 · 이름표 전환" }]
+    },
+    {
+      "id": "L19",
+      "type": "same_as",
+      "a": "person:거울_공주",
+      "b": "person:신데렐라",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R47 sub:거울_공주_00: 메신저 대화명 거울 공주가 '신데렐라야?'에 '맞아'(#5-16), 아니스 · 네온이 부탁할 때는 다른 이름을 붙이라 했다(#17-22), 이어지는 장면의 이름표가 신데렐라(#62)",
+      "evidence": [{ "scene": "sub:거울_공주_00", "lines": ["5-22", 62] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R47", "note": "대화명 확인 · 이름표 전환" }]
+    },
+    {
+      "id": "L20",
+      "type": "same_as",
+      "a": "person:에이브",
+      "b": "person:그레이브",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R51 ch34: 신데렐라가 검은 폭포에서 빠져나와 사라진 그레이브를 찾으며 '에이브'라 부른다(d_main_34_08 #84-87). CH.33에서도 '우릴 만든 건 에이, 그레이브야'라 고쳐 말했다(d_main_33_03 #2)",
+      "evidence": [{ "scene": "d_main_34_08", "lines": ["84-87"] }, { "scene": "d_main_33_03", "lines": [2] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "L21",
+      "type": "same_as",
+      "a": "person:세이렌",
+      "b": "person:리틀_머메이드",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R51 ch34: 신데렐라가 '세이렌… 리틀 머메이드의 것'이라 이어 부른다(d_main_34_07_e #30). 옛 동료의 이름과 페어리 테일 모델 이름을 함께 쓴 것으로 읽었다 — 같은 니케라고 원문이 더 말하지 않아 추정 — R52 event_oldtales1에서 보강: 이름표 리틀 머메이드를 동료들이 '세이렌'이라 부르고(event_oldtales1_prologue #100-101), 에이브도 리틀 머메이드에게 '세이렌! 말하지 마!'라 한다(event_oldtales1_01_e #46-47). 확신도를 확실로 올렸다",
+      "evidence": [{ "scene": "d_main_34_07_e", "lines": [30] }, { "scene": "event_oldtales1_prologue", "lines": ["100-101"] }, { "scene": "event_oldtales1_01_e", "lines": ["46-47"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "L22",
+      "type": "same_as",
+      "a": "person:레비",
+      "b": "person:레비아탄",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R59 side:mudfish: 홀로 바닷가에 있던 레비아탄이 '바다에서 만났었지' 하며 과거를 떠올리는 데서 리틀 머메이드와 '검은 물을 덮은 소녀'의 회상이 시작되고(side:mudfish_00 #0-14), 그 소녀가 인식표 LEV-20765의 앞 글자로 '레비'라는 애칭을 얻는다(side:mudfish_04 #43-70). 머리에서 흐르는 검은 물(액체 금속) · 세이렌의 물거품을 배운 것이 레비아탄의 다크 매터 · '물거품을 베꼈다'(F1654 · F1815)와 맞물린다",
+      "evidence": [{ "scene": "side:mudfish_00", "lines": ["0-14"] }, { "scene": "side:mudfish_04", "lines": ["43-70"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R59" }]
+    },
+    {
+      "id": "L23",
+      "type": "same_as",
+      "a": "이름표:벙커의 아이",
+      "b": "person:아트",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R64 event_ce006: 벙커 녹화 속 '벙커의 아이'는 중년 헤르민의 딸로 콤과 논다(3_01_s · 3_01_e). 회상에서 콤이 양산형 니케가 된 아트에게 '너는 벙커의 아이다 · 벙커에서 태어났다 · 이름은 내가 지어줬다'고 한다(3_03_s #15-24). 에필로그에서 아트가 벙커 그림 [집] 앞에서 콤을 알아보고 기억을 되찾는다(epilogue #131-145)",
+      "evidence": [{ "scene": "event_ce006_3_03_s", "lines": ["15-24"] }, { "scene": "event_ce006_3_epilogue", "lines": ["131-145"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R64", "note": "R64 1회독 — 콤이 아트를 벙커의 아이라 부름(3_03_s #21)" }]
+    },
+    {
+      "id": "L24",
+      "type": "same_as",
+      "a": "person:스톨_3세",
+      "b": "person:네온",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R79 ch43: 네온의 되찾은 기억(02–13)에서 프린세스가 죽으며 안경을 스톨 3세에게 씌우고, 특임대가 안경 쓴 아이를 데려가 엘리시온에서 기억 없는 니케로 깨어난 그녀가 네온이라는 이름을 고른다(14 — 이름표 ???도 네온). 안경이 네온의 기침(스톨 3세의 병)으로 열리고 프린세스의 녹음이 '건강해라. 셋째야'라 부른다(15 #121-135)",
+      "evidence": [{ "scene": "d_main_43_14", "lines": ["0-52"] }, { "scene": "d_main_43_15", "lines": ["121-135"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R79", "note": "R79 1회독 — 기침이 패스워드 · '셋째야'(15 #121-135)" }]
+    },
+    {
+      "id": "L25",
+      "type": "same_as",
+      "a": "person:제니퍼f!",
+      "b": "person:제니퍼",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R81 fl:lie_cause_recoil: 지휘관이 방주 아동 보호 센터장 제니퍼를 만나 예전 메신저 문자(sub:제니퍼f_00, 대화명 제니퍼f!)를 떠올리며 '아, 이 사람이었구나'(14 #75-80), 제니퍼 '제가 지휘관님에게 의뢰를 드렸죠 … 아이의 시체는 찾지 못했지만'(15 #13-16)",
+      "evidence": [{ "scene": "fl:lie_cause_recoil_14", "lines": ["75-80"] }, { "scene": "fl:lie_cause_recoil_15", "lines": ["13-16"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R81", "note": "R81 1회독 — '아, 이 사람이었구나'(14 #80)" }]
+    },
+    {
+      "id": "L26",
+      "type": "same_as",
+      "a": "person:프리시아",
+      "b": "person:프리티",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R87 side:pretty_star: 니케가 된 프리시아를 테트라가 데뷔시키고(03), 데뷔 무대 뒤 한슨이 '노래 부른 고철 … 활동명은 프리티입니다'(04 #74-75) — 그 뒤 프리시아(이름표)를 모두가 프리티라 부르고, 프리시아가 복귀 콘서트에서 총격으로 죽은 것이 '프리티. 복귀 콘서트 중 총격에 의해 사망'(13 #161)이다",
+      "evidence": [{ "scene": "side:pretty_star_04", "lines": ["74-75"] }, { "scene": "side:pretty_star_13", "lines": [161] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R87", "note": "R87 1회독 — '활동명은 프리티입니다'(04 #75)" }]
+    },
+    {
+      "id": "L27",
+      "type": "same_as",
+      "a": "이름표:반장",
+      "b": "person:요요",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R91 event_staranis1: 아니스가 요요의 얼굴에서 익숙한 이목구비를 알아보고 '너 설마. 반장이야?'라 묻자 요요가 '…그래'라 답하고, 학교에서 괴롭힌 것을 사과한다(03_e #95-117). 이름표 '반장'은 side:pretty_star와 event_staranis2에만 나오고, 거기서 아니스를 따돌린 반장이다",
+      "evidence": [{ "scene": "event_staranis1_03_e", "lines": ["95-117"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R91", "note": "R91 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L28",
+      "type": "same_as",
+      "a": "이름표:여학생",
+      "b": "person:리스",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R91 event_staranis1: 리스가 '나 기억해?'라 묻는 장면에 이어지는 회상에서 이름표 여학생이 '나 녹화 다 했어 … 아니스가 아이돌 하면 나 매니저 할래'라 하고(04_s #130-137), 아니스가 '너…! 리스…!'라 알아보며 리스가 '약속대로 매니저 하러 왔어'라 한다(04_s #138-139). 같은 대사가 side:pretty_star_12 #32에 이름표 여학생으로 나온다. 이름표 '여학생'은 side:pretty_star · event_staranis1 · 2에만 나온다",
+      "evidence": [{ "scene": "event_staranis1_04_s", "lines": ["126-139"] }, { "scene": "side:pretty_star_12", "lines": [32] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R91", "note": "R91 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L29",
+      "type": "same_as",
+      "a": "이름표:인자해 보이는 남자",
+      "b": "person:앨든",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R98 fl:persona_on_frontline: 이름표 '인자해 보이는 남자'는 코인 러시 · 메이드 카페에서 지휘관에게 막힌 국장(_07 #4-8, fl:fatal_maid의 회상 _19 #46-52 — 브라이언을 통해 지원받음)이고, 일행이 브라이언 · [푸른내일지속가능기획지원사무국]으로 찾은 그 남자의 자료에서 이름이 앨든 — 아우터 림 출신, 브라이언 덕에 방주로 옮김 — 으로 나온다(_19 #53-63, _20 #9-17). 이름표는 fl:coins_in_rush · fl:fatal_maid · fl:persona_on_frontline에만 나온다",
+      "evidence": [{ "scene": "fl:persona_on_frontline_19", "lines": ["46-63"] }, { "scene": "fl:persona_on_frontline_20", "lines": ["9-17"] }],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R98", "note": "R98 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L30",
+      "type": "same_as",
+      "a": "이름표:그레그레",
+      "b": "person:그레이브",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "R99 fl:great_villain_union: 이름표 '그레그레'는 드레이크의 꿈 속 빌런 연합 소개(_00 #41-45, #107)에만 나오고, 드레이크가 그레이브를 부르는 별명이다 — 면접에 온 그레이브를 '그레그레'라 부르며 합격시키고(_03 #96-98, #124), 신데렐라도 '그레이브… 아니, 그레그레라고 불러야 하나?'라 한다(_07 #17-19). 별명의 시작은 d_main_35_01 #71-78('너무 길면 그레그레로 불러주겠다')",
+      "evidence": [
+        { "scene": "fl:great_villain_union_00", "lines": ["41-45"] },
+        { "scene": "fl:great_villain_union_03", "lines": ["96-98", 124] },
+        { "scene": "fl:great_villain_union_07", "lines": ["17-19"] }
+      ],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R99", "note": "R99 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "L31",
+      "type": "same_as",
+      "a": "person:샛별",
+      "b": "person:요한",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "X3f-2 주역 명단 검토: 샛별은 2차 지상 탈환전의 영웅 지휘관 별명(relic:데일리아크기사스크랩)이고, 요한이 '난 너희들이 말하는 그 샛별이 맞다 … 이 칭호는 나의 것이다'라 밝힌다(d_main_21_02_e #55-56 — 1회독 F861, 앞서 F762). 기록에는 이미 같은 인물로 적혀 있었는데(J8 about · D183 · I51-53) 정체 연결이 없어 주역 요한의 자리 셈에서 샛별 이름이 빠졌다",
+      "evidence": [
+        { "scene": "d_main_21_02_e", "lines": ["43-56"] },
+        { "scene": "d_main_20af_01", "lines": ["102-110"] }
+      ],
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-2", "note": "1회독 확정 사실 F762 · F861로 확정 — 원문은 근거 씬만 다시 봤다" }]
+    }
+  ]
+}

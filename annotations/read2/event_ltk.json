@@ -1,0 +1,112 @@
+{
+  "unit": "event_ltk",
+  "session": "M58",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1305",
+      "act": "암시",
+      "points": ["F1970"],
+      "text": "K가 후유증 없이 고통만 주는 총의 가시로 [진실]을 듣겠다 하고 D는 '수단이 깨끗해야 결과도 깨끗해'라 맞선다 — LORD, FOR JUSTICE가 같은 말을 되짚는다",
+      "about": ["person:K", "person:D"],
+      "evidence": [{ "scene": "event_ltk_02_e", "lines": ["57-69"] }],
+      "reason": "#62-63 '[진실]을 듣기에 이것 만한 게' · #67 '수단이 깨끗해야 결과도 깨끗해' — F1970이 같은 두 대사를 다시 쓴다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1306",
+      "act": "암시",
+      "points": ["F1970"],
+      "text": "K '완벽한 평행은 없으니 나는 고개를 기울여' — 뒤에 K가 자기 정의를 다시 찾는 방식(F1970)의 첫 말",
+      "about": ["person:K"],
+      "evidence": [{ "scene": "event_ltk_06_e", "lines": ["130-135"] }],
+      "reason": "#133 '그럴 때 나는 고개를 기울여' — F1970 · D712가 이 저울 비유를 그대로 되짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1307",
+      "act": "암시",
+      "points": ["F1349"],
+      "text": "지휘관이 D의 머리에 써진 왕관이 벗겨지는 날이 오길 바란다 — KILL THE LORD에서 D가 본 '왕관을 쓸 필요 없는 세상'의 환각(F1349)",
+      "about": ["person:D"],
+      "evidence": [{ "scene": "event_ltk_epilogue", "lines": ["20-28", "34-39"] }],
+      "reason": "#20 '한 번도 괜찮았던 적이 없어' · #39 '왕관이 벗겨지는 날이 오길' — F1349의 소원과 같은 모티프라 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1428",
+      "person": "person:D",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "세상에는 평행을 이루는 선악의 저울이 있어 악행을 저지른 이들을 죽이고 또 죽이면 세상이 선한 쪽으로 기울 거라 믿는다 — 늘 무겁지만 옳은 일을 한다고 믿어 견딘다",
+      "evidence": [{ "scene": "event_ltk_06_e", "lines": ["61-75"] }],
+      "reason": "#70 '그래서 나는 악행을 저지른 이들을 죽인다' · #74 '세상이 선한 쪽으로 기울겠지'. 출시가 앞서 KILL THE LORD D405를 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1429",
+      "person": "person:D",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "위장 신혼부부로 함께 잠입한 대행 — 선택을 맡긴 뒤 '남은 무게는 우리가 짊어진다'며 집으로 돌려보내는",
+      "evidence": [{ "scene": "event_ltk_06_e", "lines": ["29-40"] }],
+      "reason": "#37-39 '왕관은 벗겨졌지만, 그 무게는 남는다… 남은 무게는 우리가 짊어진다'. 출시가 앞서 KILL THE LORD D403을 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1430",
+      "person": "person:D",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:K"],
+      "text": "K의 고문용 가시 총에 '수단은 깨끗해야 해'라 맞서고 '역시, 안 맞네' — '내가 할 말이다'로 받는 방식이 다른 짝",
+      "evidence": [{ "scene": "event_ltk_02_e", "lines": ["64-69", "83-84"] }],
+      "reason": "#64 '수단은 깨끗해야 해' · #83-84 '역시, 안 맞네' / '내가 할 말이다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1431",
+      "person": "person:K",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "악행을 숨기는 놈들이 싫어, 더러운 수를 쓰는 놈들에겐 더러운 수가 인지상정이라며 고문 도구를 당당하게 쓴다",
+      "evidence": [{ "scene": "event_ltk_02_e", "lines": ["71-82"] }],
+      "reason": "#77 '은폐하고 조작하고 이러는 게 너무 싫어' · #82 '더러운 수를 써주는 게 인지상정'. 출시가 앞서 LORD, FOR JUSTICE D711을 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1432",
+      "person": "person:K",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'클라이언트'로 끌고 다니며 핀잔을 주다가도, 선택 뒤 공원에서 '후회하냐' 묻고 좋은 소식을 전하며 이제 그만 내려놓으라 다독이는 임무 동료",
+      "evidence": [{ "scene": "event_ltk_06_e", "lines": ["113-136"] }],
+      "reason": "#114 '후회하냐?' · #127-128 '그러니 이제 그만 내려놔. 계속 쓰고 있지 말고'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "life": [],
+  "note": "시점 단서 없음 — 지휘관이 D · K · 에닉의 판결을 이미 알 뿐 사건 · 챕터와의 앞뒤를 주는 줄이 없어 시점을 적지 않았다. 결말 분기(사장 생사)는 1회독 note대로 사실로 세우지 않았다."
+}

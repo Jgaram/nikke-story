@@ -1,0 +1,53 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M98\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:412",
+  "session": "M98",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I674",
+      "target": "person:트리나",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_trina_01", "lines": [6, "11-12", "14-15"] }],
+      "reason": "#18 '앞에 서 있는 니케에게 옷을 입혀주었다' 뒤 #20 트리나가 이어 말하고, #12 '햇님' 호칭도 트리나의 것(02#61).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2154",
+      "person": "person:트리나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "멀리서만 보던 지휘관을 '햇님'이라 부르며 그 빛을 느끼려 바짝 다가와 품에 재워 버리는",
+      "evidence": [{ "scene": "ep:d_nikke_trina_02", "lines": ["61-62", 69, "118-131"] }],
+      "reason": "02#69 '멀리서 바라보기만 했지, 이렇게 가까이서 뵙는 건 처음' · #131 '조금만 더 햇살을 느낄 수 있게'. 트리나 → 지휘관 기록이 앞에 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    },
+    {
+      "id": "D2155",
+      "person": "person:트리나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "옷을 벗지 말라며 교정하러 온 햇님",
+      "after": "교정을 그만두고 함께 알몸이 되어 자연을 처음으로 같이 느껴 준 이 — '앞으로도 잘 부탁드려요'",
+      "trigger": [{ "scene": "ep:d_nikke_trina_04", "lines": ["78-97"] }],
+      "evidence": [{ "scene": "ep:d_nikke_trina_05", "lines": ["61-67", "76-78"] }],
+      "points": ["F1833"],
+      "reason": "04#25 '행동을 교정해 주려고' → 04#94-95 교정을 그만두고 옷을 벗음 → 05#66 '처음 느껴주시는 분이 햇님이 되다니' · #77.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 — 실마리 없음: 지휘관과 트리나가 가까이서 처음 만나는 편이지만(02#69) 이름이 나온 사건 · 챕터와의 앞뒤가 없고, 같은 날 나온 fl:for_rest와의 작중 순서도 원문이 정하지 않는다(for_rest의 '햇님'은 지휘관이라는 확인이 없다). 그래서 S를 더하지 않았다."
+}

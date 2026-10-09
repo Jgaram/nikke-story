@@ -1,0 +1,114 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M65\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:226",
+  "session": "M65",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I549",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_01", "lines": ["17-21"] }],
+      "reason": "갓데스 시절 회상의 `지휘관:` 줄 — 릴리바이스가 부르는 갓데스의 지휘관 엔더슨(char:224 I522 · char:225 I530과 같은 방식).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "I550",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_03", "lines": ["21-22"] }],
+      "reason": "침식 유발 개체를 우선 공격 대상으로 지정하는 `지휘관:` — 갓데스의 지휘관 엔더슨.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "I551",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_04", "lines": ["0-2", "15-28", "44-49"] }],
+      "reason": "피해를 보고하고 '그냥 랩쳐잖아'라 판단하며 라푼젤을 연구소로 보내는 `지휘관:` — 갓데스의 지휘관 엔더슨.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "I552",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_05", "lines": ["76-77", "98-105"] }],
+      "reason": "'갓데스 스쿼드, 다 모였지?' 하고 상부의 즉시 처분 지시를 브리핑하는 `지휘관:` — 갓데스의 지휘관 엔더슨.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1394",
+      "act": "재언급",
+      "points": ["F1681"],
+      "text": "눈이 붉어져 랩쳐를 위해 동료를 공격하는 새 침식 증상을 듣자 레드 슈즈가 크게 놀란다",
+      "about": ["person:레드_슈즈"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_04", "lines": ["104-106", 112] }],
+      "reason": "#106 '!!!' — 이 편은 말하지 않지만 같은 날 OLD TALES가 밝힌 대로 그 침식은 레드 슈즈가 명령과 인격 데이터를 심어 키운 것이다(F1681, 볼 거리 W9).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "E1395",
+      "act": "재언급",
+      "points": ["F1701"],
+      "text": "에이브가 '누가 의도적으로 코드를 수정했다고 해도 될 정도'라 하자 레드 슈즈는 랩쳐 중에 그런 존재가 있느냐고 돌리고 입을 다문다",
+      "about": ["person:레드_슈즈", "person:그레이브"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_05", "lines": ["5-9"] }],
+      "reason": "#6 — OLD TALES가 먼저 밝혔듯 코드를 고친 것은 랩쳐가 아니라 인격 데이터를 침식에 심은 레드 슈즈(F1701 · F1681). #9 침묵(볼 거리 W9).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "E1396",
+      "act": "암시",
+      "points": ["F2828"],
+      "text": "라푼젤이 '저는 먼저 한 발 앞서갈게요 · 꼭 따라와요'라 하고 레드 슈즈는 행운을 빈다",
+      "about": ["person:라푼젤", "person:레드_슈즈"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_05", "lines": ["62-69"] }],
+      "reason": "#64-65 — 훗날 레드 슈즈의 인격 데이터가 되살아나는 라푼젤의 NIMPH로 '따라' 들어온다(F2828). 반어라 추정(같은 날 OLD TALES E540과 같은 장면).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1594",
+      "person": "person:라푼젤",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "부상자를 돌보며 V.T.C.가 곧 치료법을 내리라 믿던 갓데스의 성녀",
+      "after": "랩쳐는 무한하고 인류는 유한하니 판을 뒤집을 큰 것을 노려 먼저 인류의 희망이 되고, 침식 치료법을 반드시 찾겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_rapunzel_puregrace_03", "lines": ["49-102"] }],
+      "time": "S187",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_05", "lines": ["42-66", "88-95"] }],
+      "reason": "03#18-20 '금방 치료법이 나올 거예요' → 동료를 쏘는 침식 니케를 본 뒤 #44 · #66 · #91-92 '포기하지 말아야 할 이유가 하나 더'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "D1595",
+      "person": "person:엔더슨",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:라푼젤"],
+      "text": "동료를 쏘는 침식 니케는 '그냥 랩쳐'라 쏠 수밖에 없다고 판단하면서도, 고집을 부리는 라푼젤을 휴식 · 보급 기간 안에 연구소에 다녀오라 보내 주는",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_puregrace_04", "lines": ["24-28", "38-49"] }],
+      "reason": "#27-28 · #47-49 — 갓데스 시절 엔더슨과 라푼젤의 첫 장면(S187).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "life": []
+}

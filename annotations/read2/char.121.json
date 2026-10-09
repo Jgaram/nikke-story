@@ -1,0 +1,75 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M87\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:121",
+  "session": "M87",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I653",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_02", "lines": [1] }],
+      "reason": "#1 '어머, 여기야~ 지휘관~' → #2 앤 '엠마?' · #3 엠마 '안녕, 앤~'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "I654",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_04", "lines": [102] }],
+      "reason": "#102 '한 겨울인데 여긴 훈훈한걸?' → #105 엠마 '산타가 빠질 수 없지'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "I655",
+      "target": "person:라플라스",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_04", "lines": [121] }],
+      "reason": "#121 '기다려라! 아직 선물은 끝나지 않았다!' → #122 창문이 깨지고 #123 라플라스 '히어로 등장이다!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1974",
+      "person": "person:앤",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "좋아하는 것을 수첩을 펼쳐 찾는",
+      "after": "직접 보고 빛나는 것을 찾아 '마음이 두근거리는 특별한 게 많았다'고 놀라며, 그 행복을 남에게도 선물하고 싶어 하는",
+      "trigger": [{ "scene": "ep:d_nikke_anne_miraclefairy_02", "lines": ["82-94"] }],
+      "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_03", "lines": ["95-101"] }],
+      "time": "S51",
+      "reason": "02#82 수첩을 펼치자 지휘관이 막고 #85 '좋아하는 건 수첩에 적혀있지 않아' → 03#100-101 '별을 선물하고 싶어요 · 이 행복한 기분을'. 04#51로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1975",
+      "person": "person:앤",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "어제의 일과 사람을 기억하지 못하는",
+      "after": "머리맡의 선물과 파란 나비 앨범의 사진으로 어제를 이어 '어제 크리스마스 파티 정말 즐거웠어요'라 말하는",
+      "trigger": [{ "scene": "ep:d_nikke_anne_miraclefairy_04", "lines": ["52-58"] }],
+      "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_05", "lines": ["9-11", "27-49", 59] }],
+      "time": "S51",
+      "points": ["F734"],
+      "reason": "#10 '어제의 일은 기억하지 못했다' → 앨범 사진과 #48 '추억은 사라지지 않을 거야' → #59 '어제 크리스마스 파티 정말 즐거웠어요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 정체 볼 줄 — 정할 수 없음: ep:d_nikke_anne_miraclefairy_04#6 (무리의 외침 — #8-10 라피 · 네온 · 아니스가 함께 나타나며 외쳐 한 사람으로 정할 수 없음). 앤 → 지휘관 '가장 특별한 사람'(04#99)은 D1953('선생님을 좋아해요')과 같은 결이라 다시 세우지 않았다. 05#8-11의 '파란 나비의 기적' 뒤 기억(Q100)은 1회독 F734가 같은 씬에서 다뤄 떡밥으로 적지 않았다. 엠마 · 엑시아 · 라플라스는 기준이 앞서 있고 얕아 세우지 않았다."
+}

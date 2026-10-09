@@ -1,0 +1,570 @@
+target,type,name,facts,questions,open_questions,events,units,first_unit,first_order,last_unit,last_order,introduced_in,links
+person:지휘관,person,지휘관,538,24,10,31,252,ch00,1,fl:great_villain_union,478,ch00,0
+place:방주,place,방주,249,18,3,33,132,ch01,2,fl:persona_on_frontline,474,,0
+person:라피,person,라피,194,16,4,26,71,ch00,1,ch48,472,ch00,1
+person:도로시,person,도로시,151,11,5,12,36,char:221,102,ch48,472,,0
+org:중앙_정부,org,중앙 정부,156,4,1,8,88,ch00,1,fl:persona_on_frontline,474,,0
+concept:니케,concept,니케,145,4,3,7,101,ch00,1,fl:project_matis,467,,0
+concept:랩쳐,concept,랩쳐,126,13,6,14,83,ch01,2,ch48,472,,0
+person:잉그리드,person,잉그리드,125,8,4,9,59,ch01,2,ch48,472,ch01,1
+org:갓데스,org,갓데스,127,4,0,12,43,relic:갓데스스쿼드리포트,31,relic:승리를_부르는_그림자,471,relic:갓데스스쿼드리포트,0
+person:슈엔,person,슈엔,120,6,3,4,47,ch02,3,char:105,469,ch02,0
+person:퀸,person,퀸,112,14,6,16,33,ch06,11,ch48,472,ch06,0
+person:마리안,person,마리안,110,14,8,9,29,ch00,1,ch48,472,ch00,1
+person:스노우_화이트,person,스노우 화이트,118,4,0,14,42,ch06,11,ch48,472,ch06,0
+person:신데렐라,person,신데렐라,114,6,1,20,31,event_redash,248,ch48,472,event_redash,2
+person:아니스,person,아니스,113,6,0,16,49,ch00,1,fl:ark_ranger,462,ch00,1
+place:아우터_림,place,아우터 림,114,2,2,6,50,sub:콜렉터_00,13,fl:persona_on_frontline,474,sub:콜렉터_00,0
+person:레드_후드,person,레드 후드,106,8,1,13,36,ch13,76,ch48,472,,0
+person:머스탱,person,머스탱,98,8,1,13,46,ch04,8,ch47,470,ch04,0
+person:에닉,person,에닉,100,6,2,10,38,ch04,8,ch47,470,ch04,0
+org:카운터스,org,카운터스,95,5,0,7,73,ch01,2,ch48,472,ch01,0
+person:엔더슨,person,엔더슨,88,10,5,7,40,ch01,2,fl:persona_on_frontline,474,ch01,0
+place:에덴,place,에덴,85,7,4,9,31,char:232,96,ch47,470,,0
+org:미실리스,org,미실리스,82,4,2,4,50,ch02,3,ch47,470,ch02,0
+concept:언체인드,concept,언체인드,78,7,3,7,34,ch09,55,ch46,452,ch09,0
+person:라푼젤,person,라푼젤,80,2,0,4,28,ch14,80,ch48,472,ch14,0
+person:나유타,person,나유타,75,6,2,9,15,event_lastkingdom1,295,relic:불길한_소리.wav,473,ch39,0
+person:레비아탄,person,레비아탄,76,5,1,11,24,ch32,310,ch48,472,ch32,1
+person:홍련,person,홍련,77,4,0,11,25,ch14,80,ch48,472,ch14,0
+concept:침식,concept,침식,72,5,3,8,27,ch01,2,ch48,472,ch01,0
+org:메티스,org,메티스,70,2,0,2,31,ch09,55,fl:great_villain_union,478,,0
+concept:NIMPH,concept,NIMPH,68,3,3,4,38,sub:랩칠리언_06,29,ch48,472,sub:랩칠리언_06,0
+person:그레이브,person,그레이브,67,2,0,9,22,ch30,293,fl:great_villain_union,478,ch30,4
+person:네온,person,네온,64,5,2,7,38,ch01,2,fl:ark_ranger,462,ch01,1
+person:요한,person,요한,66,2,0,4,14,ch19,165,ch47,470,ch19,1
+person:일레그,person,일레그,62,5,1,10,19,ch27,267,ch45,450,ch27,0
+concept:헬레틱,concept,헬레틱,61,3,1,10,38,ch06,11,ch48,472,ch06,0
+person:토커티브,person,토커티브,53,10,3,10,17,ch03,6,event_goddessfall1,418,ch03,0
+org:포비스트,org,포비스트,56,5,1,10,24,ch31,308,ch48,472,ch31,0
+person:니힐리스타,person,니힐리스타,56,5,1,9,16,ch07,42,event_goddessfall1,418,ch07,0
+org:엘리시온,org,엘리시온,54,5,4,6,35,ch01,2,fl:ark_ranger,462,,0
+person:버닝엄,person,버닝엄,56,2,2,1,25,sub:세르반_03,77,ch48,472,sub:세르반_03,0
+person:베히모스,person,베히모스,53,5,2,5,23,ch31,308,ch47,470,ch31,0
+person:식스오,person,식스오,51,6,3,10,10,event_dirtybackyard,262,fl:ark_ranger,462,event_dirtybackyard,0
+person:리버렐리오,person,리버렐리오,51,5,1,11,15,ch20,168,ch48,472,ch20,0
+person:E.H.,person,E.H.,52,1,0,5,12,ch22,197,ch47,470,ch22,1
+person:세실,person,세실,49,3,3,1,19,ch19,165,ch48,472,ch19,0
+person:릴리바이스,person,릴리바이스,49,1,0,6,17,event_overzone,203,ch47,470,event_overzone,1
+place:수정_지역,place,수정 지역,43,6,1,6,18,ch27,267,ch34,336,,0
+org:M.M.R.,org,M.M.R.,46,2,1,2,25,sub:숲속요정_00,74,fl:project_matis,467,sub:세르반_02,0
+org:테트라,org,테트라,47,1,0,3,25,ch04,8,fl:ark_ranger,462,,0
+person:맥스웰,person,맥스웰,48,0,0,1,20,ch11,68,fl:great_villain_union,478,,0
+org:V.T.C.,org,V.T.C.,42,4,2,6,13,event_redash,248,fl:project_matis,467,event_redash,0
+person:크라운,person,크라운,45,1,0,1,12,ch17,148,ch44,436,ch17,0
+place:미미르_부속_고등학교,place,미미르 부속 고등학교,42,4,3,5,14,char:392,206,char:872,475,char:392,0
+concept:양산형_니케,concept,양산형 니케,45,0,0,2,27,sub:세르반_01,39,fl:sin_editor,430,,0
+org:이그조틱,org,이그조틱,42,2,0,5,22,sub:콜렉터_01,14,ch47,470,ch16 sub:콜렉터_01,0
+org:필그림,org,필그림,41,3,0,4,27,ch04,8,event_goddessfall1,418,ch04,0
+person:크로우,person,크로우,42,2,2,2,11,ch16,87,fl:enter_heaven,442,,0
+org:엔터_헤븐,org,엔터 헤븐,40,3,1,4,17,ch09,55,fl:enter_heaven,442,ch14,0
+person:미러,person,미러,38,5,3,4,7,event_oldtales1,338,ch48,472,event_oldtales1,0
+person:미하라,person,미하라,41,2,0,3,15,ch02,3,char:162,382,ch02,0
+person:리버린,person,리버린,39,3,1,6,10,ch27,267,ch45,450,ch27,0
+person:프리바티,person,프리바티,42,0,0,4,16,ch09,55,fl:2x2_love_2ch,445,,0
+person:리틀_머메이드,person,리틀 머메이드,38,3,0,5,11,ch34,336,fl:wave_to_you,464,event_oldtales1,1
+person:오스왈드,person,오스왈드,39,2,0,6,9,event_overzone,203,ch46,452,event_overzone,0
+person:차임,person,차임,41,0,0,0,11,ch17,148,char:331,421,ch17,0
+org:앱솔루트,org,앱솔루트,37,3,0,5,21,ch04,8,char:871,477,ch04,0
+person:마나,person,마나,40,0,0,1,18,char:212,95,fl:reborn_evil,407,,0
+person:아나키오르,person,아나키오르,39,1,0,8,17,ch19,165,ch48,472,ch19,1
+person:에이브,person,에이브,40,0,0,1,11,ch34,336,fl:ark_guardian,428,,1
+person:라플라스,person,라플라스,37,2,1,1,16,ch11,68,fl:great_villain_union,478,,0
+person:로산나,person,로산나,38,1,1,3,12,event_cherryblossom,185,ch44,436,,0
+person:아르카나,person,아르카나,38,1,0,3,10,event_arcanearchive,383,ch46,452,event_arcanearchive,0
+person:에테르,person,에테르,36,3,2,2,15,char:291,128,fl:wave_to_you,464,,1
+person:온리_원,person,온리 원,35,4,1,4,5,ch41,414,ch48,472,ch41,0
+person:트로니,person,트로니,38,0,0,2,12,event_boomsday,280,char:405,481,event_boomsday,0
+concept:다크_매터,concept,다크 매터,35,2,0,6,22,ch32,310,relic:불길한_소리.wav,473,,0
+org:T.T.STAR,org,T.T.STAR,34,3,0,6,10,ch35,358,ch47,470,ch35,0
+person:마르차나,person,마르차나,36,1,1,0,9,event_schooloflock,234,char:872,475,,0
+person:시프티,person,시프티,36,1,0,3,23,ch01,2,event_unbreakablesphere1,377,ch01,0
+place:궤도_엘리베이터,place,궤도 엘리베이터,33,4,2,8,16,relic:UFO챈.zip,54,relic:불길한_소리.wav,473,,0
+person:바이퍼,person,바이퍼,33,2,1,3,14,ch16,87,ch45,450,,0
+person:유니,person,유니,33,2,0,4,14,ch02,3,fl:project_matis,467,ch02,0
+person:인디빌리아,person,인디빌리아,34,1,0,2,10,char:261,186,event_goddessfall1,418,ch24,0
+person:드레이크,person,드레이크,34,0,0,0,19,ch11,68,char:104,479,,0
+person:사쿠라,person,사쿠라,34,0,0,2,13,char:311,178,ch44,436,,0
+person:루드밀라,person,루드밀라,31,2,1,2,13,ch05,9,char:871,477,ch05,0
+person:지즈,person,지즈,33,0,0,1,15,ch34,336,fl:great_villain_union,478,ch37,0
+person:폴리,person,폴리,33,0,0,1,24,char:180,93,char:570,463,,0
+person:K,person,K,32,0,0,0,8,sub:랩칠리언_06,29,fl:reborn_evil,407,sub:랩칠리언_06,0
+person:은화,person,은화,31,1,0,3,12,ch04,8,fl:persona_on_frontline,474,ch04,0
+person:랩칠리언,person,랩칠리언,28,3,1,3,12,sub:랩칠리언_00,23,ch42,416,sub:랩칠리언_00,0
+person:메어리,person,메어리,31,0,0,1,16,char:130,108,fl:terminus_ticket,425,ch13,0
+person:목단,person,목단,30,1,0,6,14,event_cherryblossom,185,fl:ark_ranger,462,event_cherryblossom,0
+person:세이렌,person,세이렌,30,1,0,9,12,sub:거울_공주_01,315,side:eden_spear,411,sub:거울_공주_01,1
+place:갱생관,place,갱생관,31,0,0,0,17,sub:시리얼_01,34,ch46,452,ch02,0
+place:지상,place,지상,30,1,0,1,25,ch01,2,relic:거인을찾아서,437,,0
+concept:E2_크리스탈,concept,E2 크리스탈,29,1,0,2,11,ch31,308,fl:ark_ranger,462,ch31,0
+person:레드_슈즈,person,레드 슈즈,30,0,0,2,9,event_oldtales1,338,ch48,472,event_oldtales1,0
+person:장화,person,장화,29,1,0,2,7,event_newyearnewsword,258,ch48,472,event_newyearnewsword,0
+person:지엔,person,지엔,27,3,0,4,7,side:wordless,331,fl:project_matis,467,side:wordless,0
+person:하란,person,하란,28,2,1,2,8,char:230,143,fl:ark_ranger,462,char:230,0
+concept:기억_소거,concept,기억 소거,28,1,0,3,21,ch04,8,fl:project_matis,467,,0
+person:D,person,D,29,0,0,0,12,sub:랩칠리언_06,29,fl:reborn_evil,407,sub:랩칠리언_06,0
+person:이사벨,person,이사벨,26,2,1,2,10,char:231,136,ch46,452,char:231,0
+person:프리티,person,프리티,26,2,1,5,10,event_footstepwalkrun1,350,event_staranis1,454,event_footstepwalkrun1,1
+org:언더월드_퀸,org,언더월드 퀸,27,0,0,1,13,event_cherryblossom,185,ch47,470,event_cherryblossom,0
+person:글러트니,person,글러트니,25,2,0,3,8,event_oldtales1,338,fl:great_villain_union,478,event_oldtales1,0
+person:도반,person,도반,25,2,1,2,8,ch22,197,ch46,452,ch22,0
+concept:사고_전환,concept,사고 전환,26,0,0,1,19,char:221,102,event_staranis1,454,char:221,0
+incident:랩쳐_침공,incident,랩쳐 침공,25,1,1,0,21,ch07,42,char:810,231,,0
+org:A.C.P.U.,org,A.C.P.U.,26,0,0,1,20,sub:산해진미_01,36,char:570,463,sub:산해진미_01,0
+person:한슨,person,한슨,24,2,0,2,2,side:pretty_star,447,event_staranis1,454,event_staranis1,0
+person:길로틴,person,길로틴,24,1,0,1,9,ch12,73,ch45,450,,0
+concept:에블라_입자,concept,에블라 입자,22,2,1,1,20,ch03,6,fl:project_matis,467,ch02,0
+concept:페어리_테일,concept,페어리 테일,23,1,0,4,12,ch04,8,fl:project_matis,467,ch04,0
+person:그레텔,person,그레텔,23,1,0,5,11,sub:거울_공주_01,315,fl:wave_to_you,464,event_oldtales1,0
+person:노아,person,노아,23,1,0,3,11,char:232,96,ch47,470,,0
+person:자칼,person,자칼,24,0,0,3,14,ch16,87,ch45,450,,0
+person:헨젤,person,헨젤,23,1,0,5,11,sub:거울_공주_01,315,fl:wave_to_you,464,,0
+person:메이든,person,메이든,22,1,0,1,8,ch12,73,char:182,349,,0
+org:언리미티드,org,언리미티드,22,0,0,0,10,ch05,9,fl:absolute,400,ch05,0
+org:인류연합군,org,인류연합군,21,1,1,0,10,char:810,231,relic:궤도엘리베이터음모론,453,char:810,0
+org:저지스,org,저지스,22,0,0,0,7,event_ltk,189,ch44,436,event_ltk,0
+person:엑시아,person,엑시아,21,1,1,0,12,ch07,42,ch33,334,ch07,0
+person:파피용,person,파피용,22,0,0,1,13,char:171,134,ch48,472,char:171,0
+concept:퍼펙트,concept,퍼펙트,20,1,1,1,17,char:212,95,fl:sin_editor,430,char:212,0
+item:하모니_큐브,item,하모니 큐브,21,0,0,2,9,relic:반드시사수하라,292,ch41,414,ch30,0
+org:카페_스위티,org,카페 스위티,20,1,1,0,13,char:11,94,fl:lie_cause_recoil,438,,0
+org:파이오니아,org,파이오니아,20,1,1,0,9,char:232,96,char:223,420,,0
+person:D.E.E.P.,person,D.E.E.P.,16,5,1,6,9,event_footstepwalkrun1,350,ch46,452,event_footstepwalkrun1,0
+person:베스티,person,베스티,21,0,0,1,12,ch04,8,fl:persona_on_frontline,474,ch04,0
+person:슈가,person,슈가,20,1,1,0,11,ch13,76,fl:lie_cause_recoil,438,ch13,0
+person:에이드,person,에이드,21,0,0,0,11,event_maidinvalentine,177,fl:persona_on_frontline,474,,0
+org:메이드_포_유,org,메이드 포 유,20,0,0,0,12,event_maidinvalentine,177,fl:persona_on_frontline,474,event_maidinvalentine,0
+person:미세스_미스,person,미세스 미스,20,0,0,2,7,ch39,396,event_staranis1,454,ch39,0
+person:츠바이,person,츠바이,20,0,0,0,11,char:392,206,fl:2x2_love_2ch,445,,0
+person:티아,person,티아,20,0,0,0,8,event_dazzlingcupid,236,char:322,466,event_dazzlingcupid,0
+person:헬름,person,헬름,19,1,1,0,9,char:352,147,ch38,375,char:352,0
+item:유리_구두,item,유리 구두,19,0,0,3,8,event_redash,248,char:514,344,event_redash,0
+org:세이메이카이,org,세이메이카이,19,0,0,2,10,char:311,178,char:284,306,char:311,0
+org:트라이앵글,org,트라이앵글,19,0,0,1,13,ch09,55,fl:ark_ranger,462,ch09,0
+person:나가,person,나가,19,0,0,0,7,event_dazzlingcupid,236,char:322,466,event_dazzlingcupid,0
+person:마스트,person,마스트,18,1,1,0,11,char:352,147,char:405,481,,0
+person:모리,person,모리,18,1,1,1,6,event_unbreakablesphere1,377,fl:wave_to_you,464,event_unbreakablesphere1,0
+person:미란다,person,미란다,19,0,0,0,13,char:180,93,fl:persona_on_frontline,474,,0
+person:민트,person,민트,19,0,0,0,9,ch38,375,fl:bitter_spice,460,ch38,0
+person:엠마,person,엠마,19,0,0,1,14,ch04,8,fl:persona_on_frontline,474,ch04,0
+place:어드마이어_호,place,어드마이어 호,18,1,1,0,8,char:352,147,ch38,375,char:352,0
+concept:미스트,concept,미스트,16,2,1,1,7,event_dirtybackyard,262,ch45,450,event_dirtybackyard,0
+org:구원의_성화,org,구원의 성화,17,1,0,3,5,sub:데이파라_00,166,char:841,410,sub:데이파라_00,0
+org:시지_패러리스,org,시지 패러리스,18,0,0,0,10,sub:랩칠리언_06,29,fl:reborn_evil,407,sub:랩칠리언_06,0
+org:이지스,org,이지스,17,1,1,0,10,char:352,147,ch42,416,char:352,0
+person:아인,person,아인,18,0,0,0,9,char:392,206,fl:2x2_love_2ch,445,,0
+person:앨리스,person,앨리스,17,1,0,1,9,ch05,9,char:195,302,ch05,0
+person:프리카,person,프리카,18,0,0,0,9,ch38,375,char:601,461,ch38,0
+person:해머링,person,해머링,18,0,0,0,7,ch27,267,ch44,436,ch27,0
+place:금서고,place,금서고,18,0,0,0,8,event_arcanearchive,383,ch47,470,event_arcanearchive,0
+org:인피니티_레일,org,인피니티 레일,17,0,0,1,9,ch13,76,fl:enter_heaven,442,ch13,0
+person:리타,person,리타,17,0,0,1,10,sub:미실리스_연구팀_00,57,fl:for_rest,365,,0
+person:아비스타,person,아비스타,17,0,0,1,11,ch36,360,char:600,459,,0
+person:엔드리스,person,엔드리스,16,1,0,3,6,ch39,396,ch47,470,ch39,0
+person:엔메,person,엔메,17,0,0,0,1,fl:project_matis,467,fl:project_matis,467,fl:project_matis,0
+person:팬텀,person,팬텀,15,2,0,2,9,event_phantomthiefvsdetective,328,char:870,476,event_phantomthiefvsdetective,0
+place:블랙넷,place,블랙넷,16,1,0,6,12,sub:콜렉터_00,13,ch45,450,sub:콜렉터_00,0
+concept:웨일리,concept,웨일리,12,4,2,3,6,ch27,267,ch42,416,ch27,0
+concept:지상_탈환,concept,지상 탈환,16,0,0,1,13,sub:테트라_커넥트_00,5,ch47,470,,0
+item:세븐스_드워프,item,세븐스 드워프,13,3,1,6,13,char:220,121,ch48,472,,0
+org:익스터너,org,익스터너,14,2,0,4,8,ch12,73,fl:enter_heaven,442,ch12,0
+person:T.A.L.O.S.,person,T.A.L.O.S.,16,0,0,0,3,event_lastkingdom1,295,event_goddessfall1,418,event_lastkingdom1,0
+person:미카,person,미카,16,0,0,2,7,char:61,111,char:871,477,,0
+person:벨로타,person,벨로타,16,0,0,2,6,char:61,111,char:281,263,,0
+person:소다,person,소다,16,0,0,0,8,event_maidinvalentine,177,char:195,302,,0
+person:앵커,person,앵커,16,0,0,0,8,char:352,147,char:405,481,,0
+person:코코아,person,코코아,16,0,0,0,12,event_maidinvalentine,177,fl:fatal_maid,432,,0
+place:로열_로드,place,로열 로드,16,0,0,1,14,char:212,95,fl:ark_ranger,462,,0
+place:전초기지,place,전초기지,16,0,0,1,14,ch02,3,fl:b-side_idol,458,ch02,0
+place:코인_러시,place,코인 러시,16,0,0,0,9,ch22,197,fl:persona_on_frontline,474,,0
+concept:D-WAVE,concept,D-WAVE,13,2,2,1,5,event_ce006,387,fl:persona_on_frontline,474,event_ce006,0
+concept:방주_동력원,concept,방주 동력원,14,1,1,1,6,event_boomsday,280,ch47,470,event_boomsday,0
+concept:퀸_인자,concept,퀸 인자,12,3,0,4,6,ch40,398,ch44,436,ch40,0
+incident:3차_지상_탈환전,incident,3차 지상 탈환전,14,1,0,1,8,ch39,396,fl:project_matis,467,,0
+incident:아크_가디언_작전,incident,아크 가디언 작전,14,1,0,3,9,relic:갓데스스쿼드리포트,31,ch46,452,relic:갓데스스쿼드리포트,0
+person:레오나,person,레오나,15,0,0,0,7,char:381,184,char:870,476,,0
+person:루피,person,루피,15,0,0,0,10,ch15,85,fl:2x2_love_2ch,445,,0
+person:모더니아,person,모더니아,13,2,1,1,7,ch06,11,ch48,472,ch06,1
+person:바하무트,person,바하무트,15,0,0,0,8,ch34,336,ch46,452,ch41,0
+person:킬로,person,킬로,15,0,0,0,4,event_lastkingdom1,295,event_goddessfall1,418,event_lastkingdom1,0
+person:프레자일,person,프레자일,15,0,0,1,5,ch29,291,ch45,450,ch29,0
+person:프린세스,person,프린세스,14,1,1,0,2,ch43,434,char:18,457,ch43,0
+place:쉘터,place,쉘터,15,0,0,0,11,relic:채팅로그_얼리어답터,48,sub:중앙정부_프로토콜_00,242,relic:채팅로그_얼리어답터,0
+incident:2차_지상_탈환전,incident,2차 지상 탈환전,14,0,0,0,6,relic:데일리아크기사스크랩,167,fl:project_matis,467,,0
+org:베스트셀러,org,베스트셀러,11,3,0,4,6,char:580,330,ch46,452,char:580,0
+org:헤도니아,org,헤도니아,14,0,0,1,6,event_cherryblossom,185,ch44,436,event_cherryblossom,0
+person:디젤,person,디젤,14,0,0,1,9,char:72,101,fl:enter_heaven,442,,0
+person:라이,person,라이,14,0,0,0,9,char:392,206,char:872,475,,0
+person:헤르민,person,헤르민,14,0,0,0,1,event_ce006,387,event_ce006,387,event_ce006,1
+concept:이터널_스카이,concept,이터널 스카이,13,0,0,2,11,char:12,123,ch47,470,char:12,0
+concept:콜링_시그널,concept,콜링 시그널,13,0,0,0,7,ch18,152,ch48,472,ch01,0
+item:브레인_셸터,item,브레인 셸터,12,1,0,4,14,event_hightechtoy,157,ch48,472,event_hightechtoy,0
+org:3대_기업,org,3대 기업,13,0,0,4,15,ch02,3,ch44,436,ch02,0
+org:모란회,org,모란회,13,0,0,1,7,event_cherryblossom,185,ch44,436,event_cherryblossom,0
+org:워드리스,org,워드리스,12,1,1,0,5,ch02,3,side:wordless,331,ch02,0
+person:노라,person,노라,12,1,0,1,2,fl:blank_ticket,423,fl:terminus_ticket,425,fl:blank_ticket,0
+person:도라,person,도라,13,0,0,0,6,ch15,85,sub:상인연합_달란트_00,218,,0
+person:벨벳,person,벨벳,11,2,1,1,2,fl:coins_in_rush,404,fl:fatal_maid,432,fl:coins_in_rush,0
+person:솔린,person,솔린,13,0,0,0,6,char:72,101,fl:terminus_ticket,425,,0
+person:아크레인저_블랙,person,아크레인저 블랙,13,0,0,1,4,event_darkhero,298,char:570,463,,0
+person:율하,person,율하,13,0,0,1,10,char:172,125,fl:persona_on_frontline,474,,0
+person:콤,person,콤,13,0,0,0,2,event_ce006,387,char:851,390,event_ce006,0
+person:페퍼,person,페퍼,13,0,0,1,7,char:130,108,char:502,395,,0
+person:프림,person,프림,13,0,0,0,11,char:11,94,fl:lie_cause_recoil,438,,0
+place:블루워터_아일랜드,place,블루워터 아일랜드,12,1,0,1,5,event_bluewaterisland,212,char:15,227,event_bluewaterisland,0
+place:승리의_날개_호,place,승리의 날개 호,13,0,0,1,6,event_overthehorizon,391,ch48,472,event_overthehorizon,0
+concept:릴리스의_바디,concept,릴리스의 바디,9,3,1,4,4,ch20,168,event_goddessfall1,418,ch20,0
+org:리와인드,org,리와인드,12,0,0,0,4,event_onemoretime,289,char:551,304,,0
+org:보타닉_가든,org,보타닉 가든,12,0,0,0,6,ch27,267,char:521,372,,0
+org:자원_채집_부대,org,자원 채집 부대,12,0,0,1,7,sub:트레저_헌터_01,19,fl:sin_editor,430,sub:트레저_헌터_01,0
+person:데이파라,person,데이파라,11,1,0,3,6,sub:데이파라_00,166,char:842,409,sub:데이파라_00,0
+person:델타,person,델타,12,0,0,0,6,char:20,98,char:23,413,,0
+person:롬,person,롬,11,1,0,1,4,sub:롬_00,64,event_ce006,387,,0
+person:릴리스,person,릴리스,11,1,0,2,8,char:221,102,char:471,429,char:221,1
+person:백학,person,백학,10,2,2,0,2,fl:good_world,448,char:620,449,fl:good_world,0
+person:베이,person,베이,12,0,0,0,4,event_onemoretime,289,char:551,304,,0
+person:샛별,person,샛별,10,2,0,3,7,relic:데일리아크기사스크랩,167,fl:project_matis,467,relic:데일리아크기사스크랩,1
+person:에이미,person,에이미,11,1,0,4,2,fl:2x2_love_1ch,444,fl:2x2_love_2ch,445,fl:2x2_love_1ch,0
+person:퀀시,person,퀀시,12,0,0,0,7,char:402,175,fl:persona_on_frontline,474,,0
+person:클레이,person,클레이,12,0,0,0,4,event_onemoretime,289,char:551,304,,0
+place:리페어_센터,place,리페어 센터,12,0,0,0,10,sub:저스틴_00,40,event_staranis1,454,sub:저스틴_00,0
+place:크라운_왕국,place,크라운 왕국,12,0,0,0,4,event_goldenship,224,event_goddessfall1,418,,0
+concept:니케포비아,concept,니케포비아,10,1,1,1,6,char:10,103,fl:good_world,448,char:10,0
+concept:로드_급,concept,로드 급,11,0,0,0,9,ch01,2,event_ce006,387,,0
+concept:로열,concept,로열,11,0,0,1,7,sub:세르반_00,7,char:194,256,sub:세르반_00,0
+concept:크라켄,concept,크라켄,10,1,1,0,3,event_seayouagain1,226,fl:boom_the_ghost,393,event_seayouagain1,0
+concept:타일런트_급,concept,타일런트 급,11,0,0,1,11,ch01,2,fl:project_matis,467,,0
+org:해피_주,org,해피 주,11,0,0,0,6,char:381,184,char:570,463,,0
+person:VII,person,VII,11,0,0,0,1,event_lordforjustice,385,event_lordforjustice,385,event_lordforjustice,0
+person:X,person,X,11,0,0,0,3,char:40,190,fl:reborn_evil,407,char:40,0
+person:밀크,person,밀크,11,0,0,0,9,char:11,94,char:143,406,,0
+person:세르반,person,세르반,10,1,0,2,4,sub:세르반_00,7,sub:세르반_03,77,sub:세르반_00,0
+person:애니힐리오,person,애니힐리오,9,2,1,1,3,fl:ark_ranger,462,ch48,472,fl:ark_ranger,0
+person:요요,person,요요,11,0,0,0,1,event_staranis1,454,event_staranis1,454,event_staranis1,1
+person:크러스트,person,크러스트,11,0,0,0,7,event_goldencoinrush1,300,char:620,449,,0
+person:프리시아,person,프리시아,11,0,0,1,4,event_redash,248,ch45,450,event_redash,1
+place:유토피아_호,place,유토피아 호,11,0,0,0,3,fl:boom_the_ghost,393,char:502,395,fl:boom_the_ghost,0
+concept:마더_웨일,concept,마더 웨일,10,0,0,1,7,sub:랩칠리언_06,29,relic:정갈하게쓴기록,397,sub:랩칠리언_06,0
+concept:아웃로,concept,아웃로,10,0,0,0,3,char:12,123,fl:enter_heaven,442,char:12,0
+concept:특수_별동대,concept,특수 별동대,10,0,0,0,8,ch07,42,ch45,450,ch07,0
+incident:AFX_열차_테러,incident,AFX 열차 테러,10,0,0,1,5,char:72,101,fl:enter_heaven,442,char:72,0
+item:A_필러,item,A 필러,9,1,1,1,5,ch31,308,ch34,336,ch31,0
+org:달란트,org,달란트,10,0,0,0,8,ch15,85,event_goldencoinrush1,300,ch15,0
+org:방주_아동_보호_센터,org,방주 아동 보호 센터,9,1,1,0,2,sub:제니퍼f_00,149,fl:lie_cause_recoil,438,sub:제니퍼f_00,0
+org:인헤르트,org,인헤르트,10,0,0,1,4,char:233,205,ch44,436,ch20,0
+org:일렉트릭_쇼크,org,일렉트릭 쇼크,10,0,0,0,7,ch27,267,ch47,470,,0
+person:누아르,person,누아르,10,0,0,0,9,event_BunnyX777,207,event_jinxplayer,325,ch22,0
+person:리스,person,리스,10,0,0,0,1,event_staranis1,454,event_staranis1,454,event_staranis1,1
+person:브리드,person,브리드,10,0,0,0,6,char:72,101,fl:terminus_ticket,425,,0
+person:블랑,person,블랑,10,0,0,0,9,event_BunnyX777,207,event_jinxplayer,325,ch22,0
+person:센티,person,센티,10,0,0,0,8,sub:미실리스_연구팀_02,59,fl:boom_the_ghost,393,,0
+person:스톨_3세,person,스톨 3세,10,0,0,0,1,ch43,434,ch43,434,ch43,1
+person:애드미,person,애드미,10,0,0,0,7,ch14,80,char:390,320,,0
+person:얀,person,얀,10,0,0,0,8,ch15,85,char:502,395,,0
+person:언노운,person,언노운,9,1,0,4,6,ch28,273,sub:관짝이_02,314,ch28,1
+person:이터니티,person,이터니티,9,1,0,4,7,ch39,396,ch47,470,ch39,0
+person:피나,person,피나,10,0,0,0,4,event_overzone,203,ch46,452,event_overzone,0
+concept:NEO_바이러스,concept,NEO 바이러스,9,0,0,0,3,fl:reborn_evil,407,char:841,410,fl:reborn_evil,0
+concept:PROJECT_A.D.,concept,PROJECT. A.D.,6,3,1,3,5,event_wisdomspring,353,fl:good_world,448,event_wisdomspring,0
+concept:스톰_브링어,concept,스톰 브링어,9,0,0,0,7,ch18,152,ch46,452,ch18,0
+concept:이레귤러,concept,이레귤러,9,0,0,0,5,ch04,8,event_icedragonsaga1,347,ch01,0
+item:에덴의_창,item,에덴의 창,9,0,0,0,3,side:eden_spear,411,erelic:goddess_fall_mini,419,side:eden_spear,0
+item:이터널_라이프,item,이터널 라이프,9,0,0,0,6,fl:for_rest,365,fl:project_matis,467,fl:for_rest,0
+item:초거대_코어,item,초거대 코어,7,2,1,3,4,event_footstepwalkrun1,350,ch46,452,event_footstepwalkrun1,0
+org:근접_전투_스쿼드,org,근접 전투 스쿼드,9,0,0,0,2,event_newyearnewsword,258,char:225,259,event_newyearnewsword,0
+org:마이티_툴즈,org,마이티 툴즈,9,0,0,0,9,sub:미실리스_연구팀_03,60,ch47,470,,0
+org:쉐이드,org,쉐이드,6,3,1,3,4,fl:coins_in_rush,404,event_staranis1,454,fl:coins_in_rush,0
+person:루주,person,루주,9,0,0,0,5,event_BunnyX777,207,char:272,327,event_goldencoinrush1,0
+person:브래디,person,브래디,8,1,1,0,4,event_newflavor,367,char:521,372,,0
+person:소라,person,소라,9,0,0,1,4,event_overthehorizon,391,fl:ark_ranger,462,event_overthehorizon,0
+person:아이리,person,아이리,9,0,0,0,6,ch36,360,ch46,452,,0
+person:앨든,person,앨든,8,1,1,0,1,fl:persona_on_frontline,474,fl:persona_on_frontline,474,fl:persona_on_frontline,1
+person:퀸(마코토),person,퀸(마코토),9,0,0,0,2,fl:persona_on_frontline,474,char:870,476,fl:persona_on_frontline,1
+person:키리,person,키리,8,1,1,1,4,event_freezeacpu,239,fl:go_ninja_thief,412,event_freezeacpu,0
+person:토브,person,토브,9,0,0,0,5,event_alonesurvivor,253,char:871,477,event_alonesurvivor,0
+person:플로라,person,플로라,9,0,0,0,5,ch27,267,fl:for_rest,365,ch27,0
+place:북부,place,북부,8,1,1,0,5,ch04,8,event_goddessfall1,418,ch04,0
+place:언더_아레나,place,언더 아레나,9,0,0,0,2,char:141,113,event_claymore,303,char:141,0
+place:탈환지_01,place,탈환지 01,8,1,0,1,6,ch27,267,ch29,291,ch27,0
+concept:신생_랩쳐,concept,신생 랩쳐,8,0,0,0,3,ch46,452,relic:불길한_소리.wav,473,ch46,0
+concept:인식_칩,concept,인식 칩,8,0,0,0,6,char:12,123,event_claymore,303,char:12,0
+org:바이스리터,org,바이스리터,7,1,1,0,7,ch17,148,ch47,470,ch17,0
+org:스카우팅,org,스카우팅,8,0,0,0,6,ch16,87,fl:absolute,400,,0
+org:아크레인저,org,아크레인저,8,0,0,1,4,event_brandnewyear,163,ch48,472,,0
+person:길티,person,길티,8,0,0,0,2,char:400,172,event_beautyfullshot1,305,,0
+person:네로,person,네로,8,0,0,0,6,char:381,184,fl:terminus_ticket,425,,0
+person:노벨,person,노벨,8,0,0,0,8,sub:든_셀_00,52,event_phantomthiefvsdetective,328,,0
+person:레비,person,레비,8,0,0,0,3,side:mudfish,370,erelic:unbreakable_sphere_dialog,378,side:mudfish,1
+person:모나,person,모나,8,0,0,0,1,fl:persona_on_frontline,474,fl:persona_on_frontline,474,fl:persona_on_frontline,1
+person:앨트루이아,person,앨트루이아,8,0,0,0,3,ch44,436,ch48,472,ch44,0
+person:제니퍼,person,제니퍼,7,1,1,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,1
+person:제인,person,제인,8,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
+person:제인_밀러,person,제인 밀러,6,2,0,2,3,sub:중앙_정부_공식__00,10,sub:중앙_정부_공식__02,154,sub:중앙_정부_공식__00,0
+person:총사령관,person,총사령관,7,1,1,0,2,fl:good_world,448,ch46,452,fl:good_world,0
+person:치사토,person,치사토,8,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
+concept:마테리얼_H,concept,마테리얼 H,7,0,0,0,4,ch12,73,event_darkhero,298,ch12,0
+concept:스마일_박스,concept,스마일 박스,6,1,0,2,3,ch41,414,event_staranis1,454,ch41,0
+concept:용광로,concept,용광로,7,0,0,1,3,ch41,414,relic:주의용광로사용법,417,ch41,0
+concept:은색_액체,concept,은색 액체,7,0,0,0,4,ch38,375,erelic:unbreakable_sphere_lost,379,ch38,0
+concept:적합자,concept,적합자,7,0,0,0,6,event_redash,248,event_oldtales1,338,event_redash,0
+person:레인,person,레인,7,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
+person:볼트_MK.II,person,볼트 MK.II,7,0,0,0,4,sub:미실리스_연구팀_00,57,sub:미실리스_연구팀_03,60,sub:미실리스_연구팀_00,0
+person:비스킷,person,비스킷,7,0,0,0,5,event_bowwowparadise,183,event_secretgarden,345,,0
+person:신,person,신,7,0,0,0,4,char:401,173,char:405,481,,0
+person:아크레인저_레드,person,아크레인저 레드,7,0,0,1,2,event_darkhero,298,fl:ark_ranger,462,,0
+person:아트,person,아트,7,0,0,0,1,event_ce006,387,event_ce006,387,event_ce006,1
+person:에고비스타,person,에고비스타,7,0,0,0,2,ch46,452,ch48,472,ch46,0
+person:엘세리아_나인,person,엘세리아 나인,7,0,0,0,4,fl:reborn_evil,407,char:841,410,fl:reborn_evil,0
+person:칠리페퍼,person,칠리페퍼,5,2,0,2,3,sub:칠리페퍼_00,4,sub:칠리페퍼_02,81,sub:칠리페퍼_00,0
+place:사관학교,place,사관학교,7,0,0,1,7,char:10,103,char:95,402,char:10,0
+place:유사_방주,place,유사 방주,7,0,0,0,3,ch41,414,ch46,452,ch41,0
+place:포그_할로우,place,포그 할로우,7,0,0,0,3,event_dirtybackyard,262,ch40,398,event_dirtybackyard,0
+concept:블랙스미스,concept,블랙스미스,6,0,0,1,3,ch01,2,fl:absolute,400,ch01,0
+concept:프레데터,concept,프레데터,6,0,0,0,1,fl:absolute,400,fl:absolute,400,fl:absolute,0
+incident:갓데스_폴,incident,갓데스 폴,6,0,0,2,5,d_ex_elevator_01,49,side:pretty_star,447,d_ex_elevator_01,0
+org:라이프_토닉,org,라이프 토닉,5,1,1,0,3,char:241,129,event_lifeagain,332,char:241,0
+org:빌런_연합,org,빌런 연합,6,0,0,0,3,char:101,100,fl:great_villain_union,478,,0
+org:아크_익스프레스,org,아크 익스프레스,6,0,0,0,4,sub:철도로GO_00,78,char:71,119,sub:철도로GO_00,0
+org:오버시어,org,오버시어,6,0,0,0,5,ch36,360,char:441,456,,0
+org:쿠킹오일,org,쿠킹오일,6,0,0,0,3,event_newflavor,367,ch43,434,,0
+org:패스파인더,org,패스파인더,6,0,0,1,4,ch27,267,ch44,436,,0
+person:곰,person,곰,6,0,0,0,2,fl:persona_on_frontline,474,char:871,477,fl:persona_on_frontline,1
+person:노이즈,person,노이즈,6,0,0,0,4,char:430,97,ch40,398,,0
+person:드릴리,person,드릴리,6,0,0,0,3,ch27,267,ch30,293,ch29,0
+person:라이온,person,라이온,5,1,0,1,4,ch39,396,ch44,436,ch39,0
+person:레이블,person,레이블,6,0,0,0,1,fl:sin_editor,430,fl:sin_editor,430,fl:sin_editor,0
+person:볼륨,person,볼륨,6,0,0,0,4,char:430,97,ch39,396,,0
+person:알프레드,person,알프레드,6,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,fl:boom_the_ghost,0
+person:앤,person,앤,6,0,0,0,2,event_miraclesnow1,159,char:121,162,,1
+person:에피넬,person,에피넬,6,0,0,0,4,char:241,129,event_lifeagain,332,,0
+person:엘리시온_프랑카,person,엘리시온 프랑카,6,0,0,0,1,fl:enter_heaven,442,fl:enter_heaven,442,fl:enter_heaven,0
+person:유키코,person,유키코,6,0,0,0,2,fl:persona_on_frontline,474,char:871,477,fl:persona_on_frontline,0
+person:이안_맥스,person,이안 맥스,5,1,0,1,3,sub:핸섬_커맨더_00,276,sub:MMR지킴이_00,278,sub:핸섬_커맨더_00,1
+person:진,person,진,6,0,0,0,4,ch22,197,ch44,436,ch22,0
+person:트레저_헌터,person,트레저 헌터,5,1,0,3,4,sub:트레저_헌터_00,18,sub:트레저_헌터_03,21,sub:트레저_헌터_00,0
+person:트리나,person,트리나,6,0,0,0,3,fl:for_rest,365,fl:b-side_idol,458,,0
+person:폴크방,person,폴크방,6,0,0,0,5,char:242,140,event_lifeagain,332,,0
+place:배드_드림,place,배드 드림,6,0,0,0,5,event_doutsiders,171,ch43,434,event_doutsiders,0
+concept:게이트_키퍼,concept,게이트 키퍼,5,0,0,1,4,event_ce006,387,fl:lie_cause_recoil,438,event_ce006,0
+concept:아일랜드_이터,concept,아일랜드 이터,5,0,0,0,1,fl:wave_to_you,464,fl:wave_to_you,464,fl:wave_to_you,0
+concept:컨버터,concept,컨버터,5,0,0,0,2,event_boomsday,280,ch45,450,event_boomsday,0
+concept:콜드_슬립,concept,콜드 슬립,5,0,0,0,4,event_redash,248,char:514,344,event_redash,0
+org:777,org,777,5,0,0,0,3,ch22,197,event_jinxplayer,325,,0
+org:니케_인권_위원회,org,니케 인권 위원회,5,0,0,0,1,side:pretty_star,447,side:pretty_star,447,side:pretty_star,0
+org:루셰,org,루셰,5,0,0,0,4,char:200,105,char:831,323,char:200,0
+org:스쿼드_04-F,org,스쿼드 04-F,5,0,0,0,3,ch00,1,char:10,103,ch00,0
+org:오버_더_호라이즌,org,오버 더 호라이즌,5,0,0,0,3,event_overthehorizon,391,ch47,470,event_overthehorizon,0
+org:인큐베이터,org,인큐베이터,5,0,0,0,2,event_unbreakablesphere1,377,char:590,381,event_unbreakablesphere1,0
+org:테트라_커넥트,org,테트라 커넥트,5,0,0,0,4,sub:테트라_커넥트_00,5,ch23,217,sub:테트라_커넥트_00,0
+person:JohnD,person,JohnD,4,1,0,1,4,ch16,87,ch23,217,ch16,0
+person:네베,person,네베,5,0,0,0,4,char:193,160,event_neverland1,255,,0
+person:로지,person,로지,4,1,1,0,3,ch41,414,ch45,450,ch41,0
+person:루마니,person,루마니,5,0,0,0,3,char:241,129,char:240,333,,0
+person:리안,person,리안,5,0,0,0,3,ch14,80,event_secretgarden,345,ch14,0
+person:방주_난민,person,방주 난민,5,0,0,0,4,sub:방주_난민_00,88,sub:방주_난민_03,91,sub:방주_난민_00,0
+person:시그널,person,시그널,5,0,0,0,4,char:20,98,fl:terminus_ticket,425,,0
+person:에이다,person,에이다,5,0,0,0,2,fl:reborn_evil,407,char:840,408,fl:reborn_evil,0
+person:율리아,person,율리아,5,0,0,0,4,sub:음악_애호가_00,69,fl:terminus_ticket,425,,1
+person:잉크,person,잉크,5,0,0,0,4,ch25,241,ch44,436,,0
+person:카밀라,person,카밀라,5,0,0,0,1,event_killthelord,282,event_killthelord,282,event_killthelord,0
+person:콜렉터,person,콜렉터,5,0,0,0,4,sub:콜렉터_00,13,sub:콜렉터_02,219,sub:콜렉터_00,0
+person:타키나,person,타키나,5,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
+person:피노키오,person,피노키오,4,1,1,0,3,ch40,398,ch42,416,ch40,0
+place:M.M.R._심층부,place,M.M.R. 심층부,5,0,0,0,1,event_wisdomspring,353,event_wisdomspring,353,event_wisdomspring,0
+place:설온장,place,설온장,5,0,0,0,4,event_neverland1,255,char:871,477,event_neverland1,0
+place:시뮬레이션_룸,place,시뮬레이션 룸,5,0,0,0,5,char:830,322,fl:project_matis,467,,0
+place:천사_고아원,place,천사 고아원,5,0,0,0,2,event_neverland1,255,char:194,256,event_neverland1,0
+place:펑크_스트리트,place,펑크 스트리트,5,0,0,0,3,ch42,416,fl:ark_ranger,462,ch42,0
+concept:갓데시움,concept,갓데시움,4,0,0,1,4,ch15,85,side:eden_spear,411,ch13,0
+concept:로스트_섹터,concept,로스트 섹터,4,0,0,0,3,ch31,308,ch32,310,ch31,0
+concept:머신_메사이어,concept,머신 메사이어,3,1,0,2,3,fl:ark_guardian,428,relic:신에게닿기위한탑,451,fl:ark_guardian,0
+concept:울트라,concept,울트라,4,0,0,1,4,relic:갓데스스쿼드리포트,31,event_oldtales1,338,relic:갓데스스쿼드리포트,0
+concept:크리스탈_체임버,concept,크리스탈 체임버,4,0,0,0,2,ch30,293,ch31,308,ch30,0
+incident:방주_테러,incident,방주 테러,4,0,0,0,2,ch24,221,fl:ark_ranger,462,,0
+item:AA_필러,item,AA 필러,4,0,0,0,1,event_unbreakablesphere1,377,event_unbreakablesphere1,377,event_unbreakablesphere1,0
+item:네이키드_킹,item,네이키드 킹,4,0,0,0,2,event_lastkingdom1,295,event_goddessfall1,418,event_lastkingdom1,0
+item:방주_추첨권,item,방주 추첨권,4,0,0,0,3,relic:방주추첨권,17,event_ce006,387,relic:방주추첨권,0
+item:백빙룡_대서사시,item,백빙룡 대서사시,4,0,0,0,2,event_icedragonsaga1,347,char:182,349,event_icedragonsaga1,0
+item:아모르_테트라,item,아모르 테트라,4,0,0,0,2,event_beautyfullshot1,305,char:515,465,event_beautyfullshot1,0
+org:Twinkle_Twin_Star,org,Twinkle Twin Star,4,0,0,0,3,event_staranis1,454,fl:bitter_spice,460,event_staranis1,0
+org:엄브렐러,org,엄브렐러,4,0,0,0,2,fl:reborn_evil,407,char:842,409,,0
+org:해머&드릴,org,해머&드릴,4,0,0,0,3,ch27,267,ch47,470,,0
+org:화양연화,org,화양연화,3,1,1,0,1,event_killthelord,282,event_killthelord,282,event_killthelord,0
+person:N102,person,N102,3,1,1,0,2,char:120,145,event_miraclesnow1,159,char:120,1
+person:마오,person,마오,4,0,0,0,2,fl:boom_the_ghost,393,char:234,394,fl:boom_the_ghost,0
+person:빅_마담,person,빅 마담,4,0,0,0,1,ch43,434,ch43,434,ch43,0
+person:아리아,person,아리아,4,0,0,0,3,char:430,97,ch40,398,,0
+person:아이기스,person,아이기스,4,0,0,0,2,fl:persona_on_frontline,474,char:872,475,fl:persona_on_frontline,0
+person:안젤리나,person,안젤리나,4,0,0,0,1,event_miraclesnow1,159,event_miraclesnow1,159,event_miraclesnow1,0
+person:웬디,person,웬디,4,0,0,1,2,event_footstepwalkrun1,350,side:pretty_star,447,event_footstepwalkrun1,0
+person:조셉,person,조셉,3,1,1,0,1,event_doutsiders,171,event_doutsiders,171,event_doutsiders,0
+person:쿠루미,person,쿠루미,4,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
+person:클레어,person,클레어,4,0,0,0,2,fl:reborn_evil,407,char:842,409,fl:reborn_evil,0
+person:클로이,person,클로이,4,0,0,0,1,event_icedragonsaga1,347,event_icedragonsaga1,347,event_icedragonsaga1,0
+person:트리세라,person,트리세라,4,0,0,0,1,event_schooloflock,234,event_schooloflock,234,,0
+person:티미,person,티미,4,0,0,0,2,event_lionheart,260,char:382,261,,0
+place:Sweets_&_Cocoa,place,Sweets & Cocoa,4,0,0,0,2,event_maidinvalentine,177,event_romanticvalentine,355,event_maidinvalentine,0
+concept:마스터_급,concept,마스터 급,3,0,0,0,3,sub:랩칠리언_04,27,ch27,267,sub:랩칠리언_04,0
+concept:크레디트,concept,크레디트,3,0,0,0,2,char:201,127,char:381,184,,0
+concept:포멀,concept,포멀,3,0,0,0,3,char:12,123,char:110,137,char:12,0
+concept:하이퍼_푸드,concept,하이퍼 푸드,3,0,0,0,1,event_lastkingdom1,295,event_lastkingdom1,295,event_lastkingdom1,0
+incident:1차_지상_탈환전,incident,1차 지상 탈환전,3,0,0,0,2,ch23,217,event_footstepwalkrun1,350,,0
+item:아틀라스_케이지,item,아틀라스 케이지,3,0,0,0,2,side:eden_spear,411,event_goddessfall1,418,side:eden_spear,0
+org:데일리_아크,org,데일리 아크,3,0,0,0,2,char:110,137,relic:데일리아크기사스크랩,167,,0
+org:동식물_관리국,org,동식물 관리국,3,0,0,0,3,char:201,127,char:351,228,sub:세르반_02,0
+org:리틀_캐논,org,리틀 캐논,3,0,0,0,3,char:61,111,event_neverland1,255,char:61,0
+org:블레이즈_아웃,org,블레이즈 아웃,3,0,0,0,2,fl:reborn_evil,407,fl:ark_ranger,462,fl:reborn_evil,0
+org:세라핌,org,세라핌,3,0,0,0,2,event_bluewaterisland,212,char:836,362,char:91,0
+org:헤비그램,org,헤비그램,3,0,0,0,2,event_lastkingdom1,295,char:361,297,event_lastkingdom1,0
+person:ELYSION_Line._0,person,ELYSION Line. 0,1,2,1,1,1,event_staranis1,454,event_staranis1,454,event_staranis1,0
+person:MISSILIS_Line._0,person,MISSILIS Line. 0,1,2,1,1,1,event_staranis1,454,event_staranis1,454,event_staranis1,0
+person:겐조,person,겐조,3,0,0,0,1,char:282,187,char:282,187,char:282,0
+person:고스트,person,고스트,2,1,1,0,1,sub:고스트_00,32,sub:고스트_00,32,sub:고스트_00,0
+person:러블리_드림☆,person,러블리 드림☆,3,0,0,0,2,sub:러블리_드림_00,46,sub:러블리_드림_01,47,sub:러블리_드림_00,0
+person:레이첼_호프,person,레이첼 호프,2,1,1,0,1,relic:통화기록028594,38,relic:통화기록028594,38,relic:통화기록028594,0
+person:루시안,person,루시안,3,0,0,0,1,fl:terminus_ticket,425,fl:terminus_ticket,425,fl:terminus_ticket,0
+person:루크,person,루크,3,0,0,0,1,fl:ark_ranger,462,fl:ark_ranger,462,fl:ark_ranger,0
+person:리오,person,리오,3,0,0,1,2,event_footstepwalkrun1,350,side:pretty_star,447,event_footstepwalkrun1,0
+person:린네,person,린네,3,0,0,0,1,fl:for_rest,365,fl:for_rest,365,fl:for_rest,0
+person:마일즈,person,마일즈,2,1,0,2,3,relic:데일리아크기사스크랩,167,erelic:goddess_fall_mini,419,relic:데일리아크기사스크랩,0
+person:멜런,person,멜런,3,0,0,0,1,fl:enter_heaven,442,fl:enter_heaven,442,fl:enter_heaven,0
+person:사토우,person,사토우,3,0,0,0,1,char:311,178,char:311,178,char:311,0
+person:숲속요정,person,숲속요정,2,1,1,1,2,sub:숲속요정_00,74,ch21,191,,0
+person:스윗_조니,person,스윗 조니,3,0,0,0,2,event_maidinvalentine,177,event_romanticvalentine,355,event_maidinvalentine,0
+person:시리얼,person,시리얼,3,0,0,0,2,sub:시리얼_00,33,sub:시리얼_01,34,sub:시리얼_00,0
+person:시엘로,person,시엘로,3,0,0,0,2,event_overthehorizon,391,ch47,470,,0
+person:아스카,person,아스카,2,1,1,0,3,char:833,321,char:835,363,,0
+person:아크레인저_블루,person,아크레인저 블루,3,0,0,0,1,fl:ark_ranger,462,fl:ark_ranger,462,fl:ark_ranger,0
+person:제니퍼f!,person,제니퍼f!,3,0,0,0,2,sub:제니퍼f_00,149,fl:lie_cause_recoil,438,sub:제니퍼f_00,1
+person:제이드_한슨,person,제이드 한슨,1,2,2,0,2,sub:든_셀_00,52,relic:여자친구의편지,79,sub:든_셀_00,1
+person:택티컬티택,person,택티컬티택,3,0,0,0,2,sub:택틱컬틱택_00,274,sub:택틱컬틱택_01,275,sub:택틱컬틱택_00,1
+person:테디,person,테디,3,0,0,0,1,sub:테디_00,56,sub:테디_00,56,,0
+person:프리_랫,person,프리 랫,3,0,0,0,1,ch43,434,ch43,434,ch43,0
+person:할아범,person,할아범,3,0,0,0,2,sub:할아범_00,30,sub:할아범_01,201,sub:할아범_00,0
+place:아크리온_홀,place,아크리온 홀,3,0,0,0,1,event_staranis1,454,event_staranis1,454,event_staranis1,0
+place:코랄_아일랜드,place,코랄 아일랜드,3,0,0,0,2,event_beautyfullshot1,305,fl:wave_to_you,464,event_beautyfullshot1,0
+concept:그레이브_디거,concept,그레이브 디거,2,0,0,0,2,ch02,3,ch42,416,ch02,0
+concept:꽃의_맹약,concept,꽃의 맹약,2,0,0,0,1,event_cherryblossom,185,event_cherryblossom,185,event_cherryblossom,0
+concept:일곱의_조율자,concept,일곱의 조율자,1,1,1,0,1,ch48,472,ch48,472,ch48,0
+incident:데일리_아크_신문사_테러_사건,incident,데일리 아크 신문사 테러 사건,2,0,0,0,1,char:110,137,char:110,137,char:110,0
+incident:피사_돔_폭발_사고,incident,피사 돔 폭발 사고,1,1,1,0,1,char:241,129,char:241,129,char:241,0
+item:스타_스테이지,item,스타 스테이지,2,0,0,0,1,ch42,416,ch42,416,ch42,0
+item:화무십일홍,item,화무십일홍,2,0,0,1,2,event_newyearnewsword,258,char:225,259,event_newyearnewsword,0
+org:A.F.F.,org,A.F.F.,2,0,0,0,2,char:100,158,fl:ark_ranger,462,char:100,0
+org:니케_관리부,org,니케 관리부,2,0,0,0,2,ch00,1,event_ltk,189,ch00,0
+org:니푸르,org,니푸르,1,1,1,0,1,sub:이례의_기록자_00,22,sub:이례의_기록자_00,22,sub:이례의_기록자_00,0
+org:동물권_단체,org,동물권 단체,2,0,0,0,1,event_lionheart,260,event_lionheart,260,event_lionheart,0
+org:리콜&릴리즈,org,리콜&릴리즈,2,0,0,0,2,char:120,145,event_miraclesnow1,159,,0
+org:베일드_오더,org,베일드 오더,1,1,1,0,1,fl:good_world,448,fl:good_world,448,fl:good_world,0
+org:스컬_헤드,org,스컬 헤드,2,0,0,0,1,event_footstepwalkrun1,350,event_footstepwalkrun1,350,event_footstepwalkrun1,0
+org:정보부,org,정보부,2,0,0,0,2,ch01,2,sub:중앙_정부_공식__00,10,ch01,0
+org:프로토콜,org,프로토콜,2,0,0,0,2,sub:든_셀_00,52,sub:중앙정부_프로토콜_00,242,,0
+org:프리마돈나,org,프리마돈나,2,0,0,0,1,event_goldencoinrush1,300,event_goldencoinrush1,300,event_goldencoinrush1,0
+person:#000000,person,#000000,2,0,0,0,1,ch41,414,ch41,414,,0
+person:라라,person,라라,2,0,0,0,1,fl:project_matis,467,fl:project_matis,467,fl:project_matis,0
+person:레오,person,레오,2,0,0,0,1,fl:good_world,448,fl:good_world,448,fl:good_world,0
+person:레이,person,레이,1,1,1,0,2,char:833,321,char:831,323,,0
+person:레이븐,person,레이븐,2,0,0,0,2,event_ce006,387,char:851,390,,0
+person:로망티스트,person,로망티스트,2,0,0,0,2,sub:로망티스트_00,169,sub:로망티스트_01,245,sub:로망티스트_00,0
+person:로스트_넘버,person,로스트 넘버,2,0,0,0,1,erelic:red_ash_lost,249,erelic:red_ash_lost,249,erelic:red_ash_lost,0
+person:릴리,person,릴리,2,0,0,1,2,event_ce006,387,char:852,388,,0
+person:마린,person,마린,2,0,0,0,1,event_claymore,303,event_claymore,303,event_claymore,0
+person:마키마,person,마키마,2,0,0,0,1,char:800,180,char:800,180,char:800,0
+person:메카_시프티,person,메카 시프티,2,0,0,0,1,event_foolburstday,369,event_foolburstday,369,event_foolburstday,0
+person:모르가나,person,모르가나,2,0,0,0,2,fl:persona_on_frontline,474,char:870,476,,1
+person:미사토,person,미사토,1,1,1,0,1,char:833,321,char:833,321,,0
+person:사라,person,사라,2,0,0,0,1,fl:good_world,448,fl:good_world,448,,0
+person:산해진미,person,산해진미,2,0,0,0,2,sub:산해진미_00,35,sub:산해진미_01,36,sub:산해진미_00,0
+person:솔져_F.A.,person,솔져 F.A.,2,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:스페이드,person,스페이드,2,0,0,0,1,sub:스페이드_00,45,sub:스페이드_00,45,sub:스페이드_00,0
+person:시니스터,person,시니스터,2,0,0,0,1,sub:랩칠리언_04,27,sub:랩칠리언_04,27,sub:랩칠리언_04,0
+person:싹싹이,person,싹싹이,2,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
+person:아담,person,아담,2,0,0,1,2,event_ce006,387,char:852,388,,0
+person:아서,person,아서,2,0,0,0,2,side:pretty_star,447,ch46,452,side:pretty_star,0
+person:올리버,person,올리버,2,0,0,0,1,fl:good_world,448,fl:good_world,448,,0
+person:이례의_기록자,person,이례의 기록자,2,0,0,0,1,sub:이례의_기록자_00,22,sub:이례의_기록자_00,22,sub:이례의_기록자_00,0
+person:이브,person,이브,2,0,0,0,1,event_ce006,387,event_ce006,387,,0
+person:조쉬_허밋,person,조쉬 허밋,2,0,0,1,2,char:82,106,fl:for_rest,365,char:82,0
+person:질,person,질,2,0,0,0,1,fl:reborn_evil,407,fl:reborn_evil,407,fl:reborn_evil,0
+person:칼슨,person,칼슨,2,0,0,0,1,ch40,398,ch40,398,ch40,0
+person:트리키_보이,person,트리키 보이,2,0,0,0,2,ch41,414,ch42,416,ch41,0
+person:펭군_1호,person,펭군 1호,2,0,0,0,2,fl:wave_to_you,464,char:515,465,,0
+person:펭군_2호,person,펭군 2호,2,0,0,0,1,fl:wave_to_you,464,fl:wave_to_you,464,,0
+person:호프,person,호프,2,0,0,0,1,fl:ark_ranger,462,fl:ark_ranger,462,fl:ark_ranger,0
+person:히메노,person,히메노,2,0,0,0,1,char:802,182,char:802,182,char:802,0
+place:글리터_산맥,place,글리터 산맥,2,0,0,0,1,event_alonesurvivor,253,event_alonesurvivor,253,event_alonesurvivor,0
+place:라쿤_시티,place,라쿤 시티,2,0,0,0,2,fl:reborn_evil,407,char:842,409,,0
+place:모던_바,place,모던 바,2,0,0,0,1,char:290,354,char:290,354,char:290,0
+place:미들_시티,place,미들 시티,2,0,0,0,1,sub:고스트_00,32,sub:고스트_00,32,sub:고스트_00,0
+place:바우_와우_파라다이스,place,바우 와우 파라다이스,2,0,0,0,1,event_bowwowparadise,183,event_bowwowparadise,183,event_bowwowparadise,0
+place:엘리시온_타워,place,엘리시온 타워,2,0,0,0,2,char:92,135,fl:absolute,400,char:92,0
+place:정크_마운틴,place,정크 마운틴,2,0,0,0,2,char:11,94,char:140,120,char:11,0
+place:제2의_방주,place,제2의 방주,2,0,0,0,1,event_ce006,387,event_ce006,387,event_ce006,0
+place:해피_판타지_랜드,place,해피 판타지 랜드,1,1,1,0,1,event_nocallerid,146,event_nocallerid,146,event_nocallerid,0
+concept:With_Nikke,concept,With Nikke,1,0,0,0,1,side:pretty_star,447,side:pretty_star,447,side:pretty_star,0
+concept:오로라_블룸,concept,오로라 블룸,1,0,0,0,1,event_secretgarden,345,event_secretgarden,345,event_secretgarden,0
+concept:하베스터,concept,하베스터,1,0,0,0,1,fl:project_matis,467,fl:project_matis,467,,0
+item:라이터즈_이레이저,item,라이터즈 이레이저,1,0,0,0,1,ch33,334,ch33,334,ch33,0
+item:마녀의_아궁이,item,마녀의 아궁이,1,0,0,0,1,event_oldtales1,338,event_oldtales1,338,event_oldtales1,0
+org:데블_헌터,org,데블 헌터,1,0,0,0,1,char:800,180,char:800,180,char:800,0
+org:식도락가_여행자들,org,식도락가 여행자들,1,0,0,0,1,sub:산해진미_00,35,sub:산해진미_00,35,sub:산해진미_00,0
+org:실버건,org,실버건,1,0,0,0,1,ch00,1,ch00,1,ch00,0
+person:IV,person,IV,1,0,0,0,1,char:40,190,char:40,190,char:40,0
+person:MMR지킴이,person,MMR지킴이,1,0,0,0,1,sub:MMR지킴이_00,278,sub:MMR지킴이_00,278,,1
+person:P-12,person,P-12,1,0,0,0,1,char:811,233,char:811,233,,0
+person:거울_공주,person,거울 공주,1,0,0,0,1,sub:거울_공주_00,312,sub:거울_공주_00,312,sub:거울_공주_00,1
+person:관짝이,person,관짝이,1,0,0,0,1,sub:관짝이_00,311,sub:관짝이_00,311,sub:관짝이_00,1
+person:그레이,person,그레이,1,0,0,0,1,event_lionheart,260,event_lionheart,260,,0
+person:꼼꼼이,person,꼼꼼이,1,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
+person:나디아,person,나디아,1,0,0,0,1,event_lifeagain,332,event_lifeagain,332,event_lifeagain,0
+person:나루_1호,person,나루 1호,1,0,0,0,1,char:392,206,char:392,206,,0
+person:나루_2호,person,나루 2호,1,0,0,0,1,char:392,206,char:392,206,,0
+person:나루_3호,person,나루 3호,1,0,0,0,1,char:392,206,char:392,206,,0
+person:뚝딱이,person,뚝딱이,1,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
+person:람,person,람,1,0,0,0,1,char:822,284,char:822,284,char:822,0
+person:랜드크랩,person,랜드크랩,1,0,0,0,1,sub:랩칠리언_03,26,sub:랩칠리언_03,26,sub:랩칠리언_03,0
+person:레이_(가칭),person,레이 (가칭),1,0,0,0,1,char:834,364,char:834,364,,0
+person:렘,person,렘,1,0,0,0,1,char:820,286,char:820,286,char:820,0
+person:루루,person,루루,1,0,0,0,1,event_nyanyaparadise,215,event_nyanyaparadise,215,event_nyanyaparadise,0
+person:루비,person,루비,1,0,0,0,1,event_lionheart,260,event_lionheart,260,,0
+person:마리,person,마리,1,0,0,0,1,char:832,324,char:832,324,,0
+person:맥스,person,맥스,1,0,0,0,1,event_bowwowparadise,183,event_bowwowparadise,183,event_bowwowparadise,0
+person:메이슨_박사,person,메이슨 박사,1,0,0,0,1,char:311,178,char:311,178,char:311,0
+person:문구점,person,문구점,1,0,0,0,1,sub:문구점_00,198,sub:문구점_00,198,,0
+person:뮤직_마스터,person,뮤직 마스터,1,0,0,0,1,sub:음악_애호가_00,69,sub:음악_애호가_00,69,,0
+person:미친개,person,미친개,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:베아트리체,person,베아트리체,1,0,0,0,1,char:381,184,char:381,184,char:381,0
+person:볼트,person,볼트,1,0,0,0,1,sub:미실리스_연구팀_00,57,sub:미실리스_연구팀_00,57,,0
+person:사쿠라_콜라보,person,사쿠라,1,0,0,0,1,char:836,362,char:836,362,,0
+person:세이라,person,세이라,1,0,0,0,1,event_footstepwalkrun1,350,event_footstepwalkrun1,350,event_footstepwalkrun1,0
+person:솔져_E.G.,person,솔져 E.G.,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:솔져_O.W.,person,솔져 O.W.,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:스카이,person,스카이,1,0,0,0,1,event_overthehorizon,391,event_overthehorizon,391,,0
+person:스퀴드,person,스퀴드,1,0,0,0,1,sub:랩칠리언_03,26,sub:랩칠리언_03,26,sub:랩칠리언_03,0
+person:알콜러버,person,알콜러버,1,0,0,0,1,sub:알콜러버_00,82,sub:알콜러버_00,82,,0
+person:저스틴,person,저스틴,1,0,0,0,1,sub:저스틴_00,40,sub:저스틴_00,40,sub:저스틴_00,0
+person:지글이,person,지글이,1,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
+person:철도로GO,person,철도로GO,1,0,0,0,1,sub:철도로GO_00,78,sub:철도로GO_00,78,,0
+person:카르히,person,카르히,1,0,0,0,1,event_colorless,319,event_colorless,319,,0
+person:켈리,person,켈리,1,0,0,0,1,fl:2x2_love_2ch,445,fl:2x2_love_2ch,445,,0
+person:코리,person,코리,1,0,0,0,1,sub:코리_00,63,sub:코리_00,63,,0
+person:키츠네,person,키츠네,1,0,0,0,1,char:282,187,char:282,187,,0
+person:키티,person,키티,1,0,0,0,1,sub:문구점_00,198,sub:문구점_00,198,sub:문구점_00,0
+person:트윙클,person,트윙클,1,0,0,0,1,sub:트윙클_00,271,sub:트윙클_00,271,sub:트윙클_00,1
+person:파워,person,파워,1,0,0,0,1,char:801,181,char:801,181,,0
+person:팔팔이,person,팔팔이,1,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
+person:펭군_3호,person,펭군 3호,1,0,0,0,1,fl:wave_to_you,464,fl:wave_to_you,464,,0
+person:펭군_4호,person,펭군 4호,1,0,0,0,1,fl:wave_to_you,464,fl:wave_to_you,464,,0
+person:프로덕트_23,person,프로덕트 23,1,0,0,0,1,ch46,452,ch46,452,,0
+person:피라,person,피라,1,0,0,0,1,sub:피라_00,268,sub:피라_00,268,sub:피라_00,1
+person:핸섬_커맨더,person,핸섬 커맨더,1,0,0,0,1,sub:핸섬_커맨더_00,276,sub:핸섬_커맨더_00,276,,1
+place:언더_그레이스,place,언더 그레이스,1,0,0,0,1,fl:good_world,448,fl:good_world,448,fl:good_world,0
+place:코스모_버거,place,코스모 버거,1,0,0,0,1,char:172,125,char:172,125,,0
+item:울프스_베인,item,울프스 베인,0,0,0,0,0,,,,,event_redash,0
+item:커넥팅_디바이스,item,커넥팅 디바이스,0,0,0,0,0,,,,,ch02,0
+person:김작가,person,김작가,0,0,0,0,0,,,,,sub:김작가_00,0
+person:든?셀,person,든?셀,0,0,0,0,0,,,,,,1
+person:에밀리아,person,에밀리아,0,0,0,0,0,,,,,char:821,0
+person:엘리시온_하퍼,person,엘리시온 하퍼,0,0,0,0,0,,,,,,1
+person:음악_애호가,person,음악 애호가,0,0,0,0,0,,,,,,1
+person:칼리아,person,칼리아,0,0,0,0,0,,,,,event_footstepwalkrun1,0

@@ -1,0 +1,153 @@
+{
+  "unit": "event_miraclesnow1",
+  "session": "R16",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "MIRACLE SNOW(크리스마스 이벤트) — 앤(N102)의 기억이 이어진 2주와 어머니 안젤리나. 물이 모자라 눈을 못 내리던 방주가 머스탱의 제안으로 전초기지 유원지에만 2주 동안 15년 만의 눈을 내린다(prologue, 에닉이 기상 조정). 루피가 지휘관과 쇼퍼홀릭 채널 크리스마스 특집을 찍다 앤을 만나고, 앤이 뽑은 '소원 하이패스'로 '모두가 행복했으면'을 빌어 [행복 찾기 대작전]을 한다 — 엑시아의 파이널 퀘스트 대회, 컨트롤러를 못 챙긴 메이든(01–03). 다음 날 앤이 어제를 기억한다 — '크리스마스의 기적'. 루피는 앤에게 특별 의상을 입혀 지워지지 않는 기억을 만들기로 한다(intermission_01; 이 뒤로 이름표가 N102 → 앤). 엠마의 미각을 앗아가는 쿠키에 탄산수 · 초콜릿으로 맞서고(04–05), 지상에서 한 양산형 니케의 가족 크리스마스트리를 찾아 준 뒤 앤은 '엄마를 만나고 싶다'고 한다(06). 엑시아는 니케 제조 때 가족 기억을 지우는 것이 기본 사양이고 가족 만남 직후의 자살이 한때 사망 요인 1 · 2위였다고 경고하며, 기억이 이어지는 것은 정상 작동이 아니라 슈엔에게 보이라 한다. 슈엔은 NIMPH의 일시적 오류라 하고 앤의 모친 정보를 준다(2_01). 어머니 안젤리나는 앤을 보자 달아나고, 슈엔은 안젤리나가 딸을 니케로 만들어 달라 신청했다고 알린다(2_02). 안젤리나는 열 살 앤의 뇌 이상(지나친 기억력)으로 니케화를 택했고, 재발하자 미실리스의 매일 기억 리셋 제안을 받아 그 비용을 매달 내며 일곱 군데서 일하고, 만나지 말라는 말을 들었다고 한다(2_04 · intermission). 슈엔은 리콜&릴리즈 관계자들이 벌인 갈취임을 확인해 정리하고 피해 보상 · 건강 검진을 약속한다(2_05_s). 안젤리나는 2년 동안 매일 엄마임을 알려야 했던 일에 지쳐 이상함을 알고도 앤을 포기했다고 털어놓는다(2_05_e). 눈이 그치기 직전 루피의 설득으로 안젤리나가 앤을 안고, 앤은 '엄마 사랑해요'라며 기억이 지워진다(2_06). 3일 뒤 깨어난 앤은 엄마 · 루피 · 지휘관을 알아본다 — 슈엔: 눈 내리던 2주의 기억이 NIMPH와 하나가 되어 블랙박스화, 매일 리셋은 그대로지만 그 기억은 남는다(epilogue).",
+  "scenes": [
+    { "scene": "event_miraclesnow1_prologue", "text": "긴급 회의 — 물이 모자란 방주, 전초기지 유원지에만 2주 동안 15년 만의 눈" },
+    { "scene": "event_miraclesnow1_01_s", "text": "루피의 쇼퍼홀릭 채널 크리스마스 특집 — 오늘의 산타클로스" },
+    { "scene": "event_miraclesnow1_01_e", "text": "회전목마의 카페 스위티, 수첩을 보고 지휘관을 알아보는 앤 — '작년 크리스마스' 질문" },
+    { "scene": "event_miraclesnow1_02_s", "text": "앤의 소원 '모두가 행복했으면' — 행복 찾기 대작전, 영상을 앤에게 선물하려는 루피" },
+    { "scene": "event_miraclesnow1_02_e", "text": "파이널 퀘스트 오프라인 대회의 엑시아(82연승), 불행하다는 메이든" },
+    { "scene": "event_miraclesnow1_03_s", "text": "컨트롤러를 못 챙긴 메이든 — 루팡들 · 슈가가 한정판 컨트롤러 배달" },
+    { "scene": "event_miraclesnow1_03_e", "text": "한정판이 아까워 진 메이든, '내일 봐요'라는 앤 — 기억 못 할 내일" },
+    { "scene": "event_miraclesnow1_intermission_01", "text": "어제를 기억하는 앤 — 크리스마스의 기적, 루피의 특별 의상" },
+    { "scene": "event_miraclesnow1_04_s", "text": "유원지 미각 상실 제보(폴리 · 미란다) — 엠마의 무료 쿠키" },
+    { "scene": "event_miraclesnow1_04_e", "text": "엠마 가판대 앞 행렬 — 옆에 '약' 가판대를 열자" },
+    { "scene": "event_miraclesnow1_05_s", "text": "루팡들 · 달란트가 보낸 탄산수 · 초콜릿" },
+    { "scene": "event_miraclesnow1_05_e", "text": "덤으로 맛을 잡은 쿠키 — 엠마의 쿠키를 맛있다는 앤" },
+    { "scene": "event_miraclesnow1_06_s", "text": "15년 전 크리스마스만 기억하는 양산형 니케 — 지상의 크리스마스트리" },
+    { "scene": "event_miraclesnow1_06_e", "text": "트리를 안은 양산형 니케 — 앤의 소원 '엄마를 만나고 싶어요'" },
+    { "scene": "event_miraclesnow2_01_s", "text": "엑시아: 가족은 가장 강한 주박, 가족 기억은 지우는 게 기본 사양 — 슈엔에게 보이자" },
+    { "scene": "event_miraclesnow2_01_e", "text": "슈엔의 검사 — NIMPH 일시적 오류, NIMPH는 어디서 왔는지 아무도 모른다, 모친 정보" },
+    { "scene": "event_miraclesnow2_02_s", "text": "안젤리나(45세 · 무직) 정보 — 상처받아도 만나 보자" },
+    { "scene": "event_miraclesnow2_02_e", "text": "앤을 보고 달아난 안젤리나 — 슈엔: 그 여자가 딸을 니케로 신청했다" },
+    { "scene": "event_miraclesnow2_03_s", "text": "놓친 안젤리나, 괜찮다는 앤" },
+    { "scene": "event_miraclesnow2_03_e", "text": "엑시아가 알려 준 코스모 버거 3호점 — 하루 일곱 곳을 도는 안젤리나 미행" },
+    { "scene": "event_miraclesnow2_04_s", "text": "안젤리나와 대면 — '저는 돈을 벌어야 하니까요'" },
+    { "scene": "event_miraclesnow2_04_e", "text": "열 살 앤의 뇌 이상 · 니케화 · 재발 · 매일 기억 리셋 비용 · 만나지 말라는 말" },
+    { "scene": "event_miraclesnow2_intermission_01", "text": "그녀의 하루 — 일곱 군데 일" },
+    { "scene": "event_miraclesnow2_05_s", "text": "슈엔: 리콜&릴리즈 관계자의 갈취 — 정리 · 피해 보상 · 건강 검진 약속" },
+    { "scene": "event_miraclesnow2_05_e", "text": "안젤리나의 2년 — 매일 엄마임을 알려야 했던 날들, 포기" },
+    { "scene": "event_miraclesnow2_06_s", "text": "엠마와 쿠키 굽기 — 눈이 그치면 다 잊을 것 같다는 앤" },
+    { "scene": "event_miraclesnow2_06_e", "text": "루피의 설득 — 안젤리나의 품에서 '사랑해요', 지워지는 기억" },
+    { "scene": "event_miraclesnow2_epilogue", "text": "3일 뒤 엄마를 알아보는 앤 — 2주의 기억이 NIMPH와 하나가 되어 블랙박스화" }
+  ],
+  "facts": [
+    {
+      "id": "F723",
+      "text": "방주에서 눈을 내리려면 물이 많이 들어 좁은 곳에서만 가능해 한동안 눈이 없었는데, 이번 겨울 에닉이 기상 시스템이 방주와 같은 라인인 전초기지 유원지에만 2주 동안 15년 만의 눈을 내렸다 — 머스탱이 운영을 맡아 민간인에게 열고, 잉그리드가 전초기지행 엘리베이터 군중 제어를 맡았다",
+      "about": ["place:방주", "place:전초기지", "person:에닉", "person:머스탱", "person:잉그리드", "person:엔더슨"],
+      "evidence": [{ "scene": "event_miraclesnow1_prologue", "lines": ["0-31"] }, { "scene": "event_miraclesnow1_01_s", "lines": ["3-10"] }],
+      "reason": "에닉 · 엔더슨 · 잉그리드 회의(#0–31) — 가용 자원이 반경 2km · 2주뿐이라 어디에 써도 차별 얘기가 나와 '모두에게 평등한' 전초기지로 정했다(#5, #16). 엔더슨은 전초기지가 '어떻게 보면 방주가 아니'라 한다(#17). 이유는 루피 설명(01_s #6–10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F724",
+      "text": "매일 기억이 지워지던 앤(N102)이 눈이 내린 2주 동안은 전날 일을 기억했다 — 루피 · 지휘관은 '크리스마스의 기적'이라 불렀고, 엑시아는 [정상 작동]이 아닌 위험한 상태로 보았다",
+      "about": ["person:N102", "person:앤", "person:루피", "person:엑시아", "concept:기억_소거"],
+      "evidence": [{ "scene": "event_miraclesnow1_intermission_01", "lines": ["16-35"] }, { "scene": "event_miraclesnow2_01_s", "lines": ["61-70"] }],
+      "reason": "다음 날 '한정판 컨트롤러를 구해다 줬죠?'(#23). 이 씬부터 이름표가 N102에서 앤으로 바뀌고(#43), 눈이 그치고 기억이 지워진 뒤 다시 N102가 된다(2_06_e #82)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F725",
+      "text": "엑시아에 따르면 과거 가족과의 만남 직후 이질감을 이기지 못한 자살이 지상 전투와 니케 사망 요인 1 · 2위를 다투고 사고 전환율도 비정상적으로 높아, 그 뒤로 니케를 만들 때 가족에 대한 기억을 지우는 것이 기본 사양이 되었다 — 가족을 만나는 것 자체는 불법이 아니지만 이후 일은 책임지지 않는다",
+      "about": ["person:엑시아", "concept:니케", "concept:사고_전환", "person:루피"],
+      "evidence": [{ "scene": "event_miraclesnow2_01_s", "lines": ["13-55"] }],
+      "reason": "엑시아 말. 루피는 인간 때 기억이 있지만 가족 기억은 없고 엑시아도 없다(#18–24). 니케는 불멸이라 동생이 먼저 늙는다는 이질감(#38–40)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F726",
+      "text": "슈엔은 앤의 상태를 NIMPH의 일시적 오류로 판정하고 NIMPH에게 자가 수복 능력이 있어 두면 돌아온다고 했으며, NIMPH가 애초에 어디에서 온 것인지는 아무도 모른다고 말했다",
+      "about": ["person:슈엔", "concept:NIMPH", "person:앤"],
+      "evidence": [{ "scene": "event_miraclesnow2_01_e", "lines": ["15-30"] }],
+      "reason": "#21 '애초에 저게 어디에서 온 건지는 아무도 모른다고' — NIMPH의 출처를 묻는 Q62와 이어지지만 답은 아니라 회수로 적지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F727",
+      "text": "앤은 열 살 때 기억력이 지나쳐 뇌가 부하를 버티지 못하는 이상(1년 안에 죽는다는 진단)이 발견되어, 어머니 안젤리나의 신청으로 건강할 때 모습의 니케가 되었고, 니케가 된 뒤 재발하자 미실리스의 제안으로 NIMPH로 매일 기억을 리셋하며 살게 되었다",
+      "about": ["person:앤", "person:안젤리나", "org:미실리스", "concept:NIMPH", "concept:기억_소거"],
+      "evidence": [{ "scene": "event_miraclesnow2_02_e", "lines": ["49-53"] }, { "scene": "event_miraclesnow2_04_e", "lines": ["12-33"] }],
+      "reason": "슈엔 전화(02_e #50–53) · 안젤리나 말(04_e). 양산형이 되지 않았다(#24). 리셋을 멈추면 죽는다는 것은 슈엔도 말한다(epilogue #37)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F728",
+      "text": "리콜&릴리즈 관계자들은 안젤리나에게 앤의 매일 기억 리셋 비용이라며 매달 큰돈을 받아 가고 앤을 만나면 리셋 시스템에 문제가 생긴다며 만나지 말라 했는데, 이는 슈엔도 모르던 갈취였다 — 슈엔은 거래 내역으로 확인해 관계자들을 정리하고 피해 보상 · 안젤리나의 건강 검진을 약속했으며, 니케와 가족의 만남을 막는 규칙은 없다고 했다",
+      "about": ["org:리콜&릴리즈", "person:안젤리나", "person:슈엔", "org:미실리스", "org:시지_패러리스"],
+      "evidence": [
+        { "scene": "event_miraclesnow2_04_e", "lines": ["34-53"] },
+        { "scene": "event_miraclesnow2_05_s", "lines": ["15-69"] },
+        { "scene": "event_miraclesnow2_05_e", "lines": ["0-4", "81-100"] }
+      ],
+      "reason": "슈엔의 통화(05_s #35–51, 5년 치 거래 내역 · 시지 패러리스를 빌려 정리하겠다)로 확인되고 돈이 돌아왔다(05_e #1). 앤이 가족을 만날 때마다 스스로를 상처 입혔다는 말(04_e #52–56)은 관계자들이 전한 것이라 사실로 세우지 않았다. 회상의 ???(05_e #81–86)는 관계자로 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F729",
+      "text": "안젤리나는 2년 동안 매일 앤을 찾아가 엄마임을 알려야 했던 일에 마음이 깎여, 일반인이 니케 관리비를 내는 것이 이상한 줄 알면서도 따지지 않고 일곱 군데서 일하며 앤을 만나지 않는 쪽 — 앤을 포기하는 쪽 — 을 택했다",
+      "about": ["person:안젤리나", "person:앤"],
+      "evidence": [{ "scene": "event_miraclesnow2_intermission_01", "lines": ["0-32"] }, { "scene": "event_miraclesnow2_05_e", "lines": ["8-37", "104-129"] }],
+      "reason": "지휘관의 추궁(#18–32)에 안젤리나가 회상 · 고백으로 답한다(#37–129), '엄마는 포기했어'(2_06_e #57–58)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    },
+    {
+      "id": "F730",
+      "text": "눈이 그치며 앤의 기억은 지워졌지만 3일 뒤 깨어난 앤은 엄마 · 루피 · 지휘관을 알아보았다 — 슈엔에 따르면 눈 내리던 2주의 기억이 NIMPH와 완전히 하나가 되어 블랙박스화되어 접근할 수 없고, 매일 리셋(안 하면 죽는다)은 그대로지만 그 기억은 남는다",
+      "about": ["person:앤", "person:슈엔", "concept:NIMPH", "person:안젤리나"],
+      "evidence": [{ "scene": "event_miraclesnow2_06_e", "lines": ["30-90"] }, { "scene": "event_miraclesnow2_epilogue", "lines": ["0-46"] }],
+      "reason": "안젤리나는 이제 도망가지 않고 곁에 있겠다 하고(epilogue #9–12), 슈엔은 앤을 건드릴 수 없어 그냥 두겠다 한다(#44–46)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q100",
+      "text": "앤의 기억이 눈 내리는 2주 동안만 이어지고, 그 기억이 NIMPH와 하나가 되어 블랙박스로 남은 까닭은 무엇인가?",
+      "evidence": [{ "scene": "event_miraclesnow2_epilogue", "lines": ["29-43"] }],
+      "reason": "슈엔이 '영문을 모르겠다', '기적 말고는 설명할 방법이 없다'고 한다(#39, #43). 블랙박스는 마리안 안의 블랙박스(Q68)와 같은 말이라 이어 볼 만하다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S49",
+      "kind": "기준점",
+      "text": "크리스마스 — 전초기지 유원지에 15년 만에 눈이 내린 2주(그 뒤 3일까지)",
+      "ref": "event_miraclesnow1",
+      "at": [],
+      "evidence": [{ "scene": "event_miraclesnow1_prologue", "lines": ["23-25", 36] }, { "scene": "event_miraclesnow2_epilogue", "lines": [0] }],
+      "reason": "에닉 '2주 동안 눈'(#23), 잉그리드 '15년 만인가'(#25), '메리 크리스마스'(#36)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    }
+  ],
+  "targets": [
+    { "target": "person:안젤리나", "evidence": [{ "scene": "event_miraclesnow2_02_s", "lines": [11] }], "note": "앤(N102)의 어머니, 45세", "new": false }
+  ],
+  "revisit": []
+}

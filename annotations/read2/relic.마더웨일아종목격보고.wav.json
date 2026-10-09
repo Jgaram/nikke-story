@@ -1,0 +1,44 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M11\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:마더웨일아종목격보고.wav",
+  "session": "M11",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I104",
+      "target": "concept:웨일리",
+      "evidence": [{ "scene": "relic:마더웨일아종목격보고.wav_00", "lines": [0] }],
+      "reason": "#0 색과 형태가 다른 마더 웨일 — 채식으로 외형이 바뀐 랩칠리언의 웨일리(F1284 · F1285, Q152 회수)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "I105",
+      "target": "person:랩칠리언",
+      "evidence": [{ "scene": "relic:마더웨일아종목격보고.wav_03", "lines": ["0-4"] }],
+      "reason": "#0-4 웨일리 옆구리에서 나온 어설프고 작은 랩쳐가 이쪽을 쳐다봄 — 웨일리를 타고 다니며 인간에게 관심 있는 랩칠리언(F1284). 원문이 같은 장면이라 잇지는 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E263",
+      "act": "암시",
+      "points": ["F1285"],
+      "text": "숲 일부를 집어삼킨 마더 웨일에 '채식을 할 리는 없을 테니 다른 목적'이라 보고한다 — 실은 채식을 하는 웨일리",
+      "about": ["concept:웨일리"],
+      "evidence": [{ "scene": "relic:마더웨일아종목격보고.wav_02", "lines": ["1-2"] }],
+      "reason": "#2 '채식을 할리는 없을 테니' — ch27 랩칠리언이 채식을 권해 외형이 바뀌었다(F1285)는 것의 반어",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "정체 볼 줄 — 이 단위엔 미상 이름표 줄이 없다."
+}

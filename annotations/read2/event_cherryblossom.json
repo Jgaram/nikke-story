@@ -1,0 +1,270 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M06\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_cherryblossom",
+  "session": "M06",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I59",
+      "target": "person:유니",
+      "speaker": true,
+      "evidence": [{ "scene": "event_cherryblossom_01_e", "lines": [18] }],
+      "reason": "'어? 지휘관이다!' 바로 뒤 #20 유니와 미하라가 보이고 #21 미하라가 '정말이네?'로 받는다. #29 유니가 같은 말투로 이어 간다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "I60",
+      "target": "person:사쿠라",
+      "speaker": true,
+      "evidence": [{ "scene": "event_cherryblossom_epilogue", "lines": [25] }],
+      "reason": "'그럼요. 진짜로 했지요.' — #27 사쿠라가 '그렇지 않습니까'로 잇고 #28 지휘관이 '사쿠라?!' 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "I61",
+      "target": "org:갓데스",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": [89, 94] }],
+      "reason": "머스탱의 '그들이 지켜낸 우리' · 'Me의 Goddess들이 목숨을 걸고 지상 위의 전장을' — 이름 없이 갓데스 스쿼드를 가리킨다(Q115)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E153",
+      "act": "암시",
+      "points": ["F834"],
+      "text": "미하라가 '안쪽도 시끄럽다', 유니가 '자꾸 돈을 달라고 했다'고 흘린다 — 벚꽃 밑을 제 구역이라며 자릿세를 뜯는 리버티(F834)",
+      "about": ["person:미하라", "person:유니"],
+      "evidence": [{ "scene": "event_cherryblossom_01_e", "lines": [54, "77-81"] }],
+      "reason": "#54 · 77-78. 03_s#25-26 · 42-47에서 리버티가 자릿세를 요구하는 장면으로 드러난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "E154",
+      "act": "암시",
+      "points": ["F834"],
+      "text": "노이즈가 초대받고 왔는데 '이상한 사람들이' 공연을 훼방 놓았다고 한다 — 축제 거리를 제 구역이라 우기는 리버티(F834)",
+      "about": ["person:노이즈"],
+      "evidence": [{ "scene": "event_cherryblossom_02_e", "lines": ["9-11"] }],
+      "reason": "#9-10, #11 사쿠라가 되뇐다. 훼방꾼이 리버티라는 확인은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "E156",
+      "act": "재언급",
+      "points": ["F457"],
+      "text": "노이즈가 '프로듀서'의 결혼 소문에 '오늘 진짜 최악'이라며 달려든다 — 프로듀서 지휘관에게 바친 사랑 노래(F457)를 다시 꺼낸다",
+      "about": ["person:노이즈"],
+      "evidence": [{ "scene": "event_cherryblossom_02_s", "lines": ["85-87"] }],
+      "reason": "#87 '프로듀서가??', 02_e#12-14. 호감도 스토리의 프로듀서 관계(F456 · F457)를 잇는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D200",
+      "person": "person:사쿠라",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "지휘관을 '군'이라 부르며 정중히 말하되, 룰을 어긴 자는 조직원을 시켜 '이야기할 수 있는 자세로' 꺾어 놓는 냉정한 당주",
+      "evidence": [{ "scene": "event_cherryblossom_03_s", "lines": ["64-79"] }],
+      "reason": "#70-78 · 03_e#0-11. 목단에겐 '모든 모욕은 당신을 향한 것'(02_s#79)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D201",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "후계 재촉을 막으려 '오늘 하루만' 지아비가 되어 달라며, 이득 없는 일에 끌어들인 상대로 대하는",
+      "evidence": [{ "scene": "event_cherryblossom_01_s", "lines": ["0-11", "47-62"] }],
+      "points": ["F828"],
+      "reason": "#8-11 · 56-60. 04_e#100 '제 사정만을 위해 강제로 끌고 왔다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D202",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "오늘 하루만 빌린 가짜 지아비",
+      "after": "'진심이 조금이라도 없었다면 오지 않았다'는 말에 진심으로 영원을 약속하고 싶어져 입을 맞추고, 뒤에도 '저의 지아비'라 권리를 주장하는",
+      "trigger": [{ "scene": "event_cherryblossom_04_e", "lines": ["114-118"] }],
+      "points": ["F837"],
+      "evidence": [{ "scene": "event_cherryblossom_06_e", "lines": ["66-82"] }],
+      "reason": "#66 · 70-73. 계기는 돌려보내 주겠다는 제안을 '가장 평화로운 방법'이라 거절한 것(04_e#114-118). 끝은 epilogue#35 · 40",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D203",
+      "person": "person:사쿠라",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "양지가 뒷세계를 토벌하지 않게 폭력을 폭력으로 억누르되, 꺾은 갱단은 식솔로 받아 머물 곳과 밥을 주는 — 식솔을 위해 흔들림 없이 서야 하는 당주",
+      "evidence": [{ "scene": "event_cherryblossom_04_e", "lines": ["13-16", "38-49", "64-85"] }],
+      "points": ["F835", "F834"],
+      "reason": "#15-16 · 39-41 · 69-71 · 80-85. 니케가 될 때도 '목표가 머스탱과 다르지 않다'(intermission#122-124)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D204",
+      "person": "person:목단",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "벚꽃 축제를 봄 축제로 착각하고, 무엇이든 '의리'를 들이대며 속이 표정에 다 드러나는 단순하고 시끄러운 협객",
+      "evidence": [{ "scene": "event_cherryblossom_02_s", "lines": ["4-25", "59-81"] }],
+      "reason": "#7-23 · 74-81. 사쿠라는 '겉과 속이 투명한 자'라 한다(03_s#5-8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D205",
+      "person": "person:목단",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:사쿠라"],
+      "text": "복숭아 퍼펙트 공장 앞에서 형제의 잔을 나눈 '누님'을 자처하며 사쿠라의 결혼을 반대하지만, 번번이 사쿠라에게 휘둘리는 사이",
+      "evidence": [{ "scene": "event_cherryblossom_02_s", "lines": ["48-50", "60-66", 83] }],
+      "reason": "#49 · 60-61 · 83. 05_e에서 사쿠라가 복숭아 주로 목단을 재운다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D206",
+      "person": "person:목단",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "아우터 림 사람도 포멀도 의지만 있으면 협객이 될 수 있다는 것을 보이려 맹약에 든다 — 사람은 당연히 사람으로 본다",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["66-67", "119-121"] }],
+      "points": ["F831"],
+      "reason": "#67 '사람을 그럼 사람으로 보지 뭐로 봐?' · #120-121. 회상(S58)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D207",
+      "person": "person:로산나",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "이그조틱을 '들개'라 경멸하고 머스탱에게 '뒤통수라도 치면 어쩌려고' 도발하며, 보스도 아닌데 퀸은 꼭 되어야겠다는 야심가",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["54-56", "97-102", "126-129"] }],
+      "reason": "#56 · 99-102 · 127-128. 로산나가 아직 보스가 아니던 회상(S58)",
+      "confidence": "확실",
+      "status": "확정",
+      "time": "S58",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D208",
+      "person": "person:머스탱",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "양극화된 방주가 증오로 무너지지 않게 어둠을 아는 자에게 왕관을 씌우고, 갓데스가 지켜 낸 인류는 그저 살아만 있지 말고 엔터테인먼트하게 살아야 한다고 믿는",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["64-65", "84-96", 117] }],
+      "points": ["F832"],
+      "reason": "#84-95 · 117. 이 머스탱이 진짜인지 한슨인지(F2701)는 이 씬으로 정할 수 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "D209",
+      "person": "person:노이즈",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '프로듀서'라 부르며 결혼 소문에 '오늘 진짜 최악'이라 하고, 사쿠라에게 끌려가자 '거짓말쟁이'라 외치는",
+      "evidence": [{ "scene": "event_cherryblossom_02_e", "lines": ["0-14"] }],
+      "reason": "#1 · 12-14, epilogue#62. 출시순 앞 호감도 스토리(char:430)에서 기준이 나오면 그쪽을 남긴다",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M80",
+          "note": "앞선 출시(char:430)의 관계 기준 D1788을 남긴다 — 결혼 소문에 '최악'이라던 모습은 변화 D365의 before에 남는다"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U122",
+      "topic": "일상 · 문화",
+      "text": "드라마가 퍼뜨린 '지상에서 온 벚나무 아래 맹세의 키스' 소문을 좇아 방주 사람들이 첫 민간 개방된 벚꽃 축제에 몰린다",
+      "about": ["place:방주"],
+      "points": ["F836"],
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": ["2-19"] }],
+      "reason": "#14-17. 01_e#1 꽃놀이 인파",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "U123",
+      "topic": "기업 · 조직",
+      "text": "방주에서 가장 오래된 조직 세이메이카이는 혈통으로 후계를 이어, 식솔들이 당주에게 부군을 들이라고 몰려와 조른다",
+      "about": ["org:세이메이카이"],
+      "points": ["F828"],
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": ["23-31"] }],
+      "reason": "#25 · 30-31, 01_s#18-26",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "U124",
+      "topic": "방주 사회",
+      "text": "아무도 머물 땅을 주지 않는 이들이 신생 갱단을 꾸려 생활 지구의 축제 거리를 제 '구역'이라며 쇠 파이프로 자릿세를 뜯는다",
+      "about": ["place:방주"],
+      "points": ["F834"],
+      "evidence": [{ "scene": "event_cherryblossom_03_s", "lines": ["29-38", "57-63"] }],
+      "reason": "#60-63. 04_e#20-22 '바깥은 축제인데 우린 왜 이렇게 살아야 하나'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    },
+    {
+      "id": "U125",
+      "topic": "방주 사회",
+      "text": "뒷세계 조직은 꺾은 소규모 갱단을 식솔로 받아 잠자리와 밥을 주고 '교육'한다 — 축제를 치를 때마다 식구가 는다",
+      "about": ["org:세이메이카이"],
+      "points": ["F834"],
+      "evidence": [{ "scene": "event_cherryblossom_04_e", "lines": ["44-53", "69-74"] }],
+      "reason": "#45-53 · 72-74",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M06" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: event_cherryblossom_prologue#23,30-31 (후계 문제로 몰려온 세이메이카이 식솔들 — 무리) · event_cherryblossom_03_s#25-26 (리버티의 '가벼워 보이는 남자' — 사전에 없는 단역)"
+}

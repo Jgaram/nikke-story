@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:모바일_보이스피싱_광고_모음.zip",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U101",
+      "topic": "구시대",
+      "text": "외계인 습격으로 폭락장이 이어지자 '정부가 방주 이주를 위해 통조림을 대량 매입 중'이라는 주식 리딩 문자가 돌았다 — 재난 적금 · 쉘터 현금 대출 · 방주 당첨권 링크까지 공포를 노린 광고 문자가 쏟아졌다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F695"],
+      "reason": "_01#3 · 9. _00 적금 · _02 대출 · _03 당첨권도 같은 모습",
+      "evidence": [{ "scene": "relic:모바일_보이스피싱_광고_모음.zip_01", "lines": ["2-10"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

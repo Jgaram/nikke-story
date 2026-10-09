@@ -1,0 +1,45 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M90\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:280",
+  "session": "M90",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2037",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "패밀리 묘지를 보여 준 '공범' — 양지의 인간이라 거리를 두려는",
+      "after": "'처음이라고, 이런 건' — 남자 하나를 지키겠다고 설치는 자신을 인정하고 애인이 되어 달라 청하는",
+      "trigger": [{ "scene": "ep:d_nikke_rosanna_03", "lines": ["39-48"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rosanna_04", "lines": ["105-133", "143-148"] }],
+      "points": ["F962"],
+      "reason": "D1438에서. 03#47 '내 쪽에서 거리를 두려는 게 무슨 소용' · 04#106 '내 애인이 될 생각은?' · #117-119 지켜 주겠다 · #127 '처음이라고' · #147 '제 발로 그림자 속에'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2038",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "지켜 주겠다며 애인이 되어 달라 청한",
+      "after": "30분 만에 '내 남자'가 쏘이자 지키는 법을 몰랐다고 인정하고 동등한 복수를 약속하며, 병실을 둘의 방으로 만드는 연인",
+      "trigger": [{ "scene": "ep:d_nikke_rosanna_04", "lines": ["176-198"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rosanna_05", "lines": ["55-72", "121-138"] }],
+      "points": ["F962", "F963"],
+      "reason": "#57 '내 남자를 쐈다고' · #62 '사람 지키는 법은 잘 몰라서' · #68-69 동등한 것으로 되갚게 · #131 '미스터와 나의 개인실'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 로산나 성격(D207) · 신념(D229 · D1439) · → 지휘관 기준(D1436, 같은 날 event_queensorder)이 앞서 다시 세우지 않았다 — 04#33-36 '폭력으로 폭력을 다스린다'는 F961 · D1439 그대로. 콘실리에리 · 안토니 · 자산가는 이 단위의 사건 인물이라 관계를 적지 않았다(F958 · F963). 정체 볼 줄 — 정할 수 없음: ep:d_nikke_rosanna_02#70,72 (복도에 숨어든 와이어 암살자 — 안토니 패거리의 이름 없는 단역). 바로잡기: 시점 S385(BUNNY X 777 뒤, 02#94-97 확실) · F960 · F961 추정 → 확실(04#15-22 · #23-36 로산나가 직접 말한다)."
+}

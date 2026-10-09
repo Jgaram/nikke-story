@@ -1,0 +1,35 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:방주_난민_00",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I37",
+      "target": "person:방주_난민",
+      "speaker": true,
+      "reason": "#45-46 `???`가 '혹시 지휘관님이세요?'라 묻고 #48-49에서 '저 방주 난민이에요'라 밝힌다",
+      "evidence": [{ "scene": "sub:방주_난민_00", "lines": ["45-46"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U94",
+      "topic": "방주 사회",
+      "text": "부모의 빚을 떠안은 청년은 어려서부터 죽도록 일해도 10분의 1밖에 못 갚고, 남은 출구로 '뇌 기증해서 니케가 되는 것'을 비웃으며 차라리 지상으로 달아나는 길을 고른다",
+      "about": ["person:방주_난민", "place:방주"],
+      "points": ["F422"],
+      "reason": "#16 · 27-28. 빚진 사람에게 뇌 기증이 마지막 출구로 여겨진다 — relic:니케제작보고서요약본의 자발적 기증자(F696)와 같은 바탕",
+      "evidence": [{ "scene": "sub:방주_난민_00", "lines": ["11-20", "26-28"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

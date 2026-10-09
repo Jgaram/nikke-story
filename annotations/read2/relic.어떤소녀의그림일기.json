@@ -1,0 +1,141 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M33\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:어떤소녀의그림일기",
+  "session": "M33",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I310",
+      "target": "person:피노키오",
+      "reason": "일기를 쓴 소녀 — 랩칠리언을 '아저씨'라 부르고(ch40 04#35-37) 아저씨 친구를 제 친구로 삼는(04#38) 피노키오(F2096).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_00", "lines": ["1-4"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I311",
+      "target": "person:랩칠리언",
+      "reason": "'아저씨' = 피노키오가 함께 사는 랩칠리언(ch40 04#35-37).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_00", "lines": ["2-3"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I312",
+      "target": "person:피노키오",
+      "reason": "일기를 쓴 소녀(I310).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_01", "lines": ["1-7"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I313",
+      "target": "person:랩칠리언",
+      "reason": "큰 그림을 그린 '아저씨'.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_01", "lines": ["2-5"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I314",
+      "target": "person:지휘관",
+      "reason": "'아저씨 친구'가 좋아한다고 큰 그림을 그렸다 — 랩칠리언이 손수 그려 지휘관에게 준 [바깥]의 지도(F1286).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_01", "lines": ["5-6"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I315",
+      "target": "person:피노키오",
+      "reason": "일기를 쓴 소녀(I310).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_02", "lines": ["1-8"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I316",
+      "target": "person:랩칠리언",
+      "reason": "씨앗을 심은 '아저씨', 그림 속 '회색 누군가' — 랩쳐 슈트 차림의 랩칠리언.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_02", "lines": ["0-3"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I317",
+      "target": "person:피노키오",
+      "reason": "일기를 쓴 소녀(I310).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": ["1-10"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I318",
+      "target": "person:랩칠리언",
+      "reason": "'아저씨' · 그림 속 '회색 누군가'.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": ["0-3"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I319",
+      "target": "person:나유타",
+      "reason": "처음 본 '하얀색' 아저씨 친구, 그림 속 '하얀 머리의 사람' — 랩칠리언의 부탁으로 피노키오를 살피러 온 흰 머리의 나유타(ch40 04#72-73, ch39 06#91).",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": [0, "3-5"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E828",
+      "act": "재언급",
+      "points": ["F1286"],
+      "text": "아저씨 친구가 좋아한다고 해서 아저씨가 큰 그림을 그렸고, 소녀도 따라 그렸다",
+      "about": ["person:랩칠리언", "person:지휘관"],
+      "reason": "#4-7. 랩칠리언이 웨일리의 눈을 빌려 그려 지휘관에게 준 [바깥]의 큰 지도(F1286)로 보인다.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_01", "lines": ["2-7"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E829",
+      "act": "재언급",
+      "points": ["F2076"],
+      "text": "첫 쪽의 흩어진 자모가 쪽마다 또렷한 글씨로 자라 간다",
+      "about": ["person:피노키오"],
+      "reason": "00#1-4 → 03. 하루가 다르게 자란 피노키오(F2076)의 모습이 글씨로 남았다.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": ["1-11"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D802",
+      "person": "person:피노키오",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:나유타"],
+      "text": "처음 본 하얀 머리의 아저씨 친구에게 손을 흔들고, 첫 친구가 생겼다고 기뻐하는",
+      "reason": "#3-11.",
+      "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": ["3-11"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "life": []
+}

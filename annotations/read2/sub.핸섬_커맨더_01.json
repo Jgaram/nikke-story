@@ -1,0 +1,40 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:핸섬_커맨더_01",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D392",
+      "person": "person:이안_맥스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "연락처를 사서 '선배'라며 반말로 명령하고 인맥으로 묻어 버리겠다고 으르던",
+      "after": "친구들의 죽음을 확인한 뒤 '너처럼 되고 싶었다'며 사과하고 고맙다고 한 뒤 다시는 연락하지 않겠다는",
+      "trigger": [{ "scene": "sub:핸섬_커맨더_01", "lines": ["95-104"] }],
+      "evidence": [{ "scene": "sub:핸섬_커맨더_01", "lines": ["118-135"] }],
+      "reason": "#5-17 명령 · 협박 → #128 '너처럼 되고 싶었다 진짜' · #132-135 '미안하다 · 고맙다 · 다시는 연락할 일 없을 거야'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U201",
+      "topic": "방주 사회",
+      "text": "줄도 빽도 없는 지휘관에게 바깥 탐색 같은 위험한 작전은 출세길이었다 — 방주는 한때 사람과 니케를 들이붓다 소득이 없자 그만두었고, 돌아오지 못한 이들의 생사는 정부에 물어도 답이 없었다",
+      "about": ["place:방주", "person:이안_맥스"],
+      "points": ["F1329"],
+      "evidence": [{ "scene": "sub:핸섬_커맨더_01", "lines": ["21-38"] }],
+      "reason": "#26-27 바깥 탐색 붐과 금방 멈춤 · #28-29 '출세길… 줄도 빽도 없는 우리로선' · #36 '정부에 연락해도 아무 대답도 없고'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "unit": "char:313",
+  "session": "R36",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "프리바티 : 언카인드 메이드 호감도 스토리 5편 — 메이드 카페의 프리바티. 01: 프리바티는 여전히 메이드 포 유에서 일하며 조금씩 능숙해지고, 코코아가 프로 메이드로 '졸업'하려면 위험한 임무를 해야 한다고 한다. 02: 그 임무는 누군가의 전속 메이드가 되어 주인님을 만족시키는 것 — 프리바티는 지휘관밖에 떠오르지 않았다며 지휘관의 전속 메이드가 된다(F1279). 03–04: 지휘관실 청소는 물건 구경에 6시간을 쓰고, 빨래는 물이 뚝뚝 떨어진 채 끝난다. 05: 케첩 대신 매운 소스를 쓴 오므라이스까지 실패하자 프리바티는 지휘관의 것이 궁금하고 설레서 집중할 수 없었다고 털어놓고, 지휘관은 좋아한다고 말하며 평소의 프리바티가 좋다고 전속 메이드 졸업을 선언하고 식사를 청한다(F1280).",
+  "facts": [
+    {
+      "id": "F1279",
+      "text": "메이드 카페 일을 이어 가던 프리바티는 메이드장 코코아가 낸 '프로 메이드' 졸업 임무 — 누군가의 전속 메이드가 되어 주인님을 만족시키는 것 — 를 위해, 지휘관밖에 떠오르는 사람이 없었다며 지휘관의 전속 메이드가 되었다",
+      "about": ["person:프리바티", "person:코코아", "org:메이드_포_유", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_privaty_unkindmaid_01", "lines": ["0-57"] }, { "scene": "ep:d_nikke_privaty_unkindmaid_02", "lines": ["23-67"] }],
+      "reason": "코코아 · 프리바티 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1280",
+      "text": "전속 메이드로 청소 · 빨래 · 요리를 모두 망친 프리바티는 지휘관이 쓰는 물건과 옷이 궁금하고 손수 만든 것을 먹는다니 설레서 집중할 수 없었다고 털어놓았고, 지휘관이 좋아한다고 말하며 원하는 것은 전속 메이드가 아닌 평소의 프리바티라고 하자 졸업 기념으로 함께 식사하러 가기로 했다",
+      "about": ["person:프리바티", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_privaty_unkindmaid_03", "lines": ["46-109"] },
+        { "scene": "ep:d_nikke_privaty_unkindmaid_04", "lines": ["8-63"] },
+        { "scene": "ep:d_nikke_privaty_unkindmaid_05", "lines": ["24-137"] }
+      ],
+      "reason": "프리바티 본인 말(05#43-60) · 지휘관의 대답(분기 모두 '좋아해'로 이어짐 — #80-94)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S125",
+      "kind": "기준점",
+      "text": "event_perfectmaid 뒤 — 프리바티가 아직 메이드 카페에서 일하며 처음보다 능숙해진 때",
+      "ref": "event_perfectmaid",
+      "at": [["뒤", "event_perfectmaid"]],
+      "evidence": [{ "scene": "ep:d_nikke_privaty_unkindmaid_01", "lines": ["0-9", "41-46"] }],
+      "reason": "에이드가 '처음에 비해서 많이 나아지셨네'(01#9), 프리바티는 '메이드 일에서 졸업'하려 한다(02#66-67) — 이벤트에서 임시 메이드가 된 뒤로 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

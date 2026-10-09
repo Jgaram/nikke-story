@@ -1,0 +1,252 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M72\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "fl:2x2_love_1ch",
+  "parts": "1-6",
+  "session": "M72",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I594",
+      "target": "org:메이드_포_유",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_07", "lines": ["288-290"] }],
+      "reason": "#288 '메이드 카페에서 배운 건가요?' — 프리바티가 임시 메이드로 일한 메이드 포 유의 카페(F1275 · F1279).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1482",
+      "act": "재언급",
+      "points": ["F1584"],
+      "text": "지휘관이 '지난번처럼 시험관', 프리바티가 '저와 학교에서 함께 일한 적'이라며 필드 트립 때 둘이 통합 P반 임시 교사를 한 일을 꺼낸다",
+      "about": ["person:지휘관", "person:프리바티"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_01", "lines": [55, "70-72"] }],
+      "reason": "#55 · #71 — event_colorless의 임시 교사 초청(F1584).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1483",
+      "act": "암시",
+      "points": ["F2514"],
+      "text": "아르카나가 '밤늦게까지 혼자 도서실에 있다 쓸쓸히 자러 가는 — 예전의 저'라며 지휘관을 만나기 전의 외로움을 흘린다",
+      "about": ["person:아르카나"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_01", "lines": ["279-285"] }],
+      "reason": "#280-282 — 같은 단위 15#35에서 금서고에서 이야기할 사람이 없었다고 밝힌다(F2514).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1484",
+      "act": "재언급",
+      "points": ["F1946"],
+      "text": "아르카나가 '이번에도 무사히 돌아와 줘서 고마워요'라 하고, 지휘관이 메모 붙은 [운명의 수레바퀴] 카드를 돌려주며 '다녀왔어'라 한다",
+      "about": ["person:아르카나", "person:지휘관"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_01", "lines": ["304-316"] }],
+      "reason": "#305 · #311-316 — char:581에서 빌려준 카드와 돌아오겠다는 약속(F1946).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1485",
+      "act": "재언급",
+      "points": ["F943"],
+      "text": "새 학기 연설에 '슈엔 님'이 왔다며 아르카나가 사진을 찍는다 — 이사장 슈엔",
+      "about": ["person:슈엔", "place:미미르_부속_고등학교"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_04", "lines": ["359-373"] }],
+      "reason": "#362-363 — 슈엔이 이사장인 학교(F943)라 행사에 온 것. 원문은 까닭을 말하지 않는다(볼 거리 W49).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1486",
+      "act": "재언급",
+      "points": ["Q225", "J3"],
+      "text": "지휘관이 학생이 된 까닭을 '학창 시절의 기억이 없어서'라 하고 프리바티가 '없었죠'라 받는다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_05", "lines": ["93-101"] }],
+      "reason": "#97-100 — 어린 시절이 없는 지휘관(프로젝트 A.D.의 7호, Q225 · E1069).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1487",
+      "act": "재언급",
+      "points": ["F1935", "Q225"],
+      "text": "아르카나가 지휘관의 어린 시절 기억이 없다는 것을 '카운터스에 대한 기록 1권 81페이지'에 자기가 적었다고 한다",
+      "about": ["person:아르카나", "person:지휘관", "org:카운터스"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_06", "lines": ["51-56"] }],
+      "reason": "#52-54 — 금서고가 카운터스까지 기록 중(F1935), 어린 시절이 없는 지휘관(Q225).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1488",
+      "act": "재언급",
+      "points": ["F1279"],
+      "text": "프리바티가 아는 최신곡은 메이드 카페의 올해 테마곡 [오므라이스에 맛있어지는 주문을!]뿐이라며 메이드로서의 마음가짐을 말한다",
+      "about": ["person:프리바티", "org:메이드_포_유"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_07", "lines": ["282-293"] }],
+      "reason": "#284-290 — 메이드 카페 일을 이어 가는 프리바티(F1275 · F1279).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1489",
+      "act": "재언급",
+      "points": ["F1946"],
+      "text": "숨어 있던 지휘관에 놀란 아르카나가 '선배가 없어지는 건 무서워 · 이번엔 내가 먼저 없어졌구'라 한다",
+      "about": ["person:아르카나", "person:지휘관"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": ["49-58"] }],
+      "reason": "#53-58 — 출정마다 돌아오기를 기다리는 아르카나(F1946 · E1484). 원문이 잇지 않아 추정(볼 거리 W48).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1490",
+      "act": "재언급",
+      "points": ["F1927"],
+      "text": "'어지럽히지 말기' 약속과 몹시 어질러진 방이 되풀이되고, 아르카나가 '그때는 기억이 없었잖아요'라 한다",
+      "about": ["person:아르카나", "person:팬텀"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": ["84-92"] }],
+      "reason": "#85-91 — event_arcanearchive_02_s#51-58과 같은 대사 · 서술. 자기를 잊었던 때(F1927).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1491",
+      "act": "암시",
+      "points": ["F2534"],
+      "text": "'좋은 꿈 꿔'에 잠든 아르카나가 '이미, 꾸고 있는걸'이라 답한다 — 학교생활을 꿈이라 부르는 모티프",
+      "about": ["person:아르카나"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": ["264-272"] }],
+      "reason": "#265-270 — 2부 리얼 엔딩의 '[꿈]만 같은 추억'(F2534)의 메아리.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1492",
+      "act": "암시",
+      "points": ["F2512"],
+      "text": "숙제 검사 뒤 프리바티가 '그때 이후로 왜…'를 삼키고, 힘없는 얼굴로 '이런저런 생각 때문에 잠을 못 잤다거나 하는 일은 없다'고 한다",
+      "about": ["person:프리바티", "person:지휘관"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_13", "lines": ["68-85"] }],
+      "reason": "#71 · #80-84 — 16에서 학생들을 질투해 잠을 못 잤다고 털어놓는다(F2512).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "E1493",
+      "act": "암시",
+      "points": ["F2525"],
+      "text": "프리바티가 반 아이들과 친해진 지휘관에게 '다채로운 학창 시절의 추억, 만들어 보시길'이라며 한발 물러선다",
+      "about": ["person:프리바티", "person:지휘관"],
+      "evidence": [{ "scene": "fl:2x2_love_1ch_13", "lines": ["74-80"] }],
+      "reason": "#79 — 2부에서 지휘관의 학창 시절이 자기로만 채워지지 않게 일부러 거리를 둔다(F2525).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1699",
+      "person": "person:아르카나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "최애 본인과 금서고에서 함께 기억하며 협업하기로 한",
+      "after": "'관심 있는 사람' 앞이라며 어떤 자기라도 받아 주고 좋아해 주길 기대하는",
+      "trigger": [{ "scene": "fl:2x2_love_1ch_06", "lines": ["119-124"] }],
+      "time": "S307",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": ["120-130"] }],
+      "reason": "#118 · #123-129 — 버킷 리스트를 같이하자는 약속(06) 뒤 털어놓은 기대.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "D1700",
+      "person": "person:아르카나",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "밝고 능청스러운 프로",
+      "after": "삐지고 화내는 감정까지 솔직히 드러내는, 예전보다 편해진",
+      "time": "S307",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_11", "lines": ["99-114"] }],
+      "reason": "#106-108 지휘관의 말, #111-113 아르카나도 '예전보다 편해져서'라 인정한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "D1701",
+      "person": "person:아르카나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:에이미"],
+      "text": "룸메이트 에이미를 '처음 생긴 또래 친구'라 하며 점심 · 방과 후를 같이 다니고, 도서실 일을 돕겠다는 말에 기대는",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_15", "lines": ["14-35"] }],
+      "reason": "#14-15 · #27-30 · #35 — 2부까지 이어지는 둘의 축(F2514).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "D1702",
+      "person": "person:에이미",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "체력 단련도 지상은 결국 체력 싸움이라며 '좋은 수업'이라 반기는, 의욕 넘치는 모범생 전학생",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_09", "lines": ["20-26"] }],
+      "reason": "#22-25 — 전학생 대표(03)다운 성실함. 21의 거부(F2515)와 대비된다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    },
+    {
+      "id": "D1703",
+      "person": "person:프리바티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "메이드 일을 보러 오지 말라면서도 지휘관이 좋아하면 짧은 메이드복을 입는",
+      "after": "학창 시절이 없는 그에게 평범한 추억을 만들어 주려 반 아이들과 놀러 가고, 핑계를 대며 손을 잡고 걷는",
+      "trigger": [{ "scene": "fl:2x2_love_1ch_05", "lines": ["90-101"] }],
+      "time": "S307",
+      "evidence": [{ "scene": "fl:2x2_love_1ch_07", "lines": ["316-351"] }],
+      "reason": "#318-320 · #332-336 — 05의 '학창 시절의 기억이 없어서'가 계기(F2511).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M72" }]
+    }
+  ],
+  "life": [],
+  "slips": [
+    "fl:2x2_love_1ch_04#243 '잘 부탁해요.'의 이름표가 프리바티인데 다음 줄 서술이 '아르카나의 속삭임'이고 03#238의 같은 장면은 아르카나다 — 금서고 표기 오류 추정, 아르카나를 따른다"
+  ],
+  "revisit": [
+    {
+      "id": "V7",
+      "text": "볼 거리 W47(아르카나의 '제 꿈에 들어와 줘서', 19#184)과 정체 볼 줄 22 '지' #28 — 2회독 파트 7 뒤라 M73에서 본다",
+      "where": [
+        "fl:2x2_love_1ch"
+      ]
+    }
+  ],
+  "note": "2층이라 생활상은 적지 않았다. 볼 거리: W48 → E1489 · W49 → E1485 · W51(로맨스) → D1699 · D1700 · D1703. W50(10#40 '이 학교에는 남자가 없다')은 가리킬 사실 · 의문이 없어 적지 않았다. W47과 22 지#28은 이번 파트 밖이라 V7로 넘겼다. 시점은 1회독 S307 하나로 충분하다. 갈래(선택지)마다 다른 장면이라 관계 변화는 갈래 안에서 분명한 것만 적었다. 츠바이 · 라이의 지휘관 관계 기준은 출시가 앞선 3층 호감도 스토리에 맡겼다."
+}

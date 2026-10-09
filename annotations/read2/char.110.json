@@ -1,0 +1,80 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M55\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:110",
+  "session": "M55",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1278",
+      "act": "재언급",
+      "points": ["F403"],
+      "text": "크로우가 스스로를 '아웃로 출신에, 전직 테러리스트 집단 리더로 추정되는 니케'라 부른다",
+      "about": ["person:크로우", "org:엔터_헤븐"],
+      "evidence": [{ "scene": "ep:d_nikke_crow_01", "lines": ["15-16"] }],
+      "reason": "#15 — ch16에서 돈 소문(전원 아우터 림 출신 · 크로우는 전직 엔터 헤븐 리더, F403)을 본인이 다시 꺼낸다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1279",
+      "act": "암시",
+      "points": ["F778"],
+      "text": "자기와 자칼 · 바이퍼는 아우터 림에서 '특수한 입지'라 기적을 바라는 이들이 찾아온다고 한다",
+      "about": ["org:이그조틱", "place:아우터_림"],
+      "evidence": [{ "scene": "ep:d_nikke_crow_03", "lines": ["33-35"] }],
+      "reason": "#33-35 — 이그조틱이 아우터 림을 '관리'하는 정부 첩보 스쿼드이자 주민들의 법 · 우상이라는 것(F778, D:OUTSIDERS)",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1280",
+      "act": "암시",
+      "points": ["F1018"],
+      "text": "자기 신변을 건 도박을 털어놓고 '이번 같은 일이 한번으로 끝날 것 같진 않으니, 다음에도 미리 잘 부탁'한다",
+      "about": ["person:크로우"],
+      "evidence": [{ "scene": "ep:d_nikke_crow_05", "lines": ["53-56", "64-66"] }],
+      "reason": "#65-66 — 크로우가 주동한 방주 테러(F1018, ch24)라는 더 큰 도박을 먼저 비춘다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D1404",
+      "person": "person:크로우",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'리더 감'이라 인정하기에 쏘아 죽이려는 적",
+      "after": "한번 느긋하게 이야기해 보려 자수까지 걸고, 네 편에 서려 한다는 말에 '내가 진 걸로 치자'며 속사정을 털어놓는",
+      "trigger": [{ "scene": "ep:d_nikke_crow_03", "lines": ["18-27"] }],
+      "time": "S358",
+      "evidence": [{ "scene": "ep:d_nikke_crow_05", "lines": ["59-66"] }],
+      "reason": "03#27 '내가 진 걸로 치자' → 05#60 '너와는 한번쯤 느긋하게 대화를 나눠보고 싶었다' · #81 연대 제안에 놀람",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1405",
+      "person": "person:지휘관",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "니케를 버리지 않는 지휘관",
+      "after": "혜택 받은 방관자의 최소한의 속죄로, 아웃로를 가르는 왜곡된 경계선을 지우는 길을 걷겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_crow_04", "lines": ["76-93"] }],
+      "time": "S358",
+      "evidence": [{ "scene": "ep:d_nikke_crow_05", "lines": ["77-80", "87-95"] }],
+      "reason": "04 #80 방관도 유죄 → 05#77-80 '외면하지 않아, 연대할 이가 필요하면 나를 찾아와' · #95 '혜택 받은 방관자에게 가능한 최소한의 속죄'",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,45 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M100\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:315",
+  "session": "M100",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2181",
+      "person": "person:에이드",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "코인 러시 뒤 메이드 일을 완벽히 하면서도 임무만 완수하려는 특수요원처럼 굴어 손님들이 위화감을 느끼던",
+      "after": "옷차림을 스위치 삼아 메이드와 특수요원 두 모습을 나눠, 메이드복을 입으면 예전의 우아한 메이드로 돌아온",
+      "trigger": [{ "scene": "ep:d_nikke_ade_agentbunny_04", "lines": ["11-12"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ade_agentbunny_05", "lines": ["19-35", "42-45"] }],
+      "time": "S255",
+      "points": ["F2123"],
+      "reason": "01#76-79 단골 '퍼펙트한데 위화감' · 02#50-51 → 04#130-131 두 정체성 분리 · 05#35 '역시 에이드는 이런 모습이 최고지'.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2182",
+      "person": "person:에이드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "주인님의 메이드로서 부끄러운 모습을 더 보이지 않겠다며 곁에서 돕던",
+      "after": "도와주는 동안 커진 마음을 특수요원 차림으로 털어놓고 입을 맞춰, 오늘 밤 욕심을 전부 받아 달라는",
+      "trigger": [{ "scene": "ep:d_nikke_ade_agentbunny_03", "lines": ["60-67"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ade_agentbunny_05", "lines": ["77-101"] }],
+      "time": "S255",
+      "reason": "05#79 '주인님을 생각하는 마음이 계속 커져만' · #85 · #90 입맞춤 · #98-101. 앞 모습은 D816(fl:coins_in_rush).",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S255 그대로. 코코아 · 단골 손님은 얕아 기준을 세우지 않았다(코코아 → 에이드는 '예전 같은 에이드'를 걱정하는 모습뿐). 남자 · 여자 · 단골 손님은 이름표가 있는 단역이라 암시 언급이 아니다."
+}

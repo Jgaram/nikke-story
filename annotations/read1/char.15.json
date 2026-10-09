@@ -1,0 +1,51 @@
+{
+  "unit": "char:15",
+  "session": "R28",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "아니스 : 스파클링 서머 호감도 스토리. 바다에 온 섬(호텔 · 섬 전력이 다시 들어온 작은 섬 — 블루워터 아일랜드로 읽힌다)에서 아니스가 덩굴에 가려진 동굴을 찾아, 리타에게 만들어 달라 한 손전등을 들고 지휘관과 '보물'을 찾으러 들어간다(01). 발판 함정으로 떨어진 돌이 입구를 막고 손전등이 부서진다 — 틈 사이 빛을 따라가니(02) 먼지 쌓인 작은 방에 섬에 살던 이의 가족사진 · 인형 · 일기가 있다. 일기: 섬은 안전하고 괴물도 사람도 없이 고독하다, 누군가와 호텔 앞에서 일몰을 보며 맥주로 짠 하고 싶다(03). 동굴 안은 통신이 안 되고 뒷문은 잠겨 있다가 인형 밑 버튼으로 열린다(04). 문 밖은 호텔 옆 언덕 — 낡은 탁자에 빈 맥주캔과 따지 않은 한 캔이 남아 있고, 둘은 그 자리에 앉아 캔을 따 짠 하고, 아니스는 침대에서 하려던 말을 귀에 속삭인 뒤 비밀로 해 달라 한다(05). 줄거리 층은 가볍고 사실은 섬에 혼자 살아남은 사람의 흔적 하나다.",
+  "scenes": [
+    { "scene": "ep:d_nikke_anis_sparklingsummer_01", "text": "해변에서 동굴 발견 — 리타의 손전등" },
+    { "scene": "ep:d_nikke_anis_sparklingsummer_02", "text": "박쥐 · 굴러오는 돌 함정, 입구가 막힘" },
+    { "scene": "ep:d_nikke_anis_sparklingsummer_03", "text": "섬에 살던 이의 방 · 일기, 잠긴 뒷문" },
+    { "scene": "ep:d_nikke_anis_sparklingsummer_04", "text": "통신 불가 · 인형 밑 버튼으로 문이 열림" },
+    { "scene": "ep:d_nikke_anis_sparklingsummer_05", "text": "호텔 옆 언덕의 일몰 · 기다린 맥주 한 캔" }
+  ],
+  "facts": [
+    {
+      "id": "F1058",
+      "text": "블루워터 아일랜드의 덩굴에 가려진 동굴 안에는 섬에 살던 이가 입구에 돌 굴리는 함정과 숨긴 뒷문을 두고 쓴 작은 방이 있었다 — 그의 일기에 따르면 섬은 안전하지만 괴물도 사람도 없어 고독했고, 뒷문 밖 호텔 옆 언덕의 탁자에는 빈 맥주캔과 함께 마실 사람을 기다리듯 따지 않은 한 캔이 남아 있었다",
+      "about": ["place:블루워터_아일랜드", "person:아니스", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_anis_sparklingsummer_02", "lines": ["35-56", "72-73"] },
+        { "scene": "ep:d_nikke_anis_sparklingsummer_03", "lines": ["7-9", "21-23", "28-30", "36-44"] },
+        { "scene": "ep:d_nikke_anis_sparklingsummer_05", "lines": ["28-37"] }
+      ],
+      "reason": "방과 일기(서술), 언덕의 탁자. 가족사진 배경이 이 섬이라는 선택지 서술(03 #23)과 호텔로 블루워터 아일랜드로 읽었다. 랩쳐를 피한 쉘터라는 것은 아니스의 추측(#29)이라 문장에 넣지 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S89",
+      "kind": "기준점",
+      "text": "블루워터 아일랜드 휴가 중 — event_seayouagain1의 크라켄 격추 뒤 일주일 휴가로 읽힌다",
+      "ref": "event_seayouagain1",
+      "at": [["중", "event_seayouagain1"]],
+      "evidence": [
+        { "scene": "ep:d_nikke_anis_sparklingsummer_01", "lines": ["10-11", 77] },
+        { "scene": "ep:d_nikke_anis_sparklingsummer_03", "lines": ["10-11"] }
+      ],
+      "reason": "섬에 전기가 다시 연결되었고(03 #11) 아니스가 함께 있다 — 아니스는 첫 방문(event_bluewaterisland)에 오지 못했다(event_seayouagain1_02_e #70-72). 원문이 때를 말하지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R28", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

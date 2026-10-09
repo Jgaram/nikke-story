@@ -1,0 +1,44 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M104\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:404",
+  "session": "M104",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2231",
+      "person": "person:길티",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "교관을 독점하려 바니걸로 백허그를 계획하고, 벌을 받으려 일부러 지각하고 거짓말로 골탕 먹이는",
+      "after": "꾸중에 속상해 쥔 주먹을 스스로 풀고, 같이 해온 일이 물거품이 되는 게 싫다며 거짓말을 그만두는",
+      "trigger": [{ "scene": "ep:d_nikke_guilty_mightybunny_03", "lines": ["41-57"] }],
+      "evidence": [{ "scene": "ep:d_nikke_guilty_mightybunny_04", "lines": ["5-24"] }],
+      "time": "S393",
+      "reason": "03#42 '벌받아야 할지도' · #55 '거짓말 했어 … 골탕 먹이려고' → 04#14-18 쥔 주먹을 애써 풂 · #22-24 '거짓말 안 할게 … 물거품이 되는 건 나도 싫으니까'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M104" }]
+    },
+    {
+      "id": "D2232",
+      "person": "person:길티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "교관 곁에 있으려면 갱생해야 하지만, 완전히 갱생해 유죄가 아니게 되면 교관이 떠날까 불안한",
+      "after": "갱생해도 떠나지 않고 서로 배워 가자는 말에 처음으로 진심으로 기뻐 웃고, 팔 힘을 조절해 부드럽게 안는 법을 익히는",
+      "trigger": [{ "scene": "ep:d_nikke_guilty_mightybunny_04", "lines": ["29-36"] }],
+      "evidence": [{ "scene": "ep:d_nikke_guilty_mightybunny_05", "lines": ["14-23", "40-47"] }],
+      "time": "S393",
+      "reason": "볼 거리 W82. 04#34-36 '완벽하게 갱생한다면 … 그대로 내 교관인 걸까?' → 05#19-23 '떠나지 않아' · '진심으로 기뻐서 웃음이 나온 적 처음' · #41-47 힘 조절해 안음. 앞 모습 D1981.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M104" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음. 볼 거리 W82는 D2232로 적었다. 카운터스의 오해 · 소문(04#39-59)은 한 편의 개그라 적지 않았다. '코인 러시의 바니걸 니케들'(01#13)은 게임 센터 일반을 가리켜 떡밥으로 적지 않았다. 시점 단서 보강: S393(char:400 갱생 판결 뒤, 추정)을 read1/char.404.json에 더했다."
+}

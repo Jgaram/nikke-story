@@ -1,0 +1,342 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch31",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I184",
+      "target": "person:신데렐라",
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["111-112"] }],
+      "reason": "자폭하려던 그레이브의 '미안, 하다…! 신… 데…!' — 관 속은 신데렐라(F1542 · F1554). 이 씬에 이름이 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "I185",
+      "target": "person:레비아탄",
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["137-138"] }],
+      "reason": "베히모스의 '넷의 짐승' 구절 중 '물을 범람하게' — 넷 = 포비스트(F1533), 물을 다루는 레비아탄.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "I186",
+      "target": "person:지즈",
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["137-138"] }],
+      "reason": "같은 구절의 '하늘을 가리고' — 날개로 나는 지즈(F1865).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "I187",
+      "target": "person:바하무트",
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["137-138"] }],
+      "reason": "같은 구절의 '푸른 불로 불태울지니' — 푸른 불을 두르는 바하무트(F2181).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E433",
+      "act": "재언급",
+      "points": ["F1171"],
+      "text": "라피가 레드 후드의 기억으로 아나키오르와의 조우 · 분노를 떠올린다",
+      "about": ["person:라피", "person:레드_후드", "person:아나키오르"],
+      "evidence": [{ "scene": "d_main_31_01_s", "lines": ["31-35"] }],
+      "reason": "#33-35 '레드 후드와 아나키오르가 조우했던 것 같다 · 분노' — event_redash의 갓데스 · 아나키오르 전(F1171)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E434",
+      "act": "암시",
+      "points": ["F1786"],
+      "text": "엠마가 카운터스는 장비를 안 바꾸냐 묻고 라피는 지금 몸이 가장 맞는다고 답한다",
+      "about": ["person:라피", "person:엠마"],
+      "evidence": [{ "scene": "d_main_31_02_e", "lines": ["29-31"] }],
+      "reason": "뒤에 라피의 바디가 은화가 건넨 택티컬 업 OS 설계로 바뀐다(F1786). 앞선 화제의 메아리.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E435",
+      "act": "암시",
+      "points": ["F1538"],
+      "text": "시프티가 말뚝 착지 조종이 오퍼레이터 교육 과정에 들어 있다고 한다",
+      "about": ["person:시프티", "item:A_필러"],
+      "evidence": [{ "scene": "d_main_31_03", "lines": ["13-17"] }],
+      "reason": "#16 '교육 과정에 포함되어 있어서요' — 유실물 말뚝 보고서가 조종 실수 사고로 필수 교육이 된 사정을 밝힌다(F1538).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E436",
+      "act": "재언급",
+      "points": ["F1396"],
+      "text": "A 필러가 수정을 부수며 유리 블록을 솟게 해 로스트 섹터를 만든다",
+      "about": ["concept:로스트_섹터", "item:하모니_큐브"],
+      "evidence": [{ "scene": "d_main_31_03", "lines": ["33-38"] }],
+      "reason": "#38 '로스트 섹터가 됐네' — 일레그가 본 하모니 큐브 인근의 유리 로스트 섹터(F1396)가 실제로 지어지는 모습.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E437",
+      "act": "암시",
+      "points": ["F1559"],
+      "text": "라피는 미안해서 은화를 피했고 미안하다 말한 적도 없으며, 엠마는 제대로 인사해야 끝난다고 한다",
+      "about": ["person:라피", "person:은화", "person:엠마"],
+      "evidence": [{ "scene": "d_main_31_05", "lines": ["63-83"] }],
+      "reason": "#78-81 '제대로 인사하지 않으면 끝이 맺어지지 않아' → ch32 에필로그에서 라피가 은화에게 사과한다(F1559).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E438",
+      "act": "암시",
+      "points": ["F1542"],
+      "text": "자폭하려던 그레이브가 '미안하다, 신데…'라 한다",
+      "about": ["person:그레이브", "person:신데렐라"],
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["105-112"] }],
+      "reason": "#112 '신… 데…!' — 관 속이 헬레틱이 아니라 신데렐라라는 것(F1542)을 흘린다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E439",
+      "act": "암시",
+      "points": ["Q199"],
+      "text": "베히모스가 그레이브 앞의 지휘관을 보고 '남자잖아?' 하고 관심을 보인다",
+      "about": ["person:베히모스", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["121-123"] }],
+      "reason": "#123 — 뒤에 지휘관에게서 받아 갈 것(Q199 → 정수 F2184)의 첫 기척.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E440",
+      "act": "암시",
+      "points": ["F2181", "F1821"],
+      "text": "베히모스가 지어낸 '넷의 짐승이 땅 · 물 · 하늘 · 푸른 불' 구절을 읊는다",
+      "about": ["person:베히모스", "org:포비스트"],
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["136-141"] }],
+      "reason": "#137-138 — 넷 = 포비스트(B · L · Z · B, F1821), 푸른 불의 바하무트(F2181)까지 미리 그린다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E441",
+      "act": "암시",
+      "points": ["F1548"],
+      "text": "베히모스가 관을 막 열면 대선배님이 죽는다고 들었다 한다",
+      "about": ["person:베히모스"],
+      "evidence": [{ "scene": "d_main_31_07", "lines": ["8-12"] }],
+      "reason": "#11 — ch32에서 그레이브가 강제로 열면 신데렐라가 죽게 해 두었다고 밝힌다(F1548).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E442",
+      "act": "암시",
+      "points": ["F1545"],
+      "text": "베히모스가 그 무기도 네 것이 아니고 남의 것을 맡아 둘 뿐이라 한다",
+      "about": ["person:그레이브", "item:세븐스_드워프"],
+      "evidence": [{ "scene": "d_main_31_07", "lines": ["46-49"] }],
+      "reason": "#47-49 — 그레이브는 스노우 화이트의 세븐스 드워프를 맡아 둔 것이다(F1545).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E443",
+      "act": "암시",
+      "points": ["F1543"],
+      "text": "베히모스가 '대선배님도 아니고' 네가 수정을 막아낼 재량은 없다고 한다",
+      "about": ["person:베히모스", "person:아나키오르"],
+      "evidence": [{ "scene": "d_main_31_07", "lines": ["57-59"] }],
+      "reason": "#59 — 신데렐라의 외피는 수정에 오염되지 않는다(F1543). 헬레틱의 힘 일반일 수도 있다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E444",
+      "act": "암시",
+      "points": ["F1555"],
+      "text": "베히모스의 몸에 방어력의 원인 같은 검은 액체가 흐른다",
+      "about": ["person:베히모스", "concept:다크_매터"],
+      "evidence": [{ "scene": "d_main_31_08", "lines": ["76-78"] }],
+      "reason": "#77 — ch32에서 베히모스가 '다크 매터가 멋대로'라며 그 액체가 폭주한다(F1555).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E445",
+      "act": "암시",
+      "points": ["F1558"],
+      "text": "지휘관이 관 속 아나키오르를 '동료로 삼아볼까' 한다",
+      "about": ["person:지휘관", "person:아나키오르"],
+      "evidence": [{ "scene": "d_main_31_08", "lines": ["80-81"] }],
+      "reason": "#81 허세로 한 말이 ch32에서 신데렐라의 합류(F1558)로 이루어진다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E446",
+      "act": "암시",
+      "points": ["F1540"],
+      "text": "정신을 잃은 그레이브가 관에 '나의 우상, 나의 이상향'이라 하고 라피가 '젠장'이라 한다",
+      "about": ["person:그레이브", "person:라피"],
+      "evidence": [{ "scene": "d_main_31_08", "lines": ["189-198"] }],
+      "reason": "#196-198 — 라피에게도 레드 후드가 이상향이었다(F1540, ch32). 같은 말에 라피가 흔들린다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E447",
+      "act": "암시",
+      "points": ["F1542"],
+      "text": "지휘관이 아나키오르도 마리안처럼 돌아왔을지 모른다고 한다",
+      "about": ["person:지휘관", "person:아나키오르"],
+      "evidence": [{ "scene": "d_main_31_09_e", "lines": ["44-51"] }],
+      "reason": "#47 '돌아왔을지도 모르지. 마리안처럼' — 신데렐라는 언체인드로 고쳐 이제 헬레틱이 아니다(F1542).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D493",
+      "person": "person:베히모스",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "라피를 집게로 누르며 '납짝~', 제가 지어낸 구절을 자랑하는 — 싸움도 장난처럼 하는 가볍고 짓궂은 헬레틱",
+      "evidence": [{ "scene": "d_main_31_06", "lines": ["128-145", "160-161"] }],
+      "reason": "#141 '내가 지어낸 말이거든!' · #145 '납짝~'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D494",
+      "person": "person:베히모스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:그레이브"],
+      "text": "안쓰럽다며 자유롭게 해 주겠다고 회유하다, 남의 것만 맡아 둔다고 깎아내리고 수정으로 위협하는",
+      "evidence": [{ "scene": "d_main_31_07", "lines": ["17-23", "45-49", "72-79"] }],
+      "reason": "#18-19 · #49 · #72-75 — 관을 열게 하려 회유 · 협박을 오간다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D495",
+      "person": "person:베히모스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'남자'인 지휘관만 말하게 하고, 관 여는 걸 도우면 수정 정보를 주겠다며 거래를 거는",
+      "evidence": [{ "scene": "d_main_31_08", "lines": ["51-54", "105-110", "124-130"] }],
+      "reason": "#54 '너만 말해' · #106-109 거래 · #124 '받아가야 할 게'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D496",
+      "person": "person:은화",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'삼류 지휘관'이라 깎아내리는",
+      "after": "말뚝 임기응변을 '훌륭했다', '꼴통 후배님이 많이 컸군'이라 인정하는",
+      "trigger": [{ "scene": "d_main_31_08", "lines": ["131-147"] }],
+      "evidence": [{ "scene": "d_main_31_09_s", "lines": ["24-38"] }],
+      "reason": "#25-26 칭찬 — 베스티는 라피와 있을 때 짓던 표정이라 한다(#31-36).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D497",
+      "person": "person:베스티",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:라피"],
+      "text": "은화가 몇 번이나 찾아간 걸 알려 주며 왜 못 만났냐 묻고, 피해 다녔다는 말에 '겁쟁이구나'라 하는 옛 동료",
+      "evidence": [{ "scene": "d_main_31_05", "lines": ["58-68"] }],
+      "reason": "#61-68.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D498",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:그레이브"],
+      "before": "아나키오르를 지키는 그레이브를 추적해 관째 파괴하자는",
+      "after": "먼저 공격받지 않으면 싸우지 않고, 오해였다면 사과하겠다는",
+      "trigger": [{ "scene": "d_main_31_08", "lines": ["184-198"] }],
+      "evidence": [{ "scene": "d_main_31_09_e", "lines": ["54-81"] }],
+      "reason": "#57 · #73-81 — 관을 부수지 않고 그레이브를 업고 나온 뒤 맹목적이고 순수한 모습을 인정한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "D499",
+      "person": "person:그레이브",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "노화된 언어 회로로 말이 끊어지는",
+      "after": "마나가 회로를 갈아 끊김 없이 말하는",
+      "points": ["F1536"],
+      "trigger": [{ "scene": "d_main_31_09_e", "lines": ["95-99"] }],
+      "evidence": [{ "scene": "d_main_31_09_e", "lines": ["95-99"] }],
+      "reason": "#95 '허튼수작 집어치워라. 인간.' · #99 언어 회로 교체.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U228",
+      "topic": "기술",
+      "text": "방주를 짓는 하모니 큐브 · A 필러는 물리 법칙을 벗어나 원리가 극비이고, 엘리트 니케도 '알 필요도 없다'며 모른 채 쓴다",
+      "about": ["item:A_필러", "item:하모니_큐브"],
+      "points": ["F1526"],
+      "evidence": [{ "scene": "d_main_31_03", "lines": ["48-72"] }],
+      "reason": "#50 '말은 안 되지만 일어났죠' · #65 테러에 쓰기 그만 · #72 '알 필요도 없다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "slips": [
+    "d_main_31_06#130 '언노운의 등에서 뻗어 나온 집게' — 앞뒤(#118 · #143)로 보아 베히모스의 집게다 — 설정 오류 추정, 베히모스를 따른다"
+  ]
+}

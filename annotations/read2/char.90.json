@@ -1,0 +1,108 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M84\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:90",
+  "session": "M84",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I647",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_emma_01", "lines": [24] }],
+      "reason": "01#24 '지휘관, 잠깐 실례할게~' 노크 뒤 바로 #25 엠마가 보고서 이야기를 이어 간다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I648",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_emma_02", "lines": ["67-68"] }],
+      "reason": "02#64 '엠마에게 연락해 보자' 뒤 #67-68 자장가 — 03#83-85 엠마가 같은 자장가를 부른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I649",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_emma_03", "lines": ["0-1"] }],
+      "reason": "03#0-1 자장가 — 선택지 #2 '엠마?' 뒤 #4 엠마 '어머. 눈을 떴네?', #83-85 같은 자장가를 엠마가 부른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I650",
+      "target": "person:엠마",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_emma_05", "lines": ["47-49", "52-58", 60, "62-65"] }],
+      "reason": "05#47 '보고서를 넘기려고 들렀는데' · #53 '도망치려는 베스티와 은화를 붙잡아 두고 … 실력을 갈고 닦았으니까' — 04#104 엠마가 베스티 · 은화로 테라피를 연습했다는 말을 잇는다. '우후후'도 엠마의 웃음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1595",
+      "act": "암시",
+      "points": ["F623", "J22"],
+      "text": "악몽 속 미하라가 지휘관을 괴롭히는 까닭을 '우리 말고, 슈엔이' 알려 줄 거라 하고, 깨자마자 슈엔과의 문자를 확인한다 — 뒤 편에서 슈엔이 메티스의 무기 재료를 위해 카운터스를 랩쳐 소굴에 보낸다",
+      "about": ["person:슈엔", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_emma_01", "lines": ["14-22"] }],
+      "reason": "01#15-16 '알려 줄게. 우리 말고, 슈엔이' · #20 '슈엔과의 문자 내역을 확인한다'(아직 깨끗하다) → 02#1-2 슈엔이 카운터스를 랩쳐 소굴에 던져 넣었다(F623). 같은 단위 안의 꿈 → 현실",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1898",
+      "person": "person:엠마",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "니케만 살피고 자기 컨디션은 사각지대인 지휘관을 걱정해, 혼자 앓지 말고 자기를 부르면 무릎 베개라도 해 주겠다는 오지랖 넓은 보살핌",
+      "evidence": [{ "scene": "ep:d_nikke_emma_01", "lines": ["30-32", "95-104"] }],
+      "reason": "01#31 '정작 지휘관의 컨디션은 사각지대니까' · #100-102 '혼자서 끙끙 앓지 말고 차라리 날 불러 … 무릎 베개 정돈' · #104 '오지랖'. 출시순으로 event_queensorder D1443보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1899",
+      "person": "person:엠마",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "과로를 걱정해 차 · 무릎 베개를 내미는 동료",
+      "after": "몸도 마음도 자기에게 맡기라며 지상 온천의 '휴식의 낙원'으로 데려가 테라피를 해 주고, 그 뒤로도 밤에 찾아와 '들어갈게?' 하는 가까운 사이",
+      "trigger": [{ "scene": "ep:d_nikke_emma_03", "lines": ["72-81"] }],
+      "evidence": [{ "scene": "ep:d_nikke_emma_04", "lines": ["7-16", "117-126"] }],
+      "reason": "03#77 '함께 와줄 거지? 내 휴식의 낙원에' · #81 '몸도 마음도 전부 내게 맡기도록 해' → 04#8 '모든 걸 잊게 해줄 휴식의 낙원' · #124 '나도 같이 가야지'. 05#61-65 '필요해' — '들어갈게?'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1900",
+      "person": "person:엠마",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "지휘관이 싸우는 것은 결국 니케들을 위해서이고, 그가 다다르려는 이상향에 의미를 두기에 희생을 각오하고 따르는 것은 당연하다고 여기는",
+      "evidence": [{ "scene": "ep:d_nikke_emma_03", "lines": ["52-58"] }],
+      "points": ["F622"],
+      "reason": "03#52-53 '지휘관이 싸우는 건 결국 우리들을 위해서고. 그 목적에 감화된 우리가 희생을 각오하는 건 너무나도 당연' · #57-58 '이상향이 … 물론 내게도 그렇고'. 엠마 신념 기준이 아직 없다(D808은 변화)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 모두 정함(01#24 · 02#67-68 · 03#0-1 · 05#47-65 엠마). 엠마 → 지휘관 기준을 출시순으로 앞선 이 단위에 세우고 event_queensorder D1443을 기각했다. 03#35-37 마리안(첫 작전의 침식)은 J1 재언급이라 3층 기준대로 적지 않았다. 카운터스 · 메어리 · 라피는 이 단위의 모습이 얕거나 기준이 있어 세우지 않았다. 바로잡기: 시점 S376(CH.11 뒤, 추정)."
+}

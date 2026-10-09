@@ -1,0 +1,73 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M28\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:unbreakable_sphere_dialog",
+  "session": "M28",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E710",
+      "act": "재언급",
+      "points": ["F1815"],
+      "text": "기억 물거품 속 에이브가 헨젤 · 그레텔의 벌청소를 대신해 준 세이렌을 '바보같이 착하기만 해서'라 나무란다",
+      "about": ["person:세이렌", "person:그레이브"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_dialog_04", "lines": ["4-22"] }],
+      "reason": "#17-18 — 레비아탄이 세이렌을 '바보같이 다 주기만 한 친구'라 한 것(F1815)과 같은 모습",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E711",
+      "act": "재언급",
+      "points": ["F1849"],
+      "text": "레비의 기억 물거품을 보며 세이렌이 '자책하고 있지만 않았으면 좋겠는데'라 한다",
+      "about": ["person:세이렌", "person:레비아탄"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_dialog_12", "lines": ["17-22"] }],
+      "reason": "#19 — 공포로 망설여 세이렌이 삼켜지게 한 레비(F1849)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D696",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:세이렌"],
+      "text": "착한 건 좋지만 바보처럼 살면 안 된다며 '네 곁에는 꼭 좋은 사람만 있어야겠다'고 세이렌을 걱정하는 연구원 시절의 에이브",
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_dialog_04", "lines": ["4-25"] }],
+      "reason": "#5 · #17-22 — 세이렌의 기억 물거품(회상)",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M28",
+          "note": "그레이브 → 세이렌 관계 기준은 출시순으로 앞선 D643(side:mudfish)이 있다 — 회상의 에이브 모습은 D697 변화의 '전'에 담았다"
+        }
+      ]
+    },
+    {
+      "id": "D697",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:세이렌"],
+      "before": "세이렌을 걱정하던 연구원 에이브",
+      "after": "기억은 없지만 '나도 기다렸었나 — 늦어서 미안하다'고 사과하고 세이렌의 보드게임을 배우는 동료",
+      "trigger": [{ "scene": "event_unbreakablesphere2_epilogue", "lines": ["0-7"] }],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_dialog_15", "lines": ["8-19"] }],
+      "reason": "#13-15 — _16에서 보드게임을 배운다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "life": []
+}

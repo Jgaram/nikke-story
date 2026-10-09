@@ -1,0 +1,59 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M89\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:282",
+  "session": "M89",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2017",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "예고 없이 들이닥친 '경우 없는' 손님",
+      "after": "'의지할 수 있는 사람'이라며 처음 약한 모습을 보이고 꺾이기 전의 기댈 곳으로 삼는",
+      "trigger": [{ "scene": "ep:d_nikke_sakura_03", "lines": ["84-88"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sakura_03", "lines": ["97-114"] }],
+      "reason": "01#4-6 '경우가 없군요'에서 03#99 '군은 의지할 수 있는 사람' · #101 '약한 모습을 보여도 될는지요' · #114 '저의 기댈 곳이 되어 주셔서'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M89" }]
+    },
+    {
+      "id": "D2018",
+      "person": "person:사쿠라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "부하가 승복하지 않으면 힘으로 관철하면 그만 — '휘어질 방법을 모른다'",
+      "after": "대안(차 사업)을 내놓아 납득시키려 하고, 끝내 독꽃 화원을 제 손으로 불태워 '밝고 깨끗한' 세이메이카이를 되찾으려는",
+      "trigger": [{ "scene": "ep:d_nikke_sakura_04", "lines": ["88-103"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sakura_05", "lines": ["10-21", "44-61"] }],
+      "points": ["F847", "F848"],
+      "reason": "02#103-104 '힘을 동원해서라도 관철' · #114 '휘어질 방법을 모른다'에서 05#10 '화원을 불태울 생각' · #58-61 당당한 이름 · 의탁할 부모 · 돌아올 집. D203(폭력으로 억누르는 당주)에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M89" }]
+    },
+    {
+      "id": "D2019",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "기댈 곳으로 삼은 지휘관",
+      "after": "익명 문자 하나로 달려온 다정함에 입 맞추고 '몸도 마음도 미래까지 전부 사쿠라만의 것'이라 독점을 선언하는",
+      "trigger": [{ "scene": "ep:d_nikke_sakura_05", "lines": ["122-133"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sakura_05", "lines": ["141-154"] }],
+      "points": ["F849"],
+      "reason": "#146 '제 것을 남들과 나누는 취미는 없는데' · #149 입맞춤 · #153-154 '전부 이 사쿠라만의 것'. 같은 날 이벤트의 D202(지아비 약속)와 나란히 → D482로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M89" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 사쿠라 성격 · 신념 · → 지휘관 기준은 같은 날 출시의 event_cherryblossom(D200 · D203 · D201)이 앞서 다시 세우지 않았다. 겐조는 이 단위에만 나오는 인물이라(query.mjs appear — 단위 1) 사쿠라 → 겐조 관계는 적지 않았다(F845 · F847에 있다). 02#89 머스탱과의 약속은 F831(꽃의 맹약) 재언급이지만 3층 기준대로 적지 않았다. 키츠네(J47)는 뒤에서 풀리지 않아 흘린 것이 없다. 작중 시점 실마리 없음(03#36 '봄맞이 행사'는 계절일 뿐)."
+}

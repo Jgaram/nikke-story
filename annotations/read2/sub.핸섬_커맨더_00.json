@@ -1,0 +1,12 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:핸섬_커맨더_00",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [],
+  "note": "2회독 기록 없음 — 이안의 신원 · 핸슨의 시체 · 현장 소각 원칙은 1회독 F1327 · F1328 · Q174가 담았다. 단역 이안의 지휘관과의 관계 변화는 다음 편에서 적는다"
+}

@@ -1,0 +1,47 @@
+{
+  "unit": "char:355",
+  "session": "R57",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "메이드 카페가 잘돼 일손이 모자라자 코코아가 프로 메이드가 견습 메이드를 일대일로 가르치는 제도를 세우고, 앵커에게 프로 메이드 임명장을 준다. 분점 임시 점장 때 멤버들과 가려던 바다 뒤풀이는 허가가 안 났다 — 앵커는 지휘관을 견습 메이드(자기 제자)로 정한다(01). 견습 메이드 지휘관을 신 · 트로니 · 마스트가 놀린다(02). 앵커의 훈련 — 오므라이스를 먹여 주고, 얀의 가게에서 장 보기 · 해수염 두 포대(03). 며칠 뒤 다섯이 함께 일한 날 마스트의 뒤풀이 중, 트로니가 말한 게임 속 '사랑의 도피'처럼 앵커가 지휘관을 데리고 빠져나간다(04). 앵커는 수영장을 해수로 바꿔 바다 친구들을 풀어 두었고, 바다 대신 하고 싶던 일들(머리 쓰다듬기 · 밥 먹여 주기 · 장 보기 · 손잡기 · 사랑의 도피 · 함께 수영)을 다 했다며, 견습 메이드는 심술이었다고 사과한다 — 마스트 일행이 와 풀파티가 된다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_anchor_innocentmaid_01", "text": "앵커의 프로 메이드 임명 · 바다 뒤풀이 불허 · 지휘관을 견습 메이드로" },
+    { "scene": "ep:d_nikke_anchor_innocentmaid_02", "text": "견습 메이드 지휘관을 놀리는 신 · 트로니 · 마스트" },
+    { "scene": "ep:d_nikke_anchor_innocentmaid_03", "text": "앵커의 훈련 — 오므라이스 · 얀의 가게에서 장 보기 · 해수염" },
+    { "scene": "ep:d_nikke_anchor_innocentmaid_04", "text": "다섯의 뒤풀이 — 게임 속 '사랑의 도피'처럼 빠져나간 앵커" },
+    { "scene": "ep:d_nikke_anchor_innocentmaid_05", "text": "해수로 바꾼 수영장 · 앵커가 하고 싶던 일들 · 풀파티" }
+  ],
+  "facts": [
+    {
+      "id": "F1785",
+      "text": "영업이 잘돼 일손이 모자란 메이드 카페에서 코코아는 프로 메이드가 견습 메이드를 일대일 스승 · 제자로 직접 가르치는 제도를 세우고 앵커를 프로 메이드로 임명했다 — 분점 임시 점장 때 멤버들과 가려던 바다 뒤풀이는 허가가 나지 않았고, 앵커는 지휘관을 자기 견습 메이드로 정했다(뒤에 심술이었다고 사과했다)",
+      "about": ["person:코코아", "person:앵커", "person:지휘관", "person:마스트"],
+      "evidence": [
+        { "scene": "ep:d_nikke_anchor_innocentmaid_01", "lines": ["13-35", "41-49", "53-73"] },
+        { "scene": "ep:d_nikke_anchor_innocentmaid_05", "lines": ["41-43"] }
+      ],
+      "reason": "코코아 · 소다의 설명(01 #30-35), 지휘관 '허가가 안 나더라고'(01 #44), 앵커의 사과(05 #43)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R57", "note": "R57 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S206",
+      "kind": "기준점",
+      "text": "event_romanticvalentine 뒤 — 분점 임시 점장 일의 뒤풀이가 무산된 뒤 며칠",
+      "ref": "event_romanticvalentine",
+      "at": [["뒤", "event_romanticvalentine"]],
+      "evidence": [{ "scene": "ep:d_nikke_anchor_innocentmaid_01", "lines": [41, 42, 44] }],
+      "reason": "'요번에 내가 메이드 카페 분점 임시 점장을 했었잖아'(#41) — event_romanticvalentine의 분점 일",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R57", "note": "R57 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

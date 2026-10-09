@@ -1,0 +1,179 @@
+{
+  "unit": "event_perfectmaid",
+  "session": "R36",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "메이드 포 유의 에이드는 완벽한 메이드가 되려 손님들을 살펴 왔지만, 실수하는 소다 · 코코아에게는 손님들이 기뻐하는데 자기 음식과 행동에는 아무도 마음이 움직이지 않는다고 느낀다(F1273 · prologue). 코코아 · 소다의 부탁으로 지휘관이 밸런타인 이벤트 시식을 핑계로 찾아가지만, 엔터 헤븐 테러를 진압하던 프리바티 곁에서 드레이크가 걷어찬 유탄 발사기의 유탄이 카페에 떨어져 에이드가 지휘관을 감싸고 다친다(F1274 · 01). 수리 뒤 에이드는 싱크대 앞에서 아무것도 못 하고 손님 눈을 마주치지 못하게 되고, 빚을 갚겠다는 프리바티 · 드레이크가 임시 메이드가 된다(F1275 · 02–03). 에이드는 실수해도 사랑받는 모습에 질투한 자신을 깨닫고 니케보다 인간처럼 보이게 실수했어야 했나 괴로워하고(F1276 · intermission · 04_s), 프리바티는 니케라서 완벽함이 당연시되는 일을 알기에(F1277) 5일 안에 에이드의 레시피로 완벽함을 증명하겠다고 맹세한다(04). 에이드의 도움으로 연습한 프리바티는 밸런타인 전날 손님들을 감동시키고, 에이드는 지휘관 입맛에 맞춰 고친 케이크로 지휘관을 감동시켜 울며 증상을 떨친다(F1278 · 05–06). 에필로그: 율하 · 애드미가 메이드 프리바티를 보고 가고, 에이드는 지휘관의 눈을 보며 더 완벽한 메이드가 되겠다고 한다.",
+  "scenes": [
+    {
+      "scene": "event_perfectmaid_prologue",
+      "text": "에이드의 독백 — 아무도 내 음식에 마음이 움직이지 않는다"
+    },
+    {
+      "scene": "event_perfectmaid_01_s",
+      "text": "코코아 · 소다의 부탁, 밸런타인 시식 — 에이드가 눈을 피함, 유탄이 날아옴"
+    },
+    {
+      "scene": "event_perfectmaid_01_e",
+      "text": "프리바티 · 드레이크의 사과 — 엔터 헤븐 테러 진압 중 드레이크가 찬 유탄 발사기"
+    },
+    {
+      "scene": "event_perfectmaid_02_s",
+      "text": "수리 뒤 에이드는 요리도 눈 맞춤도 못 함, 쉬기로 함"
+    },
+    {
+      "scene": "event_perfectmaid_02_e",
+      "text": "프리바티 · 드레이크가 임시 메이드를 맡음"
+    },
+    {
+      "scene": "event_perfectmaid_03_s",
+      "text": "메이드복, 소다의 매너 교육, '다녀오셨어요'의 뜻 — 에이드 복귀"
+    },
+    {
+      "scene": "event_perfectmaid_03_e",
+      "text": "밸런타인 이벤트 첫날의 소동"
+    },
+    {
+      "scene": "event_perfectmaid_intermission_01",
+      "text": "프리바티의 오므라이스, 에이드가 질투를 깨닫고 뛰쳐나감"
+    },
+    {
+      "scene": "event_perfectmaid_04_s",
+      "text": "에이드의 고백(질투), 프리바티의 5일 맹세"
+    },
+    {
+      "scene": "event_perfectmaid_04_e",
+      "text": "프리바티 — 니케라서 완벽함이 당연시되는 일, 연습 시작"
+    },
+    {
+      "scene": "event_perfectmaid_05_s",
+      "text": "실패하는 케이크, 에이드가 도우러 옴"
+    },
+    {
+      "scene": "event_perfectmaid_05_e",
+      "text": "에이드와 프리바티의 특훈"
+    },
+    {
+      "scene": "event_perfectmaid_06_s",
+      "text": "밸런타인 전날 — 프리바티의 완벽한 서비스, 에이드에게 차례를 넘김"
+    },
+    {
+      "scene": "event_perfectmaid_06_e",
+      "text": "지휘관을 위한 케이크 — 에이드가 기뻐 울음"
+    },
+    {
+      "scene": "event_perfectmaid_epilogue",
+      "text": "율하 · 애드미 방문, 에이드가 다시 눈을 마주침"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1273",
+      "text": "에이드는 완벽한 메이드가 되려 손님들의 얼굴 · 표정을 살피며 지내 왔는데, 실수하는 소다나 케이크에 소스를 쏟는 코코아에게는 손님들이 기뻐하고 감동하면서도 자기 음식과 행동에는 아무도 마음이 움직이지 않는다는 것을 느끼고 괴로워했다",
+      "about": ["person:에이드", "person:소다", "person:코코아", "org:메이드_포_유"],
+      "evidence": [{ "scene": "event_perfectmaid_prologue", "lines": ["7-68"] }, { "scene": "event_perfectmaid_01_s", "lines": ["20-38"] }],
+      "reason": "에이드의 독백(prologue) · 코코아 · 소다의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1274",
+      "text": "방주 시내에서 엔터 헤븐 테러범들을 진압하던 프리바티 곁에 지나가던 드레이크가 끼어들어 테러범의 유탄 발사기를 걷어찼고, 그때 발사된 유탄이 메이드 카페에 떨어져 에이드가 지휘관을 감싸 안고 다쳤다 — 리페어 센터에서 수리받은 뒤 에이드는 싱크대 앞에서 머릿속이 하얘져 요리를 못 하고 손님의 눈을 마주치지 못하게 되었다",
+      "about": ["person:프리바티", "person:드레이크", "org:엔터_헤븐", "person:에이드", "place:리페어_센터"],
+      "evidence": [
+        { "scene": "event_perfectmaid_01_s", "lines": ["146-156"] },
+        { "scene": "event_perfectmaid_01_e", "lines": ["20-75"] },
+        { "scene": "event_perfectmaid_02_s", "lines": ["7-24"] }
+      ],
+      "reason": "프리바티의 설명(01_e) · 에이드 본인 말(02_s)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1275",
+      "text": "에이드를 쉬게 하려고 빚을 갚겠다는 프리바티 · 드레이크가 메이드 카페의 임시 메이드가 되어 밸런타인 이벤트를 도왔다 — 에이드에 따르면 메이드가 '어서 오세요' 대신 '다녀오셨어요'라 하는 것은 주인님이 가게가 아니라 [집]에 오는 것처럼 편하게 여기길 바라서다",
+      "about": ["person:프리바티", "person:드레이크", "org:메이드_포_유", "person:에이드"],
+      "evidence": [
+        { "scene": "event_perfectmaid_02_s", "lines": ["34-86"] },
+        { "scene": "event_perfectmaid_02_e", "lines": ["0-58"] },
+        { "scene": "event_perfectmaid_03_s", "lines": ["104-107"] },
+        { "scene": "event_perfectmaid_epilogue", "lines": ["36-43"] }
+      ],
+      "reason": "줄거리 · 에이드 본인 말(03_s#104-107). 프리바티는 율하가 메이드 포 유가 돌려보낼 때까지 일하라 했다(epilogue#42)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1276",
+      "text": "에이드가 손님의 눈을 못 본 까닭은 자기 음식과 행동에 아무 감흥 없는 얼굴을 — 특히 특별한 지휘관의 얼굴에서 — 또 보게 될까 두려워서였고, 실수해도 완벽하지 않아도 손님들의 마음이 쉽게 움직이는 모습에 질투한 자신이 추해 견딜 수 없었다 — 에이드는 니케보다 인간처럼 보이게 서툴렀어야 했나 물었다",
+      "about": ["person:에이드", "person:지휘관"],
+      "evidence": [{ "scene": "event_perfectmaid_intermission_01", "lines": ["150-164"] }, { "scene": "event_perfectmaid_04_s", "lines": ["10-53", "76-80"] }],
+      "reason": "에이드 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1277",
+      "text": "프리바티에 따르면 메이드 포 유는 니케라는 것이 대외적으로 알려진 스쿼드라, 손님들이 니케임을 알아차리는 순간 완벽한 성과도 [니케]라서 당연한 것이 되고 노력은 사라진다 — 니케를 인간과 다른 기계로 여기기 때문이다 — 대외적으로 인간으로 알려진 프리바티는 그런 일을 당하지는 않지만 니케인 줄 모르는 동료들에게서 그런 말을 그대로 듣는다",
+      "about": ["person:프리바티", "org:메이드_포_유", "concept:니케"],
+      "evidence": [{ "scene": "event_perfectmaid_04_e", "lines": ["21-61"] }],
+      "reason": "프리바티 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1278",
+      "text": "프리바티는 에이드의 레시피와 가르침으로 닷새 동안 연습해 밸런타인 전날 손님들을 감동시켜 완벽함도 감동을 줄 수 있음을 증명했고, 에이드는 지휘관의 입맛에 맞게 고친 [나만을 위한] 케이크로 지휘관을 감동시키고 기뻐서 울었다 — 그 뒤 에이드의 증상은 사라졌고, 노력을 알아주는 이들과 특별한 주인님이 곁에 있음을 알았다고 했다",
+      "about": ["person:프리바티", "person:에이드", "person:지휘관", "org:메이드_포_유"],
+      "evidence": [
+        { "scene": "event_perfectmaid_04_s", "lines": ["87-106"] },
+        { "scene": "event_perfectmaid_05_e", "lines": ["0-137"] },
+        { "scene": "event_perfectmaid_06_s", "lines": ["22-110"] },
+        { "scene": "event_perfectmaid_06_e", "lines": ["0-51"] },
+        { "scene": "event_perfectmaid_epilogue", "lines": ["95-115"] }
+      ],
+      "reason": "줄거리 · 에이드 본인 말(epilogue#100-110)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "F651-2",
+      "act": "드러냄",
+      "text": "프리바티는 대외적으로 인간으로 알려져 있고 니케임을 아는 사람은 극소수다",
+      "evidence": [{ "scene": "event_perfectmaid_04_e", "lines": ["55-61"] }],
+      "reason": "프리바티 본인 말 — 니케임을 숨기고 사는 모습이 다시 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S124",
+      "kind": "기준점",
+      "text": "event_maidinvalentine 이듬해 밸런타인 — 이벤트 시작 전날부터 밸런타인데이 전날까지 며칠(닷새 남짓), 에필로그는 그 뒤",
+      "ref": "event_maidinvalentine",
+      "at": [["뒤", "event_maidinvalentine", "1년"]],
+      "evidence": [
+        { "scene": "event_perfectmaid_01_s", "lines": ["4-12", 65] },
+        { "scene": "event_perfectmaid_04_s", "lines": ["97-98"] },
+        { "scene": "event_perfectmaid_06_s", "lines": [39] }
+      ],
+      "reason": "'작년 밸런타인'에 사장님이 진심이 없다고 한 일(01_s#10-12) = event_maidinvalentine. '단 5일, 밸런타인데이 전날까지'(04_s)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

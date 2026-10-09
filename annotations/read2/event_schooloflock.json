@@ -1,0 +1,289 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M59\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_schooloflock",
+  "session": "M59",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I513",
+      "target": "person:마르차나",
+      "speaker": true,
+      "evidence": [{ "scene": "event_schooloflock_prologue", "lines": [32, "43-48"] }],
+      "reason": "어두운 교실에서 지휘관에게 초대장을 쓰는 `???` — 06_s#76 '문자로 초대하는 무례' · #88-91 '제가 초대장에 지휘관님의 이름을 적어 넣었습니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "I514",
+      "target": "person:티아",
+      "speaker": true,
+      "evidence": [{ "scene": "event_schooloflock_01_e", "lines": [25] }],
+      "reason": "`???` '선생님이다아!' 하고 뒤에서 끌어안은 이가 #27 티아 '안녕. 선생니임~'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "I515",
+      "target": "person:에테르",
+      "speaker": true,
+      "evidence": [{ "scene": "event_schooloflock_03_s", "lines": [9] }],
+      "reason": "`???` '왁!' 바로 뒤 #12 '에테르가 황급히 손으로 내 입을 막아왔다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1324",
+      "act": "재언급",
+      "points": ["F943"],
+      "text": "아니스가 미미르 부속고의 이사장이 슈엔이라 다시 꺼낸다",
+      "about": ["person:슈엔", "place:미미르_부속_고등학교"],
+      "evidence": [{ "scene": "event_schooloflock_01_s", "lines": ["8-14"] }],
+      "reason": "#9 '거기 이사장이 슈엔이잖아~' — 라이 호감도 스토리의 학교 소개(F943)를 되짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "E1325",
+      "act": "암시",
+      "points": ["F1073"],
+      "text": "통합 P반 단체 사진에서 마르차나만 표정이 어두워 몇 번이나 다시 찍는다 — 탈락하면 리셋 · 연구소행인 학기말",
+      "about": ["person:마르차나"],
+      "evidence": [{ "scene": "event_schooloflock_prologue", "lines": ["13-16", 23] }],
+      "reason": "#14 '선생님 표정이 너무 어둡네요' — 학기말에 누가 리셋될지 아는 선생의 얼굴. 같은 일이라는 확인이 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "E1326",
+      "act": "암시",
+      "points": ["F1074"],
+      "text": "츠바이가 '필기시험은 사실… 아무것도 아니라는 걸' 알면서도 떨며 기도하는 자신이 한심하다고 한다",
+      "about": ["person:츠바이"],
+      "evidence": [{ "scene": "event_schooloflock_03_s", "lines": ["49-66"] }],
+      "reason": "#51 · #59 — 필기시험은 전교 1–3등의 보험일 뿐(05_s, F1074)을 미리 흘린다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "E1327",
+      "act": "암시",
+      "points": ["F1078"],
+      "text": "에테르가 늦게까지 학생을 챙기는 마르차나를 보고 '[선생님] 역할로 만들어진 니케여서 그런 건가?' 한다",
+      "about": ["person:에테르", "person:마르차나"],
+      "evidence": [{ "scene": "event_schooloflock_03_s", "lines": ["76-81"] }],
+      "reason": "#78 — 오직 선생이 되기 위해 만들어진 니케(에필로그, F1078)를 지나가듯 흘린다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "E1328",
+      "act": "암시",
+      "points": ["F1078"],
+      "text": "마르차나가 시험을 멈출 방법이 '…아직까지는요' 없다며, 이 학교의 어떤 것도 용납한 적 없다고 한다",
+      "about": ["person:마르차나", "place:미미르_부속_고등학교"],
+      "evidence": [{ "scene": "event_schooloflock_intermission_01", "lines": ["60-72"] }],
+      "reason": "#64 '…아직까지는요' · #70 — 언젠가 학교를 폭로 · 해방하려는 뜻(F1078)을 미리 비친다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "E1329",
+      "act": "암시",
+      "points": ["F2748"],
+      "text": "에테르가 '올해 졸업반은 나가… 티아…' 하며 졸업자가 늘고 있다고 한다",
+      "about": ["person:나가", "person:티아"],
+      "evidence": [{ "scene": "event_schooloflock_epilogue", "lines": ["52-54"] }],
+      "reason": "#54 — 뒤의 졸업 여행(나가 · 티아, F2748)을 미리 깐다. 그 졸업으로 이어진다는 확인이 원문에 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1458",
+      "person": "person:마르차나",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "학생에게도 깍듯이 존댓말을 쓰며 차분하고 원칙적이다 — 필기시험을 빼먹으려는 라이를 '멍청이 니케가 될 것'이라는 논리로 몰아붙인다",
+      "evidence": [{ "scene": "event_schooloflock_02_e", "lines": ["16-19", "31-49"] }],
+      "reason": "#18 '누누이 말씀드리지 않았습니까' · #43 · #49 — 첫 등장 단위.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1459",
+      "person": "person:마르차나",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "학생을 실험하듯 지상 실전에 내모는 학교의 어떤 것도 용납한 적 없지만, 커리큘럼이 M.M.R.에서 나와 '아직까지는' 멈출 방법이 없다",
+      "evidence": [{ "scene": "event_schooloflock_intermission_01", "lines": ["44-45", "60-72"] }],
+      "reason": "#45 '…동의합니다'(학생은 실험도구가 아니다) · #64 · #70-72.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1460",
+      "person": "person:마르차나",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "커리큘럼대로 가르치고 좌절을 위로하며 지켜만 보는 무력한 선생",
+      "after": "손이 닿는 학생은 반드시 지켜내는 것이 선생의 역할이라 스스로 정의한",
+      "trigger": [{ "scene": "event_schooloflock_05_s", "lines": ["116-123"] }],
+      "time": "S94",
+      "evidence": [{ "scene": "event_schooloflock_05_e", "lines": ["30-68"] }],
+      "reason": "#35-36 'M.M.R.이 제게 기대한 역할' → #66-68 '그게 제가 정의 내린 선생으로서의 역할'. 지휘관의 '용납하지 마'가 계기(06_s#137-140이 되짚는다).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1461",
+      "person": "person:마르차나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "원래 시험관의 이름을 지우고 지휘관을 몰래 불러 학교 부조리의 증인으로 삼고, 사과하되 후회는 않으며 앞으로 절대 속이지 않겠다고 약속한다",
+      "evidence": [{ "scene": "event_schooloflock_06_s", "lines": ["84-92", "113-157"] }],
+      "reason": "#117 '증인이 되어주셨으면' · #136 '후회하지는 않습니다' · #148 '절대로요' · #156-157 '지지 않겠습니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1462",
+      "person": "person:마르차나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:트리세라"],
+      "text": "엘리베이터와 함께 자폭하려는 트리세라의 리모컨을 쏘아 막고 '당신은 내 학생 — 포기는 용납할 수 없다'며 졸업할 거라 믿겠다고 한다",
+      "evidence": [{ "scene": "event_schooloflock_05_e", "lines": ["0-3", "50-75"] }],
+      "reason": "#60-61 '당신이 믿지 않더라도 제가 그렇게 믿을 겁니다' · #64-65.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1463",
+      "person": "person:트리세라",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "실기시험마다 긴장해 떨어서 필기시험을 보험 삼아 버텨 온, 겁 많고 지친 3학년 — 그래도 친구들이 휘말리지 않게 불을 질러 대피시키려 한다",
+      "evidence": [{ "scene": "event_schooloflock_05_s", "lines": ["78-84", "102-112"] }],
+      "reason": "#79-80 '매번 긴장하고 떨어서 … 보험처럼 두고' · #112 '무서워하면서 살고 싶지 않아요'(04_e#27-30 마르차나의 짐작).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1464",
+      "person": "person:트리세라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "평생 실험체가 될 바에 엘리베이터와 함께 죽겠다며 시험을 포기한",
+      "after": "'실수해도 된다'는 말에 총을 받아 시험에 나서고 새 학기에 돌아와 파르페 약속을 지키는",
+      "trigger": [{ "scene": "event_schooloflock_05_e", "lines": ["50-75"] }],
+      "time": "S94",
+      "evidence": [{ "scene": "event_schooloflock_06_s", "lines": ["39-49"] }],
+      "reason": "05_s#97-100 → #47-48 '마음껏 실수하고 오십시오' · '다녀올게요' — 06_e#40-45에서 돌아온다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1465",
+      "person": "person:라이",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:트리세라"],
+      "text": "트리세라가 한 '3학년 2학기가 되면 파르페 먹으러 가자'는 약속을 기억하고, 그 때문에 맨 뒤 차례를 자청하며 기다린다",
+      "evidence": [{ "scene": "event_schooloflock_06_s", "lines": ["13-27"] }],
+      "reason": "#19-23 — 06_e#34 · #38 '트리세라아…!'로 다시 그려진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1466",
+      "person": "person:라이",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'왜에?'를 달고 사는 어린애 같은 3학년이지만, 위기에는 '3학년은 똑똑해야 한다'며 시간 끌기를 자청하고 나루 3호를 빌려준다",
+      "evidence": [{ "scene": "event_schooloflock_04_s", "lines": ["61-79"] }],
+      "reason": "#62-64 · #70-73 — 02_e#4-52의 어린애 같은 모습과 대비되어 아인 · 츠바이가 놀란다(#67-69).",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M89",
+          "note": "출시가 앞선 char:392(라이 · 아인이 처음 말하는 단위)에 같은 측면 기준을 세움 — 라이 성격 D2022 · 아인 성격 D2027"
+        }
+      ]
+    },
+    {
+      "id": "D1467",
+      "person": "person:츠바이",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "성실하지만 시험 앞에서 잠 못 들고 '오른쪽으로만' 같은 미신에 매달리며, 그런 자신을 한심하게 여긴다",
+      "evidence": [{ "scene": "event_schooloflock_03_s", "lines": ["42-66"] }],
+      "reason": "#43 '이번에도 잠이 안 오는' · #64-66 '어느새 저도 같은 모습을' — 02_e#62-71의 미신과 함께.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    },
+    {
+      "id": "D1468",
+      "person": "person:아인",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "긴장하면 다리를 떨면서도 '아무렇지도 않다'며 시치미를 떼고, 실전 시험을 '별일 아니'라 웃어넘기는",
+      "evidence": [{ "scene": "event_schooloflock_02_e", "lines": ["75-96"] }],
+      "reason": "#89 '여전히 긴장하면 다리 떠는 걸' · #92 — intermission_01#129-136 '우리한테는 이거 정말 별일 아니니까'.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M89",
+          "note": "출시가 앞선 char:392(라이 · 아인이 처음 말하는 단위)에 같은 측면 기준을 세움 — 라이 성격 D2022 · 아인 성격 D2027"
+        }
+      ]
+    },
+    {
+      "id": "D1469",
+      "person": "person:에테르",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:마르차나"],
+      "text": "폭로 · 해방 계획을 다 알면서도 '아군은 아니지만 적도 아니다'라며 도와, 선생으로만 만들어진 그녀가 학생을 어디까지 지킬지 보고 싶어 한다",
+      "evidence": [{ "scene": "event_schooloflock_epilogue", "lines": ["56-91"] }],
+      "reason": "#64 · #68-73 '들켰다간 끝장' · #81-83 '가능성을 보고 싶다고'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: event_schooloflock_01_e#2-3 (`???` '드디어 나타났다! 오른발부터 교문을 넘는 사람!' — 뒤이어 나오는 '다크서클이 심한 학생' · 검은 천을 쓴 학생 무리로 보이나 이름 없는 단역). 시점 S94는 바로잡기로 추정 → 확실. 에테르가 트리세라에게 리셋 한계를 알려 준 일은 F1078의 이유에만 있어 바로잡기로 사실 F2896을 세웠다."
+}

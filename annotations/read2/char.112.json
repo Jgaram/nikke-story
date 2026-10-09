@@ -1,0 +1,72 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M88\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:112",
+  "session": "M88",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1601",
+      "act": "암시",
+      "points": ["F1015", "J21"],
+      "text": "크로우가 지휘관의 신념이 바이퍼에게 독이라 서서히 중독될 것이라 하고, 바이퍼가 진심이 될 수도 있다고 한다 — 바이퍼는 지휘관에게 반해 크로우를 배신한다(F1015)",
+      "about": ["person:바이퍼", "person:크로우"],
+      "evidence": [{ "scene": "ep:d_nikke_viper_05", "lines": ["92-100", "111-113"] }],
+      "reason": "#93 '지휘관의 신념은 너에겐 독이다' · #98-99 '진심이 되기라도 한다는 거야?' '그럴 수도 있겠군'. ch24 F1015로 이뤄진다 — 같은 일이라는 확인은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1997",
+      "person": "person:바이퍼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "폭탄 앱을 맞바꾼 '공범자'",
+      "after": "하루 데이트를 조건으로 돕고 '평범한 날'이 즐거웠다면서도 약으로 재워 지배인을 빼돌려 빚을 지우는",
+      "trigger": [{ "scene": "ep:d_nikke_viper_03", "lines": ["117-125"] }],
+      "evidence": [{ "scene": "ep:d_nikke_viper_03", "lines": ["96-100", "111-125", "132-151"] }],
+      "time": "S384",
+      "points": ["F805"],
+      "reason": "#97 '이런 평범한 날은 진짜 오랜만' · #125 '자기라면 그렇게 말해줄 것 같았어' 뒤 #140-151 재운다. D199(event_doutsiders)에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D1998",
+      "person": "person:바이퍼",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "뒷골목의 니케에겐 살아남기 위한 그들만의 방식이 있어 살아남으려면 뭐든 할 수밖에 없었다며 이그조틱의 밀거래를 하는",
+      "evidence": [{ "scene": "ep:d_nikke_viper_02", "lines": ["101-122"] }],
+      "time": "S384",
+      "points": ["F804"],
+      "reason": "#111-112 '우리 같은 사람들에겐 우리들만의 방식이… 살아남기 위한 방식' · #119 '살아남기 위해선 뭐든 할 수밖에'. ch39 D770보다 출시가 앞선다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D1999",
+      "person": "person:크로우",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:바이퍼"],
+      "text": "제 욕망만 따르는 '음습한' 부하라 깎아내리며 내버려 두는 건 쓸모 때문이라 못 박고, 지휘관에게 빠질 것을 경고하는",
+      "evidence": [{ "scene": "ep:d_nikke_viper_05", "lines": ["77-99"] }],
+      "time": "S384",
+      "points": ["F806"],
+      "reason": "#84-87 '그 돼지랑 너는 별반 다르지 않지 … 음습한 종류' · #92 '널 내버려 두는 건 내게 쓸모가 있기 때문'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 바이퍼 성격 기준 D135 · → 지휘관 기준 D136 · → 크로우 기준 D137(ch16)이 앞서 있어 다시 세우지 않았다. 신념 기준은 출시가 앞선 이 단위(D1998)에 세우고 ch39 D770을 기각했다. 바이퍼가 처리를 부탁한 아우터 림 신흥 조직(04#113-118)은 뒤에서 이어지지 않아 사실 · 의문으로 세우지 않았다."
+}

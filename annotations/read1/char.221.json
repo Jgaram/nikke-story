@@ -1,0 +1,208 @@
+{
+  "unit": "char:221",
+  "session": "R06",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "라푼젤 호감도 스토리 5편 — 지상의 성녀와 갓데스의 기억. 모래 폭풍에 카운터스와 떨어진 지휘관을 필그림 라푼젤('형제님', 음란한 망상이 입버릇)이 구해 전파탑으로 안내한다 — 필그림은 지상의 좌표를 외우고 떠돈다(01). 합류 지점까지 가는 길에 식수관 포인트에서 물을 떠 주고, 머리카락 한 가닥 한 가닥이 재머라 랩쳐와 마주치지 않는다고 한다. 1차 랩쳐 침공 책을 읽어 주고, 밤에는 망상을 고해한다(02). 니케들이 전멸한 전장에서 라푼젤이 죽은 니케 머리에서 떠오른 황금색 입자(NIMPH)를 로사리오에 모으고, NIMPH에 새겨진 가장 기억에 남는 장소에 무덤을 만들어 주려고 지상을 떠돈다고 밝힌다. 자기는 먼 과거와 최근 1년의 기억만 가진다(03). 라푼젤 등 극소수는 뇌 구조가 달라 기억 총량이 있고, 오래 산 순례자는 뇌가 노화해 기억 과부하로 사고 전환이 올 수 있어 라푼젤은 사이 기억을 지운다. 1차 침공 때 하늘에서 랩쳐가 내려왔고 수년 뒤 적합자로 니케가 된 라푼젤 · 스노우 화이트 · 홍련 · 도로시 · 레드 후드 · 릴리스(리더)가 갓데스 스쿼드였으며, 그들을 사람으로 대한 지휘관(아마 최초의 지휘관)은 방주로 피난했다는 데까지만 안다. 그들이 그때 그곳에 있었다는 유일한 흔적이라 과거 기억을 지우지 않는다(04). 이름 모를 니케의 고향 꽃밭에서 로사리오의 입자로 랩쳐를 멈추고 무덤을 만든 뒤, 지휘관을 축복하고 사라진다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_rapunzel_01", "text": "모래 폭풍에 떨어진 지휘관을 라푼젤이 구해 전파탑으로 안내한다" },
+    { "scene": "ep:d_nikke_rapunzel_02", "text": "합류 지점까지 동행 — 식수관 포인트, 머리카락 재머, 1차 침공 책, 밤의 고해" },
+    { "scene": "ep:d_nikke_rapunzel_03", "text": "전멸한 니케들의 NIMPH를 로사리오에 모은다 — 무덤을 만들려고 지상을 떠돈다, 먼 과거와 최근 1년만 기억한다" },
+    { "scene": "ep:d_nikke_rapunzel_04", "text": "기억 총량 · 사고 전환, 1차 침공과 갓데스 스쿼드(릴리스 · 최초의 지휘관)의 기억" },
+    { "scene": "ep:d_nikke_rapunzel_05", "text": "이름 모를 니케의 고향 꽃밭에 무덤을 만들고 라푼젤이 지휘관을 축복하고 떠난다" }
+  ],
+  "facts": [
+    {
+      "id": "F488",
+      "text": "필그림 라푼젤은 지상을 떠돌며 지형지물 좌표 · 살아 있는 식수관 포인트를 외우고 있고, 머리카락 한 가닥 한 가닥이 통신을 방해하는 재머라 뭉쳐 있으면 랩쳐와 거의 마주치지 않아 데코이 없이 야영한다",
+      "about": ["person:라푼젤", "org:필그림"],
+      "evidence": [
+        { "scene": "ep:d_nikke_rapunzel_01", "lines": ["58-62"] },
+        { "scene": "ep:d_nikke_rapunzel_02", "lines": ["33-34", "62-72"] },
+        { "scene": "ep:d_nikke_rapunzel_05", "lines": ["68-71"] }
+      ],
+      "reason": "라푼젤의 말. 지휘관은 '지상에서 1시간 이내 랩쳐 조우율 100%'인데 한 번도 마주치지 않았다고 짚는다(02#64-65). 무덤 위에 올린 머리카락도 랩쳐를 막는다(05#70)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F489",
+      "text": "라푼젤은 쓰러진 니케의 머리에서 떠오르는 황금색 입자 — 그 니케의 NIMPH — 를 로사리오에 모아 두고, NIMPH에 새겨진 가장 기억에 남는 장소(니케가 되기 전의 고향 등)에 무덤을 만들어 주려고 지상을 떠돈다",
+      "about": ["person:라푼젤", "concept:NIMPH", "org:필그림"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_03", "lines": ["23-32", "49-51", "72-82"] }, { "scene": "ep:d_nikke_rapunzel_05", "lines": ["58-63"] }],
+      "reason": "라푼젤의 말(03#75-81)과 장면. F453(노아가 말한 성녀 라푼젤)과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F490",
+      "text": "라푼젤이 로사리오에서 황금색 입자를 쏟아내자 주변 랩쳐들의 움직임이 멈췄다 — 그 NIMPH는 얼마 뒤 완전히 흩어진다고 한다",
+      "about": ["person:라푼젤", "concept:NIMPH", "concept:랩쳐"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_05", "lines": ["43-54", 71] }],
+      "reason": "독백으로 본 장면과 라푼젤의 말. 입자가 어떻게 랩쳐를 멈추는지는 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F491",
+      "text": "라푼젤을 포함한 극소수의 니케는 뇌 구조가 달라 기억에 총량이 있어 새 기억이 생기면 가장 먼 기억이 사라지고, 라푼젤은 과부하를 막으려고 먼 과거의 기억과 최근 1년의 기억만 남기고 그 사이를 지운다 — 과거를 지우면 5년쯤은 기억할 수 있지만, 그들이 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는다",
+      "about": ["person:라푼젤", "concept:NIMPH"],
+      "evidence": [
+        { "scene": "ep:d_nikke_rapunzel_03", "lines": ["88-94"] },
+        { "scene": "ep:d_nikke_rapunzel_04", "lines": ["0-3", "12-20", "38-44", "102-115"] }
+      ],
+      "reason": "라푼젤의 말. 원인은 NIMPH 이상인 것 같지만 자세히는 모른다고 한다(04#12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F492",
+      "text": "사고 전환은 니케의 뇌 정보가 바뀌는 일로, 보통의 니케에게는 정신적 충격으로 일어나지만 1차 침공 때부터 살아온 순례자들처럼 뇌가 노화한 니케는 쌓인 기억이 총량을 넘을 때 과부하를 막으려 저절로 일어난다",
+      "about": ["concept:사고_전환", "org:필그림", "concept:니케"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["4-11"] }],
+      "reason": "라푼젤의 말. '정신적 충격'은 지휘관이 묻고 라푼젤이 '보통의 자매님들은 그렇죠'라 받는다(#9-10). 순례자 일부가 1차 침공부터 살아남았다는 것도 라푼젤의 말(#4)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F493",
+      "text": "라푼젤의 기억으로는 1차 랩쳐 침공 때 평화롭던 어느 날 수많은 랩쳐가 하늘에서 내려와 문명을 부수고 사람을 죽였고 인류 최고의 군사력도 피해를 주지 못했으며, 수년 뒤 세계 각지에서 니케가 될 [적합자]를 찾아 라푼젤 등 몇 명이 니케로 다시 태어났다",
+      "about": ["incident:랩쳐_침공", "concept:랩쳐", "concept:니케", "person:라푼젤"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["49-58"] }, { "scene": "ep:d_nikke_rapunzel_02", "lines": ["83-94"] }],
+      "reason": "직접 겪은 라푼젤의 말(04). 02의 책(하늘을 채운 붉은 눈)도 같은 장면을 말하지만 후반부는 라푼젤의 창작이라 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F494",
+      "text": "1차 침공 뒤 처음 니케가 된 이들이 갓데스 스쿼드로 — 라푼젤 · 스노우 화이트 · 홍련 · 도로시 · 레드 후드 · 릴리스 — 리더이자 맏언니 릴리스는 홍련도 한 수 접을 만큼 강했고 스노우 화이트는 그녀를 언니라 부르며 따랐다",
+      "about": ["org:갓데스", "person:라푼젤", "person:스노우_화이트", "person:홍련", "person:도로시", "person:레드_후드", "person:릴리스"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["56-75"] }],
+      "reason": "라푼젤의 말. 필그림 셋(라푼젤 · 스노우 화이트 · 홍련)이 갓데스였다는 뜻이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F495",
+      "text": "갓데스 스쿼드에는 지휘관도 있었다 — 라푼젤은 그를 아마 최초의 지휘관이라 하며, 니케들을 사람이자 동료로 대한 좋은 사람이었고 방주로 무사히 피난했다는 것까지만 안다고 한다",
+      "about": ["org:갓데스", "person:라푼젤"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["78-97"] }],
+      "reason": "라푼젤의 말. 라푼젤은 그가 지금의 지휘관과 너무 비슷하다고 한다(#89)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "F496",
+      "text": "라푼젤은 지휘관을 보면 마음이 편하고 그리움이 느껴진다고 하며, 이름 모를 니케의 무덤을 함께 만든 뒤 지휘관을 선한 사람이라 축복하고 다시 만나자며 떠났다",
+      "about": ["person:라푼젤", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["24-26"] }, { "scene": "ep:d_nikke_rapunzel_05", "lines": ["82-96"] }],
+      "reason": "관계의 매듭 — 라푼젤의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q82",
+      "text": "갓데스 스쿼드의 레드 후드와 라피 안의 '레드 후드'(시크릿 바디)는 어떤 관계인가?",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [61, 111] }],
+      "reason": "같은 이름이 갓데스 멤버로 나온다(F494) — 라피의 레드 후드(F336 · F348, Q65)와 잇는 말은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "Q83",
+      "text": "갓데스 스쿼드의 지휘관은 누구이고, 방주로 피난한 뒤 어떻게 되었나?",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["78-97"] }],
+      "reason": "라푼젤도 피난까지만 안다 — '지금쯤…'에서 말을 멈춘다(#96-97)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "Q84",
+      "text": "갓데스 스쿼드의 리더 릴리스와 도로시는 지금 어떻게 되었나?",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["61-72"] }],
+      "reason": "라푼젤은 필그림이 된 셋과 달리 두 사람의 지금을 말하지 않고, 릴리스를 과거형으로 말한다('…릴리스가 있었죠')",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q33-2",
+      "act": "회수",
+      "answer": "F494",
+      "degree": "일부",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["56-62"] }],
+      "reason": "갓데스 스쿼드가 1차 침공 뒤 처음 니케가 된 여섯의 스쿼드라는 것이 드러났다 — 작전 아크 가디언의 목표는 아직 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "Q46-2",
+      "act": "회수",
+      "answer": "F493",
+      "degree": "일부",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [50] }],
+      "reason": "침공을 겪은 라푼젤이 '수많은 랩쳐가 하늘에서 내려왔다'고 한다 — 궤도 엘리베이터를 탔는지, 어디서 왔는지는 모른다('정체불명')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S39",
+      "kind": "회상",
+      "text": "1차 랩쳐 침공부터 갓데스 스쿼드 시절까지 — 라푼젤의 이야기",
+      "ref": "incident:랩쳐_침공",
+      "at": [["뒤", "@랩쳐_침공"], ["전", "@방주_밀봉"]],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["49-97"] }],
+      "reason": "라푼젤이 먼 과거의 기억으로 들려준다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R06" }]
+    },
+    {
+      "id": "S353",
+      "kind": "기준점",
+      "text": "CH.06 뒤 · CH.17 전 — 지휘관과 라푼젤의 첫 만남",
+      "ref": "ch17",
+      "at": [["뒤", "ch06"], ["전", "ch17"]],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_01", "lines": ["27-29", 47] }, { "scene": "ep:d_nikke_rapunzel_04", "lines": ["74-76"] }],
+      "reason": "지휘관은 지금의 스노우 화이트를 안다(04#74-76 — 처음 나오는 것은 ch06). ch17 17_01_s#5-6에서 지휘관이 '익숙한 목소리'로 라푼젤을 알아보니, 이 만남은 ch17 앞이다",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M53",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:릴리스",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [62] }],
+      "note": "갓데스 스쿼드의 리더 · 맏언니",
+      "new": true
+    },
+    {
+      "target": "concept:사고_전환",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [8] }],
+      "note": "니케의 뇌 정보가 바뀌는 일 — 정신적 충격 · 기억 과부하",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

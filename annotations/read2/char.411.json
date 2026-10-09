@@ -1,0 +1,30 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M97\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:411",
+  "session": "M97",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2137",
+      "person": "person:플로라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "꽃향기를 쫓아 며칠 몰래 따라다니며 매일 다른 꽃 이름으로 부르던 낯선 정원사",
+      "after": "그가 아직 모르는 꽃이라며 '꽃님'이라 부르고, 언젠가 함께 이름을 짓기로 하며 정원을 언제나 열어 두는",
+      "trigger": [{ "scene": "ep:d_nikke_flora_05", "lines": ["21-26"] }],
+      "evidence": [{ "scene": "ep:d_nikke_flora_05", "lines": ["37-53", "67-77"] }],
+      "time": "S190",
+      "points": ["F1726"],
+      "reason": "01#40-78 미행 · 꽃 이름 → 05#46 '꽃님으로요' · #73 '정원을 언제나 열어둘게요'. 출시는 같은 날 event_secretgarden(D1603)이 앞이지만 작중은 그 앞(S190) — X1이 정렬한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 바로잡기: 시점 S190 문장을 'CH.27 뒤 · event_secretgarden 앞'으로 좁혔다(01#53 '직접 얼굴을 마주 보고는 처음' — CH.27은 통신). 04#18-48 꽃을 잃는 슬픔 · 다시 키우겠다는 말은 플로라 신념(D1601)의 되풀이라 적지 않았다. 01의 `???` 줄(#6-8 · #23-31 · #39 · #45)은 곧 플로라가 이름표로 나와 코드로 풀린다."
+}

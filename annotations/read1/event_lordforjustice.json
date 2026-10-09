@@ -1,0 +1,435 @@
+{
+  "unit": "event_lordforjustice",
+  "session": "R63",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "LORD, FOR JUSTICE — 시지 패러리스 K 편. 프롤로그: K가 미스트 판결 대상(남 둘 · 여 하나)을 안전 가옥에서 처형하다 '집행 거부'를 요청했다 기각되고, 저지스 윗줄 X가 '이름의 사명과 선택'을 받아들이라 한다. K는 일주일치 기억을 잃고 다친 채 지휘관 샤워실에 나타나고, 아르카나는 금서고의 시지 패러리스 전용 통로 철문이 찢겼는데 경보가 안 울렸다고 알린다(01). 사라진 것은 S-1452 방의 시지 패러리스 임무 기록(02_s). 대 열람실에서 식스오를 쫓던 목단을 만나, 목단이 놓친 미스트 일당 셋 중 남은 여자가 '검은 긴 머리 · 가시 박힌 총 · 정의로운 판결을 위하여'라는 범인 인상을 댄다 — K 자신(02_e). 여자는 도끼 같은 상처로 죽어 있고 D가 나타나 VII의 전화를 건넨다 — VII은 지휘관에게 판결을 명하며 타겟은 자기 자신이라 한다(03). K의 품에서 S-1452 열쇠가 나오고(intermission), 안전 가옥의 기록에서 VII-1 안 — 악이 사라진 방주에 악을 존재하게 하는 계획(슬럼가 · 랩쳐 호의 급진 집단 지원 · -검열됨- 견제, X가 추천한 해커 #000000) — 과 K가 그 임무를 '기쁘게' 맡은 사실이 드러난다(04). 목단은 포그 할로우 재건과 무덤을 보이며 '고치면 된다'는 자기 정의를 말한다(05_s). VII은 K의 기억 소거와 꼭두각시 됨이 K 자신의 선택이었고 이번엔 자살까지 시도했다 하며, X가 판결을 재촉하고 VII은 K에게 총을 겨눴다가 스스로 머리를 쏜다(05_e · 06_s). X는 지휘관에게 VII의 왕좌를 주겠다 하다 만장일치가 아니라는 지적에 자기 독단이라 인정하고 K의 처분을 맡긴다. 지휘관은 기억을 지우지 않고 K는 정의를 되찾기로 한다(06_e). 에필로그: K는 '프리랜서(자경단)'로 D와 사이비 조사에 나서 데이파라를 찾고, X는 VII이 하던 일은 이미 통제 불능이며 [존재하기만 하면] 된다고 한다.",
+  "scenes": [
+    {
+      "scene": "event_lordforjustice_prologue",
+      "text": "K가 미스트 판결 대상을 처형 — 집행 거부 기각, X가 '선택'을 받아들이라 함"
+    },
+    {
+      "scene": "event_lordforjustice_01_s",
+      "text": "다친 K가 지휘관 샤워실에 — 특급 임무용 무거운 바디"
+    },
+    {
+      "scene": "event_lordforjustice_01_e",
+      "text": "K의 기억 소실(일주일) · 아르카나가 금서고 침입(경보 없음)을 알림"
+    },
+    {
+      "scene": "event_lordforjustice_02_s",
+      "text": "찢긴 시지 패러리스 통로 · S-1452 방에서 두 사람의 임무 기록이 사라짐"
+    },
+    {
+      "scene": "event_lordforjustice_02_e",
+      "text": "대 열람실의 목단 — 식스오 · 미스트 추적, 살아남은 여자가 말한 범인 인상 = K"
+    },
+    {
+      "scene": "event_lordforjustice_03_s",
+      "text": "아우터 림 격벽 근처 — 여자는 도끼 상처로 죽고 D가 핸드폰을 건넴"
+    },
+    {
+      "scene": "event_lordforjustice_03_e",
+      "text": "VII의 판결 명령 — 타겟은 VII 자신"
+    },
+    {
+      "scene": "event_lordforjustice_intermission_01",
+      "text": "VII: K는 꼭두각시 · K 품의 S-1452 열쇠"
+    },
+    {
+      "scene": "event_lordforjustice_04_s",
+      "text": "안전 가옥의 기록 — K-53 · D-77 · VII-1 안(악의 존재) · #000000 · K 배치"
+    },
+    {
+      "scene": "event_lordforjustice_04_e",
+      "text": "K의 회상(VII와의 임무 수락) · 기억이 돌아온 K의 절망"
+    },
+    {
+      "scene": "event_lordforjustice_05_s",
+      "text": "포그 할로우 재건과 무덤 — 목단의 정의 · D의 말(회상)"
+    },
+    {
+      "scene": "event_lordforjustice_05_e",
+      "text": "VII: 기억 소거 · 꼭두각시 · 자살 시도는 K의 선택 / X의 전화"
+    },
+    {
+      "scene": "event_lordforjustice_06_s",
+      "text": "X가 판결 재촉 → VII 자결, X의 왕좌 제안과 독단 인정, K의 처분을 맡김"
+    },
+    {
+      "scene": "event_lordforjustice_06_e",
+      "text": "지휘관이 선택하지 않음 — K의 저울 · 정의를 다시 향함"
+    },
+    {
+      "scene": "event_lordforjustice_epilogue",
+      "text": "K는 프리랜서(자경단)로 D와 데이파라 찾기 · X의 통화 '존재하기만 하면'"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1947",
+      "text": "K는 미스트가 널린 안전 가옥에서 판결 대상(남자 둘 · 여자 하나) 가운데 둘을 쏜 뒤 '집행 거부'를 요청했으나 기각되었고, 통화에 나선 X가 이름에 담긴 사명과 자기가 고른 [선택]의 결과를 받아들이라 하자 '정의로운 판결을 위하여'라 답했다 — 통화 뒤 총성이 몇 번 더 이어졌다",
+      "about": ["person:K", "person:X", "org:저지스", "concept:미스트"],
+      "evidence": [{ "scene": "event_lordforjustice_prologue", "lines": ["0-47", "51-84"] }],
+      "reason": "프롤로그. '이의 요청. 집행 거부'(#41) → '기각. 즉시 집행할 것'(#44-45), X의 말(#63-69), K의 답(#72), 마지막 총성(#79-84). 여자가 그때 죽지 않았음은 02_e · 03_s에서 드러나 문장은 총성까지만 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1948",
+      "text": "X에 따르면 [저지스]는 모두가 평등하게 의견을 내고 조율하는 위원회지만 코드네임이 숫자이고 [윗줄]과 [아랫줄]이 나뉘어 있다 — K는 윗줄 가운데 그나마 사람 같은 것은 X뿐이라 했다",
+      "about": ["org:저지스", "person:X", "person:K"],
+      "evidence": [{ "scene": "event_lordforjustice_prologue", "lines": ["53-66"] }],
+      "reason": "X의 말(#63-66), K의 말(#57)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1949",
+      "text": "K는 특급 임무를 받고 정보 수집 계획을 세우던 때 뒤로 최근 일주일의 기억이 없고 그 앞 기억도 듬성듬성 빠진 채 시지 패러리스 안전 가옥에서 깨어났으며, 머리에 가벼운 상처가 있고 몸이 움직이길 거부했다 — [윗선]과 D 모두 연락이 닿지 않았다",
+      "about": ["person:K", "person:D", "org:시지_패러리스"],
+      "evidence": [{ "scene": "event_lordforjustice_01_e", "lines": ["12-27"] }],
+      "reason": "K 본인 말(#12-27), 상처는 피부가 조금 찢어진 정도(#24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1950",
+      "text": "K에 따르면 특급 임무 때 쓰는 바디는 일상용 바디와 비교도 안 되게 특수하고 무거워, 지휘관이 들어 올리지 못했다",
+      "about": ["person:K", "concept:니케"],
+      "evidence": [{ "scene": "event_lordforjustice_01_s", "lines": ["38-45"] }],
+      "reason": "지휘관이 못 듦(#38-40), K의 설명(#42-45)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1951",
+      "text": "금서고 출입구는 아르카나의 방 말고도 몇 개 더 있는데, 그중 시지 패러리스가 긴급 상황에 쓰는 통로(아르카나의 통로와 중간에서 이어짐)의 철문이 종이처럼 찢겼는데도 경보가 울리지 않았고, 아르카나의 보고에는 답이 없었다",
+      "about": ["place:금서고", "org:시지_패러리스", "person:아르카나"],
+      "evidence": [{ "scene": "event_lordforjustice_01_e", "lines": ["72-81"] }, { "scene": "event_lordforjustice_02_s", "lines": ["2-14"] }],
+      "reason": "아르카나의 말(01_e #73-81, 02_s #4-14)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1952",
+      "text": "금서고의 [S-1452] 방은 시지 패러리스에 관한 기록을 두는 곳으로, 위에서 걸러 주는 자료라 아르카나도 내용은 모르는데 그 방에서 K · D 두 사람의 임무 내역으로 보이는 책이 사라졌다",
+      "about": ["place:금서고", "org:시지_패러리스", "person:K", "person:D", "person:아르카나"],
+      "evidence": [{ "scene": "event_lordforjustice_02_s", "lines": ["44-75"] }],
+      "reason": "S-1452 푯말(#47), 시지 패러리스 기록(#53), 걸러 주는 쪽(#67-71), 임무 내역(#75)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1953",
+      "text": "목단은 지금은 모란회 전통복을 입을 자격이 없다며 평상복 차림으로 몰래 식스오를 쫓고 있다 — 방주에 미스트가 다시 돈다는 정보로 은신처를 덮쳤다가 아무도 없자 다 부쉈고(뉴스의 서구 사무실 파괴), 그 뒤 다시 잡은 일당 셋(남 둘 · 여 하나) 가운데 여자만 남아 있었다",
+      "about": ["person:목단", "person:식스오", "concept:미스트", "org:모란회"],
+      "evidence": [{ "scene": "event_lordforjustice_02_e", "lines": ["15-28", "69-94"] }],
+      "reason": "전통복(#19-20), 식스오(#28), 미스트 재유통 · 은신처(#70-79), 뉴스와 지휘관의 짐작(#81-84), 셋 중 여자만(#89-94)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1954",
+      "text": "살아남은 여자는 누가 동료들을 죽였다고 했고, 목단이 받아 적은 범인은 검고 긴 머리의 여자로 가시 박힌 총을 들었고 통화하며 '집행 거부 · 선택 · 정의로운 판결을 위하여'를 말했다 — K가 이를 듣고 두통을 일으켰다",
+      "about": ["person:K", "person:목단"],
+      "evidence": [{ "scene": "event_lordforjustice_02_e", "lines": ["95-142"] }],
+      "reason": "여자의 말(#108-110), 인상착의(#122-128), 통화 내용(#135-139), K의 반응(#100-101, #140-142). 프롤로그의 K와 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1955",
+      "text": "목단에 따르면 뒷세계 주민들은 시지 패러리스가 악을 처단한다 말하지만 실은 [방해]가 되는 자들이 죽는 것이라 다 안다 — K는 악을 저지른 자에게 대가를 치르게 하는 것이 정의라 했다",
+      "about": ["org:시지_패러리스", "org:언더월드_퀸", "person:목단", "person:K"],
+      "evidence": [{ "scene": "event_lordforjustice_02_e", "lines": ["51-60"] }],
+      "reason": "목단 · K의 말(#53-58). 로산나도 그랬다는 지휘관 말(#51)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1956",
+      "text": "목단이 데려간 아우터 림 격벽 근처의 집에서 그 여자는 칼보다 묵직한 것 — 도끼 같은 것 — 에 맞은 상처로 죽어 있었고, 그때 나타난 D는 지휘관에게 핸드폰을 건넸다 — 전화한 VII은 D에게 임무 복귀를 명했고 D는 지휘관에게 '부탁해'라 남기고 떠났다",
+      "about": ["person:D", "person:VII", "person:K", "place:아우터_림"],
+      "evidence": [{ "scene": "event_lordforjustice_03_s", "lines": [0, "26-30", "57-85"] }, { "scene": "event_lordforjustice_03_e", "lines": ["0-9"] }],
+      "reason": "죽은 여자(03_s #29-30), 상처(#59-62), D 등장 · K '네가 했냐'(#66-68), VII(#85, 03_e #3-8). D가 죽였는지는 원문이 답하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1957",
+      "text": "VII은 저지스가 정의이고 지휘관은 방주와 인류의 희망으로서 흔들림 없는 정의의 상징이 되어야 하며 이번 판결이 그 분기점이라며 판결을 명했는데, 타겟은 VII 자신이었다 — VII은 자기가 믿어 온 정의가 이제 악이 되었다며 심판받아야 한다고 했다",
+      "about": ["person:VII", "org:저지스", "person:지휘관"],
+      "evidence": [{ "scene": "event_lordforjustice_03_e", "lines": ["10-46"] }, { "scene": "event_lordforjustice_intermission_01", "lines": ["11-19"] }],
+      "reason": "03_e #16-37, 타겟(#44-46), intermission #14-19",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1958",
+      "text": "VII은 K가 답을 알지만 주어진 사명과 이름을 잊고 실패를 거듭해 공허한 꼭두각시가 되어 자격을 잃었다 했고, K의 품에서는 [특급 기밀 보관소 S-1452] 이름표가 붙은 낡은 열쇠가 나왔다 — 금서고에서 사라진 기록들은 시지 패러리스 안전 가옥에 널려 있었다",
+      "about": ["person:VII", "person:K", "place:금서고"],
+      "evidence": [{ "scene": "event_lordforjustice_intermission_01", "lines": ["24-47"] }, { "scene": "event_lordforjustice_04_s", "lines": ["1-10"] }],
+      "reason": "VII의 말(#24-42), 열쇠(#35-47), 안전 가옥의 책들(04_s #6-10). 금서고 침입자가 K라는 것은 원문이 이어 보인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1959",
+      "text": "안전 가옥의 기밀 해제 기록에 따르면 K는 방주 피난 직후 떠올라 중앙 정부 전복을 꾀한 정치가의 판결(K-53)을, D는 고의 태업이 의심되는 브라이트 스쿼드 리더에 위장 잠입한 정보 수집(D-77 — 사고 전환 · 침식이면 즉결 처분 허가)을 맡았다",
+      "about": ["person:K", "person:D", "org:시지_패러리스"],
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["13-31"] }],
+      "reason": "기록 원문 #13-20, #23-31",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1960",
+      "text": "저지스 VII의 안 [VII-1]에 따르면 닫힌 방주에서 시지 패러리스가 너무 효과적이어서 악이 사멸했는데, '정의를 위해 악은 존재해야 하므로' 정의의 영속과 시지 패러리스 제어를 위해 슬럼가 형성(지금 방주라면 따로 할 필요 없어 모니터링만)과 랩쳐에게 호의적인 급진 집단을 배후 지원해 시민의 랩쳐 적개심을 북돋는 계획을 세웠다",
+      "about": ["person:VII", "org:저지스", "org:시지_패러리스", "place:아우터_림"],
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["39-58"] }],
+      "reason": "기록 원문 #39-58. 지휘관은 슬럼가에 '아우터림…'(#52)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1961",
+      "text": "VII-1의 세 번째 안은 강력한 도구이지만 저지스의 정의를 이해하지 못할 위험이 있는 [-검열됨-]을 견제하는 것으로, 최근 연구와 협력으로 찾은 우회 루트로 그 방해를 막거나 이용하려 했다 — X가 정보 · 해킹에 능한 코드네임 [#000000]을 적임자로 추천해 찬성 6 · 반대 3으로 가결, 비밀리에 접촉 중이었다",
+      "about": ["person:VII", "person:X", "org:저지스"],
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["62-70"] }],
+      "reason": "기록 원문 #62-70",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1962",
+      "text": "[#000000]은 식스오의 코드네임으로 보인다 — 그 이름에 지휘관은 '여기서 나올 줄 몰랐다' 했고, 식스오를 쫓던 목단은 '드디어 꼬리를 잡았다, 우리 애들 볼 면목이 선다'고 했다",
+      "about": ["person:식스오", "person:X", "org:저지스", "person:목단"],
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["66-74"] }],
+      "reason": "지휘관 · 목단의 반응(#71-74)과 목단이 쫓는 대상이 식스오(02_e #28). 이름을 직접 잇지는 않아 추정. 식스(6) 오(0) = 0 여섯과도 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M29",
+          "note": "M29 2회독: ch41 E.H.가 #000000을 식스오로 지목하고(F2208) ch44 에닉이 저지스가 식스오라 이름 붙였다고 밝힌다(F2444)",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1963",
+      "text": "VII-1 중간보고에 따르면 일반 요원 · 니케로는 성공률이 50%에 못 미쳐 시지 패러리스 니케 1기를 VII-1에 병행 배치했고 K가 기쁘게 받아들였다 — 되찾은 기억 속 K는 VII이 요구한 '확신'이 있다며 '무슨 수를 써서라도' 정의를 보여 주겠다고 했다",
+      "about": ["person:K", "person:VII", "org:시지_패러리스"],
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["82-87"] }, { "scene": "event_lordforjustice_04_e", "lines": ["0-29"] }],
+      "reason": "중간보고 #82-87, 회상(04_e #0-26), '기억… 났어'(#27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1964",
+      "text": "VII에 따르면 기록은 중요하다 — 저지스가 하는 일의 목적은 모든 인류가 공유하고 인정하고 따를 수 있는 [정의]를 세우는 것이기 때문이다 — K는 도서관을 증축해 저지스 기록을 시시콜콜한 것까지 다 보관한다고 했다",
+      "about": ["person:VII", "org:저지스", "place:금서고"],
+      "evidence": [{ "scene": "event_lordforjustice_04_e", "lines": ["16-21"] }],
+      "reason": "K · VII의 회상 대화(#16-21). 금서고 확장 이야기(02_s #83)와 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1965",
+      "text": "목단은 K를 포그 할로우로 데려가 재건 중인 마을과 언덕의 무덤 수십 개를 보이며, 대가는 치르고 썩은 건 뿌리부터 뽑되 사람 일을 하루아침에 잘라낼 수는 없다며 마을을 부순 것도 그들을 가슴에 묻고 사는 것도 후회하지 않는다고 했다 — 잘못은 고치면 되고 그러다 보면 세상이 조금 더 정의로워질 것이라는 게 목단의 정의다",
+      "about": ["person:목단", "place:포그_할로우", "person:K"],
+      "evidence": [{ "scene": "event_lordforjustice_05_s", "lines": ["0-55"] }],
+      "reason": "마을 재건(#0-8), 무덤(#12-16), K '생존자는 원 거주민의 10%도 안 됐지'(#29), 목단의 말(#36-55)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1966",
+      "text": "VII에 따르면 K의 기억을 지운 것도 지시한 것도 VII이지만, 정의의 대행자 · 꼭두각시가 된 것과 기억을 지운 것 모두 K 자신의 [선택] — VII이 들어준 [간청] — 이었고, 이번에는 K가 자살까지 시도했지만 정의를 실현하는 무기에 쓰러질 리 없었다 — VII은 '이번에는 다시 망가지는 게 빠르다'고 했다",
+      "about": ["person:VII", "person:K", "concept:기억_소거"],
+      "evidence": [{ "scene": "event_lordforjustice_05_e", "lines": ["1-25"] }],
+      "reason": "VII의 말(#2, #5-25), 지휘관이 그 상처를 떠올림(#20). K도 06_e #75에서 '이번에는 죽으려고 했잖아'라 인정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1967",
+      "text": "X가 전화로 판결을 재촉했고 지휘관이 정치 놀음이라며 거부하자 VII은 K에게 총을 겨눴다 — 지휘관이 고르자 VII은 '정의로운 판결을 위하여'라며 자기 관자놀이를 쏘았다",
+      "about": ["person:X", "person:VII", "person:K", "person:지휘관"],
+      "evidence": [{ "scene": "event_lordforjustice_05_e", "lines": ["39-54"] }, { "scene": "event_lordforjustice_06_s", "lines": ["0-38"] }],
+      "reason": "X의 전화(05_e #44-54), 거부(06_s #10-13), 사냥개 처분(#19-22), 선택지 둘 다 #32로 합류 · 자결(#32-36)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1968",
+      "text": "X는 공석이 된 VII의 왕좌를 지휘관에게 주기로 [우리]가 합의했다 했으나, 만장일치냐 · 적어도 한 명은 반대할 것이라는 지휘관의 물음에 의결은 과반수나 단독으로도 할 수 있다며 이번 일은 자기 독단이고 실패했다고 인정했다 — 살날이 얼마 남지 않아 방주의 정의를 맡길 후계자가 필요하다고 했다",
+      "about": ["person:X", "org:저지스", "person:지휘관", "person:VII"],
+      "evidence": [{ "scene": "event_lordforjustice_06_s", "lines": ["39-109"] }],
+      "reason": "왕좌(#39-45), 의결(#68-81), 후계자(#88-98), 왕좌를 비워 둘 수 없다(#108-109). 지휘관이 떠올린 '최근 알게 된 저지스의 일원'(#61)은 이름이 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1969",
+      "text": "X는 '패배자의 공물'로 K의 처분 — 죽이든 기억을 지우든 노예로 삼든 모른 척하든 — 을 지휘관에게 맡겼고, 지휘관은 기억을 지우는 것은 죽이는 것과 같다며 아무것도 고르지 않았다 — K는 다시 정의를 향해 가기로 했다",
+      "about": ["person:X", "person:K", "person:지휘관"],
+      "evidence": [{ "scene": "event_lordforjustice_06_s", "lines": ["110-116"] }, { "scene": "event_lordforjustice_06_e", "lines": ["0-12", "66-98"] }],
+      "reason": "X(06_s #111-115), K '지워 아니면 죽이든가'(06_e #1-3), 지휘관(#7-9), 선택지 둘 다 '아무것도 선택하지 않는다'(#10-11), K의 결심(#86-97)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1970",
+      "text": "K는 살다 보면 완벽한 평행이 없는 저울을 마주하는데 자기는 고개를 기울여 평행을 만든다며, 후유증 없이 고통만 주는 총의 가시로 [진실]을 들었다 — D는 수단이 깨끗해야 결과도 깨끗하다고 했다",
+      "about": ["person:K", "person:D"],
+      "evidence": [{ "scene": "event_lordforjustice_06_e", "lines": ["33-50"] }],
+      "reason": "K의 회상 장면(#33-38, #41-50). 가시 박힌 총은 02_e #127의 범인 인상과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1971",
+      "text": "K는 저지스를 떠나 '프리랜서' — 지휘관이 책임은 자기가 질 테니 마음 가는 대로 하라고 한 자경단 — 가 되어 D가 맡은 사이비 조사를 돕기로 했고, D가 찾으라는 사람은 데이파라였다 — K는 저지스가 순순히 놔주지 않을 것이라 했다",
+      "about": ["person:K", "person:D", "person:데이파라", "org:저지스"],
+      "evidence": [{ "scene": "event_lordforjustice_epilogue", "lines": ["19-38", "57-60"] }],
+      "reason": "K의 말(#19-25, #35-36), 사이비(#19), 데이파라(#58-60). 사이비가 구원의 성화인지는 이름이 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1972",
+      "text": "X는 새로 일을 맡은 이(남자)의 통화에 VII이 진행하던 일은 이미 우리 손을 떠난 지 꽤 되어 통제 불능이고, 그런 것들은 수단일 뿐 성공하든 실패하든 상관없이 [존재하기만 하면] 된다고 했다 — 그는 '정의로운 판결을 위하여'라는 구호를 붙였다",
+      "about": ["person:X", "person:VII", "org:저지스"],
+      "evidence": [{ "scene": "event_lordforjustice_epilogue", "lines": ["61-89"] }],
+      "reason": "X의 통화(#64-82), 구호 이야기(#85-89). 전화한 이가 누구인지는 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q249",
+      "text": "VII-1 안이 견제하려 한, 강력한 도구이지만 저지스의 정의를 이해하지 못할 위험이 있다는 [-검열됨-]은 무엇이고, 최근 연구와 협력으로 찾은 '우회 루트'는 무엇인가?",
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["62-65"] }],
+      "reason": "검열된 이름. 판결 A.I. 에닉(F851)일 수 있지만 원문은 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q250",
+      "text": "VII-1 안에 따라 저지스가 배후에서 지원한 '랩쳐에게 호의적인 급진 집단'은 무엇이고, 통제 불능이 된 지금 무엇을 하나 — D가 조사하는 사이비와 데이파라는 이와 관계있나?",
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["54-58"] }, { "scene": "event_lordforjustice_epilogue", "lines": [19, "58-60", "71-80"] }],
+      "reason": "계획(04_s), X '통제 불능 · 존재하기만 하면'(epilogue #71-80), D의 사이비 조사와 데이파라(#19, #60). 데이파라의 엄마가 빠진 구원의 성화(F757)가 떠오르지만 원문이 잇지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q251",
+      "text": "살날이 얼마 남지 않았다며 지휘관을 후계자로 삼으려는 저지스 윗줄의 노인 X는 누구이고, 무엇을 노리나?",
+      "evidence": [{ "scene": "event_lordforjustice_06_s", "lines": ["88-109"] }, { "scene": "event_lordforjustice_epilogue", "lines": ["61-89"] }],
+      "reason": "X의 말(06_s #90-98, #104-109), 에필로그의 노인. 정체가 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q161-3",
+      "act": "회수",
+      "answer": "F1962",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_lordforjustice_04_s", "lines": ["66-74"] }],
+      "reason": "식스오가 누구이고 무엇을 노리나(Q161) — 저지스(X 추천)가 비밀리에 접촉한 정보 · 해킹 전문가 [#000000]으로 보인다. 정체 · 목적은 여전히 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M29",
+          "note": "M29 2회독: F1962가 확실해져(F2208 · F2444) 회수(일부)도 확실",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S231",
+      "kind": "기준점",
+      "text": "event_arcanearchive 뒤, event_dirtybackyard(포그 할로우 괴멸) 뒤 — 포그 할로우 재건 중",
+      "ref": "event_arcanearchive",
+      "at": [["뒤", "event_arcanearchive"], ["뒤", "event_dirtybackyard"]],
+      "evidence": [{ "scene": "event_lordforjustice_01_e", "lines": ["14-15"] }, { "scene": "event_lordforjustice_05_s", "lines": ["0-8"] }],
+      "reason": "K '얼마 전에 걔, 아르카나처럼'(01_e #14-15), 포그 할로우 재건(05_s #8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "S232",
+      "kind": "회상",
+      "text": "K가 VII에게서 VII-1 병행 임무를 받던 때(기억 소거 전)",
+      "ref": "person:K",
+      "at": [["전", "event_lordforjustice"]],
+      "evidence": [{ "scene": "event_lordforjustice_04_e", "lines": ["0-26"] }],
+      "reason": "되찾은 기억으로 이어짐('기억… 났어' #27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R63", "note": "R63 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:VII",
+      "evidence": [
+        {
+          "scene": "event_lordforjustice_03_e",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "저지스 윗줄 일원 VII — VII-1 안을 세운 이, 스스로를 타겟으로 지목하고 자결",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

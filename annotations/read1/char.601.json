@@ -1,0 +1,49 @@
+{
+  "unit": "char:601",
+  "session": "R93",
+  "by": "claude",
+  "date": "2026-10-04",
+  "summary": "프리카 호감도 스토리. 프리카를 깎아내리는 댓글에 지휘관이 발끈하는 사이, 프리카는 민트가 쉬는 동안 낼 첫 솔로 디지털 싱글(사랑 노래)을 들려준다(01). 사랑스럽지 않은 자기가 해 보고 싶었다는 그 곡의 가사가 막혀 지휘관에게 영감을 청하고, '설탕과 향신료' · 파프리카의 단맛에서 가사를 써낸다(02 · 03). 발매된 [Before Sweetness]의 작사가는 'Muse'였다 — 가사를 절대 남에게 맡기지 않던 프리카다(04). 프리카는 정규 앨범 후보곡 100여 곡 맨 아래에 자기 마음을 담은 후속 [After Sweetness]를 두었고, 지휘관에게 들려준다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_prika_01", "text": "'프리카 빠져도 된다'는 댓글에 지휘관이 발끈 · 프리카가 첫 솔로 디지털 싱글을 들려준다" },
+    { "scene": "ep:d_nikke_prika_02", "text": "사랑 노래 — 가사가 막혀 지휘관에게 영감을 청하고, 'PAPRIKA'와 설탕과 향신료에서 실마리를 찾는다" },
+    { "scene": "ep:d_nikke_prika_03", "text": "크러스트가 구해 준 파프리카를 먹어 보고 프리카가 단숨에 가사를 쓴다 — 녹음은 사흘 뒤" },
+    { "scene": "ep:d_nikke_prika_04", "text": "싱글 [Before Sweetness] 발매 — 작사 'Muse', 가사를 남에게 안 맡기던 프리카라 민트 · 아비스타가 놀란다" },
+    { "scene": "ep:d_nikke_prika_05", "text": "정규 앨범 후보곡 100여 곡 · 맨 아래의 후속곡 [After Sweetness]를 프리카가 지휘관에게 들려준다" }
+  ],
+  "facts": [
+    {
+      "id": "F2725",
+      "text": "프리카는 첫 솔로 디지털 싱글로 사랑 노래 [Before Sweetness]를 냈고 작사가는 지휘관(뮤즈)으로 올랐다 — 가사를 곡의 정체성이라며 절대 남에게 맡기지 않던 프리카였고, 뒤이어 온전히 자기 마음을 담은 후속곡 [After Sweetness]를 만들었다",
+      "about": ["person:프리카", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_prika_01", "lines": ["54-57"] },
+        { "scene": "ep:d_nikke_prika_02", "lines": [23] },
+        { "scene": "ep:d_nikke_prika_04", "lines": ["0-4", "54-56", "69-73"] },
+        { "scene": "ep:d_nikke_prika_05", "lines": [60, "66-74"] }
+      ],
+      "reason": "'디지털 싱글을 내볼까 해서. 내… 솔로곡'(01 #54-55) · '사랑 노래야'(02 #23) · 아비스타 '프리카는 본인 곡 가사, 절대 남한테 안 맡기거든요. 가사야말로 곡의 정체성'(04 #54-55) · [제목 : Before Sweetness] … [작사 : Muse](#69-73) · '이건 온전히 내가 … 내 마음을 담아서 작업한 버전'(05 #73-74)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R93" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S330",
+      "kind": "기준점",
+      "text": "fl:bitter_spice 뒤 — 첫 앨범([청록의 별])의 히든 트랙 뒤, 다음 정규 앨범 작업 전",
+      "ref": "fl:bitter_spice",
+      "at": [["뒤", "fl:bitter_spice"]],
+      "evidence": [{ "scene": "ep:d_nikke_prika_02", "lines": [12] }, { "scene": "ep:d_nikke_prika_05", "lines": [41, 48] }],
+      "reason": "'저번 앨범, 히든 트랙하고도 조금 다른 느낌'(02 #12 — F2723의 [뮤즈]) · 이미 '뮤즈'라 부른다 · '정규 앨범 작업 시작'(05 #41) · '우리 정규 앨범 후보곡들'(#48)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R93" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

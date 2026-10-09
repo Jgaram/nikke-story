@@ -1,0 +1,248 @@
+{
+  "unit": "ch03",
+  "session": "R01",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "카운터스와 워드리스(미하라 · 유니)가 지상에 오른다. 슈엔이 통신망을 모두 막아 둔 '비밀 작전'이다(d_main_03_01#2–6). 쫓는 랩쳐는 코드 네임 토커티브 — 어떤 규격에도 맞지 않는 특수 객체로 신호가 잡히지 않아 발자국으로 추적한다. 워드리스는 몇 달째 쫓았지만 본 적도 없고 이유도 모른다(d_main_03_03#8–21). 미하라는 첫 작전에서 살아남은(사망 확률 70%) 쓸 만한 지휘관을 슈엔이 이렇게 일회용으로 써 왔고 40명은 넘을 거라고 하며, 라피는 3대 회사 CEO의 명령은 거부할 수 없다고 한다(#25–42). 토커티브는 벽을 타고 가고 추적을 알아채 따돌린다. 미하라는 랩쳐에게 지능은 없다고 한다(d_main_03_04#10–14). 습격한 랩쳐를 유니가 감각을 꺼 막자, 라피는 랩쳐용 능력이 어째서 니케 · 인간에게도 먹히느냐고 캐묻는다. 미하라는 자기들을 만든 게 슈엔이라 아무것도 모른다고 하고, 라피는 워드리스를 선두에 세운다(d_main_03_06#16–51). 에블라 입자가 짙은 곳에서 흔적이 끊겨 미하라가 복귀를 권할 때, 통신이 끊겼을 텐데 지휘관의 핸드폰이 울린다. 지휘관은 추적을 계속하기로 한다(d_main_03_07#6–14).",
+  "scenes": [
+    { "scene": "d_main_03_01", "text": "지상 도착 — 슈엔이 통신망을 막아 둔 비밀 작전" },
+    { "scene": "d_main_03_02", "text": "미하라는 맞는 것 · 상처를 좋아해 지휘관의 붕대를 거절한다" },
+    { "scene": "d_main_03_03", "text": "코드 네임 토커티브 추적 — 슈엔이 쓸 만한 지휘관을 일회용으로 써 왔다는 이야기" },
+    { "scene": "d_main_03_04", "text": "토커티브는 벽을 타고 추적을 따돌린다. 유니가 미하라를 꼬집는 '상'" },
+    { "scene": "d_main_03_05", "text": "끊긴 발자국 — 랩쳐의 강습" },
+    { "scene": "d_main_03_06", "text": "유니 · 미하라의 감각 능력이 니케 · 인간 · 랩쳐 모두에 먹힌다 — 라피가 캐묻고 워드리스를 선두에 세운다" },
+    { "scene": "d_main_03_07", "text": "에블라 입자가 짙은 곳에서 흔적이 끊기고, 끊겼을 통신으로 지휘관의 핸드폰이 울린다 — 추적 계속" }
+  ],
+  "facts": [
+    {
+      "id": "F54",
+      "text": "토커티브 포획은 슈엔이 통신망을 모두 막아 둔 비밀 작전이다",
+      "about": ["person:슈엔", "org:워드리스"],
+      "evidence": [{ "scene": "d_main_03_01", "lines": [2, "4-6"] }],
+      "reason": "미하라 '슈엔이 통신망을 다 차단해놨거든', '비.밀.작.전.'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F55",
+      "text": "워드리스(미하라 · 유니)는 랩쳐를 포획하기 위한 스쿼드다",
+      "about": ["org:워드리스"],
+      "evidence": [{ "scene": "d_main_03_01", "lines": [8, 9] }, { "scene": "d_main_03_06", "lines": ["45-46"] }],
+      "reason": "미하라 '그걸 위한 스쿼드니까. 나와 유니는'(#9), '이걸 이용해 랩쳐를 포획하는 거야'(d_main_03_06#46)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F56",
+      "text": "슈엔이 잡으라는 랩쳐는 코드 네임 토커티브 — 어떤 랩쳐 규격에도 맞지 않는 특수 객체로, 신호가 잡히지 않아 발자국으로 쫓는다",
+      "about": ["person:토커티브", "person:슈엔"],
+      "evidence": [{ "scene": "d_main_03_03", "lines": ["8-12"] }],
+      "reason": "유니 · 미하라의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F57",
+      "text": "워드리스는 몇 달 전부터 토커티브를 쫓았지만 한 번도 마주친 적이 없고, 왜 잡아야 하는지도 모른다",
+      "about": ["person:토커티브", "org:워드리스"],
+      "evidence": [{ "scene": "d_main_03_03", "lines": [14, 16, 21] }],
+      "reason": "미하라 '몇 달 전부터 그걸 잡으라고만 했지, 이유까진 안 알려줬거든'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F58",
+      "text": "지휘관이 첫 작전에서 사망할 확률은 70%다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "d_main_03_03", "lines": [25, 26] }],
+      "reason": "미하라가 묻고 라피가 답한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F59",
+      "text": "슈엔은 첫 작전에서 살아남은 쓸 만한 지휘관을 이런 식으로 일회용으로 써 왔고, 미하라는 그 수가 40명은 넘을 거라고 한다",
+      "about": ["person:슈엔"],
+      "evidence": [{ "scene": "d_main_03_03", "lines": ["22-34"] }],
+      "reason": "왜 우리냐는 라피의 물음에 미하라 '너희가 쓸만해 보이니까'(#24), 일회용 지휘관이 '모르긴 몰라도. 40명은 넘을 거야'(#34)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F60",
+      "text": "토커티브는 벽을 타고 이동할 수 있고, 추적을 알아채 따돌리거나 강습한다",
+      "about": ["person:토커티브"],
+      "evidence": [{ "scene": "d_main_03_04", "lines": ["7-11"] }, { "scene": "d_main_03_06", "lines": ["1-2"] }],
+      "reason": "벽의 발자국을 보고 미하라가 정보를 갱신한다(#10–11). 라피는 강습으로 흔적을 끊은 랩쳐가 추적을 의식한다고 확신한다(d_main_03_06#1–2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F61",
+      "text": "랩쳐에게는 지능이 없다고 여겨진다",
+      "about": ["concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_03_04", "lines": [12, 13, 14] }],
+      "reason": "지능이 있는 것 같다는 네온에게 미하라가 '랩쳐는 지능이 없어', '그 정도 알고리즘이겠지'라고 한다 — 미하라 한 사람의 말이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F62",
+      "text": "유니는 상대의 특정 감각을 꺼 버릴 수 있고, 워드리스의 능력은 니케 · 인간 · 랩쳐 모두에게 먹힌다",
+      "about": ["person:유니", "person:미하라", "org:워드리스"],
+      "evidence": [{ "scene": "d_main_03_06", "lines": ["20-22", 36] }],
+      "reason": "미하라 · 유니의 설명. 앞서 포신을 겨눈 랩쳐가 유니의 전기에 휘청거렸다(#8–9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F63",
+      "text": "니케의 신체는 그 니케가 인간이었을 때의 이상향을 바탕으로 만들어진다",
+      "about": ["concept:니케"],
+      "evidence": [{ "scene": "d_main_03_06", "lines": [38, 39] }],
+      "reason": "라피 '니케의 신체는 인간일 때의 이상향을 기반으로 만들어져'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F64",
+      "text": "워드리스를 만든 것은 슈엔이고, 미하라 · 유니도 자기들 능력이 왜 그런지 모른다",
+      "about": ["org:워드리스", "person:슈엔"],
+      "evidence": [{ "scene": "d_main_03_06", "lines": [35, "40-47"] }],
+      "reason": "미하라 '우릴 만든 건 슈엔이야', '무슨 짓을 어떻게 왜 했는지. 친절하게 설명해 줄 것 같아?', '그것 말고는 아무것도 몰라'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F65",
+      "text": "에블라 입자 농도가 짙은 곳은 위험도가 높다",
+      "about": ["concept:에블라_입자"],
+      "evidence": [{ "scene": "d_main_03_07", "lines": [1] }],
+      "reason": "라피 '이 앞은 에블라 입자 농도가 짙어. 위험도가 높다는 얘기지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q10",
+      "text": "통신이 끊긴 지상에서 지휘관의 핸드폰을 울린 것은 누구이고, 무엇을 알렸나?",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "d_main_03_07", "lines": ["6-14"] }],
+      "reason": "독백 '통신은 모두 단절되었다고 했는데, 누가?'(#8). 확인 전에 끊기고, 지휘관은 말없이 추적을 계속하기로 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q11",
+      "text": "랩쳐용으로 만든 워드리스의 능력이 왜 니케와 인간에게도 먹히나 — 슈엔은 그들에게 무슨 짓을 했나?",
+      "about": ["org:워드리스", "person:슈엔"],
+      "evidence": [{ "scene": "d_main_03_06", "lines": ["23-29", "35-43"] }],
+      "reason": "라피가 '랩쳐에게 감각이 있나?', '너흰 뭐냐'고 캐묻지만 미하라는 모른다고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q12",
+      "text": "토커티브는 어떤 랩쳐인가 — 추적을 알아채고 따돌리는 것은 지능이 있어서인가?",
+      "about": ["person:토커티브", "concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_03_04", "lines": ["10-14"] }],
+      "reason": "네온 '지능이 있다는 것처럼 들리는데요', 미하라는 알고리즘일 거라며 부정한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q8-2",
+      "act": "회수",
+      "answer": "F56",
+      "degree": "일부",
+      "evidence": [{ "scene": "d_main_03_03", "lines": ["8-14"] }],
+      "reason": "포획할 랩쳐가 토커티브라는 것은 드러났지만, 왜 잡으려는지는 워드리스도 모른다(#14)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F43-2",
+      "act": "드러냄",
+      "text": "3대 회사의 CEO는 방주에서도 특별 취급을 받아, 일개 지휘관과 스쿼드는 그 작전을 거부할 수 없다",
+      "evidence": [{ "scene": "d_main_03_03", "lines": ["40-42"] }],
+      "reason": "라피의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S8",
+      "kind": "기준점",
+      "text": "워드리스는 CH.03보다 몇 달 전부터 토커티브를 쫓아 왔다",
+      "ref": "person:토커티브",
+      "subject": "구간",
+      "at": [["전", "ch03", "몇 달"]],
+      "evidence": [{ "scene": "d_main_03_03", "lines": [14] }],
+      "reason": "미하라 '몇 달 전부터 그걸 잡으라고만 했지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "targets": [
+    { "target": "person:토커티브", "evidence": [{ "scene": "d_main_03_03", "lines": [8] }], "note": "코드 네임 토커티브 — 규격에 없는 특수 랩쳐, 슈엔의 포획 대상", "new": false }
+  ],
+  "revisit": []
+}

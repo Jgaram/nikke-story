@@ -1,0 +1,80 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M57\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:260",
+  "session": "M57",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1296",
+      "act": "재언급",
+      "points": ["F19"],
+      "text": "라피가 마리안을 직접 가르치자며 그때는 다른 방법을 찾지 않고 '기계적으로 머리에 총을 겨눴다'고 책임을 말한다",
+      "about": ["person:라피", "person:마리안"],
+      "evidence": [{ "scene": "ep:d_nikke_marian_p_01", "lines": ["90-96"] }],
+      "reason": "#91 · #96 — 침식된 마리안이 지휘관이 겨눈 총으로 스스로 머리를 쏜 일(F19)을 카운터스의 책임으로 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1297",
+      "act": "암시",
+      "points": ["F1452"],
+      "text": "잉그리드가 마리안의 몸을 '누군가가 존재 자체를 꽁꽁 숨겨놓은 것 같다' 하고, 경위를 모를 '두 번의 변화'를 겪었다고 한다",
+      "about": ["person:마리안", "person:잉그리드"],
+      "evidence": [{ "scene": "ep:d_nikke_marian_p_03", "lines": [64, "86-89"] }],
+      "reason": "#64 · #86 — 원인 모를 힘이 뒤에 '개화'해 헬레틱을 무릎 꿇리는 여왕의 힘(F1452)으로 드러난다. 같은 것이라는 확인이 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1419",
+      "person": "person:마리안",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "뇌세척 뒤 자기 이름과 '지휘관'만 기억하던",
+      "after": "지휘관이 총을 들고 어쩔 줄 몰라 할 때 스스로 방아쇠를 당긴 일을 기억하는(그 뒤는 모르는)",
+      "time": "S53",
+      "points": ["F742"],
+      "evidence": [{ "scene": "ep:d_nikke_marian_p_05", "lines": ["89-101"] }],
+      "reason": "#89 '그때 제가 방아쇠를 당기지 않았으면' — 카운터스가 놀라 묻자 #97-101 그 순간만 기억한다. 앞 D103(ch13 뒤)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1420",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:마리안"],
+      "text": "뇌세척된 마리안에게 '이렇게 된 데 우리 책임이 있다'며 교보재를 구해 다 같이 제대로 가르치자고 앞장서는",
+      "evidence": [{ "scene": "ep:d_nikke_marian_p_01", "lines": ["80-98"] }],
+      "reason": "#91 · #95 '그때와는 다르게, 지금 우리는 이 아이를 도와줄 수 있어' — 아니스가 '그렇게까지 신경 쓰고 있었구나' 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1421",
+      "person": "person:마리안",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["org:카운터스"],
+      "text": "말을 가르쳐 준 카운터스와 한 숙소에서 장난치고 반찬을 뺏어 먹으며 '지휘관과 여러분이 정말 너무너무 좋아요'라 하는",
+      "time": "S53",
+      "evidence": [{ "scene": "ep:d_nikke_marian_p_05", "lines": ["121-124"] }],
+      "reason": "아니스 침대 낙서 · 햄 뺏기(#20-26 · #49-58) 끝에 #123-124. 이후 필그림 · 크라운 쪽 관계(D414 · D416)와 나란히 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "life": [],
+  "note": "시점은 S53(1회독 — CH.13 뒤, 보름 남짓) 그대로. 성격은 D111(ch14 — 아이처럼 제멋대로)과 같은 모습이라 적지 않았다(p_02#52 라피 '성격이 좀 바뀐 것 같다'). 니케 · 랩쳐 구성물의 융합(p_04)은 1회독 F741 · Q103 그대로"
+}

@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:테디_00",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U59",
+      "topic": "방주 사회",
+      "text": "사관학교 지휘관 지망생은 니케를 명령을 듣는 병기 · 총알받이로 배우고, '구제불능 니케를 지상에 던져 랩쳐에게 뜯기게 한 뒤 뇌를 바꾸면 딴 인격이 된다'는 소문을 믿으며, 니케와 인간이 동료가 될 수 있다는 생각은 해 본 적도 없다",
+      "about": ["place:사관학교", "concept:니케"],
+      "points": ["F263"],
+      "evidence": [{ "scene": "sub:테디_00", "lines": ["43-44", 83, 90] }],
+      "reason": "#16 총알받이 · #43-44 소문 · #83 '병기일 뿐' · #90",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

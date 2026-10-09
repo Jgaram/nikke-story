@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:피라_02",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I156",
+      "target": "person:레드_후드",
+      "speaker": true,
+      "evidence": [{ "scene": "sub:피라_02", "lines": [130] }],
+      "reason": "#127 '레드 후드의 아지트' 직후 ??? '그치? 끝내주지?' · #133 라피 '…레드 후드?' — ch34 라피 안에 남아 있던 레드 후드(F1655)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E332",
+      "act": "재언급",
+      "points": ["F1154"],
+      "text": "고향 친구는 편지에 '고향에 눕겠다고 미련하게 기어 오지 마라'고 적었다 — 레드 후드는 침식이 깊어지자 고향에서 혼자 죽겠다고 떠났었다",
+      "about": ["person:레드_후드"],
+      "evidence": [{ "scene": "sub:피라_02", "lines": ["79-87"] }],
+      "reason": "#81 '고향에 눕겠다고 미련하게 기어 오지 마라' · #87 '죽지 마라' — event_redash의 고향행(F1154)을 되비춘다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "고향 친구(편지 · 녹음)는 사전에 더하지 않았다 — 이름이 없고 Q167 · F1307이 이미 잇는다"
+}

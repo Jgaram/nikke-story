@@ -1,0 +1,151 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M60\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:224",
+  "session": "M60",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I522",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_01", "lines": ["2-22"] }],
+      "reason": "지휘관: 줄 — 스노우 화이트가 갓데스 합류 뒤 이야기를 들려주는 '갓데스의 지휘관' = 엔더슨(F1197 · F2373, '너도 갓데스니까'). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "I523",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_02", "lines": ["0-9"] }],
+      "reason": "지휘관: 줄 — 스노우 화이트가 갓데스 합류 뒤 이야기를 들려주는 '갓데스의 지휘관' = 엔더슨(F1197 · F2373, '너도 갓데스니까'). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "I524",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["138-174"] }],
+      "reason": "지휘관: 줄 — 스노우 화이트가 갓데스 합류 뒤 이야기를 들려주는 '갓데스의 지휘관' = 엔더슨(F1197 · F2373, '너도 갓데스니까'). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1338",
+      "act": "재언급",
+      "points": ["Q46"],
+      "text": "릴리바이스가 랩쳐를 '저 알 수 없는 곳에서 온, 외부의 침입자들'이라 부른다",
+      "about": ["concept:랩쳐"],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_02", "lines": ["97-101"] }],
+      "reason": "#99 — 랩쳐는 어디서 왔나(Q46, 우주에서 내려왔다는 설)를 1차 침공 당시의 말로 다시 꺼낸다. 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "E1339",
+      "act": "재언급",
+      "points": ["F1193"],
+      "text": "스노우 화이트가 '홍련같이 근접 무기를 쓰는 부대'를 위한 검을 만든다",
+      "about": ["person:홍련"],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_03", "lines": ["35-49"] }],
+      "reason": "#35 · #49 — 홍련이 근접 전투 스쿼드 출신이라는 것(F1193, 같은 세션 char:470)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1486",
+      "person": "person:릴리바이스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:스노우_화이트"],
+      "text": "소문의 천재 무기 장인을 찾아가 '왜 이렇게 귀여워' 하며 머리를 쓰다듬고, 언니라 불러 보라며 날마다 찾아오는",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_01", "lines": ["24-75"] }],
+      "reason": "#24 · #61-69, 02#21-34 날마다 찾아옴.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1487",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:엔더슨"],
+      "text": "릴리스와 어떻게 친해졌느냐는 물음에 '지금 정도면 충분하다'며 더 알려 하는 지휘관을 어색해하는",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_01", "lines": ["2-23"] }],
+      "reason": "#10-14.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1488",
+      "person": "person:엔더슨",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:스노우_화이트"],
+      "text": "'귀여운 녀석' 하며 머리를 쓰다듬고, 혼자 놀지 말라 하고 '너도 갓데스니까 될 수 있다'고 북돋는",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["138-174"] }],
+      "reason": "#156-173. 1차 침공 때 갓데스의 지휘관(I524).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1489",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:릴리바이스"],
+      "before": "'언니'라 부르기 싫다며 고개도 들지 않던",
+      "after": "홀로 랩쳐 대부대를 쓸어버린 모습에 처음 '언니'라 부르고, 언니의 무기가 되겠다고 약속한",
+      "trigger": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["61-75"] }],
+      "time": "S110",
+      "points": ["F1201"],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["104-137"] }],
+      "reason": "01#74 '싫어요' → 05#104-111 · #123-125.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1490",
+      "person": "person:스노우_화이트",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "누가 쓸지 모르니 성능 좋은 무기를 만들 뿐이라던",
+      "after": "언니의 최고의 무기가 되려고 자기가 쓸 무기를 만들겠다는",
+      "time": "S110",
+      "trigger": [{ "scene": "ep:d_nikke_snowwhite_young_02", "lines": ["80-114"] }],
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["176-186"] }],
+      "reason": "02#70-79 → 05#120-129 · #184-186 '그날을 위해'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1491",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:엔더슨"],
+      "before": "더 알 필요 없다며 어색해하던",
+      "after": "'지휘관은 이상해' 하면서도 '너라면 될 수 있다'는 응원에 힘내겠다는",
+      "time": "S110",
+      "evidence": [{ "scene": "ep:d_nikke_snowwhite_young_05", "lines": ["176-181"] }],
+      "reason": "#177-181.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "life": []
+}

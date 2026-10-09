@@ -1,0 +1,29 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M99\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:521",
+  "session": "M99",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2160",
+      "person": "person:크러스트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "첫 요리에 극찬한 지휘관을 '미식가님'이라 부르며 특별히 대접하던",
+      "after": "'믿을 수 있는 분'이라며 극비 아지트와 지상 재료 탐색에 데려가고, 지상의 모든 재료를 만들 때까지 함께해 달라 청하는",
+      "trigger": [{ "scene": "ep:d_nikke_crust_02", "lines": ["27-32"] }],
+      "evidence": [{ "scene": "ep:d_nikke_crust_05", "lines": ["93-102"] }],
+      "time": "S219",
+      "reason": "02#27-32 둘만 가려던 지상행에 '미식가님은 믿을 수 있는 분' → 05#100-101 '함께 해주실 거죠'. D627의 뒤.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S219 그대로. 크러스트의 '많은 분들이 행복해하는 것'(05#86-88)은 F1855에 담겼고 D629(브래디를 위한 맛)와 갈마들 뿐이라 변화로 적지 않았다. 브래디 → 지휘관('도시락')은 D624 · D2156 그대로. 방청객 · 여자 아이는 단역."
+}

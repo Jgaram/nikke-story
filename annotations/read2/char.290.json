@@ -1,0 +1,67 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M98\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:290",
+  "session": "M98",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I672",
+      "target": "person:프리바티",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_mana_01", "lines": [48] }],
+      "reason": "#48 `???` 바로 뒤 #49 '누군가 율하의 손에 들린 잔을 낚아챘다' · #50 프리바티가 '또 여기서 술 마시고 있었어요?'로 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2142",
+      "person": "person:마나",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'예 · ~습니다'로 깍듯이 말하며 속을 잘 드러내지 않지만, 쌓인 것을 술로 풀어 율하 · 브리드와 매주 다섯 병씩 마시고 스트레스받으면 혼자서도 바에 오는 애주가",
+      "evidence": [{ "scene": "ep:d_nikke_mana_03", "lines": ["67-87", "90-96"] }],
+      "reason": "03#67 '일주일에 한 번씩 정기적으로' · #78 '혼자서라도 바에' · #94 다른 해소법은 '필요하다고 느낀 적도 없고'. 마나의 성격 기준이 앞에 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    },
+    {
+      "id": "D2143",
+      "person": "person:마나",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "슈엔에게 휘둘리고 말 못 할 비밀 · 인류의 미래를 건 사명감에 짓눌려 다 때려치우고 싶던",
+      "after": "바를 오가는 니케들도 다 똑같다는 걸 알고 '더 버텨도 될 것 같다'며 홀로 술로 풀며 버티는",
+      "trigger": [{ "scene": "ep:d_nikke_mana_04", "lines": ["28-31"] }],
+      "evidence": [{ "scene": "ep:d_nikke_mana_04", "lines": ["12-27", "42-55"] }],
+      "points": ["F1779"],
+      "reason": "04#26 '전부 다 때려치우고 싶다' → #44 '다들 똑같다는 걸요' · #53 '더 버텨도 될 것 같아서'. 니케가 된 뒤의 회상(F1779).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    },
+    {
+      "id": "D2144",
+      "person": "person:마나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "연구원이 아닌 한 니케로서 사심 없이 쉬게 해 주는",
+      "after": "취해 멱살을 잡고 하소연하다 옛 속내까지 털어놓고, 술 마실 때 부르겠다고 한 술친구",
+      "trigger": [{ "scene": "ep:d_nikke_mana_04", "lines": ["62-70"] }],
+      "evidence": [{ "scene": "ep:d_nikke_mana_04", "lines": ["65-72"] }],
+      "time": "S203",
+      "reason": "03#73 율하 · 브리드 말고 같이 마실 사람 '따로 없습니다' → 04#65 '술 마실 때 종종 불러줘' · #70 '그러겠습니다'. D595의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M98" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 04#23 '남들에겐 말하지 못할 비밀'은 무엇을 가리키는지 원문이 밝히지 않아 줄기(J3 · J22)에 걸지 않았다. 시점 S203(event_wisdomspring 뒤)은 원문이 더 좁히지 않아 그대로."
+}

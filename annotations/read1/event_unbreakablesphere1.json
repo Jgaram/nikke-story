@@ -1,0 +1,573 @@
+{
+  "unit": "event_unbreakablesphere1",
+  "session": "R61",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "마나 · 시프티가 수정 지역을 없애려 쏜 AA 필러를, 희귀 랩쳐를 쫓던 미하라 · 유니가 있던 자리에서 땅속에서 솟은 거대한 입 — 코드 네임 글러트니 — 가 삼킨다(prologue). 함께 삼켜진 미하라 · 유니 · 모리는 세이렌(리틀 머메이드)의 물거품에 받아져 '바닷속' 물거품 정원에서 깨어나고, 세이렌은 탈출용 물거품을 한 달 걸려 만들겠다고 한다(01). 모리는 방주에서부터 워드리스를 몰래 따라온 인큐베이터 스쿼드 니케로, 지엔에게 받은 검은 상자(콜링 시그널 발생 장치)로 유니의 반응을 보고해야 폐기를 면한다(02_s · intermission). 세이렌의 호의를 밀어내던 모리는 차츰 익숙해지지만, 은빛 액체(소화액)와 랩쳐가 나타나자 세이렌은 이곳이 글러트니의 목구멍임을 털어놓고, 모리의 가방에서 떨어진 상자가 깨져 콜링 시그널이 울린다 — 막이 뚫려 은빛 액체가 AA 필러를 녹이고, 눈이 붉어진 유니가 미하라의 목을 조르다 세이렌의 언령 [정지]와 '넌 니케야'로 돌아온다(03_e · intermission). 모리의 과거(불량품 · 양산형 스쿼드에서의 괴롭힘 · 갱생관 · 횡령 누명 · 인큐베이터)와 세이렌이 모리의 생일을 정해 준 밤(04). 녹은 AA 필러의 에너지가 폭주하자 세이렌은 셋만 지상으로 올려 보내고 홀로 남는다 — 승리의 여신으로서 지상의 재앙을 막으려고(05 · 06). 주둔지 01에서 깨어난 모리는 세이렌을 구하자며 무릎을 꿇고, 마나 · 시프티는 E2 크리스탈을 코어에 박는 방법을 알려 준다(2_01 · 2_02_s). 미하라는 모리의 핸드폰으로 지엔과 거래해 유니 실험 중지 · 모리의 폐기 면제를 얻는 대신 자기 몸에 랩쳐 코어를 넣는 실험을 받고, 유니는 모리를 죽이려다 멈춘다(2_02_e · 2_03). 해변에서 미하라가 코어 융합으로 사슬의 힘을 얻어 글러트니와 고통을 나눠 묶고, 유니가 입을 버티는 사이 모리가 목구멍으로 뛰어들어 세이렌을 설득한다(2_04 · 2_05). 수정 탄환과 AA 필러 에너지를 먹여 [입]의 코어를 부수고, 본체는 달아난다(2_06). 에필로그: 세이렌이 신데렐라 · 그레이브와 재회하고, 모리는 방주로 돌아가지 않고 세이렌과 함께 가기로 한다 — 헨젤 · 그레텔은 '더 이상 인류의 편이 아니다'.",
+  "scenes": [
+    {
+      "scene": "event_unbreakablesphere1_prologue",
+      "text": "AA 필러 사출 작전 · 미하라의 연락 · 글러트니가 AA 필러를 삼킴 · 물에 빠진 모리와 잡아 준 손"
+    },
+    {
+      "scene": "event_unbreakablesphere1_01_s",
+      "text": "물거품 정원 · 세이렌 · 미하라 · 유니 · 모리 소개 · 투명한 막 · 나갈 방법은 만들어 준다"
+    },
+    {
+      "scene": "event_unbreakablesphere1_01_e",
+      "text": "초코 퍼펙트 · 물거품과 언령 · 목 속 물거품 막 · 한 달 기다림"
+    },
+    {
+      "scene": "event_unbreakablesphere1_02_s",
+      "text": "잔해 공터와 AA 필러 · 물방울 로봇 · 자원 채취 출신 모리 · 지엔의 의뢰 회상"
+    },
+    {
+      "scene": "event_unbreakablesphere1_02_e",
+      "text": "물거품 침대 · 모리가 워드리스를 따라왔음 · 미하라가 본 거대한 입 · 땅굴 · 물방울 공방 초대"
+    },
+    {
+      "scene": "event_unbreakablesphere1_03_s",
+      "text": "물거품 공방 · 친구들을 닮은 물방울 · 모리의 거부"
+    },
+    {
+      "scene": "event_unbreakablesphere1_03_e",
+      "text": "물거품 나무 · 미하라의 감각 교환과 시선 · 70년 · 함께하는 생활 · 은빛 액체와 다가오는 랩쳐"
+    },
+    {
+      "scene": "event_unbreakablesphere1_intermission_01",
+      "text": "여긴 글러트니의 목구멍 · 지엔의 검은 상자 회상 · 콜링 시그널 · 은빛 액체가 AA 필러를 녹임 · 유니 폭주와 [정지]"
+    },
+    {
+      "scene": "event_unbreakablesphere1_04_s",
+      "text": "모리의 과거 — 불량품 · 양산형 스쿼드 · 갱생관 · 횡령 누명 · 인큐베이터 · 지엔의 손"
+    },
+    {
+      "scene": "event_unbreakablesphere1_04_e",
+      "text": "데리러 온 세이렌 · 물거품 속 손 · 생일 · 친구에게 손을 내밀지 않은 후회"
+    },
+    {
+      "scene": "event_unbreakablesphere1_05_s",
+      "text": "사과 · 세이렌도 먹혔다 · 소화액 · 일주일 앞당김 · 미하라와 AA 필러 물거품 · 유니의 코어"
+    },
+    {
+      "scene": "event_unbreakablesphere1_05_e",
+      "text": "각자의 고민 · 공방의 친구 인형들 · 할 일이 있다"
+    },
+    {
+      "scene": "event_unbreakablesphere1_06_s",
+      "text": "떠나는 날 · AA 필러 에너지 폭주 · 승리의 여신 · 셋을 물거품으로 올려 보냄"
+    },
+    {
+      "scene": "event_unbreakablesphere1_06_e",
+      "text": "지상 · 멀어지는 글러트니 · 홀로 남은 세이렌, 레비와 친구들에게 미안"
+    },
+    {
+      "scene": "event_unbreakablesphere2_01_s",
+      "text": "세이렌의 회상 — 목구멍 속 70년 · 물거품 인형을 쏘아 올림 · 주둔지 01 의무실"
+    },
+    {
+      "scene": "event_unbreakablesphere2_01_e",
+      "text": "마나 · 미하라의 글러트니 설명 · 모리가 무릎 꿇음 · 구하러 가자"
+    },
+    {
+      "scene": "event_unbreakablesphere2_02_s",
+      "text": "마나 · 시프티 — 중앙 정부는 대응 안 함 · E2 크리스탈을 코어에 박는 방법"
+    },
+    {
+      "scene": "event_unbreakablesphere2_02_e",
+      "text": "모리의 핸드폰 · 그 사람에게 연락 · 유니의 불안"
+    },
+    {
+      "scene": "event_unbreakablesphere2_03_s",
+      "text": "지엔과 미하라의 거래 · 세이렌이 말한 유니의 두 코어 · 평생 실험체"
+    },
+    {
+      "scene": "event_unbreakablesphere2_03_e",
+      "text": "유니가 모리의 목을 조르다 멈춤 · 마나의 E2 크리스탈"
+    },
+    {
+      "scene": "event_unbreakablesphere2_intermission_01",
+      "text": "들킨 세이렌 · 액체 금속화 · 추적하는 셋"
+    },
+    {
+      "scene": "event_unbreakablesphere2_04_s",
+      "text": "해변 · 작전 · 코어 융합(UNLOCK CODE : D.E.E.P.) · 지엔 · 마나 회상 · 사슬의 힘"
+    },
+    {
+      "scene": "event_unbreakablesphere2_04_e",
+      "text": "펜듈럼 · 감각 교환 · 유니가 입을 버팀 · 30분 · 모리가 뛰어듦"
+    },
+    {
+      "scene": "event_unbreakablesphere2_05_s",
+      "text": "요동치는 글러트니 · 모리가 물거품 나무에 떨어짐"
+    },
+    {
+      "scene": "event_unbreakablesphere2_05_e",
+      "text": "나가지 않겠다는 세이렌 · 모리의 호소 · 신데렐라와의 약속 · 함께 살아남자"
+    },
+    {
+      "scene": "event_unbreakablesphere2_06_s",
+      "text": "유니의 죄의 무게 · 공간째 탈출 · 수정 탄환 명중 · 인카운터"
+    },
+    {
+      "scene": "event_unbreakablesphere2_06_e",
+      "text": "AA 필러 에너지를 먹여 [입]의 코어를 부숨 · 본체 도주 · 일출 · 신데렐라를 찾으러 보낸 물거품"
+    },
+    {
+      "scene": "event_unbreakablesphere2_epilogue",
+      "text": "진짜 바닷속 물거품 · 신데렐라 · 그레이브 · 모리의 폐기 면제와 동행 · 헨젤 · 그레텔은 인류의 편이 아니다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1883",
+      "text": "마나 · 시프티는 수정 지역의 E2 크리스탈을 모두 없애 주둔지 01을 넓힐 밑작업으로 AA 필러를 쏘았다(공식으로 그 지역에 파견된 스쿼드는 없었다) — 착지 직전 미하라가 랩쳐 희귀 개체를 알리는 연락을 했고, 마나가 멀어지라고 외치는 사이 땅 밑에서 솟은 거대한 입이 AA 필러를 삼켰다 — 마나는 코드 네임 [글러트니]가 나타났다고 알리게 했다",
+      "about": ["person:마나", "person:시프티", "person:미하라", "person:글러트니", "item:AA_필러", "concept:E2_크리스탈"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_prologue", "lines": ["0-15", "24-51"] }],
+      "reason": "마나 · 시프티의 작전(#0-9), 미하라의 연락과 마나의 반응(#29-35), 서술 · 마나(#41-51). 마나가 미하라와 통화 중이던 것은 2_02_s #13-18이 다시 말한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1884",
+      "text": "글러트니에게 함께 삼켜진 미하라 · 유니 · 모리는 세이렌의 물거품에 받아져 '바닷속'이라는 공간에서 깨어났는데, 그곳은 글러트니의 목구멍이었다 — 세이렌도 아주 오래전 먹혀 그 안에서 살아남아 정원 · 물거품 나무 · 공방을 만들고 70년쯤 혼자 지냈다",
+      "about": ["person:세이렌", "person:글러트니", "person:미하라", "person:유니", "person:모리"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_01_s", "lines": ["51-53", "62-66"] },
+        { "scene": "event_unbreakablesphere1_03_e", "lines": ["74-83"] },
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": ["20-23"] },
+        { "scene": "event_unbreakablesphere1_05_s", "lines": ["26-32"] },
+        { "scene": "event_unbreakablesphere2_01_s", "lines": ["0-3", "24-28"] }
+      ],
+      "reason": "세이렌의 말 — 구했다(01_s #51-53), '여긴 목구멍이야 … 글러트니의'(intermission #20-23), '아주 오래전에 먹혀서'(05_s #30), 70년(03_e #80). 막 안의 바닷물이 진짜인 것은 05_s #55",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1885",
+      "text": "세이렌은 예전엔 말만 해도 언령이 나갔지만, 오래전 어떤 친구와 함께 살며 이야기하는 기쁨을 알게 된 뒤 목 속에 물거품 막을 만들어 언령이 멋대로 나가지 않게 막았다 — 언령을 물거품에 담아 직접 옮기지 않고도 물거품을 움직일 수 있고, 물거품 안에 들어온 이에 대해 많은 것을 알 수 있다",
+      "about": ["person:세이렌"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_01_e", "lines": ["28-53"] },
+        { "scene": "event_unbreakablesphere2_03_s", "lines": ["66-72"] },
+        { "scene": "event_unbreakablesphere2_01_s", "lines": ["44-45"] }
+      ],
+      "reason": "세이렌의 말(01_e #41-53, 2_03_s #69). '어떤 친구'는 레비로 보이나(side:mudfish) 원문이 이름을 대지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1886",
+      "text": "세이렌에 따르면 물거품은 자기 무장을 기반으로 만들어 큰 것을 만들 수 없어서, 먼저 물거품으로 물거품 나무를 만들고 그것을 필터 삼아 바닷속 은빛 액체의 에너지만 뽑아 물거품에 넣어 키운다 — 물거품은 액체 금속인데 만지면 따뜻하다",
+      "about": ["person:세이렌", "concept:은색_액체"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_03_e", "lines": ["1-20"] }, { "scene": "event_unbreakablesphere1_05_s", "lines": ["75-77"] }],
+      "reason": "세이렌(03_e #4-9 · 05_s #75-76), 미하라(03_e #19-20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1887",
+      "text": "세이렌에 따르면 글러트니의 은빛 액체는 소화액으로, 닿는 인공물을 모두 똑같은 은빛 액체로 녹이고 그것이 코어로 흘러들면 글러트니가 흡수해 에너지로 바꿔 제 힘으로 쓴다 — 자연물은 바꾸지 못해 목구멍 속 바닷물 · 물고기는 진짜이고, 소화액은 일정한 주기로 쏟아지며, 물거품은 녹지 않고 뒤섞여 총량으로 주도권을 다툰다",
+      "about": ["person:글러트니", "concept:은색_액체", "person:세이렌"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_05_s", "lines": ["36-60"] },
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": ["131-148"] }
+      ],
+      "reason": "세이렌의 설명(05_s #37-55)과 막이 뚫렸을 때 AA 필러가 은색으로 변하고 물거품과 뒤엉킨 장면(intermission #141-148)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1888",
+      "text": "세이렌에 따르면 글러트니는 '본능'이라 부르는 태초의 명령만으로 움직이고 무엇보다 '먹는다'를 앞세워 언령이 통하지 않는다 — 세이렌은 탈출을 포기한 뒤 물거품을 넓혀 글러트니의 코어로부터 시선을 가리고 숨어 지냈고, 시선을 끌면 물리칠 방법이 없다며 감각 교환으로 막 너머를 살피던 미하라를 막았다",
+      "about": ["person:글러트니", "person:세이렌", "person:미하라"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_03_e", "lines": ["30-54"] }, { "scene": "event_unbreakablesphere2_01_s", "lines": ["4-11", "24-25"] }],
+      "reason": "세이렌의 회상(2_01_s #8-11,25)과 말(03_e #45-53)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1889",
+      "text": "미하라에 따르면 글러트니는 1차 침공 때 나타난 타일런트 급으로, 방주 시대엔 거의 안 나타나 옛 기록에만 남았고, ICBM을 삼켜 발사 지점에 뱉은 뒤 인류는 대규모 병기 공격을 멈췄다 — 지엔은 실은 타일런트 급 이상이고 괜히 [죄악]의 이름이 붙은 게 아니라 했다",
+      "about": ["person:글러트니", "person:미하라", "person:지엔"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_01_e", "lines": ["44-50"] }, { "scene": "event_unbreakablesphere2_03_s", "lines": ["119-123"] }],
+      "reason": "미하라(2_01_e #44-50), 지엔(2_03_s #122-123). ICBM 일은 F1667과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1890",
+      "text": "모리는 미실리스에서 만들어졌지만 재능이 없어 '덜떨어졌다'며 일반 니케인데도 양산형 자원 채취 스쿼드에 배정되어 괴롭힘을 받았고, 스쿼드원에게 폭력을 써 갱생관에 다녀온 뒤 횡령 공범 누명까지 써 인큐베이터 스쿼드로 보내졌다",
+      "about": ["person:모리", "org:미실리스", "org:인큐베이터", "place:갱생관"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_04_s", "lines": ["7-37", "50-122", "124-153"] }],
+      "reason": "모리의 독백 회상과 연구원 · 스쿼드원의 말(04_s). 배식 사용권 · 복귀 명령을 빼앗겨 땅을 파고 숨어 살아남았다(#52-118), 짐을 들어 줬다가 공범으로 몰림(#131-147)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1891",
+      "text": "모리의 독백에 따르면 인큐베이터 스쿼드는 문제를 일으켰지만 특별한 능력이 없어 다른 스쿼드에서 다시 쓰기도 애매한 니케들을 모아, 마지막으로 잠재력을 꽃피워 폐기 처분을 면할 기회를 주는 대기 발령 스쿼드다 — 모리의 폐기 집행은 두 달 뒤로 정해져 있었다",
+      "about": ["org:인큐베이터", "person:모리"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_04_s", "lines": ["149-161"] },
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": [55, "105-106"] }
+      ],
+      "reason": "모리의 독백(04_s #149-153), 지엔과의 대화(intermission #105-106)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1892",
+      "text": "지엔은 폐기를 앞둔 모리에게 콜링 시그널 발생 장치(검은 상자)를 주며, 워드리스를 쫓아 지상에서 그것을 울리고 자기가 만든 랩쳐 · 니케 융합체가 곁의 니케를 물어뜯을지 버틸지 두 달 안에 보고하면 영원히 폐기에서 빼 주겠다고 했다 — 모리는 방주에서부터 워드리스를 몰래 따라왔다",
+      "about": ["person:지엔", "person:모리", "person:유니", "person:미하라", "concept:콜링_시그널"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": ["43-110"] },
+        { "scene": "event_unbreakablesphere1_02_s", "lines": ["96-110"] },
+        { "scene": "event_unbreakablesphere1_02_e", "lines": ["56-69"] }
+      ],
+      "reason": "지엔의 말(intermission #57-110), 미하라 · 유니(02_e #59-66 '방주에서부터 계속 우리를 몰래 따라와서'). 융합체 = 유니라는 것은 원문이 대상을 [그것]이라고만 하지만 세이렌(2_03_s #71) · 미하라(2_03_s #39)가 잇는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1893",
+      "text": "모리의 가방에서 떨어진 검은 상자가 부서져 콜링 시그널이 울리자 랩쳐들이 막을 뚫어 은빛 액체가 쏟아져 AA 필러를 녹이기 시작했고, 눈이 붉어진 유니가 구속구를 끊고 미하라의 목을 졸랐다가 세이렌의 언령 [정지]와 '넌 니케야, 랩쳐가 아니야'에 돌아왔다",
+      "about": ["person:모리", "person:유니", "person:미하라", "person:세이렌", "concept:콜링_시그널", "item:AA_필러"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_intermission_01", "lines": ["35-41", "111-210"] }],
+      "reason": "서술과 세이렌의 말(intermission #111-210)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1894",
+      "text": "세이렌은 물거품으로 받아낼 때 유니가 랩쳐 융합 실험을 당해 몸에 코어가 둘이고 하나는 랩쳐 코어임을 알았다 — 지금은 니케 코어가 주도하지만 콜링 시그널을 계속 들으면 랩쳐 코어가 깨어나 본능에 제어권을 빼앗길 수 있다고 미하라에게 알렸다",
+      "about": ["person:유니", "person:세이렌", "person:미하라", "concept:콜링_시그널"],
+      "evidence": [{ "scene": "event_unbreakablesphere1_05_s", "lines": ["173-176"] }, { "scene": "event_unbreakablesphere2_03_s", "lines": ["60-85"] }],
+      "reason": "05_s 끝에서 시작한 이야기가 2_03_s #60-85의 회상으로 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1895",
+      "text": "은빛 액체에 녹은 AA 필러의 에너지가 폭주했다 — 글러트니가 그것을 소화해 내뿜으면 지상에 큰 재앙이 난다며, 세이렌은 일정을 앞당겨 셋을 숨구멍으로 지상에 올려 보내고 홀로 남아 물거품으로 그 에너지를 없애려 했다",
+      "about": ["person:세이렌", "item:AA_필러", "person:글러트니"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_05_s", "lines": ["67-79", "98-151"] },
+        { "scene": "event_unbreakablesphere1_06_s", "lines": ["7-11", "48-73", "130-138"] }
+      ],
+      "reason": "세이렌의 말(06_s #48-73), 미하라에게 한 말(05_s #122-151)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1896",
+      "text": "세이렌은 신데렐라와 그 자리의 모두가 '승리의 여신'이 되어 이야기를 다시 쓰기로 맹세했다며 달아나지 않았다 — 글러트니 안에서 그 약속으로 버티며, 외로울 때마다 친구들을 닮은 물거품 인형을 만들어 친구들이 찾아오기를 바라며 지상으로 쏘아 올렸다",
+      "about": ["person:세이렌", "person:신데렐라", "person:헨젤", "person:그레텔", "person:에이브", "person:레비"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_03_s", "lines": ["28-32"] },
+        { "scene": "event_unbreakablesphere1_05_e", "lines": ["27-48"] },
+        { "scene": "event_unbreakablesphere1_06_s", "lines": ["87-95"] },
+        { "scene": "event_unbreakablesphere1_06_e", "lines": ["40-51"] },
+        { "scene": "event_unbreakablesphere2_01_s", "lines": ["18-35"] }
+      ],
+      "reason": "세이렌의 말(06_s #90-92, 2_01_s #18-32). 공방의 인형은 양 갈래머리 소녀 · 쌍둥이 · 연구원 복장 여성 · 구석에 쭈그린 긴 머리 소녀(05_e #29-34)이고, 06_e에서 세이렌이 레비 · 헨젤 · 그레텔 · 에이브 · 신데렐라를 부르며 사과한다 — 쭈그린 소녀 = 레비(06_e #41-42)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1897",
+      "text": "마나 · 시프티에 따르면 중앙 정부는 글러트니가 먼저 위협하지 않는 한 토벌하지 않는다 — 완전한 토벌법이 없고 대규모 테러 뒤 방주 방위 보수가 먼저라서다 — 입속에서 코어에 E2 크리스탈을 박는 방법은 찾았지만 희생이 반드시 따르고 살아나온 기록이 없어 실현 불가로 보았다",
+      "about": ["person:마나", "person:시프티", "org:중앙_정부", "person:글러트니", "concept:E2_크리스탈"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_02_s", "lines": ["33-113", "127-135"] }],
+      "reason": "마나 · 시프티의 말(2_02_s)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1898",
+      "text": "미하라는 모리의 핸드폰으로 지엔과 거래해 유니에 대한 콜링 시그널 실험 중지 · 모리의 대가 · 자기 강화를 얻는 대신, 유니가 받은 실험 — 니케에 랩쳐 코어를 넣는 것 — 을 받고 평생 지엔의 실험체가 되기로 했다 — 지엔은 그 실험을 늘 폐기 직전 니케로만 해 왔다",
+      "about": ["person:미하라", "person:지엔", "person:유니", "person:모리", "org:메티스", "concept:콜링_시그널"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_02_e", "lines": ["9-59"] }, { "scene": "event_unbreakablesphere2_03_s", "lines": ["0-58", "86-156"] }],
+      "reason": "지엔 · 미하라의 통화(2_03_s). 지엔은 미하라의 기억 소거를 확인하고(#6-7), 유니는 외장까지 랩쳐와 합친 다른 방향의 실험, 메티스가 침식당했을 때도 가져다 쓸까 했고 미하라가 머리에 총을 맞았을 때 데려올 걸 그랬다고 한다(#96-108) — '내 귀여운 동생이 … 공들여 만든 니케'(#99)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1899",
+      "text": "지엔은 방주 밖으로 움직이기 어려워 옛 약속을 들어 마나에게 랩쳐 코어를 미하라의 니케 코어 옆에 넣게 했다 — 지엔에 따르면 니케 코어에는 다른 코어와 반응 · 잡아먹힘을 막는 [방어벽]이 있는데 자기는 끌 수 있고, [코어 더스트]는 랩쳐 코어의 정수로 니케 코어를 키우는 것이다",
+      "about": ["person:지엔", "person:마나", "person:미하라"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_04_s", "lines": ["91-175"] }],
+      "reason": "회상 속 지엔 · 마나 · 미하라의 통화(2_04_s #91-175). 약속 '내가 좋은 일 할 때 한 번 도와달라'(#126-128), 방어벽은 니케 코어 둘의 공명 · 랩쳐 코어의 잠식을 막고 반대도 마찬가지(#149-153), '내가 아는 실험체는 전부 그 고통을 못 견뎌 죽었다'(#171)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1900",
+      "text": "미하라가 코어 융합을 시도하자 오류 뒤 [UNLOCK CODE : D.E.E.P.]로 융합이 열렸고, 자아를 삼키려는 고통을 유니의 외침과 뺨을 씹는 아픔으로 버텨, [펜듈럼]을 꽂아 [사슬]로 이은 살아 있는 것과 크기 · 힘에 관계없이 감각과 고통을 나누는 힘을 얻었다",
+      "about": ["person:미하라", "person:유니", "person:D.E.E.P.", "person:슈엔"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_04_s", "lines": ["73-90", "176-270"] }],
+      "reason": "시스템 메시지(#76-83), 서술(#176-264), 미하라 '슈엔이 맞았네 … 이전의 감각 교환 정도로는 실패'(#268-270)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1901",
+      "text": "미하라가 사슬로 이은 글러트니에게 입안을 씹는 고통을 나눠 묶고 유니가 입을 버티는 사이 모리가 E2 크리스탈을 품고 목구멍에 뛰어들어 세이렌을 설득했고, 둘이 공간째 탈출하며 쏜 수정 탄환과 AA 필러의 에너지를 먹여 키운 수정으로 코어를 부쉈다",
+      "about": ["person:미하라", "person:유니", "person:모리", "person:세이렌", "person:글러트니", "concept:E2_크리스탈", "item:AA_필러"],
+      "evidence": [
+        { "scene": "event_unbreakablesphere2_04_s", "lines": ["0-32", "276-288"] },
+        { "scene": "event_unbreakablesphere2_04_e", "lines": ["43-117", "158-164"] },
+        { "scene": "event_unbreakablesphere2_05_e", "lines": ["140-149"] },
+        { "scene": "event_unbreakablesphere2_06_s", "lines": ["91-140"] },
+        { "scene": "event_unbreakablesphere2_06_e", "lines": ["10-69"] }
+      ],
+      "reason": "작전 설명(2_04_s #16-32), 전투 서술(2_04_e · 2_06_s · 2_06_e)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1902",
+      "text": "세이렌이 목구멍 속에서 물거품으로 조사해 알기로 글러트니는 큰 본체 하나에 여러 개의 [입] 기관이 붙은 랩쳐이고, 세이렌이 머문 곳 · 일행이 부순 코어는 그 [입]의 것이었다 — 본체는 수정에 침식당할까 봐 [입]을 떼어 버리고 땅속 멀리 달아났고, 미하라는 감각 교환 때 무언가와 이어진 느낌이 본체였다고 했다",
+      "about": ["person:글러트니", "person:세이렌", "person:미하라"],
+      "evidence": [{ "scene": "event_unbreakablesphere2_06_e", "lines": ["70-102"] }],
+      "reason": "세이렌(#79-99), 미하라(#81-82,101-102)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1903",
+      "text": "세이렌은 신데렐라 · 그레이브와 다시 만났고, 모리는 지엔의 메시지로 폐기를 면하고도 방주로 돌아가지 않고 세이렌 일행과 함께 다니기로 해 미하라가 탈주 추적을 막으려 핸드폰을 거두었다 — 세이렌은 헨젤 · 그레텔이 더 이상 인류의 편이 아니라 했다",
+      "about": [
+        "person:세이렌",
+        "person:신데렐라",
+        "person:그레이브",
+        "person:에이브",
+        "person:모리",
+        "person:미하라",
+        "person:유니",
+        "person:지엔",
+        "person:헨젤",
+        "person:그레텔",
+        "org:필그림"
+      ],
+      "evidence": [
+        { "scene": "event_unbreakablesphere2_06_e", "lines": ["183-199"] },
+        { "scene": "event_unbreakablesphere2_epilogue", "lines": ["0-21", "47-74", "146-212"] }
+      ],
+      "reason": "에필로그 서술 · 대사. 세이렌은 모두를 진짜 바닷속 물거품 공간으로 데려가고 '에이브가 이렇게 쓸 수 있게 만들어줬다'(#1-14), 지엔의 메시지 '임무는 성공인 셈'(#61-66), 탈주(#182-185), 헨젤 · 그레텔(#199-212). 2_06_e 끝(#185-199)의 '신데렐라를 찾으러 보낸 물거품' 뒤다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q242",
+      "text": "미하라의 코어 융합을 연 해제 코드 [UNLOCK CODE : D.E.E.P.]는 무엇인가 — 니케 코어의 [방어벽]을 끄는 지엔의 '영업 비밀'은 D.E.E.P.('방주의 수호자')와 어떤 관계인가?",
+      "evidence": [{ "scene": "event_unbreakablesphere2_04_s", "lines": ["76-83", "135-147"] }],
+      "reason": "시스템 메시지에 D.E.E.P.(F1755)의 이름이 뜨지만 원문은 설명하지 않고, 지엔은 방어벽을 끄는 법을 비밀이라 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q243",
+      "text": "세이렌이 '더 이상 인류의 편이 아니다'라 한 헨젤과 그레텔에게는 무슨 일이 있었고, 지금 어디서 무엇을 하나?",
+      "evidence": [{ "scene": "event_unbreakablesphere2_epilogue", "lines": ["199-212"] }],
+      "reason": "세이렌이 머뭇거리다 말하고 이벤트가 끝난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F1884-2",
+      "act": "드러냄",
+      "text": "콜링 시그널로 막이 뚫리기 직전, 세이렌이 이곳은 바닷속이 아니라 글러트니의 목구멍이라고 털어놓는다 — 먹혔다는 것을 몰라야 더 행복하리라 여겨 숨겼다",
+      "evidence": [{ "scene": "event_unbreakablesphere1_intermission_01", "lines": ["20-27"] }],
+      "reason": "#20 [여긴 목구멍이야.] · #23 [글러트니의… 랩쳐의 목구멍] — 01_s에서 '바닷속'이라 한 것(F1884)을 처음 밝힘. 숨긴 까닭은 04_e#34-35",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "M28",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1814-2",
+      "act": "드러냄",
+      "text": "공터의 물방울 다섯(신데렐라 · 세이렌 · 헨젤 · 그레텔 · 에이브)은 글러트니의 목구멍에 갇힌 세이렌이 외로울 때마다 친구들을 닮게 만들어, 친구들이 찾아와 주기를 바라며 지상으로 쏘아 올린 물거품 인형이었다",
+      "evidence": [{ "scene": "event_unbreakablesphere2_01_s", "lines": ["29-35"] }, { "scene": "event_unbreakablesphere1_03_s", "lines": ["30-32"] }],
+      "reason": "세이렌의 회상(2_01_s #29-32 '친구들을 닮은 인형을 만들어서, 하늘로 쏘아 올려') — ch36의 물방울이 그것이라고 원문이 이름 대어 잇지는 않지만 모양 · 재질 · 글자가 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M28",
+          "note": "M28: 05_e#29-39 공방 인형 · 2_06_e#185-193 '신데렐라를 찾으러 보낸 물거품' · 유실물 _03(F1909) · 필드 대화 _11(F1905)이 원문으로 잇는다",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "Q236-2",
+      "act": "회수",
+      "answer": "F1884",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_unbreakablesphere1_05_s", "lines": ["28-32"] }, { "scene": "event_unbreakablesphere1_03_e", "lines": ["78-83"] }],
+      "reason": "세이렌은 글러트니에게 먹힌 뒤 그 목구멍 속에서 70년쯤 홀로 살아 있었다. 레비아탄이 '아마 살아 있다'고 한 까닭은 따로 나오지 않지만 물음의 몸통(어떻게 되었나)이 풀렸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q237-2",
+      "act": "회수",
+      "answer": "F1883",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_unbreakablesphere1_prologue", "lines": ["29-45"] }],
+      "reason": "미하라가 '랩쳐 희귀 개체'를 알리는 연락을 하던 그 자리에서 땅 밑의 거대한 입(글러트니)이 솟았다 — side:mudfish 에필로그의 땅 밑 흔적 · '첫 번째 타깃'이 글러트니라고 원문이 이름 대어 말하지는 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q207-5",
+      "act": "회수",
+      "answer": "F1903",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_unbreakablesphere2_epilogue", "lines": ["0-7", "199-212"] }],
+      "reason": "세이렌은 살아 있어 신데렐라 · 그레이브와 다시 만났고, 헨젤 · 그레텔은 '더 이상 인류의 편이 아니다'까지만 드러났다(Q243)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "Q213-2",
+      "act": "회수",
+      "answer": "F1898",
+      "degree": "일부",
+      "evidence": [
+        { "scene": "event_unbreakablesphere2_03_s", "lines": ["96-104"] },
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": ["74-85"] }
+      ],
+      "reason": "지엔은 니케에 랩쳐 코어를 넣는 실험을 폐기 직전 니케로 해 왔고, 유니에게도 그 융합의 결과(콜링 시그널 반응)를 '그냥 궁금하잖아요'라며 시험했다 — 왜 하필 유니였는지는 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S222",
+      "kind": "기준점",
+      "text": "CH.36 뒤 — 신데렐라 · 그레이브가 세이렌을 찾아 떠난 뒤, 카운터스가 다른 지역으로 옮긴 때 마나 · 시프티가 AA 필러를 쏜 날부터 한 달 남짓(워드리스는 side:mudfish 에필로그의 '첫 번째 타깃' 추적 중)",
+      "ref": "ch36",
+      "at": [["뒤", "ch36"], ["뒤", "side:mudfish"]],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_prologue", "lines": ["5-9", "29-35"] },
+        { "scene": "event_unbreakablesphere2_epilogue", "lines": ["2-7"] }
+      ],
+      "reason": "시프티 '지휘관과 카운터스 스쿼드도 다른 지역으로 이동'(prologue #5), 에필로그에 신데렐라 · 그레이브가 세이렌과 함께 있다(F1816 뒤). CH.37–38과의 앞뒤는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "S223",
+      "kind": "회상",
+      "text": "모리의 회상 — 미실리스에서 깨어난 날부터 양산형 스쿼드 · 갱생관 · 인큐베이터 스쿼드를 거쳐 지엔의 손을 잡기까지",
+      "ref": "person:모리",
+      "at": [["전", "event_unbreakablesphere1"]],
+      "evidence": [
+        { "scene": "event_unbreakablesphere1_04_s", "lines": ["0-167"] },
+        { "scene": "event_unbreakablesphere1_intermission_01", "lines": ["43-110"] }
+      ],
+      "reason": "독백 회상(04_s #0-167)과 지엔의 의뢰 회상(intermission #43-110)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "S224",
+      "kind": "회상",
+      "text": "세이렌의 회상 — 글러트니의 목구멍에서 처음 눈뜬 때(약 70년 전)부터 미하라 일행이 오기까지",
+      "ref": "F1849",
+      "at": [["전", "event_unbreakablesphere1"]],
+      "years": [70, 0],
+      "evidence": [{ "scene": "event_unbreakablesphere2_01_s", "lines": ["0-47"] }],
+      "reason": "'처음 이곳에서 눈을 떴을 때를 기억해'(#0), 70년(03_e #80)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "item:AA_필러",
+      "evidence": [
+        {
+          "scene": "event_unbreakablesphere1_prologue",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "A 필러의 강화판 — 글러트니가 삼켰다",
+      "new": true
+    },
+    {
+      "target": "person:모리",
+      "evidence": [
+        {
+          "scene": "event_unbreakablesphere1_prologue",
+          "lines": [
+            76
+          ]
+        }
+      ],
+      "note": "미실리스 출신 인큐베이터 스쿼드 니케 — 지엔의 의뢰로 워드리스를 따라왔다가 세이렌의 동료가 된다",
+      "new": false
+    },
+    {
+      "target": "org:인큐베이터",
+      "evidence": [
+        {
+          "scene": "event_unbreakablesphere1_intermission_01",
+          "lines": [
+            43
+          ]
+        }
+      ],
+      "note": "폐기 직전 니케들의 대기 발령 스쿼드(모리 소속)",
+      "new": false
+    }
+  ],
+  "revisit": [],
+  "slips": [
+    "세이렌은 글러트니 속에 온 지 '70년 정도'(event_unbreakablesphere1_03_e #80)라 하는데, 우주에서 떨어진 것은 약 100년 전(F1802)이고 떨어진 뒤 '수년' 만에 레비를 만나 한 달 뒤 먹혔다(side:mudfish) — 20년 넘게 빈다. 각 원문 그대로 적었다"
+  ]
+}

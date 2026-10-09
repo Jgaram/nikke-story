@@ -1,0 +1,112 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M84\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:241",
+  "session": "M84",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I643",
+      "target": "person:머스탱",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_epinel_05", "lines": ["2-3"] }],
+      "reason": "05#3 '테트라 라인의 C.E.O!' 바로 뒤 #4 머스탱 '머스탱이에Yo-!!' — 자기소개 구호",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I644",
+      "target": "person:루마니",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_epinel_05", "lines": [90] }],
+      "reason": "05#90 '장하다, 우리 꼬맹이' — 선택지 #92 '루마니?' 뒤 #99 루마니가 반말로 '너도 수고 많았어. 에피넬'. 01#93 '멍청아!'처럼 에피넬에게 반말을 쓰는 것은 루마니",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I645",
+      "target": "person:메어리",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_epinel_05", "lines": [91] }],
+      "reason": "05#91 '정말 멋졌어요, 에피넬~!' — 선택지 #93 '메어리?' 뒤 #96 메어리가 같은 존댓말 · '~' 말투로 이어 간다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1891",
+      "person": "person:에피넬",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "10관왕을 앞두고도 '……별로' 하며 긴장을 모르는 쿨한 포커페이스지만, 보조 장치 없이 몸을 아끼지 않는 연습으로 한계를 넘어 온 근성파",
+      "evidence": [{ "scene": "ep:d_nikke_epinel_01", "lines": ["33-35", "47-52"] }],
+      "reason": "01#33-34 '……별로. 그냥 연습한 만큼 보여줄 뿐이야' · #35 '포커페이스' · #48 루마니 '오로지 근성 하나만으로'. 에피넬 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1892",
+      "person": "person:에피넬",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "인간이 아닌 게 되었어도 보드를 타는 순간만은 [나]일 수 있다며, 니케니까 보통 사람보다 멋진 퍼포먼스를 보여야 한다고 여기는",
+      "evidence": [{ "scene": "ep:d_nikke_epinel_03", "lines": ["35-37", "41-42"] }],
+      "reason": "03#36 '아무리 인간이 아닌 게 되었어도, 보드를 타는 순간만은 [나]일 수 있었는데' · #42 '난 니케니까. 보통 사람들보다 더 멋진 퍼포먼스를'. 02#45-47 보드를 못 타면 불구 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1893",
+      "person": "person:에피넬",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "니케니까 인간이 못 하는 트릭을 보여야 한다며 파츠를 밥 먹듯 갈던",
+      "after": "쉽고 안전한 트릭으로 다시 일어서, 몸을 아끼며 보드를 오래오래 타고 싶다는",
+      "trigger": [{ "scene": "ep:d_nikke_epinel_05", "lines": ["33-39"] }],
+      "evidence": [{ "scene": "ep:d_nikke_epinel_05", "lines": ["102-106"] }],
+      "points": ["F618"],
+      "reason": "05#34-35 '정말 쉬운 트릭이니까. 절대 다치지 않을 트릭이니까' 뒤 #104-106 '밥 먹듯이 파츠를 갈아 끼우러 오지 마시고요!' — '이젠 절대 안 그래. 보드, 오래오래 타고 싶으니까'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1894",
+      "person": "person:에피넬",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '코치'라 부르며, 결승에서 몸이 굳자 그에게 먼저 '이상해. 꼼짝도 할 수가 없어'라 털어놓는",
+      "evidence": [{ "scene": "ep:d_nikke_epinel_01", "lines": ["86-92"] }],
+      "reason": "01#87-89 '코치. 이상해. 꼼짝도 할 수가 없어. 왜 이러지?' — 02#87 '내 멘탈 케어 하는구나. 언제나 수고가 많아'. 에피넬 → 지휘관 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1895",
+      "person": "person:에피넬",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "멘탈 케어를 해 주는 '코치'",
+      "after": "함께 만든 트릭으로 재기한 뒤 품에 안기고, 이제는 자기가 그의 보드 코치가 되어 늘 곁에 있겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_epinel_03", "lines": ["57-65"] }],
+      "evidence": [{ "scene": "ep:d_nikke_epinel_05", "lines": ["76-86", "124-126", "142-144"] }],
+      "points": ["F618"],
+      "reason": "05#79 '내 품에 안겼다' · #86 '내가 해냈어' · #124-125 '제대로 타게 될 때까지, 내가 데리고 다닐게' · #143-144 '내가 어려울 때 코치가 그랬듯이, 나도 늘 코치 곁에'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 모두 정함(05#2-3 머스탱 · #90 루마니 · #91 메어리). 루마니('회원님' · 회원권 영업 · 근성 예찬)와 메어리는 이 단위의 모습이 얕아 기준을 다시 세우지 않았다(event_lifeagain D1591-D1593 · D1384 · D1387 있음). 피사 돔 폭발 사고(J42 · Q87)는 이 단위에서 더 나오지 않는다. 시점 실마리 없음."
+}

@@ -1,0 +1,66 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M81\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:82",
+  "session": "M81",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1806",
+      "person": "person:리타",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "몸은 불멸이어도 뇌는 언젠가 죽으니, 건물 · 센티로 살아 있던 증거를 남겨 올바르게 기억되는 '완성된 죽음'을 매일 준비하는",
+      "evidence": [{ "scene": "ep:d_nikke_liter_04", "lines": ["69-86"] }],
+      "points": ["F522"],
+      "reason": "04#70 '살아있었다는 증거를 남길 수 있다는 것' · #81-85 '뇌는 그렇지 않을 게야 … 올바르게 … 죽음이 완성'. D1634(fl:for_rest)의 '전'이 이것. 뒤 출시의 신념 기준 D267(event_bluewaterisland2)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1807",
+      "person": "person:리타",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:아니스"],
+      "text": "어지른 곳마다 물건이 나온 아니스를 '악의 축'이라 밀착 마크하며, 사람답게 살게 하려고 '수십 년의 관록'으로 맞붙는",
+      "evidence": [{ "scene": "ep:d_nikke_liter_02", "lines": ["87-122"] }],
+      "reason": "02#87 '악의 축은 아니스' · #113-114 '밀착마크' · 03#87 '네놈을 사람으로 만들려고'. 리타 → 아니스 관계 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1808",
+      "person": "person:리타",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:센티"],
+      "text": "센티를 키우는 것도 살아 있던 증거를 남기는 일 — 언젠가 '리타를 뛰어넘은 니케'가 되어 자기를 기억되게 할 후계로 여기는",
+      "evidence": [{ "scene": "ep:d_nikke_liter_04", "lines": ["71-73"] }],
+      "reason": "04#71-73 '센티를 키우고 있는 것도 그 이유의 일환 … [리타를 뛰어넘은 니케]가 될 테지. 나는 그렇게 또 기억될 것'. 관계 변화 D1635(fl:for_rest)의 앞 기준",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1809",
+      "person": "person:아니스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "언제 죽을지 모르니 희망도 미래도 없다며 대충 살던",
+      "after": "리타의 '완성된 죽음' 이야기에 '당장은 힘들 거야'라면서도 일어나 함께 청소하는",
+      "trigger": [{ "scene": "ep:d_nikke_liter_05", "lines": ["19-82"] }],
+      "evidence": [{ "scene": "ep:d_nikke_liter_05", "lines": ["83-86", 106] }],
+      "points": ["F524", "F525"],
+      "reason": "03#109-110 '희망도, 미래도 없어' → 05#84-85 몸을 일으켜 '당장은, 힘들 거야' · #106 함께 청소. 도망치려다 붙잡혀 한 것이라 변화가 작다 — 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,361 @@
+{
+  "unit": "ch07",
+  "session": "R02",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "CHAPTER.07 재회. 지휘관은 모더니아와 토커티브를 쫓는 스노우 화이트를 눈보라 속에서 따라간다. 스노우 화이트는 1차 랩쳐 침공 때부터 수십 년 정비를 못 받았고(07_02 #12–17), 헬레틱은 퀸(랩쳐의 여왕)의 직속이라 그들을 쫓아 퀸에게 닿으려 한다(#25–30). 토커티브는 방주에서 큰 빛이 솟은 날 방주 근처에서 처음 만났다(07_03 #8–12). 필그림은 이룬 게 없고 방주를 전혀 몰라 돌아가지 않는다(07_05). 모더니아가 자기장과 날개로 스노우 화이트를 짓밟자, 지휘관은 니케용 라이플을 외골격에 대고 한 발 쏘아 신호를 보내고 카운터스가 합류한다(07_06_s). 모더니아의 바이저가 깨지자 마리안의 얼굴이 나오고, 이름을 들은 모더니아는 \"실버건 스쿼드의 마리안\"이라고 되뇌다 검은 에너지를 터뜨린다(07_06_e #7–46). 모두 대파되어 벙커에 갇히자 지휘관은 외골격을 스노우 화이트에게 주고, 스노우 화이트는 불꽃신호로 루드밀라 · 앨리스를 벙커로 이끈 뒤 사라진다(07af_01). 3일 뒤 스노우 화이트는 외골격을 돌려주며 조사해 보라고 탄환 하나를 주고, 함께하자는 말은 거절한다(07af_02). 엔더슨은 중앙 정부가 카운터스를 특수 별동대로 임명했다고 전하고 한 달 휴가를 준다(07af_03). 한 달 뒤, 탄환 속 물질은 데이터베이스에 없고 헬레틱 기록도 거의 없어, 카운터스는 엑시아가 말한 지상의 군수품 제조 시설로 가기로 한다(07af_04–05).",
+  "scenes": [
+    {
+      "scene": "d_main_07_01",
+      "text": "스노우 화이트를 따라 모더니아 · 토커티브를 쫓는다"
+    },
+    {
+      "scene": "d_main_07_02",
+      "text": "스노우 화이트 — 1차 랩쳐 침공 때부터 수십 년, 헬레틱은 퀸의 직속"
+    },
+    {
+      "scene": "d_main_07_03",
+      "text": "토커티브를 처음 만난 날 — 방주에서 큰 빛이 솟았다, 헬레틱은 배신자"
+    },
+    {
+      "scene": "d_main_07_04",
+      "text": "스노우 화이트가 발열 망토를 찢어 준다"
+    },
+    {
+      "scene": "d_main_07_05",
+      "text": "필그림이 방주로 돌아가지 않는 이유"
+    },
+    {
+      "scene": "d_main_07_06_s",
+      "text": "모더니아에게 당하는 스노우 화이트, 지휘관의 라이플 신호, 카운터스 합류"
+    },
+    {
+      "scene": "d_main_07_06_e",
+      "text": "모더니아의 얼굴은 마리안 — 검은 에너지 폭발, 벙커 고립, 외골격을 스노우 화이트에게"
+    },
+    {
+      "scene": "d_main_07af_01",
+      "text": "루드밀라가 불꽃신호를 따라 구조 — 수송기로 귀환"
+    },
+    {
+      "scene": "d_main_07af_02",
+      "text": "스노우 화이트가 외골격을 돌려주고 탄환을 준다"
+    },
+    {
+      "scene": "d_main_07af_03",
+      "text": "엔더슨 — 특수 별동대 임명, 한 달 휴가"
+    },
+    {
+      "scene": "d_main_07af_04",
+      "text": "한 달 뒤 — 탄환 물질 미상, 헬레틱 기록 없음, 중앙 정부 출입 금지"
+    },
+    {
+      "scene": "d_main_07af_05",
+      "text": "엑시아의 안내로 군수품 제조 시설로"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F203",
+      "text": "스노우 화이트는 1차 랩쳐 침공 때부터 수십 년 동안 제대로 된 정비를 받지 못한 채 지상에 있었다",
+      "about": ["person:스노우_화이트", "incident:랩쳐_침공"],
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["12-17"] }],
+      "reason": "스노우 화이트 \"1차 랩쳐 침공 때부터 였으니까. 모르긴 몰라도 수십 년이 지났겠지\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F204",
+      "text": "퀸은 랩쳐의 여왕이고, 스노우 화이트는 퀸을 잡아야 인간의 시대가 다시 온다고 믿는다",
+      "about": ["person:퀸", "person:스노우_화이트"],
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["26-30"] }],
+      "reason": "스노우 화이트 \"랩쳐의 여왕. 그걸 잡아야 인간의 시대가 다시 올 거다\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F205",
+      "text": "스노우 화이트는 방주에서 큰 빛이 솟아오른 날 방주 근처에서 처음 토커티브를 만났다",
+      "about": ["person:스노우_화이트", "person:토커티브", "place:방주"],
+      "evidence": [{ "scene": "d_main_07_03", "lines": ["6-16"] }],
+      "reason": "스노우 화이트의 기억 — \"아마… 내 기억이 맞다면\"이라 덧붙인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F206",
+      "text": "스노우 화이트는 필그림이 방주를 전혀 모른다고 한다 — 어떤 세계인지도, 가고 싶은지조차 모른다",
+      "about": ["org:필그림", "place:방주"],
+      "evidence": [{ "scene": "d_main_07_05", "lines": ["10-19"] }],
+      "reason": "\"우린 방주를 모른다\", \"가고 싶은지조차 알 수 없다\", 스스로를 \"실낱같은 희망을 찾아 헤매는 순례자\"라 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F207",
+      "text": "모더니아는 탄환을 막는 고밀도 자기장과 날개로 싸운다",
+      "about": ["person:모더니아"],
+      "evidence": [{ "scene": "d_main_07_06_s", "lines": ["16-28"] }],
+      "reason": "스노우 화이트 \"자기장…!? 단독으로 이 정도 밀도라니\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F208",
+      "text": "니케용 화기는 인간이 다룰 수 없지만, 지휘관은 스노우 화이트의 라이플을 외골격에 대고 한 발 쏘아 카운터스에게 신호를 보냈다",
+      "about": ["person:지휘관", "org:카운터스"],
+      "evidence": [{ "scene": "d_main_07_06_s", "lines": ["48-66", "78-83"] }],
+      "reason": "지휘관 독백과 라피 \"카운터스. 신호를 보고 집결했습니다\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F209",
+      "text": "모더니아의 바이저 아래 얼굴은 마리안이었고, 모더니아는 마리안이라는 이름에 흔들리며 \"실버건 스쿼드의 마리안\"이라고 되뇌었다",
+      "about": ["person:모더니아", "person:마리안"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["7-9", "21-44"] }],
+      "reason": "바이저가 떨어지자 \"어디선가 본 것 같은 얼굴\", \"저는 모더니아. 퀸을 모시는…\" → \"실버건… 스쿼드의…. 마리안이라고… 합니다\". 정체 연결 L1",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F210",
+      "text": "모더니아에게서 터져 나온 검은 에너지 폭발로 카운터스와 스노우 화이트가 대파되어 눈보라 속 벙커에 갇혔다",
+      "about": ["person:모더니아", "org:카운터스", "person:스노우_화이트"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["32-46", "54-72"] }],
+      "reason": "라피의 상황 보고 — 넷 모두 이동 불가, 통신 두절",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F211",
+      "text": "지휘관이 외골격을 내주자 스노우 화이트는 불꽃신호로 루드밀라 · 앨리스를 벙커까지 이끈 뒤 사라졌다",
+      "about": ["person:지휘관", "person:스노우_화이트", "person:루드밀라"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["84-98", "131-135"] }, { "scene": "d_main_07af_01", "lines": ["6-15"] }],
+      "reason": "루드밀라 \"누군가 불꽃신호기를 들고 서 있었다\", 라피가 그는 필그림이라고 확인",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F212",
+      "text": "아니스는 필그림을 인간에게 버림받은 니케들이라 한다",
+      "about": ["org:필그림"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": ["106-107"] }],
+      "reason": "아니스의 말 — 스노우 화이트가 돌아오지 않을까 걱정하며",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F213",
+      "text": "스노우 화이트는 외골격을 돌려주며 조사해 보라고 탄환 하나를 건넸고, 함께하자는 제안은 사는 세계가 다르다며 거절했다",
+      "about": ["person:스노우_화이트", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_07af_02", "lines": ["8-37"] }],
+      "reason": "\"조사해봐라. 반드시 도움이 될거다\", \"이미 너희와 나는 살고 있는 세계가 다르다\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F214",
+      "text": "중앙 정부는 지휘관과 휘하 스쿼드를 특수 별동대로 임명했다 — 부사령관 아래로는 명령할 수 없고, 부사령관 이상의 명령도 타당한 이유가 있으면 거부할 수 있다",
+      "about": ["org:중앙_정부", "concept:특수_별동대", "org:카운터스"],
+      "evidence": [{ "scene": "d_main_07af_03", "lines": ["6-19"] }],
+      "reason": "엔더슨 — 토커티브와 연속 조우 후 생존, 필그림 · 헬레틱 접촉이 처음이라서. 3대 회사 CEO도 함부로 못 한다(#19). 주둔지는 전초 기지, 방주 이동 자유(#21-24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F215",
+      "text": "탄환 속 물질은 데이터베이스에 없는 미지의 물질이고, 물질 데이터베이스가 지워진 듯해 중앙 정부 규모가 아니면 알아내기 어렵다",
+      "about": ["person:엑시아"],
+      "evidence": [{ "scene": "d_main_07af_04", "lines": ["14-18"] }],
+      "reason": "네온이 전하는 엑시아의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F216",
+      "text": "헬레틱에 대한 기록은 도시 괴담 말고는 거의 없고, 중앙 정부의 라이브러리는 특수 별동대라도 출입할 수 없다",
+      "about": ["concept:헬레틱", "org:중앙_정부"],
+      "evidence": [{ "scene": "d_main_07af_04", "lines": ["19-26"] }],
+      "reason": "아니스 · 라피의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F217",
+      "text": "엑시아에 따르면 지상에 중앙 정부와 비슷한 규모의 시설이 있어, 카운터스는 탄환을 조사하러 군수품 제조 시설로 가기로 했다",
+      "about": ["person:엑시아", "org:카운터스"],
+      "evidence": [{ "scene": "d_main_07af_04", "lines": ["38-40"] }, { "scene": "d_main_07af_05", "lines": [9, 14] }],
+      "reason": "네온이 전한 엑시아의 말, 지휘관 \"군수품 제조 시설로 향해 탄환을 조사해 보자\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q36",
+      "text": "스노우 화이트가 토커티브를 처음 만난 날 방주에서 솟아오른 큰 빛은 무엇이었나?",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "d_main_07_03", "lines": ["9-12"] }],
+      "reason": "스노우 화이트는 날짜 대신 그 빛으로 그날을 기억한다 — 설명은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M02", "note": "2회독: 원문이 직접 드는 의문", "before": "확신도 추정" }
+      ]
+    },
+    {
+      "id": "Q37",
+      "text": "뇌가 파괴되어 죽은 마리안이 어떻게 살아 있고, 헬레틱 모더니아가 되었나?",
+      "about": ["person:마리안", "person:모더니아"],
+      "evidence": [{ "scene": "d_main_07af_04", "lines": ["0-1", 22] }],
+      "reason": "아니스 \"뇌가 파괴되어 죽은 마리안이 어떻게 살아있으며 헬레틱이 되었는지도 알 방법이 없어\". 니케는 뇌가 죽으면 되살릴 수 없다(F116)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "Q38",
+      "text": "스노우 화이트가 준 탄환은 무엇으로 만들어졌고, 어디에 도움이 되나?",
+      "about": ["person:스노우_화이트"],
+      "evidence": [{ "scene": "d_main_07af_02", "lines": ["17-20"] }, { "scene": "d_main_07af_04", "lines": ["14-15"] }],
+      "reason": "데이터베이스에 없는 미지의 물질",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M02", "note": "2회독: 원문이 직접 드는 의문", "before": "확신도 추정" }
+      ]
+    },
+    {
+      "id": "Q39",
+      "text": "모더니아가 함께 왔으면 좋았겠다고 한 니힐리스타는 누구인가?",
+      "about": ["person:니힐리스타"],
+      "evidence": [{ "scene": "d_main_07_06_e", "lines": [10] }],
+      "reason": "모더니아 \"역시 니힐리스타도 함께 오는 편이 좋았을까요?\" — 설명 없음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M02", "note": "2회독: 원문이 직접 드는 의문", "before": "확신도 추정" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "F127-2",
+      "act": "드러냄",
+      "text": "헬레틱은 퀸의 직속이라 그들을 쫓으면 퀸에게 닿는다 — 스노우 화이트 본인의 말",
+      "reason": "CH.06에서 드러난 것을 스노우 화이트가 직접 설명한다",
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["25-27"] }, { "scene": "d_main_07_03", "lines": ["23-25"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F124-2",
+      "act": "드러냄",
+      "text": "필그림은 이룬 것이 너무 없어 방주로 돌아가지 않는다",
+      "reason": "CH.06 \"아직 아무것도 이루지 못했다\"를 스노우 화이트가 다시 말한다",
+      "evidence": [{ "scene": "d_main_07_05", "lines": ["1-9"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F40-2",
+      "act": "드러냄",
+      "text": "엔더슨 본인이 중앙 정부의 눈을 피하게 하려고 전초 기지로 보냈다고 말한다",
+      "reason": "CH.02의 사실을 엔더슨이 직접 밝힌다",
+      "evidence": [{ "scene": "d_main_07af_03", "lines": ["31-34"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S15",
+      "kind": "기준점",
+      "text": "CH.07은 CH.06 직후, 모더니아 · 토커티브를 쫓는 추적에서 시작해 한 달 휴가 뒤까지 이어진다",
+      "ref": "ch06",
+      "at": [["직후", "ch06"]],
+      "evidence": [{ "scene": "d_main_07_01", "lines": ["0-1"] }, { "scene": "d_main_07af_02", "lines": [0] }, { "scene": "d_main_07af_04", "lines": [6] }],
+      "reason": "\"3일 후\"(07af_02), \"한 달 후\"(07af_04)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "S16",
+      "kind": "기준점",
+      "text": "1차 랩쳐 침공은 지금으로부터 수십 년 전이다",
+      "ref": "incident:랩쳐_침공",
+      "subject": "@랩쳐_침공",
+      "at": [["전", "ch07", "수십 년"]],
+      "evidence": [{ "scene": "d_main_07_02", "lines": ["16-17"] }],
+      "reason": "스노우 화이트 \"모르긴 몰라도 수십 년이 지났겠지\" — 본인도 기억이 흐리다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "concept:특수_별동대",
+      "evidence": [
+        {
+          "scene": "d_main_07af_03",
+          "lines": [
+            12
+          ]
+        }
+      ],
+      "note": "중앙 정부가 카운터스에 준 지위",
+      "new": true
+    },
+    {
+      "target": "person:엑시아",
+      "evidence": [
+        {
+          "scene": "d_main_07af_05",
+          "lines": [
+            "0-1"
+          ]
+        }
+      ],
+      "note": "지휘관을 \"뉴비\"라 부르는 니케 — 탄환 스캔을 돕는다",
+      "new": false
+    },
+    {
+      "target": "person:니힐리스타",
+      "evidence": [
+        {
+          "scene": "d_main_07_06_e",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "note": "모더니아가 언급한 이름",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

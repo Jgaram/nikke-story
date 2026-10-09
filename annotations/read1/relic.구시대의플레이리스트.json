@@ -1,0 +1,24 @@
+{
+  "unit": "relic:구시대의플레이리스트",
+  "session": "R03",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "재생할 수 없는 옛 노래 파일 셋의 가사. 'Just Once More' — 엿 같은 일도 다 견뎌 왔으니 한 번만 더 하면 된다(_00), 'Caught in the Rapture' — 랩쳐(황홀경)에 붙잡혀 어떤 마약보다 빨리 죽어 간다(_01), 'Welcome to the Ark' — 인류의 천국 방주에 대통령 · 정치인 · CEO · 과학자는 환영, 나머지는 자리가 없으니 꺼지라는 풍자(_02).",
+  "facts": [
+    {
+      "id": "F302",
+      "text": "구시대의 노래 'Welcome to the Ark'는 방주가 대통령 · 정치인 · CEO · 과학자만 받고 나머지 사람에게는 자리가 없다고 비꼰다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "relic:구시대의플레이리스트_02", "lines": ["1-6"] }],
+      "reason": "가사 — 방주 입주가 특권층 위주라는 당시의 인식. 추첨(F132)과 함께 볼 것",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [],
+  "targets": [],
+  "revisit": []
+}

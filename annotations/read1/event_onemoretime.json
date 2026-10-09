@@ -1,0 +1,304 @@
+{
+  "unit": "event_onemoretime",
+  "session": "R40",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "ONE MORE TIME — 치어리딩 팀 리와인드(베이 · 클레이)의 방주 치어리딩 챔피언십 도전. 예선에서 팀 역사상 최저 65점을 받고(F1373) 지휘관을 '코치'로 불러 문제점을 찾는다. 지휘관은 흠잡을 곳이 없다고 하지만 라이프 토닉의 폴크방 · 에피넬은 둘뿐이라 큰 무대에서 허전하다고 한다. 리와인드는 불화설(가짜 뉴스) · 베이의 주목 공포증으로 명성이 떨어지고 팀원이 다 나가, 오디션에 혼자 지원한 오랜 팬 클레이만 남은 팀이다(F1372). 블랑 · 누아르(코인 러시 행사), 나가 · 티아(시험 기간), 디젤(박치), 은화(문전박대), A.C.P.U.(미란다는 팔이 고장, 키리는 시력)를 거쳐 강제 휴가 2주가 생긴 폴리가 합류한다(F1374). 클레이는 매일 새벽까지 혼자 연습하다 지각 · 같은 동작 실수를 반복하고, D-7 베이가 몰아세워 팀이 얼어붙는다. 폴리의 조언으로 베이가 경기장에서 홀로 연습하는 클레이를 찾아가 동작을 가르치고 사과한다 — '리와인드'는 되감는다는 뜻(F1375). 본선은 실수 없이 95점, 1등과 3점 차 2등. 몇 달 뒤 니케 육상 선수권 대회에서 둘만으로 압도적 1등 · 베스트 치어리더 팀(F1376). 메인 줄거리와 닿는 곳은 없다.",
+  "scenes": [
+    {
+      "scene": "event_onemoretime_prologue",
+      "text": "예선 — 베이 · 클레이의 무대, 팀 역사상 최저 65점"
+    },
+    {
+      "scene": "event_onemoretime_01_s",
+      "text": "지휘관실의 베이 · 클레이, 대회 설명과 코치 부탁"
+    },
+    {
+      "scene": "event_onemoretime_01_e",
+      "text": "연습실 시연 — 지휘관은 흠잡을 곳이 없다고 함"
+    },
+    {
+      "scene": "event_onemoretime_02_s",
+      "text": "라이프 토닉의 평가 — 인원이 부족해 허전하다"
+    },
+    {
+      "scene": "event_onemoretime_02_e",
+      "text": "새 멤버 찾기 — 블랑&누아르 / 나가&티아, 디젤 / 은화, 폴리를 만남"
+    },
+    {
+      "scene": "event_onemoretime_03_s",
+      "text": "A.C.P.U. — 미란다 고장, 키리 시력, 강제 휴가 2주의 폴리 합류"
+    },
+    {
+      "scene": "event_onemoretime_03_e",
+      "text": "첫 연습 — 폴리는 잘 따라오고 클레이는 지각 · 실수"
+    },
+    {
+      "scene": "event_onemoretime_intermission_01",
+      "text": "D-10 클레이의 새벽 연습, 반복되는 실수와 무거운 공기"
+    },
+    {
+      "scene": "event_onemoretime_04_s",
+      "text": "D-7 베이가 클레이를 몰아세움, 지휘관이 베이를 달램"
+    },
+    {
+      "scene": "event_onemoretime_04_e",
+      "text": "어색한 연습, 폴리가 클레이 무릎의 멍과 대화를 권함"
+    },
+    {
+      "scene": "event_onemoretime_05_s",
+      "text": "경기장에서 홀로 연습하는 클레이를 찾아가 가르침"
+    },
+    {
+      "scene": "event_onemoretime_05_e",
+      "text": "동작 성공, 베이의 사과 — '리와인드'는 되감는다는 뜻"
+    },
+    {
+      "scene": "event_onemoretime_06_s",
+      "text": "D-3~D-1 연습, 본선 무대와 구호 '리와인드! 원 모어 타임!'"
+    },
+    {
+      "scene": "event_onemoretime_06_e",
+      "text": "95점 · 3점 차 2등, 뒤풀이와 다음 목표"
+    },
+    {
+      "scene": "event_onemoretime_epilogue",
+      "text": "몇 달 뒤 니케 육상 선수권 대회 — 1등 · 베스트 치어리더 팀"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1372",
+      "text": "베이가 리더인 치어리딩 팀 리와인드는 아크 스포츠 페스타에서 처음 이름을 떨쳤지만 팀 내 불화설(심사위원에 따르면 가짜 뉴스) 구설수와 베이의 주목 공포증으로 명성이 떨어지고 팀원이 모두 나갔다 — 몇 달 전 오디션에는 매번 서류에서 떨어지던 베이의 오랜 팬 클레이만 지원해 뽑혀, 지금은 둘뿐이다",
+      "about": [
+        "org:리와인드",
+        "person:베이",
+        "person:클레이"
+      ],
+      "evidence": [
+        {
+          "scene": "event_onemoretime_prologue",
+          "lines": [
+            "40-44",
+            "63-67",
+            "99-106"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_01_s",
+          "lines": [
+            "54-56"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_02_e",
+          "lines": [
+            "6-28"
+          ]
+        }
+      ],
+      "reason": "심사위원 대화(prologue #102-106), 베이 말(01_s #54-56, 02_e #6-13), 클레이(02_e #15-16), 베이의 시선 공포(prologue #41-44)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R40",
+          "note": "원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "F1373",
+      "text": "매년 봄 열리는 방주 치어리딩 챔피언십(예선을 통과한 다섯 팀이 본선, 1등은 억대 상금과 아크 스포츠 페스타 대표 응원 자격) 예선에서 리와인드는 90점 밑으로 내려간 적이 없던 팀 역사상 최저인 65점을 받아 턱걸이로 통과했다 — 라이프 토닉의 폴크방 · 에피넬은 둘뿐이라 큰 무대에서 허전해 보인다고 했다",
+      "about": [
+        "org:리와인드",
+        "person:베이",
+        "person:클레이",
+        "person:폴크방",
+        "person:에피넬",
+        "org:라이프_토닉"
+      ],
+      "evidence": [
+        {
+          "scene": "event_onemoretime_prologue",
+          "lines": [
+            "15-18",
+            "118-132"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_01_s",
+          "lines": [
+            "37-66"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_02_s",
+          "lines": [
+            "63-77"
+          ]
+        }
+      ],
+      "reason": "진행자 · 베이 설명과 점수판. 허전함은 폴크방 · 에피넬 평(02_s #66-73)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R40",
+          "note": "원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "F1374",
+      "text": "A.C.P.U.의 폴리는 남은 휴가가 50개를 넘어 강제로 쓰게 된 2주 휴가 동안 본선을 앞둔 리와인드에 들어가 치어리딩을 했고, 지휘관은 코치로 함께했다 — 블랑 · 누아르는 코인 러시의 큰 행사 연습으로, 나가 · 티아는 시험 기간으로 거절했다",
+      "about": [
+        "person:폴리",
+        "org:A.C.P.U.",
+        "org:리와인드",
+        "person:지휘관",
+        "person:블랑",
+        "person:누아르",
+        "person:나가",
+        "person:티아"
+      ],
+      "evidence": [
+        {
+          "scene": "event_onemoretime_03_s",
+          "lines": [
+            "63-109"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_02_e",
+          "lines": [
+            "99-113",
+            "144-156"
+          ]
+        }
+      ],
+      "reason": "키리 · 미란다가 휴가를 짚어 줌(03_s #80-83), 거절 사유(02_e)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R40",
+          "note": "원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "F1375",
+      "text": "클레이는 무릎에 멍이 들도록 매일 새벽까지 혼자 연습하다 지각과 같은 동작 실수가 잦아졌고, 본선 일주일 전 베이가 진심이 아니라고 단정해 몰아세우자 팀이 얼어붙었다 — 폴리의 권유로 베이가 경기장에서 홀로 연습하던 클레이를 찾아가 동작을 가르치고 사과해 화해했고, '되감는다'는 리와인드의 뜻대로 처음부터 다시 하자고 했다",
+      "about": [
+        "person:클레이",
+        "person:베이",
+        "person:폴리",
+        "org:리와인드"
+      ],
+      "evidence": [
+        {
+          "scene": "event_onemoretime_04_s",
+          "lines": [
+            "23-44"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_04_e",
+          "lines": [
+            "110-135"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_05_s",
+          "lines": [
+            "22-93"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_05_e",
+          "lines": [
+            "17-72"
+          ]
+        }
+      ],
+      "reason": "몰아세움(04_s), 멍 · 대화 권유(04_e), 경기장 연습과 지도(05_s), 사과 · 리와인드 뜻(05_e #17-32, 64-72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R40",
+          "note": "원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "F1376",
+      "text": "본선에서 리와인드(베이 · 클레이 · 폴리)는 실수 없이 95점을 받았지만 1등과 3점 차로 2등을 했고, 폴리는 본업으로 돌아갔다 — 몇 달 뒤 니케 육상 선수권 대회에서는 베이 · 클레이 둘만으로 압도적인 점수로 1등을 하고 베스트 치어리더 팀으로 뽑혔다",
+      "about": [
+        "org:리와인드",
+        "person:베이",
+        "person:클레이",
+        "person:폴리"
+      ],
+      "evidence": [
+        {
+          "scene": "event_onemoretime_06_e",
+          "lines": [
+            "11-19",
+            "100-124"
+          ]
+        },
+        {
+          "scene": "event_onemoretime_epilogue",
+          "lines": [
+            "0-22"
+          ]
+        }
+      ],
+      "reason": "점수판(06_e #13-19), 다음 목표(#107-123), 에필로그 폴크방 말(#4-7)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R40",
+          "note": "원문 대조 검토"
+        }
+      ]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S363",
+      "kind": "기준점",
+      "text": "char:550 뒤 · event_claymore 전 — 클레이가 몇 달 전 오디션으로 들어와 베이와 둘뿐인 리와인드, 나가 · 티아는 아직 미미르 부속고 학생(시험 기간)",
+      "ref": "char:550",
+      "at": [["뒤", "char:550"], ["전", "event_claymore"]],
+      "evidence": [{ "scene": "event_onemoretime_02_e", "lines": ["6-7", "146-150"] }],
+      "reason": "베이 '몇 달 전 오디션 지원자는 클레이뿐'(#6-7) — char:550 끝에 클레이가 새 팀원(S140). CLAY, MORE!는 그 뒤 상승세의 리와인드(S154).",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M62",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

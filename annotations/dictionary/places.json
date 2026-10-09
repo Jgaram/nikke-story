@@ -1,0 +1,238 @@
+{
+  "_comment": [
+    "비인물 사전 — 지역 · 장소 (A2 · T3-2). 형식 · 검색 규칙은 docs/schema.md \"비인물 사전\". 조회: node tools/query.mjs terms place",
+    "칸: id(place:<표준명>, 공백은 _, 바꾸지 않음) · name(표준명 — 원문에 그대로 나오는 표기) · kind(갈래) · note ·",
+    "  evidence([{scene, lines}] — 무엇인지 보여 주는 줄) · caution(오탐 주의 사유) · except(검색에서 뺄 더 긴 표기) ·",
+    "  names([{name, how, caution, except}] — how: 정식 명칭 · 약칭 · 별칭 · 표기 · 영문 · 이명) · wrong(실측 0건이라 넣지 않은 표기)",
+    "표기는 전부 범위 안 실측으로 넣었다(0건 이름은 빌드가 ⚠로, node --test가 실패로 알린다). 탈것(배 · 비행선)은 무대가 되므로 장소에 둔다 — Q-A2-1"
+  ],
+  "entries": [
+    {
+      "id": "place:방주",
+      "name": "방주",
+      "kind": "도시",
+      "note": "인류가 사는 도시(Ark). '아크'(낱말 앞 539줄)는 대부분 다른 이름의 앞머리(아크레인저 · 아크 익스프레스 · 아크 게임쇼 · 아크버스터 · 데일리 아크)라 별칭으로 넣지 않았다",
+      "names": [{ "name": "Ark", "how": "영문", "except": ["Ark Ranger", "Ark Black", "Ark Lander", "Ark Falcon"] }]
+    },
+    {
+      "id": "place:지상",
+      "name": "지상",
+      "kind": "지역",
+      "note": "방주 밖 땅 위 세계(랩쳐에게 빼앗긴 곳)",
+      "caution": "일반 낱말 '지상'(땅 위 · 지상 최강 등)과 겹친다. 이름에 든 경우(지상 탈환)도 같이 잡힌다"
+    },
+    {
+      "id": "place:전초기지",
+      "name": "전초기지",
+      "kind": "시설",
+      "note": "지휘관이 머무는 지상의 전초기지",
+      "names": [{ "name": "전초 기지", "how": "표기" }]
+    },
+    {
+      "id": "place:아우터_림",
+      "name": "아우터 림",
+      "kind": "지역",
+      "note": "방주의 바깥쪽 구역",
+      "names": [{ "name": "아우터림", "how": "표기" }]
+    },
+    {
+      "id": "place:배드_드림",
+      "name": "배드 드림",
+      "kind": "시설",
+      "note": "아우터 림에서 가장 큰 환락가 — 로열 로드 부자부터 중앙 정부 간부까지 드나들고 외부와 통신이 차단된다(R17 event_doutsiders에서 더함)",
+      "evidence": [{ "scene": "event_doutsiders_03", "lines": [3] }]
+    },
+    {
+      "id": "place:에덴",
+      "name": "에덴",
+      "kind": "도시",
+      "evidence": [
+        { "scene": "d_main_19_05", "lines": [97] },
+        { "scene": "event_goddessfall1_06_s", "lines": [19] }
+      ]
+    },
+    { "id": "place:수정_지역", "name": "수정 지역", "kind": "지역", "wrong": ["수정지역"] },
+    { "id": "place:크라운_왕국", "name": "크라운 왕국", "kind": "나라" },
+    { "id": "place:궤도_엘리베이터", "name": "궤도 엘리베이터", "kind": "시설" },
+    {"id": "place:사관학교", "name": "사관학교", "kind": "학교", "note": "지휘관을 길러 내는 방주의 학교 — 정규 교육 1년 미만, 주로 정신 교육(ep:d_nikke_rapi_02#63-69, R07 char:10에서 더함)", "evidence": [{"scene": "ep:d_nikke_rapi_02", "lines": [63]}]},
+    {
+      "id": "place:미미르_부속_고등학교",
+      "name": "미미르 부속 고등학교",
+      "kind": "학교",
+      "evidence": [{ "scene": "event_schooloflock_intermission_01", "lines": [33] }],
+      "names": [
+        { "name": "미미르 부속고", "how": "약칭" },
+        { "name": "미미르", "how": "약칭", "caution": "학교가 아닌 '미미르'일 수 있다 (지금은 학교를 가리키는 줄뿐)" }
+      ]
+    },
+    {
+      "id": "place:로열_로드",
+      "name": "로열 로드",
+      "kind": "거리",
+      "note": "방주의 번화가(명품관 등)",
+      "evidence": [{ "scene": "ep:d_nikke_centi_03", "lines": [30] }],
+      "wrong": ["로얄 로드"]
+    },
+    {
+      "id": "place:코인_러시",
+      "name": "코인 러시",
+      "kind": "시설",
+      "note": "게임장. 같은 이름의 서브퀘스트(메신저)도 있다",
+      "evidence": [{ "scene": "event_jinxplayer_06_s", "lines": [65] }]
+    },
+    {
+      "id": "place:코스모_버거",
+      "name": "코스모 버거",
+      "kind": "가게",
+      "evidence": [{ "scene": "ep:d_nikke_admi_02", "lines": [23] }]
+    },
+    { "id": "place:시뮬레이션_룸", "name": "시뮬레이션 룸", "kind": "시설" },
+    { "id": "place:라쿤_시티", "name": "라쿤 시티", "kind": "도시", "note": "fl:reborn_evil · 콜라보 호감도 스토리" },
+    { "id": "place:미들_시티", "name": "미들 시티", "kind": "도시", "note": "sub:고스트" },
+    {
+      "id": "place:블루워터_아일랜드",
+      "name": "블루워터 아일랜드",
+      "kind": "섬",
+      "evidence": [{ "scene": "event_bluewaterisland2_epilogue", "lines": [39] }]
+    },
+    { "id": "place:코랄_아일랜드", "name": "코랄 아일랜드", "kind": "섬", "note": "지상 바다의 섬 무리 — 언더월드 퀸 화보 촬영지, 머스탱이 거주 적합성 조사를 맡김(R46 event_beautyfullshot1에서 더함)", "evidence": [{"scene": "event_beautyfullshot1_03_e", "lines": [12]}] },
+    {
+      "id": "place:어드마이어_호",
+      "name": "어드마이어 호",
+      "kind": "탈것",
+      "evidence": [{ "scene": "d_main_37_02_e", "lines": [3] }],
+      "names": [{ "name": "어드마이어", "how": "약칭" }],
+      "wrong": ["어드마이어호"]
+    },
+    {
+      "id": "place:유토피아_호",
+      "name": "유토피아 호",
+      "kind": "탈것",
+      "evidence": [{ "scene": "d_main_46_af_02", "lines": [127] }]
+    },
+    {
+      "id": "place:승리의_날개_호",
+      "name": "승리의 날개 호",
+      "kind": "탈것",
+      "evidence": [{ "scene": "fl:ark_guardian_22", "lines": [117] }],
+      "names": [{ "name": "승리의 날개", "how": "약칭" }]
+    },
+    {
+      "id": "place:갱생관",
+      "name": "갱생관",
+      "kind": "시설",
+      "note": "엔더슨이 전초기지보다 나쁜 곳으로 드는 곳(d_main_02af_01#15). 무엇인지는 CH.02에 안 나온다(R01 ch02에서 더함)",
+      "evidence": [{ "scene": "d_main_02af_01", "lines": [15] }]
+    },
+    {
+      "id": "place:북부",
+      "name": "북부",
+      "kind": "지역",
+      "caution": "지상의 북부가 아닌 다른 곳의 북쪽을 말할 수 있다",
+      "note": "지상의 북부 — 춥고 넓은 곳, 연구 기지가 있다(d_main_04af_07#0 · #12–13, R01 ch04에서 더함)",
+      "evidence": [{ "scene": "d_main_04af_07", "lines": [0, 12] }]
+    },
+    {
+      "id": "place:블랙넷",
+      "name": "블랙넷",
+      "kind": "시장",
+      "names": [{ "name": "블랙 넷", "how": "표기" }],
+      "note": "불법 거래망 — 콜렉터가 지상에서 주운 랩쳐 부품을 파는 곳(R02 sub:콜렉터_00에서 더함)",
+      "evidence": [{ "scene": "sub:콜렉터_00", "lines": [26] }]
+    },
+    {
+      "id": "place:정크_마운틴",
+      "name": "정크 마운틴",
+      "kind": "지역",
+      "note": "지상의 거대한 쓰레기 산 — 전자제품 · 가구 등이 쌓여 있다(R05 char:11에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_neon_04", "lines": [3] }]
+    },
+    {
+      "id": "place:리페어_센터",
+      "name": "리페어 센터",
+      "kind": "시설",
+      "note": "니케 전용 병원 — 파손된 니케를 수리하고 파츠를 바꾼다(R02 sub:저스틴_00에서 더함)",
+      "evidence": [{ "scene": "sub:저스틴_00", "lines": [2, 11] }]
+    },
+    {
+      "id": "place:쉘터",
+      "name": "쉘터",
+      "kind": "시설",
+      "caution": "구시대 피난 쉘터와 방주 안의 쉘터를 함께 가리킨다",
+      "note": "피난처 — 랩쳐 침공 때의 쉘터(R02 relic:채팅로그_얼리어답터에서 더함), 방주 안의 피난 쉘터(CH.22)",
+      "evidence": [{ "scene": "relic:채팅로그_얼리어답터_00", "lines": [0] }]
+    },
+    {
+      "id": "place:언더_아레나",
+      "name": "언더 아레나",
+      "kind": "시설",
+      "note": "방주의 불법 사설 니케 격투장(R08 char:141에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_milk_02", "lines": [21] }]
+    },
+    {
+      "id": "place:엘리시온_타워",
+      "name": "엘리시온 타워",
+      "kind": "시설",
+      "note": "엘리시온 본사 건물 — 갓 제조된 니케의 훈련소(가상 훈련실 · 모니터실)가 있다(R12 char:92에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_eunhwa_01", "lines": [3] }]
+    },
+    {
+      "id": "place:해피_판타지_랜드",
+      "name": "해피 판타지 랜드",
+      "kind": "시설",
+      "note": "지상의 테마파크 — 수십 년 전 멈췄는데 광고 음성이 방주에 닿아 생존자 소문이 났다(R14 event_nocallerid에서 더함)",
+      "evidence": [{ "scene": "event_nocallerid_05_e", "lines": [11] }]
+    },
+    {
+      "id": "place:Sweets_&_Cocoa",
+      "name": "Sweets & Cocoa",
+      "kind": "시설",
+      "note": "지상의 구시대 디저트 회사와 그 초콜릿 공장 — 관리 A.I. 스윗 조니가 지킨다(R19 event_maidinvalentine에서 더함)",
+      "evidence": [{ "scene": "event_maidinvalentine_02_e", "lines": [31] }]
+    },
+    {
+      "id": "place:바우_와우_파라다이스",
+      "name": "바우 와우 파라다이스",
+      "kind": "시설",
+      "note": "비스킷이 돌보는 방주의 강아지 보호소 — 새로 고쳐 짓고 붙인 이름(R19 event_bowwowparadise에서 더함)",
+      "evidence": [{ "scene": "event_bowwowparadise_06_s", "lines": [9] }]
+    },
+    {
+      "id": "place:글리터_산맥",
+      "name": "글리터 산맥",
+      "kind": "지역",
+      "note": "북부의 해발 3,000m에 달하는 설산 산맥 — 극한의 추위와 지형으로 언리미티드도 꺼리는 곳(R33 event_alonesurvivor에서 더함)",
+      "evidence": [{ "scene": "event_alonesurvivor_01_s", "lines": [32] }]
+    },
+    {
+      "id": "place:설온장",
+      "name": "설온장",
+      "kind": "시설",
+      "note": "북부 기지 근처의 옛 지상 온천을 언리미티드가 다듬어 연 온천장 — 루드밀라가 주인장(R34 event_neverland1에서 더함)",
+      "evidence": [{ "scene": "event_neverland1_02_e", "lines": [108] }]
+    },
+    {
+      "id": "place:천사_고아원",
+      "name": "천사 고아원",
+      "kind": "시설",
+      "note": "인간 시절 미카 · 벨로타가 있던 방주의 고아원 — 원장이 아이들을 때렸고 루드밀라의 가문이 후원했다(R34 event_neverland1에서 더함)",
+      "evidence": [{ "scene": "event_neverland2_01_e", "lines": [2] }]
+    },
+    {
+      "id": "place:포그_할로우",
+      "name": "포그 할로우",
+      "kind": "지역",
+      "note": "아우터 림의 공장 마을 — 매연과 안개가 늘 끼어 있고 모란회가 관리하던 구역(R36 event_dirtybackyard에서 더함)",
+      "evidence": [{ "scene": "event_dirtybackyard_prologue", "lines": [2, 5] }]
+    },
+    {"id": "place:탈환지_01", "name": "탈환지 01", "kind": "지역", "note": "레드 후드의 고향에 광학미채를 설치해 되찾은 첫 탈환지 — 엔더슨이 이름 붙임(R37 ch27에서 더함)", "evidence": [{"scene": "d_main_26af_02", "lines": [25]}]},
+    { "id": "place:M.M.R._심층부", "name": "M.M.R. 심층부", "kind": "시설", "note": "M.M.R. 지하 연구실보다 더 깊은 [LEVEL E] 구역(두 구역) — 통신 차단, 연구원도 승인받은 시간만 출입. 그 아래 [LEVEL P] (R56 event_wisdomspring에서 더함)", "names": [{"name": "심층부", "how": "약칭", "caution": "일반 낱말 — 다른 시설의 깊은 곳에도 쓰일 수 있다"},{"name": "LEVEL E", "how": "별칭"}], "evidence": [{"scene": "event_wisdomspring_02_s", "lines": [4]}] },
+    { "id": "place:모던_바", "name": "모던 바", "kind": "가게", "note": "도수 높은 술만 파는 것으로 유명한 바 — 마나 · 율하 · 브리드가 일주일에 한 번 모인다 (R56 char:290에서 더함)", "evidence": [{"scene": "ep:d_nikke_mana_01", "lines": [27]}] },
+    { "id": "place:금서고", "name": "금서고", "kind": "시설", "note": "방주 도서관의 특급 기밀 보관소 — 처음 세워졌을 때의 구 열람실을 쓰고 아르카나가 관리, 보안은 시지 패러리스. 아르카나가 '금서고'라 부르기로 함 (R62 event_arcanearchive에서 더함)", "caution": "팬 사이트 이름(니갤 금서고)과 다르다 — 원문 줄만 센다", "names": [{"name": "특급 기밀 보관소", "how": "별칭"}], "evidence": [{"scene": "event_arcanearchive_04_e", "lines": [66]}] },
+    { "id": "place:제2의_방주", "name": "제2의 방주", "kind": "시설", "note": "롬이 지상에서 모은 유물로 꾸미는 '소중한 보금자리' — 추첨권이 없어 방주에 못 들어간 롬의 가족(소녀)이 이름 붙이고, 갈 곳 없는 사람들이 머물 곳으로 만들어 달라 했다(R64 event_ce006에서 더함)", "evidence": [{"scene": "sub:롬_01", "lines": [10]}] },
+    { "id": "place:유사_방주", "name": "유사 방주", "kind": "도시", "note": "포비스트가 만든, 방주의 일부를 흉내 낸 하얀 도시 — 불 켜진 건물도 없이 모습만 흉내 낸 껍데기로, 레비아탄은 효과가 입증되지 않은 \u0027의식\u0027이라 했다. 지하 쪽에 다크 매터 [용광로]가 있다 (R72 ch41에서 더함)", "evidence": [{"scene": "d_main_41_02", "lines": [10]}] },
+    { "id": "place:펑크_스트리트", "name": "펑크 스트리트", "kind": "거리", "note": "아우터 림 격벽과 이어진 방주 시내 거리(통칭) — 식스오가 던진 E2 크리스탈이 번져 에닉이 격벽으로 고립시켰고, 뒤에 에블라 입자로 수정을 걷어 냈다(R73 ch42에서 더함)", "evidence": [{"scene": "d_main_42_af_02", "lines": [30]}] },
+    { "id": "place:언더_그레이스", "name": "언더 그레이스", "kind": "가게", "note": "로열 로드 백화점 지하 1층의 카페 — 재단의 후원을 받은 사라가 운영한다(R88 fl:good_world에서 더함)", "evidence": [{"scene": "fl:good_world_04", "lines": [12]}] },
+    { "id": "place:아크리온_홀", "name": "아크리온 홀", "kind": "시설", "note": "방주에서 가장 큰 무대(공연장) — 프리티의 복귀 콘서트, T.T.STAR의 은퇴 · 복귀 공연이 열렸다(R91 event_staranis1에서 더함)", "evidence": [{"scene": "event_staranis1_prologue", "lines": [1]}] }
+  ]
+}

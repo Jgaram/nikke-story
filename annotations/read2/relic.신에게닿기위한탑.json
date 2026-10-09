@@ -1,0 +1,35 @@
+{
+  "unit": "relic:신에게닿기위한탑",
+  "session": "M46",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1094",
+      "act": "재언급",
+      "points": ["F2567"],
+      "text": "V.T.C. 인사들이 드나든 부지를 정부는 미실리스 인더스트리가 주도하는 궤도 엘리베이터 공사라 발표하고 V.T.C.는 빠졌다",
+      "about": ["org:V.T.C.", "org:미실리스"],
+      "evidence": [{ "scene": "relic:신에게닿기위한탑_01", "lines": ["1-5"] }],
+      "reason": "#2-4 — 방주 통합 때 V.T.C.가 미실리스와 손잡고 M.M.R.을 얻은 일(F2567)의 앞선 모습으로 둘의 결탁을 다시 보인다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U405",
+      "topic": "구시대",
+      "text": "20년 차 기자는 인맥을 다 동원해 공사 인부로 들어가고, 간식 · 술값을 돌리고 신도인 척 술 취한 인부의 출입증을 훔쳐 특종을 좇았다",
+      "about": ["place:궤도_엘리베이터"],
+      "evidence": [{ "scene": "relic:신에게닿기위한탑_03", "lines": ["1-4"] }],
+      "reason": "#2-4 — 02#0-2 육체노동으로 잠입, 00#10 '20년 기자 인생의 촉'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+    }
+  ]
+}

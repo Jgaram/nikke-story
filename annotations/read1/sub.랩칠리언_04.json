@@ -1,0 +1,92 @@
+{
+  "unit": "sub:랩칠리언_04",
+  "session": "R02",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "랩칠리언이 \"엄청난 체급\"을 보여 주겠다며, 마스터 급 이상 앞에서는 절뚝이거나 코어 에너지가 약한 모습을 보이면 안 된다고 주의를 준다 — 랩쳐 사이에도 먹이사슬이 있어 약한 개체가 노려진다(#20–29). 낮잠 자는 로드 급 시니스터를 관찰하며, 랩쳐를 크기로 나눈 다섯 등급은 자기가 블로그에 올린 것을 중앙 정부가 공식 기준으로 쓰는 것이고 \"시니스터\"라는 이름도 자기가 지은 것이라 밝힌다(#45–51). 지휘관의 손전등 배터리가 떨어져 시니스터가 깨어 공격하고, 떨어져 있던 카운터스가 구한다. 랩칠리언은 높은 등급 · 오래 산 랩쳐일수록 고등 생물을 흉내 낸다는 가설을 확신했다며 시니스터는 백상아리라고 한다(#92–100). 블로그(blog.arkpia.com/raptilian)에 쓰려다, 방주가 랩쳐와의 소통을 금기시한다는 것을 떠올리고 지휘관 이야기는 빼기로 한다(#116–120).",
+  "facts": [
+    {
+      "id": "F162",
+      "text": "랩쳐를 크기에 따라 다섯 등급으로 나누는 기준과 시니스터라는 이름은 랩칠리언이 블로그에 올린 것을 중앙 정부가 공식으로 채택한 것이다",
+      "about": ["person:랩칠리언", "org:중앙_정부", "person:시니스터"],
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": ["45-54"] }],
+      "reason": "랩칠리언의 말 — 랩쳐를 체계적으로 연구하는 사람이 적다고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F163",
+      "text": "시니스터는 백상아리를 흉내 낸 포악한 로드 급 랩쳐다",
+      "about": ["person:시니스터", "concept:로드_급"],
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": ["39-43", "98-102"] }],
+      "reason": "랩칠리언의 소개와 관찰",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F164",
+      "text": "랩쳐 사이에도 먹이사슬이 있어, 마스터 급 이상 랩쳐는 다쳤거나 코어 에너지가 약해진 개체를 노린다",
+      "about": ["concept:랩쳐", "concept:마스터_급"],
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": ["20-29", "61-63"] }],
+      "reason": "랩칠리언의 주의사항과, 손전등이 꺼지자 시니스터가 공격한 일",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F165",
+      "text": "랩칠리언은 등급이 높거나 오래 산 랩쳐일수록 고등 생물을 흉내 내도록 진화했다는 가설을 세웠다",
+      "about": ["person:랩칠리언", "concept:랩쳐"],
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": ["92-100"] }],
+      "reason": "낮은 급은 작은 바다생물, 로드 급 시니스터는 백상아리",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F166",
+      "text": "방주는 랩쳐와의 소통을 금기로 여긴다",
+      "about": ["place:방주", "concept:랩쳐"],
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": ["116-117"] }],
+      "reason": "랩칠리언 \"방주는 랩쳐와의 소통을 금기시했었지\"",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [],
+  "targets": [
+    {
+      "target": "person:시니스터",
+      "evidence": [
+        {
+          "scene": "sub:랩칠리언_04",
+          "lines": [
+            39,
+            41
+          ]
+        }
+      ],
+      "note": "백상아리를 흉내 낸 로드 급 랩쳐",
+      "new": false
+    },
+    {
+      "target": "concept:마스터_급",
+      "evidence": [
+        {
+          "scene": "sub:랩칠리언_04",
+          "lines": [
+            20
+          ]
+        }
+      ],
+      "note": "랩쳐 등급 — 다섯 등급 중 하나",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

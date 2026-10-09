@@ -1,0 +1,153 @@
+{
+  "unit": "event_queensorder",
+  "session": "M58",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1313",
+      "act": "암시",
+      "points": ["F954"],
+      "text": "사과 맛 퍼펙트를 '아빠가 사준 거'라 우기는 조직원의 아이에게 로산나가 굶기지 말고 키우라 한다 — 그 아버지는 바로 뒤 폭탄에 죽는다",
+      "about": ["person:로산나", "org:헤도니아"],
+      "evidence": [{ "scene": "event_queensorder_prologue", "lines": ["0-14"] }],
+      "reason": "#4 '아빠가 사준 거야!' · #11 '굶기지 말고 키워' — 06_s#38-59가 이 아이와 죽은 아버지를 되짚는다(F954).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1314",
+      "act": "암시",
+      "points": ["F957"],
+      "text": "붉은 덤불 보스는 아우터 림에서 태어나 한 번도 빛 아래 살아 보지 못해 방벽을 부수려 한다 — 로산나가 빛을 못 본 패밀리를 지상 햇빛 아래 묻은 까닭과 같은 그림",
+      "about": ["place:아우터_림"],
+      "evidence": [{ "scene": "event_queensorder_06_s", "lines": ["0-13"] }],
+      "reason": "#1 '단 한 번도 빛 아래에서 살아본 적이 없었다' — 에필로그 #55-59 '빛 아래에서 살아본 적이 없는 놈들'. 같은 모티프라 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1436",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "다친 몸으로 지휘관실에 와 '미스터'를 데리고 다니며, 무슨 일이 있어도 무사히 집으로 돌려보내 주겠다는 — 지켜야 할 양지의 인간",
+      "evidence": [{ "scene": "event_queensorder_02_e", "lines": ["2-8", "19-25"] }],
+      "reason": "#7-8 '무슨 일이 있어도, 무사히 집으로 되돌려 보내줄 테니까'. 출시가 앞서 KILL THE LORD D406을 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1437",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "지켜서 돌려보낼 양지의 인간",
+      "after": "인간 · 니케 생을 통틀어 두 번째로 목을 맡기는 이 — '배신하지 마'",
+      "trigger": [{ "scene": "event_queensorder_03_e", "lines": ["9-27"] }],
+      "time": "S76",
+      "evidence": [{ "scene": "event_queensorder_intermission_01", "lines": ["52-70"] }],
+      "reason": "#53-54 '목을 맡긴 건… 두 번째가 바로 미스터' · #63 '배신하지 마' · #70 '신뢰를 보여주는 인간'. 계기는 혼자 가지 말라며 따라나선 일.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1438",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "목을 맡긴 동행",
+      "after": "아무에게도 말하지 않은 패밀리 묘지를 보여 준 '공범' — 사랑한 만큼 증오로 복수하겠다는",
+      "trigger": [{ "scene": "event_queensorder_06_e", "lines": ["80-93"] }],
+      "time": "S76",
+      "evidence": [{ "scene": "event_queensorder_epilogue", "lines": ["44-48", "63-71"] }],
+      "reason": "#63 '이제 공범이네?' · #66-67 '사랑한 만큼, 증오를 담아서 복수할 테니까' · #71 '내가 아닌 타인을 데려올 만큼'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1439",
+      "person": "person:로산나",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "아우터 림과 뒷세계를 지키는 것이 언더월드 퀸의 일",
+      "after": "질서를 명분으로 허락받되 아우터 림의 안전은 알 바 없다 — 내 패밀리를 건드리면 피에는 피가 로산나의 질서",
+      "trigger": [{ "scene": "event_queensorder_05_s", "lines": ["43-47"] }],
+      "time": "S76",
+      "points": ["F955"],
+      "evidence": [{ "scene": "event_queensorder_06_s", "lines": ["73-88"] }],
+      "reason": "#74-75 '아우터 림의 안전이니… 그딴 건 알 바 아니야' · #85-88 '피에는 피로. 그게 나, 로산나의 질서다'. 사쿠라도 사심이 섞였다 본다(05_e#39). 명분과 속내의 갈림이라 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1440",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:목단"],
+      "text": "비밀리에 움직이는 데 끼우면 다 들킨다며 '바보는 원래 잘 안 죽거든'이라 빼놓고, 위로는 받지 않으면서도 콘실리에리를 찾아 준 데엔 '바보치고 꽤 괜찮은 일'이라 하는",
+      "evidence": [{ "scene": "event_queensorder_05_s", "lines": ["9-17", "75-78"] }],
+      "reason": "#16 '어쭙잖은 위로하지 마' · #78 '바보치고 꽤 괜찮은 일을 했네'(03_s#73-79 '바보는 원래 잘 안 죽거든'). 출시가 앞서 ch23 D273을 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1441",
+      "person": "person:목단",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:로산나"],
+      "text": "자꾸 자기만 빼놓는다며 '언더월드 퀸의 의리'를 따지다가도 '너 괜찮냐?' 걱정하고, 살아남은 콘실리에리를 찾아 전화로 이어 주는",
+      "evidence": [{ "scene": "event_queensorder_05_s", "lines": ["0-2", "11-12", "22-34"] }],
+      "reason": "#2 '이게 언더월드 퀸의 의리냐?' · #12 '너 괜찮냐?' · #32 '자, 받아봐'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1442",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:로산나"],
+      "text": "기싸움을 피하려 혼자 나와 '망나니'라 맞받고, 복수에 사심이 섞였다 보면서도 방치할 수 없는 일이라며 세이메이카이의 동의를 내주는",
+      "evidence": [{ "scene": "event_queensorder_05_e", "lines": ["13-15", "39-43"] }],
+      "reason": "#15 '사심 섞인 분노로 일을 행하려 함이 아니라고 할 수 있습니까?' · #39-42 '사심이 없다고는 할 수 없으나… 동의합니다'(03_s#5-7 · #49).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1443",
+      "person": "person:엠마",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "잉그리드의 대리인으로 비서처럼 차려입고 안부를 보러 와, 기다리는 사람은 분명 무사할 거라 다독이는",
+      "evidence": [{ "scene": "event_queensorder_06_e", "lines": ["14-18", "37-41"] }],
+      "reason": "#18 '지휘관이 무사한지도 보고 싶어서' · #39 '기다리고 있는 사람은 분명 무사할 거야'.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 — 출시순으로 앞선 char:90 D1898이 엠마 → 지휘관 기준" }
+      ]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: event_queensorder_01_e#70 · 02_e#53,55 (로산나를 노린 이름 없는 습격자들). 05_s#29,35,37의 `???`는 #38-39에서 이름표가 바뀌는 콘실리에리지만, 직함이라 대상 없는 호칭으로 둔 이름표(speakers.json, Q-A1-3)라 암시 언급으로 적지 않았다."
+}

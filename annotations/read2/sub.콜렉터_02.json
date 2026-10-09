@@ -1,0 +1,65 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M10\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:콜렉터_02",
+  "session": "M10",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E232",
+      "act": "재언급",
+      "points": ["F141"],
+      "text": "콜렉터가 '겨우 빚진 걸 0으로 만들었다고 생각했는데' 또 신세를 졌다고 한다 — 금괴로 은혜를 갚은 앞 편(F141)",
+      "about": ["person:콜렉터"],
+      "evidence": [{ "scene": "sub:콜렉터_02", "lines": ["81-82"] }],
+      "reason": "#81-82. sub:콜렉터_01의 금괴 정산(F141 · D28)을 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E233",
+      "act": "암시",
+      "points": ["F1041"],
+      "text": "시체 다섯 구가 나왔는데도 방송은 계속 사망자 0명이라 한다 — 긴급 뉴스 대본이 '사망자는 0명이어야 함'으로 고쳐졌다(F1041)",
+      "about": ["org:중앙_정부"],
+      "evidence": [{ "scene": "sub:콜렉터_02", "lines": ["74-78"] }],
+      "reason": "#75 '사망자 0명으로 계속 방송 중'. 같은 세션 유실물이 방송 대본이 고쳐진 속사정을 보여 준다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D279",
+      "person": "person:콜렉터",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "금괴로 갚아 '관계는 0'이라 정리한 사이",
+      "after": "다시 신세를 져 무슨 일이든 목숨 바쳐 돕겠다는",
+      "trigger": [{ "scene": "sub:콜렉터_02", "lines": ["42-56"] }],
+      "evidence": [{ "scene": "sub:콜렉터_02", "lines": ["58-62", "81-86"] }],
+      "reason": "#81-82 '다시 또 신세를' · #86 '목숨 바쳐 돕겠습니다요'. 계기는 친구들의 시체를 찾아 준 수색. D28의 뒤",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U162",
+      "topic": "방주 사회",
+      "text": "아우터 림 사람들은 랩쳐를 피해 다니는 데 이골이 나 알아서 숨고, 격벽이 열리자 어차피 죽을 거면 '꿈에 그리던 방주 땅이나 밟아 보고 죽겠다'며 벽 밖으로 나간다",
+      "about": ["place:아우터_림", "place:방주"],
+      "points": ["F1002"],
+      "evidence": [{ "scene": "sub:콜렉터_02", "lines": ["22-24", "30-34", "63-70"] }],
+      "reason": "#23 '이골이 나서' · #33 · #67 '벽 하나를 두고 세계가 달라진다'. F1002의 사는 모습 쪽",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ]
+}

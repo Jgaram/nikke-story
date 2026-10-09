@@ -1,0 +1,81 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch10",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I30",
+      "target": "org:메티스",
+      "evidence": [{ "scene": "d_main_10_04", "lines": [33, "38-39"] }],
+      "reason": "지휘관 '지상에 올라왔을 때부터…' · 은화 수신호 '3명' — 뒤따르던 셋은 메티스(F288, ch11). 이 씬에 이름은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "I31",
+      "target": "person:마리안",
+      "evidence": [{ "scene": "d_main_10_02", "lines": ["35-37"] }],
+      "reason": "은화 '그 헬레틱. 너희랑 작전을 같이 했었다며' · '과거 동료가 배신자로 돌아섰을 때' — 모더니아가 된 마리안(L1 · F209)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E71",
+      "act": "재언급",
+      "points": ["F259"],
+      "text": "엠마가 잉그리드에게 들은 '기억 소거가 안 먹힌다'는 말을 첫 만남 장소로 시험하고, 베스티가 '우리를 안 잊어서 다행'이라 한다",
+      "about": ["person:라피", "person:엠마"],
+      "evidence": [{ "scene": "d_main_10_01", "lines": ["55-71"] }],
+      "reason": "#56 · #63 '잉그리드한테 들었을 땐 반신반의'. ch09에서 라피가 밝힌 것(F259)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E72",
+      "act": "암시",
+      "points": ["F312", "J2"],
+      "text": "라피가 민간인의 죽음 앞에서 경위서만 떠올린 자신을 '인간도 아니고 니케도 아닌, 내가 뭔지 알 수 없다'고 한다 — 뇌에 NIMPH가 없는 라피(F312)",
+      "about": ["person:라피"],
+      "evidence": [{ "scene": "d_main_10_06", "lines": ["37-44"] }],
+      "reason": "#43-44. 라피가 보통 니케와 다르다는 것은 ch12에서 NIMPH가 없다는 것으로 드러난다(F312)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D85",
+      "person": "person:엠마",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "은화를 '이른다?'며 다루고 다툼을 재미있어하며 놀리는, 여유롭고 짓궂은 앱솔루트의 맏언니 같은 니케",
+      "evidence": [{ "scene": "d_main_10_01", "lines": ["27-29", "45-53"] }],
+      "reason": "#27-29 · #45-46 '은화한테 안 밀리는 사람' · 10_03_e#44 '만져보기 전까진 모르겠는데~'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U64",
+      "topic": "방주 사회",
+      "text": "니케의 작전 중 민간인이 휘말려 죽는 일은 '일어날 수 있는 일'이라 책임을 묻지 않고 경위서로 처리된다",
+      "about": ["concept:니케"],
+      "points": ["F279"],
+      "evidence": [{ "scene": "d_main_10_06", "lines": ["26-34"] }],
+      "reason": "#29-30 엠마 · #34 '아, 경위서를 쓰겠군'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

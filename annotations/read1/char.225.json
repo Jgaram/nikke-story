@@ -1,0 +1,121 @@
+{
+  "unit": "char:225",
+  "session": "R35",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "홍련 : 흑영 — 갓데스 합류 직후의 홍련(1차 침공기 회상, 이름표는 '홍련'). 릴리바이스에게 한 방에 쓰러져 영입된 홍련은 치료와 '코어로 검을 만들어 준 것'에 감사하면서도 합류를 마다하다, 재대결에서 다시 한 방에 천장에 박혀 합류한다(01, F1242). '난 강해야 하니까'라며 멤버마다 대결 — 라푼젤의 기도(명상) 10시간 · 스노우 화이트의 무기 조립에 지고, 레드 후드의 저격 술래잡기에선 탄환을 베어 내고, 도로시와의 팔씨름에서 첫 승(02–04, F1243). 도로시는 '승리의 여신'답게 고귀하게 이겨야 한다며 검을 거절한다(04, F1244). 첫 실전에서 멤버들은 홍련의 실력을 인정하고, 홍련은 옛 전우들을 짊어지고 새 동료와 싸우겠다고 다짐한다(05, F1245).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_hongryeon_blackshadow_01",
+      "text": "영입 — 합류를 마다하다 릴리바이스와 재대결, 한 방에 천장에 박히고 합류"
+    },
+    {
+      "scene": "ep:d_nikke_hongryeon_blackshadow_02",
+      "text": "대결 개시 — 라푼젤의 기도 대결 10시간 끝에 잠들어 패, 스노우 화이트의 무기 조립 패"
+    },
+    {
+      "scene": "ep:d_nikke_hongryeon_blackshadow_03",
+      "text": "레드 후드의 술래잡기 — 저격을 피하다 탄환을 베어 냄, 밤까지 이어짐"
+    },
+    {
+      "scene": "ep:d_nikke_hongryeon_blackshadow_04",
+      "text": "도로시와 팔씨름 첫 승, 검을 권하자 '승리의 여신'답게 고귀하게 이겨야 한다며 거절"
+    },
+    {
+      "scene": "ep:d_nikke_hongryeon_blackshadow_05",
+      "text": "첫 실전 — 멤버들의 평가, 옛 전우들을 짊어지고 새 동료와 함께 싸우겠다는 다짐"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1242",
+      "text": "릴리바이스가 쓰러뜨려 갓데스에 데려온 홍련은 치료와 '코어로 검을 만들어 준 것'에 감사하면서도 그때는 만전이 아니었다며 합류를 마다하고 재대결을 청했다가, 릴리바이스의 주먹 한 방에 천장에 박혀 기절한 뒤 합류했다 — 도로시는 처음 보는 레드 후드에게 칼을 휘두른 홍련의 영입에 반대했다",
+      "about": ["person:홍련", "person:릴리바이스", "org:갓데스", "person:도로시"],
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["0-98"] }],
+      "reason": "대화와 서술. 첫 대결은 F1181(erelic:red_ash_lost_10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1243",
+      "text": "홍련은 '난 강해야 하니까'라며 갓데스 안에서 자기 위치를 증명하려 해, 릴리바이스가 멤버마다 종목을 골라 한 번씩 겨루게 했다 — 라푼젤과의 기도(명상) 대결에서 10시간 만에 잠들어 지고, 스노우 화이트와의 무기 조립에서 지고, 레드 후드의 저격 술래잡기에서는 날아오는 탄환을 베어 내다 시간이 끝났고, 도로시와의 팔씨름에서 첫 승을 거뒀다",
+      "about": ["person:홍련", "org:갓데스", "person:라푼젤", "person:스노우_화이트", "person:레드_후드", "person:도로시"],
+      "evidence": [
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["58-62"] },
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_02", "lines": ["10-13", "29-31", "39-131"] },
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_03", "lines": ["6-99"] },
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_04", "lines": ["17-58"] }
+      ],
+      "reason": "대결 장면 서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1244",
+      "text": "도로시는 갓데스가 승리의 [여신]이라 불리니 진흙탕을 구르지 않고 고귀하고 아름답게 압도적으로 이겨야 사람들의 희망이 된다며 검을 들라는 홍련의 권유를 야만적이라 거절했다 — 도로시는 양산형 베이스인 홍련에게 스펙으로는 압도해야 했지만 전력을 다하고도 졌다고 했다",
+      "about": ["person:도로시", "person:홍련", "org:갓데스"],
+      "evidence": [
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_04", "lines": ["72-98"] },
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["27-30"] }
+      ],
+      "reason": "도로시 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1245",
+      "text": "첫 실전에서 홍련은 백업을 마다하고 혼자 적진에 돌격해 랩쳐를 베어 나갔고, 갓데스 멤버들은 홍련의 집중력 · 신체 제어 · 무기 구조를 한눈에 파악하는 눈 · 탄환을 베는 실력을 인정했다 — 홍련은 혼자 살아남은 옛 전우들을 짊어지고, 인류를 위해 싸운다는 사명이 같은 새 동료들과 함께 전우들이 바라던 인류의 승리를 얻겠다고 다짐했다",
+      "about": ["person:홍련", "org:갓데스", "org:근접_전투_스쿼드"],
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["3-32", "41-82"] }],
+      "reason": "멤버들의 평가(#16-31)와 홍련의 독백(#48-82). 옛 전우 = 근접 전투 스쿼드로 읽었다(F1239)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "F1241-2",
+      "act": "드러냄",
+      "text": "화무십일홍을 장화의 코어로 고쳐 준 것은 갓데스 쪽이다(합류 전 치료와 함께)",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["28-29"] }],
+      "reason": "'치료해 준 것', '코어로 검을 만들어준 것도 고맙네'. 누가 만들었는지는 이름이 없다 — F1241의 무기 장인과 같은 일로 보았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M61",
+          "note": "ep:..._01#28-29 홍련이 갓데스에게 '치료해 준 것', '코어로 검을 만들어준 것'을 직접 고마워한다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S119",
+      "kind": "회상",
+      "text": "1차 침공기 — 홍련이 갓데스에 합류한 직후부터 첫 실전까지(근접 전투 스쿼드 궤멸 뒤)",
+      "ref": "F1181",
+      "at": [["뒤", "S118"], ["전", "@방주_밀봉"]],
+      "evidence": [
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["0-98"] },
+        { "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["0-82"] }
+      ],
+      "reason": "갓데스 멤버 · 갓데스의 지휘관이 모두 있고 홍련이 신입이다. 전편이 회상 구간",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

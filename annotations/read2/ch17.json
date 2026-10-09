@@ -1,0 +1,444 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch17",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I38",
+      "target": "org:카운터스",
+      "reason": "#14 '바깥에 계신 세분' — 랩쳐를 끌 줄 알면서 구조 신호를 외친 라피 · 아니스 · 네온(F675). 이 씬엔 셋의 이름이 없다",
+      "evidence": [{ "scene": "d_main_17_01_s", "lines": ["14-16"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I39",
+      "target": "org:갓데스",
+      "reason": "#74 '[우리]들 중 과반수' — 라푼젤 · 홍련 · 스노우 화이트 · 도로시 · 릴리스 · 레드 후드, 곧 갓데스(F686). 이 씬엔 갓데스 이름이 없다",
+      "evidence": [{ "scene": "d_main_17_07", "lines": [74] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I40",
+      "target": "person:엔더슨",
+      "reason": "#76 '지휘관도 이젠 우리 곁에 없으니까' — 갓데스의 지휘관은 엔더슨이다(F2373)",
+      "evidence": [{ "scene": "d_main_17_07", "lines": [76] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I41",
+      "target": "person:엔더슨",
+      "reason": "#7-14 '어떤 분의 피' · '저희 지휘관의 특별한 피' — 언체인드의 피는 갓데스의 지휘관 엔더슨의 것(F2363 · F2373)",
+      "evidence": [{ "scene": "d_main_17_08", "lines": ["7-15"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I42",
+      "target": "person:엔더슨",
+      "reason": "#8 '전설의 지휘관' · #32 '갓데스의 지휘관' — 엔더슨(F2373). 아니스는 무덤이라도 찾자 한다",
+      "evidence": [{ "scene": "d_main_17_11", "lines": [8, "32-35"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I43",
+      "target": "person:엔더슨",
+      "reason": "#36 슈엔의 '그 1세대, 갓데스네 지휘관' — 엔더슨(F2373)",
+      "evidence": [{ "scene": "d_main_17af_02", "lines": [36] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "I44",
+      "target": "person:요한",
+      "reason": "#37-38 '샛별인지 뭔지 하고 나왔던… 방주 설립 이래 가장 유명하다는 걔' — 샛별은 요한(F762)",
+      "evidence": [{ "scene": "d_main_17af_02", "lines": ["37-38"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E115",
+      "act": "암시",
+      "points": ["F676"],
+      "text": "라푼젤이 언체인드는 '저 혼자만의 비밀이 아니'라며 '매달 초하루에만 열리는 약속의 땅'으로 같이 가자고 한다 — 한 달에 한 번 만나는 갓데스의 약속(F676)",
+      "about": ["person:라푼젤"],
+      "reason": "#59-62. 같은 단위 17_10에서 약속의 내용이 드러난다",
+      "evidence": [{ "scene": "d_main_17_02", "lines": ["58-62"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E116",
+      "act": "암시",
+      "points": ["F686", "F676"],
+      "text": "라푼젤이 처음 스쿼드를 배정받았을 때 떠들썩하던 동료들이 '몇몇은 행방을 알 수 없게 되었고, 몇몇은 함께하지만 세월과 함께 변해버렸다'고 한다 — 그 스쿼드는 갓데스(F686), 다시 만나 예전처럼 살 수 없음을 깨달았다(F676)",
+      "about": ["person:라푼젤", "org:갓데스"],
+      "reason": "#10 · 16-17. 17_10 · 17_11에서 갓데스와 흩어진 사정이 드러난다",
+      "evidence": [{ "scene": "d_main_17_04", "lines": ["8-17"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E117",
+      "act": "암시",
+      "points": ["F684"],
+      "text": "라푼젤이 '그 애교 많던 스노우 화이트는 어디로 갔을까요'라 한다 — 사고 전환으로 과거 기억을 많이 잃은 스노우 화이트(F684)",
+      "about": ["person:스노우_화이트"],
+      "reason": "#7. 17_08#29-30에서 스노우 화이트가 직접 밝힌다",
+      "evidence": [{ "scene": "d_main_17_05_e", "lines": ["5-8"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E118",
+      "act": "암시",
+      "points": ["F686"],
+      "text": "라푼젤이 '릴리스도 레드 후드도'라 하자 라피가 '…레드 후드?' 하고 멈칫한다 — 라피는 레드 후드를 만난 적이 있다(F686)",
+      "about": ["person:라피", "person:레드_후드"],
+      "reason": "#77-78. 17_10#14-18 라피가 넋을 놓고, 17_11에서 묻는다",
+      "evidence": [{ "scene": "d_main_17_07", "lines": ["76-78"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E119",
+      "act": "암시",
+      "points": ["F2364"],
+      "text": "홍련이 언체인드 제조법이 알려졌다면 지휘관은 '평생 피만 뽑히고 있었을 것'이라 한다 — 혼수상태의 갓데스 지휘관을 가둬 피를 뽑으려 한 V.T.C.(F2364)",
+      "about": ["person:엔더슨", "concept:언체인드"],
+      "reason": "#19. fl:ark_guardian에서 그대로 일어난다",
+      "evidence": [{ "scene": "d_main_17_08", "lines": [19] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E120",
+      "act": "암시",
+      "points": ["F2373"],
+      "text": "라푼젤이 갓데스의 지휘관은 '방주에 계실 거예요'라면서도 '인간이시니까 지금은 안 계실지도'라 한다 — 그는 방주의 부사령관 엔더슨이다(F2373)",
+      "about": ["person:엔더슨"],
+      "reason": "#31 · 36. ch18 18af_03 엔더슨이 연구소를 아는 듯 군다",
+      "evidence": [{ "scene": "d_main_17_08", "lines": ["31-43"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E121",
+      "act": "암시",
+      "points": ["F689"],
+      "text": "스노우 화이트가 니케에게 선택권을 주는 이상론에 따라 '인류가 니케에게 더욱더 강한 통제를 요구할 수 있다'고 경고한다 — 귀환하자 마주한 NIMPH 재이식 시위(F689)",
+      "about": ["person:스노우_화이트"],
+      "reason": "#69. 같은 단위 17af_01 시위로 곧바로 맞는다",
+      "evidence": [{ "scene": "d_main_17_08", "lines": ["64-74"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E122",
+      "act": "재언급",
+      "points": ["F19", "F2880"],
+      "text": "왜 목숨까지 거느냐는 스노우 화이트의 물음에 마리안의 처분 장면 — '붕대… 고마웠어요' — 이 되살아나고, 지휘관은 '[어쩔 수 없다]는 이유로 동료를 쏘고 싶지 않다'고 답한다",
+      "about": ["person:마리안", "person:지휘관"],
+      "reason": "#87-94 회상 대사 · #95. ch01의 처분(F19)과 붕대(F2880)",
+      "evidence": [{ "scene": "d_main_17_07", "lines": ["86-95"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E123",
+      "act": "암시",
+      "points": ["F2375"],
+      "text": "네온이 갓데스는 '방주가 생겨났을 때 방어벽을 지키다 모두 잘못되셨다고 들었다'고 하고, 라푼젤은 이름이 잊히지 않았다며 기뻐한다 — 방주가 갓데스를 말살하려 해 사실과 다르게 남긴 기록(F2375)",
+      "about": ["org:갓데스", "place:방주"],
+      "reason": "#28 · 59. fl:ark_guardian 후속 회의록이 진실을 밝힌다",
+      "evidence": [{ "scene": "d_main_17_11", "lines": [28, "58-61"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E124",
+      "act": "재언급",
+      "points": ["F5"],
+      "text": "라피가 '[지휘권]을 넘겨드린다고 말씀드렸다'며 다시 지휘관 인식 코드로 04-F의 지휘권을 옮기고, 지휘관은 초짜라 무시당하던 그때를 떠올린다",
+      "about": ["person:라피", "org:카운터스"],
+      "reason": "#68-71. ch00 첫 만남의 지휘권 이전(F5)",
+      "evidence": [{ "scene": "d_main_17_12", "lines": ["66-73"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "E125",
+      "act": "암시",
+      "points": ["F762"],
+      "text": "슈엔이 '샛별인지 뭔지 하고 나왔던… 방주 설립 이래 가장 유명하다는 걔'보다 유명하게 만들어 주겠다고 한다 — 샛별은 에덴의 지휘관 요한(F762)",
+      "about": ["person:요한"],
+      "reason": "#37-38. 샛별의 첫 언급. ch20에서 요한이 '샛별'이라 불린 지휘관임이 드러난다",
+      "evidence": [{ "scene": "d_main_17af_02", "lines": ["35-38"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D141",
+      "person": "person:라푼젤",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "눈밭에서 총에 맞아 죽어 가던 지휘관을 응급처치로 살리고 '형제님'이라 부르며 반기는 구원자",
+      "reason": "#8 · 12-13",
+      "evidence": [{ "scene": "d_main_17_01_s", "lines": ["4-17"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M53", "note": "앞선 출시이자 첫 만남인 char:221의 관계 기준 D1374를 남긴다" }
+      ]
+    },
+    {
+      "id": "D142",
+      "person": "person:라푼젤",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'하악하악' 같은 음흉한 농담으로 분위기를 풀다가도 고민을 들어 주고 비밀을 나누는, 능청스럽고 다정한 순례자",
+      "reason": "#14 · 23-25 · 48-49",
+      "evidence": [{ "scene": "d_main_17_02", "lines": ["12-25", "46-62"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M53", "note": "앞선 출시(char:221)의 같은 성격 기준 D1373을 남긴다" }
+      ]
+    },
+    {
+      "id": "D143",
+      "person": "person:라푼젤",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "전쟁에서 함께 싸운 동료들과의 약속을 지키지 못한 속죄로 해야 할 일이 있어, 그리운 지휘관 소식도 듣지 않고 아직 방주에 가지 않는다",
+      "points": ["F688"],
+      "reason": "#39-42 · 50-54. 17_12#39-41 그때 찾은 지표를 따라 걷는다",
+      "evidence": [{ "scene": "d_main_17_11", "lines": ["36-54"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M53",
+          "note": "앞선 출시(char:221)의 신념 기준 D1376(무덤을 만들어 주는 일)을 남긴다 — 속죄로 방주에 가지 않는다는 내용은 사실 F688로 남는다"
+        }
+      ]
+    },
+    {
+      "id": "D144",
+      "person": "person:홍련",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'낭자' · '도령'이라 부르며 늦은 일행을 여유롭게 감싸고 낭만을 아는, 노련한 필그림",
+      "reason": "#2-5. 17_05_e#6 스노우 화이트에게 낭만이 없다고 한다",
+      "evidence": [{ "scene": "d_main_17_05_s", "lines": ["2-5"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M56",
+          "note": "출시 첫날 char:222(홍련 호감도 스토리)가 앞서 그 기준(D1411 · D1412 · D1413 · D1414)을 남긴다"
+        }
+      ]
+    },
+    {
+      "id": "D145",
+      "person": "person:홍련",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "NIMPH가 주는 영원이 전장의 공포를 덜어 주기도 한다고 보면서도, '시대의 변화를 내 손으로 틀어막고 싶지 않다'며 언체인드를 알려 주는 데 찬성한다",
+      "points": ["F679"],
+      "reason": "#45-46 · 69-70",
+      "evidence": [{ "scene": "d_main_17_07", "lines": ["41-47", "67-70"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M56",
+          "note": "출시 첫날 char:222(홍련 호감도 스토리)가 앞서 그 기준(D1411 · D1412 · D1413 · D1414)을 남긴다"
+        }
+      ]
+    },
+    {
+      "id": "D146",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '도령'이라 부르며, 하고자 하는 것이 옳다는 걸 필사적으로 증명해 내는 게 지휘관이라고 시험하는 어른",
+      "reason": "#14-16",
+      "evidence": [{ "scene": "d_main_17_07", "lines": ["4-16"] }],
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M56",
+          "note": "출시 첫날 char:222(홍련 호감도 스토리)가 앞서 그 기준(D1411 · D1412 · D1413 · D1414)을 남긴다"
+        }
+      ]
+    },
+    {
+      "id": "D147",
+      "person": "person:스노우_화이트",
+      "aspect": "기억",
+      "act": "기준",
+      "text": "사고 전환으로 과거 기억이 많이 남지 않아 갓데스 시절 이야기도 라푼젤에게 들어서 안다",
+      "points": ["F684"],
+      "reason": "#29-30",
+      "evidence": [{ "scene": "d_main_17_08", "lines": ["27-30"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "D148",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "목숨 빚을 절대 잊지 않겠다는 사이",
+      "after": "'목숨 한 개 값으로 언체인드 한 발, 빚은 다 갚았다'며 더 바라지 말라고 선을 긋는 사이",
+      "time": "S45",
+      "points": ["F678"],
+      "reason": "#12-14 · 18. 계기는 #5 언체인드 양산 요청. 앞 모습은 D71",
+      "evidence": [{ "scene": "d_main_17_06", "lines": ["9-18"] }],
+      "trigger": [{ "scene": "d_main_17_06", "lines": [5] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "D149",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "빚은 다 갚았다며 선을 긋는 사이",
+      "after": "언체인드를 모두 알려 주고 헤어지며 '죽지 마라'고 당부하는 사이",
+      "time": "S45",
+      "reason": "#40. 계기는 '[어쩔 수 없다]는 이유로 동료를 쏘고 싶지 않다'는 답",
+      "evidence": [{ "scene": "d_main_17_09", "lines": ["38-40"] }],
+      "trigger": [{ "scene": "d_main_17_07", "lines": ["95-100"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "D150",
+      "person": "person:지휘관",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "침식된 니케도 버리지 않고 구하려는",
+      "after": "니케가 영원과 한정된 시간 가운데 스스로 미래를 고르는 세계를 만들고, 그 열쇠로 언체인드를 구하려는",
+      "time": "S45",
+      "points": ["F680"],
+      "reason": "#51 · 95. 앞 모습은 D12. 계기는 마리안의 처분(#87-94 회상)",
+      "evidence": [{ "scene": "d_main_17_07", "lines": ["48-54", 95] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "D151",
+      "person": "person:유니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:슈엔"],
+      "before": "슈엔의 매질을 말없이 받는",
+      "after": "애원하는 슈엔을 비웃으며 '미하라를 빼앗았으니 메티스도 기억 소거돼야 공평하다'고 몰락을 바라는",
+      "points": ["F692"],
+      "reason": "#19-24 · 30-32. 앞 모습은 D138",
+      "evidence": [{ "scene": "d_main_17af_03", "lines": ["13-35"] }],
+      "trigger": [{ "scene": "d_main_17af_03", "lines": ["9-18"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "D152",
+      "person": "person:슈엔",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["org:메티스"],
+      "before": "감싸 주면서도 막무가내로 부리는",
+      "after": "다시 히어로로 만들려고 랩쳐 유인을 숨기고 '지옥에 밀어 넣어야 한다고 해도' 속이는",
+      "points": ["F691"],
+      "reason": "#137-144. 앞 모습은 D92",
+      "evidence": [{ "scene": "d_main_17af_04", "lines": ["121-147"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U98",
+      "topic": "방주 사회",
+      "text": "시민 단체가 며칠째 미실리스 본사 앞에 현수막을 걸고 'NIMPH 없는 니케는 칼잡이 없는 칼날', '니케에게 통제를!'을 선창 · 후창으로 외치고, 뉴스는 슈엔이 메티스와 시민 중 누구를 고를지 주목한다",
+      "about": ["org:미실리스", "concept:NIMPH"],
+      "points": ["F689"],
+      "reason": "#15 · 20-29. 17af_04#28-35 TV 중계",
+      "evidence": [{ "scene": "d_main_17af_01", "lines": ["13-29"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    },
+    {
+      "id": "U99",
+      "topic": "방주 사회",
+      "text": "방주에서 갓데스는 최초의 니케 · 최후의 방어선이라는 '상식 중의 상식'인 영웅담으로 전해지고, 방어벽을 지키다 모두 잘못되었다고 알려져 있다",
+      "about": ["org:갓데스", "place:방주"],
+      "points": ["F687", "F2375"],
+      "reason": "#23-28. 사관학교 출신 지휘관만 모른다(#23)",
+      "evidence": [{ "scene": "d_main_17_11", "lines": ["22-28"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

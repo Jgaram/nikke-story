@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:시리얼_01",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U29",
+      "topic": "방주 사회",
+      "points": ["F184", "F185"],
+      "text": "지상의 식물은 허가 없이 가지면 중범죄라 아이들 사이에서 '친구비'로 뜯기는 귀한 물건이 되고, 신고 한 번에 갱생관으로 끌려간다 — 부모가 높은 사람이면 같은 식물도 문제 되지 않는다",
+      "about": ["person:시리얼", "org:중앙_정부"],
+      "evidence": [{ "scene": "sub:시리얼_01", "lines": ["12-19", "50-66"] }],
+      "reason": "#15 '요즘 친구비는 지상의 식물' · #53 · #62-63 · #66 '우리 엄마 아빠 높은 사람이라서'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

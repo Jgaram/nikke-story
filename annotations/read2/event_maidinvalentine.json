@@ -1,0 +1,98 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M57\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_maidinvalentine",
+  "session": "M57",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I507",
+      "target": "person:머스탱",
+      "speaker": true,
+      "evidence": [{ "scene": "event_maidinvalentine_01_s", "lines": [0] }],
+      "reason": "'NOOOO!!!' 바로 뒤 #1 머스탱이 'My Maid들! 이게 대체 무슨 일인가Yo?!'로 같은 외침을 잇는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1298",
+      "act": "재언급",
+      "points": ["F587"],
+      "text": "시그널이 메이드 카페에 분장하고 와서 떨어뜨린 초콜릿에 '정말 좋아하는 지휘관에게'라는 편지가 끼워져 있다",
+      "about": ["person:시그널"],
+      "evidence": [{ "scene": "event_maidinvalentine_02_s", "lines": ["28-36"] }],
+      "reason": "#33 — 지휘관에게 먼저 좋아한다고 고백한 시그널(F587)의 마음을 밸런타인 초콜릿으로 다시 보인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "E1299",
+      "act": "암시",
+      "points": ["F1780"],
+      "text": "'외롭지 않다'면서 오랜만의 손님에 색다른 기분이라 한 스윗 조니가 방주로 데이터를 옮기자는 말은 거절하고 다음 밸런타인에도 와 달라고 한다",
+      "about": ["person:스윗_조니"],
+      "evidence": [{ "scene": "event_maidinvalentine_05_e", "lines": ["36-48"] }],
+      "reason": "#41-47 — 니케들의 로망을 돕겠다며 결국 휴대폰 데이터로 방주에 들어오는 조니(F1780)의 앞그림. 그 까닭은 뒤 단위가 따로 대므로 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1422",
+      "person": "person:코코아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "어눌한 말투로 '프로 메이드 · 메이드장'을 자처하고, 무엇에든 케첩을 넣으려 하며 공룡 모양 초콜릿을 만드는",
+      "evidence": [{ "scene": "event_maidinvalentine_prologue", "lines": ["7-11"] }],
+      "reason": "#5 '시작하게따' · #11 '역시 마무리는 코코아가' — 01_s#20 '케첩을 더 너으께', 04_e#2 공룡",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1423",
+      "person": "person:소다",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "청소에 열심이지만 물 양동이를 쏟고 아무 버튼이나 누르는 덤벙대는 메이드로, '흐엥' 하며 금방 울상이 되는",
+      "evidence": [{ "scene": "event_maidinvalentine_03_s", "lines": ["8-27"] }],
+      "reason": "#21-24 양동이 · 03_e#1-2 버튼 — 에이드 #27 '가끔 실수하긴 해도 똑 부러지는 아이'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1424",
+      "person": "person:머스탱",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["org:메이드_포_유"],
+      "text": "'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 주는",
+      "evidence": [{ "scene": "event_maidinvalentine_01_s", "lines": ["1-31"] }],
+      "reason": "#25-31 진심이 빠졌다며 불허 — 06_s#17-23 합격. F807과 같은 장면을 관계 쪽으로 적는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    },
+    {
+      "id": "D1425",
+      "person": "person:스윗_조니",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'감사를 바라고 한 일은 아니다'면서 바라고, 강의 중 떠들지 말라며 말을 쏟아 내는 자부심 강한 관리 A.I.",
+      "evidence": [{ "scene": "event_maidinvalentine_05_e", "lines": ["16-33"] }],
+      "reason": "#18 · #21 — 소다 · 코코아가 '바라는 것 같다' 하고, #32-33 '즐거… 사명'으로 말을 바꾼다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+    }
+  ],
+  "life": [],
+  "note": "시점은 S57(1회독) 그대로. 프리바티가 초콜릿을 주려던 '친구'(epilogue#51)는 누구인지 원문이 대지 않아 적지 않았다. 에이드 → 지휘관은 앞 D815 · D816 그대로"
+}

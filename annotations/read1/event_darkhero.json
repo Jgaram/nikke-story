@@ -1,0 +1,270 @@
+{
+  "unit": "event_darkhero",
+  "session": "R43",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "event_boomsday 뒤 · ch27 수정 지역 탐색 직전(S147). 아크레인저 블랙 흉내를 들킨 트로니, 엑시아 · 메이든 · 일레그 · 트로니의 게임 모임에 힐러로 불려 간 지휘관(F1464). 정전 해결로 일렉트릭 쇼크는 중앙 정부 섭외 방송에 나가 '방주의 히어로'로 불린다(F1465) — 트로니는 동력원을 본 뒤로 붉은 공간의 시선이 '넌 히어로가 맞냐' 묻는 환영에 시달린다(F1474). 일레그는 트로니가 정리한 M.M.R.의 마테리얼 H 보고서를 읽고(방주의 축소판 · 니케로 에너지 생성) 동력원의 정체를 아는 이들이 있다고 본다(F1466). 에테르가 윗선의 주시를 경고(F1467), 중앙 정부 고위 간부의 명령으로 익스터너에게 일레그 · 트로니 확보가 떨어지고 메이든이 자청한다(F1468). 트로니는 지휘관과 시사회에 갔다가 아크레인저 블랙을 만나 히어로란 자기 신념을 관철하는 자라는 말을 듣고(F1476), 입단일(= 일레그와 처음 만난 날, F1475) 선물로 BOOM 커스텀 게임 패드를 만든다. 그날 메이든이 [정지]로 일레그를 잡아가고(F1470), 에테르가 보고서 탓에 동력원을 아는 게 들켰다며 트로니에게 두 선택지와 좌표를 준다(F1469 · F1472). 일레그는 혼자 테러를 꾸몄다고 진술해 트로니의 혐의를 푼다(F1471). 지휘관 · 엑시아 · 트로니가 M.M.R.의 버려진 시설에 잠입, 게임 패드 기능으로 길을 열고 메이든은 트로니의 말에 길을 비켜 임무 실패를 보고한다(F1473). 트로니가 일레그를 데려오고, 명령을 받은 책임자였던 에테르는 지휘관이 둘의 뒷배가 되는 거래로 기억 소거를 거짓 보고한다(F1477 · Q194 · Q195). 에필로그 — 지상에서 진짜 하늘을 본 트로니, 수정 지역 탐색 지원을 떠나는 일레그(F1478 · Q196).",
+  "scenes": [
+    { "scene": "event_darkhero_prologue", "text": "아크레인저 블랙 극장판을 보며 명대사를 따라 하던 트로니를 일레그 · 엑시아 · 메이든이 목격" },
+    { "scene": "event_darkhero_01_s", "text": "게임 모임에 힐러로 불려 간 지휘관. 중앙 정부 섭외 인터뷰, 달력의 동그라미, 트로니가 내일 시간을 묻는다" },
+    { "scene": "event_darkhero_01_e", "text": "파이널 퀘스트 레이드 · 아이언 펀치. 메이든은 트로니의 '고마워'에 감동. 잉그리드의 호출" },
+    { "scene": "event_darkhero_02_s", "text": "라디오 인터뷰 '방주의 히어로' — 트로니의 붉은 환영. 일레그가 시사회 표를 주고 보고서를 부탁" },
+    { "scene": "event_darkhero_02_e", "text": "일레그가 마테리얼 H 보고서를 읽음. 에테르의 경고. 잉그리드가 익스터너에 일레그 · 트로니 확보 명령, 메이든이 자청" },
+    { "scene": "event_darkhero_03_s", "text": "트로니와 지휘관이 일레그 선물을 고르다 시사회로. 옆자리 관객이 아크레인저 블랙" },
+    { "scene": "event_darkhero_03_e", "text": "아크레인저 블랙의 순찰과 '히어로란 신념을 관철하는 자'. 트로니가 BOOM 게임 패드를 만들고 — 그날 일레그 실종" },
+    { "scene": "event_darkhero_intermission_01", "text": "메이든이 마스크를 벗고 [정지]로 일레그를 붙잡아 이송" },
+    { "scene": "event_darkhero_04_s", "text": "에테르가 트로니에게 체포 이유와 두 선택지(일레그를 팔기 / 직접 구하기) · 좌표" },
+    { "scene": "event_darkhero_04_e", "text": "트로니 방의 에테르가 지휘관에게 명령을 알리고 좌표를 줌. 엑시아가 오퍼레이터로 합류" },
+    { "scene": "event_darkhero_05_s", "text": "박스 속 트로니와 합류, 엑시아의 해킹 · 게임 패드 소등으로 M.M.R.의 버려진 시설 잠입" },
+    { "scene": "event_darkhero_05_e", "text": "메이든과 일레그 — 일레그가 혼자 뒤집어쓴 진술, 엇갈린 마음. BOOM 폭발음" },
+    { "scene": "event_darkhero_06_s", "text": "게임 패드 기능으로 전진. 마스크 벗은 메이든 앞에서 트로니의 선언, 메이든이 길을 비키고 임무 실패 보고" },
+    { "scene": "event_darkhero_06_e", "text": "붉은 환영을 뚫고 트로니가 일레그에게 손을 내밈. 책임자 에테르가 지휘관과 거래" },
+    { "scene": "event_darkhero_epilogue", "text": "지상의 진짜 하늘을 본 트로니, 수정 지역 탐색 지원을 떠나는 일레그" }
+  ],
+  "facts": [
+    {
+      "id": "F1464",
+      "text": "엑시아(파티장 [사이코뮤]) · 메이든(탱커 [블랙로즈]) · 일레그([붐가이]) · 트로니는 트로니의 방에서 파이널 퀘스트 온라인 등을 함께 하는 게임 모임이고 지휘관은 힐러로 불려 갔다 — 메이든은 엑시아의 '동료가 되라'는 제안으로 들어와 셋에게 마음을 열었다",
+      "about": ["person:엑시아", "person:메이든", "person:일레그", "person:트로니", "person:지휘관"],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["3-21", "41-48"] }, { "scene": "event_darkhero_intermission_01", "lines": ["11-22"] }],
+      "reason": "엑시아가 부름(01_s #3), 파티 역할(#10-21 · #45-48). 서술이 메이든이 엑시아의 제안을 받아 마음을 열었다고 한다(intermission #16-22). 블랙로즈는 메이든의 길드 이름(F545)과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1465",
+      "text": "방주 정전을 해결한 뒤 일렉트릭 쇼크는 중앙 정부가 직접 요청한 방송 · 인터뷰에 나가 시민 사이에서 '지금껏 방주를 유지해 온 히어로'로 불리게 되었고, 슈엔은 트로니에게 이번엔 도망가면 가만 안 둔다며 참여시켰다",
+      "about": ["org:일렉트릭_쇼크", "person:트로니", "person:일레그", "org:중앙_정부", "person:슈엔"],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["93-98"] }, { "scene": "event_darkhero_02_s", "lines": ["18-20"] }],
+      "reason": "트로니 말(01_s #93-98)과 인터뷰 질문(02_s #18-20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1466",
+      "text": "일레그가 읽은 M.M.R.의 [특수 개체 : 마테리얼 H] 보고서에서 마나는 마테리얼 H가 방주의 축소판이라 할 만큼 방주를 닮았다고 평했고 — 니케로 에너지를 만드는 것이 1세대 랩쳐의 유기물 동력 보강과 비슷하다 — 일레그는 동력원의 정체를 아는 이들이 따로 있다고 결론지었다",
+      "about": ["person:일레그", "person:마나", "concept:마테리얼_H", "concept:방주_동력원", "org:M.M.R.", "person:트로니"],
+      "evidence": [{ "scene": "event_darkhero_02_s", "lines": ["60-62"] }, { "scene": "event_darkhero_02_e", "lines": ["2-23"] }],
+      "reason": "트로니가 정리해 둔 보고서(02_s #60-62)를 일레그가 읽는다(02_e #3-17). 보고서는 마테리얼 H를 '랩쳐가 제작한 시설'이라 부른다(#10). '방주 동력원이 니케로 에너지를 만든다'고 원문이 말하지는 않아 그 연결은 적지 않았다 — 일레그의 결론(#17, #21)만",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1467",
+      "text": "에테르에 따르면 M.M.R.은 일렉트릭 쇼크에 연구 장비 제작을 맡겼고, 윗선은 일렉트릭 쇼크가 맡은 일 — [방주가 꺼지지 않도록 막는 것] — 을 잘하는지 예의주시하며, 윗분들은 방주를 위해서라면 뭐든 한다",
+      "about": ["person:에테르", "org:M.M.R.", "org:일렉트릭_쇼크"],
+      "evidence": [{ "scene": "event_darkhero_02_e", "lines": ["39-60"] }],
+      "reason": "에테르 말(#42-44 장비, #51-52 · #57-60)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1468",
+      "text": "중앙 정부 고위 간부의 명령으로 잉그리드는 익스터너에게 방주 테러를 계획한다는 일렉트릭 쇼크의 일레그 · 트로니를 확보해 M.M.R. 산하 중앙정부군에 넘기라 했고, 길로틴이 대신 맡겠다는데도 메이든이 자기가 맡아야 한다고 나섰다",
+      "about": ["person:잉그리드", "org:익스터너", "person:메이든", "person:길로틴", "person:일레그", "person:트로니", "org:중앙_정부", "org:M.M.R."],
+      "evidence": [{ "scene": "event_darkhero_02_e", "lines": ["72-97"] }],
+      "reason": "잉그리드의 명령 전달(#73-76, #84-85), 메이든의 자청(#88-93)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1469",
+      "text": "에테르에 따르면 테러 계획은 명목이고, 일렉트릭 쇼크가 M.M.R.의 마테리얼 H 보고서를 손댄 탓에 높은 사람 하나가 일레그 · 트로니가 방주 동력원을 안다는 것을 눈치챘다 — M.M.R.의 높으신 분은 일렉트릭 쇼크 전원을 체포해 하나는 기억 소거, 하나는 본보기로 폐기하라고 했다",
+      "about": ["person:에테르", "org:M.M.R.", "person:일레그", "person:트로니", "concept:방주_동력원", "concept:마테리얼_H"],
+      "evidence": [{ "scene": "event_darkhero_04_s", "lines": ["29-38"] }, { "scene": "event_darkhero_04_e", "lines": ["29-43"] }],
+      "reason": "에테르가 트로니(04_s #32-38)와 지휘관(04_e #29-40)에게 한 말. '둘은 테러 따윈 꾸미지 않았어'(#39)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1470",
+      "text": "메이든은 잉그리드의 허가로 마스크를 벗고 [언령] [정지]로 일레그를 멈춰 지정 좌표 — M.M.R.의 버려진 시설 — 로 넘겼다 — 일레그는 마스크를 벗은 메이든을 처음으로 두려워하지 않고 먼저 다가온 이였다",
+      "about": ["person:메이든", "person:일레그", "org:M.M.R."],
+      "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["26-42"] }, { "scene": "event_darkhero_05_s", "lines": [55] }],
+      "reason": "intermission #27-42(서술 #38-39). 시설은 엑시아가 확인(05_s #55)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1471",
+      "text": "일레그는 심문에서 방주 테러 계획을 혼자 세웠다고 진술해 모든 것을 뒤집어쓰고 트로니의 혐의를 풀었다 — 테러를 꾸민 적이 없다며 이의를 내라는 메이든에게 일레그는 그것이 최선이고 메이든이 엮이길 원치 않는다고 했다",
+      "about": ["person:일레그", "person:트로니", "person:메이든"],
+      "evidence": [{ "scene": "event_darkhero_05_e", "lines": ["25-30", "41-52"] }, { "scene": "event_darkhero_06_s", "lines": [44] }],
+      "reason": "메이든 · 일레그 대화(05_e), 메이든이 트로니의 혐의가 풀렸다고 함(06_s #44)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1472",
+      "text": "에테르는 트로니에게 '테러는 일레그가 꾸몄고 나는 몰랐다'고 진술해 동력원을 잊고 [방주의 히어로]로 남거나, 반나절 뒤 심문이 끝나면 폐기될 일레그를 직접 구하러 가라는 두 선택지와 좌표를 주었고, 트로니는 구하러 갔다 — 에테르는 지휘관에게도 좌표를 주었다",
+      "about": ["person:에테르", "person:트로니", "person:일레그", "person:지휘관"],
+      "evidence": [{ "scene": "event_darkhero_04_s", "lines": ["43-69"] }, { "scene": "event_darkhero_04_e", "lines": ["54-60"] }],
+      "reason": "에테르의 제안(04_s), 트로니가 뛰쳐나갔다는 에테르 말과 쪽지(04_e #56-60)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1473",
+      "text": "지휘관 · 엑시아(오퍼레이터) · 트로니가 시설에 잠입했고 트로니는 일레그 선물로 만든 BOOM 커스텀 게임 패드의 기능(소등 · 스프링클러 · 통신 마비 · BOOM 원격 설치)으로 중앙정부군을 따돌렸다 — 길을 막은 메이든은 트로니의 말에 길을 비켜 주고 잉그리드에게 임무 실패를 보고했다",
+      "about": ["person:지휘관", "person:엑시아", "person:트로니", "person:메이든", "person:잉그리드"],
+      "evidence": [{ "scene": "event_darkhero_05_s", "lines": ["44-64"] }, { "scene": "event_darkhero_06_s", "lines": ["0-9", "41-51", "110-124", "157-160"] }],
+      "reason": "05_s 잠입 · 소등, 06_s 기능 활용(#0-9), 메이든의 경고와 비켜 줌(#41-51 · #120-124), 실패 보고(#158-160)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1474",
+      "text": "트로니는 방주 동력원을 본 뒤로 붉게 물든 공간에서 수많은 시선이 '넌 히어로가 맞냐'고 묻는 환영에 시달렸다 — 동력원이 뿜는 빛에 붉게 물든 그 공간에는 수많은 시신이 널브러져 있었다",
+      "about": ["person:트로니", "concept:방주_동력원"],
+      "evidence": [
+        { "scene": "event_darkhero_02_s", "lines": ["25-33"] },
+        { "scene": "event_darkhero_06_s", "lines": ["92-99"] },
+        { "scene": "event_darkhero_06_e", "lines": ["1-11"] }
+      ],
+      "reason": "서술: '그날. 방주의 동력원을 본 뒤로'(06_s #99), '동력원에서 뿜어져 나오는 빛에 의해 붉게 물든 공간. 그곳에 널브러진 수많은 시신들'(06_e #3-4). 트로니의 환영 속 장면이라 실제 동력원의 모습인지는 원문이 따로 확인하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1475",
+      "text": "트로니가 일렉트릭 쇼크에 들어온 날이 일레그를 처음 만난 날이고, 일레그는 트로니를 방 밖으로 나오게 하려고 찰흙으로 아크레인저 블랙 피규어를 만들어 주었다 — 트로니가 가장 소중히 여기는 물건이다",
+      "about": ["person:트로니", "person:일레그", "org:일렉트릭_쇼크", "person:아크레인저_블랙"],
+      "evidence": [{ "scene": "event_darkhero_03_s", "lines": ["22-31"] }, { "scene": "event_darkhero_03_e", "lines": ["111-114"] }],
+      "reason": "트로니 말(03_s #25-26)과 서술(03_e #112-114)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1476",
+      "text": "아크 게임쇼 팬미팅에서 트로니 · 지휘관을 만났던 아크레인저 블랙은 히어로란 누군가의 기대가 아니라 자기 신념 · 진심을 관철하는 자라고 트로니에게 말했다 — 블랙도 레드에게 같은 말을 듣고 아크레인저에 들어왔다",
+      "about": ["person:아크레인저_블랙", "person:트로니", "person:아크레인저_레드", "org:아크레인저"],
+      "evidence": [{ "scene": "event_darkhero_03_e", "lines": ["0-5", "60-75"] }],
+      "reason": "블랙 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1477",
+      "text": "에테르는 일렉트릭 쇼크 체포 명령을 받은 책임자였는데, 지휘관이 일레그 · 트로니의 뒷배가 되어 둘이 방주의 비밀을 계속 파헤치게 지켜 준다는 거래로 둘의 기억 소거가 끝났다고 거짓 보고하기로 했다 — 목적은 니케가 명령을 어기고 어디까지 할 수 있는지 가능성을 보는 것이라 했다",
+      "about": ["person:에테르", "person:지휘관", "person:일레그", "person:트로니", "org:M.M.R."],
+      "evidence": [{ "scene": "event_darkhero_06_e", "lines": ["59-92"] }],
+      "reason": "에테르 말(#62-65 책임자, #73-84 거래, #87-89 목적). 폐기 건은 '쓸 카드가 있다'(#77-78)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "F1478",
+      "text": "일레그 · 트로니는 기억 소거된 것처럼 보이기로 하고, 일레그는 수정 지역 탐색 지원을 떠나며 수상한 목적으로 접근하는 니케가 없는지 지켜보겠다 했고 트로니는 방주에 남아 동력원의 폭주를 지켜보기로 했다 — 트로니는 지상에서 처음 진짜 하늘을 보았다",
+      "about": ["person:일레그", "person:트로니", "place:수정_지역", "concept:방주_동력원"],
+      "evidence": [{ "scene": "event_darkhero_epilogue", "lines": ["0-13", "21-41"] }],
+      "reason": "에필로그 대화 · 서술(#41 탐색 지원)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q194",
+      "text": "일레그 · 트로니가 방주 동력원을 안다는 것을 눈치채고 테러 혐의로 체포 · 폐기를 명한 '높은 사람' — 중앙 정부 고위 간부이자 M.M.R.의 높으신 분 — 은 누구인가?",
+      "evidence": [
+        { "scene": "event_darkhero_02_e", "lines": [73] },
+        { "scene": "event_darkhero_04_s", "lines": ["32-34"] },
+        { "scene": "event_darkhero_06_e", "lines": ["62-63"] }
+      ],
+      "reason": "명령자를 '중앙 정부 측 고위 간부'(02_e #73) · '저 높은 사람 중 한 분'(04_s #33) · 'M.M.R.의 높으신 분'(06_e #62)으로만 부른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "Q195",
+      "text": "에테르가 말하다 삼킨, 일레그 · 트로니를 지켜보고 있다는 '더 귀찮은 세력'은 무엇인가?",
+      "evidence": [{ "scene": "event_darkhero_06_e", "lines": ["94-95"] }],
+      "reason": "에테르가 말을 끊고 '신경 쓰지 마'라 덮음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" }]
+    },
+    {
+      "id": "Q196",
+      "text": "임무 실패를 보고한 메이든은 어떻게 되었고, 왜 연락이 끊겼나?",
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["141-145", "158-160"] }, { "scene": "event_darkhero_epilogue", "lines": ["37-39"] }],
+      "reason": "메이든이 떠나고 엑시아가 '다시 볼 수 있을까요'(06_s #144), 에필로그에서도 '메이든한테 연락 오면 알려줄게'(#38)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M19",
+          "note": "06_s#158-160 임무 실패 보고 · epilogue#38 '메이든한테 연락 오면' — 끊긴 연락이 원문에 있고 F1729가 답한다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q171-3",
+      "act": "회수",
+      "answer": "F1474",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_darkhero_06_e", "lines": ["3-4"] }],
+      "reason": "Q171(방주의 에너지는 어디서 오나 — 알면 방주에 살고 싶지 않을 '정답')에, 트로니가 본 동력원의 공간이 수많은 시신이 널브러진 붉은 공간으로 나온다. 트로니의 환영 속 장면이라 일부 · 추정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M19",
+          "note": "06_e#3-4 서술이 '동력원에서 뿜어져 나오는 빛에 붉게 물든 공간'에 시신이 널브러졌다고 직접 말한다 — ch45 F2581(생체 조직을 [먹이]로)이 확인",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S147",
+      "kind": "기준점",
+      "text": "event_boomsday(방주 정전 해결) 뒤, ch27 수정 지역 탐색 직전",
+      "ref": "event_boomsday",
+      "at": [["뒤", "event_boomsday"], ["직전", "ch27"]],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["93-94"] }, { "scene": "event_darkhero_epilogue", "lines": ["26-33", 41] }],
+      "reason": "정전 해결 뒤 방송 섭외(01_s #93-94), 에필로그에서 일레그가 수정 지역 탐색 지원으로 떠난다(#26, #41) — ch27의 자원(F1291)과 이어 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M19",
+          "note": "01_s#93-94 '지난번에 방주 정전 문제 해결하고 나서' + epilogue#26-33 일레그가 수정 지역 탐색 지원을 떠난다 — 둘 다 원문이 직접 말한다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ]
+}

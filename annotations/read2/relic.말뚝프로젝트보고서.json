@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:말뚝프로젝트보고서",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U229",
+      "topic": "기술",
+      "text": "말뚝(A 필러)은 무에서 구조물을 솟게 하지 않고 주변 재료를 써서 — 사막 · 숲에서는 재료가 모자라 실패하고 무너진 도시에서야 구축에 성공했다",
+      "about": ["item:A_필러"],
+      "points": ["F1539"],
+      "evidence": [{ "scene": "relic:말뚝프로젝트보고서_02", "lines": ["1-6"] }],
+      "reason": "#2 · #5 '단순 유기물만으로는 재료 부족' — U228(원리 극비)에 재료가 든다는 면을 더한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ]
+}

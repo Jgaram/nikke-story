@@ -1,0 +1,69 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M90\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:271",
+  "session": "M90",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I660",
+      "target": "person:얀",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_noir_01", "lines": [91] }],
+      "reason": "#91 ???: '어이~ 신참!' 바로 뒤 #92 지휘관 '얀?' · #93부터 이름표 얀.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2034",
+      "person": "person:누아르",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "상과 별개로 진심의 행운의 키스를 건네는",
+      "after": "좋아하는 감정을 알게 되어 술 없이 고백하고, 서로 좋아함을 확인하자 둘만의 비밀을 만들어 가는 연인",
+      "trigger": [{ "scene": "ep:d_nikke_noir_04", "lines": ["123-131"] }],
+      "evidence": [{ "scene": "ep:d_nikke_noir_05", "lines": ["46-52", "56-58", "69-74", "107-112"] }],
+      "points": ["F949"],
+      "reason": "D2030에서. #52 '점장님을 좋아해요!' · #58 '술의 힘을 빌리지 않았어요' · #112 '더 많은 비밀을 만들어갈 예정'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2035",
+      "person": "person:누아르",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "말을 더듬고 겁이 많아 동생을 따르는 소심한 언니",
+      "after": "폴댄스로 조금 자신감이 생기고, 고백하자마자 데이트를 청하는 '저돌적'인 면을 드러낸",
+      "trigger": [{ "scene": "ep:d_nikke_noir_04", "lines": ["62-65"] }],
+      "evidence": [{ "scene": "ep:d_nikke_noir_05", "lines": ["76-83", "88-98"] }],
+      "reason": "D228에서. 04#65 '조금 자신감이 생긴 것 같아요' · 05#81 '의외로 저돌적' · #83 '저도 모르는 저의 모습' · #97 '그냥 저돌적인 성격'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2036",
+      "person": "person:누아르",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:블랑"],
+      "before": "늘 블랑과 함께 다니며 동생을 '제 보물'로 아끼는",
+      "after": "처음 블랑 없이 지휘관과 단둘이 지내며 '셋이었을 텐데' 마음을 쓰지만, 하나뿐인 쌍둥이라 곧 함께하리라 믿는",
+      "trigger": [{ "scene": "ep:d_nikke_noir_04", "lines": ["29-32"] }],
+      "evidence": [{ "scene": "ep:d_nikke_noir_05", "lines": ["15-16", "22-30", "36-38"] }],
+      "reason": "D2028에서. 04#31-32 따로 온 건 처음 · 05#29-30 '셋이었을 텐데 … 단 둘이 이러고 있는 게 맞을까' · #38 '서로에게 하나뿐인 쌍둥이니까'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 누아르 → 지휘관 기준(D339)은 앞서 있다. 얀은 01 한 장면 단역이라 관계를 적지 않았다. 01#22 '블랑을 보며 느끼는 애정과는 다른 감정'은 D2028 그대로. 시점은 1회독 S75(블랑의 행운의 데이트 날 밤)가 있다. 떡밥 없음 — 05#37 '곧 함께 할 수 있을 거예요'는 뒤에서 이어지는 사실이 없다."
+}

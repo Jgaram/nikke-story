@@ -1,0 +1,108 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M65\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:514",
+  "session": "M65",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I553",
+      "target": "person:마리안",
+      "evidence": [{ "scene": "ep:d_nikke_grave_04", "lines": [102, 105] }],
+      "reason": "지휘관의 소원 선택지 '어쩔 수 없이 헤어진 동료와 다시 만나, 영원히 함께 있고 싶어' — 지휘관이 되찾으려는 마리안(D374 무렵의 목표).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1397",
+      "act": "재언급",
+      "points": ["F1158"],
+      "text": "그레이브가 신데렐라를 오해하는 이들을 설득하려면 '아니다'만으로는 안 된다며, 헬레틱은 공포의 대상이고 아나키오르도 그랬다고 한다",
+      "about": ["person:신데렐라"],
+      "evidence": [{ "scene": "ep:d_nikke_grave_01", "lines": ["72-84"] }],
+      "reason": "#80-81 — 랩쳐 · 니케 융합체 '헬레틱 아나키오르'로 불린 신데렐라(F1158)를 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "E1398",
+      "act": "암시",
+      "points": ["F1903"],
+      "text": "그레이브가 새 소원으로 '모두와 다시 만나는 것 · 이야기를 다시 쓰는 것'을 빈다",
+      "about": ["person:그레이브", "person:세이렌"],
+      "evidence": [{ "scene": "ep:d_nikke_grave_04", "lines": ["87-95"] }],
+      "reason": "#89 — 기억하지 못하는 2세대 동료 세이렌과 훗날 다시 만난다(F1903, UNBREAKABLE SPHERE). '모두'가 누구인지는 말하지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1596",
+      "person": "person:그레이브",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "말이 서툴러 신데렐라를 둘러싼 오해를 풀지 못할까 걱정하던",
+      "after": "진심을 담아야 대화가 된다는 걸 배워, 하기 어려운 말도 직접 전하기로 하는",
+      "trigger": [{ "scene": "ep:d_nikke_grave_02", "lines": ["104-117"] }],
+      "time": "S189",
+      "evidence": [{ "scene": "ep:d_nikke_grave_05", "lines": ["24-43"] }],
+      "reason": "01#53-59 '나 말 너무 못한다' → 02#116-117 '진심 담아야 한다. 나 한 가지 배웠다' → 05#28 '잘 말하지 못해도 말하는 게 맞다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "D1597",
+      "person": "person:그레이브",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "신데렐라가 깨어나기만 하면 다 이룬 것이라 별마다 그것만 빌던",
+      "after": "모두와 다시 만나 이야기를 다시 써 이번에야말로 해피 엔딩을 맞는 것을 새 소원으로 삼은",
+      "time": "S189",
+      "evidence": [{ "scene": "ep:d_nikke_grave_04", "lines": ["62-95"] }],
+      "reason": "#66-68 → #89-92 — D439의 '이야기를 다시 쓰는 사명'이 신데렐라가 깨어난 뒤 해피 엔딩이라는 소원으로 넓어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "D1598",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "인간은 못 믿지만 '탈인간'이니 보증을 믿어 주던",
+      "after": "목적 없는 대화를 처음 나눈 '첫 번째 독자'로 서로의 편이 되어, 다시 만나 해피 엔딩을 들려주기로 한",
+      "trigger": [{ "scene": "ep:d_nikke_grave_04", "lines": ["108-116"] }],
+      "time": "S189",
+      "evidence": [{ "scene": "ep:d_nikke_grave_05", "lines": ["45-55", "64-71"] }],
+      "reason": "04#115 '너의 편이 되겠다' · 05#48 '내 첫 번째 독자' — D606(ch35) 다음.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    },
+    {
+      "id": "D1599",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:신데렐라"],
+      "before": "관 속의 그녀를 살릴 수만 있다면 어떤 대가도 치르겠다던",
+      "after": "마주 보고 이야기하며 매일 머리를 빗어 주는 일상이 기쁜 — 신데렐라도 흉터를 아름답다 해 주고 헬멧을 닦아 주는",
+      "time": "S189",
+      "evidence": [{ "scene": "ep:d_nikke_grave_03", "lines": ["43-51", "70-82"] }],
+      "reason": "#44-45 → #47-51 '그게 기쁘다' · #81 '신데렐라 이 상처들도 아름답다고 해줬다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "life": [],
+  "note": "S189(CH.34 뒤 주둔지 01 의무실)는 1회독 추정 그대로 둔다 — 01#1-2 '큰 싸움이 끝난 후 의무실에서 일주일'만 있고 챕터 원문으로 되짚지 않았다."
+}

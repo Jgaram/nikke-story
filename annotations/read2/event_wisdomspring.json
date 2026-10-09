@@ -1,0 +1,256 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M24\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_wisdomspring",
+  "session": "M24",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I219",
+      "target": "person:마나",
+      "speaker": true,
+      "evidence": [{ "scene": "event_wisdomspring_prologue", "lines": [0] }],
+      "reason": "#2 '마… 나?' 뒤 #3부터 마나가 이어 말한다 — 05_s#0에서 같은 줄이 이름표 마나로 되풀이된다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I220",
+      "target": "person:에테르",
+      "speaker": true,
+      "evidence": [{ "scene": "event_wisdomspring_01_e", "lines": [7] }],
+      "reason": "'7호?' 뒤 지휘관이 #8 '에테르?'라 부르고 #9부터 이름표 에테르.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I221",
+      "target": "person:마나",
+      "speaker": true,
+      "evidence": [{ "scene": "event_wisdomspring_04_e", "lines": ["4-5", 9] }],
+      "reason": "꿈속 '익숙한 목소리'가 #12부터 이름표 마나로 같은 대화를 잇고, 05_s#33 · epilogue#74가 마나 · 에테르였다고 되짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I222",
+      "target": "person:에테르",
+      "speaker": true,
+      "evidence": [{ "scene": "event_wisdomspring_04_e", "lines": [7, 10] }],
+      "reason": "'또 다른 익숙한 목소리'에게 #12 마나가 '…에테르'라 부르고 #14부터 이름표 에테르.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E577",
+      "act": "재언급",
+      "points": ["F614"],
+      "text": "에테르가 지휘관이 지상에서 병에 걸려 와 자기 연구실에서 치료받은 일을 꺼낸다",
+      "about": ["person:에테르", "person:지휘관"],
+      "evidence": [{ "scene": "event_wisdomspring_02_s", "lines": ["16-27"] }],
+      "reason": "#17 '저번에 지상에서 병에 걸려와서 내 연구실에 온 적'. 지휘관이 M.M.R. 실험체가 되어 낫던 일(F614).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E578",
+      "act": "암시",
+      "points": ["F1776"],
+      "text": "연구실을 왜 지하에 두느냐는 물음에 에테르가 '실험체가 도망가지 못할 테니까'라 농담한다",
+      "about": ["org:M.M.R."],
+      "evidence": [{ "scene": "event_wisdomspring_02_s", "lines": ["29-33"] }],
+      "reason": "#31. 1호부터 6호는 실패하거나 도망쳤고 7호만 도망치지 않았다는 말(F1776)과 겹친다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E579",
+      "act": "암시",
+      "points": ["F1771"],
+      "text": "에테르가 미리 승인받아 둔 손님용 출입증이 '아직 만료되지 않았나 보네' 하며 지휘관을 혼자 내려보내고 '재미있는 것도 많이 보라'고 한다",
+      "about": ["person:에테르"],
+      "evidence": [{ "scene": "event_wisdomspring_02_e", "lines": ["14-28", 54] }],
+      "reason": "#16 · #54. 곧 출입증이 만료되어 갇히고(03_e#74-79) 에테르가 꾸민 일로 드러난다(F1771).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E580",
+      "act": "암시",
+      "points": ["F1773"],
+      "text": "심층부 복도를 보던 지휘관이 까닭 모를 어지러움과 메스꺼움을 느낀다",
+      "about": ["person:지휘관", "place:M.M.R._심층부"],
+      "evidence": [{ "scene": "event_wisdomspring_03_s", "lines": ["9-12", 20] }],
+      "reason": "#11-12. 04_s#100 '심층부에 들어왔을 때부터'라 되짚고, 수조 연구실의 기시감 · 두통(F1773)으로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E581",
+      "act": "암시",
+      "points": ["F2204", "F2412"],
+      "text": "심층부에 M.M.R.의 전신 단체가 종교적 색채를 띠어 만들어 둔, 먼지 쌓인 기도실이 있다",
+      "about": ["org:M.M.R.", "place:M.M.R._심층부"],
+      "evidence": [{ "scene": "event_wisdomspring_04_s", "lines": ["13-22"] }],
+      "reason": "#20. M.M.R.은 D.E.E.P.이 미실리스와 만든 곳이고(F2412), 심층부 어둠의 D.E.E.P.은 사제 같은 차림으로 영광을 구한다(F2204).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E582",
+      "act": "암시",
+      "points": ["Q225"],
+      "text": "지엔이 처음 본 지휘관에게 '잘 컸네~ 잘 컸어'라 한다",
+      "about": ["person:지엔", "person:지휘관"],
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["18-21"] }],
+      "reason": "#21. 7호를 어릴 때부터 알았다는 투로, 지휘관이 프로젝트 A.D.의 7호가 된 경위(Q225)를 흘린다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E583",
+      "act": "암시",
+      "points": ["F2581"],
+      "text": "지엔이 방주의 [어둠]은 '우리를 먹여주고 재워주고 보살펴 주는' 방주라 한다",
+      "about": ["person:지엔", "place:방주"],
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["55-60"] }],
+      "reason": "#58-60. 방주 동력원이 시신을 [먹이]로 삼는다는 진실(F2581)을 비꼬듯 가리킨다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E584",
+      "act": "재언급",
+      "points": ["Q213"],
+      "text": "지엔이 지금은 밖에 나가면 시선이 끌리는 처지라 지휘관을 몰래 불렀다고 한다",
+      "about": ["person:지엔"],
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["95-99"] }],
+      "reason": "#97. side:wordless에서 대외 활동 없이 숨어 있다던 지엔(Q213)을 다시 꺼낸다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D594",
+      "person": "person:지휘관",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "방주 출생 · 사관학교 졸업 말고는 흐릿하던",
+      "after": "처음 온 심층부가 익숙하고 수조 속 [프로젝트] 대상자였던 꿈을 떠올려 '나는 인간이야?'라 묻는",
+      "trigger": [{ "scene": "event_wisdomspring_04_e", "lines": ["0-44"] }],
+      "points": ["F1773"],
+      "evidence": [{ "scene": "event_wisdomspring_05_e", "lines": ["10-15", "76-93"] }],
+      "reason": "#76 '나 여기가 익숙해' · #93. 앞 모습은 F588(char:12).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D595",
+      "person": "person:마나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "그간 도움을 많이 준 M.M.R. 연구원",
+      "after": "규칙상 답은 못 해도 연구원이 아닌 한 니케로서 사심 없이 쉬게 지키겠다며 검진 자료도 내주지 않는",
+      "evidence": [{ "scene": "event_wisdomspring_06_e", "lines": ["36-52"] }],
+      "reason": "#46-47 '[살아왔기] 때문' · #51-52. 앞은 01_s#41, 약속을 지킨 것은 epilogue#10-15.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D596",
+      "person": "person:에테르",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'7호'라 부르며 실험대에 올리겠다고 농을 거는",
+      "after": "'7호가 건강하면 됐다'며, 실패도 도망도 하지 않은 유일한 성공작이라 그 이름을 아끼는",
+      "evidence": [{ "scene": "event_wisdomspring_epilogue", "lines": ["33-43", "92-97"] }],
+      "reason": "#43 · #94-95. 꿈속 과거에도 '보다 보니 정이 든'(04_e#37).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D597",
+      "person": "person:지엔",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "사투리 섞인 말로 능청스럽게 놀리다가도 위험한 대답은 손으로 막는, 속을 알 수 없는 M.M.R. 연구원",
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["0-7", "71-79"] }],
+      "reason": "#0-7 마나의 입을 막고 [어둠]을 경고, #71-76 말할 뻔하다 놀림으로 돌린다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "D598",
+      "person": "person:지엔",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "보고 싶다며 가짜 초대로 지휘관을 홀로 불러들여 '7호'라 부르고, 방주와 자신에 대해 하나 더 알게 됐다고 속삭이는",
+      "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["89-113"] }],
+      "reason": "#89 '데려오게 만든 게 저라서요' · #94 · #113.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U252",
+      "topic": "기업 · 조직",
+      "text": "M.M.R. 연구원은 사유서로 승인받은 시간대로만 심층부에 드나들어 그 시간을 바꿀 수 없고, 안에서는 바깥과 연락이 끊긴다 — 조직이 연구원조차 믿지 않는다",
+      "about": ["org:M.M.R.", "place:M.M.R._심층부"],
+      "points": ["F1768"],
+      "evidence": [{ "scene": "event_wisdomspring_intermission_01", "lines": ["4-18"] }],
+      "reason": "#9-11 '승인받은 시간대로만 움직여야' · #15.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "U253",
+      "topic": "기술",
+      "text": "방주 이주 뒤 뛰어난 예술가 · 기술자 · 과학자를 니케로 만들어 지식을 보존했고, 수명에 매이지 않고 연구를 끝내려 니케가 되기를 자청한 이도 많다",
+      "about": ["org:M.M.R.", "concept:니케"],
+      "points": ["F1769"],
+      "evidence": [{ "scene": "event_wisdomspring_intermission_01", "lines": ["32-57"] }],
+      "reason": "#33-44 보존, #47-51 뇌 스캔으로 비밀을 못 숨김, #57 자청.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "U254",
+      "topic": "방주 사회",
+      "text": "지상에서 병을 얻어 온 사람은 M.M.R. 연구소에 와서 치료받아야 한다",
+      "about": ["org:M.M.R."],
+      "points": ["F614"],
+      "evidence": [{ "scene": "event_wisdomspring_02_s", "lines": ["20-24"] }],
+      "reason": "#22 '지상에서 병에 걸려오면, M.M.R. 연구소에 와서 치료받아야 하거든'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: event_wisdomspring_04_s#136-137 (태블릿이 꺼진 뒤 머릿속에 울린 프로젝트 설명 목소리 — 원문에 누구인지 없다). W12(04_s#85-88 마나의 '지휘관도 아는…') 확인 — 말이 끊겨 연구실을 쓰던 사람을 정할 수 없어 암시 언급으로 적지 않는다(지엔은 06_s#27에서 지휘관과 처음 본다고 해 맞지 않는다)."
+}

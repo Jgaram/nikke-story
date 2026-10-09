@@ -1,0 +1,67 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M80\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:430",
+  "session": "M80",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1788",
+      "person": "person:노이즈",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "머스탱이 능력 있는 프로듀서라 해서 찾아와, 건방졌다고 사과하며 시키는 대로 할 테니 신곡을 도와 달라는",
+      "evidence": [{ "scene": "ep:d_nikke_noise_01", "lines": ["30-44"] }],
+      "reason": "01#32 '네가 능력 있는 프로듀서라고 하던데' · #41-44 '미안 … 시키는 대로 할 테니까'. 출시순으로 기존 기준 D209(event_cherryblossom)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1789",
+      "person": "person:노이즈",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "머스탱 말만 믿고 찾아와 프로듀싱을 의심하면서도 따르던",
+      "after": "등을 떠밀어 준 프로듀서 덕분이라며 VVIP 티켓을 건네고 신곡을 '진심을 담은 사랑 노래'라 밝히는",
+      "trigger": [{ "scene": "ep:d_nikke_noise_05", "lines": ["28-34"] }],
+      "evidence": [{ "scene": "ep:d_nikke_noise_05", "lines": ["78-94", "111-117"] }],
+      "reason": "05#78-80 '다 프로듀서 덕분이야 … 등을 떠밀어줬으니까' · #113-117 'My Lovely Wonder P' '진심을 담은, 사랑 노래죠'. 계기는 망설이는 무대에서 지휘관의 외침(#29)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1790",
+      "person": "person:노이즈",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "편하게 노래를 만들다 떠밀리듯 유명해져 부담을 느끼고, 노래로 승부하는 싱어송라이터라 외모 · 캐릭터나 노래 밖의 어필은 상관없다는",
+      "evidence": [{ "scene": "ep:d_nikke_noise_02", "lines": ["31-41", "68-74", "82-83"] }],
+      "reason": "02#70-74 '떠밀려서 하는 거 … 부담을 느끼는 것 같아' · #82 '난 노래로 승부하는 싱어 송 라이터야'. 원 히트 원더 불안(#34-41)이 함께 그려진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1791",
+      "person": "person:노이즈",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "완벽한 곡을 내놓아야 한다는 압박에 팬과 TV로만 만나던",
+      "after": "팬들과 가까이 지내고 '가만히 있는 것보다 뭐라도' 하자며 단독 콘서트 신곡을 쏟아내는",
+      "trigger": [{ "scene": "ep:d_nikke_noise_03", "lines": ["122-129"] }],
+      "evidence": [{ "scene": "ep:d_nikke_noise_05", "lines": [66, "70-76"] }],
+      "reason": "05#72-74 '완벽한 것을 내놓아야 한다는 압박 … 지금은 될 대로 되라' · #66 '팬들이랑 좀 가깝게'. 계기는 악수회(03#127-129 'TV라는 중간 다리 없이도 되는구나')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M80", "note": "M80 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 기존 관계 기준 D209(event_cherryblossom)는 출시순으로 뒤라 이 단위의 D1788을 남기고 기각한다(docs/annotations.md 인물 변화 — 앞선 쪽을 남긴다). 아니스(자료를 잘못 보냄) · 라피 · 네온의 장면은 기존 기준대로라 적지 않았다. 시점 실마리 없음."
+}

@@ -1,0 +1,25 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M17\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:반드시사수하라",
+  "session": "M17",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U214",
+      "topic": "지상",
+      "text": "고래에 실려 권외까지 온 니케 부대는 지휘관이 녹아 죽자 '이래서 인간은' 하며 스스로 진을 치고 하모니 큐브를 지켜 방주와 통신하려 한다",
+      "about": ["item:하모니_큐브", "concept:니케"],
+      "points": ["F1393"],
+      "evidence": [{ "scene": "relic:반드시사수하라_01", "lines": ["2-8"] }],
+      "reason": "#4 '녹았다고? 하여간 이래서 인간은' — 지휘관을 잃는 것이 흔한 지상 부대의 모습",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+    }
+  ],
+  "note": "굴삭기(_04)와 고래(_01)는 Q184로 열려 있다 — 2회독에서도 정체를 정할 원문이 없다(베히모스 · 웨일리 짐작은 근거 없음)"
+}

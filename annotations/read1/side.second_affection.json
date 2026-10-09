@@ -1,0 +1,227 @@
+{
+  "unit": "side:second_affection",
+  "session": "R40",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "SECOND AFFECTION — ch14에서 방주에서 쫓겨난 마리안을 필그림 스노우 화이트 · 홍련 · 라푼젤이 지상으로 데려가 백기사(바이스리터)에게 맡기기까지와, 백기사 왕국에서 지내는 마리안. 깨어난 마리안이 지휘관에게 돌아가겠다고 떼쓰자 스노우 화이트는 돌아가면 해부당하고 지휘관이 방주를 적으로 돌려 죽는다고, 홍련 · 라푼젤은 지휘관이 힘을 키울 때까지 기다리라고 달랜다(F1358). 목적지는 '랩쳐가 관심을 가지지 않는 곳'(F1359). 도중 셋은 마리안에게 지상 생존법을 가르친다 — 홍련의 낚시 · '좋은 일만 생각하라' · 술, 라푼젤의 민가 뒤지기 · 책, 스노우 화이트의 '먹을 수 있는 건 다 먹어라' — 그 결과 마리안은 술꾼 · 아무거나 먹는 아이가 된다(F1362). 라푼젤 · 홍련은 인류 편으로 돌아선 헬레틱이 언젠가 혼자가 되어 어느 편에 설지 모른다고 걱정하고(F1360), 머물 곳으로 방주 · 에덴(도로시)을 뺀다(F1361). 홍련 · 라푼젤은 마리안이 머물 곳을 모르도록 도중에 헤어지고, 스노우 화이트가 혼자 고성의 크라운 · 차임에게 맡긴다 — 2주 동안 랩쳐 습격이 없었던 것은 마리안 때문이라고 확신하고(F1363 · Q178), 검은 빛이 나오면 쓰라며 희석한 언체인드 '나노머신 킬러'를 남긴다(F1364). 버림받았다 여겨 굶는 마리안 곁에 크라운이 날마다 말없이 앉고, 방주로 데려다주려 트롬베를 타지만 마리안이 돌아가자고 한다(F1365). 차임 · 크라운의 소원(F1366). 시간이 흘러 성숙해진 마리안(F1367), 에블라 입자로 앓는 크라운(F1368 · Q179), 성벽 차폐력이 약해져 몰려온 타일런트 급 셋을 마리안이 막고 크라운 · 차임이 거든다(F1369). 서로 지키는 마음을 깨달은 마리안의 몸이 검은 빛과 함께 변한다(F1370 · Q180). 에필로그: 방주 방향의 큰 폭발에 크라운 · 차임이 나서고, 마리안은 지휘관에게 '잘 지낸다'고만 전해 달라 한다(F1371).",
+  "scenes": [
+    { "scene": "side:second_affection_00", "text": "기절한 마리안을 업고 가는 필그림 셋 — 스노우 화이트의 자책, 라푼젤이 교대" },
+    { "scene": "side:second_affection_01", "text": "깨어난 마리안이 지휘관에게 가겠다고 떼씀 — 해부 · 지휘관의 죽음, 데리러 올 때까지 기다리라" },
+    { "scene": "side:second_affection_02", "text": "목적지는 랩쳐가 관심 없는 안전한 곳, 도보 1주" },
+    { "scene": "side:second_affection_03", "text": "잠 없이 걷자는 스노우 화이트, 라푼젤 · 홍련이 쉬자고 함" },
+    { "scene": "side:second_affection_04", "text": "홍련과 낚시 — 처음 보는 물고기, '좋은 일만 생각하라'" },
+    { "scene": "side:second_affection_05", "text": "생선구이 준비, 라푼젤 · 홍련의 걱정 — 혼자 버틸 힘을 2주 동안 가르치자" },
+    { "scene": "side:second_affection_06", "text": "스노우 화이트가 제 생선을 양보, 머물 곳 논의 — 방주 · 에덴은 안 됨" },
+    { "scene": "side:second_affection_07", "text": "필그림 셋의 가르침 몽타주 — 술 · 아무거나 먹기, 마리안이 망가짐" },
+    { "scene": "side:second_affection_08", "text": "숙취의 마리안, 큰 랩쳐와 교전" },
+    { "scene": "side:second_affection_09", "text": "홍련 · 라푼젤과 헤어짐, 스노우 화이트가 고성의 차임에게 데려감" },
+    { "scene": "side:second_affection_10", "text": "랩쳐 습격이 없던 2주, 크라운과 타일런트 급, 희석 언체인드 나노머신 킬러" },
+    { "scene": "side:second_affection_11", "text": "굶는 마리안 곁에 앉는 크라운, 방주로 가자며 트롬베를 부름" },
+    { "scene": "side:second_affection_12", "text": "트롬베 위 — 마리안이 돌아가자 함, 차임 · 크라운의 소원" },
+    { "scene": "side:second_affection_13", "text": "성숙해진 마리안, 에블라 입자로 앓는 크라운" },
+    { "scene": "side:second_affection_14", "text": "밤에 몰려온 타일런트 급 셋을 마리안 홀로 막음" },
+    { "scene": "side:second_affection_15", "text": "크라운 · 차임이 거듦, 서로 지키는 마음 — 마리안의 몸이 변함" },
+    { "scene": "side:second_affection_16", "text": "에필로그 — 방주 방향 큰 폭발, '잘 지낸다고만 전해 주세요'" }
+  ],
+  "facts": [
+    {
+      "id": "F1358",
+      "text": "방주에서 쫓겨나 필그림 셋에게 업혀 가던 마리안이 깨어나 지휘관에게 돌아가겠다고 하자, 스노우 화이트는 지금 돌아가면 해부당해 죽거나 마리안을 지키려 방주 전체를 적으로 돌린 지휘관이 죽을 것이라 했고, 홍련 · 라푼젤은 지휘관이 힘을 키울 시간이 필요하니 데리러 올 때까지 기다리면 자기들이 지키겠다고 했다",
+      "about": ["person:마리안", "person:스노우_화이트", "person:홍련", "person:라푼젤", "person:지휘관"],
+      "evidence": [{ "scene": "side:second_affection_01", "lines": ["14-52"] }],
+      "reason": "스노우 화이트 #32-39, 홍련 #41-44, 라푼젤 #45-52",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1359",
+      "text": "스노우 화이트는 마리안을 지휘관이 데리러 올 때까지 '랩쳐가 관심을 가지지 않는 곳'에 두려 했고, 마리안이 머물 곳을 모두가 알 필요는 없다며(라푼젤: 뇌를 스캔당하면 위험) 홍련 · 라푼젤과 도중에 헤어져 혼자 고성의 백기사 크라운 · 차임에게 맡겼다 — 도보 1주 예정이 2주가 걸렸다",
+      "about": ["person:마리안", "person:스노우_화이트", "person:크라운", "person:차임", "org:바이스리터"],
+      "evidence": [{ "scene": "side:second_affection_02", "lines": ["13-25"] }, { "scene": "side:second_affection_09", "lines": ["9-28", "38-52"] }],
+      "reason": "목적지(02 #19-21), 헤어짐과 이유(09 #20-25), 차임 '일주일이면 온다더니 벌써 이주'(#40)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1360",
+      "text": "라푼젤 · 홍련은 '인류의 편으로 돌아선 헬레틱'인 마리안이 힘든 삶을 살고 반드시 혼자가 될 날이 오며 그때 어느 편에 서 있을지 확신할 수 없다고 보아, 함께 가는 2주 동안 혼자서도 버틸 힘을 가르치기로 했다 — 스노우 화이트는 이미 자기 방식으로 가르치고 있었다",
+      "about": ["person:마리안", "person:라푼젤", "person:홍련", "person:스노우_화이트", "concept:헬레틱"],
+      "evidence": [{ "scene": "side:second_affection_05", "lines": ["47-69"] }],
+      "reason": "라푼젤 · 홍련의 대화(#50-65), 스노우 화이트(#67-68)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1361",
+      "text": "홍련은 마리안을 번갈아 데리고 다니자고 했지만 스노우 화이트는 자기들은 늘 위험하고 할 일이 있다며 거절했고, 라푼젤은 덜 여문 정신의 중심을 잡아 줄 머물 곳이 필요하다고 했다 — 방주는 쫓겨난 곳이라 안 되고, 에덴은 도로시가 있어 안 된다고 스노우 화이트가 막았다",
+      "about": ["person:마리안", "person:스노우_화이트", "person:라푼젤", "person:홍련", "place:에덴", "person:도로시", "place:방주"],
+      "evidence": [{ "scene": "side:second_affection_06", "lines": ["41-58"] }],
+      "reason": "대화 그대로(#41-52). 홍련 · 라푼젤이 제자를 두고 싶어 한 것은 #55-60",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1362",
+      "text": "가는 길에 필그림 셋은 마리안에게 지상에서 사는 법을 가르쳤다 — 홍련은 낚시와 '좋은 일만 생각하라', 마음을 다스리려면 술을 마시라 했고, 라푼젤은 주인 없는 민가에서 담요 · 땔감 · 책을 구하는 법을, 스노우 화이트는 랩쳐는 보이면 죽이고 먹을 수 있는 것은 먹어 보고 다 먹으라고 가르쳐 — 마리안은 과음하고 벽돌 · 총알까지 먹어 보려 했다",
+      "about": ["person:마리안", "person:홍련", "person:라푼젤", "person:스노우_화이트"],
+      "evidence": [{ "scene": "side:second_affection_04", "lines": ["15-89"] }, { "scene": "side:second_affection_07", "lines": ["11-118"] }],
+      "reason": "낚시 · 좋은 생각(04 #24-89), 가르침 몽타주(07). 크라운이 말한 마리안의 과음 · 주워 먹기(F1120)의 시작으로 읽힌다 — 그 연결은 이유에만 적는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1363",
+      "text": "스노우 화이트에 따르면 마리안을 데려간 2주 동안 랩쳐의 습격이 한 번도 없었다 — 조우 확률을 낮출 뿐인 라푼젤의 머리카락 재머로는 설명되지 않아, 스노우 화이트는 그것이 마리안과 관련 있다고 확신했다",
+      "about": ["person:마리안", "person:스노우_화이트", "person:라푼젤", "person:차임"],
+      "evidence": [{ "scene": "side:second_affection_10", "lines": ["12-21"] }],
+      "reason": "스노우 화이트 · 차임 대화(#15-20). 단 헤어지기 직전 일행이 먼저 달려가 큰 랩쳐 하나와 싸웠다(08 #9-31, 09 #2 '조용하던 랩쳐가 갑자기') — '습격'이 없었다는 말로 읽는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1364",
+      "text": "스노우 화이트는 크라운에게 마리안의 몸에서 검은 빛이 뿜어져 나오면 쓰라며 캡슐 세 개를 맡겼다 — 언체인드를 극도로 희석한 나노머신 킬러로, 거대화를 막을 수 있다",
+      "about": ["person:스노우_화이트", "person:크라운", "person:마리안", "concept:언체인드"],
+      "evidence": [{ "scene": "side:second_affection_10", "lines": ["62-68"] }],
+      "reason": "스노우 화이트 말 그대로(#65-67)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1365",
+      "text": "필그림 셋이 떠난 뒤 버림받았다 여겨 사흘을 굶고 말이 없던 마리안 곁에 크라운은 날마다 말없이 앉아 있었고, 백성을 지키는 것이 왕의 일이라며 방주로 가겠다는 마리안을 트롬베에 태워 데려다주려 했다 — 가는 길에 마리안은 자기도 아무 방법이 없었음을 알고 있었다며 돌아가자고 했다",
+      "about": ["person:마리안", "person:크라운", "person:차임"],
+      "evidence": [{ "scene": "side:second_affection_11", "lines": ["11-106"] }, { "scene": "side:second_affection_12", "lines": ["3-39"] }],
+      "reason": "크라운이 곁에 앉음(11 #30-62), 방주로 데려다주겠다(#92-106), 돌아가자(12 #23-39)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1366",
+      "text": "차임의 소원은 왕을 원한 것이었고 이미 이루었으며, 크라운은 자기 소원은 중요하지 않고 왕은 백성을 위해 존재하니 백성을 지키는 것뿐이라고 했다 — 차임은 마리안에게 어떤 대가를 치르더라도 이루고 싶은 소원이 있다면 왕을 알현하라고 했다",
+      "about": ["person:차임", "person:크라운", "person:마리안"],
+      "evidence": [{ "scene": "side:second_affection_12", "lines": ["45-75"] }],
+      "reason": "차임 · 크라운 말 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1367",
+      "text": "왕국에서 지내며 마리안은 차임이 '너무 급격하다' 할 만큼 성숙해졌고 — 굼벵이 요리 · 뱀술 · 고전 영화를 즐기고 크라운을 이름으로 부른다 — 필그림 셋이 얼마나 고마운 이들인지 깨닫고 보고 싶어 했다",
+      "about": ["person:마리안", "person:차임", "person:크라운", "person:스노우_화이트"],
+      "evidence": [{ "scene": "side:second_affection_13", "lines": ["0-33", "54-66"] }],
+      "reason": "차임의 관찰(#27-33), 마리안 말(#58-62)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1368",
+      "text": "크라운은 에블라 입자 농도가 짙어지면 몸이 안 좋아져 앓아누우며, 차임은 그 까닭을 비밀이라 했다",
+      "about": ["person:크라운", "person:차임", "concept:에블라_입자"],
+      "evidence": [{ "scene": "side:second_affection_13", "lines": ["34-51"] }],
+      "reason": "차임 '에블라 입자 농도가 짙어지면 힘들어하신다 … 자세한 건 비밀이다'(#47-49)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1369",
+      "text": "왕국 성벽의 차폐력이 약해져 랩쳐가 부쩍 다가오던 밤, 크라운은 앓고 차임은 전투용 니케가 아니라 마리안이 혼자 나가 타일런트 급 셋과 싸웠고, 마지막 하나는 트롬베를 탄 크라운이 코어를, 차임이 서브 코어를 부숴 잡았다",
+      "about": ["person:마리안", "person:크라운", "person:차임", "concept:타일런트_급"],
+      "evidence": [{ "scene": "side:second_affection_14", "lines": ["25-46"] }, { "scene": "side:second_affection_15", "lines": ["0-27"] }],
+      "reason": "마리안 혼잣말(14 #28-34), 교전(15 #14-26)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1370",
+      "text": "서로 지키면 끝없이 강해질 수 있음을 깨달은 마리안의 몸에서 검은 빛이 일렁이며 몸이 변하기 시작했고 — 크라운은 (경계할 그것과) '다르다'고 했다 — 마리안은 지휘관 · 카운터스 · 필그림 셋 · 크라운 · 차임을 반드시 지키겠다고 했다",
+      "about": ["person:마리안", "person:크라운", "person:차임"],
+      "evidence": [{ "scene": "side:second_affection_15", "lines": ["41-69"] }],
+      "reason": "서술(#54-60)과 마리안 말(#63-69). '아뇨. 달라요'(#59)는 차임의 놀람에 대한 답이라, 검은 빛이 나면 쓰라던 나노머신 킬러(F1364)를 쓸 상황이 아니라는 뜻으로 읽었다 — 추정이 섞인 부분은 괄호로 둠",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1371",
+      "text": "차임이 망원경으로 방주 방향의 큰 폭발을 보자 크라운 · 차임은 방주 쪽으로 직접 나섰고, 남은 마리안은 지휘관을 만나게 되면 '잘 지낸다'고만 전해 달라고 했다",
+      "about": ["person:차임", "person:크라운", "person:마리안", "place:방주"],
+      "evidence": [{ "scene": "side:second_affection_16", "lines": ["0-36"] }],
+      "reason": "대화 그대로. 어느 사건의 폭발인지는 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q178",
+      "text": "마리안을 데리고 다닌 2주 동안 랩쳐가 덤비지 않은 것은 마리안의 무엇 때문인가?",
+      "about": ["person:마리안"],
+      "evidence": [{ "scene": "side:second_affection_10", "lines": ["15-21"] }],
+      "reason": "스노우 화이트가 마리안과 관련 있다고 확신하나 까닭은 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "Q179",
+      "text": "크라운은 왜 에블라 입자 농도가 짙어지면 앓아눕나 — 차임이 비밀로 하는 크라운의 몸의 사정은 무엇인가?",
+      "about": ["person:크라운", "concept:에블라_입자"],
+      "evidence": [{ "scene": "side:second_affection_13", "lines": ["47-51"] }],
+      "reason": "차임 '자세한 건 비밀이다 … 나중에 알려주마'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "Q180",
+      "text": "서로 지키는 마음을 깨달은 마리안의 몸에서 검은 빛이 일렁이며 일어난 변화는 무엇인가 — 거대화와 무엇이 다른가?",
+      "about": ["person:마리안"],
+      "evidence": [{ "scene": "side:second_affection_15", "lines": ["54-69"] }],
+      "reason": "변화가 서술될 뿐 무엇이 되었는지는 나오지 않는다. 마리안 안의 검은 빛(Q68)과 이어지지만 답은 아니라 회수로 적지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S139",
+      "kind": "기준점",
+      "text": "ch14 직후 — 마리안이 방주에서 지상으로 올라온 날부터 2주의 여정, 이어 백기사 왕국에서 지낸 때(길이는 나오지 않는다)",
+      "ref": "ch14",
+      "at": [["직후", "ch14"]],
+      "evidence": [{ "scene": "side:second_affection_03", "lines": [44] }, { "scene": "side:second_affection_09", "lines": [40] }],
+      "reason": "라푼젤 '마리안은 오늘 방주에서 올라왔고요'(03 #44) — 필그림 셋이 마리안을 감싼 ch14(F373) 바로 뒤. 에필로그까지의 기간은 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R40", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M16",
+          "note": "2회독: 03#44 '마리안은 오늘 방주에서 올라왔고요' · 01#32-45 방주에서 쫓겨난 직후 — ch14 끝(지상으로 보냄)과 맞다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

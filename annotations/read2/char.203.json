@@ -1,0 +1,47 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M87\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:203",
+  "session": "M87",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1972",
+      "person": "person:루피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'진짜'가 되어 달라며 사귀는 오빠",
+      "after": "늦은 약속에 상처받아 도망쳤다가, '너와 함께하는 연말'이 선물이라는 말에 울며 '세상에서 제일 사랑한다'고 안기는",
+      "trigger": [{ "scene": "ep:d_nikke_rupee_wintershopper_03", "lines": ["104-106"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rupee_wintershopper_04", "lines": ["80-95"] }],
+      "time": "S50",
+      "points": ["F733"],
+      "reason": "02#41-43 '미안해' 하고 달아남 → 03#105 '먼저 적극적으로 나와주는' 데이트 → 04#80 '[너와 함께하는 연말]' · #95 '세상에서 제일 사랑하는 거 알지'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1973",
+      "person": "person:루피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "니케와 지휘관은 결국 갈라진다는 말에 불안해하는 연인",
+      "after": "'우린 그 예외가 될 것'이라는 답과 첫 키스로 '드디어 여자로 봐 줬다'며 들뜨는",
+      "trigger": [{ "scene": "ep:d_nikke_rupee_wintershopper_05", "lines": ["28-29"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rupee_wintershopper_05", "lines": ["19-29", "39-50"] }],
+      "time": "S50",
+      "points": ["F733"],
+      "reason": "#23 '폐기되거나, 죽어버려서' · #29 '우린 그 예외가 될 테니까' · #49-50 '사귄지 한참만에… 키스' · '여자로 봐줬다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 루피 성격 기준 D122 · → 지휘관 기준 D1803 · 신념 기준 D1805가 앞서 있어 다시 세우지 않았다. 슈가 · 시그널 · 아니스 · 네온 · 라피는 짧게 나와 세우지 않았다. 시점은 S50(MIRACLE SNOW와 같은 연말)이 있다."
+}

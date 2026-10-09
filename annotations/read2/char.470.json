@@ -1,0 +1,135 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M60\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:470",
+  "session": "M60",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I518",
+      "target": "person:도로시",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_01", "lines": ["21-22"] }],
+      "reason": "'바람 쐬러 혼자 멀리 간, 예전에도 그랬던 녀석' — ch26 야영에 함께한 레드 후드의 옛 동료는 도로시뿐(S109). 이름이 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "I519",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_02", "lines": ["4-9"] }],
+      "reason": "'니케라 부를 수 있는지 의문인 프로토타입' = 릴리바이스(F1182 — 페어리 테일 모델의 베이스).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "I520",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_02", "lines": [34] }],
+      "reason": "'대장이랑 릴리스가 있어서 수습' — 레드 후드의 '대장' = 갓데스의 지휘관 엔더슨(event_redash2 2회독과 같음, F2373).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "I521",
+      "target": "incident:아크_가디언_작전",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_03", "lines": ["59-61"] }],
+      "reason": "'마지막으로 방주를 지키는 작전' — 레드 후드가 떠난 뒤의 아크 가디언 작전(S288).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1336",
+      "act": "재언급",
+      "points": ["F1172"],
+      "text": "레드 후드가 갓데스 시절을 '행복했다'고 하고, 방주를 지키는 마지막 작전은 '개인 사정'으로 극 초반밖에 못 겪었다고 한다",
+      "about": ["person:레드_후드"],
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_03", "lines": ["56-61"] }],
+      "reason": "#57 · #60 — 침식을 안고 '함께 있을 수 있어서 행복했다'며 떠난 일(F1172)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "E1337",
+      "act": "재언급",
+      "points": ["F1129"],
+      "text": "레드 후드가 사는 게 좋다는 걸 아니 '나는 다 채웠으니' 라피를 살게 해 주겠다고 한다",
+      "about": ["person:레드_후드", "person:라피"],
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["66-72"] }],
+      "reason": "#69-71 — ch26에서 인젝션 건으로 라피에게 몸을 돌려준 일(F1129, 같은 날 앞)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1482",
+      "person": "person:레드_후드",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "'자랑스러운 동료'로 작별하러 돌아가던",
+      "after": "다 채웠으니 보고 싶은 동료도 만나지 않고 라피에게 사는 재미를 돌려주겠다는",
+      "time": "S109",
+      "points": ["F1196"],
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["61-72"] }],
+      "reason": "#64 '흔들릴 것 같거든' · #68-71.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1483",
+      "person": "person:레드_후드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'미남'이라 놀리며 라피를 돌려주겠다고 약속하던",
+      "after": "'미남. 너도 살아. 산다는 건 좋은 거야'라고 당부하는",
+      "time": "S109",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["73-80"] }],
+      "reason": "#76-77, 지휘관 '살게'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1484",
+      "person": "person:레드_후드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:스노우_화이트"],
+      "before": "'우리 귀여운 스노우'라며 놀리던",
+      "after": "'그 꼬마가' 믿음직한 리더가 됐다니 웃고, 너무 보고 싶지만 흔들릴까 봐 연락을 마다하는",
+      "time": "S109",
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["22-67"] }],
+      "reason": "#30-32 · #55-64. 라푼젤 · 홍련의 소식에도 같은 반응.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    },
+    {
+      "id": "D1485",
+      "person": "person:아니스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "방주의 인간들은 엉망이고 자기도 '방주에 갇힌 누군가'라던",
+      "after": "말도 탈도 많지만 모두 살아 있으니 목숨 바쳐 지킬 가치가 넘친다는",
+      "trigger": [{ "scene": "ep:d_nikke_RedHood_04", "lines": ["54-66"] }],
+      "time": "S109",
+      "points": ["F1195"],
+      "evidence": [{ "scene": "ep:d_nikke_RedHood_04", "lines": ["69-77"] }],
+      "reason": "#36-53 → 레드 후드의 '그냥 사람 사는 곳' · 가치를 묻는 말에 #71-77.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+    }
+  ],
+  "life": []
+}

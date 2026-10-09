@@ -1,0 +1,89 @@
+{
+  "unit": "char:382",
+  "session": "R35",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "레오나 — 티미가 레오나를 피하고 특식을 숨기는 등 이상해 지휘관이 지켜보니 발정기였다(01). 맹수는 종 보존 · 번식 목표로 중성화하지 않는다는 것, 레오나 · 지휘관 · 티미 셋이 암사자를 찾으러 지상에 오른다(02, F1253 · F1254). 티미가 벌써 세 마리를 만났지만 퇴짜 · 얻어맞음(03), 며칠 뒤 자신감을 잃은 티미를 레오나가 격려해 혼자 보낸다(04). 며칠 뒤 야생 사자처럼 돌아온 티미(F1255), 마지막 밤 레오나가 지휘관에게 본능에 몸을 맡겨 보자고 다가간다(05, F1256). 보호소로 돌아온 티미는 원래 모습으로 돌아간다.",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_leona_01",
+      "text": "티미의 이상 행동 — 레오나를 피하고 특식을 숨김, 큰 개를 끌어안자 발정기로 판명"
+    },
+    {
+      "scene": "ep:d_nikke_leona_02",
+      "text": "맹수는 중성화 안 함(종 보존), 암사자를 찾으러 셋이서 지상에"
+    },
+    {
+      "scene": "ep:d_nikke_leona_03",
+      "text": "지상 초원 — 티미가 암사자 셋을 만났지만 실패, 야영 밤 '티미를 믿어 주기'"
+    },
+    {
+      "scene": "ep:d_nikke_leona_04",
+      "text": "며칠째 — 자신감 잃은 티미를 격려해 혼자 보냄, 티미 없는 첫 밤 · 반딧불이"
+    },
+    {
+      "scene": "ep:d_nikke_leona_05",
+      "text": "야생 사자처럼 돌아온 티미, 마지막 밤 레오나의 고백, 보호소에서 원래대로"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1253",
+      "text": "해피 주 보호소는 들어오는 개 · 고양이를 모두 중성화하지만 맹수는 종 보존과 가능하면 번식이 목표라 중성화할 수 없게 되어 있다 — 처음 발정기가 온 티미를 위해 레오나 · 지휘관 · 티미 셋이 암사자를 찾으러 지상에 올라갔다",
+      "about": ["org:해피_주", "person:티미", "person:레오나"],
+      "evidence": [{ "scene": "ep:d_nikke_leona_01", "lines": ["19-21", 79] }, { "scene": "ep:d_nikke_leona_02", "lines": ["3-21", "38-75"] }],
+      "reason": "비스킷 · 레오나 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1254",
+      "text": "레오나에 따르면 랩쳐는 동물을 공격하지 않지만 동물은 본능적으로 랩쳐에게서 도망 다녀 동물이 무리 짓는 곳 주변은 안전하고, 해피 주는 초식 · 육식 동물이 많이 사는 지상 초원에 자주 정찰을 나온다",
+      "about": ["concept:랩쳐", "org:해피_주", "person:레오나"],
+      "evidence": [{ "scene": "ep:d_nikke_leona_02", "lines": ["60-63"] }, { "scene": "ep:d_nikke_leona_03", "lines": ["37-39"] }],
+      "reason": "레오나 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1255",
+      "text": "보호소에서 어릴 때부터 자란 티미는 자연에서 자란 사자들에게 밀려 며칠 만에 자신감을 잃었지만 레오나의 격려로 혼자 떠나 며칠 뒤 야생 사자 같은 모습으로 돌아왔고 — 보호소에서 며칠 지내자 원래 모습으로 돌아갔다",
+      "about": ["person:티미", "person:레오나"],
+      "evidence": [{ "scene": "ep:d_nikke_leona_04", "lines": ["0-53"] }, { "scene": "ep:d_nikke_leona_05", "lines": ["0-34", "107-117"] }],
+      "reason": "서술과 레오나의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1256",
+      "text": "지상의 마지막 밤 레오나는 암사자가 강하고 매력 있는 수사자에게 이끌리듯 자기도 강하고 매력 있는 남자에게 이끌린다며 지휘관에게 본능에 몸을 맡겨 보자고 다가갔고, 티미가 망을 봐 주었다",
+      "about": ["person:레오나", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_leona_05", "lines": ["69-106"] }],
+      "reason": "레오나 본인 말. 그 뒤는 서술로 넘긴다(#104-106)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S121",
+      "kind": "기준점",
+      "text": "티미가 아직 보호소에서 레오나와 지내는 어느 때 — 지상에서 며칠을 보내고 돌아온 뒤 며칠",
+      "ref": "char:382",
+      "at": [],
+      "evidence": [{ "scene": "ep:d_nikke_leona_04", "lines": [0] }, { "scene": "ep:d_nikke_leona_05", "lines": [0, 107] }],
+      "reason": "'며칠째', '며칠 후'. event_lionheart(맹수들을 풀어 준 일)와의 앞뒤는 원문에 없다 — 보호소에 다른 동물들이 있어 그 전으로 보일 수도 있다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

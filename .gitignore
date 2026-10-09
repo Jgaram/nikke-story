@@ -1,0 +1,14 @@
+# data/raw/(원문 스냅샷)는 private 서브모듈 Jgaram/nikke-story-raw다. 원문은 이 레포에 커밋하지 않는다 (CLAUDE.md "저작물 취급").
+# 정규화 결과와 DB는 raw에서 네트워크 없이 10초 남짓이면 재생성되므로 커밋하지 않는다.
+# nikke.db는 117MB라 GitHub 파일 한도(100MB)를 넘고, lines.json도 50MB가 넘는다.
+data/normalized/
+data/nikke.db
+data/nikke.db-*
+
+node_modules/
+__pycache__/
+.venv/
+*.pyc
+
+.DS_Store
+.env

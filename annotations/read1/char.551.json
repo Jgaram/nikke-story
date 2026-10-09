@@ -1,0 +1,53 @@
+{
+  "unit": "char:551",
+  "session": "R45",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "클레이 호감도 스토리(event_onemoretime · event_darkhero 뒤로 추정, S156). 무릎 관절이 아슬아슬한 클레이에게 메어리는 연습을 멈추게 하고, 부품 교체는 사고 전환 위험이 있다며 거절한다. 밤에 몰래 연습하러 간 경기장을 베이가 지키고 있다가 연습 금지를 선언하고 지휘관에게 감시 겸 휴식을 부탁한다(F1504). 쉬는 법을 모르는 클레이(쉴 때도 영상 복습 · 안무 · 체력 단련)를 위해 지휘관이 '휴식의 고수'를 찾아다닌다 — 프림의 낮잠(3초 만에 잠드는 프림, 클레이는 못 잠), 엑시아 · 트로니와 게임(서포터 = 현실 응원, 박치), 지휘관실의 아니스 · 네온의 힘 빼기. 끝에 클레이는 가장 좋아하는 응원 — 리와인드 공연 영상 보기 — 가 자기 휴식법임을 깨닫고, 몇 주 뒤 리와인드는 다시 둘이 되어 복귀한다(F1505).",
+  "scenes": [
+    { "scene": "ep:d_nikke_clay_01", "text": "메어리의 연습 중지 · 부품 교체 거절, 경기장을 지킨 베이가 지휘관에게 감시 겸 휴식을 부탁" },
+    { "scene": "ep:d_nikke_clay_02", "text": "프림에게 낮잠을 배우지만 힘이 들어가 못 잠" },
+    { "scene": "ep:d_nikke_clay_03", "text": "엑시아 · 트로니와 게임 — 서포터를 현실 응원으로 알아들음, 박치" },
+    { "scene": "ep:d_nikke_clay_04", "text": "지휘관실의 아니스 · 네온에게 힘 빼는 법을 배움" },
+    { "scene": "ep:d_nikke_clay_05", "text": "공연 영상 보기가 클레이만의 휴식법, 몇 주 뒤 리와인드 복귀 무대" }
+  ],
+  "facts": [
+    {
+      "id": "F1504",
+      "text": "무릎 관절이 아슬아슬해진 클레이가 전처럼 부품 교체를 청하자 메어리는 사고 전환이 쉽게 올 수 있다며 연습을 중지시켰고, 베이는 몰래 연습하러 온 클레이를 경기장 앞에서 막아 오래 함께 뛰고 싶다며 연습을 금지하고 지휘관에게 감시 겸 휴식을 부탁했다",
+      "about": ["person:클레이", "person:메어리", "person:베이", "concept:사고_전환"],
+      "evidence": [{ "scene": "ep:d_nikke_clay_01", "lines": ["0-11", "19-36"] }],
+      "reason": "메어리 · 베이의 말. 잦은 부품 교체와 사고 전환(F1496)과 같은 이야기",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    },
+    {
+      "id": "F1505",
+      "text": "쉴 때도 영상 복습 · 안무 연습 · 체력 단련만 하던 클레이는 프림 · 엑시아 · 트로니 · 아니스 · 네온에게 쉬는 법을 배우다 가장 좋아하는 응원 — 리와인드 공연 영상 보기 — 가 자기만의 휴식법임을 깨달았고, 몇 주 뒤 리와인드는 다시 둘이 되어 복귀 무대를 마쳤다",
+      "about": ["person:클레이", "person:베이", "org:리와인드", "person:프림", "person:엑시아", "person:트로니", "person:아니스", "person:네온"],
+      "evidence": [{ "scene": "ep:d_nikke_clay_01", "lines": ["56-60"] }, { "scene": "ep:d_nikke_clay_05", "lines": ["22-29", "57-65", "73-91"] }],
+      "reason": "클레이 · 지휘관의 말과 독백(05 #76). 베이는 클레이가 쉴 때도 스스로를 몰아붙여 걱정이었다고 했다(05 #90-91)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S156",
+      "kind": "기준점",
+      "text": "event_onemoretime 뒤, event_darkhero 뒤 — 클레이가 리와인드에 들어와 베이 곁에 선 뒤",
+      "ref": "event_onemoretime",
+      "at": [["뒤", "event_onemoretime"], ["뒤", "event_darkhero"]],
+      "evidence": [{ "scene": "ep:d_nikke_clay_01", "lines": [27, 31] }, { "scene": "ep:d_nikke_clay_03", "lines": ["17-19"] }],
+      "reason": "'이제야 간신히 베이 옆에 섰는데'(01 #27) · '어려운 시기에 들어와 준 소중한 팀원'(01 #31), 트로니를 뉴스에서 봤다(03 #17-19, event_darkhero의 방송 F1465). event_claymore와의 앞뒤는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    }
+  ],
+  "targets": []
+}

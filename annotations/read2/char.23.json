@@ -1,0 +1,70 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M101\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:23",
+  "session": "M101",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I681",
+      "target": "person:델타",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_01", "lines": [16] }],
+      "reason": "#16 '거기까지지 말입니다' 뒤 #20-21 '괴도 닌자. 델타라고 합니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "I682",
+      "target": "person:팬텀",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_01", "lines": [102] }],
+      "reason": "#102 '~시오' 말투 — 천장에서 떨어진 괴도단(#109) 가운데 #111-112 팬텀.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "I683",
+      "target": "person:퀀시",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_01", "lines": [103] }],
+      "reason": "#103 '키킥' — #113 퀀시의 웃음.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "I684",
+      "target": "person:미란다",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_01", "lines": [104] }],
+      "reason": "#104 '~습니다!' — 괴도단 셋 중 남은 미란다(#114).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2188",
+      "person": "person:델타",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'존경하는 상관'에게 시그널에게 배운 로맨스대로 조심스레 다가가던",
+      "after": "지휘관의 목소리를 못 알아들을 리 없다며 24시간 365일 감시를 자청해 한 침대에 눕고 '눈요기도 겸사겸사'라 하는",
+      "trigger": [{ "scene": "ep:d_nikke_delta_ninjathief_05", "lines": ["90-95"] }],
+      "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_05", "lines": [56, "92-95", "119-126"] }],
+      "time": "S267",
+      "reason": "05#56 '목소리를 못 알아들을 리가' · #94 '24시간 365일 감시' · #126 '눈요기도'. 앞 모습은 D1797.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 정체 볼 줄 — 정할 수 없음: ep:d_nikke_delta_ninjathief_01#105,108 (천장에서 떨어지는 셋 중 누구의 비명인지 원문이 가리지 않는다 — #104 미란다 뒤라 미란다일 수 있다). 델타가 다시 정식 단원을 사양한 것(05#79-88)은 D1645의 '수습으로 남아 배우려는' 모습과 같아 다시 세우지 않았다. 팬텀이 가짜 사건을 꾸민 것은 D1646(몰래 뒤를 받침)과 같은 모습. 시점 S267은 델타가 이미 정의 괴도단의 괴도 닌자로 나오고(01#20) 05#109 '또 다른 괴도 소동'이라 fl:go_ninja_thief 뒤가 분명해 확실로 고쳤다."
+}

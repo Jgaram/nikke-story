@@ -1,0 +1,62 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M84\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:201",
+  "session": "M84",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I640",
+      "target": "person:얀",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_yan_04", "lines": ["57-58"] }],
+      "reason": "04#57-58 '역시 내 안목이 틀리지 않았네' — 지휘관을 고용한 얀이 지켜본 말이고, #98 얀이 이어서 '장사하는 재미를 알아버린 거지'라 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I641",
+      "target": "person:얀",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_yan_05", "lines": [53] }],
+      "reason": "05#53 '1년이 뭐고. 10년이고 20년이고' 사투리 — 바로 #54 루피 '…얀?!'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1885",
+      "person": "person:얀",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "아무도 안 가져갈 물건을 구성 · 진열로 팔아내는 기분은 한번 알면 못 놓는다며, 온 방주의 돈을 쓸어담는 사업 확장을 꿈꾸는",
+      "evidence": [{ "scene": "ep:d_nikke_yan_04", "lines": ["98-103"] }],
+      "reason": "04#99-102 '가만히 두면 아무도 안 가져갈 물건을 … 팔아냈을 때의 그 기분 … 절대 손에서 못 놓는다'. 05#81 '넘어서야 할 회사들도 많으니까'. 얀 신념 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1886",
+      "person": "person:얀",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "매상을 올려 주는 단골 '신참'(호객) 손님",
+      "after": "로열 로드점을 함께 운영하며 '방주가 열린 이래 처음'인 신참이라 인정하는 사업 동료",
+      "trigger": [{ "scene": "ep:d_nikke_yan_03", "lines": ["94-107"] }],
+      "evidence": [{ "scene": "ep:d_nikke_yan_05", "lines": ["93-100"] }],
+      "points": ["F610"],
+      "reason": "02#36 '단골 호객ㄴ…' → 05#95-98 '니만의 상술까지 개발하고. 아마 니 같은 신참은 방주가 열린 이래 처음일 기다' · #100 다음 사업 아이디어를 묻는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: ep:d_nikke_yan_03#109,111,115 (얀 매장의 남자 직원 — #116 '남자는 신이 나서 떠나갔다', 이름 없는 단역). 바로잡기: 시점 S374(CH.15 뒤 — 얀이 '오래간만'이라며 지휘관을 이미 앎, 추정 · S370과 같은 기준). 아니스 · 라피 · 네온의 과소비 · 지휘관의 장사 재미는 코미디라 인물 변화로 세우지 않았다."
+}

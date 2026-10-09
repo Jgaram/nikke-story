@@ -1,0 +1,34 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:지휘관모집공고",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I29",
+      "target": "concept:니케",
+      "evidence": [{ "scene": "relic:지휘관모집공고_02", "lines": [2] }],
+      "reason": "'승리의 여신들이 당신을 위해 싸워줄 테니까요' — 니케. 공고에 니케라는 이름은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U63",
+      "topic": "구시대",
+      "text": "랩쳐 전쟁 중 지휘관 모집은 '인류를 위한 젊은 도전'에서 '싸우지 않아도, 총을 쏠 줄 몰라도 된다 — 승리의 여신들이 싸워 준다'로 바뀌고 자격도 '남성' 하나만 남았다",
+      "about": ["concept:니케"],
+      "points": ["F273"],
+      "evidence": [{ "scene": "relic:지휘관모집공고_02", "lines": ["0-6"] }],
+      "reason": "1기(_00#0-5) → 3기(_02#0-6). 사람이 모자라 니케에게 싸움을 맡기게 된 흐름",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:어느의사의수기",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U73",
+      "topic": "구시대",
+      "text": "침공기 지상에서는 의사 · 간호사가 하나둘 사라져도 남은 이가 무너진 병원 구석에서 약품이 바닥나도록 숨어 사는 환자들을 받아 치료했다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F329"],
+      "evidence": [{ "scene": "relic:어느의사의수기_00", "lines": ["0-7"] }],
+      "reason": "#0-5. _02#3 '환자들은 지상 어딘가에 숨어 있다가 병원을 찾는다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    },
+    {
+      "id": "U74",
+      "topic": "구시대",
+      "text": "함께 버티던 간호사는 '방주로 가는 게 낫다'는 메모를 남기고 사라졌고, 남은 의사는 방주행을 포기와 같은 것으로 여기며 자리를 지켰다",
+      "about": ["place:방주"],
+      "points": ["F329"],
+      "evidence": [{ "scene": "relic:어느의사의수기_01", "lines": ["0-5"] }],
+      "reason": "#1-4 · _02#0-2 '아마 방주로 간 거겠지'. 방주로 가는 길이 남은 이들의 선택지였다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

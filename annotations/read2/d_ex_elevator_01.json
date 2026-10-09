@@ -1,0 +1,38 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "d_ex_elevator_01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E62",
+      "act": "암시",
+      "points": ["F233"],
+      "text": "넷이 탔는데 정원 초과 램프가 켜지고, '네온'이 70년 전 엘리베이터의 모델 넘버를 외워 말한다 — 함께 탄 '네온'이 네온이 아니라는 것(F233)",
+      "about": ["person:네온"],
+      "evidence": [{ "scene": "d_ex_elevator_01", "lines": [2, "60-62", 66] }],
+      "reason": "#2 정원 초과 · #62 '그런 것도 외우고 다니냐' · #66 구석의 같은 번호. 정체는 #70-71에서 드러난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U46",
+      "topic": "방주 사회",
+      "text": "방주는 지친 전쟁의 책임을 니케에게 돌려 니케 인권이 바닥이었고, 갓데스 폴 뒤 나아졌어도 '아직 갈 길이 멀다' — 수리된 엘리베이터는 니케 인권의 상징으로 정치에 쓰이고, 니케들은 그 이야기를 슬퍼한다",
+      "about": ["incident:갓데스_폴", "concept:니케"],
+      "points": ["F230", "F232"],
+      "evidence": [{ "scene": "d_ex_elevator_01", "lines": ["23-25", "44-47", "54-55"] }],
+      "reason": "#23-25 · #46-47 아니스 · #54-55. 아니스는 끝에 '우리도 죽어서 갈 곳이 있구나'(#94)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: d_ex_elevator_01#71,73-80 (갓데스 폴에서 죽은 200 니케 가운데 하나 — 이름 없는 무리). 같은 씬 #0-67의 '네온' 이름표 줄도 이 존재다(#85 진짜 네온은 타지 않았다) — 자동 speaks가 네온으로 센다"
+}

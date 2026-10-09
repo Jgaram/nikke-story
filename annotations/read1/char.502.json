@@ -1,0 +1,81 @@
+{
+  "unit": "char:502",
+  "session": "R66",
+  "by": "claude",
+  "date": "2026-10-03",
+  "summary": "일레그 : 붐 앤 쇼크 — 유토피아 호에서 일이 대부분 끝난 뒤. 크루즈의 디스플레이란 디스플레이(게임 센터 연동 · 극장 스크린 · 얀의 계산기 · 페퍼의 체온계 · 프림의 안대 프로젝터)에 BOOM을 다 깐 일레그가 '방주와 다르지 않다'며 슬럼프에 빠진다(01–03). 갑판에서 차를 마시던 도로시 · 라피와 만나고, 도로시가 경험으로 밤에 옅은 구름이 깔린다고 하자 지휘관이 구름을 디스플레이로 쓰자고 한다(04). 탐조등을 빔 프로젝터로 개조한 [BOOM 이터널] 작전으로 구름에 BOOM을 띄우고, 페퍼 · 프림 · 얀은 방주에서 그러면 하늘이 가짜임을 다시 깨닫는 '그 사건'이 재현될 수 있다고 한다. 일레그는 트로니와 진짜 하늘을 되찾아 주고 필요 없어진 이터널 스카이에 BOOM을 깔겠다고 한다(05).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_eleggboomandshock_01",
+      "text": "수영장 튜브 위 — BOOM을 어디 깔지 모르겠다는 일레그의 슬럼프"
+    },
+    {
+      "scene": "ep:d_nikke_eleggboomandshock_02",
+      "text": "얀의 계산기 · 페퍼의 체온계 · 프림의 안대에 깐 BOOM 소동"
+    },
+    {
+      "scene": "ep:d_nikke_eleggboomandshock_03",
+      "text": "게임 센터 · 극장에 깐 BOOM — 갑판에서 차를 마시는 라피 · 도로시"
+    },
+    {
+      "scene": "ep:d_nikke_eleggboomandshock_04",
+      "text": "도로시의 차와 날씨 예측 — 구름을 디스플레이로 쓰자는 지휘관"
+    },
+    {
+      "scene": "ep:d_nikke_eleggboomandshock_05",
+      "text": "[BOOM 이터널] — 탐조등 프로젝터로 구름에 BOOM, 진짜 하늘과 이터널 스카이의 꿈"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2040",
+      "text": "유토피아 호에서 일레그는 디스플레이가 있는 곳마다 BOOM을 깔고도 방주에서 하던 것과 다르지 않다며 슬럼프에 빠졌다가, 지휘관의 제안으로 크루즈 탐조등을 빔 프로젝터로 개조해 밤하늘의 옅은 구름에 BOOM을 띄웠다([BOOM 이터널] 작전)",
+      "about": ["person:일레그", "place:유토피아_호"],
+      "evidence": [
+        { "scene": "ep:d_nikke_eleggboomandshock_01", "lines": ["65-85"] },
+        { "scene": "ep:d_nikke_eleggboomandshock_04", "lines": ["81-95"] },
+        { "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["0-19", "84-91"] }
+      ],
+      "reason": "일레그의 말과 서술. 구름이 옅게 깔린다는 것은 도로시가 기온 · 풍향으로 읽은 '경험적 지식'(04 #41-44, #66)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F2041",
+      "text": "페퍼 · 프림 · 얀은 하늘에 BOOM을 띄우는 일을 방주에서 하면 '그 사건' — 진짜라고 생각했던 하늘이 가짜라는 것을 다시 깨닫게 하는 일 — 이 재현될 수 있어 위험하다고 했다",
+      "about": ["person:페퍼", "person:프림", "person:얀", "concept:이터널_스카이"],
+      "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["98-106"] }],
+      "reason": "페퍼(#102-103) · 프림(#100, #104)의 말. '그 사건'은 이터널 스카이 광고 사건(F589-2)으로 읽히지만 원문이 이름 대지 않아 이유에만 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F1342-2",
+      "act": "드러냄",
+      "text": "일레그는 트로니와 함께 언젠가 사람들에게 이터널 스카이가 아닌 진짜 하늘을 되찾아 주고, 필요 없어진 이터널 스카이에 BOOM을 깔겠다고 했다 — 지상 탈환이 그 첫 클리어 조건이다",
+      "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["159-172"] }],
+      "reason": "일레그의 말(#161-170) — 트로니와 함께 진짜 하늘을 보여 주겠다는 F1342를 다시 말함",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S246",
+      "kind": "기준점",
+      "text": "fl:boom_the_ghost 뒤 유토피아 호 — 일이 대부분 정리되고 지휘관이 보고서를 쓰는 무렵",
+      "ref": "fl:boom_the_ghost",
+      "at": [["직후", "fl:boom_the_ghost"]],
+      "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_01", "lines": [0, 7, "15-20"] }, { "scene": "ep:d_nikke_eleggboomandshock_04", "lines": [19] }],
+      "reason": "크루즈 수영장 · 할 일은 다 끝남 · 보고서(01 #7-20), 도로시의 차는 '이번 일에 대한 보답'(04 #19) — 크라켄 격추 뒤 복귀 지점까지 가는 동안(fl:boom_the_ghost_26)으로 읽힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ]
+}

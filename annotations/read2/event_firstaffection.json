@@ -1,0 +1,58 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M92\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_firstaffection",
+  "session": "M92",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1607",
+      "act": "암시",
+      "points": ["F1065", "J1"],
+      "text": "옷 냄새가 지워져 시무룩한 마리안에게 라피가 '사라지지 않는 이상 언제든 되돌릴 수 있어'라 한다 — 지상의 마리안이 이 말로 다시 돌아갈 날을 믿는다",
+      "about": ["person:마리안", "person:라피"],
+      "evidence": [{ "scene": "event_firstaffection_07", "lines": ["19-24"] }],
+      "reason": "07#22-23 라피 '사라지지 않는 이상. 언제든 되돌릴 수 있어' → 08#69-70 '사라지지 않으면 언제든 되돌릴 수 있으니까요' — 같은 말을 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M92" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2059",
+      "person": "person:마리안",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "오물 웅덩이에 뛰어들고 철장을 구부리며 지휘관 인형을 내놓으라 떼쓰는 아이 같은",
+      "after": "차임 · 크라운과 식탁에 앉아 '후후' 웃으며 홍련의 술 · 굼벵이 · 고전 영화 얘기를 꺼내는 의젓한",
+      "trigger": [{ "scene": "event_firstaffection_02", "lines": ["13-42"] }],
+      "evidence": [{ "scene": "event_firstaffection_08", "lines": ["15-28", "40-52"] }],
+      "time": "S92",
+      "points": ["F1065", "F1066"],
+      "reason": "회상(S91) 02-07의 아이 같은 마리안과 08 지금의 '어머 · 후후' 말투가 대비된다. 출시순으로 이 성숙이 처음 그려진 곳 — 그 과정은 뒤 출시 side:second_affection(D417).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M92" }]
+    },
+    {
+      "id": "D2060",
+      "person": "person:마리안",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "자기를 필그림에게 떠나보낸 지휘관을 원망하던",
+      "after": "지휘관의 선택을 이해하고, 카운터스와 행복했던 때로 돌아가리라 믿으며 찾으러 올 때까지 기다리겠다는",
+      "evidence": [{ "scene": "event_firstaffection_08", "lines": ["59-76"] }],
+      "time": "S92",
+      "points": ["F1065"],
+      "reason": "#64 '처음엔 지휘관 원망도 많이 했지만, 지금은 지휘관을 이해할 수 있어요' · #72-74 '찾으러 올 때까지 계속 기다릴게요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M92" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 회상(S91, 02-07)의 마리안은 D111(아이처럼 제멋대로)과 같은 모습이라 다시 적지 않았다. D2059는 출시순으로 지금의 의젓한 마리안이 처음 그려진 곳이고, 뒤 출시 side:second_affection의 D417은 그렇게 바뀌는 과정(작중으로는 이보다 앞)이라 둘 다 둔다. 차임 · 크라운과의 관계는 D921 · D416이 있고 이 단위는 얕다. 아니스의 '나도 펀딩 했는데'(05#8)는 줄기에 걸리지 않는다. 시점 S91 · S92(추정)는 원문이 더 좁히지 않아 그대로 두었다. `???` 없음."
+}

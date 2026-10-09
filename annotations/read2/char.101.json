@@ -1,0 +1,38 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M81\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:101",
+  "session": "M81",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1798",
+      "person": "person:드레이크",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'네놈'이라 부르며 빌런 연합에 끌어들이고, 다른 지원자를 다 내친 끝에 지휘관 하나만 연합원으로 데리고 다니며 '좀 더 진심을 담아 반응하라'고 다그치는",
+      "evidence": [{ "scene": "ep:d_nikke_drake_01", "lines": ["35-38", "128-131"] }],
+      "reason": "01#35 '좀 더 진심을 담아 반응해라' · #128-129 '네놈과 나. 둘만으로'. 드레이크 → 지휘관 관계 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1799",
+      "person": "person:드레이크",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "'메티스의 드레이크'로만 기억되는 게 싫어, 자기 이름으로 메티스보다 유명해지려고 역사에 길이 남을 빌런이 되겠다는",
+      "evidence": [{ "scene": "ep:d_nikke_drake_01", "lines": ["19-33"] }],
+      "points": ["F476"],
+      "reason": "01#21-22 '[메티스의 드레이크]라고 기억 … 싫다' · #33 '메티스보다 더 유명해질 것'. 신념 변화 D1778(fl:great_villain_union)보다 출시순으로 앞선 기준",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": []
+}

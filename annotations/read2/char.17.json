@@ -1,0 +1,81 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M102\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:17",
+  "session": "M102",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I688",
+      "target": "person:아니스",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_anis_star_01", "lines": ["0-1"] }],
+      "reason": "잠결에 들린 '…평소랑… 귀엽…'을 #4 들여다보던 아니스가 #10 '자는 모습은 평소랑 많이 다르더라' · #12 '아이처럼 귀엽다'로 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1631",
+      "act": "재언급",
+      "points": ["F597", "F589"],
+      "text": "아니스가 지휘관이 막 카운터스 지휘관이 됐을 때 둘이 돌던 방주 안내 — 이터널 스카이를 보며 비 · 눈이 내리냐 묻던 일 — 를 꺼내 같은 코스로 다시 돈다",
+      "about": ["person:아니스", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_anis_star_02", "lines": ["16-27"] }],
+      "reason": "#17-18 '방주 소개해준다고 … 비는 내리냐, 눈은 내리냐' · #24-25 '방주 시내 … 패스트푸드점에 로열로드' — 첫 호감도 스토리의 방주 투어(F597 · F589).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "E1632",
+      "act": "재언급",
+      "points": ["F594"],
+      "text": "지휘관이 예전에 사 준 신상 목걸이, 그 뒤 함께 간 아우터 림, 그날 저녁 맥주 한 캔을 다 기억한다고 꺼낸다",
+      "about": ["person:아니스", "place:아우터_림"],
+      "evidence": [{ "scene": "ep:d_nikke_anis_star_04", "lines": ["45-54"] }],
+      "reason": "#47-51 '목걸이 사준 적 … 아우터 림에 갔던 것 … 맥주 한 캔' — 같은 방주 투어의 아우터 림(F594)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2213",
+      "person": "person:아니스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "처음엔 실망했다가 '이상적인 지휘관'이라며 따라다니던",
+      "after": "진즉 반해 있었다고 인정하고, 방주를 사랑하게 된 시작이라며 '진흙 속에서 찾은 가장 사랑하는 별'이라 부르는",
+      "trigger": [{ "scene": "ep:d_nikke_anis_star_04", "lines": ["53-61"] }],
+      "evidence": [{ "scene": "ep:d_nikke_anis_star_05", "lines": ["39-49", "57-62"] }],
+      "time": "S325",
+      "points": ["F2711"],
+      "reason": "02#29-36 '실망했던 것 … 지금은 누구보다 믿고' · 04#61 '진즉 반해 있었지' → 05#48-49 '진흙 속에서 찾은 별 … 가장 사랑하는 별'. 앞 모습은 D1399.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2214",
+      "person": "person:아니스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "상처 준 방주를 사랑해 시민에게 희망을 주는 별로 빛나던",
+      "after": "아이돌을 졸업한 뒤 같은 거리를 다른 눈으로 보며 방주가 즐거운 곳임을 알고, 하고 싶은 것을 욕심껏 즐길수록 방주도 더 사랑하겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_anis_star_05", "lines": ["25-29"] }],
+      "evidence": [{ "scene": "ep:d_nikke_anis_star_05", "lines": ["25-35", "87-98"] }],
+      "time": "S325",
+      "reason": "#25-29 '보는 눈이 바뀌니까 … 진작에 사랑해 줄 걸' · #96-98 '점점 더 사랑하게 될 테니까 … 방주도!'. 앞 모습은 D1137.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 아이돌 '졸업'(01#26,32)은 소속 변화 D1240 · S325 그대로라 따로 적지 않았다. T.T.STAR 마지막 팝업 스토어(F2710)는 J24에 걸리지만 새로 흘린 것이 없어 떡밥으로 적지 않았다."
+}

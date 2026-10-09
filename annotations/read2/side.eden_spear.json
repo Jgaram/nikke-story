@@ -1,0 +1,284 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M36\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "side:eden_spear",
+  "session": "M36",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I355",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "side:eden_spear_00", "lines": [13, 15, 52] }],
+      "reason": "이사벨의 '사랑스러운 분 · 그분'(D215), 노아의 '가짜'(D219) — 방주의 지휘관. 이 씬의 '지휘관'은 요한이라 자동 언급과 따로다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I356",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "side:eden_spear_01", "lines": [73] }],
+      "reason": "하란이 파피용을 '종자에게 붙은 스파이'라 한다 — 하란은 지휘관을 '종자'라 부른다(d_main_21_07_s#23).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I357",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "side:eden_spear_02", "lines": ["24-28"] }],
+      "reason": "노아 '가짜도 그것 때문에 고생' · 이사벨 '그분도 같은 마음' — 방주의 지휘관.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I358",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "side:eden_spear_09", "lines": [84] }],
+      "reason": "하란 '종자의 부하들과 만난 것이 도움' — 종자 = 지휘관.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I359",
+      "target": "org:카운터스",
+      "evidence": [{ "scene": "side:eden_spear_09", "lines": [84] }],
+      "reason": "'종자의 부하들' — 노아가 에덴에서 만난 지휘관의 카운터스(ch21).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I360",
+      "target": "org:파이오니아",
+      "evidence": [{ "scene": "side:eden_spear_08", "lines": [2] }],
+      "reason": "니힐리스타의 \"그 새하얀 놈들 · 퀸을 죽인다며 빨빨거리고 돌아다녔으니\" — 06#26-28 요한이 말한 파이오니아.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E884",
+      "act": "재언급",
+      "points": ["F881", "F897"],
+      "text": "방주의 천장에 구멍이 나 랩쳐가 들어가고 니힐리스타가 방주로 향했다는 소식이 에덴에 닿는다",
+      "about": ["place:방주", "person:니힐리스타"],
+      "evidence": [{ "scene": "side:eden_spear_00", "lines": ["20-26"] }],
+      "reason": "ch22 이터널 스카이의 구멍(F881) · 방주에 들어온 니힐리스타(F897).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E885",
+      "act": "재언급",
+      "points": ["F871"],
+      "text": "요한이 도로시가 파피용을 에덴에 남긴 데는 인질 말고 다른 의도가 있을 거라 한다",
+      "about": ["person:도로시", "person:파피용"],
+      "evidence": [{ "scene": "side:eden_spear_00", "lines": ["83-93"] }],
+      "reason": "#92 — 도로시는 파피용과 방주행 거래를 하고 있었다(F871, ch21). 05의 기술 유출(F2165)로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E886",
+      "act": "암시",
+      "points": ["F2335"],
+      "text": "하란이 요한에게 '그 강철의 몸에 깃든 무른 마음'이 흔들리지 않기를 바란다고 한다",
+      "about": ["person:요한", "person:하란"],
+      "evidence": [{ "scene": "side:eden_spear_01", "lines": ["34-35"] }],
+      "reason": "요한은 지상에서 죽을 만큼 다쳐 세실이 만든 기계 몸으로 살았다(F2335).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E887",
+      "act": "재언급",
+      "points": ["F1032", "F1034"],
+      "text": "토커티브 · 인디빌리아가 방주 안에서 부활했고 도로시와 라피가 헬레틱 셋을 방주 밖으로 밀어냈다는 첩보가 들어온다",
+      "about": ["person:토커티브", "person:인디빌리아", "person:도로시", "person:라피"],
+      "evidence": [{ "scene": "side:eden_spear_01", "lines": ["103-119"] }],
+      "reason": "ch24 — 마테리얼 H의 부활(F1032)과 라피 · 도로시의 지상 사출(F1034).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E888",
+      "act": "재언급",
+      "points": ["F928"],
+      "text": "도로시가 파피용에게 자기는 에덴과 방주를 잇는 친선 대사가 될 것이고, 기술은 뇌물이며 방주는 유례없는 부흥을 맞을 거라 한다",
+      "about": ["person:도로시"],
+      "evidence": [{ "scene": "side:eden_spear_05", "lines": ["115-126"] }],
+      "reason": "방주가 자기를 찾고 원하게 만들어 빼앗겠다는 도로시의 계획(F928)을 감춘 말.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E889",
+      "act": "암시",
+      "points": ["F2173"],
+      "text": "퀸 관측을 막는 120km의 액체 금속 같은 [뭔가]를 듣고 나유타가 '어쩌면' 하며 짚이는 것을 감춘다",
+      "about": ["person:나유타", "person:퀸"],
+      "evidence": [{ "scene": "side:eden_spear_06", "lines": ["55-65"] }],
+      "reason": "12#134 세이렌의 물거품 장막(F2173) — 나유타는 뒤에 그 장막을 액체 금속으로 설명한다(F2260).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E890",
+      "act": "재언급",
+      "points": ["F768"],
+      "text": "요한이 카운터스와 연합했을 때 언체인드를 맞은 니힐리스타가 목숨을 구걸하며 말한 '릴리스의 바디'를 되짚는다",
+      "about": ["person:니힐리스타", "concept:릴리스의_바디"],
+      "evidence": [{ "scene": "side:eden_spear_07", "lines": ["63-68"] }],
+      "reason": "ch20 — 릴리스의 바디를 찾으면 퀸을 죽이겠다던 말(F768).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E891",
+      "act": "암시",
+      "points": ["F2435"],
+      "text": "리버렐리오가 '나에겐 사랑만 있을 뿐', 승산 없이 달려드는 인간이라 '난 너희가 좋아'라고 한다",
+      "about": ["person:리버렐리오"],
+      "evidence": [{ "scene": "side:eden_spear_12", "lines": [49, 61] }],
+      "reason": "ch44 리버렐리오는 퀸에게 인간과 대화할 수 있다며 평화를 간청하다 죽는다(F2435).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D840",
+      "person": "person:요한",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "우직하게 밀고만 나가던 어리숙한",
+      "after": "상대의 처지를 짚어 '증명하라'며 거래의 주도권을 쥐는",
+      "evidence": [{ "scene": "side:eden_spear_01", "lines": ["83-95"] }],
+      "reason": "#83-92 파피용을 몰아붙이고 #94-95 하란이 '많이 늘었구나'라 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D841",
+      "person": "person:요한",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:나유타"],
+      "text": "머리가 터지고도 다시 나타나는 승려를 '몇 번을 봐도 적응이 안 된다'며 두려워하고 꺼리는",
+      "evidence": [{ "scene": "side:eden_spear_03", "lines": ["54-61"] }],
+      "reason": "#55-61. 06#70-83 '두렵소?' '그래 · 너는 몇 번째인가'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D842",
+      "person": "person:파피용",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:도로시"],
+      "before": "통신을 쥔 도로시와 서로 쥔 것을 거래하는",
+      "after": "방주에서의 미래를 약속받고 에덴의 기술을 빼돌려 주는 협력자",
+      "trigger": [{ "scene": "side:eden_spear_05", "lines": ["120-135"] }],
+      "points": ["F2165"],
+      "evidence": [{ "scene": "side:eden_spear_05", "lines": ["136-148"] }],
+      "reason": "#138 '할게' · #145-147 웃으며 '줄 하나는 잘 잡는다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D843",
+      "person": "person:니힐리스타",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "애절하던 퀸의 명령에 뭔가 있다고 보고 릴리스의 바디를 찾아, 언체인드를 채워 퀸을 독살하려는",
+      "points": ["F2163", "F2164"],
+      "evidence": [{ "scene": "side:eden_spear_08", "lines": ["19-70"] }],
+      "reason": "#23-26 찾아 나섬 · #53 '맞아! 바로 그거야!' · #66-70.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M57",
+          "note": "출시가 앞선 char:261의 신념 기준 D1427로 — 독살 계획은 F2163 · F2164와 D948(변화)의 before에 남음"
+        }
+      ]
+    },
+    {
+      "id": "D844",
+      "person": "person:노아",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "방주를 싫어하며 남을 놀리는",
+      "after": "우리끼리만 살 순 없다 하고, 도로시가 떠나면 쓸쓸할 것 같다는",
+      "evidence": [{ "scene": "side:eden_spear_09", "lines": ["81-105"] }],
+      "reason": "#82 · #102 — 하란이 #84 지휘관 일행과의 만남이 도움이 됐다 · #103 '성장했구나'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D845",
+      "person": "person:하란",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:도로시"],
+      "before": "긍지를 저버리지 않는 선 안에서 따르는",
+      "after": "버린 부모에게 복수하려 떼쓰는 여린 어린아이로 보고, 눈을 떼지 못한 채 두고 보는",
+      "points": ["F2166"],
+      "evidence": [{ "scene": "side:eden_spear_09", "lines": ["114-154"] }],
+      "reason": "#140-147 · #150 '그 아이는 너무 여려' · #154.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D846",
+      "person": "person:마리안",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "크라운 왕국의 백성",
+      "after": "다가오는 [존재]를 느끼고 빼앗으러 크라운 · 차임 곁을 떠나는",
+      "trigger": [{ "scene": "side:eden_spear_12", "lines": ["66-71"] }],
+      "points": ["F2174"],
+      "evidence": [{ "scene": "side:eden_spear_12", "lines": ["99-117"] }],
+      "reason": "#101-105 '가서 빼앗아야 해요' · #113-117 작별처럼 고맙다 · 사랑한다고 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U333",
+      "topic": "지상",
+      "text": "방주 회선을 쓰지 않는 에덴은 기상 예측도 못 한 몇 주짜리 폭우에 장거리 통신이 끊기고, 방주 니케 파피용은 TV도 SNS도 없이 창밖만 본다",
+      "about": ["place:에덴"],
+      "evidence": [{ "scene": "side:eden_spear_10", "lines": ["1-14"] }],
+      "reason": "#7-8 세실 '악천후에 통신이 끊어지는 건 지상에서 흔한 일' · 01#47-50 NO SIGNAL.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "note": "자동 언급 오인: 이 단위의 '지휘관'은 거의 요한(하란 '나의 지휘관아' · 이사벨 '지휘관')이라 person:지휘관 자동 줄은 요한이다 — 방주의 지휘관은 '사랑스러운 분 · 가짜 · 종자'로만 나와 I355-I358로 적음. 07#38 '베이고'의 자동 언급 person:베이는 인물이 아니다. 미상 이름표 줄 없음."
+}

@@ -1,0 +1,63 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M87\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:111",
+  "session": "M87",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1988",
+      "person": "person:자칼",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "먹을 것을 빼앗아 먹고 날뛰다 숨고 붙잡히고 도망치는",
+      "after": "'기다리면 음식이 나온다'며 앉아 · 기다려를 지키고 지휘관실을 부수지 않는",
+      "trigger": [{ "scene": "ep:d_nikke_jackal_04", "lines": ["63-78"] }],
+      "evidence": [{ "scene": "ep:d_nikke_jackal_05", "lines": ["5-6", "68-79"] }],
+      "time": "S383",
+      "points": ["F794"],
+      "reason": "02#31 '그냥 바로 뺏어 먹으면 되잖아' → 04#78 '굶주리게 두지 않을 거야' → 05#75 '기다리면 음식이 나올 테니까' · #78 '뺏으면 숨고, 붙잡히고, 도망쳐야 하는데'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1989",
+      "person": "person:자칼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "재킷을 걸쳐 준 데 감동한 지휘관",
+      "after": "'절대 굶주리게 두지 않겠다'는 말을 '살면서 들은 말 중 제일 멋있다'며 믿고, 손을 놓지 않는",
+      "trigger": [{ "scene": "ep:d_nikke_jackal_04", "lines": ["76-78"] }],
+      "evidence": [{ "scene": "ep:d_nikke_jackal_04", "lines": ["79-91", "98-111"] }],
+      "time": "S383",
+      "points": ["F794"],
+      "reason": "#81 '내가 살면서 들은 말 중에 제일 멋있어' · #83 '대장 다음으로 멋있어' · #91 '지휘관 믿으니까' · #111 '지휘관, 너무 좋아~!'. 03#123 '이 손은 내 거'에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1990",
+      "person": "person:자칼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "믿고 따르는 지휘관",
+      "after": "떨어지기 싫어 같이 가자 조르다 '기다리면 찾아온다'는 약속에 기다리기로 하고, 손목을 쓰다듬어 줄 손이라며 남겨 두는",
+      "trigger": [{ "scene": "ep:d_nikke_jackal_05", "lines": ["103-108"] }],
+      "evidence": [{ "scene": "ep:d_nikke_jackal_05", "lines": ["41-43", "109-111", "133-139"] }],
+      "time": "S383",
+      "points": ["F794"],
+      "reason": "#42 '지휘관이랑 떨어지기 싫어!' · #107 '음식이 나오는 것처럼?' · #138-139 '칭찬의 쓰다듬 해줘야 하잖아 · 일부러 여기 두고 가는 거니까'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 자칼 성격 기준 D132 · → 지휘관 기준 D133(ch16)이 앞서 있어 다시 세우지 않았다. 자칼 → 크로우(D134)는 '대장 다음으로 멋있어'로 그대로라 변화로 적지 않았다. 크로우의 '일주일 만에 제법이군'(05#85)은 얕아 크로우 → 지휘관을 세우지 않았다. 04#39-43 굶주린 과거는 1회독 F795가 같은 씬에서 다뤄 떡밥으로 적지 않았다. 바로잡기: 시점 S383(CH.16 뒤, 추정)."
+}

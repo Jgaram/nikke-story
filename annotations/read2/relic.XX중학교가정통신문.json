@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:XX중학교가정통신문",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E134",
+      "act": "재언급",
+      "points": ["F700"],
+      "text": "침공 초기 학교가 '아이들이 큰소리를 내지 않게, 원격수업은 채팅으로만, 데시벨 높은 웃음소리를 막아 달라'고 당부한다 — 랩쳐는 소리 나는 곳에 무언가 있다고 여겨 몰려든다(F700)",
+      "about": ["concept:랩쳐"],
+      "reason": "#2 · 4-5 · 8. 소리를 막는 까닭이 랩쳐의 습성이라는 확인은 원문에 없다",
+      "confidence": "추정",
+      "evidence": [{ "scene": "relic:XX중학교가정통신문_01", "lines": ["2-8"] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U106",
+      "topic": "구시대",
+      "text": "외계 생명체가 나타나자 중학교는 원격수업으로 바꾸고 가정에 아이들의 큰소리 · 웃음소리 · 외출을 막고 생존 가이드를 가르쳐 달라고 당부했지만, 교사와 학생이 실종되며 두 달 만에 문을 닫았다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F712"],
+      "reason": "_00 3월 15일 원격수업 → _01 당부 → _02 5월 20일 폐교",
+      "evidence": [{ "scene": "relic:XX중학교가정통신문_01", "lines": ["1-8"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

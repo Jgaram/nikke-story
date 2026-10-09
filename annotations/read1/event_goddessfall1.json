@@ -1,0 +1,1114 @@
+{
+  "unit": "event_goddessfall1",
+  "session": "R74",
+  "by": "claude",
+  "date": "2026-10-03",
+  "summary": "1부: 리버렐리오가 장막을 걷어 퀸이 상공 48km까지 내려와 머물고, 나유타의 중재로 에덴(인헤르트)과 파이오니아가 손잡는다(prologue · 01_s). 퀸의 붉은 빔에 에덴이 무너지고 랩쳐 방위전. 나유타 · 니힐리스타는 방주 입구 근처 니케 시체의 산 아래에서 릴리바이스의 몸(릴리스의 바디)을 찾고, 니힐리스타가 몸 안에 보관한다(02_e). 크라운 왕국을 떠난 마리안은 인디빌리아 · 토커티브와 원래의 퀸을 치러 오지만 퀸의 지배력이 덮어씌워져 배신당하고, 니힐리스타는 스톰 브링어에 끌려간다(03_e · intermission_01). 되살아난 장화와 데이터 생명체 미러가 마리안을 구해 나유타에게 넘기고, 미러는 꼭두각시 퀸을 만들려는 속셈을 밝힌다(04_s · 04_e). 노아가 두 번째 빔을 막고 타 버린다(05_s). 크라운 일행과 나유타 분신 2000이 오고, 마리안이 세 번째 빔을 되돌려 에덴의 창과 함께 퀸을 떨어뜨린 뒤 자기가 랩쳐의 퀸이라 밝힌다(06_e). 2부: 요새가 된 우주 정거장과 이어진 퀸에 맞서 분신들을 육벽으로 돌격시키고, 이사벨 · 하란이 목숨을 걸어 스테이션을 떨어뜨린다(02_e–intermission_01). 마리안이 거대화하고, 크라운은 인디빌리아에게 베여 차임에게 네이키드 킹을 넘긴다. 퀸이 마리안의 거신을 베고 토커티브가 마리안을 붙잡지만 파이오니아가 처단(04_e). 차임 · 탈로스 · 나유타가 인디빌리아를 쓰러뜨리고, 니힐리스타가 그녀를 먹어 지배력을 끊는다(05_s · 05_e). 퀸의 무한 재생에 맞서 니힐리스타가 언체인드를 깨물고 독잔이 되어 퀸에게 흡수된다(06_s). 릴리바이스의 모습을 한 그것이 마리안의 코어를 뜯고 도로시 앞에서 사라진다. 인헤르트 전멸 · 파이오니아 대파, 스노우 화이트의 기억 회복, 도로시 제명, 요한은 지휘관에게 연락하기로, 미러는 퀸 쪽에 붙어 정보를 넘기기로 한다(06_e · epilogue).",
+  "scenes": [
+    {
+      "scene": "event_goddessfall1_prologue",
+      "text": "퀸 48km 정지 3일, 에덴의 창 최대 출력 결정, 나유타의 파이오니아 소집, 첫 빔 포격에 에덴 붕괴"
+    },
+    {
+      "scene": "event_goddessfall1_01_s",
+      "text": "피해 수습, 나유타의 퀸 하강 설명(장막 · 목표), 에덴 · 파이오니아 연합과 방위전"
+    },
+    {
+      "scene": "event_goddessfall1_01_e",
+      "text": "나유타 · 니힐리스타 릴리스의 바디 찾기 허락, 홍련 · 이사벨 / 라푼젤 · 노아 / 스노우 화이트 · 하란 문답"
+    },
+    {
+      "scene": "event_goddessfall1_02_s",
+      "text": "신호 차단 망토, 낙타 만트라 출발, 하란은 마리안의 정체를 안다, 니힐리스타의 동기"
+    },
+    {
+      "scene": "event_goddessfall1_02_e",
+      "text": "니케 시체의 산 아래 석관 — 릴리바이스의 몸, 머리를 보낸 리버렐리오, 몸 안에 보관"
+    },
+    {
+      "scene": "event_goddessfall1_03_s",
+      "text": "며칠 전 마리안 실종 · 크라운 일행 출발 / 마리안 · 인디빌리아 · 토커티브, 선점 효과"
+    },
+    {
+      "scene": "event_goddessfall1_03_e",
+      "text": "모두가 모두를 사랑하는 세계, 퀸의 지배력 괴성, 인디빌리아가 마리안의 눈을 벰"
+    },
+    {
+      "scene": "event_goddessfall1_intermission_01",
+      "text": "니힐리스타가 죽여 달라 함 · 스톰 브링어가 채 감, 토커티브: 퀸의 다음 몸, 장화 · 미러 등장"
+    },
+    {
+      "scene": "event_goddessfall1_04_s",
+      "text": "미러가 마리안을 나유타에게 넘김 — 퀸 인자의 진화, 대관, 장화의 거절"
+    },
+    {
+      "scene": "event_goddessfall1_04_e",
+      "text": "미러: 겁쟁이 퀸, 퀸을 만들기로 함, 데이터 생명체, 장화를 되살림 / 파피용의 보급, 모더니아 발견"
+    },
+    {
+      "scene": "event_goddessfall1_05_s",
+      "text": "나유타 실패 보고, 두 번째 빔 — 노아 · 라푼젤이 막고 노아가 타 버림"
+    },
+    {
+      "scene": "event_goddessfall1_05_e",
+      "text": "지배 아래의 헬레틱 셋, 노아의 뇌, 요한의 복수 다짐, 나유타가 마리안의 비밀을 지킴"
+    },
+    {
+      "scene": "event_goddessfall1_06_s",
+      "text": "랩쳐 물량전 · 인디빌리아의 기습, 에덴의 창 한 발, 크라운 일행과 나유타 분신 2000 도착"
+    },
+    {
+      "scene": "event_goddessfall1_06_e",
+      "text": "분신의 원리, 헬레틱 퇴각, 세 번째 빔을 마리안이 되돌림 + 에덴의 창 명중, 퀸 강림, 마리안의 고백"
+    },
+    {
+      "scene": "event_goddessfall2_01_s",
+      "text": "미러의 원래 계획, 파이오니아 · 크라운 왕국이 마리안을 받아들임, 퀸 위치"
+    },
+    {
+      "scene": "event_goddessfall2_01_e",
+      "text": "요한 · 나유타 · 인헤르트 회의, 미러 · 나유타 동맹의 속셈, 분신들의 수다, 퀸의 재머"
+    },
+    {
+      "scene": "event_goddessfall2_02_s",
+      "text": "이사벨의 정찰 — 요새가 된 스테이션, 요한의 에덴 자폭안, 나유타의 다른 방도"
+    },
+    {
+      "scene": "event_goddessfall2_02_e",
+      "text": "분신들의 죽음과 흘러드는 기억, 분신 육벽 작전(20분 전), 이사벨 · 하란 출격"
+    },
+    {
+      "scene": "event_goddessfall2_03_s",
+      "text": "하란과 스노우 화이트(영광스런 칭호), 홍련과 이사벨의 술 약속, 이사벨이 파피용을 풀어 줌"
+    },
+    {
+      "scene": "event_goddessfall2_03_e",
+      "text": "이사벨 전사, 하란이 스테이션 무력화, 인디빌리아가 크라운을 벰, 마리안 거대화"
+    },
+    {
+      "scene": "event_goddessfall2_intermission_01",
+      "text": "마리안의 거신 vs 거대 지네, 하란 전사(승리의 여신들), 크라운이 차임에게 네이키드 킹, 나유타의 고백, 파피용의 웃음"
+    },
+    {
+      "scene": "event_goddessfall2_04_s",
+      "text": "세실과 파피용(회상), 파피용이 도로시에게 전화하고 되돌아감, 요한이 나유타에게 언체인드 탄환"
+    },
+    {
+      "scene": "event_goddessfall2_04_e",
+      "text": "퀸이 마리안의 거신을 벰, 토커티브가 마리안을 잡음, 미러의 지시 · 릴리스의 뇌, 파이오니아가 토커티브를 처단"
+    },
+    {
+      "scene": "event_goddessfall2_05_s",
+      "text": "미러가 토커티브를 속인 일, 차임의 네이키드 킹으로 인디빌리아 격파, 니힐리스타가 인디빌리아를 물다"
+    },
+    {
+      "scene": "event_goddessfall2_05_e",
+      "text": "니힐리스타 지배력 해제, 파이오니아의 소모전 — 미사일 6000발에도 재생"
+    },
+    {
+      "scene": "event_goddessfall2_06_s",
+      "text": "니힐리스타가 언체인드를 깨물고 독잔이 됨, 퀸의 재생 정지, 에덴의 창"
+    },
+    {
+      "scene": "event_goddessfall2_06_e",
+      "text": "나유타가 분신의 목숨을 태움, 릴리바이스 모습의 그것이 마리안의 코어를 뜯음, 도로시, 피해 보고, 스노우 화이트의 기억"
+    },
+    {
+      "scene": "event_goddessfall2_epilogue",
+      "text": "방주와 손잡기 논쟁, 도로시의 계획, 요한: 지휘관에게 연락, 도로시 제명, 미러가 퀸 쪽에 붙기로"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2257",
+      "text": "퀸은 상공 48km 성층권에서 고속 강하를 멈추고 3일째 머물렀다 — 세실은 에덴 내부 동력과 인근 지하 발전기까지 끌어 에덴의 창을 50% 출력으로 쏠 수 있고 에덴을 포기하면 100% 가까이 낼 수 있다 했으며, 요한은 에덴을 포기하고 최대 출력을 확보하라 했다",
+      "about": ["person:퀸", "person:세실", "person:요한", "item:에덴의_창", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall1_prologue", "lines": ["0-3", "17-28"] }],
+      "reason": "세실 · 요한의 대화(#1-3, #18-23). 에덴의 시설 대부분이 망가진다는 조건(#22)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2258",
+      "text": "나유타가 파이오니아를 소집해 에덴과의 연합을 청하자 스노우 화이트는 에덴의 도로시에게 이용될 수 있다며 거절했다 — 파이오니아는 방주에 구멍이 난 것도, 도로시가 그 구멍을 메우는 데 큰 역할을 하고 지금 방주에 있다는 것도 몰랐고, 나유타는 퀸이 에덴 머리 위로 내려오고 있다며 힘을 청했다",
+      "about": ["person:나유타", "person:스노우_화이트", "person:홍련", "person:라푼젤", "org:파이오니아", "person:도로시"],
+      "evidence": [{ "scene": "event_goddessfall1_prologue", "lines": ["46-86"] }],
+      "reason": "#46-57 거절과 그 이유, #58-67 도로시 · 구멍 소식에 놀람, #80-86 퀸 소식",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2259",
+      "text": "구름 사이로 새어 나온 퀸의 붉은 빔 포격이 에덴을 집어삼켜 에덴은 앙상한 구조물만 남았다 — 모두 무사했지만 실드와 조명까지 꺼져, 세실이 로봇을 총동원해 기본 시설과 에덴의 창부터 수리했다",
+      "about": ["person:퀸", "place:에덴", "person:세실", "person:요한"],
+      "evidence": [{ "scene": "event_goddessfall1_prologue", "lines": ["88-102"] }, { "scene": "event_goddessfall1_01_s", "lines": ["0-16", "26-27"] }],
+      "reason": "서술(#98-102)과 01_s의 피해 파악. 퀸의 공격이라는 것은 요한 · 세실의 판단(01_s #26-27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2260",
+      "text": "나유타에 따르면 퀸은 우주 정거장 일부와 함께 100년 가까이 궤도를 떠돌았고, 액체 금속으로 보이는 장막이 퀸을 따라다니며 시야를 가려 내려오지 못했다 — 인자 살해자(리버렐리오)가 에덴의 창으로 장막을 치워 퀸은 미뤄 둔 일을 하러 내려오고 있으며, 그 목표는 에덴의 창을 가진 에덴을 부수고 지상에 내려오는 것이다",
+      "about": ["person:나유타", "person:퀸", "person:리버렐리오", "item:에덴의_창", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall1_01_s", "lines": ["73-93"] }],
+      "reason": "나유타의 상황 정리(#73-93). 장막을 치운 일은 F2172(side:eden_spear)와 같다. 목표는 나유타의 판단",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2261",
+      "text": "에덴과 파이오니아는 손을 잡았다 — 요한이 하란 · 이사벨 · 노아를 각각 스노우 화이트 · 홍련 · 라푼젤에게 붙였고 — 에덴의 창이 수리될 때까지 전방위에서 몰려오는 랩쳐를 막는 방위전에 들어갔다",
+      "about": ["person:요한", "person:하란", "person:이사벨", "person:노아", "person:스노우_화이트", "person:홍련", "person:라푼젤", "org:파이오니아", "org:인헤르트"],
+      "evidence": [{ "scene": "event_goddessfall1_01_s", "lines": ["104-147"] }],
+      "reason": "스노우 화이트 · 홍련이 위치를 요구하고(#105-107) 요한이 짝을 지음(#122-131), 방위전(#139-147)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2262",
+      "text": "스노우 화이트는 에덴의 목적이 인류가 못 한 일을 해낸 뒤 인류를 깔아뭉개는 복수라 에덴을 싫어한다 했고, 하란은 파이오니아가 방주에 더 지독하게 배신당했다고 도로시에게 들었다 했다 — 스노우 화이트는 자기들보다 인류가 중요하며, 아무것도 이루지 못하고 돌아가면 방주가 곤란해지고 자기들을 쳐낸 데에는 이유가 있을 것이라 방주로 돌아가지 않는다고 했다",
+      "about": ["person:스노우_화이트", "person:하란", "org:파이오니아", "place:에덴", "place:방주", "person:도로시"],
+      "evidence": [{ "scene": "event_goddessfall1_01_e", "lines": ["113-142"] }],
+      "reason": "둘의 문답(#115-142). 하란의 결론은 '너흰 미쳤구나'(#144)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2263",
+      "text": "나유타는 퀸이 손 닿는 곳까지 반드시 떨어질 때를 대비해 '독잔'을 만들려고 니힐리스타와 릴리스의 바디를 찾으러 가겠다 했다 — 퀸을 본 니힐리스타가 흔들릴 수 있으니 그 전에 바디를 확보해야 한다는 것이다 — 요한은 바디를 찾은 뒤 니힐리스타를 어떻게 할지 답하지 않는 나유타에게 '너도 다를 바 없다'며 허락했다",
+      "about": ["person:나유타", "person:니힐리스타", "person:요한", "concept:릴리스의_바디"],
+      "evidence": [{ "scene": "event_goddessfall1_01_e", "lines": ["3-39"] }],
+      "reason": "나유타 · 요한의 대화. 독잔은 F2164의 계획",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2264",
+      "text": "세실은 아틀라스 케이지의 신호 차단 물질로 만든 망토를 니힐리스타에게 주어 다른 헬레틱이 감지할 수도, 그녀가 감지할 수도 없게 했다 — 니힐리스타는 다른 놈들이 느껴지지 않는다 했고, 나유타의 낙타 만트라는 걸어서 2주 걸릴 길을 하룻밤에 달렸다",
+      "about": ["person:세실", "person:니힐리스타", "person:나유타", "item:아틀라스_케이지"],
+      "evidence": [{ "scene": "event_goddessfall1_02_s", "lines": ["12-39", 58, 96] }],
+      "reason": "세실의 설명(#14-16)과 니힐리스타의 확인(#25-26). 만트라의 속도는 #29 · #58 · #96",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2265",
+      "text": "하란은 마리안이 헬레틱(랩쳐)임을 알고 있었고, 마리안은 니케를 죽이지 않았다는 스노우 화이트에게 그것으로 구분한다면 방주야말로 거대한 랩쳐라고 했다",
+      "about": ["person:하란", "person:마리안", "person:스노우_화이트"],
+      "evidence": [{ "scene": "event_goddessfall1_02_s", "lines": ["66-80"] }],
+      "reason": "하란: '우린 너희 생각보다 많은 걸 알고 있단다'(#72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2266",
+      "text": "니힐리스타가 퀸을 죽이려는 것은 타고나길 그렇게 타고났다는 이유로 자기보다 약한 퀸에게 고개 숙여야 하는 것이 싫어서다 — 하지만 퀸의 지배력 때문에 눈앞에 있어도 싸움을 걸 수 없고 시키는 대로 할 뿐이라, 독살로 방향을 틀었다",
+      "about": ["person:니힐리스타", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall1_02_s", "lines": ["98-124"] }],
+      "reason": "본인 말(#106-122)과 나유타의 '독살 같은 호작질'(#123)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2267",
+      "text": "릴리스의 바디는 방주 입구 인근 민간 캠프에 쌓인 니케 시체의 산 아래 석관에 묻혀 있었다 — 니힐리스타에 따르면 방주 밀봉 뒤 지상에 남은 니케들이 열리지 않는 방주의 문을 두드리다 모두 죽었고, 죽은 뒤에라도 랩쳐에게 농락당하지 않게 그들의 코어를 뜯어낸 것은 과거를 기억하는 니힐리스타 자신이었다",
+      "about": ["person:니힐리스타", "concept:릴리스의_바디", "place:방주"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["1-25", "89-96"] }],
+      "reason": "니힐리스타의 말(#6, #14-25)과 석관(#90). 원래 석관도 방주 입구 임시 초소 근처였다(F907)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2268",
+      "text": "니힐리스타에 따르면 퀸이 머물던 스테이션이 어째서인지 궤도 엘리베이터에서 분리되어 우주를 떠돌 때 퀸은 이미 뇌가 죽어 가 '머리를 올려보내 달라'고 했고, 리버렐리오가 릴리스의 머리를 잘라 퀸에게 쏘아 보냈다 — 뒤에 퀸이 바디까지 원했지만 바디는 원래 자리에 없었고, 니힐리스타는 그것을 북부 아래 빙하에서 찾아냈다",
+      "about": ["person:니힐리스타", "person:리버렐리오", "person:퀸", "person:릴리스", "concept:릴리스의_바디", "place:북부"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["48-67"] }],
+      "reason": "니힐리스타의 말(#49, #51-67). 릴리스의 관에서 머리가 사라진 일(F933)의 답",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2269",
+      "text": "니힐리스타에 따르면 리버렐리오가 바디를 찾아 헤매던 중 장막 때문에 퀸의 목소리가 끊겨 헬레틱들은 버려진 채 지상을 떠돌았다 — 리버렐리오가 퀸이 오기 전에 하는 '정리'는 사랑하는 어머니가 돌아올 길을 닦고 집을 깨끗이 해 맞이하려는 것이다",
+      "about": ["person:니힐리스타", "person:리버렐리오", "person:퀸", "concept:헬레틱"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["72-87"] }],
+      "reason": "니힐리스타의 말. 퀸의 목소리가 끊긴 일은 F2162와 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2270",
+      "text": "석관 속 머리 없는 여신 — 릴리바이스의 몸 — 을 본 나유타는 '우리의 승리의 여신'이라며 울었고, 니힐리스타는 그 몸을 흡수가 아니라 보관이라며 자기 몸 안에 넣었다 — 자기가 죽으면 바디도 가루가 된다며 자기가 무사할 보장으로 삼았다",
+      "about": ["person:릴리바이스", "concept:릴리스의_바디", "person:나유타", "person:니힐리스타"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["89-128"] }],
+      "reason": "서술 '릴리바이스의 몸은 그곳에 있었다'(#95-96)로 릴리스의 바디 = 릴리바이스의 몸이 드러남(정체 연결 L8과 맞음). 니힐리스타의 말(#116-125)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2271",
+      "text": "며칠 전 크라운 왕국에서, 먼 곳에서 솟은 빛을 심상치 않게 보며 '가 봐야 한다 · 빼앗아야 한다'던 마리안이 말없이 사라졌고, 크라운 · 차임 · 킬로 · 탈로스는 빛이 솟은 에덴 쪽으로 찾아 나섰다",
+      "about": ["person:마리안", "person:크라운", "person:차임", "person:킬로", "person:T.A.L.O.S.", "place:크라운_왕국", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall1_03_s", "lines": ["0-75"] }],
+      "reason": "회상 서술(#0)과 차임의 말(#20, #37-53). 마리안이 떠날 채비를 한 F2174와 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2272",
+      "text": "마리안은 인디빌리아 · 토커티브를 불러 원래의 퀸을 치자 했다 — 퀸 인자를 각성하고 처음 한 일은 왕국을 공격하지 말라는 명령이었고, 인디빌리아는 원래 퀸의 지배력이 공석일 때 마리안의 지배력이 먼저 미친 '선점 효과'라 했다 — 마리안은 왕국 사람들에게 자기가 퀸임을 알리고 싶지 않았다",
+      "about": ["person:마리안", "person:인디빌리아", "person:토커티브", "concept:퀸_인자"],
+      "evidence": [{ "scene": "event_goddessfall1_03_s", "lines": ["76-124"] }],
+      "reason": "인디빌리아 · 마리안의 대화. 알리고 싶지 않은 것은 인디빌리아의 짐작(#114-115)에 마리안이 침묵",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2273",
+      "text": "마리안은 에덴과 연합해 원래의 퀸을 치려 했고, 퀸으로서 그리는 세계는 니케 · 사람 · 랩쳐가 모두 서로 사랑할 수 있는 세계라 했다 — 인디빌리아는 머저리 같은 이상주의자라며 거절했지만 마리안이 지배력으로 따르게 했다",
+      "about": ["person:마리안", "person:인디빌리아"],
+      "evidence": [{ "scene": "event_goddessfall1_03_e", "lines": ["5-61"] }],
+      "reason": "마리안의 말(#14, #31-35)과 지배력 강요(#51-61)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2274",
+      "text": "하늘의 퀸이 지배력을 담은 괴성을 내자 마리안의 지배력이 덮어씌워져 인디빌리아가 마리안의 두 눈을 베고 난도질했다 — 니힐리스타도 퀸이 자기들을 '거둬 갔다'며 꼭두각시가 되기 전에 자기를 죽이고 릴리스의 바디를 가져가라 했지만, 나유타가 망설이는 사이 스톰 브링어가 니힐리스타를 채 갔다",
+      "about": ["person:퀸", "person:마리안", "person:인디빌리아", "person:니힐리스타", "person:나유타", "concept:스톰_브링어"],
+      "evidence": [{ "scene": "event_goddessfall1_03_e", "lines": ["62-82"] }, { "scene": "event_goddessfall1_intermission_01", "lines": ["0-48", "59-61"] }],
+      "reason": "서술(03_e #62-66, #79-82)과 인디빌리아 '당신의 지배력을 덮어썼어요'(intermission_01 #59), 니힐리스타의 말(#10-16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2275",
+      "text": "토커티브는 마리안을 먹자는 인디빌리아를 거절하며, 마리안은 퀸으로 각성해 '퀸의 다음 몸'이 될 준비가 되었으니 온전해야 한다 했다 — 인디빌리아는 퀸의 뇌에 이어 육체도 수명이 다해 간다고 보았고, 퀸 인자는 코어와 뇌에 담긴다 했다",
+      "about": ["person:토커티브", "person:인디빌리아", "person:마리안", "person:퀸", "concept:퀸_인자"],
+      "evidence": [{ "scene": "event_goddessfall1_intermission_01", "lines": ["68-97"] }],
+      "reason": "토커티브의 말(#76-82). 인디빌리아의 추론(#85)에 토커티브는 침묵(#86-87). 다음 몸은 미러의 거짓이었다(F2307)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2276",
+      "text": "장화가 나타나 부러진 검으로 인디빌리아의 꼬리와 목 절반, 토커티브의 머리를 베어 둘을 쫓아냈고 미러와 함께 마리안을 데려갔다 — 인디빌리아는 검을 쓰는 그 유사 인간이 홍련이 아니라 모르는 이라 했다",
+      "about": ["person:장화", "person:미러", "person:인디빌리아", "person:토커티브", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall1_intermission_01", "lines": ["105-141"] }, { "scene": "event_goddessfall1_05_e", "lines": ["0-9"] }],
+      "reason": "서술과 장화 · 미러의 대화. 홍련의 언니 장화는 홍련의 검에 죽었었다(F1238)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2277",
+      "text": "미러는 나유타와 구면으로, 마리안을 넘기며 마리안이 크라운 왕국의 전투로 퀸 인자를 각성해 인디빌리아 · 토커티브를 거둔 뒤 원래의 퀸을 느끼고 그 인자를 흡수 통합하려고 왔다고 알렸다 — 마리안이 숨기고 싶어 하니 에덴에 발설하지 말고 [대관]의 날까지 지켜 달라 했다",
+      "about": ["person:미러", "person:나유타", "person:마리안", "concept:퀸_인자"],
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["13-52", "76-82"] }],
+      "reason": "미러의 말(#36-51, #80-81). 대관 = 왕관을 쓰는 것(04_e #5)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2278",
+      "text": "미러에 따르면 퀸 인자는 인자 살해자에게서 살아남으려고 몰래 발현하는 쪽으로 진화했다 — 그래서 리버렐리오가 마리안을 놓친 것이고, 나유타는 대협(지휘관)의 인자 각성이 마리안에게 반응한 것이라 짐작했다",
+      "about": ["person:미러", "person:나유타", "concept:퀸_인자", "person:리버렐리오", "person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["59-75"] }],
+      "reason": "나유타의 추리(#65-72)에 미러가 정답이라 함(#73-75). 지휘관 쪽은 나유타의 혼잣말(#59-60) — 추정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2279",
+      "text": "장화는 자기가 나서면 홍련('련이')이 자기를 보고 반드시 지금보다 훨씬 불행해질 것이라며 나유타를 돕기를 거절했다",
+      "about": ["person:장화", "person:홍련"],
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["92-100"] }],
+      "reason": "장화의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2280",
+      "text": "미러에 따르면 불의의 사고로 100여 년 우주를 떠돈 퀸은 신데렐라 때문에 겁쟁이가 되어 — 신데렐라가 살아 있거나 더 강한 것이 있을까, 물거품 장막을 부순 뒤 공격받을까, 착지한 곳에 [그것들]이 있을까 두려워 — 궤도만 고치면 될 일을 하지 않고 내려오지 않았다",
+      "about": ["person:미러", "person:퀸", "person:신데렐라"],
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["18-51"] }],
+      "reason": "미러의 말. 장막은 마음만 먹으면 부술 수 있었다(#31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2281",
+      "text": "미러에 따르면 퀸의 자리가 오래 비어 랩쳐 · 헬레틱이 날뛰었고, 그것을 수습하던 미러는 제 손으로 퀸을 만들기로 해 이것저것 하다 운 좋게 마리안이라는 퀸을 얻었다 — 미러는 자기가 제어할 수 있는 존재가 퀸이 되어 자기는 방관자로 있다 결정적인 순간에 돕기를 바란다",
+      "about": ["person:미러", "person:마리안", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["51-72", "84-86"] }],
+      "reason": "미러의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2282",
+      "text": "미러는 실체가 없는 데이터 생명체로 지금 모습은 인격 데이터의 기반이 된 것을 흉내 낸 것이며, 그 기반에게서 '결정적인 순간에 직접 나서지 말 것'을 배웠다 — 미러는 랩쳐 · 니케 · 인간 모두를 벨 수 있는 장화를 자기 호위 무사이자 검으로 되살렸다",
+      "about": ["person:미러", "person:장화"],
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["64-82"] }],
+      "reason": "미러의 말. 데이터 생명체라는 것은 '둘러대기용 답변'이라 했지만(#68) 사실 자체를 부정하지는 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2283",
+      "text": "퀸의 두 번째 빔 포격을 노아의 전자기장 실드와 라푼젤의 황금 장벽이 막아 에덴의 피해는 경미했다 — 코어 동력이 바닥난 라푼젤을 뒤로 던지고 출력을 끝까지 올린 노아는 오버히트로 코어가 소실되고 바디가 숯처럼 타 버렸으며, 뇌는 브레인 셸터로 옮겼지만 뇌까지 가열되어 살리기 힘들 수 있다",
+      "about": ["person:노아", "person:라푼젤", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall1_05_s", "lines": ["50-159"] }, { "scene": "event_goddessfall1_05_e", "lines": ["64-72"] }],
+      "reason": "서술(#82-147)과 라푼젤의 설명(05_e #65-72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2284",
+      "text": "퀸은 인디빌리아 · 토커티브 · 니힐리스타에게 다 함께 에덴을 파괴하라 명령했고, 지배 아래 셋은 서로 싸울 수 없다 — 인디빌리아는 니힐리스타가 방주에서 자기들을 꺼낸 것이 정말 동료가 필요해서였냐며 비웃고, 자기들은 모두 '저것(퀸)의 찌꺼기'일 뿐이라 했다",
+      "about": ["person:퀸", "person:인디빌리아", "person:토커티브", "person:니힐리스타"],
+      "evidence": [{ "scene": "event_goddessfall1_05_e", "lines": ["17-63"] }],
+      "reason": "인디빌리아의 말(#30, #34, #41-44, #52-63). 동료가 필요했던 것은 F2161",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2285",
+      "text": "나유타는 깨어난 마리안에게 퀸임을 안다며 비밀을 지키겠다면서도, 적의 입으로 알려지면 혼란이 치명적일 것이라며 스스로 밝히기를 권했다 — 누가 마리안에게 총칼을 겨누면 목숨을 걸고 막겠다며, 마리안을 세계의 명운을 쥐고 진정한 평화를 가져올 존재라 했다",
+      "about": ["person:나유타", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall1_05_e", "lines": ["102-169"] }],
+      "reason": "둘의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2286",
+      "text": "퀸의 지배력은 랩쳐에게도 미쳐 랩쳐들은 맹목적이고 일사불란하게 에덴으로 몰려왔고 타일런트 급까지 대량 참전했다 — 2시간 뒤 에덴의 창이 쏠 수 있게 되었지만 포격으로 원격 기능이 망가져 조준 · 발사가 수동이고, 한 발뿐이었다",
+      "about": ["person:퀸", "item:에덴의_창", "person:요한", "person:세실"],
+      "evidence": [{ "scene": "event_goddessfall1_06_s", "lines": ["0-20", "41-42", "63-66"] }],
+      "reason": "나유타의 판단(#3)과 세실 · 요한의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2287",
+      "text": "크라운 · 차임 · 킬로 · 탈로스가 에덴에 닿아 인디빌리아를 꿰뚫고 토커티브를 밀어냈고, 함께 온 것은 전투 능력만 연마한 나유타의 분신 2000기였다 — 차임은 떼 지어 가는 분신을 따라왔고, 밀린 인디빌리아 · 니힐리스타 · 토커티브는 스톰 브링어에 실려 퇴각했다",
+      "about": ["person:크라운", "person:차임", "person:킬로", "person:T.A.L.O.S.", "person:나유타", "person:인디빌리아", "person:토커티브", "person:니힐리스타", "concept:스톰_브링어"],
+      "evidence": [{ "scene": "event_goddessfall1_06_s", "lines": ["85-164"] }, { "scene": "event_goddessfall1_06_e", "lines": ["14-20", "44-63"] }],
+      "reason": "서술과 탈로스의 판독(#153), 나유타의 설명(06_e #14-20), 차임(#63)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2288",
+      "text": "나유타는 자기와 똑같은 분신에게 자기 NIMPH 일부를 나눠 준다 — 분신은 자율적으로 판단 · 행동하며 세계 곳곳에서 퀸의 이동 루트 · 헬레틱 동향 등을 모으고, 분신이 죽거나 본체가 원하면 그 NIMPH가 본체를 찾아와 정보가 통합된다 — NIMPH를 잃은 분신은 모든 기능을 잃고, 총수는 3200 이후 세지 않았다",
+      "about": ["person:나유타", "concept:NIMPH"],
+      "evidence": [{ "scene": "event_goddessfall1_06_e", "lines": ["0-23"] }],
+      "reason": "나유타의 설명. 분신은 F2157의 것",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2289",
+      "text": "세 번째 빔 포격을 막던 라푼젤 앞에 마리안이 나서 '내 힘과 성질이 같다'며 붕대로 붉은 빛을 모두 빨아들여 검은 구체로 되돌려 쏘았다 — 같은 때 요한이 에덴의 창을 쏘아 둘 다 퀸에 명중했고, 퀸은 추락하듯 지상의 하늘로 내려왔다",
+      "about": ["person:마리안", "person:라푼젤", "person:요한", "person:퀸", "item:에덴의_창"],
+      "evidence": [{ "scene": "event_goddessfall1_06_e", "lines": ["69-129"] }],
+      "reason": "서술과 세실의 보고(#121-126). 세실은 이를 가칭 '마리안 캐논'이라 했다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2290",
+      "text": "마리안은 모두 앞에서 자기가 랩쳐의 퀸이고 왕관을 빼앗으러 왔다고 밝혔다 — 파이오니아는 바뀌는 건 없다 했고(크라운 왕국에서 총구를 겨눴을 때 짐작했다), 마리안은 자기가 랩쳐로 인류를 멸망시키려 하면 죽여 달라 했으며, 차임은 퀸이든 무엇이든 크라운 왕국의 신하라며 마리안을 쥐어박았다",
+      "about": ["person:마리안", "org:파이오니아", "person:스노우_화이트", "person:라푼젤", "person:차임"],
+      "evidence": [{ "scene": "event_goddessfall1_06_e", "lines": ["136-142"] }, { "scene": "event_goddessfall2_01_s", "lines": ["17-56"] }],
+      "reason": "마리안의 말과 이어지는 반응",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2291",
+      "text": "미러는 원래 마리안이 퀸임을 숨기게 두었다가 그 사실을 몰래 흘려, 모두가 마리안을 못살게 굴어 마음이 무너지면 구슬려 꼭두각시로 만들 계획이었다",
+      "about": ["person:미러", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall2_01_s", "lines": ["0-14"] }],
+      "reason": "미러의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2292",
+      "text": "요한은 마리안이 지금은 문제가 아니니 전력으로 쓰겠다며, 정체를 숨기려 한 나약함 때문에 늦게 와 노아를 잃었다는 말은 꺼내지 않겠다 했다 — 마리안을 퀸으로 만드는 데 힘을 빌려 달라는 나유타가 '모두가 모두를 사랑하는 세계'는 믿지 않는다고 하자 요한은 그를 쓰레기라 했다",
+      "about": ["person:요한", "person:마리안", "person:나유타", "person:노아"],
+      "evidence": [{ "scene": "event_goddessfall2_01_e", "lines": ["0-36"] }],
+      "reason": "요한 · 나유타 · 인헤르트의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2293",
+      "text": "미러에 따르면 미러는 꼭두각시 퀸을, 나유타는 퀸 없는 지상을 원해 최종 목적이 다르지만, 미러의 꼭두각시 퀸은 나유타에게 협의할 수 있는 퀸이라 둘은 동맹을 맺었다 — 미러는 마리안에게 바람을 넣은 나유타에게 다른 꿍꿍이가 있다고 의심한다",
+      "about": ["person:미러", "person:나유타", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall2_01_e", "lines": ["37-55"] }],
+      "reason": "미러 · 장화의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2294",
+      "text": "이사벨이 정찰해 보니 퀸은 구름 위의 검은 덩어리 — 요새로 개조된 우주 정거장(스테이션) — 와 전선으로 이어져 있었다 — 스테이션에는 에덴의 창 · 마리안의 공격에 뚫린 구멍 둘이 났지만 고도를 유지했고, 수많은 붉은 코어의 자동 요격 무장이 다가오는 이를 빔으로 쏘았다 — 퀸은 재머를 뿌리고 장거리 빔을 연사하며 랩쳐를 모으고 회복했다",
+      "about": ["person:이사벨", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_01_e", "lines": ["104-105"] }, { "scene": "event_goddessfall2_02_s", "lines": ["40-113"] }],
+      "reason": "이사벨의 정찰(#42-85)과 요한의 정리(#99-113)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2295",
+      "text": "요한은 에덴의 메인 동력원을 과부하로 자폭시켜 반경 10km에 끌어들인 적을 쓸어버리고 뒷일을 '그 녀석'(지휘관)에게 맡기려 했다 — 방주에 지원을 청하자는 파피용에게는 방주의 도움은 필요 없다 했고, 나유타는 다른 방도가 있다 했다",
+      "about": ["person:요한", "person:파피용", "person:나유타", "person:지휘관", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall2_02_s", "lines": ["137-170"] }, { "scene": "event_goddessfall1_06_s", "lines": ["67-72"] }],
+      "reason": "'그 녀석'은 라푼젤 · 요한이 이어 줄 사람으로 말한 지휘관(06_s #67-72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2296",
+      "text": "나유타는 분신들을 퀸의 자동 요격 무장의 육벽으로 돌격시켜 그 틈에 스테이션을 무너뜨리자 하며 분신은 인격체라 부를 만큼 성숙하지 않은 기계인형이라 했다 — 그러나 분신이 죽어 금색 입자로 돌아오면 저마다의 삶의 기억이 흘러들었고, 나유타는 울며 지형 · 체술 정보만 남기고 사적인 기억을 지웠다 — 마리안이 묻자 일반적인 개념으로는 분신들이 살아 있다고 인정했다",
+      "about": ["person:나유타", "person:마리안"],
+      "evidence": [{ "scene": "event_goddessfall2_02_e", "lines": ["0-62"] }, { "scene": "event_goddessfall2_intermission_01", "lines": ["8-15"] }],
+      "reason": "서술(02_e #5-38)과 나유타의 말(#40-62), 마리안과의 문답(intermission_01 #12-15). 요한도 인격체냐고 물었었다(02_s #94-97)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2297",
+      "text": "하란은 스노우 화이트 대신 스테이션 돌입을 맡으며 — 에덴은 방주를 용서하지 못하지만 파이오니아는 방주를 용서하고 사랑하면서도 곤란할까 봐 자기들끼리 해결하려 하니 더 미쳐 있다며 — 파이오니아는 [영광스런 칭호]를 짊어질 자격이 있고 에덴은 그 칭호를 받을 수 없을 것이라 했다",
+      "about": ["person:하란", "person:스노우_화이트", "org:파이오니아", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["0-32"] }],
+      "reason": "하란의 말. 칭호는 뒤에 요한이 하란에게 '승리의 여신들'로 불러 준다(F2302)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2298",
+      "text": "이사벨은 파피용을 의심했지만 도망가지 않고 함께 싸운 것을 보고 풀어 주며 방주에 에덴 이야기만은 하지 말아 달라 했다 — 그 안전 루트를 짠 세실은 자기 목숨의 가치는 자기가 정하는 것이라며, 퀸이 겁낼 때인 지금밖에 기회가 없다고 했다",
+      "about": ["person:이사벨", "person:파피용", "person:세실"],
+      "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["51-102"] }, { "scene": "event_goddessfall2_04_s", "lines": ["0-35"] }],
+      "reason": "이사벨 · 세실과 파피용의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2299",
+      "text": "이사벨은 스테이션의 빔에 몸이 녹아 가며 마지막 가속으로 하란을 스테이션에 던져 넣고 '사랑스러운 분, 당신을 다시 한번'이라며 빔에 삼켜졌다 — 하란이 포식 증식형 바이러스 가루로 스테이션을 무력화하자 강철 조각이 쏟아지며 퀸이 내려앉고 빔이 멎었다",
+      "about": ["person:이사벨", "person:하란", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["0-39", "63-71"] }],
+      "reason": "서술과 탈로스의 확인(#71)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2300",
+      "text": "인디빌리아는 몰래 뿌려 둔 에블라 입자로 크라운의 몸을 둔하게 만든 뒤 차임을 노리는 척해 크라운을 어깨에서 허리까지 베었다 — 크라운이 예전의 그 '바보 같은 힘'을 쓸 수 없다고 보았다",
+      "about": ["person:인디빌리아", "person:크라운", "person:차임", "concept:에블라_입자"],
+      "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["78-136"] }],
+      "reason": "서술과 인디빌리아의 말(#106, #122). 바보 같은 힘은 네이키드 킹(F1446)으로 보인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2301",
+      "text": "소중한 이들이 서로 목숨을 걸고 싸우는 것을 본 마리안은 퀸에게 분노해 거대화했다 — 거신은 탄환 · 미사일 · 어깨 입자포로 스테이션을 관통했고, 입자를 분해 · 재배치해 순간 이동했다",
+      "about": ["person:마리안", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["141-167"] }, { "scene": "event_goddessfall2_intermission_01", "lines": ["17-41"] }],
+      "reason": "서술과 인디빌리아의 '입자 분해 및 재배치'(intermission_01 #35)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2302",
+      "text": "하란은 거대 지네로 거대화한 인디빌리아의 머리에 낫을 박아 검은 가루로 녹슬게 해 무너뜨리고 자기도 녹슬어 바스러졌다 — 마지막으로 칭호를 청한 하란에게 요한은 '승리의 여신들'이라 불러 주었다",
+      "about": ["person:하란", "person:요한", "person:인디빌리아", "org:인헤르트"],
+      "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["29-82"] }],
+      "reason": "서술과 하란 · 요한의 교신(#61-75). 하란의 마지막 말 '종자야'는 하란이 지휘관을 부르는 말(d_main_21_07_s#23)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2303",
+      "text": "나유타는 퀸의 능력이 미지수라 스노우 화이트 · 홍련 · 라푼젤을 퀸과 결전할 때까지 전장에서 떨어져 대기하게 했다 — 크게 다친 크라운은 차임에게 네이키드 킹을 넘겼고, 왜 바라만 보느냐는 크라운에게 나유타는 많이 알아 두려워 결정하지 못한다고 털어놓았다",
+      "about": ["person:나유타", "person:크라운", "person:차임", "person:스노우_화이트", "person:홍련", "person:라푼젤", "item:네이키드_킹"],
+      "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["97-121", "161-203"] }, { "scene": "event_goddessfall2_05_s", "lines": [135] }],
+      "reason": "회상(#98-117)과 크라운 · 나유타의 대화. 넘긴 것이 네이키드 킹인 것은 05_s #135-138",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2304",
+      "text": "탈출하던 파피용은 전파탑에서 도로시에게 전화해 퀸 하강 · 에덴 붕괴 · 인헤르트 전멸을 알리고 도우러 오라 한 뒤 에덴으로 되돌아 달렸다",
+      "about": ["person:파피용", "person:도로시", "place:에덴"],
+      "evidence": [{ "scene": "event_goddessfall2_04_s", "lines": ["36-67"] }],
+      "reason": "서술과 통화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2305",
+      "text": "요한은 크라운을 맡으며 나유타에게, 실패해도 뒤를 이을 이가 있으니 승리를 책임지고 모두와 함께 모든 것을 걸라며 언체인드 탄환을 주었다 — 나유타는 많은 이를 사지로 내몬 방관자라고 자책했다",
+      "about": ["person:요한", "person:나유타", "person:크라운", "concept:언체인드"],
+      "evidence": [{ "scene": "event_goddessfall2_04_s", "lines": ["68-133"] }],
+      "reason": "요한 · 나유타의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2306",
+      "text": "퀸은 마리안 본인을 노려 실 같은 압축 빔으로 거신을 두 동강 내고, 거신의 입자포 두 줄기를 손으로 빨아들여 되쏘았다 — 떨어진 마리안을 토커티브가 받아 뼈를 부러뜨리며 퀸 인자를 담을 그릇으로만 있으라 했고, 달려온 파이오니아 셋이 토커티브의 머리를 뽑아 짓밟았다",
+      "about": ["person:퀸", "person:마리안", "person:토커티브", "org:파이오니아"],
+      "evidence": [{ "scene": "event_goddessfall2_04_e", "lines": ["11-53", "96-113"] }],
+      "reason": "서술과 토커티브의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2307",
+      "text": "미러는 토커티브에게 마리안을 '퀸의 다음 바디'로 보호하게 시켰지만 그것은 거짓이었다 — 헬레틱 이상만 퀸의 목소리를 들을 수 있어 그것을 못 듣는 토커티브에게 퀸이 그를 인정했다고 속여 거짓 사명에 매달리게 하고 정보를 물어 오게 했다 — 장화에게는 마리안이 '차기 퀸'이라는 쪽이 맞다고 했다",
+      "about": ["person:미러", "person:토커티브", "person:마리안", "person:장화"],
+      "evidence": [{ "scene": "event_goddessfall2_04_e", "lines": ["54-73"] }, { "scene": "event_goddessfall2_05_s", "lines": ["0-27"] }],
+      "reason": "미러의 말(04_e #59-71, 05_s #5-27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2308",
+      "text": "미러에 따르면 퀸은 릴리스의 뇌에 자기 정보를 덮어썼지만 릴리스의 뇌에 남은 NIMPH가 계속 퀸을 공격해, 그것을 없애야 진정한 퀸이 된다 — 토커티브는 언체인드가 어느 몸에 있는지 찾았고 확보는 시간문제라 했다",
+      "about": ["person:미러", "person:퀸", "person:릴리스", "concept:NIMPH", "concept:언체인드", "person:토커티브"],
+      "evidence": [{ "scene": "event_goddessfall2_04_e", "lines": ["74-82"] }],
+      "reason": "미러 · 토커티브의 대화. 언체인드가 NIMPH를 없애는 것(F746)과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2309",
+      "text": "차임은 크라운이 넘겨준 네이키드 킹을 써 인디빌리아를 쓰러뜨렸고(쓴 뒤 알몸으로 탈진), 탈로스가 인디빌리아를 던지고 나유타가 땅에 처박았다",
+      "about": ["person:차임", "item:네이키드_킹", "person:인디빌리아", "person:T.A.L.O.S.", "person:나유타"],
+      "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["104-164"] }],
+      "reason": "서술. 차임의 독백(#122-127)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2310",
+      "text": "퀸의 명령으로 승산 없는 싸움에 나서려던 니힐리스타는, 나유타가 '언제까지 그따위로 살 거냐'며 인디빌리아를 가리키자 자기를 잡아먹고도 명령질하는 인디빌리아에 화가 나 그녀를 먹어 치웠다 — 힘을 되찾은 니힐리스타는 지배력이 풀려 퀸을 죽이겠다 했고, 나유타는 격한 감정이 지배력을 푼 것이라 보았다",
+      "about": ["person:니힐리스타", "person:인디빌리아", "person:나유타", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["180-233"] }, { "scene": "event_goddessfall2_05_e", "lines": ["0-45"] }],
+      "reason": "니힐리스타의 말 · 독백(#215-225)과 나유타의 판단(05_e #34)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2311",
+      "text": "파이오니아와 나유타의 분신들의 공격은 수백 번 퀸에게 닿았지만 퀸은 모든 피해를 재생했다 — 파이오니아가 오랜 세월 지상 곳곳에 배치해 둔 원격 병기의 미사일 6000발에 뼈대만 남고도 다시 재생했고, 분신은 전멸했다",
+      "about": ["org:파이오니아", "person:퀸", "person:나유타", "person:라푼젤"],
+      "evidence": [{ "scene": "event_goddessfall2_05_e", "lines": ["51-125"] }],
+      "reason": "서술. 파이오니아는 지상에 퀸이 없음을 확인하고 우주로 눈을 돌렸었다(#97-102)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2312",
+      "text": "나유타가 언체인드 탄환을 건네자 니힐리스타는 이것은 자기 선택이라며 탄환을 어금니로 깨물고 머리 둘 달린 붉은 용이 되어 퀸에게 돌진해 스스로 독잔이 되었다 — 퀸은 아이를 안듯 그녀를 끌어안아 몸 안에 들였고, 퀸의 재생이 멎어 파츠가 떨어져 나갔다 — 이어 요한이 쏜 에덴의 창도 명중했다",
+      "about": ["person:니힐리스타", "person:나유타", "person:퀸", "concept:언체인드", "person:요한", "item:에덴의_창"],
+      "evidence": [{ "scene": "event_goddessfall2_06_s", "lines": ["0-60"] }],
+      "reason": "서술과 나유타의 '재생 능력을 봉했소'(#47)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2313",
+      "text": "나유타는 지상에 남은 분신들과 의식을 이어 '그대들의 목숨을 태우겠다, 모든 죄는 소인이 짊어지겠다'며 금색 입자로 불러들였다",
+      "about": ["person:나유타"],
+      "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["9-23"] }],
+      "reason": "서술. 그 결과는 장면이 넘어가 나오지 않는다(Q302). 요한은 뒤에 나유타가 '힘을 해방'했다 했다(#108)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2314",
+      "text": "릴리바이스의 모습을 한 '그것'이 마리안의 가슴을 꿰뚫어 코어를 뜯어냈다 — 파피용의 총은 통하지 않았고, 달려온 도로시는 릴리바이스는 죽었다며 '누구냐'고 묻다가 총을 쏘아 이마에 붉은 피 한 방울을 냈으며, 그것은 말없이 지평선 너머로 사라졌다",
+      "about": ["person:릴리바이스", "person:퀸", "person:마리안", "person:파피용", "person:도로시"],
+      "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["25-75"] }],
+      "reason": "서술과 도로시의 말. 그것이 퀸이라는 것은 나유타의 판단(epilogue #6-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2315",
+      "text": "요한에 따르면 인헤르트는 전멸했다 — 이사벨 · 하란은 전사, 노아는 뇌만 브레인 셸터에 있다 — 마리안은 코어를 잃어 혼수상태, 라푼젤은 두부 일부만 남아 뇌만 보관, 홍련은 대파되어 가장 위험하고, 나유타는 힘을 해방한 뒤 신체 강도가 높아져 중파, 스노우 화이트는 깨끗이 절단되어 곧 복귀한다",
+      "about": ["person:요한", "org:인헤르트", "person:이사벨", "person:하란", "person:노아", "person:마리안", "person:라푼젤", "person:홍련", "person:나유타", "person:스노우_화이트"],
+      "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["79-113"] }],
+      "reason": "요한의 보고",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2316",
+      "text": "스노우 화이트는 언니(릴리바이스)에 대한 기억을 모두 되찾아 레드 후드와의 마지막 이별까지 떠올렸고, 지금 장비로는 언니를 이길 수 없다며 세실에게 무장을 청했다 — 세실은 요한이 언젠가 파이오니아와 힘을 합칠 날 선물하려고 준비한 전용 장비 · 무장 플랜이 있어 2주면 완성된다고 했다",
+      "about": ["person:스노우_화이트", "person:릴리바이스", "person:레드_후드", "person:세실", "person:요한", "org:파이오니아"],
+      "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["121-160"] }],
+      "reason": "스노우 화이트 · 세실의 대화와 서술. 기억을 잃었던 것은 F684 · F929",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2317",
+      "text": "나유타는 퀸의 몸에서 나타난 릴리바이스가 진짜가 아니라 퀸이 릴리바이스의 바디를 강탈한 것이라며 방주와 손잡자 했지만 요한 · 세실은 거절했다 — 도로시는 방주가 신기술(에덴의 기술)에 취해 비밀리에 3차 지상 탈환전을 준비하며 자기가 바람을 넣고 있으니, 방주가 지상에 쏟은 힘으로 얻은 것을 빼앗자 했고 요한은 '더 최악'이라 했다",
+      "about": ["person:나유타", "person:요한", "person:세실", "person:도로시", "person:퀸", "person:릴리바이스", "place:방주"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["0-77"] }],
+      "reason": "에필로그의 회의. 강탈은 나유타의 판단이다 — 니힐리스타가 몸 안에 바디를 보관한 채(F2270) 퀸에게 흡수되었으니(F2312) 그 바디를 손에 넣은 것으로 읽힌다(추정, 원문이 직접 잇지 않음). 세실: '자료들을 퍼다 나른 이유'(#66)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2318",
+      "text": "텅 빈 지상이 싫다는 나유타의 호소에 요한은 먼저 '그 녀석'(대협 · 지휘관)의 힘을 빌리고, 그가 협력하지 않거나 협력해도 승산이 없으면 방주의 힘을 빌리겠다며 그 녀석에겐 자기가 연락하겠다고 했다",
+      "about": ["person:요한", "person:나유타", "person:지휘관"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["28-95"] }],
+      "reason": "요한 · 나유타의 대화. 나유타가 '대협'이라 확인(#81)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2319",
+      "text": "요한은 도로시를 인헤르트와 에덴에서 제명하고 다시 찾아오지 말라 했다 — 스노우 화이트가 퀸이 언니의 몸을 빼앗아 모독한다며 지저분한 짓은 그만두고 함께 가자 했지만, 도로시는 '얼마 남지 않았다'며 날아갔다",
+      "about": ["person:요한", "person:도로시", "person:스노우_화이트", "org:인헤르트"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["97-172"] }],
+      "reason": "요한 · 스노우 화이트와 도로시의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2320",
+      "text": "미러에 따르면 언체인드는 퀸의 본체만 붕괴시켰을 뿐이고 — 토커티브에게 한 거짓말(다음 바디)이 진짜가 되었다 — 퀸은 마리안의 인자를 흡수해 지배력이 비할 데 없어졌다 — 마리안은 유사 코어를 붙여 명줄을 잡을 수 있고 뇌가 남아 퀸 인자도 조금 남았다",
+      "about": ["person:미러", "person:퀸", "person:마리안", "person:나유타", "concept:퀸_인자", "concept:언체인드"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["174-199"] }],
+      "reason": "미러 · 나유타의 대화. '이래서 그렇게나 릴리스의 바디를 원했던 거군요'(#176)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2321",
+      "text": "미러가 끼어든 장화를 실 끊긴 인형처럼 멈춰 세우고 자아가 너무 강해도 문제라 했다 — 그 직전 나유타는 홍련이 처음부터 새로 만들어야 할 상태라 했다",
+      "about": ["person:미러", "person:장화", "person:홍련"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["182-189"] }],
+      "reason": "서술과 미러의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2322",
+      "text": "미러는 마리안에게 승산이 없으면 언제든 퀸에게 돌아갈 수 있다 했고, 나유타의 제안대로 퀸 쪽에 붙어 최신 정보를 나유타에게 전하기로 했다 — 나유타는 분신이 아직 남아 늘 미러 주위에 있을 것이라 했다",
+      "about": ["person:미러", "person:나유타", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["200-231"] }],
+      "reason": "미러 · 나유타의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2890",
+      "text": "파이오니아는 오랜 세월 지상을 샅샅이 뒤져 지상에는 퀸이 없다고 확신하고 우주로 눈을 돌렸다 — 나유타의 분신들이 지상 각지에서 퀸의 궤도를 쫓는 사이 스노우 화이트 · 홍련 · 라푼젤은 퀸의 정보를 모으며 결전에 대비해 원격 병기를 곳곳에 배치했다",
+      "about": ["org:파이오니아", "person:나유타", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_05_e", "lines": ["97-102"] }],
+      "reason": "서술 #97-102. 미사일 6000발(F2311)의 내력",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2891",
+      "text": "미러에 따르면 니힐리스타가 토커티브에게 언체인드를 찾으라고 시킨 적이 있어 미러가 그것을 수습하느라 머리를 굴렸다 — 지금 토커티브는 언체인드가 어느 몸에 있는지 찾았다",
+      "about": ["person:미러", "person:니힐리스타", "person:토커티브", "concept:언체인드"],
+      "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["24-27"] }],
+      "reason": "미러 #25-26, 앞 씬 2_04_e#74-76(어느 몸인지 찾았다)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q297",
+      "text": "미러의 인격 데이터의 기반이 된 것 — 미러가 모습을 흉내 내고 '직접 나서지 말 것'을 배운 그것 — 은 누구(무엇)이고, 미러는 어디서 생겨난 데이터 생명체인가?",
+      "about": ["person:미러"],
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["64-68", "80-82"] }],
+      "reason": "미러가 스스로 기반을 말하지 않는다. 신데렐라 마음속의 거울(F1669)과의 관계도 열려 있다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q298",
+      "text": "퀸이 착지한 곳에 있을까 두려워했다는 [그것들]은 무엇인가?",
+      "about": ["person:퀸", "person:미러"],
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["40-43"] }],
+      "reason": "미러가 말하다 '잊어 달라'며 덮었다(#43)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q299",
+      "text": "누가 어떤 의도로 릴리스의 바디를 원래 자리에서 북부 빙하로 옮겨 숨겼고, 니힐리스타가 그것을 찾게 도운 이(협력자)는 누구인가?",
+      "about": ["concept:릴리스의_바디", "person:니힐리스타"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["64-71"] }],
+      "reason": "니힐리스타도 모른다 했고, 나유타의 '퀸의 멸망을 바라는 다른 헬레틱'이라는 짐작에 답하지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q300",
+      "text": "미러는 홍련의 검에 죽은 장화를 어떻게 되살렸고, 장화가 나서면 홍련이 반드시 불행해진다는 까닭은 무엇인가?",
+      "about": ["person:장화", "person:홍련", "person:미러"],
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["94-98"] }, { "scene": "event_goddessfall1_04_e", "lines": ["75-77"] }],
+      "reason": "되살렸다는 말뿐이고 방법은 없다. 미러가 장화의 몸을 멈출 수 있다(F2321)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q301",
+      "text": "토커티브가 찾았다는, 언체인드가 든 '몸'은 누구의 것인가 — 피에 언체인드가 흐르는 지휘관인가?",
+      "about": ["person:토커티브", "concept:언체인드", "person:지휘관"],
+      "evidence": [{ "scene": "event_goddessfall2_04_e", "lines": ["74-76"] }],
+      "reason": "'어느 몸에 있는지'라 해 사람(몸)으로 읽힌다. 지휘관의 피의 언체인드(F2071)와 이어 볼 수 있지만 원문이 이름을 대지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q302",
+      "text": "나유타가 남은 분신들의 목숨을 태워 만든 '비장의 수'는 무엇이었고, 그 뒤 퀸과의 싸움은 어떻게 흘러 파이오니아가 쓰러졌나?",
+      "about": ["person:나유타", "org:파이오니아", "person:퀸"],
+      "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["9-23"] }],
+      "reason": "장면이 넘어가(#24 ⋯) 결과만 나온다(F2315)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q303",
+      "text": "도로시가 '진짜 얼마 남지 않았다'고 한 것은 무엇인가 — 도로시가 바람을 넣는 방주의 3차 지상 탈환전은 언제 어떻게 시작되나?",
+      "about": ["person:도로시", "place:방주"],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["60-72", "162-163"] }],
+      "reason": "도로시가 말을 맺지 않고 떠났다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q304",
+      "text": "스테이션 앞에서 죽어 가던 이사벨이 '다시 한번'이라 부른 '사랑스러운 분'은 누구인가?",
+      "about": ["person:이사벨"],
+      "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["22-25"] }],
+      "reason": "말이 끊긴다. 이사벨이 구원받았다는 지휘관(Q88)일 수 있지만 원문이 잇지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q305",
+      "text": "퀸이 머물던 스테이션은 어째서 궤도 엘리베이터에서 분리되었나 — 미러가 말한 '불의의 사고'는 신데렐라와의 싸움인가?",
+      "about": ["person:퀸", "person:신데렐라"],
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["55-56"] }, { "scene": "event_goddessfall1_04_e", "lines": [21, 51] }],
+      "reason": "니힐리스타도 이유를 모른다 했다. 미러는 그 뒤 퀸이 신데렐라 때문에 겁쟁이가 되었다 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q285-2",
+      "act": "회수",
+      "answer": "F2277",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["39-42"] }],
+      "reason": "마리안이 느낀 [존재]는 하늘의 원래 퀸이고, 빼앗으러 간 것은 그 퀸 인자(흡수 통합)다 — 마리안 본인도 '왕관을 빼앗기 위해' 왔다고 밝혔다(06_e #142)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q287-2",
+      "act": "회수",
+      "answer": "F2278",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["59-60"] }],
+      "reason": "나유타가 지휘관의 인자 각성은 마리안의 퀸 각성에 반응한 것이라 짐작했다. 혼잣말 수준의 짐작이라 일부 · 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q132-3",
+      "act": "회수",
+      "answer": "F2268",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["51-61"] }],
+      "reason": "릴리스의 머리는 리버렐리오가 잘라 우주의 퀸에게 쏘아 보냈다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q283-2",
+      "act": "회수",
+      "answer": "F2320",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["1-6", 49] }, { "scene": "event_goddessfall2_epilogue", "lines": ["176-178"] }],
+      "reason": "바디는 북부 빙하에서 찾아 방주 입구 근처 시체의 산 아래 묻어 두었고(F2267 · F2268), 니힐리스타 자신이 언체인드를 품은 독잔이 되었지만(F2312) 언체인드는 퀸의 본체만 무너뜨렸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q295-2",
+      "act": "회수",
+      "answer": "F2260",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall1_01_s", "lines": ["84-93"] }],
+      "reason": "내려온 퀸은 먼저 에덴의 창을 가진 에덴을 부수고 지상에 내려오려 했고, 새 바디(릴리바이스의 바디 · 마리안의 인자)를 얻었다(F2320). 리버렐리오의 설득은 나오지 않아 일부",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q296-2",
+      "act": "회수",
+      "answer": "F2318",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["80-95"] }],
+      "reason": "요한은 퀸에 맞서 '그 녀석'(지휘관)의 힘을 빌리려고 직접 연락하겠다 했다. CH.42 끝의 연락(F2254)이 이것이라는 것은 시점으로 이은 추정",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M39",
+          "note": "epilogue#80-95 요한이 그 녀석의 힘을 빌리려 직접 연락하겠다고 해 Q296의 답이 바로 이것",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "Q268-2",
+      "act": "회수",
+      "answer": "F2317",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["62-67"] }],
+      "reason": "도로시에 따르면 방주는 비밀리에 3차 지상 탈환전을 준비하고 있고, 그 신기술은 도로시가 넘긴 에덴의 기술이다(F2165)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q150-5",
+      "act": "회수",
+      "answer": "F2317",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["60-72"] }],
+      "reason": "도로시는 방주에 에덴의 기술로 바람을 넣어 3차 지상 탈환전에 힘을 쏟게 하고 그 성과를 빼앗으려 한다. 방주를 파멸시키려는지는 아직이라 일부",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2157-2",
+      "act": "드러냄",
+      "text": "분신은 나유타의 NIMPH 일부로 움직이고, 죽거나 부르면 NIMPH가 본체로 돌아와 정보가 통합된다",
+      "evidence": [{ "scene": "event_goddessfall1_06_e", "lines": ["0-12"] }],
+      "reason": "나유타 본인의 설명(F2288)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2153-2",
+      "act": "드러냄",
+      "text": "요한은 나흘 넘게 연락이 없던 도로시를 끝내 인헤르트와 에덴에서 제명했다",
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["99-106"] }],
+      "reason": "F2319",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "F2164-2",
+      "act": "드러냄",
+      "text": "독잔은 릴리스의 바디가 아니라 언체인드를 깨문 니힐리스타 자신이 되었다",
+      "evidence": [{ "scene": "event_goddessfall2_06_s", "lines": ["5-37"] }],
+      "reason": "F2312. 나유타가 평범한 독잔은 퀸에게 닿기 전에 소멸한다며 니힐리스타를 바라보았다(#7-10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "Q28-2",
+      "act": "회수",
+      "answer": "F2890",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall2_05_e", "lines": ["97-102"] }],
+      "reason": "필그림(파이오니아)이 지상을 돈 것은 퀸을 찾고 정보를 모으며 결전용 병기를 배치하려는 것 — '과거의 유물' 까닭은 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q110-2",
+      "act": "회수",
+      "answer": "F2891",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["24-27"] }],
+      "reason": "니힐리스타가 토커티브에게 찾게 한 것은 언체인드 — 지휘관의 피에 흐르는 것(J4)이라 몸을 열면 나온다는 것과 맞는다. [블랙박스]의 뜻은 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q305-2",
+      "act": "회수",
+      "answer": "F1792",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["21-28", 51] }],
+      "reason": "미러의 '불의의 사고' 뒤 '신데렐라 때문에 겁쟁이' — 신데렐라가 100년 전쯤 스테이션을 떼어냈다(F1792, ch35)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q68-2",
+      "act": "회수",
+      "answer": "F2289",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_goddessfall1_06_e", "lines": ["96-105"] }],
+      "reason": "마리안이 퀸의 빔을 붕대로 빨아들이며 '이 힘은 제힘과 성질이 같다' — 폭발을 빨아들이는 힘은 퀸(인자)의 힘. 블랙박스 넷은 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M39",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S273",
+      "kind": "기준점",
+      "text": "side:eden_spear 끝(퀸 하강)에서 이어짐 — 퀸이 상공 48km에 멈춘 지 3일째, 지휘관이 웨일리를 타고 하늘에 있던 CH.40–41 무렵",
+      "ref": "side:eden_spear",
+      "at": [["뒤", "S265"], ["무렵", "ch40"], ["무렵", "ch41"]],
+      "evidence": [{ "scene": "event_goddessfall1_prologue", "lines": ["0-3", 78] }],
+      "reason": "퀸 하강(F2173)과 나유타의 '대협은 백거경을 타고 하늘을 여행 중'(#78). 포비스트의 퀸은 아직 '만드는 중'(04_s #54)이라 CH.41 탄생 전으로 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "S274",
+      "kind": "회상",
+      "text": "며칠 전 크라운 왕국 — 마리안이 말없이 사라진 날",
+      "at": [["직전", "event_goddessfall1", "며칠"]],
+      "evidence": [{ "scene": "event_goddessfall1_03_s", "lines": ["0-75"] }],
+      "reason": "서술 '며칠 전, 크라운 왕국'(#0)과 '현재, 에덴 인근의 지상'(#76)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    },
+    {
+      "id": "S275",
+      "kind": "기준점",
+      "text": "에필로그 — 요한이 지휘관에게 연락하기로 한 때, CH.42 끝(지휘관이 방주로 내려간 뒤 요한의 연락) 직전",
+      "ref": "ch42",
+      "subject": "구간",
+      "at": [["중", "ch42"]],
+      "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["94-95"] }],
+      "reason": "F2254(요한의 연락)와 이어 읽었다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R74", "note": "단위 검토" }]
+    }
+  ],
+  "targets": []
+}

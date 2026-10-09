@@ -1,0 +1,55 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M25\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:알관련전달사항",
+  "session": "M25",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I226",
+      "target": "person:레비아탄",
+      "evidence": [{ "scene": "relic:알관련전달사항_00", "lines": ["0-3"] }],
+      "reason": "알 실험을 맡아 '너희'에게 잔소리하는 녹음의 주인 — ch36에서 레비아탄이 알 · 용해액 실험을 직접 설명한다(F1808).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I227",
+      "target": "org:포비스트",
+      "evidence": [{ "scene": "relic:알관련전달사항_00", "lines": ["1-2"] }],
+      "reason": "'글로 써놔도 하도 안 읽는' 너희 = 레비아탄의 동료 포비스트. 할 일 목록(relic:할일목록)이 넷의 일을 나눈다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E616",
+      "act": "암시",
+      "points": ["F1872"],
+      "text": "녹음의 주인이 '좋아 보이는 게 있으면 바로바로 가져와'라 해, 지즈가 귀한 재료를 찾아 목 없는 라피의 몸까지 주워 오는 일을 흘린다",
+      "about": ["person:지즈", "org:포비스트"],
+      "evidence": [{ "scene": "relic:알관련전달사항_02", "lines": ["4-5"] }],
+      "reason": "#4. ch38에서 지즈가 땅속의 코어 둘 목 없는 니케를 주워 온다(F1872).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E617",
+      "act": "암시",
+      "points": ["F1862"],
+      "text": "141개 특징 실험 뒤 '선택과 집중, 이제 양보단 질'이라 해, 실험을 그만뒀다는 레비아탄의 말과 달리 더 좋은 융합체를 고르는 기술로 나아갔음을 흘린다",
+      "about": ["person:레비아탄"],
+      "evidence": [{ "scene": "relic:알관련전달사항_03", "lines": ["4-7"] }],
+      "reason": "#4-7. ch37에서 등급별로 정돈된 알이 드러난다(F1862) — ch36의 '그만뒀다'(F1808)는 연막.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

@@ -1,0 +1,53 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M86\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:142",
+  "session": "M86",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1944",
+      "person": "person:프림",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'졸림' · '해결' · '후룩'처럼 단어를 끊어 말하고 일어나 의뢰 · 프림 커피 · 소파에서 3초 만에 잠드는 일상만 되풀이하며, 다른 것은 다 '귀찮'다는 나무늘보 같은 리더",
+      "evidence": [{ "scene": "ep:d_nikke_frima_01", "lines": ["3-5", "23-26", "51-56", "63-71", 107] }],
+      "reason": "#4 '일상을 크게 네 가지로' · #56 '다른 거. 귀찮.' · #107 '그녀의 일상은 변하지 않았다'. 출시순 앞선 기준 — event_bluewaterisland D270보다 앞.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    },
+    {
+      "id": "D1945",
+      "person": "person:프림",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '여'라 부르며 프림 커피를 권하고, 받으면 '굿' 거절하면 '칫' 하는 데면데면한 단골 사이",
+      "evidence": [{ "scene": "ep:d_nikke_frima_01", "lines": ["43-62"] }],
+      "reason": "#44 '여.' · #58 '프림 커피. 줌?' · #61-62 '좋은. 선택.' / '칫.'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    },
+    {
+      "id": "D1946",
+      "person": "person:프림",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "커피를 권하는 데면데면한 단골",
+      "after": "불면증을 풀어 준 지휘관의 불만을 다 들어주겠다 하고, 처음으로 끊지 않은 말로 '고마워. 잘 가.' 하는",
+      "trigger": [{ "scene": "ep:d_nikke_frima_04", "lines": ["124-151"] }],
+      "evidence": [{ "scene": "ep:d_nikke_frima_05", "lines": ["43-52", "84-96"] }],
+      "reason": "04#124 소파에 바퀴 → 센티가 기울기를 맞춰 잠듦. 05#52 '오늘. 하루. 불만. 들어줌.' · #85 '여. 진짜. 신기.' · #93 '고마워. 잘 가.'에 지휘관이 놀란다(#94).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M86" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. ??? 줄 없음. 니케의 정신 건강 · 사고 전환(03#38-75)은 F655가 담는다. 밀크 · 슈가 · 메어리 · 페퍼 · 센티는 한 편의 개그 역할이라 관계를 세우지 않았다. 시점 실마리 없음(세라핌 출장 · 마이티 툴즈는 배경뿐). 출시순 앞선 이 단위에 성격 기준을 세우고 event_bluewaterisland의 D270을 기각했다."
+}

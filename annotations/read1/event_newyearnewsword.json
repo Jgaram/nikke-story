@@ -1,0 +1,706 @@
+{
+  "unit": "event_newyearnewsword",
+  "session": "R35",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "1년의 마지막 밤 전초기지 콘서트에서 노이즈가 지휘관에게 모형 장미를 주고 볼에 입 맞춘 뒤, 몰래 들어온 홍련이 지휘관을 지상 일출 명소로 데려가며 사고 전환에도 잊지 못한 옛 기억을 들려준다(F1228 · F1229). 회상(1차 침공기): 함께 니케가 된 자매 장화 · 홍련은 근접 전투용으로 특수 개량한 양산형 10기 중 둘로, 갓데스의 사례로 중위를 지휘관 삼아 '근접 전투 스쿼드'가 되고 첫 임무를 사상자 0명으로 마친다(F1230–F1232). 그러나 프로토타입 바디의 결함 · 사고 전환 · 끊긴 보급으로 10명이 6명이 되고(F1233), 장화의 반란 제안을 홍련이 거절한다(F1234). 중위는 장화에게 스쿼드가 페어리 테일 바디를 줄 '최후의 1인'을 고르려 버려진 것이라 털어놓고(F1235), 장화는 '완벽한 실패'를 택해 붉은 천으로 눈을 가린 채 중위를 벤다(F1236 · F1237). 장화는 인류를 지키겠다던 마음을 증명하라며 홍련에게 자신을 베게 하고 스스로 검을 끌어당겨 죽는다(F1238). 동료도 모두 죽고 상부는 [내전]으로 덮었으며, 홍련은 화무십일홍만 쥐고 모두를 묻었다(F1239). 현재: 새해 첫 해와 쓴 술, 에필로그에서 백일홍 · 화무십일홍의 사연과 100년 가까이 묵힌 술(F1240 · F1241). Q90(홍련의 약속 · 저주)을 회수로 보았다(Q90-3).",
+  "scenes": [
+    {
+      "scene": "event_newyearnewsword_prologue",
+      "text": "1년의 마지막 밤 콘서트 — 노이즈가 지휘관에게 장미를 주고 볼 뽀뽀, 공원에서 홍련과 마주침"
+    },
+    {
+      "scene": "event_newyearnewsword_01_s",
+      "text": "몰래 술 마시러 온 홍련이 지상으로 새해 일출을 보러 가자고 함"
+    },
+    {
+      "scene": "event_newyearnewsword_01_e",
+      "text": "엘리베이터 · 지상 — 장미는 언니가 좋아한 꽃, 근접 전투 스쿼드 이야기를 시작(회상 시작 #69)"
+    },
+    {
+      "scene": "event_newyearnewsword_02_s",
+      "text": "회상: 장화 · 홍련의 985번째 대련, 근접 전투 스쿼드 결성과 중위 지휘관, 리더 장화"
+    },
+    {
+      "scene": "event_newyearnewsword_02_e",
+      "text": "회상: 첫 임무 — 장화가 먼저 뛰어들고 홍련이 뒤따라 사상자 0명"
+    },
+    {
+      "scene": "event_newyearnewsword_03_s",
+      "text": "회상: 이어진 탈환 · 섬멸 임무, 첫 희생, 정식 스쿼드 가능성과 늦어지는 보급"
+    },
+    {
+      "scene": "event_newyearnewsword_03_e",
+      "text": "회상: 야영 밤 — 장화 · 홍련의 첫 술, 자매라는 기억만 남음, 새해 일출에 모두와 마실 술"
+    },
+    {
+      "scene": "event_newyearnewsword_intermission_01",
+      "text": "현재: 일출 명소. 회상: 사고 전환된 동료 베기, 바디 결함 · 희생으로 6명, 보급 끊김"
+    },
+    {
+      "scene": "event_newyearnewsword_04_s",
+      "text": "회상: 중위에게 항의 — 성과가 모자라 지원이 없다며 제5 사령부 무기고 탈환 임무"
+    },
+    {
+      "scene": "event_newyearnewsword_04_e",
+      "text": "회상: 장화의 반란 제안(둘 찬성 · 둘 반대), 홍련의 반대와 장화의 수락"
+    },
+    {
+      "scene": "event_newyearnewsword_05_s",
+      "text": "회상: 새해 이틀 전 밤 — 습격 소식, 반란 쪽 동료들이 홍련을 막아섬"
+    },
+    {
+      "scene": "event_newyearnewsword_05_e",
+      "text": "회상: 중위가 털어놓은 '최후의 1인' 선별 계획, 장화의 결정, 피투성이로 선 장화"
+    },
+    {
+      "scene": "event_newyearnewsword_06_s",
+      "text": "회상: 붉은 천의 자기 암시로 인간을 벤 장화 — 증명해 보라며 홍련에게 자신을 베게 함"
+    },
+    {
+      "scene": "event_newyearnewsword_06_e",
+      "text": "회상 끝(#48): 장화의 죽음. 현재: 내전으로 덮인 일, 새해 첫 해와 첫 술"
+    },
+    {
+      "scene": "event_newyearnewsword_epilogue",
+      "text": "홍련의 언니에게 쓰는 독백 — 100년 묵은 술, 장미, 백일홍 · 화무십일홍"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1228",
+      "text": "1년의 마지막 밤 전초기지 콘서트에서 노이즈가 1년 동안 곁에서 도와준 프로듀서(지휘관)에게 감사하며 모형 장미를 주고 볼에 입 맞췄고, 자리를 피한 지휘관을 몰래 들어온 홍련이 새해 일출을 보러 지상으로 데려갔다 — 홍련에 따르면 장미는 오래전 죽은 언니가 좋아한 꽃으로 지상에서는 씨앗을 찾지 못했다",
+      "about": [
+        "person:노이즈",
+        "person:홍련",
+        "person:지휘관"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_prologue",
+          "lines": [
+            "0-59"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_01_s",
+          "lines": [
+            "25-34"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_01_e",
+          "lines": [
+            "9-24"
+          ]
+        }
+      ],
+      "reason": "노이즈의 감사 인사와 입맞춤(prologue#22-38), 홍련의 권유(01_s#27-34), 장미 · 언니(01_e#9-21)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1229",
+      "text": "홍련은 사고 전환을 여러 번 겪어 기억 대부분을 잊었지만 결코 잊지 못한 기억으로, 1차 침공기에 언니 장화와 함께 니케가 되었고 둘은 근접 전투를 위해 만들어진 단 10기뿐인 특수 개량 양산형 니케였다 — 홍련에 따르면 방주에서는 이제 근접 전투형을 더 생산하지 않는 듯하다",
+      "about": [
+        "person:홍련",
+        "person:장화",
+        "org:근접_전투_스쿼드",
+        "concept:사고_전환"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_01_e",
+          "lines": [
+            "43-58",
+            "69-71",
+            "85-86"
+          ]
+        }
+      ],
+      "reason": "홍련 본인 말과 회상 서술(#85-86)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1230",
+      "text": "니케가 된 장화 · 홍련이 기억하는 것은 서로 자매라는 것뿐이었다 — 장화에 따르면 페어리 테일 적합자 정도가 아니면 기억이 아예 없거나 전부 남는다 — 둘은 985번 대련해 홍련이 한 번도 이기지 못했다(장화 975승 10무)",
+      "about": [
+        "person:장화",
+        "person:홍련",
+        "concept:적합자"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_03_e",
+          "lines": [
+            "53-61"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_02_s",
+          "lines": [
+            "11-12"
+          ]
+        }
+      ],
+      "reason": "술자리 대화(03_e#53-61)와 대련 전적(02_s#11-12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1231",
+      "text": "갓데스 스쿼드의 사례로 정식 스쿼드가 아니어도 스쿼드마다 지휘관 한 명이 붙게 되어, 근접 전투형 10명은 인류연합군 장교(중위)를 지휘관으로 '근접 전투 스쿼드'라는 이름의 잠입 · 탈환 임무를 받았고 최종 테스트 최고 성적인 장화가 리더가 되었다 — 중위는 '그 용병 놈에겐 페어리 테일 모델을 붙여 주고'라며 불평했다",
+      "about": [
+        "org:근접_전투_스쿼드",
+        "person:장화",
+        "org:갓데스",
+        "org:인류연합군"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_02_s",
+          "lines": [
+            "33-74"
+          ]
+        }
+      ],
+      "reason": "중위의 발표(#51-67)와 혼잣말(#43-46). 용병은 갓데스의 지휘관(F1149)으로 보이나 이름은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1232",
+      "text": "첫 임무에서 모두 랩쳐 무리 앞에 얼어붙었지만 장화가 먼저 뛰어들고 홍련이 뒤따라 근접 전투 스쿼드는 사상자 0명이라는 이례적인 기록으로 성공했고 — 이후 가볍게 개량된 바디로 인류연합군 제29 사령부 탈환 같은 잠입 · 탈환과 섬멸 임무에서 성과를 내 정식 스쿼드가 될지도 모른다는 말을 들었다",
+      "about": [
+        "org:근접_전투_스쿼드",
+        "person:장화",
+        "person:홍련"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_02_e",
+          "lines": [
+            "59-137"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_03_s",
+          "lines": [
+            "0-11",
+            23,
+            "34-45"
+          ]
+        }
+      ],
+      "reason": "회상 서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1233",
+      "text": "성과만큼 희생도 커서 사고 전환이 온 동료를 베고 바디 결함 · 랩쳐 공격으로 동료가 죽어 10명이 6명이 되었다 — 장화에 따르면 그들의 바디는 양산형을 억지로 근접형으로 개량한 프로토타입이라 가볍고 결함이 많으며 가까이서 싸워 사고 전환도 많은데, 보급이 점점 늦어지다 끊겨 바디 수리는커녕 식량도 받지 못했다",
+      "about": [
+        "org:근접_전투_스쿼드",
+        "concept:사고_전환"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_03_s",
+          "lines": [
+            "24-33",
+            "46-62"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_intermission_01",
+          "lines": [
+            "44-118"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_04_s",
+          "lines": [
+            "8-13"
+          ]
+        }
+      ],
+      "reason": "회상 서술과 장화 · 홍련의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1234",
+      "text": "중위가 성과가 모자라 지원이 없다며 제5 사령부 무기고 탈환이라는 훨씬 어려운 임무를 내리자 장화는 중위를 협박해서라도 지원을 받자는 반란을 제안했다(스쿼드원 둘 찬성 · 둘 반대) — 홍련은 죽은 동료들을 헛되게 할 수 없고 배신자로 떠돌 바에는 니케로서 최후까지 싸우다 죽겠다며 반대했고, 장화는 일단 임무를 해 보자며 물러섰다",
+      "about": [
+        "person:장화",
+        "person:홍련",
+        "org:근접_전투_스쿼드"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_04_s",
+          "lines": [
+            "33-65"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_04_e",
+          "lines": [
+            "0-115"
+          ]
+        }
+      ],
+      "reason": "두 장면의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1235",
+      "text": "중위는 장화에게 근접 전투 스쿼드가 유지 보수 비용이 많이 들어 양산할 가치가 없다고 결론 났고, 한 명만 남을 때까지 지원 없이 점점 어려운 임무를 줘 가장 오래 살아남은 하나에게 페어리 테일 바디를 주려는 것이라 털어놓았다 — 임무를 거부하면 사고 전환으로 보아 모두 처분한다고도 했다",
+      "about": [
+        "org:근접_전투_스쿼드",
+        "person:장화",
+        "org:인류연합군"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_05_e",
+          "lines": [
+            "10-113"
+          ]
+        }
+      ],
+      "reason": "중위 본인 말(#46-71, #79-86, #99-104)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1236",
+      "text": "장화는 최후의 1인조차 온전한 적합자에게 힘과 경험을 옮기려 뜯어먹힌 채 데이터만 남기고 사라질 것이라 보고, 성공이 죽음의 원인이라면 '완벽한 실패'만이 살 길이라며 무엇을 지키고 무엇을 버릴지 결정해 중위를 찾아갔다",
+      "about": ["person:장화", "org:근접_전투_스쿼드"],
+      "evidence": [{ "scene": "event_newyearnewsword_05_e", "lines": ["114-145"] }],
+      "reason": "장화의 속생각 서술(#115-139). 무엇을 지켰는지는 원문이 말하지 않는다 — 홍련은 뒤에 알게 되었다고만 한다(06_e#68-72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14", "note": "2회독: 05_e#115-139 장화의 독백이 그대로 보여 준다", "before": "확신도 추정" }
+      ]
+    },
+    {
+      "id": "F1237",
+      "text": "장화는 니케에게 걸린 인간을 벨 수 없는 제약을 붉은 천으로 눈을 가리고 랩쳐라고 자기 암시를 거는 것으로 넘어서 중위와, 움직이지 말라는데 움직인 스쿼드원을 베었다 — 반란 쪽 동료들은 검을 겨눠 홍련을 막아섰다",
+      "about": [
+        "person:장화",
+        "concept:니케"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_s",
+          "lines": [
+            "0-29"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_05_s",
+          "lines": [
+            "18-46"
+          ]
+        }
+      ],
+      "reason": "장화 본인 말(06_s#11-29)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1238",
+      "text": "장화는 인류를 지키며 살겠다는 마음이 영원할 것이라던 말을 증명해 보라며 홍련이 벨 때까지 눈을 가리고 무엇이든 베겠다고 했다 — 봐주지 않기로 약속하고 겨룬 끝에 장화는 망설인 홍련의 검을 스스로 끌어당겨 코어를 꿰뚫게 하고, '강해져야 해, 누구에게도 휘둘리지 않도록', 혼자 두고 가서 미안하다며 죽었다",
+      "about": [
+        "person:장화",
+        "person:홍련"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_s",
+          "lines": [
+            "30-105"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "0-48"
+          ]
+        }
+      ],
+      "reason": "회상 대화와 서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1239",
+      "text": "근접 전투 스쿼드의 다른 동료들도 서로를 베어 모두 죽었고, 뒤늦게 안 인류연합군 상부는 니케가 인간을 죽일 수 있다는 것이 알려져서는 안 된다며 [내전]으로 정리했다 — 조사가 끝난 뒤 홀로 남은 홍련은 언니의 검 화무십일홍만 쥔 채 언니와 동료들의 잔해를 묻었고, 언니가 왜 그랬는지는 다른 스쿼드에 합류한 뒤 들었다",
+      "about": [
+        "org:근접_전투_스쿼드",
+        "person:홍련",
+        "item:화무십일홍",
+        "org:인류연합군"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "49-72"
+          ]
+        }
+      ],
+      "reason": "홍련 본인 말. 상부의 판단 이유는 홍련의 짐작(#54)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1240",
+      "text": "홍련은 매해 열지 못한 — 장화가 새해 일출을 보며 스쿼드 모두와 마시자며 숙성해 둔 — 술을 100년 가까이 지나 올해 새해를 지휘관과 맞으며 비로소 열었다 — 홍련은 세상에 영원한 것은 없으니 과거를 슬퍼하기보다 지금을 충실히 살자며 새해 첫 술을 권했다",
+      "about": [
+        "person:홍련",
+        "person:장화",
+        "person:지휘관"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_03_e",
+          "lines": [
+            "105-111"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "98-116"
+          ]
+        },
+        {
+          "scene": "event_newyearnewsword_epilogue",
+          "lines": [
+            "8-22"
+          ]
+        }
+      ],
+      "reason": "장화의 제안(03_e)과 에필로그 독백. 첫 술이 그 술이라는 건 에필로그(#9-10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1241",
+      "text": "홍련의 검 [백일홍]은 칼날 반쪽이 장화의 바디와 함께 본부로 회수되어 홍련은 지상에서 살아남으려 장화의 검 화무십일홍을 써 왔고, 그 뒤 만난 동료 가운데 좋은 무기 장인이 장화의 코어 조각으로 부서진 칼날을 보완해 수리해 주었다",
+      "about": [
+        "person:홍련",
+        "item:화무십일홍",
+        "person:장화"
+      ],
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_epilogue",
+          "lines": [
+            "38-49"
+          ]
+        }
+      ],
+      "reason": "홍련의 독백. 무기 장인은 갓데스의 스노우 화이트로 보이나 원문은 이름을 대지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F2882",
+      "text": "홍련이 지금 입에 달고 사는 '바람 따라, 구름 따라, 마음 가는 대로'의 한량 같은 삶은 1차 침공기에 장화가 '미래 계획'이라며 살아 보고 싶다던 것이다 — 그때 홍련은 시답지 않은 시라 했다",
+      "about": ["person:홍련", "person:장화"],
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": ["72-76"] }],
+      "reason": "2회독: 03_e#72-73 장화의 말을 01_s#9-10 홍련이 그대로 한다 — 홍련의 삶의 방식이 언니의 꿈에서 왔다는 것(E로 잇는다)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "M14",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "Q90-3",
+      "act": "회수",
+      "answer": "F1238",
+      "degree": "전부",
+      "evidence": [{ "scene": "event_newyearnewsword_06_s", "lines": ["48-49"] }, { "scene": "event_newyearnewsword_06_e", "lines": ["37-39", 56] }],
+      "reason": "홍련은 스쿼드의 유일한 생존자이고(06_e#56, F1239), 검을 휘두르는 까닭은 인류를 지키겠다는 마음을 증명하라는 · 강해지라는 언니 장화의 마지막 말로 읽힌다. '약속, 아니 저주'라는 말과 직접 잇는 대사는 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M14",
+          "note": "2회독: 06_e#37-39 '강해져야 해, 누구에게도 휘둘리지 않도록' · #56 동료 모두 죽음 — 생존자 · 약속 둘 다 답",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F660-2",
+      "act": "드러냄",
+      "text": "근접 전투 스쿼드는 반란 · 내전으로 홍련만 남고 모두 죽었다",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "55-58"
+          ]
+        }
+      ],
+      "reason": "홍련 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F915-2",
+      "act": "드러냄",
+      "text": "언니 장화도 니케였고, 장화는 홍련의 검에 죽으며 화무십일홍을 남겼다",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "33-48",
+            "62-65"
+          ]
+        }
+      ],
+      "reason": "F915의 '니케가 되기 전(또는 갓데스를 만나기 전)' 중 뒤쪽 — 둘 다 니케였다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    },
+    {
+      "id": "F1181-2",
+      "act": "드러냄",
+      "text": "특수목적부대 내전의 실상 — 장화가 중위를 베고 홍련이 장화를 벤 근접 전투 스쿼드의 궤멸",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            "49-65"
+          ]
+        }
+      ],
+      "reason": "같은 현장 · 같은 [내전]. 갓데스와의 만남은 이 이벤트에 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-09-30",
+          "session": "R35"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S117",
+      "kind": "기준점",
+      "text": "1년의 마지막 밤(연말) 전초기지 콘서트 → 지상에서 새해 첫 일출, 에필로그는 새해",
+      "ref": "event_newyearnewsword",
+      "at": [],
+      "evidence": [
+        { "scene": "event_newyearnewsword_prologue", "lines": [1] },
+        { "scene": "event_newyearnewsword_06_e", "lines": ["88-93"] },
+        { "scene": "event_newyearnewsword_epilogue", "lines": [8] }
+      ],
+      "reason": "서술 그대로. event_neverland1(크리스마스) 뒤로 보았지만 앞뒤를 잇는 말은 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "S118",
+      "kind": "회상",
+      "text": "약 100년 전 1차 침공기 — 갓데스 투입 뒤 근접 전투 스쿼드 결성부터 새해 이틀 전 밤의 궤멸까지",
+      "ref": "org:근접_전투_스쿼드",
+      "at": [["뒤", "@갓데스_투입"], ["전", "@방주_밀봉"]],
+      "evidence": [
+        { "scene": "event_newyearnewsword_01_e", "lines": ["69-86"] },
+        { "scene": "event_newyearnewsword_02_s", "lines": ["0-77"] },
+        { "scene": "event_newyearnewsword_03_e", "lines": ["0-114"] },
+        { "scene": "event_newyearnewsword_intermission_01", "lines": ["44-136"] },
+        { "scene": "event_newyearnewsword_05_e", "lines": ["0-158"] },
+        { "scene": "event_newyearnewsword_06_e", "lines": ["0-48"] }
+      ],
+      "reason": "'지상에 처음 랩쳐가 침공해오던 시절'(01_e#70), 갓데스 스쿼드의 사례(02_s#59), '두 밤만 더 지나면 새해'(05_s#4), '100년 가까이 숙성'(epilogue#14). 중간 씬(02_e · 03_s · 04_s · 04_e · 05_s · 06_s)도 모두 회상",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:장화",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_01_e",
+          "lines": [
+            72
+          ]
+        }
+      ],
+      "note": "홍련의 언니 — 근접 전투 스쿼드 리더, 1차 침공기에 죽음",
+      "new": false
+    },
+    {
+      "target": "org:근접_전투_스쿼드",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_01_e",
+          "lines": [
+            43
+          ]
+        }
+      ],
+      "note": "근접 전투형 특수 개량 양산형 니케 10기의 스쿼드(1차 침공기)",
+      "new": true
+    },
+    {
+      "target": "item:화무십일홍",
+      "evidence": [
+        {
+          "scene": "event_newyearnewsword_06_e",
+          "lines": [
+            64
+          ]
+        }
+      ],
+      "note": "장화의 검, 뒤에 홍련이 씀",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

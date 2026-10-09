@@ -1,0 +1,189 @@
+{
+  "unit": "event_lionheart",
+  "session": "R35",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "해피 주 보호소가 맹수에 대한 신고로 또 임시 휴무에 들어가자 레오나는 한 번도 쉬지 못한 네로 · 비스킷과 휴일을 갖고, 지휘관이 소개한 길로틴에게 보호소를 맡긴다(F1246). 쇼핑 · 로열 파인 다이닝 뒤 레오나는 동물 없이도 괜찮을지 확인하고 싶었다고 밝히고(F1247), 돌아오니 '맹수를 지상으로 돌려보내라'는 시위와 일주일 휴무 연장 공문이 와 있다(F1249). 레오나는 머스탱의 허락(모두 안전하게 돌아올 것)을 받아 맹수들만 데리고 지상 초원에 올라가고(F1249), 눈먼 독수리 루비의 가족 · 개들과 자란 늑대 그레이 이야기(F1250). 이튿날 새벽 레오나는 멸종 위기종 보존의 모순을 말하며 맹수들을 모두 지상에 풀어 주지만 티미만 돌아와 레오나 곁을 택한다(F1251). 에필로그: 머스탱은 민원 · 휴일 권유가 희귀 맹수를 빼돌리려던 동물권 단체의 짓이었다고 밝히고, 레오나의 맹수 관리 자격을 박탈한다(F1252).",
+  "scenes": [
+    {
+      "scene": "event_lionheart_prologue",
+      "text": "공원에서 티미를 데리고 다니는 레오나를 시민이 위험하다며 피함"
+    },
+    {
+      "scene": "event_lionheart_01_s",
+      "text": "밤 — 신고로 보호소 임시 휴무, 휴일 동안 동물을 돌볼 사람을 찾는 레오나"
+    },
+    {
+      "scene": "event_lionheart_01_e",
+      "text": "길로틴이 일일 사육사로 옴 — '티미 데 비스타', 레오나가 길로틴을 잘 다룸"
+    },
+    {
+      "scene": "event_lionheart_02_s",
+      "text": "쇼핑몰 펫 용품점 — 비스킷 · 네로 선물, 레오나는 맹수들 옷을 직접 삼"
+    },
+    {
+      "scene": "event_lionheart_02_e",
+      "text": "로열 파인 다이닝, 배양육 30개 포장 — 휴일의 진짜 까닭(동물 없이 괜찮을지)"
+    },
+    {
+      "scene": "event_lionheart_03_s",
+      "text": "시위대 · 일주일 휴무 연장, '보호소의 맹수들은 진짜 맹수일까'"
+    },
+    {
+      "scene": "event_lionheart_03_e",
+      "text": "철장 앞 레오나의 고민, 맹수들만 데리고 지상에 가겠다고 함"
+    },
+    {
+      "scene": "event_lionheart_intermission_01",
+      "text": "머스탱의 조건부 허락(모두 안전하게 돌아올 것), 짐 싸기"
+    },
+    {
+      "scene": "event_lionheart_04_s",
+      "text": "맹수들을 데리고 보호소 전용 엘리베이터로 지상에"
+    },
+    {
+      "scene": "event_lionheart_04_e",
+      "text": "호수가 있는 초원 — 눈먼 독수리 루비와 그 가족"
+    },
+    {
+      "scene": "event_lionheart_05_s",
+      "text": "개들과 자란 늑대 그레이, 멀리서 들린 늑대 무리의 하울링"
+    },
+    {
+      "scene": "event_lionheart_05_e",
+      "text": "저녁 — 티미가 늦게 돌아옴, 레오나의 어색한 반응"
+    },
+    {
+      "scene": "event_lionheart_06_s",
+      "text": "밤 대화, 새벽에 맹수들을 지상에 풀어 줌 — 티미와의 이별"
+    },
+    {
+      "scene": "event_lionheart_06_e",
+      "text": "티미가 돌아와 레오나 곁을 택함, 네로는 미리 알았다"
+    },
+    {
+      "scene": "event_lionheart_epilogue",
+      "text": "머스탱 — 동물권 단체의 음모, 레오나의 맹수 관리 자격 박탈"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1246",
+      "text": "방주 사람들이 맹수를 보호하는 데 불안을 느껴 신고가 잦아 해피 주 보호소는 종종 임시로 문을 닫는데, 이번 휴무에 레오나는 보호소가 생긴 뒤 한 번도 쉬지 못한 네로 · 비스킷과 공문의 권유대로 휴일을 갖기로 하고 동물 돌봄을 지휘관이 소개한 길로틴에게 맡겼다",
+      "about": ["org:해피_주", "person:레오나", "person:길로틴", "person:티미"],
+      "evidence": [
+        { "scene": "event_lionheart_prologue", "lines": ["0-35"] },
+        { "scene": "event_lionheart_01_s", "lines": ["14-50"] },
+        { "scene": "event_lionheart_01_e", "lines": ["1-85"] }
+      ],
+      "reason": "레오나 본인 말(01_s#15-40)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1247",
+      "text": "레오나가 휴일을 만든 까닭은 신고가 꾸준하고 경고로 문을 닫는 주기가 짧아지는 가운데 동물들이 해피 주 없이도 괜찮을지, 자기들이 동물들 없이 괜찮을지 확인하고 싶어서였다 — 네로는 해피 주가 지금껏 동물을 남에게 맡기지 않고 직접 지켜 왔다고 했다",
+      "about": ["person:레오나", "org:해피_주", "person:네로"],
+      "evidence": [{ "scene": "event_lionheart_02_e", "lines": ["67-108"] }],
+      "reason": "레오나 · 네로 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1248",
+      "text": "비스킷 · 네로 · 레오나에 따르면 요즘 방주에서는 로봇 개 · 고양이를 키우는 집이 늘어 쇼핑몰에 펫 용품점이 생기고 대형 로봇 개를 애완용 · 경비견으로 키우는 집도 많아졌으며, 유기 동물에게 먹이를 주는 것이 대개 호기심 · 재미로 유행처럼 번졌다",
+      "about": ["place:방주", "org:해피_주"],
+      "evidence": [{ "scene": "event_lionheart_02_s", "lines": ["48-55", "80-83"] }],
+      "reason": "세 사람의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1249",
+      "text": "보호소를 비운 날 '인간을 위협하는 맹수를 지상으로 돌려보내라'는 시위대가 다녀가고 강제 휴무가 일주일 연장되자, 레오나는 맹수들을 좁은 철장에 일주일 가두는 것도 학대라며 지상에 데려가려 했다 — 보호소를 동물권 단체와 함께 운영한다며 반대하던 머스탱은 레오나가 직접 부탁했다는 말에 모두 안전하게 돌아와야 한다는 조건으로 허락했다",
+      "about": ["person:레오나", "person:머스탱", "org:동물권_단체", "org:해피_주"],
+      "evidence": [
+        { "scene": "event_lionheart_03_s", "lines": ["22-31"] },
+        { "scene": "event_lionheart_03_e", "lines": ["28-46"] },
+        { "scene": "event_lionheart_intermission_01", "lines": ["8-56"] }
+      ],
+      "reason": "길로틴의 보고(03_s#29-31)와 머스탱과의 대화. 머스탱은 휴무 동안 건강검진을 한다고 들었다(#34-36)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1250",
+      "text": "레오나가 돌보던 독수리 루비는 지상에서 쓰러진 채 발견돼 시력을 잃었고, 레오나에게서 루비의 냄새를 맡고 공격했던 루비의 가족은 루비가 살아 있다는 말을 듣고 돌아오길 바라며 그 근처로 보금자리를 옮겼다 — 늑대 그레이는 개들과 함께 자랐고, 레오나에 따르면 랩쳐는 동물을 공격하지 않는다",
+      "about": ["person:루비", "person:그레이", "person:레오나", "concept:랩쳐"],
+      "evidence": [
+        { "scene": "event_lionheart_04_e", "lines": ["58-79"] },
+        { "scene": "event_lionheart_05_s", "lines": ["23-32"] },
+        { "scene": "event_lionheart_05_e", "lines": ["49-53"] }
+      ],
+      "reason": "레오나 본인 말. 루비 · 그레이는 레오나가 맡은 동물(이름표)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1251",
+      "text": "레오나는 인간은 지상에서 살지도 못하는데 지상에서 잘 사는 동물들을 데려와 멸종 위기종 보존이라며 보호하는 것이 이상하고, 휴무가 이 아이들이 방주와 어울려 살 수 없음을 알게 해 주었다며 맡은 맹수들을 모두 지상에 풀어 주었다 — 티미만 돌아와 레오나 곁을 택했고, 레오나는 티미를 영원한 파트너로 지키겠다고 했다",
+      "about": ["person:레오나", "person:티미", "org:해피_주"],
+      "evidence": [{ "scene": "event_lionheart_06_s", "lines": ["83-122", "125-182"] }, { "scene": "event_lionheart_06_e", "lines": ["18-57"] }],
+      "reason": "레오나 본인 말과 서술. 티미의 뜻은 레오나가 옮긴 말(06_e#40-41)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    },
+    {
+      "id": "F1252",
+      "text": "머스탱이 조사해 보니 레오나를 신고한 이들과 휴일을 권한 연락은 모두 동물권 단체 쪽으로, 보호소가 빈 틈에 희귀 맹수를 빼돌리려다 길로틴 때문에 실패하자 휴무를 일주일 늘린 것이었다 — 머스탱은 방주 재산 피해를 이유로 레오나의 맹수 관리 자격을 박탈하고(테스트로 되찾을 수 있다) 거짓말한 이들을 정리하겠다고 했다",
+      "about": ["person:머스탱", "org:동물권_단체", "person:레오나", "person:길로틴"],
+      "evidence": [{ "scene": "event_lionheart_epilogue", "lines": ["0-50"] }],
+      "reason": "머스탱 · 레오나의 대화. 레오나는 음모를 알았는지 답하지 않았다(#22-23)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S120",
+      "kind": "기준점",
+      "text": "아직 날이 추운 때 — 보호소 휴무의 휴일 하루, 이튿날 지상에서 하룻밤을 자고 그다음 날 새벽에 돌아옴",
+      "ref": "event_lionheart",
+      "at": [],
+      "evidence": [
+        { "scene": "event_lionheart_02_s", "lines": [69] },
+        { "scene": "event_lionheart_intermission_01", "lines": [62] },
+        { "scene": "event_lionheart_06_s", "lines": [53] }
+      ],
+      "reason": "'아직 날이 좀 추우니까'(02_s#69), '지상은 아직 조금 추울 테니까'. 다른 단위와의 앞뒤는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R35" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "org:동물권_단체",
+      "evidence": [
+        {
+          "scene": "event_lionheart_intermission_01",
+          "lines": [
+            28
+          ]
+        }
+      ],
+      "note": "해피 주 보호소를 함께 운영하는 단체 — 희귀 맹수를 빼돌리려 함",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

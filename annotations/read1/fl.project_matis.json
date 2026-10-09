@@ -1,0 +1,592 @@
+{
+  "unit": "fl:project_matis",
+  "session": "R96",
+  "by": "claude",
+  "date": "2026-10-04",
+  "summary": "3차 지상 탈환전 준비 중 슈엔이 메티스 테스트를 보며 떠올린 회상(액자 _00 · _26 끝 · _27 지금). 2차 탈환전 실패 직후, 아버지 엔메(2대 CEO)의 사랑을 갈구하던 어린 슈엔은 맥스웰 연구실에서 히어로 영화를 보며 자랐다(F2769). 이복 언니 지엔은 라라의 뇌로 기억 없는 니케를 만들었고(F2772), 엔메는 2차 탈환전 때 깐 에블라 정화 장치 · 후계를 저울질한다(F2773 · F2774). 슈엔이 프로토타입 설계도로 만든 히어로 니케 설계도를 엔메는 공개석상에서 짓밟고(F2778), 실은 [진짜]라 인정하며 괴물로 키우려 애정을 주지 않는다(F2781). 엔메는 지엔을 M.M.R.로 내려보내고 에닉과 거래를 마친 뒤 '드디어 찾았다'며 사라지고, 슈엔이 3대 CEO가 된다(F2779–F2782). 수년 뒤 위기 속 PROJECT MATIS(F2785) — 라플라스가 휴게실에서 버텨 합격(F2786), 1차 성공 · 2차 8명 사망 · 연구소 폭발은 이사회의 약 때문(F2787–F2790). 라플라스 단독 개발 · 하베스터 처치(F2791 · F2792). 슈엔이 지엔과 이사회 임원을 독살하자 맥스웰이 떠나려다 폭탄에 쓰러지고, 슈엔은 그를 니케로 만든다(F2793 · F2794). 드레이크로 스쿼드 완성(F2795). 지금 메티스 자료가 유출되고 지엔은 지상의 엔메를 짚는다(F2796).",
+  "scenes": [
+    {
+      "scene": "fl:project_matis_00",
+      "text": "액자 — 3차 지상 탈환전을 앞두고 슈엔이 오랜만에 직접 라플라스 · 맥스웰의 시뮬레이션 테스트를 돕다 옛 기억을 떠올린다"
+    },
+    {
+      "scene": "fl:project_matis_01",
+      "text": "회상 — 어린 슈엔이 맥스웰 연구실에서 몰래 히어로 영화를 본다. 2차 탈환전 실패를 미실리스 탓으로 돌리는 뉴스, 니케 기술 원본 이야기"
+    },
+    {
+      "scene": "fl:project_matis_02",
+      "text": "이복 언니 지엔 · 메이드 라라의 죽음과 니케화. 엔메가 맥스웰에게 여론 수습을 맡기고, 2차 탈환전 때 깐 장치 · 후계를 저울질한다"
+    },
+    {
+      "scene": "fl:project_matis_03",
+      "text": "어린 슈엔이 프로토타입 설계도를 바탕으로 코어 에너지 구조 변경안을 만들고 엔메가 관심을 보인다"
+    },
+    {
+      "scene": "fl:project_matis_04",
+      "text": "엔메가 슈엔에게 수습을 맡기고, 맥스웰이 돕기로 한다 — 슈엔은 '히어로 니케'를 만들고 싶다"
+    },
+    {
+      "scene": "fl:project_matis_05",
+      "text": "맥스웰과 히어로 니케 설계 — 니케가 되지 않는 맥스웰의 이유, 직계 도서관의 프로토타입 설계도"
+    },
+    {
+      "scene": "fl:project_matis_06",
+      "text": "지엔의 '세계의 진실'과 아버지를 믿지 말라는 충고, 설계도 완성"
+    },
+    {
+      "scene": "fl:project_matis_07",
+      "text": "발표 — 엔메가 설계도를 '형편없다'며 치우게 하고 에블라 정화 장치 기사를 낸다. 휴게실에서 우는 슈엔"
+    },
+    {
+      "scene": "fl:project_matis_08",
+      "text": "엔메가 지엔을 M.M.R.로 내려보내고 에닉과의 거래를 마친 뒤 슈엔을 후계로 발표, 맥스웰과 괴물론, 맥스웰을 재우고 사라진다"
+    },
+    {
+      "scene": "fl:project_matis_09",
+      "text": "슈엔의 3대 CEO 취임식과 홀로 먹는 케이크, 일주일 만에 깬 맥스웰의 거짓말 — 수년이 흐른다"
+    },
+    {
+      "scene": "fl:project_matis_10",
+      "text": "수년 뒤 — 주가 최저 · 이사회의 지엔 접촉, 맥스웰이 새 니케를 권하지만 슈엔이 거부한다"
+    },
+    {
+      "scene": "fl:project_matis_11",
+      "text": "이사회 요청으로 올라온 지엔이 히어로 니케를 쓰라 하고 맥스웰을 떠본다 — 슈엔이 설계도를 꺼낸다"
+    },
+    {
+      "scene": "fl:project_matis_12",
+      "text": "PROJECT MATIS 발표와 지원자 면접 — 돈 · 명예로 온 이들에 슈엔이 실망한다"
+    },
+    {
+      "scene": "fl:project_matis_13",
+      "text": "휴게실 아지트에 숨어든 라플라스와의 만남"
+    },
+    {
+      "scene": "fl:project_matis_14",
+      "text": "라플라스의 과거 — 골목의 히어로 영화, 아버지의 폭력, 외면한 니케들, 최강의 히어로가 되겠다는 맹세"
+    },
+    {
+      "scene": "fl:project_matis_15",
+      "text": "라플라스가 휴게실에서 일주일을 버텨 슈엔의 권한으로 합격한다"
+    },
+    {
+      "scene": "fl:project_matis_16",
+      "text": "100명 후보의 고통스러운 주사 · 훈련, 라플라스에 대한 괴롭힘 — 40명이 남는다"
+    },
+    {
+      "scene": "fl:project_matis_17",
+      "text": "1차 프로토타입 바디 생성 — 라플라스가 첫 성공작이 된다"
+    },
+    {
+      "scene": "fl:project_matis_18",
+      "text": "지엔의 이사회 경고, 2차 바디 생성 실험에서 8명이 캡슐 속에서 녹아 죽는다"
+    },
+    {
+      "scene": "fl:project_matis_19",
+      "text": "여론 포화 · 슈엔과 맥스웰의 다툼, 라플라스가 들은 수상한 약 · 약통, 연구소 폭발"
+    },
+    {
+      "scene": "fl:project_matis_20",
+      "text": "라플라스가 맥스웰을 안고 뛰어내려 구하고, 슈엔이 라플라스를 히어로로 완성하겠다고 한다"
+    },
+    {
+      "scene": "fl:project_matis_21",
+      "text": "슈엔이 지엔과 손잡고 이사회를 치기로 한다 — 남은 후보는 떠나고 라플라스 하나만 개발, 한 달 뒤 타일런트 급 단독 처치"
+    },
+    {
+      "scene": "fl:project_matis_22",
+      "text": "슈엔의 이사회 협박과 임원 A의 고열 사망, 라플라스 바디 재조정(전기 에너지 · 안테나), 최종 시뮬레이션 테스트"
+    },
+    {
+      "scene": "fl:project_matis_23",
+      "text": "지상 테스트 — 라플라스의 정의관, 하베스터와 맞선다"
+    },
+    {
+      "scene": "fl:project_matis_24",
+      "text": "라플라스가 하베스터를 단독으로 쓰러뜨린다"
+    },
+    {
+      "scene": "fl:project_matis_25",
+      "text": "첫 히어로 니케 공개, 맥스웰이 독살을 알고 사직 — 지엔의 '선물', 맥스웰 연구실 앞 폭발"
+    },
+    {
+      "scene": "fl:project_matis_26",
+      "text": "맥스웰의 거부에도 슈엔이 니케화를 고른다 — 니케 맥스웰 · 휴게실 폐쇄 · 드레이크 완성 · 최강 스쿼드, 액자로 돌아온다"
+    },
+    {
+      "scene": "fl:project_matis_27",
+      "text": "슈엔이 메티스 자료 유출을 지엔에게 따지고, 지엔은 지상의 엔메를 짚는다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2768",
+      "text": "3차 지상 탈환전을 앞두고 슈엔은 미실리스 성과가 또 가장 낮으면 무슨 일이 생길지 걱정해 오랜만에 직접 라플라스 · 맥스웰의 시뮬레이션 테스트를 도왔다 — 라플라스 · 맥스웰은 드레이크도 없던 메티스 초기 멤버다",
+      "about": ["person:슈엔", "person:라플라스", "person:맥스웰", "person:드레이크", "org:메티스", "incident:3차_지상_탈환전", "place:시뮬레이션_룸"],
+      "evidence": [{ "scene": "fl:project_matis_00", "lines": ["8-11", "23-25", "33-47"] }],
+      "reason": "슈엔 '3차 지상 탈환전이니까 뭐든 해야'(#23) · '미실리스의 성과가 가장 낮으면'(#24) · 맥스웰 '드레이크도 없던 시절의 … 초기 멤버'(#40)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2769",
+      "text": "어린 슈엔은 아버지(미실리스 2대 CEO 엔메)가 싫어해 히어로 영화를 맥스웰의 연구실에서 몰래 보았다 — 맥스웰과는 3층 복도 끝 휴게실에서, 메이드를 잃고 숨어 울던 때 처음 만났다",
+      "about": ["person:슈엔", "person:엔메", "person:맥스웰"],
+      "evidence": [{ "scene": "fl:project_matis_01", "lines": ["29-40", 64] }, { "scene": "fl:project_matis_07", "lines": ["102-111"] }],
+      "reason": "슈엔 '아버님이 싫어하시니까'(01 #40) · 맥스웰 '그날 그 휴게실에 가는 게 아니었는데'(01 #64) · 07 #102-111 서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2770",
+      "text": "맥스웰에 따르면 니케 제작 기술의 원본은 미실리스에 있다 — 슈엔의 할머니인 1대 CEO가 모든 니케의 프로토타입과 그 마이너 버전인 페어리 테일 타입을 만들고 양산형 · 고유 외형 니케 제작법을 확립했으며, 방주에 들어온 뒤 2대 CEO 엔메는 통신 산업에 힘을 실어 니케 기술 발전은 사실상 멈췄다",
+      "about": ["org:미실리스", "person:엔메", "concept:니케", "concept:페어리_테일"],
+      "evidence": [{ "scene": "fl:project_matis_01", "lines": ["105-114"] }],
+      "reason": "맥스웰 설명(#108-114)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2771",
+      "text": "2차 지상 탈환전 실패 뒤 중앙 정부는 총지휘관 샛별을 탓하다 그가 탈주하자 미실리스의 니케 기술 퇴화를 탓하며 엔메에게 항의했다 — 맥스웰은 책임을 덜고 니케 오리지널 설계도를 공유받으려는 압박이라 보았다",
+      "about": ["org:중앙_정부", "org:미실리스", "person:엔메", "person:샛별", "incident:2차_지상_탈환전"],
+      "evidence": [{ "scene": "fl:project_matis_01", "lines": ["86-90", "96-121"] }],
+      "reason": "뉴스 앵커(#86-90) · 맥스웰(#99-121)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2772",
+      "text": "지엔은 엔메가 데려온 슈엔의 이복 언니로 어려서 니케 뇌 스캔 기술을 개발하고 기억 소거 장치를 개선해 차기 CEO로 떠올랐다 — 메이드 라라가 스파이 혐의로 엔메에게 사살되자, 지엔은 보관하던 라라의 뇌로 기억을 지운 니케를 만들어 슈엔에게 주었다(기억 소거 메커니즘 시험을 겸해)",
+      "about": ["person:지엔", "person:슈엔", "person:엔메", "person:라라", "concept:기억_소거"],
+      "evidence": [
+        { "scene": "fl:project_matis_02", "lines": ["0-9", "31-35", "44-69"] },
+        { "scene": "fl:project_matis_04", "lines": [31] },
+        { "scene": "fl:project_matis_06", "lines": ["50-53"] }
+      ],
+      "reason": "02 서술 · 라라 · 지엔 말, 맥스웰 '지엔이 기억 소거 장치를 개선하면서 단번에 차기 CEO로'(04 #31), 지엔 '기억 소거 메커니즘도 다시 한 번 테스트'(06 #52)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2773",
+      "text": "맥스웰에 따르면 2차 지상 탈환전 때 미실리스 양산형들이 비밀리에 승패와 상관없이 많은 장치를 지상에 설치했고, 엔메는 그것이 지상에서도 블라블라가 이어질 만큼 통신을 강하게 하는 에블라 입자 정화 장치 개선판이라며 더 좋은 거래에 쓰려 발표하지 않았다",
+      "about": ["person:엔메", "person:맥스웰", "org:미실리스", "concept:에블라_입자", "incident:2차_지상_탈환전"],
+      "evidence": [{ "scene": "fl:project_matis_02", "lines": ["89-111"] }],
+      "reason": "맥스웰 · 엔메 대화(#94-105). 맥스웰은 '그게 전부인 게 맞죠?'(#107)라 의심했다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2774",
+      "text": "엔메는 큰딸 지엔은 지나치게 비인간적이라 위에 두면 에닉과 부딪힐 것이고 작은딸 슈엔은 지나치게 인간적이고 유약하다고 보았다 — 지도 위 붉은 영역을 보며 이미 일이 시작되어 되돌릴 수 없다고 했다",
+      "about": ["person:엔메", "person:지엔", "person:슈엔", "person:에닉"],
+      "evidence": [{ "scene": "fl:project_matis_02", "lines": ["140-163"] }],
+      "reason": "엔메 독백(#142-163)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2775",
+      "text": "니케 설계도는 대부분 암호화되어 미실리스도 외장을 더하는 개발밖에 못 했는데, 미실리스 직계만 드나드는 도서관에서 니케 프로토타입 설계도를 본 어린 슈엔이 일주일 만에 니케 코어 에너지 구조 변경안을 만들었고, 엔메는 그에게 여론 수습을 맡겼다",
+      "about": ["person:슈엔", "person:엔메", "org:미실리스", "concept:니케"],
+      "evidence": [{ "scene": "fl:project_matis_03", "lines": ["25-32", "48-79", "95-101"] }, { "scene": "fl:project_matis_04", "lines": ["0-9"] }],
+      "reason": "맥스웰 설명(03 #27-32) · 슈엔 '우리 가족만 들어갈 수 있는 도서관'(03 #51-52) · 엔메 보고서(03 #72-79) · 04 #2-9",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2776",
+      "text": "슈엔은 2차 지상 탈환전 패배 뒤 대중이 원하는 것은 히어로처럼 강한 니케라며 맥스웰의 보조로 '히어로 니케' 설계도를 완성했다 — 맥스웰은 니케가 된 자기는 지금의 자기와 같은 개체가 아니라며 니케가 되지 않았다",
+      "about": ["person:슈엔", "person:맥스웰", "concept:니케"],
+      "evidence": [
+        { "scene": "fl:project_matis_04", "lines": ["52-55"] },
+        { "scene": "fl:project_matis_05", "lines": ["14-25", "42-45", "71-90"] },
+        { "scene": "fl:project_matis_06", "lines": ["116-124"] }
+      ],
+      "reason": "슈엔(05 #14-25) · 맥스웰(05 #75-90) · 06 #124",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2777",
+      "text": "지엔은 미실리스 CEO가 되어 NIMPH · 코어의 정체 · 구성이 비슷한 니케와 랩쳐의 구조 — 랩쳐의 기원 같은 '세계의 진실'을 알고 싶다 했고, 엔메는 라라를 스파이라서가 아니라 목적에 맞지 않아 죽였을 것이라며 아버지를 믿지 말라 했다",
+      "about": ["person:지엔", "person:엔메", "person:라라", "concept:NIMPH", "concept:니케", "concept:랩쳐"],
+      "evidence": [{ "scene": "fl:project_matis_06", "lines": ["16-33", "57-74"] }],
+      "reason": "지엔 말(#17-28 · #62-74)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2778",
+      "text": "발표 자리에서 엔메는 슈엔의 히어로 니케 설계도를 '형편없다 · 어린애 장난'이라며 치우게 하고, 지엔에게 강화된 에블라 입자 정화 장치로 지상 전역에서 블라블라 통신이 가능해졌다는 기사와 중앙 정부 무상 공개를 지시해 미실리스 무능론을 잠재웠다 — 슈엔은 그 뒤 방 밖으로 나오지 않았다",
+      "about": ["person:엔메", "person:슈엔", "person:지엔", "concept:에블라_입자", "org:중앙_정부"],
+      "evidence": [{ "scene": "fl:project_matis_07", "lines": ["63-91", 146] }, { "scene": "fl:project_matis_08", "lines": ["0-1"] }],
+      "reason": "07 #63-91 · #146, 08 #0-1",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2779",
+      "text": "엔메는 지엔에게 M.M.R.로 가 V.T.C.의 남은 데이터를 가져오되 CEO 허락이나 이사회 요청 전까지 방주에 올라오지 말라 하고 에닉에게 감시를 맡겼다 — 지엔은 자기에게 기억 제어 장치를 개발시킨 엔메의 뇌를 언젠가 실험대에 올리겠다고 했다",
+      "about": ["person:엔메", "person:지엔", "person:에닉", "org:M.M.R.", "org:V.T.C."],
+      "evidence": [{ "scene": "fl:project_matis_08", "lines": ["3-57"] }],
+      "reason": "엔메 · 지엔 대화(#4-5 · #34-49 · #39-41) · 엔메→에닉(#54-57)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2780",
+      "text": "엔메는 에닉과의 거래로 지상 위까지 에닉의 통신이 닿게 열어 주었고, 지도의 붉은 점으로 위치가 특정되자 '드디어 찾았다'며 이틀 뒤 가겠으니 막지 말라 했다",
+      "about": ["person:엔메", "person:에닉"],
+      "evidence": [{ "scene": "fl:project_matis_08", "lines": ["52-69"] }],
+      "reason": "엔메 · 에닉 대화(#58-69)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2781",
+      "text": "엔메는 슈엔의 설계도가 2세대 페어리 테일 이후 처음 보는 [진짜] 니케 설계도라 인정하면서도, 만족하면 정체된다며 애정에 굶주린 슈엔을 괴물로 키우려 일부러 깎아내리고 평생 애정을 주지 않겠다 했다 — 자리를 원하는 지엔에게는 그래서 자리를 주지 않았다",
+      "about": ["person:엔메", "person:슈엔", "person:지엔", "concept:페어리_테일"],
+      "evidence": [{ "scene": "fl:project_matis_08", "lines": ["9-14", "93-174"] }],
+      "reason": "지엔 '그건 분명 [진짜]였어요'(#10) · 엔메(#100-146)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2782",
+      "text": "엔메는 스텔스 총구의 침으로 맥스웰을 재워 취임식에 못 오게 하고 그날 저녁 방주에서 자취를 감췄다 — 이틀 뒤 실종을 숨기려 슈엔이 미실리스 3대 CEO로 화려하게 취임했고, 엔메는 M.M.R. 깊은 곳에서 비밀 연구 중이라고 발표되었다",
+      "about": ["person:엔메", "person:맥스웰", "person:슈엔", "org:미실리스", "org:M.M.R."],
+      "evidence": [{ "scene": "fl:project_matis_08", "lines": ["70-76", "175-190"] }, { "scene": "fl:project_matis_09", "lines": ["0-2", "40-52"] }],
+      "reason": "08 #175-190 서술 · 09 #0-2 서술 · 슈엔 연설(09 #44-47)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2783",
+      "text": "일주일 만에 깬 맥스웰은 엔메의 짓을 슈엔에게 말하지 않고 수면 부족으로 쓰러졌다고 둘러댔고, 슈엔은 그 뒤 수년 동안 맥스웰의 연구실에 가지 않았다",
+      "about": ["person:맥스웰", "person:슈엔", "person:엔메"],
+      "evidence": [{ "scene": "fl:project_matis_09", "lines": ["134-167"] }],
+      "reason": "09 서술 · 맥스웰(#153-154)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2784",
+      "text": "수년 뒤 앱솔루트에 밀려 미실리스 주가가 최저로 떨어지고 슈엔의 폭언 · 폭행이 화두가 되자 이사회가 지엔을 다른 후보로 접촉했고, 이사회 요청으로 올라온 지엔은 엔메가 슈엔을 앉힌 것은 설계도 때문이라며 히어로 니케를 쓰라 했다",
+      "about": ["person:슈엔", "person:지엔", "person:엔메", "org:미실리스", "org:앱솔루트"],
+      "evidence": [{ "scene": "fl:project_matis_10", "lines": ["0-5", "41-47"] }, { "scene": "fl:project_matis_11", "lines": ["9-25", "39-51"] }],
+      "reason": "뉴스(10 #0-5) · 맥스웰(10 #41-45) · 지엔(11 #11-14 · #22-25 · #46-51)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2785",
+      "text": "슈엔은 PROJECT MATIS(Missilis Industry Advanced Technology Invincible Squad) — 니케의 원형 · 오리지널의 힘을 가진 새 히어로 니케 스쿼드 — 를 발표하고 히어로가 되고 싶은 지원자를 모집했다",
+      "about": ["person:슈엔", "org:메티스", "org:미실리스"],
+      "evidence": [{ "scene": "fl:project_matis_12", "lines": ["0-27"] }],
+      "reason": "슈엔 방송(#9-27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2786",
+      "text": "라플라스는 니케로 만들어 돈을 받으려는 아버지에게 맞으며 자란 병약한 골목 소녀로, 도움을 외면한 니케들에게 버려진 뒤 최강의 히어로가 되겠다고 맹세했다 — 1차 면접에서 떨어졌지만 슈엔의 휴게실에서 일주일을 버텨 슈엔의 권한으로 합격했다",
+      "about": ["person:라플라스", "person:슈엔"],
+      "evidence": [{ "scene": "fl:project_matis_14", "lines": ["16-25", "53-55", "66-121"] }, { "scene": "fl:project_matis_15", "lines": ["24-27", "94-140"] }],
+      "reason": "14 서술 · 15 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2787",
+      "text": "프로젝트 메티스는 실험 후보 100명으로 시작해 고통스러운 주사와 훈련을 견딘 40명이 남았고, 1차 프로토타입 바디 생성(NIMPH 주입, 바디 메이커 8기)에서 실험번호 100번 라플라스가 첫 성공작이 되었다",
+      "about": ["org:메티스", "person:라플라스", "concept:NIMPH"],
+      "evidence": [
+        { "scene": "fl:project_matis_16", "lines": ["19-27", 110] },
+        { "scene": "fl:project_matis_17", "lines": [48, "59-66", 82, "95-135"] },
+        { "scene": "fl:project_matis_18", "lines": ["0-2"] }
+      ],
+      "reason": "16 #20 · #110, 17 #62 · #65-66 · #82 · #105, 뉴스(18 #1)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2788",
+      "text": "2차 바디 생성 실험에서 캡슐 속 8명이 고열로 모두 녹아 죽어 비인륜적 인체 실험이라는 비난이 일었다 — 라플라스는 주사를 놓던 이가 '실험 방식이 바뀌었다'며 후보들에게 약을 먹이는 것을 들었고, 맥스웰이 약통을 찾은 직후 연구소가 화재경보 없이 폭발해 무너졌다",
+      "about": ["org:메티스", "person:라플라스", "person:맥스웰"],
+      "evidence": [
+        { "scene": "fl:project_matis_18", "lines": ["93-98", "119-130"] },
+        { "scene": "fl:project_matis_19", "lines": ["0-7", "182-205"] },
+        { "scene": "fl:project_matis_20", "lines": ["13-15"] }
+      ],
+      "reason": "18 #129-130 서술 · 뉴스(19 #1-7) · 라플라스(19 #182-187) · 19 #190 · #201-205",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2789",
+      "text": "라플라스는 정신을 잃은 맥스웰을 안고 불타는 연구소 창문을 깨고 뛰어내려 구했고 — 슈엔의 도움 요청 목소리로 창문을 찾았다고 했다 — 슈엔은 라플라스를 히어로로 완성하겠다고 했다",
+      "about": ["person:라플라스", "person:맥스웰", "person:슈엔"],
+      "evidence": [{ "scene": "fl:project_matis_20", "lines": ["47-73", "104-118"] }],
+      "reason": "20 서술 · 라플라스(#69-70) · 슈엔(#112-118)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2790",
+      "text": "슈엔에 따르면 그 약은 외부에 고열 에너지가 생기면 몸 안에서도 폭탄처럼 고열이 나게 하는 것으로, 엔메의 눈과 귀로 남은 이사회가 실험을 망치고 연구소를 불태워 증거를 없애려 한 것이었다 — 슈엔은 지엔의 도움으로 임원들의 영양제 · 병원 약 · 이터널 라이프에 그 약을 넣었다고 협박했고, 이튿날 여성 임원 A가 자택에서 고열 전신 화상으로 숨졌다",
+      "about": ["person:슈엔", "person:지엔", "person:엔메", "org:미실리스", "item:이터널_라이프"],
+      "evidence": [
+        { "scene": "fl:project_matis_21", "lines": ["3-25", "48-54"] },
+        { "scene": "fl:project_matis_22", "lines": ["11-65", "78-80"] },
+        { "scene": "fl:project_matis_25", "lines": ["59-66", "137-143", "213-220"] }
+      ],
+      "reason": "지엔 '아버지의 눈과 귀'(21 #12-15) · 슈엔 정례 회의(22 #14-19 · #39-57) · 뉴스(22 #79-80) · 슈엔 '약을 먹이라고 시켰을 뿐'(25 #139) · 지엔 '내도 거기에 손 여럿 보탰는데'(25 #220)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2791",
+      "text": "남은 후보들이 보상을 받고 일반 니케 바디로 옮겨 가자, 슈엔은 진짜 니케는 몸이 바뀌어도 기억을 잃지 않고 인간 이상의 힘으로 이겨 내는 귀중한 존재이고 그 밖은 고철이라며 첫 메티스로 라플라스 한 사람만 개발해 한 달 뒤 타일런트 급 단독 처치로 증명하기로 했다",
+      "about": ["person:슈엔", "person:라플라스", "org:메티스", "concept:니케", "concept:타일런트_급"],
+      "evidence": [{ "scene": "fl:project_matis_21", "lines": ["62-85"] }],
+      "reason": "맥스웰(#62-63) · 슈엔(#68-74 · #79-85)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2792",
+      "text": "라플라스는 척추의 관으로 전기 에너지를 주입받아 코어 출력을 올렸고(바디 생성 전 주사는 그 고통을 미리 견뎌 보는 시험이었다), 안테나의 전기 신호 감지 기능은 못 써 다음 니케 몫이 되었다 — 지상 테스트에서 타일런트 급 하베스터를 단독으로 쓰러뜨렸다",
+      "about": ["person:라플라스", "person:슈엔", "person:맥스웰", "concept:하베스터", "concept:타일런트_급"],
+      "evidence": [
+        { "scene": "fl:project_matis_22", "lines": ["128-171"] },
+        { "scene": "fl:project_matis_23", "lines": ["47-60"] },
+        { "scene": "fl:project_matis_24", "lines": ["50-57"] }
+      ],
+      "reason": "슈엔(22 #132-136) · 맥스웰(22 #152-171) · 23 #48 · 24 #53-57",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2793",
+      "text": "라플라스가 미실리스의 첫 히어로 니케로 공개된 날, 맥스웰은 이사회 임원의 호소와 녹음으로 슈엔이 임원에게 약을 먹인 것을 알고 '효율로 사람을 죽이는 것은 괴물'이라며 사직서를 냈다 — 슈엔은 약을 먹이라 시켰을 뿐 방아쇠는 그들이 당겼다고 했다",
+      "about": ["person:맥스웰", "person:슈엔", "person:라플라스"],
+      "evidence": [{ "scene": "fl:project_matis_25", "lines": ["10-16", "30-35", "59-66", "113-114", "137-143", "152-189"] }],
+      "reason": "25 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2794",
+      "text": "지엔이 '영원히 옆에 둘지 떠나보낼지 직접 고르라'며 다 준비해 놨다고 한 직후 맥스웰은 연구실 앞 편지를 보러 나서다 폭탄에 하반신을 잃었고, 슈엔은 맥스웰이 거부했는데도 울며 맥스웰을 니케로 만들기를 골랐다 — 니케 맥스웰(메티스 둘째 · 미케닉)은 인간 맥스웰의 기억은 있지만 자기는 다른 개체라 했다",
+      "about": ["person:지엔", "person:맥스웰", "person:슈엔", "org:메티스"],
+      "evidence": [
+        { "scene": "fl:project_matis_25", "lines": ["236-279"] },
+        { "scene": "fl:project_matis_26", "lines": ["5-8", "27-29", "45-55", "107-133", "147-170", "217-218"] }
+      ],
+      "reason": "지엔(25 #237-242) · 25 #272-279 · 26 #5-6 · #27-28 · 슈엔(26 #126-130) · 26 #147-149 · 니케 맥스웰(#155-170) · 슈엔 '그건 지엔이···'(26 #218). 폭탄을 지엔이 놓았다는 말은 없어 사실엔 '직후'로만 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2795",
+      "text": "그 뒤 슈엔은 휴게실을 닫고 셋째 니케 드레이크를 완성해 메티스 스쿼드를 꾸렸고, 쫓기듯 그들을 도구처럼 쉴 새 없이 지상 임무에 올려 방주 최고의 실적을 내는 최강의 스쿼드로 만들었다",
+      "about": ["person:슈엔", "person:드레이크", "org:메티스"],
+      "evidence": [{ "scene": "fl:project_matis_26", "lines": ["280-298"] }],
+      "reason": "26 서술. 지엔이 말한 둘째 후보(전기 에너지 적응 · 감지 능력, 25 #198-203)가 드레이크로 보이나 원문이 잇지 않아 적지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2796",
+      "text": "지금 누군가 미실리스 최고 보안 등급을 뚫고 다른 것은 건드리지 않은 채 메티스 자료만 빼 가는데, 지엔은 자기가 아니라며 지상에서도 방주 보안을 뚫을 수 있는, 방주 통신 체계를 구축한 천재를 짚었고 슈엔은 엔메를 떠올렸다",
+      "about": ["person:슈엔", "person:지엔", "person:엔메", "org:메티스", "org:미실리스"],
+      "evidence": [{ "scene": "fl:project_matis_27", "lines": ["15-52"] }],
+      "reason": "슈엔 · 지엔 대화(#16-52)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "F2797",
+      "text": "지엔은 슈엔의 머리를 쏜 이를 잡아다 제대로 벌받게 해 주었다고 했다",
+      "about": ["person:지엔", "person:슈엔"],
+      "evidence": [{ "scene": "fl:project_matis_27", "lines": ["6-8"] }],
+      "reason": "지엔(#6)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q358",
+      "text": "엔메가 지도의 붉은 점으로 위치를 특정해 '드디어 찾았다'며 방주를 떠나 찾아간 것은 무엇이고, 엔메는 지금 어디서 무엇을 하나?",
+      "evidence": [
+        { "scene": "fl:project_matis_02", "lines": ["157-163"] },
+        { "scene": "fl:project_matis_08", "lines": ["57-62", 190] },
+        { "scene": "fl:project_matis_27", "lines": ["45-52"] }
+      ],
+      "reason": "붉은 영역 · 붉은 점(02 #158 · 08 #61-62)과 실종(08 #190), 지금 지상에 있을 수 있다는 지엔의 짐작(27 #45-52) — 답이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "Q359",
+      "text": "2차 지상 탈환전 때 미실리스가 지상에 몰래 깐 에블라 입자 정화 장치 개선판에는 통신 말고 다른 기능이 있나 — 엔메가 '이미 시작됐다'고 한 일은 무엇인가?",
+      "evidence": [{ "scene": "fl:project_matis_02", "lines": ["94-110", "157-160"] }],
+      "reason": "맥스웰의 의심(#107-109)과 엔메 독백(#159-160)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "Q360",
+      "text": "미실리스 최고 보안을 뚫고 메티스 자료만 빼 가는 이는 정말 엔메인가 — 왜 메티스 자료를 가져가나?",
+      "evidence": [{ "scene": "fl:project_matis_27", "lines": ["16-52"] }],
+      "reason": "지엔의 짐작과 슈엔의 '아버님?'(#52)에서 끝난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "Q361",
+      "text": "메이드 라라는 정말 스파이였나 — 엔메는 왜 라라를 죽였나?",
+      "evidence": [
+        { "scene": "fl:project_matis_02", "lines": ["31-35"] },
+        { "scene": "fl:project_matis_06", "lines": ["62-67"] },
+        { "scene": "fl:project_matis_07", "lines": ["44-49"] }
+      ],
+      "reason": "지엔의 의심(06 #62-67)과 슈엔의 짐작(07 #44-46) — 답이 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "Q362",
+      "text": "에닉은 왜 지상 위까지 자기 통신이 닿기를 바라 엔메와 거래했고, 지상에 닿은 통신으로 무엇을 하나?",
+      "evidence": [{ "scene": "fl:project_matis_08", "lines": ["63-69"] }],
+      "reason": "엔메 · 에닉 대화(#66-69) — 거래의 내용만 나온다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q58-2",
+      "act": "회수",
+      "answer": "F2791",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:project_matis_21", "lines": ["68-74"] }],
+      "reason": "ch12에서 슈엔이 말하지 않은 '고철들과 다른 특별한 아이들'(F316)의 까닭 — 슈엔이 직접 만든 설계도의 '진짜 니케'로, 몸이 바뀌어도 기억을 잃지 않는다(#72)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "Q213-3",
+      "act": "회수",
+      "answer": "F2797",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:project_matis_27", "lines": ["6-8"] }],
+      "reason": "슈엔을 쏜 것은 유니였고(F1013), 지엔은 그를 '잡아다 제대로 벌받게' 했다고 한다 — 유니의 처벌을 랩쳐 융합 실험으로 이끈 까닭의 하나로 보인다. 유니라고 이름하지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S339",
+      "kind": "기준점",
+      "text": "CH.46 뒤 — 3차 지상 탈환전을 앞두고 메티스가 파워 업 히어로 슈트를 받은 뒤",
+      "ref": "ch46",
+      "at": [["뒤", "ch46"]],
+      "evidence": [{ "scene": "fl:project_matis_00", "lines": ["8-9", 23, "26-30"] }, { "scene": "fl:project_matis_26", "lines": ["305-331"] }],
+      "reason": "'3차 지상 탈환전을 한다는데'(00 #9) — 3차 탈환전 검토는 ch46 끝(F2659). '지상에서 급하게 준' 파워 업 슈트(00 #27-30)는 ch38(F1877). ch46 뒤 어디인지는 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    },
+    {
+      "id": "S340",
+      "kind": "회상",
+      "text": "2차 지상 탈환전 실패 직후 어린 슈엔의 시절부터, 3대 CEO 취임 수년 뒤 PROJECT MATIS로 메티스 스쿼드가 완성되기까지",
+      "ref": "incident:2차_지상_탈환전",
+      "at": [["뒤", "@2차_지상_탈환전"], ["전", "fl:project_matis"]],
+      "evidence": [
+        { "scene": "fl:project_matis_00", "lines": ["57-58"] },
+        { "scene": "fl:project_matis_01", "lines": ["86-101"] },
+        { "scene": "fl:project_matis_09", "lines": [167] },
+        { "scene": "fl:project_matis_26", "lines": ["280-304"] }
+      ],
+      "reason": "슈엔이 '오래된 기억을 떠올렸다'(00 #58) — 뉴스가 2차 탈환전 실패 · 샛별 탈주 뒤(01 #86-101), '수년이 흘렀다'(09 #167), 26 #305에서 액자로 돌아온다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R96" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:엔메",
+      "evidence": [
+        {
+          "scene": "fl:project_matis_01",
+          "lines": [
+            89
+          ]
+        }
+      ],
+      "note": "슈엔 · 지엔의 아버지, 미실리스 2대 CEO — 슈엔 취임 날 방주에서 사라졌다",
+      "new": false
+    },
+    {
+      "target": "person:라라",
+      "evidence": [
+        {
+          "scene": "fl:project_matis_02",
+          "lines": [
+            7
+          ]
+        }
+      ],
+      "note": "어린 슈엔의 전속 메이드 — 스파이 혐의로 엔메에게 사살되었고 지엔이 그 뇌로 니케를 만들었다",
+      "new": false
+    }
+  ],
+  "revisit": [],
+  "slips": [
+    "F526(char:102 #1, 인간 맥스웰은 지상 임시 연구소에서 랩쳐 습격으로 죽음)과 어긋남 — 여기선 방주의 맥스웰 연구실 앞 폭탄으로 하반신을 잃고 병원에서 니케가 된다(fl:project_matis_25 #272-279, _26 #27-29 · #147-149). 설정 오류 또는 대외 설명으로 보고 이 이벤트를 따른다(추정)"
+  ]
+}

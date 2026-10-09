@@ -1,0 +1,30 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M103\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:872",
+  "session": "M103",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2228",
+      "person": "person:아이기스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:라이"],
+      "before": "마지막 꼬치 한 조각을 양보받은 낯선 니케",
+      "after": "숙제를 대신 풀다 함께 혼나고 울음을 달래 준 끝에 '저희는 친구'라며 [나루 4호]라는 이름을 데이터베이스에 소중히 남기겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_ce009_03_04", "lines": [41, "58-59", 76] }],
+      "evidence": [{ "scene": "ep:d_nikke_ce009_03_05", "lines": ["67-81"] }],
+      "time": "S344",
+      "points": ["F2869"],
+      "reason": "04#58-59 '친구를 돕는 일' → '그렇다면 라이도 분명…' · 05#74 '저희는 친구이지 않습니까' · #80-81 '나루 4호라는 이름 … 소중히'. 아이기스 → 라이의 첫 기록.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음(여자 손님 · 종업원은 이름 없는 단역). 시점 S344(fl:persona_on_frontline 뒤, 귀환 전 마지막 날 무렵) 그대로. 줄기(J55)에 걸린 암시 없음 — 마르차나의 숙제 꾸지람 · 라이의 3학년 자처는 D2022 · D2025 그대로라 다시 세우지 않았다."
+}

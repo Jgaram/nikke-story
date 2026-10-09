@@ -1,0 +1,72 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M100\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:94",
+  "session": "M100",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "status": "확정",
+      "id": "I678",
+      "target": "person:베스티",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_02", "lines": [4, 10, 20] }],
+      "reason": "#25-29 엠마가 무기고 구석을 보자 상자 뒤에서 고개만 내밀던 베스티가 숨는다 — 은화 · 엠마 · 지휘관 밖의 넷째 사람.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "I679",
+      "target": "person:라플라스",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_03", "lines": [39] }],
+      "reason": "#40 '이 목소리는?' 뒤 #41 라플라스 '역시 버드 보이로군!'.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "I680",
+      "target": "person:길로틴",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_03", "lines": ["85-86"] }],
+      "reason": "#87 '이 말투는… 길로틴?' · #88 '보지도 않고 알아챌 줄이야'.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2179",
+      "person": "person:베스티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "말했다가 친구를 잃을까 봐 꿈에 자주 나오는 지휘관에게 품은 마음을 숨기던",
+      "after": "지휘관이 자기에게 특별하다는 것을 깨달아 '정말 좋아해'라 말하고, 언젠가 진짜 감정을 전하겠다고 일기에 적는",
+      "trigger": [{ "scene": "ep:d_nikke_vesti_tactical_05", "lines": ["33-48"] }],
+      "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_05", "lines": ["49-60", "73-75"] }],
+      "reason": "02#121 '친구를 잃을지도 모르니까' → 05#50 '지휘관님은… 특별해' · #60 '정말… 좋아해!' · #75. 앞 모습은 D1836.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2180",
+      "person": "person:베스티",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "소심하고 몸이 작아 존재감이 약하다는 말을 듣고, 같이 꾸밀 친구가 없어 수수하게만 지내던",
+      "after": "바뀌고 싶다며 귀엽고 화려한 옷을 고르고, 둘만의 시간을 끊은 아이들과도 다음엔 사이좋게 지내고 싶다는",
+      "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_04", "lines": ["13-21", "51-55"] }],
+      "reason": "04#17 '존재감이 약하단 말' · #21 '같이 해줄 친구가 없었으니까' → #52-54 바뀌고 싶다며 화려한 색. 05#65-67 일기 '그 애들이랑도 사이좋게'.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 실마리 없음. 01은 베스티의 꿈이라 그 안의 'XX 사이'는 변화로 적지 않았다. 라플라스 · 길로틴은 얕아(늘 하던 모습) 기준을 세우지 않았다. 길로틴의 '[협회]의 벗'(03#102)은 잉그리드와의 관계(D1355) 그대로다."
+}

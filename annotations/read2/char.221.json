@@ -1,0 +1,146 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M53\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:221",
+  "session": "M53",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I498",
+      "target": "person:라푼젤",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_01", "lines": [22, 24] }],
+      "reason": "쓰러진 지휘관에게 다가오는 '후우…' · '하악 하악' — 눈을 뜨자 #27 라푼젤 이름표가 '헉!? 일어나셨나요?', #31-32 키스하려 했다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "I499",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["78-96"] }],
+      "reason": "갓데스에 있던 '최초의 지휘관' · '그 사람' — 갓데스의 지휘관은 엔더슨(F2373, Q83-3)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1257",
+      "act": "암시",
+      "points": ["F2373"],
+      "text": "니케들을 사람이자 동료로 대한 최초의 지휘관을 '우리 모두는, 아마 그 사람을…' 하고 말을 흐린다 — 릴리바이스와 서로 사랑한 갓데스의 지휘관 엔더슨",
+      "about": ["person:엔더슨", "person:릴리바이스"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["86-96"] }],
+      "reason": "흐린 말 #92가 ark_guardian의 고백 장면(F2373 — 릴리바이스와 서로 사랑한다 고백)을 미리 비춘다. '모두'라 해 누구의 마음인지는 원문이 잇지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "E1258",
+      "act": "암시",
+      "points": ["F2830"],
+      "text": "라푼젤이 로사리오의 자매님들에게 '도움이 필요해요' 하자 쏟아진 황금색 입자에 랩쳐들이 멈춘다 — 짊어진 1만 2천 자매의 NIMPH가 싸워 주는 힘",
+      "about": ["person:라푼젤", "concept:NIMPH"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_05", "lines": ["43-47"] }],
+      "reason": "ch48 48_03이 라푼젤이 짊어진 자매 1만 2천 명의 NIMPH가 미끼가 되고 레드 슈즈의 인격 데이터를 삼켰다고 밝힌다(F2830)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "E1259",
+      "act": "암시",
+      "points": ["F1007"],
+      "text": "라푼젤이 자기 뇌 구조가 남과 다른 까닭을 '기억하고, 그리워하고, 증명하기 위해서'라고 본다 — 니케의 능력은 인간일 때의 이상향으로 정해진다",
+      "about": ["person:라푼젤"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["113-115"] }],
+      "reason": "ch24 솔린의 설명(F1007)과 같은 생각 — 라푼젤의 경우라는 확인은 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1373",
+      "person": "person:라푼젤",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'하악 하악' 음란한 망상을 입에 달고 말실수를 하면서도, 위기에 처한 사람은 못 본 척 못하고 밤새 지켜 주는 다정한 순례자",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_01", "lines": ["31-40", 56] }],
+      "reason": "출시 첫날 단위라 ch17의 성격 기준(D142)보다 앞선다 — 같은 모습이라 이쪽을 기준으로 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1374",
+      "person": "person:라푼젤",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "모래 폭풍에 쓰러진 지휘관을 구해 '형제님'이라 부르며 망상을 늘어놓으면서도 하나뿐인 물을 양보하고 합류 지점까지 호위하는 구원자",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_01", "lines": ["41-57", "72-82"] }],
+      "reason": "출시 첫날 단위이자 둘의 첫 만남(ch17 17_01_s#5-6에선 지휘관이 '익숙한 목소리'로 알아본다) — ch17의 관계 기준(D141)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1375",
+      "person": "person:라푼젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "모래 폭풍에서 우연히 구한 '형제님'",
+      "after": "보면 마음이 편하고 그리움이 느껴진다며 선한 사람이라 축복하고 다시 만나자는",
+      "trigger": [{ "scene": "ep:d_nikke_rapunzel_03", "lines": ["44-52"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_05", "lines": ["84-94"] }],
+      "reason": "03 지휘관이 자매님들을 함께 수습 · 인사 → 04#24-26 '그리움이 느껴진다' → 05#91-94 '선한 사람 … 축복만이 가득하기를'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1376",
+      "person": "person:라푼젤",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "지상에서 외롭게 쓰러진 자매님들의 NIMPH를 로사리오에 모아, NIMPH가 기억하는 고향에 무덤을 만들어 주는 것을 자기 할 일로 삼는",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_03", "lines": ["75-84"] }],
+      "reason": "#81 '무덤을 만들어주기 위해서예요' · 05#83 '그게 제가 할 일이니까요' — 출시 첫날 단위라 ch17의 신념 기준(D143)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1377",
+      "person": "person:라푼젤",
+      "aspect": "기억",
+      "act": "기준",
+      "text": "먼 과거와 최근 1년의 기억만 남기고 그 사이를 지우며, 과거를 지우면 5년은 기억할 수 있어도 갓데스가 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["16-18", "102-115"] }],
+      "reason": "#17-18 '내일이 되면 1년 전 오늘의 기억이 사라지는' · #109-112 '존재했다는 유일한 흔적 … 제가 기억해야 해요'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    },
+    {
+      "id": "D1378",
+      "person": "person:라푼젤",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:릴리바이스"],
+      "text": "시종일관 무서운 표정으로 잔소리하면서도 누구보다 우리를 사랑해 준, 홍련도 한 수 접는 맏언니 리더로 기억한다",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["69-73"] }],
+      "reason": "#69-72 리더이자 맏언니 · '그 누구보다 우리를 사랑해 줬어요'. 이름 '릴리스'는 릴리바이스(people.json)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ],
+  "life": []
+}

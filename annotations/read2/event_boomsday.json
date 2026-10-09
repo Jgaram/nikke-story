@@ -1,0 +1,315 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M16\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_boomsday",
+  "session": "M16",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I161",
+      "target": "person:트로니",
+      "evidence": [{ "scene": "event_boomsday_prologue", "lines": ["0-22"] }],
+      "reason": "프롤로그의 (독백)은 지휘관이 아니라 '제 꿈은 하늘을 보는 거예요'(#9)라던 소녀 트로니의 1인칭 — intermission#1 · 04_e#45와 같은 말. 이 씬엔 이름이 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E343",
+      "act": "암시",
+      "points": ["F1340"],
+      "text": "'제 꿈은 하늘을 보는 거예요'라는 프롤로그 독백이, 뒤에 일레그가 창밖에서 들은 그 소녀의 말로 돌아온다",
+      "about": ["person:트로니", "person:일레그"],
+      "evidence": [{ "scene": "event_boomsday_prologue", "lines": [9, "13-14"] }],
+      "reason": "#9가 04_e#45의 소녀 말과 같다 — 일레그의 꿈을 만든 소녀가 트로니(F1340).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E344",
+      "act": "암시",
+      "points": ["F1474"],
+      "text": "'이야기의 주인공인 줄 알았던 내가 실은 아무것도 아니었다'는 독백이, 뒤에 '넌 히어로가 맞냐'고 묻는 환영으로 이어진다",
+      "about": ["person:트로니"],
+      "evidence": [{ "scene": "event_boomsday_prologue", "lines": ["21-22"] }],
+      "reason": "#21-22 주인공 · 아무것도 아님 — event_darkhero의 '히어로' 환영(F1474)과 같은 자기 부정의 모티프.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E345",
+      "act": "암시",
+      "points": ["F1475"],
+      "text": "일레그가 밤새 찰흙으로 뭉쳐 만든 조잡한 아크레인저 블랙 피규어를 트로니가 CCTV로 보고 '별로'라 한다",
+      "about": ["person:트로니", "person:일레그", "person:아크레인저_블랙"],
+      "evidence": [{ "scene": "event_boomsday_03_s", "lines": [50, "58-63"] }],
+      "reason": "#59 찰흙 덩어리 — event_darkhero에서 이것이 트로니가 가장 소중히 여기는 물건으로 밝혀진다(F1475).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E346",
+      "act": "암시",
+      "points": ["F1474"],
+      "text": "T.Rony가 '그날 트로니가 본 건 아직 그 자리에 그대로 있다' · '방주 안에…'라며 동력원에서 본 것을 짚다 끊긴다",
+      "about": ["person:트로니", "concept:방주_동력원"],
+      "evidence": [{ "scene": "event_boomsday_03_e", "lines": [21, "34-35"] }],
+      "reason": "#21 · #34 — 무엇을 봤는지는 event_darkhero(시신이 널린 붉은 공간 F1474)에서 그려진다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E347",
+      "act": "암시",
+      "points": ["F1476"],
+      "text": "아크레인저 블랙처럼 방주를 구하겠다던 꿈을 '나 같은 게 가능할 리 없다, 다른 니케들의 역할'이라며 접는다",
+      "about": ["person:트로니", "person:아크레인저_블랙"],
+      "evidence": [{ "scene": "event_boomsday_03_e", "lines": ["26-33"] }],
+      "reason": "#28-33 — event_darkhero에서 블랙이 '히어로는 남의 기대가 아니라 자기 신념을 관철하는 자'라 답한다(F1476).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E348",
+      "act": "암시",
+      "points": ["F1474", "F2581"],
+      "text": "트로니는 동력원을 '평범한 발전기'라 둘러대지만, 그 정체를 안 날 엄청난 공포를 느끼고 진실을 혼자 떠안는다",
+      "about": ["person:트로니", "concept:방주_동력원"],
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": [105, "124-130"] }],
+      "reason": "#105 거짓말 · #125 공포 — 본 것은 시신이 널린 공간(F1474), 동력원은 시신을 [먹이]로 먹는 초거대 코어(F2581).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E349",
+      "act": "재언급",
+      "points": ["F589"],
+      "text": "일레그가 예전 이터널 스카이 광고 때의 난리를 들어, 대정전으로 하늘까지 꺼지면 더 큰 혼란이 온다고 걱정한다",
+      "about": ["concept:이터널_스카이"],
+      "evidence": [{ "scene": "event_boomsday_05_e", "lines": ["22-29"] }],
+      "reason": "#24-27 광고 사건 · 우울증 — F589를 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E350",
+      "act": "재언급",
+      "points": ["Q171"],
+      "text": "트로니가 돌아가기 전에 일레그에게도 방주의 동력원을 보여 주겠다고 한다 — 일레그가 '정답'을 알게 된 계기",
+      "about": ["person:트로니", "person:일레그", "concept:방주_동력원"],
+      "evidence": [{ "scene": "event_boomsday_06_s", "lines": ["50-54"] }],
+      "reason": "#53-54 — ch27 · ch28에서 일레그가 안다던 방주 에너지의 '정답'(Q171)을 여기서 본다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E351",
+      "act": "재언급",
+      "points": ["F1294"],
+      "text": "지금 동력원을 그대로 쓸 수 없으니 방주에서 못 찾으면 지상에 올라가서라도 새 동력원을 찾자고 한다",
+      "about": ["person:일레그", "person:트로니"],
+      "evidence": [{ "scene": "event_boomsday_epilogue", "lines": ["38-47"] }],
+      "reason": "#43-47 — ch27에서 일레그가 방주 에너지 문제의 실마리를 찾으려 지상 탐색에 자원한 까닭(F1294).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "E352",
+      "act": "암시",
+      "points": ["F2657"],
+      "text": "'방주는 언젠가 없어져야겠져?' — 모두가 진짜 하늘을 보도록 방주가 사라지는 날을 꿈꾼다",
+      "about": ["person:일레그", "person:트로니", "place:방주"],
+      "evidence": [{ "scene": "event_boomsday_epilogue", "lines": ["29-36"] }],
+      "reason": "#29-31 — ch46에서 동력원이 멈춰 가자 지휘관이 방주를 버리고 지상으로 가자고 한다(F2657).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D393",
+      "person": "person:트로니",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "칭찬 한마디에 무릎에 얼굴을 파묻고 떨며, 사람 앞에 설 생각만 해도 울렁거려 슈엔을 만날 때마다 유언장을 고치는 소심한 천재",
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": ["24-34", "62-70"] }],
+      "reason": "#28-33 칭찬에 약함 · #62-70 유언장 427차 — 성격이 처음 그려진 회상.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D394",
+      "person": "person:트로니",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "하늘이 가짜라 말하던 꿈을 광고 사건의 패닉을 보고 접고, '진실은 가려져 있는 편이 낫다'고 믿게 된다",
+      "evidence": [{ "scene": "event_boomsday_intermission_01", "lines": ["49-51"] }],
+      "reason": "#50-51 — 04_s#127에서 동력원을 본 뒤에도 같은 믿음으로 진실을 혼자 떠안는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D395",
+      "person": "person:트로니",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "몇 년째 방에 틀어박혀 '난 괜찮아'로 문을 닫던",
+      "after": "'도망쳐서 해결되는 건 없다'며 스스로 문을 열고 대정전 속으로 달려 나간",
+      "trigger": [{ "scene": "event_boomsday_04_e", "lines": ["56-68"] }],
+      "evidence": [{ "scene": "event_boomsday_05_s", "lines": [13, "45-53"] }],
+      "reason": "#46 '도망쳐서 해결되는 건 없다' · #47 문고리 — 계기는 문 너머 일레그의 진심(04_e).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D396",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:일레그"],
+      "text": "'잘 부탁해'를 더듬으며 연구를 시작하고, '최고'라는 일레그의 칭찬에 '헤헤' 하고 웃는 수줍은 연구 짝",
+      "evidence": [{ "scene": "event_boomsday_01_s", "lines": ["75-92"] }],
+      "reason": "#78 · #90 — 일레그가 '저 엄청 잘 따랐는데'(#92)라 회상한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D397",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:일레그"],
+      "before": "문 너머 일레그의 부름을 게임 소리로 밀어내던",
+      "after": "변전소로 달려와 '다시 한번 잘 부탁해' 하고, 혼자 떠안던 동력원을 일레그에게도 보여 주려는",
+      "trigger": [{ "scene": "event_boomsday_04_e", "lines": ["56-68"] }],
+      "evidence": [{ "scene": "event_boomsday_05_e", "lines": ["34-42", 69] }],
+      "reason": "#34 · #69 — 06_s#53-54에서 동력원을 보여 주겠다고 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D398",
+      "person": "person:트로니",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "진실은 가려져 있는 편이 낫다",
+      "after": "언젠가 모든 사람이 진짜 하늘을 볼 수 있게 만들겠다 — 제어할 수 없는 방주는 없어져야 한다",
+      "trigger": [{ "scene": "event_boomsday_04_e", "lines": ["56-66"] }],
+      "evidence": [{ "scene": "event_boomsday_epilogue", "lines": ["12-19", "29-31"] }],
+      "reason": "#16 '모든 사람들이 진짜 하늘을' · #31 '제어할 수 없는 건 위험' — 일레그를 보며 정했다(#13).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D399",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:트로니"],
+      "text": "'하나뿐인 친구'라며 몇 년째 날마다 문 앞에 와 피규어 · 식사 · 게임으로 불러내고, 어떤 두려움이든 이겨 낼 빛나는 사람이라 믿는다",
+      "evidence": [{ "scene": "event_boomsday_03_s", "lines": [32, "118-127"] }],
+      "reason": "#32 하나뿐인 친구 · #126 빛나는 분 — 일레그의 꿈을 준 소녀가 트로니다(F1340).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D400",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "사교성이 없어 도움을 구할 상대가 지휘관밖에 없다며 지푸라기 잡는 심정으로 찾아와 트로니 일을 털어놓는다",
+      "evidence": [{ "scene": "event_boomsday_02_e", "lines": ["74-77"] }],
+      "reason": "#77 — 03_s#105도 같은 말.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "D401",
+      "person": "person:엑시아",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '뉴비'라 부르며 2인 1조 특별 의상을 받으려고 게임 행사에 '무조건' 함께 가자고 들이미는 게임 친구",
+      "evidence": [{ "scene": "event_boomsday_02_s", "lines": ["33-53"] }],
+      "reason": "#45-53 — 지휘관과의 관계가 처음 그려진 곳(앞 기록은 성격 D76 · 기억 D78뿐).",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 — 출시순으로 앞선 char:210 D1896이 엑시아 → 지휘관 기준" }
+      ]
+    },
+    {
+      "id": "D402",
+      "person": "person:에테르",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'흐암~' 하품하며, 높은 사람들이 기억을 소거하거나 실험실에서 일하게 만들 거라는 말을 아무렇지 않게 전하는 심드렁한 전달자",
+      "evidence": [{ "scene": "event_boomsday_01_e", "lines": ["16-17", "31-48"] }],
+      "reason": "#31 상관없어 · #45-48 — 뒤(event_darkhero)에도 윗선 말을 전하며 둘을 돕는다.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 — 출시순으로 앞선 char:291 D1887이 에테르 성격 기준" }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U203",
+      "topic": "일상 · 문화",
+      "text": "방주 최대 게임 축제 [아크 게임쇼]가 일주일 열려 게임사 신작 · 현장 이벤트 · 레트로 게임 초회판 전시 · 코스프레 · 아크레인저 팬미팅이 열리고, 2인 1조 특전 의상을 노린 게이머가 몰린다",
+      "about": ["place:방주", "org:아크레인저"],
+      "evidence": [{ "scene": "event_boomsday_03_e", "lines": ["40-47"] }],
+      "reason": "#41-46 뉴스 — 02_s#38-52 · 02_e#6-21 팸플릿도.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "U204",
+      "topic": "방주 사회",
+      "text": "작은 정전이 해마다 여러 번 나도 시민에게는 알리지 않고, 혼란이 퍼지기 전에 개발 스쿼드에 기한을 주어 몰래 고치게 한다",
+      "about": ["place:방주"],
+      "points": ["F1337"],
+      "evidence": [{ "scene": "event_boomsday_01_e", "lines": ["53-56"] }],
+      "reason": "#54 '시민들한테 이 소식이 퍼지진 않았는데' — 하늘(U121)처럼 불안을 숨기는 방주.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    },
+    {
+      "id": "U205",
+      "topic": "기업 · 조직",
+      "text": "개발 스쿼드 니케도 기업 홍보 영상 인터뷰에 불려 나가 '회사 기밀 · CEO 앞에서 할 수 있는 말만' 하고, 낯가리는 니케는 영상에 나오면 주가가 떨어질까 겁낸다",
+      "about": ["org:미실리스", "org:일렉트릭_쇼크"],
+      "evidence": [{ "scene": "event_boomsday_01_s", "lines": ["0-10", "37-39"] }],
+      "reason": "#7-9 · #39 — 04_s#56-64도 같은 모습.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+    }
+  ]
+}

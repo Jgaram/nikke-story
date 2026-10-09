@@ -1,0 +1,81 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M88\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:312",
+  "session": "M88",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I658",
+      "target": "person:코코아",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_soda_02", "lines": [55] }],
+      "reason": "'프로 메이드가 되고 시픈가 보군' — 코코아의 말투이고 #56 코코아가 '그러타면 코코아가 훈련시켜주께'로 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2002",
+      "person": "person:소다",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "방주에 갇혀 답답하게 지내는 모두를 조금이라도 행복하게 하려고, 자기가 할 수 있는 메이드 일을 더 열심히 하기로 한",
+      "evidence": [{ "scene": "ep:d_nikke_soda_04", "lines": ["40-45"] }],
+      "points": ["F815"],
+      "reason": "#40 '모두가 조금이라도 행복해 졌으면' · #41 '다들 방주에 갇혀서 답답하게' · #43 '결국 메이드 일밖에 없더라구요'. event_goldencoinrush1 D1547보다 출시가 앞선다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2003",
+      "person": "person:소다",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "민폐만 끼친다며 손님 기색만 살피다 실수하고 의기소침해 조퇴하는",
+      "after": "실수는 여전해도 누군가 행복해졌다는 걸 알고 의욕이 넘쳐 홀을 혼자 도맡는",
+      "trigger": [{ "scene": "ep:d_nikke_soda_04", "lines": ["52-81"] }],
+      "evidence": [{ "scene": "ep:d_nikke_soda_05", "lines": ["13-14", "63-69"] }],
+      "points": ["F815"],
+      "reason": "04#14-16 '이제 어떻게 해야 할지 모르겠어요' → 05#14 '며칠 전부터 의욕이 넘쳐써' · #64-69 '실수도 여전히… 뭐든지 해낼 수 있을 것 같은 기분'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2004",
+      "person": "person:소다",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '주인님'으로 모시며 덜렁대는 성격을 고치게 도와 달라고 상담을 청하고, 해낼 수 있을지 기대는",
+      "evidence": [{ "scene": "ep:d_nikke_soda_02", "lines": ["0-23"] }],
+      "reason": "#1 '제 덜렁대는 성격을 고치게 도와주세요!' · #18 '저, 잘할 수 있을까요…?' · #21-23 '끝까지 포기하지 않을게' '네, 주인님'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2005",
+      "person": "person:소다",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "성격을 고치게 도와 달라고 상담을 청한 '주인님'",
+      "after": "지켜봐 준다는 말에 두근거려 '힘을 달라'며 입을 맞추는",
+      "trigger": [{ "scene": "ep:d_nikke_soda_04", "lines": ["76-81"] }],
+      "evidence": [{ "scene": "ep:d_nikke_soda_05", "lines": ["67-76", "89-105"] }],
+      "points": ["F815"],
+      "reason": "#68-69 '저를 지켜봐 주신다고 하셨을 때' · #75 '엄청 두근거리고 간질간질한 기분' · #91 '힘을… 주실 수 있나요?' · #94 입맞춤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 소다 성격 기준 D1423(event_maidinvalentine)이 앞서 있어 성격은 변화로 적었다. 신념 기준은 출시가 앞선 이 단위(D2002)에 세우고 event_goldencoinrush1 D1547을 기각했다(D1548은 그 장면 그대로). 에이드 · 코코아는 얕아 기준을 세우지 않았다. 작중 시점 실마리 없음."
+}

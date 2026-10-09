@@ -1,0 +1,30 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M95\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:314",
+  "session": "M95",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2109",
+      "person": "person:소다",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "지켜봐 준다는 말에 두근거려 '힘을 달라'며 입을 맞추던",
+      "after": "샤워실에서 지휘관에게 옷을 잘라 달라 하고 젖은 옷을 벗겨 주며 둘만의 하루를 보낸 뒤, '또 세탁과 청소가 필요할 땐 언제든 불러 달라'는",
+      "trigger": [{ "scene": "ep:d_nikke_soda_twinklingbunny_03", "lines": ["36-65"] }],
+      "evidence": [{ "scene": "ep:d_nikke_soda_twinklingbunny_05", "lines": ["17-27", "53-63", "103-106"] }],
+      "time": "S151",
+      "reason": "03#55-65 숟가락 · 침묵으로 바뀐 공기 → 05#19 '주인님이 잘라주시면' · #61-63 '부탁을 좀 해도 될까 — 네, 주인님' · #104 '언제든 불러주세요'. 앞 D2005(입맞춤)에서 이어진다.",
+      "points": ["F1493"],
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 루주는 코인 러시 지배인으로서의 응대뿐이라 관계를 세우지 않았다(기준 D821 · D822). 소다의 덜렁댐 · 청소 좋아함은 앞 성격 기록과 같은 모습. 시점 S151(추정) 그대로. `???` 없음."
+}

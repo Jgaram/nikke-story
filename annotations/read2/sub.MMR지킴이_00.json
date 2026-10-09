@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:MMR지킴이_00",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U202",
+      "topic": "기술",
+      "text": "M.M.R.의 에테르는 정체 모를 점액질을 직접 확인하러 지상에 바디를 올려 보내고, 다녀온 바디는 곧바로 폐기한다 — 위험한 조사는 갈아 끼울 바디로 한다",
+      "about": ["person:에테르", "org:M.M.R."],
+      "points": ["F1333"],
+      "evidence": [{ "scene": "sub:MMR지킴이_00", "lines": ["83-86"] }],
+      "reason": "#84 '올라가서 확인해 봤지' · #85 '다녀온 다음엔 바로 바디는 폐기했고' — 바디를 소모품처럼 쓰는 연구",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "_comment": "층 · 중요도 판정 예시 — 형식 · 규칙은 docs/annotations.md \"층 판정\" · \"중요도 판정\". 실제 판정은 annotations/layers.json",
+  "session": "B0b-2",
+  "by": "claude",
+  "date": "2026-10-04",
+  "units": [
+    {
+      "id": "K1",
+      "unit": "sub:로망티스트_00",
+      "grade": "독립",
+      "basis": "J1",
+      "reason": "로망티스트의 낚시(독립 줄기 J1)만 걸린다 — 메인과 이어진 기록이 없다",
+      "confidence": "확실",
+      "asof": "2026-09-24",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "B0b-2" }]
+    },
+    {
+      "id": "K2",
+      "unit": "sub:로망티스트_01",
+      "grade": "독립",
+      "basis": "Q1-2",
+      "layer": 2,
+      "reason": "낚시 의문의 회수(Q1-2) — 서브퀘스트 두 편 안에서 끝난다",
+      "confidence": "확실",
+      "status": "후보",
+      "note": "예시 — 규칙 층(서브퀘스트는 1층)과 다르게 둘 때는 layer와 까닭을 쓴다"
+    },
+    {
+      "id": "K3",
+      "unit": "d_ex_elevator_01",
+      "grade": "보강",
+      "basis": "F5",
+      "from": "ch20",
+      "before": "참고",
+      "reason": "갓데스 폴(F5) — 메인 세계관의 사건을 엘리베이터 괴담으로 다시 비춘다",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

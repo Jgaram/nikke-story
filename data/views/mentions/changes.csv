@@ -1,0 +1,95 @@
+target,name,order,unit,signal,before,after,since
+person:아니스,아니스,2,ch01,호칭,지휘관,지휘관님,ch00
+person:라피,라피,28,sub:랩칠리언_05,말투,75%,25%,sub:트레저_헌터_01
+person:엑시아,엑시아,52,sub:든_셀_00,말투,89%,0%,ch08
+person:엑시아,엑시아,55,ch09,말투,0%,72%,sub:든_셀_00
+person:라피,라피,62,ch10,말투,50%,0%,sub:미실리스_연구팀_01
+person:아니스,아니스,80,ch14,호칭,지휘관님,아저씨,ch13
+person:아니스,아니스,82,sub:알콜러버_00,호칭,아저씨,지휘관님,ch14
+person:아니스,아니스,87,ch16,호칭,지휘관님,지휘관,sub:알콜러버_00
+person:방주_난민,방주 난민,89,sub:방주_난민_01,이름표,방주 난민,방주난민,
+person:라피,라피,103,char:10,말투,25%,88%,char:11
+person:앨리스,앨리스,104,char:190,말투,100%,48%,ch06
+person:아니스,아니스,115,char:60,호칭,지휘관,지휘관님,ch16
+person:머스탱,머스탱,129,char:241,말투,56%,0%,char:130
+person:아니스,아니스,134,char:171,호칭,지휘관님,지휘관,char:160
+person:아니스,아니스,136,char:231,호칭,지휘관,지휘관님,char:171
+person:페퍼,페퍼,138,char:131,호칭,선배,지휘관,char:130
+person:네온,네온,147,char:352,이름표,네온,네온의 목소리,
+person:라피,라피,147,char:352,이름표,라피,라피의 목소리,
+person:아니스,아니스,147,char:352,이름표,아니스,아니스의 목소리,
+person:라피,라피,172,char:400,말투,20%,73%,ch20
+person:폴리,폴리,197,ch22,말투,90%,0%,char:381
+person:할아범,할아범,201,sub:할아범_01,말투,0%,66%,sub:할아범_00
+person:페퍼,페퍼,212,event_bluewaterisland,호칭,지휘관,선배,char:142
+person:라피,라피,213,char:132,말투,51%,0%,event_bluewaterisland
+person:아인,아인,234,event_schooloflock,호칭,선배,쌤,char:392
+person:츠바이,츠바이,234,event_schooloflock,호칭,선배,선생님,char:392
+person:아인,아인,235,char:321,호칭,쌤,선배,event_schooloflock
+person:엑시아,엑시아,242,sub:중앙정부_프로토콜_00,말투,75%,0%,event_BunnyX777
+person:라피,라피,245,sub:로망티스트_01,말투,25%,100%,ch26
+person:스노우_화이트,스노우 화이트,248,event_redash,말투,0%,74%,event_overzone
+person:슈가,슈가,262,event_dirtybackyard,호칭,마스터,보스,char:140
+person:프리바티,프리바티,264,event_perfectmaid,호칭,지휘관,주인님,char:800
+person:라피,라피,267,ch27,말투,100%,31%,sub:로망티스트_01
+person:라피,라피,268,sub:피라_00,말투,31%,93%,ch27
+person:라피,라피,276,sub:핸섬_커맨더_00,말투,32%,82%,sub:택틱컬틱택_00
+person:엑시아,엑시아,280,event_boomsday,말투,0%,97%,sub:중앙정부_프로토콜_00
+person:스노우_화이트,스노우 화이트,288,side:second_affection,말투,95%,4%,char:225
+person:라피,라피,291,ch29,말투,90%,37%,sub:MMR지킴이_00
+person:그레이브,그레이브,293,ch30,이름표,???(코드),그레이브,
+person:에이드,에이드,300,event_goldencoinrush1,말투,75%,2%,event_liarsend
+person:츠바이,츠바이,317,event_juveniledays,호칭,선생님,선배,char:321
+person:아인,아인,318,char:391,호칭,선배,쌤,event_juveniledays
+person:라피,라피,319,event_colorless,말투,11%,67%,ch32
+person:아인,아인,319,event_colorless,호칭,쌤,선배,char:391
+person:프리바티,프리바티,319,event_colorless,호칭,주인님,지휘관,char:313
+person:츠바이,츠바이,320,char:390,호칭,선배,선생님,event_colorless
+person:마르차나,마르차나,321,char:833,호칭,지휘관님,선생님,event_colorless
+person:아인,아인,323,char:831,말투,61%,6%,char:390
+person:라푼젤,라푼젤,326,event_nonsensered,말투,93%,36%,event_lastkingdom1
+person:스노우_화이트,스노우 화이트,326,event_nonsensered,말투,0%,68%,event_lastkingdom1
+person:미하라,미하라,331,side:wordless,호칭,지휘관,선생님,event_cherryblossom
+person:라피,라피,333,char:240,말투,93%,41%,char:580
+person:라푼젤,라푼젤,338,event_oldtales1,말투,36%,92%,event_nonsensered
+person:플로라,플로라,346,char:411,이름표,플로라,???(코드),
+person:아인,아인,351,event_outofuniform,말투,6%,65%,char:831
+person:라피,라피,352,char:16,말투,33%,86%,event_footstepwalkrun1
+person:스윗_조니,스윗 조니,355,event_romanticvalentine,이름표,관리자 스윗 조니,스윗 조니 Ver.2.14,
+person:에이드,에이드,355,event_romanticvalentine,말투,2%,76%,event_goldencoinrush1
+person:앵커,앵커,357,char:355,호칭,오라버니,주인님,event_romanticvalentine
+person:노이즈,노이즈,365,fl:for_rest,말투,0%,89%,event_goldencoinrush1
+person:라피,라피,367,event_newflavor,말투,20%,74%,ch36
+person:크러스트,크러스트,368,char:520,말투,55%,0%,event_newflavor
+person:에이드,에이드,369,event_foolburstday,말투,88%,13%,event_newflavor
+person:프리바티,프리바티,369,event_foolburstday,호칭,지휘관,주인님,event_romanticvalentine
+person:에이드,에이드,371,event_trueflavor,말투,13%,80%,event_foolburstday
+person:크러스트,크러스트,371,event_trueflavor,말투,0%,54%,char:520
+person:스노우_화이트,스노우 화이트,387,event_ce006,말투,84%,0%,char:226
+person:프리바티,프리바티,387,event_ce006,호칭,주인님,지휘관,event_foolburstday
+person:노이즈,노이즈,396,ch39,말투,89%,0%,fl:for_rest
+person:D,D,407,fl:reborn_evil,호칭,여보,지휘관,event_arcanearchive
+person:이사벨,이사벨,411,side:eden_spear,말투,100%,26%,sub:에덴_Notice_02
+person:라피,라피,414,ch41,말투,92%,0%,fl:go_ninja_thief
+person:미러,미러,418,event_goddessfall1,말투,0%,78%,erelic:old_tales_dialog
+person:노라,노라,425,fl:terminus_ticket,이름표,노라,어린 노라,
+person:벨벳,벨벳,432,fl:fatal_maid,호칭,지휘관,주인님,fl:coins_in_rush
+person:에테르,에테르,434,ch43,말투,14%,86%,ch41
+person:리버렐리오,리버렐리오,436,ch44,말투,0%,53%,char:262
+person:에테르,에테르,436,ch44,말투,86%,9%,ch43
+person:칼슨,칼슨,436,ch44,말투,4%,57%,ch40
+person:라피,라피,442,fl:enter_heaven,말투,26%,92%,ch44
+person:아르카나,아르카나,444,fl:2x2_love_1ch,호칭,지휘관,선생님,event_arcanearchive
+person:아인,아인,444,fl:2x2_love_1ch,호칭,선배,쌤,event_trueflavor
+person:라이,라이,445,fl:2x2_love_2ch,호칭,선생님,주인님,fl:2x2_love_1ch
+person:아르카나,아르카나,445,fl:2x2_love_2ch,호칭,선생님,선배,fl:2x2_love_1ch
+person:에이미,에이미,445,fl:2x2_love_2ch,호칭,선생님,선배,fl:2x2_love_1ch
+person:아니스,아니스,447,side:pretty_star,호칭,지휘관님,선생님,ch44
+person:라피,라피,450,ch45,말투,92%,17%,fl:enter_heaven
+person:아니스,아니스,455,char:17,호칭,선생님,지휘관님,side:pretty_star
+person:마르차나,마르차나,464,fl:wave_to_you,호칭,선생님,지휘관님,char:833
+person:슈엔,슈엔,467,fl:project_matis,이름표,슈엔,어린 슈엔,
+person:나가,나가,475,char:872,말투,73%,0%,char:322
+person:아이기스,아이기스,475,char:872,호칭,지휘관,선생님,fl:persona_on_frontline
+person:아인,아인,475,char:872,호칭,쌤,선배,fl:2x2_love_2ch
+person:라피,라피,478,fl:great_villain_union,말투,22%,75%,fl:persona_on_frontline

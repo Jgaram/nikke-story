@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:통화기록028594",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E47",
+      "act": "암시",
+      "points": ["F202", "Q35", "J14"],
+      "text": "레이첼 호프의 어머니가 '내 딸을 그런 괴물로 만들어놓고도'라며 연구소를 고발하겠다고 한다 — 살아남아도 과반이 양산형이 되고 거의 모두 기억상실 · 정신착란을 겪는다는 실험의 결과(F202)",
+      "about": ["person:레이첼_호프", "org:미실리스"],
+      "evidence": [{ "scene": "relic:통화기록028594_02", "lines": ["1-7"] }],
+      "reason": "#1 · #3. '괴물'이 무엇인지(Q35)는 열려 있고, 같은 세션의 피켓(F201 · F202)이 비슷한 결과를 말한다 — 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U32",
+      "topic": "구시대",
+      "points": ["F192", "F193"],
+      "text": "갓데스 광고를 본 어린 딸이 스스로 연구소에 전화해 뇌를 기증하고, 실험 결과는 '군사 기밀'이라 어머니조차 알 수 없다 — 가족은 고발하겠다고 외칠 뿐이다",
+      "about": ["person:레이첼_호프", "org:미실리스"],
+      "evidence": [{ "scene": "relic:통화기록028594_01", "lines": ["2-7"] }],
+      "reason": "_00#1-5 · _01#5 '군사 기밀로 발설이 불가' · _02#7",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

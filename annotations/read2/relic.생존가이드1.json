@@ -1,0 +1,25 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"P1\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:생존가이드1",
+  "session": "P1",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U16",
+      "topic": "구시대",
+      "text": "랩쳐 전쟁 때 지상의 생존자들은 소리를 죽이고 통조림만 먹으며 몸을 묶고 잤고, 잠꼬대하는 동료와는 멀리 떨어져 자라는 수칙으로 버텼다 — 동료가 사라져도 그날 밤은 무사하다",
+      "about": ["concept:랩쳐"],
+      "points": ["F130"],
+      "evidence": [{ "scene": "relic:생존가이드1_02", "lines": ["0-5"] }],
+      "reason": "'가능하다면 몸을 묶고 자라'(#1) · '동료가 사라지겠지만 그날 밤은 높은 확률로 무사하다'(#5). 같은 가이드의 다른 장 — 큰 소리 금지(_00) · 통조림만(_01) · 원하는 걸 얻은 뒤 낯선 사람의 다리를 쏘라(_03) — 도 같은 삶을 그린다",
+      "confidence": "확실",
+      "status": "확정",
+      "pass": 1,
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "P1" }]
+    }
+  ]
+}

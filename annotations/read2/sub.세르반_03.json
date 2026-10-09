@@ -1,0 +1,69 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:세르반_03",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D107",
+      "person": "person:버닝엄",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "직속이 아닌 지휘관을 '엔더슨 쪽 사람'으로 보아 예의를 따지면서도, 행방불명된 차남 세르반의 구출을 '같은 군인'이라며 맡기는 부사령관",
+      "evidence": [{ "scene": "sub:세르반_03", "lines": ["1-29"] }],
+      "points": ["F349", "F350"],
+      "reason": "#5-8 '엔더슨이 그리 가르치던가?' · #18-27. ch14에서 마리안을 노리는 버닝엄의 첫 모습",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    },
+    {
+      "id": "D108",
+      "person": "person:세르반",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "인맥과 재력으로 공적을 꾸미고 평판만 좇는 로열",
+      "after": "'명예롭다면 책임을 지라'는 말에 자수하고 '철이 들었다'며 지상과 얽히지 않겠다는",
+      "trigger": [{ "scene": "sub:세르반_03", "lines": ["81-86"] }],
+      "points": ["F351", "F352"],
+      "evidence": [{ "scene": "sub:세르반_03", "lines": ["94-111"] }],
+      "reason": "#95-100 자수 · #107-111. 기준 D31. 풀려난 것은 아버지 덕(F352)이라 뉘우침의 깊이는 원문이 열어 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    },
+    {
+      "id": "D109",
+      "person": "person:세르반",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "평판을 되찾아 준 '친애하는 후배님'",
+      "after": "고맙다면서도 '두 번 다시 연락하지 말자'며 각자의 세상으로 선을 긋는 사이",
+      "trigger": [{ "scene": "sub:세르반_03", "lines": ["81-86"] }],
+      "evidence": [{ "scene": "sub:세르반_03", "lines": ["112-117"] }],
+      "reason": "#113-115. 앞 변화 D67",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U76",
+      "topic": "방주 사회",
+      "text": "로열에게 명예는 목숨과 같아 마약에 손댄 소문을 막으려 사람을 쏘기까지 하고, 그 아들이 자수해도 부사령관 아버지의 친우인 청장이 24시간 만에 풀어 준다",
+      "about": ["concept:로열"],
+      "points": ["F352"],
+      "evidence": [{ "scene": "sub:세르반_03", "lines": ["62-72"] }],
+      "reason": "#66 '로열들에게 명예란 목숨과 같잖습니까' · #100-105",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

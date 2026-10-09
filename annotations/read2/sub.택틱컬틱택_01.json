@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:택틱컬틱택_01",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D391",
+      "person": "person:잉그리드",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "대를 위해 소를 희생하는 부친의 방식을 몹시 싫어했지만 막상 같은 선택을 했다며 괴로워하고, 자기를 떠난 니케를 쫓지 않고 속죄할 기회를 바란다",
+      "evidence": [{ "scene": "sub:택틱컬틱택_01", "lines": ["69-100"] }],
+      "reason": "#77-80 '부친의 그런 방식이 너무나 싫었다… 같은 선택을' · #87 '잘못된 선택은 되돌릴 수 없다' · #97-100 속죄할 수 있게",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U200",
+      "topic": "기업 · 조직",
+      "text": "사람처럼 대해 주던 회사에서도 큰 공을 세운 양산형 니케가 '기밀'이라는 말 한마디로 기억 소거를 받는다 — 동료들은 결국 병기 취급이라며 믿음을 잃는다",
+      "about": ["concept:양산형_니케", "org:엘리시온", "concept:기억_소거"],
+      "points": ["F1325"],
+      "evidence": [{ "scene": "sub:택틱컬틱택_01", "lines": ["35-48"] }],
+      "reason": "#37 '둘이 기억 소거를 받았다' · #40 '기밀 사항이라고' · #42-43 '필요에 따라 얼마든지 막 취급할 수 있는'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ]
+}

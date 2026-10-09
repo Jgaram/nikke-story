@@ -1,0 +1,504 @@
+{
+  "_comment": [
+    "비인물 사전 — 조직 · 세력 (A2 · T3-2). 형식 · 검색 규칙은 docs/schema.md \"비인물 사전\". 조회: node tools/query.mjs terms org",
+    "칸은 places.json과 같다. 기업 · 정부 · 스쿼드(니케 부대) · 단체를 넣는다. 스쿼드 이름 뒤 '스쿼드'는 접두 검색에 저절로 걸리므로 따로 적지 않는다.",
+    "원문에 0건이라 넣지 않은 추측: 아브노멀 · 어브노멀 · 와일드 헌트 · 리플레이스 · 탈렌툼 · 레드 애쉬 · 방위군(1건) — docs/schema.md \"키워드 표기 주의\""
+  ],
+  "entries": [
+    {
+      "id": "org:중앙_정부",
+      "name": "중앙 정부",
+      "kind": "정부",
+      "names": [
+        { "name": "중앙정부", "how": "표기" },
+        { "name": "정부", "how": "약칭", "caution": "중앙 정부가 아닌 정부(구시대 · 콜라보 등)도 가리킬 수 있다" }
+      ]
+    },
+    {
+      "id": "org:엘리시온",
+      "name": "엘리시온",
+      "kind": "기업",
+      "except": ["엘리시온 하퍼", "엘리시온 프랑카"],
+      "note": "except는 메신저 대화명(인물 대상)",
+      "wrong": ["ELYSION"]
+    },
+    {
+      "id": "org:미실리스",
+      "name": "미실리스",
+      "kind": "기업",
+      "evidence": [{ "scene": "d_main_11_04", "lines": [37, 40] }],
+      "names": [
+        { "name": "미실리스 인더스트리", "how": "정식 명칭" },
+        { "name": "미사일스", "how": "별칭", "caution": "미실리스를 놀려 부르는 말(d_main_11_04#40 \"미사일스라고 부르면\")" }
+      ],
+      "wrong": ["MISSILIS"]
+    },
+    {
+      "id": "org:테트라",
+      "name": "테트라",
+      "kind": "기업",
+      "except": ["테트라포드"],
+      "names": [
+        { "name": "테트라 라인", "how": "정식 명칭" },
+        { "name": "TETRA", "how": "영문" }
+      ]
+    },
+    {
+      "id": "org:필그림",
+      "name": "필그림",
+      "kind": "세력",
+      "note": "지상에서 살아가는 니케들의 통칭(d_main_04af_07#6). 원문이 \"순례자, 즉 필그림\"이라고 한다(d_main_06_02#28) — 별칭은 R01에서 더함",
+      "evidence": [{ "scene": "d_main_06_02", "lines": [28] }],
+      "names": [{ "name": "순례자", "how": "별칭", "caution": "일반 낱말 '순례자'(순례하는 사람)로도 쓰일 수 있다" }],
+      "wrong": ["PILGRIM"]
+    },
+    {
+      "id": "org:구원의_성화",
+      "name": "구원의 성화",
+      "kind": "세력",
+      "note": "랩쳐를 신으로 모시는 사이비 종교 — 알려지면 감옥으로 끝나지 않는다(R17 sub:데이파라_00에서 더함)",
+      "evidence": [{ "scene": "sub:데이파라_00", "lines": [108] }]
+    },
+    {
+      "id": "org:3대_기업",
+      "name": "3대 기업",
+      "kind": "기업 묶음",
+      "note": "엘리시온 · 미실리스 · 테트라를 함께 부르는 말",
+      "names": [{ "name": "3대 회사", "how": "별칭" }]
+    },
+    {
+      "id": "org:엄브렐러",
+      "name": "엄브렐러",
+      "kind": "기업",
+      "note": "fl:reborn_evil · 콜라보 호감도 스토리",
+      "evidence": [{ "scene": "fl:reborn_evil_11", "lines": [45] }]
+    },
+    {
+      "id": "org:달란트",
+      "name": "달란트",
+      "kind": "단체",
+      "note": "상인 연합. '달란트 스쿼드'도 접두 검색에 걸린다. 서브퀘스트 대화명 '상인연합 : 달란트'",
+      "evidence": [{ "scene": "d_main_15_01", "lines": [18] }],
+      "names": [
+        { "name": "상인 연합", "how": "별칭" },
+        { "name": "상인연합", "how": "표기" }
+      ]
+    },
+    {
+      "id": "org:엔터_헤븐",
+      "name": "엔터 헤븐",
+      "kind": "단체",
+      "note": "테러 조직. 만든 이 'E.H.'(fl:enter_heaven_01#11)는 인물이라 이 조직의 약칭으로 넣지 않았다",
+      "evidence": [{ "scene": "d_main_43_04", "lines": [53] }],
+      "wrong": ["엔터헤븐"]
+    },
+    { "id": "org:빌런_연합", "name": "빌런 연합", "kind": "단체" },
+    { "id": "org:히어로_연합", "name": "히어로 연합", "kind": "단체" },
+    {
+      "id": "org:저지스",
+      "name": "저지스",
+      "kind": "단체",
+      "note": "위원회",
+      "evidence": [{ "scene": "event_lordforjustice_prologue", "lines": [63] }]
+    },
+    {
+      "id": "org:시지_패러리스",
+      "name": "시지 패러리스",
+      "kind": "단체",
+      "evidence": [
+        { "scene": "event_lordforjustice_prologue", "lines": [18] },
+        { "scene": "event_arcanearchive_05_s", "lines": [83] }
+      ]
+    },
+    {
+      "id": "org:A.C.P.U.",
+      "name": "A.C.P.U.",
+      "kind": "경찰",
+      "evidence": [{ "scene": "d_main_16_02", "lines": [2] }],
+      "names": [
+        { "name": "A.C.P.U", "how": "표기" },
+        { "name": "ACPU", "how": "표기" }
+      ]
+    },
+    {
+      "id": "org:A.F.F.",
+      "name": "A.F.F.",
+      "kind": "기관",
+      "note": "방주의 소방 조직('방주의 소방관', R16 char:100에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_laplace_02", "lines": [97] }]
+    },
+    {
+      "id": "org:데일리_아크",
+      "name": "데일리 아크",
+      "kind": "신문사",
+      "evidence": [{ "scene": "ep:d_nikke_crow_01", "lines": [11] }],
+      "names": [{ "name": "데일리아크", "how": "표기" }]
+    },
+    {
+      "id": "org:아크레인저",
+      "name": "아크레인저",
+      "kind": "팀",
+      "note": "아크레인저 레드 · 블루 · 블랙(인물)의 팀",
+      "names": [{ "name": "아크 레인저", "how": "표기" }]
+    },
+    {
+      "id": "org:리와인드",
+      "name": "리와인드",
+      "kind": "팀",
+      "note": "치어리더 팀(ep:d_nikke_bay_01#8). event_claymore에서는 가게처럼 쓰인다(\"리와인드에 이렇게 있을 수 있는 건\") — Q-A2-3",
+      "caution": "치어리더 팀과 가게 이름이 섞여 있다",
+      "evidence": [
+        { "scene": "ep:d_nikke_bay_01", "lines": [8] },
+        { "scene": "event_claymore_epilogue", "lines": [39] }
+      ]
+    },
+    { "id": "org:카운터스", "name": "카운터스", "kind": "스쿼드" },
+    { "id": "org:앱솔루트", "name": "앱솔루트", "kind": "스쿼드" },
+    { "id": "org:메티스", "name": "메티스", "kind": "스쿼드" },
+    { "id": "org:트라이앵글", "name": "트라이앵글", "kind": "스쿼드" },
+    { "id": "org:이그조틱", "name": "이그조틱", "kind": "스쿼드", "wrong": ["엑조틱", "익조틱"] },
+    { "id": "org:마이티_툴즈", "name": "마이티 툴즈", "kind": "스쿼드", "wrong": ["마이티툴즈"] },
+    { "id": "org:인피니티_레일", "name": "인피니티 레일", "kind": "스쿼드" },
+    {
+      "id": "org:프로토콜",
+      "name": "프로토콜",
+      "kind": "스쿼드",
+      "caution": "일반 낱말 '프로토콜'(절차)과 겹친다"
+    },
+    {
+      "id": "org:해피_주",
+      "name": "해피 주",
+      "kind": "스쿼드",
+      "names": [{ "name": "해피주", "how": "표기" }]
+    },
+    {
+      "id": "org:파이오니아",
+      "name": "파이오니아",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_17_05_s", "lines": [21] }],
+      "wrong": ["파이오니어"]
+    },
+    {
+      "id": "org:바이스리터",
+      "name": "바이스리터",
+      "kind": "스쿼드",
+      "note": "필그림 크라운 · 차임의 스쿼드(d_main_26_01_s #24 '우린 바이스리터! 고귀한 백기사다')",
+      "evidence": [{ "scene": "d_main_17_05_s", "lines": [28] }],
+      "names": [{ "name": "백기사", "how": "별칭" }]
+    },
+    {
+      "id": "org:인헤르트",
+      "name": "인헤르트",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_20_10_s", "lines": [19] }],
+      "wrong": ["인헤릿"]
+    },
+    { "id": "org:777", "name": "777", "kind": "스쿼드" },
+    { "id": "org:메이드_포_유", "name": "메이드 포 유", "kind": "스쿼드" },
+    { "id": "org:쉐이드", "name": "쉐이드", "kind": "스쿼드", "note": "해체된 테트라 비밀 스쿼드 — 리더 벨벳(fl:coins_in_rush_16#89-93)" },
+    {
+      "id": "org:프리마돈나",
+      "name": "프리마돈나",
+      "kind": "스쿼드",
+      "caution": "일반 낱말 '프리마돈나'(주연 여가수 — 아리아의 호칭)와 겹친다",
+      "note": "테트라 가수 스쿼드 — 볼륨 · 노이즈 · 아리아(event_goldencoinrush1_03_s#100,209-256)"
+    },
+    {
+      "id": "org:언리미티드",
+      "name": "언리미티드",
+      "kind": "스쿼드",
+      "except": ["언리미티드 갓데시움"],
+      "note": "except는 길로틴의 구호(ep:d_nikke_guillotine_02#97)"
+    },
+    {
+      "id": "org:갓데스",
+      "name": "갓데스",
+      "kind": "스쿼드",
+      "note": "사건 이름 '갓데스 폴'(incident:갓데스_폴) 속 '갓데스'도 잡힌다",
+      "names": [{ "name": "갓데스 스쿼드", "how": "정식 명칭" }]
+    },
+    {
+      "id": "org:이지스",
+      "name": "이지스",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "event_goldenship_01_s", "lines": [12] }]
+    },
+    {
+      "id": "org:일렉트릭_쇼크",
+      "name": "일렉트릭 쇼크",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_26af_03", "lines": [36] }]
+    },
+    {
+      "id": "org:익스터너",
+      "name": "익스터너",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_12_07_e", "lines": [96] }]
+    },
+    {
+      "id": "org:쿠킹오일",
+      "name": "쿠킹오일",
+      "kind": "스쿼드",
+      "names": [{ "name": "쿠킹 오일", "how": "표기" }]
+    },
+    {
+      "id": "org:인큐베이터",
+      "name": "인큐베이터",
+      "kind": "스쿼드",
+      "caution": "훈련 시설 · 기계를 가리키는 줄도 있다(d_main_19af_01#85 \"인큐베이터에서 훈련 중\")",
+      "evidence": [{ "scene": "ep:d_nikke_mori_04", "lines": [16] }]
+    },
+    {
+      "id": "org:베스트셀러",
+      "name": "베스트셀러",
+      "kind": "스쿼드",
+      "caution": "일반 낱말 '베스트셀러'(잘 팔리는 책)와 겹친다",
+      "evidence": [{ "scene": "event_arcanearchive_06_e", "lines": [93] }]
+    },
+    {
+      "id": "org:워드리스",
+      "name": "워드리스",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "event_unbreakablesphere2_02_s", "lines": [40] }]
+    },
+    {
+      "id": "org:오버_더_호라이즌",
+      "name": "오버 더 호라이즌",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "event_overthehorizon_01_s", "lines": [57] }]
+    },
+    {
+      "id": "org:패스파인더",
+      "name": "패스파인더",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_26af_03", "lines": [36] }]
+    },
+    {
+      "id": "org:해머&드릴",
+      "name": "해머&드릴",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_26af_03", "lines": [36] }]
+    },
+    {
+      "id": "org:스카우팅",
+      "name": "스카우팅",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_16_07", "lines": [21] }]
+    },
+    { "id": "org:카페_스위티", "name": "카페 스위티", "kind": "스쿼드" },
+    {
+      "id": "org:언더월드_퀸",
+      "name": "언더월드 퀸",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "d_main_22_05_s", "lines": [0] }]
+    },
+    {
+      "id": "org:보타닉_가든",
+      "name": "보타닉 가든",
+      "kind": "스쿼드",
+      "evidence": [{ "scene": "fl:for_rest_01", "lines": [85] }]
+    },
+    {
+      "id": "org:오버시어",
+      "name": "오버시어",
+      "kind": "스쿼드",
+      "note": "감찰 부대(\"감찰 부대 오버시어 소속\" d_main_37_03#19)",
+      "evidence": [
+        { "scene": "d_main_36_08_s", "lines": [34, 36] },
+        { "scene": "d_main_37_03", "lines": [19] }
+      ],
+      "names": [
+        { "name": "감찰 부대", "how": "별칭", "caution": "오버시어가 아닌 감찰 부대 일반을 말할 수도 있다 — Q-A2-3" },
+        { "name": "감찰부대", "how": "별칭", "caution": "오버시어가 아닌 감찰 부대 일반을 말할 수도 있다 — Q-A2-3" }
+      ]
+    },
+    {
+      "id": "org:스쿼드_04-F",
+      "name": "스쿼드 04-F",
+      "kind": "스쿼드",
+      "note": "라피 · 아니스의 스쿼드 번호(R01 ch00에서 더함). 지휘관이 테스트에서 스쿼드 이름을 카운터스로 댄다(d_main_01af_03#22, R01 F26) — 대상은 따로 둔다",
+      "evidence": [{ "scene": "d_main_01_03_s", "lines": [30] }]
+    },
+    {
+      "id": "org:실버건",
+      "name": "실버건",
+      "kind": "스쿼드",
+      "note": "마리안이 속한 스쿼드 — \"실버건 스쿼드 소속\"(R01 ch00에서 더함)",
+      "evidence": [{ "scene": "d_main_01_03_s", "lines": [39] }]
+    },
+    {
+      "id": "org:니케_관리부",
+      "name": "니케 관리부",
+      "kind": "부서",
+      "note": "중앙 정부의 부서. 지휘관이 소속으로 댄다(R01 ch00에서 더함)",
+      "evidence": [{ "scene": "d_main_01_01_s", "lines": [17] }]
+    },
+    {
+      "id": "org:정보부",
+      "name": "정보부",
+      "kind": "부서",
+      "caution": "방주의 정보부가 아닌 다른 정보부일 수 있다",
+      "note": "방주 정보부 — 오퍼레이터 시프티의 소속(R01 ch01에서 더함)",
+      "evidence": [{ "scene": "d_main_01_05", "lines": [19] }]
+    },
+    {
+      "id": "org:테트라_커넥트",
+      "name": "테트라 커넥트",
+      "kind": "기업",
+      "note": "\"방주의 엔터테인먼트를 책임지고 있는\" 곳 — 메신저 계정 이름표(호칭)로도 나온다. 테트라 라인의 CEO 머스탱도 \"방주의 Entertainment를 책임지는\" 회사라고 한다(d_main_04af_08#15) — 사용자(RV1): 아마 테트라(테트라 라인)와 같은 회사 — 원문에서 확인되면 org:테트라의 별칭으로 합친다(Q-R01-3). R01 sub:테트라_커넥트_00에서 더함",
+      "evidence": [{ "scene": "sub:테트라_커넥트_00", "lines": [1] }]
+    },
+    {"id": "org:루셰", "name": "루셰", "kind": "기업", "note": "루피가 운영하는 패션 회사 — 로열 스퀘어 15개 브랜드 중 4개(ep:d_nikke_rupee_03#17-19, R07 char:200에서 더함)", "evidence": [{"scene": "ep:d_nikke_rupee_03", "lines": [17]}]},
+    {
+      "id": "org:아크_익스프레스",
+      "name": "아크 익스프레스",
+      "kind": "기업",
+      "note": "인피니티 레일 스쿼드가 속한 회사 — 철도로GO가 기관사 겸 승무원으로 일한다(R04 sub:철도로GO_00에서 더함)",
+      "evidence": [{ "scene": "sub:철도로GO_00", "lines": [21, 23] }]
+    },
+    {
+      "id": "org:방주_아동_보호_센터",
+      "name": "방주 아동 보호 센터",
+      "kind": "단체",
+      "note": "학대받거나 집 없는 아이를 보호한다는 비영리 단체 — 매니저 제니퍼(R15 sub:제니퍼f_00에서 더함)",
+      "evidence": [{ "scene": "sub:제니퍼f_00", "lines": [2] }]
+    },
+    {
+      "id": "org:니푸르",
+      "name": "니푸르",
+      "kind": "단체",
+      "names": [{ "name": "NIPPUR", "how": "영문" }],
+      "note": "\"세계의 모든 걸 기록하는 기록 단체\" — 이례의 기록자가 속한 곳(R02 sub:이례의_기록자_00에서 더함)",
+      "evidence": [{ "scene": "sub:이례의_기록자_00", "lines": [3, 4] }]
+    },
+    {
+      "id": "org:자원_채집_부대",
+      "name": "자원 채집 부대",
+      "kind": "부대",
+      "names": [{ "name": "땅굴 부대", "how": "별칭" }],
+      "note": "지상의 광석 · 식물 같은 자원을 모아 오는 부대, 지휘관과 함께 나간다. 땅을 파고 다녀 땅굴 부대라 불린다(R02 sub:트레저_헌터_01에서 더함)",
+      "evidence": [{ "scene": "sub:트레저_헌터_01", "lines": [52, 53] }]
+    },
+    {
+      "id": "org:식도락가_여행자들",
+      "name": "식도락가 여행자들",
+      "kind": "단체",
+      "note": "맛집 탐방 모임 — 산해진미가 부회장(R02 sub:산해진미_00에서 더함)",
+      "evidence": [{ "scene": "sub:산해진미_00", "lines": [6] }]
+    },
+    {
+      "id": "org:M.M.R.",
+      "name": "M.M.R.",
+      "kind": "기관",
+      "names": [{ "name": "M.M.R", "how": "표기" }, { "name": "MMR", "how": "표기" }],
+      "note": "식물 같은 것을 맡길 수 있는 곳으로 처음 나온다(R02 sub:세르반_02에서 더함)",
+      "evidence": [{ "scene": "sub:세르반_02", "lines": [51] }]
+    },
+    {
+      "id": "org:동식물_관리국",
+      "name": "동식물 관리국",
+      "kind": "부서",
+      "note": "동식물 관련 사업을 인가하는 곳(R02 sub:세르반_02에서 더함)",
+      "evidence": [{ "scene": "sub:세르반_02", "lines": [14] }]
+    },
+    {
+      "id": "org:리틀_캐논",
+      "name": "리틀 캐논",
+      "kind": "스쿼드",
+      "note": "미카 · 벨로타가 속한 포격 부대, '폭죽놀이단'(R08 char:61에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_mica_03", "lines": [76] }]
+    },
+    {
+      "id": "org:세라핌",
+      "name": "세라핌",
+      "kind": "스쿼드",
+      "note": "메어리 · 페퍼의 의료 스쿼드, 부르면 환자에게 달려간다(R09 char:91에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_vesti_04", "lines": [120] }]
+    },
+    {
+      "id": "org:리콜&릴리즈",
+      "name": "리콜&릴리즈",
+      "kind": "스쿼드",
+      "note": "NIMPH로 니케의 기억을 어디까지 제어할 수 있는지 확인하는 프로젝트용 특수 스쿼드, N102(앤) 소속(R14 char:120에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_n102_02", "lines": [91] }]
+    },
+    {
+      "id": "org:라이프_토닉",
+      "name": "라이프 토닉",
+      "kind": "스쿼드",
+      "note": "에피넬 · 루마니가 속한 스포츠 · 엔터테인먼트용 니케 타입 · 스쿼드(R11 char:241에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_epinel_02", "lines": [15] }]
+    },
+    {
+      "id": "org:세이메이카이",
+      "name": "세이메이카이",
+      "kind": "세력",
+      "note": "아우터 림의 야쿠자 조직 — 사쿠라가 이끈다(R19 char:311에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_cocoa_04", "lines": [14] }]
+    },
+    {
+      "id": "org:데블_헌터",
+      "name": "데블 헌터",
+      "kind": "세력",
+      "note": "지상이 아닌 '또 다른 세계'에서 온 이들(콜라보) — 마키마 · 파워 · 히메노, 중앙 정부의 귀빈(R19 char:800에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_c_1_01", "lines": [2] }]
+    },
+    {
+      "id": "org:모란회",
+      "name": "모란회",
+      "kind": "세력",
+      "note": "뒷세계 3대 조직의 하나 — 협객이라 불리는 소수 정예, 보스 목단(R20 event_cherryblossom에서 더함)",
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": [35] }]
+    },
+    {
+      "id": "org:헤도니아",
+      "name": "헤도니아",
+      "kind": "세력",
+      "note": "뒷세계 3대 조직의 하나 — 신생 세력, 보스 로산나(R20 event_cherryblossom에서 더함)",
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": [35] }]
+    },
+    {
+      "id": "org:인류연합군",
+      "name": "인류연합군",
+      "kind": "군",
+      "note": "중앙 정부군의 전신 — 지상을 빼앗기기 전 랩쳐와 싸우려 전 세계가 연합해 만든 군사 조직(R29 char:810에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_ce_02_01_04", "lines": [53, 56] }]
+    },
+    {
+      "id": "org:V.T.C.",
+      "name": "V.T.C.",
+      "kind": "단체",
+      "note": "거대 교단이 운용하는 의료 센터 — 라푼젤의 출신, 1차 침공기에 침식 치료를 연구했다(R32 event_redash · erelic:red_ash_lost에서 더함)",
+      "evidence": [{ "scene": "event_redash1_02_s", "lines": [10] }]
+    },
+    {
+      "id": "org:근접_전투_스쿼드",
+      "name": "근접 전투 스쿼드",
+      "kind": "스쿼드",
+      "note": "1차 침공기 인류연합군이 근접 전투형으로 특수 개량한 양산형 니케 10기의 스쿼드 — 리더 장화, 홍련 소속. 내전으로 궤멸(R35 event_newyearnewsword에서 더함)",
+      "evidence": [{ "scene": "event_newyearnewsword_01_e", "lines": [43] }]
+    },
+    {
+      "id": "org:동물권_단체",
+      "name": "동물권 단체",
+      "kind": "단체",
+      "note": "해피 주 보호소를 테트라와 함께 운영하는 방주의 단체 — 민원으로 보호소를 닫게 하고 희귀 맹수를 빼돌리려 했다(R35 event_lionheart에서 더함)",
+      "evidence": [{ "scene": "event_lionheart_intermission_01", "lines": [28] }]
+    },
+    {
+      "id": "org:화양연화",
+      "name": "화양연화",
+      "kind": "단체",
+      "note": "카밀라 해링턴이 자기 저택에서 여는 '구세주' 기도 모임 — 초대장으로만 들어가고, 붉은 디퓨저의 향으로 단체 환각을 보았다(R39 event_killthelord에서 더함)",
+      "evidence": [{ "scene": "event_killthelord_04_s", "lines": [130] }]
+    },
+    { "id": "org:헤비그램", "name": "헤비그램", "kind": "스쿼드", "note": "킬로가 소속된 스쿼드(R42 event_lastkingdom1에서 더함)", "evidence": [{"scene": "event_lastkingdom1_prologue", "lines": [113]}] },
+    { "id": "org:포비스트", "name": "포비스트", "kind": "헬레틱 무리", "note": "베히모스를 포함한 헬레틱 넷이 스스로 붙인 이름 — 수정을 만들었고 아나키오르를 모시려 한다(R47 ch31에서 더함)", "evidence": [{"scene": "d_main_31_08", "lines": [101]}] },
+    { "id": "org:스컬_헤드", "name": "스컬 헤드", "kind": "스쿼드", "note": "리오 · 웬디 · 라피가 있던 양산형 전투 특화 스쿼드(이름으로 불리는 실력 있는 스쿼드) — 침식으로 전멸해 해체(R55 event_footstepwalkrun1에서 더함)", "evidence": [{"scene": "event_footstepwalkrun1_05_e", "lines": [26]}] },
+    { "id": "org:T.T.STAR", "name": "T.T.STAR", "kind": "팀", "names": [{ "name": "트윙클 트라이 스타", "how": "정식 명칭" }], "note": "아니스가 있던 테트라 라인의 아이돌 그룹(R57 ch35에서 더함)", "evidence": [{"scene": "d_main_35_04", "lines": [30]}] },
+    { "id": "org:Twinkle_Twin_Star", "name": "Twinkle Twin Star", "kind": "팀", "note": "아니스가 T.T.STAR를 탈퇴한 뒤 민트 · 프리카가 데뷔한 테트라의 아이돌 그룹 — 아비스타 · 미세스 미스가 함께한다(R92 event_staranis1에서 더함)", "evidence": [{"scene": "event_staranis2_epilogue", "lines": [39]}] },
+    { "id": "org:니케_인권_위원회", "name": "니케 인권 위원회", "kind": "단체", "note": "방주 초기 니케의 인권을 외치던 시민 단체 — 프리시아가 팀장, 프리티가 홍보 대사였다(R87 side:pretty_star에서 더함)", "evidence": [{"scene": "side:pretty_star_00", "lines": [49]}] },
+    { "id": "org:블레이즈_아웃", "name": "블레이즈 아웃", "kind": "스쿼드", "note": "방주의 전염병 대응 스쿼드 — 바이러스가 퍼질 곳을 거주지째 불태운다(R70 fl:reborn_evil에서 더함)", "evidence": [{"scene": "fl:reborn_evil_10", "lines": [43]}] },
+    { "id": "org:베일드_오더", "name": "베일드 오더", "kind": "스쿼드", "note": "계약의 증인 · 감시자로 존재하는 스쿼드 — 인류 연합군과 V.T.C.가 중앙 정부로 통합할 때 계약을 감시하며, 어기는 쪽을 무력 진압할 수 있다. 백학이 속한다(R88 fl:good_world에서 더함)", "evidence": [{"scene": "fl:good_world_12", "lines": [26]}] }
+  ]
+}

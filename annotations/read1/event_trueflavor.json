@@ -1,0 +1,69 @@
+{
+  "unit": "event_trueflavor",
+  "session": "R59",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "event_newflavor 뒤. 지휘관에게서 '온전한 맛'을 찾은 브래디가 크러스트의 요리를 버리는 꿈을 꾼 크러스트는, 브래디의 '늘 먹던 맛이야'에 주방을 닫고 브래디를 주방 출입 금지로 한 채 요리 연구에 들어간다(prologue). 미미르 부속고 특별 수업(지상에서 먹을 수 있는 것 · 먹으면 안 되는 것 · 보존식 실습)에 지휘관이 보조 선생으로 함께하고, 티아가 자기와 나가의 입맛에 맞춘 요리를 따로 만든다(01_s). 크러스트는 방송도 재방으로 돌리고 외부 일정을 취소했다 — 지휘관을 핥아 봐도 크러스트에게는 아무 맛이 없다(01_e). 크러스트는 '기억도 정보도 없는 맛'을 만들려고 지휘관 손으로 음식을 문지르고 머리카락까지 넣어 보고, 한 가지 재료 요리 · 기계 조리를 궁리하지만 브래디는 평범하다 · 음식이 아니다라 평하고 쓸쓸해한다(02 · 03_s). 지휘관이 데려온 티아는 '상대가 원하지 않으면 호의도 악의가 된다', 브래디가 불행한 표정이었다고 짚고(03_e · intermission · 04_s), 손님으로 초대된 에이드는 크러스트의 초대장 · 미소 · 콧노래 · 플레이팅이 행복을 만든다며 오므라이스로 '행복의 맛'을 가르친다 — 브래디를 위해 만든 음식은 사실 크러스트 자신을 위한 것이었다(04_e · 05_s). 크러스트는 연구를 그만두고 브래디에게 정식 초대장을 보내 샤토브리앙 스테이크를 대접하며 털어놓고, 브래디는 크러스트의 음식을 먹을 때마다 늘 행복했다며 '연구는 성공, 만점'이라 한다 — 다음엔 같이 연구하자(05_e · 06). 에필로그: 쿠킹오일의 두 번째 특별 수업(전투 식량 요리)에서 브래디가 학생들의 감정이 담긴 맛을 즐기고, 둘은 메이드 카페에서 에이드의 오므라이스를 먹는다. 줄거리 밖 일상 이벤트.",
+  "scenes": [
+    { "scene": "event_trueflavor_prologue", "text": "크러스트의 꿈 · '늘 먹던 맛' · 주방 폐쇄와 브래디 출입 금지" },
+    { "scene": "event_trueflavor_01_s", "text": "미미르 부속고 특별 수업 · 통합 P반 · 티아의 단 요리" },
+    { "scene": "event_trueflavor_01_e", "text": "해산물 코스 · 연구 선언 · 크러스트가 지휘관을 핥아도 맛이 없음" },
+    { "scene": "event_trueflavor_02_s", "text": "브래디의 말 기록 · '기억도 정보도 없는 맛' 목표" },
+    { "scene": "event_trueflavor_02_e", "text": "지휘관 손으로 문지른 요리 · 브래디의 평범하다는 평, 쓸쓸함" },
+    { "scene": "event_trueflavor_03_s", "text": "한 가지 재료 요리 · 비상식량 같다는 평 · 숨기는 까닭" },
+    { "scene": "event_trueflavor_03_e", "text": "보조 티아 · 브래디가 좋아하는 음식을 모르는 크러스트" },
+    { "scene": "event_trueflavor_intermission_01", "text": "단맛 없는 케이크 · 티아 '정말 브래디를 위한 것인가'" },
+    { "scene": "event_trueflavor_04_s", "text": "호의도 악의가 된다 · 손님 에이드 초대" },
+    { "scene": "event_trueflavor_04_e", "text": "사복 에이드 · 크러스트 코스 · 에이드의 오므라이스" },
+    { "scene": "event_trueflavor_05_s", "text": "행복의 맛 · 크러스트를 위한 음식이었다" },
+    { "scene": "event_trueflavor_05_e", "text": "크러스트의 깨달음 · 브래디에게 초대장" },
+    { "scene": "event_trueflavor_06_s", "text": "꾸민 주방 · 샤토브리앙 스테이크" },
+    { "scene": "event_trueflavor_06_e", "text": "털어놓음 · '늘 행복했어, 연구는 성공'" },
+    { "scene": "event_trueflavor_epilogue", "text": "두 번째 특별 수업 · 메이드 카페 오므라이스" }
+  ],
+  "facts": [
+    {
+      "id": "F1851",
+      "text": "크러스트는 브래디가 지휘관을 맛볼 때의 표정이 부러워 주방을 닫고 외부 일정을 취소한 채 브래디만을 위한 '기억도 정보도 없는 맛' 요리를 연구했지만, 티아 · 에이드에게서 일방적인 호의와 행복의 맛을 배우고 연구를 그만두었다 — 브래디는 크러스트의 음식을 먹을 때마다 늘 행복했다고 했다",
+      "about": ["person:크러스트", "person:브래디", "person:티아", "person:에이드"],
+      "evidence": [
+        { "scene": "event_trueflavor_01_e", "lines": ["61-72"] },
+        { "scene": "event_trueflavor_02_s", "lines": ["38-50"] },
+        { "scene": "event_trueflavor_05_e", "lines": ["40-48", "61-64"] },
+        { "scene": "event_trueflavor_06_e", "lines": ["12-20", "69-81"] }
+      ],
+      "reason": "크러스트의 말(01_e #64-72 · 02_s #41-50 · 06_e #18-20)과 깨달음(05_e), 브래디의 말(06_e #78)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R59" }]
+    },
+    {
+      "id": "F1852",
+      "text": "크러스트는 브래디와 맛보는 기능이 달라, 지휘관의 손을 핥아 봐도 아무 맛도 느끼지 못했다",
+      "about": ["person:크러스트", "person:지휘관"],
+      "evidence": [{ "scene": "event_trueflavor_01_e", "lines": ["84-85", "97-102"] }],
+      "reason": "크러스트의 말(#84 '맛을 보는 기능이 다르긴 하지만', #102 '아무런 맛도 느껴지지 않아요')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R59" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S218",
+      "kind": "기준점",
+      "text": "event_newflavor 뒤 — 브래디가 지휘관을 '미미'라 부르며 맛보러 다니던 때부터 며칠",
+      "ref": "event_newflavor",
+      "at": [["뒤", "event_newflavor"]],
+      "evidence": [{ "scene": "event_trueflavor_prologue", "lines": ["13-15"] }, { "scene": "event_trueflavor_02_s", "lines": [0] }],
+      "reason": "'이제 미미라고 부르기로 했지'(prologue #14), '며칠 후'(02_s #0)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R59" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

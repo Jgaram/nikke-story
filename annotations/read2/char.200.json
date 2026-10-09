@@ -1,0 +1,54 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M81\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:200",
+  "session": "M81",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1803",
+      "person": "person:루피",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'지휘관 오빠'라 부르며 '루피와 연이 있는 유일한 남자 사람'이라고 하루 남자친구 연기를 졸라 맡기는",
+      "evidence": [{ "scene": "ep:d_nikke_rupee_02", "lines": ["13-41"] }],
+      "reason": "02#18-19 '오빠는 루피와 연이 있는 유일한 남자 사람' · #26 '하루만 내 남자친구 역할'. 루피 → 지휘관 관계 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1804",
+      "person": "person:루피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "하루 남자친구 역을 부탁한 오빠",
+      "after": "스토커를 때려눕힌 지휘관에게 '진짜'가 되어 달라며 사귀는",
+      "trigger": [{ "scene": "ep:d_nikke_rupee_05", "lines": ["13-24"] }],
+      "evidence": [{ "scene": "ep:d_nikke_rupee_05", "lines": ["34-48", "77-80"] }],
+      "points": ["F520"],
+      "reason": "05#45-48 '지휘관으로서도, 루피의 남자친구로서도 … [진짜]가 되어 주면' · #80 도라 '입버릇처럼 … 소원대로'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1805",
+      "person": "person:루피",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "'많이 벌어야 많이 쓸 수 있다'며 쇼핑 방송으로 자기 매장도 알리고 방주 경제도 살린다는 — 쓰는 것과 버는 것을 함께 즐기는",
+      "evidence": [{ "scene": "ep:d_nikke_rupee_03", "lines": ["32-38"] }],
+      "reason": "03#36-38 '많이 벌어야 많이 쓸 수 있는 거지 … 방주 경제도 활성화되니까'. 루피의 신념 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: ep:d_nikke_rupee_05#2-5,7-8,13-14,18-19 (루피를 차에 태우려던 덩치 큰 남자 스토커 — 이름 없는 단역. 04#2 [심심한몸짱남] 같은 시청자로 보이나 원문이 잇지 않는다)"
+}

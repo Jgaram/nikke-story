@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:롬_00",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D86",
+      "person": "person:롬",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'_'로 끊어 말하며 컨테이너와 유물을 무엇보다 지키고, 랩쳐 앞에서 호들갑을 떨지만 '오랜만에 사람 봐서 좋았다, 시끌벅적해서 좋았다'는 외로운 지상 로봇",
+      "evidence": [{ "scene": "sub:롬_00", "lines": ["50-64"] }],
+      "reason": "#27-29 컨테이너 보호 · #37 · #59-60",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": []
+}

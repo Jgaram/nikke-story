@@ -1,0 +1,485 @@
+a,b,a_type,b_type,records,units,sample
+org:중앙_정부,place:방주,org,place,29,19,E249 E1602 F407 F591 F818 F820
+org:갓데스,place:방주,org,place,25,8,E123 F687 F909 F910 F919 F920
+org:중앙_정부,place:아우터_림,org,place,24,17,E13 E1569 F136 F577 F596 F643
+org:이그조틱,place:아우터_림,org,place,20,13,E1279 F139 F258 F403 F408 F642
+concept:니케,place:방주,concept,place,19,15,F230 F407 F432 F437 F503 F592
+place:방주,place:에덴,place,place,19,15,F772 F867 F871 F983 F1028 F1132
+org:엔터_헤븐,place:아우터_림,org,place,18,11,F369 F403 F470 F480 F596 F777
+place:방주,place:아우터_림,place,place,17,14,F134 F135 F578 F888 F952 F955
+concept:NIMPH,concept:침식,concept,concept,14,10,F311 F326 F342 F1628 F1681 F1688
+concept:니케,concept:랩쳐,concept,concept,14,11,F161 F307 F320 F451 F493 F583
+org:미실리스,org:엘리시온,org,org,14,7,F301 F591 F833 F1857 F1858 F1939
+org:이지스,place:어드마이어_호,org,place,14,7,E208 E1319 E1323 F669 F670 F674
+concept:랩쳐,place:방주,concept,place,13,11,F166 F169 F321 F377 F662 F666
+org:메티스,org:미실리스,org,org,13,10,F388 F393 F476 F689 F702 F713
+concept:NIMPH,concept:언체인드,concept,concept,12,10,F259 F342 F395 F415 F746 F753
+concept:니케,org:중앙_정부,concept,org,12,10,F407 F627 F651 F817 F820 F971
+concept:니케,place:지상,concept,place,11,9,F11 F51 F118 F198 F225 F527
+concept:다크_매터,org:포비스트,concept,org,11,9,F1634 F1647 F1661 F1806 F1865 F2081
+org:V.T.C.,org:중앙_정부,org,org,11,6,F1156 F1162 F1679 F2365 F2369 F2375
+org:갓데스,org:중앙_정부,org,org,11,5,F817 F919 F920 F1105 F2360 F2365
+concept:랩쳐,concept:침식,concept,concept,10,6,F83 F306 F1147 F1158 F1681 F1682
+incident:아크_가디언_작전,org:갓데스,incident,org,10,6,E1310 F179 F909 F940 F1934 F2359
+org:중앙_정부,org:테트라,org,org,10,6,F591 F1020 F2117 F2542 F2550 F2551
+concept:랩쳐,incident:랩쳐_침공,concept,incident,9,8,F247 F383 F385 F402 F493 F665
+concept:언체인드,concept:헬레틱,concept,concept,9,7,F324 F682 F744 F746 F754 F1637
+org:M.M.R.,org:미실리스,org,org,9,8,F445 F1071 F1460 F1613 F1616 F2412
+org:미실리스,place:방주,org,place,9,7,F301 F591 F689 F2659 F2736 F2818
+org:언더월드_퀸,place:아우터_림,org,place,9,8,F829 F832 F884 F953 F990 F1020
+concept:E2_크리스탈,place:방주,concept,place,8,4,F2210 F2232 F2576 F2583 F2590 F2591
+concept:니케,concept:사고_전환,concept,concept,8,8,E1561 F492 F506 F655 F725 F1060
+concept:다크_매터,place:궤도_엘리베이터,concept,place,8,3,E1228 E1246 F2803 F2813 F2822 F2823
+concept:랩쳐,place:궤도_엘리베이터,concept,place,8,5,F246 F1140 F1153 F1690 F2612 F2664
+concept:양산형_니케,org:갓데스,concept,org,8,6,F201 F909 F912 F1145 F1181 F1712
+concept:침식,org:V.T.C.,concept,org,8,5,F1142 F1150 F1156 F1162 F1174 F1686
+concept:퍼펙트,place:방주,concept,place,8,7,F444 F478 F590 F809 F1428 F2380
+org:V.T.C.,org:미실리스,org,org,8,5,E1094 F2412 F2567 F2610 F2665 F2667
+org:V.T.C.,org:인류연합군,org,org,8,5,F1162 F1664 F1667 F1670 F1679 F2411
+org:갓데스,org:인류연합군,org,org,8,6,F1139 F1148 F1153 F1194 F1231 F1667
+org:메티스,org:앱솔루트,org,org,8,7,F257 F275 F276 F896 F1030 F1379
+org:메티스,place:방주,org,place,8,6,F689 F697 F896 F993 F2241 F2252
+org:엔터_헤븐,org:이그조틱,org,org,8,5,F403 F416 F886 F992 F2059 F2484
+org:엘리시온,org:중앙_정부,org,org,8,6,F591 F669 F2408 F2492 F2501 F2539
+org:중앙_정부,org:트라이앵글,org,org,8,8,F250 F365 F627 F651 F658 F820
+place:방주,place:지상,place,place,8,8,F611 F1046 U4 U82 U96 U108
+concept:NEO_바이러스,org:구원의_성화,concept,org,7,3,E876 F2130 F2131 F2134 F2145 F2149
+concept:미스트,place:아우터_림,concept,place,7,3,F1258 F1265 F1268 F2209 F2603 U191
+concept:방주_동력원,place:방주,concept,place,7,4,F1339 F1342 F2581 F2606 F2818 U401
+concept:침식,org:갓데스,concept,org,7,5,F178 F1148 F1565 F1669 F1712 F1713
+concept:침식,org:중앙_정부,concept,org,7,3,F1156 F1161 F1162 F1672 F1676 F1677
+concept:헬레틱,org:포비스트,concept,org,7,4,F1533 F1636 F1637 F1641 F1647 F1652
+org:M.M.R.,place:미미르_부속_고등학교,org,place,7,2,F1071 F1072 F1073 F1076 F1078 F1586
+org:V.T.C.,org:갓데스,org,org,7,3,F1667 F2364 F2365 F2375 F2650 F2654
+org:V.T.C.,place:궤도_엘리베이터,org,place,7,3,F1667 F1679 F2610 F2611 F2665 F2667
+org:미실리스,org:중앙_정부,org,org,7,5,F591 F1404 F2567 F2675 F2683 F2771
+org:미실리스,org:테트라,org,org,7,4,F301 F591 F833 F2683 F2693 F2701
+org:엘리시온,org:테트라,org,org,7,4,F301 F591 F833 F2683 F2693 F2701
+org:인류연합군,place:궤도_엘리베이터,org,place,7,3,F1153 F1667 F1679 F2664 F2666 F2667
+org:필그림,place:방주,org,place,7,7,F206 F867 F898 F927 F1027 F1096
+place:궤도_엘리베이터,place:방주,place,place,7,6,F1153 F1679 F1755 F2620 F2814 F2823
+concept:NIMPH,org:미실리스,concept,org,6,5,F415 F689 F727 F1037 F1613 U98
+concept:랩쳐,concept:헬레틱,concept,concept,6,5,F295 F319 F843 F1652 F2072 Q55
+concept:랩쳐,org:갓데스,concept,org,6,3,F1139 F1140 F1153 F1155 F1695 F2821
+concept:언체인드,concept:침식,concept,concept,6,5,F342 F1628 F1676 F1688 F1708 F2646
+concept:언체인드,org:카운터스,concept,org,6,6,F400 F705 F763 F840 F1012 F1627
+concept:언체인드,place:에덴,concept,place,6,5,E594 F745 F754 F840 F1435 F1629
+concept:헬레틱,org:메티스,concept,org,6,5,F257 F275 F276 F1379 F1527 F2737
+concept:헬레틱,org:중앙_정부,concept,org,6,5,F216 F1379 F1624 F1676 F1696 U38
+incident:아크_가디언_작전,place:방주,incident,place,6,4,F909 F940 F1691 F2359 F2360 F2365
+org:T.T.STAR,org:테트라,org,org,6,3,F1798 F2673 F2685 F2687 F2690 U258
+org:미실리스,place:미미르_부속_고등학교,org,place,6,3,F1071 F2516 F2524 F2527 F2528 Q330
+org:엔터_헤븐,org:중앙_정부,org,org,6,3,F371 F596 F2485 F2498 F2499 F2501
+place:방주,place:쉘터,place,place,6,4,F993 F996 F1004 F1041 F1110 U174
+concept:NIMPH,org:메티스,concept,org,5,5,F395 F689 F698 F993 F2787
+concept:니케,org:3대_기업,concept,org,5,5,F191 F200 F511 F639 F1061
+concept:니케,org:M.M.R.,concept,org,5,4,F612 F741 F1072 F1769 U253
+concept:니케,org:미실리스,concept,org,5,2,F267 F2770 F2775 Q51 U61
+concept:니케,org:트라이앵글,concept,org,5,5,F627 F651 F820 U57 U144
+concept:니케,place:리페어_센터,concept,place,5,5,F197 F971 F1061 U309 U429
+concept:다크_매터,concept:언체인드,concept,concept,5,3,E519 F1555 F1635 F1638 F1661
+concept:다크_매터,concept:헬레틱,concept,concept,5,5,F1647 F1804 F1808 F2616 F2822
+concept:랩쳐,org:인류연합군,concept,org,5,4,F1067 F1139 F1153 F1986 F2664
+concept:랩쳐,place:수정_지역,concept,place,5,2,F1297 F1301 F1314 F1321 Q166
+concept:스마일_박스,org:T.T.STAR,concept,org,5,2,F2200 F2690 F2692 F2695 Q291
+concept:신생_랩쳐,place:궤도_엘리베이터,concept,place,5,3,F2612 F2613 F2615 F2803 F2849
+concept:아웃로,place:아우터_림,concept,place,5,2,F594 F595 F638 F642 F643
+concept:양산형_니케,place:방주,concept,place,5,4,F230 F543 F909 F927 F2367
+concept:용광로,org:포비스트,concept,org,5,2,F2182 F2183 F2184 F2255 F2256
+concept:이터널_스카이,place:아우터_림,concept,place,5,3,F777 F780 F782 F2486 F2819
+concept:침식,place:방주,concept,place,5,4,F23 F84 F376 F432 Q1
+concept:크라켄,place:어드마이어_호,concept,place,5,2,E432 F1053 F1055 F1056 F1057
+concept:페어리_테일,org:갓데스,concept,org,5,3,F1145 F1177 F1179 F1180 F1572
+concept:헬레틱,org:앱솔루트,concept,org,5,4,F257 F275 F276 F1379 F1527
+incident:2차_지상_탈환전,org:중앙_정부,incident,org,5,3,F1747 F1751 F2334 F2771 U355
+incident:랩쳐_침공,place:방주,incident,place,5,5,F329 F479 F666 F687 F695
+item:A_필러,item:하모니_큐브,item,item,5,2,F1525 F1526 F1530 F1549 U228
+item:초거대_코어,place:방주,item,place,5,3,F1755 F2581 F2606 F2620 Q346
+org:A.C.P.U.,place:방주,org,place,5,5,F189 F600 F605 F621 U133
+org:갓데스,place:궤도_엘리베이터,org,place,5,3,F1140 F1152 F1153 F1667 F2666
+org:메티스,org:카운터스,org,org,5,5,F623 F690 F701 F1527 F2738
+org:모란회,org:언더월드_퀸,org,org,5,4,F830 F953 F1263 F1264 U135
+org:모란회,place:포그_할로우,org,place,5,2,F1257 F1260 F1263 U190 U284
+org:시지_패러리스,org:저지스,org,org,5,2,E737 F850 F851 F852 F1960
+org:앱솔루트,org:카운터스,org,org,5,5,F261 F1213 F1527 F2109 Q52
+org:언더월드_퀸,org:이그조틱,org,org,5,5,F830 F886 F1514 F2087 F2819
+org:언더월드_퀸,org:헤도니아,org,org,5,3,F830 F959 F963 F1506 F1515
+org:언리미티드,place:북부,org,place,5,3,F99 F101 F2097 U33 U319
+org:오버_더_호라이즌,place:승리의_날개_호,org,place,5,3,E777 F2009 F2015 F2742 F2815
+org:인류연합군,org:중앙_정부,org,org,5,5,F1067 F1162 F1679 F2411 F2567
+org:카운터스,place:방주,org,place,5,4,E1176 F1002 F1014 F1137 F2738
+org:포비스트,place:에덴,org,place,5,3,F2429 F2624 F2634 F2820 U445
+org:필그림,place:에덴,org,place,5,3,F447 F448 F747 F751 F867
+concept:D-WAVE,concept:게이트_키퍼,concept,concept,4,3,F1976 F1979 F2127 F2468
+concept:NIMPH,concept:기억_소거,concept,concept,4,4,F663 F679 F727 F1013
+concept:NIMPH,concept:니케,concept,concept,4,4,F171 F641 F2370 F2777
+concept:NIMPH,concept:랩쳐,concept,concept,4,4,F490 F1681 F1699 F2777
+concept:기억_소거,org:베스트셀러,concept,org,4,3,F1610 F2380 F2383 U279
+concept:니케,concept:양산형_니케,concept,concept,4,4,F202 F230 F612 F1069
+concept:니케,incident:랩쳐_침공,concept,incident,4,4,F287 F493 F640 F1068
+concept:니케,org:엘리시온,concept,org,4,3,F639 F647 F648 F811
+concept:니케포비아,org:니케_인권_위원회,concept,org,4,1,F2540 F2541 F2555 U383
+concept:니케포비아,org:중앙_정부,concept,org,4,1,F2540 F2551 U383 U389
+concept:다크_매터,concept:신생_랩쳐,concept,concept,4,3,F2616 F2623 F2803 F2849
+concept:랩쳐,org:V.T.C.,concept,org,4,4,E103 F1701 F2366 F2665
+concept:랩쳐,org:구원의_성화,concept,org,4,3,F757 F2130 F2139 F2144
+concept:랩쳐,org:카운터스,concept,org,4,4,F39 F330 F411 F690
+concept:랩쳐,place:지상,concept,place,4,4,F130 F155 F2006 F2139
+concept:로스트_섹터,item:A_필러,concept,item,4,3,F1525 F1526 F1539 F1549
+concept:로스트_섹터,item:하모니_큐브,concept,item,4,2,E436 F1525 F1526 F1549
+concept:미스트,org:모란회,concept,org,4,3,F1260 F1953 F2449 F2459
+concept:미스트,place:포그_할로우,concept,place,4,2,F1260 F1261 F1268 F2087
+concept:사고_전환,concept:양산형_니케,concept,concept,4,3,F630 F775 F912 U149
+concept:양산형_니케,concept:침식,concept,concept,4,3,F1700 F1712 F1713 U147
+concept:양산형_니케,org:엘리시온,concept,org,4,4,F630 F1145 U199 U200
+concept:양산형_니케,place:아우터_림,concept,place,4,3,F576 F577 F853 F988
+concept:언체인드,org:갓데스,concept,org,4,2,F682 F683 F685 F2364
+concept:언체인드,org:미실리스,concept,org,4,2,F393 F394 F396 F415
+concept:언체인드,org:포비스트,concept,org,4,3,F1637 F1652 F1658 F1661
+concept:이터널_스카이,place:방주,concept,place,4,4,F589 F881 F1041 F1338
+concept:인식_칩,place:아우터_림,concept,place,4,3,F594 F595 F901 F1499
+concept:헬레틱,place:수정_지역,concept,place,4,3,F1379 F1533 F1624 F1636
+incident:2차_지상_탈환전,place:방주,incident,place,4,3,F994 F2327 U112 U352
+incident:AFX_열차_테러,org:엔터_헤븐,incident,org,4,3,F482 F596 F2500 F2501
+item:에덴의_창,place:에덴,item,place,4,3,F2170 F2257 F2260 F2337
+item:하모니_큐브,org:포비스트,item,org,4,4,F1568 F1636 F1642 F2185
+item:하모니_큐브,place:수정_지역,item,place,4,4,F1396 F1420 F1636 F1642
+org:3대_기업,place:방주,org,place,4,3,F589 F591 F1207 F2357
+org:M.M.R.,place:M.M.R._심층부,org,place,4,1,E581 F1768 F1770 U252
+org:V.T.C.,place:방주,org,place,4,3,F1679 F2365 F2366 F2410
+org:갓데스,org:베스트셀러,org,org,4,2,E1065 F1938 F2559 Q248
+org:갓데스,place:승리의_날개_호,org,place,4,2,E778 E1226 F2821 U448
+org:구원의_성화,org:엄브렐러,org,org,4,1,E870 E874 F2130 F2138
+org:메티스,org:이지스,org,org,4,3,F1858 F1870 F1878 F2241
+org:모란회,place:아우터_림,org,place,4,3,F953 F1257 U190 U374
+org:미실리스,place:궤도_엘리베이터,org,place,4,2,F2610 F2665 F2667 U410
+org:세이메이카이,org:언더월드_퀸,org,org,4,4,F830 F953 F990 F1506
+org:세이메이카이,place:아우터_림,org,place,4,4,F835 F853 F953 F990
+org:언더월드_퀸,org:엔터_헤븐,org,org,4,2,F884 F886 F2497 F2499
+org:언더월드_퀸,org:중앙_정부,org,org,4,4,F953 F1020 F1514 F2499
+org:엔터_헤븐,org:엘리시온,org,org,4,1,F2490 F2500 F2501 F2502
+org:중앙_정부,place:수정_지역,org,place,4,4,F1329 F1379 F1417 F1624
+org:중앙_정부,place:쉘터,org,place,4,4,F995 F1004 F1040 F1041
+org:중앙_정부,place:지상,org,place,4,3,F184 F218 U40 U346
+org:테트라,place:방주,org,place,4,4,F301 F591 F1137 U427
+org:파이오니아,place:에덴,org,place,4,3,F448 F2159 F2262 F2297
+org:포비스트,place:유사_방주,org,place,4,3,F2182 F2185 F2249 F2624
+place:갱생관,place:아우터_림,place,place,4,4,F595 F642 F1876 F2089
+place:궤도_엘리베이터,place:에덴,place,place,4,4,F2337 F2419 F2572 F2803
+place:배드_드림,place:아우터_림,place,place,4,4,F960 F2399 U305 U406
+place:블랙넷,place:아우터_림,place,place,4,4,F1258 F2445 F2601 U12
+place:아우터_림,place:지상,place,place,4,4,F957 F2012 U137 U314
+place:아우터_림,place:펑크_스트리트,place,place,4,2,E1081 F2233 F2578 U341
+concept:E2_크리스탈,concept:헬레틱,concept,concept,3,2,F1527 F1533 F1543
+concept:E2_크리스탈,item:하모니_큐브,concept,item,3,3,F1525 F1553 F1568
+concept:E2_크리스탈,org:포비스트,concept,org,3,3,F1533 F1546 F1568
+concept:E2_크리스탈,place:수정_지역,concept,place,3,3,F1533 F1550 F1564
+concept:NIMPH,concept:양산형_니케,concept,concept,3,3,F1693 F1700 F1742
+concept:NIMPH,concept:헬레틱,concept,concept,3,3,F746 F2363 F2828
+concept:NIMPH,org:M.M.R.,concept,org,3,3,F326 F1415 F1613
+concept:기억_소거,concept:이레귤러,concept,concept,3,3,F89 F507 F1733
+concept:니케,concept:침식,concept,concept,3,3,F305 F432 F1147
+concept:니케,incident:갓데스_폴,concept,incident,3,2,F232 F1403 U46
+concept:니케,org:카페_스위티,concept,org,3,3,F580 F653 F2474
+concept:니케,org:테트라,concept,org,3,3,F1623 F2670 U385
+concept:다크_매터,concept:용광로,concept,concept,3,2,F2182 F2255 F2256
+concept:랩쳐,concept:로드_급,concept,concept,3,3,F12 F632 F1321
+concept:랩쳐,concept:마더_웨일,concept,concept,3,2,F858 F860 F1284
+concept:랩쳐,concept:양산형_니케,concept,concept,3,3,F1069 F1141 F2129
+concept:랩쳐,org:미실리스,concept,org,3,2,F300 F2665 Q57
+concept:랩쳐,org:중앙_정부,concept,org,3,3,F327 F665 F1067
+concept:랩쳐,place:블루워터_아일랜드,concept,place,3,2,F974 F1051 Q135
+concept:로열,place:천사_고아원,concept,place,3,2,F1216 F1218 F1222
+concept:마더_웨일,concept:웨일리,concept,concept,3,2,F1284 F1285 F2042
+concept:마테리얼_H,org:M.M.R.,concept,org,3,2,F1032 F1466 F1469
+concept:머신_메사이어,org:V.T.C.,concept,org,3,3,F2363 F2410 F2611
+concept:방주_동력원,item:초거대_코어,concept,item,3,1,F2580 F2581 F2606
+concept:방주_동력원,org:일렉트릭_쇼크,concept,org,3,2,E1083 F2579 F2818
+concept:사고_전환,org:갓데스,concept,org,3,3,F661 F684 F912
+concept:스마일_박스,org:테트라,concept,org,3,2,F2202 F2690 U336
+concept:아웃로,org:중앙_정부,concept,org,3,2,F643 F2498 F2499
+concept:아웃로,place:갱생관,concept,place,3,2,F595 F637 F642
+concept:양산형_니케,concept:페어리_테일,concept,concept,3,3,F1145 F1663 F1757
+concept:양산형_니케,org:중앙_정부,concept,org,3,3,F577 F853 F1741
+concept:언체인드,concept:퀸_인자,concept,concept,3,3,F2071 F2320 F2418
+concept:언체인드,org:메티스,concept,org,3,2,F379 F393 F395
+concept:언체인드,org:엘리시온,concept,org,3,2,F1658 F1790 F1794
+concept:에블라_입자,org:중앙_정부,concept,org,3,3,F919 F1751 F2778
+concept:에블라_입자,place:수정_지역,concept,place,3,3,F1296 F1308 F1644
+concept:이터널_스카이,org:엔터_헤븐,concept,org,3,2,F777 F780 F2486
+concept:적합자,concept:페어리_테일,concept,concept,3,3,F1145 F1177 F1192
+concept:적합자,org:갓데스,concept,org,3,3,F1145 F1177 F1662
+concept:지상_탈환,place:방주,concept,place,3,3,F592 F662 F2817
+concept:침식,concept:페어리_테일,concept,concept,3,2,F1672 F1682 F1702
+concept:침식,concept:헬레틱,concept,concept,3,3,F1676 F1703 F2828
+concept:퍼펙트,org:쿠킹오일,concept,org,3,2,F1836 F1838 F1853
+concept:퍼펙트,place:에덴,concept,place,3,2,F873 U353 U354
+concept:페어리_테일,org:V.T.C.,concept,org,3,2,F1178 F1663 F1664
+concept:헬레틱,place:에덴,concept,place,3,2,F754 F765 F769
+incident:3차_지상_탈환전,org:중앙_정부,incident,org,3,2,F2060 F2608 Q268
+incident:AFX_열차_테러,org:엘리시온,incident,org,3,2,F1006 F2500 F2501
+incident:AFX_열차_테러,org:인피니티_레일,incident,org,3,2,F483 F484 F1006
+incident:랩쳐_침공,org:갓데스,incident,org,3,2,F682 F687 F1068
+item:유리_구두,item:하모니_큐브,item,item,3,2,F1542 F1553 F1630
+item:유리_구두,org:갓데스,item,org,3,1,F1145 F1152 F1171
+item:하모니_큐브,place:방주,item,place,3,3,F1393 F1395 F1660
+org:777,place:코인_러시,org,place,3,2,F883 F1481 U134
+org:M.M.R.,org:V.T.C.,org,org,3,3,F2412 F2567 F2779
+org:V.T.C.,org:베일드_오더,org,org,3,1,E1076 F2567 Q334
+org:갓데스,place:에덴,org,place,3,2,F936 F2323 F2324
+org:근접_전투_스쿼드,org:인류연합군,org,org,3,1,F1231 F1235 F1239
+org:니케_인권_위원회,org:테트라,org,org,3,1,F2541 F2544 F2547
+org:리와인드,place:언더_아레나,org,place,3,1,F1497 F1499 F1503
+org:메티스,org:중앙_정부,org,org,3,3,F718 F889 F1379
+org:모란회,org:세이메이카이,org,org,3,3,F830 F848 F953
+org:미실리스,org:앱솔루트,org,org,3,2,F290 F2784 U68
+org:미실리스,org:이그조틱,org,org,3,2,F985 F987 F1613
+org:미실리스,org:일렉트릭_쇼크,org,org,3,2,F1336 F2818 U205
+org:방주_아동_보호_센터,org:카페_스위티,org,org,3,1,F2474 F2482 Q326
+org:세이메이카이,org:헤도니아,org,org,3,3,F830 F848 F1506
+org:시지_패러리스,org:언더월드_퀸,org,org,3,3,F956 F959 F1955
+org:시지_패러리스,place:금서고,org,place,3,2,F1930 F1951 F1952
+org:아크_익스프레스,org:인피니티_레일,org,org,3,2,F353 F483 F485
+org:앱솔루트,org:엘리시온,org,org,3,3,F75 F1762 F2495
+org:앱솔루트,place:수정_지역,org,place,3,3,F1379 F1417 F1644
+org:엘리시온,place:로열_로드,org,place,3,3,F517 F630 F649
+org:엘리시온,place:방주,org,place,3,3,F301 F459 F591
+org:엘리시온,place:아우터_림,org,place,3,2,F649 F2492 F2494
+org:엘리시온,place:어드마이어_호,org,place,3,2,F669 F1857 F1858
+org:이그조틱,place:블랙넷,org,place,3,3,F984 F1400 F2601
+org:인헤르트,place:에덴,org,place,3,2,F936 F2420 F2423
+org:저지스,place:아우터_림,org,place,3,2,F1960 F2445 U283
+org:중앙_정부,org:카운터스,org,org,3,3,F109 F214 F1098
+org:중앙_정부,org:카페_스위티,org,org,3,2,F1040 F2482 U166
+org:중앙_정부,place:갱생관,org,place,3,3,F593 F787 F2334
+org:중앙_정부,place:전초기지,org,place,3,3,F40 F371 F658
+org:테트라,place:코인_러시,org,place,3,2,F1137 F1481 U179
+org:패스파인더,org:해머&드릴,org,org,3,2,F1291 F1292 F1380
+org:포비스트,place:수정_지역,org,place,3,3,F1533 F1636 F1642
+org:필그림,place:지상,org,place,3,3,F92 F633 U210
+org:헤도니아,place:아우터_림,org,place,3,1,F952 F955 F957
+place:로열_로드,place:방주,place,place,3,3,F444 F458 F569
+place:로열_로드,place:아우터_림,place,place,3,3,F518 F649 U93
+place:방주,place:사관학교,place,place,3,3,F500 F818 U11
+place:아우터_림,place:포그_할로우,place,place,3,1,F1257 F1268 U190
+concept:D-WAVE,org:구원의_성화,concept,org,2,1,F2127 F2138
+concept:D-WAVE,org:엄브렐러,concept,org,2,1,F2128 F2138
+concept:D-WAVE,place:아우터_림,concept,place,2,2,F2127 F2866
+concept:E2_크리스탈,concept:침식,concept,concept,2,2,F1532 F2461
+concept:E2_크리스탈,item:AA_필러,concept,item,2,1,F1883 F1901
+concept:E2_크리스탈,item:유리_구두,concept,item,2,1,F1543 F1553
+concept:E2_크리스탈,org:중앙_정부,concept,org,2,2,F1525 F1897
+concept:E2_크리스탈,place:펑크_스트리트,concept,place,2,1,F2232 F2237
+concept:NIMPH,concept:다크_매터,concept,concept,2,2,F1638 F1654
+concept:NIMPH,concept:사고_전환,concept,concept,2,2,F679 F2370
+concept:NIMPH,org:앱솔루트,concept,org,2,1,F1762 F1763
+concept:NIMPH,place:방주,concept,place,2,2,F689 F993
+concept:NIMPH,place:쉘터,concept,place,2,2,F993 F1021
+concept:PROJECT_A.D.,place:M.M.R._심층부,concept,place,2,1,F1773 F1776
+concept:게이트_키퍼,org:카페_스위티,concept,org,2,1,F2468 F2483
+concept:기억_소거,org:메티스,concept,org,2,2,F419 F692
+concept:기억_소거,org:엘리시온,concept,org,2,2,U200 U279
+concept:기억_소거,org:익스터너,concept,org,2,1,F1729 F1733
+concept:기억_소거,org:중앙_정부,concept,org,2,2,F507 F1610
+concept:꽃의_맹약,org:언더월드_퀸,concept,org,2,1,F829 F831
+concept:니케,concept:니케포비아,concept,concept,2,2,F503 F2555
+concept:니케,concept:아웃로,concept,concept,2,1,F639 F641
+concept:니케,concept:지상_탈환,concept,concept,2,2,F52 F592
+concept:니케,concept:페어리_테일,concept,concept,2,2,F1151 F2770
+concept:니케,concept:헬레틱,concept,concept,2,2,F318 F838
+concept:니케,incident:1차_지상_탈환전,concept,incident,2,1,F1738 F1739
+concept:니케,item:하모니_큐브,concept,item,2,2,U214 U217
+concept:니케,org:A.C.P.U.,concept,org,2,2,F647 U393
+concept:니케,org:갓데스,concept,org,2,2,F817 F1068
+concept:니케,org:방주_아동_보호_센터,concept,org,2,2,F694 F2474
+concept:니케,place:쉘터,concept,place,2,2,F287 F882
+concept:니케포비아,org:테트라,concept,org,2,1,F2541 F2551
+concept:니케포비아,place:방주,concept,place,2,2,F503 F994
+concept:다크_매터,place:방주,concept,place,2,1,F2823 F2848
+concept:랩쳐,concept:지상_탈환,concept,concept,2,2,F582 F662
+concept:랩쳐,org:M.M.R.,concept,org,2,2,F741 F2139
+concept:랩쳐,org:포비스트,concept,org,2,2,F1652 F2082
+concept:랩쳐,place:에덴,concept,place,2,2,F862 F875
+concept:로드_급,concept:양산형_니케,concept,concept,2,2,F775 F1994
+concept:로드_급,concept:콜링_시그널,concept,concept,2,2,F700 F894
+concept:로드_급,concept:타일런트_급,concept,concept,2,2,F632 F700
+concept:로드_급,place:방주,concept,place,2,1,F881 F894
+concept:로드_급,place:수정_지역,concept,place,2,2,F1300 F1321
+concept:로열,place:방주,concept,place,2,2,F66 F222
+concept:릴리스의_바디,concept:언체인드,concept,concept,2,1,F2164 Q283
+concept:마테리얼_H,concept:방주_동력원,concept,concept,2,1,F1466 F1469
+concept:마테리얼_H,concept:헬레틱,concept,concept,2,1,F318 F319
+concept:머신_메사이어,concept:언체인드,concept,concept,2,1,F2363 Q309
+concept:미스트,org:이그조틱,concept,org,2,2,F2087 F2459
+concept:미스트,org:저지스,concept,org,2,1,E730 F1947
+concept:방주_동력원,concept:컨버터,concept,concept,2,1,F1339 F1341
+concept:방주_동력원,org:M.M.R.,concept,org,2,1,F1466 F1469
+concept:블랙스미스,concept:프레데터,concept,concept,2,1,E835 F2103
+concept:사고_전환,org:근접_전투_스쿼드,concept,org,2,1,F1229 F1233
+concept:스톰_브링어,place:승리의_날개_호,concept,place,2,2,F2009 F2369
+concept:신생_랩쳐,place:에덴,concept,place,2,2,F2631 F2803
+concept:아웃로,concept:인식_칩,concept,concept,2,1,F594 F595
+concept:아웃로,incident:데일리_아크_신문사_테러_사건,concept,incident,2,1,F637 F638
+concept:아웃로,org:데일리_아크,concept,org,2,1,F637 F638
+concept:아웃로,org:엔터_헤븐,concept,org,2,1,F2498 F2499
+concept:양산형_니케,org:M.M.R.,concept,org,2,1,F612 F614
+concept:양산형_니케,org:메티스,concept,org,2,1,F713 F715
+concept:양산형_니케,org:카운터스,concept,org,2,2,F195 F223
+concept:양산형_니케,place:로열_로드,concept,place,2,2,F544 F630
+concept:언체인드,org:V.T.C.,concept,org,2,1,F2363 F2364
+concept:언체인드,org:중앙_정부,concept,org,2,2,F1676 F1708
+concept:에블라_입자,incident:2차_지상_탈환전,concept,incident,2,2,F1751 F2773
+concept:에블라_입자,org:앱솔루트,concept,org,2,2,F1030 F1644
+concept:에블라_입자,org:언리미티드,concept,org,2,2,F405 F1203
+concept:에블라_입자,place:방주,concept,place,2,2,F919 F1203
+concept:울트라,concept:침식,concept,concept,2,2,F178 F1142
+concept:웨일리,org:포비스트,concept,org,2,2,F2190 Q274
+concept:이레귤러,org:익스터너,concept,org,2,2,F541 F1733
+concept:이레귤러,org:중앙_정부,concept,org,2,2,F507 F1728
+concept:인식_칩,place:갱생관,concept,place,2,1,F593 F595
+concept:인식_칩,place:로열_로드,concept,place,2,2,F593 F827
+concept:지상_탈환,org:엘리시온,concept,org,2,2,F629 F2491
+concept:지상_탈환,org:중앙_정부,concept,org,2,1,F2540 F2542
+concept:지상_탈환,place:에덴,concept,place,2,2,F2338 F2801
+concept:침식,concept:콜드_슬립,concept,concept,2,1,F1156 F1162
+concept:침식,org:인류연합군,concept,org,2,1,F1148 F1162
+concept:콜드_슬립,org:V.T.C.,concept,org,2,1,F1156 F1162
+concept:콜드_슬립,org:중앙_정부,concept,org,2,1,F1156 F1162
+concept:콜링_시그널,org:메티스,concept,org,2,2,F697 F1898
+concept:콜링_시그널,place:방주,concept,place,2,2,F697 F894
+concept:크라켄,place:방주,concept,place,2,1,F2035 Q259
+concept:크라켄,place:블루워터_아일랜드,concept,place,2,1,F1051 F1052
+concept:크레디트,place:로열_로드,concept,place,2,2,F609 F827
+concept:크리스탈_체임버,item:하모니_큐브,concept,item,2,2,F1414 F1535
+concept:타일런트_급,org:메티스,concept,org,2,2,F713 F2791
+concept:특수_별동대,org:중앙_정부,concept,org,2,2,F214 F1417
+concept:특수_별동대,place:수정_지역,concept,place,2,2,F1287 F1417
+concept:퍼펙트,org:중앙_정부,concept,org,2,2,F643 F906
+concept:퍼펙트,place:아우터_림,concept,place,2,2,F643 U364
+concept:페어리_테일,item:유리_구두,concept,item,2,1,F1145 F1146
+concept:페어리_테일,org:엘리시온,concept,org,2,1,F1145 F1146
+concept:헬레틱,org:V.T.C.,concept,org,2,2,F1670 F2363
+concept:헬레틱,org:갓데스,concept,org,2,2,F682 F2362
+concept:헬레틱,place:궤도_엘리베이터,concept,place,2,2,F2617 F2822
+incident:1차_지상_탈환전,place:방주,incident,place,2,2,F994 F1739
+incident:2차_지상_탈환전,org:미실리스,incident,org,2,1,F2771 F2773
+incident:2차_지상_탈환전,place:갱생관,incident,place,2,2,F861 F2334
+incident:2차_지상_탈환전,place:에덴,incident,place,2,2,F866 F2336
+incident:3차_지상_탈환전,org:T.T.STAR,incident,org,2,1,F2661 F2663
+incident:3차_지상_탈환전,org:미실리스,incident,org,2,1,F2659 F2663
+incident:3차_지상_탈환전,org:아크레인저,incident,org,2,1,F2741 F2744
+incident:3차_지상_탈환전,place:방주,incident,place,2,2,F2439 F2659
+incident:3차_지상_탈환전,place:승리의_날개_호,incident,place,2,1,E1183 F2744
+incident:3차_지상_탈환전,place:에덴,incident,place,2,2,F2439 F2663
+incident:AFX_열차_테러,org:아크_익스프레스,incident,org,2,1,F482 F483
+incident:AFX_열차_테러,org:중앙_정부,incident,org,2,2,F596 F2501
+incident:갓데스_폴,org:중앙_정부,incident,org,2,2,F231 F1403
+incident:갓데스_폴,org:테트라,incident,org,2,2,F1746 F2545
+incident:데일리_아크_신문사_테러_사건,org:데일리_아크,incident,org,2,1,F637 F638
+incident:랩쳐_침공,place:쉘터,incident,place,2,2,F229 F287
+incident:아크_가디언_작전,org:V.T.C.,incident,org,2,2,F2365 F2653
+incident:아크_가디언_작전,org:중앙_정부,incident,org,2,1,F2360 F2365
+incident:피사_돔_폭발_사고,org:라이프_토닉,incident,org,2,1,F616 Q87
+item:A_필러,place:수정_지역,item,place,2,2,F1626 F1659
+item:방주_추첨권,place:방주,item,place,2,2,F132 U182
+item:브레인_셸터,org:언리미티드,item,org,2,2,F1205 F2102
+item:브레인_셸터,place:갱생관,item,place,2,2,F1744 F2089
+item:세븐스_드워프,org:갓데스,item,org,2,2,F1545 F1625
+item:아모르_테트라,org:언더월드_퀸,item,org,2,1,F1507 F1519
+item:유리_구두,org:엘리시온,item,org,2,1,F1145 F1146
+item:이터널_라이프,org:V.T.C.,item,org,2,2,F2403 F2694
+item:이터널_라이프,org:미실리스,item,org,2,1,F2790 U438
+item:초거대_코어,place:궤도_엘리베이터,item,place,2,2,F1755 F2620
+org:3대_기업,org:미실리스,org,org,2,2,F42 F591
+org:3대_기업,org:엘리시온,org,org,2,2,F591 F639
+org:3대_기업,org:중앙_정부,org,org,2,2,F591 F802
+org:777,org:테트라,org,org,2,1,F1481 F1482
+org:A.C.P.U.,org:엘리시온,org,org,2,1,F647 F649
+org:A.C.P.U.,org:중앙_정부,org,org,2,2,F546 F801
+org:A.C.P.U.,org:카운터스,org,org,2,1,F1092 U169
+org:A.C.P.U.,place:로열_로드,org,place,2,2,F649 F2728
+org:A.C.P.U.,place:아우터_림,org,place,2,2,F649 F801
+org:A.F.F.,place:로열_로드,org,place,2,1,F2728 U430
+org:M.M.R.,org:메티스,org,org,2,2,F1030 F1616
+org:M.M.R.,org:일렉트릭_쇼크,org,org,2,2,F1467 F1479
+org:M.M.R.,org:중앙_정부,org,org,2,2,F1468 F2567
+org:M.M.R.,place:지상,org,place,2,2,F611 F2139
+org:T.T.STAR,org:미실리스,org,org,2,2,F2663 F2818
+org:T.T.STAR,place:방주,org,place,2,2,F2689 F2818
+org:T.T.STAR,place:아크리온_홀,org,place,2,1,F2668 F2707
+org:갓데스,org:근접_전투_스쿼드,org,org,2,2,F1231 F1245
+org:갓데스,org:엘리시온,org,org,2,2,F1145 F2539
+org:니케_관리부,org:중앙_정부,org,org,2,2,F2 F854
+org:니케_인권_위원회,org:중앙_정부,org,org,2,1,F2540 U383
+org:달란트,org:카페_스위티,org,org,2,2,F966 F1484
+org:달란트,place:방주,org,place,2,2,F571 U163
+org:달란트,place:전초기지,org,place,2,2,F386 F610
+org:마이티_툴즈,place:탈환지_01,org,place,2,2,F1287 F1305
+org:메이드_포_유,place:방주,org,place,2,2,F809 F2855
+org:메티스,org:아크레인저,org,org,2,2,F2743 F2842
+org:메티스,place:어드마이어_호,org,place,2,2,F1858 F1878
+org:모란회,org:이그조틱,org,org,2,2,F830 F2459
+org:모란회,org:헤도니아,org,org,2,2,F830 F848
+org:미실리스,org:보타닉_가든,org,org,2,1,F1722 F1723
+org:미실리스,org:워드리스,org,org,2,1,F1616 U230
+org:미실리스,org:인류연합군,org,org,2,2,F2567 F2667
+org:미실리스,place:갱생관,org,place,2,2,F784 F1890
+org:미실리스,place:어드마이어_호,org,place,2,1,F1857 F1858
+org:바이스리터,org:파이오니아,org,org,2,2,F677 F1120
+org:바이스리터,org:필그림,org,org,2,1,F1119 U175
+org:보타닉_가든,place:방주,org,place,2,2,F1825 F1854
+org:보타닉_가든,place:수정_지역,org,place,2,1,F1299 F1300
+org:블레이즈_아웃,org:중앙_정부,org,org,2,1,F2132 U330
+org:블레이즈_아웃,place:아우터_림,org,place,2,1,F2132 U330
+org:세이메이카이,org:중앙_정부,org,org,2,2,F853 F953
+org:쉐이드,org:테트라,org,org,2,1,F2118 U324
+org:스카우팅,org:언리미티드,org,org,2,1,F2097 F2104
+org:스카우팅,org:이그조틱,org,org,2,2,F1010 F2881
+org:아크_익스프레스,org:엔터_헤븐,org,org,2,2,F482 F568
+org:아크레인저,place:방주,org,place,2,2,U203 U224
+org:앱솔루트,org:중앙_정부,org,org,2,2,F1379 F1417
+org:앱솔루트,place:방주,org,place,2,2,F896 F2241
+org:앱솔루트,place:사관학교,org,place,2,1,F2105 U318
+org:언더월드_퀸,place:포그_할로우,org,place,2,2,F1263 F2087
+org:언리미티드,place:방주,org,place,2,1,F1203 F1207
+org:엔터_헤븐,place:방주,org,place,2,2,F992 F2498
+org:엔터_헤븐,place:블랙넷,org,place,2,2,F469 F887
+org:엘리시온,org:이지스,org,org,2,2,F669 F1858
+org:엘리시온,org:익스터너,org,org,2,2,F2495 Q125
+org:엘리시온,org:카운터스,org,org,2,2,F29 F709
+org:오버시어,place:금서고,org,place,2,2,F2465 F2609
+org:이그조틱,org:중앙_정부,org,org,2,2,F1514 F2485
+org:이그조틱,org:카운터스,org,org,2,1,F411 F412
+org:이그조틱,place:방주,org,place,2,2,F417 F992
+org:이그조틱,place:배드_드림,org,place,2,2,F779 F2061
+org:이그조틱,place:펑크_스트리트,org,place,2,2,F2237 F2578
+org:인류연합군,place:방주,org,place,2,2,F1153 F1679
+org:인피니티_레일,org:중앙_정부,org,org,2,2,F1402 F2349
+org:인피니티_레일,place:지상,org,place,2,1,F2351 F2352
+org:일렉트릭_쇼크,org:중앙_정부,org,org,2,1,F1465 U223
+org:일렉트릭_쇼크,org:패스파인더,org,org,2,2,F1291 F1380
+org:일렉트릭_쇼크,org:해머&드릴,org,org,2,2,F1291 F1380
+org:일렉트릭_쇼크,place:방주,org,place,2,2,F1294 F2818
+org:저지스,org:중앙_정부,org,org,2,2,F854 F2444
+org:중앙_정부,org:테트라_커넥트,org,org,2,2,F538 F995
+org:중앙_정부,org:필그림,org,org,2,2,F658 F1096
+org:중앙_정부,place:로열_로드,org,place,2,2,F593 U430
+org:카운터스,org:테트라,org,org,2,2,F94 F1137
+org:카운터스,org:테트라_커넥트,org,org,2,2,F53 F709
+org:카운터스,org:트라이앵글,org,org,2,1,F360 F374
+org:카운터스,org:포비스트,org,org,2,2,F2804 F2839
+org:카운터스,place:에덴,org,place,2,2,F749 F840
+org:카운터스,place:전초기지,org,place,2,2,F38 U87
+org:카운터스,place:지상,org,place,2,2,F188 F633
+org:트라이앵글,place:전초기지,org,place,2,2,F652 F658
+org:필그림,place:북부,org,place,2,2,F93 F113
+org:해피_주,place:방주,org,place,2,2,F979 F1248
+org:헤도니아,place:방주,org,place,2,1,F952 F955
+place:갱생관,place:방주,place,place,2,2,F611 F797
+place:방주,place:수정_지역,place,place,2,2,F1329 F1335
+place:방주,place:전초기지,place,place,2,2,F240 F723
+place:방주,place:코랄_아일랜드,place,place,2,1,E425 F1509
+place:방주,place:코인_러시,place,place,2,2,F1137 F2855
+place:승리의_날개_호,place:지상,place,place,2,1,F2014 U296
+place:아우터_림,place:코인_러시,place,place,2,2,F884 F2116
+place:에덴,place:유사_방주,place,place,2,2,F2231 F2624

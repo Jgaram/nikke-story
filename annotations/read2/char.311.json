@@ -1,0 +1,50 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M88\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:311",
+  "session": "M88",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I657",
+      "target": "person:메이슨_박사",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_cocoa_01", "lines": ["56-57", "62-63"] }],
+      "reason": "옆 테이블에서 '놈들이 여기까지 쫓아오면' 떠는 목소리 — 곧 #66 수상한 남자가 '메이슨 박사님'이라 부르고 #67 메이슨 박사가 놀란다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2000",
+      "person": "person:코코아",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "카페에 온 이는 누구든 '주인'이고 프로 메이드는 반드시 주인을 지킨다며, 메뉴도 안 나온 손님을 데려간 납치범을 우산 하나로 혼내러 가는",
+      "evidence": [{ "scene": "ep:d_nikke_cocoa_03", "lines": ["41-48"] }],
+      "points": ["F811"],
+      "reason": "#47 '누구든 카페에 왔으면 코코아 주인' · #48 '프로 메이드는 반드시 주인 지켜'. 01#93-104에서 이어진다. fl:fatal_maid D1672보다 출시가 앞선다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2001",
+      "person": "person:코코아",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '주인'이라 부르며 '제일 좋아하는 주인'이라 케첩 세 통 특별 서비스를 고집하고, 업무가 밀렸다는데도 '주인이랑 파티!'를 외치는",
+      "evidence": [{ "scene": "ep:d_nikke_cocoa_05", "lines": ["106-130"] }],
+      "reason": "#112 · #114 '주인이랑 파티!' · #129 '주인은 코코아가 제일 좋아하는 주인이니까'. 01#7 '주인! 온다더니 진짜로 와써!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 코코아 성격 기준 D1422(event_maidinvalentine)는 같은 날 이벤트가 앞서 그대로 둔다. 신념 기준은 출시가 앞선 이 단위(D2000)에 세우고 fl:fatal_maid D1672(비밀 요원이 되고 싶음)를 기각했다. 엑시아 · 잉그리드 · 사쿠라는 얕아 기준을 다시 세우지 않았다. 작중 시점 실마리 없음."
+}

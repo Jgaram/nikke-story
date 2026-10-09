@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:철도로GO_00",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E93",
+      "act": "암시",
+      "points": ["F2355"],
+      "text": "철도로GO가 방주의 짧은 노선을 아쉬워하며 '언젠가 지상의 지평선을 보며 하염없이 달릴 날'을 바란다 — 인피니티 레일은 노라를 태우고 지상 선로를 달린다(F2355)",
+      "about": ["org:인피니티_레일"],
+      "evidence": [{ "scene": "sub:철도로GO_00", "lines": ["76-90"] }],
+      "reason": "#86-87. fl:terminus_ticket의 지상 여정(F2355)이 이 바람을 이룬다 — 같은 바람이라는 말은 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U77",
+      "topic": "방주 사회",
+      "text": "방주의 철도는 조금 가면 꺾이고 속도가 붙을 만하면 정거장이라, 기관사는 끝없이 이어진 지상의 선로를 사진으로나 보며 달리기를 꿈꾼다",
+      "about": ["org:아크_익스프레스"],
+      "points": ["F355"],
+      "evidence": [{ "scene": "sub:철도로GO_00", "lines": ["76-87"] }],
+      "reason": "#82-83 · #36 '명색이 아크 익스프레스인데 지상의 철도를 모른다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

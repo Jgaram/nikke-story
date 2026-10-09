@@ -1,0 +1,529 @@
+{
+  "unit": "ch04",
+  "session": "R01",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "토커티브를 쫓는 카운터스와 워드리스가 지상에서 야영한다. 유니는 무감각증이라 남과 닿을 때만 감각을 느낀다(d_main_04_02#15–18). 이튿날 유인당해 저격이 지휘관을 노리고, 토커티브가 나타나 사람 말로 '찾았다', '이런 행운이라니'라고 한다(d_main_04_04_s#26–33). 워드리스의 감각 교환 · 차단에 토커티브는 제 몸을 뜯어 미하라에게 고통을 되돌리고 순식간에 수복하며, 라피를 '페어리 테일 모델. 레드 후드'라 부르고 지휘관을 데려가려 한다(d_main_04_04_e#3–40). 대함 라이플을 든 정체 모를 니케가 토커티브를 '이단'이라 부르며 쫓아낸다(#65–81). 다리가 부러진 지휘관을 데리고 전파탑에서 시프티와 연결하고, 몰려든 랩쳐 200기 앞에 엘리시온 최강 스쿼드 앱솔루트(은화 · 베스티 · 엠마)가 온다. 라피는 이들과 예전부터 아는 사이다(d_main_04_09_e). 에닉은 과거 사례에 따라 지휘관에게 이틀 작전 금지, 두 리더 라피 · 미하라에게 기억 소거를 판결한다(d_main_04af_01). 슈엔은 자기가 시켰다고 밝히지 않고 니케의 기억은 대수롭지 않다고 한다. 엔더슨은 마리안의 침식에 대해 털어놓는다 — 방주 안의 누군가가 랩쳐 고유 기술인 침식을 니케에게 걸어 작전을 망치고 있고, 그 내통자는 토커티브와 이어져 있으니 토커티브를 쫓으라고 한다. 니케들에게 바치는 '헌화'라고 한다(d_main_04af_04#8–41). 이틀 뒤 미하라는 유니를 처음 보는 사이가 되었지만, 라피는 기억이 지워지지 않았다고 털어놓고(#78–81), 지휘관은 이를 숨기라고 명한다(d_main_04af_05). 라피는 못 알아본 척 슈엔을 걷어찬다. 엔더슨은 토커티브를 물리친 니케가 필그림(지상에서 사는 니케들)이라며 북부 연구 기지로 보내고, 테트라 라인 CEO 머스탱이 출입증을 준다. 머스탱은 아니스에게 이제 돌아오라고 한다(d_main_04af_08).",
+  "scenes": [
+    { "scene": "d_main_04_01", "text": "지상 야영 — 미하라가 유니와의 관계를 '일그러진 톱니바퀴'라 하고, 아니스는 자기들을 불량품이라 한다" },
+    { "scene": "d_main_04_02", "text": "유니는 무감각증이라 남과 닿을 때만 감각을 느낀다" },
+    { "scene": "d_main_04_03_s", "text": "유인과 저격 — 랩쳐가 지휘관을 노린다. 미하라가 '랩쳐는 지능이 없다'를 철회한다" },
+    { "scene": "d_main_04_03_e", "text": "합이 잘 맞지만 라피는 워드리스를 아직 못 믿는다" },
+    { "scene": "d_main_04_04_s", "text": "말하는 랩쳐 토커티브의 등장 — 워드리스가 감각 교환 · 시각 차단으로 맞선다" },
+    { "scene": "d_main_04_04_e", "text": "토커티브가 제 몸을 뜯어 반격 · 수복, 라피를 '레드 후드'라 부른다. 대함 라이플의 니케가 쫓아낸다" },
+    { "scene": "d_main_04_05", "text": "부상자 셋 — 전파탑의 직통 회선으로 방주에 연락하러 간다" },
+    { "scene": "d_main_04_06", "text": "말하는 랩쳐와 대함 라이플 니케에 대한 의문" },
+    { "scene": "d_main_04_07", "text": "워드리스는 폐기를 두려워한다. 시프티와 연결 — 군법 회의감이라며 수송기를 보낸다" },
+    { "scene": "d_main_04_08", "text": "슈엔으로 보이는 메시지" },
+    { "scene": "d_main_04_09_s", "text": "랩쳐 200기가 몰려온다" },
+    { "scene": "d_main_04_09_e", "text": "앱솔루트(은화 · 베스티 · 엠마)의 지원 — 라피와 옛 사이, 은화는 라피를 불량품이라 부른다" },
+    { "scene": "d_main_04af_01", "text": "에닉의 판결 — 지휘관 이틀 작전 금지, 라피 · 미하라 기억 소거" },
+    { "scene": "d_main_04af_02", "text": "슈엔은 자기가 시킨 일이라 밝히지 않았고 니케의 기억은 대수롭지 않다고 한다" },
+    { "scene": "d_main_04af_03", "text": "라피 · 미하라와의 작별. 엔더슨 · 잉그리드가 슈엔과 필그림 조우를 이야기한다" },
+    { "scene": "d_main_04af_04", "text": "엔더슨이 방주 안의 침식 내통자를 밝히고 토커티브 추적을 맡긴다. 이틀 뒤 라피는 기억이 지워지지 않았다" },
+    { "scene": "d_main_04af_05", "text": "라피의 기억이 남은 사실을 숨기기로 한다(지휘관의 명령)" },
+    { "scene": "d_main_04af_06", "text": "라피가 못 알아본 척 슈엔을 걷어찬다" },
+    { "scene": "d_main_04af_07", "text": "엔더슨이 필그림을 설명하고 북부 연구 기지로 보낸다" },
+    { "scene": "d_main_04af_08", "text": "테트라 라인 CEO 머스탱이 출입증을 준다 — 아니스에게 돌아오라고 한다" }
+  ],
+  "facts": [
+    {
+      "id": "F69",
+      "text": "유니는 무감각증이지만 남과 닿을 때만 감각을 느껴서 계속 접촉을 원한다",
+      "about": ["person:유니"],
+      "evidence": [{ "scene": "d_main_04_02", "lines": ["12-18"] }],
+      "reason": "미하라의 설명. 원래 그런지 능력을 받아서인지는 모른다고 한다(#17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F70",
+      "text": "토커티브 무리는 니케가 아니라 지휘관을 노렸고, 토커티브는 지휘관을 데려가려 했다",
+      "about": ["person:토커티브", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_04_03_s", "lines": [14, 17] }, { "scene": "d_main_04_04_e", "lines": ["27-31"] }],
+      "reason": "저격이 지휘관을 겨눴고(아니스 #14, 라피 #17), 토커티브가 '인간. 나와 함께 가지'라며 팔다리가 없어도 된다고 한다(d_main_04_04_e#27–31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F71",
+      "text": "토커티브는 생각하고 인간의 말을 하는 랩쳐다",
+      "about": ["person:토커티브", "concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_04_04_s", "lines": [26, "31-33"] }, { "scene": "d_main_04af_04", "lines": [21] }],
+      "reason": "토커티브가 말하자 네온 '말하고 있는데요?', 아니스 '아니, 랩쳐잖아!'. 엔더슨도 '사고하고 언어를 하는 랩쳐'라고 한다(d_main_04af_04#21)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F72",
+      "text": "토커티브는 부서진 몸을 순식간에 스스로 수복하고, 니케를 '유사인간'이라 부른다",
+      "about": ["person:토커티브"],
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": [12, "23-26"] }],
+      "reason": "서술 '토커티브는 순식간에 몸을 수복했다'(#25), 아니스 '자가 수복이라고!? 랩쳐한테 그런 기능이…!'(#26)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F73",
+      "text": "토커티브는 라피를 '페어리 테일 모델. 레드 후드'라고 부른다",
+      "about": ["person:토커티브", "person:라피", "concept:페어리_테일"],
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": ["35-40"] }],
+      "reason": "쓰러졌던 라피가 일어나자 토커티브가 알아보고 운이 좋다고 한다. 라피는 '…조용히 해라'라고만 한다(#39)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F74",
+      "text": "대함 라이플을 혼자 쓰는 정체 모를 니케가 토커티브에게 구멍을 내 쫓아냈다 — 토커티브는 그를 '순례자', 그는 토커티브를 '이단'이라 부른다",
+      "about": ["person:토커티브"],
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": ["65-81"] }],
+      "reason": "서술과 대사(#73 '순례자…!', #74 '꺼져라. 이단.'). 라피가 대함 라이플이라고 알아본다(#69)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F75",
+      "text": "앱솔루트는 엘리시온의 최강 스쿼드로 은화(리더) · 베스티 · 엠마가 속하고, 초장거리 저격으로 대공 랩쳐를 부쉈다",
+      "about": ["org:앱솔루트", "org:엘리시온", "person:은화", "person:베스티", "person:엠마"],
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": ["12-26", 82] }],
+      "reason": "라피 '이런 짓을 할 수 있는 건 단 한 명뿐이야! 앱솔루트가 온다!'(#17–18), 미하라 '엘리시온의 최강 스쿼드'(#26), 엠마 '우리 리더가'(#82)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F76",
+      "text": "라피는 앱솔루트(은화 · 엠마 · 베스티)와 예전부터 아는 사이이고, 엠마 곁을 말없이 떠난 적이 있다",
+      "about": ["person:라피", "org:앱솔루트"],
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": ["50-74"] }],
+      "reason": "엠마 '그때 말도 없이 가버리고'(#53), 베스티 · 은화와도 구면이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F77",
+      "text": "라피 · 아니스는 스스로를 문제아 · 불량품이라 하고, 은화는 라피가 '불량품' 소리를 듣는다고 한다",
+      "about": ["person:라피", "person:아니스", "person:은화"],
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [71, 76] }, { "scene": "d_main_04_01", "lines": ["49-51"] }],
+      "reason": "은화 '그러니까 불량품 소리를 듣는 거야'(#71), 아니스 '문제아들이지 … 불량품인가?'(d_main_04_01#50–51)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F78",
+      "text": "에닉은 과거 사례와 일치하는 정도로 판결하고, 그 판결은 절대 뒤집을 수 없다 — 라피는 그것이 방주를 유지하는 원동력이라 한다",
+      "about": ["person:에닉", "place:방주"],
+      "evidence": [{ "scene": "d_main_04af_01", "lines": ["3-4", "12-13"] }, { "scene": "d_main_04af_03", "lines": [7] }],
+      "reason": "에닉의 판결문(100% 일치 2건 · 87% 일치 24건)과 라피의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F79",
+      "text": "에닉의 판결로 지휘관은 이틀간 작전 금지, 두 스쿼드의 리더 라피 · 미하라는 기억 소거를 받게 되었다",
+      "about": ["person:에닉", "person:지휘관", "person:라피", "person:미하라", "concept:기억_소거"],
+      "evidence": [{ "scene": "d_main_04af_01", "lines": [6, 9, "15-16"] }],
+      "reason": "판결문. 니케 쪽 죄목의 첫째는 '지휘관 절대 보호의 법칙을 어긴 점'(#9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F80",
+      "text": "슈엔은 자기가 시킨 작전이라고 밝히지 않아 기억 소거를 막지 않았고, 병기인 니케의 기억은 대수롭지 않다고 한다",
+      "about": ["person:슈엔"],
+      "evidence": [{ "scene": "d_main_04af_02", "lines": ["4-8", "14-20"] }],
+      "reason": "아니스의 추궁에 '그럴 사정이 있어'(#6), '니케의 기억이 없어지는 게 뭐가 대수라고'(#14)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F81",
+      "text": "기억 소거를 받은 니케는 생산 직후의 기억으로 돌아가고, 배틀 데이터 말고는 모두 지워진다",
+      "about": ["concept:기억_소거", "concept:니케"],
+      "evidence": [{ "scene": "d_main_04af_03", "lines": ["10-12"] }],
+      "reason": "라피의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F82",
+      "text": "슈엔의 단독 명령은 불법이 아니고, 엔더슨 · 잉그리드는 3대 회사가 편의를 너무 받는다고 여기면서도 슈엔은 아직 방주에 필요하다고 본다",
+      "about": ["person:슈엔", "person:엔더슨", "person:잉그리드", "org:3대_기업"],
+      "evidence": [{ "scene": "d_main_04af_03", "lines": ["48-55"] }],
+      "reason": "엔더슨 · 잉그리드의 대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F83",
+      "text": "침식은 니케의 뇌에 코드를 심어 의지를 조작하는 랩쳐 고유의 기술로, 인류는 다룰 수 없다",
+      "about": ["concept:침식", "concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["23-24"] }],
+      "reason": "엔더슨의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F84",
+      "text": "엔더슨에 따르면 방주 안에서 누군가 니케에게 침식을 걸어 지상 작전을 망치고 있고, 방호벽을 조작하고 단독 회선을 쓸 만큼 입지가 탄탄한 내통자다",
+      "about": ["person:엔더슨", "concept:침식", "place:방주"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["8-17", "25-29"] }],
+      "reason": "마리안의 침식에 대해 아는 것을 말하겠다며 털어놓는다. 개인인지 단체인지는 모른다고 한다(#16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F85",
+      "text": "엔더슨은 그 내통자가 토커티브와 이어져 있다고 보고, 지휘관에게 토커티브 추적을 맡겼다",
+      "about": ["person:엔더슨", "person:토커티브", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["31-35"] }],
+      "reason": "엔더슨 '내통자는 토커티브와 이어져있네. 이건 확실하다고보네'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F86",
+      "text": "엔더슨은 지휘관을 돕는 까닭을 '감각도 기억도 있지만 그 주인이 된 적 없는' 니케들에게 바치는 헌화라고 한다",
+      "about": ["person:엔더슨", "concept:니케"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["38-41"] }],
+      "reason": "지휘관의 물음에 대한 엔더슨의 답",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F87",
+      "text": "기억 소거를 받은 미하라는 유니를 처음 만나는 동료로 대한다",
+      "about": ["person:미하라", "person:유니", "concept:기억_소거"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["42-50"] }],
+      "reason": "이틀 뒤 미하라가 '네가 나랑 같이 행동하게 될 유니구나?', '롤아웃 된지 얼마 안 돼서'라고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F88",
+      "text": "라피는 기억 소거를 받았지만 기억이 지워지지 않았다",
+      "about": ["person:라피", "concept:기억_소거"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": [78, 81] }, { "scene": "d_main_04af_05", "lines": ["7-9"] }],
+      "reason": "라피 본인이 털어놓고(#78 · #81), 소거를 받은 것까지 기억한다고 한다(d_main_04af_05#9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F89",
+      "text": "라피 · 아니스는 기억 소거가 되풀이해 먹히지 않는 니케는 이레귤러로 여겨져 예외 없이 처분될 것이라 본다",
+      "about": ["concept:기억_소거", "concept:이레귤러"],
+      "evidence": [{ "scene": "d_main_04af_05", "lines": ["12-15"] }],
+      "reason": "라피 · 아니스의 예상 — '처분이겠지. 어떤 의미로는 이레귤러가 되는 거니까', '예외를 두지 않는다. 그게 방주의 지침이니까'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
+        {
+          "decision": "확정",
+          "by": "사용자",
+          "date": "2026-10-05",
+          "session": "M01",
+          "note": "원문이 그대로 말한다(#13-15) — 인물의 예상으로 문장을 고쳐 확실",
+          "before": "기억 소거가 되풀이해 먹히지 않는 니케는 이레귤러처럼 여겨져 예외 없이 처분될 것이다 · 확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F90",
+      "text": "지휘관은 라피의 기억이 남은 사실을 숨기라고 명령했고, 네온도 잉그리드에게 알리지 않기로 했다",
+      "about": ["person:지휘관", "person:라피", "person:네온"],
+      "evidence": [{ "scene": "d_main_04af_05", "lines": ["62-76"] }],
+      "reason": "지휘관의 명령(#68)과 네온의 '이중 스파이'(#72–75)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F91",
+      "text": "니케는 지휘관의 신변이 위험하다고 판단되면 인간을 제압할 수 있다",
+      "about": ["concept:니케"],
+      "evidence": [{ "scene": "d_main_04af_06", "lines": [26] }],
+      "reason": "기억을 잃은 척 슈엔을 걷어찬 라피가 이 규칙을 댄다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F92",
+      "text": "필그림은 지상에서 살아가는 니케들을 부르는 통칭으로, 방주는 그들과 제대로 조우한 적도 추적한 적도 없다",
+      "about": ["org:필그림", "place:지상"],
+      "evidence": [{ "scene": "d_main_04af_07", "lines": ["6-10"] }],
+      "reason": "엔더슨의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F93",
+      "text": "토커티브를 물리친 니케는 필그림이고, 지상의 북부에 모습을 드러냈다",
+      "about": ["org:필그림", "person:토커티브", "place:북부"],
+      "evidence": [{ "scene": "d_main_04af_07", "lines": ["2-6"] }, { "scene": "d_main_04af_03", "lines": [64] }],
+      "reason": "엔더슨 '토커티브를 물러나게 한 니케가. 북부에 모습을 드러낸 모양', 앞서 잉그리드가 네온의 보고로 '필그림과도 조우했다'(d_main_04af_03#64)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F94",
+      "text": "머스탱은 방주의 엔터테인먼트를 맡는 테트라 라인의 CEO로, 카운터스에게 북부 연구 기지 출입증을 주었다",
+      "about": ["person:머스탱", "org:테트라", "org:카운터스"],
+      "evidence": [{ "scene": "d_main_04af_08", "lines": ["14-16", "37-58"] }],
+      "reason": "본인 소개와 출입증. 잉그리드가 맘에 들어 한 이들을 보고 싶었다고 흘린다(#66)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F95",
+      "text": "아니스는 머스탱과 아는 사이로, 머스탱은 아니스가 자기 쪽으로 돌아오기를 기다린다",
+      "about": ["person:아니스", "person:머스탱"],
+      "evidence": [{ "scene": "d_main_04af_08", "lines": ["22-29"] }],
+      "reason": "아니스 '사장님. 오랜만이네요', 머스탱 '그럼 이제 슬슬 Return?' — 어디로 돌아오라는지는 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
+        {
+          "decision": "확정",
+          "by": "사용자",
+          "date": "2026-10-05",
+          "session": "M01",
+          "note": "ch35 F1798 — 머스탱이 아니스의 은퇴를 장기 휴가로 처리해 기다렸다고 되짚는다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q13",
+      "text": "토커티브는 왜 지휘관을 노리고 데려가려 하나 — '찾았다', '이런 행운'은 무슨 뜻인가?",
+      "about": ["person:토커티브", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_04_04_s", "lines": [26, 31] }, { "scene": "d_main_04_04_e", "lines": ["27-31"] }],
+      "reason": "토커티브가 지휘관 뒤에서 '찾았다', '가지고 놀다 죽이려 했는데, 이런 행운이라니'라고 하고 지휘관에게 함께 가자고 한다 — 까닭은 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q14",
+      "text": "라피가 '페어리 테일 모델 레드 후드'라는 것은 무슨 뜻인가?",
+      "about": ["person:라피", "concept:페어리_테일"],
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": ["35-40"] }],
+      "reason": "토커티브가 그렇게 부르며 운이 좋다고 하고, 라피는 설명 없이 입을 막는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q15",
+      "text": "토커티브를 쫓아낸 필그림 니케는 누구인가 — 둘은 왜 서로를 '순례자' · '이단'이라 부르나?",
+      "about": ["org:필그림", "person:토커티브"],
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": ["65-81"] }, { "scene": "d_main_04af_03", "lines": ["64-67"] }],
+      "reason": "'의문의 인물'로만 나오고, 엔더슨이 누구였는지 묻지만 잉그리드도 모른다(d_main_04af_03#66–67)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q16",
+      "text": "라피 · 아니스는 왜 '불량품'으로 불리나 — 라피는 왜 앱솔루트 쪽을 말없이 떠났나?",
+      "about": ["person:라피", "person:아니스", "org:앱솔루트"],
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": ["50-53", "70-76"] }],
+      "reason": "은화 · 엠마가 과거를 비치지만 까닭은 나오지 않는다. 아니스도 자기들을 불량품이라 한다(d_main_04_01#51)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "ch10 F279 · ch32 F1559가 떠난 까닭을 답한다", "before": "확신도 추정" }
+      ]
+    },
+    {
+      "id": "Q17",
+      "text": "슈엔이 자기가 시킨 작전이라고 밝히지 않은 '사정'은 무엇인가?",
+      "about": ["person:슈엔"],
+      "evidence": [{ "scene": "d_main_04af_02", "lines": ["4-8", 11] }],
+      "reason": "슈엔 '그럴 사정이 있어'. 토커티브를 만난 것을 말하지 않았느냐고 되묻는다(#11)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q18",
+      "text": "라피에게는 왜 기억 소거가 먹히지 않았나?",
+      "about": ["person:라피", "concept:기억_소거"],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["76-81"] }, { "scene": "d_main_04af_05", "lines": ["7-11"] }],
+      "reason": "네온 '기억 소거가 안 먹히기도 하는군요' — 까닭은 아무도 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q19",
+      "text": "아니스는 테트라 라인(머스탱)과 무슨 관계이고, 왜 아직 돌아가지 않나?",
+      "about": ["person:아니스", "person:머스탱", "org:테트라"],
+      "evidence": [{ "scene": "d_main_04af_08", "lines": ["22-29"] }],
+      "reason": "머스탱이 돌아오라 하고 아니스는 '아직은 좀'이라고만 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F1798 · F2556 · F2705)이 답한다 — 실제 의문이었다", "before": "확신도 추정" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "F61-2",
+      "act": "뒤집음",
+      "replacedBy": "F71",
+      "text": "토커티브는 생각하고 말을 한다 — 랩쳐에게 지능이 없다는 말은 적어도 토커티브에게는 틀렸다",
+      "evidence": [{ "scene": "d_main_04_03_s", "lines": [3, 4, 5] }, { "scene": "d_main_04_04_s", "lines": [26, "31-33"] }],
+      "reason": "유인당한 걸 깨달은 미하라가 '철회할게. 우린 지금 토커티브에게 걸려들었어'(#5), 이어 토커티브가 사람 말을 한다(d_main_04_04_s#31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q12-2",
+      "act": "회수",
+      "answer": "F71",
+      "degree": "일부",
+      "evidence": [{ "scene": "d_main_04_04_s", "lines": [26, "31-33"] }],
+      "reason": "토커티브가 말을 하며 '가지고 놀다 죽이려 했다'고 한다 — 지능이 있다. 어떤 존재인지는 아직 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q1-2",
+      "act": "회수",
+      "answer": "F84",
+      "degree": "일부",
+      "evidence": [{ "scene": "d_main_04af_04", "lines": ["8-17", "25-29"] }],
+      "reason": "엔더슨이 마리안의 침식에 대해 아는 것을 말한다 — 방주 안의 내통자가 니케에게 침식을 건다. 그가 누구인지는 모른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S9",
+      "kind": "기준점",
+      "text": "기억 소거를 받은 라피가 돌아와 기억이 남았다고 털어놓는 것은 판결 이틀 뒤다",
+      "ref": "d_main_04af_01",
+      "subject": "구간",
+      "at": [["중", "ch04"]],
+      "evidence": [{ "scene": "d_main_04af_04", "lines": [42] }],
+      "reason": "'이틀 뒤.' — 지휘관의 이틀 작전 금지(d_main_04af_01#6)와 맞물린다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "targets": [
+    { "target": "concept:페어리_테일", "evidence": [{ "scene": "d_main_04_04_e", "lines": [38] }], "note": "토커티브가 라피를 부른 '페어리 테일 모델' — 무엇인지는 아직 안 나옴", "new": true },
+    { "target": "org:앱솔루트", "evidence": [{ "scene": "d_main_04_09_e", "lines": [18] }], "note": "엘리시온의 최강 스쿼드(은화 · 베스티 · 엠마)", "new": false },
+    { "target": "person:은화", "evidence": [{ "scene": "d_main_04_09_e", "lines": [23] }], "note": "앱솔루트 리더. 라피를 불량품이라 부른다", "new": false },
+    { "target": "person:엠마", "evidence": [{ "scene": "d_main_04_09_e", "lines": [25] }], "note": "앱솔루트 니케. 라피와 가까운 옛 사이", "new": false },
+    { "target": "person:베스티", "evidence": [{ "scene": "d_main_04_09_e", "lines": [24] }], "note": "앱솔루트 니케. 라피를 반긴다", "new": false },
+    { "target": "person:에닉", "evidence": [{ "scene": "d_main_04af_01", "lines": [0] }], "note": "과거 사례 일치로 판결을 내리는 존재 — 판결은 뒤집을 수 없다", "new": false },
+    { "target": "org:필그림", "evidence": [{ "scene": "d_main_04af_03", "lines": [64] }], "note": "지상에서 살아가는 니케들의 통칭", "new": false },
+    { "target": "place:북부", "evidence": [{ "scene": "d_main_04af_07", "lines": [0] }], "note": "지상의 춥고 넓은 북부 — 연구 기지가 있다", "new": true },
+    { "target": "person:머스탱", "evidence": [{ "scene": "d_main_04af_08", "lines": [16] }], "note": "테트라 라인 CEO. 출입증을 주고 아니스에게 돌아오라 한다", "new": false }
+  ],
+  "revisit": []
+}

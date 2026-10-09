@@ -1,0 +1,123 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch06",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I7",
+      "target": "person:스노우_화이트",
+      "speaker": true,
+      "evidence": [{ "scene": "d_main_06_08_s", "lines": [43, 45, 50, 52] }],
+      "reason": "토커티브를 쏜 의문의 니케 — 지휘관이 '스노우 화이트…?'(#51)라 하자 같은 니케가 #53부터 그 이름표로 말한다",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E48",
+      "act": "암시",
+      "points": ["Q74", "J31"],
+      "text": "방주와 통신이 안 되자 루드밀라가 북부에선 흔한 일이라며 '얼음 아래에는 괴물이 잠들어 있다'고 농담처럼 말한다 — 북부 좌표 아래 잠든 엄청난 괴물(Q74)",
+      "about": ["person:루드밀라", "place:북부"],
+      "evidence": [{ "scene": "d_main_06_03", "lines": ["32-35"] }],
+      "reason": "#34-35. ch16 바이퍼의 '북부 좌표 아래 잠든 괴물'(Q74 — 열림)과 같은 것인지는 원문이 잇지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "E49",
+      "act": "암시",
+      "points": ["F494", "J6"],
+      "text": "이름을 불린 스노우 화이트가 '오랜만이군. 그 이름으로 불리는 것도'라 한다 — 1차 침공 뒤의 갓데스 스쿼드 시절 이름(F494)",
+      "about": ["person:스노우_화이트"],
+      "evidence": [{ "scene": "d_main_06_08_s", "lines": ["51-53"] }],
+      "reason": "#53. 스노우 화이트가 갓데스였다는 것은 호감도 스토리 · OVER ZONE에서 드러난다 — 이 말이 그 시절을 가리킨다는 확인은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "E50",
+      "act": "암시",
+      "points": ["F209", "J1"],
+      "text": "하늘이 갈라지며 랩쳐를 입은 니케가 내려와 토커티브를 '제 동료'라 부르며 구해 가고, 지휘관은 그것을 인류를 향한 '명백한 악의'로 느낀다 — 바이저 아래 얼굴은 처분된 마리안이다(F209)",
+      "about": ["person:마리안", "person:토커티브"],
+      "evidence": [{ "scene": "d_main_06_08_e", "lines": ["14-33"] }],
+      "reason": "#16-20 · #21-23. ch07에서 모더니아의 얼굴이 마리안으로 드러난다(F209 · Q37)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D61",
+      "person": "person:루드밀라",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "새로운 만남은 서로 다른 세계의 만남이니, 이질감과 두려움이 아무리 커도 상대가 살아온 소중한 세계를 절대 부수지 말라고 믿는다",
+      "evidence": [{ "scene": "d_main_06_05", "lines": ["20-31"] }],
+      "reason": "#22-28. 앨리스의 이야기 속 세계를 지켜 주는 태도(D56)와 같은 뿌리",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D62",
+      "person": "person:스노우_화이트",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'~할지니' · '가엾도다 이형의 짐승이여'처럼 고풍스럽게 말하고, 이단을 단호히 베며 목숨을 구걸하는 토커티브를 '추하다'고 하는 순례자",
+      "evidence": [{ "scene": "d_main_06_08_e", "lines": ["6-11"] }],
+      "reason": "#9 · #11 · 06_08_s#58 '드러날 수 없을지니'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D63",
+      "person": "person:스노우_화이트",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "필그림은 아직 아무것도 이루지 못해 세상에 드러날 수 없고, 지상은 랩쳐의 것이 아니며, 헬레틱을 쫓아 퀸에게 다가간다",
+      "points": ["F124", "F127"],
+      "evidence": [{ "scene": "d_main_06_08_s", "lines": ["57-61"] }],
+      "reason": "#58 · #61. 06_08_e#29-30 '퀸에게 한 걸음 더'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D64",
+      "person": "person:스노우_화이트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "붙잡힌 지휘관을 '인간'이라 부르며 도움이 필요하냐고 묻고, 도와주는 대신 본 것을 모두 잊으라는 낯선 구원자",
+      "evidence": [{ "scene": "d_main_06_08_s", "lines": ["50-57"] }],
+      "reason": "#50 · #54-57 · 06_08_e#3 '인간. 물러서라'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U33",
+      "topic": "지상",
+      "points": ["F116", "F117"],
+      "text": "지상에서 조난한 니케는 뇌를 떼어 안전한 곳에 숨기고 기적을 기다리며, 북부의 언리미티드는 뇌 없는 바디를 캡슐에 모아 '잠자는 공주님들'로 돌보며 뇌를 찾아 잇는다",
+      "about": ["org:언리미티드", "place:북부"],
+      "evidence": [{ "scene": "d_main_06_04", "lines": ["24-43"] }],
+      "reason": "#30-34 · #36-43 '결국엔 살았어. 산 거다'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

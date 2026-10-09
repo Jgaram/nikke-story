@@ -1,0 +1,28 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M102\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:316",
+  "session": "M102",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2204",
+      "person": "person:벨벳",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'세상에 공짜는 없다'며 잘해 주는 속셈을 캐려고 취하게 해 떠보던",
+      "after": "쓸모와 상관없이 곁에 있어 달라는 말을 받아, 어떤 쓰임새로든 주인님 옆에 오래오래 있고 싶다는",
+      "trigger": [{ "scene": "ep:d_nikke_velvet_04", "lines": ["105-114"] }],
+      "evidence": [{ "scene": "ep:d_nikke_velvet_05", "lines": ["33-49", "59-62"] }],
+      "time": "S293",
+      "reason": "04#66-73 '뭘 원하는 건지, 뭘 시키려는 건지' → 05#40 '옆에 있는 건 좋았거든' · #49 '오래오래 있고 싶거든' · #62 '행동으로도 충분히 보여줬잖아'. 앞 모습은 D1677.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "life": []
+}

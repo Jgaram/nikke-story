@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:중앙_정부_공식__01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U40",
+      "topic": "방주 사회",
+      "text": "지상 실종자 찾기는 100번 중 90번 허탕, 10번은 시체라 근거가 없으면 공식 수색도 하지 않고, 인간이 혼자 지상에서 며칠 살아남은 일은 없다고 여겨진다",
+      "about": ["place:지상", "org:중앙_정부"],
+      "points": ["F218"],
+      "evidence": [{ "scene": "sub:중앙_정부_공식__01", "lines": ["24-37"] }],
+      "reason": "#26-30 오퍼레이터 · #36-37 아니스 '그런 케이스가 단 한 번도 없었는데'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

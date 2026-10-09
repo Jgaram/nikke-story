@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:종말의서",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E103",
+      "act": "암시",
+      "points": ["F2410"],
+      "text": "종말의 서가 '이치를 거슬러 새로운 인간을 만들어 내려 하니 하늘에서 차가운 금속의 심판자들이 내려왔다'고 한다 — 랩쳐가 나타나기 전부터 뇌를 바꿔 새 몸을 주던 V.T.C.의 프로젝트들(F2410)",
+      "about": ["org:V.T.C.", "concept:랩쳐"],
+      "evidence": [{ "scene": "relic:종말의서_00", "lines": ["0-2"] }],
+      "reason": "#1-2. 침공기 종말론의 말이라 같은 일을 가리킨다는 확인은 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U89",
+      "topic": "구시대",
+      "text": "침공기에는 랩쳐를 '하늘에서 내려온 금속의 심판자'로 받들며 맞서지 말고 종말을 맞으라는 종말론 경전이 돌았다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F402"],
+      "evidence": [{ "scene": "relic:종말의서_00", "lines": ["0-7"] }],
+      "reason": "#2-5 · _02#3-7 경배와 피의 제물",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

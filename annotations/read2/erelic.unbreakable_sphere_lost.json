@@ -1,0 +1,43 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M28\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:unbreakable_sphere_lost",
+  "session": "M28",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I259",
+      "target": "person:퀸",
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_00", "lines": ["5-7"] }],
+      "reason": "'궤도 엘리베이터를 올라가던 작전이 실패해서 아직 우주에 있는 [그것]' — 같은 단위 _03#10이 '[그것]의, [퀸]의 시야'라 이름 댄다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "I260",
+      "target": "person:퀸",
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_02", "lines": [4, "7-8"] }],
+      "reason": "'우주에 있을지 모르는 [그것]의 시야를 가리는' 거대한 막 — _03#10 '[퀸]의 시야를 가려줄 거대한 막'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E712",
+      "act": "재언급",
+      "points": ["F1690"],
+      "text": "세이렌이 궤도 엘리베이터 작전이 실패했다면 우주의 [그것]이 아직 친구들을 위협할까 걱정한다",
+      "about": ["person:세이렌", "person:퀸"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_00", "lines": ["4-9"] }],
+      "reason": "#5-7 — 퀸의 빔에 헨젤 · 그레텔 · 세이렌이 떨어지고 신데렐라만 스테이션에 닿은 일(F1690)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

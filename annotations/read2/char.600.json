@@ -1,0 +1,45 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M103\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:600",
+  "session": "M103",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2216",
+      "person": "person:민트",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "누구도 넘보지 못할 완벽한 아이돌을 자처하며 '이 정도면 괜찮다'고 버티는",
+      "after": "장난스러운 웃음을 거두고 연기가 많이 부족하다고 인정한 뒤 일주일을 매달려 고치는",
+      "trigger": [{ "scene": "ep:d_nikke_mint_01", "lines": ["54-62"] }],
+      "evidence": [{ "scene": "ep:d_nikke_mint_02", "lines": ["31-37", "43-46"] }],
+      "time": "S328",
+      "reason": "#34-37 '장난스러운 웃음이 사라졌다 … 사실은 알고 있어요. 제 연기가 많이 부족하다는 거요'. 앞 모습은 D1736.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    },
+    {
+      "id": "D2217",
+      "person": "person:민트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "무대 뒤에서 서로 이야기를 들어 주는 '급이 같은' 인터미션 짝",
+      "after": "'해결해 줄 수 있을 것 같다는 믿음'으로 연습을 맡기고 동거한 뒤, 고맙다는 인사를 따로 건네고 몰래 로션 선물을 남기는",
+      "trigger": [{ "scene": "ep:d_nikke_mint_02", "lines": ["56-57"] }],
+      "evidence": [{ "scene": "ep:d_nikke_mint_05", "lines": ["40-51", "76-77"] }],
+      "time": "S328",
+      "points": ["F2720"],
+      "reason": "#40-41 '이게 다 아기 고양이씨 덕분이에요. 고맙습니다' · #50-51 '좋은 건 좋은 거고, 감사 인사는 또 다른 이야기' · #76 하트 쪽지. 앞 모습은 D1735.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음. 시점 S328(fl:b-side_idol 뒤) 그대로. 줄기에 걸린 암시 없음."
+}

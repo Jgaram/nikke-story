@@ -1,0 +1,488 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch15",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E100",
+      "act": "재언급",
+      "points": [
+        "Q58"
+      ],
+      "text": "얀이 '슈엔 사장이 메티스 편애하는 거야 워낙 유명했으니까'라며 기억을 보존하려는 마음은 이해한다고 한다 — 슈엔에게 메티스는 왜 특별한가(Q58)",
+      "about": [
+        "person:슈엔",
+        "org:메티스"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15_04",
+          "lines": [
+            "31-33"
+          ]
+        }
+      ],
+      "reason": "#31-32. ch12에서 제기된 Q58을 방주 사람들의 소문으로 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "E101",
+      "act": "재언급",
+      "points": [
+        "F249"
+      ],
+      "text": "아니스가 '우리한테 처음 언체인드를 넘겨준 장본인'이라며 스노우 화이트에게 출처를 묻자고 한다(F249)",
+      "about": [
+        "person:스노우_화이트",
+        "concept:언체인드"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_05",
+          "lines": [
+            "8-14"
+          ]
+        }
+      ],
+      "reason": "#12. 스노우 화이트의 탄환에 섞인 언체인드(F249)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "E102",
+      "act": "암시",
+      "points": [
+        "F622"
+      ],
+      "text": "슈엔과 손잡는 까닭을 지휘관이 '침식된 너희를 내가 쏘는 악몽'을 막기 위해서라고 털어놓는다 — 마리안 같은 희생자를 다시 만들지 않으려는 지휘관의 목적(F622)",
+      "about": [
+        "person:지휘관"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_06",
+          "lines": [
+            "13-21"
+          ]
+        }
+      ],
+      "reason": "#15-17(F401). 뒤에서 그 목적을 '첫 작전에서 침식된 마리안 같은 희생자'로 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D120",
+      "person": "person:도라",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'내재된 기술력만 돈으로 환산하면 얼만데'라며 동료를 잃은 슬픔도 값으로 따지고, 지상 호위부터 계약서로 묶는 계산 빠른 달란트 니케",
+      "evidence": [
+        {
+          "scene": "d_main_15_01",
+          "lines": [
+            "5-6",
+            "25-43"
+          ]
+        }
+      ],
+      "reason": "#6 · #26 · 15af_01#47-49",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D121",
+      "person": "person:얀",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "사투리로 '돈에만 환장한 줄 아나'며 도라를 나무라고 카운터스의 속을 헤아리면서도, 결국 '잭팟'과 몫을 챙기는 달란트 니케",
+      "evidence": [
+        {
+          "scene": "d_main_15_01",
+          "lines": [
+            "7-11",
+            "44-47"
+          ]
+        }
+      ],
+      "reason": "#8-10 · 15_04#31-35 · 15af_01#51",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D122",
+      "person": "person:루피",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'☆'를 붙여 지상 원정을 테트라TV 방송으로 찍고, 시청자 수를 위해 '대박 스캔들'까지 지어내는 쇼핑몰 대표 BJ",
+      "evidence": [
+        {
+          "scene": "d_main_15_02",
+          "lines": [
+            "0-14"
+          ]
+        }
+      ],
+      "reason": "#2 · 15_06#18-26",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D123",
+      "person": "person:라플라스",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "침식된 채 콜드 슬립에 보관됨",
+      "after": "슈엔이 손에 넣은 언체인드 탄환으로 기억 소거 없이 되살아남",
+      "trigger": [
+        {
+          "scene": "d_main_14af_04",
+          "lines": [
+            "14-30"
+          ]
+        }
+      ],
+      "time": "S36",
+      "points": [
+        "F393",
+        "F395"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_02",
+          "lines": [
+            "12-22"
+          ]
+        }
+      ],
+      "reason": "#12 '멀쩡하게 부활' · #30. 앞 변화 D95–D97",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D124",
+      "person": "person:맥스웰",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "침식된 채 콜드 슬립에 보관됨",
+      "after": "슈엔이 손에 넣은 언체인드 탄환으로 기억 소거 없이 되살아남",
+      "trigger": [
+        {
+          "scene": "d_main_14af_04",
+          "lines": [
+            "14-30"
+          ]
+        }
+      ],
+      "time": "S36",
+      "points": [
+        "F393",
+        "F395"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_02",
+          "lines": [
+            "12-22"
+          ]
+        }
+      ],
+      "reason": "#12 '멀쩡하게 부활' · #30. 앞 변화 D95–D97",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D125",
+      "person": "person:드레이크",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "침식된 채 콜드 슬립에 보관됨",
+      "after": "슈엔이 손에 넣은 언체인드 탄환으로 기억 소거 없이 되살아남",
+      "trigger": [
+        {
+          "scene": "d_main_14af_04",
+          "lines": [
+            "14-30"
+          ]
+        }
+      ],
+      "time": "S36",
+      "points": [
+        "F393",
+        "F395"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_02",
+          "lines": [
+            "12-22"
+          ]
+        }
+      ],
+      "reason": "#12 '멀쩡하게 부활' · #30. 앞 변화 D95–D97",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D126",
+      "person": "person:슈엔",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "니케의 기억은 소용없고 지워지면 백지라 더 좋다",
+      "after": "침식 때마다 니케가 쌓은 정보 · 노하우 · 직관과 지혜를 지우는 건 아까운 손해라며 기억 소거 없는 치료를 내세운다",
+      "trigger": [
+        {
+          "scene": "d_main_12af_02",
+          "lines": [
+            "67-69"
+          ]
+        }
+      ],
+      "time": "S36",
+      "points": [
+        "F393"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_02",
+          "lines": [
+            "33-41"
+          ]
+        }
+      ],
+      "reason": "#36-37. 기준 D45. 주가를 되살리려는 발표(F396)라 속마음인지는 원문이 열어 둔다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "D127",
+      "person": "person:슈엔",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "메티스를 구할 방법을 찾겠다는 약속에 기대를 건",
+      "after": "언체인드를 가로채 속인 것을 들키자 독점을 막겠다는 지휘관에게 병력 · 물자를 다 내주겠다며 협력을 매달리는",
+      "trigger": [
+        {
+          "scene": "d_main_15af_04",
+          "lines": [
+            "30-38"
+          ]
+        }
+      ],
+      "time": "S36",
+      "points": [
+        "F398",
+        "F400"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15af_04",
+          "lines": [
+            "40-57"
+          ]
+        }
+      ],
+      "reason": "#51-57. 앞 변화 D100. 끝내 협력은 맺어진다(15af_06 · F400)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U86",
+      "topic": "경제",
+      "text": "방주에서는 물건에 사연이 붙을수록 값이 올라, 쇼핑몰 대표가 테트라TV BJ를 겸하며 '지상에서 역경을 뚫고 가져온' 원정을 생중계해 간접 광고한다",
+      "about": [
+        "org:달란트"
+      ],
+      "points": [
+        "F387"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15_02",
+          "lines": [
+            "13-24"
+          ]
+        }
+      ],
+      "reason": "#17-18 · #21-24",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "U87",
+      "topic": "전초기지",
+      "text": "테러에 털린 뒤 전초기지는 전기 · 가스가 간당간당하고 샤워실엔 찬물만 나오며 배급이 반토막 나, 니케들은 남의 간식으로 연명하고 밤마다 지휘관실의 따뜻한 물을 찾아든다",
+      "about": [
+        "place:전초기지",
+        "org:카운터스"
+      ],
+      "points": [
+        "F386"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15_03",
+          "lines": [
+            "21-29"
+          ]
+        }
+      ],
+      "reason": "#24-27 · 15_06#2-6",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    },
+    {
+      "id": "U88",
+      "topic": "방주 사회",
+      "text": "시민들은 기억 소거 없이 침식된 니케가 방주에 있다는 것만으로 겁을 먹고, 그 신뢰가 무너지자 3대 기업의 주가가 반토막 나 니케 상인까지 손해를 메우려 지상에 오른다",
+      "about": [
+        "org:미실리스"
+      ],
+      "points": [
+        "F388"
+      ],
+      "evidence": [
+        {
+          "scene": "d_main_15_04",
+          "lines": [
+            "9-35"
+          ]
+        }
+      ],
+      "reason": "#11-17 · #28-30",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M03"
+        }
+      ]
+    }
+  ],
+  "revisit": [
+    {
+      "id": "V2",
+      "text": "슈엔의 신념 변화 D126(기억 소거는 손해)이 주가용 발표인지 속마음인지 — 진짜 니케는 기억을 잃지 않는다는 슈엔의 신념(F2791)이 드러나는 단위에서 본다",
+      "where": [
+        "fl:project_matis"
+      ]
+    }
+  ]
+}

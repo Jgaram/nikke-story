@@ -1,0 +1,20 @@
+{
+  "_comment": [
+    "예시 — 정체 연결 후보(annotations/dictionary/people.json candidates와 같은 형식). 실제 후보는 people.json에 있다.",
+    "이 디렉터리를 --dir(또는 --example)로 주면 도구가 people.json 대신 이 파일을 읽는다. 검토 기록(보류)은 형식을 보이려고 넣은 것이다."
+  ],
+  "candidates": [
+    {
+      "id": "L1",
+      "type": "same_as",
+      "a": "person:모나",
+      "b": "person:모르가나",
+      "status": "후보",
+      "confidence": "확실",
+      "reason": "퀸(마코토)이 '지금까지는 코드 네임으로 불렀지만'이라며 본명을 밝히자 바로 '이 몸은 모르가나다'라고 한다. 이 뒤로 이름표가 모나에서 모르가나로 바뀐다",
+      "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": [179, 180, 182] }],
+      "by": "claude",
+      "reviews": [{ "decision": "보류", "by": "사용자", "date": "2026-09-29", "session": "예시", "note": "예시 — 미룬 후보는 다음 리뷰에서 먼저 본다" }]
+    }
+  ]
+}

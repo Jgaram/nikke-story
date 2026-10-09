@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:방주_난민_01",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U95",
+      "topic": "지상",
+      "text": "방주를 떠난 사람은 빗물 정화 시설이 있는 버려진 벙커에서 소파 · 침대 · 부엌을 갖추고 살며, 아크레인저 블루레이와 배양육 캔을 부탁하고 시와 소설을 쓰며 지낸다",
+      "about": ["person:방주_난민", "place:지상"],
+      "points": ["F424"],
+      "reason": "#10-11 · 16-17 · 43-44",
+      "evidence": [{ "scene": "sub:방주_난민_01", "lines": ["8-11", "15-17", "43-44"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

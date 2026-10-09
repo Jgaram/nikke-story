@@ -1,0 +1,88 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M55\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:12",
+  "session": "M55",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "status": "확정",
+      "id": "I502",
+      "target": "person:프리카",
+      "evidence": [{ "scene": "ep:d_nikke_anis_03", "lines": [84] }],
+      "reason": "'멤버 중 한 명이 액세서리 사업에 뛰어들었다' — T.T.STAR에서 액세서리 사업을 하는 이는 프리카(F1874, ch38)",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1274",
+      "act": "암시",
+      "points": ["F1798", "J24"],
+      "text": "시내를 소개하다 '나도 홍보한다고 참 많이도 왔었…'이라 흘리고, 되묻자 '갑자기 무슨 소리야?'라 시치미를 뗀다 — 아이돌 T.T.STAR였던 아니스",
+      "about": ["person:아니스"],
+      "evidence": [{ "scene": "ep:d_nikke_anis_01", "lines": ["68-70"] }],
+      "reason": "#68 '홍보' · #70 얼버무림 — 아니스가 T.T.STAR였다는 것(F1798)을 먼저 흘린다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1275",
+      "act": "암시",
+      "points": ["F1798", "F1874"],
+      "text": "T.T.스타는 해체된 아이돌 그룹이고 멤버 하나가 액세서리 사업을 한다며, '…나도 그중 한 명이고' — 팬이라고만 한다",
+      "about": ["person:아니스", "org:T.T.STAR"],
+      "evidence": [{ "scene": "ep:d_nikke_anis_03", "lines": ["80-85"] }],
+      "reason": "#84 액세서리 사업 멤버 = 프리카(F1874) · #85 뜸 들인 '그중 한 명' — 멤버였던 것(F1798)을 감춘다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1276",
+      "act": "암시",
+      "points": ["F2556"],
+      "text": "'어떻게 하다 보니 니케가 되었고, 이런저런 일들을 겪으면서 마음이 강해졌다' — 아니스가 니케가 된 사연",
+      "about": ["person:아니스"],
+      "evidence": [{ "scene": "ep:d_nikke_anis_05", "lines": ["61-62"] }],
+      "reason": "#61 — 콘서트 총격에서 짓밟혀 테트라가 니케로 만든 일(F2556, PRETTY STAR)을 가린 말",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D1399",
+      "person": "person:아니스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "걱정하다 '얼마나 좋…!' 하고 입을 다무는",
+      "after": "니케를 소중히 대하는 '이상적인 지휘관'이라며 계속 따라다녀도 되냐 묻고, 진즉 반했을지도 모른다며 '죽지 마'라는",
+      "trigger": [{ "scene": "ep:d_nikke_anis_05", "lines": ["72-78"] }],
+      "time": "S43",
+      "evidence": [{ "scene": "ep:d_nikke_anis_05", "lines": ["77-89"] }],
+      "reason": "#84-86 '이상적인 모습' · '진즉에 반했을지도' · #88 '죽지 마' — 방주 투어로 결심하고 행동하는 그를 봤다(#72-74)",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1400",
+      "person": "person:아니스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:프리카"],
+      "text": "해체된 T.T.스타 멤버가 낸 액세서리 신상을 보지도 않고 사며 '갈수록 실력이 좋아져' 하고, 자기는 팬이라고만 하는",
+      "evidence": [{ "scene": "ep:d_nikke_anis_03", "lines": ["71-73", "80-85"] }],
+      "reason": "이름은 안 나오지만 액세서리 사업 멤버 = 프리카(F1874). ch38 기준(D665, 민트 · 프리카)보다 출시가 앞선다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+    }
+  ],
+  "life": []
+}

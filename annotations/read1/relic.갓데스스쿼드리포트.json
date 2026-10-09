@@ -1,0 +1,120 @@
+{
+  "unit": "relic:갓데스스쿼드리포트",
+  "session": "R02",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "유실물 — 갓데스 스쿼드의 보고 다섯 줄. A 롤아웃 직후 작전 투입, 평균 파손율 2%로 완승. B 2주 동안 20건 작전, 완수율 100%. C 코드네임 울트라와 교전, 평균 파손율 72.3%로 승리. D 1기에 침식 확인, 처분. E 작전명 아크 가디언 실시, 목표치의 72% 달성.",
+  "scenes": [
+    {
+      "scene": "relic:갓데스스쿼드리포트_00",
+      "text": "A — 롤아웃 직후 투입, 파손율 2%로 완승"
+    },
+    {
+      "scene": "relic:갓데스스쿼드리포트_01",
+      "text": "B — 2주 20건, 완수율 100%"
+    },
+    {
+      "scene": "relic:갓데스스쿼드리포트_02",
+      "text": "C — 코드네임 울트라와 교전, 파손율 72.3%로 승리"
+    },
+    {
+      "scene": "relic:갓데스스쿼드리포트_03",
+      "text": "D — 1기 침식 확인, 처분"
+    },
+    {
+      "scene": "relic:갓데스스쿼드리포트_04",
+      "text": "E — 작전 아크 가디언, 목표치의 72%"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F177",
+      "text": "갓데스 스쿼드는 롤아웃 직후 작전에 투입되어 평균 파손율 2%로 완승했고, 2주 동안 20건의 작전을 모두 완수했다",
+      "about": ["org:갓데스"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_00", "lines": ["0-1"] }, { "scene": "relic:갓데스스쿼드리포트_01", "lines": ["0-1"] }],
+      "reason": "보고서 A · B",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F178",
+      "text": "갓데스 스쿼드는 코드네임 울트라와 교전해 평균 파손율 72.3%로 이겼고, 1기에서 침식이 확인되어 처분되었다",
+      "about": ["org:갓데스", "concept:울트라", "concept:침식"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_02", "lines": ["0-1"] }, { "scene": "relic:갓데스스쿼드리포트_03", "lines": ["0-1"] }],
+      "reason": "보고서 C · D. C와 D가 이어진 일인지는 적혀 있지 않다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "F179",
+      "text": "갓데스 스쿼드가 실시한 작전 아크 가디언은 목표치의 72%를 달성했다",
+      "about": ["org:갓데스", "incident:아크_가디언_작전"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_04", "lines": ["0-1"] }],
+      "reason": "보고서 E",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q33",
+      "text": "갓데스 스쿼드는 어떤 스쿼드이고, 작전 아크 가디언은 무엇을 목표로 한 작전이었나?",
+      "about": ["org:갓데스", "incident:아크_가디언_작전"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_00", "lines": [0] }, { "scene": "relic:갓데스스쿼드리포트_04", "lines": ["0-1"] }],
+      "reason": "보고서는 결과만 적고, 스쿼드 구성과 작전 목표는 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F494 · F909)이 답한다", "before": "확신도 추정" }
+      ]
+    }
+  ],
+  "events": [],
+  "times": [],
+  "targets": [
+    {
+      "target": "org:갓데스",
+      "evidence": [
+        {
+          "scene": "relic:갓데스스쿼드리포트_00",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "보고서의 스쿼드 — 롤아웃 직후부터 전승",
+      "new": false
+    },
+    {
+      "target": "concept:울트라",
+      "evidence": [
+        {
+          "scene": "relic:갓데스스쿼드리포트_02",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "코드네임 울트라 — 갓데스가 교전한 적",
+      "new": true
+    },
+    {
+      "target": "incident:아크_가디언_작전",
+      "evidence": [
+        {
+          "scene": "relic:갓데스스쿼드리포트_04",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "갓데스가 실시한 작전, 목표치의 72% 달성",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

@@ -1,0 +1,40 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M97\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:182",
+  "session": "M97",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I671",
+      "target": "person:엑시아",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_winterslayer_02", "lines": [28] }],
+      "reason": "'오오- 당신은-'(#28) 바로 뒤 #32-33 엑시아 이름표가 같은 말투로 잇고 #34 길로틴 '엑시아…?'. 시뮬레이션 속 NPC 엑시아.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2138",
+      "person": "person:길로틴",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "클로이와 끝내지 못한 [백빙룡 대서사시]의 엔딩을 스스로 장식하며 용사로 나아간",
+      "after": "용사의 검과 자리를 라플라스에게 돌려주고, 대서사시에 사로잡히지 않고 '니케 길로틴의 모험'을 동료들과 이어 가겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_guillotine_winterslayer_04", "lines": ["79-93"] }],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_winterslayer_05", "lines": ["36-54", "61-65"] }],
+      "time": "S194",
+      "points": ["F1737"],
+      "reason": "05#53-54 '[백빙룡 대서사시]. 거기에 사로잡혀있으면, 다음 이야기를 이어나갈 수 없기도' · #62-63 '니케 길로틴의 모험은 앞으로도'. D1614의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M97" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 길로틴 → 지휘관('벗' · 마음이 맞는 동료, 05#64-66)은 icedragonsaga의 관계 그대로라 적지 않았다. 시뮬레이션 속 NPC(라플라스 · 베스티 · 볼륨 · 목단 등)의 설정은 실제 인물 기록으로 잇지 않았다. 05#28-31 '벗이 해준 이야기'는 icedragonsaga의 지휘관 말을 되짚지만 3층 범위 밖이라 적지 않았다. 시점 S194 그대로."
+}

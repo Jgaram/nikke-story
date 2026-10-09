@@ -1,0 +1,220 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch28",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I159",
+      "target": "person:신데렐라",
+      "evidence": [{ "scene": "d_main_28_08_s", "lines": ["13-19"] }],
+      "reason": "#14 '안에 뭔가가 있습니다' · #17 수정 안의 흐릿한 그림자 — 그레이브가 숨겨 두고 고치던 신데렐라(F1562)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "I160",
+      "target": "person:신데렐라",
+      "evidence": [{ "scene": "d_main_28_08_e", "lines": ["37-41"] }],
+      "reason": "#38 '수정 안에 있던 그건' · #40 '니케였던 것 같아여' — 신데렐라(F1562)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E334",
+      "act": "암시",
+      "points": ["F1322"],
+      "text": "라피가 '수정으로 가득 찬, 동료들의 손이 닿지 않는 깊이의 구덩이에 떨어질 수도 있다'며 복귀를 제안한다",
+      "about": ["person:라피"],
+      "evidence": [{ "scene": "d_main_28_01_e", "lines": ["26-27"] }],
+      "reason": "#27 '동료들의 손에 닿지 않는 깊이의' — 끝에 리버린 · 일레그 · 해머링이 수정 덩어리째 땅 밑으로 꺼진다(F1322)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E335",
+      "act": "암시",
+      "points": ["F1321"],
+      "text": "리버린은 수정이 '공중에서 뚝 떨어지지 않는 이상' 피해 다닐 수 있다고 장담한다 — 뒤에 수정에 잠식된 로드 급이 공중에서 떨어진다",
+      "about": ["person:리버린"],
+      "evidence": [{ "scene": "d_main_28_01_e", "lines": ["43-48"] }],
+      "reason": "#45 '공중에서 뚝하고 떨어지지 않는 이상' — 28_11_s 공중에서 낙하한 움직이는 수정 정원(F1321)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E336",
+      "act": "암시",
+      "points": ["F1316"],
+      "text": "일레그는 수정을 만든 이가 근처에 있었다면 제 작품을 함부로 다루는 자들에게 진즉 다가와 힘을 휘둘렀을 것이라며 '일단은' 안심하자 한다",
+      "about": ["person:일레그"],
+      "evidence": [{ "scene": "d_main_28_05_s", "lines": ["79-90"] }],
+      "reason": "#85-86 '다가와서 뭐라고 하든, 힘을 휘두르거나' · #89-90 '일단은' — 수정을 건드리자 언노운이 나타나 '손대지 마'라며 쏜다(F1316)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E337",
+      "act": "암시",
+      "points": ["F2205"],
+      "text": "지휘관 · 라피 · 아니스가 네온의 과거와 인적 사항을 아무도 모른다는 것을 깨닫는다 — 네온 자신도 모르는 듯하다",
+      "about": ["person:네온"],
+      "evidence": [{ "scene": "d_main_28_05_e", "lines": ["18-33"] }],
+      "reason": "#23 '네온에 대해 알고 있는 게 있나' · #26 과거를 파악할 시간이 없었다 · #30-31 자기도 모르는 눈치 — 인간일 때 기록이 하나도 없는 네온(F2205)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E338",
+      "act": "암시",
+      "points": ["F1399"],
+      "text": "리버린은 언노운을 필그림이라 여기고 교전 중에도 '사진이라도 찍으면 거래를'이라며 사진에 매달린다",
+      "about": ["person:리버린", "person:그레이브"],
+      "evidence": [{ "scene": "d_main_28_08_s", "lines": [54, 76, "86-87"] }],
+      "reason": "#54 '사진이라도 찍으면 거래를…!' · #87 — 식스오가 요구한 '누구도 손에 넣지 못한 것'으로 언노운의 사진을 찍는다(F1399)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E339",
+      "act": "암시",
+      "points": ["F1772"],
+      "text": "한참을 뛰어온 지휘관에게 아니스는 '체력 진짜 많이 늘었다', 네온은 '라피가 업고 다니던 게 엊그제'라 한다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "d_main_28_09_e", "lines": ["18-23"] }],
+      "reason": "#21 '체력 진짜 많이 늘었다' · #22 — 니케를 업고 걷고 이상하게 빨리 낫는 지휘관의 몸(F1772)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "E340",
+      "act": "암시",
+      "points": ["Q163"],
+      "text": "수정 지역에 왜 랩쳐가 계속 있는지 묻자 라피는 누군가 양분이 될 랩쳐를 계속 이곳에 부었을 것이라 본다",
+      "about": ["person:라피", "place:수정_지역"],
+      "evidence": [{ "scene": "d_main_28_11_s", "lines": ["23-38"] }],
+      "reason": "#33 '누군가가 계속 랩쳐를 이곳에 부었거나' · #36 — 수정 지역을 '나의 정원'이라 한 베히모스(F1533)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D384",
+      "person": "person:지휘관",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "찾은 언체인드를 방주에서 양산해 마리안을 되찾을 힘을 키우려는",
+      "after": "누구도 못 한 일을 해내 방주의 누구도 적이 될 수 없을 만큼의 권력을 쥐고, 마리안을 데려오며 방주 뜻에 어긋난 동료의 편을 들려는",
+      "trigger": [{ "scene": "d_main_26af_02", "lines": ["69-90"] }],
+      "evidence": [{ "scene": "d_main_28_02", "lines": ["31-55"] }],
+      "reason": "#42 '방주의 그 누구도 적이 될 수 없을 정도의' · #48 '너희들의 편을 들어주고 싶어' · #55 — 시프티는 선전포고라 했다(F1310)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D385",
+      "person": "person:라피",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "감정을 드러내지 않는 원칙주의자",
+      "after": "지휘관의 권력 이야기에 흔들리는 아니스에게 '마음은 변하기 마련'이라 다독이고 '나도 변했거든'이라 말하는",
+      "evidence": [{ "scene": "d_main_28_02", "lines": ["79-89"] }],
+      "reason": "#81-86 '지금 깊이 생각하지 않아도 돼… 마음은 변하기 마련이니까' · #88 '너 그런 말도 할 줄 알았어?' · #89 '나도 변했거든'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D386",
+      "person": "person:시프티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "작전마다 지휘관을 서포트하는 밝은 오퍼레이터",
+      "after": "선전포고나 다름없는 지휘관의 말을 기록에서 지우고 정치 입문 자료를 챙겨 주는 — 지휘관이 너덜너덜해지길 원치 않는 편",
+      "evidence": [{ "scene": "d_main_28_02", "lines": ["68-77"] }],
+      "reason": "#69 '이 대화는 기록에서 지울게요' · #72 '지휘관이 그렇게 되길 원하진 않거든요' · #74-76 정치 입문 자료",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D387",
+      "person": "person:해머링",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "잘 먹고 잘 살려고 자원했지 목숨까지 걸 생각은 없다 — 살아 있어야 의미가 있다며, 위험을 숨기는 동료와는 일할 수 없다고 한다",
+      "evidence": [{ "scene": "d_main_28_04_s", "lines": ["12-20"] }],
+      "reason": "#13 '저는 죽기 싫슴다' · #16 '목숨까지 걸 정도는 아님다' · #19-20 — 뒤에 시간을 벌려 돌아와 싸운다(F1388)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D388",
+      "person": "person:리버린",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "길을 잃은 자기를 화내지 않고 믿어 준 지휘관에게 '이런 분은 처음'이라며 반해, 만나는 사람이 있는지 라피에게 캐묻는다",
+      "evidence": [{ "scene": "d_main_28_04_s", "lines": ["75-85", "100-109"] }],
+      "reason": "#81 '고마워요' · #84-85 '지휘관님 중에 이런 분은 처음… 남자 중에서도' · #104 '만나는 사람이라던가' — 라피는 '결혼했어, 아이가 둘'이라 둘러댄다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D389",
+      "person": "person:일레그",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "발전소 하나 없는 방주 에너지의 '정답'을 알아 사는 게 스트레스라, 그것을 풀 무언가를 찾으러 지상 탐색에 나섰다",
+      "evidence": [{ "scene": "d_main_28_10", "lines": ["42-59"] }],
+      "reason": "#44 '저는 사는 게 스트레스거든여' · #55 '정답을 알아여. 그래서 여기 왔져' · #58-59(F1320)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D390",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:리버린"],
+      "text": "돈과 고객을 캐묻던 리버린이 사진에 매달리다 맞을 뻔하자 몸을 날려 밀쳐 내고 '무슨 사진이냐'고 호통친다",
+      "evidence": [{ "scene": "d_main_28_08_s", "lines": ["80-88"] }],
+      "reason": "#83 일레그가 몸을 날려 리버린을 밀어냄 · #86 '무슨 사진이냐구여!' · #88 '해머링 씨가 다쳤다고여!'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U198",
+      "topic": "방주 사회",
+      "text": "천만 명이 사는 방주는 아우터 림만 빼면 누구나 높은 인프라를 아무렇지 않게 누리지만, 발전소 하나 없이 돌아가는 그 에너지가 어디서 오는지는 아무도 묻지 않는다",
+      "about": ["place:방주"],
+      "points": ["F1320"],
+      "evidence": [{ "scene": "d_main_28_10", "lines": ["46-53"] }],
+      "reason": "#46-47 천만 명 · 아우터 림을 제외하면 높은 인프라 · #49 발전소가 없다 · #51 '아무렇지도 않게 다들 누리고'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ]
+}

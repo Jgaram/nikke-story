@@ -1,0 +1,14 @@
+{
+  "_comment": [
+    "roledata의 attractive_scenario_list가 비어 있는데 CDN에는 에피소드 본문이 존재하는 캐릭터.",
+    "blablalink UI도 이 캐릭터들의 에피소드를 보여주지 않는다 — roledata를 그대로 믿기 때문이다.",
+    "slug은 attractscene의 ID에서 온다: d_nikke_{slug}_{편번호}.",
+    "새로 발견하면 여기에 추가한다. 확인 절차는 docs/coverage.md 참고."
+  ],
+  "attractiveSlugs": {
+    "guilty": { "character": "길티", "resourceId": 400 },
+    "sin": { "character": "신", "resourceId": 401 },
+    "quency": { "character": "퀀시", "resourceId": 402 },
+    "nihilister": { "character": "니힐리스타", "resourceId": 261 }
+  }
+}

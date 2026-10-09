@@ -1,0 +1,319 @@
+{
+  "unit": "event_bluewaterisland",
+  "session": "R25",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "방주 자원 위기와 블루워터 아일랜드 사전 조사 — 겉은 여름 휴가, 속은 메어리 · 페퍼의 과거. 에닉이 3대 기업 CEO · 두 부사령관 회의에서 근 1년의 피해 복구로 저장 자원 47%가 소모되고 채굴 포인트가 고갈된다고 알리고, 버닝엄이 가문에 전하는 옛 기록 속 '랩쳐가 적고 자원을 무한히 캘 수 있는' 좌표를 내놓는다(prologue). 카운터스 · 리타(M.M.R.이 만든 탐지 장치) · 카페 스위티(프림 · 슈가) · 세라핌(메어리 · 페퍼) · 얀(수영복을 주고 달란트 유통권 로비를 받기로)이 지상의 바다로 간다(1_01). 바닷길로 섬에 건너 숙소 · 진료소를 짓지만 데코이를 뿌리러 간 아니스 · 슈가를 두고 바닷길이 잠겨 고립되고 통신도 에블라 입자로 끊긴다 — 조석을 떠올려 기다리며 임무를 한다(1_02~intermission). 식중독에 걸린 지휘관 · 네온이 쉬지 않는 메어리를 보고 페퍼의 부탁으로 바캉스를 권해 하루를 약속받는다(1_04~1_05). 보고(메탄 하이드레이트 · 수중 랩쳐 0 · 금광 · 새 곡식) 뒤 물놀이 중 페퍼가 메어리를 밀치다 '믿었는데, 이 위선자' 하며 계단에서 사람을 민 환상을 본다(1_06_e). 페퍼는 [인간 페퍼]의 기억일까 두려워하다 프림에게 니케 바디는 이상향이라는 말로 달래지고(2_01_e), 리타가 탈출선을 설계하자 메어리는 섬을 떠나기 싫다고 털어놓는다 — 리페어 센터로 돌아가면 페퍼가 떠올릴까 봐(2_03). 지휘관 · 네온은 모두를 설득하고 리타가 배를 일부러 고장 낸 척해 출항을 미룬다(2_04). 메어리는 눈치채고 지휘관에게 자신의 죄와 페퍼의 일을 털어놓은 뒤 돌아가 속죄하겠다고 울고(2_05_e), 다음 날 떠난다. 리페어 센터의 그 계단에서 페퍼는 아무것도 떠올리지 않고 케이크빵을 던진다(2_06_e). 에필로그 — 블루워터 아일랜드는 채굴 포인트로 인정되고, 탐지 기기가 해저에서 건물 몇 채만 한 알 수 없는 물체의 이동을 잡는다.",
+  "scenes": [
+    {
+      "scene": "event_bluewaterisland_prologue",
+      "text": "에닉의 자원 위기 회의 — 버닝엄 가문 기록의 좌표"
+    },
+    {
+      "scene": "event_bluewaterisland1_01_s",
+      "text": "탐지 장치 · 합동 조사대 모임, 휴가 반 임무 반"
+    },
+    {
+      "scene": "event_bluewaterisland1_01_e",
+      "text": "얀의 맞춤 수영복 — 달란트 유통권 로비와 맞바꿈"
+    },
+    {
+      "scene": "event_bluewaterisland1_02_s",
+      "text": "바다 위 좁은 바닷길을 한 명씩 건넌다"
+    },
+    {
+      "scene": "event_bluewaterisland1_02_e",
+      "text": "맑은 바다, 숙소 · 조력 발전소 — 아니스 · 슈가가 데코이 조"
+    },
+    {
+      "scene": "event_bluewaterisland1_03_s",
+      "text": "석양, 메어리가 말하는 바다의 미지 병원체 · 진료소"
+    },
+    {
+      "scene": "event_bluewaterisland1_03_e",
+      "text": "바닷길이 잠겨 고립 — 건너편의 아니스 · 슈가"
+    },
+    {
+      "scene": "event_bluewaterisland1_intermission_01",
+      "text": "통신 두절, 조석을 떠올려 기다리기로"
+    },
+    {
+      "scene": "event_bluewaterisland1_04_s",
+      "text": "탐지 장치 설치 · 금 입자 · 수상 가옥 — 날생선 식중독"
+    },
+    {
+      "scene": "event_bluewaterisland1_04_e",
+      "text": "진료소의 하루, 페퍼의 부탁"
+    },
+    {
+      "scene": "event_bluewaterisland1_05_s",
+      "text": "메어리를 쉬게 하려는 작전 — 조개 선물"
+    },
+    {
+      "scene": "event_bluewaterisland1_05_e",
+      "text": "조개 유리병, 메어리가 하루 바캉스를 약속"
+    },
+    {
+      "scene": "event_bluewaterisland1_06_s",
+      "text": "임무 보고 — 메탄 하이드레이트 · 수중 랩쳐 0 · 금광 · 새 곡식"
+    },
+    {
+      "scene": "event_bluewaterisland1_06_e",
+      "text": "일출과 물놀이 — 페퍼가 계단에서 사람을 민 환상을 본다"
+    },
+    {
+      "scene": "event_bluewaterisland2_01_s",
+      "text": "페퍼가 먼저 들어가고, 메어리도 뒤따른다"
+    },
+    {
+      "scene": "event_bluewaterisland2_01_e",
+      "text": "페퍼가 프림에게 털어놓은 데자뷔 — 인간 페퍼의 기억일까"
+    },
+    {
+      "scene": "event_bluewaterisland2_02_s",
+      "text": "리타의 탈출선 발표 — 메어리의 안도 아닌 안도"
+    },
+    {
+      "scene": "event_bluewaterisland2_02_e",
+      "text": "호텔 해체조 · 목재조 — 메어리가 지휘관을 따라나섬"
+    },
+    {
+      "scene": "event_bluewaterisland2_03_s",
+      "text": "벌목 중 멍한 메어리 — '섬에서 나가고 싶지 않아요'"
+    },
+    {
+      "scene": "event_bluewaterisland2_03_e",
+      "text": "밤 진료소 — 메어리의 두려움(독백)"
+    },
+    {
+      "scene": "event_bluewaterisland2_intermission_01",
+      "text": "배 조립, 메어리의 바람은 [바캉스] — 지휘관 · 네온의 계획"
+    },
+    {
+      "scene": "event_bluewaterisland2_04_s",
+      "text": "얀 · 프림 · 라피 · 페퍼 · 리타 설득 — 리타의 '변명거리'"
+    },
+    {
+      "scene": "event_bluewaterisland2_04_e",
+      "text": "출항 날 배가 고장 난 척 — 메어리의 '기적'"
+    },
+    {
+      "scene": "event_bluewaterisland2_05_s",
+      "text": "물총 놀이, 메어리가 아끼는 단골 환자 — 네온의 조개 선물"
+    },
+    {
+      "scene": "event_bluewaterisland2_05_e",
+      "text": "메어리의 고백과 결심 — 돌아가서 속죄하겠다"
+    },
+    {
+      "scene": "event_bluewaterisland2_06_s",
+      "text": "하루 만에 떠나는 배"
+    },
+    {
+      "scene": "event_bluewaterisland2_06_e",
+      "text": "아니스 · 슈가와 재회, 바닷길이 다시 드러남 — 리페어 센터의 계단"
+    },
+    {
+      "scene": "event_bluewaterisland2_epilogue",
+      "text": "블루워터 아일랜드 채굴 포인트 인정 · 해저의 거대 물체"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F964",
+      "text": "에닉에 따르면 근 1년 사이 방주 안팎의 예측 못한 피해를 복구하느라 저장 자원의 약 47%가 소모되었고, 양산형 채굴 부대가 메우던 채굴 포인트가 고갈되어 더 위험한 곳으로 옮기며 생환율이 떨어져 모든 자원이 수요에 크게 못 미친다 — 이대로면 3년 안에 경제 공황, 그 뒤 10년이면 시민 약 32% 이상이 아우터 림으로 밀려난다",
+      "about": ["person:에닉", "place:방주", "place:아우터_림"],
+      "evidence": [{ "scene": "event_bluewaterisland_prologue", "lines": [7, "14-21", "26-30"] }],
+      "reason": "에닉의 회의 보고(#14-21 · #26-30), 잉그리드 '예상보다 더 빨랐군'(#23-24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F965",
+      "text": "버닝엄은 중앙 정부의 전신에서 사무관으로 일한 이가 남겨 가문에 전하는 서면 기록에서, 1차 침공 전 랩쳐 분포가 다른 곳의 4분의 1도 안 되고 기술력만 되면 자원을 무한히 캘 수 있는 좌표를 보았다며 사전 조사를 제안했다 — 그곳이 [블루워터 아일랜드]다",
+      "about": ["person:버닝엄", "place:블루워터_아일랜드"],
+      "evidence": [
+        { "scene": "event_bluewaterisland_prologue", "lines": ["45-58"] },
+        { "scene": "event_bluewaterisland1_intermission_01", "lines": ["35-37"] },
+        { "scene": "event_bluewaterisland2_epilogue", "lines": ["1-2"] }
+      ],
+      "reason": "버닝엄의 제안(#45-50)과 출처(#53-55), 지휘관이 버닝엄의 기록을 받았다(intermission #35-37), 에필로그의 이름",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F966",
+      "text": "블루워터 아일랜드 사전 조사는 두 부사령관과 3대 기업 CEO가 지원해 카운터스 · 리타 · 카페 스위티 · 세라핌이 모인 작전으로, 슈엔이 M.M.R.을 볶아 만들게 한 탐지 장치(자원 매장 · 랩쳐 분포를 방주로 보냄)를 설치했다 — 달란트의 얀은 수영복을 공짜로 주는 대신 자원 유통권을 달란트에 주도록 로비해 달라며 비공식으로 끼었다",
+      "about": ["place:블루워터_아일랜드", "org:카운터스", "person:리타", "org:카페_스위티", "org:세라핌", "org:M.M.R.", "person:슈엔", "person:얀", "org:달란트"],
+      "evidence": [
+        { "scene": "event_bluewaterisland1_01_s", "lines": ["43-47", "55-58"] },
+        { "scene": "event_bluewaterisland1_01_e", "lines": ["5-7", "52-55"] }
+      ],
+      "reason": "리타의 설명(01_s #43-47), 지휘관(#57-58), 얀(01_e #5-6 공식적으로는 아님, #54 로비)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F967",
+      "text": "조사 결과 블루워터 아일랜드 바다 너머에 메탄 하이드레이트가 묻혀 있고 수중 랩쳐 분포는 0이며, 섬의 바위산에서 구리 · 은으로 보이는 광맥이 나왔고 랩쳐 이후 새로 생긴 듯한 옥수수 비슷한 곡식이 자란다 — 섬에는 과거 사람들이 드나든 선착장 · 수상 가옥 · 해상 호텔이 남아 있다",
+      "about": ["place:블루워터_아일랜드"],
+      "evidence": [
+        { "scene": "event_bluewaterisland1_06_s", "lines": ["4-9", "12-14", "18-20", "25-33"] },
+        { "scene": "event_bluewaterisland1_04_s", "lines": ["23-25"] }
+      ],
+      "reason": "리타 · 라피 · 얀의 보고(06_s), 라피의 순찰 보고(04_s #23-25)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F968",
+      "text": "메어리에 따르면 바다는 육지보다 랩쳐 분포가 적어 살아남은 생물 종이 많아 잘 모르는 독 · 세균 · 바이러스도 많고, 세라핌은 그것을 방주에 옮겨 오지 않게 하려고 함께 파견되었다",
+      "about": ["person:메어리", "org:세라핌", "place:방주"],
+      "evidence": [{ "scene": "event_bluewaterisland1_03_s", "lines": ["36-42"] }],
+      "reason": "메어리의 말(#38-41)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F969",
+      "text": "물놀이 중 메어리를 밀치던 페퍼는 계단에서 누군가를 '믿었는데, 이 위선자'라며 민 생생한 환상을 보았다 — 페퍼는 자기가 사람을 민 적이 없다며 [인간 페퍼]의 기억 — 니케가 되며 잊은, 죽을 만큼 잊고 싶은 기억 — 일까 두려워했고, 밀친 상대로 메어리를 입에 올렸다가 말이 꼬인 것이라 넘겼다",
+      "about": ["person:페퍼", "person:메어리", "person:프림"],
+      "evidence": [
+        { "scene": "event_bluewaterisland1_06_e", "lines": ["69-81"] },
+        { "scene": "event_bluewaterisland2_01_s", "lines": ["0-2", 14] },
+        { "scene": "event_bluewaterisland2_01_e", "lines": ["0-4", "22-46", "55-60"] }
+      ],
+      "reason": "회상 대사(06_e #73-79)와 페퍼의 독백(2_01_s #2), 프림과의 대화(2_01_e #28 계단, #42-46, #55-56 '하물며 메어리 선배를')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F970",
+      "text": "페퍼에 따르면 니케는 기억이 뒤죽박죽이고, 니케 바디는 인간일 때의 이상향을 구현해 만든다 — 그래서 페퍼는 남을 해치기 싫은 지금의 자기가 인간 페퍼가 꿈꾼 모습이라면 누구를 밀었을 리 없다고 여겼다",
+      "about": ["concept:니케", "person:페퍼"],
+      "evidence": [{ "scene": "event_bluewaterisland2_01_e", "lines": ["44-55"] }],
+      "reason": "페퍼의 말(#44 · #51 '인간일 때의 이상향을 구현화해서'), 프림의 물음(#50)에 대한 답",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F971",
+      "text": "메어리의 고백에 따르면 인간 메어리는 불치병 환자를 살리지 못해 정부의 부패한 관리와 결탁하고 죽을 환자의 서류를 조작해 동의 없이 뇌를 적출, 니케로 만들어 평생 싸우게 했다 — 이를 보다 못한 후배 페퍼가 리페어 센터의 계단 위에서 메어리를 밀었고, 페퍼는 죄책감을 못 이겨 스스로도 같은 지옥 — 니케 — 에 몸을 던졌으며 그 일을 기억하지 못한다",
+      "about": ["person:메어리", "person:페퍼", "place:리페어_센터", "org:중앙_정부", "concept:니케"],
+      "evidence": [
+        { "scene": "event_bluewaterisland2_05_e", "lines": ["38-63", "67-87"] },
+        { "scene": "event_bluewaterisland2_06_e", "lines": ["78-81", "89-94"] }
+      ],
+      "reason": "메어리의 고백 두 분기(#53-63 · #67-87 — '정부의 부패한 관리와 결탁' #76, '스스로마저 의사와 같은 지옥 속에' #86), 지휘관 독백 '[인간 페퍼]가 [인간 메어리]의 등을 밀어 심판했던 바로 그 계단'(06_e #93). '지옥' = 니케가 된 것은 은유라 해석이지만 '인간 페퍼'라는 표현(2_01_e #42)과 맞아 확실로 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F972",
+      "text": "메어리는 리페어 센터의 그 계단에 돌아가면 페퍼가 기억을 떠올릴까 두려워 섬을 떠나기 싫어했지만, 자신의 죄로 지상에 끌려가 싸우다 다친 니케 대부분이 리페어 센터로 흘러든다며 페퍼에게 경멸받더라도 그곳에 있어야 한다고 돌아가 속죄하기로 했다 — 돌아간 계단에서 페퍼는 아무것도 떠올리지 않았고, 메어리는 이를 잠깐의 유예로 여긴다",
+      "about": ["person:메어리", "person:페퍼", "place:리페어_센터", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_bluewaterisland2_03_s", "lines": ["93-95"] },
+        { "scene": "event_bluewaterisland2_03_e", "lines": ["76-84"] },
+        { "scene": "event_bluewaterisland2_05_e", "lines": ["146-180"] },
+        { "scene": "event_bluewaterisland2_06_e", "lines": ["95-125", "147-154"] }
+      ],
+      "reason": "메어리의 독백(2_03_e #81 · #84), 결심(2_05_e #160-178), 계단에서의 장면과 '잠깐의 유예'(06_e #147-148)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F973",
+      "text": "지휘관의 사전 조사 보고로 블루워터 아일랜드는 채굴 포인트로 인정되어 전용 자원 채굴 부대 셋 이상이 편성되었고 자원 위기는 일시적으로 해결되었다 — 엔더슨은 보상으로 블루워터 아일랜드 후속 임무를 지휘관에게 우선 넉넉히 주겠다고 했다",
+      "about": ["place:블루워터_아일랜드", "person:엔더슨", "person:지휘관"],
+      "evidence": [{ "scene": "event_bluewaterisland2_epilogue", "lines": ["0-9", "19-26"] }],
+      "reason": "엔더슨의 말(#1-9 · #22-26)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F974",
+      "text": "블루워터 아일랜드의 탐지 기기가 해저에서 건물 몇 채만 한 알 수 없는 거대 물체의 이동을 잡았다 — 시프티에 따르면 해상 랩쳐가 마지막으로 보고된 것은 100년도 더 전이라 랩쳐일 가능성은 0에 가깝고, 엔더슨은 추적을 지시하며 정체가 확실해지면 지휘관의 부대를 먼저 보내기로 했다",
+      "about": ["place:블루워터_아일랜드", "person:시프티", "person:엔더슨", "concept:랩쳐"],
+      "evidence": [{ "scene": "event_bluewaterisland2_epilogue", "lines": ["38-58"] }],
+      "reason": "시프티의 보고(#39-49), 엔더슨의 지시(#52-53)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q135",
+      "text": "블루워터 아일랜드 해저에서 움직이는 건물 몇 채만 한 거대 물체는 무엇인가 — 100년 넘게 보고되지 않은 해상 랩쳐인가, 구시대 해군의 장치인가?",
+      "about": ["place:블루워터_아일랜드", "concept:랩쳐"],
+      "evidence": [{ "scene": "event_bluewaterisland2_epilogue", "lines": ["41-51", 58] }],
+      "reason": "정체 미상으로 추적 지시, 엔더슨 '영 느낌이 별로군'(#58), SEA, YOU, AGAIN 예고",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F537-2",
+      "act": "드러냄",
+      "text": "페퍼는 메어리를 민 일을 기억하지 못하고, 그 뒤 스스로 니케가 되었다 — 메어리는 페퍼가 떠올릴까 두려워한다",
+      "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["38-63"] }],
+      "reason": "메어리의 고백(#41-63) — F537의 밀친 이 = 페퍼를 다시 드러내고, 페퍼가 모른다는 것을 더했다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "Q85-2",
+      "act": "회수",
+      "answer": "F971",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["75-80"] }],
+      "reason": "메어리가 '정부의 부패한 관리와 결탁해서'(#76)라고 밝혔다 — '한 무리'가 부패한 정부 관리임은 드러났지만 누구인지 · D의 '위'는 아직이라 일부",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S77",
+      "kind": "기준점",
+      "text": "BLUEWATER ISLAND는 여름, 근 1년 사이 방주 안팎의 큰 피해(방주 침공 등) 뒤의 일이다",
+      "ref": "event_bluewaterisland",
+      "at": [["뒤", "ch22"]],
+      "evidence": [{ "scene": "event_bluewaterisland_prologue", "lines": ["14-15"] }, { "scene": "event_bluewaterisland1_01_s", "lines": ["63-64"] }],
+      "reason": "'근 1년 사이 방주 내외로 예측하지 못한 피해'(#14)와 '여름 휴가'(01_s #64) — 피해가 CH.22 침공을 가리키는지는 말하지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R25", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:블루워터_아일랜드",
+      "evidence": [
+        {
+          "scene": "event_bluewaterisland2_epilogue",
+          "lines": [
+            2
+          ]
+        }
+      ],
+      "note": "버닝엄 가문 기록의 좌표 — 수중 랩쳐 0의 지상 바다 섬, 방주의 새 채굴 포인트",
+      "new": false
+    }
+  ]
+}

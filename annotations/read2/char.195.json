@@ -1,0 +1,45 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M95\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:195",
+  "session": "M95",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2110",
+      "person": "person:앨리스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "행복하지 않을 때 토끼 씨(지휘관)가 행복의 나라로 데려가 주던",
+      "after": "자기도 누군가를 행복의 나라로 데려갈 수 있다며 모두가 그러려 애쓴다는 것을 배우고, 잠자는 공주님들도 언젠가 행복의 나라로 가길 비는",
+      "trigger": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_04", "lines": ["68-75"] }],
+      "evidence": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_05", "lines": ["55-63", "90-93"] }],
+      "time": "S153",
+      "reason": "04#70-74 '이번엔 제가 초록 토끼 씨를 행복의 나라로 … 토끼 씨가 데려가 주는 것처럼' → 05#57-63 '모든 토끼 씨들도 누군가를 … 잠자는 공주님들이'. 앞 신념 D1882와 다른 면.",
+      "points": ["F1495"],
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2111",
+      "person": "person:앨리스",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:소다"],
+      "before": "'반짝 토끼 씨'라 부르며 그 반짝임이 더 빛나도록 곁에서 돕던",
+      "after": "반짝임을 잃고 포기하려는 소다에게 따끔하고 진실된 말로 손을 내밀어 다시 일으켜 세운",
+      "trigger": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_04", "lines": ["94-105"] }],
+      "evidence": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_04", "lines": ["107-108", "115-127"] }],
+      "time": "S153",
+      "reason": "03#36-37 '저 반짝함이 더 빛날 수 있도록 돕기로' → 04#107 '1등을 하기 싫으신 건가요?' · #116-119 '지금까지 다 이겼으니까 … 초록 토끼 씨가 없었으면' → #125 '저, 해볼게요'. 기준 D1555에서 이어진다.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 볼 거리 W4('아무 꿈도 안 꾸고 푹 잤다', 03#76-77)는 char:191의 꿈(D1884)을 떠올리게 하지만 가리킬 사실 · 의문이 없고 줄기에 걸리지 않아 적지 않았다. 앨리스 → 지휘관('앨리스의 토끼 씨로 남아 줬으면', 05#64-65)은 D1883과 같은 모습이라 다시 세우지 않았다. 루드밀라 · 토브 · 네베는 이야기를 듣는 자리뿐. 01#72 '옷을 선물해 준 시종'은 지휘관(3층 범위 밖 암시 언급). 시점 S152 · S153 그대로. `???` 없음."
+}

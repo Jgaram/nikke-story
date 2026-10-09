@@ -1,0 +1,49 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:세르반_02",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E59",
+      "act": "재언급",
+      "points": ["F195"],
+      "text": "세르반이 '당신의 니케들과 지상에서 멋지게 싸우는 영상'을 고위 관료의 아내가 퍼뜨려 사업가와 연이 닿았다고 한다",
+      "about": ["person:세르반"],
+      "evidence": [{ "scene": "sub:세르반_02", "lines": ["3-11"] }],
+      "reason": "#8-10. 앞 편의 영상(F195)이 이번 꽃 사업의 발단이 된다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    },
+    {
+      "id": "E60",
+      "act": "암시",
+      "points": ["F351"],
+      "text": "아니스가 최악이어도 '방주에서 로열이 사면받지 못할 죄는 없다'고 한다 — 세르반이 동업자를 쏘고 지상으로 달아나는 일(F351)",
+      "about": ["person:세르반", "concept:로열"],
+      "evidence": [{ "scene": "sub:세르반_02", "lines": ["58-59"] }],
+      "reason": "#59. 다음 편에서 세르반은 사면 대신 지상 도주를 택한다 — 반어",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U41",
+      "topic": "방주 사회",
+      "text": "방주에서 식물 사업은 동식물 관리국 인가가 있어야 하고 공무원은 식물이라면 뭐든 민감하지만, 로열은 어떤 죄든 사면받는다고들 여긴다",
+      "about": ["org:동식물_관리국", "concept:로열"],
+      "points": ["F222"],
+      "evidence": [{ "scene": "sub:세르반_02", "lines": ["13-15", "50-59"] }],
+      "reason": "#14 · #53 '공무원들은 식물에 대한 거라면 뭐든 민감' · #59",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

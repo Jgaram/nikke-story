@@ -1,0 +1,12 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:랩칠리언_03",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [],
+  "note": "2회독 새 기록 없음 — 위장복 · 핫라인 · 랩쳐 생태는 1회독 사실로 충분, 관계는 00 기준 → 06 변화로 적었다"
+}

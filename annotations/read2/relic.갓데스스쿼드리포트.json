@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:갓데스스쿼드리포트",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E38",
+      "act": "암시",
+      "points": ["F1142", "J2"],
+      "text": "갓데스 스쿼드가 코드네임 울트라와 싸워 평균 파손율 72.3%로 이겼다는 한 줄 — 레드 후드에게 오래 잠복하는 침식을 남긴 구세대 침식 유발 개체 울트라(F1142)",
+      "about": ["org:갓데스"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_02", "lines": ["0-1"] }],
+      "reason": "다음 항목이 '1기에 침식 확인'(_03). event_redash가 울트라의 침식 유발 장치와 레드 후드의 침식을 잇는다",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "E39",
+      "act": "암시",
+      "points": ["F1148", "J2"],
+      "text": "'1기에 침식 확인. 결과: 처분.' — 침식된 레드 후드를 처분하되 전사로 처리하라던 상부 명령(F1148), 그러나 레드 후드는 살아남았다",
+      "about": ["person:레드_후드", "org:갓데스"],
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_03", "lines": ["0-1"] }],
+      "reason": "event_footstepwalkrun1의 D.E.E.P.이 '레드 후드가 침식으로 처분되었다고 보고받았다'(F1756)며 이 보고를 되짚는다",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

@@ -1,0 +1,73 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M103\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:105",
+  "session": "M103",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1633",
+      "act": "재언급",
+      "points": ["F530", "J3"],
+      "text": "맥스웰이 예전에 지휘관을 빼앗기기 싫어 '심리 케어로 사기가 올랐다'고만 고쳐 쓴 숨긴 보고서를 다시 꺼내 보며, 지금도 그렇게밖에 설명이 안 된다고 한다",
+      "about": ["person:맥스웰", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_mechanic_01", "lines": ["24-40"] }],
+      "reason": "#26-29 '심리 케어로 … 사기 증진' · #32 '전에 베이비를 뺏기기 싫어서 작성했던 문서' — char:102의 고친 보고서(F530, J3).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2225",
+      "person": "person:맥스웰",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "철저히 이해관계 · 효율로만 움직인다며 회사가 주는 것 말고는 먹지 않는",
+      "after": "밀려 넘어진 아이를 먼저 일으키고 사과를 받아 내며, 비효율이라던 미지근한 레모네이드를 '베이비가 준 것'이라 마시는",
+      "trigger": [{ "scene": "ep:d_nikke_maxwell_mechanic_03", "lines": ["35-59"] }],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_mechanic_04", "lines": ["39-55", "80-86", "102-108"] }],
+      "time": "S391",
+      "points": ["F528"],
+      "reason": "#82 '평소였으면 그냥 지나쳤을 텐데' · #86 '나까지 이상해지는 거 같다' · #104-108 비효율이라 안 마시던 레모네이드를 '예외'로. 앞 모습은 D90 · F528.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    },
+    {
+      "id": "D2226",
+      "person": "person:맥스웰",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "감정까지 호르몬의 메커니즘이라 과학으로 증명할 수 없는 것은 없다는",
+      "after": "과학으로 증명하기 힘든 '무언가'가 있음을 인정하되, 그것을 증명하는 것이 연구원의 본분이라는",
+      "trigger": [{ "scene": "ep:d_nikke_maxwell_mechanic_04", "lines": ["80-86"] }],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_mechanic_05", "lines": ["31-44", "68-80"] }],
+      "time": "S391",
+      "reason": "01#5-18 '과학으로 증명할 수 없는 것은 없다 … 감정까지도' → 05#35 '[마음]이 내 안의 [무언가]를 이끌어냈다' · #71 '과학으로 증명하기 힘든 것들이 존재한다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    },
+    {
+      "id": "D2227",
+      "person": "person:맥스웰",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "남에게 뺏길 수 없는 귀한 실험체",
+      "after": "실험 · 데이터를 떼고 더 알고 싶어져, 다른 니케처럼 케어를 청하고 입을 맞춘 뒤 '이제 부정하지 않겠다'며 연구를 함께 하자는",
+      "trigger": [{ "scene": "ep:d_nikke_maxwell_mechanic_01", "lines": ["53-64"] }],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_mechanic_05", "lines": ["29-33", "45-67"] }],
+      "time": "S391",
+      "reason": "01#64 '실험이니 데이터니, 그런 거 다 떼고' · 05#47 입맞춤 · #54 '이제 부정하지 않으려고' · #67 '앞으로도 잘 부탁할게'. 앞 모습은 D1382.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음(소년 팬 · 젊은 남자 등은 이름 없는 단역). 시점 단서 보강: S391(char:102 뒤 — 고친 보고서를 '전에' 쓴 문서로 다시 연다)을 read1/char.105.json에 더했다. 드레이크가 있어 CH.12–15 콜드 슬립 동안은 아니겠으나 더 좁히지 않았다. 지휘관 프로필 공란(F2798)은 1회독 사실 그대로."
+}

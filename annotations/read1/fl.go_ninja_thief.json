@@ -1,0 +1,137 @@
+{
+  "unit": "fl:go_ninja_thief",
+  "session": "R71",
+  "by": "claude",
+  "date": "2026-10-03",
+  "summary": "코미디 이벤트. 아르카나가 지휘관실에서 델타에게 영업하던 날(event_arcanearchive 에필로그) 델타가 괴도가 될 수 있느냐 물은 일을 계기로, 델타가 밤에 지휘관실을 찾아와 정의 괴도단(팬텀 · 퀀시 · 미란다 · 지휘관)의 수습이 된다(00–01). 테스트: 괴도복 — 닌자복을 입고 지휘관실 천장에 한 시간 숨어 기다림(02), 퀀시의 탈출 루트 — 발파용 폭약으로 전초기지 자기 숙소 천장을 터뜨려 지휘관실까지 뚫음, 라피가 수습 · 마이티 툴즈 공사(03–04), 미란다의 정의 — 밤 공원에서 1시간 동안 38명에게 전투 식량 · 수리검 · 술책 등을 '잃어버린 것'이라며 나눠 주어 A.C.P.U.에 16건 신고(05–06), 팬텀의 예고장 — 수습 괴도 닌자 이름으로 40여 장의 예고장을 창수형 수리검으로 꽂음(07). 예고장을 본 소매치기가 A.C.P.U.에 신고해 폴리 · 키리가 출동하고 미란다는 경찰로 참여(08–09). 델타는 은신 천으로 숨고, 미란다를 배신자로 묶고, 지휘관을 환풍구에서 몰아내지만 '혼자 잘하는 건 중요하지 않다'는 말을 듣는다(10–11). 소매치기는 수류탄을 훔쳤다 터뜨리고 델타의 홀로그램 분신 속에 달아나지만 퀀시가 부딪힐 때 물건을 되찾고 정의 괴도단은 델타를 끌고 도망, 소매치기는 A.C.P.U.에 잡힌다(12–13). 델타는 동료의 힘을 아직 모른다며 수습으로 남겠다 하고, '닌닌'을 배운다. 미란다는 폴리가 늘린 야근에 묶인다(14).",
+  "scenes": [
+    {
+      "scene": "fl:go_ninja_thief_00",
+      "text": "다섯이 된 정의 괴도단 — 수습 델타 소개"
+    },
+    {
+      "scene": "fl:go_ninja_thief_01",
+      "text": "델타가 밤에 지휘관실로 — 아르카나 영업 날의 일, 수습 입단 · 괴도복 테스트"
+    },
+    {
+      "scene": "fl:go_ninja_thief_02",
+      "text": "닌자복 · 천장 대기 · 퀀시의 탈출 루트 과제"
+    },
+    {
+      "scene": "fl:go_ninja_thief_03",
+      "text": "델타 숙소 폭발 — 발파 폭약으로 지휘관실까지 루트를 뚫음"
+    },
+    {
+      "scene": "fl:go_ninja_thief_04",
+      "text": "라피의 보고 · 퀀시 합격(폭발물 금지) · 미란다의 정의 테스트"
+    },
+    {
+      "scene": "fl:go_ninja_thief_05",
+      "text": "밤 공원 — 델타가 '잃어버린 것'을 나눠 줌"
+    },
+    {
+      "scene": "fl:go_ninja_thief_06",
+      "text": "38명 · 미란다 합격 · 폴리 · 키리 출동 · 팬텀의 예고장 테스트"
+    },
+    {
+      "scene": "fl:go_ninja_thief_07",
+      "text": "40여 장의 예고장 · 수습 괴도 닌자 이름 · 소매치기가 A.C.P.U.에 신고"
+    },
+    {
+      "scene": "fl:go_ninja_thief_08",
+      "text": "델타 혼자 가겠다 · 정의 괴도단은 몰래 돕고 미란다는 경찰로"
+    },
+    {
+      "scene": "fl:go_ninja_thief_09",
+      "text": "폴리의 경계 · 델타의 은신 천과 키리"
+    },
+    {
+      "scene": "fl:go_ninja_thief_10",
+      "text": "폴리가 가방을 맡으러 · 델타가 미란다를 묶음"
+    },
+    {
+      "scene": "fl:go_ninja_thief_11",
+      "text": "지휘관 '혼자 잘하는 건 중요하지 않아'"
+    },
+    {
+      "scene": "fl:go_ninja_thief_12",
+      "text": "소매치기 도주 · 수류탄"
+    },
+    {
+      "scene": "fl:go_ninja_thief_13",
+      "text": "홀로그램 분신 · 퀀시가 물건 회수 · 다 같이 도망 · 델타는 수습으로 남음"
+    },
+    {
+      "scene": "fl:go_ninja_thief_14",
+      "text": "닌닌 · 미란다의 야근"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2176",
+      "text": "아르카나가 지휘관실에서 델타에게 영업하던 날 괴도가 될 수 있느냐 물었던 델타는 밤에 지휘관실을 찾아와, 팬텀의 권유로 정의 괴도단(팬텀 · 퀀시 · 미란다 · 지휘관)의 수습 '괴도 닌자'가 되었다",
+      "about": ["person:델타", "person:팬텀", "person:퀀시", "person:미란다", "person:지휘관"],
+      "evidence": [{ "scene": "fl:go_ninja_thief_01", "lines": ["13-31", "73-99"] }, { "scene": "fl:go_ninja_thief_02", "lines": ["14-22"] }],
+      "reason": "델타 · 팬텀의 말(01), 닌자 괴도복(02)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R71", "note": "R71 자체 검토 — 원문 근거 확인" }]
+    },
+    {
+      "id": "F2177",
+      "text": "델타는 수습 테스트에서 발파용 폭약으로 전초기지의 자기 숙소 천장을 터뜨려 지휘관실 천장까지 탈출 루트를 뚫었고 — 지휘관은 라피에게 가면 쓴 괴도들의 짓이라 둘러댔다 — 밤 공원에서는 한 시간 동안 38명에게 전투 식량 · 수리검 · 술책 등을 '잃어버린 것'이라며 나눠 주어 A.C.P.U.에 신고가 들어갔다",
+      "about": ["person:델타", "person:지휘관", "person:라피", "person:폴리", "person:키리", "place:전초기지"],
+      "evidence": [
+        { "scene": "fl:go_ninja_thief_03", "lines": ["10-21", "53-74"] },
+        { "scene": "fl:go_ninja_thief_04", "lines": ["0-14"] },
+        { "scene": "fl:go_ninja_thief_05", "lines": ["6-83"] },
+        { "scene": "fl:go_ninja_thief_06", "lines": ["0-2", "22-27"] }
+      ],
+      "reason": "폭발(03), 라피에게 한 말(04 #7-8), 공원(05–06)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R71", "note": "R71 자체 검토 — 원문 근거 확인" }]
+    },
+    {
+      "id": "F2178",
+      "text": "델타가 수습 괴도 닌자 이름으로 보낸 예고장을 본 소매치기는 A.C.P.U.에 신고했다가 들통나 달아났고, 퀀시가 부딪히는 척 되찾은 물건은 주인에게 돌아갔으며 소매치기는 A.C.P.U.에 잡혔다 — 델타는 동료의 힘을 아직 모른다며 수습으로 남아 정의 괴도단과 함께하기로 했다",
+      "about": ["person:델타", "person:퀀시", "person:팬텀", "person:폴리", "person:키리", "person:미란다"],
+      "evidence": [
+        { "scene": "fl:go_ninja_thief_07", "lines": ["59-83"] },
+        { "scene": "fl:go_ninja_thief_12", "lines": ["0-3"] },
+        { "scene": "fl:go_ninja_thief_13", "lines": ["61-67", "115-125", "135-164"] }
+      ],
+      "reason": "신고(07 #69-83), 소매치기의 깨달음(12 #1-3), 회수(13 #61-67), 체포(#115-125), 델타의 선택(#138-155)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R71", "note": "R71 자체 검토 — 원문 근거 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S266",
+      "kind": "기준점",
+      "text": "event_arcanearchive 뒤 — 아르카나가 델타에게 영업한 날 이후",
+      "evidence": [{ "scene": "fl:go_ninja_thief_01", "lines": ["19-31"] }],
+      "reason": "'아르카나가 지휘관실에서 델타에게 영업을 하던 날'(#20) = event_arcanearchive 에필로그(#101 델타 '저도 괴도가 될 수 있습니까?')",
+      "confidence": "확실",
+      "status": "확정",
+      "ref": "event_arcanearchive",
+      "at": [["뒤", "event_arcanearchive"]],
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R71", "note": "R71 자체 검토 — 원문 근거 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M69",
+          "note": "01#19-20 '이야기는 한참 전 — 아르카나가 델타에게 영업하던 날'이 ARCANE ARCHIVE 뒤를 그대로 말한다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "targets": []
+}

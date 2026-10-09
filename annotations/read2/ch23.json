@@ -1,0 +1,330 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M10\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch23",
+  "session": "M10",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I92",
+      "target": "person:자칼",
+      "evidence": [{ "scene": "d_main_23_02_e", "lines": ["18-21"] }],
+      "reason": "#21 허브가 부서진 '이빨 자국' — ch24 F1009 자칼이 미실리스 메인 허브를 부쉈다. 이 씬에 자칼 이름이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E219",
+      "act": "암시",
+      "points": ["F1031"],
+      "text": "도로시가 '의도한 건 아니지만' 방주에 주는 선물이라며 니힐리스타를 넘기고, 아니스가 폭탄이라도 심었냐고 의심한다 — 니힐리스타는 일부러 맞아 죽은 척해 M.M.R.로 들어갔다(F1031)",
+      "about": ["person:니힐리스타", "person:도로시"],
+      "evidence": [{ "scene": "d_main_23_01_e", "lines": ["20-26"] }],
+      "reason": "#20 '의도한 건 아니지만…선물' · #24 '폭탄이나 뭐 심어놓은 것 아냐?'. ch24 F1031이 그 선물이 노린 것을 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E220",
+      "act": "암시",
+      "points": ["F996"],
+      "text": "에닉이 사망한 니케 · 인간은 여전히 없고 모든 것이 양호하다고 보고한다 — 곧 쉘터 사태로 방주 안에서 사람이 죽는다(F996)",
+      "about": ["person:에닉"],
+      "evidence": [{ "scene": "d_main_23_01_e", "lines": ["92-95"] }],
+      "reason": "#94-95 '사망한 니케 및 인간은 여전히 없는 상태…곧 정리됩니다'. 같은 장 23af_02에서 뒤집힌다 — 반어",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E221",
+      "act": "암시",
+      "points": ["F995"],
+      "text": "지휘관이 방주에 뚫린 구멍만으로 끝나지 않을 것 같은 불길함을 느낀다 — 쉘터 거짓 방송으로 이어지는 더 큰 참사(F995)",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "d_main_23_01_e", "lines": ["116-117"] }],
+      "reason": "#117 '구멍만으로 끝날 것이라는 생각이 들지 않는다'. 23_09에서 쉘터 사태가 터진다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E222",
+      "act": "암시",
+      "points": ["F1009"],
+      "text": "미실리스 메인 허브가 부서지며 '이빨 자국'을 남겼다 — 자칼이 크로우의 명령으로 허브를 물어뜯었다(F1009)",
+      "about": ["person:자칼", "org:미실리스"],
+      "evidence": [{ "scene": "d_main_23_02_e", "lines": ["18-21"] }],
+      "reason": "#21 '이빨 자국이 어쨌다는 둥'. ch24 잉그리드가 자칼의 뇌 스캔으로 허브 파괴를 확인한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E223",
+      "act": "재언급",
+      "points": ["F412"],
+      "text": "바이퍼가 '자기 배에 구멍을 내서' 우리가 밉냐고 묻는다 — ch16 등대 전투 뒤 이그조틱이 지휘관을 쏘고 버려둔 일(F412)",
+      "about": ["person:바이퍼", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_23_05_s", "lines": ["63-67"] }],
+      "reason": "#67 '자기 배에 구멍을 내서?'. ch16 F412를 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E224",
+      "act": "암시",
+      "points": ["F1015"],
+      "text": "바이퍼가 등을 보인 채 '나 좀 기대해도 되냐, 용서한다던가' 묻고 '어디까지 우릴 위해주나 보고 싶은 걸까'라 한다 — 지휘관에게 반해 크로우를 배신하게 된다(F1015)",
+      "about": ["person:바이퍼"],
+      "evidence": [{ "scene": "d_main_23_05_e", "lines": ["22-25", "41-43"] }],
+      "reason": "#23-25 · #43. ch24 바이퍼는 지휘관에게 반했음을 깨닫고 자수한다 — 마음이 기우는 첫 흔들림",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E225",
+      "act": "암시",
+      "points": ["F1015"],
+      "text": "크로우가 일이 꼬인 것을 바이퍼가 의도한 것으로 봐도 되냐 묻고 바이퍼는 '맘대로 생각해'라 받는다 — 바이퍼의 배신(F1015)",
+      "about": ["person:바이퍼", "person:크로우"],
+      "evidence": [{ "scene": "d_main_23_06_s", "lines": ["14-17", "26-29"] }],
+      "reason": "#16 '등을 돌리고 걸은 게 최선인가' · #28 '네가 의도한 거라고 봐도'. ch24의 배신을 크로우가 먼저 의심한다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E226",
+      "act": "암시",
+      "points": ["F2449"],
+      "text": "목단이 도반을 막으러 가며 '이번엔 정말 죽을 수도 있다'고 조직원을 부르지 않는다 — ch44에서 혼자 미스트 시설을 치려다 진과 모란회가 따라온다(F2449)",
+      "about": ["person:목단", "org:모란회"],
+      "evidence": [{ "scene": "d_main_23_07_s", "lines": ["44-47"] }],
+      "reason": "#44-46 '애들이라도 불러야 하나? …아니야'. 위험한 일엔 혼자 가는 목단의 모티프가 ch44에서 되풀이된다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E227",
+      "act": "암시",
+      "points": ["F995"],
+      "text": "크로우가 테트라 커넥트가 쉘터에 생중계 중이라며 '같이 TV나 보자'지만 화면엔 [준비 중]만 떠 있다 — 유니가 그 회선으로 거짓 방송을 한다(F995)",
+      "about": ["person:크로우", "org:테트라_커넥트"],
+      "evidence": [{ "scene": "d_main_23_08_s", "lines": ["8-15"] }],
+      "reason": "#9-11 · #13 '다음 방송 준비라도 하고 있나 보지'. 23_09_s에서 유니의 방송이 나온다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E228",
+      "act": "암시",
+      "points": ["F998"],
+      "text": "크로우가 '언체인드는 찾았나?'에 지휘관이 시치미를 떼자 '찾았군'이라 짚는다 — 크로우는 지휘관이 언체인드를 찾은 줄 알고 유니를 움직였다(F998)",
+      "about": ["person:크로우", "concept:언체인드"],
+      "evidence": [{ "scene": "d_main_23_08_s", "lines": ["16-19"] }],
+      "reason": "#16-18. 23_11_e 유니가 지휘관에게서 언체인드를 빼앗는 장면(F998)의 앞",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E229",
+      "act": "암시",
+      "points": ["F1019"],
+      "text": "크로우가 '나도 누군가가 죽는 건 싫다, 슬프다'며 희생을 줄이려 때를 골랐다고 한다 — ch24에서 유니 · 카운터스에게 쏜 것이 제압탄이었다(F1019)",
+      "about": ["person:크로우"],
+      "evidence": [{ "scene": "d_main_23_08_s", "lines": ["58-63"] }],
+      "reason": "#60 '나도 누군가가 죽는 건 싫어'. 지휘관은 헛소리라 하지만 ch24 F1019가 크로우의 말을 일부 받쳐 준다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E230",
+      "act": "암시",
+      "points": ["F1014"],
+      "text": "크로우가 잡으면 죽일지 용서할지 묻고, '방주가 선택하게 하겠다'는 답에 '원하던 대답은 아니야'라 한다 — 크로우는 지휘관이 증오로 제 손으로 니케를 죽이게 만들려 했다(F1014)",
+      "about": ["person:크로우", "person:지휘관"],
+      "evidence": [{ "scene": "d_main_23_09_e", "lines": ["28-40"] }],
+      "reason": "#31-32 · #40. ch24 F1014가 크로우가 원한 '지휘관의 추락'을 밝힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "E231",
+      "act": "암시",
+      "points": ["F1015"],
+      "text": "이그조틱이 빼앗았던 지휘관의 핸드폰이 액정에 키스 마크가 찍힌 채 주머니에 돌아와 있다 — 바이퍼가 몰래 돌려준 것(F1015)",
+      "about": ["person:바이퍼"],
+      "evidence": [{ "scene": "d_main_23_11_e", "lines": ["8-13"] }],
+      "reason": "#12-13 '액정에 키스 마크…바이퍼'. ch24 바이퍼의 자수 · 배신의 앞",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D271",
+      "person": "person:목단",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:E.H."],
+      "text": "E.H.를 사람이 안 다치게 아우터 림의 목소리를 전하려 애쓴 녀석이라 믿고, 그를 원망하는 주민 앞에서 '그거 아냐'라며 감싸는",
+      "evidence": [{ "scene": "d_main_23_03_e", "lines": [58, 64, "94-101"] }],
+      "reason": "#58 · #64 '아니라고' · #95-101 '열심히 했어…안 믿어주네'. 22장 E.H. → 목단(D233)의 맞은편",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "D272",
+      "person": "person:사쿠라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:목단"],
+      "text": "도와 달라는 목단에게 제 일이 있다며 끊으면서도 '당신이 옳다고 생각하는 일을 하라, 믿습니다'라 맡기는",
+      "evidence": [{ "scene": "d_main_23_07_s", "lines": ["8-14"] }],
+      "reason": "#13-14. 뒤에 사쿠라는 무장 해제로 목단의 싸움을 받친다(F990) — 언더월드 퀸 셋의 축",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "D273",
+      "person": "person:로산나",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:목단"],
+      "text": "목단을 '협객님'이라 비꼬고 '안 가'라 끊으면서도 다시 걸어 '잘해라. 응?'이라 하고 뒤에서 도반의 지원군을 치는",
+      "evidence": [{ "scene": "d_main_23_07_s", "lines": ["18-41"] }],
+      "reason": "#19 · #21 · #39-41. 같은 장 23_07_e에서 로산나가 도반 병력을 친다",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M58", "note": "출시가 앞선 event_queensorder D1440이 로산나 → 목단 관계 기준" }
+      ]
+    },
+    {
+      "id": "D274",
+      "person": "person:길로틴",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "지휘관을 '벗이여'라 부르고 [스티그마] · 세계선 · [즉사의 마안] 같은 거창한 말로 상황을 풀이하는, 진지한 중2병 말투의 익스터너",
+      "evidence": [{ "scene": "d_main_23_10_s", "lines": ["4-8", 20] }],
+      "reason": "#4-8 '[스티그마]…금단의 것…세계선이'. 그 밖의 장면에도 같은 말투",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M53", "note": "앞선 출시(char:180, 2022-11-04)의 같은 성격 기준 D1352를 남긴다" }
+      ]
+    },
+    {
+      "id": "D275",
+      "person": "person:길로틴",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:메이든"],
+      "before": "같은 저주에 빠진 잔소리꾼 게으름뱅이",
+      "after": "쓰러지자 분노하며 동료로 여기고 있었음을 깨달은 동료",
+      "trigger": [{ "scene": "d_main_23_10_s", "lines": ["25-39"] }],
+      "evidence": [{ "scene": "d_main_23_10_e", "lines": ["20-37", "69-70"] }],
+      "reason": "#26 '잔소리꾼에 게으름뱅이라고 생각했었다' → #36-37 '동료로 생각하고 있었음을'. 계기는 자칼이 메이든을 쓰러뜨린 23_10_s",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "D276",
+      "person": "person:메이든",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "쓰러졌다 깨어나자마자 놓친 것 · 임무 실패 · 혼날 일을 덤덤히 짚으며 '우린 끝났네'라 하는, 냉소적이고 시큰둥한 니케",
+      "evidence": [{ "scene": "d_main_23_10_e", "lines": ["66-78"] }],
+      "reason": "#71-78 '저희 임무 실패한 건데요' · '우린 끝났네'",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 — 출시순으로 앞선 성격 기준 D1810(char:181)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D277",
+      "person": "person:유니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "자기를 구원해 줄 상냥한 지휘관이라 믿음",
+      "after": "전기 충격으로 쓰러뜨리고 언체인드를 빼앗아 '고마워'라 웃는",
+      "trigger": [{ "scene": "d_main_23_11_e", "lines": ["63-69"] }],
+      "evidence": [{ "scene": "d_main_23_11_e", "lines": ["54-60", "70-82"] }],
+      "reason": "#58-60 '지휘관은 유니를 구원해 줄 테니까' → #70-82 전기 충격 · '고마워 지휘관'. 계기는 사람들을 왜 몰아냈냐는 지휘관의 추궁",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "D278",
+      "person": "person:버닝엄",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "말을 심하게 더듬으며 사망자 소식에 무너지고, 일이 풀리지 않자 '되는 게 뭐야' · '책임을 지라'며 슈엔에게 소리치는 겁 많은 부사령관",
+      "evidence": [{ "scene": "d_main_23af_02", "lines": ["1-8", "56-63"] }],
+      "reason": "#4-8 '사, 사망…' · #57-63 '도대체 되는 게 뭐야' · '책임을 지란 말이다'. 관계 · 신념 기준(D107 · D113)에 성격을 더한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U159",
+      "topic": "방주 사회",
+      "text": "아우터 림의 피난 캠프는 구색만 맞춘 곳이라 랩쳐가 오면 먼저 도망갈 뿐이고, 일하러 나간 사이 흩어진 가족은 '괜찮기를 바라야죠, 언제나 그랬듯이'라 할 수밖에 없다",
+      "about": ["place:아우터_림"],
+      "evidence": [{ "scene": "d_main_23_03_e", "lines": ["35-53"] }],
+      "reason": "#37-40 '구색만 맞춰놨구나…먼저 도망가면 되니까' · #49-52",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "U160",
+      "topic": "방주 사회",
+      "text": "아우터 림 주민들은 방주 테러를 E.H.의 짓으로 믿고 원망하며, 중앙 정부가 눈엣가시인 자기들을 쓸어버릴 기회로 삼을까 두려워 군인을 보자마자 '우린 아무것도 모른다'고 몸을 사린다",
+      "about": ["place:아우터_림", "org:중앙_정부", "person:E.H."],
+      "points": ["F991"],
+      "evidence": [{ "scene": "d_main_23_03_e", "lines": ["54-63", "70-74", "81-89"] }],
+      "reason": "#60-63 · #73-74 · #81-85. F991(E.H.를 원망)의 사는 모습 쪽",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    },
+    {
+      "id": "U161",
+      "topic": "방주 사회",
+      "text": "갓데스를 기리는 승리의 여신상이 방주 곳곳에 잘 관리되어 서 있고, 말썽을 부린 경찰은 그 여신상을 닦는 벌을 받는다 — 갓데스는 이름도 모르는 신화로 남았다",
+      "about": ["org:갓데스", "place:방주"],
+      "points": ["F1000"],
+      "evidence": [{ "scene": "d_main_23af_01", "lines": ["27-43"] }],
+      "reason": "#31-33 '사고 칠 때마다 승리의 여신상을 닦는 벌' · #42-43. F1000의 생활 쪽",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 이 단위엔 미상 이름표 줄이 없다. 23af_01 폴리가 이름을 모르는 '갓데스 정보를 적극적으로 전파하던 분'(Q138)은 원문으로 정할 수 없어 암시 언급으로 적지 않았다."
+}

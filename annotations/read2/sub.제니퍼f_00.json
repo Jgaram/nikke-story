@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M04\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:제니퍼f_00",
+  "session": "M04",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E126",
+      "act": "암시",
+      "points": ["F2479"],
+      "text": "제니퍼가 아이가 늦었다면 '시체라도 회수해 달라'며 장례를 핑계 대고, 끝내 '똑똑하고 건강한 아이였는데'라 아쉬워한다 — 예전 센터는 아이들이 죽거나 자라야 돈이 되었다(F2479)",
+      "about": ["person:제니퍼", "org:방주_아동_보호_센터"],
+      "reason": "#27 · 64. fl:lie_cause_recoil에서 센터의 속셈이 드러난다 — 시체 요구가 돈 때문이라는 확인은 원문에 없다",
+      "confidence": "추정",
+      "evidence": [{ "scene": "sub:제니퍼f_00", "lines": ["26-30", "63-64"] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U100",
+      "topic": "방주 사회",
+      "text": "학대받거나 집 없는 아이를 보호한다는 비영리 센터가 아이들에게 위치 추적 장치를 달아 두고, 아이들 사이에는 '성인이 되면 강제로 뇌를 기증시켜 니케로 만든다'는 소문이 돌아 추적 장치를 단 채 지상으로까지 달아난다",
+      "about": ["org:방주_아동_보호_센터"],
+      "points": ["F693", "F694"],
+      "reason": "#12 · 53 · 72. 아니스는 지상 말고 달아날 곳이 없었던 것이라 본다(#43)",
+      "evidence": [{ "scene": "sub:제니퍼f_00", "lines": [6, "11-12", "71-72"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M83\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:432",
+  "session": "M83",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I639",
+      "target": "person:아리아",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_aria_01", "lines": ["15-16"] }],
+      "reason": "#16 '이 사람들은 내 손님이니까' — #17 직원이 '아리아 씨?'라 묻고 #18 아리아가 지휘관을 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1868",
+      "person": "person:아리아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "롤아웃 직후부터 주연만 맡아 무명 시절이 없고, 최악의 컨디션도 남들의 인생 최고 무대라 할 만큼 자기 재능에 자부심이 큰 프리마돈나",
+      "evidence": [{ "scene": "ep:d_nikke_aria_01", "lines": ["50-51", "84-91", "99-101"] }],
+      "points": ["F598"],
+      "reason": "01#87-88 '최악의 컨디션일 때 나의 공연이 다른 대부분의 가수들에겐 인생 최고의 무대' · #100 '여태 내가 소화하지 못한 배역은 없었어'. 아리아 성격 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1869",
+      "person": "person:아리아",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'세뇨르'라 부르며, 니케의 멘탈 케어는 세뇨르의 의무라고 남몰래 고민 상담을 청하는 담당 니케",
+      "evidence": [{ "scene": "ep:d_nikke_aria_01", "lines": ["36-41"] }],
+      "points": ["F598"],
+      "reason": "01#40-41 '세뇨르와 단둘이서 의논하고 싶었어. 니케의 멘탈 케어. 세뇨르의 의무잖아'. 아리아 → 지휘관 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1870",
+      "person": "person:아리아",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "프리마돈나는 무조건 완벽해야 하고, 작품의 주제를 노래로 온전히 전해야 한다고 여겨 흥행해도 주제를 망쳤다면 실패로 보는",
+      "evidence": [{ "scene": "ep:d_nikke_aria_02", "lines": ["46-50"] }],
+      "reason": "02#49-50 '나는 무조건 완벽하지 않으면 안 돼. 프리마돈나란 그런 거니까' — 03#43-48 주제를 망쳐 하차하겠다는 데로 이어진다. 아리아 신념 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1871",
+      "person": "person:아리아",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "무조건 완벽해야 한다며 재능 없음을 연기할 방법을 찾던",
+      "after": "천재나 범재나 목표에 닿고 싶은 절박함은 같다는 것을 알고 그 절박함을 노래에 담는",
+      "trigger": [{ "scene": "ep:d_nikke_aria_04", "lines": ["72-88"] }],
+      "evidence": [{ "scene": "ep:d_nikke_aria_05", "lines": ["57-64"] }],
+      "points": ["F599"],
+      "reason": "04#77 마스터의 '어딘지 절박해 보여서' 뒤 05#60-63 '거기에 다다르고 싶어 절박한 마음은 천재나 범재나 다르지 않다 … 애써 연기할 필요도 없었지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1872",
+      "person": "person:아리아",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "멘탈 케어를 청한 담당 니케",
+      "after": "자기 세계를 알아준 유일한 사람이라며 '나는 당신으로 하여금 완성되었어요' — 그만을 위해 피날레 곡을 부르는",
+      "trigger": [{ "scene": "ep:d_nikke_aria_02", "lines": ["78-85"] }],
+      "evidence": [{ "scene": "ep:d_nikke_aria_05", "lines": ["84-103"] }],
+      "points": ["F599"],
+      "reason": "05#86-92 '정작 나 자신에 대해서는 아무것도 이해해주지 않았거든 … 당신만 제외하고' · #98-103 피날레 곡. 02#82-85 후견인 지정석을 내어 준 데서 시작된다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "시점 실마리 없음."
+}

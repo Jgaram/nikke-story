@@ -1,0 +1,121 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M88\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_bowwowparadise",
+  "session": "M88",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I659",
+      "target": "person:네로",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bowwowparadise_01_s", "lines": [16] }],
+      "reason": "풀숲에서 '하아암-!' 하품하는 목소리 — #18 비스킷 '네로?' · #19 네로 '안냥'으로 바로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2009",
+      "person": "person:비스킷",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "강아지마다 좋아하는 맛대로 사료를 주고 '한 입만' 얻어먹는 천진한 보호소 훈련사로, 강아지의 말을 알아듣는",
+      "evidence": [{ "scene": "event_bowwowparadise_prologue", "lines": ["18-25", "38-53"] }],
+      "points": ["F825"],
+      "reason": "#22 '맥스는 닭가슴살 맛을 좋아하니까' · #43 '한 입만 먹어도 돼?' · #53 '헉. 속이 안 좋다고?'. 05_e#30-44 강아지마다의 특성을 '기본 중의 기본'이라 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2010",
+      "person": "person:비스킷",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '훈련사님'이라 부르며 사고를 치면 눈물이 그렁그렁해 도움을 청하고, 위로에 금세 기운을 차리는",
+      "evidence": [{ "scene": "event_bowwowparadise_01_e", "lines": ["0-7", "31-34"] }],
+      "reason": "#2-3 '사고 쳐 놓고. 이런 부탁하는 게 죄송하지만' · #4 눈물이 그렁그렁 · #7 '위로해 주셔서 감사해요. 훈련사님' · #34 '얼른 출발해요. 훈련사님!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2011",
+      "person": "person:비스킷",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "세상에 나쁜 강아지는 없고 우선순위는 강아지들의 행복이라며, 맥스의 마음을 먼저 알아차리지 못한 자기를 탓하는",
+      "evidence": [{ "scene": "event_bowwowparadise_03_e", "lines": ["5-8", "42-59"] }],
+      "points": ["F825"],
+      "reason": "#8 '오히려 내가 사과해야 할지도 몰라' · #42 '보호라는 이름이 강아지들에겐 구속이었을 수도' · #52 '우선순위는 강아지들의 행복이니까요!'. 02_e#11 '세상에 나쁜 강아지는 없으니까요!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2012",
+      "person": "person:비스킷",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:맥스"],
+      "text": "늘 일을 돕고 힘들 때 위로해 주는 똑똑한 반장 맥스를 믿어, 탈주에도 '분명 이유가 있을 것'이라며 '우리끼리는 비밀이 없잖아'라 대화를 청하는",
+      "evidence": [{ "scene": "event_bowwowparadise_03_s", "lines": ["38-54"] }],
+      "points": ["F825"],
+      "reason": "#45 '왜 보호소에서 탈출했는지 말해주면' · #48 '우리끼리는 비밀이 없잖아!'. 02_e#4-6 '항상 제 일을 도와주기도 하고. 힘들 땐 옆에서 위로까지'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2013",
+      "person": "person:비스킷",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:맥스"],
+      "before": "말 잘 듣는 똑똑한 반장이라 믿고 보호소가 답답할 줄 몰랐던",
+      "after": "보호소가 답답했다는 맥스에게 사과하고, 방주처럼 자유롭게 뛰어놀 보호소를 만들어 주겠다고 약속하는",
+      "trigger": [{ "scene": "event_bowwowparadise_03_e", "lines": ["31-42"] }],
+      "evidence": [{ "scene": "event_bowwowparadise_intermission_01", "lines": ["61-90"] }],
+      "points": ["F825"],
+      "reason": "#68 '미안해. 나는 보호소가 답답할 거라고 생각 못 했어' · #84 '방주처럼 자유롭게 뛰어놀 수 있는 그런 보호소로 만들어놓을게!'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2014",
+      "person": "person:맥스",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "보호소 밖을 나가 본 적 없이 비스킷에게 들은 방주가 궁금해 강아지들을 이끌고 탈주하고, 보호소로 돌아가기 싫다는",
+      "evidence": [{ "scene": "event_bowwowparadise_03_s", "lines": ["9-12", "46-54"] }],
+      "points": ["F825"],
+      "reason": "#12 비스킷을 한 번 쳐다보고 더 빠르게 달린다 · #54 '보호소로 돌아가기 싫대요!'. 03_e#31-37 '방주가 궁금해서래요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    },
+    {
+      "id": "D2015",
+      "person": "person:맥스",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "바깥을 꿈꿔 보호소로 돌아가기 싫던",
+      "after": "함께 지은 바우 와우 파라다이스가 방주보다 좋은 '우리의 고향'이라며 비스킷과 강아지들을 지키겠다는",
+      "trigger": [{ "scene": "event_bowwowparadise_05_e", "lines": ["10-21"] }],
+      "evidence": [{ "scene": "event_bowwowparadise_epilogue", "lines": ["0-1", "47-61"] }],
+      "points": ["F825"],
+      "reason": "#47-48 '한때 나는 바깥을 꿈꿨었다 … 철없는 행동' · #55 '방주보다 이곳이 더 좋다' · #56 '비스킷과 강아지들을 지킬 것이다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 비스킷 · 맥스는 이 이벤트가 처음 나온 곳이라 기준을 여기에 세웠다(char:381은 같은 날 호감도 스토리라 뒤). 정체 볼 줄 — 정할 수 없음: event_bowwowparadise_04_e#28,30 (수십 마리 보호소 강아지 무리의 헐떡임 — 한 마리로 정할 수 없고 인물이 아니다). 리타 · 센티 · 폴리 · 미란다 · 네로는 얕아 기준을 다시 세우지 않았다. 작중 시점 실마리 없음."
+}

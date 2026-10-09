@@ -1,0 +1,21 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:산해진미_01",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I6",
+      "target": "person:폴리",
+      "evidence": [{ "scene": "sub:산해진미_01", "lines": ["83-89"] }],
+      "reason": "고구마를 몰수하며 침을 흘린 '흰색 머리가 엄청 길고 작은' A.C.P.U.를 지휘관이 '고구마를 아주 좋아하는 친구'라 한다 — 고구마를 좋아하는 A.C.P.U.의 폴리(char:61 · event_onemoretime)로 보인다. 이름이 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [],
+  "life": []
+}

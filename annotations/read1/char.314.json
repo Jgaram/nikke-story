@@ -1,0 +1,82 @@
+{
+  "unit": "char:314",
+  "session": "R44",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "소다 : 트윙클링 바니(event_goldencoinrush1 뒤로 추정, S151). 코인 러시 이벤트를 앞두고 일일 출장 메이드로 청소하던 소다가 미끄러져 지휘관의 카드 게임과 셔츠를 망치고, 루주는 사과로 VIP 방 하루 숙박 · 식사를 내주며 소다에게 지휘관 개인 케어를 맡긴다(F1491). 세탁 · 밀대 조립 소동 · 한 숟가락으로 먹은 저녁의 오묘한 공기('나는 돌이다'). 씻으러 간 소다는 지퍼가 고장 나 밤새 옷을 못 벗고, 지휘관은 루주에게 하루 연장(추가 요금)과 바니걸 옷을 청해 샤워실에서 옷을 잘라 준다 — 둘은 감정대로 가까워진다(F1493). 루주는 개인 방 밖 CCTV와 출입 자동 확인으로 소다가 안 나간 것을 알았지만 소다의 해명에 넘어간다(F1492).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_soda_twinklingbunny_01",
+      "text": "미끄러진 소다가 지휘관의 마지막 카드 게임과 셔츠를 망침 — 루주가 VIP 방과 소다의 케어를 제공"
+    },
+    {
+      "scene": "ep:d_nikke_soda_twinklingbunny_02",
+      "text": "세탁한 옷, 최신식 밀대 조립 소동, 함께 청소"
+    },
+    {
+      "scene": "ep:d_nikke_soda_twinklingbunny_03",
+      "text": "코인 러시의 저녁 — 한 숟가락으로 먹여 주고 숟가락을 핥는 소다, 음식이 묻어 씻으러 감"
+    },
+    {
+      "scene": "ep:d_nikke_soda_twinklingbunny_04",
+      "text": "지퍼가 망가져 옷을 못 벗은 소다. 루주에게 하루 연장과 바니걸 옷을 청함"
+    },
+    {
+      "scene": "ep:d_nikke_soda_twinklingbunny_05",
+      "text": "샤워실에서 옷을 잘라 주고 가까워짐. 루주의 CCTV 확인, 소다의 해명"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1491",
+      "text": "소다는 며칠 뒤 이벤트를 앞둔 코인 러시에 일일 출장 메이드로 청소하러 갔다가 — 바니 옷은 지휘관이 사 준 것 — 미끄러져 지휘관의 마지막 카드 게임과 셔츠를 망쳤고, 루주는 코인 러시의 책임이라며 지휘관에게 VIP 방 하루 숙박 · 식사를 내주고 소다에게 지휘관의 개인 케어를 맡겼다",
+      "about": ["person:소다", "person:루주", "person:지휘관", "place:코인_러시"],
+      "evidence": [{ "scene": "ep:d_nikke_soda_twinklingbunny_01", "lines": ["9-15", "29-30", "37-58"] }],
+      "reason": "소다 · 루주의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R44" }]
+    },
+    {
+      "id": "F1492",
+      "text": "루주에 따르면 코인 러시는 개인 방을 뺀 모든 곳에 CCTV가 있고 그날의 입장객 · 퇴장객을 자동으로 확인하는, 안전과 보안에 매우 예민한 곳이다",
+      "about": ["place:코인_러시", "person:루주"],
+      "evidence": [{ "scene": "ep:d_nikke_soda_twinklingbunny_05", "lines": ["69-72", "88-90"] }],
+      "reason": "루주의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R44" }]
+    },
+    {
+      "id": "F1493",
+      "text": "씻으려다 등 지퍼가 고장 나 밤새 옷을 못 벗은 소다를 위해 지휘관은 루주에게 추가 요금을 내고 하루를 더 묵으며 바니걸 옷 한 벌을 받아 샤워실에서 소다의 옷을 잘라 주었고, 둘은 감정이 이끄는 대로 가까워졌다",
+      "about": ["person:소다", "person:지휘관", "person:루주"],
+      "evidence": [
+        { "scene": "ep:d_nikke_soda_twinklingbunny_04", "lines": ["29-35", "69-77", 90] },
+        { "scene": "ep:d_nikke_soda_twinklingbunny_05", "lines": ["1-2", "24-27", "53-63"] }
+      ],
+      "reason": "지휘관 독백(ep05 #24-26)과 이어지는 장면. 루주에게는 소다가 방을 치우다 하루 더 일했다고 둘러댔다(ep05 #79-80)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R44" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S151",
+      "kind": "기준점",
+      "text": "event_goldencoinrush1 뒤 — 지휘관이 사 준 바니 옷을 입은 소다가 코인 러시에 처음이 아니다",
+      "ref": "event_goldencoinrush1",
+      "at": [["뒤", "event_goldencoinrush1"]],
+      "evidence": [{ "scene": "ep:d_nikke_soda_twinklingbunny_01", "lines": ["39-41"] }],
+      "reason": "event_goldencoinrush1에서 소다는 코인 러시에 처음 왔고(03_s #106-107) 지휘관과 바니 복장을 맞췄다(02_e). '며칠 뒤 이벤트'가 무엇인지는 말하지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R44" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

@@ -1,0 +1,86 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M102\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:113",
+  "session": "M102",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1630",
+      "act": "재언급",
+      "points": ["F2488"],
+      "text": "바이퍼가 지난번 아우터 림에서 지휘관이 둔기로 머리를 맞은 일을 꺼내 몸은 괜찮냐고 묻는다",
+      "about": ["person:지휘관", "person:바이퍼"],
+      "evidence": [{ "scene": "ep:d_nikke_eh_01", "lines": ["6-10"] }],
+      "reason": "#7 '지난번에 그런 일을 겪었는데' · #10 '둔기로 머리를 얻어맞는 것쯤은' — ENTER HEAVEN의 함정 · 둔기(F2488)를 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2206",
+      "person": "person:바이퍼",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:E.H."],
+      "before": "리더로 따르면서도 그동안 속을 썩이던",
+      "after": "사과의 뜻을 담아 자칼과 새 리더의 환영 파티를 준비하며 '셋이서 제대로 시작해 보자'는",
+      "trigger": [{ "scene": "ep:d_nikke_eh_01", "lines": ["29-38"] }],
+      "evidence": [{ "scene": "ep:d_nikke_eh_05", "lines": ["14-20"] }],
+      "time": "S306",
+      "reason": "01#36-38 '나도 그동안 많이 속 썩이고 다녔거든 … 사과의 의미' → 05#20 '앞으로 나 좀 잘 부탁할게'. 앞 모습은 D1074.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2207",
+      "person": "person:E.H.",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:바이퍼", "person:자칼"],
+      "text": "자기를 위한 깜짝 환영 파티에 서툴게 '고마워… 다들' 하고, 운 좋게 만난 좋은 동료라며 행복했다고 한다",
+      "evidence": [{ "scene": "ep:d_nikke_eh_05", "lines": ["39-41", "79-83"] }],
+      "time": "S306",
+      "reason": "#40-41 '이렇게 신경 써주고 있을 줄은 몰랐어' · #80-83 '행복했어 … 좋은 동료들을 만난 거 같아. 바이퍼랑 자칼'. E.H. → 두 대원의 첫 기록.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2208",
+      "person": "person:E.H.",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "좋아하는 것 없이 '해야 할 일'만 하며 속죄로 아우터 림을 돌보던",
+      "after": "선행이 자기가 좋아하는 일임을 알고, 어둠 속 이정표가 될 작은 불빛이 되고 싶다며 동료와 함께라면 가능하다는",
+      "trigger": [{ "scene": "ep:d_nikke_eh_04", "lines": ["74-85"] }],
+      "evidence": [{ "scene": "ep:d_nikke_eh_05", "lines": ["89-99"] }],
+      "time": "S306",
+      "reason": "02#46 '[원하는 것] 대신 [해야 할 일]' · 04#80 '해야 할 일이니까' → 04#85 '좋아하는 게 뭔지 확실히' · 05#90-94 '저런 빛이 … 작은 불이라면 충분해'. 앞 모습은 D1142.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    },
+    {
+      "id": "D2209",
+      "person": "person:E.H.",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "속죄를 응원받으며 판단을 맡기던",
+      "after": "하루를 함께 돌며 좋아하는 것을 찾아 준 지휘관을 좋은 동료로 꼽고, 손을 내밀어 앞으로를 부탁하는",
+      "trigger": [{ "scene": "ep:d_nikke_eh_04", "lines": ["72-88"] }],
+      "evidence": [{ "scene": "ep:d_nikke_eh_05", "lines": ["81-83", "95-102"] }],
+      "time": "S306",
+      "reason": "04#84-87 '네 덕에 … 너랑 있다 보면 별말을 다 하게 되네' → 05#83 '너도' · #102 '앞으로도 잘 부탁할게'. 앞 모습은 D1083.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M102" }]
+    }
+  ],
+  "life": []
+}

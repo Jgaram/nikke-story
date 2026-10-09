@@ -1,0 +1,64 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M12\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:코인_러시_00",
+  "session": "M12",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E277",
+      "act": "암시",
+      "points": ["F1798", "J24"],
+      "text": "아니스가 '보는 잠깐의 즐거움을 위해 목숨을 거는 사람들도 있다 … 있었지' 하고 말을 흐린다 — 뒤에 드러나는 아이돌 T.T.STAR 시절",
+      "about": ["person:아니스"],
+      "evidence": [{ "scene": "sub:코인_러시_00", "lines": ["57-61"] }],
+      "reason": "#58-60 '그 잠깐을 위해 목숨을 거는 사람들 … 있었지' · #61 라피의 침묵 — ch34 F1798(아이돌 과거)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D339",
+      "person": "person:누아르",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '점장님'이라 부르며 도움을 청하고, 퍼레이드가 끝나면 블랑과 지휘관실에 찾아가 칭찬받고 싶다고 조르는",
+      "evidence": [{ "scene": "sub:코인_러시_00", "lines": [2, 5, "71-80"] }],
+      "reason": "#5 '꼭 부탁드려요' · #75-80 '지휘관실에 가도 되나요 … 칭찬 많이'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    },
+    {
+      "id": "D340",
+      "person": "person:블랑",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '점장님'이라 부르며 스스럼없이 부탁하고, '진짜 강하네요 · 멋있어요'라며 칭찬을 조르는",
+      "evidence": [{ "scene": "sub:코인_러시_00", "lines": [1, 4, "65-67", "81-82"] }],
+      "reason": "#1 '점장님' · #66-67 · #81-82 '칭찬해 줘요'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U179",
+      "topic": "기업 · 조직",
+      "text": "방주 사태로 건물이 무너지고 많은 이가 죽자, 테트라의 니케는 슬퍼하는 사람들이 잠시라도 아픔을 잊게 안정 선언이 나자마자 광장 퍼레이드를 열려고 미리 리허설을 준비한다",
+      "about": ["place:코인_러시", "org:테트라"],
+      "points": ["F1137"],
+      "evidence": [{ "scene": "sub:코인_러시_00", "lines": ["13-35"] }],
+      "reason": "#15-19 상황 종료 즉시 퍼레이드 · #30-35 '그게 테트라의 니케가 할 일'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M12" }]
+    }
+  ]
+}

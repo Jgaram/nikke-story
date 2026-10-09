@@ -1,0 +1,59 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M104\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:405",
+  "session": "M104",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2233",
+      "person": "person:신",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "남이 자기를 위해 죄를 짓는 것을 가장 성의 있는 행동으로 여기던",
+      "after": "[부탁]으로 장부를 손에 넣거나 컨버터를 벗는 대신, 어렵더라도 [제대로 된] 옳은 방식으로 직접 해결하려는",
+      "trigger": [{ "scene": "ep:d_nikke_sin_swiftbunny_02", "lines": ["54-62"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sin_swiftbunny_03", "lines": ["70-92"] }],
+      "time": "S394",
+      "reason": "02#61-62 '옳은 방식으로 일을 해결하는 건 참 어렵고 복잡' → 03#76 '[부탁] 몇 번만 하면 … 그러고 싶지 않으니까' · #88-92 직접 해결. 앞 모습 D1984.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M104" }]
+    },
+    {
+      "id": "D2234",
+      "person": "person:신",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "나쁜 짓 않겠다 약속하고 상점 · 벌점을 주고받는 '기브 앤 테이크' 사이",
+      "after": "처음으로 '도와줘'라고 청하고, 컨버터를 벗어 진짜 목소리로 '고마워'를 전하는",
+      "trigger": [{ "scene": "ep:d_nikke_sin_swiftbunny_02", "lines": ["85-93"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sin_swiftbunny_05", "lines": ["46-67"] }],
+      "time": "S394",
+      "reason": "02#92-93 '도와줘. 교관. 나 혼자서는 역부족' → 05#54 컨버터를 벗음 · #62-63 '처음으로 제대로 들은 신의 진짜 목소리 … 고마워'. 앞 모습 D1628.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M104" }]
+    },
+    {
+      "id": "D2235",
+      "person": "person:신",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "거절도 호의도 해 본 적 · 받아 본 적이 없어 평범한 친절에 어쩔 줄 모르던",
+      "after": "'감사합니다'라고 말하는 법을 배워 어르신의 대접을 웃으며 받는",
+      "trigger": [{ "scene": "ep:d_nikke_sin_swiftbunny_03", "lines": ["55-63"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sin_swiftbunny_04", "lines": ["55-63"] }],
+      "time": "S394",
+      "reason": "03#62 '거절이란 거 … 해본 적도, 당해본 적도 없으니까' · 04#56 '참 적응 안 된다니까' → #60 '[감사합니다]라고 하면 돼' · #63 '감사합니다~!'. 앞 모습 D1983.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M104" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음(날카로운 인상의 할머니는 이름 없는 단역). 마스트 · 앵커 · 트로니는 기존 기록 그대로라 적지 않았다. '최근 코인 러시에서 열렸던 이벤트'(01#13)는 char:404 01#13의 코인 러시 바니걸 행사와 같은 것으로 보이나 스토리 데이터에 그 이벤트 단위가 없어 떡밥으로 잇지 않았다(fl:coins_in_rush에는 신이 나오지 않는다). 시점 단서 보강: S394(event_romanticvalentine 뒤, 추정)를 read1/char.405.json에 더했다."
+}

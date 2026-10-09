@@ -1,0 +1,129 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M33\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:정갈하게쓴기록",
+  "session": "M33",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I301",
+      "target": "person:랩칠리언",
+      "reason": "기록을 쓴 '나' — 웨일리에게 채식을 권한 랩칠리언(F1285 · F2067). 유실물에 이름이 없다.",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_00", "lines": [0] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I302",
+      "target": "person:지휘관",
+      "reason": "'소중한 친구의 배웅' — 랩칠리언을 랩쳐 무리에게 돌려보낸 지휘관(F173).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_00", "lines": [0] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I303",
+      "target": "person:랩칠리언",
+      "reason": "웨일리 위에 집을 지은 '나'(F2067).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_01", "lines": ["2-3"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I304",
+      "target": "person:지휘관",
+      "reason": "'날 이곳까지 지켜준 나의 소중한 친구' = 지휘관(D372 '내 가장 소중한 친구').",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_01", "lines": [10] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I305",
+      "target": "person:랩칠리언",
+      "reason": "인류의 언어로 랩쳐와 교류한 '나'(F2068).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_02", "lines": ["2-4"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I306",
+      "target": "person:랩칠리언",
+      "reason": "웨일리의 뱃속에서 새 생명체를 발견한 '나'(F2069).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_03", "lines": [2] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I307",
+      "target": "person:피노키오",
+      "reason": "'그 아이' — 웨일리의 몸 안에서 발견된 피노키오(F2076, Q270-2).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_03", "lines": ["2-3"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E812",
+      "act": "재언급",
+      "points": ["F173"],
+      "text": "소중한 친구의 배웅을 받고 멀리 떠나왔다고 쓴다",
+      "about": ["person:랩칠리언", "person:지휘관"],
+      "reason": "#0. 지휘관이 콜링 시그널로 랩쳐 무리를 불러 랩칠리언을 마더 웨일에 태워 보낸 일(F173).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_00", "lines": [0] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E813",
+      "act": "암시",
+      "points": ["F2246"],
+      "text": "랩쳐 퀸의 의지가 인류를 적대하지 않고 [화합]을 고르는 날이 오면 싸우지 않아도 된다고 쓴다",
+      "about": ["person:퀸"],
+      "reason": "#6-8. ch42에서 새로 태어난 퀸이 바란 것은 '안아 줘'였고 끌어안자 잠든다(F2246) — 주제의 메아리.",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_01", "lines": ["5-8"] }],
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E814",
+      "act": "재언급",
+      "points": ["F156"],
+      "text": "이전에 그들의 언어를 흉내 냈던 시절과는 명백히 다르다고 쓴다",
+      "about": ["person:랩칠리언"],
+      "reason": "#3. 랩쳐의 겉모습 · 소리를 손으로 흉내 내던 랩쳐 수트(F156).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_02", "lines": ["2-4"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D780",
+      "person": "person:랩칠리언",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "대부분의 랩쳐는 아직 소통할 준비가 안 됐다던",
+      "after": "본능이 사라진 랩쳐는 새 종일 뿐이라 서로 믿으면 대화로 화합할 수 있다고 확신하는",
+      "trigger": [{ "scene": "relic:정갈하게쓴기록_02", "lines": ["2-4"] }],
+      "time": "S249",
+      "points": ["F2068"],
+      "reason": "#5-9. 앞 모습은 D373(ch27).",
+      "evidence": [{ "scene": "relic:정갈하게쓴기록_02", "lines": ["5-9"] }],
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "life": []
+}

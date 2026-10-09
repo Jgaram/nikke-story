@@ -1,0 +1,97 @@
+{
+  "unit": "event_phantomthiefvsdetective",
+  "session": "R49",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "자칭 정의의 괴도 팬텀이 예고장을 보낸 집에서 반지를 집는 순간, 새 탈옥 루트를 뚫고 나온 퀀시와 마주쳐 경보가 울린다. A.C.P.U. 미란다가 출동하자 둘은 퀀시의 구멍으로 달아나는데, 그 구멍은 지휘관실로 이어진다(prologue). 팬텀은 악한 자에게 고통받는 이들을 돕고 빼앗긴 것을 돌려준다고 하고 — 지휘관은 팬텀이 아는 사람과 닮았다며 괴도 놀이에 어울려 준다 — 구멍을 따라온 미란다는 같은 정의의 일이라며 '괴도 경찰'로 돕겠다고 한다. 퀀시는 팬텀의 조수를 자처해 정의 괴도단이 생기고, 지휘관실이 기지가 된다(01). 의뢰인(은퇴 직전 아내를 위해 반지를 만든 중년 남자)을 만나니 팬텀은 옆집(601호/602호)을 털었던 것 — 진짜 반지를 가진 자산가는 경찰과 유착해 신고가 접수조차 되지 않았다. 미란다는 끝까지 찾자고 한다(02_s). 다음 날 A.C.P.U.(폴리 · 키리)와 탐정 노벨이 팬텀(늘 사건을 만드는 자칭 괴도)의 새 예고장에 대비하고, 폴리는 시민과의 약속이라는 미란다를 '경찰로서' 보낸다(02_e). 잠입 — 키리에게 지휘관이 들키고, 팬텀 · 미란다는 잠긴 창문을 깨며 들어가 맞춤법 틀린 예고장으로 노벨을 혼란시키고, 연막 속에서 퀀시가 팬텀을 구멍으로 끌어 내린다(03–05). 자산가 방에 나온 팬텀 앞에 노벨의 함정이 있지만 퀀시가 치워 두었고, 집은 자정에 계약이 끝난 빈집 — 달아나던 자산가는 노벨의 그물 함정에 걸리고 팬텀이 반지를 빼낸다. 미란다는 폴리에게 끌려가고, 반지는 주인에게 돌아간다(06). 에필로그 — 미란다는 시말서를 쓰고, 독방에서 나온 퀀시 · 미란다 · 지휘관에게 팬텀의 새 집합 예고장이 날아든다.",
+  "scenes": [
+    { "scene": "event_phantomthiefvsdetective_prologue", "text": "팬텀과 탈옥한 퀀시가 마주쳐 경보, 미란다 출동 — 퀀시의 구멍은 지휘관실로" },
+    { "scene": "event_phantomthiefvsdetective_01_s", "text": "괴도 팬텀 소개, 미란다가 '괴도'로 돕겠다고 함" },
+    { "scene": "event_phantomthiefvsdetective_01_e", "text": "정의 괴도단 결성 — 퀀시는 조수, 지휘관실이 기지, 폴리 · 키리에겐 비밀" },
+    { "scene": "event_phantomthiefvsdetective_02_s", "text": "의뢰인 — 옆집 반지였음, 자산가는 경찰과 유착" },
+    { "scene": "event_phantomthiefvsdetective_02_e", "text": "새 예고장, A.C.P.U. · 노벨의 대비 — 폴리가 미란다를 보냄" },
+    { "scene": "event_phantomthiefvsdetective_03_s", "text": "미란다 합류 확인, 각자 책임" },
+    { "scene": "event_phantomthiefvsdetective_03_e", "text": "A · B 구역 작전 계획" },
+    { "scene": "event_phantomthiefvsdetective_intermission_01", "text": "A 구역 — 키리를 피했지만 지휘관이 들킴" },
+    { "scene": "event_phantomthiefvsdetective_04_s", "text": "B 구역 — 창문을 깨고 진입, 맞춤법 틀린 예고장으로 노벨 혼란" },
+    { "scene": "event_phantomthiefvsdetective_04_e", "text": "미란다가 와이어로 노벨과 충돌, 폴리 위치를 알아냄" },
+    { "scene": "event_phantomthiefvsdetective_05_s", "text": "키리가 지휘관을 협력자로 오해, 팬텀이 키리를 안음, 노벨 등장" },
+    { "scene": "event_phantomthiefvsdetective_05_e", "text": "연막, 퀀시가 팬텀을 구멍으로 — 미란다는 붙잡힘" },
+    { "scene": "event_phantomthiefvsdetective_06_s", "text": "팬텀이 자산가 방에 나옴, 노벨의 함정" },
+    { "scene": "event_phantomthiefvsdetective_06_e", "text": "빈집 · 그물 함정 — 반지 회수, 정의 괴도단이 이름을 밝힘, 해산" },
+    { "scene": "event_phantomthiefvsdetective_epilogue", "text": "미란다의 시말서, 팬텀의 새 집합 예고장" }
+  ],
+  "facts": [
+    {
+      "id": "F1607",
+      "text": "자칭 괴도 팬텀은 악한 자들에게 고통받는 이들을 돕고 빼앗긴 것을 돌려준다며 예고장을 보낸 뒤 밤에 물건을 되찾아 오는데, 탐정 노벨에게는 늘 사건을 만들어 내는 숙명의 라이벌이다 — 지휘관은 팬텀을 아는 사람과 닮았다고 하면서도 괴도로 활동 중인 것 같다며 모른 척 어울려 주었다",
+      "about": ["person:팬텀", "person:노벨", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_phantomthiefvsdetective_01_s", "lines": ["4-13", "76-78"] },
+        { "scene": "event_phantomthiefvsdetective_02_e", "lines": ["95-100"] },
+        { "scene": "event_phantomthiefvsdetective_06_s", "lines": [78] }
+      ],
+      "reason": "팬텀 · 노벨의 말, 지휘관 독백(01_s #12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R49", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1608",
+      "text": "팬텀 · 퀀시(조수) · 미란다(괴도 경찰) · 지휘관(기지 제공)의 정의 괴도단은, 경찰과 유착해 신고 접수조차 막은 사기꾼 자산가가 은퇴 직전의 남자에게서 빼앗은 반지를 노벨 · A.C.P.U.의 방어를 뚫고 되찾아 주인에게 돌려주었다 — 퀀시의 탈옥 루트는 지휘관실 구석의 구멍으로 이어지고, 미란다는 시말서를 썼다",
+      "about": ["person:팬텀", "person:퀀시", "person:미란다", "org:A.C.P.U."],
+      "evidence": [
+        { "scene": "event_phantomthiefvsdetective_prologue", "lines": ["50-54", "79-94"] },
+        { "scene": "event_phantomthiefvsdetective_01_s", "lines": ["40-41"] },
+        { "scene": "event_phantomthiefvsdetective_02_s", "lines": ["72-80"] },
+        { "scene": "event_phantomthiefvsdetective_06_e", "lines": ["109-121", "166-170"] },
+        { "scene": "event_phantomthiefvsdetective_epilogue", "lines": ["17-37"] }
+      ],
+      "reason": "줄거리의 중심. 자산가가 사기꾼이고 훔친 물건들을 주인에게 돌려주었다는 것은 폴리의 확인(epilogue #33)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R49", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q211",
+      "text": "지휘관이 '아는 사람과 되게 닮았다'면서도 모른 척해 준 괴도 팬텀은 평소에 누구인가?",
+      "about": ["person:팬텀"],
+      "evidence": [{ "scene": "event_phantomthiefvsdetective_01_s", "lines": ["7-12"] }],
+      "reason": "지휘관은 팬텀의 정체를 짐작하는 듯하지만(#12 '괴도로서 활동하고 있는 것 같으니') 이야기는 밝히지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R49", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M65",
+          "note": "char:580 F1612가 사서 팬텀 = 괴도 팬텀, 지휘관은 알고 모른 척했다고 밝힌다",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S364",
+      "kind": "기준점",
+      "text": "char:402 뒤 · fl:go_ninja_thief 전 — 정의 괴도단이 처음 모인다. 퀀시는 갱생관에서 탈옥을 되풀이하며 지휘관을 '교관님'이라 부르고, 키리가 A.C.P.U.에 있다(event_freezeacpu 뒤)",
+      "ref": "char:402",
+      "at": [["뒤", "char:402"], ["전", "fl:go_ninja_thief"], ["뒤", "event_freezeacpu"]],
+      "evidence": [{ "scene": "event_phantomthiefvsdetective_01_s", "lines": ["86-90"] }],
+      "reason": "#87 탈옥으로 갱생관까지 — char:402에서 만난 퀀시. 괴도단 결성(01_e#16-19)은 GO! NINJA THIEF!(F2176)의 기존 단원보다 앞선다.",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M65",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+    }
+  ],
+  "targets": [
+    { "target": "person:팬텀", "evidence": [{ "scene": "event_phantomthiefvsdetective_prologue", "lines": [4] }], "note": "자칭 정의의 괴도 — 예고장을 보내고 빼앗긴 물건을 되찾아 주인에게 돌려준다", "new": false }
+  ]
+}

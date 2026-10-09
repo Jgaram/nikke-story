@@ -1,0 +1,175 @@
+{
+  "unit": "event_maidinvalentine",
+  "session": "R19",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "밸런타인 이벤트(가벼운 편). 메이드 카페의 메이드 포 유(에이드 · 메이드장 코코아 · 소다)가 밸런타인 특별 행사를 준비하지만, '사장님' 머스탱이 초콜릿은 맛있어도 진심(True Heart)이 없다며 며칠 안에 진정한 밸런타인 초콜릿을 못 만들면 행사를 허락하지 않겠다고 한다(01_s). 지휘관이 서비스를 체험 · 평가하던 중 시그널이 초콜릿 조언을 받으러 왔다가 '정말 좋아하는 지휘관에게' 초콜릿을 들키고, 참고한 지상의 구시대 디저트 회사 [Sweets & Cocoa] 정보를 건넨다(02). 지휘관과 메이드들은 지상의 Sweets & Cocoa 공장에 가고, 소다가 누른 버튼으로 관리 A.I. 홀로그램 '관리자 스윗 조니'가 깨어난다 — 수십 년 납품이 끊겨 극저온 저장고의 1등급 카카오로 강의를 한다(03). 제멋대로인 공정에 에이드가 항의하자 스윗 조니는 받을 사람을 진심으로 생각하라고 가르치고(04), 메이드들은 지휘관의 취향을 묻다가 '평소대로' 진심으로 대하면 된다는 걸 깨닫는다. 스윗 조니는 예전 아이들의 초콜릿 체험을 기억하고, 방주로 데이터를 옮기자는 제안을 거절하며 다음 밸런타인에 또 오라고 한다(05). 다시 만든 초콜릿에 머스탱이 합격을 주고 행사는 대성황, 재료가 떨어져 실패작 조각을 나눠 먹는다(06). 에필로그 — 밸런타인 뒤, 프리바티가 '친구'에게 줄 수제 초콜릿을 배우려고 밀크(해결사)에게 의뢰해 지휘관 · 시그널과 공장에 오고, 밀크가 홀로그램을 쏜다.",
+  "scenes": [
+    {
+      "scene": "event_maidinvalentine_prologue",
+      "text": "메이드 포 유의 밸런타인 행사 연습 — 메이드장 코코아"
+    },
+    {
+      "scene": "event_maidinvalentine_01_s",
+      "text": "머스탱 사장의 불합격 — 진심 없는 초콜릿이면 행사 없음, 지휘관에게 도움 요청"
+    },
+    {
+      "scene": "event_maidinvalentine_01_e",
+      "text": "밸런타인 서비스 체험 — 사랑의 카레라이스, 맛있는 디저트"
+    },
+    {
+      "scene": "event_maidinvalentine_02_s",
+      "text": "시그널의 초콜릿 — '정말 좋아하는 지휘관에게' 편지를 들킴"
+    },
+    {
+      "scene": "event_maidinvalentine_02_e",
+      "text": "시그널이 건넨 [Sweets & Cocoa] 정보 — 코코아 '지상에 가야게써'"
+    },
+    {
+      "scene": "event_maidinvalentine_03_s",
+      "text": "지상의 Sweets & Cocoa 공장 — 수십 년 만의 손님"
+    },
+    {
+      "scene": "event_maidinvalentine_03_e",
+      "text": "관리자 스윗 조니(홀로그램) 기동 — 수십 년 납품 없음, 극저온 저장고"
+    },
+    {
+      "scene": "event_maidinvalentine_intermission_01",
+      "text": "저장고의 카카오 — 퍼펙트가 아닌 진짜 초콜릿은 처음"
+    },
+    {
+      "scene": "event_maidinvalentine_04_s",
+      "text": "제멋대로인 강의 — 향신료 아무거나, 케첩도"
+    },
+    {
+      "scene": "event_maidinvalentine_04_e",
+      "text": "받을 사람을 진심으로 생각하라 — 지휘관에게 줄 초콜릿"
+    },
+    {
+      "scene": "event_maidinvalentine_05_s",
+      "text": "손 마사지와 질문 — '평소대로 하면 된다'"
+    },
+    {
+      "scene": "event_maidinvalentine_05_e",
+      "text": "진정한 밸런타인 초콜릿 — 스윗 조니는 공장에 남고 다음 밸런타인 초대"
+    },
+    {
+      "scene": "event_maidinvalentine_06_s",
+      "text": "머스탱 합격 — Maid In Valentine, 지휘관 하루 도움"
+    },
+    {
+      "scene": "event_maidinvalentine_06_e",
+      "text": "대성황 뒤 실패작 초콜릿 조각을 나눠 먹음"
+    },
+    {
+      "scene": "event_maidinvalentine_epilogue",
+      "text": "밸런타인 뒤 — 프리바티 · 밀크 · 시그널 · 지휘관이 공장에, 밀크가 홀로그램을 쏨"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F807",
+      "text": "메이드 포 유(에이드 · 메이드장 코코아 · 소다)는 머스탱을 '사장님'으로 모시는 메이드 카페의 메이드들로, 머스탱은 그들의 밸런타인 초콜릿에 진심이 없다며 진정한 밸런타인 초콜릿을 만들기 전에는 행사를 허락하지 않았다가 다시 만든 초콜릿에 합격을 주었다",
+      "about": ["org:메이드_포_유", "person:에이드", "person:코코아", "person:소다", "person:머스탱"],
+      "evidence": [
+        { "scene": "event_maidinvalentine_prologue", "lines": [5, 9] },
+        { "scene": "event_maidinvalentine_01_s", "lines": ["1-31"] },
+        { "scene": "event_maidinvalentine_06_s", "lines": ["7-23"] }
+      ],
+      "reason": "머스탱이 'My Maid들'이라 부르고 에이드가 '사장님'이라 부른다(01_s #1, #11). 머스탱이 테트라 CEO라는 것은 F94 — 카페가 테트라 소속이라고 원문이 직접 말하지는 않아 '사장님'까지만 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    },
+    {
+      "id": "F808",
+      "text": "지상의 구시대 디저트 회사 [Sweets & Cocoa]의 공장에는 관리 A.I. 홀로그램 스윗 조니가 남아 수십 년 납품이 끊긴 채 극저온 저장고에 발효를 마친 카카오를 보존하고 있고, 예전 초콜릿 만들기 체험을 하던 아이들을 기억하며, 방주로 데이터를 옮기자는 제안을 거절하고 공장에 남았다",
+      "about": ["place:Sweets_&_Cocoa", "person:스윗_조니"],
+      "evidence": [
+        { "scene": "event_maidinvalentine_02_e", "lines": ["31-33"] },
+        { "scene": "event_maidinvalentine_03_e", "lines": ["12-16", "26-27"] },
+        { "scene": "event_maidinvalentine_05_e", "lines": [17, "27-33", "36-48"] }
+      ],
+      "reason": "스윗 조니 본인 말(03_e #26–27 '납품이 되지 않은 지 벌써 수십 년', 05_e #17 '큐레이터이자 관리 A.I.', #44 '내가 있어야 할 곳은 이 공장')과 독백(02_e #31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    },
+    {
+      "id": "F809",
+      "text": "메이드 포 유는 카카오로 만든 진짜 초콜릿은 처음 만들어 보았고(방주의 초콜릿은 퍼펙트로 만든다 — 우유 퍼펙트), 에이드는 방주에만 있었다면 이런 기회는 절대 없었을 것이라 한다",
+      "about": ["org:메이드_포_유", "concept:퍼펙트", "place:방주"],
+      "evidence": [{ "scene": "event_maidinvalentine_01_s", "lines": [17] }, { "scene": "event_maidinvalentine_intermission_01", "lines": [1, 12, "16-21"] }],
+      "reason": "소다 '퍼펙트가 아니라 진짜 초콜릿을 만드는 건 처음'(#12), '진짜 카카오 열매… 처음 봐요'(#1), 에이드(#17–20). 방주 음식은 퍼펙트로 흉내 낸 가짜라는 F444 · F590과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    },
+    {
+      "id": "F810",
+      "text": "밸런타인 뒤 프리바티는 친구에게 줄 수제 초콜릿을 계속 실패해 못 준 끝에 밀크에게 의뢰해 지휘관 · 시그널과 Sweets & Cocoa 공장을 찾았고, 지휘관에게는 지상 음식물 무단 반입을 확인하는 업무의 연장이라 했다",
+      "about": ["person:프리바티", "person:밀크", "person:시그널", "place:Sweets_&_Cocoa"],
+      "evidence": [{ "scene": "event_maidinvalentine_epilogue", "lines": [0, "7-19", "44-52"] }],
+      "reason": "프리바티 말(#16, #45, #51–52). '친구'가 지휘관인지는 밀크의 물음에 '쉿'으로 넘겨 원문이 정하지 않는다 — 문장에 넣지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S57",
+      "kind": "기준점",
+      "text": "밸런타인데이 며칠 전 — 에필로그는 밸런타인데이가 지난 뒤",
+      "ref": "event_maidinvalentine",
+      "at": [],
+      "evidence": [{ "scene": "event_maidinvalentine_01_s", "lines": [29] }, { "scene": "event_maidinvalentine_epilogue", "lines": [0] }],
+      "reason": "머스탱 '남은 며칠간'(01_s #29), 에필로그 머리 서술(#0). 해는 원문에 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R19" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:Sweets_&_Cocoa",
+      "evidence": [
+        {
+          "scene": "event_maidinvalentine_02_e",
+          "lines": [
+            30,
+            31
+          ]
+        }
+      ],
+      "note": "지상의 구시대 디저트 회사 · 초콜릿 공장",
+      "new": true
+    },
+    {
+      "target": "person:스윗_조니",
+      "evidence": [
+        {
+          "scene": "event_maidinvalentine_03_e",
+          "lines": [
+            15
+          ]
+        }
+      ],
+      "note": "Sweets & Cocoa 공장의 관리 A.I. 홀로그램(이름표 '관리자 스윗 조니')",
+      "new": false
+    },
+    {
+      "target": "org:메이드_포_유",
+      "evidence": [
+        {
+          "scene": "event_maidinvalentine_03_s",
+          "lines": [
+            0
+          ]
+        }
+      ],
+      "note": "메이드 카페의 스쿼드 — 에이드 · 코코아 · 소다, 사장은 머스탱",
+      "new": false
+    }
+  ]
+}

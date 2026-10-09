@@ -1,0 +1,278 @@
+{
+  "_comment": [
+    "비인물 사전 — 개념 · 설정 (A2 · T3-2). 형식 · 검색 규칙은 docs/schema.md \"비인물 사전\". 조회: node tools/query.mjs terms concept",
+    "칸은 places.json과 같다. 세계관 용어(존재 · 등급 · 기술 · 물질 · 화폐 · 목표)를 넣는다. 일반 명사(코어 · 쉘터 · 여왕 · 이단 · 구시대)는 v1에서 뺐다 — Q-A2-4",
+    "랩쳐 종류(여러 개체가 있는 것)는 여기, 이름 있는 한 개체(퀸)는 인물(people.json)에 둔다 — Q-A2-2"
+  ],
+  "entries": [
+    { "id": "concept:랩쳐", "name": "랩쳐", "kind": "존재", "wrong": ["랩처", "래프처"] },
+    { "id": "concept:헬레틱", "name": "헬레틱", "kind": "존재", "wrong": ["헤레틱"] },
+    {
+      "id": "concept:니케",
+      "name": "니케",
+      "kind": "존재",
+      "names": [{ "name": "NIKKE", "how": "영문" }]
+    },
+    {
+      "id": "concept:양산형_니케",
+      "name": "양산형 니케",
+      "kind": "존재",
+      "names": [{ "name": "양산형", "how": "약칭", "caution": "니케가 아닌 양산형(양산형 모델 · 양산형 스쿼드 등)에도 쓰인다" }]
+    },
+    { "id": "concept:NIMPH", "name": "NIMPH", "kind": "기술", "wrong": ["님프", "Nimph"] },
+    {
+      "id": "concept:침식",
+      "name": "침식",
+      "kind": "현상",
+      "caution": "일반 낱말 '침식'(땅 · 물이 깎임)과 겹친다"
+    },
+    {
+      "id": "concept:로드_급",
+      "name": "로드 급",
+      "kind": "랩쳐 등급",
+      "evidence": [{ "scene": "d_main_01_06_s", "lines": [0] }],
+      "names": [{ "name": "로드급", "how": "표기" }],
+      "note": "'로드'만으로는 찾지 않는다 — 로열 로드 등과 겹친다"
+    },
+    {
+      "id": "concept:타일런트_급",
+      "name": "타일런트 급",
+      "kind": "랩쳐 등급",
+      "names": [
+        { "name": "타일런트급", "how": "표기" },
+        { "name": "타일런트", "how": "약칭" }
+      ],
+      "wrong": ["타이런트"]
+    },
+    {
+      "id": "concept:기억_소거",
+      "name": "기억 소거",
+      "kind": "절차",
+      "evidence": [{ "scene": "d_main_04af_01", "lines": [16] }]
+    },
+    {
+      "id": "concept:사고_전환",
+      "name": "사고 전환",
+      "kind": "현상",
+      "note": "니케의 뇌 정보가 바뀌는 일 — 보통은 정신적 충격, 노화된 뇌에서는 기억 과부하로도 일어난다(R06 char:221)",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [8] }]
+    },
+    { "id": "concept:다크_매터", "name": "다크 매터", "kind": "물질", "wrong": ["다크매터"] },
+    {
+      "id": "concept:언체인드",
+      "name": "언체인드",
+      "kind": "설정",
+      "note": "무엇인지(물질 · 기술 · 계획)는 1회독이 적는다",
+      "evidence": [{ "scene": "d_main_33_02_s", "lines": [41] }]
+    },
+    {
+      "id": "concept:마테리얼_H",
+      "name": "마테리얼 H",
+      "kind": "물질",
+      "note": "R03 ch12에서 더함 — 헬레틱의 파편을 엘리시온이 부르는 이름. 나노머신 덩어리로 니케를 흡수한다",
+      "evidence": [{ "scene": "d_main_12af_03", "lines": [5] }]
+    },
+    {
+      "id": "concept:갓데시움",
+      "name": "갓데시움",
+      "kind": "물질",
+      "note": "R04 ch13에서 더함 — 인피니티 레일의 열차 AZX가 '비중 30%'라고 자랑하는 소재",
+      "evidence": [{ "scene": "d_main_13_05_s", "lines": [21] }]
+    },
+    {
+      "id": "concept:크레디트",
+      "name": "크레디트",
+      "kind": "화폐",
+      "evidence": [{ "scene": "d_main_04af_05", "lines": [5] }]
+    },
+    {
+      "id": "concept:퍼펙트",
+      "name": "퍼펙트",
+      "kind": "식량",
+      "caution": "형용사 '퍼펙트'(퍼펙트 메이드 등 이름 · 감탄)와 겹친다",
+      "note": "방주 먹거리의 약 95%를 만드는 정체 모를 인공 식량 — 퍼펙트 바 · 퍼펙트 스튜 등(R05 char:212에서 더함)",
+      "evidence": [{ "scene": "ep:d_nikke_novel_01", "lines": [13] }]
+    },
+    {
+      "id": "concept:지상_탈환",
+      "name": "지상 탈환",
+      "kind": "목표",
+      "note": "지상을 되찾는 일 전체. N차 지상 탈환전(incident)을 말하는 줄도 이 이름에 걸린다",
+      "evidence": [{ "scene": "d_main_12af_04", "lines": [8] }],
+      "names": [{ "name": "지상탈환", "how": "표기" }]
+    },
+    {
+      "id": "concept:블랙스미스",
+      "name": "블랙스미스",
+      "kind": "랩쳐 종류",
+      "note": "여러 이야기에 나오는 랩쳐 — 한 개체인지 종류인지는 Q-A2-2",
+      "evidence": [
+        { "scene": "d_main_01_07_s", "lines": [41] },
+        { "scene": "event_arcanearchive_06_s", "lines": [70] }
+      ]
+    },
+    {
+      "id": "concept:릴리스의_바디",
+      "name": "릴리스의 바디",
+      "kind": "기술",
+      "note": "니힐리스타가 말한 '퀸의 전신이자 지상에 남은 유일한 미련'(d_main_20_10_e#110-112). 뒤에 니힐리스타는 블러프였다고 한다(d_main_20af_02#78-82). 무엇인지는 CH.20에 안 나온다(R17 ch20에서 더함)",
+      "evidence": [{ "scene": "d_main_20_10_e", "lines": [110] }]
+    },
+    {
+      "id": "concept:스톰_브링어",
+      "name": "스톰 브링어",
+      "kind": "랩쳐 종류",
+      "note": "타일런트 급 랩쳐 코드네임 — 타일런트 중에서도 까다롭다(R15 ch18에서 더함). 한 개체인지 종류인지는 Q-A2-2와 같다",
+      "evidence": [{ "scene": "d_main_18_12_s", "lines": [1] }]
+    },
+    {
+      "id": "concept:프레데터",
+      "name": "프레데터",
+      "kind": "랩쳐 종류",
+      "note": "\"프레데터 3기\" — 여러 개체. fl:absolute에만 나온다",
+      "evidence": [{ "scene": "fl:absolute_18", "lines": [1] }]
+    },
+    {
+      "id": "concept:하베스터",
+      "name": "하베스터",
+      "kind": "랩쳐 종류",
+      "evidence": [{ "scene": "d_main_47_01", "lines": [50] }]
+    },
+    {
+      "id": "concept:이레귤러",
+      "name": "이레귤러",
+      "kind": "존재",
+      "note": "뇌가 파손된 니케를 그대로 두면 될 수 있다는 것(d_main_01_07_e#19). 무엇인지는 CH.01에 안 나온다(R01 ch01에서 더함)",
+      "evidence": [{ "scene": "d_main_01_07_e", "lines": [19] }]
+    },
+    {
+      "id": "concept:콜링_시그널",
+      "name": "콜링 시그널",
+      "kind": "현상",
+      "note": "침식된 니케에게서 감지되는 신호(d_main_01_07_s#36). 무엇인지는 CH.01에 안 나온다(R01 ch01에서 더함)",
+      "evidence": [{ "scene": "d_main_01_07_s", "lines": [36] }]
+    },
+    {
+      "id": "concept:에블라_입자",
+      "name": "에블라 입자",
+      "kind": "물질",
+      "note": "오퍼레이터가 지상을 스캔하기 전에 정화하는 입자(d_main_02_01#11–13). 무엇인지는 CH.02에 안 나온다(R01 ch02에서 더함)",
+      "evidence": [{ "scene": "d_main_02_01", "lines": [11, 13] }]
+    },
+    {
+      "id": "concept:그레이브_디거",
+      "name": "그레이브 디거",
+      "kind": "랩쳐 종류",
+      "note": "타일런트 급, \"땅굴 파는 녀석\"(d_main_02_08_s#29–30). 블랙스미스처럼 종류로 둔다 — Q-A2-2(R01 ch02에서 더함)",
+      "evidence": [{ "scene": "d_main_02_08_s", "lines": [29] }]
+    },
+    {"id": "concept:니케포비아", "name": "니케포비아", "kind": "계층", "note": "니케를 혐오하는 방주 사람들 · 그 단체(ep:d_nikke_rapi_03#60, R07 char:10에서 더함)", "evidence": [{"scene": "ep:d_nikke_rapi_03", "lines": [60]}]},
+    {"id": "concept:포멀", "name": "포멀", "kind": "계층", "caution": "'포멀한'(격식 있는) 같은 형용사와 겹칠 수 있다", "note": "인식 칩이 무료 · 적당한 값인 방주의 일반 시민 — 로열과 짝(ep:d_nikke_anis_03#29-31, R10 char:12에서 더함)", "evidence": [{"scene": "ep:d_nikke_anis_03", "lines": [29, 30]}]},
+    {"id": "concept:아웃로", "name": "아웃로", "kind": "계층", "note": "인식 칩이 없는 이들 — 방주 인구의 10% 안팎, 아우터 림에 산다(ep:d_nikke_anis_03#104-117, R10 char:12에서 더함). 이름표 '아웃로'는 갈래 호칭(speakers.json)", "evidence": [{"scene": "ep:d_nikke_anis_03", "lines": [104]}]},
+    {"id": "concept:인식_칩", "name": "인식 칩", "kind": "제도", "names": [{"name": "인식칩", "how": "표기"}], "note": "방주 시민이 몸(보통 목덜미)에 심는 칩 — 이것이 있어야 시민으로 인정되어 인프라를 쓴다(ep:d_nikke_anis_03#9-16, R10 char:12에서 더함)", "evidence": [{"scene": "ep:d_nikke_anis_03", "lines": [9, 12]}]},
+    {"id": "concept:이터널_스카이", "name": "이터널 스카이", "kind": "설비", "note": "방주 전체를 감싼 거대한 디스플레이에 띄운 하늘(ep:d_nikke_anis_01#78-83, R10 char:12에서 더함)", "evidence": [{"scene": "ep:d_nikke_anis_01", "lines": [81]}]},
+    {
+      "id": "concept:로열",
+      "name": "로열",
+      "kind": "계층",
+      "except": ["로열 로드"],
+      "caution": "계층이 아닌 '로열 ○○'(상품명 등)의 앞머리일 수 있다 — 나머지 줄은 아직 확인하지 않았다",
+      "note": "방주의 상류 계층 — \"소위 [로열]이라고 불리는 계층\"(sub:세르반_00#3, R01에서 더함)",
+      "evidence": [{ "scene": "sub:세르반_00", "lines": [3] }]
+    },
+    {
+      "id": "concept:페어리_테일",
+      "name": "페어리 테일",
+      "kind": "니케 모델",
+      "caution": "동화(fairy tale)라는 일반 뜻으로도 쓰일 수 있다",
+      "note": "토커티브가 라피를 \"페어리 테일 모델. 레드 후드\"라고 부른다(d_main_04_04_e#38). 무엇인지는 CH.04에 안 나온다(R01 ch04에서 더함)",
+      "evidence": [{ "scene": "d_main_04_04_e", "lines": [38] }]
+    },
+    {
+      "id": "concept:마스터_급",
+      "name": "마스터 급",
+      "kind": "랩쳐 등급",
+      "note": "랩칠리언: 랩쳐는 크기에 따라 다섯 등급(R02 sub:랩칠리언_04에서 더함)",
+      "evidence": [{ "scene": "sub:랩칠리언_04", "lines": [20] }]
+    },
+    {
+      "id": "concept:마더_웨일",
+      "name": "마더 웨일",
+      "kind": "랩쳐 종류",
+      "note": "타일런트 급 — 하늘을 헤엄치는 거대한 기계 고래, D가 \"수송선\"이라 부른다(R02 sub:랩칠리언_06에서 더함)",
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": [69] }]
+    },
+    {
+      "id": "concept:크라켄",
+      "name": "크라켄",
+      "kind": "랩쳐 종류",
+      "note": "해상 랩쳐 · 타일런트 급 — '바다의 블랙홀', 100년 넘게 발견 기록 없던 것이 블루워터 아일랜드에서 깨어남(R28 event_seayouagain1에서 더함)",
+      "evidence": [{ "scene": "event_seayouagain1_05_s", "lines": [94] }]
+    },
+    {
+      "id": "concept:울트라",
+      "name": "울트라",
+      "kind": "랩쳐 종류",
+      "caution": "랩쳐가 아닌 \"울트라\"(수식어 등)일 수 있다",
+      "note": "코드 네임 울트라 — 갓데스 스쿼드가 교전한 적(R02 relic:갓데스스쿼드리포트에서 더함)",
+      "evidence": [{ "scene": "relic:갓데스스쿼드리포트_02", "lines": [0] }]
+    },
+    {
+      "id": "concept:특수_별동대",
+      "name": "특수 별동대",
+      "kind": "지위",
+      "names": [{ "name": "특수별동대", "how": "표기" }],
+      "note": "중앙 정부가 지휘관과 휘하 스쿼드에 준 지위 — 스스로 판단해 움직인다(R02 ch07에서 더함)",
+      "evidence": [{ "scene": "d_main_07af_03", "lines": [12] }]
+    },
+    {
+      "id": "concept:꽃의_맹약",
+      "name": "꽃의 맹약",
+      "kind": "약속",
+      "note": "머스탱과 언더월드 퀸(사쿠라 · 목단 · 로산나)의 약속 — 무질서한 어둠에 통제를(R20 event_cherryblossom에서 더함)",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": [132] }]
+    },
+    {
+      "id": "concept:적합자",
+      "name": "적합자",
+      "kind": "존재",
+      "note": "자아가 강해 고유 능력을 발현할 수 있어 페어리 테일 모델 니케가 되는 이 — 그렇지 못한 이는 양산형이 된다(R32 event_redash에서 더함)",
+      "evidence": [{ "scene": "event_redash1_02_s", "lines": [50, 51] }]
+    },
+    {
+      "id": "concept:콜드_슬립",
+      "name": "콜드 슬립",
+      "kind": "기술",
+      "note": "침식 초기(약 3시간)에 한해 침식을 정지시키는 임시방편(R32 event_redash에서 더함)",
+      "evidence": [{ "scene": "event_redash2_01_s", "lines": [52] }]
+    },
+    {
+      "id": "concept:미스트",
+      "name": "미스트",
+      "kind": "물질",
+      "note": "사탕 모양의 위험 약물 — 몽롱한 행복감, 과용하면 고통을 못 느끼고 환각 · 흉폭해짐, 중독성이 강하다(R36 event_dirtybackyard에서 더함)",
+      "evidence": [{ "scene": "event_dirtybackyard_03_s", "lines": [2] }]
+    },
+    {"id": "concept:웨일리", "name": "웨일리", "kind": "존재", "note": "랩칠리언이 타고 다니는 마더 웨일 — 채식으로 외형이 바뀌었다(R37 ch27에서 더함)", "evidence": [{"scene": "d_main_26af_01", "lines": [102]}]},
+    {"id": "concept:컨버터", "name": "컨버터", "kind": "설비", "note": "일렉트릭 쇼크(일레그 · 트로니)가 만든 변전소 장치 — 방주 동력원의 넘치는 전력을 손실시켜 정전을 막는다(R38 event_boomsday에서 더함)", "evidence": [{"scene": "event_boomsday_01_s", "lines": [20]}]},
+    {"id": "concept:방주_동력원", "name": "방주 동력원", "kind": "설비", "note": "방주 전체에 전력을 대는 정체불명의 동력원 — 무한한 에너지를 만들고, 트로니가 역추적해 직접 보았다(R38 event_boomsday에서 더함)", "evidence": [{"scene": "event_boomsday_04_s", "lines": [91]}], "caution": "본문은 '동력원' · '방주의 동력원'으로 나온다 — 일반 낱말 '동력원'과 겹친다"},
+    {"id": "concept:크리스탈_체임버", "name": "크리스탈 체임버", "kind": "존재", "note": "랩쳐와 수정이 융합된 것 — 수정이 기생한 로드 급(움직이는 수정 정원)을 부르는 이름, 수정 지역 지하에 생산 시설(하이브)이 있다(R41 ch30에서 더함)", "evidence": [{"scene": "d_main_30_04", "lines": [32]}]},
+    { "id": "concept:하이퍼_푸드", "name": "하이퍼 푸드", "kind": "식량", "note": "심으면 석 달 만에 거두는 차세대 곡물 씨앗 — 완성 기록 뒤 행방이 끊겼고, 크라운 왕국 고성의 냉동 창고에 보관되어 있다(R42 event_lastkingdom1에서 더함)", "evidence": [{"scene": "event_lastkingdom1_04_s", "lines": [41]}] },
+    { "id": "concept:E2_크리스탈", "name": "E2 크리스탈", "kind": "물질", "note": "수정 지역의 수정을 중앙 정부가 부르는 이름 — 리스크 레벨 SS, 포비스트가 만들었다(R47 ch31에서 더함). 본문은 대개 수정이라 하는데 일반 낱말과 겹쳐 별칭으로 두지 않았다", "evidence": [{"scene": "d_main_31_01_e", "lines": [21]}] },
+    { "id": "concept:로스트_섹터", "name": "로스트 섹터", "kind": "구조물", "note": "하모니 큐브가 만드는 방주 기초 구조물(유리) — 수정 지역에서는 수정을 밀어내는 데 쓴다(R47 ch31에서 더함)", "evidence": [{"scene": "d_main_31_01_e", "lines": [31]}], "names": [{ "name": "방주 기초 구조물", "how": "별칭" }] },
+    { "id": "concept:오로라_블룸", "name": "오로라 블룸", "kind": "식물", "note": "꽃잎이 여러 색인 지상의 희귀종 꽃(마음의 꽃) — 수액이 안 좋은 기억을 잊게 한다고 하며, 보타닉 가든이 처음으로 정원에서 피워 미실리스가 연구한다(R53 event_secretgarden에서 더함)", "evidence": [{"scene": "event_secretgarden_01_s", "lines": [21]}] },
+    { "id": "concept:PROJECT_A.D.", "name": "PROJECT. A.D.", "idNote": "R56 기록이 이 ID로 가리킨다 — 표준명은 원문 표기(마침표 뒤 띄어쓰기)를 따랐다", "kind": "기술", "names": [{ "name": "프로젝트 A.D.", "how": "표기" }], "note": "M.M.R. 심층부에서 [그들]과 총사령관의 승인만으로 비밀리에 진행된 프로젝트 — '인간의 신체 강화를 목표로', 지휘관 = 7호(유일한 성공작) (R56 event_wisdomspring에서 더함)", "evidence": [{"scene": "event_wisdomspring_04_s", "lines": [128]}] },
+    { "id": "concept:은색_액체", "name": "은색 액체", "kind": "물질", "note": "글러트니의 침샘(은색 나무)에서 흘러나오는 액체 — 닿은 인공물을 은색 액체로 바꾸고 자연물은 녹이지 못한다, 다크 매터와 섞으면 알을 만드는 용해액이 된다(R60 ch38에서 더함)", "evidence": [{"scene": "d_main_38_01_e", "lines": [4]}], "names": [{ "name": "은색 물", "how": "별칭" }] },
+    { "id": "concept:D-WAVE", "name": "D-WAVE", "kind": "현상", "note": "다른 세계의 존재를 이쪽 세계로 불러오는 파장 — 랩쳐 게이트 키퍼가 일으키고 불려 온 소환체에게서도 나오며, 게이트 키퍼를 쓰러뜨리면 소환체가 돌아간다(R64 event_ce006에서 더함)", "evidence": [{"scene": "event_ce006_1_01_e", "lines": [33]}] },
+    { "id": "concept:퀸_인자", "name": "퀸 인자", "kind": "현상", "note": "퀸이 될 수 있는 자격 — 퀸이 없을 때 특출난 랩쳐 · 헬레틱에게 발현하고, 커지면 모든 랩쳐 · 헬레틱을 절대복종시킨다. 인자 살해자(리버렐리오)가 발현한 이들을 죽여 왔다(R67 ch40에서 더함)", "evidence": [{"scene": "d_main_40_02", "lines": [15]}] },
+    { "id": "concept:게이트_키퍼", "name": "게이트 키퍼", "kind": "랩쳐 종류", "note": "D-WAVE를 일으켜 다른 세계의 존재를 불러오는 랩쳐 — 쓰러뜨리면 소환체가 원래 세계로 돌아간다(R64 event_ce006에서 더함)", "evidence": [{"scene": "event_ce006_1_01_e", "lines": [71]}] },
+    { "id": "concept:NEO_바이러스", "name": "NEO 바이러스", "kind": "물질", "note": "[구원의 성화]가 D-WAVE로 넘어온 T 바이러스 문서를 토대로 랩쳐의 '성수'를 개량해 만든 바이러스 — 신체 · 재생 능력을 높이지만 지능이 떨어지고 몸이 붕괴한다(R70 fl:reborn_evil에서 더함)", "evidence": [{"scene": "fl:reborn_evil_10", "lines": [34]}] },
+    { "id": "concept:용광로", "name": "용광로", "kind": "설비", "note": "포비스트가 유사 방주에 둔, 최고급 재료만 녹여 넣은 고농축 다크 매터의 검은 구체 — 포비스트가 몸을 담가 회복하고, 퀸을 만드는 데 썼다(R72 ch41에서 더함)", "caution": "일반 낱말 \u0027용광로\u0027와 겹친다(d_main_24_13 니힐리스타의 말 등)", "evidence": [{"scene": "d_main_41_01", "lines": [69]}] },
+    { "id": "concept:스마일_박스", "name": "스마일 박스", "kind": "설정", "note": "T.T.STAR 시절의 \u0027지독한 컨셉\u0027 — 누가 무슨 짓을 하든 웃으며 받아야 하는 방주의 장난감. 테트라 법무팀이 언급을 지우고 금기가 되었다(R72 ch41에서 더함)", "evidence": [{"scene": "d_main_41_af_01", "lines": [96, 115]}] },
+    { "id": "concept:With_Nikke", "name": "With Nikke", "kind": "캠페인", "names": [{ "name": "With Nikke 캠페인", "how": "정식 명칭" }], "note": "프리티의 인기에 힘입어 머스탱(테트라)이 펼친 니케 인권 캠페인 — 전권을 니케 인권 위원회에 맡기고 후원했다(R87 side:pretty_star에서 더함)", "evidence": [{"scene": "side:pretty_star_05", "lines": [14]}] },
+    { "id": "concept:머신_메사이어", "name": "머신 메사이어", "kind": "기술", "note": "오래전의 프로젝트 — V.T.C. 여사제에 따르면 갓데스의 지휘관(엔더슨)의 피에 언체인드가 있는 것이 그 일환이다(R77 fl:ark_guardian에서 더함)", "evidence": [{"scene": "fl:ark_guardian_16", "lines": [23]}] },
+    { "id": "concept:신생_랩쳐", "name": "신생 랩쳐", "kind": "랩쳐 종류", "note": "퀸이 궤도 엘리베이터를 개조한 생산 시설에서 지금의 랩쳐를 재료로 만드는 새 랩쳐 — 니케의 신체 일부를 흉내 내고 코어 없이 응축한 다크 매터를 동력으로 쓴다(R90 ch46에서 더함)", "evidence": [{"scene": "d_main_46_05", "lines": [38]}] },
+    { "id": "concept:아일랜드_이터", "name": "아일랜드 이터", "kind": "랩쳐 종류", "note": "등에 섬을 싣고 해저에 고정되어 있던 거대 랩쳐 — 라피가 랜드 이터로 알아보고 섬을 싣고 있어 아일랜드 이터라 불렀다. 옛 주민이 구속 장치로 묶어 두었다(R95 fl:wave_to_you에서 더함). '랜드 이터'(5줄)는 이 낱말과 겹쳐 별칭으로 두지 않았다", "evidence": [{"scene": "fl:wave_to_you_14", "lines": [7]}] },
+    { "id": "concept:일곱의_조율자", "name": "일곱의 조율자", "kind": "랩쳐 질서", "note": "온리 원에 따르면 퀸이 함께 세상을 만들어 나가야 하는 일곱 — 정체는 나오지 않았다(R97 ch48에서 더함)", "evidence": [{"scene": "d_main_48_05", "lines": [60]}] }
+  ]
+}

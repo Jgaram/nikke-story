@@ -1,0 +1,26 @@
+{
+  "_comment": "주역 명단 예시 — 형식 · 규칙은 docs/annotations.md \"주역 명단\". 실제 명단은 annotations/leads.json(초안 tools/views/leads.mjs)",
+  "session": "X3f-1",
+  "by": "claude",
+  "date": "2026-10-09",
+  "leads": [
+    {
+      "id": "Z1",
+      "person": "person:라피",
+      "from": "ch00",
+      "reason": "ch00부터 걸린 챕터 48/49 — 카운터스, 49챕터 내내 중심",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1" }]
+    },
+    {
+      "id": "Z2",
+      "person": "person:마리안",
+      "from": "ch00",
+      "arcs": ["ch00-ch01", "ch13-ch14"],
+      "reason": "말한 챕터는 드물어도 메인의 첫 수수께끼 — 예시라 아크를 둔다",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

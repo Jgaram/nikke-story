@@ -1,0 +1,82 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M90\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_BunnyX777",
+  "session": "M90",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1604",
+      "act": "암시",
+      "points": ["F947", "J48"],
+      "text": "쌍둥이가 손을 잡고 '행운 충전'을 하자 지휘관이 알 수 없는 찌릿함을 느끼고, 다음 날 럭키 777로 우승한다 — 스킨십으로 지휘관의 운이 좋아지는 블랑의 행운(F947)을 미리 그린다",
+      "about": ["person:블랑", "person:누아르"],
+      "evidence": [{ "scene": "event_BunnyX777_intermission_01", "lines": ["50-57", "73-74"] }],
+      "reason": "#52 '다이렉트 행운 충전' · #57 · #74 '알 수 없는 찌릿함'. char:270 blanc_03의 캡슐 뽑기 실험(F947)과 같은 모티프 — 같은 일이라는 확인은 없다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2028",
+      "person": "person:누아르",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:블랑"],
+      "text": "동생 블랑을 '제 보물'이라 부르고, 블랑을 닮은 토끼 인형을 오래 아껴 온 언니",
+      "evidence": [{ "scene": "event_BunnyX777_04_e", "lines": ["44-49", 89, "95-97"] }],
+      "reason": "#47 '제 보물의 손을 붙잡고' · #89 '제가 아끼는 블랑을 닮은 토끼 인형'. 쌍둥이 관계는 char:270 · 271의 축이라 기준을 세운다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2029",
+      "person": "person:블랑",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:누아르"],
+      "text": "언니가 싫다면 자기도 안 하고, 언니가 괜찮다면 괜찮다며 늘 언니 뜻에 맞추는 동생",
+      "evidence": [{ "scene": "event_BunnyX777_01_s", "lines": [13, 26] }],
+      "reason": "#26 '언니가 싫다면 저도 안 할 거예요'(06_e#55 '언니가 괜찮다면 저도'도 같다). 쌍둥이 관계는 char:270 · 271의 축.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2030",
+      "person": "person:누아르",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'점장님'이라 부르며 도움을 청하는",
+      "after": "모르는 사람이 아닌 점장님이라 마음 편하다며, 상과 별개로 '진심이 담긴 선물'인 행운의 키스를 건네는",
+      "trigger": [{ "scene": "event_BunnyX777_05_e", "lines": ["39-40"] }],
+      "evidence": [{ "scene": "event_BunnyX777_06_e", "lines": ["13-15", "46-54", 65, "92-95"] }],
+      "reason": "D339에서. #14 '모르는 사람이 아닌 점장님에게 마음 편하게' · #50 '진심이 담긴 선물' · #65 손을 잡아도 되냐.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    },
+    {
+      "id": "D2031",
+      "person": "person:블랑",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "스스럼없이 부탁하고 칭찬을 조르는",
+      "after": "오늘의 행운은 온전히 점장님이 만든 것이라며 우승 상과 별개로 행운의 키스를 청하는",
+      "trigger": [{ "scene": "event_BunnyX777_05_e", "lines": ["39-40"] }],
+      "evidence": [{ "scene": "event_BunnyX777_06_e", "lines": ["8-12", "44-56", "83-86", 104] }],
+      "reason": "D340에서. #12 '온전히 점장님이 만들어낸 것' · #49 '그건 우승자에게 주어진 상일 뿐' · #56 거절하면 '조금 아쉬울 것 같아요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M90" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 블랑 · 누아르 성격(D227 · D228) · → 지휘관(D340 · D339), 루주 성격 · → 지휘관(D820–D822)은 앞서 있어 다시 세우지 않았다 — 루주의 동전 · 하루 운세(01_e · 03_e#82-88)는 D820 · F945 그대로. '음침한 남자'(사기꾼)는 이 단위에만 나오는 단역이라 적지 않았다(F946). 바이퍼의 '요새 루피랑 좋은 거래'(03_s#44)는 얕아 관계로 적지 않았다. `???` 없음. 작중 시점 실마리 없음(코인 러시 리뉴얼은 챕터를 좁히지 못한다)."
+}

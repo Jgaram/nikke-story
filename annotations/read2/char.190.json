@@ -1,0 +1,77 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M81\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:190",
+  "session": "M81",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I629",
+      "target": "person:루드밀라",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_01", "lines": ["4-5", 7, "9-10", 14] }],
+      "reason": "01#7 '그대는 볼 때마다 이런 모습' = #17 루드밀라의 같은 말, #16 '이 몸의 집'. 눈 속에서 구해 데려간 목소리",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I630",
+      "target": "person:앨리스",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_04", "lines": [14] }],
+      "reason": "04#14 '여왕님…' 바로 뒤 #15 앨리스가 '여왕님!' 하고 깨운다 — 루드밀라를 여왕님이라 부르는 것은 앨리스",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1800",
+      "person": "person:루드밀라",
+      "aspect": "기억",
+      "act": "기준",
+      "text": "니케가 된 지 너무 오래되어 가문을 소중히 여겼는지조차 기억하지 못하면서도, 가문의 편지를 과거의 자신을 잇는 마지막 끈이라 놓지 못하는",
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_03", "lines": ["108-120"] }],
+      "points": ["F512"],
+      "reason": "03#112-116 '너무 오래되었기에 … 기억나지 않아' · #119-120 '마지막 남은 이 과거의 끈'. 루드밀라의 기억 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1801",
+      "person": "person:루드밀라",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "과거의 자신을 잇는 끈이라 가문의 편지를 놓지 못하던",
+      "after": "인간 루드밀라의 수술 서약서에서 좋아하는 차가 그대로인 것을 보고 '변한 건 아무것도 없었다'며 끈을 끊는 답장을 쓰는",
+      "trigger": [{ "scene": "ep:d_nikke_ludmilla_04", "lines": ["73-87"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_04", "lines": ["88-94", "108-109"] }],
+      "points": ["F512", "F514"],
+      "reason": "04#91 '의외로 변한 건 아무것도 없었군' · #109 '답장을 써 주지'. 05#8 엔더슨 '끊어낼 건 끊어내야지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1802",
+      "person": "person:루드밀라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'진짜가 되려면 아직 멀었다'며 답장을 거절하던 시종",
+      "after": "좋아하는 차를 귀하게 가져온 지휘관을 '진짜 시종'이라 인정하고 '이 몸이 졌다'는",
+      "trigger": [{ "scene": "ep:d_nikke_ludmilla_04", "lines": ["62-87"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_04", "lines": ["96-109"] }],
+      "points": ["F514"],
+      "reason": "02#22 '진짜가 되려면 아직 멀었군' → 04#105-108 '너는 진짜다 … 이 몸이 졌다'. 관계 기준 D57(ch05) 다음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": []
+}

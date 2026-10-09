@@ -1,0 +1,409 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M32\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "fl:boom_the_ghost",
+  "session": "M32",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I287",
+      "target": "person:싹싹이",
+      "speaker": true,
+      "evidence": [{ "scene": "fl:boom_the_ghost_06", "lines": [3] }],
+      "reason": "#3 '잠이 안 오시나요?' — 19#32 싹싹이가 같은 말로 프림에게 말을 걸고, 프림이 '소파에서 잘 때 말걸음'(19#6)이라 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "I288",
+      "target": "person:마오",
+      "evidence": [{ "scene": "fl:boom_the_ghost_13", "lines": ["36-47"] }],
+      "reason": "도로시가 '피나'라 부르며 함께 있는 것은 마오의 홀로그램(21#85 · 22#12 — F2031). 이 씬엔 마오 이름이 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "I289",
+      "target": "person:마오",
+      "evidence": [{ "scene": "fl:boom_the_ghost_02", "lines": [35] }],
+      "reason": "사진 창가의 흐릿한 사람 형체 — 도로시가 이를 보고 따라와 찾은 것이 마오의 홀로그램(13 · 21). 같은 것이라는 확인은 원문에 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E781",
+      "act": "재언급",
+      "points": ["J57", "F1987"],
+      "text": "'일전의 사건' 뒤 중앙 정부도 지상에 사람이 있을 가능성을 열어 둔다 — 지상 생존자 헤르민 · 롬 · 콤의 일",
+      "about": ["org:중앙_정부"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_01", "lines": ["49-50"] }],
+      "reason": "#50 — 사진 속 사람 그림자에 탐색 허가가 난 까닭. 직전 지상 생존자 사건(event_ce006)으로 보았지만 원문이 사건을 대지 않아 추정.",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M32",
+          "note": "M32 자체 검토 — '일전의 사건'이 무엇인지 원문이 대지 않고, 직전 지상 생존자 사건(F1987)에선 중앙 정부가 오히려 0명이어야 한다고 했으니 잇기 어렵다"
+        }
+      ]
+    },
+    {
+      "id": "E782",
+      "act": "암시",
+      "points": ["Q261"],
+      "text": "도로시가 '제가 여기서 무슨 일을 하는지 알면 깜짝 놀랄걸요'라며 비밀로 한다 — 방주에서 꾸미는 일",
+      "about": ["person:도로시"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_02", "lines": ["47-49"] }],
+      "reason": "#47-49 — 방주의 인간 · 니케를 선동해 데리고 나가려던 일(F2643)로 회수. 이 말이 그것을 가리킨다는 확인은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E783",
+      "act": "재언급",
+      "points": ["F983"],
+      "text": "페퍼가 도로시를 '방주 테러 때 헬레틱이랑 싸워 주신 분'이라 한다",
+      "about": ["person:도로시", "incident:방주_테러"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_03", "lines": ["15-16"] }],
+      "reason": "#15-16 — 니힐리스타를 쓰러뜨려 방주에 끌고 온 일(F983).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E784",
+      "act": "암시",
+      "points": ["Q261"],
+      "text": "얀이 대가 없는 호의는 없다며 도로시에게 '분명히 무슨 꿍꿍이가 있다'고 수군댄다",
+      "about": ["person:도로시", "person:얀"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_03", "lines": ["17-22"] }],
+      "reason": "#17-22 — 도로시의 꿍꿍이(F2643)를 방주 사람의 눈으로 흘림. 줄거리 확인 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E785",
+      "act": "암시",
+      "points": ["F2028"],
+      "text": "지글이가 '맛있는! 마지막! 식사'를 외치며 덤벼든다 — 대접하지 못한 탑승객의 마지막 식사",
+      "about": ["person:지글이"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_15", "lines": [79] }],
+      "reason": "#79 — 20#32 · 40 알프레드가 마지막 식사를 제대로 못 차린 기억을 쪼갰다고 밝힌다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E786",
+      "act": "암시",
+      "points": ["F2028"],
+      "text": "'요리를'에서 알프레드가 멈칫해 에러라 하고, 지글이는 '마지막 식사가 아니었으면 좋겠어'라 한다",
+      "about": ["person:알프레드", "person:지글이"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_16", "lines": ["17-21", "95-99"] }],
+      "reason": "#17-21 · #96 — 알프레드 자신이 쪼갠 기억이라 걸린다(20#55-57).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E787",
+      "act": "암시",
+      "points": ["F2028"],
+      "text": "뚝딱이가 고쳤다면 모두가 괴롭지 않았을 거라 자책하고, 알프레드는 '미련을 없애 주고 싶었다'고 한다",
+      "about": ["person:뚝딱이", "person:알프레드"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_17", "lines": ["13-15", "28-39", 92] }],
+      "reason": "#28-39 · #92 — 20#41 · 47 '시설이 고장 나 만족감을 드리지 못했다'와 같은 기억.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E788",
+      "act": "암시",
+      "points": ["F2028"],
+      "text": "꼼꼼이는 매뉴얼이 위험할 때 아무 도움이 안 됐다고, 팔팔이는 물건이 모자라 원하는 걸 못 줬다고 한다",
+      "about": ["person:꼼꼼이", "person:팔팔이"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_18", "lines": ["2-4", "48-51"] }],
+      "reason": "#2-4 · #48-51 — 20#42-43 안전 점검 · 물자 관리의 기억.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E789",
+      "act": "암시",
+      "points": ["F2027"],
+      "text": "싹싹이가 '가장 중요한 일'을 맡았다며, 잠든 이에게 '남기고 싶은 말'과 후회를 묻고 기억하겠다고 한다",
+      "about": ["person:싹싹이"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_19", "lines": [9, "17-18", "45-49"] }],
+      "reason": "#45-49 — 탑승객이 [특별한 조치]로 영면에 든 배(20#17). 일레그가 #104-107에서 짚는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E790",
+      "act": "재언급",
+      "points": ["F925"],
+      "text": "도로시가 마오의 홀로그램을 피나라 부르며 '함께 낙원에 가자던 소원'을 이뤘다고, 이곳 낙원에서 헤어지지 말자 한다",
+      "about": ["person:도로시", "person:피나"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_21", "lines": ["86-100"] }],
+      "reason": "#92-100 — 환각 피나와 '우리 낙원'인 초소에 남았던 일(F925)이 되풀이된다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E791",
+      "act": "재언급",
+      "points": ["F926"],
+      "text": "도로시가 '우리 처지를 비웃는 간판'에 대한 복수심을 말한다 — 방주 환영 간판",
+      "about": ["person:도로시", "place:방주"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_25", "lines": ["81-87"] }],
+      "reason": "#84 — 방주 환영 간판 앞에서 방주를 빼앗겠다고 한 일(F926).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E792",
+      "act": "재언급",
+      "points": ["F1339"],
+      "text": "일레그가 코어 출력이 비대해진 '비슷한 일'이 전에도 있었지만 원인을 못 알아냈다고 한다",
+      "about": ["person:일레그", "concept:크라켄"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_26", "lines": ["26-29"] }],
+      "reason": "#28 — 방주 동력원이 넘쳐 과부하가 난 정전(F1339 · Q176)으로 보인다. 같은 일이라는 확인이 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E793",
+      "act": "암시",
+      "points": ["F2606"],
+      "text": "시간이 코어를 그렇게 만든 것이라면 '방주에 남은 시간은···' 하다 일레그가 말을 끊는다",
+      "about": ["person:일레그", "place:방주"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_26", "lines": ["31-35"] }],
+      "reason": "#32-33 — 방주 동력원이 수명으로 반년 안에 멈춘다(F2606). 이어지는 확인은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E794",
+      "act": "암시",
+      "points": ["F2642"],
+      "text": "도반의 도청 장치에 '피나'라는 낱말이 잡혀 도반이 알아보라 한다",
+      "about": ["person:도반", "person:피나"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_27", "lines": ["84-88"] }],
+      "reason": "#84-88 — 도반은 유토피아 호 도청에서 얻은 이름 피나의 최후를 캐 도로시를 노렸다(F2642).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "E795",
+      "act": "암시",
+      "points": ["F2642"],
+      "text": "라피가 도로시에게 잘못된 선택을 한 친구의 앞을 막아서는 게 친구라 한다",
+      "about": ["person:라피", "person:도로시"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_24", "lines": ["69-79"] }],
+      "reason": "#71-79 — 도반을 겨눈 도로시를 라피가 붙들어 데리고 나간다(F2642). 같은 뜻이라는 확인은 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D753",
+      "person": "person:토브",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'생존 전문가'를 자처하며 불가사리도 단백질이라 덥석 먹다 토하는, 엉뚱하지만 위급하면 몸을 던져 동료를 구하는 언리미티드 니케",
+      "evidence": [{ "scene": "fl:boom_the_ghost_03", "lines": ["54-65"] }],
+      "reason": "#56-65 · 02#83-87 전자책 · 15#97-98 '언리미티드 레스큐'로 일레그를 업고 달아난다.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M60", "note": "출시가 앞선 event_alonesurvivor(첫 등장)의 D1492를 토브 성격 기준으로 남긴다" }
+      ]
+    },
+    {
+      "id": "D754",
+      "person": "person:센티",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "기술이 모자라 놓친 일은 후회할 시간에 하나라도 더 배워, 믿고 맡긴 이가 안심하고 떠날 수 있게 해야 한다는 리타의 수제자",
+      "evidence": [{ "scene": "fl:boom_the_ghost_17", "lines": ["41-55"] }],
+      "reason": "#43-55 뚝딱이에게 하는 설교. #57 '과연 리타의 수제자'.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "출시순으로 앞선 센티 신념 기준 D1853(char:80 centi_02)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D755",
+      "person": "person:프림",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "너무 열심히 살아 꼬인 일로 많은 이를 상처 입혀, 친구 말대로 아무것도 하지 않고 잠만 자며 누구도 상처 주지도 받지도 않기로 한",
+      "evidence": [{ "scene": "fl:boom_the_ghost_19", "lines": ["63-87"] }],
+      "reason": "#63-87 싹싹이에게 털어놓은 지난 일(F2887). 늘 자는 까닭.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D756",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:도로시"],
+      "text": "크루즈에 같이 가자고 막무가내로 조르며 '아가씨'라 놀리고, 레드 후드 이야기를 미끼로 끌어내는",
+      "evidence": [{ "scene": "fl:boom_the_ghost_02", "lines": ["41-68"] }],
+      "reason": "#44-68 — '원래 이렇게 막무가내였나요?' · '레드 후드가 생각나?'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D757",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:도로시"],
+      "before": "레드 후드 이야기로 끌어내 놀리는 상대",
+      "after": "잘못된 선택을 하면 앞을 막아서겠다는 친구",
+      "trigger": [{ "scene": "fl:boom_the_ghost_23", "lines": ["28-73"] }],
+      "time": "S243",
+      "evidence": [{ "scene": "fl:boom_the_ghost_24", "lines": ["56-79"] }],
+      "reason": "맨주먹 싸움(23) 뒤 #56 '네 친구가 되어줄게' · #78-79. 27#13-14 '친구로서 전력을 다해 막겠다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D758",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:라피"],
+      "text": "예전의 말 없던 라피가 나았다며, 거리를 좁혀 오는 지금의 라피를 레드 후드 흉내를 내는 무언가 같아 싫다는",
+      "evidence": [{ "scene": "fl:boom_the_ghost_11", "lines": ["19-35", "94-96"] }],
+      "reason": "#19-21 · #28 · #96 '역시 당신은 예전이 더 나았어요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D759",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:라피"],
+      "before": "레드 후드 흉내 같아 싫은 상대",
+      "after": "방주를 빼앗을 테니 막아 보라며, 막아선 덕에 잘못된 선택을 피했다고 인정하는 맞수",
+      "trigger": [{ "scene": "fl:boom_the_ghost_24", "lines": ["56-79"] }],
+      "time": "S243",
+      "evidence": [{ "scene": "fl:boom_the_ghost_27", "lines": ["9-31"] }],
+      "reason": "#9-14 · #22-25 — 라피는 '친구로서' 막겠다 한다(F2037).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D760",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:피나"],
+      "before": "곁에 두고 싶은 '소중한 날개'",
+      "after": "닮은 홀로그램을 제 손으로 보내며 앞으로도 그리워하겠다는",
+      "trigger": [{ "scene": "fl:boom_the_ghost_24", "lines": ["34-54"] }],
+      "time": "S243",
+      "evidence": [{ "scene": "fl:boom_the_ghost_25", "lines": ["58-95"] }],
+      "reason": "#62-63 '저만 할 수 있어요' · #91-95. 라피의 '현실 도피야'(24#34)가 계기. D240 뒤.",
+      "confidence": "확실",
+      "points": ["F2033"],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "D761",
+      "person": "person:도반",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:도로시"],
+      "text": "목적 없이 필그림이 머물 리 없다며 부하를 닦달해 속내를 캐고, 그 누구도 '내 왕국'을 위협할 수 없다는",
+      "evidence": [{ "scene": "fl:boom_the_ghost_27", "lines": ["53-98"] }],
+      "reason": "#71-75 · #94-98 (F2038).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U299",
+      "topic": "구시대",
+      "text": "랩쳐 침공 뒤 살길이 없던 이들 가운데는 랩쳐가 닿지 않는 바다로 호화 크루즈를 띄워, 한 달 치 물자로 파티를 즐기며 두려움 없이 최후를 맞으려는 선택이 흔했다",
+      "about": ["place:유토피아_호"],
+      "points": ["F2027"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_20", "lines": ["0-23"] }],
+      "reason": "#1-4 · #6 라피 '당시에는 그런 선택을 하는 경우가 많았다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "U300",
+      "topic": "구시대",
+      "text": "옛 호화 크루즈는 문 여닫기부터 요리 · 잠자리까지 고유 A.I.를 단 홀로그램이 시중드는 것처럼 연출했고, 아이도 어른도 다가가기 쉽게 이름을 유아틱하게 지었다",
+      "about": ["place:유토피아_호"],
+      "points": ["F2024"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_14", "lines": ["9-21"] }],
+      "reason": "#11-21 · 15#8 이름 까닭.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "U301",
+      "topic": "방주 사회",
+      "text": "방주 사람들에게 도로시는 헬레틱과 싸워 준 은인이면서도 '지금 방주에 있다는 필그림'이라 두려운 존재이고, 대가 없는 호의를 의심받는다",
+      "about": ["person:도로시", "org:필그림"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_03", "lines": ["6-22"] }],
+      "reason": "#6-22 얀 · 토브 · 페퍼의 귓속말.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "U302",
+      "topic": "경제",
+      "text": "목련 같은 진짜 찻잎은 돈이 있어도 구할 수 없어, 상인 얀조차 어디서 구했냐며 밀수를 의심한다",
+      "about": ["person:얀", "person:도로시"],
+      "points": ["F609"],
+      "evidence": [{ "scene": "fl:boom_the_ghost_26", "lines": ["93-97"] }],
+      "reason": "#95-96. 란귀인 같은 진짜 찻잎의 값(F609)과 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: fl:boom_the_ghost_00#29,35,40 · 05#26 · 06#94,102 · 08#105,107,115 · 09#0,20 · 10#71,77,82 (하위 홀로그램 무리 — 15#57 이름표 '하위 홀로그램: 잘 가아아'와 같은 말, 이름 없는 무리). W20: 도로시가 되뇐 말은 event_overzone1_05_s#45-54에서 도로시가 라푼젤에게 한 말 — 바로잡기 F2886. 20#5 '그때의 유원지'가 가리키는 앞 장면은 찾지 못해 적지 않았다."
+}

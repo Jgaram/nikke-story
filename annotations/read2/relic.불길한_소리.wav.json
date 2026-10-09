@@ -1,0 +1,98 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M52\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:불길한_소리.wav",
+  "session": "M52",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I481",
+      "target": "person:나유타",
+      "evidence": [{ "scene": "relic:불길한_소리.wav_01", "lines": [7] }],
+      "reason": "'궤도 엘리베이터에 잠입했던 수많은 분신들' — 나유타의 분신들(F2288). 기록자도 그 분신 하나다(F2849).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I482",
+      "target": "person:나유타",
+      "evidence": [{ "scene": "relic:불길한_소리.wav_03", "lines": [4, 6] }],
+      "reason": "'본체' · '본체에게서 집결 신호' — 분신의 본체 나유타(F2288).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I483",
+      "target": "concept:다크_매터",
+      "evidence": [{ "scene": "relic:불길한_소리.wav_02", "lines": ["2-4"] }],
+      "reason": "'검은 액체 … 암흑물질' — 궤도 엘리베이터로 모이는 다크 매터(F2822).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "I484",
+      "target": "concept:다크_매터",
+      "evidence": [{ "scene": "relic:불길한_소리.wav_03", "lines": [1] }],
+      "reason": "궤도 엘리베이터를 뒤덮은 '암흑물질'(F2822).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1244",
+      "act": "재언급",
+      "points": ["F2803"],
+      "text": "인간의 신체 일부를 모방한, 처음 보는 랩쳐들",
+      "about": ["concept:신생_랩쳐"],
+      "evidence": [{ "scene": "relic:불길한_소리.wav_01", "lines": ["0-3"] }],
+      "reason": "궤도 엘리베이터 부근에서 만들어지는 신생 랩쳐(F2803)로 읽힌다. 같은 것이라는 확인이 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "E1245",
+      "act": "재언급",
+      "points": ["F2632"],
+      "text": "궤도 엘리베이터에 잠입했던 수많은 분신들의 소식이 끊어졌다",
+      "about": ["person:나유타", "person:미러"],
+      "evidence": [{ "scene": "relic:불길한_소리.wav_01", "lines": ["7-8"] }],
+      "reason": "미러가 잡아 침식시킨 분신 수십(F2632). 같은 분신들이라는 확인이 없어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "E1246",
+      "act": "재언급",
+      "points": ["F2822"],
+      "text": "궤도 엘리베이터를 암흑물질이 뒤덮어 새로운 무언가를 만들어내려는 것 같다",
+      "about": ["place:궤도_엘리베이터", "concept:다크_매터"],
+      "evidence": [{ "scene": "relic:불길한_소리.wav_03", "lines": ["1-2"] }],
+      "reason": "ch48 01 레비아탄이 본 그대로(F2822) — 그 뒤 거대한 퀸이 된다(F2848).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    },
+    {
+      "id": "E1247",
+      "act": "재언급",
+      "points": ["F2843"],
+      "text": "본체의 집결 신호가 궤도 엘리베이터 방향에서 온다 — '예감이 좋지 않소'",
+      "about": ["person:나유타"],
+      "evidence": [{ "scene": "relic:불길한_소리.wav_03", "lines": ["6-9"] }],
+      "reason": "미러의 꼭두각시가 된 나유타가 분신을 불러 모았고(D1154), ch48 07 애니힐리오에서 침식된 승려 42명이 쏟아진다(F2843). 이 분신이 그중 하나인지는 원문이 말하지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "미상 이름표 없음(문서). 기록자 = 나유타의 분신 — '~소' 말투 · 분신 · 본체의 집결 신호로 1회독 추정 F2849를 확실로 바꿈. Q370은 원문이 더 말하지 않아 열린 채."
+}

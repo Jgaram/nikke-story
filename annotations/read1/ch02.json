@@ -1,0 +1,375 @@
+{
+  "unit": "ch02",
+  "session": "R01",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "카운터스와 네온이 바닷가 도시의 발전소를 조사하러 지상에 간다. 도시는 5년 전 봉쇄되었고, 그때 랩쳐가 못 나오게 자가 부상 열차 선로에 고압 전류를 흘려 두었다(d_main_02_01#23–24). 커넥팅 디바이스로 전력을 끊고 들어간 발전소는 얼마 전부터 이유 없이 돌고 있고, 공식적으로 지상에 남은 사람은 0명이다(d_main_02_05#5–7). 지휘관의 제안으로 배수로로 잠입하자 랩쳐들이 발전소 기계를 직접 조작하고 있다 — 처음 보는 일이다(d_main_02_08_s#2–10). 들켜서 라피가 빔에 맞아 머리가 떨어지고, 타일런트 급 그레이브 디거가 나타나 일행은 광차로 달아난다. 지휘관이 라피의 머리를 안고 뛴다(d_main_02_08_e#10–17). 교전 여파로 발전소가 연쇄 폭발해 방주 두 달치 자원이 날아가, 엔더슨은 지휘관과 스쿼드를 전초 기지로 추방한다(d_main_02af_01#0–11). 엔더슨 · 잉그리드는 차원이 다른 랩쳐들을 따돌린 지휘관에게 '뭔가 있다'며 중앙 정부의 눈을 피해 조사하려고 전초 기지로 보냈다고 말하고, 기계를 조작하는 랩쳐가 진화하는 것 같다고 걱정한다(#22–34). 전초 기지는 황무지다. 바디를 재정비한 라피가 돌아와 니케는 불멸의 병기일 뿐이니 복잡한 표정을 짓지 말라고 한다(d_main_02af_04#45–47). 다음 날 미실리스 CEO 슈엔이 워드리스(유니 · 미하라)를 데리고 와 마리안 이야기를 꺼낸 지휘관을 폭행하고, 미하라의 감각 교환으로 카운터스에게 고통을 준 뒤 워드리스와 함께 이틀 안에 어떤 랩쳐를 포획해 오라고 명한다(d_main_02af_07). 지휘관이 멱살을 잡고 사과를 요구하다 쓰러진다.",
+  "scenes": [
+    { "scene": "d_main_02_01", "text": "바닷가 도시 도착 — 에블라 입자 정화 후 스캔, 선로의 고압 전류는 5년 전 도시 봉쇄 때 흘린 것" },
+    { "scene": "d_main_02_02", "text": "지상의 불문율('아.' 금지), 네온의 고무장화 제안" },
+    { "scene": "d_main_02_03", "text": "제어 센터에서 커넥팅 디바이스로 선로 전력을 끊는다" },
+    { "scene": "d_main_02_04", "text": "네온의 화력 예찬" },
+    { "scene": "d_main_02_05", "text": "발전소 앞 — 이유 모를 가동, 공식 지상 인구 0명, 방주 두 달치 전력. 아니스의 반발, 지휘관이 잠입을 제안" },
+    { "scene": "d_main_02_06", "text": "배수로 입구를 네온이 화력으로 뚫고 지휘관을 '스승님'으로 부른다" },
+    { "scene": "d_main_02_07", "text": "배수로 잠입 — 네온은 보통 지휘관이 니케를 병기로 본다고 말한다" },
+    { "scene": "d_main_02_08_s", "text": "랩쳐가 발전소 기계를 조작하는 것을 목격, 라피가 빔에 맞아 머리가 떨어지고 그레이브 디거가 나타난다" },
+    { "scene": "d_main_02_08_e", "text": "광차로 탈출 — 지휘관이 라피의 머리를 안고 뛴다" },
+    { "scene": "d_main_02af_01", "text": "발전소 대파로 전초 기지 추방. 엔더슨 · 잉그리드는 지휘관을 조사하려 보냈다고 하고 랩쳐의 진화를 걱정한다" },
+    { "scene": "d_main_02af_02", "text": "황무지 같은 전초 기지 도착" },
+    { "scene": "d_main_02af_03", "text": "열악한 숙소(유통기한 임박 식량, 물 안 나오는 샤워실)" },
+    { "scene": "d_main_02af_04", "text": "넓은 지휘관실. 바디를 재정비한 라피가 돌아와 니케는 병기라고 말한다. 엔더슨의 메시지는 읽지 않고 잔다" },
+    { "scene": "d_main_02af_07", "text": "미실리스 CEO 슈엔이 워드리스를 데리고 와 카운터스를 괴롭히고 이틀 안에 랩쳐 포획을 명한다" }
+  ],
+  "facts": [
+    {
+      "id": "F30",
+      "text": "발전소가 있는 바닷가 도시는 5년 전 봉쇄되었고, 그때 랩쳐가 밖으로 못 나오게 자가 부상 열차 선로에 일부러 고압 전류를 흘렸다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "d_main_02_01", "lines": [14, 15, "23-25"] }],
+      "reason": "시프티가 히스토리를 검색해 말한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F31",
+      "text": "공식적으로 지상에 남은 사람은 0명이다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "d_main_02_05", "lines": [7] }],
+      "reason": "시프티의 말. 바로 '예외는 있는 법'이라고 덧붙인다(#8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F32",
+      "text": "그 발전소는 얼마 전부터 이유를 알 수 없이 가동되고 있었고, 조사하려는 시도는 큰 규모로도 번번이 랩쳐에게 막혔다",
+      "evidence": [{ "scene": "d_main_02_05", "lines": [5, "8-11"] }],
+      "reason": "시프티 · 아니스의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F33",
+      "text": "그 발전소는 방주의 모든 시설을 두 달 더 가동할 수 있는 규모다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "d_main_02_05", "lines": [13] }],
+      "reason": "시프티의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F34",
+      "text": "발전소를 장악한 랩쳐들은 기계를 직접 조작하고 있었다 — 지금까지 없던 경우다",
+      "about": ["concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_02_08_s", "lines": ["2-10"] }],
+      "reason": "지휘관 · 라피가 조작하는 것을 보고(#4–7), 시프티가 '지금까진… 없었습니다'(#10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F35",
+      "text": "라피는 발전소에서 빔에 맞아 머리가 떨어졌고, 일행은 라피의 머리를 들고 탈출했다",
+      "about": ["person:라피"],
+      "evidence": [{ "scene": "d_main_02_08_s", "lines": ["22-25"] }, { "scene": "d_main_02_08_e", "lines": [10, "14-17"] }],
+      "reason": "지휘관 독백(빔에 맞아 툭 떨어져 발밑으로 굴러온 라피와 눈이 마주침), 아니스 '머리만 들고 가면 어떻게든 된다고!', 지휘관이 들고 간 라피가 '생각보다 무거웠다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F36",
+      "text": "발전소에 타일런트 급 그레이브 디거('땅굴 파는 녀석')가 나타났다",
+      "about": ["concept:그레이브_디거", "concept:타일런트_급"],
+      "evidence": [{ "scene": "d_main_02_08_s", "lines": [29, 30] }],
+      "reason": "시프티가 식별 신호로 확정하고 아니스가 '그 땅굴 파는 녀석'이라고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F37",
+      "text": "교전 여파로 발전소가 연쇄 폭발해 대파되었고, 방주를 두 달 먹여 살릴 자원이 날아갔다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["2-7"] }],
+      "reason": "엔더슨의 문책",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F38",
+      "text": "그 책임으로 지휘관과 휘하 스쿼드는 방주에서 추방되어 전초 기지로 배속되었다",
+      "about": ["person:지휘관", "org:카운터스", "place:전초기지"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": [0, 11, 12] }],
+      "reason": "엔더슨 '자네는 추방일세', '[전초 기지]로 배속될걸세'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F39",
+      "text": "발전소 안의 랩쳐들은 스펙이 기존과 차원이 달랐는데, 카운터스는 그들을 따돌리고 탈출했다",
+      "about": ["org:카운터스", "concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["22-24"] }],
+      "reason": "잉그리드의 교전 데이터 분석과 엔더슨의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F40",
+      "text": "엔더슨 · 잉그리드는 지휘관(카운터스)에게 '뭔가 있다'고 보고, 중앙 정부의 눈을 피해 조사하려고 전초 기지로 보냈다",
+      "about": ["person:엔더슨", "person:잉그리드", "person:지휘관", "place:전초기지", "org:중앙_정부"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["25-27"] }],
+      "reason": "잉그리드 '뭔가 있는 게 분명해 … 조사해볼 가치는 차고 넘치지', 엔더슨 '그러자고 전초 기지로 올린 것 아닌가. 위대하신 중앙 정부의 눈을 피하기에'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F41",
+      "text": "라피는 머리만 회수된 뒤 바디를 재정비해 복귀했다 — 라피 말로 니케는 큰 힘과 불멸을 가둬 둔 병기라 대파된 니케가 다시 나타나는 건 흔한 일이다",
+      "about": ["person:라피", "concept:니케"],
+      "evidence": [{ "scene": "d_main_02af_04", "lines": [23, "45-47"] }, { "scene": "d_main_02af_01", "lines": [17] }],
+      "reason": "라피 '바디 재정비 후 복귀했습니다'(#23)와 니케 설명(#45–47). 엔더슨은 라피가 수리 중이라고 했다(d_main_02af_01#17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F42",
+      "text": "슈엔은 니케 제작 3대 회사 중 하나인 미실리스 인더스트리의 CEO다",
+      "about": ["person:슈엔", "org:미실리스", "org:3대_기업"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [13] }],
+      "reason": "네온의 소개",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F43",
+      "text": "3대 회사의 CEO는 부사령관과 같은 명령권을 가진다",
+      "about": ["org:3대_기업"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [86, 151] }],
+      "reason": "슈엔 본인(#86)과 미하라(#151)의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F44",
+      "text": "인간에게 총구를 겨누는 니케는 이유 불문하고 처분 대상이고, 니케는 인간을 쏠 수 없다",
+      "about": ["concept:니케"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [73, 115] }],
+      "reason": "슈엔(#73)과 미하라(#115)의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F45",
+      "text": "미하라는 다른 이와 감각을 교환할 수 있고, 이때 상대의 통각 센서가 자동으로 켜진다",
+      "about": ["person:미하라"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": ["55-57", "65-66"] }],
+      "reason": "미하라 '감각 교환 완료에요~'(#57), 슈엔의 설명(#65–66). 지휘관과도 교환해 지휘관이 복부 통증을 느낀다(#99–105)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F46",
+      "text": "유니 · 미하라는 스쿼드 워드리스이고 슈엔의 명령을 따른다",
+      "about": ["person:유니", "person:미하라", "org:워드리스", "person:슈엔"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": ["78-80"] }],
+      "reason": "슈엔 '워드리스는 여기 미하라와 유니를 말하는 거야'. 슈엔의 지시로 유니가 전기를 쓰고(#20–25) 미하라가 감각을 바꾼다(#53–57)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "F47",
+      "text": "슈엔은 카운터스에게 워드리스와 함께 지상에 올라가 어떤 랩쳐를 이틀 안에 포획해 오라고 명령했다",
+      "about": ["person:슈엔", "org:카운터스", "org:워드리스"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": ["78-88"] }],
+      "reason": "슈엔의 명령. 어기면 전기의자라고 위협한다(#87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q4",
+      "text": "버려진 도시의 발전소는 왜 얼마 전부터 가동되고 있나?",
+      "evidence": [{ "scene": "d_main_02_05", "lines": ["3-9"] }],
+      "reason": "지휘관이 사람이 있는지 묻고, 시프티는 '이유는 알 수 없습니다만'이라며 조사가 번번이 실패했다고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q5",
+      "text": "랩쳐는 왜 인간의 기계를 조작하게 되었나 — 인류를 말살하려는가, 대신하려는가?",
+      "about": ["concept:랩쳐"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["28-34"] }],
+      "reason": "엔더슨 '뭐가 목적일까', 잉그리드는 진화하고 있다고 보고 두 가능성을 든다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q6",
+      "text": "지휘관에게 있다는 '뭔가'는 무엇인가 — 왜 시뮬레이션에서는 형편없는데 실전에서는 압도적인가?",
+      "about": ["person:지휘관", "org:카운터스"],
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["22-25"] }],
+      "reason": "잉그리드 '실전에 강한 타입. 이라고 하기에도 너무 이질적이군', '뭔가 있는 게 분명해. 지금은 감도 안 잡히지만'. 앞서 테스트 결과와 실전의 '괴리'(d_main_01af_04#16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q7",
+      "text": "엔더슨이 전초 기지 첫날 밤 지휘관에게 보낸 메시지는 무엇인가?",
+      "about": ["person:엔더슨"],
+      "evidence": [{ "scene": "d_main_02af_04", "lines": ["66-69"] }],
+      "reason": "발신자가 엔더슨이라는 것만 나오고 지휘관은 읽지 않고 잔다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q8",
+      "text": "슈엔이 포획해 오라는 랩쳐는 무엇이고, 왜 포획하려 하나?",
+      "about": ["person:슈엔"],
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [81, 82, 148] }],
+      "reason": "슈엔은 '어떤 랩쳐'라고만 하고, 미하라는 지상에서 설명하겠다고 한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q3-2",
+      "act": "회수",
+      "answer": "F40",
+      "degree": "일부",
+      "evidence": [{ "scene": "d_main_02af_01", "lines": ["25-27"] }],
+      "reason": "엔더슨 · 잉그리드가 지휘관에게 '뭔가 있다'며 조사하려고 전초 기지로 보냈다고 말한다 — 무장 호출 · 테스트 · 연속 배정도 그 조사의 일부로 읽힌다. 다만 그 연결은 말로 하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "Q4-2",
+      "act": "회수",
+      "answer": "F34",
+      "degree": "일부",
+      "evidence": [{ "scene": "d_main_02_08_s", "lines": ["2-10"] }],
+      "reason": "랩쳐들이 발전소 기계를 조작하고 있었다 — 누가 돌렸는지는 풀리고, 왜 그러는지는 Q5로 남는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S4",
+      "kind": "기준점",
+      "text": "발전소가 있는 바닷가 도시는 CH.02보다 5년 전에 봉쇄되었다",
+      "subject": "구간",
+      "at": [["전", "ch02", "5년"]],
+      "years": 5,
+      "evidence": [{ "scene": "d_main_02_01", "lines": [23] }],
+      "reason": "시프티 '5년 전 도시의 봉쇄를 진행하던 중'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    },
+    {
+      "id": "S5",
+      "kind": "기준점",
+      "text": "슈엔이 전초 기지에 찾아온 것은 카운터스가 전초 기지에 온 다음 날이다",
+      "ref": "place:전초기지",
+      "subject": "구간",
+      "at": [["중", "ch02"]],
+      "evidence": [{ "scene": "d_main_02af_04", "lines": [70, 73] }],
+      "reason": "'다음 날.'(#70) 라피가 손님이 왔다고 한다(#73) — 다음 씬에서 슈엔이 기다리고 있다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+      ]
+    }
+  ],
+  "targets": [
+    { "target": "concept:에블라_입자", "evidence": [{ "scene": "d_main_02_01", "lines": [11] }], "note": "오퍼레이터가 지상 스캔 전에 정화하는 입자 — 무엇인지는 아직 안 나옴", "new": true },
+    { "target": "item:커넥팅_디바이스", "evidence": [{ "scene": "d_main_02_03", "lines": [1] }], "note": "핸드폰에서 뽑은 선을 기계에 꽂아 오퍼레이터가 원격 조종하게 하는 장치", "new": true },
+    { "target": "concept:그레이브_디거", "evidence": [{ "scene": "d_main_02_08_s", "lines": [29] }], "note": "타일런트 급 랩쳐, '땅굴 파는 녀석'", "new": true },
+    { "target": "place:갱생관", "evidence": [{ "scene": "d_main_02af_01", "lines": [15] }], "note": "엔더슨이 전초 기지보다 나쁜 곳으로 드는 곳 — 무엇인지는 아직 안 나옴", "new": true },
+    { "target": "place:전초기지", "evidence": [{ "scene": "d_main_02af_01", "lines": [11] }], "note": "카운터스가 추방되어 배속된 지상의 척박한 기지", "new": false },
+    { "target": "person:슈엔", "evidence": [{ "scene": "d_main_02af_07", "lines": [0] }], "note": "미실리스 인더스트리 CEO. 카운터스를 괴롭히고 랩쳐 포획을 명한다", "new": false },
+    { "target": "org:미실리스", "evidence": [{ "scene": "d_main_02af_07", "lines": [13] }], "note": "니케 제작 3대 회사 중 하나(미실리스 인더스트리)", "new": false },
+    { "target": "org:3대_기업", "evidence": [{ "scene": "d_main_02af_07", "lines": [13] }], "note": "니케 제작 3대 회사 — CEO는 부사령관과 같은 명령권", "new": false },
+    { "target": "org:워드리스", "evidence": [{ "scene": "d_main_02af_07", "lines": [78] }], "note": "유니 · 미하라의 스쿼드, 슈엔의 명령을 따른다", "new": false },
+    { "target": "person:유니", "evidence": [{ "scene": "d_main_02af_07", "lines": [21] }], "note": "워드리스 니케. 손에서 섬광(전기)을 낸다", "new": false },
+    { "target": "person:미하라", "evidence": [{ "scene": "d_main_02af_07", "lines": [54] }], "note": "워드리스 니케. 감각을 교환한다", "new": false }
+  ],
+  "revisit": []
+}

@@ -1,0 +1,305 @@
+{
+  "unit": "event_dirtybackyard",
+  "session": "R36",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "모란회가 관리하는 아우터 림의 공장 마을 포그 할로우 창고에서 수십 명이 목을 맨 채 발견되고 벽에 [목단이 죽였다]가 쓰여 있다(prologue). 아우터 림 곳곳의 떼죽음 · 내전이 목단과 엮였다는 소문이 방주까지 퍼지자(F1257) 목단은 지휘관에게 무릎 꿇고 도움을 청하고, 지휘관은 해결사 슈가에게 의뢰한다(01). 아우터 림에서는 [미스트]에 중독된 주민들이 목단을 구세주라 부르며 미스트를 달라고 매달리고(02_s), 슈가는 목단을 의심해 총을 겨누지만 진이 미스트가 사탕 모양 약물이며 포그 할로우에서 만들어진다고 밝힌다(F1258 · 03). 슈가는 식스오의 의뢰로 포그 할로우를 미리 조사해 생산을 알고 있었고(F1260), 식스오의 부하가 몸에 달린 폭탄으로 입막음당한다(F1262 · 04). 포그 할로우 주민들은 식스오에게 마을을 담보로 협박당해 미스트를 늘려 왔고 창고의 죽음은 본보기였다(F1261 · 05_s). 뿌리를 뽑겠다는 목단과 약자들을 지키겠다는 슈가가 맞붙고(05_e — 슈가의 과거 F1259), 목단은 모란회와 공장에 쳐들어가 포그 할로우를 괴멸시킨다(F1263 · 06_s). 뉴스는 목단을 증거 인멸 용의자로 보도하고, 사쿠라 · 로산나는 모든 것이 식스오의 짓이라며 쫓기로 한다(F1264 · F1265 · 06_e). 퇴원한 슈가는 해결사 일을 내려놓고 식스오를 쫓기로 하고(F1266), 지휘관과 목단은 모란회 벽의 욕설을 닦는다(F1267). 마지막에 포그 할로우 주민이 아직도 미스트를 만들어 판다(F1268 · epilogue).",
+  "scenes": [
+    {
+      "scene": "event_dirtybackyard_prologue",
+      "text": "포그 할로우 순회 — 창고에 목맨 수십 명, 벽에 [목단이 죽였다]"
+    },
+    {
+      "scene": "event_dirtybackyard_01_s",
+      "text": "진: 아우터 림 떼죽음 · 내전이 목단과 엮였다는 소문, 사쿠라 · 로산나는 바쁨"
+    },
+    {
+      "scene": "event_dirtybackyard_01_e",
+      "text": "목단이 지휘관에게 무릎 꿇고 부탁, 슈가가 혼자 의뢰를 받음"
+    },
+    {
+      "scene": "event_dirtybackyard_02_s",
+      "text": "슈가의 옛 옷 — 아우터 림 입구의 시신 더미, 미스트 중독자들이 목단을 구세주로"
+    },
+    {
+      "scene": "event_dirtybackyard_02_e",
+      "text": "슈가가 목단에게 총을 겨눔, 진이 끼어들어 미스트(사탕)를 보여 줌"
+    },
+    {
+      "scene": "event_dirtybackyard_03_s",
+      "text": "미스트의 효과 · 부작용, 목단의 알리바이, 포그 할로우가 생산지"
+    },
+    {
+      "scene": "event_dirtybackyard_03_e",
+      "text": "슈가는 포그 할로우를 알았다, 목단은 주민을 믿고 직접 확인하겠다고 함"
+    },
+    {
+      "scene": "event_dirtybackyard_intermission_01",
+      "text": "슈가의 사정 — 의뢰로 사전 조사, 주민은 모란회가 시켰다고 함"
+    },
+    {
+      "scene": "event_dirtybackyard_04_s",
+      "text": "미스트를 달라던 멀쩡한 남자 — 식스오의 문자 뒤 폭사"
+    },
+    {
+      "scene": "event_dirtybackyard_04_e",
+      "text": "식스오 = 블랙넷에 깊이 관여(마스터 소문), 포그 할로우에서 총격"
+    },
+    {
+      "scene": "event_dirtybackyard_05_s",
+      "text": "주민의 고백 — 식스오에게 마을을 담보로 협박, 창고의 죽음은 본보기"
+    },
+    {
+      "scene": "event_dirtybackyard_05_e",
+      "text": "목단 · 슈가의 대결, 공장 폭발, 슈가의 과거와 식스오의 의뢰"
+    },
+    {
+      "scene": "event_dirtybackyard_06_s",
+      "text": "목단이 모란회를 이끌고 공장 습격 — 슈가와 다시 충돌"
+    },
+    {
+      "scene": "event_dirtybackyard_06_e",
+      "text": "포그 할로우 괴멸 뉴스, 사쿠라 · 로산나 — 식스오의 짓, 언더월드 퀸이 움직임"
+    },
+    {
+      "scene": "event_dirtybackyard_epilogue",
+      "text": "슈가의 결심, 목단과 벽 닦기, 여전히 미스트를 파는 주민"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1257",
+      "text": "모란회가 관리하는 아우터 림 마을 포그 할로우의 창고에서 수십 명이 목을 맨 채 발견되고 벽에 [목단이 죽였다]가 쓰여 있었으며, 아우터 림 곳곳의 떼죽음 · 내전도 목단과 엮인 증거(다잉 메시지) · 증언이 돌아 소문이 방주까지 퍼졌다 — 목단에게는 알리바이가 있었다",
+      "about": ["place:포그_할로우", "person:목단", "org:모란회", "place:아우터_림"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_prologue", "lines": ["58-73"] },
+        { "scene": "event_dirtybackyard_01_s", "lines": ["15-26"] },
+        { "scene": "event_dirtybackyard_03_s", "lines": ["24-35"] }
+      ],
+      "reason": "서술(prologue#60-70) · 진의 말(01_s · 03_s)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1258",
+      "text": "[미스트]는 알록달록한 사탕 모양의 약물로 먹으면 안개 낀 듯 몽롱해지며 극도의 행복감을 느끼고, 과용하면 고통을 못 느끼며 환각을 보고 흉폭해진다 — 중독자들은 목단을 '구세주'라 부르며 목단에게서 미스트를 받을 수 있다고 믿었고, 미스트는 블랙넷에서 활발히 유통된다",
+      "about": ["concept:미스트", "person:목단", "place:블랙넷", "place:아우터_림", "person:진"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_02_s", "lines": ["41-52", "63-89"] },
+        { "scene": "event_dirtybackyard_02_e", "lines": ["67-72"] },
+        { "scene": "event_dirtybackyard_03_s", "lines": ["1-8"] },
+        { "scene": "event_dirtybackyard_03_e", "lines": ["22-24"] }
+      ],
+      "reason": "진의 설명(03_s#1-8)과 중독자들의 모습(02_s)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1259",
+      "text": "슈가는 아주 예전 다른 스쿼드에 몸담았을 때 아우터 림에서 식스오의 위험한 일을 명령만 따르는 기계처럼 해 만나면 불길하다고 모두가 피하는 사람이었고, 자기가 한 일로 큰일이 일어났다는 것('가족이라더니! 지켜준다더니!')을 듣고 손을 털었다 — 그때 입던 옷은 죄수복 같은 것이라 한다",
+      "about": ["person:슈가", "person:식스오", "place:아우터_림", "person:진"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_02_s", "lines": ["1-11"] },
+        { "scene": "event_dirtybackyard_02_e", "lines": ["45-49"] },
+        { "scene": "event_dirtybackyard_05_e", "lines": ["197-233"] }
+      ],
+      "reason": "슈가 본인 말. 진도 그 옷 차림을 10년 전 일처럼 반겼다(02_e#48-49)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1260",
+      "text": "슈가는 얼마 전 식스오에게서 '포그 할로우를 보호해 줄 것'이라는 의뢰를 받아 사전 조사로 그곳의 미스트 생산을 알았지만 마을 사람들을 살리려 막지 않았고, 의뢰를 빌미로 식스오의 꼬리를 잡으려 했다 — 그때 주민은 생산을 모란회가 시켰다고 말했다",
+      "about": ["person:슈가", "person:식스오", "place:포그_할로우", "concept:미스트", "org:모란회"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_intermission_01", "lines": ["37-73"] },
+        { "scene": "event_dirtybackyard_05_e", "lines": ["192-195", "218-224"] }
+      ],
+      "reason": "슈가 본인 말 · 회상",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1261",
+      "text": "포그 할로우 주민들은 먹고살려고 미스트를 소량 만들다 식스오에게 들켜 마을 전체를 담보로 생산을 늘리라는 협박을 받았고(최근 생산량 스무 배 이상), 창고의 집단 죽음은 다른 데 도움을 청하거나 납품 수량을 못 채우면 이렇게 된다는 본보기였다 — 식스오는 마을 곳곳에 폭탄도 심어 두었다",
+      "about": ["place:포그_할로우", "person:식스오", "concept:미스트"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_03_e", "lines": ["4-6"] },
+        { "scene": "event_dirtybackyard_05_s", "lines": ["21-52", "66-71"] },
+        { "scene": "event_dirtybackyard_05_e", "lines": ["128-131", "169-173"] }
+      ],
+      "reason": "주민의 고백(05_s) · 공장 폭발(05_e)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1262",
+      "text": "슈가에 따르면 식스오는 블랙넷에 아주 깊게 관여한 자로 세간에 '마스터'일지도 모른다는 소문이 있다 — 미스트 중독자인 척 목단 일행에게 접근한 사내는 식스오의 문자를 받은 직후 자기도 모르게 몸에 달린 폭발물로 폭사했다",
+      "about": ["person:식스오", "place:블랙넷", "person:슈가", "person:목단"],
+      "evidence": [{ "scene": "event_dirtybackyard_04_s", "lines": ["29-36", "56-83"] }, { "scene": "event_dirtybackyard_04_e", "lines": ["8-31"] }],
+      "reason": "슈가의 말(04_e#30-31). 폭발물을 몰랐다는 것은 목단의 판단(04_e#11-14)이라 문장에 '자기도 모르게'를 쓰되 근거는 사내의 반응",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1263",
+      "text": "목단은 언더월드 퀸이자 모란회 보스로서 선택권이 없다며 의리를 저버리고 질서를 어긴 포그 할로우를 불태우라 명령해 모란회와 공장에 쳐들어갔고, 약자들을 지키겠다는 슈가를 꺾어 포그 할로우는 하루 만에 괴멸했다 — 목단은 예전 아우터 림의 비슷한 일을 뿌리 뽑지 않아 일대가 작살났다고 했다",
+      "about": ["person:목단", "org:모란회", "place:포그_할로우", "person:슈가", "org:언더월드_퀸"],
+      "evidence": [
+        { "scene": "event_dirtybackyard_05_e", "lines": ["0-38", "85-99"] },
+        { "scene": "event_dirtybackyard_06_s", "lines": ["4-66"] },
+        { "scene": "event_dirtybackyard_06_e", "lines": ["0-9"] }
+      ],
+      "reason": "목단 본인 말 · 뉴스 · 지휘관 독백",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1264",
+      "text": "포그 할로우 괴멸 뒤 뉴스는 모란회 보스를 위험 약물 제조 증거 인멸 용의자로 보도했고 목단은 머스탱에게 불려 갔다 — 사쿠라에 따르면 누명과 아우터 림의 나쁜 소문은 모두 식스오가 꾸민 것이고(로산나는 미스트 독점을 노렸다고 봄), 식스오는 증거 · 여론을 조작해 단서 하나 남기지 않아 모란회의 평판은 땅에 떨어졌으며 언더월드 퀸이 식스오를 쫓기로 했다",
+      "about": ["person:식스오", "person:목단", "org:모란회", "person:사쿠라", "person:로산나", "person:머스탱", "org:언더월드_퀸"],
+      "evidence": [{ "scene": "event_dirtybackyard_06_e", "lines": ["1-4", "19-33", "52-77"] }],
+      "reason": "사쿠라 · 로산나의 말. 독점 동기는 로산나의 짐작('~것 같아')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1265",
+      "text": "미스트는 중독성이 매우 강하고 중독 치료제가 아직 없어 중독자들이 아우터 림에서 살인 · 상해를 잇달아 일으키고 있어, 사쿠라는 머스탱과 상의해 중독자들을 격리하려 한다",
+      "about": ["concept:미스트", "place:아우터_림", "person:사쿠라", "person:머스탱"],
+      "evidence": [{ "scene": "event_dirtybackyard_06_e", "lines": ["34-49"] }],
+      "reason": "로산나 · 사쿠라의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1266",
+      "text": "목단에게 지고 마을도 잃은 슈가는 당분간 해결사 일을 내려놓고 식스오를 찾는 데 몰두해 목단의 누명을 풀겠다고 했다",
+      "about": ["person:슈가", "person:식스오", "person:목단", "org:카페_스위티"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["22-43"] }],
+      "reason": "슈가 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1267",
+      "text": "모란회 벽에는 날마다 목단과 모란회를 욕하는 글('살인자', '모란회를 해체하라')이 쓰였고, 지휘관은 매일 들러 그 글을 닦다 돌아온 목단과 함께 닦았다 — 목단은 옳은 선택이라 생각했는데 아무것도 해결된 게 없다며 괴로워했다",
+      "about": ["org:모란회", "person:목단"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["44-104"] }],
+      "reason": "지휘관 독백 · 목단 본인 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "F1268",
+      "text": "포그 할로우가 무너진 뒤에도 포그 할로우 주민(이름표)은 아우터 림의 골목에서 노숙자에게 미스트를 팔며 돈만 있으면 못 만들 것이 없고 장소는 또 구하면 된다고 했다",
+      "about": ["place:포그_할로우", "concept:미스트", "place:아우터_림"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["107-125"] }],
+      "reason": "에필로그 끝 장면. 앞에서 협박당했다던 주민과 같은 사람인지는 원문이 말하지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q161",
+      "text": "블랙넷의 마스터일지도 모른다는 식스오는 누구이고, 어디에 숨어 무엇을 노리나 — 왜 굳이 목단에게 누명을 씌웠나?",
+      "about": ["person:식스오", "place:블랙넷", "person:목단"],
+      "evidence": [{ "scene": "event_dirtybackyard_04_e", "lines": ["30-31"] }, { "scene": "event_dirtybackyard_06_e", "lines": ["29-33", "52-58"] }],
+      "reason": "정체 · 행방이 끝까지 안 나오고, 동기는 로산나의 짐작뿐이다. '식스오와의 전쟁은 지금부터'(epilogue#105)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    },
+    {
+      "id": "Q162",
+      "text": "슈가가 예전에 몸담은 '다른 스쿼드'는 무엇이고, 슈가가 식스오의 일을 하다 일으킨 '큰일' — 목단이 말한, 뿌리 뽑지 않아 일대가 작살난 아우터 림의 비슷한 일 — 은 무엇이었나?",
+      "about": ["person:슈가", "person:식스오", "place:아우터_림"],
+      "evidence": [{ "scene": "event_dirtybackyard_05_e", "lines": ["198-217"] }, { "scene": "event_dirtybackyard_06_s", "lines": ["47-50"] }],
+      "reason": "슈가가 떠올리기 싫다며 말하지 않았다. 두 일이 같은 일인지도 원문은 잇지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F953-2",
+      "act": "드러냄",
+      "text": "목단은 질서를 어긴 포그 할로우를 언더월드 퀸 · 모란회 보스로서 벌했다",
+      "evidence": [{ "scene": "event_dirtybackyard_06_s", "lines": ["13-21"] }, { "scene": "event_dirtybackyard_05_e", "lines": ["88-89"] }],
+      "reason": "'우리는 질서를 어긴 자식들을 벌한다' — 질서를 폭력으로 지키는 모습이 다시 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S122",
+      "kind": "기준점",
+      "text": "사건은 하루 안팎 — 포그 할로우 괴멸 이튿날 뉴스, 슈가는 하루 입원, 목단은 며칠 뒤 돌아옴. 다른 단위와의 앞뒤는 원문에 없다",
+      "ref": "event_dirtybackyard",
+      "at": [],
+      "evidence": [{ "scene": "event_dirtybackyard_06_e", "lines": ["0-4"] }, { "scene": "event_dirtybackyard_epilogue", "lines": ["9-10", "44-57"] }],
+      "reason": "'하루가 지났다'(06_e#0), '매일 모란회를 들렀다'(epilogue#44)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R36" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:포그_할로우",
+      "evidence": [
+        {
+          "scene": "event_dirtybackyard_prologue",
+          "lines": [
+            2
+          ]
+        }
+      ],
+      "note": "아우터 림의 공장 마을 — 모란회 관리 구역, 미스트 생산지",
+      "new": true
+    },
+    {
+      "target": "concept:미스트",
+      "evidence": [
+        {
+          "scene": "event_dirtybackyard_02_s",
+          "lines": [
+            27
+          ]
+        }
+      ],
+      "note": "사탕 모양 약물 — 행복감 · 무통 · 환각 · 흉폭, 강한 중독성",
+      "new": true
+    },
+    {
+      "target": "person:식스오",
+      "evidence": [
+        {
+          "scene": "event_dirtybackyard_04_s",
+          "lines": [
+            75
+          ]
+        }
+      ],
+      "note": "블랙넷에 깊이 관여한 자 — 마스터라는 소문, 미스트 사태의 배후",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

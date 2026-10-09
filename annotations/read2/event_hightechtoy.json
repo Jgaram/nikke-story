@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M56\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_hightechtoy",
+  "session": "M56",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1288",
+      "act": "암시",
+      "points": ["F2785", "J22"],
+      "text": "맥스웰이 듣기로 라플라스 · 드레이크는 '슈엔의 성능 좋은 장난감이 되고 싶어서 자원한 녀석들'이라 한다",
+      "about": ["person:라플라스", "person:드레이크", "org:메티스"],
+      "evidence": [{ "scene": "event_hightechtoy_epilogue", "lines": ["61-64"] }],
+      "reason": "#62-63 — 히어로가 되고 싶은 지원자를 모은 PROJECT MATIS(F2785)에 라플라스가 지원한 일. 메티스가 생긴 내력은 그때 드러난다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1289",
+      "act": "암시",
+      "points": ["F2776", "F2794", "J22"],
+      "text": "'인간 맥스웰은 이미 죽었고 난 니케 맥스웰' — 인간 때 무슨 생각을 했는지 모른다며 자기를 다른 개체로 친다",
+      "about": ["person:맥스웰"],
+      "evidence": [{ "scene": "event_hightechtoy_epilogue", "lines": ["65-67"] }],
+      "reason": "#66-67 — 니케가 된 자기는 같은 개체가 아니라던 인간 맥스웰(F2776)과, 폭탄에 하반신을 잃고 니케가 된 일(F2794)을 비춘다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: event_hightechtoy_prologue#9 (뒤 #11의 이름 없는 미실리스 니케 — 단역) · event_hightechtoy_epilogue#20 (#23의 이름 없는 양산형 니케 — 이 단위에만 나오는 단역이라 사전에 없다). 인물 변화 없음 — 라플라스(D88 · D89) · 맥스웰(D90 · D139) · 슈엔(D92)의 앞 기준 그대로의 모습"
+}

@@ -1,0 +1,30 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M93\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:313",
+  "session": "M93",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2091",
+      "person": "person:프리바티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "마음은 욕심이라며 선을 넘기 전에 멈추던",
+      "after": "전속 메이드 일을 핑계로 다가갔다가 지휘관의 모든 게 궁금하고 설레서 집중할 수 없었다고 털어놓고, '좋아해'라는 말에 졸업 기념 식사를 데이트로 받아들이는",
+      "trigger": [{ "scene": "ep:d_nikke_privaty_unkindmaid_02", "lines": ["48-56"] }],
+      "evidence": [{ "scene": "ep:d_nikke_privaty_unkindmaid_05", "lines": ["45-60", "93-105", "128-137"] }],
+      "time": "S125",
+      "points": ["F1279", "F1280"],
+      "reason": "02#55 '주인님밖에 떠오르는 사람이 없었으니' → 05#58-60 '설레서 좋아서… 집중이 안 됐다고요' · #93 '좋아해' · #130 '이런 식으로 데이트 신청을'. D1723에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 메이드 일에 처음보다 능숙해진 것(01#9,45)은 S125의 근거일 뿐 성격 변화로 적지 않았다(D1637에서 메이드 일을 이미 받아들임). 에이드 · 코코아 · 소다는 01 조연, 손님들은 단역. 시점 S125(추정) 그대로. `???` 없음."
+}

@@ -1,0 +1,29 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M94\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:500",
+  "session": "M94",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2094",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "전자 기기를 보는 눈을 가진 '우리의 동료'",
+      "after": "파업한 날 BOOM 영업 길에 함께 다니며 밤새 같이 놀아 달라 조르는 놀이 친구",
+      "trigger": [{ "scene": "ep:d_nikke_elegg_01", "lines": ["69-76"] }],
+      "evidence": [{ "scene": "ep:d_nikke_elegg_05", "lines": ["97-100", "103-113"] }],
+      "time": "S386",
+      "reason": "01#70 '저랑 좀 더 어울려 주시면' · 02#65 · 05#99 '같이 어울려 주실 거져?' → 밤을 새움(#101). D430(동료)에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M94" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. BOOM 사랑(05#127-131)은 D377 · F1298에 이미 그려진 모습이라 성격 변화로 적지 않았다. 맥스웰과의 내기(04–05)는 F1344로 충분하고 맥스웰 → 일레그는 줄거리의 축이 아니라 기준을 세우지 않았다. 발전소 하드웨어를 일레그가 설계했다는 말(05#82)은 전초기지 발전소 이야기라 J19(방주 동력원)에 잇지 않았다. `???` 없음."
+}

@@ -1,0 +1,30 @@
+{
+  "_comment": "수동 엣지 예시 — 형식은 docs/schema.md \"수동 엣지\". 실제 파일은 annotations/links.json. 기록에서 안 나오는 스토리 사이 관계를 더하거나(Y1), 자동 엣지를 지운다(Y2 drop — 자동값은 병합 결과의 dropped에 남는다).",
+  "session": "B1a",
+  "by": "claude",
+  "date": "2026-10-04",
+  "edges": [
+    {
+      "id": "Y1",
+      "type": "sequel",
+      "from": "sub:로망티스트_00",
+      "to": "sub:로망티스트_01",
+      "strength": 3,
+      "records": ["Q1-2"],
+      "reason": "같은 서브퀘스트의 다음 편 — 앞 편에서 찾겠다던 낚시 포인트를 찾았다며 연다(Q1-2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "예시" }]
+    },
+    {
+      "id": "Y2",
+      "type": "character",
+      "from": "d_ex_elevator_01",
+      "to": "sub:로망티스트_00",
+      "drop": true,
+      "reason": "라피 · 아니스 · 네온이 두 편에 다 나와 자동 엣지가 잇지만, 두 이야기는 인물만 겹치고 서로를 딛지 않는다",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

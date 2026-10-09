@@ -1,0 +1,173 @@
+{
+  "unit": "char:180",
+  "session": "R05",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "길로틴 호감도 스토리 5편. 엑시아가 보여 준 '오글거리는' 컨셉 계정의 주인이 길로틴이다(01). 길로틴은 자신을 '길로틴 드 메피스토'·'균형의 수호자'라 부르며 방주 체제를 [조직], 잉그리드와 자신이 속한 비밀 결사를 [협회]라 한다. 망상 결투에서 오른눈의 [편익의 마왕]을 쓰려다 잉그리드에게 허가를 못 받는다(02). 지휘관을 [협회]로 꾀던 중 방주 한복판에서 침식된 니케가 총기를 난사한다(03). 그 니케는 인간 수호 · 랩쳐 섬멸 명령이 뒤바뀌어 인간을 죽이려 하고, 길로틴은 자신이 [협회]가 비밀리에 편성한 니케 처분 부대 익스터너의 멤버라 밝힌 뒤, 막아선 지휘관을 뒤로하고 오른눈의 파동(시민권 없는 뇌의 기능을 정지)으로 처분한다. 바디는 재활용되고, 지휘관은 A.C.P.U.의 미란다 · 폴리에게 뇌를 화장해 달라고 부탁한다(04). 뉴스는 '니케 탈출 사고'로 보도하고 길로틴의 연루는 은폐된다. 길로틴은 처분의 고통을 인정하고, 지휘관은 그녀의 [메피스토주의 황금 십자회] 예비 회원 · 서번트가 되는 의식을 치른다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_guillotine_01", "text": "엑시아가 오글거리는 컨셉 계정 링크를 보내고, 지휘관은 그 팬 단체방에서 버티기로 한다" },
+    { "scene": "ep:d_nikke_guillotine_02", "text": "길로틴 드 메피스토와 가상화 필드 '망상 결투' — 오른눈의 [그것]은 잉그리드 허가를 못 받아 못 쓴다" },
+    { "scene": "ep:d_nikke_guillotine_03", "text": "길로틴이 지휘관을 [협회]로 꾀던 중 방주 한복판 테러 — 총을 난사하는 것은 니케, 처분은 길로틴 몫" },
+    { "scene": "ep:d_nikke_guillotine_04", "text": "인간과 랩쳐가 뒤바뀐 침식 니케를 익스터너 길로틴이 오른눈 파동으로 처분, 지휘관은 뇌 화장을 부탁" },
+    { "scene": "ep:d_nikke_guillotine_05", "text": "뉴스는 탈출 사고로 보도, 길로틴이 처분의 고통을 인정하고 지휘관을 황금 십자회 서번트로 받아들인다" }
+  ],
+  "facts": [
+    {
+      "id": "F429",
+      "text": "길로틴은 자신을 '길로틴 드 메피스토' · '균형의 수호자'라 부르고, 방주를 억압하고 계층화하는 체제를 [조직], 잉그리드를 임시 협회장으로 둔 자기 쪽 비밀 결사를 [협회]라 부른다",
+      "about": ["person:길로틴", "person:잉그리드"],
+      "evidence": [
+        { "scene": "ep:d_nikke_guillotine_02", "lines": [8, 11] },
+        { "scene": "ep:d_nikke_guillotine_03", "lines": ["24-36"] },
+        { "scene": "ep:d_nikke_guillotine_05", "lines": ["72-74"] }
+      ],
+      "reason": "길로틴 본인의 말. 컨셉(중2병) 말투라 [조직] · [협회]가 실제로 무엇을 가리키는지는 흐리다 — 말 자체만 사실로 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F430",
+      "text": "길로틴은 오른눈에 봉인했다는 [편익의 마왕]의 힘을 잉그리드의 승인 없이는 쓸 수 없다",
+      "about": ["person:길로틴", "person:잉그리드"],
+      "evidence": [
+        { "scene": "ep:d_nikke_guillotine_02", "lines": ["110-131"] },
+        { "scene": "ep:d_nikke_guillotine_03", "lines": [77] },
+        { "scene": "ep:d_nikke_guillotine_04", "lines": ["55-58"] }
+      ],
+      "reason": "결투 중 잉그리드에게 전화해 '안구 사용 허가'를 청했다 거절당하고(02 #117-129), 테러 때도 '잉그리드의 승인 없이는 힘을 쓸 수 없다'고 한다. 처분 때는 '봉인 해제 요청 — 요청 승인' 절차를 거친다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F431",
+      "text": "익스터너는 [협회](잉그리드 쪽)가 비밀리에 편성한 니케 처분 부대이고, 길로틴은 그 멤버로서 처분 예정인 니케의 집행을 맡는다",
+      "about": ["org:익스터너", "person:길로틴", "person:잉그리드"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_03", "lines": ["86-89"] }, { "scene": "ep:d_nikke_guillotine_04", "lines": ["35-36", "45-46"] }],
+      "reason": "길로틴이 침식 니케에게 직접 밝힌다: '[협회]에서 비밀리에 편성한 니케 처분 부대, 익스터너의 멤버'. [협회]의 협회장은 잉그리드(F429), 힘 사용도 잉그리드가 승인한다(F430). ch12의 익스터너(F308 · F309)와 같은 조직",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F432",
+      "text": "방주 한복판에서 침식된 니케가 총기를 난사했다 — 니케에게 심긴 절대 명령 '인간의 수호 · 랩쳐의 섬멸'에서 인간과 랩쳐가 뒤바뀌어, 랩쳐를 지키려 인간을 모조리 죽여야 한다고 말했다",
+      "about": ["concept:침식", "concept:니케", "place:방주"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_03", "lines": ["66-74", 86] }, { "scene": "ep:d_nikke_guillotine_04", "lines": ["0-17"] }],
+      "reason": "사건 장면과 길로틴의 해석(04 #13-17 — 랩쳐가 단 두 단어를 맞바꿨다). 명령을 뒤바꾼 것이 랩쳐라는 부분은 길로틴의 해석이지만 침식이 랩쳐 기술이라는 앞 사실(F83)과 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F433",
+      "text": "길로틴의 오른눈은 반경 1m 안에서 시민권이 없는 뇌를 인식해 기능을 정지시키는 파동을 내고, 길로틴은 그것으로 침식된 니케를 처분했다",
+      "about": ["person:길로틴"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["85-96"] }],
+      "reason": "안대를 벗자 오른눈에서 파장이 퍼져 니케가 쓰러지고(#85-93), 길로틴이 원리를 말하다 그만둔다(#96)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F434",
+      "text": "처분된 니케의 바디는 공장에서 해체되어 새 니케 생산에 쓰이거나 침식 코드 연구 재료가 되고, 길로틴은 [조직]이 니케를 수명이 다 된 기계처럼 여긴다고 말한다",
+      "about": ["concept:니케", "person:길로틴"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["98-109"] }],
+      "reason": "길로틴의 설명. 장례를 묻는 지휘관에게 '수명이 다 된 기계를 버릴 때 장례를 치르나' — 적어도 [조직]은 그리 생각한다고 덧붙인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F435",
+      "text": "지휘관의 부탁으로, 현장을 수습하러 온 A.C.P.U.의 미란다 · 폴리가 처분된 니케의 뇌를 꺼내 화장해 주기로 했다",
+      "about": ["person:미란다", "person:폴리", "org:A.C.P.U.", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["110-128"] }],
+      "reason": "길로틴이 A.C.P.U.가 오면 폴리나 미란다에게 부탁해 보라 하고(#113-116), 미란다가 머뭇거리자 폴리가 들어주라고 한다(#126-128)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F436",
+      "text": "뉴스는 이 사건을 니케 1기가 시설에서 탈출해 시민 10명이 죽고 21명이 다친 사고로 보도했고, 길로틴이 연루된 사실은 [협회]가 은폐했다",
+      "about": ["person:길로틴", "place:방주", "person:에닉"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["0-14"] }],
+      "reason": "뉴스(#0-5 — 에닉이 시설 관리자를 어떤 죄로 처벌할지 관심)와 길로틴의 말(#8-14). 난사한 니케가 '시설에서 탈출'했다는 것은 보도 내용이라 그대로 적었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F437",
+      "text": "방주에는 니케 사고 때마다 시민의 분노가 일고 니케포비아 단체도 있어, 길로틴은 폭주한 니케를 처분하지 않으면 유가족과 그 단체들이 거리로 쏟아진다고 말한다",
+      "about": ["place:방주", "concept:니케"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["71-75"] }, { "scene": "ep:d_nikke_guillotine_05", "lines": ["2-4"] }],
+      "reason": "길로틴의 말(04 #72)과 뉴스 속 시민 인터뷰('한두 번도 아니고', '지하에서는 니케를 냉동 수면시키는 편이 낫다')",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F438",
+      "text": "길로틴은 니케를 죽이는 자가 곁에 있다는 걸 다른 니케들이 모르도록 도시괴담으로 남는 것을 고독한 운명이라 하면서, 니케를 처분하는 데 결코 익숙해질 수 없는 고통이 있음을 인정했다",
+      "about": ["person:길로틴", "org:익스터너"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["12-16", "64-70"] }],
+      "reason": "처분하던 날 슬퍼 보였다는 지휘관의 말에 인정한다(#66-70)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    },
+    {
+      "id": "F439",
+      "text": "지휘관은 길로틴의 권유로 그녀의 비밀 결사 [메피스토주의 황금 십자회]의 예비 회원이자 그녀의 서번트가 되는 의식을 치렀다",
+      "about": ["person:지휘관", "person:길로틴"],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["31-36", "127-134"] }],
+      "reason": "니케 총기 난사 사건에서 '[조직]에 대한 불복종'을 보았다며 권유했고, 의식 뒤 손등 키스로 얼굴을 붉힌다(#135-178). 관계의 기록",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q77",
+      "text": "길로틴의 오른눈에 '10년 전 봉인되었다'는 [편익의 마왕] — 시민권 없는 뇌를 멈추는 장치 — 은 무엇이고, 길로틴은 어떻게 그 눈을 갖게 되었나?",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": ["75-77"] }, { "scene": "ep:d_nikke_guillotine_04", "lines": [96] }],
+      "reason": "컨셉 말투로 감쌌지만 실제로 뇌를 멈추는 능력이 있고(F433), 잉그리드 승인이 필요하다. 유래는 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q60-2",
+      "act": "회수",
+      "answer": "F431",
+      "degree": "전부",
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_04", "lines": ["45-46"] }],
+      "reason": "익스터너 = [협회](잉그리드)가 비밀리에 편성한 니케 처분 부대 — 어떤 스쿼드이고 누구의 명령으로 움직이는지 둘 다 답한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R05" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S349",
+      "kind": "기준점",
+      "text": "CH.12 뒤 — 길로틴 · 익스터너를 이미 만난 뒤",
+      "ref": "ch12",
+      "at": [["뒤", "ch12"]],
+      "evidence": [{ "scene": "ep:d_nikke_guillotine_02", "lines": [9, 44] }],
+      "reason": "길로틴이 지휘관을 이름으로 부르고 '옛 정'을 말하는 아는 사이 — 둘이 처음 마주친 것은 ch12 d_main_12_07_e#98-116('벗이여')",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "M53",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+    }
+  ]
+}

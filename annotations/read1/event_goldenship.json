@@ -1,0 +1,100 @@
+{
+  "unit": "event_goldenship",
+  "session": "R27",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "코미디 모험. 어느 여름날 마스트가 어드마이어 자선 경매에서 팔리지 않은 [캡틴 앨리게이터의 지도 조각](황금 배의 위치)을 전 재산을 털어 산다. 니케는 지휘관 없이 지상에 못 가 지휘관을 끌어들이고, 프림(카페 스위티)에게 나머지 조각 찾기를 의뢰해 지상 사막에 묻힌 상자 소식을 얻는다. 앵커의 레이더로 사막에서 상자를 찾아(고양이 밥그릇 · 파묻힌 랩쳐를 거쳐) 지도를 맞추고, 방주 인근 해안선을 다 외운 마스트의 안내로 해변의 난파선에 간다. 그곳에는 보물을 노리는 필그림 차임(크라운의 신하)이 있었다. 난파선은 황금 배가 아니라 같은 지도를 따라온 해적 맥의 오션 하이웨이 호였고, 해적 일지대로 망루([해적의 눈])에서 '바다의 신의 축복' — 아주 달고 맛있는 황금색 음료 — 를 찾는다. 그때 해무 속에 거대한 함선의 황금빛 그림자가 보였다 사라진다. 다음 모험을 약속하고 마스트는 선상 파티의 일상으로 돌아간다.",
+  "scenes": [
+    { "scene": "event_goldenship_prologue", "text": "어드마이어 자선 경매 — 캡틴 앨리게이터의 지도 조각" },
+    { "scene": "event_goldenship_01_s", "text": "전 재산으로 산 지도 · 지휘관과 반씩 나누기로" },
+    { "scene": "event_goldenship_01_e", "text": "프림에게 다른 조각 찾기 의뢰" },
+    { "scene": "event_goldenship_02_s", "text": "조각은 지상 사막의 상자 속 · 프림 합류" },
+    { "scene": "event_goldenship_02_e", "text": "앵커 합류" },
+    { "scene": "event_goldenship_03_s", "text": "사막 탐지 — 고양이 밥그릇 · 파묻힌 랩쳐" },
+    { "scene": "event_goldenship_03_e", "text": "상자 발견 · 지도 맞춤, 마스트가 해안을 알아봄" },
+    { "scene": "event_goldenship_intermission_01", "text": "사막의 밤 · 바다 물놀이 · 난파선 발견" },
+    { "scene": "event_goldenship_04_s", "text": "난파선 · 트랩 · 투구를 쓴 소녀(차임)" },
+    { "scene": "event_goldenship_04_e", "text": "차임의 정체 · 숨은 손잡이와 황금색 상자" },
+    { "scene": "event_goldenship_05_s", "text": "상자엔 해적 일지뿐 — 해적 맥의 오션 하이웨이 호" },
+    { "scene": "event_goldenship_05_e", "text": "해적 일지 — 해적의 눈에 바다의 신의 축복" },
+    { "scene": "event_goldenship_06_s", "text": "망루로 오르기로" },
+    { "scene": "event_goldenship_06_e", "text": "황금색 음료 · 해무 속 황금빛 함선의 그림자" },
+    { "scene": "event_goldenship_epilogue", "text": "선상 파티의 일상으로" }
+  ],
+  "facts": [
+    {
+      "id": "F1042",
+      "text": "마스트는 어드마이어 자선 경매에서 손님에게 낙찰되지 않은 [캡틴 앨리게이터의 지도 조각]을 전 재산을 털어 샀고, 지휘관 · 프림 · 앵커와 지상 사막에 묻힌 나머지 조각을 찾아 해안의 난파선에 갔지만 그것은 황금 배가 아니라 같은 지도를 따라온 해적 맥의 [오션 하이웨이 호]였다",
+      "about": ["person:마스트", "person:프림", "person:앵커", "person:지휘관", "place:어드마이어_호", "person:얀"],
+      "evidence": [
+        { "scene": "event_goldenship_prologue", "lines": ["7-27"] },
+        { "scene": "event_goldenship_01_s", "lines": ["7-20", "62-68"] },
+        { "scene": "event_goldenship_02_s", "lines": ["1-21"] },
+        { "scene": "event_goldenship_05_s", "lines": ["32-45"] },
+        { "scene": "event_goldenship_05_e", "lines": ["1-12"] }
+      ],
+      "reason": "경매(얀이 진행) · 마스트의 말 · 해적 일지. 니케는 특수한 상황이 아니면 지휘관 없이 지상에 올라가는 것이 불법이라 지휘관을 끌어들였다(01_s #84-85, F420과 같은 규칙)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1043",
+      "text": "마스트는 언젠가 어드마이어 호가 지상에 나가면 조타수를 맡으려고 방주 인근 모든 해안 지역의 생김새를 외워 두었고, 앵커는 물속에서도 물건을 탐지하는 레이더를 지녀 어드마이어 호와 나갈 날을 위해 헬름과 매일 훈련한다",
+      "about": ["person:마스트", "person:앵커", "person:헬름", "place:어드마이어_호", "org:이지스"],
+      "evidence": [{ "scene": "event_goldenship_03_e", "lines": ["34-38", "84-91"] }],
+      "reason": "마스트의 말. 이지스의 바다 꿈(F672 · F735)과 이어지는 생활상",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1044",
+      "text": "지상의 난파선에서 만난 니케 차임은 왕국의 부흥을 위해 크라운을 돕는 신하라며 보물 지도로 돈이 될 것을 찾아다니고, 사람을 '노비'라 부른다",
+      "about": ["person:차임", "person:크라운", "place:크라운_왕국"],
+      "evidence": [{ "scene": "event_goldenship_04_s", "lines": ["69-86"] }, { "scene": "event_goldenship_04_e", "lines": ["3-31"] }],
+      "reason": "차임의 말(#17 '왕국의 부흥을 위해 크라운 님을 돕고 있는 신하', #18 우연히 보물지도, #27 '시간도 돈이거늘'). 크라운 · 차임 자매는 필그림(F677)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1045",
+      "text": "해적 맥의 일지에 따르면 그들은 '바다의 신'의 지도를 따라 그곳에 닿아 보물을 찾았고, 배가 더 움직이지 못하자 뒤에 올 해적을 위해 지도를 둘로 나눠 근처 사막에 숨기고 축복을 [해적의 눈]에 두었다 — 망루에서 나온 축복은 아주 달고 맛있는 황금색 음료였고, 그때 해무 속에 거대한 함선의 황금빛 그림자가 보였다 사라졌다",
+      "about": ["person:마스트", "person:앵커", "person:프림", "person:지휘관"],
+      "evidence": [{ "scene": "event_goldenship_05_e", "lines": ["30-45"] }, { "scene": "event_goldenship_06_e", "lines": ["64-104", "113-123"] }],
+      "reason": "일지 본문과 망루 장면. 그림자는 독백 서술로 모두가 보았다(#118-120) — 마스트는 캡틴 앨리게이터의 황금 배라 믿는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q146",
+      "text": "지상 바다의 해무 속을 유영하다 사라진 거대한 함선의 황금빛 그림자는 무엇인가 — 정말 캡틴 앨리게이터의 황금 배인가?",
+      "about": ["person:마스트"],
+      "evidence": [{ "scene": "event_goldenship_06_e", "lines": ["113-123"] }],
+      "reason": "원문이 설명 없이 보여 주고 끝냈다. 코미디 이벤트의 여운이라 뒤에 이어지지 않을 수 있어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S87",
+      "kind": "기준점",
+      "text": "어느 여름날 — 어드마이어 호 행사가 2주 쉬는 동안",
+      "at": [],
+      "evidence": [{ "scene": "event_goldenship_prologue", "lines": [0] }, { "scene": "event_goldenship_02_e", "lines": ["31-32"] }],
+      "reason": "독백 '햇빛이 뜨거웠던 어느 여름날'과 앵커의 말. 본편과의 선후는 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R27", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

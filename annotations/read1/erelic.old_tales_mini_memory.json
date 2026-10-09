@@ -1,0 +1,204 @@
+{
+  "unit": "erelic:old_tales_mini_memory",
+  "session": "R52",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "OLD TALES 미니게임에서 모으는 기억 40편. 인류연합군 병사의 편지 5통(_00–_04): 갓데스 후속기가 온다며 들뜨다가, 그를 맞으러 간 부대가 전멸하고 '괴물'을 잡으러 가기 전 그것이 먼저 와 죽는다. 홍보물 시안(_05–_09): 승리 선전 → '하얀 괴물' → 해킹된 듯 랩쳐 편 조롱으로 폐기. 침식된 니케의 녹음(_10–_14): 귓가의 목소리 · 또 다른 나 · 두꺼워지는 벽 · 협박 끝에 '퀸을 위해'를 되뇌다 사살. 에이브의 메모(_15–_19): 동료들을 고치고 신데렐라를 포기하지 않겠다는 다짐. 헬레틱 연구소 연구원의 일지(_20–_24): 망설임에서 고통을 궁금해하는 데로 변하고, 찾아오는 에이브를 귀찮아한다. O에게 보내는 보고(_25–_29): 옛 V.T.C. 연구실 잠입 — 청백색 머리 소녀의 사진, 붉은 눈의 니케들, 침식 랩쳐, 담당자 '레드 ㅅ'. 물방울 5편(_30–_34): 세이렌으로 보이는 이의 두려움 · 후회 · 다짐. BLUE IN THE GLASS(_35–_39): 신데렐라의 이야기를 옮긴 동화 — 유리 구두에 담긴 푸른 눈이 [왕자님]을 만나 깨어나면 붉은 눈이 빛나지 않으리라는 결말.",
+  "facts": [
+    {
+      "id": "F1704",
+      "text": "한 인류연합군 병사의 편지에 따르면 갓데스 후속기(동화 이름의 니케)가 그의 부대로 오기로 했다가 다른 부대로 바뀌었는데 그녀가 인류를 배신해 맞이하러 간 부대가 전멸했고, 그 '괴물'을 잡으러 가라는 명령을 받은 그의 부대는 떠나기 전 먼저 온 그것에 몰살당했다",
+      "about": ["person:아나키오르", "person:신데렐라", "org:인류연합군"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_00", "lines": ["0-10"] },
+        { "scene": "erelic:old_tales_mini_memory_01", "lines": ["0-12"] },
+        { "scene": "erelic:old_tales_mini_memory_02", "lines": ["0-12"] },
+        { "scene": "erelic:old_tales_mini_memory_03", "lines": ["0-13"] },
+        { "scene": "erelic:old_tales_mini_memory_04", "lines": ["0-15"] }
+      ],
+      "reason": "편지 5통",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1705",
+      "text": "2세대 출전을 알리던 인류연합군 홍보물 시안은 '니케의 외형을 지닌 인류의 배신자 · 하얀 괴물'을 갓데스가 막는다는 것으로 바뀌었다가, '갓데스조차 이겨 내지 못했다 · 랩쳐가 된 하얀 니케를 맞이하라'는 조롱으로 폐기되었다",
+      "about": ["org:인류연합군", "person:아나키오르", "org:갓데스"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_05", "lines": ["0-3"] },
+        { "scene": "erelic:old_tales_mini_memory_08", "lines": ["0-4"] },
+        { "scene": "erelic:old_tales_mini_memory_09", "lines": ["0-4"] }
+      ],
+      "reason": "시안 다섯 장. 폐기본은 누가 썼는지 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1706",
+      "text": "침식이 느리게 진행된 한 니케가 남긴 녹음에 따르면 침식에 걸리면 귓가에 속삭임이 들리고 또 다른 자기가 앞에 있으며 랩쳐는 적이 아니라고 설득하던 [침식의 목소리]가 벽이 두꺼워지자 소중한 것을 다 죽이겠다고 협박했고, 그 니케는 '퀸을 위해'를 되뇌다 사살되었다",
+      "about": ["concept:침식", "person:퀸", "concept:랩쳐"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_10", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_mini_memory_11", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_mini_memory_12", "lines": ["0-5"] },
+        { "scene": "erelic:old_tales_mini_memory_13", "lines": ["0-6"] },
+        { "scene": "erelic:old_tales_mini_memory_14", "lines": ["0-8"] }
+      ],
+      "reason": "녹음 다섯 개",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1707",
+      "text": "에이브의 메모에 따르면 그는 신데렐라를 아나키오르라 부르며 죽이려는 인류에 맞서 '내 새끼'를 포기하지 않기로 했다 — 동료들을 다 고친 뒤 신데렐라의 침식은 알려진 것과 너무 다르고 감염 경로도 알 수 없어 레드 슈즈에게 물었지만, 레드 슈즈는 침식은 돌이킬 수 없다고 했다",
+      "about": ["person:에이브", "person:신데렐라", "person:레드_슈즈", "concept:침식", "person:아나키오르"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_15", "lines": ["0-14"] },
+        { "scene": "erelic:old_tales_mini_memory_16", "lines": ["0-13"] },
+        { "scene": "erelic:old_tales_mini_memory_17", "lines": ["0-17"] },
+        { "scene": "erelic:old_tales_mini_memory_18", "lines": ["0-18"] },
+        { "scene": "erelic:old_tales_mini_memory_19", "lines": ["0-2"] }
+      ],
+      "reason": "에이브의 메모 다섯 장(쓴 이는 '내가 신데렐라를 만들었다' · 레드 슈즈를 깨움으로 에이브)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1708",
+      "text": "헬레틱 연구소 연구원의 일지에 따르면 언체인드로 침식을 융화시킨 아나키오르를 붉은 눈이라 아직 치료되지 않았다고 보고 실험했는데, 그는 처음엔 살아 있는 니케 실험을 꺼림칙해했지만 재생과 통각을 보며 고통을 궁금해하게 되었다 — 찾아와 그녀를 '내 새끼'라 부르며 데려가려는 에이브(직급이 훨씬 높은 개발 연구원)를 귀찮아했다",
+      "about": ["person:아나키오르", "concept:언체인드", "concept:침식", "person:에이브", "org:중앙_정부"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_20", "lines": ["0-9"] },
+        { "scene": "erelic:old_tales_mini_memory_21", "lines": ["0-6"] },
+        { "scene": "erelic:old_tales_mini_memory_23", "lines": ["0-11"] },
+        { "scene": "erelic:old_tales_mini_memory_24", "lines": ["0-9"] }
+      ],
+      "reason": "일지 다섯 편. 연구원은 에이브가 '니케 연구 지식의 보존을 위해' 니케가 되었다고 들었다(_24 #2) — 본편의 '잠이 번거로워서'와 다른 소문",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1709",
+      "text": "O에게 보낸 보고에 따르면 폐쇄된 옛 V.T.C. 연구실에 잠입한 요원은 벽을 도배한 청백색 머리 · 푸른 눈 소녀의 사진, 뇌 수술 흔적에 눈이 붉은 니케들, 무장이 뜯긴 침식 개체 랩쳐를 보았고, 담당자가 '레드 ㅅ'인 V.T.C. 침식 연구 보고서를 찾다가 보고가 임시 저장으로 끊겼다",
+      "about": ["person:레드_슈즈", "org:V.T.C.", "concept:침식", "person:신데렐라", "person:오스왈드"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_25", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_mini_memory_26", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_mini_memory_27", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_mini_memory_28", "lines": ["0-12"] },
+        { "scene": "erelic:old_tales_mini_memory_29", "lines": ["0-3"] }
+      ],
+      "reason": "O = 오스왈드(본편에서 이 연구실을 조사했다고 함 — event_oldtales2_05_e #121-136)로 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M23",
+          "note": "2회독: O = 오스왈드 — event_oldtales2_05_e#121-136에서 오스왈드가 레드 슈즈의 연구실을 따로 조사했다고 밝힌다(I214)",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1710",
+      "text": "물방울 다섯 편을 쓴 이(세이렌으로 보인다)는 붉은 눈의 신데렐라가 무서워 믿지 못한 것을 후회하며, 아나키오르가 다시 그녀를 데려가면 자기가 구하고 어떤 모습이어도 손을 잡겠다고 다짐했다",
+      "about": ["person:리틀_머메이드", "person:신데렐라", "person:아나키오르"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_30", "lines": ["0-7"] },
+        { "scene": "erelic:old_tales_mini_memory_33", "lines": ["0-16"] },
+        { "scene": "erelic:old_tales_mini_memory_34", "lines": ["0-16"] }
+      ],
+      "reason": "'물방울'(인어 소녀의 물방울, _37 #2)과 손을 피했다 잡은 일(event_oldtales2_05_e)로 세이렌이라 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M23",
+          "note": "2회독: 물방울 · 말을 전달하지 못함 · 피한 손 — 세이렌(I216 · I217, 2_05_e#180-189)",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1711",
+      "text": "동화 [BLUE IN THE GLASS]는 신데렐라의 이야기를 옮겨, 잠을 자지 않으려 아름다운 존재가 된 천재 요정이 소녀에게 유리 구두를 주고 무도회(데뷔)를 따라온 붉은 구두를 소녀가 뚫어 막았다고 쓰고, 12시 종에 마법과 푸른 눈을 잃은 소녀의 푸른빛은 유리 구두에 담겨 [왕자님]을 만나는 날 깨어나 붉은 눈이 더는 빛나지 않으리라 맺는다",
+      "about": ["person:신데렐라", "person:에이브", "person:레드_슈즈", "item:유리_구두"],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_35", "lines": ["0-9"] },
+        { "scene": "erelic:old_tales_mini_memory_36", "lines": ["0-8"] },
+        { "scene": "erelic:old_tales_mini_memory_37", "lines": ["0-12"] },
+        { "scene": "erelic:old_tales_mini_memory_38", "lines": ["0-12"] },
+        { "scene": "erelic:old_tales_mini_memory_39", "lines": ["0-12"] }
+      ],
+      "reason": "동화 다섯 장 — 요정 = 에이브, 붉은 구두 = 레드 슈즈로 읽었다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q222",
+      "text": "유리 구두에 담긴 신데렐라의 푸른 눈을 깨워 붉은 눈이 더는 빛나지 않게 할 [왕자님]은 누구인가?",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_39", "lines": ["4-10"] }],
+      "reason": "동화의 결말이 예고하는 인물 — 지금까지 원문에 답이 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F1686-2",
+      "act": "드러냄",
+      "text": "레드 슈즈의 비밀 연구실은 수상한 소리 제보로 O(오스왈드)의 요원이 지켜보다 환풍구로 잠입해 찾아냈다",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_25", "lines": ["0-7"] }, { "scene": "erelic:old_tales_mini_memory_28", "lines": ["0-12"] }],
+      "reason": "F1686(오스왈드의 조사)의 경위",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-07",
+          "session": "M23",
+          "note": "2회독: O = 오스왈드 — event_oldtales2_05_e#121-136에서 오스왈드가 레드 슈즈의 연구실을 따로 조사했다고 밝힌다(I214)",
+          "before": "확신도 추정"
+        }
+      ]
+    }
+  ],
+  "times": [
+    {
+      "id": "S186",
+      "kind": "기준점",
+      "text": "아나키오르 시기부터 레드 슈즈 사후까지 — 병사의 편지, 에이브의 메모, 헬레틱 연구소 일지, 연구실 조사",
+      "ref": "S181",
+      "at": [["뒤", "S181"]],
+      "evidence": [
+        { "scene": "erelic:old_tales_mini_memory_02", "lines": ["1-3"] },
+        { "scene": "erelic:old_tales_mini_memory_20", "lines": ["0-2"] },
+        { "scene": "erelic:old_tales_mini_memory_27", "lines": ["0-3"] }
+      ],
+      "reason": "글들의 내용이 본편 S180–S182 사이에 걸친다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R52", "note": "R52 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": []
+}

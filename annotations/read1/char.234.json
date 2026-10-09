@@ -1,0 +1,59 @@
+{
+  "unit": "char:234",
+  "session": "R66",
+  "by": "claude",
+  "date": "2026-10-03",
+  "summary": "도로시 : 세렌디피티 — fl:boom_the_ghost의 유토피아 호에서 도로시 혼자 보낸 하루. 소리를 좇아 객실에서 흐릿한 인영을 찾아 '다시 만나서 반갑다'(01), 누구에게도 낸 적 없는 차로 티타임(02), 수영장 물장난(03), 상점가 쇼핑 — 거울에 인영이 비치자 '영혼은 거울에 비칠 리 없다'며 돌아서고, 자기 목에 건 '소중한' 목걸이를 쥐며 목걸이는 사 주지 않는다(04). 별 아래 산책하며 '유령이 되어 내 옆에 와 준 것'이라 하고, 손거울에 인영이 비치자 깨뜨린 뒤 내일도 꼭 만나자 한다(05). 인영의 이름은 끝내 나오지 않지만 이벤트에서 마오의 홀로그램(도로시가 피나라 부른 것)이다. 목걸이가 무엇인지는 말하지 않는다(2회독 몫).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_dorothy_serendipity_01",
+      "text": "객실에서 흐릿한 인영을 찾아낸 도로시 — '다시 만나서 반가워요'"
+    },
+    {
+      "scene": "ep:d_nikke_dorothy_serendipity_02",
+      "text": "갑판 티타임 — 오직 당신을 위해 준비한, 오랜 시간이 지나도 변치 않은 차"
+    },
+    {
+      "scene": "ep:d_nikke_dorothy_serendipity_03",
+      "text": "수영장 물장난"
+    },
+    {
+      "scene": "ep:d_nikke_dorothy_serendipity_04",
+      "text": "유토피아 호 상점가 쇼핑 — 거울에 인영이 비치자 돌아섬, 목걸이는 사 주지 않음"
+    },
+    {
+      "scene": "ep:d_nikke_dorothy_serendipity_05",
+      "text": "별 아래 산책 — '유령이 되어 와 준 것', 손거울을 깨뜨리고 내일도 만나자 함"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2039",
+      "text": "유토피아 호에서 도로시는 객실의 흐릿한 인영을 찾아 오래 찾아 헤맨 '당신'과의 재회라 기뻐하며, 하루 동안 차 · 물장난 · 쇼핑 · 산책을 함께하고 '유령이 되어 내 옆에 와 준 것'이라 했다 — 인영이 거울에 비치자 '영혼이 거울에 비칠 리 없다'며 돌아섰고, 손거울에 비치자 거울을 깨뜨렸다",
+      "about": ["person:도로시", "person:마오", "place:유토피아_호"],
+      "evidence": [
+        { "scene": "ep:d_nikke_dorothy_serendipity_01", "lines": ["17-48"] },
+        { "scene": "ep:d_nikke_dorothy_serendipity_04", "lines": [15, "30-36"] },
+        { "scene": "ep:d_nikke_dorothy_serendipity_05", "lines": ["27-29", "49-63"] }
+      ],
+      "reason": "도로시의 말과 서술. 유토피아호 상점가(04 #15). 인영은 이름이 나오지 않지만 fl:boom_the_ghost의 마오 홀로그램(F2029 · F2031)과 같다 — 거울을 피한 것은 F2031(처음부터 알았다)과 맞는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S245",
+      "kind": "기준점",
+      "text": "fl:boom_the_ghost 안 — 일행과 떨어진 도로시가 마오의 홀로그램과 보낸 하루(13–21 무렵)",
+      "ref": "fl:boom_the_ghost",
+      "at": [["중", "fl:boom_the_ghost"]],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_serendipity_04", "lines": [15] }],
+      "reason": "유토피아호 안(04 #15)이고 인영과 함께 지낸 하루는 이벤트에서 도로시가 따로 움직인 동안(fl:boom_the_ghost_13 #36-47, _21 #86-100)으로 읽힌다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R66", "note": "R66 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ]
+}

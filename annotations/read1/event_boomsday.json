@@ -1,0 +1,166 @@
+{
+  "unit": "event_boomsday",
+  "session": "R38",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "BOOMS DAY — 미실리스의 일렉트릭 쇼크(일레그 · 트로니 둘뿐, F1336). 트로니는 방주 전력 문제를 해결한 컨버터를 만든 직후부터 몇 년째 방에 틀어박혔고, 에테르는 윗선의 최후통첩을 전한다 — 이번 주 안에 나오지 않으면 기억 소거, 그리고 컨버터 이후 없던 정전이 올해 여섯 번(F1337). 일레그는 지휘관에게 도움을 청하고, 아크 게임쇼(BOOM 초회 한정판 · 아크레인저 팬미팅)를 목표로 삼는다. 회상(intermission_01): 진짜 하늘을 보고 싶던 소녀 트로니는 이터널 스카이 광고 날의 패닉을 보고 '진실은 가려진 편이 낫다'고 깨달았다 — 그해 니케가 되었고 방주 사망자가 가장 많았다(F1338 · F589-2). 04_s: 정전은 동력원 전력이 넘쳐서였고 컨버터는 전력을 손실시키는 장치 — 트로니는 불법 역추적으로 동력원을 직접 보고 공포에 질려, 일레그에겐 평범한 발전기라 숨기고 틀어박혔다(F1339 · Q171-2). 04_e: 일레그가 트로니가 자기를 BOOM의 꿈으로 이끈 창밖 소녀였다고 진심을 전하는 순간, 방주에 전례 없는 대정전 — 동력원이 평소 두 배 전력을 만들어 컨버터가 과부하(F1340 · F1341 · Q176). 트로니가 방을 나와 함께 고친다. 06_s · epilogue: 트로니는 일레그에게 동력원을 보여 주고, 둘은 제어할 수 없는 동력원 때문에 방주는 언젠가 없어져야 한다며 — 모두가 진짜 하늘을 보도록 — 지상에서라도 새 동력원을 찾기로 한다(F1342). 아크 게임쇼에서 트로니는 아크레인저 블랙의 사인을 받는다.",
+  "scenes": [
+    { "scene": "event_boomsday_prologue", "text": "하늘을 보고 싶던 소녀가 어두운 방에 갇히기까지(트로니 독백)" },
+    { "scene": "event_boomsday_01_s", "text": "일레그 인터뷰 — 일렉트릭 쇼크 · 컨버터, 틀어박힌 트로니, 옛 연구 일지" },
+    { "scene": "event_boomsday_01_e", "text": "에테르의 최후통첩 — 이번 주 안에 안 나오면 기억 소거, 올해 정전 여섯 번" },
+    { "scene": "event_boomsday_02_s", "text": "지휘관실에서 BOOM vs 파이널 퀘스트, 아크 게임쇼 초대" },
+    { "scene": "event_boomsday_02_e", "text": "일레그가 트로니 일로 지휘관에게 도움을 청함 — 컨버터 직후부터 은둔" },
+    { "scene": "event_boomsday_03_s", "text": "트로니가 좋아하는 것들, 일레그의 실패한 시도들, 진심을 전하라" },
+    { "scene": "event_boomsday_03_e", "text": "트로니와 T.Rony — '그날 본 것', 아크레인저 블랙 같은 꿈" },
+    { "scene": "event_boomsday_intermission_01", "text": "회상: 이터널 스카이 광고 날의 패닉, 진실은 가려진 편이 낫다" },
+    { "scene": "event_boomsday_04_s", "text": "회상: 컨버터 개발 — 전력 과잉, 불법 역추적으로 본 동력원과 공포" },
+    { "scene": "event_boomsday_04_e", "text": "일레그의 진심 — 창밖의 소녀, 그 순간 대정전" },
+    { "scene": "event_boomsday_05_s", "text": "트로니가 방을 나섬 — 복도의 선물들" },
+    { "scene": "event_boomsday_05_e", "text": "변전소 — 동력원 두 배 전력으로 컨버터 과부하, 트로니 합류" },
+    { "scene": "event_boomsday_06_s", "text": "BOOM한 기분 — 동력원을 제어할 방법, 동력원을 보여 주겠다" },
+    { "scene": "event_boomsday_06_e", "text": "아크 게임쇼 — 초회 한정판, 슈엔 호출 무시" },
+    { "scene": "event_boomsday_epilogue", "text": "진짜 하늘 · 방주는 없어져야 · 새 동력원을 찾자" }
+  ],
+  "facts": [
+    {
+      "id": "F1336",
+      "text": "일렉트릭 쇼크는 미실리스 타워에 숙소를 둔 미실리스의 전자 기기 개발 · 연구 스쿼드로 일레그(에너지 효율 · 활용)와 트로니(전기전자공학) 둘뿐이며, 방주에서 쓰는 전자 기기 대부분을 만들었다 — 일레그는 방주의 전력 문제를 해결한 컨버터를 최고의 제품으로 꼽았다",
+      "about": ["org:일렉트릭_쇼크", "person:일레그", "person:트로니", "org:미실리스", "concept:컨버터"],
+      "evidence": [{ "scene": "event_boomsday_01_s", "lines": ["11-21", 36] }],
+      "reason": "일레그 인터뷰",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1337",
+      "text": "트로니는 컨버터를 만든 직후(전초기지가 생기기 전)부터 몇 년째 방 밖으로 나오지 않았고, 에테르는 윗선이 더 기다리지 못한다며 이번 주 안에 다시 방주를 위해 일하지 않으면 기억을 소거하거나 다른 방식으로 실험실에서 일하게 할 것이라 전했다 — 또 컨버터 이후 한 번도 없던 정전이 올해 벌써 여섯 번 일어났다고 했다",
+      "about": ["person:트로니", "person:에테르", "person:일레그", "concept:기억_소거", "concept:컨버터"],
+      "evidence": [{ "scene": "event_boomsday_01_e", "lines": ["28-56"] }, { "scene": "event_boomsday_02_e", "lines": ["63-69"] }],
+      "reason": "에테르(01_e #28, #35-48, #53-56) · 일레그(02_e #67-69)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1338",
+      "text": "인간 트로니는 어릴 적 방주의 하늘이 진짜 하늘이 아니라고 말하다 따돌림을 받았는데, 이터널 스카이에 니케가 랩쳐를 쓰러뜨리는 1분짜리 광고가 나온 날 하늘에 랩쳐가 있다며 사람들이 패닉에 빠지는 것을 보고 진실은 가려져 있는 편이 낫다고 깨달았다 — 그해 트로니가 니케가 되었고, 방주 사망자 수가 가장 많은 해였다",
+      "about": ["person:트로니", "concept:이터널_스카이", "place:방주"],
+      "evidence": [{ "scene": "event_boomsday_intermission_01", "lines": ["0-53"] }],
+      "reason": "회상 서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1339",
+      "text": "방주의 정전은 동력원 전력이 모자라서가 아니라 인프라 전체에 대고도 남을 만큼 넘쳐 과부하가 나서였고, 컨버터는 전력을 손실시키는 쪽으로 만들어졌다 — 트로니는 불법인 전력 역추적으로 방주의 동력원을 직접 보고 엄청난 공포를 느꼈지만 일레그에게는 평범한 발전기였다고 했고, 공포와 진실을 혼자 떠안기로 하고 방에 틀어박혔다",
+      "about": ["person:트로니", "person:일레그", "concept:방주_동력원", "concept:컨버터", "place:방주"],
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": ["74-110", "119-137"] }, { "scene": "event_boomsday_03_e", "lines": ["13-37"] }],
+      "reason": "연구 일지(04_s #88-99) · 트로니의 거짓말(#105)과 서술(#124-130) · T.Rony '트로니는 봤잖아. 방주 안에…'(03_e #34). 일레그는 무한한 에너지를 만드는 기술이 방주 어딘가에 숨겨져 있다고 봄(#106-110)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1340",
+      "text": "일레그는 어릴 때 BOOM에 빠진 괴짜라며 심하게 따돌림받아 방에 갇혀 지내다, 창밖에서 '제 꿈은 하늘을 보는 거예요'라며 당당히 꿈을 말하는 소녀(트로니)를 보고 빛나는 사람이 되자고 다짐해 방주의 모든 디스플레이에 BOOM을 깔겠다는 꿈을 꾸게 되었다",
+      "about": ["person:일레그", "person:트로니"],
+      "evidence": [{ "scene": "event_boomsday_04_e", "lines": ["36-66"] }],
+      "reason": "일레그 본인 말 — 소녀의 말(#45-47)이 트로니의 회상(intermission_01 #1-13)과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1341",
+      "text": "방주에 전례 없는 대정전이 일어났다 — 까닭 모르게 방주 동력원이 평소의 두 배쯤 되는 전력을 만들어 변전소의 컨버터에 과부하가 걸렸고, 놔두면 블랙아웃이 방주 전체로 퍼져 마지막엔 이터널 스카이까지 꺼질 판이었다 — 방에서 나온 트로니가 일레그와 함께 컨버터 성능을 개선해 전력을 되살렸다",
+      "about": ["concept:방주_동력원", "concept:컨버터", "concept:이터널_스카이", "person:트로니", "person:일레그"],
+      "evidence": [
+        { "scene": "event_boomsday_04_e", "lines": ["71-73"] },
+        { "scene": "event_boomsday_05_e", "lines": ["2-69"] },
+        { "scene": "event_boomsday_06_s", "lines": ["42-45"] }
+      ],
+      "reason": "원문 장면 · 일레그(05_e #18-22) · 트로니의 계산(#58-59)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1342",
+      "text": "트로니는 일레그에게도 방주의 동력원을 보여 주었고, 둘은 언제 또 폭주할지 모르는 제어할 수 없는 동력원 때문에 방주는 언젠가 없어져야 한다며 — 모든 사람이 진짜 하늘을 볼 수 있도록 — 지금 동력원을 그대로 쓸 수 없으니 방주에서 못 찾으면 지상에 올라가서라도 새 동력원을 찾기로 했다",
+      "about": ["person:트로니", "person:일레그", "concept:방주_동력원", "place:방주"],
+      "evidence": [{ "scene": "event_boomsday_06_s", "lines": ["5-12", "50-54"] }, { "scene": "event_boomsday_epilogue", "lines": ["12-48"] }],
+      "reason": "트로니 · 일레그의 말 — 일레그가 수정 탐색에 자원하고 '정답을 안다'(F1320)는 것과 이어지지만 원문이 직접 잇지는 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q176",
+      "text": "방주의 동력원은 왜 갑자기 평소의 두 배 전력을 만들어 폭주했나 — 또 폭주할 수 있나?",
+      "about": ["concept:방주_동력원"],
+      "evidence": [{ "scene": "event_boomsday_05_e", "lines": ["18-19"] }, { "scene": "event_boomsday_06_s", "lines": ["9-12"] }],
+      "reason": "일레그 '왜인진 몰라도'(05_e #18), '언제든 오늘처럼 폭주할 수 있다'(06_s #10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F589-2",
+      "act": "드러냄",
+      "text": "그 광고는 니케가 랩쳐를 쓰러뜨리는 1분짜리 영상이었고, 하늘에 랩쳐가 비치자 사람들이 '우린 지하에 있다'며 패닉에 빠졌다 — 그해가 방주 사망자가 가장 많은 해",
+      "evidence": [{ "scene": "event_boomsday_intermission_01", "lines": ["24-53"] }],
+      "reason": "이터널 스카이 광고 사건(F589)을 그 자리에 있던 트로니의 회상으로 다시 보임",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "Q171-2",
+      "act": "회수",
+      "answer": "F1339",
+      "degree": "일부",
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": ["94-110", "124-127"] }],
+      "reason": "방주 전력은 무한한 에너지를 만드는 정체불명의 '방주 동력원'에서 오고 그것을 본 트로니가 공포에 질렸다는 데까지 — 동력원이 무엇인지는 아직 밝혀지지 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S134",
+      "kind": "회상",
+      "text": "트로니가 니케가 된 해 — 이터널 스카이 광고 사건, 방주 사망자가 가장 많던 해",
+      "ref": "F589",
+      "at": [["전", "event_boomsday"]],
+      "evidence": [{ "scene": "event_boomsday_intermission_01", "lines": ["0-53"] }],
+      "reason": "#52-53 '트로니가 니케가 된 해 … 사망자 수가 가장 많던 해'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "S135",
+      "kind": "회상",
+      "text": "컨버터 개발 — 전초기지가 생기기 전, 트로니가 니케가 된 뒤",
+      "ref": "concept:컨버터",
+      "at": [["뒤", "S134"], ["전", "ch00"]],
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": ["0-137"] }],
+      "reason": "일레그 '전초기지가 생기기도 전의 일'(02_e #69)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R38", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    { "target": "person:트로니", "evidence": [{ "scene": "event_boomsday_01_s", "lines": [14] }], "note": "일렉트릭 쇼크의 전기전자공학 담당 — 컨버터 뒤 몇 년째 방에 틀어박힌 니케", "new": false },
+    { "target": "concept:컨버터", "evidence": [{ "scene": "event_boomsday_01_s", "lines": [20] }], "note": "방주 동력원의 넘치는 전력을 손실시켜 정전을 막는 변전소 장치", "new": true },
+    { "target": "concept:방주_동력원", "evidence": [{ "scene": "event_boomsday_04_s", "lines": [91] }], "note": "방주에 전력을 대는 정체불명의 무한 동력원 — 트로니가 보고 공포에 질림", "new": true }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M56\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_nocallerid",
+  "session": "M56",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1287",
+      "act": "암시",
+      "points": ["Q92", "J44"],
+      "text": "지상발 음성 메시지 소문이 '이상할 정도로 빠르게' 방주에 퍼져 중앙 정부에 진실을 요구하고 있다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "event_nocallerid_01_s", "lines": ["20-22"] }],
+      "reason": "#21 — 끝에서 엔더슨이 그 메시지가 방주에 닿은 것이 '뭔가의 개입' 없이는 어렵다고 보는 의문(Q92)의 앞 그림. 회수가 없어 엣지는 없다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "시점 실마리 없음 — 카운터스(네온 포함)와 엔더슨 부사령관 · 시프티만 나오고 이름 난 사건 · 챕터와의 앞뒤가 없다. 인물 변화 없음(아니스 · 라피 · 네온 · 엔더슨 모두 앞 기준 그대로의 모습)"
+}

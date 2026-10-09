@@ -1,0 +1,41 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M15\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:피라_00",
+  "session": "M15",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D381",
+      "person": "person:라피",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'필요하면 제 손을 잡으라'며 곁을 지키는",
+      "after": "따로 만든 계정 '피라'로 단둘이 지상에 가자는 사적인 부탁을 하고, 돌아와 기쁘다는 말에 '저도 그렇다'는",
+      "evidence": [{ "scene": "sub:피라_00", "lines": ["4-17", "59-69"] }],
+      "reason": "#11 '저와 단둘이' · #62 '저도 그렇습니다' · #66-67 이 id는 지우지 않고 개인적인 용무를 부탁하겠다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    },
+    {
+      "id": "D382",
+      "person": "person:라피",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "협력의 대가로 레드 후드를 밝히고 몸과 뇌를 내놓겠다는",
+      "after": "레드 후드가 완전히 떠난 뒤에도 그 무의식이 남아, 처음 와 보는 고향에서 깊은 그리움을 느끼는",
+      "time": "S128",
+      "evidence": [{ "scene": "sub:피라_00", "lines": ["27-38", "50-51"] }],
+      "reason": "#33 '함께 있을 때 새겨진 무의식중의 무엇' · #38 '굉장히 그리운 느낌' · #50-51 웃는 듯 우는 듯",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M15" }]
+    }
+  ],
+  "life": [],
+  "note": "Q168의 근거에 이미 #31-33('완전히 떠났다')이 들어 있어 떡밥으로 따로 적지 않았다"
+}

@@ -1,0 +1,149 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M61\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:225",
+  "session": "M61",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I530",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["89-91"] }],
+      "reason": "갓데스 시절 회상의 `지휘관:` 줄 — 갓데스의 지휘관 엔더슨(char:224 I522와 같은 방식).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "I531",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_02", "lines": [75] }],
+      "reason": "스노우 화이트 '지휘관이 자꾸 뺏어 먹어서' — 갓데스의 지휘관 엔더슨.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "I532",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["1-2", "13-14", "33-39"] }],
+      "reason": "첫 실전을 지휘하며 릴리바이스를 '메카 고릴…'이라 놀리는 `지휘관:` — 갓데스의 지휘관 엔더슨.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "I533",
+      "target": "org:근접_전투_스쿼드",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["48-53", "80-82"] }],
+      "reason": "홍련의 독백 '자네들' · '전우들이여' — 혼자 살아남은 옛 근접 전투 스쿼드(F1181).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1349",
+      "act": "재언급",
+      "points": ["F1181"],
+      "text": "홍련이 첫 실전에서 '나 혼자 살아남아 검을 휘두르고 있다'며 궤멸한 옛 전우들에게 말을 건넨다",
+      "about": ["person:홍련", "org:근접_전투_스쿼드"],
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["48-53"] }],
+      "reason": "#50 — 동료들이 궤멸한 현장에 홀로 남았던 홍련(F1181)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1511",
+      "person": "person:홍련",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "근접 전투 스쿼드가 궤멸한 뒤 혼자 남은",
+      "after": "릴리바이스의 주먹에 지고 갓데스 스쿼드에 합류한",
+      "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["77-82"] }],
+      "time": "S119",
+      "points": ["F1242", "F1181"],
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["93-97"] }],
+      "reason": "#96-97 '홍련이라고 하네. 잘 부탁하네' — 소속 이동을 타임라인에.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "D1512",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:릴리바이스"],
+      "text": "단숨에 진 것이 납득되지 않는다며 재대결을 청하고, 터무니없이 강하다고 인정하며 한 걸음 더 다가가려는 상대",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["53-79"] }],
+      "reason": "#56-58 · #77.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "D1513",
+      "person": "person:릴리바이스",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:홍련"],
+      "text": "반대하는 도로시에게 '장담할게. 도움이 될 거야' 하며 쓰러뜨린 홍련을 갓데스에 들이는 리더",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["20-22", 32] }],
+      "reason": "#22. 첫 실전 전에도 '홍련은 강해요'(05#36).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "D1514",
+      "person": "person:레드_후드",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:홍련"],
+      "text": "'검객'이라 부르며 놀리다가, 저격탄을 베어 내는 홍련에게 신이 나 시간이 끝나도 저녁까지 더 해 보자는",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_03", "lines": ["78-99"] }],
+      "reason": "#88 · #96-99.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "D1515",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:홍련"],
+      "before": "처음 보는 사람에게 칼을 휘두르는 홍련의 영입에 반대하던",
+      "after": "양산형 베이스인데도 몸 쓰는 법을 안다며 전력을 다하고 진 것을 인정하는",
+      "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_04", "lines": ["37-58"] }],
+      "time": "S119",
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["27-30"] }],
+      "reason": "#28-30. 앙숙 기준은 D355(출시순 앞)에 있다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    },
+    {
+      "id": "D1516",
+      "person": "person:홍련",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "'난 강해야 하니까' 갓데스 안에서 자기 위치를 증명하려던",
+      "after": "결이 다른 새 동료들과 함께 옛 전우들이 바라던 인류의 승리를 손에 넣겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["54-58"] }],
+      "time": "S119",
+      "points": ["F1245"],
+      "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["59-82"] }],
+      "reason": "#59-62 · #71-72. 계기는 함께 달려 나온 갓데스의 외침.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:니케실험반대피켓",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E52",
+      "act": "재언급",
+      "points": ["Q35", "J14"],
+      "text": "한 부모의 피켓 — '갓데스처럼 멋진 니케가 되겠다'며 18세에 자원한 딸이 다른 피실험자 30명과 똑같이 생긴 모습이 되어 부모 얼굴도 기억하지 못한다 — 딸을 '괴물'로 만들었다던 레이첼 호프의 어머니(Q35)를 다시 꺼낸다",
+      "about": ["org:3대_기업"],
+      "evidence": [{ "scene": "relic:니케실험반대피켓_01", "lines": ["0-1"] }],
+      "reason": "#0. 같은 갓데스 광고 · 같은 결말의 다른 가족 — 레이첼 호프의 일이라는 확인은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U36",
+      "topic": "구시대",
+      "points": ["F200", "F201"],
+      "text": "3대 기업의 니케 실험을 '인간의 병기화'라며 멈추라는 시위가 벌어졌고, 자식을 잃은 부모들은 피켓에 사연과 사망률을 적어 진상 조사를 요구했다",
+      "about": ["org:3대_기업"],
+      "evidence": [{ "scene": "relic:니케실험반대피켓_00", "lines": ["0-1"] }],
+      "reason": "_00 구호 · _01 부모의 사연 · _02 '절대로 참여하면 안 되는 이유'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

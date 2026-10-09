@@ -1,0 +1,217 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M14\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_dirtybackyard",
+  "session": "M14",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I154",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "event_dirtybackyard_01_s", "lines": ["32-35"] }],
+      "reason": "진이 남은 건 '누님이 굉장히 아끼는 동생분'뿐이라 한다 — 다음 씬 01_e에서 목단이 찾아간 '동생' = 지휘관",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I155",
+      "target": "org:카페_스위티",
+      "evidence": [{ "scene": "event_dirtybackyard_01_e", "lines": ["43-45"] }],
+      "reason": "'다른 멤버는?' — 구석에 널브러진 한 녀석과 외출한 한 녀석, 슈가가 속한 해결사 스쿼드의 동료들",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E316",
+      "act": "암시",
+      "points": ["F1263"],
+      "text": "목단이 미스트를 만든 게 사실이면 '내 손으로 없애야지'라 한다 — 목단은 포그 할로우를 불태운다(F1263)",
+      "about": ["person:목단", "place:포그_할로우"],
+      "evidence": [{ "scene": "event_dirtybackyard_03_e", "lines": ["48-52"] }],
+      "reason": "#49-52 → 05_e#3-8 '그렇게 말했었지' · 06_s#14-21",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E317",
+      "act": "암시",
+      "points": ["F1267"],
+      "text": "슈가가 '저질러 버린 후에는 되돌릴 수 없다, 속죄해도 후회해도 원래대로 돌아오지 않는다'며 목단을 막겠다 한다 — 목단은 아무것도 해결된 게 없다며 욕설을 닦는다(F1267)",
+      "about": ["person:슈가", "person:목단"],
+      "evidence": [{ "scene": "event_dirtybackyard_05_e", "lines": ["229-233"] }],
+      "reason": "#232-233 → epilogue#82-93. 같은 단위 안 메아리라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E318",
+      "act": "암시",
+      "points": ["F1965"],
+      "text": "목단이 '썩은 건 뿌리부터 뽑아내지 않으면 안 된다'며 포그 할로우를 친다 — 뒤에 재건 중인 포그 할로우의 무덤 앞에서 같은 말로 후회하지 않는다고 한다(F1965)",
+      "about": ["person:목단", "place:포그_할로우"],
+      "evidence": [{ "scene": "event_dirtybackyard_06_s", "lines": ["36-37", "47-50"] }],
+      "reason": "#36 — event_lordforjustice_05_s '썩은 건 뿌리부터 뽑되'로 이 일을 되짚는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E319",
+      "act": "암시",
+      "points": ["F2450"],
+      "text": "슈가가 해결사 일을 내려놓고 식스오를 찾는 데 몰두해 목단의 누명을 풀겠다 한다 — 뒤에 식스오의 의뢰를 받는 척 미스트 시설을 지키다 목단과 함께 빠져나간다(F2450)",
+      "about": ["person:슈가", "person:식스오"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["32-40"] }],
+      "reason": "#33-35 — ch44에서 슈가 · 목단이 함께 식스오의 컴퓨터를 부순다(F2456). 이 결심과 이어진다는 원문 확인은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E320",
+      "act": "암시",
+      "points": ["Q161"],
+      "text": "목단의 손을 잡으며 '식스오와의 전쟁은 지금부터 시작'이라는 예감이 든다 — 식스오의 정체와 노림은 ch30 · ch41 · ch44 · ch45에서 풀린다(Q161)",
+      "about": ["person:식스오"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["105-106"] }],
+      "reason": "#105-106 지휘관 독백 — 제기(04_e) 뒤 씬이 뒤 줄기(J17)를 미리 알린다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D366",
+      "person": "person:목단",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'동생'이라 부르며 이마가 땅에 닿게 무릎 꿇고 도와 달라 하고, '나는 널 믿으니까'에 제일 듣고 싶던 말이라며 목숨을 걸고 지키겠다는",
+      "evidence": [{ "scene": "event_dirtybackyard_01_e", "lines": ["6-27"] }],
+      "reason": "#9-13 · #18-27 — 03_e#65-66 '내 목숨을 걸고 지켜줄게', epilogue#70 '동생은 항상 날 믿어줬지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D367",
+      "person": "person:목단",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "의리로 구역 사람들을 지켜 주는 협객",
+      "after": "질서를 어긴 제 구역을 제 손으로 불태우고 '아무것도 해결된 게 없다'며 괴로워하는",
+      "trigger": [{ "scene": "event_dirtybackyard_06_s", "lines": ["14-21"] }],
+      "time": "S122",
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["82-93"] }],
+      "reason": "05_e#88-89 '선택권이 없어, 언더월드 퀸이자 모란회 보스' → epilogue#87-93 '옳은 선택이라 생각했는데'. 앞 기준 D206",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D368",
+      "person": "person:슈가",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:목단"],
+      "text": "파트너를 위험에 빠뜨린 의뢰인이라며 미스트 유통을 의심해 총을 겨누는",
+      "evidence": [{ "scene": "event_dirtybackyard_02_e", "lines": ["3-18"] }],
+      "reason": "#7-12 — intermission#79 '의심이 100퍼센트 다 풀린 게 아니니까'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D369",
+      "person": "person:슈가",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:목단"],
+      "before": "미스트 유통을 의심하던 의뢰인",
+      "after": "목단에게 졌어도 누명을 풀어 주려 식스오를 쫓고 '목단을 잘 부탁해'라는",
+      "trigger": [{ "scene": "event_dirtybackyard_06_s", "lines": ["30-66"] }],
+      "time": "S122",
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["24-43"] }],
+      "reason": "#25 '목단이 식스오와 연관 있다 생각했는데 아니었고' · #35 · #42-43",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D370",
+      "person": "person:슈가",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "썩은 데 어쩔 수 없이 물든 약자들까지 쳐내는 건 너무하다며, 저질러 버린 뒤엔 되돌릴 수 없으니 약자의 자리를 지키겠다는",
+      "evidence": [{ "scene": "event_dirtybackyard_05_e", "lines": ["21-27", "229-233"] }],
+      "reason": "#21-27 · #231-233 — 과거 식스오의 일을 하다 큰일을 낸 기억(F1259)에서 나온 신념, 06_s#40-42도 같다",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M54", "note": "출시순 앞선 char:140 기준을 남긴다(출시 첫날 호감도 스토리)" }
+      ]
+    },
+    {
+      "id": "D371",
+      "person": "person:슈가",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "농담과 키스로 받아넘기는 '파트너'",
+      "after": "파트너를 지키려 감정적으로 굴었다고 사과하고, 떠올리기 싫은 과거와 식스오의 의뢰까지 털어놓는",
+      "trigger": [{ "scene": "event_dirtybackyard_02_s", "lines": ["86-107"] }],
+      "time": "S122",
+      "evidence": [{ "scene": "event_dirtybackyard_05_e", "lines": ["192-233"] }],
+      "reason": "intermission#75-78 '파트너를 지키기 위해' · 05_e#192-217 숨긴 과거를 밝힘 — 앞 기준 D168",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U190",
+      "topic": "방주 사회",
+      "text": "아우터 림의 공장 마을 포그 할로우는 매연과 안개로 늘 뿌옇고, 주민들은 과로하며 가족을 먹여 살리고 언더월드 조직(모란회)이 뒤를 봐주는 구역이라 아무도 건드리지 않는다",
+      "about": ["place:포그_할로우", "place:아우터_림", "org:모란회"],
+      "evidence": [{ "scene": "event_dirtybackyard_prologue", "lines": ["6-13", "22-36"] }],
+      "reason": "#10-13 매연 · 안개 '살기 팍팍하겠네', #32-33 모란회 구역이라 털끝 하나 안 건드림",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "U191",
+      "topic": "방주 사회",
+      "text": "미스트 중독자들은 아우터 림 입구에서 시신 더미를 밟고 격벽에 손을 뻗거나 시신 더미에 절하며 미스트를 빌고, 배가 베여도 웃으며 목단을 '구세주'라 부른다",
+      "about": ["concept:미스트", "place:아우터_림"],
+      "points": ["F1258"],
+      "evidence": [{ "scene": "event_dirtybackyard_02_s", "lines": ["22-30", "67-89"] }],
+      "reason": "#24-28 · #69 · #77 · #86-89",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "U192",
+      "topic": "방주 사회",
+      "text": "사람들은 조작된 뉴스를 그대로 믿어 모란회를 쓰레기 취급하고, 날마다 모란회 벽에 '살인자' · '모란회를 해체하라' 같은 욕설을 쓴다",
+      "about": ["org:모란회"],
+      "points": ["F1264", "F1267"],
+      "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["26-31", "44-48", 76, 80, 85] }],
+      "reason": "슈가 #29-31 '눈앞에 보이는 악을 물어뜯고 있는 거니까' · 지휘관 독백 #45",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "note": "이 단위엔 미상 이름표 줄이 없다. 05_e#211-214 '가족이라더니! 지켜준다더니!'의 주민 · 06_s#47-50 '예전 비슷한 일'은 Q162(열림)라 정체를 적지 않는다."
+}

@@ -1,0 +1,1086 @@
+from_unit,to_unit,type,count,read1,read2,from_order,to_order,from_kind,to_kind,records
+ch00,ch01,reversal,1,1,0,1,2,메인,메인,F1-2
+ch00,ch17,callback,1,0,1,1,148,메인,메인,E124
+ch00,event_overthehorizon,callback,1,0,1,1,391,메인,이벤트,E770
+ch00,ch40,setup_payoff,1,0,1,1,398,메인,메인,E1
+ch00,fl:good_world,setup_payoff,1,0,1,1,448,메인,이벤트,E1
+ch00,ch48,callback,2,0,2,1,472,메인,메인,E1231 E1242
+ch00,ch48,setup_payoff,1,0,1,1,472,메인,메인,E2
+ch01,ch02,setup_payoff,1,1,0,2,3,메인,메인,Q3-2
+ch01,ch03,callback,1,0,1,2,6,메인,메인,E16
+ch01,ch04,setup_payoff,3,1,2,2,8,메인,메인,Q1-2 E6
+ch01,ch06,setup_payoff,1,0,1,2,11,메인,메인,E7
+ch01,ch07,callback,1,0,1,2,42,메인,메인,E53
+ch01,ch09,callback,1,0,1,2,55,메인,메인,E69
+ch01,ch12,callback,1,0,1,2,73,메인,메인,E81
+ch01,ch13,callback,2,0,2,2,76,메인,메인,E88 E89
+ch01,ch14,callback,2,0,2,2,80,메인,메인,E95 E97
+ch01,ch14,setup_payoff,3,1,2,2,80,메인,메인,Q1-3 E6
+ch01,char:232,callback,1,1,0,2,96,메인,호감도,F16-2
+ch01,char:102,setup_payoff,2,0,2,2,107,메인,호감도,E7
+ch01,ch17,callback,2,0,2,2,148,메인,메인,E122
+ch01,event_brandnewyear,callback,1,0,1,2,163,메인,이벤트,E135
+ch01,char:260,callback,1,0,1,2,164,메인,호감도,E1296
+ch01,event_lastkingdom1,callback,1,0,1,2,295,메인,이벤트,E401
+ch01,event_footstepwalkrun1,setup_payoff,1,1,0,2,350,메인,이벤트,Q2-2
+ch01,ch35,callback,1,0,1,2,358,메인,메인,E595
+ch01,event_arcanearchive,callback,1,0,1,2,383,메인,이벤트,E726
+ch01,ch48,callback,1,0,1,2,472,메인,메인,E1231
+ch01,ch48,setup_payoff,1,0,1,2,472,메인,메인,E5
+ch02,ch03,callback,1,1,0,3,6,메인,메인,F43-2
+ch02,ch03,setup_payoff,1,1,0,3,6,메인,메인,Q8-2
+ch02,ch06,setup_payoff,1,1,0,3,11,메인,메인,Q6-2
+ch02,sub:이례의_기록자_00,callback,1,0,1,3,22,메인,서브퀘스트,E35
+ch02,sub:랩칠리언_05,callback,1,0,1,3,28,메인,서브퀘스트,E36
+ch02,ch07,callback,1,1,0,3,42,메인,메인,F40-2
+ch02,ch10,setup_payoff,1,0,1,3,62,메인,메인,E11
+ch02,char:102,setup_payoff,1,1,0,3,107,메인,호감도,Q6-3
+ch02,ch20,callback,1,0,1,3,168,메인,메인,E145
+ch02,ch32,setup_payoff,1,0,1,3,310,메인,메인,E11
+ch02,event_footstepwalkrun1,setup_payoff,1,0,1,3,350,메인,이벤트,E11
+ch02,ch42,setup_payoff,2,0,2,3,416,메인,메인,E10
+sub:칠리페퍼_00,sub:칠리페퍼_01,setup_payoff,1,1,0,4,51,서브퀘스트,서브퀘스트,Q9-2
+sub:테트라_커넥트_00,sub:테트라_커넥트_01,setup_payoff,1,0,1,5,153,서브퀘스트,서브퀘스트,E14
+ch03,ch04,reversal,1,1,0,6,8,메인,메인,F61-2
+ch03,ch04,setup_payoff,1,1,0,6,8,메인,메인,Q12-2
+ch03,char:160,setup_payoff,1,0,1,6,132,메인,호감도,E20
+ch03,ch24,setup_payoff,1,0,1,6,221,메인,메인,E18
+ch03,side:wordless,callback,1,0,1,6,331,메인,사이드,E473
+ch03,event_footstepwalkrun1,setup_payoff,2,0,2,6,350,메인,이벤트,E18
+ch03,char:162,setup_payoff,1,0,1,6,382,메인,호감도,E17
+ch03,fl:sin_editor,callback,1,0,1,6,430,메인,이벤트,E998
+sub:세르반_00,sub:세르반_01,callback,1,1,0,7,39,서브퀘스트,서브퀘스트,F68-2
+sub:세르반_00,sub:세르반_03,setup_payoff,1,0,1,7,77,서브퀘스트,서브퀘스트,E21
+ch04,ch06,setup_payoff,2,2,0,8,11,메인,메인,Q13-2 Q15-2
+ch04,sub:트레저_헌터_03,callback,1,0,1,8,21,메인,서브퀘스트,E34
+ch04,ch07,callback,1,0,1,8,42,메인,메인,E56
+ch04,ch09,setup_payoff,1,1,0,8,55,메인,메인,Q18-2
+ch04,ch10,setup_payoff,1,1,0,8,62,메인,메인,Q16-2
+ch04,ch12,setup_payoff,1,1,0,8,73,메인,메인,Q18-3
+ch04,ch13,setup_payoff,1,1,0,8,76,메인,메인,Q14-2
+ch04,ch14,setup_payoff,1,0,1,8,80,메인,메인,E25
+ch04,ch16,callback,1,0,1,8,87,메인,메인,E113
+ch04,ch20,setup_payoff,1,1,0,8,168,메인,메인,Q13-3
+ch04,event_redash,setup_payoff,1,1,0,8,248,메인,이벤트,Q14-3
+ch04,ch32,setup_payoff,2,1,1,8,310,메인,메인,Q16-3 E29
+ch04,side:wordless,setup_payoff,1,0,1,8,331,메인,사이드,E24
+ch04,event_footstepwalkrun1,setup_payoff,1,1,0,8,350,메인,이벤트,Q14-4
+ch04,ch35,setup_payoff,2,1,1,8,358,메인,메인,Q19-2 E28
+ch04,char:162,callback,1,0,1,8,382,메인,호감도,E1435
+ch04,char:162,setup_payoff,2,0,2,8,382,메인,호감도,E22 E23
+ch04,fl:ark_guardian,setup_payoff,1,0,1,8,428,메인,이벤트,E26
+ch04,side:pretty_star,setup_payoff,1,1,0,8,447,메인,사이드,Q19-3
+ch04,ch46,setup_payoff,1,0,1,8,452,메인,메인,E27
+ch04,event_staranis1,setup_payoff,1,1,0,8,454,메인,이벤트,Q19-4
+ch05,ch06,callback,1,1,0,9,11,메인,메인,F98-2
+ch05,ch13,setup_payoff,1,0,1,9,76,메인,메인,E43
+ch05,char:190,setup_payoff,1,0,1,9,104,메인,호감도,E42
+ch05,char:191,setup_payoff,2,1,1,9,126,메인,호감도,Q22-2 E41
+ch05,event_wisdomspring,setup_payoff,1,0,1,9,353,메인,이벤트,E40
+ch05,ch48,setup_payoff,1,0,1,9,472,메인,메인,E40
+sub:중앙_정부_공식__00,sub:중앙_정부_공식__02,setup_payoff,2,1,1,10,154,서브퀘스트,서브퀘스트,Q23-2 E44
+ch06,ch07,callback,2,2,0,11,42,메인,메인,F124-2 F127-2
+ch06,ch07,setup_payoff,1,0,1,11,42,메인,메인,E50
+ch06,ch12,setup_payoff,1,1,0,11,73,메인,메인,Q26-2
+ch06,ch14,setup_payoff,1,1,0,11,80,메인,메인,Q27-2
+ch06,char:221,setup_payoff,1,0,1,11,102,메인,호감도,E49
+ch06,char:190,setup_payoff,1,1,0,11,104,메인,호감도,Q25-2
+ch06,char:192,callback,2,0,2,11,254,메인,호감도,E1608 E1609
+ch06,event_lastkingdom1,setup_payoff,1,1,0,11,295,메인,이벤트,Q29-2
+ch06,event_arcanearchive,callback,1,0,1,11,383,메인,이벤트,E726
+ch06,ch39,callback,1,0,1,11,396,메인,메인,E803
+ch06,event_goddessfall1,setup_payoff,1,1,0,11,418,메인,이벤트,Q28-2
+sub:콜렉터_00,sub:콜렉터_01,setup_payoff,1,0,1,13,14,서브퀘스트,서브퀘스트,E12
+sub:콜렉터_00,fl:persona_on_frontline,callback,1,0,1,13,474,서브퀘스트,이벤트,E1569
+sub:콜렉터_01,sub:콜렉터_02,callback,1,0,1,14,219,서브퀘스트,서브퀘스트,E232
+relic:방주추첨권,relic:구시대의플레이리스트,callback,1,0,1,17,72,유실물,유실물,E77
+sub:트레저_헌터_00,sub:트레저_헌터_02,setup_payoff,1,1,0,18,20,서브퀘스트,서브퀘스트,Q30-2
+sub:트레저_헌터_00,sub:트레저_헌터_03,setup_payoff,2,1,1,18,21,서브퀘스트,서브퀘스트,Q30-3 E30
+sub:트레저_헌터_01,sub:트레저_헌터_03,setup_payoff,2,0,2,19,21,서브퀘스트,서브퀘스트,E31 E32
+sub:트레저_헌터_02,sub:트레저_헌터_03,reversal,1,1,0,20,21,서브퀘스트,서브퀘스트,F146-2
+sub:트레저_헌터_02,sub:트레저_헌터_03,setup_payoff,1,0,1,20,21,서브퀘스트,서브퀘스트,E33
+sub:랩칠리언_01,relic:정갈하게쓴기록,callback,1,0,1,24,397,서브퀘스트,유실물,E814
+sub:랩칠리언_06,ch14,callback,1,1,0,29,80,서브퀘스트,메인,F171-2
+sub:랩칠리언_06,ch27,setup_payoff,1,0,1,29,267,서브퀘스트,메인,E37
+sub:랩칠리언_06,relic:정갈하게쓴기록,callback,1,0,1,29,397,서브퀘스트,유실물,E812
+sub:랩칠리언_06,event_staranis1,callback,1,0,1,29,454,서브퀘스트,이벤트,E1161
+sub:랩칠리언_06,fl:project_matis,callback,1,0,1,29,467,서브퀘스트,이벤트,E1193
+sub:할아범_00,sub:할아범_01,callback,1,0,1,30,201,서브퀘스트,서브퀘스트,E178
+relic:갓데스스쿼드리포트,char:221,setup_payoff,1,1,0,31,102,유실물,호감도,Q33-2
+relic:갓데스스쿼드리포트,event_overzone,setup_payoff,1,1,0,31,203,유실물,이벤트,Q33-3
+relic:갓데스스쿼드리포트,event_redash,setup_payoff,2,0,2,31,248,유실물,이벤트,E38 E39
+relic:니케실험대상자모집,char:191,setup_payoff,1,0,1,37,126,유실물,호감도,E46
+relic:니케실험대상자모집,sub:중앙_정부_공식__02,setup_payoff,1,0,1,37,154,유실물,서브퀘스트,E45
+relic:니케실험대상자모집,ch48,setup_payoff,1,0,1,37,472,유실물,메인,E46
+relic:통화기록028594,relic:니케실험반대피켓,callback,1,0,1,38,41,유실물,유실물,E52
+relic:통화기록028594,relic:니케실험반대피켓,setup_payoff,1,0,1,38,41,유실물,유실물,E47
+sub:세르반_01,sub:세르반_02,callback,1,0,1,39,44,서브퀘스트,서브퀘스트,E59
+sub:세르반_01,sub:세르반_03,setup_payoff,1,0,1,39,77,서브퀘스트,서브퀘스트,E51
+sub:세르반_01,ch44,callback,1,0,1,39,436,서브퀘스트,메인,E1025
+ch07,ch09,setup_payoff,1,1,0,42,55,메인,메인,Q38-2
+ch07,ch13,callback,1,0,1,42,76,메인,메인,E87
+ch07,ch13,setup_payoff,1,0,1,42,76,메인,메인,E54
+ch07,char:221,setup_payoff,1,0,1,42,102,메인,호감도,E57
+ch07,char:102,callback,1,0,1,42,107,메인,호감도,E1262
+ch07,ch17,setup_payoff,1,1,0,42,148,메인,메인,Q38-3
+ch07,ch19,setup_payoff,1,1,0,42,165,메인,메인,Q39-2
+ch07,event_overzone,callback,1,0,1,42,203,메인,이벤트,E207
+ch07,event_lastkingdom1,callback,1,0,1,42,295,메인,이벤트,E409
+ch07,event_goddessfall1,setup_payoff,1,0,1,42,418,메인,이벤트,E55
+ch07,ch46,setup_payoff,1,0,1,42,452,메인,메인,E58
+sub:중앙_정부_공식__01,sub:중앙_정부_공식__02,setup_payoff,1,1,0,43,154,서브퀘스트,서브퀘스트,Q40-2
+sub:세르반_02,sub:세르반_03,setup_payoff,2,1,1,44,77,서브퀘스트,서브퀘스트,Q41-2 E60
+sub:러블리_드림_00,event_staranis1,setup_payoff,1,0,1,46,454,서브퀘스트,이벤트,E61
+d_ex_elevator_01,event_footstepwalkrun1,callback,2,2,0,49,350,그 밖,이벤트,F231-2 F232-2
+ch08,ch09,reversal,1,1,0,50,55,메인,메인,F234-2
+ch08,ch09,setup_payoff,3,1,2,50,55,메인,메인,Q42-2 E63 E64
+ch08,ch39,setup_payoff,1,1,0,50,396,메인,메인,Q43-2
+ch08,side:pretty_star,setup_payoff,1,1,0,50,447,메인,사이드,Q43-3
+ch08,event_staranis1,setup_payoff,1,1,0,50,454,메인,이벤트,Q43-4
+sub:칠리페퍼_01,sub:칠리페퍼_02,setup_payoff,2,1,1,51,81,서브퀘스트,서브퀘스트,Q44-2 E65
+relic:UFO챈.zip,char:221,setup_payoff,1,1,0,54,102,유실물,호감도,Q46-2
+relic:UFO챈.zip,event_redash,setup_payoff,1,1,0,54,248,유실물,이벤트,Q46-3
+relic:UFO챈.zip,char:224,callback,1,0,1,54,252,유실물,호감도,E1338
+relic:UFO챈.zip,ch35,setup_payoff,1,1,0,54,358,유실물,메인,Q46-4
+ch09,ch10,callback,1,0,1,55,62,메인,메인,E71
+ch09,ch11,setup_payoff,1,0,1,55,68,메인,메인,E70
+ch09,ch13,callback,1,0,1,55,76,메인,메인,E85
+ch09,ch14,setup_payoff,1,1,0,55,80,메인,메인,Q49-2
+ch09,ch15,callback,1,0,1,55,85,메인,메인,E101
+ch09,ch33,callback,1,0,1,55,334,메인,메인,E477
+ch10,ch11,setup_payoff,2,2,0,62,68,메인,메인,Q52-2 Q53-2
+ch10,ch12,setup_payoff,1,0,1,62,73,메인,메인,E72
+ch10,ch32,callback,1,0,1,62,310,메인,메인,E459
+ch10,fl:absolute,callback,1,0,1,62,400,메인,이벤트,E830
+sub:롬_00,event_ce006,callback,1,0,1,64,387,서브퀘스트,이벤트,E745
+sub:롬_00,event_ce006,setup_payoff,1,1,0,64,387,서브퀘스트,이벤트,Q54-2
+sub:롬_01,event_ce006,callback,1,0,1,65,387,서브퀘스트,이벤트,E749
+sub:롬_01,event_ce006,setup_payoff,1,0,1,65,387,서브퀘스트,이벤트,E73
+sub:롬_02,event_ce006,callback,1,0,1,66,387,서브퀘스트,이벤트,E744
+sub:롬_02,event_ce006,setup_payoff,1,0,1,66,387,서브퀘스트,이벤트,E74
+ch11,ch12,setup_payoff,3,2,1,68,73,메인,메인,Q55-2 Q56-2 E75
+ch11,fl:project_matis,callback,1,0,1,68,467,메인,이벤트,E1205
+sub:음악_애호가_00,ch35,setup_payoff,1,0,1,69,358,서브퀘스트,메인,E76
+relic:기업-랩쳐음모론,ch43,setup_payoff,1,1,0,71,434,유실물,메인,Q57-2
+ch12,ch15,callback,1,0,1,73,85,메인,메인,E100
+ch12,char:180,setup_payoff,1,1,0,73,93,메인,호감도,Q60-2
+ch12,ch18,callback,2,0,2,73,152,메인,메인,E127 E129
+ch12,ch23,setup_payoff,2,0,2,73,217,메인,메인,E82
+ch12,event_darkhero,callback,1,0,1,73,298,메인,이벤트,E418
+ch12,ch33,setup_payoff,1,1,0,73,334,메인,메인,Q59-2
+ch12,ch34,callback,1,0,1,73,336,메인,메인,E513
+ch12,ch35,callback,1,0,1,73,358,메인,메인,E590
+ch12,ch36,callback,1,0,1,73,360,메인,메인,E622
+ch12,event_unbreakablesphere1,callback,1,0,1,73,377,메인,이벤트,E699
+ch12,ch44,callback,1,0,1,73,436,메인,메인,E1036
+ch12,fl:project_matis,callback,1,0,1,73,467,메인,이벤트,E1202
+ch12,fl:project_matis,setup_payoff,2,1,1,73,467,메인,이벤트,Q58-2 E83
+sub:숲속요정_00,event_miraclesnow1,callback,1,0,1,74,159,서브퀘스트,이벤트,E1291
+sub:숲속요정_00,ch21,callback,1,1,0,74,191,서브퀘스트,메인,F326-2
+ch13,ch14,callback,1,0,1,76,80,메인,메인,E98
+ch13,ch20,setup_payoff,1,1,0,76,168,메인,메인,Q64-2
+ch13,ch24,setup_payoff,2,1,1,76,221,메인,메인,Q65-2 E92
+ch13,ch25,callback,1,0,1,76,241,메인,메인,E248
+ch13,ch26,callback,1,0,1,76,244,메인,메인,E268
+ch13,sub:택틱컬틱택_01,callback,1,1,0,76,275,메인,서브퀘스트,F347-2
+ch13,ch33,setup_payoff,1,0,1,76,334,메인,메인,E86
+ch13,event_footstepwalkrun1,setup_payoff,1,1,0,76,350,메인,이벤트,Q65-3
+ch13,ch35,callback,1,0,1,76,358,메인,메인,E601
+ch13,event_goddessfall1,setup_payoff,1,0,1,76,418,메인,이벤트,E90
+ch13,ch48,callback,2,0,2,76,472,메인,메인,E1231 E1241
+ch13,ch48,setup_payoff,2,1,1,76,472,메인,메인,Q63-2 E91
+sub:철도로GO_00,fl:terminus_ticket,setup_payoff,1,0,1,78,425,서브퀘스트,이벤트,E93
+ch14,ch17,setup_payoff,1,0,1,80,148,메인,메인,E96
+ch14,ch19,callback,1,0,1,80,165,메인,메인,E142
+ch14,ch22,callback,3,2,1,80,197,메인,메인,F376-2 F377-2 E167
+ch14,sub:중앙정부_트라이앵글_00,callback,1,0,1,80,199,메인,서브퀘스트,E180
+ch14,ch30,callback,1,0,1,80,293,메인,메인,E387
+ch14,event_lastkingdom1,callback,1,0,1,80,295,메인,이벤트,E410
+ch14,ch32,setup_payoff,1,0,1,80,310,메인,메인,E99
+ch14,event_goddessfall1,setup_payoff,1,1,0,80,418,메인,이벤트,Q68-2
+ch15,char:90,setup_payoff,1,0,1,85,131,메인,호감도,E102
+ch15,ch35,callback,3,0,3,85,358,메인,메인,E591 E598
+ch15,fl:project_matis,callback,1,0,1,85,467,메인,이벤트,E1198
+relic:종말의서,sub:데이파라_00,callback,1,0,1,86,166,유실물,서브퀘스트,E143
+relic:종말의서,sub:2호_쉘터_관리계정_00,callback,1,0,1,86,200,유실물,서브퀘스트,E181
+relic:종말의서,ch43,setup_payoff,1,0,1,86,434,유실물,메인,E103
+ch16,char:110,callback,1,0,1,87,137,메인,호감도,E1278
+ch16,ch17,setup_payoff,2,1,1,87,148,메인,메인,Q75-2 E109
+ch16,ch18,setup_payoff,3,1,2,87,152,메인,메인,Q76-2 E108 E112
+ch16,ch23,callback,1,0,1,87,217,메인,메인,E223
+ch16,ch24,callback,1,0,1,87,221,메인,메인,E237
+ch16,ch24,setup_payoff,2,0,2,87,221,메인,메인,E104 E114
+ch16,fl:enter_heaven,reversal,1,1,0,87,442,메인,이벤트,F403-2
+ch16,fl:enter_heaven,setup_payoff,1,0,1,87,442,메인,이벤트,E110
+char:180,ch23,setup_payoff,1,1,0,93,217,호감도,메인,Q77-2
+char:180,event_oldtales1,setup_payoff,1,0,1,93,338,호감도,이벤트,E1248
+char:11,ch43,callback,1,0,1,94,434,호감도,메인,E1008
+char:11,ch43,setup_payoff,2,0,2,94,434,호감도,메인,E1592 E1593
+char:212,char:12,callback,1,1,0,95,123,호감도,호감도,F444-2
+char:212,event_newflavor,setup_payoff,1,1,0,95,367,호감도,이벤트,Q78-2
+char:232,char:102,setup_payoff,1,0,1,96,107,호감도,호감도,E1249
+char:232,ch19,setup_payoff,1,1,0,96,165,호감도,메인,Q79-2
+char:232,sub:에덴_Notice_00,callback,1,0,1,96,192,호감도,서브퀘스트,E164
+char:232,erelic:goddess_fall_mini,callback,1,0,1,96,419,호감도,유실물,E962
+char:232,erelic:goddess_fall_mini,setup_payoff,3,1,2,96,419,호감도,유실물,Q80-2 E1250 E1251
+char:430,event_cherryblossom,callback,1,0,1,97,185,호감도,이벤트,E156
+char:202,char:72,setup_payoff,1,0,1,99,101,호감도,호감도,E1252
+char:101,ch18,callback,1,0,1,100,152,호감도,메인,E130
+char:101,event_freezeacpu,callback,1,0,1,100,239,호감도,이벤트,E247
+char:101,fl:great_villain_union,callback,2,0,2,100,478,호감도,이벤트,E1585 E1586
+char:72,char:71,setup_payoff,1,0,1,101,119,호감도,호감도,E1255
+char:72,fl:terminus_ticket,callback,2,0,2,101,425,호감도,이벤트,E1455 E1460
+char:72,fl:ark_guardian,setup_payoff,1,0,1,101,428,호감도,이벤트,E1256
+char:221,ch17,setup_payoff,2,2,0,102,148,호감도,메인,Q83-2 Q84-2
+char:221,event_overzone,setup_payoff,1,1,0,102,203,호감도,이벤트,Q84-3
+char:221,ch24,setup_payoff,1,0,1,102,221,호감도,메인,E1259
+char:221,ch25,setup_payoff,1,1,0,102,241,호감도,메인,Q82-2
+char:221,event_footstepwalkrun1,setup_payoff,1,1,0,102,350,호감도,이벤트,Q82-3
+char:221,fl:ark_guardian,setup_payoff,2,1,1,102,428,호감도,이벤트,Q83-3 E1257
+char:221,ch48,setup_payoff,1,0,1,102,472,호감도,메인,E1258
+char:10,ch32,setup_payoff,1,0,1,103,310,호감도,메인,E1261
+char:10,event_wisdomspring,setup_payoff,1,0,1,103,353,호감도,이벤트,E1260
+char:190,char:194,callback,1,1,0,104,256,호감도,호감도,F513-2
+char:82,fl:for_rest,callback,2,1,1,106,365,호감도,이벤트,F523-2 E1426
+char:102,ch40,setup_payoff,1,0,1,107,398,호감도,메인,E1263
+char:102,fl:project_matis,setup_payoff,2,0,2,107,467,호감도,이벤트,E1264 E1265
+char:102,char:105,callback,2,1,1,107,469,호감도,호감도,F529-2 E1633
+char:130,event_bluewaterisland,callback,2,1,1,108,212,호감도,이벤트,F537-2 E218
+char:130,event_bluewaterisland,setup_payoff,2,1,1,108,212,호감도,이벤트,Q85-2 E1268
+char:181,event_darkhero,callback,2,0,2,109,298,호감도,이벤트,E416 E420
+char:181,event_beautyfullshot1,callback,1,0,1,109,305,호감도,이벤트,E431
+char:32,fl:persona_on_frontline,callback,1,0,1,110,474,호감도,이벤트,E1574
+char:61,event_neverland1,callback,3,2,1,111,255,호감도,이벤트,F550-2 F551-2 E1348
+char:161,char:162,callback,1,0,1,112,382,호감도,호감도,E1432
+char:141,event_claymore,callback,2,0,2,113,303,호감도,이벤트,E1373 E1375
+char:141,fl:coins_in_rush,callback,1,0,1,113,404,호감도,이벤트,E865
+char:80,fl:for_rest,callback,1,0,1,118,365,호감도,이벤트,E1428
+char:140,ch40,setup_payoff,1,0,1,120,398,호감도,메인,E1271
+char:140,fl:good_world,setup_payoff,1,0,1,120,448,호감도,이벤트,E1271
+char:220,ch17,setup_payoff,1,0,1,121,148,호감도,메인,E1272
+char:220,ch19,setup_payoff,1,0,1,121,165,호감도,메인,E1273
+char:220,event_overzone,setup_payoff,1,0,1,121,203,호감도,이벤트,E1272
+char:22,event_maidinvalentine,callback,1,0,1,122,177,호감도,이벤트,E1298
+char:22,fl:absolute,callback,1,0,1,122,400,호감도,이벤트,E848
+char:12,event_boomsday,callback,2,1,1,123,280,호감도,이벤트,F589-2 E349
+char:12,event_wisdomspring,setup_payoff,1,1,0,123,353,호감도,이벤트,Q86-2
+char:12,ch35,setup_payoff,2,0,2,123,358,호감도,메인,E1274 E1275
+char:12,ch38,setup_payoff,1,0,1,123,375,호감도,메인,E1275
+char:12,event_overthehorizon,callback,1,0,1,123,391,호감도,이벤트,E769
+char:12,fl:terminus_ticket,callback,1,0,1,123,425,호감도,이벤트,E1461
+char:12,fl:sin_editor,callback,1,1,0,123,430,호감도,이벤트,F589-3
+char:12,side:pretty_star,setup_payoff,1,0,1,123,447,호감도,사이드,E1276
+char:12,char:17,callback,3,0,3,123,455,호감도,호감도,E1631 E1632
+char:12,fl:persona_on_frontline,callback,1,0,1,123,474,호감도,이벤트,E1569
+char:291,event_darkhero,callback,1,0,1,128,298,호감도,이벤트,E421
+char:291,event_wisdomspring,callback,1,0,1,128,353,호감도,이벤트,E577
+char:291,event_wisdomspring,setup_payoff,1,0,1,128,353,호감도,이벤트,E1594
+char:150,event_brandnewyear,callback,1,0,1,133,163,호감도,이벤트,E137
+char:92,char:95,callback,1,1,0,135,402,호감도,호감도,F629-2
+char:231,sub:에덴_Notice_01,setup_payoff,1,1,0,136,193,호감도,서브퀘스트,Q88-2
+char:231,erelic:goddess_fall_mini,setup_payoff,1,0,1,136,419,호감도,유실물,E1277
+char:110,event_doutsiders,setup_payoff,1,0,1,137,171,호감도,이벤트,E1279
+char:110,ch24,setup_payoff,1,0,1,137,221,호감도,메인,E1280
+char:110,fl:sin_editor,callback,1,0,1,137,430,호감도,이벤트,E997
+char:131,event_bluewaterisland,callback,1,0,1,138,212,호감도,이벤트,E217
+char:242,event_goldencoinrush1,callback,2,0,2,140,300,호감도,이벤트,E1368 E1369
+char:242,event_lifeagain,callback,1,0,1,140,332,호감도,이벤트,E1393
+char:170,event_perfectmaid,callback,1,1,0,141,264,호감도,이벤트,F651-2
+char:230,erelic:goddess_fall_mini,setup_payoff,3,1,2,143,419,호감도,유실물,Q89-2 E1281 E1282
+char:230,fl:ark_ranger,callback,1,0,1,143,462,호감도,이벤트,E1177
+char:230,fl:ark_ranger,setup_payoff,1,0,1,143,462,호감도,이벤트,E1283
+char:222,event_overzone,callback,1,0,1,144,203,호감도,이벤트,E199
+char:222,erelic:red_ash_lost,setup_payoff,1,1,0,144,249,호감도,유실물,Q90-2
+char:222,event_newyearnewsword,callback,1,1,0,144,258,호감도,이벤트,F660-2
+char:222,event_newyearnewsword,setup_payoff,2,1,1,144,258,호감도,이벤트,Q90-3 E1284
+char:222,event_goddessfall1,setup_payoff,1,0,1,144,418,호감도,이벤트,E1286
+char:222,ch47,setup_payoff,1,0,1,144,470,호감도,메인,E1285
+char:120,event_miraclesnow1,setup_payoff,2,0,2,145,159,호감도,이벤트,E1596 E1597
+char:352,event_seayouagain1,callback,1,0,1,147,226,호감도,이벤트,E1319
+char:352,event_seayouagain1,setup_payoff,2,0,2,147,226,호감도,이벤트,E1598 E1599
+char:352,ch38,callback,1,0,1,147,375,호감도,메인,E658
+ch17,ch20,setup_payoff,1,0,1,148,168,메인,메인,E125
+ch17,ch22,callback,2,0,2,148,197,메인,메인,E173 E175
+ch17,ch26,callback,2,0,2,148,244,메인,메인,E265 E266
+ch17,event_oldtales1,callback,1,0,1,148,338,메인,이벤트,E535
+ch17,fl:ark_guardian,setup_payoff,3,0,3,148,428,메인,이벤트,E119 E120 E123
+ch17,fl:project_matis,callback,1,0,1,148,467,메인,이벤트,E1197
+sub:제니퍼f_00,fl:lie_cause_recoil,callback,1,0,1,149,438,서브퀘스트,이벤트,E1476
+sub:제니퍼f_00,fl:lie_cause_recoil,setup_payoff,2,1,1,149,438,서브퀘스트,이벤트,Q96-2 E126
+ch18,relic:XX중학교가정통신문,callback,1,0,1,152,156,메인,유실물,E134
+ch18,ch22,callback,1,0,1,152,197,메인,메인,E174
+ch18,ch22,setup_payoff,1,0,1,152,197,메인,메인,E131
+ch18,ch23,setup_payoff,2,1,1,152,217,메인,메인,Q97-2 E132
+ch18,ch24,callback,1,0,1,152,221,메인,메인,E236
+ch18,event_unbreakablesphere1,callback,1,0,1,152,377,메인,이벤트,E705
+ch18,fl:ark_guardian,setup_payoff,1,1,0,152,428,메인,이벤트,Q98-2
+ch18,fl:enter_heaven,callback,1,0,1,152,442,메인,이벤트,E1039
+ch18,fl:project_matis,callback,3,0,3,152,467,메인,이벤트,E1190 E1200 E1204
+ch18,fl:project_matis,setup_payoff,1,0,1,152,467,메인,이벤트,E128
+sub:테트라_커넥트_01,ch23,setup_payoff,1,0,1,153,217,서브퀘스트,메인,E133
+event_hightechtoy,fl:project_matis,callback,1,0,1,157,467,이벤트,이벤트,E1203
+event_hightechtoy,fl:project_matis,setup_payoff,3,0,3,157,467,이벤트,이벤트,E1288 E1289
+char:100,fl:project_matis,setup_payoff,1,0,1,158,467,호감도,이벤트,E1600
+char:193,event_alonesurvivor,callback,1,0,1,160,253,호감도,이벤트,E1340
+event_brandnewyear,ch19,setup_payoff,1,0,1,163,165,이벤트,메인,E136
+event_brandnewyear,event_bluewaterisland,callback,1,0,1,163,212,이벤트,이벤트,E208
+event_brandnewyear,event_seayouagain1,callback,1,0,1,163,226,이벤트,이벤트,E1320
+event_brandnewyear,event_seayouagain1,setup_payoff,1,0,1,163,226,이벤트,이벤트,E138
+char:260,event_lastkingdom1,setup_payoff,1,0,1,164,295,호감도,이벤트,E1297
+ch19,ch20,callback,1,0,1,165,168,메인,메인,E146
+ch19,ch20,setup_payoff,2,0,2,165,168,메인,메인,E140 E141
+ch19,relic:jonathan_report,callback,1,0,1,165,170,메인,유실물,E150
+ch19,event_overzone,setup_payoff,1,1,0,165,203,메인,이벤트,Q105-2
+ch19,ch25,callback,1,0,1,165,241,메인,메인,E261
+ch19,event_oldtales1,callback,1,1,0,165,338,메인,이벤트,F744-2
+ch19,event_ce006,callback,1,0,1,165,387,메인,이벤트,E760
+ch19,event_ce006,setup_payoff,1,1,0,165,387,메인,이벤트,Q107-2
+ch19,fl:ark_guardian,setup_payoff,1,1,0,165,428,메인,이벤트,Q104-2
+sub:데이파라_00,sub:2호_쉘터_관리계정_00,callback,1,0,1,166,200,서브퀘스트,서브퀘스트,E183
+sub:데이파라_00,sub:2호_쉘터_관리계정_00,setup_payoff,1,1,0,166,200,서브퀘스트,서브퀘스트,Q108-2
+sub:데이파라_00,fl:reborn_evil,callback,2,0,2,166,407,서브퀘스트,이벤트,E871 E872
+sub:데이파라_00,fl:reborn_evil,setup_payoff,1,1,0,166,407,서브퀘스트,이벤트,Q108-3
+sub:데이파라_00,char:840,setup_payoff,1,1,0,166,408,서브퀘스트,호감도,Q108-4
+relic:데일리아크기사스크랩,ch20,setup_payoff,1,1,0,167,168,유실물,메인,Q109-2
+relic:데일리아크기사스크랩,ch21,setup_payoff,1,0,1,167,191,유실물,메인,E144
+relic:데일리아크기사스크랩,event_footstepwalkrun1,callback,1,0,1,167,350,유실물,이벤트,E564
+relic:데일리아크기사스크랩,erelic:goddess_fall_mini,setup_payoff,1,1,0,167,419,유실물,유실물,Q109-3
+ch20,char:261,callback,3,0,3,168,186,메인,호감도,E1300 E1303 E1304
+ch20,char:261,setup_payoff,1,1,0,168,186,메인,호감도,Q111-2
+ch20,ch21,setup_payoff,1,1,0,168,191,메인,메인,Q112-2
+ch20,event_overzone,callback,1,0,1,168,203,메인,이벤트,E190
+ch20,ch32,callback,1,0,1,168,310,메인,메인,E457
+ch20,side:eden_spear,callback,1,0,1,168,411,메인,사이드,E890
+ch20,side:eden_spear,reversal,2,2,0,168,411,메인,사이드,F768-2 F770-2
+ch20,side:eden_spear,setup_payoff,1,0,1,168,411,메인,사이드,E148
+ch20,event_goddessfall1,setup_payoff,2,1,1,168,418,메인,이벤트,Q110-2 E147
+ch20,ch47,callback,1,0,1,168,470,메인,메인,E1218
+sub:로망티스트_00,sub:로망티스트_01,callback,1,0,1,169,245,서브퀘스트,서브퀘스트,E276
+sub:로망티스트_00,sub:로망티스트_01,setup_payoff,1,0,1,169,245,서브퀘스트,서브퀘스트,E149
+char:401,event_romanticvalentine,callback,2,0,2,173,355,호감도,이벤트,E1417
+char:402,event_phantomthiefvsdetective,callback,3,0,3,175,328,호감도,이벤트,E1388 E1389 E1391
+char:402,fl:go_ninja_thief,callback,1,0,1,175,412,호감도,이벤트,E1441
+char:112,ch24,setup_payoff,1,0,1,176,221,호감도,메인,E1601
+event_maidinvalentine,event_perfectmaid,callback,1,0,1,177,264,이벤트,이벤트,E1356
+event_maidinvalentine,event_romanticvalentine,callback,2,0,2,177,355,이벤트,이벤트,E1416 E1418
+event_maidinvalentine,event_romanticvalentine,setup_payoff,1,0,1,177,355,이벤트,이벤트,E1299
+char:800,event_newflavor,setup_payoff,1,0,1,180,367,호감도,이벤트,E1603
+char:800,side:pretty_star,setup_payoff,1,0,1,180,447,호감도,사이드,E1602
+event_bowwowparadise,event_secretgarden,callback,1,0,1,183,345,이벤트,이벤트,E1400
+event_cherryblossom,ch22,callback,1,1,0,185,197,이벤트,메인,F835-2
+event_cherryblossom,fl:for_rest,callback,2,1,1,185,365,이벤트,이벤트,F836-2 E1420
+event_cherryblossom,event_staranis1,setup_payoff,1,1,0,185,454,이벤트,이벤트,Q115-2
+char:261,event_lastkingdom1,callback,1,0,1,186,295,호감도,이벤트,E399
+char:261,relic:소녀의일기-절망편-,callback,1,0,1,186,335,호감도,유실물,E488
+char:261,side:eden_spear,setup_payoff,1,0,1,186,411,호감도,사이드,E1302
+char:261,event_goddessfall1,setup_payoff,1,0,1,186,418,호감도,이벤트,E1301
+char:261,fl:ark_guardian,callback,1,0,1,186,428,호감도,이벤트,E969
+event_ltk,event_killthelord,callback,2,0,2,189,282,이벤트,이벤트,E358 E360
+event_ltk,event_killthelord,setup_payoff,1,0,1,189,282,이벤트,이벤트,E1307
+event_ltk,event_arcanearchive,callback,2,0,2,189,383,이벤트,이벤트,E720
+event_ltk,event_lordforjustice,callback,1,0,1,189,385,이벤트,이벤트,E740
+event_ltk,event_lordforjustice,setup_payoff,2,0,2,189,385,이벤트,이벤트,E1305 E1306
+ch21,relic:특이랩쳐보고서-전,callback,1,0,1,191,195,메인,유실물,E165
+ch21,ch22,callback,1,0,1,191,197,메인,메인,E176
+ch21,ch22,setup_payoff,1,1,0,191,197,메인,메인,Q121-2
+ch21,event_overzone,setup_payoff,1,1,0,191,203,메인,이벤트,Q120-2
+ch21,ch23,setup_payoff,1,0,1,191,217,메인,메인,E163
+ch21,ch35,callback,1,0,1,191,358,메인,메인,E594
+ch21,char:841,callback,1,0,1,191,410,메인,호감도,E1620
+ch21,side:eden_spear,callback,1,0,1,191,411,메인,사이드,E885
+ch21,event_goddessfall1,callback,1,0,1,191,418,메인,이벤트,E951
+ch21,erelic:goddess_fall_mini,setup_payoff,4,1,3,191,419,메인,유실물,Q118-2 E158 E160 E161
+sub:에덴_Notice_02,ch39,setup_payoff,1,1,0,194,396,서브퀘스트,메인,Q122-2
+sub:에덴_Notice_02,ch40,setup_payoff,1,1,0,194,398,서브퀘스트,메인,Q122-3
+sub:에덴_Notice_02,side:eden_spear,setup_payoff,1,1,0,194,411,서브퀘스트,사이드,Q122-4
+sub:에덴_Notice_02,erelic:goddess_fall_mini,setup_payoff,1,1,0,194,419,서브퀘스트,유실물,Q122-5
+ch22,ch23,callback,1,1,0,197,217,메인,메인,F893-2
+ch22,ch23,setup_payoff,1,1,0,197,217,메인,메인,Q124-2
+ch22,ch24,callback,1,0,1,197,221,메인,메인,E235
+ch22,ch24,setup_payoff,1,1,0,197,221,메인,메인,Q126-2
+ch22,event_overthehorizon,callback,1,0,1,197,391,메인,이벤트,E780
+ch22,side:eden_spear,callback,2,0,2,197,411,메인,사이드,E884
+ch22,event_goddessfall1,callback,1,0,1,197,418,메인,이벤트,E944
+ch22,ch44,callback,1,0,1,197,436,메인,메인,E1037
+ch22,fl:enter_heaven,callback,2,0,2,197,442,메인,이벤트,E1041 E1045
+ch22,fl:enter_heaven,setup_payoff,3,3,0,197,442,메인,이벤트,Q125-2 Q125-3 Q125-4
+ch22,ch46,setup_payoff,1,0,1,197,452,메인,메인,E177
+sub:문구점_00,ch30,setup_payoff,1,0,1,198,293,서브퀘스트,메인,E179
+sub:2호_쉘터_관리계정_00,fl:reborn_evil,setup_payoff,1,0,1,200,407,서브퀘스트,이벤트,E182
+sub:할아범_01,ch45,setup_payoff,1,1,0,201,450,서브퀘스트,메인,Q127-2
+relic:에닉탄핵포스터,ch25,setup_payoff,1,0,1,202,241,유실물,메인,E184
+event_overzone,char:233,callback,3,0,3,203,205,이벤트,호감도,E1310 E1311 E1312
+event_overzone,event_redash,setup_payoff,3,1,2,203,248,이벤트,이벤트,Q129-2 E192 E194
+event_overzone,erelic:red_ash_lost,callback,1,1,0,203,249,이벤트,유실물,F908-2
+event_overzone,erelic:red_ash_mini,setup_payoff,1,1,0,203,250,이벤트,유실물,Q128-2
+event_overzone,event_newyearnewsword,callback,1,1,0,203,258,이벤트,이벤트,F915-2
+event_overzone,event_lastkingdom1,setup_payoff,1,0,1,203,295,이벤트,이벤트,E202
+event_overzone,event_oldtales1,callback,1,0,1,203,338,이벤트,이벤트,E527
+event_overzone,event_footstepwalkrun1,callback,1,0,1,203,350,이벤트,이벤트,E563
+event_overzone,fl:boom_the_ghost,callback,2,0,2,203,393,이벤트,이벤트,E790 E791
+event_overzone,ch39,callback,1,0,1,203,396,이벤트,메인,E799
+event_overzone,side:eden_spear,callback,1,0,1,203,411,이벤트,사이드,E888
+event_overzone,erelic:goddess_fall_mini,callback,1,0,1,203,419,이벤트,유실물,E964
+event_overzone,erelic:goddess_fall_mini,setup_payoff,1,1,0,203,419,이벤트,유실물,Q128-3
+event_overzone,fl:ark_guardian,callback,2,2,0,203,428,이벤트,이벤트,F909-2 F914-2
+event_overzone,fl:ark_guardian,setup_payoff,1,0,1,203,428,이벤트,이벤트,E198
+event_overzone,char:471,callback,1,0,1,203,429,이벤트,호감도,E1629
+event_overzone,side:pretty_star,setup_payoff,2,1,1,203,447,이벤트,사이드,Q129-3 E200
+event_overzone,ch46,callback,1,0,1,203,452,이벤트,메인,E1114
+event_overzone,ch46,setup_payoff,5,1,4,203,452,이벤트,메인,Q129-4 E193 E201 E203 E204
+event_overzone,ch48,setup_payoff,2,1,1,203,472,이벤트,메인,Q130-2 E191
+erelic:white_memory,event_redash,setup_payoff,1,0,1,204,248,유실물,이벤트,E206
+erelic:white_memory,erelic:red_ash_lost,callback,1,0,1,204,249,유실물,유실물,E305
+erelic:white_memory,erelic:red_ash_mini,callback,1,0,1,204,250,유실물,유실물,E306
+erelic:white_memory,side:eden_spear,setup_payoff,1,1,0,204,411,유실물,사이드,Q132-2
+erelic:white_memory,event_goddessfall1,setup_payoff,1,1,0,204,418,유실물,이벤트,Q132-3
+erelic:white_memory,fl:ark_guardian,setup_payoff,1,1,0,204,428,유실물,이벤트,Q131-2
+erelic:white_memory,char:471,callback,2,1,1,204,429,유실물,호감도,F930-2 E1628
+erelic:white_memory,side:pretty_star,setup_payoff,1,0,1,204,447,유실물,사이드,E205
+char:233,erelic:goddess_fall_mini,callback,1,0,1,205,419,호감도,유실물,E963
+char:233,fl:ark_guardian,setup_payoff,2,0,2,205,428,호감도,이벤트,E1308 E1309
+char:392,event_schooloflock,callback,1,0,1,206,234,호감도,이벤트,E1324
+char:392,fl:2x2_love_1ch,callback,1,0,1,206,444,호감도,이벤트,E1485
+char:392,fl:2x2_love_2ch,callback,1,0,1,206,445,호감도,이벤트,E1520
+char:392,fl:wave_to_you,callback,1,0,1,206,464,호감도,이벤트,E1548
+event_BunnyX777,char:270,setup_payoff,1,0,1,207,208,이벤트,호감도,E1604
+event_BunnyX777,event_goldencoinrush1,callback,1,0,1,207,300,이벤트,이벤트,E1367
+char:270,event_dazzlingcupid,callback,1,0,1,208,236,호감도,이벤트,E1330
+char:270,event_goldencoinrush1,callback,1,0,1,208,300,호감도,이벤트,E1366
+char:270,event_jinxplayer,callback,1,0,1,208,325,호감도,이벤트,E1613
+char:270,event_secretgarden,callback,1,0,1,208,345,호감도,이벤트,E1399
+char:271,event_goldencoinrush1,callback,1,0,1,209,300,호감도,이벤트,E1366
+event_queensorder,char:280,callback,1,1,0,210,211,이벤트,호감도,F950-2
+event_queensorder,event_dirtybackyard,callback,1,1,0,210,262,이벤트,이벤트,F953-2
+event_queensorder,event_beautyfullshot1,callback,1,0,1,210,305,이벤트,이벤트,E428
+event_bluewaterisland,char:14,setup_payoff,1,0,1,212,214,이벤트,호감도,E209
+event_bluewaterisland,event_seayouagain1,setup_payoff,2,1,1,212,226,이벤트,이벤트,Q135-2 E210
+event_bluewaterisland,event_claymore,setup_payoff,1,0,1,212,303,이벤트,이벤트,E212
+event_bluewaterisland,event_beautyfullshot1,callback,1,0,1,212,305,이벤트,이벤트,E426
+event_nyanyaparadise,char:380,setup_payoff,2,0,2,215,216,이벤트,호감도,E1605 E1606
+ch23,ch24,setup_payoff,10,3,7,217,221,메인,메인,Q137-2 Q139-2 Q140-2 E219 E222 E224 E225 E229 E230 E231
+ch23,ch25,setup_payoff,2,2,0,217,241,메인,메인,Q136-2 Q141-2
+ch23,erelic:red_ash_mini,setup_payoff,1,1,0,217,250,메인,유실물,Q141-3
+ch23,side:wordless,callback,1,0,1,217,331,메인,사이드,E469
+ch23,fl:boom_the_ghost,callback,1,0,1,217,393,메인,이벤트,E783
+ch23,ch41,callback,1,0,1,217,414,메인,메인,E904
+ch23,ch42,callback,1,0,1,217,416,메인,메인,E922
+ch23,erelic:goddess_fall_mini,setup_payoff,1,1,0,217,419,메인,유실물,Q141-4
+ch23,ch44,setup_payoff,2,1,1,217,436,메인,메인,Q141-5 E226
+ch23,fl:ark_ranger,callback,1,0,1,217,462,메인,이벤트,E1170
+sub:콜렉터_02,relic:긴급뉴스대본_FB_3_final_2.pdf,setup_payoff,1,0,1,219,223,서브퀘스트,유실물,E233
+ch24,relic:긴급뉴스대본_FB_3_final_2.pdf,callback,1,0,1,221,223,메인,유실물,E245
+ch24,ch25,callback,1,0,1,221,241,메인,메인,E258
+ch24,ch25,setup_payoff,2,0,2,221,241,메인,메인,E241 E243
+ch24,ch26,setup_payoff,3,1,2,221,244,메인,메인,Q145-2 E242 E243
+ch24,event_beautyfullshot1,callback,2,0,2,221,305,메인,이벤트,E429 E430
+ch24,side:wordless,callback,1,0,1,221,331,메인,사이드,E470
+ch24,ch33,callback,1,0,1,221,334,메인,메인,E486
+ch24,event_footstepwalkrun1,setup_payoff,1,1,0,221,350,메인,이벤트,Q145-3
+ch24,event_wisdomspring,setup_payoff,1,0,1,221,353,메인,이벤트,E238
+ch24,ch35,callback,2,0,2,221,358,메인,메인,E606 E607
+ch24,ch36,callback,1,0,1,221,360,메인,메인,E629
+ch24,ch37,setup_payoff,1,0,1,221,373,메인,메인,E242
+ch24,event_unbreakablesphere1,callback,2,0,2,221,377,메인,이벤트,E700 E701
+ch24,fl:boom_the_ghost,setup_payoff,1,0,1,221,393,메인,이벤트,E242
+ch24,ch39,callback,1,0,1,221,396,메인,메인,E804
+ch24,fl:absolute,callback,2,0,2,221,400,메인,이벤트,E830 E840
+ch24,side:eden_spear,callback,2,0,2,221,411,메인,사이드,E887
+ch24,event_goddessfall1,setup_payoff,1,0,1,221,418,메인,이벤트,E242
+ch24,ch44,callback,1,0,1,221,436,메인,메인,E1035
+ch24,ch44,setup_payoff,1,0,1,221,436,메인,메인,E242
+ch24,fl:enter_heaven,callback,2,1,1,221,442,메인,이벤트,F1006-2 E1042
+ch24,fl:enter_heaven,setup_payoff,1,0,1,221,442,메인,이벤트,E240
+ch24,ch46,setup_payoff,1,0,1,221,452,메인,메인,E242
+event_seayouagain1,event_neverland1,callback,1,0,1,226,255,이벤트,이벤트,E1341
+event_seayouagain1,event_beautyfullshot1,callback,1,0,1,226,305,이벤트,이벤트,E432
+event_schooloflock,event_juveniledays,callback,1,0,1,234,317,이벤트,이벤트,E1378
+event_schooloflock,event_colorless,callback,2,0,2,234,319,이벤트,이벤트,E1384 E1387
+event_schooloflock,fl:wave_to_you,callback,2,0,2,234,464,이벤트,이벤트,E1541 E1546
+event_schooloflock,fl:wave_to_you,setup_payoff,1,0,1,234,464,이벤트,이벤트,E1329
+event_dazzlingcupid,char:450,setup_payoff,2,0,2,236,237,이벤트,호감도,E1331 E1332
+event_dazzlingcupid,char:451,setup_payoff,1,0,1,236,238,이벤트,호감도,E1333
+event_dazzlingcupid,fl:wave_to_you,setup_payoff,2,0,2,236,464,이벤트,이벤트,E1334 E1335
+char:450,event_juveniledays,callback,1,0,1,237,317,호감도,이벤트,E1380
+char:450,fl:wave_to_you,callback,3,0,3,237,464,호감도,이벤트,E1549 E1554 E1557
+char:451,fl:wave_to_you,callback,1,0,1,238,464,호감도,이벤트,E1551
+event_freezeacpu,char:33,callback,1,1,0,239,240,이벤트,호감도,F1091-2
+event_freezeacpu,event_phantomthiefvsdetective,callback,1,0,1,239,328,이벤트,이벤트,E1390
+event_freezeacpu,event_foolburstday,callback,1,0,1,239,369,이벤트,이벤트,E1429
+char:33,event_onemoretime,callback,1,0,1,240,289,호감도,이벤트,E1362
+ch25,ch26,setup_payoff,5,2,3,241,244,메인,메인,Q150-2 Q151-2 E251 E259 E260
+ch25,event_redash,callback,1,0,1,241,248,메인,이벤트,E285
+ch25,ch27,callback,1,0,1,241,267,메인,메인,E330
+ch25,ch35,callback,1,0,1,241,358,메인,메인,E596
+ch25,ch37,setup_payoff,1,1,0,241,373,메인,메인,Q150-3
+ch25,relic:주워갈것들메모,callback,1,0,1,241,374,메인,유실물,E655
+ch25,fl:boom_the_ghost,setup_payoff,2,1,1,241,393,메인,이벤트,Q150-4 E253
+ch25,side:eden_spear,callback,1,1,0,241,411,메인,사이드,F1103-2
+ch25,event_goddessfall1,callback,3,0,3,241,418,메인,이벤트,E943 E956 E957
+ch25,event_goddessfall1,setup_payoff,2,1,1,241,418,메인,이벤트,Q150-5 E249
+ch25,fl:ark_guardian,setup_payoff,2,1,1,241,428,메인,이벤트,Q149-2 E257
+ch25,ch44,setup_payoff,1,1,0,241,436,메인,메인,Q150-6
+ch25,ch45,setup_payoff,1,0,1,241,450,메인,메인,E256
+ch25,ch46,setup_payoff,5,0,5,241,452,메인,메인,E252 E253 E255 E256
+relic:마더웨일아종목격보고.wav,ch27,setup_payoff,2,1,1,243,267,유실물,메인,Q152-2 E263
+ch26,event_redash,setup_payoff,3,0,3,244,248,메인,이벤트,E264 E269 E274
+ch26,erelic:red_ash_lost,callback,1,0,1,244,249,메인,유실물,E302
+ch26,erelic:red_ash_mini,callback,2,0,2,244,250,메인,유실물,E308
+ch26,char:470,callback,1,0,1,244,251,메인,호감도,E1337
+ch26,ch27,setup_payoff,1,1,0,244,267,메인,메인,Q155-2
+ch26,relic:잘지내라친구,callback,1,0,1,244,272,메인,유실물,E333
+ch26,side:second_affection,callback,2,0,2,244,288,메인,사이드,E362 E367
+ch26,ch32,callback,1,0,1,244,310,메인,메인,E449
+ch26,ch32,setup_payoff,1,0,1,244,310,메인,메인,E270
+ch26,ch34,setup_payoff,1,0,1,244,336,메인,메인,E271
+ch26,event_footstepwalkrun1,callback,1,0,1,244,350,메인,이벤트,E575
+ch26,ch35,setup_payoff,1,0,1,244,358,메인,메인,E271
+ch26,ch37,setup_payoff,2,0,2,244,373,메인,메인,E267 E275
+ch26,event_overthehorizon,callback,1,0,1,244,391,메인,이벤트,E779
+ch26,fl:boom_the_ghost,setup_payoff,1,0,1,244,393,메인,이벤트,E267
+ch26,side:eden_spear,callback,1,1,0,244,411,메인,사이드,F1132-2
+ch26,event_goddessfall1,setup_payoff,1,0,1,244,418,메인,이벤트,E267
+ch26,fl:ark_guardian,setup_payoff,1,0,1,244,428,메인,이벤트,E273
+ch26,ch44,setup_payoff,1,0,1,244,436,메인,메인,E267
+ch26,fl:good_world,callback,1,0,1,244,448,메인,이벤트,E1067
+ch26,ch46,setup_payoff,1,0,1,244,452,메인,메인,E272
+ch26,ch48,callback,1,0,1,244,472,메인,메인,E1236
+sub:코인_러시_00,ch35,setup_payoff,1,0,1,246,358,서브퀘스트,메인,E277
+relic:저주받은보석,ch27,setup_payoff,3,1,2,247,267,유실물,메인,Q156-2 E278 E279
+event_redash,erelic:red_ash_lost,setup_payoff,2,0,2,248,249,이벤트,유실물,E284 E289
+event_redash,char:470,callback,1,0,1,248,251,이벤트,호감도,E1336
+event_redash,event_newyearnewsword,setup_payoff,2,0,2,248,258,이벤트,이벤트,E282 E289
+event_redash,sub:피라_02,callback,1,0,1,248,270,이벤트,서브퀘스트,E332
+event_redash,relic:잘지내라친구,setup_payoff,1,0,1,248,272,이벤트,유실물,E280
+event_redash,ch31,callback,1,0,1,248,308,이벤트,메인,E433
+event_redash,ch32,callback,1,0,1,248,310,이벤트,메인,E451
+event_redash,ch34,callback,1,0,1,248,336,이벤트,메인,E514
+event_redash,event_oldtales1,callback,5,3,2,248,338,이벤트,이벤트,F1146-2 F1152-2 F1158-2 E533 E534
+event_redash,char:514,callback,1,0,1,248,344,이벤트,호감도,E1397
+event_redash,event_footstepwalkrun1,callback,2,0,2,248,350,이벤트,이벤트,E565 E571
+event_redash,event_footstepwalkrun1,setup_payoff,4,1,3,248,350,이벤트,이벤트,Q157-2 E287 E299 E301
+event_redash,char:852,callback,1,0,1,248,388,이벤트,호감도,E1437
+event_redash,fl:ark_guardian,callback,4,0,4,248,428,이벤트,이벤트,E972 E973 E987 E995
+event_redash,fl:ark_guardian,setup_payoff,2,0,2,248,428,이벤트,이벤트,E293 E297
+event_redash,ch44,setup_payoff,2,0,2,248,436,이벤트,메인,E296 E300
+event_redash,side:pretty_star,setup_payoff,3,0,3,248,447,이벤트,사이드,E294 E295
+erelic:red_ash_lost,event_newyearnewsword,callback,2,1,1,249,258,유실물,이벤트,F1181-2 E312
+erelic:red_ash_lost,char:225,callback,1,0,1,249,259,유실물,호감도,E1349
+erelic:red_ash_lost,fl:ark_guardian,setup_payoff,1,1,0,249,428,유실물,이벤트,Q159-2
+erelic:red_ash_lost,ch46,callback,1,0,1,249,452,유실물,메인,E1116
+erelic:red_ash_lost,ch47,setup_payoff,1,0,1,249,470,유실물,메인,E304
+erelic:red_ash_mini,event_newyearnewsword,setup_payoff,1,0,1,250,258,유실물,이벤트,E307
+erelic:red_ash_mini,event_oldtales1,setup_payoff,1,0,1,250,338,유실물,이벤트,E309
+char:470,char:224,callback,1,0,1,251,252,호감도,호감도,E1339
+char:470,ch27,callback,1,0,1,251,267,호감도,메인,E324
+event_neverland1,char:194,callback,2,0,2,255,256,이벤트,호감도,E1610 E1611
+event_newyearnewsword,char:225,callback,1,1,0,258,259,이벤트,호감도,F1241-2
+event_newyearnewsword,event_lastkingdom1,callback,1,0,1,258,295,이벤트,이벤트,E404
+event_newyearnewsword,ch46,callback,1,0,1,258,452,이벤트,메인,E1097
+event_newyearnewsword,ch46,setup_payoff,1,0,1,258,452,이벤트,메인,E315
+event_newyearnewsword,ch47,callback,2,0,2,258,470,이벤트,메인,E1217
+event_newyearnewsword,ch48,callback,1,0,1,258,472,이벤트,메인,E1230
+event_dirtybackyard,event_killthelord,callback,1,0,1,262,282,이벤트,이벤트,E357
+event_dirtybackyard,ch30,callback,2,0,2,262,293,이벤트,메인,E379
+event_dirtybackyard,ch30,setup_payoff,2,1,1,262,293,이벤트,메인,Q161-2 E320
+event_dirtybackyard,event_lordforjustice,callback,1,0,1,262,385,이벤트,이벤트,E736
+event_dirtybackyard,event_lordforjustice,setup_payoff,3,1,2,262,385,이벤트,이벤트,Q161-3 E318 E320
+event_dirtybackyard,ch40,callback,1,0,1,262,398,이벤트,메인,E823
+event_dirtybackyard,ch41,setup_payoff,2,1,1,262,414,이벤트,메인,Q161-4 E320
+event_dirtybackyard,ch44,callback,3,0,3,262,436,이벤트,메인,E1028 E1029 E1030
+event_dirtybackyard,ch44,setup_payoff,3,1,2,262,436,이벤트,메인,Q161-5 E319 E320
+event_dirtybackyard,ch45,setup_payoff,2,1,1,262,450,이벤트,메인,Q161-6 E320
+event_dirtybackyard,fl:ark_ranger,callback,1,0,1,262,462,이벤트,이벤트,E1175
+event_perfectmaid,event_goldencoinrush1,callback,1,0,1,264,300,이벤트,이벤트,E1365
+event_perfectmaid,fl:coins_in_rush,callback,1,0,1,264,404,이벤트,이벤트,E866
+event_perfectmaid,fl:2x2_love_1ch,callback,1,0,1,264,444,이벤트,이벤트,E1498
+event_perfectmaid,fl:2x2_love_2ch,callback,1,0,1,264,445,이벤트,이벤트,E1513
+char:313,fl:2x2_love_1ch,callback,1,0,1,265,444,호감도,이벤트,E1488
+char:313,fl:2x2_love_2ch,callback,2,0,2,265,445,호감도,이벤트,E1507 E1516
+ch27,ch28,setup_payoff,2,1,1,267,273,메인,메인,Q166-2 E331
+ch27,relic:조난일지,callback,1,0,1,267,279,메인,유실물,E341
+ch27,event_boomsday,callback,1,0,1,267,280,메인,이벤트,E351
+ch27,event_boomsday,setup_payoff,1,0,1,267,280,메인,이벤트,E327
+ch27,ch29,callback,1,0,1,267,291,메인,메인,E370
+ch27,ch30,setup_payoff,4,1,3,267,293,메인,메인,Q164-2 E325 E326 E329
+ch27,event_darkhero,callback,1,0,1,267,298,메인,이벤트,E423
+ch27,event_darkhero,setup_payoff,1,0,1,267,298,메인,이벤트,E327
+ch27,ch31,setup_payoff,1,1,0,267,308,메인,메인,Q163-2
+ch27,event_footstepwalkrun1,setup_payoff,1,0,1,267,350,메인,이벤트,E327
+ch27,ch37,setup_payoff,1,0,1,267,373,메인,메인,E323
+ch27,ch38,callback,1,0,1,267,375,메인,메인,E675
+ch27,ch39,setup_payoff,1,0,1,267,396,메인,메인,E322
+ch27,relic:정갈하게쓴기록,callback,1,1,0,267,397,메인,유실물,F1285-2
+ch27,relic:어떤소녀의그림일기,callback,1,0,1,267,399,메인,유실물,E828
+ch27,fl:absolute,callback,1,0,1,267,400,메인,이벤트,E845
+ch27,ch41,setup_payoff,1,1,0,267,414,메인,메인,Q165-2
+ch27,ch43,setup_payoff,1,1,0,267,434,메인,메인,Q165-3
+ch27,fl:ark_ranger,callback,1,0,1,267,462,메인,이벤트,E1174
+sub:피라_02,relic:잘지내라친구,setup_payoff,1,1,0,270,272,서브퀘스트,유실물,Q167-2
+sub:피라_02,ch34,setup_payoff,1,1,0,270,336,서브퀘스트,메인,Q168-2
+ch28,event_boomsday,callback,1,0,1,273,280,메인,이벤트,E350
+ch28,event_boomsday,setup_payoff,1,1,0,273,280,메인,이벤트,Q171-2
+ch28,ch29,callback,1,0,1,273,291,메인,메인,E373
+ch28,ch29,setup_payoff,1,1,0,273,291,메인,메인,Q172-2
+ch28,ch30,setup_payoff,2,1,1,273,293,메인,메인,Q170-2 E338
+ch28,event_darkhero,setup_payoff,1,1,0,273,298,메인,이벤트,Q171-3
+ch28,ch31,setup_payoff,2,1,1,273,308,메인,메인,Q170-3 E340
+ch28,ch32,setup_payoff,1,1,0,273,310,메인,메인,Q170-4
+ch28,sub:관짝이_00,setup_payoff,1,1,0,273,311,메인,서브퀘스트,Q169-2
+ch28,sub:관짝이_01,callback,1,0,1,273,313,메인,서브퀘스트,E461
+ch28,sub:관짝이_02,setup_payoff,1,1,0,273,314,메인,서브퀘스트,Q170-5
+ch28,ch33,callback,1,0,1,273,334,메인,메인,E483
+ch28,ch34,callback,1,0,1,273,336,메인,메인,E504
+ch28,event_footstepwalkrun1,setup_payoff,1,1,0,273,350,메인,이벤트,Q171-4
+ch28,event_wisdomspring,setup_payoff,1,0,1,273,353,메인,이벤트,E339
+ch28,ch41,callback,1,0,1,273,414,메인,메인,E903
+ch28,ch41,setup_payoff,1,0,1,273,414,메인,메인,E337
+sub:핸섬_커맨더_00,sub:MMR지킴이_00,setup_payoff,1,1,0,276,278,서브퀘스트,서브퀘스트,Q174-2
+sub:핸섬_커맨더_00,relic:조난일지,callback,1,0,1,276,279,서브퀘스트,유실물,E342
+event_boomsday,ch30,callback,1,0,1,280,293,이벤트,메인,E391
+event_boomsday,event_darkhero,callback,3,0,3,280,298,이벤트,이벤트,E417 E422 E424
+event_boomsday,event_darkhero,setup_payoff,5,0,5,280,298,이벤트,이벤트,E344 E345 E346 E347 E348
+event_boomsday,fl:boom_the_ghost,callback,1,0,1,280,393,이벤트,이벤트,E792
+event_boomsday,char:502,callback,2,1,1,280,395,이벤트,호감도,F1342-2 E1619
+event_boomsday,fl:sin_editor,callback,1,0,1,280,430,이벤트,이벤트,E999
+event_boomsday,ch45,callback,1,0,1,280,450,이벤트,메인,E1083
+event_boomsday,ch45,setup_payoff,1,0,1,280,450,이벤트,메인,E348
+event_boomsday,ch46,setup_payoff,1,0,1,280,452,이벤트,메인,E352
+event_killthelord,event_arcanearchive,callback,1,0,1,282,383,이벤트,이벤트,E719
+event_killthelord,event_lordforjustice,callback,1,0,1,282,385,이벤트,이벤트,E735
+event_killthelord,fl:reborn_evil,callback,1,0,1,282,407,이벤트,이벤트,E883
+side:second_affection,event_lastkingdom1,callback,1,0,1,288,295,사이드,이벤트,E402
+side:second_affection,event_lastkingdom1,setup_payoff,5,2,3,288,295,사이드,이벤트,Q178-2 Q179-2 E363 E364 E365
+side:second_affection,event_goddessfall1,setup_payoff,2,0,2,288,418,사이드,이벤트,E361 E366
+event_onemoretime,event_claymore,callback,1,0,1,289,303,이벤트,이벤트,E1371
+event_onemoretime,char:551,setup_payoff,2,0,2,289,304,이벤트,호감도,E1360 E1361
+char:550,fl:coins_in_rush,callback,1,0,1,290,404,호감도,이벤트,E855
+ch29,ch30,callback,1,0,1,291,293,메인,메인,E385
+ch29,ch30,setup_payoff,9,3,6,291,293,메인,메인,Q181-2 Q182-2 Q183-2 E368 E369 E372 E374 E375 E378
+ch29,ch32,callback,1,0,1,291,310,메인,메인,E448
+ch29,ch33,setup_payoff,1,0,1,291,334,메인,메인,E376
+ch29,ch44,setup_payoff,1,0,1,291,436,메인,메인,E377
+ch30,relic:하모니큐브관찰일지,callback,1,1,0,293,294,메인,유실물,F1396-2
+ch30,event_darkhero,setup_payoff,1,0,1,293,298,메인,이벤트,E384
+ch30,ch31,callback,1,0,1,293,308,메인,메인,E436
+ch30,ch32,callback,2,0,2,293,310,메인,메인,E450 E454
+ch30,sub:관짝이_00,setup_payoff,2,1,1,293,311,메인,서브퀘스트,Q186-2 E388
+ch30,sub:관짝이_01,callback,1,0,1,293,313,메인,서브퀘스트,E463
+ch30,ch34,callback,1,0,1,293,336,메인,메인,E495
+ch30,event_oldtales1,callback,3,0,3,293,338,메인,이벤트,E543 E544 E549
+ch30,char:514,setup_payoff,1,0,1,293,344,메인,호감도,E386
+ch30,ch35,callback,1,0,1,293,358,메인,메인,E599
+ch30,ch41,setup_payoff,1,0,1,293,414,메인,메인,E381
+ch30,ch44,callback,1,1,0,293,436,메인,메인,F1398-2
+ch30,ch44,setup_payoff,1,0,1,293,436,메인,메인,E380
+ch30,ch45,setup_payoff,1,0,1,293,450,메인,메인,E383
+event_lastkingdom1,char:330,callback,1,0,1,295,296,이벤트,호감도,E1364
+event_lastkingdom1,ch40,setup_payoff,3,2,1,295,398,이벤트,메인,Q188-2 Q189-2 E394
+event_lastkingdom1,event_goddessfall1,callback,4,0,4,295,418,이벤트,이벤트,E937 E943 E954 E955
+event_lastkingdom1,event_goddessfall1,setup_payoff,3,0,3,295,418,이벤트,이벤트,E398 E412 E413
+event_lastkingdom1,char:331,callback,1,0,1,295,421,이벤트,호감도,E1626
+event_lastkingdom1,ch46,callback,1,0,1,295,452,이벤트,메인,E1099
+char:330,char:331,callback,1,0,1,296,421,호감도,호감도,E1625
+event_darkhero,event_icedragonsaga1,callback,4,0,4,298,347,이벤트,이벤트,E1409 E1413 E1415
+event_darkhero,event_icedragonsaga1,setup_payoff,1,1,0,298,347,이벤트,이벤트,Q196-2
+event_darkhero,ch45,setup_payoff,1,0,1,298,450,이벤트,메인,E419
+event_darkhero,fl:ark_ranger,callback,2,1,1,298,462,이벤트,이벤트,F1476-2 E1180
+event_goldencoinrush1,fl:coins_in_rush,callback,1,0,1,300,404,이벤트,이벤트,E869
+event_beautyfullshot1,event_icedragonsaga1,callback,1,0,1,305,347,이벤트,이벤트,E1412
+event_beautyfullshot1,event_footstepwalkrun1,setup_payoff,1,1,0,305,350,이벤트,이벤트,Q198-2
+event_beautyfullshot1,ch45,setup_payoff,1,0,1,305,450,이벤트,메인,E425
+event_beautyfullshot1,ch46,setup_payoff,1,0,1,305,452,이벤트,메인,E425
+ch31,relic:말뚝프로젝트보고서,setup_payoff,1,0,1,308,309,메인,유실물,E435
+ch31,ch32,callback,1,1,0,308,310,메인,메인,F1530-2
+ch31,ch32,setup_payoff,10,1,9,308,310,메인,메인,Q200-2 E437 E438 E441 E442 E443 E444 E445 E446 E447
+ch31,ch33,setup_payoff,1,1,0,308,334,메인,메인,Q200-3
+ch31,ch34,callback,1,0,1,308,336,메인,메인,E515
+ch31,event_oldtales1,callback,1,1,0,308,338,메인,이벤트,F1523-2
+ch31,ch35,setup_payoff,1,0,1,308,358,메인,메인,E434
+ch31,ch36,callback,1,0,1,308,360,메인,메인,E627
+ch31,relic:할일목록,setup_payoff,1,0,1,308,361,메인,유실물,E440
+ch31,fl:absolute,callback,1,1,0,308,400,메인,이벤트,F1529-2
+ch31,ch41,setup_payoff,1,0,1,308,414,메인,메인,E440
+ch31,relic:주의용광로사용법,setup_payoff,2,1,1,308,417,메인,유실물,Q199-2 E439
+ch32,relic:수정지역깊은곳어딘가,callback,2,0,2,310,316,메인,유실물,E468
+ch32,ch33,callback,1,0,1,310,334,메인,메인,E475
+ch32,ch33,setup_payoff,1,1,0,310,334,메인,메인,Q204-2
+ch32,ch34,callback,5,0,5,310,336,메인,메인,E491 E496 E498 E499 E505
+ch32,ch34,setup_payoff,2,2,0,310,336,메인,메인,Q204-3 Q205-2
+ch32,event_oldtales1,setup_payoff,2,1,1,310,338,메인,이벤트,Q204-4 E455
+ch32,erelic:old_tales_dialog,callback,1,1,0,310,339,메인,유실물,F1543-2
+ch32,erelic:old_tales_mini_memory,callback,1,0,1,310,341,메인,유실물,E554
+ch32,ch35,callback,1,0,1,310,358,메인,메인,E614
+ch32,ch36,callback,1,0,1,310,360,메인,메인,E623
+ch32,relic:할일목록,callback,1,0,1,310,361,메인,유실물,E631
+ch32,ch38,callback,1,0,1,310,375,메인,메인,E670
+ch32,ch38,setup_payoff,1,0,1,310,375,메인,메인,E456
+ch32,fl:absolute,callback,6,0,6,310,400,메인,이벤트,E831 E838 E839 E841 E842 E849
+ch32,side:eden_spear,setup_payoff,1,1,0,310,411,메인,사이드,Q203-2
+ch32,ch41,setup_payoff,1,0,1,310,414,메인,메인,E453
+ch32,relic:주의용광로사용법,setup_payoff,1,0,1,310,417,메인,유실물,E452
+ch32,ch44,callback,1,0,1,310,436,메인,메인,E1021
+sub:관짝이_00,ch34,callback,1,0,1,311,336,서브퀘스트,메인,E506
+sub:관짝이_00,ch34,setup_payoff,1,0,1,311,336,서브퀘스트,메인,E460
+sub:관짝이_00,ch35,callback,1,0,1,311,358,서브퀘스트,메인,E600
+sub:거울_공주_00,ch33,setup_payoff,1,0,1,312,334,서브퀘스트,메인,E465
+sub:거울_공주_00,erelic:old_tales_lost,setup_payoff,1,0,1,312,340,서브퀘스트,유실물,E466
+sub:관짝이_01,sub:거울_공주_01,callback,1,0,1,313,315,서브퀘스트,서브퀘스트,E467
+sub:관짝이_01,ch33,setup_payoff,1,0,1,313,334,서브퀘스트,메인,E462
+sub:관짝이_02,ch34,setup_payoff,1,1,0,314,336,서브퀘스트,메인,Q206-2
+sub:관짝이_02,ch44,setup_payoff,2,1,1,314,436,서브퀘스트,메인,Q206-3 E464
+sub:거울_공주_01,ch34,setup_payoff,1,1,0,315,336,서브퀘스트,메인,Q207-2
+sub:거울_공주_01,ch35,setup_payoff,1,1,0,315,358,서브퀘스트,메인,Q207-3
+sub:거울_공주_01,ch36,setup_payoff,1,1,0,315,360,서브퀘스트,메인,Q207-4
+sub:거울_공주_01,event_unbreakablesphere1,setup_payoff,1,1,0,315,377,서브퀘스트,이벤트,Q207-5
+event_juveniledays,char:391,setup_payoff,1,0,1,317,318,이벤트,호감도,E1381
+event_juveniledays,event_colorless,setup_payoff,2,0,2,317,319,이벤트,이벤트,E1382
+char:391,char:833,setup_payoff,1,0,1,318,321,호감도,호감도,E1612
+event_colorless,fl:2x2_love_1ch,callback,1,0,1,319,444,이벤트,이벤트,E1482
+event_colorless,fl:wave_to_you,callback,1,0,1,319,464,이벤트,이벤트,E1540
+event_jinxplayer,fl:coins_in_rush,callback,1,0,1,325,404,이벤트,이벤트,E856
+event_phantomthiefvsdetective,char:580,setup_payoff,1,1,0,328,330,이벤트,호감도,Q211-2
+event_phantomthiefvsdetective,event_arcanearchive,callback,1,0,1,328,383,이벤트,이벤트,E728
+event_phantomthiefvsdetective,fl:go_ninja_thief,setup_payoff,1,0,1,328,412,이벤트,이벤트,E1392
+event_phantomthiefvsdetective,fl:sin_editor,callback,1,0,1,328,430,이벤트,이벤트,E996
+event_phantomthiefvsdetective,fl:persona_on_frontline,callback,1,0,1,328,474,이벤트,이벤트,E1559
+char:580,event_arcanearchive,setup_payoff,1,1,0,330,383,호감도,이벤트,Q212-2
+char:580,fl:go_ninja_thief,callback,1,0,1,330,412,호감도,이벤트,E1442
+side:wordless,event_wisdomspring,callback,1,0,1,331,353,사이드,이벤트,E584
+side:wordless,ch35,callback,1,0,1,331,358,사이드,메인,E608
+side:wordless,event_unbreakablesphere1,callback,3,0,3,331,377,사이드,이벤트,E698 E703 E704
+side:wordless,event_unbreakablesphere1,setup_payoff,2,1,1,331,377,사이드,이벤트,Q213-2 E474
+side:wordless,char:162,callback,1,0,1,331,382,사이드,호감도,E1433
+side:wordless,fl:project_matis,setup_payoff,1,1,0,331,467,사이드,이벤트,Q213-3
+ch33,relic:소녀의일기-절망편-,callback,1,0,1,334,335,메인,유실물,E489
+ch33,relic:소녀의일기-절망편-,setup_payoff,1,1,0,334,335,메인,유실물,Q215-2
+ch33,ch34,callback,2,0,2,334,336,메인,메인,E505 E508
+ch33,ch34,setup_payoff,9,2,7,334,336,메인,메인,Q215-3 Q216-2 E476 E478 E481 E482 E484 E487
+ch33,relic:충격다크매터란무엇인가,callback,1,0,1,334,337,메인,유실물,E519
+ch33,ch35,callback,3,0,3,334,358,메인,메인,E604 E609 E615
+ch33,ch36,setup_payoff,2,1,1,334,360,메인,메인,Q215-4 E485
+ch33,ch37,callback,2,0,2,334,373,메인,메인,E647 E651
+ch33,ch38,setup_payoff,1,1,0,334,375,메인,메인,Q215-5
+ch33,relic:은색액체,callback,1,0,1,334,376,메인,유실물,E677
+ch33,fl:absolute,callback,2,0,2,334,400,메인,이벤트,E837 E850
+ch33,ch42,setup_payoff,1,0,1,334,416,메인,메인,E481
+ch33,fl:enter_heaven,callback,1,0,1,334,442,메인,이벤트,E1040
+ch33,side:pretty_star,setup_payoff,3,0,3,334,447,메인,사이드,E479 E480
+relic:소녀의일기-절망편-,ch38,setup_payoff,1,0,1,335,375,유실물,메인,E490
+ch34,event_oldtales1,callback,1,1,0,336,338,메인,이벤트,F1654-2
+ch34,event_oldtales1,setup_payoff,2,0,2,336,338,메인,이벤트,E502 E507
+ch34,erelic:old_tales_dialog,setup_payoff,1,0,1,336,339,메인,유실물,E500
+ch34,event_footstepwalkrun1,callback,1,0,1,336,350,메인,이벤트,E574
+ch34,event_footstepwalkrun1,setup_payoff,1,0,1,336,350,메인,이벤트,E497
+ch34,ch35,callback,2,0,2,336,358,메인,메인,E589 E605
+ch34,ch35,setup_payoff,4,2,2,336,358,메인,메인,Q217-2 Q218-2 E516 E517
+ch34,ch36,callback,2,0,2,336,360,메인,메인,E619 E628
+ch34,side:mudfish,setup_payoff,2,0,2,336,370,메인,사이드,E493 E512
+ch34,ch37,callback,1,0,1,336,373,메인,메인,E653
+ch34,ch37,setup_payoff,1,0,1,336,373,메인,메인,E518
+ch34,fl:absolute,callback,1,0,1,336,400,메인,이벤트,E844
+ch34,ch41,callback,1,0,1,336,414,메인,메인,E892
+ch34,ch41,setup_payoff,1,0,1,336,414,메인,메인,E509
+ch34,ch42,setup_payoff,2,0,2,336,416,메인,메인,E510 E511
+ch34,relic:주의용광로사용법,setup_payoff,1,0,1,336,417,메인,유실물,E509
+ch34,side:pretty_star,setup_payoff,1,0,1,336,447,메인,사이드,E503
+ch34,event_staranis1,setup_payoff,1,0,1,336,454,메인,이벤트,E503
+event_oldtales1,erelic:old_tales_lost,callback,1,0,1,338,340,이벤트,유실물,E551
+event_oldtales1,erelic:old_tales_lost,setup_payoff,3,1,2,338,340,이벤트,유실물,Q220-2 E528 E539
+event_oldtales1,erelic:old_tales_mini_memory,callback,2,1,1,338,341,이벤트,유실물,F1686-2 E553
+event_oldtales1,erelic:old_tales_mini_memory,setup_payoff,1,0,1,338,341,이벤트,유실물,E538
+event_oldtales1,char:226,callback,1,0,1,338,342,이벤트,호감도,E1394
+event_oldtales1,char:511,setup_payoff,2,0,2,338,343,이벤트,호감도,E525 E536
+event_oldtales1,ch35,callback,2,0,2,338,358,이벤트,메인,E592 E593
+event_oldtales1,ch35,setup_payoff,1,1,0,338,358,이벤트,메인,Q219-2
+event_oldtales1,ch36,callback,2,0,2,338,360,이벤트,메인,E620 E624
+event_oldtales1,side:mudfish,callback,1,0,1,338,370,이벤트,사이드,E641
+event_oldtales1,side:mudfish,setup_payoff,1,0,1,338,370,이벤트,사이드,E526
+event_oldtales1,event_unbreakablesphere1,callback,3,0,3,338,377,이벤트,이벤트,E691 E695 E706
+event_oldtales1,erelic:unbreakable_sphere_lost,callback,1,0,1,338,379,이벤트,유실물,E712
+event_oldtales1,char:513,callback,1,0,1,338,380,이벤트,호감도,E1431
+event_oldtales1,char:162,callback,1,0,1,338,382,이벤트,호감도,E1436
+event_oldtales1,fl:ark_guardian,callback,5,0,5,338,428,이벤트,이벤트,E977 E983 E991 E994
+event_oldtales1,fl:wave_to_you,callback,1,0,1,338,464,이벤트,이벤트,E1553
+event_oldtales1,ch48,callback,1,1,0,338,472,이벤트,메인,F1681-2
+event_oldtales1,ch48,setup_payoff,3,0,3,338,472,이벤트,메인,E540 E542 E547
+erelic:old_tales_dialog,erelic:old_tales_mini_memory,setup_payoff,1,0,1,339,341,유실물,유실물,E550
+erelic:old_tales_lost,char:226,callback,1,0,1,340,342,유실물,호감도,E1395
+erelic:old_tales_lost,ch35,callback,1,0,1,340,358,유실물,메인,E610
+erelic:old_tales_lost,char:513,setup_payoff,1,0,1,340,380,유실물,호감도,E552
+erelic:old_tales_mini_memory,side:mudfish,callback,1,1,0,341,370,유실물,사이드,F1710-2
+char:226,ch48,setup_payoff,1,0,1,342,472,호감도,메인,E1396
+char:511,event_unbreakablesphere1,callback,1,0,1,343,377,호감도,이벤트,E709
+char:511,event_unbreakablesphere1,setup_payoff,1,0,1,343,377,호감도,이벤트,E1616
+char:514,event_unbreakablesphere1,setup_payoff,1,0,1,344,377,호감도,이벤트,E1398
+event_secretgarden,fl:for_rest,callback,2,0,2,345,365,이벤트,이벤트,E1424
+event_footstepwalkrun1,ch35,callback,1,0,1,350,358,이벤트,메인,E585
+event_footstepwalkrun1,ch39,callback,1,0,1,350,396,이벤트,메인,E808
+event_footstepwalkrun1,ch39,setup_payoff,2,1,1,350,396,이벤트,메인,Q223-2 E569
+event_footstepwalkrun1,ch40,callback,1,0,1,350,398,이벤트,메인,E824
+event_footstepwalkrun1,ch40,setup_payoff,1,0,1,350,398,이벤트,메인,E569
+event_footstepwalkrun1,ch41,setup_payoff,1,0,1,350,414,이벤트,메인,E568
+event_footstepwalkrun1,ch42,callback,1,0,1,350,416,이벤트,메인,E919
+event_footstepwalkrun1,ch42,setup_payoff,1,0,1,350,416,이벤트,메인,E573
+event_footstepwalkrun1,side:pretty_star,callback,1,1,0,350,447,이벤트,사이드,F1748-2
+event_footstepwalkrun1,ch45,callback,2,1,1,350,450,이벤트,메인,F1755-2 E1093
+event_footstepwalkrun1,ch46,callback,1,1,0,350,452,이벤트,메인,F1755-3
+event_footstepwalkrun1,event_staranis1,setup_payoff,1,0,1,350,454,이벤트,이벤트,E576
+event_wisdomspring,ch39,callback,1,1,0,353,396,이벤트,메인,F1772-2
+event_wisdomspring,ch40,setup_payoff,2,1,1,353,398,이벤트,메인,Q225-2 E582
+event_wisdomspring,ch41,setup_payoff,2,1,1,353,414,이벤트,메인,Q226-2 E581
+event_wisdomspring,ch43,setup_payoff,1,0,1,353,434,이벤트,메인,E581
+event_wisdomspring,fl:2x2_love_1ch,callback,3,0,3,353,444,이벤트,이벤트,E1486 E1487 E1500
+event_wisdomspring,fl:2x2_love_2ch,callback,1,0,1,353,445,이벤트,이벤트,E1511
+event_wisdomspring,fl:good_world,callback,3,0,3,353,448,이벤트,이벤트,E1069 E1074 E1075
+event_wisdomspring,fl:good_world,setup_payoff,2,1,1,353,448,이벤트,이벤트,Q225-3 E582
+event_wisdomspring,ch45,setup_payoff,1,0,1,353,450,이벤트,메인,E583
+event_wisdomspring,ch48,callback,1,0,1,353,472,이벤트,메인,E1240
+event_romanticvalentine,fl:lie_cause_recoil,callback,1,0,1,355,438,이벤트,이벤트,E1471
+ch35,relic:알관련전달사항,setup_payoff,1,1,0,358,359,메인,유실물,Q229-2
+ch35,ch36,setup_payoff,3,1,2,358,360,메인,메인,Q229-3 E603 E612
+ch35,side:mudfish,callback,1,0,1,358,370,메인,사이드,E640
+ch35,ch37,setup_payoff,1,0,1,358,373,메인,메인,E611
+ch35,fl:coins_in_rush,callback,1,0,1,358,404,메인,이벤트,E854
+ch35,event_goddessfall1,callback,1,0,1,358,418,메인,이벤트,E940
+ch35,fl:ark_guardian,setup_payoff,1,0,1,358,428,메인,이벤트,E588
+ch35,ch44,callback,1,0,1,358,436,메인,메인,E1019
+ch35,ch44,setup_payoff,1,0,1,358,436,메인,메인,E586
+ch35,fl:enter_heaven,setup_payoff,1,0,1,358,442,메인,이벤트,E602
+ch35,fl:project_matis,callback,2,0,2,358,467,메인,이벤트,E1189 E1201
+ch35,fl:project_matis,setup_payoff,1,0,1,358,467,메인,이벤트,E613
+relic:알관련전달사항,ch36,setup_payoff,1,1,0,359,360,유실물,메인,Q231-2
+relic:알관련전달사항,ch37,setup_payoff,1,0,1,359,373,유실물,메인,E617
+relic:알관련전달사항,ch38,setup_payoff,2,1,1,359,375,유실물,메인,Q231-3 E616
+ch36,side:mudfish,callback,1,1,0,360,370,메인,사이드,F1815-2
+ch36,side:mudfish,setup_payoff,2,1,1,360,370,메인,사이드,Q232-2 E625
+ch36,ch37,callback,1,0,1,360,373,메인,메인,E646
+ch36,ch37,reversal,1,1,0,360,373,메인,메인,F1808-2
+ch36,ch37,setup_payoff,1,0,1,360,373,메인,메인,E626
+ch36,ch38,callback,2,0,2,360,375,메인,메인,E661 E669
+ch36,event_unbreakablesphere1,callback,3,1,2,360,377,메인,이벤트,F1814-2 E690 E694
+ch36,erelic:unbreakable_sphere_dialog,callback,1,0,1,360,378,메인,유실물,E710
+ch36,erelic:unbreakable_sphere_lost,callback,1,1,0,360,379,메인,유실물,F1816-2
+ch36,ch42,callback,1,0,1,360,416,메인,메인,E917
+ch36,ch42,setup_payoff,1,0,1,360,416,메인,메인,E618
+ch36,ch46,setup_payoff,1,0,1,360,452,메인,메인,E621
+ch36,event_staranis1,setup_payoff,1,0,1,360,454,메인,이벤트,E630
+ch36,fl:bitter_spice,callback,1,0,1,360,460,메인,이벤트,E1534
+relic:할일목록,ch37,setup_payoff,1,0,1,361,373,유실물,메인,E633
+relic:할일목록,ch38,setup_payoff,1,0,1,361,375,유실물,메인,E632
+event_newflavor,event_trueflavor,setup_payoff,1,0,1,367,371,이벤트,이벤트,E639
+event_newflavor,fl:sin_editor,callback,1,0,1,367,430,이벤트,이벤트,E999
+event_newflavor,fl:2x2_love_2ch,callback,1,0,1,367,445,이벤트,이벤트,E1508
+side:mudfish,ch37,setup_payoff,1,0,1,370,373,사이드,메인,E643
+side:mudfish,ch38,callback,3,0,3,370,375,사이드,메인,E672 E673 E674
+side:mudfish,ch38,setup_payoff,1,0,1,370,375,사이드,메인,E644
+side:mudfish,event_unbreakablesphere1,callback,3,0,3,370,377,사이드,이벤트,E688 E693 E707
+side:mudfish,event_unbreakablesphere1,setup_payoff,3,2,1,370,377,사이드,이벤트,Q236-2 Q237-2 E645
+side:mudfish,erelic:unbreakable_sphere_dialog,callback,1,0,1,370,378,사이드,유실물,E711
+side:mudfish,ch42,callback,1,0,1,370,416,사이드,메인,E910
+ch37,ch38,callback,4,2,2,373,375,메인,메인,F1864-2 F1867-2 E660 E663
+ch37,ch38,setup_payoff,2,1,1,373,375,메인,메인,Q238-2 E652
+ch37,fl:boom_the_ghost,setup_payoff,1,0,1,373,393,메인,이벤트,E648
+ch37,ch39,callback,1,0,1,373,396,메인,메인,E811
+ch37,ch40,setup_payoff,1,0,1,373,398,메인,메인,E654
+ch37,ch41,callback,1,0,1,373,414,메인,메인,E892
+ch37,ch42,callback,1,0,1,373,416,메인,메인,E912
+ch37,ch44,callback,1,0,1,373,436,메인,메인,E1038
+ch37,ch45,setup_payoff,1,0,1,373,450,메인,메인,E650
+ch37,event_staranis1,setup_payoff,1,0,1,373,454,메인,이벤트,E649
+relic:주워갈것들메모,ch38,setup_payoff,2,1,1,374,375,유실물,메인,Q239-2 E656
+relic:주워갈것들메모,ch42,setup_payoff,1,0,1,374,416,유실물,메인,E656
+ch38,relic:은색액체,callback,1,0,1,375,376,메인,유실물,E676
+ch38,ch39,callback,1,0,1,375,396,메인,메인,E796
+ch38,ch39,setup_payoff,2,1,1,375,396,메인,메인,Q241-2 E667
+ch38,ch40,setup_payoff,1,0,1,375,398,메인,메인,E657
+ch38,ch41,setup_payoff,1,0,1,375,414,메인,메인,E671
+ch38,ch42,setup_payoff,1,1,0,375,416,메인,메인,Q240-2
+ch38,ch46,setup_payoff,1,0,1,375,452,메인,메인,E662
+ch38,event_staranis1,setup_payoff,3,0,3,375,454,메인,이벤트,E664 E665 E666
+ch38,fl:b-side_idol,callback,1,0,1,375,458,메인,이벤트,E1529
+ch38,fl:bitter_spice,callback,1,0,1,375,460,메인,이벤트,E1539
+ch38,fl:great_villain_union,callback,1,0,1,375,478,메인,이벤트,E1591
+event_unbreakablesphere1,erelic:unbreakable_sphere_dialog,setup_payoff,1,0,1,377,378,이벤트,유실물,E686
+event_unbreakablesphere1,erelic:unbreakable_sphere_lost,setup_payoff,1,0,1,377,379,이벤트,유실물,E708
+event_unbreakablesphere1,char:590,callback,1,0,1,377,381,이벤트,호감도,E1617
+event_unbreakablesphere1,char:162,callback,1,0,1,377,382,이벤트,호감도,E1434
+event_unbreakablesphere1,ch42,callback,1,0,1,377,416,이벤트,메인,E927
+event_unbreakablesphere1,fl:wave_to_you,callback,1,0,1,377,464,이벤트,이벤트,E1555
+erelic:unbreakable_sphere_dialog,char:513,callback,1,0,1,378,380,유실물,호감도,E1430
+erelic:unbreakable_sphere_dialog,fl:wave_to_you,callback,1,0,1,378,464,유실물,이벤트,E1558
+erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,1,0,379,411,유실물,사이드,Q244-2
+event_arcanearchive,event_lordforjustice,callback,2,0,2,383,385,이벤트,이벤트,E734 E739
+event_arcanearchive,event_lordforjustice,setup_payoff,4,0,4,383,385,이벤트,이벤트,E718 E721 E723 E727
+event_arcanearchive,fl:absolute,callback,1,0,1,383,400,이벤트,이벤트,E852
+event_arcanearchive,fl:go_ninja_thief,setup_payoff,1,0,1,383,412,이벤트,이벤트,E729
+event_arcanearchive,fl:ark_guardian,setup_payoff,1,1,0,383,428,이벤트,이벤트,Q248-2
+event_arcanearchive,fl:sin_editor,setup_payoff,1,0,1,383,430,이벤트,이벤트,E722
+event_arcanearchive,fl:2x2_love_1ch,callback,3,0,3,383,444,이벤트,이벤트,E1487 E1490 E1504
+event_arcanearchive,fl:2x2_love_2ch,callback,4,0,4,383,445,이벤트,이벤트,E1509 E1515 E1519
+event_arcanearchive,side:pretty_star,callback,1,0,1,383,447,이벤트,사이드,E1065
+event_arcanearchive,side:pretty_star,setup_payoff,2,1,1,383,447,이벤트,사이드,Q247-2 E724
+event_arcanearchive,ch46,setup_payoff,2,1,1,383,452,이벤트,메인,Q248-3 E725
+event_arcanearchive,char:870,callback,1,0,1,383,476,이벤트,호감도,E1634
+char:581,fl:2x2_love_1ch,callback,3,0,3,384,444,호감도,이벤트,E1484 E1489 E1497
+char:581,fl:2x2_love_2ch,callback,3,0,3,384,445,호감도,이벤트,E1514 E1518 E1521
+event_lordforjustice,fl:reborn_evil,callback,1,0,1,385,407,이벤트,이벤트,E881
+event_lordforjustice,fl:reborn_evil,setup_payoff,2,1,1,385,407,이벤트,이벤트,Q250-2 E741
+event_lordforjustice,ch44,callback,1,0,1,385,436,이벤트,메인,E1031
+event_lordforjustice,ch44,setup_payoff,1,1,0,385,436,이벤트,메인,Q249-2
+event_lordforjustice,ch45,setup_payoff,1,0,1,385,450,이벤트,메인,E738
+event_ce006,char:852,callback,1,1,0,387,388,이벤트,호감도,F1979-2
+event_overthehorizon,char:532,setup_payoff,3,0,3,391,392,이벤트,호감도,E771 E773 E775
+event_overthehorizon,fl:ark_guardian,setup_payoff,2,1,1,391,428,이벤트,이벤트,Q257-2 E778
+event_overthehorizon,fl:ark_ranger,callback,2,1,1,391,462,이벤트,이벤트,F2017-2 E1182
+event_overthehorizon,fl:ark_ranger,setup_payoff,2,0,2,391,462,이벤트,이벤트,E776 E777
+event_overthehorizon,ch47,callback,1,0,1,391,470,이벤트,메인,E1224
+event_overthehorizon,relic:승리를_부르는_그림자,setup_payoff,1,0,1,391,471,이벤트,유실물,E778
+char:532,fl:2x2_love_2ch,callback,1,0,1,392,445,호감도,이벤트,E1510
+fl:boom_the_ghost,ch45,callback,1,0,1,393,450,이벤트,메인,E1090
+fl:boom_the_ghost,ch45,setup_payoff,1,0,1,393,450,이벤트,메인,E793
+fl:boom_the_ghost,ch46,callback,1,0,1,393,452,이벤트,메인,E1113
+fl:boom_the_ghost,ch46,setup_payoff,5,1,4,393,452,이벤트,메인,Q261-2 E782 E784 E794 E795
+char:234,ch46,setup_payoff,1,0,1,394,452,호감도,메인,E1618
+ch39,ch40,callback,2,1,1,396,398,메인,메인,F2058-2 E819
+ch39,ch40,setup_payoff,7,5,2,396,398,메인,메인,Q262-2 Q263-2 Q263-3 Q266-2 Q269-2 E798 E800
+ch39,side:eden_spear,callback,1,1,0,396,411,메인,사이드,F2055-2
+ch39,ch41,callback,2,0,2,396,414,메인,메인,E895 E905
+ch39,ch41,setup_payoff,2,1,1,396,414,메인,메인,Q264-2 E797
+ch39,ch42,callback,2,0,2,396,416,메인,메인,E918 E920
+ch39,ch42,setup_payoff,3,1,2,396,416,메인,메인,Q267-2 E807 E809
+ch39,event_goddessfall1,setup_payoff,1,1,0,396,418,메인,이벤트,Q268-2
+ch39,ch43,setup_payoff,2,1,1,396,434,메인,메인,Q264-3 E805
+ch39,ch44,callback,1,0,1,396,436,메인,메인,E1026
+ch39,fl:enter_heaven,callback,1,1,0,396,442,메인,이벤트,F2059-2
+ch39,event_staranis1,callback,2,2,0,396,454,메인,이벤트,F2064-2 F2066-2
+ch39,event_staranis1,setup_payoff,2,1,1,396,454,메인,이벤트,Q269-3 E810
+relic:정갈하게쓴기록,ch40,setup_payoff,1,1,0,397,398,유실물,메인,Q270-2
+relic:정갈하게쓴기록,ch42,setup_payoff,1,0,1,397,416,유실물,메인,E813
+ch40,relic:어떤소녀의그림일기,callback,1,0,1,398,399,메인,유실물,E829
+ch40,relic:어떤소녀의그림일기,setup_payoff,1,0,1,398,399,메인,유실물,E816
+ch40,side:eden_spear,setup_payoff,2,2,0,398,411,메인,사이드,Q272-2 Q273-2
+ch40,ch41,callback,4,0,4,398,414,메인,메인,E893 E895 E896 E897
+ch40,ch41,setup_payoff,8,6,2,398,414,메인,메인,Q272-3 Q273-3 Q274-2 Q275-2 Q275-3 Q276-2 E820 E826
+ch40,ch42,callback,1,0,1,398,416,메인,메인,E911
+ch40,ch42,setup_payoff,1,0,1,398,416,메인,메인,E827
+ch40,event_goddessfall1,callback,1,0,1,398,418,메인,이벤트,E939
+ch40,event_goddessfall1,setup_payoff,1,0,1,398,418,메인,이벤트,E815
+ch40,ch43,setup_payoff,2,1,1,398,434,메인,메인,Q275-4 E825
+ch40,side:pretty_star,callback,3,1,2,398,447,메인,사이드,F2091-2 E1060 E1064
+ch40,ch45,callback,1,0,1,398,450,메인,메인,E1082
+ch40,event_staranis1,callback,1,0,1,398,454,메인,이벤트,E1163
+fl:coins_in_rush,char:143,setup_payoff,1,0,1,404,406,이벤트,호감도,E857
+fl:coins_in_rush,fl:fatal_maid,callback,4,0,4,404,432,이벤트,이벤트,E1466 E1468 E1469
+fl:coins_in_rush,fl:fatal_maid,setup_payoff,3,1,2,404,432,이벤트,이벤트,Q280-2 E862 E867
+fl:coins_in_rush,side:pretty_star,setup_payoff,2,1,1,404,447,이벤트,사이드,Q279-2 E853
+fl:coins_in_rush,event_staranis1,setup_payoff,2,1,1,404,454,이벤트,이벤트,Q279-3 E853
+fl:coins_in_rush,fl:persona_on_frontline,callback,3,0,3,404,474,이벤트,이벤트,E1562 E1565 E1566
+char:315,fl:persona_on_frontline,callback,2,0,2,405,474,호감도,이벤트,E1565 E1575
+fl:reborn_evil,char:840,callback,3,0,3,407,408,이벤트,호감도,E1438 E1439 E1440
+fl:reborn_evil,char:842,setup_payoff,1,0,1,407,409,이벤트,호감도,E882
+side:eden_spear,event_goddessfall1,callback,3,3,0,411,418,사이드,이벤트,F2153-2 F2157-2 F2164-2
+side:eden_spear,event_goddessfall1,setup_payoff,2,2,0,411,418,사이드,이벤트,Q283-2 Q285-2
+side:eden_spear,erelic:goddess_fall_mini,setup_payoff,1,0,1,411,419,사이드,유실물,E886
+side:eden_spear,char:223,callback,1,0,1,411,420,사이드,호감도,E1622
+side:eden_spear,char:262,callback,1,0,1,411,422,사이드,호감도,E1627
+side:eden_spear,ch44,setup_payoff,1,0,1,411,436,사이드,메인,E891
+side:eden_spear,ch46,callback,1,0,1,411,452,사이드,메인,E1102
+ch41,relic:거꾸로적힌기록,callback,2,0,2,414,415,메인,유실물,E906 E907
+ch41,ch42,callback,3,0,3,414,416,메인,메인,E923 E924 E928
+ch41,ch42,setup_payoff,3,3,0,414,416,메인,메인,Q286-2 Q288-2 Q293-2
+ch41,relic:주의용광로사용법,callback,1,1,0,414,417,메인,유실물,F2184-2
+ch41,event_goddessfall1,callback,1,0,1,414,418,메인,이벤트,E939
+ch41,event_goddessfall1,setup_payoff,1,1,0,414,418,메인,이벤트,Q287-2
+ch41,ch43,setup_payoff,2,2,0,414,434,메인,메인,Q289-2 Q290-2
+ch41,ch44,callback,1,0,1,414,436,메인,메인,E1033
+ch41,ch45,callback,2,0,2,414,450,메인,메인,E1087 E1091
+ch41,event_staranis1,callback,1,1,0,414,454,메인,이벤트,F2200-2
+ch41,event_staranis1,setup_payoff,5,1,4,414,454,메인,이벤트,Q291-2 E898 E899 E900 E901
+ch41,ch47,callback,1,0,1,414,470,메인,메인,E1222
+ch41,fl:great_villain_union,callback,1,0,1,414,478,메인,이벤트,E1589
+ch42,relic:주의용광로사용법,callback,2,0,2,416,417,메인,유실물,E931 E932
+ch42,event_goddessfall1,setup_payoff,2,2,0,416,418,메인,이벤트,Q295-2 Q296-2
+ch42,ch44,callback,1,0,1,416,436,메인,메인,E1023
+ch42,ch44,setup_payoff,2,1,1,416,436,메인,메인,Q295-3 E929
+ch42,ch45,callback,2,0,2,416,450,메인,메인,E1081 E1085
+ch42,ch45,setup_payoff,1,0,1,416,450,메인,메인,E925
+ch42,ch46,setup_payoff,1,0,1,416,452,메인,메인,E930
+ch42,fl:ark_ranger,callback,2,1,1,416,462,메인,이벤트,F2235-2 E1179
+ch42,fl:great_villain_union,callback,4,0,4,416,478,메인,이벤트,E1587 E1588 E1589 E1591
+ch42,fl:great_villain_union,setup_payoff,1,0,1,416,478,메인,이벤트,E926
+event_goddessfall1,erelic:goddess_fall_mini,callback,6,0,6,418,419,이벤트,유실물,E959 E960 E965 E966 E967 E968
+event_goddessfall1,erelic:goddess_fall_mini,setup_payoff,1,0,1,418,419,이벤트,유실물,E942
+event_goddessfall1,char:223,callback,2,0,2,418,420,이벤트,호감도,E1621 E1623
+event_goddessfall1,fl:ark_guardian,callback,1,0,1,418,428,이벤트,이벤트,E970
+event_goddessfall1,ch44,callback,2,0,2,418,436,이벤트,메인,E1020
+event_goddessfall1,ch46,callback,5,0,5,418,452,이벤트,메인,E1095 E1096 E1105 E1108 E1109
+event_goddessfall1,ch46,setup_payoff,2,2,0,418,452,이벤트,메인,Q300-2 Q303-2
+event_goddessfall1,ch47,callback,2,0,2,418,470,이벤트,메인,E1210 E1220
+event_goddessfall1,ch48,callback,2,0,2,418,472,이벤트,메인,E1229 E1232
+event_goddessfall1,ch48,setup_payoff,1,0,1,418,472,이벤트,메인,E958
+erelic:goddess_fall_mini,ch44,callback,1,0,1,419,436,유실물,메인,E1027
+erelic:goddess_fall_mini,ch46,setup_payoff,1,1,0,419,452,유실물,메인,Q306-2
+erelic:goddess_fall_mini,fl:project_matis,callback,1,0,1,419,467,유실물,이벤트,E1185
+char:223,ch46,setup_payoff,1,0,1,420,452,호감도,메인,E1624
+fl:blank_ticket,fl:terminus_ticket,callback,8,0,8,423,425,이벤트,이벤트,E1449 E1452 E1453 E1457 E1458 E1459 E1462 E1463
+fl:blank_ticket,fl:terminus_ticket,setup_payoff,5,1,4,423,425,이벤트,이벤트,Q308-2 E1443 E1444 E1447 E1448
+fl:ark_guardian,ch43,callback,1,0,1,428,434,이벤트,메인,E1011
+fl:ark_guardian,ch43,setup_payoff,4,2,2,428,434,이벤트,메인,Q309-2 Q310-2 E984 E986
+fl:ark_guardian,ch44,callback,1,1,0,428,436,이벤트,메인,F2357-2
+fl:ark_guardian,ch44,setup_payoff,1,1,0,428,436,이벤트,메인,Q312-2
+fl:ark_guardian,side:pretty_star,callback,5,0,5,428,447,이벤트,사이드,E1056 E1057 E1061 E1063
+fl:ark_guardian,side:pretty_star,setup_payoff,1,0,1,428,447,이벤트,사이드,E990
+fl:ark_guardian,ch45,callback,2,0,2,428,450,이벤트,메인,E1086 E1089
+fl:ark_guardian,ch46,callback,2,1,1,428,452,이벤트,메인,F2377-2 E1115
+fl:ark_guardian,ch46,setup_payoff,4,2,2,428,452,이벤트,메인,Q310-3 Q312-3 E985 E988
+fl:ark_guardian,ch48,callback,1,0,1,428,472,이벤트,메인,E1238
+fl:sin_editor,ch45,setup_payoff,1,1,0,430,450,이벤트,메인,Q313-2
+fl:fatal_maid,fl:persona_on_frontline,callback,4,0,4,432,474,이벤트,이벤트,E1562 E1566 E1573 E1580
+ch43,ch44,setup_payoff,3,1,2,434,436,메인,메인,Q315-2 E1009 E1017
+ch43,relic:신에게닿기위한탑,callback,1,1,0,434,451,메인,유실물,F2410-2
+ch43,ch46,setup_payoff,1,1,0,434,452,메인,메인,Q317-2
+ch43,relic:궤도엘리베이터음모론,callback,1,0,1,434,453,메인,유실물,E1117
+ch43,char:18,callback,5,0,5,434,457,메인,호감도,E1522 E1523 E1524
+ch44,fl:2x2_love_1ch,callback,1,0,1,436,444,메인,이벤트,E1505
+ch44,ch45,callback,3,1,2,436,450,메인,메인,F2443-2 E1078 E1092
+ch44,ch45,setup_payoff,2,2,0,436,450,메인,메인,Q322-2 Q323-2
+ch44,ch46,callback,1,1,0,436,452,메인,메인,F2435-2
+ch44,ch46,setup_payoff,5,3,2,436,452,메인,메인,Q320-2 Q321-2 Q323-3 E1018 E1034
+ch44,ch48,callback,1,0,1,436,472,메인,메인,E1239
+ch44,ch48,setup_payoff,1,0,1,436,472,메인,메인,E1024
+fl:enter_heaven,char:113,callback,1,0,1,442,443,이벤트,호감도,E1630
+fl:2x2_love_1ch,fl:2x2_love_2ch,callback,2,1,1,444,445,이벤트,이벤트,F2523-2 E1517
+fl:2x2_love_1ch,fl:2x2_love_2ch,setup_payoff,4,2,2,444,445,이벤트,이벤트,Q329-2 Q329-3 E1491 E1493
+side:pretty_star,fl:good_world,callback,2,0,2,447,448,사이드,이벤트,E1071
+side:pretty_star,ch45,callback,1,1,0,447,450,사이드,메인,F2543-2
+side:pretty_star,ch45,setup_payoff,1,0,1,447,450,사이드,메인,E1051
+side:pretty_star,ch46,setup_payoff,1,0,1,447,452,사이드,메인,E1066
+side:pretty_star,event_staranis1,callback,10,0,10,447,454,사이드,이벤트,E1119 E1120 E1124 E1130 E1131 E1133 E1136 E1142 E1160 E1165
+side:pretty_star,event_staranis1,setup_payoff,7,1,6,447,454,사이드,이벤트,Q331-2 E1049 E1050 E1052 E1054 E1058 E1062
+fl:good_world,relic:신에게닿기위한탑,callback,1,0,1,448,451,이벤트,유실물,E1094
+fl:good_world,ch46,setup_payoff,1,0,1,448,452,이벤트,메인,E1077
+ch45,ch46,callback,1,0,1,450,452,메인,메인,E1111
+ch45,ch46,setup_payoff,5,3,2,450,452,메인,메인,Q335-2 Q336-2 Q340-2 E1084 E1088
+ch45,fl:ark_ranger,callback,3,0,3,450,462,메인,이벤트,E1173 E1178 E1181
+relic:신에게닿기위한탑,relic:궤도엘리베이터음모론,callback,1,1,0,451,453,유실물,유실물,F2610-2
+ch46,relic:궤도엘리베이터음모론,callback,1,0,1,452,453,메인,유실물,E1118
+ch46,ch47,callback,3,0,3,452,470,메인,메인,E1208 E1209 E1223
+ch46,ch48,callback,3,0,3,452,472,메인,메인,E1234 E1235 E1237
+ch46,ch48,setup_payoff,6,2,4,452,472,메인,메인,Q343-2 Q344-2 E1100 E1101 E1104 E1110
+ch46,relic:불길한_소리.wav,callback,1,0,1,452,473,메인,유실물,E1245
+event_staranis1,fl:b-side_idol,callback,1,0,1,454,458,이벤트,이벤트,E1531
+event_staranis1,fl:bitter_spice,callback,2,0,2,454,460,이벤트,이벤트,E1536 E1538
+event_staranis1,fl:persona_on_frontline,callback,2,0,2,454,474,이벤트,이벤트,E1561 E1578
+fl:b-side_idol,fl:bitter_spice,callback,1,0,1,458,460,이벤트,이벤트,E1537
+fl:b-side_idol,fl:bitter_spice,setup_payoff,2,0,2,458,460,이벤트,이벤트,E1530 E1532
+fl:bitter_spice,char:601,setup_payoff,1,0,1,460,461,이벤트,호감도,E1535
+fl:ark_ranger,ch47,setup_payoff,2,1,1,462,470,이벤트,메인,Q354-2 E1183
+fl:ark_ranger,ch48,callback,1,0,1,462,472,이벤트,메인,E1227
+ch47,relic:승리를_부르는_그림자,callback,1,0,1,470,471,메인,유실물,E1226
+ch47,ch48,setup_payoff,13,2,11,470,472,메인,메인,Q364-2 Q364-3 E1207 E1211 E1212 E1213 E1214 E1215 E1216 E1219 E1221 E1225
+ch47,relic:불길한_소리.wav,callback,1,0,1,470,473,메인,유실물,E1244
+ch48,relic:불길한_소리.wav,callback,2,0,2,472,473,메인,유실물,E1246 E1247
+fl:persona_on_frontline,char:872,setup_payoff,1,0,1,474,475,이벤트,호감도,E1581
+fl:persona_on_frontline,char:870,setup_payoff,1,0,1,474,476,이벤트,호감도,E1583
+fl:persona_on_frontline,char:871,setup_payoff,1,0,1,474,477,이벤트,호감도,E1582

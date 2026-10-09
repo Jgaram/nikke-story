@@ -1,0 +1,61 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M95\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:501",
+  "session": "M95",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2106",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:일레그"],
+      "before": "일레그에게 다 떠맡길 수 없다며 낯가림을 고쳐 회의에 대신 나가려 남을 연기하던",
+      "after": "제 방식(게임 공략집 · 연구실 일)으로 일레그 몫을 맡고, '믿고 맡길 수 있다'는 말에 꾸밈없이 웃는",
+      "trigger": [{ "scene": "ep:d_nikke_trony_05", "lines": ["3-6", "43-47"] }],
+      "evidence": [{ "scene": "ep:d_nikke_trony_05", "lines": [70, "77-96"] }],
+      "time": "S148",
+      "reason": "01#80-81 '일레그한테 다 떠맡길 순 없어' → 05#79-80 '일레그 몫까지 내가 할게' · #93-96 꾸미지 않은 웃음. 계기는 라플라스의 '트로니는 트로니면 된다'.",
+      "points": ["F1480"],
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2107",
+      "person": "person:트로니",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "불편하고 즐겁지 않아도 상관없다며 책 메모대로 다른 누군가를 연기해 낯가림을 고치려던",
+      "after": "'트로니는 트로니면 된다'를 받아들이고 다른 길은 혼자 고민하겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_trony_05", "lines": ["9-11", "44-47"] }],
+      "evidence": [{ "scene": "ep:d_nikke_trony_05", "lines": ["27-29", "47-55"] }],
+      "time": "S148",
+      "reason": "05#27-29 '불편해도 … 상관없는데' → #47-51 '트로니는 트로니면 된다 … 알 것 같아' · #55 '여기부턴 나 혼자 고민할게'. 앞 성격 D1627(메이드 일)과 다른 면.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2108",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:트로니"],
+      "before": "낯을 가리는 트로니는 불편한 자리에 굳이 사서 고생하지 말라며 바깥 일을 혼자 맡던",
+      "after": "연구실 일을 제 몫까지 하겠다는 트로니에게 '믿고 맡길 수 있다'며 맡기는",
+      "trigger": [{ "scene": "ep:d_nikke_trony_05", "lines": ["77-82"] }],
+      "evidence": [{ "scene": "ep:d_nikke_trony_05", "lines": ["83-87"] }],
+      "time": "S148",
+      "reason": "01#71-74 '이런 자리엔 제가 가는 게 맞아여 … 사서 고생하지 않아도 돼여' → 05#84 '트로니 씨라면 믿고 맡길 수 있져'.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M95" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 무기고(은화) · 카페(티아 · 나가) · 라플라스는 연습 상대로 잠깐 나오는 모습이라 관계를 세우지 않았다. 트로니 → 지휘관 기준 D473(event_darkhero)이 있고 이 단위의 '좋은 사람이야'는 같은 모습이라 다시 세우지 않았다. 시점 S148(추정) 그대로 — 원문이 더 좁히지 않는다. `???` 없음."
+}

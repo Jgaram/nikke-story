@@ -1,0 +1,35 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:기후변화보고서",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U83",
+      "topic": "구시대",
+      "text": "침공 직전의 정치가들은 빙하가 깨지고 남쪽이 물에 잠기는 기후 변화 보고를 '따뜻해져서 좋다'며 흘려들었다",
+      "about": ["incident:랩쳐_침공"],
+      "evidence": [{ "scene": "relic:기후변화보고서_01", "lines": ["0-6"] }],
+      "reason": "#4",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    },
+    {
+      "id": "U84",
+      "topic": "구시대",
+      "text": "침공 뉴스가 한창일 때도 어떤 이는 외계인 이야기를 '인구가 줄어 나쁘지 않다'고 냉소했고, 그해 겨울 쉘터에 오래 숨었다 나와서야 인간이 살 수 없게 될까 두려웠음을 깨달았다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F383", "F384"],
+      "evidence": [{ "scene": "relic:기후변화보고서_02", "lines": ["3-5"] }],
+      "reason": "_02#4-5 · _04#0-5",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

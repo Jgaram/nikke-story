@@ -1,0 +1,75 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:랩칠리언_06",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I5",
+      "target": "person:랩칠리언",
+      "speaker": true,
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": [24] }],
+      "reason": "D의 가방 속 '웁웁!'(#24) — D가 '우리 표적'(#25)이라 하고 #28 랩칠리언이 같은 소리로 말한다",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E37",
+      "act": "암시",
+      "points": ["F1284", "J26"],
+      "text": "마더 웨일이 랩칠리언과 친구 랩쳐들을 등에 싣고 하늘로 떠난다 — 랩칠리언이 타고 다니는 마더 웨일 '웨일리'(F1284)",
+      "about": ["person:랩칠리언"],
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": ["67-77", "103-104"] }],
+      "reason": "#75-77 · #103 '마더 웨일을 타고'. ch27에서 외형이 바뀐 웨일리로 다시 나온다(F1284 · F1285)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D51",
+      "person": "person:랩칠리언",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "랩쳐 관찰에 불러내는 '친구'",
+      "after": "목숨이 걸린 순간 먼저 구조를 청하고 도주를 도와준 데 감사하는 사이",
+      "trigger": [{ "scene": "sub:랩칠리언_05", "lines": ["57-60"] }],
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": ["1-11", 94] }],
+      "reason": "슈엔 명령 대신 구하자(05#60) → 06 깨진 문자로 지휘관에게 구조 요청(#5-10) · 감사(#94) · '녀석들의 가능성을 믿어 주길'(#133)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D52",
+      "person": "person:K",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'와, 추리 실력 좋네~ 놀랐어 놀랐어~' 하고 말끝을 늘이며 암살 표적과 투표 결정을 가볍게 말하는 시지 패러리스 니케",
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": [20, "26-27", "58-59"] }],
+      "reason": "#20 · #26-27 · #58-59 '뭐 이렇게 끝도 없이 몰려와!'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D53",
+      "person": "person:D",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "말수 적게 '이건 우리 표적이야' · '이미 늦었어'만 하는 냉정한 시지 패러리스 니케",
+      "evidence": [{ "scene": "sub:랩칠리언_06", "lines": [21, 25, 36, "87-88"] }],
+      "reason": "#21 침묵 · #25 · #36 '얘도 간첩인가' · #87-88",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "life": []
+}

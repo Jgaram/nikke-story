@@ -1,0 +1,145 @@
+{
+  "unit": "char:102",
+  "session": "R07",
+  "by": "claude",
+  "date": "2026-09-29",
+  "summary": "맥스웰 호감도 스토리 5편 — 슈엔의 부탁으로 지휘관을 몰래 실험하다 숨긴 결과. 미실리스 연구원이기도 한 맥스웰이 지휘관용 강화 슈트 '핸섬 베이비'를 시험하자며 사막으로 데려가지만, 진짜 목적은 자기 무기 '러블리 베이비' 테스트다 — 니케는 지휘관과 동행해야 지상에 오를 수 있다. 에필로그마다 맥스웰이 모니터에 실험 기록을 남긴다(01). 레모네이드를 마시며, 맥스웰은 인간일 때도 미실리스 타워를 단독 조정할 수 있던 이름난 연구원이었고 지금은 회사의 니케용 음식만 먹는다고 한다. 기록: 이물질을 먹었는데도 화력이 올랐다(02). 인간 시절 랩쳐 습격으로 죽은 지상 임시 연구소에 가자며 실전 테스트를 하고, 지휘관은 거짓말을 알아챈다. 기록: 지휘관과의 유대감(호감도)이 높을수록 니케의 전투 능력이 오른다 — 심리 때문인지 지휘관 몸속 '특별한' 무엇 때문인지 모른다(03). 마지막 테스트에서 최고 기록. 맥스웰은 니케의 뇌는 보안이 취약해 알게 된 것이 퍼지면 지휘관이 방주의 실험 쥐가 된다며 보고서에 '심리 케어로 사기 증진'이라고만 쓴다(04). 슈엔은 육체적 요소였다면 지휘관을 실험대에 올렸을 거라 하고, 맥스웰에게 자기가 가장 중요해야 하며 버리라면 버리고 죽이라면 죽이라고 다짐받는다. 맥스웰은 슈엔에게 보여 주지 않을 새 연구를 지휘관과 시작하겠다며 입을 맞춘다(05).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_maxwell_01",
+      "text": "핸섬 베이비 슈트 테스트를 핑계로 맥스웰의 무기 러블리 베이비 실전 테스트"
+    },
+    {
+      "scene": "ep:d_nikke_maxwell_02",
+      "text": "번화가에서 레모네이드 — 인간 시절의 이름난 연구원, 니케용 음식만 먹는다"
+    },
+    {
+      "scene": "ep:d_nikke_maxwell_03",
+      "text": "인간 시절 연구소에서 실전 테스트, 기록: 호감도가 높을수록 니케 능력 상승"
+    },
+    {
+      "scene": "ep:d_nikke_maxwell_04",
+      "text": "마지막 테스트 최고 기록, 맥스웰이 보고서를 '심리 케어'로 줄여 쓴다"
+    },
+    {
+      "scene": "ep:d_nikke_maxwell_05",
+      "text": "슈엔에게 보고 — 버리라면 버리고 죽이라면 죽여라, 슈엔 모르게 새 연구 시작"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F526",
+      "text": "맥스웰은 인간일 때 미실리스 타워를 단독으로 조정할 권한을 가진 몇 안 되는 이름난 미실리스 연구원이었고 지상 임시 연구소에서 일하다 랩쳐 습격으로 죽었으며, 슈엔이 직접 만든 니케가 된 지금도 미실리스의 연구원이다",
+      "about": ["person:맥스웰", "org:미실리스", "person:슈엔"],
+      "evidence": [
+        { "scene": "ep:d_nikke_maxwell_01", "lines": [1] },
+        { "scene": "ep:d_nikke_maxwell_02", "lines": ["27-36"] },
+        { "scene": "ep:d_nikke_maxwell_03", "lines": ["12-15"] },
+        { "scene": "ep:d_nikke_maxwell_05", "lines": [34] }
+      ],
+      "reason": "맥스웰의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F527",
+      "text": "니케는 지상에 올라가려면 반드시 지휘관과 동행해야 한다",
+      "about": ["concept:니케", "person:지휘관", "place:지상"],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_01", "lines": [115] }, { "scene": "ep:d_nikke_maxwell_03", "lines": ["25-27"] }],
+      "reason": "맥스웰의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F528",
+      "text": "맥스웰은 니케가 굳이 인간인 척할 필요가 없고 효율적인 몸 관리를 위해 회사가 니케용으로 만들어 주는 것 말고는 먹지 않는다",
+      "about": ["person:맥스웰", "concept:니케"],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_02", "lines": ["86-95"] }],
+      "reason": "맥스웰의 말 — 라피의 설명(F505, 먹는 것이 멘탈 유지)과 대조되는 태도",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F529",
+      "text": "맥스웰은 슈엔의 부탁으로 지휘관 몰래 실험해, 지휘관과 니케의 유대감([호감도])이 높을수록 그 니케의 전투 능력 전반이 오르고 짧은 기간에 최고 기록을 경신하는 것을 확인했다",
+      "about": ["person:맥스웰", "person:지휘관", "person:슈엔"],
+      "evidence": [
+        { "scene": "ep:d_nikke_maxwell_02", "lines": ["115-118"] },
+        { "scene": "ep:d_nikke_maxwell_03", "lines": ["85-88"] },
+        { "scene": "ep:d_nikke_maxwell_04", "lines": ["74-77"] },
+        { "scene": "ep:d_nikke_maxwell_05", "lines": ["0-10", 39] }
+      ],
+      "reason": "맥스웰의 실험 기록(모노로그)과 슈엔과의 대화. F450(노아에게 '지휘관 곁이면 강해진다'고 한 출처가 맥스웰)과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F530",
+      "text": "맥스웰은 그 까닭이 심리인지 지휘관의 몸 안에 있는 '특별한' 무언가인지 모르지만, 니케의 뇌는 보안이 취약해 알게 된 것이 퍼지면 지휘관이 방주의 실험 쥐가 된다며 보고서에는 심리 케어로 사기가 올랐다고만 적었다",
+      "about": ["person:맥스웰", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_03", "lines": ["89-99"] }, { "scene": "ep:d_nikke_maxwell_04", "lines": ["78-101"] }],
+      "reason": "맥스웰의 혼잣말과 보고서 입력. 육체적 요소는 확인하지 않은 채로 둔다(#80-84)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F531",
+      "text": "슈엔은 지휘관이 육체적 요소로 니케를 강하게 한다면 실험대에 올렸을 거라 하고, 자기 메티스인 맥스웰에게 지휘관이 아무리 좋아져도 자기가 버리라면 버리고 죽이라면 죽여야 한다고 다짐받았다",
+      "about": ["person:슈엔", "person:맥스웰", "org:메티스", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_05", "lines": ["0-34"] }],
+      "reason": "슈엔과 맥스웰의 대화. 슈엔은 보고서 조작을 의심했다가 '널 믿어'(#25)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    },
+    {
+      "id": "F532",
+      "text": "맥스웰은 지휘관을 '베이비'라 부르며 알면 알수록 궁금해지는 흥미 대상으로 여기고, 슈엔에게 보여 주지 않을 새 연구를 지휘관과 시작해 휘둘리지 않고 지휘관을 온전히 가질 때까지 지키겠다고 했다",
+      "about": ["person:맥스웰", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_maxwell_03", "lines": ["78-83"] },
+        { "scene": "ep:d_nikke_maxwell_04", "lines": ["31-46"] },
+        { "scene": "ep:d_nikke_maxwell_05", "lines": ["45-66"] }
+      ],
+      "reason": "관계의 매듭",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "Q6-3",
+      "act": "회수",
+      "answer": "F529",
+      "degree": "일부",
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_03", "lines": ["85-93"] }],
+      "reason": "지휘관과의 유대가 니케의 전투 능력을 올린다 — 실전에서 압도적인 까닭의 실마리. 원인(심리 · 몸 안의 무엇)은 맥스웰도 모른다(F530)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S42",
+      "kind": "기준점",
+      "text": "맥스웰 호감도 스토리는 지휘관이 엘리시온의 외골격을 쓴 CH.07 뒤의 일이다",
+      "ref": "ch07",
+      "at": [["뒤", "ch07"]],
+      "evidence": [{ "scene": "ep:d_nikke_maxwell_01", "lines": ["18-21"] }],
+      "reason": "'엘리시온네 외골격 썼었다며?'(#19) — CH.07(F208 · F211). 메티스가 활동 중이라 CH.12–15 콜드 슬립 동안은 아닐 것이나 앞뒤는 정하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R07" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

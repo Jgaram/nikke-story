@@ -1,0 +1,4 @@
+[submodule "data/raw"]
+	path = data/raw
+	url = https://github.com/Jgaram/nikke-story-raw
+	branch = main

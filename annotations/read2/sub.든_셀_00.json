@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:든_셀_00",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U52",
+      "topic": "구시대",
+      "text": "1차 침공기의 군인들은 에블라 입자로 아군끼리도 통신이 끊겨 개인 폰으로 '뭐라도 걸리라'며 구조 문자를 보냈고, 소리 소문 없이 죽어 존재조차 묻히곤 했다",
+      "about": ["concept:에블라_입자"],
+      "points": ["F243"],
+      "evidence": [{ "scene": "sub:든_셀_00", "lines": ["57-70"] }],
+      "reason": "#59 '존재 자체가 묻힐 뻔' · #65-68",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:롬_02",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E74",
+      "act": "암시",
+      "points": ["F1997"],
+      "text": "롬은 들어간 집마다 걸린 가족사진을 보고 '롬. 가족이 없다'며 카운터스와 사진을 찍는다 — 롬은 원래 한 가족의 로봇이었다(F1997)",
+      "about": ["person:롬"],
+      "evidence": [{ "scene": "sub:롬_02", "lines": ["79-85"] }],
+      "reason": "#82. 가족이 없다는 말과 달리 롬에게는 가족이 있었다 — 반어",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D87",
+      "person": "person:롬",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "구해 준 지휘관에게 다음에 같이 유물을 찾자는 로봇",
+      "after": "카운터스와 가족사진을 찍어 제2의 방주 벽에 걸고 '이제 허전하지 않다'는 사이",
+      "evidence": [{ "scene": "sub:롬_02", "lines": ["97-104"] }],
+      "reason": "_00#62 '같이 유물 찾자' → #84-85 · #99-101",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "life": []
+}

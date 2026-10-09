@@ -1,0 +1,121 @@
+{
+  "unit": "event_alonesurvivor",
+  "session": "R33",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "북부 조난 구조 이야기. 생존 영상 · 책을 외운 미실리스 신입 토브가 롤아웃 직후 언리미티드에 배정되어 첫 구조 임무에 나선다(prologue · 01_s). 방주의 요청: 수색에 나간 양산형 니케 여섯이 28일째 M.I.A. — 에블라 입자가 낮은 북부인데도 연락이 없고 마지막 신호는 해발 3,000m 글리터 산맥 근처다(01_s). '생존가님'을 지키겠다는 토브는 이론과 달리 실전에 서툴다(02). 앨리스가 구시대 대교 밑에서 조난자의 군번줄을, 네베가 산맥 쪽 발자국 여섯 쌍을 찾고 무전 신호가 잡힌다(03_s · 03_e). 토브가 만든 썰매로 내리막을 시험하다 지휘관과 토브가 눈사태에 휩쓸려 고립되고, 통신도 신호탄도 없다(03_e · intermission). 벌레를 못 먹는 토브, 눈굴에서 밤을 새우고 감기에 걸린 지휘관을 업고(04 · 05_s) 불빛을 따라 간 산악 구조대 본부에서 대파된 니케 셋과 배터리가 떨어져 가는 브레인 쉘터 셋을 찾는다(05_e). 토브는 조난자 총의 화약을 넣은 홰를 무너져 가는 전망대 위에서 팔이 타들어 가도록 흔들어 언리미티드를 부른다(06_s). 루드밀라는 방주의 기업이 양산형 바디를 굳이 다시 만들지 않으려 해 언리미티드가 스페어 파츠 이식 등 모든 방법을 쓴다고 말하고, 토브에게 이 일을 업으로 삼을 수 있겠느냐 묻는다(06_e). 에필로그: 하반신을 스페어로 바꾼 조난자가 트라우마 · 실어증 속에 재활하며 토브에게 고맙다고 하고, 토브는 어엿한 언리미티드가 된다.",
+  "scenes": [
+    { "scene": "event_alonesurvivor_prologue", "text": "생존 영상 · 책을 외운 토브의 셀프 체크" },
+    { "scene": "event_alonesurvivor_01_s", "text": "북부 기지 — 양산형 6명 28일째 M.I.A., 글리터 산맥, 신입 토브를 지휘관 보조로" },
+    { "scene": "event_alonesurvivor_01_e", "text": "토브와 첫 만남 — '생존가님'을 반드시 살리겠다" },
+    { "scene": "event_alonesurvivor_02_s", "text": "설원 출발, 온도 센서 감도를 최대로 올린 토브의 재채기" },
+    { "scene": "event_alonesurvivor_02_e", "text": "불 피우기에 실패하는 토브, 이론과 실전의 차이" },
+    { "scene": "event_alonesurvivor_03_s", "text": "수색 보고 — 대교 밑 야영지의 군번줄, 산맥으로 향한 발자국 여섯 쌍" },
+    { "scene": "event_alonesurvivor_03_e", "text": "무전 신호, 토브의 특제 썰매 시험 운행" },
+    { "scene": "event_alonesurvivor_intermission_01", "text": "썰매가 눈사태에 휩쓸려 지휘관 · 토브 고립, 통신 불가" },
+    { "scene": "event_alonesurvivor_04_s", "text": "지네 소동과 애벌레 — 토브는 벌레를 못 먹는다" },
+    { "scene": "event_alonesurvivor_04_e", "text": "눈굴을 파고 토브가 밤새 불침번" },
+    { "scene": "event_alonesurvivor_05_s", "text": "감기에 걸린 지휘관을 업고 산등성이 불빛으로" },
+    { "scene": "event_alonesurvivor_05_e", "text": "산악 구조대 본부 — 대파된 니케 3기와 배터리 부족한 브레인 쉘터 3개" },
+    { "scene": "event_alonesurvivor_06_s", "text": "화약 봉화를 팔이 타도록 흔든 토브, 언리미티드가 알아봄" },
+    { "scene": "event_alonesurvivor_06_e", "text": "구조 — 루드밀라: 기업은 양산형 바디를 다시 만들지 않으려 한다, 이 일을 업으로 삼겠나" },
+    { "scene": "event_alonesurvivor_epilogue", "text": "재활 중인 구조된 양산형 니케의 '고마워요', 어엿한 언리미티드가 된 토브" }
+  ],
+  "facts": [
+    {
+      "id": "F1202",
+      "text": "토브는 미실리스에서 생산된 니케로, 오지 생존에 관심이 많아 롤아웃되자마자 북부의 언리미티드에 배정된 신입이다 — 녹화한 생존 영상과 책을 외워 스스로 '생존 전문가'라 하지만 첫 임무에서는 불 피우기 · 벌레 먹기 같은 실전에 서툴렀다",
+      "about": ["person:토브", "org:언리미티드", "org:미실리스"],
+      "evidence": [
+        { "scene": "event_alonesurvivor_01_s", "lines": ["58-63"] },
+        { "scene": "event_alonesurvivor_prologue", "lines": ["27-31"] },
+        { "scene": "event_alonesurvivor_02_e", "lines": ["51-67"] }
+      ],
+      "reason": "루드밀라의 소개와 토브 본인 말, 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1203",
+      "text": "방주의 구조 요청에 따르면 수색 임무로 북부에 간 양산형 니케 스쿼드(6명)가 28일째 M.I.A.였다 — 에블라 입자 농도가 낮은 북부인데도 연락이 없었고, 마지막 신호는 극한의 추위와 지형으로 언리미티드도 꺼리는 해발 3,000m의 글리터 산맥 근처에서 끊겼다",
+      "about": ["org:언리미티드", "place:글리터_산맥", "place:방주", "concept:에블라_입자"],
+      "evidence": [{ "scene": "event_alonesurvivor_01_s", "lines": ["26-45"] }],
+      "reason": "루드밀라 · 네베의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1204",
+      "text": "조난자를 찾던 지휘관과 토브는 토브가 만든 썰매로 내리막을 시험하다 눈사태에 휩쓸려 고립되었다 — 오지라 핸드폰 신호가 닿지 않았고 신호탄도 없어 이틀 가까이 버텼다",
+      "about": ["person:토브", "person:지휘관", "place:글리터_산맥"],
+      "evidence": [{ "scene": "event_alonesurvivor_intermission_01", "lines": ["2-16", "29-58"] }, { "scene": "event_alonesurvivor_05_s", "lines": ["3-4"] }],
+      "reason": "장면 그대로. 토브에 따르면 에블라 입자 문제가 아니라 물리적으로 신호가 닿지 않는 곳(intermission#50-52)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1205",
+      "text": "조난된 양산형 여섯은 산악 구조대 본부에 있었다 — 대파된 니케 3기와 배터리가 떨어져 가는 브레인 쉘터 3개(뇌만 남은 셋)로, 루드밀라는 한 사람이 동료의 생명을 하나씩 짊어지고 몸이 부서지도록 싸우며 이 건물까지 왔다는 뜻이라 했다",
+      "about": ["item:브레인_셸터", "org:언리미티드", "person:루드밀라"],
+      "evidence": [{ "scene": "event_alonesurvivor_05_e", "lines": ["44-66"] }, { "scene": "event_alonesurvivor_06_e", "lines": [46, "93-97"] }],
+      "reason": "발견 장면과 루드밀라의 해석(06_e#95-97)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1206",
+      "text": "토브는 소나무 · 방풍 비닐 가림막 · 조난자 총에서 뺀 화약으로 만든 홰를 무너져 가는 전망대 꼭대기에서 들고, 왼팔이 타들어 가는데도 놓지 않고 흔들어 언리미티드를 불렀다 — 루드밀라 · 네베 · 앨리스가 맨몸으로 비탈을 미끄러져 와 모두 구조되었다",
+      "about": ["person:토브", "org:언리미티드", "person:루드밀라", "person:네베", "person:앨리스"],
+      "evidence": [{ "scene": "event_alonesurvivor_06_s", "lines": ["41-52", "94-148"] }, { "scene": "event_alonesurvivor_06_e", "lines": ["12-39"] }],
+      "reason": "장면 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1207",
+      "text": "루드밀라에 따르면 바디가 크게 부서졌거나 뇌만 남은 니케는 3대 기업에 새 바디를 요청하려 방주로 보내지만, 인간성을 잃고 극단적 효율을 좇는 방주의 기업은 양산형의 바디를 굳이 다시 만들려 하지 않는다 — 그래서 언리미티드는 같은 모델의 스페어 파츠(팔 · 다리만) 이식 등 포기 말고 모든 방법을 쓰며, 싱크로가 안 맞으면 정신 붕괴를 겪기도 한다",
+      "about": ["org:언리미티드", "person:루드밀라", "place:방주", "org:3대_기업"],
+      "evidence": [{ "scene": "event_alonesurvivor_06_e", "lines": ["63-91"] }],
+      "reason": "루드밀라의 설명. F117(뇌를 찾아 바디와 이어 살렸지만 싱크로 · 정신 붕괴)을 보탠다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    },
+    {
+      "id": "F1208",
+      "text": "구조된 양산형 니케 가운데 하반신을 고치지 못해 기지의 스페어로 바꾼 이는 트라우마와 실어증 증상 속에서도 걷기 시작했고, 메인터넌스를 도운 토브에게 '고마워요'라 했다 — 루드밀라가 이 일을 업으로 삼을 수 있겠느냐 물었던 토브는 어엿한 언리미티드의 일원이 되었다",
+      "about": ["person:토브", "org:언리미티드", "person:루드밀라"],
+      "evidence": [
+        { "scene": "event_alonesurvivor_epilogue", "lines": ["3-6", "34-66", "70-73"] },
+        { "scene": "event_alonesurvivor_06_e", "lines": ["105-109"] }
+      ],
+      "reason": "장면과 지휘관의 독백(epilogue#71-73)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S111",
+      "kind": "기준점",
+      "text": "북부의 겨울 — 지휘관이 북부 임무를 몇 번 치른 뒤, 토브가 롤아웃되어 언리미티드에 온 직후",
+      "ref": "person:토브",
+      "at": [],
+      "evidence": [{ "scene": "event_alonesurvivor_01_e", "lines": [30] }, { "scene": "event_alonesurvivor_01_s", "lines": ["10-13"] }],
+      "reason": "'이미 북부에서 임무를 몇 번 수행한 적이 있다'(01_e#30), 네베 '겨울이라서'(01_s#10). 메인 챕터와의 앞뒤는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R33" }]
+    }
+  ],
+  "targets": [
+    { "target": "person:토브", "evidence": [{ "scene": "event_alonesurvivor_prologue", "lines": [8] }], "note": "미실리스 생산, 롤아웃 직후 언리미티드에 배정된 '생존 전문가' 신입 니케", "new": false },
+    { "target": "place:글리터_산맥", "evidence": [{ "scene": "event_alonesurvivor_01_s", "lines": ["31-33"] }], "note": "북부의 해발 3,000m 설산 산맥", "new": true }
+  ]
+}

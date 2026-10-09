@@ -1,0 +1,107 @@
+{
+  "unit": "event_juveniledays",
+  "session": "R48",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "미미르 부속 고등학교 통합 P반 1학년 아인이 학교생활 처음으로 외로움을 느끼고(prologue) 마르차나에게 '저 왕따예요?'라고 상담한다 — 생활 기록부의 친한 친구란은 비어 있었다(01_s). 마르차나가 소개한 '인싸'는 지휘관이었고, 지휘관은 나가 · 티아를 만나게 하고(01_e — '내일도 모레도 만나기로 약속해서 친구'), 아인이 츠바이 · 라이와 루셰 패션 위크에 가고 싶어 한다는 것을 짚어 루피에게 데려간다(02_s). 루피의 작업실에서 아인은 둘에게 줄 리본을 디자인한다(02_e · 03_s). 그사이 면담을 엿들은 같은 반 여학생이 '왕따' 한 마디로 '아인이 누굴 왕따시킨다'는 소문을 퍼뜨리고, 방과 후 행선지를 숨기는 아인에게 츠바이는 서운해하며(03_e), 아인은 선배들까지 욕먹지 않게 둘과 거리를 둔다(intermission). 티아의 말로 마음을 고쳐먹은 아인(04_e)이 둘을 부르지만 '정리 중인 일'로 미뤄진다(05_s). 츠바이 · 라이는 나루의 블랙박스 · 미행 영상으로 증거를 모아 마르차나에게 냈고, 면담실에서 소문을 퍼뜨린 여학생(질투)이 드러나 처분은 아인에게 맡겨진다 — 화장실 청소 일주일(06_s). 아인이 리본을 내밀며 친구가 되자 하자 둘은 '지금까지 친구가 아니었어?'라 한다(06_e). 에필로그 — 츠바이 · 라이는 처음부터 친한 친구란에 아인을 적어 두었다. 마르차나는 셋의 뒷모습을 보며 '마지막까지 함께 하실 수 있기를'이라 한다.",
+  "scenes": [
+    { "scene": "event_juveniledays_prologue", "text": "수업 뒤 츠바이 · 라이가 먼저 가고, 아인이 교실에서 처음으로 외로움을 느낀다" },
+    { "scene": "event_juveniledays_01_s", "text": "아인이 마르차나에게 왕따인지 상담 — 생활 기록부 친한 친구란이 비어 있음, 친구 많은 분을 소개하겠다" },
+    { "scene": "event_juveniledays_01_e", "text": "지휘관과 디저트 가게에서 나가 · 티아를 만나 친구가 된 사연을 듣는다" },
+    { "scene": "event_juveniledays_02_s", "text": "지휘관실 — 루셰 패션 위크 이야기, 루피를 만나 츠바이 · 라이와 친구가 되고 싶은 마음을 깨닫는다" },
+    { "scene": "event_juveniledays_02_e", "text": "루피의 작업실 — 친구란 무엇인가, 선물을 만들어 친구를 청하기로 한다" },
+    { "scene": "event_juveniledays_03_s", "text": "반 여학생들이 '왕따' 소문을 수군대고 츠바이 · 라이가 듣는다 / 아인은 리본을 선물로 정함" },
+    { "scene": "event_juveniledays_03_e", "text": "밤 교실 — 츠바이 · 라이가 소문과 행선지를 묻고, 아인은 말하지 못해 서먹해진다" },
+    { "scene": "event_juveniledays_intermission_01", "text": "아인이 선배들을 부르지 못하고, 선배들까지 욕하는 여학생에게 '욕할 거면 나만 하라'며 화낸다" },
+    { "scene": "event_juveniledays_04_s", "text": "작업실에서 넋을 놓은 아인, 돌아가는 길에 티아가 디저트를 사 주겠다며 데려간다" },
+    { "scene": "event_juveniledays_04_e", "text": "티아의 조언 — 스스로에게 편견을 만들지 말고 두 사람을 믿어 보라" },
+    { "scene": "event_juveniledays_05_s", "text": "츠바이 · 라이가 마르차나에게 증거를 내고, 아인의 약속 제안은 '정리 중인 일'로 미뤄진다" },
+    { "scene": "event_juveniledays_05_e", "text": "리본 완성, 루피가 마감을 가르치고 언제든 놀러 오라 한다" },
+    { "scene": "event_juveniledays_06_s", "text": "면담실 — 츠바이 · 라이의 영상으로 소문의 출처가 드러나고, 아인이 처분을 정한다" },
+    { "scene": "event_juveniledays_06_e", "text": "리본을 내밀며 친구를 청한 아인, 둘은 이미 친구라 여겼다 — 루셰 패션 위크 약속" },
+    { "scene": "event_juveniledays_epilogue", "text": "생활 기록부 친한 친구란 — 츠바이 · 라이는 처음부터 아인을 적어 두었다" }
+  ],
+  "facts": [
+    {
+      "id": "F1575",
+      "text": "아인은 학교생활 처음으로 지독한 외로움을 느껴 마르차나에게 자기가 왕따인지 물었다 — 생활 기록부의 친한 친구란을 비워 두었던 아인에게 마르차나는 왕따는 아니지만 마음을 터놓을 친구가 없는 것은 사실이라며 친구가 많은 분(지휘관)을 소개했다",
+      "about": ["person:아인", "person:마르차나", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_juveniledays_prologue", "lines": ["40-49"] },
+        { "scene": "event_juveniledays_01_s", "lines": ["4-15", "23-26", "34-50"] },
+        { "scene": "event_juveniledays_01_e", "lines": ["7-12"] }
+      ],
+      "reason": "독백(prologue #47-49), 마르차나와의 상담(01_s), '쌤이 말했던 인싸가 바로 쌤'(01_e #10-12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1576",
+      "text": "패션 디자인이 취미이자 목표인 아인은 루피의 팬으로, 지휘관이 데려간 루피의 작업실에서 루셰 패션 위크에 함께 가고 싶은 츠바이 · 라이에게 친구가 되어 달라며 줄 리본을 직접 디자인 · 제작했다 — 아인은 루셰 전속 디자이너가 되고 싶다 했고 루피는 언제든 놀러 오라 했다",
+      "about": ["person:아인", "person:루피", "org:루셰", "person:츠바이", "person:라이"],
+      "evidence": [
+        { "scene": "event_juveniledays_02_s", "lines": ["23-37", "44-69", "94-105"] },
+        { "scene": "event_juveniledays_02_e", "lines": ["39-55"] },
+        { "scene": "event_juveniledays_03_s", "lines": ["46-56"] },
+        { "scene": "event_juveniledays_05_e", "lines": ["18-33", "50-59"] }
+      ],
+      "reason": "아인의 말(02_e #52 '패션 디자인이 제 취미이자 목표', 05_e #50), 루피의 제안(02_e #53-55)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1577",
+      "text": "아인과 마르차나의 면담을 엿들은 같은 반 여학생이 '왕따'라는 말만 듣고 아인이 누군가를 왕따시킨다는 소문을 퍼뜨렸다 — 친구도 인기도 노력 없이 가진 아인이 부러워서였다 — 아인은 츠바이 · 라이까지 같이 욕먹지 않도록 둘과 거리를 두었다",
+      "about": ["person:아인", "person:츠바이", "person:라이"],
+      "evidence": [
+        { "scene": "event_juveniledays_03_s", "lines": ["20-36"] },
+        { "scene": "event_juveniledays_intermission_01", "lines": ["52-83"] },
+        { "scene": "event_juveniledays_04_e", "lines": ["18-30"] },
+        { "scene": "event_juveniledays_06_s", "lines": ["110-115"] }
+      ],
+      "reason": "여학생들의 대화(03_s), 아인의 말(04_e #26-30), 여학생의 자백(06_s #112-115)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1578",
+      "text": "츠바이 · 라이는 소문이 돈 뒤 아인을 미행해 찍은 영상과 나루의 블랙박스(면담을 엿듣고 소문을 흘린 여학생)로 증거를 모아 마르차나에게 냈고, 교직원 검토로 사실이 확인되자 마르차나는 처분을 아인에게 맡겼다 — 아인은 일주일 화장실 청소로 끝냈고 반 아이들은 아인에게 사과했다",
+      "about": ["person:츠바이", "person:라이", "person:마르차나", "person:아인"],
+      "evidence": [
+        { "scene": "event_juveniledays_05_s", "lines": ["0-10"] },
+        { "scene": "event_juveniledays_06_s", "lines": ["21-49", "55-101", "125-133", "142-146"] }
+      ],
+      "reason": "면담실 장면(06_s)과 마르차나의 확인(#84-87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F1579",
+      "text": "아인이 리본을 내밀며 친구가 되어 달라 하자 츠바이 · 라이는 '지금까지 친구가 아니었어?'라 했다 — 마르차나에 따르면 둘은 처음부터 생활 기록부 친한 친구란에 아인의 이름을 적어 두었고, 이번에 아인도 둘의 이름을 적었다",
+      "about": ["person:아인", "person:츠바이", "person:라이", "person:마르차나"],
+      "evidence": [{ "scene": "event_juveniledays_06_e", "lines": ["46-74"] }, { "scene": "event_juveniledays_epilogue", "lines": ["8-31"] }],
+      "reason": "06_e의 대화, 에필로그의 생활 기록부(#14-15, #30-31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S165",
+      "kind": "기준점",
+      "text": "지휘관이 통합 P반 임시 교사를 맡았던(char:392) 뒤 얼마 지난 평시 — 시험 기간이 아니다",
+      "ref": "char:392",
+      "at": [["뒤", "char:392"]],
+      "evidence": [{ "scene": "event_juveniledays_01_e", "lines": ["4-6"] }, { "scene": "event_juveniledays_04_s", "lines": [42] }],
+      "reason": "아인이 지휘관을 '쌤! 완전 오랜만!'이라 부른다(01_e #5) — F943의 임시 교사 뒤. '시험 시즌도 아니고'(04_s #42)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R48", "note": "원문 대조 검토" }]
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M93\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:192",
+  "session": "M93",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1608",
+      "act": "재언급",
+      "points": ["Q24"],
+      "text": "루드밀라가 자기 핸드폰은 손이 닿는 순간 고장 나 버려 정작 필요할 때 의지할 수 없다며 정교한 도구를 믿지 않는 까닭으로 든다",
+      "about": ["person:루드밀라"],
+      "evidence": [{ "scene": "ep:d_nikke_tove_03", "lines": ["75-76", "111-115"] }],
+      "reason": "#112-113 '이 몸의 핸드폰은 손이 닿는 순간 고장이 나 버려서' — ch06의 Q24(만지는 기계는 왜 다 고장 나나)를 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "E1609",
+      "act": "재언급",
+      "points": ["Q24"],
+      "text": "토브가 만든 도구를 루드밀라가 만드는 족족 부순다 — '마이너스의 손'은 기계에만 통하는 게 아니었다",
+      "about": ["person:루드밀라"],
+      "evidence": [{ "scene": "ep:d_nikke_tove_05", "lines": ["115-118"] }],
+      "reason": "#117-118 '그 마이너스의 손이라는 게, 기계에만 통하는 건 아니더라고요' — Q24를 손수 만든 도구로 넓혀 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2078",
+      "person": "person:토브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:루드밀라"],
+      "before": "선배들의 감 · 스펙에 기대는 방식을 '야만적'이라 여겨 제 방식으로 바꾸려 들던",
+      "after": "서로 다른 방식을 가진 이들이 한 스쿼드에 모인 이유를 깨달아, 선배 방식을 바꿀 필요도 제 것을 버릴 필요도 없다는",
+      "trigger": [{ "scene": "ep:d_nikke_tove_05", "lines": ["61-75"] }],
+      "evidence": [{ "scene": "ep:d_nikke_tove_05", "lines": ["79-88"] }],
+      "time": "S112",
+      "reason": "02#13-15 '거의 야만적인 방식' · #35-36 '스마트 & 택티컬한 언리미티드만' → 05#83-88 '선배님들의 방식을 억지로 제 식대로 바꿀 필요도… 없었던'. 계기는 루드밀라의 [다름] 인정.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "D2079",
+      "person": "person:토브",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "속도 · 안정성으로 선배들보다 앞서는 '스마트함'을 증명하려던",
+      "after": "활약하고 싶은 후배가 아니라 사람들을 살리는 구조자로서, 가진 자원을 다 동원해 맨몸으로 못 하는 일을 해내는 것이 서바이벌의 본질이라는",
+      "trigger": [{ "scene": "ep:d_nikke_tove_04", "lines": ["44-50"] }],
+      "evidence": [{ "scene": "ep:d_nikke_tove_04", "lines": ["52-54", "60-63"] }],
+      "time": "S112",
+      "points": ["F1211"],
+      "reason": "#47 '선배님들 방식보다 더 스마트한 뭔가를' → #53-54 '진짜 목표를 잊고 있었나 봐요' · #62 '사람들을 살리는 구조자로서'. 05#38-40으로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "D2080",
+      "person": "person:토브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "생각보다 많이 의지했다고 털어놓던",
+      "after": "고민을 들어 준 '생존가님'을 멘토라 부르며 앞으로도 고민이 생기면 바로 달려가겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_tove_04", "lines": ["32-50"] }],
+      "evidence": [{ "scene": "ep:d_nikke_tove_05", "lines": ["122-127"] }],
+      "time": "S112",
+      "reason": "#124-127 '좀 더 끈끈한 무언가로… 멘토?' · '바로 생존가님에게 달려갈 거라고요'. D1495(의지)에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "D2081",
+      "person": "person:루드밀라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:토브"],
+      "before": "기계의 안정성을 믿지 않아 토브의 급조 도구도 미덥지 않게 보던",
+      "after": "어떤 역경에도 임기응변할 토브의 재능을 인정해, 그 [다름]으로 언리미티드의 허점을 메워 달라는",
+      "trigger": [{ "scene": "ep:d_nikke_tove_05", "lines": ["0-28"] }],
+      "evidence": [{ "scene": "ep:d_nikke_tove_05", "lines": ["51-52", "61-75"] }],
+      "time": "S112",
+      "points": ["F1211"],
+      "reason": "03#75-76 '기계의 안정성이라는 걸 믿지 않거든' → 05#66-67 '그대의 그 재능이라면… 임기응변' · #74-75 '[다름]으로 허점을 메워주길'. D1500에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 앨리스의 '하트 여왕의 부하를 막으려 여왕님이 강을 얼렸나'(02#62-64)는 J40 앨리스의 이야기에서 되풀이되는 말버릇이라 떡밥으로 적지 않았다. 네베 · 앨리스는 조연(기준 있음). 생존자 니케는 이름 없는 단역. 시점은 S112 그대로(언리미티드에 적응한 뒤 — 02#52). `???` 없음."
+}

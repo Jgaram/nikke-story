@@ -1,0 +1,81 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M93\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:194",
+  "session": "M93",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I662",
+      "target": "person:지휘관",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_01", "lines": ["18-19"] }],
+      "reason": "#18-19 '루드밀라?' → #23 '시종? 깨어 있었나?' · #26 지휘관 '표정이 너무 안 좋아 보여서 깨웠는데' — 잠든 루드밀라를 깨운 지휘관.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1610",
+      "act": "재언급",
+      "points": ["F1216"],
+      "text": "천사 고아원에서 학대로 인한 사망 사건이 나 가문이 후원을 끊었다 — 미카 앞에서 원장의 폭행 끝에 죽은 벨로타의 일을 루드밀라 쪽에서 다시 꺼낸다",
+      "about": ["place:천사_고아원", "person:벨로타"],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["45-52"] }],
+      "reason": "#47 '고아원에서 학대로 인한 사망 사건' — 같은 천사 고아원(F1218)이고 #83-85에서 보답할 상대가 미카 · 벨로타라 벨로타의 죽음(F1216)으로 읽힌다. 원문이 직접 잇지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "E1611",
+      "act": "재언급",
+      "points": ["F1218"],
+      "text": "루드밀라가 설온장을 완벽하게 관리한 것은 가문이 후원하던 고아원에서 고통받은 미카와 벨로타에게 조금이나마 보답하려던 것이었다",
+      "about": ["person:미카", "person:벨로타"],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["81-86"] }],
+      "reason": "#83-84 '완벽하게 설온장을 관리하는 것으로, 미카와 벨로타에게 조금이나마 보답하려 했건만' — event_neverland2의 '고아원은 내 가문과 연관'(F1218)을 다시 꺼낸다. 03#14-15 미카 · 벨로타 이야기에 어두워진 까닭.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2082",
+      "person": "person:루드밀라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "가문의 빚을 갚듯 혼자 설온장을 완벽히 관리하며 부치지 못한 편지로 스스로 고귀함을 증명하는지 되묻던",
+      "after": "선의도 상대에게 전해지지 않으면 자기만족이라며 관리를 나누기로 하고, 편지를 태워 받아야 했을 이들에게 보내는",
+      "trigger": [{ "scene": "ep:d_nikke_ludmilla_winterowner_03", "lines": ["77-96"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_05", "lines": ["14-20", "38-45", "52-53"] }],
+      "time": "S115",
+      "points": ["F1224"],
+      "reason": "04#86 '그야말로 자기만족 아닌가' → 05#15-17 '무리하지 않기로 했다… 분담해서' · #40-42 '전해지지 않으면 자기만족' · #45 편지에 불을 붙임. D1510에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    },
+    {
+      "id": "D2083",
+      "person": "person:루드밀라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "편지 이야기를 '시종이 신경 쓸 건 아니다'라며 혼자 품던",
+      "after": "편지 대신 이제는 지휘관을 볼 때마다 스스로 고귀함을 증명하는지 생각하겠다며 둘만의 시간을 청하는",
+      "trigger": [{ "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["90-94"] }],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_05", "lines": ["47-53"] }],
+      "time": "S115",
+      "reason": "01#69-70 '시종이 신경 쓸 건 아니다' → 04#101 '조금만 더 어울려주겠느냐' · 05#50-51 '이제는 그대를 볼 때마다 그를 생각하게 되겠지'. D1802(진짜 시종)에서 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M93" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 정체 볼 줄 — 정할 수 없음: ep:d_nikke_ludmilla_winterowner_02#1-2 (꿈속 기자회견의 천사 고아원 원장 — 사전에 없는 단역, 이름표 '고아원 원장'은 event_neverland1에만), #4-5 (같은 자리의 로열 쪽 사람 — 이름 없음, F1218의 '회상의 로열 여성'처럼 루드밀라 가문 사람인지 원문이 말하지 않음). F513을 되짚는 04#0-13 · #57-60은 F513-2(드러냄)가 이미 이 단위에 있어 떡밥으로 적지 않았다. 미카는 03#70-89에 잠깐 — 새 모습 없음. 시점 S115(추정) — 설온장 체류 중이라는 것 말고 원문이 더 좁히지 않는다."
+}

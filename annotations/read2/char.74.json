@@ -1,0 +1,57 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M101\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:74",
+  "session": "M101",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2192",
+      "person": "person:솔린",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "어른의 데이트를 바라며 에스프레소를 억지로 마시고, 꼬마 취급에 성질내며 투정 부리던",
+      "after": "겉으로만 어른인 척이 아니라 속까지 어른이 되어야 한다며 진심으로 사과하고, 같은 커플의 비아냥도 소중한 데이트를 위해 참는",
+      "trigger": [{ "scene": "ep:d_nikke_soline_frostticket_04", "lines": ["29-40", "50-57"] }],
+      "evidence": [{ "scene": "ep:d_nikke_soline_frostticket_05", "lines": ["9-12", "20-27", "72-81"] }],
+      "time": "S282",
+      "reason": "03#13-22 성질 · #62-72 에스프레소 → 04#40 '진짜 어린애는 나였나 봐' → 05#26-27 '속까지 어른이 되어야' · #76-81 '오늘만큼은 참고 싶어'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "D2193",
+      "person": "person:솔린",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'나랑 연애해' 청해 사귀기 시작하고 첫 데이트에 들뜬",
+      "after": "투정을 사과하며 직접 짠 데이트로 지휘관을 행복하게 해 주려 하고, 앞으로도 가끔이라도 만나자 청해 함께 영화를 보다 잠드는",
+      "trigger": [{ "scene": "ep:d_nikke_soline_frostticket_05", "lines": ["29-31"] }],
+      "evidence": [{ "scene": "ep:d_nikke_soline_frostticket_05", "lines": ["29-31", "54-60", "104-105"] }],
+      "time": "S282",
+      "reason": "01#8 '첫 데이트' → 05#31 '행복하게 해줄 테니까' · #55-57 '앞으로도 … 가끔이라도' · #105 같이 잠듦. 앞 모습은 D1861.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "D2194",
+      "person": "person:브리드",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:솔린"],
+      "text": "한밤에 찾아온 솔린을 열이 있느냐 농담으로 맞으면서도 차분히 상담해 주고, 어른이 되어 가는 솔린을 보며 '조금은 아쉬울지도' 하는 동료",
+      "evidence": [{ "scene": "ep:d_nikke_soline_frostticket_04", "lines": ["17-23", "62-72", "86-88"] }],
+      "reason": "#19 '열은 없는' 농담 · #72 '진심을 보여주신다면' · #87-88 '정말 어른이 되어가고 … 아쉬울지도'. 브리드 → 솔린 기준이 아직 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S282 그대로. 볼 거리 W29는 D2192 · D2193으로 적었다. 정체 볼 줄 — 정할 수 없음: ep:d_nikke_soline_frostticket_05#61-62 (03의 이름 없는 젊은 커플 — 이어지는 #63-68 젊은 여자 · 젊은 남자). 아크레인저 블랙 극장판 TV 소리는 작중 작품이라 적지 않았다."
+}

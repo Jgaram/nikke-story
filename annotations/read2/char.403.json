@@ -1,0 +1,39 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M96\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:403",
+  "session": "M96",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I670",
+      "target": "person:드레이크",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_quency_escapequeen_03", "lines": [110, 113] }],
+      "reason": "'찾았다. 수상한 도둑들.'(03 #113) 바로 다음 편 04 #0 퀀시 '뭐야, 드레이크?' · #2 드레이크 '네놈들이 수상한 도둑들인가?'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2132",
+      "person": "person:퀀시",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "탈옥을 잡아떼고 교관의 지갑을 슬쩍하던 도둑",
+      "after": "'지금은 손 깨끗하게 씻었다'며 병뚜껑 말고는 훔치지 않고, 도둑 누명만은 용서 못 해 진범을 쫓으며 훔친 물건을 주인에게 돌려주려는",
+      "evidence": [{ "scene": "ep:d_nikke_quency_escapequeen_01", "lines": ["22-23", 71, "84-87", 151] }],
+      "time": "S172",
+      "points": ["F1608", "F1609"],
+      "reason": "01#23 '지금은 손 깨끗하게 씻었거든!' · #87 '나 요즘은 정말 도둑질 안 하거든' · #151 '훔친 물건들도 다시 주인에게'. 정의 괴도단(F1608) 뒤의 모습 — 진심인지는 원문이 더 밝히지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M96" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 퀀시 → 지휘관은 D1995(지휘관실에 드나드는 사이)에서 더 바뀐 것이 없어 적지 않았다. 드레이크의 빌런 놀이 · 자수는 기준(D91 · D1799)의 되풀이라 적지 않았다. 시점은 S172 그대로."
+}

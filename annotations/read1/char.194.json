@@ -1,0 +1,82 @@
+{
+  "unit": "char:194",
+  "session": "R34",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "루드밀라 : 윈터 오너. 설온장에 머무는 동안 루드밀라는 매일 순찰 · 관리로 무리하며 [수신인 : 천사 고아원 일동]이라 적힌 오래된 편지를 품고 악몽을 꾼다(01). 지휘관이 관리를 맡겠다 했지만 루드밀라는 잊고 이미 다 해 두었고, 둘은 산책한다(02). 그날 설온장이 이상하게 조용했는데, 늘 고생한 루드밀라가 지휘관과 둘이 쉬게 하려고 니케들이 다 같이 방에서 나오지 않은 것이었다(03, 미카의 말). 루드밀라의 고백: 인간 시절 가문의 고아원 후원에 자부심을 느껴 아이들에게 편지와 후원금을 보내고 감사 답장을 기다렸다. 1년쯤 뒤 고아원에서 학대 사망 사건이 나자 가문은 후원을 끊었고, 루드밀라는 가문도 자신도 남의 희생으로 고귀함을 증명하는 기생충이라 깨달아 갓데스를 알고 니케가 되었다. 니케가 된 뒤 사죄 편지를 썼지만 고아원은 재정난으로 이미 없어져 편지만 남았다. 미카 · 벨로타에게 보답하려던 완벽한 관리도 자기만족이었다고 한다(04). 루드밀라는 관리를 나누기로 하고, 선의도 전해지지 않으면 자기만족이라며 편지를 태워 보낸다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_ludmilla_winterowner_01", "text": "천사 고아원 앞 편지를 품고 악몽, 지휘관이 설온장 관리를 맡겠다 함" },
+    { "scene": "ep:d_nikke_ludmilla_winterowner_02", "text": "고아원 후원 방문의 꿈, 루드밀라가 이미 순찰을 다 함 · 산책" },
+    { "scene": "ep:d_nikke_ludmilla_winterowner_03", "text": "조용한 설온장 — 니케들이 둘만의 시간을 주려 방에 있음(미카)" },
+    { "scene": "ep:d_nikke_ludmilla_winterowner_04", "text": "고백 — 후원 편지 · 학대 사망 · 후원 중단 · 기생충 · 부치지 못한 사죄 편지" },
+    { "scene": "ep:d_nikke_ludmilla_winterowner_05", "text": "관리 분담, 차와 의도 이야기, 편지를 태움" }
+  ],
+  "facts": [
+    {
+      "id": "F1222",
+      "text": "인간 루드밀라는 가문의 고아원 후원에 자부심을 느껴 천사 고아원 아이들에게 편지와 후원금을 보내고 감사 답장을 기다렸지만 답은 없었고, 1년쯤 뒤 그 고아원에서 학대로 인한 사망 사건이 나자 가문은 아이들이 어찌 되든 곧바로 후원을 끊었다 — 루드밀라는 가문도 답장만 기다린 자신도 누군가의 희생으로 고귀함을 증명하는 기생충이라 깨달았다",
+      "about": ["person:루드밀라", "place:천사_고아원", "concept:로열"],
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["19-56"] }, { "scene": "ep:d_nikke_ludmilla_winterowner_03", "lines": ["2-4"] }],
+      "reason": "루드밀라 본인 말. 학대 사망이 벨로타의 죽음(F1215 · F1216)인지는 원문이 잇지 않지만 같은 천사 고아원 · 같은 크리스마스 후원 장면(02#1-5)이라 그렇게 보인다 — 문장에는 넣지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1223",
+      "text": "니케가 된 뒤 루드밀라는 우월감을 사죄하는 편지를 다시 썼지만 재정이 나빴던 천사 고아원은 이미 없어져, 여러 번 고쳐 쓴 [수신인 : 천사 고아원 일동] 편지를 오래 품고 스스로 고귀함을 증명하고 있는지 되물어 왔다",
+      "about": ["person:루드밀라", "place:천사_고아원"],
+      "evidence": [
+        { "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["61-79"] },
+        { "scene": "ep:d_nikke_ludmilla_winterowner_01", "lines": ["48-50", "62-66"] }
+      ],
+      "reason": "루드밀라 본인 말과 편지 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1224",
+      "text": "설온장에서 미카 · 벨로타에게 보답하려 혼자 완벽하게 관리하며 지쳐 가던 루드밀라는, 니케들이 자기를 쉬게 하려고 다 같이 자리를 피한 것을 보고 선의도 서로 전해지지 않으면 자기만족이라며 관리를 나누기로 했고, 부치지 못한 편지를 태워 보냈다",
+      "about": ["person:루드밀라", "place:설온장", "person:미카", "person:벨로타"],
+      "evidence": [
+        { "scene": "ep:d_nikke_ludmilla_winterowner_03", "lines": ["59-61", "81-86"] },
+        { "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["81-88"] },
+        { "scene": "ep:d_nikke_ludmilla_winterowner_05", "lines": ["14-20", "38-53"] }
+      ],
+      "reason": "미카의 말과 루드밀라의 말, 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F513-2",
+      "act": "드러냄",
+      "text": "기생충이라 느낀 계기는 가문이 학대 사망 사건 뒤 고아원 후원을 끊은 일이었다",
+      "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_04", "lines": ["49-60"] }],
+      "reason": "루드밀라 본인 말 — 로열을 버리고 니케가 된 까닭이 더 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S115",
+      "kind": "기준점",
+      "text": "event_neverland1 뒤 설온장 체류 중 — 미카 · 벨로타 · 엠마 등이 설온장에 머묾",
+      "ref": "event_neverland1",
+      "at": [["뒤", "event_neverland1"]],
+      "evidence": [
+        { "scene": "ep:d_nikke_ludmilla_winterowner_01", "lines": [73, 81] },
+        { "scene": "ep:d_nikke_ludmilla_winterowner_03", "lines": ["14-15", 48] }
+      ],
+      "reason": "설온장을 관리하고 미카 · 벨로타 이야기에 루드밀라가 어두워지는 것(고아원을 안 뒤)으로 보아 이벤트 뒤로 보았다. 이벤트 중인지 다음 방문인지는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ]
+}

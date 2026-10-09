@@ -1,0 +1,1300 @@
+{
+  "_comment": "수동 엣지 — 형식은 docs/schema.md \"수동 엣지\", 병합 · 계산은 tools/views/links.mjs(관계선, X2). 기각은 없는 것으로 친다(판정 기록으로 남김).",
+  "session": "X2",
+  "by": "claude",
+  "date": "2026-10-08",
+  "note": "X2: 이벤트 · 사이드 연작의 다음 편(sequel) — 키로 모르는 것. 후보 55쌍 = 이벤트 · 사이드끼리 시점 기록(직후 · 뒤 · 전)이 가리키는 쌍 + 기록 엣지 3건 이상인 쌍, 1회독 요약 · 기록으로 판정(+ 연작에서 빠진 이웃 쌍 2). 기준: 3 = A의 결말에서 곧바로 이어짐 · 1부 → 2부, 2 = 같은 이야기 줄이지만 사이가 떨어짐(A의 결말 · 관계를 출발점으로 전제) · 사이드 스토리 전사 → 이벤트, 기각 = 시점 · 인물 · 설정 · 떡밥만 겹침(다른 엣지가 잇는다). 연작은 이웃한 편끼리만.",
+  "edges": [
+    {
+      "id": "Y1",
+      "type": "sequel",
+      "from": "event_hightechtoy",
+      "to": "fl:project_matis",
+      "records": [
+        "S339",
+        "S340"
+      ],
+      "reason": "project_matis는 메티스 스쿼드가 만들어지기까지의 슈엔 회상으로, hightechtoy의 결말을 출발점으로 삼지 않고 메티스 인물 · 설정만 겹친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y2",
+      "type": "sequel",
+      "from": "event_maidinvalentine",
+      "to": "event_perfectmaid",
+      "records": [
+        "S124"
+      ],
+      "reason": "perfectmaid는 에이드의 완벽주의 이야기로, 작년 밸런타인의 머스탱 심사를 한 번 떠올릴 뿐 같은 스쿼드 · 같은 시즌만 겹친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y3",
+      "type": "sequel",
+      "from": "event_maidinvalentine",
+      "to": "event_romanticvalentine",
+      "strength": 2,
+      "records": [
+        "S204"
+      ],
+      "reason": "romanticvalentine은 maidinvalentine에서 다음 밸런타인에 다시 오라던 공장 A.I. 스윗 조니가 방주로 숨어드는 데서 시작해, 조니를 중심으로 한 같은 이야기 줄의 다음 편이다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y4",
+      "type": "sequel",
+      "from": "event_cherryblossom",
+      "to": "fl:for_rest",
+      "records": [
+        "S211"
+      ],
+      "reason": "for_rest는 cherryblossom에 나온 영원의 벚꽃의 내력을 밝히는 사실 · 떡밥 관계이고 같은 봄 축제 배경일 뿐 사쿠라 이야기를 잇지 않는다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y5",
+      "type": "sequel",
+      "from": "event_fullfoolday",
+      "to": "event_liarsend",
+      "strength": 2,
+      "records": [
+        "S138",
+        "F1357"
+      ],
+      "reason": "liarsend는 작년 만우절(fullfoolday)에 당하기만 한 지휘관의 반격을 출발점으로 삼고, 엔더슨이 시프티를 지상에 올려 보내는 앞편의 농담을 결말에서 되받는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y6",
+      "type": "sequel",
+      "from": "event_ltk",
+      "to": "event_killthelord",
+      "strength": 2,
+      "records": [
+        "S136",
+        "F1345",
+        "F1346"
+      ],
+      "reason": "killthelord는 ltk의 [사장] 건 다음 K · D 임무로, 지휘관을 판결 결정권자로 데려가는 방식과 신혼부부 위장을 그대로 전제한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y7",
+      "type": "sequel",
+      "from": "event_ltk",
+      "to": "event_lordforjustice",
+      "records": [
+        "S136"
+      ],
+      "reason": "시지 패러리스(D · K) 연작은 ltk → killthelord → lordforjustice로 이어져 event_killthelord를 거친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y8",
+      "type": "sequel",
+      "from": "event_overzone",
+      "to": "event_redash",
+      "records": [
+        "S71",
+        "S102"
+      ],
+      "reason": "redash는 overzone보다 작중으로 앞선 갓데스 1차 침공기라 overzone의 결말을 전제하지 않고, 갓데스 과거라는 인물 · 시대만 겹친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y9",
+      "type": "sequel",
+      "from": "event_BunnyX777",
+      "to": "event_goldencoinrush1",
+      "records": [
+        "S149"
+      ],
+      "reason": "goldencoinrush1은 소다의 황금칩 쟁탈전으로 코인 러시 · 블랑 · 누아르 · 루주가 겹치고 지난 이벤트를 한 번 언급할 뿐이다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y10",
+      "type": "sequel",
+      "from": "event_bluewaterisland",
+      "to": "event_seayouagain1",
+      "strength": 3,
+      "records": [
+        "S88",
+        "F973",
+        "F974",
+        "Q135"
+      ],
+      "reason": "seayouagain1은 bluewaterisland 에필로그에 남은 해저 거대 물체(Q135)를 확인하는 약속된 후속 임무로, 그 정체인 크라켄을 격추해 앞편이 남긴 일을 마저 끝낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y11",
+      "type": "sequel",
+      "from": "event_bluewaterisland",
+      "to": "event_beautyfullshot1",
+      "records": [
+        "S157"
+      ],
+      "reason": "이듬해 여름이라는 시점과 카운터스 · 메어리 같은 인물만 겹치고 이야기 줄이 다르다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y12",
+      "type": "sequel",
+      "from": "event_seayouagain1",
+      "to": "event_beautyfullshot1",
+      "records": [
+        "S157"
+      ],
+      "reason": "beautyfullshot1은 언더월드 퀸의 화보 촬영 이야기로 지난여름 · 크라켄을 회상할 뿐 seayouagain1의 결말을 출발점으로 삼지 않는다 — 같은 여름 이벤트 · 인물 겹침이다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y13",
+      "type": "sequel",
+      "from": "event_schooloflock",
+      "to": "event_colorless",
+      "strength": 3,
+      "records": [
+        "S167",
+        "F1077"
+      ],
+      "reason": "colorless는 schooloflock 끝의 새 학기 출석부 장면(트리세라 복귀 · 리셋 · 제명)에서 곧바로 시작해 통합 P반과 마르차나 · 에테르의 이야기를 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y14",
+      "type": "sequel",
+      "from": "event_schooloflock",
+      "to": "fl:wave_to_you",
+      "records": [
+        "F2756",
+        "F2757"
+      ],
+      "reason": "마르차나 · 미미르 부속고 줄은 event_colorless를 거쳐 wave_to_you로 이어진다 — 시험관 의심(F2757)은 schooloflock을 깔지만 졸업 여행 계획의 구도는 colorless의 필드 트립을 되짚는다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y15",
+      "type": "sequel",
+      "from": "event_dazzlingcupid",
+      "to": "event_secretgarden",
+      "records": [
+        "S366"
+      ],
+      "reason": "티아 · 나가가 정원 손님으로 잠깐 나올 뿐 이야기 줄이 다르다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y16",
+      "type": "sequel",
+      "from": "event_dazzlingcupid",
+      "to": "fl:wave_to_you",
+      "records": [
+        "S362",
+        "F2765"
+      ],
+      "reason": "나가 · 티아가 졸업반 학생이라는 것만 같고 사랑의 화살 이야기를 잇지 않는다 — wave_to_you는 마르차나 줄(event_colorless)의 다음 편이다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y17",
+      "type": "sequel",
+      "from": "event_freezeacpu",
+      "to": "event_phantomthiefvsdetective",
+      "records": [
+        "S364"
+      ],
+      "reason": "phantomthiefvsdetective는 정의 괴도단 결성 이야기로 A.C.P.U.(키리 등) 인물만 겹친다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y18",
+      "type": "sequel",
+      "from": "event_redash",
+      "to": "event_oldtales1",
+      "strength": 2,
+      "records": [
+        "S180",
+        "F1152-2"
+      ],
+      "reason": "oldtales1은 redash의 궤도 엘리베이터 강습 실패와 아나키오르가 된 신데렐라를 출발점으로, 그 반대편 이야기와 이후를 잇는다.",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y19",
+      "type": "sequel",
+      "from": "event_alonesurvivor",
+      "to": "event_lifeagain",
+      "records": [
+        "S365"
+      ],
+      "reason": "lifeagain은 루마니 · 나디아의 재활 이야기로, alonesurvivor 뒤의 토브가 잠깐 나올 뿐이다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y20",
+      "type": "sequel",
+      "from": "event_lionheart",
+      "to": "event_secretgarden",
+      "records": [
+        "S366"
+      ],
+      "reason": "secretgarden은 플로라의 정원 존치 이야기로 레오나 · 네로 · 비스킷 등 해피 주 인물만 겹친다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y21",
+      "type": "sequel",
+      "from": "event_dirtybackyard",
+      "to": "event_killthelord",
+      "strength": 2,
+      "records": [
+        "S136",
+        "F1265",
+        "F1346",
+        "F1351",
+        "Q177"
+      ],
+      "reason": "killthelord의 로산나는 dirtybackyard 결말대로 목단을 건드린 식스오를 쫓고 있고 모임의 환각 디퓨저가 미스트로 만든 것이라, 식스오 · 미스트 줄이 이 편으로 이어진다.",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y22",
+      "type": "sequel",
+      "from": "event_dirtybackyard",
+      "to": "event_lordforjustice",
+      "records": [
+        "S231",
+        "F1953",
+        "F1965",
+        "Q177"
+      ],
+      "reason": "목단의 포그 할로우 재건 · 식스오 추적은 dirtybackyard에서 오지만, 식스오 · 미스트 줄은 event_killthelord(미스트 디퓨저 · Q177)를 거쳐 lordforjustice로 이어진다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y23",
+      "type": "sequel",
+      "from": "event_boomsday",
+      "to": "event_darkhero",
+      "strength": 2,
+      "records": [
+        "S147",
+        "F1342",
+        "F1465",
+        "F1474"
+      ],
+      "reason": "darkhero는 boomsday의 정전 해결과 트로니 · 일레그가 동력원을 알게 된 결말을 출발점으로, 그 때문에 둘이 표적이 되는 별개 사건을 다룬다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y24",
+      "type": "sequel",
+      "from": "event_killthelord",
+      "to": "event_lordforjustice",
+      "strength": 2,
+      "records": [
+        "S136",
+        "S231",
+        "Q177",
+        "F1953",
+        "F1962"
+      ],
+      "reason": "ltk · killthelord에 이은 시지 패러리스(D · K) 연작의 다음 편으로, 지휘관이 저지스 판결의 결정권자가 되는 관계와 killthelord 끝의 식스오 · 미스트 추적을 이어받는다 — ltk · dirtybackyard → lordforjustice 후보 사이에 빠진 이웃 쌍이다.",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "note": "후보 목록(시점 기록 · 기록 엣지) 밖에서 더한 연작의 이웃 쌍",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y25",
+      "type": "sequel",
+      "from": "side:second_affection",
+      "to": "event_lastkingdom1",
+      "strength": 2,
+      "records": [
+        "S143",
+        "F1371",
+        "F1426"
+      ],
+      "reason": "lastkingdom1은 second_affection에서 크라운 왕국에 맡겨져 자란 마리안과 크라운 · 차임의 관계를 출발점으로 한 왕국 방어전이다(사이드 스토리 → 이벤트).",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y26",
+      "type": "sequel",
+      "from": "event_onemoretime",
+      "to": "event_claymore",
+      "strength": 2,
+      "records": [
+        "S154",
+        "S363",
+        "F1374",
+        "F1496"
+      ],
+      "reason": "claymore는 onemoretime으로 둘만 남아 다시 선 리와인드(베이 · 클레이)와 코치 지휘관의 관계를 출발점으로, 몇 달 뒤 베이의 입원과 클레이의 과거라는 별개 사건을 다룬다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y27",
+      "type": "sequel",
+      "from": "event_lastkingdom1",
+      "to": "event_goddessfall1",
+      "strength": 2,
+      "records": [
+        "S274",
+        "F1453"
+      ],
+      "reason": "goddessfall1의 마리안은 lastkingdom1 끝에 자기를 여왕으로 받든 인디빌리아 · 토커티브와 함께 크라운 왕국을 떠나 원래의 퀸을 치러 오므로, 그 처지가 lastkingdom1을 전제한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y28",
+      "type": "sequel",
+      "from": "event_darkhero",
+      "to": "event_icedragonsaga1",
+      "strength": 2,
+      "records": [
+        "Q196",
+        "F1473",
+        "F1729",
+        "S191"
+      ],
+      "reason": "icedragonsaga1의 메이든은 darkhero에서 임무에 실패해 받은 무기한 근신에서 출발해 기억 소거를 각오한 마지막 임무를 치르므로, 메이든 줄의 처지가 darkhero 없이는 설명되지 않는다(Q196 회수).",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y29",
+      "type": "sequel",
+      "from": "event_darkhero",
+      "to": "fl:ark_ranger",
+      "reason": "아크레인저 블랙이 darkhero에 잠깐 나올 뿐 이야기 줄이 다르다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y30",
+      "type": "sequel",
+      "from": "event_goldencoinrush1",
+      "to": "fl:coins_in_rush",
+      "records": [
+        "S254"
+      ],
+      "reason": "coins_in_rush는 이듬해 같은 황금칩 행사 날의 국장 · 벨벳 소동으로, 소다의 쟁탈전 이야기를 잇지 않고 행사 · 장소 · 인물만 겹친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y31",
+      "type": "sequel",
+      "from": "event_colorless",
+      "to": "event_outofuniform",
+      "records": [
+        "S199",
+        "F1590"
+      ],
+      "reason": "outofuniform은 새해 축제 하루의 일상 이야기로 아인 · 츠바이의 다짐(F1590)을 대사로 이어받을 뿐 colorless의 결말을 출발점으로 한 사건이 없다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y32",
+      "type": "sequel",
+      "from": "event_colorless",
+      "to": "fl:2x2_love_1ch",
+      "records": [
+        "S307"
+      ],
+      "reason": "2x2_love는 미미르 부속고 축제 연애 시뮬레이션으로, 지휘관 · 프리바티가 전에 임시 교사였다는 관계만 이어받고 colorless의 사건을 잇지 않는다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y33",
+      "type": "sequel",
+      "from": "event_colorless",
+      "to": "fl:wave_to_you",
+      "strength": 2,
+      "records": [
+        "F2756",
+        "F2757",
+        "F2903"
+      ],
+      "reason": "wave_to_you는 에테르가 마르차나에게 계획서를 건네는 colorless의 필드 트립 구도를 되짚어(fl:wave_to_you_00 #19) 학생을 붙잡는 마르차나의 과보호를 갈등의 출발점으로 삼는다 — schooloflock → wave_to_you 후보 사이에 빠진 이웃 쌍이다.",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "note": "후보 목록(시점 기록 · 기록 엣지) 밖에서 더한 연작의 이웃 쌍",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y34",
+      "type": "sequel",
+      "from": "event_phantomthiefvsdetective",
+      "to": "fl:go_ninja_thief",
+      "strength": 2,
+      "records": [
+        "S364",
+        "F2176"
+      ],
+      "reason": "go_ninja_thief는 phantomthiefvsdetective에서 결성된 정의 괴도단(팬텀 · 퀀시 · 미란다 · 지휘관)과 지휘관실 기지를 전제로 델타가 수습 단원이 되는 다음 편이다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y35",
+      "type": "sequel",
+      "from": "side:wordless",
+      "to": "side:mudfish",
+      "strength": 2,
+      "records": [
+        "S217",
+        "F1850"
+      ],
+      "reason": "mudfish 본편은 세이렌 · 레비의 과거지만, 에필로그가 wordless 결말(유니 · 미하라의 희귀 개체 포획 출발) 바로 뒤를 이어 첫 표적 추적을 시작해 워드리스 줄의 다음 걸음이 된다.",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y36",
+      "type": "sequel",
+      "from": "side:wordless",
+      "to": "event_unbreakablesphere1",
+      "records": [
+        "S217",
+        "S222",
+        "F1850",
+        "F1892"
+      ],
+      "reason": "워드리스(유니 · 미하라)의 희귀 개체 포획 임무는 side:mudfish 에필로그(첫 표적 추적)를 거쳐 unbreakablesphere1로 이어진다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y37",
+      "type": "sequel",
+      "from": "event_secretgarden",
+      "to": "fl:for_rest",
+      "records": [
+        "S366",
+        "F1829"
+      ],
+      "reason": "for_rest는 트리나 · 린네 · 리타의 과거와 스프링 페스타 이야기로, 보타닉 가든이라는 장소와 정원 개방 지시의 배경만 secretgarden과 겹친다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y38",
+      "type": "sequel",
+      "from": "event_footstepwalkrun1",
+      "to": "event_wisdomspring",
+      "records": [
+        "S201"
+      ],
+      "reason": "wisdomspring은 지휘관의 정체(프로젝트 A.D.) 이야기로 라피의 과거 회상과 이야기 줄이 다르고 작중 시점만 뒤다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y39",
+      "type": "sequel",
+      "from": "event_wisdomspring",
+      "to": "fl:good_world",
+      "records": [
+        "F2566"
+      ],
+      "reason": "good_world는 백학의 재단 계약 종료 이야기로, 프로젝트 A.D.에 대한 답(F2566)을 주고받는 떡밥 관계일 뿐 wisdomspring의 결말을 출발점으로 삼지 않는다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y40",
+      "type": "sequel",
+      "from": "event_newflavor",
+      "to": "event_trueflavor",
+      "strength": 3,
+      "records": [
+        "S218"
+      ],
+      "reason": "trueflavor는 newflavor 끝에서 브래디가 지휘관에게서 맛을 찾은 일과 크러스트의 맛 연구를 며칠 뒤 그대로 이어받아 둘의 이야기를 마저 끝낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y41",
+      "type": "sequel",
+      "from": "side:mudfish",
+      "to": "event_unbreakablesphere1",
+      "strength": 2,
+      "records": [
+        "S222",
+        "S224",
+        "F1885",
+        "Q237-2"
+      ],
+      "reason": "mudfish는 세이렌이 글러트니에게 삼켜지기까지의 전사이고, 에필로그의 땅속 흔적 추적이 unbreakablesphere1의 글러트니 사건으로 이어진다(사이드 스토리 → 이벤트).",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y42",
+      "type": "sequel",
+      "from": "event_arcanearchive",
+      "to": "event_lordforjustice",
+      "records": [
+        "S231",
+        "F1951"
+      ],
+      "reason": "lordforjustice는 금서고 · 아르카나 설정과 기억 소거 주제를 공유하지만 K의 사건은 아르카나 이야기의 결말을 출발점으로 삼지 않는다 — 시지 패러리스 연작은 event_killthelord에서 이어진다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y43",
+      "type": "sequel",
+      "from": "event_arcanearchive",
+      "to": "fl:go_ninja_thief",
+      "records": [
+        "S266",
+        "F2176"
+      ],
+      "reason": "go_ninja_thief는 arcanearchive 에필로그에서 델타가 괴도가 되고 싶어 한 일을 계기로 삼을 뿐 아르카나 · 금서고 이야기를 잇지 않는다 — 정의 괴도단 줄의 앞편은 phantomthiefvsdetective다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y44",
+      "type": "sequel",
+      "from": "event_lordforjustice",
+      "to": "event_ce006",
+      "records": [
+        "S234"
+      ],
+      "reason": "ce006은 D-WAVE 콜라보 겸 지상 벙커 이야기로 작중 시점만 lordforjustice 뒤이고 K · 저지스 이야기와 이어지지 않는다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y45",
+      "type": "sequel",
+      "from": "event_lordforjustice",
+      "to": "fl:reborn_evil",
+      "strength": 2,
+      "records": [
+        "S257",
+        "F1971"
+      ],
+      "reason": "reborn_evil은 lordforjustice 에필로그에서 프리랜서가 된 K가 D와 이어 가던 사이비 조사(데이파라)를 출발점으로 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y46",
+      "type": "sequel",
+      "from": "event_ce006",
+      "to": "fl:lie_cause_recoil",
+      "records": [
+        "S299"
+      ],
+      "reason": "둘 다 D-WAVE 콜라보라는 설정만 같고 이야기 줄은 따로다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y47",
+      "type": "sequel",
+      "from": "event_overthehorizon",
+      "to": "fl:ark_ranger",
+      "records": [
+        "F2017",
+        "F2017-2",
+        "F2742"
+      ],
+      "reason": "ark_ranger는 아크레인저 블랙 이야기로, overthehorizon 에필로그에서 찾은 승리의 날개 호를 고쳐 띄운 사실(F2017-2)만 이어받는 떡밥 회수 관계다.",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y48",
+      "type": "sequel",
+      "from": "fl:coins_in_rush",
+      "to": "fl:fatal_maid",
+      "strength": 2,
+      "records": [
+        "S292",
+        "F2387",
+        "F2390"
+      ],
+      "reason": "fatal_maid는 coins_in_rush 결말에서 지휘관에게 맡겨져 메이드 포 유에 들어온 벨벳과, 그때 붙잡혔던 국장의 보복을 출발점으로 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y49",
+      "type": "sequel",
+      "from": "fl:reborn_evil",
+      "to": "fl:lie_cause_recoil",
+      "records": [
+        "S299",
+        "F2475"
+      ],
+      "reason": "D-WAVE 콜라보 설정만 같고, 센터장 제니퍼는 reborn_evil이 아니라 예전 메신저 의뢰와 이어진다.",
+      "confidence": "확실",
+      "status": "기각",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y50",
+      "type": "sequel",
+      "from": "side:eden_spear",
+      "to": "event_goddessfall1",
+      "strength": 3,
+      "records": [
+        "S273",
+        "F2173",
+        "F2260"
+      ],
+      "reason": "goddessfall1은 eden_spear 끝(장막이 걷혀 퀸이 내려옴 · 나유타의 파이오니아 호출)에서 곧바로 이어지는 같은 사건의 본편이다(S273 \"side:eden_spear 끝에서 이어짐\").",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y51",
+      "type": "sequel",
+      "from": "event_goddessfall1",
+      "to": "fl:ark_guardian",
+      "strength": 3,
+      "records": [
+        "S287",
+        "F2357"
+      ],
+      "reason": "ark_guardian의 액자는 goddessfall1 직후의 에덴(스노우 화이트 수리 · 뇌만 남은 홍련 · 라푼젤)에서 시작하고, goddessfall1 끝에 기억을 되찾은 스노우 화이트의 꿈으로 아크 가디언 작전을 보여 준다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y52",
+      "type": "sequel",
+      "from": "fl:blank_ticket",
+      "to": "fl:terminus_ticket",
+      "strength": 3,
+      "records": [
+        "S281",
+        "S283",
+        "Q308"
+      ],
+      "reason": "terminus_ticket은 blank_ticket 끝에 정해진 AZX 지상행과 노라가 티켓에 쓴 목적지에서 곧바로 시작하는 한 이야기의 2부다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y53",
+      "type": "sequel",
+      "from": "fl:fatal_maid",
+      "to": "fl:persona_on_frontline",
+      "strength": 2,
+      "records": [
+        "S343",
+        "F2391",
+        "F2855",
+        "F2862"
+      ],
+      "reason": "persona_on_frontline의 악역 앨든은 coins_in_rush · fatal_maid에서 지휘관 때문에 재기하지 못한 국장으로, 그 원한에서 사건이 시작되고 체포로 그의 줄이 끝난다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y54",
+      "type": "sequel",
+      "from": "fl:2x2_love_1ch",
+      "to": "fl:2x2_love_2ch",
+      "strength": 3,
+      "records": [
+        "S308"
+      ],
+      "reason": "같은 제목의 1부 → 2부로, 2부는 1부의 축제 공지와 갈래에서 곧바로 축제 준비 · 엔딩까지 마저 끝낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y55",
+      "type": "sequel",
+      "from": "side:pretty_star",
+      "to": "event_staranis1",
+      "strength": 2,
+      "records": [
+        "S322",
+        "F2556",
+        "F2557",
+        "Q331"
+      ],
+      "reason": "pretty_star는 프리티의 죽음과 아니스가 니케 아이돌이 되기까지의 전사이고, staranis1은 그 뒤 한슨 사무실의 T.T.STAR에서 시작한다(사이드 스토리 → 이벤트).",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y56",
+      "type": "sequel",
+      "from": "event_staranis1",
+      "to": "fl:b-side_idol",
+      "strength": 2,
+      "records": [
+        "S327",
+        "F2708"
+      ],
+      "reason": "b-side_idol은 staranis1 결말(아니스 탈퇴 · 민트 · 프리카의 Twinkle Twin Star 데뷔 · 머스탱이 된 한슨)을 출발점으로 한 다음 편이다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    },
+    {
+      "id": "Y57",
+      "type": "sequel",
+      "from": "fl:b-side_idol",
+      "to": "fl:bitter_spice",
+      "strength": 2,
+      "records": [
+        "S329"
+      ],
+      "reason": "bitter_spice는 b-side_idol에서 민트와 가까워진 지휘관을 전제로 Twinkle Twin Star의 첫 앨범 이야기를 잇는 다음 편이다.",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "X2"
+        }
+      ]
+    }
+  ]
+}

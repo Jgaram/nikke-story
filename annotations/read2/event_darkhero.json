@@ -1,0 +1,409 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M19\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_darkhero",
+  "session": "M19",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I177",
+      "target": "person:잉그리드",
+      "evidence": [{ "scene": "event_darkhero_01_e", "lines": [126, 131] }],
+      "reason": "메이든이 받는 전화의 '사장님' — 메이든의 사장 잉그리드(F1468). 이 씬엔 이름이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "I178",
+      "target": "person:잉그리드",
+      "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["27-30"] }],
+      "reason": "마스크 오프 허가를 청하는 '사장님' — 익스터너에게 명령을 내린 잉그리드(F1468 · F1470)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "I179",
+      "target": "person:잉그리드",
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["158-160"] }],
+      "reason": "임무 실패를 보고하는 '사장님' — 잉그리드(F1473)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "I180",
+      "target": "person:아크레인저_레드",
+      "evidence": [{ "scene": "event_darkhero_03_e", "lines": ["73-75"] }],
+      "reason": "'나 역시 레드에게 이 말을 전해 듣고' — 아크레인저 레드(F1476-2). '레드'만으로는 자동 언급이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E414",
+      "act": "암시",
+      "points": ["F1478"],
+      "text": "극장판 속 블랙의 '고개 들어 하늘을 보아라 — 지상은 실은 아름다움으로 가득'이 에필로그에서 진짜 하늘을 처음 본 트로니의 말로 돌아온다",
+      "about": ["person:아크레인저_블랙", "person:트로니"],
+      "evidence": [{ "scene": "event_darkhero_prologue", "lines": ["48-58"] }],
+      "reason": "epilogue#8-13이 '이래서 블랙이 그렇게 말한 거구나'며 이 대사를 그대로 되뇐다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E415",
+      "act": "암시",
+      "points": ["F1475"],
+      "text": "달력 옆 '조잡하게 뭉쳐진 찰흙 덩어리'를 트로니가 한참 바라본다 — 일레그가 만들어 준 블랙 피규어",
+      "about": ["person:트로니", "person:일레그"],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["131-135"] }],
+      "reason": "03_e#111-114에서 그 찰흙 덩어리가 일레그가 만든 블랙 피규어임이 밝혀진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E416",
+      "act": "재언급",
+      "points": ["F541"],
+      "text": "트로니의 '고마워' 한마디에 메이든이 패드를 떨어뜨리고 운다 — 고맙다는 말을 들어 본 적 없던 메이든",
+      "about": ["person:메이든"],
+      "evidence": [{ "scene": "event_darkhero_01_e", "lines": ["12-19", 29] }],
+      "reason": "#29 '고맙다는 말을 들어버렸는걸요' — 호감도 스토리에서 처음 고맙다는 말에 운 메이든(F541)을 되풀이한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E417",
+      "act": "재언급",
+      "points": ["F1342"],
+      "text": "일레그가 '방주의 동력원을 본 뒤로' 새 동력원을 찾는 연구를 하루도 빠짐없이 해 왔다고 한다",
+      "about": ["person:일레그", "person:트로니"],
+      "evidence": [{ "scene": "event_darkhero_02_s", "lines": ["43-45"] }],
+      "reason": "boomsday 끝에 둘이 지상에 가서라도 새 동력원을 찾기로 한 것(F1342)을 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E418",
+      "act": "재언급",
+      "points": ["Q59"],
+      "text": "마테리얼 H 보고서에 마나의 '랩쳐 시설은 방주와 매우 닮았다 — 축소판이라 해도 좋을 정도'가 그대로 실려 있다",
+      "about": ["concept:마테리얼_H", "person:마나"],
+      "evidence": [{ "scene": "event_darkhero_02_e", "lines": ["9-12"] }],
+      "reason": "ch12 마나의 사족(Q59 근거 d_main_12af_03#48-50)과 같은 말이다. 의문의 답은 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E419",
+      "act": "암시",
+      "points": ["F2581", "J19"],
+      "text": "보고서의 결론 — 마테리얼 H가 니케로 에너지를 만드는 것이 1세대 랩쳐가 유기물로 동력원을 보강하는 것과 같다 — 이 방주 동력원의 [먹이]를 가리킨다",
+      "about": ["concept:마테리얼_H", "place:방주"],
+      "evidence": [{ "scene": "event_darkhero_02_e", "lines": ["13-17"] }],
+      "reason": "ch45에서 방주 동력원은 1세대 코어로 생체 조직을 [먹이]로 먹는다(F2581). 보고서가 '방주의 축소판'에 이어 짚은 바로 그것(W3)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E420",
+      "act": "재언급",
+      "points": ["F545"],
+      "text": "극비 스쿼드라 소속감을 느껴 본 적 없는 메이든이 본모습을 받아 줄 이들에게 속하기를 바라 게임 모임에 마음을 열었다",
+      "about": ["person:메이든"],
+      "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["0-3", "11-22"] }],
+      "reason": "호감도 스토리에서 소속감을 찾아 파이널 퀘스트 길드의 '블랙로즈'가 된 메이든(F545)을 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E421",
+      "act": "재언급",
+      "points": ["F615"],
+      "text": "에테르가 지휘관을 '7호'라 부른다",
+      "about": ["person:에테르", "person:지휘관"],
+      "evidence": [{ "scene": "event_darkhero_04_e", "lines": ["19-25"] }],
+      "reason": "호감도 스토리 쪽지의 '7호'(F615)를 되풀이한다. 왜 7호인지는 뒤에 밝혀진다(Q225 · J3)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E422",
+      "act": "재언급",
+      "points": ["F1342"],
+      "text": "트로니의 어릴 적 꿈은 '하늘을 보는 것' — 언젠가 진짜 하늘, 환한 빛 아래 넓은 세상을 보겠다고 다짐했다",
+      "about": ["person:트로니"],
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["61-75"] }],
+      "reason": "모든 사람이 진짜 하늘을 볼 수 있게 하자는 boomsday의 다짐(F1342 · D398)의 뿌리를 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E423",
+      "act": "재언급",
+      "points": ["F1294"],
+      "text": "일레그가 수정 지역 탐색을 지원하며 새 동력원을 찾을 수 있다고 설렌다",
+      "about": ["person:일레그", "place:수정_지역"],
+      "evidence": [{ "scene": "event_darkhero_epilogue", "lines": ["26-33"] }],
+      "reason": "ch27(출시가 앞선다)에서 일레그가 방주 에너지 문제의 실마리를 찾으려 수정 지역 탐색에 자원한 것(F1294)으로 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "E424",
+      "act": "재언급",
+      "points": ["Q176"],
+      "text": "트로니가 방주에 남아 '동력원이 폭주하지 않도록' 지켜보겠다고 한다",
+      "about": ["person:트로니"],
+      "evidence": [{ "scene": "event_darkhero_epilogue", "lines": [36] }],
+      "reason": "boomsday의 까닭 모를 폭주와 또 폭주할 수 있느냐는 의문(Q176)을 다시 꺼낸다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D469",
+      "person": "person:트로니",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "사람들이 바라는 블랙 같은 대단한 히어로가 아니라며 [방주의 히어로]라는 말에 짓눌리던",
+      "after": "[방주의 히어로]로 남기를 거절하고, 남의 기대가 아닌 제 진심으로 친구에게 손 내미는 히어로가 되겠다는",
+      "trigger": [{ "scene": "event_darkhero_03_e", "lines": ["60-70"] }],
+      "time": "S147",
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["102-108"] }],
+      "reason": "03_e#27-29 '난 그런 대단한 존재가 아닌걸' → 06_s#102-106 블랙의 말을 제 것으로 선언한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D470",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:일레그"],
+      "before": "받기만 해 와 무언가 해 주고 싶지만 일레그가 좋아하는 것도 모르던",
+      "after": "폐기 · 도망자 신세를 무릅쓰고 갇힌 일레그에게 달려가 '내 손을 잡아' 하는",
+      "trigger": [{ "scene": "event_darkhero_04_s", "lines": ["45-69"] }],
+      "time": "S147",
+      "evidence": [{ "scene": "event_darkhero_06_e", "lines": ["15-50"] }],
+      "reason": "03_s#27-31 · 73-74 → 06_e#41-50. 일레그가 어릴 적 해 준 것을 되갚는다(#13-14)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D471",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:메이든"],
+      "text": "고맙다며 울고 머리를 쓰다듬는 메이든의 손길을 그만하라고 못 하고 눈을 질끈 감은 채 받아들이는",
+      "evidence": [{ "scene": "event_darkhero_01_e", "lines": ["29-35", "65-69"] }],
+      "reason": "#33 '이미 쓰다듬고 있잖아' · #67-69 그만하라는 말을 어려워한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D472",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:메이든"],
+      "before": "쓰다듬는 손길도 거절 못 하고 받기만 하던",
+      "after": "체포하겠다며 막아선 메이든 앞에 나서 제 진심을 말하고, 우는 메이든의 머리를 까치발로 쓰다듬는",
+      "trigger": [{ "scene": "event_darkhero_06_s", "lines": ["56-59"] }],
+      "time": "S147",
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["115-125"] }],
+      "reason": "01_e#29-35의 쓰다듬기가 뒤집힌다 — #116-118 '메이든이 우는 걸 보니까 나도 모르게 손이 가서'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D473",
+      "person": "person:트로니",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "내일 시간 있냐 묻고는 '당연히 나한테 내줄 시간은 없겠지' 움츠러들다, 있다는 말에 '다행이다 헤헤' 하는",
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["136-146"] }],
+      "reason": "#139 · #146. 영화 같이 보자는 말도 못 꺼내 일레그에게 대신 부탁한다(02_s#77-79)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D474",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:트로니"],
+      "before": "몇 년째 날마다 문 앞에 와 불러내던 하나뿐인 친구",
+      "after": "테러를 혼자 꾸몄다고 다 뒤집어써 폐기를 받아들이고 트로니의 혐의만은 벗기려는",
+      "trigger": [{ "scene": "event_darkhero_intermission_01", "lines": ["36-42"] }],
+      "time": "S147",
+      "evidence": [{ "scene": "event_darkhero_05_e", "lines": ["25-30", "41-42"] }],
+      "reason": "#42 '제가 모든 걸 뒤집어쓰고 트로니 씨의 혐의라도 풀어주는 게 최선'. 기준 D399",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D475",
+      "person": "person:일레그",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:메이든"],
+      "text": "마스크를 벗은 메이든을 두려워하지 않고, 우는 그녀의 눈물을 닦아 주려 먼저 다가가는",
+      "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["5-8", "34-40"] }],
+      "reason": "#38-40 '처음으로 두려워하지 않은, 오히려 먼저 다가와준 일레그'(F1470)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D476",
+      "person": "person:메이든",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "존재가 극비인 스쿼드라 소속감을 느껴 본 적 없어, 본모습을 그대로 받아 줄 이들 속에 속하기를 늘 바라는",
+      "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["0-3", "11-14"] }],
+      "reason": "서술이 메이든의 바람을 직접 말한다(06_s#147-154에서 되풀이)",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M81", "note": "M81 — 같은 신념(소속감)을 출시순으로 앞서 그린 D1811(char:181)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D477",
+      "person": "person:메이든",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "친구라도 명령이면 울면서 [정지]로 멈춰 넘기는 익스터너",
+      "after": "명령을 어기고 트로니에게 길을 열어 주며 임무 실패를 보고하는",
+      "trigger": [{ "scene": "event_darkhero_06_s", "lines": ["102-108"] }],
+      "time": "S147",
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["110-124", "158-160"] }],
+      "reason": "intermission_01#36-42 → 06_s#120-124 '손을 내밀어 주세요' · #160 '임무는 실패했습니다'. 대가는 무기한 근신(F1729)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D478",
+      "person": "person:메이든",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:트로니"],
+      "text": "트로니의 '고마워' 한마디에 울며 저도 모르게 머리를 쓰다듬고 놓지 못하는",
+      "evidence": [{ "scene": "event_darkhero_01_e", "lines": ["13-19", "29-34"] }],
+      "reason": "#19 '이 게임 시작하길 잘한 것 같아요' · #66 '자꾸만 손이 가는걸요'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "D479",
+      "person": "person:에테르",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'7호'라 부르며 둘과 엮이지 말라 충고하고는, 선물을 전하게 돕겠다는 말에 '7호답네' 하며 좌표를 던져 주는",
+      "evidence": [{ "scene": "event_darkhero_04_e", "lines": ["18-26", "54-61"] }],
+      "reason": "#54-55 '하나 더 준비해두길 잘했다' — 지휘관이 갈 줄 알았다. 뒤에 뒷배가 되라는 거래를 건다(06_e#70-84)",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 — 출시순으로 앞선 char:291 D1889가 에테르 → 지휘관 기준" }
+      ]
+    },
+    {
+      "id": "D480",
+      "person": "person:에테르",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "명령을 어긴 니케가 어디까지 할 수 있는지 그 '가능성'을 보고 싶어, 체포를 맡고서도 트로니에게 구하러 갈 선택지를 건네는",
+      "evidence": [{ "scene": "event_darkhero_04_s", "lines": ["43-45", "67-69"] }],
+      "reason": "#69 '넌 내게 가능성을 보여줄 수 있겠어?' — 06_e#87-88에서 목적을 직접 말한다",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 — 출시순으로 앞선 char:291 D1888이 에테르 신념 기준" }
+      ]
+    },
+    {
+      "id": "D481",
+      "person": "person:아크레인저_블랙",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "히어로란 남의 기대가 아니라 제 신념 · 진심을 관철하는 자 — 레드처럼 누군가를 일으켜 세우는 히어로가 되자는",
+      "evidence": [{ "scene": "event_darkhero_03_e", "lines": ["60-75"] }],
+      "reason": "#61-63 · #75. 시내를 돌며 사소한 선행을 베푸는 순찰(#40-44)로 보여 준다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U223",
+      "topic": "방주 사회",
+      "text": "중앙 정부가 직접 섭외한 방송 · 인터뷰로 정전을 해결한 니케를 [방주의 히어로]로 띄우고 시민들도 그렇게 부른다 — 말을 더듬은 트로니는 통편집된다",
+      "about": ["org:중앙_정부", "org:일렉트릭_쇼크"],
+      "points": ["F1465"],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["93-98"] }],
+      "reason": "방송을 쥔 중앙 정부(U165)가 영웅을 만드는 모습. 통편집은 03_s#11-16",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "U224",
+      "topic": "일상 · 문화",
+      "text": "방주 아이들은 꿈을 물으면 의사나 아크레인저 같은 히어로를 말하고, '하늘을 보는 것'이라는 꿈은 웃음거리가 된다",
+      "about": ["place:방주", "org:아크레인저"],
+      "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["61-72"] }],
+      "reason": "트로니의 어린 시절 회상 — 이터널 스카이 아래 진짜 하늘은 꿈 축에도 못 낀다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    },
+    {
+      "id": "U225",
+      "topic": "일상 · 문화",
+      "text": "엘리시온 · 미실리스 · 테트라 니케가 한방에 모여 온라인 게임 신규 레이드를 반나절씩 공략하고 격투 게임으로 밤을 새운다 — 게임이 기업을 넘는 '화합의 장'이다",
+      "about": ["place:방주"],
+      "points": ["F1464"],
+      "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["33-37"] }],
+      "reason": "#36-37 지휘관의 말. 01_e#82-85 BOOM · 드래곤 던전 · 아이언 펀치로 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+    }
+  ],
+  "slips": [
+    "06_e#45 '어렸을 적, 일레그를 방밖으로 이끌었던 목소리' — 트로니가 일레그를 이끈 것처럼 읽히지만 03_s#25-26 · F1475(일렉트릭 쇼크에 들어온 날 처음 만남, 일레그가 트로니를 방 밖으로 이끎)와 어긋난다 — 설정 오류 추정, F1475를 따른다"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "unit": "event_liarsend",
+  "session": "R39",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "LIAR'S END — 만우절 개그 이벤트. 작년 만우절에 당하기만 한 지휘관이 올해는 먼저 '무차별 거짓말쟁이'가 된다: 라피 · 아니스를 불러 불 끄기 · 커튼 치기, 슈가에게 밀크가 설탕을 치웠다, 미카에게 핫소스 사탕, 은화에게 볼륨감, 메이드 카페에서 목 막힌 척(코코아의 복수 오므라이스를 되먹임). 델타는 지상의 공룡 거짓말을 거꾸로 속여 넘기고, A.C.P.U.에서는 경찰이 됐다는 거짓말이 들어먹어 유치장 청소를 하다 '업무 방해죄 고소' 말에 도망친다. 단체방에 '호텔에서 뜨거운 시간'을 보내 니케들을 모으고는 군고구마를 내민다. 큰 한 방으로 슈엔을 지상 견학에 데려가 엘리베이터 고장 · 랩쳐 습격을 겪게 하는데(메티스가 몰래 지원), 랩쳐 대군을 쓸어 낸 것은 엔더슨이 '오퍼레이터도 실전을 경험해야 한다'며 지상에 올려 보낸 시프티였다(F1357) — 슈엔은 모든 게 이벤트였다고 알고 분노한다. 밤에는 샤워실의 머스탱을 보고 기절한다. 줄거리에 이어지는 사실은 거의 없다.",
+  "scenes": [
+    {
+      "scene": "event_liarsend_01",
+      "text": "작년 만우절의 복수 — 라피 · 아니스에게 첫 거짓말"
+    },
+    {
+      "scene": "event_liarsend_02",
+      "text": "슈가 · 미카 · 은화에게 거짓말"
+    },
+    {
+      "scene": "event_liarsend_03",
+      "text": "메이드 카페에서 목 막힌 척, 코코아의 복수 오므라이스"
+    },
+    {
+      "scene": "event_liarsend_04",
+      "text": "델타가 공룡 거짓말을 되받아 속임"
+    },
+    {
+      "scene": "event_liarsend_05",
+      "text": "A.C.P.U.에서 경찰이 됐다는 거짓말 — 유치장 청소, 도망"
+    },
+    {
+      "scene": "event_liarsend_06",
+      "text": "'호텔에서 뜨거운 시간' 메시지와 군고구마"
+    },
+    {
+      "scene": "event_liarsend_07",
+      "text": "큰 한 방을 결심"
+    },
+    {
+      "scene": "event_liarsend_08",
+      "text": "메티스에게 도움, 슈엔과 지상행 엘리베이터"
+    },
+    {
+      "scene": "event_liarsend_09",
+      "text": "지상 견학 — 엘리베이터 고장, 호위 없음, 랩쳐 습격"
+    },
+    {
+      "scene": "event_liarsend_10",
+      "text": "메티스의 (보이지 않는) 도움으로 생존"
+    },
+    {
+      "scene": "event_liarsend_11",
+      "text": "랩쳐 대군을 쓸어 낸 시프티, 슈엔의 분노"
+    },
+    {
+      "scene": "event_liarsend_12",
+      "text": "샤워실의 머스탱, 카운터스 무릎베개"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1357",
+      "text": "엔더슨은 오퍼레이터도 실전을 경험해야 한다며 시프티를 지상에 올려 보내 랩쳐를 잡게 했고, 시프티는 지상에서 랩쳐 대군을 홀로 쓸어 냈다 — 이번이 처음이 아니었고, 시프티는 스트레스가 풀린다고 했다",
+      "about": ["person:시프티", "person:엔더슨"],
+      "evidence": [{ "scene": "event_liarsend_11", "lines": ["13-27", "38-50"] }],
+      "reason": "시프티 말(#39-44 '또 올라왔죠'), 서술(#49-50)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S138",
+      "kind": "기준점",
+      "text": "만우절 — event_fullfoolday(작년 만우절) 1년 뒤",
+      "ref": "event_fullfoolday",
+      "at": [["뒤", "event_fullfoolday", "1년"]],
+      "evidence": [{ "scene": "event_liarsend_01", "lines": ["0-6"] }],
+      "reason": "독백 '작년. 4월 1일 … 속수무책으로 동료들의 거짓말에 당하고 말았다'(#2-4)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R39", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

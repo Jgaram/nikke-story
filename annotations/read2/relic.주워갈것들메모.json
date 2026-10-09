@@ -1,0 +1,74 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M26\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:주워갈것들메모",
+  "session": "M26",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I238",
+      "target": "person:지즈",
+      "reason": "귀한 파츠를 주워 모으는 메모의 필자. 할 일 목록의 Z(지즈) '귀한 것 모으기'(F1821)와 ch38에서 묻힌 라피의 몸을 찾아온 지즈(F1872).",
+      "confidence": "추정",
+      "evidence": [{ "scene": "relic:주워갈것들메모_00", "lines": ["0-4"] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I239",
+      "target": "person:니힐리스타",
+      "reason": "'화룡'은 니힐리스타의 이명(F761).",
+      "confidence": "확실",
+      "evidence": [{ "scene": "relic:주워갈것들메모_00", "lines": [0, "2-4"] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I240",
+      "target": "person:토커티브",
+      "reason": "'수다쟁이 파츠' — 말하는 헬레틱 토커티브(이름 뜻 그대로). 같이 다니던 인디빌리아와 한곳에 있다.",
+      "confidence": "추정",
+      "evidence": [{ "scene": "relic:주워갈것들메모_01", "lines": [1, 4] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I241",
+      "target": "person:인디빌리아",
+      "reason": "토커티브와 함께 다니던 직계(F1430)라 '전갈 파츠'로 본다 — 원문에 확인은 없다.",
+      "confidence": "추정",
+      "evidence": [{ "scene": "relic:주워갈것들메모_01", "lines": [1, 4] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E655",
+      "act": "재언급",
+      "points": ["F1103"],
+      "text": "필자가 화산 근처의 화룡 파츠를 보고 '지들끼리 싸웠나' 의아해한다",
+      "about": ["person:니힐리스타"],
+      "reason": "#4. 인디빌리아 · 토커티브에게 물리고 베여 버려진 니힐리스타(F1103).",
+      "confidence": "추정",
+      "evidence": [{ "scene": "relic:주워갈것들메모_00", "lines": ["2-4"] }],
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E656",
+      "act": "암시",
+      "points": ["F1872", "F2214"],
+      "text": "방주 근처 땅 아래 너무 깊이 묻히고 주위에 랩쳐가 많은 '엄청 귀한 것'을 위험을 감수할 가치가 있다고 적는다",
+      "about": ["person:지즈"],
+      "reason": "#2 깊이 · 랩쳐. 지즈가 파 온 목 없는 라피의 옛 바디(F1872) — 깊은 지하 · 대량의 랩쳐로 회수를 포기했던 그것(F2214).",
+      "evidence": [{ "scene": "relic:주워갈것들메모_03", "lines": ["0-4"] }],
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": [],
+  "note": "정체 볼 줄 없음. 문서라 인물 변화 · 생활상 없음."
+}

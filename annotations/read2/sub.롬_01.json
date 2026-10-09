@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:롬_01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E73",
+      "act": "암시",
+      "points": ["F1997"],
+      "text": "롬이 유물로 꾸민 '제2의 방주'를 보이며 '인간이 올 만한가? 북적북적 하하 호호, 행복한 공간'이라 묻는다 — 갈 곳 없는 사람들이 웃으며 지낼 제2의 방주를 만들어 달라던 가족의 부탁(F1997)",
+      "about": ["person:롬", "place:제2의_방주"],
+      "evidence": [{ "scene": "sub:롬_01", "lines": ["51-58"] }],
+      "reason": "#54-58. 이름과 까닭은 event_ce006에서 롬의 기억으로 드러난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U66",
+      "topic": "지상",
+      "text": "지상에는 인류가 지하로 내려가기 전 쓰던 로봇이 수십 년 혼자 남아, 입력된 명령대로 유물을 모아 옛 번화가를 흉내 낸다",
+      "about": ["person:롬", "place:지상"],
+      "points": ["F283", "F285"],
+      "evidence": [{ "scene": "sub:롬_01", "lines": ["22-43"] }],
+      "reason": "#25 라피 · #31-41 현수막 · 오락실 · 병원 · 마트 · 등신대",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

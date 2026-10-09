@@ -1,0 +1,43 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M100\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:532",
+  "session": "M100",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2172",
+      "person": "person:소라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "얼굴로만 아는 유명인 지휘관을 '오빠'라 놀리며 종이비행기 승부를 걸던",
+      "after": "사람 · 물건 보는 눈으로 '독차지하고 싶을 만큼' 특출난 사람이라며 번호와 종이비행기를 남긴",
+      "evidence": [{ "scene": "ep:d_nikke_sora_04", "lines": ["27-44", "54-57"] }],
+      "trigger": [{ "scene": "ep:d_nikke_sora_04", "lines": ["18-22"] }],
+      "time": "S242",
+      "reason": "#20-22 사정을 캐묻지 않고 기다리겠다는 말 → #31-32 '특출난 사람 … 독차지하고 싶어질 정도' · #44 번호. 첫 만남 회상(S242).",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2173",
+      "person": "person:소라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "밀수를 묵인받고 승리의 날개 호를 찾기로 한 '진짜 거래'의 상대",
+      "after": "함께 지상에 올라 진짜 하늘 아래에서 손을 맞잡고 그날의 종이비행기를 날리는",
+      "evidence": [{ "scene": "ep:d_nikke_sora_05", "lines": ["2-4", "20-23", "45-53"] }],
+      "reason": "#3 지상에 나와 있음 · #23 처음 만난 그날 · #46-48 손을 뻗고 맞잡음. D745(거래 상대) 뒤의 현재 장면.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S242(회상 01–04) 그대로 — 05의 지상 장면은 현재지만 사건 실마리가 없어 시점을 더하지 않았다. 보육원 아이들과의 사정(04#20-22)은 원문이 밝히지 않아 의문으로 세우지 않았다. 아이들 · 점원은 단역(`???` 없음)."
+}

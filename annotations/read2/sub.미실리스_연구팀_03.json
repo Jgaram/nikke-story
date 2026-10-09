@@ -1,0 +1,24 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:미실리스_연구팀_03",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U62",
+      "topic": "지상",
+      "text": "지상에는 늑대 무리가 아직 살아 있어, 지하를 떠난 로봇 개가 그 무리에 섞여 야생을 산다",
+      "about": ["place:지상", "person:볼트_MK.II"],
+      "points": ["F272"],
+      "evidence": [{ "scene": "sub:미실리스_연구팀_03", "lines": ["88-104"] }],
+      "reason": "#96-100 '10개 남짓한 실루엣' · '늑대 무리'. 방주에는 동물이 없어 로봇으로 대체하려 한다(_01#12-20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

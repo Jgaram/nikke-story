@@ -1,0 +1,94 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M85\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:171",
+  "session": "M85",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I652",
+      "target": "person:율하",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_yulha_01", "lines": [33, 35, 37] }],
+      "reason": "01#33 · #35 · #37 흐릿한 기억 속 목소리가 #55 · #62 · #71 이름표 율하의 같은 대사로 되풀이된다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1910",
+      "person": "person:율하",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "술자리 '사고'를 잊자며 엮이지 말자고 선을 긋고, 멘티로 붙은 '신입'에게 하루 안에 창고 장부를 혼자 정리하라며 텃세를 부리는",
+      "evidence": [{ "scene": "ep:d_nikke_yulha_02", "lines": ["33-39", "71-72", "89-100"] }],
+      "reason": "02#36 '서로 잊는 걸로 하자고' · #39 '엮이지 말자고' · #94-97 '오늘까지 … 역시 일반 군인이 아니라 지휘관이어서'. 03#82 '여긴 그냥 괴롭히러 온 거야'로 속을 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1911",
+      "person": "person:율하",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "남에게 맡겨 두 번 일하느니 트라이앵글 서류를 처음부터 혼자 다 하는 게 낫다며, 쉴 틈 없이 일을 떠안는",
+      "evidence": [{ "scene": "ep:d_nikke_yulha_03", "lines": ["110-118", "123-124", 128] }],
+      "points": ["F627"],
+      "reason": "03#117-118 '두 번 일 할 바에야 그냥 처음부터 혼자 하는 게 나아' · #123-124 '쉬긴 뭘 쉬어. 할 일이 태산' · #128 트라이앵글의 일만 하는 게 아니다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1912",
+      "person": "person:율하",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:파피용"],
+      "text": "의무는 버리고 권리만 챙기는 '불여우'라 경멸하며 '죽여버린다'고 쏘아붙이고, 싫어하는 별명 '퍼피'로 불러 쫓아내는 앙숙",
+      "evidence": [{ "scene": "ep:d_nikke_yulha_03", "lines": [40, 43, 46, "48-52"] }],
+      "points": ["F628"],
+      "reason": "03#40 '꺼져. 불여우' · #43 '죽여버린다' · #48 '야, 퍼피' · #52 버닝엄을 핑계로 쫓아낸다. 01#50 · 02#10-12 '불여우 때문에 스트레스'도 같은 축",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1913",
+      "person": "person:율하",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "괴롭히려 일을 떠맡긴 귀찮은 신입",
+      "after": "근성 · 요령을 인정해 제대로 일을 가르쳐 주는 멘티",
+      "trigger": [{ "scene": "ep:d_nikke_yulha_03", "lines": ["65-72"] }],
+      "evidence": [{ "scene": "ep:d_nikke_yulha_03", "lines": [76, "84-89", "95-99"] }],
+      "reason": "03#76 '의외로 근성은 있네' · #85 '생각 없이 일한 건 아닌 모양' · #97-99 '고생했다, 신입. 제대로 일 가르쳐 줄 테니까'. 계기는 술자리의 '끝까지 함께 해야 해'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1914",
+      "person": "person:율하",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "엮이지 말자며 선을 긋던 상대",
+      "after": "먼저 입 맞추고 호텔 방으로 들이는 연인",
+      "trigger": [{ "scene": "ep:d_nikke_yulha_04", "lines": ["21-33"] }],
+      "evidence": [{ "scene": "ep:d_nikke_yulha_04", "lines": ["133-147"] }],
+      "reason": "04#136 '지금 어디 한번 해보시던가' · #143 입맞춤 · #144 '눈치껏 좀 알아서 해'. 계기는 지휘관이 트라이앵글 서류를 맡아 고칠 것 없이 끝낸 일. 05#95 '술 먹고 잊어버리지나 마'로 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M85", "note": "M85 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "애드미 · 프리바티 → 율하 · 지휘관(05#27-35)은 얕아 세우지 않았다. 파피용 → 지휘관은 기준 D181이 있고 이 단위의 '허니' 모습이 같아 다시 세우지 않았다. 시점 S377(CH.09 뒤, 추정)을 1회독 파일에 더했다."
+}

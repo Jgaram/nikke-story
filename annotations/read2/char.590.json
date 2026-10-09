@@ -1,0 +1,67 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M99\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:590",
+  "session": "M99",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I676",
+      "target": "person:모리",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_mori_01", "lines": [1, "4-5", 9, "11-12"] }],
+      "reason": "'군복 남자'를 부른 취객 — #16 모리 이름표로 '너 아니야! 모리야아!' 하고 같은 주정을 잇는다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1617",
+      "act": "재언급",
+      "points": ["F1903", "J23"],
+      "text": "떠나는 모리에게 지휘관이 '모리가 내민 손을 잡아 줄 사람이 분명히 나타난다'고 외친다 — 먼저 나온 이벤트에서 세이렌이 모리의 손을 잡아 모리가 폐기를 면하고 세이렌 일행과 떠난 일을 되짚는다",
+      "about": ["person:모리", "person:세이렌"],
+      "evidence": [{ "scene": "ep:d_nikke_mori_05", "lines": ["86-90", "93-95"] }],
+      "reason": "#88 '모리가 내민 손을 잡아줄 수 있는 사람' — E707 · D680(세이렌이 모리의 손을 맞잡음)의 손 모티프. 작중은 그 앞이라 같은 일이라는 확인은 없다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2161",
+      "person": "person:모리",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "취해서 '군복'에게 평가자가 돼 달라 조르고, 맨정신에는 말을 더듬으며 지켜보고 좋은 점수만 달라고 매달리는",
+      "evidence": [{ "scene": "ep:d_nikke_mori_02", "lines": ["68-83"] }],
+      "time": "S226",
+      "reason": "01#48-53 '평가자 좀 돼주라' → 02#78-83 '좋은 점수만 주시면… 지켜만이라도'. 모리 → 지휘관의 첫 모습(출시순으로 ch42 D887 앞).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    },
+    {
+      "id": "D2162",
+      "person": "person:모리",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "좋은 점수만 달라고 매달리던 평가 대상",
+      "after": "평가가 무의미해진 뒤에도 '시선이나 소문에 휘둘리지 않고 믿어 주고 생존법을 알려 줘서' 고맙다고 하는",
+      "trigger": [{ "scene": "ep:d_nikke_mori_04", "lines": ["76-93"] }],
+      "evidence": [{ "scene": "ep:d_nikke_mori_05", "lines": ["61-66", "73-78"] }],
+      "time": "S226",
+      "reason": "04#76-87 '시험만 통과해선 반복' → 05#74-77 '저를 신뢰해 주시고 … 생존할 수 있는 방법을 알려주셔서'. 뒤 ch42 D887로 이어진다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S226 그대로. Q245('아쉽네' · 기쁜 소식)는 이 단위가 더 밝히지 않아 열림 — 답에 가까운 것은 뒤 ch42의 D887이지만 같은 소식이라는 확인이 없다. 모리의 '재수가 없어서'(03#64 · 05#57)는 F1890의 사정을 숨긴 말이라 따로 적지 않았다. 인큐베이터 직원 · 웅성거리는 소리는 단역."
+}

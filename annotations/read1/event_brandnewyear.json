@@ -1,0 +1,96 @@
+{
+  "unit": "event_brandnewyear",
+  "session": "R17",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "이벤트 BRAND NEW YEAR — 새해 어드마이어 호 신년 선상 파티. 헬름이 지휘관에게 초대권을 준다(prologue). 파티에는 슈가(블랙 타이푼째) · 율리아(연주 담당, 리허설에서 끽끽댄다) · 마스트 · 앵커가 있다. 헬름의 해마다 같은 목표는 지상을 탈환해 어드마이어 호를 바다에 띄우는 것(01_s). 버닝엄이 헬름을 불러 가고(01_e), 지휘관은 슈가와 커피 품평(02), 율리아는 '음악과 대화'해 본 연주를 성공시킨다(03). 버닝엄(말을 더듬는다)은 새해에 지상으로 올려 보낸 물품에 막내딸 선물인 한정판 아크레인저 피규어가 잘못 섞였다며 회수를 맡기고, 헬름이 합류해 슈가 · 율리아를 데려간다(intermission_01). 지상에서 슈가는 긴 도로를 달려 올해 목표를 이뤘고(04_e), 좌표에는 방주에서 보낸 듯한 깔끔한 상자들이 사람 없이 쌓여 있었다 — 슈가가 왜 여기 있냐고 묻자 헬름은 '윗분들의 사정'이라 넘긴다(05_e). 돌아가는 길에 슈가가 풀숲 뒤 바다를 찾아 넷이 처음으로 바다와 일출을 본다(06_e). 그때 지휘관은 바다 위 언덕에서 마리안 같은 형체를 보았는데 눈을 감았다 뜨자 사라졌고, 발치에 붕대 하나가 떨어져 있었다(06_e #47-59). 버닝엄에게 피규어를 전하고 불꽃축제로 파티가 끝난다(epilogue).",
+  "scenes": [
+    { "scene": "event_brandnewyear_prologue", "text": "헬름이 어드마이어 호 신년 선상 파티 초대권을 준다" },
+    { "scene": "event_brandnewyear_01_s", "text": "파티장 — 헬름의 해마다 같은 목표: 지상 탈환해 어드마이어 호를 바다로" },
+    { "scene": "event_brandnewyear_01_e", "text": "율리아의 리허설 · 마스트와 앵커, 버닝엄이 헬름을 찾는다" },
+    { "scene": "event_brandnewyear_02_s", "text": "초대권 한 장을 몰래 들고 온 슈가 — 파티에 어울리는 커피" },
+    { "scene": "event_brandnewyear_02_e", "text": "바리스타 커피 품평" },
+    { "scene": "event_brandnewyear_03_s", "text": "음악의 혼을 못 찾는 율리아 — 음악과 대화하기" },
+    { "scene": "event_brandnewyear_03_e", "text": "본 연주 성공, 율리아의 목표 · 헬름이 지휘관을 부사령관에게 데려간다" },
+    { "scene": "event_brandnewyear_intermission_01", "text": "버닝엄 — 지상에 보낸 물품에 막내딸 선물 아크레인저 피규어가 섞였다" },
+    { "scene": "event_brandnewyear_04_s", "text": "출발 — 헬름은 바다를 본 적이 없다" },
+    { "scene": "event_brandnewyear_04_e", "text": "지상의 긴 도로를 달리는 슈가" },
+    { "scene": "event_brandnewyear_05_s", "text": "휴식 — 겨울 공기와 율리아의 연주" },
+    { "scene": "event_brandnewyear_05_e", "text": "좌표의 상자 더미에서 피규어 회수 — 왜 여기 있나 '윗분들의 사정'" },
+    { "scene": "event_brandnewyear_06_s", "text": "길을 잃고, 슈가가 바다를 찾아 온다" },
+    { "scene": "event_brandnewyear_06_e", "text": "첫 바다와 일출 · 소원, 언덕 위 마리안 같은 형체와 붕대" },
+    { "scene": "event_brandnewyear_epilogue", "text": "피규어 전달, 불꽃축제로 파티 마무리" }
+  ],
+  "facts": [
+    {
+      "id": "F735",
+      "text": "헬름의 해마다 같은 목표는 지상을 탈환해 어드마이어 호를 바다로 내보내는 것이고, 헬름은 바다를 본 적이 없어 매일 바다 위의 어드마이어 호를 상상한다 — 새해 지상 임무에서 헬름 · 슈가 · 율리아 · 지휘관은 처음으로 지상의 바다와 일출을 보았다",
+      "about": ["person:헬름", "place:어드마이어_호", "person:슈가", "person:율리아", "person:지휘관"],
+      "evidence": [
+        { "scene": "event_brandnewyear_01_s", "lines": ["29-34"] },
+        { "scene": "event_brandnewyear_04_s", "lines": ["26-33"] },
+        { "scene": "event_brandnewyear_06_e", "lines": ["0-14"] }
+      ],
+      "reason": "헬름 '지상을 탈환해 어드마이어 호를 바다로 내보내는 것'(01_s#32), '바다 본 적 있어?' '…아니'(04_s#30-33), 06_e 바다 · 일출 모두 처음(#3, #11-13)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    },
+    {
+      "id": "F736",
+      "text": "버닝엄의 명으로 찾아간 지상 좌표에는 방주에서 보낸 듯한 깔끔한 상자 여러 개가 사람 하나 없이 쌓여 있었고 — 버닝엄에 따르면 새해를 맞아 지상에 올려 보낼 물품이다 — 거기서 막내딸 선물로 잘못 섞인 한정판 아크레인저 피규어를 찾았다",
+      "about": ["person:버닝엄", "person:헬름", "org:아크레인저"],
+      "evidence": [{ "scene": "event_brandnewyear_intermission_01", "lines": ["0-13"] }, { "scene": "event_brandnewyear_05_e", "lines": ["0-13"] }],
+      "reason": "버닝엄 '새해를 맞이해서 지상에 올려보낼 물품을 정리했는데'(intermission_01#2), 독백 '방주에서 보낸 듯한 깔끔한 상자가 여러 개'(05_e#2), 슈가 '주변엔 아무도 없는 것 같은데'(#3)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    },
+    {
+      "id": "F737",
+      "text": "지상 바다에서 일출을 보던 지휘관은 바다 위 언덕에 선 사람 형체를 마리안으로 보았는데 눈을 감았다 뜨자 사라졌고, 발치에 붕대 한 개가 떨어져 있었다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "event_brandnewyear_06_e", "lines": ["46-59"] }],
+      "reason": "독백 '…마리…안?'(#53), '형체는 사라졌다'(#55), '내 발치엔, 붕대 한 개가 떨어져 있었다'(#59). 붕대는 마리안(모더니아)의 표지(F334 · F363). 형체가 정말 마리안인지는 지휘관도 확신하지 못해('잘못 본 건가' #56) Q102로 둔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q101",
+      "text": "새해에 방주가 사람 하나 없는 지상 좌표로 올려 보내 쌓아 둔 물품 상자들은 무엇이고, 누구를 위한 것인가?",
+      "about": ["person:버닝엄"],
+      "evidence": [{ "scene": "event_brandnewyear_05_e", "lines": [2, 3, 18, 19] }],
+      "reason": "슈가 '근데 이 물품들은 왜 이곳에 있는 걸까'(#18)에 헬름 '윗분들의 사정이 있겠지'(#19)로 답이 없다. 버닝엄이 '지상에 올려보낼 물품'이라 한 것(intermission_01#2)만 있다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    },
+    {
+      "id": "Q102",
+      "text": "지상 바다 언덕에서 지휘관이 본 형체는 정말 마리안이었나 — 백기사에게 맡겨진 마리안이 왜 그곳에 있었고, 붕대를 남기고 사라졌나?",
+      "about": ["person:마리안", "org:바이스리터"],
+      "evidence": [{ "scene": "event_brandnewyear_06_e", "lines": ["50-59"] }],
+      "reason": "독백 '…마리…안?' · 형체 사라짐 · 붕대(#53-59). 마리안은 크라운 · 차임의 [백기사]에게 맡겨져 있다(F677)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S52",
+      "kind": "기준점",
+      "text": "새해 — 어드마이어 호 신년 선상 파티(며칠 이어지는 파티의 마지막 날 밤 지상에서 돌아옴)",
+      "at": [],
+      "evidence": [{ "scene": "event_brandnewyear_prologue", "lines": ["6-8"] }, { "scene": "event_brandnewyear_epilogue", "lines": [3, 4] }],
+      "reason": "헬름 '새해가 밝았으니 … 선상 파티'(prologue#7), 율리아 '오늘이 파티 마지막 날인가요'(epilogue#3). 겨울 공기 · 설원(05_s#12-20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R17" }]
+    }
+  ],
+  "targets": []
+}

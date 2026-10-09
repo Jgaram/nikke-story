@@ -1,0 +1,136 @@
+{
+  "unit": "char:233",
+  "session": "M58",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I509",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": [11] }],
+      "reason": "'그녀의 과거 [지휘관]을 닮은 자' — 갓데스의 지휘관은 엔더슨(F2373).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "I510",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_02", "lines": [73] }],
+      "reason": "니케 체질을 부러워하는 인간에게 '[그 사람]이나 할 법한 얘기' — 05#11의 닮은 과거 지휘관으로 본다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1308",
+      "act": "암시",
+      "points": ["F2373"],
+      "text": "도로시가 지휘관을 '과거 [지휘관]을 닮은 자'로 떠올린다 — 갓데스의 지휘관이 엔더슨이라는 것은 아크 가디언에서 드러난다",
+      "about": ["person:도로시", "person:엔더슨"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": ["10-17"] }],
+      "reason": "#11 '그녀의 과거 [지휘관]을 닮은 자' — 정체는 F2373, 재회는 ch46 D1175.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1309",
+      "act": "암시",
+      "points": ["F2368"],
+      "text": "도로시가 오래 찾아 온 [릴리바이스 꽃]이 있으면 덜 외로울 것 같다 한다 — 릴리바이스의 이름이 그 하얀 꽃에서 왔고 갓데스가 함께 꽃밭에 갔다(F2368)",
+      "about": ["person:도로시", "person:릴리바이스"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_03", "lines": ["62-68"] }],
+      "reason": "#67 '제가 찾는 건 [릴리바이스 꽃]이에요' — 잃은 리더 · 갓데스 시절을 그리는 것으로 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1310",
+      "act": "재언급",
+      "points": ["F920"],
+      "text": "라피가 아는 공식 이야기는 '아크 가디언 뒤 갓데스는 흩어져 생사도 모른다'뿐이다 — OVER ZONE에서 본 방주의 배신은 기록에 없다",
+      "about": ["org:갓데스", "incident:아크_가디언_작전"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_04", "lines": ["13-24", "41-42"] }],
+      "reason": "#14-15 '모두 뿔뿔이 흩어졌다… 생사조차 알지 못하게' — 같은 날 앞선 OVER ZONE의 F920(들여보낼 생각이 없었다)과 어긋나는 공식 기록.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1311",
+      "act": "재언급",
+      "points": ["F925"],
+      "text": "도로시가 떠나며 '그렇죠? 피나' — 환각 속 피나에게 말을 거는 버릇이 이어진다",
+      "about": ["person:도로시", "person:피나"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": ["100-104"] }],
+      "reason": "#100-102 '…멈추지 않을 거예요. 그렇죠? 피나' · #103 '소중한 당신을 담은 이 날개' — F925 · D240.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "E1312",
+      "act": "재언급",
+      "points": ["F928"],
+      "text": "'한번 선을 넘어 굴러간 돌'은 멈추지 않는다 — 방주를 빼앗겠다며 이미 선을 넘었다던 도로시(F928)",
+      "about": ["person:도로시", "place:방주"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": ["90-95"] }],
+      "reason": "#91-95 '한번 선을 넘어 굴러간 돌은… 낙원이 있는 땅굴까지' — F928의 '이미 선을 넘었다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1433",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "언체인드를 대가로 쓰는 이용하기 좋은 손님 · 장기말",
+      "after": "곁에 있으면 따뜻해지는 인간 — '당신이 이겼네요', 애정이 남았다며 '다시 만나요'",
+      "trigger": [{ "scene": "ep:d_nikke_dorothy_04", "lines": ["60-67", "104-120"] }],
+      "time": "S74",
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": ["10-17", "80-89"] }],
+      "reason": "#13 '이용하기 좋은 장기말' · #16 '곁에 있으면 따뜻해지는' · #82-88 '당신이 이겼네요… 다시 만나요'. 계기는 '방주를 만들어줘서 고마워'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1434",
+      "person": "person:도로시",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "인간을 싫어한다며 남은 애정을 부정하는",
+      "after": "인간을 사랑했고 애정이 아직 남았다고 인정하되, 그래서 더 용서할 수 없어 방주에 닿을 때까지 멈추지 않겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_dorothy_04", "lines": ["104-120"] }],
+      "time": "S74",
+      "points": ["F941", "F942"],
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_05", "lines": ["62-69", "81-84", "98-104"] }],
+      "reason": "#62 '맞아. 사랑했다' · #69 '그렇기에 더 용서할 수 없어' · #100 '멈추지 않을 거예요'. 앞 모습은 02#119-125 '싫어하나 보구나'–'예'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1435",
+      "person": "person:노아",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:도로시"],
+      "text": "같은 스쿼드지만 방주가 생길 때부터 산 갓데스 출신이라 부담스럽고 무섭다며, 꽃을 두고 왔다고 정색당하자 '걔 진짜 짜증 나'라 하는",
+      "evidence": [{ "scene": "ep:d_nikke_dorothy_01", "lines": ["46-54", "69-81"] }],
+      "reason": "#48 '그냥 부담스럽고 무섭던데' · #53 '갓데스 출신들 다 어려워' · #81 '걔 진짜 짜증 나'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "life": []
+}

@@ -1,0 +1,286 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M05\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "ch19",
+  "session": "M05",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I47",
+      "target": "person:파피용",
+      "speaker": true,
+      "evidence": [{ "scene": "d_main_19_01", "lines": [13] }],
+      "reason": "#13 ??? 침묵 뒤 #15 파피용이 숨었다 나온다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "I48",
+      "target": "person:요한",
+      "speaker": true,
+      "evidence": [{ "scene": "d_main_19_05", "lines": [25, 29, 32] }],
+      "reason": "이사벨 · 하란 · 노아에게 명령하는 ??? — #43-44 하란이 '요한, 나의 지휘관'이라 부른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "I49",
+      "target": "person:하란",
+      "speaker": true,
+      "evidence": [{ "scene": "d_main_19_06", "lines": ["0-1"] }],
+      "reason": "정신이 드냐는 ??? 뒤 #3-5 하란이 자기를 소개한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "I50",
+      "target": "person:버닝엄",
+      "evidence": [{ "scene": "d_main_19_02", "lines": ["31-32"] }],
+      "reason": "#32 '네 상관은 분명 그걸 빼앗으려 할 테니까' — 파피용의 상관 버닝엄. 이 씬에 이름이 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E139",
+      "act": "암시",
+      "points": ["F748"],
+      "text": "요한이 '인간이라고는 믿을 수 없는 힘'으로 지휘관을 벽 밖으로 던진다 — 뼈와 살을 기계로 바꾼 몸(F748)",
+      "about": ["person:요한"],
+      "evidence": [{ "scene": "d_main_19_05", "lines": ["77-80"] }],
+      "reason": "#79. 다음 씬 19_07에서 하란이 기계 몸을 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "E140",
+      "act": "암시",
+      "points": ["F763"],
+      "text": "도로시가 지휘관만이 에덴의 위기를 풀 열쇠라며 줄곧 기다렸고 '기적의 경험을 빌려 달라'고 청한다 — 실은 카운터스를 총알받이로 쓰려던 계획(F763)",
+      "about": ["person:도로시"],
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["115-119", "136-138"] }],
+      "reason": "#116 · 138. ch20에서 처음부터 총알받이로 데려왔다고 드러난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "E141",
+      "act": "암시",
+      "points": ["F767"],
+      "text": "도로시가 신뢰의 표시라며 '첫 번째 탄환이 언체인드'인 권총을 건넨다 — 첫 탄환은 언체인드가 아니었다(F767)",
+      "about": ["person:도로시", "concept:언체인드"],
+      "evidence": [{ "scene": "d_main_19af_02", "lines": ["67-71"] }],
+      "reason": "#70. ch20에서 요한의 블러프로 쓰인다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "E142",
+      "act": "재언급",
+      "points": ["F365"],
+      "text": "아니스가 파피용에게 '그 사람이 우릴 사살하라고 한 적도 있다'며 정신적 피해 보상을 요구한다 — 마리안 연행 때의 사살 명령(F365)",
+      "about": ["person:버닝엄"],
+      "evidence": [{ "scene": "d_main_19_01", "lines": ["24-25"] }],
+      "reason": "#24 '그 사람' = #18의 버닝엄",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D170",
+      "person": "person:요한",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "상대를 붙잡고 세 가지를 물어 답이 마음에 안 들면 '문답무용'이라며 죽이려 드는, 냉혹하고 단호한 지휘관",
+      "evidence": [{ "scene": "d_main_19_05", "lines": ["47-49", "70-76"] }],
+      "reason": "#48 · 75-76",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D171",
+      "person": "person:요한",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "언체인드를 니케의 해방에 쓰겠다는 방주의 지휘관을 '애송이'라 보고 랩쳐 밭에 던진 적",
+      "evidence": [{ "scene": "d_main_19_05", "lines": ["61-80"] }],
+      "reason": "#73-80. 세실에게 한 말은 19af_01#18-22",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D172",
+      "person": "person:요한",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "햇살 · 풀 내음 · 바람이 있는 지상의 풍경을 다시 손에 넣겠다는 지상 탈환 — 다른 모든 것을 등져서라도 이룰 '탄생의 이유'",
+      "evidence": [{ "scene": "d_main_19_07", "lines": ["15-23"] }],
+      "reason": "하란의 말 #16-23",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D173",
+      "person": "person:하란",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "지휘관을 죽이려던 자리에서 '한순간의 변덕이고 여흥'이라며 살리고, 시련을 지켜보다 지루하면 수프를 끓이러 가는 변덕스러운 마녀",
+      "evidence": [{ "scene": "d_main_19_06", "lines": ["7-14"] }],
+      "reason": "#9 · 12-14",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M56", "note": "출시 첫날 char:230(하란 호감도 스토리)이 앞서 그 기준(D1406 · D1407 · D1408)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D174",
+      "person": "person:하란",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "생존은 강자의 특권이고 인간은 하찮은 피식자라 여기지만, 요한을 보고 '아주 조금' 생각이 바뀌었다",
+      "evidence": [{ "scene": "d_main_19_07", "lines": ["4-6", "13-14", "38-39"] }],
+      "reason": "#5 · 13-14 · 39",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M56", "note": "출시 첫날 char:230(하란 호감도 스토리)이 앞서 그 기준(D1406 · D1407 · D1408)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D175",
+      "person": "person:하란",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '가련한 피식자' · '인간아'라 부르며 낙원으로 이끌되, 목숨을 걸 각오는 말로 증명되지 않는다며 죽음 앞에 세워 시험하는",
+      "evidence": [{ "scene": "d_main_19_08_s", "lines": ["8-18"] }],
+      "reason": "#11-18",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M56", "note": "출시 첫날 char:230(하란 호감도 스토리)이 앞서 그 기준(D1406 · D1407 · D1408)을 남긴다" }
+      ]
+    },
+    {
+      "id": "D176",
+      "person": "person:도로시",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '귀하'라 깍듯이 부르며 낙원을 안내하고, 줄곧 기다렸다며 언체인드를 대가로 헬레틱 퇴치를 청하는 거래 상대",
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["113-147"] }],
+      "reason": "#116-119 · 140-147",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D177",
+      "person": "person:도로시",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "인간과 니케가 어우러진 낙원이란 힘의 균형 — 모두가 자력으로 살아남아 다수의 약자가 소수의 강자를 착취하지 않는 곳",
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["94-100"] }],
+      "reason": "#96-100. 방주를 겨냥한 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D178",
+      "person": "person:세실",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "요한에게 '당신답네요' 웃고 NIMPH를 편리한 발명품이라 여기며, 도로시의 '장난'을 경계해 지켜보는 냉철한 에덴의 과학자",
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["5-37"] }],
+      "reason": "#23 · 25 · 35-37",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D179",
+      "person": "person:노아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'키득키득, 길막이 제일 재밌죠' 하고 지상 최강의 방패를 자랑하며 상대를 놀리는 장난기 가득한 필그림",
+      "evidence": [{ "scene": "d_main_19_05", "lines": ["33-39", "85-87"] }],
+      "reason": "#33 · 86-87",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M53", "note": "앞선 출시(char:232, 2022-11-04)의 같은 성격 기준 D1357을 남긴다" }
+      ]
+    },
+    {
+      "id": "D180",
+      "person": "person:파피용",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "카운터스를 '꿀벌'이라 놀리며 정보를 꿀처럼 흥정하고, 필요하면 상관의 기밀도 흘리겠다는 능청스러운 거래꾼",
+      "evidence": [{ "scene": "d_main_19_01", "lines": ["15-17", "37-51", "58-60"] }],
+      "reason": "#41-45 · 60",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "D181",
+      "person": "person:파피용",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '허니'라 부르며 '품에 날아든 나비'를 케어해 주면 부사령관의 기밀을 주겠다고 꾀는",
+      "evidence": [{ "scene": "d_main_19_01", "lines": [21, "29-30", "44-45"] }],
+      "reason": "#21 · 44-45",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U109",
+      "topic": "지상",
+      "text": "황무지 한가운데 광학미채로 숨은 에덴에서는 수목 · 가축을 되살린 정원에서 황금빛 사과를 따 먹는다 — 방주에는 없는 맛이고, 낙원의 것은 반출하지 않는다",
+      "about": ["place:에덴"],
+      "points": ["F750"],
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["53-68"] }],
+      "reason": "#54-56 · 65 · 67",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    },
+    {
+      "id": "U110",
+      "topic": "지상",
+      "text": "에덴은 인간 · 니케 모두 스스로 살아남을 힘을 요구해, 니케는 타일런트 급 가상 적과 훈련하고 손님도 목숨을 건 '낙원의 시련'을 통과해야 들어온다",
+      "about": ["place:에덴"],
+      "points": ["F749", "F752"],
+      "evidence": [{ "scene": "d_main_19af_01", "lines": ["85-97"] }],
+      "reason": "#87-97. 시련은 19_08_e",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+    }
+  ]
+}

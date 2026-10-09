@@ -1,0 +1,421 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M09\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_bluewaterisland",
+  "session": "M09",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I86",
+      "target": "person:리타",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bluewaterisland1_01_s", "lines": ["36-37"] }],
+      "reason": "#36-37 '젊은 것들이…' 직후 #40 리타가 기기를 내려놓고 #41 같은 말투로 잇는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "I87",
+      "target": "person:메어리",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bluewaterisland1_03_e", "lines": ["0-3"] }],
+      "reason": "#0-3 '조금 따끔' 하고 깨운 목소리 — #5 메어리, #9 주사 놓는 척 꼬집었다고 밝힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "I88",
+      "target": "person:페퍼",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bluewaterisland1_04_e", "lines": ["59-60"] }],
+      "reason": "#59-60 '저만 그렇게 생각한 게 아니었네요' — #62 '저예요, 저' 페퍼",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "I89",
+      "target": "person:페퍼",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bluewaterisland1_06_e", "lines": ["73-74", "77-79"] }],
+      "reason": "환상 속 '믿었는데… 이 위선자!'는 메어리를 민 인간 페퍼의 목소리(F971 · F537)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "I90",
+      "target": "person:페퍼",
+      "speaker": true,
+      "evidence": [{ "scene": "event_bluewaterisland2_03_e", "lines": ["79-80", 82] }],
+      "reason": "메어리가 떠올리는 '믿었는데… 이 위선자!' — #84 '페퍼가, 제 등을 밀었던 걸'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "I91",
+      "target": "concept:크라켄",
+      "evidence": [{ "scene": "event_bluewaterisland2_epilogue", "lines": ["41-49"] }],
+      "reason": "#41-49 해저의 건물 몇 채만 한 거대 물체 — 뒤에 떠오른 크라켄(Q135 → F1050)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E208",
+      "act": "재언급",
+      "points": ["F735"],
+      "text": "바다 전문가인데 한 번도 바다에 못 나가 안달난 이지스 · 어드마이어 호를 다시 꺼낸다",
+      "about": ["org:이지스", "place:어드마이어_호"],
+      "evidence": [{ "scene": "event_bluewaterisland1_01_s", "lines": ["4-12"] }],
+      "reason": "#4 '전문 영역에 못 가본' · #8 '바다로 나가고 싶어 안달' — 헬름의 해마다 같은 목표(F735)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E209",
+      "act": "암시",
+      "points": ["F978"],
+      "text": "네온이 '숨겨진 오의'라며 물총을 꺼내 수력 마스터를 자처한다",
+      "about": ["person:네온"],
+      "evidence": [{ "scene": "event_bluewaterisland1_01_s", "lines": ["91-96"] }],
+      "reason": "#92-96 화력쟁이의 숨은 오의 = 수력 — 이 섬을 겪고 하이브리드 네온이 된다(F978)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E210",
+      "act": "암시",
+      "points": ["F1051"],
+      "text": "리타가 섬의 소규모 조력 발전소를 살려 숙소에 전기를 잇겠다고 한다",
+      "about": ["person:리타", "place:블루워터_아일랜드"],
+      "evidence": [{ "scene": "event_bluewaterisland1_02_e", "lines": ["17-18"] }],
+      "reason": "#17-18 섬 전력을 살림 — 뒤에 크라켄을 깨운 원인으로 지목된다(F1051)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E211",
+      "act": "암시",
+      "points": ["F971"],
+      "text": "메어리는 자기가 아니라 환자를 도울 수 없을까 봐만 두렵다고 한다",
+      "about": ["person:메어리"],
+      "evidence": [{ "scene": "event_bluewaterisland1_03_s", "lines": ["44-48"] }],
+      "reason": "#45-48 환자를 돕지 못할까 두려움 — 불치병 환자를 못 살려 죄를 지은 과거(F971)의 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E212",
+      "act": "암시",
+      "points": ["F1496"],
+      "text": "메어리가 파츠를 쉽게 갈 수 있다는 인식이 박히면 건강한 자아를 지키기 어렵다고 라피를 말린다",
+      "about": ["person:메어리", "person:라피"],
+      "evidence": [{ "scene": "event_bluewaterisland1_04_e", "lines": ["24-28"] }],
+      "reason": "#25-28 잦은 파츠 교체 → 자아 문제 — 뒤에 밝혀지는 교체 과다의 사고 전환(F1496)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E213",
+      "act": "암시",
+      "points": ["F972"],
+      "text": "리페어 센터에서도 휴가 한 번 안 쓴 메어리가 섬에서도 진료소만 지킨다",
+      "about": ["person:메어리", "place:리페어_센터"],
+      "evidence": [{ "scene": "event_bluewaterisland1_05_e", "lines": ["87-88"] }],
+      "reason": "#87-88 쉬지 않고 일함 — 자기 죄로 다친 니케들을 돌보는 속죄(F972)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E214",
+      "act": "암시",
+      "points": ["F537-2"],
+      "text": "페퍼가 환상을 본 뒤 메어리의 안색이 창백해진다",
+      "about": ["person:메어리", "person:페퍼"],
+      "evidence": [{ "scene": "event_bluewaterisland2_01_s", "lines": [14, "44-48"] }],
+      "reason": "#14 '내가 사람을 밀었어?'를 듣고 #47-48 창백 — 페퍼가 떠올릴까 두려워함(F537-2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E215",
+      "act": "암시",
+      "points": ["F972"],
+      "text": "배가 1주면 된다는 말에 메어리가 한참 말없다가 '다행이에요'를 되뇐다",
+      "about": ["person:메어리"],
+      "evidence": [{ "scene": "event_bluewaterisland2_02_s", "lines": ["31-41"] }],
+      "reason": "#33-41 출항 시기를 묻고 침묵 — 섬을 떠나기 싫은 까닭(F972)이 이어 드러난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E216",
+      "act": "암시",
+      "points": ["F971"],
+      "text": "메어리가 '페퍼도 레지던트 시절에는…' 하다 옛날 생각에 말을 멈춘다",
+      "about": ["person:메어리", "person:페퍼"],
+      "evidence": [{ "scene": "event_bluewaterisland2_03_s", "lines": ["22-27"] }],
+      "reason": "#23-27 페퍼의 레지던트 시절 · 옛날 생각 — 인간 시절 선후배(F971)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E217",
+      "act": "재언급",
+      "points": ["F646"],
+      "text": "페퍼가 꼬마 환자와 자주 먹던 오렌지 퍼펙트를 챙겨 왔다",
+      "about": ["person:페퍼"],
+      "evidence": [{ "scene": "event_bluewaterisland2_03_e", "lines": ["50-54"] }],
+      "reason": "#51-52 '페퍼와 그 꼬마 환자분이 자주 드시던' — 주황 머리 소녀와 오렌지 퍼펙트(F646)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "E218",
+      "act": "재언급",
+      "points": ["F540"],
+      "text": "지휘관이 '네 공범자'라며, 생사의 고비에서 메어리가 한 '살아서 죄를 치료하겠다'는 말을 되짚는다",
+      "about": ["person:메어리", "person:지휘관"],
+      "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": [98, "122-131"] }],
+      "reason": "#98 공범자 · #123-131 살아서 죄를 치료 — 폭탄 장소의 약속(F540)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D260",
+      "person": "person:메어리",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "늘 웃으며 페퍼 · 지휘관을 놀리지만, 자기가 아니라 환자를 돕지 못할까만 두려워하고 진료소를 비우지 않는 리페어 센터 의사",
+      "evidence": [{ "scene": "event_bluewaterisland1_03_s", "lines": ["30-33", "44-48"] }],
+      "reason": "#45-48 두려움은 환자를 위해서만 · #31 늘 리페어 센터에서만 일함",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M54", "note": "출시순 앞선 char:130 기준을 남긴다(출시 첫날 호감도 스토리)" }
+      ]
+    },
+    {
+      "id": "D261",
+      "person": "person:메어리",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:페퍼"],
+      "text": "후배 페퍼의 '귀여운 모습'을 보려고 뭐든 하겠다며 놀리고 아끼는 선배",
+      "evidence": [{ "scene": "event_bluewaterisland1_01_e", "lines": ["63-65", "83-84"] }],
+      "reason": "#64 '페퍼의 귀여운 모습을 볼 수만 있다면' · #84 인류적 손실",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M54", "note": "출시순 앞선 char:130 기준을 남긴다(출시 첫날 호감도 스토리)" }
+      ]
+    },
+    {
+      "id": "D262",
+      "person": "person:메어리",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "비밀만 지켜 주길 바란 공범자",
+      "after": "속죄하는 동안 편을 들겠다는 공범자에게 한 약속을 지키겠다며 품에서 우는 사이",
+      "trigger": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["95-107"] }],
+      "time": "S77",
+      "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["103-104", "175-183"] }],
+      "reason": "#103-104 원한 건 비밀을 지킬 사람뿐 → #178 공범자에게 한 약속을 지키겠다 · #182-183",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "D263",
+      "person": "person:메어리",
+      "aspect": "신념",
+      "act": "변화",
+      "points": ["F972"],
+      "before": "페퍼가 그 계단에서 기억을 떠올릴까 두려워 섬을 떠나기 싫어하는",
+      "after": "경멸받더라도 자기 죄로 다친 니케들이 흘러드는 리페어 센터로 돌아가 속죄하겠다는",
+      "trigger": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["122-131"] }],
+      "time": "S77",
+      "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["147-150", "159-179"] }],
+      "reason": "#148-150 계단이 두려움 → #160-168 반드시 그곳에 있어야 · #177 돌아갈게요",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "D264",
+      "person": "person:페퍼",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "들뜨면 앞뒤 없이 신나 하고, 남을 해치기는 생리적으로 불가능하다고 여길 만큼 여리고 다정한 의사 니케",
+      "evidence": [{ "scene": "event_bluewaterisland2_01_e", "lines": ["30-33", 53] }],
+      "reason": "#32-33 차라리 내가 다치지 · #53 죽어도 남을 해치기 싫은 사람 — 메어리도 '여리고 다정'(2_05_e#53)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "D265",
+      "person": "person:페퍼",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:메어리"],
+      "points": ["F644"],
+      "text": "롤모델로 삼아 온 메어리가 쉬지 못하는 게 속상해 지휘관 · 네온에게 부탁하고 대들기까지 하는 후배",
+      "evidence": [{ "scene": "event_bluewaterisland1_05_e", "lines": ["82-93"] }],
+      "reason": "#87-88 휴가 한 번 안 쓴 선배가 속상 · #91 롤모델 — 메어리를 존경(F644)",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M54", "note": "출시순 앞선 char:130 기준을 남긴다(출시 첫날 호감도 스토리)" }
+      ]
+    },
+    {
+      "id": "D266",
+      "person": "person:페퍼",
+      "aspect": "기억",
+      "act": "기준",
+      "points": ["F969", "F971"],
+      "text": "메어리를 민 인간 페퍼의 기억이 없는 니케 — 계단의 환상이 스쳐도 자기 기억일 리 없다고 넘긴다",
+      "evidence": [{ "scene": "event_bluewaterisland2_01_e", "lines": ["41-46", "53-60"] }],
+      "reason": "#42-46 인간 페퍼의 기억일까 → #55-60 그럴 리 없다며 말이 꼬인 것으로 넘김",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M54", "note": "출시순 앞선 char:130 기준을 남긴다(출시 첫날 호감도 스토리)" }
+      ]
+    },
+    {
+      "id": "D267",
+      "person": "person:리타",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "좋은 물건도 사람을 기쁘게 못 하면 소용없다 — 진정한 장인은 물건보다 그 안의 정신에 프라이드를 갖는다",
+      "evidence": [{ "scene": "event_bluewaterisland2_04_s", "lines": ["120-130"] }],
+      "reason": "#128-130 장인 정신 — 제가 만든 배를 고장 내 메어리의 명분을 만든다",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M81",
+          "note": "M81 — 출시순으로 앞선 신념 기준 D1806(char:82 '완성된 죽음')을 남긴다. 장인 정신은 그 단위의 모습으로 둔다"
+        }
+      ]
+    },
+    {
+      "id": "D268",
+      "person": "person:리타",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '애송이'라 부르며 말을 뒤집는다고 호통치다가도, 사정을 알아채면 제 배를 고장 낼 만큼 거들어 주는 어른",
+      "evidence": [{ "scene": "event_bluewaterisland2_04_s", "lines": ["84-94", "106-123"] }],
+      "reason": "#84-94 애송이 · 한심하다 → #106-123 무얼 도우면 되느냐, 변명거리를 만들자",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "D269",
+      "person": "person:얀",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '신참'이라 부르며 수영복을 공짜로 주는 대신 달란트에 유통권 로비를 받아내는 거래 상대",
+      "evidence": [{ "scene": "event_bluewaterisland1_01_e", "lines": ["34-36", "52-56", 66] }],
+      "reason": "#34 신참 니 말이다 · #53-54 공짜 대신 로비 · #66 거래 성립",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "D270",
+      "person": "person:프림",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "단어를 끊어 말하고 늘 잠잘 곳을 찾는 나무늘보 같지만, 고민을 듣고 '해결사 일'이라며 툭 풀어 주는 카페 스위티 니케",
+      "evidence": [{ "scene": "event_bluewaterisland2_01_e", "lines": ["36-37", "48-50", "62-65"] }],
+      "reason": "#36-37 · #48-50 비약이라며 짚어 줌 · #65 그냥 해결사 일",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:142(2022-11-04)에 같은 측면 기준을 세움 — D1944" }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U155",
+      "topic": "일상 · 문화",
+      "text": "밀물 · 썰물은 구시대엔 널리 알려진 현상이었지만 지금은 서적 속 구시대 상식이라, 의사도 눈앞의 바닷길과 잇지 못한다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "event_bluewaterisland1_intermission_01", "lines": ["43-52"] }],
+      "reason": "#47-52 들어본 적 있지만 연결짓지 못함 — 구시대 상식",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "U156",
+      "topic": "방주 사회",
+      "text": "방주엔 인공 태양과 수영장뿐이라, 진짜 햇빛 · 진짜 바다가 있는 지상의 섬은 '누가 더 안 있고 싶어하겠냐'는 곳이다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "event_bluewaterisland2_04_s", "lines": ["20-26"] }],
+      "reason": "#24 인공 태양 말고 진짜 햇빛, 수영장 말고 진짜 바다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "U157",
+      "topic": "일상 · 문화",
+      "text": "방주에는 강아지가 드물어, 개를 산책시키며 마음이 치유되는 일을 겪어 본 사람이 거의 없다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "event_bluewaterisland2_05_s", "lines": ["39-40"] }],
+      "reason": "#39 방주에는 강아지가 잘 없다 · #40 몰랐다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    },
+    {
+      "id": "U158",
+      "topic": "방주 사회",
+      "text": "리페어 센터는 환자가 수천 명이고 의사 하나가 하루 서른 명 안팎을 보며, 다 낫지 않은 채 퇴원했다 중환자실로 돌아오는 단골이 있다",
+      "about": ["place:리페어_센터"],
+      "points": ["F972"],
+      "evidence": [{ "scene": "event_bluewaterisland2_05_s", "lines": ["53-56", "66-69"] }],
+      "reason": "#55-56 수천 명 · 서른 명 · #67-68 덜 나아 퇴원",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "unit": "char:195",
+  "session": "R45",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "앨리스 : 원더랜드 바니 — 동화처럼 쓰인 서술(앨리스 시점: 루드밀라 = 눈의 여왕님, 네베 = 북극곰님, 토브 = 병아리 씨, 지휘관 = 토끼 씨, 소다 = 반짝 토끼 씨). 북부 언리미티드 기지에서 토브 · 네베가 방주 책에서 떨어진 바니 사진을 발견하고, 앨리스가 바니 옷을 입고 '낙원으로 가는 사진' 이야기를 한다(S152). 회상(S153 = event_goldencoinrush1 기간): 루드밀라와 방주에 온 앨리스가 행운의 쌍둥이 토끼(블랑 · 누아르)를 만나 모두의 행운을 가져오겠다고 약속하고 코인 러시에 갔다가, 지휘관의 권유로 소다 팀이 된다(F1494). 지휘관이 코스모스 가게에서 바니 옷을 사 준다. 두더지 게임 뒤 밀크의 말에 빛을 잃은 소다(초록 토끼 씨)를 앨리스가 따끔한 말과 진심으로 다시 일으킨다(F1486 · F1487을 앨리스 쪽에서). 끝 — 결과는 이야기하지 않고, 함께 게임한 토끼들과 찍은 사진에 행운을 담아 잠자는 공주님들이 언젠가 행복의 나라로 가길 빌며, 지휘관과 단둘이 찍은 사진은 선물로 받는다(F1495).",
+  "scenes": [
+    { "scene": "ep:d_nikke_alice_wonderlandbunny_01", "text": "북부 기지 — 방주 책에서 떨어진 바니 사진, 바니 옷을 입은 앨리스가 '낙원으로 가는 사진' 이야기를 시작" },
+    { "scene": "ep:d_nikke_alice_wonderlandbunny_02", "text": "회상 — 루드밀라와 방주에 온 앨리스가 쌍둥이 토끼를 찾아 코인 러시에, 지휘관이 소다 팀에 들어오라 함" },
+    { "scene": "ep:d_nikke_alice_wonderlandbunny_03", "text": "코스모스 가게의 바니 옷, 달리기 · 두더지 게임 승리, 밀크와 이야기한 뒤 빛을 잃은 소다" },
+    { "scene": "ep:d_nikke_alice_wonderlandbunny_04", "text": "밤에 지휘관과 이야기한 앨리스가 소다를 돕기로 함 — 그만두려는 소다를 일으켜 바구니 게임 승리" },
+    { "scene": "ep:d_nikke_alice_wonderlandbunny_05", "text": "모든 토끼와 찍은 사진의 뜻 — 잠자는 공주님들의 행복을 빎, 지휘관과 단둘이 찍은 사진" }
+  ],
+  "facts": [
+    {
+      "id": "F1494",
+      "text": "루드밀라와 방주에 온 앨리스는 황금칩 이벤트로 붐비는 코인 러시의 행운의 쌍둥이 토끼(블랑 · 누아르)를 만나 루드밀라 · 네베 · 토브 몫까지 행운을 가져오겠다고 약속하고 혼자 코인 러시에 갔다가, 그곳에서 만난 지휘관의 권유로 소다와 같은 팀이 되었다",
+      "about": ["person:앨리스", "person:루드밀라", "person:지휘관", "person:소다", "person:블랑", "person:누아르", "place:코인_러시"],
+      "evidence": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_02", "lines": ["2-36", "47-56", "73-84"] }],
+      "reason": "루드밀라가 코인 러시를 보내 주고(#22-28) 앨리스가 약속(#30-36), 루주는 인파 때문에 쌍둥이를 못 본다고 함(#54-56), 지휘관의 권유(#80-84). F1483(루드밀라의 허락을 받은 앨리스)과 같은 일을 앨리스 쪽에서 본 것",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    },
+    {
+      "id": "F1495",
+      "text": "앨리스는 쟁탈전 뒤 함께 게임한 '토끼들'과 찍은 사진에 행운을 담아 북부로 가져왔다 — 모두가 누군가를 행복의 나라로 데려가려 애쓴다는 것을 배워 잠자는 공주님들도 언젠가 행복의 나라로 가길 빌었고, 지휘관만은 자기 토끼 씨로 남기려 사진에 넣지 않아 지휘관이 단둘이 찍은 사진을 따로 선물했다",
+      "about": ["person:앨리스", "person:지휘관", "org:언리미티드"],
+      "evidence": [
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_05", "lines": ["42-65", "69-76", "89-93"] },
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_01", "lines": ["33-40"] }
+      ],
+      "reason": "앨리스의 말(05 #57-65)과 서술(05 #73-76 · #89-93). 잠자는 공주님들 = 뇌 없이 구출된 바디(F115)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S152",
+      "kind": "기준점",
+      "text": "event_goldencoinrush1 뒤 — 토브가 언리미티드에 들어온 뒤(event_alonesurvivor 뒤)의 북부 기지",
+      "ref": "event_goldencoinrush1",
+      "at": [["뒤", "event_goldencoinrush1"], ["뒤", "event_alonesurvivor"]],
+      "evidence": [{ "scene": "ep:d_nikke_alice_wonderlandbunny_01", "lines": ["9-12", "33-40"] }],
+      "reason": "쟁탈전 때 찍은 사진이 방주에서 온 책에 끼워져 있고, 토브(병아리 씨)가 언리미티드 일원으로 함께 있다(F1208)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    },
+    {
+      "id": "S153",
+      "kind": "회상",
+      "text": "앨리스가 들려주는 테트라 황금칩 쟁탈전 — 방주 도착부터 바구니 게임 승리 · 사진 찍은 날까지",
+      "ref": "event_goldencoinrush1",
+      "at": [["중", "event_goldencoinrush1"]],
+      "evidence": [
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_02", "lines": ["0-87"] },
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_03", "lines": ["0-90"] },
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_04", "lines": ["0-139"] },
+        { "scene": "ep:d_nikke_alice_wonderlandbunny_05", "lines": ["28-76"] }
+      ],
+      "reason": "'앨리스 토끼의 깡총한 이야기는 앨리스가 방주에 도착한 것으로 시작됩니다'(02 #0-1), 05 #28 '코인 러시에서의 마지막 기억을 떠올렸습니다'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R45" }]
+    }
+  ],
+  "targets": []
+}

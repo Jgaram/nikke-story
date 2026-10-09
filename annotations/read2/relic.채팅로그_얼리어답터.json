@@ -1,0 +1,34 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:채팅로그_얼리어답터",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I14",
+      "target": "concept:랩쳐",
+      "evidence": [{ "scene": "relic:채팅로그_얼리어답터_04", "lines": [3] }],
+      "reason": "'방금도 외계인하나 진짜 근소하게 지나갔어' — 침공 초기 사람들이 랩쳐를 '외계인'이라 불렀다(F246)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U45",
+      "topic": "구시대",
+      "text": "침공 초기 쉘터는 식량이 모자라 인원을 솎아 밖으로 내보내고 병든 사람도 쫓아냈으며, 남은 이들은 가족을 잃고 울며 폭동 직전까지 갔다 — 쫓겨난 이는 이웃 쉘터에서도 자리를 얻지 못했다",
+      "about": ["concept:랩쳐"],
+      "points": ["F229"],
+      "evidence": [{ "scene": "relic:채팅로그_얼리어답터_02", "lines": ["3-6"] }],
+      "reason": "_02#3-6 솎아내기 · _03#2-7 몸살로 쫓겨나 이웃 쉘터도 꽉 참 · _04 밖에서 숨어 다님",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

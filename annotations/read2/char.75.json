@@ -1,0 +1,66 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M101\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:75",
+  "session": "M101",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I685",
+      "target": "person:디젤",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_diesel_wintersweets_01", "lines": [18, "21-22", "24-27", "32-34"] }],
+      "reason": "밤마다 찾아오는 [그것] — #37-38 '짜잔~ … 디젤이었습니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "I686",
+      "target": "person:디젤",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_diesel_wintersweets_04", "lines": [56] }],
+      "reason": "회상 속 '지휘관?' — #57-58 '디… 젤?' '네에~ 디젤입니다~'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2195",
+      "person": "person:디젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'누나가 되긴 싫다'며 입을 맞추고 함께 있어 주길 바라던",
+      "after": "빡빡한 일정을 보고 쉴 때만이라도 편히 쉬게 하려 밤마다 찾아오다, 동생을 재우던 방식으로 곁에 누워 '동생과 닮았다' 하며 끌어안고, 잠든 지휘관에게 감사와 함께 앞으로 더 많은 걸 같이 하자는",
+      "trigger": [{ "scene": "ep:d_nikke_diesel_wintersweets_04", "lines": ["41-51", "74-81"] }],
+      "evidence": [{ "scene": "ep:d_nikke_diesel_wintersweets_05", "lines": ["56-57", "62-64", "71-81"] }],
+      "time": "S285",
+      "reason": "04#51 '쉴 때만이라도' → 05#57 '제 동생과 닮았네요' · #74 '옆자리에서 편안히 잠든' · #80 '더 많은 걸 같이 해요'. 앞 모습은 D1370.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    },
+    {
+      "id": "D2196",
+      "person": "person:브리드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:디젤"],
+      "before": "디젤은 피해자라며 대신 막아서고 욕을 먹던 과보호",
+      "after": "엉뚱한 쪽으로 달려가는 디젤을 말리지 않고 '지금의 디젤이라면 스스로 답을 찾을 것'이라 믿고 지켜보는",
+      "trigger": [{ "scene": "ep:d_nikke_diesel_wintersweets_02", "lines": ["56-62"] }],
+      "evidence": [{ "scene": "ep:d_nikke_diesel_wintersweets_05", "lines": ["102-104"] }],
+      "time": "S285",
+      "reason": "02#61 '지금의 디젤이라면 스스로 답을' · 05#103-104 '믿고 있었습니다'. 앞 모습은 D1372 — '지금의'가 달라진 디젤을 가리킨다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M101" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S285 그대로(05#71 '알게 된 지 많은 시간이 지났네요'가 받친다). 볼 거리 W32는 D2195 · D2196으로 적었다. 디젤이 동생과의 추억을 편히 꺼내는 것(05#4-9 · #42-51)은 D1368(위령비에서 동생에게 인사한)의 뒤 모습이라 다시 세우지 않았다. 볼륨 · 노이즈의 레슨은 개그라 관계로 세우지 않았다."
+}

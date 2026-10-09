@@ -1,0 +1,74 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M05\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:jonathan_report",
+  "session": "M05",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E150",
+      "act": "재언급",
+      "points": [
+        "F750"
+      ],
+      "text": "조나단이 찾아 걸어간 불빛 켜진 건물은 가까워지기는커녕 점점 희미해지다 사라진다 — ch19에서 본, 기지 전체를 광학미채로 숨긴 에덴(F750)을 떠올리게 한다",
+      "about": [
+        "place:에덴"
+      ],
+      "evidence": [
+        {
+          "scene": "relic:jonathan_report_03",
+          "lines": [
+            "2-5"
+          ]
+        }
+      ],
+      "reason": "#3. 출시순으로 ch19 뒤라 재언급. 그 건물이 에덴이라는 확인은 원문에 없다(Q113)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M05"
+        }
+      ]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U116",
+      "topic": "지상",
+      "text": "지상에 오른 지휘관은 통신기가 부서지면 방주에 보고할 길조차 없고, 로드 급 앞에서는 양산형을 먹이로 내주는 판단을 내린다 — 동료의 희생을 못 견딘 니케는 사고 전환을 일으킨다",
+      "about": [
+        "place:지상",
+        "concept:니케"
+      ],
+      "points": [
+        "F775"
+      ],
+      "evidence": [
+        {
+          "scene": "relic:jonathan_report_01",
+          "lines": [
+            "1-6"
+          ]
+        }
+      ],
+      "reason": "_00#4-6 통신 두절 · _01#2-6",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-05",
+          "session": "M05"
+        }
+      ]
+    }
+  ]
+}

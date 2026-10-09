@@ -1,0 +1,53 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M84\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:210",
+  "session": "M84",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I646",
+      "target": "person:미란다",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_exia_03", "lines": ["54-55"] }],
+      "reason": "03#54-55 'A.C.P.U.다! … 지금 당장 문 열어!' 뒤 #57 미란다 · #58 폴리가 들어온다. '~여' 말투의 폴리가 아니라 '넵!' · '~습니다!'로 외치는 미란다의 말투",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1896",
+      "person": "person:엑시아",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 '뉴-비'라 부르며 밤새 게임에 끌어들이고, 낯선 사람과의 교섭 · 현피는 대인 항마력이 높은 그에게 맡기는 게임 파트너",
+      "evidence": [{ "scene": "ep:d_nikke_exia_02", "lines": ["21-36"] }],
+      "reason": "02#24 '뉴비, 해커와 교섭해 주세요' · #30 '뉴비는 대인간 항마력이 극도로 높으니까' · #34 '인카운터는 뉴비가'. 출시순으로 event_boomsday D401보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D1897",
+      "person": "person:엑시아",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "교섭을 떠맡기는 게임 파트너 '뉴비'",
+      "after": "사람을 싫어하면서도 무릎 위에 앉아 잠들 만큼 무방비하게 붙어 지내는",
+      "trigger": [{ "scene": "ep:d_nikke_exia_03", "lines": ["160-168"] }],
+      "evidence": [{ "scene": "ep:d_nikke_exia_05", "lines": ["110-112", "129-138"] }],
+      "points": ["F620"],
+      "reason": "03#161 '사람과 직접 만나 이야기하는 게 뉴비 만큼만 편했어도' 뒤 05#110 '무릎 위에 앉았다' · #136-138 노벨 '사람을 정말 정말 싫어하는 … 강아지처럼 찰싹 달라 붙어서는 … 무방비한 모습'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 정할 수 없음: ep:d_nikke_exia_03#33,39 (해커 집의 고양이 — #39 '야옹~', 사람이 아니다). 엑시아 → 지휘관 기준을 출시순으로 앞선 이 단위에 세우고 event_boomsday D401을 기각했다. 인간 시절 이야기(03#150-154)는 F620 그대로 — 엑시아 기억 측면은 ch09 D78(중앙 정부 해킹 기억)과 다른 일이라 기준으로 세우지 않았다. 블랙넷 유통업자 본거지(03#87 · J17)는 특정 사실을 흘리지 않아 적지 않았다. 프리바티 · 미란다 · 폴리 · 노벨 · 에닉은 이 단위의 모습이 얕아 기준을 다시 세우지 않았다. 바로잡기: 시점 S375(CH.09 뒤, 추정)."
+}

@@ -1,0 +1,36 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M03\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:여자친구의편지",
+  "session": "M03",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U78",
+      "topic": "구시대",
+      "text": "침공 초기 사람들은 TV의 '별일 없다'는 말을 믿고 '외계인 기계 로봇'을 거짓말로 여기다가, 뉴스를 보고서야 집집이 피난을 준비했다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F356", "F357"],
+      "evidence": [{ "scene": "relic:여자친구의편지_02", "lines": ["0-4"] }],
+      "reason": "_01#1-2 '거짓말이 너무 티 나' → _02#0-3 '진짜 실화인 거지'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    },
+    {
+      "id": "U79",
+      "topic": "구시대",
+      "text": "임시 대피소의 피난민은 라디오로 부대 전멸 소식을 듣고, 연락이 끊긴 연인 · 가족은 서로의 생사도 모른 채 부칠 수 없는 편지를 썼다",
+      "about": ["incident:랩쳐_침공"],
+      "points": ["F356"],
+      "evidence": [{ "scene": "relic:여자친구의편지_03", "lines": ["0-6"] }],
+      "reason": "#0-3 · #6 '서로 살았는지 죽었는지 어떻게 알아?'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M03" }]
+    }
+  ]
+}

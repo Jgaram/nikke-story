@@ -1,0 +1,49 @@
+{
+  "unit": "char:515",
+  "session": "R95",
+  "by": "claude",
+  "date": "2026-10-04",
+  "summary": "신데렐라 : 크리스탈 웨이브의 호감도 스토리 — fl:wave_to_you의 섬에서. 01 — 지휘관 짐 속 테트라 잡지 아모르 테트라 신간의 [나만의 왕자님을 사로잡는 7가지 방법]을 본 신데렐라가 지휘관과 한 번도 손을 제대로 잡아 본 적 없다는 것을 깨닫는다. 02 — STEP1 손잡기, 신데렐라를 따르는 펭군 1호가 번번이 끼어들다 넘어질 뻔한 신데렐라를 지휘관이 잡아 깍지를 낀다. 03 — STEP2 그레이브가 구해 온 빙수를 스푼 하나로 나눠 먹으려다 펭군 1호가 가로채고, 녹은 빙수를 나눠 먹는다. 04 — STEP3 펭군 1호에게 보초를 맡기고 신데렐라가 정찰 중 찾은 정글 속 호수에서 단둘이 쉬며 '처음이야, 이런 시간'. 05 — 밤 등대 근처, 잡지 마지막 STEP7 '잡지를 덮으세요' — 신데렐라가 하고 싶은 대로 마음을 전하고 입을 맞춘다.",
+  "scenes": [
+    { "scene": "ep:d_nikke_cinderella_crystalwave_01", "text": "짐 속 아모르 테트라의 [나만의 왕자님을 사로잡는 7가지 방법], 손을 잡아 본 적 없음을 깨달음" },
+    { "scene": "ep:d_nikke_cinderella_crystalwave_02", "text": "STEP1 손잡기 — 펭군 1호의 방해, 넘어질 뻔해 손을 잡고 깍지" },
+    { "scene": "ep:d_nikke_cinderella_crystalwave_03", "text": "STEP2 빙수 나눠 먹기 — 펭군 1호가 가로챔, 그레이브가 빙수 · 스푼을 가져옴, 녹은 빙수" },
+    { "scene": "ep:d_nikke_cinderella_crystalwave_04", "text": "STEP3 펭군 1호 보초, 정글 속 비밀 호수에서 단둘이, 저녁 등대 약속" },
+    { "scene": "ep:d_nikke_cinderella_crystalwave_05", "text": "STEP7 잡지를 덮으세요 — 등대 근처에서 마음을 전하고 입맞춤" }
+  ],
+  "facts": [
+    {
+      "id": "F2766",
+      "text": "섬에 머무는 동안 신데렐라는 지휘관이 챙겨 온 아모르 테트라 신간의 [나만의 왕자님을 사로잡는 7가지 방법]을 따라 지휘관과 손을 잡고 빙수를 나눠 먹고 정글 속 호수에서 단둘이 시간을 보냈고, 마지막 단계 '잡지를 덮으세요'에 따라 밤 등대 근처에서 하고 싶은 대로 마음을 전해 입을 맞췄다",
+      "about": ["person:신데렐라", "person:지휘관", "item:아모르_테트라", "person:펭군_1호"],
+      "evidence": [
+        { "scene": "ep:d_nikke_cinderella_crystalwave_01", "lines": ["16-49"] },
+        { "scene": "ep:d_nikke_cinderella_crystalwave_02", "lines": ["71-79"] },
+        { "scene": "ep:d_nikke_cinderella_crystalwave_04", "lines": ["26-29", "51-54"] },
+        { "scene": "ep:d_nikke_cinderella_crystalwave_05", "lines": ["17-52"] }
+      ],
+      "reason": "라피 '테트라 라인에서 출간하는 잡지 … 신간이 나와서 지휘관이 챙겨왔나 봐'(01 #22-24) · 신데렐라 '한 번도 손을 제대로 잡아본 적이 없구나?'(01 #49) · '처음이야. 누군가랑, 이런 시간을 보내는 건'(04 #51-52) · '거기 적힌 방법대로 왕자님한테 해본 거거든'(05 #24) · '입술이 맞닿아왔다'(05 #52)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R95" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S337",
+      "kind": "기준점",
+      "text": "fl:wave_to_you의 섬 체류 중 — 등대 · 펭군 1호 · 그레이브의 수영복 · 지휘관이 챙겨 온 짐",
+      "ref": "fl:wave_to_you",
+      "at": [["중", "fl:wave_to_you"]],
+      "evidence": [{ "scene": "ep:d_nikke_cinderella_crystalwave_01", "lines": ["0-4"] }, { "scene": "ep:d_nikke_cinderella_crystalwave_04", "lines": [63] }],
+      "reason": "'배 근처에 있는 짐'(01 #0) · 펭군 1호가 신데렐라를 따름(F2753, fl:wave_to_you_08) · 라피 '지휘관은 놀 준비에 진심'(01 #4, fl:wave_to_you_05 #6-7) · '등대 근처에서, 기다릴 테니까'(04 #63). 섬의 며칠 가운데 언제인지는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R95" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

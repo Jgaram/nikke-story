@@ -1,0 +1,61 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M99\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:581",
+  "session": "M99",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2163",
+      "person": "person:아르카나",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "금서고에 출근할 때부터 퇴근까지의 기억이 통째로 지워지던",
+      "after": "기억 소거 기술이 '택티컬'해져 금서고 안에서 본 것만 핀포인트로 지워져, 그날 밖의 일을 다 기억하는",
+      "evidence": [{ "scene": "ep:d_nikke_arcana_02", "lines": ["40-52"] }],
+      "time": "S230",
+      "points": ["F1943"],
+      "reason": "#44-47 '예전에는 … 전부 날아갔거든요? … 지금은 핀포인트로' · #52 '그쪽이 청혼했다가 차인 것도 전부 기억나구'. D701의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    },
+    {
+      "id": "D2164",
+      "person": "person:아르카나",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "남들의 절반뿐인 시간을 아끼려 일주일에 두세 시간만 자며 쫓기듯 살던",
+      "after": "긴장이 풀려 졸린 채, 아무 의미 없는 잡담과 데이트로 좋은 사람과 시간을 그냥 써 보고 싶다는",
+      "trigger": [{ "scene": "ep:d_nikke_arcana_04", "lines": ["53-63", "100-101"] }],
+      "evidence": [{ "scene": "ep:d_nikke_arcana_05", "lines": ["34-43"] }],
+      "time": "S230",
+      "points": ["F1945"],
+      "reason": "04#58 '일주일에 한 두세 시간' · #63 '요새는 계속 졸리네요' → 05#41 '아무런 의미 없이 시간을 써보고 싶었어요'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    },
+    {
+      "id": "D2165",
+      "person": "person:아르카나",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "기록으로 아는 최애와 금서고에서 협업하며 함께 기억하기로 한",
+      "after": "자기 전부를 알 수 있는 세상에 단 한 사람이라며, 아끼는 [운명의 수레바퀴]를 빌려주고 끌어안아 돌아오겠다는 약속을 받는",
+      "trigger": [{ "scene": "ep:d_nikke_arcana_04", "lines": ["109-118"] }],
+      "evidence": [{ "scene": "ep:d_nikke_arcana_05", "lines": ["58-66", "99-110"] }],
+      "time": "S230",
+      "points": ["F1946"],
+      "reason": "04#117-118 '제 전부를 알 수 있는 건 … 그쪽뿐' → 05#61-62 카드를 빌려줌 · #66 허리를 껴안음 · #110 '약속'. 출시순 D705의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S230 그대로. '그쪽 만나기 전까지 오래오래 행복하게 산다는 걸 생각해 본 적 없다'(03#27-32)는 D2164와 같은 결이라 따로 적지 않았다. '건강하고 예쁜 뇌'(03#51)는 개그라 J14에 걸지 않았다. 사장님(잉그리드)의 기술 개선은 F1943에 담겼다."
+}

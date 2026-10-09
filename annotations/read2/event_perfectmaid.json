@@ -1,0 +1,208 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M62\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_perfectmaid",
+  "session": "M62",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I536",
+      "target": "person:드레이크",
+      "speaker": true,
+      "evidence": [{ "scene": "event_perfectmaid_01_e", "lines": [33, 35] }],
+      "reason": "테러범 곁에서 끼어든 목소리 — '목소리가 왜 여자처럼'(#36) 뒤 곧바로 드레이크가 이어 말한다(#38).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1356",
+      "act": "재언급",
+      "points": ["F807"],
+      "text": "코코아가 '작년 밸런타인에 사장님이 초콜릿에 진심이 없다며 만들지 말라 해 주인이 도와줬다'고 되짚는다",
+      "about": ["person:코코아", "person:머스탱"],
+      "evidence": [{ "scene": "event_perfectmaid_01_s", "lines": ["4-12"] }],
+      "reason": "#10-12 — Maid in Valentine의 일(F807).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "E1357",
+      "act": "암시",
+      "points": ["F1276"],
+      "text": "시식 자리에서 에이드가 평소와 달리 지휘관을 보지 않고 말하고, 다시 눈을 마주치지 않는다",
+      "about": ["person:에이드"],
+      "evidence": [{ "scene": "event_perfectmaid_01_s", "lines": [108, 136] }],
+      "reason": "#108 · #136 → 눈을 못 보는 까닭(F1276 — 감흥 없는 얼굴을 볼까 두려움).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1523",
+      "person": "person:에이드",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "완벽한 메이드가 되려 손님 얼굴 · 표정을 늘 살피고, 괴로워도 '무리했나 봐요, 걱정 마세요'라며 혼자 삭이는",
+      "evidence": [{ "scene": "event_perfectmaid_01_s", "lines": ["122-132"] }],
+      "reason": "#125-132 · 프롤로그#57-59. 코코아 · 소다는 처음 보는 괴로운 얼굴이라 한다(#28-38).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1524",
+      "person": "person:에이드",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "친절 · 단정함 · 요리 솜씨로 최고의 서비스와 음식을 대접해 주인님을 감동시키는 것이 완벽한 메이드라 믿어 온",
+      "evidence": [{ "scene": "event_perfectmaid_prologue", "lines": ["0-8"] }],
+      "reason": "#0-8 에이드의 1인칭 독백 — 04_s#28-36에서 그 순간을 다시 느끼려 메이드로 살아왔다고 한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1525",
+      "person": "person:에이드",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "아무도 감동하지 않는 완벽함이 잘못이었나, 니케보다 인간처럼 서툴렀어야 했나 의심하던",
+      "after": "노력을 알아주는 이들과 특별한 주인님이 있으니 주인님의 자랑스러운 메이드가 되려 더 완벽해지겠다는",
+      "trigger": [{ "scene": "event_perfectmaid_06_e", "lines": ["11-51"] }],
+      "time": "S124",
+      "points": ["F1278"],
+      "evidence": [{ "scene": "event_perfectmaid_epilogue", "lines": ["105-117"] }],
+      "reason": "전: 04_s#47-53. 후: #106-115 — 프리바티의 증명과 지휘관의 감동이 계기(F1278).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1526",
+      "person": "person:에이드",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "지휘관을 다른 주인님들보다 훨씬 특별하고 소중하다 여겨, 그 얼굴에서 감흥 없는 기색을 볼까 오히려 눈을 못 보는",
+      "evidence": [{ "scene": "event_perfectmaid_04_s", "lines": ["19-20", "77-80"] }],
+      "reason": "#19-20 · #77-80. 유탄에서는 몸으로 감싸 지켰다(01_s#154-155).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1527",
+      "person": "person:에이드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "너무 소중해서 눈을 볼 수 없던",
+      "after": "[나만을 위한] 케이크로 감동시키고 다시 눈을 마주 보며 이야기하는",
+      "trigger": [{ "scene": "event_perfectmaid_06_e", "lines": ["20-42"] }],
+      "time": "S124",
+      "evidence": [{ "scene": "event_perfectmaid_epilogue", "lines": ["95-99"] }],
+      "reason": "#95-99 — 06_e에서 지휘관 입맛에 맞춘 케이크로 기뻐 운 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1528",
+      "person": "person:에이드",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:프리바티"],
+      "text": "유탄 사고를 사과하는 프리바티를 '프리바티 아가씨'라 부르며 손님처럼 괜찮다고 맞는",
+      "evidence": [{ "scene": "event_perfectmaid_02_s", "lines": ["48-53"] }],
+      "reason": "#48-53 · #66.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1529",
+      "person": "person:에이드",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:프리바티"],
+      "before": "'프리바티 아가씨'라 손님처럼 맞던",
+      "after": "각오를 얕보았다 사과하며 이름으로 부르고 자기 모든 것을 전수하는 스승",
+      "trigger": [{ "scene": "event_perfectmaid_04_s", "lines": ["55-106"] }],
+      "time": "S124",
+      "evidence": [{ "scene": "event_perfectmaid_05_e", "lines": ["87-91"] }],
+      "reason": "#87-91. 04_s#67부터 '아가씨' 없이 부르고 05_s#73-79에 먼저 돕겠다고 찾아온다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1530",
+      "person": "person:프리바티",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "메이드복 · '주인님' · 메뉴 이름 하나에도 얼굴이 터질 듯 부끄러워 말을 더듬고 '아니거든요!'로 버티지만, 한번 하겠다면 밤낮없이 해내는 자존심 센 성격",
+      "evidence": [{ "scene": "event_perfectmaid_03_s", "lines": ["0-35"] }],
+      "reason": "#0-35 · intermission_01#24-56 · 05_e#78-92.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:170(2022-11-04)에 같은 측면 기준을 세움 — D1938 · D1939" }
+      ]
+    },
+    {
+      "id": "D1531",
+      "person": "person:프리바티",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "메이드 일을 보러 '오지 마세요'라 하면서도 '지휘관이 그렇게 좋아하신다면' 짧은 메이드복을 입고, 덜 익은 오므라이스를 먹는 지휘관을 걱정하는",
+      "evidence": [{ "scene": "event_perfectmaid_03_s", "lines": ["16-34"] }],
+      "reason": "#33-34 · 02_e#50-55 · intermission_01#88-105.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:170(2022-11-04)에 같은 측면 기준을 세움 — D1938 · D1939" }
+      ]
+    },
+    {
+      "id": "D1532",
+      "person": "person:프리바티",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:에이드"],
+      "text": "유탄 사고가 미안해 '당신은 괜찮지 않고 이 빚은 꼭 갚겠다'며 임시 메이드를 맡는",
+      "evidence": [{ "scene": "event_perfectmaid_02_s", "lines": ["50-64"] }],
+      "reason": "#52 · #60-63.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    },
+    {
+      "id": "D1533",
+      "person": "person:프리바티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:에이드"],
+      "before": "빚을 갚으려 임시 메이드를 맡은",
+      "after": "니케라서 완벽함에 감동이 없다는 말에 분노해 에이드의 완벽함이 틀리지 않았음을 대신 증명하겠다는",
+      "trigger": [{ "scene": "event_perfectmaid_intermission_01", "lines": ["150-164"] }],
+      "time": "S124",
+      "points": ["F1278"],
+      "evidence": [{ "scene": "event_perfectmaid_04_s", "lines": ["55-106"] }],
+      "reason": "#58-66 · #87-106. 까닭은 '노력이 배신받는 게 싫어서'(04_e#21-24).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — 01_e#33,35는 드레이크(I536). 기준: 에이드 · 프리바티 기준은 출시가 뒤인 event_newflavor(D630) · fl:coins_in_rush(D815 · D818) · event_ce006(D738)보다 앞서 이번에 세웠다 — 3층 char:313(같은 날) · char:310이 더 앞서면 그쪽을 남긴다."
+}

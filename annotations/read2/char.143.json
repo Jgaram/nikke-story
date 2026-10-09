@@ -1,0 +1,44 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M100\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:143",
+  "session": "M100",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D2183",
+      "person": "person:밀크",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "고백하고 곁에 붙어 있겠다던 연인이지만 이상형에 못 미칠까 불안해 남의 모습을 연기하던",
+      "after": "'밀크라서' 다 좋다는 말에 기대 귀찮은 자기 그대로를 묻고, 하고 싶던 것을 먼저 해 달라며 다가가는",
+      "trigger": [{ "scene": "ep:d_nikke_milk_bloomingbunny_04", "lines": ["54-75"] }],
+      "evidence": [{ "scene": "ep:d_nikke_milk_bloomingbunny_05", "lines": ["29-37", "61-63", "74-81"] }],
+      "time": "S256",
+      "reason": "03 · 04#45 연기 · #57 '불안해서' → 05#34-37 '그런 귀찮은 여자 … 어떤데' · #62-63 '나라서?' · #79 '해줬으면 좋겠어'. 앞 모습은 D1833.",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    },
+    {
+      "status": "확정",
+      "id": "D2184",
+      "person": "person:밀크",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "겉으로만 센 척하며 꾸미는 법을 모르고 바니걸 차림도 의뢰 핑계로만 입던",
+      "after": "에이드에게 배운 화장을 스스로 해 보고, 바니걸이 아니어도 가끔 꾸며 보는 것도 괜찮겠다는",
+      "trigger": [{ "scene": "ep:d_nikke_milk_bloomingbunny_02", "lines": ["70-78"] }],
+      "evidence": [{ "scene": "ep:d_nikke_milk_bloomingbunny_05", "lines": ["4-6", "49-51"] }],
+      "time": "S256",
+      "reason": "01#8-11 의뢰 장소라 입었다는 핑계 · 02#13 서툰 화장 → 05#4 '내가 한 거다' · #50-51 '가끔씩은 이렇게 꾸며보는 것도'.",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S256 그대로. 슈가의 미행(03#35-55 '흑역사' 핑계) · 에이드의 화장 지도는 얕아 관계 기준을 세우지 않았다(슈가 → 밀크는 F2124의 '여리고 자존감이 낮다'가 담는다). 수상한 남자 · 점원은 이름표가 있는 단역."
+}

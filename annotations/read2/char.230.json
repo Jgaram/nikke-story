@@ -1,0 +1,116 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M56\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:230",
+  "session": "M56",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "status": "확정",
+      "id": "E1281",
+      "act": "암시",
+      "points": ["F2325", "J29"],
+      "text": "조난된 지휘관의 짐 · 통신 기구를 보고 '전부 변하지 않은 그 모습 그대로구나' 하고는 얼버무린다",
+      "about": ["person:하란", "place:방주"],
+      "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["19-23"] }],
+      "reason": "#21 — 방주 출신 니케로 지상 탈환에 나섰다가 버려진 하란의 과거(F2325)를 아는 눈. 같은 일이라는 확인은 원문에 없다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1282",
+      "act": "암시",
+      "points": ["F2325", "J29"],
+      "text": "'날 버리고 가는 걸 도와주는 머저리 같은 짓을 하느니 죽게 놔두는 편이 낫다' — 떠나려는 지휘관을 버림받는 일로 받아들인다",
+      "about": ["person:하란"],
+      "evidence": [{ "scene": "ep:d_nikke_harran_04", "lines": ["90-94"] }],
+      "reason": "#93 — 동료들에게 랩쳐 앞 미끼로 버려진 과거(F2325)의 메아리. 반어 · 모티프라 추정",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "E1283",
+      "act": "암시",
+      "points": ["F2734"],
+      "text": "지휘관이 모아 온 재료로 만든 에센스를 하란이 머리에 뿌리고 향기를 자랑한다",
+      "about": ["person:하란", "person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_harran_05", "lines": ["24-33"] }],
+      "reason": "#29-31 — 뒤에 화학무기 크레이터의 향기를 지휘관이 '하란의 에센스 향기와 같다'고 알아본다(F2734). 그 향을 맡은 자리가 여기다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    }
+  ],
+  "changes": [
+    {
+      "status": "확정",
+      "id": "D1406",
+      "person": "person:하란",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "쓰러진 지휘관을 구해 놓고 '까마귀밥으로 쓸 걸' 농담하며, 대가로 장난삼아 종자로 삼아 부리는 오만하고 변덕스러운 '포식자'",
+      "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["8-13", "61-66"] }],
+      "reason": "#8-9 · #64-65. 출시 첫날 단위라 ch19의 성격 기준(D173)보다 앞선다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1407",
+      "person": "person:하란",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "모든 생명은 태어난 순간부터 스스로 살아남아야 하고, 못 하면 포식자의 먹이가 되거나 목숨값을 내야 한다는 자연의 법칙을 따르는",
+      "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["49-55"] }],
+      "reason": "#49-55. 출시 첫날 단위라 ch19의 신념 기준(D174)보다 앞선다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1408",
+      "person": "person:하란",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "조난된 그를 구해 준 대가로 '종자'로 삼아 잡일을 시키고, 예쁜 짓을 하면 집에 데려다줄지도 모른다며 놀리는",
+      "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["62-70"] }],
+      "reason": "#64-66. 출시 첫날 단위라 ch19의 관계 기준(D175)보다 앞선다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1409",
+      "person": "person:하란",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "장난삼아 삼은 종자",
+      "after": "'제법 즐거워졌다', 남들보다 특별히 예뻐해 줄 만큼 마음에 든",
+      "trigger": [{ "scene": "ep:d_nikke_harran_02", "lines": ["160-163"] }],
+      "evidence": [{ "scene": "ep:d_nikke_harran_03", "lines": ["59-66", "81-82"] }],
+      "reason": "02#162-163 '장난삼아 종자로 삼았던 것인데… 나쁘지 않아' → 03#65-66 · #81-82",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    },
+    {
+      "status": "확정",
+      "id": "D1410",
+      "person": "person:하란",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "마음에 들어 곁에 두려던 종자",
+      "after": "목숨 걸고 돌아가려는 그를 '매정한 것'이라 부르며 구해 주고 '내가 졌다'며 보내 주는",
+      "trigger": [{ "scene": "ep:d_nikke_harran_03", "lines": ["86-94"] }],
+      "evidence": [{ "scene": "ep:d_nikke_harran_04", "lines": ["109-134"] }],
+      "reason": "03#93-94 '날 떠날 생각만' → 04#121-134. 05에서 입 맞추고 '다시 길을 잃으면 보내지 않겠다'(#88-90)로 이어진다",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    }
+  ],
+  "life": []
+}

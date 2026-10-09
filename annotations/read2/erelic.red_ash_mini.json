@@ -1,0 +1,121 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M14\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:red_ash_mini",
+  "session": "M14",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I146",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:red_ash_mini_00", "lines": [6, 9, 14] }],
+      "reason": "'대장' · 시뮬레이션에서 빠진 지휘관 — 1차 침공 때 갓데스의 지휘관 = 엔더슨(F2373). 자동은 플레이어 지휘관으로 센다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I147",
+      "target": "person:미러",
+      "evidence": [{ "scene": "erelic:red_ash_mini_06", "lines": ["6-7", "12-13", "16-18", "21-23", "27-29", "31-35", "40-49"] }],
+      "reason": "신데렐라를 꾀는 '거울'의 목소리 — 같은 장면을 다시 그린 event_oldtales1에서 이름표가 미러다(F1669)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I148",
+      "target": "person:잉크",
+      "speaker": true,
+      "evidence": [{ "scene": "erelic:red_ash_mini_07", "lines": ["0-22"] }],
+      "reason": "??? = 카운터로 개발되다 멈춘 A.I.가 '제목은 시뮬레이션 룸'을 만들어 볼까 한다(#10-11,17-18) — 잉크는 제어 불가라 시뮬레이션 룸에 한정된 카운터 후보였다(F2444). Q160은 열림",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I149",
+      "target": "person:에닉",
+      "evidence": [{ "scene": "erelic:red_ash_mini_07", "lines": [17] }],
+      "reason": "'※※의 메인 A.I.' — 그 카운터로 만들던 것이라 방주 관리 A.I. 에닉(F1190 · F2444)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I150",
+      "target": "place:방주",
+      "evidence": [{ "scene": "erelic:red_ash_mini_07", "lines": [7, 13] }],
+      "reason": "가려진 '※※'에서 대기 · '※※는 잘 만들어지고 있어' — 1차 침공기에 지어지던 방주(F927 카운터 준비와 같은 곳)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E306",
+      "act": "재언급",
+      "points": ["F932"],
+      "text": "레드 후드가 군번줄을 왜 하는지 '맞으면 몸이…' 하다 삼킨다 — 시신을 알아보는 표, 스노우 화이트는 릴리스의 관 곁에서 '그'의 군번줄을 주워 온다(F932)",
+      "about": ["person:스노우_화이트", "person:레드_후드"],
+      "evidence": [{ "scene": "erelic:red_ash_mini_01", "lines": ["8-17"] }],
+      "reason": "#14-15 말을 삼킴 — 군번줄 모티프가 F932로 이어진다. 같은 일이라는 확인은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E307",
+      "act": "암시",
+      "points": ["F1238"],
+      "text": "홍련이 검집에 넣는 건 휘두르지 않는다는 뜻이라며 '나는 계속 휘둘러야 하지'라 한다 — 장화가 죽으며 남긴 '강해져야 해'(F1238)",
+      "about": ["person:홍련", "person:장화"],
+      "evidence": [{ "scene": "erelic:red_ash_mini_02", "lines": ["15-19"] }],
+      "reason": "#18-19 — 홍련이 검을 휘둘러야 하는 약속(Q90)의 내용이 event_newyearnewsword에서 드러난다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E308",
+      "act": "재언급",
+      "points": ["F1118", "F1126"],
+      "text": "레드 후드가 고향을 빵집 · 술집 · 긴 옥수수밭 · 주유소의 평범한 마을로 그리고, 변했을까 봐 못 간다며 '음악이나 듣자' — ch26의 고향(F1118)과 텅 빈 옛집의 카세트(F1126)",
+      "about": ["person:레드_후드"],
+      "evidence": [{ "scene": "erelic:red_ash_mini_05", "lines": ["7-11", "35-37", 40] }],
+      "reason": "#10-11 옥수수밭 · 주유소가 F1118과 같고, 제목 'HOMETOWN IS FAR AWAY'와 #40은 노래 '고향은 먼 곳'(F1126)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E309",
+      "act": "암시",
+      "points": ["F1669"],
+      "text": "숨은 데이터 'MIRROR, MIRROR' — 거울의 목소리가 신데렐라를 '퀸을 위해'로 이끈다; event_oldtales1이 이 장면을 미러의 이름표로 다시 그린다(F1669)",
+      "about": ["person:신데렐라", "person:미러"],
+      "evidence": [{ "scene": "erelic:red_ash_mini_06", "lines": ["0-7", "49-52"] }],
+      "reason": "#49-50 '모든 것은 퀸을 위해' — 이름 없는 거울 = 미러가 뒤에 밝혀진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U186",
+      "topic": "구시대",
+      "text": "랩쳐 전쟁 시대에는 무기 대신 양산을 들고 햇빛 아래를 천천히 걷는 일이 '특별한 사람'이 된 듯한 사치였다",
+      "about": ["person:도로시"],
+      "points": ["F1187"],
+      "evidence": [{ "scene": "erelic:red_ash_mini_04", "lines": ["14-16", "21-25"] }],
+      "reason": "#21 '언제부터 사치가 되었을까요' — 누구에게나 주어졌던 일상을 잃은 전쟁기의 삶",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "note": "정체 볼 줄 — _07 ??? 23줄 = 잉크(I148, 추정). 인물 변화는 이 단위에 새로 세울 것이 없다 — 갓데스 시절 일상은 앞 기준(D345 · D346 · D62)과 같은 모습."
+}

@@ -1,0 +1,37 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M10\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:긴급뉴스대본_FB_3_final_2.pdf",
+  "session": "M10",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E245",
+      "act": "재언급",
+      "points": ["F1004"],
+      "text": "고쳐 쓴 문장들이 ch24 AZX 안에서 흘러나온 중앙 정부 방송('전대미문' · '발 빠른 대처' · '사망자 0명' · '방주는 안전합니다')과 한 자 한 자 같다 — 그 방송(F1004)의 원고",
+      "about": ["org:중앙_정부"],
+      "evidence": [{ "scene": "relic:긴급뉴스대본_FB_3_final_2.pdf_03", "lines": ["0-3"] }],
+      "reason": "_03#2-3 '사망자 0명이라는 경이로운 성과…사망자는 0명이어야 함'. 24_01#3-8 방송 문장과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U167",
+      "topic": "방주 사회",
+      "text": "중앙 정부의 긴급 뉴스는 피드백을 거쳐 시간 · 피해 · '전투'라는 말을 지우고 '일방적으로 이기는 느낌'이 나게 고쳐지며, 사망자는 실제와 상관없이 0명이어야 한다",
+      "about": ["org:중앙_정부", "place:방주"],
+      "points": ["F1041"],
+      "evidence": [{ "scene": "relic:긴급뉴스대본_FB_3_final_2.pdf_02", "lines": ["0-4"] }],
+      "reason": "_02#3-4 '전투라는 단어 불필요…일방적으로 이기는 느낌 전달을 위해 소탕으로'. F1041 — 언론 통제가 사는 모습 쪽",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+    }
+  ]
+}

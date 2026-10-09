@@ -1,0 +1,42 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M103\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:570",
+  "session": "M103",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2220",
+      "person": "person:아크레인저_블랙",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "피곤해 보이는 지휘관을 늘 응원한다고 말하고, '방주의 영웅'과 예전부터 함께 히어로 활동을 해 보고 싶었다며 순찰에 청한다",
+      "evidence": [{ "scene": "ep:d_nikke_arkrangerblack_01", "lines": ["19-23", "40-45"] }],
+      "reason": "#21 '나는 항상 @UserName, 널 응원하고 있다' · #40 '예전부터 너와 함께 히어로 활동을 해보고 싶다' · #44 '방주의 영웅'. 블랙 → 지휘관의 첫 기록.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    },
+    {
+      "id": "D2221",
+      "person": "person:아크레인저_블랙",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "멀리서 응원하며 함께 활동해 보고 싶던 '동경하는 대상'",
+      "after": "같은 방향을 바라보며 큰 일이든 작은 일이든 함께 나서는 '든든한 동료'",
+      "trigger": [{ "scene": "ep:d_nikke_arkrangerblack_04", "lines": ["89-103"] }],
+      "evidence": [{ "scene": "ep:d_nikke_arkrangerblack_05", "lines": ["11-15", "29-31", "59-70"] }],
+      "points": ["F2746"],
+      "reason": "#14 '동경하는 대상과 함께' · #29-31 누군가와 함께한 첫 히어로 활동이 즐거웠다 · #70 '든든한 동료가 생겼군'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+    }
+  ],
+  "life": [],
+  "note": "3층 — 미상 이름표 없음(작은 소년 · 작은 소녀는 이름 없는 단역). 시점 단서 보강: 실마리 없음 — 레오나 · 티미 · 폴리는 늘 그 자리라 앞뒤를 좁히지 못한다. 줄기에 걸린 암시 없음. 신념은 D1252 · D1253 뒤 새 바뀜이 아니라 늘 해 온 일(F2746)이라 적지 않았다."
+}

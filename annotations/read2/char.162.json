@@ -1,0 +1,146 @@
+{
+  "unit": "char:162",
+  "session": "M69",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I572",
+      "target": "person:지휘관",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_01", "lines": ["91-92"] }],
+      "reason": "'[■가 도■■게.]' — 04#58-60 '내가 도와줄게 · 어떻게든 도와줄게'의 지직거린 조각, ch04 지휘관의 말(F2898).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "I573",
+      "target": "person:지휘관",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": [58, 60, 65, 70] }],
+      "reason": "'내가 도와줄게' · '정말 미안' · '하고 싶은 대로 해' — ch04에서 지휘관이 미하라 · 유니에게 한 말(E22 · E23, F2898).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "I574",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_05", "lines": ["3-16", "29-35"] }],
+      "reason": "성인 남자 · 다정 · 함께 작전 · 특이한 취미를 이해 — 물거품에 만든 '[누군가]'의 얼굴이 기억 속 지휘관(F2898).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1432",
+      "act": "재언급",
+      "points": ["F554"],
+      "text": "기억 조각 속 미하라가 '고통은 날 다시 태어나게 해 준 기적'이라 한다",
+      "about": ["person:미하라"],
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": ["68-69"] }],
+      "reason": "#68 — 감각을 잃은 인간 미하라가 고통으로 살아 있음을 느끼던 사연(F554)을 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "E1433",
+      "act": "재언급",
+      "points": ["F1619"],
+      "text": "미하라가 목의 초커를 만지며 갱신 기한이 많이 남지 않았다고 한다",
+      "about": ["person:미하라", "person:유니"],
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_01", "lines": ["64-66"] }],
+      "reason": "#64-66 — 유니와 함께 단, 갱신 기한을 넘기면 터지는 폭탄 구속 목걸이(F1619)를 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "E1434",
+      "act": "재언급",
+      "points": ["F1898"],
+      "text": "미하라가 '강해지기 위해 선택한 길' — 복도 끝 연구실 — 앞에서 망설인다",
+      "about": ["person:미하라", "person:지엔"],
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_01", "lines": ["3-6", "12-15"] }],
+      "reason": "#4 '강해지기 위해 선택한 길' · #15 '내가 원해서 선택한 길' — 지엔과의 거래로 받기로 한 랩쳐 코어 실험(F1898)으로 보인다. 연구실이 무엇인지는 원문이 말하지 않아 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "E1435",
+      "act": "재언급",
+      "points": ["F79"],
+      "text": "미하라가 세이렌에게 자기는 기억 소거를 당해 예전 기억이 없다고 설명한다",
+      "about": ["person:미하라"],
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_03", "lines": ["114-123"] }],
+      "reason": "#114 '난 기억 소거를 당했거든' — 에닉의 판결로 받은 기억 소거(F79)를 다시 꺼낸다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "E1436",
+      "act": "재언급",
+      "points": ["F1669"],
+      "text": "세이렌이 아주 예전 친구가 나쁜 일에 휘말려 폭주했을 때 무력했다고 한다",
+      "about": ["person:세이렌", "person:신데렐라"],
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_02", "lines": ["83-86"] }],
+      "reason": "#83 '친구가 나쁜 일에 휘말려서 폭주했을 때' — OLD TALES의 신데렐라 침식(F1669)을 가리킨다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1640",
+      "person": "person:미하라",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "'그 사람'이 누구였는지조차 떠오르지 않던",
+      "after": "세이렌의 언령으로 지휘관과의 대화 조각과 흐릿한 얼굴을 떠올린",
+      "trigger": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": ["43-45"] }],
+      "time": "S228",
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": ["72-81"] }],
+      "reason": "01#86-87 '그게 누구였…' → 04#75 '그 사람이었어' · #80-81 '얼굴 조금은 알 것 같아'. 기억 소거 뒤 지휘관을 떠올린 첫 모습(F2898).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "D1641",
+      "person": "person:미하라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "새 바디와 특수 능력으로 목숨을 걸면 유니와 희귀 랩쳐를 잡으리라 여긴",
+      "after": "자기 약함을 받아들이고 '나중 일은 믿는 사람들에게 맡기고 지금 할 수 있는 일'을 하러 연구실로 가는",
+      "trigger": [{ "scene": "ep:d_nikke_mihara_bondingchain_02", "lines": ["61-72"] }],
+      "time": "S227",
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_05", "lines": ["68-79"] }],
+      "reason": "02#61-69 기대 → 글러트니에서 깨달은 약함, 05#71-72 '지금은 내가 할 수 있는 일을 하자' · #79 망설임 없이 나아감(F1919 · F1920).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    },
+    {
+      "id": "D1642",
+      "person": "person:미하라",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:세이렌"],
+      "text": "포커페이스를 꿰뚫어 본 세이렌에게 불안을 털어놓고, 믿는 소중한 사람으로 세이렌의 얼굴부터 만들어 달라는",
+      "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_03", "lines": ["21-34"] }],
+      "reason": "02#9-10 '세이렌에게는 들켜버렸네' · 03#23-26 '믿고 있는 소중한 사람'. 미하라 → 세이렌 기준이 앞에 없다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+    }
+  ],
+  "life": [],
+  "note": "생활상은 2층이라 적지 않았다. 볼 거리 W17('그 사람')은 F2898 · Q246-2(일부)로 닫았다 — '전설의 그분'(05#25)은 원문이 밝히지 않아 Q246에 남는다."
+}

@@ -1,0 +1,114 @@
+{
+  "unit": "event_hightechtoy",
+  "session": "R15",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "지상에서 양산형 니케가 잇따라 실종되고, 그 비중이 큰 미실리스가 분기 최하위 실적 전망에 잉그리드의 비판까지 받는다. 슈엔은 메티스를 보내 해결하려 하고, 중앙 정부가 담당 지휘관을 요구해 지휘관이 카운터스 없이 동행한다(prologue–01). 메티스는 부서진 채 동료들의 뇌를 브레인 셸터(7일 보관)에 품고 숨은 양산형 니케를 찾는다. 맥스웰이 현장에서 수리해 주고, 원인은 레이더에 잡히지 않는 타일런트 급 랩쳐의 기습이었다. 장비 차별에 분노한 양산형 니케와 '임무를 포기하면 히어로가 될 수 없다'는 라플라스가 부딪친다(02–03). 슈엔은 다른 회사보다 먼저 공을 세우려 그 랩쳐까지 잡아 오라 하고, 양산형 니케는 동료들의 뇌가 3일밖에 남지 않았다며 절망한다(intermission). 통신이 끊겨 조난하지만, 맥스웰은 메티스는 슈엔에게 구조 요청을 할 수 없다고 한다. 라플라스의 블라블라를 열어 본 양산형 니케는 '제대로 못 하면 새 메티스를 만든다'는 슈엔의 태도를 보고, 맥스웰에게 '니케는 예쁜 장난감이라도 장난감일 뿐'이라는 말을 듣는다(04–05). 라플라스는 양산형 니케를 먼저 보내고 혼자 랩쳐를 쫓아 쓰러뜨린다. 맥스웰은 니케는 만들어진 목적을 해내지 못하면 폐기되거나 다음 버전이 나온다고 말한다(06). 미실리스는 분기 최고 실적을 올린다. 맥스웰은 라플라스 · 드레이크가 슈엔의 장난감이 되고 싶어 자원했다고 들었다며, 장난감인지 히어로인지는 지휘관이 겪어 보고 판단하라고 한다(epilogue).",
+  "scenes": [
+    { "scene": "event_hightechtoy_prologue", "text": "양산형 실종 · 미실리스 분기 최하위 전망, 슈엔 '메티스 출동'" },
+    { "scene": "event_hightechtoy_01_s", "text": "엔더슨 — 슈엔 요청으로 카운터스 없이 메티스와 동행" },
+    { "scene": "event_hightechtoy_01_e", "text": "오퍼레이터 없음, 드레이크의 감지는 배터리를 먹는다" },
+    { "scene": "event_hightechtoy_02_s", "text": "구조 신호 좌표 수색" },
+    { "scene": "event_hightechtoy_02_e", "text": "부서진 양산형 니케 · 브레인 셸터, 맥스웰이 현장 수리" },
+    { "scene": "event_hightechtoy_03_s", "text": "맥스웰 — 메티스도 다치고 스스로 고친다" },
+    { "scene": "event_hightechtoy_03_e", "text": "레이더에 안 잡히는 타일런트 급, 장비 차별 — 라플라스와 충돌" },
+    { "scene": "event_hightechtoy_intermission_01", "text": "슈엔 '그것도 잡아 와' — 뇌 보관 3일 남음" },
+    { "scene": "event_hightechtoy_04_s", "text": "에블라 입자로 통신 두절 — 조난" },
+    { "scene": "event_hightechtoy_04_e", "text": "드레이크가 서쪽에서 기운 감지" },
+    { "scene": "event_hightechtoy_05_s", "text": "맥스웰 '메티스는 구조 요청을 못 한다'" },
+    { "scene": "event_hightechtoy_05_e", "text": "라플라스의 블라블라 — 메티스도 장난감 신세" },
+    { "scene": "event_hightechtoy_06_s", "text": "타일런트 급 출현, 라플라스의 히어로론" },
+    { "scene": "event_hightechtoy_06_e", "text": "라플라스 홀로 추격 · 격파, 맥스웰 '니케는 목적대로 만들어진 것'" },
+    { "scene": "event_hightechtoy_epilogue", "text": "분기 최고 실적 인터뷰, 맥스웰 — 장난감인가 히어로인가" }
+  ],
+  "facts": [
+    {
+      "id": "F713",
+      "text": "지상에서 양산형 니케가 잇따라 실종된 것은 레이더에 잡히지 않는 타일런트 급 랩쳐의 기습 때문이었다 — 실종은 회사를 가리지 않았지만 미실리스 비중이 커서 분기 최하위 전망에 잉그리드의 비판까지 받았고, 메티스가 그 랩쳐를 쓰러뜨려 미실리스는 분기 최고 실적을 올렸다",
+      "about": ["concept:양산형_니케", "concept:타일런트_급", "org:미실리스", "org:메티스", "person:잉그리드"],
+      "evidence": [
+        { "scene": "event_hightechtoy_prologue", "lines": ["0-6"] },
+        { "scene": "event_hightechtoy_03_e", "lines": ["18-36"] },
+        { "scene": "event_hightechtoy_06_e", "lines": ["75-79"] },
+        { "scene": "event_hightechtoy_epilogue", "lines": ["0-5"] }
+      ],
+      "reason": "TV 보도(prologue#0-6), 양산형 니케 증언 · 맥스웰의 레이더 점검(03_e#18-36), 라플라스 격파(06_e#75-79), 실적 보도(epilogue#0)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F714",
+      "text": "브레인 셸터는 육체를 잃은 니케의 뇌를 딱 7일까지 부패하지 않게 보관하는 냉동 창고로, 오래 지상에서 일하는 양산형 니케와 구조 스쿼드에 주로 지급된다",
+      "about": ["item:브레인_셸터", "concept:양산형_니케"],
+      "evidence": [{ "scene": "event_hightechtoy_02_e", "lines": ["16-21"] }],
+      "reason": "맥스웰 말(#16-21). 양산형 니케는 동료들의 머리만 챙겨 도망쳤다(03_e#39)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F715",
+      "text": "양산형 니케는 지상 유물 수집 같은 임무에 메티스보다 훨씬 낮은 장비로 올라가 '니케가 어떻게 니케를 고치냐'고 놀랄 만큼 지원이 적은데, 라플라스는 최강의 히어로라 높은 등급의 장비를 받는 게 당연하다고 해 둘이 부딪쳤다",
+      "about": ["concept:양산형_니케", "person:라플라스", "org:메티스"],
+      "evidence": [{ "scene": "event_hightechtoy_03_e", "lines": [5, 18, "53-62"] }],
+      "reason": "양산형 니케 말(#5, #18, #53-57), 라플라스(#58-60), 달려듦(#62). 맥스웰은 인간일 때 미실리스 연구원이라 현장 수리를 했다(02_e#29-33, F526)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F716",
+      "text": "맥스웰에 따르면 메티스도 임무 중 다치고 성능이 랩쳐를 완전히 넘어서지 못해 스스로 고치며 다니지만 약한 모습을 보일 수 없어서, 조난당해도 헬레틱이라도 만나지 않는 한 슈엔에게 구조 요청을 할 수 없다 — 슈엔은 제대로 못 하면 새로운 메티스를 만든다고 한다",
+      "about": ["person:맥스웰", "org:메티스", "person:슈엔", "person:라플라스"],
+      "evidence": [
+        { "scene": "event_hightechtoy_03_s", "lines": ["13-20"] },
+        { "scene": "event_hightechtoy_05_s", "lines": ["13-28"] },
+        { "scene": "event_hightechtoy_05_e", "lines": ["18-39"] }
+      ],
+      "reason": "맥스웰 말(03_s#14-20, 05_s#18-28, 05_e#27-39). 라플라스의 블라블라에서 양산형 니케가 본 내용은 원문에 나오지 않고, 맥스웰의 '우리가 제대로 안 하면 새로운 메티스 만든다잖아'(05_e#32)로만 드러난다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F717",
+      "text": "맥스웰은 니케가 기계처럼 만들어진 순간부터 목적이 있어 해내지 못하면 폐기되거나 다음 버전이 나오며 메티스는 슈엔의 성능 좋은 장난감이라 하고, 듣기로 라플라스 · 드레이크는 슈엔의 장난감이 되고 싶어 자원했다고 한다 — 인간 맥스웰은 이미 죽었고 자기는 니케 맥스웰이라 인간 때 마음은 모른다",
+      "about": ["person:맥스웰", "person:라플라스", "person:드레이크", "person:슈엔", "org:메티스"],
+      "evidence": [{ "scene": "event_hightechtoy_06_e", "lines": ["60-71"] }, { "scene": "event_hightechtoy_epilogue", "lines": ["60-73"] }],
+      "reason": "맥스웰 말(06_e#61-71, epilogue#62-67). '듣기로'라 자원했다는 부분은 전해 들은 말이다 — 라플라스 스스로는 인간일 때부터 히어로가 되고 싶었다고 한다(F704)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    },
+    {
+      "id": "F718",
+      "text": "슈엔은 양산형 실종 조사에 메티스만 보내 공을 독차지하려고 카운터스 · 오퍼레이터 없이 가게 했지만, 중앙 정부가 담당 지휘관이 있어야 한다고 강경하게 나와 지휘관이 동행했다 — 엔더슨은 슈엔이 실종 이유를 숨기는지도 확인하라 했다",
+      "about": ["person:슈엔", "org:메티스", "person:엔더슨", "person:지휘관", "org:중앙_정부"],
+      "evidence": [{ "scene": "event_hightechtoy_01_s", "lines": ["4-16"] }, { "scene": "event_hightechtoy_01_e", "lines": ["1-9"] }],
+      "reason": "엔더슨 말(01_s#4-16), 맥스웰(01_e#7-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R15", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "status": "확정",
+      "session": "M56",
+      "id": "S361",
+      "kind": "기준점",
+      "text": "CH.11 뒤 — 메티스 셋을 이미 아는 사이",
+      "ref": "ch11",
+      "at": [["뒤", "ch11"]],
+      "evidence": [{ "scene": "event_hightechtoy_01_s", "lines": ["18-19"] }],
+      "reason": "라플라스가 '버드 보이'라 반기고 드레이크가 늦었다고 타박한다 — 지휘관과 메티스의 첫 만남은 ch11(F288). 그 밖의 실마리가 없어 범위의 끝은 열어 둔다",
+      "confidence": "추정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+    }
+  ],
+  "targets": [{ "target": "item:브레인_셸터", "evidence": [{ "scene": "event_hightechtoy_02_e", "lines": [16] }], "note": "니케의 뇌를 7일까지 보관하는 냉동 창고", "new": true }],
+  "revisit": []
+}

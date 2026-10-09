@@ -1,0 +1,49 @@
+{
+  "unit": "char:322",
+  "session": "R95",
+  "by": "claude",
+  "date": "2026-10-04",
+  "summary": "마르차나 : 마린 스터디의 호감도 스토리 — fl:wave_to_you의 섬에서. 01 — 나가 · 티아가 섬의 조개 껍질로 만든 목걸이를 모두에게 선물하고, 지휘관이 라피 · 신데렐라 · 세이렌에게 감상을 말하는 것을 본 마르차나가 정체 모를 답답함에 밤 산책을 한다. 02 — 이를 들은 나가 · 티아가 질투임을 눈치채고, 마르차나에게 조개 줍기를 부탁하고 지휘관을 그 해변으로 보낸다(쪽지 '마르차나 선생님을 잘 부탁해요!'). 03 — 함께 조개를 줍고, 지휘관이 마르차나에게 어울리는 조개를 주고 몰래 조약돌을 챙긴다. 물장난 뒤 답답함이 사라진다. 04 — 내일도 함께 있자고 응석부린 마르차나가 돌아가는 길에 학생에게 답하듯 생각해 지휘관을 좋아한다고 깨닫고, 나가 · 티아의 계획이었음을 알아 고마워한다 — 지휘관에게 줄 가장 단단한 조개를 찾는다. 05 — 단단한 조개를 건네고, 물에 넘어진 뒤 질투였다고 고백 · '평생 당신 곁에' — 지휘관은 사랑 고백 때 조약돌을 주는 펭귄 이야기로 조약돌을 준다.",
+  "scenes": [
+    { "scene": "ep:d_nikke_marciana_marinestudy_01", "text": "나가 · 티아의 조개 껍질 목걸이 선물, 지휘관의 감상 품평회 — 마르차나의 정체 모를 답답함" },
+    { "scene": "ep:d_nikke_marciana_marinestudy_02", "text": "나가 · 티아가 질투를 눈치채고 조개 줍기 부탁 · 지휘관을 보냄(쪽지)" },
+    { "scene": "ep:d_nikke_marciana_marinestudy_03", "text": "함께 조개 줍기, 지휘관이 고른 조개 · 몰래 챙긴 조약돌, 물장난 뒤 답답함이 사라짐" },
+    { "scene": "ep:d_nikke_marciana_marinestudy_04", "text": "내일 약속, 마르차나가 좋아함을 깨닫고 나가 · 티아에게 고마워함, 단단한 조개 찾기" },
+    { "scene": "ep:d_nikke_marciana_marinestudy_05", "text": "단단한 조개 선물, 질투였다는 고백 · '평생 곁에', 펭귄의 조약돌" }
+  ],
+  "facts": [
+    {
+      "id": "F2767",
+      "text": "섬에서 나가 · 티아의 조개 껍질 목걸이를 받은 날 지휘관이 다른 이들에게 감상을 말하는 것을 보고 답답해하던 마르차나는, 질투임을 눈치챈 나가 · 티아가 꾸민 둘만의 조개 줍기 뒤 지휘관을 좋아한다는 것을 깨닫고 고백했고, 지휘관은 사랑을 고백할 때 조약돌을 준다는 펭귄처럼 조약돌을 건넸다",
+      "about": ["person:마르차나", "person:지휘관", "person:나가", "person:티아"],
+      "evidence": [
+        { "scene": "ep:d_nikke_marciana_marinestudy_01", "lines": ["4-12", "71-81"] },
+        { "scene": "ep:d_nikke_marciana_marinestudy_02", "lines": ["39-47", 96] },
+        { "scene": "ep:d_nikke_marciana_marinestudy_04", "lines": ["34-43", "53-59"] },
+        { "scene": "ep:d_nikke_marciana_marinestudy_05", "lines": ["80-88", "94-100"] }
+      ],
+      "reason": "티아 '마르차나 선생님이 질투를 한다는 거 말이지~?'(02 #40) · 쪽지 '[마르차나 선생님을 잘 부탁해요!]'(02 #96) · 마르차나 '내가 지휘관님을 좋아하고 있었구나'(04 #59) · '그건… 질투였어요'(05 #80) · '저는 당신을 좋아합니다'(05 #86) · 지휘관 '사랑을 고백할 때, 예쁜 조약돌을 주는 펭귄'(05 #95)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R95" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S338",
+      "kind": "기준점",
+      "text": "fl:wave_to_you의 섬 체류 중 — 신데렐라 일행 · 펭귄 수트 · 졸업 전의 나가 · 티아",
+      "ref": "fl:wave_to_you",
+      "at": [["중", "fl:wave_to_you"]],
+      "evidence": [{ "scene": "ep:d_nikke_marciana_marinestudy_01", "lines": ["6-17"] }, { "scene": "ep:d_nikke_marciana_marinestudy_03", "lines": [36] }],
+      "reason": "나가 '이 섬에 예쁜 조개 껍질들이 많거든요'(01 #6) · 리틀 머메이드 · 모리 · 그레이브 · 신데렐라가 함께 받음(01 #9-17) · '그 펭귄 수트'(03 #36, fl:wave_to_you_07). 섬의 며칠 가운데 언제인지는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R95" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

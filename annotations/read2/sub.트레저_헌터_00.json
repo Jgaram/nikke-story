@@ -1,0 +1,38 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:트레저_헌터_00",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E30",
+      "act": "암시",
+      "points": ["F150", "J37"],
+      "text": "보물찾기 중 아니스가 '우리가 땅굴 부대도 아니고'라며 고대 유물을 꺼린다 — 이 지도가 땅굴 부대(자원 채집 부대)의 것이고 트레저 헌터가 그 담당 지휘관이었다(F150)",
+      "about": ["person:아니스", "person:트레저_헌터"],
+      "evidence": [{ "scene": "sub:트레저_헌터_00", "lines": [43] }],
+      "reason": "#43 지나가는 농담. 다음 편에서 아니스가 이곳이 땅굴 부대 임무 지역이라 알아챈다 — 일부러 깐 것인지는 해석이라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D46",
+      "person": "person:트레저_헌터",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'솔깃 솔깃' 하며 애교 섞인 말투로 보물찾기를 맡기고 몫을 흥정하는 메신저 의뢰인",
+      "evidence": [{ "scene": "sub:트레저_헌터_00", "lines": ["1-33"] }],
+      "reason": "#1-4 · #21-30 · #33 '잘 부탁드려요~♡'",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "life": []
+}

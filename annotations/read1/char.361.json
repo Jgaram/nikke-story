@@ -1,0 +1,100 @@
+{
+  "unit": "char:361",
+  "session": "R42",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "킬로 호감도 스토리 — event_lastkingdom1 앞(S146). 엘리베이터 방어 임무를 마친 카운터스가 마나의 부탁으로 진흙에 발이 빠진 탈로스와 킬로를 구해 주고, 킬로는 전초기지를 보고 싶다며 따라온다. 헤비그램과 T.A.V:H · 탈로스 · T.A.V:A 설명(F1460 · F1461), 폐기되면 킬로는 또 전전하게 된다. 재능을 찾으려 엘리시온 훈련장에서 테스트하자 전 과목 50점 → 51점(F1462). 라피는 넓고 얕다 하고, 지휘관은 만능이 컨셉이 될 수 있다 한다 — 재능을 두고 라피(자기를 정의하는 수단) · 아니스(인정받기 위해 없으면 만들어서라도) · 네온(킬로가 필요한 스쿼드를 찾자)이 갈린다. 두 번째 엘리베이터 방어 임무에서 킬로는 모든 상황에 대응해 도움이 되고, 지휘관 · 라피는 상황 판단력을 높이 산다. 그러나 헤비그램은 유지비 클레임으로 단독 운용으로 바뀌고, 킬로는 '나만의 장소'를 바라며 스물한 번째 테스트로 올라간다(F1463). 지휘관은 '탈로스의 가슴을 봤어?'라고만 한다.",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_kilo_01",
+      "text": "엘리베이터 방어 뒤 마나의 부탁으로 진흙에 빠진 탈로스를 구조. 킬로는 전초기지를 보고 싶다며 따라온다"
+    },
+    {
+      "scene": "ep:d_nikke_kilo_02",
+      "text": "헤비그램 · T.A.V:H · 탈로스 · T.A.V:A 설명. 특출 난 재능이 없어 온갖 기능을 넣은 킬로를 돕기로"
+    },
+    {
+      "scene": "ep:d_nikke_kilo_03",
+      "text": "엘리시온 훈련장 테스트 — 전 과목 50점, 개선 뒤 51점"
+    },
+    {
+      "scene": "ep:d_nikke_kilo_04",
+      "text": "넓고 얕다는 라피, 만능이 컨셉이라는 지휘관. 재능을 두고 라피 · 아니스가 다투고, 두 번째 임무에 데려가기로"
+    },
+    {
+      "scene": "ep:d_nikke_kilo_05",
+      "text": "임무에서 쓸모를 보인 킬로. 헤비그램 단독 운용 전환, '나만의 장소'를 바라며 스물한 번째 테스트로"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1460",
+      "text": "킬로가 속한 헤비그램은 미실리스가 진행하는 니케용 탑승 병기 T.A.V:H(Tactical Autonomous Vehicle : Human Type)를 운용하는 시험용 스쿼드로 관리는 M.M.R.이 맡고 멤버를 다른 스쿼드에 하나씩 파견해 운용하며, 막대한 자금이 든 프로젝트라 성능을 증명하지 못하면 폐기된다",
+      "about": ["org:헤비그램", "person:킬로", "org:미실리스", "org:M.M.R."],
+      "evidence": [{ "scene": "ep:d_nikke_kilo_02", "lines": ["1-7", "53-58", "64-67", "114-116"] }],
+      "reason": "킬로의 설명",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1461",
+      "text": "탈로스(Tactical Assistance and Logistics Optimization System)는 명령이 있어야 움직이는 T.A.V:H용 보조 A.I.라 파일럿의 기량이 곧 성능이고, T.A.V:H가 인간형인 것은 니케 코어를 동력원으로 가장 효율 있게 쓰려는 것이다 — 앞서 운용한 동물형 T.A.V:A는 확장성이 낮고 동력원이 불안정해 폐기되었다",
+      "about": ["person:T.A.L.O.S.", "person:킬로"],
+      "evidence": [{ "scene": "ep:d_nikke_kilo_02", "lines": ["8-21", "38-48"] }],
+      "reason": "킬로의 설명 — event_lastkingdom1에서 킬로는 크라운의 트롬베를 T.A.V:A라 불렀다(F1440)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-01",
+          "session": "R42",
+          "before": "탈로스(Tactical Assistance and Logistics Optimization System)는 명령이 있어야 움직이는 T.A.V:H용 보조 A.I.라 파일럿의 기량이 곧 성능이고, T.A.V:H가 인간형인 것은 니케 코어를 동력원으로 가장 효율 있게 쓰려는 것이다 — 앞서 운용한 동물형 T.A.V:A는 확장성이 낮고 동력원이 불안정해 빠르게 폐기되었다"
+        }
+      ]
+    },
+    {
+      "id": "F1462",
+      "text": "엘리시온 훈련장 테스트에서 킬로와 탈로스는 무엇 하나라도 잘하려고 넣은 온갖 기능 탓에 넓고 얕아 전투 · 탐색 · 구조 · 생산 · 수리 전 과목 50점(개선 뒤 51점)이었지만, 지휘관 · 라피는 만능 자체가 컨셉이 될 수 있고 실전에서 상황 판단력이 좋다고 보았다",
+      "about": ["person:킬로", "person:T.A.L.O.S.", "person:라피", "person:지휘관", "org:엘리시온"],
+      "evidence": [
+        { "scene": "ep:d_nikke_kilo_03", "lines": ["76-87"] },
+        { "scene": "ep:d_nikke_kilo_04", "lines": ["1-16", "43-60"] },
+        { "scene": "ep:d_nikke_kilo_05", "lines": ["53-60"] }
+      ],
+      "reason": "라피의 결과 발표와 평가",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    },
+    {
+      "id": "F1463",
+      "text": "T.A.V:H 유지비를 두고 임시 소속된 스쿼드들의 클레임이 들어와 헤비그램은 단독 행동 위주로 운용 계획을 바꿨다 — 킬로는 자리 잡을 곳이 점점 좁아진다며 '나만의 장소'를 바랐고, 다음에 올라가는 것이 성과가 없으면 폐기 확률이 오르는 스물한 번째 테스트였다",
+      "about": ["org:헤비그램", "person:킬로", "person:T.A.L.O.S."],
+      "evidence": [{ "scene": "ep:d_nikke_kilo_05", "lines": ["67-87", "113-126"] }],
+      "reason": "킬로 · 탈로스의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S146",
+      "kind": "기준점",
+      "text": "event_lastkingdom1 바로 앞 — 킬로의 스물한 번째 테스트 직전, 카운터스가 특수별동대일 때",
+      "ref": "event_lastkingdom1",
+      "at": [["직전", "event_lastkingdom1"]],
+      "evidence": [{ "scene": "ep:d_nikke_kilo_05", "lines": ["113-116"] }, { "scene": "ep:d_nikke_kilo_01", "lines": ["5-6"] }],
+      "reason": "'이번에 올라가면 21번째 테스트' — event_lastkingdom1 첫 장면이 스물한 번째 테스트 실패다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R42" }]
+    }
+  ],
+  "targets": []
+}

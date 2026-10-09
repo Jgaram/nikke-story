@@ -1,0 +1,38 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:관짝이_02",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E464",
+      "act": "암시",
+      "points": ["F2429"],
+      "text": "그레이브가 스노우 화이트를 만나면 신데렐라와 싸울 수도 있지만 전부 오해라고 설득하겠다 하고, 지휘관도 함께 말해 주겠다고 한다",
+      "about": ["person:그레이브", "person:스노우_화이트", "person:신데렐라"],
+      "evidence": [{ "scene": "sub:관짝이_02", "lines": ["152-162"] }],
+      "reason": "#154-160 — ch44에서 카운터스가 스노우 화이트에게 신데렐라 일까지 모두 알린다(F2429).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D520",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:스노우_화이트"],
+      "text": "만난 적 없는 전설의 무기 장인을 동경해, 빌린 세븐스 드워프를 흠 없이 돌려주고 먼저 써 버린 것을 사과하고 싶어 하는",
+      "evidence": [{ "scene": "sub:관짝이_02", "lines": ["16-23", "138-151"] }],
+      "reason": "#21-23 · #140-141 · #150 '전설은 역시 전설이다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "life": []
+}

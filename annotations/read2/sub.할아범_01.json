@@ -1,0 +1,50 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M07\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:할아범_01",
+  "session": "M07",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E178",
+      "act": "재언급",
+      "points": ["F176"],
+      "text": "외손자가 할아버지는 지휘관 덕분에 홀가분하게 편히 눈 감았다고 전한다 — 지상 집터의 추억을 찾아 달라던 마지막 부탁(F176)",
+      "about": ["person:할아범"],
+      "evidence": [{ "scene": "sub:할아범_01", "lines": ["14-21"] }],
+      "reason": "#15-16, #18-21. 지휘관과의 문자 기록을 보고 알았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U140",
+      "topic": "방주 사회",
+      "text": "비좁은 방주는 죽은 사람 둘 곳도 없어 대부분 화장한 유골을 집에 두고, 깨끗한 납골당 자리는 오래 기다려야 겨우 난다",
+      "about": ["place:방주"],
+      "points": ["F904"],
+      "evidence": [{ "scene": "sub:할아범_01", "lines": ["31-32", "49-54"] }],
+      "reason": "#49-54 아니스. #31-32 자리가 지금까지 나지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    },
+    {
+      "id": "U141",
+      "topic": "방주 사회",
+      "text": "화장은 중앙 정부 소관이라 유족은 특별한 일이 없으면 지켜볼 수 없고, 받은 유골함을 열어 보는 것은 고인 모독이라 여긴다",
+      "about": ["org:중앙_정부"],
+      "points": ["F905", "F2581"],
+      "evidence": [{ "scene": "sub:할아범_01", "lines": ["108-113"] }],
+      "reason": "#109-110, #112-113. 속사정은 시신이 동력원의 [먹이]가 된다는 것(F2581)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M07" }]
+    }
+  ],
+  "note": "이름표 ≠ 말한 사람: sub:할아범_01#1-44,98-128의 '할아범' 이름표 줄은 고인의 외손자(#6-7)다 — 자동 speaks는 할아범으로 센다(M02 시프티 · 코리와 같은 문제, X 전에 본다)"
+}

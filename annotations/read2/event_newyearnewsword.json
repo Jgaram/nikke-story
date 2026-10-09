@@ -1,0 +1,294 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M14\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_newyearnewsword",
+  "session": "M14",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I151",
+      "target": "person:홍련",
+      "speaker": true,
+      "evidence": [{ "scene": "event_newyearnewsword_prologue", "lines": ["54-55"] }],
+      "reason": "??? '풍악이 아직 멈추지 않았는데' — 곧바로 지휘관이 '홍련…?'이라 하고 홍련이 '즐거운 밤일세. 도령'(#57-58)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I152",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "event_newyearnewsword_02_s", "lines": [46] }],
+      "reason": "중위가 '그 용병 놈에겐 페어리 테일 모델을 붙여주고' — 릴리바이스가 '용병'이라 부른 갓데스의 지휘관(F1149) = 엔더슨(F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "I153",
+      "target": "person:스노우_화이트",
+      "evidence": [{ "scene": "event_newyearnewsword_epilogue", "lines": ["47-49"] }],
+      "reason": "그 뒤 만난 동료 중 '좋은 무기 장인'이 장화의 코어 조각으로 칼날을 고쳤다 — 홍련이 합류한 갓데스(F1181)에서 병기 개발의 천재는 스노우 화이트(F1144)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E310",
+      "act": "암시",
+      "points": ["F2882"],
+      "text": "홍련이 '바람 따라, 구름 따라, 마음 가는 대로 살면 되는 것을'이라 한다 — 장화가 살아 보고 싶다던 미래 계획이었다(F2882)",
+      "about": ["person:홍련", "person:장화"],
+      "evidence": [{ "scene": "event_newyearnewsword_01_s", "lines": ["9-10"] }],
+      "reason": "#9-10이 03_e#72-73 장화의 말과 같다 — 같은 단위 앞 씬이 뒤 씬의 회상을 흘린다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E311",
+      "act": "암시",
+      "points": ["F1238"],
+      "text": "장화가 '열흘 붉은 꽃은 없을 테고, 영원한 것은 없으니' 언젠가 련이가 자기를 꺾을 거라 한다 — 같은 말로 홍련에게 자기를 베게 한다(F1238)",
+      "about": ["person:장화", "person:홍련", "item:화무십일홍"],
+      "evidence": [{ "scene": "event_newyearnewsword_02_s", "lines": ["23-29"] }],
+      "reason": "#24-26 → 06_s#37-38 같은 말, 06_e#8-9 '그 여유 꼭 꺾어주겠다'가 이뤄진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E312",
+      "act": "재언급",
+      "points": ["F1181"],
+      "text": "근접 전투 스쿼드원들의 꿈 가운데 '유명해져서 갓데스와 함께 임무에 투입되어 보는 것' — 그 꿈은 홀로 남은 홍련이 갓데스에 들어가 이룬다(F1181)",
+      "about": ["person:홍련", "org:갓데스"],
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": [82, 86] }],
+      "reason": "#86 '그나마 제일 가능성 있으려나' — 궤멸 뒤 갓데스에 영입된 홍련(red_ash_lost_10)의 반어. 같은 일이라는 원문 확인은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E313",
+      "act": "암시",
+      "points": ["F1240"],
+      "text": "장화가 올해 마지막 날 새해 일출을 보며 모두와 마시자며 좋은 술을 숙성해 두자 한다 — 100년 가까이 지나 홍련이 지휘관과 그 술을 연다(F1240)",
+      "about": ["person:장화", "person:홍련"],
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": ["105-111"] }],
+      "reason": "#108 · #111 → 06_e#106-114 · epilogue#9-16",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E314",
+      "act": "암시",
+      "points": ["F1239"],
+      "text": "그날 밤 그녀들은 '결코 오지 않을, 장밋빛 미래'를 꿈꾸며 웃었다 — 근접 전투 스쿼드는 서로를 베어 모두 죽는다(F1239)",
+      "about": ["org:근접_전투_스쿼드"],
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": ["113-114"] }],
+      "reason": "#114 서술이 결말을 미리 알린다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "E315",
+      "act": "암시",
+      "points": ["F2619"],
+      "text": "홍련이 언젠가 다시 만날 그날에도 언니를 언니라 부를 수 있지 않을까, 그때도 동생이라 불러 주겠느냐고 묻는다 — 장화는 미러에게 되살려져 살아 있다(F2619)",
+      "about": ["person:홍련", "person:장화"],
+      "evidence": [{ "scene": "event_newyearnewsword_epilogue", "lines": ["54-63"] }],
+      "reason": "#55-56 '다시 만날 그날' — ch46에서 장화가 살아 있고 홍련에게 말하지 말라 한다. 저승의 재회를 뜻한 말이라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D357",
+      "person": "person:장화",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "985번 대련에서 975승을 하고도 '큰일 날 뻔했네' · '내가 언니잖아~'라며 여유를 부리고, 첫 임무에서 모두 얼어붙자 먼저 랩쳐 무리에 뛰어드는 니케",
+      "evidence": [{ "scene": "event_newyearnewsword_02_s", "lines": ["5-18"] }],
+      "reason": "#5-13 여유 · 장난 — 02_e#84-102 먼저 뛰어듦과 같은 모습",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D358",
+      "person": "person:장화",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "'세상에 영원한 건 없다' — 긴장도 불안도 익숙해지면 아무것도 아니게 된다고 믿는",
+      "evidence": [{ "scene": "event_newyearnewsword_02_e", "lines": ["42-47"] }],
+      "reason": "#43-46 — 02_s#24-25 · 06_s#37-38에서 되풀이하는 장화의 신조",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D359",
+      "person": "person:장화",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:홍련"],
+      "text": "'우리 련이'라 부르며 스스로 보초를 서는 동생을 '마음씨 착한 내 동생'이라 다독이고, 언젠가 자기를 꺾을 거라 믿어 주는 언니",
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": ["10-17"] }],
+      "reason": "#11-14 — 02_s#23-29와 같은 결",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D360",
+      "person": "person:장화",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:홍련"],
+      "before": "함께 살아남자며 동생을 다독이던 언니",
+      "after": "동생을 지키려 '인류의 적'이 되어 동생의 검을 끌어당겨 죽는",
+      "trigger": [{ "scene": "event_newyearnewsword_05_e", "lines": ["115-139"] }],
+      "time": "S118",
+      "evidence": [{ "scene": "event_newyearnewsword_06_e", "lines": ["27-43"] }],
+      "reason": "05_e 독백 — 최후의 1인도 뜯어먹힌다는 것을 알고 결정, 06_e#29-31 검을 끌어당김 · '강해져야 해'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D361",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:장화"],
+      "text": "985번 대련에 한 번도 못 이기고 '그 여유, 언젠간 꼭 꺾어 보이겠다'며 언니를 좇는 동생",
+      "evidence": [{ "scene": "event_newyearnewsword_02_s", "lines": [4, "8-12", 28] }],
+      "reason": "#12 975승 10무 바로잡기 · #28 — 06_e#8-9에서 이 말을 되받는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D362",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:장화"],
+      "before": "언니를 꺾겠다던 동생",
+      "after": "언니를 제 검으로 베고 화무십일홍을 쥔 채 100년 동안 그리워하는",
+      "trigger": [{ "scene": "event_newyearnewsword_06_e", "lines": ["27-44"] }],
+      "time": "S117",
+      "evidence": [{ "scene": "event_newyearnewsword_epilogue", "lines": ["38-63"] }],
+      "reason": "epilogue — 검을 볼 때마다 언니 생각, '그때에도 다시 동생이라 불러 주겠는가'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D363",
+      "person": "person:홍련",
+      "aspect": "기억",
+      "act": "기준",
+      "text": "사고 전환을 여러 번 겪어 기억 대부분을 잊었지만 언니 장화와 근접 전투 스쿼드의 일만은 결코 잊지 못한",
+      "evidence": [{ "scene": "event_newyearnewsword_01_e", "lines": ["52-58"] }],
+      "reason": "#56-58 — 03_e#55-56 자매라는 것만 기억했다는 것과 함께(F1229 · F1230)",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M56",
+          "note": "출시 첫날 char:222(홍련 호감도 스토리)가 앞서 그 기준(D1411 · D1412 · D1413 · D1414)을 남긴다"
+        }
+      ]
+    },
+    {
+      "id": "D364",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "'도령'을 시험하는",
+      "after": "100년 동안 못 연 언니의 술을 함께 열어 준 '참 좋은 도령'",
+      "trigger": [{ "scene": "event_newyearnewsword_06_e", "lines": ["106-114"] }],
+      "time": "S117",
+      "evidence": [{ "scene": "event_newyearnewsword_epilogue", "lines": ["8-24"] }],
+      "reason": "#19-22 '함께 마셔준 이가 있어서 끝까지' · '참 좋은 도령' — 앞 기준 D146",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "D365",
+      "person": "person:노이즈",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "결혼 소문에 '최악'이라던 '프로듀서'",
+      "after": "1년 곁에서 도와준 프로듀서에게 무대에서 꽃을 건네고 볼에 입 맞추는",
+      "time": "S117",
+      "evidence": [{ "scene": "event_newyearnewsword_prologue", "lines": ["22-38"] }],
+      "reason": "#27 · #32-33 — 앞 기준 D209",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U187",
+      "topic": "전초기지",
+      "text": "1년의 마지막 밤 전초기지에 작은 콘서트가 열려 카운터스부터 언리미티드까지 여러 스쿼드의 니케가 한자리에 모인다",
+      "about": ["place:전초기지", "person:노이즈"],
+      "points": ["F1228"],
+      "evidence": [{ "scene": "event_newyearnewsword_prologue", "lines": ["1-14"] }],
+      "reason": "#2 · #6-14 — 전초기지의 연말 풍경",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "U188",
+      "topic": "구시대",
+      "text": "랩쳐 전쟁 때 니케들은 전쟁이 끝나면 일주일 내내 침대에 있기 · 따뜻한 수프를 냄비 가득 끓여 마시기 · 보고 싶던 만화책 다 보기 같은 '시답지 않은 것'을 꿈속에서만 누렸다",
+      "about": ["org:근접_전투_스쿼드"],
+      "evidence": [{ "scene": "event_newyearnewsword_03_e", "lines": ["77-86"] }],
+      "reason": "#84-85 '이런 시대에는 … 꿈속에서만 누릴 수 있으니까'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    },
+    {
+      "id": "U189",
+      "topic": "구시대",
+      "text": "1차 침공기 양산형 니케는 임무를 거부하면 사고 전환으로 판단되어 처분되었고, 지휘관 자리는 '좋은 곳에서 평생 안전하게 살게 해 준다'는 약속으로 채워졌다",
+      "about": ["concept:양산형_니케", "org:인류연합군"],
+      "points": ["F1235"],
+      "evidence": [{ "scene": "event_newyearnewsword_05_e", "lines": ["79-83", "99-100"] }],
+      "reason": "#81-83 · #99 중위의 말 — 전쟁기 니케와 장교가 살던 처지",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+    }
+  ],
+  "revisit": [
+    {
+      "id": "V3",
+      "text": "Q363 '근접전 스쿼드에서 관찰된 인간을 직접 살해한 최초의 사례' = 장화가 붉은 천으로 눈을 가리고 중위를 벤 일(F1237, 상부는 [내전]으로 정리 F1239) — ch47을 2회독할 때 Q363 회수(→ F1237)로 이을지 본다",
+      "where": [
+        "ch47"
+      ]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: event_newyearnewsword_02_e#74-75 (근접 전투 스쿼드의 이름 없는 동료 — '잔뜩 긴장한 누군가'), event_newyearnewsword_05_s#20,22 (홍련을 깨운 이름 없는 스쿼드원 — #26 '쓰러져 있는 니케'와 같은 이로 보인다)."
+}

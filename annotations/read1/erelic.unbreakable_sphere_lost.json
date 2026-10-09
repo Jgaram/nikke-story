@@ -1,0 +1,87 @@
+{
+  "unit": "erelic:unbreakable_sphere_lost",
+  "session": "R61",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "글러트니 안의 세이렌이 쓴 기록 넷(금서고). 물거품 정원을 다 만든 지 한 달쯤, 궤도 엘리베이터 작전이 실패해 우주의 [그것]이 남아 친구들을 위협할까 걱정한다(00). 물거품으로 글러트니 내부를 조사해 일주일에 한 번 열리는 숨구멍을 찾고 물거품을 지상으로 올려 보내 본다(01). 물거품의 일은 둘 — 친구들에게 자기가 글러트니 안에 있다고 알리기, 우주의 [그것]의 시야를 가릴 온 세계의 [거대한 막]을 만들어 시간을 벌기(02). 첫 물거품은 은빛 액체에서 뽑은 에너지로 만든 신데렐라 닮은 아이 — 진짜 신데렐라를 만나 손을 잡으면 물거품이 되어 글러트니로 안내하고, 반년 동안 아무도 못 만나면 부서져 [물거품 구름]이 되어 [퀸]의 시야를 가리도록 언령을 걸었다(03).",
+  "scenes": [
+    {
+      "scene": "erelic:unbreakable_sphere_lost_00",
+      "text": "정원을 만든 지 한 달 · 우주의 [그것]과 친구들 걱정"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_lost_01",
+      "text": "일주일에 한 번 열리는 숨구멍 · 물거품 시범 발사"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_lost_02",
+      "text": "물거품의 두 가지 일 — 알리기 · [그것]의 시야를 가릴 거대한 막"
+    },
+    {
+      "scene": "erelic:unbreakable_sphere_lost_03",
+      "text": "첫 물거품 — 신데렐라 닮은 아이 · 반년 뒤 물거품 구름"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1907",
+      "text": "세이렌의 기록에 따르면 글러트니 안에 물거품 정원을 다 만든 지 한 달쯤 뒤, 궤도 엘리베이터 작전이 실패해 우주의 [그것]이 남아 친구들을 위협할까 걱정하던 세이렌은 물거품으로 글러트니 내부를 조사해 일주일에 한 번 열리는 숨구멍을 찾아 물거품을 지상으로 올려 보냈다",
+      "about": ["person:세이렌", "person:글러트니"],
+      "evidence": [
+        { "scene": "erelic:unbreakable_sphere_lost_00", "lines": ["0-10"] },
+        { "scene": "erelic:unbreakable_sphere_lost_01", "lines": ["0-8"] },
+        { "scene": "erelic:unbreakable_sphere_lost_02", "lines": [0] }
+      ],
+      "reason": "기록자는 이름이 없지만 글러트니 안 · 물거품 정원 · 신데렐라와 에이브 · '에이브가 내게 준 물거품'(01 #7)으로 세이렌이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1908",
+      "text": "세이렌의 기록에 따르면 지상으로 보낸 물거품의 일은 친구들에게 세이렌이 글러트니 안에 있다고 알리는 것과, 우주에 있을지 모르는 [그것]이 친구들을 찾지 못하게 온 세계에 그 시야를 가릴 [거대한 막]을 만들어 시간을 버는 것이었다",
+      "about": ["person:세이렌"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_02", "lines": ["2-13"] }],
+      "reason": "기록 02. [그것] = [퀸](03 #10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1909",
+      "text": "세이렌이 처음 올려 보낸 물거품은 은빛 액체에서 뽑은 에너지로 만든 신데렐라 닮은 아이로, 진짜 신데렐라를 만나면 손을 내밀고 그가 잡으면 물거품이 되어 글러트니로 안내하게 했다 — 반년 동안 아무도 못 만나면 부서져 [물거품 구름]이 되어 모여 [퀸]의 시야를 가리는 막이 되도록 언령을 걸었다",
+      "about": ["person:세이렌", "person:신데렐라", "concept:은색_액체"],
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_03", "lines": ["0-13"] }],
+      "reason": "기록 03",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q244",
+      "text": "세이렌이 70년 가까이 지상으로 쏘아 올린 물거품들 가운데 아무도 만나지 못해 부서진 것들은 [물거품 구름]이 되어, 정말 [퀸]의 시야를 가리는 거대한 막이 되었나?",
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_03", "lines": ["8-10"] }],
+      "reason": "세이렌의 계획만 나오고 그 결과는 원문이 말하지 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F1816-2",
+      "act": "드러냄",
+      "text": "레비아탄의 손에만 반응해 글자가 되고 실이 되어 이끈 물방울처럼, 세이렌은 친구를 닮은 물거품에 그 사람을 만나 손이 닿으면 물거품이 되어 글러트니 안의 자기에게 안내하도록 언령을 걸어 올려 보냈다 — 레비를 닮은 물거품도 만들었다",
+      "evidence": [{ "scene": "erelic:unbreakable_sphere_lost_03", "lines": ["4-7"] }],
+      "reason": "기록 03(신데렐라 닮은 아이의 설계)과 필드 대화 11(erelic:unbreakable_sphere_dialog_11 #2 '신데렐라, 에이브, 헨젤, 그레텔, 레비'). ch36의 물방울이 바로 이것이라고 원문이 이름 대어 잇지는 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R61", "note": "R61 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "times": [],
+  "targets": [],
+  "revisit": []
+}

@@ -1,0 +1,38 @@
+{
+  "unit": "event_foolburstday",
+  "session": "M68",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1429",
+      "act": "재언급",
+      "points": ["F1091"],
+      "text": "키리가 수건을 폴리로, 의자를 강아지로 잘못 보고 폴리는 키리 눈이 점점 나빠진다고 한다",
+      "about": ["person:키리", "person:폴리"],
+      "evidence": [{ "scene": "event_foolburstday_03", "lines": ["40-44", "58-61"] }],
+      "reason": "#42-44 '그건 수건이에영' · '키리 눈이 점점 안 좋아지는' — FREEZE A.C.P.U.의 나쁜 시력(F1091)을 되풀이한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1637",
+      "person": "person:프리바티",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "메이드복 · '주인님'에 얼굴이 터질 듯 부끄러워 더듬던",
+      "after": "메이드 카페를 서로 존중하며 치유받는 곳이라 여겨 그곳을 깎아내리는 말에 정색하고 맞서는",
+      "evidence": [{ "scene": "event_foolburstday_04", "lines": ["14-19", "47-49"] }],
+      "reason": "#16-17 '치유받는 장소 … 참을 수 없어요' · #18 '이렇게까지 메이드에 진심이었구나' — D1530의 부끄럼이 진심으로 바뀌었다(ROMANTIC VALENTINE에서도 몸에 밴 모습).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+    }
+  ],
+  "life": [],
+  "note": "생활상은 2층이라 적지 않았다. 메카 시프티는 이 단위에만 나와(appear 단위 1) 인물 변화를 적지 않았다. 미상 이름표 줄 없음."
+}

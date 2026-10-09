@@ -1,0 +1,241 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M82\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:61",
+  "session": "M82",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1824",
+      "person": "person:미카",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "낯선 사람 앞에서 지휘관 등 뒤로 숨고, '우리가 아닌 사람들은 다 어렵고 무서운 사람들'이라 여겨 온 겁 많은 낯가림",
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_03",
+          "lines": [
+            11,
+            "120-121"
+          ]
+        }
+      ],
+      "reason": "03#11 폴리를 보자 등 뒤로 숨음 · #120 '우리가 아닌 사람들은 다 어렵고 무서운 사람들'. 출시순으로 D1501(event_neverland1)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1825",
+      "person": "person:미카",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "벨로타 말고는 다 무서운 사람이라 숨던",
+      "after": "폴리에게 받은 퍼펙트의 보답을 약속하고 스스로 친구를 만나러 나가는",
+      "trigger": [
+        {
+          "scene": "ep:d_nikke_mica_04",
+          "lines": [
+            "132-151"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_05",
+          "lines": [
+            "50-54",
+            "64-66"
+          ]
+        }
+      ],
+      "points": [
+        "F553"
+      ],
+      "reason": "04#148-151 '만나러 갈게요!' 뒤 05#53-54 폴리에게 감자 맛 퍼펙트를 가져다주기로 · #65-66 벨로타도 친구가 될 수 있다고 이끈다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1826",
+      "person": "person:미카",
+      "aspect": "관계",
+      "act": "기준",
+      "with": [
+        "person:벨로타"
+      ],
+      "text": "벨로타가 없었으면 외로워 진작 죽었을 거라며 벨로타만 있으면 된다 — 새 친구를 사귀면 벨로타를 배신하는 것 같다는",
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_03",
+          "lines": [
+            "131-134",
+            "143-144"
+          ]
+        }
+      ],
+      "reason": "03#132 '전 벨로타만 있으면 돼요' · #143 '배신하는 거 같아요'(02#47도). 출시순으로 D1502(event_neverland1)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1827",
+      "person": "person:미카",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:벨로타"
+      ],
+      "before": "벨로타만 있으면 되고 새 친구는 배신",
+      "after": "누구와 친구가 돼도 벨로타가 첫 번째 친구 — '넌 족쇄 아냐, 내 친구야'라고 말하는",
+      "trigger": [
+        {
+          "scene": "ep:d_nikke_mica_04",
+          "lines": [
+            "84-120"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_05",
+          "lines": [
+            "39-42",
+            "68-72"
+          ]
+        }
+      ],
+      "points": [
+        "F553"
+      ],
+      "reason": "04 벨로타가 자기를 족쇄라 했다는 말을 듣고 05#41-42 '벨로타가 내 첫 번째 친구인 건 변하지 않을 거야' · #71-72 '내 친구야'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1828",
+      "person": "person:미카",
+      "aspect": "관계",
+      "act": "기준",
+      "with": [
+        "person:지휘관"
+      ],
+      "text": "이상한 애로 보고 다른 지휘관들처럼 쫓아낼까 겁내며 지휘관실 앞에서 머뭇거리는 — '아저씨'",
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_01",
+          "lines": [
+            "67-84"
+          ]
+        }
+      ],
+      "reason": "01#84 '다른 지휘관들처럼 쫓아내기라도 한다면'. 미카 → 지휘관 관계 기준이 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1829",
+      "person": "person:미카",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "쫓겨날까 겁내던 벨로타의 '아저씨'",
+      "after": "행복을 바란다며 두 번째 친구가 되어 준 지휘관에게 고마워 볼에 입을 맞추는",
+      "trigger": [
+        {
+          "scene": "ep:d_nikke_mica_04",
+          "lines": [
+            "132-141"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "ep:d_nikke_mica_05",
+          "lines": [
+            "94-105"
+          ]
+        }
+      ],
+      "points": [
+        "F553"
+      ],
+      "reason": "04#134 '내가 미카의 두 번째 친구가 될게' · 05#96-105 '제 친구가 되어주셔서 … 고맙습니다' 뒤 입맞춤",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M82",
+          "note": "M82 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D1838",
+      "person": "person:벨로타",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:미카"],
+      "text": "자기만 보고 고아원에 있는 것처럼 사는 미카에게 족쇄가 되기 싫어, 친구이기 때문에 잠시 떨어져 지휘관에게 미카를 맡기는 — 그러면서도 미카 놀리는 게 세상에서 제일 좋다는",
+      "evidence": [{ "scene": "ep:d_nikke_mica_04", "lines": ["93-118"] }],
+      "points": ["F553"],
+      "reason": "04#93-96 '친구니까 … 자꾸 새장이 되고 족쇄가 되어버려' · #114-118 '그 애한테 보여줘'(05#47 '미카 놀리는 게 세상에서 제일 좋아'도). 출시순으로 D1503(event_neverland1)보다 앞선다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "벨로타 → 지휘관 기준은 char:60(벨로타 호감도 스토리)에서 세운다. 미카가 벨로타를 따라 죽겠다는 말(04#26,43,51-52)은 F1217(event_neverland1)을 미리 흘리지만 떡밥 줄기에 걸리지 않아 3층 기준대로 적지 않았다. 시점 실마리 없음(지상에서 놀게 됐다는 것뿐)."
+}

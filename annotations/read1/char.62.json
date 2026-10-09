@@ -1,0 +1,68 @@
+{
+  "unit": "char:62",
+  "session": "R34",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "미카 : 스노우 버디. 설온장(event_neverland1)에서 돌아온 뒤, 벨로타는 미카가 장난에 놀라지도 곤란해하지도 않고 제 의견을 말하며 혼자 다녀오라고까지 한다며 '옛날의 호구 미카'가 아니라고 지휘관에게 도움을 청한다(01). 루드밀라가 선물한 설온장 옷을 입고 다니는 미카는 변하지 않았다며 오히려 벨로타가 변했다고 하고, 충격받은 벨로타가 가게를 나간다(02). 미카는 울지 않고 패스트푸드점 · 쇼핑몰 · 공원을 돌며 벨로타를 찾고, 폴리도 미카가 자신감이 가득해졌다고 한다(03). 숙소 침대에 숨어 있던 벨로타 — 미카가 어른스러워지길 가장 바란 건 자기인데 받아들이지 못했다. 미카는 소중한 벨로타를 또 잃을까 두려웠지만 설온장에서 환경도 곁의 사람도 변했음을 깨달았고, 앞으로 소중한 건 자기가 지키면 된다며 '내 마음가짐이 변했다'고 한다. 벨로타는 자기도 변하겠다며 돌아온다(04). 며칠 뒤 미카는 처음으로 혼자 지휘관실에 놀러 와, 영원히 어린아이로 남는 세상에 있었지만 이제 나왔으니 과거에 갇힌 벨로타도 나오게 하겠다고 한다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_mica_snowbuddy_01", "text": "벨로타: 설온장 다녀온 뒤 미카가 변했다, 도와 달라" },
+    { "scene": "ep:d_nikke_mica_snowbuddy_02", "text": "미카: 나는 변하지 않았다, 벨로타가 변한 것 — 벨로타가 가게를 나감" },
+    { "scene": "ep:d_nikke_mica_snowbuddy_03", "text": "미카가 벨로타를 찾아다님, 폴리: 자신감이 가득해졌다" },
+    { "scene": "ep:d_nikke_mica_snowbuddy_04", "text": "숙소에 숨은 벨로타, 미카: 내 마음가짐이 변했다 — 화해" },
+    { "scene": "ep:d_nikke_mica_snowbuddy_05", "text": "혼자 지휘관실에 온 미카 — 영원한 어린아이의 세상에서 나왔다" }
+  ],
+  "facts": [
+    {
+      "id": "F1225",
+      "text": "설온장에 다녀온 뒤 미카는 벨로타의 장난에 놀라거나 곤란해하지 않고 제 의견을 분명히 말하며, 벨로타가 없어져도 울지 않고 찾아 나서는 등 자신감 있게 변했다 — 미카는 벨로타라는 소중한 것이 또 없어질까 무서웠지만 설온장에서 주변 환경도 곁의 사람들도 변했음을 깨달았고, 소중한 건 앞으로 자기가 지키면 된다며 자기가 아니라 마음가짐이 변했다고 했다",
+      "about": ["person:미카", "person:벨로타", "place:설온장"],
+      "evidence": [
+        { "scene": "ep:d_nikke_mica_snowbuddy_01", "lines": ["47-57"] },
+        { "scene": "ep:d_nikke_mica_snowbuddy_03", "lines": ["90-95", "112-117"] },
+        { "scene": "ep:d_nikke_mica_snowbuddy_04", "lines": ["72-91"] }
+      ],
+      "reason": "벨로타 · 폴리 · 지휘관의 말과 미카 본인 말. 미카가 인용한 벨로타의 옛말(04#75-77 '언제 죽나 감시하는 어른도 … 없는데 아직 자유롭지 않다')은 F550의 고아원 기억과 같은 말이라 따로 세우지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1226",
+      "text": "벨로타는 미카가 어른스러워지길 누구보다 바랐으면서도 막상 미카가 확 변하자 받아들이지 못해 숙소에 숨었고, 데리러 온 미카의 말을 듣고는 자기도 미카보다 더 어른스러워지겠다며 돌아왔다",
+      "about": ["person:벨로타", "person:미카"],
+      "evidence": [{ "scene": "ep:d_nikke_mica_snowbuddy_04", "lines": ["7-20", "97-111"] }],
+      "reason": "벨로타의 혼잣말과 장면",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1227",
+      "text": "미카는 바뀌지 않는 세상에서 누가 이끌어 주고 도와주길 바라는 영원한 어린아이로 남기를 바라 왔지만, 소중한 것을 지키려면 그 세상을 나와야 한다는 걸 알고 먼저 나왔으니 과거에 갇힌 벨로타도 나오게 하겠다고 했다 — 니케인 미카의 키는 자라지 않는다",
+      "about": ["person:미카", "person:벨로타"],
+      "evidence": [{ "scene": "ep:d_nikke_mica_snowbuddy_05", "lines": ["34-36", "40-54"] }],
+      "reason": "미카 본인 말. 편 제목 · 이벤트 이름 NEVERLAND와 이어지는 비유다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S116",
+      "kind": "기준점",
+      "text": "event_neverland1(설온장) 다녀온 뒤 방주 · 전초기지 — 5편은 그로부터 며칠 뒤",
+      "ref": "event_neverland1",
+      "at": [["뒤", "event_neverland1"]],
+      "evidence": [
+        { "scene": "ep:d_nikke_mica_snowbuddy_01", "lines": [48] },
+        { "scene": "ep:d_nikke_mica_snowbuddy_02", "lines": [9] },
+        { "scene": "ep:d_nikke_mica_snowbuddy_05", "lines": [0] }
+      ],
+      "reason": "벨로타 '설온장을 다녀온 이후로', 지휘관 '설온장 다녀온 이후로 처음 보는'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ]
+}

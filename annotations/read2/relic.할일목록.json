@@ -1,0 +1,85 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M25\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "relic:할일목록",
+  "session": "M25",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I229",
+      "target": "person:베히모스",
+      "evidence": [{ "scene": "relic:할일목록_00", "lines": ["0-2"] }],
+      "reason": "B — 수정 지역을 지키고 아무한테나 말 걸지 말라는 몫. 수정 지역의 주인이자 대화를 원하던 베히모스(F1533 · F1546).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I230",
+      "target": "person:지즈",
+      "evidence": [{ "scene": "relic:할일목록_01", "lines": [0] }],
+      "reason": "Z — 수량 · 기한 상관없이 귀한 것. 중요한 물건을 잘 찾아 날개에 넣어 다니는 지즈(F1865).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I231",
+      "target": "person:바하무트",
+      "evidence": [{ "scene": "relic:할일목록_02", "lines": ["0-2"] }],
+      "reason": "두 번째 B — 압도적인 물량. 포비스트 넷 가운데 남은 하나이고, ch41에서 '바하무트들'로 여럿이 나온다(F2180).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I232",
+      "target": "person:레비아탄",
+      "evidence": [{ "scene": "relic:할일목록_03", "lines": ["0-1"] }],
+      "reason": "L — 실험을 계속하고 조합식을 정립할 것. 알 · 용해액 실험을 하던 레비아탄(F1808).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E631",
+      "act": "재언급",
+      "points": ["F1546"],
+      "text": "베히모스의 할 일에 '돌아다니지 말 것, 아무한테나 말 걸지 말 것'이 적혀, 외로워 대화를 원하던 베히모스를 되짚는다",
+      "about": ["person:베히모스"],
+      "evidence": [{ "scene": "relic:할일목록_00", "lines": ["1-2"] }],
+      "reason": "#1-2. 지루해 산책하고 말 걸던 베히모스(F1546, ch32 잔소리 D507).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E632",
+      "act": "암시",
+      "points": ["F1872"],
+      "text": "지즈의 할 일 '수량 · 기한 상관없이 무조건 귀한 거'가, 땅속 깊이 묻힌 코어 둘 목 없는 라피의 몸을 주워 오는 일을 흘린다",
+      "about": ["person:지즈"],
+      "evidence": [{ "scene": "relic:할일목록_01", "lines": [0] }],
+      "reason": "#0. ch38(F1872).",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E633",
+      "act": "암시",
+      "points": ["F1862"],
+      "text": "레비아탄의 할 일 '실험 계속할 것, 조합식 정립할 것'이, 실험을 그만뒀다는 ch36의 말과 달리 정돈된 알을 만드는 기술을 흘린다",
+      "about": ["person:레비아탄"],
+      "evidence": [{ "scene": "relic:할일목록_03", "lines": ["0-1"] }],
+      "reason": "#0-1. ch37에서 등급별로 정돈된 알이 드러난다(F1862).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

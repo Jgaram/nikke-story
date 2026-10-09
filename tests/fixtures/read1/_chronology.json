@@ -1,0 +1,9 @@
+{
+  "_comment": "예시 — 시대 기준점(annotations/chronology.json과 같은 꼴). 갓데스 폴 하나만 둔다",
+  "session": "X1b",
+  "by": "claude",
+  "date": "2026-10-08",
+  "eras": [
+    { "id": "@갓데스_폴", "name": "갓데스 폴(엘리베이터 사건)", "target": "incident:갓데스_폴", "years": 70, "basis": ["S2"], "reason": "예시 기록 S2 — '70년 전'" }
+  ]
+}

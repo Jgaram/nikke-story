@@ -1,0 +1,85 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:세르반_01",
+  "session": "M01",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [
+    {
+      "id": "I8",
+      "target": "person:세르반",
+      "speaker": true,
+      "evidence": [{ "scene": "sub:세르반_01", "lines": [62] }],
+      "reason": "지상 좌표에서 '…후배님?' 하고 부른 목소리에 지휘관이 '세르반?'(#63), 이어 세르반 이름표로 말한다(#64)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "I9",
+      "target": "person:버닝엄",
+      "evidence": [{ "scene": "sub:세르반_01", "lines": [19, 59, 108] }],
+      "reason": "세르반이 이름 없이 '당신의 까마득하게 높은 상사가 제 아버지'(#19) · '제 아버지 이름'(#59) · '아버지께 당신의 공로를'(#108) — 아버지는 부사령관 버닝엄(F349)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E51",
+      "act": "암시",
+      "points": ["F349"],
+      "text": "세르반이 아버지께 지휘관의 공로를 말해 두었으니 보급품이 좋아지거나 고위 간부의 '이유 모를 배려'가 있으면 자기 감사로 알라 한다 — 아버지가 부사령관 버닝엄이라는 것(F349)",
+      "about": ["person:세르반", "person:버닝엄"],
+      "evidence": [{ "scene": "sub:세르반_01", "lines": ["108-111"] }],
+      "reason": "#108-111. 이름은 sub:세르반_03에서 나온다(F349)",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D66",
+      "person": "person:세르반",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "호위로 데려온 양산형 니케가 자기 대신 죽는 것을 '그들의 역할'로 여기고, 니케도 마음이 상할 수 있다는 생각을 해 본 적이 없다",
+      "evidence": [{ "scene": "sub:세르반_01", "lines": ["67-77"] }],
+      "reason": "#71-72 '당연히 죽었죠. 절 대신해서요' · #76-77",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    },
+    {
+      "id": "D67",
+      "person": "person:세르반",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "가짜 훈장을 사 오게 한 의뢰인 '후배님'",
+      "after": "평판을 되찾아 준 은인으로 아버지께 공로를 전하는 '친애하는 후배님'",
+      "trigger": [{ "scene": "sub:세르반_01", "lines": ["80-98"] }],
+      "evidence": [{ "scene": "sub:세르반_01", "lines": ["100-113"] }],
+      "reason": "제발 도와 달라(#33-34) → 로드 급 무리 영상 → #101-103 · #108-113",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U34",
+      "topic": "방주 사회",
+      "points": ["F196"],
+      "text": "로열 계층은 아버지 이름만 대면 지상으로 가는 엘리베이터 보안도 통과하고, 양산형 니케 몇 기를 호신용으로 데려다 쓴다 — '평판에 죽고 평판에 사는' 그들에게 거짓말쟁이 소문은 죽음보다 나쁘다",
+      "about": ["person:세르반"],
+      "evidence": [{ "scene": "sub:세르반_01", "lines": ["45-47", "57-59", "67-68"] }],
+      "reason": "#46-47 · #59 · #67. 로열의 성과 꾸미기는 P1 U19 — 여기는 특권과 니케 부리기라는 새 면",
+      "status": "확정",
+      "confidence": "확실",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+    }
+  ]
+}

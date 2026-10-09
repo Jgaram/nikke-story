@@ -1,0 +1,62 @@
+{
+  "unit": "char:354",
+  "session": "R56",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "해적 카페 건으로 헬름에게 혼난 마스트가 지휘관을 보호자로 데려가고, 헬름은 3일 근신(보호자 동행 외출 허용)을 내린다 — 휴가를 며칠 더 쓰겠다고 떼쓴 마스트에게 규정을 피해 주는 헬름의 배려다(01). '로망 탐색' 1일 차: 해골 돌은 부서지고, 고양이 울음은 고양이 흉내를 연습하던 프리바티였고, 전파탑에 깃발을 잊고 간다(02). 2일 차: 지상의 버려진 놀이공원 — 해적선에 깃발은 걸지만 연못의 괴수 그림자 · 귀신 모형 · 연료 없음(03). 3일 차: 쇼핑몰 데이트 — 해적 영화 · 헬름과 앵커 선물, 메이드를 좋아하느냐는 물음(04). 마지막 무대는 앵커 · 신 · 트로니와 밤새 다시 만든 해적 카페 — 로망 찾기는 핑계였고, 마스트는 지휘관만의 메이드가 되어 시중을 들다 평소처럼 럼주를 마시고, 지휘관이 마스트를 끌어안는다(05).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_mast_romanticmaid_01",
+      "text": "헬름의 3일 근신 — 보호자 동행 외출, 실은 휴가를 더 쓰려는 마스트를 위한 것"
+    },
+    {
+      "scene": "ep:d_nikke_mast_romanticmaid_02",
+      "text": "로망 탐색 1일 차 — 해골 돌 · 고양이(프리바티) · 깃발 없이 전파탑"
+    },
+    {
+      "scene": "ep:d_nikke_mast_romanticmaid_03",
+      "text": "로망 탐색 2일 차 — 지상 놀이공원의 해적선, 연못 괴수 · 귀신 모형"
+    },
+    {
+      "scene": "ep:d_nikke_mast_romanticmaid_04",
+      "text": "로망 탐색 3일 차 — 쇼핑몰 데이트, 메이드를 좋아하느냐는 물음"
+    },
+    {
+      "scene": "ep:d_nikke_mast_romanticmaid_05",
+      "text": "다시 만든 해적 카페 — 지휘관만의 메이드 마스트"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1784",
+      "text": "해적 카페로 메이드 카페를 무단 개조한 일로 징계 · 벌금은 없었지만, 헬름은 휴가를 며칠 더 쓰겠다고 떼쓴 마스트에게 — 규정상 휴가는 며칠 이상 잇따라 쓸 수 없어 — 보호자(지휘관)와 동행하면 외출할 수 있는 3일 근신을 주었다 — 마스트는 그 사흘을 지휘관과 보내고 앵커 · 신 · 트로니와 해적 카페를 다시 만들어 지휘관만의 메이드가 되었다",
+      "about": ["person:헬름", "person:마스트", "person:지휘관", "org:이지스"],
+      "evidence": [
+        { "scene": "ep:d_nikke_mast_romanticmaid_01", "lines": ["43-61", "84-89"] },
+        { "scene": "ep:d_nikke_mast_romanticmaid_05", "lines": ["0-15", "31-36"] }
+      ],
+      "reason": "헬름의 처분과 마스트의 설명(01 #84-88), 다시 만든 해적 카페(05)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S205",
+      "kind": "기준점",
+      "text": "event_romanticvalentine 직후 — 해적 카페 사고에 대한 3일 근신",
+      "ref": "event_romanticvalentine",
+      "at": [["직후", "event_romanticvalentine", "3일"]],
+      "evidence": [{ "scene": "ep:d_nikke_mast_romanticmaid_01", "lines": [7, 29] }],
+      "reason": "'요번에 주인장이랑 내 로망 중 하나는 해결했잖수'(#7) · '해적 카페 관련해서 사고 친 것'(#29)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

@@ -1,0 +1,63 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M20\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:관짝이_01",
+  "session": "M20",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E461",
+      "act": "재언급",
+      "points": ["F1317"],
+      "text": "그레이브가 수정에 에너지를 주입해 확장시키는 말뚝을 꺼내고, 네온은 언노운 시절 그걸로 공격받았다고 한다",
+      "about": ["person:그레이브"],
+      "evidence": [{ "scene": "sub:관짝이_01", "lines": ["124-141"] }],
+      "reason": "#129-130 — ch28에서 언노운이 말뚝을 수정에 박아 벽을 만든 일(F1317)의 장치를 밝힌다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E462",
+      "act": "암시",
+      "points": ["F1632"],
+      "text": "고친 관을 본 신데렐라가 '넌 여전히 대단하구나, 아름다운 실력'이라 한다",
+      "about": ["person:신데렐라", "person:그레이브"],
+      "evidence": [{ "scene": "sub:관짝이_01", "lines": ["177-180"] }],
+      "reason": "#179 '여전히' — 그레이브가 2세대 페어리 테일을 만든 천재였다는 것(F1632, ch33)을 아는 말.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    },
+    {
+      "id": "E463",
+      "act": "재언급",
+      "points": ["F1408"],
+      "text": "신데렐라가 '실험해 보고 싶다'고 하자 그레이브가 '…실험'이라 되뇌며 굳는다",
+      "about": ["person:그레이브"],
+      "evidence": [{ "scene": "sub:관짝이_01", "lines": ["185-191"] }],
+      "reason": "#186 · #189 — 인간에게 배를 갈리고 머리를 찔린 기억(F1408)이 '실험'이라는 말에 걸린다.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D519",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:신데렐라"],
+      "before": "죽기 직전의 그녀를 관에 넣어 지고 다닌",
+      "after": "관에 누운 그녀를 다시 보고 싶지 않다며 산 사람이 눕는 침대를 만들어 주겠다는",
+      "evidence": [{ "scene": "sub:관짝이_01", "lines": ["206-242", "258-274"] }],
+      "reason": "#220-221 · #272-273 '침대는 산 사람이 눕는 곳' — 신데렐라도 '네가 만든 안식처'라 받는다(#241).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+    }
+  ],
+  "life": []
+}

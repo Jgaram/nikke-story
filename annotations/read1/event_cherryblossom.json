@@ -1,0 +1,189 @@
+{
+  "unit": "event_cherryblossom",
+  "session": "R20",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "세이메이카이 당주 사쿠라의 하루 지아비 이벤트 — 언더월드 퀸과 꽃의 맹약이 처음 제대로 소개된다. 대대로 혈통으로 후계를 이어 온 세이메이카이 식솔들이 부군을 들이라 재촉하자(prologue), 니케가 된 것을 숨긴 채 후계를 만들 수 없는 사쿠라는 '지상에서 온 벚나무 아래 맹세의 키스 = 영원한 사랑' 소문을 이용해 지휘관에게 하루만 지아비가 되어 달라고 한다(01_s). 축제에서 유니 · 미하라(01_e), 결혼 소문을 듣고 '누님의 허락'을 외치는 모란회 목단(02_s — 둘은 복숭아 퍼펙트 공장 앞에서 형제의 잔을 나눴다), 공연을 방해받은 노이즈(02_e)가 끼어든다. 언더월드 퀸은 큰 행사마다 한 조직이 당번을 서고, 양지에서 [구역]을 나누는 것은 룰 위반이다 — 신생 갱단 리버티가 벚꽃 밑을 제 구역이라며 자릿세를 뜯자(03_s) 사쿠라는 뿌리를 치러 간다(03_e). 사쿠라가 들려주는 회상: 언더월드 퀸(사쿠라 · 목단 · 로산나)은 이그조틱처럼 방주의 어둠을 제어하려 만든 스쿼드이고, 지상 시절부터 바뀐 적 없는 테트라 CEO 머스탱이 양극화로 방주가 무너지는 것을 막으려 그들에게 목줄 대신 왕관을 씌운 약속이 [꽃의 맹약]이다(intermission_01). 리버티 보스를 제압한 사쿠라는 폭력으로 폭력을 억누르는 까닭을 말하고 그들을 식솔로 받아들인다 — 엔터 헤븐이 리버티에 지원을 제안한 적이 있다(04). 목단을 복숭아 주로 재우고(05), 인공으로 생을 연장한 '영원의 벚꽃' 아래에서 사쿠라는 영원은 맹약의 전리품이지만 때가 되면 떨어져야 한다고 말하고, 진심을 담아 지휘관과 입을 맞춘다(06). 에필로그에서 사쿠라는 입맞춤이 진짜였다고 밝혀 목단 · 노이즈를 놀라게 한다.",
+  "scenes": [
+    { "scene": "event_cherryblossom_prologue", "text": "벚나무 맹세 드라마 · 후계 재촉 — 사쿠라가 축제를 맡고 지아비를 맞으러 간다" },
+    { "scene": "event_cherryblossom_01_s", "text": "하루 지아비 제안 — 니케임을 숨긴 당주, 후계를 만들 수 없는 몸" },
+    { "scene": "event_cherryblossom_01_e", "text": "축제 · 유니와 미하라 — 안쪽에서 돈을 뜯는 자들, 목단 등장" },
+    { "scene": "event_cherryblossom_02_s", "text": "목단의 결혼 반대 — 행사 당번 룰, 형제의 잔" },
+    { "scene": "event_cherryblossom_02_e", "text": "공연을 방해받은 노이즈 — 조직원이 둘을 막고 자리를 뜸" },
+    { "scene": "event_cherryblossom_03_s", "text": "리버티의 자릿세 · 통행료 — 양지의 [구역]은 룰 위반" },
+    { "scene": "event_cherryblossom_03_e", "text": "신생 갱단 리버티 — 맹약에 따라 모난 돌을 부순다, 지휘관 동행" },
+    { "scene": "event_cherryblossom_intermission_01", "text": "회상: 꽃의 맹약 — 언더월드 퀸 셋과 머스탱, 목줄 대신 왕관" },
+    { "scene": "event_cherryblossom_04_s", "text": "리버티 보스 — 룰을 알고 어긴 자에게 관용 없음" },
+    { "scene": "event_cherryblossom_04_e", "text": "엔터 헤븐의 제안 · 폭력으로 폭력을 억누름 — 리버티를 식솔로" },
+    { "scene": "event_cherryblossom_05_s", "text": "꽃놀이 — 목단에게 복숭아 주" },
+    { "scene": "event_cherryblossom_05_e", "text": "목단을 취하게 해 쓰러뜨림 — 약속된 시간" },
+    { "scene": "event_cherryblossom_06_s", "text": "벚나무로 — 조직원을 두고 손을 잡고 걷다" },
+    { "scene": "event_cherryblossom_06_e", "text": "영원의 벚꽃 — 찰나를 잃은 사쿠라, 맹세의 키스" },
+    { "scene": "event_cherryblossom_epilogue", "text": "키스는 진짜 — 목단 · 노이즈를 두고 사쿠라가 지휘관을 데려감" }
+  ],
+  "facts": [
+    {
+      "id": "F828",
+      "text": "세이메이카이는 대대로 혈통으로 후계를 이어 왔고 당주 사쿠라가 니케의 육신을 얻은 것은 극소수만 알아, 식솔들은 부군을 들여 후계를 만들라 재촉한다 — 후계를 만들 수 없는 몸인 사쿠라는 시간을 벌려고 지휘관에게 하루만 지아비가 되어 벚나무 아래 사랑을 맹세하는 모습을 보여 달라고 했다",
+      "about": ["org:세이메이카이", "person:사쿠라"],
+      "evidence": [{ "scene": "event_cherryblossom_01_s", "lines": ["15-32", "47-53"] }, { "scene": "event_cherryblossom_prologue", "lines": ["25-39"] }],
+      "reason": "사쿠라 본인 말(01_s #15–32, #51–53). 식솔들이 몰려와 '부군을 들이셔야 합니다'(prologue #30–31)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F829",
+      "text": "언더월드 퀸은 조직 간 마찰을 줄이려 큰 행사마다 한 조직이 당번으로 행사를 지키는 룰을 두었고, 아우터 림이 아닌 방주 생활 지구(양지)에서 [구역]을 나누는 것은 룰 위반이다 — 언더월드 퀸은 [맹약]에 따라 룰을 어긴 모난 돌을 부숴 원래 자리로 돌려놓는다",
+      "about": ["org:언더월드_퀸", "concept:꽃의_맹약", "place:아우터_림"],
+      "evidence": [
+        { "scene": "event_cherryblossom_02_s", "lines": ["27-29", 38] },
+        { "scene": "event_cherryblossom_03_s", "lines": ["64-66"] },
+        { "scene": "event_cherryblossom_03_e", "lines": ["32-33", "48-52"] }
+      ],
+      "reason": "사쿠라(02_s #27–29 · #38, 03_s #64–66, 03_e #48–52), 목단(03_e #32–33)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F830",
+      "text": "언더월드 퀸은 이그조틱처럼 아우터 림과 방주의 범죄(어둠)를 제어하려 만든 니케 스쿼드로, 뒷세계 3대 조직의 보스 — 방주 생성 이래 가장 오래된 세이메이카이의 당주 사쿠라, 소수 정예 협객 모란회의 목단, 신생 헤도니아의 로산나 — 이며, 셋 모두 죽음 뒤 스스로 니케가 되기를 택했다",
+      "about": ["org:언더월드_퀸", "person:사쿠라", "person:목단", "person:로산나", "org:세이메이카이", "org:모란회", "org:헤도니아", "org:이그조틱"],
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["14-36"] }],
+      "reason": "사쿠라의 설명(#20–22, #25–36). 니케가 되기 전부터 보스였던 이도, 된 뒤 보스가 된 이도 있다(#34–35 — 로산나는 맹약 때 보스가 아니었다 #127)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F831",
+      "text": "꽃의 맹약은 사쿠라 · 목단 · 로산나가 니케가 되기로 한 때 머스탱이 그들을 원해 맺은 약속이다 — 어둠을 인정하되 그 위에 군림해 정도를 벗어난 것을 벌하라는 것으로, 머스탱은 목줄 대신 왕관을 씌우는 대가로 맹약을 어기면 어떻게든 반드시 대가를 받겠다고 했다",
+      "about": ["concept:꽃의_맹약", "person:머스탱", "org:언더월드_퀸", "person:사쿠라", "person:목단", "person:로산나"],
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["37-58", "97-132"] }],
+      "reason": "사쿠라의 말(#37–50)과 회상 속 머스탱(#51–58, #100–118, #132). 셋 모두 동의(#119–130)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F832",
+      "text": "머스탱은 양극화로 소외된 이와 그렇지 않은 이의 증오와 총성을 방치하면 방주가 무너진다고 보고, 어둠을 모르는 이의 위선 대신 아우터 림과 방주를 모두 알고 무법자를 사람으로 보는 셋을 골랐다 — 그들이 지켜 낸 인류는 사람답게 즐기며 살아야 '나의 Goddess들'의 희생이 헛되지 않다고 했다",
+      "about": ["person:머스탱", "org:언더월드_퀸", "place:아우터_림", "org:갓데스"],
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["64-96"] }],
+      "reason": "회상 속 머스탱의 말(#64–78, #84–96). 3대 기업 CEO가 왜 아우터 림을 돕느냐는 물음에 도움이 아니라 방주 사회의 평화를 위해서라 답한다(#79–87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F833",
+      "text": "사쿠라에 따르면 머스탱은 3대 기업이 생긴 지상 시절부터 지금까지 — 미실리스 · 엘리시온의 CEO가 차례로 바뀌는 동안 — 단 한 번도 바뀌지 않은 테트라의 유일무이한 CEO다",
+      "about": ["person:머스탱", "org:테트라", "org:미실리스", "org:엘리시온"],
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["40-43"] }],
+      "reason": "사쿠라의 말(#40–43). 어떻게 그럴 수 있는지는 말하지 않는다 → Q115",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F834",
+      "text": "신생 갱단 리버티는 벚꽃 축제 거리를 제 [구역]이라며 자릿세 · 통행료를 뜯다 세이메이카이에게 제압되었는데, 엔터 헤븐의 지원 제안을 받은 적이 있었다 — 사쿠라는 그들을 세이메이카이 식솔로 받아들여 머물 곳과 밥을 주기로 했고, 많은 소규모 조직을 그렇게 받아들여 왔다",
+      "about": ["org:세이메이카이", "person:사쿠라", "org:엔터_헤븐"],
+      "evidence": [{ "scene": "event_cherryblossom_03_s", "lines": ["25-66"] }, { "scene": "event_cherryblossom_04_e", "lines": ["2-6", "44-53", "60-74"] }],
+      "reason": "리버티 조직원(03_s #44–61), 보스의 말 '엔터 헤븐이 지원해 준다고 할 때 따랐어야 했는데'(04_e #5), 사쿠라는 엔터 헤븐과 연결되지 않아 다행이라 한다(#2–3). 식솔로 받아들임(#45–53, #63–74). 리버티는 한 번만 나와 사전에 넣지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F835",
+      "text": "사쿠라는 양지 사람들이 뒷세계를 위협으로 느껴 토벌하지 않도록 폭력을 폭력으로 억누른다며, 아우터 림이 방주에 겨누든 방주가 아우터 림에 겨누든 제 앞의 어떤 총구도 허락하지 않고 분쟁을 끊겠다고 했다",
+      "about": ["person:사쿠라", "org:세이메이카이", "place:아우터_림"],
+      "evidence": [{ "scene": "event_cherryblossom_04_e", "lines": ["13-16", "34-41"] }],
+      "reason": "사쿠라가 리버티 보스에게 한 말(#13–16, #34–41)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F836",
+      "text": "벚꽃 축제의 '지상에서 온 벚나무'는 인공적으로 생을 연장받아 인공 햇빛뿐인 방주에서 살아남은 나무로 [영원의 벚꽃]이라고도 불리며, 이번 축제에서 처음 민간인에게 개방되었다 — 그 아래서 맹세의 키스를 하면 영원한 사랑을 한다는 소문이 드라마로 퍼졌다",
+      "about": ["place:방주"],
+      "evidence": [{ "scene": "event_cherryblossom_06_e", "lines": ["10-18"] }, { "scene": "event_cherryblossom_prologue", "lines": ["2-19"] }],
+      "reason": "사쿠라(06_e #12–18), 드라마 · 조직원의 보고(prologue #4–6, #16–17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    },
+    {
+      "id": "F837",
+      "text": "사쿠라는 찰나를 버리고 얻은 영원(니케의 몸)을 맹약의 대가로 얻은 가장 큰 전리품이라 하며 후회하지 않지만, 당주로서의 삶이 끝나면 세이메이카이를 해치지 않도록 때에 맞춰 떨어지겠다고 한다 — 벚나무 아래서 지휘관과 진심을 담아 입을 맞추고, 아직 할 일이 있어 영원을 약속하지는 않았다",
+      "about": ["person:사쿠라", "org:세이메이카이", "person:지휘관"],
+      "evidence": [{ "scene": "event_cherryblossom_06_e", "lines": ["24-43", "55-82"] }, { "scene": "event_cherryblossom_epilogue", "lines": ["25-27"] }],
+      "reason": "사쿠라 본인 말(06_e #25–43, #57–76), 입맞춤(#82), 에필로그에서 진짜였다고 밝힘(#25–27). 당주 뒤로는 지상의 전장이나 방주의 어둠으로 갈 수 있다고 한다(#32–33)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q115",
+      "text": "3대 기업이 생긴 지상 시절부터 지금까지 한 번도 바뀌지 않았다는 테트라 CEO 머스탱은 어떻게 그토록 오래 CEO로 있으며, 갓데스를 '나의 Goddess들'이라 부르는 까닭은 무엇인가?",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["40-43", 94] }],
+      "reason": "사쿠라가 '단 한 번도 바뀌지 않은' CEO라 강조하고(#40–43), 머스탱이 갓데스를 제 것처럼 부른다(#94). 수십 년 넘는 재임은 사람의 수명으로 설명되지 않아 원문이 던진 물음으로 본다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    }
+  ],
+  "events": [],
+  "times": [
+    {
+      "id": "S58",
+      "kind": "회상",
+      "text": "꽃의 맹약 — 사쿠라 · 목단 · 로산나가 니케가 되기로 한 때(로산나가 아직 보스가 아니던 때)",
+      "ref": "concept:꽃의_맹약",
+      "at": [["전", "event_cherryblossom"]],
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["51-132"] }],
+      "reason": "사쿠라가 들려주는 과거 장면 — 맹약은 '저희가 스스로 니케가 되길 선택한 그 순간' 맺어졌다(#37)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R20" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "org:언더월드_퀸",
+      "evidence": [{ "scene": "event_cherryblossom_02_s", "lines": [27] }],
+      "note": "뒷세계 3대 조직의 보스 셋(사쿠라 · 목단 · 로산나)의 니케 스쿼드",
+      "new": false
+    },
+    {
+      "target": "org:모란회",
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": [35] }],
+      "note": "뒷세계 3대 조직 — 협객이라 불리는 소수 정예, 보스 목단",
+      "new": true
+    },
+    {
+      "target": "org:헤도니아",
+      "evidence": [{ "scene": "event_cherryblossom_prologue", "lines": [35] }],
+      "note": "뒷세계 3대 조직 — 신생 세력, 보스 로산나",
+      "new": true
+    },
+    {
+      "target": "concept:꽃의_맹약",
+      "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": [132] }],
+      "note": "머스탱과 언더월드 퀸 셋의 약속 — 무질서한 어둠에 통제를",
+      "new": true
+    },
+    {
+      "target": "person:목단",
+      "evidence": [{ "scene": "event_cherryblossom_01_e", "lines": [93] }],
+      "note": "모란회 보스 — 의리를 외치는 협객, 사쿠라를 '동생'이라 부른다",
+      "new": false
+    }
+  ],
+  "revisit": []
+}

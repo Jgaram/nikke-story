@@ -1,0 +1,71 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M99\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_trueflavor",
+  "session": "M99",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I675",
+      "target": "person:에이드",
+      "speaker": true,
+      "evidence": [{ "scene": "event_trueflavor_04_s", "lines": [84] }],
+      "reason": "지휘관이 초대한 손님의 첫 인사 #84 '안녕하세요' 뒤 #88 '메이드시군요' · #89-90 에이드 이름표로 '에이드랍니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2157",
+      "person": "person:크러스트",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "브래디가 지휘관을 맛볼 때 같은 표정을 짓는 '기억도 정보도 없는 맛'을 만들어야 한다고 믿던",
+      "after": "행복의 맛은 초대장 · 미소 · 즐거운 요리까지 담긴 것이라며, 일방적인 호의를 욕심이라 깨닫고 원래 요리로 돌아가는",
+      "trigger": [{ "scene": "event_trueflavor_05_s", "lines": ["59-79"] }],
+      "evidence": [{ "scene": "event_trueflavor_05_e", "lines": ["33-48", "61-64"] }],
+      "time": "S218",
+      "points": ["F1851"],
+      "reason": "05_s#62-68 에이드 '행복의 맛은 음식의 맛에서만 느낄 수 없다' → 05_e#41 '욕심을 냈던 거예요' · #63-64. D629(첫 번째 목표)의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    },
+    {
+      "id": "D2158",
+      "person": "person:크러스트",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:브래디"],
+      "before": "브래디를 깜짝 놀라게 하려 주방 출입을 막고 연구를 혼자 숨기던",
+      "after": "처음으로 정식 초대장을 보내 연구를 털어놓고 울며 사과해, '혼자 말고 같이 연구하자'는 약속을 받는",
+      "trigger": [{ "scene": "event_trueflavor_05_e", "lines": ["66-73"] }],
+      "evidence": [{ "scene": "event_trueflavor_06_e", "lines": ["12-20", "84-95"] }],
+      "time": "S218",
+      "reason": "03_s#73-80 숨긴 까닭 → 05_e#68 '한 번도 정식으로 초대한 적이 없었다' → 06_e#93-95 '같이 연구하자' '응…!'. D628의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    },
+    {
+      "id": "D2159",
+      "person": "person:브래디",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "맛과 정보가 쏟아져 먹는 게 즐겁지 않아 지휘관의 '온전한 맛'만 찾던",
+      "after": "행복의 맛이 여러 형태로 있음을 알아, 학생들의 서툰 감정이 담긴 음식도 '좋다'며 맛보는 게 지루하지 않아진",
+      "trigger": [{ "scene": "event_trueflavor_06_e", "lines": ["78-81", 111] }],
+      "evidence": [{ "scene": "event_trueflavor_epilogue", "lines": ["65-67", "76-82"] }],
+      "time": "S218",
+      "reason": "epilogue#78 '음식을 맛보는 게, 마냥 지루하지만은 않아졌어' · #82 '진심이라는 맛을 알게 된 덕분'. D625의 뒤.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M99" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 시점 S218 그대로. 브래디 → 크러스트는 처음부터 '늘 행복했다'(06_e#78)고 해 변화로 적지 않았다. 티아 · 에이드의 행복론은 편 안의 조언이라 인물 변화로 적지 않았다. 에이드 '지난번 맛없는 오므라이스'(04_e#59)는 event_newflavor의 되풀이라 3층 범위 밖."
+}

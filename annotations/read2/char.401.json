@@ -1,0 +1,95 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M87\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "char:401",
+  "session": "M87",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I656",
+      "target": "person:마나",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_sin_04", "lines": ["80-81"] }],
+      "reason": "#81 '정신 차리십시오' → #83 마나 '갱생관 외곽의 쓰레기장입니다'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D1983",
+      "person": "person:신",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "컨버터 너머로 상냥하게 굴며 퍼펙트 바를 건네고, 멋대로 상점 · 벌점을 매기며 질문마다 말을 돌려 상대를 제 뜻대로 움직이는",
+      "evidence": [{ "scene": "ep:d_nikke_sin_01", "lines": ["41-43", "59-60", "66-67", "94-102"] }],
+      "points": ["F789"],
+      "reason": "#42 '이거 줄게' · #60 '벌점 10점!' · #66 신발 얘기로 돌림 · #99 '상점 30점'. 마나의 '말로 꼭두각시로 만든다'(F789) 그대로.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1984",
+      "person": "person:신",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "남이 자기를 위해 죄를 짓는 것은 가장 성의 있는 행동이고, 부탁한 적 없으니 잘못은 그렇게 하는 쪽에 있다는",
+      "evidence": [{ "scene": "ep:d_nikke_sin_05", "lines": ["60-82"] }],
+      "points": ["F790"],
+      "reason": "#67 '타인이 날 위해 보여줄 수 있는 가장 성의 있는 행동' · #81-82 '해주겠다고 하는 쪽이 더 문제 · 난 부탁한 적도 없는데'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1985",
+      "person": "person:신",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "새 교관을 '선량한 교관'이라 추켜세우며 상점 · 벌점으로 신발 세탁 · 카트 끌기까지 시키는, 꼭두각시로 부리는",
+      "evidence": [{ "scene": "ep:d_nikke_sin_03", "lines": ["49-52", "62-81"] }],
+      "points": ["F791"],
+      "reason": "#50 '교관 너무 좋은 사람 같아' · #63 '내 신발 세탁 도와주신대' · #81 '근면한 교관에게 상점 10점'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1986",
+      "person": "person:신",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "상점 · 벌점으로 부리던 교관",
+      "after": "독방을 두려워하는 속을 꿰뚫리자 갱생을 골라 그를 따라 나오고, '말이 통하면 사이 좋아진다'의 산증인이라 부르는",
+      "trigger": [{ "scene": "ep:d_nikke_sin_05", "lines": ["35-37", "84-89"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sin_05", "lines": ["91-93", "119-123"] }],
+      "points": ["F792"],
+      "reason": "#36 '네가 독방을 두려워하기 때문이야' · #37 침묵 → #91 카운터스를 물음 · #123 '여기 있는 교관이 산증인이라니까'. 진심인지 말솜씨인지 원문이 열어 두어 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    },
+    {
+      "id": "D1987",
+      "person": "person:신",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "갱생관 3대 흉악범",
+      "after": "능력을 제한하는 장치를 상시 차고 카운터스와 같은 기지 숙소에서 지내는",
+      "trigger": [{ "scene": "ep:d_nikke_sin_05", "lines": ["88-89"] }],
+      "evidence": [{ "scene": "ep:d_nikke_sin_05", "lines": ["99-106"] }],
+      "points": ["F792"],
+      "reason": "#100 '갱생관 3대 흉악범 중 한 명이 우리 기지에' · #105 '능력을 제한하는 장치를 상시 착용'.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+    }
+  ],
+  "life": [],
+  "note": "3층. 신의 성격 · 신념 · → 지휘관 기준을 이 단위(2022-12)에 세웠다 — 뒤 출시의 D1628(관계 변화)은 그대로 둔다. 시점 실마리 없음. 마나 · 간수 · 죄수 · 카운터스는 얕아 세우지 않았다."
+}

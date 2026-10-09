@@ -1,0 +1,144 @@
+{
+  "unit": "event_romanticvalentine",
+  "session": "R56",
+  "by": "claude",
+  "date": "2026-10-02",
+  "summary": "지상 Sweets & Cocoa 공장을 뒤지던 니케(자원 채집 부대)의 휴대폰에 공장 관리 A.I. 스윗 조니가 데이터를 실어 방주로 숨어든다(prologue). 밸런타인 전, 에이드의 부탁으로 지휘관이 방주의 메이드 카페 분점 임시 점장을 맡는다 — '로망 메이드복' 심사(심사위원 프리바티)를 통과한 마스트(해적 메이드) · 앵커 · 신(갱생 뒤 가벼운 컨버터) · 트로니(사람과 말하는 연습으로 지원)가 메이드다(01). 손님이 맡긴 휴대폰에서 조니가 튀어나오지만 전송 중 데이터가 깨져 있어, 지휘관 · 마스트 · 앵커가 공장에 다녀오고 트로니가 복구한다(02). 조니 Ver.2.14의 보물은 지상 인터넷이 끊길 때까지의 연애물 데이터와 연애 상담 프로그램 [로맨틱 밸런타인] — 메이드들이 빠져들고, 마스트는 '프로토콜 P'로 카페를 해적 카페로 바꾼다(03). 트로니가 미연시처럼 상황극을 하자고 해 조니와 각자 설정을 짠다(intermission · 04_s — 프리바티의 '메이드 몰입'을 본받기로). 해적 카페가 신고되어 헬름이 정리를 시키고, 지휘관은 머스탱의 긴급 호출로 메이드 포 유를 도우러 간다(04_e · 05_s). 메이드들은 길티 · 퀀시 · 일레그의 도움으로 지휘관을 '납치'해 간지럼 고문 — 조니는 배드 엔드를 용납하지 않고 '트루 엔드' = 평소대로 지내는 것이라며 공원에서 엔딩 컷씬을 마련한다(05_e · 06). 에필로그: 조니의 본체와 단말이 메이드 카페에 설치되고, 비인가 A.I. 신고로 프리바티 · 밀크가 온다.",
+  "scenes": [
+    {
+      "scene": "event_romanticvalentine_prologue",
+      "text": "Sweets & Cocoa 공장의 조니가 니케의 휴대폰에 데이터를 실어 방주로 들어온다"
+    },
+    {
+      "scene": "event_romanticvalentine_01_s",
+      "text": "밸런타인 며칠 뒤 지휘관 방의 '메이드 아수라장' — 상황극 장면"
+    },
+    {
+      "scene": "event_romanticvalentine_01_e",
+      "text": "에이드의 부탁으로 메이드 카페 분점 임시 점장 — 마스트 · 앵커 · 신 · 트로니"
+    },
+    {
+      "scene": "event_romanticvalentine_02_s",
+      "text": "순조로운 영업, 이지스의 평시 업무, 트로니가 메이드에 지원한 까닭 — 휴대폰에서 조니가 튀어나온다"
+    },
+    {
+      "scene": "event_romanticvalentine_02_e",
+      "text": "데이터가 깨진 조니 — 공장에서 본체 데이터를 가져와 복구하기로"
+    },
+    {
+      "scene": "event_romanticvalentine_03_s",
+      "text": "복구된 조니 Ver.2.14의 보물(연애물 데이터 · [로맨틱 밸런타인]), 에이드의 제안"
+    },
+    {
+      "scene": "event_romanticvalentine_03_e",
+      "text": "입소문으로 바빠진 카페, 연애물에 빠진 메이드들 — 마스트의 해적 카페 '프로토콜 P'"
+    },
+    {
+      "scene": "event_romanticvalentine_intermission_01",
+      "text": "해적 카페 뒤풀이 — 트로니가 미연시 상황극을 제안, 조니가 돕기로"
+    },
+    {
+      "scene": "event_romanticvalentine_04_s",
+      "text": "히로인 설정 연습, 프리바티의 메이드 포 유 일손 소식"
+    },
+    {
+      "scene": "event_romanticvalentine_04_e",
+      "text": "상황극의 고백 장면 — 헬름이 해적 카페를 정리시키고, 머스탱의 긴급 호출"
+    },
+    {
+      "scene": "event_romanticvalentine_05_s",
+      "text": "머스탱 'Me는 사장이지 지휘관이 아니니까' — 메이드들은 하렘 엔딩을 꾸민다"
+    },
+    {
+      "scene": "event_romanticvalentine_05_e",
+      "text": "길티 · 퀀시 · 일레그의 도움으로 납치 · 간지럼 고문"
+    },
+    {
+      "scene": "event_romanticvalentine_06_s",
+      "text": "조니 '배드 엔드는 안 된다' — 트루 엔드는 평소대로 지내는 것"
+    },
+    {
+      "scene": "event_romanticvalentine_06_e",
+      "text": "공원의 엔딩 컷씬 — 조니가 소녀들의 로망을 돕는 까닭"
+    },
+    {
+      "scene": "event_romanticvalentine_epilogue",
+      "text": "조니의 본체가 메이드 카페에 설치되고, 비인가 A.I. 신고로 프리바티 · 밀크가 온다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F1780",
+      "text": "Sweets & Cocoa의 관리 A.I. 스윗 조니는 공장을 드나든 자원 채집 부대 니케들에게서 인류가 패배해 지하에 갇혔음을 듣고, 니케들의 로망을 돕겠다며 니케의 휴대폰에 데이터를 실어 방주로 들어왔다 — 깨진 데이터를 트로니가 공장의 원본으로 복구했고, 조니(Ver.2.14)는 메이드 카페에 설치된 비인가 A.I.가 되었다",
+      "about": ["person:스윗_조니", "place:Sweets_&_Cocoa", "person:트로니", "org:자원_채집_부대"],
+      "evidence": [
+        { "scene": "event_romanticvalentine_prologue", "lines": ["0-42"] },
+        { "scene": "event_romanticvalentine_02_e", "lines": ["55-77", "97-119"] },
+        { "scene": "event_romanticvalentine_03_s", "lines": ["0-20"] },
+        { "scene": "event_romanticvalentine_epilogue", "lines": ["6-7", 23, "76-77"] }
+      ],
+      "reason": "조니의 설명(02_e)과 트로니의 진단, 에필로그의 설치 · 신고. F808(방주로 옮기자는 제안을 거절하고 공장에 남음)과 이어진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1781",
+      "text": "스윗 조니에게는 지상의 인터넷이 끊기는 순간까지의 연애물(드라마 · 영화 · 소설 · 만화 · 게임) 데이터와, 공장 시절 가장 인기 있던 빅데이터 연애 상담 프로그램 [로맨틱 밸런타인](해결책으로 상황극도 했다) — 실제 사례는 암호화되어 있다 — 이 있었다",
+      "about": ["person:스윗_조니", "place:Sweets_&_Cocoa"],
+      "evidence": [
+        { "scene": "event_romanticvalentine_03_s", "lines": ["39-59", "73-84", "103-105"] },
+        { "scene": "event_romanticvalentine_intermission_01", "lines": ["127-134"] }
+      ],
+      "reason": "조니 · 트로니의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1782",
+      "text": "이지스 스쿼드의 평시 업무는 어드마이어 호 청소 · 파티 준비 · 손님맞이라 마스트 · 앵커는 메이드 일을 곧바로 해냈고, 트로니는 사람과의 대화에 조금 익숙해져 더 어려운 것을 해 보려 메이드 카페 분점에서 일했다 — 갱생한 신은 조금 편한 것으로 바꾼 컨버터를 차고 일했다",
+      "about": ["person:마스트", "person:앵커", "org:이지스", "person:트로니", "person:신"],
+      "evidence": [
+        { "scene": "event_romanticvalentine_02_s", "lines": ["44-50", "77-84"] },
+        { "scene": "event_romanticvalentine_01_e", "lines": ["37-38", 152] }
+      ],
+      "reason": "마스트 · 트로니 · 신의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    },
+    {
+      "id": "F1783",
+      "text": "머스탱은 메이드 포 유가 밸런타인 손님으로 탈진해 곤란해지자 CEO · 부사령관급 보안 등급의 긴급 호출로 지휘관을 불러, 자기는 사장이지 지휘관이 아니라 Love & Peace를 퍼뜨릴 수 없다며 지휘관의 방식으로 메이드들을 도우라 하고, '메이드들뿐 아니라 니케들을 잘 부탁한다'고 했다",
+      "about": ["person:머스탱", "person:지휘관", "org:메이드_포_유"],
+      "evidence": [
+        { "scene": "event_romanticvalentine_04_e", "lines": ["90-110"] },
+        { "scene": "event_romanticvalentine_05_s", "lines": ["1-31"] },
+        { "scene": "event_romanticvalentine_04_s", "lines": ["92-98"] }
+      ],
+      "reason": "머스탱의 말 그대로 — 프리바티가 전한 사정(04_s #96-98)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S204",
+      "kind": "기준점",
+      "text": "event_maidinvalentine 뒤의 어느 밸런타인 — 조니가 방주에 들어온다",
+      "ref": "event_maidinvalentine",
+      "at": [["뒤", "event_maidinvalentine"]],
+      "evidence": [{ "scene": "event_romanticvalentine_01_e", "lines": ["0-3"] }, { "scene": "event_romanticvalentine_02_e", "lines": [33, "56-61"] }],
+      "reason": "조니 '다시 찾아온다고 해놓고서 코빼기도 보이지 않아서'(#33) · '자네들이 처음 들린 후 얼마간'(#56) — 몇 해 뒤인지는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R56", "note": "R56 자체 검토 — 원문 근거 줄 확인" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

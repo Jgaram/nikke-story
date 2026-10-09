@@ -1,0 +1,23 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M02\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "sub:미실리스_연구팀_01",
+  "session": "M02",
+  "by": "claude",
+  "date": "2026-10-05",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U61",
+      "topic": "방주 사회",
+      "text": "명령을 어긴 니케는 처벌받거나 폐기되고, 이름난 지휘관도 대개는 '빈곤한 삶을 사는, 보수에 휘둘리는' 처지로 여겨진다",
+      "about": ["concept:니케", "org:미실리스"],
+      "evidence": [{ "scene": "sub:미실리스_연구팀_01", "lines": ["93-94", "163-166"] }],
+      "reason": "#93-94 라피 · #164-166 연구팀(선택지 '그래' 갈래)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+    }
+  ]
+}

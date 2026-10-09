@@ -1,0 +1,48 @@
+{
+  "unit": "char:203",
+  "session": "R16",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "루피 : 윈터 쇼퍼 호감도 스토리 5편 — 남자친구 지휘관과 보내는 연말(char:200에서 사귀기 시작한 뒤). 루피가 쇼퍼홀릭 채널 라이브로 로열 로드 명품관에서 지휘관의 연말 선물을 사고 스튜디오에 숨겨 두지만, 지상 임무의 카운터스는 모래바람으로 야영하느라 약속 시간에 돌아오지 못한다(01). 이틀 뒤 루피는 스트레스를 쇼핑으로 풀며 5억을 쓰고 한도가 초과되고, 찾아온 지휘관에게 밝은 모습만 보여야 하는데 안 된다며 달아난다. 지휘관은 검색한 '관계 회복법'대로 러브 레터를 쓰지만 아니스에겐 보고서로 읽힌다(02). 지휘관이 먼저 청한 데이트 — 플리 마켓 쇼핑, 사격으로 딴 흰색 트리, 이마 입맞춤 · 포옹(03). 레스토랑에서 '만년 2위 BJ'가 올린 루피 남친 조작 논란 저격 영상을 보고, 둘은 서프라이즈 영상을 다시 찍는다 — 지휘관이 받은 선물은 '너와 함께하는 연말'이라 하자 루피가 운다(04). 올해 한정 눈 내리는 전초기지 유원지에서 루피는 저격 BJ의 말 — 니케와 지휘관은 상하 관계로 오래 가기 힘들고 결국 폐기나 죽음으로 갈라진다 — 을 떠올리며 불안해하고, 지휘관은 '우린 예외가 될 것'이라며 키스한다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_rupee_wintershopper_01", "text": "명품 선물 러쉬 라이브 — 모래바람에 야영하는 카운터스, 지키지 못한 약속" },
+    { "scene": "ep:d_nikke_rupee_wintershopper_02", "text": "5억 쓰고 한도 초과한 루피 — 달아남, 보고서가 된 러브 레터" },
+    { "scene": "ep:d_nikke_rupee_wintershopper_03", "text": "지휘관이 짠 데이트 — 플리 마켓, 흰색 트리, 이마 입맞춤 · 포옹" },
+    { "scene": "ep:d_nikke_rupee_wintershopper_04", "text": "남친 조작 논란 저격 영상 — 다시 찍은 서프라이즈, '너와 함께하는 연말'" },
+    { "scene": "ep:d_nikke_rupee_wintershopper_05", "text": "눈 내리는 유원지 — 니케와 지휘관은 갈라진다는 말, '우린 예외', 키스" }
+  ],
+  "facts": [
+    {
+      "id": "F733",
+      "text": "지상 임무로 연말 약속에 늦어 루피를 상처 입힌 지휘관은 데이트로 관계를 풀고, '남친 조작' 저격 영상에 맞서 서프라이즈 영상을 다시 찍어 주었으며, 니케와 지휘관은 상하 관계와 폐기 · 죽음으로 결국 갈라진다는 말에 불안해하는 루피에게 둘은 예외가 될 것이라며 키스했다",
+      "about": ["person:루피", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_rupee_wintershopper_01", "lines": ["45-55"] },
+        { "scene": "ep:d_nikke_rupee_wintershopper_04", "lines": ["22-50", "76-95"] },
+        { "scene": "ep:d_nikke_rupee_wintershopper_05", "lines": ["15-43"] }
+      ],
+      "reason": "관계의 매듭(R05 기준). 니케 · 지휘관 연애가 갈라진다는 말은 저격 BJ가 한 말을 루피가 옮긴 것이라 세계 규칙으로 세우지 않고 여기에만 담았다(05 #19–24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S50",
+      "kind": "기준점",
+      "text": "MIRACLE SNOW와 같은 연말 — 눈 내리는 전초기지 유원지가 열려 있고, 루피가 앤 이야기를 한다",
+      "ref": "event_miraclesnow1",
+      "at": [["무렵", "event_miraclesnow1"]],
+      "evidence": [{ "scene": "ep:d_nikke_rupee_wintershopper_04", "lines": ["1-3"] }, { "scene": "ep:d_nikke_rupee_wintershopper_05", "lines": ["4-9"] }],
+      "reason": "검색 결과 '전초기지: 눈 내리는 유원지가 있는 곳 (올해 한정!!)'(05 #6)과 루피가 꾸며 준 앤(04 #1–3) — S49의 2주 안팎",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R16" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

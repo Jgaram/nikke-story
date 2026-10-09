@@ -1,0 +1,224 @@
+{
+  "unit": "event_neverland1",
+  "session": "R34",
+  "by": "claude",
+  "date": "2026-09-30",
+  "summary": "크리스마스 온천 이야기(NEVERLAND 1 · 2). 네베가 겨울잠 잘 곳을 파다 북부 기지 근처에서 옛 지상 온천을 찾고, 토브의 도구로 파자 온천수가 솟는다(prologue). 엔더슨 · 잉그리드 · 머스탱은 슈엔(연말이라 바쁨) 없이 회의해 엘리시온(앱솔루트 · 스카우팅) · 테트라(리틀 캐논)를 보내 온천 주변 자원을 찾게 한다 — 방주는 자원이 부족하다(01_s). 카운터스는 정기 점검으로 빠지고 지휘관만 간다. 미카는 크리스마스마다 벨로타에게 불행이 생긴다며 빠지고 싶어 한다(02_s). 공연이 취소된 블랑 · 누아르도 머스탱의 뜻으로 합류(02_e). 언리미티드가 다듬은 온천장 '설온장'에서 루드밀라가 주인장처럼 맞는다(02_e · 03_s). 광물 · 흙 · 애벌레를 모은 뒤 휴가, 벨로타가 넘어지자 미카가 벨로타를 따라다니며 막고 둘이 다툰다(03_e · Intermission). 루드밀라의 덩굴과 나무 이야기, 벨로타의 고백 — 인간 시절 크리스마스에 고아원에서 미카가 보는 앞에서 죽었다(04_s). 다 같이 크리스마스 파티 · 케이크(04_e–05_e), 화해하고 뒷산에 폭죽을 쏘러 간다(06). 2부: 눈보라 속 눈사태로 벨로타가 사라지고(2_01_s), 미카는 천사 고아원의 크리스마스 — 로열 후원자 앞에서 원장의 폭행을 말한 벨로타, 그날 밤 아파도 병원에 못 가고 원장에게 맞는 미카를 감싸던 벨로타 — 를 떠올린다(2_01_e). 절벽으로 걸어가는 미카를 지휘관이 붙잡고(2_02_s), 루드밀라가 미카를 일으켜 수색에 나선다(2_03). 루드밀라는 그 고아원이 제 가문이 후원한 곳이라 밝힌다(2_04_s). 발목을 다친 벨로타는 미카가 또 따라 죽을까 봐 살아 나가기로 한다. 하트 눈뭉치 · 신호탄 흔적과 블랑 · 누아르의 '행운'으로 길을 찾고, 미카가 무너지는 나무다리를 건너 랩쳐와 싸우던 벨로타를 구한다(2_06). 루드밀라가 등불로 둘을 찾아 돌아와 폭죽 파티를 잇는다. 에필로그: 설온장은 북부 임무 니케들을 위해 계속 열기로 했고, 미카는 벨로타를 혼자 놀러 보낸다.",
+  "scenes": [
+    { "scene": "event_neverland1_prologue", "text": "네베 · 토브가 옛 지상 온천을 찾아 파자 온천수가 솟음, 루드밀라가 단장을 생각" },
+    { "scene": "event_neverland1_01_s", "text": "슈엔 없는 회의 — 엘리시온 · 테트라 파견, 자원 부족, 크리스마스 출전 · 카운터스는 정기 점검" },
+    { "scene": "event_neverland1_01_e", "text": "스카우팅 · 앱솔루트 · 리틀 캐논에 임무를 알림, 미카가 빠지고 싶다 함" },
+    { "scene": "event_neverland1_02_s", "text": "미카의 크리스마스 징크스 — 매해 벨로타가 다침" },
+    { "scene": "event_neverland1_02_e", "text": "크리스마스 당일 출발, 블랑 · 누아르 합류, 설온장 도착" },
+    { "scene": "event_neverland1_03_s", "text": "설온장 — 언리미티드가 다듬은 온천, 옷 갈아입기 · 웰컴 티" },
+    { "scene": "event_neverland1_03_e", "text": "광물 · 흙 · 애벌레 수집, 핫 소스 눈뭉치, 벨로타가 넘어짐, 휴가" },
+    { "scene": "event_neverland1_Intermission_01", "text": "미카가 벨로타를 따라다니며 막자 벨로타가 화를 내고 떠남" },
+    { "scene": "event_neverland1_04_s", "text": "루드밀라의 덩굴과 나무, 벨로타: 크리스마스에 고아원에서 미카 앞에서 죽었다" },
+    { "scene": "event_neverland1_04_e", "text": "크리스마스 파티 준비 — 미카도 케이크를 같이 만들기로" },
+    { "scene": "event_neverland1_05_s", "text": "엉망 베이킹 · 케첩 초코 케이크, 미카: 여기선 다 진심으로 웃는다" },
+    { "scene": "event_neverland1_05_e", "text": "파티 — 케이크가 맛있다" },
+    { "scene": "event_neverland1_06_s", "text": "벨로타가 미카에게 폭죽을 쏘러 가자고 손을 내밂" },
+    { "scene": "event_neverland1_06_e", "text": "루드밀라가 동행을 조건으로 뒷산 폭죽 허락, 행복한 크리스마스 약속" },
+    { "scene": "event_neverland2_01_s", "text": "뒷산 눈보라 · 하산 중 눈사태로 벨로타 실종" },
+    { "scene": "event_neverland2_01_e", "text": "회상: 천사 고아원 크리스마스 — 로열 후원자, 원장의 폭행, 벨로타의 죽음" },
+    { "scene": "event_neverland2_02_s", "text": "절벽으로 걸어가는 미카를 지휘관이 붙잡음" },
+    { "scene": "event_neverland2_02_e", "text": "설온장 복귀 · 수색 작전(조 편성, 갈고리 로프)" },
+    { "scene": "event_neverland2_03_s", "text": "루드밀라가 절망한 미카를 일으킴, 신호탄" },
+    { "scene": "event_neverland2_03_e", "text": "눈사태 자리에서 벨로타의 신호탄 발견, 블랑 · 누아르가 미카 손을 잡음" },
+    { "scene": "event_neverland2_Intermission_01", "text": "벨로타의 양말, 절벽 아래 길 발견" },
+    { "scene": "event_neverland2_04_s", "text": "루드밀라: 고아원은 내 가문과 연관 / 발목 다친 벨로타가 살아 나가기로" },
+    { "scene": "event_neverland2_04_e", "text": "로프 사다리로 절벽을 내려가 하트 눈뭉치 흔적 발견" },
+    { "scene": "event_neverland2_05_s", "text": "갈림길 — 블랑 · 누아르가 동시에 같은 길을 고름, 계속 흔적" },
+    { "scene": "event_neverland2_05_e", "text": "동굴의 북극곰, 바람에 실린 벨로타의 비명" },
+    { "scene": "event_neverland2_06_s", "text": "미카가 무너지는 나무다리를 건너 벨로타 앞 랩쳐에 맞섬" },
+    { "scene": "event_neverland2_06_e", "text": "재회 · 화해, 루드밀라의 등불, 복귀 뒤 폭죽 파티" },
+    { "scene": "event_neverland2_epilogue", "text": "설온장 계속 개방, 미카가 벨로타를 혼자 놀러 보냄" }
+  ],
+  "facts": [
+    {
+      "id": "F1212",
+      "text": "네베가 겨울잠 잘 곳을 찾아 땅을 파다 북부 기지 근처에서 리조트 · 상점 · 산책로가 남은 옛 지상 온천을 찾았고, 토브의 도구로 파자 온천수가 솟았다 — 언리미티드가 마이티 툴즈의 통신 조언을 받아 다듬어 루드밀라가 주인장인 온천장 '설온장'이 되었다",
+      "about": ["person:네베", "person:토브", "person:루드밀라", "org:언리미티드", "place:설온장"],
+      "evidence": [
+        { "scene": "event_neverland1_prologue", "lines": ["0-43", "48-60"] },
+        { "scene": "event_neverland1_02_e", "lines": ["106-109"] },
+        { "scene": "event_neverland1_03_s", "lines": ["13-22"] }
+      ],
+      "reason": "장면과 루드밀라의 말(03_s#15-16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1213",
+      "text": "엔더슨 · 잉그리드 · 머스탱은 연말이라 바쁘다는 슈엔(미실리스)을 빼고 회의해, 온천 주변 자원을 찾으러 엘리시온은 앱솔루트 · 스카우팅을, 테트라는 리틀 캐논을 보내기로 했다 — 엔더슨은 방주가 자원이 부족해 그 자원을 연구에 쓸 것이라 했고, 카운터스는 정기 점검으로 빠져 지휘관만 크리스마스에 올라갔다",
+      "about": ["person:엔더슨", "person:잉그리드", "person:머스탱", "person:슈엔", "org:앱솔루트", "org:스카우팅", "org:리틀_캐논", "org:카운터스"],
+      "evidence": [{ "scene": "event_neverland1_01_s", "lines": ["0-27", "41-58"] }],
+      "reason": "회의 장면과 엔더슨의 말(#46-47). 잉그리드가 걱정한 '저번 여름 때처럼 고립'(#28-31)은 앞 여름 이벤트의 섬 고립으로 보이나 원문이 이름을 대지 않아 문장에 넣지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1214",
+      "text": "미카는 크리스마스마다 벨로타에게 발목을 삐거나 손을 베거나 데는 불행이 생겨(작년엔 유원지 회전목마에서 넘어져 무릎을 크게 다침) 크리스마스를 최악의 날로 여기고 밖에 나가기 싫어했다 — 벨로타는 매번 리페어 센터에 갔지만 큰 문제는 없었다고 했다",
+      "about": ["person:미카", "person:벨로타"],
+      "evidence": [{ "scene": "event_neverland1_02_s", "lines": ["4-12", "21-23", "29-31", "44-45"] }],
+      "reason": "미카 · 벨로타의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1215",
+      "text": "벨로타에 따르면 벨로타는 인간이던 때 크리스마스에 고아원에서 미카가 보는 앞에서 죽었고, 그래서 미카는 크리스마스마다 벨로타가 또 죽을까 봐 걱정한다",
+      "about": ["person:벨로타", "person:미카", "place:천사_고아원"],
+      "evidence": [{ "scene": "event_neverland1_04_s", "lines": ["95-104"] }, { "scene": "event_neverland2_01_e", "lines": ["92-96"] }],
+      "reason": "벨로타 본인 말과 미카의 '저번처럼… 또 죽으면'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1216",
+      "text": "미카의 회상: 천사 고아원의 크리스마스에 후원 온 로열 여성은 원장이 때렸다는 벨로타의 말에 기자를 물리고 원장에게 체면이 상하지 않게 아이들을 간수하라, 말이 새면 후원은 없다고 했다 — 그날 밤 배가 몹시 아픈 벨로타를 원장은 폭행이 드러날까 봐 병원에 데려가지 않았고, 애원하다 맞는 미카를 벨로타가 감싸 안았다",
+      "about": ["person:미카", "person:벨로타", "place:천사_고아원", "concept:로열"],
+      "evidence": [{ "scene": "event_neverland2_01_e", "lines": ["1-39", "40-89"] }],
+      "reason": "회상 장면(3인칭 서술). 벨로타가 이 밤 죽었다는 것은 F1215의 말과 미카의 #92-96으로 잇는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1217",
+      "text": "벨로타는 자기가 죽으면 미카가 또 따라 죽으려 할 것이라며 '미카를 또 죽게 놔둘 수는 없다'고 했다 — 인간 시절 벨로타가 죽은 뒤 미카도 뒤따라 죽은 것으로 보이고, 이번에도 벨로타를 잃었다고 여긴 미카는 벨로타 없는 세상은 필요 없다며 절벽 끝으로 걸어가다 지휘관에게 붙잡혔다",
+      "about": ["person:벨로타", "person:미카"],
+      "evidence": [{ "scene": "event_neverland2_04_s", "lines": ["55-63"] }, { "scene": "event_neverland2_02_s", "lines": ["10-31"] }],
+      "reason": "벨로타의 '또 나 따라서 죽으려고'(#57) · '또 죽게 놔둘 수는 없어'(#63)에서 이은 것이라 인간 시절 미카의 죽음은 추정. 절벽 장면은 원문 그대로",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-08",
+          "session": "M61",
+          "note": "neverland2_04_s#57 '또 나 따라서 죽으려고 할 텐데' — 미카가 앞서 벨로타를 따라 죽었음을 벨로타가 직접 말한다",
+          "before": "확신도 추정"
+        }
+      ]
+    },
+    {
+      "id": "F1218",
+      "text": "루드밀라에 따르면 미카 · 벨로타가 있던 고아원은 루드밀라의 가문과 연관된 곳으로, 가문이 건너건너 후원 사업을 한다고만 들었지 그 안의 참혹한 일은 몰랐다 — 루드밀라는 과거의 어른과 현재의 어른은 다르다는 걸 보여 주고 싶다며 벨로타를 반드시 찾겠다고 했다",
+      "about": ["person:루드밀라", "place:천사_고아원", "concept:로열"],
+      "evidence": [{ "scene": "event_neverland2_04_s", "lines": ["1-18"] }],
+      "reason": "루드밀라 본인 말. 회상의 로열 여성이 루드밀라 가문 사람인지는 원문이 말하지 않아 적지 않았다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1219",
+      "text": "블랑 · 누아르는 둘이 같은 곳을 말하면 대체로 맞아 지금껏 길을 한 번도 틀린 적이 없다고 했고, 눈사태로 지형이 바뀐 갈림길마다 동시에 같은 길을 골라 벨로타의 흔적으로 이끌었다 — 루드밀라가 표지판으로 확인하니 반대편은 막다른 길이었다",
+      "about": ["person:블랑", "person:누아르"],
+      "evidence": [{ "scene": "event_neverland2_05_s", "lines": ["12-18", 31, "36-49", "51-56"] }],
+      "reason": "블랑 · 누아르의 말과 장면, 루드밀라의 확인(#46-49)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1220",
+      "text": "눈사태에 휩쓸린 벨로타는 발목을 다치고 핸드폰도 고장 났지만 하트 눈뭉치와 신호탄으로 흔적을 남기며 버텼고, 랩쳐와 싸우던 벨로타를 미카가 무너지는 나무다리를 건너 구했다 — 둘은 서로 사과하고 앞으로도 함께 있자고 했으며, 등불을 든 루드밀라가 둘을 찾아 데려왔다",
+      "about": ["person:벨로타", "person:미카", "person:루드밀라"],
+      "evidence": [
+        { "scene": "event_neverland2_04_s", "lines": ["22-44", "65-66"] },
+        { "scene": "event_neverland2_04_e", "lines": ["60-75"] },
+        { "scene": "event_neverland2_06_s", "lines": [6, "12-25", "56-71"] },
+        { "scene": "event_neverland2_06_e", "lines": ["0-53", "95-108"] }
+      ],
+      "reason": "장면. 흔적을 일부러 남긴 것은 미카의 짐작(04_e#75)이라 '흔적을 남기며'로만 썼다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F1221",
+      "text": "수색에서 찾은 자원이 연구에 도움이 되어, 루드밀라는 엔더슨과 상의해 설온장을 북부 기지에 임무를 나온 니케와 길 잃은 니케를 위해 계속 열어 두기로 했다 — 중앙 정부도 설온장을 마음에 들어 했다",
+      "about": ["place:설온장", "person:루드밀라", "person:엔더슨", "org:중앙_정부"],
+      "evidence": [{ "scene": "event_neverland2_epilogue", "lines": ["9-16", "39-42"] }],
+      "reason": "루드밀라의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "F550-2",
+      "act": "드러냄",
+      "text": "고아원 원장이 아이들을 때렸다 — 크리스마스 후원 방문 날 밤의 회상",
+      "evidence": [{ "scene": "event_neverland2_01_e", "lines": ["14-22", "53-89"] }],
+      "reason": "원장의 폭행이 장면으로 다시 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "F551-2",
+      "act": "드러냄",
+      "text": "벨로타는 인간이던 때 크리스마스에 고아원에서 죽었다",
+      "evidence": [{ "scene": "event_neverland1_04_s", "lines": ["97-101"] }],
+      "reason": "벨로타 본인 말로 죽은 때와 곳이 더 드러남",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S113",
+      "kind": "기준점",
+      "text": "방주의 크리스마스(12월 25일) — 연말, 출전 사흘 전 회의부터 크리스마스 당일 · 그 밤, 며칠 뒤 에필로그",
+      "ref": "event_neverland1",
+      "at": [],
+      "evidence": [
+        { "scene": "event_neverland1_01_s", "lines": [49] },
+        { "scene": "event_neverland1_02_e", "lines": [0] },
+        { "scene": "event_neverland2_epilogue", "lines": [2] }
+      ],
+      "reason": "엔더슨의 '3일 뒤인 크리스마스', '크리스마스 당일' 서술. 챕터와의 앞뒤는 원문에 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    },
+    {
+      "id": "S114",
+      "kind": "회상",
+      "text": "인간 시절 천사 고아원의 크리스마스 — 로열 후원 방문과 그날 밤 벨로타의 죽음",
+      "ref": "place:천사_고아원",
+      "at": [["전", "event_neverland1"]],
+      "evidence": [{ "scene": "event_neverland2_01_e", "lines": ["0-89"] }],
+      "reason": "미카의 회상 구간(#90부터 현재로 돌아옴)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R34" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "place:설온장",
+      "evidence": [{ "scene": "event_neverland1_02_e", "lines": [108] }],
+      "note": "북부 기지 근처 옛 지상 온천을 언리미티드가 다듬은 온천장, 주인장 루드밀라",
+      "new": true
+    },
+    {
+      "target": "place:천사_고아원",
+      "evidence": [{ "scene": "event_neverland2_01_e", "lines": [2] }],
+      "note": "인간 시절 미카 · 벨로타가 있던 고아원 — 원장의 폭행, 루드밀라 가문의 후원",
+      "new": true
+    }
+  ]
+}

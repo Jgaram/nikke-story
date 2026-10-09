@@ -1,0 +1,106 @@
+{
+  "unit": "event_goldenship",
+  "session": "M58",
+  "by": "claude",
+  "date": "2026-10-08",
+  "mentions": [
+    {
+      "id": "I511",
+      "target": "person:차임",
+      "speaker": true,
+      "evidence": [{ "scene": "event_goldenship_04_s", "lines": [49, 50, 67, 68] }],
+      "reason": "어둠 속 `???`가 #69에서 '투구를 쓴 소녀'로 나와 통행료를 요구하고, 04_e#3에서 '차임이라는 어엿한 이름'을 밝힌다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1315",
+      "act": "암시",
+      "points": ["J28"],
+      "text": "차임이 '왕국의 부흥을 위해 크라운 님을 돕는 신하'라며 돈이 될 보물을 찾아다닌다 — 백기사 크라운과 차임, 크라운 왕국의 첫 그림",
+      "about": ["person:차임", "person:크라운"],
+      "evidence": [{ "scene": "event_goldenship_04_e", "lines": ["17-21", 27] }],
+      "reason": "#17 '왕국의 부흥을 위해 크라운 님을 돕고 있는 신하' · #27 '시간도 돈이거늘' — 크라운 · 왕국은 ch25부터 나온다. 줄기만 가리켜 추정.",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D1444",
+      "person": "person:마스트",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'~수다' 하는 해적 말투로 해적 영화와 로망에 들떠 전 재산을 털어 지도를 사고, 말한 데 책임지는 게 해적이라며 부서진 망루를 혼자 오르는",
+      "evidence": [{ "scene": "event_goldenship_06_s", "lines": ["18-28"] }],
+      "reason": "#21 '말 한 것에 책임을 지는 것이 해적의 자세' · #23-24 '내 동료들을 위해서라도'(01_s#45-48 · 06_e#31-32).",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:352(2022-11-10)에 같은 측면 기준을 세움 — D1959" }
+      ]
+    },
+    {
+      "id": "D1445",
+      "person": "person:마스트",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "진짜인지 거짓인지 모를 미지를 향해 항해하는 것이 해적의 로망이라 믿고, 언젠가 어드마이어 호의 조타수가 될 날을 위해 해안을 외워 둔다",
+      "evidence": [{ "scene": "event_goldenship_01_s", "lines": ["45-53"] }],
+      "reason": "#46-48 '원래 진짜인지 거짓인지 알 수 없는 미지의 것을 향해, 항해해 나가는 것' — 조타수 준비는 F1043.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:352(2022-11-10)에 같은 측면 기준을 세움 — D1961" }
+      ]
+    },
+    {
+      "id": "D1446",
+      "person": "person:마스트",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "'선장 양반'이라 부르며 지휘관 없이는 지상에 못 가니 보물을 반으로 나누자 청하고, 끝에 '다음 모험에서 꼭 찾자'는 말에 힘을 얻는 모험 동료",
+      "evidence": [{ "scene": "event_goldenship_06_e", "lines": ["125-136"] }],
+      "reason": "#131-135 '다음 모험에서는 꼭 찾아내자… 잠시 쉬는 것뿐' — '선장 양반!'(01_s#74-80 반으로 나누자).",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    },
+    {
+      "id": "D1447",
+      "person": "person:앵커",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "황금 배에 황금 불가사리가 있을 거라 기대하고, 레이더가 고장 났다며 정수리를 세게 쳐 달라는 엉뚱하고 천진한 해양 생물 애호가",
+      "evidence": [{ "scene": "event_goldenship_03_e", "lines": [8, "19-23"] }],
+      "reason": "#8 '황금색 불가사리 보고 싶어' · #19-23 '내 정수리를 세게 한 번 쳐 줘… 고장 난 기계는 세게 치면'.",
+      "confidence": "확실",
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-08", "session": "M86", "note": "출시순으로 앞선 char:352(2022-11-10)에 같은 측면 기준을 세움 — D1962" }
+      ]
+    },
+    {
+      "id": "D1448",
+      "person": "person:차임",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'노비'라 부르며 통행료를 뜯으려는 거만한 말투지만, 이름을 묻자 발끈해 밝히고 비밀 손잡이를 놓쳐 허탕치는 허술한 니케",
+      "evidence": [{ "scene": "event_goldenship_04_e", "lines": ["0-3", 9, "14-16"] }],
+      "reason": "#1 '노비들 주제에' · #3 '차임이라는 어엿한 이름이 있단 말이다!' — 허술함은 #57-59. 출시가 앞서 ch26 D336을 대신한다.",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M58" }]
+    }
+  ],
+  "life": [],
+  "note": "정체 볼 줄 — event_goldenship_03_s#44 `???`(키이잉)는 모래 속 랩쳐라 인물이 아니어서 적지 않았다. 시점 S87(어느 여름날 — 행사 2주 휴무)은 1회독에 있고, 챕터와의 앞뒤를 주는 줄은 없다."
+}

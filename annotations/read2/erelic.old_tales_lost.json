@@ -1,0 +1,64 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M23\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:old_tales_lost",
+  "session": "M23",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I211",
+      "target": "person:레드_슈즈",
+      "evidence": [{ "scene": "erelic:old_tales_lost_05", "lines": ["0-5"] }],
+      "reason": "비공식 보고서의 필자 — 금지된 침식-NIMPH 연구를 몰래 이은 이 = 레드 슈즈(2_intermission_01#25-43 고백과 같다, F1700)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I212",
+      "target": "person:레드_슈즈",
+      "evidence": [{ "scene": "erelic:old_tales_lost_09", "lines": ["0-6"] }],
+      "reason": "#0 '나의 인격 데이터 · 화합을 꿈꾸고' — 인격 데이터를 침식에 심었다는 레드 슈즈의 고백(2_intermission_01#43)과 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I213",
+      "target": "person:레드_슈즈",
+      "evidence": [{ "scene": "erelic:old_tales_lost_12", "lines": ["0-8"] }],
+      "reason": "페어리 테일 모델의 침식을 기대하며 '신데렐라는 어떻게 될까'라 적은 필자 = 레드 슈즈(F1702)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E551",
+      "act": "재언급",
+      "points": ["F1686"],
+      "text": "필자가 침식 유발 랩쳐와 양산형 니케를 들여 개인 연구실을 실험실로 개조한다",
+      "about": ["person:레드_슈즈"],
+      "evidence": [{ "scene": "erelic:old_tales_lost_06", "lines": ["0-5"] }],
+      "reason": "#1-2 — 오스왈드가 찾아낸 레드 슈즈의 옛 V.T.C. 연구실(F1686)이 이것이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E552",
+      "act": "암시",
+      "points": ["F1911"],
+      "text": "공식 보고서가 침식은 NIMPH에 행동 정지를 명령하는 것으로 언령과 일맥상통하고 다른 명령도 주입할 수 있겠다고 적는다",
+      "about": ["concept:침식", "person:세이렌"],
+      "evidence": [{ "scene": "erelic:old_tales_lost_03", "lines": ["0-5"] }],
+      "reason": "#2-3 — 훗날 헨젤 · 그레텔이 세이렌의 언령을 침식 같다고 두려워한다(F1911)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": []
+}

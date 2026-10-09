@@ -1,0 +1,124 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M11\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "event_freezeacpu",
+  "session": "M11",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I98",
+      "target": "person:드레이크",
+      "speaker": true,
+      "evidence": [{ "scene": "event_freezeacpu_intermission_01", "lines": [76] }],
+      "reason": "#76 '후… 후후…'에 키리가 놀란 직후 04_s#2-8 드레이크가 그 자리에 있고 키리가 '귀신 보듯 놀랐죠'라 사과한다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E246",
+      "act": "암시",
+      "points": ["Q148", "J3"],
+      "text": "흐릿한 세상에 지휘관만 선명하다며 의지하는 키리 — 왜 지휘관만 선명한지(Q148)의 앞 그림",
+      "about": ["person:키리", "person:지휘관"],
+      "evidence": [{ "scene": "event_freezeacpu_03_e", "lines": ["117-119"] }],
+      "reason": "#119 '흐릿한 세상에 선명한 사람이 한 명' — intermission#57-64에서 의문으로 선다. 03_s#23도 같은 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "E247",
+      "act": "재언급",
+      "points": ["F476"],
+      "text": "빌런을 자처하며 '악행'으로 아이들에게 사탕을 넉넉히 나눠 주는 드레이크 — 빌런 연합의 악행이 선행이 되는 모습을 다시 꺼낸다",
+      "about": ["person:드레이크", "org:빌런_연합"],
+      "evidence": [{ "scene": "event_freezeacpu_02_e", "lines": ["16-18", "31-41", "54-55"] }],
+      "reason": "#18 '엄청난 악행' → #37 '아이들은 웃으면서 자라야 한다' · #55 못 받은 아이가 서운할까 넉넉히. 메티스보다 유명해지려는 빌런 연합(F476)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D301",
+      "person": "person:키리",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "시력이 나빠 허공에 인사하고 소리에 잘 놀라는 겁 많은 신참이지만, 사람들이 모여 행복해하는 분위기를 좋아하는 밝고 성실한 경찰",
+      "evidence": [{ "scene": "event_freezeacpu_02_s", "lines": ["15-22"] }],
+      "reason": "#16-17 잘 구분 못 하고 소리로 놀라는 호러를 싫어함 · #21 행복한 분위기를 좋아함. 01_e#17-27 허공 인사",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "D302",
+      "person": "person:키리",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:지휘관"],
+      "text": "흐릿한 세상에서 유일하게 선명한 지휘관이 곁에 있는 것만으로 든든하다며 의지하는 순찰 짝",
+      "evidence": [{ "scene": "event_freezeacpu_03_e", "lines": ["117-119"] }],
+      "reason": "#118-119 '지휘관이 있으니까요' · '선명한 사람이 한 명 있다는 사실만으로 든든'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "D303",
+      "person": "person:키리",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "사탕을 다 나눠 준 실수에 '경찰로서의 자격이 없다'며 무너짐",
+      "after": "흐릿한 눈에 선명한 것을 좇아 수사를 이끌고 '앞으로도 열심히 하는 경찰이 되겠다'",
+      "trigger": [{ "scene": "event_freezeacpu_06_s", "lines": ["84-110"] }],
+      "time": "S96",
+      "evidence": [{ "scene": "event_freezeacpu_06_e", "lines": ["220-223"] }],
+      "reason": "06_s#20-22 자격이 없다 → 폴리의 격려(#104-106) → 06_e#223 다짐. 동료의 믿음 덕(#222)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "life": [
+    {
+      "id": "U168",
+      "topic": "일상 · 문화",
+      "text": "방주는 TV로 할로윈 대규모 이벤트를 홍보하고, 공원 전체와 큰길을 써서 밤새 미션을 깨 사탕을 모으는 축제를 연다 — 저녁엔 가족, 새벽엔 젊은이가 남는다",
+      "about": ["place:방주"],
+      "points": ["F1092"],
+      "evidence": [{ "scene": "event_freezeacpu_prologue", "lines": ["0-7"] }],
+      "reason": "#1-6 방주 곳곳 대규모 이벤트 · 캔디 고스트 파티. 03_s#13-18 시간대별 인파, 02_s#0-11 쇼핑몰 할로윈 상품",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "U169",
+      "topic": "방주 사회",
+      "text": "체포 · 제압은 경찰 니케 A.C.P.U.만 하고, 지휘관과 카운터스는 행사 순찰을 돕는 '지켜야 할 시민'이다",
+      "about": ["org:A.C.P.U.", "org:카운터스"],
+      "evidence": [{ "scene": "event_freezeacpu_01_e", "lines": ["56-60"] }],
+      "reason": "#59 '우린 제압할 수도, 체포할 수도 없으니까'. 06_e#30 키리 '여러분들은 A.C.P.U.가 지켜야 하는 시민들'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    },
+    {
+      "id": "U170",
+      "topic": "방주 사회",
+      "text": "A.C.P.U.는 범인이 달아날까 시민을 대피시키지 않고, 위험한 사탕 회수를 '빌런과 탐정이 사탕을 뺏는' 깜짝 이벤트 방송으로 꾸며 시민이 불안해하지 않게 한다",
+      "about": ["org:A.C.P.U."],
+      "evidence": [{ "scene": "event_freezeacpu_06_s", "lines": ["29-39"] }],
+      "reason": "#31-32 안내 방송 · #39 불안에 떨지 않고 사탕에 손대지 않게. 05_s#91-93 대피 대신 배포 중지",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 정할 수 없음: event_freezeacpu_prologue#8-11,15-20 · 03_e#123 (사탕을 만든 '분장을 한 여자' — 이 단위에만 나오는 사전 없는 단역, 정체는 Q148이 열림). 자동 언급의 person:헨젤 · person:그레텔(06_e#20 '헨젤과 그레텔이네요' — 동화 비유)은 오인"
+}

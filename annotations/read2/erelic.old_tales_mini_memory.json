@@ -1,0 +1,86 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"M23\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "erelic:old_tales_mini_memory",
+  "session": "M23",
+  "by": "claude",
+  "date": "2026-10-07",
+  "mentions": [
+    {
+      "id": "I214",
+      "target": "person:오스왈드",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_25", "lines": ["0-7"] }],
+      "reason": "보고 받는 'O' = 오스왈드 — 레드 슈즈의 연구실을 따로 조사했다는 오스왈드의 말(event_oldtales2_05_e#121-136)과 같은 연구실이다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I215",
+      "target": "person:레드_슈즈",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_29", "lines": ["0-3"] }],
+      "reason": "#2 침식 연구 보고서 담당자 '레드 ㅅ' = 레드 슈즈(F1709 · F1686)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I216",
+      "target": "person:세이렌",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_30", "lines": ["0-7"] }],
+      "reason": "물방울(물거품)을 쓴 이 = 세이렌 — 붉은 눈이 손을 뻗으면 무섭다(event_oldtales2_03_s#31-37 손을 피함)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "I217",
+      "target": "person:세이렌",
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_33", "lines": ["0-16"] }],
+      "reason": "#11 '말을 전달하지 못해서 미안해' — 언령 때문에 말을 삼가는 세이렌(F1665). 2_05_e#180-189의 사과와 같다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E553",
+      "act": "재언급",
+      "points": ["F1680"],
+      "text": "침식이 느린 니케가 '또 다른 제가 있는 느낌 · 랩쳐는 적이 아니라 설득'하던 목소리가 벽이 두꺼워지자 협박한다고 녹음한다",
+      "about": ["concept:침식", "person:미러"],
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_12", "lines": ["0-5"] }],
+      "reason": "#2-5 — 신데렐라가 말한 벽 너머의 자기 · 유혹하다 협박하는 인격 같은 목소리(F1680)와 같은 겪음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    },
+    {
+      "id": "E554",
+      "act": "재언급",
+      "points": ["F1558"],
+      "text": "동화가 유리 구두에 담긴 소녀의 푸른 눈을 깨울 [왕자님]을 만나는 날을 말한다",
+      "about": ["person:신데렐라", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_39", "lines": ["4-10"] }],
+      "reason": "#7 — 유리 구두를 찾아 자기를 깨운 지휘관을 신데렐라가 '왕자님'이라 부른다(F1558). 같은 이라는 확인은 없고 붉은 눈은 그대로라 Q222는 열어 둔다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U244",
+      "topic": "구시대",
+      "text": "1차 침공기 병사들은 윗선이 시켜 쉘터로 피난한 가족에게 편지를 썼고, 갓데스 후속기의 배치 소식에 휴가와 종전을 기대했다",
+      "about": ["org:인류연합군"],
+      "points": ["F1704"],
+      "evidence": [{ "scene": "erelic:old_tales_mini_memory_01", "lines": ["0-12"] }],
+      "reason": "#3-9 — 00_편지 #2-5(윗분들이 쓰라고 · 쉘터 배급)와 같이 그려진다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "unit": "char:403",
+  "session": "R50",
+  "by": "claude",
+  "date": "2026-10-01",
+  "summary": "퀀시 : 이스케이프 퀸 호감도 스토리 5편 — 카운터스의 휴일, 퀀시가 지휘관실 구석 구멍으로 '잠깐 외출'을 나온다. 뉴스의 방주 주택가 빈집털이(배관을 타고 벽 구멍으로 침입, 흰색과 검은색, 범죄자 행색) 때문에 아니스 · 네온이 퀀시를 의심하자 — 퀀시가 훔친 건 탄산수 병뚜껑뿐 — 퀀시는 누명을 벗으려 직접 도둑을 잡겠다며 지휘관을 데려간다. 탈옥 루트로 갱생관에 들러 팬텀에게 받은 정의 괴도단 옷으로 갈아입는다(01). '범인은 반드시 현장에 돌아온다'며 금 간 벽 · 휜 배관 · 신발끈을 단서로 잡았지만 모두 허탕 — 오히려 주민에게 수상한 사람으로 신고된다(02). 순찰하던 미란다에게 '벽을 부수려던 남녀 도둑' 이야기를 듣고, 퀀시는 벽에 '뒷골목 · 탈옥왕 · 기다림 · 수상한 도둑 · 연관 · 퀀시' 낙서를 남겨 도둑을 부른다 — 왕년에 도둑들 사이에서 유명했다(03). 나타난 것은 드레이크 — 빌런답게 '악행'으로 빈집을 털었다며, 남이 누명을 쓰면 안 된다고 자수한다(04). 폴리의 조사로 드레이크가 털러 간 집이 뉴스에 인터뷰한 진짜 도둑의 집이었고 집 안이 훔친 물건으로 가득해 주인에게 돌아갔다 — 드레이크는 혐의 없음, 퀀시 · 지휘관은 CCTV에 찍힌 기물 파손 · 낙서로 한 달 동안 방주 건물 외벽 청소, 퀀시는 탈옥으로 추가 벌이 있을 수 있다(05).",
+  "scenes": [
+    { "scene": "ep:d_nikke_quency_escapequeen_01", "text": "지휘관실 구멍으로 나온 퀀시가 빈집털이로 의심받고, 정의 괴도단 옷을 입고 도둑을 잡으러 나섬" },
+    { "scene": "ep:d_nikke_quency_escapequeen_02", "text": "금 간 벽 · 휜 배관 · 신발끈 단서 추리 — 모두 허탕" },
+    { "scene": "ep:d_nikke_quency_escapequeen_03", "text": "미란다가 '벽 부수려던 남녀 도둑'을 찾음 — 벽 낙서로 도둑을 부름" },
+    { "scene": "ep:d_nikke_quency_escapequeen_04", "text": "도둑은 빌런 놀이 중인 드레이크 — 자수하겠다고 함" },
+    { "scene": "ep:d_nikke_quency_escapequeen_05", "text": "털린 집이 진짜 도둑의 집 · 드레이크 무혐의, 퀀시 · 지휘관은 외벽 청소 처벌" }
+  ],
+  "facts": [
+    {
+      "id": "F1609",
+      "text": "방주 주택가 빈집털이로 의심받은 퀀시가 누명을 벗으려 지휘관과 쫓은 '도둑'은 빌런 행세로 빈집을 턴 드레이크였는데, 그 집은 뉴스에 피해자로 인터뷰한 진짜 도둑의 집이라 훔친 물건들이 원래 주인에게 돌아갔다 — 드레이크는 혐의 없음, 퀀시 · 지휘관은 벽 낙서 · 기물 파손으로 한 달 동안 방주 건물 외벽 청소 판결을 받았다",
+      "about": ["person:퀀시", "person:드레이크", "person:폴리", "person:지휘관"],
+      "evidence": [
+        { "scene": "ep:d_nikke_quency_escapequeen_01", "lines": ["31-42", "82-90"] },
+        { "scene": "ep:d_nikke_quency_escapequeen_04", "lines": ["9-10", "56-62"] },
+        { "scene": "ep:d_nikke_quency_escapequeen_05", "lines": ["22-40", "61-69", "77-78"] }
+      ],
+      "reason": "폴리의 조사 결과(05 #25-40)와 판결(#69). 드레이크가 빌런 놀이를 한 것은 F481(빌런 전향)과 이어진다. 퀀시가 정의 괴도단 옷(팬텀에게 받음, 01 #119-120)을 입은 것은 event_phantomthiefvsdetective 뒤라는 근거",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R50", "note": "원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S172",
+      "kind": "기준점",
+      "text": "event_phantomthiefvsdetective 뒤 — 퀀시가 정의 괴도단 활동 때 팬텀에게 받은 옷을 입는다",
+      "ref": "event_phantomthiefvsdetective",
+      "at": [["뒤", "event_phantomthiefvsdetective"]],
+      "evidence": [{ "scene": "ep:d_nikke_quency_escapequeen_01", "lines": ["119-120"] }, { "scene": "ep:d_nikke_quency_escapequeen_03", "lines": ["16-17"] }],
+      "reason": "퀀시 '괴도 정의단 활동 때 입었던 옷', 미란다 '정의 괴도단 활동을 하고 계신 겁니까'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R50", "note": "원문 대조 검토" }]
+    }
+  ],
+  "targets": []
+}
