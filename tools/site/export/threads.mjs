@@ -8,13 +8,14 @@
  *                         · rel(뿌리 첫 자리와 견줘 앞 · 뒤 — 동시는 칸 없음) · a(답 사실 · 바꾼 사실) · c('추정'일 때만) · bu(빌드업 마무리: 긴 회수 · 복선의 답) · from(쌓은 쪽)
  *     echoes[]  줄기(J)만 가리키는 2회독 떡밥 E — r · s · u · t · o · sc · ln (뿌리 줄이 없어 reveals에 없는 것)
  *     units[]   이 줄기의 단계가 놓인 단위 키(흐름의 열)
- *   threads-map.json    { concepts[], edges[], pairs[], relations{}, closures[], merges[] }
+ *   threads-map.json    { concepts[], edges[], pairs[], relations{}, closures[], merges[], chrono{} }
  *     concepts[]  줄기와 이어진 비인물 대상(links/thread-targets.csv) — id · type · name · threads(걸친 줄기 수) · records
  *     edges[]     줄기 ↔ 개념 — j · target · records · own(줄기 자신의 about) · sample[](기록 ID) · tick(근거 기록의 가장 앞 공개 자리)
  *     pairs[]     개념 ↔ 개념(links/target-pairs.csv) — a · b · records · units
  *     relations   { <G ID>: { tick } } — 줄기 ↔ 줄기 관계의 근거 기록 가장 앞 자리(컷오프용)
  *     closures[]  연작 · 갈등의 결말 O(closures/closures.csv) — id · type · end · end_tick · built[] · closing[] · about[] · merge · text · threads[](붙는 줄기) · how
  *     merges[]    합류 H(closures/merges.csv) — id · title · end · end_tick · members[] · types[] · persons[] · text · threads[]
+ *     chrono{}    흐름 · 결말에 든 스토리의 작중 순서(timeline/chrono-order.csv의 '지금' 줄) — <단위 키>: { seq(작중 순서, 상대 · 불명은 칸 없음) · class(판별 · 범위 · 상대 · 불명) · drift(출시순과 비교) }
  *
  * 결말 · 합류를 줄기에 붙이는 규칙(Claude, W4 — 마무리 기록에는 줄기 칸이 없다):
  *   (가) 인물 · 단위: 결말의 인물(about)이 줄기의 주역 · about과 겹치고, 끝 · 쌓인 단위 가운데 하나가 줄기의 단위에 든다.
@@ -159,5 +160,13 @@ export async function run(ctx) {
     for (const [j] of attach([m.end], persons)) js.add(j);
     return compact({ id: m.id, title: m.title, end: m.end, end_tick: num(m.end_tick), members, types: list(m.types), persons, text: text(m.text, `${m.id} text`), threads: [...js] });
   });
-  return { files: { 'threads-flow.json': flow, 'threads-map.json': { concepts, edges, pairs, relations, closures, merges } } };
+
+  // ── 작중 순서: 흐름 · 결말에 든 스토리만 ──
+  const used = new Set([...Object.values(flow).flatMap((f) => f.units ?? []), ...closures.flatMap((c) => [c.end, ...c.built]), ...merges.map((m) => m.end)].filter(Boolean));
+  const chrono = {};
+  for (const r of csv('data/views/timeline/chrono-order.csv')) {
+    if (r.type !== '지금' || !used.has(r.unit)) continue;
+    chrono[r.unit] = compact({ seq: num(r.seq), class: r.class || undefined, drift: r.drift || undefined });
+  }
+  return { files: { 'threads-flow.json': flow, 'threads-map.json': { concepts, edges, pairs, relations, closures, merges, chrono } } };
 }
