@@ -1,0 +1,12 @@
+{
+  "unit": "event_perfectmaid",
+  "why": {
+    "text": "니케로 알려진 메이드는 손님이 그 사실을 아는 순간 완벽한 솜씨도 '니케라서 당연한 것'이 되어 버린다 — 니케를 기계로 보는 방주 사람들의 눈길이다.",
+    "src": "da7bd952eb",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "fb12a6b8bd", "note": "F1277 대조 — 니케로 알려진 메이드가 받는 시선" }]
+  }
+}

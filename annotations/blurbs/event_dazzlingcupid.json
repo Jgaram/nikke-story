@@ -1,0 +1,12 @@
+{
+  "unit": "event_dazzlingcupid",
+  "why": {
+    "text": "니케 학교 선생 대부분은 학생이 군사적으로 잘 크기만 하면 그만이라 관심을 두지 않는다 — 나가가 지휘관을 '진짜' 선생으로 여기는 까닭이다.",
+    "src": "0810d09668",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "3a72763071", "note": "F1082 대조 — 니케 학교 선생들의 태도" }]
+  }
+}

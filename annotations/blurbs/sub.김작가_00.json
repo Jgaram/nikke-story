@@ -1,0 +1,14 @@
+{
+  "unit": "sub:김작가_00",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "f71e89e6f0",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "400fda1bd9", "note": "고정 문장 — 대중문화 요지는 필수 스토리가 말하고 남는 것은 개그 일화" }
+    ]
+  }
+}

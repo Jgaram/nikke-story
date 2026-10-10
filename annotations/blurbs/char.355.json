@@ -1,0 +1,14 @@
+{
+  "unit": "char:355",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "1695fb6ff6",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "61dbb16fa9", "note": "판정 · 기록에 이을 세계 · 인물 사정이 없어 고정 문장" }
+    ]
+  }
+}

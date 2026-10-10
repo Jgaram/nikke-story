@@ -1,0 +1,21 @@
+{
+  "unit": "event_romanticvalentine",
+  "why": {
+    "text": "이지스 스쿼드는 평소 어드마이어 호 청소 · 파티 준비 · 손님맞이를 맡아, 마스트와 앵커는 메이드 일도 곧바로 해낸다.",
+    "src": "e1d5e7c3e1",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "6cbf1dafd5",
+        "note": "F1782 대조 — 이지스 평시 업무, 유지비 걱정은 뒤 CH.37이라 쓰지 않음"
+      }
+    ]
+  }
+}

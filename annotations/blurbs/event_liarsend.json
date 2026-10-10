@@ -1,0 +1,12 @@
+{
+  "unit": "event_liarsend",
+  "why": {
+    "text": "정보부 오퍼레이터 시프티가 엔더슨의 뜻으로 지상에 올라 랩쳐 대군을 홀로 쓸어 낸다 — 처음 있는 일도 아니고, 시프티는 스트레스가 풀린다고 한다.",
+    "src": "25276eedab",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "411700852f", "note": "F1357 대조 — 시프티의 지상 실전" }]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "unit": "event_maidinvalentine",
+  "why": {
+    "text": "머스탱이 메이드 카페 메이드 포 유의 '사장님'이라는 한 면이 나오고, 방주의 초콜릿은 퍼펙트로 만든다는 것도 알 수 있다.",
+    "src": "7457296405",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "aad5c643de", "note": "F807 · F809 대조 — 머스탱과 메이드 포 유 관계, 퍼펙트 초콜릿" }
+    ]
+  }
+}

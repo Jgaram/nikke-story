@@ -1,0 +1,21 @@
+{
+  "unit": "relic:특이랩쳐보고서-전",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "ff03ff9684",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "0bd2d0ac79",
+        "note": "고정 문장 — 1세대 랩쳐 동력 요지는 CH.21이 말하고 기록자는 한 장면, 후편 이야기는 쓰지 않음"
+      }
+    ]
+  }
+}

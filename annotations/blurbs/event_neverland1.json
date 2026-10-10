@@ -1,0 +1,12 @@
+{
+  "unit": "event_neverland1",
+  "why": {
+    "text": "미카와 벨로타가 학대받던 고아원은 루드밀라의 가문이 후원하던 곳이었고, 루드밀라는 그 안에서 벌어진 일을 몰랐다.",
+    "src": "3c35a4a65e",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "e78be74ec5", "note": "F1218 대조 — 루드밀라 가문과 고아원" }]
+  }
+}

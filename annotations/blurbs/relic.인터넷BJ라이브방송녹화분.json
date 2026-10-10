@@ -1,0 +1,12 @@
+{
+  "unit": "relic:인터넷BJ라이브방송녹화분",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "982eee5735",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "78c18618cc", "note": "고정 문장 — 한 사람의 정경, 한 줄 소개와 겹침" }]
+  }
+}

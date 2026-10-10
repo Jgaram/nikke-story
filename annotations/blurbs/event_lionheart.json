@@ -1,0 +1,12 @@
+{
+  "unit": "event_lionheart",
+  "why": {
+    "text": "방주에서는 로봇 개 · 고양이를 키우는 집이 늘고, 유기 동물에게 먹이를 주는 일이 재미 삼아 유행처럼 번졌다는 요즘 방주의 풍경이 나온다.",
+    "src": "d795698ed2",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "bc0ef48ca0", "note": "F1248 대조 — 로봇 반려동물 · 먹이 주기 유행" }]
+  }
+}

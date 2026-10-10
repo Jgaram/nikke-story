@@ -1,0 +1,14 @@
+{
+  "unit": "relic:주의용광로사용법",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "e8aeecdc8d",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "f16dd731e9", "note": "고정 문장 — 용광로 요지는 CH.41 · 42가 다 말함" }
+    ]
+  }
+}

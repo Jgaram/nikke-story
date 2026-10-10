@@ -1,0 +1,21 @@
+{
+  "unit": "event_beautyfullshot1",
+  "why": {
+    "text": "라피가 '그럴 리 없겠지만' 방주가 없어질 경우를 대비해, 섬을 가장 현실적인 주거지로 보고 코랄 아일랜드를 조사한다.",
+    "src": "bddc22b710",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "64788e2eee",
+        "note": "E425 대조 — 라피의 코랄 아일랜드 조사, 뒤 CH.45 · 46은 쓰지 않음"
+      }
+    ]
+  }
+}

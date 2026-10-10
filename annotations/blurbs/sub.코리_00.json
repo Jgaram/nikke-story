@@ -1,0 +1,21 @@
+{
+  "unit": "sub:코리_00",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "3c9e08a3c0",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "e1f26c6eb6",
+        "note": "고정 문장 — 방주에 하늘이 없다는 것은 CH.02가 말하고 남는 것은 한 아이의 일화, 쓰면 한 줄 소개 되풀이"
+      }
+    ]
+  }
+}

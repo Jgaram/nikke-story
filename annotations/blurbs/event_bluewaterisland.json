@@ -1,0 +1,14 @@
+{
+  "unit": "event_bluewaterisland",
+  "why": {
+    "text": "인간이던 메어리가 부패한 관리와 손잡고 환자의 뇌를 동의 없이 니케로 만들었다는 고백으로, 니케 제작의 어두운 사정 하나가 드러난다.",
+    "src": "eb7bed56e5",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "b71e4d63e2", "note": "F971 대조 — 메어리의 고백, 페퍼 쪽 사정은 이 스토리의 반전이라 줄임" }
+    ]
+  }
+}

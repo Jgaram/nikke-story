@@ -1,0 +1,14 @@
+{
+  "unit": "relic:어느의사의수기",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "270259b36b",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "3efccc4b7c", "note": "고정 문장 — 한 사람의 정경(음악 애호가 2와 같은 기준)" }
+    ]
+  }
+}

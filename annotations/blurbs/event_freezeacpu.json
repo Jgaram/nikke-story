@@ -1,0 +1,21 @@
+{
+  "unit": "event_freezeacpu",
+  "why": {
+    "text": "세상이 흐릿하게만 보이는 키리의 눈에 지휘관만은 선명하게 보이고, 왜 그런지는 풀리지 않은 채 남는다.",
+    "src": "eda28ee81b",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "906ff0ffb1",
+        "note": "Q148 · E246 대조 — 지휘관만 선명한 키리의 눈, 뒤 정체 줄기는 쓰지 않음"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unit": "event_killthelord",
+  "why": {
+    "text": "로열의 사교 모임에 미스트로 만든 환각 디퓨저가 돌았다는 것이 드러나지만, 누가 만들어 퍼뜨렸는지는 물음으로 남는다.",
+    "src": "0576c51c08",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "440f3ff960",
+        "note": "Q177 대조 — 미스트 환각 디퓨저, 식스오 · 뒤 CH.40 내용은 쓰지 않음"
+      }
+    ]
+  }
+}

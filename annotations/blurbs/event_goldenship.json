@@ -1,0 +1,21 @@
+{
+  "unit": "event_goldenship",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "4eb087d92a",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "35877e2b21",
+        "note": "고정 문장 — 차임 카메오는 앞 CH.17이 말한 백기사의 재등장이고 황금 배는 독립 떡밥, 마스트 해안 암기는 성격"
+      }
+    ]
+  }
+}

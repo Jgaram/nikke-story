@@ -1,0 +1,14 @@
+{
+  "unit": "event_lifeagain",
+  "why": {
+    "text": "라이프 토닉은 스포츠로 사람들의 건강한 삶을 돕는 것을 '인류를 케어할 의무'로 삼고, 감각을 이은 아바타로 재활하는 가상 운동 공간도 갖췄다.",
+    "src": "c3f1772fc8",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "788b7b568a", "note": "F1621 대조 — 라이프 토닉의 의의 · 가상 운동 공간" }
+    ]
+  }
+}

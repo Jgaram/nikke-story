@@ -1,0 +1,12 @@
+{
+  "unit": "event_alonesurvivor",
+  "why": {
+    "text": "크게 부서지거나 뇌만 남은 양산형 니케에게 방주의 기업은 새 바디를 만들어 주지 않아, 언리미티드는 스페어 파츠를 이어 붙이며 버틴다.",
+    "src": "31903f7ae6",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "f79b2ee3be", "note": "F1207 대조 — 양산형 바디 사정 · 스페어 파츠" }]
+  }
+}

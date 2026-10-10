@@ -1,0 +1,21 @@
+{
+  "unit": "fl:persona_on_frontline",
+  "why": {
+    "text": "LIE CAUSE RECOIL에 이어 방주에 다시 D-WAVE가 일고 괴물 목격이 그 둘레에 몰린다 — 일은 집단 의식 및 기억 상실 사건으로 덮이고, 소환자들도 돌아가면 잊는다.",
+    "src": "883432a816",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "57b1fa2651",
+        "note": "W14b-4 — 입력 묶음 기록 문장과 대조, 이 스토리 · 앞 스토리 내용만(뒤 스토리 이름 · 암시 없음), 한 줄 소개와 겹치지 않게"
+      }
+    ]
+  }
+}

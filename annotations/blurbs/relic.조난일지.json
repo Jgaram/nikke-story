@@ -1,0 +1,21 @@
+{
+  "unit": "relic:조난일지",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "e6d8b8f358",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "b14ba8c90b",
+        "note": "고정 문장 — 수정 침투 요지는 CH.27이 말하고 조난 스쿼드의 마지막은 한 장면, 뒤 CH.31 · 32 내용은 쓰지 않음"
+      }
+    ]
+  }
+}

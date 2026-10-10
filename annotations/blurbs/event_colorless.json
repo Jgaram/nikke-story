@@ -1,0 +1,14 @@
+{
+  "unit": "event_colorless",
+  "why": {
+    "text": "미미르 부속고의 필드 트립은 지상의 위험한 곳에서 학생의 생존 능력을 시험하는 행사로, 예전에 학생 대다수가 죽어 폐지됐다가 다시 열린다.",
+    "src": "8755d0806d",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "a217dca4b0", "note": "F1587 대조 — 필드 트립 제도, '손님들' · 열쇠 물음은 줄임" }
+    ]
+  }
+}

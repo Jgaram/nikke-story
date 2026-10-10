@@ -1,0 +1,14 @@
+{
+  "unit": "fl:go_ninja_thief",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "ecdaf0162b",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "24013a3582", "note": "고정 문장 — 델타 수습 코미디, 앞편 괴도단 이야기와 같은 기준" }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unit": "event_BunnyX777",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "23fe47b360",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "b929ba4509",
+        "note": "고정 문장 — 코인 러시 · 쌍둥이 요지는 CH.22, 남는 것은 속설 세부와 사기꾼 소동"
+      }
+    ]
+  }
+}

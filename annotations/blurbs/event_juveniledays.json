@@ -1,0 +1,14 @@
+{
+  "unit": "event_juveniledays",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "fa1f9f042c",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "7cfb85cbe1", "note": "고정 문장 — 아인의 이벤트 안 성장, 새 제도 · 인물 사정 없음" }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "unit": "event_nonsensered",
+  "why": {
+    "text": "RED ASH에서 한 줄로 지나간 갓데스의 연승 시절, 혼자 빨간 드레스를 입고 온 레드 후드가 그 차림 그대로 랩쳐와 싸운 하루를 볼 수 있다.",
+    "src": "a3d087802a",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "b11e43e5cb",
+        "note": "F1604 · F1139 대조 — 갓데스 승전 파티, 앞 RED ASH까지. 뒤 의문은 쓰지 않음"
+      }
+    ]
+  }
+}

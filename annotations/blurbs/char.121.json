@@ -1,0 +1,21 @@
+{
+  "unit": "char:121",
+  "why": {
+    "text": "MIRACLE SNOW의 기적으로 자기 이름과 지휘관을 기억하게 된 앤이, 그 뒤 카운터스와 지내며 수첩과 사진 앨범으로 하루를 잇고 있다.",
+    "src": "1e5bd2d9b2",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "4f05bac52f",
+        "note": "앞 MIRACLE SNOW 뒤 앤의 처지(F734) — 인물 사정이라 문장, 한 줄 소개와 겹치는 '어제를 기억 못함'은 뺌"
+      }
+    ]
+  }
+}

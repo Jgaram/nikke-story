@@ -1,0 +1,14 @@
+{
+  "unit": "event_foolburstday",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "22db7dd397",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "7b1092deb9", "note": "고정 문장 — 만우절 개그극, 메카 시프티는 단위 안 소동" }
+    ]
+  }
+}

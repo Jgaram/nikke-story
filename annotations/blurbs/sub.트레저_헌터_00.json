@@ -1,0 +1,14 @@
+{
+  "unit": "sub:트레저_헌터_00",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "ce87425808",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "07df0c9b80", "note": "고정 문장 — 줄기에 든 기록 없이 보물 찾기 연작의 시작뿐" }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "unit": "event_goldencoinrush1",
+  "why": {
+    "text": "황금칩을 쥔 스쿼드는 1년에 한 번 머스탱에게 무슨 소원이든 빌 수 있고, 777 스쿼드는 그 쟁탈전에서 진 적이 없다는 테트라 안의 규칙이 나온다.",
+    "src": "e1d90f1474",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "9ed5552a1d", "note": "F1481 대조 — 황금칩 제도, 한 줄 소개와 겹치는 쟁탈전 설명은 줄임" }
+    ]
+  }
+}
