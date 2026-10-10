@@ -6,13 +6,15 @@
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
  *   threads.json   줄기 60 + 관계 44
- *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결
+ *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
  */
+import fs from 'node:fs';
 import { kindOfKey } from '../../records/order.mjs';
 import { compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
+import { INDEX_FILE as ICONS_FILE } from '../portraits.mjs';
 
 export const name = 'common';
 
@@ -211,11 +213,13 @@ export async function run(ctx) {
     (sameAs.get(l.a) ?? sameAs.set(l.a, []).get(l.a)).push(l.b);
     (sameAs.get(l.b) ?? sameAs.set(l.b, []).get(l.b)).push(l.a);
   }
+  // 인물 아이콘(W11) — tools/site/portraits.mjs가 받아 둔 것만. 없으면 칸을 비운다
+  const icons = fs.existsSync(ICONS_FILE) ? JSON.parse(fs.readFileSync(ICONS_FILE, 'utf8')) : {};
   const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
     const r = pick(t, TARGET_COLUMNS);
     return compact({
       id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: names.get(r.id),
-      same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined,
+      same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id],
     });
   });
 

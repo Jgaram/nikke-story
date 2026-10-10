@@ -268,8 +268,9 @@ function classPanel(u, idx) {
 
 const needsRecords = (type) => ['scene', 'record', 'unit', 'person', 'target', 'thread'].includes(type);
 
-function head(title, chips = [], sub = null) {
+function head(title, chips = [], sub = null, pic = null) {
   return ui.el('header', { class: 'reader-head' },
+    pic,
     ui.el('div', { class: 'reader-title' },
       title ? ui.el('h2', {}, title) : null,
       sub ? ui.el('div', { class: 'reader-sub' }, sub) : null,
@@ -436,7 +437,7 @@ const RENDER = {
   target(id, idx) {
     const t = idx.targets.get(id);
     if (!t) return root.append(head('찾을 수 없음'), ui.empty(`찾는 항목 없음: ${id}`));
-    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null], mono(id)));
+    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null], mono(id), ui.portrait(t.icon, { size: 56, class: 'reader-pic' })));
     root.append(ui.el('div', { class: 'rd-open' }, t.type === 'person' ? tabLink('persons', { who: id }) : tabLink('world', { item: id })));
     const recs = idx.recordsAbout.get(id) ?? [];
     const units = new Set(recs.map((r) => r.unit).filter(Boolean));

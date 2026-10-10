@@ -38,11 +38,13 @@
 .tab-persons .pm-select { flex: 1 1 auto; min-width: 0; height: 30px; font-size: 13px; padding: 0 8px; }
 .tab-persons .pm-listcount { flex: none; font-size: 12.5px; }
 .tab-persons .pm-list { overflow: auto; padding: 4px; outline-offset: -2px; }
-.tab-persons .pm-item { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: baseline; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
+.tab-persons .pm-item { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto auto; align-items: center; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
 .tab-persons .pm-item:hover { background: var(--surface-2); }
 .tab-persons .pm-item.is-sel { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); box-shadow: inset 2px 0 0 var(--accent); }
 .tab-persons .pm-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
 .tab-persons .pm-item.is-sel .pm-item-name { font-weight: 600; }
+.tab-persons .pm-item-pic { width: 24px; height: 24px; border-radius: 5px; }
+.tab-persons .pm-title-pic { border-radius: 10px; }
 .tab-persons .pm-item-kind { font-size: 11.5px; color: var(--ink-muted); }
 .tab-persons .pm-item-metric { min-width: 2.2em; text-align: right; font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .tab-persons .pm-empty { padding: 14px 10px; }

@@ -161,6 +161,11 @@ const ICONS = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   chevron: '<path d="m9 6 6 6-6 6"/>',
 };
+/** 인물 아이콘(W11) — site/img/people/{icon}.png, 128² 게임 이미지. 이름이 곁에 있어 장식으로 둔다(alt 빈칸). 아이콘 없으면 null */
+export function portrait(icon, { size = 32, class: cls = '' } = {}) {
+  if (!icon) return null;
+  return el('img', { class: ['portrait', cls], src: `img/people/${icon}.png`, width: size, height: size, alt: '', loading: 'lazy', decoding: 'async' });
+}
 /** 인라인 SVG 아이콘 — 색은 currentColor, 크기는 1em. 장식이라 aria-hidden */
 export function icon(name, attrs = {}) {
   const t = document.createElement('template');
