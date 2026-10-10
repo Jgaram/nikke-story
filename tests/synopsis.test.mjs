@@ -14,7 +14,7 @@ import path from 'node:path';
 import { sourceWindows } from '../tools/check-quotes.mjs';
 import { run as exportSynopsis } from '../tools/site/export/synopsis.mjs';
 import {
-  LIMITS, checkSynopsis, contentHash, loadSynopses, overlapProblems, planBatches, spoilerProblems, stateOf, synopsisPath, unitKind,
+  LIMITS, checkSynopsis, contentHash, loadSynopses, nameFirsts, overlapProblems, planBatches, spoilerProblems, stateOf, synopsisPath, unitKind,
 } from '../tools/synopsis/model.mjs';
 
 const SCENES = ['d_main_01_01_s', 'd_main_01_02'];
@@ -118,6 +118,27 @@ test('스포일러 경고 — 낱말 속 글자(앞에 한글 음절이 붙은 �
   const r = spoilerProblems(name, 10, firsts);
   assert.match(r.warnings[0], /이브/);
   assert.match(r.warnings[0], /사라/);
+});
+
+test('스포일러 경고 — 세는 말 마리는 빼고, 이름 마리는 잡는다', () => {
+  const firsts = new Map([['마리', { order: 50, unit: 'char:832' }]]);
+  assert.deepEqual(spoilerProblems({ ...good(), synopsis: `${good().synopsis} 늑대 여섯 마리가 다가온다.` }, 10, firsts).warnings, []);
+  assert.match(spoilerProblems({ ...good(), synopsis: `${good().synopsis} 마리가 다가온다.` }, 10, firsts).warnings[0], /마리/);
+});
+
+test('처음 나온 자리 — 같은 대상의 표기 갈래(점 · 띄어쓰기만 다른 것)는 자리를 나누고, 다른 이름은 나누지 않는다', () => {
+  const rows = [
+    { story_id: 's1', target: 'org:A.C.P.U.', name: 'ACPU' },
+    { story_id: 's2', target: 'org:A.C.P.U.', name: 'A.C.P.U.' },
+    { story_id: 's1', target: 'person:x', name: '가명' },
+    { story_id: 's2', target: 'person:x', name: '본명' },
+  ];
+  const db = { prepare: () => ({ iterate: () => rows }) };
+  const pos = { u1: 1, u2: 9 };
+  const places = { unitOf: (id) => ({ s1: 'u1', s2: 'u2' })[id], unitPos: new Map(Object.entries(pos)) };
+  const f = nameFirsts(db, places);
+  assert.equal(f.get('A.C.P.U.').order, 1);
+  assert.equal(f.get('본명').order, 9);
 });
 
 test('W9 묶음 — 갈래 순서(메인 → 이벤트 → 작은 단위 → 호감도), 읽는 순서 유지, max 이하, 고르게', () => {

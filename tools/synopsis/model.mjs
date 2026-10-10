@@ -66,7 +66,9 @@ export const FORBIDDEN = [
 /** 금지 꼴에 걸리지만 게임 안 용어인 것 — 금지 꼴 검사 전에 지운다 */
 export const GAME_TERMS = [/E2\s?크리스탈/g, /X1\s?온리\s?원/g, /(?<![A-Za-z0-9])(?:A2|N102)(?![A-Za-z0-9])/g];
 /** 뒤 이름을 품은 흔한 낱말 — 앞에 나온 이름처럼 덮어서 스포일러로 잡지 않는다(사라지다 속 사라) */
-export const COMMON_WORDS = ['사라지', '사라진', '사라졌', '사라질', '사라짐', '사라져', '라이플', '라이벌', '승리의 여신', '레이드', '레이디', '레이더', '베이킹', '리스트', '레이저', '조이스틱', '부부 연기', 'X레이'];
+export const COMMON_WORDS = ['사라지', '사라진', '사라졌', '사라질', '사라짐', '사라져', '라이플', '라이벌', '승리의 여신', '레이드', '레이디', '레이더', '베이킹', '리스트', '레이저', '조이스틱', '부부 연기', 'X레이',
+  // 세는 말 마리(W10)
+  ...['한', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열', '몇', '여러'].map((n) => `${n} 마리`)];
 export const WORK_WORDS = /[12]회독|되짚기|바로잡기|확신도|\((?:추정|확실)\)|후보로|판정 카드|볼 거리/g;
 
 const arr = (x) => (Array.isArray(x) ? x : []);
@@ -215,19 +217,33 @@ export function overlapProblems(s, windows) {
  */
 export function nameFirsts(db, places) {
   const first = new Map();
-  for (const r of db.prepare('SELECT story_id, name FROM mentions').iterate()) {
+  // 같은 대상의 표기 갈래(점 · 띄어쓰기 · 대소문자만 다른 것 — ACPU · A.C.P.U. · A.C.P.U)는 처음 나온 자리를 나눈다(W10)
+  const spelling = new Map();
+  const keysOf = new Map();
+  const earlier = (m, k, v) => {
+    const cur = m.get(k);
+    if (!cur || v.order < cur.order) m.set(k, v);
+  };
+  for (const r of db.prepare('SELECT story_id, target, name FROM mentions').iterate()) {
     const unit = places.unitOf(r.story_id);
     if (!unit) continue;
     const order = places.unitPos.get(unit);
     for (const raw of String(r.name ?? '').split(' · ')) {
       const name = raw.trim();
       if (chars(name) < 2 || /^[?？…\s]+$/.test(name)) continue;
-      const cur = first.get(name);
-      if (!cur || order < cur.order) first.set(name, { order, unit });
+      earlier(first, name, { order, unit });
+      const key = `${r.target}\u0000${spellingKey(name)}`;
+      earlier(spelling, key, { order, unit });
+      if (!keysOf.has(name)) keysOf.set(name, new Set());
+      keysOf.get(name).add(key);
     }
   }
+  for (const [name, keys] of keysOf) for (const key of keys) earlier(first, name, spelling.get(key));
   return first;
 }
+
+/** 표기 갈래를 하나로 — 점 · 가운뎃점 · 띄어쓰기를 빼고 소문자로 */
+export const spellingKey = (name) => name.replace(/[.\s·]/g, '').toLowerCase();
 
 /**
  * 스포일러 경고 — 그 단위(읽는 순서 order) 뒤에 처음 나오는 이름이 화면 글에 들었나.

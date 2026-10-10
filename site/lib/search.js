@@ -1,19 +1,23 @@
 /**
- * 상단 검색(W1) — 입력 하나로 스토리 · 인물 · 세계(대상) · 떡밥 · 분석 메모 문장. 대사 본문 검색은 없다(공개 규칙).
- * 메모 문장(records*.json)은 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건, 입력 디바운스 150ms.
+ * 상단 검색(W1) — 입력 하나로 스토리 · 인물 · 세계(대상) · 떡밥 · 분석 메모 문장 · 공개 개요(줄거리, W10). 대사 본문 검색은 없다(공개 규칙).
+ * 메모 문장(records*.json) · 개요(synopsis.json)는 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건(줄거리는 10건), 입력 디바운스 150ms.
+ * 줄거리 결과는 스토리 제목 + 맞은 곳 앞뒤 글 — 여기까지 읽음 뒤 스토리는 맞은 글을 보이지 않고 "스포일러"만 붙인다.
  * 키보드: ↑ ↓ 이동 · Enter 열기 · Esc 닫기. 고르면 `state.set({ sel, tab })` — unit → 감상 순서, person → 인물, target → 세계, thread → 떡밥, record → 지금 탭.
  *
  *   init({ input, container, state, data, fmt, ui })
  */
 const MAX = 50;
 const GROUPS = [
-  ['unit', '스토리'], ['person', '인물'], ['target', '세계'], ['thread', '떡밥'], ['record', '분석 메모'],
+  ['unit', '스토리'], ['person', '인물'], ['target', '세계'], ['thread', '떡밥'], ['record', '분석 메모'], ['synopsis', '줄거리'],
 ];
-const TAB_FOR = { unit: 'order', person: 'persons', target: 'world', thread: 'threads' };
+const MAX_SYNOPSIS = 10;
+const TAB_FOR = { unit: 'order', synopsis: 'order', person: 'persons', target: 'world', thread: 'threads' };
 
 let entries = null;
 let recordEntries = null;
 let recordsLoading = null;
+let synopsisEntries = null;
+let synopsisLoading = null;
 
 const norm = (s) => String(s ?? '').toLowerCase().replace(/\s+/g, '');
 
@@ -35,6 +39,21 @@ export function init({ input, container, state, data, fmt, ui }) {
     recordEntries = idx.recordList.map((r) => ({ type: 'record', sel: `record:${r.id}`, label: fmt.recordText(r), sub: `${fmt.recordLabel(r)} · ${fmt.unitTitle(r.unit)}`, id: r.id, tick: r.tick, keys: [norm(r.id), norm(fmt.recordText(r))] }));
   };
 
+  const buildSynopsis = (idx, list) => {
+    synopsisEntries = list.map((x) => {
+      const u = idx.units.get(x.key);
+      const text = [x.logline, x.synopsis, ...Object.values(x.scenes ?? {})].join(' ');
+      return { type: 'synopsis', sel: `unit:${x.key}`, label: u?.title ?? x.key, text, tick: u?.tick, keys: [norm(text)] };
+    });
+  };
+  /** 줄거리에서 맞은 곳 앞뒤 — 띄어쓰기가 달라 못 찾으면 앞머리 */
+  const snippet = (text, q) => {
+    const i = text.toLowerCase().indexOf(String(q).trim().toLowerCase());
+    const a = Math.max(0, i - 16);
+    const s = i < 0 ? text.slice(0, 40) : text.slice(a, i + String(q).trim().length + 24);
+    return `${i > 16 ? '…' : ''}${s.replace(/\s+/g, ' ')}…`;
+  };
+
   const search = (q) => {
     const n = norm(q);
     if (!n) return [];
@@ -54,7 +73,9 @@ export function init({ input, container, state, data, fmt, ui }) {
       if (s) hits.push({ e, s });
     }
     hits.sort((a, b) => b.s - a.s || GROUPS.findIndex((g) => g[0] === a.e.type) - GROUPS.findIndex((g) => g[0] === b.e.type) || a.e.label.length - b.e.label.length);
-    return hits.slice(0, MAX).map((h) => h.e);
+    // 줄거리는 따로 — 흔한 이름이면 수백 편이 맞아 다른 결과를 밀어내지 않게 읽는 순서로 MAX_SYNOPSIS까지
+    const syn = n.length < 2 ? [] : (synopsisEntries ?? []).filter((e) => e.keys[0].includes(n)).slice(0, MAX_SYNOPSIS);
+    return [...hits.slice(0, MAX).map((h) => h.e), ...syn];
   };
 
   const close = () => {
@@ -74,7 +95,7 @@ export function init({ input, container, state, data, fmt, ui }) {
     ui.clear(container);
     items = list;
     active = -1;
-    if (!list.length && !recordsLoading) {
+    if (!list.length && !recordsLoading && !synopsisLoading) {
       if (!q) return close();
       container.append(ui.empty('결과 없음'));
     }
@@ -89,11 +110,11 @@ export function init({ input, container, state, data, fmt, ui }) {
         const after = e.tick != null && !state.visible(e.tick, t);
         const node = ui.el('div', { class: ['search-item', after ? 'after-cutoff' : ''], role: 'option', id: `search-opt-${k}`, 'aria-selected': 'false', dataset: { i: String(k) }, onMousedown: (ev) => { ev.preventDefault(); choose(e); } },
           ui.el('span', { class: 'search-label' }, e.label),
-          ui.el('span', { class: 'search-sub' }, e.sub, after ? ' · 스포일러' : null, e.id ? [' · ', ui.el('span', { class: 'mono' }, e.id)] : null));
+          ui.el('span', { class: 'search-sub' }, e.type === 'synopsis' ? (after ? '스포일러 — 여기까지 읽음 뒤 스토리' : snippet(e.text, q)) : e.sub, e.type !== 'synopsis' && after ? ' · 스포일러' : null, e.id ? [' · ', ui.el('span', { class: 'mono' }, e.id)] : null));
         container.append(node);
       }
     }
-    if (recordsLoading) container.append(ui.spinner('불러오는 중…'));
+    if (recordsLoading || synopsisLoading) container.append(ui.spinner('불러오는 중…'));
     container.hidden = false;
     input.setAttribute('aria-expanded', 'true');
   };
@@ -113,6 +134,9 @@ export function init({ input, container, state, data, fmt, ui }) {
     if (!entries) build(idx);
     if (q && !recordEntries && !recordsLoading) {
       recordsLoading = idx.withRecords().then(() => { buildRecords(idx); recordsLoading = null; if (input.value) render(input.value); }).catch(() => { recordsLoading = null; });
+    }
+    if (q && !synopsisEntries && !synopsisLoading) {
+      synopsisLoading = data.load('synopsis').then((list) => { buildSynopsis(idx, list); synopsisLoading = null; if (input.value) render(input.value); }).catch(() => { synopsisLoading = null; synopsisEntries = []; });
     }
     render(q);
   };
