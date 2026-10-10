@@ -60,6 +60,8 @@ const LABELS = {
   emptyAll: '보이는 스토리가 없다', clearFilters: '필터 풀기',
   emptyPlaced: '작중 때를 아는 스토리가 가려졌다 — 아래 목록을 본다',
   unknown: '알 수 없음',
+  laterStory: '뒤에 나오는 스토리',
+  spoiler: '여기까지 읽음 뒤 — 스포일러 보기',
   loose: '작중 때를 모르는 이야기', looseHint: '단서가 없거나 다른 스토리와의 앞뒤만 안다',
   /** 출시순과 비교 — 줄(짧게) · 카드(문장). ch = 출시 때의 메인 챕터, n = 몇 챕터 */
   drift: {
@@ -149,7 +151,14 @@ export async function mount(root, ctx) {
     if (piece && (piece.lo != null || piece.hi != null)) return spanText(piece);
     const key = idx.units.has(ref) ? ref : recUnit.get(ref) ?? piece?.unit;
     const u = key ? idx.units.get(key) : null;
+    if (u && !state.seen(u.key)) return LABELS.laterStory; // 안 본 스토리는 이름 대신(W15a) — 메인은 위에서 'CH.41'만
     return u ? `${u.title}${u.kind === 'episode' ? ` ${fmt.KIND.episode.label}` : ''}` : null;
+  };
+  /** 기준이 안 본 스토리인가 — 팬용 문장이 없을 때 드러나는 판정 문장을 접을지 정한다 */
+  const refUnseen = (ref) => {
+    if (/^ch\d+$/.test(ref)) return idx.units.has(ref) && !state.seen(ref);
+    const key = idx.units.has(ref) ? ref : recUnit.get(ref) ?? pieceById.get(ref)?.unit;
+    return Boolean(key && idx.units.has(key) && !state.seen(key));
   };
   /** 'CH.41 뒤' · 'MIRACLE SNOW와 같은 때' · 'CH.21 동안' */
   const relPhrase = (rel, ref, rest = '') => {
@@ -600,9 +609,12 @@ export async function mount(root, ctx) {
         ((basis) => (basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null))([...new Set(shownNarrows.flatMap(basisOf))].map(basisLink).filter(Boolean)))]
       : shownNarrows.map((n) => {
         const basis = basisOf(n).map(basisLink).filter(Boolean);
+        // 판정 문장은 뒤 스토리 이름을 쓸 수 있다 — 기준 · 근거에 안 본 스토리가 있으면 접는다(W15a)
+        const why = whyText(n.reason) ? el('p', { class: 'cr-reason' }, whyText(n.reason)) : null;
+        const whyHidden = why && (n.at.some(([, ref]) => refUnseen(ref)) || (n.basis ?? []).some((b) => { const k = basisUnit(b); return k && !rd.seen(k); }));
         return el('div', { class: 'cr-narrow' },
           el('b', {}, atText(n.at)),
-          whyText(n.reason) ? el('p', { class: 'cr-reason' }, whyText(n.reason)) : null,
+          whyHidden ? ui.details(LABELS.spoiler, why, { class: 'spoiler' }) : why,
           basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null);
       });
     const drift = DRIFT_STRONG.has(c.drift) ? LABELS.driftLong[c.drift](mainChOf(c), c.drift_gap) : null;

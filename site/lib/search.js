@@ -41,7 +41,7 @@ export function init({ input, container, state, data, fmt, ui }) {
       const sub = type === 'person' ? (t.kind && t.kind !== typeLabel ? t.kind : '') : [typeLabel, t.kind && t.kind !== typeLabel ? t.kind : null].filter(Boolean).join(' · ');
       entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub, target: type === 'person' ? t : null, keys: [norm(t.name), ...(t.aliases ?? []).map((a) => norm(a.name)), norm(t.id)] });
     }
-    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: fmt.majorThread(j), keys: [norm(j.title), norm(j.text)] });
+    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: fmt.majorThread(j), first: j.first_unit, keys: [norm(j.title), norm(j.text)] });
   };
   const buildRecords = (idx) => {
     const seen = new Set();
@@ -59,7 +59,7 @@ export function init({ input, container, state, data, fmt, ui }) {
     synopsisEntries = list.map((x) => {
       const u = idx.units.get(x.key);
       const text = [x.logline, x.synopsis, ...Object.values(x.scenes ?? {})].join(' ');
-      return { type: 'synopsis', sel: `unit:${x.key}`, label: u?.title ?? x.key, text, tick: u?.tick, keys: [norm(text)] };
+      return { type: 'synopsis', sel: `unit:${x.key}`, unit: x.key, label: u?.title ?? x.key, text, tick: u?.tick, keys: [norm(text)] };
     });
   };
   /** 줄거리에서 맞은 곳 앞뒤 — 띄어쓰기가 달라 못 찾으면 앞머리 */
@@ -84,7 +84,9 @@ export function init({ input, container, state, data, fmt, ui }) {
       return best;
     };
     const hits = [];
+    const R = state.reading();
     for (const e of entries) {
+      if (e.first && !R.seen(e.first)) continue; // 아직 안 나온 떡밥은 찾기에서 뺀다 — 제목 · 요약이 스포일러(W15a)
       const s = score(e);
       if (s) hits.push({ e, s });
     }
@@ -125,12 +127,16 @@ export function init({ input, container, state, data, fmt, ui }) {
       for (const e of group) {
         const k = i++;
         const after = e.rec ? !R.known(e.rec) : e.unit ? !R.seen(e.unit) : false;
-        const sub = e.type === 'synopsis' ? (after ? '스포일러 — 여기까지 읽음 뒤 스토리' : snippet(e.text, q)) : [e.sub, after ? '스포일러' : null].filter(Boolean).join(' · ');
+        // 여기까지 읽음 뒤 — 줄거리는 맞은 글 대신, 기록은 문장 대신 종류 이름만(W15a)
+        const sub = e.type === 'synopsis' ? (after ? '스포일러 — 여기까지 읽음 뒤 스토리' : snippet(e.text, q))
+          : e.rec && after ? `${fmt.unitTitle(e.rec.unit)} · 스포일러`
+          : [e.sub, after ? '스포일러' : null].filter(Boolean).join(' · ');
+        const label = e.rec && after ? fmt.recordLabel(e.rec) : e.label;
         const pic = e.target ? ui.portrait(fmt.iconAt(e.target, state.get().t), { size: 28, class: 'search-pic' }) : null;
         const node = ui.el('div', { class: ['search-item', after ? 'after-cutoff' : '', pic ? 'has-pic' : ''], role: 'option', id: `search-opt-${k}`, 'aria-selected': 'false', dataset: { i: String(k) }, onMousedown: (ev) => { ev.preventDefault(); choose(e); } },
           pic,
           ui.el('span', { class: 'search-text' },
-            ui.el('span', { class: 'search-label' }, e.label),
+            ui.el('span', { class: 'search-label' }, label),
             sub ? ui.el('span', { class: 'search-sub' }, sub) : null));
         container.append(node);
       }

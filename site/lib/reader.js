@@ -62,6 +62,8 @@ const LABELS = {
   slips: '설정 오류 의심',
   hiddenStory: (at) => `여기까지 읽음(${at}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`,
   skippedStory: '안 봤다고 고른 스토리 — 아래는 스포일러일 수 있다',
+  hiddenThread: '아직 나오지 않은 떡밥',
+  hiddenThreadNote: (at) => `여기까지 읽음(${at}) 뒤에 나오는 떡밥 — 이름 · 내용은 스포일러`,
   spoiler: (n) => `여기까지 읽음 뒤 — 스포일러 보기${n != null ? ` (${n})` : ''}`,
   aliases: '다른 이름',
   first: '처음 등장',
@@ -620,7 +622,7 @@ const RENDER = {
       ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? fmt.sceneName(s.id)}`), s.part || s.level ? ui.el('span', { class: 'muted' }, ` ${[s.part, s.level ? `Lv.${s.level}` : null].filter(Boolean).join(' · ')}`) : null,
         !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty(LABELS.noScenes)));
     if (recs.length) root.append(fold(kindsTitle(recs), (body) => body.append(recordList(recs))));
-    slipsPanel(idx.slipsOf.get(key));
+    slipsPanel(idx.slipsOf.get(key), hidden);
   },
 
   scene(id, idx) {
@@ -648,7 +650,7 @@ const RENDER = {
     root.append(ui.panel(LABELS.sceneLinks, spoil ? ui.details(spoilerSummary(), body, { class: 'spoiler' }) : body, { actions: u ? tabAction('links', { c: u.key }) : null }));
     loadLinksInto(body, idx, { sel: current, pick: (li) => li.byScene.get(id) ?? [], build: (edges) => sceneLinkRows(id, edges, idx), emptyText: LABELS.sceneLinksEmpty });
     if (recs.length) root.append(ui.panel(kindsTitle(recs), recordList(recs)));
-    slipsPanel((idx.slipsOf.get(s.unit) ?? []).filter((x) => !x.scenes?.length || x.scenes.includes(id)));
+    slipsPanel((idx.slipsOf.get(s.unit) ?? []).filter((x) => !x.scenes?.length || x.scenes.includes(id)), spoil);
   },
 
   record(id, idx) {
@@ -736,9 +738,16 @@ const RENDER = {
   thread(id, idx) {
     const j = idx.threads.get(id);
     if (!j) return root.append(head(LABELS.notFound), ui.empty(LABELS.notFound));
+    // 아직 안 나온 떡밥(첫 스토리를 안 봄) — 머리는 '아직 나오지 않은 떡밥'만, 이름부터 전부 스포일러 접이에(W15a)
+    const started = !j.first_unit || !idx.units.has(j.first_unit) || state.seen(j.first_unit);
+    if (!started) {
+      root.append(head(LABELS.hiddenThread));
+      root.append(ui.notice(LABELS.hiddenThreadNote(cutoffName()), 'warn'));
+    }
+    const out = started ? root : ui.el('div', {});
     const sub = joinDots([fmt.majorThread(j) ? ui.el('span', { title: fmt.help('weight', j.weight) }, fmt.majorThread(j)) : null].filter(Boolean));
-    root.append(head(j.title, [j.confidence === '추정' ? ui.chip('confidence', '추정') : null], sub.length ? sub : null));
-    root.append(ui.el('div', { class: 'rd-open' }, tabLink('threads', { j: id })));
+    out.append(started ? head(j.title, [j.confidence === '추정' ? ui.chip('confidence', '추정') : null], sub.length ? sub : null) : ui.el('p', {}, ui.el('strong', {}, j.title)));
+    out.append(ui.el('div', { class: 'rd-open' }, tabLink('threads', { j: id })));
     const qs = (j.questions ?? []).map((q) => idx.records?.get(q)).filter(Boolean);
     const fs = (j.facts ?? []).map((f) => idx.records?.get(f)).filter(Boolean);
     // 상태 — 여기까지 읽음 안에서 아는 의문만 센다(미해결 · 일부 회수 · 회수). 전체 수(스포일러)는 싣지 않는다
@@ -747,7 +756,7 @@ const RENDER = {
     for (const q of qs) { if (!R.known(q)) continue; const s = fmt.stateAt(q, R); if (s in n) n[s]++; }
     const stateRow = Object.values(n).some(Boolean) ? joinNodes(Object.entries(n).filter(([, v]) => v).map(([k, v]) => ui.el('span', {}, ui.chip('state', k), ` ${v}`))) : null;
     const first = j.first_unit && idx.units.has(j.first_unit) && state.seen(j.first_unit) ? j.first_unit : null;
-    root.append(ui.panel(null, [
+    out.append(ui.panel(null, [
       fmt.prose(j.text) ? ui.el('p', {}, fmt.prose(j.text)) : null,
       kv([
         row(LABELS.state, stateRow),
@@ -757,16 +766,25 @@ const RENDER = {
       ]),
     ]));
     // 칸 이름이 종류라 줄마다 종류 칩을 되풀이하지 않는다
-    if (qs.length) root.append(ui.panel(LABELS.question, recordList(qs, { showUnit: true, kind: false })));
-    if (fs.length) root.append(ui.panel(LABELS.fact, recordList(fs, { showUnit: true, kind: false })));
+    if (qs.length) out.append(ui.panel(LABELS.question, recordList(qs, { showUnit: true, kind: false })));
+    if (fs.length) out.append(ui.panel(LABELS.fact, recordList(fs, { showUnit: true, kind: false })));
+    // 다른 떡밥과의 관계 — 근거 기록을 하나라도 알면 보이고(떡밥 탭 관계도와 같은 규칙), 아니면 접이에(W15a)
     const rels = idx.relations.filter((g) => g.from === id || g.to === id);
     if (rels.length) {
-      root.append(ui.panel(LABELS.relations, ui.el('ul', { class: 'plain' }, rels.map((g) => {
+      const relLine = (g) => {
         const other = g.from === id ? g.to : g.from;
         return ui.el('li', { class: 'rd-thread' }, ui.link(`thread:${other}`, idx.threads.get(other)?.title ?? other), ui.el('span', { class: 'rd-link-meta' }, ` ${g.type}`),
           fmt.prose(g.text) ? ui.el('div', { class: 'muted' }, fmt.prose(g.text)) : null);
-      }))));
+      };
+      const relKnown = (g) => R.all || (g.basis ?? []).some((b) => { const r = idx.records?.get(b); return r && R.known(r); });
+      const before = rels.filter(relKnown);
+      const after = rels.filter((g) => !relKnown(g));
+      out.append(ui.panel(LABELS.relations, [
+        before.length ? ui.el('ul', { class: 'plain' }, before.map(relLine)) : ui.empty(LABELS.inRangeNone),
+        after.length ? ui.details(spoilerSummary(after.length), ui.el('ul', { class: 'plain' }, after.map(relLine)), { class: 'spoiler' }) : null,
+      ]));
     }
+    if (!started) root.append(ui.details(spoilerSummary(), out, { class: 'spoiler' }));
   },
 
   tick(id, idx) {
@@ -781,8 +799,9 @@ const RENDER = {
 };
 
 /** 설정 오류 의심 — 바꿀 수 있는 문장만(fmt.prose) */
-function slipsPanel(slips) {
+function slipsPanel(slips, hidden = false) {
   const texts = (slips ?? []).map((s) => fmt.prose(s.text)).filter(Boolean);
   if (!texts.length) return;
-  root.append(ui.panel(LABELS.slips, ui.el('ul', { class: 'plain' }, texts.map((t) => ui.el('li', { class: 'slip' }, t)))));
+  const list = ui.el('ul', { class: 'plain' }, texts.map((t) => ui.el('li', { class: 'slip' }, t)));
+  root.append(ui.panel(LABELS.slips, hidden ? ui.details(spoilerSummary(), list, { class: 'spoiler' }) : list)); // 여기까지 읽음 뒤 스토리면 접는다(W15a)
 }

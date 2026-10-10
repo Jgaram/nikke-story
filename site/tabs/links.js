@@ -69,6 +69,7 @@ const LABELS = {
   targetTop: '많이 걸린 항목',
   thread: '떡밥',
   threadAll: '떡밥 전체',
+  afterCut: '여기까지 읽음 뒤 — 스포일러',
   lineKind: '선 종류',
   kindFilter: '스토리 종류',
   strength: '세기',
@@ -109,7 +110,6 @@ const LABELS = {
   chainBranch: '갈래 있음',
   chainEmpty: '보일 연작이 없다',
   chainLen: (n) => `${n}편`,
-  chainHiddenTail: (n) => `뒤 ${n}편은 스포일러로 가렸다`,
   chainNotes: '이어지는 까닭',
   svgOff: '그림을 그리지 못했다 — 카드의 선 종류 단추로 이어진 장면을 볼 수 있다.',
   loadingEvidence: '불러오는 중…',
@@ -199,6 +199,8 @@ export async function mount(root, ctx) {
     const threads = threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) }));
     return { targets, threads };
   };
+  // 주소로 온 떡밥 · 대상(p.th · p.tg)이 여기까지 읽음 안의 선에 걸리나 — 아니면 이름 대신 '스포일러'로 보인다(W15a)
+  const inCutAny = (F, field, id) => edges.some((e) => e[field].includes(id) && inCut(F, e.a) && inCut(F, e.b));
   /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   let cand = { targets: [], threads: [] }; // syncControls가 필터가 바뀔 때마다 다시 센다
@@ -456,7 +458,7 @@ export async function mount(root, ctx) {
   const threadSelect = h('select', { class: 'lk-select', 'aria-label': LABELS.thread, onChange: (e) => setP({ th: e.target.value || null, n: null, lt: null, pr: null }) },
     h('option', { value: '' }, LABELS.threadAll));
   const rebuildThreadOptions = () => {
-    const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: idx.threads.get(F.th)?.title ?? F.th, n: 0 }] : cand.threads;
+    const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: inCutAny(F, 'threads', F.th) ? idx.threads.get(F.th)?.title ?? F.th : LABELS.afterCut, n: 0 }] : cand.threads;
     threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...list.map((t) => h('option', { value: t.id }, t.title)));
   };
 
@@ -1216,7 +1218,7 @@ export async function mount(root, ctx) {
       const shown = us.slice(0, cutAt);
       const keys = new Set(shown.map((u) => u.key));
       const es = ch.edges.filter((e) => keys.has(e.from) && keys.has(e.to));
-      (groups.get(us[0].kind) ?? groups.set(us[0].kind, []).get(us[0].kind)).push({ ch, shown, es, tail: us.length - cutAt });
+      (groups.get(us[0].kind) ?? groups.set(us[0].kind, []).get(us[0].kind)).push({ ch, shown, es });
     }
     summary.replaceChildren();
     if (![...groups.values()].some((g) => g.length)) { summary.replaceChildren(); body.append(emptyState(LABELS.chainEmpty, { cut: hiddenChains })); return; }
@@ -1230,7 +1232,7 @@ export async function mount(root, ctx) {
     }
   }
   /** 연작 카드 — 편 수 + 편 사슬. 까닭 문장은 직접 읽고 이은 연작만(키로 이은 '다음 편'은 당연하다), 갈래가 있으면 어느 편에서 갈렸는지 접이 안에 */
-  function chainCard({ ch, shown, es, tail }) {
+  function chainCard({ ch, shown, es }) {
     const flow = h('ol', { class: 'lk-flow' });
     if (ch.linear) {
       shown.forEach((u, i) => {
@@ -1246,7 +1248,6 @@ export async function mount(root, ctx) {
     return h('article', { class: 'lk-chain' },
       h('header', { class: 'lk-chain-head' }, h('strong', {}, LABELS.chainLen(fmt.num(shown.length))), ch.linear ? null : h('span', { class: 'muted' }, LABELS.chainBranch)),
       ch.linear ? flow : h('ol', { class: 'lk-flow lk-flow-tree' }, shown.map((u) => h('li', { class: 'lk-chain-node' }, chainNode(u)))),
-      tail > 0 ? h('p', { class: 'lk-chain-tail muted' }, LABELS.chainHiddenTail(tail)) : null,
       noteRows.length ? ui.details(LABELS.chainNotes, h('ul', { class: 'lk-chain-notes' }, noteRows), { open: !ch.linear }) : null);
   }
   function chainNode(u) {
@@ -1264,7 +1265,7 @@ export async function mount(root, ctx) {
   function syncControls() {
     modeSeg.set(F.mode);
     strengthSeg.set(String(F.minS));
-    targetCombo.set(F.tg ? fmt.targetName(F.tg) : '');
+    targetCombo.set(F.tg ? (inCutAny(F, 'targets', F.tg) ? fmt.targetName(F.tg) : LABELS.afterCut) : '');
     cand = candidatesFor(F);
     rebuildThreadOptions();
     rebuildKindOptions();
