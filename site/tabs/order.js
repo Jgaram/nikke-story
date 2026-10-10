@@ -21,7 +21,8 @@
  *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드는 줄에 '안 봄' 표시.
  *   목록: 감상 순서 한 줄(ol). 척추 줄은 종류 필터(+ 척추 이벤트 · 사이드는 등급 '필수')에 들면 보이고, 그 사이에 필터에 든 메인 밖 스토리를 읽는 자리 순서대로 끼운다.
  *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 아래에 '먼저 볼 것'만 — 메인 밖 줄과 같은 기준, 사용자 2026-10-10). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 줄 안내 요약).
- *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 메인 밖 줄 · 척추 줄(메인 챕터는 '먼저 볼 것'만).
+ *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 메인만 보는 사람도, 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 모든 줄(메인 챕터는 '먼저 볼 것'만).
+ *     전제는 "메인 챕터는 차례로 본다" 하나 — 척추 이벤트 · 사이드도 메인 밖 스토리처럼 먼저 볼 것 · 기한에 든다(order.json pre — export/order.mjs spineAnchors).
  *     두 방향 하나씩만: '먼저 볼 것: CH.12 · 랩칠리언 1'(줄 아래 — 최소 선행: 판정 자리가 앞인 척추 + 필수 선행) · 'CH.27 전까지'(회색 글자 줄 — 뒤에서 이 스토리를
  *     필수 · 권장 선행으로 쓰는 가장 앞 척추, 없으면 메인 밖 스토리). 둘 다 없으면 목록 자리 뒤 언제든(머리 아래 한 줄 설명). 왜 선행인가(떡밥 → 회수 · 다시 언급 등)는
  *     스포일러가 될 수 있어 싣지 않는다(사용자, 2026-10-10). 흐리게 끼운 앞 편은 'X의 앞 편'이 기한을 말하므로 기한을 다시 쓰지 않는다.
@@ -79,7 +80,7 @@ export function cutRowAt(seq, cut, R) {
 }
 
 /**
- * 흐리게 끼울 앞 편 — 보이는 줄(keys)의 필수 선행(order.json pre 필수 = 앞 편) 가운데 pass(키)가 참인 것(종류 · 찾기는 통과하고 등급 필터로만 숨은 것)을
+ * 흐리게 끼울 앞 편 — 보이는 줄(keys)의 앞 편(order.json pre 필수 가운데 sequel) 가운데 pass(키)가 참인 것(종류 · 찾기는 통과하고 등급 필터로만 숨은 것)을
  * 앞 편의 앞 편까지 거슬러 모은다. 돌려주는 것: Map(앞 편 키 → 그것을 부른 줄의 키)
  */
 export function ghostKeys(keys, pre, pass) {
@@ -88,8 +89,9 @@ export function ghostKeys(keys, pre, pass) {
   const stack = [...keys];
   while (stack.length) {
     const k = stack.pop();
-    for (const [a] of pre[k]?.필수 ?? []) {
-      if (shown.has(a) || out.has(a) || !pass(a)) continue;
+    for (const [a, why] of pre[k]?.필수 ?? []) {
+      // 앞 편(sequel)만 — 연작이 끊기지 않게. 준필수 · 척추 이벤트처럼 판정으로 기대는 것은 '먼저 볼 것'이 이름을 말한다(메인만 보는 사람이 끈 것을 되살리지 않는다)
+      if (why !== 'sequel' || shown.has(a) || out.has(a) || !pass(a)) continue;
       out.set(a, k);
       stack.push(a);
     }
@@ -163,7 +165,7 @@ export async function mount(root, ctx) {
   /** 'CH.27 전까지' — 회색 글자 줄에. 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
   const dueText = (item) => {
     const d = guide(item.key).due;
-    if (!d || item.spine || item.ghostOf === d.key) return null;
+    if (!d || item.ghostOf === d.key) return null; // 척추 이벤트 · 사이드도 — 메인만 보는 사람에게 'CH.43 전까지'
     return ui.el('span', { class: 'order-due', title: LABELS.dueHelp(spineLabel(d.key)) }, fmt.preOf(spineLabel(d.key)));
   };
   /** '먼저 볼 것: CH.12 · 랩칠리언 1' — 줄 아래 한 줄(최소 선행). 링크는 그 스토리를 리더로 연다 */

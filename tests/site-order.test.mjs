@@ -74,7 +74,7 @@ test('gradeTrail — 이력 문자열에서 등급이 바뀐 순서만 뽑는다
   for (const u of order.units) if (u.trail) assert.equal(u.trail.at(-1), u.grade, u.key);
 });
 
-test('prereqsOf — 앞 편은 필수 · 분류가 짚은 자리는 필수/권장 · 떡밥은 권장/선택, 척추 · 뒤 단위는 선행이 아니다', async () => {
+test('prereqsOf — 앞 편은 필수 · 분류가 짚은 자리는 필수/권장 · 떡밥은 권장/선택, 메인 챕터 · 뒤 단위는 선행이 아니다, 척추 이벤트는 기댄 메인 챕터의 필수', async () => {
   const { prereqsOf } = await import('../tools/site/export/order.mjs');
   const units = new Map([
     ['ch01', { order: 1, kind: 'main' }], ['a', { order: 2, kind: 'sub' }], ['b', { order: 3, kind: 'sub' }],
@@ -85,7 +85,9 @@ test('prereqsOf — 앞 편은 필수 · 분류가 짚은 자리는 필수/권�
     { from_unit: 'a', to_unit: 'c', type: 'setup_payoff', strength: '3' },
     { from_unit: 'b', to_unit: 'c', type: 'callback', strength: '3' },
     { from_unit: 'a', to_unit: 'c', type: 'callback', strength: '2' }, // 같은 짝은 높은 칸 하나
-    { from_unit: 'ev', to_unit: 'c', type: 'setup_payoff', strength: '3' }, // 척추는 선행으로 세지 않는다
+    { from_unit: 'ev', to_unit: 'c', type: 'setup_payoff', strength: '3' }, // 척추 이벤트도 같은 규칙(메인 챕터만 차례로 본다고 둔다)
+    { from_unit: 'ch01', to_unit: 'c', type: 'setup_payoff', strength: '3' }, // 메인 챕터는 선행으로 세지 않는다
+    { from_unit: 'ev', to_unit: 'ch02', type: 'callback', strength: '3' }, // 척추 이벤트가 기댄 첫 메인 챕터 → 필수(spine)
     { from_unit: 'c', to_unit: 'b', type: 'setup_payoff', strength: '3' }, // 뒤 단위는 선행이 아니다
     { from_unit: 'a', to_unit: 'ch02', type: 'setup_payoff', strength: '3' }, // 척추 X — 판정이 안 짚은 떡밥은 선택
     { from_unit: 'a', to_unit: 'c', type: 'keyword', strength: '2' },
@@ -93,21 +95,24 @@ test('prereqsOf — 앞 편은 필수 · 분류가 짚은 자리는 필수/권�
   const judged = [{ key: 'c', grade: '보강', from: 'ch02' }, { key: 'b', grade: '필수', from: 'ch02' }];
   const pre = prereqsOf(edges, judged, units);
   assert.deepEqual(pre.b, { 필수: [['a', 'sequel']] });
-  assert.deepEqual(pre.c, { 권장: [['a', 'setup_payoff']], 선택: [['b', 'callback']] });
-  assert.deepEqual(pre.ch02, { 필수: [['b', 'judged']], 권장: [['c', 'judged']], 선택: [['a', 'setup_payoff']] });
+  assert.deepEqual(pre.c, { 권장: [['a', 'setup_payoff'], ['ev', 'setup_payoff']], 선택: [['b', 'callback']] });
+  assert.deepEqual(pre.ch02, { 필수: [['b', 'judged'], ['ev', 'spine']], 권장: [['c', 'judged']], 선택: [['a', 'setup_payoff']] });
 });
 
-test('order.json pre — 선행은 모두 앞 단위이고 척추가 아니다', () => {
+test('order.json pre — 선행은 모두 앞 단위이고 메인 챕터가 아니다, 척추 이벤트 · 사이드는 기댄 메인 챕터의 필수', () => {
   const units = new Map(read('units.json').map((u) => [u.key, u]));
   for (const [x, row] of Object.entries(order.pre)) {
     for (const l of Object.keys(row)) {
       assert.ok(['필수', '권장', '선택'].includes(l), `${x} ${l}`);
       for (const [a] of row[l]) {
         assert.ok(units.get(a).order < units.get(x).order, `${a} → ${x}`);
-        assert.ok(units.get(a).kind !== 'main' && !units.get(a).spine, `${a} 척추`);
+        assert.ok(units.get(a).kind !== 'main', `${a} 메인 챕터`);
       }
     }
   }
+  // 메인만 보는 사람도 안내받게(사용자, 2026-10-10) — CH.43은 ARK GUARDIAN에 기댄다
+  const key = (t) => [...units.values()].find((u) => u.title === t).key;
+  assert.ok(order.pre.ch43.필수.some(([a, w]) => a === key('ARK GUARDIAN') && w === 'spine'));
 });
 
 // 여기까지 읽음 판정 묶음(state.reading) — units.json으로 설정해 둔다(브라우저 밖에서도 configure · reading은 돈다)
@@ -161,12 +166,15 @@ test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)�
   for (const [a, by] of ghosts) {
     assert.ok(!shown.includes(a), `${a}: 이미 보이는 줄`);
     assert.ok(['참고', '독립'].includes(judged.get(a).grade), `${a}: 등급 필터 밖`);
-    assert.ok(order.pre[by].필수.some(([k]) => k === a), `${a}: ${by}의 필수 선행`);
+    assert.ok(order.pre[by].필수.some(([k, w]) => k === a && w === 'sequel'), `${a}: ${by}의 앞 편`);
     assert.ok(units.get(a).order < units.get(by).order, `${a}: 앞에 온다`);
   }
   // 종류로 숨은 것은 끼우지 않는다
   assert.equal(ghostKeys(shown, order.pre, (k) => pass(k) && units.get(k).kind !== 'sub').size < ghosts.size, true);
   assert.equal(ghostKeys([], order.pre, pass).size, 0);
+  // 메인만(등급 칩 모두 끔): 준필수(CH.48 ← SECOND AFFECTION)처럼 판정으로 기대는 것은 끼우지 않는다 — '먼저 볼 것'이 말한다
+  const mains = order.spine.filter((s) => units.get(s.key).kind === 'main').map((s) => s.key);
+  assert.equal(ghostKeys(mains, order.pre, pass).size, 0);
 });
 
 test('guideOf — 먼저 볼 것 = 판정 자리가 앞인 척추 + 필수 선행, 기한 = 뒤의 필수 · 권장 선행(척추 먼저), 선택 선행은 둘 다 아니다', () => {
@@ -192,6 +200,7 @@ test('guideOf — 실제 데이터: 짚었던 줄(B-SIDE IDOL · 길로틴 · �
   // 메인 챕터도 같은 기준(필수 선행만) — CH.48은 SECOND AFFECTION(준필수), CH.27의 추천(권장 선행)은 먼저 볼 것이 아니다
   assert.deepEqual(guideOf('ch48', ctx).must, [byTitle('SECOND AFFECTION')]);
   assert.deepEqual(guideOf('ch27', ctx).must, []);
+  assert.equal(guideOf(byTitle('ARK GUARDIAN'), ctx).due?.key, 'ch43', '척추 이벤트도 기한 — ARK GUARDIAN은 CH.43 전까지');
   for (const j of order.units) {
     const g = guideOf(j.key, ctx);
     const pos = units.get(j.key).order;

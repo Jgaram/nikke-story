@@ -34,21 +34,37 @@ export function gradeTrail(history) {
 /**
  * 선행 스토리 계산(사용자 2026-10-10 — 판정 · 연결에서 계산, 새로 판정하지 않는다).
  * A가 X의 선행 = A가 X보다 앞(읽는 자리)이고 아래 중 하나. 여러 개에 걸리면 높은 칸 하나.
- *   필수  sequel(다음 편 — A가 X의 앞 편, X가 메인 챕터면 뺀다) · judged(A의 판정 from이 X이고 A가 필수)
+ *   필수  sequel(다음 편 — A가 X의 앞 편, X가 메인 챕터면 뺀다) · judged(A의 판정 from이 X이고 A가 필수) · spine(A가 척추 이벤트 · 사이드이고 X가 그 기댄 자리 — spineAnchors)
  *   권장  judged(from이 X이고 A가 보강) · X가 메인 밖일 때 setup_payoff · reversal 강함(3)
  *   선택  callback 강함(3) · setup_payoff · callback 보통(2) · X가 척추일 때 setup_payoff · reversal 강함(3)(판정이 그 자리를 짚지 않았다)
- * 척추(메인 챕터 + 척추 이벤트 · 사이드)는 감상 순서에 늘 있으므로 A로 세지 않는다. 같은 인물 · 같은 대상(character · keyword)은 세지 않는다.
+ * 전제는 "메인 챕터는 차례로 본다" 하나(사용자, 2026-10-10 — 메인만 보는 사람도 있다): 메인 챕터는 A로 세지 않고, 척추 이벤트 · 사이드는 다른 스토리와 같은 규칙으로 센다.
+ * 같은 인물 · 같은 대상(character · keyword)은 세지 않는다.
  * @param {{ from_unit, to_unit, type, strength }[]} edges  data/views/links/unit-edges.csv 줄
  * @param {{ key, grade, from }[]} judged  판정 단위
  * @param {Map<string, { order: number, kind: string, spine?: boolean }>} unitByKey
  */
+/**
+ * 척추 이벤트 · 사이드의 기댄 자리 — 척추라는 판정이 곧 "메인이 이것에 기댄다"이므로 준필수의 판정 자리(from)처럼 다룬다.
+ * 자리 = 이 단위보다 뒤 메인 챕터로 가는 강한(3) setup_payoff · reversal · callback 가운데 가장 앞(없으면 자리 없음). 돌려주는 것: Map(척추 이벤트 키 → 메인 챕터 키)
+ */
+export function spineAnchors(edges, unitByKey) {
+  const out = new Map();
+  for (const e of edges) {
+    const ua = unitByKey.get(e.from_unit); const ux = unitByKey.get(e.to_unit);
+    if (!ua?.spine || ua.kind === 'main' || ux?.kind !== 'main' || !(ux.order > ua.order)) continue;
+    if (!['setup_payoff', 'reversal', 'callback'].includes(e.type) || Number(e.strength) < 3) continue;
+    if (!out.has(e.from_unit) || ux.order < unitByKey.get(out.get(e.from_unit)).order) out.set(e.from_unit, e.to_unit);
+  }
+  return out;
+}
+
 export function prereqsOf(edges, judged, unitByKey) {
   const LEVEL = ['필수', '권장', '선택'];
   const isSpine = (k) => unitByKey.get(k)?.kind === 'main' || Boolean(unitByKey.get(k)?.spine);
   const ord = (k) => unitByKey.get(k)?.order ?? Infinity;
   const pre = new Map(); // X → Map(A → [level, why])
   const put = (x, a, level, why) => {
-    if (a === x || isSpine(a) || !unitByKey.has(a) || !unitByKey.has(x) || !(ord(a) < ord(x))) return;
+    if (a === x || unitByKey.get(a)?.kind === 'main' || !unitByKey.has(a) || !unitByKey.has(x) || !(ord(a) < ord(x))) return;
     const m = pre.get(x) ?? pre.set(x, new Map()).get(x);
     const had = m.get(a);
     if (!had || LEVEL.indexOf(level) < LEVEL.indexOf(had[0])) m.set(a, [level, why]);
@@ -58,6 +74,7 @@ export function prereqsOf(edges, judged, unitByKey) {
     if (j.grade === '필수') put(j.from, j.key, '필수', 'judged');
     else if (j.grade === '보강') put(j.from, j.key, '권장', 'judged');
   }
+  for (const [a, x] of spineAnchors(edges, unitByKey)) put(x, a, '필수', 'spine');
   for (const e of edges) {
     const a = e.from_unit; const x = e.to_unit; const st = Number(e.strength);
     const xSpine = isSpine(x);

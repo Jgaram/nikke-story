@@ -213,7 +213,7 @@ export const PRE_HELP = {
   권장: '먼저 보면 이 스토리의 장면 · 떡밥이 이어진다 — 이 자리에 추천으로 분류된 스토리이거나 강한 떡밥',
   선택: '이 스토리가 다시 꺼내는 일이 나온다 — 봐 두면 좋지만 안 봐도 된다',
 };
-export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
+export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', spine: '메인이 기댐', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
 export const preOf = (spineLabel) => `${spineLabel} 전까지`; // 'CH.30 전까지' — 그 필수 스토리를 보기 전에 보면 좋다(W13b — 전 'CH.30 선행')
 
 /** 선행 거꾸로 — Map(선행 키 → [[그것을 선행으로 쓰는 키, 칸, 왜]]) */
@@ -231,7 +231,7 @@ export function preRev(pre) {
 /**
  * 감상 안내(감상 순서 줄 · 리더 '언제 읽나' — 사용자, 2026-10-10: 처음 보는 사람의 가이드). 판정 자리(from) · 선행(order.json pre)과 그 거꾸로에서 기계적으로 낸다.
  *   ctx: { units: Map(키 → { order }), spine: Set(척추 키), pre, rev: preRev(pre), judged: Map(키 → { grade, from }) }
- *   must  먼저 볼 것(최소 선행) [키] — 판정 자리가 앞인 척추(그 빈틈을 채운다 — 길로틴 → CH.12) + 필수 선행(앞 편 등), 읽는 자리 순.
+ *   must  먼저 볼 것(최소 선행) [키] — 판정 자리가 앞인 척추(그 빈틈을 채운다 — 길로틴 → CH.12) + 필수 선행(앞 편 · 척추 이벤트 등 — 메인 챕터는 차례로 본다고 두어 pre에 없다), 읽는 자리 순.
  *         권장 · 선택 선행은 '보면 좋다'라 넣지 않는다(리더 선행 칸에 있다)
  *   due   기한 { key, level } — 뒤에서 이 스토리를 필수 · 권장 선행으로 쓰는 것 가운데: 가장 앞의 척추(판정 자리가 뒤면 그것도 — 준필수 = 필수 · 추천 = 권장),
  *         없으면 가장 앞의 메인 밖 스토리. 선택 선행(다시 언급 등)은 기한이 아니다
