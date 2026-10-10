@@ -36,7 +36,8 @@
 - [x] **W9e 공개 개요 쓰기 — 메인 CH.43–CH.48** (6단위 · 6.3만 자) — T5-9
   - 인계: 6/6 확정, 원문 0자. 경고 1 — ch44 스포일러 오탐('크리스탈' 속 '리스'). 게임 용어 'E2'가 기록 ID 꼴로 걸려 빼고 씀 → 검사 오탐은 W10에서 도구 쪽 확인. 정체는 그 단위 안에서 드러나는 순서대로, 열린 의문(Q367)은 밝히지 않음.
 - [ ] **W9f 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ① event_nocallerid … event_dazzlingcupid** (21단위 · 7.3만 자) — T5-9
-- [ ] **W9g 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ② event_freezeacpu … event_lastkingdom1** (16단위 · 7.4만 자) — T5-9
+- [x] **W9g 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ② event_freezeacpu … event_lastkingdom1** (16단위 · 7.4만 자) — T5-9
+  - 인계: 16/16 확정, 원문 약 5천 자(event_liarsend_12 끝 씬). 경고 2 — neverland1 '베이킹' · killthelord '레이디' 오탐, --note. 밝혀지지 않은 것(희석 언체인드 캡슐 · ※※ · 방주 동력원)은 쓰지 않음, 갈림 결말은 선택이 있다는 것만.
 - [ ] **W9h 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ③ event_darkhero … event_secretgarden** (16단위 · 6.8만 자) — T5-9
 - [x] **W9i 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ④ event_icedragonsaga1 … event_lordforjustice** (15단위 · 7.3만 자) — T5-9
   - 인계: 15/15 확정, 원문 352자(erelic:unbreakable_sphere_dialog_08), 경고 0. 입력에서 추정인 정체(잉그리드 = 저지스 [I] 등)는 쓰지 않음, 설정 오류 추정이 붙은 시간은 숫자를 피함. 2부까지 담은 단위는 두 부를 개요 하나로.
