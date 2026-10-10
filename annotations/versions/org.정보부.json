@@ -1,0 +1,17 @@
+{
+  "subject": "org:정보부",
+  "versions": [
+    {
+      "at": "ch01",
+      "text": "방주에서 지상 작전을 통신으로 서포트하는 오퍼레이터가 속한 부서 — 시프티가 이곳 소속으로 지휘관의 작전을 맡는다.",
+      "src": "f8e386d734",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W15e", "hash": "f5f118ada1", "note": "F10 · d_main_01_05#19-20 — 1판(뒤 기록은 세부)" }
+      ]
+    }
+  ]
+}

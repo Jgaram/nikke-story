@@ -1,0 +1,24 @@
+{
+  "subject": "org:5차_강하_부대",
+  "versions": [
+    {
+      "at": "char:850",
+      "text": "다른 세계에서 온 릴리가 밝힌 제 소속 부대. 함께 온 이브는 7차 강하 부대 소속이라 한다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "183461ad86",
+          "note": "기록 없음 — 원문 ep:d_nikke_ce006_01_01#1·36·38·47로 씀, 1판"
+        }
+      ]
+    }
+  ]
+}

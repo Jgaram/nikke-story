@@ -1,0 +1,24 @@
+{
+  "subject": "place:코랄_아일랜드",
+  "versions": [
+    {
+      "at": "event_beautyfullshot1",
+      "text": "지상 바다의 크고 작은 섬들. 화보 촬영 중에 라피 일행이 머스탱의 부탁으로, 방주가 없어질 경우 인간이 살 만한 곳인지 조사했다.",
+      "src": "37ef46578f",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "c9ac63802e",
+          "note": "E425 · F1509 · event_beautyfullshot1_03_e#2-18 — 1판(fl:wave_to_you는 새 사례)"
+        }
+      ]
+    }
+  ]
+}

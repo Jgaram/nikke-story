@@ -1,0 +1,24 @@
+{
+  "subject": "place:해피_판타지_랜드",
+  "versions": [
+    {
+      "at": "event_nocallerid",
+      "text": "수십 년 전 멈춘 지상의 테마파크. 이곳 놀이기구 광고 방송이 방주에 닿아 지상 생존자의 음성 메시지라는 소문이 돌았지만, 어떻게 닿았는지는 모른다.",
+      "src": "0cfb99e468",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "5d945017ed",
+          "note": "F667 · Q92(event_nocallerid) — 같은 스토리에서 정체가 드러나 1판, 열린 물음은 물음 꼴로"
+        }
+      ]
+    }
+  ]
+}
