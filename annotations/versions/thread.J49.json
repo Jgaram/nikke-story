@@ -1,0 +1,25 @@
+{
+  "subject": "thread:J49",
+  "versions": [
+    {
+      "at": "char:280",
+      "title": "로산나의 부친",
+      "text": "배드 드림에서 일하던 모친과 사이에 로산나를 둔 무책임한 로열 남자 — 로산나가 아직 얼굴도 모르는 부친은 누구인가.",
+      "src": "ecbcc0a396",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "7a7be52e03",
+          "note": "판마다 at까지의 흐름 · 근거 씬으로만 썼는지, 뒤 이름 · 묶음 암시 · 판정 말이 없는지 다시 봄"
+        }
+      ]
+    }
+  ]
+}

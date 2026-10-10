@@ -1,0 +1,45 @@
+{
+  "subject": "thread:J58",
+  "versions": [
+    {
+      "at": "fl:blank_ticket",
+      "title": "노라의 티켓 — TERMINUS",
+      "text": "노라가 티켓에 쓴 목적지 TERMINUS는 어디인가 — 노라가 반드시 돌아가야 한다는 그곳에서 기다렸을지 모를 이는 누구인가.",
+      "src": "4a34178b5c",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "6fc3d284a6",
+          "note": "판마다 at까지의 흐름 · 근거 씬으로만 썼는지, 뒤 이름 · 묶음 암시 · 판정 말이 없는지 다시 봄"
+        }
+      ]
+    },
+    {
+      "at": "fl:terminus_ticket",
+      "title": "노라의 종착역 — 꽃밭의 기차역",
+      "text": "노라의 종착역은 따뜻한 지역의 꽃밭 속, 노라의 집 앞 기차역이었다 — 노라는 그곳에서 자기를 기다렸다는 루시안의 환영을 보고 오열한 뒤 숨을 거두었다.",
+      "src": "695213b792",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "cddb500977",
+          "note": "판마다 at까지의 흐름 · 근거 씬으로만 썼는지, 뒤 이름 · 묶음 암시 · 판정 말이 없는지 다시 봄"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "subject": "thread:J51",
+  "versions": [
+    {
+      "at": "event_goldenship",
+      "title": "황금 배 — 해무 속의 그림자",
+      "text": "바다 끝 해무 속을 유유히 떠다니다 자취를 감춘 거대한 함선의 황금빛 그림자는 무엇인가 — 정말 캡틴 앨리게이터가 남긴 황금 배인가.",
+      "src": "ce3a357b81",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "d01dd8774b",
+          "note": "판마다 at까지의 흐름 · 근거 씬으로만 썼는지, 뒤 이름 · 묶음 암시 · 판정 말이 없는지 다시 봄"
+        }
+      ]
+    }
+  ]
+}
