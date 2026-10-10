@@ -16,7 +16,7 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const SITE = path.join(ROOT, 'site');
 const fmt = await import('../site/lib/format.js');
 
-/** 화면 금지어 — docs/views.md "화면 문구는 간결하게" · docs/site-cleanup.md 용어표 */
+/** 화면 금지어 — docs/views.md "화면 문구는 간결하게" · 같은 절 끝 화면 용어표 */
 const BANNED = ['자동 규칙', '분석 메모'];
 /** 아직 못 고친 곳 — 그 탭 세션(SESSIONS.md W13b–e)이 고치면서 여기서 지운다. 고쳤는데 남겨 두면 실패한다 */
 const PENDING = {
