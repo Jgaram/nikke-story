@@ -8,5 +8,23 @@
     "date": "2026-10-10",
     "status": "확정",
     "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "bc0ef48ca0", "note": "F1248 대조 — 로봇 반려동물 · 먹이 주기 유행" }]
+  },
+  "when": {
+    "text": "보호소를 이어받는 것이 지휘관이 소개한 길로틴이다 — 길로틴이 처음 나오는 것이 CH.12라 그 뒤의 일로 본다.",
+    "src": "94ede807a4",
+    "session": "W14c",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14c",
+        "hash": "06c306b590",
+        "note": "추정 이유 · 풀어 쓴 기록 문장 대조, 한 줄 소개 · 화면 자리 되풀이 없음, 뒤 스토리 이름 없음"
+      }
+    ]
   }
 }

@@ -8,5 +8,23 @@
     "date": "2026-10-10",
     "status": "확정",
     "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "e78be74ec5", "note": "F1218 대조 — 루드밀라 가문과 고아원" }]
+  },
+  "when": {
+    "text": "블랑과 누아르가 일행에 합류해 지휘관을 '점장님'이라 부른다 — 쌍둥이가 처음 나오는 것이 CH.22라 그 뒤의 일로 본다.",
+    "src": "000bc12f06",
+    "session": "W14c",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14c",
+        "hash": "5a7b61f14e",
+        "note": "추정 이유 · 풀어 쓴 기록 문장 대조, 한 줄 소개 · 화면 자리 되풀이 없음, 뒤 스토리 이름 없음"
+      }
+    ]
   }
 }
