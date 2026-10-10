@@ -11,13 +11,14 @@
  *
  * URL 파라미터(p.*) — 기본값이면 URL에서 뺀다
  *   m    ego(이웃, 기본) | net(전체) | chain(연작)
+ *   ck   중심 스토리를 고를 스토리 종류(1단계). 없으면 전부. 가운데 후보 · 기본 가운데를 그 종류로 좁힌다(가운데를 직접 고르면 그 스토리가 우선)
  *   c    이웃 보기의 가운데 스토리 키. 없으면 지금 거르개 · 컷오프에서 가장 많이 이어진 스토리(탭 안을 만지면 그 스토리를 c에 못박는다, 다른 탭에서 sel=unit:키를 들고 들어오면 그 스토리)
  *   n    이웃 보기에서 고른 앞/뒤 스토리 키(아래 근거의 대상). 없으면 가장 센 연결의 스토리
  *   pr   전체 보기에서 고른 선 "from>to"
  *   lt   고른 선 종류(sequel · setup_payoff · callback · reversal · character · keyword), 없으면 그 쌍의 전부
  *   ty   보일 선 종류(쉼표) 또는 all. 없으면 이웃 보기는 전부, 전체 보기는 이야기 연결 넷(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)
  *   s    연결 강도 1(전부) | 2(보통 이상, 기본) | 3(강함)
- *   tg   인물 · 항목 ID(예 person:라피). 이 항목이 걸린 선만
+ *   tg   인물 · 항목 ID(예 person:라피). 이 항목이 걸린 선만. 고를 수 있는 후보는 지금 가운데 · 거르개에서 보이는 선에 걸린 것만
  *   th   떡밥 ID(예 J1). 이 떡밥에 걸린 선만
  *   kd   보일 스토리 종류(쉼표). 없으면 전부. 이웃 보기에서는 가운데 말고 이웃에만 건다
  *   nn   전체 보기에서 그릴 스토리 수 150(기본 80)
@@ -47,6 +48,8 @@ export const meta = { id: 'links', title: '연결', blurb: '스토리 사이의 
 const LABELS = {
   mode: { ego: '이웃', net: '전체', chain: '연작' },
   modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '거르개로 줄인 전체 연결을 감상 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
+  centerKind: '스토리 종류',
+  centerKindAll: '전체 종류',
   center: '중심 스토리',
   centerPh: '스토리 이름으로 찾기',
   filters: '거르개',
@@ -188,26 +191,32 @@ export async function mount(root, ctx) {
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
   const threadList = [...threadUse].map(([id, n]) => ({ id, n, title: idx.threads.get(id)?.title ?? id }))
     .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
-  /** 거르개 후보는 여기까지 읽음 안(양 끝 스토리를 다 본) 선에 걸린 것만 — 이름 · 떡밥 제목이 스포일러라서. R = state.reading() */
-  const candidatesFor = (R) => {
-    if (R.all) return { targets: targetList, threads: threadList };
+  /**
+   * 인물 · 항목 · 떡밥 거르개 후보 — 지금 가운데(이웃 보기) · 선 종류 · 세기 · 스토리 종류 · 읽은 자리에서 실제로 보이는 선에 걸린 것만.
+   * 인물 후보는 고른 떡밥을, 떡밥 후보는 고른 인물 · 항목을 따른다(자기 자신의 거르개는 후보를 줄이지 않는다). 걸린 선 수 순.
+   */
+  const candidatesFor = (F) => {
+    const ctr = F.mode === 'ego' ? (F.center ? units.get(F.center) : bestCenter(F, degreesCached(F))) : null;
     const tu = new Map();
     const hu = new Map();
     for (const e of edges) {
-      if (!R.seen(e.from) || !R.seen(e.to)) continue;
-      for (const t of e.targets) tu.set(t, (tu.get(t) ?? 0) + 1);
-      for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
+      if (F.types && !F.types.has(e.type)) continue;
+      if (!inCut(F, e.a) || !inCut(F, e.b) || !inRange(F, e.a) || !inRange(F, e.b)) continue;
+      if (F.mode === 'ego') {
+        if (!ctr || (e.from !== ctr.key && e.to !== ctr.key)) continue;
+        if (!kindOk(F, e.from === ctr.key ? e.b : e.a)) continue;
+      } else if (F.kinds && !F.kinds.has(e.a.kind) && !F.kinds.has(e.b.kind)) continue;
+      if (!F.th || e.threads.includes(F.th)) for (const t of e.targets) if (e.strength >= F.minS || commonSet.has(t)) tu.set(t, (tu.get(t) ?? 0) + 1);
+      if ((!F.tg || e.targets.includes(F.tg)) && (e.strength >= F.minS || relaxed(F, e))) for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
     }
-    return {
-      targets: targetList.filter((t) => tu.has(t.id)).map((t) => ({ ...t, n: tu.get(t.id) })).sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko')),
-      threads: threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) })),
-    };
+    const targets = targetList.filter((t) => tu.has(t.id)).map((t) => ({ ...t, n: tu.get(t.id) })).sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
+    const threads = threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) }));
+    return { targets, threads };
   };
   /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const READ_ALL = state.reading({ t: null, x: {} });
-  let cand = candidatesFor(state.reading(state.get()));
-  let candT = cutSig(state.reading(state.get()));
+  let cand = { targets: [], threads: [] }; // syncControls가 거르개가 바뀔 때마다 다시 센다
 
   // ── 거르개 (URL 파라미터 → F) ──
   const listParam = (v, allowed) => {
@@ -222,6 +231,7 @@ export async function mount(root, ctx) {
     const types = p.ty === 'all' ? null : listParam(p.ty, typesPresent) ?? (mode === 'net' ? new Set(typesPresent.filter((t) => STORY_TYPES.has(t))) : null);
     return {
       mode,
+      ck: kindsPresent.includes(p.ck) ? p.ck : null,
       center: units.has(p.c) ? p.c : null,
       n: p.n || null,
       pr: p.pr || null,
@@ -252,7 +262,7 @@ export async function mount(root, ctx) {
   }
   /** 선 굵기 — 세기 2 이상만 볼 때는 약한 연결을 뺀다 */
   const effCount = (e, F) => (F.minS >= 2 && !relaxed(F, e) ? Math.max(1, e.count - (e.weak ?? 0)) : e.count);
-  const structSig = (F) => JSON.stringify([F.mode, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.layers, F.wide, F.mm]);
+  const structSig = (F) => JSON.stringify([F.mode, F.ck, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.layers, F.wide, F.mm]);
 
   /** 스토리별 이어진 이웃 수(지금 거르개 · 컷오프 · 범위 안, 종류 거르개는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
   function degrees(F) {
@@ -270,12 +280,12 @@ export async function mount(root, ctx) {
     let best = null;
     for (const [k, set] of nb) {
       const u = units.get(k);
-      if (!u || !inCut(F, u) || !inRange(F, u)) continue;
+      if (!u || !inCut(F, u) || !inRange(F, u) || (F.ck && u.kind !== F.ck)) continue;
       if (!best || set.size > best.n || (set.size === best.n && u.order < best.u.order)) best = { u, n: set.size };
     }
     if (best) return best.u;
     // 이어진 스토리가 하나도 안 보이면(컷오프가 이를 때) 가장 먼저 나온 스토리 — 가려진 이웃 수를 알려 줄 수 있다
-    return idx.unitList.filter((u) => inCut(F, u) && inRange(F, u)).sort((x, y) => x.order - y.order)[0] ?? null;
+    return idx.unitList.filter((u) => inCut(F, u) && inRange(F, u) && (!F.ck || u.kind === F.ck)).sort((x, y) => x.order - y.order)[0] ?? null;
   }
 
   // ── 이웃 묶기 (가운데 스토리 하나) ──
@@ -409,7 +419,7 @@ export async function mount(root, ctx) {
     options: (q) => {
       const F = readF(state.get());
       const nb = degreesCached(F);
-      const pool = idx.unitList.filter((u) => inCut(F, u) && inRange(F, u));
+      const pool = idx.unitList.filter((u) => inCut(F, u) && inRange(F, u) && (!F.ck || u.kind === F.ck));
       const n = (u) => nb.get(u.key)?.size ?? 0;
       let items;
       if (!q) {
@@ -426,6 +436,16 @@ export async function mount(root, ctx) {
     },
     onPick: (key) => state.set({ p: { c: key, n: null, lt: null, pr: null } }),
   });
+  // 1단계: 스토리 종류(고르면 가운데를 그 종류의 가장 많이 이어진 스토리로 옮긴다 — 2단계에서 다른 스토리를 고른다)
+  const kindSelect = h('select', { class: 'lk-select', 'aria-label': LABELS.centerKind, onChange: (e) => setP({ ck: e.target.value || null, c: null, n: null, lt: null, pr: null }) });
+  const rebuildKindOptions = () => {
+    const nb = degreesCached(F);
+    const cnt = new Map();
+    for (const u of idx.unitList) if (inCut(F, u) && inRange(F, u) && nb.get(u.key)?.size) cnt.set(u.kind, (cnt.get(u.kind) ?? 0) + 1);
+    kindSelect.replaceChildren(h('option', { value: '' }, LABELS.centerKindAll),
+      ...kindsPresent.map((k) => h('option', { value: k, disabled: !cnt.get(k) && F.ck !== k }, `${kindLabel(k)} (${fmt.num(cnt.get(k) ?? 0)})`)));
+    kindSelect.value = F.ck ?? '';
+  };
 
   // 인물 · 항목 고르기
   const targetCombo = combobox({
@@ -451,9 +471,11 @@ export async function mount(root, ctx) {
 
   // 떡밥 고르기
   const threadSelect = h('select', { class: 'lk-select', 'aria-label': LABELS.thread, onChange: (e) => setP({ th: e.target.value || null, n: null, lt: null, pr: null }) },
-    h('option', { value: '' }, LABELS.threadAll),
-    cand.threads.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
-  const rebuildThreadOptions = () => threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...cand.threads.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
+    h('option', { value: '' }, LABELS.threadAll));
+  const rebuildThreadOptions = () => {
+    const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: idx.threads.get(F.th)?.title ?? F.th, n: 0 }] : cand.threads;
+    threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...list.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
+  };
 
   // 연결 강도
   const strengthSeg = ui.segmented({ label: TERM.strength, options: LABELS.strength.map((o) => ({ ...o, title: fill(o.title) })), value: '2', onChange: (v) => setP({ s: v === '2' ? null : v, n: null, lt: null }) });
@@ -516,6 +538,7 @@ export async function mount(root, ctx) {
     filterBtn.setAttribute('aria-expanded', String(on));
   } }, LABELS.filters, h('span', { class: 'lk-filter-n' }));
   const barMain = h('div', { class: 'lk-bar lk-bar-main' },
+    field(LABELS.centerKind, kindSelect, 'lk-field-ckind'),
     field(LABELS.center, centerCombo.el, 'lk-field-center'),
     filterBtn,
     field(LABELS.target, targetCombo.el, 'lk-field-target lk-collapsible'),
@@ -682,7 +705,7 @@ export async function mount(root, ctx) {
   }
   function recenter(key) {
     // 리더가 열려 있으면 새 가운데 스토리를 같이 보여 준다
-    state.set({ ...(state.get().sel ? { sel: `unit:${key}` } : {}), p: { m: null, c: key, n: null, lt: null, pr: null } });
+    state.set({ ...(state.get().sel ? { sel: `unit:${key}` } : {}), p: { m: null, c: key, n: null, lt: null, pr: null, ...(F.ck && units.get(key)?.kind !== F.ck ? { ck: null } : {}) } });
     window.scrollTo?.({ top: Math.max(0, root.getBoundingClientRect().top + window.scrollY - 120), behavior: 'auto' });
   }
   function hoverKey(key, on) {
@@ -1264,13 +1287,16 @@ export async function mount(root, ctx) {
     modeSeg.set(F.mode);
     strengthSeg.set(String(F.minS));
     targetCombo.set(F.tg ? fmt.targetName(F.tg) : '');
-    if (candT !== F.cut) { candT = F.cut; cand = candidatesFor(F.R); rebuildThreadOptions(); }
+    cand = candidatesFor(F);
+    rebuildThreadOptions();
+    rebuildKindOptions();
     threadSelect.value = F.th ?? '';
     kindChips.sync(F.kinds);
     typeChips.sync(F.types);
     const chain = F.mode === 'chain';
     controls.hidden = chain;
     barMain.querySelector('.lk-field-center').hidden = F.mode !== 'ego';
+    barMain.querySelector('.lk-field-ckind').hidden = F.mode !== 'ego';
     filterBtn.classList.toggle('is-solo', F.mode !== 'ego');
     const active = [F.mode === 'net' ? Boolean(p0().ty) : Boolean(F.types), F.minS !== 2, Boolean(F.tg), Boolean(F.th), Boolean(F.kinds)].filter(Boolean).length;
     const badge = filterBtn.querySelector('.lk-filter-n');

@@ -48,6 +48,7 @@
 .tab-links .lk-bar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 18px; margin: 0 0 10px; }
 .tab-links .lk-field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .tab-links .lk-lab { font-size: var(--fs-small, 12.5px); color: var(--ink-muted); line-height: 1.2; }
+.tab-links .lk-field-ckind { flex: 0 1 170px; }
 .tab-links .lk-field-center { flex: 1 1 280px; max-width: 440px; }
 .tab-links .lk-field-target { flex: 1 1 220px; max-width: 320px; }
 .tab-links .lk-field-thread { flex: 0 1 220px; }
@@ -300,7 +301,7 @@
   .tab-links .lk-legend-note { margin-left: 0; flex-basis: 100%; }
 }
 @media (max-width: 600px) {
-  .tab-links .lk-field, .tab-links .lk-field-center, .tab-links .lk-field-target, .tab-links .lk-field-thread { flex: 1 1 100%; max-width: none; }
+  .tab-links .lk-field, .tab-links .lk-field-ckind, .tab-links .lk-field-center, .tab-links .lk-field-target, .tab-links .lk-field-thread { flex: 1 1 100%; max-width: none; }
   .tab-links .lk-detail, .tab-links .lk-inner { padding: 12px; }
   .tab-links .lk-chain-node { flex-basis: 100%; }
   .tab-links .lk-flow { flex-direction: column; align-items: stretch; }
