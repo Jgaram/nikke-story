@@ -11,7 +11,7 @@
  * URL 파라미터(p.*)
  *   j       고른 떡밥 ID(없으면 J1, 아직 안 나왔으면 나온 것 중 첫째). sel=thread:J5로 들어와도 같다
  *   axis    story면 작중 시간순, 없으면 출시 순서
- *   f       흐름 거르개 — unsolved(안 풀린 의문) · solved(풀린 의문) · fact(사실), 없으면 전부
+ *   f       흐름 필터 — unsolved(안 풀린 의문) · solved(풀린 의문) · fact(사실), 없으면 전부
  *   map     지도 보기 — rel(떡밥끼리) · item(항목) · list(목록). 없으면 넓은 화면은 떡밥끼리, 좁은 화면(< 760px, 처음 열 때 한 번 판단)은 목록
  *   c       항목 보기에서 고른 항목 ID(target ID). 없으면 가장 많은 떡밥을 잇는 항목
  *   common  1이면 자주 나오는 항목(떡밥 9개 이상에 걸친 항목)도 보인다
@@ -855,7 +855,7 @@ export async function mount(root, ctx) {
 
   const openRecord = (id) => state.set({ sel: `record:${id}` });
 
-  /** 흐름 그림 전체(폭이 바뀌거나 컷오프 · 거르개가 바뀔 때) */
+  /** 흐름 그림 전체(폭이 바뀌거나 컷오프 · 필터가 바뀔 때) */
   const renderChart = () => {
     hideTip();
     ui.clear(chartHead);

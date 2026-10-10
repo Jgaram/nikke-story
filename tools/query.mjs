@@ -556,7 +556,7 @@ const commands = {
     const tk = rel.ticks[T - 1];
     console.log(T ? `공개 자리 ${T}/${rel.ticks.length} (${tk.date}${tk.main ? ` · 메인 ${tk.main}까지` : ''} · 이 자리 단위 ${tk.units.length}) — 같은 날 나온 단위는 다 읽은 것으로 본다`
       : `공개 자리 0 — ${q}에는 아직 나온 것이 없다`);
-    if (values.thread || about) console.log(`거르개: ${[values.thread, about].filter(Boolean).join(' · ')}`);
+    if (values.thread || about) console.log(`필터: ${[values.thread, about].filter(Boolean).join(' · ')}`);
     const f = k.facts;
     const qs = k.questions;
     console.log(`사실: 앎 ${f.known.length} · 뒤집힘 ${f.reversed.length} · 암시만 ${f.hinted.length} · 아직 ${f.hidden}`);

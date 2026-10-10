@@ -1,6 +1,6 @@
 /**
  * 탭 2 연결(W3) — 화면 2 "스토리 간 연결"(docs/views.md 2절, 규칙 docs/schema.md "관계선").
- * 스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 보는 것이 기본(이웃)이고, 거르개로 줄인 전체(전체)와 연작 사슬(연작)도 본다.
+ * 스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 보는 것이 기본(이웃)이고, 필터로 줄인 전체(전체)와 연작 사슬(연작)도 본다.
  * 선을 누르면 그 선을 만든 분석 메모와 근거 줄(씬 → 씬)이 아래에 나온다.
  *
  * 쓰는 JSON
@@ -12,13 +12,13 @@
  * URL 파라미터(p.*) — 기본값이면 URL에서 뺀다
  *   m    ego(이웃, 기본) | net(전체) | chain(연작)
  *   ck   중심 스토리를 고를 스토리 종류(1단계). 없으면 전부. 가운데 후보 · 기본 가운데를 그 종류로 좁힌다(가운데를 직접 고르면 그 스토리가 우선)
- *   c    이웃 보기의 가운데 스토리 키. 없으면 지금 거르개 · 컷오프에서 가장 많이 이어진 스토리(탭 안을 만지면 그 스토리를 c에 못박는다, 다른 탭에서 sel=unit:키를 들고 들어오면 그 스토리)
+ *   c    이웃 보기의 가운데 스토리 키. 없으면 지금 필터 · 컷오프에서 가장 많이 이어진 스토리(탭 안을 만지면 그 스토리를 c에 못박는다, 다른 탭에서 sel=unit:키를 들고 들어오면 그 스토리)
  *   n    이웃 보기에서 고른 앞/뒤 스토리 키(아래 근거의 대상). 없으면 가장 센 연결의 스토리
  *   pr   전체 보기에서 고른 선 "from>to"
  *   lt   고른 선 종류(sequel · setup_payoff · callback · reversal · character · keyword), 없으면 그 쌍의 전부
  *   ty   보일 선 종류(쉼표) 또는 all. 없으면 이웃 보기는 전부, 전체 보기는 이야기 연결 넷(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)
  *   s    연결 강도 1(전부) | 2(보통 이상, 기본) | 3(강함)
- *   tg   인물 · 항목 ID(예 person:라피). 이 항목이 걸린 선만. 고를 수 있는 후보는 지금 가운데 · 거르개에서 보이는 선에 걸린 것만
+ *   tg   인물 · 항목 ID(예 person:라피). 이 항목이 걸린 선만. 고를 수 있는 후보는 지금 가운데 · 필터에서 보이는 선에 걸린 것만
  *   th   떡밥 ID(예 J1). 이 떡밥에 걸린 선만
  *   kd   보일 스토리 종류(쉼표). 없으면 전부. 이웃 보기에서는 가운데 말고 이웃에만 건다
  *   nn   전체 보기에서 그릴 스토리 수 150(기본 80)
@@ -29,9 +29,9 @@
  *   색 = 선 종류(다음 편 파랑 · 떡밥→회수 주황 · 다시 언급 청록 · 뒤집힘 빨강 — dataviz 검증 팔레트 순서 [빨강 파랑 주황 청록], 같은 인물 · 같은 소재는 회색 실선 · 점선),
  *   굵기 = 연결된 씬 수(세기 2 이상만 볼 때는 약한 연결 weak를 뺀 수), 점선(긴 점선) = 확정 전 후보. 이 탭에는 스토리 종류 색이 없다 —
  *   종류는 글자로 쓰고 전체 보기에서는 가로 띠(행)가 종류다(색 두 갈래가 겹치지 않게).
- *   자주 나오는 인물 · 항목(links.json targets.common)만 나눈 연결은 세기 1이라 기본(세기 2 이상)에서 빠진다. 그 항목을 인물 · 항목 거르개로 고르면 풀린다.
+ *   자주 나오는 인물 · 항목(links.json targets.common)만 나눈 연결은 세기 1이라 기본(세기 2 이상)에서 빠진다. 그 항목을 인물 · 항목 필터로 고르면 풀린다.
  *   안 본 스토리(state.reading().seen — 메인 자리 t + 척추 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)와 범위(layers) 밖 스토리의 선은 숨기고
- *   개수만 보인다("스포일러로 가린 N"). 선 · 근거는 양 끝 스토리를 다 봤을 때만, 인물 · 항목 · 떡밥 거르개 후보도 그런 선에서만. 안 본 스토리를 가운데로 둘 수 없다.
+ *   개수만 보인다("스포일러로 가린 N"). 선 · 근거는 양 끝 스토리를 다 봤을 때만, 인물 · 항목 · 떡밥 필터 후보도 그런 선에서만. 안 본 스토리를 가운데로 둘 수 없다.
  *   이웃 보기: 가운데 카드 + 앞(먼저 나온)·뒤(이어지는) 스토리 카드, 선은 카드 사이 곡선. 한쪽 8장씩 연결이 센 순(이야기 연결 → 세기 → 씬 수)으로 뽑아 출시순으로 놓고 "더 보기".
  *   전체 보기: 행 = 스토리 종류, 가로 = 읽는 순서, 점 = 스토리(크기 = 이어진 스토리 수). 이야기 연결(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)만 기본, 많이 이어진 상위 80개만 그리고 "150개까지"로 넓힌다(상한 150).
  *   연작: links.json chains. 처음 안 본 편부터 뒤는 가리고 첫 편이 가려진 사슬은 개수만 센다.
@@ -47,17 +47,17 @@ export const meta = { id: 'links', title: '연결', blurb: '스토리 사이의 
 /** 이 탭 말(fmt에 없는 것만). 용어 → 사람 말 대응은 docs 2차 지시 기준 */
 const LABELS = {
   mode: { ego: '이웃', net: '전체', chain: '연작' },
-  modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '거르개로 줄인 전체 연결을 감상 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
+  modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '필터로 줄인 전체 연결을 감상 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
   centerKind: '스토리 종류',
   centerKindAll: '전체 종류',
   center: '중심 스토리',
   centerPh: '스토리 이름으로 찾기',
-  filters: '거르개',
+  filters: '필터',
   centerTop: '많이 이어진 스토리',
   centerNone: '찾는 스토리가 없다',
   target: '인물 · 항목',
   targetPh: '인물 · 항목 찾기',
-  targetClear: '인물 · 항목 거르개 지우기',
+  targetClear: '인물 · 항목 필터 지우기',
   targetTop: '많이 걸린 항목',
   thread: '떡밥',
   threadAll: '떡밥 전체',
@@ -86,9 +86,9 @@ const LABELS = {
   flowKey: '왼쪽 → 오른쪽이 감상 순서',
   candKey: '긴 점선 = 확정 전 후보',
   noNeighbors: '이 스토리와 이어진 스토리가 없다',
-  noNeighborsFiltered: '거르개에 걸리는 연결이 없다',
+  noNeighborsFiltered: '필터에 걸리는 연결이 없다',
   allHidden: '이어진 스토리가 모두 스포일러로 가려져 있다',
-  resetFilters: '거르개 풀기',
+  resetFilters: '필터 풀기',
   centerHidden: '이 스토리는 아직 안 읽은 스토리라 가렸다',
   detailTitle: '이어진 장면',
   allTypes: '전체',
@@ -181,19 +181,19 @@ export async function mount(root, ctx) {
   const ORIGIN = { ...LABELS.origin, record: TERM.note };
   const fill = (t) => t.replace('{common}', TERM.commonTargets).replace('{note}', TERM.note);
 
-  // 인물 · 항목 거르개 후보 — 선에 걸린 항목, 걸린 선 수 순
+  // 인물 · 항목 필터 후보 — 선에 걸린 항목, 걸린 선 수 순
   const targetUse = new Map();
   for (const e of edges) for (const t of e.targets) targetUse.set(t, (targetUse.get(t) ?? 0) + 1);
   const targetList = [...targetUse].map(([id, n]) => ({ id, n, name: fmt.targetName(id), type: idx.targets.get(id)?.type, common: commonSet.has(id) }))
     .sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
-  // 떡밥 거르개 후보
+  // 떡밥 필터 후보
   const threadUse = new Map();
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
   const threadList = [...threadUse].map(([id, n]) => ({ id, n, title: idx.threads.get(id)?.title ?? id }))
     .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
   /**
-   * 인물 · 항목 · 떡밥 거르개 후보 — 지금 가운데(이웃 보기) · 선 종류 · 세기 · 스토리 종류 · 읽은 자리에서 실제로 보이는 선에 걸린 것만.
-   * 인물 후보는 고른 떡밥을, 떡밥 후보는 고른 인물 · 항목을 따른다(자기 자신의 거르개는 후보를 줄이지 않는다). 걸린 선 수 순.
+   * 인물 · 항목 · 떡밥 필터 후보 — 지금 가운데(이웃 보기) · 선 종류 · 세기 · 스토리 종류 · 읽은 자리에서 실제로 보이는 선에 걸린 것만.
+   * 인물 후보는 고른 떡밥을, 떡밥 후보는 고른 인물 · 항목을 따른다(자기 자신의 필터는 후보를 줄이지 않는다). 걸린 선 수 순.
    */
   const candidatesFor = (F) => {
     const ctr = F.mode === 'ego' ? (F.center ? units.get(F.center) : bestCenter(F, degreesCached(F))) : null;
@@ -216,9 +216,9 @@ export async function mount(root, ctx) {
   /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const READ_ALL = state.reading({ t: null, x: {} });
-  let cand = { targets: [], threads: [] }; // syncControls가 거르개가 바뀔 때마다 다시 센다
+  let cand = { targets: [], threads: [] }; // syncControls가 필터가 바뀔 때마다 다시 센다
 
-  // ── 거르개 (URL 파라미터 → F) ──
+  // ── 필터 (URL 파라미터 → F) ──
   const listParam = (v, allowed) => {
     if (!v) return null;
     const set = new Set(String(v).split(',').filter((x) => allowed.includes(x)));
@@ -264,7 +264,7 @@ export async function mount(root, ctx) {
   const effCount = (e, F) => (F.minS >= 2 && !relaxed(F, e) ? Math.max(1, e.count - (e.weak ?? 0)) : e.count);
   const structSig = (F) => JSON.stringify([F.mode, F.ck, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.layers, F.wide, F.mm]);
 
-  /** 스토리별 이어진 이웃 수(지금 거르개 · 컷오프 · 범위 안, 종류 거르개는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
+  /** 스토리별 이어진 이웃 수(지금 필터 · 컷오프 · 범위 안, 종류 필터는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
   function degrees(F) {
     const nb = new Map();
     for (const e of edges) {
@@ -308,7 +308,7 @@ export async function mount(root, ctx) {
   const byScore = (x, y) => y.weight - x.weight || y.strength - x.strength || y.count - x.count || x.unit.order - y.unit.order;
   const byOrder = (x, y) => x.unit.order - y.unit.order;
 
-  // 탭 안 조작은 지금 가운데 스토리를 URL에 못박는다 — 가운데를 고른 적이 없으면(기본 가운데) 거르개를 만질 때 가운데가 딴 스토리로 바뀌지 않게
+  // 탭 안 조작은 지금 가운데 스토리를 URL에 못박는다 — 가운데를 고른 적이 없으면(기본 가운데) 필터를 만질 때 가운데가 딴 스토리로 바뀌지 않게
   const pinC = () => (F.mode === 'ego' && !F.center && view?.center ? { c: view.center.key } : {});
   const setP = (p, extra = {}) => state.set({ ...extra, p: { ...pinC(), ...p } });
 
@@ -532,7 +532,7 @@ export async function mount(root, ctx) {
 
   // ── 화면 뼈대 ──
   const field = (name, node, cls = '') => h('div', { class: ['lk-field', cls] }, h('span', { class: 'lk-lab' }, name), node);
-  // 좁은 화면에서는 가운데 스토리만 두고 나머지 거르개는 접는다(lk-collapsible)
+  // 좁은 화면에서는 가운데 스토리만 두고 나머지 필터는 접는다(lk-collapsible)
   const filterBtn = h('button', { type: 'button', class: 'btn lk-filter-toggle', 'aria-expanded': 'false', onClick: () => {
     const on = controls.classList.toggle('is-open');
     filterBtn.setAttribute('aria-expanded', String(on));
@@ -557,7 +557,7 @@ export async function mount(root, ctx) {
   root.append(h('div', { class: 'lk-head' }, h('h2', { class: 'sr-only' }, meta.title), modeSeg.el), controls, summary, body, detail, inner);
 
   // 실행 중 상태
-  let F = readF(state.get()); // 지금 거르개
+  let F = readF(state.get()); // 지금 필터
   let sig = ''; // 마지막으로 그린 구조 서명
   let view = null; // 이웃 보기 상태: { center, groups, shown, active, limit, el, svg, ... }
   let netView = null;
@@ -614,7 +614,7 @@ export async function mount(root, ctx) {
     const shown = all.filter((g) => inCut(F, g.unit) && okNeighbor(g));
     const hiddenCut = all.filter((g) => !inCut(F, g.unit) && okNeighbor(g)).length;
     const hiddenRange = all.filter((g) => inCut(F, g.unit) && !inRange(F, g.unit) && kindOk(F, g.unit)).length;
-    // 선 종류 칩의 건수 — 종류 거르개만 빼고 센 것
+    // 선 종류 칩의 건수 — 종류 필터만 빼고 센 것
     const counts = new Map();
     for (const g of groupsOf(c.key, { ...F, types: null })) if (inCut(F, g.unit) && okNeighbor(g)) for (const e of g.edges) counts.set(e.type, (counts.get(e.type) ?? 0) + 1);
     setTypeCounts(counts);
@@ -1312,7 +1312,7 @@ export async function mount(root, ctx) {
       if (F.mode === 'net') renderNet(); else { detail.hidden = true; ui.clear(detail); setTypeCounts(null); renderChain(); }
     }
   }
-  /** 컷오프 · 거르개가 바뀔 때 — 스크롤이 튀지 않게 높이를 잠시 붙잡고 다시 그린다 */
+  /** 컷오프 · 필터가 바뀔 때 — 스크롤이 튀지 않게 높이를 잠시 붙잡고 다시 그린다 */
   function refresh(force = false) {
     if (!alive) return;
     F = readF(state.get());

@@ -12,7 +12,7 @@
  * world.json = { entries[], life[], topics[], hubs[], hub_share }
  *   entries[] (비인물 대상 225): id · type · name · kind · note · aliases[{name, how, caution}] · evidence[{scene, lines}](무엇인지 보여 주는 줄) ·
  *     stories · lines(이름 기준 범위 안 건수) · facts · questions · open(열린 의문) · events · units_n · first_unit · first_tick · first_order · introduced[] ·
- *     hub(흔한 개념이면 true) · spread · recs{ F|Q|U|E|I|D: [[기록 ID, 공개 자리, 층, 단위], …] }(여기까지 읽음 · 층 거르개 계산용 — 문장은 records*.json.
+ *     hub(흔한 개념이면 true) · spread · recs{ F|Q|U|E|I|D: [[기록 ID, 공개 자리, 층, 단위], …] }(여기까지 읽음 · 층 필터 계산용 — 문장은 records*.json.
  *     단위 = 그 기록을 아는 스토리: 사실 · 의문에 know_units가 있으면 그 단위 키 배열, 아니면 기록 단위의 units[] 안 자리(숫자 — 키를 되풀이하지 않게),
  *     단위가 없으면 null — 사이트 state.reading().known과 같은 규칙) ·
  *     units[[단위 키, 기록 수], …](읽는 자리 순) · neighbors[{ id, n, units, recs[[기록 ID, 공개 자리], …] }](함께 나온 기록 수 순) ·

@@ -103,7 +103,7 @@
 .tab-links .lk-t-keyword .lk-key { border-top-style: dotted; border-top-width: 3px; }
 .tab-links .lk-key.is-weakish { opacity: 0.55; }
 
-/* 좁은 화면 — 거르개 접기 */
+/* 좁은 화면 — 필터 접기 */
 .tab-links .lk-controls { margin: 0; }
 .tab-links .lk-filter-toggle { display: none; height: 34px; align-self: flex-end; }
 .tab-links .lk-filter-toggle::after { content: "▾"; margin-left: 6px; font-size: 11px; color: var(--ink-muted); }

@@ -14,7 +14,7 @@
  *     changes[]  변화 타임라인(chrono-changes.csv) — { id, seq(작중 순서, 없으면 상대 · 불명), act, aspect, with, unit, tick, order, time, class, place, lo, hi, inverted[] }
  *                place는 단위(units.json chrono.place)와 다를 때만(시점 기록 · 조각으로 좁힌 변화)
  *   persons-pairs.json    함께 나온 인물 쌍 7,174 — { a, b, first_unit, last_unit, common, same_as, by[] } (씬 · 대화 · 단위 수는 by[]의 합)
- *     by[] = [[공개 자리, 층, 씬, 둘 다 말한 씬, 단위(, 척추 이벤트 · 사이드 키)], …] 자리 · 층 순 — 여기까지 읽음에서는 본 칸만, 층 거르개에서는 그 층인 칸만 더한다(합은 pairs.csv와 같다 — 내보낼 때 검산)
+ *     by[] = [[공개 자리, 층, 씬, 둘 다 말한 씬, 단위(, 척추 이벤트 · 사이드 키)], …] 자리 · 층 순 — 여기까지 읽음에서는 본 칸만, 층 필터에서는 그 층인 칸만 더한다(합은 pairs.csv와 같다 — 내보낼 때 검산)
  *           척추 이벤트 · 사이드(units.json spine이고 메인이 아닌 것 — '봤음' 예외 x가 걸린다)의 몫은 따로 떼어 여섯째 칸에 그 단위 키를 단다 → 화면은 R.seen(키), 그 밖 칸은 자리 ≤ t
  *     common은 한쪽이라도 자주 나오는 인물(지휘관 · 라피 · 아니스 · 네온)이면 true — 상대가 자주 나오는 인물인지는 persons.json의 common으로 본다
  *     자리별 나눔은 tools/views/persons.mjs personScenes(언급 DB의 메타 표 mentions — 씬 · 줄 번호 · 대상만, 본문 없음)로 다시 센다.

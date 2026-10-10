@@ -10,10 +10,10 @@
  * URL 파라미터(p.*)
  *   mode   dict(사전, 기본) | life(세계의 모습)
  *   item   사전에서 고른 항목 ID(없으면 니케 — 가림 상태면 목록 첫 항목)
- *   type   사전 종류 거르개 concept | incident | item | org | place (없으면 전체)
+ *   type   사전 종류 필터 concept | incident | item | org | place (없으면 전체)
  *   sort   사전 정렬 facts(기본, 사실 많은 순) | name | first | open
  *   find   찾기 낱말 — 사전은 이름 · 다른 이름 · 메모, 세계의 모습은 문장 · 항목 · 스토리
- *   topic  세계의 모습 분류 거르개(없으면 분류별 묶음)
+ *   topic  세계의 모습 분류 필터(없으면 분류별 묶음)
  *   hubs   1이면 함께 나온 항목에 자주 나오는 항목도 넣는다
  *
  * 그리는 규칙
@@ -64,7 +64,7 @@ const LABELS = {
   lifeEmpty: (when) => `여기까지 읽은 범위에는 세계의 모습이 없다. ${when}부터 나온다.`,
   lifeEmptyAll: '조건에 맞는 문장이 없다',
   raiseTo: (when) => `${when}까지 읽음으로 올리기`,
-  clearFilters: '거르개 풀기',
+  clearFilters: '필터 풀기',
   topicAria: '분류',
 };
 
