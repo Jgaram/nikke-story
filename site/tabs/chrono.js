@@ -88,6 +88,8 @@ const wa = (w) => {
 /** fmt.prose 뒤에 남는 작업 흔적 — 모습 코드(rapi_red · neon_v) · 씬 줄임(45_03) */
 const CODE = /(?<![A-Za-z0-9_])(?:[a-z]+(?:_[a-z0-9]+)+|\d{2}_\d{2})(?![A-Za-z0-9_])/;
 const CODE_G = new RegExp(CODE.source, 'g');
+/** 추정 이유의 판정 과정 마디(상한 · 하한 · 단서 유무 · 모습 코드 말) — fmt.dropClauses로 그 마디만 뺀다. '이상한' · '수상한'은 그냥 말 */
+const WHY_JUDGE = /(?<![이수앙상고])(?:상한|하한)|단서가 없|코드(?:가|를|로|는) /;
 
 export async function mount(root, ctx) {
   const { state, data, fmt, ui, idx } = ctx;
@@ -158,6 +160,7 @@ export async function mount(root, ctx) {
   }).filter(Boolean).join(' · ');
   const atText = (at) => (at ?? []).map(([rel, ref, gap]) => relPhrase(rel, ref, gap ? ` (${gap})` : '')).filter(Boolean).join(' · ');
   /** 자유 문장 — 시대 기준점 ID → 이름, fmt.prose, 모습 코드 걷기(조사가 붙은 코드는 그 마디째 뺀다) */
+  const whyText = (text) => fmt.dropClauses(cprose(text), WHY_JUDGE);
   function cprose(text) {
     const pre = String(text ?? '')
       .replace(/[—~]?\s*(직후|직전|뒤|전|무렵) (@[\p{L}\p{N}_]+)/gu, (m, rel, id) => (pointById.has(id) ? `${pointShort(pointById.get(id))} ${rel}` : m))
@@ -581,7 +584,7 @@ export async function mount(root, ctx) {
       const basis = (n.basis ?? []).map(basisLink).filter(Boolean);
       return el('div', { class: 'cr-narrow' },
         el('b', {}, atText(n.at)),
-        cprose(n.reason) ? el('p', { class: 'cr-reason' }, cprose(n.reason)) : null,
+        whyText(n.reason) ? el('p', { class: 'cr-reason' }, whyText(n.reason)) : null,
         basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null);
     });
     const drift = DRIFT_STRONG.has(c.drift) ? LABELS.driftLong[c.drift](mainChOf(c), c.drift_gap) : null;

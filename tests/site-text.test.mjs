@@ -111,6 +111,13 @@ test('prose — 근거 표시를 걷고 키를 이름으로, 조사도 맞춘다
   // 작중 이름은 그대로
   assert.equal(fmt.prose('펑크 스트리트 E2 크리스탈 테러'), '펑크 스트리트 E2 크리스탈 테러');
   assert.equal(fmt.prose('[#000000]은 식스오의 코드네임'), '[#000000]은 식스오의 코드네임');
+  assert.equal(fmt.prose('#000000의 지시로'), '#000000의 지시로'); // 줄 번호는 네 자리까지
+  assert.equal(fmt.prose('모두의 척추 신경을 끊었다'), '모두의 척추 신경을 끊었다'); // 신체 말
+  assert.equal(fmt.prose('탄생에 필수라 들었다'), '탄생에 필수라 들었다'); // 등급 키가 아닌 '필수'
+  assert.equal(fmt.prose('나온 때부터 필수(카드 3절)'), '나온 때부터 준필수(카드 3절)');
+  assert.equal(fmt.prose('시프티가 굳는다(08_06#22-32)'), '시프티가 굳는다');
+  assert.equal(fmt.prose('CH.38 af 뒤'), 'CH.38 뒷이야기 뒤');
+  assert.match(fmt.prose('romanticvalentine의 결말'), /^[A-Z][^a-z]*의 결말$/); // 접두 없는 이벤트 키 낱말
   // 못 바꾸는 문장은 빼고 나머지 문장만
   assert.equal(fmt.prose('처음 만나는 것은 CH.15(F387). 1회독도 같은 근거로 봤다(S370)'), '처음 만나는 것은 CH.15.');
   assert.equal(fmt.prose('ch18 F700이 말한다'), '');
@@ -134,7 +141,7 @@ test('prose — 내보낸 자유 문장 전부에 기록 ID · 스토리 키 · 
   const RE = [
     /(?<![A-Za-z0-9_:[\-.])(?:[FQSIEDUOHTR]\d+(?:-\d+)?|J\d+)(?![A-Za-z0-9_\-]| 크리스탈)/,
     /(?<![A-Za-z0-9_])(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[\p{L}\p{N}_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2})/u,
-    /(?<!\[)#\d/, /[12]회독/, /에서 더함/,
+    /(?<!\[)#\d{1,4}(?!\d)/, /[12]회독/, /에서 더함/, /(?<![A-Za-z0-9_])[A-Z]\d+[a-z](?:-\d+[a-z]?)?(?![A-Za-z0-9_])/, /(?<![\p{L}\p{N}_])\d{2}_\d{2}(?![A-Za-z0-9_])/u,
   ];
   for (const t of texts) {
     const out = fmt.prose(t);

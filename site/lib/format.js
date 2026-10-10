@@ -23,11 +23,12 @@
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   hiddenLabel(n)                  '스포일러로 가린 N'
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
- *   LINK_LEVEL                      연결 강도 1–3 → 약함 · 보통 · 강함
+ *   LINK_LEVEL                      세기 1–3 → 약함 · 보통 · 강함
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
+ *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   num(n) · pct(x) · date(s)
  */
 
@@ -208,7 +209,7 @@ export const LINK_TYPE_HELP = {
   keyword: '같은 소재 · 용어를 다루는 스토리',
 };
 
-/** 연결 강도(세기 1–3) */
+/** 연결 세기(1–3) */
 export const LINK_LEVEL = { 1: '약함', 2: '보통', 3: '강함' };
 
 /** 선행 스토리(order.json pre — tools/site/export/order.mjs prereqsOf): 칸 · 칸 뜻 · 왜 선행인가 */
@@ -277,11 +278,8 @@ export const TERM = {
   origin: '첫 이야기',
   thread: '떡밥',
   speaker: '말한 인물',
-  togetherScenes: '같이 나온 장면',
-  talkScenes: '대화한 장면',
   commonTargets: '자주 나오는 인물',
   link: '연결',
-  strength: '연결 강도',
   chronoPlace: '작중 순',
   inverted: '출시순과 반대',
   piece: '다른 때의 장면',
@@ -481,7 +479,7 @@ export function gradeAt(u, T) {
  * ④ 그래도 작업 흔적(본문 속 기록 ID · 못 바꾼 키 · 회독 · 세션 이름)이 남으면 바꿀 수 없는 문장이라 ''를 돌려준다 — 부르는 쪽은 빈 문장을 내지 않는다.
  * 표시할 때만 바꾼다 — 데이터는 그대로. 링크(sel) · URL에는 키가 그대로 쓰인다.
  */
-const PLAIN_TERMS = [['뼈대 · 보강 줄기', '주요 떡밥'], ['독립 줄기', '떡밥'], ['뼈대 줄기', '주요 떡밥'], ['보강 줄기', '떡밥'], ['척추', '필수 스토리'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '직접 더한']];
+const PLAIN_TERMS = [['뼈대 · 보강 줄기', '주요 떡밥'], ['독립 줄기', '떡밥'], ['뼈대 줄기', '주요 떡밥'], ['보강 줄기', '떡밥'], ['척추', '필수 스토리', '(?! 신경| 아래|뼈)'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '직접 더한']];
 const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
 const JOSA_RE = '(가|이|는|은|를|을|와|과|으로|로)?';
 /** 끝 글자의 받침 — 0 없음, 8 ㄹ, 그 밖 있음. 한글이 아니면(숫자 · 기호) 0 */
@@ -504,11 +502,13 @@ const withJosa = (word, j) => {
 const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** 작업 흔적 낱말 — 기록 ID(F12 · Q3-2 · J5 · R64 …, 'E2 크리스탈'은 작중 이름) · 세션 이름(B0b-2) · 씬 줄임(05_s · af_06 · _03) · 줄 번호(#12-15, '[#000000]'은 작중 이름) · 스토리 · 씬 키 */
 const REC_ID = /(?<![A-Za-z0-9_:[\-.])(?:[FQSIEDUOHTR]\d+(?:-\d+)?|J\d+)(?![A-Za-z0-9_\-]| 크리스탈)/g;
-const SESSION_ID = /(?<![A-Za-z0-9_])[A-Z]\d+[a-z](?:-\d+)?(?![A-Za-z0-9_])/g;
-const SCENE_SHORT = /(?<![\p{L}\p{N}_])(?:[a-z]{2}_\d{2}|_?\d{2}_[se]|_\d{2})(?:[-–]\d{2})?(?![A-Za-z0-9_])/gu;
-const LINE_REF = /\s?(?<!\[)(?:(?<![\p{L}\p{N}_])\d{2}\s*)?#\d+(?:\s*[-–]\s*\d+)?(?:\s*,\s*#?\d+(?:\s*[-–]\s*\d+)?)*/gu;
+const SESSION_ID = /(?<![A-Za-z0-9_])[A-Z]\d+[a-z](?:-\d+[a-z]?)?(?![A-Za-z0-9_])/g;
+const SCENE_SHORT = /(?<![\p{L}\p{N}_])(?:\d{2}_\d{2}(?:_[se])?|[a-z]{2}_\d{2}|_?\d{2}_[se]|_\d{2})(?:[-–]\d{2})?(?![A-Za-z0-9_])/gu;
+const LINE_REF = /\s?(?<!\[)(?:(?<![\p{L}\p{N}_])\d{2}\s*)?#\d{1,4}(?!\d)(?:\s*[-–]\s*\d+)?(?:\s*,\s*#?\d+(?:\s*[-–]\s*\d+)?)*/gu;
+const LINE_NO = /(?<!\[)#\d{1,4}(?!\d)/;
 const KEY_RE = /(?<![A-Za-z0-9_:])(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[\p{L}\p{N}_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2}|[가-힣][가-힣A-Za-z0-9]*(?:_[가-힣A-Za-z0-9]+)*_\d{2})/gu;
 const KEY_JOSA_RE = new RegExp(`(${KEY_RE.source})(?:(가|이|는|은|를|을|와|과|으로|로)(?![가-힣]))?`, 'gu');
+const BARE_EVENT_RE = /(?<![A-Za-z0-9_:/.\-])([a-z][a-z0-9]{2,})(?:(가|이|는|은|를|을|와|과|으로|로)(?![가-힣]))?(?![A-Za-z0-9_])/g;
 const WORK_WORD = /[12]회독|에서 더함|원문 없음/;
 /** 키 하나 → [화면 이름, 남은 꼬리]. 키 정규식은 뒤의 한글 조사까지 먹을 수 있어(sub:할아범_00의) 아는 키 가운데 가장 긴 앞부분을 쓴다. 모르면 null */
 const BARE_PREFIX = ['', 'sub:', 'relic:', 'erelic:', 'side:', 'fl:'];
@@ -570,16 +570,20 @@ function splitOutside(text, at) {
   return out;
 }
 const atDash = (t, i) => (t[i] === '—' && t[i - 1] === ' ' && t[i + 1] === ' ' ? [i - 1, i + 2] : null);
-const atStop = (t, i) => (t[i] === '.' && /[가-힣)」』'"]/u.test(t[i - 1] ?? '') && /\s/.test(t[i + 1] ?? '') ? [i + 1, i + 2] : null);
+const atStop = (t, i) => (t[i] === '.' && /[가-힣\d)」』'"]/u.test(t[i - 1] ?? '') && /\s/.test(t[i + 1] ?? '') ? [i + 1, i + 2] : null);
 const balanced = (t) => (t.match(/\(/g)?.length ?? 0) === (t.match(/\)/g)?.length ?? 0);
 export function reasonText(text) {
   const s = prose(text).replace(/세계 기록/g, '세계').replace(/곁 기록/g, '곁 이야기').replace(JUDGE_PAREN, '')
     // 감정 기준(X3g) 판정의 머리 '감정 — ' · 카드 절(3a · 4a) · 결정적 순간 단계(①–④)도 판정 과정 말이다 — 등급에 넣되 따로 표시하지 않는다(사용자)
     .replace(/^감정 — /, '').replace(/(?<![A-Za-z0-9])[34]a(?::\s*|\s(?=—))/g, '').replace(/\s?\((?:[①-⑧](?:\s*·\s*)?)+\)/g, '');
+  return dropClauses(s, JUDGE_WORD);
+}
+/** 문장 · ' — ' 마디(괄호 밖) 가운데 bad에 걸린 마디를 뺀다 — 이미 prose를 거친 문장에. 한글 6자 못 되게 남은 문장도 뺀다 */
+export function dropClauses(s, bad) {
   const out = [];
-  for (const sen of splitOutside(s, atStop).map((x) => x.trim())) {
+  for (const sen of splitOutside(String(s ?? ''), atStop).map((x) => x.trim())) {
     const period = /\.$/.test(sen);
-    const kept = splitOutside(sen.replace(/\.$/, ''), atDash).map((c) => c.trim()).filter((c) => c && balanced(c) && !JUDGE_WORD.test(c));
+    const kept = splitOutside(sen.replace(/\.$/, ''), atDash).map((c) => c.trim()).filter((c) => c && balanced(c) && !bad.test(c));
     const t = kept.join(' — ').replace(/\s{2,}/g, ' ').replace(/^[\s·,;:—–-]+|[\s·,;:—–-]+$/g, '').trim();
     if ([...t.replace(/[^가-힣]/g, '')].length < 6) continue;
     out.push(period ? `${t}.` : t);
@@ -599,20 +603,20 @@ function proseOne(text) {
   // 작업 출처 · 원문 위치
   s = s.replace(/\s*\([^()]*에서 더함[^()]*\)/g, '').replace(/^[^()—]*에서 더함\s*—\s*/, '').replace(/\s*\(원문 없음\)/g, '');
   // 문장 앞 근거 머리('01_e#40 — …' · '#50 · #58. …' · "01#42 라피 '…'")
-  s = s.replace(/^(?:[\s·,]*(?:[\p{L}\p{N}_:]*#\d+(?:\s*[-–]\s*\d+)?|\d{2}_[se]|[a-z]{2}_\d{2}))+[\s.]*(?:—\s*)?/u, '');
+  s = s.replace(/^(?:[\s·,]*(?:[\p{L}\p{N}_:]*#\d{1,4}(?!\d)(?:\s*[-–]\s*\d+)?|\d{2}_[se]|[a-z]{2}_\d{2}))+[\s.]*(?:—\s*)?/u, '');
   // ① 레포 용어(조사 맞춤) — 등급 키 보강 · 필수를 먼저
-  s = s.replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천').replace(/(?<!동행 )필수(?!품| 교육| 덕목)/g, '준필수');
-  for (const [a, b] of PLAIN_TERMS) s = s.replace(new RegExp(`${escRe(a)}${JOSA_RE}`, 'g'), (m, j) => withJosa(b, j));
+  s = s.replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천').replace(/(?<!동행 |준)필수(?=\(|[.,]|\s[—→]|$|에서 (?:옮|내려)|로 (?:올|내려))/g, '준필수');
+  for (const [a, b, not = ''] of PLAIN_TERMS) s = s.replace(new RegExp(`${escRe(a)}${JOSA_RE}${not}`, 'g'), (m, j) => withJosa(b, j));
   // ③ 괄호 — 근거 표시만 든 괄호는 통째로, 섞인 괄호는 근거 표시만 뺀다. 남은 말이 조사로 시작하면(‘S169와 같은 때’) 괄호째 뺀다
   s = s.replace(/\s?\(([^()]*)\)/g, (m, inner) => {
-    const touched = [REC_ID, SESSION_ID, SCENE_SHORT].some((re) => has(re, inner)) || /#\d/.test(inner) || [...inner.matchAll(KEY_RE)].some((k) => isSceneKey(nameOfKeyHead(k[0])));
+    const touched = [REC_ID, SESSION_ID, SCENE_SHORT].some((re) => has(re, inner)) || LINE_NO.test(inner) || [...inner.matchAll(KEY_RE)].some((k) => isSceneKey(nameOfKeyHead(k[0])));
     if (!touched) return m;
     const rest = stripPointers(inner);
     if (!rest || /^(와|과|의|는|은|이|가|을|를|로|으로|에서|에|도|처럼|보다)(\s|$)/.test(rest) || !/[\p{L}\p{N}]/u.test(rest)) return '';
     return `${m.startsWith(' ') ? ' ' : ''}(${rest})`;
   });
   // 줄 번호 → 뺀다(조사가 붙은 줄 번호 '#22를'은 문장의 한 자리라 못 뺀다), 떡밥 ID → 「제목」, 키 → 이름(조사 맞춤)
-  if (/(?<!\[)#\d+(?:[-–]\d+)?(?:가|이|는|은|를|을|와|과|의|로|으로|에서|에)(?![\p{L}])/u.test(s)) return '';
+  if (/(?<!\[)#\d{1,4}(?:[-–]\d+)?(?:가|이|는|은|를|을|와|과|의|로|으로|에서|에)(?![\p{L}])/u.test(s)) return '';
   s = s.replace(LINE_REF, '');
   s = s.replace(/(?<![A-Za-z0-9_])J(\d+)(?![A-Za-z0-9_])(가|이|는|은|를|을|와|과|으로|로)?/g, (m, n, j) => { const t = threadTitle(`J${n}`); return t ? withJosa(t, j) : m; });
   // 항목 키(person:세르반 · concept:NIMPH) → 이름 — 사전에 있는 가장 긴 앞부분
@@ -628,11 +632,14 @@ function proseOne(text) {
     if (!j) return name + tail + (j0 ?? '');
     return withJosa(name, j) + (tail ? tail.slice(j.length) + (j0 ?? '') : '');
   });
+  s = s.replace(BARE_EVENT_RE, (m, w, j) => (idx?.units?.has(`event_${w}`) ? withJosa(unitTitle(`event_${w}`), j) : m));
+  s = s.replace(/(CH\.\d{2}) af(?![A-Za-z0-9_])/g, '$1 뒷이야기').replace(/^af(?= —)/, '뒷이야기')
+    .replace(/(?:이|가) 말한 줄 \d+줄 가운데 \d+줄이/g, '의 대사 거의 다가').replace(/말한 줄 \d+줄(?:이|은)? 모두/g, '대사가 모두');
   s = s.replace(/\s{2,}/g, ' ').replace(/\s+([,.)])/g, '$1').replace(/\(\s+/g, '(').replace(/\(\s*\)/g, '')
     .replace(/(?:\s*·)+\s*(?=[·,.)]|$)/g, '').replace(/^[\s·,.;:—–-]+/, '').trim();
   // ④ 남은 작업 흔적이 있으면 낼 수 없다
   if ([REC_ID, SESSION_ID, SCENE_SHORT, KEY_RE].some((re) => has(re, s)) || /(?<![A-Za-z0-9_])(?:person|place|org|concept|incident|item):/.test(s)) return '';
-  if (WORK_WORD.test(s) || /(?<!\[)#\d/.test(s)) return '';
+  if (WORK_WORD.test(s) || LINE_NO.test(s)) return '';
   return s;
 }
 
