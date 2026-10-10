@@ -30,10 +30,12 @@
 - [x] **W12a 형식 · 마크 · 화면** — 인계: `annotations/affiliations.json`(게임 코드 → org 대응 `game` + 해석 기록 `affiliations` T, records.mjs check · review · set에 붙음),
   orgs.json에 게임 스쿼드 7 더함(범위 안 0건인 12종은 `null` — 게임 이름만), `tools/blabla/marks.mjs`로 마크 57개(404 0) → `site/img/orgs/`,
   인물 탭 목록 · 상세 머리 · 리더 패널에 마크 칩(실장 니케 = 게임 데이터, 확정 T가 있으면 그 자리까지의 기록). 테스트 `tests/affiliations.test.mjs`. → 각 문서에 반영.
-- [ ] **W12b 실장 밖 인물의 소속** — 범위 안 대사 50줄 이상 인물 51명(`SELECT id, name, lines_in_scope FROM targets WHERE type='person' AND kind='인물' AND lines_in_scope>=50 ORDER BY lines_in_scope DESC`)의 소속을
-  원문 · 기존 기록으로 정해 `annotations/affiliations.json` `affiliations`에 T 후보로 쓴다(`act: 소속`, 근거 = 소속이 처음 드러난 씬 · 줄, 이유, 확신도, role 짧게). 실장 니케(`resource_ids` 있음)는 하지 않는다.
-  찾는 법: 확정 사실 · 변화 기록(`node tools/records.mjs find <이름>` · `query.mjs chrono person:…` — D aspect `소속`은 W12c 몫이지만 처음 소속의 근거로 쓴다), `query.mjs who <이름>` · `query.mjs search "<이름> <조직>"`, 필요한 씬만 `read.mjs --num`.
-  소속이 원문에 없으면 쓰지 않는다(빈칸 = 이름만). 조직이 사전에 없으면 orgs.json에 먼저(범위 안 1줄 이상). 한 사람씩 검토해 `set T… 확정|기각 --by claude --session W12b` → `records.mjs check` → `export.mjs --only common` → 사이트 확인.
+- [x] **W12b 실장 밖 인물의 소속** — 대상 51명(지휘관 포함) 가운데 25명에 T1–T26(`act: 소속`, 전부 확정 `--by claude --session W12b`, 확신도 추정은 T7 에이미 하나). 근거 = 조직 이름이 처음 드러난 줄. orgs.json 추가 없음.
+  대표 ID는 인물 변화 D와 같이: 레비 → `person:레비아탄`(T5 포비스트). 에이브 · 언노운은 대표가 실장 니케 그레이브라 쓰지 않음(게임 데이터를 덮으므로 — 3단계에서 그레이브 이동을 적을 때 V.T.C.부터).
+  안 쓴 인물(소속이 원문에 없거나 조직이 아님): 세이렌 · 헨젤 · 그레텔(2세대 스쿼드는 이름 없음) · 에닉 · 엔드리스 · 식스오(블랙넷 = 장소) · 요한 · 세실(에덴 = `place:에덴`뿐 — 같은 표기 두 대상 금지라 조직으로 못 넣음, 세실이 '에덴 소속'이라 말하긴 함 d_main_47_03#132) ·
+  롬 · 콤 · 랩칠리언 · 메카 시프티 · 볼트 · 피나 · 데이파라 · 노라 · 나디아 · 곰 · 티미 · 루루 · 베아트리체 · 맥스(동물) · 제인 · 호프(이름이 같은 다른 인물이 한 대상에 섞임).
+  **3단계로 넘길 것**: 지휘관 04-F → 카운터스(D11) 뒤 이동들 · 마리안 실버건 → 카운터스(D68 · D104 …) · 시프티 카운터스 전속(ch08 F234) · 한슨 테트라 → T.T.STAR(D1183 …) · 프리시아 위원회 → 니케 · 테트라 아이돌 ·
+  오스왈드 중앙 정부 → 엘리시온 훈련 고문(side:pretty_star F2539) · 파피용 에덴 잔류(ch21) · 장화 갓데스 폴 뒤(D906) · 레비아탄(D632). 지휘관의 카운터스는 아직 마크 없음(04-F로 보임) — W12c에서 바로 잡힌다.
 - [ ] **W12c 작중 소속 이동** — 확정 인물 변화 D 가운데 aspect `소속` 73건(48명, `annotations/read2/`)을 소속 기록으로 옮긴다: 조직이 바뀐 것마다 T `합류` · `이탈`(records = 그 D, 근거 = D의 evidence),
   지위만 바뀐 것은 `role`이 다른 `소속`으로. **이동을 적는 인물은 처음 소속(`소속`)부터 다 적는다** — 화면은 T가 하나라도 있으면 게임 데이터 대신 기록만 쌓기 때문(실장 니케 포함, docs/annotations.md "시점별 소속 규칙").
   조직이 아닌 변화(신분 · 직업 · 처지만 바뀜)는 옮기지 않고 이유를 남긴다. 검토 · 확정은 W12b와 같다(`--session W12c`). 끝나면 컷오프를 옮기며 인물 몇 명의 마크가 바뀌는지 스크린샷으로 확인.
