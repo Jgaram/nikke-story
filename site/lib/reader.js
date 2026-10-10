@@ -586,8 +586,11 @@ const RENDER = {
     if (!u) return root.append(head(LABELS.notFound), ui.empty(LABELS.notFound));
     const hidden = !state.seen(u.key);
     const j = orderMap?.get(key);
+    // 머리 그림 — 호감도는 니케 초상, 메인 밖 다른 종류는 종류 아이콘을 같은 크기 원 안에(사용자, 2026-10-10)
     const icon = fmt.episodeIcon(u);
-    root.append(head(u.kind === 'main' ? chTitle(u.title) : u.title, [], unitSub(u, j), icon ? ui.portrait(icon, { size: 56, class: 'reader-pic rd-face' }) : null));
+    const kindPic = icon ? null : ui.kindIcon(u.kind, { size: 30 });
+    const pic = icon ? ui.portrait(icon, { size: 56, class: 'reader-pic rd-face' }) : kindPic ? ui.el('span', { class: 'reader-pic rd-face rd-kind-pic' }, kindPic) : null;
+    root.append(head(u.kind === 'main' ? chTitle(u.title) : u.title, [], unitSub(u, j), pic));
     // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(척추 이벤트 · 사이드 체크)
     if (hidden) root.append(ui.notice(state.visible(u.tick) ? LABELS.skippedStory : LABELS.hiddenStory(cutoffName()), 'warn'));
     const syn = synopsisPanel(key, hidden);
