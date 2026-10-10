@@ -20,7 +20,7 @@ export const BLURB_DIR = path.join(ROOT, 'annotations/blurbs');
 export const SITE_DATA = path.join(ROOT, 'site/data');
 export const PARTS = { why: '분류 이유', when: '연대기 추정 이유' };
 export const STATUSES = ['후보', '확정', '기각'];
-export const DECIDERS = ['claude', '사용자'];
+export const DECIDERS = ['claude']; // 실무는 Claude만 — 사용자는 기준에 피드백(CLAUDE.md "일하는 법")
 
 export const LIMITS = {
   text: [40, 100], // 권장 글자 수(벗어나면 경고) — "한두 문장, 80자 안팎"
@@ -120,7 +120,7 @@ export function stateOf(e, cur) {
   const hash = contentHash(e);
   const changed = e?.status === '확정' && (!lastConfirm || lastConfirm.hash !== hash);
   const stale = cur == null || e?.src !== cur;
-  return { status: e?.status ?? '후보', last, lastBy: last?.by ?? null, hash, changed, stale, ok: e?.status === '확정' && !changed && !stale };
+  return { status: e?.status ?? '후보', last, hash, changed, stale, ok: e?.status === '확정' && !changed && !stale };
 }
 
 /** 제목으로 불리는 단위인가(척추 이벤트 · 사이드 'OVER ZONE' 꼴) — 호감도 제목(인물 이름)은 이름 언급과 갈리지 않아 뺀다 */

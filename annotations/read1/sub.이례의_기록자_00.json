@@ -37,7 +37,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "니푸르가 스스로 소개만 하고 정체는 열려 있다 — 의문으로 맞다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "니푸르가 스스로 소개만 하고 정체는 열려 있다 — 의문으로 맞다", "before": "확신도 추정" }
       ]
     }
   ],

@@ -34,7 +34,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "P1" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M01",
           "note": "ch04 d_main_04_07#16 · d_main_04af_03#25,31 — 돕겠다며 사과한 남자는 이 지휘관(V1, E22 · E23)",

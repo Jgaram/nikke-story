@@ -279,7 +279,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M01",
           "note": "원문이 그대로 말한다(#13-15) — 인물의 예상으로 문장을 고쳐 확실",
@@ -359,7 +359,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M01",
           "note": "ch35 F1798 — 머스탱이 아니스의 은퇴를 장기 휴가로 처리해 기다렸다고 되짚는다",
@@ -415,7 +415,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "ch10 F279 · ch32 F1559가 떠난 까닭을 답한다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "ch10 F279 · ch32 F1559가 떠난 까닭을 답한다", "before": "확신도 추정" }
       ]
     },
     {
@@ -452,7 +452,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F1798 · F2556 · F2705)이 답한다 — 실제 의문이었다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F1798 · F2556 · F2705)이 답한다 — 실제 의문이었다", "before": "확신도 추정" }
       ]
     }
   ],

@@ -180,7 +180,6 @@ async function cmdSet() {
     if (!item) { console.log(`✗ ${key}: 개요 파일이 없다 — new ${key}`); failed++; continue; }
     const s = item.data;
     const st = stateOf(s);
-    if (by === 'claude' && st.lastBy === '사용자') { console.log(`✗ ${key}: 사용자가 마지막으로 결정했다(${st.last.decision} ${st.last.date}) — Claude는 바꾸지 않는다`); failed++; continue; }
     if (decision === '확정') {
       // 확정 전에 검사 — 오류가 있으면 확정하지 않는다(경고는 보이고 통과)
       const rs = [checkSynopsis({ ...s, status: '확정', reviews: [] }, { scenes: e.ctx.resolve(key)?.scenes ?? null }), overlapProblems(s, windows), spoilerProblems(s, e.places.unitPos.get(key), firsts)];

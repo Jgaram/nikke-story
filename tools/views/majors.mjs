@@ -185,8 +185,7 @@ export function majorMetrics(ds, ctx, order) {
     const j = judged.get(r.person) ?? null;
     r.judgment = j;
     r.status = j?.status ?? '';
-    r.byUser = arr(j?.reviews).some((x) => x.by === '사용자');
-    r.mismatch = Boolean(j) && !r.byUser && ['확정', '기각'].includes(j.status) && ((j.status === '확정') !== r.pass || (j.status === '확정' && j.obj?.from !== r.from));
+    r.mismatch = Boolean(j) && ['확정', '기각'].includes(j.status) && ((j.status === '확정') !== r.pass || (j.status === '확정' && j.obj?.from !== r.from));
   }
   const byPerson = new Map(rows.map((r) => [r.person, r]));
   // 판정은 있는데 점수가 0인 인물(사용자가 더한 사람 등)
@@ -219,7 +218,7 @@ export function renderMajorsReport(v, { source = '' } = {}) {
   L.push('| 순위 | ID | 인물 | 말한 씬(메인 · 이벤트) | 변화 줄(메인 · 이벤트) — 측면 · 기록 수 | 점수 | from | 계산 | 판정 | 어긋남 |', '|---:|---|---|---:|---:|---:|---|---|---|---|');
   for (const r of band) {
     const j = r.judgment;
-    const st = j ? `${j.status}${r.byUser ? '(사용자)' : ''}` : '(항목 없음)';
+    const st = j ? j.status : '(항목 없음)';
     const fromNote = j?.status === '확정' && j.obj?.from && j.obj.from !== r.from ? ` (판정 ${j.obj.from})` : '';
     L.push(`| ${r.rank} | ${j?.id ?? ''} | ${nm(r.person)}${r.members.length > 1 ? ` (= ${r.members.filter((m) => m !== r.person).map(nm).join(' · ')})` : ''} | ${r.scenes} (${r.scenesMain} · ${r.scenesEv}) | ${r.changes} (${r.changesMain} · ${r.changesEv}) — ${aspectsText(r.aspects)} · 기록 ${r.records} | ${round1(r.score)} | ${r.from ?? ''}${fromNote} | ${r.pass ? '주요 인물' : '선 아래'} | ${st} | ${r.mismatch ? '⚠' : ''} |`);
   }

@@ -88,4 +88,6 @@
 - 요청: 신작 절차를 다시 세우기 전 작업 방식 파악 중, `by: 사용자`로 남은 리뷰 80건(RV1 36 · M세션 바로잡기 44)을 물었다.
 - 정한 것(사용자): **모두 Claude가 한 것**("괜찮다고 했겠지"). 원칙 — 사람은 기준에 피드백만, 실무는 100% AI, 사람의 주관을 직접 넣지 않는다.
 - 반영: CLAUDE.md "일하는 법" · "해석이 필요한 기록", docs/annotations.md · importance.md · operations.md · schema.md · views.md · annotations/README.md,
-  `records.mjs set`의 `--by` 기본값 → claude. 80건 표기와 '사용자'를 읽는 도구 쪽은 사용자 확인 뒤(남은 일).
+  `records.mjs set`의 `--by` 기본값 → claude.
+- 이어서(사용자): "그냥 claude가 고치는 게 나아 보인다" → 80건(+ 예시 3건) 표기를 claude로 고침(옛 값은 git 이력). 도구는 claude만 받는다 —
+  `applyDecision` · 검증기(`records/check.mjs`) · 개요 · 팬용 문장 `DECIDERS`. '사용자'를 따로 다루던 화면 · 보고서 코드(`by_user` 칸 등)는 지움.

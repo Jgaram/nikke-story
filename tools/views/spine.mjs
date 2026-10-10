@@ -32,7 +32,6 @@ import { buildupMetrics } from './closures.mjs';
 
 /** 기준값 기본 — annotations/spine.json criteria가 이긴다 */
 export const DEFAULT_CRITERIA = { skeleton: 3, main: 3, payoff_gap: 20, payoffs: 2, answers: 5 };
-const arr = (x) => (Array.isArray(x) ? x : []);
 /** 시안에 쓰는 메인 연결(2회독 in 재언급은 참고만 — layers.mjs와 같다) */
 const counted = (m) => !(m.src === 2 && m.dir === 'in' && m.act === '재언급');
 
@@ -77,9 +76,8 @@ export function spineMetrics(ds, ctx, order) {
     };
     u.buildup = u.payoffs >= criteria.payoffs || u.answers >= criteria.answers;
     u.pass = Boolean(j) && (u.skeleton >= criteria.skeleton || u.buildup) && u.main >= criteria.main;
-    // 어긋남 — 문 안 단위의 판정(확정 = 척추)이 계산과 다르다. 사용자가 뒤집은 것은 어긋남이 아니다
-    const byUser = arr(j?.reviews).some((r) => r.by === '사용자');
-    u.mismatch = Boolean(j) && !byUser && (j.status === '확정') !== u.pass && j.status !== '후보';
+    // 어긋남 — 문 안 단위의 판정(확정 = 척추)이 계산과 다르다
+    u.mismatch = Boolean(j) && (j.status === '확정') !== u.pass && j.status !== '후보';
     units.push(u);
   }
   return { criteria, units, byUnit: new Map(units.map((u) => [u.unit, u])) };

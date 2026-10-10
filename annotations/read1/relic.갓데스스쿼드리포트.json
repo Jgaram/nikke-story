@@ -69,7 +69,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F494 · F909)이 답한다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F494 · F909)이 답한다", "before": "확신도 추정" }
       ]
     }
   ],

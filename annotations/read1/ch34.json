@@ -234,7 +234,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-07",
           "session": "M22",
           "note": "event_oldtales1 F1654-2가 [물거품] = 세이렌의 무장이라 드러내고, side:mudfish F1847이 레비의 정신 붕괴 공간을 보여 준다",
@@ -392,7 +392,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-07",
           "session": "M22",
           "note": "F1654-2 · F1815 — 레비아탄이 세이렌의 물거품을 베꼈다는 것이 세이렌의 행방 일부의 답으로 확인된다",
@@ -413,7 +413,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-07",
           "session": "M22",
           "note": "ch44 F2430 — 스노우 화이트가 만들던 무기는 레드 후드를 위한 세븐스 드워프 제로, 34_09_e#231-244의 드릴 약속이 그것",
@@ -458,7 +458,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-01", "session": "R51", "note": "원문 대조 검토" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-07", "session": "M22", "note": "event_redash F1168 — 갓데스 합류 첫날의 약속(재언급 E514)", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22", "note": "event_redash F1168 — 갓데스 합류 첫날의 약속(재언급 E514)", "before": "확신도 추정" }
       ]
     }
   ],

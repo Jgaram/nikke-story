@@ -118,10 +118,12 @@ test('예시 데이터 · records.mjs — 예시 명단은 오류 0 · review "�
   // --from은 주요 인물 하나에도 쓴다(--before는 판정에만)
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'majors-ex-'));
   for (const f of fs.readdirSync(EXAMPLE_DIR)) fs.cpSync(path.join(EXAMPLE_DIR, f), path.join(dir, f), { recursive: true });
-  const set = node(['tools/records.mjs', 'set', 'C2', '확정', '--from', 'ch01', '--by', '사용자', '--note', '테스트', '--dir', dir]);
+  const byUser = node(['tools/records.mjs', 'set', 'C2', '확정', '--by', '사용자', '--dir', dir]);
+  assert.notEqual(byUser.status, 0, '--by 사용자는 받지 않는다 — 기록은 Claude만 정한다');
+  const set = node(['tools/records.mjs', 'set', 'C2', '확정', '--from', 'ch01', '--note', '테스트', '--dir', dir]);
   assert.equal(set.status, 0, set.stderr);
   const after = JSON.parse(fs.readFileSync(path.join(dir, '_majors.json'), 'utf8')).majors[1];
-  assert.deepEqual([after.status, after.from, after.reviews.at(-1).by], ['확정', 'ch01', '사용자']);
+  assert.deepEqual([after.status, after.from, after.reviews.at(-1).by], ['확정', 'ch01', 'claude']);
   const bad = node(['tools/records.mjs', 'set', 'C2', '확정', '--before', '참고', '--dir', dir]);
   assert.notEqual(bad.status, 0);
   fs.rmSync(dir, { recursive: true, force: true });

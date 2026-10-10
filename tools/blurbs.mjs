@@ -179,7 +179,6 @@ async function cmdSet() {
     const entry = item?.data?.[part];
     if (!entry) { console.log(`✗ ${key}: ${part} 칸이 없다 — new ${key} --part ${part}`); failed++; continue; }
     const st = stateOf(entry, curSrc(part, key));
-    if (by === 'claude' && st.lastBy === '사용자') { console.log(`✗ ${key}: 사용자가 마지막으로 결정했다(${st.last.decision} ${st.last.date}) — Claude는 바꾸지 않는다`); failed++; continue; }
     if (decision === '확정') {
       // 확정 전에 검사 — 오류가 있으면 확정하지 않는다(경고는 보이고 통과). 낡은 칸은 --refresh부터
       if (st.stale) { console.log(`✗ ${key}: ${part}는 판정이 바뀌었다 — 고친 뒤 new ${key} --part ${part} --refresh`); failed++; continue; }

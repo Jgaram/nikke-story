@@ -17,7 +17,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M02",
           "note": "2회독: 글 · 목격담이 원문에 그대로 있다(F1140 · F1792가 궤도 엘리베이터 쪽을 뒷받침)",
@@ -37,7 +37,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M02",
           "note": "2회독: 글 · 목격담이 원문에 그대로 있다(F1140 · F1792가 궤도 엘리베이터 쪽을 뒷받침)",
@@ -59,7 +59,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M02",
           "note": "2회독: 글 · 목격담이 원문에 그대로 있다(F1140 · F1792가 궤도 엘리베이터 쪽을 뒷받침)",

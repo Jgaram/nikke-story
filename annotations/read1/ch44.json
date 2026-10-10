@@ -305,7 +305,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R80", "note": "R80 자체 검토 — 원문 근거 줄 대조" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-08",
           "session": "M43",
           "note": "ch46 F2643(도로시 본인 말 — 방주의 니케를 데리고 나가 낙원을 다시 만드는 것이 복수)이 버닝엄의 짐작을 잇는다",
@@ -709,7 +709,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R80", "note": "R80 자체 검토 — 원문 근거 줄 대조" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-08", "session": "M43", "note": "F2439가 F2643으로 맞음이 확인되어 확실로", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43", "note": "F2439가 F2643으로 맞음이 확인되어 확실로", "before": "확신도 추정" }
       ]
     },
     {

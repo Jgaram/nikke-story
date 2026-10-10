@@ -51,7 +51,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "어머니의 '괴물'은 원문 그대로(#1) — 답은 열려 있다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "어머니의 '괴물'은 원문 그대로(#1) — 답은 열려 있다", "before": "확신도 추정" }
       ]
     }
   ],

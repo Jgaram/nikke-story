@@ -445,6 +445,7 @@ function withField(obj, key, value, kind) {
  */
 export function applyDecision(list, decision, { by = 'claude', date = today(), session = null, note = null, text = null, grade = null, layer = null, basis = null, reason = null, asof = null, confidence = null, evidence = null, from = null, before: beforeGrade = null, origin = null, arcs = null, records = null, type = null, end = null, closing = null, built = null, about = null, members = null, title = null, explicit = true } = {}) {
   if (!DECISIONS.includes(decision)) throw new Error(`결정은 ${DECISIONS.join(' · ')} 중 하나`);
+  if (by !== 'claude') throw new Error('--by는 claude뿐이다 — 기록은 Claude가 정한다(CLAUDE.md "일하는 법")');
   if (text !== null && list.length !== 1) throw new Error('--text는 후보 하나에만 쓴다');
   if (evidence !== null && list.length !== 1) throw new Error('--evidence는 후보 하나에만 쓴다');
   if (confidence !== null && !CONFIDENCES.includes(confidence)) throw new Error(`--confidence는 ${CONFIDENCES.join(' · ')}`);

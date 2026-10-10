@@ -30,10 +30,10 @@ test('이력 — 검토 기록의 before에서 등급을 거꾸로 편다', () =
       { decision: '확정', by: 'claude', session: 'B0b-2' },
       { decision: '확정', by: 'claude', session: 'X3b', before: '등급 독립 · 근거 J35' },
       { decision: '확정', by: 'claude', session: 'X3c', note: '그대로' },
-      { decision: '확정', by: '사용자', date: '2026-10-09', before: '등급 보강' },
+      { decision: '확정', by: 'claude', date: '2026-10-09', before: '등급 보강' },
     ],
   };
-  assert.equal(gradeHistory(obj), 'B0b-2 독립 → X3b 보강 · X3c 그대로 → 사용자 필수');
+  assert.equal(gradeHistory(obj), 'B0b-2 독립 → X3b 보강 · X3c 그대로 → 2026-10-09 필수', '세션이 없으면 날짜');
   assert.equal(gradeHistory({ grade: '독립', reviews: [{ session: 'B0b-2' }] }), 'B0b-2 독립');
   assert.equal(gradeHistory({ grade: '보강' }), '보강', '검토 기록이 없으면 등급만');
 });

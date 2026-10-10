@@ -154,7 +154,7 @@ test('검증기가 잡는다 — 없는 씬 · 줄, 상태 오타, 필수 칸, �
   // 기각된 의문을 가리키는 회수 기록
   const fresh = readJson(path.join(EXAMPLE_DIR, 'd_ex_elevator_01.json'));
   fresh.questions[0].status = '기각';
-  fresh.questions[0].reviews = [{ decision: '기각', by: '사용자', date: '2026-09-29' }];
+  fresh.questions[0].reviews = [{ decision: '기각', by: 'claude', date: '2026-09-29' }];
   writeJson(p('d_ex_elevator_01.json'), fresh);
   for (const f of ['sub.로망티스트_00.json', 'sub.로망티스트_01.json', 'ch99.json']) fs.rmSync(p(f));
   const r2 = checkDataset(loadDataset({ dir }), ctx, order);
@@ -191,12 +191,13 @@ test('결정 반영 — 고른 후보 객체만 고치고, 누가 · 언제를 �
   let ds = loadDataset({ dir });
   const before = fs.readFileSync(path.join(dir, 'sub.로망티스트_00.json'), 'utf8');
   const pick = (ids) => ds.candidates.filter((c) => ids.includes(c.id));
-  let r = applyDecision(pick(['F2', 'Q1']), '확정', { by: '사용자', date: '2026-10-01', session: 'RV1', note: '원문 그대로' });
+  assert.throws(() => applyDecision(pick(['F2']), '확정', { by: '사용자' }), /claude뿐/, '기록은 Claude만 정한다');
+  let r = applyDecision(pick(['F2', 'Q1']), '확정', { by: 'claude', date: '2026-10-01', session: 'RV1', note: '원문 그대로' });
   writeDecisions(ds, r.perFile);
   const after = fs.readFileSync(path.join(dir, 'sub.로망티스트_00.json'), 'utf8');
   const data = JSON.parse(after);
   assert.equal(data.facts[1].status, '확정');
-  assert.deepEqual(data.facts[1].reviews, [{ decision: '확정', by: '사용자', date: '2026-10-01', session: 'RV1', note: '원문 그대로' }]);
+  assert.deepEqual(data.facts[1].reviews, [{ decision: '확정', by: 'claude', date: '2026-10-01', session: 'RV1', note: '원문 그대로' }]);
   assert.equal(data.questions[0].status, '확정');
   // 고친 객체 밖은 글자 하나 다르지 않다
   const spans = parseSpans(before);

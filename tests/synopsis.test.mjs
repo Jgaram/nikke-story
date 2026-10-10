@@ -85,7 +85,7 @@ test('확정 지문 — 확정한 뒤 문장을 고치면 오류이고 ok가 아
   assert.equal(stateOf(edited).ok, false);
   assert.ok(checkSynopsis(edited).errors.some((m) => m.startsWith('확정한 뒤')));
   assert.equal(stateOf(good()).ok, false);
-  assert.equal(stateOf(confirm(good(), '사용자')).lastBy, '사용자');
+  assert.ok(checkSynopsis(confirm(good(), '사용자')).errors.some((m) => /by는 claude/.test(m)), '확정은 Claude만');
 });
 
 test('원문 겹침 — 20자부터 경고, 40자부터 오류', () => {

@@ -220,7 +220,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "원문이 그대로 묻는 의문(루드밀라 '이 몸도 모른다' · 토커티브의 '여왕님')", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "원문이 그대로 묻는 의문(루드밀라 '이 몸도 모른다' · 토커티브의 '여왕님')", "before": "확신도 추정" }
       ]
     },
     {
@@ -281,7 +281,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "원문이 그대로 묻는 의문(루드밀라 '이 몸도 모른다' · 토커티브의 '여왕님')", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "원문이 그대로 묻는 의문(루드밀라 '이 몸도 모른다' · 토커티브의 '여왕님')", "before": "확신도 추정" }
       ]
     }
   ],
@@ -337,7 +337,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M01",
           "note": "스노우 화이트가 '이번엔 놓치지 않는다'(d_main_06_08_s#45)며 ch04의 그 순례자임을 드러낸다",

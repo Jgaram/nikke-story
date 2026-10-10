@@ -161,7 +161,7 @@ export async function run(ctx) {
       id: c.id, kind, unit, scene, line, evidence: evidenceOut(c.evidence),
       text: kind === 'I' || kind === 'D' ? text(o.text, `${where} text`) : text(c.text, `${where} text`),
       about: Array.isArray(o.about) ? o.about : undefined, confidence: c.confidence, tick: place.tick, order: place.order,
-      reason: text(c.reason, `${where} reason`), user: c.by === '사용자' ? true : undefined,
+      reason: text(c.reason, `${where} reason`),
     };
     if (kind === 'F' || kind === 'Q') {
       const r = roots.get(c.id);

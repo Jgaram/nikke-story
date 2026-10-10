@@ -20,7 +20,7 @@
       "reason": "마리안의 추락 보고(#0–1), 심정지 · AED 소생(#7–13), 추락 경위 설명(#23)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F2",
@@ -30,7 +30,7 @@
       "reason": "'소속을 말해주세요!'(#16)에 대한 답(#17). 이름표는 마리안으로 붙어 있지만 지휘관의 대답 줄이다(#15 · #19 · #27도 같은 꼴)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F3",
@@ -40,7 +40,7 @@
       "reason": "마리안이 '다쳤… 다고 할까요, 고장 났다고 할까요'(#4), '니케한텐 이런 건 아무 소용이…'(#7)라고 한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F4",
@@ -50,7 +50,7 @@
       "reason": "라피가 소속과 병과를 묻자 본인이 답한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F5",
@@ -60,7 +60,7 @@
       "reason": "라피가 인식 코드에 액세스해 '스쿼드 04-F의 지휘권 변경 완료'(#30), '현 시간부로 당신은 우리의 명령권자'(#34)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F6",
@@ -70,7 +70,7 @@
       "reason": "라피가 요청에 응해 줘서 고맙다고 하고(#1), 마리안이 왜 지휘관을 지상으로 올려 달라고 했느냐고 묻자 아니스가 기존 지휘관의 죽음을 말한다(#4–8)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F7",
@@ -80,7 +80,7 @@
       "reason": "아니스가 지휘관 이름을 검색해 '완전 생 신입', '어제 사관학교를 졸업했대'라고 한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     }
   ],
   "questions": [],
@@ -96,7 +96,7 @@
       "reason": "아니스가 '어제 사관학교를 졸업했대'라고 한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     }
   ],
   "targets": [

@@ -16,7 +16,7 @@ import { overlapIn } from '../check-quotes.mjs';
 export const SYNOPSIS_DIR = path.join(ROOT, 'annotations/synopsis');
 export const BATCHES_FILE = '_batches.json';
 export const STATUSES = ['후보', '확정', '기각'];
-export const DECIDERS = ['claude', '사용자'];
+export const DECIDERS = ['claude']; // 실무는 Claude만 — 사용자는 기준에 피드백(CLAUDE.md "일하는 법")
 
 /** 종류 — 사이트 units.json의 kind와 같은 이름 */
 export function unitKind(key) {
@@ -120,7 +120,7 @@ export function stateOf(s) {
   const lastConfirm = [...reviews].reverse().find((r) => r?.decision === '확정') ?? null;
   const hash = contentHash(s);
   const changed = s?.status === '확정' && (!lastConfirm || lastConfirm.hash !== hash);
-  return { status: s?.status ?? '후보', last, lastBy: last?.by ?? null, hash, changed, ok: s?.status === '확정' && !changed };
+  return { status: s?.status ?? '후보', last, hash, changed, ok: s?.status === '확정' && !changed };
 }
 
 /**

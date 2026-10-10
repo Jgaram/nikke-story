@@ -129,7 +129,7 @@
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
         {
           "decision": "확정",
-          "by": "사용자",
+          "by": "claude",
           "date": "2026-10-05",
           "session": "M01",
           "note": "라피의 판단으로 원문 그대로(#20-26) — 실제로는 기지 탈취가 지휘관을 꾀어낼 미끼였다(ch06 F121)",
@@ -209,7 +209,7 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "사용자", "date": "2026-10-05", "session": "M01", "note": "char:191 F604가 답한다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "char:191 F604가 답한다", "before": "확신도 추정" }
       ]
     }
   ],

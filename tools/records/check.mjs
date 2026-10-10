@@ -120,7 +120,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       if (!r || typeof r !== 'object') return err(where, c.id, `${at}: 객체여야 한다`);
       unknown(r, FIELDS.review, (m) => warn(where, c.id, `${at}: ${m}`));
       if (!DECISIONS.includes(r.decision)) err(where, c.id, `${at}: 결정 "${r.decision}" — ${DECISIONS.join(' · ')} 중 하나`);
-      if (!isStr(r.by)) err(where, c.id, `${at}: 결정한 사람(by)이 없다`);
+      if (r.by !== 'claude') err(where, c.id, `${at}: by는 "claude"뿐이다 — 기록은 Claude가 정한다(CLAUDE.md "일하는 법")`);
       if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date ?? '')) err(where, c.id, `${at}: 날짜(date)는 YYYY-MM-DD`);
     });
     const expect = statusFromReviews(reviews);
@@ -133,7 +133,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     if (!isStr(c.reason)) err(where, c.id, '이유(reason)가 없다');
     if (!CONFIDENCES.includes(c.confidence)) err(where, c.id, `확신도 "${c.confidence ?? ''}" — ${CONFIDENCES.join(' · ')} 중 하나`);
     if (!STATUSES.includes(c.status)) err(where, c.id, `상태 "${c.status ?? ''}" — ${STATUSES.join(' · ')} 중 하나`);
-    if (!isStr(c.by)) err(where, c.id, '기록자(by)가 없다 — 후보나 파일에 "by": "claude"');
+    if (c.by !== 'claude') err(where, c.id, '기록자(by)는 "claude"뿐이다 — 후보나 파일에 "by": "claude"');
     checkReviews(c, where);
   }
 
@@ -355,7 +355,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       if (!item) warn(f.name, null, `읽기 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
       else if (item.session !== d.session) warn(f.name, null, `읽기 순서에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
     }
-    if (!isStr(d.by)) err(f.name, null, '필수 칸 by(기록자 — "claude")가 없다');
+    if (d.by !== 'claude') err(f.name, null, '필수 칸 by(기록자)는 "claude"뿐이다');
     if (d.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(d.date ?? '')) err(f.name, null, 'date는 YYYY-MM-DD');
     if (!isStr(d.summary)) err(f.name, null, '필수 칸 summary(단위 요약 — 작업 메모)가 비었다');
     else if (d.summary.length > LIMITS.summary) warn(f.name, null, `summary가 ${d.summary.length}자 — ${LIMITS.summary}자 안쪽으로 줄인다(인계 파일 크기)`);
@@ -397,7 +397,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       if (!item) warn(f.name, null, `2회독 읽기 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
       else if (item.session !== d.session) warn(f.name, null, `읽기 순서에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
     }
-    if (!isStr(d.by)) err(f.name, null, '필수 칸 by(기록자 — "claude")가 없다');
+    if (d.by !== 'claude') err(f.name, null, '필수 칸 by(기록자)는 "claude"뿐이다');
     if (d.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(d.date ?? '')) err(f.name, null, 'date는 YYYY-MM-DD');
     for (const sec of [...Object.keys(READ2_SECTIONS), 'revisit', 'revisitDone']) if (d[sec] !== undefined && !Array.isArray(d[sec])) err(f.name, null, `${sec}는 배열이어야 한다`);
     fileUnit.set(f.name, { key: d.unit, scenes });

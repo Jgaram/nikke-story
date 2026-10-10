@@ -27,7 +27,7 @@
       "reason": "라피의 작전 브리핑",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F9",
@@ -37,7 +37,7 @@
       "reason": "좌표를 아는 건 죽은 지휘관뿐이라는 말(#13)에 마리안이 '작전 투입 전에 입력받았어요'(#20)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F10",
@@ -47,7 +47,7 @@
       "reason": "본인 소개",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F11",
@@ -57,7 +57,7 @@
       "reason": "아니스가 '구색을 맞추기 위한 수색 작전인 거, 너도 알잖아'라고 한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F12",
@@ -67,7 +67,7 @@
       "reason": "시프티의 설명",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F13",
@@ -77,7 +77,7 @@
       "reason": "아니스 '우리야 머리만 멀쩡하면 되지만, 인간인 지휘관님은 달라'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F14",
@@ -87,7 +87,7 @@
       "reason": "블랙박스 해석을 받은 라피의 말(#18–21). 마리안은 부인하지만(#17 · #22) 앞서 시프티가 그 지역 랩쳐에는 대공 화기가 없다고 했다(d_main_01_05#12)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F15",
@@ -97,7 +97,7 @@
       "reason": "시프티 '침식 반응 확인!'(#31), '랩쳐에게 중추 신경을 빼앗겼어요!'(#34)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F16",
@@ -107,7 +107,7 @@
       "reason": "시프티(#44–45 · #71)와 라피(#55)의 설명",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F17",
@@ -117,7 +117,7 @@
       "reason": "블랙스미스를 잡은 뒤 라피가 확인한다(#3). 앞서 '선발대는 아마 저것에 당했을 겁니다'(d_main_01_07_s#51)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F18",
@@ -127,7 +127,7 @@
       "reason": "시프티(#9–11)와 라피(#16)가 규칙을 말한다. 그대로 두면 이레귤러가 될 수 있다고도 한다(#19)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F19",
@@ -137,7 +137,7 @@
       "reason": "아니스 '침식이 뇌까지 전이돼버렸어'(#8), 서술(#23–28), 라피 '마리안, 처분 확인'(#31)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F20",
@@ -147,7 +147,7 @@
       "reason": "시프티의 분석이지만 '…었을 거예요'라는 추정이다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F21",
@@ -157,7 +157,7 @@
       "reason": "시프티의 설명. 그래서 마리안이 지휘관을 만난 뒤로 침식 명령과 우선순위가 뒤섞였다고 본다(#6–10)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F22",
@@ -167,7 +167,7 @@
       "reason": "라피의 추론 — 수송기를 떨어뜨렸으니 탈 때부터 침식돼 있었고, 수송기는 방주에서 왔다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F23",
@@ -177,7 +177,7 @@
       "reason": "라피 '방호벽은 견고해. 침식 정도는 쉽게 걸러낼 거야', 엔더슨 '방주의 방호벽은 최고일세. 절대 뚫리지 않지'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F24",
@@ -187,7 +187,7 @@
       "reason": "본인 소개",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F25",
@@ -197,7 +197,7 @@
       "reason": "아니스 '저 사람, 엘리시온의 CEO잖아', 네온 '잉그리드 님. 그러니까 사장님'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F26",
@@ -207,7 +207,7 @@
       "reason": "잉그리드가 스쿼드 명을 묻자 지휘관이 '카운터스'라고 답하고 그 이름으로 부른다. 04-F와 같은 스쿼드인지는 따로 말하지 않는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F27",
@@ -217,7 +217,7 @@
       "reason": "엔더슨 · 잉그리드의 대화(#11–21)와 아니스가 받은 작전(#22)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F28",
@@ -227,7 +227,7 @@
       "reason": "라피 · 아니스의 설명",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F29",
@@ -237,7 +237,7 @@
       "reason": "라피 '엘리시온의 니케?'(#4), 네온 본인의 설명(#15–16)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "F2880",
@@ -260,7 +260,7 @@
       "reason": "라피가 탑승 전 침식을 짚고 방호벽은 뚫리지 않는다며 말을 흐린다(#13–22). 지휘관의 물음에 엔더슨은 조사 중이라 답하지 않고, 누가 의도적으로 심었다면 어쩌겠느냐고 되묻는다(d_main_01af_02#40–42)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "Q2",
@@ -270,7 +270,7 @@
       "reason": "아니스가 '…찾은 것 같아?'라고 묻고 라피는 '아직은 모르겠어'라고만 한다 — 무엇을 찾는지는 말하지 않는다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "Q3",
@@ -280,7 +280,7 @@
       "reason": "아니스 · 라피가 이례적이라며 의심한다('쎄한데', '처분이네'). 시프티는 정상 작전이라고 하고 이유는 나오지 않는다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     }
   ],
   "events": [
@@ -293,7 +293,7 @@
       "reason": "마리안은 대공 화기에 당했다고 했지만(d_main_01_01_s#23) 블랙박스 해석으로 기내 폭발이 드러난다. 앞서 시프티가 그 지역 랩쳐에는 대공 화기가 없다고 했다(d_main_01_05#12)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     }
   ],
   "times": [
@@ -307,7 +307,7 @@
       "reason": "엔더슨 '대충 던져놓은 신입 지휘관이. 하루 만에. 단 3기의 니케로.'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     },
     {
       "id": "S3",
@@ -319,7 +319,7 @@
       "reason": "라피의 브리핑",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "사용자", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "사용자: ch00–01 내용 다 적절" }]
     }
   ],
   "targets": [

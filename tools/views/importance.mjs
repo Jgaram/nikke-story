@@ -61,7 +61,7 @@ export const RECHECK_GROUPS = [
 ];
 
 const COLUMNS = ['order', 'unit', 'kind', 'title', 'judgment', 'grade', 'from', 'before', 'lead', 'pos', 'from_pos', 'grade_path', 'basis', 'confidence', 'status', 'asof',
-  'last_session', 'history', 'by_user', 'draft', 'draft_basis', 'draft_read1', 'main1', 'main2', 'heavy', 'hints', 'changes', 'life', 'loose_world', 'loose_main', 'leads', 'buildup', 'closures',
+  'last_session', 'history', 'draft', 'draft_basis', 'draft_read1', 'main1', 'main2', 'heavy', 'hints', 'changes', 'life', 'loose_world', 'loose_main', 'leads', 'buildup', 'closures',
   'read_layer', 'layer', 'recheck', 'rechecked', 'reason', 'emotion', 'emotion_from', 'emotion_from_pos', 'emotion_moments', 'emotion_check', 'emotion_done'];
 
 const mainW = (m) => Math.min(9, ...m.threads.map((j) => W[m.weights[j]] ?? 9));
@@ -135,9 +135,9 @@ export function gradeHistory(obj) {
   let last = null;
   let lastSession = null;
   reviews.forEach((r, i) => {
-    const who = r.session ?? (r.by === '사용자' ? '사용자' : r.date ?? '?');
+    const who = r.session ?? r.date ?? '?';
     if (last === null) parts.push(`${who} ${grades[i]}`);
-    else if (grades[i] !== last) parts.push(`→ ${who}${r.by === '사용자' && r.session ? '(사용자)' : ''} ${grades[i]}`);
+    else if (grades[i] !== last) parts.push(`→ ${who} ${grades[i]}`);
     else if (who !== lastSession) parts.push(`· ${who} 그대로`);
     last = grades[i];
     lastSession = who;
@@ -181,7 +181,7 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
     const j = u.judgment;
     const o = j?.obj ?? {};
     const reviews = Array.isArray(o.reviews) ? o.reviews : [];
-    const rechecked = reviews.some((r) => RECHECK_SESSION.test(r.session ?? '') || r.by === '사용자');
+    const rechecked = reviews.some((r) => RECHECK_SESSION.test(r.session ?? ''));
     const why = u.grade ? recheckReasons(u.grade, s, { origins }) : ['판정 없음'];
     const pos = tickOf(u.key);
     const fromPos = o.from ? tickOf(o.from) : '';
@@ -189,7 +189,7 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
       order: u.order, unit: u.key, kind: layerKind(u.key), title: ctx.resolve(u.key)?.title ?? '', judgment: j?.id ?? '', grade: u.grade ?? '',
       from: o.from ?? '', before: o.before ?? '', lead: (originOf.get(u.key) ?? []).join(' · '), pos, from_pos: fromPos && pos && fromPos > pos ? fromPos : '',
       basis: o.basis ?? '', confidence: o.confidence ?? '', status: j?.status ?? '', asof: o.asof ?? '', last_session: reviews.at(-1)?.session ?? '',
-      history: j ? gradeHistory(o) : '', by_user: reviews.some((r) => r.by === '사용자') ? '사용자' : '',
+      history: j ? gradeHistory(o) : '',
       draft: s.draft.grade, draft_basis: s.draft.basis ?? '', draft_read1: s.draft1.grade,
       main1: s.main.filter((m) => m.src !== 2).length, main2: s.main.filter(counted2).length, heavy: s.main.filter(steps).length,
       hints: s.echo.filter((e) => e.act === '암시' && W[e.weight] <= 1).length, changes: s.changes.length,
@@ -207,7 +207,7 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
     Object.assign(row, {
       emotion: em.grade ?? '', emotion_from: em.from ?? '', emotion_from_pos: emPos && pos && emPos > pos ? emPos : '',
       emotion_moments: em.moments.map((m) => `${m.record} ${m.person.replace('person:', '')} ${m.aspect}(${m.cls})`).join(' · '),
-      emotion_done: reviews.some((r) => EMOTION_SESSION.test(r.session ?? '') || r.by === '사용자') ? '다시 봄' : '',
+      emotion_done: reviews.some((r) => EMOTION_SESSION.test(r.session ?? '')) ? '다시 봄' : '',
     });
     row.emotion_check = emotionCheck(row, em.grade, row.emotion_from_pos);
     row.emotionList = em.moments;
@@ -254,7 +254,7 @@ export function renderImportanceReport(v, { source = '' } = {}) {
   for (const u of v.units) asof.set(u.asof || '없음', (asof.get(u.asof || '없음') ?? 0) + 1);
   L.push(`- 척추 ${v.spine.length}(이벤트 ${v.spine.filter((u) => u.kind === '이벤트').length} · 사이드 ${v.spine.filter((u) => u.kind === '사이드').length} — 채점하지 않는다, 아래 "척추") · 판정 단위 ${v.units.length} — ${GRADES.map((g) => `${g} ${by(g)}`).join(' · ')}${n((u) => !u.grade) ? ` · 판정 없음 ${n((u) => !u.grade)}` : ''}` +
     ` (확신도 추정 ${n((u) => u.confidence === '추정')} · 상태 확정 ${n((u) => u.status === '확정')})`);
-  L.push(`- 기준 시점: ${[...asof].sort().map(([d, k]) => `${d} ${k}`).join(' · ')} · 사용자가 뒤집은 판정 ${n((u) => u.by_user)}`);
+  L.push(`- 기준 시점: ${[...asof].sort().map(([d, k]) => `${d} ${k}`).join(' · ')}`);
   L.push(`- 기준 바꿈(X3f) 뒤 다시 본 판정 ${n((u) => u.rechecked)} · 등급이 바뀐 판정 ${n((u) => /→/.test(u.history))} · 메인 자리(from)가 있는 판정 ${n((u) => u.from)}` +
     `(자리에 따라 바뀌는 단위 ${n((u) => u.grade_path !== u.grade)}) · 주역 원점인 단위 ${n((u) => u.lead)}(원점이 정해진 주역 ${v.origins.size}/${v.leadFrom.size}) · **다시 볼 단위 ${v.pending.length}**`, '');
 
