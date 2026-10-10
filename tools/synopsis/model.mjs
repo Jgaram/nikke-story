@@ -63,6 +63,10 @@ export const FORBIDDEN = [
   { re: /(?<![A-Za-z0-9])[FQSVLIEDUKZBOHJYG]\d+(?:-\d+)?(?![A-Za-z0-9])/g, what: '기록 ID' },
   { re: /(?<![A-Za-z0-9])(?:RE|RV|R|P|M|W|X|B|A|N)\d+[a-z]?(?:-\d+[a-z]?)?(?![A-Za-z0-9])/g, what: '세션 이름' },
 ];
+/** 금지 꼴에 걸리지만 게임 안 용어인 것 — 금지 꼴 검사 전에 지운다 */
+export const GAME_TERMS = [/E2\s?크리스탈/g, /X1\s?온리\s?원/g];
+/** 뒤 이름을 품은 흔한 낱말 — 앞에 나온 이름처럼 덮어서 스포일러로 잡지 않는다(사라지다 속 사라) */
+export const COMMON_WORDS = ['사라지', '사라진', '사라졌', '사라질', '사라짐', '사라져'];
 export const WORK_WORDS = /[12]회독|되짚기|바로잡기|확신도|\((?:추정|확실)\)|후보로|판정 카드|볼 거리/g;
 
 const arr = (x) => (Array.isArray(x) ? x : []);
@@ -161,8 +165,9 @@ export function checkSynopsis(s, { scenes = null } = {}) {
   let quoteCount = 0;
   for (const [where, t] of texts) {
     if (!t) continue;
+    const plain = GAME_TERMS.reduce((x, re) => x.replace(re, ' '), t);
     for (const f of FORBIDDEN) {
-      const hits = [...new Set(t.match(f.re) ?? [])];
+      const hits = [...new Set(plain.match(f.re) ?? [])];
       if (hits.length) errors.push(`${where}: 화면 글에 넣지 않는 꼴(${f.what}) — ${hits.slice(0, 3).join(' · ')}`);
     }
     const work = [...new Set(t.match(WORK_WORDS) ?? [])];
@@ -226,7 +231,8 @@ export function nameFirsts(db, places) {
 
 /**
  * 스포일러 경고 — 그 단위(읽는 순서 order) 뒤에 처음 나오는 이름이 화면 글에 들었나.
- * 앞에 나온 더 긴 이름 안에 든 것(예: 앞 이름 「A의 B」 속 B)은 뺀다.
+ * 앞에 나온 더 긴 이름 안에 든 것(예: 앞 이름 「A의 B」 속 B) · 흔한 낱말(COMMON_WORDS) 안에 든 것 ·
+ * 바로 앞에 한글 음절이 붙어 낱말 속 글자인 것(하이브 속 이브, 크리스탈 속 리스)은 뺀다.
  */
 export function spoilerProblems(s, order, firsts) {
   const warnings = [];
@@ -236,11 +242,12 @@ export function spoilerProblems(s, order, firsts) {
   for (const [name, f] of firsts) (f.order > order ? late : early).push([name, f]);
   for (const [where, t] of shownTexts(s)) {
     const covered = [];
-    for (const [name] of early) for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) covered.push([i, i + name.length]);
+    for (const name of [...early.map(([n]) => n), ...COMMON_WORDS]) for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) covered.push([i, i + name.length]);
     const hits = [];
     for (const [name, f] of late) {
       for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) {
         if (covered.some(([a, b]) => a <= i && i + name.length <= b && b - a > name.length)) continue;
+        if (i > 0 && /[가-힣]/.test(t[i - 1]) && /^[가-힣]/.test(name)) continue;
         hits.push(`${name}(${f.order}번째 ${f.unit}에서 처음)`);
         break;
       }

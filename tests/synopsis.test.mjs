@@ -42,7 +42,7 @@ test('화면에 내면 안 되는 꼴은 오류다 — 씬 ID · 단위 키 · �
     assert.ok(checkSynopsis(s).errors.some((m) => m.includes('넣지 않는 꼴')), bad);
   }
   // 니케 이름 · 스쿼드 번호 · 기체 이름은 걸리지 않는다
-  const ok = { ...good(), synopsis: `${good().synopsis} 스쿼드 04-F와 BA-01, AED, A.C.P.U.` };
+  const ok = { ...good(), synopsis: `${good().synopsis} 스쿼드 04-F와 BA-01, AED, A.C.P.U., E2 크리스탈, X1 온리 원` };
   assert.deepEqual(checkSynopsis(ok).errors, []);
 });
 
@@ -108,6 +108,16 @@ test('스포일러 경고 — 그 단위 뒤에 처음 나오는 이름, 앞 이
   assert.match(r.warnings[0], /도로시/);
   assert.doesNotMatch(r.warnings[0], /후드/);
   assert.deepEqual(spoilerProblems(s, 200, firsts).warnings, []);
+});
+
+test('스포일러 경고 — 낱말 속 글자(앞에 한글 음절이 붙은 것) · 흔한 낱말 속 이름은 빼고, 띄어 쓴 이름은 잡는다', () => {
+  const firsts = new Map([['이브', { order: 50, unit: 'ch32' }], ['사라', { order: 60, unit: 'fl:good_world' }], ['리스', { order: 70, unit: 'event_staranis1' }]]);
+  const word = { ...good(), synopsis: `${good().synopsis} 하이브가 크리스탈을 지키다 사라진다.` };
+  assert.deepEqual(spoilerProblems(word, 10, firsts).warnings, []);
+  const name = { ...good(), synopsis: `${good().synopsis} 이브와 사라가 만난다.` };
+  const r = spoilerProblems(name, 10, firsts);
+  assert.match(r.warnings[0], /이브/);
+  assert.match(r.warnings[0], /사라/);
 });
 
 test('W9 묶음 — 갈래 순서(메인 → 이벤트 → 작은 단위 → 호감도), 읽는 순서 유지, max 이하, 고르게', () => {
