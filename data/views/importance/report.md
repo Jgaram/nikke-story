@@ -3,9 +3,9 @@
 출처: annotations/read1/ + annotations/layers.json(판정 K) + annotations/spine.json(척추 B) — 규칙 tools/views/importance.mjs · tools/views/layers.mjs 머리말, 기준 docs/importance.md(판정 카드), 형식 docs/annotations.md "중요도 판정".
 단위 하나의 판정 · 시안 · 판정 입력: `node tools/records.mjs layers <단위 키> [--summary]`. 공개 자리 하나: `node tools/query.mjs grades <ch20>`. 등급을 뒤집기: `node tools/records.mjs set K… 확정 --by 사용자 --grade … --note "…"`.
 
-- 척추 11(이벤트 8 · 사이드 3 — 채점하지 않는다, 아래 "척추") · 판정 단위 421 — 필수 2 · 보강 46 · 참고 243 · 독립 130 (확신도 추정 201 · 상태 확정 421)
+- 척추 11(이벤트 8 · 사이드 3 — 채점하지 않는다, 아래 "척추") · 판정 단위 421 — 필수 5 · 보강 47 · 참고 239 · 독립 130 (확신도 추정 201 · 상태 확정 421)
 - 기준 시점: 2026-09-24 421 · 사용자가 뒤집은 판정 0
-- 기준 바꿈(X3f) 뒤 다시 본 판정 421 · 등급이 바뀐 판정 263 · 메인 자리(from)가 있는 판정 48(자리에 따라 바뀌는 단위 16) · 주역 원점인 단위 2(원점이 정해진 주역 20/20) · **다시 볼 단위 0**
+- 기준 바꿈(X3f) 뒤 다시 본 판정 421 · 등급이 바뀐 판정 264 · 메인 자리(from)가 있는 판정 52(자리에 따라 바뀌는 단위 18) · 주역 원점인 단위 2(원점이 정해진 주역 20/20) · **다시 볼 단위 0**
 
 ## 척추 — 메인 챕터와 함께 채점하지 않는 기준 (X3f-1b · 1c)
 
@@ -32,16 +32,16 @@
 | 서브퀘스트 |  | 6 | 66 | 14 |  |
 | 유실물 |  | 5 | 39 | 11 |  |
 | 그 밖 |  | 1 |  |  |  |
-| 사이드 |  | 2 |  |  |  |
-| 이벤트 | 1 | 16 | 45 | 13 |  |
-| 이벤트 유실물 | 1 | 2 | 6 |  |  |
-| 호감도 |  | 14 | 87 | 92 |  |
-| 합 | 2 | 46 | 243 | 130 | 0 |
+| 사이드 | 1 | 1 |  |  |  |
+| 이벤트 | 1 | 17 | 44 | 13 |  |
+| 이벤트 유실물 | 2 | 2 | 5 |  |  |
+| 호감도 | 1 | 15 | 85 | 92 |  |
+| 합 | 5 | 47 | 239 | 130 | 0 |
 
 ## 판정과 시안
 
-- 시안(2회독 포함)과 같은 등급 214 · 판정이 시안보다 높음 9 · 낮음 198 — 시안은 출발점일 뿐이다(규칙 tools/views/layers.mjs 머리말 — 참고 시안은 "메인이 말하지 않은 기록인지"를 보지 못한다).
-- 판정 → 시안: 참고 → 시안 참고 151 · 독립 → 시안 참고 94 · 참고 → 시안 보강 69 · 독립 → 시안 독립 32 · 보강 → 시안 보강 29 · 참고 → 시안 필수 18 · 보강 → 시안 필수 13 · 참고 → 시안 독립 5 · 보강 → 시안 참고 4 · 독립 → 시안 보강 3 · 필수 → 시안 필수 2 · 독립 → 시안 필수 1
+- 시안(2회독 포함)과 같은 등급 215 · 판정이 시안보다 높음 11 · 낮음 195 — 시안은 출발점일 뿐이다(규칙 tools/views/layers.mjs 머리말 — 참고 시안은 "메인이 말하지 않은 기록인지"를 보지 못한다).
+- 판정 → 시안: 참고 → 시안 참고 149 · 독립 → 시안 참고 94 · 참고 → 시안 보강 68 · 독립 → 시안 독립 32 · 보강 → 시안 보강 30 · 참고 → 시안 필수 17 · 보강 → 시안 필수 12 · 보강 → 시안 참고 5 · 참고 → 시안 독립 5 · 필수 → 시안 필수 4 · 독립 → 시안 보강 3 · 필수 → 시안 참고 1 · 독립 → 시안 필수 1
 - 판정 입력(X3f): 줄기에 안 묶인 세계 사실이 있는 단위 322 · 메인 인물 사실 240 · 주역 사연 56 · 생활상 132 · 메인이 딛는 연결 69
 - 빌드업 마무리(X3f-1d — 판정 입력 ⑦, 척추가 쌓음): 긴 회수 · 복선의 답이 있는 단위 20 · 마무리 기록(O)이 끝나는 단위 23(확정 23) — data/views/closures/report.md
 
@@ -59,8 +59,10 @@
 | 102 | `char:221` 라푼젤 | K85 | 참고 → event_overzone 보강 | 17 → 36 |
 | 167 | `relic:데일리아크기사스크랩` 데일리아크 기사 스크랩 | K147 | 참고 → ch20 보강 | 25 → 26 |
 | 185 | `event_cherryblossom` CHERRY BLOSSOM | K164 | 참고 → ch21 보강 | 32 → 35 |
-| 258 | `event_newyearnewsword` NEW YEAR, NEW SWORD | K231 | 참고 → event_goddessfall1 보강 | 59 → 128 |
+| 204 | `erelic:white_memory` WHITE MEMORY | K181 | 보강 → fl:ark_guardian 필수 | 36 → 133 |
+| 252 | `char:224` 스노우 화이트 : 이노센트 데이즈 | K225 | 보강 → fl:ark_guardian 필수 | 55 → 133 |
 | 262 | `event_dirtybackyard` DIRTY BACKYARD | K235 | 참고 → ch30 보강 | 62 → 73 |
+| 288 | `side:second_affection` SECOND AFFECTION | K259 | 보강 → ch48 필수 | 71 → 154 |
 | 294 | `relic:하모니큐브관찰일지` 하모니 큐브 관찰 일지 | K263 | 참고 → ch31 보강 | 73 → 80 |
 | 381 | `char:590` 모리 | K342 | 참고 → ch42 보강 | 109 → 128 |
 | 383 | `event_arcanearchive` ARCANE ARCHIVE | K344 | 참고 → ch44 보강 | 111 → 138 |
@@ -94,33 +96,33 @@
 | ch19 | 25 |  | 6 | 108 | 33 | 8 |
 | ch20 | 26 |  | 7 | 114 | 33 | 7 |
 | ch21 | 35 |  | 9 | 127 | 38 | 7 |
-| ch22 | 36 |  | 10 | 134 | 38 | 6 |
-| ch23 | 43 |  | 10 | 142 | 43 | 6 |
-| ch24 | 44 |  | 10 | 144 | 45 | 6 |
-| ch25 | 54 |  | 10 | 155 | 51 | 6 |
-| ch26 | 55 |  | 12 | 160 | 51 | 6 |
-| ch27 | 65 |  | 15 | 171 | 56 | 5 |
-| ch28 | 66 |  | 16 | 176 | 58 | 5 |
-| ch29 | 72 |  | 17 | 179 | 64 | 5 |
-| ch30 | 73 |  | 19 | 180 | 64 | 4 |
-| ch31 | 80 |  | 22 | 184 | 68 | 3 |
-| ch32 | 81 |  | 23 | 189 | 70 | 3 |
-| ch33 | 90 |  | 24 | 198 | 76 | 3 |
-| ch34 | 91 |  | 26 | 201 | 77 | 3 |
-| ch35 | 101 | 1 | 28 | 207 | 82 | 3 |
-| ch36 | 102 | 1 | 28 | 208 | 84 | 3 |
-| ch37 | 108 | 1 | 28 | 213 | 88 | 3 |
-| ch38 | 109 | 1 | 30 | 217 | 88 | 4 |
-| ch39 | 118 | 1 | 33 | 223 | 94 | 5 |
-| ch40 | 119 | 1 | 35 | 223 | 95 | 5 |
-| ch41 | 127 | 1 | 35 | 228 | 102 | 5 |
-| ch42 | 128 | 2 | 37 | 228 | 103 | 3 |
-| ch43 | 137 | 2 | 37 | 234 | 109 | 3 |
-| ch44 | 138 | 2 | 40 | 233 | 111 |  |
-| ch45 | 143 | 2 | 41 | 238 | 114 |  |
-| ch46 | 144 | 2 | 41 | 240 | 115 |  |
-| ch47 | 153 | 2 | 44 | 242 | 124 | 1 |
-| ch48 | 154 | 2 | 45 | 243 | 126 |  |
+| ch22 | 36 |  | 11 | 133 | 38 | 7 |
+| ch23 | 43 |  | 11 | 141 | 43 | 7 |
+| ch24 | 44 |  | 11 | 143 | 45 | 7 |
+| ch25 | 54 |  | 11 | 154 | 51 | 7 |
+| ch26 | 55 |  | 14 | 158 | 51 | 8 |
+| ch27 | 65 |  | 19 | 167 | 56 | 6 |
+| ch28 | 66 |  | 20 | 172 | 58 | 6 |
+| ch29 | 72 |  | 21 | 175 | 64 | 7 |
+| ch30 | 73 |  | 23 | 176 | 64 | 6 |
+| ch31 | 80 |  | 26 | 180 | 68 | 5 |
+| ch32 | 81 |  | 27 | 185 | 70 | 5 |
+| ch33 | 90 |  | 28 | 194 | 76 | 5 |
+| ch34 | 91 |  | 30 | 197 | 77 | 5 |
+| ch35 | 101 | 1 | 32 | 203 | 82 | 5 |
+| ch36 | 102 | 1 | 32 | 204 | 84 | 5 |
+| ch37 | 108 | 1 | 32 | 209 | 88 | 5 |
+| ch38 | 109 | 1 | 34 | 213 | 88 | 6 |
+| ch39 | 118 | 1 | 38 | 218 | 94 | 7 |
+| ch40 | 119 | 1 | 40 | 218 | 95 | 7 |
+| ch41 | 127 | 1 | 40 | 223 | 102 | 7 |
+| ch42 | 128 | 2 | 41 | 224 | 103 | 6 |
+| ch43 | 137 | 4 | 39 | 230 | 109 | 4 |
+| ch44 | 138 | 4 | 42 | 229 | 111 | 1 |
+| ch45 | 143 | 4 | 43 | 234 | 114 | 1 |
+| ch46 | 144 | 4 | 43 | 236 | 115 | 1 |
+| ch47 | 153 | 4 | 46 | 238 | 124 | 2 |
+| ch48 | 154 | 5 | 46 | 239 | 126 |  |
 
 ## 다시 볼 묶음 — 기준 바꿈(X3f) 뒤 아직 다시 보지 않은 판정
 
@@ -131,7 +133,7 @@
 
 ## 감정 기준 후보 (X3g — 판정 입력 ⑧)
 
-결정적 순간 후보가 있는 판정 단위 79(상한 필수 21 · 보강 58) · 후보 — 오름 56(필수로 19 · 보강으로 37) · 이른 자리 4 · 다시 봄 0 · **남음 60** — 후보 표 data/views/importance/emotion.md(공개 자리 순), 기준 docs/importance.md 3절 "결정적 순간".
+결정적 순간 후보가 있는 판정 단위 79(상한 필수 21 · 보강 58) · 후보 — 오름 52(필수로 16 · 보강으로 36) · 이른 자리 4 · 다시 봄 56 · **남음 0** — 후보 표 data/views/importance/emotion.md(공개 자리 순), 기준 docs/importance.md 3절 "결정적 순간".
 
 ## 이력 — 등급이 바뀐 판정
 
@@ -195,14 +197,14 @@
 - `sub:방주_난민_01` K72: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `relic:장보기목록` K75: B0b-2 독립 · X3c 그대로 → X3f-6c 참고
 - `char:11` K77: B0b-2 독립 → X3c 보강 → X3f-4a 참고
-- `char:232` K79: B0b-2 보강 · X3c 그대로 → X3f-4a 참고
+- `char:232` K79: B0b-2 보강 · X3c 그대로 → X3f-4a 참고 · X3g-3a 그대로
 - `char:20` K81: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
 - `char:202` K82: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
 - `char:101` K83: B0b-2 독립 → X3c 보강 · X3f-4a 그대로
-- `char:72` K84: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
+- `char:72` K84: B0b-2 보강 · X3c 그대로 → X3f-5a 참고 · X3g-3a 그대로
 - `char:10` K86: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
 - `char:190` K87: B0b-2 독립 · X3c 그대로 → X3f-4a 보강
-- `char:82` K89: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
+- `char:82` K89: B0b-2 독립 · X3c 그대로 → X3f-6f 참고 · X3g-3a 그대로
 - `char:130` K91: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
 - `char:181` K92: B0b-2 독립 · X3c 그대로 → X3f-6f 보강
 - `char:32` K93: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
@@ -222,10 +224,10 @@
 - `char:90` K114: B0b-2 독립 · X3c 그대로 → X3f-4a 참고
 - `char:150` K116: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
 - `char:171` K117: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
-- `char:92` K118: B0b-2 독립 · X3c 그대로 → X3f-6f 참고
+- `char:92` K118: B0b-2 독립 · X3c 그대로 → X3f-6f 참고 · X3g-3a 그대로
 - `char:231` K119: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
-- `char:110` K120: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
-- `char:30` K122: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
+- `char:110` K120: B0b-2 보강 · X3c 그대로 → X3f-5a 참고 · X3g-3a 그대로
+- `char:30` K122: B0b-2 독립 · X3c 그대로 → X3f-6g 참고 · X3g-3a 그대로
 - `char:170` K124: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `char:142` K125: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `char:230` K126: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
@@ -242,7 +244,7 @@
 - `event_hightechtoy` K138: B0b-2 독립 → X3b 보강 → X3f-5a 참고
 - `event_miraclesnow1` K140: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `event_brandnewyear` K144: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
-- `char:260` K145: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
+- `char:260` K145: B0b-2 보강 · X3c 그대로 → X3f-5a 참고 · X3g-3a 그대로
 - `sub:데이파라_00` K146: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
 - `sub:로망티스트_00` K148: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `relic:jonathan_report` K149: B0b-2 보강 · X3c 그대로 → X3f-5a 참고
@@ -258,7 +260,7 @@
 - `char:802` K161: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `event_bowwowparadise` K162: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `char:381` K163: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
-- `char:282` K166: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
+- `char:282` K166: B0b-2 독립 · X3c 그대로 → X3f-6g 참고 · X3g-3a 그대로
 - `event_ltk` K168: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `char:40` K169: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `sub:에덴_Notice_01` K171: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
@@ -269,10 +271,10 @@
 - `sub:2호_쉘터_관리계정_00` K177: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `sub:할아범_01` K178: B0b-2 보강 · X3c 그대로 → X3f-4a 참고
 - `relic:에닉탄핵포스터` K179: B0b-2 독립 → X3c 보강 → X3f-5b 참고
-- `erelic:white_memory` K181: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
-- `char:233` K182: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
+- `erelic:white_memory` K181: B0b-2 보강 · X3c 그대로 → X3f-4b 참고 → X3g-3a 필수
+- `char:233` K182: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 · X3g-3a 그대로
 - `char:392` K183: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
-- `event_queensorder` K187: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
+- `event_queensorder` K187: B0b-2 독립 · X3c 그대로 → X3f-6d 참고 · X3g-3a 그대로
 - `char:280` K188: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `event_bluewaterisland` K189: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `event_nyanyaparadise` K192: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
@@ -282,7 +284,7 @@
 - `relic:필그림조우보고서` K196: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `sub:해결사_카페_스위티_00` K197: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `relic:긴급뉴스대본_FB_3_final_2.pdf` K198: B0b-2 독립 · X3c 그대로 → X3f-6c 참고
-- `event_seayouagain1` K201: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
+- `event_seayouagain1` K201: B0b-2 독립 · X3c 그대로 → X3f-6d 참고 · X3g-3a 그대로
 - `char:351` K203: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
 - `char:810` K206: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
 - `char:811` K208: B0b-2 독립 · X3c 그대로 → X3f-7 참고
@@ -297,16 +299,16 @@
 - `sub:코인_러시_00` K219: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `relic:저주받은보석` K220: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
 - `erelic:red_ash_lost` K222: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
-- `char:224` K225: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
-- `event_alonesurvivor` K226: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
-- `char:192` K227: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
-- `event_neverland1` K228: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
-- `char:194` K229: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
-- `char:225` K232: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
+- `char:224` K225: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 → X3g-3a 필수
+- `event_alonesurvivor` K226: B0b-2 독립 · X3c 그대로 → X3f-6d 참고 · X3g-3a 그대로
+- `char:192` K227: B0b-2 독립 · X3c 그대로 → X3f-6h 참고 · X3g-3a 그대로
+- `event_neverland1` K228: B0b-2 독립 · X3c 그대로 → X3f-6d 참고 · X3g-3a 그대로
+- `char:194` K229: B0b-2 독립 · X3c 그대로 → X3f-6h 참고 · X3g-3a 그대로
+- `char:225` K232: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 → X3g-3a 보강
 - `event_lionheart` K233: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `char:382` K234: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
 - `event_perfectmaid` K237: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
-- `sub:피라_00` K240: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
+- `sub:피라_00` K240: B0b-2 독립 · X3c 그대로 → X3f-6b 참고 · X3g-3a 그대로
 - `sub:피라_01` K241: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `sub:피라_02` K242: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
 - `relic:잘지내라친구` K244: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
@@ -315,20 +317,21 @@
 - `sub:핸섬_커맨더_00` K247: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `sub:핸섬_커맨더_01` K248: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
 - `sub:MMR지킴이_00` K249: B0b-2 독립 · X3c 그대로 → X3f-6b 참고
-- `event_killthelord` K253: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
+- `event_killthelord` K253: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 · X3g-3a 그대로
 - `event_liarsend` K258: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
+- `side:second_affection` K259: B0b-2 보강 · X3c 그대로 · X3f-4b 그대로 → X3g-3a 필수
 - `relic:반드시사수하라` K262: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
-- `char:330` K265: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
+- `char:330` K265: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 · X3g-3a 그대로
 - `char:361` K266: B0b-2 독립 · X3c 그대로 → X3f-6h 참고
 - `event_goldencoinrush1` K269: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `event_claymore` K272: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `char:551` K273: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
-- `event_beautyfullshot1` K274: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
+- `event_beautyfullshot1` K274: B0b-2 보강 · X3c 그대로 → X3f-4b 참고 · X3g-3b 그대로
 - `char:283` K276: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
 - `relic:말뚝프로젝트보고서` K277: B0b-2 독립 → X3c 보강 · X3f-4b 그대로
 - `sub:관짝이_00` K278: B0b-2 필수 → X3b 보강 · X3f-4b 그대로
 - `sub:거울_공주_00` K279: B0b-2 독립 → X3c 보강 → X3f-5b 참고
-- `sub:관짝이_01` K280: B0b-2 독립 → X3b 보강 → X3f-5b 참고
+- `sub:관짝이_01` K280: B0b-2 독립 → X3b 보강 → X3f-5b 참고 · X3g-3b 그대로
 - `sub:관짝이_02` K281: B0b-2 필수 → X3b 보강 → X3f-4b 참고
 - `sub:거울_공주_01` K282: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
 - `char:391` K285: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
@@ -341,15 +344,15 @@
 - `event_lifeagain` K299: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
 - `char:240` K300: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
 - `relic:소녀의일기-절망편-` K301: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
-- `erelic:old_tales_dialog` K304: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
+- `erelic:old_tales_dialog` K304: B0b-2 보강 · X3c 그대로 → X3f-4b 참고 · X3g-3b 그대로
 - `erelic:old_tales_mini_memory` K306: B0b-2 보강 · X3c 그대로 → X3f-4b 참고
-- `char:226` K307: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
+- `char:226` K307: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 · X3g-3b 그대로 · X3g-3 그대로
 - `char:511` K308: B0b-2 독립 → X3c 보강 · X3f-4b 그대로
 - `event_secretgarden` K310: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
 - `char:411` K311: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
 - `event_icedragonsaga1` K312: B0b-2 독립 · X3b 그대로 → X3f-4b 보강
-- `char:16` K317: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
-- `char:290` K319: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
+- `char:16` K317: B0b-2 독립 · X3c 그대로 → X3f-6i 참고 · X3g-3b 그대로
+- `char:290` K319: B0b-2 독립 · X3c 그대로 → X3f-6i 참고 · X3g-3b 그대로
 - `event_romanticvalentine` K320: B0b-2 독립 · X3c 그대로 → X3f-6d 참고
 - `relic:알관련전달사항` K323: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
 - `relic:할일목록` K324: B0b-2 독립 → X3c 보강 → X3f-4c 참고
@@ -359,17 +362,17 @@
 - `char:521` K335: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
 - `relic:주워갈것들메모` K336: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
 - `relic:은색액체` K337: B0b-2 독립 · X3c 그대로 → X3f-6c 참고
-- `erelic:unbreakable_sphere_dialog` K339: B0b-2 독립 · X3c 그대로 → X3f-6c 참고
+- `erelic:unbreakable_sphere_dialog` K339: B0b-2 독립 · X3c 그대로 → X3f-6c 참고 · X3g-3b 그대로
 - `erelic:unbreakable_sphere_lost` K340: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
 - `char:590` K342: B0b-2 독립 · X3c 그대로 → X3f-6i 보강
-- `char:162` K343: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
-- `char:581` K345: B0b-2 독립 · X3c 그대로 → X3f-6i 참고
-- `event_lordforjustice` K346: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
+- `char:162` K343: B0b-2 보강 · X3c 그대로 → X3f-4c 참고 · X3g-3b 그대로
+- `char:581` K345: B0b-2 독립 · X3c 그대로 → X3f-6i 참고 · X3g-3b 그대로
+- `event_lordforjustice` K346: B0b-2 보강 · X3c 그대로 → X3f-4c 참고 → X3g-3b 보강
 - `char:852` K349: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `event_overthehorizon` K352: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
-- `fl:boom_the_ghost` K354: B0b-2 필수 · X3b 그대로 → X3f-4c 보강
+- `fl:boom_the_ghost` K354: B0b-2 필수 · X3b 그대로 → X3f-4c 보강 · X3g-3b 그대로
 - `relic:어떤소녀의그림일기` K358: B0b-2 독립 → X3c 보강 · X3f-4c 그대로
-- `char:95` K361: B0b-2 독립 · X3c 그대로 → X3f-6j 참고
+- `char:95` K361: B0b-2 독립 · X3c 그대로 → X3f-6j 참고 · X3g-3b 그대로
 - `fl:coins_in_rush` K363: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
 - `fl:reborn_evil` K366: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `char:840` K367: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
@@ -380,21 +383,21 @@
 - `char:331` K378: B0b-2 독립 · X3c 그대로 → X3f-6j 참고
 - `fl:blank_ticket` K380: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
 - `fl:terminus_ticket` K382: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
-- `char:471` K386: B0b-2 독립 · X3c 그대로 → X3f-6j 참고
-- `fl:sin_editor` K387: B0b-2 보강 · X3c 그대로 → X3f-4c 참고
+- `char:471` K386: B0b-2 독립 · X3c 그대로 → X3f-6j 참고 · X3g-3b 그대로
+- `fl:sin_editor` K387: B0b-2 보강 · X3c 그대로 → X3f-4c 참고 · X3g-3b 그대로
 - `fl:fatal_maid` K389: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
 - `relic:아무한테나말해주는거아니야.wav` K391: B0b-2 독립 · X3c 그대로 → X3f-6c 참고
 - `relic:거인을찾아서` K392: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `fl:lie_cause_recoil` K393: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
-- `char:113` K398: B0b-2 독립 · X3c 그대로 → X3f-6j 참고
-- `fl:2x2_love_1ch` K399: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
+- `char:113` K398: B0b-2 독립 · X3c 그대로 → X3f-6j 참고 · X3g-3b 그대로
+- `fl:2x2_love_1ch` K399: B0b-2 독립 · X3c 그대로 → X3f-6e 참고 · X3g-3b 그대로
 - `fl:2x2_love_2ch` K400: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
-- `fl:good_world` K403: B0b-2 필수 · X3b 그대로 → X3f-4c 참고
+- `fl:good_world` K403: B0b-2 필수 · X3b 그대로 → X3f-4c 참고 · X3g-3b 그대로
 - `relic:신에게닿기위한탑` K405: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `relic:궤도엘리베이터음모론` K406: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
-- `char:17` K408: B0b-2 독립 · X3c 그대로 → X3f-6j 참고
-- `fl:bitter_spice` K413: B0b-2 독립 · X3c 그대로 → X3f-4c 보강
-- `fl:wave_to_you` K417: B0b-2 독립 · X3b 그대로 → X3f-6d 참고
+- `char:17` K408: B0b-2 독립 · X3c 그대로 → X3f-6j 참고 · X3g-3b 그대로
+- `fl:bitter_spice` K413: B0b-2 독립 · X3c 그대로 → X3f-4c 보강 · X3g-3b 그대로
+- `fl:wave_to_you` K417: B0b-2 독립 · X3b 그대로 → X3f-6d 참고 · X3g-3b 그대로
 - `relic:불길한_소리.wav` K424: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `fl:persona_on_frontline` K425: B0b-2 독립 · X3c 그대로 → X3f-6e 참고
 - `fl:great_villain_union` K429: B0b-2 독립 · X3b 그대로 → X3f-4c 보강

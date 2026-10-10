@@ -67,8 +67,8 @@ export const GRADE = {
 };
 export const GRADE_ORDER = ['메인', '척추', '필수', '보강', '참고', '독립'];
 export const GRADE_HELP = {
-  필수: '안 읽으면 필수 스토리의 장면 · 인물을 따라갈 수 없다',
-  보강: '읽으면 필수 스토리에서 "뭐 있나 보다" 하고 넘긴 빈틈이 채워진다',
+  필수: '안 읽으면 필수 스토리의 장면 · 인물을 따라갈 수 없거나, 주요 인물의 결정적 순간을 놓친다',
+  보강: '읽으면 필수 스토리에서 "뭐 있나 보다" 하고 넘긴 빈틈이 채워지거나, 필수 스토리 인물의 결정적 순간을 본다',
   참고: '빈틈은 없지만 세계나 인물을 더 알게 된다',
   독립: '그 스토리 안에서 끝나는 이야기 — 안 읽어도 필수 스토리에 지장 없다',
   척추: '꼭 읽을 스토리 — 메인 챕터와 필수 이벤트 · 사이드. 등급을 매기지 않고 다른 스토리 등급의 기준이 된다',
@@ -552,7 +552,7 @@ export function prose(text) {
 const G_WORD = '(?:준필수|추천|참고|독립|보강)';
 const JUDGE_WORD = new RegExp([
   'about', '문턱', '잣대', '카드 ?\\d', '\\d절', '빌드업', '나온 때부터', '편마다', '규칙:', '(?<![A-Za-z0-9_])[KZ]\\d+',
-  '(?:이어진|든|묶인|걸친|인물|지휘관|않은) 기록', '기록(?:이)? 없', '기록 · ', '요지', '빈틈이 아니', 'basis', 'find ', '떡밥라',
+  '(?:이어진|든|묶인|걸친|인물|지휘관|않은) 기록', '기록(?:이)? 없', '기록 · ', '요지', '빈틈이 아니', 'basis', 'find ', '떡밥라', '이해 등급',
   `${G_WORD}(?:이|가)? 아님`, `앞은 [^—]*${G_WORD}`, `(?:^|\\s)${G_WORD}$`,
 ].join('|'));
 const JUDGE_PAREN = new RegExp(`\\s?\\((?:[^()]*(?:about|카드|잣대|문턱|떡밥 밖|· 떡밥|${G_WORD})[^()]*|(?:[KZ]\\d+(?:\\s*·\\s*)?)+)\\)`, 'g');
@@ -573,7 +573,9 @@ const atDash = (t, i) => (t[i] === '—' && t[i - 1] === ' ' && t[i + 1] === ' '
 const atStop = (t, i) => (t[i] === '.' && /[가-힣)」』'"]/u.test(t[i - 1] ?? '') && /\s/.test(t[i + 1] ?? '') ? [i + 1, i + 2] : null);
 const balanced = (t) => (t.match(/\(/g)?.length ?? 0) === (t.match(/\)/g)?.length ?? 0);
 export function reasonText(text) {
-  const s = prose(text).replace(/세계 기록/g, '세계').replace(/곁 기록/g, '곁 이야기').replace(JUDGE_PAREN, '');
+  const s = prose(text).replace(/세계 기록/g, '세계').replace(/곁 기록/g, '곁 이야기').replace(JUDGE_PAREN, '')
+    // 감정 기준(X3g) 판정의 머리 '감정 — ' · 카드 절(3a · 4a) · 결정적 순간 단계(①–④)도 판정 과정 말이다 — 등급에 넣되 따로 표시하지 않는다(사용자)
+    .replace(/^감정 — /, '').replace(/(?<![A-Za-z0-9])[34]a(?::\s*|\s(?=—))/g, '').replace(/\s?\((?:[①-⑧](?:\s*·\s*)?)+\)/g, '');
   const out = [];
   for (const sen of splitOutside(s, atStop).map((x) => x.trim())) {
     const period = /\.$/.test(sen);

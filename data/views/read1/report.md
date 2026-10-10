@@ -185,7 +185,7 @@ from = 의문 · 사실이 처음 기록된 단위, to = 회수 · 다시 드러
 ## 2회독 층 · 중요도 첫 시안 (B0b-2)
 
 메인 밖 단위마다 등급(필수 · 보강 · 참고 · 독립)과 그것을 정한 한 건을 annotations/layers.json에 적고, 층은 종류 + 등급으로 계산한다(tools/records/layers.mjs).
-등급: 필수 11 · 보강 48 · 참고 243 · 독립 130.
+등급: 필수 14 · 보강 49 · 참고 239 · 독립 130.
 
 | 종류 | 1층 | 2층 | 3층 |
 |---|---:|---:|---:|
@@ -198,7 +198,7 @@ from = 의문 · 사실이 처음 기록된 단위, to = 회수 · 다시 드러
 | 그 밖 | 1 · 0.2만 자 |  |  |
 | 합 | 240 · 280.2만 자 | 67 · 151.3만 자 | 174 · 145.2만 자 |
 
-필수: `event_overzone`(Q105-2) · `event_redash`(Q14-3) · `event_lastkingdom1`(Q29-2) · `event_oldtales1`(Q204-4) · `event_footstepwalkrun1`(Q171-4) · `event_wisdomspring`(F1773) · `side:mudfish`(Q232-2) · `side:eden_spear`(F768-2) · `event_goddessfall1`(Q268-2) · `erelic:goddess_fall_mini`(F2334) · `fl:ark_guardian`(Q104-2)
+필수: `event_overzone`(Q105-2) · `erelic:white_memory`(D257) · `event_redash`(Q14-3) · `char:224`(D1489) · `side:second_affection`(D419) · `event_lastkingdom1`(Q29-2) · `event_oldtales1`(Q204-4) · `event_footstepwalkrun1`(Q171-4) · `event_wisdomspring`(F1773) · `side:mudfish`(Q232-2) · `side:eden_spear`(F768-2) · `event_goddessfall1`(Q268-2) · `erelic:goddess_fall_mini`(F2334) · `fl:ark_guardian`(Q104-2)
 
 ## 대상 — 인물별 집계 · 개념 시안 (about)
 

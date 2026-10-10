@@ -156,8 +156,10 @@ test('reasonText — 분류 이유에서 판정 과정 마디(잣대 · 문턱 �
   // 괄호 안의 ' — '는 마디로 가르지 않는다
   assert.equal(fmt.reasonText('ch12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다'), 'CH.12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다');
   assert.equal(fmt.reasonText(''), '');
+  // 감정 기준(X3g) — 머리 '감정 — ' · 카드 절 3a · 4a · 단계 ①–④ · 이해 등급 문장을 걷는다(등급에 넣되 따로 표시하지 않는다)
+  assert.equal(fmt.reasonText('감정 — 4a: 목단의 신념이 여기서 선다(①). 이해 등급은 참고'), '목단의 신념이 여기서 선다.');
   // 내보낸 이유 전부 — 판정 말이 남지 않고, 준필수 · 추천은 거의 다 이유가 남는다
-  const JUDGE = /about|문턱|잣대|카드 ?\d|빌드업|나온 때부터|(?<![A-Za-z0-9_])[KZ]\d+|기록이 없|이어진 기록/;
+  const JUDGE = /about|문턱|잣대|카드 ?\d|빌드업|나온 때부터|(?<![A-Za-z0-9_])[KZ]\d+|기록이 없|이어진 기록|^감정 — |[①-⑧]|이해 등급/;
   const order = J('order');
   const left = order.units.map((u) => fmt.reasonText(u.reason)).filter((t) => JUDGE.test(t));
   assert.deepEqual(left.slice(0, 3), []);
