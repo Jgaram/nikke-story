@@ -28,7 +28,7 @@
 .tab-persons .pm-select { flex: 1 1 auto; min-width: 0; height: 30px; font-size: 13px; padding: 0 8px; }
 .tab-persons .pm-listcount { flex: none; font-size: 12.5px; }
 .tab-persons .pm-list { overflow: auto; padding: 4px; outline-offset: -2px; }
-.tab-persons .pm-item { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto auto; align-items: center; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
+.tab-persons .pm-item { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: center; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
 .tab-persons .pm-item:hover { background: var(--surface-2); }
 .tab-persons .pm-item.is-sel { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); box-shadow: inset 2px 0 0 var(--accent); }
 .tab-persons .pm-item-who { display: flex; align-items: center; gap: 6px; min-width: 0; }
@@ -36,30 +36,28 @@
 .tab-persons .pm-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
 .tab-persons .pm-item.is-sel .pm-item-name { font-weight: 600; }
 .tab-persons .pm-item-pic { width: 24px; height: 24px; border-radius: 5px; }
-.tab-persons .pm-title-pic { border-radius: 10px; }
-.tab-persons .pm-item-kind { font-size: 11.5px; color: var(--ink-muted); }
-.tab-persons .pm-item-metric { min-width: 2.2em; text-align: right; font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .tab-persons .pm-empty { padding: 14px 10px; }
 .tab-persons .pm-pick { display: none; width: 100%; justify-content: space-between; align-items: center; gap: 8px; height: 40px; }
 .tab-persons .pm-pick .pm-pick-chev { margin-left: auto; color: var(--ink-muted); }
 .tab-persons .pm-pick strong { font-weight: 600; }
 
-/* ── 상세 머리 ── */
+/* ── 상세 머리: 얼굴 · 이름 · 소속 · 다른 이름 · 처음 등장 ── */
 .tab-persons .pm-detail { min-width: 0; }
-.tab-persons .pm-head { container-type: inline-size; container-name: pmh; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius, 10px); box-shadow: var(--shadow-sm); padding: 16px 18px 14px; }
-.tab-persons .pm-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
-.tab-persons .pm-title h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-.tab-persons .pm-title .chips { margin: 0; }
-.tab-persons .pm-title-link { margin-left: auto; font-size: 13px; }
-.tab-persons .pm-sub { margin-top: 6px; font-size: 13px; color: var(--ink); display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.tab-persons .pm-head { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px 18px; }
+.tab-persons .pm-title { display: flex; align-items: flex-start; gap: 16px; }
+.tab-persons .pm-title-pic { border-radius: 12px; }
+.tab-persons .pm-title-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; flex: 1; }
+.tab-persons .pm-title-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.tab-persons .pm-title h3 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.tab-persons .pm-facts { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; font-size: 14px; }
+.tab-persons .pm-fact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; min-width: 0; }
+.tab-persons .pm-fact-l { flex: none; min-width: 4.6em; font-size: var(--fs-small); color: var(--ink-muted); }
 .tab-persons .pm-sep { color: var(--ink-muted); }
-.tab-persons .pm-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
-.tab-persons .pm-stat { padding: 8px 12px; background: var(--surface-2); border-radius: var(--radius-sm, 8px); border-left: 3px solid transparent; min-width: 0; }
-.tab-persons .pm-stat.is-open { border-left-color: var(--state-open); }
-.tab-persons .pm-stat-v { font-size: 20px; font-weight: 650; line-height: 1.25; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
-.tab-persons .pm-stat-l { font-size: 12px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tab-persons .pm-span { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: 13.5px; }
 .tab-persons .pm-head .notice { margin: 12px 0 8px; }
+/* 회색 작은 글자(종류 · 갈래 · 측면 · '주요 떡밥') — 색은 쓰지 않는다 */
+.tab-persons .pm-kind { font-size: 12px; font-weight: 500; color: var(--ink-muted); white-space: nowrap; }
+.tab-persons .pm-story { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; min-width: 0; }
+.tab-persons .pm-noface { flex: none; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--surface-2); color: var(--ink-muted); font-weight: 700; line-height: 1; }
 
 /* ── 접는 칸 ── */
 .tab-persons .pm-sec { margin-top: 12px; padding: 2px 18px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius, 10px); box-shadow: var(--shadow-sm); }
@@ -69,9 +67,7 @@
 .tab-persons .pm-count { margin-left: auto; font-size: 13px; font-weight: 400; color: var(--ink-2); }
 .tab-persons .pm-sec .details-body { padding-top: 2px; }
 .tab-persons .pm-sectools { margin: 2px 0 10px; gap: 8px 14px; }
-.tab-persons .pm-hint { font-size: 12.5px; margin-top: 4px; }
 .tab-persons .pm-subhead { margin: 16px 0 6px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
-.tab-persons .mono { font-family: var(--mono); font-size: 12px; }
 
 /* ── SVG 공통 ── */
 .tab-persons svg text { font-family: var(--font); }
@@ -99,14 +95,14 @@
 
 /* ── 함께 나온 인물 ── */
 .tab-persons .pm-partners { list-style: none; margin: 0; padding: 0; }
-.tab-persons .pm-partner { display: grid; grid-template-columns: minmax(96px, 168px) minmax(0, 1fr) 76px; align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.tab-persons .pm-partner { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr); align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
 .tab-persons .pm-partner:last-child { border-bottom: 0; }
-.tab-persons .pm-partner-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
-.tab-persons .pm-partner-kind { font-size: 11.5px; }
+.tab-persons .pm-partner-name { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; }
+.tab-persons .pm-partner-name > a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.tab-persons .pm-partner-pic { flex: none; width: 22px; height: 22px; border-radius: 5px; }
 .tab-persons .pm-bar-track { display: block; height: 10px; border-radius: 5px; background: var(--pm-0); overflow: hidden; }
 .tab-persons .pm-bar-fill { display: block; height: 100%; background: var(--pm-3); border-radius: 5px; overflow: hidden; }
 .tab-persons .pm-bar-talk { display: block; height: 100%; background: var(--pm-5); }
-.tab-persons .pm-partner-n { text-align: right; font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .tab-persons .pm-more { margin-top: 8px; }
 .tab-persons .pm-graph-frame { overflow: hidden; }
 .tab-persons .pm-graph { display: block; width: 100%; height: auto; }
@@ -148,16 +144,21 @@
 .tab-persons .pm-key-flag { fill: var(--ink); stroke: var(--ink); stroke-width: 1.5; stroke-linejoin: round; }
 .tab-persons .legend .swatch { border-radius: 50%; }
 
-.tab-persons ol.pm-changes, .tab-persons .pm-recs, .tab-persons .pm-closures, .tab-persons .pm-threads { list-style: none; margin: 10px 0 0; padding: 0; }
-.tab-persons .pm-change { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; padding: 8px 6px; border-bottom: 1px solid var(--line); cursor: pointer; border-radius: 6px; }
-.tab-persons .pm-change:last-child, .tab-persons .pm-rec:last-child { border-bottom: 0; }
+.tab-persons .pm-recs, .tab-persons .pm-closures, .tab-persons .pm-threads, .tab-persons .pm-chg-rows { list-style: none; margin: 10px 0 0; padding: 0; }
+.tab-persons .pm-changes { margin-top: 10px; }
+.tab-persons .pm-chg-group { padding: 8px 0 4px; border-top: 1px solid var(--line); }
+.tab-persons .pm-chg-group:first-child { border-top: 0; }
+.tab-persons .pm-chg-where { padding: 0 6px; font-size: 13.5px; font-weight: 600; }
+.tab-persons .pm-chg-rows { margin: 2px 0 0; }
+.tab-persons .pm-chg-gap { margin: 10px 0 2px; padding: 6px 6px 0; border-top: 1px dashed var(--line-2); font-size: var(--fs-small); color: var(--ink-muted); }
+.tab-persons .pm-change { padding: 6px 6px 6px 14px; cursor: pointer; border-radius: 6px; }
+.tab-persons .pm-rec:last-child { border-bottom: 0; }
 .tab-persons .pm-change:hover, .tab-persons .pm-change.is-hot, .tab-persons .pm-rec:hover, .tab-persons .pm-closure:hover { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
 .tab-persons .pm-change.is-picked, .tab-persons .pm-rec.is-picked, .tab-persons .pm-closure.is-picked { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
-.tab-persons .pm-change-n { text-align: right; font-size: 12px; color: var(--ink-muted); padding-top: 2px; }
 .tab-persons .pm-change-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 13.5px; }
 .tab-persons .pm-act { font-weight: 600; }
 .tab-persons .pm-change-text { margin: 3px 0 2px; font-size: 14px; line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
-.tab-persons .pm-change-meta, .tab-persons .pm-rec-meta { font-size: 12.5px; }
+.tab-persons .pm-change-meta, .tab-persons .pm-rec-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; margin-top: 2px; font-size: 13px; }
 .tab-persons .pm-tag { display: inline-flex; align-items: center; height: 19px; padding: 0 7px; font-size: 11.5px; color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 10px; white-space: nowrap; }
 .tab-persons .pm-tag.is-inv { border-color: var(--pm-inv); }
 .tab-persons .pm-tag.is-end { border-color: var(--ink-2); color: var(--ink); }
@@ -172,20 +173,17 @@
 .tab-persons .pm-rec-text .chip { vertical-align: 1px; }
 .tab-persons .pm-group { padding: 12px 8px 2px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
 .tab-persons .pm-group:first-child { padding-top: 2px; }
-.tab-persons .pm-open-note { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink); }
+.tab-persons .pm-open { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-2); white-space: nowrap; }
 .tab-persons .pm-dot-open { width: 8px; height: 8px; border-radius: 50%; background: var(--state-open); display: inline-block; }
 .tab-persons .pm-thread { padding: 8px 4px; border-bottom: 1px solid var(--line); }
 .tab-persons .pm-thread:last-child { border-bottom: 0; }
-.tab-persons .pm-thread-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: 14px; }
+.tab-persons .pm-thread-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; font-size: 14px; }
 
 /* ── 말풍선 ── */
 .pm-tip, .pm-ctip { max-width: 340px; }
 .pm-tip-title { font-weight: 650; margin-bottom: 2px; }
 .pm-tip-sub { font-size: 12px; opacity: 0.85; margin-top: 2px; }
 
-/* ── 전체 표 ── */
-.tab-persons .pm-tablebox .table-wrap { max-height: calc(100vh - 220px); }
-.tab-persons .pm-tablebox td .chip { margin-left: 2px; }
 
 /* ── 좁은 칸: 목록은 접는 선택기로 ── */
 @container pm (max-width: 760px) {
@@ -197,11 +195,10 @@
 }
 @container pm (max-width: 520px) {
   .tab-persons .pm-head { padding: 14px 14px 12px; }
-  .tab-persons .pm-title h3 { font-size: 20px; }
   .tab-persons .pm-sec { padding: 0 14px 10px; }
-  .tab-persons .pm-partner { grid-template-columns: minmax(80px, 110px) minmax(0, 1fr) 64px; gap: 8px; }
-  .tab-persons .pm-stat { padding: 6px 8px; }
-  .tab-persons .pm-stat-v { font-size: 18px; }
+  .tab-persons .pm-partner { grid-template-columns: minmax(96px, 140px) minmax(0, 1fr); gap: 8px; }
+  .tab-persons .pm-title { gap: 12px; }
+  .tab-persons .pm-title h3 { font-size: 21px; }
 }
 @media (max-width: 600px) {
   .tab-persons .pm-find { width: 100%; }
@@ -210,27 +207,16 @@
 .tab-persons .pm-center-label { stroke: none; }
 .tab-persons .pm-thread { cursor: pointer; }
 .tab-persons .pm-thread:hover { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
-@container pmh (max-width: 620px) {
-  .tab-persons .pm-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-.tab-persons .pm-same > summary { padding: 0; font-size: 13px; }
-.tab-persons .pm-same .details-body { padding: 2px 0 0 14px; font-size: 13px; }
-
-.tab-persons .pm-axis-note { margin-left: auto; font-size: 12px; color: var(--ink-muted); }
 
 /* 나온 스토리 — 종류마다 제목 목록 */
-.tab-persons .pm-us-sum { font-size: 12.5px; }
 .tab-persons .pm-us-group { margin: 6px 0 12px; }
-.tab-persons .pm-us-head { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-bottom: 4px; }
-.tab-persons .pm-us-kind { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.tab-persons .pm-us-head { font-size: 13px; font-weight: 700; color: var(--ink-2); margin-bottom: 4px; }
 .tab-persons .pm-us-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2px 14px; font-size: 13px; }
 .tab-persons .pm-us-list.is-main { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 .tab-persons .pm-us-item { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 2px 4px; border-radius: 4px; }
 .tab-persons .pm-us-item > a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .tab-persons .pm-us-item.is-name > a { color: var(--ink-2); }
 .tab-persons .pm-us-item.is-picked { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
-.tab-persons .pm-us-n { margin-left: auto; font-size: 11.5px; font-variant-numeric: tabular-nums; flex: none; }
 .tab-persons .pm-sw { width: 8px; height: 8px; border-radius: 50%; flex: none; }
 .tab-persons .pm-sw.pm-b1 { background: var(--pm-1); }
 .tab-persons .pm-sw.pm-b2 { background: var(--pm-2); }
@@ -239,3 +225,37 @@
 .tab-persons .pm-sw.pm-b5 { background: var(--pm-5); }
 .tab-persons .pm-sw.pm-name { background: var(--pm-name); }
 @media (max-width: 520px) { .tab-persons .pm-us-list, .tab-persons .pm-us-list.is-main { grid-template-columns: 1fr 1fr; } }
+
+/* 말한 양 범례 — 옅음 → 진함 띠(숫자 없음) */
+.tab-persons .pm-ramp { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 8px 0 0; font-size: var(--fs-small); color: var(--ink-2); }
+.tab-persons .pm-ramp-bar { display: inline-flex; }
+.tab-persons .pm-ramp-bar .pm-sw { width: 16px; height: 10px; border-radius: 0; }
+.tab-persons .pm-ramp-bar .pm-sw:first-child { border-radius: 3px 0 0 3px; }
+.tab-persons .pm-ramp-bar .pm-sw:last-child { border-radius: 0 3px 3px 0; }
+.tab-persons .pm-ramp-name { display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; }
+
+/* ── 인물 도감: 기업 · 스쿼드로 묶은 초상 칸 ── */
+.tab-persons .pm-dex { display: flex; flex-direction: column; gap: 12px; }
+.tab-persons .pm-dex-sec { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 14px 18px 12px; }
+.tab-persons .pm-dex-head { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font-size: 16px; font-weight: 800; }
+.tab-persons .pm-dex-head .org-mark { font-size: 14px; font-weight: 700; padding: 3px 10px 3px 4px; }
+/* 스쿼드 묶음은 옆으로 흘려 놓는다(작은 스쿼드가 많아 한 줄씩 쓰면 길어진다) */
+.tab-persons .pm-dex-blocks { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 8px; }
+.tab-persons .pm-dex-block { min-width: 0; max-width: 100%; }
+.tab-persons .pm-dex-bhead { margin: 0 0 4px; font-size: 13px; }
+.tab-persons .pm-dex-other { display: inline-block; padding: 2px 0; font-size: var(--fs-small); font-weight: 600; color: var(--ink-muted); }
+.tab-persons .pm-dex-grid { display: flex; flex-wrap: wrap; gap: 2px; }
+.tab-persons .pm-dex-card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; width: 78px; min-width: 0; padding: 6px 4px 5px; font: inherit; color: var(--ink); background: transparent; border: 0; border-radius: var(--radius-sm); cursor: pointer; }
+.tab-persons .pm-dex-card:hover { background: var(--surface-2); }
+.tab-persons .pm-dex-card.is-sel { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.tab-persons .pm-dex-face { border-radius: 10px; }
+.tab-persons .pm-dex-name { max-width: 100%; font-size: 12.5px; line-height: 1.3; text-align: center; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: keep-all; overflow-wrap: anywhere; }
+.tab-persons .pm-dex-corp { position: absolute; top: 4px; right: 8px; }
+.tab-persons .pm-dex-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 8px 0 0; font-size: 13.5px; line-height: 1.6; }
+.tab-persons .pm-dex-card.is-name { display: inline; width: auto; padding: 0; color: var(--link); background: none; border-radius: 0; }
+.tab-persons .pm-dex-card.is-name.is-sel { font-weight: 700; background: none; }
+@media (max-width: 520px) {
+  .tab-persons .pm-dex-sec { padding: 12px 12px 10px; }
+  .tab-persons .pm-dex-blocks { gap: 10px 16px; }
+  .tab-persons .pm-dex-card { width: 72px; }
+}

@@ -21,7 +21,6 @@ const BANNED = ['자동 규칙', '분석 메모'];
 /** 아직 못 고친 곳 — 그 탭 세션(SESSIONS.md W13b–e)이 고치면서 여기서 지운다. 고쳤는데 남겨 두면 실패한다 */
 const PENDING = {
   'site/tabs/links.js': ['자동 규칙', '분석 메모'], // W13e — 연결 근거 줄의 출처 말
-  'site/tabs/persons.js': ['분석 메모'], // W13c — 숫자 타일 · 표 칸
 };
 
 function siteSources() {
