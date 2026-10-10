@@ -55,7 +55,7 @@
 - 니케는 니케 목록(`characters`)의 **앞 이름**으로 묶는다: `라피`(rid 10)와 `라피 : 레드 후드`(rid 16)는 `person:라피` 하나다.
   `레드 후드`(rid 470)는 앞 이름이 달라 다른 인물이다.
 - 정체가 나중에 밝혀지는 인물(모더니아 ↔ 마리안, 대화명 ↔ 본명 등)은 **따로 두고** 정체 연결 후보(`target_links`)로 잇는다.
-  확정 · 기각은 Claude가 그 단위를 읽을 때 하고, 사용자는 언제든 뒤집는다(CLAUDE.md "해석이 필요한 기록").
+  확정 · 기각은 Claude가 그 단위를 읽을 때 한다(CLAUDE.md "해석이 필요한 기록").
 - 사전 파일: `annotations/dictionary/people.json`(손으로 정한 인물 · 후보) · `annotations/dictionary/speakers.json`(이름표 분류) ·
   비인물은 종류별 `places.json` · `orgs.json` · `concepts.json` · `incidents.json` · `items.json`(아래 "비인물 사전").
   빌드는 `tools/normalize/dictionary.mjs`. 조회는 `node tools/query.mjs who 라피` · `node tools/query.mjs terms`.
@@ -170,7 +170,7 @@
 
 `annotations/dictionary/people.json`의 `candidates`. 칸: `id`(후보 ID `L<n>` — 리뷰 도구가 이 ID로 확정 · 기각한다, docs/annotations.md) · `type`(`same_as`) · `a`(대상 ID, 또는 대상 없는 이름표 `이름표:곰…?`) · `b`(대상 ID) ·
 `status`(`후보` · `확정` · `기각`) · `confidence`(`확실` · `추정`) · `reason` · `evidence`(JSON `[{scene, lines}]` — 비면 1회독이 채운다) · `recorder`(기록자).
-Claude는 후보만 쓰고 확정 · 기각은 사용자가 한다. 확정 · 기각은 `node tools/records.mjs set L3 확정`으로 적고(`reviews`에 누가 · 언제가 남는다),
+Claude가 후보를 쓰고 확정 · 기각한다. 확정 · 기각은 `node tools/records.mjs set L3 확정`으로 적고(`reviews`에 누가 · 언제가 남는다),
 1회독 기록(사실 · 의문 · 시점 후보, `annotations/read1/`)과 같은 리뷰 도구로 본다 — 형식은 [annotations.md](annotations.md).
 
 ### `categories`
@@ -228,7 +228,7 @@ Claude는 후보만 쓰고 확정 · 기각은 사용자가 한다. 확정 · �
 
 #### 수동 엣지 — `annotations/links.json` (T4-3 · T4-4, B1a)
 
-기록(1회독 사건 · 2회독 떡밥)이나 게임 데이터에서 나오지 않는 스토리 사이 관계를 사람 판단으로 더하거나, 자동 엣지를 지운다. 해석이라 후보 → Claude 확정, 사용자가 뒤집는다.
+기록(1회독 사건 · 2회독 떡밥)이나 게임 데이터에서 나오지 않는 스토리 사이 관계를 손으로 더하거나, 자동 엣지를 지운다. 해석이라 후보 → Claude가 확정한다.
 JSON 하나(T4-1: 기계가 읽는 표는 JSON). 필요해질 때 만든다 — 예시는 `tests/fixtures/read1/_links.json`. 검증 · 리뷰는 기록 도구(`records.mjs check` · `review 엣지` · `set Y1 확정`).
 
 ```json
@@ -331,7 +331,7 @@ JSON 하나(T4-1: 기계가 읽는 표는 JSON). 필요해질 때 만든다 — 
 - 표본 크기: 한 글자 · 로마자 · 흔한 말 · 꼬리 빗나감 · 비인물 오탐 주의 10줄, 그 밖에 위험(두 글자 · 단위에서 안 말함) 5줄, 나머지 3줄.
   재는 범위: 걸린 줄이 있는 인물 이름 전부(새 인물 이름이 생기면 테스트가 재라고 한다) + 비인물 `caution` 이름.
 - 2026-10-05(B2): 392이름 · 표본 2,185줄 · 맞음 92%, `all` 364(그 이름만 98%) · `unit` 17 · `off` 11(`진` · `마리` · `버디` · `쉘터` · `프로토콜` …).
-  판정은 Claude(표본 판정을 서브에이전트 넷에 나눠 맡기고, 기준 밑은 Claude가 `--in-unit`으로 다시 봄). 사용자가 뒤집으면 `by`를 사용자로 고친다.
+  판정은 Claude(표본 판정을 서브에이전트 넷에 나눠 맡기고, 기준 밑은 Claude가 `--in-unit`으로 다시 봄). `by`는 언제나 claude다.
 - `DB target_names.precision` = `맞음/표본`(+ ` · 단위 맞음/표본`). 보고서 `data/views/mentions/report.md` "표본 정밀도".
 
 **자동 줄과 기록 줄 합치기** (X3이 한다): 자동 줄과 2회독 암시 언급 줄은 둘 다 둔다(기록 줄은 기록 ID · 상태를 가진다). 등장을 셀 때는

@@ -24,7 +24,8 @@ CLAUDE.md에서 가리키는 자세한 운용 문서다. 무엇을 할지는 [SE
    | 분류 이유 · 연대기 추정 이유 문장 | docs/annotations.md "팬용 문장" · `node tools/blurbs.mjs` |
    | 작중 연대기 | docs/annotations.md "작중 연대기" · `node tools/query.mjs chrono <단위>` |
    | 원문을 다시 읽어야 함 | [docs/tools.md](tools.md) "원문 읽기" — 필요한 씬만 |
-3. **해석 기록을 고칠 때** — 사용자가 말한 판단은 `--by 사용자`로 남긴다(Claude가 다시 바꾸지 않는다). Claude가 다시 읽고 고친 것은 `--by claude`와 근거.
+3. **해석 기록을 고칠 때** — 개별 기록은 Claude가 정한다(사용자는 기준에 피드백 — CLAUDE.md "일하는 법"). 사용자 말이 기록 하나를 짚으면 그 뒤의 기준을 주제 문서에 먼저 고치고,
+   그 기준으로 다시 판정해 근거와 함께 `set`한다(`--by`는 기본 claude). 원문 · 데이터로 알 수 없는 사실(게임 화면에서만 보이는 것)은 자료로 받아 출처를 적는다.
 4. **고친 뒤 다시 뽑기** — 기록을 고쳤으면: `node tools/records.mjs check` → `node tools/views/draft.mjs`(data/views — 연대기 · 공개 축도 같이) →
    `node tools/site/export.mjs`(바뀐 탭만이면 `--only <탭>`) → `node tools/check-quotes.mjs` → `node --test tests/*.test.mjs` → 커밋 · push.
    사이트 코드만 고쳤으면 내보내기는 건너뛴다. 화면 확인은 `node tools/site/serve.mjs` + 헤드리스 크로미움(docs/views.md "실행법").

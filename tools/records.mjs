@@ -49,7 +49,7 @@ const USAGE = `1회독 · 2회독 기록 도구 (tools/records.mjs) — 형식 �
   check                                   검증기 (오류 → 종료 코드 1) + 인계 파일이 최신인지
   handoff                                 인계 파일 다시 만들기 (1회독 annotations/read1/ · 2회독 annotations/read2/)
   review [ID|범위 F3..F9|단위 키|세션|종류 …] [--status 후보|확정|기각|보류|전부] [--kind-order] [--context N] [--brief] [--page N]
-  set <ID|범위|단위 키|세션 …> <확정|기각|보류|후보> [--note 메모] [--by 사용자] [--session RV1] [--text 고친 문장] [--date YYYY-MM-DD]
+  set <ID|범위|단위 키|세션 …> <확정|기각|보류|후보> [--note 메모] [--session M03] [--text 고친 문장] [--date YYYY-MM-DD]
       판정(K)은 --grade 필수|보강|참고|독립 · --basis <기록 ID> · --reason <이유> · --asof YYYY-MM-DD(기준 시점) · --layer 1|2|3 (규칙 층을 뒤집거나 읽은 층으로 묶을 때 — --note에 까닭)
         · --from ch38(메인이 이 단위를 딛기 시작하는 챕터 — 필수 · 보강) · --before 참고|독립(그 앞 자리의 등급) — 빈 값("")은 지운다
       주역(Z)은 --from ch19(주역이 되는 챕터) · --arcs "ch20-ch29 ch44-ch48"(아크 범위, 전체면 --arcs 전체) · --origin <단위 키>|메인(원점 — 그 판정은 필수)
@@ -335,7 +335,7 @@ switch (cmd) {
     let result;
     try {
       result = applyDecision(sortCandidates(picked, order), decision, {
-        by: opt.by ?? '사용자', date: opt.date ?? today(), session: opt.session ?? null, note: opt.note ?? null,
+        by: opt.by ?? 'claude', date: opt.date ?? today(), session: opt.session ?? null, note: opt.note ?? null,
         text: opt.text ?? null, grade: opt.grade ?? null, layer: opt.layer !== undefined ? Number(opt.layer) : null,
         basis: opt.basis ?? null, reason: opt.reason ?? null, asof: opt.asof ?? null,
         confidence: opt.confidence ?? null, evidence: opt.evidence ?? null, from: opt.from ?? null, before: opt.before ?? null, origin: opt.origin ?? null,

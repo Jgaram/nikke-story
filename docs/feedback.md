@@ -83,3 +83,9 @@
 - 이어서(사용자): "스포 관련을 우선 순위로 생각. 물론 이미 다 본 사람이면 이유 짤막하게 보이는게 좋지." → 본 사람용 짧은 이유 `later` · `gate`(그 뒤 스토리를 지난 사람에게만 — '다 본 사람'보다 일찍, 스포일러 없이), 뒤 필수 스토리로 오른 18편은 필수.
   연대기 카드의 근거 링크도 안 본 스토리 것은 숨기기로(W14c).
 - 반영: docs/annotations.md "팬용 문장" 쓰는 기준 · 칸 표(검사 `laterNames` · `STANDALONE_TEXT` · `later`/`gate`), SESSIONS.md W14c 할 것, 시안은 화면 비교로 → docs/operations.md "코드 · 설계 작업"
+
+## 2026-10-10 실무는 100% Claude — 사람은 기준에만 피드백
+- 요청: 신작 절차를 다시 세우기 전 작업 방식 파악 중, `by: 사용자`로 남은 리뷰 80건(RV1 36 · M세션 바로잡기 44)을 물었다.
+- 정한 것(사용자): **모두 Claude가 한 것**("괜찮다고 했겠지"). 원칙 — 사람은 기준에 피드백만, 실무는 100% AI, 사람의 주관을 직접 넣지 않는다.
+- 반영: CLAUDE.md "일하는 법" · "해석이 필요한 기록", docs/annotations.md · importance.md · operations.md · schema.md · views.md · annotations/README.md,
+  `records.mjs set`의 `--by` 기본값 → claude. 80건 표기와 '사용자'를 읽는 도구 쪽은 사용자 확인 뒤(남은 일).

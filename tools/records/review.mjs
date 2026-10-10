@@ -443,7 +443,7 @@ function withField(obj, key, value, kind) {
  * 결정을 파일에 쓴다. explicit가 아니면(단위 · 세션으로 골랐으면) 상태가 후보인 것만 바꾼다.
  * @returns {{ changed: {c:object, from:string, to:string}[], skipped: {c:object, why:string}[], files: string[] }}
  */
-export function applyDecision(list, decision, { by = '사용자', date = today(), session = null, note = null, text = null, grade = null, layer = null, basis = null, reason = null, asof = null, confidence = null, evidence = null, from = null, before: beforeGrade = null, origin = null, arcs = null, records = null, type = null, end = null, closing = null, built = null, about = null, members = null, title = null, explicit = true } = {}) {
+export function applyDecision(list, decision, { by = 'claude', date = today(), session = null, note = null, text = null, grade = null, layer = null, basis = null, reason = null, asof = null, confidence = null, evidence = null, from = null, before: beforeGrade = null, origin = null, arcs = null, records = null, type = null, end = null, closing = null, built = null, about = null, members = null, title = null, explicit = true } = {}) {
   if (!DECISIONS.includes(decision)) throw new Error(`결정은 ${DECISIONS.join(' · ')} 중 하나`);
   if (text !== null && list.length !== 1) throw new Error('--text는 후보 하나에만 쓴다');
   if (evidence !== null && list.length !== 1) throw new Error('--evidence는 후보 하나에만 쓴다');

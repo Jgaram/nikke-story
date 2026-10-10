@@ -50,7 +50,7 @@ TODO.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d_ex_elevat
 | 파일 | 내용 |
 |---|---|
 | `dictionary/speakers.json` | 이름표 분류. 니케 목록 이름 그대로가 아닌 이름표를 전부 갈래(인물 · 랩쳐 · 호칭 · 비인물 · 미상 · 대상 · 여럿)에 넣는다. `codes`는 이름표 코드로 푸는 규칙(`???` + `unknown_grave` → 그레이브), `notes`는 판단 근거 |
-| `dictionary/people.json` | 인물 대상 중 손으로 정한 것(동명이인 · 이름표 없는 주인공 · 메모)과 정체 연결 후보(`candidates` — 확정 · 기각은 사용자) |
+| `dictionary/people.json` | 인물 대상 중 손으로 정한 것(동명이인 · 이름표 없는 주인공 · 메모)과 정체 연결 후보(`candidates` — 확정 · 기각은 Claude) |
 | `dictionary/places.json` | 비인물 사전 — 지역 · 장소(탈것 포함) `place:` |
 | `dictionary/orgs.json` | 비인물 사전 — 조직 · 세력(기업 · 정부 · 스쿼드 · 단체) `org:` |
 | `dictionary/concepts.json` | 비인물 사전 — 개념 · 설정(존재 · 등급 · 랩쳐 종류 · 기술 …) `concept:` |
@@ -66,7 +66,7 @@ TODO.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d_ex_elevat
 ## read1/ — 1회독 기록 (A3)
 
 읽기 세션(R)이 읽기 단위마다 JSON 하나(`<키>.json`, `:`는 `.`)로 남기는 기록 — 단위 요약(작업 메모) · 밝혀진 사실(`F`) · 던져진 의문(`Q`) ·
-회수 · 뒤집음(`F12-2`) · 작중 시점(`S`) · 새 대상(사전 ID) · 되짚기 메모(`V`). 해석이 필요한 기록은 **후보**로 쓰고 Claude가 단위마다 확정 · 기각한다(사용자는 뒤집는다) —
+회수 · 뒤집음(`F12-2`) · 작중 시점(`S`) · 새 대상(사전 ID) · 되짚기 메모(`V`). 해석이 필요한 기록은 **후보**로 쓰고 Claude가 단위마다 확정 · 기각한다(사용자는 기준에 피드백) —
 상태는 리뷰 도구(`node tools/records.mjs set`)만 바꾼다. `HANDOFF.md` · `handoff/`는 다음 읽기 세션이 원문 대신 읽는 인계 파일로,
 `node tools/records.mjs handoff`가 만든다(손으로 고치지 않는다). 이 디렉터리는 DB 빌드 입력이 아니다.
 형식 · 규칙 · 절차는 [../docs/annotations.md](../docs/annotations.md). 예시는 `tests/fixtures/read1/`(실제 기록과 섞지 않는다).
@@ -83,7 +83,7 @@ watch.json        2회독 볼 거리(W) — 1회독이 '2회독 몫'으로 넘�
 links.json        수동 엣지(Y) — 기록에서 안 나오는 관계 · 자동 엣지 지우기 (T4-3 · T4-4). X2: 이벤트 · 사이드 연작 다음 편 57(확정 28 · 기각 29)
 ```
 
-모두 DB 빌드 입력이 아니다 — 기록 도구(`node tools/records.mjs`)가 바로 읽는다. 해석이 필요한 것(J · G · K · Z · I · E · D · U · Y)은 후보로 쓰고 Claude가 확정한다(사용자는 뒤집는다).
+모두 DB 빌드 입력이 아니다 — 기록 도구(`node tools/records.mjs`)가 바로 읽는다. 해석이 필요한 것(J · G · K · Z · I · E · D · U · Y)은 후보로 쓰고 Claude가 확정한다(사용자는 기준에 피드백).
 2회독 인계 파일(`read2/HANDOFF.md` · `handoff/`)은 `node tools/records.mjs handoff`가 만든다(손으로 고치지 않는다). 형식 · 규칙은 [../docs/annotations.md](../docs/annotations.md).
 
 떡밥 · 진실 공개 레지스트리(T4-2)는 따로 두지 않고 1회독의 사실 · 의문 · 회수(`read1/`)에서 시작한다. 기계가 읽는 표는 JSON이다(T4-1).

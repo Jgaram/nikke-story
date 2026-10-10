@@ -354,12 +354,12 @@ ${list(errors)}`);
   assert.ok(warnings.some((w) => w.id === 'K8' && /basis F1는 sub:로망티스트_00의 기록/.test(w.msg)), list(warnings));
   fs.rmSync(dir, { recursive: true, force: true });
 
-  // 사용자가 등급을 뒤집는다 — 고치기 전 값이 검토 기록에 남는다
+  // 기준이 바뀌어 등급을 다시 판정한다 — 고치기 전 값이 검토 기록에 남고, --by를 안 주면 claude
   const dir2 = tempCopy();
   const cli = node(['tools/records.mjs', 'set', 'K3', '확정', '--grade', '필수', '--note', '테스트', '--dir', dir2]);
   assert.equal(cli.status, 0, cli.stdout + cli.stderr);
   const k3 = readJson(path.join(dir2, '_layers.json')).units.find((u) => u.id === 'K3');
-  assert.deepEqual([k3.grade, k3.status, k3.reviews.at(-1).before, k3.reviews.at(-1).by], ['필수', '확정', '등급 보강', '사용자']);
+  assert.deepEqual([k3.grade, k3.status, k3.reviews.at(-1).before, k3.reviews.at(-1).by], ['필수', '확정', '등급 보강', 'claude']);
   const bad = node(['tools/records.mjs', 'set', 'F1', '확정', '--grade', '필수', '--dir', dir2]);
   assert.equal(bad.status, 1, bad.stdout + bad.stderr);
   assert.match(bad.stderr, /판정\(K<n>\) 하나에만/);
