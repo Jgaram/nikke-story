@@ -1,0 +1,125 @@
+{
+  "subject": "thread:J8",
+  "versions": [
+    {
+      "at": "char:232",
+      "title": "노아의 진짜 지휘관",
+      "text": "지상에 버려졌다 몇 년 만에 거둬진 에덴의 필그림 노아에게 '진짜 지휘관'이 있다 — 그는 누구이고, 지상의 필그림에게도 지휘관이 있나.",
+      "src": "2a188bc09c",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "7c4254bcad",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "ch19",
+      "title": "에덴 — 지휘관 요한",
+      "text": "노아의 진짜 지휘관은 지상 기지 에덴의 요한이었다 — 필그림들을 거느리고 언체인드를 먼저 가져간 그는 누구이고, 방주는 지상의 사람들을 알면서 왜 생존자 0명이라 했나.",
+      "src": "3d795fe4fe",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "ccec732029",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "sub:에덴_Notice_02",
+      "title": "에덴 — 샛별 요한 · 미끼이자 창",
+      "text": "요한은 방주의 영웅 샛별이었다 — 60년 가까이 전 탈주하다 사살됐다던 그는 어떻게 젊은 모습으로 살아 있고, 미끼이자 창이라는 에덴은 무엇을 쏘려 하나.",
+      "src": "23f15f1ec6",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "3ae7438a2b",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "ch40",
+      "title": "에덴 — 샛별 요한 · 에덴의 창",
+      "text": "하늘을 꿰뚫은 푸른 빛은 에덴의 창이었다 — 병기이기도 한 에덴이 애초에 겨눈 하늘 너머의 것은 무엇이고 왜 지금 쏘았나, 샛별 요한은 어떻게 살아 있나.",
+      "src": "f0d6dfbc6c",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "4d9e5ca2c4",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "erelic:goddess_fall_mini",
+      "title": "에덴 — 샛별 요한 · 퀸을 겨눈 창",
+      "text": "중앙 정부는 2차 지상 탈환전의 실패를 샛별 탓으로 돌려 쏘게 했고 세실이 죽어 가던 요한을 기계 몸으로 살렸다 — 에덴의 창은 우주의 랩쳐 퀸을 치려고 만든 것인데, 에덴의 바탕이 된 옛 연구소는 어떤 곳인가.",
+      "src": "a5eafb601d",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "88cf3dc52e",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "ch46",
+      "title": "에덴과 요한 — 샛별 · 에덴의 창",
+      "text": "지휘관은 니케 제작 기술을 미실리스에게서 받아 일부를 에덴에 먼저 보냈고, 카운터스는 T.T.STAR 공연을 본 뒤 에덴에 가기로 했다 — 퀸을 겨눈 에덴의 창과 샛별 요한은 어디로 가나.",
+      "src": "c10a4fe5a4",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "50af5a3e6b",
+          "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
+        }
+      ]
+    }
+  ]
+}
