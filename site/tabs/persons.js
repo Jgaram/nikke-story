@@ -1,7 +1,7 @@
 /**
  * 탭 4 인물(W5) — 화면 5 "인물별 집계"(docs/views.md 5절, 시안 표 data/views/persons/ — X3d).
  * 첫 쓸모: 인물 하나(기본 라피)의 "언제 나왔고, 누구와 같이 나왔고, 어떻게 바뀌었고, 무엇이 아직 풀리지 않았나".
- * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 여섯 접는 칸). 도구줄의 [전체 표]는 인물 386을 한 표로(머리글로 정렬).
+ * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 일곱 접는 칸 — 맨 위가 나온 스토리). 도구줄의 [전체 표]는 인물 386을 한 표로(머리글로 정렬).
  *
  * 쓰는 JSON
  *   persons.json          인물 386 — 전체 기준 집계 + 갈래(kind) · common(자주 나오는 인물) · owner(주역) · same_as · aliases · first_how
@@ -15,6 +15,7 @@
  *   view   table이면 전체 표, 없으면 인물별
  *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      lead  1이면 주역만      sort  목록 정렬(scenes 기본 · speak · open · changes · first · name)
  *   net    함께 나온 인물 보기(list 기본 | graph 관계도)      common  1이면 자주 나오는 인물(지휘관 · 라피 · 아니스 · 네온)도 포함
+ *   us     나온 스토리 칸의 정렬(없으면 감상 순서 | speak 많이 말한 순)
  *   fq     사실 · 의문 칸의 탭(q 의문 기본 | f 사실 | k 밝혀진 순간 | e 복선)      chg  release면 변화를 출시순으로(없으면 작중 순서)
  *   접힌 칸은 URL이 아니라 localStorage(nikke-story.persons.fold)에 남긴다 — 처음에는 결말 · 떡밥만 접혀 있다(건수는 접어도 보인다).
  *
@@ -24,6 +25,8 @@
  *     자리(tick)는 히트맵의 '아직 안 읽은 부분' 빗금(t 뒤) 같은 위치에만 쓴다 — t 앞이어도 안 봤다고 체크한 스토리 칸은 빗금 칸으로 그린다.
  *   뺀 개수는 도구줄 아래 한 줄에 "스포일러로 가린 …"으로 모으고 [전부 보기]를 단다(범위 밖은 따로). 아직 나오지 않은 인물은 목록에서 빠지고, 주소로 들어오면 안내만 보인다.
  *   같은 인물(정체 연결)은 밝혀지는 자리를 따로 갖고 있지 않아 컷오프로 거를 수 없다 — 읽는 중(t 켬)에는 "스포일러" 접이로 감춘다.
+ *   나온 스토리: 종류(메인 · 이벤트 · 호감도 …)마다 묶어 제목을 늘어놓는다 — 앞 점 색 = 말한 줄 수(히트맵과 같은 구간), 회색 = 이름만.
+ *     종류마다 많으면(메인 36 · 그 밖 20 초과) 앞 24 · 12개만 보이고 [더 보기]로 그 종류를 다 편다. 정렬은 감상 순서 또는 많이 말한 순.
  *   히트맵: 가로 = 읽는 순서(출시순) 481칸을 폭에 맞춰 줄여 그린다, 줄 = 스토리 종류, 칸 색 = 말한 줄 수(파랑 한 색 5단계, 절대 구간 — 인물끼리 견줄 수 있다),
  *     회색 = 이름만 나온 스토리, 빗금 = 아직 안 읽은 부분. 칸에 올리면 스토리 · 줄 수, 누르면 리더. 아래에 말한 줄이 많은 스토리 여섯.
  *   함께 나온 인물: 같이 나온 장면(막대 전체)과 그중 대화한 장면(진한 부분). 자주 나오는 인물은 기본으로 뺀다(토글에 숨긴 수).
@@ -67,13 +70,17 @@ const LABELS = {
   first: '처음 등장',
   last: '마지막 등장',
   firstHow: { '이름표로 말함': '직접 말함', 이름: '이름만 나옴', '다른 이름': '다른 이름으로', '암시 언급': '숨은 등장' },
-  sec: { heat: '등장', partners: '함께 나온 인물', changes: '변화', closure: '결말', records: '사실 · 의문', threads: '떡밥' },
+  sec: { stories: '나온 스토리', heat: '등장', partners: '함께 나온 인물', changes: '변화', closure: '결말', records: '사실 · 의문', threads: '떡밥' },
   units: (n) => `${n}스토리`,
   heatHint: '가로 = 감상 순서 · 칸 색 = 말한 줄 수',
   heatBuckets: ['1–4줄', '5–19', '20–59', '60–179', '180줄 이상'],
   nameOnly: '이름만 나옴',
   unread: '아직 안 읽은 부분',
   topUnits: '말한 줄이 많은 스토리',
+  us: { order: '감상 순서', speak: '많이 말한 순' },
+  usSpoke: (n) => `말함 ${n}`,
+  usHint: '색 = 말한 줄 수(등장 칸과 같은 구간) · 회색 = 이름만 나옴 · 누르면 스토리를 연다',
+  usFold: '접기',
   noAppear: '여기까지 읽은 곳에는 등장이 없다.',
   net: { list: '목록', graph: '관계도' },
   commonIncl: '자주 나오는 인물 포함',
@@ -548,6 +555,46 @@ export async function mount(root, ctx) {
     return by;
   };
 
+  // ── 칸 0: 나온 스토리 ──
+  // 종류마다 묶어 제목을 늘어놓는다. 많으면 종류마다 앞 몇 개만(정렬 기준대로) 보이고 [더 보기]로 편다.
+  const usLimit = new Map();
+  const usFirst = (k, n) => (n <= (k === 'main' ? 36 : 20) ? n : k === 'main' ? 24 : 12);
+  const usSeg = ui.segmented({ label: LABELS.sec.stories, options: [{ value: 'order', label: LABELS.us.order }, { value: 'speak', label: LABELS.us.speak }], value: prm('us') === 'speak' ? 'speak' : 'order', onChange: (v) => state.setParam('persons', 'us', v === 'speak' ? 'speak' : null) });
+  const storyRows = (p) => (D.get(p.id)?.units ?? []).filter((e) => !hideWhy(e.unit) && idx.units.has(e.unit));
+  const secStories = makeSection('stories', LABELS.sec.stories, (p, a, sec) => {
+    ui.clear(sec.body);
+    const rows = storyRows(p);
+    if (!rows.length) { sec.body.append(ui.empty(LABELS.noAppear)); return; }
+    const bySpeak = prm('us') === 'speak';
+    const byKind = new Map();
+    for (const e of rows) push(byKind, idx.units.get(e.unit).kind, e);
+    const ord = (e) => idx.units.get(e.unit).order ?? 0;
+    sec.body.append(el('div', { class: 'toolbar pm-sectools' }, usSeg.el,
+      el('span', { class: 'pm-us-sum muted' }, fmt.KIND_ORDER.filter((k) => byKind.has(k)).map((k) => `${fmt.KIND[k].label} ${fmt.num(byKind.get(k).length)}`).join(' · '))));
+    for (const k of [...fmt.KIND_ORDER, ...[...byKind.keys()].filter((x) => !fmt.KIND_ORDER.includes(x))]) {
+      const list = byKind.get(k);
+      if (!list) continue;
+      list.sort(bySpeak ? (x, y) => (y.speaker ?? 0) - (x.speaker ?? 0) || y.lines - x.lines || ord(x) - ord(y) : (x, y) => ord(x) - ord(y));
+      const spoke = list.filter((e) => (e.speaker ?? 0) > 0).length;
+      const first = usFirst(k, list.length);
+      const limit = usLimit.get(k) ?? first;
+      const ul = el('ul', { class: `pm-us-list${k === 'main' ? ' is-main' : ''}` });
+      for (const e of list.slice(0, limit)) {
+        const u = idx.units.get(e.unit);
+        const b = bucketOf(e.speaker ?? 0);
+        ul.append(el('li', { class: ['pm-us-item', b ? '' : 'is-name'], dataset: { sel: `unit:${e.unit}` }, title: `${u.title} · ${atLabel(u.tick)} · ${b ? `${LABELS.stat.speak} ${fmt.num(e.speaker)}` : LABELS.nameOnly} · ${e.scenes}씬` },
+          el('i', { class: `pm-sw ${b ? `pm-b${b}` : 'pm-name'}`, 'aria-hidden': 'true' }), unitLink(e.unit), b ? el('span', { class: 'pm-us-n muted' }, fmt.num(e.speaker)) : null));
+      }
+      const grp = el('div', { class: 'pm-us-group' },
+        el('div', { class: 'pm-us-head' }, el('i', { class: 'pm-us-kind', style: { background: fmt.KIND[k]?.color ?? 'var(--ink-3)' }, 'aria-hidden': 'true' }),
+          el('strong', {}, fmt.KIND[k]?.label ?? k), el('span', { class: 'muted' }, ` ${fmt.num(list.length)}${spoke < list.length ? ` · ${LABELS.usSpoke(fmt.num(spoke))}` : ''}`)), ul);
+      if (list.length > limit) grp.append(showMore(list.length - limit, () => { usLimit.set(k, list.length); paintSection(sec); }));
+      else if (limit > first) grp.append(el('button', { type: 'button', class: 'btn pm-more', onClick: () => { usLimit.delete(k); paintSection(sec); } }, LABELS.usFold));
+      sec.body.append(grp);
+    }
+    sec.body.append(el('div', { class: 'pm-hint muted' }, LABELS.usHint));
+  }, (p, a) => LABELS.units(fmt.num(a.units)));
+
   // ── 칸 1: 등장 히트맵 ──
   const secHeat = makeSection('heat', LABELS.sec.heat, (p, a, sec) => {
     ui.clear(sec.body);
@@ -1005,6 +1052,7 @@ export async function mount(root, ctx) {
     }
     for (const k of Object.keys(fqLimit)) fqLimit[k] = PAGE;
     partnerLimit = PAGE + 4;
+    usLimit.clear();
     chgLimit = 15;
   };
 
@@ -1072,6 +1120,7 @@ export async function mount(root, ctx) {
       if (!rerender) {
         if (diff('net') || diff('common')) { netSeg.set(prm('net') === 'graph' ? 'graph' : 'list'); commonToggle.set(prm('common') === '1'); paintSection(secPartners); }
         if (diff('fq')) paintSection(secRecords);
+        if (diff('us')) { usSeg.set(prm('us') === 'speak' ? 'speak' : 'order'); paintSection(secStories); }
         if (diff('chg')) { chgSeg.set(prm('chg') === 'release' ? 'release' : 'story'); paintSection(secChanges); }
       }
     }
