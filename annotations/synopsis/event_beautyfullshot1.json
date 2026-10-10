@@ -1,0 +1,42 @@
+{
+  "unit": "event_beautyfullshot1",
+  "session": "W9h",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "얼굴이 보도된 언더월드 퀸의 두 수장이, 소문을 덮으려 지상 섬에서 잡지 화보를 찍는다.",
+  "synopsis": "방주 시내의 무장 집단을 부하들로 쓸어버린 사쿠라와 로산나가 기자의 사진에 찍혀 폭력조직 다툼이라는 보도가 난다. 머스탱은 헛소문은 진위와 상관없이 진실이 되어 버린다며, 두 사람에게 지상 해변에서 자기 잡지 아모르 테트라의 화보를 찍어 몸을 피하고 소문을 덮게 한다. 지휘관과 카운터스, 촬영을 이끌 바이퍼와 자칼, 싸움을 말릴 길티, 안전요원 메이든이 코랄 아일랜드로 향하고, 라피 일행은 머스탱의 따로 받은 부탁으로 섬에서 사람이 살 수 있는지 조사한다.\n\n사진기 앞에서 굳어 있던 두 수장은 차츰 섬을 즐기기 시작한다. 사쿠라는 함께 사진을 찍으면 사랑이 이루어진다는 분홍 돌고래 전설을 좇아 메이든이 알려 준 스페셜 미끼로 돌고래 떼를 불러내고, 바위섬에서 일부러 조난해 지휘관과 하룻밤을 보낸다. 사쿠라는 아버지의 죽음과 후계 다툼 속에 스스로 니케가 된 과거를 털어놓고, 조직과 지휘관을 모두 가질 방법을 찾을 때까지 기다리겠다고 말한다.\n\n같은 밤 로산나에게 덤볐다 쓰러진 바이퍼는 유일한 내 것이던 핸드폰이 부서져 운다. 이그조틱으로 살아온 처지와 중앙 정부가 채운 초커, 언더월드 퀸을 향한 질투가 드러나고, 로산나는 자기 과거를 이야기하며 핸드폰을 건넨다. 길티는 부서지지 않는 메이든과 친구가 된다. 마지막 날 낚싯대에 걸린 황금빛 크라켄을 모두 힘을 합쳐 격추하고, 크라켄과 분홍 돌고래를 배경으로 단체 사진을 남긴다. 화보가 팔려 나가며 갱스터라는 추측은 사라진다.",
+  "scenes": [
+    { "scene": "event_beautyfullshot1_prologue", "text": "지상 해변에서 다들 즐거운 가운데, 사진기 앞의 사쿠라와 로산나만 굳어 있다" },
+    { "scene": "event_beautyfullshot1_01_s", "text": "방주 시내에서 언더월드 퀸이 무장 집단을 쓸어버리고, 두 수장의 사진이 보도된다" },
+    { "scene": "event_beautyfullshot1_01_e", "text": "머스탱이 소문을 덮으려 지상 해변에서 아모르 테트라 화보를 찍으라고 한다" },
+    { "scene": "event_beautyfullshot1_02_s", "text": "즉석사진기를 챙기고 동행이 정해져, 일행이 섬에 닿는다" },
+    { "scene": "event_beautyfullshot1_02_e", "text": "옷을 갈아입다 바이퍼가 도발하고, 두 수장이 지휘관을 탈의실 앞에 세운다" },
+    { "scene": "event_beautyfullshot1_03_s", "text": "굳어 있던 두 사람이 해파리 사진에 웃음을 터뜨리고 함께 찍기로 한다" },
+    { "scene": "event_beautyfullshot1_03_e", "text": "라피 팀은 섬 조사에 나서고, 로산나는 서핑을, 메이든과 길티는 낚시 대결을 한다" },
+    { "scene": "event_beautyfullshot1_intermission", "text": "사쿠라가 패션잡지에서 본 분홍 돌고래 사랑 전설을 좇는다" },
+    { "scene": "event_beautyfullshot1_04_s", "text": "메이든이 게임에서 얻은 지식으로 스페셜 미끼 레시피와 낚싯대를 사쿠라에게 준다" },
+    { "scene": "event_beautyfullshot1_04_e", "text": "바이퍼와 로산나가 사진 자리를 두고 다투고, 사쿠라의 미끼를 먹은 자칼이 탈이 난다" },
+    { "scene": "event_beautyfullshot1_05_s", "text": "미끼 재료인 플라밍고 발톱을 구하려 네온이 사투를 벌인다" },
+    { "scene": "event_beautyfullshot1_05_e", "text": "라플레시아에 빠진 아니스를 지나, 스페셜 미끼에 분홍 돌고래가 나타난다" },
+    { "scene": "event_beautyfullshot1_06_s", "text": "분홍 돌고래를 두고 세 사람이 맞서자 바위를 든 길티가 말린다" },
+    { "scene": "event_beautyfullshot1_06_e", "text": "미끼를 빼앗긴 사쿠라가 크라켄 모양 바위섬에서 조난한다" },
+    { "scene": "event_beautyfullshot2_01_s", "text": "물때를 아는 사쿠라가 동굴에서 차를 따르며 마음 가는 대로 하겠다고 한다" },
+    { "scene": "event_beautyfullshot2_01_e", "text": "밤 해변에서 사쿠라가 지휘관에게 입을 맞춘다" },
+    { "scene": "event_beautyfullshot2_02_s", "text": "모래성을 쌓으며 사쿠라가 아버지의 병과 후계 다툼, 니케가 된 날을 이야기한다" },
+    { "scene": "event_beautyfullshot2_02_e", "text": "사쿠라가 조직과 지휘관을 모두 가질 때까지 기다리겠다고 말한다" },
+    { "scene": "event_beautyfullshot2_03_s", "text": "로산나와 바이퍼가 말다툼 끝에 몸싸움을 벌인다" },
+    { "scene": "event_beautyfullshot2_03_e", "text": "바이퍼의 속내와 초커의 정체가 드러나고, 핸드폰이 부서진 바이퍼가 운다" },
+    { "scene": "event_beautyfullshot2_intermission", "text": "돌아가자는 로산나에게 자칼이 사진의 의미를 들려주고, 로산나가 과거를 이야기한다" },
+    { "scene": "event_beautyfullshot2_04_s", "text": "보트 운전을 연습하고, 라피가 섬 조사 결과를 보고하며 단체 사진을 계획한다" },
+    { "scene": "event_beautyfullshot2_04_e", "text": "배구와 모래성, 서핑으로 다 함께 마음껏 논다" },
+    { "scene": "event_beautyfullshot2_05_s", "text": "바베큐 자리에서 헤도니아의 자금 지원 이야기가 오가고, 바이퍼가 타고난 바람둥이를 두고 경고를 던진다" },
+    { "scene": "event_beautyfullshot2_05_e", "text": "길티와 메이든이 친구가 되고, 낚싯대에 황금 크라켄이 걸린다" },
+    { "scene": "event_beautyfullshot2_06_s", "text": "장갑이 약한 크라켄을 두고 작전 회의를 하고, 바이퍼가 사진을 백업해 둔다" },
+    { "scene": "event_beautyfullshot2_06_e", "text": "크라켄을 격추하고, 황금 크라켄과 분홍 돌고래를 배경으로 단체 사진을 찍는다" },
+    { "scene": "event_beautyfullshot2_epilogue", "text": "모두 일상으로 돌아가고, 화보가 소문을 덮는다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9h", "hash": "28bb43d6af", "note": "입력과 대조 — 1 · 2부를 한 개요로. 최초의 아이돌 의문은 열어 둠" }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "unit": "erelic:old_tales_lost",
+  "session": "W9h",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "침식을 다룬 공식 보고서와, 금지된 연구를 몰래 이어 간 누군가의 비공식 기록이 남아 있다.",
+  "synopsis": "공식 보고서는 촉수로 니케를 찔러 잠깐 마비시키는 랩쳐의 기술, 침식을 뒤쫓는다. 해부로도 이상은 보이지 않았지만 끝내 침식이 NIMPH에 행동을 멈추라는 강제 명령을 내리는 것으로 밝혀지고, 백신은 듣지 않으며 NIMPH의 방어로 곧 사라진다는 이유로 연구는 잠정 중단된다.\n\n비공식 기록의 필자는 상부가 금지한 연구를 몰래 이어 간다. 침식 랩쳐와 양산형 니케로 실험실을 꾸리고, 침식에 원하는 명령을 심어 실험체를 움직이고, 자기 인격 데이터를 심어 니케가 랩쳐를 지키게 만든다. 효과가 오래가지 않자 침식을 랩쳐에게 돌려보내고, 몰라보게 강해져 돌아온 침식을 페어리 테일 모델에게 시험하려 한다. 기록은 광기 어린 환희로 끝나고, 마지막 글은 신데렐라에게 헬레틱은 퀸에게 선택받은 니케만 될 수 있다고 속삭인다.",
+  "scenes": [
+    { "scene": "erelic:old_tales_lost_00", "text": "침식은 니케를 순간 마비시키는 랩쳐의 기술로, 아직 대응할 방법이 없다고 보고된다" },
+    { "scene": "erelic:old_tales_lost_01", "text": "침식을 일으키는 랩쳐는 촉수 장비를 니케의 몸에 찔러 넣는다" },
+    { "scene": "erelic:old_tales_lost_02", "text": "침식된 니케를 해부했지만 찔린 상처 말고는 이상을 찾지 못한다" },
+    { "scene": "erelic:old_tales_lost_03", "text": "침식이 마비가 아니라 NIMPH에 행동 정지를 명령하는 것으로 확정된다" },
+    { "scene": "erelic:old_tales_lost_04", "text": "백신은 듣지 않지만 NIMPH의 방어로 침식이 곧 사라져, 연구가 잠정 중단된다" },
+    { "scene": "erelic:old_tales_lost_05", "text": "필자는 상부가 철저히 금지한 침식 연구를 몰래 이어 가기로 한다" },
+    { "scene": "erelic:old_tales_lost_06", "text": "침식 랩쳐와 양산형 니케를 구해 개인 실험실을 꾸린다" },
+    { "scene": "erelic:old_tales_lost_07", "text": "침식에 명령을 심을 수 있음을 알아내고 실험체에게 시험한다" },
+    { "scene": "erelic:old_tales_lost_08", "text": "침식에 심은 명령은 무엇이든 강제로 따르게 된다는 것을 확인한다" },
+    { "scene": "erelic:old_tales_lost_09", "text": "자기 인격 데이터를 심은 침식으로 실험체가 랩쳐를 지키게 만든다" },
+    { "scene": "erelic:old_tales_lost_10", "text": "인격 데이터를 아무리 고쳐도 효과는 오래가지 않는다" },
+    { "scene": "erelic:old_tales_lost_11", "text": "랩쳐에게 돌려보낸 침식이 크게 강해졌다는 소식이 이어진다" },
+    { "scene": "erelic:old_tales_lost_12", "text": "완벽해진 침식을 페어리 테일 모델에게 시험할 마지막 단계를 꿈꾼다" },
+    { "scene": "erelic:old_tales_lost_13", "text": "됐다는 말만 되풀이하는 광기 어린 글이 남는다" },
+    { "scene": "erelic:old_tales_lost_14", "text": "헬레틱은 퀸에게 선택받은 니케만 될 수 있다며 신데렐라에게 남긴 글" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9h",
+      "hash": "a8aaabe70d",
+      "note": "입력과 대조, 문서 첫 줄만 짧게 확인. 비공식 기록의 필자는 문서가 이름을 대지 않아 필자로만 씀"
+    }
+  ]
+}

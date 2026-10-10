@@ -1,0 +1,29 @@
+{
+  "unit": "event_phantomthiefvsdetective",
+  "session": "W9h",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "자칭 정의의 괴도 팬텀과 탈옥한 퀀시, 미란다가 지휘관실을 기지 삼아 빼앗긴 반지를 되찾으러 나선다.",
+  "synopsis": "예고장을 보낸 집에서 반지를 손에 넣으려던 자칭 정의의 괴도 팬텀은 새 탈옥 루트를 뚫고 나온 퀀시와 딱 마주쳐 경보를 울리고 만다. A.C.P.U.의 미란다가 출동하자 둘은 퀀시의 구멍으로 달아나는데, 그 구멍은 지휘관실로 이어져 있었다. 악한 자에게 빼앗긴 것을 돌려준다는 팬텀의 말에, 쫓아온 미란다는 같은 정의의 일이라며 괴도 경찰로 돕겠다고 나서고, 퀀시는 조수를 자처한다. 지휘관은 팬텀이 아는 사람과 닮았다고 생각하면서도 모른 척 어울려 주고, 지휘관실은 정의 괴도단의 기지가 된다.\n\n의뢰인을 만나 보니 팬텀이 턴 곳은 엉뚱한 옆집이었고, 진짜 반지를 가진 자산가는 경찰과 손잡고 신고마저 막고 있었다. 팬텀의 새 예고장에 A.C.P.U.와 탐정 노벨이 대비하는 가운데, 정의 괴도단은 두 구역으로 나뉘어 잠입한다. 지휘관은 키리에게 들키고, 맞춤법이 틀린 예고장이 노벨을 헷갈리게 하며, 미란다는 결국 붙잡힌다.\n\n자산가의 방에 나온 팬텀 앞에는 노벨의 함정이 기다리지만, 달아나던 자산가가 노벨의 그물에 걸리면서 팬텀은 반지를 되찾아 주인에게 돌려준다. 미란다는 시말서를 쓰고, 퀀시와 미란다, 지휘관에게 팬텀의 새 집합 예고장이 날아든다.",
+  "scenes": [
+    { "scene": "event_phantomthiefvsdetective_prologue", "text": "반지를 훔치던 팬텀이 탈옥한 퀀시와 마주쳐 경보가 울리고, 퀀시의 구멍은 지휘관실로 이어진다" },
+    { "scene": "event_phantomthiefvsdetective_01_s", "text": "괴도 팬텀이 자신을 소개하고, 쫓아온 미란다가 괴도로 돕겠다고 나선다" },
+    { "scene": "event_phantomthiefvsdetective_01_e", "text": "퀀시는 조수, 지휘관실은 기지가 되어 정의 괴도단이 결성된다" },
+    { "scene": "event_phantomthiefvsdetective_02_s", "text": "의뢰인을 만나 보니 엉뚱한 옆집을 털었고, 자산가는 경찰과 손잡고 있었다" },
+    { "scene": "event_phantomthiefvsdetective_02_e", "text": "새 예고장에 A.C.P.U.와 노벨이 대비하고, 폴리가 미란다를 보내 준다" },
+    { "scene": "event_phantomthiefvsdetective_03_s", "text": "미란다가 합류하고, 단원들이 각자 맡을 일을 정한다" },
+    { "scene": "event_phantomthiefvsdetective_03_e", "text": "두 구역으로 나누어 들어갈 작전을 세운다" },
+    { "scene": "event_phantomthiefvsdetective_intermission_01", "text": "키리를 피해 잠입하던 지휘관이 들키고 만다" },
+    { "scene": "event_phantomthiefvsdetective_04_s", "text": "창문을 깨고 들어간 팬텀 일행이 맞춤법 틀린 예고장으로 노벨을 헷갈리게 한다" },
+    { "scene": "event_phantomthiefvsdetective_04_e", "text": "미란다가 노벨과 부딪히며 폴리의 위치를 알아낸다" },
+    { "scene": "event_phantomthiefvsdetective_05_s", "text": "키리가 지휘관을 협력자로 오해하는 사이 노벨이 나타난다" },
+    { "scene": "event_phantomthiefvsdetective_05_e", "text": "연막 속에서 퀀시가 팬텀을 구멍으로 끌어내리고, 미란다는 붙잡힌다" },
+    { "scene": "event_phantomthiefvsdetective_06_s", "text": "자산가의 방에 나온 팬텀 앞에 노벨의 함정이 기다린다" },
+    { "scene": "event_phantomthiefvsdetective_06_e", "text": "그물에 걸린 자산가에게서 반지를 되찾고, 정의 괴도단이 이름을 밝힌 뒤 흩어진다" },
+    { "scene": "event_phantomthiefvsdetective_epilogue", "text": "미란다가 시말서를 쓰고, 팬텀의 새 집합 예고장이 날아든다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9h", "hash": "2f05c8e720", "note": "입력과 대조 — 팬텀의 평소 정체는 열어 둠(지휘관이 닮았다고 느끼는 데까지만)" }
+  ]
+}

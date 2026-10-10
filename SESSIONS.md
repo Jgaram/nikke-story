@@ -38,7 +38,8 @@
 - [ ] **W9f 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ① event_nocallerid … event_dazzlingcupid** (21단위 · 7.3만 자) — T5-9
 - [x] **W9g 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ② event_freezeacpu … event_lastkingdom1** (16단위 · 7.4만 자) — T5-9
   - 인계: 16/16 확정, 원문 약 5천 자(event_liarsend_12 끝 씬). 경고 2 — neverland1 '베이킹' · killthelord '레이디' 오탐, --note. 밝혀지지 않은 것(희석 언체인드 캡슐 · ※※ · 방주 동력원)은 쓰지 않음, 갈림 결말은 선택이 있다는 것만.
-- [ ] **W9h 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ③ event_darkhero … event_secretgarden** (16단위 · 6.8만 자) — T5-9
+- [x] **W9h 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ③ event_darkhero … event_secretgarden** (16단위 · 6.8만 자) — T5-9
+  - 인계: 16/16 확정, 원문 약 1.4만 자(OLD TALES 유실물 세 단위 — 씬 요약이 비어 씬 한 줄용). 오탐 '레이드' · '승리의 여신'은 흔한 낱말 목록에 더함. 회상 속 지휘관은 '당시 갓데스의 지휘관', 이름 없는 문서 글쓴이는 '필자'. 1·2부는 개요 하나로.
 - [x] **W9i 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ④ event_icedragonsaga1 … event_lordforjustice** (15단위 · 7.3만 자) — T5-9
   - 인계: 15/15 확정, 원문 352자(erelic:unbreakable_sphere_dialog_08), 경고 0. 입력에서 추정인 정체(잉그리드 = 저지스 [I] 등)는 쓰지 않음, 설정 오류 추정이 붙은 시간은 숫자를 피함. 2부까지 담은 단위는 두 부를 개요 하나로.
 - [x] **W9j 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ⑤ event_ce006 … event_goddessfall1** (9단위 · 7.2만 자) — T5-9
