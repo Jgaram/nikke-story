@@ -350,8 +350,8 @@
       "id": "T19",
       "person": "person:레드_슈즈",
       "org": "org:V.T.C.",
-      "act": "소속",
-      "role": "연구원 · 일등 사제 출신",
+      "act": "지난 소속",
+      "role": "연구원 · 일등 사제",
       "evidence": [{ "scene": "event_oldtales1_02_e", "lines": [70] }, { "scene": "event_oldtales1_03_s", "lines": [12] }],
       "reason": "'V.T.C.의 우수 연구원이자 일등 사제 출신'이라 한다(02_e #70) — 니케가 되기 전의 소속",
       "confidence": "확실",
@@ -359,7 +359,8 @@
       "by": "claude",
       "session": "W12b",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12b", "note": "니케가 되기 전의 소속(출신)이지만 처음 소속으로 적는다 — 2세대 스쿼드는 이름이 없어 사전에 없음" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12b", "note": "니케가 되기 전의 소속(출신)이지만 처음 소속으로 적는다 — 2세대 스쿼드는 이름이 없어 사전에 없음" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "act 소속 → 지난 소속(W12e): '일등 사제 출신' — 니케가 되기 전 소속이라 전 소속으로 보임. role의 '출신'을 뺌" }
       ]
     },
     {
@@ -1873,6 +1874,220 @@
       "session": "W12d",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T128",
+      "person": "person:도로시",
+      "org": "org:갓데스",
+      "act": "지난 소속",
+      "records": ["F494"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
+      "reason": "라푼젤이 1차 침공 뒤 '우린 [갓데스] 스쿼드라 불렸어요' 하며 구성 인원으로 도로시를 꼽는다(#59 · #61) — 지금은 인헤르트(게임 데이터), 갓데스는 지난 일",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T129",
+      "person": "person:홍련",
+      "org": "org:근접_전투_스쿼드",
+      "act": "지난 소속",
+      "records": ["D1511"],
+      "evidence": [{ "scene": "event_newyearnewsword_01_e", "lines": ["49-50"] }],
+      "reason": "'근접 전투 스쿼드 소속이었던 거야?' — '그렇다네'(#49-50). 스쿼드는 내전으로 궤멸(F660-2)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T130",
+      "person": "person:그레이브",
+      "org": "org:V.T.C.",
+      "act": "지난 소속",
+      "role": "수석 니케 연구원",
+      "records": ["F1663"],
+      "evidence": [{ "scene": "event_oldtales1_01_e", "lines": ["22-26"] }],
+      "reason": "신데렐라가 에이브에게 'V.T.C.의 수석 니케 연구원이었잖아'(#24) — 자진해서 양산형 니케가 되기 전. 대표 ID 그레이브(에이브 · 언노운은 정체가 밝혀진 단위부터 빌려 보임)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T131",
+      "person": "person:라푼젤",
+      "org": "org:V.T.C.",
+      "act": "지난 소속",
+      "role": "차기 여교황 후보",
+      "records": ["F1178"],
+      "evidence": [{ "scene": "erelic:red_ash_lost_07", "lines": ["8-12"] }],
+      "reason": "니케가 되어 온 라푼젤이 'V.T.C.에서 왔어요'(#8), 도로시가 '차기 여교황으로 유력한'(#12) — 니케가 되기 전의 소속",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T132",
+      "person": "person:엔더슨",
+      "org": "org:갓데스",
+      "act": "지난 소속",
+      "role": "지휘관",
+      "records": ["F2373"],
+      "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["23-26"] }, { "scene": "d_main_43_11", "lines": ["85-86"] }],
+      "reason": "릴리바이스가 갓데스의 지휘관을 '엔더슨!!'이라 부르고 이름표가 엔더슨이 된다(ark_guardian_26 #25-26), 프린세스가 '엔더슨…! 갓데스의 지휘관…!'(43_11 #86) — 지금은 중앙 정부 부사령관(T16)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T133",
+      "person": "person:라피",
+      "org": "org:앱솔루트",
+      "act": "지난 소속",
+      "records": ["F278"],
+      "evidence": [{ "scene": "d_main_10_06", "lines": ["3-13"] }],
+      "reason": "엠마 '다시 돌아올 생각 없어? 앱솔루트로'(#3), 은화 '저 쓰레기가 나가고 난 후'(#5), 베스티 '네가 언제나 있던 포지션'(#10) — 카운터스 전의 소속",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T134",
+      "person": "person:크로우",
+      "org": "org:엔터_헤븐",
+      "act": "지난 소속",
+      "records": ["F2499"],
+      "evidence": [{ "scene": "fl:enter_heaven_10", "lines": ["0-4"] }],
+      "reason": "'크로우도 엔터 헤븐 소속이었다고?' — E.H. '응'(#0-1), 입단 초반 이야기(#4). ch16의 '전직 리더라는 루머'(d_main_16_01#18)는 소문이라 드러남으로 안 본다",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T135",
+      "person": "person:미세스_미스",
+      "org": "org:테트라",
+      "act": "지난 소속",
+      "role": "프로듀서",
+      "records": ["D1114"],
+      "evidence": [{ "scene": "side:pretty_star_03", "lines": [18, 20] }, { "scene": "side:pretty_star_13", "lines": ["220-223"] }],
+      "reason": "회상에서 테트라의 프로듀서로 일하다('우리 니케 제작 회사' #18, 오스왈드 '테트라 라인' #20) 퇴사한다(13 #223). ch40의 '회사에서 비리'는 회사 이름이 없어 안 든다. 다시 들어감은 T42",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T136",
+      "person": "person:E.H.",
+      "org": "org:엔터_헤븐",
+      "act": "소속",
+      "role": "대장",
+      "evidence": [{ "scene": "d_main_22_06", "lines": ["7-9"] }],
+      "reason": "로산나가 'E.H. 그러니까 너희 엔터 헤븐의 대장이'(#7) — 그 자리에서는 지금 소속",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12e", "note": "근거 줄에서 지난 소속(이야기의 지금 전에 끝남) · 조직 이름 · 그 인물을 직접 확인(W12e 검토)" }
+      ]
+    },
+    {
+      "id": "T137",
+      "person": "person:E.H.",
+      "org": "org:엔터_헤븐",
+      "act": "이탈",
+      "records": ["D767"],
+      "evidence": [{ "scene": "d_main_39_af_02", "lines": ["1-10"] }],
+      "reason": "이그조틱의 리더로 자기소개(#1), 네온 '엔터 헤븐 대장 아니었나요?' — 바이퍼 '그랬지'(#6-7), 니케가 됨(#9-10). 대장이 아니게 된 건 분명하지만 단체를 떠났다는 말은 없어 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W12e",
+          "note": "대장이 아니게 된 것은 근거 줄에 분명(그랬지), 단체를 떠났는지는 말이 없어 추정으로 확정 — 전 소속으로 보임"
+        }
+      ]
+    },
+    {
+      "id": "T138",
+      "person": "person:신데렐라",
+      "org": "org:인류연합군",
+      "act": "지난 소속",
+      "records": ["D583"],
+      "evidence": [{ "scene": "event_oldtales1_01_s", "lines": [50] }],
+      "reason": "2세대 페어리 테일 모델은 '인류연합군과 V.T.C.가 함께 만든 기술의 결정체'(#50) — 만든 곳일 뿐 소속을 말하지 않고, 누구의 것인지 둘이 다툰다(U239). 모호",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W12e",
+          "note": "2세대는 인류연합군 · V.T.C.가 만든 것(제작 주체) — 소속을 말하지 않고 소유를 다툼(U239). 모호해 기각"
+        }
+      ]
+    },
+    {
+      "id": "T139",
+      "person": "person:신데렐라",
+      "org": "org:V.T.C.",
+      "act": "지난 소속",
+      "records": ["D583"],
+      "evidence": [{ "scene": "event_oldtales1_01_s", "lines": [50] }],
+      "reason": "T138과 같은 근거 — 제작 주체이지 소속이 아니다. 모호",
+      "confidence": "추정",
+      "status": "기각",
+      "by": "claude",
+      "session": "W12e",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W12e",
+          "note": "2세대는 인류연합군 · V.T.C.가 만든 것(제작 주체) — 소속을 말하지 않고 소유를 다툼(U239). 모호해 기각"
+        }
       ]
     }
   ]

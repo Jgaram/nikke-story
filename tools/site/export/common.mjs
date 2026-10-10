@@ -9,7 +9,7 @@
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
- *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리), affs — 확정 소속 기록 T(공개 자리 tick), 조직 mark — site/img/orgs/{mark}.png)
+ *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리), affs — 확정 소속 기록 T(공개 자리 tick · 근거 단위 unit — '지난 소속'은 화면에서 전 소속), 조직 mark — site/img/orgs/{mark}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
@@ -262,7 +262,7 @@ export async function run(ctx) {
     const place = placeOf.get(sceneUnit.get(scene)) ?? {};
     if (place.tick == null) warn({ where: 'orgs', msg: `${c.id}: 근거 씬 ${scene}의 공개 자리가 없다` });
     (affsOf.get(o.person) ?? affsOf.set(o.person, []).get(o.person)).push(compact({
-      id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
+      id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, unit: sceneUnit.get(scene), confidence: c.confidence,
     }));
   }
   // 게임 시작 로스터(affiliations.json game.launch — 사용자 확인): 호감도 단위가 없어도 출시 자리를 맨 처음(1)으로 본다
@@ -283,7 +283,7 @@ export async function run(ctx) {
         // 공개 자리(W12d — docs/annotations.md "게임 소속의 공개 자리"): 원문에 이름이 없는 소속(null)은 0(늘), 아니면
         // 그 판의 출시(호감도 단위 char:<rid> — 프로필에 소속이 보인다)와 그 조직의 확정 기록 T(소속 · 합류) 가운데 이른 것. 둘 다 없으면 칸을 비운다(전부 보기에서만)
         const rel = placeOf.get(`char:${c.resource_id}`)?.tick ?? (launch.has(c.resource_id) ? 1 : undefined);
-        const recTicks = (affsOf.get(c.target_id) ?? []).filter((a) => m.org && a.org === m.org && a.act !== '이탈' && a.tick != null).map((a) => a.tick);
+        const recTicks = (affsOf.get(c.target_id) ?? []).filter((a) => m.org && a.org === m.org && (a.act === '소속' || a.act === '합류') && a.tick != null).map((a) => a.tick);
         const tick = m.org ? (rel != null || recTicks.length ? Math.min(rel ?? Infinity, ...recTicks) : undefined) : 0;
         const same = list.find((x) => x.type === type && x.name === m.name);
         if (same) { if (tick != null && (same.tick == null || tick < same.tick)) same.tick = tick; continue; }

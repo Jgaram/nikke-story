@@ -438,7 +438,7 @@ const RENDER = {
   target(id, idx) {
     const t = idx.targets.get(id);
     if (!t) return root.append(head('찾을 수 없음'), ui.empty(`찾는 항목 없음: ${id}`));
-    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null, t.type === 'person' ? ui.orgMarks(fmt.orgsAt(t, T()), { size: 16 }) : null], mono(id), ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })));
+    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null, t.type === 'person' ? ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 }) : null], mono(id), ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })));
     root.append(ui.el('div', { class: 'rd-open' }, t.type === 'person' ? tabLink('persons', { who: id }) : tabLink('world', { item: id })));
     const recs = idx.recordsAbout.get(id) ?? [];
     const units = new Set(recs.map((r) => r.unit).filter(Boolean));

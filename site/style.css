@@ -317,7 +317,12 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .org-mark img { flex: none; display: block; object-fit: contain; }
 .org-mark.no-img { padding-left: 8px; }
 .org-mark.alt { opacity: 0.72; }
+/* 전 소속(W12e) — 지금 소속 뒤에 점선 테두리 · 흐린 글자, 흰 마크는 작은 어두운 원 위에 흐리게(라이트 · 다크 둘 다 보이게) */
+.org-mark.past { background: transparent; color: var(--ink-muted); border: 1px dashed var(--ink-muted); padding: 1px 7px 1px 2px; }
+.org-mark.past img { background: var(--mark-bg); border-radius: 50%; opacity: 0.55; }
+.org-mark.past.no-img { padding-left: 7px; }
 .org-marks.bare .org-mark { padding: 2px; }
+.org-marks.bare .org-mark.past { padding: 1px; }
 .org-marks.bare .org-mark.no-img { display: none; }
 .reader-title h2 { font-size: 18px; font-weight: 700; word-break: keep-all; overflow-wrap: anywhere; }
 .reader-sub { margin-top: 2px; font-size: 11.5px; color: var(--ink-muted); }

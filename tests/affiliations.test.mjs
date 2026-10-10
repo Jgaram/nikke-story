@@ -129,6 +129,49 @@ test('fmt.orgsAt — 게임 소속은 공개 자리부터 늘 남고, 기록은 
   assert.deepEqual(fmt.orgsAt({ affs: [{ id: 'T5', org: 'org:중앙_정부', act: '소속', tick: 7, from: 'person:레비아탄' }] }, 7).map((o) => o.from), ['레비아탄'], '같은 인물의 기록을 빌린 것은 적은 이름을 단다');
 });
 
+test('fmt.orgsAt past — 지난 소속 · 이탈한 조직은 전 소속으로 뒤에, 지금 소속과 같은 조직은 한 번만(W12e)', async () => {
+  const fmt = await import('../site/lib/format.js');
+  const targets = new Map([
+    ['org:갓데스', { id: 'org:갓데스', name: '갓데스', kind: '스쿼드', mark: 'icn_goddess' }],
+    ['org:인헤르트', { id: 'org:인헤르트', name: '인헤르트', kind: '스쿼드', mark: 'icn_inherit' }],
+    ['org:테트라', { id: 'org:테트라', name: '테트라', kind: '기업', mark: 'icn_corp_03' }],
+    ['org:실버건', { id: 'org:실버건', name: '실버건', kind: '스쿼드' }],
+  ]);
+  fmt.use({ targets, units: new Map([['ch10', { key: 'ch10', title: 'CH.10 동료' }], ['char:1', { key: 'char:1', kind: 'episode', title: '라푼젤' }]]) });
+  const p = {
+    orgs: [{ type: 'squad', org: 'org:인헤르트', name: '인헤르트', mark: 'icn_inherit', tick: 5 }],
+    affs: [
+      { id: 'T1', org: 'org:갓데스', act: '지난 소속', tick: 3, unit: 'char:1' },
+      { id: 'T2', org: 'org:실버건', act: '소속', role: '사수', tick: 1 },
+      { id: 'T3', org: 'org:실버건', act: '이탈', tick: 4, unit: 'ch10' },
+      { id: 'T4', org: 'org:테트라', act: '지난 소속', role: '프로듀서', tick: 6, unit: 'ch10' },
+      { id: 'T5', org: 'org:테트라', act: '합류', tick: 8 },
+    ],
+  };
+  const view = (t) => fmt.orgsAt(p, t, { past: true }).map((o) => `${o.past ? '~' : ''}${o.name}`);
+  assert.deepEqual(fmt.orgsAt(p, 2).map((o) => o.name), ['실버건'], '기본(past 없음)은 지금 소속만');
+  assert.deepEqual(view(2), ['실버건'], '드러나기 전에는 전 소속도 안 보인다');
+  assert.deepEqual(view(3), ['실버건', '~갓데스'], '지난 소속은 지금 소속 계산에 안 들고 뒤에');
+  assert.deepEqual(view(5), ['인헤르트', '~갓데스', '~실버건'], '이탈한 조직도 전 소속');
+  assert.deepEqual(view(6), ['인헤르트', '~테트라', '~갓데스', '~실버건'], '기업이 앞');
+  assert.deepEqual(view(8), ['테트라', '인헤르트', '~갓데스', '~실버건'], '다시 들어가면 전 소속에서 빠진다(한 번만)');
+  assert.deepEqual(view(null), ['테트라', '인헤르트', '~갓데스', '~실버건'], '전부 보기');
+  const tip = (t, name) => fmt.orgTip(fmt.orgsAt(p, t, { past: true }).find((o) => o.name === name && o.past));
+  assert.equal(tip(5, '갓데스'), '전 소속: 갓데스 · 드러난 곳 라푼젤 호감도');
+  assert.equal(tip(5, '실버건'), '전 소속: 실버건 — 사수 · 나간 곳 CH.10 동료', '이탈한 조직은 마지막 자리 · 나간 곳');
+  const same = { orgs: [{ type: 'squad', org: 'org:갓데스', name: '갓데스', via: '다른 판', tick: 1 }], affs: [{ id: 'T9', org: 'org:갓데스', act: '지난 소속', tick: 1 }] };
+  assert.deepEqual(fmt.orgsAt(same, 1, { past: true }).map((o) => [o.name, Boolean(o.past)]), [['갓데스', false]], '다른 판의 게임 소속과 같은 조직이면 전 소속을 따로 안 보인다');
+});
+
+test('지난 소속(W12e) — 실제 기록이 지금 소속 계산 · 게임 소속 공개 자리에 안 든다', () => {
+  const file = path.join(ROOT, 'site/data/targets.json');
+  if (!fs.existsSync(file)) return;
+  const byId = new Map(JSON.parse(fs.readFileSync(file, 'utf8')).map((t) => [t.id, t]));
+  const past = (p, org) => byId.get(p)?.affs?.find((a) => a.org === org && a.act === '지난 소속');
+  assert.ok(past('person:도로시', 'org:갓데스')?.unit, '도로시의 갓데스는 지난 소속, 드러난 단위가 붙는다');
+  assert.ok(past('person:에이브', 'org:V.T.C.')?.from === 'person:그레이브', '에이브는 대표 그레이브의 지난 소속을 빌린다');
+});
+
 test('게임 소속의 공개 자리(W12d) — export가 출시 · 기록에서 tick을 붙인다', () => {
   const file = path.join(ROOT, 'site/data/targets.json');
   if (!fs.existsSync(file)) return;
