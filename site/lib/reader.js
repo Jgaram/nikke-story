@@ -11,7 +11,8 @@
  *   머리 = [호감도는 그 니케 초상] 제목 + 회색 한 줄(등급 이름 — 띠 색 글자 · 종류 · 출시 날짜). 순번 · 분량은 없다(날짜만 — 감상 순서 목록이 날짜를 리더로 보냈다).
  *   → 줄거리(synopsis.json — 한 줄 소개 · 줄거리, 머리에 'AI 정리' 표지) → 나오는 인물(persons-detail.json — 그 스토리에서 말한 인물 초상 줄, 많이 말한 순, 지휘관은 뺀다)
  *   → 분류(order.json — 그 시점 등급 · 언제 읽나 'CH.44 전까지' · 선행(왜 선행인가는 앞 편 · 떡밥 → 회수처럼 이야기 말만 — 판정 말 '분류에서 짚음'은 뺀다) ·
- *     작중 순(과거 · 앞선 · 나중 이야기일 때만) · 이유(fmt.reasonText))
+ *     작중 순(과거 · 앞선 · 나중 이야기일 때만) · 이유(blurbs.json 팬용 문장 — gate를 봤으면 later까지, 없거나 낡았으면 fmt.reasonText 판정 문장 —
+ *     뒤 필수 스토리로 오른 스토리의 판정 문장은 그 스토리를 안 봤으면 스포일러 접이))
  *   → 접힌 칸: 이어진 스토리(links-scenes.json — 펼 때 처음 받는다, 상대 스토리마다 한 줄 + 왜 이어졌나 한 줄) · 떡밥
  *   → 장면 목록(씬 한 줄이 있으면 제목 아래) → 접힌 기록 칸(사실 · 의문 …) → 설정 오류 의심.
  * 씬 패널: 제목 + 회색 한 줄(스토리 · 판 · 호감도 Lv), 씬 한 줄(공개 개요), 앞뒤 장면, 연결(그 씬의 선 — 상대 장면 · 스토리 · 왜), 기록.
@@ -112,7 +113,7 @@ export async function open(sel) {
       }
     }
     if (parsed.type === 'unit') await loadOrder(); // 분류 칸 — 작은 파일(order.json)이라 같이 기다린다
-    if (parsed.type === 'unit' || parsed.type === 'scene') await loadSynopsis();
+    if (parsed.type === 'unit' || parsed.type === 'scene') await Promise.all([loadSynopsis(), loadBlurbs()]);
     if (parsed.type === 'person') await loadPeople(); // 인물 머리의 '처음 등장' — 인물 탭과 같은 파일
     if (current !== sel) return; // 그새 다른 것을 골랐다
     ui.clear(root);
@@ -193,6 +194,15 @@ function loadSynopsis() {
     synopsisMap = new Map(list.map((x) => [x.key, x]));
     sceneLineMap = new Map(list.flatMap((x) => Object.entries(x.scenes ?? {})));
   }).catch(() => { /* 개요가 없어도 리더는 쓴다 */ }));
+}
+
+let blurbMap = null;
+let blurbReady = null;
+/** blurbs.json(팬용 문장 — 확정되고 낡지 않은 것만) — 스토리 키 → { why?, when? }. 못 받거나 없는 칸은 거른 판정 문장을 보인다 */
+function loadBlurbs() {
+  return (blurbReady ??= data.load('blurbs').then((list) => {
+    blurbMap = new Map(list.map((x) => [x.key, x]));
+  }).catch(() => { /* 없어도 판정 문장으로 */ }));
 }
 
 let people = null; // { byUnit(스토리 → [{ id, speaker, lines, implied }]), byPerson(인물 → 같은 줄들) }
@@ -432,11 +442,17 @@ function classPanel(u, idx, hidden) {
   if (g == null) gradeRow.push(' ', ui.el('span', { class: 'muted' }, LABELS.afterGrade));
   else if (g !== j.grade) gradeRow.push(' ', ui.el('span', { class: 'muted' }, ['→ ', ui.link(`unit:${j.from}`, spineName(j.from)), '부터 '], ui.chip('grade', j.grade)));
   else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? LABELS.riseBefore(spineName(j.from), fmt.GRADE[j.before ?? j.grade]?.label) : LABELS.riseSince(spineName(j.from))));
-  const full = fmt.reasonText(j.reason ?? ''); // 판정 과정 마디는 걷는다(W13b — 감상 순서 카드와 같다)
-  const short = clipText(full, 90);
-  // 여기까지 읽음 뒤 스토리는 이유도 아래 내용 칸과 함께 스포일러 접이 하나에 넣는다
-  const reason = full && !hidden ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full))) : null;
+  // 이유 = 팬용 문장(W14 — 뒤 스토리 내용은 gate를 봤을 때만 later로 붙는다, 줄이지 않는다), 없거나 낡았으면 판정 과정 마디를 걷은 판정 문장(W13b — 90자로 줄여 접는다)
+  const blurb = blurbMap?.get(u.key)?.why;
+  const full = blurb ? fmt.blurbText(blurb, state.seen) : fmt.reasonText(j.reason ?? '');
+  const short = blurb ? full : clipText(full, 90);
   const before = j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order;
+  // 판정 문장은 최종 등급의 것이라, 뒤 필수 스토리로 오른 스토리면 그 스토리를 안 본 사람에게 뒤 내용이 보인다 — 스포일러 접이로
+  const lateReason = !blurb && full && !hidden && before && !state.seen(j.from);
+  // 여기까지 읽음 뒤 스토리는 이유도 아래 내용 칸과 함께 스포일러 접이 하나에 넣는다
+  const reason = !full || hidden ? null
+    : lateReason ? ui.details(spoilerSummary(), ui.el('div', { class: 'rd-why-full' }, full), { class: 'spoiler' })
+      : short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full));
   // 감상 순서 카드에 있던 칸(W13 — 카드를 리더 하나로 합쳤다): 장면(등급을 정한 기록의 장면 + 그 기록 문장) · 이어지는 필수 스토리 · 주역 · 결말
   const basisText = ui.el('div', { class: 'rd-basis-text' });
   const sel = current;

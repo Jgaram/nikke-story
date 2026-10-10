@@ -11,7 +11,8 @@
  * 40자를 넘으면 경고(사람이 본다). 자르지 않는다. 내보낸 뒤 `node tools/check-quotes.mjs`로 원문과 겹침을 다시 본다.
  *
  * 모듈 규약: tools/site/export/<name>.mjs가 `name`과 `run(ctx) → { files: { '<이름>.json': 값 } }`을 내보낸다.
- * ctx = { db, csv(path), records, units, unitByKey, common, out, warn }. common이 먼저 돌고 ctx.common에 공용 데이터를 둔다.
+ * ctx = { db, csv(path), records, units, unitByKey, common, made, out, warn }. common이 먼저 돌고 ctx.common에 공용 데이터를 둔다.
+ * ctx.made = 앞 모듈이 만든 파일 값(파일 이름 → 값) — 뒤 모듈(blurbs)이 다른 탭 데이터를 다시 읽지 않고 쓴다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +22,7 @@ import { openDb } from '../normalize/ensure-db.mjs';
 import { buildUnits } from '../lib/units.mjs';
 import { ROOT, inputsFingerprint, loadRecords, readCsv, writeJson } from './lib.mjs';
 
-const MODULES = ['common', 'order', 'links', 'threads', 'persons', 'chrono', 'world', 'synopsis'];
+const MODULES = ['common', 'order', 'links', 'threads', 'persons', 'chrono', 'world', 'synopsis', 'blurbs'];
 export const SITE_DATA = path.join(ROOT, 'site/data');
 
 /**
@@ -41,6 +42,7 @@ export async function exportSite({ out = SITE_DATA, only = null, db = null, log 
     units: buildUnits(db.prepare('SELECT * FROM categories').all()),
     out,
     common: null,
+    made: {},
     warn: (w) => warnings.push(typeof w === 'string' ? { where: '', msg: w } : w),
   };
   ctx.unitByKey = new Map(ctx.units.map((u) => [u.key, u]));
@@ -57,6 +59,7 @@ export async function exportSite({ out = SITE_DATA, only = null, db = null, log 
         const count = Array.isArray(value) ? value.length
           : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).map(([k, v]) => [k, Array.isArray(v) ? v.length : 1])) : 1;
         counts[file] = { count, module: name };
+        ctx.made[file] = value;
         if (write) files[file] = writeJson(path.join(out, file), value);
       }
       log(`${name}: ${Object.keys(result?.files ?? {}).length}파일 ${Date.now() - t0}ms${write ? '' : ' (쓰지 않음)'}`);

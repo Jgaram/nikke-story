@@ -463,6 +463,7 @@ tools/site/
   export/common.mjs     공용 데이터(아래) — 늘 먼저 돈다. 결과를 ctx.common에 둔다
   export/<name>.mjs     탭별(order · links · threads · chrono · persons · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
   export/synopsis.mjs   공개 개요(W8) → synopsis.json — 확정 · 지문이 맞는 annotations/synopsis/만(docs/annotations.md "공개 개요"). 리더가 쓴다
+  export/blurbs.mjs     팬용 문장(W14) → blurbs.json — 확정 · 고치지 않음 · 낡지 않은 annotations/blurbs/ 칸만(docs/annotations.md "팬용 문장"). 판정 지문은 ctx.made(이번 내보내기의 order · chrono · units)로 잰다. 리더 · 연대기가 쓴다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
   index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 단추) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
@@ -590,6 +591,11 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 씬 목록의 씬 제목 아래 한 줄 · 씬 칸 제목 아래 한 줄, (감상 순서 분류 카드는 리더로 합쳐 한 줄 소개 칸이 없어졌다 — 리더 줄거리 칸이 대신한다). 여기까지 읽음 뒤 스토리는 리더에서 접어 가리고(스포일러 보기) 카드에는 안 그린다. 개요가 없으면 칸이 없다.
 상단 검색에도 넣는다(W10) — "줄거리" 묶음(한 줄 소개 · 줄거리 · 씬 한 줄 글, 처음 검색할 때 받는다). 흔한 이름이면 수백 편이 맞으므로 다른 결과 뒤에 읽는 순서로 10건까지, 결과는 스토리 제목 + 맞은 곳 앞뒤 글이고 여기까지 읽음 뒤 스토리는 글 없이 "스포일러"만(`site/lib/search.js`).
 481단위 전부 확정(W10). 스포일러 경고는 tick 기준으로 다시 재도 읽는 순서 기준과 같다(출시 tick이 읽는 순서와 거꾸로 가는 곳 0) — 리더 · 카드 · 검색이 tick으로 가리는 것과 검사가 맞물린다.
+
+**팬용 문장(W14c, 2026-10-10)** — `blurbs.json`(`[{ key, why?{text, later?, gate?}, when?{…} }]`, 읽는 순서) — 판정 기록 대신 화면에 뜨는 한두 문장(docs/annotations.md "팬용 문장").
+리더 분류 칸 **이유**는 `why`가 있으면 그것(줄이지 않는다), 연대기 카드 **추정한 이유**는 `when`이 있으면 좁힘이 여럿이어도 한 덩어리(굵은 자리들 · 문장 하나 · 근거 링크 모아서).
+`later`는 여기까지 읽음이 `gate`를 지났을 때만(전부 보기면 늘) text 뒤에 붙는다(`fmt.blurbText(b, seen)`). 칸이 없거나 낡았으면 지금처럼 거른 판정 문장(`fmt.reasonText` · 좁힘마다 `whyText`).
+스포일러: 거른 판정 문장은 최종 등급의 것이라, 뒤 필수 스토리로 오른 스토리(`from`이 뒤)는 그 스토리를 안 봤으면 이유를 스포일러 접이에 넣는다. 연대기 카드의 근거 링크는 여기까지 읽음 뒤 스토리(기록 · 씬의 스토리, 떡밥은 처음 나온 스토리)의 것을 숨긴다.
 
 **탭 순서**(사용자, 2026-10-10): 스토리를 보는 탭(감상 순서 · 연결 · 떡밥 · 연대기) 다음에 찾아보는 탭(인물 · 세계). 순서는 `state.js` `TABS` · `format.js` `TAB` 키 순서.
 

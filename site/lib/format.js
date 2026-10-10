@@ -30,6 +30,7 @@
  *   episodeIcon(unit)              호감도 스토리의 초상 아이콘(감상 순서 줄 · 리더 머리)
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
+ *   blurbText(b, seen)              팬용 문장(blurbs.json 칸 { text, later?, gate? }) — text, gate를 봤으면(seen(gate)) 뒤에 later까지. 다듬어 쓴 문장이라 prose를 거치지 않는다
  *   num(n) · pct(x) · date(s)
  */
 
@@ -587,6 +588,10 @@ export function reasonText(text) {
     // 감정 기준(X3g) 판정의 머리 '감정 — ' · 카드 절(3a · 4a) · 결정적 순간 단계(①–④)도 판정 과정 말이다 — 등급에 넣되 따로 표시하지 않는다(사용자)
     .replace(/^감정 — /, '').replace(/(?<![A-Za-z0-9])[34]a(?::\s*|\s(?=—))/g, '').replace(/\s?\((?:[①-⑧](?:\s*·\s*)?)+\)/g, '');
   return dropClauses(s, JUDGE_WORD);
+}
+export function blurbText(b, seen) {
+  if (!b?.text) return '';
+  return b.later && b.gate && seen(b.gate) ? `${b.text} ${b.later}` : b.text;
 }
 /** 문장 · ' — ' 마디(괄호 밖) 가운데 bad에 걸린 마디를 뺀다 — 이미 prose를 거친 문장에. 한글 6자 못 되게 남은 문장도 뺀다 */
 export function dropClauses(s, bad) {

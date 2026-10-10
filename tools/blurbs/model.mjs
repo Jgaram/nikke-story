@@ -72,12 +72,15 @@ export const shownNarrow = (n) => Array.isArray(n?.at) && n.at.length > 0 && n.c
  */
 export function loadSources(dir = SITE_DATA) {
   const read = (f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-  const order = read('order.json');
-  const chrono = read('chrono.json');
-  const units = new Map(read('units.json').map((u) => [u.key, u]));
-  const why = new Map(arr(order.units).map((u) => [u.key, u]));
+  return sourcesFrom({ order: read('order.json'), chrono: read('chrono.json'), units: read('units.json') });
+}
+
+/** 원본 — 내보내기 중인 값(order.json · chrono.json · units.json 내용)에서. 내보내기는 파일을 다시 읽지 않고 이것을 부른다 */
+export function sourcesFrom({ order, chrono, units: unitList }) {
+  const units = new Map(arr(unitList).map((u) => [u.key, u]));
+  const why = new Map(arr(order?.units).map((u) => [u.key, u]));
   const when = new Map();
-  for (const n of arr(chrono.narrows)) if (shownNarrow(n)) (when.get(n.unit) ?? when.set(n.unit, []).get(n.unit)).push(n);
+  for (const n of arr(chrono?.narrows)) if (shownNarrow(n)) (when.get(n.unit) ?? when.set(n.unit, []).get(n.unit)).push(n);
   return { why, when, units, chrono, order };
 }
 

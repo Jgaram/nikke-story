@@ -5,13 +5,17 @@
  *
  * 원문 겹침 · 스포일러는 공개 개요와 같은 함수(tests/synopsis.test.mjs)라 여기서는 실제 파일의 칸 · 지문만 본다.
  * 실제 파일의 원문 겹침(20자 경고) · 스포일러 경고는 `node tools/blurbs.mjs check`가 본다.
+ * 내보내기(W14c): 확정 · 고치지 않음 · 낡지 않은 칸만 blurbs.json에, 커밋된 site/data/blurbs.json의 빈 문장 · 길이 · 판정 말 · 인용 · gate, 화면 fmt.blurbText.
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
+import { run as exportBlurbs } from '../tools/site/export/blurbs.mjs';
+import { quotesIn } from '../tools/site/lib.mjs';
 import {
-  BLURB_DIR, LIMITS, STANDALONE_TEXT, blurbPath, checkBlurb, checkEntry, contentHash, laterNames, loadBlurbs, loadSources, sentenceCount, shownTexts, srcHash, stateOf,
+  JUDGE_WORDS, SITE_DATA, shownNarrow, BLURB_DIR, LIMITS, STANDALONE_TEXT, blurbPath, checkBlurb, checkEntry, contentHash, laterNames, loadBlurbs, loadSources, sentenceCount, shownTexts, srcHash, stateOf,
 } from '../tools/blurbs/model.mjs';
 
 const JUDGED = { key: 'sub:세르반_03', grade: '보강', from: 'ch44', reason: '척추 ch44에서 … (F349)' };
@@ -111,4 +115,75 @@ test('실제 파일 — 깨진 파일 · 오류 없음, 확정은 지문이 맞�
     const r = checkBlurb(b, sources);
     assert.deepEqual(r.errors, [], `${b.unit}: ${r.errors.join(' / ')}`);
   }
+});
+
+test('내보내기 — 확정 · 고치지 않음 · 낡지 않은 칸만, later는 gate와 함께, 읽는 순서대로', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'nikke-blurbs-'));
+  try {
+    const whenSrc = srcHash('when', NARROWS);
+    const later = { later: 'CH.44에서 버닝엄이 아들의 일로 지휘관을 믿는 까닭이 이 이야기다.', gate: 'ch44' };
+    const write = (b) => fs.writeFileSync(blurbPath(b.unit, dir), JSON.stringify(b));
+    write({ unit: 'sub:세르반_03', why: confirm({ ...entry(GOOD), ...later }) });
+    write({ unit: 'char:171', when: { ...confirm(entry('버닝엄의 부관 파피용이 방주 중앙 정부에서 율하를 놀리는 모습으로 때를 가늠한다.', whenSrc)), text: '고쳤다 — 버닝엄의 부관 파피용이 방주 중앙 정부에서 율하를 놀린다.' } }); // 확정 뒤 고침
+    write({ unit: 'char:200', why: confirm(entry(GOOD, 'oldsrc')) }); // 화면에 그 칸이 없다(원본 없음 — 낡음)
+    fs.writeFileSync(path.join(dir, '_notes.json'), '{}');
+    const warnings = [];
+    const unitList = [...UNITS.values(), { key: 'char:171', kind: 'episode', title: '율하', order: 150 }];
+    const ctx = {
+      blurbDir: dir,
+      warn: (w) => warnings.push(w),
+      common: { units: unitList },
+      made: { 'order.json': { units: [JUDGED] }, 'chrono.json': { narrows: NARROWS }, 'units.json': unitList },
+    };
+    const out = (await exportBlurbs(ctx)).files['blurbs.json'];
+    assert.deepEqual(out, [{ key: 'sub:세르반_03', why: { text: GOOD, ...later } }]);
+    assert.ok(warnings.some((w) => /확정한 뒤 고친 칸 1개/.test(w.msg)));
+    assert.ok(warnings.some((w) => /낡은\) 칸 1개/.test(w.msg)));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('내보낸 blurbs.json — 빈 문장 · 길이 · 판정 말 · 괄호 · 인용 · gate가 뒤 스토리 · 화면에 그 칸이 있다', () => {
+  const file = path.join(SITE_DATA, 'blurbs.json');
+  if (!fs.existsSync(file)) return;
+  const list = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const sources = loadSources();
+  const chars = (t) => [...t].length;
+  let prev = -Infinity;
+  for (const b of list) {
+    const me = sources.units.get(b.key);
+    assert.ok(me, `${b.key}: 단위가 아니다`);
+    assert.ok(me.order >= prev, `${b.key}: 읽는 순서대로`);
+    prev = me.order;
+    assert.deepEqual(Object.keys(b).filter((k) => k !== 'key' && !['why', 'when'].includes(k)), [], `${b.key}: 모르는 칸`);
+    assert.ok(b.why || b.when, `${b.key}: 빈 항목`);
+    for (const part of ['why', 'when']) {
+      const e = b[part];
+      if (!e) continue;
+      const where = `${b.key} ${part}`;
+      assert.ok(sources[part].has(b.key), `${where}: 화면에 이 칸이 없다`);
+      assert.deepEqual(Object.keys(e).filter((k) => !['text', 'later', 'gate'].includes(k)), [], `${where}: 내보내는 칸은 text · later · gate만`);
+      assert.ok(typeof e.text === 'string' && e.text.trim() === e.text && e.text, `${where}: 빈 문장 · 앞뒤 공백`);
+      for (const [k, t, max] of [['text', e.text, LIMITS.max], ['later', e.later, LIMITS.laterMax]]) {
+        if (t == null) continue;
+        assert.ok(t.trim() && chars(t) <= max, `${where} ${k}: ${chars(t)}자 — ${max}자 이하`);
+        assert.equal((t.match(JUDGE_WORDS) ?? []).length, 0, `${where} ${k}: 판정 말 — ${t.match(JUDGE_WORDS)}`);
+        assert.doesNotMatch(t, /\[[^\]]*\]/, `${where} ${k}: 기록 표기 괄호`);
+        assert.doesNotMatch(t, /(?<![A-Za-z0-9])(?:[A-Z](?:-[a-z])?\d{2,}|J\d+|ch\d{2}|char:\d+|sub:|relic:|event_)/, `${where} ${k}: ID · 단위 키`);
+        for (const q of quotesIn(t)) assert.ok(chars(q.inner) <= LIMITS.quote, `${where} ${k}: 따옴표 ${chars(q.inner)}자 — ${LIMITS.quote}자 이하`);
+      }
+      assert.equal(e.later == null, e.gate == null, `${where}: later와 gate는 함께`);
+      if (e.gate) assert.ok(sources.units.get(e.gate)?.order > me.order, `${where}: gate가 뒤 스토리가 아니다 — ${e.gate}`);
+    }
+  }
+});
+
+test('화면 fmt.blurbText — gate를 봤을 때만 later를 붙인다', async () => {
+  const fmt = await import('../site/lib/format.js');
+  const b = { text: '앞 내용.', later: '뒤 이유.', gate: 'ch44' };
+  assert.equal(fmt.blurbText(b, () => false), '앞 내용.');
+  assert.equal(fmt.blurbText(b, (k) => k === 'ch44'), '앞 내용. 뒤 이유.');
+  assert.equal(fmt.blurbText({ text: '앞 내용.' }, () => true), '앞 내용.');
+  assert.equal(fmt.blurbText(null, () => true), '');
 });

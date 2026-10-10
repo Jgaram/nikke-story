@@ -3,6 +3,7 @@
  * 스토리를 작중에서 일어난 순서로 늘어놓는다. 작중 때를 모르는 스토리는 억지로 끼우지 않고 아래에 따로 둔다.
  *
  * 쓰는 JSON
+ *   blurbs.json(팬용 문장 — 카드의 추정한 이유, 못 받으면 판정 문장)
  *   chrono.json(이 탭 — tools/site/export/chrono.mjs): points[57](작중 축의 점 — 시대 기준점 8 + 메인 챕터 49, pos = 2i+1) · units[481](작중 자리 class · lo · hi · via · records · relations · narrow ·
  *     drift · drift_gap · seq · slot · parallel) · pieces[109](회상 장면 · 다른 때 장면) · narrows[366](좁힘 근거 — at · basis · reason · confidence)
  *   공용(idx): units.json(제목 · 종류 · 출시 시점 tick)  ticks.json(출시 시점 라벨)  records(카드의 장면 글 — 없으면 받은 뒤 카드를 다시 그린다)
@@ -29,6 +30,8 @@
  *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨기고 "스포일러로 가린 N — 전부 보기".
  *     모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지). 머리에 지금 보이는 편 수 · 목록이면 "읽은 자리로"(여기까지 읽음 선으로).
  *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래 카드: 작중 순 · 장면(시점 기록 문장 링크) · 회상 장면 · 추정한 이유(추정인 좁힘만) · 출시(어긋난 것만).
+ *     추정한 이유 = blurbs.json 팬용 문장(gate를 봤으면 later까지 — 좁힘이 여럿이어도 한 덩어리), 없거나 낡았으면 좁힘마다 거른 판정 문장(whyText).
+ *     근거 링크는 여기까지 읽음 뒤 스토리(기록 · 씬의 스토리, 떡밥은 처음 나온 스토리)의 것을 숨긴다.
  *     정한 방법 · 확신도 · 출시 날짜 · 기록 ID는 싣지 않는다. 같은 줄을 다시 누르면 닫는다.
  *   자유 문장(추정 이유 · 회상 장면 글)은 cprose = 시대 기준점 ID → 이름(앞손질) + fmt.prose + 모습 코드(rapi_red) · 씬 줄임(45_03) 걷기(뒷손질 — 조사가 붙어 못 걷으면 그 마디를 뺀다).
  */
@@ -95,6 +98,8 @@ export async function mount(root, ctx) {
   const { state, data, fmt, ui, idx } = ctx;
   const { el } = ui;
   const chrono = await data.load('chrono');
+  // 팬용 문장(W14 — 확정되고 낡지 않은 것만) — 없으면 거른 판정 문장(whyText)
+  const blurbs = new Map((await data.load('blurbs').catch(() => [])).map((x) => [x.key, x]));
 
   // ══ 모델 ══════════════════════════════════════════════════════════════
   const points = chrono.points;
@@ -262,6 +267,13 @@ export async function mount(root, ctx) {
   const pieceTag = (p) => LABELS.pieceTag[p.kind] ?? LABELS.pieceTag.other;
   /** 기록 링크 — 글자는 기록 문장(줄임). ID는 화면에 내지 않는다(W13a) */
   const recLink = (id, n = 60) => { const r = idx.records?.get(id); return ui.link(`record:${id}`, r ? clip(fmt.recordText(r), n) || fmt.TERM.piece : fmt.RECORD_KIND.S?.label ?? fmt.TERM.piece); };
+  /** 근거가 든 스토리 — 기록 · 씬은 그 스토리, 떡밥은 처음 나온 스토리. 모르면 null */
+  const basisUnit = (b) => {
+    if (/^J\d+$/.test(b)) return idx.threads.get(b)?.first_unit ?? null;
+    if (/^[A-Z](-[a-z])?\d+$/.test(b)) return idx.records?.get(b)?.unit ?? null;
+    const base = b.split('#')[0];
+    return idx.scenes.get([base, base.replace(/^ep:/, ''), `ep:${base}`].find((x) => idx.scenes.has(x)))?.unit ?? null;
+  };
   /** 근거 — 기록 · 떡밥 · 씬#줄 → 링크(글자는 기록 문장 · 떡밥 제목 · 장면 이름) */
   const basisLink = (b) => {
     if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, idx.threads.get(b)?.title ?? fmt.TERM.thread);
@@ -579,14 +591,24 @@ export async function mount(root, ctx) {
         el('span', { class: 'cr-pwhen' }, p.slot != null ? spanText(p) : relText(p.relations) || LABELS.unknown), ' ',
         ui.link(`record:${p.id}`, clip(cprose(p.text), 80) || pieceTag(p)))))
       : null;
-    // 추정한 이유 — 추정으로 좁힌 것만(확실 · 단서 없음은 이유를 달지 않는다)
-    const narrows = c.narrows.filter((n) => n.at?.length && n.confidence !== '확실').map((n) => {
-      const basis = (n.basis ?? []).map(basisLink).filter(Boolean);
-      return el('div', { class: 'cr-narrow' },
-        el('b', {}, atText(n.at)),
-        whyText(n.reason) ? el('p', { class: 'cr-reason' }, whyText(n.reason)) : null,
-        basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null);
-    });
+    // 추정한 이유 — 추정으로 좁힌 것만(확실 · 단서 없음은 이유를 달지 않는다). 근거 링크는 여기까지 읽음 뒤 스토리의 것을 숨긴다(W14c)
+    const rd = state.reading();
+    const basisOf = (n) => (n.basis ?? []).filter((b) => { const k = basisUnit(b); return !k || rd.seen(k); });
+    const shownNarrows = c.narrows.filter((n) => n.at?.length && n.confidence !== '확실');
+    const blurb = blurbs.get(key)?.when;
+    // 팬용 문장이 있으면 좁힘이 여럿이어도 한 덩어리(자리들 · 문장 하나 · 근거 모아서), 없으면 좁힘마다 거른 판정 문장
+    const narrows = blurb && shownNarrows.length
+      ? [el('div', { class: 'cr-narrow' },
+        el('b', {}, [...new Set(shownNarrows.map((n) => atText(n.at)))].join(' · ')),
+        el('p', { class: 'cr-reason' }, fmt.blurbText(blurb, rd.seen)),
+        ((basis) => (basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null))([...new Set(shownNarrows.flatMap(basisOf))].map(basisLink).filter(Boolean)))]
+      : shownNarrows.map((n) => {
+        const basis = basisOf(n).map(basisLink).filter(Boolean);
+        return el('div', { class: 'cr-narrow' },
+          el('b', {}, atText(n.at)),
+          whyText(n.reason) ? el('p', { class: 'cr-reason' }, whyText(n.reason)) : null,
+          basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null);
+      });
     const drift = DRIFT_STRONG.has(c.drift) ? LABELS.driftLong[c.drift](mainChOf(c), c.drift_gap) : null;
     const pieceHead = shownPieces.every((p) => p.kind === '회상') ? LABELS.legend.piece[0] : fmt.TERM.piece;
     const close = el('button', { type: 'button', class: 'btn cr-card-close', 'aria-label': LABELS.card.close, onClick: () => state.set({ sel: '' }) }, LABELS.card.close);
