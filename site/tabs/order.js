@@ -4,7 +4,7 @@
  *   등급 거르개(기본 필수 · 추천)에 든 메인 밖 스토리를 그 사이사이 제자리(읽는 자리 units.json order)에 끼워 넣은 감상 순서.
  *
  * 쓰는 JSON
- *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](본편 자리) · leads[20](주역 명단) · counts
+ *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](본편 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
  *   order-detail.json(분류 카드를 처음 열 때 받는다): units{키 → { history, basis_text, reviews }} · notes[]
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
@@ -14,7 +14,6 @@
  *   k      종류 거르개(쉼표 목록: event · episode · sub · relic · side · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다
  *   find   제목 · 키 · 이유 안 낱말 검색
  *   rows   지도의 행: grade(등급별, 기본) | kind(종류별)
- *   leads  1이면 주역 명단을 펼친다
  *
  * 그리는 규칙
  *   그 시점의 등급 gradeAt(u, T) — tools/views/importance.mjs와 같다: T가 없으면(전부 보기) 최종 등급, T < 출시 시점이면 아직 없음(가림),
@@ -53,9 +52,6 @@ const LABELS = {
   afterCut: '아직 안 읽음', axisGo: '누르면 여기까지 읽은 것으로 둔다',
   emptyEarly: (at, next) => `${at}까지는 메인 밖 스토리가 아직 없다${next ? ` — ${next}부터 나온다` : ''}.`, goNext: (at) => `${at}까지 읽음으로`, emptyFilter: '거르개에 맞는 스토리가 없다.',
   clearFilter: '거르개 풀기', outScope: '범위 밖',
-  leads: '주역', leadsHelp: '스토리의 주인 · 카운터스 · 지휘관 — 주역마다 첫 이야기(정체 · 동기의 원점이 처음, 가장 온전히 나오는 메인 밖 스토리) 하나가 필수다',
-  leadCols: { person: '인물', from: '주역이 되는 시점', origin: '첫 이야기', arcs: '범위', basis: '메모', conf: '확신' },
-  inMain: '메인 안', notYet: '아직', leadsEmpty: '여기까지 읽음 안에 주역이 되는 인물이 없다',
   card: '분류', cardClose: '닫기',
   rows2: {
     grade: '등급', why: '관련 메모', reason: '이유', judg: '분류', threads: '떡밥', lead: '주역', origins: '첫 이야기', endings: '결말', history: '분류가 바뀐 기록',
@@ -226,26 +222,6 @@ export async function mount(root, ctx) {
   mapView.append(ui.el('div', { class: 'order-mapbox' }, laneCol, mapScroll));
   root.append(mapView);
 
-  // ── 주역 명단(접이식) ──
-  const leadsTbl = ui.table({
-    rowKey: 'id', pageSize: 0, onRow: (l) => state.set({ sel: `person:${l.person}` }),
-    columns: [
-      { key: 'person', label: LABELS.leadCols.person, render: (l) => ui.link(`person:${l.person}`, fmt.targetName(l.person)), sort: (a, b) => fmt.targetName(a.person).localeCompare(fmt.targetName(b.person), 'ko') },
-      { key: 'from_tick', label: LABELS.leadCols.from, num: true, render: (l) => [ui.link(`unit:${l.from}`, spineLabel(l.from)), l.from_tick != null ? ui.el('span', { class: 'muted' }, ` (${fmt.tickShort(l.from_tick)})`) : null] },
-      { key: 'origin', label: LABELS.leadCols.origin, sortable: false, render: (l) => (l.origin === '메인' ? ui.el('span', { class: 'muted' }, LABELS.inMain) : l.origin ? ui.link(`unit:${l.origin}`, fmt.unitTitle(l.origin)) : ui.el('span', { class: 'muted' }, LABELS.notYet)) },
-      { key: 'arcs', label: LABELS.leadCols.arcs, sortable: false, render: (l) => (l.arcs ?? []).map((a) => a.split('-').map(spineLabel).join('–')).join(' · ') },
-      { key: 'records', label: LABELS.leadCols.basis, sortable: false, render: (l) => ui.el('span', { class: 'order-ids' }, (l.records ?? []).map((r, i) => [i ? ' ' : null, recId(r)])) },
-      { key: 'confidence', label: LABELS.leadCols.conf, render: (l) => ui.chip('confidence', l.confidence) },
-    ],
-    empty: LABELS.leadsEmpty,
-  });
-  const leadsHidden = ui.el('p', { class: 'muted order-leads-note' });
-  const leadsHelp = ui.el('button', { type: 'button', class: 'order-info', 'aria-label': LABELS.leadsHelp }, 'i');
-  ui.tooltip(leadsHelp, LABELS.leadsHelp);
-  const leadsBox = ui.details([`${LABELS.leads} ${order.leads.length} `, leadsHelp], [leadsHidden, leadsTbl.el], { open: state.param('order', 'leads') === '1', class: 'order-leads' });
-  leadsBox.addEventListener('toggle', () => state.setParam('order', 'leads', leadsBox.open ? '1' : null));
-  root.append(leadsBox);
-
   // ── 분류 카드(선택한 스토리) ──
   const card = ui.el('section', { class: 'order-card panel', 'aria-label': LABELS.card });
   card.hidden = true;
@@ -301,11 +277,6 @@ export async function mount(root, ctx) {
         emptyBox.append(ui.notice(LABELS.emptyEarly(fmt.tickShort(T), at)), at ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: first }) }, LABELS.goNext(at)) : null, ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, TERM.showAll));
       } else emptyBox.append(ui.notice(LABELS.emptyFilter), ui.el('button', { type: 'button', class: 'btn', onClick: clearFilters }, LABELS.clearFilter));
     }
-    // 주역 명단
-    const leadRows = order.leads.filter((l) => state.visible(l.from_tick, T)).sort((a, b) => (a.from_tick ?? 0) - (b.from_tick ?? 0));
-    leadsTbl.update(leadRows);
-    leadsHidden.textContent = leadRows.length < order.leads.length ? fmt.hiddenLabel(order.leads.length - leadRows.length) : '';
-    leadsHidden.hidden = !leadsHidden.textContent;
     // 모드 · 지도
     modeSeg.set(mode);
     rowsSeg.set(s.p.rows ?? 'grade');
