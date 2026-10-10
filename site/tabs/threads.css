@@ -1,23 +1,11 @@
-/* 탭 threads 스타일(W4). 클래스는 .tab-threads 아래에만 둔다(공용 style.css를 고치지 않는다). 색은 공용 토큰 + 아래 --thr-* 토큰(라이트 · 다크). */
+/* 탭 threads 스타일(W4). 클래스는 .tab-threads 아래에만 둔다(공용 style.css를 고치지 않는다). 색은 공용 토큰 + 아래 --thr-* 토큰. */
 
-/* 떡밥 중요도: 보라 한 색의 순서 램프 — 핵심이 배경과 가장 대비가 크다(라이트는 진하게, 다크는 밝게) */
+/* 떡밥 중요도: 보라 한 색의 순서 램프 — 핵심이 배경과 가장 대비가 크다(가장 진하게) */
 :root {
   --thr-core: #3d2f9b;
   --thr-support: #7468d0;
-  --thr-side: #a49ae0;
+  --thr-side: #9387d6;
   --thr-glyph: #ffffff;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --thr-core: #c4bcf8;
-    --thr-support: #8c82e2;
-    --thr-side: #5d52a6;
-  }
-}
-:root[data-theme="dark"] {
-  --thr-core: #c4bcf8;
-  --thr-support: #8c82e2;
-  --thr-side: #5d52a6;
 }
 
 /* ── 틀 ── */

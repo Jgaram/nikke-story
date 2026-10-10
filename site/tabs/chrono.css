@@ -1,20 +1,12 @@
-/* 탭 chrono(연대기) 스타일 — 클래스는 .tab-chrono 아래에만 둔다(공용 style.css를 고치지 않는다). 색은 토큰만, 새 토큰(출시순과 비교)은 라이트 · 다크 둘 다 정의. */
+/* 탭 chrono(연대기) 스타일 — 클래스는 .tab-chrono 아래에만 둔다(공용 style.css를 고치지 않는다). 색은 토큰만, 새 토큰(출시순과 비교)은 아래에 정의. */
 .tab-chrono {
-  --cr-past: #8a5a1c;      /* 과거 이야기 */
-  --cr-prequel: #6b4bb5;   /* 앞선 이야기 */
-  --cr-ahead: #b4233a;     /* 나중 이야기(앞질러 간 이야기) */
-  --cr-same: #1f7a4d;      /* 같은 때 */
-  --cr-overlap: #898781;   /* 걸침 */
+  --cr-past: #7c5018;      /* 과거 이야기 */
+  --cr-prequel: #6145ab;   /* 앞선 이야기 */
+  --cr-ahead: #a51f35;     /* 나중 이야기(앞질러 간 이야기) */
+  --cr-same: #196841;      /* 같은 때 */
+  --cr-overlap: #7b7973;   /* 걸침 */
   --cg-stripe: color-mix(in srgb, var(--line) 38%, transparent);
   --cr-sticky: calc(var(--topbar-h) + var(--tabs-h, 44px));
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tab-chrono {
-    --cr-past: #d1a15f; --cr-prequel: #a894e8; --cr-ahead: #ec7a8a; --cr-same: #4fc08a; --cr-overlap: #898781;
-  }
-}
-:root[data-theme="dark"] .tab-chrono {
-  --cr-past: #d1a15f; --cr-prequel: #a894e8; --cr-ahead: #ec7a8a; --cr-same: #4fc08a; --cr-overlap: #898781;
 }
 .tab-chrono [hidden] { display: none !important; }
 

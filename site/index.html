@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NIKKE 스토리 지도</title>
   <meta name="description" content="NIKKE 스토리의 감상 순서 · 연결 · 떡밥 · 인물 · 연대기를 한눈에">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27%232a78d6%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%275%27 fill=%27%23fcfcfb%27/%3E%3C/svg%3E">
-  <script>
-    // 테마를 그리기 전에 적용한다(깜빡임 방지). 저장값이 없으면 OS 설정.
-    try { var t = localStorage.getItem('nikke-story.theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
   <!-- 한글 웹 글꼴(W13a) — Pretendard 고정 판, 쓰는 글자 묶음만 받는다. d3와 같은 CDN 예외(docs/views.md "스택") -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -38,7 +34,6 @@
       <kbd class="search-key" aria-hidden="true">/</kbd>
       <div id="search-results" class="search-results" hidden></div>
     </div>
-    <button id="theme-btn" type="button" class="btn theme-btn" aria-label="테마 바꾸기"></button>
   </header>
   <nav id="tabs" class="tabs" role="tablist" aria-label="탭"></nav>
   <p id="d3-notice" class="notice notice-warn banner" hidden>그래프를 불러오지 못했다 — 새로고침하면 될 수 있다</p>

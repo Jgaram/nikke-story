@@ -17,7 +17,7 @@
  *   toggle({ label, checked, onChange, id })    스위치(role=switch)
  *   segmented({ options: [{ value, label, title? }], value, onChange, label }) → { el, set(value) }
  *   orgMarks(orgs, { size, bare })              소속 마크 칩(fmt.orgsAt 결과) — 어두운 칩에 흰 마크 + 이름(bare면 마크만, 이름은 툴팁) · 전 소속(past)은 점선 · 흐리게
- *   icon(name, attrs?)                          인라인 SVG 아이콘(search · close · sun · moon · auto · arrow · chevron) → span.icon
+ *   icon(name, attrs?)                          인라인 SVG 아이콘(search · close · arrow · chevron) → span.icon
  */
 import * as fmt from './format.js';
 
@@ -154,9 +154,6 @@ export function segmented({ options, value, onChange, label } = {}) {
 const ICONS = {
   search: '<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
-  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/>',
-  moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/>',
-  auto: '<circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   chevron: '<path d="m9 6 6 6-6 6"/>',
 };

@@ -403,7 +403,7 @@
   같은 인물(정체 연결)의 다른 이름 가운데 기록도 게임 소속도 없는 것(레비 ↔ 레비아탄, 프리시아 ↔ 프리티, 샛별 ↔ 요한)은 대표의 기록을 빌려 보이되 정체가 밝혀지는 단위(`same_as_unit`)부터 — 툴팁 끝에 '(레비아탄의 기록)'(W12c). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로.
   표시: 인물 탭 상세 머리(18px 칩 + 이름) · 목록 줄(14px 마크만, 이름은 툴팁 — 다른 판 소속은 뺀다) · 리더 패널 인물 머리(16px 칩). 칩 툴팁은 이름 · 자리(role) · 판 · 출처(게임 데이터 기준 현재 / 읽은 스토리 기준). 하단 출처 표기에 블라링크.
   **전 소속**(W12e — 사용자: 지난 소속은 지금 소속과 나눠 흐린 마크로): `fmt.orgsAt(target, t, { past: true })`가 지금 소속 뒤에 `past: true` 칩을 더한다 — t까지 드러난 `지난 소속` 기록과 마지막 기록이 `이탈`인 조직.
-  지금 소속(다른 판 포함)과 같은 조직이면 빼서 한 번만(다시 들어가면 지금 쪽). 모양은 투명 바탕 · 점선 테두리 · 흐린 글자, 흰 마크는 작은 어두운 원 위에 흐리게(`.org-mark.past` — 라이트 · 다크 둘 다).
+  지금 소속(다른 판 포함)과 같은 조직이면 빼서 한 번만(다시 들어가면 지금 쪽). 모양은 투명 바탕 · 점선 테두리 · 흐린 글자, 흰 마크는 작은 어두운 원 위에 흐리게(`.org-mark.past`).
   툴팁 '전 소속: 갓데스 — 지휘관 · 드러난 곳 ARK GUARDIAN'(이탈이면 '나간 곳', 호감도 단위는 '… 호감도'). 세 자리(상세 머리 · 목록 줄 · 리더 패널) 모두 — 목록 줄은 마크 있는 것만. export는 `affs[].unit`(근거 단위)을 싣는다.
 - **화면 문구는 간결하게**(사용자, 2026-10-09): "근거" · "왜 이렇게 읽었나" 같은 해석 설명은 추정일 때만 붙인다 — 메모 패널의 이유는 `추정`인 메모만("추정한 이유"), 근거 씬 목록은 "장면". 종류 칩으로 아는 말(호감도 제목의 "(호감도 5편)")은 되풀이하지 않는다.
   장면은 `CH.14 여행 · 18장면 「에닉」`(`fmt.ref` · 같은 스토리 안이면 `fmt.sceneName`)으로만 보인다 — 씬 ID · 스토리 키 · 줄 번호는 화면에 내지 않고, 분석 문장 속 키도 `fmt.plain`이 이름으로 바꾼다. 링크(`sel=scene:ID`) · URL에는 키가 그대로 쓰인다.
@@ -415,7 +415,7 @@
   그래도 작업 흔적(본문 속 기록 ID · 못 바꾼 키 · 회독 · 세션 이름)이 남는 문장은 내지 않는다 — 문장 단위로, 안 되면 ' — ' 마디 단위로 빼고 나머지만(전부 빠지면 '').
   기록으로 가는 링크는 ID 대신 그 기록 문장(줄임)이나 종류 이름을 글자로 쓴다. `tests/site-text.test.mjs`가 금지어(`자동 규칙` · `분석 메모` — 아직 못 고친 탭은 그 파일의 PENDING) · ID 글자 · 남은 키를 막는다.
   **색 토큰**(`style.css` 머리 주석): 강조(`--accent` · `--link`, 파랑) = 누를 수 있는 것 · 고른 것 / 등급(`--grade-must`, 주황 한 색) = `.g-band.g-must`(굵은 띠 + 연한 바탕) · `.g-support`(얇은 띠) · `.g-quiet`(회색 제목) + `.g-label`(띠 색 작은 글자) /
-  종류 색은 종류가 축인 그림에만. 머리(상단 바 + 탭 줄)는 테마와 관계없이 어두운 `--hd-*`, 카드 라운드 12px, `.ch`(굵은 CH 표기), 줄거리 38em · 줄 간격 1.8.
+  종류 색은 종류가 축인 그림에만. 머리(상단 바 + 탭 줄)는 어두운 `--hd-*`, 카드 라운드 12px, `.ch`(굵은 CH 표기), 줄거리 38em · 줄 간격 1.8.
 - **AI 정리 고지**(사용자, 2026-10-10): 줄거리 · 등급 · 떡밥 · 인물 정리는 모두 AI가 원문을 읽고 정리한 것이라 해석이 사람과 다를 수 있음을 사이트에 적는다 — 하단 첫 줄 · 여기까지 읽음 팝업 아래 한 줄 · 리더 줄거리 머리의 'AI 정리' 표지(툴팁에 전문 — 공유 링크로 들어오면 팝업이 안 뜬다). 문안은 `fmt.AI_NOTE`(W13a).
 - **공개 개요**(사용자, 2026-10-10 — 스토리별 요약을 사이트에 싣는다): 1회독 `summary` · `scenes`(작업 메모)는 내보내지 않고, 화면용으로 새로 써서 확정한 `annotations/synopsis/`만 싣는다(형식 · 쓰는 법 docs/annotations.md "공개 개요").
   대사를 옮기지 않은 우리 문장의 줄거리 소개이고, 따옴표는 이름 · 용어 · 짧은 말(20자 안쪽)만. 스포일러는 그 자리 독자가 본 것까지 — 컷오프 뒤 단위는 개요를 가린다. 세션은 SESSIONS.md W9–W10(W8은 docs/history/analysis.md).
@@ -444,8 +444,8 @@ tools/site/
   export/synopsis.mjs   공개 개요(W8) → synopsis.json — 확정 · 지문이 맞는 annotations/synopsis/만(docs/annotations.md "공개 개요"). 리더 · 감상 순서 분류 카드가 쓴다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
-  index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 단추 · 범위 · 테마) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
-  style.css             디자인 토큰(라이트/다크 둘 다 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
+  index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 단추) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
+  style.css             디자인 토큰(테마 하나 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
   app.js                부팅: data.index() → fmt.use(idx) → state.init(그 전에 첫 방문인지 본다) → 상단 바(여기까지 읽음 팝업 — 첫 방문이면 연다) · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
   lib/d3.js             export * from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm' — 브라우저 쪽 외부 의존성은 이것과 글꼴(Pretendard) 둘. 탭은 ctx.d3로 쓴다
   lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
@@ -494,7 +494,7 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
 단위 · 기록은 봤으면(위) 보이고, 안 본 것은 **지우지 않고 가린다**(리더: 흐림 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기). **감상 순서 탭의 목록은 예외** — 여기까지 읽음과 관계없이 전부 보이고 자리만 표시한다(아래 "감상 순서"). 숨긴 개수는 모든 탭이 `ui.hiddenNote(fmt.hiddenLabel(n), 전부 보기)` 한 모양("● 스포일러로 가린 N [전부 보기]")으로 보인다. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
 
 **상단 바 · 여기까지 읽음 팝업**
-- 상단 바 한 줄(`index.html` · `app.js` · `style.css`): 이름("NIKKE 스토리 지도") · **여기까지 읽음 단추**(이름 + 지금 값 `CH.07` + 날짜 + ▾ — 누르면 팝업 · 로고와 검색 사이, 사용자 2026-10-10) · 검색("검색", 단축키 `/`) · 테마(자동 · 라이트 · 다크). 960px 아래에서는 [로고 · 검색 · 테마] / [여기까지 읽음] 두 줄로 접힌다.
+- 상단 바 한 줄(`index.html` · `app.js` · `style.css`): 이름("NIKKE 스토리 지도") · **여기까지 읽음 단추**(이름 + 지금 값 `CH.07` + 날짜 + ▾ — 누르면 팝업 · 로고와 검색 사이, 사용자 2026-10-10) · 검색("검색", 단축키 `/`). 테마 단추는 없다(아래 "색"). 960px 아래에서는 [로고 · 검색] / [여기까지 읽음] 두 줄로 접힌다.
 - **범위 세그먼트는 뺐다**(사용자, 2026-10-10 — 탭마다 있는 등급 · 종류 필터와 겹친다. 필터가 더 필요하면 그 탭 안에 둔다). `state.layers`는 늘 `[1, 2, 3]`이고 URL의 `layers`는 무시한다(다음 URL 갱신 때 빠진다) — 탭의 층 검사 코드는 늘 참이 되어 남아 있다.
 - 라벨: 단추 값은 메인 챕터 자리면 `CH.20`(`fmt.tickShort`), 그 밖은 `CH.17 이후`. 길게는 `fmt.tickLabel(tick)` = `CH.20 · 2023-01-12` / `CH.17 이후 · 2022-11-10`(메인 챕터 사이 자리). 모르는 자리는 빈 말(자리 번호 `#12` · `시점 12`는 내지 않는다).
   W13a에서 화면 용어표(docs/site-cleanup.md)대로 `CH.17+` · `CH.17 다음 출시` · `CH.20과 함께 출시`를 모두 `CH.17 이후` · `CH.20`으로 맞췄다 — 전에 '이후'를 작중 시점 표기(`placeLabel`)와 헷갈린다고 '출시'로 바꾼 적이 있어(사용자, 2026-10-10), 작중 쪽 칸은 늘 '작중 순' 이름표 옆에만 나오게 두고 W13b 화면 조율 때 다시 본다.
@@ -511,8 +511,9 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
 **표기 · 색(`lib/format.js`)** — 화면에 보이는 말은 전부 여기 한 곳(레포 용어 → 화면 말은 키는 그대로, 라벨만 바꾼다). `KIND` · `KIND_ORDER` · `GRADE`(준필수(키 필수) · 추천(키 보강) · 참고 · 독립 · 필수(키 척추) · 메인) · `GRADE_ORDER` · `PRE_LEVEL` · `PRE_LABEL`(선행 칸 필수 · 권장 · 선택) · `STATE` · `RECORD_KIND` · `RECORD_ORDER` · `TARGET_TYPE` · `CONFIDENCE` · `THREAD_WEIGHT`(주요 · 보조 · 곁가지 — 떡밥 탭 밖은 `majorThread(j)` '주요 떡밥'만) · `CHRONO_CLASS`(시점 확정 · 대략 범위 · 앞뒤만 앎 · 시점 불명) · `DRIFT` · `ACT` · `LINK_TYPE` · `LINK_LEVEL`(약함 · 보통 · 강함) · `TAB`(탭 이름 · 한 줄 설명) · `TERM` · `FIRST_VISIT` · 라벨마다 정의 `*_HELP` · `help(group, key)`(툴팁) · `use(idx)` · `unitTitle(u | key)` · `tickLabel(tick, { date })` · `tickShort(tick)` · `placeLabel(place)` · `ref(scene, line)` · `linesLabel(lines)` · `evidence(ev[])` · `targetName(id)` · `recordText(r)` · `recordLabel(r)` · `stateAt(r, T)` · `gradeAt(unit, T)`(order.json 단위의 그 시점 등급 — `tools/views/importance.mjs`와 같은 계산) · `plain(text)`(분석 문장 속 레포 용어 — 척추 · 줄기 · 단위 · 판정 …을 화면 말로, 표시할 때만) · `hiddenLabel(n)` · `openInTab(tab)` · `num` · `pct`.
 
 **화면 말 바꿈(2026-10-10, 사용자)** — 척추의 화면 말 "본편" → **필수**(꼭 읽을 스토리), 그에 따라 등급 필수 → **준필수**(추천 · 참고 · 독립은 그대로)(선행 칸 필수 · 권장 · 선택은 그대로 — "선행 스토리" 머리말 뒤라 등급과 헷갈리지 않는다), 종류 elevator "엘리베이터" → **돌발**(블라링크 분류 `sudden_list` 그대로 — 지금 돌발은 엘리베이터 첫 스토리 하나). 키 · 데이터 · 판정 문서(importance.md)의 말은 그대로다(척추 · 필수 · 보강). 분석 문장 속 등급 "필수"는 `fmt.plain`이 "준필수"로(필수품 · 필수 교육 같은 낱말은 둔다), "척추"는 "필수 스토리"로 바꿔 보인다.
-색 값은 `style.css`의 `:root` 토큰 한 곳에만 있다(라이트 · 다크 각각, dataviz 스킬의 검증 팔레트): 종류 8색은 범주(`--kind-main` 파랑 · `--kind-event` 주황 · `--kind-episode` 청록 · `--kind-sub` 노랑 · `--kind-relic` 자홍 · `--kind-side` 초록 · `--kind-erelic` 보라 · `--kind-elevator` 빨강 — 고정 순서, 돌려 쓰지 않는다), 등급은 파랑 한 색의 순서 램프(`--grade-must` > `--grade-support` > `--grade-ref` > `--grade-standalone`, 척추 · 메인은 잉크 `--grade-spine` · `--grade-main`), 층은 주황 램프(`--layer-1` > `--layer-2` > `--layer-3`), 상태는 고정(`--state-open` 열림 · `--state-partial` 일부 · `--state-solved` 풀림 · `--state-reversed` 뒤집힘 · `--state-hint` 암시만 · `--state-none` 아직).
-바탕 · 잉크 · 선: `--bg` `--surface` `--surface-2` `--ink` `--ink-2` `--ink-muted` `--line` `--line-2` `--accent` `--link` `--focus`. 규칙: 종류 색과 등급 색을 한 차트에 같이 쓰지 않는다(파랑이 겹친다) · 색만으로 뜻을 전하지 않는다(칩 · 범례 · 직접 라벨) · 다크는 자동 반전이 아니라 토큰에 따로 있다 · 차트의 글자는 잉크 토큰.
+**테마는 하나**(사용자, 2026-10-10): 다크 모드 · 테마 단추를 없앴다 — 색을 정할 때마다 두 벌을 맞추고 화면 확인이 두 배가 되는 데 비해 얻는 게 적다. 대신 흰 바탕을 버리고 **회청 바탕**(후보 넷을 화면에 입혀 비교한 A2): 페이지 `--bg` #d9dfe6 < 카드 `--surface` #e7ebf0, 글자 `--ink` #151a21(대비 약 15:1 — 흰 바탕 · 검정 글자의 19:1이 눈부셨다). 바탕이 어두워진 만큼 흐린 글자 · 링크 · 등급 주황 · 탭의 옅은 색(인물 등장 램프 · 떡밥 곁가지 · 연대기 관계 글자)을 한 톤 진하게 맞췄다. 다시 다크를 넣을 일이 생기면 토큰 블록 하나만 더 쓰면 되도록 색은 계속 토큰으로만 쓴다.
+색 값은 `style.css`의 `:root` 토큰 한 곳에만 있다(탭 전용 색은 그 탭 CSS 머리 토큰, dataviz 스킬의 검증 팔레트): 종류 8색은 범주(`--kind-main` 파랑 · `--kind-event` 주황 · `--kind-episode` 청록 · `--kind-sub` 노랑 · `--kind-relic` 자홍 · `--kind-side` 초록 · `--kind-erelic` 보라 · `--kind-elevator` 빨강 — 고정 순서, 돌려 쓰지 않는다), 등급은 주황 한 색(W13a — 위 "화면 문구는 간결하게"의 색 토큰), 상태는 고정(`--state-open` 열림 · `--state-partial` 일부 · `--state-solved` 풀림 · `--state-reversed` 뒤집힘 · `--state-hint` 암시만 · `--state-none` 아직).
+바탕 · 잉크 · 선: `--bg` `--surface` `--surface-2` `--ink` `--ink-2` `--ink-muted` `--line` `--line-2` `--accent` `--link` `--focus`. 규칙: 종류 색과 등급 색을 한 차트에 같이 쓰지 않는다(파랑이 겹친다) · 색만으로 뜻을 전하지 않는다(칩 · 범례 · 직접 라벨) · 차트의 글자는 잉크 토큰 · 글자 색은 `--bg` · `--surface` · `--surface-2` 위에서 4.5:1 이상.
 
 **컴포넌트(`lib/ui.js`)** — `el(tag, attrs, ...children)` · `clear` · `chip(kind, value, label?)`(kind: kind · grade · state · record · confidence · plain) · `legend(items)` · `table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption })` → `{ el, update(rows), setSelected(key), sortBy }`(칼럼 `{ key, label, num, nowrap, render, sort, sortable, width }` — 정렬 · 페이지 · 고정 머리글 · 숫자 오른쪽) · `link(sel, label)`(→ state.set({ sel })) · `tooltip(target, content)` · `panel(title, body, { actions })` · `details(summary, body, { open })` · `empty(text, action)` · `spinner` · `notice(text, kind)` · `hiddenNote(text, onShowAll, { action })`(스포일러 · 범위 밖 안내 한 모양) · `toggle({ label, checked, onChange })` · `segmented({ options, value, onChange, label })` → `{ el, set }` · `icon(name)`. 모두 키보드 · aria 기본값 포함.
 

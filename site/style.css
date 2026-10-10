@@ -6,31 +6,32 @@
  *     필수(키 척추) · 메인 = 잉크(등급이 아니라 기준). 등급 이름은 띠 색 작은 글자(.g-label)로 남긴다 — 색만으로 가르지 않는다
  *   종류(범주 8, dataviz 스킬의 검증된 팔레트): 종류가 축인 그림(인물 등장 · 연대기)에만 — 목록 · 칩에서 종류는 회색 글자
  *   상태(고정, 아이콘 · 라벨과 함께): 미해결 warning · 일부 회수 serious · 회수 good · 뒤집힘 critical
- * 머리(상단 바 + 탭 줄)는 테마와 관계없이 어두운 게임 UI 톤(--hd-*). 글꼴은 Pretendard(CDN 고정 판 — d3와 같은 예외, index.html).
+ * 머리(상단 바 + 탭 줄)는 어두운 게임 UI 톤(--hd-*). 글꼴은 Pretendard(CDN 고정 판 — d3와 같은 예외, index.html).
  * 라벨 없는 색만으로 뜻을 전하지 않는다 — 칩은 늘 글자를 단다.
- * 글자 대비는 AA(본문 4.5:1)를 라이트 · 다크 둘 다 맞춘다 — 흐린 글자(--ink-muted)도 4.5:1 이상.
+ * 테마는 하나(사용자, 2026-10-10 — 다크 · 테마 단추 없음): 회청 바탕(A2) — 흰 바탕 · 검정 글자의 과한 대비(19:1)를 줄였다. 페이지 바탕이 가장 어둡고 카드가 한 톤 밝다.
+ * 글자 대비는 AA(본문 4.5:1) — 흐린 글자(--ink-muted) · 링크 · 등급 글자도 --bg · --surface · --surface-2 · --grade-tint 위에서 4.5:1 이상.
  * 글꼴 크기: 본문 15px · 표 14px · 보조 12.5px. 라운드: 카드 12px(--radius) · 컨트롤 8px(--radius-sm). 줄거리는 줄 길이 38em · 줄 간격 1.8.
  */
 :root {
   color-scheme: light;
-  --bg: #f9f9f7;            /* 페이지 */
-  --surface: #fcfcfb;       /* 패널 · 표 · 차트 */
-  --surface-2: #f0efec;     /* 머리글 · 호버 */
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --ink-muted: #6b6a65;     /* 보조 글자 — 모든 바탕 위에서 4.5:1 이상 */
-  --line: #e1e0d9;          /* 가는 선 */
-  --line-2: #c3c2b7;        /* 축 · 테두리 */
-  --ring: rgba(11, 11, 11, 0.10);
+  --bg: #d9dfe6;            /* 페이지 */
+  --surface: #e7ebf0;       /* 패널 · 표 · 차트 */
+  --surface-2: #ccd3dc;     /* 머리글 · 호버 */
+  --ink: #151a21;
+  --ink-2: #38404b;
+  --ink-muted: #4a535f;     /* 보조 글자 — 모든 바탕 위에서 4.5:1 이상 */
+  --line: #c2cad4;          /* 가는 선 */
+  --line-2: #9ba6b4;        /* 축 · 테두리 */
+  --ring: rgba(21, 26, 33, 0.12);
   --accent: #2a78d6;
   --focus: #2a78d6;
-  --link: #1c5cab;
-  --spoiler: #b42323;       /* 스포일러 경고 글자 */
-  --seg-on: #fcfcfb;        /* 세그먼트 선택 칸 */
+  --link: #174f94;
+  --spoiler: #9c1d1d;       /* 스포일러 경고 글자 */
+  --seg-on: #e7ebf0;        /* 세그먼트 선택 칸 */
   --mark-bg: #2f2e2b;       /* 소속 마크 칩 — 마크가 투명 바탕 흰 그림이라 어두운 바탕 */
   --mark-ink: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(23, 22, 15, 0.06), 0 0 0 1px rgba(23, 22, 15, 0.02);
-  --shadow-md: 0 10px 30px -8px rgba(23, 22, 15, 0.22), 0 2px 6px rgba(23, 22, 15, 0.06);
+  --shadow-sm: 0 1px 2px rgba(21, 26, 33, 0.08), 0 0 0 1px rgba(21, 26, 33, 0.03);
+  --shadow-md: 0 10px 30px -8px rgba(21, 26, 33, 0.28), 0 2px 6px rgba(21, 26, 33, 0.08);
 
   --kind-main: #2a78d6;
   --kind-event: #eb6834;
@@ -41,16 +42,16 @@
   --kind-erelic: #4a3aa7;
   --kind-elevator: #e34948;
 
-  --grade-must: #c2410c;    /* 준필수 · 추천 — 주황 한 색(글자로도 4.5:1) */
-  --grade-support: #c2410c;
-  --grade-tint: #fdf1ea;    /* 준필수 줄 바탕 */
-  --grade-ref: #6b6a65;     /* 참고 · 독립 — 회색 */
-  --grade-standalone: #6b6a65;
-  --grade-spine: #0b0b0b;
-  --grade-main: #0b0b0b;
-  --grade-none: #c3c2b7;
+  --grade-must: #953107;    /* 준필수 · 추천 — 주황 한 색(글자로도 4.5:1) */
+  --grade-support: #953107;
+  --grade-tint: #f0dccd;    /* 준필수 줄 바탕 */
+  --grade-ref: #4a535f;     /* 참고 · 독립 — 회색 */
+  --grade-standalone: #4a535f;
+  --grade-spine: #151a21;
+  --grade-main: #151a21;
+  --grade-none: #9ba6b4;
 
-  /* 머리(상단 바 + 탭 줄) — 테마와 관계없이 어둡게 */
+  /* 머리(상단 바 + 탭 줄) — 어둡게 */
   --hd-bg: #15171c;
   --hd-bg-2: #22252d;       /* 머리 안 입력 · 단추 */
   --hd-line: #2e323c;
@@ -63,8 +64,8 @@
   --state-solved: #0ca30c;
   --state-reversed: #d03b3b;
   --state-hint: #898781;
-  --state-none: #c3c2b7;
-  --state-known: #52514e;
+  --state-none: #9ba6b4;
+  --state-known: #38404b;
 
   --topbar-h: 56px;         /* 탭 줄이 달라붙는 위치(모바일에서는 상단 바가 스크롤되어 0) */
   --tabs-h: 44px;
@@ -76,64 +77,6 @@
   --fs-small: 12.5px;
   --font: "Pretendard Variable", Pretendard, system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, "D2Coding", monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #0d0d0d;
-    --surface: #1a1a19;
-    --surface-2: #262625;
-    --ink: #ffffff;
-    --ink-2: #c3c2b7;
-    --ink-muted: #9a9892;
-    --line: #2c2c2a;
-    --line-2: #3c3c39;
-    --ring: rgba(255, 255, 255, 0.10);
-    --accent: #3987e5;
-    --focus: #6da7ec;
-    --link: #86b6ef;
-    --spoiler: #ff8d8d;
-    --seg-on: #3a3a37;
-    --mark-bg: #3a3a37;
-    --mark-ink: #ffffff;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.02);
-    --shadow-md: 0 12px 32px -6px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
-    --kind-main: #3987e5; --kind-event: #d95926; --kind-episode: #199e70; --kind-sub: #c98500;
-    --kind-relic: #d55181; --kind-side: #008300; --kind-erelic: #9085e9; --kind-elevator: #e66767;
-    --grade-must: #fb923c; --grade-support: #fb923c; --grade-tint: #2a1d15; --grade-ref: #9a9892; --grade-standalone: #9a9892;
-    --grade-spine: #ffffff; --grade-main: #ffffff; --grade-none: #383835;
-    --hd-bg: #101115; --hd-bg-2: #1d2027; --hd-line: #2a2d35;
-    --state-open: #fab219; --state-partial: #ec835a; --state-solved: #0ca30c; --state-reversed: #d03b3b;
-    --state-hint: #898781; --state-none: #383835; --state-known: #c3c2b7;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #0d0d0d;
-  --surface: #1a1a19;
-  --surface-2: #262625;
-  --ink: #ffffff;
-  --ink-2: #c3c2b7;
-  --ink-muted: #9a9892;
-  --line: #2c2c2a;
-  --line-2: #3c3c39;
-  --ring: rgba(255, 255, 255, 0.10);
-  --accent: #3987e5;
-  --focus: #6da7ec;
-  --link: #86b6ef;
-  --spoiler: #ff8d8d;
-  --seg-on: #3a3a37;
-  --mark-bg: #3a3a37;
-  --mark-ink: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.02);
-  --shadow-md: 0 12px 32px -6px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
-  --kind-main: #3987e5; --kind-event: #d95926; --kind-episode: #199e70; --kind-sub: #c98500;
-  --kind-relic: #d55181; --kind-side: #008300; --kind-erelic: #9085e9; --kind-elevator: #e66767;
-  --grade-must: #fb923c; --grade-support: #fb923c; --grade-tint: #2a1d15; --grade-ref: #9a9892; --grade-standalone: #9a9892;
-  --grade-spine: #ffffff; --grade-main: #ffffff; --grade-none: #383835;
-  --hd-bg: #101115; --hd-bg-2: #1d2027; --hd-line: #2a2d35;
-  --state-open: #fab219; --state-partial: #ec835a; --state-solved: #0ca30c; --state-reversed: #d03b3b;
-  --state-hint: #898781; --state-none: #383835; --state-known: #c3c2b7;
 }
 
 /* ── 바탕 ── */
@@ -165,7 +108,7 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .icon svg { display: block; }
 
 /* ── 상단 바 ── */
-/* 머리(상단 바 + 탭 줄)는 어두운 게임 UI 톤 — 라이트 테마에서도 어둡다(--hd-*). 안의 컨트롤은 머리 전용 색을 쓴다 */
+/* 머리(상단 바 + 탭 줄)는 어두운 게임 UI 톤(--hd-*). 안의 컨트롤은 머리 전용 색을 쓴다 */
 .topbar {
   position: sticky; top: 0; z-index: 30; height: var(--topbar-h); max-width: 100vw;
   display: flex; align-items: center; gap: 16px; padding: 0 20px;
@@ -211,7 +154,6 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .ctl { display: flex; align-items: center; gap: 8px; font-size: 13px; min-width: 0; }
 .ctl-name { color: var(--ink-muted); font-size: var(--fs-small); white-space: nowrap; }
 .cutoff { flex: none; }
-.theme-btn { margin-left: auto; }
 .cutoff-btn {
   display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px 0 12px; font: inherit; color: var(--hd-ink); text-align: left; cursor: pointer;
   background: var(--hd-bg-2); border: 1px solid var(--hd-line); border-radius: var(--radius-sm); transition: border-color 0.15s, background 0.15s;
@@ -273,8 +215,6 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .cutoff-dlg input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
 .cutoff-dlg input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.15); }
 .cutoff-dlg input[type="range"]:focus-visible { outline-offset: 4px; }
-.btn.theme-btn { flex: none; width: 36px; height: 36px; padding: 0; display: inline-grid; place-items: center; font-size: 18px; border-color: transparent; background: transparent; color: var(--hd-ink-2); }
-.btn.theme-btn:hover { background: var(--hd-bg-2); color: var(--hd-ink); }
 
 /* ── 탭 ── */
 .tabs {
@@ -324,7 +264,7 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .org-mark img { flex: none; display: block; object-fit: contain; }
 .org-mark.no-img { padding-left: 8px; }
 .org-mark.alt { opacity: 0.72; }
-/* 전 소속(W12e) — 지금 소속 뒤에 점선 테두리 · 흐린 글자, 흰 마크는 작은 어두운 원 위에 흐리게(라이트 · 다크 둘 다 보이게) */
+/* 전 소속(W12e) — 지금 소속 뒤에 점선 테두리 · 흐린 글자, 흰 마크는 작은 어두운 원 위에 흐리게 */
 .org-mark.past { background: transparent; color: var(--ink-muted); border: 1px dashed var(--ink-muted); padding: 1px 7px 1px 2px; }
 .org-mark.past img { background: var(--mark-bg); border-radius: 50%; opacity: 0.55; }
 .org-mark.past.no-img { padding-left: 7px; }
@@ -513,12 +453,11 @@ th[aria-sort="descending"] .sort-mark::after { content: "↓"; color: var(--ink)
   .cutoff-date { display: none; }
 }
 @media (max-width: 960px) {
-  /* 상단 바가 두 줄로 접힌다 — 위: 이름 · 검색 · 테마, 아래: 여기까지 읽음. 스크롤되어 사라지고 탭 줄만 달라붙는다 */
+  /* 상단 바가 두 줄로 접힌다 — 위: 이름 · 검색, 아래: 여기까지 읽음. 스크롤되어 사라지고 탭 줄만 달라붙는다 */
   :root { --topbar-h: 0px; }
   .topbar { position: static; height: auto; flex-wrap: wrap; gap: 8px 14px; padding: 10px 16px; }
   .brand { order: 1; }
   .search { order: 2; flex: 1 1 160px; max-width: none; }
-  .theme-btn { order: 3; }
   .cutoff { order: 4; margin-left: 0; flex: 1 1 auto; }
   .cutoff-date { display: inline; }
   .layout { flex-direction: column; align-items: stretch; }
@@ -532,11 +471,10 @@ th[aria-sort="descending"] .sort-mark::after { content: "↓"; color: var(--ink)
   body.reader-open .main { padding-bottom: 72vh; }
 }
 @media (max-width: 640px) {
-  /* 위: 로고 · 검색 · 테마, 아래: 여기까지 읽음 */
+  /* 위: 로고 · 검색, 아래: 여기까지 읽음 */
   .topbar { gap: 8px 10px; padding: 10px 12px; }
   .brand-game { display: none; }
   .search { order: 2; flex: 1 1 100px; min-width: 100px; }
-  .theme-btn { order: 4; }
   .cutoff { order: 5; flex: 1 1 100%; }
   .cutoff-btn { width: 100%; }
   .cutoff-stack { flex-direction: row; align-items: baseline; gap: 10px; flex: 1 1 auto; }

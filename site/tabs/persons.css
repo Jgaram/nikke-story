@@ -1,24 +1,14 @@
-/* 탭 persons(W5) — 클래스는 .tab-persons 아래에만. 색은 style.css 토큰, 히트맵 5단계만 여기 토큰(--pm-*)을 둔다(라이트 · 다크 둘 다). */
+/* 탭 persons(W5) — 클래스는 .tab-persons 아래에만. 색은 style.css 토큰, 히트맵 5단계만 여기 토큰(--pm-*)을 둔다. */
 .tab-persons {
-  /* 파랑 한 색의 순서 램프(말한 줄 수) — 라이트: 옅음 → 진함 */
-  --pm-0: #ebeae4;      /* 스토리는 있는데 안 나온 칸 */
-  --pm-1: #cfe0f6;
-  --pm-2: #9fc3ee;
-  --pm-3: #5f9fe6;
+  /* 파랑 한 색의 순서 램프(말한 줄 수) — 옅음 → 진함. 옅은 칸은 회청 카드(--surface) 위에서 보이게 맞췄다 */
+  --pm-0: #d3d9e1;      /* 스토리는 있는데 안 나온 칸 */
+  --pm-1: #b3cbec;
+  --pm-2: #86afe6;
+  --pm-3: #5592df;
   --pm-4: #2a78d6;
   --pm-5: #0d366b;
-  --pm-name: #b3b1a7;   /* 이름만 나온 스토리 */
-  --pm-inv: #c27d00;    /* 출시순과 반대 */
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .tab-persons {
-    --pm-0: #262625; --pm-1: #1f3a5f; --pm-2: #25508a; --pm-3: #3987e5; --pm-4: #6da7ec; --pm-5: #b8d6f8;
-    --pm-name: #5d5c57; --pm-inv: #fab219;
-  }
-}
-:root[data-theme="dark"] .tab-persons {
-  --pm-0: #262625; --pm-1: #1f3a5f; --pm-2: #25508a; --pm-3: #3987e5; --pm-4: #6da7ec; --pm-5: #b8d6f8;
-  --pm-name: #5d5c57; --pm-inv: #fab219;
+  --pm-name: #9b998f;   /* 이름만 나온 스토리 */
+  --pm-inv: #a86b00;    /* 출시순과 반대 */
 }
 
 /* ── 도구줄 · 숨김 안내 ── */

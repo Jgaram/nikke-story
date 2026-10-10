@@ -1,5 +1,5 @@
 /**
- * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 단추 + 팝업 · 테마) · 탭 nav(첫 방문이면 여기까지 읽음 팝업이 뜬다) → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
+ * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 단추 + 팝업) · 탭 nav(첫 방문이면 여기까지 읽음 팝업이 뜬다) → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
  * 탭 모듈 규약 · ctx는 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)". 화면에 보이는 말은 lib/format.js의 라벨을 쓴다.
  */
 import * as state from './lib/state.js';
@@ -10,34 +10,7 @@ import * as reader from './lib/reader.js';
 import * as search from './lib/search.js';
 
 const TAB_META = fmt.TAB_ORDER.map((id) => ({ id, title: fmt.TAB[id].title, hint: fmt.TAB[id].hint }));
-const THEME_KEY = 'nikke-story.theme';
 const $ = (sel) => document.querySelector(sel);
-
-// ── 테마 ──
-const THEME_NAME = { dark: '다크', light: '라이트' };
-function applyTheme(theme) {
-  const html = document.documentElement;
-  if (theme === 'light' || theme === 'dark') html.dataset.theme = theme;
-  else delete html.dataset.theme;
-  const btn = $('#theme-btn');
-  if (btn) {
-    btn.replaceChildren(ui.icon(theme === 'dark' ? 'moon' : theme === 'light' ? 'sun' : 'auto'));
-    const name = THEME_NAME[theme] ?? '자동';
-    btn.title = `테마: ${name}`;
-    btn.setAttribute('aria-label', `테마 바꾸기 (지금 ${name})`);
-  }
-}
-function themeButton() {
-  const btn = $('#theme-btn');
-  let theme = null;
-  try { theme = localStorage.getItem(THEME_KEY); } catch { /* 없음 */ }
-  applyTheme(theme);
-  btn.addEventListener('click', () => {
-    theme = theme === 'dark' ? 'light' : theme === 'light' ? null : 'dark';
-    try { theme ? localStorage.setItem(THEME_KEY, theme) : localStorage.removeItem(THEME_KEY); } catch { /* 없음 */ }
-    applyTheme(theme);
-  });
-}
 
 // ── 여기까지 읽음(컷오프) — 상단은 지금 값을 보이는 단추 하나, 누르면 팝업(dialog). 첫 방문이면 팝업이 저절로 뜬다 ──
 // 팝업: 메인은 순서대로 보니 슬라이더 + 이전 · 다음 챕터 단추 하나로, 척추 이벤트 · 사이드는 순서 없이 볼 수 있어 따로 체크(사용자, 2026-10-10)
@@ -243,7 +216,6 @@ async function mountTab(ctx) {
 }
 
 async function boot() {
-  themeButton();
   ui.configure({ navigate: (sel) => state.set({ sel }) });
   const main = $('#main');
   main.append(ui.spinner());
