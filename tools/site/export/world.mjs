@@ -44,6 +44,7 @@ export function cleanNote(raw) {
   let t = String(raw);
   t = t.replace(/\s*\([^()]*\bR\d+\b[^()]*\)/g, '');
   t = t.replace(/\s*\([^()]*\b(?:d_[a-z0-9_]+|ep:[\w가-힣]+|event_[a-z0-9_]+|sub:\S+|fl:\S+|relic:\S+|side:\S+)\s*#\d[^()]*\)/g, '');
+  t = t.replace(/\s*\([^()]*에서 더함[^()]*\)/g, ''); // (소속 마크 1단계에서 더함, annotations/…) 같은 작업 괄호
   t = t.replace(/^R\d+ [^—]*에서 더함\s*—\s*/, '');
   t = t.replace(/\s*[—-]\s*별칭은 R\d+에서 더함\s*$/, '');
   t = t.replace(/[.\s]*R\d+ \S+에서 더함\.?\s*$/, '');

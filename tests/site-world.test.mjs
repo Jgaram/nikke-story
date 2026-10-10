@@ -29,9 +29,9 @@ test('cleanNote — 근거 괄호 · 작업 문장 · 머리 · 꼬리를 걷는
   assert.equal(cleanNote('원문 그대로 짧은 메모'), '원문 그대로 짧은 메모');
 });
 
-test('world.json — 항목 225 · 생활상 449 · 분류 합 · 흔한 항목', () => {
+test('world.json — 항목 234 · 생활상 449 · 분류 합 · 흔한 항목', () => {
   assert.ok(Array.isArray(world.entries) && Array.isArray(world.life) && Array.isArray(world.topics) && Array.isArray(world.hubs));
-  assert.equal(world.entries.length, 225);
+  assert.equal(world.entries.length, 234); // W12a 게임 스쿼드 7 · W12c org:에덴 · W12d 정의 괴도단
   assert.equal(world.life.length, 449);
   assert.equal(world.topics.reduce((s, t) => s + t.n, 0), world.life.length);
   const ids = new Set(world.entries.map((e) => e.id));
