@@ -57,7 +57,11 @@ test('탭 모듈 소스: 본문 칼럼 · 원문 경로를 쓰지 않고 화면 
   const tab = fs.readFileSync(path.join(ROOT, 'site/tabs/chrono.js'), 'utf8');
   assert.ok(!/화자/.test(tab));
   // 화면 라벨은 LABELS 한 곳(나머지는 fmt) — 거기에 레포 내부 용어를 그대로 쓰지 않는다
-  const labels = tab.slice(tab.indexOf('const LABELS = {'), tab.indexOf('const CLASS_ORDER'));
+  const start = tab.indexOf('const LABELS = {');
+  const labels = tab.slice(start, tab.indexOf('\n};', start));
   assert.ok(labels.length > 500);
   for (const w of ['공개 자리', '컷오프', '척추', '줄기', '이름표', '어긋남']) assert.ok(!labels.includes(w), `LABELS에 내부 용어 "${w}"`);
+  // 판정 용어(시점 확정 · 대략 범위 · 정한 방법 …)는 화면에 내지 않는다(W13e) — 확정 정도 라벨 · 정의를 쓰지 않는다
+  const code = tab.split('\n').filter((l) => !/^\s*(\/\*\*?|\*|\/\/)/.test(l)).join('\n'); // 주석 줄은 빼고
+  assert.ok(!/CHRONO_CLASS|help\('chrono'|DRIFT_ORDER|정한 방법|시점 단서/.test(code), '연대기 탭에 판정 용어');
 });

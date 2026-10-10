@@ -1,73 +1,93 @@
 /**
  * 탭 5 연대기(W6) — 화면 6 "작중 연대기"(docs/views.md 6절, 규칙 tools/views/chrono-order.mjs · chrono.mjs 머리말).
- * 스토리를 작중에서 일어난 순서(또는 출시 순서)로 늘어놓는다. 자리를 모르는 스토리는 억지로 끼우지 않고 따로 둔다.
+ * 스토리를 작중에서 일어난 순서로 늘어놓는다. 작중 때를 모르는 스토리는 억지로 끼우지 않고 아래에 따로 둔다.
  *
  * 쓰는 JSON
  *   chrono.json(이 탭 — tools/site/export/chrono.mjs): points[57](작중 축의 점 — 시대 기준점 8 + 메인 챕터 49, pos = 2i+1) · units[481](작중 자리 class · lo · hi · via · records · relations · narrow ·
  *     drift · drift_gap · seq · slot · parallel) · pieces[109](회상 장면 · 다른 때 장면) · narrows[366](좁힘 근거 — at · basis · reason · confidence)
- *   공용(idx): units.json(제목 · 종류 · 출시 시점 tick · 날짜 · 층)  ticks.json(출시 시점 라벨)
+ *   공용(idx): units.json(제목 · 종류 · 출시 시점 tick)  ticks.json(출시 시점 라벨)  records(카드의 장면 글 — 없으면 받은 뒤 카드를 다시 그린다)
  *   자리 번호(slot): 점 i = 2i+1, 점 사이 칸 = 2i, 첫 점 앞 = 0, 마지막 점 뒤 = 2P → 칸 115개를 같은 폭으로 그린다. lo · hi가 없으면 그쪽 끝을 모르는 범위(열린 끝).
  *
  * URL 파라미터(p.*)
  *   view   list(목록, 기본) | band(띠 그림)
- *   by     kind이면 띠 그림 줄을 종류별로 묶는다
+ *   by     kind이면 띠 그림 줄을 종류별로 묶는다(URL로만)
  *   kind   종류 필터(쉼표 — event,episode …), 없으면 전체
  *   find   제목 · 키 · 회상 장면 문장 안 낱말
- *   drift  1이면 출시순과 어긋난 것(과거 이야기 · 앞선 이야기 · 나중 이야기)만
+ *   drift  1이면 출시순과 어긋난 것(키 과거 · 앞 · 뒤)만 — 이때만 줄마다 '출시 때 메인 · 몇 챕터 어긋났나'를 보인다
  *
- * 그리는 규칙
- *   목록(작중순): 칸마다 묶는다(시대 기준점 · 메인 챕터 · 그 사이). 판별은 제자리, 범위는 앞 끝 칸(앞 끝을 모르면 뒤 끝 칸), 회상 장면은 따로 한 줄(한 스토리가 두 자리에).
- *     "여기까지 읽음" 선(자리 표시 — t의 메인 챕터로만 정한다): 컷오프 챕터 뒤 칸부터 위쪽 줄과 갈라 보인다 — 선 아래 줄은 읽은 것보다 작중으로 뒤인 이야기(앞질러 간 이야기).
- *     줄마다 출시 시점과 출시순과 비교(과거 이야기 · 앞선 이야기 · 같은 때 · 걸침 · 나중 이야기)를 보인다. 출시순 보기는 두지 않는다 — 출시순은 감상 순서 탭(사용자, 2026-10-10).
- *   띠 그림: 가로 = 작중 축(항상), 줄 = 스토리 하나. 시점 확정 = 점(칸 폭이 있으면 꽉 찬 막대), 대략 범위 = 반투명 막대(끝을 모르는 쪽은 흐려진다),
- *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만. 줄 순서는 작중순(계단).
- *   앞뒤만 앎 · 시점 불명은 목록 아래 접이식 칸에 따로.
- *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨기고 "스포일러로 가린 스토리 N — 전부 보기". 층 · 필터로 가린 수도 따로. 모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지).
- *   종류 칩의 숫자 = 지금 보이는(여기까지 읽음 · 범위 · 찾기 · 어긋남 필터 안) 스토리 수. 목록에는 "읽은 곳으로" 버튼이 여기까지 읽음 선으로 보낸다.
- *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래에 "작중 자리" 카드(작중 자리 · 정한 방법 · 시점 기록 · 회상 장면 · 추정한 이유 · 출시 시점 · 출시순과 비교). 같은 줄을 다시 누르면 닫는다.
+ * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13e)
+ *   목록(작중순): 칸마다 묶는다(시대 기준점 · 메인 챕터 · 그 사이). 메인 챕터 칸은 머리가 곧 그 챕터 줄(굵은 CH 표기 + 이름, 누르면 챕터)이라
+ *     메인 줄을 따로 두지 않는다 — 챕터를 안 봤거나 걸렀으면 머리는 'CH.30'만. 시대 칸 머리는 이름 + '약 N년 전'.
+ *     판별은 제자리, 범위는 앞 끝 칸(앞 끝을 모르면 뒤 끝 칸), 회상 장면은 따로 한 줄(한 스토리가 두 자리에).
+ *     줄 = 제목 + 회색 작은 글자(종류 · 회상 · 칸 하나가 아닐 때만 자리 — 양 끝을 알면 칸 머리가 앞 끝이라 '~ CH.24 전', 한쪽만 알면 'CH.13 뒤' · 'CH.24 전'). 칸 · 줄에 개수 · 출시 날짜 · 확정 정도는 싣지 않는다(날짜는 리더).
+ *     출시순과 비교는 drift=1일 때만 줄에 'CH.12 때 출시 · 3챕터 앞'(색 없이 글자). 같은 때 · 걸침은 화면에 내지 않는다(예외만).
+ *     "여기까지 읽음" 선(자리 표시 — t의 메인 챕터로만 정한다): 컷오프 챕터 뒤 칸부터 위쪽 줄과 갈라 보인다 — 선 아래 줄은 읽은 것보다 작중으로 뒤인 이야기.
+ *   띠 그림: 가로 = 작중 축, 줄 = 스토리 하나. 때가 정해짐 = 점(칸 폭이 있으면 꽉 찬 막대), 범위 = 반투명 막대(끝을 모르는 쪽은 흐려진다),
+ *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만 — 종류 칩의 점이 그 범례, 모양 범례는 셋(이때 · 이 무렵 어딘가 · 회상 장면).
+ *     축 머리: 메인 이전(시대 기준점 — 숫자 없는 눈금, 이름은 툴팁) · 메인 챕터(5 단위 숫자). 줄 순서는 작중순(계단). 툴팁 = 제목 · 종류 · 작중 때.
+ *   작중 때를 모르는 스토리(키 상대 · 불명)는 목록 아래 접이식 한 칸(읽는 순서) — 줄에 다른 스토리와의 앞뒤가 있으면 그것만.
+ *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨기고 "스포일러로 가린 N — 전부 보기".
+ *     모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지). 머리에 지금 보이는 편 수 · 목록이면 "읽은 자리로"(여기까지 읽음 선으로).
+ *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래 카드: 작중 순 · 장면(시점 기록 문장 링크) · 회상 장면 · 추정한 이유(추정인 좁힘만) · 출시(어긋난 것만).
+ *     정한 방법 · 확신도 · 출시 날짜 · 기록 ID는 싣지 않는다. 같은 줄을 다시 누르면 닫는다.
+ *   자유 문장(추정 이유 · 회상 장면 글)은 cprose = 시대 기준점 ID → 이름(앞손질) + fmt.prose + 모습 코드(rapi_red) · 씬 줄임(45_03) 걷기(뒷손질 — 조사가 붙어 못 걷으면 그 마디를 뺀다).
  */
-export const meta = { id: 'chrono', title: '연대기', blurb: '작중 시간순' };
+export const meta = { id: 'chrono', title: '연대기', blurb: '작중 순으로 본 스토리' };
 
-/** 화면 라벨 한 곳 — 레포 내부 용어는 여기서 사람 말로 바꾼다 */
+/** 화면 라벨 한 곳 — 레포 내부 용어는 여기서 사람 말로 바꾼다(나머지는 fmt) */
 const LABELS = {
-  viewName: '보기', view: { list: '목록', band: '띠 그림' }, viewHint: { list: '시점마다 묶은 세로 목록', band: '가로 = 작중 시점, 줄 = 스토리' }, jump: '읽은 곳으로',
-  find: '스토리 찾기', findPlaceholder: '제목 · 낱말로 찾기',
-  driftOnly: '출시순과 어긋난 것만', driftOnlyHint: '과거 이야기 · 앞선 이야기 · 나중 이야기만 보인다',
+  viewName: '보기', view: { list: '목록', band: '띠 그림' }, jump: '읽은 자리로',
+  find: '스토리 찾기', findPlaceholder: '제목 · 낱말 검색',
+  driftOnly: '출시순과 어긋난 것만', driftOnlyHint: '출시 때의 메인보다 앞선 때나 뒤의 때를 그린 스토리만 — 줄마다 언제 나왔는지 함께 보인다',
   kindName: '종류', kindAll: '전체',
-  pieceFlash: '회상 장면', pieceFlashHint: '회상 · 다른 때의 장면 — 한 스토리가 두 자리에 나온다',
-  /** 출시순과 비교 — 글자 · 정의는 fmt.DRIFT · DRIFT_HELP, 여기는 기호와 강조 여부만 */
-  drift: {
-    과거: { glyph: '↞', strong: true }, 앞: { glyph: '←', strong: true }, 맞음: { glyph: '=', strong: false },
-    걸침: { glyph: '~', strong: false }, 뒤: { glyph: '→', strong: true },
+  count: (n) => `${n}편`,
+  /** 띠 그림의 모양 범례 — [글자, 툴팁] */
+  legend: {
+    dot: ['이때', '작중 때가 정해진 이야기'],
+    range: ['이 무렵 어딘가', '앞뒤 경계 사이 어딘가 — 흐려지는 쪽은 끝을 모른다'],
+    piece: ['회상 장면', '회상 · 다른 때의 장면 — 한 스토리가 두 자리에 나온다'],
   },
-  via: {
-    메인: '메인 챕터 — 번호 순으로 고정',
-    단위: '시간 단서로 정함',
-    좁힘: '다른 스토리와의 관계로 좁힘',
-    '단위 · 좁힘': '시간 단서 + 다른 스토리와의 관계로 좁힘',
-    회상: '회상 장면의 시간 단서로 정함',
-    조각: '여러 장면의 시간 단서로 정함',
-    없음: '정할 단서가 없다',
-  },
-  era: '시대 기준점', eraZone: '시대', chapterZone: '메인 챕터',
-  multi: '여러 자리', openEnd: '끝을 모름',
-  parallel: (ch) => `${ch}와 병행`, parallelHint: '번호 순과 달리 앞 챕터와 같은 무렵에 벌어진 병행 줄거리',
-  cutHint: '이 선 아래는 읽은 곳보다 작중으로 뒤의 이야기(앞질러 간 이야기)',
-  hiddenLayer: (n) => `${n}개는 범위 밖`, hiddenFilter: (n) => `거른 스토리 ${n}`,
-  shown: (n, total) => `${n} / ${total}`,
+  pieceTag: { 회상: '회상', other: '다른 때' },
+  yearsAgo: (y) => `약 ${y}년 전`,
+  zone: { era: '메인 이전', main: '메인 챕터' },
+  multi: '여러 때에 걸친 이야기',
+  sameTime: '같은 때', during: '동안',
+  parallel: (chWa) => `${chWa} 같은 무렵`, parallelHint: '번호 순과 달리 앞 챕터와 같은 무렵에 벌어진 병행 줄거리',
+  cutHint: '이 선 아래는 읽은 곳보다 작중으로 뒤의 이야기',
   emptyAll: '보이는 스토리가 없다', clearFilters: '필터 풀기',
-  emptyPlaced: '자리가 정해진 스토리가 가려졌다 — 아래 앞뒤만 앎 · 시점 불명을 본다',
-  noClue: '단서 없음', clueNone: '단서 없음',
-  card: {
-    place: '작중 시점', how: '정한 방법', records: '시점 단서', narrow: '추정한 이유', close: '닫기',
+  emptyPlaced: '작중 때를 아는 스토리가 가려졌다 — 아래 목록을 본다',
+  unknown: '알 수 없음',
+  loose: '작중 때를 모르는 이야기', looseHint: '단서가 없거나 다른 스토리와의 앞뒤만 안다',
+  /** 출시순과 비교 — 줄(짧게) · 카드(문장). ch = 출시 때의 메인 챕터, n = 몇 챕터 */
+  drift: {
+    과거: (ch) => `${ch} 때 출시 · 메인 이전 이야기`,
+    앞: (ch, n) => `${ch} 때 출시 · ${n}챕터 앞`,
+    뒤: (ch, n) => `${ch} 때 출시 · ${n}챕터 뒤`,
   },
-  bandHead: '스토리', eraLegend: '시대 기준점',
+  driftLong: {
+    과거: (ch) => `${ch} 때 나왔지만 메인 스토리가 시작되기 전의 이야기`,
+    앞: (ch, n) => `${ch} 때 나왔지만 메인으로 ${n}챕터 앞선 때의 이야기`,
+    뒤: (ch, n) => `${ch} 때 나왔지만 메인보다 ${n}챕터 뒤의 이야기 — 앞질러 간다`,
+  },
+  card: { scenes: '장면', narrow: '추정한 이유', release: '출시', close: '닫기' },
+  bandHead: '스토리',
 };
 
-const CLASS_ORDER = ['판별', '범위', '상대', '불명'];
 const clip = (s, n) => { const a = [...String(s ?? '')]; return a.length > n ? `${a.slice(0, n).join('')}…` : a.join(''); };
 const chNum = (id) => `CH.${String(id).replace(/^ch/, '')}`;
 const REL_WORDS = new Set(['직후', '직전', '뒤', '전', '무렵', '중', '동시']);
+/** 출시순과 어긋남으로 치는 것(키) — 같은 때 · 걸침은 빼고 */
+const DRIFT_STRONG = new Set(['과거', '앞', '뒤']);
+/** 받침이 있으면 '과', 없으면 '와'(숫자는 읽는 소리로) */
+const wa = (w) => {
+  const ch = String(w).trim().at(-1) ?? '';
+  const code = ch.charCodeAt(0);
+  const batchim = code >= 0xac00 && code <= 0xd7a3 ? (code - 0xac00) % 28 !== 0 : /\d/.test(ch) ? '0136784'.includes(ch) : false;
+  return `${w}${batchim ? '과' : '와'}`;
+};
+/** fmt.prose 뒤에 남는 작업 흔적 — 모습 코드(rapi_red · neon_v) · 씬 줄임(45_03) */
+const CODE = /(?<![A-Za-z0-9_])(?:[a-z]+(?:_[a-z0-9]+)+|\d{2}_\d{2})(?![A-Za-z0-9_])/;
+const CODE_G = new RegExp(CODE.source, 'g');
 
 export async function mount(root, ctx) {
   const { state, data, fmt, ui, idx } = ctx;
@@ -89,30 +109,14 @@ export async function mount(root, ctx) {
   };
   const loText = (lo) => (lo === 0 ? `${pointShort(points[0])} 전` : lo % 2 === 0 ? `${pointShort(points[lo / 2 - 1])} 뒤` : `${pointShort(points[(lo - 1) / 2])}부터`);
   const hiText = (hi) => (hi >= 2 * P ? `${pointShort(points[P - 1])} 뒤` : hi % 2 === 0 ? `${pointShort(points[hi / 2])} 전` : `${pointShort(points[(hi - 1) / 2])}까지`);
-  /** 자리 글 — 한 칸이면 그 칸, 범위면 'A 뒤 ~ B 전', 한쪽만 알면 'A 뒤 ~' / '~ B 전' */
+  /** 자리 글 — 한 칸이면 그 칸, 범위면 'A 뒤 ~ B 전', 한쪽만 알면 'A 뒤' / 'B 전' */
   const spanText = (c) => {
     if (c.lo == null && c.hi == null) return '';
     if (c.lo != null && c.lo === c.hi) return slotName(c.lo);
     if (c.lo != null && c.hi != null) return `${loText(c.lo)} ~ ${hiText(c.hi)}`;
-    return c.lo != null ? `${loText(c.lo)} ~` : `~ ${hiText(c.hi)}`;
+    return c.lo != null ? loText(c.lo) : hiText(c.hi);
   };
-  const refText = (ref) => {
-    if (/^ch\d+$/.test(ref)) return chNum(ref);
-    const p = pointById.get(ref);
-    if (p) return pointShort(p);
-    const u = idx.units.get(ref);
-    return u ? u.title : ref;
-  };
-  /** 'CH.41 뒤' — 관계 글의 '뒤 ch41; 전 ch02 (5년)'을 읽는 말로 */
-  const relText = (str) => String(str ?? '').split('; ').filter(Boolean).map((part) => {
-    const m = part.match(/^(\S+) (\S+)(.*)$/);
-    return m && REL_WORDS.has(m[1]) ? `${refText(m[2])} ${m[1]}${m[3]}` : part;
-  }).map(fmt.prose).filter(Boolean).join(' · ');
-  const atText = (at) => (at ?? []).map(([rel, ref, gap]) => `${refText(ref)} ${rel}${gap ? ` (${gap})` : ''}`).join(' · ');
-  const relLabel = (tick) => fmt.tickLabel(tick, { date: false });
-  const classLabel = (cls) => fmt.CHRONO_CLASS[cls] ?? cls;
-  const pieceLabel = (kind) => (kind === '회상' ? LABELS.pieceFlash : fmt.TERM.piece);
-  const driftLabel = (k) => fmt.DRIFT[k] ?? k;
+  const isOneSlot = (c) => c.lo != null && c.lo === c.hi;
 
   const byKey = new Map();
   for (const c of chrono.units) {
@@ -124,16 +128,64 @@ export async function mount(root, ctx) {
   const units = [...byKey.values()];
   for (const c of units) c.search = `${c.u.title} ${c.unit} ${c.pieces.map((p) => p.text ?? '').join(' ')}`.toLowerCase();
   const kindsPresent = fmt.KIND_ORDER.filter((k) => units.some((c) => c.u.kind === k));
-  const kindCount = new Map(kindsPresent.map((k) => [k, units.filter((c) => c.u.kind === k).length]));
+  /** 시점 기록 ID(S169) → 그 장면(조각)이나 스토리 — 관계 글의 기준이 기록일 때 이름으로 */
+  const pieceById = new Map(chrono.pieces.map((p) => [p.id, p]));
+  const recUnit = new Map();
+  for (const c of chrono.units) for (const id of c.records ?? []) recUnit.set(id, c.unit);
 
-  // 작중순 줄 — 자리 있는 스토리의 '지금' + 회상 장면
+  /** 관계의 기준 → 이름: 챕터 · 시대 기준점 · 스토리(호감도는 '… 호감도') · 시점 기록(그 장면의 때, 없으면 그 스토리) */
+  const refText = (ref) => {
+    if (/^ch\d+$/.test(ref)) return chNum(ref);
+    const p = pointById.get(ref);
+    if (p) return pointShort(p);
+    const piece = pieceById.get(ref);
+    if (piece && (piece.lo != null || piece.hi != null)) return spanText(piece);
+    const key = idx.units.has(ref) ? ref : recUnit.get(ref) ?? piece?.unit;
+    const u = key ? idx.units.get(key) : null;
+    return u ? `${u.title}${u.kind === 'episode' ? ` ${fmt.KIND.episode.label}` : ''}` : null;
+  };
+  /** 'CH.41 뒤' · 'MIRACLE SNOW와 같은 때' · 'CH.21 동안' */
+  const relPhrase = (rel, ref, rest = '') => {
+    const name = refText(ref);
+    if (!name) return '';
+    if (rel === '동시') return `${wa(name)} ${LABELS.sameTime}${rest}`;
+    return `${name} ${rel === '중' ? LABELS.during : rel}${rest}`;
+  };
+  /** 관계 글 '뒤 ch41; 전 ch02 (5년)' → 읽는 말. '단서 없음'은 내지 않는다 */
+  const relText = (str) => String(str ?? '').split('; ').filter((x) => x && x !== '단서 없음').map((part) => {
+    const m = part.match(/^(\S+) (\S+)(.*)$/);
+    return m && REL_WORDS.has(m[1]) ? relPhrase(m[1], m[2], m[3]) : cprose(part);
+  }).filter(Boolean).join(' · ');
+  const atText = (at) => (at ?? []).map(([rel, ref, gap]) => relPhrase(rel, ref, gap ? ` (${gap})` : '')).filter(Boolean).join(' · ');
+  /** 자유 문장 — 시대 기준점 ID → 이름, fmt.prose, 모습 코드 걷기(조사가 붙은 코드는 그 마디째 뺀다) */
+  function cprose(text) {
+    const pre = String(text ?? '')
+      .replace(/[—~]?\s*(직후|직전|뒤|전|무렵) (@[\p{L}\p{N}_]+)/gu, (m, rel, id) => (pointById.has(id) ? `${pointShort(pointById.get(id))} ${rel}` : m))
+      .replace(/@[\p{L}\p{N}_]+/gu, (id) => (pointById.has(id) ? pointShort(pointById.get(id)) : id));
+    const s = fmt.prose(pre).replace(/\s?\(([^()]*)\)/g, (m, inner) => {
+      if (/^\s*[a-z]+\s*$/.test(inner)) return ''; // '(rapi)'
+      if (!CODE.test(inner)) return m;
+      const rest = inner.replace(CODE_G, '').replace(/^[\s,·—–-]+|[\s,·—–-]+$/g, '');
+      return /[\p{L}\p{N}]/u.test(rest) ? `${m.startsWith(' ') ? ' ' : ''}(${rest})` : '';
+    });
+    if (!CODE.test(s)) return s;
+    const glued = new RegExp(`${CODE.source}(?=[가-힣])`);
+    const bare = new RegExp(`\\s?${CODE.source}(?=[\\s(),.]|$)`, 'g');
+    return s.split(/(?<=\.)\s+/).map((sen) => {
+      const kept = sen.split(/\s+—\s+/).filter((cl) => !glued.test(cl)).map((cl) => cl.replace(bare, '')).join(' — ');
+      return /\.$/.test(sen) && kept && !/[.?!]$/.test(kept) ? `${kept}.` : kept;
+    }).filter((x) => [...x.replace(/[^가-힣]/g, '')].length >= 6).join(' ').replace(/\s{2,}/g, ' ').trim();
+  }
+
+  // 작중순 줄 — 자리 있는 스토리의 '지금' + 회상 장면. 메인 챕터의 '지금'은 그 칸 머리가 대신한다
   const storyEntries = [];
   for (const c of units) if (c.slot != null) storyEntries.push({ type: 'unit', c, seq: c.seq, slot: c.slot });
   for (const c of units) for (const p of c.pieces) if (p.slot != null) storyEntries.push({ type: 'piece', c, p, seq: p.seq, slot: p.slot });
   storyEntries.sort((a, b) => a.seq - b.seq);
-  const looseUnits = units.filter((c) => c.slot == null);
-  const loosePieces = [];
-  for (const c of units) for (const p of c.pieces) if (p.slot == null) loosePieces.push({ type: 'piece', c, p });
+  const looseEntries = [];
+  for (const c of units) if (c.slot == null) looseEntries.push({ type: 'unit', c });
+  for (const c of units) for (const p of c.pieces) if (p.slot == null) looseEntries.push({ type: 'piece', c, p });
+  looseEntries.sort((a, b) => a.c.u.order - b.c.u.order || (a.type === 'piece') - (b.type === 'piece'));
   const byStory = units.filter((c) => c.slot != null).sort((a, b) => a.seq - b.seq);
 
   // ══ 파라미터 · 상태 ═════════════════════════════════════════════════════
@@ -153,110 +205,90 @@ export async function mount(root, ctx) {
   let ownClick = false;
   let visVersion = 0;
   let vis = new Map();
-  let counts = { shown: 0, cut: 0, layer: 0, filter: 0 };
+  let counts = { shown: 0, cut: 0, filter: 0 };
   let cutSlot = null;
   let cutCh = null;
+  let alive = true;
+  /** 누를 수 있는 줄 — 목록 줄 · 띠 그림 줄 · 메인 챕터 칸 머리(챕터가 보일 때만 data-key) */
+  const ROW_SEL = '.cr-row, .cg-row, .cr-ghead[data-key]';
 
   // ══ 머리 · 도구 줄 ═══════════════════════════════════════════════════════
   root.append(el('div', { class: 'tab-head' }, el('h2', {}, meta.title)));
-  const viewSeg = ui.segmented({ label: LABELS.viewName, options: Object.entries(LABELS.view).map(([value, label]) => ({ value, label, title: LABELS.viewHint[value] })), value: cur.view, onChange: (v) => setP('view', v === 'list' ? null : v) });
+  const viewSeg = ui.segmented({ label: LABELS.viewName, options: Object.entries(LABELS.view).map(([value, label]) => ({ value, label })), value: cur.view, onChange: (v) => setP('view', v === 'list' ? null : v) });
   const findBox = el('input', { type: 'search', class: 'cr-find', placeholder: LABELS.findPlaceholder, 'aria-label': LABELS.find, value: cur.find });
   let findTimer = null;
   findBox.addEventListener('input', () => { clearTimeout(findTimer); findTimer = setTimeout(() => setP('find', findBox.value.trim() || null), 200); });
   const driftToggle = ui.toggle({ label: LABELS.driftOnly, checked: cur.drift, title: LABELS.driftOnlyHint, onChange: (v) => setP('drift', v ? '1' : null) });
-  root.append(el('div', { class: 'toolbar cr-bar' }, el('span', { class: 'cr-seg' }, el('span', { class: 'ctl-name' }, LABELS.viewName), viewSeg.el), findBox, driftToggle));
+  root.append(el('div', { class: 'toolbar cr-bar' }, viewSeg.el, findBox, driftToggle));
 
+  // 종류 칩 — 점 색이 띠 그림의 종류 색(범례를 겸한다)
   const kindBox = el('div', { class: 'cr-kinds', role: 'group', 'aria-label': LABELS.kindName });
-  const allBtn = el('button', { type: 'button', class: 'cr-kindbtn cr-kindall', onClick: () => setP('kind', null) }, LABELS.kindAll);
+  const allBtn = el('button', { type: 'button', class: 'cr-pick', onClick: () => setP('kind', null) }, LABELS.kindAll);
   const kindBtns = new Map();
-  const kindChips = new Map();
   kindBox.append(allBtn);
   for (const k of kindsPresent) {
-    const chip = ui.chip('kind', k, `${fmt.KIND[k].label} ${fmt.num(kindCount.get(k))}`);
-    const b = el('button', { type: 'button', class: 'cr-kindbtn', onClick: () => { const next = new Set(cur.kinds); if (next.has(k)) next.delete(k); else next.add(k); setP('kind', [...next].join(',') || null); } }, chip);
+    const b = el('button', { type: 'button', class: 'cr-pick', title: fmt.help('kind', k), onClick: () => { const next = new Set(cur.kinds); if (next.has(k)) next.delete(k); else next.add(k); setP('kind', [...next].join(',') || null); } },
+      el('i', { class: 'cr-pick-dot', 'aria-hidden': 'true' }), fmt.KIND[k].label);
+    b.style.setProperty('--c', `var(--kind-${k})`);
     kindBtns.set(k, b);
-    kindChips.set(k, chip);
     kindBox.append(b);
   }
   root.append(kindBox);
   const syncKinds = () => {
     allBtn.setAttribute('aria-pressed', String(cur.kinds.size === 0));
-    for (const [k, b] of kindBtns) {
-      const on = cur.kinds.has(k);
-      b.setAttribute('aria-pressed', String(on));
-      b.classList.toggle('is-off', cur.kinds.size > 0 && !on);
-    }
+    for (const [k, b] of kindBtns) b.setAttribute('aria-pressed', String(cur.kinds.has(k)));
+    root.classList.toggle('cr-drift-on', cur.drift);
   };
 
-  const statusText = el('span', { class: 'cr-status-text' });
+  const statusText = el('span', { class: 'cr-count' });
   const statusNote = el('span', { class: 'cr-status-note' });
-  const jumpBtn = el('button', { type: 'button', class: 'btn cr-jump', onClick: () => document.querySelector('.cr-cutline:not([hidden])')?.scrollIntoView({ block: 'center' }) }, LABELS.jump);
+  const jumpBtn = el('button', { type: 'button', class: 'btn cr-jump', onClick: () => root.querySelector('.cr-cutline:not([hidden])')?.scrollIntoView({ block: 'center' }) }, LABELS.jump);
   root.append(el('div', { class: 'cr-status', role: 'status', 'aria-live': 'polite' }, statusText, statusNote, jumpBtn));
 
-  // 범례 — 모양 · 기호는 줄 · 띠 그림과 같다
-  const legendItem = (icon, label, hint) => el('span', { class: 'cr-leg', title: hint }, icon, label);
-  root.append(el('div', { class: 'cr-legend' },
-    el('span', { class: 'cr-legend-group' }, ...CLASS_ORDER.slice(0, 2).map((cl) => legendItem(classIcon(cl), classLabel(cl), fmt.help('chrono', cl))),
-      legendItem(classIcon('판별', true), LABELS.pieceFlash, LABELS.pieceFlashHint)),
-    el('span', { class: 'cr-legend-group' }, el('span', { class: 'ctl-name' }, fmt.DRIFT_TITLE),
-      ...fmt.DRIFT_ORDER.map((k) => legendItem(driftGlyph(k), driftLabel(k), fmt.help('drift', k))))));
-
-  // ══ 작은 조각들 ═════════════════════════════════════════════════════════
-  function classIcon(cls, isPiece = false) {
-    if (cls === '상대') return el('i', { class: 'cr-ico cr-ico-text', 'aria-hidden': 'true' }, '⇄');
-    if (cls === '불명') return el('i', { class: 'cr-ico cr-ico-text', 'aria-hidden': 'true' }, '?');
-    return el('i', { class: ['cr-ico', cls === '범위' ? 'cr-ico-range' : 'cr-ico-dot', isPiece && 'is-piece'], 'aria-hidden': 'true' });
-  }
-  function driftGlyph(k) {
-    return el('i', { class: `cr-dglyph cr-d-${k}`, 'aria-hidden': 'true' }, LABELS.drift[k].glyph);
-  }
-  const driftBadge = (c) => {
-    const d = LABELS.drift[c.drift];
-    if (!d) return null;
-    const gap = (c.drift === '앞' || c.drift === '뒤') && c.drift_gap ? ` ${c.drift_gap}챕터` : '';
-    return el('span', { class: ['cr-drift', `cr-d-${c.drift}`, d.strong && 'is-strong'], title: `${fmt.DRIFT_TITLE}: ${fmt.help('drift', c.drift)}` }, `${d.glyph} ${driftLabel(c.drift)}${gap}`);
+  // ══ 줄 ═══════════════════════════════════════════════════════════════════
+  const sep = () => el('span', { class: 'cr-sep', 'aria-hidden': 'true' }, '·');
+  /** 회색 작은 글자 줄 — 빈 것은 뺀다. tail(출시순 비교)은 제 구분점을 안에 품어 숨으면 같이 숨는다 */
+  const metaLine = (items, tail = null) => {
+    const xs = items.filter(Boolean);
+    return xs.length ? el('span', { class: 'cr-meta' }, xs.flatMap((x, i) => (i ? [sep(), x] : [x])), tail) : null;
   };
-  const parallelBadge = (c) => (c.parallel ? el('span', { class: 'cr-par', title: LABELS.parallelHint }, LABELS.parallel(chNum(c.parallel.with))) : null);
+  /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
+  const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title); return m ? [el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
+  const mainChOf = (c) => (c.release_main ? chNum(c.release_main) : fmt.tickShort(c.u.tick));
+  const driftShort = (c) => (DRIFT_STRONG.has(c.drift) ? LABELS.drift[c.drift](mainChOf(c), c.drift_gap) : '');
+  const pieceTag = (p) => LABELS.pieceTag[p.kind] ?? LABELS.pieceTag.other;
   /** 기록 링크 — 글자는 기록 문장(줄임). ID는 화면에 내지 않는다(W13a) */
-  const recLink = (id) => { const r = idx.records?.get(id); return ui.link(`record:${id}`, r ? clip(fmt.recordText(r), 40) : fmt.RECORD_KIND[String(id).replace(/\d.*$/, '')]?.label ?? '자세히'); };
-  /** 글 속 기록 ID(F387 · S370 · J1)를 링크로 */
-  const withLinks = (text) => fmt.prose(text); // 자유 문장은 한 함수를 거친다(W13a)
-  /** 근거 ID — 기록 · 줄기 · 씬#줄 */
+  const recLink = (id, n = 60) => { const r = idx.records?.get(id); return ui.link(`record:${id}`, r ? clip(fmt.recordText(r), n) || fmt.TERM.piece : fmt.RECORD_KIND.S?.label ?? fmt.TERM.piece); };
+  /** 근거 — 기록 · 떡밥 · 씬#줄 → 링크(글자는 기록 문장 · 떡밥 제목 · 장면 이름) */
   const basisLink = (b) => {
     if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, idx.threads.get(b)?.title ?? fmt.TERM.thread);
-    if (/^[A-Z](-[a-z])?\d+$/.test(b)) return recLink(b);
+    if (/^[A-Z](-[a-z])?\d+$/.test(b)) return idx.records?.get(b) ? recLink(b, 40) : null;
     const base = b.split('#')[0];
     const sceneId = [base, base.replace(/^ep:/, ''), `ep:${base}`].find((x) => idx.scenes.has(x));
     return sceneId ? ui.link(`scene:${sceneId}`, fmt.ref(sceneId)) : null;
   };
-  const joinNodes = (nodes, sep = ' ') => nodes.flatMap((n, i) => (i ? [sep, n] : [n]));
+  const joinNodes = (nodes, s = ' · ') => nodes.flatMap((n, i) => (i ? [s, n] : [n]));
 
-  // ══ 줄 ═══════════════════════════════════════════════════════════════════
-  /** 목록 줄 — mode: story(작중순) · loose(앞뒤만 앎 · 시점 불명) */
+  /** 목록 줄 — mode: story(작중순) · loose(작중 때를 모름) */
   function listRow(e, mode) {
     const { c } = e;
     const u = c.u;
     const piece = e.type === 'piece' ? e.p : null;
-    const cls = piece ? piece.class : c.class;
     const target = piece ?? c;
-    let spanCell = '';
-    if (mode === 'loose') spanCell = relText(piece ? piece.relations : (c.relations || c.narrow)) || LABELS.noClue;
-    else if (!piece && c.multi) spanCell = LABELS.multi;
-    else if (cls === '판별' && target.lo != null && target.lo === target.hi && mode === 'story') spanCell = '';
-    else spanCell = spanText(target) || (cls === '상대' || cls === '불명' ? classLabel(cls) : '');
-    const row = el('div', { class: ['cr-row', piece && 'is-piece', `cls-${cls}`], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
-      el('span', { class: 'cr-kind' }, ui.chip('kind', u.kind)),
-      el('span', { class: 'cr-name' },
-        el('span', { class: 'cr-line' },
-          el('span', { class: 'cr-ico-wrap', title: classLabel(cls) }, classIcon(cls, Boolean(piece))),
-          el('span', { class: 'cr-title' }, u.title),
-          piece ? el('span', { class: 'cr-ptag' }, pieceLabel(piece.kind)) : null,
-          !piece ? parallelBadge(c) : null,
-          !piece && mode !== 'loose' ? driftBadge(c) : null),
-        fmt.prose(piece?.text) ? el('span', { class: 'cr-ptext' }, clip(fmt.prose(piece.text), 120)) : null),
-      el('span', { class: 'cr-span', title: spanCell && !piece && cls === '범위' ? classLabel(cls) : null }, spanCell),
-      el('span', { class: 'cr-rel', title: u.date ?? '' }, relLabel(u.tick), u.date ? el('span', { class: 'cr-date' }, ` · ${u.date}`) : null));
-    return row;
+    let when = '';
+    if (mode === 'loose') when = relText(piece ? piece.relations : (c.relations || c.narrow));
+    else if (target.lo != null && target.hi != null && target.lo === e.slot && target.lo !== target.hi) when = `~ ${hiText(target.hi)}`; // 칸 머리가 앞 끝이라 뒤 끝만
+    else if (!isOneSlot(target)) when = spanText(target);
+    const ptext = piece ? cprose(piece.text) : '';
+    return el('div', { class: ['cr-row', piece && 'is-piece'], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
+      el('span', { class: 'cr-line' },
+        el('span', { class: 'cr-title' }, chTitle(u.title)),
+        metaLine([
+          el('span', {}, fmt.KIND[u.kind]?.label ?? u.kind),
+          piece ? el('span', { class: 'cr-ptag' }, pieceTag(piece)) : null,
+          when ? el('span', {}, when) : null,
+        ], !piece && mode === 'story' && driftShort(c) ? el('span', { class: 'cr-dmeta' }, sep(), driftShort(c)) : null)),
+      ptext ? el('span', { class: 'cr-ptext' }, clip(ptext, 120)) : null);
   }
 
   /** 띠 그림 칸의 표시 — 점 · 막대 */
@@ -284,7 +316,7 @@ export async function mount(root, ctx) {
   }
   function bandRow(c) {
     const u = c.u;
-    const row = el('div', { class: ['cg-row', `cls-${c.class}`], dataset: { key: c.unit }, role: 'button', tabindex: 0, 'aria-label': `${u.title} · ${classLabel(c.class)} ${spanText(c)}`.trim() });
+    const row = el('div', { class: 'cg-row', dataset: { key: c.unit }, role: 'button', tabindex: 0, 'aria-label': `${u.title} · ${spanText(c)}`.replace(/ · $/, '') });
     row.style.setProperty('--c', `var(--kind-${u.kind})`);
     const plot = el('div', { class: 'cg-plot' });
     const marks = marksOf(c);
@@ -298,9 +330,8 @@ export async function mount(root, ctx) {
       plot.append(link);
     }
     for (const m of marks) plot.append(markNode(m));
-    if (!marks.length) plot.append(el('span', { class: 'cg-none' }, classLabel(c.class)));
     row.append(
-      el('div', { class: 'cg-label' }, el('span', { class: 'cg-title' }, u.title), c.drift && LABELS.drift[c.drift]?.strong ? driftGlyph(c.drift) : null, c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null),
+      el('div', { class: 'cg-label' }, el('span', { class: 'cg-title' }, u.title), c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null),
       plot);
     return row;
   }
@@ -308,9 +339,6 @@ export async function mount(root, ctx) {
   // ══ 보기 만들기(처음 필요할 때 한 번 — 이후 hidden만 바꾼다) ═══════════════════
   const views = new Map();
 
-  function groupShell(headNode, body) {
-    return el('section', { class: 'cr-group' }, headNode, body);
-  }
   function listView() {
     const wrap = el('div', { class: 'cr-list' });
     const groups = [];
@@ -321,22 +349,25 @@ export async function mount(root, ctx) {
     for (const e of storyEntries) {
       if (!g || g.slot !== e.slot) {
         const point = e.slot % 2 === 1 ? points[(e.slot - 1) / 2] : null;
-        const nameEl = el('span', { class: 'cr-gname' }, slotName(e.slot));
-        const subEl = el('span', { class: 'cr-gsub' });
-        const countEl = el('span', { class: 'cr-gcount' });
+        const isMain = point && !point.era;
         const bodyEl = el('div', { class: 'cr-rows' });
-        const head = el('header', { class: ['cr-ghead', point?.era && 'is-era', point && !point.era && 'is-main'] }, el('h3', {}, nameEl, subEl), countEl);
-        let whyEl = null;
-        if (point?.era) {
-          subEl.textContent = `${LABELS.era}${point.years ? ` · 약 ${point.years}년 전` : ''}`;
-          whyEl = el('div', { class: 'cr-why' }, withLinks(point.reason) ? el('p', {}, withLinks(point.reason)) : null, point.basis?.map(basisLink).filter(Boolean).length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink).filter(Boolean), ' · ')) : null);
-          whyEl.hidden = true;
-          head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, '설명'));
-        }
-        g = { slot: e.slot, point, el: groupShell(head, [whyEl, bodyEl]), body: bodyEl, countEl, rows: [] };
+        const h3 = el('h3', {});
+        let mainName = null;
+        if (isMain) {
+          const mu = idx.units.get(point.id);
+          const c = byKey.get(point.id);
+          mainName = el('span', { class: 'cr-gname' }, String(mu?.title ?? '').replace(/^CH\.\d+\s*/, ''),
+            c?.parallel ? el('span', { class: 'cr-gsub', title: LABELS.parallelHint }, LABELS.parallel(wa(chNum(c.parallel.with)))) : null);
+          h3.append(el('span', { class: 'ch' }, chNum(point.id)), mainName);
+        } else if (point?.era) {
+          h3.append(el('span', {}, point.name), point.years ? el('span', { class: 'cr-gsub' }, LABELS.yearsAgo(point.years)) : null);
+        } else h3.append(el('span', {}, slotName(e.slot)));
+        const head = el('header', { class: ['cr-ghead', point?.era && 'is-era', isMain && 'is-main'] }, h3);
+        g = { slot: e.slot, point, mainKey: isMain && byKey.has(point.id) ? point.id : null, mainName, head, el: el('section', { class: 'cr-group' }, head, bodyEl), body: bodyEl, rows: [] };
         groups.push(g);
         wrap.append(g.el);
       }
+      if (e.type === 'unit' && e.c.unit === g.mainKey) continue; // 메인 챕터의 '지금'은 칸 머리
       const row = listRow(e, 'story');
       g.body.append(row);
       const r = { el: row, key: e.c.unit };
@@ -348,21 +379,20 @@ export async function mount(root, ctx) {
 
   function bandView(byKind) {
     const wrap = el('div', { class: 'cg' });
-    const eraPoints = points.filter((p) => p.era);
     const firstMain = points.findIndex((p) => !p.era);
-    // 머리: 영역 이름 + 시대 번호 + 챕터 눈금(고정)
-    const axisEl = el('div', { class: 'cg-axis', 'aria-hidden': 'true' });
-    const zone = (lo, hi, text, cls) => { const z = el('span', { class: `cg-zone ${cls}` }, text); z.style.left = `${(lo / SLOTS) * 100}%`; z.style.width = `${((hi - lo) / SLOTS) * 100}%`; return z; };
+    // 머리: 영역 이름(메인 이전 · 메인 챕터) + 시대 눈금(숫자 없이 — 이름은 툴팁) + 챕터 눈금(5 단위)
+    const axisEl = el('div', { class: 'cg-axis' });
+    const zone = (lo, hi, text, cls) => { const z = el('span', { class: `cg-zone ${cls}`, 'aria-hidden': 'true' }, text); z.style.left = `${(lo / SLOTS) * 100}%`; z.style.width = `${((hi - lo) / SLOTS) * 100}%`; return z; };
     const split = firstMain > 0 ? 2 * firstMain : 0;
-    if (split) axisEl.append(zone(0, split, LABELS.eraZone, 'is-era'));
-    axisEl.append(zone(split, SLOTS, LABELS.chapterZone, 'is-main'));
-    for (const [i, p] of points.entries()) {
+    if (split) axisEl.append(zone(0, split, LABELS.zone.era, 'is-era'));
+    axisEl.append(zone(split, SLOTS, LABELS.zone.main, 'is-main'));
+    for (const p of points) {
       const x = ((p.pos + 0.5) / SLOTS) * 100;
       let t = null;
-      if (p.era) t = el('span', { class: 'cg-tick is-era', title: p.name }, String(i + 1));
+      if (p.era) t = el('span', { class: 'cg-tick is-era', title: [p.name, p.years ? LABELS.yearsAgo(p.years) : null].filter(Boolean).join(' · ') });
       else {
         const n = Number(String(p.id).replace(/^ch/, ''));
-        if (n % 5 === 0) t = el('span', { class: 'cg-tick', dataset: n % 10 === 0 ? { m10: '1' } : {} }, String(n).padStart(2, '0'));
+        if (n % 5 === 0) t = el('span', { class: 'cg-tick', 'aria-hidden': 'true' }, String(n).padStart(2, '0'));
       }
       if (t) { t.style.left = `${x}%`; axisEl.append(t); }
     }
@@ -374,13 +404,12 @@ export async function mount(root, ctx) {
     wrap.style.setProperty('--split', `${(split / SLOTS) * 100}%`);
     const head = el('div', { class: 'cg-head' }, el('div', { class: 'cg-corner' }, LABELS.bandHead), axisEl);
     const body = el('div', { class: 'cg-body' });
-    const source = byStory;
     const groups = [];
     const rows = [];
-    const makeGroup = (label, items) => {
-      const countEl = el('span', { class: 'cr-gcount' });
-      const headEl = byKind ? el('div', { class: 'cg-ghead' }, label, countEl) : null;
-      const g = { head: headEl, countEl, rows: [] };
+    const makeGroup = (k, items) => {
+      const headEl = k ? el('div', { class: 'cg-ghead' }, el('i', { class: 'cr-pick-dot', 'aria-hidden': 'true' }), fmt.KIND[k].label) : null;
+      headEl?.style.setProperty('--c', `var(--kind-${k})`);
+      const g = { head: headEl, rows: [] };
       if (headEl) body.append(headEl);
       for (const c of items) {
         const row = bandRow(c);
@@ -391,33 +420,27 @@ export async function mount(root, ctx) {
       }
       groups.push(g);
     };
-    if (byKind) for (const k of kindsPresent) makeGroup(ui.chip('kind', k), source.filter((c) => c.u.kind === k));
-    else makeGroup(null, source);
-    const eraLegend = el('details', { class: 'cg-eras' }, el('summary', {}, `${LABELS.eraLegend} ${eraPoints.length}`),
-      el('ol', {}, eraPoints.map((p, i) => el('li', {}, el('b', {}, `${i + 1}.`), ` ${p.name}${p.years ? ` · 약 ${p.years}년 전` : ''}`))));
+    if (byKind) for (const k of kindsPresent) makeGroup(k, byStory.filter((c) => c.u.kind === k));
+    else makeGroup(null, byStory);
+    // 모양 범례 셋 — 색(종류)은 위 종류 칩의 점
+    const icon = (k) => el('i', { class: ['cr-ico', k === 'range' ? 'cr-ico-range' : 'cr-ico-dot', k === 'piece' && 'is-piece'], 'aria-hidden': 'true' });
+    const legend = el('div', { class: 'cr-legend' }, ['dot', 'range', 'piece'].map((k) => el('span', { class: 'cr-leg', title: LABELS.legend[k][1] }, icon(k), LABELS.legend[k][0])));
     wrap.append(head, body, cutEl);
-    return { kind: 'band', byKind, el: el('div', { class: 'cg-wrap' }, eraLegend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, applied: -1 };
+    return { kind: 'band', byKind, el: el('div', { class: 'cg-wrap' }, legend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, applied: -1 };
   }
 
-  // 앞뒤만 앎 · 시점 불명 칸(작중순 아래)
+  // 작중 때를 모르는 스토리(작중순 아래 접이식 한 칸)
   const looseView = (() => {
-    const host = el('div', { class: 'cr-loose' });
-    const parts = ['상대', '불명'].map((cls) => {
-      const items = looseUnits.filter((c) => c.class === cls).map((c) => ({ type: 'unit', c }));
-      const pcs = cls === '상대' ? loosePieces : [];
-      const countEl = el('span', { class: 'cr-gcount' });
-      const rowsEl = el('div', { class: 'cr-rows' });
-      const rows = [];
-      for (const e of [...items, ...pcs]) {
-        const row = listRow(e, 'loose');
-        rowsEl.append(row);
-        rows.push({ el: row, key: e.c.unit });
-      }
-      const det = el('details', { class: 'cr-loose-part' }, el('summary', {}, el('span', { class: 'cr-ico-wrap' }, classIcon(cls)), el('b', {}, classLabel(cls)), countEl, el('span', { class: 'cr-loose-hint' }, fmt.help('chrono', cls))), rowsEl);
-      host.append(det);
-      return { cls, det, countEl, rows };
-    });
-    return { el: host, parts };
+    const countEl = el('span', { class: 'cr-loose-count' });
+    const rowsEl = el('div', { class: 'cr-rows' });
+    const rows = [];
+    for (const e of looseEntries) {
+      const row = listRow(e, 'loose');
+      rowsEl.append(row);
+      rows.push({ el: row, key: e.c.unit });
+    }
+    const det = el('details', { class: 'cr-loose' }, el('summary', {}, el('b', {}, LABELS.loose), countEl, el('span', { class: 'cr-loose-hint' }, LABELS.looseHint)), rowsEl);
+    return { el: det, countEl, rows };
   })();
   const emptyBox = el('div', { class: 'cr-empty' });
   emptyBox.hidden = true;
@@ -426,32 +449,25 @@ export async function mount(root, ctx) {
   root.append(viewHost, looseView.el);
 
   // ══ 보이는 것 계산 · 반영 ═══════════════════════════════════════════════════
-  const DRIFT_STRONG = new Set(Object.entries(LABELS.drift).filter(([, d]) => d.strong).map(([k]) => k));
   function computeVis(s) {
     const q = cur.find.toLowerCase();
     vis = new Map();
-    counts = { shown: 0, cut: 0, layer: 0, filter: 0 };
+    counts = { shown: 0, cut: 0, filter: 0 };
     const perKind = new Map(kindsPresent.map((k) => [k, 0]));
     const rd = state.reading(s);
     for (const c of units) {
-      const u = c.u;
       let r = 'ok';
-      let otherOk = false; // 종류 필터만 빼고 통과하나(칩의 건수)
+      let otherOk = false; // 종류 필터만 빼고 통과하나(칩을 흐리게 할지)
       if (!rd.seen(c.unit)) r = 'cut';
-      else if (u.layer != null && !s.layers.includes(u.layer)) r = 'layer';
       else {
         otherOk = !((cur.drift && !DRIFT_STRONG.has(c.drift)) || (q && !c.search.includes(q)));
-        if ((cur.kinds.size && !cur.kinds.has(u.kind)) || !otherOk) r = 'filter';
+        if ((cur.kinds.size && !cur.kinds.has(c.u.kind)) || !otherOk) r = 'filter';
       }
-      if (otherOk) perKind.set(u.kind, (perKind.get(u.kind) ?? 0) + 1);
+      if (otherOk) perKind.set(c.u.kind, (perKind.get(c.u.kind) ?? 0) + 1);
       vis.set(c.unit, r);
       if (r === 'ok') counts.shown++; else counts[r]++;
     }
-    for (const [k, chip] of kindChips) {
-      const n = perKind.get(k) ?? 0;
-      chip.textContent = `${fmt.KIND[k].label} ${fmt.num(n)}`;
-      kindBtns.get(k).classList.toggle('is-zero', n === 0);
-    }
+    for (const [k, b] of kindBtns) b.classList.toggle('is-zero', (perKind.get(k) ?? 0) === 0);
     const tk = s.t == null ? null : idx.ticks.get(s.t);
     const chId = tk?.main ?? tk?.upto ?? null;
     cutSlot = chId && pointById.get(chId) ? pointById.get(chId).pos : null;
@@ -460,15 +476,21 @@ export async function mount(root, ctx) {
   }
   const isOk = (key) => vis.get(key) === 'ok';
 
-  function refreshView(v, s) {
+  function refreshView(v) {
     if (v.applied === visVersion) return;
     v.applied = visVersion;
     for (const r of v.rows) r.el.hidden = !isOk(r.key);
     for (const g of v.groups) {
-      const n = g.rows.reduce((a, r) => a + (r.el.hidden ? 0 : 1), 0);
-      if (g.countEl) g.countEl.textContent = fmt.num(n);
+      const mainOk = Boolean(g.mainKey) && isOk(g.mainKey);
+      if (g.mainName) {
+        // 메인 챕터 칸 머리 — 챕터가 보이면 이름을 달고 누를 수 있게, 아니면 'CH.30'만(안 본 챕터 이름은 스포일러)
+        g.mainName.hidden = !mainOk;
+        if (mainOk) { g.head.dataset.key = g.mainKey; g.head.setAttribute('role', 'button'); g.head.tabIndex = 0; }
+        else { delete g.head.dataset.key; g.head.removeAttribute('role'); g.head.removeAttribute('tabindex'); }
+      }
+      const n = g.rows.reduce((a, r) => a + (r.el.hidden ? 0 : 1), 0) + (mainOk ? 1 : 0);
       if (g.el) g.el.hidden = n === 0;
-      if (g.head) g.head.hidden = n === 0;
+      if (g.head && !g.el) g.head.hidden = n === 0;
     }
     if (v.kind === 'list') {
       // 여기까지 읽음 선 — 컷오프 챕터 뒤 칸의 첫 보이는 묶음 앞에
@@ -490,12 +512,10 @@ export async function mount(root, ctx) {
     }
   }
   function refreshLoose() {
-    for (const part of looseView.parts) {
-      for (const r of part.rows) r.el.hidden = !isOk(r.key);
-      const n = part.rows.reduce((a, r) => a + (r.el.hidden ? 0 : 1), 0);
-      part.countEl.textContent = fmt.num(n);
-      part.det.hidden = n === 0;
-    }
+    for (const r of looseView.rows) r.el.hidden = !isOk(r.key);
+    const n = new Set(looseView.rows.filter((r) => !r.el.hidden).map((r) => r.key)).size;
+    looseView.countEl.textContent = LABELS.count(fmt.num(n));
+    looseView.el.hidden = n === 0;
   }
 
   function currentView() {
@@ -506,16 +526,12 @@ export async function mount(root, ctx) {
   function showView({ scroll = false } = {}) {
     const v = currentView();
     if (viewHost.firstChild !== v.el) viewHost.replaceChildren(v.el);
-    refreshView(v, state.get());
+    refreshView(v);
     syncSelection({ scroll });
   }
 
   function updateStatus(s) {
-    const total = units.length;
-    const parts = [];
-    parts.push(LABELS.shown(fmt.num(counts.shown), fmt.num(total)));
-    if (counts.filter) parts.push(LABELS.hiddenFilter(fmt.num(counts.filter)));
-    statusText.textContent = parts.join(' · ');
+    statusText.textContent = LABELS.count(fmt.num(counts.shown));
     ui.clear(statusNote);
     if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut), () => state.set({ t: null })));
     jumpBtn.hidden = !(cur.view === 'list' && cutSlot != null && counts.shown > 0);
@@ -534,62 +550,52 @@ export async function mount(root, ctx) {
   function applyAll(s, { layoutChanged = false } = {}) {
     computeVis(s);
     if (layoutChanged) showView({ scroll: true });
-    else refreshView(currentView(), s);
+    else refreshView(currentView());
     refreshLoose();
     updateStatus(s);
     syncSelection({ scroll: false });
   }
 
-  // ══ 작중 자리 카드(선택한 줄 바로 아래) ═══════════════════════════════════════
+  // ══ 카드(선택한 줄 바로 아래) ═══════════════════════════════════════════════
   let cardEl = null;
   const kv = (rows) => el('dl', { class: 'kvs cr-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [el('dt', {}, k), el('dd', {}, v)]));
+  /** 작중 순 칸 — 칸이면 그 이름(시대는 '약 N년 전'), 범위면 'A 뒤 ~ B 전', 모르면 앞뒤 관계 · '모름' */
+  const placeText = (c) => {
+    if (c.slot == null) return relText(c.relations || c.narrow) || LABELS.unknown;
+    const p = isOneSlot(c) && c.lo % 2 === 1 ? points[(c.lo - 1) / 2] : null;
+    return [p?.era && p.years ? `${spanText(c)} (${LABELS.yearsAgo(p.years)})` : spanText(c), c.multi ? LABELS.multi : null].filter(Boolean).join(' — ');
+  };
   function buildCard(key) {
     const c = byKey.get(key);
     const u = c.u;
-    const placeNodes = c.class === '판별' || c.class === '범위'
-      ? [el('span', { class: 'cr-ico-wrap' }, classIcon(c.class)), ` ${classLabel(c.class)} · `, c.multi ? `${LABELS.multi} — ${spanText(c)}` : spanText(c), c.lo == null || c.hi == null ? el('span', { class: 'muted' }, c.lo == null && c.hi == null ? '' : ` (${LABELS.openEnd})`) : null]
-      : [el('span', { class: 'cr-ico-wrap' }, classIcon(c.class)), ` ${classLabel(c.class)} — ${fmt.help('chrono', c.class)}`];
-    const records = c.records?.length
-      ? [joinNodes(c.records.map(recLink)), c.relations ? el('div', { class: 'cr-rel-text' }, relText(c.relations)) : null]
+    // 장면 = 이 스토리 '지금'의 시점 기록(문장 링크), 회상 · 다른 때 장면은 따로
+    const recNodes = (c.records ?? []).filter((id) => !c.pieces.some((p) => p.id === id)).map((id) => el('div', {}, recLink(id)));
+    const shownPieces = c.pieces;
+    const pieceList = shownPieces.length
+      ? el('ul', { class: 'cr-plist' }, shownPieces.map((p) => el('li', {},
+        el('span', { class: 'cr-pwhen' }, p.slot != null ? spanText(p) : relText(p.relations) || LABELS.unknown), ' ',
+        ui.link(`record:${p.id}`, clip(cprose(p.text), 80) || pieceTag(p)))))
       : null;
-    const pieceList = c.pieces.length
-      ? el('ul', { class: 'cr-plist' }, c.pieces.map((p) => el('li', {},
-        el('span', { class: 'cr-ico-wrap' }, classIcon(p.class, true)), ' ', recLink(p.id), ' ',
-        el('span', { class: 'cr-ptag' }, pieceLabel(p.kind)), ' ',
-        el('span', { class: 'muted' }, p.slot != null ? spanText(p) : classLabel(p.class)),
-        p.relations ? el('div', { class: 'cr-rel-text' }, relText(p.relations)) : null,
-        fmt.prose(p.text) ? el('div', { class: 'cr-ptext' }, fmt.prose(p.text)) : null)))
-      : null;
-    const narrows = c.narrows.map((n) => el('div', { class: 'cr-narrow' },
-      el('div', { class: 'cr-narrow-head' },
-        n.piece ? [LABELS.pieceFlash, ' ', recLink(n.piece), ' · '] : null,
-        n.at?.length ? el('b', {}, atText(n.at)) : el('b', { class: 'muted' }, LABELS.clueNone),
-        ' ', n.confidence ? ui.chip('confidence', n.confidence) : null),
-      withLinks(n.reason) ? el('p', { class: 'cr-reason' }, withLinks(n.reason)) : null,
-      n.basis?.map(basisLink).filter(Boolean).length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(n.basis.map(basisLink).filter(Boolean), ' · ')) : null));
-    const d = LABELS.drift[c.drift];
-    const mainCh = c.release_main ? chNum(c.release_main) : null;
-    const driftSentence = d && ({
-      과거: `출시 때(${mainCh} 시점)보다 앞선 과거의 이야기 — 메인 ${c.drift_gap}챕터 전`,
-      앞: `출시 때(${mainCh} 시점)보다 ${c.drift_gap}챕터 앞선 이야기`,
-      맞음: `출시 때(${mainCh} 시점)의 이야기와 같은 때`,
-      걸침: `출시 때(${mainCh} 시점) 앞뒤에 걸치는 넓은 범위 — ${fmt.help('drift', '걸침')}`,
-      뒤: `출시 때(${mainCh} 시점)에는 아직 나오지 않은 ${c.drift_gap}챕터 뒤의 이야기 — 앞질러 간 이야기`,
-    })[c.drift];
+    // 추정한 이유 — 추정으로 좁힌 것만(확실 · 단서 없음은 이유를 달지 않는다)
+    const narrows = c.narrows.filter((n) => n.at?.length && n.confidence !== '확실').map((n) => {
+      const basis = (n.basis ?? []).map(basisLink).filter(Boolean);
+      return el('div', { class: 'cr-narrow' },
+        el('b', {}, atText(n.at)),
+        cprose(n.reason) ? el('p', { class: 'cr-reason' }, cprose(n.reason)) : null,
+        basis.length ? el('p', { class: 'cr-why-basis' }, joinNodes(basis)) : null);
+    });
+    const drift = DRIFT_STRONG.has(c.drift) ? LABELS.driftLong[c.drift](mainChOf(c), c.drift_gap) : null;
+    const pieceHead = shownPieces.every((p) => p.kind === '회상') ? LABELS.legend.piece[0] : fmt.TERM.piece;
     const close = el('button', { type: 'button', class: 'btn cr-card-close', 'aria-label': LABELS.card.close, onClick: () => state.set({ sel: '' }) }, LABELS.card.close);
-    const card = el('section', { class: 'cr-card', 'aria-label': `${u.title} — ${LABELS.card.place}` },
-      el('header', { class: 'cr-card-head' }, el('h3', {}, ui.chip('kind', u.kind), ' ', u.title), close),
+    return el('section', { class: 'cr-card', 'aria-label': `${u.title} — ${fmt.TERM.chronoPlace}` },
+      el('header', { class: 'cr-card-head' }, el('h3', {}, chTitle(u.title), el('span', { class: 'cr-meta' }, fmt.KIND[u.kind]?.label ?? u.kind)), close),
       kv([
-        [LABELS.card.place, placeNodes],
-        [LABELS.card.how, LABELS.via[c.via ?? '없음'] ?? c.via],
-        records ? [LABELS.card.records, records] : null,
-        pieceList ? [fmt.TERM.piece, pieceList] : null,
+        [fmt.TERM.chronoPlace, [placeText(c), c.parallel ? [' ', el('span', { class: 'cr-par', title: LABELS.parallelHint }, LABELS.parallel(wa(chNum(c.parallel.with))))] : null]],
+        recNodes.length ? [LABELS.card.scenes, recNodes] : null,
+        pieceList ? [pieceHead, pieceList] : null,
         narrows.length ? [LABELS.card.narrow, narrows] : null,
-        c.parallel ? [LABELS.parallel(chNum(c.parallel.with)), el('span', {}, LABELS.parallelHint, ' ', recLink(c.parallel.record))] : null,
-        [fmt.TERM.release, [relLabel(u.tick), u.date ? ` · ${u.date}` : '', u.date_confidence === '추정' ? ' (추정)' : '']],
-        d ? [fmt.DRIFT_TITLE, [driftBadge(c), ' ', driftSentence]] : null,
+        drift ? [LABELS.card.release, drift] : null,
       ]));
-    return card;
   }
 
   function syncSelection({ scroll }) {
@@ -597,24 +603,30 @@ export async function mount(root, ctx) {
     cardEl = null;
     for (const n of root.querySelectorAll('.is-sel')) n.classList.remove('is-sel');
     if (!activeKey) return;
-    const rows = [...root.querySelectorAll('.cr-row, .cg-row')].filter((r) => r.dataset.key === activeKey && r.offsetParent !== null);
+    const rows = [...root.querySelectorAll(ROW_SEL)].filter((r) => r.dataset.key === activeKey && r.offsetParent !== null);
     if (!rows.length) return;
     for (const r of rows) r.classList.add('is-sel');
-    const target = rows.includes(lastRow) ? lastRow : rows[0];
+    // 누른 줄 그대로, 링크로 왔으면 스토리 '지금'의 줄(회상 장면 줄 · 띠 그림 밖보다 먼저)
+    const target = rows.includes(lastRow) ? lastRow : rows.find((r) => !r.classList.contains('is-piece')) ?? rows[0];
     cardEl = buildCard(activeKey);
     target.after(cardEl);
     if (scroll) target.scrollIntoView({ block: 'center', behavior: 'auto' });
+    // 장면 글(기록 문장)은 기록을 받아야 보인다 — 아직이면 받은 뒤 카드를 다시 그린다
+    if (!idx.hasRecords && idx.withRecords) {
+      const want = activeKey;
+      idx.withRecords().then(() => { if (alive && activeKey === want && cardEl) syncSelection({ scroll: false }); }).catch(() => {});
+    }
   }
 
   // ══ 줄 누르기 · 툴팁(위임) ═══════════════════════════════════════════════════
-  const rowOf = (ev) => ev.target.closest?.('.cr-row, .cg-row');
+  const rowOf = (ev) => ev.target.closest?.(ROW_SEL);
   const pick = (row) => {
     lastRow = row;
     ownClick = true;
     try { state.set({ sel: activeKey === row.dataset.key && state.get().sel === `unit:${row.dataset.key}` ? '' : `unit:${row.dataset.key}` }); } finally { ownClick = false; }
   };
-  const onClick = (ev) => { const row = rowOf(ev); if (row) pick(row); };
-  const onKey = (ev) => { if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches?.('.cr-row, .cg-row')) { ev.preventDefault(); pick(ev.target); } };
+  const onClick = (ev) => { const row = rowOf(ev); if (row && !ev.target.closest('a, .cr-card')) pick(row); };
+  const onKey = (ev) => { if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches?.(ROW_SEL)) { ev.preventDefault(); pick(ev.target); } };
   root.addEventListener('click', onClick);
   root.addEventListener('keydown', onKey);
 
@@ -628,15 +640,13 @@ export async function mount(root, ctx) {
     tipEl.style.left = `${Math.max(8, Math.min(window.innerWidth - w - 8, x + 14))}px`;
     tipEl.style.top = `${y + 18 + h > window.innerHeight ? Math.max(8, y - h - 12) : y + 18}px`;
   };
+  /** 띠 그림 툴팁 — 제목 · 종류 · 작중 때(어긋난 것만 보기면 출시 때도) */
   function tipNode(c) {
     const u = c.u;
-    // 추정으로 좁힌 자리만 그 이유를 한 줄 — 시간 단서 · 메인 챕터 자리는 설명 없이
-    const guess = !c.records?.length && fmt.prose(c.narrows[0]?.reason) ? clip(fmt.prose(c.narrows[0].reason), 80) : null;
     return el('div', { class: 'cr-tip' },
       el('div', { class: 'cr-tip-title' }, u.title),
-      el('div', {}, `${fmt.KIND[u.kind].label} · ${classLabel(c.class)}${spanText(c) ? ` · ${c.multi ? LABELS.multi : spanText(c)}` : ''}`),
-      el('div', {}, `${relLabel(u.tick)}${u.date ? ` · ${u.date}` : ''}${c.drift ? ` · ${driftLabel(c.drift)}` : ''}`),
-      guess ? el('div', { class: 'cr-tip-basis' }, guess) : null);
+      el('div', {}, [fmt.KIND[u.kind].label, placeText(c)].filter(Boolean).join(' · ')),
+      cur.drift && driftShort(c) ? el('div', {}, driftShort(c)) : null);
   }
   const showTip = (row, x, y) => {
     if (tipRow === row) return;
@@ -677,7 +687,7 @@ export async function mount(root, ctx) {
       layoutChanged = prev.view !== cur.view || prev.by !== cur.by;
       if (layoutChanged) hideTip();
     }
-    if (changed.has('p') || changed.has('t') || changed.has('layers')) applyAll(s, { layoutChanged });
+    if (changed.has('p') || changed.has('t')) applyAll(s, { layoutChanged });
     if (changed.has('sel')) {
       const parsed = state.parseSel(s.sel);
       if (!s.sel) activeKey = null;
@@ -686,6 +696,8 @@ export async function mount(root, ctx) {
     }
   });
   return () => {
+    alive = false;
+    root.classList.remove('cr-drift-on');
     off();
     hideTip();
     clearTimeout(findTimer);
