@@ -3,13 +3,13 @@
  * 색은 CSS 변수를 가리키고 값은 style.css 토큰 한 곳에만 있다. 레포 용어 → 화면 말 대응은 라벨 값에만 걸리고, 상수의 키는 그대로다.
  *
  *   KIND[id] · KIND_ORDER           스토리 종류(main · event · side · sub · relic · erelic · episode · elevator) → label · color
- *   GRADE[등급]                      필수 · 추천(키 '보강') · 참고 · 독립(파란 순서 램프) · 본편(키 '척추') · 메인(잉크)
+ *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립(파란 순서 램프) · 필수(키 '척추') · 메인(잉크)
  *   LAYER[1..3]                     범위(주황 순서 램프) — 핵심 · 넓게 · 전부
  *   SCOPE · scopeOf(layers)         범위 세그먼트 셋(핵심 = {1} · 넓게 = {1,2} · 전부 = {1,2,3}) ↔ state의 layers
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · THREAD_WEIGHT(핵심 · 보조 · 곁가지)
- *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(필수 · 권장 · 선택) · 뜻 · 왜 선행인가 · 'CH.30 선행'
+ *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택, 화면 말 꼭 · 권장 · 선택 — PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 선행'
  *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · layer · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
@@ -39,7 +39,7 @@ export const KIND = {
   relic: { label: '유실물', color: 'var(--kind-relic)' },
   side: { label: '사이드', color: 'var(--kind-side)' },
   erelic: { label: '이벤트 유실물', color: 'var(--kind-erelic)' },
-  elevator: { label: '엘리베이터', color: 'var(--kind-elevator)' },
+  elevator: { label: '돌발', color: 'var(--kind-elevator)' },
   other: { label: '그 밖', color: 'var(--ink-muted)' },
 };
 export const KIND_ORDER = ['main', 'event', 'episode', 'sub', 'relic', 'side', 'erelic', 'elevator'];
@@ -51,26 +51,26 @@ export const KIND_HELP = {
   relic: '지역에 흩어진 유실물 문서',
   side: '사이드 스토리',
   erelic: '이벤트 속 유실물 문서',
-  elevator: '엘리베이터 대화',
+  elevator: '돌발 스토리 — 전초기지 건물 대화(지금은 엘리베이터 첫 스토리만)',
   other: '그 밖의 스토리',
 };
 
 // ── 등급 · 범위 ──
 export const GRADE = {
-  필수: { label: '필수', color: 'var(--grade-must)', rank: 1 },
+  필수: { label: '준필수', color: 'var(--grade-must)', rank: 1 },
   보강: { label: '추천', color: 'var(--grade-support)', rank: 2 },
   참고: { label: '참고', color: 'var(--grade-ref)', rank: 3 },
   독립: { label: '독립', color: 'var(--grade-standalone)', rank: 4 },
-  척추: { label: '본편', color: 'var(--grade-spine)', rank: 0 },
+  척추: { label: '필수', color: 'var(--grade-spine)', rank: 0 },
   메인: { label: '메인', color: 'var(--grade-main)', rank: 0 },
 };
 export const GRADE_ORDER = ['메인', '척추', '필수', '보강', '참고', '독립'];
 export const GRADE_HELP = {
-  필수: '안 읽으면 본편의 장면 · 인물을 따라갈 수 없다',
-  보강: '읽으면 본편에서 "뭐 있나 보다" 하고 넘긴 빈틈이 채워진다',
+  필수: '안 읽으면 필수 스토리의 장면 · 인물을 따라갈 수 없다',
+  보강: '읽으면 필수 스토리에서 "뭐 있나 보다" 하고 넘긴 빈틈이 채워진다',
   참고: '빈틈은 없지만 세계나 인물을 더 알게 된다',
-  독립: '그 스토리 안에서 끝나는 이야기 — 안 읽어도 본편에 지장 없다',
-  척추: '본편 — 메인 챕터와 본편급 이벤트 · 사이드. 등급을 매기지 않는 기준',
+  독립: '그 스토리 안에서 끝나는 이야기 — 안 읽어도 필수 스토리에 지장 없다',
+  척추: '꼭 읽을 스토리 — 메인 챕터와 필수 이벤트 · 사이드. 등급을 매기지 않고 다른 스토리 등급의 기준이 된다',
   메인: '메인 스토리 챕터',
 };
 
@@ -80,15 +80,15 @@ export const LAYER = {
   3: { label: '전부', color: 'var(--layer-3)' },
 };
 export const LAYER_HELP = {
-  1: '핵심 범위 — 메인과 딸린 서브퀘스트 · 유실물, 본편에 닿는 이벤트',
+  1: '핵심 범위 — 메인과 딸린 서브퀘스트 · 유실물, 필수 스토리에 닿는 이벤트',
   2: '넓게 범위부터 보인다 — 핵심에 호감도 · 참고 스토리가 더해진다',
-  3: '전부 범위에서만 보인다 — 본편과 따로 노는 이야기까지',
+  3: '전부 범위에서만 보인다 — 필수 스토리와 따로 노는 이야기까지',
 };
 /** 범위 세그먼트 — 값 → state의 layers. 다른 조합이 URL로 들어오면 scopeOf가 'all'로 본다 */
 export const SCOPE = [
   { value: 'core', label: '핵심', layers: [1], help: '줄거리의 중심이 되는 스토리만' },
   { value: 'wide', label: '넓게', layers: [1, 2], help: '핵심에 이야기를 풍부하게 하는 스토리까지' },
-  { value: 'all', label: '전부', layers: [1, 2, 3], help: '본편과 따로 노는 이야기까지 모두' },
+  { value: 'all', label: '전부', layers: [1, 2, 3], help: '필수 스토리와 따로 노는 이야기까지 모두' },
 ];
 export function scopeOf(layers) {
   const k = [...(layers ?? [])].map(Number).sort((a, b) => a - b).join();
@@ -179,8 +179,8 @@ export const CONFIDENCE_HELP = { 확실: '원문에서 바로 확인된다', 추
 /** 떡밥(줄기) 중요도: 키는 원본(뼈대 · 보강 · 독립) 그대로 */
 export const THREAD_WEIGHT = { 뼈대: { label: '핵심' }, 보강: { label: '보조' }, 독립: { label: '곁가지' } };
 export const THREAD_WEIGHT_HELP = {
-  뼈대: '본편을 관통하는 떡밥',
-  보강: '본편 곁에서 이야기를 보태는 떡밥',
+  뼈대: '필수 스토리를 관통하는 떡밥',
+  보강: '필수 스토리 곁에서 이야기를 보태는 떡밥',
   독립: '한 스토리 안에서 끝나는 떡밥',
 };
 
@@ -230,14 +230,15 @@ export const LINK_TYPE_HELP = {
 export const LINK_LEVEL = { 1: '약함', 2: '보통', 3: '강함' };
 
 /** 선행 스토리(order.json pre — tools/site/export/order.mjs prereqsOf): 칸 · 칸 뜻 · 왜 선행인가 */
-export const PRE_LEVEL = ['필수', '권장', '선택'];
+export const PRE_LEVEL = ['필수', '권장', '선택']; // 키(order.json pre) — 화면 말은 PRE_LABEL
+export const PRE_LABEL = { 필수: '꼭', 권장: '권장', 선택: '선택' };
 export const PRE_HELP = {
-  필수: '먼저 봐야 이 스토리를 따라갈 수 있다 — 앞 편이거나, 이 자리에 필수로 분류된 스토리',
-  권장: '먼저 보면 이 스토리의 장면 · 떡밥이 이어진다',
+  필수: '꼭 먼저 봐야 이 스토리를 따라갈 수 있다 — 앞 편이거나, 이 자리에 준필수로 분류된 스토리',
+  권장: '먼저 보면 이 스토리의 장면 · 떡밥이 이어진다 — 이 자리에 추천으로 분류된 스토리이거나 강한 떡밥',
   선택: '이 스토리가 다시 꺼내는 일이 나온다 — 봐 두면 좋지만 안 봐도 된다',
 };
 export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
-export const preOf = (spineLabel) => `${spineLabel} 선행`; // 'CH.30 선행' — 이 스토리가 그 본편의 선행이다
+export const preOf = (spineLabel) => `${spineLabel} 선행`; // 'CH.30 선행' — 이 스토리가 그 필수 스토리의 선행이다
 
 // ── 탭 ──
 export const TAB = {
@@ -259,10 +260,10 @@ export const FIRST_VISIT = {
   mainAria: '메인 스토리 어디까지',
   prev: '이전 챕터',
   next: '다음 챕터',
-  exHead: '본편 이벤트 · 사이드',
+  exHead: '필수 이벤트 · 사이드',
   exHint: '순서대로 안 봤다면 본 것만 체크',
-  exBadge: (n, all) => `+본편 ${n}/${all}`,
-  exBadgeHelp: '본편 이벤트 · 사이드를 메인 순서와 다르게 골랐다',
+  exBadge: (n, all) => `+필수 ${n}/${all}`,
+  exBadgeHelp: '필수 이벤트 · 사이드를 메인 순서와 다르게 골랐다',
   all: '전부 보기',
   later: '나중에',
   ok: '확인',
@@ -280,7 +281,7 @@ export const TERM = {
   cutoff: '여기까지 읽음',
   showAll: '전부 보기',
   scope: '범위',
-  spine: '본편',
+  spine: '필수',
   gradeAt: '지금 읽은 데까지의 등급',
   judgment: '분류',
   judgmentHistory: '분류가 바뀐 기록',
@@ -403,15 +404,15 @@ export function gradeAt(u, T) {
   return u.grade;
 }
 
-/** 분석 문장 속 레포 용어 → 화면 말(표시할 때만 바꾼다 — 데이터는 그대로). 바뀐 말에 맞춰 조사도 고친다: 척추가 → 본편이 */
-const PLAIN_TERMS = [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '본편'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '자동으로 찾지 못해 직접 더한']];
+/** 분석 문장 속 레포 용어 → 화면 말(표시할 때만 바꾼다 — 데이터는 그대로). 바뀐 말에 맞춰 조사도 고친다: 척추가 → 필수 스토리가. 등급 키 '필수'는 먼저 '준필수'로(필수품 · 필수 교육 같은 낱말은 두고) */
+const PLAIN_TERMS = [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '필수 스토리'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '자동으로 찾지 못해 직접 더한']];
 const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
 const hasFinal = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 && c % 28 !== 0; };
 export const plain = (text) => keysToNames(PLAIN_TERMS.reduce((t, [a, b]) => t.replace(new RegExp(`${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
   if (!j) return b;
   const pick = JOSA.find((x) => x[0] === j);
   return b + (hasFinal(b) ? pick[1] : pick[2]);
-}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천')));
+}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천').replace(/(?<!동행 )필수(?!품| 교육| 덕목)/g, '준필수')));
 /** 문장 속 작업용 키 → 화면 이름: 메인 챕터 'ch21' → 'CH.21', 그 밖 스토리 키 → 제목, 씬 ID → 장면 표시. 모르는 키는 그대로 */
 const KEY_RE = /\b(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[A-Za-z0-9_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2})\b/g;
 function keysToNames(text) {

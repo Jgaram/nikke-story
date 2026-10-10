@@ -29,7 +29,7 @@
  *   굵기 = 연결된 씬 수(세기 2 이상만 볼 때는 약한 연결 weak를 뺀 수), 점선(긴 점선) = 확정 전 후보. 이 탭에는 스토리 종류 색이 없다 —
  *   종류는 글자로 쓰고 전체 보기에서는 가로 띠(행)가 종류다(색 두 갈래가 겹치지 않게).
  *   자주 나오는 인물 · 항목(links.json targets.common)만 나눈 연결은 세기 1이라 기본(세기 2 이상)에서 빠진다. 그 항목을 인물 · 항목 거르개로 고르면 풀린다.
- *   안 본 스토리(state.reading().seen — 메인 자리 t + 본편 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)와 범위(layers) 밖 스토리의 선은 숨기고
+ *   안 본 스토리(state.reading().seen — 메인 자리 t + 척추 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)와 범위(layers) 밖 스토리의 선은 숨기고
  *   개수만 보인다("스포일러로 가린 N"). 선 · 근거는 양 끝 스토리를 다 봤을 때만, 인물 · 항목 · 떡밥 거르개 후보도 그런 선에서만. 안 본 스토리를 가운데로 둘 수 없다.
  *   이웃 보기: 가운데 카드 + 앞(먼저 나온)·뒤(이어지는) 스토리 카드, 선은 카드 사이 곡선. 한쪽 8장씩 연결이 센 순(이야기 연결 → 세기 → 씬 수)으로 뽑아 출시순으로 놓고 "더 보기".
  *   전체 보기: 행 = 스토리 종류, 가로 = 읽는 순서, 점 = 스토리(크기 = 이어진 스토리 수). 이야기 연결(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)만 기본, 많이 이어진 상위 80개만 그리고 "150개까지"로 넓힌다(상한 150).
@@ -203,7 +203,7 @@ export async function mount(root, ctx) {
       threads: threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) })),
     };
   };
-  /** 여기까지 읽음 서명 — t와 본편 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
+  /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const READ_ALL = state.reading({ t: null, x: {} });
   let cand = candidatesFor(state.reading(state.get()));
@@ -238,7 +238,7 @@ export async function mount(root, ctx) {
       layers: s.layers,
     };
   }
-  /** 그 스토리를 봤나(여기까지 읽음 안) — 출시 자리가 아니라 스토리 단위(본편 이벤트 · 사이드 예외 x 반영) */
+  /** 그 스토리를 봤나(여기까지 읽음 안) — 출시 자리가 아니라 스토리 단위(척추 이벤트 · 사이드 예외 x 반영) */
   const inCut = (F, u) => F.R.seen(u.key);
   const inRange = (F, u) => u.layer == null || F.layers.includes(u.layer);
   const kindOk = (F, u) => !F.kinds || F.kinds.has(u.kind);

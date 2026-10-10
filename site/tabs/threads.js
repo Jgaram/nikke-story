@@ -19,7 +19,7 @@
  *   sort    목록 정렬 — open(미해결 많은 순) · start(먼저 나온 순), 없으면 중요도순
  *
  * 그리는 규칙
- *   여기까지 읽음 R(state.reading — 메인 위치 t + 본편 이벤트 · 사이드 '봤음' 예외 x): 가리기는 자리가 아니라 스토리(단위)마다 정한다.
+ *   여기까지 읽음 R(state.reading — 메인 위치 t + 척추 이벤트 · 사이드 '봤음' 예외 x): 가리기는 자리가 아니라 스토리(단위)마다 정한다.
  *     의문 · 사실의 상태는 fmt.stateAt(뿌리, R)(단계별 단위 know_units · hint_units · partial_units · solved_units · reversed_units 중 본 것으로).
  *     단계 점 · 복선 · 결말 · 함께 맺음은 그 스토리를 봤을 때만(R.seen), 떡밥 ↔ 항목 선 · 떡밥끼리 관계는 근거 기록을 알게 되는 스토리 중 하나라도 봤을 때만(R.seenAny(units)).
  *     안 본 단계 · 스토리 열은 지우고 개수만 "스포일러로 가림"에 보인다. 자리(tick)는 시작 시점 안내 · 정렬 같은 위치에만 쓴다.
@@ -302,7 +302,7 @@ export async function mount(root, ctx) {
     const ts = (flow[t.id]?.roots ?? []).map((r) => r.first_tick).filter((x) => x != null);
     startTick.set(t.id, ts.length ? Math.min(...ts) : null);
   }
-  /** 떡밥이 처음 나오는 스토리들(뿌리의 첫 단계 단위) — 자리로는 지났는데 안 본 본편 이벤트 · 사이드 때문에 시작 전일 때 안내에 쓴다 */
+  /** 떡밥이 처음 나오는 스토리들(뿌리의 첫 단계 단위) — 자리로는 지났는데 안 본 척추 이벤트 · 사이드 때문에 시작 전일 때 안내에 쓴다 */
   const startUnits = (j) => [...new Set((flow[j]?.roots ?? []).filter((r) => r.first_tick != null).flatMap((r) => r.know_units ?? (r.unit ? [r.unit] : [])))]
     .sort((a, b) => (idx.units.get(a)?.order ?? 1e9) - (idx.units.get(b)?.order ?? 1e9));
   const wLabel = (w) => fmt.THREAD_WEIGHT[w]?.label ?? w;
@@ -1168,7 +1168,7 @@ export async function mount(root, ctx) {
           ui.el('button', { type: 'button', class: 'btn', onClick: () => goT(t0) }, LABELS.raiseCutoff(fmt.tickShort(t0))),
           ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
       } else if (first != null && state.visible(first, cutoff())) {
-        // 자리로는 지났다 — 안 봤다고 체크한 본편 이벤트 · 사이드에서 나오는 떡밥
+        // 자리로는 지났다 — 안 봤다고 체크한 척추 이벤트 · 사이드에서 나오는 떡밥
         const us = startUnits(j);
         emptyEl.append(ui.el('p', {}, `${LABELS.notStarted} — ${LABELS.startsIn(us.map(fmt.unitTitle).join(' · '))}`), ui.el('div', { class: 'thr-empty-actions' },
           us.length ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ x: { ...(state.get().x ?? {}), ...Object.fromEntries(us.map((u) => [u, true])) } }) }, LABELS.markSeen) : null,

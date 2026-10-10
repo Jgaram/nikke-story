@@ -61,7 +61,7 @@ test('지도 — 항목 · 선 · 결말 · 합류가 서로 가리키는 것이
   }
 });
 
-/** state.reading()의 R을 흉내 낸다 — 본편 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
+/** state.reading()의 R을 흉내 낸다 — 척추 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
 const extras = new Set([...units.values()].filter((u) => u.spine && u.kind !== 'main').map((u) => u.key));
 const mkR = (t, x = {}) => {
   const seen = (k) => (extras.has(k) && k in x ? x[k] : (units.get(k)?.tick ?? 0) <= t);
@@ -89,16 +89,16 @@ test('흐름 · 지도 — 스토리마다 가리는 칸(단계별 단위 · 근
   for (const [id, g] of Object.entries(map.relations)) check(g, `관계 ${id}`);
 });
 
-test('fmt.stateAt(뿌리, R) — 예외가 없으면 자리 규칙과 같고, 안 본 본편 이벤트의 단계는 빠진다', async () => {
+test('fmt.stateAt(뿌리, R) — 예외가 없으면 자리 규칙과 같고, 안 본 척추 이벤트의 단계는 빠진다', async () => {
   const fmt = await import('../site/lib/format.js');
   const roots = Object.values(flow).flatMap((f) => f.roots);
   for (const t of [1, 40, 55, 96, 119, 144, 1e9]) {
     const R = mkR(t);
     for (const r of roots) assert.equal(fmt.stateAt(r, R), fmt.stateAt(r, t), `${r.id} @${t}`);
   }
-  // 본편 이벤트에서만 풀리는 의문: 그 이벤트를 안 봤다고 하면 풀리기 전 상태로
+  // 척추 이벤트에서만 풀리는 의문: 그 이벤트를 안 봤다고 하면 풀리기 전 상태로
   const ex = roots.find((r) => r.kind === 'Q' && r.solved_units?.length && r.solved_units.every((u) => extras.has(u)) && r.first_tick < r.solved_tick);
-  assert.ok(ex, '본편 이벤트에서 풀리는 의문이 하나는 있다');
+  assert.ok(ex, '척추 이벤트에서 풀리는 의문이 하나는 있다');
   const T = 1e9;
   assert.equal(fmt.stateAt(ex, mkR(T)), fmt.stateAt(ex, T));
   assert.notEqual(fmt.stateAt(ex, mkR(T, Object.fromEntries(ex.solved_units.map((u) => [u, false])))), '풀림', `${ex.id}`);

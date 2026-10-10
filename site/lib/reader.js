@@ -235,14 +235,14 @@ function linksPanel(idx, { sel, tabAct, pick, build, emptyText }) {
   });
 }
 
-/** 스토리 패널의 분류 칸 — 메인 · 본편은 "본편" 표시만, 나머지는 그 시점 등급 · 이유 */
+/** 스토리 패널의 분류 칸 — 메인 · 척추는 "필수" 표시만, 나머지는 그 시점 등급 · 이유 */
 function classPanel(u, idx) {
   const j = orderMap?.get(u.key);
   const action = tabAction('order', {}, { sel: `unit:${u.key}` });
   const p = preMap[u.key];
-  // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름 + 왜
+  // 선행 스토리 — 칸마다 한 줄(꼭 · 권장 · 선택, 키 필수 · 권장 · 선택), 스토리 이름 + 왜
   const preRow = p ? row('선행', fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', {},
-    ui.el('b', { title: fmt.help('pre', l) }, `${l} `),
+    ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
     p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`)])))) : null;
   if (!j) {
     if (u.grade === '메인' || u.grade === '척추') return ui.panel(fmt.TERM.judgment, [ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), preRow ? kv([preRow]) : null], { actions: action });
@@ -346,7 +346,7 @@ const RENDER = {
     if (!u) return root.append(head('찾을 수 없음'), ui.empty(`스토리 없음: ${key}`));
     const hidden = !state.seen(u.key);
     root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null]));
-    // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(본편 이벤트 · 사이드 체크)
+    // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(척추 이벤트 · 사이드 체크)
     if (hidden) root.append(ui.notice(state.visible(u.tick) ? '안 봤다고 고른 스토리 — 아래는 스포일러일 수 있다' : `여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
     const syn = synopsisPanel(key, hidden);
     if (syn) root.append(syn);

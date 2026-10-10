@@ -6,7 +6,7 @@
     {
       "id": "W9a",
       "group": "main",
-      "label": "메인 + 엘리베이터",
+      "label": "메인 + 돌발",
       "size": 62786,
       "first": "ch00",
       "last": "ch16",
@@ -34,7 +34,7 @@
     {
       "id": "W9b",
       "group": "main",
-      "label": "메인 + 엘리베이터",
+      "label": "메인 + 돌발",
       "size": 63473,
       "first": "ch17",
       "last": "ch26",
@@ -43,7 +43,7 @@
     {
       "id": "W9c",
       "group": "main",
-      "label": "메인 + 엘리베이터",
+      "label": "메인 + 돌발",
       "size": 62036,
       "first": "ch27",
       "last": "ch35",
@@ -52,7 +52,7 @@
     {
       "id": "W9d",
       "group": "main",
-      "label": "메인 + 엘리베이터",
+      "label": "메인 + 돌발",
       "size": 59079,
       "first": "ch36",
       "last": "ch42",
@@ -61,7 +61,7 @@
     {
       "id": "W9e",
       "group": "main",
-      "label": "메인 + 엘리베이터",
+      "label": "메인 + 돌발",
       "size": 63161,
       "first": "ch43",
       "last": "ch48",

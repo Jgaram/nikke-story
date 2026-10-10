@@ -1,10 +1,10 @@
 /**
  * 탭 1 감상 순서(W2) — 화면 1 "스토리 중요도 분류"(docs/views.md 1절, 판정 카드 docs/importance.md).
- * 첫 쓸모: 스토리를 다 보지 않고 중요한 것만 빠르게 — 본편(메인 챕터 + 본편 이벤트 · 사이드)을 출시순 한 줄로 두고,
+ * 첫 쓸모: 스토리를 다 보지 않고 중요한 것만 빠르게 — 척추(메인 챕터 + 척추 이벤트 · 사이드)을 출시순 한 줄로 두고,
  *   등급 거르개(기본 필수 · 추천)에 든 메인 밖 스토리를 그 사이사이 제자리(읽는 자리 units.json order)에 끼워 넣은 감상 순서.
  *
  * 쓰는 JSON
- *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](본편 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
+ *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](척추 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
  *   order-detail.json(분류 카드를 처음 열 때 받는다): units{키 → { history, basis_text, reviews }} · notes[]
  *   synopsis.json(공개 개요 — 분류 카드 머리 아래 한 줄 소개, W8): [{ key, logline, … }] — 여기까지 읽음 안 스토리만, 없으면 그리지 않는다
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
@@ -18,19 +18,19 @@
  *
  * 그리는 규칙
  *   목록 · 지도는 여기까지 읽음과 관계없이 전부 보인다(사용자, 2026-10-10 — 안 본 사람에게 어떤 순서로 볼지 알려 주는 안내라서). 등급은 최종 등급,
- *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 이고 본 마지막 본편 줄 아래 "여기까지 읽음" 구분 줄(cutRowAt), 지도는 그 뒤 칸을 옅게.
- *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 본편 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
- *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 본편 이벤트 · 사이드는 줄에 '안 봄' 표시 · 옅게, 지도 축에는 속 빈 표시.
+ *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 이고 본 마지막 척추 줄 아래 "여기까지 읽음" 구분 줄(cutRowAt), 지도는 그 뒤 칸을 옅게.
+ *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 척추 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
+ *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드는 줄에 '안 봄' 표시 · 옅게, 지도 축에는 속 빈 표시.
  *     범위 거르개 밖 스토리는 숨기고 개수만 보인다.
  *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, R)(tools/views/importance.mjs와 같다: 전부 보기면 최종 등급, 안 본 스토리면 아직 없음,
  *     from 시점이 있고 t < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 안 본 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
  *     '이 스토리가 선행인 곳'도 본 스토리만 든다.
- *   목록: 감상 순서 한 줄(ol). 본편 줄(메인 챕터는 굵은 구분 줄, 본편 이벤트 · 사이드는 '본편' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
+ *   목록: 감상 순서 한 줄(ol). 척추 줄(메인 챕터는 굵은 구분 줄, 척추 이벤트 · 사이드는 '필수' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
  *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 글자. 이유(분석 문장)는 목록에 싣지 않고 분류 카드 · 리더에만(사용자 — 목록이 설명으로 길어진다).
  *     거르개는 최종 등급으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
- *   지도: 본편 60곳(메인 49 + 본편 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 본편 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
+ *   지도: 척추 60곳(메인 49 + 척추 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 척추 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
  *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 최종 등급(파랑 램프), 점 크기는 같다.
- *     본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
+ *     척추 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
  *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 등급 변화 · 이유 · 관련 메모 · 떡밥 · 주역 · 분류가 바뀐 기록).
  *   색은 등급 램프(--grade-*)만 — 종류는 칩 · 행 이름으로 (종류 색과 등급 색을 한 차트에 같이 쓰지 않는다).
  *   키보드: 점 421개를 모두 탭 정지점으로 만들지 않는다(축 60칸만 tabindex 0) — 같은 내용을 목록 모드의 표(줄마다 초점)가 준다.
@@ -48,20 +48,20 @@ const LABELS = {
   view: '보기', list: '목록', map: '지도',
   grade: '등급', kind: '종류',
   find: '제목 · 이유 검색', findAria: '스토리 검색',
-  count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(본편 포함)와 대사 글자 수',
-  extras: (n) => `본편 밖 ${n}`,
+  count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(필수 스토리 포함)와 대사 글자 수',
+  extras: (n) => `필수 밖 ${n}`,
   preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`, pre: '선행', riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   rowsGrade: '등급별', rowsKind: '종류별', rows: '행',
-  legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' },
+  legendSpine: { main: '메인 챕터', event: '필수 이벤트', side: '필수 사이드' },
   mapHint: '점을 누르면 분류 · 아래 축을 누르면 그 시점까지 읽은 것으로 둔다',
-  mapAria: (n, rows) => `본편 ${n}곳을 가로축으로, 스토리 ${rows}개를 등급 색 점으로 단 지도`,
+  mapAria: (n, rows) => `필수 스토리 ${n}곳을 가로축으로, 스토리 ${rows}개를 등급 색 점으로 단 지도`,
   afterCut: '아직 안 읽음', axisGo: '누르면 여기까지 읽은 것으로 둔다',
   cutLine: (at) => `여기까지 읽음 · ${at}`, cutLineHelp: '이 아래가 다음에 볼 순서', goCut: '읽은 자리로', emptyFilter: '거르개에 맞는 스토리가 없다.',
   clearFilter: '거르개 풀기', outScope: '범위 밖',
   card: '분류', cardClose: '닫기',
   rows2: {
     grade: '등급', why: '관련 메모', reason: '이유', judg: '분류', threads: '떡밥', lead: '주역', origins: '첫 이야기', endings: '결말', history: '분류가 바뀐 기록',
-    pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 본편',
+    pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 필수 스토리',
   },
   none: '없음',
   after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
@@ -75,7 +75,7 @@ const listParam = (v, all, dflt) => (v == null ? dflt : v.split(',').filter((x) 
 
 const DOT_R = 4; // 점 반지름(지름 8px — dataviz 최소)
 const STEP = DOT_R * 2 + 1; // 점 사이 간격
-const COL_MIN = 20; // 본편 한 칸의 최소 너비(점 둘이 나란히)
+const COL_MIN = 20; // 척추 한 칸의 최소 너비(점 둘이 나란히)
 const LANE_MIN = 40; // 행 최소 높이(행 이름 두 줄이 들어간다)
 const LANE_PAD = 8;
 const AXIS_H = 46; // 축(표시 + 라벨) 높이
@@ -85,8 +85,8 @@ const SVGNS = 'http://www.w3.org/2000/svg';
 export { gradeAt }; // 계산은 lib/format.js 한 곳(리더의 분류 칸도 같이 쓴다)
 
 /**
- * 여기까지 읽음 구분 줄을 넣을 자리 — seq(감상 순서) 안에서 출시 시점 ≤ cut이고 본(R.seen) 마지막 본편 줄의 번호(없으면 -1).
- * 예외(x)가 없으면 '출시 시점 ≤ cut인 마지막 본편 줄'과 같다. 안 봄으로 둔 본편 이벤트 · 사이드가 끝에 있으면 그 줄은 구분 줄 아래(다음에 볼 순서)로 간다.
+ * 여기까지 읽음 구분 줄을 넣을 자리 — seq(감상 순서) 안에서 출시 시점 ≤ cut이고 본(R.seen) 마지막 척추 줄의 번호(없으면 -1).
+ * 예외(x)가 없으면 '출시 시점 ≤ cut인 마지막 척추 줄'과 같다. 안 봄으로 둔 척추 이벤트 · 사이드가 끝에 있으면 그 줄은 구분 줄 아래(다음에 볼 순서)로 간다.
  * 뒤에 나왔지만 봤음으로 둔 줄은 자리를 옮기지 않는다(구분 줄은 메인 챕터 자리 표시).
  */
 export function cutRowAt(seq, cut, R) {
@@ -122,7 +122,7 @@ export async function mount(root, ctx) {
   /** 거꾸로 — A가 선행인 스토리들 [X, 칸] */
   const preFor = new Map();
   for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
-  /** 출시 시점 → 본편 칸(그 시점 ≤ 인 마지막 본편 스토리) */
+  /** 출시 시점 → 척추 칸(그 시점 ≤ 인 마지막 척추 스토리) */
   const colOf = (tick) => {
     let lo = 0; let hi = spineTicks.length - 1; let ans = 0;
     while (lo <= hi) { const mid = (lo + hi) >> 1; if (spineTicks[mid] <= tick) { ans = mid; lo = mid + 1; } else hi = mid - 1; }
@@ -178,25 +178,25 @@ export async function mount(root, ctx) {
   const listView = ui.el('div', { class: 'order-list' });
   const listEl = ui.el('ol', { class: 'order-seq' });
   listView.append(listEl);
-  /** 'CH.30 선행' — 판정이 짚은 본편 자리(from)의 선행이다. 등급이 그 자리부터 오르면 툴팁에 */
+  /** 'CH.30 선행' — 판정이 짚은 척추 자리(from)의 선행이다. 등급이 그 자리부터 오르면 툴팁에 */
   const preOfChip = (j) => {
-    // 본편이 이 스토리보다 앞이면(출시 전 본편이 닿는 자리) 선행이 아니다 — prereqsOf와 같은 규칙
+    // 척추가 이 스토리보다 앞이면(출시 전 척추가 닿는 자리) 선행이 아니다 — prereqsOf와 같은 규칙
     if (!j.from || !spineByKey.has(j.from) || !(j.unit.order < spineByKey.get(j.from).unit.order)) return null;
     const at = spineLabel(j.from);
     let tip = LABELS.preOfHelp(at);
     if (j.from_tick) tip += ` · ${LABELS.riseBefore(at, gl(j.before ?? j.grade))}`;
     return ui.el('span', { class: 'order-preof', title: tip }, fmt.preOf(at));
   };
-  /** 선행 한 줄 — 필수는 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
+  /** 선행 한 줄 — 꼭(키 필수)은 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
   const preLine = (key) => {
     const p = pre[key];
     if (!p) return null;
     const parts = [];
-    if (p.필수?.length) parts.push([ui.el('b', { title: fmt.help('pre', '필수') }, '필수 '), p.필수.map(([k], i) => [i ? ', ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k))])]);
-    for (const l of ['권장', '선택']) if (p[l]?.length) parts.push(ui.el('span', { title: fmt.help('pre', l) }, `${l} ${p[l].length}`));
+    if (p.필수?.length) parts.push([ui.el('b', { title: fmt.help('pre', '필수') }, `${fmt.PRE_LABEL.필수} `), p.필수.map(([k], i) => [i ? ', ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k))])]);
+    for (const l of ['권장', '선택']) if (p[l]?.length) parts.push(ui.el('span', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} ${p[l].length}`));
     return ui.el('span', { class: 'order-pre', onClick: (e) => e.stopPropagation() }, `${LABELS.pre} `, parts.map((x, i) => [i ? ' · ' : null, x]));
   };
-  /** 감상 순서의 한 줄. 본편이면 sp, 메인 밖이면 j */
+  /** 감상 순서의 한 줄. 척추이면 sp, 메인 밖이면 j */
   const seqRow = (item, n, unseen = false) => {
     const { key, unit } = item;
     const go = () => state.set({ sel: `unit:${key}` });
@@ -264,7 +264,7 @@ export async function mount(root, ctx) {
     kindPick.sync();
     const inLayer = judged.filter((j) => j.unit.layer == null || s.layers.includes(j.unit.layer));
     const rows = inLayer.filter((j) => match(j, s, kinds));
-    // 감상 순서: 본편(늘) + 고른 등급(최종 등급)의 메인 밖 스토리, 읽는 자리 순서
+    // 감상 순서: 척추(늘) + 고른 등급(최종 등급)의 메인 밖 스토리, 읽는 자리 순서
     const spineRows = spine.filter((sp) => findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
     const extras = rows.filter((j) => grades.includes(j.grade));
     current = { rows: extras, cut }; // 지도도 같은 거르개
@@ -281,9 +281,9 @@ export async function mount(root, ctx) {
     // 목록
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
-    // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 본편 줄 아래(이 아래가 다음에 볼 순서)
+    // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 척추 줄 아래(이 아래가 다음에 볼 순서)
     const cutAt = cutRowAt(seq, cut, rd);
-    // 구분 줄 위인데 안 봄으로 둔 본편 이벤트 · 사이드 — 줄에 '안 봄'(예외가 없으면 없다)
+    // 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드 — 줄에 '안 봄'(예외가 없으면 없다)
     const lis = seq.map((x, i) => seqRow(x, i + 1, x.spine && i < cutAt && !rd.seen(x.key)));
     if (cutAt >= 0 && cutAt < seq.length - 1) {
       lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
@@ -377,7 +377,7 @@ export async function mount(root, ctx) {
     for (const [i, sp] of spine.entries()) {
       const cx = colX(i) + colW / 2;
       const kind = sp.unit.kind === 'main' ? 'is-main' : sp.unit.kind === 'side' ? 'is-side' : 'is-event';
-      // is-after = 여기까지 읽음 뒤 자리(위치), is-unseen = 그 앞인데 안 봄으로 둔 본편 이벤트 · 사이드(속 빈 표시 — 예외가 없으면 없다)
+      // is-after = 여기까지 읽음 뒤 자리(위치), is-unseen = 그 앞인데 안 봄으로 둔 척추 이벤트 · 사이드(속 빈 표시 — 예외가 없으면 없다)
       const unseen = i <= cutCol && !curR.seen(sp.key);
       const g = S('g', { class: `order-col ${kind} ${i > cutCol ? 'is-after' : ''} ${unseen ? 'is-unseen' : ''} ${i === cutCol && cut != null ? 'is-cut' : ''}`, transform: `translate(${cx},${axisY})`, tabindex: 0, role: 'button', 'aria-label': `${sp.unit.title} — ${LABELS.axisGo}` });
       g.append(S('rect', { class: 'order-col-hit', x: -colW / 2, y: 0, width: colW, height: AXIS_H, fill: 'transparent' }));
@@ -435,12 +435,12 @@ export async function mount(root, ctx) {
     const R = LABELS.rows2;
     const p = pre[key];
     const lines = p ? fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', { class: 'order-pre-line' },
-      ui.el('b', { title: fmt.help('pre', l) }, `${l} `),
+      ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
       p[l].map(([k, why], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[why] ?? why})`)]))) : [];
     const back = (preFor.get(key) ?? []).filter(([x]) => curR.seen(x));
     return [
       [R.pre, lines.length ? lines : ui.el('span', { class: 'muted' }, LABELS.none)],
-      back.length ? [R.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${l}`)])] : null,
+      back.length ? [R.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${fmt.PRE_LABEL[l]}`)])] : null,
     ];
   };
   const kv = (rows) => ui.el('dl', { class: 'order-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [ui.el('dt', {}, k), ui.el('dd', {}, v)]));

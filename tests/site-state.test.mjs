@@ -1,5 +1,5 @@
 /**
- * 사이트 여기까지 읽음(state.js) — 메인 위치 t + 본편 이벤트 · 사이드 예외 x로 스토리 · 기록을 가리는 규칙.
+ * 사이트 여기까지 읽음(state.js) — 메인 위치 t + 척추 이벤트 · 사이드 예외 x로 스토리 · 기록을 가리는 규칙.
  * 브라우저 전역(location · history · localStorage)은 최소로 흉내 낸다.
  *
  *   node --test tests/site-state.test.mjs
@@ -16,7 +16,7 @@ globalThis.window = { addEventListener() {} };
 const state = await import('../site/lib/state.js');
 const fmt = await import('../site/lib/format.js');
 
-// 메인 셋(10 · 20 · 30) · 본편 이벤트 둘(15 · 25) · 그 밖 이벤트 하나(18)
+// 메인 셋(10 · 20 · 30) · 척추 이벤트 둘(15 · 25) · 그 밖 이벤트 하나(18)
 const units = new Map([
   ['ch01', { key: 'ch01', kind: 'main', tick: 10 }],
   ['ch02', { key: 'ch02', kind: 'main', tick: 20 }],
@@ -35,12 +35,12 @@ test('예외가 없으면 출시 자리 규칙과 같다', () => {
   assert.deepEqual(state.spineExtras().map((e) => e.key), ['ev_a', 'ev_b']);
 });
 
-test('본편 이벤트 · 사이드는 따로 고른다 — 앞의 것을 끄고 뒤의 것을 켠다', () => {
+test('척추 이벤트 · 사이드는 따로 고른다 — 앞의 것을 끄고 뒤의 것을 켠다', () => {
   state.set({ t: 20, x: { ev_a: false, ev_b: true } });
   const R = state.reading();
   assert.equal(R.seen('ev_a'), false);
   assert.equal(R.seen('ev_b'), true);
-  assert.equal(R.seen('ev_c'), true); // 본편이 아닌 이벤트는 메인 위치를 따른다
+  assert.equal(R.seen('ev_c'), true); // 척추가 아닌 이벤트는 메인 위치를 따른다
   assert.match(location.hash, /x=-ev_a,ev_b|x=-ev_a%2Cev_b/);
   // 기록: 사실은 know_units 중 하나라도 봤으면 안다
   assert.equal(R.known({ kind: 'F', unit: 'ev_a' }), false);

@@ -40,7 +40,7 @@ function themeButton() {
 }
 
 // ── 여기까지 읽음(컷오프) — 상단은 지금 값을 보이는 단추 하나, 누르면 팝업(dialog). 첫 방문이면 팝업이 저절로 뜬다 ──
-// 팝업: 메인은 순서대로 보니 슬라이더 + 이전 · 다음 챕터 단추 하나로, 본편 이벤트 · 사이드는 순서 없이 볼 수 있어 따로 체크(사용자, 2026-10-10)
+// 팝업: 메인은 순서대로 보니 슬라이더 + 이전 · 다음 챕터 단추 하나로, 척추 이벤트 · 사이드는 순서 없이 볼 수 있어 따로 체크(사용자, 2026-10-10)
 const FV_LATER_KEY = 'nikke-story.fv-later';
 function cutoffControl(idx, firstVisit) {
   const wrap = $('#cutoff');
@@ -84,7 +84,7 @@ function cutoffControl(idx, firstVisit) {
   } }, dir < 0 ? '‹' : '›');
   const prevBtn = stepBtn(-1);
   const nextBtn = stepBtn(1);
-  // 본편 이벤트 · 사이드 체크 칸 — 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
+  // 척추 이벤트 · 사이드 체크 칸 — 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
   const boxes = extras.map((e) => {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
     input.addEventListener('change', () => {

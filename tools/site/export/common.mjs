@@ -59,7 +59,7 @@ export async function run(ctx) {
   const events = new Map(csv('data/views/timeline/events.csv').map((r) => [r.unit, r]));
   const eventScenes = new Map(csv('data/views/timeline/event-scenes.csv').map((r) => [r.scene, r]));
   const roots = new Map(csv('data/views/timeline/records.csv').map((r) => [r.id, r]));
-  // 단계별 단위 — 여기까지 읽음이 '본 스토리 목록'일 때(본편 이벤트 · 사이드를 건너뛸 수 있다) 앎 · 상태를 단위로 계산한다
+  // 단계별 단위 — 여기까지 읽음이 '본 스토리 목록'일 때(척추 이벤트 · 사이드를 건너뛸 수 있다) 앎 · 상태를 단위로 계산한다
   const STAGE_KEY = { '처음 밝혀짐': 'know_units', 보강: 'know_units', 제기: 'know_units', 암시: 'hint_units', 뒤집힘: 'reversed_units', '일부 회수': 'partial_units', 회수: 'solved_units' };
   const stageUnits = new Map();
   for (const r of csv('data/views/timeline/reveals.csv')) {

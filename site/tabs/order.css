@@ -66,13 +66,13 @@
 .tab-order .order-pre { display: block; font-size: 12px; font-weight: 400; color: var(--ink-muted); }
 .tab-order .order-pre b { font-weight: 600; color: var(--ink-2); }
 .tab-order .order-pre-line + .order-pre-line { margin-top: 2px; }
-/* 본편 — 메인 챕터는 굵은 구분 줄(제목이 칩 칸까지 넓게), 본편 이벤트 · 사이드는 본편 칩 */
+/* 척추 — 메인 챕터는 굵은 구분 줄(제목이 칩 칸까지 넓게), 척추 이벤트 · 사이드는 척추 칩 */
 .tab-order .order-row.is-main { padding-top: 9px; padding-bottom: 9px; background: var(--surface-2); border-top-color: var(--line-2); }
 .tab-order .order-row.is-main .order-badges { display: none; }
 .tab-order .order-row.is-main .order-title { grid-column: 2 / 4; font-weight: 700; font-size: 15px; }
 .tab-order .order-row.is-main.is-selected { background: color-mix(in srgb, var(--accent) 13%, var(--surface-2)); }
 .tab-order .order-row.is-spine .order-title { font-weight: 600; }
-/* 여기까지 읽음 앞인데 안 봄으로 둔 본편 이벤트 · 사이드 — 옅게 + '안 봄' */
+/* 여기까지 읽음 앞인데 안 봄으로 둔 척추 이벤트 · 사이드 — 옅게 + '안 봄' */
 .tab-order .order-row.is-unseen .order-title { opacity: 0.72; }
 .tab-order .order-unseen {
   display: inline-block; padding: 0 6px; font-size: 11px; line-height: 17px; font-weight: 600; white-space: nowrap;

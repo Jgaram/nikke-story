@@ -57,7 +57,7 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
   }
 });
 
-test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 본편 이벤트 · 사이드 키)]의 합이 pairs.csv와 같다', () => {
+test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 척추 이벤트 · 사이드 키)]의 합이 pairs.csv와 같다', () => {
   const csv = new Map(readCsv(path.join(ROOT, 'data/views/persons/pairs.csv')).map((r) => [`${r.a}\t${r.b}`, r]));
   assert.equal(pairs.length, csv.size);
   const layersAll = [1, 2, 3];
@@ -83,13 +83,13 @@ test('pairTotals — 여기까지 읽음과 범위가 합을 줄인다', () => {
   assert.deepEqual(pairTotals(by, 0, [1, 2, 3]), { scenes: 0, talk: 0, units: 0 });
 });
 
-/** state.reading()의 R을 흉내 낸다 — 본편 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
+/** state.reading()의 R을 흉내 낸다 — 척추 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
 const mkR = (t, x = {}) => {
   const seen = (k) => (extras.has(k) && k in x ? x[k] : (unitByKey.get(k)?.tick ?? 0) <= t);
   return { all: false, t, x, seen, seenAny: (ks) => ks.some(seen) };
 };
 
-test('pairTotals(by, R) — 예외가 없으면 자리 규칙과 같고, 본편 이벤트 · 사이드 칸은 봤음 예외를 따른다', () => {
+test('pairTotals(by, R) — 예외가 없으면 자리 규칙과 같고, 척추 이벤트 · 사이드 칸은 봤음 예외를 따른다', () => {
   const L = [1, 2, 3];
   for (const t of [1, 55, 119, 144]) {
     const R = mkR(t);

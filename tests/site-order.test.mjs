@@ -23,7 +23,7 @@ const detail = read('order-detail.json');
 const ticks = read('ticks.json');
 const GRADES = ['필수', '보강', '참고', '독립'];
 
-test('order.json — 판정 단위 · 본편 · 주역의 모양', () => {
+test('order.json — 판정 단위 · 척추 · 주역의 모양', () => {
   assert.equal(order.units.length, order.counts.judged);
   assert.equal(order.spine.length, order.counts.spine);
   assert.equal(order.leads.length, order.counts.leads);
@@ -38,7 +38,7 @@ test('order.json — 판정 단위 · 본편 · 주역의 모양', () => {
     // 큰 칼럼은 order-detail.json으로 뺐다 — 첫 화면 파일에 남아 있으면 안 된다
     for (const k of ['history', 'reviews', 'basis_text']) assert.ok(!(k in u), `${u.key}: ${k}는 order-detail.json에 있다`);
   }
-  for (let i = 1; i < order.spine.length; i++) assert.ok(order.spine[i].tick >= order.spine[i - 1].tick, '본편은 출시 시점순');
+  for (let i = 1; i < order.spine.length; i++) assert.ok(order.spine[i].tick >= order.spine[i - 1].tick, '척추는 출시 시점순');
 });
 
 test('order-detail.json — 모든 키가 order.json에 있고 검토 기록의 메모 번호가 유효하다', () => {
@@ -125,15 +125,15 @@ test('예외가 없으면 gradeAt(u, R) · R.seen은 출시 시점 규칙(gradeA
   for (const u of order.units) assert.equal(siteGradeAt(u, all), u.grade);
 });
 
-test('cutRowAt — 예외가 없으면 tick ≤ cut인 마지막 본편 줄, 안 봄으로 둔 끝 본편 이벤트는 구분 줄 아래로', () => {
+test('cutRowAt — 예외가 없으면 tick ≤ cut인 마지막 척추 줄, 안 봄으로 둔 끝 척추 이벤트는 구분 줄 아래로', () => {
   const units = new Map(unitsJson.map((u) => [u.key, u]));
-  // 감상 순서처럼: 본편 전부 + 판정 단위 몇 개, 읽는 자리 순서
+  // 감상 순서처럼: 척추 전부 + 판정 단위 몇 개, 읽는 자리 순서
   const seq = [...order.spine.map((s) => ({ ...s, spine: true })), ...order.units.slice(0, 40)]
     .map((x) => ({ ...x, unit: units.get(x.key) })).sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
   const old = (cut) => { let at = -1; seq.forEach((x, i) => { if (x.spine && x.tick <= cut) at = i; }); return at; };
   for (const t of ticks) assert.equal(cutRowAt(seq, t.tick, siteState.reading({ t: t.tick, x: {} })), old(t.tick), `@${t.tick}`);
   assert.equal(cutRowAt(seq, null, siteState.reading({ t: null, x: {} })), -1);
-  // 본편 이벤트 바로 뒤에 t를 두고 그것을 안 봄으로 — 구분 줄이 그 앞 본편 줄로 올라간다
+  // 척추 이벤트 바로 뒤에 t를 두고 그것을 안 봄으로 — 구분 줄이 그 앞 척추 줄로 올라간다
   const ev = extrasJson.find((e) => seq.some((x, i) => x.key === e.key && i > 0));
   const i = seq.findIndex((x) => x.key === ev.key);
   const t = ev.tick;

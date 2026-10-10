@@ -17,7 +17,7 @@
  *   hubs   1이면 함께 나온 항목에 자주 나오는 항목도 넣는다
  *
  * 그리는 규칙
- *   - 여기까지 읽음(state.reading — 메인 자리 t + 본편 이벤트 · 사이드 예외 x)과 범위(layers)를 모든 숫자 · 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
+ *   - 여기까지 읽음(state.reading — 메인 자리 t + 척추 이벤트 · 사이드 예외 x)과 범위(layers)를 모든 숫자 · 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
  *     기록은 그 기록을 아는 스토리(recs의 아는 단위 — 사실 · 의문은 know_units)를 봤으면 보이고, 항목은 나온 곳(처음 나온 스토리 · 기록 · 처음 소개된 스토리)
  *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠지고 "스포일러로 가림 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
  *     안 본 기록 · 스토리는 빼고 같은 식으로 센다. 나온 곳을 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 출시 자리(tick0)는 '나온 순서' 정렬 · 안내 문구에만 쓴다. 줄이 없는 섹션은 접고 머리에 가린 수를 적는다(사용자가 직접 연 · 접은 섹션만 기억).
@@ -117,7 +117,7 @@ export async function mount(root, ctx) {
     const a = appearUnits.get(e.id);
     return a.us.some((k) => R.seen(k)) || a.rs.some(([u, tick]) => recKnown(R, u, tick));
   };
-  /** 여기까지 읽음 서명 — t와 본편 이벤트 · 사이드 예외(x)(숫자 캐시 키) */
+  /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)(숫자 캐시 키) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const typeLabel = (t) => fmt.TARGET_TYPE[t] ?? t;
   const whenLabel = (tick) => fmt.tickLabel(tick, { date: false });
@@ -702,7 +702,7 @@ export async function mount(root, ctx) {
     put(lifeHidden, hiddenNote(g.cutHidden, g.layerHidden));
     const moreBtn = (key, left, step) => h('button', { type: 'button', class: 'btn', onClick: () => { lifeMore.set(key, (lifeMore.get(key) ?? step) + PAGE.more); renderLife(); } }, LABELS.more(left));
     if (!matched.length) {
-      // 메인 자리를 올려서 보이게 되는 것 중 가장 이른 자리(본편 이벤트 · 사이드를 안 봄으로 둔 것은 t를 올려도 안 보여서 뺀다)
+      // 메인 자리를 올려서 보이게 되는 것 중 가장 이른 자리(척추 이벤트 · 사이드를 안 봄으로 둔 것은 t를 올려도 안 보여서 뺀다)
       const next = world.life.filter((l) => !recKnown(c.R, l.unit ?? null, l.tick) && l.tick > c.R.t && !(l.unit in c.R.x) && c.layers.has(l.layer)).reduce((m, l) => Math.min(m, l.tick), Infinity);
       const hiddenByCut = !pool.length && Number.isFinite(next);
       lifeList.append(h('div', { class: 'w-empty' },

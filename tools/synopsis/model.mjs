@@ -30,14 +30,14 @@ export function unitKind(key) {
   if (key.startsWith('d_ex_elevator')) return 'elevator';
   return 'other';
 }
-export const KIND_LABEL = { main: '메인', event: '이벤트', side: '사이드', erelic: '이벤트 유실물', sub: '서브퀘스트', relic: '유실물', episode: '호감도', elevator: '엘리베이터', other: '그 밖' };
+export const KIND_LABEL = { main: '메인', event: '이벤트', side: '사이드', erelic: '이벤트 유실물', sub: '서브퀘스트', relic: '유실물', episode: '호감도', elevator: '돌발', other: '그 밖' };
 
 /**
  * W9 묶음의 갈래 — 이 순서로 나눈다(사이트에서 가장 많이 볼 메인부터). 갈래 안은 출시순(읽는 순서).
  * 엘리베이터는 메인과 같이 읽혔으므로(ch07 뒤) 메인 갈래에 둔다.
  */
 export const GROUPS = [
-  { id: 'main', label: '메인 + 엘리베이터', kinds: ['main', 'elevator'] },
+  { id: 'main', label: '메인 + 돌발', kinds: ['main', 'elevator'] },
   { id: 'story', label: '이벤트 · 사이드 · 이벤트 유실물', kinds: ['event', 'side', 'erelic'] },
   { id: 'small', label: '서브퀘스트 · 유실물', kinds: ['sub', 'relic'] },
   { id: 'episode', label: '호감도 스토리', kinds: ['episode'] },
