@@ -17,14 +17,14 @@
  * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13b)
  *   목록은 여기까지 읽음과 관계없이 전부 보인다(사용자, 2026-10-10 — 안 본 사람에게 어떤 순서로 볼지 알려 주는 안내라서). 등급은 최종 등급,
  *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 이고 본 마지막 척추 줄 아래 "여기까지 읽음" 구분 줄(cutRowAt).
- *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 척추 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
- *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드는 줄에 '안 봄' 표시.
+ *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 체크 칸 스토리(필수 이벤트 · 사이드 · 준필수)는 '봤음' 예외(x)를 따르고,
+ *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 체크 칸 스토리(필수 이벤트 · 사이드 · 준필수)는 줄에 '안 봄' 표시.
  *   목록: 감상 순서 한 줄(ol). 척추 줄은 종류 필터(+ 척추 이벤트 · 사이드는 등급 '필수')에 들면 보이고, 그 사이에 필터에 든 메인 밖 스토리를 읽는 자리 순서대로 끼운다.
  *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 아래에 '먼저 볼 것'만 — 메인 밖 줄과 같은 기준, 사용자 2026-10-10). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 줄 안내 요약).
  *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 메인만 보는 사람도, 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 모든 줄(메인 챕터는 '먼저 볼 것'만).
  *     전제는 "메인 챕터는 차례로 본다" 하나 — 척추 이벤트 · 사이드도 메인 밖 스토리처럼 먼저 볼 것 · 기한에 든다(order.json pre — export/order.mjs spineAnchors).
  *     여기까지 읽음을 따른다(메인만 보고 뒤늦게 필수를 챙기는 사람 — 사용자, 2026-10-10): 먼저 볼 것 가운데 본 것은 흐리게 ✓, 기한 스토리를 봤으면 '· 지남'.
- *     '본 것'은 사람이 정하는 것만 — 메인 챕터(그 자리까지)와 척추 이벤트 · 사이드(팝업 체크). 그 밖은 출시 시점 짐작이라 표시하지 않는다(doneSeen).
+ *     '본 것'은 사람이 정하는 것만 — 메인 챕터(그 자리까지)와 필수 이벤트 · 사이드 · 준필수(팝업 체크). 그 밖은 출시 시점 짐작이라 표시하지 않는다(doneSeen).
  *     두 방향 하나씩만: '먼저 볼 것: CH.12 · 랩칠리언 1'(줄 아래 — 최소 선행: 판정 자리가 앞인 척추 + 필수 선행) · 'CH.27 전까지'(회색 글자 줄 — 뒤에서 이 스토리를
  *     필수 · 권장 선행으로 쓰는 가장 앞 척추, 없으면 메인 밖 스토리). 둘 다 없으면 목록 자리 뒤 언제든(머리 아래 한 줄 설명). 왜 선행인가(떡밥 → 회수 · 다시 언급 등)는
  *     스포일러가 될 수 있어 싣지 않는다(사용자, 2026-10-10). 흐리게 끼운 앞 편은 'X의 앞 편'이 기한을 말하므로 기한을 다시 쓰지 않는다.
@@ -166,10 +166,10 @@ export async function mount(root, ctx) {
   const listEl = ui.el('ol', { class: 'order-seq' });
   listView.append(listEl);
   /**
-   * 본 것으로 표시해도 되나 — 여기까지 읽음에서 사람이 정하는 것(메인 챕터 = 그 자리까지 · 척추 이벤트 · 사이드 = 팝업 체크)만.
+   * 본 것으로 표시해도 되나 — 여기까지 읽음에서 사람이 정하는 것(메인 챕터 = 그 자리까지 · 필수 이벤트 · 사이드 · 준필수 = 팝업 체크)만.
    * 그 밖은 출시 시점으로 짐작한 것이라 쓰지 않는다(메인만 보고 뒤늦게 챙기는 사람에게 안 본 준필수를 ✓로 보이지 않게)
    */
-  const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || Boolean(idx.units.get(k)?.spine)) && rd.seen(k);
+  const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || state.checkable(k)) && rd.seen(k);
   /** 'CH.27 전까지' — 회색 글자 줄에. 그 스토리를 이미 봤으면 '· 지남'(뒤늦게 챙기는 사람 — 지금 봐도 빈틈이 채워진다). 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
   const dueText = (item, rd) => {
     const d = guide(item.key).due;
@@ -250,8 +250,8 @@ export async function mount(root, ctx) {
     const selKey = sel?.type === 'unit' ? sel.id : null;
     // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 척추 줄 아래(이 아래가 다음에 볼 순서)
     const cutAt = cutRowAt(seq, cut, rd);
-    // 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드 — 줄에 '안 봄'(예외가 없으면 없다)
-    const lis = seq.map((x, i) => seqRow(x, rd, x.spine && i < cutAt && !rd.seen(x.key)));
+    // 구분 줄 위인데 안 봄으로 둔 체크 칸 스토리(필수 이벤트 · 사이드 · 준필수) — 줄에 '안 봄'(예외가 없으면 없다)
+    const lis = seq.map((x, i) => seqRow(x, rd, (x.spine || state.checkable(x.key)) && i < cutAt && !rd.seen(x.key)));
     if (cutAt >= 0 && cutAt < seq.length - 1) {
       lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
       status.append(' · ', ui.el('button', { type: 'button', class: 'link-btn', onClick: () => listEl.querySelector('.order-cutrow')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, LABELS.goCut));

@@ -5,8 +5,9 @@
  * 키
  *   tab     order | links | threads | chrono | persons | world
  *   t       컷오프 공개 자리(숫자) · 'all'(끔). 처음 열면 CH.00의 자리(공개 사이트라 기본 켬 — W0). 바꾼 값은 localStorage에 남아 다음 방문에 쓴다
- *   x       척추 이벤트 · 사이드(units.json spine이고 메인이 아닌 것)의 '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다.
- *           순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10). t가 바뀌면 새 기본과 같아진 예외는 지운다. localStorage에도 남는다
+ *   x       체크 칸 스토리(척추 이벤트 · 사이드 = units.json spine이고 메인이 아닌 것 + 준필수 = grade 필수)의 '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다.
+ *           순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10). 준필수는 메인만 보고 뒤늦게 챙기는 사람을 위해 더했다(사용자, 2026-10-10).
+ *           t가 바뀌면 새 기본과 같아진 예외는 지운다. localStorage에도 남는다
  *   layers  늘 [1, 2, 3] — 범위 필터는 뺐다(URL의 layers는 무시)
  *   q       검색어
  *   sel     선택 '종류:ID' — unit:ch07 · scene:d_main_07_02 · record:F203 · person:person:라피 · target:place:방주 · thread:J1 · tick:20
@@ -21,12 +22,13 @@
  *   param(tab, key) / setParam(tab, key, value, { replace })   탭 파라미터(tab이 지금 탭이 아니면 undefined · 무시)
  *   parseSel(sel) → { type, id } | null,  makeSel(type, id)
  *   visible(tick) → boolean          컷오프 안인가(t가 null이면 늘 true) — 단위 · 기록이 아니라 자리만 있을 때(축 · 눈금)
- *   configure({ units })             부팅 때 한 번 — idx.units(키 → { tick, kind, spine })
- *   seen(unitKey) → boolean          그 스토리를 봤나: 전부 보기면 늘 · 척추 이벤트 · 사이드는 x 예외 우선 · 그 밖은 tick ≤ t(모르는 키 · tick 없음은 봤음)
+ *   configure({ units })             부팅 때 한 번 — idx.units(키 → { tick, kind, spine, grade })
+ *   seen(unitKey) → boolean          그 스토리를 봤나: 전부 보기면 늘 · 체크 칸 스토리는 x 예외 우선 · 그 밖은 tick ≤ t(모르는 키 · tick 없음은 봤음)
  *   seenAny(keys) → boolean          하나라도 봤나
  *   known(record) → boolean          그 기록을 아나: 사실 · 의문은 know_units(없으면 [unit]) 중 하나라도 봤으면, 그 밖은 seen(unit)(unit 없으면 visible(tick))
  *   reading(s?) → R                  { all, t, x, seen, seenAny, known } — fmt.stateAt(r, R) · fmt.gradeAt(u, R)에 T 대신 넘긴다
- *   spineExtras() → [{ key, tick }]  척추 이벤트 · 사이드(팝업 체크 칸)
+ *   spineExtras() → [{ key, tick, grade }]  체크 칸 스토리(팝업) — grade '척추'(필수 이벤트 · 사이드) · '필수'(준필수), 출시 시점순
+ *   checkable(unitKey) → boolean     체크 칸 스토리인가 — 메인 챕터와 함께 '본 것'을 사람이 정하는 스토리(감상 순서 ✓ · 지남이 쓴다)
  *   askCutoff({ t?, x? })            탭에서 여기까지 읽음을 바꿀 때 — 팝업의 재확인을 거친다(onAskCutoff(fn)로 app.js가 받는다)
  *   normalizeX(x, t)                 x에서 t의 기본과 같은 예외를 뺀 것(set과 같은 정리 — 팝업 초안)
  *   구독자의 changed에 't'가 있으면 t나 x가 바뀐 것이다(여기까지 읽음이 바뀜). x만 바뀌어도 't'와 'x'가 같이 든다
@@ -39,7 +41,8 @@ const STORAGE_X = 'nikke-story.x';
 
 let state = { tab: 'order', t: null, x: {}, layers: ALL_LAYERS, q: '', sel: '', p: {} };
 let units = new Map();
-let extras = []; // 척추 이벤트 · 사이드 [{ key, tick }]
+let extras = []; // 체크 칸 스토리 — 척추 이벤트 · 사이드 + 준필수 [{ key, tick, grade }]
+let extraKeys = new Set();
 let defaultCutoff = 1;
 const listeners = new Set();
 
@@ -61,7 +64,7 @@ function writeStorage(t) {
   }
 }
 
-/** 'x' 문자열 'a,-b' ↔ { a: true, b: false }(앞에 '-'면 안 봄, 없으면 봄 — '+'는 URL에서 공백이 되어 안 쓴다). 척추 이벤트 · 사이드 키만(units를 받기 전에는 다 받는다) */
+/** 'x' 문자열 'a,-b' ↔ { a: true, b: false }(앞에 '-'면 안 봄, 없으면 봄 — '+'는 URL에서 공백이 되어 안 쓴다). 체크 칸 스토리 키만(units를 받기 전에는 다 받는다) */
 function parseX(v) {
   const out = {};
   if (v == null || v === '') return out;
@@ -69,7 +72,7 @@ function parseX(v) {
     const off = part.startsWith('-');
     const key = off ? part.slice(1) : part.replace(/^\+/, '');
     if (!key) continue;
-    if (extras.length && !extras.some((e) => e.key === key)) continue;
+    if (extras.length && !extraKeys.has(key)) continue;
     out[key] = !off;
   }
   return out;
@@ -239,7 +242,9 @@ export function visible(tick, t = state.t) {
 
 export function configure({ units: u } = {}) {
   units = u instanceof Map ? u : new Map();
-  extras = [...units.values()].filter((x) => x.spine && x.kind !== 'main').map((x) => ({ key: x.key, tick: x.tick })).sort((a, b) => (a.tick ?? 0) - (b.tick ?? 0));
+  extras = [...units.values()].filter((x) => x.kind !== 'main' && (x.spine || x.grade === '필수'))
+    .map((x) => ({ key: x.key, tick: x.tick, grade: x.spine ? '척추' : '필수' })).sort((a, b) => (a.tick ?? 0) - (b.tick ?? 0));
+  extraKeys = new Set(extras.map((e) => e.key));
 }
 /** 탭에서 여기까지 읽음을 바꾸는 단추는 set 대신 이것을 부른다 — 상단 팝업이 받아 더 보이게 되면 재확인을 거친다(사용자, 2026-10-10). 받는 쪽이 없으면 바로 set */
 let cutoffAsker = null;
@@ -251,6 +256,7 @@ export function askCutoff(patch) {
 /** x에서 t의 기본과 같은 예외를 뺀 것 — set이 하는 정리와 같다(팝업 초안이 쓴다) */
 export const normalizeX = (x, t) => pruneX(x ?? {}, t);
 export const spineExtras = () => extras.map((e) => ({ ...e }));
+export const checkable = (key) => extraKeys.has(key);
 
 /** 여기까지 읽음 판정 묶음 — s를 주면 그 상태로(구독자가 받은 snapshot) */
 export function reading(s = state) {

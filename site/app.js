@@ -110,8 +110,8 @@ function cutoffControl(idx, firstVisit) {
   const endSub = latest ? `${fmt.tickShort(lastMain.tick)} 뒤 ${afterMain}편` : fmt.tickShort(last);
   const latestBtn = ui.el('button', { type: 'button', class: 'btn cutoff-latest', title: V.latestHelp(endSub, idx.ticks.get(last)?.date ?? ''), onClick: () => setDraft({ t: last }) },
     V.latest, ui.el('span', { class: 'muted' }, ` · ${endSub}`));
-  // 척추 이벤트 · 사이드 체크 칸 — 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
-  const boxes = extras.map((e) => {
+  // 체크 칸 — 필수 이벤트 · 사이드와 준필수(메인만 보고 뒤늦게 챙기는 사람, 사용자 2026-10-10). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
+  const box = (e) => {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
     input.addEventListener('change', () => setDraft({ t: draft.t ?? last, x: { ...draft.x, [e.key]: input.checked } }));
     const u = idx.units.get(e.key);
@@ -119,7 +119,9 @@ function cutoffControl(idx, firstVisit) {
     return ui.el('label', { class: 'cutoff-ex' }, input,
       ui.el('span', { class: 'cutoff-ex-title' }, u?.title ?? e.key),
       ui.el('span', { class: 'cutoff-ex-sub muted' }, `${fmt.KIND[u?.kind]?.label ?? ''}${at ? ` · ${fmt.tickShort(idx.mainTicks.find((m) => m.main === at)?.tick)} 뒤` : ''}`));
-  });
+  };
+  const boxes = extras.filter((e) => e.grade === '척추').map(box);
+  const semiBoxes = extras.filter((e) => e.grade === '필수').map(box);
   const laterBtn = ui.el('button', { type: 'button', class: 'btn btn-quiet', onClick: () => close(false) }, V.later);
   const okBtn = ui.el('button', { type: 'button', class: 'btn btn-guard', onClick: commit }, V.ok);
   const editPane = ui.el('div', { class: 'cutoff-edit' },
@@ -134,6 +136,9 @@ function cutoffControl(idx, firstVisit) {
     ui.el('section', { class: 'cutoff-sec' },
       ui.el('h3', {}, V.exHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.exHint)),
       ui.el('div', { class: 'cutoff-exs' }, boxes)),
+    semiBoxes.length ? ui.el('section', { class: 'cutoff-sec' },
+      ui.el('h3', {}, V.semiHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.semiHint)),
+      ui.el('div', { class: 'cutoff-exs' }, semiBoxes)) : null,
     ui.el('div', { class: 'cutoff-dlg-foot' }, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
     ui.el('p', { class: 'cutoff-ai' }, fmt.AI_NOTE.full));
   dlg.append(editPane, confirmPane);
@@ -170,7 +175,7 @@ function cutoffControl(idx, firstVisit) {
     prevBtn.disabled = t != null && t <= first;
     nextBtn.disabled = t == null || t >= last;
     latestBtn.setAttribute('aria-pressed', String(t === last));
-    for (const b of boxes) {
+    for (const b of [...boxes, ...semiBoxes]) {
       const input = b.querySelector('input');
       input.checked = R.seen(input.dataset.key);
       b.classList.toggle('is-diff', input.dataset.key in draft.x);

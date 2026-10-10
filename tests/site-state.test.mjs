@@ -16,7 +16,7 @@ globalThis.window = { addEventListener() {} };
 const state = await import('../site/lib/state.js');
 const fmt = await import('../site/lib/format.js');
 
-// 메인 셋(10 · 20 · 30) · 척추 이벤트 둘(15 · 25) · 그 밖 이벤트 하나(18)
+// 메인 셋(10 · 20 · 30) · 척추 이벤트 둘(15 · 25) · 그 밖 이벤트 하나(18) · 준필수 하나(22)
 const units = new Map([
   ['ch01', { key: 'ch01', kind: 'main', tick: 10 }],
   ['ch02', { key: 'ch02', kind: 'main', tick: 20 }],
@@ -24,6 +24,7 @@ const units = new Map([
   ['ev_a', { key: 'ev_a', kind: 'event', tick: 15, spine: true }],
   ['ev_b', { key: 'ev_b', kind: 'event', tick: 25, spine: true }],
   ['ev_c', { key: 'ev_c', kind: 'event', tick: 18 }],
+  ['semi', { key: 'semi', kind: 'side', tick: 22, grade: '필수' }],
 ]);
 state.configure({ units });
 state.init({ defaultCutoff: 10 });
@@ -32,7 +33,16 @@ test('예외가 없으면 출시 자리 규칙과 같다', () => {
   state.set({ t: 20 });
   const R = state.reading();
   for (const [k, u] of units) assert.equal(R.seen(k), u.tick <= 20, k);
-  assert.deepEqual(state.spineExtras().map((e) => e.key), ['ev_a', 'ev_b']);
+  assert.deepEqual(state.spineExtras().map((e) => [e.key, e.grade]), [['ev_a', '척추'], ['semi', '필수'], ['ev_b', '척추']]);
+  assert.deepEqual([...units.keys()].filter(state.checkable), ['ev_a', 'ev_b', 'semi']);
+});
+
+test('준필수도 체크 칸 — 메인만 보고 뒤늦게 챙기는 사람(메인 끝까지 · 필수 · 준필수 모두 안 봄)', () => {
+  state.set({ t: 30, x: { ev_a: false, ev_b: false, semi: false } });
+  const R = state.reading();
+  assert.deepEqual(['ch03', 'ev_a', 'ev_b', 'semi', 'ev_c'].map(R.seen), [true, false, false, false, true]);
+  assert.equal(state.get().x.semi, false, 'x에 남는다');
+  state.set({ t: 20, x: {} });
 });
 
 test('척추 이벤트 · 사이드는 따로 고른다 — 앞의 것을 끄고 뒤의 것을 켠다', () => {

@@ -449,9 +449,9 @@ function classPanel(u, idx, hidden) {
   const short = blurb ? full : clipText(full, 90);
   const before = j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order;
   const due = guideCtx ? fmt.guideOf(u.key, { ...guideCtx, units: idx.units }).due : null; // 감상 순서 줄의 'CH.27 전까지'와 같은 기한
-  // 그 기한 스토리를 이미 봤으면 '· 지남'(감상 순서 줄과 같다 — 본 것은 사람이 정하는 메인 챕터 · 척추 이벤트 · 사이드만)
+  // 그 기한 스토리를 이미 봤으면 '· 지남'(감상 순서 줄과 같다 — 본 것은 사람이 정하는 메인 챕터 · 팝업 체크 칸 스토리만)
   const dueUnit = due && idx.units.get(due.key);
-  const duePassed = Boolean(dueUnit && (dueUnit.kind === 'main' || dueUnit.spine) && state.get().t != null && state.seen(due.key));
+  const duePassed = Boolean(dueUnit && (dueUnit.kind === 'main' || state.checkable(due.key)) && state.get().t != null && state.seen(due.key));
   // 판정 문장은 최종 등급의 것이라, 뒤 필수 스토리로 오른 스토리면 그 스토리를 안 본 사람에게 뒤 내용이 보인다 — 스포일러 접이로
   const lateReason = !blurb && full && !hidden && before && !state.seen(j.from);
   // 여기까지 읽음 뒤 스토리는 이유도 아래 내용 칸과 함께 스포일러 접이 하나에 넣는다
