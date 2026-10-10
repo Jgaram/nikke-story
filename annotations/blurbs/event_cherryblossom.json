@@ -19,5 +19,25 @@
         "note": "F830 · F831 대조 — later는 CH.21 자리만(CH.22 내용 안 씀)"
       }
     ]
+  },
+  "when": {
+    "text": "축제에서 유니와 미하라를 만난다 — 지휘관이 둘을 처음 만나는 것이 CH.02 뒷이야기라 그 뒤의 일로 본다.",
+    "later": "유니는 CH.24에서 갇히지만 UNBREAKABLE SPHERE에서 다시 나와, 그 뒤일 수도 있다.",
+    "gate": "event_unbreakablesphere1",
+    "src": "3118103136",
+    "session": "W14c",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14c",
+        "hash": "f3ceee52d0",
+        "note": "판정 이유 대조, CH.02 첫 만남만 text, CH.24 수감 뒤 재등장(상한 아님)은 later(gate event_unbreakablesphere1)"
+      }
+    ]
   }
 }
