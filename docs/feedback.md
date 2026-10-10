@@ -21,3 +21,8 @@
   docs/operations.md를 지시 세션 · "다음 일" · 관리자(순차 · 병렬) 셋으로 다시 씀, 동시 세션 규칙 더함. CLAUDE.md는 규칙 요약과 가리키는 줄만 남기고 도구 사용법은 docs/tools.md,
   요청 규칙은 docs/data-sources.md "요청 규칙", git 자세한 것은 docs/operations.md로. TODO.md · docs/open-questions.md도 남은 것만 두고 옛 판은 docs/history/.
 - 반영: CLAUDE.md · SESSIONS.md · docs/operations.md · docs/tools.md · docs/data-sources.md · TODO.md · docs/open-questions.md
+
+## 2026-10-10 여기까지 읽음 팝업 · 감상 순서는 전부
+- 요청: 상단 "여기까지 읽음"(슬라이더 · 첫 방문 드롭다운 바)을 상단을 누르면 언제든 뜨는 팝업으로. 감상 순서 탭은 읽은 곳과 관계없이 전부 — 안 본 사람의 순서 안내가 되게.
+- 정한 것(사용자 선택): 팝업 = 메인 챕터 단추 격자 + 세밀 슬라이더 + 전부 보기(첫 방문이면 저절로 뜸 · "나중에"). 감상 순서는 목록 · 지도 전부(최종 등급) + "여기까지 읽음" 구분 줄, 분류 카드만 스포일러를 접어 가림.
+- 반영: docs/views.md "상단 바 · 범위 · 여기까지 읽음 팝업" · 컷오프 규칙 · 감상 순서 표 줄, site/app.js · site/tabs/order.js

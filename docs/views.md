@@ -367,7 +367,7 @@
 | 6 세계 | 4 | 개념 · 사건 · 물건 · 조직 · 장소 사전 + 생활상(분류별 목록). 네트워크보다 목록이 맞는 자료라 따로 | W7 |
 
 **공통 요소** (W1 뼈대):
-- **스포일러 컷오프** — 상단 슬라이더, 공개 자리 T(메인 챕터 이름으로 표시). 공개 사이트라 **기본은 켬**(처음 열면 CH.00까지 아는 상태). 모든 탭이 `records.csv` · `units.csv`의 자리 칸으로 거른다(T5-8).
+- **스포일러 컷오프** — 상단 단추 → 팝업, 공개 자리 T(메인 챕터 이름으로 표시). 공개 사이트라 **기본은 켬**(처음 열면 CH.00까지 아는 상태). 감상 순서 탭 목록 · 지도를 뺀 모든 탭이 `records.csv` · `units.csv`의 자리 칸으로 거른다(T5-8).
 - **층 거르개** — 1–3층.
 - **씬 리더 패널** — 어느 탭에서든 노드 · 선 · 기록을 누르면 오른쪽에 열린다. 내용은 그 씬의 **기록 · 엣지 · 설정 오류 추정 메모 · 근거 줄 인용(한 줄)** — 원문 전문은 없다(T5-5를 공개 규칙에 맞춰 줄임).
 - **검색** — 상단 입력 하나로 인물 · 대상 · 줄기 · 단위 · 기록 문장. 대사 본문 검색은 없다(T5-7 축소).
@@ -405,7 +405,7 @@
 
 W1이 만든 뼈대에 탭 여섯(W2–W7)과 통합 점검(2026-10-09)이 더해진 지금 상태. **탭 에이전트는 이 절과 `site/lib/*.js` 머리말 주석만 읽고 시작한다.** 공용 파일(`site/lib/` · `site/app.js` · `site/style.css` · `site/index.html` · `tools/site/lib.mjs` · `tools/site/export.mjs` · `tools/site/export/common.mjs`)은 고치지 않고,
 자기 `site/tabs/<name>.js` · `site/tabs/<name>.css` · `tools/site/export/<name>.mjs`만 만진다. 공용에 필요한 것(새 칸 · 새 컴포넌트 · 버그)은 인계 메모에 적어 보고한다.
-통합 점검에서 공용에 더해진 것: 리더의 **분류 · 연결** 칸과 "OO 탭에서 보기" 링크, **첫 방문 선택 바**, 모든 탭이 같이 쓰는 스포일러 안내(`ui.hiddenNote`), 공용 계산(`fmt.gradeAt` · `fmt.plain`) · 탭 이름(`fmt.TAB`).
+통합 점검에서 공용에 더해진 것: 리더의 **분류 · 연결** 칸과 "OO 탭에서 보기" 링크, **첫 방문 선택 바**(2026-10-10 여기까지 읽음 팝업으로 바뀜), 모든 탭이 같이 쓰는 스포일러 안내(`ui.hiddenNote`), 공용 계산(`fmt.gradeAt` · `fmt.plain`) · 탭 이름(`fmt.TAB`).
 
 ```
 tools/site/
@@ -418,9 +418,9 @@ tools/site/
   export/synopsis.mjs   공개 개요(W8) → synopsis.json — 확정 · 지문이 맞는 annotations/synopsis/만(docs/annotations.md "공개 개요"). 리더 · 감상 순서 분류 카드가 쓴다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
-  index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 · 범위 · 테마) · 탭 nav · 첫 방문 선택 바 · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
+  index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 단추 · 범위 · 테마) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
   style.css             디자인 토큰(라이트/다크 둘 다 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
-  app.js                부팅: data.index() → fmt.use(idx) → state.init(그 전에 첫 방문인지 본다) → 상단 바 · 첫 방문 선택 바 · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
+  app.js                부팅: data.index() → fmt.use(idx) → state.init(그 전에 첫 방문인지 본다) → 상단 바(여기까지 읽음 팝업 — 첫 방문이면 연다) · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
   lib/d3.js             export * from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm' — 브라우저 쪽 유일한 외부 의존성. 탭은 ctx.d3로 쓴다
   lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
   tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈 여섯(order · links · threads · persons · chrono · world) — 아래 "탭별 (W2–W7)"
@@ -464,13 +464,14 @@ F-k · Q-k는 `act` · `parent` · `answer` · `degree` · `replaced_by`; S는 `
 **URL 상태(`lib/state.js`)** — 해시 하나: `#tab=order&t=20&layers=1,2&q=라피&sel=unit:ch07&p.kind=event`.
 `tab`(여섯 중 하나) · `t`(컷오프 공개 자리, `all` = 끔) · `layers`(없으면 셋 다) · `q`(검색어) · `sel`(`종류:ID` — `unit:ch07` · `scene:d_main_07_02` · `record:F203` · `person:person:라피` · `target:place:방주` · `thread:J1` · `tick:20`; 있으면 리더가 열린다) · `p.<key>`(지금 탭의 파라미터 — 탭을 바꾸면 지워진다).
 API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 number[], `p`는 객체) · `set(patch, { replace })`(history를 쌓는다, replace면 덮는다) · `subscribe(fn)`(fn(state, changed: Set) — 바뀐 키만) · `param(tab, key)` · `setParam(tab, key, value)` · `parseSel` · `makeSel` · `visible(tick, t?)` · `lastCutoff()`.
-**컷오프 규칙(화면 말 "여기까지 읽음")**: 처음 열면 CH.00의 자리(1). 사용자가 바꾼 값은 `localStorage['nikke-story.t']`에 남아 다음 방문에 쓴다(URL의 `t`가 있으면 그것이 이긴다). "전부 보기" 스위치 = `t=all`. 단위 · 기록은 `tick ≤ t`면 보이고, 뒤의 것은 **지우지 않고 가린다**(리더: 흐림 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기). 숨긴 개수는 모든 탭이 `ui.hiddenNote(fmt.hiddenLabel(n), 전부 보기)` 한 모양("● 스포일러로 가린 N [전부 보기]")으로 보인다. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
+**컷오프 규칙(화면 말 "여기까지 읽음")**: 처음 열면 CH.00의 자리(1). 사용자가 바꾼 값은 `localStorage['nikke-story.t']`에 남아 다음 방문에 쓴다(URL의 `t`가 있으면 그것이 이긴다). "전부 보기" = `t=all`. 단위 · 기록은 `tick ≤ t`면 보이고, 뒤의 것은 **지우지 않고 가린다**(리더: 흐림 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기). **감상 순서 탭의 목록 · 지도는 예외** — 여기까지 읽음과 관계없이 전부 보이고 자리만 표시한다(아래 "감상 순서"). 숨긴 개수는 모든 탭이 `ui.hiddenNote(fmt.hiddenLabel(n), 전부 보기)` 한 모양("● 스포일러로 가린 N [전부 보기]")으로 보인다. F · Q의 그 자리 상태는 `fmt.stateAt(r, t)`.
 
-**상단 바 · 범위 · 첫 방문 선택 바**
-- 상단 바 한 줄(`index.html` · `app.js` · `style.css`): 이름("NIKKE 스토리 지도") · 검색("검색", 단축키 `/`) · **여기까지 읽음**(슬라이더 + 챕터 이름 + 날짜 + "전부 보기" 스위치) · **범위** · 테마(자동 · 라이트 · 다크). 960px 아래에서는 두 줄, 640px 아래에서는 [로고 · 검색 · 범위 · 테마] / [여기까지 읽음]으로 접힌다. 슬라이더 눈금은 메인 챕터(`idx.mainTicks`).
+**상단 바 · 범위 · 여기까지 읽음 팝업**
+- 상단 바 한 줄(`index.html` · `app.js` · `style.css`): 이름("NIKKE 스토리 지도") · 검색("검색", 단축키 `/`) · **여기까지 읽음 단추**(이름 + 지금 값 `CH.07` + 날짜 + ▾ — 누르면 팝업) · **범위** · 테마(자동 · 라이트 · 다크). 960px 아래에서는 두 줄, 640px 아래에서는 [로고 · 검색 · 범위 · 테마] / [여기까지 읽음]으로 접힌다.
 - **범위 세그먼트** = 핵심 · 넓게 · 전부(`fmt.SCOPE`) ↔ URL `layers`(1 · 1,2 · 생략). 다른 조합이 들어오면 "전부". 라벨에 "층"은 쓰지 않는다.
-- 라벨: 슬라이더 값은 메인 챕터 자리면 `CH.20`(`fmt.tickShort`), 그 밖은 `CH.17+`. 길게는 `fmt.tickLabel(tick)` = `CH.20 시점 · 2023-01-12` / `CH.17 이후 · 2022-11-10`(메인 챕터 사이 자리).
-- **첫 방문 선택 바**(탭 nav 아래 한 줄, 좁으면 두 줄): "어디까지 읽으셨나요? [메인 챕터 선택 ▾(CH.00 … CH.48, 메인만)] [전부 보기] [나중에]". 처음 방문 = URL에 `t`가 없고 `localStorage['nikke-story.t']`도 없을 때(`state.cutoffChosen()` — `state.init` 전에 본다). 챕터를 고르면 `t` = 그 챕터의 자리, "전부 보기"는 `t=all`; 둘 다 localStorage에 남고 바는 사라진다. "나중에"는 `sessionStorage['nikke-story.fv-later']`로 이번 탭 세션만 숨긴다. 위 슬라이더 · 스위치로 컷오프를 바꿔도 바는 닫힌다. 문구는 `fmt.FIRST_VISIT`.
+- 라벨: 단추 값은 메인 챕터 자리면 `CH.20`(`fmt.tickShort`), 그 밖은 `CH.17+`. 길게는 `fmt.tickLabel(tick)` = `CH.20 시점 · 2023-01-12` / `CH.17 이후 · 2022-11-10`(메인 챕터 사이 자리).
+- **여기까지 읽음 팝업**(사용자, 2026-10-10 — 상단 슬라이더 · 첫 방문 선택 바를 대신한다): 네이티브 `<dialog>`(`showModal` — 배경 · Esc · 초점). "어디까지 읽으셨나요?" + 한 줄 설명 · **메인 챕터 단추 격자**(CH.00 … CH.48 — 누르면 `t` = 그 챕터의 자리로 두고 닫힌다; 읽은 칸은 옅게 칠하고, 고른 칸은 채운다. 이벤트 단위로 맞췄으면 그 앞 챕터에 테두리) · **세밀하게** 슬라이더(모든 자리, 눈금은 메인 챕터 — 놓으면 `t`를 바꾸고 팝업은 열어 둔다) · [전부 보기](`t=all`, 닫힌다). 배경 · × · Esc는 고르지 않고 닫는다.
+- **첫 방문**이면 팝업이 저절로 뜨고 [나중에]가 더 보인다. 처음 방문 = URL에 `t`가 없고 `localStorage['nikke-story.t']`도 없을 때(`state.cutoffChosen()` — `state.init` 전에 본다). 고르지 않고 닫으면(나중에 · × · Esc · 배경) `sessionStorage['nikke-story.fv-later']`로 이번 탭 세션에는 다시 띄우지 않는다. 문구는 `fmt.FIRST_VISIT`.
 
 **데이터(`lib/data.js`)** — `load(name)`(fetch + 캐시, `./data/<name>.json`, 실패 시 한국어 Error) · `loadRecords()` · `index({ records })` → `idx`: `unitList` · `units`(Map) · `tickList` · `ticks` · `mainTicks` · `scenes` · `scenesOf(unit → scene[])` · `tickOf(key)` · `unitOf(sceneId)` · `targets` · `targetList` · `threads` · `threadList` · `relations` · `slips` · `slipsOf` · `manifest`,
 기록은 `idx.withRecords()`(또는 `index({ records: true })`) 뒤에 `records`(Map) · `recordList` · `recordsOf(scene)` · `recordsOfUnit` · `eventsOf(root)` · `recordsOfThread` · `recordsAbout(target)`. 기록 두 파일(6MB)은 처음 필요할 때 받는다 — 탭은 꼭 필요할 때만 `withRecords()`를 부른다.
@@ -522,7 +523,7 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 
 | 탭 | 쓰는 JSON | 파라미터 | 보기 모드 |
 |---|---|---|---|
-| **감상 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `g`(등급, 쉼표 목록 — 기본 필수 · 보강) · `k`(스토리 종류, 쉼표 목록 — 기본 유실물 · 이벤트 유실물을 뺀 전부) · `find` · `rows`(지도 행: grade · kind) | 목록(감상 순서 한 줄 — 본편 줄은 늘, 그 사이에 거르개에 든 메인 밖 스토리를 읽는 자리 순서로 끼운다. 한 줄 = 순번 · 등급 · 종류 · 스토리 · 글자(이유는 분류 카드 · 리더에만), 머리에 편 수 · 글자 합) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 그 시점의 등급 색 점으로). 스토리를 누르면 리더 + 아래 분류 카드 |
+| **감상 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `mode`(list · map) · `g`(등급, 쉼표 목록 — 기본 필수 · 보강) · `k`(스토리 종류, 쉼표 목록 — 기본 유실물 · 이벤트 유실물을 뺀 전부) · `find` · `rows`(지도 행: grade · kind) | 목록(감상 순서 한 줄 — 본편 줄은 늘, 그 사이에 거르개에 든 메인 밖 스토리를 읽는 자리 순서로 끼운다. 한 줄 = 순번 · 등급 · 종류 · 스토리 · 글자(이유는 분류 카드 · 리더에만), 머리에 편 수 · 글자 합) / 지도(본편 60곳을 가로축으로 메인 밖 스토리를 최종 등급 색 점으로). **목록 · 지도는 여기까지 읽음과 관계없이 전부**(안 본 사람의 감상 안내 — 사용자, 2026-10-10): 등급은 최종 등급, 목록은 그 시점 ≤ 인 마지막 본편 줄 아래 "여기까지 읽음 · CH.07" 구분 줄(머리의 "읽은 자리로"가 거기로 옮긴다), 지도는 그 뒤 칸을 옅게. 스토리를 누르면 리더 + 아래 분류 카드 — 카드는 여기까지 읽음을 따른다(그 시점의 등급, 뒤 스토리는 한 줄 소개 없이 이유 · 떡밥 · 주역 등을 "스포일러 보기" 접이 안에) |
 | **연결** `links` (W3) | `links.json` · `links-scenes.json`(근거) | `m`(ego · net · chain) · `c`(가운데 스토리) · `n` · `pr` · `lt` · `ty`(선 종류) · `s`(연결 강도 1–3) · `tg`(인물 · 항목) · `th`(떡밥) · `kd`(스토리 종류) · `nn` · `mm` | 이웃(가운데 스토리 + 앞 · 뒤 카드, 기본) / 전체(읽는 순서 축 위 점 · 선) / 연작(다음 편 사슬). 선을 누르면 씬 → 씬 근거. 인물 · 떡밥 거르개 후보는 여기까지 읽음 안의 선에 걸린 것만 |
 | **떡밥** `threads` (W4) | `threads-flow.json` · `threads-map.json` · 공용 `threads.json` | `j`(떡밥 ID) · `axis`(story면 작중 시간순) · `f`(unsolved · solved · fact) · `map`(rel · item · list) · `c` · `common` · `hints` · `sort`(open · start) | 왼쪽 떡밥 지도(떡밥끼리 · 항목 · 목록) + 오른쪽 떡밥 하나의 흐름(의문 · 사실 줄마다 던짐 → 복선 → 일부 회수 → 회수 · 뒤집힘, 출시 순서 / 작중 시간순) |
 | **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |

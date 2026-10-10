@@ -24,7 +24,7 @@
  *   hiddenLabel(n)                  '스포일러로 가린 N'
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
  *   LINK_LEVEL                      연결 강도 1–3 → 약함 · 보통 · 강함
- *   FIRST_VISIT                     첫 방문 선택 바의 문구
+ *   FIRST_VISIT                     여기까지 읽음 팝업의 문구
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   plain(text)                     분석 문장 속 레포 용어(척추 · 줄기 …)를 화면 말로(조사도 맞춘다). 표시할 때만 — 데이터는 그대로
  *   num(n) · pct(x) · date(s)
@@ -251,12 +251,16 @@ export const TAB = {
 export const TAB_ORDER = Object.keys(TAB);
 export const openInTab = (tab) => `${TAB[tab]?.title ?? tab} 탭에서 보기`;
 
-/** 첫 방문 선택 바 */
+/** 여기까지 읽음 팝업(첫 방문이면 저절로 뜬다) */
 export const FIRST_VISIT = {
   ask: '어디까지 읽으셨나요?',
+  help: '고른 데까지 나온 이야기만 보여 스포일러를 막는다. 감상 순서 탭은 이와 관계없이 전부 보인다.',
   pick: '메인 챕터 선택',
+  fine: '세밀하게',
   all: '전부 보기',
   later: '나중에',
+  close: '닫기',
+  open: '눌러서 바꾸기',
   allHelp: '스포일러를 가리지 않고 모든 시점의 이야기를 본다',
 };
 

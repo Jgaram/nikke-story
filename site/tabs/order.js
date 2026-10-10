@@ -17,15 +17,17 @@
  *   rows   지도의 행: grade(등급별, 기본) | kind(종류별)
  *
  * 그리는 규칙
- *   그 시점의 등급 gradeAt(u, T) — tools/views/importance.mjs와 같다: T가 없으면(전부 보기) 최종 등급, T < 출시 시점이면 아직 없음(가림),
- *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급. 내려가는 일은 없다.
- *   여기까지 읽음 뒤 스토리(tick > T) · 범위 거르개 밖 스토리는 숨기고 개수만 보인다("스포일러로 가린 N — 전부 보기").
+ *   목록 · 지도는 여기까지 읽음과 관계없이 전부 보인다(사용자, 2026-10-10 — 안 본 사람에게 어떤 순서로 볼지 알려 주는 안내라서). 등급은 최종 등급,
+ *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 인 마지막 본편 줄 아래 "여기까지 읽음" 구분 줄, 지도는 그 뒤 칸을 옅게.
+ *     범위 거르개 밖 스토리는 숨기고 개수만 보인다.
+ *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, T)(tools/views/importance.mjs와 같다: T가 없으면 최종 등급, T < 출시 시점이면 아직 없음,
+ *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 여기까지 읽음 뒤 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
  *   목록: 감상 순서 한 줄(ol). 본편 줄(메인 챕터는 굵은 구분 줄, 본편 이벤트 · 사이드는 '본편' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
  *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 글자. 이유(분석 문장)는 목록에 싣지 않고 분류 카드 · 리더에만(사용자 — 목록이 설명으로 길어진다).
- *     거르개는 그 시점의 등급(gradeAt)으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
+ *     거르개는 최종 등급으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
  *   지도: 본편 60곳(메인 49 + 본편 이벤트 8 · 사이드 3)을 가로축으로, 스토리를 그 출시 시점 ≤ 인 마지막 본편 칸에 점으로. 행 = 등급 또는 종류(칸마다 점 수에 맞춘 높이),
- *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 그 시점의 등급(파랑 램프), 점 크기는 같다.
- *     나중에 등급이 오르는 점은 오를 등급 색 테두리. 본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
+ *     행 이름은 SVG 밖 HTML 열(자르지 않는다), 축 라벨은 가로 `CH.07` — 겹치면 건너뛴다(전부는 호버). 점 색 = 최종 등급(파랑 램프), 점 크기는 같다.
+ *     본편 스토리는 축에 표시만(채점하지 않는다). 축을 누르면 그 시점까지 읽은 것으로 둔다.
  *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 등급 변화 · 이유 · 관련 메모 · 떡밥 · 주역 · 분류가 바뀐 기록).
  *   색은 등급 램프(--grade-*)만 — 종류는 칩 · 행 이름으로 (종류 색과 등급 색을 한 차트에 같이 쓰지 않는다).
  *   키보드: 점 421개를 모두 탭 정지점으로 만들지 않는다(축 60칸만 tabindex 0) — 같은 내용을 목록 모드의 표(줄마다 초점)가 준다.
@@ -45,13 +47,13 @@ const LABELS = {
   find: '제목 · 이유 검색', findAria: '스토리 검색',
   count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(본편 포함)와 대사 글자 수',
   extras: (n) => `본편 밖 ${n}`,
-  riseTo: (at, grade) => `→ ${at}부터 ${grade}`, preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`, pre: '선행', riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
+  preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`, pre: '선행', riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   rowsGrade: '등급별', rowsKind: '종류별', rows: '행',
-  legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' }, legendRise: '테두리 = 나중에 오를 등급',
+  legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' },
   mapHint: '점을 누르면 분류 · 아래 축을 누르면 그 시점까지 읽은 것으로 둔다',
   mapAria: (n, rows) => `본편 ${n}곳을 가로축으로, 스토리 ${rows}개를 등급 색 점으로 단 지도`,
   afterCut: '아직 안 읽음', axisGo: '누르면 여기까지 읽은 것으로 둔다',
-  emptyEarly: (at, next) => `${at}까지는 메인 밖 스토리가 아직 없다${next ? ` — ${next}부터 나온다` : ''}.`, goNext: (at) => `${at}까지 읽음으로`, emptyFilter: '거르개에 맞는 스토리가 없다.',
+  cutLine: (at) => `여기까지 읽음 · ${at}`, cutLineHelp: '이 아래가 다음에 볼 순서', goCut: '읽은 자리로', emptyFilter: '거르개에 맞는 스토리가 없다.',
   clearFilter: '거르개 풀기', outScope: '범위 밖',
   card: '분류', cardClose: '닫기',
   rows2: {
@@ -59,7 +61,7 @@ const LABELS = {
     pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 본편',
   },
   none: '없음',
-  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
+  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
   trailNone: '바뀐 적 없다',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
@@ -167,8 +169,8 @@ export async function mount(root, ctx) {
     if (!j.from || !spineByKey.has(j.from) || !(j.unit.order < spineByKey.get(j.from).unit.order)) return null;
     const at = spineLabel(j.from);
     let tip = LABELS.preOfHelp(at);
-    if (j.from_tick) tip += curT != null && curT < j.from_tick ? ` · ${LABELS.riseTo(at, gl(j.grade))}` : ` · ${LABELS.riseBefore(at, gl(j.before ?? j.grade))}`;
-    return ui.el('span', { class: ['order-preof', j.from_tick && curT != null && curT < j.from_tick ? 'is-future' : ''], title: tip }, fmt.preOf(at));
+    if (j.from_tick) tip += ` · ${LABELS.riseBefore(at, gl(j.before ?? j.grade))}`;
+    return ui.el('span', { class: 'order-preof', title: tip }, fmt.preOf(at));
   };
   /** 선행 한 줄 — 필수는 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
   const preLine = (key) => {
@@ -180,7 +182,7 @@ export async function mount(root, ctx) {
     return ui.el('span', { class: 'order-pre', onClick: (e) => e.stopPropagation() }, `${LABELS.pre} `, parts.map((x, i) => [i ? ' · ' : null, x]));
   };
   /** 감상 순서의 한 줄. 본편이면 sp, 메인 밖이면 j */
-  const seqRow = (item, n, T) => {
+  const seqRow = (item, n) => {
     const { key, unit } = item;
     const go = () => state.set({ sel: `unit:${key}` });
     const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', title: fmt.tickLabel(item.tick), onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
@@ -193,7 +195,7 @@ export async function mount(root, ctx) {
         ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind)),
         ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preLine(key)), chars);
     }
-    const g = gradeAt(item, T);
+    const g = item.grade;
     attrs.class = 'order-row is-extra';
     return ui.el('li', attrs, num,
       ui.el('span', { class: 'order-badges' }, ui.chip('grade', g), ui.chip('kind', unit.kind)),
@@ -214,7 +216,7 @@ export async function mount(root, ctx) {
   const mark = (cls, label) => ui.el('span', { class: 'legend-item' }, ui.el('i', { class: `order-mark ${cls}`, 'aria-hidden': 'true' }), label);
   const mapLegend = ui.el('div', { class: 'order-legend' },
     ui.legend(GRADES.map((g) => ({ label: gl(g), color: fmt.GRADE[g].color }))),
-    ui.el('div', { class: 'legend' }, mark('order-mark-main', LABELS.legendSpine.main), mark('order-mark-event', LABELS.legendSpine.event), mark('order-mark-side', LABELS.legendSpine.side), mark('order-mark-ring', LABELS.legendRise), mapHint));
+    ui.el('div', { class: 'legend' }, mark('order-mark-main', LABELS.legendSpine.main), mark('order-mark-event', LABELS.legendSpine.event), mark('order-mark-side', LABELS.legendSpine.side), mapHint));
   mapView.append(ui.el('div', { class: 'toolbar order-maptools' }, rowsSeg.el, mapLegend));
   const laneCol = ui.el('div', { class: 'order-lanes' });
   const mapScroll = ui.el('div', { class: 'order-map' });
@@ -234,25 +236,23 @@ export async function mount(root, ctx) {
     return !q || `${x.unit.title} ${x.key} ${plain(x.reason ?? '')}`.toLowerCase().includes(q);
   };
   const match = (j, s, kinds) => kinds.includes(j.unit.kind) && findOk(j, s);
-  let current = { rows: [], T: null };
+  let current = { rows: [], cut: null };
   const clearFilters = () => state.set({ p: { g: null, k: null, find: null } }, { replace: true });
   const apply = (s) => {
-    const T = s.t;
-    curT = T;
+    const cut = s.t; // 여기까지 읽음 — 목록 · 지도는 거르지 않고 자리만 표시한다
+    curT = cut;
     const grades = gradePick.cur();
     const kinds = kindPick.cur();
     gradePick.sync();
     kindPick.sync();
-    const inCut = judged.filter((j) => state.visible(j.tick, T));
-    const inLayer = inCut.filter((j) => j.unit.layer == null || s.layers.includes(j.unit.layer));
+    const inLayer = judged.filter((j) => j.unit.layer == null || s.layers.includes(j.unit.layer));
     const rows = inLayer.filter((j) => match(j, s, kinds));
-    // 감상 순서: 본편(늘) + 고른 등급의 메인 밖 스토리, 읽는 자리 순서
-    const spineRows = spine.filter((sp) => state.visible(sp.tick, T) && findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
-    const extras = rows.filter((j) => grades.includes(gradeAt(j, T)));
-    current = { rows: extras, T }; // 지도도 같은 거르개
+    // 감상 순서: 본편(늘) + 고른 등급(최종 등급)의 메인 밖 스토리, 읽는 자리 순서
+    const spineRows = spine.filter((sp) => findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
+    const extras = rows.filter((j) => grades.includes(j.grade));
+    current = { rows: extras, cut }; // 지도도 같은 거르개
     const seq = [...spineRows, ...extras].sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
-    const hiddenCut = judged.length - inCut.length + spine.length - spine.filter((sp) => state.visible(sp.tick, T)).length;
-    const hiddenLayer = inCut.length - inLayer.length;
+    const hiddenLayer = judged.length - inLayer.length;
     const mode = s.p.mode ?? 'list';
     ui.clear(status);
     if (mode === 'list') {
@@ -260,23 +260,25 @@ export async function mount(root, ctx) {
       const cnt = ui.el('span', { class: 'order-count', title: LABELS.countHelp }, LABELS.count(fmt.num(seq.length), fmt.num(chars)));
       status.append(cnt, ' ', ui.el('span', { class: 'muted' }, `(${LABELS.extras(fmt.num(extras.length))})`));
     } else status.append(ui.el('span', { class: 'order-count' }, `${fmt.num(extras.length)} / ${fmt.num(judged.length)}`));
-    if (hiddenCut) status.append(' ', ui.hiddenNote(fmt.hiddenLabel(hiddenCut), () => state.set({ t: null })));
     if (hiddenLayer) status.append(' · ', ui.el('span', { class: 'muted' }, `${LABELS.outScope} ${fmt.num(hiddenLayer)}`));
     // 목록
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
-    listEl.replaceChildren(...seq.map((x, i) => seqRow(x, i + 1, T)));
+    const lis = seq.map((x, i) => seqRow(x, i + 1));
+    // 여기까지 읽음 구분 줄 — 그 시점 ≤ 인 마지막 본편 줄 아래(이 아래가 다음에 볼 순서)
+    let cutAt = -1;
+    if (cut != null) seq.forEach((x, i) => { if (x.spine && x.tick <= cut) cutAt = i; });
+    if (cutAt >= 0 && cutAt < seq.length - 1) {
+      lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
+      status.append(' · ', ui.el('button', { type: 'button', class: 'link-btn', onClick: () => listEl.querySelector('.order-cutrow')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, LABELS.goCut));
+    }
+    listEl.replaceChildren(...lis);
     markSelected(selKey);
     const empty = mode === 'list' ? seq.length === 0 : extras.length === 0;
     emptyBox.hidden = !empty;
     if (empty) {
       ui.clear(emptyBox);
-      if (inCut.length === 0 && T != null && mode === 'map') {
-        // 여기까지 읽음 안에 스토리가 없다 — 처음 나오는 시점으로 가는 단추를 준다
-        const first = judged.filter((j) => (j.unit.layer == null || s.layers.includes(j.unit.layer)) && match(j, s, kinds)).reduce((m, j) => Math.min(m, j.tick), Infinity);
-        const at = Number.isFinite(first) ? fmt.tickShort(first) : null;
-        emptyBox.append(ui.notice(LABELS.emptyEarly(fmt.tickShort(T), at)), at ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: first }) }, LABELS.goNext(at)) : null, ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, TERM.showAll));
-      } else emptyBox.append(ui.notice(LABELS.emptyFilter), ui.el('button', { type: 'button', class: 'btn', onClick: clearFilters }, LABELS.clearFilter));
+      emptyBox.append(ui.notice(LABELS.emptyFilter), ui.el('button', { type: 'button', class: 'btn', onClick: clearFilters }, LABELS.clearFilter));
     }
     // 모드 · 지도
     modeSeg.set(mode);
@@ -290,12 +292,12 @@ export async function mount(root, ctx) {
   // ── 지도 그리기 ──
   let lastColW = 0;
   const drawMap = (s) => {
-    const { rows, T } = current;
+    const { rows, cut } = current;
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
     const byKind = (s.p.rows ?? 'grade') === 'kind';
     const lanes = byKind ? kindsPresent.map((k) => ({ id: k, label: fmt.KIND[k].label, help: fmt.help('kind', k) })) : GRADES.filter((g) => gradePick.cur().includes(g)).map((g) => ({ id: g, label: gl(g), help: fmt.help('grade', g) }));
-    const laneOf = (j) => (byKind ? j.unit.kind : gradeAt(j, T));
+    const laneOf = (j) => (byKind ? j.unit.kind : j.grade);
     const n = spine.length;
     const pad = 12;
     const avail = (mapScroll.clientWidth || root.clientWidth || 900) - pad * 2;
@@ -324,7 +326,7 @@ export async function mount(root, ctx) {
     }
     const axisY = y;
     const height = axisY + AXIS_H;
-    const cutCol = T == null ? n - 1 : colOf(T);
+    const cutCol = cut == null ? n - 1 : colOf(cut);
 
     // 행 이름(HTML 열 — SVG 안에 두면 잘린다)
     ui.clear(laneCol);
@@ -358,7 +360,7 @@ export async function mount(root, ctx) {
     for (const [i, sp] of spine.entries()) {
       const cx = colX(i) + colW / 2;
       const kind = sp.unit.kind === 'main' ? 'is-main' : sp.unit.kind === 'side' ? 'is-side' : 'is-event';
-      const g = S('g', { class: `order-col ${kind} ${i > cutCol ? 'is-after' : ''} ${i === cutCol && T != null ? 'is-cut' : ''}`, transform: `translate(${cx},${axisY})`, tabindex: 0, role: 'button', 'aria-label': `${sp.unit.title} — ${LABELS.axisGo}` });
+      const g = S('g', { class: `order-col ${kind} ${i > cutCol ? 'is-after' : ''} ${i === cutCol && cut != null ? 'is-cut' : ''}`, transform: `translate(${cx},${axisY})`, tabindex: 0, role: 'button', 'aria-label': `${sp.unit.title} — ${LABELS.axisGo}` });
       g.append(S('rect', { class: 'order-col-hit', x: -colW / 2, y: 0, width: colW, height: AXIS_H, fill: 'transparent' }));
       if (kind === 'is-main') g.append(S('line', { class: 'order-tick', y1: 0, y2: 7, stroke: 'none' }));
       else if (kind === 'is-side') g.append(S('rect', { class: 'order-glyph', x: -3.5, y: 3, width: 7, height: 7, fill: 'none' }));
@@ -382,12 +384,10 @@ export async function mount(root, ctx) {
           const row = Math.floor(k / perRow);
           const cx = colX(col) + colW / 2 + (sub - (Math.min(perRow, items.length - row * perRow) - 1) / 2) * STEP;
           const cy = lane.y0 + lane.h - LANE_PAD - DOT_R - row * STEP;
-          const g = gradeAt(j, T);
-          const rises = Boolean(j.from_tick && T != null && T < j.from_tick);
-          const c = S('circle', { class: `order-dot ${rises ? 'is-rise' : ''} ${j.key === selKey ? 'is-selected' : ''}`, cx, cy, r: DOT_R, 'data-key': j.key, tabindex: -1, role: 'button', 'aria-label': `${j.unit.title} · ${fmt.KIND[j.unit.kind].label} · ${gl(g)}` });
+          const g = j.grade;
+          const c = S('circle', { class: `order-dot ${j.key === selKey ? 'is-selected' : ''}`, cx, cy, r: DOT_R, 'data-key': j.key, tabindex: -1, role: 'button', 'aria-label': `${j.unit.title} · ${fmt.KIND[j.unit.kind].label} · ${gl(g)}` });
           c.style.fill = fmt.GRADE[g]?.color ?? 'var(--grade-none)';
-          if (rises) c.style.setProperty('--rise', fmt.GRADE[j.grade]?.color ?? 'var(--grade-none)');
-          ui.tooltip(c, () => tooltipBody(j, T));
+          ui.tooltip(c, () => tooltipBody(j));
           const go = () => state.set({ sel: `unit:${j.key}` });
           c.addEventListener('click', go);
           c.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -397,18 +397,17 @@ export async function mount(root, ctx) {
     }
     svg.append(dots);
     // 읽은 자리(여기까지 읽음 칸)가 가로 스크롤 밖이면 보이는 곳으로 옮긴다
-    if (T != null) {
+    if (cut != null) {
       const x = colX(cutCol) + colW;
       if (x > mapScroll.scrollLeft + mapScroll.clientWidth || x < mapScroll.scrollLeft) mapScroll.scrollLeft = Math.max(0, x - mapScroll.clientWidth * 0.7);
     }
   };
-  const tooltipBody = (j, T) => {
-    const g = gradeAt(j, T);
-    const rises = j.from_tick && T != null && T < j.from_tick;
+  const tooltipBody = (j) => {
+    const g = j.grade;
     return ui.el('div', { class: 'order-tip' },
       ui.el('div', { class: 'order-tip-title' }, j.unit.title),
       ui.el('div', {}, `${fmt.KIND[j.unit.kind].label} · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자`),
-      ui.el('div', {}, [gl(g), rises ? ` ${LABELS.riseTo(spineLabel(j.from), gl(j.grade))}` : j.from_tick ? ` (${LABELS.riseSince(spineLabel(j.from))})` : '']),
+      ui.el('div', {}, [gl(g), j.from_tick ? ` (${LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade))})` : '']),
       j.reason ? ui.el('div', { class: 'order-tip-basis' }, clip(plain(j.reason), 110)) : null);
   };
 
@@ -463,21 +462,23 @@ export async function mount(root, ctx) {
     const basisText = ui.el('div', { class: 'order-basis-text' });
     const basisRow = j.basis ? [recId(j.basis), j.basis_kind ? [' ', ui.chip('record', j.basis_kind)] : null, j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene))] : null, basisText] : null;
     const histBox = ui.el('div', { class: 'order-history' }, j.trail ? j.trail.map((x, i) => [i ? ' → ' : null, ui.chip('grade', x)]) : ui.el('span', { class: 'muted' }, LABELS.trailNone));
+    // 여기까지 읽음 뒤 스토리 — 목록에는 보이지만 이유 · 떡밥 · 주역 · 결말 같은 내용은 접어 가린다
+    const after = g == null;
+    const rest = [
+      j.reason ? [R.reason, withLinks(j.reason)] : null,
+      basisRow ? [R.why, basisRow] : null,
+      [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, ' ', j.unit.layer ? ui.chip('layer', j.unit.layer) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],
+      j.from && !j.from_tick ? [R.touch, ui.link(`unit:${j.from}`, spineLabel(j.from))] : null,
+      j.threads?.length ? [R.threads, j.threads.map((t, i) => [i ? ' · ' : null, ui.link(`thread:${t}`, idx.threads.get(t)?.title ?? t)])] : null,
+      j.origin_of?.length || j.lead_facts ? [R.lead, [j.origin_of?.length ? [ui.el('b', {}, `${R.origins}: `), j.origin_of.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p))]), ' '] : null, j.lead_facts ? ui.el('span', { class: 'muted' }, plain(j.lead_facts)) : null]] : null,
+      j.closures ? [R.endings, withLinks(j.closures)] : null,
+      [R.history, histBox],
+    ];
     card.append(
       ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', j.unit.kind), ' ', ui.link(`unit:${j.key}`, j.unit.title), ui.el('span', { class: 'muted order-card-sub' }, ` · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자 · ${fmt.num(j.unit.scenes)}${LABELS.scene}`)), close),
       loglineBox(j.key, j.tick, T),
-      kv([
-        [T == null ? R.grade : TERM.gradeAt, gradeRow],
-        ...preRows(j.key),
-        j.reason ? [R.reason, withLinks(j.reason)] : null,
-        basisRow ? [R.why, basisRow] : null,
-        [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, ' ', j.unit.layer ? ui.chip('layer', j.unit.layer) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],
-        j.from && !j.from_tick ? [R.touch, ui.link(`unit:${j.from}`, spineLabel(j.from))] : null,
-        j.threads?.length ? [R.threads, j.threads.map((t, i) => [i ? ' · ' : null, ui.link(`thread:${t}`, idx.threads.get(t)?.title ?? t)])] : null,
-        j.origin_of?.length || j.lead_facts ? [R.lead, [j.origin_of?.length ? [ui.el('b', {}, `${R.origins}: `), j.origin_of.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p))]), ' '] : null, j.lead_facts ? ui.el('span', { class: 'muted' }, plain(j.lead_facts)) : null]] : null,
-        j.closures ? [R.endings, withLinks(j.closures)] : null,
-        [R.history, histBox],
-      ]));
+      kv([[T == null || after ? R.grade : TERM.gradeAt, gradeRow], ...preRows(j.key), ...(after ? [] : rest)]),
+      after ? ui.details(LABELS.spoiler, kv(rest), { class: 'order-spoiler-rows' }) : null);
     // 관련 메모 문장 · 검토 기록은 따로 받는다(처음 한 번)
     detail().then((d) => {
       if (card.dataset.key !== key) return;
