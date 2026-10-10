@@ -186,6 +186,14 @@ test('사전 판 — 첫 판은 처음 나온 자리(meet의 마지막) · 제�
   assert.match(checkFile({ subject: 'org:에덴', versions: [] }, DC).errors[0], /처음 나온 자리\(meet\)가 없는 항목/);
 });
 
+test('이름 검사 — 두 글자 이름은 뒤가 조사 · 낱말 끝일 때만(리스크 ⊃ 리스는 아니다)', () => {
+  const names = new Map([['리스', { order: 99, unit: 'ch48', target: 'person:리스' }]]);
+  const units = new Map(UNITS.map((u) => [u.key, u]));
+  assert.deepEqual(lateNames('리스크 레벨이 높다', 10, names, units), []);
+  assert.equal(lateNames('리스가 왔다', 10, names, units).length, 1);
+  assert.equal(lateNames('그것은 리스.', 10, names, units).length, 1);
+});
+
 test('사전 판 지문 — at까지 항목을 다룬 기록이 바뀌면 낡음, 뒤 기록은 상관없다 · 내보내면 { at, text }', async () => {
   const v1 = dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.');
   const more = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F3', kind: 'F', unit: 'ch45', about: [DS], text: '…' }] });

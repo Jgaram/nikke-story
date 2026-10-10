@@ -144,7 +144,7 @@ export function nameIndex(targets, units) {
 
 /**
  * 그 자리 뒤에 처음 쓰이는 대상 이름 — 글에 들었나. 스포일러 이름 검사(synopsis spoilerProblems)와 같은 빼기:
- * 앞에 나온 더 긴 이름 · 흔한 낱말 안에 든 것, 앞이 한글 음절이라 낱말 속 글자인 것, 영문 낱말 속 글자인 것.
+ * 앞에 나온 더 긴 이름 · 흔한 낱말 안에 든 것, 앞이 한글 음절이라 낱말 속 글자인 것, 영문 낱말 속 글자인 것, 두 글자 한글 이름 뒤에 조사가 아닌 글자가 붙은 것.
  * @returns {string[]} '모더니아(CH.06에서 처음)' 꼴
  */
 export function lateNames(text, order, names, units) {
@@ -160,6 +160,8 @@ export function lateNames(text, order, names, units) {
       if (covered.some(([a, b]) => a <= i && i + name.length <= b && b - a > name.length)) continue;
       if (i > 0 && /[가-힣]/.test(t[i - 1]) && /^[가-힣]/.test(name)) continue;
       if (/^[A-Za-z]/.test(name) && (/[A-Za-z]/.test(t[i - 1] ?? '') || /[A-Za-z]/.test(t[i + name.length] ?? ''))) continue;
+      // 두 글자 한글 이름은 뒤가 낱말 끝 · 조사일 때만('리스크'의 '리스' · '사라진'의 '사라'는 아니다 — spoiler-check findWord와 같은 규칙)
+      if ([...name].length === 2 && /[가-힣]$/.test(name) && /[\p{L}\p{N}]/u.test(t[i + name.length] ?? '') && !/[은는이가을를의와과도만에께한로으랑야아씨님들]/u.test(t[i + name.length])) continue;
       const f = names.get(name);
       hits.push(`${name}(${f.unit ? `${units.get(f.unit)?.title ?? f.unit}에서 처음` : '쓰인 곳 없음'})`);
       break;
