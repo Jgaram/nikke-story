@@ -451,7 +451,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
 | `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다 |
 | `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
-| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how}]` · `same_as[]`(확정 정체 연결) · `lines` · `stories` |
+| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how}]` · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
 | `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
 | `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}`(공용 8 + 탭 JSON 11 전부) · `warnings` |
 

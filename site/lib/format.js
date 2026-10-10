@@ -425,6 +425,16 @@ export const sceneName = (scene) => {
 };
 export const evidence = (ev) => (Array.isArray(ev) ? [...new Set(ev.map((e) => e.scene))].map((s) => ref(s)).join(' · ') : '');
 
+/**
+ * 지금 읽은 자리에서 알 수 있는 같은 인물(정체 연결) — 밝혀지는 단위(same_as_unit)를 읽었으면 보이고, 아니면 있다는 것 자체를 뺀다.
+ * R = state.reading()(없거나 R.all이면 전부). 밝혀지는 단위가 없는 연결은 읽는 중에는 늘 뺀다.
+ */
+export function sameAsKnown(t, R) {
+  const ids = t?.same_as ?? [];
+  if (!R || R.all) return ids;
+  return ids.filter((_, i) => { const u = t.same_as_unit?.[i]; return u ? R.seen(u) : false; });
+}
+
 export const hiddenLabel = (n) => `스포일러로 가린 ${num(n)}`;
 
 /** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */

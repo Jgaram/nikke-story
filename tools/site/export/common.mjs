@@ -228,10 +228,17 @@ export async function run(ctx) {
     if (n.how === '표준명') continue;
     (names.get(n.target_id) ?? names.set(n.target_id, []).get(n.target_id)).push({ name: n.name, how: n.how });
   }
+  // 같은 인물(정체 연결) — 밝혀지는 자리 = 근거 첫 씬이 든 단위(same_as_unit, same_as와 같은 순서). 화면은 그 단위를 읽었을 때만 보인다
   const sameAs = new Map();
-  for (const l of all("SELECT a, b FROM target_links WHERE status = '확정' AND type = 'same_as'")) {
-    (sameAs.get(l.a) ?? sameAs.set(l.a, []).get(l.a)).push(l.b);
-    (sameAs.get(l.b) ?? sameAs.set(l.b, []).get(l.b)).push(l.a);
+  const sameAsUnit = new Map();
+  for (const l of all("SELECT a, b, evidence FROM target_links WHERE status = '확정' AND type = 'same_as'")) {
+    const { scene } = firstRef(JSON.parse(l.evidence || '[]'));
+    const unit = scenes.find((s) => s.id === scene)?.unit ?? null;
+    if (!unit) warn({ where: 'same_as', msg: `${l.a} = ${l.b}: 근거 씬 ${scene ?? '없음'}의 단위가 없다 — 읽는 중에는 늘 숨는다` });
+    for (const [x, y] of [[l.a, l.b], [l.b, l.a]]) {
+      (sameAs.get(x) ?? sameAs.set(x, []).get(x)).push(y);
+      (sameAsUnit.get(x) ?? sameAsUnit.set(x, []).get(x)).push(unit);
+    }
   }
   // 인물 아이콘(W11) — tools/site/portraits.mjs가 받아 둔 것만. 없으면 칸을 비운다
   const icons = fs.existsSync(ICONS_FILE) ? JSON.parse(fs.readFileSync(ICONS_FILE, 'utf8')) : {};
@@ -281,7 +288,7 @@ export async function run(ctx) {
     const r = pick(t, TARGET_COLUMNS);
     return compact({
       id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: names.get(r.id),
-      same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
+      same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
       orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });
   });

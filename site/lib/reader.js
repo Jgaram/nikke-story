@@ -444,7 +444,7 @@ const RENDER = {
     const units = new Set(recs.map((r) => r.unit).filter(Boolean));
     root.append(ui.panel(null, kv([
       row('다른 이름', t.aliases?.length ? t.aliases.map((a) => a.name).join(' · ') : null),
-      row('같은 인물 · 대상', t.same_as?.length ? joinNodes(t.same_as.map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null),
+      row('같은 인물 · 대상', fmt.sameAsKnown(t, state.reading()).length ? joinNodes(fmt.sameAsKnown(t, state.reading()).map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null),
       row('설명', t.note),
       row('나온 곳', t.stories ? `${fmt.num(t.stories)}씬 · ${fmt.num(t.lines)}줄` : null),
       row(fmt.TERM.note, recs.length ? `${recs.length}건 · 스토리 ${units.size}` : null),

@@ -79,7 +79,7 @@ export async function run(ctx) {
     const firstHow = !r.first_unit ? undefined : m?.first_unit === r.first_unit && m?.first_scene === r.first_scene ? FIRST_HOW[m.first_how] ?? m.first_how : '암시 언급';
     return compact({
       id: r.target, name: r.name || t?.name, kind: t?.kind, common: r.common || undefined, spread: num(r.spread) || undefined, owner: owners.has(r.target) ? true : undefined,
-      same_as: t?.same_as, aliases: t?.aliases?.map((a) => a.name),
+      same_as: t?.same_as, same_as_unit: t?.same_as_unit, aliases: t?.aliases?.map((a) => a.name),
       scenes: num(r.scenes), units: num(r.units), lines: num(r.lines), speaker_lines: num(r.speaker_lines), named_lines: num(r.named_lines),
       implied_lines: num(r.implied_lines) || undefined, implied_scenes: num(r.implied_scenes) || undefined, partners: num(r.partners),
       first_unit: r.first_unit || undefined, first_tick: num(r.first_tick), first_order: num(r.first_order), first_scene: r.first_scene || undefined, first_how: firstHow,

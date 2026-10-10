@@ -24,7 +24,7 @@
  *     모르는 기록(R.known — 사실 · 의문은 know_units 중 하나라도 봤으면 앎)은 빼고 센다(persons-detail.json에서 다시 센다). 쌍은 by[]의 칸마다(척추 이벤트 · 사이드 칸은 그 키로) 본다.
  *     자리(tick)는 히트맵의 '아직 안 읽은 부분' 빗금(t 뒤) 같은 위치에만 쓴다 — t 앞이어도 안 봤다고 체크한 스토리 칸은 빗금 칸으로 그린다.
  *   뺀 개수는 도구줄 아래 한 줄에 "스포일러로 가린 …"으로 모으고 [전부 보기]를 단다(범위 밖은 따로). 아직 나오지 않은 인물은 목록에서 빠지고, 주소로 들어오면 안내만 보인다.
- *   같은 인물(정체 연결)은 밝혀지는 자리를 따로 갖고 있지 않아 컷오프로 거를 수 없다 — 읽는 중(t 켬)에는 "스포일러" 접이로 감춘다.
+ *   같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 보이고, 아니면 있다는 것 자체를 보이지 않는다(접이로도 두지 않는다).
  *   등장 칸 = 히트맵(흐름) 아래에 나온 스토리 제목 목록: 종류(메인 · 이벤트 · 호감도 …)마다 묶고, 앞 점 색 = 말한 줄 수(히트맵과 같은 구간), 회색 = 이름만.
  *     종류마다 많으면(메인 36 · 그 밖 20 초과) 앞 24 · 12개만 보이고 [더 보기]로 그 종류를 다 편다. 정렬은 감상 순서 또는 많이 말한 순.
  *   히트맵: 가로 = 읽는 순서(출시순) 481칸을 폭에 맞춰 줄여 그린다, 줄 = 스토리 종류, 칸 색 = 말한 줄 수(파랑 한 색 5단계, 절대 구간 — 인물끼리 견줄 수 있다),
@@ -166,7 +166,7 @@ export async function mount(root, ctx) {
 
   const P = new Map(persons.map((p) => [p.id, p]));
   const D = new Map(detailArr.map((d) => [d.id, d]));
-  const hay = new Map(persons.map((p) => [p.id, [p.name, ...(p.aliases ?? []), ...(p.same_as ?? []).map(fmt.targetName)].join(' ').toLowerCase()]));
+  const hay = new Map(persons.map((p) => [p.id, [p.name, ...(p.aliases ?? [])].join(' ').toLowerCase()]));
   const kinds = [...new Set(persons.map((p) => p.kind).filter(Boolean))].sort((a, b) => (b === '니케') - (a === '니케') || cmpKo(a, b));
   const maxOrder = idx.unitList.reduce((m, u) => Math.max(m, u.order ?? 0), 0);
 
@@ -489,11 +489,11 @@ export async function mount(root, ctx) {
     const sub = [];
     if (a.visible) {
       if (p.aliases?.length) sub.push(el('span', {}, el('span', { class: 'muted' }, `${LABELS.alias} `), p.aliases.join(' · ')));
-      if (p.same_as?.length) {
-        const links = p.same_as.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]);
-        // 같은 인물(정체 연결)은 밝혀지는 자리를 따로 갖고 있지 않아 컷오프로 거를 수 없다 — 읽는 중이면 접어 둔다
-        sub.push(V.R.all ? el('span', {}, el('span', { class: 'muted' }, `${LABELS.same} `), links)
-          : ui.details(`${LABELS.same} (${TERM.spoiler ?? '스포일러'})`, links, { class: 'spoiler pm-same' }));
+      // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
+      const same = fmt.sameAsKnown(p, V.R);
+      if (same.length) {
+        const links = same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]);
+        sub.push(el('span', {}, el('span', { class: 'muted' }, `${LABELS.same} `), links));
       }
     }
     if (sub.length) head.append(el('div', { class: 'pm-sub' }, sub.flatMap((x, i) => [i ? el('span', { class: 'pm-sep' }, '·') : null, x])));
