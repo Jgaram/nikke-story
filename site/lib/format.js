@@ -279,7 +279,6 @@ export const FIRST_VISIT = {
   exBadge: (n) => `+${n}편`,
   exBadgeHelp: (n, all) => `필수 이벤트 · 사이드 · 준필수 ${all}편 가운데 본 것 ${n}편 — 메인 순서와 다르게 골랐다`,
   semiHead: '준필수',
-  semiHint: '메인만 봤다면 체크 해제',
   all: '전부 보기',
   later: '나중에',
   ok: '확인',

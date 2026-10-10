@@ -138,7 +138,7 @@ function cutoffControl(idx, firstVisit) {
       ui.el('div', { class: 'cutoff-exs' }, boxes)),
     // 준필수는 접어 둔다 — 위 막대를 옮기면 알아서 체크되므로 따로 만질 일이 드물다(사용자 2026-10-10). 접어도 체크 칸은 DOM에 있어 syncDraft가 그대로 갱신한다
     semiBoxes.length ? ui.el('details', { class: 'details cutoff-sec cutoff-semi' },
-      ui.el('summary', {}, V.semiHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.semiHint)),
+      ui.el('summary', {}, V.semiHead),
       ui.el('div', { class: 'cutoff-exs' }, semiBoxes)) : null,
     ui.el('div', { class: 'cutoff-dlg-foot' }, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
     ui.el('p', { class: 'cutoff-ai' }, fmt.AI_NOTE.full));
