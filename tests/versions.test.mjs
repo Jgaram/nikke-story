@@ -143,7 +143,7 @@ test('화면 fmt.versionAt · threadAt — 앞 판들의 at을 다 본 마지막
   const j = { ...THREADS.threads[0], v: [{ at: 'char:222', title: 'A', text: 'a' }, { at: 'event_newyearnewsword', title: 'B', text: 'b' }] };
   assert.equal(fmt.threadAt(j, R(1)).title, null); // 아직 안 나옴
   assert.equal(fmt.threadAt(j, R(3)).title, 'A');
-  assert.deepEqual(fmt.threadAt(j, R(4)), { title: 'B', text: 'b', at: 'event_newyearnewsword', of: 2 });
+  assert.deepEqual(fmt.threadAt(j, R(4)), { title: 'B', text: 'b', at: 'event_newyearnewsword', of: 2, started: true, whole: (units.get(j.last_unit)?.tick ?? 99) <= 4 });
   assert.equal(fmt.threadAt(j, R(null)).title, 'B');
   // 체크 칸 예외 — 앞 판들의 at을 다 봐야 뒤 판(뒤 판은 앞 판 내용 위에 쓴다). 앞 판 스토리를 안 골랐으면 거기서 멈춘다
   assert.equal(fmt.threadAt(j, R(3, { event_newyearnewsword: true })).title, 'B');

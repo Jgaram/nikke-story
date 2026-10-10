@@ -120,6 +120,7 @@ export async function open(sel) {
     if (parsed.type === 'unit') await loadOrder(); // 분류 칸 — 작은 파일(order.json)이라 같이 기다린다
     if (parsed.type === 'unit' || parsed.type === 'scene') await Promise.all([loadSynopsis(), loadBlurbs()]);
     if (parsed.type === 'person') await loadPeople(); // 인물 머리의 '처음 등장' — 인물 탭과 같은 파일
+    if (['unit', 'record', 'thread'].includes(parsed.type)) await loadFlow(); // 떡밥 묶음 거르기(W15d)
     if (current !== sel) return; // 그새 다른 것을 골랐다
     ui.clear(root);
     const render = RENDER[parsed.type];
@@ -166,6 +167,25 @@ async function loadOrder() {
     orderMap = new Map(); // 못 받아도 리더는 쓴다
   }
   return orderMap;
+}
+
+let flowMap = null;
+let flowReady = null;
+/** threads-flow.json — 떡밥 묶음 거르기(fmt.threadBundle — W15d)의 재료. 못 받으면 묶음은 떡밥 전체를 아는 자리에서만 보인다 */
+const loadFlow = () => (flowReady ??= data.load('threads-flow').then((f) => { flowMap = f; return f; }).catch(() => { flowMap = {}; return flowMap; }));
+/** 떡밥의 그 자리 묶음 — { roots, echoes, whole }. 흐름을 못 받았으면 빈 묶음(떡밥 전체를 아는 자리면 전부) */
+const bundleOf = (j, R) => fmt.threadBundle(j, flowMap?.[j.id] ?? { roots: [], echoes: [] }, R);
+/** 그 자리에서 본 묶음(fmt.threadTies) — 기록 · 스토리가 그 떡밥과 이어진 줄 아나 */
+const tiesOf = (j, R) => fmt.threadTies(j, flowMap?.[j.id] ?? { roots: [], echoes: [] }, R);
+/** 기록이 그 떡밥과 이어진 줄 그 자리에서 아나 — 아는 묶음 뿌리이거나, 그 본 단계 줄 · 본 복선의 기록 */
+function tiedRecord(r, j, R) {
+  const t = tiesOf(j, R);
+  return t.started && (t.whole || t.ids.has(r.id));
+}
+/** 스토리가 그 떡밥과 이어진 줄 그 자리에서 아나 — 아는 묶음 뿌리의 본 단계 · 본 복선이 그 스토리에 있다 */
+function tiedUnit(key, j, R) {
+  const t = tiesOf(j, R);
+  return t.started && (t.whole || t.units.has(key));
 }
 
 let detailReady = null;
@@ -490,16 +510,21 @@ function classPanel(u, idx, hidden) {
   ]), hidden && story.length ? ui.details(spoilerSummary(), kv(story), { class: 'spoiler' }) : null], { actions: action });
 }
 
-/** 스토리에 걸린 떡밥 — 이 스토리 기록 · 분류가 짚은 떡밥. 처음 나온 스토리를 안 본 떡밥은 스포일러 접이로 */
+/**
+ * 스토리에 걸린 떡밥 — 이 스토리 기록 · 분류가 짚은 떡밥. 떡밥이 아직 안 나왔거나(fmt.threadStarted), 이 스토리가 그 떡밥과 이어진 줄
+ * 그 자리에서 모르면(묶음 안 뿌리 · 복선의 단계가 이 스토리에 없음 — W15d) 스포일러 접이로
+ */
 function unitThreads(key, recs, idx) {
   const ids = new Set(orderMap?.get(key)?.threads ?? []);
   for (const r of recs) for (const j of r.threads ?? []) ids.add(j);
   const list = [...ids].map((id) => idx.threads.get(id)).filter(Boolean)
     .sort((a, b) => (fmt.majorThread(b) ? 1 : 0) - (fmt.majorThread(a) ? 1 : 0) || (a.first_order ?? 0) - (b.first_order ?? 0));
-  const seenJ = (j) => !j.first_unit || !idx.units.has(j.first_unit) || state.seen(j.first_unit);
-  return { before: list.filter(seenJ), after: list.filter((j) => !seenJ(j)) };
+  const R = state.reading();
+  const shownJ = (j) => fmt.threadStarted(j, R) && tiedUnit(key, j, R);
+  return { before: list.filter(shownJ), after: list.filter((j) => !shownJ(j)) };
 }
-const threadLine = (j) => ui.el('li', { class: 'rd-thread' }, ui.link(`thread:${j.id}`, j.title),
+/** 떡밥 한 줄 — 이름은 그 자리 판(fmt.threadLabel). folded면 스포일러 접이 안이라 떡밥 전체 이름(마지막 판 · 분석용) */
+const threadLine = (j, folded = false) => ui.el('li', { class: 'rd-thread' }, ui.link(`thread:${j.id}`, fmt.threadLabel(j, folded ? null : state.reading())),
   fmt.majorThread(j) ? ui.el('span', { class: 'rd-link-meta', title: fmt.help('weight', j.weight) }, ` ${fmt.majorThread(j)}`) : null);
 
 const needsRecords = (type) => ['scene', 'record', 'unit', 'person', 'target', 'thread'].includes(type);
@@ -548,8 +573,9 @@ function recordList(records, opts = {}) {
   const R = state.reading();
   const order = (r) => (fmt.RECORD_ORDER.indexOf(r.kind) + 1 || 99);
   const sorted = [...records].sort((a, b) => order(a) - order(b) || (a.line ?? 0) - (b.line ?? 0) || String(a.id).localeCompare(String(b.id)));
-  const before = sorted.filter((r) => R.known(r));
-  const after = sorted.filter((r) => !R.known(r));
+  // opts.shown — 아는 기록 가운데 더 거를 것(떡밥 묶음 밖 — W15d). 걸린 것은 모르는 기록과 함께 접이에
+  const before = sorted.filter((r) => R.known(r) && (!opts.shown || opts.shown(r)));
+  const after = sorted.filter((r) => !before.includes(r));
   return ui.el('div', { class: 'record-lists' },
     before.length ? ui.el('ul', { class: 'records' }, before.map((r) => recordLine(r, opts))) : ui.empty(LABELS.inRangeNone),
     after.length ? ui.details(spoilerSummary(after.length), ui.el('ul', { class: 'records' }, after.map((r) => recordLine(r, opts))), { class: 'spoiler' }) : null);
@@ -620,8 +646,8 @@ const RENDER = {
     const th = unitThreads(key, recs, idx);
     if (th.before.length || th.after.length) {
       root.append(fold(fmt.TERM.thread, (body) => put(body,
-        th.before.length ? ui.el('ul', { class: 'plain' }, th.before.map(threadLine)) : ui.empty(LABELS.inRangeNone),
-        th.after.length ? ui.details(spoilerSummary(th.after.length), ui.el('ul', { class: 'plain' }, th.after.map(threadLine)), { class: 'spoiler' }) : null)));
+        th.before.length ? ui.el('ul', { class: 'plain' }, th.before.map((j) => threadLine(j))) : ui.empty(LABELS.inRangeNone),
+        th.after.length ? ui.details(spoilerSummary(th.after.length), ui.el('ul', { class: 'plain' }, th.after.map((j) => threadLine(j, true))), { class: 'spoiler' }) : null)));
     }
     // 장면 — 번호 · 제목(+ 판 · 호감도 Lv) + 씬 한 줄. 줄 수는 싣지 않는다
     root.append(ui.panel(LABELS.scenes, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
@@ -690,7 +716,17 @@ const RENDER = {
     // 해석 이유는 추정일 때만 — 확실한 기록은 문장만으로 읽힌다. 못 바꾸는 이유 문장은 내지 않는다
     if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel(LABELS.guessWhy, ui.el('p', { class: 'reason' }, fmt.prose(r.reason))));
     if (r.about?.length) body.append(ui.panel(LABELS.related, ui.el('p', {}, joinNodes(r.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
-    if (r.threads?.length) body.append(ui.panel(fmt.TERM.thread, ui.el('p', {}, joinNodes(r.threads.map((j) => ui.link(`thread:${j}`, idx.threads.get(j)?.title ?? j))))));
+    if (r.threads?.length) {
+      // 이 기록이 그 떡밥과 이어진 줄 그 자리에서 알 때만 이름으로(떡밥 묶음 — W15d), 아니면 스포일러 접이에
+      const R = state.reading();
+      const js = r.threads.map((j) => idx.threads.get(j)).filter(Boolean);
+      const tied = js.filter((j) => fmt.threadStarted(j, R) && tiedRecord(r, j, R));
+      const rest = js.filter((j) => !tied.includes(j));
+      body.append(ui.panel(fmt.TERM.thread, [
+        tied.length ? ui.el('p', {}, joinNodes(tied.map((j) => ui.link(`thread:${j.id}`, fmt.threadLabel(j, R))))) : ui.empty(LABELS.inRangeNone),
+        rest.length ? ui.details(spoilerSummary(), ui.el('p', {}, joinNodes(rest.map((j) => ui.link(`thread:${j.id}`, fmt.threadLabel(j, null))))), { class: 'spoiler' }) : null,
+      ]));
+    }
     const rootId = r.parent ?? ((r.kind === 'F' || r.kind === 'Q') ? r.id : null);
     if (rootId) {
       const rootRec = idx.records.get(rootId);
@@ -757,43 +793,60 @@ const RENDER = {
   thread(id, idx) {
     const j = idx.threads.get(id);
     if (!j) return root.append(head(LABELS.notFound), ui.empty(LABELS.notFound));
-    // 아직 안 나온 떡밥(첫 스토리를 안 봄) — 머리는 '아직 나오지 않은 떡밥'만, 이름부터 전부 스포일러 접이에(W15a)
-    const started = !j.first_unit || !idx.units.has(j.first_unit) || state.seen(j.first_unit);
+    // 아직 안 나온 떡밥(fmt.threadStarted — 판이 있으면 첫 판의 at) — 머리는 '아직 나오지 않은 떡밥'만, 이름부터 전부 스포일러 접이에(W15a · W15d)
+    const R = state.reading();
+    const started = fmt.threadStarted(j, R);
+    // 이름 · 요약은 그 자리 판(fmt.threadAt — W15d). 접이 안(아직 안 나옴)은 떡밥 전체 이름
+    const at = fmt.threadAt(j, started ? R : null);
+    const title = fmt.threadLabel(j, started ? R : null);
     if (!started) {
       root.append(head(LABELS.hiddenThread));
       root.append(ui.notice(LABELS.hiddenThreadNote(cutoffName()), 'warn'));
     }
     const out = started ? root : ui.el('div', {});
     const sub = joinDots([fmt.majorThread(j) ? ui.el('span', { title: fmt.help('weight', j.weight) }, fmt.majorThread(j)) : null].filter(Boolean));
-    out.append(started ? head(j.title, [j.confidence === '추정' ? ui.chip('confidence', '추정') : null], sub.length ? sub : null) : ui.el('p', {}, ui.el('strong', {}, j.title)));
+    out.append(started ? head(title, [j.confidence === '추정' ? ui.chip('confidence', '추정') : null], sub.length ? sub : null) : ui.el('p', {}, ui.el('strong', {}, title)));
     out.append(ui.el('div', { class: 'rd-open' }, tabLink('threads', { j: id })));
-    const qs = (j.questions ?? []).map((q) => idx.records?.get(q)).filter(Boolean);
-    const fs = (j.facts ?? []).map((f) => idx.records?.get(f)).filter(Boolean);
-    // 상태 — 여기까지 읽음 안에서 아는 의문만 센다(미해결 · 일부 회수 · 회수). 전체 수(스포일러)는 싣지 않는다
-    const R = state.reading();
+    // 의문 · 사실은 떡밥 묶음(fmt.threadBundle — 그 자리에서 이 떡밥과 이어진 줄 아는 것, W15d)만 늘어놓고, 나머지는 recordList가 접이에
+    const tiedIds = new Set(started ? bundleOf(j, R).roots.map((x) => x.id) : []);
+    const recsOf = (ids) => (ids ?? []).map((x) => idx.records?.get(x)).filter(Boolean);
+    const qs = recsOf(j.questions);
+    const fs = recsOf(j.facts);
+    // 상태 — 여기까지 읽음 안에서 아는 의문(묶음 안)만 센다(미해결 · 일부 회수 · 회수). 전체 수(스포일러)는 싣지 않는다
     const n = { 열림: 0, 일부: 0, 풀림: 0 };
-    for (const q of qs) { if (!R.known(q)) continue; const s = fmt.stateAt(q, R); if (s in n) n[s]++; }
+    for (const q of qs) { if (!R.known(q) || !tiedIds.has(q.id)) continue; const s = fmt.stateAt(q, R); if (s in n) n[s]++; }
     const stateRow = Object.values(n).some(Boolean) ? joinNodes(Object.entries(n).filter(([, v]) => v).map(([k, v]) => ui.el('span', {}, ui.chip('state', k), ` ${v}`))) : null;
     const first = j.first_unit && idx.units.has(j.first_unit) && state.seen(j.first_unit) ? j.first_unit : null;
+    // 관련 · 주역 — 그 자리에서 부르는 이름(fmt.nameAt — W15b). 아직 안 나온 대상은 빼고, 떡밥 전체를 아는 자리가 아니면
+    // 묶음 안 아는 뿌리가 다루는 대상만(관련 칸도 묶음이다 — W15d). 접이 안(아직 안 나온 떡밥)은 전부 보기 이름
+    const RN = started ? R : null;
+    const whole = !started || at?.whole;
+    const aboutNow = whole ? new Set() : tiesOf(j, R).about;
+    const nameLinks = (ids, type) => {
+      const ok = (ids ?? []).filter((a) => whole || aboutNow.has(a)).map((a) => [a, idx.targets.get(a)]).filter(([, t]) => !t || fmt.nameAt(t, RN));
+      return ok.length ? joinNodes(ok.map(([a, t]) => ui.link(`${type ?? (a.startsWith('person:') ? 'person' : 'target')}:${a}`, t ? fmt.nameAt(t, RN) : fmt.targetName(a)))) : null;
+    };
+    const text = fmt.prose(at?.text ?? '');
     out.append(ui.panel(null, [
-      fmt.prose(j.text) ? ui.el('p', {}, fmt.prose(j.text)) : null,
+      text ? ui.el('p', {}, text) : null,
       kv([
         row(LABELS.state, stateRow),
         row(LABELS.firstAt, first ? ui.link(`unit:${first}`, fmt.unitTitle(first)) : null),
-        row(LABELS.related, j.about?.length ? joinNodes(j.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))) : null),
-        row(fmt.TERM.lead, j.owners?.length ? joinNodes(j.owners.map((a) => ui.link(`person:${a}`, fmt.targetName(a)))) : null),
+        row(LABELS.related, nameLinks(j.about)),
+        row(fmt.TERM.lead, nameLinks(j.owners, 'person')),
       ]),
     ]));
-    // 칸 이름이 종류라 줄마다 종류 칩을 되풀이하지 않는다
-    if (qs.length) out.append(ui.panel(LABELS.question, recordList(qs, { showUnit: true, kind: false })));
-    if (fs.length) out.append(ui.panel(LABELS.fact, recordList(fs, { showUnit: true, kind: false })));
+    // 칸 이름이 종류라 줄마다 종류 칩을 되풀이하지 않는다. 묶음 밖은 아는 기록이라도 접이에(개수 없이)
+    const bundled = (list) => recordList(list, { showUnit: true, kind: false, shown: (x) => !started || at?.whole || tiedIds.has(x.id) });
+    if (qs.length) out.append(ui.panel(LABELS.question, bundled(qs)));
+    if (fs.length) out.append(ui.panel(LABELS.fact, bundled(fs)));
     // 다른 떡밥과의 관계 — 근거 기록을 하나라도 알면 보이고(떡밥 탭 관계도와 같은 규칙), 아니면 접이에(W15a)
     const rels = idx.relations.filter((g) => g.from === id || g.to === id);
     if (rels.length) {
       const relLine = (g) => {
         const other = g.from === id ? g.to : g.from;
-        return ui.el('li', { class: 'rd-thread' }, ui.link(`thread:${other}`, idx.threads.get(other)?.title ?? other), ui.el('span', { class: 'rd-link-meta' }, ` ${g.type}`),
-          fmt.prose(g.text) ? ui.el('div', { class: 'muted' }, fmt.prose(g.text)) : null);
+        return ui.el('li', { class: 'rd-thread' }, ui.link(`thread:${other}`, fmt.threadLabelOf(other, relKnown(g) && started ? R : null)), ui.el('span', { class: 'rd-link-meta' }, ` ${g.type}`),
+          fmt.relText(g, R) ? ui.el('div', { class: 'muted' }, fmt.relText(g, R)) : null);
       };
       const relKnown = (g) => R.all || (g.basis ?? []).some((b) => { const r = idx.records?.get(b); return r && R.known(r); });
       const before = rels.filter(relKnown);

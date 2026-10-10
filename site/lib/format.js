@@ -35,6 +35,9 @@
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   blurbText(b, seen)              팬용 문장(blurbs.json 칸 { text, later?, gate? }) — text, gate를 봤으면(seen(gate)) 뒤에 later까지. 다듬어 쓴 문장이라 prose를 거치지 않는다
  *   versionAt(list, R) · threadAt(j, R)   시점별 판(W15c — versions.json, 떡밥 j.v) — 앞 판들의 at을 다 본 마지막 판 · 그 자리 떡밥 제목 · 요약(판이 없으면 끝까지 봤을 때만 분석용 이름)
+ *   threadStarted(j, R) · threadLabel(j, R) · threadLabelOf(id, R) · threadText(j, R) · THREAD_SLOT   떡밥이 나왔나(판 규칙) · 화면 이름(제목이 없으면 자리 글) · 요약(W15d)
+ *   threadBundle(j, flow, R)        떡밥 묶음 거르기 — 그 자리에서 이 떡밥과 이어진 줄 아는 의문 · 사실 · 복선만(W15d — docs/views.md "새는 곳 막기")
+ *   threadTies(j, flow, R)          그 묶음에서 본 것 — { started, whole, ids(기록), units(스토리), about(대상) } — 리더 · 인물 · 세계 탭이 '이것이 이 떡밥에 드나'를 볼 때
  *   num(n) · pct(x) · date(s)
  */
 
@@ -545,6 +548,33 @@ export function nameAt(target, R) {
   const known = (target.aliases ?? []).filter((a) => a.meet && aliasKnown(target, a, R)).sort((a, b) => metOrder(a) - metOrder(b));
   return known[0]?.name ?? target.name;
 }
+/**
+ * 글 속에 그 자리에서 모르는 대상 이름이 낱말 첫머리로 나오나(W15d) — 결말을 아는 자리에서 쓴 분석 문장(떡밥끼리 관계 설명 등)이
+ * 근거 스토리를 봐도 뒤에서야 쓰이는 이름('퀸 인자' 등)을 담을 수 있다. 첫 모르는 이름 또는 null. 규칙은 spoiler-check '대상'과 같다
+ * (앞 글자가 낱말 안이면 아님 · 두 글자 이름은 뒤가 낱말 끝 · 조사일 때만 · 아는 더 긴 이름 속이면 아님).
+ */
+export function unknownNameIn(text, R) {
+  const s = String(text ?? '');
+  if (!s || !R || R.all || !idx?.targets) return null;
+  const targets = [...idx.targets.values()];
+  const known = new Set(targets.flatMap((t) => namesAt(t, R)));
+  const findWord = (w) => {
+    for (let i = s.indexOf(w); i >= 0; i = s.indexOf(w, i + 1)) {
+      if (i > 0 && /[\p{L}\p{N}]/u.test(s[i - 1])) continue;
+      if ([...w].length === 2 && /[\p{L}\p{N}]/u.test(s[i + w.length] ?? '') && !/[은는이가을를의와과도만에께한로으랑야아씨님들]/u.test(s[i + w.length])) continue;
+      if ([...known].some((k) => k !== w && k.includes(w) && s.startsWith(k, i - k.indexOf(w)))) continue;
+      return true;
+    }
+    return false;
+  };
+  for (const t of targets) {
+    const names = met(t, R) ? (t.aliases ?? []).map((a) => a.name).filter((n) => [...n].length >= 3) : [t.name];
+    for (const n of names) if (n && [...n].length >= 2 && !known.has(n) && findWord(n)) return n;
+  }
+  return null;
+}
+/** 떡밥끼리 관계 설명 — 모르는 이름이 들면 ''(관계 종류만 보인다) */
+export const relText = (g, R) => (unknownNameIn(g?.text, R) ? '' : prose(g?.text));
 /** 그 자리에서 아는 다른 이름({ name, how, … }) — 부르는 이름(nameAt)은 뺀다 */
 export function aliasesAt(target, R) {
   if (!target || !met(target, R)) return [];
@@ -629,7 +659,13 @@ const has = (re, str) => { re.lastIndex = 0; const hit = re.test(str); re.lastIn
 /** 키 정규식이 먹은 말에서 아는 키 부분만 */
 const nameOfKeyHead = (k) => { const hit = nameOfKey(k); return hit ? k.slice(0, k.length - hit[1].length) : k; };
 const isSceneKey = (k) => Boolean(idx?.scenes?.has(k)) && !idx?.units?.has(k);
-const threadTitle = (id) => { const j = idx?.threads?.get(id); return j ? `「${String(j.title).split(' — ')[0]}」` : null; };
+/** 문장 속 떡밥 ID → 「그 자리 제목의 앞 마디」(fmt.threadAt — W15d). 그 자리 제목이 없으면 「떡밥」(분석용 이름은 결말을 아는 자리의 말이다) */
+const threadTitle = (id) => {
+  const j = idx?.threads?.get(id);
+  if (!j) return null;
+  const t = threadAt(j, readingOf?.() ?? null)?.title;
+  return `「${t ? String(t).split(' — ')[0] : TERM.thread}」`;
+};
 /** 괄호 속이 근거 표시뿐인가 — 기록 ID · 씬 ID · 씬 줄임 · 줄 번호와 구분자만 */
 function stripPointers(inner) {
   let s = inner.replace(LINE_REF, ' ').replace(REC_ID, ' ').replace(SESSION_ID, ' ').replace(SCENE_SHORT, ' ');
@@ -697,17 +733,107 @@ export function versionAt(list, R) {
   return pick;
 }
 /**
- * 떡밥의 그 자리 제목 · 요약 — { title, text, at, of }(at = 고른 판의 자리, of = 판 수). 판(j.v)이 있으면 versionAt,
- * 없으면(아직 안 씀 · 낡아서 빠짐) 분석용 이름(j.title · j.text)은 결말을 아는 자리에서 쓴 것이라 전부 보기이거나 떡밥의 마지막 스토리를 봤을 때만.
- * 보일 글이 없으면 title · text가 null — 화면은 '아직 나오지 않은 떡밥' 같은 자리 글을 쓴다(W15d).
+ * 떡밥이 그 자리에서 나왔나(W15d) — 판(j.v)이 있으면 첫 판(at = 떡밥이 처음 나온 스토리)을 봤나(versionAt — 판 규칙과 같게),
+ * 없으면 첫 스토리(first_unit)를 봤나. 전부 보기(R.all · R 없음)면 늘. 첫 스토리가 스토리 목록에 없으면(옛 자료) 나온 것으로.
+ */
+export function threadStarted(j, R) {
+  if (!j) return false;
+  if (!R || R.all) return true;
+  if (Array.isArray(j.v) && j.v.length) return versionAt(j.v, R) != null;
+  if (!j.first_unit || (idx && !idx.units?.has(j.first_unit))) return true;
+  return R.seen(j.first_unit);
+}
+/**
+ * 떡밥의 그 자리 제목 · 요약 — { title, text, at, of, started, whole }(at = 고른 판의 자리, of = 판 수,
+ * started = 떡밥이 나왔나(threadStarted), whole = 떡밥 전체를 아는 자리 — 전부 보기, 또는 마지막 스토리를 봤고 판이 없거나 마지막 판까지 보임).
+ * 판(j.v)이 있으면 versionAt, 없으면(아직 안 씀 · 낡아서 빠짐) 분석용 이름(j.title · j.text)은 결말을 아는 자리에서 쓴 것이라 전부 보기이거나 떡밥의 마지막 스토리를 봤을 때만.
+ * 보일 글이 없으면 title · text가 null — 화면은 threadLabel(자리 글: '아직 나오지 않은 떡밥' · '제목을 아직 정리하지 않은 떡밥')을 쓴다(W15d).
  */
 export function threadAt(j, R) {
   if (!j) return null;
   const list = Array.isArray(j.v) ? j.v : [];
+  const all = !R || R.all;
+  const lastSeen = all || Boolean(j.last_unit && R.seen(j.last_unit));
   const v = versionAt(list, R);
-  if (v) return { title: v.title, text: v.text, at: v.at, of: list.length };
-  if (!list.length && (!R || R.all || (j.last_unit && R.seen(j.last_unit)))) return { title: j.title, text: j.text, at: null, of: 0 };
-  return { title: null, text: null, at: null, of: list.length };
+  if (v) return { title: v.title, text: v.text, at: v.at, of: list.length, started: true, whole: all || (lastSeen && v === list.at(-1)) };
+  if (!list.length && lastSeen) return { title: j.title, text: j.text, at: null, of: 0, started: true, whole: true };
+  return { title: null, text: null, at: null, of: list.length, started: threadStarted(j, R), whole: false };
+}
+/** 떡밥 자리 글(W15d) — 아직 안 나옴 · 나왔는데 그 자리 제목(판)이 아직 없음 */
+export const THREAD_SLOT = { notYet: '아직 나오지 않은 떡밥', untitled: '제목을 아직 정리하지 않은 떡밥' };
+/** 화면에 내는 떡밥 이름 — 그 자리 제목(threadAt), 없으면 자리 글. 목록 · 칩 · 링크 · 리더 머리가 모두 이것을 쓴다 */
+export function threadLabel(j, R) {
+  const a = threadAt(j, R);
+  if (!a) return THREAD_SLOT.notYet;
+  return a.title ?? (a.started ? THREAD_SLOT.untitled : THREAD_SLOT.notYet);
+}
+/** 떡밥 ID로 — 이름 칸(링크 · 칩)에 */
+export const threadLabelOf = (id, R) => (idx?.threads?.get(id) ? threadLabel(idx.threads.get(id), R) : THREAD_SLOT.notYet);
+/** 떡밥 요약 — 그 자리 판의 text(prose를 거친다), 없으면 '' */
+export const threadText = (j, R) => prose(threadAt(j, R)?.text ?? '') || '';
+
+/**
+ * 떡밥 묶음 거르기(W15d — docs/views.md "새는 곳 막기") — 떡밥 줄기에 든 의문 · 사실(threads-flow roots) · 떡밥 전체 복선(echoes) 가운데
+ * 그 자리 독자가 '이 떡밥과 이어진 것'으로 알 수 있는 것만. 묶음 자체가 스포일러다(마리안 떡밥 아래의 CH.05 '병원의 소녀' — 둘이 이어질지 모른다는 물음은 CH.13에서 선다).
+ * 이어진 줄 아는 기록(데이터로만 — 기록하지 않는다):
+ *   ① 떡밥 전체를 아는 자리(threadAt whole — 전부 보기 · 마지막 스토리를 보고 마지막 판까지)면 전부
+ *   ② 떡밥이 처음 나온 스토리(first_unit)에서 나온 뿌리 — 떡밥은 그것으로 시작한다(첫 판이 그 자리의 의문 꼴)
+ *   ③ 지금 보이는 제목(그 자리 판)에 이름이 든 대상(그 자리에서 아는 이름 — namesAt)을 다루는 기록(about), 또는 문장에 그 이름이 든 기록
+ *      — 판의 제목은 '그 자리 독자가 이 떡밥을 무엇이라 부르나'라, 그 대상을 다루는 기록은 이 떡밥 아래에 있어도 묶음이 새지 않는다
+ *   ④ ①–③으로 이어진 뿌리와 본 단계에서 답(a)으로 이어진 뿌리(의문의 회수 · 일부 회수가 그 사실 — 양쪽으로, 다 퍼질 때까지)
+ * 떡밥이 아직 안 나왔으면 아무것도. 판이 없는 떡밥은 제목이 null이라 ②④만(덜 아는 쪽 — 새지 않는다).
+ * f = threads-flow.json의 그 떡밥 { roots[], echoes[] }(roots · echoes에 about — 내보내기 W15d). → { roots, echoes, whole }
+ */
+export function threadBundle(j, f, R) {
+  const roots = f?.roots ?? [];
+  const echoes = f?.echoes ?? [];
+  const at = threadAt(j, R);
+  if (!at || at.whole) return { roots, echoes, whole: true };
+  if (!at.started) return { roots: [], echoes: [], whole: false };
+  const title = at.title ?? '';
+  const faceIds = new Set();
+  const faceNames = new Set();
+  if (title) {
+    const cand = new Set([...(j.owners ?? []), ...(j.about ?? []), ...roots.flatMap((r) => r.about ?? []), ...echoes.flatMap((e) => e.about ?? [])]);
+    for (const id of cand) {
+      const t = idx?.targets?.get(id);
+      if (!t) continue;
+      const ns = namesAt(t, R).filter((n) => n && [...n].length >= 2 && title.includes(n));
+      if (ns.length) { faceIds.add(id); ns.forEach((n) => faceNames.add(n)); }
+    }
+  }
+  const onFace = (x) => (x.about ?? []).some((a) => faceIds.has(a)) || [...faceNames].some((n) => String(x.text ?? '').includes(n));
+  const ids = new Set(roots.map((r) => r.id));
+  const tied = new Set(roots.filter((r) => (j.first_unit && r.unit === j.first_unit) || onFace(r)).map((r) => r.id));
+  for (let grew = true; grew;) {
+    grew = false;
+    for (const r of roots) {
+      for (const p of r.points ?? []) {
+        if (!p.a || !ids.has(p.a) || !p.u || !R.seen(p.u)) continue;
+        if (tied.has(r.id) !== tied.has(p.a)) { tied.add(r.id); tied.add(p.a); grew = true; }
+      }
+    }
+  }
+  return { roots: roots.filter((r) => tied.has(r.id)), echoes: echoes.filter(onFace), whole: false };
+}
+/**
+ * 묶음에서 그 자리 독자가 본 것만 모은 것(W15d) — 리더 기록 · 스토리 패널, 인물 · 세계 탭이 '이 기록 · 스토리 · 대상이 이 떡밥에 든다'를 볼 때.
+ * { started, whole, ids(아는 뿌리 · 그 본 단계 줄 · 본 복선의 기록 ID), units(그 단계 · 복선의 스토리), about(아는 뿌리가 다루는 대상) }.
+ * 아직 모르는 뿌리(아직 · 암시만)의 복선은 넣지 않는다 — 그 장면이 이 떡밥의 복선이라는 것은 뿌리가 나와야 안다.
+ */
+export function threadTies(j, f, R) {
+  const started = threadStarted(j, R);
+  const b = started ? threadBundle(j, f, R) : { roots: [], echoes: [], whole: false };
+  const seen = (u) => !R || R.all || (u && R.seen(u));
+  const known = b.roots.filter((r) => !['아직', '암시만'].includes(stateAt(r, R ?? null)));
+  const pts = known.flatMap((r) => (r.points ?? []).filter((p) => seen(p.u)));
+  const echoes = b.echoes.filter((e) => seen(e.u));
+  return {
+    started, whole: started && b.whole,
+    ids: new Set([...known.map((r) => r.id), ...pts.map((p) => p.r), ...echoes.map((e) => e.r)]),
+    units: new Set([...pts.map((p) => p.u), ...echoes.map((e) => e.u)]),
+    about: new Set(known.flatMap((r) => r.about ?? [])),
+  };
 }
 /** 문장 · ' — ' 마디(괄호 밖) 가운데 bad에 걸린 마디를 뺀다 — 이미 prose를 거친 문장에. 한글 6자 못 되게 남은 문장도 뺀다 */
 export function dropClauses(s, bad) {

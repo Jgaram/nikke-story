@@ -154,8 +154,9 @@ export async function mount(root, ctx) {
   root.append(loading);
   let persons;
   let detailArr;
+  let flow; // threads-flow.json — 떡밥 묶음 거르기(fmt.threadBundle — W15d). 못 받으면 떡밥 전체를 아는 자리에서만 보인다
   try {
-    [persons, detailArr] = await Promise.all([data.load('persons'), data.load('persons-detail')]);
+    [persons, detailArr, flow] = await Promise.all([data.load('persons'), data.load('persons-detail'), data.load('threads-flow').catch(() => ({}))]);
   } catch (err) {
     loading.replaceWith(ui.notice(err.message, 'error'));
     return () => {};
@@ -183,6 +184,21 @@ export async function mount(root, ctx) {
     return on;
   };
   const recHidden = (r) => !V.R.known(r);
+  /**
+   * 떡밥의 그 자리 묶음(W15d) — { whole, ids(묶음 안 뿌리 · 본 단계 줄 · 복선의 기록), about(묶음 안 아는 뿌리가 다루는 대상) }.
+   * 떡밥이 아직 안 나왔으면 null. 인물 칸 · 주역은 이것으로 — 그 인물이 이 떡밥에 든다는 것을 그 자리에서 알 때만
+   */
+  const bundleMemo = new Map();
+  const bundleNow = (jid) => {
+    if (bundleMemo.has(jid)) return bundleMemo.get(jid);
+    const j = idx.threads.get(jid);
+    const t = j ? fmt.threadTies(j, flow?.[jid] ?? { roots: [], echoes: [] }, V.R) : null;
+    const out = t?.started ? t : null;
+    bundleMemo.set(jid, out);
+    return out;
+  };
+  /** 인물이 그 떡밥에 드는 줄 그 자리에서 아나 — 떡밥 전체를 알거나, 묶음 안 아는 뿌리가 그 인물을 다룬다 */
+  const inThread = (pid, jid) => { const b = bundleNow(jid); return Boolean(b && (b.whole || b.about.has(pid))); };
 
   // ── 기록 · 쌍(처음 필요할 때) ──
   const recs = () => (idx.hasRecords ? idx.records : null);
@@ -213,6 +229,7 @@ export async function mount(root, ctx) {
     const s = state.get();
     V = { T: s.t, R: state.reading(s) };
     hideMemo.clear();
+    bundleMemo.clear();
     agg = new Map();
     const R = recs();
     for (const p of persons) {
@@ -304,8 +321,8 @@ export async function mount(root, ctx) {
 
   let rowsNow = [];
   let hiddenPersons = 0;
-  /** 주역인가 — 주역인 떡밥 가운데 첫 스토리를 본 것이 있으면(W15b — 그 자리 기준) */
-  const leadNow = (p) => (p.leads ?? []).some((j) => { const th = idx.threads.get(j); return th && !hidden(th.first_unit); });
+  /** 주역인가 — 주역인 떡밥 가운데 그 자리에서 나왔고(fmt.threadStarted) 그 인물이 든 줄 아는 것이 있으면(W15b · W15d — 그 자리 기준) */
+  const leadNow = (p) => (p.leads ?? []).some((j) => inThread(p.id, j));
   const buildRows = () => {
     const find_ = (prm('find') ?? '').trim().toLowerCase();
     const kind = prm('kind') ?? 'all';
@@ -546,14 +563,17 @@ export async function mount(root, ctx) {
     const slot = (j) => map.get(j) ?? map.set(j, { n: 0, open: 0 }).get(j);
     for (const r of mine) {
       for (const j of r.threads ?? []) {
+        // 이 기록이 그 떡밥과 이어진 줄 그 자리에서 알 때만(묶음 — W15d)
+        const b = bundleNow(j);
+        if (!b || (!b.whole && !b.ids.has(r.id))) continue;
         const s_ = slot(j);
         if (r.kind === 'Q' || r.kind === 'F' || r.kind === 'E') s_.n++;
         if (r.kind === 'Q' && fmt.stateAt(r, V.R) === '열림') s_.open++;
       }
     }
-    for (const j of idx.threadList) if ((j.about?.includes(p.id) || j.owners?.includes(p.id)) && !map.has(j.id) && !hidden(j.first_unit)) slot(j.id);
+    for (const j of idx.threadList) if ((j.about?.includes(p.id) || j.owners?.includes(p.id)) && !map.has(j.id) && inThread(p.id, j.id)) slot(j.id);
     const rank = { 뼈대: 0, 보강: 1, 독립: 2 };
-    return [...map.entries()].map(([id, s_]) => ({ id, s: s_, j: idx.threads.get(id) })).filter((x) => x.j && !hidden(x.j.first_unit))
+    return [...map.entries()].map(([id, s_]) => ({ id, s: s_, j: idx.threads.get(id) })).filter((x) => x.j && fmt.threadStarted(x.j, V.R))
       .sort((x, y) => (rank[x.j.weight] ?? 3) - (rank[y.j.weight] ?? 3) || (y.j.owners?.includes(p.id) ? 1 : 0) - (x.j.owners?.includes(p.id) ? 1 : 0) || y.s.n - x.s.n);
   };
   const recGroups = (mine) => {
@@ -1026,9 +1046,9 @@ export async function mount(root, ctx) {
     for (const { id, s, j } of threadRows(p, mine)) {
       const major = fmt.majorThread(j);
       ul.append(el('li', { class: 'pm-thread', dataset: { sel: `thread:${id}` }, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `thread:${id}` }); } },
-        el('div', { class: 'pm-thread-head' }, ui.link(`thread:${id}`, j.title),
+        el('div', { class: 'pm-thread-head' }, ui.link(`thread:${id}`, fmt.threadLabel(j, V.R)),
           major ? el('span', { class: 'pm-kind', title: fmt.help('weight', j.weight) }, major) : null,
-          j.owners?.includes(p.id) ? el('span', { class: 'pm-kind', title: LABELS.leadTag }, T_LEAD) : null,
+          j.owners?.includes(p.id) && inThread(p.id, id) ? el('span', { class: 'pm-kind', title: LABELS.leadTag }, T_LEAD) : null,
           s.open ? el('span', { class: 'pm-open' }, el('i', { class: 'pm-dot-open', 'aria-hidden': 'true' }), OPEN) : null)));
     }
     sec.body.append(ul);

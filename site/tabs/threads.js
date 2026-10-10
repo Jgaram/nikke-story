@@ -24,7 +24,9 @@
  *     의문 · 사실의 상태는 fmt.stateAt(뿌리, R)(단계별 단위 know_units · hint_units · partial_units · solved_units · reversed_units 중 본 것으로).
  *     단계 점 · 복선 · 결말은 그 스토리를 봤을 때만(R.seen), 떡밥 ↔ 항목 선 · 떡밥끼리 관계는 근거 기록을 알게 되는 스토리 중 하나라도 봤을 때만(R.seenAny(units)).
  *     안 본 단계 · 스토리 열은 지우고 맨 위 "스포일러로 가린 떡밥 N · 이 떡밥의 뒷이야기"(전부 보기)로만 알린다 — 단계 개수는 싣지 않는다. 자리(tick)는 시작 시점 안내 · 정렬에만 쓴다.
- *     떡밥이 시작됐는가 = 뿌리 하나라도 첫 단계(첫 던짐 · 첫 밝혀짐)를 봤다. 시작 전 떡밥은 관계도에서 이름 없는 점(자리는 그대로 — 슬라이더를 움직여도 배치가 튀지 않는다)이다.
+ *     떡밥이 시작됐는가 = fmt.threadStarted(판이 있으면 첫 판의 at, 없으면 첫 스토리를 봤나 — W15d). 시작 전 떡밥은 관계도에서 이름 없는 점(자리는 그대로 — 슬라이더를 움직여도 배치가 튀지 않는다)이다.
+ *     떡밥 이름 · 요약은 그 자리 판(fmt.threadAt · threadLabel — 판이 아직 없으면 자리 글, 관계도 점은 이름 없이). 분석용 이름(threads.json title)은 쓰지 않는다(W15d).
+ *     흐름 · 상태 수 · 다루는 항목은 떡밥 묶음(fmt.threadBundle — 그 자리에서 이 떡밥과 이어진 줄 아는 의문 · 사실 · 복선)만. 항목 이름은 fmt.nameAt(아직 안 나온 항목은 뺀다).
  *     첫 자리 앞에 복선만 나온 뿌리("복선만")는 문장을 가린 줄로 접어 둔다(p.hints).
  *   색은 상태 한 뜻(--state-*) — 떡밥 무게는 색을 쓰지 않는다. 무게의 화면 말은 '주요 떡밥' 하나(fmt.majorThread — 목록 · 머리는 굵은 제목 + 회색 '주요 떡밥', 관계도는 점 크기).
  *   목록(기본): 한 줄 = 제목(주요 떡밥은 굵게) + 회색 작은 글자('주요 떡밥' · 0이 아닌 의문 상태만 '● 미해결 6 · ● 회수 1'). 기록 수 · 스토리 수 같은 작업 숫자는 싣지 않는다.
@@ -116,7 +118,8 @@ const clip = (str, n) => {
   const a = [...String(str ?? '')];
   return a.length > n ? `${a.slice(0, n - 1).join('')}…` : a.join('');
 };
-const shortTitle = (t) => String(t.title).split(' — ')[0];
+/** 관계도 배치에서 라벨 자리 폭을 잴 때만(분석용 이름의 앞 마디) — 화면 글은 refreshMap이 그 자리 이름으로 넣는다(W15d) */
+const layoutName = (t) => String(t.title).split(' — ')[0];
 const rootNo = (id) => Number((/\d+/.exec(String(id)) ?? [0])[0]);
 /** 글자 폭 어림(힘 배치 · 지도 라벨 — 브라우저 없이도 같은 값) */
 function estWidth(text, fs) {
@@ -198,7 +201,7 @@ function layoutMap(threads, relations) {
   const R = { 뼈대: 10.5, 보강: 7.5, 독립: 5.2 };
   const conn = threads.filter((t) => deg.has(t.id));
   const rest = threads.filter((t) => !deg.has(t.id));
-  const nodes = conn.map((t) => ({ id: t.id, weight: t.weight, r: R[t.weight] ?? 6, lo: t.weight === '뼈대' ? 20 : 105, hi: t.weight === '뼈대' ? 100 : 170, deg: deg.get(t.id), label: clip(shortTitle(t), 9), short: clip(shortTitle(t), 5) }));
+  const nodes = conn.map((t) => ({ id: t.id, weight: t.weight, r: R[t.weight] ?? 6, lo: t.weight === '뼈대' ? 20 : 105, hi: t.weight === '뼈대' ? 100 : 170, deg: deg.get(t.id), label: clip(layoutName(t), 9), short: clip(layoutName(t), 5) }));
   const bw = 360;
   const bh = 360;
   simulate(nodes, relations.map((g) => ({ a: g.from, b: g.to })), bw, bh);
@@ -253,7 +256,7 @@ function layoutMap(threads, relations) {
   const per = 12;
   const gx = (MAP_W - 2 * 20) / (per - 1);
   const gridTop = forceH + 34;
-  const grid = rest.map((t, i) => ({ id: t.id, weight: t.weight, r: R[t.weight] ?? 5, x: 20 + (i % per) * gx, y: gridTop + Math.floor(i / per) * 22, label: clip(shortTitle(t), 9), deg: 0 }));
+  const grid = rest.map((t, i) => ({ id: t.id, weight: t.weight, r: R[t.weight] ?? 5, x: 20 + (i % per) * gx, y: gridTop + Math.floor(i / per) * 22, label: clip(layoutName(t), 9), deg: 0 }));
   const height = rest.length ? gridTop + Math.ceil(rest.length / per) * 22 : forceH;
   return { nodes, grid, forceH, gridTop: gridTop - 24, height, byId: new Map([...nodes, ...grid].map((d) => [d.id, d])) };
 }
@@ -309,8 +312,12 @@ export async function mount(root, ctx) {
     startTick.set(t.id, ts.length ? Math.min(...ts) : null);
   }
   /** 떡밥이 처음 나오는 스토리들(뿌리의 첫 단계 단위) — 자리로는 지났는데 안 본 척추 이벤트 · 사이드 때문에 시작 전일 때 안내에 쓴다 */
-  const startUnits = (j) => [...new Set((flow[j]?.roots ?? []).filter((r) => r.first_tick != null).flatMap((r) => r.know_units ?? (r.unit ? [r.unit] : [])))]
-    .sort((a, b) => (idx.units.get(a)?.order ?? 1e9) - (idx.units.get(b)?.order ?? 1e9));
+  const startUnits = (j) => {
+    const first = byId.get(j)?.first_unit;
+    if (first && idx.units.has(first)) return [first]; // 떡밥이 나왔나는 첫 스토리(첫 판의 at)로 본다(fmt.threadStarted — W15d)
+    return [...new Set((flow[j]?.roots ?? []).filter((r) => r.first_tick != null).flatMap((r) => r.know_units ?? (r.unit ? [r.unit] : [])))]
+      .sort((a, b) => (idx.units.get(a)?.order ?? 1e9) - (idx.units.get(b)?.order ?? 1e9));
+  };
   /** 스토리 한 줄 — 'CH.07 재회' / '이벤트 이름 · CH.17 이후'(메인은 제목에 CH가 있어 자리를 되풀이하지 않는다) */
   const storyLine = (key) => {
     const u = idx.units.get(key);
@@ -336,13 +343,21 @@ export async function mount(root, ctx) {
   /** 근거 기록을 알게 되는 스토리(units) 중 하나라도 봤나 — units가 없으면 자리(tick)로 */
   const seenBy = (Rd, o) => Rd.all || (o?.units?.length ? Rd.seenAny(o.units) : o?.tick == null || state.visible(o.tick, Rd.t));
   let stats = new Map();
+  /** 떡밥마다 그 자리 묶음(fmt.threadBundle) — computeStats가 채운다 */
+  let bundles = new Map();
   const computeStats = () => {
     const Rd = reading();
     stats = new Map();
+    bundles = new Map();
     for (const t of threads) {
       const c = { 열림: 0, 일부: 0, 풀림: 0, 앎: 0, 뒤집힘: 0, 암시만: 0, 아직: 0 };
-      for (const r of flow[t.id]?.roots ?? []) c[fmt.stateAt(r, Rd)] += 1;
-      c.started = c.열림 + c.일부 + c.풀림 + c.앎 + c.뒤집힘 > 0;
+      const b = fmt.threadBundle(t, flow[t.id], Rd);
+      bundles.set(t.id, b);
+      for (const r of b.roots) c[fmt.stateAt(r, Rd)] += 1;
+      // 떡밥이 나왔나는 판 규칙으로(fmt.threadStarted — W15d). 다루는 항목은 묶음 안 아는 뿌리가 다루는 대상만
+      c.started = fmt.threadStarted(t, Rd);
+      c.about = new Set(b.roots.filter((r) => !['아직', '암시만'].includes(fmt.stateAt(r, Rd))).flatMap((r) => r.about ?? []));
+      c.whole = b.whole;
       c.unsolved = c.열림 + c.일부;
       const den = c.열림 + c.일부 + c.풀림;
       c.ratio = den ? c.unsolved / den : 0;
@@ -350,6 +365,27 @@ export async function mount(root, ctx) {
     }
   };
   const startedThreads = () => threads.filter((t) => stats.get(t.id)?.started);
+  /** 떡밥 ↔ 항목 선을 보이나 — 근거 기록을 알고, 떡밥이 나왔고, 그 항목을 묶음 안 아는 뿌리가 다룰 때(떡밥 전체를 아는 자리면 근거만) */
+  const edgeShown = (e, Rd) => {
+    const c = stats.get(e.j);
+    return Boolean(c?.started && seenBy(Rd, e) && (c.whole || c.about.has(e.target)));
+  };
+  /** 항목 이름 — 그 자리에서 부르는 이름(fmt.nameAt), 아직 안 나왔으면 null(뺀다). 사전에 없으면 지도 이름 */
+  const conceptName = (cid, Rd = reading()) => {
+    const t = idx.targets.get(cid);
+    return t ? fmt.nameAt(t, Rd) : concepts.get(cid)?.name ?? null;
+  };
+  /** 떡밥 화면 이름 — 그 자리 판(fmt.threadLabel), 앞 마디만(관계도 · 칩 · 고르개) */
+  const label = (t, Rd = reading()) => fmt.threadLabel(t, Rd);
+  const shortLabel = (t, Rd = reading()) => String(label(t, Rd)).split(' — ')[0];
+  /** 지도 라벨 — 폭(px 어림) 안으로 자른다 */
+  const fitTo = (str, w) => {
+    if (!str || w <= 0) return '';
+    let a = [...String(str)];
+    if (estWidth(a.join(''), MAP_FS) <= w + 1) return a.join('');
+    while (a.length > 1 && estWidth(`${a.join('')}…`, MAP_FS) > w + 1) a = a.slice(0, -1);
+    return `${a.join('').trimEnd()}…`;
+  };
   /** 지금 보는 떡밥: 파라미터 → 아니면 J1 → 나온 것 중 첫째 */
   const currentId = () => {
     const j = P('j');
@@ -455,18 +491,19 @@ export async function mount(root, ctx) {
   const nodeTip = (t) => () => {
     const st = qStates(stats.get(t.id));
     return ui.el('div', {},
-      tipLine(ui.el('strong', {}, t.title)),
+      tipLine(ui.el('strong', {}, label(t))),
       fmt.majorThread(t) ? tipLine(fmt.majorThread(t)) : null,
       st.length ? tipLine(st.map(([k, n]) => `${fmt.STATE[k].label} ${n}`).join(' · ')) : null);
   };
   const dotFor = (d) => {
     const t = byId.get(d.id);
-    const g = s('g', { class: 'thr-node', transform: `translate(${d.x.toFixed(1)},${d.y.toFixed(1)})`, tabindex: 0, role: 'button', 'data-j': d.id, 'aria-label': t.title,
+    const g = s('g', { class: 'thr-node', transform: `translate(${d.x.toFixed(1)},${d.y.toFixed(1)})`, tabindex: 0, role: 'button', 'data-j': d.id, 'aria-label': LABELS.ghost,
       onClick: () => selectThread(d.id),
       onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectThread(d.id); } } });
     g.append(s('circle', { r: d.r + 6, class: 'thr-hit' }), s('circle', { r: d.r + 3.5, class: 'thr-selring' }),
       s('circle', { r: d.r, class: 'thr-node-ring' }), s('circle', { r: 0, class: 'thr-node-fill' }));
-    if (d.labelAt) g.append(s('text', { x: (d.labelAt.x - d.x).toFixed(1), y: (d.labelAt.y - d.y).toFixed(1), 'text-anchor': d.labelAt.anchor, class: 'thr-node-label' }, d.labelAt.text));
+    // 라벨 자리는 배치 때 정한다(분석용 이름 폭) — 글은 refreshMap이 그 자리 이름을 그 폭에 맞춰 넣는다(W15d)
+    if (d.labelAt) g.append(s('text', { x: (d.labelAt.x - d.x).toFixed(1), y: (d.labelAt.y - d.y).toFixed(1), 'text-anchor': d.labelAt.anchor, class: 'thr-node-label' }, ''));
     tipFor(g, nodeTip(t));
     nodeEls.set(d.id, { g, d });
     return g;
@@ -497,15 +534,15 @@ export async function mount(root, ctx) {
     grp.append(line('thr-e-hit'));
     grp.setAttribute('tabindex', '0');
     grp.setAttribute('role', 'button');
-    grp.setAttribute('aria-label', `${shortTitle(byId.get(g.from))} ${LABELS.relNames[g.type]} ${shortTitle(byId.get(g.to))}`);
+    grp.setAttribute('aria-label', LABELS.relNames[g.type]);
     if (g.basis?.length) {
       grp.addEventListener('click', () => state.set({ sel: `record:${g.basis[0]}` }));
       grp.addEventListener('keydown', keyActivate(() => state.set({ sel: `record:${g.basis[0]}` })));
     }
     tipFor(grp, () => ui.el('div', {},
-      tipLine(ui.el('strong', {}, `${shortTitle(byId.get(g.from))} ${directed ? '→' : '·'} ${shortTitle(byId.get(g.to))}`)),
+      tipLine(ui.el('strong', {}, `${shortLabel(byId.get(g.from))} ${directed ? '→' : '·'} ${shortLabel(byId.get(g.to))}`)),
       tipLine(ui.el('span', { class: 'muted' }, LABELS.relNames[g.type]), g.confidence === '추정' ? ` · ${fmt.CONFIDENCE.추정.label}` : ''),
-      fmt.prose(g.text) ? tipLine(fmt.prose(g.text)) : null));
+      fmt.relText(g, reading()) ? tipLine(fmt.relText(g, reading())) : null));
     gEdges.append(grp);
     edgeEls.push({ grp, g });
   }
@@ -516,7 +553,7 @@ export async function mount(root, ctx) {
     const cur = currentId();
     const mode = modeNow();
     const cId = mode === 'item' ? conceptNow() : null;
-    const cThreads = new Set(cId ? (edgesOfConcept.get(cId) ?? []).filter((e) => seenBy(Rd, e)).map((e) => e.j) : []);
+    const cThreads = new Set(cId ? (edgesOfConcept.get(cId) ?? []).filter((e) => edgeShown(e, Rd)).map((e) => e.j) : []);
     const near = new Set();
     for (const g of relations) { if (g.from === cur) near.add(g.to); if (g.to === cur) near.add(g.from); }
     for (const [id, { g, d }] of nodeEls) {
@@ -527,19 +564,25 @@ export async function mount(root, ctx) {
       g.classList.toggle('is-near', on && near.has(id));
       g.classList.toggle('is-concept', on && cThreads.has(id));
       g.classList.toggle('is-dim', on && ((cId && !cThreads.has(id) && id !== cur) || false));
-      if (!on) { g.removeAttribute('role'); g.tabIndex = -1; g.setAttribute('aria-hidden', 'true'); g.setAttribute('aria-label', LABELS.ghost); } else { g.setAttribute('role', 'button'); g.tabIndex = 0; g.removeAttribute('aria-hidden'); g.setAttribute('aria-label', byId.get(id).title); }
+      if (!on) { g.removeAttribute('role'); g.tabIndex = -1; g.setAttribute('aria-hidden', 'true'); g.setAttribute('aria-label', LABELS.ghost); } else { g.setAttribute('role', 'button'); g.tabIndex = 0; g.removeAttribute('aria-hidden'); g.setAttribute('aria-label', label(byId.get(id), Rd)); }
       const fill = g.querySelector('.thr-node-fill');
       fill.setAttribute('r', (Math.max(0, d.r - 1.6) * Math.sqrt(on ? c.ratio : 0)).toFixed(2)); // 테두리는 늘 보이게
       const ring = g.querySelector('.thr-node-ring');
       ring.setAttribute('r', on ? d.r : 3.2);
       const lab = g.querySelector('.thr-node-label');
-      if (lab) lab.style.display = on ? '' : 'none';
+      if (lab) {
+        // 그 자리 이름(앞 마디)을 배치 때 잡은 폭 안으로 — 제목이 아직 없는 떡밥(자리 글)은 이름 없이(말풍선이 말한다)
+        const name = on && fmt.threadAt(byId.get(id), Rd)?.title ? shortLabel(byId.get(id), Rd) : '';
+        lab.textContent = fitTo(name, d.labelAt ? estWidth(d.labelAt.text, MAP_FS) : 0);
+        lab.style.display = name ? '' : 'none';
+      }
     }
     for (const { grp, g } of edgeEls) {
       const aOn = stats.get(g.from)?.started;
       const bOn = stats.get(g.to)?.started;
       const shown = aOn && bOn && seenBy(Rd, map.relations?.[g.id]);
       grp.style.display = shown ? '' : 'none';
+      if (shown) grp.setAttribute('aria-label', `${shortLabel(byId.get(g.from), Rd)} ${LABELS.relNames[g.type]} ${shortLabel(byId.get(g.to), Rd)}`);
       grp.classList.toggle('is-hot', shown && (g.from === cur || g.to === cur));
       grp.classList.toggle('is-faint', shown && mode === 'item' && Boolean(cId));
     }
@@ -551,11 +594,11 @@ export async function mount(root, ctx) {
       const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
       const c = concepts.get(cId);
       for (const p of pts) gOverlay.append(s('line', { x1: cx.toFixed(1), y1: cy.toFixed(1), x2: p.x.toFixed(1), y2: p.y.toFixed(1), class: 'thr-c-edge' }));
-      const label = clip(c.name, 12);
-      const w = estWidth(label, MAP_FS) + 10;
+      const cLabel = clip(conceptName(c.id, Rd) ?? '', 12);
+      const w = estWidth(cLabel, MAP_FS) + 10;
       const lx = Math.max(w / 2 + 2, Math.min(MAP_W - w / 2 - 2, cx));
       gOverlay.append(s('g', { class: 'thr-concept-node', transform: `translate(${lx.toFixed(1)},${cy.toFixed(1)})` },
-        s('rect', { x: -w / 2, y: -9, width: w, height: 18, rx: 4, class: 'thr-concept-box' }), s('text', { y: 4, 'text-anchor': 'middle', class: 'thr-concept-label' }, label)));
+        s('rect', { x: -w / 2, y: -9, width: w, height: 18, rx: 4, class: 'thr-concept-box' }), s('text', { y: 4, 'text-anchor': 'middle', class: 'thr-concept-label' }, cLabel)));
     }
   };
 
@@ -571,14 +614,15 @@ export async function mount(root, ctx) {
   itemPane.append(ui.el('div', { class: 'thr-itemtools' }, itemSearch, commonToggle), itemInfo, itemList, itemMore);
   const visibleEdges = (cid) => {
     const Rd = reading();
-    return (edgesOfConcept.get(cid) ?? []).filter((e) => seenBy(Rd, e) && stats.get(e.j)?.started);
+    return (edgesOfConcept.get(cid) ?? []).filter((e) => edgeShown(e, Rd));
   };
   const chooseItem = (cid) => state.setParam(meta.id, 'c', cid);
   /** 지금 읽은 데까지 둘 이상의 떡밥에 걸친 항목 — 떡밥을 많이 잇는 순 */
   const conceptRows = () => {
     const showCommon = P('common') === '1';
-    const rows = map.concepts.map((c) => ({ c, es: visibleEdges(c.id) })).filter(({ c, es }) => es.length >= 2 && (showCommon || c.threads < COMMON_MIN));
-    rows.sort((a, b) => b.es.length - a.es.length || b.c.records - a.c.records || a.c.name.localeCompare(b.c.name, 'ko'));
+    const Rd = reading();
+    const rows = map.concepts.map((c) => ({ c, name: conceptName(c.id, Rd), es: visibleEdges(c.id) })).filter(({ c, name, es }) => name && es.length >= 2 && (showCommon || c.threads < COMMON_MIN));
+    rows.sort((a, b) => b.es.length - a.es.length || b.c.records - a.c.records || a.name.localeCompare(b.name, 'ko'));
     return rows;
   };
   /** 고른 항목 — 고르지 않았으면 가장 많은 떡밥을 잇는 항목(빈 화면을 두지 않는다) */
@@ -588,17 +632,18 @@ export async function mount(root, ctx) {
     const cur = currentId();
     const mine = new Set((edgesOfThread.get(cur) ?? []).map((e) => e.target));
     const all = conceptRows();
-    const rows = itemQuery ? all.filter(({ c }) => c.name.includes(itemQuery)) : all;
+    const rows = itemQuery ? all.filter(({ name }) => name.includes(itemQuery)) : all;
     // 고른 항목은 걸러져도 맨 위에 둔다
     const cid = conceptNow();
-    const picked = cid ? { c: concepts.get(cid), es: visibleEdges(cid) } : null;
+    const Rd = reading();
+    const picked = cid && conceptName(cid, Rd) ? { c: concepts.get(cid), name: conceptName(cid, Rd), es: visibleEdges(cid) } : null;
     ui.clear(itemList);
     const shown = rows.slice(0, itemShown);
     if (picked && !shown.some((r) => r.c.id === cid)) shown.unshift(picked);
-    for (const { c, es } of shown) {
+    for (const { c, name, es } of shown) {
       const sel = c.id === cid;
       const li = ui.el('li', {}, ui.el('button', { type: 'button', class: ['thr-itembtn', sel ? 'is-sel' : '', mine.has(c.id) ? 'is-mine' : ''], 'aria-pressed': String(sel), onClick: () => chooseItem(c.id) },
-        ui.el('span', { class: 'thr-itemname' }, c.name), ui.el('span', { class: 'thr-itemtype' }, fmt.TARGET_TYPE[c.type] ?? c.type), ui.el('span', { class: 'thr-itemcount' }, LABELS.itemThreads(es.length))));
+        ui.el('span', { class: 'thr-itemname' }, name), ui.el('span', { class: 'thr-itemtype' }, fmt.TARGET_TYPE[c.type] ?? c.type), ui.el('span', { class: 'thr-itemcount' }, LABELS.itemThreads(es.length))));
       itemList.append(li);
     }
     if (!shown.length) itemList.append(ui.el('li', { class: 'empty' }, LABELS.itemNone));
@@ -606,12 +651,12 @@ export async function mount(root, ctx) {
     // 고른 항목 설명
     ui.clear(itemInfo);
     if (picked) {
-      const pairs = (pairsOf.get(cid) ?? []).filter((p) => concepts.has(p.other) && (showCommon || concepts.get(p.other).threads < COMMON_MIN)).sort((a, b) => b.records - a.records).slice(0, 6);
+      const pairs = (pairsOf.get(cid) ?? []).filter((p) => concepts.has(p.other) && conceptName(p.other, Rd) && (showCommon || concepts.get(p.other).threads < COMMON_MIN)).sort((a, b) => b.records - a.records).slice(0, 6);
       itemInfo.append(
-        ui.el('div', { class: 'thr-iteminfo-head' }, ui.el('strong', {}, picked.c.name), ui.el('span', { class: 'muted' }, ` ${fmt.TARGET_TYPE[picked.c.type] ?? picked.c.type} · ${LABELS.itemThreads(picked.es.length)}`),
+        ui.el('div', { class: 'thr-iteminfo-head' }, ui.el('strong', {}, picked.name), ui.el('span', { class: 'muted' }, ` ${fmt.TARGET_TYPE[picked.c.type] ?? picked.c.type} · ${LABELS.itemThreads(picked.es.length)}`),
           // 세계 탭의 그 항목으로 간다(이름과 동작을 맞춘다 — 전에는 '사전에서 보기'가 리더를 열었다)
           ui.el('a', { href: `#tab=world&p.item=${encodeURIComponent(cid)}`, class: 'link tab-link', onClick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); state.set({ tab: 'world', p: { item: cid }, sel: '' }); } }, fmt.openInTab('world'))),
-        pairs.length ? ui.el('div', { class: 'thr-chips' }, ui.el('span', { class: 'ctl-name' }, LABELS.withItems), pairs.map((p) => ui.el('button', { type: 'button', class: 'thr-chip', onClick: () => chooseItem(p.other) }, concepts.get(p.other).name))) : null);
+        pairs.length ? ui.el('div', { class: 'thr-chips' }, ui.el('span', { class: 'ctl-name' }, LABELS.withItems), pairs.map((p) => ui.el('button', { type: 'button', class: 'thr-chip', onClick: () => chooseItem(p.other) }, conceptName(p.other, Rd)))) : null);
     }
     commonToggle.set?.(showCommon);
   };
@@ -630,6 +675,7 @@ export async function mount(root, ctx) {
   const refreshList = () => {
     sortSeg.set(sortNow());
     const cur = currentId();
+    const Rd = reading();
     const rows = startedThreads().slice();
     const key = sortNow();
     if (key === 'open') rows.sort((a, b) => stats.get(b.id).unsolved - stats.get(a.id).unsolved || WEIGHTS.indexOf(a.weight) - WEIGHTS.indexOf(b.weight) || rootNo(a.id) - rootNo(b.id));
@@ -639,8 +685,10 @@ export async function mount(root, ctx) {
       // 한 줄 = 제목(주요 떡밥은 굵게) + 회색 작은 글자('주요 떡밥' · 0이 아닌 의문 상태) — 작업 숫자(스토리 수 · 사실 수)는 싣지 않는다
       const st = qStates(stats.get(t.id));
       const tags = [majorTag(t), ...st.map(([k, n]) => ui.el('span', { class: 'thr-st' }, stateDot(k), `${fmt.STATE[k].label} ${n}`))].filter(Boolean);
-      const btn = ui.el('button', { type: 'button', class: ['thr-listrow', fmt.majorThread(t) ? 'is-major' : '', t.id === cur ? 'is-sel' : ''], 'aria-pressed': String(t.id === cur), onClick: () => selectThread(t.id) },
-        ui.el('span', { class: 'thr-listtitle' }, t.title),
+      // 이름은 그 자리 판(W15d) — 판이 아직 없으면 자리 글(흐린 글자)
+      const at = fmt.threadAt(t, Rd);
+      const btn = ui.el('button', { type: 'button', class: ['thr-listrow', fmt.majorThread(t) ? 'is-major' : '', t.id === cur ? 'is-sel' : '', at.title ? '' : 'is-untitled'], 'aria-pressed': String(t.id === cur), dataset: { j: t.id }, onClick: () => selectThread(t.id) },
+        ui.el('span', { class: 'thr-listtitle' }, label(t, Rd)),
         tags.length ? ui.el('span', { class: 'thr-listmeta' }, tags) : null);
       listRows.append(ui.el('li', {}, btn));
     }
@@ -706,7 +754,8 @@ export async function mount(root, ctx) {
   let model = null;
   const buildModel = (j) => {
     const Rd = reading();
-    const f = flow[j] ?? { roots: [] };
+    // 떡밥 묶음(W15d) — 그 자리에서 이 떡밥과 이어진 줄 아는 의문 · 사실 · 복선만 줄로 놓는다(fmt.threadBundle)
+    const f = bundles.get(j) ?? fmt.threadBundle(byId.get(j), flow[j], Rd);
     /** 그 스토리를 봤나(스토리가 없으면 자리로) */
     const inR = (u, t) => (u ? Rd.seen(u) : t == null || state.visible(t, Rd.t));
     let spoiled = 0; // 안 본 스토리라 가린 단계 · 결말 — 개수는 화면에 내지 않고 '이 떡밥의 뒷이야기'가 있는지만 본다
@@ -1043,7 +1092,7 @@ export async function mount(root, ctx) {
     const started = startedThreads();
     // 좁은 폭에서만 보이는 고르개(무게 순 — 이름만)
     const pick = ui.el('select', { class: 'thr-pick', 'aria-label': LABELS.pick, onChange: (e) => state.set({ p: { j: e.target.value } }) },
-      started.map((t) => ui.el('option', { value: t.id, selected: t.id === j }, shortTitle(t))));
+      started.map((t) => ui.el('option', { value: t.id, selected: t.id === j }, shortLabel(t))));
     if (!started.length) {
       headEl.append(ui.el('h3', { class: 'thr-title' }, meta.title));
       return;
@@ -1053,7 +1102,7 @@ export async function mount(root, ctx) {
       return;
     }
     // 제목 + 회색 '주요 떡밥'(뼈대만 — 무게는 이 말 하나) + 자세히
-    headEl.append(ui.el('div', { class: 'thr-title-row' }, ui.el('h3', { class: 'thr-title' }, th.title), majorTag(th), ui.link(`thread:${j}`, LABELS.details, { class: 'thr-detail' }), pick));
+    headEl.append(ui.el('div', { class: 'thr-title-row' }, ui.el('h3', { class: ['thr-title', fmt.threadAt(th, reading()).title ? '' : 'is-untitled'] }, label(th)), majorTag(th), ui.link(`thread:${j}`, LABELS.details, { class: 'thr-detail' }), pick));
     // 이 떡밥은 풀렸나: 의문 상태 막대 + 0이 아닌 상태만(사실 수 · 0은 쓰지 않는다)
     const segs = qStates(c);
     if (segs.length) {
@@ -1074,17 +1123,17 @@ export async function mount(root, ctx) {
       const relChips = rels.map((g) => {
         const out = g.from === j;
         const other = byId.get(out ? g.to : g.from);
-        return ui.el('button', { type: 'button', class: 'thr-chip thr-chip-rel', title: fmt.prose(g.text) || null, onClick: () => selectThread(other.id) },
-          ui.el('span', { class: 'thr-chip-verb' }, LABELS.relVerb[out ? 'out' : 'in'][g.type]), shortTitle(other));
+        return ui.el('button', { type: 'button', class: 'thr-chip thr-chip-rel', title: fmt.relText(g, Rd) || null, onClick: () => selectThread(other.id) },
+          ui.el('span', { class: 'thr-chip-verb' }, LABELS.relVerb[out ? 'out' : 'in'][g.type]), shortLabel(other, Rd));
       });
       headEl.append(ui.el('div', { class: 'thr-chips' }, ui.el('span', { class: 'ctl-name' }, LABELS.related), ...fold(relChips, narrow ? 3 : 8)));
     }
     // 다루는 항목
     const showCommon = P('common') === '1';
-    const es = (edgesOfThread.get(j) ?? []).filter((e) => seenBy(Rd, e) && concepts.has(e.target) && (showCommon || concepts.get(e.target).threads < COMMON_MIN)).sort((a, b) => b.records - a.records);
+    const es = (edgesOfThread.get(j) ?? []).filter((e) => edgeShown(e, Rd) && concepts.has(e.target) && conceptName(e.target, Rd) && (showCommon || concepts.get(e.target).threads < COMMON_MIN)).sort((a, b) => b.records - a.records);
     if (es.length) {
       const chip = (e) => ui.el('button', { type: 'button', class: ['thr-chip', e.target === P('c') ? 'is-sel' : ''], title: fmt.TARGET_TYPE[concepts.get(e.target).type] ?? null,
-        onClick: () => state.set({ p: { map: 'item', c: e.target } }) }, concepts.get(e.target).name);
+        onClick: () => state.set({ p: { map: 'item', c: e.target } }) }, conceptName(e.target, Rd));
       headEl.append(ui.el('div', { class: 'thr-chips' }, ui.el('span', { class: 'ctl-name' }, LABELS.itemsOf), ...fold(es.map(chip), narrow ? 4 : 10)));
     }
   };

@@ -43,7 +43,8 @@ export function init({ input, container, state, data, fmt, ui }) {
       // 이름 · 다른 이름은 그 자리에서 아는 것만 찾고 부른다(W15b) — keys는 찾을 때 nameKeys로 다시 만든다
       entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub, target: type === 'person' ? t : null, tg: t, keys: [] });
     }
-    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: fmt.majorThread(j), first: j.first_unit, keys: [norm(j.title), norm(j.text)] });
+    // 떡밥: 이름 · 찾는 말은 찾을 때 그 자리 판(fmt.threadAt)으로 다시 만든다(W15d) — 분석용 이름은 결말을 아는 자리의 말이다
+    for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: '', sub: fmt.majorThread(j), thread: j, keys: [] });
   };
   const buildRecords = (idx) => {
     const seen = new Set();
@@ -91,9 +92,11 @@ export function init({ input, container, state, data, fmt, ui }) {
     const hits = [];
     const R = state.reading();
     for (const e of entries) {
-      if (e.first && !R.seen(e.first)) continue; // 아직 안 나온 떡밥은 찾기에서 뺀다 — 제목 · 요약이 스포일러(W15a)
+      // 아직 안 나온 떡밥은 찾기에서 뺀다(W15a) — 나왔나 · 이름 · 요약은 그 자리 판(fmt.threadStarted · threadAt — W15d). 판이 아직 없으면 찾는 말이 없어 안 맞는다
+      const ta = e.thread ? fmt.threadAt(e.thread, R) : null;
+      if (ta && (!ta.started || !ta.title)) continue;
       if (e.tg && !fmt.met(e.tg, R)) continue; // 아직 안 나온 인물 · 항목도 뺀다(W15b)
-      const hit = e.tg ? { ...e, label: fmt.nameAt(e.tg, R), keys: nameKeys(e.tg, R) } : e;
+      const hit = e.tg ? { ...e, label: fmt.nameAt(e.tg, R), keys: nameKeys(e.tg, R) } : ta ? { ...e, label: ta.title, keys: [norm(ta.title), norm(ta.text)] } : e;
       const s = score(hit);
       if (s) hits.push({ e: hit, s });
     }

@@ -86,6 +86,7 @@
 .tab-threads .thr-listrow.is-sel { background: color-mix(in srgb, var(--accent) 13%, var(--surface)); border-left-color: var(--accent); }
 .tab-threads .thr-listtitle { display: block; line-height: 1.45; word-break: keep-all; overflow-wrap: anywhere; }
 .tab-threads .thr-listrow.is-major .thr-listtitle { font-weight: 700; }
+.tab-threads .thr-listrow.is-untitled .thr-listtitle, .tab-threads .thr-title.is-untitled { color: var(--ink-muted); font-weight: 400; }
 .tab-threads .thr-listmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; margin-top: 1px; font-size: 12px; color: var(--ink-muted); }
 /* 회색 '주요 떡밥'(목록 · 머리) · 의문 상태 한 칸(점 + 이름 + 수) */
 .tab-threads .thr-major { font-size: 12px; color: var(--ink-muted); white-space: nowrap; }

@@ -289,7 +289,7 @@ export async function mount(root, ctx) {
   };
   /** 근거 — 기록 · 떡밥 · 씬#줄 → 링크(글자는 기록 문장 · 떡밥 제목 · 장면 이름) */
   const basisLink = (b) => {
-    if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, idx.threads.get(b)?.title ?? fmt.TERM.thread);
+    if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, idx.threads.get(b) ? fmt.threadLabel(idx.threads.get(b), state.reading()) : fmt.TERM.thread); // 그 자리 판(W15d)
     if (/^[A-Z](-[a-z])?\d+$/.test(b)) return idx.records?.get(b) ? recLink(b, 40) : null;
     const base = b.split('#')[0];
     const sceneId = [base, base.replace(/^ep:/, ''), `ep:${base}`].find((x) => idx.scenes.has(x));

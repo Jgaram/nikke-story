@@ -90,7 +90,8 @@ export async function mount(root, ctx) {
   const put = (node, ...kids) => { for (const k of kids.flat(Infinity)) if (k != null && k !== false) node.append(k); return node; };
   root.append(ui.spinner('불러오는 중…'));
   const idx = ctx.idx ?? (await data.index());
-  const world = await data.load('world');
+  // threads-flow.json — 떡밥 묶음 거르기(fmt.threadBundle — W15d). 못 받으면 떡밥 전체를 아는 자리에서만 보인다
+  const [world, flow] = await Promise.all([data.load('world'), data.load('threads-flow').catch(() => ({}))]);
   ui.clear(root);
 
   // ── 색인 ──
@@ -181,16 +182,32 @@ export async function mount(root, ctx) {
     }
     return ui.link(`${id.startsWith('person:') ? 'person' : 'target'}:${id}`, fmt.targetName(id), { class: 'w-about' });
   };
-  const threadLink = (id) => {
+  /** 떡밥 링크 — 이름은 그 자리 판(fmt.threadLabel — W15d) */
+  const threadLink = (id, c = cutOf()) => {
     const j = idx.threads.get(id);
     if (!j) return null;
-    return ui.link(`thread:${id}`, clip(j.title, 22), { class: 'w-thread', title: j.title });
+    const name = fmt.threadLabel(j, c.R);
+    return ui.link(`thread:${id}`, clip(name, 22), { class: 'w-thread', title: name });
   };
-  const threadVisible = (id, c) => {
+  /**
+   * 떡밥의 그 자리 묶음(W15d) — { whole, ids(묶음 안 뿌리 · 본 단계 줄 · 복선의 기록), about(묶음 안 아는 뿌리가 다루는 대상) }, 떡밥이 안 나왔으면 null.
+   * 여기까지 읽음 서명(c.sig)이 바뀌면 다시 센다
+   */
+  const bundleMemo = new Map();
+  let bundleSig = null;
+  const bundleNow = (id, c) => {
+    if (bundleSig !== c.sig) { bundleMemo.clear(); bundleSig = c.sig; }
+    if (bundleMemo.has(id)) return bundleMemo.get(id);
     const j = idx.threads.get(id);
-    if (!j) return false;
-    return unitTick(j.first_unit) == null || c.R.seen(j.first_unit);
+    const t = j ? fmt.threadTies(j, flow?.[id] ?? { roots: [], echoes: [] }, c.R) : null;
+    const out = t?.started ? t : null;
+    bundleMemo.set(id, out);
+    return out;
   };
+  /** 떡밥이 그 자리에서 나왔나(fmt.threadStarted — 판 규칙, W15d) */
+  const threadVisible = (id, c) => Boolean(bundleNow(id, c));
+  /** 기록이 그 떡밥과 이어진 줄 그 자리에서 아나(묶음 — W15d) */
+  const recInThread = (rid, id, c) => { const b = bundleNow(id, c); return Boolean(b && (b.whole || b.ids.has(rid))); };
 
   /** 기록 한 줄(사실 · 의문 · 세계의 모습) — 누르면 리더. 회색 줄 = 스토리 · 장면(스토리 이름은 한 번만) */
   function recRow(r, c, { chips = [], showTopic = false, showAbout = false, about: aboutIds = null } = {}) {
@@ -450,7 +467,7 @@ export async function mount(root, ctx) {
       },
       row: ({ r, st }) => {
         const c = cutOf();
-        const tl = (r.threads ?? []).filter((j) => threadVisible(j, c)).map(threadLink).filter(Boolean);
+        const tl = (r.threads ?? []).filter((j) => recInThread(r.id, j, c)).map((j) => threadLink(j, c)).filter(Boolean);
         const li = recRow(r, c, { chips: st ? [ui.chip('state', st)] : [] });
         if (tl.length) li.append(h('div', { class: 'w-meta w-threads' }, tl));
         if (st === '열림' || st === '일부') li.classList.add('is-open');
@@ -479,12 +496,13 @@ export async function mount(root, ctx) {
         if (recordsReady) {
           for (const x of Object.values(e.recs).flat()) {
             if (!recKnown(c.R, recUnits(e, x), x[1])) continue;
-            for (const j of idx.records.get(x[0])?.threads ?? []) count.set(j, (count.get(j) ?? 0) + 1);
+            for (const j of idx.records.get(x[0])?.threads ?? []) if (recInThread(x[0], j, c)) count.set(j, (count.get(j) ?? 0) + 1);
           }
         }
+        // 그 자리에서 나온 떡밥만, 이 항목이 든 줄 아는 것만(묶음 안 기록이 있거나, 묶음 안 아는 뿌리가 이 항목을 다룸 — W15d). 이름은 그 자리 판
         const items = (e.threads ?? []).filter((t) => threadVisible(t.id, c))
-          .map((t) => ({ ...t, n: recordsReady ? (count.get(t.id) ?? 0) : t.n, title: idx.threads.get(t.id)?.title ?? t.id, j: idx.threads.get(t.id) }))
-          .filter((t) => t.n > 0 || t.about)
+          .map((t) => ({ ...t, n: recordsReady ? (count.get(t.id) ?? 0) : 0, title: fmt.threadLabel(idx.threads.get(t.id), c.R), j: idx.threads.get(t.id) }))
+          .filter((t) => t.n > 0 || (t.about && (bundleNow(t.id, c).whole || bundleNow(t.id, c).about.has(e.id))))
           .sort((a, b) => ({ 뼈대: 0, 보강: 1, 독립: 2 }[a.j?.weight] ?? 3) - ({ 뼈대: 0, 보강: 1, 독립: 2 }[b.j?.weight] ?? 3) || b.n - a.n);
         return { items, cutHidden: 0 };
       },

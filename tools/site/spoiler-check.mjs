@@ -5,13 +5,17 @@
  *   node tools/site/spoiler-check.mjs                       # 기본 컷오프 CH.00 · CH.10 · CH.20 × 여섯 탭 + 리더 + 검색
  *   node tools/site/spoiler-check.mjs --t 1,11 --tabs threads,world --out /tmp/spoil.txt
  *   CHROME=/path/to/chromium node tools/site/spoiler-check.mjs
+ *   node tools/site/spoiler-check.mjs --root <사이트 폴더>      # site/ 말고 다른 사본을 띄운다(고치기 전 · 뒤 비교)
  *
  * 무엇을 '새는 것'으로 세나(화면의 보이는 글자 — #main · #reader · 검색 결과의 innerText, 보이는 SVG 글자, title · aria-label):
  *   줄거리   안 본 스토리(R.seen 거짓)의 한 줄 소개(synopsis.json logline) 앞 20자.
  *   스토리   (--titles일 때만) 안 본 스토리의 제목 — 제목은 감상 순서 탭이 다 보이는 공개 정보라 기본은 세지 않는다.
  *            인물 이름과 같은 제목(호감도 스토리)은 빼고, 감상 순서 탭의 #main도 뺀다.
  *   기록     모르는 기록(R.known 거짓)의 문장 앞 24자.
- *   떡밥     아직 시작 안 한 떡밥(첫 스토리를 안 봄)의 제목.
+ *   떡밥     아직 시작 안 한 떡밥(fmt.threadStarted 거짓 — 판이 있으면 첫 판의 at, 없으면 첫 스토리를 안 봄)의 분석용 제목 · 판 제목.
+ *   떡밥판   시작한 떡밥이 그 자리 판(fmt.threadAt)이 아닌 제목 · 요약으로 보이는 것(W15d) — 분석용 제목 · 요약 앞 20자(그 자리 글이 그것이 아닐 때) · 뒤 판의 제목 · 요약.
+ *            지금 보이는 떡밥 제목들은 지우고 본다(앞 판 제목이 뒤 판 제목 속에 들 수 있다).
+ *   묶음     떡밥 하나를 보는 화면(떡밥 탭 흐름 — p.j, 리더 thread:J)에 그 떡밥과 이어진 줄 아직 모르는 의문 · 사실(fmt.threadBundle 밖)의 문장 앞 16자(W15d).
  *   관계     떡밥끼리 관계 설명 가운데 근거 기록을 하나도 모르는 것.
  *   대상     아직 이름이 안 나온 인물 · 항목(fmt.met 거짓)의 표준명(W15b) — 앞 글자가 낱말 안이면 세지 않는다. 스토리 제목과 같은 이름(호감도)은 --titles일 때만.
  *   다른이름 나온 대상의 다른 이름 가운데 그 자리에서 모르는 것(fmt.aliasesAt 밖, 3자 이상).
@@ -38,6 +42,7 @@ const { values: args } = parseArgs({
     wait: { type: 'string', default: '3000' },
     show: { type: 'string', default: '5' },
     titles: { type: 'boolean', default: false },
+    root: { type: 'string' },
   },
 });
 const CHROME = process.env.CHROME || ['/opt/pw-browsers/chromium', '/usr/bin/chromium', '/usr/bin/google-chrome'].find((p) => fs.existsSync(p));
@@ -47,14 +52,17 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // 리더로 열어 볼 것 — 뒤에 나오는 떡밥 · 인물 · 항목 · 스토리(컷오프가 낮으면 가려져야 한다)
 const READER_SELS = ['thread:J1', 'thread:J3', 'thread:J5', 'person:person:모더니아', 'person:person:그레이브', 'target:concept:퀸_인자', 'target:org:바이스리터', 'unit:ch40', 'scene:d_main_41_01'];
-const SEARCHES = ['모더니아', '릴리스', '레드 후드', '크라운', '퀸', '그레이브', '바이스리터'];
+const SEARCHES = ['모더니아', '릴리스', '레드 후드', '크라운', '퀸', '그레이브', '바이스리터', '마리안', '지휘관'];
+// 떡밥 탭 흐름을 따로 열어 볼 떡밥(p.j) — 판이 있는 뼈대 · 보강 몇(W15d 묶음 · 판 점검). 기본 떡밥 탭은 J1
+const THREAD_TAB = ['J3', 'J7', 'J21'];
 
 // ── 화면 안에서 도는 점검 ──
-const PROBE = async (skipMain, titles) => {
+const PROBE = async (skipMain, titles, focus) => {
   const st = await import('/lib/state.js');
   const R = st.reading(st.get());
   const get = async (n) => (await fetch(`/data/${n}.json`)).json();
   const fmt = await import('/lib/format.js');
+  const idx = await (await import('/lib/data.js')).index(); // 떡밥 판(j.v)이 붙은 색인 — 화면과 같은 것
   const [units, targets, threads, rec1, rec2, synopsis, chrono] = await Promise.all(['units', 'targets', 'threads', 'records', 'records2', 'synopsis', 'chrono'].map(get));
   const names = new Set(targets.map((t) => t.name));
   const txt = [];
@@ -100,10 +108,48 @@ const PROBE = async (skipMain, titles) => {
     const i = all.indexOf(g.text.slice(0, 16));
     if (i >= 0) hits.push(`관계 ${g.id} … ${around(i, 16)}`);
   }
-  for (const j of threads.threads ?? threads) {
-    if (!j.first_unit || unitSeen(j.first_unit)) continue;
-    const i = all.indexOf(j.title);
-    if (i >= 0) hits.push(`떡밥 ${j.id} … ${around(i, j.title.length)}`);
+  // 떡밥(W15a) · 떡밥판 · 묶음(W15d) — 떡밥 이름은 화면과 같은 색인(idx.threads — 판 j.v)으로 본다
+  const jList = idx.threadList;
+  // 지금 보이는 떡밥 이름(앞 판 제목이 뒤 판 제목 속에 든다) · 스토리 제목(공개 글 — '트레저 헌터'는 떡밥 이름이자 스토리 제목, --titles면 남김)은 지우고 본다
+  let bareJ = all;
+  const jMasks = [...jList.map((j) => fmt.threadAt(j, R)?.title), ...(titles ? [] : units.map((u) => u.title))];
+  for (const m of jMasks.filter((x) => x && x.length >= 2).sort((a, b) => b.length - a.length)) bareJ = bareJ.split(m).join(' '.repeat(m.length));
+  // 그 자리에서 아는 대상 이름과 같은 떡밥 이름('트레저 헌터' · '방주 아동 보호 센터')은 이름이 보인 것이라 세지 않는다
+  const knownJ = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));
+  const findJ = (k) => (k && k.length >= 4 && !knownJ.has(k) ? bareJ.indexOf(k) : -1);
+  for (const j of jList) {
+    const a = fmt.threadAt(j, R);
+    const vs = Array.isArray(j.v) ? j.v : [];
+    if (!a.started) {
+      for (const k of new Set([j.title, ...vs.map((v) => v.title)])) {
+        const i = findJ(k);
+        if (i >= 0) { hits.push(`떡밥 ${j.id} … ${around(i, k.length)}`); break; }
+      }
+      continue;
+    }
+    if (R.all) continue;
+    const pick = vs.findIndex((v) => v.at === a.at && v.title === a.title);
+    const later = vs.slice(pick + 1);
+    const keys = [
+      ...(a.title !== j.title ? [['제목', j.title]] : []), ...(a.text !== j.text && j.text ? [['요약', j.text.slice(0, 20)]] : []),
+      ...later.flatMap((v) => [['뒤 판 제목', v.title], ['뒤 판 요약', String(v.text ?? '').slice(0, 20)]]),
+    ];
+    for (const [what, k] of keys) {
+      if (k === a.title || (a.text && a.text.startsWith(k))) continue;
+      const i = findJ(k);
+      if (i >= 0) hits.push(`떡밥판 ${j.id} ${what} … ${around(i, k.length)}`);
+    }
+  }
+  if (focus && idx.threads.has(focus) && !R.all) {
+    const j = idx.threads.get(focus);
+    const flow = (await get('threads-flow'))[focus] ?? { roots: [] };
+    const keep = new Set(fmt.threadBundle(j, flow, R).roots.map((r) => r.id));
+    for (const r of flow.roots) {
+      if (keep.has(r.id) || ['아직', '암시만'].includes(fmt.stateAt(r, R))) continue;
+      const texts = [fmt.prose(r.text), recs.has(r.id) ? fmt.recordText(recs.get(r.id)) : ''].filter((x) => x && x.length >= 16);
+      const i = texts.map((x) => all.indexOf(x.slice(0, 16))).find((k) => k >= 0) ?? -1;
+      if (i >= 0) hits.push(`묶음 ${focus} ${r.id} … ${around(i, 16)}`);
+    }
   }
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름
   const knownNames = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));
@@ -166,7 +212,7 @@ async function cdp(wsUrl) {
   return { send, close: () => ws.close() };
 }
 
-const server = await serve({ port: Number(args.port) });
+const server = await serve({ port: Number(args.port), ...(args.root ? { root: path.resolve(args.root) } : {}) });
 const base = `http://127.0.0.1:${server.address().port}`;
 const prof = fs.mkdtempSync(path.join(os.tmpdir(), 'spoil-'));
 const chrome = spawn(CHROME, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=0', `--user-data-dir=${prof}`, '--window-size=1400,1000', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
@@ -183,13 +229,15 @@ await S('Page.enable');
 await S('Runtime.enable');
 
 let n = 0;
+/** 떡밥 탭이 지금 그리는 떡밥 — 목록에서 고른 줄(없으면 p.j) */
+const THREAD_NOW = `(async () => { const st = await import('/lib/state.js'); return document.querySelector('.thr-listrow.is-sel')?.dataset.j ?? st.param('threads', 'j') ?? 'J1'; })()`;
 const evaluate = async (expr) => {
   const r = await S('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true });
   if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? '평가 실패');
   return r.result?.result?.value;
 };
 const open = async (hash) => { await S('Page.navigate', { url: `${base}/?n=${++n}#${hash}` }); await sleep(WAIT); };
-const probe = (skipMain = false) => evaluate(`(${PROBE})(${skipMain}, ${args.titles})`);
+const probe = (skipMain = false, focus = null) => evaluate(`(${PROBE})(${skipMain}, ${args.titles}, ${JSON.stringify(focus)})`);
 
 const report = [];
 let total = 0;
@@ -204,11 +252,17 @@ try {
   for (const t of args.t.split(',')) {
     for (const tab of args.tabs.split(',')) {
       await open(`tab=${tab}&t=${t}`);
-      note(`t=${t} ${tab}`, await probe(tab === 'order'));
+      note(`t=${t} ${tab}`, await probe(tab === 'order', tab === 'threads' ? await evaluate(THREAD_NOW) : null));
+      if (tab === 'threads') {
+        for (const j of THREAD_TAB) {
+          await open(`tab=threads&t=${t}&p.j=${j}`);
+          note(`t=${t} threads ${j}`, await probe(false, await evaluate(THREAD_NOW)));
+        }
+      }
     }
     for (const sel of READER_SELS) {
       await open(`tab=world&t=${t}&sel=${encodeURIComponent(sel)}`);
-      note(`t=${t} 리더 ${sel}`, await probe(true));
+      note(`t=${t} 리더 ${sel}`, await probe(true, sel.startsWith('thread:') ? sel.slice(7) : null));
     }
     await open(`tab=world&t=${t}`);
     for (const q of SEARCHES) {

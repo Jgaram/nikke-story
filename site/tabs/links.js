@@ -175,8 +175,8 @@ export async function mount(root, ctx) {
   // 떡밥 필터 후보
   const threadUse = new Map();
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
-  const threadList = [...threadUse].map(([id, n]) => ({ id, n, title: idx.threads.get(id)?.title ?? id }))
-    .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
+  // 이름은 고를 때 그 자리 판으로(fmt.threadLabel — W15d). 분석용 이름은 결말을 아는 자리의 말이다
+  const threadList = [...threadUse].map(([id, n]) => ({ id, n, j: idx.threads.get(id) })).filter((t) => t.j);
   /**
    * 인물 · 항목 · 떡밥 필터 후보 — 지금 가운데(이웃 보기) · 선 종류 · 세기 · 스토리 종류 · 읽은 자리에서 실제로 보이는 선에 걸린 것만.
    * 인물 후보는 고른 떡밥을, 떡밥 후보는 고른 인물 · 항목을 따른다(자기 자신의 필터는 후보를 줄이지 않는다). 걸린 선 수 순.
@@ -196,7 +196,9 @@ export async function mount(root, ctx) {
       if ((!F.tg || e.targets.includes(F.tg)) && (e.strength >= F.minS || relaxed(F, e))) for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
     }
     const targets = targetList.filter((t) => tu.has(t.id)).map((t) => ({ ...t, n: tu.get(t.id) })).sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
-    const threads = threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) }));
+    // 떡밥은 그 자리에서 나온 것만(fmt.threadStarted — 판 규칙), 이름은 그 자리 판 · 자리 글(W15d)
+    const threads = threadList.filter((t) => hu.has(t.id) && fmt.threadStarted(t.j, F.R)).map((t) => ({ ...t, n: hu.get(t.id), title: fmt.threadLabel(t.j, F.R) }))
+      .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
     return { targets, threads };
   };
   // 주소로 온 떡밥 · 대상(p.th · p.tg)이 여기까지 읽음 안의 선에 걸리나 — 아니면 이름 대신 '스포일러'로 보인다(W15a)
@@ -458,7 +460,7 @@ export async function mount(root, ctx) {
   const threadSelect = h('select', { class: 'lk-select', 'aria-label': LABELS.thread, onChange: (e) => setP({ th: e.target.value || null, n: null, lt: null, pr: null }) },
     h('option', { value: '' }, LABELS.threadAll));
   const rebuildThreadOptions = () => {
-    const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: inCutAny(F, 'threads', F.th) ? idx.threads.get(F.th)?.title ?? F.th : LABELS.afterCut, n: 0 }] : cand.threads;
+    const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: inCutAny(F, 'threads', F.th) && fmt.threadStarted(idx.threads.get(F.th), F.R) ? fmt.threadLabelOf(F.th, F.R) : LABELS.afterCut, n: 0 }] : cand.threads;
     threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...list.map((t) => h('option', { value: t.id }, t.title)));
   };
 
