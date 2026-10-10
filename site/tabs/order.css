@@ -146,6 +146,8 @@
 .tab-order .order-kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .tab-order .order-basis-text { margin-top: 2px; color: var(--ink-2); }
 .tab-order .order-basis-text:empty { display: none; }
+.tab-order .order-logline { margin: 0 0 8px; overflow-wrap: anywhere; }
+.tab-order .order-logline:empty { display: none; }
 .tab-order .order-spoiler { color: var(--spoiler); font-weight: 600; }
 .tab-order .order-history .details { margin-top: 4px; }
 .tab-order .order-reviews { margin: 0; padding-left: 18px; font-size: 13px; color: var(--ink-2); }

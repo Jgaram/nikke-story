@@ -6,6 +6,7 @@
  * 쓰는 JSON
  *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](본편 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
  *   order-detail.json(분류 카드를 처음 열 때 받는다): units{키 → { history, basis_text, reviews }} · notes[]
+ *   synopsis.json(공개 개요 — 분류 카드 머리 아래 한 줄 소개, W8): [{ key, logline, … }] — 여기까지 읽음 안 스토리만, 없으면 그리지 않는다
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
  * URL 파라미터(p.*)
@@ -426,6 +427,14 @@ export async function mount(root, ctx) {
   };
   const kv = (rows) => ui.el('dl', { class: 'order-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [ui.el('dt', {}, k), ui.el('dd', {}, v)]));
   const detail = () => data.load('order-detail');
+  let loglines = null;
+  const synopsis = () => (loglines ??= data.load('synopsis').then((list) => new Map(list.map((x) => [x.key, x.logline]))));
+  /** 한 줄 소개 — 카드를 그린 뒤 채운다. 여기까지 읽음 뒤 스토리는 비워 둔다(카드가 '뒤에 나온 스토리'라고 이미 말한다) */
+  const loglineBox = (key, tick, T) => {
+    const box = ui.el('p', { class: 'order-logline' });
+    if (state.visible(tick, T)) synopsis().then((m) => { if (card.dataset.key === key && m.has(key)) box.textContent = m.get(key); }).catch(() => {});
+    return box;
+  };
   const renderCard = (s) => {
     const sel = state.parseSel(s.sel);
     const key = sel?.type === 'unit' ? sel.id : null;
@@ -439,6 +448,7 @@ export async function mount(root, ctx) {
     const R = LABELS.rows2;
     if (sp) {
       card.append(ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', sp.unit.kind), ' ', ui.link(`unit:${sp.key}`, sp.unit.title)), close),
+        loglineBox(sp.key, sp.tick, s.t),
         kv([[R.grade, ui.chip('grade', sp.unit.kind === 'main' ? '메인' : '척추')],
           [R.release, [fmt.tickLabel(sp.tick), ' · ', ui.link(`tick:${sp.tick}`, fmt.unitTitle(sp.key))]],
           ...preRows(sp.key)]));
@@ -455,6 +465,7 @@ export async function mount(root, ctx) {
     const histBox = ui.el('div', { class: 'order-history' }, j.trail ? j.trail.map((x, i) => [i ? ' → ' : null, ui.chip('grade', x)]) : ui.el('span', { class: 'muted' }, LABELS.trailNone));
     card.append(
       ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', j.unit.kind), ' ', ui.link(`unit:${j.key}`, j.unit.title), ui.el('span', { class: 'muted order-card-sub' }, ` · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자 · ${fmt.num(j.unit.scenes)}${LABELS.scene}`)), close),
+      loglineBox(j.key, j.tick, T),
       kv([
         [T == null ? R.grade : TERM.gradeAt, gradeRow],
         ...preRows(j.key),

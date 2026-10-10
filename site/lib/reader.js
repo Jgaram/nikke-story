@@ -6,8 +6,9 @@
  *   open(sel)                              sel = state의 sel 형식(unit: · scene: · record: · person: · target: · thread: · tick:)
  *   close() · isOpen()
  *
- * 스토리 패널: 분류(order.json — 등급 · 왜 이 등급인가 · 감상 순서 탭 링크) · 연결(links-scenes.json — 선 종류별 상대 스토리 · 근거 줄 · 분석 메모 · 강도, 처음 열 때 받는다).
- * 씬 패널: 연결(그 씬의 선). 인물 · 떡밥 · 세계 항목 패널: 해당 탭에서 보기 링크. 탭 링크는 탭을 바꾸고 리더를 닫는다.
+ * 스토리 패널: 맨 위 공개 개요(synopsis.json — 한 줄 소개 · 줄거리, W8) · 분류(order.json — 등급 · 왜 이 등급인가 · 감상 순서 탭 링크) ·
+ *   연결(links-scenes.json — 선 종류별 상대 스토리 · 근거 줄 · 분석 메모 · 강도, 처음 열 때 받는다) · 씬 목록(씬 한 줄이 있으면 제목 아래).
+ * 씬 패널: 씬 한 줄(공개 개요) · 연결(그 씬의 선). 개요가 없는 스토리 · 씬은 칸을 그리지 않는다. 인물 · 떡밥 · 세계 항목 패널: 해당 탭에서 보기 링크. 탭 링크는 탭을 바꾸고 리더를 닫는다.
  * "여기까지 읽음" 뒤의 메모는 지우지 않고 가린다 — 흐리게 + "여기까지 읽음 뒤 — 스포일러 보기" 펼치기.
  * 패널 안 링크는 모두 ui.link(sel) → state.set({ sel })이라 뒤로 가기가 된다. 메모 ID(F203 등)는 근거 줄에 작은 모노스페이스로만.
  */
@@ -47,6 +48,7 @@ export async function open(sel) {
       }
     }
     if (parsed.type === 'unit') await loadOrder(); // 분류 칸 — 작은 파일(order.json)이라 같이 기다린다
+    if (parsed.type === 'unit' || parsed.type === 'scene') await loadSynopsis();
     if (current !== sel) return; // 그새 다른 것을 골랐다
     ui.clear(root);
     const render = RENDER[parsed.type];
@@ -91,6 +93,25 @@ async function loadOrder() {
     orderMap = new Map(); // 못 받아도 리더는 쓴다
   }
   return orderMap;
+}
+
+let synopsisMap = null;
+let sceneLineMap = null;
+let synopsisReady = null;
+/** synopsis.json(공개 개요 — 확정된 것만) — 스토리 키 → 개요, 씬 ID → 한 줄. 못 받으면 칸을 그리지 않는다 */
+function loadSynopsis() {
+  return (synopsisReady ??= data.load('synopsis').then((list) => {
+    synopsisMap = new Map(list.map((x) => [x.key, x]));
+    sceneLineMap = new Map(list.flatMap((x) => Object.entries(x.scenes ?? {})));
+  }).catch(() => { /* 개요가 없어도 리더는 쓴다 */ }));
+}
+
+/** 공개 개요 칸 — 여기까지 읽음 뒤 스토리면 접어서 가린다 */
+function synopsisPanel(key, hidden) {
+  const x = synopsisMap?.get(key);
+  if (!x) return null;
+  const body = [ui.el('p', { class: 'rd-logline' }, x.logline), ...x.synopsis.split(/\n\s*\n/).map((t) => ui.el('p', { class: 'rd-synopsis' }, t.trim()))];
+  return ui.panel('줄거리', hidden ? ui.details(spoilerSummary(), body, { class: 'spoiler' }) : body, { class: 'rd-synopsis-panel' });
 }
 
 let linkIndex = null;
@@ -325,6 +346,8 @@ const RENDER = {
     const hidden = !state.visible(u.tick);
     root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null]));
     if (hidden) root.append(ui.notice(`여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
+    const syn = synopsisPanel(key, hidden);
+    if (syn) root.append(syn);
     const scenes = idx.scenesOf.get(key) ?? [];
     const recs = idx.recordsOfUnit.get(key) ?? [];
     root.append(ui.panel(null, kv([
@@ -337,7 +360,8 @@ const RENDER = {
     if (cls) root.append(cls);
     linksPanel(idx, { sel: current, tabAct: tabAction('links', { c: key }), pick: (li) => li.byUnit.get(key) ?? [], build: (edges) => unitLinkRows(key, edges, idx), emptyText: '이어진 스토리 없음' });
     root.append(ui.panel(`씬 ${scenes.length}`, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
-      ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? s.id}`), ui.el('span', { class: 'muted' }, ` ${s.lines}줄${s.part ? ` · ${s.part}` : ''}${s.level ? ` · Lv.${s.level}` : ''} · 메모 ${(idx.recordsOf.get(s.id) ?? []).length}`)))) : ui.empty('씬 없음')));
+      ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? s.id}`), ui.el('span', { class: 'muted' }, ` ${s.lines}줄${s.part ? ` · ${s.part}` : ''}${s.level ? ` · Lv.${s.level}` : ''} · 메모 ${(idx.recordsOf.get(s.id) ?? []).length}`),
+        !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty('씬 없음')));
     root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, [ui.el('p', { class: 'muted' }, countByKind(recs) || '없음'), recs.length > 80 ? ui.el('p', { class: 'muted' }, '씬을 고르면 그 씬의 메모만 나온다') : recordList(recs)]));
     slipsPanel(idx.slipsOf.get(key));
   },
@@ -348,6 +372,11 @@ const RENDER = {
     const u = idx.units.get(s.unit);
     const recs = idx.recordsOf.get(id) ?? [];
     root.append(head(s.title ?? fmt.sceneName(id), [u ? ui.chip('kind', u.kind) : null]));
+    const line = sceneLineMap?.get(id);
+    if (line) {
+      const p = ui.el('p', { class: 'rd-logline' }, line);
+      root.append(u && !state.visible(u.tick) ? ui.details(spoilerSummary(), p, { class: 'spoiler' }) : p);
+    }
     const siblings = idx.scenesOf.get(s.unit) ?? [];
     const prev = siblings[s.seq - 2];
     const next = siblings[s.seq];
