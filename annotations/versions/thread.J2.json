@@ -1,0 +1,125 @@
+{
+  "subject": "thread:J2",
+  "versions": [
+    {
+      "at": "ch01",
+      "title": "라피 — 찾고 있는 것",
+      "text": "라피가 해 보고 싶다며 찾고 있는 것은 무엇인가 — 아니스가 찾았느냐고 묻자 라피는 아직 모르겠다고만 한다.",
+      "src": "4904cd6678",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "2ec4102e9d",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    },
+    {
+      "at": "ch04",
+      "title": "라피 — 레드 후드 · 불량품",
+      "text": "토커티브는 라피를 페어리 테일 모델 레드 후드라 부르고, 라피에게는 기억 소거가 먹히지 않았다 — 그 이름은 무슨 뜻이고, 라피는 왜 앱솔루트를 말없이 떠나 불량품이라 불리나.",
+      "src": "a541e298f4",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "e684d7b1f4",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    },
+    {
+      "at": "ch13",
+      "title": "라피 — 시크릿 바디 레드 후드",
+      "text": "라피는 침식 촉수에 찔리고도 침식되지 않아 뇌에 NIMPH가 없다고 여겨지고, 코드 해방으로 시크릿 바디 레드 후드를 깨운다 — 라피 안에서 말하는 레드 후드는 무엇이고, 왜 방주를 파괴하라 하나.",
+      "src": "2d4fa49f3c",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "c47083fca7",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    },
+    {
+      "at": "ch26",
+      "title": "라피와 레드 후드 — 한 바디",
+      "text": "라피의 몸으로 깨어난 레드 후드는 실존한 갓데스의 니케였다 — 둘은 한 바디를 나누고, 인젝션 건을 맞으면 라피가 돌아오는 대신 레드 후드는 죽는다. 죽었다는 그녀는 어떻게 라피 안에 있었나.",
+      "src": "85417fc57a",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "760edd3f5d",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    },
+    {
+      "at": "event_footstepwalkrun1",
+      "title": "라피와 레드 후드 — 작별 · 두 번째 코어",
+      "text": "레드 후드는 라피의 머릿속에 나타나 라피를 지키고 마지막으로 작별했다 — 앱솔루트 시절 라피는 서브 코어가 바디를 재구축해 레드 후드로 변한 적이 있었다. 돌아온 라피 바디의 두 번째 코어는 어디서 왔나.",
+      "src": "d71b0bac1c",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "b16e41dc01",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    },
+    {
+      "at": "ch44",
+      "title": "라피와 레드 후드 — 두 코어 · 옛 몸",
+      "text": "라피의 두 번째 코어와 불명의 재료로 된 바디는 어디서 왔나 — 지즈가 찾은 목 없는 옛 몸은 그레이브 디거 전에서 잃은 것으로 보이고, 세븐스 드워프 제로는 스노우 화이트가 레드 후드에게 만들던 무기였다.",
+      "src": "1702fe047a",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "b98d5c981f",
+          "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        }
+      ]
+    }
+  ]
+}
