@@ -354,3 +354,14 @@ NPC 이미지는 **128px 아이콘이면 충분**하다(사용자, 2026-10-10).
 - 요청: 블라링크 페이지 1 · 번들 6 · CDN 이미지 14(404 5) · nikke-db 파일 목록 1 — 한 번에 하나, 1초 간격.
 - **받기**(W12a, 2026-10-10): `node tools/blabla/marks.mjs` — 기업 5 + 스쿼드 아이콘 52(`icn_abnormal`은 콜라보 14종이 같이 씀) = 57개 모두 200, 404 0. `site/img/orgs/`(0.64MB). 동시 4 · 받은 것 건너뜀 · 백오프 3회 · 404 기록.
   게임 코드 → 사전 조직 대응과 기록 형식은 docs/annotations.md "소속 기록", 화면은 docs/views.md "소속 마크".
+
+## 11. 스토리 종류 아이콘 (2026-10-10 조사)
+
+감상 순서의 종류 글자를 그림으로 바꾸려고 찾았다(쓰는 법은 docs/views.md "스토리 종류 아이콘").
+
+- **인게임 종류 아이콘은 어디에도 없다** — nikke-db 레포(UI 아이콘은 기업 · 클래스 · 등급 · 무기뿐, `images/gallery/albums/album_*`는 쥬크박스 앨범 표지) · NKAS `/data/` · Fandom 위키 · 블라링크 CDN 추측 경로 12개(`atlas_field/icn_field_subquest` 등) 모두 404 · 해당 없음.
+- **블라링크 웹 번들**의 스토리 화면 탭 아이콘(단색 SVG, `assets/svg/icon-*.svg`): 메인 `icon-story` · 돌발 `icon-encounter`(필름) · 아카이브 `icon-archives`(모래시계). 돌발 필름만 썼다.
+- 블라링크 `assets/nikke/version/default/mask-icon.png`(512², 블라블라링크 로고) — 서브퀘스트에 썼다.
+- 유실물 필드 마커(주황 역삼각형 + 돋보기)는 nikke.gg가 잘라 둔 그림뿐 — 받아 싣지 않고 같은 모양을 새로 그렸다.
+- 돌발 건물 썸네일 `icon/album/outpost/img_album_structure_{건물}.png`(256², `sudden_list.json` `sub_category_thumbnail`)는 건물마다 달라 종류 표시로 안 썼다.
+- 요청: blablalink.com 약 35(페이지 · 번들 · SVG · 아이콘) · CDN 15(404 12) · GitHub 클론 2 · NKAS 1 · Fandom API 6 · nikke.gg 3 — 한 번에 하나.

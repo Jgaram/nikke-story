@@ -132,7 +132,7 @@ export async function mount(root, ctx) {
     const box = ui.el('div', { class: 'order-picks', role: 'group', 'aria-label': label }, ui.el('span', { class: 'order-picks-label' }, label));
     const cur = () => listParam(state.param('order', param), options.map((o) => o.value), dflt);
     for (const o of options) {
-      const b = ui.el('button', { type: 'button', class: 'order-pick', 'aria-pressed': 'false', title: o.title, dataset: { v: o.value } }, o.band ? ui.el('i', { class: `order-pick-band ${o.band}`, 'aria-hidden': 'true' }) : null, o.label);
+      const b = ui.el('button', { type: 'button', class: 'order-pick', 'aria-pressed': 'false', title: o.title, dataset: { v: o.value } }, o.band ? ui.el('i', { class: `order-pick-band ${o.band}`, 'aria-hidden': 'true' }) : null, o.icon ?? null, o.label);
       b.addEventListener('click', () => {
         const on = new Set(cur());
         if (on.has(o.value)) on.delete(o.value); else on.add(o.value);
@@ -146,8 +146,10 @@ export async function mount(root, ctx) {
     return { el: box, cur, sync: () => { const on = new Set(cur()); for (const [v, b] of btns) b.setAttribute('aria-pressed', String(on.has(v))); } };
   };
   const gradePick = picks({ label: LABELS.grade, param: 'g', dflt: DEFAULT_GRADES, options: PICK_GRADES.map((g) => ({ value: g, label: gl(g), title: fmt.help('grade', g), band: BAND[g] === 'g-quiet' ? null : BAND[g] })) });
+  /** 종류 칩의 그림 — 목록 줄에 글자 없이 뜨는 아이콘을 여기서 익힌다(이름은 칩 글자에 있어 그림은 장식) */
+  const chipIcon = (k) => { const n = ui.kindIcon(k, { size: 14 }); if (n) { n.removeAttribute('role'); n.removeAttribute('aria-label'); n.removeAttribute('title'); n.setAttribute('aria-hidden', 'true'); } return n; };
   const kindDefault = kindsPresent.filter((k) => !OFF_KINDS.includes(k));
-  const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: kindDefault, options: kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k) })) });
+  const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: kindDefault, options: kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k), icon: chipIcon(k) })) });
   const find = ui.el('input', { type: 'search', class: 'order-find', placeholder: LABELS.find, 'aria-label': LABELS.findAria, value: state.param('order', 'find') ?? '' });
   let findTimer = null;
   let findPending = false; // 입력 뒤 URL에 싣기 전 — 그 사이 다른 필터가 바뀌어도 입력칸을 되돌리지 않는다
@@ -202,12 +204,13 @@ export async function mount(root, ctx) {
     const ghost = Boolean(item.ghostOf);
     const g = item.spine ? '척추' : item.grade;
     attrs.class = ['order-row g-band', item.spine ? 'is-spine' : 'is-extra', ghost ? 'is-ghost g-quiet' : BAND[g] ?? '', unseen ? 'is-unseen' : ''].filter(Boolean).join(' ');
-    const icon = unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : null;
+    // 종류는 글자 대신 그림 — 호감도는 니케 초상, 나머지는 종류 아이콘(이름은 툴팁 · 종류 칩에서 익힌다 — 사용자, 2026-10-10)
+    const icon = unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : ui.kindIcon(unit.kind, { size: 20, class: 'order-kind-icon' });
     // 흐리게 끼운 앞 편은 왜 끼웠는지를 먼저(등급 필터 밖이라 원래 등급만 보면 헷갈린다)
     const meta = [
       ghost ? ui.el('span', { class: 'order-ghost', title: LABELS.ghostHelp(fmt.unitTitle(item.ghostOf)) }, LABELS.ghost(fmt.unitTitle(item.ghostOf))) : null,
       ui.el('span', { class: 'g-label', title: fmt.help('grade', g) }, gl(g)),
-      ui.el('span', { class: 'order-kind', title: fmt.help('kind', unit.kind) }, fmt.KIND[unit.kind]?.label ?? unit.kind),
+      icon ? null : ui.el('span', { class: 'order-kind', title: fmt.help('kind', unit.kind) }, fmt.KIND[unit.kind]?.label ?? unit.kind),
       dueText(item, rd),
     ].filter(Boolean);
     return ui.el('li', attrs,

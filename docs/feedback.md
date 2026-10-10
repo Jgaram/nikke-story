@@ -114,3 +114,8 @@
   금서고는 `event_lost_relics` 한 갈래(유실물 3 · 미니게임 4 · 필드 대화 2, 하위 분류 없음) → '이벤트 유실물 / 미니게임'(도움말에 필드 대화).
   목록이 760px 이상이면 '먼저 볼 것'을 오른쪽 칸에(컨테이너 쿼리 — 리더를 열어도 넓으면 유지), 좁으면 아래 한 줄. 호감도 193편 모두 그 판 아이콘(새로 34).
 - 반영: docs/views.md 색 토큰 · 감상 순서 화면 정리 · 줄 안내 · 인물 아이콘 · 화면 용어표, docs/schema.md erelic, style.css 등급 토큰, site/tabs/order.*, `fmt.episodeIcon` · KIND, tools/site/portraits.mjs · export/common.mjs(`face`).
+
+## 2026-10-10 감상 순서 — 종류를 글자 대신 아이콘으로
+- 요청(사용자): 메인 · 호감도 밖 종류는 글자로만 구분된다 — 팬 DB에서 쓸 만한 아이콘 찾기. 답: 유실물 마커는 유실물에만 뜬다 · 서브퀘스트는 인게임 블라블라링크로 오고 로고가 블라링크와 같다 · 이벤트는 별이든 뭐든 · 돌발은 필름이 좋다.
+- 정한 것(Claude): 사이드는 갈래 그림, 이벤트는 별, 유실물 두 갈래는 같은 마커 모양을 색으로 가른다. 줄에 그림이 있으면 종류 글자는 뺀다(이름은 툴팁 · 칩).
+- 반영: docs/views.md "스토리 종류 아이콘" · 감상 순서 행, docs/data-sources.md 11절, `site/img/kinds/`, `ui.kindIcon`, style.css, site/tabs/order.*

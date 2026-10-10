@@ -284,6 +284,15 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .reader-pic + .reader-title { flex: 1; }
 /* 인물 아이콘(W11) — 128² 게임 이미지를 줄여 쓴다 */
 .portrait { flex: none; display: block; border-radius: 8px; background: var(--surface-2); object-fit: cover; }
+/* 스토리 종류 아이콘 — 단색 모양(img/kinds/)을 마스크로, 색은 종류 색. 돌발 필름은 블라링크 스토리 화면의 돌발 탭 아이콘,
+   서브퀘스트는 블라블라링크 로고(인게임에서 서브퀘스트가 블라블라링크로 온다), 유실물 두 갈래는 필드의 유실물 마커 모양(사용자, 2026-10-10) */
+.kind-icon { flex: none; display: inline-block; width: var(--kind-icon-size, 18px); height: var(--kind-icon-size, 18px); vertical-align: -0.2em; background: var(--kind-c, var(--ink-muted)); -webkit-mask: var(--kind-shape) center / contain no-repeat; mask: var(--kind-shape) center / contain no-repeat; }
+.kind-icon[data-kind="side"] { --kind-c: var(--kind-side); --kind-shape: url(img/kinds/side.svg); }
+.kind-icon[data-kind="event"] { --kind-c: var(--kind-event); --kind-shape: url(img/kinds/event.svg); }
+.kind-icon[data-kind="sub"] { --kind-c: var(--kind-sub); --kind-shape: url(img/kinds/sub.png); }
+.kind-icon[data-kind="relic"] { --kind-c: var(--kind-relic); --kind-shape: url(img/kinds/relic.svg); }
+.kind-icon[data-kind="erelic"] { --kind-c: var(--kind-erelic); --kind-shape: url(img/kinds/relic.svg); }
+.kind-icon[data-kind="elevator"] { --kind-c: var(--kind-elevator); --kind-shape: url(img/kinds/elevator.svg); }
 /* 소속 마크(기업 · 스쿼드) — 흰 마크를 어두운 칩 위에. 이름 없는 칩(.org-marks.bare)은 마크만, 이름은 툴팁 */
 .org-marks { display: inline-flex; flex-wrap: wrap; gap: 4px; align-items: center; min-width: 0; }
 .org-mark { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; padding: 2px 8px 2px 3px; border-radius: 999px; background: var(--mark-bg); color: var(--mark-ink); font-size: var(--fs-small); line-height: 1.4; white-space: nowrap; }
