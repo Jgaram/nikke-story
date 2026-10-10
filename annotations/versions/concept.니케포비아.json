@@ -1,0 +1,43 @@
+{
+  "subject": "concept:니케포비아",
+  "versions": [
+    {
+      "at": "char:180",
+      "text": "니케를 혐오하는 방주의 단체들 — 니케가 사람을 해치면 거리로 쏟아져 나와 폭주할 만큼 과격하다고 한다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "ecc274f2f8",
+          "note": "char:180 ep:d_nikke_guillotine_04#72(길로틴의 말에 단체로만 나옴)로 얇게, ch23 F994에서 1차 지상 탈환전 실패 뒤 박해로 생긴 말이라는 기원이 드러나 판(char:10 F503의 생각 보탬) — 프리티 습격 · 쇠퇴는 체크 칸 PRETTY STAR라 쓰지 않음"
+        }
+      ]
+    },
+    {
+      "at": "ch23",
+      "text": "니케를 혐오하는 방주 사람들과 그 단체 — 1차 지상 탈환전이 실패한 뒤 니케 박해가 일며 생긴 말로, 니케를 사람처럼 대해서 방주가 이 꼴이 되었다고 여긴다.",
+      "src": "4487ffc57e",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "393748606f",
+          "note": "char:180 ep:d_nikke_guillotine_04#72(길로틴의 말에 단체로만 나옴)로 얇게, ch23 F994에서 1차 지상 탈환전 실패 뒤 박해로 생긴 말이라는 기원이 드러나 판(char:10 F503의 생각 보탬) — 프리티 습격 · 쇠퇴는 체크 칸 PRETTY STAR라 쓰지 않음"
+        }
+      ]
+    }
+  ]
+}

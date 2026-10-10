@@ -1,0 +1,24 @@
+{
+  "subject": "item:아모르_테트라",
+  "versions": [
+    {
+      "at": "event_beautyfullshot1",
+      "text": "머스탱이 펴내는 잡지 — 첫 호 표지 모델은 바이퍼였고, 언더월드 퀸의 지상 해변 화보를 실은 호는 날개 돋친 듯 팔렸다.",
+      "src": "7ce8857b22",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "90222897b4",
+          "note": "beautyfullshot1 F1507 · F1508 · F1519(머스탱의 잡지 · 첫 호 표지 바이퍼 · 화보 판매)로 1판"
+        }
+      ]
+    }
+  ]
+}

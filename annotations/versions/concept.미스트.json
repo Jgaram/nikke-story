@@ -1,0 +1,24 @@
+{
+  "subject": "concept:미스트",
+  "versions": [
+    {
+      "at": "event_dirtybackyard",
+      "text": "알록달록한 사탕 모양의 약물 — 먹으면 안개 낀 듯 몽롱한 행복감에 빠지고, 과용하면 고통을 못 느끼며 환각 속에 흉폭해진다. 중독성이 매우 강하고 치료제가 없다.",
+      "src": "7174522e89",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2fe9e0fe7f",
+          "note": "dirtybackyard F1258 · F1265(사탕 모양 약물 · 효과 · 중독성 · 치료제 없음)로 1판 — 뒤는 유통 · 식스오의 목적 같은 일화라 판을 세우지 않음"
+        }
+      ]
+    }
+  ]
+}

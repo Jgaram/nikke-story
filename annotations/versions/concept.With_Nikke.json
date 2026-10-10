@@ -1,0 +1,24 @@
+{
+  "subject": "concept:With_Nikke",
+  "versions": [
+    {
+      "at": "side:pretty_star",
+      "text": "프리티의 인기에 힘입어 머스탱이 펼친 니케 인권 캠페인 — 테트라 라인이 니케 인권 신장을 지지한다며 전권을 니케 인권 위원회에 맡기고 후원했다.",
+      "src": "76c79fd973",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "5e0a7c27a8",
+          "note": "side:pretty_star F2547(머스탱의 니케 인권 캠페인 · 위원회에 전권 · 후원)로 1판 — 앞 FOOTSTEP 광고 U249는 이름뿐이라 at 앞 체크 칸 그대로"
+        }
+      ]
+    }
+  ]
+}

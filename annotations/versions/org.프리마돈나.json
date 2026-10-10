@@ -1,0 +1,24 @@
+{
+  "subject": "org:프리마돈나",
+  "versions": [
+    {
+      "at": "event_goldencoinrush1",
+      "text": "볼륨 · 노이즈 · 아리아로 이루어진 가수 스쿼드 — 서로 화합하기는 힘들어 보여도 저마다 역량이 좋다. 무대를 키우려 황금칩 쟁탈전에 나왔다.",
+      "src": "2f8aafd95b",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "47dd403ba8",
+          "note": "goldencoinrush1 F1484 · event_goldencoinrush1_03_s#208-249(볼륨 팀장 · 노이즈 · 아리아, 공연 준비로 참가, 화합은 힘들고 역량은 좋음)로 1판 — 테트라 소속은 원문에 없어 쓰지 않음"
+        }
+      ]
+    }
+  ]
+}

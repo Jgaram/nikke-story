@@ -1,0 +1,24 @@
+{
+  "subject": "item:커넥팅_디바이스",
+  "versions": [
+    {
+      "at": "ch02",
+      "text": "지휘관의 핸드폰에 달린 장치 — 선을 뽑아 지상 기계의 포트에 꽂으면 오퍼레이터가 원격으로 그 기계를 조종할 수 있다.",
+      "src": "a4f5d91e52",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "9d1da5f3a8",
+          "note": "ch02 d_main_02_03#1-6 · U7(핸드폰 선 · 지상 기계 원격 조종)로 1판"
+        }
+      ]
+    }
+  ]
+}

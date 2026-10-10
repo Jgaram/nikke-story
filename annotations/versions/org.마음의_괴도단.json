@@ -1,0 +1,24 @@
+{
+  "subject": "org:마음의_괴도단",
+  "versions": [
+    {
+      "at": "fl:persona_on_frontline",
+      "text": "모나와 마코토가 속한 괴도단 — 왜곡된 욕망을 가진 악인에게서 '나쁜 마음'을 훔친다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2828e742ba",
+          "note": "기록 없음 — fl:persona_on_frontline_23#94-104(모나 · 마코토의 괴도단, 악인의 나쁜 마음을 훔침)를 읽고 1판"
+        }
+      ]
+    }
+  ]
+}

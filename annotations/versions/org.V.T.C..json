@@ -1,0 +1,43 @@
+{
+  "subject": "org:V.T.C.",
+  "versions": [
+    {
+      "at": "erelic:red_ash_lost",
+      "text": "거대 교단이 운용하는 의료 센터 — 라푼젤의 출신지로, 라푼젤은 그곳이 쌓아 온 데이터로 침식 치료제를 만들어 경과를 알린다.",
+      "src": "de8db97f0e",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "ea11c71016",
+          "note": "red_ash_lost F1174 · F1178(교단 의료 센터 · 라푼젤 출신 · 치료제 데이터)로 첫 판, ch43 F2410 · F2411에서 생명 공학 연구소라는 내막 · 중앙 정부 실권 · 숙청이 드러나 판(ark_guardian은 체크 칸이라 메인 ch43에)"
+        }
+      ]
+    },
+    {
+      "at": "ch43",
+      "text": "랩쳐 이전부터 있던, 말만 종교인 생명 공학 연구소 — 뇌를 새 몸에 옮기는 '기적'으로 중앙 정부의 실권을 쥐었으나, 엔더슨에게 간부들이 몰살된 뒤 숙청되었다.",
+      "src": "bccba8fbe8",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "5140dc0a41",
+          "note": "red_ash_lost F1174 · F1178(교단 의료 센터 · 라푼젤 출신 · 치료제 데이터)로 첫 판, ch43 F2410 · F2411에서 생명 공학 연구소라는 내막 · 중앙 정부 실권 · 숙청이 드러나 판(ark_guardian은 체크 칸이라 메인 ch43에)"
+        }
+      ]
+    }
+  ]
+}
