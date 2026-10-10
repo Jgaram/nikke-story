@@ -3730,6 +3730,7 @@ callback,record,3,event_phantomthiefvsdetective_prologue,,event_arcanearchive_ep
 keyword,auto,2,event_phantomthiefvsdetective_06_e,127,fl:reborn_evil_00,9,event_phantomthiefvsdetective,fl:reborn_evil,328,407,,,,org:A.C.P.U.,9,기록 1 · 이름 17줄,이름 12줄,,,
 sequel,manual,2,event_phantomthiefvsdetective_epilogue,,fl:go_ninja_thief_00,,event_phantomthiefvsdetective,fl:go_ninja_thief,328,412,Y34,,,,,,,확실,확정,go_ninja_thief는 phantomthiefvsdetective에서 결성된 정의 괴도단(팬텀 · 퀀시 · 미란다 · 지휘관)과 지휘관실 기지를 전제로 델타가 수습 단원이 되는 다음 편이다.
 setup_payoff,record,2,event_phantomthiefvsdetective_epilogue,,fl:go_ninja_thief_01,,event_phantomthiefvsdetective,fl:go_ninja_thief,328,412,E1392,암시,F2176,,,,,추정,확정,
+keyword,auto,2,event_phantomthiefvsdetective_epilogue,67,fl:go_ninja_thief_00,27,event_phantomthiefvsdetective,fl:go_ninja_thief,328,412,,,,org:정의_괴도단,3,이름 21줄,이름 47줄,,,
 callback,record,3,event_phantomthiefvsdetective_prologue,,fl:sin_editor_01,,event_phantomthiefvsdetective,fl:sin_editor,328,430,E996,재언급,F1608,,,,,확실,확정,
 callback,record,3,event_phantomthiefvsdetective_prologue,,fl:persona_on_frontline_01,,event_phantomthiefvsdetective,fl:persona_on_frontline,328,474,E1559,재언급,F1608,,,,,확실,확정,
 prereq,game-condition,3,ep:d_nikke_quency_escapequeen_01,,ep:d_nikke_quency_escapequeen_02,,char:403,char:403,329,329,,,,,,,,,,condition_scenario_group_id
@@ -5152,6 +5153,7 @@ character,auto,2,fl:go_ninja_thief_14,60,ep:d_nikke_delta_ninjathief_01,16,fl:go
 character,auto,2,fl:go_ninja_thief_14,32,ep:d_nikke_delta_ninjathief_01,104,fl:go_ninja_thief,char:23,412,413,,,,person:미란다,8,기록 2 · 말함 165줄(17%) · 이름 40줄,기록 1 · 말함 56줄(15%) · 이름 11줄,,,
 character,auto,2,fl:go_ninja_thief_14,48,ep:d_nikke_delta_ninjathief_01,103,fl:go_ninja_thief,char:23,412,413,,,,person:퀀시,6,기록 3 · 말함 118줄(12%) · 이름 12줄,기록 1 · 말함 38줄(10%) · 이름 5줄,,,
 character,auto,2,fl:go_ninja_thief_14,47,ep:d_nikke_delta_ninjathief_01,102,fl:go_ninja_thief,char:23,412,413,,,,person:팬텀,8,기록 4 · 말함 255줄(26%) · 이름 15줄,기록 1 · 말함 98줄(27%) · 이름 7줄,,,
+keyword,auto,2,fl:go_ninja_thief_14,33,fl:persona_on_frontline_01,18,fl:go_ninja_thief,fl:persona_on_frontline,412,474,,,,org:정의_괴도단,3,이름 47줄,이름 16줄,,,
 prereq,game-condition,3,ep:d_nikke_delta_ninjathief_01,,ep:d_nikke_delta_ninjathief_02,,char:23,char:23,413,413,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_delta_ninjathief_02,,ep:d_nikke_delta_ninjathief_03,,char:23,char:23,413,413,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_delta_ninjathief_03,,ep:d_nikke_delta_ninjathief_04,,char:23,char:23,413,413,,,,,,,,,,condition_scenario_group_id

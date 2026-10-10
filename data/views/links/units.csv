@@ -326,7 +326,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 325,event_jinxplayer,이벤트,4,2,6,0,2,4,,,,0,0,,person:루주 person:블랑 person:누아르 place:코인_러시,JINX PLAYER
 326,event_nonsensered,이벤트,4,3,7,0,0,7,,,고립,0,0,,person:릴리바이스 person:라푼젤 person:레드_후드 person:도로시,Nonsense Red
 327,char:272,호감도,1,1,2,0,0,2,,,고립,0,0,,person:루주 place:코인_러시,루주
-328,event_phantomthiefvsdetective,이벤트,5,8,13,1,7,8,,,,0,0,,person:노벨 person:퀀시 person:미란다 person:팬텀 org:A.C.P.U.,PHANTOM THIEF VS DETECTIVE
+328,event_phantomthiefvsdetective,이벤트,5,8,13,1,7,9,,,,0,0,,org:정의_괴도단 person:노벨 person:퀀시 person:미란다 person:팬텀 org:A.C.P.U.,PHANTOM THIEF VS DETECTIVE
 329,char:403,호감도,4,3,5,0,0,7,,,고립,0,0,,person:퀀시 place:갱생관 person:드레이크 place:방주,퀀시 : 이스케이프 퀸
 330,char:580,호감도,1,2,3,0,3,2,,,,0,0,,org:베스트셀러 person:팬텀,팬텀
 331,side:wordless,사이드,12,11,18,1,9,18,,,,4,1,ch03 ch04 ch23 ch24 ch35,org:워드리스 person:지엔 org:M.M.R. person:마나 person:유니 person:미하라,WORDLESS
@@ -410,7 +410,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 409,char:842,호감도,1,3,4,0,1,4,,,,0,0,,org:엄브렐러 person:클레어 place:라쿤_시티 person:키리 place:아우터_림,클레어
 410,char:841,호감도,5,2,6,0,1,6,,,,1,0,ch21,person:질 concept:NEO_바이러스 place:라쿤_시티 org:구원의_성화 person:미란다 concept:랩쳐,질
 411,side:eden_spear,사이드,22,9,27,1,20,18,,,,15,2,ch20 ch21 ch22 ch24 ch25 ch26 ch32 ch39 ch40 ch44 ch46,item:아틀라스_케이지 item:에덴의_창 concept:릴리스의_바디 org:인헤르트 org:파이오니아 person:나유타,EDEN SPEAR
-412,fl:go_ninja_thief,이벤트,9,1,10,1,4,7,,,,0,0,,person:델타 person:키리 person:퀀시 person:미란다 person:팬텀 person:폴리,GO! NINJA THIEF!
+412,fl:go_ninja_thief,이벤트,9,2,11,1,4,9,,,,0,0,,org:정의_괴도단 person:델타 person:키리 person:퀀시 person:미란다 person:팬텀,GO! NINJA THIEF!
 413,char:23,호감도,2,3,3,0,0,5,,,고립,0,0,,person:델타 person:퀀시 person:미란다 person:팬텀 place:방주,델타 : 닌자 시프
 414,ch41,메인,21,14,33,2,24,22,,,,,,,person:#000000 person:로지 person:트리키_보이 concept:스마일_박스 concept:용광로 place:유사_방주,CHAPTER.41 탄생
 415,relic:거꾸로적힌기록,유실물,1,1,2,0,1,2,,,,2,0,ch41,person:바하무트 person:레비아탄,거꾸로 적힌 기록
@@ -472,7 +472,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 471,relic:승리를_부르는_그림자,유실물,2,1,2,0,2,2,,,,1,0,ch47,place:승리의_날개_호 org:갓데스 concept:랩쳐,승리를 부르는 그림자
 472,ch48,메인,22,3,23,1,19,11,,,,,,,concept:일곱의_조율자 person:앨트루이아 person:에고비스타 person:애니힐리오 item:브레인_셸터 person:장화,CHAPTER.48 재탄
 473,relic:불길한_소리.wav,유실물,3,0,3,0,3,2,,,,4,0,ch46 ch47 ch48,concept:신생_랩쳐 person:나유타 place:궤도_엘리베이터 concept:다크_매터,불길한 소리.wav
-474,fl:persona_on_frontline,이벤트,17,4,19,1,11,14,,,,0,0,,org:마음의_괴도단 person:모나 person:곰 person:아이기스 person:앨든 person:유키코,PERSONA ON FRONTLINE
+474,fl:persona_on_frontline,이벤트,18,4,20,1,11,15,,,,0,0,,org:마음의_괴도단 person:모나 person:곰 person:아이기스 person:앨든 person:유키코,PERSONA ON FRONTLINE
 475,char:872,호감도,2,1,2,0,1,3,,,,0,0,,person:아이기스 person:라이 place:방주 concept:니케,아이기스
 476,char:870,호감도,3,1,2,0,2,3,,,,0,0,,person:모르가나 person:퀸(마코토) person:팬텀 org:중앙_정부 place:방주,퀸(마코토)
 477,char:871,호감도,2,0,2,0,1,2,,,,0,0,,person:곰 person:유키코 place:설온장 person:미카,유키코

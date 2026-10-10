@@ -2115,6 +2115,7 @@ event_nonsensered,326,person:릴리바이스,person,1,56,17,2,14,말함
 char:272,327,person:루주,person,3,320,93,54,6,기록+말함
 char:272,327,place:코인_러시,place,0,0,,12,11,이름
 event_phantomthiefvsdetective,328,org:A.C.P.U.,org,1,0,,17,9,이름
+event_phantomthiefvsdetective,328,org:정의_괴도단,org,0,0,,21,3,이름
 event_phantomthiefvsdetective,328,person:노벨,person,2,190,14,37,3,기록+말함
 event_phantomthiefvsdetective,328,person:미란다,person,2,325,25,79,8,기록+말함
 event_phantomthiefvsdetective,328,person:퀀시,person,6,246,19,27,6,기록+말함
@@ -2937,6 +2938,7 @@ side:eden_spear,411,person:하란,person,5,114,8,3,9,기록
 side:eden_spear,411,place:방주,place,4,0,,45,171,기록+이름
 side:eden_spear,411,place:에덴,place,11,0,,68,25,기록+이름
 side:eden_spear,411,place:지상,place,0,0,,12,132,이름
+fl:go_ninja_thief,412,org:정의_괴도단,org,0,0,,47,3,이름
 fl:go_ninja_thief,412,person:델타,person,4,284,28,96,4,기록+말함
 fl:go_ninja_thief,412,person:미란다,person,2,165,17,40,8,기록+말함
 fl:go_ninja_thief,412,person:퀀시,person,3,118,12,12,6,기록+말함
@@ -3717,6 +3719,7 @@ fl:persona_on_frontline,474,concept:D-WAVE,concept,10,0,,39,4,기록+이름
 fl:persona_on_frontline,474,concept:니케,concept,2,0,,35,186,기록+이름
 fl:persona_on_frontline,474,org:A.C.P.U.,org,0,0,,7,9,이름
 fl:persona_on_frontline,474,org:마음의_괴도단,org,0,0,,7,1,이름
+fl:persona_on_frontline,474,org:정의_괴도단,org,0,0,,16,3,이름
 fl:persona_on_frontline,474,org:중앙_정부,org,4,0,,39,67,기록+이름
 fl:persona_on_frontline,474,person:곰,person,9,171,9,115,2,기록
 fl:persona_on_frontline,474,person:모나,person,18,222,12,54,1,기록+말함

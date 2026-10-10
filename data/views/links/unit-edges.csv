@@ -2308,6 +2308,7 @@ event_phantomthiefvsdetective,event_arcanearchive,callback,1,3,record,0,E728,,32
 event_phantomthiefvsdetective,fl:reborn_evil,keyword,1,2,auto,0,,org:A.C.P.U.,328,407,이벤트,이벤트
 event_phantomthiefvsdetective,fl:go_ninja_thief,sequel,1,2,manual,0,Y34,,328,412,이벤트,이벤트
 event_phantomthiefvsdetective,fl:go_ninja_thief,setup_payoff,1,2,record,0,E1392,,328,412,이벤트,이벤트
+event_phantomthiefvsdetective,fl:go_ninja_thief,keyword,1,2,auto,0,,org:정의_괴도단,328,412,이벤트,이벤트
 event_phantomthiefvsdetective,fl:sin_editor,callback,1,3,record,0,E996,,328,430,이벤트,이벤트
 event_phantomthiefvsdetective,fl:persona_on_frontline,callback,1,3,record,0,E1559,,328,474,이벤트,이벤트
 char:403,side:wordless,keyword,1,1,auto,0,,place:방주,329,331,호감도,사이드
@@ -2996,6 +2997,7 @@ side:eden_spear,char:262,callback,1,2,record,0,E1627,,411,422,사이드,호감�
 side:eden_spear,ch44,setup_payoff,1,2,record,0,E891,,411,436,사이드,메인
 side:eden_spear,ch46,callback,1,3,record,0,E1102,,411,452,사이드,메인
 fl:go_ninja_thief,char:23,character,4,2,auto,0,,person:델타 person:미란다 person:퀀시 person:팬텀,412,413,이벤트,호감도
+fl:go_ninja_thief,fl:persona_on_frontline,keyword,1,2,auto,0,,org:정의_괴도단,412,474,이벤트,이벤트
 char:23,ch41,keyword,1,1,auto,0,,place:방주,413,414,호감도,메인
 char:23,fl:sin_editor,character,1,2,auto,0,,person:팬텀,413,430,호감도,이벤트
 char:23,fl:persona_on_frontline,character,2,2,auto,0,,person:미란다 person:퀀시,413,474,호감도,이벤트
