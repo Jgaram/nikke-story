@@ -1,0 +1,24 @@
+{
+  "subject": "org:동물권_단체",
+  "versions": [
+    {
+      "at": "event_lionheart",
+      "text": "해피 주 보호소를 함께 운영하는 방주의 단체 — 보호소가 빈 틈에 희귀 맹수를 빼돌리려다 실패하자 휴무를 늘리게 했다.",
+      "src": "b616549560",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "338ab39458",
+          "note": "event_lionheart intermission_01#28·F1252, 1판"
+        }
+      ]
+    }
+  ]
+}

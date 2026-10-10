@@ -1,0 +1,43 @@
+{
+  "subject": "item:이터널_라이프",
+  "versions": [
+    {
+      "at": "fl:for_rest",
+      "text": "중앙 정부가 인증한 노화 방지 주사 — 1차 침공 직후엔 값이 비싸 로열만 맞았지만, 지금은 누구나 쉽게 맞을 수 있다.",
+      "src": "02dbc4f5c7",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "5b708aedc7",
+          "note": "for_rest F1828 정의, good_world F2568·U396 양산의 기원(프로젝트 A.D.)이 드러나 판"
+        }
+      ]
+    },
+    {
+      "at": "fl:good_world",
+      "text": "중앙 정부가 인증한 노화 방지 주사 — 꾸준히 맞으면 젊게 살고 끊으면 늙는다. 그 양산은 총사령관이 참여한 프로젝트 A.D.에서 이뤘다.",
+      "src": "60b16eae48",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "e8a4031c0a",
+          "note": "for_rest F1828 정의, good_world F2568·U396 양산의 기원(프로젝트 A.D.)이 드러나 판"
+        }
+      ]
+    }
+  ]
+}

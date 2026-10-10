@@ -1,0 +1,24 @@
+{
+  "subject": "item:유리_구두",
+  "versions": [
+    {
+      "at": "ch32",
+      "text": "신데렐라의 전용 무장 — 주위가 그대로 비치는 거대한 방패 넷으로, 주인이 아니면 공격하고 결코 더러워지지 않는다. 신데렐라를 깨우는 부활 코드가 심겨 있다.",
+      "src": "1de79575d4",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "ef951478cc",
+          "note": "ch32 F1542·F1553 — 방패 넷·주인 아니면 공격·부활 코드. event_redash(체크 칸)·oldtales 내용은 넣지 않음, 1판"
+        }
+      ]
+    }
+  ]
+}

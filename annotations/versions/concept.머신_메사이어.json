@@ -1,0 +1,24 @@
+{
+  "subject": "concept:머신_메사이어",
+  "versions": [
+    {
+      "at": "ch43",
+      "text": "V.T.C.가 진행했다는, 인류의 명운을 건 프로젝트 하나 — 무엇을 하려던 것인지는 아직 모른다.",
+      "src": "ce9ff573ff",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "abee370edb",
+          "note": "ch43 F2410만. 앞 체크 칸 fl:ark_guardian(언체인드와의 관계)은 넣지 않음, 1판"
+        }
+      ]
+    }
+  ]
+}

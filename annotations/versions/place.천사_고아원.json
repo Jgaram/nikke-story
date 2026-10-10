@@ -1,0 +1,24 @@
+{
+  "subject": "place:천사_고아원",
+  "versions": [
+    {
+      "at": "event_neverland1",
+      "text": "인간 시절 미카와 벨로타가 지낸 방주의 고아원 — 원장이 아이들을 때렸고, 루드밀라의 가문이 건너건너 후원했다.",
+      "src": "8044d992cb",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2e300b1ca5",
+          "note": "event_neverland1 F1215·F1216·F1218. char:194의 후원 중단·폐원은 세부라 1판"
+        }
+      ]
+    }
+  ]
+}

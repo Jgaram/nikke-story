@@ -1,0 +1,17 @@
+{
+  "subject": "item:라이터즈_이레이저",
+  "versions": [
+    {
+      "at": "ch33",
+      "text": "마나가 그레이브를 고치며 쥐여 준, 아직 테스트 단계인 무장 — 큰 빛 덩어리를 쏘아 적을 두드린다.",
+      "src": "8efb4ebaed",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W15e", "hash": "12df1cc950", "note": "ch33 F1630·d_main_33_05_e#0-4, 1판" }
+      ]
+    }
+  ]
+}

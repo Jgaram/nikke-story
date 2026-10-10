@@ -1,0 +1,24 @@
+{
+  "subject": "concept:PROJECT_A.D.",
+  "versions": [
+    {
+      "at": "fl:good_world",
+      "text": "지휘관이 태어났다는 방주의 기밀 프로젝트 — 총사령관이 제 몸을 실험체로 내주고 M.M.R.에 연구를 맡겨 시작했고, 이터널 라이프 양산도 여기서 이뤘다. 내용은 아직 모른다.",
+      "src": "c480fb5492",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "41d3257b15",
+          "note": "fl:good_world F2566·F2568, _12#36-50·#494(그분=총사령관). wisdomspring(체크 칸) 내용(신체 강화·7호)은 넣지 않음"
+        }
+      ]
+    }
+  ]
+}

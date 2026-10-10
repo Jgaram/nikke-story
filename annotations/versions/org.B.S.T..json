@@ -1,0 +1,24 @@
+{
+  "subject": "org:B.S.T.",
+  "versions": [
+    {
+      "at": "fl:reborn_evil",
+      "text": "방주에서 일어난 생물재해를 처리한다는 부서(Biohazard Strike Team) — 바이러스 사태에서 D가 이 소속의 '윈터스'로 자기를 소개했다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "1ef79c3875",
+          "note": "기록 없음 — fl:reborn_evil_20#75-90 D의 자기소개(생물재해 처리 부서), 1판"
+        }
+      ]
+    }
+  ]
+}

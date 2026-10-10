@@ -1,0 +1,43 @@
+{
+  "subject": "concept:사고_전환",
+  "versions": [
+    {
+      "at": "char:221",
+      "text": "니케의 뇌 정보가 바뀌는 일 — 보통은 정신적 충격으로 일어나고, 뇌가 노화한 니케는 쌓인 기억이 총량을 넘을 때 과부하를 막으려 저절로 일어난다.",
+      "src": "906eaad283",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "96b0e964b5",
+          "note": "char:221 F492 정의, fl:ark_guardian F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
+        }
+      ]
+    },
+    {
+      "at": "fl:ark_guardian",
+      "text": "극한 상황에서 NIMPH가 니케 뇌의 정보 · 감정을 필요한 것만 남겨 극대화해 재조립하는 일 — 대개는 정보가 꼬여 미치지만, 드물게 아귀가 맞는다.",
+      "src": "f837689844",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "121b242124",
+          "note": "char:221 F492 정의, fl:ark_guardian F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "subject": "org:근접_전투_스쿼드",
+  "versions": [
+    {
+      "at": "event_newyearnewsword",
+      "text": "1차 침공기 인류연합군이 근접 전투용으로 개량한 양산형 니케 10기의 스쿼드 — 리더 장화와 홍련이 속했다. 동료끼리 서로를 베어 궤멸했고, 상부는 이를 내전으로 덮었다.",
+      "src": "4dba6833ce",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "881fbeba61",
+          "note": "첫 자리 이벤트 F1229·F1231·F1239로 구성·궤멸·내전 처리까지 다 드러남. ch47 E1217은 보강이라 1판"
+        }
+      ]
+    }
+  ]
+}
