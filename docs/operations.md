@@ -117,7 +117,8 @@ SESSIONS.md "쓰는 법"대로 한다 — 첫 미완료 항목 하나, 중간 �
   - **PreToolUse(Bash)** — main이 아닌 브랜치로 가는 `git push`를 막는다(서브모듈 push 포함, 삭제는 허용). push 전 원문 검사(`no-raw-public.mjs`, CLAUDE.md "저작물 취급").
   - **Stop** — main에 안 올라간 커밋이 있으면 턴을 끝내지 못한다(`data/raw/`도). 커밋 안 된 변경은 경고만.
 - **원본 레포**(`data/raw/` = private `Jgaram/nikke-story-raw`, 그쪽도 main 하나) — SessionStart가 받지 못하면(세션에 붙어 있지 않으면) 그렇게 알려 온다.
-  `add_repo`로 붙이고 `node .claude/hooks/ensure-db.mjs`를 다시 돌린다. 원문 · DB가 필요 없는 일(문서 · 사이트 코드만)은 없어도 된다.
+  `add_repo`로 붙이고 `node .claude/hooks/ensure-db.mjs`를 다시 돌린다. 테스트가 DB를 쓰므로 문서 · 사이트 코드만 고치는 일도 붙인다
+  (없으면 DB를 쓰는 테스트 17개 파일이 "원문 없음"으로 실패한다 — `tests/raw.test.mjs`가 까닭을 먼저 보인다).
   - 수집기로 원문이 바뀌면 `git -C data/raw add -A && git -C data/raw commit -m … && git -C data/raw push origin main`으로 **먼저** 원본 레포에 올리고,
     그다음 이 레포에서 `git add data/raw`(포인터)를 커밋 · push한다. 순서를 바꾸면 남이 받을 수 없는 포인터가 올라간다.
   - 클라우드가 원본 레포를 따로 클론(`/home/user/nikke-story-raw`)해도 **그 클론에서는 작업하지 않는다** — 거기엔 훅이 없다. 원문 작업은 언제나 이 레포의 `data/raw/`에서 한다.

@@ -25,8 +25,13 @@
 - `main` 하나만 쓴다. 작업 단위가 끝나면 커밋하고 `git push origin main`(거절되면 `git pull --rebase origin main` 뒤 다시).
   세션에 배정된 `claude/*` 브랜치와 PR은 쓰지 않는다 — 사용자 규칙이라 배정 브랜치 지침보다 우선한다.
 - `data/raw/`(서브모듈)가 바뀌면 원본 레포에 **먼저** push하고 그다음 포인터를 커밋한다. 따로 클론된 `/home/user/nikke-story-raw`에서는 작업하지 않는다.
-- SessionStart가 원본 레포를 못 받았다고 하면 `add_repo`로 `Jgaram/nikke-story-raw`를 붙이고 `node .claude/hooks/ensure-db.mjs`.
 - 훅이 강제한다. 자세한 것은 docs/operations.md "git · 브랜치".
+
+## 원문 서브모듈 (반드시 지킬 것)
+
+- SessionStart가 원본 레포를 못 받았다고 하면 **다른 일보다 먼저** `add_repo`로 `Jgaram/nikke-story-raw`를 붙이고 `node .claude/hooks/ensure-db.mjs`.
+  사이트 · 문서만 고치는 일이어도 끝에 테스트를 돌리므로 붙인다.
+- 테스트가 "원문 없음"으로 실패하면 붙이고 다시 돌린다. 원문 없이 난 실패를 "원래 있던 실패"로 넘기지 않는다.
 
 ## 저작물 취급 (반드시 지킬 것)
 

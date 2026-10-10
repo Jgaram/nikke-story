@@ -39,6 +39,19 @@ const LOCK_MAX_AGE_MS = 10 * 60_000;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/**
+ * 원문 서브모듈(data/raw/, private Jgaram/nikke-story-raw)이 비었을 때의 안내. 클라우드 세션은 이 레포만 붙은 채로 시작하는 일이 있어
+ * 시작 훅이 서브모듈을 못 받는다. 그대로 빌드하면 ENOENT로 터져 "원래 있던 실패"로 오인되므로 까닭과 해결법을 먼저 말한다.
+ */
+export const RAW_MISSING = '원문 없음 — data/raw/ 서브모듈이 비어 DB를 만들 수 없다. 코드 문제가 아니다. '
+  + 'add_repo로 Jgaram/nikke-story-raw를 세션에 붙이고 `node .claude/hooks/ensure-db.mjs`를 돌린 뒤 다시 할 것. '
+  + '이 상태의 테스트 실패를 "원래 있던 실패"로 넘기지 않는다(CLAUDE.md "원문 서브모듈")';
+
+/** 원문 서브모듈을 받아 두었는가 */
+export function rawReady() {
+  return fs.existsSync(path.join(ROOT, 'data/raw/manifest.json'));
+}
+
 /** 입력 파일 전체의 지문. 경로 순으로 정렬해 디렉터리 순회 순서에 흔들리지 않게 한다 */
 export function inputsFingerprint() {
   const entries = [];
@@ -172,6 +185,7 @@ export async function ensureDb({ force = false, log = (m) => process.stderr.writ
     // 잠금을 기다리는 사이에 다른 프로세스가 만들었을 수 있다
     let status = await dbStatus();
     if (!force && status.fresh) return { built: false };
+    if (!rawReady()) throw new Error(RAW_MISSING);
     const reason = force ? '강제' : status.reason;
     log(`data/nikke.db 만드는 중 (${reason}) — 15초 남짓 걸린다`);
     const t0 = performance.now();
