@@ -548,7 +548,7 @@ export async function mount(root, ctx) {
   function updateStatus(s) {
     statusText.textContent = LABELS.count(fmt.num(counts.shown));
     ui.clear(statusNote);
-    if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut), () => state.set({ t: null })));
+    if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut)));
     jumpBtn.hidden = !(cur.view === 'list' && cutSlot != null && counts.shown > 0);
     ui.clear(emptyBox);
     const placedShown = byStory.some((c) => isOk(c.unit));
@@ -556,7 +556,6 @@ export async function mount(root, ctx) {
     if (!placedShown) {
       const msg = counts.shown === 0 ? LABELS.emptyAll : LABELS.emptyPlaced;
       const acts = [];
-      if (counts.cut && s.t != null) acts.push(el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, `${fmt.hiddenLabel(counts.cut)} — ${fmt.TERM.showAll}`));
       if (counts.filter) acts.push(el('button', { type: 'button', class: 'btn', onClick: () => state.set({ p: { kind: null, find: null, drift: null } }) }, LABELS.clearFilters));
       emptyBox.append(el('span', {}, msg), ...acts);
     }

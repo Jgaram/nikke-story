@@ -170,7 +170,7 @@ export async function mount(root, ctx) {
 
   // ── 작은 조각 ──
   const dots = (items) => items.filter(Boolean).flatMap((x, i) => (i ? [h('span', { class: 'w-dot', 'aria-hidden': 'true' }, '·'), x] : [x]));
-  const hiddenNote = (cutHidden) => (cutHidden ? h('div', { class: 'w-hidden' }, ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null }))) : null);
+  const hiddenNote = (cutHidden) => (cutHidden ? h('div', { class: 'w-hidden' }, ui.hiddenNote(fmt.hiddenLabel(cutHidden))) : null);
   const kindText = (u) => (u && u.kind !== 'main' ? h('span', { class: 'w-kind', title: fmt.help('kind', u.kind) }, fmt.KIND[u.kind]?.label ?? u.kind) : null);
   const itemLink = (id) => {
     if (byId.has(id)) {
@@ -636,8 +636,7 @@ export async function mount(root, ctx) {
     const v = viewOf(e, c);
     if (!v.cutOk) {
       const t0 = tick0.get(e.id);
-      detailEl.append(h('div', { class: 'w-locked' }, h('h3', {}, LABELS.notYet), t0 != null ? h('p', { class: 'muted' }, state.visible(t0, c.R.t) ? LABELS.skippedNote : LABELS.notYetNote(whenLabel(t0))) : null,
-        h('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
+      detailEl.append(h('div', { class: 'w-locked' }, h('h3', {}, LABELS.notYet), t0 != null ? h('p', { class: 'muted' }, state.visible(t0, c.R.t) ? LABELS.skippedNote : LABELS.notYetNote(whenLabel(t0))) : null));
       return;
     }
     detail = buildDetail(e);
@@ -685,7 +684,7 @@ export async function mount(root, ctx) {
       const hiddenByCut = !pool.length && Number.isFinite(next);
       lifeList.append(h('div', { class: 'w-empty' },
         h('p', { class: 'muted' }, hiddenByCut ? LABELS.lifeEmpty(whenLabel(next)) : LABELS.lifeEmptyAll),
-        hiddenByCut ? h('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: next }) }, LABELS.raiseTo(fmt.tickShort(next))) : null,
+        hiddenByCut ? h('button', { type: 'button', class: 'btn', onClick: () => state.askCutoff({ t: next }) }, LABELS.raiseTo(fmt.tickShort(next))) : null,
         !hiddenByCut && (P.find || P.topic) ? h('button', { type: 'button', class: 'btn', onClick: () => setP({ find: null, topic: null }) }, LABELS.clearFilters) : null));
       return;
     }

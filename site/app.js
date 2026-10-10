@@ -199,7 +199,18 @@ function cutoffControl(idx, firstVisit) {
     dlg.showModal();
     slider.focus();
   };
-  btn.addEventListener('click', open);
+  btn.addEventListener('click', () => open());
+  // 탭의 'CH.xx까지 읽음으로' 같은 단추 — 더 보이게 되면 바로 재확인 화면으로, 아니면 그대로 적용
+  state.onAskCutoff((patch) => {
+    const s = state.get();
+    draft = pick({ t: 't' in patch ? patch.t : s.t, x: 'x' in patch ? patch.x : s.x });
+    draft.x = state.normalizeX(draft.x, draft.t);
+    if (!newlySeen()) { state.set({ t: draft.t, x: draft.x }); return; }
+    laterBtn.hidden = true;
+    syncDraft();
+    dlg.showModal();
+    commit();
+  });
   sync(state.get());
   state.subscribe((s, changed) => { if (changed.has('t')) sync(s); });
 

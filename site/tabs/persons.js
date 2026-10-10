@@ -72,7 +72,7 @@ const LABELS = {
   hiddenPeople: (n) => `인물 ${n}명`,
   hiddenStories: (n) => `스토리 ${n}편`,
   notYet: '아직 나오지 않은 인물이다.',
-  notYetHelp: '여기까지 읽음을 올리거나 전부 보기를 켜면 볼 수 있다.',
+  notYetHelp: '위의 여기까지 읽음을 올리면 볼 수 있다.',
   detail: '인물 상세',
   alias: '다른 이름',
   same: '같은 인물',
@@ -440,7 +440,7 @@ export async function mount(root, ctx) {
       if (hiddenPersons) parts.push(LABELS.hiddenPeople(fmt.num(hiddenPersons)));
       if (!isDex() && a?.visible && a.cut) parts.push(LABELS.hiddenStories(fmt.num(a.cut)));
     }
-    if (parts.length) note.append(ui.hiddenNote(`${TERM.spoiler}로 가린 ${parts.join(' · ')}`, () => state.set({ t: null })));
+    if (parts.length) note.append(ui.hiddenNote(`${TERM.spoiler}로 가린 ${parts.join(' · ')}`));
     note.hidden = !note.childNodes.length;
   };
 
@@ -523,7 +523,7 @@ export async function mount(root, ctx) {
         el('div', { class: 'pm-title-name' }, el('h3', {}, p.name), p.kind && p.kind !== '인물' ? el('span', { class: 'pm-kind' }, p.kind) : null),
         ui.orgMarks(fmt.orgsAt(tg, V.T, { past: true }), { size: 18, class: 'pm-title-orgs' }),
         facts.length ? el('div', { class: 'pm-facts' }, facts) : null)));
-    if (!a.visible) head.append(ui.notice(`${LABELS.notYet} ${LABELS.notYetHelp}`, 'info'), el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, TERM.showAll));
+    if (!a.visible) head.append(ui.notice(`${LABELS.notYet} ${LABELS.notYetHelp}`, 'info'));
   };
 
   // ── 칸마다 쓰는 고르기(칸을 숨길지와 그림이 같은 것을 본다) ──

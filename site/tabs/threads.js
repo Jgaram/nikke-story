@@ -1036,7 +1036,7 @@ export async function mount(root, ctx) {
   };
 
   // ── 머리: 제목 · 지표 · 이어진 떡밥 · 항목 ──
-  const goT = (tick) => state.set({ t: tick });
+  const goT = (tick) => state.askCutoff({ t: tick });
   const renderHead = () => {
     const j = currentId();
     const th = byId.get(j);
@@ -1124,7 +1124,7 @@ export async function mount(root, ctx) {
     if (reading().all) return;
     const hiddenThreads = threads.filter((t) => !stats.get(t.id).started).length;
     const parts = [hiddenThreads ? LABELS.hiddenThreads(fmt.num(hiddenThreads)) : null, model?.spoiled ? LABELS.hiddenSteps : null].filter(Boolean);
-    if (parts.length) noteEl.append(ui.hiddenNote(LABELS.hiddenNote(parts.join(' · ')), () => state.set({ t: null })));
+    if (parts.length) noteEl.append(ui.hiddenNote(LABELS.hiddenNote(parts.join(' · '))));
   };
 
   /** 흐름 영역 전체를 지금 상태로 */
@@ -1149,13 +1149,12 @@ export async function mount(root, ctx) {
         const t0 = Math.min(...[...startTick.values()].filter((x) => x != null));
         const n0 = [...startTick.values()].filter((x) => x === t0).length;
         emptyEl.append(ui.el('p', {}, `${LABELS.noneStarted} — ${LABELS.startsCount(fmt.tickShort(t0), n0)}`), ui.el('div', { class: 'thr-empty-actions' },
-          ui.el('button', { type: 'button', class: 'btn', onClick: () => goT(t0) }, LABELS.raiseCutoff(fmt.tickShort(t0))),
-          ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
+          ui.el('button', { type: 'button', class: 'btn', onClick: () => goT(t0) }, LABELS.raiseCutoff(fmt.tickShort(t0)))));
       } else if (first != null && state.visible(first, cutoff())) {
         // 자리로는 지났다 — 안 봤다고 체크한 척추 이벤트 · 사이드에서 나오는 떡밥
         const us = startUnits(j);
         emptyEl.append(ui.el('p', {}, `${LABELS.notStarted} — ${LABELS.startsIn(us.map(fmt.unitTitle).join(' · '))}`), ui.el('div', { class: 'thr-empty-actions' },
-          us.length ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ x: { ...(state.get().x ?? {}), ...Object.fromEntries(us.map((u) => [u, true])) } }) }, LABELS.markSeen) : null,
+          us.length ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.askCutoff({ x: { ...(state.get().x ?? {}), ...Object.fromEntries(us.map((u) => [u, true])) } }) }, LABELS.markSeen) : null,
           ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ p: { j: startedThreads()[0].id } }) }, LABELS.pick)));
       } else {
         emptyEl.append(ui.el('p', {}, first != null ? `${LABELS.notStarted} — ${LABELS.startsAt(fmt.tickShort(first))}` : LABELS.notStarted), ui.el('div', { class: 'thr-empty-actions' },

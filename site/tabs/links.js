@@ -83,7 +83,6 @@ const LABELS = {
   recenter: '중심으로',
   recenterTitle: '이 스토리를 가운데로 놓고 보기',
   more: (n) => `더 보기 (${n})`,
-  showAll: '전부 보기',
   noNeighbors: '이 스토리와 이어진 스토리가 없다',
   noNeighborsFiltered: '필터에 걸리는 연결이 없다',
   allHidden: '이어진 스토리가 모두 스포일러로 가려져 있다',
@@ -550,14 +549,13 @@ export async function mount(root, ctx) {
   let alive = true;
 
   const resetFilters = () => setP({ ty: null, s: null, tg: null, th: null, kd: null, mm: null, nn: null, n: null, lt: null, pr: null });
-  const showAll = () => state.set({ t: 'all' });
-  /** 스포일러 안내 한 줄 + 전부 보기 단추(가린 것이 있을 때만) */
-  const hiddenNote = (cut) => (cut > 0 ? [ui.hiddenNote(fmt.hiddenLabel(cut), showAll)] : []);
+  /** 스포일러 안내 한 줄(가린 것이 있을 때만) */
+  const hiddenNote = (cut) => (cut > 0 ? [ui.hiddenNote(fmt.hiddenLabel(cut))] : []);
   function emptyState(text, { cut = 0, filtered = false } = {}) {
     return h('div', { class: 'lk-empty-state' },
       h('p', {}, text),
       h('div', { class: 'lk-empty-actions' },
-        cut > 0 ? h('button', { type: 'button', class: 'btn', onClick: showAll }, `${fmt.hiddenLabel(cut)} — ${LABELS.showAll}`) : null,
+        cut > 0 ? ui.hiddenNote(fmt.hiddenLabel(cut)) : null,
         filtered ? h('button', { type: 'button', class: 'btn', onClick: resetFilters }, LABELS.resetFilters) : null));
   }
   const filtered = (f) => Boolean((f.types && f.mode !== 'net') || f.minS !== 2 || f.tg || f.th || f.kinds);
