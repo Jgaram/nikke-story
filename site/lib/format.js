@@ -34,6 +34,7 @@
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   blurbText(b, seen)              팬용 문장(blurbs.json 칸 { text, later?, gate? }) — text, gate를 봤으면(seen(gate)) 뒤에 later까지. 다듬어 쓴 문장이라 prose를 거치지 않는다
+ *   versionAt(list, R) · threadAt(j, R)   시점별 판(W15c — versions.json, 떡밥 j.v) — 앞 판들의 at을 다 본 마지막 판 · 그 자리 떡밥 제목 · 요약(판이 없으면 끝까지 봤을 때만 분석용 이름)
  *   num(n) · pct(x) · date(s)
  */
 
@@ -679,6 +680,34 @@ export function reasonText(text) {
 export function blurbText(b, seen) {
   if (!b?.text) return '';
   return b.later && b.gate && seen(b.gate) ? `${b.text} ${b.later}` : b.text;
+}
+/**
+ * 시점별 판(W15c) — 판 목록 [{ at, title, text }](읽는 순서)에서 그 자리에 보일 판: 앞에서부터 at을 본(R.seen) 판이 이어지는 데까지의 마지막 판.
+ * 뒤 판은 앞 판들의 내용 위에 쓰므로 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수)를 안 고른 독자는 그 at의 판 앞에서 멈춘다.
+ * 전부 보기(R.all · R 없음)면 마지막 판. 첫 판(at = 떡밥이 처음 나온 스토리)을 안 봤으면 null — 떡밥이 아직 안 나왔다.
+ */
+export function versionAt(list, R) {
+  if (!Array.isArray(list) || !list.length) return null;
+  if (!R || R.all) return list.at(-1);
+  let pick = null;
+  for (const v of list) {
+    if (!R.seen(v.at)) break;
+    pick = v;
+  }
+  return pick;
+}
+/**
+ * 떡밥의 그 자리 제목 · 요약 — { title, text, at, of }(at = 고른 판의 자리, of = 판 수). 판(j.v)이 있으면 versionAt,
+ * 없으면(아직 안 씀 · 낡아서 빠짐) 분석용 이름(j.title · j.text)은 결말을 아는 자리에서 쓴 것이라 전부 보기이거나 떡밥의 마지막 스토리를 봤을 때만.
+ * 보일 글이 없으면 title · text가 null — 화면은 '아직 나오지 않은 떡밥' 같은 자리 글을 쓴다(W15d).
+ */
+export function threadAt(j, R) {
+  if (!j) return null;
+  const list = Array.isArray(j.v) ? j.v : [];
+  const v = versionAt(list, R);
+  if (v) return { title: v.title, text: v.text, at: v.at, of: list.length };
+  if (!list.length && (!R || R.all || (j.last_unit && R.seen(j.last_unit)))) return { title: j.title, text: j.text, at: null, of: 0 };
+  return { title: null, text: null, at: null, of: list.length };
 }
 /** 문장 · ' — ' 마디(괄호 밖) 가운데 bad에 걸린 마디를 뺀다 — 이미 prose를 거친 문장에. 한글 6자 못 되게 남은 문장도 뺀다 */
 export function dropClauses(s, bad) {

@@ -90,6 +90,7 @@ node tools/records.mjs progress [--read2]   # 단위별 진행률 (그 밖: new 
 node tools/views/draft.mjs                  # 기록 → 분석 시안 data/views/ (연대기 · 중요도 · 연결 · 인물 · 결말 … 같이 뽑는다)
 node tools/synopsis.mjs check --all         # 공개 개요 검사 (new · set · progress)
 node tools/blurbs.mjs progress              # 팬용 문장(분류 이유 · 연대기 추정 이유) (new · check · set)
+node tools/versions.mjs progress            # 시점별 판(떡밥 제목 · 요약을 읽은 자리마다) (new · check · set)
 ```
 
 **사이트** — 빌드 도구 없는 정적 사이트(HTML + ES 모듈, CDN d3 하나). `site/`가 바뀌어 main에 올라가면 Actions가 Pages로 배포한다.
@@ -120,7 +121,7 @@ node tools/check-quotes.mjs             # 공개될 파일에서 원문과 40자
 docs/           문서 — 운용 · 도구 · 데이터 소스 · 기록 형식 · 화면 · 스키마 · 중요도, history/ = 지난 세션 기록
 annotations/    우리가 쓴 기록 (공개)
                 read1/ · read2/   1회독 · 2회독 기록 (단위마다 JSON) · 인계 파일
-                synopsis/         공개 개요 · blurbs/ 팬용 문장
+                synopsis/         공개 개요 · blurbs/ 팬용 문장 · versions/ 시점별 판
                 dictionary/       인물 사전 · 이름표 분류 · 비인물 사전(조직 · 개념 · 장소 · 물건 · 사건)
                 threads · spine · layers · links · leads · majors · closures · chronology · affiliations · portraits …
                 scope.json (분석 범위) · aliases.json (시트 ↔ 데이터 표기 대조)
@@ -136,7 +137,7 @@ tools/
                 query.mjs · read.mjs                      질의 · 원문 읽기 CLI
                 records.mjs + records/                    1회독 · 2회독 기록 도구
                 views/       분석 시안 계산 (draft.mjs가 묶어 부른다)
-                synopsis.mjs · blurbs.mjs                 공개 개요 · 팬용 문장 도구
+                synopsis.mjs · blurbs.mjs · versions.mjs  공개 개요 · 팬용 문장 · 시점별 판 도구
                 site/        사이트 내보내기 · 인물 아이콘 · 로컬 서버
                 lib/         공유 모듈 — 줄 표기 · 단위 키 · 언급
 site/           공개 사이트 (GitHub Pages) — index.html · app.js · tabs/ 탭별 모듈 · data/ 내보낸 JSON · img/

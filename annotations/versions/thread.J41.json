@@ -1,0 +1,45 @@
+{
+  "subject": "thread:J41",
+  "versions": [
+    {
+      "at": "char:212",
+      "title": "퍼펙트",
+      "text": "방주 먹거리의 대부분을 이루는 정체 모를 인공 식량 퍼펙트는 무엇으로 만드나.",
+      "src": "4efc003544",
+      "session": "W15c",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15c",
+          "hash": "2ab0801cda",
+          "note": "W15c 시안 — 판마다 at까지의 흐름(제기 · 회수 기록)만으로 썼는지, 뒤 이름 · 묶음 암시가 없는지 다시 봄"
+        }
+      ]
+    },
+    {
+      "at": "event_newflavor",
+      "title": "퍼펙트 — 공장에서 사라진 니케",
+      "text": "퍼펙트의 주재료는 지상 것은 아니지만 불행하게도 있는 무언가다 — 맛이 이상해진 때 공장에서 흔적 없이 사라진 양산형 니케는 어떻게 되었나.",
+      "src": "cc6d6efd18",
+      "session": "W15c",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15c",
+          "hash": "644c4bb345",
+          "note": "W15c 시안 — 판마다 at까지의 흐름(제기 · 회수 기록)만으로 썼는지, 뒤 이름 · 묶음 암시가 없는지 다시 봄"
+        }
+      ]
+    }
+  ]
+}

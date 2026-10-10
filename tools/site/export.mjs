@@ -22,7 +22,7 @@ import { openDb } from '../normalize/ensure-db.mjs';
 import { buildUnits } from '../lib/units.mjs';
 import { ROOT, inputsFingerprint, loadRecords, readCsv, writeJson } from './lib.mjs';
 
-const MODULES = ['common', 'order', 'links', 'threads', 'persons', 'chrono', 'world', 'synopsis', 'blurbs'];
+const MODULES = ['common', 'order', 'links', 'threads', 'persons', 'chrono', 'world', 'synopsis', 'blurbs', 'versions'];
 export const SITE_DATA = path.join(ROOT, 'site/data');
 
 /**

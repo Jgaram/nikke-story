@@ -160,7 +160,7 @@ export const sentenceCount = (t) => (String(t).trim().match(/[.?!…](?=\s|$)/g)
  * @param {{ part: string, unit: string|null, units: Map|null, range: number[], max: number, sentences: number|null, laterHint: string }} o
  *   unit = 이름을 잴 기준 단위(text는 그 단위, later는 gate)
  */
-function textProblems(text, { part, unit, units, range, max, sentences, laterHint }) {
+export function textProblems(text, { part, unit, units, range, max, sentences, laterHint }) {
   const errors = [];
   const warnings = [];
   const n = chars(text);

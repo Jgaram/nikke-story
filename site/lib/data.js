@@ -8,7 +8,7 @@
  * idx = {
  *   manifest, unitList, units(key → unit), tickList, ticks(tick → tick), scenes(id → scene), scenesOf(unit → scene[]),
  *   tickOf(unitKey) → tick, unitOf(sceneId) → unit, mainTicks(메인 챕터만 — 슬라이더 눈금),
- *   targets(id → target), targetList, threads(id → thread), threadList, relations, slips, slipsOf(unit → slip[]),
+ *   targets(id → target), targetList, threads(id → thread — 시점별 판이 있으면 v[], W15c), threadList, relations, slips, slipsOf(unit → slip[]),
  *   hasRecords, records(id → record) | null, recordList, recordsOf(scene → record[]), recordsOfUnit(unit → record[]),
  *   eventsOf(root → event[]), recordsOfThread(J → record[]), recordsAbout(target → record[]), withRecords() → Promise<idx>
  * }
@@ -51,7 +51,7 @@ const push = (m, k, v) => (m.get(k) ?? m.set(k, []).get(k)).push(v);
 let idx = null;
 let idxPromise = null;
 
-function buildCore({ manifest, units, ticks, scenes, targets, threads, slips }) {
+function buildCore({ manifest, units, ticks, scenes, targets, threads, slips, versions = null }) {
   const unitMap = new Map(units.map((u) => [u.key, u]));
   const tickMap = new Map(ticks.map((t) => [t.tick, t]));
   const sceneMap = new Map(scenes.map((s) => [s.id, s]));
@@ -61,6 +61,8 @@ function buildCore({ manifest, units, ticks, scenes, targets, threads, slips }) 
   for (const s of slips) push(slipsOf, s.unit, s);
   const targetMap = new Map(targets.map((t) => [t.id, t]));
   const threadMap = new Map(threads.threads.map((j) => [j.id, j]));
+  // 시점별 판(W15c — versions.json) — 떡밥마다 j.v = [{ at, title, text }](읽는 순서). 고르는 것은 fmt.threadAt
+  for (const [id, list] of Object.entries(versions?.threads ?? {})) if (threadMap.has(id)) threadMap.get(id).v = list;
   const mainTicks = ticks.filter((t) => t.main);
   return {
     manifest,
@@ -112,10 +114,10 @@ function addRecords(core, list) {
 export async function index({ records = false } = {}) {
   if (!idxPromise) {
     idxPromise = (async () => {
-      const [manifest, units, ticks, scenes, targets, threads, slips] = await Promise.all([
-        load('manifest').catch(() => null), load('units'), load('ticks'), load('scenes'), load('targets'), load('threads'), load('slips').catch(() => []),
+      const [manifest, units, ticks, scenes, targets, threads, slips, versions] = await Promise.all([
+        load('manifest').catch(() => null), load('units'), load('ticks'), load('scenes'), load('targets'), load('threads'), load('slips').catch(() => []), load('versions').catch(() => null),
       ]);
-      idx = buildCore({ manifest, units, ticks, scenes, targets, threads, slips });
+      idx = buildCore({ manifest, units, ticks, scenes, targets, threads, slips, versions });
       let recordsPromise = null;
       idx.withRecords = () => {
         if (!recordsPromise) {
