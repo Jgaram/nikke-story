@@ -7,7 +7,7 @@
  *   t       컷오프 공개 자리(숫자) · 'all'(끔). 처음 열면 CH.00의 자리(공개 사이트라 기본 켬 — W0). 바꾼 값은 localStorage에 남아 다음 방문에 쓴다
  *   x       척추 이벤트 · 사이드(units.json spine이고 메인이 아닌 것)의 '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다.
  *           순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10). t가 바뀌면 새 기본과 같아진 예외는 지운다. localStorage에도 남는다
- *   layers  층 거르개 '1,2' (없으면 셋 다)
+ *   layers  늘 [1, 2, 3] — 범위 거르개는 뺐다(URL의 layers는 무시)
  *   q       검색어
  *   sel     선택 '종류:ID' — unit:ch07 · scene:d_main_07_02 · record:F203 · person:person:라피 · target:place:방주 · thread:J1 · tick:20
  *           있으면 리더 패널이 열린다. 첫 콜론까지가 종류, 나머지가 ID(ID에 콜론이 있어도 된다)
@@ -96,15 +96,8 @@ function parseT(v) {
   const n = Number(v);
   return Number.isFinite(n) && n > 0 ? Math.trunc(n) : undefined;
 }
-function parseLayers(v) {
-  if (Array.isArray(v)) return normLayers(v);
-  if (v == null || v === '') return ALL_LAYERS;
-  return normLayers(String(v).split(','));
-}
-function normLayers(xs) {
-  const out = ALL_LAYERS.filter((l) => xs.map(Number).includes(l));
-  return out.length ? out : ALL_LAYERS;
-}
+// 범위(층) 거르개는 상단 바에서 뺐다(사용자, 2026-10-10 — 탭의 등급 · 종류 거르개와 겹친다). 늘 셋 다 — 옛 URL의 layers는 무시한다.
+function parseLayers() { return ALL_LAYERS; }
 
 function parseHash(hash) {
   const sp = new URLSearchParams(hash.replace(/^#/, ''));
@@ -127,7 +120,6 @@ function toHash(s) {
   sp.set('tab', s.tab);
   sp.set('t', s.t == null ? 'all' : String(s.t));
   if (s.t != null && Object.keys(s.x).length) sp.set('x', xString(s.x));
-  if (s.layers.length !== ALL_LAYERS.length) sp.set('layers', s.layers.join(','));
   if (s.q) sp.set('q', s.q);
   if (s.sel) sp.set('sel', s.sel);
   for (const [k, v] of Object.entries(s.p)) if (v != null && v !== '') sp.set(`p.${k}`, String(v));

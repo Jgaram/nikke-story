@@ -1,5 +1,5 @@
 /**
- * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 단추 + 팝업 · 범위 · 테마) · 탭 nav(첫 방문이면 여기까지 읽음 팝업이 뜬다) → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
+ * 부팅(W1) — URL 상태 복원 → 상단 바(검색 · 여기까지 읽음 단추 + 팝업 · 테마) · 탭 nav(첫 방문이면 여기까지 읽음 팝업이 뜬다) → 탭 모듈 동적 import → mount. 리더 패널은 sel로 연다.
  * 탭 모듈 규약 · ctx는 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)". 화면에 보이는 말은 lib/format.js의 라벨을 쓴다.
  */
 import * as state from './lib/state.js';
@@ -166,19 +166,6 @@ function cutoffControl(idx, firstVisit) {
   else firstVisit = false;
 }
 
-// ── 범위(핵심 · 넓게 · 전부) ──
-function scopeControl() {
-  const wrap = $('#layers');
-  const seg = ui.segmented({
-    label: fmt.TERM.scope,
-    value: fmt.scopeOf(state.get().layers),
-    options: fmt.SCOPE.map((o) => ({ value: o.value, label: o.label, title: o.help })),
-    onChange: (v) => state.set({ layers: fmt.SCOPE.find((o) => o.value === v).layers }),
-  });
-  wrap.append(ui.el('span', { class: 'ctl-name', title: fmt.TERM_HELP.scope }, fmt.TERM.scope), seg.el);
-  state.subscribe((s, changed) => { if (changed.has('layers')) seg.set(fmt.scopeOf(s.layers)); });
-}
-
 // ── 탭 nav ──
 function tabNav() {
   const nav = $('#tabs');
@@ -273,7 +260,6 @@ async function boot() {
   state.configure({ units: idx.units });
   state.init({ defaultCutoff: ch00 });
   cutoffControl(idx, firstVisit);
-  scopeControl();
   tabNav();
   footer(idx);
   reader.init({ root: $('#reader'), state, data, fmt, ui });
