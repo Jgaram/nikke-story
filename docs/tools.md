@@ -55,6 +55,10 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
 서브퀘스트 · 유실물은 공지에 개방 기록이 없어 순서표에 없다. 대신 지역(= 챕터)을 `annotations/subquest-regions.json` ·
 `annotations/relic-regions.json`에 근거 · 확신도와 함께 두고, 그 챕터 바로 뒤에 읽는다(TODO.md 결정 #9).
 읽기 순서(docs/history/reading.md R · M)는 이 순서표 + 두 지역 파일로 짠 출시순 한 줄이다.
+**자리의 원본은 지역 파일이다**(S1, 2026-10-10): 1회독 항목에는 몰아 읽은 자리(ch06 뒤 서브퀘스트 · 유실물 묶음)와 옛 지역이 남아 있지만,
+항목은 "어느 세션이 무엇을 읽었나" 기록이라 고쳐 쓰지 않는다. `loadOrder()`(1회독 순서 — 뷰 · 사이트 · 검증기 전부)가 `placeByRegion`으로
+서브퀘스트 · 유실물을 지역 챕터 블록 끝으로 다시 놓는다(이미 제 블록에 있는 것은 그대로 — 블록 안 차례 유지). 항목 그대로가 필요하면 `loadOrder(..., { region: false })`.
+지역 파일을 고치면 → 뒤집힌 기록 찾기(사실 정의는 처음 드러난 곳이어야 한다 — `node --test`의 "읽는 순서를 거슬러 간다"가 잡는다) → `records.mjs handoff` → 다시 뽑기.
 
 ```bash
 node tools/notices/fetch.mjs            # 새 공지 · 제목이 바뀐 공지 · 최근 45일 공지만 받는다 (--force 전부)

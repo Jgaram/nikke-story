@@ -49,7 +49,7 @@
 
 ## ⓒ 빌드업 마무리 — 척추 단위마다 긴 회수 · 복선의 답 (X3f-1d가 판정 입력 · 화면에 띄운다)
 
-- `event_overzone` — 긴 회수 1: Q33(relic:갓데스스쿼드리포트, 29칸 뒤 Q33-3) · 복선의 답 1: F914(← E1272@char:220)
+- `event_overzone` — 긴 회수 1: Q33(relic:갓데스스쿼드리포트, 31칸 뒤 Q33-3) · 복선의 답 1: F914(← E1272@char:220)
 - `event_redash` — 긴 회수 0 · 복선의 답 5: F1142(← E38@relic:갓데스스쿼드리포트) · F1148(← E39@relic:갓데스스쿼드리포트) · F1161(← E206@erelic:white_memory) · F1163(← E194@event_overzone) · F1172(← E192@event_overzone)
 - `event_newyearnewsword` — 긴 회수 1: Q90(char:222, 42칸 뒤 Q90-3) · 복선의 답 1: F1238(← E1284@char:222 E282@event_redash 외 1)
 - `event_lastkingdom1` — 긴 회수 0 · 복선의 답 4: F1435(← E202@event_overzone) · F1436(← E365@side:second_affection) · F1438(← E364@side:second_affection) · F1452(← E1297@char:260)

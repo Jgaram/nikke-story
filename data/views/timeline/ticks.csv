@@ -1,30 +1,30 @@
 tick,date,main,count,units
 1,2022-11-04,ch00,1,ch00
-2,2022-11-04,ch01,1,ch01
-3,2022-11-04,ch02,3,ch02 sub:칠리페퍼_00 sub:테트라_커넥트_00
-4,2022-11-04,ch03,2,ch03 sub:세르반_00
-5,2022-11-04,ch04,1,ch04
-6,2022-11-04,ch05,2,ch05 sub:중앙_정부_공식__00
-7,2022-11-04,ch06,31,ch06 relic:어느남자의수기 sub:콜렉터_00 sub:콜렉터_01 relic:생존가이드1 relic:통화기록017515 relic:방주추첨권 sub:트레저_헌터_00 sub:트레저_헌터_01 sub:트레저_헌터_02 sub:트레저_헌터_03 sub:이례의_기록자_00 sub:랩칠리언_00 sub:랩칠리언_01 sub:랩칠리언_02 sub:랩칠리언_03 sub:랩칠리언_04 sub:랩칠리언_05 sub:랩칠리언_06 sub:할아범_00 relic:갓데스스쿼드리포트 sub:고스트_00 sub:시리얼_00 sub:시리얼_01 sub:산해진미_00 sub:산해진미_01 relic:니케실험대상자모집 relic:통화기록028594 sub:세르반_01 sub:저스틴_00 relic:니케실험반대피켓
-8,2022-11-04,ch07,8,ch07 sub:중앙_정부_공식__01 sub:세르반_02 sub:스페이드_00 sub:러블리_드림_00 sub:러블리_드림_01 relic:채팅로그_얼리어답터 d_ex_elevator_01
-9,2022-11-04,ch08,5,ch08 sub:칠리페퍼_01 sub:든_셀_00 relic:광고팜플렛 relic:UFO챈.zip
-10,2022-11-04,ch09,7,ch09 sub:테디_00 sub:미실리스_연구팀_00 sub:미실리스_연구팀_01 sub:미실리스_연구팀_02 sub:미실리스_연구팀_03 relic:지휘관모집공고
-11,2022-11-04,ch10,6,ch10 sub:코리_00 sub:롬_00 sub:롬_01 sub:롬_02 relic:어느소녀의수기
-12,2022-11-04,ch11,5,ch11 sub:음악_애호가_00 sub:음악_애호가_01 relic:기업-랩쳐음모론 relic:구시대의플레이리스트
-13,2022-11-04,ch12,3,ch12 sub:숲속요정_00 relic:어느의사의수기
-14,2022-11-04,ch13,4,ch13 sub:세르반_03 sub:철도로GO_00 relic:여자친구의편지
-15,2022-11-04,ch14,5,ch14 sub:칠리페퍼_02 sub:알콜러버_00 relic:기후변화보고서 relic:인터넷BJ라이브방송녹화분
-16,2022-11-04,ch15,2,ch15 relic:종말의서
-17,2022-11-04,ch16,59,ch16 sub:방주_난민_00 sub:방주_난민_01 sub:방주_난민_02 sub:방주_난민_03 relic:장보기목록 char:180 char:11 char:212 char:232 char:430 char:20 char:202 char:101 char:72 char:221 char:10 char:190 char:200 char:82 char:102 char:130 char:181 char:32 char:61 char:161 char:141 char:91 char:60 char:431 char:70 char:80 char:71 char:140 char:220 char:22 char:12 char:432 char:172 char:191 char:201 char:291 char:241 char:210 char:90 char:160 char:150 char:171 char:92 char:231 char:110 char:131 char:30 char:242 char:170 char:142 char:230 char:222 char:120
+2,2022-11-04,ch01,2,ch01 relic:어느남자의수기
+3,2022-11-04,ch02,6,ch02 sub:칠리페퍼_00 sub:테트라_커넥트_00 sub:콜렉터_00 relic:생존가이드1 relic:통화기록017515
+4,2022-11-04,ch03,5,ch03 sub:세르반_00 sub:트레저_헌터_00 sub:랩칠리언_00 relic:방주추첨권
+5,2022-11-04,ch04,5,ch04 sub:트레저_헌터_01 sub:이례의_기록자_00 sub:랩칠리언_01 relic:갓데스스쿼드리포트
+6,2022-11-04,ch05,6,ch05 sub:중앙_정부_공식__00 sub:고스트_00 sub:랩칠리언_02 relic:니케실험대상자모집 relic:통화기록028594
+7,2022-11-04,ch06,5,ch06 sub:랩칠리언_03 sub:세르반_01 relic:니케실험반대피켓 sub:코리_00
+8,2022-11-04,ch07,6,ch07 sub:중앙_정부_공식__01 sub:세르반_02 relic:채팅로그_얼리어답터 d_ex_elevator_01 sub:랩칠리언_04
+9,2022-11-04,ch08,6,ch08 sub:칠리페퍼_01 relic:광고팜플렛 relic:UFO챈.zip sub:콜렉터_01 sub:할아범_00
+10,2022-11-04,ch09,5,ch09 sub:미실리스_연구팀_00 relic:지휘관모집공고 sub:트레저_헌터_02 sub:김작가_00
+11,2022-11-04,ch10,5,ch10 sub:롬_00 relic:어느소녀의수기 sub:시리얼_00 sub:스페이드_00
+12,2022-11-04,ch11,6,ch11 sub:음악_애호가_00 relic:기업-랩쳐음모론 relic:구시대의플레이리스트 sub:산해진미_00 sub:저스틴_00
+13,2022-11-04,ch12,5,ch12 relic:어느의사의수기 sub:러블리_드림_00 sub:든_셀_00 sub:테디_00
+14,2022-11-04,ch13,5,ch13 sub:세르반_03 sub:철도로GO_00 relic:여자친구의편지 sub:미실리스_연구팀_01
+15,2022-11-04,ch14,6,ch14 sub:칠리페퍼_02 relic:기후변화보고서 relic:인터넷BJ라이브방송녹화분 sub:롬_01 sub:방주_난민_00
+16,2022-11-04,ch15,5,ch15 relic:종말의서 sub:방주_난민_01 sub:방주_난민_02 sub:제니퍼f_00
+17,2022-11-04,ch16,58,ch16 sub:방주_난민_03 relic:장보기목록 sub:트레저_헌터_03 sub:랩칠리언_05 char:180 char:11 char:212 char:232 char:430 char:20 char:202 char:101 char:72 char:221 char:10 char:190 char:200 char:82 char:102 char:130 char:181 char:32 char:61 char:161 char:141 char:91 char:60 char:431 char:70 char:80 char:71 char:140 char:220 char:22 char:12 char:432 char:172 char:191 char:201 char:291 char:241 char:210 char:90 char:160 char:150 char:171 char:92 char:231 char:110 char:131 char:30 char:242 char:170 char:142 char:230 char:222 char:120
 18,2022-11-10,,2,event_nocallerid char:352
-19,2022-11-24,ch17,4,ch17 sub:제니퍼f_00 relic:모바일_보이스피싱_광고_모음.zip relic:니케제작보고서요약본
-20,2022-11-24,ch18,7,ch18 sub:테트라_커넥트_01 sub:중앙_정부_공식__02 sub:김작가_00 relic:XX중학교가정통신문 event_hightechtoy char:100
+19,2022-11-24,ch17,6,ch17 relic:모바일_보이스피싱_광고_모음.zip relic:니케제작보고서요약본 sub:랩칠리언_06 sub:숲속요정_00 sub:알콜러버_00
+20,2022-11-24,ch18,7,ch18 sub:테트라_커넥트_01 sub:중앙_정부_공식__02 relic:XX중학교가정통신문 sub:시리얼_01 event_hightechtoy char:100
 21,2022-12-08,,3,event_miraclesnow1 char:193 char:203
 22,2022-12-15,,1,char:121
 23,2022-12-29,,1,event_brandnewyear
 24,2023-01-01,,1,char:260
-25,2023-01-12,ch19,3,ch19 sub:데이파라_00 relic:데일리아크기사스크랩
-26,2023-01-12,ch20,8,ch20 sub:로망티스트_00 relic:jonathan_report event_doutsiders char:400 char:401 char:111 char:402
+25,2023-01-12,ch19,5,ch19 relic:데일리아크기사스크랩 sub:러블리_드림_01 sub:미실리스_연구팀_02 sub:롬_02
+26,2023-01-12,ch20,10,ch20 sub:로망티스트_00 relic:jonathan_report sub:미실리스_연구팀_03 sub:데이파라_00 event_doutsiders char:400 char:401 char:111 char:402
 27,2023-01-19,,1,char:112
 28,2023-02-01,,2,event_maidinvalentine char:311
 29,2023-02-08,,1,char:312
@@ -34,15 +34,15 @@ tick,date,main,count,units
 33,2023-04-01,,1,event_fullfoolday
 34,2023-04-13,,2,event_ltk char:40
 35,2023-04-27,ch21,6,ch21 sub:에덴_Notice_00 sub:에덴_Notice_01 sub:에덴_Notice_02 relic:특이랩쳐보고서-전 relic:특이랩쳐보고서-후
-36,2023-04-27,ch22,10,ch22 sub:문구점_00 sub:중앙정부_트라이앵글_00 sub:2호_쉘터_관리계정_00 sub:할아범_01 relic:에닉탄핵포스터 event_overzone erelic:white_memory char:233 char:392
+36,2023-04-27,ch22,9,ch22 sub:문구점_00 sub:2호_쉘터_관리계정_00 sub:할아범_01 relic:에닉탄핵포스터 event_overzone erelic:white_memory char:233 char:392
 37,2023-05-18,,2,event_BunnyX777 char:270
 38,2023-05-25,,1,char:271
 39,2023-06-01,,2,event_queensorder char:280
 40,2023-06-15,,2,event_bluewaterisland char:132
 41,2023-06-22,,1,char:14
 42,2023-07-06,,2,event_nyanyaparadise char:380
-43,2023-07-20,ch23,4,ch23 sub:상인연합_달란트_00 sub:콜렉터_02 relic:필그림조우보고서
-44,2023-07-20,ch24,5,ch24 sub:해결사_카페_스위티_00 relic:긴급뉴스대본_FB_3_final_2.pdf event_goldenship char:350
+43,2023-07-20,ch23,5,ch23 sub:상인연합_달란트_00 sub:콜렉터_02 relic:필그림조우보고서 sub:중앙정부_트라이앵글_00
+44,2023-07-20,ch24,7,ch24 sub:해결사_카페_스위티_00 relic:긴급뉴스대본_FB_3_final_2.pdf sub:중앙정부_프로토콜_00 sub:코인_러시_00 event_goldenship char:350
 45,2023-08-03,,3,event_seayouagain1 char:15 char:351
 46,2023-08-10,,1,char:353
 47,2023-08-24,,1,event_firstaffection
@@ -52,8 +52,8 @@ tick,date,main,count,units
 51,2023-10-05,,2,event_dazzlingcupid char:450
 52,2023-10-12,,1,char:451
 53,2023-10-19,,2,event_freezeacpu char:33
-54,2023-11-02,ch25,3,ch25 sub:중앙정부_프로토콜_00 relic:마더웨일아종목격보고.wav
-55,2023-11-02,ch26,9,ch26 sub:로망티스트_01 sub:코인_러시_00 relic:저주받은보석 event_redash erelic:red_ash_lost erelic:red_ash_mini char:470 char:224
+54,2023-11-02,ch25,5,ch25 relic:마더웨일아종목격보고.wav sub:산해진미_01 sub:택틱컬틱택_00 sub:택틱컬틱택_01
+55,2023-11-02,ch26,10,ch26 sub:로망티스트_01 relic:저주받은보석 sub:음악_애호가_01 sub:피라_00 event_redash erelic:red_ash_lost erelic:red_ash_mini char:470 char:224
 56,2023-11-23,,2,event_alonesurvivor char:192
 57,2023-12-07,,2,event_neverland1 char:194
 58,2023-12-14,,1,char:62
@@ -63,8 +63,8 @@ tick,date,main,count,units
 62,2024-01-25,,2,event_dirtybackyard char:281
 63,2024-02-05,,2,event_perfectmaid char:313
 64,2024-02-15,,1,char:310
-65,2024-02-22,ch27,6,ch27 sub:피라_00 sub:피라_01 sub:피라_02 sub:트윙클_00 relic:잘지내라친구
-66,2024-02-22,ch28,9,ch28 sub:택틱컬틱택_00 sub:택틱컬틱택_01 sub:핸섬_커맨더_00 sub:핸섬_커맨더_01 sub:MMR지킴이_00 relic:조난일지 event_boomsday char:500
+65,2024-02-22,ch27,5,ch27 sub:피라_01 sub:피라_02 sub:트윙클_00 relic:잘지내라친구
+66,2024-02-22,ch28,7,ch28 sub:핸섬_커맨더_00 sub:핸섬_커맨더_01 sub:MMR지킴이_00 relic:조난일지 event_boomsday char:500
 67,2024-03-07,,2,event_killthelord char:43
 68,2024-03-21,,2,char:822 char:821
 69,2024-03-28,,1,char:820

@@ -27,6 +27,19 @@
   ],
   "facts": [
     {
+      "id": "F171",
+      "text": "보통의 니케는 사람을 공격할 수 없지만 예외가 있다 — 시지 패러리스는 리미트가 풀려 사람을 쏠 수 있다",
+      "about": ["concept:니케"],
+      "evidence": [{ "scene": "d_main_14_07", "lines": ["35-40"] }],
+      "reason": "네온 '니케는 사람을 쏠 수 없는걸요' — K '우리는 되는데', 라피가 리미트가 풀렸다고 설명(#35-40). 금제가 NIMPH라는 것은 sub:랩칠리언_06(F171-2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R04" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "S1", "note": "서브퀘스트 지역 교정(랩칠리언_06 ch06 → ch17 뒤)으로 ch14가 먼저 — 정의와 드러냄을 맞바꿈" }
+      ]
+    },
+    {
       "id": "F358",
       "text": "뇌세척 한 달 뒤 첫 실전에서 마리안은 카운터스 최고의 전투 능력을 보였지만, 쓰러진 랩쳐를 쓰다듬어 코어 빛을 꺼 주며 불쌍하다고, 왜 랩쳐와 싸우는지 물었다",
       "about": ["person:마리안", "concept:랩쳐"],
@@ -328,16 +341,6 @@
       "degree": "전부",
       "evidence": [{ "scene": "d_main_14_11", "lines": ["17-19"] }],
       "reason": "엔터 헤븐이 무엇인지 설명된다",
-      "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R04" }]
-    },
-    {
-      "id": "F171-2",
-      "act": "드러냄",
-      "text": "금제의 예외 — 시지 패러리스는 리미트가 풀려 사람을 쏠 수 있다",
-      "evidence": [{ "scene": "d_main_14_07", "lines": ["35-40"] }],
-      "reason": "네온 '니케는 사람을 쏠 수 없는걸요' — K '우리는 되는데', 라피 설명",
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R04" }]

@@ -1,7 +1,7 @@
 id,weight,title,hints,callbacks,thread_only,units1,units_all,added_units,added
 J1,뼈대,마리안 — 침식 · 모더니아 · 여왕의 각성,20,3,0,15,19,4,ch00 relic:니케실험대상자모집 char:260 event_firstaffection
-J2,뼈대,라피와 레드 후드,33,17,0,24,40,16,ch02 ch03 ch05 relic:갓데스스쿼드리포트 ch11 ch14 char:10 event_overzone ch31 ch33 ch36 relic:주워갈것들메모 ch39 fl:absolute side:eden_spear event_goddessfall1
-J3,뼈대,지휘관의 정체 — 7호 · 블랙박스 · 인자,17,16,0,18,34,16,ch00 ch05 sub:이례의_기록자_00 char:232 char:10 char:140 char:291 char:261 ch24 ch32 ch37 ch38 event_overthehorizon fl:2x2_love_1ch fl:2x2_love_2ch ch48
+J2,뼈대,라피와 레드 후드,33,17,0,24,40,16,ch02 ch03 relic:갓데스스쿼드리포트 ch05 ch11 ch14 char:10 event_overzone ch31 ch33 ch36 relic:주워갈것들메모 ch39 fl:absolute side:eden_spear event_goddessfall1
+J3,뼈대,지휘관의 정체 — 7호 · 블랙박스 · 인자,17,16,0,18,34,16,ch00 sub:이례의_기록자_00 ch05 char:232 char:10 char:140 char:291 char:261 ch24 ch32 ch37 ch38 event_overthehorizon fl:2x2_love_1ch fl:2x2_love_2ch ch48
 J4,뼈대,언체인드 — 헬레틱을 죽이는 피,3,5,0,9,15,6,ch15 relic:종말의서 ch32 event_oldtales1 ch45 relic:궤도엘리베이터음모론
 J5,뼈대,엔더슨 — 갓데스의 지휘관,15,2,0,12,18,6,ch04 ch14 char:72 char:233 ch26 ch35
 J6,뼈대,갓데스 스쿼드와 방주의 배신,26,3,0,15,20,5,ch06 char:222 char:800 erelic:white_memory ch25
@@ -20,9 +20,9 @@ J18,뼈대,D.E.E.P.와 V.T.C. — 방주의 어둠과 열쇠,15,1,0,11,13,2,ch28
 J19,뼈대,방주 동력원 — 쌍둥이 초거대 코어,13,6,0,11,17,6,ch27 ch30 event_beautyfullshot1 event_wisdomspring fl:ark_ranger ch47
 J20,보강,필그림 — 스노우 화이트 · 라푼젤 · 나유타,4,3,0,9,12,3,char:221 ch47 relic:불길한_소리.wav
 J21,보강,이그조틱과 방주 침공 — 크로우 · JohnD · E.H.,16,5,1,10,15,5,sub:콜렉터_00 sub:테트라_커넥트_01 char:112 side:wordless fl:ark_ranger
-J22,보강,슈엔과 메티스,13,4,0,10,18,8,sub:랩칠리언_05 ch13 ch15 char:102 char:90 ch18 event_hightechtoy ch35
+J22,보강,슈엔과 메티스,13,4,0,10,18,8,ch13 ch15 sub:랩칠리언_05 char:102 char:90 ch18 event_hightechtoy ch35
 J23,보강,와드리스 — 유니 · 미하라 · 모리와 지엔의 실험,6,3,1,9,11,2,ch04 event_wisdomspring
-J24,보강,아니스와 머스탱 — T.T.STAR · 프리티 · 쉐이드,44,14,0,15,24,9,sub:러블리_드림_00 sub:음악_애호가_00 char:12 sub:코인_러시_00 ch33 ch36 ch37 ch38 ch42
+J24,보강,아니스와 머스탱 — T.T.STAR · 프리티 · 쉐이드,44,14,0,15,24,9,sub:음악_애호가_00 sub:러블리_드림_00 char:12 sub:코인_러시_00 ch33 ch36 ch37 ch38 ch42
 J25,보강,잉그리드의 협회 — 익스터너 · 기억 소거,1,0,0,7,7,0,
 J26,보강,랩칠리언 · 웨일리 · 피노키오,3,3,0,7,9,2,sub:랩칠리언_06 relic:어떤소녀의그림일기
 J27,보강,지휘관에게 닿는 정체 모를 연락,1,0,1,4,5,1,sub:테트라_커넥트_00

@@ -117,11 +117,63 @@ export function kindTally(items, isRead) {
   return KIND_ORDER.filter((k) => t.has(k)).map((k) => `${k} ${t.get(k)[0]}/${t.get(k)[1]}`).join(' · ');
 }
 
-/** 읽기 순서 파일을 읽어 순서를 낸다. 파일이 없으면 빈 순서 */
-export function loadOrder(prefixes = READ1_PREFIXES, files = ORDER_PATHS) {
+/** 서브퀘스트 · 유실물이 있는 캠페인 지역(= 메인 챕터 번호) — 키 → 챕터 */
+export const REGION_PATHS = [path.join(ROOT, 'annotations/subquest-regions.json'), path.join(ROOT, 'annotations/relic-regions.json')];
+export function loadRegions(files = REGION_PATHS) {
+  const out = new Map();
+  for (const f of files.filter((f) => fs.existsSync(f))) {
+    const j = JSON.parse(fs.readFileSync(f, 'utf8'));
+    for (const r of j.scenes ?? j.relics ?? []) out.set(r.id, r.chapter);
+  }
+  return out;
+}
+
+const chapterOf = (key) => (/^ch\d\d$/.test(key) ? Number(key.slice(2)) : null);
+const isRegional = (key) => key.startsWith('sub:') || key.startsWith('relic:');
+
+/**
+ * 서브퀘스트 · 유실물 자리를 지역 파일로 다시 놓는다(S1, 2026-10-10). 읽기 항목은 "어느 세션이 무엇을 읽었나" 기록이라 고쳐 쓰지 않고,
+ * 출시순 한 줄에서는 지역의 챕터 블록(chNN과 바로 뒤에 붙은 서브퀘스트 · 유실물 · 엘리베이터) 끝으로 옮긴다.
+ * 이미 제 챕터 블록에 있는 것은 그대로 둔다 — 블록 안 차례(관짝이 · 거울 공주처럼 내용으로 정한 것)를 지킨다.
+ * 옮기는 것끼리는 지역 파일 차례. 지역이 그 챕터인데 순서에 챕터가 없으면 옛 자리에 둔다.
+ * @param {{ items: object[], sessions: object[] }} order parseOrder 결과
+ * @param {Map<string, number>} regions 키 → 챕터
+ */
+export function placeByRegion(order, regions) {
+  const blockOf = new Map();
+  let cur = null;
+  for (const it of order.items) {
+    const c = chapterOf(it.key);
+    if (c != null) cur = c;
+    else if (!isRegional(it.key) && it.key !== 'd_ex_elevator_01') cur = null;
+    blockOf.set(it, cur);
+  }
+  const chapters = new Set(order.items.map((it) => chapterOf(it.key)).filter((c) => c != null));
+  const moving = order.items.filter((it) => regions.has(it.key) && regions.get(it.key) !== blockOf.get(it) && chapters.has(regions.get(it.key)));
+  if (!moving.length) return order;
+  const rank = new Map([...regions.keys()].map((k, i) => [k, i]));
+  const moveSet = new Set(moving);
+  const rest = order.items.filter((it) => !moveSet.has(it));
+  const items = [];
+  for (let i = 0; i < rest.length; i++) {
+    items.push(rest[i]);
+    const c = chapterOf(rest[i].key);
+    if (c == null) continue;
+    while (i + 1 < rest.length && (isRegional(rest[i + 1].key) || rest[i + 1].key === 'd_ex_elevator_01')) items.push(rest[++i]);
+    items.push(...moving.filter((it) => regions.get(it.key) === c).sort((a, b) => rank.get(a.key) - rank.get(b.key)));
+  }
+  return { ...order, items: items.map((it, index) => ({ ...it, index })) };
+}
+
+/**
+ * 읽기 순서 파일을 읽어 순서를 낸다. 파일이 없으면 빈 순서.
+ * 1회독(출시순 한 줄)은 서브퀘스트 · 유실물을 지역 자리로 다시 놓는다 — 항목 그대로가 필요하면 { region: false }
+ */
+export function loadOrder(prefixes = READ1_PREFIXES, files = ORDER_PATHS, { region = prefixes === READ1_PREFIXES } = {}) {
   const text = readOrderText(files);
   if (text == null) return { items: [], sessions: [] };
-  return parseOrder(text, prefixes);
+  const order = parseOrder(text, prefixes);
+  return region ? placeByRegion(order, loadRegions()) : order;
 }
 
 /** (단위 키, 파트) → 순서 항목. 파트를 나눠 읽는 단위는 파트까지 맞아야 한다 */

@@ -112,7 +112,6 @@ org:포비스트,place:에덴,org,place,5,3,F2429 F2624 F2634 F2820 U445
 org:필그림,place:에덴,org,place,5,3,F447 F448 F747 F751 F867
 concept:D-WAVE,concept:게이트_키퍼,concept,concept,4,3,F1976 F1979 F2127 F2468
 concept:NIMPH,concept:기억_소거,concept,concept,4,4,F663 F679 F727 F1013
-concept:NIMPH,concept:니케,concept,concept,4,4,F171 F641 F2370 F2777
 concept:NIMPH,concept:랩쳐,concept,concept,4,4,F490 F1681 F1699 F2777
 concept:기억_소거,org:베스트셀러,concept,org,4,3,F1610 F2380 F2383 U279
 concept:니케,concept:양산형_니케,concept,concept,4,4,F202 F230 F612 F1069
@@ -174,6 +173,7 @@ concept:E2_크리스탈,concept:헬레틱,concept,concept,3,2,F1527 F1533 F1543
 concept:E2_크리스탈,item:하모니_큐브,concept,item,3,3,F1525 F1553 F1568
 concept:E2_크리스탈,org:포비스트,concept,org,3,3,F1533 F1546 F1568
 concept:E2_크리스탈,place:수정_지역,concept,place,3,3,F1533 F1550 F1564
+concept:NIMPH,concept:니케,concept,concept,3,3,F641 F2370 F2777
 concept:NIMPH,concept:양산형_니케,concept,concept,3,3,F1693 F1700 F1742
 concept:NIMPH,concept:헬레틱,concept,concept,3,3,F746 F2363 F2828
 concept:NIMPH,org:M.M.R.,concept,org,3,3,F326 F1415 F1613

@@ -8,7 +8,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 관계 person:메어리 ↔ person:지휘관,관계,char:132,40,23,,,char:130 event_bluewaterisland char:132,D1387 D1388 D262 D2040,D2040,O115,확정
 성장 person:메어리 신념,성장,event_bluewaterisland,40,23,,,char:130 event_bluewaterisland,D1389 D1390 D263,D263,O116,확정
 관계 person:유니 ↔ person:지휘관,관계,ch23,43,38,1,1,ch04 char:160 ch18 ch23,D33 D1902 D162 D277,D277,O3,확정
-관계 person:지휘관 ↔ person:콜렉터,관계,sub:콜렉터_02,43,36,,,sub:콜렉터_01 sub:콜렉터_02,D28 D279,D279,O117,기각
+관계 person:지휘관 ↔ person:콜렉터,관계,sub:콜렉터_02,43,34,,,sub:콜렉터_01 sub:콜렉터_02,D28 D279,D279,O117,기각
 관계 person:지휘관 ↔ person:크로우,관계,ch24,44,27,1,1,ch16 char:110 ch24,D130 D131 D1404 D284,D284,O4,기각
 성장 person:마스트 신념,성장,char:350,44,26,,,char:352 char:350,D1961 D2047 D2048,D2047 D2048,O118,기각
 연작 event_seayouagain1,연작,event_seayouagain1,45,5,,,event_bluewaterisland event_seayouagain1,,,O119,확정
@@ -33,7 +33,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 관계 person:지휘관 ↔ person:홍련,관계,event_newyearnewsword,59,42,,,char:222 event_newyearnewsword,D1413 D1415 D364,D364,O132,확정
 관계 person:레오나 ↔ person:티미,관계,char:382,61,0,,,event_lionheart char:382,D1521 D2089,D2089,O133,확정
 관계 person:슈가 ↔ person:지휘관,관계,event_dirtybackyard,62,45,,,char:140 event_dirtybackyard,D1395 D1396 D371,D371,O134,확정
-관계 person:랩칠리언 ↔ person:지휘관,관계,ch27,65,58,,1,sub:랩칠리언_00 sub:랩칠리언_06 ch27,D49 D51 D372,D372,O135,확정
+관계 person:랩칠리언 ↔ person:지휘관,관계,ch27,65,61,,1,sub:랩칠리언_00 sub:랩칠리언_06 ch27,D49 D51 D372,D372,O135,확정
 관계 person:엔더슨 ↔ person:지휘관,관계,ch27,65,60,1,1,ch04 ch25 ch27,D44 D305 D374,D374,O11,기각
 성장 person:솔린 신념,성장,char:820,69,52,,,char:71 char:820,D1858 D1860 D2101,D2101,O136,확정
 연작 event_liarsend,연작,event_liarsend,70,37,,,event_fullfoolday event_liarsend,,,O137,기각
@@ -72,7 +72,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:트로니 성격,성장,event_romanticvalentine,99,33,,,event_boomsday char:501 event_romanticvalentine,D393 D395 D2107 D1627,D1627,O160,기각
 관계 person:앵커 ↔ person:지휘관,관계,char:355,100,55,,,char:351 char:355,D2055 D2056 D2147,D2147,O161,확정
 관계 person:그레이브 ↔ person:지휘관,관계,ch35,101,29,1,1,ch29 ch30 ch32 char:514 ch35,D428 D437 D500 D1598 D606,D606,O22,확정
-관계 person:슈엔 ↔ person:지휘관,관계,ch35,101,94,1,1,sub:랩칠리언_05 ch12 ch15 ch18 ch25 ch26 ch35,D50 D100 D127 D157 D308 D334 D605,D605,O23,기각
+관계 person:슈엔 ↔ person:지휘관,관계,ch35,101,88,1,1,ch12 ch15 sub:랩칠리언_05 ch18 ch25 ch26 ch35,D100 D127 D50 D157 D308 D334 D605,D605,O23,기각
 관계 person:라피 ↔ person:지휘관,관계,ch36,102,101,1,1,ch00 ch01 ch07 char:10 ch26 sub:피라_00 ch32 event_footstepwalkrun1 char:16 ch36,D6 D9 D73 D1379 D331 D381 D508 D592 D2140 D620,D620,O24,기각
 관계 person:브래디 ↔ person:지휘관,관계,char:520,105,0,,,event_newflavor char:520,D622 D623 D624 D2156,D2156,O162,확정
 연작 event_trueflavor,연작,event_trueflavor,107,2,,,event_newflavor event_trueflavor,,,O163,확정
@@ -85,7 +85,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:콤 신념,성장,char:851,114,1,,,event_ce006 char:851,D724 D727 D2171,D2171,O166,기각
 관계 person:도로시 ↔ person:피나,관계,fl:boom_the_ghost,116,80,1,,event_overzone fl:boom_the_ghost,D239 D245 D240 D760,D760,O29,확정
 관계 person:일레그 ↔ person:지휘관,관계,char:502,117,51,1,,event_boomsday char:500 ch29 char:502,D400 D2094 D430 D2175,D2175,O30,확정
-성장 person:랩칠리언 신념,성장,relic:정갈하게쓴기록,118,111,1,,sub:랩칠리언_00 ch27 relic:정갈하게쓴기록,D48 D373 D780,D780,O31,확정
+성장 person:랩칠리언 신념,성장,relic:정갈하게쓴기록,118,114,1,,sub:랩칠리언_00 ch27 relic:정갈하게쓴기록,D48 D373 D780,D780,O31,확정
 관계 person:베스티 ↔ person:은화,관계,fl:absolute,119,38,1,,ch32 fl:absolute,D503 D804 D811 D813 D806,D811 D813 D806,O32,확정
 관계 person:아니스 ↔ person:아비스타,관계,ch40,119,1,1,1,ch39 ch40,D774 D779 D799,D799,O33,확정
 관계 person:엠마 ↔ person:지휘관,관계,char:93,119,102,,,char:90 char:93,D1898 D1899 D2176,D2176,O167,확정
