@@ -240,7 +240,7 @@ function classPanel(u, idx) {
   const j = orderMap?.get(u.key);
   const action = tabAction('order', {}, { sel: `unit:${u.key}` });
   const p = preMap[u.key];
-  // 선행 스토리 — 칸마다 한 줄(꼭 · 권장 · 선택, 키 필수 · 권장 · 선택), 스토리 이름 + 왜
+  // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름 + 왜
   const preRow = p ? row('선행', fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', {},
     ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
     p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`)])))) : null;

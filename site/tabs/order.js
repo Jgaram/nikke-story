@@ -187,7 +187,7 @@ export async function mount(root, ctx) {
     if (j.from_tick) tip += ` · ${LABELS.riseBefore(at, gl(j.before ?? j.grade))}`;
     return ui.el('span', { class: 'order-preof', title: tip }, fmt.preOf(at));
   };
-  /** 선행 한 줄 — 꼭(키 필수)은 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
+  /** 선행 한 줄 — 필수는 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
   const preLine = (key) => {
     const p = pre[key];
     if (!p) return null;
