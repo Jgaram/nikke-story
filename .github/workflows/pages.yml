@@ -67,6 +67,27 @@ jobs:
           console.log(`공개 검사 통과 — JSON ${files.length}개`);
           JS
 
+      - name: 캐시 끊기 (JS · CSS 주소에 커밋 표시를 붙인다)
+        # Pages는 파일을 10분 캐시하게 해서, 배포 직후 브라우저가 옛 JS를 새 JS와 섞어 쓸 수 있다(2026-10-10 — 인물 탭 아이콘이 안 바뀜).
+        # 상대 경로 import · <script src> · <link href>의 .js/.css에 ?v=커밋을 붙여, 배포마다 새 주소로 받게 한다. 저장소의 파일은 그대로다.
+        run: |
+          V="${GITHUB_SHA::8}" node - <<'JS'
+          const fs = require('fs');
+          const path = require('path');
+          const v = process.env.V;
+          const files = [];
+          const walk = (d) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) { if (e.name !== 'data' && e.name !== 'img') walk(p); } else if (/\.(js|html)$/.test(p)) files.push(p); } };
+          walk('site');
+          const re = /((?:from\s+|import\(\s*|src=|href=)(['"`]))(\.{1,2}\/[^'"`?#\s]+\.(?:js|css))\2/g;
+          let n = 0;
+          for (const f of files) {
+            const src = fs.readFileSync(f, 'utf8');
+            const out = src.replace(re, (m, pre, q, url) => { n++; return `${pre}${url}?v=${v}${q}`; });
+            if (out !== src) fs.writeFileSync(f, out);
+          }
+          console.log(`주소 ${n}개에 ?v=${v}`);
+          JS
+
       - name: Pages 설정
         uses: actions/configure-pages@v5.0.0
 
