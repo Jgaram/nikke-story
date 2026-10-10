@@ -252,28 +252,8 @@ async function mountTab(ctx) {
   }
 }
 
-// ── 처음 상태로 — 로고를 누르면 이 사이트가 남긴 기억(localStorage · sessionStorage의 nikke-story.*)을 지우고 첫 방문처럼 다시 연다 ──
-const STORE_PREFIX = 'nikke-story.';
-function resetButton() {
-  const brand = $('.brand');
-  if (!brand) return;
-  brand.title = '처음 상태로 — 어디까지 읽음 · 테마 · 접은 칸을 지우고 첫 화면부터';
-  brand.addEventListener('click', (e) => {
-    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // 새 탭 열기는 그대로
-    e.preventDefault();
-    for (const store of [() => localStorage, () => sessionStorage]) {
-      try {
-        const s = store();
-        for (const k of Object.keys(s)) if (k.startsWith(STORE_PREFIX)) s.removeItem(k);
-      } catch { /* 저장소가 없으면 지울 것도 없다 */ }
-    }
-    location.replace(location.pathname + location.search); // 해시(탭 · 거르개 · 선택)도 비운다
-  });
-}
-
 async function boot() {
   themeButton();
-  resetButton();
   ui.configure({ navigate: (sel) => state.set({ sel }) });
   const main = $('#main');
   main.append(ui.spinner());

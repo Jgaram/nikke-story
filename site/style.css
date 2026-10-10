@@ -195,7 +195,8 @@ p { margin: 0 0 8px; max-width: 72ch; }
 
 .ctl { display: flex; align-items: center; gap: 8px; font-size: 13px; min-width: 0; }
 .ctl-name { color: var(--ink-muted); font-size: var(--fs-small); white-space: nowrap; }
-.cutoff { margin-left: auto; }
+.cutoff { flex: none; }
+.layers { margin-left: auto; }
 .cutoff-btn {
   display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px 0 12px; font: inherit; color: var(--ink); text-align: left; cursor: pointer;
   background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.15s, background 0.15s;

@@ -23,10 +23,11 @@
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
   <header class="topbar">
-    <a class="brand" href="./" aria-label="NIKKE 스토리 지도 — 처음 상태로 (어디까지 읽음 · 테마 초기화)">
+    <a class="brand" href="./" aria-label="NIKKE 스토리 지도 — 첫 화면으로">
       <svg class="brand-mark" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="var(--accent)"/><circle cx="12" cy="12" r="4" fill="var(--surface)"/></svg>
       <span class="brand-name"><span class="brand-game">NIKKE </span>스토리 지도</span>
     </a>
+    <div id="cutoff" class="ctl cutoff"></div>
     <div class="search" role="search">
       <label class="sr-only" for="search">검색</label>
       <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
@@ -34,7 +35,6 @@
       <kbd class="search-key" aria-hidden="true">/</kbd>
       <div id="search-results" class="search-results" hidden></div>
     </div>
-    <div id="cutoff" class="ctl cutoff"></div>
     <div id="layers" class="ctl layers" role="group" aria-label="범위"></div>
     <button id="theme-btn" type="button" class="btn theme-btn" aria-label="테마 바꾸기"></button>
   </header>
