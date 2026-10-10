@@ -1,0 +1,21 @@
+{
+  "unit": "event_newyearnewsword",
+  "why": {
+    "text": "OVER ZONE에서 검만 남기고 죽었다던 홍련의 언니, 장화가 왜 그렇게 죽었는지가 여기 있다 — GODDESS FALL · CH.47과 이어진다.",
+    "src": "4b6226a8ea",
+    "session": "W14a",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "11142b3052",
+        "note": "W14a 시안 — 판정 이유 · 기록 문장 대조, 뒤 스토리는 제목 · 자리만"
+      }
+    ]
+  }
+}

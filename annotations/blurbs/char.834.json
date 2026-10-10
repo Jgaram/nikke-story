@@ -1,0 +1,12 @@
+{
+  "unit": "char:834",
+  "when": {
+    "text": "플로라가 지휘관을 반갑게 맞는다 — 둘이 처음 얼굴을 마주하는 것이 플로라의 호감도 스토리라 그 뒤의 일로 본다.",
+    "src": "737737f075",
+    "session": "W14a",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "e64cb1f93b", "note": "W14a 시안 — 추정 이유 · 근거 기록 대조" }]
+  }
+}

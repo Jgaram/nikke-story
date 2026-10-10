@@ -1,0 +1,21 @@
+{
+  "unit": "side:second_affection",
+  "why": {
+    "text": "마리안이 지휘관 · 카운터스 · 필그림을 모두 지키겠다는 신념을 세우는 장면은 여기에만 있다 — GODDESS FALL 전에 봐 두면 좋다.",
+    "src": "9c07bc92fd",
+    "session": "W14a",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "3e2ae3d9f2",
+        "note": "W14a 시안 — 판정 이유 · 기록 문장 대조, 뒤 스토리는 제목 · 자리만"
+      }
+    ]
+  }
+}

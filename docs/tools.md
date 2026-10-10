@@ -1,7 +1,7 @@
 # 도구 · 데이터 다루기
 
 CLAUDE.md에서 옮겨 온 도구 사용법이다(2026-10-10). 필요한 절만 `grep -n`으로 찾아 읽는다.
-기록 도구(`records.mjs` · `synopsis.mjs`)의 형식과 쓰는 법은 docs/annotations.md, 사이트 도구는 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
+기록 도구(`records.mjs` · `synopsis.mjs` · `blurbs.mjs`)의 형식과 쓰는 법은 docs/annotations.md, 사이트 도구는 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
 
 ## 원문 읽기 — `tools/read.mjs`
 
@@ -46,6 +46,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
   판정 세션은 `records.mjs find <낱말> --spine`(척추 — 메인 챕터 + `annotations/spine.json` 확정 단위 — 안 기록만) · `layers <단위>` · `leads` · `closures <단위>`로 본다(docs/importance.md 6절).
   빌드업 마무리(오래 쌓인 연작 · 갈등 · 관계 · 성장의 끝)는 `records.mjs closures`(마무리 기록 O — `annotations/closures.json`, 형식 docs/annotations.md "마무리 기록").
 - 사이트에 싣는 스토리별 공개 개요는 `node tools/synopsis.mjs`(`progress W9a` · `new <단위 …>` · `check` · `set … 확정`, 형식 docs/annotations.md "공개 개요").
+- 화면의 분류 이유 · 연대기 추정 이유를 팬용 문장으로 쓰는 것은 `node tools/blurbs.mjs`(`progress` · `new <단위 …>` · `check` · `set <단위> why|when 확정`, 형식 · 기준 docs/annotations.md "팬용 문장").
 
 ## 출시 순서 · 질의 — `tools/notices/` · `tools/query.mjs` (T3-7)
 

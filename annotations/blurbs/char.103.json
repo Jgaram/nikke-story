@@ -1,0 +1,12 @@
+{
+  "unit": "char:103",
+  "when": {
+    "text": "라플라스가 내내 새 무장 차림으로 나온다 — 이 차림은 CH.38부터라 CH.37 뒤의 일로 본다.",
+    "src": "d3c525be03",
+    "session": "W14a",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "be704fc37a", "note": "W14a 시안 — 추정 이유 · 근거 기록 대조" }]
+  }
+}

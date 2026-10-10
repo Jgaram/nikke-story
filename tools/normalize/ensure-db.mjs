@@ -5,7 +5,7 @@
  *   node tools/normalize/ensure-db.mjs --check   상태만 본다 (최신이면 종료 코드 0, 아니면 1)
  *   node tools/normalize/ensure-db.mjs --force   무조건 다시 만든다
  *
- * 입력은 data/raw/ · annotations/(1회독 · 2회독 기록 annotations/read1/ · read2/ · 떡밥 줄기 annotations/threads.json · 층 판정 annotations/layers.json · 주역 명단 annotations/leads.json · 척추 annotations/spine.json · 주요 인물 annotations/majors.json · 마무리 기록 annotations/closures.json · 수동 엣지 annotations/links.json · 2회독 볼 거리 annotations/watch.json · 공개 개요 annotations/synopsis/ 빼고) · tools/normalize/ · data/release/다. 파일마다 경로·크기·수정 시각을 모아 해시한
+ * 입력은 data/raw/ · annotations/(1회독 · 2회독 기록 annotations/read1/ · read2/ · 떡밥 줄기 annotations/threads.json · 층 판정 annotations/layers.json · 주역 명단 annotations/leads.json · 척추 annotations/spine.json · 주요 인물 annotations/majors.json · 마무리 기록 annotations/closures.json · 수동 엣지 annotations/links.json · 2회독 볼 거리 annotations/watch.json · 공개 개요 annotations/synopsis/ · 팬용 문장 annotations/blurbs/ 빼고) · tools/normalize/ · data/release/다. 파일마다 경로·크기·수정 시각을 모아 해시한
  * 값(지문)을 build.mjs가 시작할 때 계산해 DB의 meta 테이블까지 넘기고, 여기서 지금 지문과 비교한다.
  * 내용이 아니라 stat만 보므로 3,300여 개 파일에 30ms 남짓이다.
  *
@@ -26,9 +26,9 @@ const INPUT_DIRS = ['data/raw', 'annotations', 'tools/normalize', 'data/release'
 /**
  * 입력 디렉터리 안이지만 빌드가 읽지 않는 곳. 1회독 기록(annotations/read1/)은 기록 도구(tools/records.mjs)가 JSON을 바로 읽는다 —
  * 읽기 · 리뷰 세션이 기록을 고칠 때마다 DB를 다시 만들지 않게 지문에서 뺀다. 빌드가 읽게 되면 여기서 지운다.
- * 공개 개요(annotations/synopsis/, W8)도 같다 — tools/synopsis.mjs · 사이트 내보내기가 바로 읽는다.
+ * 공개 개요(annotations/synopsis/, W8) · 팬용 문장(annotations/blurbs/, W14)도 같다 — tools/synopsis.mjs · 사이트 내보내기가 바로 읽는다.
  */
-const EXCLUDE_DIRS = new Set(['annotations/read1', 'annotations/read2', 'annotations/synopsis']);
+const EXCLUDE_DIRS = new Set(['annotations/read1', 'annotations/read2', 'annotations/synopsis', 'annotations/blurbs']);
 /** 같은 까닭으로 뺀다 — 떡밥 줄기(B0b) · 층 판정(B0b-2) · 수동 엣지(B1a — DB에 싣지 않고 관계선 tools/views/links.mjs가 읽는다, X2) · 2회독 볼 거리(B1b) ·
  * 척추(X3f-1c) · 주요 인물(X3g-1b) · 마무리 기록(X3f-1d)도 기록 도구가 바로 읽는다 */
 const EXCLUDE_FILES = new Set(['annotations/threads.json', 'annotations/layers.json', 'annotations/leads.json', 'annotations/links.json', 'annotations/watch.json',

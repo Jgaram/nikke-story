@@ -196,11 +196,11 @@ export const shownTexts = (s) => [
   ...arr(s?.scenes).map((x, i) => [`scenes[${i}]`, x?.text ?? '']),
 ].filter(([, t]) => typeof t === 'string' && t);
 
-/** 원문 겹침 — windows = check-quotes sourceWindows(db) */
-export function overlapProblems(s, windows) {
+/** 원문 겹침 — windows = check-quotes sourceWindows(db). texts = [[어디, 글]](팬용 문장 — tools/blurbs가 제 글을 넘긴다) */
+export function overlapProblems(s, windows, texts = shownTexts(s)) {
   const errors = [];
   const warnings = [];
-  for (const [where, t] of shownTexts(s)) {
+  for (const [where, t] of texts) {
     const o = overlapIn(windows, t);
     if (!o) continue;
     if (o.length >= LIMITS.overlapError) errors.push(`${where}: 원문과 ${o.length}자 겹친다 — ${o.sample.slice(0, 30)}`);
@@ -249,14 +249,15 @@ export const spellingKey = (name) => name.replace(/[.\s·]/g, '').toLowerCase();
  * 스포일러 경고 — 그 단위(읽는 순서 order) 뒤에 처음 나오는 이름이 화면 글에 들었나.
  * 앞에 나온 더 긴 이름 안에 든 것(예: 앞 이름 「A의 B」 속 B) · 흔한 낱말(COMMON_WORDS) 안에 든 것 ·
  * 바로 앞에 한글 음절이 붙어 낱말 속 글자인 것(하이브 속 이브, 크리스탈 속 리스) · 영문 낱말 속 글자(DIVA 속 IV)는 뺀다.
+ * texts = [[어디, 글]] — 없으면 개요의 화면 글(shownTexts). 팬용 문장(tools/blurbs)이 제 글을 넘긴다.
  */
-export function spoilerProblems(s, order, firsts) {
+export function spoilerProblems(s, order, firsts, texts = shownTexts(s)) {
   const warnings = [];
   if (order == null) return { errors: [], warnings };
   const early = [];
   const late = [];
   for (const [name, f] of firsts) (f.order > order ? late : early).push([name, f]);
-  for (const [where, t] of shownTexts(s)) {
+  for (const [where, t] of texts) {
     const covered = [];
     for (const name of [...early.map(([n]) => n), ...COMMON_WORDS]) for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) covered.push([i, i + name.length]);
     const hits = [];

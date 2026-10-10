@@ -21,6 +21,7 @@ CLAUDE.md에서 가리키는 자세한 운용 문서다. 무엇을 할지는 [SE
    | 화면에 뜬 기록 내용(사실 · 의문 · 줄기 · 변화 …)이 틀림 | `node tools/records.mjs find <낱말>` · `review <단위>` → docs/annotations.md 그 기록의 절 |
    | 중요도 등급 · 선행 | docs/importance.md(판정 카드)만. 외부 참고 표는 열지 않는다(CLAUDE.md) |
    | 줄거리(공개 개요) | docs/annotations.md "공개 개요" · `node tools/synopsis.mjs` |
+   | 분류 이유 · 연대기 추정 이유 문장 | docs/annotations.md "팬용 문장" · `node tools/blurbs.mjs` |
    | 작중 연대기 | docs/annotations.md "작중 연대기" · `node tools/query.mjs chrono <단위>` |
    | 원문을 다시 읽어야 함 | [docs/tools.md](tools.md) "원문 읽기" — 필요한 씬만 |
 3. **해석 기록을 고칠 때** — 사용자가 말한 판단은 `--by 사용자`로 남긴다(Claude가 다시 바꾸지 않는다). Claude가 다시 읽고 고친 것은 `--by claude`와 근거.

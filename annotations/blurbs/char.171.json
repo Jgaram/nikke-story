@@ -1,0 +1,12 @@
+{
+  "unit": "char:171",
+  "when": {
+    "text": "버닝엄의 부관 파피용이 방주 중앙 정부에서 율하를 놀리는 장면이 있어, 파피용의 처지로 보아 CH.21 전의 일로 본다.",
+    "src": "371b9806db",
+    "session": "W14a",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "626fb9316a", "note": "W14a 시안 — 추정 이유 · 근거 기록 대조" }]
+  }
+}
