@@ -102,7 +102,7 @@
 .tab-persons .pm-unread { fill: url(#pm-hatch); }
 .tab-persons .pm-hatch-line { stroke: var(--line-2); stroke-width: 1; opacity: 0.8; }
 .tab-persons .pm-cursor { fill: none; stroke: var(--ink); stroke-width: 1.5; pointer-events: none; }
-.tab-persons .pm-topunits { margin-top: 8px; font-size: 13px; }
+.tab-persons .pm-us-tools { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 .tab-persons .legend { margin: 8px 0 0; }
 
 /* ── 함께 나온 인물 ── */
