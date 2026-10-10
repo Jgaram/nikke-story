@@ -9,7 +9,6 @@
  *   자리 번호(slot): 점 i = 2i+1, 점 사이 칸 = 2i, 첫 점 앞 = 0, 마지막 점 뒤 = 2P → 칸 115개를 같은 폭으로 그린다. lo · hi가 없으면 그쪽 끝을 모르는 범위(열린 끝).
  *
  * URL 파라미터(p.*)
- *   axis   story(작중순, 기본) | release(출시순)      — 목록의 묶음 · 띠 그림의 줄 순서가 바뀐다. 선택은 유지된다
  *   view   list(목록, 기본) | band(띠 그림)
  *   by     kind이면 띠 그림 줄을 종류별로 묶는다
  *   kind   종류 거르개(쉼표 — event,episode …), 없으면 전체
@@ -19,19 +18,18 @@
  * 그리는 규칙
  *   목록(작중순): 칸마다 묶는다(시대 기준점 · 메인 챕터 · 그 사이). 판별은 제자리, 범위는 앞 끝 칸(앞 끝을 모르면 뒤 끝 칸), 회상 장면은 따로 한 줄(한 스토리가 두 자리에).
  *     "여기까지 읽음" 선(자리 표시 — t의 메인 챕터로만 정한다): 컷오프 챕터 뒤 칸부터 위쪽 줄과 갈라 보인다 — 선 아래 줄은 읽은 것보다 작중으로 뒤인 이야기(앞질러 간 이야기).
- *   목록(출시순): 출시 시점별로 묶고, 줄마다 작중 자리와 출시순과 비교(과거 이야기 · 앞선 이야기 · 같은 때 · 걸침 · 나중 이야기)를 보인다. 자리 없는 스토리도 이 순서에는 모두 나온다.
+ *     줄마다 출시 시점과 출시순과 비교(과거 이야기 · 앞선 이야기 · 같은 때 · 걸침 · 나중 이야기)를 보인다. 출시순 보기는 두지 않는다 — 출시순은 감상 순서 탭(사용자, 2026-10-10).
  *   띠 그림: 가로 = 작중 축(항상), 줄 = 스토리 하나. 시점 확정 = 점(칸 폭이 있으면 꽉 찬 막대), 대략 범위 = 반투명 막대(끝을 모르는 쪽은 흐려진다),
- *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만. 줄 순서가 작중순이면 계단, 출시순이면 메인 챕터가 대각선 뼈대를 이룬다.
- *   앞뒤만 앎 · 시점 불명은 작중순 아래 접이식 칸에 따로(출시순에는 그 시점 묶음 안에 그대로 나온다).
+ *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만. 줄 순서는 작중순(계단).
+ *   앞뒤만 앎 · 시점 불명은 목록 아래 접이식 칸에 따로.
  *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨기고 "스포일러로 가린 스토리 N — 전부 보기". 층 · 거르개로 가린 수도 따로. 모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지).
- *   종류 칩의 숫자 = 지금 보이는(여기까지 읽음 · 범위 · 찾기 · 어긋남 거르개 안) 스토리 수. 목록(작중순)에는 "읽은 곳으로" 버튼이 여기까지 읽음 선으로 보낸다.
+ *   종류 칩의 숫자 = 지금 보이는(여기까지 읽음 · 범위 · 찾기 · 어긋남 거르개 안) 스토리 수. 목록에는 "읽은 곳으로" 버튼이 여기까지 읽음 선으로 보낸다.
  *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래에 "작중 자리" 카드(작중 자리 · 정한 방법 · 시점 기록 · 회상 장면 · 추정한 이유 · 출시 시점 · 출시순과 비교). 같은 줄을 다시 누르면 닫는다.
  */
-export const meta = { id: 'chrono', title: '연대기', blurb: '작중 시간순 · 출시순' };
+export const meta = { id: 'chrono', title: '연대기', blurb: '작중 시간순' };
 
 /** 화면 라벨 한 곳 — 레포 내부 용어는 여기서 사람 말로 바꾼다 */
 const LABELS = {
-  axisName: '순서', axis: { story: '작중순', release: '출시순' }, axisHint: { story: '이야기 속에서 일어난 순서', release: '게임에 나온 순서' },
   viewName: '보기', view: { list: '목록', band: '띠 그림' }, viewHint: { list: '시점마다 묶은 세로 목록', band: '가로 = 작중 시점, 줄 = 스토리' }, jump: '읽은 곳으로',
   find: '스토리 찾기', findPlaceholder: '제목 · 낱말로 찾기',
   driftOnly: '출시순과 어긋난 것만', driftOnlyHint: '과거 이야기 · 앞선 이야기 · 나중 이야기만 보인다',
@@ -136,14 +134,12 @@ export async function mount(root, ctx) {
   const looseUnits = units.filter((c) => c.slot == null);
   const loosePieces = [];
   for (const c of units) for (const p of c.pieces) if (p.slot == null) loosePieces.push({ type: 'piece', c, p });
-  const byRelease = [...units].sort((a, b) => a.u.tick - b.u.tick || a.u.order - b.u.order);
   const byStory = units.filter((c) => c.slot != null).sort((a, b) => a.seq - b.seq);
 
   // ══ 파라미터 · 상태 ═════════════════════════════════════════════════════
   const getP = (k) => state.param(meta.id, k);
   const setP = (k, v, opts) => state.setParam(meta.id, k, v, opts);
   const readParams = () => ({
-    axis: getP('axis') === 'release' ? 'release' : 'story',
     view: getP('view') === 'band' ? 'band' : 'list',
     by: getP('by') === 'kind' ? 'kind' : 'none',
     kinds: new Set((getP('kind') ?? '').split(',').filter((k) => kindsPresent.includes(k))),
@@ -163,13 +159,12 @@ export async function mount(root, ctx) {
 
   // ══ 머리 · 도구 줄 ═══════════════════════════════════════════════════════
   root.append(el('div', { class: 'tab-head' }, el('h2', {}, meta.title)));
-  const axisSeg = ui.segmented({ label: LABELS.axisName, options: Object.entries(LABELS.axis).map(([value, label]) => ({ value, label, title: LABELS.axisHint[value] })), value: cur.axis, onChange: (v) => setP('axis', v === 'story' ? null : v) });
   const viewSeg = ui.segmented({ label: LABELS.viewName, options: Object.entries(LABELS.view).map(([value, label]) => ({ value, label, title: LABELS.viewHint[value] })), value: cur.view, onChange: (v) => setP('view', v === 'list' ? null : v) });
   const findBox = el('input', { type: 'search', class: 'cr-find', placeholder: LABELS.findPlaceholder, 'aria-label': LABELS.find, value: cur.find });
   let findTimer = null;
   findBox.addEventListener('input', () => { clearTimeout(findTimer); findTimer = setTimeout(() => setP('find', findBox.value.trim() || null), 200); });
   const driftToggle = ui.toggle({ label: LABELS.driftOnly, checked: cur.drift, title: LABELS.driftOnlyHint, onChange: (v) => setP('drift', v ? '1' : null) });
-  root.append(el('div', { class: 'toolbar cr-bar' }, el('span', { class: 'cr-seg' }, el('span', { class: 'ctl-name' }, LABELS.axisName), axisSeg.el), el('span', { class: 'cr-seg' }, el('span', { class: 'ctl-name' }, LABELS.viewName), viewSeg.el), findBox, driftToggle));
+  root.append(el('div', { class: 'toolbar cr-bar' }, el('span', { class: 'cr-seg' }, el('span', { class: 'ctl-name' }, LABELS.viewName), viewSeg.el), findBox, driftToggle));
 
   const kindBox = el('div', { class: 'cr-kinds', role: 'group', 'aria-label': LABELS.kindName });
   const allBtn = el('button', { type: 'button', class: 'cr-kindbtn cr-kindall', onClick: () => setP('kind', null) }, LABELS.kindAll);
@@ -236,7 +231,7 @@ export async function mount(root, ctx) {
   const joinNodes = (nodes, sep = ' ') => nodes.flatMap((n, i) => (i ? [sep, n] : [n]));
 
   // ══ 줄 ═══════════════════════════════════════════════════════════════════
-  /** 목록 줄 — mode: story(작중순) · release(출시순) · loose(앞뒤만 앎 · 시점 불명) */
+  /** 목록 줄 — mode: story(작중순) · loose(앞뒤만 앎 · 시점 불명) */
   function listRow(e, mode) {
     const { c } = e;
     const u = c.u;
@@ -256,11 +251,10 @@ export async function mount(root, ctx) {
           el('span', { class: 'cr-title' }, u.title),
           piece ? el('span', { class: 'cr-ptag' }, pieceLabel(piece.kind)) : null,
           !piece ? parallelBadge(c) : null,
-          !piece && mode !== 'loose' ? driftBadge(c) : null,
-          !piece && mode === 'release' && c.pieces.length ? el('span', { class: 'cr-ptag', title: c.pieces.map((p) => `${pieceLabel(p.kind)} · ${spanText(p) || classLabel(p.class)}`).join('\n') }, `${LABELS.pieceFlash.replace(/ 장면$/, '')} ${c.pieces.length}`) : null),
+          !piece && mode !== 'loose' ? driftBadge(c) : null),
         piece?.text ? el('span', { class: 'cr-ptext' }, clip(piece.text, 120)) : null),
       el('span', { class: 'cr-span', title: spanCell && !piece && cls === '범위' ? classLabel(cls) : null }, spanCell),
-      mode === 'release' ? null : el('span', { class: 'cr-rel', title: u.date ?? '' }, relLabel(u.tick), u.date ? el('span', { class: 'cr-date' }, ` · ${u.date}`) : null));
+      el('span', { class: 'cr-rel', title: u.date ?? '' }, relLabel(u.tick), u.date ? el('span', { class: 'cr-date' }, ` · ${u.date}`) : null));
     return row;
   }
 
@@ -287,7 +281,7 @@ export async function mount(root, ctx) {
     }
     return marks;
   }
-  function bandRow(c, axis) {
+  function bandRow(c) {
     const u = c.u;
     const row = el('div', { class: ['cg-row', `cls-${c.class}`], dataset: { key: c.unit }, role: 'button', tabindex: 0, 'aria-label': `${u.title} · ${classLabel(c.class)} ${spanText(c)}`.trim() });
     row.style.setProperty('--c', `var(--kind-${u.kind})`);
@@ -305,8 +299,7 @@ export async function mount(root, ctx) {
     for (const m of marks) plot.append(markNode(m));
     if (!marks.length) plot.append(el('span', { class: 'cg-none' }, classLabel(c.class)));
     row.append(
-      el('div', { class: 'cg-label' }, el('span', { class: 'cg-title' }, u.title), c.drift && LABELS.drift[c.drift]?.strong ? driftGlyph(c.drift) : null, c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null,
-        axis === 'release' ? el('span', { class: 'cg-rel', title: relLabel(u.tick) }, fmt.tickShort(u.tick)) : null),
+      el('div', { class: 'cg-label' }, el('span', { class: 'cg-title' }, u.title), c.drift && LABELS.drift[c.drift]?.strong ? driftGlyph(c.drift) : null, c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null),
       plot);
     return row;
   }
@@ -317,62 +310,42 @@ export async function mount(root, ctx) {
   function groupShell(headNode, body) {
     return el('section', { class: 'cr-group' }, headNode, body);
   }
-  function listView(axis) {
-    const wrap = el('div', { class: ['cr-list', axis === 'release' && 'is-release'] });
+  function listView() {
+    const wrap = el('div', { class: 'cr-list' });
     const groups = [];
     const rows = [];
     const cutline = el('div', { class: 'cr-cutline', title: LABELS.cutHint }, el('span', {}, fmt.TERM.cutoff), el('b', { class: 'cr-cutline-ch' }));
     cutline.hidden = true;
-    if (axis === 'story') {
-      let g = null;
-      for (const e of storyEntries) {
-        if (!g || g.slot !== e.slot) {
-          const point = e.slot % 2 === 1 ? points[(e.slot - 1) / 2] : null;
-          const nameEl = el('span', { class: 'cr-gname' }, slotName(e.slot));
-          const subEl = el('span', { class: 'cr-gsub' });
-          const countEl = el('span', { class: 'cr-gcount' });
-          const bodyEl = el('div', { class: 'cr-rows' });
-          const head = el('header', { class: ['cr-ghead', point?.era && 'is-era', point && !point.era && 'is-main'] }, el('h3', {}, nameEl, subEl), countEl);
-          let whyEl = null;
-          if (point?.era) {
-            subEl.textContent = `${LABELS.era}${point.years ? ` · 약 ${point.years}년 전` : ''}`;
-            whyEl = el('div', { class: 'cr-why' }, point.reason ? el('p', {}, withLinks(point.reason)) : null, point.basis?.length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink), ' · ')) : null);
-            whyEl.hidden = true;
-            head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, '설명'));
-          }
-          g = { slot: e.slot, point, el: groupShell(head, [whyEl, bodyEl]), body: bodyEl, countEl, rows: [] };
-          groups.push(g);
-          wrap.append(g.el);
+    let g = null;
+    for (const e of storyEntries) {
+      if (!g || g.slot !== e.slot) {
+        const point = e.slot % 2 === 1 ? points[(e.slot - 1) / 2] : null;
+        const nameEl = el('span', { class: 'cr-gname' }, slotName(e.slot));
+        const subEl = el('span', { class: 'cr-gsub' });
+        const countEl = el('span', { class: 'cr-gcount' });
+        const bodyEl = el('div', { class: 'cr-rows' });
+        const head = el('header', { class: ['cr-ghead', point?.era && 'is-era', point && !point.era && 'is-main'] }, el('h3', {}, nameEl, subEl), countEl);
+        let whyEl = null;
+        if (point?.era) {
+          subEl.textContent = `${LABELS.era}${point.years ? ` · 약 ${point.years}년 전` : ''}`;
+          whyEl = el('div', { class: 'cr-why' }, point.reason ? el('p', {}, withLinks(point.reason)) : null, point.basis?.length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink), ' · ')) : null);
+          whyEl.hidden = true;
+          head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, '설명'));
         }
-        const row = listRow(e, 'story');
-        g.body.append(row);
-        const r = { el: row, key: e.c.unit };
-        g.rows.push(r);
-        rows.push(r);
+        g = { slot: e.slot, point, el: groupShell(head, [whyEl, bodyEl]), body: bodyEl, countEl, rows: [] };
+        groups.push(g);
+        wrap.append(g.el);
       }
-    } else {
-      let g = null;
-      for (const c of byRelease) {
-        if (!g || g.tick !== c.u.tick) {
-          const t = idx.ticks.get(c.u.tick);
-          const countEl = el('span', { class: 'cr-gcount' });
-          const bodyEl = el('div', { class: 'cr-rows' });
-          const head = el('header', { class: 'cr-ghead' }, el('h3', {}, el('span', { class: 'cr-gname' }, relLabel(c.u.tick)), el('span', { class: 'cr-gsub' }, t?.date ?? '')), countEl);
-          g = { tick: c.u.tick, el: groupShell(head, bodyEl), body: bodyEl, countEl, rows: [] };
-          groups.push(g);
-          wrap.append(g.el);
-        }
-        const row = listRow({ type: 'unit', c }, 'release');
-        g.body.append(row);
-        const r = { el: row, key: c.unit };
-        g.rows.push(r);
-        rows.push(r);
-      }
+      const row = listRow(e, 'story');
+      g.body.append(row);
+      const r = { el: row, key: e.c.unit };
+      g.rows.push(r);
+      rows.push(r);
     }
-    return { kind: 'list', axis, el: wrap, groups, rows, cutline, applied: -1 };
+    return { kind: 'list', el: wrap, groups, rows, cutline, applied: -1 };
   }
 
-  function bandView(axis, byKind) {
+  function bandView(byKind) {
     const wrap = el('div', { class: 'cg' });
     const eraPoints = points.filter((p) => p.era);
     const firstMain = points.findIndex((p) => !p.era);
@@ -400,7 +373,7 @@ export async function mount(root, ctx) {
     wrap.style.setProperty('--split', `${(split / SLOTS) * 100}%`);
     const head = el('div', { class: 'cg-head' }, el('div', { class: 'cg-corner' }, LABELS.bandHead), axisEl);
     const body = el('div', { class: 'cg-body' });
-    const source = axis === 'story' ? byStory : byRelease;
+    const source = byStory;
     const groups = [];
     const rows = [];
     const makeGroup = (label, items) => {
@@ -409,7 +382,7 @@ export async function mount(root, ctx) {
       const g = { head: headEl, countEl, rows: [] };
       if (headEl) body.append(headEl);
       for (const c of items) {
-        const row = bandRow(c, axis);
+        const row = bandRow(c);
         body.append(row);
         const r = { el: row, key: c.unit };
         g.rows.push(r);
@@ -422,7 +395,7 @@ export async function mount(root, ctx) {
     const eraLegend = el('details', { class: 'cg-eras' }, el('summary', {}, `${LABELS.eraLegend} ${eraPoints.length}`),
       el('ol', {}, eraPoints.map((p, i) => el('li', {}, el('b', {}, `${i + 1}.`), ` ${p.name}${p.years ? ` · 약 ${p.years}년 전` : ''}`))));
     wrap.append(head, body, cutEl);
-    return { kind: 'band', axis, byKind, el: el('div', { class: 'cg-wrap' }, eraLegend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, applied: -1 };
+    return { kind: 'band', byKind, el: el('div', { class: 'cg-wrap' }, eraLegend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, applied: -1 };
   }
 
   // 앞뒤만 앎 · 시점 불명 칸(작중순 아래)
@@ -496,7 +469,7 @@ export async function mount(root, ctx) {
       if (g.el) g.el.hidden = n === 0;
       if (g.head) g.head.hidden = n === 0;
     }
-    if (v.kind === 'list' && v.axis === 'story') {
+    if (v.kind === 'list') {
       // 여기까지 읽음 선 — 컷오프 챕터 뒤 칸의 첫 보이는 묶음 앞에
       v.cutline.hidden = true;
       if (cutSlot != null) {
@@ -525,15 +498,14 @@ export async function mount(root, ctx) {
   }
 
   function currentView() {
-    const key = `${cur.view}|${cur.axis}|${cur.view === 'band' ? cur.by : ''}`;
-    if (!views.has(key)) views.set(key, cur.view === 'band' ? bandView(cur.axis, cur.by === 'kind') : listView(cur.axis));
+    const key = `${cur.view}|${cur.view === 'band' ? cur.by : ''}`;
+    if (!views.has(key)) views.set(key, cur.view === 'band' ? bandView(cur.by === 'kind') : listView());
     return views.get(key);
   }
   function showView({ scroll = false } = {}) {
     const v = currentView();
     if (viewHost.firstChild !== v.el) viewHost.replaceChildren(v.el);
     refreshView(v, state.get());
-    looseView.el.hidden = cur.axis === 'release';
     syncSelection({ scroll });
   }
 
@@ -546,9 +518,9 @@ export async function mount(root, ctx) {
     statusText.textContent = parts.join(' · ');
     ui.clear(statusNote);
     if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut), () => state.set({ t: null })));
-    jumpBtn.hidden = !(cur.view === 'list' && cur.axis === 'story' && cutSlot != null && counts.shown > 0);
+    jumpBtn.hidden = !(cur.view === 'list' && cutSlot != null && counts.shown > 0);
     ui.clear(emptyBox);
-    const placedShown = (cur.axis === 'story' ? byStory : units).some((c) => isOk(c.unit));
+    const placedShown = byStory.some((c) => isOk(c.unit));
     emptyBox.hidden = placedShown;
     if (!placedShown) {
       const msg = counts.shown === 0 ? LABELS.emptyAll : LABELS.emptyPlaced;
@@ -698,12 +670,11 @@ export async function mount(root, ctx) {
     if (changed.has('p')) {
       const prev = cur;
       cur = readParams();
-      axisSeg.set(cur.axis);
       viewSeg.set(cur.view);
       driftToggle.set(cur.drift);
       if (document.activeElement !== findBox) findBox.value = cur.find;
       syncKinds();
-      layoutChanged = prev.axis !== cur.axis || prev.view !== cur.view || prev.by !== cur.by;
+      layoutChanged = prev.view !== cur.view || prev.by !== cur.by;
       if (layoutChanged) hideTip();
     }
     if (changed.has('p') || changed.has('t') || changed.has('layers')) applyAll(s, { layoutChanged });
