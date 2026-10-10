@@ -1,0 +1,27 @@
+{
+  "unit": "event_nyanyaparadise",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "쓰레기장에 버려진 새끼 고양이 루루를, 네로와 지휘관이 마지막 날까지 곁에서 돌본다.",
+  "synopsis": "비 오는 날, 키우기 귀찮아진 주인들이 새끼 고양이 루루를 쓰레기장에 버리고 간다. 방주의 동물 법이 까다로워 몰래 키우다 걸릴까 버리는 사람들이 있다고 말하는 네로는, 루루를 보호소로 데려오려고 지휘관에게 도움을 청한다. 사람을 경계해 달아나는 루루를, 둘은 루루가 스스로 다가올 때까지 멀리서 지켜보기로 한다.\n\n길 위의 루루는 쓰레기를 먹다 게우고, 대장 고양이에게 맞고, 물에 빠진다. 네로는 보호소의 동물들과 함께 루루에게 길에서 사는 법을 가르치지만, 비가 오면 루루는 쓰레기장 입구로 달려가 주인을 부르며 운다. 마침내 루루는 보호소에 가기로 하지만, 건강검진 결과 이미 손쓸 수 없을 만큼 병이 깊다. 방주의 기술은 사람을 위해 발전해 고양이의 병은 고칠 길이 없다.\n\n남은 시간을 행복하게 해 주려고, 네로와 지휘관은 루루와 사냥놀이를 하고 대관람차 꼭대기에 오르고 맛있는 간식을 나눈다. 그러나 루루는 쓰레기장의 상자 자리로 돌아가 옛 주인을 기다리다 숨을 거둔다. 보호소 고양이들과 루루를 보낸 뒤, 고양이 별에서 루루의 편지가 도착한다.",
+  "scenes": [
+    { "scene": "event_nyanyaparadise_prologue", "text": "주인들이 새끼 고양이 루루를 비 오는 쓰레기장에 버리고 간다" },
+    { "scene": "event_nyanyaparadise_01_s", "text": "네로가 루루를 보호소로 데려오자며 지휘관에게 도움을 청한다" },
+    { "scene": "event_nyanyaparadise_01_e", "text": "상자 속 루루가 경계하며 달아나고, 멀리서 지켜보기로 한다" },
+    { "scene": "event_nyanyaparadise_02_s", "text": "골목에서 먹이를 찾다 게우는 루루 곁에, 네로가 사료를 놓아둔다" },
+    { "scene": "event_nyanyaparadise_02_e", "text": "대장 고양이에게 맞고 물에 빠진 루루를 보며, 방주 길고양이의 사정을 듣는다" },
+    { "scene": "event_nyanyaparadise_03_s", "text": "보호소에서 동물들과 어울리며 위협과 그루밍을 배운다" },
+    { "scene": "event_nyanyaparadise_03_e", "text": "영역을 익히던 루루가, 비가 오자 쓰레기장으로 달려간다" },
+    { "scene": "event_nyanyaparadise_intermission_01", "text": "빗속에서 쓰레기장 입구를 바라보며 루루가 주인을 부른다" },
+    { "scene": "event_nyanyaparadise_04_s", "text": "루루가 보호소에 가기로 하고, 건강검진을 받는다" },
+    { "scene": "event_nyanyaparadise_04_e", "text": "손쓸 수 없다는 검진 결과에, 남은 시간을 행복하게 해 주기로 한다" },
+    { "scene": "event_nyanyaparadise_05_s", "text": "장난감 가게에서 애드미를 만나고, 루루가 처음 사냥놀이를 한다" },
+    { "scene": "event_nyanyaparadise_05_e", "text": "대관람차 꼭대기와 간식, 사람들의 사랑 속에서 하루를 보낸다" },
+    { "scene": "event_nyanyaparadise_06_s", "text": "쓰레기장 상자 자리에서 주인을 기다리던 루루가 숨을 거둔다" },
+    { "scene": "event_nyanyaparadise_06_e", "text": "보호소 고양이들과 함께 루루를 보낸다" },
+    { "scene": "event_nyanyaparadise_epilogue", "text": "고양이 별에서 루루의 편지가 도착한다" }
+  ],
+  "status": "확정",
+  "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9f", "hash": "b6e9c4f231", "note": "입력과 대조 — 감성 단편, 드러난 것만" }]
+}

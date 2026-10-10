@@ -1,0 +1,49 @@
+{
+  "unit": "event_bluewaterisland",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "자원 위기의 방주를 위해 지상의 섬을 조사하러 간 여름, 메어리와 페퍼가 묻어 둔 과거가 고개를 든다.",
+  "synopsis": "근 1년 사이의 피해 복구로 방주의 저장 자원이 바닥을 보이자, 버닝엄이 가문에 전해 온 옛 기록 속의 좌표를 내놓는다. 랩쳐가 드물고 자원이 풍부하다는 섬, 블루워터 아일랜드다. 카운터스와 리타, 카페 스위티, 세라핌이 사전 조사에 나서고, 수영복을 대 준 달란트의 얀도 따라붙는다. 휴가 반 임무 반으로 바닷길을 건너 섬에 닿은 일행은, 데코이를 뿌리러 간 아니스와 슈가를 건너편에 둔 채 바닷길이 잠기고 통신마저 끊겨 섬에 고립된다.\n\n썰물을 기다리며 조사를 이어 가는 동안, 지휘관과 네온은 쉬지 않는 메어리에게 하루 바캉스를 약속받는다. 그런데 물놀이 중 페퍼가 계단에서 누군가를 미는 생생한 환상을 보고, 니케가 되며 잊은 인간 시절의 기억일까 두려워한다. 리타가 탈출선을 만들자 메어리는 섬을 떠나고 싶지 않다고 털어놓는다. 일행은 배가 고장 난 척 출항을 미뤄 메어리에게 하루를 더 주고, 메어리는 지휘관에게 인간 시절 자신이 저지른 죄와 페퍼와의 일을 고백한 뒤 돌아가 속죄하겠다고 결심한다.\n\n방주로 돌아온 리페어 센터의 계단에서 페퍼는 아무것도 떠올리지 않는다. 블루워터 아일랜드는 새 채굴 포인트로 인정되지만, 해저에서는 건물 몇 채만 한 정체 모를 물체가 움직이고 있다.",
+  "scenes": [
+    { "scene": "event_bluewaterisland_prologue", "text": "자원 위기 회의에서, 버닝엄이 가문의 기록에 남은 섬의 좌표를 내놓는다" },
+    { "scene": "event_bluewaterisland1_01_s", "text": "탐지 장치를 들고 합동 조사대가 모인다 — 휴가 반, 임무 반" },
+    { "scene": "event_bluewaterisland1_01_e", "text": "얀이 맞춤 수영복을 내주고, 그 대가로 로비를 부탁한다" },
+    { "scene": "event_bluewaterisland1_02_s", "text": "바다 위로 드러난 좁은 바닷길을 한 명씩 건넌다" },
+    { "scene": "event_bluewaterisland1_02_e", "text": "맑은 바다의 섬에 숙소를 정하고, 아니스와 슈가가 데코이를 뿌리러 간다" },
+    { "scene": "event_bluewaterisland1_03_s", "text": "석양 아래, 메어리가 바다의 미지 병원체를 경계하며 진료소를 차린다" },
+    { "scene": "event_bluewaterisland1_03_e", "text": "바닷길이 물에 잠기고, 아니스와 슈가를 건너편에 둔 채 고립된다" },
+    { "scene": "event_bluewaterisland1_intermission_01", "text": "통신이 끊기고, 다시 썰물이 올 때까지 기다리기로 한다" },
+    { "scene": "event_bluewaterisland1_04_s", "text": "탐지 장치를 설치하며 섬을 살피다, 날생선을 먹고 식중독에 걸린다" },
+    { "scene": "event_bluewaterisland1_04_e", "text": "진료소에서 하루를 보내고, 페퍼가 지휘관에게 부탁을 한다" },
+    { "scene": "event_bluewaterisland1_05_s", "text": "쉬지 않는 메어리를 쉬게 하려고 조개를 선물한다" },
+    { "scene": "event_bluewaterisland1_05_e", "text": "조개를 담은 유리병을 받은 메어리가 하루 바캉스를 약속한다" },
+    { "scene": "event_bluewaterisland1_06_s", "text": "섬의 자원과 랩쳐 분포를 정리해 보고한다" },
+    { "scene": "event_bluewaterisland1_06_e", "text": "일출과 물놀이 중, 페퍼가 계단에서 사람을 미는 환상을 본다" },
+    { "scene": "event_bluewaterisland2_01_s", "text": "물놀이 끝에 페퍼가 먼저 자리를 뜨고, 메어리도 뒤따른다" },
+    { "scene": "event_bluewaterisland2_01_e", "text": "페퍼가 프림에게 환상을 털어놓으며 인간 시절의 기억일까 두려워한다" },
+    { "scene": "event_bluewaterisland2_02_s", "text": "리타가 탈출선을 짓겠다고 하고, 메어리의 얼굴이 흐려진다" },
+    { "scene": "event_bluewaterisland2_02_e", "text": "일행이 일을 나눠 맡고, 메어리가 지휘관을 따라 벌목에 나선다" },
+    { "scene": "event_bluewaterisland2_03_s", "text": "멍하니 있던 메어리가 섬을 떠나고 싶지 않다고 말한다" },
+    { "scene": "event_bluewaterisland2_03_e", "text": "밤의 진료소에서, 메어리가 홀로 두려움을 곱씹는다" },
+    { "scene": "event_bluewaterisland2_intermission_01", "text": "배가 모양을 갖추는 동안, 지휘관과 네온이 메어리를 위한 계획을 세운다" },
+    { "scene": "event_bluewaterisland2_04_s", "text": "지휘관과 네온이 일행을 설득하고, 리타가 그럴듯한 핑계를 마련한다" },
+    { "scene": "event_bluewaterisland2_04_e", "text": "출항 날 배가 고장 난 척하고, 메어리가 하루를 더 얻는다" },
+    { "scene": "event_bluewaterisland2_05_s", "text": "물총 놀이를 하고, 메어리가 아끼는 환자 이야기를 듣는다" },
+    { "scene": "event_bluewaterisland2_05_e", "text": "메어리가 지휘관에게 자신의 죄를 고백하고 돌아가 속죄하겠다고 한다" },
+    { "scene": "event_bluewaterisland2_06_s", "text": "하루 늦게 배가 섬을 떠난다" },
+    { "scene": "event_bluewaterisland2_06_e", "text": "아니스 · 슈가와 다시 만나고, 리페어 센터의 계단에서 페퍼는 아무것도 떠올리지 않는다" },
+    { "scene": "event_bluewaterisland2_epilogue", "text": "섬이 채굴 포인트로 인정되고, 해저에서 거대한 물체가 움직인다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9f",
+      "hash": "bfd08b4bed",
+      "note": "입력과 대조 — 메어리의 고백은 이 단위 안에서 드러난 것만 짧게, 해저 물체(열린 의문)는 정체를 쓰지 않음"
+    }
+  ]
+}

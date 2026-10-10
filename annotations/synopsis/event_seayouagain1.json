@@ -1,0 +1,49 @@
+{
+  "unit": "event_seayouagain1",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "다시 찾은 블루워터 아일랜드에서 거대 해상 랩쳐에게 갇힌 일행을 구하러, 어드마이어 호가 출항한다.",
+  "synopsis": "블루워터 아일랜드 근처 바닷속에서 거대한 신호가 미약하게 움직인다는 보고에, 엔더슨은 지휘관에게 확인을 맡기며 별일 없으면 피서를 즐기고 오라고 한다. 헬름은 첫 정식 바다 임무라며 어드마이어 호의 출전을 청하지만 버닝엄은 비용과 위험을 들어 거절하고, 결국 헬름만 지난번 일행과 함께 섬으로 간다.\n\n신호 지점에는 아무것도 없지만 헬름에게만 바닷속의 진동이 들린다. 리타가 만든 수상 관측기에 움직이는 신호가 잡히고, 바다에서 섬만 한 랩쳐가 떠오른다. 100년 넘게 기록되지 않은 타일런트 급 해상 랩쳐 크라켄이다. 크라켄은 바닷길을 지키며 촉수로 섬을 감싸 일행을 가두고, 통신까지 끊긴다. 끊기기 직전의 구조 요청을 받은 엔더슨 · 잉그리드 · 버닝엄은 만장일치로 어드마이어 호의 출전을 정하고, 마스트와 앵커가 배를 몰고 나선다.\n\n섬에 등대를 세우고 기다리던 일행은 바닷길이 다시 잠기기 전에 돌파를 감행한다. 아니스는 다리를 다치면서도 끌려가던 헬름을 놓지 않고, 헬름은 지휘관을 안고 바다로 몸을 피했다가 촉수에 맞아 가라앉는다. 자신을 부르는 목소리에 눈을 뜨자 어드마이어 호가 와 있고, 이지스 스쿼드는 단 한 발뿐이던 주포가 어느새 다시 차오른 덕에 크라켄을 쓰러뜨린다. 어드마이어 호는 큰돈을 들여 수리하되, 다시 방주의 수영장 자리로 돌아간다.",
+  "scenes": [
+    { "scene": "event_seayouagain1_prologue", "text": "방주의 수영장에서 어드마이어 호가 출전할 날을 기다린다" },
+    { "scene": "event_seayouagain1_01_s", "text": "엔더슨이 바닷속 신호 확인을 맡기며, 끝나면 피서를 즐기라고 한다" },
+    { "scene": "event_seayouagain1_01_e", "text": "지난번 멤버들이 다시 모이고, 헬름이 합류한다" },
+    { "scene": "event_seayouagain1_02_s", "text": "버닝엄이 어드마이어 호의 출전을 거절한다" },
+    { "scene": "event_seayouagain1_02_e", "text": "마스트와 앵커가 파티를 맡고, 헬름만 길을 떠난다" },
+    { "scene": "event_seayouagain1_03_s", "text": "섬에 도착해 바닷길의 주기를 확인하지만, 신호 지점에는 아무것도 없다" },
+    { "scene": "event_seayouagain1_03_e", "text": "잠수한 헬름에게만 진동이 들리고, 임무는 오신호로 마무리된다" },
+    { "scene": "event_seayouagain1_intermission_01", "text": "바비큐 파티를 열고, 리타가 휴대폰으로 수상 관측기를 만든다" },
+    { "scene": "event_seayouagain1_04_s", "text": "노을 아래서 헬름이 아니스에게 바다보다 이지스가 소중하다고 말한다" },
+    { "scene": "event_seayouagain1_04_e", "text": "헬름이 마스트와 통신하던 중, 관측기에 움직이는 신호가 잡힌다" },
+    { "scene": "event_seayouagain1_05_s", "text": "타일런트 급 해상 랩쳐 크라켄이 떠오른다" },
+    { "scene": "event_seayouagain1_05_e", "text": "바닷길을 지키는 촉수에 막혀 섬에 갇힌다" },
+    { "scene": "event_seayouagain1_06_s", "text": "끊기는 통신으로 엔더슨에게 구조를 청하고, 불침번을 선다" },
+    { "scene": "event_seayouagain1_06_e", "text": "촉수가 섬을 감싸고, 방주에서는 만장일치로 어드마이어 호의 출전이 정해진다" },
+    { "scene": "event_seayouagain2_01_s", "text": "마스트와 앵커에게 임무가 떨어지고, 대기하던 점검 니케들이 움직인다" },
+    { "scene": "event_seayouagain2_01_e", "text": "한 발뿐인 주포와 시동 키를 갖추고, 어드마이어 호가 출격한다" },
+    { "scene": "event_seayouagain2_02_s", "text": "크라켄에게 갇힌 일행이 기다리기로 하고, 등대를 세우자는 말이 나온다" },
+    { "scene": "event_seayouagain2_02_e", "text": "등대를 세우며, 헬름이 어드마이어 호를 등대 같은 존재라 말한다" },
+    { "scene": "event_seayouagain2_03_s", "text": "바닷길이 잠기기 전에 돌파하기로 한다" },
+    { "scene": "event_seayouagain2_03_e", "text": "지휘관을 뒤에 두고 돌파 대형을 짠다" },
+    { "scene": "event_seayouagain2_intermission_01", "text": "크라켄을 유인하며 나아가던 중, 본체가 모습을 드러낸다" },
+    { "scene": "event_seayouagain2_04_s", "text": "촉수에 끌려가는 헬름을 아니스가 붙잡는다" },
+    { "scene": "event_seayouagain2_04_e", "text": "헬름이 다친 아니스를 업고, 라피가 지휘관을 들고 달린다" },
+    { "scene": "event_seayouagain2_05_s", "text": "미사일이 쏟아지자, 헬름이 지휘관을 안고 바다로 뛰어든다" },
+    { "scene": "event_seayouagain2_05_e", "text": "촉수에 맞아 가라앉던 헬름이 깨어나자, 어드마이어 호가 와 있다" },
+    { "scene": "event_seayouagain2_06_s", "text": "이지스 스쿼드가 어드마이어 호로 크라켄과 맞서 주포를 쏘고 돌진한다" },
+    { "scene": "event_seayouagain2_06_e", "text": "다시 차오른 주포로 크라켄을 쓰러뜨리고, 일주일 휴가를 얻는다" },
+    { "scene": "event_seayouagain2_epilogue", "text": "선상 파티가 열리고, 어드마이어 호는 수영장 자리로 돌아간다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9f",
+      "hash": "54ceadb827",
+      "note": "입력과 대조 — 2부 씬까지 한 개요. 헬름을 깨운 목소리 · 주포 충전(열린 의문)은 일어난 일로만, 까닭은 쓰지 않음"
+    }
+  ]
+}

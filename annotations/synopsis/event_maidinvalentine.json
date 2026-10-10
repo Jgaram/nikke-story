@@ -1,0 +1,29 @@
+{
+  "unit": "event_maidinvalentine",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "진심이 담긴 밸런타인 초콜릿을 찾아, 메이드 카페의 메이드들이 지휘관과 지상의 초콜릿 공장을 찾는다.",
+  "synopsis": "메이드 카페의 메이드 포 유(에이드 · 메이드장 코코아 · 소다)가 밸런타인 특별 행사를 준비한다. 그러나 사장 머스탱은 초콜릿이 맛있어도 진심이 담기지 않았다며, 며칠 안에 진정한 밸런타인 초콜릿을 만들지 못하면 행사를 열 수 없다고 못 박는다. 도움을 청받은 지휘관이 카페의 서비스를 체험하던 중, 초콜릿 조언을 구하러 온 시그널이 지상의 옛 디저트 회사 Sweets & Cocoa의 정보를 건넨다.\n\n지상의 공장에서는 관리 A.I. 홀로그램 스윗 조니가 깨어나, 수십 년째 납품이 끊긴 채 보존해 온 카카오로 초콜릿 강의를 연다. 카카오로 만드는 진짜 초콜릿은 메이드들에게도 처음이다. 제멋대로인 강의에 에이드가 항의하자 스윗 조니는 받을 사람을 진심으로 생각하라고 가르치고, 메이드들은 지휘관의 취향을 묻다가 평소처럼 진심으로 대하면 된다는 것을 깨닫는다. 스윗 조니는 방주로 데이터를 옮기자는 제안을 사양하고 다음 밸런타인에도 오라며 공장에 남는다.\n\n다시 만든 초콜릿으로 머스탱의 합격을 받은 행사는 대성황을 이루고, 일행은 남은 실패작 조각을 나눠 먹는다. 밸런타인이 지난 뒤에는 친구에게 줄 초콜릿을 거듭 실패한 프리바티가 지휘관과 함께 공장을 찾아온다.",
+  "scenes": [
+    { "scene": "event_maidinvalentine_prologue", "text": "메이드 포 유가 메이드장 코코아와 밸런타인 행사를 연습한다" },
+    { "scene": "event_maidinvalentine_01_s", "text": "머스탱이 진심 없는 초콜릿으로는 행사를 열 수 없다고 하고, 메이드들이 지휘관에게 도움을 청한다" },
+    { "scene": "event_maidinvalentine_01_e", "text": "지휘관이 밸런타인 서비스를 체험하며 카레라이스와 디저트를 맛본다" },
+    { "scene": "event_maidinvalentine_02_s", "text": "시그널이 정말 좋아하는 지휘관에게 줄 초콜릿을 들킨다" },
+    { "scene": "event_maidinvalentine_02_e", "text": "시그널이 Sweets & Cocoa의 정보를 건네고, 코코아가 지상에 가기로 한다" },
+    { "scene": "event_maidinvalentine_03_s", "text": "지상의 초콜릿 공장에 수십 년 만의 손님이 찾아든다" },
+    { "scene": "event_maidinvalentine_03_e", "text": "관리 A.I. 스윗 조니가 깨어나, 납품이 끊긴 공장의 저장고를 연다" },
+    { "scene": "event_maidinvalentine_intermission_01", "text": "저장고의 카카오로, 메이드들이 처음으로 진짜 초콜릿에 손을 댄다" },
+    { "scene": "event_maidinvalentine_04_s", "text": "아무 향신료나 넣으라는 제멋대로인 강의가 이어진다" },
+    { "scene": "event_maidinvalentine_04_e", "text": "받을 사람을 진심으로 생각하라는 말에, 메이드들이 지휘관에게 줄 초콜릿을 만든다" },
+    { "scene": "event_maidinvalentine_05_s", "text": "지휘관의 취향을 묻던 메이드들이 평소대로 하면 된다는 답을 얻는다" },
+    { "scene": "event_maidinvalentine_05_e", "text": "진정한 초콜릿을 완성하고, 스윗 조니는 공장에 남아 다음 밸런타인을 기약한다" },
+    { "scene": "event_maidinvalentine_06_s", "text": "머스탱의 합격을 받아 행사가 열리고, 지휘관이 하루 일을 돕는다" },
+    { "scene": "event_maidinvalentine_06_e", "text": "대성황이 끝난 뒤, 실패작 초콜릿 조각을 나눠 먹는다" },
+    { "scene": "event_maidinvalentine_epilogue", "text": "밸런타인 뒤, 프리바티가 지휘관 · 시그널과 공장을 찾는다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9f", "hash": "74ce051482", "note": "입력(요약 · 사실 · 대상)과 대조 — 가벼운 편, 드러난 것만" }
+  ]
+}

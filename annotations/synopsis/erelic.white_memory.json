@@ -1,0 +1,42 @@
+{
+  "unit": "erelic:white_memory",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "방주 밀봉을 기다리던 나날, 초소 밖을 탐색하던 스노우 화이트가 떠난 릴리스에게 작별을 고한다.",
+  "synopsis": "릴리스가 떠나고 도로시가 리더 대행으로 버티던 방주 밀봉 전의 나날, 스노우 화이트는 초소 밖을 탐색하며 사슴을 쫓고 맨손으로 물고기를 잡고, 라푼젤의 수프에 감탄했다가 요리 참사를 겪는다. 그러나 옛일을 잊은 스노우 화이트는 릴리스의 얼굴도 이름도 떠올리지 못해 그 죽음을 받아들이지 못하고, 관 앞으로 가는 걸음을 떼지 못한다.\n\n라푼젤은 진정한 끝은 잊히는 것이며 헤어짐은 얼굴을 보고 진심으로 안녕이라 말하는 것이라고 일러 준다. 갓데스가 묻어 둔 추억의 캡슐에서 인류를 구원하자는 릴리스의 쪽지를 꺼내 읽은 스노우 화이트는, 릴리바이스 꽃을 안고 초원 끝 관 앞에서 마침내 작별을 고한다. 관 근처에서 주운 어떤 이의 군번줄도 릴리스에게 가져다준다.\n\n그러나 훗날 다시 찾은 관은 부서져 있고, 릴리스의 머리가 사라져 있다. 랩쳐의 짓이라고 여긴 스노우 화이트는 지상의 랩쳐를 모두 쓸어버리고 언니의 머리를 찾겠다며 길을 나선다.",
+  "scenes": [
+    { "scene": "erelic:white_memory_00", "text": "탐색하기 좋은 날이 아니라고 보고 초소로 돌아간다" },
+    { "scene": "erelic:white_memory_01", "text": "마침내 사슴 사냥에 성공해 넉넉한 저녁을 기대한다" },
+    { "scene": "erelic:white_memory_02", "text": "홍련과 낚시하던 중, 맨손으로 거대한 물고기를 잡아낸다" },
+    { "scene": "erelic:white_memory_03", "text": "라푼젤이 끓인 수프를 맛보고 감탄한다" },
+    { "scene": "erelic:white_memory_04", "text": "라푼젤에게 진정한 헤어짐의 인사를 배운다" },
+    { "scene": "erelic:white_memory_05", "text": "몰려든 랩쳐를 물리치느라 빈손으로 돌아간다" },
+    { "scene": "erelic:white_memory_06", "text": "환각 버섯을 먹어도, 보고 싶은 얼굴은 희뿌옇게만 보인다" },
+    { "scene": "erelic:white_memory_07", "text": "기다려도 사슴은 돌아오지 않고, 덫에는 작은 동물만 걸린다" },
+    { "scene": "erelic:white_memory_08", "text": "홍련이 조는 사이, 낚싯대에는 아무것도 걸리지 않는다" },
+    { "scene": "erelic:white_memory_09", "text": "홍련의 검 한 번에 강의 물고기들이 산산조각 난다" },
+    { "scene": "erelic:white_memory_10", "text": "라푼젤의 요리가 정체 모를 검은 액체가 되고, 마지막 통조림을 지킨다" },
+    { "scene": "erelic:white_memory_11", "text": "얼굴도 이름도 떠오르지 않아, 릴리스의 관으로 가는 걸음을 멈춘다" },
+    { "scene": "erelic:white_memory_12", "text": "묻어 둔 추억의 캡슐에서 릴리스가 남긴 쪽지를 꺼낸다" },
+    { "scene": "erelic:white_memory_13", "text": "버려진 텐트에서 카세트테이프를 줍고, 환각 속에서 노래를 듣는다" },
+    { "scene": "erelic:white_memory_14", "text": "잊은 줄 알았던 화무십일홍의 뜻을 기억해 홍련을 놀라게 한다" },
+    { "scene": "erelic:white_memory_15", "text": "무리하는 도로시에게 선물하려고 양산을 챙겨 돌아간다" },
+    { "scene": "erelic:white_memory_16", "text": "부끄러움을 잊은 라푼젤이, 레드 후드에게 놀림받던 때를 그리워한다" },
+    { "scene": "erelic:white_memory_17", "text": "릴리바이스 꽃밭에 주저앉아 꽃을 끌어안고 언니를 부른다" },
+    { "scene": "erelic:white_memory_18", "text": "초원 끝 릴리스의 관에 꽃을 올리고 작별을 고한다" },
+    { "scene": "erelic:white_memory_19", "text": "어떤 이의 이름이 새겨진 군번줄을 릴리스에게 가져다준다" },
+    { "scene": "erelic:white_memory_20", "text": "부서진 관에서 릴리스의 머리가 사라진 것을 보고, 랩쳐를 쓸어버리겠다고 다짐한다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9f",
+      "hash": "1181fb0966",
+      "note": "입력과 대조, 설명 없는 짧은 조각 13개는 원문(합쳐 5천 자 남짓)으로 씬 한 줄 작성. 군번줄 주인 · 머리의 행방(열린 의문)은 쓰지 않음"
+    }
+  ]
+}

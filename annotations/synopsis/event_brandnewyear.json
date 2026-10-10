@@ -1,0 +1,29 @@
+{
+  "unit": "event_brandnewyear",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "어드마이어 호의 신년 선상 파티에서 시작된 심부름이, 헬름 일행을 처음 보는 지상의 바다로 이끈다.",
+  "synopsis": "새해를 맞아 헬름이 지휘관을 어드마이어 호의 신년 선상 파티에 초대한다. 헬름의 해마다 같은 목표는 지상을 되찾아 어드마이어 호를 바다에 띄우는 것이다. 파티장에서 지휘관은 몰래 초대권을 들고 온 슈가와 커피를 품평하고, 리허설이 잘 풀리지 않던 연주 담당 율리아는 음악과 대화하는 법을 찾아 본 연주를 해낸다.\n\n그러던 중 버닝엄이 지상으로 올려 보낸 새해 물품에 막내딸에게 줄 한정판 아크레인저 피규어가 잘못 섞였다며 회수를 부탁한다. 헬름 · 슈가 · 율리아와 함께 지상에 나선 지휘관은 좌표에서 방주가 보낸 듯한 상자들이 사람 하나 없이 쌓여 있는 것을 보고 피규어를 찾아낸다. 왜 이런 곳에 물품이 있느냐는 물음에 헬름은 윗선의 사정이라며 넘긴다.\n\n돌아가는 길에 길을 잃은 일행은 슈가가 찾아낸 바다에 닿아, 처음으로 지상의 바다와 새해 일출을 함께 본다. 그때 지휘관은 바다 위 언덕에 선 마리안 같은 형체를 보지만, 눈을 감았다 뜨자 형체는 사라지고 발치에 붕대 하나만 남아 있다. 일행은 파티로 돌아와 피규어를 전하고, 불꽃놀이와 함께 새해를 맞는다.",
+  "scenes": [
+    { "scene": "event_brandnewyear_prologue", "text": "헬름이 지휘관에게 어드마이어 호 신년 선상 파티 초대권을 건넨다" },
+    { "scene": "event_brandnewyear_01_s", "text": "파티장에서 헬름이 해마다 같은 새해 목표를 이야기한다" },
+    { "scene": "event_brandnewyear_01_e", "text": "율리아의 리허설이 삐걱대고, 버닝엄이 헬름을 찾는다" },
+    { "scene": "event_brandnewyear_02_s", "text": "초대권을 몰래 들고 온 슈가가 파티에 어울리는 커피를 고른다" },
+    { "scene": "event_brandnewyear_02_e", "text": "슈가와 함께 커피를 품평한다" },
+    { "scene": "event_brandnewyear_03_s", "text": "음악의 혼을 찾지 못한 율리아가 음악과 대화하는 법을 찾는다" },
+    { "scene": "event_brandnewyear_03_e", "text": "율리아가 본 연주를 해내고, 헬름이 지휘관을 부사령관에게 데려간다" },
+    { "scene": "event_brandnewyear_intermission_01", "text": "버닝엄이 지상에 보낸 물품에 섞인 딸의 선물을 찾아 달라고 부탁한다" },
+    { "scene": "event_brandnewyear_04_s", "text": "지상으로 출발하며, 헬름이 바다를 본 적이 없다고 털어놓는다" },
+    { "scene": "event_brandnewyear_04_e", "text": "슈가가 지상의 긴 도로를 마음껏 달린다" },
+    { "scene": "event_brandnewyear_05_s", "text": "겨울 공기 속에서 쉬며 율리아의 연주를 듣는다" },
+    { "scene": "event_brandnewyear_05_e", "text": "사람 없는 좌표의 상자 더미에서 피규어를 찾아내지만, 물품의 정체는 흐려진다" },
+    { "scene": "event_brandnewyear_06_s", "text": "길을 잃은 일행 앞에 슈가가 바다를 찾아 돌아온다" },
+    { "scene": "event_brandnewyear_06_e", "text": "처음 보는 바다와 일출 앞에서, 지휘관이 마리안 같은 형체와 붕대를 본다" },
+    { "scene": "event_brandnewyear_epilogue", "text": "피규어를 전하고, 불꽃놀이로 파티가 막을 내린다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9f", "hash": "8edcf2e48f", "note": "입력과 대조 — 상자 더미 · 언덕의 형체(열린 의문)는 본 그대로만 씀" }
+  ]
+}

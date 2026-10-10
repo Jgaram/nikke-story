@@ -1,0 +1,36 @@
+{
+  "unit": "event_bowwowparadise",
+  "session": "W9f",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "보호소를 탈출한 강아지들을 쫓던 비스킷과 지휘관이, 강아지들이 마음껏 뛰놀 새 보호소를 짓는다.",
+  "synopsis": "비스킷이 돌보는 강아지 보호소에서, 리더 격인 강아지 맥스가 꾀병으로 문을 열게 한 뒤 강아지들을 이끌고 달아난다. 방주에서는 일부 특권층만 허락을 받아 반려동물을 키울 수 있어 함부로 데려가면 엄벌을 받는다. 보호소 강아지들은 방주에 나가 본 적도 없다. 비스킷은 네로의 귀띔대로 지휘관에게 도움을 청한다.\n\n경찰서에 모인 강아지들은 민원만 남긴 채 맥스가 다시 데려가고, 쇼핑몰까지 쫓아가 강아지들을 붙잡은 뒤에야 비스킷은 맥스가 방주를 보고 싶어 했다는 것을 알게 된다. 보호라는 이름이 구속이었을지 모른다고 돌아본 비스킷은, 공원에서 리타 · 볼트와 놀던 맥스를 데려오며 방주처럼 자유롭게 뛰놀 보호소를 만들어 주겠다고 약속한다.\n\n리타와 센티가 시작한 공사는 다 짓기도 전에 강아지들이 뛰어드는 바람에 무너지지만, 비스킷과 지휘관, 강아지들은 저마다의 습성에 맞춰 다시 짓는다. 새 보호소에는 바우 와우 파라다이스라는 이름이 붙고, 맥스는 이제 방주보다 이곳이 좋다고 여긴다.",
+  "scenes": [
+    { "scene": "event_bowwowparadise_prologue", "text": "맥스의 꾀병에 보호소 문이 열리고, 강아지들이 일제히 달아난다" },
+    { "scene": "event_bowwowparadise_01_s", "text": "네로의 귀띔을 듣고 비스킷이 지휘관을 찾아간다" },
+    { "scene": "event_bowwowparadise_01_e", "text": "방주의 반려동물 규제와, 강아지들이 방주에 나가 본 적이 없다는 사정을 듣는다" },
+    { "scene": "event_bowwowparadise_02_s", "text": "경찰서에 모인 강아지들을 맥스가 다시 데리고 사라진다" },
+    { "scene": "event_bowwowparadise_02_e", "text": "맥스의 뒤를 쫓던 중 쇼핑몰에서 민원이 들어온다" },
+    { "scene": "event_bowwowparadise_03_s", "text": "쇼핑몰에서 강아지들을 붙잡지만, 맥스는 돌아가기 싫다고 버틴다" },
+    { "scene": "event_bowwowparadise_03_e", "text": "탈주의 까닭이 방주를 향한 호기심이었음을 알고, 비스킷이 자신을 돌아본다" },
+    { "scene": "event_bowwowparadise_intermission_01", "text": "공원에서 맥스를 붙잡은 비스킷이 방주 같은 보호소를 약속한다" },
+    { "scene": "event_bowwowparadise_04_s", "text": "리타와 센티가 보호소 공사를 시작한다" },
+    { "scene": "event_bowwowparadise_04_e", "text": "다 짓지도 못한 보호소에 강아지들이 뛰어들어 무너진다" },
+    { "scene": "event_bowwowparadise_05_s", "text": "풀 죽은 강아지들과 함께 다시 짓기로 한다" },
+    { "scene": "event_bowwowparadise_05_e", "text": "강아지마다의 습성에 맞춰 두 번째 공사가 이어진다" },
+    { "scene": "event_bowwowparadise_06_s", "text": "새 보호소에 바우 와우 파라다이스라는 이름이 붙는다" },
+    { "scene": "event_bowwowparadise_06_e", "text": "리타가 마무리한 보호소에서 강아지들이 자유롭게 뛰논다" },
+    { "scene": "event_bowwowparadise_epilogue", "text": "맥스가 방주보다 이곳이 좋다고, 여기가 자신들의 낙원이라고 여긴다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9f",
+      "hash": "0222f91ccc",
+      "note": "입력과 대조 — 가벼운 편. 스포일러 경고 '나가'는 동사 '나가 본' 속 글자라 그대로 둠"
+    }
+  ]
+}
