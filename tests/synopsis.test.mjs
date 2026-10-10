@@ -111,8 +111,8 @@ test('스포일러 경고 — 그 단위 뒤에 처음 나오는 이름, 앞 이
 });
 
 test('스포일러 경고 — 낱말 속 글자(앞에 한글 음절이 붙은 것) · 흔한 낱말 속 이름은 빼고, 띄어 쓴 이름은 잡는다', () => {
-  const firsts = new Map([['이브', { order: 50, unit: 'ch32' }], ['사라', { order: 60, unit: 'fl:good_world' }], ['리스', { order: 70, unit: 'event_staranis1' }]]);
-  const word = { ...good(), synopsis: `${good().synopsis} 하이브가 크리스탈을 지키다 사라진다.` };
+  const firsts = new Map([['이브', { order: 50, unit: 'ch32' }], ['사라', { order: 60, unit: 'fl:good_world' }], ['리스', { order: 70, unit: 'event_staranis1' }], ['IV', { order: 80, unit: 'x' }]]);
+  const word = { ...good(), synopsis: `${good().synopsis} 하이브가 크리스탈을 지키다 사라진다. 곡명은 DIVA.` };
   assert.deepEqual(spoilerProblems(word, 10, firsts).warnings, []);
   const name = { ...good(), synopsis: `${good().synopsis} 이브와 사라가 만난다.` };
   const r = spoilerProblems(name, 10, firsts);
