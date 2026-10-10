@@ -63,6 +63,8 @@ function buildCore({ manifest, units, ticks, scenes, targets, threads, slips, ve
   const threadMap = new Map(threads.threads.map((j) => [j.id, j]));
   // 시점별 판(W15c — versions.json) — 떡밥마다 j.v = [{ at, title, text }](읽는 순서). 고르는 것은 fmt.threadAt
   for (const [id, list] of Object.entries(versions?.threads ?? {})) if (threadMap.has(id)) threadMap.get(id).v = list;
+  // 사전 설명 판(W15e) — 대상마다 t.v = [{ at, text }]. 고르는 것은 fmt.noteAt
+  for (const [id, list] of Object.entries(versions?.targets ?? {})) if (targetMap.has(id)) targetMap.get(id).v = list;
   const mainTicks = ticks.filter((t) => t.main);
   return {
     manifest,

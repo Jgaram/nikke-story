@@ -14,7 +14,7 @@ import path from 'node:path';
 import { run as exportVersions } from '../tools/site/export/versions.mjs';
 import { fileNameFor } from '../tools/records/model.mjs';
 import {
-  SITE_DATA, VERSION_DIR, checkFile, contentHash, lateNames, loadSources, loadVersions, nameIndex, publishable, sourcesFrom, srcHash, stateOf,
+  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, loadSources, loadVersions, nameIndex, publishable, sourcesFrom, srcHash, stateOf,
 } from '../tools/versions/model.mjs';
 
 const fmt = await import('../site/lib/format.js');
@@ -156,6 +156,69 @@ test('화면 fmt.versionAt · threadAt — 앞 판들의 at을 다 본 마지막
   assert.equal(fmt.versionAt([], R(5)), null);
 });
 
+// 사전 설명(W15e) — 같은 꼴, 제목 없이 설명만. 첫 판 = 항목이 처음 나온 자리(meet의 마지막), 지문 = at까지 항목을 다룬 기록
+const DT = [
+  ...TARGETS,
+  { id: 'item:세븐스_드워프', type: 'item', name: '세븐스 드워프', note: '…', meet: ['char:222', 'ch45'] }, // char:222(체크 칸) 뒤 ch45가 처음 나온 자리
+  { id: 'org:에덴', type: 'org', name: '에덴', note: '…' }, // meet 없음 — 판을 둘 수 없다
+];
+const DREC = [
+  { id: 'F1', kind: 'F', unit: 'ch45', about: ['item:세븐스_드워프'], text: '…' },
+  { id: 'F2', kind: 'F', unit: 'ch48', about: ['item:세븐스_드워프', 'person:홍련'], text: '…' },
+];
+const DC = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: DREC });
+const DS = 'item:세븐스_드워프';
+const dver = (at, text, extra = {}) => ({ at, text, src: srcHash(DS, at, DC), session: 'W15e', by: 'claude', date: '2026-10-10', status: '후보', reviews: [], ...extra });
+
+test('사전 판 — 첫 판은 처음 나온 자리(meet의 마지막) · 제목은 오류 · 뒤 이름 오류 · meet 없는 항목은 판을 둘 수 없다', () => {
+  assert.equal(isDict(DS), true);
+  assert.equal(dictFirst(DC.targetMap.get(DS)), 'ch45');
+  const ok = { subject: DS, versions: [dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.'), dver('ch48', '홍련이 손본 무기로 드러났다 — 누가 처음 만들었나.')] };
+  assert.deepEqual(checkFile(ok, DC), { errors: [], warnings: [] });
+  const early = checkFile({ subject: DS, versions: [dver('char:222', '스노우 화이트가 들고 다니는 무기라는 것만 안다.')] }, DC);
+  assert.ok(early.errors.some((m) => /첫 판의 at은 항목이 처음 나온 자리/.test(m)));
+  const titled = checkFile({ subject: DS, versions: [dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.', { title: '무기' })] }, DC);
+  assert.ok(titled.errors.some((m) => /title을 두지 않는다/.test(m)));
+  const late = checkFile({ subject: DS, versions: [dver('ch45', '바이스리터가 들고 다니던 무기라는 것만 안다고 한다.')] }, DC);
+  assert.ok(late.errors.some((m) => /이 자리 뒤에 처음 쓰이는 이름 — 바이스리터/.test(m)));
+  const quiet = checkFile({ subject: DS, versions: [dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.'), dver('ch46', '스노우 화이트가 들고 다니는 무기 — 이름의 뜻은 모른다.')] }, DC);
+  assert.ok(quiet.warnings.some((m) => /판 ch46: 이 스토리에서 항목을 다룬 기록이 없다/.test(m)));
+  assert.match(checkFile({ subject: 'org:에덴', versions: [] }, DC).errors[0], /처음 나온 자리\(meet\)가 없는 항목/);
+});
+
+test('사전 판 지문 — at까지 항목을 다룬 기록이 바뀌면 낡음, 뒤 기록은 상관없다 · 내보내면 { at, text }', async () => {
+  const v1 = dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.');
+  const more = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F3', kind: 'F', unit: 'ch45', about: [DS], text: '…' }] });
+  assert.notEqual(srcHash(DS, 'ch45', more), v1.src);
+  const after = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F4', kind: 'F', unit: 'ch48', about: [DS], text: '…' }] });
+  assert.equal(srcHash(DS, 'ch45', after), v1.src);
+  const done = { ...v1, status: '확정', reviews: [{ decision: '확정', by: 'claude', hash: contentHash(v1) }] };
+  assert.deepEqual(publishable({ subject: DS, versions: [done] }, DC).list, [{ at: 'ch45', text: v1.text }]);
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'versions-'));
+  try {
+    fs.writeFileSync(path.join(dir, fileNameFor(DS)), JSON.stringify({ subject: DS, versions: [done] }));
+    const ctx = { versionDir: dir, common: { units: UNITS }, made: { 'units.json': UNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': DT, 'records.json': DREC }, warn: () => {} };
+    const out = (await exportVersions(ctx)).files['versions.json'];
+    assert.deepEqual(out.targets, { [DS]: [{ at: 'ch45', text: v1.text }] });
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('화면 fmt.noteAt — 그 자리 판의 설명, 판이 없으면 전부 보기에서만 분석용 설명', () => {
+  const units = new Map(UNITS.map((u) => [u.key, u]));
+  const R = (t, x = {}) => ({ all: t == null, seen: (k) => t == null || (k in x ? x[k] : (units.get(k)?.tick ?? 99) <= t) });
+  const t = { id: DS, note: '분석용', v: [{ at: 'ch45', text: '첫 설명' }, { at: 'ch48', text: '뒤 설명' }] };
+  assert.equal(fmt.noteAt(t, R(3)), null);
+  assert.equal(fmt.noteAt(t, R(4)), '첫 설명');
+  assert.equal(fmt.noteAt(t, R(6)), '뒤 설명');
+  assert.equal(fmt.noteAt(t, R(null)), '뒤 설명');
+  const bare = { id: DS, note: '분석용' };
+  assert.equal(fmt.noteAt(bare, R(6)), null);
+  assert.equal(fmt.noteAt(bare, R(null)), '분석용');
+  assert.equal(fmt.noteAt(bare, R(null), '걷은 설명'), '걷은 설명');
+});
+
 const hasData = fs.existsSync(path.join(SITE_DATA, 'threads-flow.json'));
 
 test('실제 파일 — 깨진 파일 · 오류 없음, 확정 판은 지문이 맞다', { skip: !hasData && 'site/data 없음' }, () => {
@@ -175,7 +238,12 @@ test('내보낸 versions.json — 확정 판과 같고, 판마다 그 자리 뒤
   const set = loadVersions(VERSION_DIR);
   for (const { data } of set.list) {
     const id = data.subject.replace(/^thread:/, '');
-    assert.deepEqual(out.threads[id] ?? [], publishable(data, real).list, `${id} — node tools/site/export.mjs`);
+    const got = isDict(data.subject) ? out.targets?.[data.subject] : out.threads[id];
+    assert.deepEqual(got ?? [], publishable(data, real).list, `${id} — node tools/site/export.mjs`);
+  }
+  for (const [id, list] of Object.entries(out.targets ?? {})) {
+    assert.equal(list[0].at, dictFirst(real.targetMap.get(id)), `${id} 첫 판`);
+    for (const v of list) assert.deepEqual(lateNames(v.text, real.units.get(v.at).order, real.names, real.units), [], `${id} ${v.at}: ${v.text}`);
   }
   for (const [id, list] of Object.entries(out.threads)) {
     assert.equal(list[0].at, real.threads.get(id).first_unit, `${id} 첫 판`);

@@ -10,7 +10,9 @@
  *   src  = 쓸 때 본 떡밥 흐름의 지문 — at까지(읽는 순서) 떡밥이 움직인 자리(threads-flow.json points · echoes의 기록 · 단계 · 스토리).
  *          기록이 바뀌어(2회독 바로잡기 · 신작) at 앞의 흐름이 달라지면 '낡음' — 내보내기가 그 판부터 빼고 화면은 그 앞 판으로 돌아간다(덜 아는 쪽이라 새지 않는다).
  * 글은 at까지의 스토리 내용만 — 뒤 스토리 이름(laterNames) · at 뒤에 처음 나오는 대상 이름(targets.json meet · name_meet · 다른 이름 meet)은 오류.
- * W15e(사전 설명)도 같은 꼴을 쓴다 — subject 종류를 SUBJECTS에 더한다.
+ * 사전 설명(W15e)도 같은 꼴 — subject가 비인물 대상 ID(place:방주 · org:… · concept:… · incident:… · item:…)이고 판은 { at, text, … }(제목 없음 —
+ *   이름은 W15b fmt.nameAt이 고른다). 첫 판의 at = 항목이 처음 나온 자리(targets.json meet의 마지막 — 체크 칸이 아닌 첫 스토리),
+ *   src = at까지 항목을 다룬 기록(about)의 [기록, 단위]. 화면은 fmt.noteAt.
  */
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -21,7 +23,9 @@ import { laterNames, textProblems } from '../blurbs/model.mjs';
 
 export const VERSION_DIR = path.join(ROOT, 'annotations/versions');
 export const SITE_DATA = path.join(ROOT, 'site/data');
-export const SUBJECTS = { thread: '떡밥' };
+export const SUBJECTS = { thread: '떡밥', concept: '사전', incident: '사전', item: '사전', org: '사전', place: '사전' };
+/** 사전 설명 대상 종류(W15e) — 세계 탭 항목 */
+export const DICT_KINDS = new Set(['concept', 'incident', 'item', 'org', 'place']);
 export const STATUSES = ['후보', '확정', '기각'];
 export const DECIDERS = ['claude']; // 실무는 Claude만 — 사용자는 기준에 피드백(CLAUDE.md "일하는 법")
 
@@ -33,6 +37,8 @@ export const LIMITS = {
   sentences: 2,
   versions: 6, // 넘으면 경고 — 판은 떡밥의 큰 고비에서만 나눈다
 };
+/** 사전 설명(W15e) — 지금 분석용 설명이 중앙값 43자 · 가장 긴 것 108자 */
+export const DICT_LIMITS = { text: [10, 100], textMax: 160, sentences: 2, versions: 4 };
 
 const arr = (x) => (Array.isArray(x) ? x : []);
 const sha = (v) => crypto.createHash('sha1').update(JSON.stringify(v)).digest('hex').slice(0, 10);
@@ -40,6 +46,9 @@ const sha = (v) => crypto.createHash('sha1').update(JSON.stringify(v)).digest('h
 export const versionPath = (subject, dir = VERSION_DIR) => path.join(dir, fileNameFor(subject));
 export const subjectKind = (subject) => String(subject ?? '').split(':')[0];
 export const threadId = (subject) => (subjectKind(subject) === 'thread' ? String(subject).slice('thread:'.length) : null);
+export const isDict = (subject) => DICT_KINDS.has(subjectKind(subject));
+/** 사전 항목이 처음 나온 자리 — meet의 마지막(체크 칸이 아닌 첫 스토리 — 그 앞 체크 칸을 안 골라도 여기서는 만난다). meet가 없으면 null */
+export const dictFirst = (t) => (Array.isArray(t?.meet) && t.meet.length ? t.meet.at(-1) : null);
 
 /** 떡밥이 움직인 자리 — threads-flow.json 줄기의 roots[].points · echoes를 읽는 순서로 [{ r, s, u, o }] */
 export function flowPoints(flow) {
@@ -49,10 +58,21 @@ export function flowPoints(flow) {
   return out.sort((a, b) => (a.o ?? 1e9) - (b.o ?? 1e9) || String(a.r).localeCompare(String(b.r)));
 }
 
-/** 판 지문 — at까지(읽는 순서 order 이하) 떡밥이 움직인 자리. at이 없는 단위면 null */
+/** 사전 항목을 다룬 기록(about) — 읽는 순서로 [{ r, u, o, rec }] */
+export function dictRecords(id, C) {
+  const out = [];
+  for (const rec of arr(C.aboutOf?.get(id))) {
+    const o = C.units.get(rec.unit)?.order;
+    if (o != null) out.push({ r: rec.id, u: rec.unit, o, rec });
+  }
+  return out.sort((a, b) => a.o - b.o || String(a.r).localeCompare(String(b.r), 'en', { numeric: true }));
+}
+
+/** 판 지문 — at까지(읽는 순서 order 이하) 떡밥이 움직인 자리 · 사전 항목을 다룬 기록. at이 없는 단위면 null */
 export function srcHash(subject, at, C) {
-  const id = threadId(subject);
   const me = C.units.get(at)?.order;
+  if (isDict(subject)) return me == null || !C.targetMap?.has(subject) ? null : sha(dictRecords(subject, C).filter((p) => p.o <= me).map((p) => [p.r, p.u]));
+  const id = threadId(subject);
   if (!id || me == null || !C.flow[id]) return null;
   return sha(flowPoints(C.flow[id]).filter((p) => p.o != null && p.o <= me).map((p) => [p.r, p.s, p.u]));
 }
@@ -76,13 +96,19 @@ export function stateOf(v, cur) {
  */
 export function loadSources(dir = SITE_DATA) {
   const read = (f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-  return sourcesFrom({ units: read('units.json'), threads: read('threads.json'), flow: read('threads-flow.json'), targets: read('targets.json') });
+  return sourcesFrom({
+    units: read('units.json'), threads: read('threads.json'), flow: read('threads-flow.json'), targets: read('targets.json'), records: [...read('records.json'), ...read('records2.json')],
+  });
 }
 
-export function sourcesFrom({ units: unitList, threads, flow, targets }) {
+/** records = 확정 기록(records.json + records2.json) — 사전 판의 지문 · 입력에 쓴다(없으면 사전 판은 지문이 빈 목록) */
+export function sourcesFrom({ units: unitList, threads, flow, targets, records = [] }) {
   const units = new Map(arr(unitList).map((u) => [u.key, u]));
   const C = { units, threads: new Map(arr(threads?.threads).map((t) => [t.id, t])), flow: flow ?? {}, targets: arr(targets) };
+  C.targetMap = new Map(C.targets.map((t) => [t.id, t]));
   C.names = nameIndex(C.targets, units);
+  C.aboutOf = new Map();
+  for (const r of arr(records)) for (const id of arr(r?.about)) if (DICT_KINDS.has(subjectKind(id))) (C.aboutOf.get(id) ?? C.aboutOf.set(id, []).get(id)).push(r);
   return C;
 }
 
@@ -168,18 +194,15 @@ export function checkFile(f, C) {
   const warnings = [];
   const kind = subjectKind(f?.subject);
   if (!(kind in SUBJECTS)) return { errors: [`모르는 대상 — ${f?.subject} (${Object.keys(SUBJECTS).map((k) => `${k}:…`).join(' · ')})`], warnings };
-  const id = threadId(f.subject);
-  const th = C.threads.get(id);
-  if (!th) return { errors: [`떡밥이 없다 — ${id}`], warnings };
+  const S = specOf(f.subject, C);
+  if (S.error) return { errors: [S.error], warnings };
   for (const k of Object.keys(f)) if (!['subject', 'versions'].includes(k)) errors.push(`모르는 칸 — ${k}`);
   const vs = arr(f.versions);
   if (!vs.length) return { errors: [...errors, '판이 없다'], warnings };
-  if (vs.length > LIMITS.versions) warnings.push(`판이 ${vs.length}개 — 큰 고비에서만 나눈다(${LIMITS.versions}개 안쪽)`);
-  const first = th.first_unit;
-  const lastOrder = C.units.get(th.last_unit)?.order ?? Infinity;
-  const moved = new Set(flowPoints(C.flow[id]).map((p) => p.u));
+  if (vs.length > S.limits.versions) warnings.push(`판이 ${vs.length}개 — 큰 고비에서만 나눈다(${S.limits.versions}개 안쪽)`);
+  const { first, lastOrder, moved } = S;
   const live = vs.filter((v) => v?.status !== '기각');
-  if (first && live[0] && live[0].at !== first) errors.push(`첫 판의 at은 떡밥이 처음 나온 스토리(${first} ${C.units.get(first)?.title ?? ''})여야 한다 — 지금 ${live[0].at}`);
+  if (first && live[0] && live[0].at !== first) errors.push(`첫 판의 at은 ${S.firstWhat}(${first} ${C.units.get(first)?.title ?? ''})여야 한다 — 지금 ${live[0].at}`);
   let prev = null;
   const ats = new Set();
   for (const [i, v] of vs.entries()) {
@@ -194,13 +217,14 @@ export function checkFile(f, C) {
     if (ats.has(v.at)) E('같은 at의 판이 둘');
     ats.add(v.at);
     if (prev && u && u.order <= prev.order) E(`판은 읽는 순서대로 — 앞 판(${prev.key})보다 뒤여야 한다`);
-    if (u && u.order > lastOrder) E(`떡밥이 마지막으로 움직인 스토리(${th.last_unit}) 뒤다`);
-    if (u && !moved.has(v.at)) W('이 스토리에서 떡밥이 움직이지 않는다(제기 · 회수 · 암시가 없다) — 판은 움직인 자리에서 나눈다');
+    if (u && u.order > lastOrder) E(`떡밥이 마지막으로 움직인 스토리(${S.last}) 뒤다`);
+    if (u && !moved.has(v.at)) W(S.unmoved);
     if (u) prev = u;
     const cur = srcHash(f.subject, v.at, C);
-    if (cur && v.src !== cur && v.status !== '기각') W('쓴 뒤 이 자리까지의 떡밥 흐름이 바뀌었다(낡음 — 화면은 앞 판) — 입력을 다시 보고 고쳐 `new … --refresh` 뒤 확정');
+    if (cur && v.src !== cur && v.status !== '기각') W(`쓴 뒤 이 자리까지의 ${S.dict ? '항목을 다룬 기록' : '떡밥 흐름'}이 바뀌었다(낡음 — 화면은 앞 판) — 입력을 다시 보고 고쳐 \`new … --refresh\` 뒤 확정`);
     const ctx = { part: 'versions', unit: v.at, units: C.units, laterHint: '판의 글은 at까지의 스토리 내용만' };
-    for (const [k, range, max, sentences] of [['title', LIMITS.title, LIMITS.titleMax, null], ['text', LIMITS.text, LIMITS.textMax, LIMITS.sentences]]) {
+    if (S.dict && typeof v.title === 'string' && v.title.trim()) E('사전 판에는 title을 두지 않는다 — 이름은 W15b(fmt.nameAt)가 고른다');
+    for (const [k, range, max, sentences] of S.fields) {
       const s = typeof v[k] === 'string' ? v[k].trim() : '';
       if (!s) { (v.status === '확정' ? E : W)(`${k}가 비었다`); continue; }
       const r = textProblems(s, { ...ctx, range, max, sentences });
@@ -224,6 +248,35 @@ export function checkFile(f, C) {
   return { errors, warnings };
 }
 const k2 = (v) => (v ? `${v.title ?? ''}\u0000${v.text ?? ''}` : '');
+
+/**
+ * 대상 종류별 검사 틀 — 첫 판 자리 · 마지막 자리 · 움직인 스토리 · 글 칸 · 한도.
+ * 떡밥: 첫 판 = first_unit, 마지막 = last_unit, 움직임 = 흐름(points · echoes). 사전: 첫 판 = 처음 나온 자리(dictFirst), 마지막 없음, 움직임 = 다룬 기록이 있는 스토리 · meet.
+ */
+function specOf(subject, C) {
+  const kind = subjectKind(subject);
+  if (DICT_KINDS.has(kind)) {
+    const t = C.targetMap?.get(subject);
+    if (!t) return { error: `사전 항목이 없다 — ${subject}` };
+    const first = dictFirst(t);
+    if (!first) return { error: `처음 나온 자리(meet)가 없는 항목 — 판을 둘 수 없다(전부 보기에서만 분석용 설명) — ${subject}` };
+    return {
+      dict: true, first, firstWhat: '항목이 처음 나온 자리(meet의 마지막 — 체크 칸이 아닌 첫 스토리)', lastOrder: Infinity, last: null,
+      moved: new Set([...dictRecords(subject, C).map((p) => p.u), ...arr(t.meet)]),
+      unmoved: '이 스토리에서 항목을 다룬 기록이 없다 — 판은 항목에 대해 새로 알게 되는 자리에서 나눈다',
+      limits: DICT_LIMITS, fields: [['text', DICT_LIMITS.text, DICT_LIMITS.textMax, DICT_LIMITS.sentences]],
+    };
+  }
+  const id = threadId(subject);
+  const th = C.threads.get(id);
+  if (!th) return { error: `떡밥이 없다 — ${id}` };
+  return {
+    dict: false, first: th.first_unit, firstWhat: '떡밥이 처음 나온 스토리', lastOrder: C.units.get(th.last_unit)?.order ?? Infinity, last: th.last_unit,
+    moved: new Set(flowPoints(C.flow[id]).map((p) => p.u)),
+    unmoved: '이 스토리에서 떡밥이 움직이지 않는다(제기 · 회수 · 암시가 없다) — 판은 움직인 자리에서 나눈다',
+    limits: LIMITS, fields: [['title', LIMITS.title, LIMITS.titleMax, null], ['text', LIMITS.text, LIMITS.textMax, LIMITS.sentences]],
+  };
+}
 
 /**
  * 파일 전부. 이름이 `_`로 시작하면 뺀다.
@@ -267,7 +320,7 @@ export function publishable(f, C) {
   for (const v of arr(f.versions)) {
     if (v?.status === '기각') continue;
     if (!stateOf(v, srcHash(f.subject, v.at, C)).ok || bad.has(v.at)) break;
-    list.push({ at: v.at, title: v.title.trim(), text: v.text.trim() });
+    list.push(isDict(f.subject) ? { at: v.at, text: v.text.trim() } : { at: v.at, title: v.title.trim(), text: v.text.trim() });
   }
   return { list, errors };
 }

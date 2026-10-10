@@ -35,6 +35,7 @@
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   blurbText(b, seen)              팬용 문장(blurbs.json 칸 { text, later?, gate? }) — text, gate를 봤으면(seen(gate)) 뒤에 later까지. 다듬어 쓴 문장이라 prose를 거치지 않는다
  *   versionAt(list, R) · threadAt(j, R)   시점별 판(W15c — versions.json, 떡밥 j.v) — 앞 판들의 at을 다 본 마지막 판 · 그 자리 떡밥 제목 · 요약(판이 없으면 끝까지 봤을 때만 분석용 이름)
+ *   noteAt(t, R, fallback)               사전 설명 판(W15e — 대상 t.v) — 그 자리 설명. 판이 없으면 전부 보기에서만 fallback(분석용 설명)
  *   threadStarted(j, R) · threadLabel(j, R) · threadLabelOf(id, R) · threadText(j, R) · THREAD_SLOT   떡밥이 나왔나(판 규칙) · 화면 이름(제목이 없으면 자리 글) · 요약(W15d)
  *   threadBundle(j, flow, R)        떡밥 묶음 거르기 — 그 자리에서 이 떡밥과 이어진 줄 아는 의문 · 사실 · 복선만(W15d — docs/views.md "새는 곳 막기")
  *   threadTies(j, flow, R)          그 묶음에서 본 것 — { started, whole, ids(기록), units(스토리), about(대상) } — 리더 · 인물 · 세계 탭이 '이것이 이 떡밥에 드나'를 볼 때
@@ -758,6 +759,17 @@ export function threadAt(j, R) {
   if (v) return { title: v.title, text: v.text, at: v.at, of: list.length, started: true, whole: all || (lastSeen && v === list.at(-1)) };
   if (!list.length && lastSeen) return { title: j.title, text: j.text, at: null, of: 0, started: true, whole: true };
   return { title: null, text: null, at: null, of: list.length, started: threadStarted(j, R), whole: false };
+}
+/**
+ * 사전 설명(W15e) — 대상 t의 그 자리 설명 판(t.v — versionAt). 전부 보기(R.all · R 없음)면 마지막 판, 판이 없으면 fallback(분석용 설명 — 전부 아는 자리의 말이라
+ * 전부 보기에서만). 첫 판(at = 항목이 처음 나온 자리)을 안 봤거나 판이 없으면 null — 화면은 설명 칸을 비운다(prose를 거친 글).
+ */
+export function noteAt(t, R, fallback = null) {
+  const list = Array.isArray(t?.v) ? t.v : [];
+  const all = !R || R.all;
+  const v = versionAt(list, R);
+  const raw = v ? v.text : all ? fallback ?? t?.note ?? null : null;
+  return raw ? prose(raw) || null : null;
 }
 /** 떡밥 자리 글(W15d) — 아직 안 나옴 · 나왔는데 그 자리 제목(판)이 아직 없음 */
 export const THREAD_SLOT = { notYet: '아직 나오지 않은 떡밥', untitled: '제목을 아직 정리하지 않은 떡밥' };

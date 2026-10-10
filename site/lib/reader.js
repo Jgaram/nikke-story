@@ -603,6 +603,8 @@ function firstAppearance(pid, idx) {
  */
 const NOTE_WORK = /1회독|2회독|Q-[A-Z]*\d*-?\d+|RV\d|speakers\.json|별칭으로|약칭으로|넣지 않았|두지 않았|대상은 따로|낱말 앞/; // world.mjs cleanNote와 같은 말
 const noteText = (raw) => String(fmt.prose(raw) ?? '').split(/(?<=[.)])\s+(?=[^\s)])/).filter((x) => x.trim() && !NOTE_WORK.test(x)).join(' ').trim();
+/** 그 자리 사전 설명(W15e — fmt.noteAt 판). 판이 없으면 전부 보기에서만 분석용 설명(작업 문장을 걷은 것) */
+const noteAtText = (t) => fmt.noteAt(t, state.reading(), noteText(t.note) || null);
 
 /** 시간 단서 한 칸 [관계, 기준 키, 간격] → 'CH.01 침식 직전 · 46시간' */
 const atText = (a) => {
@@ -777,7 +779,7 @@ const RENDER = {
       out.append(ui.el('div', { class: 'rd-open' }, tabLink('world', { item: id })));
       const seenUnits = new Set(recs.map((r) => r.unit).filter((k) => k && state.seen(k)));
       out.append(ui.panel(null, [
-        noteText(t.note) ? ui.el('p', { class: 'rd-note' }, noteText(t.note)) : null,
+        noteAtText(t) ? ui.el('p', { class: 'rd-note' }, noteAtText(t)) : null,
         kv([row(LABELS.aliases, aliases), row(LABELS.sameItem, sameRow)]),
         seenUnits.size ? ui.el('p', { class: 'rd-facts-line' }, LABELS.unitsN(fmt.num(seenUnits.size))) : null,
       ]));

@@ -5,13 +5,14 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { SITE_DATA, flowPoints, loadSources, srcHash, stateOf, threadId } from './model.mjs';
+import { SITE_DATA, dictFirst, dictRecords, flowPoints, isDict, loadSources, srcHash, stateOf, threadId } from './model.mjs';
 
 /** 입력에 쓸 사이트 데이터 — 원본(loadSources) + 기록 */
 export function loadContext(dir = SITE_DATA) {
   const read = (f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
   const C = loadSources(dir);
   C.records = new Map([...read('records.json'), ...read('records2.json')].map((r) => [r.id, r]));
+  C.world = new Map((fs.existsSync(path.join(dir, 'world.json')) ? read('world.json').entries ?? [] : []).map((e) => [e.id, e]));
   return C;
 }
 
@@ -37,7 +38,8 @@ function namesIn(texts, C) {
  * @param {string} subject 'thread:J30'
  * @param {object | null} file 지금 판 파일(없으면 null)
  */
-export function buildInput(subject, file, C) {
+export function buildInput(subject, file, C, o = {}) {
+  if (isDict(subject)) return buildDictInput(subject, file, C, o);
   const id = threadId(subject);
   const th = C.threads.get(id);
   if (!th) throw new Error(`떡밥이 없다 — ${subject}`);
@@ -73,3 +75,61 @@ export function buildInput(subject, file, C) {
   for (const v of vs) L.push(`  ${v.at} [${stateOf(v, srcHash(subject, v.at, C)).status}] ${v.title} — ${v.text}`);
   return L.join('\n');
 }
+
+/** 기록 종류 이름 — 입력 묶음에 */
+const KIND_NAME = { F: '사실', Q: '의문', U: '생활상', E: '사건', I: '암시', D: '인물 변화', T: '진실 공개', S: '작중 시점' };
+/** 기록이 많은 항목(방주 · 갓데스 …)은 앞에서 이만큼만 문장째 — 뒤는 스토리마다 건수만(--full이면 전부) */
+const DICT_RECORD_CAP = 60;
+
+/**
+ * 사전 설명 입력 묶음(W15e) — 분석용 설명(옮기지 않는다) · 처음 나온 자리 · 이름이 처음 쓰인 자리 · 무엇인지 보여 주는 줄 ·
+ * 항목을 다룬 기록을 읽는 순서로(종류 · 문장) · 글에 든 이름이 처음 쓰이는 자리 · 지금 판.
+ * @param {{ full?: boolean }} o full = 기록을 전부 문장째
+ */
+export function buildDictInput(subject, file, C, { full = false } = {}) {
+  const t = C.targetMap.get(subject);
+  if (!t) throw new Error(`사전 항목이 없다 — ${subject}`);
+  const w = C.world?.get(subject);
+  const L = [];
+  L.push(`# ${subject} 사전 설명 시점별 판 입력 — ${t.name}${t.kind ? ` (${t.kind})` : ''}`);
+  L.push(`분석용 설명(전부 아는 자리에서 쓴 것 — 판 글에 그대로 옮기지 않는다): ${w?.note ?? t.note ?? '(없음)'}`);
+  const first = dictFirst(t);
+  L.push(`처음 나온 자리(첫 판 at): ${first ? unitLine(first, C) : '없음 — 판을 둘 수 없다'}${arr(t.meet).length > 1 ? ` · 그 앞 체크 칸 스토리: ${t.meet.slice(0, -1).map((k) => unitLine(k, C)).join(' · ')}` : ''}`);
+  if (t.name_meet) L.push(`표준명이 처음 쓰인 자리: ${t.name_meet.map((k) => unitLine(k, C)).join(' · ')} — 그 앞은 먼저 나온 다른 이름으로 부른다`);
+  for (const a of arr(t.aliases)) L.push(`다른 이름: ${a.name}${a.how ? ` (${a.how})` : ''} — ${a.never ? '쓰인 곳 없음' : a.meet ? a.meet.map((k) => unitLine(k, C)).join(' · ') : '표준명과 같이'}`);
+  const ev = arr(w?.evidence);
+  if (ev.length) L.push(`무엇인지 보여 주는 줄(사전 근거 — 원문은 read.mjs로): ${ev.map((e) => `${e.scene}#${arr(e.lines).join(',')}`).join(' · ')}`);
+  L.push('');
+  const recs = dictRecords(subject, C);
+  L.push(`## 다룬 기록 ${recs.length} — 읽는 순서. 판의 글은 at까지의 기록으로 쓴다`);
+  const texts = [];
+  const byUnit = new Map();
+  for (const p of recs) (byUnit.get(p.u) ?? byUnit.set(p.u, []).get(p.u)).push(p);
+  let shown = 0;
+  for (const [u, list] of byUnit) {
+    if (!full && shown >= DICT_RECORD_CAP) {
+      const n = {};
+      for (const p of list) n[p.rec.kind] = (n[p.rec.kind] ?? 0) + 1;
+      L.push(`${unitLine(u, C)} — ${Object.entries(n).map(([k, c]) => `${KIND_NAME[k] ?? k} ${c}`).join(' · ')}`);
+      continue;
+    }
+    L.push(unitLine(u, C));
+    for (const p of list) {
+      const r = p.rec;
+      texts.push(r.text ?? '');
+      L.push(`  ${KIND_NAME[r.kind] ?? r.kind} ${r.id}${r.scene ? ` (${r.scene}#${r.line ?? ''})` : ''}: ${clip(r.text, 180)}`);
+      shown++;
+    }
+  }
+  if (!full && shown < recs.length) L.push(`  … 앞 ${shown}건만 문장째 — 전부는 --full`);
+  L.push('');
+  L.push('## 이름이 처음 쓰이는 자리 — 판의 at이 이 자리보다 앞이면 그 이름은 쓰지 않는다(검사가 잡는다)');
+  for (const [name, f] of namesIn([w?.note ?? t.note ?? '', ...texts], C)) L.push(`  ${name} — ${f.unit ? unitLine(f.unit, C) : '쓰인 곳 없음'}`);
+  L.push('');
+  L.push('## 지금 판');
+  const vs = Array.isArray(file?.versions) ? file.versions : [];
+  if (!vs.length) L.push('  (없음)');
+  for (const v of vs) L.push(`  ${v.at} [${stateOf(v, srcHash(subject, v.at, C)).status}] ${v.text}`);
+  return L.join('\n');
+}
+const arr = (x) => (Array.isArray(x) ? x : []);

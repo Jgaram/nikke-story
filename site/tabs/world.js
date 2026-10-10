@@ -131,6 +131,8 @@ export async function mount(root, ctx) {
   const whenLabel = (tick) => fmt.tickLabel(tick, { date: false });
   /** 그 자리에서 부르는 이름(fmt.nameAt — 표준명이 아직이면 먼저 나온 다른 이름, W15b). 이름 자리가 없는 항목은 사전 이름 */
   const nameOf = (id) => fmt.nameAt(idx.targets.get(id), state.reading()) ?? byId.get(id)?.name ?? fmt.targetName(id);
+  /** 그 자리 사전 설명(fmt.noteAt — W15e 판). 판이 없으면 전부 보기에서만 분석용 설명(내보낼 때 걷은 e.note) */
+  const noteOf = (e, R) => fmt.noteAt(idx.targets.get(e.id) ?? { note: e.note }, R, e.note);
 
   // ── 상태 읽기 ──
   /** c = { R(여기까지 읽음 — state.reading), sig } */
@@ -331,7 +333,7 @@ export async function mount(root, ctx) {
       const t = idx.targets.get(e.id);
       const names = t ? fmt.namesAt(t, c.R) : [];
       const known = names.length ? names : [nameOf(e.id)];
-      return [...known, known.includes(e.name) ? e.id : null, e.kind, e.note].join(' ');
+      return [...known, known.includes(e.name) ? e.id : null, e.kind, noteOf(e, c.R)].join(' ');
     };
     const matched = visible.filter((v) => !q || norm(findText(v.e)).includes(q));
     ui.clear(typeChips);
@@ -548,7 +550,7 @@ export async function mount(root, ctx) {
     const aliases = (e.aliases ?? []).filter((a) => knownAliases.has(a.name));
     put(el,
       h('div', { class: 'w-card-title' }, h('h3', {}, nameOf(e.id)), h('span', { class: 'w-card-kind' }, [typeLabel(e.type), e.kind].filter(Boolean).join(' · '))),
-      fmt.prose(e.note) ? h('p', { class: 'w-note' }, fmt.prose(e.note)) : null,
+      noteOf(e, c.R) ? h('p', { class: 'w-note' }, noteOf(e, c.R)) : null,
       aliases.length ? h('p', { class: 'w-aliases' }, h('span', { class: 'muted' }, `${LABELS.aliases} `), aliases.map((a, i) => [i ? ' · ' : null,
         h('span', { class: a.caution ? 'w-alias has-note' : 'w-alias', title: a.caution ?? undefined }, a.name, a.how ? h('span', { class: 'muted' }, ` (${a.how})`) : null)])) : null,
       firstUnit || seenUnits.length ? h('p', { class: 'w-facts-line' }, dots([
