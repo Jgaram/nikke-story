@@ -2,7 +2,7 @@
  * 인물 아이콘(W11) — 대상(person:*) ↔ nikke-db 아이콘을 잇고, 필요한 아이콘만 site/img/people/에 받는다.
  * 출처 · 조건은 docs/data-sources.md 9절, 잇는 규칙은 annotations/portraits.json 머리말, 사이트 쪽은 docs/views.md "인물 아이콘".
  *
- *   node tools/site/portraits.mjs            # 잇기 → 없는 아이콘만 받기(바뀐 모습 forms 포함) → site/img/people/index.json
+ *   node tools/site/portraits.mjs            # 잇기 → 없는 아이콘만 받기(바뀐 모습 forms · 호감도 니케 판 포함) → site/img/people/index.json
  *   node tools/site/portraits.mjs --dry      # 받지 않고 대응만 본다
  *   node tools/site/portraits.mjs --refresh  # l2d.json(이름표)을 다시 받는다(새 NPC가 생겼을 때)
  *
@@ -27,6 +27,9 @@ const CONCURRENCY = 4;
 const PNG = Buffer.from([0x89, 0x50, 0x4e, 0x47]);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** 호감도 스토리(char:180)의 아이콘 이름 — resource_id 세 자리(c180 · 이격 c182) */
+export const episodeIconOf = (resourceId) => `c${String(resourceId).padStart(3, '0')}`;
 
 /** 받기 — 404는 null, 그 밖 실패는 1s → 2s → 4s 백오프 뒤 던진다 */
 async function get(url) {
@@ -102,6 +105,8 @@ async function main() {
   const l2d = await loadL2d(values.refresh);
   const db = await openDb();
   const { rows, problems } = resolve(db, l2d, manual);
+  // 호감도 스토리 초상 — 그 스토리의 니케 판(이격 · 코스튬 c182 포함) 아이콘(사용자, 2026-10-10 — 인게임 그대로, 스포일러 고려 없이)
+  const episodeIcons = db.prepare("SELECT resource_id FROM categories WHERE source = 'episode' AND resource_id IS NOT NULL").all().map((c) => episodeIconOf(c.resource_id));
   db.close();
   for (const p of problems) console.log(`⚠ ${p}`);
 
@@ -112,7 +117,9 @@ async function main() {
   const stats = { cached: 0, fetched: 0, notFound: 0 };
   // 모습이 바뀐 초상화(forms — 이름표 코드 → 아이콘)도 받는다. index.json에는 싣지 않는다(export가 forms로 잇는다)
   const formRows = [...new Set(Object.values(forms).map((f) => f.icon).filter(Boolean))].map((icon) => ({ id: `form:${icon}`, name: `모습 ${icon}`, cands: [icon], form: true }));
-  const queue = [...rows, ...formRows];
+  // 호감도 초상도 index.json에 싣지 않는다(export가 그림 파일이 있으면 units.json face로 잇는다)
+  const epRows = [...new Set(episodeIcons)].map((icon) => ({ id: `form:${icon}`, name: `호감도 ${icon}`, cands: [icon], form: true }));
+  const queue = [...rows, ...formRows, ...epRows.filter((r) => !formRows.some((f) => f.id === r.id))];
   async function worker() {
     for (let r; (r = queue.shift()); ) {
       for (const id of r.cands) {
@@ -132,7 +139,8 @@ async function main() {
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
   const formIcons = new Set(formRows.filter((r) => index[r.id]).map((r) => index[r.id]));
-  console.log(`모습 아이콘 ${formIcons.size}/${formRows.length}`);
+  const epIcons = new Set(epRows.filter((r) => index[r.id]).map((r) => index[r.id]));
+  console.log(`모습 아이콘 ${formIcons.size}/${formRows.length} · 호감도 아이콘 ${epIcons.size}/${epRows.length}`);
   const sorted = Object.fromEntries(Object.entries(index).filter(([k]) => !k.startsWith('form:')).sort(([a], [b]) => a.localeCompare(b)));
   const by = (how) => rows.filter((r) => r.how === how && index[r.id]).length;
   console.log(`인물 ${rows.length}명 후보 → 아이콘 ${Object.keys(sorted).length}명 (resource_id ${by('resource_id')} · 한국어 이름 ${by('한국어 이름')} · 대응표 ${by('대응표')})`);
@@ -142,7 +150,7 @@ async function main() {
   if (multi.length) console.log(`한국어 이름이 여럿 — 앞 것을 씀: ${multi.map((r) => `${r.name}→${index[r.id]}(${r.cands.join('/')})`).join(' · ')}`);
   if (values.dry) return;
   fs.writeFileSync(INDEX_FILE, `${JSON.stringify(sorted, null, 1)}\n`);
-  const used = new Set([...Object.values(sorted), ...formIcons]);
+  const used = new Set([...Object.values(sorted), ...formIcons, ...epIcons]);
   const stale = fs.readdirSync(IMG_DIR).filter((f) => f.endsWith('.png') && !used.has(f.slice(0, -4)));
   if (stale.length) console.log(`쓰지 않는 아이콘 ${stale.length}: ${stale.join(' ')} (지우려면 손으로)`);
   const bytes = fs.readdirSync(IMG_DIR).reduce((s, f) => s + fs.statSync(path.join(IMG_DIR, f)).size, 0);

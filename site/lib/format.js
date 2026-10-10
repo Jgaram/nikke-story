@@ -27,7 +27,7 @@
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
- *   episodeIcon(unit)              호감도 스토리의 초상 아이콘(감상 순서 줄 · 리더 머리)
+ *   episodeIcon(unit)              호감도 스토리의 초상 아이콘(감상 순서 줄 · 리더 머리) — 그 니케 판(이격 포함) 그림
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   blurbText(b, seen)              팬용 문장(blurbs.json 칸 { text, later?, gate? }) — text, gate를 봤으면(seen(gate)) 뒤에 later까지. 다듬어 쓴 문장이라 prose를 거치지 않는다
@@ -42,7 +42,7 @@ export const KIND = {
   sub: { label: '서브퀘스트', color: 'var(--kind-sub)' },
   relic: { label: '유실물', color: 'var(--kind-relic)' },
   side: { label: '사이드', color: 'var(--kind-side)' },
-  erelic: { label: '이벤트 유실물', color: 'var(--kind-erelic)' },
+  erelic: { label: '이벤트 유실물 / 미니게임', color: 'var(--kind-erelic)' }, // 금서고가 유실물 · 미니게임 · 필드 대화를 한 갈래로 둔다(하위 분류 없음 — 2026-10-10 확인)
   elevator: { label: '돌발', color: 'var(--kind-elevator)' },
   other: { label: '그 밖', color: 'var(--ink-muted)' },
 };
@@ -54,7 +54,7 @@ export const KIND_HELP = {
   sub: '서브퀘스트 메신저 대화',
   relic: '지역에 흩어진 유실물 문서',
   side: '사이드 스토리',
-  erelic: '이벤트 속 유실물 문서',
+  erelic: '이벤트에 딸린 유실물 문서 · 미니게임 스토리 · 필드 대화 — 출처(금서고)가 한 갈래로 묶어 두어 함께 보인다',
   elevator: '돌발 스토리 — 전초기지 건물 대화(지금은 엘리베이터 첫 스토리만)',
   other: '그 밖의 스토리',
 };
@@ -364,24 +364,9 @@ function tickObj(tick) {
 }
 const chNum = (key) => (key ? `CH.${String(key).replace(/^ch/, '')}` : null);
 
-/** 호감도 스토리의 초상 — 키 char:180 → 아이콘 c180(사전 인물의 icon · 바뀐 모습 icons). 코스튬 판(c182)은 받은 그림이 없어 이름(' : ' 앞) 인물의 아이콘. 호감도가 아니면 null */
-const faceIndex = new WeakMap();
+/** 호감도 스토리의 초상 — 그 스토리의 니케 판 아이콘(units.json face — 이격 · 코스튬도 그 판 그림, 인게임 그대로 · 사용자 2026-10-10). 호감도가 아니면 null */
 export function episodeIcon(unit) {
-  if (unit?.kind !== 'episode' || !idx?.targets) return null;
-  let f = faceIndex.get(idx);
-  if (!f) {
-    f = { byIcon: new Map(), byName: new Map() };
-    for (const t of idx.targets.values()) {
-      if (t.type !== 'person') continue;
-      f.byName.set(t.name, t);
-      if (t.icon) f.byIcon.set(t.icon, t);
-      for (const [, ic] of t.icons ?? []) f.byIcon.set(ic, t);
-    }
-    faceIndex.set(idx, f);
-  }
-  const n = /^char:(\d+)$/.exec(unit.key)?.[1];
-  const code = n ? `c${n.padStart(3, '0')}` : null;
-  return code && f.byIcon.has(code) ? code : f.byName.get(String(unit.title).split(' : ')[0])?.icon ?? null;
+  return unit?.kind === 'episode' ? unit.face ?? null : null;
 }
 /** 인물 아이콘 — 여기까지 읽음(t)까지 메인에서 바뀐 모습만 보인다(사용자, 2026-10-10). 그 뒤 모습은 스포일러라 앞 모습 */
 export function iconAt(target, t) {

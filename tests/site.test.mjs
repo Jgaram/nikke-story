@@ -78,6 +78,19 @@ test('단위 481 · 공개 자리 158 · 씬 단위 매핑 · 키 이름은 영�
   });
 });
 
+test('호감도 초상 face — 그 스토리의 니케 판(이격 · 코스튬 포함) 그림, 받은 파일만', () => {
+  const eps = read('units.json').filter((u) => u.kind === 'episode');
+  for (const u of eps) {
+    const rid = /^char:(\d+)$/.exec(u.key)?.[1];
+    if (!u.face) continue;
+    assert.equal(u.face, `c${rid.padStart(3, '0')}`, u.key);
+    assert.ok(fs.existsSync(path.join(ROOT, 'site/img/people', `${u.face}.png`)), `${u.face}.png 없음`);
+  }
+  // 이격은 원래 니케 그림이 아니라 제 판(길로틴 : 윈터 슬레이어 → c182)
+  assert.equal(eps.find((u) => u.key === 'char:182')?.face, 'c182');
+  assert.ok(read('units.json').every((u) => u.kind === 'episode' || !u.face), '호감도 밖에는 face가 없다');
+});
+
 test('씬 · 줄 객체에 본문 칼럼 이름이 없다 (기록의 text는 우리 문장)', () => {
   const scenes = read('scenes.json');
   for (const s of scenes) for (const k of FORBIDDEN_SCENE_KEYS) assert.ok(!(k in s), `${s.id}.${k}`);

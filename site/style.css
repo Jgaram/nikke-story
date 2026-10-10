@@ -2,15 +2,16 @@
  * 디자인 토큰 + 공용 컴포넌트(W1). 색 값은 여기 한 곳에만 — lib/format.js · ui.js는 변수 이름만 가리킨다.
  * 색은 한 뜻에 한 색(W13a — docs/views.md "화면 문구는 간결하게"):
  *   강조(--accent · --link, 파랑 한 색): 누를 수 있는 것 · 지금 고른 것(링크 · 활성 탭 · 포커스 · 주 단추)
- *   등급(--grade-must, 주황 한 색): 준필수 = 굵은 띠 + 연한 바탕(.g-band.g-must), 추천 = 같은 색 얇은 띠(.g-support), 참고 · 독립 = 띠 없이 회색 글자,
- *     필수(키 척추) · 메인 = 잉크(등급이 아니라 기준). 등급 이름은 띠 색 작은 글자(.g-label)로 남긴다 — 색만으로 가르지 않는다
+ *   등급(--grade-must, 주황 한 색 — 한 단계마다 한 가지씩 덜어 낸다, 사용자 2026-10-10 '필수가 준필수보다 덜 보인다'):
+ *     필수(키 척추) = 굵은 띠 + 진한 바탕 + 굵은 제목(.g-band.g-spine), 준필수 = 굵은 띠 + 옅은 바탕(.g-must), 추천 = 얇은 띠(.g-support),
+ *     참고 · 독립 = 띠 없이 회색 글자. 메인 챕터는 등급이 아니라 구획 줄(탭이 정한다). 등급 이름은 띠 색 작은 글자(.g-label)로 남긴다 — 색만으로 가르지 않는다
  *   종류(범주 8, dataviz 스킬의 검증된 팔레트): 종류가 축인 그림(인물 등장 · 연대기)에만 — 목록 · 칩에서 종류는 회색 글자
  *   상태(고정, 아이콘 · 라벨과 함께): 미해결 warning · 일부 회수 serious · 회수 good · 뒤집힘 critical
  *   여기까지 읽음(--guard, 보라 한 색): 스포일러 가림 팝업(주 단추 · 슬라이더 · 체크 · 재확인). 상단 단추는 파스텔(--hd-guard-*)로 늘 보여도 눈이 덜 가게
  * 머리(상단 바 + 탭 줄)는 어두운 게임 UI 톤(--hd-*). 글꼴은 Pretendard(CDN 고정 판 — d3와 같은 예외, index.html).
  * 라벨 없는 색만으로 뜻을 전하지 않는다 — 칩은 늘 글자를 단다.
  * 테마는 하나(사용자, 2026-10-10 — 다크 · 테마 단추 없음): 회청 바탕(A2) — 흰 바탕 · 검정 글자의 과한 대비(19:1)를 줄였다. 페이지 바탕이 가장 어둡고 카드가 한 톤 밝다.
- * 글자 대비는 AA(본문 4.5:1) — 흐린 글자(--ink-muted) · 링크 · 등급 글자도 --bg · --surface · --surface-2 · --grade-tint 위에서 4.5:1 이상.
+ * 글자 대비는 AA(본문 4.5:1) — 흐린 글자(--ink-muted) · 링크 · 등급 글자도 --bg · --surface · --surface-2 · --grade-tint · --grade-tint-2 위에서 4.5:1 이상.
  * 글꼴 크기: 본문 15px · 표 14px · 보조 12.5px. 라운드: 카드 12px(--radius) · 컨트롤 8px(--radius-sm). 줄거리는 줄 길이 38em · 줄 간격 1.8.
  */
 :root {
@@ -50,12 +51,13 @@
   --kind-erelic: #4a3aa7;
   --kind-elevator: #e34948;
 
-  --grade-must: #953107;    /* 준필수 · 추천 — 주황 한 색(글자로도 4.5:1) */
+  --grade-must: #953107;    /* 필수 · 준필수 · 추천 — 주황 한 색(글자로도 4.5:1) */
   --grade-support: #953107;
-  --grade-tint: #f0dccd;    /* 준필수 줄 바탕 */
+  --grade-tint: #ecd3c0;    /* 필수 줄 바탕 — 진하게(흐린 글자 5.4:1) */
+  --grade-tint-2: #ece2db;  /* 준필수 줄 바탕 — 옅게(흐린 글자 6.1:1) */
   --grade-ref: #4a535f;     /* 참고 · 독립 — 회색 */
   --grade-standalone: #4a535f;
-  --grade-spine: #151a21;
+  --grade-spine: #953107;   /* 필수 — 준필수 · 추천과 같은 주황(목록 띠와 맞춘다, 2026-10-10) */
   --grade-main: #151a21;
   --grade-none: #9ba6b4;
 
@@ -420,10 +422,12 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .chip-dashed { border-style: dashed; border-color: color-mix(in srgb, var(--chip) 55%, transparent); background: transparent; opacity: 0.85; }
 
 /* ── 등급 띠 · CH 표기 · AI 표지 (W13a 틀 — 탭은 이 클래스를 쓴다) ──
- * 줄(카드 · 목록 줄)에 .g-band + .g-must(준필수) · .g-support(추천) · .g-quiet(참고 · 독립). 메인 · 필수는 띠 없이 구획 줄(탭이 정한다).
+ * 줄(카드 · 목록 줄)에 .g-band + .g-spine(필수) · .g-must(준필수) · .g-support(추천) · .g-quiet(참고 · 독립). 메인은 띠 없이 구획 줄(탭이 정한다).
  * 등급 이름은 .g-label(띠 색 작은 글자) — 색만으로 가르지 않는다. */
 .g-band { border-left: 0 solid transparent; }
-.g-band.g-must { border-left: 4px solid var(--grade-must); background: var(--grade-tint); }
+.g-band.g-spine { border-left: 4px solid var(--grade-must); background: var(--grade-tint); }
+.g-band.g-spine .g-title { font-weight: 700; }
+.g-band.g-must { border-left: 4px solid var(--grade-must); background: var(--grade-tint-2); }
 .g-band.g-support { border-left: 2px solid var(--grade-support); }
 .g-band.g-quiet .g-title, .g-band.g-quiet .g-title a { color: var(--ink-muted); }
 .g-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em; color: var(--grade-must); white-space: nowrap; }

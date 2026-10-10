@@ -2,6 +2,7 @@
  * 공용 데이터(W1) — 모든 탭 · 리더 패널 · 검색이 쓴다. 파일 이름 · 칸은 docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
  *
  *   units.json     읽기 단위 481(돌발 제외, 엘리베이터 포함 — data/views/timeline/units.csv의 집합)
+ *                  호감도는 face — 그 스토리의 니케 판 아이콘(이격 · 코스튬도 그 판 그림, site/img/people/{face}.png — 받은 것만)
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
@@ -17,7 +18,7 @@
 import fs from 'node:fs';
 import { kindOfKey } from '../../records/order.mjs';
 import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
-import { INDEX_FILE as ICONS_FILE, IMG_DIR } from '../portraits.mjs';
+import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -126,12 +127,16 @@ export async function run(ctx) {
     const ch = chrono.get(key);
     const scs = scenesOf.get(key) ?? [];
     const grade = kind === 'main' ? '메인' : spine.has(key) ? '척추' : im?.grade || null;
+    const face = kind === 'episode' && u?.rid != null ? episodeIconOf(u.rid) : null;
+    const hasFace = face && fs.existsSync(`${IMG_DIR}/${face}.png`);
+    if (face && !hasFace) warn({ where: 'portraits', msg: `${key} 호감도 초상 ${face}을 받지 않았다 — node tools/site/portraits.mjs` });
     return compact({
       key, kind, title: title(key), name: kind === 'main' ? u.cat.name : undefined, num: kind === 'main' ? u.num : undefined,
       order: num(r.order), tick: num(r.tick), date: r.date, date_confidence: r.confidence || undefined, via: r.via || undefined,
       grade, layer: num(r2?.layer), chars: num(r2?.chars), scenes: scs.length, lines: scs.reduce((n, s) => n + (s.lines ?? 0), 0),
       chrono: ch ? compact({ class: ch.class, place: ch.place, lo: num(ch.lo), hi: num(ch.hi), release_main: ch.release_main, drift: ch.drift }) : undefined,
       judgment: im?.judgment || undefined, spine: spine.has(key) ? true : undefined,
+      face: hasFace ? face : undefined,
     });
   });
 
