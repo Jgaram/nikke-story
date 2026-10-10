@@ -2,7 +2,7 @@
  * 탭 "감상 순서" 데이터(W2) — 화면 1(docs/views.md "1. 스토리 중요도 분류", 판정 카드 docs/importance.md).
  *
  *   order.json        = { units[421], spine[60], leads[20], counts }                 — 첫 화면에 필요한 것(목록 · 지도 · 한 줄 근거)
- *   order-detail.json = { notes[], units: { <key>: { history, basis_text, reviews } } } — 분류 카드를 열 때만 받는다(판정 이력 · 근거 문장 · 검토 기록 — 전체의 3분의 1이라 뺐다)
+ *   order-detail.json = { notes[], units: { <key>: { history, basis_text, reviews } } } — 리더 분류 칸이 '장면' 줄을 그릴 때 받는다(판정 이력 · 근거 문장 · 검토 기록 — 전체의 3분의 1이라 뺐다)
  *
  *   units[]   판정 단위(척추 밖 — data/views/importance/units.csv 한 줄씩). 종류 · 제목 · 글자 수 · 층은 공용 units.json에 있으므로 싣지 않는다 — key로 잇는다.
  *             key · grade(필수 · 보강 · 참고 · 독립) · tick(공개 자리 = importance의 pos) · from(척추가 딛기 시작하는 자리의 단위 키) · from_tick · before(그 앞 자리의 등급) ·

@@ -331,6 +331,8 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .rd-link-meta { font-size: var(--fs-small); color: var(--ink-muted); }
 .rd-link-ev { margin-top: 2px; font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
 .rd-why-full { font-size: 13px; color: var(--ink-2); overflow-wrap: anywhere; }
+.rd-basis-text { margin-top: 2px; font-size: 13px; color: var(--ink-2); overflow-wrap: anywhere; }
+.rd-basis-text:empty { display: none; }
 /* 공개 개요(W8) — 리더 맨 위 한 줄 소개 · 줄거리, 씬 목록 · 씬 패널의 씬 한 줄 */
 .rd-logline { margin: 0 0 8px; font-weight: 600; line-height: 1.55; overflow-wrap: anywhere; }
 .rd-synopsis { margin: 0; max-width: 38em; line-height: 1.8; overflow-wrap: anywhere; word-break: keep-all; }

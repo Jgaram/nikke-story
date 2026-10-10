@@ -5,8 +5,6 @@
  *
  * 쓰는 JSON
  *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](척추 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
- *   order-detail.json(분류 카드를 처음 열 때 받는다): units{키 → { history, basis_text, reviews }} · notes[]
- *   synopsis.json(공개 개요 — 분류 카드 머리 아래 한 줄 소개, W8): [{ key, logline, … }] — 여기까지 읽음 안 스토리만, 없으면 그리지 않는다
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
  * URL 파라미터(p.*)
@@ -21,21 +19,18 @@
  *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 이고 본 마지막 척추 줄 아래 "여기까지 읽음" 구분 줄(cutRowAt).
  *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 척추 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
  *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드는 줄에 '안 봄' 표시.
- *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, R)(tools/views/importance.mjs와 같다: 전부 보기면 최종 등급, 안 본 스토리면 아직 없음,
- *     from 시점이 있고 t < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 안 본 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
- *     '이 스토리가 선행인 곳'도 본 스토리만 든다.
  *   목록: 감상 순서 한 줄(ol). 척추 줄은 종류 필터(+ 척추 이벤트 · 사이드는 등급 '필수')에 들면 보이고, 그 사이에 필터에 든 메인 밖 스토리를 읽는 자리 순서대로 끼운다.
  *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 다른 표시 없음). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 'CH.27 전까지').
  *     색은 등급 띠만(style.css .g-band): 준필수 = 굵은 띠 + 연한 바탕, 추천 = 얇은 띠, 참고 · 독립 = 띠 없이 회색 제목, 필수(척추) = 띠 없이 굵은 제목. 종류는 글자(색 없음).
- *     순번 · 날짜 · 글자 수는 싣지 않는다(날짜 · 분량은 리더). 이유(분석 문장)도 목록에는 없고 분류 카드 · 리더에만.
+ *     순번 · 날짜 · 글자 수는 싣지 않는다(날짜 · 분량은 리더). 이유(분석 문장)도 목록에는 없고 리더 분류 칸에만.
  *     선행: 앞 편(필수 선행)이 등급 필터로만 숨으면 그 줄을 흐리게 끼운다(ghostKeys — 이야기가 1 · 6 · 7로 끊기지 않게, 앞 편의 앞 편도).
- *     종류 · 찾기로 숨은 앞 편만 줄 아래 '먼저: 랩칠리언 5'로 이름을 적는다. 권장 · 선택 개수는 목록에 없다(분류 카드 · 리더에 전부).
+ *     종류 · 찾기로 숨은 앞 편만 줄 아래 '먼저: 랩칠리언 5'로 이름을 적는다. 권장 · 선택 개수는 목록에 없다(리더 분류 칸에 전부).
  *     필터는 최종 등급으로 본다. 한 줄 한 칸이라 좁은 폭(390px)에서도 제목이 줄바꿈될 뿐 접지 않는다.
- *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 이유 · 장면 · 선행 · 떡밥 · 주역 · 결말).
- *     카드에는 판정 흔적(확실/추정 칩 — 추정만 남긴다 · 기준일 · 분류가 바뀐 기록 · 기록 ID · 글자 수 · 장면 수)을 싣지 않는다. 이유는 fmt.reasonText(판정 과정 마디를 걷는다).
- *   용어는 fmt(GRADE · TERM · help · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
+ *   스토리를 누르면 sel=unit:키 → 리더 패널 하나(사용자, 2026-10-10 — 따로 있던 분류 카드를 리더 분류 칸으로 합쳤다: 그 시점의 등급 gradeAt ·
+ *     언제 읽나 · 선행 · 선행인 곳 · 이유 · 장면 · 이어지는 필수 스토리 · 주역 · 결말 — lib/reader.js classPanel).
+ *   용어는 fmt(GRADE · help · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
  */
-import { gradeAt, prose, reasonText } from '../lib/format.js';
+import { gradeAt } from '../lib/format.js';
 
 export const meta = { id: 'order', title: '감상 순서', blurb: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' };
 
@@ -45,18 +40,12 @@ const LABELS = {
   grade: '등급', kind: '종류',
   find: '제목 검색', findAria: '스토리 제목 검색',
   count: (n) => `${n}편`, countHelp: '지금 목록에 든 스토리 수(흐리게 끼운 앞 편은 빼고)',
-  preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`, riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
+  preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`,
   first: '먼저', firstHelp: '먼저 볼 앞 편 — 지금 필터로는 목록에 없다',
   ghost: '앞 편', ghostHelp: (t) => `${t}의 앞 편 — 등급 필터 밖이지만 이야기가 끊기지 않게 흐리게 끼워 두었다`,
   cutLine: (at) => `여기까지 읽음 · ${at}`, cutLineHelp: '이 아래가 다음에 볼 순서', goCut: '읽은 자리로', emptyFilter: '필터에 맞는 스토리가 없다.',
   clearFilter: '필터 풀기',
-  card: '분류', cardClose: '닫기',
-  rows2: {
-    grade: '등급', reason: '이유', scene: '장면', threads: '떡밥', lead: '주역', origin: '첫 이야기', endings: '결말',
-    pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', touch: '이어지는 필수 스토리',
-  },
-  none: '없음',
-  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기',
+  unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
 const PICK_GRADES = ['척추', ...GRADES]; // 필터 칩 — 척추(화면 말 '필수')도 끌 수 있다(사용자, 2026-10-10)
@@ -70,7 +59,7 @@ const KIND_PICK_ORDER = ['main', 'side', 'event', 'episode', 'sub', 'relic', 'er
 const listParam = (v, all, dflt) => (v == null ? dflt : v.split(',').filter((x) => all.includes(x)));
 
 
-export { gradeAt }; // 계산은 lib/format.js 한 곳(리더의 분류 칸도 같이 쓴다)
+export { gradeAt }; // 계산은 lib/format.js 한 곳(리더의 분류 칸이 쓴다)
 
 /**
  * 여기까지 읽음 구분 줄을 넣을 자리 — seq(감상 순서) 안에서 출시 시점 ≤ cut이고 본(R.seen) 마지막 척추 줄의 번호(없으면 -1).
@@ -109,7 +98,6 @@ export async function mount(root, ctx) {
   root.append(wait);
   const order = await data.load('order');
   wait.remove();
-  const TERM = fmt.TERM;
   const gl = (g) => fmt.GRADE[g]?.label ?? g;
   const judged = order.units.map((j) => ({ ...j, unit: idx.units.get(j.key) })).filter((j) => j.unit);
   const judgedByKey = new Map(judged.map((j) => [j.key, j]));
@@ -117,14 +105,8 @@ export async function mount(root, ctx) {
   const spineByKey = new Map(spine.map((s) => [s.key, s]));
   const pre = order.pre ?? {};
   /** 거꾸로 — A가 선행인 스토리들 [X, 칸] */
-  const preFor = new Map();
-  for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
   const kindsPresent = KIND_PICK_ORDER.filter((k) => judged.some((j) => j.unit.kind === k) || spine.some((sp) => sp.unit.kind === k));
   const spineLabel = (key) => (spineByKey.get(key)?.unit.kind === 'main' ? fmt.tickShort(spineByKey.get(key).tick) : fmt.unitTitle(key));
-  // 호감도 줄의 초상 — fmt.episodeIcon(리더 머리와 같은 규칙)
-  const persons = idx.targetList.filter((t) => t.type === 'person');
-  const personByName = new Map(persons.map((t) => [t.name, t]));
-  let curR = state.reading(state.get()); // 지금 읽은 데까지(스토리마다 봤나) — apply가 바꾼다
 
   // ── 머리 · 도구 줄 ──
   root.append(ui.el('div', { class: 'tab-head order-head' }, ui.el('h2', {}, LABELS.title)));
@@ -213,11 +195,6 @@ export async function mount(root, ctx) {
   };
   root.append(listView);
 
-  // ── 분류 카드(선택한 스토리) ──
-  const card = ui.el('section', { class: 'order-card panel', 'aria-label': LABELS.card });
-  card.hidden = true;
-  root.append(card);
-
   // ── 거르기 ──
   const findOk = (x, s) => {
     const q = (s.p.find ?? '').toLowerCase();
@@ -228,7 +205,6 @@ export async function mount(root, ctx) {
   const apply = (s) => {
     const cut = s.t; // 여기까지 읽음 — 목록은 거르지 않고 자리만 표시한다
     const rd = state.reading(s);
-    curR = rd;
     const grades = gradePick.cur();
     const kinds = kindPick.cur();
     gradePick.sync();
@@ -266,111 +242,14 @@ export async function mount(root, ctx) {
     listView.hidden = empty;
   };
 
-  // ── 분류 카드 ──
-  const preRows = (key) => {
-    const R = LABELS.rows2;
-    const p = pre[key];
-    // 왜 선행인가는 앞 편 · 떡밥 → 회수처럼 이야기 말만 — '분류에서 짚음'(판정 말)은 쓰지 않는다
-    const why = (w) => (w === 'judged' ? null : ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`));
-    const lines = p ? fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', { class: 'order-pre-line' },
-      ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
-      p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), why(w)]))) : [];
-    const back = (preFor.get(key) ?? []).filter(([x]) => curR.seen(x));
-    return [
-      [R.pre, lines.length ? lines : ui.el('span', { class: 'muted' }, LABELS.none)],
-      back.length ? [R.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${fmt.PRE_LABEL[l]}`)])] : null,
-    ];
-  };
-  const kv = (rows) => ui.el('dl', { class: 'order-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [ui.el('dt', {}, k), ui.el('dd', {}, v)]));
-  const detail = () => data.load('order-detail');
-  let loglines = null;
-  const synopsis = () => (loglines ??= data.load('synopsis').then((list) => new Map(list.map((x) => [x.key, x.logline]))));
-  /** 한 줄 소개 — 카드를 그린 뒤 채운다. 여기까지 읽음 뒤 스토리는 비워 둔다(카드가 '뒤에 나온 스토리'라고 이미 말한다) */
-  const loglineBox = (key, rd) => {
-    const box = ui.el('p', { class: 'order-logline' });
-    if (rd.seen(key)) synopsis().then((m) => { if (card.dataset.key === key && m.has(key)) box.textContent = m.get(key); }).catch(() => {});
-    return box;
-  };
-  /** 카드 머리 — 제목 + 회색 종류 글자(종류는 색 없이) */
-  const cardHead = (key, unit, close) => ui.el('div', { class: 'panel-head' }, ui.el('h3', {},
-    unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : null,
-    ui.link(`unit:${key}`, unit.kind === 'main' ? chTitle(unit.title) : unit.title), ' ',
-    ui.el('span', { class: 'order-card-kind' }, fmt.KIND[unit.kind]?.label ?? unit.kind)), close);
-  /** 주역 — 첫 이야기인 인물 + 이 스토리에 사실 · 변화가 있는 주역(lead_facts '네온(ch01) 사실 3 / …'의 이름만 — 개수는 싣지 않는다) */
-  const leadsOf = (j) => {
-    const names = String(j.lead_facts ?? '').split(/\s*\/\s*/).map((x) => x.replace(/\(.*$/, '').trim()).filter(Boolean);
-    const ids = [...new Set([...(j.origin_of ?? []), ...names.map((n) => personByName.get(n)?.id).filter(Boolean)])];
-    return ids.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p)), j.origin_of?.includes(p) ? ui.el('span', { class: 'muted' }, ` (${LABELS.rows2.origin})`) : null]);
-  };
-  /** 결말 — closures 'O9(관계 · 지휘관 · 확정) O14(갈등 · 확정)' → 결말 기록 링크(글자는 갈래 '관계' · '갈등', ID는 내지 않는다) */
-  const endingsOf = (j) => [...String(j.closures ?? '').matchAll(/(?<![A-Za-z0-9])(O\d+)\(([^()·]+)/g)]
-    .map(([, id, aspect], i) => [i ? ' · ' : null, ui.link(`record:${id}`, aspect.trim())]);
-  const renderCard = (s) => {
-    const sel = state.parseSel(s.sel);
-    const key = sel?.type === 'unit' ? sel.id : null;
-    const j = key ? judgedByKey.get(key) : null;
-    const sp = key && !j ? spineByKey.get(key) : null;
-    ui.clear(card);
-    card.dataset.key = key ?? '';
-    if (!j && !sp) { card.hidden = true; return; }
-    card.hidden = false;
-    const close = ui.el('button', { type: 'button', class: 'btn order-card-close', 'aria-label': LABELS.cardClose, onClick: () => state.set({ sel: '' }) }, ui.icon('close'));
-    const R = LABELS.rows2;
-    const rd = state.reading(s);
-    if (sp) {
-      card.append(cardHead(sp.key, sp.unit, close),
-        loglineBox(sp.key, rd),
-        kv([[R.grade, [ui.chip('grade', sp.unit.kind === 'main' ? '메인' : '척추'), rd.seen(sp.key) || rd.t == null || sp.tick > rd.t ? null : [' ', ui.el('span', { class: 'order-unseen', title: LABELS.unseenHelp }, LABELS.unseen)]]],
-          ...preRows(sp.key)]));
-      return;
-    }
-    const g = gradeAt(j, rd);
-    // 등급 칩 + (추정일 때만) 점선 '추정' — 확실은 당연해서 쓰지 않는다
-    const gradeRow = [ui.chip('grade', g ?? j.grade), j.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null];
-    if (g == null) gradeRow.push(' ', ui.el('span', { class: 'order-spoiler' }, LABELS.after(fmt.tickLabel(j.tick, { date: false }))));
-    else if (g !== j.grade) gradeRow.push(' ', ui.el('span', {}, '→ ', ui.link(`unit:${j.from}`, spineLabel(j.from)), '부터 ', ui.chip('grade', j.grade)));
-    else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, rd.all ? LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade)) : LABELS.riseSince(spineLabel(j.from))));
-    // 장면 — 등급을 정한 기록의 장면(누르면 장면)과 그 기록 문장(따로 받는다). 기록 ID · 종류 칩은 내지 않는다
-    const basisText = ui.el('div', { class: 'order-basis-text' });
-    const basisRow = j.basis ? [j.basis_scene ? R.scene : fmt.RECORD_KIND[j.basis_kind]?.label ?? R.scene, [j.basis_scene ? ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene)) : null, basisText]] : null;
-    // 여기까지 읽음 뒤 스토리 — 목록에는 보이지만 이유 · 떡밥 · 주역 · 결말 같은 내용은 접어 가린다
-    const after = g == null;
-    const reason = reasonText(j.reason);
-    const leads = leadsOf(j);
-    const endings = endingsOf(j);
-    const rest = [
-      reason ? [R.reason, reason] : null,
-      basisRow,
-      j.from && !j.from_tick && spineByKey.has(j.from) ? [R.touch, ui.link(`unit:${j.from}`, spineLabel(j.from))] : null,
-      j.threads?.length ? [R.threads, j.threads.map((t, i) => [i ? ' · ' : null, ui.link(`thread:${t}`, idx.threads.get(t)?.title ?? t)])] : null,
-      leads.length ? [R.lead, leads] : null,
-      endings.length ? [R.endings, endings] : null,
-    ];
-    card.append(
-      cardHead(j.key, j.unit, close),
-      loglineBox(j.key, rd),
-      kv([[rd.all || after ? R.grade : TERM.gradeAt, gradeRow], ...preRows(j.key), ...(after ? [] : rest)]));
-    if (after) card.append(ui.details(LABELS.spoiler, kv(rest), { class: 'order-spoiler-rows' })); // append(null)은 'null' 글자를 넣는다
-    // 기록 문장은 따로 받는다(처음 한 번). 검토 기록(세션 · 날짜 · 판정 입력)은 작업 로그라 화면에 내지 않는다(W13a)
-    if (j.basis) detail().then((d) => {
-      if (card.dataset.key !== key) return;
-      const x = d.units?.[key];
-      if (x?.basis_text) basisText.textContent = prose(x.basis_text);
-    }).catch(() => { /* 못 받아도 카드는 쓴다 */ });
-  };
-
   // ── 상태 ──
   apply(state.get());
-  renderCard(state.get());
   const off = state.subscribe((s, changed) => {
-    if (changed.has('t') || changed.has('p')) { apply(s); renderCard(s); }
+    if (changed.has('t') || changed.has('p')) apply(s);
     else if (changed.has('sel')) {
       const sel = state.parseSel(s.sel);
-      const key = sel?.type === 'unit' ? sel.id : null;
-      markSelected(key);
-      renderCard(s);
+      markSelected(sel?.type === 'unit' ? sel.id : null);
     }
   });
-  detail().catch(() => {}); // 분류 카드를 열기 전에 받아 둔다
   return () => { off(); clearTimeout(findTimer); };
 }

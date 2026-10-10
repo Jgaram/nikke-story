@@ -43,6 +43,8 @@ const LABELS = {
   grade: '등급',
   whenRead: '언제 읽나',
   pre: '선행',
+  preFor: '이 스토리가 선행인 곳',
+  basisScene: '장면', touch: '이어지는 필수 스토리', lead: '주역', origin: '첫 이야기', endings: '결말',
   afterGrade: '여기까지 읽음 뒤에 나온 스토리',
   riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   linked: '이어진 스토리',
@@ -157,6 +159,30 @@ async function loadOrder() {
   }
   return orderMap;
 }
+
+let detailReady = null;
+/** order-detail.json — 등급을 정한 기록 문장(basis_text). 분류 칸의 '장면' 줄을 그린 뒤 채운다 */
+const loadDetail = () => (detailReady ??= data.load('order-detail').catch(() => null));
+let preForMap = null;
+/** 이 스토리를 선행으로 둔 스토리들(order.json pre 뒤집기) — [스토리 키, 단계] */
+function preForOf(key) {
+  if (!preForMap) {
+    preForMap = new Map();
+    for (const [k, p] of Object.entries(preMap)) for (const l of fmt.PRE_LEVEL) for (const [a] of p[l] ?? []) (preForMap.get(a) ?? preForMap.set(a, []).get(a)).push([k, l]);
+  }
+  return preForMap.get(key) ?? [];
+}
+let personByName = null;
+/** 주역 — 첫 이야기인 인물 + 이 스토리에 사실 · 변화가 있는 주역(lead_facts '네온(ch01) 사실 3 / …'의 이름만 — 개수는 싣지 않는다) */
+function leadsOf(j, idx) {
+  personByName ??= new Map(idx.targetList.filter((t) => t.type === 'person').map((t) => [t.name, t]));
+  const names = String(j.lead_facts ?? '').split(/\s*\/\s*/).map((x) => x.replace(/\(.*$/, '').trim()).filter(Boolean);
+  const ids = [...new Set([...(j.origin_of ?? []), ...names.map((n) => personByName.get(n)?.id).filter(Boolean)])];
+  return ids.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p)), j.origin_of?.includes(p) ? ui.el('span', { class: 'muted' }, ` (${LABELS.origin})`) : null]);
+}
+/** 결말 — closures 'O9(관계 · 지휘관 · 확정) O14(갈등 · 확정)' → 결말 기록 링크(글자는 갈래 '관계' · '갈등', ID는 내지 않는다) */
+const endingsOf = (j) => [...String(j.closures ?? '').matchAll(/(?<![A-Za-z0-9])(O\d+)\(([^()·]+)/g)]
+  .map(([, id, aspect], i) => [i ? ' · ' : null, ui.link(`record:${id}`, aspect.trim())]);
 
 let synopsisMap = null;
 let sceneLineMap = null;
@@ -383,16 +409,18 @@ function chronoRow(u) {
 /** 스토리 패널의 분류 칸 — 그 시점 등급 · 언제 읽나 · 선행 · 작중 순(예외만) · 이유. 메인은 등급을 쓰지 않는다(당연하다) */
 function classPanel(u, idx, hidden) {
   const j = orderMap?.get(u.key);
-  const action = tabAction('order', {}, { sel: `unit:${u.key}` });
+  const action = state.get().tab === 'order' ? null : tabAction('order', {}, { sel: `unit:${u.key}` }); // 감상 순서 탭 안에서는 자기 탭 링크를 달지 않는다
   const p = preMap[u.key];
   // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름 + 왜(이야기 말만 — '분류에서 짚음'은 판정 말이라 뺀다, 감상 순서 카드와 같다)
   const why = (w) => (w === 'judged' ? null : ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`));
   const preRow = p ? row(LABELS.pre, fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', {},
     ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
     p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), why(w)])))) : null;
+  const back = preForOf(u.key).filter(([x]) => state.seen(x));
+  const preForRow = back.length ? row(LABELS.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${fmt.PRE_LABEL[l]}`)])) : null;
   const chrono = chronoRow(u);
   if (!j) {
-    const rows = [preRow, chrono].filter(Boolean);
+    const rows = [preRow, preForRow, chrono].filter(Boolean);
     if (u.grade === '척추') return ui.panel(fmt.TERM.judgment, [ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), rows.length ? kv(rows) : null], { actions: action });
     return rows.length ? ui.panel(fmt.TERM.judgment, kv(rows), { actions: action }) : null;
   }
@@ -406,15 +434,31 @@ function classPanel(u, idx, hidden) {
   else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? LABELS.riseBefore(spineName(j.from), fmt.GRADE[j.before ?? j.grade]?.label) : LABELS.riseSince(spineName(j.from))));
   const full = fmt.reasonText(j.reason ?? ''); // 판정 과정 마디는 걷는다(W13b — 감상 순서 카드와 같다)
   const short = clipText(full, 90);
-  let reason = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full))) : null;
-  if (reason && hidden) reason = ui.details(spoilerSummary(), ui.el('div', { class: 'rd-why-full' }, full), { class: 'spoiler' }); // 여기까지 읽음 뒤 스토리의 이유는 가린다
-  return ui.panel(fmt.TERM.judgment, kv([
+  // 여기까지 읽음 뒤 스토리는 이유도 아래 내용 칸과 함께 스포일러 접이 하나에 넣는다
+  const reason = full && !hidden ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full))) : null;
+  const before = j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order;
+  // 감상 순서 카드에 있던 칸(W13 — 카드를 리더 하나로 합쳤다): 장면(등급을 정한 기록의 장면 + 그 기록 문장) · 이어지는 필수 스토리 · 주역 · 결말
+  const basisText = ui.el('div', { class: 'rd-basis-text' });
+  const sel = current;
+  if (j.basis) loadDetail().then((d) => { const x = d?.units?.[u.key]; if (current === sel && x?.basis_text) basisText.textContent = fmt.prose(x.basis_text); });
+  const leads = leadsOf(j, idx);
+  const endings = endingsOf(j);
+  const story = [
+    hidden && full ? row(fmt.TERM.basis, ui.el('div', { class: 'rd-why-full' }, full)) : null,
+    j.basis ? row(j.basis_scene ? LABELS.basisScene : fmt.RECORD_KIND[j.basis_kind]?.label ?? LABELS.basisScene, [j.basis_scene ? ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene)) : null, basisText]) : null,
+    j.from && !j.from_tick && !before && idx.units.has(j.from) ? row(LABELS.touch, ui.link(`unit:${j.from}`, spineName(j.from))) : null,
+    leads.length ? row(LABELS.lead, leads) : null,
+    endings.length ? row(LABELS.endings, endings) : null,
+  ].filter(Boolean);
+  return ui.panel(fmt.TERM.judgment, [kv([
     row(t == null ? LABELS.grade : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
-    j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order ? row(LABELS.whenRead, ui.link(`unit:${j.from}`, fmt.preOf(spineName(j.from)))) : null,
+    before ? row(LABELS.whenRead, ui.link(`unit:${j.from}`, fmt.preOf(spineName(j.from)))) : null,
     preRow,
+    preForRow,
     chrono,
     row(fmt.TERM.basis, reason),
-  ]), { actions: action });
+    ...(hidden ? [] : story),
+  ]), hidden && story.length ? ui.details(spoilerSummary(), kv(story), { class: 'spoiler' }) : null], { actions: action });
 }
 
 /** 스토리에 걸린 떡밥 — 이 스토리 기록 · 분류가 짚은 떡밥. 처음 나온 스토리를 안 본 떡밥은 스포일러 접이로 */
