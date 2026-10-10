@@ -193,6 +193,7 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .cutoff-sec { margin-top: 14px; }
 .cutoff-sec h3 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--ink-2); }
 .cutoff-sec-hint { font-size: 12px; font-weight: 400; }
+.cutoff-semi > summary { flex-wrap: wrap; gap: 4px 10px; font-weight: 700; margin-bottom: 4px; }
 .cutoff-now { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 10px; margin-bottom: 8px; }
 .cutoff-now-read { display: flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.3; min-width: 0; }
 .cutoff-now-name { font-size: 16px; overflow-wrap: anywhere; }
