@@ -1,7 +1,6 @@
 {
   "subject": "concept:컨버터",
   "versions": [
-    { "at": "char:401", "text": "", "src": "97d170e155", "session": "W15e", "by": "claude", "date": "2026-10-10", "status": "후보", "reviews": [] },
     {
       "at": "event_boomsday",
       "text": "방주 변전소에 달린 장치. 동력원이 넘치게 만든 전력을 손실시켜 과부하로 인한 정전을 막는다 — 일렉트릭 쇼크의 트로니가 만들었다.",

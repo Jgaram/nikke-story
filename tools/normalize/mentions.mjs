@@ -23,7 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { compileNames } from './dictionary.mjs';
+import { compileNames, notHere } from './dictionary.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const PRECISION_PATH = path.join(ROOT, 'annotations/dictionary/mention-precision.json');
@@ -251,7 +251,7 @@ export function buildMentions(lines, stories, dict, speakerTable, precision = lo
           c.stories.add(l.storyId);
         }
       }
-      if (n.mentionMode === 'off') continue;
+      if (n.mentionMode === 'off' || notHere(n, l.storyId)) continue;
       add(l, n.targetId, howOfName(n.how), n.name, '이름');
     }
   }

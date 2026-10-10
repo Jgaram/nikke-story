@@ -15,7 +15,7 @@
  *   떡밥     아직 시작 안 한 떡밥(fmt.threadStarted 거짓 — 판이 있으면 첫 판의 at, 없으면 첫 스토리를 안 봄)의 분석용 제목 · 판 제목.
  *   떡밥판   시작한 떡밥이 그 자리 판(fmt.threadAt)이 아닌 제목 · 요약으로 보이는 것(W15d) — 분석용 제목 · 요약 앞 20자(그 자리 글이 그것이 아닐 때) · 뒤 판의 제목 · 요약.
  *            지금 보이는 떡밥 제목들은 지우고 본다(앞 판 제목이 뒤 판 제목 속에 들 수 있다).
- *   사전     비인물 항목의 사전 설명이 그 자리 판(fmt.noteAt — W15e)이 아닌 글로 보이는 것 — 분석용 설명(world.json note) 앞 16자(그 자리 글이 그것으로 시작하지 않을 때) ·
+ *   사전     비인물 항목의 사전 설명이 그 자리 판(fmt.noteAt — W15e)이 아닌 글로 보이는 것 — 분석용 설명(world.json note) 앞 16자(그 자리 글에 들지 않을 때) ·
  *            뒤 판 설명 앞 16자. 전부 보기는 세지 않는다.
  *   묶음     떡밥 하나를 보는 화면(떡밥 탭 흐름 — p.j, 리더 thread:J)에 그 떡밥과 이어진 줄 아직 모르는 의문 · 사실(fmt.threadBundle 밖)의 문장 앞 16자(W15d).
  *   관계     떡밥끼리 관계 설명 가운데 근거 기록을 하나도 모르는 것.
@@ -153,7 +153,7 @@ const PROBE = async (skipMain, titles, focus) => {
       const pick = vs.findIndex((v) => fmt.prose(v.text) === now);
       const keys = [['분석용', e.note], ...vs.slice(pick + 1).map((v) => ['뒤 판', v.text])].map(([w, x]) => [w, String(fmt.prose(x ?? '') ?? '').slice(0, 16)]);
       for (const [what, k] of keys) {
-        if (k.length < 12 || now.startsWith(k)) continue;
+        if (k.length < 12 || now.includes(k)) continue; // 그 자리 글 속에 든 것(분석용 설명 마디를 판이 그대로 쓴 것)은 보인 것이 맞다
         const i = all.indexOf(k);
         if (i >= 0) { hits.push(`사전 ${e.id} ${what} … ${around(i, k.length)}`); break; }
       }

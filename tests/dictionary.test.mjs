@@ -76,20 +76,27 @@ test('대상 건수는 이름 건수들의 합집합이다', () => {
   assert.deepEqual(bad, [], `건수가 맞지 않는 대상: ${list(bad, (r) => `${r.id}(${r.tl} · 이름 최대 ${r.mx} · 합 ${r.sm})`)}`);
 });
 
-test('검색 규칙이 FTS 접두 검색과 같다 — 규칙(except) 없는 한글 이름', () => {
+test('검색 규칙이 FTS 접두 검색과 같다 — 규칙(except) 없는 한글 이름 · not_scenes 씬은 빼고', () => {
+  const notScenes = new Map(entries.filter((e) => e.not_scenes?.length).map((e) => [e.id, e.not_scenes]));
   const rows = all(
-    `SELECT n.name, n.lines_in_scope js FROM target_names n JOIN targets t ON t.id = n.target_id
+    `SELECT n.name, n.target_id, n.lines_in_scope js FROM target_names n JOIN targets t ON t.id = n.target_id
       WHERE t.${TERM} AND n.excludes IS NULL`,
   ).filter((r) => /^[가-힣 ]+$/.test(r.name));
   assert.ok(rows.length > 50);
   const bad = rows
-    .map((r) => ({
-      ...r,
-      fts: one(
-        `SELECT COUNT(*) c FROM lines_fts f JOIN stories s ON s.id = f.story_id WHERE lines_fts MATCH ? AND s.in_scope = 1`,
-        `"${r.name}"*`,
-      ).c,
-    }))
+    .map(({ target_id: id, ...r }) => {
+      // not_scenes(동음 — 다른 것) 씬은 FTS에서도 뺀다: 씬 ID 그대로, 끝이 *이면 앞머리
+      const ns = notScenes.get(id) ?? [];
+      const cond = ns.map((x) => (x.endsWith('*') ? 'f.story_id NOT LIKE ?' : 'f.story_id <> ?')).map((c) => ` AND ${c}`).join('');
+      const args = ns.map((x) => (x.endsWith('*') ? `${x.slice(0, -1).replace(/[%_]/g, '\\$&')}%` : x));
+      return {
+        ...r,
+        fts: one(
+          `SELECT COUNT(*) c FROM lines_fts f JOIN stories s ON s.id = f.story_id WHERE lines_fts MATCH ? AND s.in_scope = 1${cond.replace(/NOT LIKE \?/g, "NOT LIKE ? ESCAPE '\\'")}`,
+          `"${r.name}"*`, ...args,
+        ).c,
+      };
+    })
     .filter((r) => r.fts !== r.js);
   assert.deepEqual(bad, [], `사전 건수 ≠ FTS: ${list(bad, (r) => `${r.name} ${r.js}/${r.fts}`)}`);
 });

@@ -210,7 +210,7 @@ export function buildDictionary({ characters }) {
       id: e.id, type: e.type, name: e.name, kind: e.kind ?? null, resourceIds: [], note: e.note ?? null, origin: '사전',
     });
     // 이름을 다른 대상과 나누는 항목(shares — 장소이자 조직인 에덴)은 검색 이름을 두지 않는다: 언급 · 건수는 그 대상 쪽에 남는다
-    if (!e.shares) for (const n of e.names) addName(e.id, n.name, n.how, { caution: n.caution ?? null, excludes: n.except ?? [] });
+    if (!e.shares) for (const n of e.names) addName(e.id, n.name, n.how, { caution: n.caution ?? null, excludes: n.except ?? [], ...(e.not_scenes?.length ? { notScenes: e.not_scenes } : {}) });
   }
   for (const e of terms.entries.filter((x) => x.shares)) {
     const o = terms.entries.find((x) => x.id === e.shares);
@@ -283,6 +283,9 @@ export function loadTerms() {
         }
       }
       for (const w of e.wrong ?? []) if (seen.has(w)) problems.push(`${where}: 틀린 표기 "${w}"가 이름에도 있다`);
+      if (e.not_scenes !== undefined && (!Array.isArray(e.not_scenes) || !e.not_scenes.every((x) => typeof x === 'string' && x.length >= 4))) {
+        problems.push(`${where}: not_scenes는 씬 ID(끝이 *이면 앞머리) 배열`);
+      }
       if (e.shares !== undefined && (typeof e.shares !== 'string' || e.shares.startsWith(`${type}:`) || (e.names ?? []).length)) {
         problems.push(`${where}: shares는 같은 표기의 다른 종류 대상 ID 하나 — 다른 이름(names)은 둘 수 없다`);
       }
@@ -291,6 +294,12 @@ export function loadTerms() {
   }
   return { entries, problems };
 }
+
+/**
+ * 비인물 항목의 not_scenes(사전 파일) — 그 씬에서 걸린 이름은 같은 표기의 다른 것(동음)이라 언급 · 건수에서 뺀다.
+ * 씬 ID 그대로, 끝이 *이면 앞머리(`ep:d_nikke_sin_*` — 신의 호감도 스토리 전부). W15e: 처음 나온 자리를 틀리게 잡는 것을 막는다.
+ */
+export const notHere = (n, storyId) => (n.notScenes ?? []).some((x) => (x.endsWith('*') ? storyId.startsWith(x.slice(0, -1)) : storyId === x));
 
 const WORD_CHAR = /[0-9A-Za-z가-힣ㄱ-ㅎㅏ-ㅣ]/;
 const NON_WORD_RUN = '[^0-9A-Za-z가-힣ㄱ-ㅎㅏ-ㅣ]+';
@@ -365,6 +374,7 @@ export function countTermMentions(lines, stories, dict) {
     if (!hits.size) continue;
     const ids = new Set();
     for (const n of hits) {
+      if (notHere(n, l.storyId)) continue;
       n.linesInScope++;
       ids.add(n.targetId);
     }
