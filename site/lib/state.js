@@ -27,6 +27,7 @@
  *   known(record) → boolean          그 기록을 아나: 사실 · 의문은 know_units(없으면 [unit]) 중 하나라도 봤으면, 그 밖은 seen(unit)(unit 없으면 visible(tick))
  *   reading(s?) → R                  { all, t, x, seen, seenAny, known } — fmt.stateAt(r, R) · fmt.gradeAt(u, R)에 T 대신 넘긴다
  *   spineExtras() → [{ key, tick }]  척추 이벤트 · 사이드(팝업 체크 칸)
+ *   normalizeX(x, t)                 x에서 t의 기본과 같은 예외를 뺀 것(set과 같은 정리 — 팝업 초안)
  *   구독자의 changed에 't'가 있으면 t나 x가 바뀐 것이다(여기까지 읽음이 바뀜). x만 바뀌어도 't'와 'x'가 같이 든다
  *   cutoffChosen()                   URL에 t가 실려 왔거나 localStorage에 고른 컷오프가 있나 — init() **전에** 불러야 한다(init이 URL에 t를 쓴다). 첫 방문 선택 바가 쓴다
  */
@@ -239,6 +240,8 @@ export function configure({ units: u } = {}) {
   units = u instanceof Map ? u : new Map();
   extras = [...units.values()].filter((x) => x.spine && x.kind !== 'main').map((x) => ({ key: x.key, tick: x.tick })).sort((a, b) => (a.tick ?? 0) - (b.tick ?? 0));
 }
+/** x에서 t의 기본과 같은 예외를 뺀 것 — set이 하는 정리와 같다(팝업 초안이 쓴다) */
+export const normalizeX = (x, t) => pruneX(x ?? {}, t);
 export const spineExtras = () => extras.map((e) => ({ ...e }));
 
 /** 여기까지 읽음 판정 묶음 — s를 주면 그 상태로(구독자가 받은 snapshot) */

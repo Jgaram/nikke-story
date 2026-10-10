@@ -6,6 +6,7 @@
  *     필수(키 척추) · 메인 = 잉크(등급이 아니라 기준). 등급 이름은 띠 색 작은 글자(.g-label)로 남긴다 — 색만으로 가르지 않는다
  *   종류(범주 8, dataviz 스킬의 검증된 팔레트): 종류가 축인 그림(인물 등장 · 연대기)에만 — 목록 · 칩에서 종류는 회색 글자
  *   상태(고정, 아이콘 · 라벨과 함께): 미해결 warning · 일부 회수 serious · 회수 good · 뒤집힘 critical
+ *   여기까지 읽음(--guard, 보라 한 색): 스포일러 가림 팝업(주 단추 · 슬라이더 · 체크 · 재확인). 상단 단추는 파스텔(--hd-guard-*)로 늘 보여도 눈이 덜 가게
  * 머리(상단 바 + 탭 줄)는 어두운 게임 UI 톤(--hd-*). 글꼴은 Pretendard(CDN 고정 판 — d3와 같은 예외, index.html).
  * 라벨 없는 색만으로 뜻을 전하지 않는다 — 칩은 늘 글자를 단다.
  * 테마는 하나(사용자, 2026-10-10 — 다크 · 테마 단추 없음): 회청 바탕(A2) — 흰 바탕 · 검정 글자의 과한 대비(19:1)를 줄였다. 페이지 바탕이 가장 어둡고 카드가 한 톤 밝다.
@@ -27,6 +28,13 @@
   --focus: #2a78d6;
   --link: #174f94;
   --spoiler: #9c1d1d;       /* 스포일러 경고 글자 */
+  /* 여기까지 읽음(스포일러 가림) — 보라 한 색(사용자, 2026-10-10). 팝업은 또렷하게, 상단 단추는 파스텔로 덜 보이게 */
+  --guard: #6a4bc0;         /* 팝업 주 단추 · 슬라이더 · 체크 — 글자로도 4.5:1 */
+  --guard-tint: #e4ddf6;    /* 팝업 안 연한 바탕 */
+  --hd-guard-bg: #2b2738;   /* 상단 단추 바탕 — 어두운 머리 위 옅은 보라 */
+  --hd-guard-line: #423b58;
+  --hd-guard-ink: #d8cdf8;  /* 상단 단추 값 — 파스텔 */
+  --hd-guard-ink-2: #a99cce;
   --seg-on: #e7ebf0;        /* 세그먼트 선택 칸 */
   --mark-bg: #2f2e2b;       /* 소속 마크 칩 — 마크가 투명 바탕 흰 그림이라 어두운 바탕 */
   --mark-ink: #ffffff;
@@ -155,23 +163,23 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .ctl-name { color: var(--ink-muted); font-size: var(--fs-small); white-space: nowrap; }
 .cutoff { flex: none; }
 .cutoff-btn {
-  display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px 0 12px; font: inherit; color: var(--hd-ink); text-align: left; cursor: pointer;
-  background: var(--hd-bg-2); border: 1px solid var(--hd-line); border-radius: var(--radius-sm); transition: border-color 0.15s, background 0.15s;
+  display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px 0 12px; font: inherit; color: var(--hd-guard-ink); text-align: left; cursor: pointer;
+  background: var(--hd-guard-bg); border: 1px solid var(--hd-guard-line); border-radius: var(--radius-sm); transition: border-color 0.15s, background 0.15s;
 }
-.cutoff-btn:hover { border-color: var(--hd-accent); background: color-mix(in srgb, var(--hd-accent) 10%, var(--hd-bg-2)); }
-.cutoff-btn:focus-visible { outline: 2px solid var(--hd-accent); outline-offset: 2px; }
+.cutoff-btn:hover { border-color: var(--hd-guard-ink-2); background: color-mix(in srgb, var(--hd-guard-ink) 10%, var(--hd-guard-bg)); }
+.cutoff-btn:focus-visible { outline: 2px solid var(--hd-guard-ink); outline-offset: 2px; }
 .cutoff-stack { display: flex; flex-direction: column; line-height: 1.2; min-width: 80px; }
-.cutoff-name { font-size: 11.5px; color: var(--hd-ink-2); letter-spacing: 0.01em; }
+.cutoff-name { font-size: 11.5px; color: var(--hd-guard-ink-2); letter-spacing: 0.01em; }
 .cutoff-read { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
 .cutoff-value { font-size: 14.5px; font-weight: 700; letter-spacing: -0.01em; }
-.cutoff-date { font-size: 11.5px; color: var(--hd-ink-2); }
-.cutoff-btn.is-off .cutoff-value { color: var(--hd-ink-2); font-weight: 600; }
-.cutoff-caret { font-size: 11px; color: var(--ink-muted); }
+.cutoff-date { font-size: 11.5px; color: var(--hd-guard-ink-2); }
+.cutoff-btn.is-off .cutoff-value { color: var(--hd-guard-ink-2); font-weight: 600; }
+.cutoff-caret { font-size: 11px; color: var(--hd-guard-ink-2); }
 
 /* 여기까지 읽음 팝업 — 네이티브 dialog(showModal: 배경 · Esc · 초점 가두기) */
 .cutoff-dlg {
   width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); padding: 18px 20px 16px; overflow: auto;
-  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-md);
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--guard); border-radius: 14px; box-shadow: var(--shadow-md);
 }
 .cutoff-dlg::backdrop { background: rgba(0, 0, 0, 0.45); }
 .cutoff-dlg[open] { animation: dlg-in 0.16s ease-out; }
@@ -191,30 +199,45 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .cutoff-exs { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 4px 10px; }
 .cutoff-ex { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 0 8px; padding: 6px 8px; border-radius: 8px; cursor: pointer; }
 .cutoff-ex:hover { background: var(--surface-2); }
-.cutoff-ex input { grid-row: 1 / 3; width: 16px; height: 16px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.cutoff-ex input { grid-row: 1 / 3; width: 16px; height: 16px; margin: 0; accent-color: var(--guard); cursor: pointer; }
 .cutoff-ex-title { font-size: 13.5px; font-weight: 600; overflow-wrap: anywhere; }
 .cutoff-ex-sub { font-size: 11.5px; }
-.cutoff-ex.is-diff .cutoff-ex-title::after { content: " •"; color: var(--accent); }
-.cutoff-extra { font-size: 11.5px; font-weight: 600; color: var(--hd-accent); }
+.cutoff-ex.is-diff .cutoff-ex-title::after { content: " •"; color: var(--guard); }
+.cutoff-extra { font-size: 11.5px; font-weight: 600; color: var(--hd-guard-ink); }
 .cutoff-foot-gap { flex: 1 1 auto; }
 .btn.btn-primary { color: var(--surface); background: var(--accent); border-color: var(--accent); }
 .btn.btn-primary:hover { filter: brightness(1.08); }
 .cutoff-dlg-foot { display: flex; align-items: center; gap: 6px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
-.cutoff-dlg-foot .btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.cutoff-dlg-foot .btn[aria-pressed="true"] { border-color: var(--guard); color: var(--guard); }
+.btn.btn-guard { color: #fff; background: var(--guard); border-color: var(--guard); }
+.btn.btn-guard:hover { filter: brightness(1.1); }
+.btn.btn-guard:focus-visible { outline: 2px solid var(--guard); outline-offset: 2px; }
+.cutoff-latest-row { display: flex; justify-content: flex-end; margin-top: 8px; }
+.btn.cutoff-latest { font-size: 12.5px; padding: 4px 10px; height: auto; }
+.btn.cutoff-latest[aria-pressed="true"] { border-color: var(--guard); background: var(--guard-tint); color: var(--guard); font-weight: 600; }
+/* 재확인 — 앞으로(더 많이 보이게) 바꿀 때만 */
+.cutoff-confirm h2 { margin: 0 0 6px; font-size: 17px; color: var(--guard); }
+.cutoff-confirm-msg { margin: 0 0 12px; max-width: none; }
+.cutoff-confirm-move { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 10px; padding: 12px 14px; border-radius: 10px; background: var(--guard-tint); }
+.cutoff-confirm-cell { display: flex; flex-direction: column; gap: 2px; min-width: 0; overflow-wrap: anywhere; }
+.cutoff-confirm-cell .muted { font-size: 12px; }
+.cutoff-confirm-cell.is-to b { color: var(--guard); }
+.cutoff-confirm-arrow { font-size: 18px; color: var(--guard); }
+.cutoff-confirm-sub { margin: 10px 0 0; font-size: var(--fs-small); max-width: none; }
 .cutoff-dlg input[type="range"] {
   --fill: 0%; width: 100%; height: 20px; margin: 0; background: transparent; cursor: pointer;
   -webkit-appearance: none; appearance: none;
 }
-.cutoff-dlg input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(to right, var(--accent) var(--fill), var(--line-2) var(--fill)); }
+.cutoff-dlg input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(to right, var(--guard) var(--fill), var(--line-2) var(--fill)); }
 .cutoff-dlg input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--line-2); }
-.cutoff-dlg input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
+.cutoff-dlg input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--guard); }
 .cutoff-dlg input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none; width: 16px; height: 16px; margin-top: -6px; border-radius: 50%;
-  background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); transition: transform 0.12s;
+  background: var(--surface); border: 2px solid var(--guard); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); transition: transform 0.12s;
 }
-.cutoff-dlg input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.cutoff-dlg input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--guard); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
 .cutoff-dlg input[type="range"]:hover::-webkit-slider-thumb { transform: scale(1.15); }
-.cutoff-dlg input[type="range"]:focus-visible { outline-offset: 4px; }
+.cutoff-dlg input[type="range"]:focus-visible { outline: 2px solid var(--guard); outline-offset: 4px; }
 
 /* ── 탭 ── */
 .tabs {

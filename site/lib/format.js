@@ -246,6 +246,16 @@ export const FIRST_VISIT = {
   close: '닫기',
   open: '눌러서 바꾸기',
   allHelp: '스포일러를 가리지 않고 모든 시점의 이야기를 본다',
+  latest: '최신 업데이트까지',
+  latestShort: '최신까지',
+  latestHelp: (ch, n) => `${ch} 뒤에 나온 스토리 ${n}편까지 — 지금 나온 것은 다 봤다`,
+  confirmTitle: '스포일러 확인',
+  confirmMsg: '여기까지 읽음을 이렇게 바꿀까요?',
+  confirmFrom: '지금',
+  confirmTo: '바꾼 뒤',
+  confirmSub: (n) => `지금보다 스토리 ${n}편의 내용이 더 보입니다. 아직 안 본 이야기가 있으면 돌아가세요.`,
+  confirmBack: '돌아가기',
+  confirmOk: '네, 바꾸기',
 };
 
 /** AI 정리 고지(사용자, 2026-10-10) — 하단 첫 줄 · 여기까지 읽음 팝업 아래 · 리더 줄거리 머리(공유 링크로 들어오면 팝업이 안 뜬다) */
