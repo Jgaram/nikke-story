@@ -176,12 +176,8 @@ export async function mount(root, ctx) {
 
   // ── 작은 조각 ──
   const dots = (items) => items.filter(Boolean).flatMap((x, i) => (i ? [h('span', { class: 'w-dot', 'aria-hidden': 'true' }, '·'), x] : [x]));
-  const hiddenNote = (cutHidden, layerHidden) => {
-    if (!cutHidden && !layerHidden) return null;
-    return h('div', { class: 'w-hidden' },
-      cutHidden ? ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null })) : null,
-      layerHidden ? ui.hiddenNote(`${fmt.TERM.scope} 밖 ${fmt.num(layerHidden)}`, () => state.set({ layers: state.ALL_LAYERS }), { action: `${fmt.TERM.scope} 넓히기` }) : null);
-  };
+  // 범위(층) 필터는 없다(state.layers는 늘 [1,2,3]) — 층 계산이 남은 곳은 늘 참이라 안내는 스포일러 가림만(W13a)
+  const hiddenNote = (cutHidden) => (cutHidden ? h('div', { class: 'w-hidden' }, ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null }))) : null);
   const evidenceLinks = (ev, max = 3) => (ev ?? []).slice(0, max).map((x, i) => [i ? ' · ' : null, ui.link(`scene:${x.scene}`, fmt.ref(x.scene), { class: 'w-ref' })]);
   const itemLink = (id) => {
     if (byId.has(id)) {
@@ -212,7 +208,6 @@ export async function mount(root, ctx) {
         u && u.kind !== 'main' ? h('span', { class: 'muted' }, whenLabel(r.tick)) : null,
         r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
         ev ? ui.link(`scene:${ev.scene}`, fmt.ref(ev.scene), { class: 'w-ref' }) : null,
-        ui.link(`record:${r.id}`, r.id, { class: 'mono w-ref' }),
       ])),
       showAbout && aboutIds?.length ? h('div', { class: 'w-meta w-aboutline' }, aboutIds.map((a) => itemLink(a))) : null);
     const open = () => state.set({ sel: `record:${r.id}` });
@@ -542,7 +537,7 @@ export async function mount(root, ctx) {
     put(el,
       h('div', { class: 'w-card-title' }, h('h3', {}, e.name), h('div', { class: 'chips' }, ui.chip('plain', e.type, typeLabel(e.type)), e.kind ? ui.chip('plain', e.kind, e.kind) : null,
         hubs.has(e.id) ? h('span', { title: LABELS.hubTip }, ui.chip('plain', 'hub', LABELS.hubTag)) : null)),
-      e.note ? h('p', { class: 'w-note' }, e.note) : null,
+      fmt.prose(e.note) ? h('p', { class: 'w-note' }, fmt.prose(e.note)) : null,
       (e.aliases ?? []).length ? h('p', { class: 'w-aliases' }, h('span', { class: 'muted' }, `${LABELS.aliases} `), e.aliases.map((a, i) => [i ? ' · ' : null,
         h('span', { class: a.caution ? 'w-alias has-note' : 'w-alias', title: a.caution ?? undefined }, a.name, a.how ? h('span', { class: 'muted' }, ` (${a.how})`) : null)])) : null,
       e.evidence?.length ? h('p', { class: 'w-evidence' }, h('span', { class: 'muted' }, `${fmt.TERM.evidence} `), evidenceLinks(e.evidence)) : null,

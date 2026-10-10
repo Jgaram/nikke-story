@@ -4,7 +4,7 @@
  *   configure({ navigate })                     link()가 쓸 이동 함수(app.js가 state.set({ sel })를 넘긴다)
  *   el(tag, attrs, ...children)                 attrs: class · id · dataset{} · style{} · aria-* · on<Event>(함수) · 그 밖 속성. children: 문자열 · 노드 · 배열 · null
  *   clear(node)
- *   chip(kind, value, label?)                   kind: 'kind' | 'grade' | 'layer' | 'state' | 'record' | 'confidence' | 'plain' → span.chip (색은 CSS 변수, 글자·툴팁은 format.js의 라벨 · 정의)
+ *   chip(kind, value, label?)                   kind: 'kind' | 'grade' | 'state' | 'record' | 'confidence' | 'plain' → span.chip (색은 CSS 변수, 글자·툴팁은 format.js의 라벨 · 정의)
  *   legend(items)                               [{ label, color }] → div.legend
  *   table({ columns, rows, sortable, pageSize, onRow, rowKey, selected, empty, caption }) → { el, update(rows), setSelected(key) }
  *       columns: [{ key, label, num, nowrap, render(row) → 노드|문자열, sort(a, b), sortable, width, title }]  — num이면 오른쪽 정렬 · 숫자 정렬, nowrap이면 줄 안 바꿈
@@ -57,13 +57,11 @@ export function clear(node) {
 const CHIP_VAR = {
   kind: (v) => `var(--kind-${v})`,
   grade: (v) => `var(--grade-${{ 필수: 'must', 보강: 'support', 참고: 'ref', 독립: 'standalone', 척추: 'spine', 메인: 'main' }[v] ?? 'none'})`,
-  layer: (v) => `var(--layer-${v})`,
   state: (v) => `var(--state-${{ 열림: 'open', 일부: 'partial', 풀림: 'solved', 뒤집힘: 'reversed', 암시만: 'hint', 아직: 'none', 앎: 'known' }[v] ?? 'none'})`,
 };
 const CHIP_TEXT = {
   kind: (v) => fmt.KIND[v]?.label,
   grade: (v) => fmt.GRADE[v]?.label,
-  layer: (v) => fmt.LAYER[v]?.label,
   state: (v) => fmt.STATE[v]?.label,
   record: (v) => fmt.RECORD_KIND[v]?.label,
 };
@@ -105,7 +103,7 @@ export const empty = (text = '없음', action = null) => el('div', { class: 'emp
 export const spinner = (text = '불러오는 중…') => el('div', { class: 'spinner', role: 'status', 'aria-live': 'polite' }, el('i', { 'aria-hidden': 'true' }), text);
 export const notice = (text, kind = 'info') => el('div', { class: ['notice', `notice-${kind}`], role: kind === 'error' ? 'alert' : 'status' }, text);
 
-/** 스포일러(여기까지 읽음 뒤) · 범위 밖으로 가린 것의 안내 — 점 + 글 + 작은 단추. 탭마다 따로 만들지 않는다 */
+/** 스포일러(여기까지 읽음 뒤)로 가린 것의 안내 — 점 + 글 + 작은 단추. 탭마다 따로 만들지 않는다 */
 export function hiddenNote(text, onShowAll, { action = null } = {}) {
   return el('span', { class: 'hidden-note' },
     el('span', { class: 'hn-text' }, text),

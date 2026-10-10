@@ -18,6 +18,8 @@ let data = null;
 let fmt = null;
 let ui = null;
 let current = null;
+let lastIdx = null; // 마지막으로 연 색인 — recLink가 기록 문장을 찾는다
+const idx0 = () => lastIdx;
 
 export function init(deps) {
   ({ root, state, data, fmt, ui } = deps);
@@ -42,6 +44,7 @@ export async function open(sel) {
   root.append(head(''), ui.spinner());
   try {
     const idx = await data.index();
+    lastIdx = idx;
     if (needsRecords(parsed.type)) {
       if (!idx.hasRecords) {
         await idx.withRecords();
@@ -111,7 +114,8 @@ function synopsisPanel(key, hidden) {
   const x = synopsisMap?.get(key);
   if (!x) return null;
   const body = [ui.el('p', { class: 'rd-logline' }, x.logline), ...x.synopsis.split(/\n\s*\n/).map((t) => ui.el('p', { class: 'rd-synopsis' }, t.trim()))];
-  return ui.panel('줄거리', hidden ? ui.details(spoilerSummary(), body, { class: 'spoiler' }) : body, { class: 'rd-synopsis-panel' });
+  const ai = ui.el('span', { class: 'ai-tag', title: fmt.AI_NOTE.full }, fmt.AI_NOTE.tag);
+  return ui.panel('줄거리', hidden ? ui.details(spoilerSummary(), body, { class: 'spoiler' }) : body, { class: 'rd-synopsis-panel', actions: ai });
 }
 
 let linkIndex = null;
@@ -134,18 +138,17 @@ async function loadLinks() {
 
 const LINK_CAP = 5; // 선 종류마다 먼저 보이는 줄 수 — 나머지는 "더 보기"
 const levelText = (s) => fmt.LINK_LEVEL[s] ?? '';
-/** 메모 ID(F203 · J1 …)가 든 문장을 링크로 */
-const withLinks = (text) => String(text ?? '').split(/\b([FQSIEDUOH]\d+(?:-\d+)?|J\d+)\b/).map((p, i) => (i % 2 ? (/^J\d/.test(p) ? ui.link(`thread:${p}`, p, { class: 'mono' }) : ui.link(`record:${p}`, p, { class: 'mono' })) : p));
 const clipText = (s, n) => ([...String(s ?? '')].length > n ? `${[...s].slice(0, n).join('')}…` : String(s ?? ''));
 
-/** 선 한 줄의 근거 — 분석 메모(있으면) · 씬 줄 */
+/** 선 한 줄의 근거 — 장면 → 장면(기록 ID는 화면에 내지 않는다 — W13a) */
 function linkEvidence(e, idx) {
-  const parts = [];
-  if (e.record) parts.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
   const scene = (id) => (idx.scenes.get(id) ? ui.link(`scene:${id}`, fmt.ref(id)) : ui.el('span', {}, fmt.ref(id)));
-  if (parts.length) parts.push(' · ');
-  parts.push(scene(e.from), ' → ', scene(e.to));
-  return parts;
+  return [scene(e.from), ' → ', scene(e.to)];
+}
+/** 기록으로 가는 링크 — 글자는 기록 문장(줄임), ID가 아니다 */
+function recLink(id) {
+  const r = idx0()?.records?.get(id);
+  return ui.link(`record:${id}`, r ? clipText(fmt.recordText(r) || fmt.recordLabel(r), 48) : fmt.RECORD_KIND[String(id).replace(/\d.*$/, '')]?.label ?? '자세히');
 }
 
 /** 선들을 선 종류별로 묶어 그린다 — rows: [{ type, node, s, n, order }]. 종류마다 LINK_CAP줄, 나머지는 접는다 */
@@ -192,7 +195,7 @@ function unitLinkRows(key, edges, idx) {
     const node = ui.el('li', { class: ['rd-link', u && !state.seen(u.key) ? 'after-cutoff' : ''] },
       ui.el('div', { class: 'rd-link-main' },
         self ? ui.el('span', {}, '이 스토리 안') : (u ? ui.link(`unit:${g.other}`, u.title) : ui.el('span', { class: 'mono' }, g.other)),
-        ui.el('span', { class: 'rd-link-meta' }, `${levelText(s)}${g.edges.length > 1 ? ` · 씬 ${g.edges.length}쌍` : ''}`)),
+        ui.el('span', { class: 'rd-link-meta' }, `${levelText(s)}${g.edges.length > 1 ? ` · 장면 ${g.edges.length}쌍` : ''}`)),
       ui.el('div', { class: 'rd-link-ev' }, linkEvidence(best, idx), g.edges.length > 1 ? ui.el('span', { class: 'muted' }, ` 외 ${g.edges.length - 1}`) : null));
     return { type: g.type, node, s, n: g.edges.length, order: u?.order ?? 9999, after: Boolean(u) && !state.seen(u.key) };
   });
@@ -208,7 +211,6 @@ function sceneLinkRows(id, edges, idx) {
     const u = idx.units.get(otherUnit);
     const hidden = Boolean(u) && !state.seen(u.key);
     const ev = [];
-    if (e.record) ev.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
     const node = ui.el('li', { class: ['rd-link', hidden ? 'after-cutoff' : ''] },
       ui.el('div', { class: 'rd-link-main' },
         sc ? ui.link(`scene:${other}`, sc.title ?? other) : ui.el('span', { class: 'mono' }, other),
@@ -255,9 +257,9 @@ function classPanel(u, idx) {
   if (g == null) gradeRow.push(' ', ui.el('span', { class: 'muted' }, '여기까지 읽음 뒤에 나온 스토리'));
   else if (g !== j.grade) gradeRow.push(' ', ui.el('span', { class: 'muted' }, ['→ ', ui.link(`unit:${j.from}`, spineName(j.from)), '부터 '], ui.chip('grade', j.grade)));
   else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? `${spineName(j.from)} 앞에서는 ${fmt.GRADE[j.before ?? j.grade]?.label}` : `${spineName(j.from)}부터`));
-  const full = fmt.plain(j.reason ?? '');
+  const full = fmt.prose(j.reason ?? '');
   const short = clipText(full, 90);
-  const why = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, withLinks(full)))) : null;
+  const why = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full))) : null;
   return ui.panel(fmt.TERM.judgment, kv([
     row(t == null ? '등급' : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
     j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order ? row('선행인 곳', ui.link(`unit:${j.from}`, fmt.preOf(spineName(j.from)))) : null,
@@ -280,7 +282,6 @@ function head(title, chips = [], sub = null, pic = null) {
 const row = (k, v) => (v == null || v === '' ? null : ui.el('div', { class: 'kv' }, ui.el('dt', {}, k), ui.el('dd', {}, v)));
 const kv = (rows) => ui.el('dl', { class: 'kvs' }, rows);
 const T = () => state.get().t;
-const mono = (text, attrs = {}) => ui.el('span', { class: ['mono', attrs.class], title: attrs.title }, text);
 const tip = (text, title) => ui.el('span', { title }, text);
 /** 링크 목록을 ' · '로 이어 붙인다 */
 const joinNodes = (nodes) => nodes.map((n, i) => [i ? ' · ' : null, n]);
@@ -288,7 +289,7 @@ const joinNodes = (nodes) => nodes.map((n, i) => [i ? ' · ' : null, n]);
 const spoilerSummary = (n) => `여기까지 읽음 뒤 — 스포일러 보기${n != null ? ` (${n})` : ''}`;
 const cutoffName = () => fmt.tickShort(T());
 
-/** 메모 한 줄 — 종류 칩 · 확신도 · 문장 · 근거 링크 · 작은 메모 ID. "여기까지 읽음" 뒤면 흐리게 */
+/** 기록 한 줄 — 종류 칩 · 확신도 · 문장(누르면 자세히) · 장면 링크. ID는 내지 않는다. "여기까지 읽음" 뒤면 흐리게 */
 function recordLine(r, { showUnit = false } = {}) {
   const hidden = !state.known(r);
   const st = fmt.stateAt(r, state.reading());
@@ -297,16 +298,15 @@ function recordLine(r, { showUnit = false } = {}) {
       ui.chip('record', r.kind, fmt.recordLabel(r)),
       r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
       st && st !== '앎' ? ui.chip('state', st) : null),
-    ui.el('div', { class: 'record-text' }, fmt.recordText(r)),
+    ui.el('div', { class: 'record-text' }, ui.link(`record:${r.id}`, fmt.recordText(r) || fmt.recordLabel(r), { class: 'record-open' })),
     ui.el('div', { class: 'record-ref' },
       showUnit && r.unit ? [ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)), ' · '] : null,
-      r.evidence?.length ? joinNodes([...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.link(`scene:${sc}`, fmt.refIn(sc, r.unit)))) : null,
-      ' ', ui.link(`record:${r.id}`, r.id, { class: 'mono rec-id', title: '메모 자세히' })));
+      r.evidence?.length ? joinNodes([...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.link(`scene:${sc}`, fmt.refIn(sc, r.unit)))) : null));
 }
 
-/** 메모 목록을 "여기까지 읽음" 앞 · 뒤로 갈라 그린다 — 뒤는 details 안 */
+/** 기록 목록을 "여기까지 읽음" 앞 · 뒤로 갈라 그린다 — 뒤는 details 안 */
 function recordList(records, opts = {}) {
-  if (!records?.length) return ui.empty('메모 없음');
+  if (!records?.length) return ui.empty('없음');
   const R = state.reading();
   const order = (r) => (fmt.RECORD_ORDER.indexOf(r.kind) + 1 || 99);
   const sorted = [...records].sort((a, b) => order(a) - order(b) || (a.line ?? 0) - (b.line ?? 0) || String(a.id).localeCompare(String(b.id)));
@@ -317,15 +317,10 @@ function recordList(records, opts = {}) {
     after.length ? ui.details(spoilerSummary(after.length), ui.el('ul', { class: 'records' }, after.map((r) => recordLine(r, opts))), { class: 'spoiler' }) : null);
 }
 
-const countByKind = (records) => {
-  const m = new Map();
-  for (const r of records ?? []) m.set(r.kind, (m.get(r.kind) ?? 0) + 1);
-  const byLabel = new Map();
-  for (const [k, n] of [...m].sort((a, b) => fmt.RECORD_ORDER.indexOf(a[0]) - fmt.RECORD_ORDER.indexOf(b[0]))) {
-    const label = fmt.RECORD_KIND[k]?.label ?? k;
-    byLabel.set(label, (byLabel.get(label) ?? 0) + n);
-  }
-  return [...byLabel].map(([label, n]) => `${label} ${n}`).join(' · ');
+/** 기록 묶음의 패널 이름 — 묶음 말(분석 메모) 대신 든 종류 이름을 늘어놓는다(W13 용어표): '사실 · 의문 · 변화' */
+const kindsTitle = (records) => {
+  const kinds = [...new Set((records ?? []).map((r) => r.kind))].sort((a, b) => fmt.RECORD_ORDER.indexOf(a) - fmt.RECORD_ORDER.indexOf(b));
+  return [...new Set(kinds.map((k) => fmt.RECORD_KIND[k]?.label ?? k))].join(' · ');
 };
 
 const chronoText = (u) => {
@@ -343,9 +338,9 @@ const gradeChip = (u) => (u.grade && u.grade !== '메인' ? ui.chip('grade', u.g
 const RENDER = {
   unit(key, idx) {
     const u = idx.units.get(key);
-    if (!u) return root.append(head('찾을 수 없음'), ui.empty(`스토리 없음: ${key}`));
+    if (!u) return root.append(head('찾을 수 없음'), ui.empty('스토리를 찾을 수 없음'));
     const hidden = !state.seen(u.key);
-    root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null]));
+    root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u)]));
     // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(척추 이벤트 · 사이드 체크)
     if (hidden) root.append(ui.notice(state.visible(u.tick) ? '안 봤다고 고른 스토리 — 아래는 스포일러일 수 있다' : `여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
     const syn = synopsisPanel(key, hidden);
@@ -356,21 +351,21 @@ const RENDER = {
       row(fmt.TERM.order, `${u.order}번째 / ${idx.unitList.length}`),
       row(fmt.TERM.release, u.tick != null ? `${fmt.tickLabel(u.tick)}${u.date_confidence === '추정' ? ' (날짜 추정)' : ''}${u.via === '딸림' ? ' · 딸린 챕터 기준' : ''}` : null),
       row(fmt.TERM.chronoPlace, chronoText(u)),
-      row('분량', `${u.scenes}씬 · ${fmt.num(u.lines)}줄${u.chars != null ? ` · ${fmt.num(u.chars)}자` : ''}`),
+      row('분량', `${u.scenes}장면 · ${fmt.num(u.lines)}줄${u.chars != null ? ` · ${fmt.num(u.chars)}자` : ''}`),
     ])));
     const cls = classPanel(u, idx);
     if (cls) root.append(cls);
     linksPanel(idx, { sel: current, tabAct: tabAction('links', { c: key }), pick: (li) => li.byUnit.get(key) ?? [], build: (edges) => unitLinkRows(key, edges, idx), emptyText: '이어진 스토리 없음' });
-    root.append(ui.panel(`씬 ${scenes.length}`, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
-      ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? s.id}`), ui.el('span', { class: 'muted' }, ` ${s.lines}줄${s.part ? ` · ${s.part}` : ''}${s.level ? ` · Lv.${s.level}` : ''} · 메모 ${(idx.recordsOf.get(s.id) ?? []).length}`),
-        !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty('씬 없음')));
-    root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, [ui.el('p', { class: 'muted' }, countByKind(recs) || '없음'), recs.length > 80 ? ui.el('p', { class: 'muted' }, '씬을 고르면 그 씬의 메모만 나온다') : recordList(recs)]));
+    root.append(ui.panel(`장면 ${scenes.length}`, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
+      ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? s.id}`), ui.el('span', { class: 'muted' }, ` ${s.lines}줄${s.part ? ` · ${s.part}` : ''}${s.level ? ` · Lv.${s.level}` : ''}`),
+        !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty('장면 없음')));
+    if (recs.length) root.append(ui.panel(kindsTitle(recs), recs.length > 80 ? ui.el('p', { class: 'muted' }, '장면을 고르면 그 장면의 것만 나온다') : recordList(recs)));
     slipsPanel(idx.slipsOf.get(key));
   },
 
   scene(id, idx) {
     const s = idx.scenes.get(id);
-    if (!s) return root.append(head('찾을 수 없음'), ui.empty(`씬 없음: ${id}`));
+    if (!s) return root.append(head('찾을 수 없음'), ui.empty('장면을 찾을 수 없음'));
     const u = idx.units.get(s.unit);
     const recs = idx.recordsOf.get(id) ?? [];
     root.append(head(s.title ?? fmt.sceneName(id), [u ? ui.chip('kind', u.kind) : null]));
@@ -390,34 +385,34 @@ const RENDER = {
       row('이동', ui.el('span', { class: 'nav' }, prev ? ui.link(`scene:${prev.id}`, `← ${prev.title ?? prev.id}`) : null, prev && next ? ' · ' : null, next ? ui.link(`scene:${next.id}`, `${next.title ?? next.id} →`) : null)),
     ])));
     linksPanel(idx, { sel: current, tabAct: u ? tabAction('links', { c: u.key }) : null, pick: (li) => li.byScene.get(id) ?? [], build: (edges) => sceneLinkRows(id, edges, idx), emptyText: '이 씬에 걸린 연결 없음' });
-    root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, recordList(recs)));
+    if (recs.length) root.append(ui.panel(kindsTitle(recs), recordList(recs)));
     slipsPanel((idx.slipsOf.get(s.unit) ?? []).filter((x) => !x.scenes?.length || x.scenes.includes(id)));
   },
 
   record(id, idx) {
     const r = idx.records?.get(id);
-    if (!r) return root.append(head('찾을 수 없음'), ui.empty(`메모 없음: ${id}`));
+    if (!r) return root.append(head('찾을 수 없음'), ui.empty('찾을 수 없음'));
     const hidden = !state.known(r);
     const st = fmt.stateAt(r, state.reading());
-    root.append(head(fmt.recordLabel(r), [r.confidence === '추정' ? ui.chip('confidence', '추정') : null, st && st !== '앎' ? ui.chip('state', st) : null], mono(r.id)));
-    const recLinks = (ids) => ids?.length ? joinNodes(ids.map((c) => ui.link(`record:${c}`, c, { class: 'mono' }))) : null;
+    root.append(head(fmt.recordLabel(r), [r.confidence === '추정' ? ui.chip('confidence', '추정') : null, st && st !== '앎' ? ui.chip('state', st) : null]));
+    const recLinks = (ids) => ids?.length ? ui.el('ul', { class: 'plain' }, ids.map((c) => ui.el('li', {}, recLink(c)))) : null;
     const body = ui.el('div', {});
     body.append(ui.el('p', { class: 'record-full' }, fmt.recordText(r)));
-    if (r.kind === 'D' && r.act === '변화') body.append(kv([row('이전', r.before), row('이후', r.after), row('계기', r.trigger), row(fmt.TERM.chronoPlace, r.time ? ui.link(`record:${r.time}`, r.time, { class: 'mono' }) : null)]));
-    if (r.kind === 'S') body.append(kv([row('시간 관계', Array.isArray(r.at) ? r.at.map((a) => (Array.isArray(a) ? a.join(' ') : String(a))).join(' · ') : null), row('기준', r.ref), row('대상', r.subject), row('연도', r.years)]));
-    if (r.kind === 'Q-k' || r.kind === 'F-k') body.append(kv([row('원래 메모', r.parent ? ui.link(`record:${r.parent}`, r.parent, { class: 'mono' }) : null), row('답', r.answer ? ui.link(`record:${r.answer}`, r.answer, { class: 'mono' }) : null), row('회수 정도', r.degree), row('대신 알려진 사실', r.replaced_by ? ui.link(`record:${r.replaced_by}`, r.replaced_by, { class: 'mono' }) : null)]));
+    if (r.kind === 'D' && r.act === '변화') body.append(kv([row('이전', fmt.prose(r.before)), row('이후', fmt.prose(r.after)), row('계기', fmt.prose(r.trigger)), row(fmt.TERM.chronoPlace, r.time ? recLink(r.time) : null)]));
+    if (r.kind === 'S') body.append(kv([row('시간 관계', Array.isArray(r.at) ? r.at.map((a) => (Array.isArray(a) ? a.join(' ') : String(a))).join(' · ') : null), row('기준', fmt.prose(r.ref)), row('대상', r.subject), row('연도', r.years)]));
+    if (r.kind === 'Q-k' || r.kind === 'F-k') body.append(kv([row(r.kind === 'Q-k' ? '의문' : '사실', r.parent ? recLink(r.parent) : null), row('답', r.answer ? recLink(r.answer) : null), row('회수 정도', r.degree), row('대신 알려진 사실', r.replaced_by ? recLink(r.replaced_by) : null)]));
     if (r.kind === 'F' || r.kind === 'Q') {
       const at = (x) => (x != null ? fmt.tickLabel(x) : null);
       body.append(kv(r.kind === 'Q'
         ? [row(fmt.ACT.제기, at(r.first_tick)), row(fmt.ACT.암시, at(r.hint_tick)), row(fmt.ACT.일부, at(r.partial_tick)), row(fmt.ACT.회수, at(r.solved_tick)), row('현재 상태', fmt.STATE[r.state]?.label ?? r.state)]
-        : [row(fmt.ACT.암시, at(r.hint_tick)), row(fmt.ACT['처음 밝혀짐'], at(r.first_tick)), row(fmt.ACT.뒤집힘, r.reversed_tick != null ? [at(r.reversed_tick), r.replaced_by ? [' → ', ui.link(`record:${r.replaced_by}`, r.replaced_by, { class: 'mono' })] : null] : null)]));
+        : [row(fmt.ACT.암시, at(r.hint_tick)), row(fmt.ACT['처음 밝혀짐'], at(r.first_tick)), row(fmt.ACT.뒤집힘, r.reversed_tick != null ? [at(r.reversed_tick), r.replaced_by ? [' → ', recLink(r.replaced_by)] : null] : null)]));
     }
-    if (r.kind === 'O') body.append(kv([row('흐름', r.chain), row('쌓인 곳', r.built?.length ? joinNodes(r.built.map((b) => (/^[A-Z]\d/.test(b) ? ui.link(`record:${b}`, b, { class: 'mono' }) : ui.link(`unit:${b}`, fmt.unitTitle(b))))) : null), row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('닫은 메모', recLinks(r.closing))]));
-    if (r.kind === 'H') body.append(kv([row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('함께 맺는 메모', recLinks(r.members))]));
-    if (r.points?.length) body.append(kv([row('가리키는 메모', recLinks(r.points))]));
+    if (r.kind === 'O') body.append(kv([row('흐름', fmt.prose(r.chain)), row('쌓인 곳', r.built?.length ? joinNodes(r.built.map((b) => (/^[A-Z]\d/.test(b) ? recLink(b) : ui.link(`unit:${b}`, fmt.unitTitle(b))))) : null), row(fmt.ACT.회수, recLinks(r.closing)), row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null)]));
+    if (r.kind === 'H') body.append(kv([row('끝난 곳', r.end ? ui.link(`unit:${r.end}`, fmt.unitTitle(r.end)) : null), row('함께 맺는 것', recLinks(r.members))]));
+    if (r.points?.length) body.append(kv([row('가리키는 것', recLinks(r.points))]));
     if (r.evidence?.length) body.append(ui.panel('장면', ui.el('ul', { class: 'plain' }, [...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.el('li', {}, ui.link(`scene:${sc}`, fmt.ref(sc)))))));
-    // 해석 이유는 추정일 때만 — 확실한 메모는 문장만으로 읽힌다
-    if (r.reason && r.confidence === '추정') body.append(ui.panel('추정한 이유', ui.el('p', { class: 'reason' }, fmt.plain(r.reason))));
+    // 해석 이유는 추정일 때만 — 확실한 기록은 문장만으로 읽힌다. 못 바꾸는 이유 문장은 내지 않는다
+    if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel('추정한 이유', ui.el('p', { class: 'reason' }, fmt.prose(r.reason))));
     if (r.about?.length) body.append(ui.panel('관련', ui.el('p', {}, joinNodes(r.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) body.append(ui.panel(fmt.TERM.thread, ui.el('p', {}, joinNodes(r.threads.map((j) => ui.link(`thread:${j}`, idx.threads.get(j)?.title ?? j))))));
     const rootId = r.parent ?? ((r.kind === 'F' || r.kind === 'Q') ? r.id : null);
@@ -425,9 +420,9 @@ const RENDER = {
       const rootRec = idx.records.get(rootId);
       const events = idx.eventsOf.get(rootId) ?? [];
       const others = [rootRec, ...events].filter((x) => x && x.id !== r.id);
-      if (others.length) body.append(ui.panel('이어진 메모', recordList(others, { showUnit: true })));
+      if (others.length) body.append(ui.panel('이어진 흐름', recordList(others, { showUnit: true })));
     }
-    body.append(ui.panel('나온 곳', kv([row(fmt.TERM.unit, r.unit ? ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)) : null), row('장면', r.scene ? ui.link(`scene:${r.scene}`, fmt.sceneName(r.scene)) : null), row(fmt.TERM.release, r.tick != null ? fmt.tickLabel(r.tick) : null), row(fmt.TERM.order, r.order != null ? `${r.order}번째` : null)])));
+    body.append(ui.panel('나온 곳', kv([row(fmt.TERM.unit, r.unit ? ui.link(`unit:${r.unit}`, fmt.unitTitle(r.unit)) : null), row('장면', r.scene ? ui.link(`scene:${r.scene}`, fmt.sceneName(r.scene)) : null), row(fmt.TERM.release, r.tick != null ? fmt.tickLabel(r.tick) : null)])));
     if (hidden) root.append(ui.details(spoilerSummary(), body, { class: 'spoiler' }));
     else root.append(body);
   },
@@ -437,28 +432,27 @@ const RENDER = {
   },
   target(id, idx) {
     const t = idx.targets.get(id);
-    if (!t) return root.append(head('찾을 수 없음'), ui.empty(`찾는 항목 없음: ${id}`));
-    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null, t.type === 'person' ? ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 }) : null], mono(id), ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })));
+    if (!t) return root.append(head('찾을 수 없음'), ui.empty('항목을 찾을 수 없음'));
+    root.append(head(t.name, [ui.chip('plain', t.type, fmt.TARGET_TYPE[t.type] ?? t.type), t.kind ? ui.chip('plain', t.kind, t.kind) : null, t.type === 'person' ? ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 }) : null], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })));
     root.append(ui.el('div', { class: 'rd-open' }, t.type === 'person' ? tabLink('persons', { who: id }) : tabLink('world', { item: id })));
     const recs = idx.recordsAbout.get(id) ?? [];
     const units = new Set(recs.map((r) => r.unit).filter(Boolean));
     root.append(ui.panel(null, kv([
       row('다른 이름', t.aliases?.length ? t.aliases.map((a) => a.name).join(' · ') : null),
-      row('같은 인물 · 대상', fmt.sameAsKnown(t, state.reading()).length ? joinNodes(fmt.sameAsKnown(t, state.reading()).map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null),
-      row('설명', t.note),
-      row('나온 곳', t.stories ? `${fmt.num(t.stories)}씬 · ${fmt.num(t.lines)}줄` : null),
-      row(fmt.TERM.note, recs.length ? `${recs.length}건 · 스토리 ${units.size}` : null),
+      row('같은 인물 · 항목', fmt.sameAsKnown(t, state.reading()).length ? joinNodes(fmt.sameAsKnown(t, state.reading()).map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null),
+      row('설명', fmt.prose(t.note)),
+      row('나온 스토리', units.size ? `${fmt.num(units.size)}편` : null),
     ])));
-    root.append(ui.panel(`${fmt.TERM.note} ${recs.length}`, recs.length > 200 ? [ui.el('p', { class: 'muted' }, `${countByKind(recs)} — 앞 200건만 보인다. 전체는 인물 · 세계 탭에서`), recordList(recs.slice(0, 200), { showUnit: true })] : recordList(recs, { showUnit: true })));
+    if (recs.length) root.append(ui.panel(kindsTitle(recs), recs.length > 200 ? [ui.el('p', { class: 'muted' }, `앞 200개만 — 전체는 ${t.type === 'person' ? '인물' : '세계'} 탭에서`), recordList(recs.slice(0, 200), { showUnit: true })] : recordList(recs, { showUnit: true })));
   },
 
   thread(id, idx) {
     const j = idx.threads.get(id);
-    if (!j) return root.append(head('찾을 수 없음'), ui.empty(`떡밥 없음: ${id}`));
-    root.append(head(j.title, [ui.chip('plain', j.weight, fmt.THREAD_WEIGHT[j.weight]?.label ?? j.weight), j.confidence === '추정' ? ui.chip('confidence', '추정') : null], mono(j.id)));
+    if (!j) return root.append(head('찾을 수 없음'), ui.empty('떡밥을 찾을 수 없음'));
+    root.append(head(j.title, [fmt.majorThread(j) ? ui.chip('plain', j.weight, fmt.majorThread(j)) : null, j.confidence === '추정' ? ui.chip('confidence', '추정') : null]));
     root.append(ui.el('div', { class: 'rd-open' }, tabLink('threads', { j: id })));
     root.append(ui.panel(null, [
-      ui.el('p', {}, j.text),
+      ui.el('p', {}, fmt.prose(j.text)),
       kv([
         row('의문', `${j.questions?.length ?? 0} (${fmt.STATE.열림.label} ${j.open ?? 0} · ${fmt.STATE.일부.label} ${j.partial ?? 0} · ${fmt.STATE.풀림.label} ${j.solved ?? 0})`),
         row('사실', j.facts?.length || null),
@@ -474,13 +468,13 @@ const RENDER = {
     const rels = idx.relations.filter((g) => g.from === id || g.to === id);
     root.append(ui.panel(`다른 떡밥과의 관계 ${rels.length}`, rels.length ? ui.el('ul', { class: 'plain' }, rels.map((g) => {
       const other = g.from === id ? g.to : g.from;
-      return ui.el('li', {}, ui.chip('plain', g.type, g.type), ' ', ui.link(`thread:${other}`, idx.threads.get(other)?.title ?? other), g.text ? ui.el('div', { class: 'muted' }, g.text) : null);
+      return ui.el('li', {}, ui.chip('plain', g.type, g.type), ' ', ui.link(`thread:${other}`, idx.threads.get(other)?.title ?? other), fmt.prose(g.text) ? ui.el('div', { class: 'muted' }, fmt.prose(g.text)) : null);
     })) : ui.empty('없음')));
   },
 
   tick(id, idx) {
     const t = idx.ticks.get(Number(id));
-    if (!t) return root.append(head('찾을 수 없음'), ui.empty(`출시 시점 없음: ${id}`));
+    if (!t) return root.append(head('찾을 수 없음'), ui.empty('자리를 찾을 수 없음'));
     root.append(head(fmt.tickLabel(t.tick)));
     root.append(ui.panel(`이 시점에 나온 스토리 ${t.units.length}`, ui.el('ul', { class: 'plain' }, t.units.map((k) => {
       const u = idx.units.get(k);
@@ -489,7 +483,9 @@ const RENDER = {
   },
 };
 
+/** 설정 오류 의심 — 바꿀 수 있는 문장만(fmt.prose) */
 function slipsPanel(slips) {
-  if (!slips?.length) return;
-  root.append(ui.panel(`설정 오류 의심 ${slips.length}`, ui.el('ul', { class: 'plain' }, slips.map((s) => ui.el('li', { class: 'slip' }, s.text)))));
+  const texts = (slips ?? []).map((s) => fmt.prose(s.text)).filter(Boolean);
+  if (!texts.length) return;
+  root.append(ui.panel('설정 오류 의심', ui.el('ul', { class: 'plain' }, texts.map((t) => ui.el('li', { class: 'slip' }, t)))));
 }

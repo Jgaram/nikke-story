@@ -98,7 +98,8 @@ const LABELS = {
   first: '앞 씬',
   second: '뒤 씬',
   inner: '이 스토리 안의 연결',
-  origin: { auto: '자동 규칙', record: '', manual: '직접 확정', 'game-condition': '게임 선행 조건' }, // record는 mount에서 TERM.note로
+  origin: { auto: '자동 규칙', record: '', manual: '직접 확정', 'game-condition': '게임 선행 조건' }, // record는 mount에서 originNote로 — W13e가 출처 말을 걷는다
+  originNote: '분석 메모',
   originHelp: { auto: '키 · 게임 순서 · 중심 항목으로 기계가 이은 것', record: '원문을 읽고 남긴 {note}에서 나온 것', manual: '직접 읽고 확정한 연작', 'game-condition': '게임이 먼저 보게 하는 선행 조건' },
   conf: { 확실: '확실', 추정: '추정' },
   candidate: '후보',
@@ -178,8 +179,8 @@ export async function mount(root, ctx) {
   const when = (u) => fmt.tickLabel(u.tick, { date: false });
   const sceneTitle = (id) => idx.scenes.get(id)?.title;
   const actLabel = (a) => fmt.ACT[a] ?? a;
-  const ORIGIN = { ...LABELS.origin, record: TERM.note };
-  const fill = (t) => t.replace('{common}', TERM.commonTargets).replace('{note}', TERM.note);
+  const ORIGIN = { ...LABELS.origin, record: LABELS.originNote };
+  const fill = (t) => t.replace('{common}', TERM.commonTargets).replace('{note}', LABELS.originNote);
 
   // 인물 · 항목 필터 후보 — 선에 걸린 항목, 걸린 선 수 순
   const targetUse = new Map();
@@ -336,7 +337,8 @@ export async function mount(root, ctx) {
   /** 선 종류 키 — 색 · 굵기 견본 */
   const typeKey = (t) => h('i', { class: `lk-key lk-t-${TYPE_CLASS[t]}`, 'aria-hidden': 'true' });
   /** 기록 ID 칩(근거 표시) */
-  const recordLink = (id) => (id && /^[A-Z]+\d/.test(id) && !/^Y\d/.test(id) ? ui.link(`record:${id}`, id, { class: 'mono lk-rid' }) : id ? h('span', { class: 'mono lk-rid' }, id) : null);
+  /** 기록으로 가는 링크 — ID는 화면에 내지 않는다(W13a). 문장을 아직 못 받았을 때만 '자세히' */
+  const recordLink = (id) => (id && /^[A-Z]+\d/.test(id) && !/^Y\d/.test(id) ? ui.link(`record:${id}`, '자세히', { class: 'lk-rid' }) : null);
   const sceneLink = (id) => {
     const title = sceneTitle(id);
     if (!idx.scenes.has(id)) return h('span', { class: 'lk-scene' }, title ?? id); // 애장품 등 씬 목록에 없는 끝점
@@ -776,8 +778,7 @@ export async function mount(root, ctx) {
     return h('div', { class: 'lk-tip-body' },
       h('div', { class: 'lk-tip-title' }, `${e.a.title} → ${e.b.title}`),
       h('div', {}, typeLabel(e.type), ' · ', `${LABELS.sceneRows(fmt.num(e.count))}`, ' · ', `${TERM.strength} ${LABELS.level[e.strength]}`),
-      e.records.length ? h('div', { class: 'lk-tip-rec' }, `${TERM.evidence}: `, h('span', { class: 'mono' }, e.records.slice(0, 4).join(' · ') + (e.records.length > 4 ? ' …' : ''))) : null,
-      e.note && e.origin !== 'manual' && e.note !== '흔한 대상' ? h('div', { class: 'muted' }, clip(e.note, 60)) : null);
+      e.note && e.origin !== 'manual' && e.note !== '흔한 대상' && fmt.prose(e.note) ? h('div', { class: 'muted' }, clip(fmt.prose(e.note), 60)) : null);
   }
 
   /** 선택(sel) · 고른 이웃만 바뀔 때 — 카드와 선의 강조만 갱신한다 */
@@ -848,7 +849,7 @@ export async function mount(root, ctx) {
       const text = clip(fmt.recordText(r), 120);
       const prefix = el.dataset.prefix;
       const label = !prefix ? fmt.recordLabel(r) : prefix === '→' ? `→ ${fmt.recordLabel(r)}` : prefix;
-      el.replaceChildren(h('span', { class: 'lk-why-label' }, label), ' ', text ? h('span', { class: 'lk-why-text' }, text) : null, ' ', recordLink(el.dataset.rec));
+      el.replaceChildren(h('span', { class: 'lk-why-label' }, label), ' ', text ? ui.link(`record:${el.dataset.rec}`, text, { class: 'lk-why-text' }) : recordLink(el.dataset.rec));
     }
   }
   let recordsAsked = false;
@@ -862,7 +863,7 @@ export async function mount(root, ctx) {
 
   /** 기록이 만든 선의 "왜" — 메모 문장 + 가리키는 의문 · 사실 + 답 */
   function whyOf(r) {
-    if (r.origin === 'manual') return [h('p', { class: 'lk-note' }, fmt.plain(r.note ?? ''))];
+    if (r.origin === 'manual') return fmt.prose(r.note) ? [h('p', { class: 'lk-note' }, fmt.prose(r.note))] : [];
     if (r.origin === 'game-condition') return [];
     if (r.type === 'character' || r.type === 'keyword') {
       const basis = (s) => String(s ?? '').replace(/말함 (\d+)줄/, '말한 줄 $1').replace(/이름 (\d+)줄/, '이름 $1줄');
@@ -879,7 +880,7 @@ export async function mount(root, ctx) {
     if (r.point && r.point !== rec) out.push(recLine(r.point, isQk ? null : '→'));
     const ans = /(일부|전부)?\s*·?\s*답\s+(\S+)/.exec(r.note ?? '');
     if (ans) out.push(recLine(ans[2], `${r.type === 'reversal' ? '바뀐 사실' : LABELS.answer}${ans[1] === '일부' ? ` · ${LABELS.partial}` : ''}`));
-    else if (r.note && r.note !== '흔한 대상') out.push(h('div', { class: 'lk-why muted' }, /^known-gap/.test(r.note) ? '빠진 조건을 번호 순서로 추정' : clip(r.note, 120)));
+    else if (r.note && r.note !== '흔한 대상' && (/^known-gap/.test(r.note) || fmt.prose(r.note))) out.push(h('div', { class: 'lk-why muted' }, /^known-gap/.test(r.note) ? '빠진 조건을 번호 순서로 추정' : clip(fmt.prose(r.note), 120)));
     return out;
   }
 
@@ -1262,8 +1263,8 @@ export async function mount(root, ctx) {
     const noteRows = es.map((e) => h('li', { class: 'lk-chain-note' },
       h('span', { class: 'lk-chain-pair' }, units.get(e.from)?.title, h('span', { class: 'lk-darrow' }, ui.icon('arrow')), units.get(e.to)?.title),
       ' ', h('span', { class: 'muted' }, `${ORIGIN[e.origin] ?? e.origin} · ${TERM.strength} ${LABELS.level[e.strength]}`),
-      e.note ? h('p', { class: 'lk-note' }, fmt.plain(e.note)) : null,
-      e.record ? h('span', { class: 'mono lk-rid' }, e.record) : null));
+      fmt.prose(e.note) ? h('p', { class: 'lk-note' }, fmt.prose(e.note)) : null,
+      e.record ? [' ', recordLink(e.record)] : null));
     return h('article', { class: 'lk-chain' },
       h('header', { class: 'lk-chain-head' }, h('strong', {}, `${fmt.num(shown.length)}편`), ch.linear ? null : h('span', { class: 'muted' }, '갈래 있음'),
         h('span', { class: 'muted' }, `${first.title}${shown.length > 1 ? ` … ${last.title}` : ''}`)),

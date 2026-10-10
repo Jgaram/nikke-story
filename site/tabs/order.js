@@ -32,9 +32,9 @@
  *   색은 등급 램프(--grade-*)만 — 종류는 칩 · 행 이름으로 (종류 색과 등급 색을 한 차트에 같이 쓰지 않는다).
  *   키보드: 점 421개를 모두 탭 정지점으로 만들지 않는다(축 60칸만 tabindex 0) — 같은 내용을 목록 모드의 표(줄마다 초점)가 준다.
  *   표 → 카드형 행은 화면이 아니라 묶음 폭(컨테이너 쿼리 840px)으로 접힌다 — 리더 패널이 열려 본문이 좁아져도 가로로 넘치지 않는다.
- *   용어는 fmt(GRADE · LAYER · TERM · help · hiddenLabel · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
+ *   용어는 fmt(GRADE · TERM · help · hiddenLabel · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
  */
-import { gradeAt, plain } from '../lib/format.js';
+import { gradeAt, prose } from '../lib/format.js';
 
 export const meta = { id: 'order', title: '감상 순서', blurb: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' };
 
@@ -55,7 +55,7 @@ const LABELS = {
     pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 필수 스토리',
   },
   none: '없음',
-  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
+  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기', asof: '기준일', scene: '씬',
   trailNone: '바뀐 적 없다', dateEst: '날짜 추정',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
@@ -102,9 +102,10 @@ export async function mount(root, ctx) {
   for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
   const kindsPresent = KIND_PICK_ORDER.filter((k) => judged.some((j) => j.unit.kind === k) || spine.some((sp) => sp.unit.kind === k));
   const spineLabel = (key) => (spineByKey.get(key)?.unit.kind === 'main' ? fmt.tickShort(spineByKey.get(key).tick) : fmt.unitTitle(key));
-  const recId = (id) => (/^J\d/.test(id) ? ui.link(`thread:${id}`, id) : ui.link(`record:${id}`, id));
-  /** 문장 속 메모 ID(F48 · Q36 · J2 · D18 …)를 링크로 */
-  const withLinks = (text) => String(text ?? '').split(/\b([FQSIEDUOH]\d+|J\d+)\b/).map((p, i) => (i % 2 ? recId(p) : plain(p)));
+  /** 기록 · 떡밥으로 가는 링크 — 글자는 종류 이름(ID는 화면에 내지 않는다 — W13a) */
+  const recId = (id, kind) => (/^J\d/.test(id) ? ui.link(`thread:${id}`, idx.threads.get(id)?.title ?? fmt.TERM.thread) : ui.link(`record:${id}`, fmt.RECORD_KIND[kind ?? String(id).replace(/\d.*$/, '')]?.label ?? '자세히'));
+  /** 자유 문장은 fmt.prose를 거친다(기록 ID · 키 · #줄을 걷고, 못 바꾸면 빈 문장) */
+  const withLinks = (text) => prose(text);
   let curR = state.reading(state.get()); // 지금 읽은 데까지(스토리마다 봤나) — apply가 바꾼다
 
   // ── 머리 · 도구 줄 ──
@@ -205,7 +206,7 @@ export async function mount(root, ctx) {
   // ── 거르기 ──
   const findOk = (x, s) => {
     const q = (s.p.find ?? '').toLowerCase();
-    return !q || `${x.unit.title} ${x.key} ${plain(x.reason ?? '')}`.toLowerCase().includes(q);
+    return !q || `${x.unit.title} ${x.key} ${prose(x.reason ?? '')}`.toLowerCase().includes(q);
   };
   const match = (j, s, kinds) => kinds.includes(j.unit.kind) && findOk(j, s);
   const clearFilters = () => state.set({ p: { g: null, k: null, find: null } }, { replace: true });
@@ -302,18 +303,18 @@ export async function mount(root, ctx) {
     else if (g !== j.grade) gradeRow.push(' ', ui.el('span', {}, '→ ', ui.link(`unit:${j.from}`, spineLabel(j.from)), '부터 ', ui.chip('grade', j.grade)));
     else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, rd.all ? LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade)) : LABELS.riseSince(spineLabel(j.from))));
     const basisText = ui.el('div', { class: 'order-basis-text' });
-    const basisRow = j.basis ? [recId(j.basis), j.basis_kind ? [' ', ui.chip('record', j.basis_kind)] : null, j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene))] : null, basisText] : null;
+    const basisRow = j.basis ? [recId(j.basis, j.basis_kind), j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene))] : null, basisText] : null;
     const histBox = ui.el('div', { class: 'order-history' }, j.trail ? j.trail.map((x, i) => [i ? ' → ' : null, ui.chip('grade', x)]) : ui.el('span', { class: 'muted' }, LABELS.trailNone));
     // 여기까지 읽음 뒤 스토리 — 목록에는 보이지만 이유 · 떡밥 · 주역 · 결말 같은 내용은 접어 가린다
     const after = g == null;
     const rest = [
-      j.reason ? [R.reason, withLinks(j.reason)] : null,
+      prose(j.reason) ? [R.reason, withLinks(j.reason)] : null,
       basisRow ? [R.why, basisRow] : null,
-      [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, ' ', j.unit.layer ? ui.chip('layer', j.unit.layer) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],
+      [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],
       j.from && !j.from_tick ? [R.touch, ui.link(`unit:${j.from}`, spineLabel(j.from))] : null,
       j.threads?.length ? [R.threads, j.threads.map((t, i) => [i ? ' · ' : null, ui.link(`thread:${t}`, idx.threads.get(t)?.title ?? t)])] : null,
-      j.origin_of?.length || j.lead_facts ? [R.lead, [j.origin_of?.length ? [ui.el('b', {}, `${R.origins}: `), j.origin_of.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p))]), ' '] : null, j.lead_facts ? ui.el('span', { class: 'muted' }, plain(j.lead_facts)) : null]] : null,
-      j.closures ? [R.endings, withLinks(j.closures)] : null,
+      j.origin_of?.length || j.lead_facts ? [R.lead, [j.origin_of?.length ? [ui.el('b', {}, `${R.origins}: `), j.origin_of.map((p, i) => [i ? ' · ' : null, ui.link(`person:${p}`, fmt.targetName(p))]), ' '] : null, j.lead_facts ? ui.el('span', { class: 'muted' }, prose(j.lead_facts)) : null]] : null,
+      prose(j.closures) ? [R.endings, withLinks(j.closures)] : null,
       [R.history, histBox],
     ];
     card.append(
@@ -326,13 +327,8 @@ export async function mount(root, ctx) {
       if (card.dataset.key !== key) return;
       const x = d.units?.[key];
       if (!x) return;
-      if (x.basis_text) basisText.textContent = x.basis_text;
-      if (x.reviews?.length) {
-        const items = x.reviews.map((r) => ui.el('li', {}, ui.el('span', { class: 'mono' }, `${r.session} ${r.date}`), ` ${r.decision}`,
-          r.note != null ? ui.el('span', { class: 'muted' }, ` — ${plain(d.notes?.[r.note] ?? '')}`) : null,
-          r.before ? ui.el('div', { class: 'order-review-before muted' }, LABELS.before, ...withLinks(r.before)) : null));
-        histBox.append(ui.details(LABELS.reviews(x.reviews.length), ui.el('ul', { class: 'order-reviews' }, items)));
-      }
+      if (x.basis_text) basisText.textContent = prose(x.basis_text);
+      // 검토 기록(세션 · 날짜 · 판정 입력)은 작업 로그라 화면에 내지 않는다(W13a)
     }).catch(() => { /* 검토 기록을 못 받아도 카드는 쓴다 */ });
   };
 

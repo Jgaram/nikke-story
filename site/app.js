@@ -112,7 +112,8 @@ function cutoffControl(idx, firstVisit) {
     ui.el('section', { class: 'cutoff-sec' },
       ui.el('h3', {}, V.exHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.exHint)),
       ui.el('div', { class: 'cutoff-exs' }, boxes)),
-    ui.el('div', { class: 'cutoff-dlg-foot' }, allBtn, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn));
+    ui.el('div', { class: 'cutoff-dlg-foot' }, allBtn, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
+    ui.el('p', { class: 'cutoff-ai' }, fmt.AI_NOTE.full));
   document.body.append(dlg);
   dlg.addEventListener('click', (e) => { if (e.target === dlg) close(false); });
   dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(false); });
@@ -132,8 +133,9 @@ function cutoffControl(idx, firstVisit) {
     const R = state.reading(s);
     const diff = Object.keys(s.x ?? {}).length;
     value.textContent = short(t);
-    extraEl.textContent = t != null && diff ? V.exBadge(extras.filter((e) => R.seen(e.key)).length, extras.length) : '';
-    extraEl.title = extraEl.textContent ? V.exBadgeHelp : '';
+    const seenEx = extras.filter((e) => R.seen(e.key)).length;
+    extraEl.textContent = t != null && diff ? V.exBadge(seenEx) : '';
+    extraEl.title = extraEl.textContent ? V.exBadgeHelp(seenEx, extras.length) : '';
     dateEl.textContent = t == null ? '' : idx.ticks.get(t)?.date ?? '';
     btn.classList.toggle('is-off', t == null);
     btn.setAttribute('aria-label', `${fmt.TERM.cutoff}: ${t == null ? fmt.TERM.showAll : fmt.tickLabel(t)}${extraEl.textContent ? ` (${extraEl.textContent})` : ''} — ${V.open}`);
@@ -209,6 +211,7 @@ function tabNav() {
 }
 
 function footer(idx) {
+  $('#ai-note').textContent = fmt.AI_NOTE.full;
   const d = idx.manifest?.last_date;
   $('#data-basis').textContent = d ? `데이터 ${d} 기준` : '';
 }

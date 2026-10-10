@@ -3,32 +3,30 @@
  * 색은 CSS 변수를 가리키고 값은 style.css 토큰 한 곳에만 있다. 레포 용어 → 화면 말 대응은 라벨 값에만 걸리고, 상수의 키는 그대로다.
  *
  *   KIND[id] · KIND_ORDER           스토리 종류(main · event · side · sub · relic · erelic · episode · elevator) → label · color
- *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립(파란 순서 램프) · 필수(키 '척추') · 메인(잉크)
- *   LAYER[1..3]                     범위(주황 순서 램프) — 핵심 · 넓게 · 전부
- *   SCOPE · scopeOf(layers)         범위 세그먼트 셋(핵심 = {1} · 넓게 = {1,2} · 전부 = {1,2,3}) ↔ state의 layers
+ *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립 · 필수(키 '척추') · 메인 — 색은 준필수 · 추천 띠만(style.css "등급")
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · THREAD_WEIGHT(핵심 · 보조 · 곁가지)
  *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 선행'
  *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
- *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · layer · state · record · confidence · weight · chrono · drift · link · target
+ *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
- *   tickLabel(tick, { date })       'CH.20과 함께 출시 · 2023-01-12' / 'CH.17 다음 출시 · 2022-11-10' / null → '전부 보기'
- *   tickShort(tick)                 'CH.20' / 'CH.17+'
+ *   tickLabel(tick, { date })       'CH.20 · 2023-01-12' / 'CH.17 이후 · 2022-11-10' / null → '전부 보기'
+ *   tickShort(tick)                 'CH.20' / 'CH.17 이후'
  *   orgsAt(target, t, { past })     그 자리의 소속(기업 · 스쿼드 마크) — 공개 자리를 지난 게임 소속(orgs) 위에 t까지의 확정 소속 기록(affs)을 얹는다(past면 전 소속도 뒤에). ORG_SOURCE · orgTip(o)
  *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
- *   recordText(r) · recordLabel(r)  메모 한 줄 · 종류 라벨(사건은 act까지)
+ *   recordText(r) · recordLabel(r)  기록 한 줄(prose를 거친다 — 회수 줄에 문장이 없으면 답의 문장) · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   hiddenLabel(n)                  '스포일러로 가린 N'
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
  *   LINK_LEVEL                      연결 강도 1–3 → 약함 · 보통 · 강함
- *   FIRST_VISIT                     여기까지 읽음 팝업의 문구
+ *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
- *   plain(text)                     분석 문장 속 레포 용어(척추 · 줄기 …)를 화면 말로(조사도 맞춘다). 표시할 때만 — 데이터는 그대로
+ *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
  *   num(n) · pct(x) · date(s)
  */
 
@@ -57,7 +55,7 @@ export const KIND_HELP = {
   other: '그 밖의 스토리',
 };
 
-// ── 등급 · 범위 ──
+// ── 등급 ──
 export const GRADE = {
   필수: { label: '준필수', color: 'var(--grade-must)', rank: 1 },
   보강: { label: '추천', color: 'var(--grade-support)', rank: 2 },
@@ -75,27 +73,6 @@ export const GRADE_HELP = {
   척추: '꼭 읽을 스토리 — 메인 챕터와 필수 이벤트 · 사이드. 등급을 매기지 않고 다른 스토리 등급의 기준이 된다',
   메인: '메인 스토리 챕터',
 };
-
-export const LAYER = {
-  1: { label: '핵심', color: 'var(--layer-1)' },
-  2: { label: '넓게', color: 'var(--layer-2)' },
-  3: { label: '전부', color: 'var(--layer-3)' },
-};
-export const LAYER_HELP = {
-  1: '핵심 범위 — 메인과 딸린 서브퀘스트 · 유실물, 필수 스토리에 닿는 이벤트',
-  2: '넓게 범위부터 보인다 — 핵심에 호감도 · 참고 스토리가 더해진다',
-  3: '전부 범위에서만 보인다 — 필수 스토리와 따로 노는 이야기까지',
-};
-/** 범위 세그먼트 — 값 → state의 layers. 다른 조합이 URL로 들어오면 scopeOf가 'all'로 본다 */
-export const SCOPE = [
-  { value: 'core', label: '핵심', layers: [1], help: '줄거리의 중심이 되는 스토리만' },
-  { value: 'wide', label: '넓게', layers: [1, 2], help: '핵심에 이야기를 풍부하게 하는 스토리까지' },
-  { value: 'all', label: '전부', layers: [1, 2, 3], help: '필수 스토리와 따로 노는 이야기까지 모두' },
-];
-export function scopeOf(layers) {
-  const k = [...(layers ?? [])].map(Number).sort((a, b) => a - b).join();
-  return k === '1' ? 'core' : k === '1,2' ? 'wide' : 'all';
-}
 
 // ── 의문 · 사실의 상태 ──
 export const STATE = {
@@ -142,7 +119,7 @@ export const RECORD_HELP = {
   E: '나중에 밝혀질 일을 미리 흘린 복선, 또는 그것을 다시 언급한 장면',
   D: '인물의 성격 · 관계 · 소속 등이 바뀐 지점',
   U: '세계관이 생활 속에서 어떻게 그려지는지',
-  O: '오래 쌓인 이야기가 끝나는 지점',
+  O: '오래 이어진 이야기의 결말',
   H: '여러 갈래가 한꺼번에 맺어지는 지점',
 };
 
@@ -179,7 +156,9 @@ export const CONFIDENCE = { 확실: { label: '확실' }, 추정: { label: '추�
 export const CONFIDENCE_HELP = { 확실: '원문에서 바로 확인된다', 추정: '정황으로 읽은 해석 — 틀릴 수 있다' };
 
 /** 떡밥(줄기) 중요도: 키는 원본(뼈대 · 보강 · 독립) 그대로 */
-export const THREAD_WEIGHT = { 뼈대: { label: '핵심' }, 보강: { label: '보조' }, 독립: { label: '곁가지' } };
+export const THREAD_WEIGHT = { 뼈대: { label: '주요' }, 보강: { label: '보조' }, 독립: { label: '곁가지' } };
+/** 떡밥 무게의 화면 말은 '주요 떡밥' 하나(W13 용어표) — 떡밥 탭 밖(검색 · 리더)에서는 뼈대만 표시하고 나머지는 말하지 않는다 */
+export const majorThread = (j) => (j?.weight === '뼈대' ? '주요 떡밥' : '');
 export const THREAD_WEIGHT_HELP = {
   뼈대: '필수 스토리를 관통하는 떡밥',
   보강: '필수 스토리 곁에서 이야기를 보태는 떡밥',
@@ -190,7 +169,7 @@ export const THREAD_WEIGHT_HELP = {
 /** 작중 시점의 확정 정도(키는 원본 그대로) */
 export const CHRONO_CLASS = { 판별: '시점 확정', 범위: '대략 범위', 상대: '앞뒤만 앎', 불명: '시점 불명' };
 export const CHRONO_CLASS_HELP = {
-  판별: '기준과의 관계로 작중 시점이 정해진다',
+  판별: '기준과의 관계로 작중 순이 정해진다',
   범위: '앞뒤 경계만 알아 대략의 범위로 본다',
   상대: '다른 스토리와의 앞뒤만 안다',
   불명: '시점을 알 단서가 없다',
@@ -247,7 +226,7 @@ export const TAB = {
   order: { title: '감상 순서', hint: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' },
   links: { title: '연결', hint: '스토리 사이의 연결' },
   threads: { title: '떡밥', hint: '복선과 떡밥이 이어지는 흐름' },
-  chrono: { title: '연대기', hint: '작중 시간순으로 본 스토리' },
+  chrono: { title: '연대기', hint: '작중 순으로 본 스토리' },
   persons: { title: '인물', hint: '인물별 등장과 변화' },
   world: { title: '세계', hint: '용어 · 장소 · 조직 · 세계의 모습' },
 };
@@ -264,15 +243,21 @@ export const FIRST_VISIT = {
   next: '다음 챕터',
   exHead: '필수 이벤트 · 사이드',
   exHint: '순서대로 안 봤다면 본 것만 체크',
-  exBadge: (n, all) => `+필수 ${n}/${all}`,
-  exBadgeHelp: '필수 이벤트 · 사이드를 메인 순서와 다르게 골랐다',
+  exBadge: (n) => `+${n}편`,
+  exBadgeHelp: (n, all) => `필수 이벤트 · 사이드 ${all}편 가운데 본 것 ${n}편 — 메인 순서와 다르게 골랐다`,
   all: '전부 보기',
   later: '나중에',
   ok: '확인',
   close: '닫기',
   open: '눌러서 바꾸기',
   allHelp: '스포일러를 가리지 않고 모든 시점의 이야기를 본다',
-}
+};
+
+/** AI 정리 고지(사용자, 2026-10-10) — 하단 첫 줄 · 여기까지 읽음 팝업 아래 · 리더 줄거리 머리(공유 링크로 들어오면 팝업이 안 뜬다) */
+export const AI_NOTE = {
+  full: '줄거리 · 등급 · 떡밥 · 인물 정리는 모두 AI(Claude)가 스토리 원문을 읽고 정리한 것입니다. 해석이 사람의 생각과 다르거나 틀린 곳이 있을 수 있습니다.',
+  tag: 'AI 정리',
+};
 
 /** 자주 쓰는 말 — 탭은 하드코딩하지 말고 여기서 가져다 쓴다 */
 export const TERM = {
@@ -282,7 +267,6 @@ export const TERM = {
   release: '출시 시점',
   cutoff: '여기까지 읽음',
   showAll: '전부 보기',
-  scope: '범위',
   spine: '필수',
   gradeAt: '지금 읽은 데까지의 등급',
   judgment: '분류',
@@ -291,14 +275,13 @@ export const TERM = {
   lead: '주역',
   origin: '첫 이야기',
   thread: '떡밥',
-  note: '분석 메모',
   speaker: '말한 인물',
   togetherScenes: '같이 나온 장면',
   talkScenes: '대화한 장면',
   commonTargets: '자주 나오는 인물',
   link: '연결',
   strength: '연결 강도',
-  chronoPlace: '작중 시점',
+  chronoPlace: '작중 순',
   inverted: '출시순과 반대',
   piece: '다른 때의 장면',
   evidence: '근거',
@@ -306,13 +289,11 @@ export const TERM = {
 };
 export const TERM_HELP = {
   cutoff: '이 시점까지 나온 이야기만 보여 스포일러를 막는다',
-  scope: '핵심 · 넓게 · 전부 — 보여 줄 스토리의 범위',
 };
 
 const HELP = {
   kind: KIND_HELP,
   grade: GRADE_HELP,
-  layer: LAYER_HELP,
   state: STATE_HELP,
   record: RECORD_HELP,
   confidence: CONFIDENCE_HELP,
@@ -351,7 +332,7 @@ export function iconAt(target, t) {
 }
 
 /** 소속 출처 — 게임 데이터(실장 니케의 지금 소속)인지 작중 기록인지 */
-export const ORG_SOURCE = { game: '게임 데이터 기준 현재 소속', record: '이 자리까지 읽은 스토리 기준 소속' };
+export const ORG_SOURCE = { game: '게임 속 지금 소속', record: '읽은 데까지 드러난 소속' };
 
 /**
  * 그 자리의 소속(docs/views.md "소속 마크") — 게임 소속(target.orgs — 실장 니케의 지금 소속)과 확정 소속 기록 T(target.affs)를 합친다(W12d).
@@ -407,29 +388,30 @@ export function orgsAt(target, t, { past = false } = {}) {
   }
   return [...res, ...clean(gone)];
 }
-/** 소속 칩 툴팁 — '카운터스 · 게임 데이터 기준 현재 소속' / '갓데스 (스노우 화이트 : 이노센트 데이즈) · …' / '전 소속: 갓데스 — 지휘관 · 드러난 곳 CH.43 …' */
+/** 소속 칩 툴팁 — '카운터스 · 게임 속 지금 소속' / '갓데스 (스노우 화이트 : 이노센트 데이즈) · …' / '전 소속: 갓데스 — 지휘관 · 드러난 곳 CH.43 …' */
 export function orgTip(o) {
   if (o.past) {
     const kind = idx?.units.get(o.unit)?.kind === 'episode' ? ' 호감도' : ''; // 툴팁에는 종류 칩이 없다
     const where = o.unit ? ` · ${o.act === '이탈' ? '나간 곳' : '드러난 곳'} ${unitTitle(o.unit)}${kind}` : '';
-    return `전 소속: ${o.name}${o.role ? ` — ${o.role}` : ''}${where}${o.from ? ` (${o.from}의 기록)` : ''}`;
+    return `전 소속: ${o.name}${o.role ? ` — ${o.role}` : ''}${where}${o.from ? ` (${withJosa(o.from, '과')} 같은 인물)` : ''}`;
   }
-  return `${o.name}${o.role ? ` — ${o.role}` : ''}${o.via ? ` (${o.via})` : ''} · ${ORG_SOURCE[o.source] ?? ''}${o.from ? ` (${o.from}의 기록)` : ''}`;
+  return `${o.name}${o.role ? ` — ${o.role}` : ''}${o.via ? ` (${o.via})` : ''} · ${ORG_SOURCE[o.source] ?? ''}${o.from ? ` (${withJosa(o.from, '과')} 같은 인물)` : ''}`;
 }
 
+/** 공개 자리 → 'CH.20'(메인이 나온 자리) · 'CH.17 이후'(메인 사이 자리). 모르는 자리는 빈 말 — 자리 번호(#12)는 화면에 내지 않는다 */
 export function tickShort(tick) {
   if (tick == null) return '전부';
   const t = tickObj(tick);
-  if (!t) return `#${tick}`;
-  return t.main ? chNum(t.main) : t.upto ? `${chNum(t.upto)}+` : `#${tick}`;
+  if (!t) return '';
+  return t.main ? chNum(t.main) : t.upto ? `${chNum(t.upto)} 이후` : '';
 }
 
 export function tickLabel(tick, { date = true } = {}) {
   if (tick == null) return TERM.showAll;
   const t = tickObj(tick);
-  if (!t) return `시점 ${tick}`;
-  const head = t.main ? `${chNum(t.main)}과 함께 출시` : t.upto ? `${chNum(t.upto)} 다음 출시` : `시점 ${tick}`;
-  return date && t.date ? `${head} · ${t.date}` : head;
+  if (!t) return '';
+  const head = tickShort(tick);
+  return date && t.date ? [head, t.date].filter(Boolean).join(' · ') : head;
 }
 
 /** 작중 시점 압축 표기 → 사람이 읽는 말: ch07 → CH.07 · '~' 앞뒤는 이후 · 이전 · 화살표 · '/'는 또는 · '@'는 시대 이름 */
@@ -491,25 +473,124 @@ export function gradeAt(u, T) {
   return u.grade;
 }
 
-/** 분석 문장 속 레포 용어 → 화면 말(표시할 때만 바꾼다 — 데이터는 그대로). 바뀐 말에 맞춰 조사도 고친다: 척추가 → 필수 스토리가. 등급 키 '필수'는 먼저 '준필수'로(필수품 · 필수 교육 같은 낱말은 두고) */
-const PLAIN_TERMS = [['뼈대 · 보강 줄기', '핵심 · 보조 떡밥'], ['독립 줄기', '곁가지 떡밥'], ['뼈대 줄기', '핵심 떡밥'], ['보강 줄기', '보조 떡밥'], ['척추', '필수 스토리'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '자동으로 찾지 못해 직접 더한']];
+/**
+ * 화면에 내는 자유 문장은 모두 이 함수를 거친다(W13a — docs/views.md "화면 문구는 간결하게"): 분석 문장 · 추정 이유 · 설정 오류 메모 · 사전 설명 · 연결 메모 · 기록 문장.
+ * ① 레포 용어 → 화면 말(척추가 → 필수 스토리가, 조사도 맞춘다 · 등급 키 '필수'는 '준필수'로) ② 스토리 · 씬 키 → 이름, 떡밥 ID(J12) → 「떡밥 제목」
+ * ③ 근거 표시를 걷는다 — 기록 ID · 씬 ID · 줄 번호(#12)만 든 괄호는 통째로, 다른 말과 섞인 괄호는 그것만 뺀다. '(R64 …에서 더함)' 같은 작업 출처도.
+ * ④ 그래도 작업 흔적(본문 속 기록 ID · 못 바꾼 키 · 회독 · 세션 이름)이 남으면 바꿀 수 없는 문장이라 ''를 돌려준다 — 부르는 쪽은 빈 문장을 내지 않는다.
+ * 표시할 때만 바꾼다 — 데이터는 그대로. 링크(sel) · URL에는 키가 그대로 쓰인다.
+ */
+const PLAIN_TERMS = [['뼈대 · 보강 줄기', '주요 떡밥'], ['독립 줄기', '떡밥'], ['뼈대 줄기', '주요 떡밥'], ['보강 줄기', '떡밥'], ['척추', '필수 스토리'], ['줄기', '떡밥'], ['원점', '첫 이야기'], ['단위', '스토리'], ['판정', '분류'], ['후보 목록(시점 기록 · 기록 엣지) 밖에서 더한', '직접 더한']];
 const JOSA = [['가', '이', '가'], ['이', '이', '가'], ['는', '은', '는'], ['은', '은', '는'], ['를', '을', '를'], ['을', '을', '를'], ['와', '과', '와'], ['과', '과', '와'], ['로', '으로', '로'], ['으로', '으로', '로']];
-const hasFinal = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 && c % 28 !== 0; };
-export const plain = (text) => keysToNames(PLAIN_TERMS.reduce((t, [a, b]) => t.replace(new RegExp(`${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(가|이|는|은|를|을|와|과|으로|로)?`, 'g'), (m, j) => {
-  if (!j) return b;
+const JOSA_RE = '(가|이|는|은|를|을|와|과|으로|로)?';
+/** 끝 글자의 받침 — 0 없음, 8 ㄹ, 그 밖 있음. 한글이 아니면(숫자 · 기호) 0 */
+const DIGIT_FINAL = [21, 8, 0, 16, 0, 0, 1, 8, 8, 0]; // 영 일 이 삼 사 오 육 칠 팔 구
+const finalOf = (w) => {
+  const ch = [...String(w).replace(/[」』)\]'"]+$/u, '')].pop() ?? '';
+  if (/\d/.test(ch)) return DIGIT_FINAL[Number(ch)];
+  const c = ch.charCodeAt(0) - 0xac00;
+  return c >= 0 && c < 11172 ? c % 28 : 0;
+};
+/** 바꾼 낱말 뒤 조사를 받침에 맞춘다 — withJosa('필수 스토리', '가') → '필수 스토리가' */
+const withJosa = (word, j) => {
+  if (!j) return word;
   const pick = JOSA.find((x) => x[0] === j);
-  return b + (hasFinal(b) ? pick[1] : pick[2]);
-}), String(text ?? '').replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천').replace(/(?<!동행 )필수(?!품| 교육| 덕목)/g, '준필수')));
-/** 문장 속 작업용 키 → 화면 이름: 메인 챕터 'ch21' → 'CH.21', 그 밖 스토리 키 → 제목, 씬 ID → 장면 표시. 모르는 키는 그대로 */
-const KEY_RE = /\b(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[A-Za-z0-9_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2})\b/g;
-function keysToNames(text) {
-  if (!idx) return text;
-  return text.replace(KEY_RE, (k) => {
-    if (/^ch\d{2}$/.test(k)) return idx.units.has(k) ? `CH.${k.slice(2)}` : k;
-    if (idx.units.has(k)) return unitTitle(k);
-    if (idx.scenes.has(k)) return ref(k);
+  if (!pick) return word + j;
+  const f = finalOf(word);
+  if (j === '로' || j === '으로') return word + (f && f !== 8 ? '으로' : '로');
+  return word + (f ? pick[1] : pick[2]);
+};
+const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+/** 작업 흔적 낱말 — 기록 ID(F12 · Q3-2 · J5 · R64 …, 'E2 크리스탈'은 작중 이름) · 세션 이름(B0b-2) · 씬 줄임(05_s · af_06 · _03) · 줄 번호(#12-15, '[#000000]'은 작중 이름) · 스토리 · 씬 키 */
+const REC_ID = /(?<![A-Za-z0-9_:[\-.])(?:[FQSIEDUOHTR]\d+(?:-\d+)?|J\d+)(?![A-Za-z0-9_\-]| 크리스탈)/g;
+const SESSION_ID = /(?<![A-Za-z0-9_])[A-Z]\d+[a-z](?:-\d+)?(?![A-Za-z0-9_])/g;
+const SCENE_SHORT = /(?<![\p{L}\p{N}_])(?:[a-z]{2}_\d{2}|_?\d{2}_[se]|_\d{2})(?:[-–]\d{2})?(?![A-Za-z0-9_])/gu;
+const LINE_REF = /\s?(?<!\[)(?:(?<![\p{L}\p{N}_])\d{2}\s*)?#\d+(?:\s*[-–]\s*\d+)?(?:\s*,\s*#?\d+(?:\s*[-–]\s*\d+)?)*/gu;
+const KEY_RE = /(?<![A-Za-z0-9_:])(?:(?:fl|side|sub|relic|erelic|ep|char|sudden):[\p{L}\p{N}_]+|d_[a-z0-9_]+|event_[a-z0-9_]+|ch\d{2}|[가-힣][가-힣A-Za-z0-9]*(?:_[가-힣A-Za-z0-9]+)*_\d{2})/gu;
+const KEY_JOSA_RE = new RegExp(`(${KEY_RE.source})(?:(가|이|는|은|를|을|와|과|으로|로)(?![가-힣]))?`, 'gu');
+const WORK_WORD = /[12]회독|에서 더함|원문 없음/;
+/** 키 하나 → [화면 이름, 남은 꼬리]. 키 정규식은 뒤의 한글 조사까지 먹을 수 있어(sub:할아범_00의) 아는 키 가운데 가장 긴 앞부분을 쓴다. 모르면 null */
+const BARE_PREFIX = ['', 'sub:', 'relic:', 'erelic:', 'side:', 'fl:'];
+function nameOfKey(k) {
+  if (!idx) return null;
+  for (let n = k.length; n > 2; n--) {
+    const cut = k.slice(0, n);
+    const head = (k.includes(':') ? [cut, cut.replace(/^ep:/, '')] : BARE_PREFIX.map((p) => p + cut)).find((x) => idx.units?.has(x) || idx.scenes?.has(x)) ?? cut;
+    if (/^ch\d{2}$/.test(head)) return idx.units?.has(head) ? [`CH.${head.slice(2)}`, k.slice(n)] : null;
+    // 스토리 키 뒤 '_05' · '_03_e'는 그 스토리의 씬 번호(씬 목록에 없는 판) — 스토리 이름만 남긴다
+    const tail = (t) => (idx.units?.has(head) ? t.replace(/^_\d+(?:_[se])?(?![A-Za-z0-9])/, '') : t);
+    if (idx.units?.has(head)) return [unitTitle(head), tail(k.slice(n))];
+    if (idx.scenes?.has(head)) return [ref(head), k.slice(n)];
+  }
+  return null;
+}
+/** 전역 정규식으로 있나만 본다(lastIndex를 남기지 않는다) */
+const has = (re, str) => { re.lastIndex = 0; const hit = re.test(str); re.lastIndex = 0; return hit; };
+/** 키 정규식이 먹은 말에서 아는 키 부분만 */
+const nameOfKeyHead = (k) => { const hit = nameOfKey(k); return hit ? k.slice(0, k.length - hit[1].length) : k; };
+const isSceneKey = (k) => Boolean(idx?.scenes?.has(k)) && !idx?.units?.has(k);
+const threadTitle = (id) => { const j = idx?.threads?.get(id); return j ? `「${String(j.title).split(' — ')[0]}」` : null; };
+/** 괄호 속이 근거 표시뿐인가 — 기록 ID · 씬 ID · 씬 줄임 · 줄 번호와 구분자만 */
+function stripPointers(inner) {
+  let s = inner.replace(LINE_REF, ' ').replace(REC_ID, ' ').replace(SESSION_ID, ' ').replace(SCENE_SHORT, ' ');
+  s = s.replace(KEY_RE, (k) => (isSceneKey(nameOfKeyHead(k)) ? ` ${nameOfKey(k)[1]}` : k));
+  return s.replace(/\s*([·,/~]|와|과)\s*(?=[·,/~]|$)/g, '').replace(/^\s*[·,/~]\s*/, '').replace(/\s{2,}/g, ' ').trim();
+}
+export function prose(text) {
+  const src = String(text ?? '');
+  if (!src.trim()) return '';
+  // 문장마다 바꾸고, 못 바꾸는 문장만 뺀다(‘…CH.15. 1회독도 같은 근거로 …’ → 앞 문장만). 'V.T.C.'처럼 글자 뒤 마침표는 문장 끝이 아니다
+  const parts = src.split(/(?<=[가-힣)」』'"]\.)\s+/u).map((x) => proseOne(x) || proseClauses(x, /\.$/.test(x))).filter(Boolean);
+  return parts.join(' ');
+}
+/** 문장을 통째로 못 바꾸면 ' — ' 마디마다 — 바꿀 수 있는 마디만 남긴다('S169와 같은 때 — 콜라보 이벤트 … 동안' → 뒤 마디) */
+function proseClauses(text, period = false) {
+  const parts = String(text).split(/\s+—\s+/);
+  let out = parts.length > 1 ? parts.map(proseOne).filter(Boolean).join(' — ') : '';
+  if (period && out && !/[.?!]$/.test(out)) out += '.';
+  return [...out.replace(/[^가-힣]/g, '')].length >= 6 ? out : ''; // '추정'만 남으면 내지 않는다
+}
+function proseOne(text) {
+  let s = String(text ?? '');
+  if (!s.trim()) return '';
+  // 작업 출처 · 원문 위치
+  s = s.replace(/\s*\([^()]*에서 더함[^()]*\)/g, '').replace(/^[^()—]*에서 더함\s*—\s*/, '').replace(/\s*\(원문 없음\)/g, '');
+  // 문장 앞 근거 머리('01_e#40 — …' · '#50 · #58. …' · "01#42 라피 '…'")
+  s = s.replace(/^(?:[\s·,]*(?:[\p{L}\p{N}_:]*#\d+(?:\s*[-–]\s*\d+)?|\d{2}_[se]|[a-z]{2}_\d{2}))+[\s.]*(?:—\s*)?/u, '');
+  // ① 레포 용어(조사 맞춤) — 등급 키 보강 · 필수를 먼저
+  s = s.replace(/(→ |ch\d+ |등급 |부터 )보강(?! 줄기)/g, '$1추천').replace(/(?<!동행 )필수(?!품| 교육| 덕목)/g, '준필수');
+  for (const [a, b] of PLAIN_TERMS) s = s.replace(new RegExp(`${escRe(a)}${JOSA_RE}`, 'g'), (m, j) => withJosa(b, j));
+  // ③ 괄호 — 근거 표시만 든 괄호는 통째로, 섞인 괄호는 근거 표시만 뺀다. 남은 말이 조사로 시작하면(‘S169와 같은 때’) 괄호째 뺀다
+  s = s.replace(/\s?\(([^()]*)\)/g, (m, inner) => {
+    const touched = [REC_ID, SESSION_ID, SCENE_SHORT].some((re) => has(re, inner)) || /#\d/.test(inner) || [...inner.matchAll(KEY_RE)].some((k) => isSceneKey(nameOfKeyHead(k[0])));
+    if (!touched) return m;
+    const rest = stripPointers(inner);
+    if (!rest || /^(와|과|의|는|은|이|가|을|를|로|으로|에서|에|도|처럼|보다)(\s|$)/.test(rest) || !/[\p{L}\p{N}]/u.test(rest)) return '';
+    return `${m.startsWith(' ') ? ' ' : ''}(${rest})`;
+  });
+  // 줄 번호 → 뺀다(조사가 붙은 줄 번호 '#22를'은 문장의 한 자리라 못 뺀다), 떡밥 ID → 「제목」, 키 → 이름(조사 맞춤)
+  if (/(?<!\[)#\d+(?:[-–]\d+)?(?:가|이|는|은|를|을|와|과|의|로|으로|에서|에)(?![\p{L}])/u.test(s)) return '';
+  s = s.replace(LINE_REF, '');
+  s = s.replace(/(?<![A-Za-z0-9_])J(\d+)(?![A-Za-z0-9_])(가|이|는|은|를|을|와|과|으로|로)?/g, (m, n, j) => { const t = threadTitle(`J${n}`); return t ? withJosa(t, j) : m; });
+  // 항목 키(person:세르반 · concept:NIMPH) → 이름 — 사전에 있는 가장 긴 앞부분
+  s = s.replace(/(?<![A-Za-z0-9_])(?:person|place|org|concept|incident|item):[\p{L}\p{N}_.\-]+/gu, (k) => {
+    for (let n = k.length; n > 3; n--) if (idx?.targets?.has(k.slice(0, n))) return targetName(k.slice(0, n)) + k.slice(n);
     return k;
   });
+  s = s.replace(KEY_JOSA_RE, (m, k, j0) => {
+    const hit = nameOfKey(k);
+    if (!hit) return m;
+    const [name, tail] = hit;
+    const j = tail ? /^(가|이|는|은|를|을|와|과|으로|로)(?![\p{L}])/u.exec(tail)?.[1] : j0;
+    if (!j) return name + tail + (j0 ?? '');
+    return withJosa(name, j) + (tail ? tail.slice(j.length) + (j0 ?? '') : '');
+  });
+  s = s.replace(/\s{2,}/g, ' ').replace(/\s+([,.)])/g, '$1').replace(/\(\s+/g, '(').replace(/\(\s*\)/g, '')
+    .replace(/(?:\s*·)+\s*(?=[·,.)]|$)/g, '').replace(/^[\s·,.;:—–-]+/, '').trim();
+  // ④ 남은 작업 흔적이 있으면 낼 수 없다
+  if ([REC_ID, SESSION_ID, SCENE_SHORT, KEY_RE].some((re) => has(re, s)) || /(?<![A-Za-z0-9_])(?:person|place|org|concept|incident|item):/.test(s)) return '';
+  if (WORK_WORD.test(s) || /(?<!\[)#\d/.test(s)) return '';
+  return s;
 }
 
 export function targetName(id) {
@@ -547,13 +628,16 @@ export function recordText(r) {
   if (r.kind === 'I') return `${targetName(r.target)} — 이름 없이 등장${r.speaker ? ' · 대사 있음' : ''}`;
   if (r.kind === 'D') {
     const head = `${targetName(r.person)} ${r.aspect ?? ''}${r.with?.length ? ` (${r.with.map(targetName).join(' · ')})` : ''}`.trim();
-    if (r.act === '변화') return `${head}: ${r.before ?? '?'} → ${r.after ?? '?'}`;
-    return `${head}: ${r.text ?? ''}`;
+    if (r.act === '변화') return `${head}: ${prose(r.before) || '?'} → ${prose(r.after) || '?'}`;
+    return `${head}: ${prose(r.text)}`;
   }
-  if (r.kind === 'Q-k') return r.text ?? `${r.parent} 회수${r.answer ? ` — 답 ${r.answer}` : ''}${r.degree ? ` (${r.degree})` : ''}`;
-  if (r.kind === 'F-k') return r.text ?? `${r.parent} ${ACT[r.act] ?? r.act ?? ''}${r.replaced_by ? ` → ${r.replaced_by}` : ''}`;
-  if (r.kind === 'H') return r.title ? `${r.title} — ${r.text ?? ''}` : r.text ?? '';
-  return r.text ?? '';
+  // 회수 · 밝혀짐 줄에 문장이 없으면 답(사실)의 문장, 그것도 없으면 이유 문장 — ID('Q4 회수 — 답 F34')를 문장 자리에 두지 않는다
+  if ((r.kind === 'Q-k' || r.kind === 'F-k') && !r.text) {
+    const ans = idx?.records?.get(r.answer ?? r.replaced_by);
+    return (ans?.text && prose(ans.text)) || prose(r.reason);
+  }
+  if (r.kind === 'H') return r.title ? `${prose(r.title)} — ${prose(r.text)}` : prose(r.text);
+  return prose(r.text);
 }
 
 /**

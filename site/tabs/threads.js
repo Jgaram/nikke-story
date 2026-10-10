@@ -53,7 +53,7 @@ const LABELS = {
   stories: '스토리', unsolved: '미해결', itemsOf: '다루는 항목', related: '이어진 떡밥', moreItems: (n) => `+${n}`,
   noRelation: (n) => `관계가 없는 떡밥 ${n}`, ghost: '아직 안 나온 떡밥',
   commonItems: '자주 나오는 항목 포함', itemSearch: '항목 찾기', itemMore: '더 보기', itemNone: '조건에 맞는 항목이 없다',
-  itemThreads: (n) => `떡밥 ${n}`, withItems: '함께 나오는 항목', openDict: '사전에서 보기',
+  itemThreads: (n) => `떡밥 ${n}`, withItems: '함께 나오는 항목',
   gapFirst: '처음 나온 자리보다 앞', answer: '답', long: '오래 걸린 회수', hintAnswer: '복선의 답',
   legendBuilt: '쌓인 이야기', legendEnd: '결말',
   legendBold: '굵은 선 = 긴 복선 · 오래 걸린 회수', legendOpen: '점선 = 아직 이어지는 중', legendBack: '점선 화살표 = 작중으로는 앞선 일이 나중에 공개',
@@ -510,7 +510,7 @@ export async function mount(root, ctx) {
     tipFor(grp, () => ui.el('div', {},
       tipLine(ui.el('strong', {}, `${shortTitle(byId.get(g.from))} ${LABELS.relOut[g.type].split(' ')[1]} ${shortTitle(byId.get(g.to))}`)),
       tipLine(`${LABELS.relNames[g.type]} — ${LABELS.relHelp[g.type]}`), tipLine(g.text),
-      g.basis?.length ? tipLine(ui.el('span', { class: 'mono' }, g.basis.slice(0, 4).join(' · ')), g.confidence === '추정' ? ` · ${fmt.CONFIDENCE.추정.label}` : '') : null));
+      g.basis?.length && g.confidence === '추정' ? tipLine(fmt.CONFIDENCE.추정.label) : null));
     gEdges.append(grp);
     edgeEls.push({ grp, g });
   }
@@ -614,7 +614,8 @@ export async function mount(root, ctx) {
       const pairs = (pairsOf.get(cid) ?? []).filter((p) => concepts.has(p.other) && (showCommon || concepts.get(p.other).threads < COMMON_MIN)).sort((a, b) => b.records - a.records).slice(0, 6);
       itemInfo.append(
         ui.el('div', { class: 'thr-iteminfo-head' }, ui.el('strong', {}, picked.c.name), ui.el('span', { class: 'muted' }, ` ${fmt.TARGET_TYPE[picked.c.type] ?? picked.c.type} · ${LABELS.itemThreads(picked.es.length)}`),
-          ui.link(`target:${cid}`, LABELS.openDict)),
+          // 세계 탭의 그 항목으로 간다(이름과 동작을 맞춘다 — 전에는 '사전에서 보기'가 리더를 열었다)
+          ui.el('a', { href: `#tab=world&p.item=${encodeURIComponent(cid)}`, class: 'link tab-link', onClick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); state.set({ tab: 'world', p: { item: cid }, sel: '' }); } }, fmt.openInTab('world'))),
         pairs.length ? ui.el('div', { class: 'thr-chips' }, ui.el('span', { class: 'ctl-name' }, LABELS.withItems), pairs.map((p) => ui.el('button', { type: 'button', class: 'thr-chip', title: `${p.records}`, onClick: () => chooseItem(p.other) }, concepts.get(p.other).name))) : null);
     }
     commonToggle.set?.(showCommon);
@@ -1130,9 +1131,6 @@ export async function mount(root, ctx) {
     const hiddenSteps = all ? 0 : model?.hidden ?? 0;
     if (hiddenThreads || hiddenSteps) {
       noteEl.append(ui.hiddenNote(`${LABELS.hiddenMemo} ${[hiddenThreads ? `${LABELS.hiddenThreads} ${fmt.num(hiddenThreads)}` : null, hiddenSteps ? `${LABELS.hiddenSteps} ${fmt.num(hiddenSteps)}` : null].filter(Boolean).join(' · ')}`, () => state.set({ t: null })));
-    }
-    if (model?.hiddenL) {
-      noteEl.append(ui.hiddenNote(`${fmt.TERM.scope} 밖 ${LABELS.hiddenSteps} ${fmt.num(model.hiddenL)}`, () => state.set({ layers: [1, 2, 3] }), { action: `${fmt.TERM.scope} ${fmt.SCOPE.at(-1).label}` }));
     }
   };
 

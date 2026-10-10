@@ -125,7 +125,7 @@ test('fmt.orgsAt — 게임 소속은 공개 자리부터 늘 남고, 기록은 
   assert.deepEqual(names(p, 20), ['엘리시온', '올드 테일즈'], '기업이 앞');
   assert.deepEqual(fmt.orgsAt(p, 30).map((o) => [o.name, o.role, o.source]), [['엘리시온', undefined, 'game'], ['카운터스', '대장', 'game'], ['올드 테일즈', undefined, 'game']], '다시 들어가면 게임 소속 자리에 기록의 role을 붙여 하나로');
   assert.deepEqual(names(p, null), ['엘리시온', '카운터스', '올드 테일즈', '판정 못 함'], '전부 보기 = 게임 소속 전부 + 기록 전부');
-  assert.match(fmt.orgTip({ name: '갓데스', via: '스노우 화이트 : 이노센트 데이즈', source: 'game' }), /갓데스 \(스노우 화이트 : 이노센트 데이즈\) · 게임 데이터/);
+  assert.match(fmt.orgTip({ name: '갓데스', via: '스노우 화이트 : 이노센트 데이즈', source: 'game' }), /갓데스 \(스노우 화이트 : 이노센트 데이즈\) · 게임 속 지금 소속/);
   assert.deepEqual(fmt.orgsAt({ affs: [{ id: 'T5', org: 'org:중앙_정부', act: '소속', tick: 7, from: 'person:레비아탄' }] }, 7).map((o) => o.from), ['레비아탄'], '같은 인물의 기록을 빌린 것은 적은 이름을 단다');
 });
 

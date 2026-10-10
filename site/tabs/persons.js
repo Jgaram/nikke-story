@@ -65,7 +65,7 @@ const LABELS = {
   notYetHelp: '여기까지 읽음을 올리거나 전부 보기를 켜면 볼 수 있다.',
   alias: '다른 이름',
   same: '같은 인물',
-  openDict: '사전에서 보기',
+  openDict: '자세히', // 리더 패널(다른 이름 · 사실 · 의문 · 변화)을 연다
   stat: { scenes: '등장 씬', speak: '말한 줄', recs: '분석 메모', threads: '떡밥', changes: '바뀜' },
   first: '처음 등장',
   last: '마지막 등장',
@@ -809,7 +809,7 @@ export async function mount(root, ctx) {
   };
   const changeBody = (c, r) => {
     if (!r) return null;
-    return c.act === '변화' ? `${r.before ?? '?'} → ${r.after ?? '?'}` : r.text ?? '';
+    return c.act === '변화' ? `${fmt.prose(r.before) || '?'} → ${fmt.prose(r.after) || '?'}` : fmt.prose(r.text);
   };
   const secChanges = makeSection('changes', LABELS.sec.changes, (p, a, sec) => {
     ui.clear(sec.body);
@@ -908,7 +908,7 @@ export async function mount(root, ctx) {
           inv_(c), ends.has(c.id) ? [' ', el('span', { class: 'pm-tag is-end', title: fmt.help?.('record', 'O') }, fmt.RECORD_KIND.O.label)] : null,
           cls && c.class !== '판별' ? [' ', el('span', { class: 'pm-tag', title: fmt.help?.('chrono', c.class) }, cls)] : null),
         text ? el('div', { class: 'pm-change-text' }, text) : el('div', { class: 'pm-change-text muted' }, R ? '' : LABELS.needRecords),
-        el('div', { class: 'pm-change-meta muted' }, unitLink(c.unit), ` · ${atLabel(c.tick)}`, ' · ', el('span', { class: 'mono' }, c.id), r?.scene ? ` · ${fmt.sceneName(r.scene)}` : '',
+        el('div', { class: 'pm-change-meta muted' }, unitLink(c.unit), ` · ${atLabel(c.tick)}`, r?.scene ? ` · ${fmt.sceneName(r.scene)}` : '',
           r?.trigger?.length ? [` · ${LABELS.trigger} `, el('span', {}, fmt.evidence(r.trigger))] : null))));
     });
     sec.body.append(ul);
@@ -924,8 +924,8 @@ export async function mount(root, ctx) {
       bodyText ? el('div', {}, clip(bodyText, 120)) : null,
       el('div', { class: 'pm-tip-sub' }, `${fmt.unitTitle(c.unit)} · ${atLabel(c.tick)}`),
       c.inverted?.length ? el('div', { class: 'pm-tip-sub' }, `${T_INV} — 먼저 공개된 변화 ${c.inverted.length}개보다 작중으로 앞`) : null,
-      endRec ? el('div', { class: 'pm-tip-sub' }, `${fmt.RECORD_KIND.O.label} — ${clip(endRec.text, 60)}`) : null,
-      el('div', { class: 'pm-tip-sub' }, `${c.id}${r?.scene ? ` · ${fmt.sceneName(r.scene)}` : ''}`));
+      endRec ? el('div', { class: 'pm-tip-sub' }, `${fmt.RECORD_KIND.O.label} — ${clip(fmt.recordText(endRec), 60)}`) : null,
+      r?.scene ? el('div', { class: 'pm-tip-sub' }, fmt.sceneName(r.scene)) : null);
   }
   function hotDot(cid, on) {
     secChanges.body.querySelector(`.pm-dot[data-cid="${CSS.escape(cid)}"]`)?.classList.toggle('is-hot', on);
@@ -948,8 +948,8 @@ export async function mount(root, ctx) {
       ul.append(el('li', { class: 'pm-closure', dataset: { sel: `record:${r.id}` }, tabindex: 0, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `record:${r.id}` }); },
         onKeydown: (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); state.set({ sel: `record:${r.id}` }); } } },
       el('div', { class: 'pm-change-head' }, ui.chip('plain', r.type ?? fmt.RECORD_KIND.O.label), ' ', r.confidence === '추정' ? ui.chip('confidence', '추정') : null),
-      el('div', { class: 'pm-change-text' }, r.text),
-      el('div', { class: 'pm-change-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)}`, r.built?.length ? ` · ${LABELS.built(r.built.length)}` : '', ' · ', el('span', { class: 'mono' }, r.id))));
+      el('div', { class: 'pm-change-text' }, fmt.prose(r.text)),
+      el('div', { class: 'pm-change-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)}`, r.built?.length ? ` · ${LABELS.built(r.built.length)}` : '')));
     }
     sec.body.append(ul);
     if (hs.length) {
@@ -960,9 +960,9 @@ export async function mount(root, ctx) {
         hl.append(el('li', { class: 'pm-closure', dataset: { sel: `record:${h.id}` }, tabindex: 0, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `record:${h.id}` }); },
           onKeydown: (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); state.set({ sel: `record:${h.id}` }); } } },
         el('div', { class: 'pm-change-head' }, el('strong', {}, h.title ?? LABELS.togetherEnd)),
-        el('div', { class: 'pm-change-text' }, h.text),
+        el('div', { class: 'pm-change-text' }, fmt.prose(h.text)),
         others.size ? el('div', { class: 'pm-with' }, [...others].map((t, i) => [i ? ' · ' : null, P.has(t) ? personLink(t) : ui.link(`person:${t}`, fmt.targetName(t))])) : null,
-        el('div', { class: 'pm-change-meta muted' }, unitLink(h.unit), ` · ${atLabel(h.tick)} · `, el('span', { class: 'mono' }, h.id))));
+        el('div', { class: 'pm-change-meta muted' }, unitLink(h.unit), ` · ${atLabel(h.tick)}`)));
       }
       sec.body.append(el('h4', { class: 'pm-subhead' }, `${LABELS.togetherEnd} ${hs.length}`), hl);
     }
@@ -989,7 +989,7 @@ export async function mount(root, ctx) {
       return el('li', { class: ['pm-rec', st === '열림' ? 'is-open' : ''], dataset: { sel: `record:${r.id}` }, tabindex: 0, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `record:${r.id}` }); },
         onKeydown: (e) => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); state.set({ sel: `record:${r.id}` }); } } },
       el('div', { class: 'pm-rec-text' }, showState ? [ui.chip('state', st), ' '] : null, label ? [el('span', { class: 'pm-act' }, label), ' '] : null, fmt.recordText(r)),
-      el('div', { class: 'pm-rec-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)} · `, el('span', { class: 'mono' }, r.id), r.scene ? ` · ${fmt.sceneName(r.scene)}` : '', r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null));
+      el('div', { class: 'pm-rec-meta muted' }, unitLink(r.unit), ` · ${atLabel(r.tick)}`, r.scene ? ` · ${fmt.sceneName(r.scene)}` : '', r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null));
     };
     const limit = fqLimit[tab];
     const shown = list.slice(0, limit);

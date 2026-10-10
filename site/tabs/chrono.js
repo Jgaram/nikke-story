@@ -107,7 +107,7 @@ export async function mount(root, ctx) {
   const relText = (str) => String(str ?? '').split('; ').filter(Boolean).map((part) => {
     const m = part.match(/^(\S+) (\S+)(.*)$/);
     return m && REL_WORDS.has(m[1]) ? `${refText(m[2])} ${m[1]}${m[3]}` : part;
-  }).join(' · ');
+  }).map(fmt.prose).filter(Boolean).join(' · ');
   const atText = (at) => (at ?? []).map(([rel, ref, gap]) => `${refText(ref)} ${rel}${gap ? ` (${gap})` : ''}`).join(' · ');
   const relLabel = (tick) => fmt.tickLabel(tick, { date: false });
   const classLabel = (cls) => fmt.CHRONO_CLASS[cls] ?? cls;
@@ -217,16 +217,17 @@ export async function mount(root, ctx) {
     return el('span', { class: ['cr-drift', `cr-d-${c.drift}`, d.strong && 'is-strong'], title: `${fmt.DRIFT_TITLE}: ${fmt.help('drift', c.drift)}` }, `${d.glyph} ${driftLabel(c.drift)}${gap}`);
   };
   const parallelBadge = (c) => (c.parallel ? el('span', { class: 'cr-par', title: LABELS.parallelHint }, LABELS.parallel(chNum(c.parallel.with))) : null);
-  const recLink = (id) => ui.link(`record:${id}`, id, { class: 'mono cr-recid' });
+  /** 기록 링크 — 글자는 기록 문장(줄임). ID는 화면에 내지 않는다(W13a) */
+  const recLink = (id) => { const r = idx.records?.get(id); return ui.link(`record:${id}`, r ? clip(fmt.recordText(r), 40) : fmt.RECORD_KIND[String(id).replace(/\d.*$/, '')]?.label ?? '자세히'); };
   /** 글 속 기록 ID(F387 · S370 · J1)를 링크로 */
-  const withLinks = (text) => String(text ?? '').split(/\b([FQSIEDUOH]\d{2,5}|J\d{1,3})\b/).map((p, i) => (i % 2 === 0 ? p : /^J/.test(p) ? ui.link(`thread:${p}`, p, { class: 'mono cr-recid' }) : recLink(p)));
+  const withLinks = (text) => fmt.prose(text); // 자유 문장은 한 함수를 거친다(W13a)
   /** 근거 ID — 기록 · 줄기 · 씬#줄 */
   const basisLink = (b) => {
-    if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, b, { class: 'mono cr-recid' });
+    if (/^J\d+$/.test(b)) return ui.link(`thread:${b}`, idx.threads.get(b)?.title ?? fmt.TERM.thread);
     if (/^[A-Z](-[a-z])?\d+$/.test(b)) return recLink(b);
     const base = b.split('#')[0];
     const sceneId = [base, base.replace(/^ep:/, ''), `ep:${base}`].find((x) => idx.scenes.has(x));
-    return sceneId ? ui.link(`scene:${sceneId}`, fmt.ref(sceneId)) : el('span', { class: 'mono cr-recid' }, b);
+    return sceneId ? ui.link(`scene:${sceneId}`, fmt.ref(sceneId)) : null;
   };
   const joinNodes = (nodes, sep = ' ') => nodes.flatMap((n, i) => (i ? [sep, n] : [n]));
 
@@ -252,7 +253,7 @@ export async function mount(root, ctx) {
           piece ? el('span', { class: 'cr-ptag' }, pieceLabel(piece.kind)) : null,
           !piece ? parallelBadge(c) : null,
           !piece && mode !== 'loose' ? driftBadge(c) : null),
-        piece?.text ? el('span', { class: 'cr-ptext' }, clip(piece.text, 120)) : null),
+        fmt.prose(piece?.text) ? el('span', { class: 'cr-ptext' }, clip(fmt.prose(piece.text), 120)) : null),
       el('span', { class: 'cr-span', title: spanCell && !piece && cls === '범위' ? classLabel(cls) : null }, spanCell),
       el('span', { class: 'cr-rel', title: u.date ?? '' }, relLabel(u.tick), u.date ? el('span', { class: 'cr-date' }, ` · ${u.date}`) : null));
     return row;
@@ -328,7 +329,7 @@ export async function mount(root, ctx) {
         let whyEl = null;
         if (point?.era) {
           subEl.textContent = `${LABELS.era}${point.years ? ` · 약 ${point.years}년 전` : ''}`;
-          whyEl = el('div', { class: 'cr-why' }, point.reason ? el('p', {}, withLinks(point.reason)) : null, point.basis?.length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink), ' · ')) : null);
+          whyEl = el('div', { class: 'cr-why' }, withLinks(point.reason) ? el('p', {}, withLinks(point.reason)) : null, point.basis?.map(basisLink).filter(Boolean).length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(point.basis.map(basisLink).filter(Boolean), ' · ')) : null);
           whyEl.hidden = true;
           head.append(el('button', { type: 'button', class: 'btn cr-whybtn', 'aria-expanded': 'false', onClick: (ev) => { whyEl.hidden = !whyEl.hidden; ev.currentTarget.setAttribute('aria-expanded', String(!whyEl.hidden)); } }, '설명'));
         }
@@ -513,7 +514,6 @@ export async function mount(root, ctx) {
     const total = units.length;
     const parts = [];
     parts.push(LABELS.shown(fmt.num(counts.shown), fmt.num(total)));
-    if (counts.layer) parts.push(LABELS.hiddenLayer(fmt.num(counts.layer)));
     if (counts.filter) parts.push(LABELS.hiddenFilter(fmt.num(counts.filter)));
     statusText.textContent = parts.join(' · ');
     ui.clear(statusNote);
@@ -558,15 +558,15 @@ export async function mount(root, ctx) {
         el('span', { class: 'cr-ptag' }, pieceLabel(p.kind)), ' ',
         el('span', { class: 'muted' }, p.slot != null ? spanText(p) : classLabel(p.class)),
         p.relations ? el('div', { class: 'cr-rel-text' }, relText(p.relations)) : null,
-        p.text ? el('div', { class: 'cr-ptext' }, p.text) : null)))
+        fmt.prose(p.text) ? el('div', { class: 'cr-ptext' }, fmt.prose(p.text)) : null)))
       : null;
     const narrows = c.narrows.map((n) => el('div', { class: 'cr-narrow' },
       el('div', { class: 'cr-narrow-head' },
         n.piece ? [LABELS.pieceFlash, ' ', recLink(n.piece), ' · '] : null,
         n.at?.length ? el('b', {}, atText(n.at)) : el('b', { class: 'muted' }, LABELS.clueNone),
         ' ', n.confidence ? ui.chip('confidence', n.confidence) : null),
-      n.reason ? el('p', { class: 'cr-reason' }, withLinks(n.reason)) : null,
-      n.basis?.length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(n.basis.map(basisLink), ' · ')) : null));
+      withLinks(n.reason) ? el('p', { class: 'cr-reason' }, withLinks(n.reason)) : null,
+      n.basis?.map(basisLink).filter(Boolean).length ? el('p', { class: 'cr-why-basis' }, fmt.TERM.evidence, ' ', joinNodes(n.basis.map(basisLink).filter(Boolean), ' · ')) : null));
     const d = LABELS.drift[c.drift];
     const mainCh = c.release_main ? chNum(c.release_main) : null;
     const driftSentence = d && ({
@@ -631,7 +631,7 @@ export async function mount(root, ctx) {
   function tipNode(c) {
     const u = c.u;
     // 추정으로 좁힌 자리만 그 이유를 한 줄 — 시간 단서 · 메인 챕터 자리는 설명 없이
-    const guess = !c.records?.length && c.narrows[0]?.reason ? clip(c.narrows[0].reason, 80) : null;
+    const guess = !c.records?.length && fmt.prose(c.narrows[0]?.reason) ? clip(fmt.prose(c.narrows[0].reason), 80) : null;
     return el('div', { class: 'cr-tip' },
       el('div', { class: 'cr-tip-title' }, u.title),
       el('div', {}, `${fmt.KIND[u.kind].label} · ${classLabel(c.class)}${spanText(c) ? ` · ${c.multi ? LABELS.multi : spanText(c)}` : ''}`),
