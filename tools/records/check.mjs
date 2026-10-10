@@ -897,6 +897,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
           if (!isStr(id) || !id.startsWith('org:') || !ctx.targetIds.has(id)) err(where, null, `game.${sec}.${code}: ${JSON.stringify(id)} — 사전의 조직 ID(org:…)나 null(원문에 이름이 없음)`);
         }
       }
+      if (g.launch !== undefined && (!g.launch || !Array.isArray(g.launch.resource_ids) || !g.launch.resource_ids.every(Number.isInteger))) err(where, null, 'game.launch는 { resource_ids: [정수 …] } — 게임 시작 로스터');
       const keys = new Map();
       for (const e of ds.candidates.filter((x) => x.affil && x.status !== '기각')) {
         const k = `${e.obj?.person}\t${e.obj?.org}\t${e.obj?.act}\t${JSON.stringify(e.obj?.evidence?.[0]?.scene ?? null)}`;

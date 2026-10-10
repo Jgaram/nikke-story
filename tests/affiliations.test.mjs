@@ -29,7 +29,9 @@ test('게임 코드 → 사전 조직 대응이 게임 데이터의 기업 5 · 
   const map = JSON.parse(fs.readFileSync(AFFIL_FILE, 'utf8')).game;
   assert.deepEqual(checkGameMap(game, map), []);
   const orgs = new Set(db.prepare("SELECT id FROM targets WHERE type = 'org'").all().map((r) => r.id));
-  for (const [sec, m] of Object.entries(map)) for (const [code, id] of Object.entries(m)) if (id !== null) assert.ok(orgs.has(id), `game.${sec}.${code}: 사전에 없는 ${id}`);
+  for (const sec of ['corporations', 'squads']) for (const [code, id] of Object.entries(map[sec])) if (id !== null) assert.ok(orgs.has(id), `game.${sec}.${code}: 사전에 없는 ${id}`);
+  // 게임 시작 로스터(game.launch)는 실장 니케 판이어야 한다
+  for (const rid of map.launch?.resource_ids ?? []) assert.ok(game.chars[String(rid)], `game.launch: 실장 니케가 아닌 ${rid}`);
 });
 
 test('실제 소속 기록이 검증기를 통과한다', () => {

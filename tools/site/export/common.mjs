@@ -265,6 +265,8 @@ export async function run(ctx) {
       id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
     }));
   }
+  // 게임 시작 로스터(affiliations.json game.launch — 사용자 확인): 호감도 단위가 없어도 출시 자리를 맨 처음(1)으로 본다
+  const launch = new Set(JSON.parse(fs.readFileSync(`${ROOT}/annotations/affiliations.json`, 'utf8')).game?.launch?.resource_ids ?? []);
   const gameOrgs = new Map();
   if (marks) {
     const chars = all('SELECT resource_id, name, target_id FROM characters WHERE target_id IS NOT NULL ORDER BY resource_id');
@@ -280,7 +282,7 @@ export async function run(ctx) {
         if (!m) { warn({ where: 'orgs', msg: `${c.name}: 모르는 게임 코드 ${code}` }); continue; }
         // 공개 자리(W12d — docs/annotations.md "게임 소속의 공개 자리"): 원문에 이름이 없는 소속(null)은 0(늘), 아니면
         // 그 판의 출시(호감도 단위 char:<rid> — 프로필에 소속이 보인다)와 그 조직의 확정 기록 T(소속 · 합류) 가운데 이른 것. 둘 다 없으면 칸을 비운다(전부 보기에서만)
-        const rel = placeOf.get(`char:${c.resource_id}`)?.tick;
+        const rel = placeOf.get(`char:${c.resource_id}`)?.tick ?? (launch.has(c.resource_id) ? 1 : undefined);
         const recTicks = (affsOf.get(c.target_id) ?? []).filter((a) => m.org && a.org === m.org && a.act !== '이탈' && a.tick != null).map((a) => a.tick);
         const tick = m.org ? (rel != null || recTicks.length ? Math.min(rel ?? Infinity, ...recTicks) : undefined) : 0;
         const same = list.find((x) => x.type === type && x.name === m.name);
