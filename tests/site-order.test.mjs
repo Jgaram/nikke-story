@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gradeAt as siteGradeAt, cutRowAt, ghostKeys } from '../site/tabs/order.js';
+import { gradeAt as siteGradeAt, cutRowAt, ghostKeys, guideOf, preRev } from '../site/tabs/order.js';
 import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
@@ -167,6 +167,43 @@ test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)�
   // 종류로 숨은 것은 끼우지 않는다
   assert.equal(ghostKeys(shown, order.pre, (k) => pass(k) && units.get(k).kind !== 'sub').size < ghosts.size, true);
   assert.equal(ghostKeys([], order.pre, pass).size, 0);
+});
+
+test('guideOf — 기한은 척추 필수 · 권장 선행(판정 자리 포함)이 먼저, 없으면 메인 밖 필수 · 권장 선행, 그다음 척추 선택 선행', () => {
+  const units = new Map([['ch01', { order: 1 }], ['a', { order: 2 }], ['b', { order: 3 }], ['ch02', { order: 4 }], ['c', { order: 5 }], ['ch03', { order: 6 }]]);
+  const spine = new Set(['ch01', 'ch02', 'ch03']);
+  const pre = { b: { 필수: [['a', 'sequel']] }, ch03: { 권장: [['a', 'setup_payoff']] }, ch02: { 선택: [['c', 'callback']] }, c: { 선택: [['b', 'callback']] } };
+  const judged = new Map([['a', { grade: '참고' }], ['b', { grade: '보강', from: 'ch01' }], ['c', { grade: '보강', from: 'ch03' }]]);
+  const ctx = { units, spine, pre, rev: preRev(pre), judged };
+  const a = guideOf('a', ctx);
+  assert.deepEqual(a.due, { key: 'ch03', level: '권장', why: 'setup_payoff', soft: false }, '뒤 편(b)보다 척추 기한이 먼저');
+  assert.deepEqual(a.later.map(([k]) => k), ['b'], 'due로 쓴 척추는 이어짐에서 뺀다');
+  const b = guideOf('b', ctx);
+  assert.equal(b.fill, 'ch01', '판정 자리가 앞이면 보충');
+  assert.equal(b.due, null, '메인 밖 스토리의 선택 선행(c)은 기한이 아니다');
+  assert.deepEqual(b.first, [['a', '필수', 'sequel']]);
+  assert.deepEqual(guideOf('c', ctx).due, { key: 'ch03', level: '권장', why: 'judged', soft: false }, '판정 자리가 뒤면 기한(추천 = 권장)');
+  assert.deepEqual(guideOf('c', { ...ctx, judged: new Map([['c', { grade: '참고' }]]) }).due, null, '앞 척추(ch02)의 선행은 기한이 아니다');
+  const soft = guideOf('b', { ...ctx, pre: { ...pre, ch03: { 선택: [['b', 'callback']] } }, rev: preRev({ ...pre, ch03: { 선택: [['b', 'callback']] } }) });
+  assert.deepEqual(soft.due, { key: 'ch03', level: '선택', why: 'callback', soft: true }, '척추 선택 선행만 있으면 다시 나옴');
+});
+
+test('guideOf — 실제 데이터: 짚었던 줄(B-SIDE IDOL · 길로틴 · 랩칠리언 1)과 모든 판정 단위의 모양', () => {
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  const ctx = { units, spine: new Set(order.spine.map((s) => s.key)), pre: order.pre, rev: preRev(order.pre), judged: new Map(order.units.map((j) => [j.key, j])) };
+  const byTitle = (t) => unitsJson.find((u) => u.title === t).key;
+  assert.equal(guideOf('fl:b-side_idol', ctx).due?.key, 'fl:bitter_spice', 'B-SIDE IDOL은 BITTER SPICE 전까지(앞 편)');
+  assert.equal(guideOf(byTitle('길로틴'), ctx).fill, 'ch12', '길로틴은 CH.12 보충');
+  assert.equal(guideOf(byTitle('랩칠리언 1'), ctx).due?.key, 'ch27', '랩칠리언 1은 CH.27 전까지');
+  for (const j of order.units) {
+    const g = guideOf(j.key, ctx);
+    const pos = units.get(j.key).order;
+    if (g.due) assert.ok(units.get(g.due.key).order > pos, `${j.key}: 기한은 뒤`);
+    if (g.fill) assert.ok(units.get(g.fill).order < pos, `${j.key}: 보충은 앞`);
+    for (const [k] of g.later) assert.ok(units.get(k).order > pos && k !== g.due?.key, `${j.key}: 이어짐 ${k}`);
+    // 예전 'CH.27 전까지'(판정 자리가 뒤)는 그대로 기한이거나 더 앞선 척추 기한
+    if (j.from && ctx.spine.has(j.from) && units.get(j.from).order > pos) assert.ok(g.due && !g.due.soft && units.get(g.due.key).order <= units.get(j.from).order, `${j.key}: 판정 자리 기한`);
+  }
 });
 
 test('탭 소스(감상 순서 · 연대기): 스토리를 숨기거나 등급을 정할 때 출시 시점(visible · 숫자 T)을 쓰지 않는다', () => {
