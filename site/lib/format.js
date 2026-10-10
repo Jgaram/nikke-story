@@ -305,7 +305,7 @@ export const AI_NOTE = {
 
 /** 자주 쓰는 말 — 탭은 하드코딩하지 말고 여기서 가져다 쓴다 */
 export const TERM = {
-  site: 'NIKKE 스토리 지도',
+  site: 'NIKKE 스토리 가이드',
   unit: '스토리',
   order: '감상 순서',
   release: '출시 시점',

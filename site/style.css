@@ -125,11 +125,19 @@ p { margin: 0 0 8px; max-width: 72ch; }
   background: var(--hd-bg); color: var(--hd-ink);
   border-bottom: 1px solid var(--hd-line);
 }
-.brand { display: inline-flex; align-items: center; gap: 8px; flex: none; color: var(--hd-ink); }
+/* 이름 글씨(로고 없음, 사용자 2026-10-10): 비스듬한 파랑 칩 "NIKKE" + 굵은 "스토리 가이드"(가이드만 파랑 그라데이션) */
+.brand { display: inline-flex; align-items: center; gap: 9px; flex: none; color: var(--hd-ink); }
 .brand:hover { text-decoration: none; }
-.brand-mark { flex: none; }
-.brand-name { font-weight: 700; font-size: 16px; letter-spacing: -0.02em; white-space: nowrap; }
-.brand-game { color: var(--hd-accent); }
+.brand-game {
+  flex: none; padding: 4px 13px 4px 11px; font-size: 13px; font-weight: 900; letter-spacing: 0.14em; line-height: 1;
+  color: #fff; background: linear-gradient(100deg, #1f62b8, var(--accent) 55%, #4b93ea);
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+.brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.03em; white-space: nowrap; }
+.brand-em {
+  background: linear-gradient(90deg, var(--hd-accent), #b9d8ff); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.brand:hover .brand-game { filter: brightness(1.12); }
 .search { position: relative; flex: 1 1 200px; min-width: 140px; max-width: 360px; }
 .topbar .search input {
   width: 100%; height: 36px; padding: 0 34px 0 34px; font: inherit; font-size: 14px; color: var(--hd-ink);
@@ -547,7 +555,6 @@ th[aria-sort="descending"] .sort-mark::after { content: "↓"; color: var(--ink)
 @media (max-width: 640px) {
   /* 위: 로고 · 검색, 아래: 여기까지 읽음 */
   .topbar { gap: 8px 10px; padding: 10px 12px; }
-  .brand-game { display: none; }
   .search { order: 2; flex: 1 1 100px; min-width: 100px; }
   .cutoff { order: 5; flex: 1 1 100%; }
   .cutoff-btn { width: 100%; }
