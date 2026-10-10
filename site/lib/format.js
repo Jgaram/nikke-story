@@ -6,9 +6,9 @@
  *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립 · 필수(키 '척추') · 메인 — 색은 준필수 · 추천 띠만(style.css "등급")
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
- *   TARGET_TYPE · CONFIDENCE · THREAD_WEIGHT(핵심 · 보조 · 곁가지)
+ *   TARGET_TYPE · CONFIDENCE · majorThread(무게는 '주요 떡밥' 하나) · THREAD_WEIGHT_HELP
  *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 전까지'
- *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
+ *   DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
@@ -27,6 +27,7 @@
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
+ *   episodeIcon(unit)              호감도 스토리의 초상 아이콘(감상 순서 줄 · 리더 머리)
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
  *   num(n) · pct(x) · date(s)
@@ -143,7 +144,7 @@ export const ACT = {
 /** 인물 변화(D)의 act */
 export const CHANGE_ACT = { 기준: '처음 모습', 변화: '바뀜' };
 /** 시간 단서(S)의 종류 */
-export const TIME_KIND = { 기준점: '기준', 회상: '회상' };
+export const TIME_KIND = { 기준점: '', 회상: '회상' }; // 기준점은 따로 말하지 않는다 — 머리는 '시간 단서'만(W13d)
 
 export const TARGET_TYPE = { person: '인물', place: '장소', org: '조직', concept: '개념', incident: '사건', item: '물건' };
 export const TARGET_TYPE_HELP = {
@@ -158,7 +159,6 @@ export const CONFIDENCE = { 확실: { label: '확실' }, 추정: { label: '추�
 export const CONFIDENCE_HELP = { 확실: '원문에서 바로 확인된다', 추정: '정황으로 읽은 해석 — 틀릴 수 있다' };
 
 /** 떡밥(줄기) 중요도: 키는 원본(뼈대 · 보강 · 독립) 그대로 */
-export const THREAD_WEIGHT = { 뼈대: { label: '주요' }, 보강: { label: '보조' }, 독립: { label: '곁가지' } };
 /** 떡밥 무게의 화면 말은 '주요 떡밥' 하나(W13 용어표) — 떡밥 탭 밖(검색 · 리더)에서는 뼈대만 표시하고 나머지는 말하지 않는다 */
 export const majorThread = (j) => (j?.weight === '뼈대' ? '주요 떡밥' : '');
 export const THREAD_WEIGHT_HELP = {
@@ -168,14 +168,6 @@ export const THREAD_WEIGHT_HELP = {
 };
 
 // ── 작중 시점 · 출시순 비교 ──
-/** 작중 시점의 확정 정도(키는 원본 그대로) */
-export const CHRONO_CLASS = { 판별: '시점 확정', 범위: '대략 범위', 상대: '앞뒤만 앎', 불명: '시점 불명' };
-export const CHRONO_CLASS_HELP = {
-  판별: '기준과의 관계로 작중 순이 정해진다',
-  범위: '앞뒤 경계만 알아 대략의 범위로 본다',
-  상대: '다른 스토리와의 앞뒤만 안다',
-  불명: '시점을 알 단서가 없다',
-};
 /** 출시순과 비교 — 출시 당시 메인과 견준 작중 시점 */
 export const DRIFT_TITLE = '출시순과 비교';
 export const DRIFT = { 과거: '과거 이야기', 앞: '앞선 이야기', 맞음: '같은 때', 걸침: '걸침', 뒤: '나중 이야기' };
@@ -297,7 +289,6 @@ const HELP = {
   record: RECORD_HELP,
   confidence: CONFIDENCE_HELP,
   weight: THREAD_WEIGHT_HELP,
-  chrono: CHRONO_CLASS_HELP,
   drift: DRIFT_HELP,
   link: LINK_TYPE_HELP,
   target: TARGET_TYPE_HELP,
@@ -322,6 +313,25 @@ function tickObj(tick) {
 }
 const chNum = (key) => (key ? `CH.${String(key).replace(/^ch/, '')}` : null);
 
+/** 호감도 스토리의 초상 — 키 char:180 → 아이콘 c180(사전 인물의 icon · 바뀐 모습 icons). 코스튬 판(c182)은 받은 그림이 없어 이름(' : ' 앞) 인물의 아이콘. 호감도가 아니면 null */
+const faceIndex = new WeakMap();
+export function episodeIcon(unit) {
+  if (unit?.kind !== 'episode' || !idx?.targets) return null;
+  let f = faceIndex.get(idx);
+  if (!f) {
+    f = { byIcon: new Map(), byName: new Map() };
+    for (const t of idx.targets.values()) {
+      if (t.type !== 'person') continue;
+      f.byName.set(t.name, t);
+      if (t.icon) f.byIcon.set(t.icon, t);
+      for (const [, ic] of t.icons ?? []) f.byIcon.set(ic, t);
+    }
+    faceIndex.set(idx, f);
+  }
+  const n = /^char:(\d+)$/.exec(unit.key)?.[1];
+  const code = n ? `c${n.padStart(3, '0')}` : null;
+  return code && f.byIcon.has(code) ? code : f.byName.get(String(unit.title).split(' : ')[0])?.icon ?? null;
+}
 /** 인물 아이콘 — 여기까지 읽음(t)까지 메인에서 바뀐 모습만 보인다(사용자, 2026-10-10). 그 뒤 모습은 스포일러라 앞 모습 */
 export function iconAt(target, t) {
   if (!target) return null;

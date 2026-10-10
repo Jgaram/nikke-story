@@ -121,16 +121,9 @@ export async function mount(root, ctx) {
   for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
   const kindsPresent = KIND_PICK_ORDER.filter((k) => judged.some((j) => j.unit.kind === k) || spine.some((sp) => sp.unit.kind === k));
   const spineLabel = (key) => (spineByKey.get(key)?.unit.kind === 'main' ? fmt.tickShort(spineByKey.get(key).tick) : fmt.unitTitle(key));
-  // 호감도 줄의 초상 — 스토리 키 char:180 → 아이콘 c180(사전 인물의 icon · 바뀐 모습 icons), 코스튬 판(c182)은 받은 그림이 없어 이름(' : ' 앞)의 인물 아이콘
+  // 호감도 줄의 초상 — fmt.episodeIcon(리더 머리와 같은 규칙)
   const persons = idx.targetList.filter((t) => t.type === 'person');
   const personByName = new Map(persons.map((t) => [t.name, t]));
-  const iconOwner = new Map();
-  for (const t of persons) { if (t.icon) iconOwner.set(t.icon, t); for (const [, ic] of t.icons ?? []) iconOwner.set(ic, t); }
-  const episodeIcon = (unit) => {
-    const n = /^char:(\d+)$/.exec(unit.key)?.[1];
-    const code = n ? `c${n.padStart(3, '0')}` : null;
-    return code && iconOwner.has(code) ? code : personByName.get(String(unit.title).split(' : ')[0])?.icon ?? null;
-  };
   let curR = state.reading(state.get()); // 지금 읽은 데까지(스토리마다 봤나) — apply가 바꾼다
 
   // ── 머리 · 도구 줄 ──
@@ -201,7 +194,7 @@ export async function mount(root, ctx) {
     const ghost = Boolean(item.ghostOf);
     const g = item.spine ? '척추' : item.grade;
     attrs.class = ['order-row g-band', item.spine ? 'is-spine' : 'is-extra', ghost ? 'is-ghost g-quiet' : BAND[g] ?? '', unseen ? 'is-unseen' : ''].filter(Boolean).join(' ');
-    const icon = unit.kind === 'episode' ? ui.portrait(episodeIcon(unit), { size: 28, class: 'order-face' }) : null;
+    const icon = unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : null;
     const meta = [
       ui.el('span', { class: 'g-label', title: fmt.help('grade', g) }, gl(g)),
       ui.el('span', { class: 'order-kind', title: fmt.help('kind', unit.kind) }, fmt.KIND[unit.kind]?.label ?? unit.kind),
@@ -300,7 +293,7 @@ export async function mount(root, ctx) {
   };
   /** 카드 머리 — 제목 + 회색 종류 글자(종류는 색 없이) */
   const cardHead = (key, unit, close) => ui.el('div', { class: 'panel-head' }, ui.el('h3', {},
-    unit.kind === 'episode' ? ui.portrait(episodeIcon(unit), { size: 28, class: 'order-face' }) : null,
+    unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : null,
     ui.link(`unit:${key}`, unit.kind === 'main' ? chTitle(unit.title) : unit.title), ' ',
     ui.el('span', { class: 'order-card-kind' }, fmt.KIND[unit.kind]?.label ?? unit.kind)), close);
   /** 주역 — 첫 이야기인 인물 + 이 스토리에 사실 · 변화가 있는 주역(lead_facts '네온(ch01) 사실 3 / …'의 이름만 — 개수는 싣지 않는다) */

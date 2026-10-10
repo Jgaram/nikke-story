@@ -185,23 +185,6 @@ function loadPeople() {
   }).catch(() => { /* 없어도 리더는 쓴다 */ }));
 }
 
-/** 호감도 스토리의 초상 — 키 char:180 → 아이콘 c180(사전 인물의 icon · 바뀐 모습 icons), 코스튬 판은 이름(' : ' 앞) 인물의 아이콘(감상 순서 줄과 같은 규칙) */
-let iconOwner = null;
-function episodeIcon(u, idx) {
-  if (u.kind !== 'episode') return null;
-  if (!iconOwner) {
-    iconOwner = { byIcon: new Map(), byName: new Map() };
-    for (const t of idx.targetList) {
-      if (t.type !== 'person') continue;
-      iconOwner.byName.set(t.name, t);
-      if (t.icon) iconOwner.byIcon.set(t.icon, t);
-      for (const [, ic] of t.icons ?? []) iconOwner.byIcon.set(ic, t);
-    }
-  }
-  const n = /^char:(\d+)$/.exec(u.key)?.[1];
-  const code = n ? `c${n.padStart(3, '0')}` : null;
-  return code && iconOwner.byIcon.has(code) ? code : iconOwner.byName.get(String(u.title).split(' : ')[0])?.icon ?? null;
-}
 
 /** 공개 개요 칸 — 여기까지 읽음 뒤 스토리면 접어서 가린다 */
 function synopsisPanel(key, hidden) {
@@ -538,7 +521,7 @@ const RENDER = {
     if (!u) return root.append(head(LABELS.notFound), ui.empty(LABELS.notFound));
     const hidden = !state.seen(u.key);
     const j = orderMap?.get(key);
-    const icon = episodeIcon(u, idx);
+    const icon = fmt.episodeIcon(u);
     root.append(head(u.kind === 'main' ? chTitle(u.title) : u.title, [], unitSub(u, j), icon ? ui.portrait(icon, { size: 56, class: 'reader-pic rd-face' }) : null));
     // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(척추 이벤트 · 사이드 체크)
     if (hidden) root.append(ui.notice(state.visible(u.tick) ? LABELS.skippedStory : LABELS.hiddenStory(cutoffName()), 'warn'));
