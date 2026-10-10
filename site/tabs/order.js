@@ -18,10 +18,13 @@
  *
  * 그리는 규칙
  *   목록 · 지도는 여기까지 읽음과 관계없이 전부 보인다(사용자, 2026-10-10 — 안 본 사람에게 어떤 순서로 볼지 알려 주는 안내라서). 등급은 최종 등급,
- *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 인 마지막 본편 줄 아래 "여기까지 읽음" 구분 줄, 지도는 그 뒤 칸을 옅게.
+ *     여기까지 읽음은 자리 표시만 한다: 목록은 그 시점 ≤ 이고 본 마지막 본편 줄 아래 "여기까지 읽음" 구분 줄(cutRowAt), 지도는 그 뒤 칸을 옅게.
+ *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 본편 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
+ *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 본편 이벤트 · 사이드는 줄에 '안 봄' 표시 · 옅게, 지도 축에는 속 빈 표시.
  *     범위 거르개 밖 스토리는 숨기고 개수만 보인다.
- *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, T)(tools/views/importance.mjs와 같다: T가 없으면 최종 등급, T < 출시 시점이면 아직 없음,
- *     from 시점이 있고 T < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 여기까지 읽음 뒤 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
+ *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, R)(tools/views/importance.mjs와 같다: 전부 보기면 최종 등급, 안 본 스토리면 아직 없음,
+ *     from 시점이 있고 t < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 안 본 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
+ *     '이 스토리가 선행인 곳'도 본 스토리만 든다.
  *   목록: 감상 순서 한 줄(ol). 본편 줄(메인 챕터는 굵은 구분 줄, 본편 이벤트 · 사이드는 '본편' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
  *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 글자. 이유(분석 문장)는 목록에 싣지 않고 분류 카드 · 리더에만(사용자 — 목록이 설명으로 길어진다).
  *     거르개는 최종 등급으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
@@ -61,7 +64,7 @@ const LABELS = {
     pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 본편',
   },
   none: '없음',
-  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
+  after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
   trailNone: '바뀐 적 없다',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
@@ -80,6 +83,18 @@ const AXIS_LABEL_W = 36; // `CH.07` 한 라벨이 차지하는 폭(11px 숫자 +
 const SVGNS = 'http://www.w3.org/2000/svg';
 
 export { gradeAt }; // 계산은 lib/format.js 한 곳(리더의 분류 칸도 같이 쓴다)
+
+/**
+ * 여기까지 읽음 구분 줄을 넣을 자리 — seq(감상 순서) 안에서 출시 시점 ≤ cut이고 본(R.seen) 마지막 본편 줄의 번호(없으면 -1).
+ * 예외(x)가 없으면 '출시 시점 ≤ cut인 마지막 본편 줄'과 같다. 안 봄으로 둔 본편 이벤트 · 사이드가 끝에 있으면 그 줄은 구분 줄 아래(다음에 볼 순서)로 간다.
+ * 뒤에 나왔지만 봤음으로 둔 줄은 자리를 옮기지 않는다(구분 줄은 메인 챕터 자리 표시).
+ */
+export function cutRowAt(seq, cut, R) {
+  let at = -1;
+  if (cut == null) return at;
+  seq.forEach((x, i) => { if (x.spine && x.tick <= cut && R.seen(x.key)) at = i; });
+  return at;
+}
 
 const clip = (s, n) => (typeof s === 'string' && [...s].length > n ? `${[...s].slice(0, n).join('')}…` : s ?? '');
 /** SVG 요소 만들기(d3 없이도 지도가 그려진다) */
@@ -118,7 +133,7 @@ export async function mount(root, ctx) {
   const recId = (id) => (/^J\d/.test(id) ? ui.link(`thread:${id}`, id) : ui.link(`record:${id}`, id));
   /** 문장 속 메모 ID(F48 · Q36 · J2 · D18 …)를 링크로 */
   const withLinks = (text) => String(text ?? '').split(/\b([FQSIEDUOH]\d+|J\d+)\b/).map((p, i) => (i % 2 ? recId(p) : plain(p)));
-  let curT = state.get().t;
+  let curR = state.reading(state.get()); // 지금 읽은 데까지(스토리마다 봤나) — apply가 바꾼다
 
   // ── 머리 · 도구 줄 ──
   root.append(ui.el('div', { class: 'tab-head order-head' }, ui.el('h2', {}, LABELS.title)), ui.el('p', { class: 'order-lede muted' }, LABELS.lede));
@@ -182,7 +197,7 @@ export async function mount(root, ctx) {
     return ui.el('span', { class: 'order-pre', onClick: (e) => e.stopPropagation() }, `${LABELS.pre} `, parts.map((x, i) => [i ? ' · ' : null, x]));
   };
   /** 감상 순서의 한 줄. 본편이면 sp, 메인 밖이면 j */
-  const seqRow = (item, n) => {
+  const seqRow = (item, n, unseen = false) => {
     const { key, unit } = item;
     const go = () => state.set({ sel: `unit:${key}` });
     const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', title: fmt.tickLabel(item.tick), onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
@@ -190,9 +205,10 @@ export async function mount(root, ctx) {
     const chars = ui.el('span', { class: 'order-chars' }, fmt.num(unit.chars));
     if (item.spine) {
       const isMain = unit.kind === 'main';
-      attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}`;
+      attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}${unseen ? ' is-unseen' : ''}`;
       return ui.el('li', attrs, num,
-        ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind)),
+        ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind),
+          unseen ? ui.el('span', { class: 'order-unseen', title: LABELS.unseenHelp }, LABELS.unseen) : null),
         ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preLine(key)), chars);
     }
     const g = item.grade;
@@ -240,7 +256,8 @@ export async function mount(root, ctx) {
   const clearFilters = () => state.set({ p: { g: null, k: null, find: null } }, { replace: true });
   const apply = (s) => {
     const cut = s.t; // 여기까지 읽음 — 목록 · 지도는 거르지 않고 자리만 표시한다
-    curT = cut;
+    const rd = state.reading(s);
+    curR = rd;
     const grades = gradePick.cur();
     const kinds = kindPick.cur();
     gradePick.sync();
@@ -264,10 +281,10 @@ export async function mount(root, ctx) {
     // 목록
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
-    const lis = seq.map((x, i) => seqRow(x, i + 1));
-    // 여기까지 읽음 구분 줄 — 그 시점 ≤ 인 마지막 본편 줄 아래(이 아래가 다음에 볼 순서)
-    let cutAt = -1;
-    if (cut != null) seq.forEach((x, i) => { if (x.spine && x.tick <= cut) cutAt = i; });
+    // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 본편 줄 아래(이 아래가 다음에 볼 순서)
+    const cutAt = cutRowAt(seq, cut, rd);
+    // 구분 줄 위인데 안 봄으로 둔 본편 이벤트 · 사이드 — 줄에 '안 봄'(예외가 없으면 없다)
+    const lis = seq.map((x, i) => seqRow(x, i + 1, x.spine && i < cutAt && !rd.seen(x.key)));
     if (cutAt >= 0 && cutAt < seq.length - 1) {
       lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
       status.append(' · ', ui.el('button', { type: 'button', class: 'link-btn', onClick: () => listEl.querySelector('.order-cutrow')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, LABELS.goCut));
@@ -360,7 +377,9 @@ export async function mount(root, ctx) {
     for (const [i, sp] of spine.entries()) {
       const cx = colX(i) + colW / 2;
       const kind = sp.unit.kind === 'main' ? 'is-main' : sp.unit.kind === 'side' ? 'is-side' : 'is-event';
-      const g = S('g', { class: `order-col ${kind} ${i > cutCol ? 'is-after' : ''} ${i === cutCol && cut != null ? 'is-cut' : ''}`, transform: `translate(${cx},${axisY})`, tabindex: 0, role: 'button', 'aria-label': `${sp.unit.title} — ${LABELS.axisGo}` });
+      // is-after = 여기까지 읽음 뒤 자리(위치), is-unseen = 그 앞인데 안 봄으로 둔 본편 이벤트 · 사이드(속 빈 표시 — 예외가 없으면 없다)
+      const unseen = i <= cutCol && !curR.seen(sp.key);
+      const g = S('g', { class: `order-col ${kind} ${i > cutCol ? 'is-after' : ''} ${unseen ? 'is-unseen' : ''} ${i === cutCol && cut != null ? 'is-cut' : ''}`, transform: `translate(${cx},${axisY})`, tabindex: 0, role: 'button', 'aria-label': `${sp.unit.title} — ${LABELS.axisGo}` });
       g.append(S('rect', { class: 'order-col-hit', x: -colW / 2, y: 0, width: colW, height: AXIS_H, fill: 'transparent' }));
       if (kind === 'is-main') g.append(S('line', { class: 'order-tick', y1: 0, y2: 7, stroke: 'none' }));
       else if (kind === 'is-side') g.append(S('rect', { class: 'order-glyph', x: -3.5, y: 3, width: 7, height: 7, fill: 'none' }));
@@ -369,7 +388,7 @@ export async function mount(root, ctx) {
         g.append(S('text', { class: 'order-col-label', y: 24, 'text-anchor': 'middle', fill: 'currentColor' }, fmt.tickShort(sp.tick)));
         labelRight = cx + AXIS_LABEL_W / 2;
       }
-      ui.tooltip(g, () => ui.el('div', { class: 'order-tip' }, ui.el('div', { class: 'order-tip-title' }, sp.unit.title), ui.el('div', {}, fmt.tickLabel(sp.tick)), ui.el('div', { class: 'order-tip-basis' }, LABELS.axisGo)));
+      ui.tooltip(g, () => ui.el('div', { class: 'order-tip' }, ui.el('div', { class: 'order-tip-title' }, sp.unit.title), ui.el('div', {}, fmt.tickLabel(sp.tick), unseen ? ` · ${LABELS.unseen}` : ''), ui.el('div', { class: 'order-tip-basis' }, LABELS.axisGo)));
       const go = () => state.set({ t: sp.tick });
       g.addEventListener('click', go);
       g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -418,7 +437,7 @@ export async function mount(root, ctx) {
     const lines = p ? fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', { class: 'order-pre-line' },
       ui.el('b', { title: fmt.help('pre', l) }, `${l} `),
       p[l].map(([k, why], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[why] ?? why})`)]))) : [];
-    const back = (preFor.get(key) ?? []).filter(([x]) => state.visible(idx.units.get(x)?.tick, curT));
+    const back = (preFor.get(key) ?? []).filter(([x]) => curR.seen(x));
     return [
       [R.pre, lines.length ? lines : ui.el('span', { class: 'muted' }, LABELS.none)],
       back.length ? [R.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${l}`)])] : null,
@@ -429,9 +448,9 @@ export async function mount(root, ctx) {
   let loglines = null;
   const synopsis = () => (loglines ??= data.load('synopsis').then((list) => new Map(list.map((x) => [x.key, x.logline]))));
   /** 한 줄 소개 — 카드를 그린 뒤 채운다. 여기까지 읽음 뒤 스토리는 비워 둔다(카드가 '뒤에 나온 스토리'라고 이미 말한다) */
-  const loglineBox = (key, tick, T) => {
+  const loglineBox = (key, rd) => {
     const box = ui.el('p', { class: 'order-logline' });
-    if (state.visible(tick, T)) synopsis().then((m) => { if (card.dataset.key === key && m.has(key)) box.textContent = m.get(key); }).catch(() => {});
+    if (rd.seen(key)) synopsis().then((m) => { if (card.dataset.key === key && m.has(key)) box.textContent = m.get(key); }).catch(() => {});
     return box;
   };
   const renderCard = (s) => {
@@ -445,20 +464,20 @@ export async function mount(root, ctx) {
     card.hidden = false;
     const close = ui.el('button', { type: 'button', class: 'btn order-card-close', 'aria-label': LABELS.cardClose, onClick: () => state.set({ sel: '' }) }, ui.icon('close'));
     const R = LABELS.rows2;
+    const rd = state.reading(s);
     if (sp) {
       card.append(ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', sp.unit.kind), ' ', ui.link(`unit:${sp.key}`, sp.unit.title)), close),
-        loglineBox(sp.key, sp.tick, s.t),
-        kv([[R.grade, ui.chip('grade', sp.unit.kind === 'main' ? '메인' : '척추')],
+        loglineBox(sp.key, rd),
+        kv([[R.grade, [ui.chip('grade', sp.unit.kind === 'main' ? '메인' : '척추'), rd.seen(sp.key) || rd.t == null || sp.tick > rd.t ? null : [' ', ui.el('span', { class: 'order-unseen', title: LABELS.unseenHelp }, LABELS.unseen)]]],
           [R.release, [fmt.tickLabel(sp.tick), ' · ', ui.link(`tick:${sp.tick}`, fmt.unitTitle(sp.key))]],
           ...preRows(sp.key)]));
       return;
     }
-    const T = s.t;
-    const g = gradeAt(j, T);
+    const g = gradeAt(j, rd);
     const gradeRow = [ui.chip('grade', g ?? j.grade)];
     if (g == null) gradeRow.push(' ', ui.el('span', { class: 'order-spoiler' }, LABELS.after(fmt.tickLabel(j.tick, { date: false }))));
     else if (g !== j.grade) gradeRow.push(' ', ui.el('span', {}, '→ ', ui.link(`unit:${j.from}`, spineLabel(j.from)), '부터 ', ui.chip('grade', j.grade)));
-    else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, T == null ? LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade)) : LABELS.riseSince(spineLabel(j.from))));
+    else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, rd.all ? LABELS.riseBefore(spineLabel(j.from), gl(j.before ?? j.grade)) : LABELS.riseSince(spineLabel(j.from))));
     const basisText = ui.el('div', { class: 'order-basis-text' });
     const basisRow = j.basis ? [recId(j.basis), j.basis_kind ? [' ', ui.chip('record', j.basis_kind)] : null, j.basis_scene ? [' ', ui.link(`scene:${j.basis_scene}`, fmt.ref(j.basis_scene))] : null, basisText] : null;
     const histBox = ui.el('div', { class: 'order-history' }, j.trail ? j.trail.map((x, i) => [i ? ' → ' : null, ui.chip('grade', x)]) : ui.el('span', { class: 'muted' }, LABELS.trailNone));
@@ -476,8 +495,8 @@ export async function mount(root, ctx) {
     ];
     card.append(
       ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', j.unit.kind), ' ', ui.link(`unit:${j.key}`, j.unit.title), ui.el('span', { class: 'muted order-card-sub' }, ` · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자 · ${fmt.num(j.unit.scenes)}${LABELS.scene}`)), close),
-      loglineBox(j.key, j.tick, T),
-      kv([[T == null || after ? R.grade : TERM.gradeAt, gradeRow], ...preRows(j.key), ...(after ? [] : rest)]),
+      loglineBox(j.key, rd),
+      kv([[rd.all || after ? R.grade : TERM.gradeAt, gradeRow], ...preRows(j.key), ...(after ? [] : rest)]),
       after ? ui.details(LABELS.spoiler, kv(rest), { class: 'order-spoiler-rows' }) : null);
     // 관련 메모 문장 · 검토 기록은 따로 받는다(처음 한 번)
     detail().then((d) => {

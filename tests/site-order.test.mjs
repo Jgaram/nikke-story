@@ -10,7 +10,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gradeAt as siteGradeAt } from '../site/tabs/order.js';
+import { gradeAt as siteGradeAt, cutRowAt } from '../site/tabs/order.js';
+import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
 import { readCsv } from '../tools/site/lib.mjs';
@@ -106,5 +107,50 @@ test('order.json pre — 선행은 모두 앞 단위이고 척추가 아니다',
         assert.ok(units.get(a).kind !== 'main' && !units.get(a).spine, `${a} 척추`);
       }
     }
+  }
+});
+
+// 여기까지 읽음 판정 묶음(state.reading) — units.json으로 설정해 둔다(브라우저 밖에서도 configure · reading은 돈다)
+const unitsJson = read('units.json');
+siteState.configure({ units: new Map(unitsJson.map((u) => [u.key, u])) });
+const extrasJson = unitsJson.filter((u) => u.spine && u.kind !== 'main');
+
+test('예외가 없으면 gradeAt(u, R) · R.seen은 출시 시점 규칙(gradeAt(u, t) · tick ≤ t)과 같다', () => {
+  for (const t of ticks) {
+    const R = siteState.reading({ t: t.tick, x: {} });
+    for (const u of order.units) assert.equal(siteGradeAt(u, R), siteGradeAt(u, t.tick), `${u.key} @${t.tick}`);
+    for (const u of unitsJson) if (u.tick != null) assert.equal(R.seen(u.key), u.tick <= t.tick, `${u.key} @${t.tick}`);
+  }
+  const all = siteState.reading({ t: null, x: {} });
+  for (const u of order.units) assert.equal(siteGradeAt(u, all), u.grade);
+});
+
+test('cutRowAt — 예외가 없으면 tick ≤ cut인 마지막 본편 줄, 안 봄으로 둔 끝 본편 이벤트는 구분 줄 아래로', () => {
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  // 감상 순서처럼: 본편 전부 + 판정 단위 몇 개, 읽는 자리 순서
+  const seq = [...order.spine.map((s) => ({ ...s, spine: true })), ...order.units.slice(0, 40)]
+    .map((x) => ({ ...x, unit: units.get(x.key) })).sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
+  const old = (cut) => { let at = -1; seq.forEach((x, i) => { if (x.spine && x.tick <= cut) at = i; }); return at; };
+  for (const t of ticks) assert.equal(cutRowAt(seq, t.tick, siteState.reading({ t: t.tick, x: {} })), old(t.tick), `@${t.tick}`);
+  assert.equal(cutRowAt(seq, null, siteState.reading({ t: null, x: {} })), -1);
+  // 본편 이벤트 바로 뒤에 t를 두고 그것을 안 봄으로 — 구분 줄이 그 앞 본편 줄로 올라간다
+  const ev = extrasJson.find((e) => seq.some((x, i) => x.key === e.key && i > 0));
+  const i = seq.findIndex((x) => x.key === ev.key);
+  const t = ev.tick;
+  const atDefault = cutRowAt(seq, t, siteState.reading({ t, x: {} }));
+  const atUnseen = cutRowAt(seq, t, siteState.reading({ t, x: { [ev.key]: false } }));
+  assert.equal(atDefault, i, '기본은 그 이벤트 줄 아래');
+  assert.ok(atUnseen < i, '안 봄이면 그 줄 위');
+  // 뒤에 나왔지만 봤음으로 둔 것은 자리를 옮기지 않는다
+  const later = extrasJson.find((e) => e.tick > t);
+  if (later) assert.equal(cutRowAt(seq, t, siteState.reading({ t, x: { [later.key]: true } })), atDefault);
+});
+
+test('탭 소스(감상 순서 · 연대기): 스토리를 숨기거나 등급을 정할 때 출시 시점(visible · 숫자 T)을 쓰지 않는다', () => {
+  for (const f of ['site/tabs/order.js', 'site/tabs/chrono.js']) {
+    const src = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    assert.ok(!/state\.visible\(/.test(src), `${f}: state.visible`);
+    assert.ok(!/(gradeAt|stateAt)\([^)]*,\s*(T|s\.t|curT)\)/.test(src), `${f}: 숫자 T로 등급 · 상태`);
+    assert.ok(/state\.reading\(/.test(src), `${f}: state.reading을 쓴다`);
   }
 });

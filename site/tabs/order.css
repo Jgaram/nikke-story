@@ -72,6 +72,12 @@
 .tab-order .order-row.is-main .order-title { grid-column: 2 / 4; font-weight: 700; font-size: 15px; }
 .tab-order .order-row.is-main.is-selected { background: color-mix(in srgb, var(--accent) 13%, var(--surface-2)); }
 .tab-order .order-row.is-spine .order-title { font-weight: 600; }
+/* 여기까지 읽음 앞인데 안 봄으로 둔 본편 이벤트 · 사이드 — 옅게 + '안 봄' */
+.tab-order .order-row.is-unseen .order-title { opacity: 0.72; }
+.tab-order .order-unseen {
+  display: inline-block; padding: 0 6px; font-size: 11px; line-height: 17px; font-weight: 600; white-space: nowrap;
+  color: var(--ink-muted); border: 1px dashed var(--line-2); border-radius: 9px;
+}
 /* 여기까지 읽음 구분 줄 — 이 아래가 다음에 볼 순서 */
 .tab-order .order-cutrow {
   display: flex; align-items: center; gap: 10px; padding: 7px 12px; border-top: 1px solid var(--line);
@@ -132,6 +138,7 @@
 .tab-order .order-col.is-cut .order-col-label { fill: var(--link); font-weight: 700; }
 .tab-order .order-col.is-cut .order-tick { stroke: var(--accent); stroke-width: 2.5; }
 .tab-order .order-col.is-cut .order-glyph { fill: var(--accent); }
+.tab-order .order-col.is-unseen .order-glyph { fill: none; stroke: var(--grade-spine); stroke-width: 1.2; }
 .tab-order .order-dot { stroke: var(--surface); stroke-width: 1; cursor: pointer; outline: none; }
 .tab-order .order-dot:hover, .tab-order .order-dot:focus-visible { stroke: var(--ink); stroke-width: 2; }
 .tab-order .order-dot.is-selected { stroke: var(--ink); stroke-width: 3; }
