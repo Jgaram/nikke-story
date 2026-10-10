@@ -23,6 +23,8 @@
  *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 아래에 '먼저 볼 것'만 — 메인 밖 줄과 같은 기준, 사용자 2026-10-10). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 줄 안내 요약).
  *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 메인만 보는 사람도, 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 모든 줄(메인 챕터는 '먼저 볼 것'만).
  *     전제는 "메인 챕터는 차례로 본다" 하나 — 척추 이벤트 · 사이드도 메인 밖 스토리처럼 먼저 볼 것 · 기한에 든다(order.json pre — export/order.mjs spineAnchors).
+ *     여기까지 읽음을 따른다(메인만 보고 뒤늦게 필수를 챙기는 사람 — 사용자, 2026-10-10): 먼저 볼 것 가운데 본 것은 흐리게 ✓, 기한 스토리를 봤으면 '· 지남'.
+ *     '본 것'은 사람이 정하는 것만 — 메인 챕터(그 자리까지)와 척추 이벤트 · 사이드(팝업 체크). 그 밖은 출시 시점 짐작이라 표시하지 않는다(doneSeen).
  *     두 방향 하나씩만: '먼저 볼 것: CH.12 · 랩칠리언 1'(줄 아래 — 최소 선행: 판정 자리가 앞인 척추 + 필수 선행) · 'CH.27 전까지'(회색 글자 줄 — 뒤에서 이 스토리를
  *     필수 · 권장 선행으로 쓰는 가장 앞 척추, 없으면 메인 밖 스토리). 둘 다 없으면 목록 자리 뒤 언제든(머리 아래 한 줄 설명). 왜 선행인가(떡밥 → 회수 · 다시 언급 등)는
  *     스포일러가 될 수 있어 싣지 않는다(사용자, 2026-10-10). 흐리게 끼운 앞 편은 'X의 앞 편'이 기한을 말하므로 기한을 다시 쓰지 않는다.
@@ -47,7 +49,8 @@ const LABELS = {
   count: (n) => `${n}편`, countHelp: '지금 목록에 든 스토리 수(흐리게 끼운 앞 편은 빼고)',
   must: '먼저 볼 것', mustHelp: '이 스토리 전에 꼭 볼 스토리 — 앞 편이거나, 이 스토리가 빈틈을 채우는 필수 스토리',
   dueHelp: (at) => `뒤의 ${at}에서 이 스토리를 이어받는다 — 그 전에 보면 좋다`,
-  guideNote: "'먼저 볼 것'은 이 스토리 전에 꼭 볼 스토리, 'CH.27 전까지'는 그 스토리가 이 스토리를 이어받으니 그 전에 보라는 뜻이다. 목록 자리(출시순)대로 보면 둘 다 지켜지고, 표시가 없으면 목록 자리 뒤 언제 봐도 된다.",
+  passed: ' · 지남', passedHelp: (at) => `${at}을(를) 이미 봤다 — 지금 봐도 ${at}에서 넘긴 빈틈이 채워진다`, seenMark: '봤음(여기까지 읽음)',
+  guideNote: "'먼저 볼 것'은 이 스토리 전에 꼭 볼 스토리, 'CH.27 전까지'는 그 스토리가 이 스토리를 이어받으니 그 전에 보라는 뜻이다. 목록 자리(출시순)대로 보면 둘 다 지켜지고, 표시가 없으면 목록 자리 뒤 언제 봐도 된다. 여기까지 읽음에 맞춰 이미 본 것은 ✓, 지난 기한은 '지남'.",
   ghost: (t) => `${t}의 앞 편`, ghostHelp: (t) => `${t}의 앞 편 — 등급 필터 밖이지만 이야기가 끊기지 않게 흐리게 끼워 두었다`,
   cutLine: (at) => `여기까지 읽음 · ${at}`, cutLineHelp: '이 아래가 다음에 볼 순서', goCut: '읽은 자리로', emptyFilter: '필터에 맞는 스토리가 없다.',
   clearFilter: '필터 풀기',
@@ -162,29 +165,39 @@ export async function mount(root, ctx) {
   const listView = ui.el('div', { class: 'order-list' });
   const listEl = ui.el('ol', { class: 'order-seq' });
   listView.append(listEl);
-  /** 'CH.27 전까지' — 회색 글자 줄에. 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
-  const dueText = (item) => {
+  /**
+   * 본 것으로 표시해도 되나 — 여기까지 읽음에서 사람이 정하는 것(메인 챕터 = 그 자리까지 · 척추 이벤트 · 사이드 = 팝업 체크)만.
+   * 그 밖은 출시 시점으로 짐작한 것이라 쓰지 않는다(메인만 보고 뒤늦게 챙기는 사람에게 안 본 준필수를 ✓로 보이지 않게)
+   */
+  const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || Boolean(idx.units.get(k)?.spine)) && rd.seen(k);
+  /** 'CH.27 전까지' — 회색 글자 줄에. 그 스토리를 이미 봤으면 '· 지남'(뒤늦게 챙기는 사람 — 지금 봐도 빈틈이 채워진다). 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
+  const dueText = (item, rd) => {
     const d = guide(item.key).due;
     if (!d || item.ghostOf === d.key) return null; // 척추 이벤트 · 사이드도 — 메인만 보는 사람에게 'CH.43 전까지'
-    return ui.el('span', { class: 'order-due', title: LABELS.dueHelp(spineLabel(d.key)) }, fmt.preOf(spineLabel(d.key)));
+    const at = spineLabel(d.key);
+    const passed = doneSeen(d.key, rd);
+    return ui.el('span', { class: ['order-due', passed ? 'is-passed' : ''], title: passed ? LABELS.passedHelp(at) : LABELS.dueHelp(at) }, fmt.preOf(at), passed ? LABELS.passed : null);
   };
-  /** '먼저 볼 것: CH.12 · 랩칠리언 1' — 줄 아래 한 줄(최소 선행). 링크는 그 스토리를 리더로 연다 */
-  const mustLine = (key) => {
+  /** '먼저 볼 것: CH.12 · 랩칠리언 1' — 줄 아래 한 줄(최소 선행), 이미 본 것은 흐리게 ✓. 링크는 그 스토리를 리더로 연다 */
+  const mustLine = (key, rd) => {
     const must = guide(key).must;
     if (!must.length) return null;
     return ui.el('span', { class: 'order-pre', title: LABELS.mustHelp, onClick: (e) => e.stopPropagation() }, `${LABELS.must}: `,
-      must.map((k, i) => [i ? ' · ' : null, ui.link(`unit:${k}`, spineByKey.has(k) ? spineLabel(k) : fmt.unitTitle(k))]));
+      must.map((k, i) => {
+        const link = ui.link(`unit:${k}`, spineByKey.has(k) ? spineLabel(k) : fmt.unitTitle(k));
+        return [i ? ' · ' : null, doneSeen(k, rd) ? ui.el('span', { class: 'order-pre-seen', title: LABELS.seenMark }, link, ' ✓') : link];
+      }));
   };
   /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
   const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title); return m ? [ui.el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
   /** 감상 순서의 한 줄. 척추이면 item.spine, 흐리게 끼운 앞 편이면 item.ghostOf(부른 줄의 키) */
-  const seqRow = (item, unseen = false) => {
+  const seqRow = (item, rd, unseen = false) => {
     const { key, unit } = item;
     const go = () => state.set({ sel: `unit:${key}` });
     const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
     if (item.spine && unit.kind === 'main') {
       attrs.class = 'order-row is-main';
-      return ui.el('li', attrs, ui.el('span', { class: 'order-line' }, ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, chTitle(unit.title)))), mustLine(key));
+      return ui.el('li', attrs, ui.el('span', { class: 'order-line' }, ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, chTitle(unit.title)))), mustLine(key, rd));
     }
     const ghost = Boolean(item.ghostOf);
     const g = item.spine ? '척추' : item.grade;
@@ -195,14 +208,14 @@ export async function mount(root, ctx) {
       ghost ? ui.el('span', { class: 'order-ghost', title: LABELS.ghostHelp(fmt.unitTitle(item.ghostOf)) }, LABELS.ghost(fmt.unitTitle(item.ghostOf))) : null,
       ui.el('span', { class: 'g-label', title: fmt.help('grade', g) }, gl(g)),
       ui.el('span', { class: 'order-kind', title: fmt.help('kind', unit.kind) }, fmt.KIND[unit.kind]?.label ?? unit.kind),
-      dueText(item),
+      dueText(item, rd),
     ].filter(Boolean);
     return ui.el('li', attrs,
       ui.el('span', { class: 'order-line' }, icon,
         ui.el('span', { class: 'order-title g-title' }, ui.link(`unit:${key}`, unit.title)),
         ui.el('span', { class: 'order-meta' }, meta.map((x, i) => [i ? ui.el('span', { class: 'order-sep', 'aria-hidden': 'true' }, '·') : null, x]),
           unseen ? ui.el('span', { class: 'order-unseen', title: LABELS.unseenHelp }, LABELS.unseen) : null)),
-      mustLine(key));
+      mustLine(key, rd));
   };
   const markSelected = (key) => {
     for (const li of listEl.children) { const on = li.dataset.key === key; li.classList.toggle('is-selected', on); li.setAttribute('aria-current', on ? 'true' : 'false'); }
@@ -238,7 +251,7 @@ export async function mount(root, ctx) {
     // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 척추 줄 아래(이 아래가 다음에 볼 순서)
     const cutAt = cutRowAt(seq, cut, rd);
     // 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드 — 줄에 '안 봄'(예외가 없으면 없다)
-    const lis = seq.map((x, i) => seqRow(x, x.spine && i < cutAt && !rd.seen(x.key)));
+    const lis = seq.map((x, i) => seqRow(x, rd, x.spine && i < cutAt && !rd.seen(x.key)));
     if (cutAt >= 0 && cutAt < seq.length - 1) {
       lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
       status.append(' · ', ui.el('button', { type: 'button', class: 'link-btn', onClick: () => listEl.querySelector('.order-cutrow')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, LABELS.goCut));

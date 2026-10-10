@@ -55,6 +55,8 @@
 .tab-order .order-ghost { color: var(--ink-2); }
 /* 감상 안내 — 기한('CH.27 전까지')은 회색 글자 줄에서 진하게, '먼저 볼 것'은 줄 아래 한 줄(.order-pre) */
 .tab-order .order-due { color: var(--ink-2); font-weight: 600; }
+.tab-order .order-due.is-passed { color: var(--ink-muted); font-weight: 400; }
+.tab-order .order-pre-seen, .tab-order .order-pre-seen a { color: var(--ink-muted); }
 .tab-order .order-note { margin: 2px 0 10px; font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
 .tab-order .order-pre { display: block; margin-top: 1px; font-size: 12px; color: var(--ink-muted); }
 /* 참고 · 독립(g-quiet) — 제목 회색. 흐리게 끼운 앞 편 — 회색 + 점선 왼쪽 */
