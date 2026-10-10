@@ -1,6 +1,6 @@
 # 2회독을 얹은 시안 — 1회독 + 2회독 (C1)
 
-`node tools/views/draft.mjs`가 만든다(손으로 고치지 않는다). 입력: annotations/read1/ · 2회독 기록 · SESSIONS.md R 항목 순서(출시순 한 줄) · DB.
+`node tools/views/draft.mjs`가 만든다(손으로 고치지 않는다). 입력: annotations/read1/ · 2회독 기록 · docs/history/reading.md R 항목 순서(출시순 한 줄) · DB.
 1회독만의 시안은 [../read1/report.md](../read1/report.md), 화면 · 칸의 출처는 [docs/views.md](../../../docs/views.md). 시트는 쓰지 않았다.
 
 ## 한눈에

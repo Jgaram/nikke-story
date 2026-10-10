@@ -1,7 +1,7 @@
 /**
  * 1회독 기록 — 형식 · 읽기 · 번호. 규칙은 docs/annotations.md.
  *
- * 기록 파일은 읽기 단위(SESSIONS.md 순서 항목에 적힌 키) 하나에 하나: annotations/read1/<키>.json (`:`는 `.`으로).
+ * 기록 파일은 읽기 단위(읽기 순서 항목에 적힌 키) 하나에 하나: annotations/read1/<키>.json (`:`는 `.`으로).
  * 해석이 필요한 기록(사실 · 의문 · 회수 · 시점 · 정체 연결)은 후보다 — 확정 · 기각은 사용자가 하고, 리뷰 도구가 반영한다(CLAUDE.md).
  *
  * 후보 ID (전체에서 하나, 바꾸지 않는다):
@@ -75,7 +75,7 @@ export const RELATION_TYPES = ['원인', '포함', '같은 진실', '맞물림']
 export const GRADES = ['필수', '보강', '참고', '독립'];
 /** 메인 자리(--from)를 적는 등급 — 그 앞 자리의 등급(--before)은 이보다 가볍다 (X3f ⑤) */
 export const FROM_GRADES = ['필수', '보강'];
-/** 2회독 층 — 1층부터 읽는다 (SESSIONS.md P · M) */
+/** 2회독 층 — 1층부터 읽는다 (docs/history/reading.md P · M) */
 export const LAYERS = [1, 2, 3];
 /** 떡밥 기록(E) — 암시: 드러나기(회수되기) 전에 흘림 · 재언급: 드러난(제기된) 뒤에 다시 꺼냄 */
 export const ECHO_ACTS = ['암시', '재언급'];

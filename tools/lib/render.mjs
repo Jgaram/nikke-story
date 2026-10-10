@@ -1,6 +1,6 @@
 /**
  * 대사 한 줄을 읽기 표기로 바꾼다 — tools/read.mjs와 tools/records.mjs(리뷰 도구)가 같이 쓴다.
- * 표기는 CLAUDE.md "원문 읽기"와 같다. 줄 번호 `#N`은 DB `lines.seq`(씬 안 0부터)다.
+ * 표기는 docs/tools.md "원문 읽기"와 같다. 줄 번호 `#N`은 DB `lines.seq`(씬 안 0부터)다.
  */
 
 export const oneLine = (s) => (s ?? '').replace(/\s+/g, ' ').trim();

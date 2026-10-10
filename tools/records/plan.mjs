@@ -1,6 +1,6 @@
 /**
- * 출시순 한 줄 읽기 순서 → 세션 묶음 초안 (SESSIONS.md R · P · M 항목을 만들 때 쓴 생성기, 2026-09-29).
- * 순서의 원본은 SESSIONS.md 하나다 — 이 스크립트는 초안 두 파일을 쓸 뿐이고, 항목을 붙여 넣고 인계 메모를 다는 건 손으로 한다.
+ * 출시순 한 줄 읽기 순서 → 세션 묶음 초안 (docs/history/reading.md R · P · M 항목을 만들 때 쓴 생성기, 2026-09-29).
+ * 순서의 원본은 docs/history/reading.md(+ SESSIONS.md의 새 읽기 항목)다 — 이 스크립트는 초안 두 파일을 쓸 뿐이고, 항목을 붙여 넣고 인계 메모를 다는 건 손으로 한다.
  *
  *   node tools/records/plan.mjs <출력 디렉터리>    → plan-R.md(1회독, 끝난 R01 몫 빼고 R02부터) · plan-M.md(2회독, P1 파일럿 + M01…)
  *   node tools/records/plan.mjs <출력 디렉터리> --layers  → plan-M.md를 2회독 층별로(B0b-2): 1층(P1 + M…) → C1 → 2층 → 3층, 층 안은 출시순

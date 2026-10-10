@@ -8,7 +8,7 @@
  *
  *   node tools/blabla/fetch-episodes.mjs [--lang ko] [--force] [--limit N] [--index-only]
  *
- * 동시 요청 상한·캐시·재시도는 client.mjs가 처리한다 (CLAUDE.md 규칙).
+ * 동시 요청 상한·캐시·재시도는 client.mjs가 처리한다 (docs/data-sources.md "0. 요청 규칙").
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -7,7 +7,7 @@
  *   targets.csv   대상별 — 등장 씬 수 · 단위 수 · 방식별 줄 수 · 처음 등장(아무 방식) · 처음 말함 · 처음 이름 · 마지막 등장 · 자동에서 뺀 이름 · 표본 정밀도
  *   units.csv     단위별 — 나온 대상 수(인물 · 비인물) · 처음 등장한 대상 수 · 미상 이름표 줄 수(2회독이 정체를 적을 줄)
  *   report.md     요약 · 표본 정밀도 · 자동에서 뺀 이름 · 처음 등장이 많은 단위
- * 읽는 순서는 1회독 순서(출시순 한 줄, SESSIONS.md R). 2회독 암시 언급(I)은 아직 싣지 않는다 — X3이 tools/records/read2.mjs mentionRows로 합친다.
+ * 읽는 순서는 1회독 순서(출시순 한 줄, docs/history/reading.md R). 2회독 암시 언급(I)은 아직 싣지 않는다 — X3이 tools/records/read2.mjs mentionRows로 합친다.
  * 원문 대사는 담지 않는다(이름 · 씬 ID · 수만).
  */
 import fs from 'node:fs';

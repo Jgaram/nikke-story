@@ -19,7 +19,7 @@ const firstLine = (c) => expandLines(arr(c?.evidence)[0]?.lines ?? []).seqs[0] ?
 
 /**
  * 씬 → 읽는 자리. 자리 = [단위 차례(1부터 — 1회독 순서, 출시순 한 줄), 단위 안 씬 차례]. 파트를 나눠 읽은 단위는 하나로 친다.
- * @param {{ items: {key:string}[] }} order 1회독 순서(SESSIONS.md R) — 2회독(층별)이 아니라 출시순으로 잰다
+ * @param {{ items: {key:string}[] }} order 1회독 순서(docs/history/reading.md R) — 2회독(층별)이 아니라 출시순으로 잰다
  * @returns {{ unitOf: (scene:string)=>string|null, posOf: (scene:string)=>number[]|null, unitPos: Map<string, number> }}
  */
 export function scenePlaces(order, ctx) {

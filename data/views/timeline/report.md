@@ -1,6 +1,6 @@
 # 공개 축 — 공개 자리 · 진실 공개 단계 · 컷오프 (X1a)
 
-`node tools/views/timeline.mjs`가 만든다(`draft.mjs`도 같이 부른다, 손으로 고치지 않는다). 입력: annotations/read1/ · 2회독 기록 · SESSIONS.md R 항목 순서 · DB(releases · 아카이브 원본).
+`node tools/views/timeline.mjs`가 만든다(`draft.mjs`도 같이 부른다, 손으로 고치지 않는다). 입력: annotations/read1/ · 2회독 기록 · docs/history/reading.md R 항목 순서 · DB(releases · 아카이브 원본).
 규칙은 tools/views/reveal.mjs 머리말, 화면 · 칸은 [docs/views.md](../../../docs/views.md) "공개 축 (X1a)". 시트는 쓰지 않았다.
 
 ## 공개 자리

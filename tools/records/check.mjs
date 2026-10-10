@@ -42,13 +42,13 @@ const READ2_SESSION = new RegExp(`^(?:${READ2_PREFIXES.join('|')})\\d+[a-z]?$`);
 /**
  * @param {ReturnType<import('./model.mjs').loadDataset>} ds
  * @param {Awaited<ReturnType<import('./context.mjs').openContext>>} ctx
- * @param {{ items: object[] } | null} order SESSIONS.md 1회독 읽기 순서 (없으면 순서 검사를 건너뛴다)
- * @param {{ order2?: { items: object[] } | null }} [opts] order2: 2회독 순서(P · M) — 없으면 order가 있을 때 SESSIONS.md에서 읽는다
+ * @param {{ items: object[] } | null} order 1회독 읽기 순서 (없으면 순서 검사를 건너뛴다)
+ * @param {{ order2?: { items: object[] } | null }} [opts] order2: 2회독 순서(P · M) — 없으면 order가 있을 때 읽기 순서 파일에서 읽는다
  * @returns {{ errors: {file:string, id:string|null, msg:string}[], warnings: {file:string, id:string|null, msg:string}[] }}
  */
 export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {}) {
   if (order2 === undefined) order2 = order ? loadOrder(READ2_PREFIXES) : null;
-  // 2회독에서 읽은 층(SESSIONS.md) — 실제 기록일 때만 견준다(예시 기록은 SESSIONS.md 층과 따로 논다)
+  // 2회독에서 읽은 층(읽기 순서) — 실제 기록일 때만 견준다(예시 기록은 읽기 순서의 층과 따로 논다)
   if (readLayers === undefined) readLayers = order && path.resolve(ds.dir) === path.resolve(READ1_DIR) ? loadReadLayers() : null;
   const errors = [];
   const warnings = [];
@@ -330,8 +330,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     else if (!/^[A-Z]+\d+[a-z]?$/.test(d.session)) err(f.name, null, `session "${d.session}" — R01 · RE32처럼 쓴다`);
     else if (order && isStr(d.unit)) {
       const item = findItem(order, d.unit, d.parts ?? null);
-      if (!item) warn(f.name, null, `SESSIONS.md 읽기 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
-      else if (item.session !== d.session) warn(f.name, null, `SESSIONS.md에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
+      if (!item) warn(f.name, null, `읽기 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
+      else if (item.session !== d.session) warn(f.name, null, `읽기 순서에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
     }
     if (!isStr(d.by)) err(f.name, null, '필수 칸 by(기록자 — "claude")가 없다');
     if (d.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(d.date ?? '')) err(f.name, null, 'date는 YYYY-MM-DD');
@@ -372,8 +372,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     else if (!READ2_SESSION.test(d.session)) err(f.name, null, `session "${d.session}" — 2회독 세션(P1 · M03 …)을 쓴다`);
     else if (order2 && isStr(d.unit)) {
       const item = findItem(order2, d.unit, d.parts ?? null);
-      if (!item) warn(f.name, null, `SESSIONS.md 2회독 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
-      else if (item.session !== d.session) warn(f.name, null, `SESSIONS.md에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
+      if (!item) warn(f.name, null, `2회독 읽기 순서에 없는 단위${d.parts ? `(파트 ${d.parts})` : ''} — 순서 밖 기록이면 괜찮다`);
+      else if (item.session !== d.session) warn(f.name, null, `읽기 순서에서는 ${item.session} 항목의 단위다 (파일은 ${d.session})`);
     }
     if (!isStr(d.by)) err(f.name, null, '필수 칸 by(기록자 — "claude")가 없다');
     if (d.date !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(d.date ?? '')) err(f.name, null, 'date는 YYYY-MM-DD');
@@ -586,7 +586,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       idOk(ID.layer, 'K<번호> (층 판정)');
       unknown(o, FIELDS.layer, (m) => warn(where, c.id, m));
       if (!isStr(o.unit)) err(where, c.id, '판정하는 단위(unit)가 없다 — 읽기 단위 키');
-      else if (order && !order.items.some((it) => it.key === o.unit)) err(where, c.id, `unit: SESSIONS.md 읽기 순서에 없는 단위 ${o.unit}`);
+      else if (order && !order.items.some((it) => it.key === o.unit)) err(where, c.id, `unit: 읽기 순서에 없는 단위 ${o.unit}`);
       else if (layerKind(o.unit) === '메인') err(where, c.id, `unit: 메인(${o.unit})은 채점하지 않는다 — 늘 1층`);
       if (!GRADES.includes(o.grade)) err(where, c.id, `grade "${o.grade ?? ''}" — ${GRADES.join(' · ')} 중 하나`);
       if (o.basis === undefined || o.basis === null) {
@@ -669,7 +669,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       idOk(ID.spine, 'B<번호> (척추)');
       unknown(o, FIELDS.spine, (m) => warn(where, c.id, m));
       if (!isStr(o.unit)) err(where, c.id, '척추 단위(unit)가 없다 — 읽기 단위 키');
-      else if (order && !orderPos.has(o.unit)) err(where, c.id, `unit: SESSIONS.md 읽기 순서에 없는 단위 ${o.unit}`);
+      else if (order && !orderPos.has(o.unit)) err(where, c.id, `unit: 읽기 순서에 없는 단위 ${o.unit}`);
       else if (!['이벤트', '사이드'].includes(kindOfKey(o.unit)) || String(o.unit).startsWith('erelic:')) err(where, c.id, `unit ${o.unit}: 척추는 이벤트 · 사이드만(메인은 늘 척추, 이벤트 유실물 · 연작의 다른 편은 판정 단위 — docs/importance.md 1절)`);
       else if (c.status !== '기각') {
         if (spineSeen.has(o.unit)) err(where, c.id, `${o.unit}의 척추 항목이 둘이다 — ${spineSeen.get(o.unit)}에도 있다`);
@@ -688,7 +688,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       else if (c.status === '확정' && /^\(초안\)/.test(o.text)) warn(where, c.id, '확정인데 문장이 초안 그대로다 — set … --text로 고친다');
       const endOk = isStr(o.end) && (!order || orderPos.has(o.end));
       if (!isStr(o.end)) err(where, c.id, '끝난 단위(end)가 없다 — 읽기 단위 키');
-      else if (!endOk) err(where, c.id, `end: SESSIONS.md 읽기 순서에 없는 단위 ${o.end}`);
+      else if (!endOk) err(where, c.id, `end: 읽기 순서에 없는 단위 ${o.end}`);
       const sideRec = (r) => r.people || r.threads || r.layers || r.leads || r.spine || r.closures || r.links;
       if (!Array.isArray(o.built) || !o.built.length) err(where, c.id, '쌓인 자리(built)가 없다 — 기록 ID(사실 · 의문 · 사건 · 인물 변화 · 떡밥 · 생활상)나 단위 키(연작의 앞 편) 배열');
       else {
@@ -729,7 +729,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       if (!isStr(o.text)) err(where, c.id, '문장(text)이 없다 — 무엇이 함께 끝났나 한 문장');
       const endOk = isStr(o.end) && (!order || orderPos.has(o.end));
       if (!isStr(o.end)) err(where, c.id, '함께 끝난 단위(end)가 없다 — 읽기 단위 키');
-      else if (!endOk) err(where, c.id, `end: SESSIONS.md 읽기 순서에 없는 단위 ${o.end}`);
+      else if (!endOk) err(where, c.id, `end: 읽기 순서에 없는 단위 ${o.end}`);
       if (!Array.isArray(o.members) || o.members.length < 2) err(where, c.id, '함께 끝난 마무리(members)는 O ID 둘 이상의 배열');
       else {
         if (new Set(o.members).size !== o.members.length) err(where, c.id, 'members에 같은 O가 두 번 있다');

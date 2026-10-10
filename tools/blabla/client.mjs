@@ -1,7 +1,7 @@
 /**
  * blablalink CDN 수집 클라이언트.
  *
- * 요청 규칙은 CLAUDE.md에 있다. 요약하면:
+ * 요청 규칙은 docs/data-sources.md "0. 요청 규칙"에 있다. 요약하면:
  *   동시 요청 ≤ 4 / 로컬 캐시 우선 / 지수 백오프 재시도 / 404는 누락으로 기록.
  */
 import fs from 'node:fs/promises';
@@ -9,7 +9,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { resourceUrl, formatLangPath } from './obfuscate.mjs';
 
-/** CLAUDE.md 규칙. 이 값을 올리지 말 것. */
+/** docs/data-sources.md "0. 요청 규칙". 이 값을 올리지 말 것. */
 export const MAX_CONCURRENCY = 4;
 
 const RETRIES = 3;

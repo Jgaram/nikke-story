@@ -1,8 +1,9 @@
 /**
- * 읽는 순서 — SESSIONS.md의 읽기 항목(R · RE …)에서 단위 키를 차례로 뽑는다.
- * 진행률 · 인계 파일 · 검증기가 "어느 세션이 어느 단위를 읽나"를 여기서 얻는다. 순서의 원본은 SESSIONS.md 하나다.
+ * 읽는 순서 — 읽기 항목(R · RE · P · M …)에서 단위 키를 차례로 뽑는다.
+ * 진행률 · 인계 파일 · 검증기가 "어느 세션이 어느 단위를 읽나"를 여기서 얻는다.
+ * 순서의 원본은 docs/history/reading.md(끝난 1회독 · 2회독 항목)이고, 그 뒤에 SESSIONS.md를 잇는다(신작 N3처럼 새로 넣는 읽기 항목).
  *
- * 항목 모양 (SESSIONS.md "순서"):
+ * 항목 모양 (docs/history/reading.md "순서"):
  *   - [ ] **R01** ch00–02 · `sub:칠리페퍼_00` `sub:테트라_커넥트_00` · ch03 · … — 8.0만 자 · 12파트
  *   - [ ] **RE30** `fl:boom_the_ghost`(= `event_boomtheghost1` 본문) — …        (= …)는 설명이라 뺀다
  *   - [ ] **RE32** `event_arcanearchive` `event_staranis1` 파트 1–3 — …       파트를 나눠 읽는 단위
@@ -14,7 +15,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-export const SESSIONS_PATH = path.join(ROOT, 'SESSIONS.md');
+/** 읽기 순서를 읽는 파일 — 이 차례로 이어 붙여 읽는다 */
+export const ORDER_PATHS = [path.join(ROOT, 'docs/history/reading.md'), path.join(ROOT, 'SESSIONS.md')];
+
+/** 있는 파일만 이어 붙인 내용. 하나도 없으면 null */
+function readOrderText(files) {
+  const list = [files].flat().filter((f) => fs.existsSync(f));
+  return list.length ? list.map((f) => fs.readFileSync(f, 'utf8')).join('\n') : null;
+}
 
 /** 1회독 읽기 항목의 접두 — RV(리뷰)는 읽기 항목이 아니다 */
 export const READ1_PREFIXES = ['R', 'RE'];
@@ -24,7 +32,7 @@ export const READ2_PREFIXES = ['P', 'M'];
 const pad2 = (n) => String(n).padStart(2, '0');
 
 /**
- * @param {string} text SESSIONS.md 내용
+ * @param {string} text 읽기 순서 파일 내용
  * @param {string[]} prefixes 항목 접두 (R · RE)
  * @returns {{ items: {session:string, state:string, key:string, parts:string|null, index:number}[], sessions: {id:string, state:string, keys:string[]}[] }}
  */
@@ -57,7 +65,7 @@ export function parseOrder(text, prefixes = READ1_PREFIXES) {
 }
 
 /**
- * 2회독에서 읽은 층 — SESSIONS.md P · M 목록의 `#### N층` 머리줄 아래 항목의 단위(X3a). 2회독이 끝난 뒤 등급을 다시 판정해도
+ * 2회독에서 읽은 층 — 읽기 순서 P · M 목록의 `#### N층` 머리줄 아래 항목의 단위(X3a). 2회독이 끝난 뒤 등급을 다시 판정해도
  * 층은 읽은 층으로 묶는다(검증기가 견준다 — docs/annotations.md "중요도 판정").
  * @returns {Map<string, number>} 단위 키 → 층(1–3). 머리줄 밖 항목은 넣지 않는다
  */
@@ -78,10 +86,10 @@ export function parseReadLayers(text) {
   return out;
 }
 
-/** SESSIONS.md에서 2회독에서 읽은 층. 파일이 없으면 빈 Map */
-export function loadReadLayers(file = SESSIONS_PATH) {
-  if (!fs.existsSync(file)) return new Map();
-  return parseReadLayers(fs.readFileSync(file, 'utf8'));
+/** 읽기 순서에서 2회독에서 읽은 층. 파일이 없으면 빈 Map */
+export function loadReadLayers(files = ORDER_PATHS) {
+  const text = readOrderText(files);
+  return text == null ? new Map() : parseReadLayers(text);
 }
 
 /** 읽기 단위 키의 종류 — 진행률을 종류별로 나눠 보일 때 쓴다 (출시순 한 줄이라 세션 접두로는 못 나눈다) */
@@ -109,10 +117,11 @@ export function kindTally(items, isRead) {
   return KIND_ORDER.filter((k) => t.has(k)).map((k) => `${k} ${t.get(k)[0]}/${t.get(k)[1]}`).join(' · ');
 }
 
-/** SESSIONS.md를 읽어 순서를 낸다. 파일이 없으면 빈 순서 */
-export function loadOrder(prefixes = READ1_PREFIXES, file = SESSIONS_PATH) {
-  if (!fs.existsSync(file)) return { items: [], sessions: [] };
-  return parseOrder(fs.readFileSync(file, 'utf8'), prefixes);
+/** 읽기 순서 파일을 읽어 순서를 낸다. 파일이 없으면 빈 순서 */
+export function loadOrder(prefixes = READ1_PREFIXES, files = ORDER_PATHS) {
+  const text = readOrderText(files);
+  if (text == null) return { items: [], sessions: [] };
+  return parseOrder(text, prefixes);
 }
 
 /** (단위 키, 파트) → 순서 항목. 파트를 나눠 읽는 단위는 파트까지 맞아야 한다 */

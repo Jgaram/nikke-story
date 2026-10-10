@@ -25,7 +25,7 @@ import { kindOfKey, partsOverlap } from './order.mjs';
 import { orderIndex } from './review.mjs';
 import { threadMembership } from './threads.mjs';
 
-/** 층마다 하는 것 — SESSIONS.md P · M 머리말과 같게 둔다 */
+/** 층마다 하는 것 — docs/history/reading.md P · M 머리말과 같게 둔다 */
 export const LAYER_TASKS = {
   1: '암시 언급 · 떡밥 암시와 재언급 · 인물 변화 · 세계 생활상 · 1회독 바로잡기',
   2: '암시 언급 · 떡밥 암시와 재언급 · 인물 변화 · 1회독 바로잡기 · 시점 단서 보강(시점 기록이 없으면 원문 실마리로 `S`를 더한다 — 2회독 기준) — 생활상은 하지 않는다',
@@ -514,7 +514,7 @@ export function buildHandoff2(ds, ctx, order, order2) {
   if (nextItem) {
     const layers = [...new Set(nextItems.map((it) => layerOf(it.key)).filter(Boolean))].sort();
     head.push(`- 다음: **${nextItem.session}** — ${sessionItems.map((it) => (isRead(it) ? `~~${itemLabel(it)}~~` : itemLabel(it))).join(' · ')}`);
-    for (const l of layers) head.push(`- ${l}층에서 하는 것: ${LAYER_TASKS[l]} (SESSIONS.md P · M 머리말)`);
+    for (const l of layers) head.push(`- ${l}층에서 하는 것: ${LAYER_TASKS[l]} (docs/history/reading.md P · M 머리말)`);
   } else head.push('- 다음: 2회독 순서 끝');
   head.push(`- 2회독 기록 ${allRead2.length} — 확정 ${allRead2.filter((c) => c.status === '확정').length} · 기각 ${allRead2.filter((c) => c.status === '기각').length} · 남음 ${allRead2.filter((c) => c.status === '후보').length}` +
     ` · 바로잡기로 더한 1회독 항목 ${fixesAll} · 볼 거리 ${ds.watchItems.length}`);

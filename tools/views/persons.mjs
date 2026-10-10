@@ -14,7 +14,7 @@
  *
  * 등장 = 언급 DB 자동 줄(speaks · named · alias, 빌드 — docs/schema.md "언급 DB") + 2회독 암시 언급(I — tools/records/read2.mjs mentionRows).
  *   합치기(T3-9 — 둘 다 두고 줄 합집합): (씬, 인물)마다 줄 집합을 합친다. 말한 줄 = 자동 speaks 줄 ∪ 암시 언급 speaker: true 줄(`???` 정체).
- *   암시 줄 = 암시 언급 줄 가운데 자동 줄에 없는 것(2회독이 더한 몫). 자리는 읽는 순서(출시순 한 줄 — SESSIONS.md R), 공개 자리는 tools/views/reveal.mjs.
+ *   암시 줄 = 암시 언급 줄 가운데 자동 줄에 없는 것(2회독이 더한 몫). 자리는 읽는 순서(출시순 한 줄 — docs/history/reading.md R), 공개 자리는 tools/views/reveal.mjs.
  * 함께 나옴 = 같은 씬에 두 인물 다 등장(위 합집합). 둘 다 말한 씬(대화)은 따로 센다.
  * 따로 두는 인물(common 칸 — 화면 기본값에서 숨기기 좋다):
  *   지휘관   플레이어라 어디에나 있다(links.mjs SKIP_TARGETS)

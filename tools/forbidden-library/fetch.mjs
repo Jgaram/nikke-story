@@ -17,7 +17,7 @@
  *       data/raw/forbidden-library/scripts/<categoryKey>/<파일>  원문(받은 그대로)
  *       data/raw/forbidden-library/fetched.json          파일별로 받은 버전 · 시각 · 404
  *
- * 요청 규칙(CLAUDE.md "금서고 요청 규칙"): 한 번에 하나씩, 요청 사이 1초, 실패하면 지수 백오프
+ * 요청 규칙(docs/data-sources.md "0. 요청 규칙"): 한 번에 하나씩, 요청 사이 1초, 실패하면 지수 백오프
  * (1s → 2s → 4s) 최대 3회, 404는 다시 시도하지 않고 기록한다. mainChapterVersion이 바뀌지 않은 파일은
  * 다시 받지 않는다.
  */

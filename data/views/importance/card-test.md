@@ -48,7 +48,7 @@ Opus 서브에이전트 둘이 같은 브리핑(카드만 읽는다 · `set` · 
 | A | 약 45 | 약 13만 자 | WISDOM SPRING · GOOD WORLD(지휘관 원점), NEW YEAR, NEW SWORD |
 | B | 63 | 약 9만 자 | WISDOM SPRING(원점), NEW YEAR, NEW SWORD |
 
-단위당 명령 3–4 · 출력 6–8천 자. 다시 판정 묶음(지금 X3f-6b 60 · X3f-6c 45 안팎)은 **한 세션 25단위 안팎**으로 쪼개야 컨텍스트 예산 안이다(SESSIONS.md X3f-1c에 적었다).
+단위당 명령 3–4 · 출력 6–8천 자. 다시 판정 묶음(지금 X3f-6b 60 · X3f-6c 45 안팎)은 **한 세션 25단위 안팎**으로 쪼개야 컨텍스트 예산 안이다(docs/history/analysis.md X3f-1c에 적었다).
 원점(2)과 척추 연결 확인에 명령이 몰린다 — `leads`에 `origin` 칸 · `find --spine` · `find`가 E의 points를 보이면 줄어든다(X3f-1c 도구 일).
 
 ## 다음

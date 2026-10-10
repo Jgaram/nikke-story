@@ -2,7 +2,7 @@
  * 1회독 · 2회독 기록 도구 — 기록 파일 만들기 · 검증기 · 리뷰 도구 · 진행률 · 인계 파일. 형식과 규칙은 docs/annotations.md.
  *
  *   node tools/records.mjs new ch00                   기록 파일 뼈대 — 1회독 기록이 없으면 annotations/read1/ch00.json,
- *                                                     있으면 2회독 annotations/read2/ch00.json. 세션은 SESSIONS.md 순서(R · P/M)에서
+ *                                                     있으면 2회독 annotations/read2/ch00.json. 세션은 읽기 순서(docs/history/reading.md R · P/M)에서
  *   node tools/records.mjs next [F12]                 다음 번호 (사실 F · 의문 Q · 시점 S · 되짚기 V · 정체 연결 L, 사건 F12-2, 2회독 I · E · D · U, 수동 엣지 Y)
  *   node tools/records.mjs find 기억                  사실 · 의문 · 시점 문장에서 찾기 — 이미 있는 사실인지 볼 때
  *   node tools/records.mjs check                      검증기 — 오류가 있으면 종료 코드 1. 인계 파일이 오래됐는지도 본다
@@ -171,7 +171,7 @@ switch (cmd) {
     if (ds.files.some((f) => f.data?.unit === key)) {
       if (!ds.dir2) fail(`2회독 기록 디렉터리가 없다 — 실제 기록(annotations/read1) · 예시(--example)에서만 2회독 파일을 만든다`);
       const item2 = findItem(order2, key, parts);
-      const session = opt.session ?? item2?.session ?? fail(`SESSIONS.md 2회독 순서(P · M)에서 ${key}${parts ? ` 파트 ${parts}` : ''}를 못 찾았다 — --session M03처럼 준다`);
+      const session = opt.session ?? item2?.session ?? fail(`2회독 읽기 순서(P · M)에서 ${key}${parts ? ` 파트 ${parts}` : ''}를 못 찾았다 — --session M03처럼 준다`);
       const file = path.join(ds.dir2, fileNameFor(key, parts));
       if (fs.existsSync(file)) fail(`이미 있다: ${rel(file)} — 한 단위에 2회독 파일 하나. 이어 쓰려면 그 파일을 고친다`);
       const data = {
@@ -189,7 +189,7 @@ switch (cmd) {
       break;
     }
     const item = findItem(order, key, parts);
-    const session = opt.session ?? item?.session ?? fail(`SESSIONS.md 읽기 순서에서 ${key}${parts ? ` 파트 ${parts}` : ''}를 못 찾았다 — --session R01처럼 준다`);
+    const session = opt.session ?? item?.session ?? fail(`읽기 순서에서 ${key}${parts ? ` 파트 ${parts}` : ''}를 못 찾았다 — --session R01처럼 준다`);
     const file = path.join(DIR, fileNameFor(key, parts));
     if (fs.existsSync(file)) fail(`이미 있다: ${rel(file)} — 한 단위에 파일 하나. 이어 쓰려면 그 파일을 고친다`);
     const data = { _comment: EVIDENCE_HINT, unit: key };

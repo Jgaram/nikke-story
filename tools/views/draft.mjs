@@ -102,7 +102,7 @@ export function renderReport(v, { source }) {
   for (const e of v.sceneEdges) byType.set(e.type, (byType.get(e.type) ?? 0) + 1);
 
   L.push('# 1회독 시안 — 다섯 화면에서 거꾸로 (B0a)', '');
-  L.push(`\`node tools/views/draft.mjs\`가 만든다(손으로 고치지 않는다). 입력: ${source} · SESSIONS.md R 항목 순서 · DB(글자 수 · 대상 이름).`);
+  L.push(`\`node tools/views/draft.mjs\`가 만든다(손으로 고치지 않는다). 입력: ${source} · docs/history/reading.md R 항목 순서 · DB(글자 수 · 대상 이름).`);
   L.push('무엇을 보여 줄지 · 칸의 출처 · 이 결과에서 본 빈 곳은 [docs/views.md](../../../docs/views.md). 시트는 쓰지 않았다.', '');
   L.push('## 한눈에', '');
   L.push(`- 단위 ${t.units}(파트를 나눠 읽은 단위는 하나로) · 사실 ${t.facts} · 의문 ${t.questions} · 사건 ${t.events} · 시점 ${t.times} — 기각 뺌, 확정 아닌 기록 ${t.unconfirmed}.`);
@@ -305,7 +305,7 @@ export function renderRead2Report(v1, v2, { source }) {
   const byType = (rows) => ['setup_payoff', 'callback', 'reversal'].map((k) => [k, rows.filter((r) => r.type === k).length]);
 
   L.push('# 2회독을 얹은 시안 — 1회독 + 2회독 (C1)', '');
-  L.push(`\`node tools/views/draft.mjs\`가 만든다(손으로 고치지 않는다). 입력: ${source} · 2회독 기록 · SESSIONS.md R 항목 순서(출시순 한 줄) · DB.`);
+  L.push(`\`node tools/views/draft.mjs\`가 만든다(손으로 고치지 않는다). 입력: ${source} · 2회독 기록 · docs/history/reading.md R 항목 순서(출시순 한 줄) · DB.`);
   L.push('1회독만의 시안은 [../read1/report.md](../read1/report.md), 화면 · 칸의 출처는 [docs/views.md](../../../docs/views.md). 시트는 쓰지 않았다.', '');
   L.push('## 한눈에', '');
   L.push(`- 2회독한 단위 ${read.length}/${v2.units.length}${layers.length ? ` (층 ${layers.join(' · ')})` : ''} · 원문 ${(sum(read, 'chars') / 1e4).toFixed(1)}만 자.`);

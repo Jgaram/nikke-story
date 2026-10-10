@@ -31,7 +31,7 @@
 금서고 키는 `<접두>:<금서고 파일 이름>`이 단위, 끝에 `_NN`(파일 안 순서, 0부터)을 붙이면 씬이다.
 게임 씬 ID가 아니다 — 금서고 원문에는 게임 ID가 없다. 금서고 자체 ID(`SCRIPT_ID`)는 `stories.source_ref`에 둔다.
 블라링크에 원문이 새로 들어오면 `annotations/forbidden-library-events.json`으로 이어 블라링크 쪽으로 돌아간다
-(CLAUDE.md "금서고 요청 규칙").
+(docs/data-sources.md "0. 요청 규칙").
 
 씬 ID는 **대소문자를 구분한다.** `event_BunnyX777`이 실존한다 —
 정규식을 `[a-z0-9]`로 짜면 통째로 빠진다.
@@ -382,7 +382,7 @@ DB는 다 만든 뒤 롤백 저널 모드로 바꿔 파일 하나(`-wal`/`-shm` 
 | 시트 참고 노드(`sheet:`) | 10 | 원문 없는 비교용 노드 (docs/reference-table.md) |
 
 그 밖(메인 · 이벤트 · 금서고 전부 · 호감도 스토리 · 애장품)은 범위 안이다 — 2026-09 빌드: 노드 3,999 · 대사 345,040줄.
-호감도 스토리도 범위 안이다(H 항목이 읽는다). 1차 분석(메인 · 이벤트, SESSIONS.md X)에서 호감도 스토리를 뺄 때는 `source`로 거른다.
+호감도 스토리도 범위 안이다(H 항목이 읽는다). 1차 분석(메인 · 이벤트, docs/history/analysis.md X)에서 호감도 스토리를 뺄 때는 `source`로 거른다.
 
 - 범위 밖도 **수집 · 정규화 · `read.mjs` 읽기는 그대로** 된다. `read.mjs`는 머리말에 범위 밖이라고 알려 준다.
 - `query.mjs`의 `search` · `speaker` · `speakers` · `stats`는 범위 안만 센다. `--all`이면 범위 밖도 넣는다.

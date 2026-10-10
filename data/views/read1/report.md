@@ -1,6 +1,6 @@
 # 1회독 시안 — 다섯 화면에서 거꾸로 (B0a)
 
-`node tools/views/draft.mjs`가 만든다(손으로 고치지 않는다). 입력: annotations/read1/ · SESSIONS.md R 항목 순서 · DB(글자 수 · 대상 이름).
+`node tools/views/draft.mjs`가 만든다(손으로 고치지 않는다). 입력: annotations/read1/ · docs/history/reading.md R 항목 순서 · DB(글자 수 · 대상 이름).
 무엇을 보여 줄지 · 칸의 출처 · 이 결과에서 본 빈 곳은 [docs/views.md](../../../docs/views.md). 시트는 쓰지 않았다.
 
 ## 한눈에

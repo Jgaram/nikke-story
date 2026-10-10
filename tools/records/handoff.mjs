@@ -25,7 +25,7 @@ import { pickFacts, sourceTargets } from './focus.mjs';
 
 /** 목록 · 요약 파일 하나의 상한(글자) */
 export const FILE_MAX = 20_000;
-/** 세션을 시작할 때 늘 읽는 것(HANDOFF.md + 사실 · 의문 목록)의 상한 — SESSIONS.md "컨텍스트 예산" */
+/** 세션을 시작할 때 늘 읽는 것(HANDOFF.md + 사실 · 의문 목록)의 상한 — docs/operations.md "컨텍스트 예산" */
 export const FIRST_MAX = 60_000;
 /** focus.md에 담는 사실의 글자 예산 — 위아래 한도. 실제 예산은 FIRST_MAX에서 다른 "먼저 읽을 것"을 뺀 만큼(이 범위 안) */
 export const FOCUS_MAX = 20_000;

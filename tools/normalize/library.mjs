@@ -1,7 +1,7 @@
 /**
  * 금서고(nikkeforbiddenlibrary.com) 원문 → 정규화 행 (categories · stories · lines).
  *
- * 블라링크에 없는 스토리의 보조 출처다(CLAUDE.md "금서고 요청 규칙", docs/data-sources.md "금서고").
+ * 블라링크에 없는 스토리의 보조 출처다(docs/data-sources.md "0. 요청 규칙", docs/data-sources.md "금서고").
  * 원문은 사이트 자체 형식의 텍스트이고, 하위 챕터 하나를 씬 하나로 본다:
  *
  *   @@@SCRIPT_ID: …  /  @@@SUB_TITLE: …     하위 챕터의 시작

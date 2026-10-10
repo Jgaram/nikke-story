@@ -56,7 +56,7 @@ test('read.mjs --num: 줄 앞 #N이 DB lines.seq다 (블라링크 · 금서고)'
   }
 });
 
-test('읽는 순서 — SESSIONS.md의 R 항목(출시순 한 줄)을 차례로, 모든 키가 풀린다', () => {
+test('읽는 순서 — 읽기 순서의 R 항목(출시순 한 줄)을 차례로, 모든 키가 풀린다', () => {
   const r01 = order.items.filter((it) => it.session === 'R01').map((it) => it.key);
   assert.deepEqual(r01, ['ch00', 'ch01', 'ch02', 'sub:칠리페퍼_00', 'sub:테트라_커넥트_00', 'ch03', 'sub:세르반_00', 'ch04', 'ch05', 'sub:중앙_정부_공식__00', 'ch06']);
   const bad = order.items.filter((it) => !ctx.resolve(it.key)?.inScope);
@@ -421,7 +421,7 @@ ${list(errors)}`);
   assert.ok(!w2.some((w) => w.id === 'K3' && /읽었는데/.test(w.msg)), '같은 층이면 경고하지 않는다');
 });
 
-test('2회독에서 읽은 층 — SESSIONS.md P · M의 #### N층 머리줄', () => {
+test('2회독에서 읽은 층 — docs/history/reading.md P · M의 #### N층 머리줄', () => {
   const text = ['### P · M. 2회독', '#### 1층 — …', '- [x] **P1 👤 파일럿** ch00–01 · `sub:a_00` — 1만 자', '- [x] **M01** `sub:a_01` — 1만 자',
     '#### 2층 — …', '- [ ] **M02** `event_x` `char:10` — 2만 자', '### X. 분석', '- [ ] **M99** `char:11` — 머리줄 밖'].join('\n');
   const r = parseReadLayers(text);

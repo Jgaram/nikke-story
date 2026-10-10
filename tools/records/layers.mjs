@@ -15,7 +15,7 @@
 import { GRADES, LAYERS, isRecord, spineUnits } from './model.mjs';
 import { kindOfKey } from './order.mjs';
 
-/** 이벤트 유실물 → 그 이벤트 (SESSIONS.md 순서에서 이벤트 바로 뒤에 읽는다) */
+/** 이벤트 유실물 → 그 이벤트 (읽기 순서에서 이벤트 바로 뒤에 읽는다) */
 export const ERELIC_EVENT = {
   'erelic:white_memory': 'event_overzone',
   'erelic:red_ash_lost': 'event_redash',
@@ -64,7 +64,7 @@ export function recordCounts(ds) {
 /**
  * 읽기 단위마다 등급 · 층
  * @param {ReturnType<import('./model.mjs').loadDataset>} ds
- * @param {{ items: {key:string}[] }} order 1회독 순서(SESSIONS.md R) — 단위 목록과 읽는 차례
+ * @param {{ items: {key:string}[] }} order 1회독 순서(docs/history/reading.md R) — 단위 목록과 읽는 차례
  * @returns {{ units: object[], byUnit: Map<string, object>, missing: string[], doubled: string[] }} missing: 1회독 기록이 있는데 판정이 없는 메인 밖 단위
  *   units[i] = { key, kind, order, records, judgment(후보 객체|null), grade, basis, ruleLayer, layer, status, spine } — spine: 척추 단위(채점 밖, 1층)
  */

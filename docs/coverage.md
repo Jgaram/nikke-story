@@ -176,7 +176,7 @@ CDN에 파일이 없는 씬 43개가 있고 전부 콜라보 이벤트다
 Second Affection / WORDLESS / MUDFISH / EDEN SPEAR / PRETTY STAR 5건(시트 표기는 EDEN SPHERE).
 `event_*`, `d_side_*`, `d_sub_*` 패턴으로 추정 접근을 시도했으나 전부 404다.
 Shifty's Pad에 사이드 스토리 섹션 자체가 없다.
-→ 금서고에서 5건 전부 받았다(2026-09-28). 키 `side:…`. 공지 출시일로 메인 챕터 사이에 끼워 읽는다(SESSIONS.md).
+→ 금서고에서 5건 전부 받았다(2026-09-28). 키 `side:…`. 공지 출시일로 메인 챕터 사이에 끼워 읽는다(docs/history/reading.md).
 
 ### 돌발 (✅) — 시트에 없지만 데이터는 있다
 `sudden_list.json` 27카테고리 / 301씬. **전초기지 건물별 대화**다:

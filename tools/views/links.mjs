@@ -5,7 +5,7 @@
  *   node tools/views/links.mjs --example  예시 기록(tests/fixtures/read1)으로 보고서만 찍는다
  *   조회: node tools/query.mjs links <씬 | 단위> [--type character] [--min 2]
  *
- * 엣지는 모두 씬 → 씬이고 방향은 읽는 순서(출시순 한 줄 — SESSIONS.md R)다. 단위 → 단위는 (from 단위, to 단위, 타입)마다 센 것(같은 단위 안은 뺀다).
+ * 엣지는 모두 씬 → 씬이고 방향은 읽는 순서(출시순 한 줄 — docs/history/reading.md R)다. 단위 → 단위는 (from 단위, to 단위, 타입)마다 센 것(같은 단위 안은 뺀다).
  * 출처 다섯 (규칙은 모두 기계적이다 — 해석은 기록 · 수동 엣지 파일에 이미 있다):
  *   게임     DB edges(빌드가 원본에서 만든다) — prereq(호감도 스토리 조건 · 빠진 조건 번호 순 추정) · character(애장품 소유). 시트 엣지(sheet)는 싣지 않는다
  *   sequel   키 · 게임 순서(auto) — 메인 다음 챕터(번호 순) · 서브퀘스트 다음 편(`sub:<이름>_NN` → NN+1) · 유실물 전 → 후(`…-전` → `…-후`) ·

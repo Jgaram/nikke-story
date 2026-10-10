@@ -17,7 +17,7 @@ const SECTION_ORDER = {
   facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, edges: 14, closures: 15, merges: 16,
 };
 
-/** 순서 안의 자리 — SESSIONS.md 읽기 순서, 없으면 뒤로. 파트가 안 맞으면(2회독은 파트를 다르게 묶기도 한다) 그 단위의 첫 자리 */
+/** 순서 안의 자리 — 읽기 순서, 없으면 뒤로. 파트가 안 맞으면(2회독은 파트를 다르게 묶기도 한다) 그 단위의 첫 자리 */
 export function orderIndex(order, unit, parts) {
   if (!unit) return Number.MAX_SAFE_INTEGER;
   return (findItem(order, unit, parts) ?? order.items.find((it) => it.key === unit))?.index ?? Number.MAX_SAFE_INTEGER - 1;
@@ -609,7 +609,7 @@ const tallyText = (t) =>
   `${t.보류 ? `(보류 ${t.보류})` : ''} · 검토 ${pct(t.done, t.all)}`;
 
 /**
- * 단위별 진행률. 순서(SESSIONS.md)의 항목마다 기록 파일이 있는지와 후보 검토 상태
+ * 단위별 진행률. 순서(읽기 순서)의 항목마다 기록 파일이 있는지와 후보 검토 상태
  * @param {{ all?: boolean }} opts all이 아니면 기록이 있는 세션과 다음 세션만
  */
 export function progressReport(ds, ctx, order, { all = false } = {}) {
@@ -691,7 +691,7 @@ export function progressReport(ds, ctx, order, { all = false } = {}) {
 
 
 /**
- * 2회독 진행률 — 2회독 순서(SESSIONS.md P · M)의 항목마다 2회독 파일이 있는지와 기록 수 · 검토 상태, 바로잡기로 더한 1회독 항목 수
+ * 2회독 진행률 — 2회독 순서(docs/history/reading.md P · M)의 항목마다 2회독 파일이 있는지와 기록 수 · 검토 상태, 바로잡기로 더한 1회독 항목 수
  * @param {{ items: object[], sessions: object[] }} order2 loadOrder(READ2_PREFIXES)
  */
 /**

@@ -105,7 +105,7 @@ node tools/site/serve.mjs --port 8765   # 로컬 확인용 정적 서버 → htt
 ```
 
 블라링크에 없는 스토리(사이드 스토리 · 서브퀘스트 · 유실물 · 이벤트 유실물 · 최근 이벤트)는 팬 사이트 **금서고**에서
-보조로 받는다(`tools/forbidden-library/fetch.mjs`, 규칙은 CLAUDE.md "금서고 요청 규칙"). 블라링크에 들어오면 블라링크로 돌아간다.
+보조로 받는다(`tools/forbidden-library/fetch.mjs`, 규칙은 docs/data-sources.md "0. 요청 규칙"). 블라링크에 들어오면 블라링크로 돌아간다.
 
 현재 규모:
 
@@ -118,20 +118,20 @@ node tools/site/serve.mjs --port 8765   # 로컬 확인용 정적 서버 → htt
 | 분석 범위 | 노드 3,999 · 대사 345,040줄 (범위 밖: 돌발 300씬 — 엘리베이터 첫 스토리만 넣는다 · 시트 참고 노드 10) |
 | 인물 사전 | 대상 365 (니케 156 · 인물 200 · 랩쳐 9) · 범위 안 이름표 859종 전부 분류 · 정체 연결 후보 5 |
 
-할 일 전체는 [TODO.md](TODO.md), 세션별 작업 순서는 [SESSIONS.md](SESSIONS.md) 참고.
-새 세션에서 "다음 일"이라고 하면 SESSIONS.md의 첫 미완료 항목을 한다.
+남은 일은 [SESSIONS.md](SESSIONS.md), 남은 로드맵 · 결정은 [TODO.md](TODO.md), 운용(지시 세션 · "다음 일" · 관리자)은 [docs/operations.md](docs/operations.md).
+새 세션에서 "다음 일"이라고 하면 SESSIONS.md의 첫 미완료 항목을 하고, 다른 일을 시키면 그 일을 한다. 지난 세션 기록은 [docs/history/](docs/history/).
 
 ## 디렉터리
 
 ```
 .claude/       훅 — 단일 브랜치(main) 강제(규칙은 CLAUDE.md "브랜치 규칙"), 세션 시작 시 DB 자동 생성
-docs/          조사 기록, 스키마 정의
+docs/          문서 — 운용 · 도구 · 기록 형식 · 화면 · 스키마 · 조사 기록, history/ = 지난 세션 기록
 tools/normalize/ 정규화 (스키마 → JSON → SQLite)
 tools/query.mjs  질의 CLI (검색 · 통계 · 관계)
 tools/read.mjs   원문 읽기 CLI — 챕터·이벤트·돌발·인물 단위, 파트 분할, --num 줄 번호
 tools/records.mjs 1회독 기록 도구 — 뼈대 · 검증기 · 리뷰 · 진행률 · 인계 파일 (records/에 형식 · 검증 · 리뷰 모듈)
 tools/lib/       read.mjs · records.mjs 공유 — 줄 표기(render.mjs) · 단위 키(units.mjs)
-tools/forbidden-library/  금서고 수집기 — 블라링크에 없는 스토리 (규칙은 CLAUDE.md "금서고 요청 규칙")
+tools/forbidden-library/  금서고 수집기 — 블라링크에 없는 스토리 (규칙은 docs/data-sources.md "0. 요청 규칙")
 tools/blabla/  blablalink CDN 수집기
                obfuscate.mjs  경로 난독화 해석
                client.mjs     캐시·동시성·재시도·매니페스트
