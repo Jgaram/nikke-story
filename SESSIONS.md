@@ -65,6 +65,7 @@
       > `node tools/synopsis.mjs progress W9x`로 남은 단위를 보고, 단위마다(작은 단위는 몇 개씩) `new <단위 …>` → 개요 쓰기 → `check <단위 …>` → 입력과 대조해 스스로 검토 → `set <단위 …> 확정 --session W9x --note "…"`.
       > 쓰는 파일은 이 묶음의 `annotations/synopsis/*.json`뿐이다 — git(add · commit · push) · SESSIONS.md · site/data/ · 다른 파일은 손대지 않고, DB를 다시 만들지 않는다.
       > 검사의 스포일러 경고가 낱말 속 글자(예: 엘리베이터 속 베이)나 게임 용어처럼 이름이 아닌 것에 걸리면 문장을 비틀지 말고 그대로 두고 `--note`에 까닭을 적는다.
+      > 임시 파일은 scratchpad 안 `W9x/` 폴더에만 둔다(에이전트끼리 scratchpad를 같이 쓴다).
       > 원문은 요약이 모호할 때만 그 씬을(`read.mjs <씬> --num`) 합쳐 2만 자 안쪽. 사용자에게 묻지 않는다. 끝나면 10줄 안쪽으로 보고: 확정 수 · 남은 단위 · 경고를 남긴 단위와 까닭 · 지시에 없던 판단.
     - 첫 물결(W9a–W9e, 2026-10-10): 다섯 묶음 모두 오탐에 걸려 표현을 비틀었다 → 검사 도구가 낱말 속 이름 · 흔한 낱말 · 게임 용어(E2 크리스탈 · X1 온리 원)를 거르도록 고침(docs/annotations.md "공개 개요"). 지시문에 오탐 한 줄을 더함. 표본(ch19 · ch33 · ch46)은 문체 · 분량 · 스포일러 모두 괜찮았다.
     - **관리자 — 에이전트 하나가 끝날 때마다**: `progress W9x` · `check W9x의 단위`로 확인 → `node tools/site/export.mjs --only synopsis` → 그 묶음의 개요 + `site/data/` 커밋 · push →
