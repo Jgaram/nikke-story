@@ -170,6 +170,8 @@ function textProblems(text, { part, unit, units, range, max, sentences, laterHin
     const hits = [...new Set(plain.match(f.re) ?? [])];
     if (hits.length) errors.push(`화면 글에 넣지 않는 꼴(${f.what}) — ${hits.slice(0, 3).join(' · ')}`);
   }
+  const brackets = [...new Set(text.match(/\[[^\]]*\]/g) ?? [])];
+  if (brackets.length) errors.push(`기록 표기 괄호 — ${brackets.slice(0, 3).join(' · ')} (괄호를 걷고 그냥 쓴다)`);
   const later = laterNames(text, unit, units);
   if (later.length) errors.push(`뒤 스토리 이름 — ${later.join(' · ')} (${laterHint})`);
   const judge = [...new Set(text.match(JUDGE_WORDS) ?? [])];
