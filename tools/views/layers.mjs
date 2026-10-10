@@ -25,7 +25,7 @@
  *      (나) · (다) 마무리 기록 O(연작 · 갈등 · 관계 · 성장 — 쌓인 자리에 척추가 있고 끝이 여기). (가)는 ①의 in 회수 · in 암시와 겹친다 — 오래 쌓였다는 표시다.
  *      O는 확정만 시안에 쓴다(후보는 보이기만). 지휘관과의 관계 마무리는 표시만 — 지휘관은 어디에나 있다(카드 3절 5)
  *   ⑧ 감정 재료(X3g — 카드 3절 "결정적 순간", emotionSignals): 척추 인물의 결정적 순간 후보 — 이 단위의 인물 변화 D(신념 · 소속 · 신체 · 기억 · 관계)와
- *      여기서 끝나는 마무리 기록 O(관계 · 갈등 · 성장, 확정). 주인이 주요 인물(annotations/majors.json 확정 — X3g-1b)이면 필수까지(from = 주요 인물의 from), 척추 인물이면 보강까지(from = 척추 사실 3건째 자리).
+ *      여기서 끝나는 마무리 기록 O(관계 · 갈등 · 성장, 확정, 척추가 쌓은 것). 주인이 주요 인물(annotations/majors.json 확정 — X3g-1b)이면 필수까지(from = 주요 인물의 from), 척추 인물이면 보강까지(from = 척추 사실 3건째 자리).
  *      지휘관과의 관계는 뺀다. 같은 인물(people.json same_as 확정)은 한 사람으로 센다. 결정적인지 · 여기에만 장면으로인지는 판정이 본다 — 이것은 거르기와 단서(척추의 같은 줄)뿐.
  *      시안(draft)에는 쓰지 않는다 — 이해 등급과 따로 보고 둘 가운데 높은 쪽이 등급이다
  * 시안 규칙(X3f — 등급 넷): 뼈대 줄기의 메인 연결이 out · 전부 회수 · 뒤집음(2회독은 out 재언급 · in 암시)이면 필수 · 메인 연결이 있으면 보강 ·
@@ -251,14 +251,15 @@ export function emptySignal(unit, kind = kindOfKey(unit)) {
 
 /**
  * ⑧ 감정 재료(X3g — docs/importance.md 3절 "결정적 순간") — 척추 밖 단위마다 척추 인물의 결정적 순간 후보를 거른다. 결정적인지 · 여기에만 장면으로인지는 판정이 본다.
- *   후보 = 이 단위의 인물 변화 D(act 변화, 측면 EMOTION_ASPECTS) · 이 단위에서 끝나는 마무리 기록 O(확정, 종류 EMOTION_CLOSURES — about의 인물마다).
+ *   후보 = 이 단위의 인물 변화 D(act 변화, 측면 EMOTION_ASPECTS) · 이 단위에서 끝나는 마무리 기록 O(확정, 종류 EMOTION_CLOSURES, 쌓인 자리에 척추 — about의 인물마다).
+ *   척추 밖에서만 쌓인 O는 거른다(X3g-2 — 카드 ① O 줄: 그 끝이 결정적인지는 닫는 D로 본다, 닫는 D는 D 후보로 따로 든다).
  *   주인 = D의 person · O의 about. 주요 인물(annotations/majors.json 확정 — X3g-1b, 주역 명단과 따로)이면 필수까지 · from = 주요 인물의 from,
  *   척추 인물(척추 사실 정의 MAIN_PERSON_FACTS건 이상에 about, 지휘관 빼고)이면 보강까지 · from = 그 인물의 척추 사실 MAIN_PERSON_FACTS건째가 든 척추 단위. 그 밖 인물은 거른다.
  *   지휘관과의 관계(관계 D의 person · with, 관계 · 갈등 O의 about에 지휘관)는 뺀다 — 지휘관 자신의 신념 · 기억 · 소속 · 신체 변화는 명단대로(지금 주요 인물).
  *   같은 인물(people.json same_as 확정)은 한 사람으로 센다 — 이명 ID의 변화도 주요 인물 · 척추 인물의 것.
- *   단서(여기에만 — 판정이 문장을 맞댄다): same = 척추의 같은 줄(같은 인물 · 같은 측면, 관계면 같은 상대의 D — 기준 · 변화, 가까운 자리 순),
+ *   단서(여기에만 — 판정이 문장을 맞댄다): same = 척추의 같은 줄(같은 인물 · 같은 측면, 관계면 같은 상대의 D — 기준 · 변화, 가까운 SAME_LINE개) · sameTotal = 그 전부의 수,
  *   pair = 관계 D · 관계 · 갈등 O에서 척추가 그 둘을 다룬 기록 수(둘이 about인 척추 사실 + 척추의 둘 사이 관계 D) — '큰 관계'의 단서,
- *   spineBuilt = O의 쌓인 자리에 척추가 있다(그러면 이해 기준 4)의 빌드업의 끝과 겹친다).
+ *   spineBuilt = O의 쌓인 자리에 척추가 있다(O 후보는 늘 그렇다 — 이해 기준 4)의 빌드업의 끝과 겹친다).
  * @param {ReturnType<import('../records/model.mjs').loadDataset>} ds
  * @param {{ isMain: (u: string) => boolean, orderOf: Map<string, number>, factDefs: object[] }} ctx layerSignals 안의 것
  * @returns {Map<string, { moments: object[], grade: string|null, from: string|null }>} 단위 → 감정 재료. moments는 주요 인물 먼저 · 기록 ID 순
@@ -295,9 +296,10 @@ export function emotionSignals(ds, { isMain, orderOf, factDefs }) {
   // 척추의 인물 변화 — 같은 줄 · 둘 사이 관계의 단서
   const spineChanges = liveAll.filter((c) => c.read2 && c.kind === 'change' && c.unit && isMain(c.unit) && orderOf.has(c.unit))
     .map((c) => ({ id: c.id, unit: c.unit, order: orderOf.get(c.unit), g: gk(c.obj?.person), aspect: c.obj?.aspect, with: persons(c.obj?.with).map(gk) }));
+  const sameAll = (g, aspect, withs) => spineChanges.filter((x) => x.g === g && x.aspect === aspect && (aspect !== '관계' || x.with.some((w) => withs.includes(w))));
   const sameLine = (g, aspect, withs, unit) => {
     const at = orderOf.get(unit) ?? 0;
-    return spineChanges.filter((x) => x.g === g && x.aspect === aspect && (aspect !== '관계' || x.with.some((w) => withs.includes(w))))
+    return sameAll(g, aspect, withs)
       .sort((a, b) => Math.abs(a.order - at) - Math.abs(b.order - at) || compareIds(a.id, b.id)).slice(0, SAME_LINE)
       .sort((a, b) => a.order - b.order || compareIds(a.id, b.id)).map((x) => `${x.id}@${x.unit}`);
   };
@@ -318,7 +320,7 @@ export function emotionSignals(ds, { isMain, orderOf, factDefs }) {
     const who = ownerOf(g);
     if (!who) continue;
     add(c.unit, { record: c.id, type: 'D', person: o.person, ...who, aspect: o.aspect, with: Array.isArray(o.with) ? o.with : [], text: `${o.before ?? ''} → ${o.after ?? ''}`, basis: c.id,
-      same: sameLine(g, o.aspect, withs, c.unit), pair: o.aspect === '관계' ? pairCount(g, withs) : null, spineBuilt: null });
+      same: sameLine(g, o.aspect, withs, c.unit), sameTotal: sameAll(g, o.aspect, withs).length, pair: o.aspect === '관계' ? pairCount(g, withs) : null, spineBuilt: null });
   }
   for (const c of ds.candidates) {
     if (c.kind !== 'closure' || c.status !== '확정') continue;
@@ -329,6 +331,8 @@ export function emotionSignals(ds, { isMain, orderOf, factDefs }) {
     if (o.type !== '성장' && gs.includes(CMD)) continue;
     const builtUnits = (Array.isArray(o.built) ? o.built : []).map((b) => byIdAll.get(b)?.unit ?? b);
     const spineBuilt = builtUnits.some((u) => typeof u === 'string' && isMain(u));
+    // 척추 밖에서만 쌓인 O는 그 자체로 결정적이 아니다 — 닫는 D를 D 줄로 본다(카드 3절 ① O 줄, X3g-2). 닫는 D는 이 단위의 D 후보로 따로 든다
+    if (!spineBuilt) continue;
     for (const p of about) {
       const g = gk(p);
       const who = ownerOf(g);
@@ -474,7 +478,7 @@ export function renderSignals(s, byId, { width = 110, judgment = null, texts = 6
         m.type === 'O' && m.basis ? `닫는 기록 ${m.basis}` : '',
         m.spineBuilt ? '척추가 쌓음(이해 4)과 겹침)' : '',
         m.pair != null ? `척추의 둘 ${m.pair}` : '',
-        m.same.length ? `척추 같은 줄 ${m.same.join(' · ')}` : '',
+        m.same.length ? `척추 같은 줄 ${m.same.join(' · ')}${m.sameTotal > m.same.length ? ` (가까운 ${m.same.length} / ${m.sameTotal} — 전부는 query.mjs chrono)` : ''}` : '',
       ].filter(Boolean).join(' · ');
       L.push(`   ${cut(`${head}: ${m.text}`)}${tail ? ` | ${tail}` : ''}`);
     }

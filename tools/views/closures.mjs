@@ -220,7 +220,10 @@ export function draftClosure(ch, id) {
 /** 사슬 하나 — 사람이 보는 줄들(review · closures 명령) */
 export function renderChain(ch, { title = (u) => '' } = {}) {
   const L = [];
-  L.push(`## ${ch.key}${ch.closure ? ` — ${ch.closure.id} ${ch.closure.status}` : ' — (기록 없음)'} · 끝 ${ch.end}${ch.endSpine ? '(척추)' : ''} · ${ch.span}칸${ch.spineBuilt ? ' · 척추가 쌓음' : ''}`);
+  // 기록(O)의 끝이 사슬 초안의 끝과 다르면 기록의 끝을 앞에 — 판정은 기록의 끝을 본다(X3g-2에서 판정자가 헷갈림)
+  const recEnd = ch.closure?.obj?.end;
+  const end = recEnd && recEnd !== ch.end ? `${recEnd}(기록) · 사슬 초안 끝 ${ch.end}${ch.endSpine ? '(척추)' : ''}` : `${ch.end}${ch.endSpine ? '(척추)' : ''}`;
+  L.push(`## ${ch.key}${ch.closure ? ` — ${ch.closure.id} ${ch.closure.status}` : ' — (기록 없음)'} · 끝 ${end} · ${ch.span}칸${ch.spineBuilt ? ' · 척추가 쌓음' : ''}`);
   if (ch.type === '연작') L.push(`  편: ${[...ch.built, ch.end].map((u) => `${u}${title(u) ? ` ${title(u)}` : ''}`).join(' → ')}`);
   for (const r of ch.records) L.push(`  ${r.id} ${r.act} ${r.unit}@${r.tick ?? '?'}${r.with ? ` ${r.person}→${r.with}` : r.aspect ? ` ${r.aspect}` : ''} — ${r.text}`);
   return L.join('\n');

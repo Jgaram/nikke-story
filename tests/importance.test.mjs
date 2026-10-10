@@ -175,6 +175,7 @@ test('감정 재료 ⑧(X3g) — 주요 인물 · 척추 인물의 변화 D · �
       const c = byId.get(m.record);
       assert.ok(c.kind === 'closure' && c.status === '확정' && c.obj.end === m.unit && EMOTION_CLOSURES.includes(c.obj.type), `${m.record} — 여기서 끝나는 확정 O(연작 빼고)`);
       assert.ok(c.obj.type === '성장' || !c.obj.about.includes('person:지휘관'), `${m.record} — 지휘관과의 관계 · 갈등 마무리는 뺀다`);
+      assert.equal(m.spineBuilt, true, `${m.record} — 척추 밖에서만 쌓인 O는 뺀다(X3g-2, 닫는 D로 본다)`);
     }
   }
   // 주요 인물 = annotations/majors.json 확정 항목(X3g-1b — 주역 명단과 따로)
@@ -193,6 +194,9 @@ test('감정 재료 ⑧(X3g) — 주요 인물 · 척추 인물의 변화 D · �
   assert.ok(d418.same.length && d418.same.every((x) => /^D\d+@/.test(x)), '척추의 같은 줄 단서');
   const o12 = sa.moments.find((m) => m.record === 'O12');
   assert.deepEqual([o12.type, o12.basis, o12.spineBuilt], ['O', 'D417', true]);
+  // 척추 밖에서만 쌓인 O(아르카나 성장 O205 — 호감도 · 이벤트에서만 쌓임)는 빠지고 닫는 D2210만 남는다
+  const arc = sig.get('char:583').emotion.moments.map((m) => m.record);
+  assert.ok(arc.includes('D2210') && !arc.includes('O205'), arc.join(' '));
   assert.deepEqual(emptySignal('char:1').emotion, { moments: [], grade: null, from: null });
   assert.equal(layerSignals(ds, buildRead1Views(ds, ctx, order)).get('side:second_affection').emotion.moments.length, 0, '2회독 없이는 모으지 않는다');
 });
