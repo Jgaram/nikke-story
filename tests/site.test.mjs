@@ -209,6 +209,6 @@ test('정적 서버 — MIME · no-cache · 404 · 루트 밖 거절', async () 
 test('스토리 종류 아이콘 — style.css가 가리키는 그림이 site/img/kinds/에 있다', () => {
   const css = fs.readFileSync(path.join(ROOT, 'site/style.css'), 'utf8');
   const rules = [...css.matchAll(/\.kind-icon\[data-kind="(\w+)"\][^}]*url\(([^)]+)\)/g)];
-  assert.deepEqual(rules.map((m) => m[1]).sort(), ['elevator', 'erelic', 'event', 'relic', 'side', 'sub']);
+  assert.deepEqual(rules.map((m) => m[1]).sort(), ['elevator', 'episode', 'erelic', 'event', 'relic', 'side', 'sub']);
   for (const [, kind, url] of rules) assert.ok(fs.existsSync(path.join(ROOT, 'site', url)), `${kind}: ${url} 없음`);
 });

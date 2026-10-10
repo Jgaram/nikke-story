@@ -120,3 +120,4 @@
 - 정한 것(Claude): 사이드는 갈래 그림, 이벤트는 별, 유실물 두 갈래는 같은 마커 모양을 색으로 가른다. 줄에 그림이 있으면 종류 글자는 뺀다(이름은 툴팁 · 칩).
 - 반영: docs/views.md "스토리 종류 아이콘" · 감상 순서 행, docs/data-sources.md 11절, `site/img/kinds/`, `ui.kindIcon`, style.css, site/tabs/order.*
 - 이어서(사용자): 줄거리가 나오는 리더 머리에도 — 호감도처럼 다른 종류도 그림. → 같은 문서 "스토리 종류 아이콘" 쓰는 곳, site/lib/reader.js
+- 이어서(사용자): 종류 칩의 호감도에도 그림 — 사진 없는 프로필 같은 단색 사람 모양. → 같은 문서, `site/img/kinds/episode.svg`
