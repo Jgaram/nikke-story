@@ -111,6 +111,7 @@ function meetsOf({ all, units, placeOf, sceneUnit, names }) {
     const meet = meetList(allUnits, unitMap);
     const nameMeet = meetList(nameUnits, unitMap);
     out.set(t.id, {
+      named: allUnits,
       meet, aliases: aliases.length ? aliases : undefined,
       name_meet: meet && nameMeet && String(nameMeet) !== String(meet) ? nameMeet : undefined,
       name_never: meet && !nameMeet ? true : undefined,
@@ -420,7 +421,9 @@ export async function run(ctx) {
     }
   }
 
-  ctx.common = { units, ticks, scenes, records: [...records1, ...records2], threads, relations, targets, slips, scenesOf, placeOf, kindOf: kindOfKey };
+  // 대상마다 이름(표준명 · 다른 이름 · 그 이름이 든 이름표)이 쓰인 스토리 — '???'로만 말한 스토리를 가리는 데(W15f — persons.mjs hid)
+  const namedUnits = new Map([...meets].map(([id, m]) => [id, m.named]));
+  ctx.common = { units, ticks, scenes, records: [...records1, ...records2], threads, relations, targets, slips, scenesOf, placeOf, kindOf: kindOfKey, namedUnits };
   return {
     files: {
       'units.json': units, 'ticks.json': ticks, 'scenes.json': scenes, 'records.json': records1, 'records2.json': records2,

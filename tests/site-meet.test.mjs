@@ -105,3 +105,21 @@ test('fmt.sceneTitle · sceneName — 장면 제목은 그 스토리를 봤을 �
   assert.equal(fmt.sceneLabel('b'), '인자 살해자', '전부 보기면 제목');
   fmt.useReading(null);
 });
+
+test('이름 없이 나온 등장(W15f) — persons-detail hid · persons-pairs 일곱째 칸 · links hid는 그 스토리에 이름이 안 쓰인 등장만', { skip: !has }, () => {
+  const det = new Map(read('persons-detail.json').map((p) => [p.id, new Map(p.units.map((u) => [u.unit, u]))]));
+  // 그레이브는 CH.28 · 29에서 '???'로만 말한다 — 이름이 나온 CH.30부터 등장으로 센다
+  assert.equal(det.get('person:그레이브').get('ch28')?.hid, 1);
+  assert.equal(det.get('person:그레이브').get('ch30')?.hid, undefined);
+  assert.equal(det.get('person:라피').get('ch01')?.hid, undefined);
+  const targets = new Map(read('targets.json').map((t) => [t.id, t]));
+  // hid인 스토리는 meet(이름이 쓰인 스토리 — 체크 칸이 아닌 첫 곳까지)에 들지 않는다
+  for (const [id, us] of det) for (const [u, x] of us) if (x.hid) assert.ok(!(targets.get(id)?.meet ?? []).includes(u), `${id} ${u}`);
+  for (const pr of read('persons-pairs.json')) for (const b of pr.by) if (b.length === 7) assert.equal(b[6], 1);
+  const links = read('links.json');
+  for (const e of links.edges) if (e.hid) {
+    assert.ok(e.type === 'character' || e.type === 'keyword', `${e.from} ${e.to} ${e.type}`);
+    for (const t of e.hid) assert.ok(e.targets.includes(t));
+  }
+  assert.ok(links.edges.some((e) => e.hid?.includes('person:슈엔') && (e.from === 'ch08' || e.to === 'ch08')));
+});

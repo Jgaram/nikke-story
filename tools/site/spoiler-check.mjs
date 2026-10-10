@@ -6,6 +6,7 @@
  *   node tools/site/spoiler-check.mjs --t 1,11 --tabs threads,world --out /tmp/spoil.txt
  *   CHROME=/path/to/chromium node tools/site/spoiler-check.mjs
  *   node tools/site/spoiler-check.mjs --root <사이트 폴더>      # site/ 말고 다른 사본을 띄운다(고치기 전 · 뒤 비교)
+ *   node tools/site/spoiler-check.mjs --skip                   # 체크 칸 스토리를 다 끈 독자(메인만 — W15f)
  *
  * 무엇을 '새는 것'으로 세나(화면의 보이는 글자 — #main · #reader · 검색 결과의 innerText, 보이는 SVG 글자, title · aria-label):
  *   줄거리   안 본 스토리(R.seen 거짓)의 한 줄 소개(synopsis.json logline) 앞 20자.
@@ -22,6 +23,9 @@
  *   대상     아직 이름이 안 나온 인물 · 항목(fmt.met 거짓)의 표준명(W15b) — 앞 글자가 낱말 안이면 세지 않는다. 스토리 제목과 같은 이름(호감도)은 --titles일 때만.
  *   다른이름 나온 대상의 다른 이름 가운데 그 자리에서 모르는 것(fmt.aliasesAt 밖, 3자 이상).
  *   시대     드러나기 전 시대 기준점(chrono.json points[].meet)의 이름.
+ *   결말     떡밥 탭 흐름(p.j)의 결말 · 함께 맺음 줄 가운데 이 떡밥에 든다는 것을 아직 모르는 것(fmt.threadTies units 밖)의 문장 앞 16자(W15f).
+ *   떡밥갈래 연결 탭 떡밥 필터(p.th · 가운데 p.c)에서 이웃으로 보이는 스토리인데, 가운데와의 그 떡밥 선에 아는 기록(threadTies ids)이 하나도 없는 것(W15f).
+ *   이름없음 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)이 리더 '나오는 인물' · 인물 탭 등장 목록(p.who)에 보이는 것(W15f).
  *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
  *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
  *   본 스토리의 장면 제목, fmt *_HELP 도움말)을 지우고 본다.
@@ -45,6 +49,7 @@ const { values: args } = parseArgs({
     show: { type: 'string', default: '5' },
     titles: { type: 'boolean', default: false },
     root: { type: 'string' },
+    skip: { type: 'boolean', default: false },
   },
 });
 const CHROME = process.env.CHROME || ['/opt/pw-browsers/chromium', '/usr/bin/chromium', '/usr/bin/google-chrome'].find((p) => fs.existsSync(p));
@@ -57,6 +62,12 @@ const READER_SELS = ['thread:J1', 'thread:J3', 'thread:J5', 'person:person:모�
 const SEARCHES = ['모더니아', '릴리스', '레드 후드', '크라운', '퀸', '그레이브', '바이스리터', '마리안', '지휘관'];
 // 떡밥 탭 흐름을 따로 열어 볼 떡밥(p.j) — 판이 있는 뼈대 · 보강 몇(W15d 묶음 · 판 점검). 기본 떡밥 탭은 J1
 const THREAD_TAB = ['J3', 'J7', 'J21'];
+// 연결 탭 떡밥 필터(p.th) × 가운데(p.c) — 선의 떡밥 갈래가 묶음을 타나(W15f)
+// (고치기 전 새던 곳 — J16 ch01–ch04 · J15 ch06–ch12 · J5 ch14–ch17 · J10 MUDFISH · J18 FOOTSTEP–ch39)
+const LINKS_TH = [['J1', 'ch05'], ['J16', 'ch01'], ['J15', 'ch12'], ['J5', 'ch17'], ['J10', 'side:mudfish'], ['J18', 'ch39']];
+// 인물 탭 등장 목록 · 리더 '나오는 인물' — 이름 없이('???') 나온 스토리가 그 인물의 등장으로 보이나(W15f)
+const PERSONS_WHO = ['person:그레이브', 'person:슈엔', 'person:스노우_화이트'];
+const READER_UNITS = ['unit:ch28', 'unit:ch29', 'unit:ch08', 'unit:ch04'];
 
 // ── 화면 안에서 도는 점검 ──
 const PROBE = async (skipMain, titles, focus) => {
@@ -170,6 +181,51 @@ const PROBE = async (skipMain, titles, focus) => {
       if (i >= 0) hits.push(`묶음 ${focus} ${r.id} … ${around(i, 16)}`);
     }
   }
+  // 결말(W15f) — 떡밥 탭 흐름의 결말 · 함께 맺음 줄은 그 결말이 이 떡밥에 든다는 것을 알 때만(fmt.threadTies units — 떡밥 전체를 알거나 결말 스토리에 아는 단계 · 복선)
+  if (focus && idx.threads.has(focus) && !R.all && document.querySelector('.thr-flow')) {
+    const map = await get('threads-map');
+    const ties = fmt.threadTies(idx.threads.get(focus), (await get('threads-flow'))[focus] ?? { roots: [] }, R);
+    for (const c of [...map.closures, ...map.merges]) {
+      if (!c.threads?.includes(focus) || !R.seen(c.end)) continue;
+      if (ties.whole || [c.end, ...(c.built ?? [])].some((u) => ties.units.has(u))) continue;
+      const k = ((c.members ? c.title : fmt.prose(c.text)) || '').slice(0, 16); // 함께 맺음 줄은 제목, 결말 줄은 문장을 단다
+      const i = k.length >= 8 ? all.indexOf(k) : -1;
+      if (i >= 0) hits.push(`결말 ${focus} ${c.id} … ${around(i, 16)}`);
+    }
+  }
+  // 떡밥갈래(W15f) — 연결 탭 떡밥 필터(p.th)에서 이웃으로 보이는 스토리는, 가운데와의 선 가운데 그 떡밥의 아는 기록(threadTies ids)이 든 것이 있어야 한다
+  const lk = document.querySelector('.lk-node.is-active, .lk-node') ? (await import('/lib/state.js')).param('links', 'th') : null;
+  if (lk && !R.all && idx.threads.has(lk)) {
+    const links = await get('links');
+    const ties = fmt.threadTies(idx.threads.get(lk), (await get('threads-flow'))[lk] ?? { roots: [] }, R);
+    const center = (await import('/lib/state.js')).param('links', 'c');
+    for (const card of document.querySelectorAll('#main .lk-node[data-key]')) {
+      const k = card.dataset.key;
+      if (!center || k === center) continue;
+      const es = links.edges.filter((e) => ((e.from === center && e.to === k) || (e.to === center && e.from === k)) && (e.threads ?? []).includes(lk));
+      if (!es.length) continue;
+      if (!es.some((e) => ties.whole || (e.records ?? []).some((r) => ties.ids.has(r)))) hits.push(`떡밥갈래 ${lk} ${center}–${k}`);
+    }
+  }
+  // 이름없음(W15f) — 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)을 그 인물의 등장으로 낸 것: 리더 '나오는 인물' · 인물 탭 등장 목록
+  if (!R.all) {
+    const det = await get('persons-detail');
+    const hid = new Set(det.flatMap((p) => p.units.filter((u) => u.hid).map((u) => `${p.id}|${u.unit}`)));
+    const sel = (await import('/lib/state.js')).get().sel ?? '';
+    if (sel.startsWith('unit:')) {
+      const u = sel.slice(5);
+      for (const a of document.querySelectorAll('#reader .rd-people-panel a[data-sel^="person:"]')) {
+        if (!shown(a)) continue;
+        const pid = a.dataset.sel.slice(7);
+        if (hid.has(`${pid}|${u}`)) hits.push(`이름없음 리더 ${u} ${pid}`);
+      }
+    }
+    const who = (await import('/lib/state.js')).param('persons', 'who');
+    if (who) for (const li of document.querySelectorAll('#main .pm-us-item[data-sel^="unit:"]')) {
+      const u = li.dataset.sel.slice(5);
+      if (hid.has(`${who}|${u}`)) hits.push(`이름없음 인물 ${who} ${u}`);
+    }
+  }
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름
   const knownNames = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));
   for (const t of targets) if (fmt.met(t, R)) for (const o of fmt.orgsAt(t, R.all ? null : R.t)) knownNames.add(o.name);
@@ -255,7 +311,12 @@ const evaluate = async (expr) => {
   if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? '평가 실패');
   return r.result?.result?.value;
 };
-const open = async (hash) => { await S('Page.navigate', { url: `${base}/?n=${++n}#${hash}` }); await sleep(WAIT); };
+// --skip — 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수)를 다 끈 독자(W15f). 게임에서 아무 때나 보는 스토리라, 거기서만 먼저 나온 것이 메인만 본 독자에게 새는지
+const unitsJson = JSON.parse(fs.readFileSync(path.join(args.root ?? path.resolve(import.meta.dirname, '../../site'), 'data/units.json'), 'utf8'));
+const checkKeys = unitsJson.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수'));
+const xFor = (t) => (args.skip && t !== 'all' ? `&x=${encodeURIComponent(checkKeys.filter((u) => u.tick <= Number(t)).map((u) => `-${u.key}`).join(','))}` : '');
+let curX = '';
+const open = async (hash) => { await S('Page.navigate', { url: `${base}/?n=${++n}#${hash}${curX}` }); await sleep(WAIT); };
 const probe = (skipMain = false, focus = null) => evaluate(`(${PROBE})(${skipMain}, ${args.titles}, ${JSON.stringify(focus)})`);
 
 const report = [];
@@ -269,6 +330,7 @@ const note = (name, r) => {
 
 try {
   for (const t of args.t.split(',')) {
+    curX = xFor(t);
     for (const tab of args.tabs.split(',')) {
       await open(`tab=${tab}&t=${t}`);
       note(`t=${t} ${tab}`, await probe(tab === 'order', tab === 'threads' ? await evaluate(THREAD_NOW) : null));
@@ -279,7 +341,15 @@ try {
         }
       }
     }
-    for (const sel of READER_SELS) {
+    if (args.tabs.split(',').includes('links')) for (const [j, c] of LINKS_TH) {
+      await open(`tab=links&t=${t}&p.th=${j}&p.c=${encodeURIComponent(c)}`);
+      note(`t=${t} links ${j} ${c}`, await probe(false));
+    }
+    if (args.tabs.split(',').includes('persons')) for (const who of PERSONS_WHO) {
+      await open(`tab=persons&t=${t}&p.who=${encodeURIComponent(who)}`);
+      note(`t=${t} persons ${who}`, await probe(false));
+    }
+    for (const sel of [...READER_SELS, ...READER_UNITS]) {
       await open(`tab=world&t=${t}&sel=${encodeURIComponent(sel)}`);
       note(`t=${t} 리더 ${sel}`, await probe(true, sel.startsWith('thread:') ? sel.slice(7) : null));
     }

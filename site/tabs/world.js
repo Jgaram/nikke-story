@@ -540,12 +540,15 @@ export async function mount(root, ctx) {
     const el = d.headerEl;
     ui.clear(el);
     const seenUnits = (e.units ?? []).map((u) => u[0]).filter((k) => idx.units.has(k) && c.R.seen(k));
-    // 처음 나온 곳 — 처음 나온 스토리를 봤으면 그것, 아니면 본 스토리 가운데 가장 앞(안 봄으로 둔 척추 이벤트 · 사이드)
-    const firstKey = e.first_unit && idx.units.has(e.first_unit) && c.R.seen(e.first_unit) ? e.first_unit
-      : [...seenUnits].sort((a, b) => (idx.units.get(a).order ?? 0) - (idx.units.get(b).order ?? 0))[0];
-    const firstUnit = firstKey ? idx.units.get(firstKey) : null;
     // 다른 이름 — 그 자리에서 아는 것만(W15b, fmt.aliasesAt). 사전 쪽 주의 글(caution)은 세계 탭 항목의 것
     const tg = idx.targets.get(e.id);
+    // 처음 나온 곳 — 처음 나온 스토리를 봤으면 그것, 아니면 본 스토리 가운데 가장 앞(안 봄으로 둔 척추 이벤트 · 사이드).
+    // 읽는 중에는 이름이 쓰인 스토리(tg.meet)로만 — first_unit은 이름 없이 암시로만 나온 스토리일 수 있다(크라운 왕국 ← GOLDEN SHIP, W15f)
+    const byOrder = (a, b) => (idx.units.get(a).order ?? 0) - (idx.units.get(b).order ?? 0);
+    const firstKey = !c.R.all && tg ? (tg.meet ?? []).filter((k) => idx.units.has(k) && c.R.seen(k)).sort(byOrder)[0]
+      : e.first_unit && idx.units.has(e.first_unit) && c.R.seen(e.first_unit) ? e.first_unit
+        : [...seenUnits].sort(byOrder)[0];
+    const firstUnit = firstKey ? idx.units.get(firstKey) : null;
     const knownAliases = new Set(tg ? fmt.aliasesAt(tg, c.R).map((a) => a.name) : []);
     const aliases = (e.aliases ?? []).filter((a) => knownAliases.has(a.name));
     put(el,

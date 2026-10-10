@@ -2,6 +2,27 @@
   "subject": "item:초거대_코어",
   "versions": [
     {
+      "at": "event_footstepwalkrun1",
+      "text": "궤도 엘리베이터 지하에서 그 동력원이 되는 거대한 랩쳐 코어. 쌍둥이 코어로 다른 하나는 방주의 동력원이라, 한쪽을 부수면 둘 다 부서진다.",
+      "src": "378a2a86d3",
+      "session": "W15f",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15f",
+          "hash": "55690188ca",
+          "note": "곁 판 — F1755 · F1757(FOOTSTEP)로 쌍둥이 코어 · 공멸. CH.46 본판(F2620)이 다 담아 until ch46"
+        }
+      ],
+      "side": true,
+      "until": "ch46"
+    },
+    {
       "at": "ch45",
       "text": "방주 동력원의 정체인 거대한 랩쳐 코어. 영구 동력이 아니라 관으로 들어가는 '먹이'로 버티는 1세대 코어인데, 수명이 다해 출력이 떨어지고 있다.",
       "src": "0a3553148e",

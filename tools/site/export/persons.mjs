@@ -9,12 +9,12 @@
  *     facts · questions · open · partial · solved · reversed · events · echoes · life · records(다룬 기록 수) · threads[](J)
  *     baselines · changes · inverted · with_others · closures[](O) · merges[](H)
  *   persons-detail.json   인물마다(등장 · 기록 · 변화가 하나라도 있는 381) { id, units[], records[], changes[] }
- *     units[]    등장 히트맵 — { unit, scenes, lines, speaker, implied, first_scene } (자리 · 종류 · 층은 units.json에서)
+ *     units[]    등장 히트맵 — { unit, scenes, lines, speaker, implied, first_scene, hid } (자리 · 종류 · 층은 units.json에서. hid = 그 스토리에 이름이 안 쓰임 — '???'로만, W15f)
  *     records[]  그 인물을 다룬 확정 기록 ID(person-records.csv — 사실 · 의문 정의, 사건, 떡밥, 생활상, 변화 · 기준 · 관계 상대, 마무리). 문장 · 자리는 records*.json에서
  *     changes[]  변화 타임라인(chrono-changes.csv) — { id, seq(작중 순서, 없으면 상대 · 불명), act, aspect, with, unit, tick, order, time, class, place, lo, hi, inverted[] }
  *                place는 단위(units.json chrono.place)와 다를 때만(시점 기록 · 조각으로 좁힌 변화)
  *   persons-pairs.json    함께 나온 인물 쌍 7,174 — { a, b, first_unit, last_unit, common, same_as, by[] } (씬 · 대화 · 단위 수는 by[]의 합)
- *     by[] = [[공개 자리, 층, 씬, 둘 다 말한 씬, 단위(, 척추 이벤트 · 사이드 키)], …] 자리 · 층 순 — 여기까지 읽음에서는 본 칸만, 층 필터에서는 그 층인 칸만 더한다(합은 pairs.csv와 같다 — 내보낼 때 검산)
+ *     by[] = [[공개 자리, 층, 씬, 둘 다 말한 씬, 단위(, 척추 이벤트 · 사이드 키 또는 ''(, 1 = 한쪽 이름이 그 스토리에 안 쓰임 — W15f))], …] 자리 · 층 순 — 여기까지 읽음에서는 본 칸만, 층 필터에서는 그 층인 칸만 더한다(합은 pairs.csv와 같다 — 내보낼 때 검산)
  *           척추 이벤트 · 사이드(units.json spine이고 메인이 아닌 것 — '봤음' 예외 x가 걸린다)의 몫은 따로 떼어 여섯째 칸에 그 단위 키를 단다 → 화면은 R.seen(키), 그 밖 칸은 자리 ≤ t
  *     common은 한쪽이라도 자주 나오는 인물(지휘관 · 라피 · 아니스 · 네온)이면 true — 상대가 자주 나오는 인물인지는 persons.json의 common으로 본다
  *     자리별 나눔은 tools/views/persons.mjs personScenes(언급 DB의 메타 표 mentions — 씬 · 줄 번호 · 대상만, 본문 없음)로 다시 센다.
@@ -48,9 +48,13 @@ export async function run(ctx) {
   // ── 상세: 단위 등장 · 기록 · 변화 ──
   const detail = new Map();
   const slot = (id) => detail.get(id) ?? detail.set(id, { units: [], records: [], changes: [] }).get(id);
+  let hidden = 0;
   for (const r of unitRows) {
     if (!placeOf.has(r.unit)) { warn({ where: 'persons', msg: `단위 표에 없는 단위 ${r.unit} (${r.person})` }); continue; }
-    slot(r.person).units.push(compact({ unit: r.unit, scenes: num(r.scenes), lines: num(r.lines), speaker: num(r.speaker_lines) || undefined, implied: num(r.implied_lines) || undefined, first_scene: r.first_scene || undefined }));
+    // hid — 그 스토리에 이름(표준명 · 다른 이름 · 그 이름이 든 이름표)이 한 번도 안 쓰임 = '???' 등으로만 나왔다(W15f). 화면은 읽는 중에 이 스토리의 인물로 내지 않는다
+    const hid = common.namedUnits && !common.namedUnits.get(r.person)?.has(r.unit) ? 1 : undefined;
+    if (hid) hidden++;
+    slot(r.person).units.push(compact({ unit: r.unit, scenes: num(r.scenes), lines: num(r.lines), speaker: num(r.speaker_lines) || undefined, implied: num(r.implied_lines) || undefined, first_scene: r.first_scene || undefined, hid }));
   }
   let missing = 0;
   for (const r of recRows) {
@@ -106,7 +110,7 @@ export async function run(ctx) {
   const pairs = pairRows.map((r) => {
     const key = `${r.a}\t${r.b}`;
     const m = by.get(key);
-    const rows = m ? [...m.values()].sort((x, y) => x.tick - y.tick || x.layer - y.layer || x.ex.localeCompare(y.ex)).map((v) => [v.tick, v.layer, v.scenes, v.talk, v.units.size, ...(v.ex ? [v.ex] : [])]) : [];
+    const rows = m ? [...m.values()].sort((x, y) => x.tick - y.tick || x.layer - y.layer || x.ex.localeCompare(y.ex) || x.hid - y.hid).map((v) => [v.tick, v.layer, v.scenes, v.talk, v.units.size, ...(v.hid ? [v.ex, 1] : v.ex ? [v.ex] : [])]) : [];
     const total = rows.reduce((n, x) => n + x[2], 0);
     if (total !== num(r.scenes)) mismatch++;
     return compact({ a: r.a, b: r.b, first_unit: r.first_unit, last_unit: r.last_unit, common: r.common ? true : undefined, same_as: r.same_as ? true : undefined, by: rows });
@@ -148,8 +152,10 @@ function pairsByTick(ctx, targets) {
         const m = out.get(key) ?? out.set(key, new Map()).get(key);
         const layer = layerOfUnit.get(unit) ?? 0;
         const ex = extra.has(unit) ? unit : '';
-        const k = `${tick} ${layer} ${ex}`;
-        const v = m.get(k) ?? m.set(k, { tick, layer, ex, scenes: 0, talk: 0, units: new Set() }).get(k);
+        // 둘 중 하나라도 그 스토리에 이름이 안 쓰였으면(hid — '???'로만 · 암시 언급만) 따로 뗀다 — 화면은 읽는 중에 이 칸을 안 더한다(W15f)
+        const hid = ctx.common.namedUnits && (!ctx.common.namedUnits.get(ms[i].t)?.has(unit) || !ctx.common.namedUnits.get(ms[j].t)?.has(unit)) ? 1 : 0;
+        const k = `${tick} ${layer} ${ex} ${hid}`;
+        const v = m.get(k) ?? m.set(k, { tick, layer, ex, hid, scenes: 0, talk: 0, units: new Set() }).get(k);
         v.scenes++;
         if (ms[i].talk && ms[j].talk) v.talk++;
         v.units.add(unit);

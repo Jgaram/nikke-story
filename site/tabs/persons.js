@@ -125,14 +125,15 @@ const bucketOf = (n) => BUCKETS.reduce((b, lo, i) => (n >= lo ? i + 1 : b), 0);
 const cmpKo = (a, b) => String(a).localeCompare(String(b), 'ko');
 
 /**
- * 쌍의 by[](= [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 척추 이벤트 · 사이드 키)])를 여기까지 읽음으로 더한다(범위 칸은 쓰지 않는다 — 늘 셋 다).
+ * 쌍의 by[](= [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 척추 이벤트 · 사이드 키 또는 ''(, 1 = 이름 안 쓰인 칸))])를 여기까지 읽음으로 더한다(범위 칸은 쓰지 않는다 — 늘 셋 다).
  * T: state.reading()의 R(키가 있는 칸은 R.seen(키), 없는 칸은 자리 ≤ R.t) · 숫자(자리 ≤ T) · null(끔)
  */
 export function pairTotals(by, T) {
   let scenes = 0; let talk = 0; let units = 0;
   const R = T != null && typeof T === 'object' ? (T.all ? null : T) : null;
   const t = R ? R.t : typeof T === 'object' ? null : T;
-  for (const [tick, , sc, tk, un, ex] of by) {
+  for (const [tick, , sc, tk, un, ex, hid] of by) {
+    if (hid && (R || t != null)) continue; // 한쪽 이름이 그 스토리에 안 쓰인 칸('???'로만 — W15f)은 전부 보기에서만
     if (R && ex) { if (!R.seen(ex)) continue; } else if (t != null && tick > t) { if (!R) break; continue; }
     scenes += sc; talk += tk; units += un;
   }
@@ -183,6 +184,8 @@ export async function mount(root, ctx) {
     hideMemo.set(unitKey, on);
     return on;
   };
+  /** 등장 줄을 가리나 — 안 본 스토리, 또는 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — hid, W15f: 정체 숨김 장면을 그 인물의 등장으로 내면 정체가 샌다). 전부 보기는 다 보인다 */
+  const offRow = (e) => hidden(e.unit) || (e.hid && !V.R.all);
   const recHidden = (r) => !V.R.known(r);
   /**
    * 떡밥의 그 자리 묶음(W15d) — { whole, ids(묶음 안 뿌리 · 본 단계 줄 · 복선의 기록), about(묶음 안 아는 뿌리가 다루는 대상) }.
@@ -238,6 +241,7 @@ export async function mount(root, ctx) {
       if (d) {
         for (const e of d.units) {
           if (hidden(e.unit)) { a.cut++; continue; }
+          if (offRow(e)) continue; // 이름 안 쓰인 등장은 가린 수에도 안 센다(있다는 것이 샌다)
           a.scenes += e.scenes; a.units++;
           const o = idx.units.get(e.unit)?.order ?? 0;
           if (o < a.firstOrder) { a.firstOrder = o; a.firstUnit = e.unit; a.firstEntry = e; }
@@ -591,7 +595,7 @@ export async function mount(root, ctx) {
   const usLimit = new Map();
   const usFirst = (k, n) => (n <= (k === 'main' ? 36 : 20) ? n : k === 'main' ? 24 : 12);
   const usSeg = ui.segmented({ label: LABELS.usLabel, options: [{ value: 'order', label: LABELS.us.order }, { value: 'speak', label: LABELS.us.speak }], value: prm('us') === 'speak' ? 'speak' : 'order', onChange: (v) => state.setParam('persons', 'us', v === 'speak' ? 'speak' : null) });
-  const storyRows = (p) => (D.get(p.id)?.units ?? []).filter((e) => !hidden(e.unit) && idx.units.has(e.unit));
+  const storyRows = (p) => (D.get(p.id)?.units ?? []).filter((e) => !offRow(e) && idx.units.has(e.unit));
   /** 등장 칸 아래의 제목 목록 — 히트맵과 같은 등장을 종류마다 글로 늘어놓는다(앞 점 = 말한 양) */
   const storyList = (p, box) => {
     const rows = storyRows(p);
@@ -630,7 +634,7 @@ export async function mount(root, ctx) {
   const secHeat = makeSection('heat', LABELS.sec.heat, (p, a, sec) => {
     ui.clear(sec.body);
     const d = D.get(p.id);
-    const present = new Map((d?.units ?? []).map((e) => [e.unit, e]));
+    const present = new Map((d?.units ?? []).filter((e) => !e.hid || V.R.all).map((e) => [e.unit, e]));
     const W = Math.max(280, sec.body.clientWidth || 640);
     const compact = W < 520;
     const kindList = fmt.KIND_ORDER.filter((k) => idx.unitList.some((u) => u.kind === k));

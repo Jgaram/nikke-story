@@ -2,6 +2,26 @@
   "subject": "concept:PROJECT_A.D.",
   "versions": [
     {
+      "at": "event_wisdomspring",
+      "text": "M.M.R. 심층부에서 총사령관 등 극소수의 승인만으로 비밀리에 진행된 인간 신체 강화 프로젝트 — 지휘관은 실패하거나 달아난 1–6호와 달리 유일한 성공작 '7호'다.",
+      "src": "41f3012213",
+      "session": "W15f",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15f",
+          "hash": "d995cba391",
+          "note": "곁 판 — F1773 · F1774 · F1776(WISDOM SPRING)로 목표 · 7호 · 비밀 승인. 본판 GOOD WORLD는 '내용은 아직 모른다'라 until 없음"
+        }
+      ],
+      "side": true
+    },
+    {
       "at": "fl:good_world",
       "text": "지휘관이 태어났다는 방주의 기밀 프로젝트 — 총사령관이 제 몸을 실험체로 내주고 M.M.R.에 연구를 맡겨 시작했고, 이터널 라이프 양산도 여기서 이뤘다. 내용은 아직 모른다.",
       "src": "c480fb5492",

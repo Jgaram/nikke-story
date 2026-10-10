@@ -66,7 +66,7 @@ test('links.json — 연작 사슬 · 중심 항목', () => {
 });
 
 test('links-scenes.json — 씬 엣지에 본문 칼럼이 없다 · 이름 있는 칸만', () => {
-  const allowed = new Set(['type', 'origin', 's', 'from', 'fl', 'to', 'tl', 'fu', 'tu', 'record', 'act', 'point', 'target', 'fb', 'tb', 'confidence', 'status', 'note']);
+  const allowed = new Set(['type', 'origin', 's', 'from', 'fl', 'to', 'tl', 'fu', 'tu', 'record', 'act', 'point', 'target', 'fb', 'tb', 'confidence', 'status', 'note', 'hid']);
   for (const r of scenes) {
     for (const k of Object.keys(r)) assert.ok(allowed.has(k), `허용 밖 칸 ${k}`);
     assert.ok(TYPES.includes(r.type));

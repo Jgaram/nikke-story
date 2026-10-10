@@ -2,6 +2,26 @@
   "subject": "concept:머신_메사이어",
   "versions": [
     {
+      "at": "fl:ark_guardian",
+      "text": "오래전에 있었다는 프로젝트 — V.T.C. 여사제에 따르면 엔더슨의 피에 NIMPH와 헬레틱을 무너뜨리는 언체인드가 흐르는 것이 그 일환이다. 무엇을 하려던 것인지는 아직 모른다.",
+      "src": "f05bf623c1",
+      "session": "W15f",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15f",
+          "hash": "c02714df1c",
+          "note": "곁 판 — F2363 · Q309(ARK GUARDIAN)로 엔더슨 피의 언체인드가 그 일환. 본판 CH.43은 무엇인지 모름이라 until 없음"
+        }
+      ],
+      "side": true
+    },
+    {
       "at": "ch43",
       "text": "V.T.C.가 진행했다는, 인류의 명운을 건 프로젝트 하나 — 무엇을 하려던 것인지는 아직 모른다.",
       "src": "ce9ff573ff",

@@ -232,7 +232,7 @@ function loadBlurbs() {
   }).catch(() => { /* 없어도 판정 문장으로 */ }));
 }
 
-let people = null; // { byUnit(스토리 → [{ id, speaker, lines, implied }]), byPerson(인물 → 같은 줄들) }
+let people = null; // { byUnit(스토리 → [{ id, speaker, lines, implied, hid }]), byPerson(인물 → 같은 줄들) — hid = 그 스토리에 이름이 안 쓰임('???'로만 — W15f, 읽는 중에는 뺀다) }
 let peopleReady = null;
 /** persons-detail.json(인물 탭과 같은 파일) — 스토리별 나온 인물 · 인물별 처음 등장. 못 받으면 칸을 그리지 않는다 */
 function loadPeople() {
@@ -240,7 +240,7 @@ function loadPeople() {
     const byUnit = new Map();
     const byPerson = new Map();
     for (const p of list) {
-      const rows = (p.units ?? []).map((x) => ({ id: p.id, unit: x.unit, speaker: x.speaker ?? 0, lines: x.lines ?? 0, implied: x.implied ?? 0 }));
+      const rows = (p.units ?? []).map((x) => ({ id: p.id, unit: x.unit, speaker: x.speaker ?? 0, lines: x.lines ?? 0, implied: x.implied ?? 0, hid: Boolean(x.hid) }));
       byPerson.set(p.id, rows);
       for (const r of rows) (byUnit.get(r.unit) ?? byUnit.set(r.unit, []).get(r.unit)).push(r);
     }
@@ -267,9 +267,11 @@ function peoplePanel(key, hidden, idx) {
   const sel = current;
   loadPeople().then(() => {
     if (current !== sel || !people) return;
-    // 본 스토리면 그 자리에서 이름이 나온 인물만, 그 자리의 이름으로('???'로만 말한 인물은 뺀다 — W15b). 접은 스토리는 전부
+    // 본 스토리면 그 자리에서 이름이 나온 인물만, 그 자리의 이름으로('???'로만 말한 인물은 뺀다 — W15b). 이름을 이미 아는 인물도 이 스토리에 이름이 한 번도 안 쓰였으면
+    // ('???'로만 말함 — 정체 숨김 장면, hid) 읽는 중에는 뺀다(W15f). 접은 스토리는 전부
     const R = hidden ? null : state.reading();
-    const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
+    const masked = (r) => r.hid && R && !R.all;
+    const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
     if (!list.length) return;
     const T = state.get().t;
     const face = (r) => {
@@ -591,7 +593,7 @@ const kindsTitle = (records) => {
 function firstAppearance(pid, idx) {
   const rows = people?.byPerson.get(pid) ?? [];
   const R = state.reading();
-  const seen = rows.filter((x) => idx.units.has(x.unit) && R.seen(x.unit));
+  const seen = rows.filter((x) => idx.units.has(x.unit) && R.seen(x.unit) && (R.all || !x.hid)); // '???'로만 나온 스토리는 읽는 중에는 처음 등장이 아니다(W15f)
   if (!seen.length) return null;
   const first = seen.reduce((a, b) => ((idx.units.get(a.unit).order ?? 0) <= (idx.units.get(b.unit).order ?? 0) ? a : b));
   return { unit: first.unit, how: first.speaker > 0 ? null : first.lines > 0 ? LABELS.nameOnly : LABELS.appearOnly };

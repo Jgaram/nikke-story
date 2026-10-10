@@ -1,9 +1,9 @@
 /**
  * 시점별 판 도구(W15c) — 떡밥 제목 · 요약(W15c · W15d), 사전 설명(W15e)을 읽은 자리마다 따로. 형식 · 쓰는 기준은 docs/annotations.md "시점별 판".
  *
- *   node tools/versions.mjs new <J… | thread:J… | place:방주 …> [--at <단위>] [--refresh] [--full]
+ *   node tools/versions.mjs new <J… | thread:J… | place:방주 …> [--at <단위> [--side]] [--refresh] [--full]
  *                                                                           입력 묶음을 찍고, 파일이 없으면 첫 판 틀(후보)을 만든다.
- *                                                                           --at = 그 자리에 판 틀을 더한다 · --refresh = 낡은 판의 지문을 지금 것으로(후보로) ·
+ *                                                                           --at = 그 자리에 판 틀을 더한다(--side = 곁 판 — 체크 칸 스토리, W15f) · --refresh = 낡은 판의 지문을 지금 것으로(후보로) ·
  *                                                                           --full = 사전 항목의 다룬 기록을 전부 문장째(기본은 앞 60건)
  *   node tools/versions.mjs check [대상 …] [--all]                          검사 — 오류면 종료 코드 1. --all이면 판이 없는 떡밥 · 사전 항목 수도
  *   node tools/versions.mjs set <대상> <at …> <확정|기각|후보> [--note …] [--session W15c]
@@ -26,7 +26,7 @@ import { buildInput, loadContext } from './versions/input.mjs';
 import { DECIDERS, DICT_KINDS, STATUSES, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, loadVersions, shownTexts, srcHash, stateOf, subjectKind, versionPath } from './versions/model.mjs';
 
 const USAGE = `시점별 판 도구 (tools/versions.mjs) — 형식 · 기준: docs/annotations.md "시점별 판"
-  new <J… | thread:J… | place:방주 …> [--at 단위] [--refresh] [--full]   입력 묶음 + 틀(후보)
+  new <J… | thread:J… | place:방주 …> [--at 단위 [--side]] [--refresh] [--full]   입력 묶음 + 틀(후보) — --side = 곁 판(체크 칸 스토리)
   check [대상 …] [--all]                        검사 (오류 → 종료 코드 1)
   set <대상> <at …> <확정|기각|후보> [--note 메모] [--session W15c]
   progress                                      진행률
@@ -38,6 +38,7 @@ const { values: opt, positionals } = parseArgs({
     dir: { type: 'string' },
     data: { type: 'string' },
     at: { type: 'string' },
+    side: { type: 'boolean', default: false },
     refresh: { type: 'boolean' },
     full: { type: 'boolean' },
     all: { type: 'boolean' },
@@ -91,7 +92,7 @@ function cmdNew() {
     if (opt.at) {
       if (!ctx().units.has(opt.at)) throw new Error(`단위가 아니다 — ${opt.at}`);
       if (f.versions.some((v) => v.at === opt.at)) notes.push(`${opt.at} 판은 이미 있다`);
-      else { f.versions.push(blank(subject, opt.at)); f.versions.sort((a, b) => orderOf(a.at) - orderOf(b.at)); notes.push(`판 틀(${opt.at})`); }
+      else { f.versions.push({ ...blank(subject, opt.at), ...(opt.side ? { side: true } : {}) }); f.versions.sort((a, b) => orderOf(a.at) - orderOf(b.at)); notes.push(`${opt.side ? '곁 판' : '판'} 틀(${opt.at})`); }
     }
     for (const v of f.versions) {
       const cur = srcHash(subject, v.at, ctx());

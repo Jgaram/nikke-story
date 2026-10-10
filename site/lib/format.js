@@ -721,26 +721,44 @@ export function blurbText(b, seen) {
 /**
  * 시점별 판(W15c) — 판 목록 [{ at, title, text }](읽는 순서)에서 그 자리에 보일 판: 앞에서부터 at을 본(R.seen) 판이 이어지는 데까지의 마지막 판.
  * 뒤 판은 앞 판들의 내용 위에 쓰므로 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수)를 안 고른 독자는 그 at의 판 앞에서 멈춘다.
+ * 판의 need(묶음마다 하나라도 봐야 하는 스토리 — 글에 든 이름 · 스토리 이름, 내보내기 versionNeed)를 못 채워도 그 판 앞에서 멈춘다(W15f).
  * 전부 보기(R.all · R 없음)면 마지막 판. 첫 판(at = 떡밥이 처음 나온 스토리)을 안 봤으면 null — 떡밥이 아직 안 나왔다.
  */
 export function versionAt(list, R) {
   if (!Array.isArray(list) || !list.length) return null;
-  if (!R || R.all) return list.at(-1);
-  let pick = null;
-  for (const v of list) {
-    if (!R.seen(v.at)) break;
-    pick = v;
+  const all = !R || R.all;
+  const ok = (v) => all || (R.seen(v.at) && (!Array.isArray(v.need) || v.need.every((g) => R.seenAny(g))));
+  // 본판 줄기 — at을 본 판이 이어지는 데까지(stop = 처음 못 본 본판). need(W15f — 글에 든 이름 · 스토리 이름을 아는 스토리 묶음)를 못 채워도 멈춘다
+  let stop = list.length;
+  let pick = -1;
+  for (const [i, v] of list.entries()) {
+    if (v.side) continue;
+    if (!ok(v)) { stop = i; break; }
+    pick = i;
   }
-  return pick;
+  // 곁 판(side — W15f): 체크 칸 스토리에서만 드러난 것. 안 본 독자는 건너뛰고(줄기는 멈추지 않는다), 본 독자는 until(그 내용을 다 담은 뒤 본판)에 이르기 전까지 이것을 본다.
+  // 그 앞 본판을 다 본 곁 판만 — 지금 본판보다 뒤면 늘, 앞이면 지금 본판이 until 앞일 때. 여럿이면 뒤의 것
+  let side = -1;
+  for (const [i, v] of list.entries()) {
+    if (i >= stop) break;
+    if (!v.side || !ok(v)) continue;
+    if (i < pick && v.until) {
+      const until = list.findIndex((w) => !w.side && w.at === v.until);
+      if (until >= 0 && until <= pick) continue;
+    }
+    side = i;
+  }
+  return side >= 0 ? list[side] : pick >= 0 ? list[pick] : null;
 }
 /**
- * 떡밥이 그 자리에서 나왔나(W15d) — 판(j.v)이 있으면 첫 판(at = 떡밥이 처음 나온 스토리)을 봤나(versionAt — 판 규칙과 같게),
+ * 떡밥이 그 자리에서 나왔나(W15d) — 판(j.v)이 있으면 첫 판(at = 떡밥이 처음 나온 스토리)을 봤나(첫 판의 need는 보지 않는다 — 제목만 자리 글),
  * 없으면 첫 스토리(first_unit)를 봤나. 전부 보기(R.all · R 없음)면 늘. 첫 스토리가 스토리 목록에 없으면(옛 자료) 나온 것으로.
  */
 export function threadStarted(j, R) {
   if (!j) return false;
   if (!R || R.all) return true;
-  if (Array.isArray(j.v) && j.v.length) return versionAt(j.v, R) != null;
+  const main = Array.isArray(j.v) ? j.v.find((v) => !v.side) : null;
+  if (main) return R.seen(main.at) || versionAt(j.v, R) != null; // 첫 판의 need를 못 채워도 떡밥은 나왔다 — 제목은 자리 글('제목을 아직 정리하지 않은 떡밥', W15f)
   if (!j.first_unit || (idx && !idx.units?.has(j.first_unit))) return true;
   return R.seen(j.first_unit);
 }
@@ -756,7 +774,7 @@ export function threadAt(j, R) {
   const all = !R || R.all;
   const lastSeen = all || Boolean(j.last_unit && R.seen(j.last_unit));
   const v = versionAt(list, R);
-  if (v) return { title: v.title, text: v.text, at: v.at, of: list.length, started: true, whole: all || (lastSeen && v === list.at(-1)) };
+  if (v) return { title: v.title, text: v.text, at: v.at, of: list.length, started: true, whole: all || (lastSeen && v === versionAt(list, null)) };
   if (!list.length && lastSeen) return { title: j.title, text: j.text, at: null, of: 0, started: true, whole: true };
   return { title: null, text: null, at: null, of: list.length, started: threadStarted(j, R), whole: false };
 }

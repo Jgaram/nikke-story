@@ -137,7 +137,8 @@ export async function mount(root, ctx) {
   const { state, data, fmt, ui, d3, idx } = ctx;
   const h = ui.el;
   const TERM = fmt.TERM;
-  const links = await data.load('links');
+  // threads-flow.json — 떡밥 묶음 거르기(fmt.threadTies — W15f). 못 받으면 떡밥 갈래는 떡밥 전체를 아는 자리에서만 보인다
+  const [links, flow] = await Promise.all([data.load('links'), data.load('threads-flow').catch(() => ({}))]);
 
   // ── 색인 ──
   const units = idx.units;
@@ -172,6 +173,31 @@ export async function mount(root, ctx) {
   for (const e of edges) for (const t of e.targets) targetUse.set(t, (targetUse.get(t) ?? 0) + 1);
   const targetList = [...targetUse].map(([id, n]) => ({ id, n, name: fmt.targetName(id), type: idx.targets.get(id)?.type, common: commonSet.has(id) }))
     .sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
+  /**
+   * 선이 떡밥 j에 드나(그 자리에서) — 선의 떡밥 갈래는 기록의 줄기라 결말을 아는 자리의 묶음이다(W15f). 그 자리 독자가 이 떡밥과 이어진 줄 아는
+   * 기록(fmt.threadTies ids — 아는 뿌리 · 그 본 단계 줄 · 본 복선)이 선에 하나라도 있을 때만. 떡밥 전체를 아는 자리면 늘
+   */
+  const tiesMemo = new Map();
+  const tiesAt = (F, j) => {
+    const k = `${F.cut}|${j}`;
+    if (!tiesMemo.has(k)) {
+      if (tiesMemo.size > 400) tiesMemo.clear();
+      const t = idx.threads.get(j);
+      tiesMemo.set(k, t ? fmt.threadTies(t, flow?.[j] ?? { roots: [], echoes: [] }, F.R) : null);
+    }
+    return tiesMemo.get(k);
+  };
+  /**
+   * 선의 대상 — 읽는 중에는 대상 공유 선에서 한쪽 스토리에 이름이 안 쓰인 대상(e.hid — '???'로만 · 암시 언급만)을 뺀다(W15f: 그 등장을 이 대상으로 내면 정체가 샌다).
+   * 그렇게 대상이 다 빠진 대상 공유 선은 없는 선이다(gone)
+   */
+  const tgs = (F, e) => (!e.hid || F.R.all ? e.targets : e.targets.filter((t) => !e.hid.includes(t)));
+  const gone = (F, e) => Boolean(e.hid && !F.R.all && (e.type === 'character' || e.type === 'keyword') && !tgs(F, e).length);
+  const onThread = (F, e, j) => {
+    if (!e.threads.includes(j)) return false;
+    const t = tiesAt(F, j);
+    return Boolean(t && (t.whole || e.records.some((r) => t.ids.has(r))));
+  };
   // 떡밥 필터 후보
   const threadUse = new Map();
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
@@ -192,8 +218,9 @@ export async function mount(root, ctx) {
         if (!ctr || (e.from !== ctr.key && e.to !== ctr.key)) continue;
         if (!kindOk(F, e.from === ctr.key ? e.b : e.a)) continue;
       } else if (F.kinds && !F.kinds.has(e.a.kind) && !F.kinds.has(e.b.kind)) continue;
-      if (!F.th || e.threads.includes(F.th)) for (const t of e.targets) if (e.strength >= F.minS || commonSet.has(t)) tu.set(t, (tu.get(t) ?? 0) + 1);
-      if ((!F.tg || e.targets.includes(F.tg)) && (e.strength >= F.minS || relaxed(F, e))) for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
+      if (gone(F, e)) continue;
+      if (!F.th || onThread(F, e, F.th)) for (const t of tgs(F, e)) if (e.strength >= F.minS || commonSet.has(t)) tu.set(t, (tu.get(t) ?? 0) + 1);
+      if ((!F.tg || tgs(F, e).includes(F.tg)) && (e.strength >= F.minS || relaxed(F, e))) for (const t of e.threads) if (onThread(F, e, t)) hu.set(t, (hu.get(t) ?? 0) + 1);
     }
     const targets = targetList.filter((t) => tu.has(t.id)).map((t) => ({ ...t, n: tu.get(t.id) })).sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
     // 떡밥은 그 자리에서 나온 것만(fmt.threadStarted — 판 규칙), 이름은 그 자리 판 · 자리 글(W15d)
@@ -202,7 +229,7 @@ export async function mount(root, ctx) {
     return { targets, threads };
   };
   // 주소로 온 떡밥 · 대상(p.th · p.tg)이 여기까지 읽음 안의 선에 걸리나 — 아니면 이름 대신 '스포일러'로 보인다(W15a)
-  const inCutAny = (F, field, id) => edges.some((e) => e[field].includes(id) && inCut(F, e.a) && inCut(F, e.b));
+  const inCutAny = (F, field, id) => edges.some((e) => !gone(F, e) && (field === 'threads' ? onThread(F, e, id) : tgs(F, e).includes(id)) && inCut(F, e.a) && inCut(F, e.b));
   /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   let cand = { targets: [], threads: [] }; // syncControls가 필터가 바뀔 때마다 다시 센다
@@ -240,11 +267,12 @@ export async function mount(root, ctx) {
   const inCut = (F, u) => F.R.seen(u.key);
   const kindOk = (F, u) => !F.kinds || F.kinds.has(u.kind);
   /** 자주 나오는 항목을 고르면 그 항목의 약한 연결(세기 1)도 보인다 */
-  const relaxed = (F, e) => F.tg && commonSet.has(F.tg) && e.targets.includes(F.tg);
+  const relaxed = (F, e) => F.tg && commonSet.has(F.tg) && tgs(F, e).includes(F.tg);
   function passEdge(e, F) {
     if (F.types && !F.types.has(e.type)) return false;
-    if (F.tg && !e.targets.includes(F.tg)) return false;
-    if (F.th && !e.threads.includes(F.th)) return false;
+    if (gone(F, e)) return false;
+    if (F.tg && !tgs(F, e).includes(F.tg)) return false;
+    if (F.th && !onThread(F, e, F.th)) return false;
     return e.strength >= F.minS || relaxed(F, e);
   }
   /** 선 굵기 — 세기 2 이상만 볼 때는 약한 연결을 뺀다 */
@@ -746,7 +774,7 @@ export async function mount(root, ctx) {
   function edgeWhy(e) {
     if (e.origin === 'manual') return clip(fmt.prose(e.note), 90) || null;
     if (e.type === 'character' || e.type === 'keyword') {
-      const ids = [...e.targets].sort((x, y) => Number(commonSet.has(x)) - Number(commonSet.has(y)));
+      const ids = [...tgs(F, e)].sort((x, y) => Number(commonSet.has(x)) - Number(commonSet.has(y)));
       return ids.length ? `${ids.slice(0, 4).map(fmt.targetName).join(' · ')}${ids.length > 4 ? ' …' : ''}` : null;
     }
     if (e.origin === 'record' && idx.hasRecords) {
@@ -933,9 +961,9 @@ export async function mount(root, ctx) {
     const relaxedAny = F.tg && commonSet.has(F.tg);
     const allRows = sc.pair.get(`${pair.from.key}\t${pair.to.key}`) ?? [];
     const typesHere = pair.edges.map((e) => e.type);
-    const rowOk = (r) => typesHere.includes(r.type) && (r.s >= F.minS || relaxedAny) && (!F.tg || !r.target || r.target === F.tg);
+    const rowOk = (r) => typesHere.includes(r.type) && (!r.hid || F.R.all) && (r.s >= F.minS || relaxedAny) && (!F.tg || !r.target || r.target === F.tg); // hid — 이름 안 쓰인 쪽(W15f)
     const rows = mergeNames(allRows.filter(rowOk));
-    const weak = allRows.some((r) => typesHere.includes(r.type) && !rowOk(r) && r.s < F.minS);
+    const weak = allRows.some((r) => typesHere.includes(r.type) && (!r.hid || F.R.all) && !rowOk(r) && r.s < F.minS);
     const byType = new Map();
     for (const r of rows) (byType.get(r.type) ?? byType.set(r.type, []).get(r.type)).push(r);
     const shownTypes = typesHere.filter((t) => byType.has(t));
@@ -961,7 +989,8 @@ export async function mount(root, ctx) {
   let innerKey = '';
   async function renderInner() {
     if (F.mode !== 'ego' || !view?.center) { inner.hidden = true; innerKey = ''; return; }
-    const key = view.center.key;
+    const unitKey = view.center.key;
+    const key = `${unitKey}|${F.R.all ? 'all' : ''}`; // 전부 보기면 이름 안 쓰인 등장(hid)도 보여 다시 그린다
     inner.hidden = false;
     if (innerKey !== key) {
       innerKey = key;
@@ -972,7 +1001,7 @@ export async function mount(root, ctx) {
     }
     const sc = await loadScenes().catch(() => null);
     if (!sc || !alive || innerKey !== key) return;
-    const rows = (sc.inner.get(key) ?? []).filter((r) => r.type !== 'prereq');
+    const rows = (sc.inner.get(unitKey) ?? []).filter((r) => r.type !== 'prereq' && (!r.hid || F.R.all)); // hid — 이름 안 쓰인 등장(W15f)
     const summ = inner.querySelector('summary');
     if (!rows.length) { inner.hidden = true; return; }
     const types = TYPE_IDS.filter((t) => rows.some((r) => r.type === t));

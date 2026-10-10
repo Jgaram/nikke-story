@@ -786,17 +786,20 @@ export async function mount(root, ctx) {
     }
     const filt = filterNow();
     const shownLanes = lanes.filter((l) => (filt === 'all' ? true : l.type === 'root' && (filt === 'fact' ? l.kind === 'F' : filt === 'unsolved' ? l.kind === 'Q' && (l.state === '열림' || l.state === '일부') : l.kind === 'Q' && l.state === '풀림')));
-    // 결말 · 함께 맺음은 전부 볼 때만
+    // 결말 · 함께 맺음은 전부 볼 때만. 결말이 이 떡밥에 든다는 것도 묶음이다(W15f) — 떡밥 전체를 아는 자리이거나, 결말의 스토리(끝 · 앞 이야기)에
+    // 그 자리 독자가 이 떡밥과 이어진 줄 아는 단계 · 복선이 있을 때만(fmt.threadTies units). 아니면 뒷이야기로 센다
+    const ties = fmt.threadTies(byId.get(j), flow[j], Rd);
+    const tiedEnd = (us) => ties.whole || us.some((u) => ties.units.has(u));
     for (const c of map.closures) {
       if (!c.threads?.includes(j)) continue;
-      if (!inR(c.end, c.end_tick)) { spoiled += 1; continue; }
+      if (!inR(c.end, c.end_tick) || !tiedEnd([c.end, ...(c.built ?? [])])) { spoiled += 1; continue; }
       if (filt !== 'all') continue;
       const built = c.built.filter((u) => Rd.seen(u));
       shownLanes.push({ type: 'closure', id: c.id, text: fmt.prose(c.text) || LABELS.closure, built, end: c.end, state: null, pts: [] });
     }
     for (const m of map.merges) {
       if (!m.threads?.includes(j)) continue;
-      if (!inR(m.end, m.end_tick)) { spoiled += 1; continue; }
+      if (!inR(m.end, m.end_tick) || !tiedEnd([m.end])) { spoiled += 1; continue; }
       if (filt !== 'all') continue;
       shownLanes.push({ type: 'merge', id: m.id, text: m.title, end: m.end, members: m.members, state: null, pts: [] });
     }

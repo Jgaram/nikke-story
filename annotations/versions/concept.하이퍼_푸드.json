@@ -2,6 +2,26 @@
   "subject": "concept:하이퍼_푸드",
   "versions": [
     {
+      "at": "event_lastkingdom1",
+      "text": "크라운 왕국 고성의 냉동 창고에 쌓인 차세대 곡물 씨앗. 석 달이면 거두고 땅을 가리지 않는다 — 크라운과 차임이 지상을 되찾을 날의 식량으로 지킨다.",
+      "src": "0d0d047c4d",
+      "session": "W15f",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15f",
+          "hash": "166be7488d",
+          "note": "곁 판 — F1427 · F1428(LAST KINGDOM)로 정체. 이름 need는 내보내기가"
+        }
+      ],
+      "side": true
+    },
+    {
       "at": "ch44",
       "text": "크라운 왕국에서 관리하는 무언가 — 바이스리터가 그 관리를 위해 잠시 돌아갔다고만 나오고, 무엇인지는 아직 모른다.",
       "src": "0d0d047c4d",

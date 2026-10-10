@@ -19,7 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, fileNameFor } from '../records/model.mjs';
 import { COMMON_WORDS } from '../synopsis/model.mjs';
-import { laterNames, textProblems } from '../blurbs/model.mjs';
+import { laterNames, textProblems, titledUnit } from '../blurbs/model.mjs';
 
 export const VERSION_DIR = path.join(ROOT, 'annotations/versions');
 export const SITE_DATA = path.join(ROOT, 'site/data');
@@ -78,7 +78,7 @@ export function srcHash(subject, at, C) {
 }
 
 /** 내용 지문 — 확정한 뒤 판(자리 · 제목 · 요약 · 지문)이 바뀌었는지 본다 */
-export const contentHash = (v) => sha([v?.at ?? '', v?.title ?? '', v?.text ?? '', v?.src ?? '']);
+export const contentHash = (v) => sha([v?.at ?? '', v?.title ?? '', v?.text ?? '', v?.src ?? '', ...(v?.side ? ['side', v.until ?? ''] : [])]); // 곁 판 칸은 있을 때만(W15f — 옛 지문 그대로)
 
 /** 판 하나의 상태 — changed = 확정 뒤 고침, stale = 쓴 뒤 at 앞의 흐름이 바뀜. 내보내기는 ok만 */
 export function stateOf(v, cur) {
@@ -107,6 +107,11 @@ export function sourcesFrom({ units: unitList, threads, flow, targets, records =
   const C = { units, threads: new Map(arr(threads?.threads).map((t) => [t.id, t])), flow: flow ?? {}, targets: arr(targets) };
   C.targetMap = new Map(C.targets.map((t) => [t.id, t]));
   C.names = nameIndex(C.targets, units);
+  C.nameUnits = nameUnits(C.targets);
+  // 체크 칸 스토리(사이트 state.checkable과 같다 — 메인이 아니고 척추이거나 준필수) · 제목으로 불리는 스토리(같은 제목은 묶어서)
+  C.checkable = new Set([...units.values()].filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key));
+  C.titled = new Map();
+  for (const u of units.values()) if (titledUnit(u)) (C.titled.get(u.title) ?? C.titled.set(u.title, []).get(u.title)).push(u.key);
   C.aboutOf = new Map();
   for (const r of arr(records)) for (const id of arr(r?.about)) if (DICT_KINDS.has(subjectKind(id))) (C.aboutOf.get(id) ?? C.aboutOf.set(id, []).get(id)).push(r);
   return C;
@@ -151,7 +156,9 @@ export function lateNames(text, order, names, units) {
   const t = String(text ?? '');
   const early = [];
   const late = [];
-  for (const [name, f] of names) (f.order > order ? late : early).push(name);
+  // 그 자리까지의 스토리 제목에 든 이름은 독자가 제목으로 안다(W15f — 대사에 늦게 쓰여도 오류 아님. 체크 칸 스토리 제목은 need가 본다)
+  const titles = [...(units?.values?.() ?? [])].filter((u) => u.order != null && u.order <= order && u.title).map((u) => u.title);
+  for (const [name, f] of names) (f.order > order && !titles.some((x) => x.includes(name)) ? late : early).push(name);
   const covered = [];
   for (const name of [...early, ...COMMON_WORDS]) for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) covered.push([i, i + name.length]);
   const hits = [];
@@ -168,6 +175,80 @@ export function lateNames(text, order, names, units) {
     }
   }
   return hits;
+}
+
+/**
+ * 이름 → 그 이름을 아는 스토리 전부(W15f — 판의 need). 표준명은 name_meet 또는 meet, 다른 이름은 제 meet(없으면 표준명과 같이), never는 없음([]).
+ * 같은 이름을 여러 대상이 쓰면 합친다(어느 쪽이든 그 낱말을 안다).
+ */
+export function nameUnits(targets) {
+  const out = new Map();
+  const put = (name, keys) => {
+    const n = String(name ?? '').trim();
+    if ([...n].length < 2 || /^[?？…\s]+$/.test(n)) return;
+    const s = out.get(n) ?? out.set(n, new Set()).get(n);
+    for (const k of arr(keys)) s.add(k);
+  };
+  for (const t of arr(targets)) {
+    const named = t.name_never ? [] : t.name_meet ?? t.meet ?? [];
+    put(t.name, named);
+    for (const a of arr(t.aliases)) put(a.name, a.never ? [] : a.meet ?? named);
+  }
+  return out;
+}
+
+/**
+ * 글에 든 대상 이름 — lateNames와 같은 낱말 규칙(더 긴 이름 · 흔한 낱말 속, 앞이 한글 음절, 영문 낱말 속, 두 글자 한글 이름 뒤 조사 아닌 글자는 아님).
+ * @param {Iterable<string>} names
+ * @returns {string[]}
+ */
+export function namesIn(text, names) {
+  const t = String(text ?? '');
+  const list = [...names].filter((n) => t.includes(n)).sort((a, b) => b.length - a.length);
+  const covered = [];
+  for (const w of COMMON_WORDS) for (let i = t.indexOf(w); i >= 0; i = t.indexOf(w, i + 1)) covered.push([i, i + w.length]);
+  const hits = [];
+  for (const name of list) {
+    let hit = false;
+    for (let i = t.indexOf(name); i >= 0; i = t.indexOf(name, i + 1)) {
+      if (covered.some(([a, b]) => a <= i && i + name.length <= b && b - a > name.length)) continue;
+      if (i > 0 && /[가-힣]/.test(t[i - 1]) && /^[가-힣]/.test(name)) continue;
+      if (/^[A-Za-z]/.test(name) && (/[A-Za-z]/.test(t[i - 1] ?? '') || /[A-Za-z]/.test(t[i + name.length] ?? ''))) continue;
+      if ([...name].length === 2 && /[가-힣]$/.test(name) && /[\p{L}\p{N}]/u.test(t[i + name.length] ?? '') && !/[은는이가을를의와과도만에께한로으랑야아씨님들]/u.test(t[i + name.length])) continue;
+      covered.push([i, i + name.length]);
+      hit = true;
+    }
+    if (hit) hits.push(name);
+  }
+  return hits;
+}
+
+/**
+ * 판을 보려면 봐야 하는 스토리 묶음(W15f) — 글(제목 · 요약)에 든 대상 이름 · 스토리 이름마다 '그것을 아는 스토리' 묶음, 판의 at들만 보고
+ * 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수 — 게임에서 아무 때나 본다)를 안 고른 독자도 늘 아는 묶음은 뺀다.
+ * lateNames는 읽는 순서로만 재서, 앞 체크 칸 스토리에서만 먼저 쓰인 이름(J1 GODDESS FALL 판의 '퀸 인자' ← LAST KINGDOM)을 놓친다 — 화면 fmt.versionAt이 이것으로 멈춘다.
+ * @param {string[]} texts 판의 제목 · 요약
+ * @param {string[]} ats 이 판을 보는 독자가 늘 본 at들 — 앞 본판들 + 이 판(곁 판은 제 at만 더한다)
+ * @param {{ units: Map, nameUnits: Map, checkable: Set }} C
+ * @returns {string[][] | undefined} 묶음마다 스토리 키(하나라도 보면 됨) — 없으면 undefined
+ */
+export function versionNeed(texts, ats, C) {
+  const chain = new Set(ats);
+  const floor = Math.max(1, ...ats.filter((k) => !C.checkable.has(k)).map((k) => C.units.get(k)?.tick ?? 0));
+  const sure = (k) => chain.has(k) || (!C.checkable.has(k) && (C.units.get(k)?.tick ?? Infinity) <= floor);
+  const groups = new Map();
+  const add = (keys) => {
+    const g = [...new Set(keys)].filter((k) => C.units.has(k));
+    if (g.some(sure)) return;
+    g.sort((a, b) => (C.units.get(a).order ?? 0) - (C.units.get(b).order ?? 0));
+    groups.set(g.join(' '), g);
+  };
+  for (const text of texts) {
+    for (const n of namesIn(text, C.nameUnits.keys())) add([...C.nameUnits.get(n)]);
+    for (const m of String(text ?? '').matchAll(/CH\.(\d+)/g)) add([`ch${m[1].padStart(2, '0')}`]);
+    for (const [title, keys] of C.titled) if (String(text ?? '').includes(title)) add(keys);
+  }
+  return groups.size ? [...groups.values()] : undefined;
 }
 
 /** 정체 연결(same_as)이 드러나기 전에 두 이름을 한 글에 같이 썼나 — 경고(같은 인물이라는 말이 없으면 괜찮을 수 있다) */
@@ -203,7 +284,7 @@ export function checkFile(f, C) {
   if (!vs.length) return { errors: [...errors, '판이 없다'], warnings };
   if (vs.length > S.limits.versions) warnings.push(`판이 ${vs.length}개 — 큰 고비에서만 나눈다(${S.limits.versions}개 안쪽)`);
   const { first, lastOrder, moved } = S;
-  const live = vs.filter((v) => v?.status !== '기각');
+  const live = vs.filter((v) => v?.status !== '기각' && !v?.side); // 곁 판(side — W15f)은 첫 판 규칙 밖
   if (first && live[0] && live[0].at !== first) errors.push(`첫 판의 at은 ${S.firstWhat}(${first} ${C.units.get(first)?.title ?? ''})여야 한다 — 지금 ${live[0].at}`);
   let prev = null;
   const ats = new Set();
@@ -218,6 +299,14 @@ export function checkFile(f, C) {
     if (v.at && !u) { E(`at이 단위가 아니다 — ${v.at}`); continue; }
     if (ats.has(v.at)) E('같은 at의 판이 둘');
     ats.add(v.at);
+    // 곁 판(W15f) — 체크 칸 스토리에서만 드러난 것을 그 칸을 본 독자에게만. 안 본 독자는 건너뛰고(멈추지 않는다), 본 독자는 until(뒤 본판의 at — 그 내용을 다 담는 판)까지 이것을 본다
+    if ('side' in v && v.side !== true) E('side는 true만');
+    if (v.side && u && C.checkable && !C.checkable.has(v.at)) E('곁 판(side)은 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수)에만');
+    if ('until' in v && !v.side) E('until은 곁 판에만');
+    if (v.side && v.until != null) {
+      const w = vs.find((x) => x?.at === v.until && !x.side && x.status !== '기각');
+      if (!w || (C.units.get(w.at)?.order ?? -1) <= (u?.order ?? Infinity)) E(`until은 뒤 본판의 at이어야 한다 — ${v.until}`);
+    }
     if (prev && u && u.order <= prev.order) E(`판은 읽는 순서대로 — 앞 판(${prev.key})보다 뒤여야 한다`);
     if (u && u.order > lastOrder) E(`떡밥이 마지막으로 움직인 스토리(${S.last}) 뒤다`);
     if (u && !moved.has(v.at)) W(S.unmoved);
@@ -321,8 +410,11 @@ export function publishable(f, C) {
   const list = [];
   for (const v of arr(f.versions)) {
     if (v?.status === '기각') continue;
-    if (!stateOf(v, srcHash(f.subject, v.at, C)).ok || bad.has(v.at)) break;
-    list.push(isDict(f.subject) ? { at: v.at, text: v.text.trim() } : { at: v.at, title: v.title.trim(), text: v.text.trim() });
+    const ok = stateOf(v, srcHash(f.subject, v.at, C)).ok && !bad.has(v.at);
+    if (!ok && v.side) continue; // 곁 판은 빠져도 본판 줄기는 이어진다
+    if (!ok) break;
+    const side = v.side ? { side: true, ...(v.until ? { until: v.until } : {}) } : {};
+    list.push(isDict(f.subject) ? { at: v.at, text: v.text.trim(), ...side } : { at: v.at, title: v.title.trim(), text: v.text.trim(), ...side });
   }
   return { list, errors };
 }

@@ -57,7 +57,7 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
   }
 });
 
-test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 체크 칸 스토리 키)]의 합이 pairs.csv와 같다', () => {
+test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 체크 칸 스토리 키(, 1 = 이름 안 쓰인 칸))]의 합이 pairs.csv와 같다', () => {
   const csv = new Map(readCsv(path.join(ROOT, 'data/views/persons/pairs.csv')).map((r) => [`${r.a}\t${r.b}`, r]));
   assert.equal(pairs.length, csv.size);
   for (const pr of pairs) {
@@ -65,7 +65,8 @@ test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, �
     const row = csv.get(`${pr.a}\t${pr.b}`);
     assert.ok(row, `${pr.a} ${pr.b}`);
     for (const x of pr.by) {
-      assert.ok(x.length === 5 || (x.length === 6 && extras.has(x[5]) && unitByKey.get(x[5]).tick === x[0]), `${pr.a} ${pr.b} by 칸 ${JSON.stringify(x)}`);
+      const exOk = (k) => extras.has(k) && unitByKey.get(k).tick === x[0];
+      assert.ok(x.length === 5 || (x.length === 6 && exOk(x[5])) || (x.length === 7 && x[6] === 1 && (x[5] === '' || exOk(x[5]))), `${pr.a} ${pr.b} by 칸 ${JSON.stringify(x)}`);
     }
     const tot = pairTotals(pr.by, null);
     assert.equal(tot.scenes, Number(row.scenes), `${pr.a} ${pr.b} 씬`);
@@ -79,6 +80,10 @@ test('pairTotals — 여기까지 읽음이 합을 줄인다(범위 칸은 보�
   assert.deepEqual(pairTotals(by, null), { scenes: 12, talk: 9, units: 5 });
   assert.deepEqual(pairTotals(by, 3), { scenes: 7, talk: 4, units: 4 });
   assert.deepEqual(pairTotals(by, 0), { scenes: 0, talk: 0, units: 0 });
+  // 한쪽 이름이 그 스토리에 안 쓰인 칸('???'로만 — W15f)은 전부 보기에서만 더한다
+  const hid = [...by, [2, 1, 3, 3, 1, '', 1]];
+  assert.deepEqual(pairTotals(hid, null), { scenes: 15, talk: 12, units: 6 });
+  assert.deepEqual(pairTotals(hid, 3), { scenes: 7, talk: 4, units: 4 });
 });
 
 /** state.reading()의 R을 흉내 낸다 — 척추 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */

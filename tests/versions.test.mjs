@@ -3,6 +3,7 @@
  *   ① 검사: 첫 판 자리 · 읽는 순서 · 마지막 스토리 뒤 · 뒤 스토리 이름 · 그 자리 뒤에 처음 쓰이는 대상 이름(다른 이름 · 표준명이 늦은 대상) · 정체 연결
  *   ② 지문: at 앞의 흐름이 바뀌면 낡음(뒤는 상관없음) · 확정 뒤 고치면 오류 · 내보내기는 확정 · 성한 판만
  *   ③ 실제 파일 · 내보낸 versions.json · 화면 fmt.versionAt · threadAt
+ *   ④ need(W15f) — 체크 칸 스토리를 안 고른 독자: 판 글에 든 이름 · 스토리 이름을 모르면 그 앞 판에서 멈춘다. 실제 판 전부를 '가장 덜 본 독자'로 재본다
  *
  *   node --test tests/versions.test.mjs   (site/data/가 없으면 실제 데이터 쪽은 건너뛴다 — node tools/site/export.mjs)
  */
@@ -14,7 +15,8 @@ import path from 'node:path';
 import { run as exportVersions } from '../tools/site/export/versions.mjs';
 import { fileNameFor } from '../tools/records/model.mjs';
 import {
-  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, loadSources, loadVersions, nameIndex, publishable, sourcesFrom, srcHash, stateOf,
+  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom, srcHash, stateOf,
+  versionNeed,
 } from '../tools/versions/model.mjs';
 
 const fmt = await import('../site/lib/format.js');
@@ -186,12 +188,16 @@ test('사전 판 — 첫 판은 처음 나온 자리(meet의 마지막) · 제�
   assert.match(checkFile({ subject: 'org:에덴', versions: [] }, DC).errors[0], /처음 나온 자리\(meet\)가 없는 항목/);
 });
 
-test('이름 검사 — 두 글자 이름은 뒤가 조사 · 낱말 끝일 때만(리스크 ⊃ 리스는 아니다)', () => {
+test('이름 검사 — 두 글자 이름은 뒤가 조사 · 낱말 끝일 때만(리스크 ⊃ 리스는 아니다) · 본 스토리 제목에 든 이름은 앎', () => {
   const names = new Map([['리스', { order: 99, unit: 'ch48', target: 'person:리스' }]]);
   const units = new Map(UNITS.map((u) => [u.key, u]));
   assert.deepEqual(lateNames('리스크 레벨이 높다', 10, names, units), []);
   assert.equal(lateNames('리스가 왔다', 10, names, units).length, 1);
   assert.equal(lateNames('그것은 리스.', 10, names, units).length, 1);
+  // 그 자리까지의 스토리 제목에 든 이름은 제목으로 안다(W15f) — 제목이 뒤면 여전히 오류
+  const tu = new Map([['a', { key: 'a', order: 5, title: 'CH.05 리스의 밤' }], ['b', { key: 'b', order: 50, title: 'CH.50 리스' }]]);
+  assert.deepEqual(lateNames('리스가 왔다', 10, names, tu), []);
+  assert.equal(lateNames('리스가 왔다', 4, names, new Map([['b', tu.get('b')]])).length, 1);
 });
 
 test('사전 판 지문 — at까지 항목을 다룬 기록이 바뀌면 낡음, 뒤 기록은 상관없다 · 내보내면 { at, text }', async () => {
@@ -247,17 +253,122 @@ test('내보낸 versions.json — 확정 판과 같고, 판마다 그 자리 뒤
   for (const { data } of set.list) {
     const id = data.subject.replace(/^thread:/, '');
     const got = isDict(data.subject) ? out.targets?.[data.subject] : out.threads[id];
-    assert.deepEqual(got ?? [], publishable(data, real).list, `${id} — node tools/site/export.mjs`);
+    const want = publishable(data, real).list;
+    assert.deepEqual((got ?? []).map(({ need, ...v }) => v), want, `${id} — node tools/site/export.mjs`);
+    const chain = (i) => [...want.slice(0, i).filter((x) => !x.side).map((x) => x.at), want[i].at]; // 곁 판은 제 at만(내보내기와 같게)
+    (got ?? []).forEach((v, i) => assert.deepEqual(v.need, versionNeed([v.title, v.text], chain(i), real), `${id} ${v.at} need`));
   }
   for (const [id, list] of Object.entries(out.targets ?? {})) {
-    assert.equal(list[0].at, dictFirst(real.targetMap.get(id)), `${id} 첫 판`);
+    assert.equal(list.find((v) => !v.side).at, dictFirst(real.targetMap.get(id)), `${id} 첫 판`); // 곁 판(side)은 첫 판 앞 체크 칸에도
     for (const v of list) assert.deepEqual(lateNames(v.text, real.units.get(v.at).order, real.names, real.units), [], `${id} ${v.at}: ${v.text}`);
   }
   for (const [id, list] of Object.entries(out.threads)) {
-    assert.equal(list[0].at, real.threads.get(id).first_unit, `${id} 첫 판`);
+    assert.equal(list.find((v) => !v.side).at, real.threads.get(id).first_unit, `${id} 첫 판`);
     for (const v of list) {
       const o = real.units.get(v.at).order;
       for (const t of [v.title, v.text]) assert.deepEqual(lateNames(t, o, real.names, real.units), [], `${id} ${v.at}: ${t}`);
     }
   }
+});
+
+// ── ④ need(W15f) ──
+test('need — 체크 칸 스토리에서만 먼저 쓰인 이름 · 안 본 스토리 이름은 묶음, 판의 at들 · 늘 아는 스토리로 채워지면 없음', () => {
+  const units = new Map([
+    ['ch01', { key: 'ch01', kind: 'main', order: 1, tick: 1, title: 'CH.01 시작' }],
+    ['event_side', { key: 'event_side', kind: 'event', spine: true, order: 2, tick: 2, title: 'SIDE STORY' }],
+    ['ch02', { key: 'ch02', kind: 'main', order: 3, tick: 3, title: 'CH.02 다음' }],
+    ['event_late', { key: 'event_late', kind: 'event', spine: true, order: 4, tick: 4, title: 'LATE NIGHT' }],
+  ]);
+  const targets = [
+    { id: 'person:가', name: '가람', meet: ['ch01'] },
+    { id: 'concept:퀸', name: '퀸 인자', meet: ['event_side', 'ch02'] },
+    { id: 'person:나', name: '나래', meet: ['event_side', 'ch02'], aliases: [{ name: '흰 옷', how: '별칭', meet: ['ch01'] }] },
+  ];
+  const C = { units, nameUnits: nameUnits(targets), checkable: new Set(['event_side', 'event_late']), titled: new Map([['SIDE STORY', ['event_side']], ['LATE NIGHT', ['event_late']]]) };
+  assert.deepEqual(namesIn('퀸 인자와 가람', C.nameUnits.keys()).sort(), ['가람', '퀸 인자']);
+  assert.deepEqual(namesIn('가람은', ['가람', '람']), ['가람']); // 더 긴 이름 속 · 낱말 속 글자는 아니다
+  // ch01만 본 자리(at ch01) — 퀸 인자는 SIDE STORY · CH.02 가운데 하나를 봐야
+  assert.deepEqual(versionNeed(['가람과 퀸 인자'], ['ch01'], C), [['event_side', 'ch02']]);
+  // at이 SIDE STORY면 판의 at이라 이미 앎, LATE NIGHT(안 본 체크 칸)를 이름으로 쓰면 묶음
+  assert.equal(versionNeed(['가람과 퀸 인자'], ['ch01', 'event_side'], C), undefined);
+  assert.deepEqual(versionNeed(['LATE NIGHT의 가람'], ['ch01'], C), [['event_late']]);
+  // 메인 at(ch02)까지 온 독자는 그 앞 메인을 늘 안다 — 묶음 없음. CH.02를 ch01 판에 쓰면 묶음
+  assert.equal(versionNeed(['퀸 인자 · 나래'], ['ch01', 'ch02'], C), undefined);
+  assert.deepEqual(versionNeed(['CH.02에서'], ['ch01'], C), [['ch02']]);
+  // 화면 — need를 못 채우면 그 앞 판에서 멈춘다(떡밥은 나온 것으로 — 제목은 자리 글)
+  const R = (seen) => ({ all: false, t: 1, seen: (k) => seen.includes(k), seenAny(ks) { return ks.some((k) => seen.includes(k)); } });
+  const list = [{ at: 'ch01', title: '가람', text: '가' }, { at: 'event_late', title: '가람 — 퀸 인자', text: '나', need: [['event_side', 'ch02']] }];
+  assert.equal(fmt.versionAt(list, R(['ch01', 'event_late'])).title, '가람');
+  assert.equal(fmt.versionAt(list, R(['ch01', 'event_late', 'event_side'])).title, '가람 — 퀸 인자');
+  const j = { id: 'J9', first_unit: 'ch01', last_unit: 'event_late', v: [{ ...list[0], need: [['ch02']] }] };
+  assert.equal(fmt.threadStarted(j, R(['ch01'])), true);
+  assert.equal(fmt.threadAt(j, R(['ch01'])).title, null);
+});
+
+test('실제 판 — 판을 볼 수 있는 가장 덜 본 독자(판의 at들만 · 다른 체크 칸 스토리는 끔)에게 모르는 이름 · 안 본 스토리 이름이 없다', { skip: !hasData && 'site/data 없음' }, () => {
+  const read = (f) => JSON.parse(fs.readFileSync(path.join(SITE_DATA, f), 'utf8'));
+  const unitList = read('units.json');
+  const units = new Map(unitList.map((u) => [u.key, u]));
+  const targets = new Map(read('targets.json').map((t) => [t.id, t]));
+  const threads = new Map(read('threads.json').threads.map((j) => [j.id, j]));
+  const V = read('versions.json');
+  for (const [id, l] of Object.entries(V.threads)) if (threads.has(id)) threads.get(id).v = l;
+  for (const [id, l] of Object.entries(V.targets)) if (targets.has(id)) targets.get(id).v = l;
+  fmt.use({ units, targets, threads, scenes: new Map(), ticks: new Map() });
+  const checkable = new Set(unitList.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key));
+  const titled = new Map();
+  for (const u of unitList) if (u.kind !== 'main' && /^[A-Z][A-Z0-9 .,'!&:-]{4,}$/.test(u.title ?? '')) (titled.get(u.title) ?? titled.set(u.title, []).get(u.title)).push(u.key);
+  // 판의 at들만 고르고 메인은 그 at들 가운데 체크 칸이 아닌 것의 자리까지 — 게임에서 체크 칸 스토리는 아무 때나 본다
+  const minimal = (ats) => {
+    const on = new Set(ats);
+    const t = Math.max(1, ...ats.filter((k) => !checkable.has(k)).map((k) => units.get(k).tick));
+    const seen = (k) => on.has(k) || (!checkable.has(k) && (units.get(k)?.tick ?? Infinity) <= t);
+    return { all: false, t, x: {}, seen, seenAny: (ks) => Array.isArray(ks) && ks.some(seen), known: () => true };
+  };
+  const unseenStory = (s, R) => [
+    ...[...s.matchAll(/CH\.(\d+)/g)].map((m) => `ch${m[1].padStart(2, '0')}`).filter((k) => units.has(k) && !R.seen(k)),
+    ...[...titled].filter(([title, ks]) => s.includes(title) && !ks.some(R.seen)).map(([title]) => title),
+  ];
+  const bad = [];
+  const probe = (label, list, shown) => list.forEach((v, i) => {
+    const R = minimal([...list.slice(0, i).filter((x) => !x.side).map((x) => x.at), v.at]);
+    for (const s of shown(R).filter(Boolean)) {
+      const n = fmt.unknownNameIn(s, R);
+      const st = unseenStory(s, R);
+      if (n || st.length) bad.push(`${label} ${v.at}: ${n ?? ''} ${st.join(' · ')} — ${s.slice(0, 30)}`);
+    }
+  });
+  for (const [id, list] of Object.entries(V.threads)) probe(id, list, (R) => { const a = fmt.threadAt(threads.get(id), R); return [a?.title, a?.text]; });
+  for (const [id, list] of Object.entries(V.targets)) probe(id, list, (R) => [fmt.noteAt(targets.get(id), R)]);
+  assert.deepEqual(bad, []);
+});
+
+test('곁 판(side — W15f) — 체크 칸 스토리 판: 안 본 독자는 건너뛰고, 본 독자는 until 본판 전까지 이것', () => {
+  const R = (seen) => ({ all: false, t: 9, seen: (k) => seen.includes(k), seenAny(ks) { return ks.some((k) => seen.includes(k)); } });
+  // 첫 본판 앞 곁 판(하이퍼 푸드 — LAST KINGDOM에서만 정체가 드러남, 본판 ch44는 '아직 모른다')
+  const a = [{ at: 'lk', text: '씨앗', side: true }, { at: 'ch44', text: '모른다' }];
+  assert.equal(fmt.versionAt(a, R(['lk'])).text, '씨앗');
+  assert.equal(fmt.versionAt(a, R(['ch44'])).text, '모른다');
+  assert.equal(fmt.versionAt(a, R(['lk', 'ch44'])).text, '씨앗'); // until 없음 — 본판이 그 내용을 못 담는다
+  assert.equal(fmt.versionAt(a, null).text, '씨앗');
+  // until — 뒤 본판(ch47)이 곁 판 내용을 다 담으면 거기서 넘긴다
+  const b = [{ at: 'ch01', text: '첫' }, { at: 'lk', text: '곁', side: true, until: 'ch47' }, { at: 'ch44', text: '본' }, { at: 'ch47', text: '다' }];
+  assert.equal(fmt.versionAt(b, R(['ch01', 'lk'])).text, '곁');
+  assert.equal(fmt.versionAt(b, R(['ch01', 'ch44'])).text, '본'); // 곁 판을 안 본 독자는 건너뛴다(멈추지 않는다)
+  assert.equal(fmt.versionAt(b, R(['ch01', 'lk', 'ch44'])).text, '곁');
+  assert.equal(fmt.versionAt(b, R(['ch01', 'lk', 'ch44', 'ch47'])).text, '다');
+  assert.equal(fmt.versionAt(b, R(['lk'])), null); // 앞 본판(ch01)을 안 봤으면 그 뒤 곁 판도 안 선다
+  assert.equal(fmt.versionAt(b, null).text, '다');
+});
+
+test('곁 판 검사 — 체크 칸 스토리에만 · until은 뒤 본판 · 내보내기는 곁 판을 싣는다', () => {
+  const C2 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'event_newyearnewsword' ? { ...u, spine: true } : u)), threads: THREADS, flow: FLOW, targets: TARGETS });
+  const v = (at, extra) => confirm({ ...ver(at, GOOD[1].title, GOOD[1].text), ...extra, src: srcHash(S, at, C2) });
+  const errs = (vs) => checkFile(file(vs), C2).errors;
+  assert.ok(errs([confirm(GOOD[0]), v('ch45', { side: true })]).some((m) => /곁 판\(side\)은 체크 칸/.test(m)));
+  assert.ok(errs([confirm(GOOD[0]), v('event_newyearnewsword', { side: true, until: 'ch99' })]).some((m) => /until은 뒤 본판/.test(m)));
+  const good = [confirm(GOOD[0]), v('event_newyearnewsword', { side: true, until: 'ch46' }), v('ch46', {})];
+  assert.deepEqual(errs(good), []);
+  const list = publishable(file(good), C2).list;
+  assert.deepEqual(list.map((x) => [x.at, x.side ?? false, x.until ?? null]), [['char:222', false, null], ['event_newyearnewsword', true, 'ch46'], ['ch46', false, null]]);
 });
