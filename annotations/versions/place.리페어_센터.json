@@ -1,0 +1,24 @@
+{
+  "subject": "place:리페어_센터",
+  "versions": [
+    {
+      "at": "sub:저스틴_00",
+      "text": "파손된 니케를 수리하고 파츠를 바꾸는 니케 전용 병원. 가끔 인간 수술에 쓸 부품도 납품한다.",
+      "src": "b2395db2d0",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "aa0bd46ffd",
+          "note": "sub:저스틴_00 F197(#8 니케 전용 병원 · 부품 납품)로 1판 — 뒤 기록은 일화"
+        }
+      ]
+    }
+  ]
+}

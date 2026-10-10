@@ -1,0 +1,24 @@
+{
+  "subject": "place:금서고",
+  "versions": [
+    {
+      "at": "event_arcanearchive",
+      "text": "방주 도서관이 처음 세워졌을 때의 구 열람실에 둔 특급 기밀 보관소. 관리자 아르카나만 드나들고, 세계사 · 대중가요 · 영화 같은 인류의 과거까지 최고 기밀로 감춰 둔다.",
+      "src": "3027af2e3d",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "7b0c9505e9",
+          "note": "event_arcanearchive F1930 · F1931(04_s · 04_e — 구 열람실 · 특급 기밀 보관소 · 아르카나 관리 · 과거 기록)로 1판 — 뒤 기록은 일화"
+        }
+      ]
+    }
+  ]
+}

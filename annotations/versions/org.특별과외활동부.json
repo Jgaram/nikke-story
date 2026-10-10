@@ -1,0 +1,24 @@
+{
+  "subject": "org:특별과외활동부",
+  "versions": [
+    {
+      "at": "fl:persona_on_frontline",
+      "text": "아이기스가 본래 속한 곳. 이 세계에 머무는 동안 아이기스는 정의 괴도단에 함께하기로 한다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "77f9285758",
+          "note": "기록 없음 — fl:persona_on_frontline_23#123–124(아이기스 본래 소속 · 정의 괴도단 합류)를 읽고 그 자리에서 아는 만큼 1판"
+        }
+      ]
+    }
+  ]
+}

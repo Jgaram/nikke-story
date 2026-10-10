@@ -1,0 +1,24 @@
+{
+  "subject": "org:실버건",
+  "versions": [
+    {
+      "at": "ch00",
+      "text": "지상에서 지휘관 일행과 만난 기관총 사수 니케 마리안이 속한 스쿼드.",
+      "src": "7fa6bf5505",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "a49ad720e2",
+          "note": "ch00 F4(01_03_s#39 마리안의 소속 · 기관총 사수)로 1판 — 그 밖의 정보는 원문에 없음"
+        }
+      ]
+    }
+  ]
+}

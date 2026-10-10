@@ -1,0 +1,24 @@
+{
+  "subject": "place:설온장",
+  "versions": [
+    {
+      "at": "event_neverland1",
+      "text": "북부 기지 근처에서 찾은 옛 지상 온천을 언리미티드가 다듬어 연 온천장. 루드밀라가 주인장으로, 임무를 나온 니케와 길 잃은 니케가 쉬어 가는 곳이다.",
+      "src": "4ae21e5a22",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "3e411b1af4",
+          "note": "event_neverland1 F1212 · F1221(prologue · epilogue, 02_e#108 주인장 루드밀라)로 1판"
+        }
+      ]
+    }
+  ]
+}
