@@ -39,7 +39,8 @@
 - [ ] **W9g 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ② event_freezeacpu … event_lastkingdom1** (16단위 · 7.4만 자) — T5-9
 - [ ] **W9h 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ③ event_darkhero … event_secretgarden** (16단위 · 6.8만 자) — T5-9
 - [ ] **W9i 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ④ event_icedragonsaga1 … event_lordforjustice** (15단위 · 7.3만 자) — T5-9
-- [ ] **W9j 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ⑤ event_ce006 … event_goddessfall1** (9단위 · 7.2만 자) — T5-9
+- [x] **W9j 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ⑤ event_ce006 … event_goddessfall1** (9단위 · 7.2만 자) — T5-9
+  - 인계: 9/9 확정, 원문 0자, 경고 0. event_goddessfall1은 입력대로 두 부를 개요 하나로. 단위 안에서 드러나는 정체(마리안 = 퀸 등)는 쓰고 열린 의문은 열어 둠 — 무엇을 열어 뒀는지 --note. ce006 프로비던스는 2회독 기록 따라.
 - [ ] **W9k 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ⑥ erelic:goddess_fall_mini … fl:2x2_love_2ch** (10단위 · 7.3만 자) — T5-9
 - [ ] **W9l 공개 개요 쓰기 — 이벤트 · 사이드 · 이벤트 유실물 ⑦ side:pretty_star … fl:great_villain_union** (10단위 · 7.1만 자) — T5-9
 - [ ] **W9m 공개 개요 쓰기 — 서브퀘스트 · 유실물 ① sub:칠리페퍼_00 … sub:중앙_정부_공식__02** (79단위 · 6.1만 자) — T5-9
