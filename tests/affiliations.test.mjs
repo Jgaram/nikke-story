@@ -88,7 +88,7 @@ test('소속 마크 — 쓰이는 기업 · 스쿼드 마크가 다 받아져 �
   for (const [rid, [corp, squad]] of Object.entries(index.chars)) assert.ok(index.corporations[corp] && index.squads[squad], `resource_id ${rid}: ${corp} · ${squad}`);
 });
 
-test('fmt.orgsAt — 기록이 없으면 게임 데이터, 기록이 있으면 그 자리까지 쌓고 이탈은 뺀다', async () => {
+test('fmt.orgsAt — 게임 소속은 공개 자리부터 늘 남고, 기록은 그 위에 쌓으며 기록이 이탈시킨 조직만 뺀다(W12d)', async () => {
   const fmt = await import('../site/lib/format.js');
   const targets = new Map([
     ['org:카운터스', { id: 'org:카운터스', name: '카운터스', kind: '스쿼드', mark: 'icn_counters' }],
@@ -96,22 +96,44 @@ test('fmt.orgsAt — 기록이 없으면 게임 데이터, 기록이 있으면 �
     ['org:중앙_정부', { id: 'org:중앙_정부', name: '중앙 정부', kind: '정부' }],
   ]);
   fmt.use({ targets });
-  const game = [{ type: 'corp', org: 'org:엘리시온', name: '엘리시온', mark: 'icn_corp_01' }, { type: 'squad', org: 'org:카운터스', name: '카운터스', mark: 'icn_counters' }];
-  assert.deepEqual(fmt.orgsAt({ orgs: game }, 5).map((o) => [o.name, o.source]), [['엘리시온', 'game'], ['카운터스', 'game']]);
+  // 엘리시온은 출시(tick 17)부터, 카운터스는 원문(tick 2)부터, 이름 없는 게임 소속(org 없음)은 0 = 늘, tick 없음 = 전부 보기에서만
+  const game = [
+    { type: 'corp', org: 'org:엘리시온', name: '엘리시온', mark: 'icn_corp_01', tick: 17 },
+    { type: 'squad', org: 'org:카운터스', name: '카운터스', mark: 'icn_counters', tick: 2 },
+    { type: 'squad', name: '올드 테일즈', mark: 'icn_oldtales', tick: 0 },
+    { type: 'squad', name: '판정 못 함', mark: 'icn_x' },
+  ];
+  const names = (p, t) => fmt.orgsAt(p, t).map((o) => o.name);
+  assert.deepEqual(names({ orgs: game }, 1), ['올드 테일즈'], '공개 자리 앞은 숨김 — 원문에 이름 없는 소속만 늘');
+  assert.deepEqual(names({ orgs: game }, 2), ['카운터스', '올드 테일즈']);
+  assert.deepEqual(names({ orgs: game }, 17), ['엘리시온', '카운터스', '올드 테일즈'], '판정 못 한 쌍은 읽는 중에는 숨김');
+  assert.deepEqual(names({ orgs: game }, null), ['엘리시온', '카운터스', '올드 테일즈', '판정 못 함'], '전부 보기 = 전부');
+  assert.ok(fmt.orgsAt({ orgs: game }, 17).every((o) => o.source === 'game' && !('tick' in o)));
   const p = {
     orgs: game,
     affs: [
       { id: 'T1', org: 'org:중앙_정부', act: '소속', tick: 3, role: '부사령관' },
-      { id: 'T2', org: 'org:카운터스', act: '합류', tick: 10 },
+      { id: 'T2', org: 'org:카운터스', act: '이탈', tick: 10 },
       { id: 'T3', org: 'org:중앙_정부', act: '이탈', tick: 20 },
-      { id: 'T4', org: 'org:엘리시온', act: '합류', tick: 20 },
+      { id: 'T4', org: 'org:카운터스', act: '합류', tick: 30, role: '대장' },
     ],
   };
-  assert.deepEqual(fmt.orgsAt(p, 1).map((o) => o.source), ['game', 'game'], '첫 기록 앞은 게임 데이터');
-  assert.deepEqual(fmt.orgsAt(p, 3).map((o) => [o.name, o.role, o.source]), [['중앙 정부', '부사령관', 'record']]);
-  assert.deepEqual(fmt.orgsAt(p, 10).map((o) => o.name), ['중앙 정부', '카운터스']);
-  assert.deepEqual(fmt.orgsAt(p, 20).map((o) => [o.name, o.type, o.mark]), [['엘리시온', 'corp', 'icn_corp_01'], ['카운터스', 'squad', 'icn_counters']], '이탈은 빼고 기업이 앞');
-  assert.deepEqual(fmt.orgsAt(p, null).map((o) => o.name), ['엘리시온', '카운터스'], '전부 보기 = 기록 전부');
+  assert.deepEqual(fmt.orgsAt(p, 3).map((o) => [o.name, o.role, o.source]), [['카운터스', undefined, 'game'], ['올드 테일즈', undefined, 'game'], ['중앙 정부', '부사령관', 'record']], '기록이 다루지 않는 게임 소속은 그대로, 기록은 얹는다');
+  assert.deepEqual(names(p, 10), ['올드 테일즈', '중앙 정부'], '기록이 이탈시킨 게임 소속은 빠진다');
+  assert.deepEqual(names(p, 20), ['엘리시온', '올드 테일즈'], '기업이 앞');
+  assert.deepEqual(fmt.orgsAt(p, 30).map((o) => [o.name, o.role, o.source]), [['엘리시온', undefined, 'game'], ['카운터스', '대장', 'game'], ['올드 테일즈', undefined, 'game']], '다시 들어가면 게임 소속 자리에 기록의 role을 붙여 하나로');
+  assert.deepEqual(names(p, null), ['엘리시온', '카운터스', '올드 테일즈', '판정 못 함'], '전부 보기 = 게임 소속 전부 + 기록 전부');
   assert.match(fmt.orgTip({ name: '갓데스', via: '스노우 화이트 : 이노센트 데이즈', source: 'game' }), /갓데스 \(스노우 화이트 : 이노센트 데이즈\) · 게임 데이터/);
   assert.deepEqual(fmt.orgsAt({ affs: [{ id: 'T5', org: 'org:중앙_정부', act: '소속', tick: 7, from: 'person:레비아탄' }] }, 7).map((o) => o.from), ['레비아탄'], '같은 인물의 기록을 빌린 것은 적은 이름을 단다');
+});
+
+test('게임 소속의 공개 자리(W12d) — export가 출시 · 기록에서 tick을 붙인다', () => {
+  const file = path.join(ROOT, 'site/data/targets.json');
+  if (!fs.existsSync(file)) return;
+  const byId = new Map(JSON.parse(fs.readFileSync(file, 'utf8')).map((t) => [t.id, t]));
+  const org = (p, name) => byId.get(p)?.orgs?.find((o) => o.name === name);
+  assert.equal(org('person:그레이브', '올드 테일즈')?.tick, 0, '원문에 이름 없는 게임 소속은 늘(0)');
+  assert.equal(org('person:라피', '카운터스')?.tick, byId.get('person:라피').affs.find((a) => a.org === 'org:카운터스').tick, '원문 기록 T가 출시보다 이르면 그 자리');
+  assert.ok(org('person:라피', '엘리시온')?.tick > org('person:라피', '카운터스').tick, '원문에서 안 드러나면 출시(호감도 단위)');
+  assert.ok(byId.get('person:그레이브').affs.some((a) => a.org === 'org:빌런_연합' && a.act === '합류'), '그레이브 이동이 기록으로');
 });

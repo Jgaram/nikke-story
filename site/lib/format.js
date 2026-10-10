@@ -16,7 +16,7 @@
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
  *   tickLabel(tick, { date })       'CH.20과 함께 출시 · 2023-01-12' / 'CH.17 다음 출시 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
- *   orgsAt(target, t)               그 자리의 소속(기업 · 스쿼드 마크) — 확정 소속 기록(affs)이 t까지 있으면 그것, 없으면 게임 데이터(orgs). ORG_SOURCE · orgTip(o)
+ *   orgsAt(target, t)               그 자리의 소속(기업 · 스쿼드 마크) — 공개 자리를 지난 게임 소속(orgs) 위에 t까지의 확정 소속 기록(affs)을 얹는다. ORG_SOURCE · orgTip(o)
  *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
@@ -354,23 +354,34 @@ export function iconAt(target, t) {
 export const ORG_SOURCE = { game: '게임 데이터 기준 현재 소속', record: '이 자리까지 읽은 스토리 기준 소속' };
 
 /**
- * 그 자리의 소속(docs/views.md "소속 마크") — 확정 소속 기록 T(target.affs, 공개 자리 tick)가 t까지 하나라도 있으면 그것을 차례로 쌓고
- * (소속 · 합류 → 더함, 이탈 → 뺌), 없으면 게임 데이터(target.orgs — 실장 니케의 지금 소속, 스포일러로 보지 않는다). t null(전부) = 기록 전부.
- * @returns {{ type: 'corp'|'squad', name: string, mark?: string, org?: string, role?: string, via?: string, source: 'game'|'record' }[]} 기업이 앞
+ * 그 자리의 소속(docs/views.md "소속 마크") — 게임 소속(target.orgs — 실장 니케의 지금 소속)과 확정 소속 기록 T(target.affs)를 합친다(W12d).
+ * - 게임 소속은 공개 자리(o.tick — 그 인물의 소속으로 처음 드러난 자리, 0 = 원문에 이름이 없어 늘)를 읽었으면 보인다. tick이 없으면(판정 못 함) 전부 보기에서만.
+ * - 기록은 t까지를 공개 순으로 쌓는다(소속 · 합류 → 들어 있음, 이탈 → 나감). 기록이 나가게 한 조직은 게임 소속이어도 뺀다.
+ * - 기록이 다루지 않는 게임 소속은 그대로 두고, 기록만 있는 조직을 그 위에 더한다. t null(전부) = 게임 소속 전부 + 기록 전부.
+ * @returns {{ type: 'corp'|'squad', name: string, mark?: string, org?: string, role?: string, via?: string, from?: string, source: 'game'|'record' }[]} 기업이 앞
  */
 export function orgsAt(target, t) {
   if (!target) return [];
-  const recs = (target.affs ?? []).filter((a) => t == null || (a.tick != null && a.tick <= t));
-  if (!recs.length) return (target.orgs ?? []).map((o) => ({ ...o, source: 'game' }));
-  const now = new Map();
-  for (const a of recs) {
-    if (a.act === '이탈') now.delete(a.org);
-    else now.set(a.org, a);
+  const all = t == null;
+  const now = new Map(); // org → 마지막 기록(이탈이면 나감)
+  for (const a of target.affs ?? []) if (all || (a.tick != null && a.tick <= t)) now.set(a.org, a);
+  const out = [];
+  const shown = new Set();
+  for (const o of target.orgs ?? []) {
+    if (!all && !(o.tick != null && o.tick <= t)) continue;
+    const rec = o.org ? now.get(o.org) : null;
+    if (rec?.act === '이탈') continue;
+    const { tick, ...rest } = o;
+    out.push({ ...rest, role: rec?.role, source: 'game' });
+    if (o.org) shown.add(o.org);
   }
-  return [...now.values()].map((a) => {
+  for (const a of now.values()) {
+    if (a.act === '이탈' || shown.has(a.org)) continue;
     const o = idx?.targets.get(a.org);
-    return { type: o?.kind === '기업' ? 'corp' : 'squad', name: targetName(a.org), mark: o?.mark, org: a.org, role: a.role, from: a.from ? targetName(a.from) : undefined, source: 'record' };
-  }).sort((a, b) => (a.type === 'corp' ? 0 : 1) - (b.type === 'corp' ? 0 : 1));
+    out.push({ type: o?.kind === '기업' ? 'corp' : 'squad', name: targetName(a.org), mark: o?.mark, org: a.org, role: a.role, from: a.from ? targetName(a.from) : undefined, source: 'record' });
+  }
+  return out.map((o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)))
+    .sort((a, b) => (a.type === 'corp' ? 0 : 1) - (b.type === 'corp' ? 0 : 1));
 }
 /** 소속 칩 툴팁 — '카운터스 · 게임 데이터 기준 현재 소속' / '갓데스 (스노우 화이트 : 이노센트 데이즈) · …' */
 export function orgTip(o) {

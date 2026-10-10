@@ -515,6 +515,7 @@
     { "id": "org:B.S.T.", "name": "B.S.T.", "kind": "팀", "note": "에이다 · 질 · 클레어의 팀(콜라보) — 게임 스쿼드 CE007(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:reborn_evil_20", "lines": [75] }] },
     { "id": "org:찻집_리코리코", "name": "찻집 리코리코", "kind": "가게", "names": [{ "name": "리코리코", "how": "약칭" }], "note": "치사토 · 타키나 · 쿠루미의 찻집(콜라보) — 게임 스쿼드 CE008(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:lie_cause_recoil_03", "lines": [37] }] },
     { "id": "org:마음의_괴도단", "name": "마음의 괴도단", "kind": "단체", "note": "콜라보 인물들의 단체 — 게임 스쿼드 CE009_01(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [99] }] },
-    { "id": "org:특별과외활동부", "name": "특별과외활동부", "kind": "단체", "note": "아이기스의 단체(콜라보) — 게임 스쿼드 CE009_03(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [123] }] }
+    { "id": "org:특별과외활동부", "name": "특별과외활동부", "kind": "단체", "note": "아이기스의 단체(콜라보) — 게임 스쿼드 CE009_03(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [123] }] },
+    { "id": "org:정의_괴도단", "name": "정의 괴도단", "kind": "단체", "note": "팬텀이 콜라보 안에서 꾸린 괴도단 — 유키코 · 곰 · 아이기스 · 퀸(마코토)이 함께함(소속 마크 W12d에서 더함, T127)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [119] }] }
   ]
 }

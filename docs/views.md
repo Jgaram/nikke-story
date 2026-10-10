@@ -396,8 +396,9 @@
   원문을 어디서 읽었는지(블라링크 · 금서고)도 화면 · JSON에 싣지 않는다(사용자, 2026-10-09 — `units.json`에 `library` · `replaces` 없음).
 - **소속 마크** (W12, 2026-10-10 — 사용자: 소속도 스토리 정보): 인물 옆에 기업 · 스쿼드 마크와 이름. 마크는 블라링크 CDN의 게임 아이콘(기업 `icn_corp_0N` 5 · 스쿼드 `icon/squad/{resource_id}` 52, docs/data-sources.md 10절)을
   `site/img/orgs/{아이콘}.png`로 **복사**해 둔다(인물 아이콘과 같은 까닭). 57개 · 0.64MB. 투명 바탕 흰 그림이라 어두운 칩(`--mark-bg`) 위에 놓는다.
-  `node tools/blabla/marks.mjs`(실장 니케 소속 모으기 → 없는 마크만 받기 → `site/img/orgs/index.json`) 뒤 `export.mjs --only common` — `targets.json` 인물 `orgs`(게임 데이터: `[{type: corp|squad, org?, name, mark, via?}]`, 표준 판이 앞 · 다른 판의 다른 소속은 `via` = 판 이름) · `affs`(확정 소속 기록 T: `[{id, org, act, role?, tick, order, from?}]` — `from`은 같은 인물의 대표 ID에서 빌린 기록, 아래) · 조직 행 `mark`.
-  화면은 `fmt.orgsAt(target, t)` → `ui.orgMarks` — 규칙은 docs/annotations.md "소속 기록"(그 자리까지 확정 T가 있으면 그것을 쌓고, 없으면 게임 데이터). 게임 데이터는 공개 정보라 스포일러로 가리지 않고 이름과 같이 보인다. 기록은 첫 근거 씬의 공개 자리부터.
+  `node tools/blabla/marks.mjs`(실장 니케 소속 모으기 → 없는 마크만 받기 → `site/img/orgs/index.json`) 뒤 `export.mjs --only common` — `targets.json` 인물 `orgs`(게임 데이터: `[{type: corp|squad, org?, name, mark, via?, tick?}]` — `tick` = 공개 자리(0 = 늘, 없음 = 판정 못 함 → 전부 보기에서만), 표준 판이 앞 · 다른 판의 다른 소속은 `via` = 판 이름) · `affs`(확정 소속 기록 T: `[{id, org, act, role?, tick, order, from?}]` — `from`은 같은 인물의 대표 ID에서 빌린 기록, 아래) · 조직 행 `mark`.
+  화면은 `fmt.orgsAt(target, t)` → `ui.orgMarks` — 규칙은 docs/annotations.md "소속 기록"(W12d 합치기: 게임 소속은 늘 남기고 그 위에 그 자리까지의 확정 T를 쌓으며, 기록이 이탈시킨 조직만 뺀다).
+  게임 소속도 스포일러 컷오프를 받는다(사용자, 2026-10-10) — 그 인물의 소속으로 처음 드러난 자리(`tick`) 앞에서는 마크를 **아예 보이지 않는다**(접지 않음 — '같은 인물' 표시 `fmt.sameAsKnown`과 같은 방식). 전부 보기면 다 보인다. 기록은 첫 근거 씬의 공개 자리부터.
   같은 인물(정체 연결)의 다른 이름 가운데 기록도 게임 소속도 없는 것(레비 ↔ 레비아탄, 프리시아 ↔ 프리티, 샛별 ↔ 요한)은 대표의 기록을 빌려 보이되 정체가 밝혀지는 단위(`same_as_unit`)부터 — 툴팁 끝에 '(레비아탄의 기록)'(W12c). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로.
   표시: 인물 탭 상세 머리(18px 칩 + 이름) · 목록 줄(14px 마크만, 이름은 툴팁 — 다른 판 소속은 뺀다) · 리더 패널 인물 머리(16px 칩). 칩 툴팁은 이름 · 자리(role) · 판 · 출처(게임 데이터 기준 현재 / 읽은 스토리 기준). 하단 출처 표기에 블라링크.
 - **화면 문구는 간결하게**(사용자, 2026-10-09): "근거" · "왜 이렇게 읽었나" 같은 해석 설명은 추정일 때만 붙인다 — 메모 패널의 이유는 `추정`인 메모만("추정한 이유"), 근거 씬 목록은 "장면". 종류 칩으로 아는 말(호감도 제목의 "(호감도 5편)")은 되풀이하지 않는다.

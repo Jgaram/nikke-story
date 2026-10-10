@@ -9,7 +9,7 @@
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
- *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터), affs — 확정 소속 기록 T(공개 자리 tick), 조직 mark — site/img/orgs/{mark}.png)
+ *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리), affs — 확정 소속 기록 T(공개 자리 tick), 조직 mark — site/img/orgs/{mark}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
@@ -254,6 +254,17 @@ export async function run(ctx) {
   if (!marks) warn({ where: 'orgs', msg: '소속 마크가 없다 — node tools/blabla/marks.mjs' });
   const markOfOrg = new Map();
   for (const [sec, type] of [['corporations', 'corp'], ['squads', 'squad']]) for (const m of Object.values(marks?.[sec] ?? {})) if (m.org && m.icon && !markOfOrg.has(m.org)) markOfOrg.set(m.org, m.icon);
+  const sceneUnit = new Map(scenes.map((s) => [s.id, s.unit]));
+  const affsOf = new Map();
+  for (const c of ctx.records.confirmed.filter((x) => x.kind === 'affil')) {
+    const o = c.obj ?? {};
+    const { scene } = firstRef(c.evidence);
+    const place = placeOf.get(sceneUnit.get(scene)) ?? {};
+    if (place.tick == null) warn({ where: 'orgs', msg: `${c.id}: 근거 씬 ${scene}의 공개 자리가 없다` });
+    (affsOf.get(o.person) ?? affsOf.set(o.person, []).get(o.person)).push(compact({
+      id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
+    }));
+  }
   const gameOrgs = new Map();
   if (marks) {
     const chars = all('SELECT resource_id, name, target_id FROM characters WHERE target_id IS NOT NULL ORDER BY resource_id');
@@ -267,21 +278,16 @@ export async function run(ctx) {
       const via = list.length && c.name !== tname.get(c.target_id) ? c.name : undefined;
       for (const [type, code, m] of [['corp', corp, marks.corporations[corp]], ['squad', squad, marks.squads[squad]]]) {
         if (!m) { warn({ where: 'orgs', msg: `${c.name}: 모르는 게임 코드 ${code}` }); continue; }
-        if (list.some((x) => x.type === type && x.name === m.name)) continue;
-        list.push(compact({ type, org: m.org ?? undefined, name: m.name, mark: m.icon, via }));
+        // 공개 자리(W12d — docs/annotations.md "게임 소속의 공개 자리"): 원문에 이름이 없는 소속(null)은 0(늘), 아니면
+        // 그 판의 출시(호감도 단위 char:<rid> — 프로필에 소속이 보인다)와 그 조직의 확정 기록 T(소속 · 합류) 가운데 이른 것. 둘 다 없으면 칸을 비운다(전부 보기에서만)
+        const rel = placeOf.get(`char:${c.resource_id}`)?.tick;
+        const recTicks = (affsOf.get(c.target_id) ?? []).filter((a) => m.org && a.org === m.org && a.act !== '이탈' && a.tick != null).map((a) => a.tick);
+        const tick = m.org ? (rel != null || recTicks.length ? Math.min(rel ?? Infinity, ...recTicks) : undefined) : 0;
+        const same = list.find((x) => x.type === type && x.name === m.name);
+        if (same) { if (tick != null && (same.tick == null || tick < same.tick)) same.tick = tick; continue; }
+        list.push(compact({ type, org: m.org ?? undefined, name: m.name, mark: m.icon, via, tick }));
       }
     }
-  }
-  const sceneUnit = new Map(scenes.map((s) => [s.id, s.unit]));
-  const affsOf = new Map();
-  for (const c of ctx.records.confirmed.filter((x) => x.kind === 'affil')) {
-    const o = c.obj ?? {};
-    const { scene } = firstRef(c.evidence);
-    const place = placeOf.get(sceneUnit.get(scene)) ?? {};
-    if (place.tick == null) warn({ where: 'orgs', msg: `${c.id}: 근거 씬 ${scene}의 공개 자리가 없다` });
-    (affsOf.get(o.person) ?? affsOf.set(o.person, []).get(o.person)).push(compact({
-      id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
-    }));
   }
   // 같은 인물(정체 연결)의 다른 이름 — 소속 기록은 대표 ID 하나에만 적는다(docs/annotations.md "소속 기록"). 기록도 게임 소속도 없는 이름(레비 ↔ 레비아탄)은
   // 대표의 기록을 빌려 보이되, 정체가 밝혀지는 단위(same_as_unit)보다 앞서 보이지 않게 그 자리로 늦춘다(from = 기록을 적은 이름). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로

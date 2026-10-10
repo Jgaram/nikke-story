@@ -2,7 +2,7 @@
   "_comment": [
     "소속 기록 — 인물 옆 기업 · 스쿼드 마크(사이트)의 근거. 형식 · 확정 절차는 docs/annotations.md \"소속 기록\", 게임 데이터 · 이미지는 docs/data-sources.md 10절.",
     "game: 게임 코드 → 사전 조직 ID. corporations는 roledata corporation, squads는 roledata squad(squad_detail.squad). 원문 범위 안에 이름이 없으면 null — 사이트는 게임 이름(squad_name)만 보인다. 헬레틱 · 기계생명체는 조직이 아니라 null(concept:헬레틱 등). 게임 T.T. STAR(민트 · 프리카)는 아니스가 있던 T.T.STAR(트윙클 트라이 스타)가 아니라 그 뒤 데뷔한 Twinkle Twin Star(org:Twinkle_Twin_Star 메모)로 잇는다.",
-    "실장 니케의 지금 소속은 게임 데이터에서 계산한다(기록하지 않는다 — tools/blabla/marks.mjs). affiliations에는 해석 기록만: 실장 밖 인물의 소속(2단계), 작중 소속 이동(3단계 — 변화 D aspect 소속을 records로).",
+    "실장 니케의 지금 소속은 게임 데이터에서 계산한다(기록하지 않는다 — tools/blabla/marks.mjs). affiliations에는 해석 기록만: 실장 밖 인물의 소속(2단계), 작중 소속 이동(3단계 — 변화 D aspect 소속을 records로), 게임 소속이 출시보다 앞서 원문에서 그 인물의 소속으로 드러난 자리(W12d — act 소속, 사이트 게임 소속 마크의 공개 자리).",
     "affiliations 항목: id(T<n>) · person · org · act(소속 · 합류 · 이탈) · role(조직 안 자리, 짧게) · records(D · F) · evidence · reason · confidence · status · by · session · note · reviews. 후보 → set T… 확정|기각 --by claude."
   ],
   "session": "W12a",
@@ -971,6 +971,905 @@
       "by": "claude",
       "session": "W12c",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12c", "note": "근거 줄에서 조직 · 들고 남을 직접 확인(W12c 검토). 실장 니케는 처음 소속부터" }]
+    },
+    {
+      "id": "T64",
+      "person": "person:라피",
+      "org": "org:카운터스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_01af_03", "lines": ["22-24"] }],
+      "reason": "스쿼드 명을 묻자 지휘관이 카운터스라 답하고 잉그리드가 그 일행(라피 포함)을 카운터스 제군이라 부름 — T51과 같은 줄",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T65",
+      "person": "person:네온",
+      "org": "org:엘리시온",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_01af_05", "lines": [3, 4] }],
+      "reason": "네온이 자기소개하자 라피가 엘리시온의 니케냐고 확인",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T66",
+      "person": "person:네온",
+      "org": "org:카운터스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_12af_02", "lines": [17, 18] }],
+      "reason": "미하라가 카운터스를 '아니스와 네온, 라피'로 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T67",
+      "person": "person:K",
+      "org": "org:시지_패러리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_14_07", "lines": [29, 30, 31] }],
+      "reason": "라피가 K 일행을 시지 패러리스로 짚고 아니스가 너희 짓이라 받음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T68",
+      "person": "person:디젤",
+      "org": "org:인피니티_레일",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_13_04", "lines": [13, 14] }],
+      "reason": "디젤이 '저희 인피니티 레일 스쿼드'로 모시겠다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T69",
+      "person": "person:솔린",
+      "org": "org:인피니티_레일",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_13_04", "lines": [14, 15] }],
+      "reason": "디젤의 스쿼드 소개 바로 뒤 같은 열차 승무원으로 탑승을 재촉",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T70",
+      "person": "person:브리드",
+      "org": "org:인피니티_레일",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_13_04", "lines": [14, 16, 17] }],
+      "reason": "디젤의 스쿼드 소개 뒤 같은 열차 승무원으로 출발을 알림",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T71",
+      "person": "person:리타",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "sub:미실리스_연구팀_00", "lines": [11] }],
+      "reason": "연구팀이 '미실리스 인더스트리 소속 니케 리타'라 부름",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T72",
+      "person": "person:은화",
+      "org": "org:앱솔루트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [22, 23] }],
+      "reason": "강하한 니케 셋 가운데 은화가 '앱솔루트. 강하 완료'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T73",
+      "person": "person:베스티",
+      "org": "org:앱솔루트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [22, 23, 24] }],
+      "reason": "강하한 니케 셋이 앱솔루트로 강하 완료를 알림(베스티가 그 셋)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T74",
+      "person": "person:엠마",
+      "org": "org:앱솔루트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [22, 23, 25] }],
+      "reason": "강하한 니케 셋이 앱솔루트로 강하 완료를 알림(엠마가 그 셋)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T75",
+      "person": "person:은화",
+      "org": "org:엘리시온",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [26] }],
+      "reason": "미하라가 막 강하한 앱솔루트를 '엘리시온의 최강 스쿼드'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T76",
+      "person": "person:베스티",
+      "org": "org:엘리시온",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [26] }],
+      "reason": "미하라가 막 강하한 앱솔루트를 '엘리시온의 최강 스쿼드'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T77",
+      "person": "person:엠마",
+      "org": "org:엘리시온",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_04_09_e", "lines": [26] }],
+      "reason": "미하라가 막 강하한 앱솔루트를 '엘리시온의 최강 스쿼드'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T78",
+      "person": "person:라플라스",
+      "org": "org:메티스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_11_06_s", "lines": [58] }],
+      "reason": "라플라스가 '우리 메티스'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T79",
+      "person": "person:라플라스",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_12_04", "lines": [28, 29] }],
+      "reason": "라플라스가 그 자리의 스쿼드(앱솔루트 · 메티스)를 '미실리스와 엘리시온의 최강 스쿼드'라 함",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T80",
+      "person": "person:드레이크",
+      "org": "org:메티스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_11_03", "lines": [31] }],
+      "reason": "드레이크가 '우리 메티스'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T81",
+      "person": "person:드레이크",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_11_01", "lines": [40, 41] }],
+      "reason": "은화가 미행한 메티스(드레이크 포함)를 '미실리스의 개들'이라 부르고 맥스웰이 슈엔이 시켰다고 받음",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T82",
+      "person": "person:맥스웰",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_11_01", "lines": [40, 41] }],
+      "reason": "'미실리스의 개들'이라는 말에 맥스웰이 슈엔이 시켰다고 받음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T83",
+      "person": "person:맥스웰",
+      "org": "org:메티스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_11_04", "lines": [30, 31] }],
+      "reason": "슈엔이 메티스를 부르자 맥스웰이 우리가 잘못한 게 없다고는 못 한다며 받음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T84",
+      "person": "person:바이퍼",
+      "org": "org:이그조틱",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_16_09_e", "lines": [67, 68] }],
+      "reason": "라피가 이그조틱에 데코이를 맡기자 바이퍼가 맡겨 달라고 받음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T85",
+      "person": "person:자칼",
+      "org": "org:이그조틱",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_16_13_e", "lines": [25, 26] }],
+      "reason": "자칼 일행의 배신에 아니스가 '이그조틱!?'이라 외침",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T86",
+      "person": "person:E.H.",
+      "org": "org:이그조틱",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_39_af_02", "lines": [1] }],
+      "reason": "E.H.가 이그조틱의 리더라고 자기소개",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T87",
+      "person": "person:앤",
+      "org": "org:리콜&릴리즈",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_n102_02", "lines": [91, 92] }],
+      "reason": "엑시아가 리콜&릴리즈를 '앤이 소속되어 있는 특수 스쿼드'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T88",
+      "person": "person:미하라",
+      "org": "org:워드리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [79] }],
+      "reason": "슈엔이 워드리스는 '미하라와 유니'라 함 — T55와 같은 줄",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T89",
+      "person": "person:미하라",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_02af_07", "lines": [79] }],
+      "reason": "미실리스 CEO 슈엔이 자기 스쿼드 워드리스를 미하라 · 유니로 소개 — T54와 같은 줄",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T90",
+      "person": "person:프리바티",
+      "org": "org:트라이앵글",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_09af_01", "lines": [6, 7] }],
+      "reason": "라피가 트라이앵글 스쿼드라 부르자 프리바티가 '우리도 중앙 정부 직속의 스쿼드'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T91",
+      "person": "person:메이든",
+      "org": "org:익스터너",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_12_07_e", "lines": [96, 97] }],
+      "reason": "익스터너 스쿼드 합류 알림 바로 뒤 메이든이 응답",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T92",
+      "person": "person:길로틴",
+      "org": "org:익스터너",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_12_07_e", "lines": [96, 98, 100] }],
+      "reason": "익스터너 스쿼드 합류 알림 뒤 메이든과 함께 온 길로틴이 대응",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T93",
+      "person": "person:루드밀라",
+      "org": "org:언리미티드",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_05_05", "lines": [2] }],
+      "reason": "루드밀라가 '우리는 [언리미티드]'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T94",
+      "person": "person:앨리스",
+      "org": "org:언리미티드",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_05_07", "lines": [10] }],
+      "reason": "루드밀라가 '언리미티드 스쿼드의 루드밀라다. 저 아이는 앨리스'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T95",
+      "person": "person:루피",
+      "org": "org:달란트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_15af_01", "lines": [10] }],
+      "reason": "루피가 '나, 도라, 얀을 포함한 달란트'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T96",
+      "person": "person:도라",
+      "org": "org:달란트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_15af_01", "lines": [10] }],
+      "reason": "루피가 '나, 도라, 얀을 포함한 달란트'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T97",
+      "person": "person:얀",
+      "org": "org:달란트",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_15af_01", "lines": [10] }],
+      "reason": "루피가 '나, 도라, 얀을 포함한 달란트'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T98",
+      "person": "person:스노우_화이트",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_07_05", "lines": [19] }],
+      "reason": "스노우 화이트가 자신들을 '순례자'(사전 필그림의 이름)일 뿐이라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T99",
+      "person": "person:라푼젤",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_14_14", "lines": [54, 55, 56, 57] }],
+      "reason": "스노우 화이트 · 라푼젤 · 홍련 셋을 서술이 '셋의 순례자'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T100",
+      "person": "person:홍련",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_14_14", "lines": [54, 55, 56, 57] }],
+      "reason": "스노우 화이트 · 라푼젤 · 홍련 셋을 서술이 '셋의 순례자'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T101",
+      "person": "person:나유타",
+      "org": "org:파이오니아",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_39_06", "lines": [0, 1] }],
+      "reason": "파이오니아의 다른 멤버를 묻자 나유타가 선구자 부대의 네 번째 식객이라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T102",
+      "person": "person:나유타",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_39_10", "lines": [10, 11] }],
+      "reason": "드레이크가 나유타를 '필그림!'이라 부름(앞서 06#6-7 사칭 의심, 06#37 인정)",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T103",
+      "person": "person:라푼젤",
+      "org": "org:갓데스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
+      "reason": "라푼젤이 '우린 [갓데스] 스쿼드'라며 구성 인원을 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T104",
+      "person": "person:스노우_화이트",
+      "org": "org:갓데스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
+      "reason": "라푼젤이 갓데스 구성 인원으로 스노우 화이트를 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T105",
+      "person": "person:홍련",
+      "org": "org:갓데스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
+      "reason": "라푼젤이 갓데스 구성 인원으로 홍련을 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T106",
+      "person": "person:레드_후드",
+      "org": "org:갓데스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
+      "reason": "라푼젤이 갓데스 구성 인원으로 레드 후드를 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T107",
+      "person": "person:로산나",
+      "org": "org:언더월드_퀸",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_22_09", "lines": [79] }],
+      "reason": "목단이 언더월드 퀸으로 목단 · 로산나 · 사쿠라를 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T108",
+      "person": "person:목단",
+      "org": "org:언더월드_퀸",
+      "act": "소속",
+      "evidence": [{ "scene": "event_cherryblossom_02_s", "lines": [27, 40] }],
+      "reason": "사쿠라의 '저희 언더월드 퀸' 뒤 목단이 언더월드 퀸이 둘이나 있다고 함",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T109",
+      "person": "person:마나",
+      "org": "org:미실리스",
+      "act": "소속",
+      "evidence": [{ "scene": "side:wordless_02", "lines": [14, 15] }],
+      "reason": "마나가 미실리스 니케 사건으로 회사 위상이 떨어져 저희가 성과를 내야 한다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T110",
+      "person": "person:소다",
+      "org": "org:메이드_포_유",
+      "act": "소속",
+      "evidence": [{ "scene": "event_maidinvalentine_01_e", "lines": [23] }],
+      "reason": "소다가 메이드 인사로 '메이드 포 유~'",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T111",
+      "person": "person:크라운",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_17_05_s", "lines": [30, 31] }],
+      "reason": "그쪽도 필그림이냐는 물음에 라푼젤이 크라운과 차임을 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T112",
+      "person": "person:차임",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_17_05_s", "lines": [30, 31] }],
+      "reason": "그쪽도 필그림이냐는 물음에 라푼젤이 크라운과 차임을 꼽음",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T113",
+      "person": "person:크라운",
+      "org": "org:바이스리터",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_26_03_s", "lines": [0] }],
+      "reason": "크라운이 '우리는 바이스리터'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T114",
+      "person": "person:차임",
+      "org": "org:바이스리터",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_26_01_s", "lines": [24] }],
+      "reason": "차임이 '우린 바이스리터!'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T115",
+      "person": "person:앵커",
+      "org": "org:이지스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_helm_01", "lines": [95, 96, 97] }],
+      "reason": "헬름이 앵커 일행에게 '우리는 ... 이지스 스쿼드야'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T116",
+      "person": "person:마스트",
+      "org": "org:이지스",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_helm_02", "lines": [89, 90] }],
+      "reason": "헬름이 '우리는 이지스 스쿼드로' 하자 마스트가 받아침",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T117",
+      "person": "person:네로",
+      "org": "org:해피_주",
+      "act": "소속",
+      "evidence": [{ "scene": "ep:d_nikke_biscuit_05", "lines": [7, 8, 9] }],
+      "reason": "비스킷이 해피 주 스쿼드의 일을 말하며 네로는 고양이를 맡는다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T118",
+      "person": "person:플로라",
+      "org": "org:보타닉_가든",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_27_09_e", "lines": [32] }],
+      "reason": "플로라가 '보타닉 가든의 플로라'라 인사",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T119",
+      "person": "person:일레그",
+      "org": "org:일렉트릭_쇼크",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_27_01_e", "lines": [44] }],
+      "reason": "일레그가 '일렉트릭 쇼크 스쿼드의 일레그'라 자기소개",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T120",
+      "person": "person:트로니",
+      "org": "org:일렉트릭_쇼크",
+      "act": "소속",
+      "evidence": [{ "scene": "event_boomsday_04_s", "lines": [0] }],
+      "reason": "서술이 니케가 된 트로니가 일렉트릭 쇼크 스쿼드에 들어갔다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T121",
+      "person": "person:그레이브",
+      "org": "org:필그림",
+      "act": "소속",
+      "evidence": [{ "scene": "d_main_31_01_e", "lines": [51] }],
+      "reason": "지휘관이 '필그림. 그레이브 얘기야'라 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T122",
+      "person": "person:크러스트",
+      "org": "org:쿠킹오일",
+      "act": "소속",
+      "evidence": [{ "scene": "event_newflavor_01_s", "lines": [28] }],
+      "reason": "크러스트가 '쿠킹오일 스쿼드의 크러스트'라 자기소개",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T123",
+      "person": "person:민트",
+      "org": "org:Twinkle_Twin_Star",
+      "act": "소속",
+      "evidence": [{ "scene": "event_staranis2_epilogue", "lines": [39, 43] }],
+      "reason": "민트의 그룹 인사 · 서술이 민트와 프리카가 Twinkle Twin Star로 데뷔했다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T124",
+      "person": "person:프리카",
+      "org": "org:Twinkle_Twin_Star",
+      "act": "소속",
+      "evidence": [{ "scene": "event_staranis2_epilogue", "lines": [39, 40, 43] }],
+      "reason": "서술이 민트와 프리카가 Twinkle Twin Star로 데뷔했다고 함",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T125",
+      "person": "person:타키나",
+      "org": "org:찻집_리코리코",
+      "act": "소속",
+      "evidence": [{ "scene": "fl:lie_cause_recoil_03", "lines": [38, 39] }],
+      "reason": "찻집 리코리코를 묻자 타키나가 '저희가 일했던 가게'",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T126",
+      "person": "person:그레이브",
+      "org": "org:빌런_연합",
+      "act": "합류",
+      "role": "두 날개",
+      "records": ["D1784"],
+      "evidence": [{ "scene": "fl:great_villain_union_03", "lines": ["124-129"] }],
+      "reason": "합격 판정 뒤 '두 날개'로 — 신 빌런 연합 = 사전 빌런 연합(T49와 같이)",
+      "confidence": "추정",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
+    },
+    {
+      "id": "T127",
+      "person": "person:유키코",
+      "org": "org:정의_괴도단",
+      "act": "합류",
+      "records": ["D1757"],
+      "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [93, "116-127"] }],
+      "reason": "괴도가 아니라던 유키코가 '나도, 정의 괴도단이 될게'(#126) — 콜라보 안에서 결성된 단체",
+      "confidence": "확실",
+      "status": "확정",
+      "session": "W12d",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+      ]
     }
   ]
 }
