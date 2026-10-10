@@ -1,53 +1,61 @@
 /**
  * 탭 2 연결(W3) — 화면 2 "스토리 간 연결"(docs/views.md 2절, 규칙 docs/schema.md "관계선").
- * 스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 보는 것이 기본(이웃)이고, 필터로 줄인 전체(전체)와 연작 사슬(연작)도 본다.
- * 선을 누르면 그 선을 만든 분석 메모와 근거 줄(씬 → 씬)이 아래에 나온다.
+ * 팬의 질문: 이 스토리는 어디와, 왜 이어지나. 스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 보는 것이 기본(이웃)이고, 필터로 줄인 전체(전체)와 연작 사슬(연작)도 본다.
+ * 선을 누르면 그 선의 장면 → 장면과 "왜 이어졌나" 한 문장이 아래에 나온다.
  *
  * 쓰는 JSON
  *   links.json(이 탭 — tools/site/export/links.mjs): edges[3,370](스토리 쌍 × 선 종류 — from → to는 읽는 순서 · count 연결된 씬 수 · strength 1–3 · origin ·
  *     records · targets · threads · weak 약한 연결 수 · note) · chains[](메인 밖 다음 편 사슬) · targets[](중심 항목 — common = 자주 나오는 인물 · 항목)
  *   links-scenes.json(씬 엣지 6,257 — 선 하나의 근거. 선을 누를 때 처음 받는다): type · s · from/fl · to/tl · fu/tu · record · act · point · target · fb/tb · note
- *   공용(idx): units(제목 · 종류 · 출시 시점 · 범위) · scenes(씬 제목) · ticks · threads · targets, 분석 메모 문장은 처음 근거를 보일 때 idx.withRecords()로 받는다
+ *   공용(idx): units(제목 · 종류 · 출시 시점) · scenes(씬 제목) · ticks · threads · targets, 기록 문장은 처음 근거를 보일 때 idx.withRecords()로 받는다
  *
  * URL 파라미터(p.*) — 기본값이면 URL에서 뺀다
  *   m    ego(이웃, 기본) | net(전체) | chain(연작)
  *   ck   중심 스토리를 고를 스토리 종류(1단계). 없으면 전부. 가운데 후보 · 기본 가운데를 그 종류로 좁힌다(가운데를 직접 고르면 그 스토리가 우선)
- *   c    이웃 보기의 가운데 스토리 키. 없으면 지금 필터 · 컷오프에서 가장 많이 이어진 스토리(탭 안을 만지면 그 스토리를 c에 못박는다, 다른 탭에서 sel=unit:키를 들고 들어오면 그 스토리)
+ *   c    이웃 보기의 가운데 스토리 키. 없으면 지금 필터 · 여기까지 읽음에서 가장 많이 이어진 스토리(탭 안을 만지면 그 스토리를 c에 못박는다, 다른 탭에서 sel=unit:키를 들고 들어오면 그 스토리)
  *   n    이웃 보기에서 고른 앞/뒤 스토리 키(아래 근거의 대상). 없으면 가장 센 연결의 스토리
  *   pr   전체 보기에서 고른 선 "from>to"
  *   lt   고른 선 종류(sequel · setup_payoff · callback · reversal · character · keyword), 없으면 그 쌍의 전부
  *   ty   보일 선 종류(쉼표) 또는 all. 없으면 이웃 보기는 전부, 전체 보기는 이야기 연결 넷(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)
- *   s    연결 강도 1(전부) | 2(보통 이상, 기본) | 3(강함)
+ *   s    세기 1(전부) | 2(보통 이상, 기본) | 3(강함) — 화면 말은 '세기'(연결 강도라는 판정 말은 쓰지 않는다 — W13e)
  *   tg   인물 · 항목 ID(예 person:라피). 이 항목이 걸린 선만. 고를 수 있는 후보는 지금 가운데 · 필터에서 보이는 선에 걸린 것만
  *   th   떡밥 ID(예 J1). 이 떡밥에 걸린 선만
  *   kd   보일 스토리 종류(쉼표). 없으면 전부. 이웃 보기에서는 가운데 말고 이웃에만 건다
  *   nn   전체 보기에서 그릴 스토리 수 150(기본 80)
  *   mm   1이면 전체 보기에 메인끼리의 선도 그린다(기본은 뺀다 — 메인 챕터 사이 선이 전체의 4분의 1이라 나머지가 가려진다)
  *
- * 그리는 규칙
+ * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13e)
  *   스토리 쌍 하나 + 선 종류 하나 = 선 하나(links.json edges 한 줄). 방향은 늘 읽는 순서(출시순 한 줄)라 왼쪽 → 오른쪽이다.
- *   색 = 선 종류(다음 편 파랑 · 떡밥→회수 주황 · 다시 언급 청록 · 뒤집힘 빨강 — dataviz 검증 팔레트 순서 [빨강 파랑 주황 청록], 같은 인물 · 같은 소재는 회색 실선 · 점선),
- *   굵기 = 연결된 씬 수(세기 2 이상만 볼 때는 약한 연결 weak를 뺀 수), 점선(긴 점선) = 확정 전 후보. 이 탭에는 스토리 종류 색이 없다 —
- *   종류는 글자로 쓰고 전체 보기에서는 가로 띠(행)가 종류다(색 두 갈래가 겹치지 않게).
+ *   색 = 선 종류(이 그림의 축 — 다음 편 파랑 · 떡밥→회수 주황 · 다시 언급 청록 · 뒤집힘 빨강, dataviz 검증 팔레트 순서 [빨강 파랑 주황 청록], 같은 인물 · 같은 소재는 회색 실선 · 점선),
+ *   굵기 = 연결된 씬 수(세기 2 이상만 볼 때는 약한 연결 weak를 뺀 수 — 범례 글은 없다). 이 탭에는 스토리 종류 색이 없다 —
+ *   종류는 회색 글자로 쓰고 전체 보기에서는 가로 띠(행)가 종류다(색 두 갈래가 겹치지 않게).
+ *   작업 흔적은 화면에 내지 않는다: 만든 방법(키 규칙 · 기록 · 직접 확정 · 게임 조건), 세기 이름, 씬 · 선 · 이웃 개수, 근거 칸 수(말한 줄 · 이름 줄), 기록 ID.
+ *     '추정'만 예외로 단다(해석이 추정일 때만). 개수는 '더 보기 (N)'과 스포일러 안내뿐.
+ *   카드 = 제목(메인은 굵은 CH 표기) + 회색 작은 글자(종류 · 자리 — 메인은 제목이 다 말하므로 없다) + 선 종류 단추(선 견본 + 이름).
  *   자주 나오는 인물 · 항목(links.json targets.common)만 나눈 연결은 세기 1이라 기본(세기 2 이상)에서 빠진다. 그 항목을 인물 · 항목 필터로 고르면 풀린다.
- *   안 본 스토리(state.reading().seen — 메인 자리 t + 척추 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)와 범위(layers) 밖 스토리의 선은 숨기고
+ *   안 본 스토리(state.reading().seen — 메인 자리 t + 척추 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)의 선은 숨기고
  *   개수만 보인다("스포일러로 가린 N"). 선 · 근거는 양 끝 스토리를 다 봤을 때만, 인물 · 항목 · 떡밥 필터 후보도 그런 선에서만. 안 본 스토리를 가운데로 둘 수 없다.
- *   이웃 보기: 가운데 카드 + 앞(먼저 나온)·뒤(이어지는) 스토리 카드, 선은 카드 사이 곡선. 한쪽 8장씩 연결이 센 순(이야기 연결 → 세기 → 씬 수)으로 뽑아 출시순으로 놓고 "더 보기".
- *   전체 보기: 행 = 스토리 종류, 가로 = 읽는 순서, 점 = 스토리(크기 = 이어진 스토리 수). 이야기 연결(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)만 기본, 많이 이어진 상위 80개만 그리고 "150개까지"로 넓힌다(상한 150).
- *   연작: links.json chains. 처음 안 본 편부터 뒤는 가리고 첫 편이 가려진 사슬은 개수만 센다.
- *   카드를 누르면 sel=unit:키(리더 패널)와 그 쌍의 씬 → 씬 근거(분석 메모 문장 · 근거 줄), 카드의 "중심으로" 단추 또는 더블클릭이면 그 스토리가 가운데가 된다.
+ *   이웃 보기: 가운데 카드 + 앞(먼저 나온)·뒤(뒤에 나온) 스토리 카드, 선은 카드 사이 곡선. 한쪽 8장씩 연결이 센 순(이야기 연결 → 세기 → 씬 수)으로 뽑아 출시순으로 놓고 "더 보기".
+ *   전체 보기: 행 = 스토리 종류, 가로 = 출시순, 점 = 스토리(크기 = 이어진 스토리 수). 이야기 연결(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)만 기본, 많이 이어진 80편만 그리고 "150편까지"로 넓힌다(상한 150).
+ *   연작: links.json chains를 첫 편의 스토리 종류로 묶는다. 처음 안 본 편부터 뒤는 가리고 첫 편이 가려진 사슬은 개수만 센다. 직접 읽고 이은 연작의 까닭 문장만 접이 안에(키로 이은 '다음 편'은 당연해서 쓰지 않는다).
+ *   카드를 누르면 sel=unit:키(리더 패널)와 그 쌍의 근거, 카드의 "중심으로" 단추 또는 더블클릭이면 그 스토리가 가운데가 된다.
  *   가운데 카드는 스크롤을 따라 붙고(sticky) 선의 가운데 쪽 끝이 따라 움직인다. 640px 아래에서는 앞 → 가운데 → 뒤를 세로 한 줄로 접고 선 대신 선 종류 단추로 본다.
- *   근거 목록: 선 종류별 구역, 씬마다 "앞 씬 → 뒤 씬(씬 제목 · 씬 ID · 줄)" + 분석 메모 문장 + 가리키는 의문 · 사실 + 답. 세기 설정으로 가린 약한 연결은 개수와 "약한 연결까지 보기".
+ *   근거: 선 종류별 구역, 한 줄 = 장면 → 장면(제목에 두 스토리가 있으니 장면 이름만 — fmt.sceneName) + "왜 이어졌나" 한 문장(whyOf):
+ *     떡밥 회수 = 풀린 의문의 문장(일부만 풀렸으면 '일부 회수'), 복선 · 다시 언급 · 드러남 · 뒤집힘 = 그 기록 문장(없으면 가리키는 사실 · 의문), 직접 이은 연작 = 그 까닭(fmt.prose),
+ *     같은 인물 · 소재 = 두 장면에 함께 나온 이름(같은 장면 쌍은 한 줄로 묶는다), 키로 이은 다음 편 = 문장 없음. 문장은 기록으로 가는 링크(ID는 안 보인다).
+ *     선에 마우스를 올리면 말풍선에 그 선의 한 문장(edgeWhy). 세기 설정으로 가린 약한 연결은 "약한 연결도 보기" 단추만.
+ *   이 스토리 안의 연결(접이): 같은 스토리 안 장면 → 장면. 한 스토리 안 선행(호감도 1편 → 2편)은 당연해서 뺀다.
  *
  * 리더 패널 "관계선" 칸 잇는 법(공용 reader.js — 부모가 한다): data.load('links-scenes') → 씬 ID로 e.from === id || e.to === id,
- *   스토리 키로 e.fu === key || e.tu === key(같은 스토리 안은 fu === tu). 선 종류 e.type, 근거 줄 e.fl · e.tl, 분석 메모 e.record. 이 탭 열기: #tab=links&p.c=<스토리 키>.
+ *   스토리 키로 e.fu === key || e.tu === key(같은 스토리 안은 fu === tu). 선 종류 e.type, 근거 줄 e.fl · e.tl, 기록 e.record. 이 탭 열기: #tab=links&p.c=<스토리 키>.
  */
 export const meta = { id: 'links', title: '연결', blurb: '스토리 사이의 연결 — 이웃 · 전체 · 연작' };
 
-/** 이 탭 말(fmt에 없는 것만). 용어 → 사람 말 대응은 docs 2차 지시 기준 */
+/** 이 탭 말(fmt에 없는 것만) — 고칠 때는 여기 한 곳만. 팬이 묻는 말만 쓴다(만든 방법 · 판정 말 · 작업량 숫자는 없다 — W13e) */
 const LABELS = {
   mode: { ego: '이웃', net: '전체', chain: '연작' },
-  modeHelp: { ego: '스토리 하나를 가운데 두고 앞뒤로 이어진 스토리를 본다', net: '필터로 줄인 전체 연결을 감상 순서 위에 본다', chain: '다음 편으로 이어지는 연작 사슬' },
+  modeLabel: '보기',
+  modeHelp: { ego: '스토리 하나와 앞뒤로 이어진 스토리', net: '전체 연결을 출시순으로', chain: '다음 편으로 이어지는 연작' },
   centerKind: '스토리 종류',
   centerKindAll: '전체 종류',
   center: '중심 스토리',
@@ -63,28 +71,19 @@ const LABELS = {
   threadAll: '떡밥 전체',
   lineKind: '선 종류',
   kindFilter: '스토리 종류',
-  strength: [
-    { value: '1', label: '전부', title: '{common} · 항목만 나눈 약한 연결까지' },
-    { value: '2', label: '보통 이상', title: '추정한 연결 · 중심으로 나온 같은 인물 · 소재 · 떨어진 연작부터' },
-    { value: '3', label: '강함', title: '곧바로 이어지는 다음 편 · 확실한 {note}만' },
+  strength: '세기',
+  strengthOpts: (common) => [
+    { value: '1', label: '전부', title: `${common}만 겹치는 것까지` },
+    { value: '2', label: '보통 이상', title: `${common}만 겹치는 것은 뺀다` },
+    { value: '3', label: '강함', title: '바로 이어지는 다음 편 · 확실한 떡밥 연결만' },
   ],
-  level: { 1: '약함', 2: '보통', 3: '강함' },
-  levelHelp: { 1: '{common} · 항목만 나눈 연결', 2: '추정한 연결 · 중심으로 나온 같은 인물 · 소재 · 떨어진 연작', 3: '곧바로 이어지는 다음 편 · 확실한 {note}' },
-  before: '앞',
-  after: '뒤',
-  beforeHead: '앞 — 먼저 나온 스토리',
-  afterHead: '뒤 — 이어서 나온 스토리',
+  beforeHead: '먼저 나온 스토리',
+  afterHead: '뒤에 나온 스토리',
   centerMark: '가운데',
   recenter: '중심으로',
   recenterTitle: '이 스토리를 가운데로 놓고 보기',
   more: (n) => `더 보기 (${n})`,
-  neighbors: '이어진 스토리',
-  lines: '선',
-  hiddenRange: (n) => `범위 설정에서 빠진 스토리 ${n}`,
   showAll: '전부 보기',
-  widthKey: '굵기 = 연결된 씬 수',
-  flowKey: '왼쪽 → 오른쪽이 감상 순서',
-  candKey: '긴 점선 = 확정 전 후보',
   noNeighbors: '이 스토리와 이어진 스토리가 없다',
   noNeighborsFiltered: '필터에 걸리는 연결이 없다',
   allHidden: '이어진 스토리가 모두 스포일러로 가려져 있다',
@@ -92,48 +91,30 @@ const LABELS = {
   centerHidden: '이 스토리는 아직 안 읽은 스토리라 가렸다',
   detailTitle: '이어진 장면',
   allTypes: '전체',
-  sceneRows: (n) => `씬 연결 ${n}`,
-  weakHidden: (n) => `연결 강도 설정으로 가린 약한 연결 ${n}`,
-  weakShow: '약한 연결까지 보기',
-  first: '앞 씬',
-  second: '뒤 씬',
+  weakShow: '약한 연결도 보기',
   inner: '이 스토리 안의 연결',
-  origin: { auto: '자동 규칙', record: '', manual: '직접 확정', 'game-condition': '게임 선행 조건' }, // record는 mount에서 originNote로 — W13e가 출처 말을 걷는다
-  originNote: '분석 메모',
-  originHelp: { auto: '키 · 게임 순서 · 중심 항목으로 기계가 이은 것', record: '원문을 읽고 남긴 {note}에서 나온 것', manual: '직접 읽고 확정한 연작', 'game-condition': '게임이 먼저 보게 하는 선행 조건' },
-  conf: { 확실: '확실', 추정: '추정' },
-  candidate: '후보',
-  answer: '답',
   partial: '일부 회수',
-  whole: '회수',
-  pointOf: { Q: '의문', F: '사실' },
-  both: '앞·뒤',
-  shared: '중심 까닭',
-  netCap: (shown, total) => `많이 이어진 상위 ${shown}개 스토리만 그렸다 (전체 ${total})`,
-  netReduce: '줄이기',
-  netMainMain: (n) => `메인끼리의 선 ${n}`,
+  netCap: (n) => `많이 이어진 ${n}편만 그렸다`,
+  netWide: (n) => `${n}편까지 보기`,
+  netMainMain: '메인끼리의 선도 그리기',
   netTop: '가장 많이 이어진 스토리',
-  netWide: (n) => `${n}개까지 보기`,
-  netStrong: '강함만',
-  netStoryOnly: '이야기 연결만',
-  netHint: '스토리를 누르면 연결이 강조되고, 선을 누르면 이어진 장면이 아래에 나온다 · 두 번 누르면 그 스토리의 이웃 보기',
+  netSel: '고른 스토리',
+  netEgo: '이웃 보기',
+  netHint: '선을 누르면 이어진 장면이 아래에 나온다',
   netEmpty: '그릴 연결이 없다',
+  netAria: '스토리 연결 그림',
+  axis: '출시순 →',
   asTable: '표로 보기',
   colFrom: '앞 스토리',
   colTo: '뒤 스토리',
-  colCount: '씬 수',
-  colLevel: '강도',
-  netSel: '고른 스토리',
-  netNodes: '스토리',
-  chainGroup: { manual: '직접 확정한 연작 — 이벤트 · 사이드', auto: '키 · 게임 순서로 이은 연작 — 서브퀘스트 · 유실물' },
+  chainBranch: '갈래 있음',
   chainEmpty: '보일 연작이 없다',
-  chainCount: (n) => `연작 ${n}`,
-  chainHiddenTail: (n) => `이어지는 ${n}편은 아직 안 읽은 스토리라 가렸다`,
-  chainNotes: '연결 까닭',
-  svgOff: '그래프 라이브러리(d3)를 못 받아 선을 그리지 못한다 — 카드의 선 종류 단추로 이어진 장면은 볼 수 있다.',
+  chainLen: (n) => `${n}편`,
+  chainHiddenTail: (n) => `뒤 ${n}편은 스포일러로 가렸다`,
+  chainNotes: '이어지는 까닭',
+  svgOff: '그림을 그리지 못했다 — 카드의 선 종류 단추로 이어진 장면을 볼 수 있다.',
   loadingEvidence: '불러오는 중…',
-  noRows: '이 조건에 맞는 씬 연결이 없다',
-  rowMore: (n) => `씬 연결 더 보기 (${n})`,
+  noRows: '이 조건에 맞는 장면이 없다',
 };
 
 /** 선 종류별 이야기 연결 정도 — 카드를 뽑는 순서와 색 구분에 쓴다 */
@@ -143,7 +124,7 @@ const TYPE_IDS = ['sequel', 'setup_payoff', 'callback', 'reversal', 'character',
 const TYPE_CLASS = { sequel: 'sequel', setup_payoff: 'payoff', callback: 'callback', reversal: 'reversal', character: 'character', keyword: 'keyword', prereq: 'prereq' };
 
 const STEP = 8; // 한쪽에 처음 보이는 카드 수 · 더 보기 한 번의 수
-const ROW_STEP = 12; // 근거 목록에서 한 번에 보이는 씬 연결 수
+const ROW_STEP = 12; // 근거 목록에서 한 번에 보이는 장면 줄 수
 const NET_CAP = 80; // 전체 보기에서 처음 그리는 스토리 수 — 더 보면 NET_CAP_MAX까지
 const NET_CAP_MAX = 150; // 전체 보기의 스토리 수 상한
 const STACK_WIDTH = 640; // 이웃 보기가 한 줄(세로)로 접히는 너비
@@ -178,9 +159,14 @@ export async function mount(root, ctx) {
   const kindLabel = (k) => fmt.KIND[k]?.label ?? k;
   const when = (u) => fmt.tickLabel(u.tick, { date: false });
   const sceneTitle = (id) => idx.scenes.get(id)?.title;
-  const actLabel = (a) => fmt.ACT[a] ?? a;
-  const ORIGIN = { ...LABELS.origin, record: LABELS.originNote };
-  const fill = (t) => t.replace('{common}', TERM.commonTargets).replace('{note}', LABELS.originNote);
+  /** 메인 제목의 'CH.12'를 굵게(.ch — 감상 순서와 같은 표기) */
+  const chTitle = (u) => {
+    const m = u.kind === 'main' ? /^(CH\.\d+)\s*(.*)$/.exec(u.title) : null;
+    return m ? [h('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : u.title;
+  };
+  /** 제목 아래 회색 글자 — 종류 · 자리. 메인은 제목(CH.12 …)이 다 말하므로 없다(같은 말을 두 번 쓰지 않는다) */
+  const metaText = (u) => (u.kind === 'main' ? null : `${kindLabel(u.kind)} · ${when(u)}`);
+  const metaLine = (u) => (u.kind === 'main' ? null : h('div', { class: 'lk-node-meta' }, kindLabel(u.kind), h('span', { class: 'lk-dot' }, '·'), when(u)));
 
   // 인물 · 항목 필터 후보 — 선에 걸린 항목, 걸린 선 수 순
   const targetUse = new Map();
@@ -202,7 +188,7 @@ export async function mount(root, ctx) {
     const hu = new Map();
     for (const e of edges) {
       if (F.types && !F.types.has(e.type)) continue;
-      if (!inCut(F, e.a) || !inCut(F, e.b) || !inRange(F, e.a) || !inRange(F, e.b)) continue;
+      if (!inCut(F, e.a) || !inCut(F, e.b)) continue;
       if (F.mode === 'ego') {
         if (!ctr || (e.from !== ctr.key && e.to !== ctr.key)) continue;
         if (!kindOk(F, e.from === ctr.key ? e.b : e.a)) continue;
@@ -246,12 +232,10 @@ export async function mount(root, ctx) {
       mm: p.mm === '1',
       R: state.reading(s), // 여기까지 읽음 — 스토리마다 R.seen(키)
       cut: cutSig(state.reading(s)),
-      layers: s.layers,
     };
   }
   /** 그 스토리를 봤나(여기까지 읽음 안) — 출시 자리가 아니라 스토리 단위(척추 이벤트 · 사이드 예외 x 반영) */
   const inCut = (F, u) => F.R.seen(u.key);
-  const inRange = (F, u) => u.layer == null || F.layers.includes(u.layer);
   const kindOk = (F, u) => !F.kinds || F.kinds.has(u.kind);
   /** 자주 나오는 항목을 고르면 그 항목의 약한 연결(세기 1)도 보인다 */
   const relaxed = (F, e) => F.tg && commonSet.has(F.tg) && e.targets.includes(F.tg);
@@ -263,14 +247,14 @@ export async function mount(root, ctx) {
   }
   /** 선 굵기 — 세기 2 이상만 볼 때는 약한 연결을 뺀다 */
   const effCount = (e, F) => (F.minS >= 2 && !relaxed(F, e) ? Math.max(1, e.count - (e.weak ?? 0)) : e.count);
-  const structSig = (F) => JSON.stringify([F.mode, F.ck, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.layers, F.wide, F.mm]);
+  const structSig = (F) => JSON.stringify([F.mode, F.ck, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.wide, F.mm]);
 
   /** 스토리별 이어진 이웃 수(지금 필터 · 컷오프 · 범위 안, 종류 필터는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
   function degrees(F) {
     const nb = new Map();
     for (const e of edges) {
       if (!passEdge(e, F)) continue;
-      if (!inCut(F, e.a) || !inCut(F, e.b) || !inRange(F, e.a) || !inRange(F, e.b)) continue;
+      if (!inCut(F, e.a) || !inCut(F, e.b)) continue;
       if (F.kinds && !F.kinds.has(e.a.kind) && !F.kinds.has(e.b.kind)) continue;
       (nb.get(e.from) ?? nb.set(e.from, new Set()).get(e.from)).add(e.to);
       (nb.get(e.to) ?? nb.set(e.to, new Set()).get(e.to)).add(e.from);
@@ -281,12 +265,12 @@ export async function mount(root, ctx) {
     let best = null;
     for (const [k, set] of nb) {
       const u = units.get(k);
-      if (!u || !inCut(F, u) || !inRange(F, u) || (F.ck && u.kind !== F.ck)) continue;
+      if (!u || !inCut(F, u) || (F.ck && u.kind !== F.ck)) continue;
       if (!best || set.size > best.n || (set.size === best.n && u.order < best.u.order)) best = { u, n: set.size };
     }
     if (best) return best.u;
     // 이어진 스토리가 하나도 안 보이면(컷오프가 이를 때) 가장 먼저 나온 스토리 — 가려진 이웃 수를 알려 줄 수 있다
-    return idx.unitList.filter((u) => inCut(F, u) && inRange(F, u) && (!F.ck || u.kind === F.ck)).sort((x, y) => x.order - y.order)[0] ?? null;
+    return idx.unitList.filter((u) => inCut(F, u) && (!F.ck || u.kind === F.ck)).sort((x, y) => x.order - y.order)[0] ?? null;
   }
 
   // ── 이웃 묶기 (가운데 스토리 하나) ──
@@ -336,15 +320,14 @@ export async function mount(root, ctx) {
 
   /** 선 종류 키 — 색 · 굵기 견본 */
   const typeKey = (t) => h('i', { class: `lk-key lk-t-${TYPE_CLASS[t]}`, 'aria-hidden': 'true' });
-  /** 기록 ID 칩(근거 표시) */
   /** 기록으로 가는 링크 — ID는 화면에 내지 않는다(W13a). 문장을 아직 못 받았을 때만 '자세히' */
   const recordLink = (id) => (id && /^[A-Z]+\d/.test(id) && !/^Y\d/.test(id) ? ui.link(`record:${id}`, '자세히', { class: 'lk-rid' }) : null);
+  /** 장면 링크 — 근거 머리에 두 스토리 이름이 있으니 장면 이름만('7장면 「…」') */
   const sceneLink = (id) => {
     const title = sceneTitle(id);
     if (!idx.scenes.has(id)) return h('span', { class: 'lk-scene' }, title ?? id); // 애장품 등 씬 목록에 없는 끝점
-    return h('span', { class: 'lk-scene' }, ui.link(`scene:${id}`, fmt.ref(id)));
+    return h('span', { class: 'lk-scene' }, ui.link(`scene:${id}`, fmt.sceneName(id), { title: fmt.ref(id) }));
   };
-  const kindText = (u) => h('span', { class: 'lk-kind' }, kindLabel(u.kind));
 
   // ── 콤보박스 (검색해서 고르는 입력) ──
   let comboSeq = 0;
@@ -375,7 +358,7 @@ export async function mount(root, ctx) {
       shown.forEach((it, i) => {
         if (it.group && it.group !== lastGroup) { list.append(h('li', { class: 'lk-group', role: 'presentation' }, it.group)); lastGroup = it.group; }
         const li = h('li', { class: ['lk-opt', it.dim ? 'is-dim' : ''], role: 'option', id: `${id}-o${i}`, 'aria-selected': 'false' },
-          h('span', { class: 'lk-opt-main' }, it.label), it.sub ? h('span', { class: 'lk-opt-sub' }, it.sub) : null, it.n != null ? h('span', { class: 'lk-opt-n' }, it.n) : null);
+          h('span', { class: 'lk-opt-main' }, it.label), it.sub ? h('span', { class: 'lk-opt-sub' }, it.sub) : null);
         li.addEventListener('mousedown', (e) => { e.preventDefault(); pick(i); });
         li.addEventListener('mousemove', () => { if (active !== i) setActive(i); });
         list.append(li);
@@ -421,18 +404,18 @@ export async function mount(root, ctx) {
     options: (q) => {
       const F = readF(state.get());
       const nb = degreesCached(F);
-      const pool = idx.unitList.filter((u) => inCut(F, u) && inRange(F, u) && (!F.ck || u.kind === F.ck));
+      const pool = idx.unitList.filter((u) => inCut(F, u) && (!F.ck || u.kind === F.ck));
       const n = (u) => nb.get(u.key)?.size ?? 0;
       let items;
       if (!q) {
         items = pool.filter((u) => n(u) > 0).sort((x, y) => n(y) - n(x) || x.order - y.order).slice(0, 12)
-          .map((u) => ({ value: u.key, label: u.title, sub: `${kindLabel(u.kind)} · ${when(u)}`, n: n(u), group: LABELS.centerTop }));
+          .map((u) => ({ value: u.key, label: u.title, sub: metaText(u), group: LABELS.centerTop }));
       } else {
         const f = fold(q);
         items = pool.map((u) => ({ u, k: fold(u.title).indexOf(f), k2: fold(u.key).indexOf(f) }))
           .filter((x) => x.k >= 0 || x.k2 >= 0)
           .sort((x, y) => (x.k === 0 ? 0 : 1) - (y.k === 0 ? 0 : 1) || n(y.u) - n(x.u) || x.u.order - y.u.order).slice(0, 30)
-          .map(({ u }) => ({ value: u.key, label: u.title, sub: `${kindLabel(u.kind)} · ${when(u)}`, n: n(u) || '', dim: !n(u) }));
+          .map(({ u }) => ({ value: u.key, label: u.title, sub: metaText(u), dim: !n(u) }));
       }
       return { items, empty: LABELS.centerNone };
     },
@@ -443,9 +426,9 @@ export async function mount(root, ctx) {
   const rebuildKindOptions = () => {
     const nb = degreesCached(F);
     const cnt = new Map();
-    for (const u of idx.unitList) if (inCut(F, u) && inRange(F, u) && nb.get(u.key)?.size) cnt.set(u.kind, (cnt.get(u.kind) ?? 0) + 1);
+    for (const u of idx.unitList) if (inCut(F, u) && nb.get(u.key)?.size) cnt.set(u.kind, (cnt.get(u.kind) ?? 0) + 1);
     kindSelect.replaceChildren(h('option', { value: '' }, LABELS.centerKindAll),
-      ...kindsPresent.map((k) => h('option', { value: k, disabled: !cnt.get(k) && F.ck !== k }, `${kindLabel(k)} (${fmt.num(cnt.get(k) ?? 0)})`)));
+      ...kindsPresent.map((k) => h('option', { value: k, disabled: !cnt.get(k) && F.ck !== k }, kindLabel(k))));
     kindSelect.value = F.ck ?? '';
   };
 
@@ -457,7 +440,7 @@ export async function mount(root, ctx) {
     onClear: () => setP({ tg: null }),
     options: (q) => {
       let items;
-      const toItem = (t, group) => ({ value: t.id, label: t.name, sub: fmt.TARGET_TYPE[t.type] ?? '', n: t.n, dim: t.common, group });
+      const toItem = (t, group) => ({ value: t.id, label: t.name, sub: fmt.TARGET_TYPE[t.type] ?? '', dim: t.common, group });
       if (!q) {
         const top = cand.targets.filter((t) => !t.common).slice(0, 10).map((t) => toItem(t, LABELS.targetTop));
         const common = cand.targets.filter((t) => t.common).map((t) => toItem(t, TERM.commonTargets));
@@ -476,22 +459,22 @@ export async function mount(root, ctx) {
     h('option', { value: '' }, LABELS.threadAll));
   const rebuildThreadOptions = () => {
     const list = F.th && !cand.threads.some((t) => t.id === F.th) ? [...cand.threads, { id: F.th, title: idx.threads.get(F.th)?.title ?? F.th, n: 0 }] : cand.threads;
-    threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...list.map((t) => h('option', { value: t.id }, `${t.title} (${t.n})`)));
+    threadSelect.replaceChildren(h('option', { value: '' }, LABELS.threadAll), ...list.map((t) => h('option', { value: t.id }, t.title)));
   };
 
-  // 연결 강도
-  const strengthSeg = ui.segmented({ label: TERM.strength, options: LABELS.strength.map((o) => ({ ...o, title: fill(o.title) })), value: '2', onChange: (v) => setP({ s: v === '2' ? null : v, n: null, lt: null }) });
+  // 세기
+  const strengthSeg = ui.segmented({ label: LABELS.strength, options: LABELS.strengthOpts(TERM.commonTargets), value: '2', onChange: (v) => setP({ s: v === '2' ? null : v, n: null, lt: null }) });
 
   // 모드
   const modeSeg = ui.segmented({
-    label: '보기',
+    label: LABELS.modeLabel,
     options: ['ego', 'net', 'chain'].map((m) => ({ value: m, label: LABELS.mode[m], title: LABELS.modeHelp[m] })),
     value: 'ego',
     onChange: (v) => state.set({ p: { m: v === 'ego' ? null : v, n: null, lt: null, pr: null } }),
   });
 
-  // 켜고 끄는 칩 묶음 — 전부 켜짐이면 파라미터를 지운다
-  function toggleChips({ items, name, getSel, onChange, counts = false }) {
+  // 켜고 끄는 칩 묶음 — 전부 켜짐이면 파라미터를 지운다. 개수는 쓰지 않고, 지금 보기에 하나도 없는 종류만 흐리게(예외만)
+  function toggleChips({ items, name, getSel, onChange }) {
     const wrap = h('div', { class: 'lk-chips', role: 'group', 'aria-label': name });
     const buttons = new Map();
     for (const it of items) {
@@ -503,17 +486,17 @@ export async function mount(root, ctx) {
         else if (next.has(it.id)) next.delete(it.id);
         else next.add(it.id);
         onChange(next.size === 0 || next.size === all.length ? null : [...next]);
-      } }, it.key ?? null, h('span', { class: 'lk-chip-label' }, it.label), counts ? h('span', { class: 'lk-chip-n' }) : null);
+      } }, it.key ?? null, h('span', { class: 'lk-chip-label' }, it.label));
       buttons.set(it.id, b);
       wrap.append(b);
     }
     return {
       el: wrap,
-      sync(sel, n = null) {
+      /** n: 종류별 선 수(Map) — 주면 0인 칩을 흐리게, null이면 흐림을 푼다, 안 주면 그대로 */
+      sync(sel, n) {
         for (const [id, b] of buttons) {
           b.setAttribute('aria-pressed', String(!sel || sel.has(id)));
-          const c = b.querySelector('.lk-chip-n');
-          if (c && n) { c.textContent = fmt.num(n.get(id) ?? 0); b.classList.toggle('is-zero', !(n.get(id) ?? 0)); }
+          if (n !== undefined) b.classList.toggle('is-zero', Boolean(n) && !n.get(id));
         }
       },
     };
@@ -521,7 +504,6 @@ export async function mount(root, ctx) {
   const typeChips = toggleChips({
     items: typesPresent.map((t) => ({ id: t, label: typeLabel(t), title: typeHelp(t), cls: `lk-t-${TYPE_CLASS[t]}`, key: typeKey(t) })),
     name: LABELS.lineKind,
-    counts: true,
     getSel: () => readF(state.get()).types,
     onChange: (list) => setP({ ty: list ? list.join(',') : state.get().p.m === 'net' ? 'all' : null, n: null, lt: null, pr: null }),
   });
@@ -547,7 +529,7 @@ export async function mount(root, ctx) {
     field(LABELS.thread, threadSelect, 'lk-field-thread lk-collapsible'));
   const barFilter = h('div', { class: 'lk-bar lk-bar-filter lk-collapsible' },
     field(LABELS.lineKind, typeChips.el, 'lk-field-types'),
-    field(TERM.strength, strengthSeg.el, 'lk-field-strength'),
+    field(LABELS.strength, strengthSeg.el, 'lk-field-strength'),
     field(LABELS.kindFilter, kindChips.el, 'lk-field-kinds'));
   const controls = h('div', { class: 'lk-controls' }, barMain, barFilter);
   const summary = h('div', { class: 'lk-sum', 'aria-live': 'polite' });
@@ -565,18 +547,12 @@ export async function mount(root, ctx) {
   let netView = null;
   const limit = { key: null, before: STEP, after: STEP };
   let detailToken = 0;
-  let rowLimit = { key: '', n: ROW_STEP };
   let alive = true;
 
   const resetFilters = () => setP({ ty: null, s: null, tg: null, th: null, kd: null, mm: null, nn: null, n: null, lt: null, pr: null });
   const showAll = () => state.set({ t: 'all' });
-  /** 숨김 안내 한 줄(컷오프 · 범위) + 행동 단추 */
-  function hiddenNote(cut, range) {
-    const out = [];
-    if (cut > 0) out.push(ui.hiddenNote(fmt.hiddenLabel(cut), showAll));
-    if (range > 0) out.push(h('span', { class: 'lk-hidden lk-hidden-range' }, LABELS.hiddenRange(range)));
-    return out;
-  }
+  /** 스포일러 안내 한 줄 + 전부 보기 단추(가린 것이 있을 때만) */
+  const hiddenNote = (cut) => (cut > 0 ? [ui.hiddenNote(fmt.hiddenLabel(cut), showAll)] : []);
   function emptyState(text, { cut = 0, filtered = false } = {}) {
     return h('div', { class: 'lk-empty-state' },
       h('p', {}, text),
@@ -595,7 +571,7 @@ export async function mount(root, ctx) {
     let c = F.center ? units.get(F.center) : null;
     if (c && !inCut(F, c)) {
       body.append(emptyState(LABELS.centerHidden, { cut: 1 }));
-      summary.replaceChildren(...hiddenNote(1, 0));
+      summary.replaceChildren(); // 빈 상태 상자에 같은 단추가 있다
       centerCombo.set('');
       setTypeCounts(null);
       return;
@@ -611,14 +587,12 @@ export async function mount(root, ctx) {
     }
     centerCombo.set(c.title);
     if (limit.key !== c.key) { limit.key = c.key; limit.before = STEP; limit.after = STEP; }
-    const okNeighbor = (g) => inRange(F, g.unit) && kindOk(F, g.unit);
     const all = groupsOf(c.key, F);
-    const shown = all.filter((g) => inCut(F, g.unit) && okNeighbor(g));
-    const hiddenCut = all.filter((g) => !inCut(F, g.unit) && okNeighbor(g)).length;
-    const hiddenRange = all.filter((g) => inCut(F, g.unit) && !inRange(F, g.unit) && kindOk(F, g.unit)).length;
-    // 선 종류 칩의 건수 — 종류 필터만 빼고 센 것
+    const shown = all.filter((g) => inCut(F, g.unit) && kindOk(F, g.unit));
+    const hiddenCut = all.filter((g) => !inCut(F, g.unit) && kindOk(F, g.unit)).length;
+    // 선 종류 칩 — 종류 필터만 빼고 세어 하나도 없는 종류를 흐리게
     const counts = new Map();
-    for (const g of groupsOf(c.key, { ...F, types: null })) if (inCut(F, g.unit) && okNeighbor(g)) for (const e of g.edges) counts.set(e.type, (counts.get(e.type) ?? 0) + 1);
+    for (const g of groupsOf(c.key, { ...F, types: null })) if (inCut(F, g.unit) && kindOk(F, g.unit)) for (const e of g.edges) counts.set(e.type, (counts.get(e.type) ?? 0) + 1);
     setTypeCounts(counts);
 
     const sorted = [...shown].sort(byScore);
@@ -632,18 +606,13 @@ export async function mount(root, ctx) {
       if (act && !out.includes(act)) out.push(act);
       return out.sort(byOrder);
     };
-    const lineCount = shown.reduce((n, g) => n + g.edges.length, 0);
-    view = { center: c, shown, activeKey, before, after, hiddenCut, hiddenRange };
+    view = { center: c, shown, activeKey, before, after, hiddenCut };
 
-    summary.replaceChildren(
-      h('span', { class: 'lk-sum-main' },
-        h('strong', {}, c.title), ' ', kindText(c), ' ', h('span', { class: 'muted' }, when(c)), ' — ',
-        `${LABELS.neighbors} ${fmt.num(shown.length)}`, h('span', { class: 'muted' }, ` (${LABELS.before} ${fmt.num(before.length)} · ${LABELS.after} ${fmt.num(after.length)})`),
-        ' · ', `${LABELS.lines} ${fmt.num(lineCount)}`),
-      ...hiddenNote(hiddenCut, hiddenRange),
-      h('span', { class: 'lk-legend-note' }, LABELS.widthKey, ' · ', LABELS.flowKey));
+    // 요약 줄은 스포일러 안내뿐 — 이웃 · 선 개수와 범례 글은 싣지 않는다(작업량 숫자 · 당연한 설명)
+    summary.replaceChildren(...hiddenNote(hiddenCut));
 
     if (!shown.length) {
+      summary.replaceChildren();
       body.append(emptyState(hiddenCut && !filtered(F) ? LABELS.allHidden : filtered(F) ? LABELS.noNeighborsFiltered : LABELS.noNeighbors, { cut: hiddenCut, filtered: filtered(F) }));
       view.empty = true;
       renderDetail();
@@ -654,7 +623,7 @@ export async function mount(root, ctx) {
     const colBefore = h('section', { class: 'lk-col lk-before', 'aria-label': LABELS.beforeHead });
     const colAfter = h('section', { class: 'lk-col lk-after', 'aria-label': LABELS.afterHead });
     const fillCol = (col, side, arr, lim, headText) => {
-      col.append(h('h3', { class: 'lk-col-head' }, headText, h('span', { class: 'lk-col-n' }, fmt.num(arr.length))));
+      col.append(h('h3', { class: 'lk-col-head' }, headText));
       const ol = h('ol', { class: 'lk-rows' });
       for (const g of take(arr, lim)) ol.append(h('li', { class: 'lk-row' }, nodeCard(g, activeKey)));
       col.append(ol);
@@ -664,7 +633,7 @@ export async function mount(root, ctx) {
     };
     fillCol(colBefore, 'before', before, limit.before, LABELS.beforeHead);
     fillCol(colAfter, 'after', after, limit.after, LABELS.afterHead);
-    const mid = h('section', { class: 'lk-mid', 'aria-label': LABELS.centerMark }, centerCard(c, before.length, after.length));
+    const mid = h('section', { class: 'lk-mid', 'aria-label': LABELS.centerMark }, centerCard(c));
     box.append(colBefore, mid, colAfter);
     body.append(box);
     view.el = box;
@@ -674,28 +643,27 @@ export async function mount(root, ctx) {
     renderDetail();
   }
 
-  function centerCard(u, nBefore, nAfter) {
+  function centerCard(u) {
     return h('div', { class: 'lk-center' },
       h('div', { class: 'lk-center-tag' }, LABELS.centerMark),
-      h('div', { class: 'lk-center-title' }, ui.link(`unit:${u.key}`, u.title, { title: u.title })),
-      h('div', { class: 'lk-node-meta' }, kindText(u), h('span', { class: 'lk-dot' }, '·'), when(u)),
-      h('div', { class: 'lk-center-stats muted' }, `${LABELS.before} ${fmt.num(nBefore)} · ${LABELS.after} ${fmt.num(nAfter)}`));
+      h('div', { class: 'lk-center-title' }, ui.link(`unit:${u.key}`, chTitle(u), { title: u.title })),
+      metaLine(u));
   }
 
   function nodeCard(g, activeKey) {
     const u = g.unit;
     const card = h('div', { class: ['lk-node', g.key === activeKey ? 'is-active' : ''], dataset: { key: g.key, side: g.side } });
-    card.append(
+    card.append(...[
       h('div', { class: 'lk-node-top' },
-        h('button', { type: 'button', class: 'lk-title', title: u.title, onClick: () => pickNeighbor(g.key, null) }, u.title),
+        h('button', { type: 'button', class: 'lk-title', title: u.title, onClick: () => pickNeighbor(g.key, null) }, chTitle(u)),
         h('button', { type: 'button', class: 'lk-recenter', title: LABELS.recenterTitle, 'aria-label': `${u.title} — ${LABELS.recenterTitle}`, onClick: (e) => { e.stopPropagation(); recenter(g.key); } }, LABELS.recenter, ui.icon('arrow'))),
-      h('div', { class: 'lk-node-meta' }, kindText(u), h('span', { class: 'lk-dot' }, '·'), when(u)),
+      metaLine(u),
       h('div', { class: 'lk-tchips' }, g.edges.map((e) => h('button', {
         type: 'button', dataset: { type: e.type },
-        class: ['lk-tchip', `lk-t-${TYPE_CLASS[e.type]}`, e.unconfirmed ? 'is-cand' : ''],
-        title: `${typeHelp(e.type)} · ${TERM.strength} ${LABELS.level[e.strength]}`,
+        class: ['lk-tchip', `lk-t-${TYPE_CLASS[e.type]}`],
+        title: typeHelp(e.type),
         onClick: (ev) => { ev.stopPropagation(); pickNeighbor(g.key, e.type); },
-      }, typeKey(e.type), typeLabel(e.type), h('span', { class: 'lk-x' }, `×${fmt.num(effCount(e, F))}`), e.unconfirmed ? h('span', { class: 'lk-cand' }, LABELS.candidate) : null))));
+      }, typeKey(e.type), typeLabel(e.type))))].filter(Boolean)); // 메인은 회색 줄(metaLine)이 없다
     card.addEventListener('click', (e) => { if (!e.target.closest('button, a')) pickNeighbor(g.key, null); });
     card.addEventListener('dblclick', () => recenter(g.key));
     card.addEventListener('mouseenter', () => hoverKey(g.key, true));
@@ -742,7 +710,7 @@ export async function mount(root, ctx) {
           const off = cur + ws[j] / 2;
           cur += ws[j] + 2;
           const active = g.key === v.activeKey && (!F.lt || F.lt === e.type);
-          const line = v.svg.append('path').attr('class', `lk-line lk-t-${TYPE_CLASS[e.type]}${e.unconfirmed ? ' is-cand' : ''}${active ? ' is-active' : ''}`)
+          const line = v.svg.append('path').attr('class', `lk-line lk-t-${TYPE_CLASS[e.type]}${active ? ' is-active' : ''}`)
             .attr('stroke-width', ws[j]).attr('data-key', g.key).attr('data-type', e.type);
           const hit = v.svg.append('path').attr('class', 'lk-hit').attr('data-key', g.key).attr('data-type', e.type)
             .on('mouseenter', (ev) => { hoverKey(g.key, true); showTip(ev, lineTip(e)); })
@@ -774,11 +742,27 @@ export async function mount(root, ctx) {
     }
   }
 
+  /**
+   * 선 하나의 "왜 이어졌나" 한 문장(말풍선) — 직접 이은 연작은 그 까닭, 기록에서 나온 선은 첫 기록 문장(기록을 받은 뒤에만),
+   * 같은 인물 · 소재는 함께 나온 이름(자주 나오는 인물은 뒤로), 키로 이은 다음 편은 없음(당연하다)
+   */
+  function edgeWhy(e) {
+    if (e.origin === 'manual') return clip(fmt.prose(e.note), 90) || null;
+    if (e.type === 'character' || e.type === 'keyword') {
+      const ids = [...e.targets].sort((x, y) => Number(commonSet.has(x)) - Number(commonSet.has(y)));
+      return ids.length ? `${ids.slice(0, 4).map(fmt.targetName).join(' · ')}${ids.length > 4 ? ' …' : ''}` : null;
+    }
+    if (e.origin === 'record' && idx.hasRecords) {
+      for (const id of e.records) { const s = sentenceOf(id); if (s) return clip(s.text, 90); }
+    }
+    return null;
+  }
   function lineTip(e) {
+    const why = edgeWhy(e);
     return h('div', { class: 'lk-tip-body' },
       h('div', { class: 'lk-tip-title' }, `${e.a.title} → ${e.b.title}`),
-      h('div', {}, typeLabel(e.type), ' · ', `${LABELS.sceneRows(fmt.num(e.count))}`, ' · ', `${TERM.strength} ${LABELS.level[e.strength]}`),
-      e.note && e.origin !== 'manual' && e.note !== '흔한 대상' && fmt.prose(e.note) ? h('div', { class: 'muted' }, clip(fmt.prose(e.note), 60)) : null);
+      h('div', { class: 'muted' }, typeLabel(e.type)),
+      why ? h('div', {}, why) : null);
   }
 
   /** 선택(sel) · 고른 이웃만 바뀔 때 — 카드와 선의 강조만 갱신한다 */
@@ -839,17 +823,32 @@ export async function mount(root, ctx) {
     return null;
   }
 
-  /** 분석 메모 문장 자리를 채운다 — 기록 파일(6MB)은 처음 근거를 볼 때 받는다 */
+  /**
+   * 기록 하나 → 근거 줄의 한 문장 { id, text, part } — 회수는 풀린 의문의 문장(일부만 풀렸으면 part),
+   * 그 밖(복선 · 다시 언급 · 드러남 · 뒤집힘)은 그 기록 문장, 없으면 alt(가리키는 사실 · 의문). 링크는 문장의 기록으로
+   */
+  function sentenceOf(id, alt) {
+    const r = idx.records?.get(id);
+    if (!r) return null;
+    if (r.kind === 'Q-k') {
+      const q = idx.records.get(r.parent);
+      const t = q && fmt.recordText(q);
+      if (t) return { id: q.id, text: t, part: r.degree === '일부' };
+    }
+    const t = fmt.recordText(r);
+    if (t) return { id, text: t };
+    const a = alt ? idx.records.get(alt) : null;
+    const ta = a && fmt.recordText(a);
+    return ta ? { id: alt, text: ta } : null;
+  }
+  /** 문장 자리를 채운다 — 기록 파일(6MB)은 처음 근거를 볼 때 받는다. 못 받으면 '자세히' 링크가 남는다 */
   function fillRecords(scope) {
     if (!idx.hasRecords) return;
     for (const el of scope.querySelectorAll('[data-rec]:not([data-filled])')) {
-      const r = idx.records.get(el.dataset.rec);
       el.dataset.filled = '1';
-      if (!r) continue;
-      const text = clip(fmt.recordText(r), 120);
-      const prefix = el.dataset.prefix;
-      const label = !prefix ? fmt.recordLabel(r) : prefix === '→' ? `→ ${fmt.recordLabel(r)}` : prefix;
-      el.replaceChildren(h('span', { class: 'lk-why-label' }, label), ' ', text ? ui.link(`record:${el.dataset.rec}`, text, { class: 'lk-why-text' }) : recordLink(el.dataset.rec));
+      const s = sentenceOf(el.dataset.rec, el.dataset.alt);
+      if (!s) continue;
+      el.replaceChildren(ui.link(`record:${s.id}`, clip(s.text, 140), { class: 'lk-why-text' }), ...(s.part ? [' ', h('span', { class: 'lk-part' }, LABELS.partial)] : []));
     }
   }
   let recordsAsked = false;
@@ -859,56 +858,62 @@ export async function mount(root, ctx) {
     recordsAsked = true;
     idx.withRecords?.().then(() => { if (alive) { fillRecords(detail); fillRecords(inner); } }).catch(() => {});
   }
-  const recLine = (id, prefix) => h('div', { class: 'lk-why', dataset: { rec: id, prefix: prefix ?? '' } }, prefix ? h('span', { class: 'lk-why-label' }, prefix) : null, ' ', recordLink(id));
 
-  /** 기록이 만든 선의 "왜" — 메모 문장 + 가리키는 의문 · 사실 + 답 */
+  /**
+   * 근거 줄의 "왜 이어졌나" 한 문장. 직접 이은 연작 = 그 까닭(fmt.prose), 같은 인물 · 소재 = 두 장면에 함께 나온 이름,
+   * 기록에서 나온 선 = sentenceOf(기록을 받으면 채운다), 키로 이은 다음 편 · 게임 선행 조건 = 없음(당연하다). 해석이 추정이면 '추정'만 단다
+   */
   function whyOf(r) {
-    if (r.origin === 'manual') return fmt.prose(r.note) ? [h('p', { class: 'lk-note' }, fmt.prose(r.note))] : [];
-    if (r.origin === 'game-condition') return [];
-    if (r.type === 'character' || r.type === 'keyword') {
-      const basis = (s) => String(s ?? '').replace(/말함 (\d+)줄/, '말한 줄 $1').replace(/이름 (\d+)줄/, '이름 $1줄');
-      return [h('div', { class: 'lk-why' },
-        h('span', { class: 'lk-why-label' }, fmt.TARGET_TYPE[idx.targets.get(r.target)?.type] ?? LABELS.target), ' ',
-        r.target && idx.targets.has(r.target) ? ui.link(`target:${r.target}`, fmt.targetName(r.target)) : fmt.targetName(r.target),
-        r.note === '흔한 대상' ? h('span', { class: 'lk-weak' }, ` ${TERM.commonTargets}`) : null),
-      r.fb || r.tb ? h('div', { class: 'lk-basis muted' }, [r.fb ? `${LABELS.before} — ${basis(r.fb)}` : null, r.tb ? `${LABELS.after} — ${basis(r.tb)}` : null].filter(Boolean).join('  ·  ')) : null].filter(Boolean);
+    const guess = r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null;
+    if (r.origin === 'manual') {
+      const t = fmt.prose(r.note);
+      return t ? h('p', { class: 'lk-why' }, t, guess) : null;
     }
+    if (r.type === 'character' || r.type === 'keyword') {
+      const ids = r.targets ?? (r.target ? [r.target] : []);
+      return ids.length ? h('div', { class: 'lk-why lk-names' }, ids.map((id, i) => [i ? ' · ' : null, idx.targets.has(id) ? ui.link(`target:${id}`, fmt.targetName(id)) : fmt.targetName(id)])) : null;
+    }
+    if (r.origin !== 'record' || !r.record || /^Y/.test(r.record)) return null;
+    return h('div', { class: 'lk-why' }, h('span', { dataset: { rec: r.record, alt: r.point ?? '' } }, recordLink(r.record)), guess);
+  }
+  /** 같은 인물 · 소재 줄은 같은 장면 쌍끼리 한 줄로 묶는다(이름만 늘어놓는다 — 세기 높은 이름부터) */
+  function mergeNames(rows) {
     const out = [];
-    const rec = r.record && !/^Y/.test(r.record) ? r.record : null;
-    const isQk = rec && r.type === 'setup_payoff' && r.act === '회수';
-    if (rec && !isQk) out.push(recLine(rec));
-    if (r.point && r.point !== rec) out.push(recLine(r.point, isQk ? null : '→'));
-    const ans = /(일부|전부)?\s*·?\s*답\s+(\S+)/.exec(r.note ?? '');
-    if (ans) out.push(recLine(ans[2], `${r.type === 'reversal' ? '바뀐 사실' : LABELS.answer}${ans[1] === '일부' ? ` · ${LABELS.partial}` : ''}`));
-    else if (r.note && r.note !== '흔한 대상' && (/^known-gap/.test(r.note) || fmt.prose(r.note))) out.push(h('div', { class: 'lk-why muted' }, /^known-gap/.test(r.note) ? '빠진 조건을 번호 순서로 추정' : clip(fmt.prose(r.note), 120)));
+    const at = new Map();
+    for (const r of rows) {
+      if (r.type !== 'character' && r.type !== 'keyword') { out.push(r); continue; }
+      const k = `${r.type}\t${r.from}\t${r.to}`;
+      const m = at.get(k);
+      if (m) { m.list.push(r); m.s = Math.max(m.s, r.s); continue; }
+      const nr = { ...r, list: [r] };
+      at.set(k, nr);
+      out.push(nr);
+    }
+    for (const r of at.values()) {
+      r.targets = r.list.sort((x, y) => y.s - x.s || fmt.targetName(x.target).localeCompare(fmt.targetName(y.target), 'ko')).map((x) => x.target).filter(Boolean);
+    }
     return out;
   }
 
+  /** 근거 한 줄 — 장면 → 장면 + 한 문장 */
   function evRow(r) {
-    const act = r.act ? actLabel(r.act) : null;
     return h('li', { class: 'lk-ev' },
-      h('div', { class: 'lk-ev-top' },
-        act ? h('span', { class: 'lk-act' }, act) : null,
-        r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
-        r.status === '후보' ? h('span', { class: 'chip chip-plain chip-dashed' }, LABELS.candidate) : null,
-        h('span', { class: 'lk-origin muted', title: fill(LABELS.originHelp[r.origin] ?? '') }, ORIGIN[r.origin] ?? r.origin),
-        r.s ? h('span', { class: 'lk-lvl muted', title: fill(LABELS.levelHelp[r.s]) }, `${TERM.strength} ${LABELS.level[r.s]}`) : null),
       h('div', { class: 'lk-ev-scenes' },
-        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.first), sceneLink(r.from)),
+        sceneLink(r.from),
         h('span', { class: 'lk-ev-arrow', 'aria-hidden': 'true' }, ui.icon('arrow')),
-        h('span', { class: 'lk-end' }, h('span', { class: 'lk-end-tag' }, LABELS.second), sceneLink(r.to))),
-      ...whyOf(r));
+        sceneLink(r.to)),
+      whyOf(r));
   }
 
   /** 근거 목록 하나(선 종류 구역) — 더 보기는 구역마다 */
   function evSection(type, rows, limKey, again = renderDetail) {
     const lim = rowLimits.get(limKey) ?? ROW_STEP;
     const sec = h('section', { class: ['lk-dsec', `lk-t-${TYPE_CLASS[type] ?? 'prereq'}`] },
-      h('h4', { class: 'lk-dsec-head', title: typeHelp(type) }, typeKey(type), typeLabel(type), h('span', { class: 'lk-col-n' }, fmt.num(rows.length))));
+      h('h4', { class: 'lk-dsec-head', title: typeHelp(type) }, typeKey(type), typeLabel(type)));
     const ol = h('ol', { class: 'lk-evs' });
     for (const r of rows.slice(0, lim)) ol.append(evRow(r));
     sec.append(ol);
-    if (rows.length > lim) sec.append(h('button', { type: 'button', class: 'btn lk-more', onClick: () => { rowLimits.set(limKey, lim + ROW_STEP); again(); } }, LABELS.rowMore(fmt.num(rows.length - lim))));
+    if (rows.length > lim) sec.append(h('button', { type: 'button', class: 'btn lk-more', onClick: () => { rowLimits.set(limKey, lim + ROW_STEP); again(); } }, LABELS.more(fmt.num(rows.length - lim))));
     return sec;
   }
   const rowLimits = new Map();
@@ -921,7 +926,9 @@ export async function mount(root, ctx) {
     detail.hidden = false;
     const pairKey = `${pair.from.key}>${pair.to.key}`;
     if (pairKey !== detailPairKey) { rowLimits.clear(); detailPairKey = pairKey; }
-    if (!scenesP) { ui.clear(detail); detail.append(h('div', { class: 'lk-dh' }, h('h3', { class: 'lk-dtitle' }, pair.from.title, ' → ', pair.to.title)), ui.spinner(LABELS.loadingEvidence)); }
+    const head = () => h('header', { class: 'lk-dh' },
+      h('h3', { class: 'lk-dtitle' }, ui.link(`unit:${pair.from.key}`, chTitle(pair.from)), h('span', { class: 'lk-darrow', 'aria-hidden': 'true' }, ui.icon('arrow')), ui.link(`unit:${pair.to.key}`, chTitle(pair.to))));
+    if (!scenesP) { ui.clear(detail); detail.append(head(), ui.spinner(LABELS.loadingEvidence)); }
     let sc;
     try { sc = await loadScenes(); } catch (err) { if (token === detailToken) { ui.clear(detail); detail.append(ui.notice(err.message, 'error')); } return; }
     if (token !== detailToken || !alive) return;
@@ -930,32 +937,30 @@ export async function mount(root, ctx) {
     const allRows = sc.pair.get(`${pair.from.key}\t${pair.to.key}`) ?? [];
     const typesHere = pair.edges.map((e) => e.type);
     const rowOk = (r) => typesHere.includes(r.type) && (r.s >= F.minS || relaxedAny) && (!F.tg || !r.target || r.target === F.tg);
-    const rows = allRows.filter(rowOk);
-    const weak = allRows.filter((r) => typesHere.includes(r.type) && !rowOk(r) && r.s < F.minS).length;
+    const rows = mergeNames(allRows.filter(rowOk));
+    const weak = allRows.some((r) => typesHere.includes(r.type) && !rowOk(r) && r.s < F.minS);
     const byType = new Map();
     for (const r of rows) (byType.get(r.type) ?? byType.set(r.type, []).get(r.type)).push(r);
     const shownTypes = typesHere.filter((t) => byType.has(t));
     const sel = F.lt && byType.has(F.lt) ? F.lt : null;
 
     ui.clear(detail);
-    detail.append(h('header', { class: 'lk-dh' },
-      h('h3', { class: 'lk-dtitle' }, ui.link(`unit:${pair.from.key}`, pair.from.title), h('span', { class: 'lk-darrow', 'aria-hidden': 'true' }, ui.icon('arrow')), ui.link(`unit:${pair.to.key}`, pair.to.title)),
-      h('div', { class: 'lk-dsub muted' }, `${when(pair.from)} → ${when(pair.to)}`, ' · ', LABELS.sceneRows(fmt.num(rows.length)))));
+    detail.append(head());
     if (shownTypes.length > 1) {
       const tabs = h('div', { class: 'lk-dtabs', role: 'group', 'aria-label': LABELS.lineKind });
-      const tab = (id, label, n, key) => h('button', { type: 'button', class: ['lk-chip', id ? `lk-t-${TYPE_CLASS[id]}` : '', 'lk-dtab'], 'aria-pressed': String((sel ?? '') === (id ?? '')), onClick: () => setP({ lt: id }) }, key ?? null, label, h('span', { class: 'lk-chip-n' }, fmt.num(n)));
-      tabs.append(tab(null, LABELS.allTypes, rows.length));
-      for (const t of shownTypes) tabs.append(tab(t, typeLabel(t), byType.get(t).length, typeKey(t)));
+      const tab = (id, label, key) => h('button', { type: 'button', class: ['lk-chip', id ? `lk-t-${TYPE_CLASS[id]}` : '', 'lk-dtab'], 'aria-pressed': String((sel ?? '') === (id ?? '')), onClick: () => setP({ lt: id }) }, key ?? null, label);
+      tabs.append(tab(null, LABELS.allTypes));
+      for (const t of shownTypes) tabs.append(tab(t, typeLabel(t), typeKey(t)));
       detail.append(tabs);
     }
     const show = sel ? [sel] : shownTypes;
     if (!rows.length) detail.append(h('p', { class: 'lk-norows muted' }, LABELS.noRows));
     for (const t of show) detail.append(evSection(t, byType.get(t), `${pairKey}|${t}`));
-    if (weak > 0) detail.append(h('p', { class: 'lk-dfoot muted' }, LABELS.weakHidden(fmt.num(weak)), ' ', h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ s: '1' }) }, LABELS.weakShow)));
+    if (weak) detail.append(h('p', { class: 'lk-dfoot' }, h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ s: '1' }) }, LABELS.weakShow)));
     wantRecords(detail);
   }
 
-  // ── 이 스토리 안의 연결 (같은 스토리 안 씬 → 씬) ──
+  // ── 이 스토리 안의 연결 (같은 스토리 안 장면 → 장면 — 한 스토리 안 선행 1편 → 2편은 당연해서 뺀다) ──
   let innerKey = '';
   async function renderInner() {
     if (F.mode !== 'ego' || !view?.center) { inner.hidden = true; innerKey = ''; return; }
@@ -970,42 +975,40 @@ export async function mount(root, ctx) {
     }
     const sc = await loadScenes().catch(() => null);
     if (!sc || !alive || innerKey !== key) return;
-    const rows = sc.inner.get(key) ?? [];
+    const rows = (sc.inner.get(key) ?? []).filter((r) => r.type !== 'prereq');
     const summ = inner.querySelector('summary');
     if (!rows.length) { inner.hidden = true; return; }
-    const counts = new Map();
-    for (const r of rows) counts.set(r.type, (counts.get(r.type) ?? 0) + 1);
-    summ.replaceChildren(LABELS.inner, h('span', { class: 'lk-col-n' }, fmt.num(rows.length)),
-      h('span', { class: 'lk-inner-types muted' }, [...counts].sort((x, y) => (typeRank.get(x[0]) ?? -1) - (typeRank.get(y[0]) ?? -1)).map(([t, n]) => `${typeLabel(t)} ${fmt.num(n)}`).join(' · ')));
+    const types = TYPE_IDS.filter((t) => rows.some((r) => r.type === t));
+    summ.replaceChildren(LABELS.inner, h('span', { class: 'lk-inner-types muted' }, types.map(typeLabel).join(' · ')));
     const paint = () => {
       const bodyEl = inner.querySelector('.lk-inner-body');
       if (bodyEl.dataset.key === key) return;
       bodyEl.dataset.key = key;
       ui.clear(bodyEl);
-      const byType = new Map();
-      for (const r of rows) (byType.get(r.type) ?? byType.set(r.type, []).get(r.type)).push(r);
-      for (const t of ['prereq', ...TYPE_IDS]) if (byType.has(t)) bodyEl.append(evSection(t, byType.get(t), `inner|${key}|${t}`, () => { bodyEl.dataset.key = ''; paint(); }));
+      for (const t of types) {
+        const list = mergeNames(rows.filter((r) => r.type === t).sort((x, y) => y.s - x.s));
+        bodyEl.append(evSection(t, list, `inner|${key}|${t}`, () => { bodyEl.dataset.key = ''; paint(); }));
+      }
       wantRecords(inner);
     };
     inner.ontoggle = () => { if (inner.open) paint(); };
     if (inner.open) paint();
   }
 
-  // ── 전체 보기: 행 = 스토리 종류, 가로 = 읽는 순서 ──
+  // ── 전체 보기: 행 = 스토리 종류, 가로 = 출시순 ──
   function renderNet() {
     ui.clear(body);
     body.className = 'lk-body lk-body-net';
     view = null;
     netView = null;
     const mainMain = (e) => e.a.kind === 'main' && e.b.kind === 'main';
-    const pool = (f, cutOn) => edges.filter((e) => (f.mm || !mainMain(e)) && passEdge(e, f) && inRange(f, e.a) && inRange(f, e.b) && kindOk(f, e.a) && kindOk(f, e.b) && (!cutOn || (inCut(f, e.a) && inCut(f, e.b))));
+    const pool = (f, cutOn) => edges.filter((e) => (f.mm || !mainMain(e)) && passEdge(e, f) && kindOk(f, e.a) && kindOk(f, e.b) && (!cutOn || (inCut(f, e.a) && inCut(f, e.b))));
     const nodesOf = (es) => { const s = new Set(); for (const e of es) { s.add(e.from); s.add(e.to); } return s; };
     const es0 = pool(F, true);
     const hiddenCut = nodesOf(pool(F, false)).size - nodesOf(es0).size;
-    const counts = new Map();
+    const counts = new Map(); // 선 종류 칩 — 하나도 없는 종류를 흐리게
     for (const e of pool({ ...F, types: null }, true)) counts.set(e.type, (counts.get(e.type) ?? 0) + 1);
     setTypeCounts(counts);
-    const mmCount = F.mm ? 0 : pool({ ...F, mm: true }, true).filter(mainMain).length;
 
     const stat = new Map();
     for (const e of es0) {
@@ -1029,25 +1032,21 @@ export async function mount(root, ctx) {
     const deg = new Map(keep.map((k) => [k, 0]));
     for (const e of es) { deg.set(e.from, deg.get(e.from) + 1); deg.set(e.to, deg.get(e.to) + 1); }
 
-    summary.replaceChildren(
-      h('span', { class: 'lk-sum-main' }, `${LABELS.netNodes} ${fmt.num(keep.length)} · ${LABELS.lines} ${fmt.num(es.length)}`),
-      ...hiddenNote(hiddenCut, 0),
-      h('span', { class: 'lk-legend-note' }, LABELS.widthKey, ' · ', LABELS.flowKey));
+    // 요약 줄은 스포일러 안내뿐(스토리 · 선 개수와 범례 글은 싣지 않는다)
+    summary.replaceChildren(...hiddenNote(hiddenCut));
 
     if (!es.length) {
+      summary.replaceChildren();
       body.append(emptyState(LABELS.netEmpty, { cut: hiddenCut, filtered: filtered(F) }));
       renderDetail();
       return;
     }
-    if (capped) {
-      body.append(h('div', { class: 'notice notice-warn lk-cap' },
-        h('span', {}, LABELS.netCap(cap, total)), ' ',
-        !F.wide && total > NET_CAP ? h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ nn: '150' }) }, LABELS.netWide(NET_CAP_MAX)) : null, ' ',
-        F.minS < 3 ? h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ s: '3' }) }, `${LABELS.netReduce}: ${LABELS.netStrong}`) : null, ' ',
-        !F.types || [...F.types].some((t) => !STORY_TYPES.has(t)) ? h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ ty: [...STORY_TYPES].filter((t) => typesPresent.includes(t)).join(',') }) }, `${LABELS.netReduce}: ${LABELS.netStoryOnly}`) : null));
-    }
     if (!d3) { body.append(ui.notice(LABELS.svgOff, 'warn')); return; }
-    body.append(h('div', { class: 'lk-nettools' }, ui.toggle({ label: LABELS.netMainMain(fmt.num(F.mm ? pool({ ...F, mm: true }, true).filter(mainMain).length : mmCount)), checked: F.mm, onChange: (on) => setP({ mm: on ? '1' : null, pr: null }) })));
+    // 그림 위 한 줄 — 많이 이어진 N편만 그렸을 때 그 말과 넓히기 단추, 메인끼리의 선 켜기
+    body.append(h('div', { class: 'lk-nettools' },
+      capped ? h('span', { class: 'lk-cap' }, LABELS.netCap(fmt.num(cap)),
+        !F.wide && total > NET_CAP ? [' ', h('button', { type: 'button', class: 'btn lk-btn', onClick: () => setP({ nn: '150' }) }, LABELS.netWide(NET_CAP_MAX))] : null) : null,
+      ui.toggle({ label: LABELS.netMainMain, checked: F.mm, onChange: (on) => setP({ mm: on ? '1' : null, pr: null }) })));
 
     // 자리 잡기
     const W = Math.max(520, (body.clientWidth || 900) - 2);
@@ -1055,7 +1054,7 @@ export async function mount(root, ctx) {
     const RIGHT = 18;
     const TOP = 30;
     const ROW = 20;
-    const orders = idx.unitList.filter((u) => inCut(F, u) && inRange(F, u)).map((u) => u.order);
+    const orders = idx.unitList.filter((u) => inCut(F, u)).map((u) => u.order);
     const sx = d3.scaleLinear().domain([Math.min(...orders), Math.max(...orders)]).range([LEFT, W - RIGHT]);
     const laneKinds = fmt.KIND_ORDER.filter((k) => keep.some((key) => units.get(key).kind === k));
     const pos = new Map();
@@ -1081,7 +1080,7 @@ export async function mount(root, ctx) {
     const H = yCursor + 6;
 
     const wrap = h('div', { class: 'lk-net' });
-    const svg = d3.select(wrap).append('svg').attr('class', 'lk-netsvg').attr('width', W).attr('height', H).attr('role', 'img').attr('aria-label', `${LABELS.netNodes} ${keep.length} · ${LABELS.lines} ${es.length}`);
+    const svg = d3.select(wrap).append('svg').attr('class', 'lk-netsvg').attr('width', W).attr('height', H).attr('role', 'img').attr('aria-label', LABELS.netAria);
     // 행 띠 + 이름
     for (const [i, l] of lanes.entries()) {
       svg.append('rect').attr('class', `lk-lane${i % 2 ? ' is-alt' : ''}`).attr('x', 0).attr('y', l.top).attr('width', W).attr('height', l.h);
@@ -1089,7 +1088,7 @@ export async function mount(root, ctx) {
     }
     // 가로 눈금 — 메인 챕터 10개마다
     const gAxis = svg.append('g').attr('class', 'lk-axis');
-    gAxis.append('text').attr('class', 'lk-axis-title').attr('x', 10).attr('y', 18).text(`${TERM.order} →`);
+    gAxis.append('text').attr('class', 'lk-axis-title').attr('x', 10).attr('y', 18).text(LABELS.axis);
     for (const u of idx.unitList) {
       if (u.kind !== 'main' || u.num == null || u.num % 10 !== 0 || !inCut(F, u)) continue;
       const x = sx(u.order);
@@ -1111,7 +1110,7 @@ export async function mount(root, ctx) {
     };
     const selPair = F.pr;
     const edgeSel = gE.selectAll('path.lk-nedge').data(drawOrder).join('path')
-      .attr('class', (e) => `lk-nedge lk-t-${TYPE_CLASS[e.type]}${e.unconfirmed ? ' is-cand' : ''}${selPair === `${e.from}>${e.to}` && (!F.lt || F.lt === e.type) ? ' is-active' : ''}`)
+      .attr('class', (e) => `lk-nedge lk-t-${TYPE_CLASS[e.type]}${selPair === `${e.from}>${e.to}` && (!F.lt || F.lt === e.type) ? ' is-active' : ''}`)
       .attr('d', pathOf).attr('stroke-width', (e) => netW(effCount(e, F)));
     const gHit = svg.append('g').attr('class', 'lk-nhits');
     gHit.selectAll('path').data(drawOrder).join('path').attr('class', 'lk-nhit').attr('d', pathOf)
@@ -1162,16 +1161,16 @@ export async function mount(root, ctx) {
     body.append(netTable(es));
     renderDetail();
   }
-  /** 그림 대신 읽는 표 — 정렬 · 쪽 나눔, 줄을 누르면 근거가 아래에 나온다 */
+  /** 그림 대신 읽는 표 — 정렬 · 쪽 나눔, 줄을 누르면 근거가 아래에 나온다(센 연결부터) */
   function netTable(es) {
     const holder = h('div', { class: 'lk-nettable' });
-    const det = ui.details(`${LABELS.asTable} · ${LABELS.lines} ${fmt.num(es.length)}`, holder, { class: 'lk-nettable-wrap' });
+    const det = ui.details(LABELS.asTable, holder, { class: 'lk-nettable-wrap' });
     let built = false;
     det.addEventListener('toggle', () => {
       if (!det.open || built) return;
       built = true;
       const rows = [...es].sort((x, y) => y.strength - x.strength || effCount(y, F) - effCount(x, F) || x.a.order - y.a.order)
-        .map((e) => ({ id: e.id, e, from: e.a.title, to: e.b.title, type: e.type, count: effCount(e, F), strength: e.strength }));
+        .map((e) => ({ id: e.id, e, from: e.a.title, to: e.b.title, type: e.type }));
       const tbl = ui.table({
         rowKey: 'id', pageSize: 20, rows, empty: LABELS.netEmpty,
         onRow: (r) => setP({ pr: `${r.e.from}>${r.e.to}`, lt: r.type, n: null }),
@@ -1179,8 +1178,6 @@ export async function mount(root, ctx) {
           { key: 'from', label: LABELS.colFrom, render: (r) => ui.link(`unit:${r.e.from}`, r.from) },
           { key: 'to', label: LABELS.colTo, render: (r) => ui.link(`unit:${r.e.to}`, r.to) },
           { key: 'type', label: LABELS.lineKind, nowrap: true, render: (r) => h('span', { class: `lk-t-${TYPE_CLASS[r.type]}` }, typeKey(r.type), ' ', typeLabel(r.type)), sort: (x, y) => (typeRank.get(x.type) ?? 9) - (typeRank.get(y.type) ?? 9) },
-          { key: 'count', label: LABELS.colCount, num: true },
-          { key: 'strength', label: LABELS.colLevel, num: true, render: (r) => LABELS.level[r.strength] },
         ],
       });
       holder.append(tbl.el);
@@ -1190,35 +1187,33 @@ export async function mount(root, ctx) {
   function nodeTip(d) {
     return h('div', { class: 'lk-tip-body' },
       h('div', { class: 'lk-tip-title' }, d.unit.title),
-      h('div', {}, kindLabel(d.unit.kind), ' · ', when(d.unit)),
-      h('div', {}, `${LABELS.neighbors} ${fmt.num(d.st.nb.size)}`, h('span', { class: 'muted' }, ` (${LABELS.before} ${fmt.num(d.st.before.size)} · ${LABELS.after} ${fmt.num(d.st.after.size)})`)));
+      metaText(d.unit) ? h('div', { class: 'muted' }, metaText(d.unit)) : null);
   }
-  /** 전체 보기 아래 한 줄 — 고른 스토리와 이웃 보기로 가는 단추, 없으면 사용법 */
+  /** 전체 보기 아래 한 줄 — 고른(없으면 가장 많이 이어진) 스토리와 이웃 보기 단추, 사용법 한 줄 */
   function renderNetBar() {
     const nv = netView;
     if (!nv?.bar) return;
     const picked = selUnit() && nv.keepSet.has(selUnit()) ? selUnit() : null;
     const k = picked ?? nv.topKey;
-    const st = k && nv.keepSet.has(k) ? nv.stat.get(k) : null;
     ui.clear(nv.bar);
-    if (st) {
+    if (k && nv.keepSet.has(k)) {
       const u = units.get(k);
-      nv.bar.append(h('span', { class: 'lk-netsel' }, h('span', { class: 'ctl-name' }, picked ? LABELS.netSel : LABELS.netTop), ' ', ui.link(`unit:${k}`, u.title), ' ', kindText(u), ' ', h('span', { class: 'muted' }, `${when(u)} · ${LABELS.neighbors} ${fmt.num(st.nb.size)} (${LABELS.before} ${fmt.num(st.before.size)} · ${LABELS.after} ${fmt.num(st.after.size)})`)),
-        h('button', { type: 'button', class: 'btn lk-btn', onClick: () => recenter(k) }, `${LABELS.mode.ego} — ${LABELS.recenter}`));
+      nv.bar.append(h('span', { class: 'lk-netsel' }, h('span', { class: 'ctl-name' }, picked ? LABELS.netSel : LABELS.netTop), ' ', ui.link(`unit:${k}`, u.title), metaText(u) ? [' ', h('span', { class: 'lk-kind' }, metaText(u))] : null),
+        h('button', { type: 'button', class: 'btn lk-btn', onClick: () => recenter(k) }, LABELS.netEgo));
     }
     nv.bar.append(h('span', { class: 'muted lk-nethint' }, LABELS.netHint));
   }
 
   // ── 연작 ──
+  /** 연작을 첫 편의 스토리 종류로 묶는다(이벤트 · 서브퀘스트 …) — 만든 방법(직접 확정 · 키 규칙)으로 나누지 않는다 */
   function renderChain() {
     ui.clear(body);
     body.className = 'lk-body lk-body-chain';
     view = null;
     netView = null;
-    const ok = (u) => inCut(F, u) && inRange(F, u);
-    const groups = { manual: [], auto: [] };
+    const ok = (u) => inCut(F, u);
+    const groups = new Map(fmt.KIND_ORDER.map((k) => [k, []]));
     let hiddenChains = 0;
-    let unitCount = 0;
     for (const ch of links.chains) {
       const us = ch.units.map((k) => units.get(k)).filter(Boolean);
       if (!us.length) continue;
@@ -1228,57 +1223,46 @@ export async function mount(root, ctx) {
       const shown = us.slice(0, cutAt);
       const keys = new Set(shown.map((u) => u.key));
       const es = ch.edges.filter((e) => keys.has(e.from) && keys.has(e.to));
-      unitCount += shown.length;
-      groups[ch.edges.some((e) => e.origin === 'manual') ? 'manual' : 'auto'].push({ ch, shown, es, tail: us.length - cutAt });
+      (groups.get(us[0].kind) ?? groups.set(us[0].kind, []).get(us[0].kind)).push({ ch, shown, es, tail: us.length - cutAt });
     }
-    const shownChains = groups.manual.length + groups.auto.length;
-    summary.replaceChildren(
-      h('span', { class: 'lk-sum-main' }, `${LABELS.chainCount(fmt.num(shownChains))} · ${LABELS.netNodes} ${fmt.num(unitCount)}`),
-      ...hiddenNote(hiddenChains, 0));
-    if (!shownChains) { body.append(emptyState(LABELS.chainEmpty, { cut: hiddenChains })); return; }
-    for (const kind of ['manual', 'auto']) {
-      if (!groups[kind].length) continue;
-      body.append(h('h3', { class: 'lk-chain-group' }, LABELS.chainGroup[kind], h('span', { class: 'lk-col-n' }, fmt.num(groups[kind].length))));
+    summary.replaceChildren(...hiddenNote(hiddenChains));
+    if (![...groups.values()].some((g) => g.length)) { summary.replaceChildren(); body.append(emptyState(LABELS.chainEmpty, { cut: hiddenChains })); return; }
+    for (const [kind, items] of groups) {
+      if (!items.length) continue;
+      items.sort((x, y) => x.shown[0].order - y.shown[0].order);
+      body.append(h('h3', { class: 'lk-chain-group' }, kindLabel(kind)));
       const wrap = h('div', { class: 'lk-chains' });
-      for (const item of groups[kind]) wrap.append(chainCard(item));
+      for (const item of items) wrap.append(chainCard(item));
       body.append(wrap);
     }
   }
+  /** 연작 카드 — 편 수 + 편 사슬. 까닭 문장은 직접 읽고 이은 연작만(키로 이은 '다음 편'은 당연하다), 갈래가 있으면 어느 편에서 갈렸는지 접이 안에 */
   function chainCard({ ch, shown, es, tail }) {
-    const first = shown[0];
-    const last = shown[shown.length - 1];
-    const edgeBetween = (a, b) => es.find((e) => e.from === a.key && e.to === b.key);
     const flow = h('ol', { class: 'lk-flow' });
     if (ch.linear) {
       shown.forEach((u, i) => {
-        if (i > 0) {
-          const e = edgeBetween(shown[i - 1], u);
-          flow.append(h('li', { class: 'lk-conn', 'aria-hidden': 'true', title: e ? `${ORIGIN[e.origin] ?? e.origin} · ${TERM.strength} ${LABELS.level[e.strength]}` : '' },
-            h('i', { class: `lk-key lk-t-sequel${e?.strength < 3 ? ' is-weakish' : ''}` }), e ? h('span', { class: 'lk-conn-lvl' }, LABELS.level[e.strength]) : null));
-        }
+        if (i > 0) flow.append(h('li', { class: 'lk-conn', 'aria-hidden': 'true' }, h('i', { class: 'lk-key lk-t-sequel' })));
         flow.append(h('li', { class: 'lk-chain-node' }, chainNode(u)));
       });
     }
-    const notes = es.filter((e) => e.note);
-    const noteRows = es.map((e) => h('li', { class: 'lk-chain-note' },
+    const why = (e) => (e.origin === 'manual' ? fmt.prose(e.note) : '');
+    const noteEdges = ch.linear ? es.filter(why) : es;
+    const noteRows = noteEdges.map((e) => h('li', { class: 'lk-chain-note' },
       h('span', { class: 'lk-chain-pair' }, units.get(e.from)?.title, h('span', { class: 'lk-darrow' }, ui.icon('arrow')), units.get(e.to)?.title),
-      ' ', h('span', { class: 'muted' }, `${ORIGIN[e.origin] ?? e.origin} · ${TERM.strength} ${LABELS.level[e.strength]}`),
-      fmt.prose(e.note) ? h('p', { class: 'lk-note' }, fmt.prose(e.note)) : null,
-      e.record ? [' ', recordLink(e.record)] : null));
+      why(e) ? h('p', { class: 'lk-note' }, why(e)) : null));
     return h('article', { class: 'lk-chain' },
-      h('header', { class: 'lk-chain-head' }, h('strong', {}, `${fmt.num(shown.length)}편`), ch.linear ? null : h('span', { class: 'muted' }, '갈래 있음'),
-        h('span', { class: 'muted' }, `${first.title}${shown.length > 1 ? ` … ${last.title}` : ''}`)),
+      h('header', { class: 'lk-chain-head' }, h('strong', {}, LABELS.chainLen(fmt.num(shown.length))), ch.linear ? null : h('span', { class: 'muted' }, LABELS.chainBranch)),
       ch.linear ? flow : h('ol', { class: 'lk-flow lk-flow-tree' }, shown.map((u) => h('li', { class: 'lk-chain-node' }, chainNode(u)))),
       tail > 0 ? h('p', { class: 'lk-chain-tail muted' }, LABELS.chainHiddenTail(tail)) : null,
-      ch.linear && !notes.length ? null : ui.details(`${LABELS.chainNotes} ${fmt.num(es.length)}`, h('ul', { class: 'lk-chain-notes' }, noteRows), { open: !ch.linear }));
+      noteRows.length ? ui.details(LABELS.chainNotes, h('ul', { class: 'lk-chain-notes' }, noteRows), { open: !ch.linear }) : null);
   }
   function chainNode(u) {
     const key = u.key;
     return h('div', { class: ['lk-node', selUnit() === key ? 'is-sel' : ''], dataset: { key } },
       h('div', { class: 'lk-node-top' },
-        h('button', { type: 'button', class: 'lk-title', title: u.title, onClick: () => state.set({ sel: `unit:${key}` }) }, u.title),
+        h('button', { type: 'button', class: 'lk-title', title: u.title, onClick: () => state.set({ sel: `unit:${key}` }) }, chTitle(u)),
         h('button', { type: 'button', class: 'lk-recenter', title: LABELS.recenterTitle, 'aria-label': `${u.title} — ${LABELS.recenterTitle}`, onClick: () => recenter(key) }, LABELS.recenter, ui.icon('arrow'))),
-      h('div', { class: 'lk-node-meta' }, kindText(u), h('span', { class: 'lk-dot' }, '·'), when(u)));
+      metaLine(u));
   }
 
   // ── 그리기 · 갱신 ──
@@ -1351,7 +1335,7 @@ export async function mount(root, ctx) {
 
   const off = state.subscribe((s, changed) => {
     if (!alive || s.tab !== meta.id) return;
-    if (changed.has('p') || changed.has('t') || changed.has('layers')) refresh();
+    if (changed.has('p') || changed.has('t')) refresh();
     else if (changed.has('sel')) syncSelection();
   });
   let resizeTimer = null;

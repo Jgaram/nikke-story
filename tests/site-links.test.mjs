@@ -89,3 +89,11 @@ test('탭 모듈 소스 — meta · mount 규약, 외부 URL · 본문 칼럼 �
   const bad = css.replace(/\/\*[\s\S]*?\*\//g, '').split('}').map((r) => r.split('{')[0].trim()).filter((sel) => sel && !/^(@media|@keyframes|:root|\.tab-links|\.tooltip\.lk-tip|\.lk-tip)/.test(sel) && !/^\s*$/.test(sel));
   assert.deepEqual(bad.filter((s) => !s.startsWith(':root') && !s.startsWith('.tab-links')), []);
 });
+
+test('탭 화면 말 — 근거 줄에 작업 흔적(만든 방법 · 세기 이름 · 근거 칸 수 · 후보 · 층)이 없다 (W13e)', () => {
+  const js = fs.readFileSync(path.join(ROOT, 'site/tabs/links.js'), 'utf8');
+  const code = js.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  for (const w of ['연결 강도', '직접 확정', '게임 선행 조건', '키 · 게임 순서', '말한 줄', '씬 연결', '확정 전 후보', 'TERM.strength', 'layers', 'inRange']) {
+    assert.ok(!code.includes(w), `links.js에 '${w}'`);
+  }
+});
