@@ -21,7 +21,7 @@ const pairs = read('persons-pairs.json');
 const units = read('units.json');
 const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
-const extras = new Set(units.filter((u) => u.spine && u.kind !== 'main').map((u) => u.key));
+const extras = new Set(units.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key)); // 체크 칸 스토리 — 척추 이벤트 · 사이드 + 준필수(W15b)
 
 test('persons.json — 인물 386, 중복 없음, 이름 · 집계 칸', () => {
   assert.equal(persons.length, 386);
@@ -57,7 +57,7 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
   }
 });
 
-test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 척추 이벤트 · 사이드 키)]의 합이 pairs.csv와 같다', () => {
+test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 체크 칸 스토리 키)]의 합이 pairs.csv와 같다', () => {
   const csv = new Map(readCsv(path.join(ROOT, 'data/views/persons/pairs.csv')).map((r) => [`${r.a}\t${r.b}`, r]));
   assert.equal(pairs.length, csv.size);
   for (const pr of pairs) {

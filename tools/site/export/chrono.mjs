@@ -4,7 +4,8 @@
  * 단위의 공개 자리 · 제목 · 종류는 공용 units.json에 있으므로 여기 다시 싣지 않는다(브라우저가 idx.units로 잇는다).
  *
  * chrono.json = {
- *   points[57]   작중 축의 점 — 시대 기준점 8(chronology.json eras 순서) + 메인 챕터 49(번호 순). { pos(= 2i+1), id, era(시대면 true), name, years(지금에서 몇 년 전), basis[](시점 기록 ID), reason }
+ *   points[57]   작중 축의 점 — 시대 기준점 8(chronology.json eras 순서) + 메인 챕터 49(번호 순). { pos(= 2i+1), id, era(시대면 true), name, years(지금에서 몇 년 전), basis[](시점 기록 ID), reason,
+ *                meet[](시대만 — 처음 드러난 스토리: 근거 · 그 기준점을 든 시점 기록의 스토리, common.mjs meetList. 화면은 R.seenAny(meet) 앞에서 이름 · 햇수를 숨긴다 — W15b) }
  *                자리(pos) 규칙은 chrono.mjs와 같다: 점 i = 2i+1, 점 i-1과 i 사이 칸 = 2i, 첫 점 앞 = 0, 마지막 점 뒤 = 2P. 칸 라벨은 브라우저가 만든다.
  *   units[481]   단위의 '지금' — { unit, class(판별 · 범위 · 상대 · 불명), place(작중 자리 글 — chrono.csv 그대로), lo, hi(여러 조각이면 감싸는 구간), via(메인 · 단위 · 조각 · 회상 · 좁힘 · 단위 · 좁힘),
  *                records[](자리를 정한 시점 기록 S), pieces[] · flashbacks[](조각 ID), relations(관계 글), narrow(좁힘 관계 글) · narrow_confidence, release_main(공개 당시 메인), drift(과거 · 앞 · 맞음 · 걸침 · 뒤), drift_gap,
@@ -17,7 +18,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, compact, list, num, publishText } from '../lib.mjs';
-import { kindId } from './common.mjs';
+import { kindId, meetList } from './common.mjs';
 
 export const name = 'chrono';
 
@@ -46,6 +47,15 @@ export async function run(ctx) {
   ].map((p, i) => ({ pos: 2 * i + 1, ...p }));
   const maxPos = 2 * points.length;
   const posOf = new Map(points.map((p) => [p.id, p.pos]));
+  // 시대 기준점이 처음 드러난 자리(W15b) — 근거 시점 기록(basis)과 그 기준점을 기준 · 때로 든 시점 기록 S의 스토리. 그 앞에서는 이름 · 햇수를 숨긴다
+  const recById = new Map(common.records.map((r) => [r.id, r]));
+  for (const p of points) {
+    if (!p.era) continue;
+    const refers = common.records.filter((r) => r.kind === 'S' && JSON.stringify([r.ref ?? null, r.at ?? null]).includes(`"${p.id}"`));
+    const keys = [...(p.basis ?? []).map((id) => recById.get(id)?.unit), ...refers.map((r) => r.unit)].filter(Boolean);
+    p.meet = meetList(keys, common.units);
+    if (!p.meet) warn({ where: 'chrono', msg: `시대 기준점 ${p.id}: 드러난 스토리를 못 찾았다 — 읽는 중에는 이름을 늘 숨긴다` });
+  }
 
   // ── 입력 표 ──
   const rows = csv('data/views/timeline/chrono.csv');

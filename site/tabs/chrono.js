@@ -29,6 +29,8 @@
  *   작중 때를 모르는 스토리(키 상대 · 불명)는 목록 아래 접이식 한 칸(읽는 순서) — 줄에 다른 스토리와의 앞뒤가 있으면 그것만.
  *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨긴다(가린 개수는 내지 않는다).
  *     모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지). 머리에 지금 보이는 편 수 · 목록이면 "읽은 자리로"(여기까지 읽음 선으로).
+ *     시대 기준점은 처음 드러난 스토리(chrono.json points[].meet)를 보기 전에는 이름 · 햇수 대신 '아직 모르는 옛 사건'(칸 머리 · 눈금 말풍선 · 자리 글 · 장면 글 — W15b).
+ *     그 글들은 줄 · 머리마다 paint()로 다시 쓴다(DOM은 그대로).
  *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래 카드: 작중 순 · 장면(시점 기록 문장 링크) · 회상 장면 · 추정한 이유(추정인 좁힘만) · 출시(어긋난 것만).
  *     추정한 이유 = blurbs.json 팬용 문장(gate를 봤으면 later까지 — 좁힘이 여럿이어도 한 덩어리), 없거나 낡았으면 좁힘마다 거른 판정 문장(whyText).
  *     근거 링크는 여기까지 읽음 뒤 스토리(기록 · 씬의 스토리, 떡밥은 처음 나온 스토리)의 것을 숨긴다.
@@ -52,6 +54,7 @@ const LABELS = {
   },
   pieceTag: { 회상: '회상', other: '다른 때' },
   yearsAgo: (y) => `약 ${y}년 전`,
+  eraHidden: '아직 모르는 옛 사건', // 드러나기 전의 시대 기준점(W15b)
   zone: { era: '메인 이전', main: '메인 챕터' },
   multi: '여러 때에 걸친 이야기',
   sameTime: '같은 때', during: '동안',
@@ -108,7 +111,9 @@ export async function mount(root, ctx) {
   const P = points.length;
   const SLOTS = 2 * P + 1;
   const pointById = new Map(points.map((p) => [p.id, p]));
-  const pointShort = (p) => (p.era ? p.name.replace(/\s*\(.*?\)/g, '').trim() : chNum(p.id));
+  /** 시대 기준점이 그 자리에서 드러났나(W15b) — 처음 드러난 스토리(p.meet — 근거 · 그 기준점을 든 시점 기록의 스토리)를 하나라도 봤으면. 아니면 이름 · 햇수를 숨긴다 */
+  const eraKnown = (p) => { const R = state.reading(); return R.all || (Array.isArray(p.meet) && R.seenAny(p.meet)); };
+  const pointShort = (p) => (p.era ? (eraKnown(p) ? p.name.replace(/\s*\(.*?\)/g, '').trim() : LABELS.eraHidden) : chNum(p.id));
   /** 칸 이름 — 점이면 점 이름, 사이면 'A–B 사이' */
   const slotName = (pos) => {
     if (pos % 2 === 1) return pointShort(points[(pos - 1) / 2]);
@@ -298,20 +303,30 @@ export async function mount(root, ctx) {
     const u = c.u;
     const piece = e.type === 'piece' ? e.p : null;
     const target = piece ?? c;
-    let when = '';
-    if (mode === 'loose') when = relText(piece ? piece.relations : (c.relations || c.narrow));
-    else if (target.lo != null && target.hi != null && target.lo === e.slot && target.lo !== target.hi) when = `~ ${hiText(target.hi)}`; // 칸 머리가 앞 끝이라 뒤 끝만
-    else if (!isOneSlot(target)) when = spanText(target);
+    // 자리 글 · 장면 글은 시대 이름이 드러난 자리에 따라 바뀐다 — 줄은 한 번 만들고 refreshView가 paint()로 다시 쓴다(W15b)
+    const whenOf = () => {
+      if (mode === 'loose') return relText(piece ? piece.relations : (c.relations || c.narrow));
+      if (target.lo != null && target.hi != null && target.lo === e.slot && target.lo !== target.hi) return `~ ${hiText(target.hi)}`; // 칸 머리가 앞 끝이라 뒤 끝만
+      return isOneSlot(target) ? '' : spanText(target);
+    };
+    const when = whenOf();
     const ptext = piece ? cprose(piece.text) : '';
-    return el('div', { class: ['cr-row', piece && 'is-piece'], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
+    const whenEl = when ? el('span', {}, when) : null;
+    const ptextEl = ptext ? el('span', { class: 'cr-ptext' }, clip(ptext, 120)) : null;
+    const row = el('div', { class: ['cr-row', piece && 'is-piece'], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
       el('span', { class: 'cr-line' },
         el('span', { class: 'cr-title' }, chTitle(u.title)),
         metaLine([
           el('span', {}, fmt.KIND[u.kind]?.label ?? u.kind),
           piece ? el('span', { class: 'cr-ptag' }, pieceTag(piece)) : null,
-          when ? el('span', {}, when) : null,
+          whenEl,
         ], !piece && mode === 'story' && driftShort(c) ? el('span', { class: 'cr-dmeta' }, sep(), driftShort(c)) : null)),
-      ptext ? el('span', { class: 'cr-ptext' }, clip(ptext, 120)) : null);
+      ptextEl);
+    row.paint = () => {
+      if (whenEl) whenEl.textContent = whenOf();
+      if (ptextEl) ptextEl.textContent = clip(cprose(piece.text), 120);
+    };
+    return row;
   }
 
   /** 띠 그림 칸의 표시 — 점 · 막대 */
@@ -339,7 +354,9 @@ export async function mount(root, ctx) {
   }
   function bandRow(c) {
     const u = c.u;
-    const row = el('div', { class: 'cg-row', dataset: { key: c.unit }, role: 'button', tabindex: 0, 'aria-label': `${u.title} · ${spanText(c)}`.replace(/ · $/, '') });
+    const label = () => `${u.title} · ${spanText(c)}`.replace(/ · $/, '');
+    const row = el('div', { class: 'cg-row', dataset: { key: c.unit }, role: 'button', tabindex: 0, 'aria-label': label() });
+    row.paint = () => row.setAttribute('aria-label', label());
     row.style.setProperty('--c', `var(--kind-${u.kind})`);
     const plot = el('div', { class: 'cg-plot' });
     const marks = marksOf(c);
@@ -382,11 +399,27 @@ export async function mount(root, ctx) {
           mainName = el('span', { class: 'cr-gname' }, String(mu?.title ?? '').replace(/^CH\.\d+\s*/, ''),
             c?.parallel ? el('span', { class: 'cr-gsub', title: LABELS.parallelHint }, LABELS.parallel(wa(chNum(c.parallel.with)))) : null);
           h3.append(el('span', { class: 'ch' }, chNum(point.id)), mainName);
-        } else if (point?.era) {
-          h3.append(el('span', {}, point.name), point.years ? el('span', { class: 'cr-gsub' }, LABELS.yearsAgo(point.years)) : null);
-        } else h3.append(el('span', {}, slotName(e.slot)));
+        }
+        // 시대 칸 · 사이 칸 머리는 시대 이름이 드러났나에 따라 바뀐다(W15b) — refreshView가 paint()로 다시 쓴다
+        let paint = null;
+        if (point?.era) {
+          const nameEl = el('span', {});
+          const yearsEl = el('span', { class: 'cr-gsub' });
+          h3.append(nameEl, yearsEl);
+          paint = () => {
+            const known = eraKnown(point);
+            nameEl.textContent = known ? point.name : LABELS.eraHidden;
+            yearsEl.textContent = known && point.years ? LABELS.yearsAgo(point.years) : '';
+            yearsEl.hidden = !yearsEl.textContent;
+          };
+        } else if (!isMain) {
+          const nameEl = el('span', {});
+          h3.append(nameEl);
+          paint = () => { nameEl.textContent = slotName(e.slot); };
+        }
+        paint?.();
         const head = el('header', { class: ['cr-ghead', point?.era && 'is-era', isMain && 'is-main'] }, h3);
-        g = { slot: e.slot, point, mainKey: isMain && byKey.has(point.id) ? point.id : null, mainName, head, el: el('section', { class: 'cr-group' }, head, bodyEl), body: bodyEl, rows: [] };
+        g = { slot: e.slot, point, mainKey: isMain && byKey.has(point.id) ? point.id : null, mainName, head, paint, el: el('section', { class: 'cr-group' }, head, bodyEl), body: bodyEl, rows: [] };
         groups.push(g);
         wrap.append(g.el);
       }
@@ -403,6 +436,7 @@ export async function mount(root, ctx) {
   function bandView(byKind) {
     const wrap = el('div', { class: 'cg' });
     const firstMain = points.findIndex((p) => !p.era);
+    const eraTicks = []; // [눈금, 시대 기준점] — 말풍선은 refreshView가 그 자리 기준으로(W15b)
     // 머리: 영역 이름(메인 이전 · 메인 챕터) + 시대 눈금(숫자 없이 — 이름은 툴팁) + 챕터 눈금(5 단위)
     const axisEl = el('div', { class: 'cg-axis' });
     const zone = (lo, hi, text, cls) => { const z = el('span', { class: `cg-zone ${cls}`, 'aria-hidden': 'true' }, text); z.style.left = `${(lo / SLOTS) * 100}%`; z.style.width = `${((hi - lo) / SLOTS) * 100}%`; return z; };
@@ -412,7 +446,7 @@ export async function mount(root, ctx) {
     for (const p of points) {
       const x = ((p.pos + 0.5) / SLOTS) * 100;
       let t = null;
-      if (p.era) t = el('span', { class: 'cg-tick is-era', title: [p.name, p.years ? LABELS.yearsAgo(p.years) : null].filter(Boolean).join(' · ') });
+      if (p.era) { t = el('span', { class: 'cg-tick is-era' }); eraTicks.push([t, p]); }
       else {
         const n = Number(String(p.id).replace(/^ch/, ''));
         if (n % 5 === 0) t = el('span', { class: 'cg-tick', 'aria-hidden': 'true' }, String(n).padStart(2, '0'));
@@ -449,7 +483,7 @@ export async function mount(root, ctx) {
     const icon = (k) => el('i', { class: ['cr-ico', k === 'range' ? 'cr-ico-range' : 'cr-ico-dot', k === 'piece' && 'is-piece'], 'aria-hidden': 'true' });
     const legend = el('div', { class: 'cr-legend' }, ['dot', 'range', 'piece'].map((k) => el('span', { class: 'cr-leg', title: LABELS.legend[k][1] }, icon(k), LABELS.legend[k][0])));
     wrap.append(head, body, cutEl);
-    return { kind: 'band', byKind, el: el('div', { class: 'cg-wrap' }, legend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, applied: -1 };
+    return { kind: 'band', byKind, el: el('div', { class: 'cg-wrap' }, legend, wrap), cg: wrap, cutEl, cutFlag, groups, rows, eraTicks, applied: -1 };
   }
 
   // 작중 때를 모르는 스토리(작중순 아래 접이식 한 칸)
@@ -502,8 +536,10 @@ export async function mount(root, ctx) {
   function refreshView(v) {
     if (v.applied === visVersion) return;
     v.applied = visVersion;
-    for (const r of v.rows) r.el.hidden = !isOk(r.key);
+    for (const r of v.rows) { r.el.hidden = !isOk(r.key); if (!r.el.hidden) r.el.paint?.(); }
+    for (const [t, p] of v.eraTicks ?? []) t.title = eraKnown(p) ? [p.name, p.years ? LABELS.yearsAgo(p.years) : null].filter(Boolean).join(' · ') : LABELS.eraHidden;
     for (const g of v.groups) {
+      g.paint?.();
       const mainOk = Boolean(g.mainKey) && isOk(g.mainKey);
       if (g.mainName) {
         // 메인 챕터 칸 머리 — 챕터가 보이면 이름을 달고 누를 수 있게, 아니면 'CH.30'만(안 본 챕터 이름은 스포일러)
@@ -535,7 +571,7 @@ export async function mount(root, ctx) {
     }
   }
   function refreshLoose() {
-    for (const r of looseView.rows) r.el.hidden = !isOk(r.key);
+    for (const r of looseView.rows) { r.el.hidden = !isOk(r.key); if (!r.el.hidden) r.el.paint?.(); }
     const n = new Set(looseView.rows.filter((r) => !r.el.hidden).map((r) => r.key)).size;
     looseView.countEl.textContent = LABELS.count(fmt.num(n));
     looseView.el.hidden = n === 0;
@@ -583,7 +619,7 @@ export async function mount(root, ctx) {
   const placeText = (c) => {
     if (c.slot == null) return relText(c.relations || c.narrow) || LABELS.unknown;
     const p = isOneSlot(c) && c.lo % 2 === 1 ? points[(c.lo - 1) / 2] : null;
-    return [p?.era && p.years ? `${spanText(c)} (${LABELS.yearsAgo(p.years)})` : spanText(c), c.multi ? LABELS.multi : null].filter(Boolean).join(' — ');
+    return [p?.era && p.years && eraKnown(p) ? `${spanText(c)} (${LABELS.yearsAgo(p.years)})` : spanText(c), c.multi ? LABELS.multi : null].filter(Boolean).join(' — ');
   };
   function buildCard(key) {
     const c = byKey.get(key);

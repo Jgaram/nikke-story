@@ -20,6 +20,8 @@
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
+ *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
+ *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
  *   recordText(r) · recordLabel(r)  기록 한 줄(prose를 거친다 — 회수 줄에 문장이 없으면 답의 문장) · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
@@ -380,7 +382,7 @@ export const ORG_SOURCE = { game: '게임 속 지금 소속', record: '읽은 �
 
 /**
  * 그 자리의 소속(docs/views.md "소속 마크") — 게임 소속(target.orgs — 실장 니케의 지금 소속)과 확정 소속 기록 T(target.affs)를 합친다(W12d).
- * - 게임 소속은 공개 자리(o.tick — 그 인물의 소속으로 처음 드러난 자리, 0 = 원문에 이름이 없어 늘)를 읽었으면 보인다. tick이 없으면(판정 못 함) 전부 보기에서만.
+ * - 게임 소속은 공개 자리(o.tick — 그 인물의 소속으로 처음 드러난 자리: 출시와 확정 T 가운데 이른 것)를 읽었으면 보인다. tick이 없으면(판정 못 함) 전부 보기에서만.
  * - 기록은 t까지를 공개 순으로 쌓는다(소속 · 합류 → 들어 있음, 이탈 → 나감). 기록이 나가게 한 조직은 게임 소속이어도 뺀다.
  * - 기록이 다루지 않는 게임 소속은 그대로 두고, 기록만 있는 조직을 그 위에 더한다. t null(전부) = 게임 소속 전부 + 기록 전부.
  * - past(W12e): 전 소속을 뒤에 더한다(past: true) — t까지의 '지난 소속' 기록과, 마지막 기록이 이탈인 조직. 지금 소속(다른 판 포함)과 같은 조직은 빼서 한 번만.
@@ -501,6 +503,39 @@ export function sameAsKnown(t, R) {
   return ids.filter((_, i) => { const u = t.same_as_unit?.[i]; return u ? R.seen(u) : false; });
 }
 
+
+/**
+ * 대상(인물 · 항목)이 그 자리에서 나왔나(W15b) — 이름(표준명 · 다른 이름)이 쓰인 스토리(target.meet — 내보내기가 읽는 순서로 자른 것)를 하나라도 봤으면.
+ * R = state.reading()(없거나 R.all이면 늘). meet이 없는 대상(이름이 쓰인 곳을 못 찾음)은 읽는 중에는 늘 안 나옴 — 전부 보기에서만.
+ */
+export function met(target, R) {
+  if (!target) return false;
+  if (!R || R.all) return true;
+  return Array.isArray(target.meet) && R.seenAny(target.meet);
+}
+const metOrder = (a) => idx?.units.get(a.meet?.[0])?.order ?? 1e9;
+/** 다른 이름을 그 자리에서 아나 — 표기 · 영문(meet 없음)은 표준명을 알 때, 판 이름은 그 판의 호감도 스토리, 그 밖은 그 이름이 쓰인 스토리를 봤을 때. 쓰인 곳 없음(never)은 전부 보기에서만 */
+const aliasKnown = (target, a, R) => (!R || R.all ? true : a.never ? false : a.meet ? R.seenAny(a.meet) : nameKnown(target, R));
+/** 표준명을 그 자리에서 아나 — 대상이 나왔고, 표준명이 늦게 나오면(name_meet) 그곳을 봤을 때 */
+const nameKnown = (target, R) => met(target, R) && (!R || R.all || (!target.name_never && (!target.name_meet || R.seenAny(target.name_meet))));
+/** 그 자리에서 부르는 이름 — 표준명을 알면 표준명, 아니면 먼저 나온 다른 이름. 대상이 아직 안 나왔으면 null(화면은 '아직 나오지 않은 인물 · 항목') */
+export function nameAt(target, R) {
+  if (!target || !met(target, R)) return null;
+  if (nameKnown(target, R)) return target.name;
+  const known = (target.aliases ?? []).filter((a) => a.meet && aliasKnown(target, a, R)).sort((a, b) => metOrder(a) - metOrder(b));
+  return known[0]?.name ?? target.name;
+}
+/** 그 자리에서 아는 다른 이름({ name, how, … }) — 부르는 이름(nameAt)은 뺀다 */
+export function aliasesAt(target, R) {
+  if (!target || !met(target, R)) return [];
+  const shown = nameAt(target, R);
+  return (target.aliases ?? []).filter((a) => a.name !== shown && aliasKnown(target, a, R));
+}
+/** 찾기 · 검색에 쓰는 이름 — 그 자리에서 아는 이름만(표준명은 알 때만) */
+export function namesAt(target, R) {
+  if (!target || !met(target, R)) return [];
+  return [...new Set([nameAt(target, R), ...(target.aliases ?? []).filter((a) => aliasKnown(target, a, R)).map((a) => a.name)])];
+}
 
 /** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */
 export function gradeAt(u, T) {

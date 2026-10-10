@@ -25,7 +25,7 @@
  *     바뀌면 목록 · 상세를 다시 만들지 않고 줄만 갈아 끼운다(스크롤 · 접힘 · 찾기 낱말 유지).
  *   - 목록: 기본은 종류(개념 · 사건 · 물건 · 조직 · 장소)별 묶음 + 이름순, 줄 = 이름 + 회색 갈래(도시 · 스쿼드 …). 숫자 · 막대 · '자주 나옴' 꼬리표는 싣지 않는다.
  *     '나온 순서'로 고르면 묶음 없이 처음 나온 자리순(줄에 회색 'CH.01').
- *   - 상세 머리: 이름 + 회색 종류 · 갈래, 사전 설명, 다른 이름, "처음 나온 곳 · 나온 스토리 N편". 사실 · 의문 수 · 근거 장면 줄은 싣지 않는다.
+ *   - 상세 머리: 이름 + 회색 종류 · 갈래, 사전 설명, 다른 이름, "처음 나온 곳 · 나온 스토리 N편". 이름 · 다른 이름 · 찾기는 그 자리에서 아는 것(fmt.nameAt · aliasesAt · namesAt — W15b). 사실 · 의문 수 · 근거 장면 줄은 싣지 않는다.
  *     칸(사실 · 의문 · 세계의 모습 · 떡밥 · 함께 나온 항목 · 나온 스토리)은 줄이 있으면 열고, 가린 것만 있으면 접어 머리에 가린 수, 아무것도 없으면 칸을 그리지 않는다.
  *     칸 제목에 줄 수를 달지 않는다(사용자가 직접 연 · 접은 칸만 기억).
  *   - 줄(사실 · 의문 · 세계의 모습): 문장 + 회색 한 줄(스토리 · 장면 링크 — 이름은 한 번만, '추정'은 추정일 때만). 의문 칸 머리에 상태별 수(미해결 · 일부 회수 · 회수).
@@ -116,8 +116,11 @@ export async function mount(root, ctx) {
     const rs = Object.values(e.recs ?? {}).flat().filter((x) => x[1] != null).map((x) => [recUnits(e, x), x[1]]);
     appearUnits.set(e.id, { us: [...new Set(us)], rs });
   }
+  // 이름이 나온 항목만(W15b — targets.json meet, 이름 자리가 없으면 내보내기가 기록의 스토리로 대신했다). 다룬 기록만 알고 이름은 아직이면 안 나옴
   const appeared = (e, R) => {
     if (R.all) return true;
+    const t = idx.targets.get(e.id);
+    if (t && !fmt.met(t, R)) return false;
     const a = appearUnits.get(e.id);
     return a.us.some((k) => R.seen(k)) || a.rs.some(([u, tick]) => recKnown(R, u, tick));
   };
@@ -125,7 +128,8 @@ export async function mount(root, ctx) {
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const typeLabel = (t) => fmt.TARGET_TYPE[t] ?? t;
   const whenLabel = (tick) => fmt.tickLabel(tick, { date: false });
-  const nameOf = (id) => byId.get(id)?.name ?? fmt.targetName(id);
+  /** 그 자리에서 부르는 이름(fmt.nameAt — 표준명이 아직이면 먼저 나온 다른 이름, W15b). 이름 자리가 없는 항목은 사전 이름 */
+  const nameOf = (id) => fmt.nameAt(idx.targets.get(id), state.reading()) ?? byId.get(id)?.name ?? fmt.targetName(id);
 
   // ── 상태 읽기 ──
   /** c = { R(여기까지 읽음 — state.reading), sig } */
@@ -305,13 +309,20 @@ export async function mount(root, ctx) {
     const all = entries.map((e) => viewOf(e, c));
     const visible = all.filter((v) => v.shown);
     const q = norm(P.find);
-    const matched = visible.filter((v) => !q || norm([v.e.name, v.e.id, v.e.kind, v.e.note, ...(v.e.aliases ?? []).map((a) => a.name)].join(' ')).includes(q));
+    // 찾기 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt). 표준명을 알 때만 ID까지
+    const findText = (e) => {
+      const t = idx.targets.get(e.id);
+      const names = t ? fmt.namesAt(t, c.R) : [];
+      const known = names.length ? names : [nameOf(e.id)];
+      return [...known, known.includes(e.name) ? e.id : null, e.kind, e.note].join(' ');
+    };
+    const matched = visible.filter((v) => !q || norm(findText(v.e)).includes(q));
     ui.clear(typeChips);
     // 종류 칩 — 숫자 없이 이름만(감상 순서 칩과 같다)
     const chip = (value, label) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.type ?? 'all') === value), onClick: () => setP({ type: value === 'all' ? null : value, item: P.item }) }, label);
     put(typeChips, chip('all', LABELS.all), TYPE_ORDER.filter((t) => matched.some((v) => v.e.type === t) || P.type === t).map((t) => chip(t, typeLabel(t))));
     const rows = matched.filter((v) => !P.type || v.e.type === P.type);
-    const byName = (a, b) => a.e.name.localeCompare(b.e.name, 'ko');
+    const byName = (a, b) => nameOf(a.e.id).localeCompare(nameOf(b.e.id), 'ko');
     const byFirst = (a, b) => (tick0.get(a.e.id) ?? Infinity) - (tick0.get(b.e.id) ?? Infinity) || (a.e.first_order ?? 0) - (b.e.first_order ?? 0) || byName(a, b);
     rows.sort(P.sort === 'first' ? byFirst : (a, b) => TYPE_ORDER.indexOf(a.e.type) - TYPE_ORDER.indexOf(b.e.type) || byName(a, b));
     sortSel.value = P.sort;
@@ -327,7 +338,7 @@ export async function mount(root, ctx) {
       }
       const t0 = tick0.get(e.id);
       listUl.append(h('li', { class: 'w-item', role: 'option', tabindex: -1, dataset: { id: e.id }, 'aria-selected': 'false' },
-        h('span', { class: 'w-item-name' }, e.name),
+        h('span', { class: 'w-item-name' }, nameOf(e.id)),
         P.sort === 'first' && t0 != null ? h('span', { class: 'w-item-sub' }, fmt.tickShort(t0)) : null,
         e.kind ? h('span', { class: 'w-item-sub' }, e.kind) : null));
     }
@@ -354,7 +365,7 @@ export async function mount(root, ctx) {
     const e = byId.get(id);
     const known = e && viewOf(e, cutOf()).cutOk;
     ui.clear(pickerSum);
-    put(pickerSum, h('span', { class: 'w-picker-name' }, known ? e.name : e ? LABELS.notYet : LABELS.noItem), known ? h('span', { class: 'muted' }, ` ${typeLabel(e.type)}`) : null, h('span', { class: 'w-picker-hint' }, LABELS.pickerHint));
+    put(pickerSum, h('span', { class: 'w-picker-name' }, known ? nameOf(e.id) : e ? LABELS.notYet : LABELS.noItem), known ? h('span', { class: 'muted' }, ` ${typeLabel(e.type)}`) : null, h('span', { class: 'w-picker-hint' }, LABELS.pickerHint));
     return target;
   }
   function scrollToSelected() {
@@ -513,10 +524,14 @@ export async function mount(root, ctx) {
     const firstKey = e.first_unit && idx.units.has(e.first_unit) && c.R.seen(e.first_unit) ? e.first_unit
       : [...seenUnits].sort((a, b) => (idx.units.get(a).order ?? 0) - (idx.units.get(b).order ?? 0))[0];
     const firstUnit = firstKey ? idx.units.get(firstKey) : null;
+    // 다른 이름 — 그 자리에서 아는 것만(W15b, fmt.aliasesAt). 사전 쪽 주의 글(caution)은 세계 탭 항목의 것
+    const tg = idx.targets.get(e.id);
+    const knownAliases = new Set(tg ? fmt.aliasesAt(tg, c.R).map((a) => a.name) : []);
+    const aliases = (e.aliases ?? []).filter((a) => knownAliases.has(a.name));
     put(el,
-      h('div', { class: 'w-card-title' }, h('h3', {}, e.name), h('span', { class: 'w-card-kind' }, [typeLabel(e.type), e.kind].filter(Boolean).join(' · '))),
+      h('div', { class: 'w-card-title' }, h('h3', {}, nameOf(e.id)), h('span', { class: 'w-card-kind' }, [typeLabel(e.type), e.kind].filter(Boolean).join(' · '))),
       fmt.prose(e.note) ? h('p', { class: 'w-note' }, fmt.prose(e.note)) : null,
-      (e.aliases ?? []).length ? h('p', { class: 'w-aliases' }, h('span', { class: 'muted' }, `${LABELS.aliases} `), e.aliases.map((a, i) => [i ? ' · ' : null,
+      aliases.length ? h('p', { class: 'w-aliases' }, h('span', { class: 'muted' }, `${LABELS.aliases} `), aliases.map((a, i) => [i ? ' · ' : null,
         h('span', { class: a.caution ? 'w-alias has-note' : 'w-alias', title: a.caution ?? undefined }, a.name, a.how ? h('span', { class: 'muted' }, ` (${a.how})`) : null)])) : null,
       firstUnit || seenUnits.length ? h('p', { class: 'w-facts-line' }, dots([
         firstUnit ? h('span', {}, h('span', { class: 'muted' }, `${LABELS.first} `), ui.link(`unit:${firstUnit.key}`, firstUnit.title)) : null,
@@ -547,7 +562,7 @@ export async function mount(root, ctx) {
         }).length;
         if (n) out.push({ id: nb.id, e: other, n, hub: hubs.has(nb.id) });
       }
-      return out.sort((a, b) => b.n - a.n || a.e.name.localeCompare(b.e.name, 'ko'));
+      return out.sort((a, b) => b.n - a.n || nameOf(a.e.id).localeCompare(nameOf(b.e.id), 'ko'));
     }
     function refresh() {
       const c = cutOf();
@@ -563,7 +578,7 @@ export async function mount(root, ctx) {
       if (drawable.length && detailEl.clientWidth >= GRAPH.minWidth) figure.append(drawGraph(e, drawable, maxN));
       for (const it of shown.slice(0, limit)) {
         list.append(h('li', {}, h('button', { type: 'button', class: 'w-nb-item', dataset: { id: it.id }, onClick: () => gotoItem(it.id) },
-          it.e.name, h('span', { class: 'w-kind' }, typeLabel(it.e.type)))));
+          nameOf(it.e.id), h('span', { class: 'w-kind' }, typeLabel(it.e.type)))));
       }
       tools.hidden = !items.some((x) => x.hub);
       if (!shown.length) foot.append(h('div', { class: 'empty' }, LABELS.empty.neighbors));
@@ -595,20 +610,20 @@ export async function mount(root, ctx) {
       const x = cx + rx * Math.cos(a);
       const y = cy + ry * Math.sin(a);
       edges.append(mk('line', { x1: cx, y1: cy, x2: x, y2: y, 'stroke-width': (1.5 + 5 * (it.n / maxN)).toFixed(1), class: it.hub ? 'w-edge is-hub' : 'w-edge' }));
-      const g = mk('g', { class: it.hub ? 'w-node is-hub' : 'w-node', tabindex: 0, role: 'button', 'aria-label': it.e.name });
+      const g = mk('g', { class: it.hub ? 'w-node is-hub' : 'w-node', tabindex: 0, role: 'button', 'aria-label': nameOf(it.e.id) });
       const cos = Math.cos(a);
       const sin = Math.sin(a);
       const anchor = cos > 0.3 ? 'start' : cos < -0.3 ? 'end' : 'middle';
       const lx = anchor === 'start' ? x + 11 : anchor === 'end' ? x - 11 : x;
       const ly = anchor === 'middle' ? (sin < 0 ? y - 12 : y + 20) : y + 4;
-      g.append(mk('circle', { cx: x, cy: y, r: 16, class: 'w-hit' }), mk('circle', { cx: x, cy: y, r: 5.5, class: 'w-dot-node' }), mk('text', { x: lx, y: ly, 'text-anchor': anchor, class: 'w-node-label' }, clip(it.e.name, 12)));
-      ui.tooltip(g, () => h('div', {}, h('b', {}, it.e.name), h('div', {}, `${typeLabel(it.e.type)}${it.e.kind ? ` · ${it.e.kind}` : ''}`)));
+      g.append(mk('circle', { cx: x, cy: y, r: 16, class: 'w-hit' }), mk('circle', { cx: x, cy: y, r: 5.5, class: 'w-dot-node' }), mk('text', { x: lx, y: ly, 'text-anchor': anchor, class: 'w-node-label' }, clip(nameOf(it.e.id), 12)));
+      ui.tooltip(g, () => h('div', {}, h('b', {}, nameOf(it.e.id)), h('div', {}, `${typeLabel(it.e.type)}${it.e.kind ? ` · ${it.e.kind}` : ''}`)));
       g.addEventListener('click', () => gotoItem(it.id));
       g.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); gotoItem(it.id); } });
       nodes.append(g);
     });
     const cg = mk('g', { class: 'w-node is-center' });
-    cg.append(mk('circle', { cx, cy, r: 9, class: 'w-dot-node' }), mk('text', { x: cx, y: cy + 28, 'text-anchor': 'middle', class: 'w-node-label is-center' }, clip(center.name, 14)));
+    cg.append(mk('circle', { cx, cy, r: 9, class: 'w-dot-node' }), mk('text', { x: cx, y: cy + 28, 'text-anchor': 'middle', class: 'w-node-label is-center' }, clip(nameOf(center.id), 14)));
     nodes.append(cg);
     return svg;
   }

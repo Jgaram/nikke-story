@@ -9,8 +9,9 @@
  *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
+ *                  + 처음 나온 자리(W15b — meet · name_meet · name_never, 다른 이름마다 meet · never: 이름이 처음 쓰인 스토리, 아래 meetsOf)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
- *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리), affs — 확정 소속 기록 T(공개 자리 tick · 근거 단위 unit — '지난 소속'은 화면에서 전 소속), 조직 mark — site/img/orgs/{mark}.png)
+ *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리 — 출시와 확정 T 가운데 이른 것), affs — 확정 소속 기록 T(공개 자리 tick · 근거 단위 unit — '지난 소속'은 화면에서 전 소속), 조직 mark — site/img/orgs/{mark}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
@@ -39,6 +40,83 @@ export function kindId(key) {
   if (key.startsWith('char:')) return 'episode';
   if (key.startsWith('d_ex_elevator')) return 'elevator';
   return 'other';
+}
+
+/**
+ * 처음 나온 자리(W15b) — 스토리 키들을 읽는 순서로 늘어놓고 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수 — '봤음' 예외가 걸린다)가 아닌 첫 스토리까지 자른다.
+ * 화면은 R.seenAny(meet)로 '나왔나'를 본다 — 체크 칸 아닌 스토리는 자리 ≤ t면 봤음이라 그 뒤 스토리는 더 볼 필요가 없다. 없으면 undefined
+ */
+export function meetList(keys, units) {
+  const byKey = units instanceof Map ? units : new Map(units.map((u) => [u.key, u]));
+  const sorted = [...new Set(keys)].filter((k) => byKey.has(k)).sort((a, b) => (byKey.get(a).order ?? 1e9) - (byKey.get(b).order ?? 1e9));
+  const out = [];
+  for (const k of sorted) {
+    out.push(k);
+    const u = byKey.get(k);
+    if (!(u.kind !== 'main' && (u.spine || u.grade === '필수'))) break; // state.js checkable과 같은 규칙
+  }
+  return out.length ? out : undefined;
+}
+
+/** 다른 이름 가운데 표준명과 같이 다루는 것 — 띄어쓰기 · 영문 표기는 이름을 새로 알려 주지 않는다 */
+const SAME_NAME_HOW = new Set(['표기', '영문']);
+
+/**
+ * 대상마다 이름이 처음 쓰인 자리(W15b — docs/views.md "새는 곳 막기") — 언급 DB 자동 줄(이름표로 말함 · 이름 · 다른 이름)의 이름에서.
+ *   meet       표준명 · 다른 이름 가운데 하나라도 쓰인 스토리(meetList) — 이 앞에서는 '아직 나오지 않은 대상'
+ *   name_meet  표준명(+ 표기 · 영문)이 처음 쓰인 곳이 meet와 다를 때만 — 그 앞에서는 먼저 나온 다른 이름으로 부른다. 표준명이 한 번도 안 쓰이면 name_never
+ *   aliases[]  { name, how, meet } — 표기 · 영문은 표준명을 따르고(meet 없음), 판 이름('라피 : 레드 후드')은 그 판의 호감도 스토리(출시),
+ *              그 밖(약칭 · 별칭 · 이명 · 정식 명칭)은 그 이름이 쓰인 곳. 쓰인 곳을 못 찾으면 never(전부 보기에서만)
+ * 이름표 줄은 이름표에 그 이름이 들어 있을 때만 센다('어린 노라' · '블랑&누아르'는 셈, '???'는 안 셈 — 정체가 아직 안 밝혀졌다). 지휘관 창(이름표 없음)은 표준명.
+ */
+function meetsOf({ all, units, placeOf, sceneUnit, names }) {
+  const unitMap = new Map(units.map((u) => [u.key, u]));
+  const used = new Map(); // 대상 → Map(쓰인 이름 → Set(단위))
+  const speakTags = new Map(); // 대상 → Map(이름표 → Set(단위))
+  const add = (m, t, n, unit) => {
+    const byName = m.get(t) ?? m.set(t, new Map()).get(t);
+    (byName.get(n) ?? byName.set(n, new Set()).get(n)).add(unit);
+  };
+  for (const r of all('SELECT story_id, how, via, name, target FROM mentions')) {
+    const unit = sceneUnit.get(r.story_id);
+    if (!unit || !placeOf.has(unit)) continue;
+    if (r.how === 'speaks') {
+      if (r.via === '창') add(used, r.target, null, unit); // 지휘관 — 표준명
+      else if (r.name) for (const tag of String(r.name).split(' · ')) add(speakTags, r.target, tag, unit);
+    } else for (const n of String(r.name ?? '').split(' · ')) if (n) add(used, r.target, n, unit);
+  }
+  const version = new Map(all('SELECT resource_id, name FROM characters').map((c) => [c.name, c.resource_id]));
+  const out = new Map();
+  for (const t of all('SELECT id, name FROM targets')) {
+    const alias = names.get(t.id) ?? [];
+    const u = used.get(t.id) ?? new Map();
+    const tags = speakTags.get(t.id) ?? new Map();
+    /** 그 이름이 쓰인 단위 — 이름 줄(같은 글자) + 그 이름이 든 이름표 */
+    const unitsOf = (n) => {
+      const s = new Set(u.get(n) ?? []);
+      for (const [tag, us] of tags) if (tag.includes(n)) for (const k of us) s.add(k);
+      return s;
+    };
+    const isVersion = (a) => a.how === '니케 목록' && a.name.includes(':');
+    const sameName = (a) => SAME_NAME_HOW.has(a.how) || (a.how === '니케 목록' && !a.name.includes(':'));
+    const nameUnits = new Set([...unitsOf(t.name), ...(u.get(null) ?? [])]);
+    for (const a of alias) if (sameName(a)) for (const k of unitsOf(a.name)) nameUnits.add(k);
+    const allUnits = new Set(nameUnits);
+    const aliases = alias.map((a) => {
+      if (sameName(a)) return { ...a };
+      const meet = isVersion(a) ? (version.has(a.name) ? meetList([`char:${version.get(a.name)}`], unitMap) : undefined) : meetList(unitsOf(a.name), unitMap);
+      if (!isVersion(a) && meet) for (const k of unitsOf(a.name)) allUnits.add(k); // 판 이름은 출시라 '나왔나'에는 안 센다
+      return meet ? { ...a, meet } : { ...a, never: true };
+    });
+    const meet = meetList(allUnits, unitMap);
+    const nameMeet = meetList(nameUnits, unitMap);
+    out.set(t.id, {
+      meet, aliases: aliases.length ? aliases : undefined,
+      name_meet: meet && nameMeet && String(nameMeet) !== String(meet) ? nameMeet : undefined,
+      name_never: meet && !nameMeet ? true : undefined,
+    });
+  }
+  return out;
 }
 
 /** 기록 종류 코드(format.js RECORD_KIND와 짝) — 후보의 kind · role에서 */
@@ -285,11 +363,11 @@ export async function run(ctx) {
       const via = list.length && c.name !== tname.get(c.target_id) ? c.name : undefined;
       for (const [type, code, m] of [['corp', corp, marks.corporations[corp]], ['squad', squad, marks.squads[squad]]]) {
         if (!m) { warn({ where: 'orgs', msg: `${c.name}: 모르는 게임 코드 ${code}` }); continue; }
-        // 공개 자리(W12d — docs/annotations.md "게임 소속의 공개 자리"): 원문에 이름이 없는 소속(null)은 0(늘), 아니면
-        // 그 판의 출시(호감도 단위 char:<rid> — 프로필에 소속이 보인다)와 그 조직의 확정 기록 T(소속 · 합류) 가운데 이른 것. 둘 다 없으면 칸을 비운다(전부 보기에서만)
+        // 공개 자리(W12d · W15b — docs/annotations.md "게임 소속의 공개 자리"): 그 판의 출시(호감도 단위 char:<rid> — 프로필에 소속이 보인다)와
+        // 그 조직의 확정 기록 T(소속 · 합류) 가운데 이른 것. 원문에 이름이 없는 소속(null)은 T가 없어 출시. 둘 다 없으면 칸을 비운다(전부 보기에서만)
         const rel = placeOf.get(`char:${c.resource_id}`)?.tick ?? (launch.has(c.resource_id) ? 1 : undefined);
         const recTicks = (affsOf.get(c.target_id) ?? []).filter((a) => m.org && a.org === m.org && (a.act === '소속' || a.act === '합류') && a.tick != null).map((a) => a.tick);
-        const tick = m.org ? (rel != null || recTicks.length ? Math.min(rel ?? Infinity, ...recTicks) : undefined) : 0;
+        const tick = rel != null || recTicks.length ? Math.min(rel ?? Infinity, ...recTicks) : undefined;
         const same = list.find((x) => x.type === type && x.name === m.name);
         if (same) { if (tick != null && (same.tick == null || tick < same.tick)) same.tick = tick; continue; }
         list.push(compact({ type, org: m.org ?? undefined, name: m.name, mark: m.icon, via, tick }));
@@ -309,14 +387,26 @@ export async function run(ctx) {
     if (lent.length) affsOf.set(id, lent);
   }
   for (const l of affsOf.values()) l.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.id.localeCompare(b.id, 'en', { numeric: true }));
+  const meets = meetsOf({ all, units, placeOf, sceneUnit, names });
+  // 인물 아닌 항목인데 이름 자리가 없으면(흔한 말이라 자동 줄에서 뺀 이름 — 쉘터) 그 항목을 다룬 확정 기록의 스토리로 대신한다. 인물은 대신하지 않는다('???'로만 말한 인물)
+  const aboutUnits = new Map();
+  for (const r of [...records1, ...records2]) for (const id of r.about ?? []) if (r.unit && !String(id).startsWith('person:')) (aboutUnits.get(id) ?? aboutUnits.set(id, new Set()).get(id)).add(r.unit);
+  for (const [id, us] of aboutUnits) {
+    const m = meets.get(id);
+    if (m && !m.meet) m.meet = meetList(us, units);
+  }
+  const unmet = [];
   const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
     const r = pick(t, TARGET_COLUMNS);
+    const m = meets.get(r.id) ?? {};
+    if (!m.meet) unmet.push(r.id);
     return compact({
-      id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: names.get(r.id),
+      id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
       same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
       orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });
   });
+  if (unmet.length) warn({ where: 'meet', msg: `이름이 쓰인 스토리가 없는 대상 ${unmet.length}(${unmet.slice(0, 8).join(' · ')}${unmet.length > 8 ? ' …' : ''}) — 읽는 중에는 '아직 나오지 않음', 전부 보기에서만` });
 
   // ── 설정 오류 추정 메모 ──
   const slips = [];

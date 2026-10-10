@@ -4,16 +4,17 @@
  * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 접는 칸). 도구줄의 [인물 도감]은 초상 격자를 기업 · 스쿼드로 묶어 보인다.
  *
  * 쓰는 JSON
- *   persons.json          인물 386(사전 person: 전부) — 정적 메타(갈래 kind · common · owner(주역) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
+ *   persons.json          인물 386(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
+ *                         이름이 아직 안 나온 인물(fmt.met — targets.json meet)은 목록 · 도감 · 함께 나온 인물에서 빼고, 이름 · 다른 이름 · 찾기는 그 자리의 것(fmt.nameAt · aliasesAt · namesAt — W15b)
  *   persons-detail.json   등장 · 기록 · 변화가 하나라도 있는 인물 381 — { units[](등장: 스토리 · 씬 · 줄 · 말한 줄), records[](확정 기록 ID), changes[](변화: 작중 순서 seq · 측면 · 처음 모습/바뀜 · 상대 · 출시순과 반대) }
- *   persons-pairs.json    함께 나온 쌍 — by[] = [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 척추 이벤트 · 사이드 키)](처음 열 때 받는다)
+ *   persons-pairs.json    함께 나온 쌍 — by[] = [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 체크 칸 스토리 키 — 척추 이벤트 · 사이드 · 준필수)](처음 열 때 받는다)
  *   공용(idx)             units(읽는 순서 · 출시 시점) · ticks · targets(초상 · 소속) · threads · records(6MB — 열 때 받아 오면 기록 칸이 채워진다)
  *   기록 문장 · 전 → 후는 records*.json의 것을 쓴다(persons*.json에는 문장이 없다). 원문 본문은 어디에도 없다.
  *
  * URL 파라미터(p.*)
  *   who    고른 인물(person:라피). 없으면 리더에서 연 인물 → 라피 → 목록 첫 인물. 리더에서 인물을 누르면 따라온다
  *   view   dex면 인물 도감(옛 주소의 table도 도감), 없으면 인물별
- *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      lead  1이면 주역만      sort  목록 · 도감 정렬(없으면 많이 나온 순 | first 처음 등장 순 | name 이름순)
+ *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      lead  1이면 주역만(첫 스토리를 본 떡밥의 주역 — W15b)      sort  목록 · 도감 정렬(없으면 많이 나온 순 | first 처음 등장 순 | name 이름순)
  *   net    함께 나온 인물 보기(list 기본 | graph 관계도)      common  1이면 어디에나 나오는 인물(persons.json common — 지휘관 · 라피 · 아니스 · 네온)도 포함
  *   us     나온 스토리 목록의 정렬(없으면 감상 순서 | speak 많이 말한 순)
  *   fq     사실 · 의문 칸의 탭(q 의문 기본 | f 사실 | k 밝혀짐 · 회수 | e 복선 — 든 것이 있는 탭만 보인다)      chg  release면 변화를 출시순으로(없으면 작중 순)
@@ -70,6 +71,7 @@ const LABELS = {
   none: '찾는 인물이 없다 — 찾기를 비우거나 갈래를 전체로 바꾼다.',
   noneCut: '아직 나온 인물이 없다 — 위의 여기까지 읽음을 올리면 보인다.',
   notYet: '아직 나오지 않은 인물이다.',
+  notYetName: '아직 나오지 않은 인물',
   notYetHelp: '위의 여기까지 읽음을 올리면 볼 수 있다.',
   detail: '인물 상세',
   alias: '다른 이름',
@@ -162,7 +164,10 @@ export async function mount(root, ctx) {
 
   const P = new Map(persons.map((p) => [p.id, p]));
   const D = new Map(detailArr.map((d) => [d.id, d]));
-  const hay = new Map(persons.map((p) => [p.id, [p.name, ...(p.aliases ?? [])].join(' ').toLowerCase()]));
+  /** 찾기 글 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt) */
+  const hayOf = (p) => fmt.namesAt(idx.targets.get(p.id) ?? p, V.R).join(' ').toLowerCase();
+  /** 그 자리에서 부르는 이름(fmt.nameAt — 표준명이 아직이면 먼저 나온 다른 이름) */
+  const nameOf = (id) => fmt.nameAt(idx.targets.get(id), V.R) ?? P.get(id)?.name ?? fmt.targetName(id);
   const kinds = [...new Set(persons.map((p) => p.kind).filter(Boolean))].sort((a, b) => (b === '니케') - (a === '니케') || cmpKo(a, b));
   const commonIds = persons.filter((p) => p.common).map((p) => p.id); // 어디에나 나오는 인물(지휘관 · 라피 · 아니스 · 네온) — 함께 나온 인물에서 기본으로 뺀다
   const maxOrder = idx.unitList.reduce((m, u) => Math.max(m, u.order ?? 0), 0);
@@ -230,7 +235,9 @@ export async function mount(root, ctx) {
           }
         }
       }
-      a.visible = a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0;
+      // 이름이 나온 인물만(W15b — 이름표 '???'나 암시 언급으로만 나온 인물은 아직 안 나옴)
+      a.met = fmt.met(idx.targets.get(p.id), V.R);
+      a.visible = a.met && (a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0);
       agg.set(p.id, a);
     }
     const lappy = agg.get('person:라피');
@@ -254,9 +261,9 @@ export async function mount(root, ctx) {
     state.set(patch, { replace });
   };
   const personLink = (id, label) => el('a', {
-    href: `#tab=persons&p.who=${id}`, class: 'link pm-plink', title: P.get(id) ? LABELS.plinkHelp(label ?? P.get(id).name) : null,
+    href: `#tab=persons&p.who=${id}`, class: 'link pm-plink', title: P.get(id) ? LABELS.plinkHelp(label ?? nameOf(id)) : null,
     onClick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); if (P.has(id)) selectPerson(id); else state.set({ sel: `person:${id}` }); },
-  }, label ?? fmt.targetName(id));
+  }, label ?? nameOf(id));
   /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
   const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title); return m ? [el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
   /** 스토리 링크 — 메인은 굵은 CH 표기, 그 밖은 제목 + 회색 종류(호감도 제목은 니케 이름뿐이라 종류가 있어야 안다) */
@@ -268,7 +275,7 @@ export async function mount(root, ctx) {
   };
   /** 얼굴 — 그 자리 모습의 초상, 없으면 이름 첫 글자 칸(머리 · 도감) */
   const face = (id, size, cls) => ui.portrait(fmt.iconAt(idx.targets.get(id), V.T), { size, class: cls })
-    ?? el('span', { class: ['pm-noface', cls], style: { width: `${size}px`, height: `${size}px`, fontSize: `${Math.round(size * 0.4)}px` }, 'aria-hidden': 'true' }, [...(P.get(id)?.name ?? '?')][0]);
+    ?? el('span', { class: ['pm-noface', cls], style: { width: `${size}px`, height: `${size}px`, fontSize: `${Math.round(size * 0.4)}px` }, 'aria-hidden': 'true' }, [...(nameOf(id) ?? '?')][0]);
   /** 그 스토리에서 말이 없으면 '이름만 나옴' · '등장만'(말했으면 null — 당연해서 쓰지 않는다) */
   const quietOf = (e) => (!e || (e.speaker ?? 0) > 0 ? null : e.lines > 0 ? 'named' : 'seen');
 
@@ -297,6 +304,8 @@ export async function mount(root, ctx) {
 
   let rowsNow = [];
   let hiddenPersons = 0;
+  /** 주역인가 — 주역인 떡밥 가운데 첫 스토리를 본 것이 있으면(W15b — 그 자리 기준) */
+  const leadNow = (p) => (p.leads ?? []).some((j) => { const th = idx.threads.get(j); return th && !hidden(th.first_unit); });
   const buildRows = () => {
     const find_ = (prm('find') ?? '').trim().toLowerCase();
     const kind = prm('kind') ?? 'all';
@@ -306,11 +315,11 @@ export async function mount(root, ctx) {
     const rows = [];
     for (const p of persons) {
       const a = agg.get(p.id);
-      if (!a.visible) { if (a.hasData && (a.cut || a.recCut || a.chCut)) hiddenPersons++; continue; }
+      if (!a.visible) { if (a.hasData && (a.cut || a.recCut || a.chCut || !a.met)) hiddenPersons++; continue; }
       if (kind !== 'all' && p.kind !== kind) continue;
-      if (lead && !p.owner) continue;
-      if (find_ && !hay.get(p.id).includes(find_)) continue;
-      rows.push({ id: p.id, p, a, name: p.name, scenes: a.scenes, firstOrder: a.firstOrder });
+      if (lead && !leadNow(p)) continue;
+      if (find_ && !hayOf(p).includes(find_)) continue;
+      rows.push({ id: p.id, p, a, name: nameOf(p.id), scenes: a.scenes, firstOrder: a.firstOrder });
     }
     const keyOf = { scenes: (r) => -r.scenes, first: (r) => r.firstOrder, name: () => 0 };
     const k = keyOf[sort];
@@ -492,7 +501,8 @@ export async function mount(root, ctx) {
     const tg = idx.targets.get(p.id);
     const facts = [];
     if (a.visible) {
-      if (p.aliases?.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.alias), el('span', {}, p.aliases.join(' · '))));
+      const aliases = fmt.aliasesAt(tg, V.R).map((x) => x.name); // 그 자리에서 아는 다른 이름만(W15b)
+      if (aliases.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.alias), el('span', {}, aliases.join(' · '))));
       // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
       const same = fmt.sameAsKnown(p, V.R);
       if (same.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.same), el('span', {}, same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]))));
@@ -502,11 +512,13 @@ export async function mount(root, ctx) {
           q ? el('span', { class: 'pm-kind pm-quiet', title: LABELS.quietHelp[q] }, LABELS.quiet[q]) : null));
       }
     }
+    // 아직 이름이 안 나온 인물(주소로 골랐을 때) — 이름 · 초상 · 소속 대신 안내만(W15b)
+    const named = a.met;
     head.append(el('div', { class: 'pm-title' },
-      face(p.id, 72, 'pm-title-pic'),
+      named ? face(p.id, 72, 'pm-title-pic') : el('span', { class: ['pm-noface', 'pm-title-pic'], style: { width: '72px', height: '72px', fontSize: '29px' }, 'aria-hidden': 'true' }, '?'),
       el('div', { class: 'pm-title-main' },
-        el('div', { class: 'pm-title-name' }, el('h3', {}, p.name), p.kind && p.kind !== '인물' ? el('span', { class: 'pm-kind' }, p.kind) : null),
-        ui.orgMarks(fmt.orgsAt(tg, V.T, { past: true }), { size: 18, class: 'pm-title-orgs' }),
+        el('div', { class: 'pm-title-name' }, el('h3', {}, named ? nameOf(p.id) : LABELS.notYetName), named && p.kind && p.kind !== '인물' ? el('span', { class: 'pm-kind' }, p.kind) : null),
+        named ? ui.orgMarks(fmt.orgsAt(tg, V.T, { past: true }), { size: 18, class: 'pm-title-orgs' }) : null,
         facts.length ? el('div', { class: 'pm-facts' }, facts) : null)));
     if (!a.visible) head.append(ui.notice(`${LABELS.notYet} ${LABELS.notYetHelp}`, 'info'));
   };
@@ -524,8 +536,8 @@ export async function mount(root, ctx) {
     const all = (pm.partnersOf.get(p.id) ?? [])
       .filter(({ pair }) => !pair.same_as)
       .map(({ o, pair }) => ({ id: o, po: P.get(o), st: pairStat(pair), pair }))
-      .filter((x) => x.po && x.st.scenes > 0)
-      .sort((x, y) => y.st.scenes - x.st.scenes || y.st.talk - x.st.talk || cmpKo(x.po.name, y.po.name));
+      .filter((x) => x.po && x.st.scenes > 0 && agg.get(x.id)?.met)
+      .sort((x, y) => y.st.scenes - x.st.scenes || y.st.talk - x.st.talk || cmpKo(nameOf(x.id), nameOf(y.id)));
     const present = new Set(all.filter((x) => x.po.common).map((x) => x.id));
     return { all, list: incl ? all : all.filter((x) => !x.po.common), commons: commonIds.filter((id) => present.has(id)), incl };
   };
@@ -608,7 +620,7 @@ export async function mount(root, ctx) {
     const H = TOP + kindList.length * (RH + GAP) + AX;
     const rowY = (k) => TOP + kindList.indexOf(k) * (RH + GAP);
     const xOf = (order) => LW + (order - 1) * cw;
-    const svg = sv('svg', { class: 'pm-heat', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': `${p.name} ${LABELS.sec.heat}: ${LABELS.stories(fmt.num(a.units))}` });
+    const svg = sv('svg', { class: 'pm-heat', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': `${nameOf(p.id)} ${LABELS.sec.heat}: ${LABELS.stories(fmt.num(a.units))}` });
     svg.append(sv('defs', {}, sv('pattern', { id: 'pm-hatch', width: 6, height: 6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, sv('line', { x1: 0, y1: 0, x2: 0, y2: 6, class: 'pm-hatch-line' }))));
     // 줄 이름 · 기본 칸
     for (const k of kindList) {
@@ -704,7 +716,7 @@ export async function mount(root, ctx) {
     const { list, commons } = partnerRows(p, pm);
     ui.clear(sec.body);
     // 어디에나 나와서 기본으로 빼는 인물 — 설명 대신 토글 글자에 이름을 적는다
-    commonToggle.querySelector('.toggle-label').textContent = LABELS.commonIncl(commons.map((id) => P.get(id).name).join(' · '));
+    commonToggle.querySelector('.toggle-label').textContent = LABELS.commonIncl(commons.map((id) => nameOf(id)).join(' · '));
     sec.body.append(el('div', { class: 'toolbar pm-sectools' }, netSeg.el, commons.length ? commonToggle : null));
     if (!list.length) { sec.body.append(ui.empty(LABELS.withNone)); return; }
     const mode = prm('net') === 'graph' ? 'graph' : 'list';
@@ -748,7 +760,7 @@ export async function mount(root, ctx) {
     }
     const maxS = items[0].st.scenes;
     const pos = ring.map((x, i) => { const ang = -Math.PI / 2 + Math.PI / n + (i * 2 * Math.PI) / n; return { x, ang, px: cx + R * Math.cos(ang), py: cy + R * Math.sin(ang), r: 5 + 7 * Math.sqrt(x.st.scenes / maxS) }; });
-    const svg = sv('svg', { class: 'pm-graph', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'group', 'aria-label': `${p.name} ${LABELS.sec.partners} ${LABELS.net.graph}` });
+    const svg = sv('svg', { class: 'pm-graph', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'group', 'aria-label': `${nameOf(p.id)} ${LABELS.sec.partners} ${LABELS.net.graph}` });
     // 상대끼리 선
     const ppEdges = [];
     for (let i = 0; i < pos.length; i++) for (let j = i + 1; j < pos.length; j++) { const s = tie(pos[i].x, pos[j].x); if (s >= 3) ppEdges.push({ i, j, s }); }
@@ -768,11 +780,11 @@ export async function mount(root, ctx) {
       const cosA = Math.cos(A.ang); const sinA = Math.sin(A.ang);
       const lx = A.px + (A.r + 6) * cosA; const ly = A.py + (A.r + 6) * sinA;
       const anchor = cosA > 0.3 ? 'start' : cosA < -0.3 ? 'end' : 'middle';
-      const g = sv('g', { class: 'pm-node', tabindex: 0, role: 'button', 'aria-label': A.x.po.name, 'data-id': A.x.id },
+      const g = sv('g', { class: 'pm-node', tabindex: 0, role: 'button', 'aria-label': nameOf(A.x.id), 'data-id': A.x.id },
         sv('circle', { class: 'pm-node-hit', cx: A.px, cy: A.py, r: Math.max(A.r + 6, 14) }),
         sv('circle', { class: 'pm-node-dot', cx: A.px, cy: A.py, r: A.r }),
-        sv('text', { class: 'pm-node-label', x: lx, y: ly, 'text-anchor': anchor, 'dominant-baseline': sinA > 0.55 ? 'hanging' : sinA < -0.55 ? 'auto' : 'central' }, clip(A.x.po.name, compact ? 5 : 8)));
-      ui.tooltip(g, A.x.po.name);
+        sv('text', { class: 'pm-node-label', x: lx, y: ly, 'text-anchor': anchor, 'dominant-baseline': sinA > 0.55 ? 'hanging' : sinA < -0.55 ? 'auto' : 'central' }, clip(nameOf(A.x.id), compact ? 5 : 8)));
+      ui.tooltip(g, nameOf(A.x.id));
       const go = () => selectPerson(A.x.id);
       g.addEventListener('click', go);
       g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -780,9 +792,9 @@ export async function mount(root, ctx) {
       g.addEventListener('mouseleave', () => { svg.classList.remove('has-hot'); svg.querySelectorAll('.is-hot').forEach((n_) => n_.classList.remove('is-hot')); });
       gN.append(g);
     }
-    const cw_ = Math.max(36, [...p.name].length * 14 + 16);
+    const cw_ = Math.max(36, [...nameOf(p.id)].length * 14 + 16);
     gN.append(sv('circle', { class: 'pm-center', cx, cy, r: 14 }), sv('rect', { class: 'pm-center-pill', x: cx - cw_ / 2, y: cy + 18, width: cw_, height: 22, rx: 11 }),
-      sv('text', { class: 'pm-center-label', x: cx, y: cy + 29, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, p.name));
+      sv('text', { class: 'pm-center-label', x: cx, y: cy + 29, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, nameOf(p.id)));
     svg.append(gN);
     sec.body.append(el('div', { class: 'pm-graph-frame' }, svg));
   };
@@ -830,7 +842,7 @@ export async function mount(root, ctx) {
     const SW = Math.max(W, LW + PR + step * cols);
     const H = TOP + aspects.length * LH + AX;
     const colX = (i) => LW + step * (i + (unplacedAt >= 0 && i >= unplacedAt ? 1 : 0)) + step / 2;
-    const svg = sv('svg', { class: 'pm-chg', width: SW, height: H, viewBox: `0 0 ${SW} ${H}`, role: 'img', 'aria-label': `${p.name} ${LABELS.sec.changes}` });
+    const svg = sv('svg', { class: 'pm-chg', width: SW, height: H, viewBox: `0 0 ${SW} ${H}`, role: 'img', 'aria-label': `${nameOf(p.id)} ${LABELS.sec.changes}` });
     // 같은 스토리끼리 띠
     let gs = 0;
     const groups = [];

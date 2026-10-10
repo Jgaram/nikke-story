@@ -3,7 +3,7 @@
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn } — docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
  *
  *   persons.json          인물 386(사전 person: 전부) — 전체 기준 집계 + 정적 메타. 화면은 컷오프 · 층에 맞춰 persons-detail.json에서 다시 센다
- *     id · name · kind(갈래 — 니케 · 인물 · 랩쳐) · common(지휘관 · 흔한 대상) · spread · owner(줄기 주역이면 true) · same_as[] · aliases[]
+ *     id · name · kind(갈래 — 니케 · 인물 · 랩쳐) · common(지휘관 · 흔한 대상) · spread · leads[](주역인 줄기 ID — 화면은 첫 스토리를 본 줄기만) · same_as[] · aliases[]
  *     scenes · units · lines · speaker_lines · named_lines · implied_lines · implied_scenes · partners
  *     first_unit · first_tick · first_order · first_scene · first_how(이름표로 말함 · 이름 · 다른 이름 · 암시 언급) · first_speaks_unit · last_unit · last_tick · last_order
  *     facts · questions · open · partial · solved · reversed · events · echoes · life · records(다룬 기록 수) · threads[](J)
@@ -33,7 +33,9 @@ export async function run(ctx) {
   const placeOf = common.placeOf;
   const targets = new Map(common.targets.filter((t) => t.type === 'person').map((t) => [t.id, t]));
   const recordIds = new Set(common.records.map((r) => r.id));
-  const owners = new Set(common.threads.flatMap((j) => j.owners ?? []));
+  // 주역(줄기 주역)인 떡밥 — 화면은 그 떡밥의 첫 스토리를 봤을 때만 주역으로 센다(W15b — '주역만'을 그 자리 기준으로)
+  const leadsOf = new Map();
+  for (const j of common.threads) for (const o of j.owners ?? []) (leadsOf.get(o) ?? leadsOf.set(o, []).get(o)).push(j.id);
 
   // ── 입력 표 ──
   const personRows = csv('data/views/persons/persons.csv');
@@ -78,7 +80,7 @@ export async function run(ctx) {
     const m = mention.get(r.target);
     const firstHow = !r.first_unit ? undefined : m?.first_unit === r.first_unit && m?.first_scene === r.first_scene ? FIRST_HOW[m.first_how] ?? m.first_how : '암시 언급';
     return compact({
-      id: r.target, name: r.name || t?.name, kind: t?.kind, common: r.common || undefined, spread: num(r.spread) || undefined, owner: owners.has(r.target) ? true : undefined,
+      id: r.target, name: r.name || t?.name, kind: t?.kind, common: r.common || undefined, spread: num(r.spread) || undefined, leads: leadsOf.get(r.target),
       same_as: t?.same_as, same_as_unit: t?.same_as_unit, aliases: t?.aliases?.map((a) => a.name),
       scenes: num(r.scenes), units: num(r.units), lines: num(r.lines), speaker_lines: num(r.speaker_lines), named_lines: num(r.named_lines),
       implied_lines: num(r.implied_lines) || undefined, implied_scenes: num(r.implied_scenes) || undefined, partners: num(r.partners),
@@ -120,13 +122,13 @@ export async function run(ctx) {
 
 /**
  * 같은 씬에 나온 인물 쌍을 공개 자리 · 층마다 — Map('a\tb' → Map('자리 층 예외키' → { tick, layer, ex, scenes, talk, units: Set })).
- * 척추 이벤트 · 사이드(spine이고 메인이 아닌 단위)는 '봤음' 예외(x)가 걸리므로 같은 자리 · 층의 다른 단위와 섞지 않고 ex = 그 단위 키로 뗀다.
+ * 체크 칸 스토리(척추 이벤트 · 사이드 + 준필수 — 메인이 아니고 spine이거나 grade 필수)는 '봤음' 예외(x)가 걸리므로 같은 자리 · 층의 다른 단위와 섞지 않고 ex = 그 단위 키로 뗀다(W15b에 준필수를 더함).
  * 등장 = personScenes의 합집합(자동 줄 + 암시 언급), 둘 다 말한 씬 = 둘 다 speak 줄이 있는 씬 — tools/views/persons.mjs와 같은 규칙.
  */
 function pairsByTick(ctx, targets) {
   const unitOfScene = new Map(ctx.common.scenes.map((s) => [s.id, s.unit]));
   const layerOfUnit = new Map(ctx.common.units.map((u) => [u.key, u.layer ?? 0]));
-  const extra = new Set(ctx.common.units.filter((u) => u.spine && u.kind !== 'main').map((u) => u.key));
+  const extra = new Set(ctx.common.units.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key)); // state.js checkable과 같다
   const ps = personScenes({ db: ctx.db, targetIds: new Set(targets.keys()) }, ctx.records.ds);
   const members = new Map(); // 씬 → [{ t, talk }]
   for (const [t, scenes] of ps) {

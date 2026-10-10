@@ -3,6 +3,7 @@
  * 기록 문장(records*.json) · 개요(synopsis.json)는 처음 검색할 때 받는다(지연 로드). 결과는 종류별 묶음, 최대 50건(줄거리 10 · 기록 문장 12 — 맨 뒤, 같은 문장은 한 번),
  * 입력 디바운스 150ms. ID · 작업량 숫자는 보이지 않는다(W13a) — 인물은 초상, 스토리는 종류(메인이 아니면 자리), 떡밥은 주요 떡밥만 표시.
  * 줄거리 결과는 스토리 제목 + 맞은 곳 앞뒤 글 — 여기까지 읽음 뒤 스토리는 맞은 글을 보이지 않고 "스포일러"만 붙인다.
+ * 아직 안 나온 떡밥 · 인물 · 항목은 결과에서 빼고(W15a · W15b), 인물 · 항목은 그 자리에서 아는 이름 · 다른 이름으로만 찾고 부른다(fmt.nameAt · namesAt).
  * 키보드: ↑ ↓ 이동 · Enter 열기 · Esc 닫기. 고르면 `state.set({ sel, tab })` — unit → 감상 순서, person → 인물, target → 세계, thread → 떡밥, record → 지금 탭.
  *
  *   init({ input, container, state, data, fmt, ui })
@@ -39,7 +40,8 @@ export function init({ input, container, state, data, fmt, ui }) {
       // 묶음 이름(인물 · 세계)을 되풀이하지 않는다 — 인물은 갈래(니케 · 인간 …)만, 세계는 종류(장소 · 조직 …)와 갈래
       const typeLabel = fmt.TARGET_TYPE[t.type] ?? t.type;
       const sub = type === 'person' ? (t.kind && t.kind !== typeLabel ? t.kind : '') : [typeLabel, t.kind && t.kind !== typeLabel ? t.kind : null].filter(Boolean).join(' · ');
-      entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub, target: type === 'person' ? t : null, keys: [norm(t.name), ...(t.aliases ?? []).map((a) => norm(a.name)), norm(t.id)] });
+      // 이름 · 다른 이름은 그 자리에서 아는 것만 찾고 부른다(W15b) — keys는 찾을 때 nameKeys로 다시 만든다
+      entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub, target: type === 'person' ? t : null, tg: t, keys: [] });
     }
     for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: fmt.majorThread(j), first: j.first_unit, keys: [norm(j.title), norm(j.text)] });
   };
@@ -70,6 +72,9 @@ export function init({ input, container, state, data, fmt, ui }) {
     return `${i > 16 ? '…' : ''}${s.replace(/\s+/g, ' ')}…`;
   };
 
+  /** 대상의 찾는 말 — 그 자리에서 아는 이름 · 다른 이름(fmt.namesAt), 표준명을 알 때만 ID까지 */
+  const nameKeys = (t, R) => [...fmt.namesAt(t, R).map(norm), fmt.nameAt(t, R) === t.name ? norm(t.id) : null];
+
   const search = (q) => {
     const n = norm(q);
     if (!n) return [];
@@ -87,8 +92,10 @@ export function init({ input, container, state, data, fmt, ui }) {
     const R = state.reading();
     for (const e of entries) {
       if (e.first && !R.seen(e.first)) continue; // 아직 안 나온 떡밥은 찾기에서 뺀다 — 제목 · 요약이 스포일러(W15a)
-      const s = score(e);
-      if (s) hits.push({ e, s });
+      if (e.tg && !fmt.met(e.tg, R)) continue; // 아직 안 나온 인물 · 항목도 뺀다(W15b)
+      const hit = e.tg ? { ...e, label: fmt.nameAt(e.tg, R), keys: nameKeys(e.tg, R) } : e;
+      const s = score(hit);
+      if (s) hits.push({ e: hit, s });
     }
     hits.sort((a, b) => b.s - a.s || GROUPS.findIndex((g) => g[0] === a.e.type) - GROUPS.findIndex((g) => g[0] === b.e.type) || a.e.label.length - b.e.label.length);
     // 줄거리 · 기록 문장은 따로 — 흔한 이름이면 수백 줄이 맞아 다른 결과를 밀어내지 않게 읽는 순서로 몇 건까지

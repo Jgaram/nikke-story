@@ -175,12 +175,14 @@ test('지난 소속(W12e) — 실제 기록이 지금 소속 계산 · 게임 �
   assert.ok(past('person:에이브', 'org:V.T.C.')?.from === 'person:그레이브', '에이브는 대표 그레이브의 지난 소속을 빌린다');
 });
 
-test('게임 소속의 공개 자리(W12d) — export가 출시 · 기록에서 tick을 붙인다', () => {
+test('게임 소속의 공개 자리(W12d · W15b) — export가 출시 · 기록에서 tick을 붙인다', () => {
   const file = path.join(ROOT, 'site/data/targets.json');
   if (!fs.existsSync(file)) return;
   const byId = new Map(JSON.parse(fs.readFileSync(file, 'utf8')).map((t) => [t.id, t]));
   const org = (p, name) => byId.get(p)?.orgs?.find((o) => o.name === name);
-  assert.equal(org('person:그레이브', '올드 테일즈')?.tick, 0, '원문에 이름 없는 게임 소속은 늘(0)');
+  assert.ok([...byId.values()].every((t) => (t.orgs ?? []).every((o) => o.tick !== 0)), '늘(0)인 게임 소속은 없다 — 원문에 이름 없는 소속(null)도 그 판의 출시부터(W15b)');
+  assert.equal(org('person:모더니아', '헬레틱')?.tick, org('person:모더니아', '필그림')?.tick, '모더니아 헬레틱은 CH.00부터가 아니라 출시(필그림과 같은 자리)부터');
+  assert.ok(org('person:그레이브', '올드 테일즈')?.tick > 1, '원문에 이름 없는 게임 소속도 출시부터');
   assert.equal(org('person:라피', '카운터스')?.tick, byId.get('person:라피').affs.find((a) => a.org === 'org:카운터스').tick, '원문 기록 T가 출시보다 이르면 그 자리');
   assert.ok(org('person:라피', '엘리시온')?.tick > org('person:라피', '카운터스').tick, '원문에서 안 드러나면 출시(호감도 단위)');
   assert.ok(byId.get('person:그레이브').affs.some((a) => a.org === 'org:빌런_연합' && a.act === '합류'), '그레이브 이동이 기록으로');

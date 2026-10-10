@@ -64,6 +64,9 @@ const LABELS = {
   skippedStory: '안 봤다고 고른 스토리 — 아래는 스포일러일 수 있다',
   hiddenThread: '아직 나오지 않은 떡밥',
   hiddenThreadNote: (at) => `여기까지 읽음(${at}) 뒤에 나오는 떡밥 — 이름 · 내용은 스포일러`,
+  hiddenPerson: '아직 나오지 않은 인물',
+  hiddenItem: '아직 나오지 않은 항목',
+  hiddenTargetNote: (at) => `여기까지 읽음(${at}) 안에서는 아직 이름이 나오지 않았다 — 이름 · 내용은 스포일러`,
   spoiler: (n) => `여기까지 읽음 뒤 — 스포일러 보기${n != null ? ` (${n})` : ''}`,
   aliases: '다른 이름',
   first: '처음 등장',
@@ -244,15 +247,18 @@ function peoplePanel(key, hidden, idx) {
   const sel = current;
   loadPeople().then(() => {
     if (current !== sel || !people) return;
-    const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && r.id !== 'person:지휘관' && idx.targets.has(r.id)).sort((a, b) => b.speaker - a.speaker);
+    // 본 스토리면 그 자리에서 이름이 나온 인물만, 그 자리의 이름으로('???'로만 말한 인물은 뺀다 — W15b). 접은 스토리는 전부
+    const R = hidden ? null : state.reading();
+    const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
     if (!list.length) return;
     const T = state.get().t;
     const face = (r) => {
       const t = idx.targets.get(r.id);
       const icon = fmt.iconAt(t, T);
+      const name = fmt.nameAt(t, R) ?? t.name;
       return ui.link(`person:${r.id}`, [
-        icon ? ui.portrait(icon, { size: 44, class: 'rd-face' }) : ui.el('span', { class: 'rd-face rd-face-blank', 'aria-hidden': 'true' }, [...t.name][0]),
-        ui.el('span', { class: 'rd-person-name' }, t.name)], { class: 'rd-person', title: t.name });
+        icon ? ui.portrait(icon, { size: 44, class: 'rd-face' }) : ui.el('span', { class: 'rd-face rd-face-blank', 'aria-hidden': 'true' }, [...name][0]),
+        ui.el('span', { class: 'rd-person-name' }, name)], { class: 'rd-person', title: name });
     };
     const first = list.slice(0, PEOPLE_CAP);
     const rest = list.slice(PEOPLE_CAP);
@@ -705,24 +711,36 @@ const RENDER = {
     const t = idx.targets.get(id);
     if (!t) return root.append(head(LABELS.notFound), ui.empty(LABELS.notFound));
     const isPerson = t.type === 'person';
-    const same = fmt.sameAsKnown(t, state.reading());
+    const R = state.reading();
+    // 아직 안 나온 인물 · 항목(이름이 쓰인 스토리를 안 봄) — 머리는 '아직 나오지 않은 …'만, 이름 · 초상부터 전부 스포일러 접이에(W15b — 떡밥 패널과 같게)
+    const shown = fmt.met(t, R);
+    if (!shown) {
+      root.append(head(isPerson ? LABELS.hiddenPerson : LABELS.hiddenItem));
+      root.append(ui.notice(LABELS.hiddenTargetNote(cutoffName()), 'warn'));
+    }
+    const out = shown ? root : ui.el('div', {});
+    const RR = shown ? R : null; // 접이 안은 전부 보기와 같게 — 표준명 · 다른 이름 전부
+    const same = fmt.sameAsKnown(t, R);
     const sameRow = same.length ? joinNodes(same.map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null;
-    const aliases = t.aliases?.length ? t.aliases.map((a) => a.name).join(' · ') : null;
+    const aliasList = fmt.aliasesAt(t, RR);
+    const aliases = aliasList.length ? aliasList.map((a) => a.name).join(' · ') : null;
+    const name = fmt.nameAt(t, RR) ?? t.name;
     const recs = idx.recordsAbout.get(id) ?? [];
     if (isPerson) {
-      root.append(head(t.name, [ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })));
+      out.append(shown ? head(name, [ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
       const fa = firstAppearance(id, idx);
-      root.append(ui.panel(null, kv([
+      out.append(ui.panel(null, kv([
         row(LABELS.aliases, aliases),
         row(LABELS.first, fa ? [ui.link(`unit:${fa.unit}`, fmt.unitTitle(fa.unit)), fa.how ? ui.el('span', { class: 'muted' }, ` · ${fa.how}`) : null] : null),
         row(LABELS.samePerson, sameRow),
       ]), { class: 'rd-person-head' }));
-      root.append(ui.el('div', { class: 'rd-open' }, tabLink('persons', { who: id })));
+      out.append(ui.el('div', { class: 'rd-open' }, tabLink('persons', { who: id })));
     } else {
-      root.append(head(t.name, [], [fmt.TARGET_TYPE[t.type] ?? t.type, t.kind].filter(Boolean).join(' · ')));
-      root.append(ui.el('div', { class: 'rd-open' }, tabLink('world', { item: id })));
+      const sub = [fmt.TARGET_TYPE[t.type] ?? t.type, t.kind].filter(Boolean).join(' · ');
+      out.append(shown ? head(name, [], sub) : ui.el('p', {}, ui.el('strong', {}, name), ui.el('span', { class: 'muted' }, ` · ${sub}`)));
+      out.append(ui.el('div', { class: 'rd-open' }, tabLink('world', { item: id })));
       const seenUnits = new Set(recs.map((r) => r.unit).filter((k) => k && state.seen(k)));
-      root.append(ui.panel(null, [
+      out.append(ui.panel(null, [
         noteText(t.note) ? ui.el('p', { class: 'rd-note' }, noteText(t.note)) : null,
         kv([row(LABELS.aliases, aliases), row(LABELS.sameItem, sameRow)]),
         seenUnits.size ? ui.el('p', { class: 'rd-facts-line' }, LABELS.unitsN(fmt.num(seenUnits.size))) : null,
@@ -730,9 +748,10 @@ const RENDER = {
     }
     if (recs.length) {
       const CAP = 200; // 넘으면 앞 200개 + 탭 링크(전체는 그 탭)
-      root.append(fold(kindsTitle(recs), (body) => put(body, recordList(recs.slice(0, CAP), { showUnit: true }),
+      out.append(fold(kindsTitle(recs), (body) => put(body, recordList(recs.slice(0, CAP), { showUnit: true }),
         recs.length > CAP ? ui.el('div', { class: 'rd-open' }, isPerson ? tabLink('persons', { who: id }) : tabLink('world', { item: id })) : null)));
     }
+    if (!shown) root.append(ui.details(spoilerSummary(), out, { class: 'spoiler' }));
   },
 
   thread(id, idx) {
