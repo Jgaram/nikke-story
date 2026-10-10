@@ -2,12 +2,12 @@
  * 인물 아이콘(W11) — 대상(person:*) ↔ nikke-db 아이콘을 잇고, 필요한 아이콘만 site/img/people/에 받는다.
  * 출처 · 조건은 docs/data-sources.md 9절, 잇는 규칙은 annotations/portraits.json 머리말, 사이트 쪽은 docs/views.md "인물 아이콘".
  *
- *   node tools/site/portraits.mjs            # 잇기 → 없는 아이콘만 받기 → site/img/people/index.json
+ *   node tools/site/portraits.mjs            # 잇기 → 없는 아이콘만 받기(바뀐 모습 forms 포함) → site/img/people/index.json
  *   node tools/site/portraits.mjs --dry      # 받지 않고 대응만 본다
  *   node tools/site/portraits.mjs --refresh  # l2d.json(이름표)을 다시 받는다(새 NPC가 생겼을 때)
  *
  * 요청 규칙(docs/data-sources.md "0. 요청 규칙"을 따른다): 동시 4개, 받은 파일은 다시 받지 않음, 지수 백오프 3회, 404는 기록만.
- * 받은 뒤 `node tools/site/export.mjs --only common`으로 targets.json에 icon 칸을 싣는다.
+ * 받은 뒤 `node tools/views/portrait-forms.mjs`(바뀐 모습의 자리) → `node tools/site/export.mjs --only common`으로 targets.json에 icon · icons 칸을 싣는다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -98,7 +98,7 @@ export function resolve(db, l2d, manual) {
 
 async function main() {
   const { values } = parseArgs({ options: { dry: { type: 'boolean', default: false }, refresh: { type: 'boolean', default: false } } });
-  const manual = JSON.parse(fs.readFileSync(MAP_FILE, 'utf8')).map;
+  const { map: manual, forms = {} } = JSON.parse(fs.readFileSync(MAP_FILE, 'utf8'));
   const l2d = await loadL2d(values.refresh);
   const db = await openDb();
   const { rows, problems } = resolve(db, l2d, manual);
@@ -110,7 +110,9 @@ async function main() {
   const index = {};
   const missing = [];
   const stats = { cached: 0, fetched: 0, notFound: 0 };
-  const queue = [...rows];
+  // 모습이 바뀐 초상화(forms — 이름표 코드 → 아이콘)도 받는다. index.json에는 싣지 않는다(export가 forms로 잇는다)
+  const formRows = [...new Set(Object.values(forms).map((f) => f.icon).filter(Boolean))].map((icon) => ({ id: `form:${icon}`, name: `모습 ${icon}`, cands: [icon], form: true }));
+  const queue = [...rows, ...formRows];
   async function worker() {
     for (let r; (r = queue.shift()); ) {
       for (const id of r.cands) {
@@ -129,7 +131,9 @@ async function main() {
   }
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
-  const sorted = Object.fromEntries(Object.entries(index).sort(([a], [b]) => a.localeCompare(b)));
+  const formIcons = new Set(formRows.filter((r) => index[r.id]).map((r) => index[r.id]));
+  console.log(`모습 아이콘 ${formIcons.size}/${formRows.length}`);
+  const sorted = Object.fromEntries(Object.entries(index).filter(([k]) => !k.startsWith('form:')).sort(([a], [b]) => a.localeCompare(b)));
   const by = (how) => rows.filter((r) => r.how === how && index[r.id]).length;
   console.log(`인물 ${rows.length}명 후보 → 아이콘 ${Object.keys(sorted).length}명 (resource_id ${by('resource_id')} · 한국어 이름 ${by('한국어 이름')} · 대응표 ${by('대응표')})`);
   console.log(`받음 ${stats.fetched} · 이미 있음 ${stats.cached} · 없음 ${stats.notFound}`);
@@ -138,7 +142,7 @@ async function main() {
   if (multi.length) console.log(`한국어 이름이 여럿 — 앞 것을 씀: ${multi.map((r) => `${r.name}→${index[r.id]}(${r.cands.join('/')})`).join(' · ')}`);
   if (values.dry) return;
   fs.writeFileSync(INDEX_FILE, `${JSON.stringify(sorted, null, 1)}\n`);
-  const used = new Set(Object.values(sorted));
+  const used = new Set([...Object.values(sorted), ...formIcons]);
   const stale = fs.readdirSync(IMG_DIR).filter((f) => f.endsWith('.png') && !used.has(f.slice(0, -4)));
   if (stale.length) console.log(`쓰지 않는 아이콘 ${stale.length}: ${stale.join(' ')} (지우려면 손으로)`);
   const bytes = fs.readdirSync(IMG_DIR).reduce((s, f) => s + fs.statSync(path.join(IMG_DIR, f)).size, 0);

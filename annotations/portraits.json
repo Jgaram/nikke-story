@@ -3,7 +3,8 @@
     "인물 아이콘 대응표(W11) — 대상(person:*) → nikke-db 아이콘 ID(`images/sprite/si_{id}_00_s.png`, 128²). 출처 · 조건은 docs/data-sources.md 9절.",
     "자동으로 잇는 것은 여기 적지 않는다: 니케 목록 대상은 resource_id → c{3자리}(궁극기 리소스 이름 `c010_ulti`로 확인), 나머지는 nikke-db l2d.json의 한국어 이름이 대상 이름(표준명 · 다른 이름)과 같으면 잇는다.",
     "여기는 한국어 이름이 없어 영어 이름 · 나온 이벤트로 Claude가 맞춘 것과, 자동 결과를 바꾸는 것(icon: null = 이미지 없음). conf: 확실 · 추정.",
-    "받기 · 내보내기: node tools/site/portraits.mjs → site/img/people/ (docs/views.md \"인물 아이콘\")."
+    "받기 · 내보내기: node tools/site/portraits.mjs → site/img/people/ (docs/views.md \"인물 아이콘\").",
+    "forms: 이름표 코드(원문 speaker — 그 줄의 초상화) → 아이콘. 메인에서 모습이 바뀌는 인물만. 코드 끝의 _op · _op_l/_r/_c는 자리 · 연출만 다른 같은 그림으로 보고 떼고 본다. 여기 없는 코드는 그 인물의 기본 아이콘. 어느 챕터부터인지는 적지 않는다 — tools/views/portrait-forms.mjs가 메인 챕터마다 그 인물의 마지막 줄 코드로 정한다(data/views/portraits/forms.csv)(docs/views.md \"인물 아이콘\")."
   ],
   "map": {
     "person:오스왈드": { "icon": "c961", "conf": "확실", "why": "Oswald" },
@@ -66,5 +67,23 @@
     "person:B-0006": { "icon": "c962", "conf": "확실", "why": "Product 12: B-0006" },
     "person:C-1002": { "icon": "c963", "conf": "확실", "why": "Product 12: C-1002" },
     "person:로지": { "icon": "c482", "conf": "확실", "why": "#000000 - Logey — 사전 메모: #000000이 부리는 니케" }
+  },
+  "forms": {
+    "rapi_red": {"icon": "c016", "conf": "확실", "why": "라피 : 레드 후드 — CH.34 각성 뒤 모습"},
+    "neon_v": {"icon": "c018", "conf": "확실", "why": "네온 : 비전 아이(v) — CH.44부터"},
+    "neon_v_w": {"icon": "c018", "conf": "확실", "why": "네온 : 비전 아이의 다른 차림(w) — 같은 판 아이콘"},
+    "anis_i": {"icon": "c017", "conf": "추정", "why": "아니스 : 스타(i = 아이돌로 봄) — CH.42부터. 코드 뜻은 원문에 없다"},
+    "anis_i_w": {"icon": "c017", "conf": "추정", "why": "anis_i의 다른 차림 — 같은 판 아이콘"},
+    "anis_i_s": {"icon": "c017", "conf": "추정", "why": "anis_i의 다른 차림 — 같은 판 아이콘"},
+    "emma_t": {"icon": "c093", "conf": "확실", "why": "엠마 : 택티컬 업(t) — CH.33부터"},
+    "eunhwa_t": {"icon": "c095", "conf": "확실", "why": "은화 : 택티컬 업(t) — CH.33부터"},
+    "vesti_t": {"icon": "c094", "conf": "확실", "why": "베스티 : 택티컬 업(t) — CH.33부터"},
+    "snowwhite_h": {"icon": "c471", "conf": "확실", "why": "스노우 화이트 : 헤비암즈(h) — CH.44부터"},
+    "snowwhite_h_no": {"icon": "c471", "conf": "확실", "why": "snowwhite_h의 다른 연출 — 같은 판 아이콘"},
+    "drake_p": {"icon": "c104", "conf": "추정", "why": "드레이크 : 그레이트 빌런 — CH.38부터 바뀐 모습(p). 같은 무렵 셋이 함께 바뀐다"},
+    "laplace_p": {"icon": "c103", "conf": "추정", "why": "라플라스 : 얼티밋 히어로 — CH.38부터 바뀐 모습(p)"},
+    "maxwell_p": {"icon": "c105", "conf": "추정", "why": "맥스웰 : 오디너리 미케닉 — CH.38부터 바뀐 모습(p)"},
+    "hongryeon_g": {"icon": "c225", "conf": "추정", "why": "홍련 : 흑영 — CH.48에서 바뀐 모습(g)"},
+    "rapunzel_s": {"icon": "c226", "conf": "추정", "why": "라푼젤 : 퓨어 그레이스 — CH.48에서 바뀐 모습(s)"}
   }
 }

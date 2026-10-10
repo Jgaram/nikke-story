@@ -16,6 +16,7 @@
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
  *   tickLabel(tick, { date })       'CH.20 시점 · 2023-01-12' / 'CH.17 이후 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
+ *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
@@ -339,6 +340,14 @@ function tickObj(tick) {
   return idx?.ticks.get(Number(tick)) ?? null;
 }
 const chNum = (key) => (key ? `CH.${String(key).replace(/^ch/, '')}` : null);
+
+/** 인물 아이콘 — 여기까지 읽음(t)까지 메인에서 바뀐 모습만 보인다(사용자, 2026-10-10). 그 뒤 모습은 스포일러라 앞 모습 */
+export function iconAt(target, t) {
+  if (!target) return null;
+  let icon = target.icon ?? null;
+  for (const [tick, ic] of target.icons ?? []) if (t == null || tick <= t) icon = ic;
+  return icon;
+}
 
 export function tickShort(tick) {
   if (tick == null) return '전부';

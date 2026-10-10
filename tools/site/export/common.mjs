@@ -8,14 +8,15 @@
  *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
+ *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
  */
 import fs from 'node:fs';
 import { kindOfKey } from '../../records/order.mjs';
-import { compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
-import { INDEX_FILE as ICONS_FILE } from '../portraits.mjs';
+import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
+import { INDEX_FILE as ICONS_FILE, IMG_DIR } from '../portraits.mjs';
 
 export const name = 'common';
 
@@ -231,11 +232,18 @@ export async function run(ctx) {
   }
   // 인물 아이콘(W11) — tools/site/portraits.mjs가 받아 둔 것만. 없으면 칸을 비운다
   const icons = fs.existsSync(ICONS_FILE) ? JSON.parse(fs.readFileSync(ICONS_FILE, 'utf8')) : {};
+  // 바뀐 모습 — tools/views/portrait-forms.mjs가 메인 챕터마다 정한 것(data/views/portraits/forms.csv). 받아 둔 아이콘만
+  const iconForms = new Map();
+  const FORMS_CSV = 'data/views/portraits/forms.csv';
+  for (const r of fs.existsSync(`${ROOT}/${FORMS_CSV}`) ? csv(FORMS_CSV) : []) {
+    if (!fs.existsSync(`${IMG_DIR}/${r.icon}.png`)) { warn({ where: 'portraits', msg: `${r.target} 모습 ${r.icon}을 받지 않았다 — node tools/site/portraits.mjs` }); continue; }
+    (iconForms.get(r.target) ?? iconForms.set(r.target, []).get(r.target)).push([num(r.tick), r.icon]);
+  }
   const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
     const r = pick(t, TARGET_COLUMNS);
     return compact({
       id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: names.get(r.id),
-      same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id],
+      same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
     });
   });
 
