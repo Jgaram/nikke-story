@@ -369,7 +369,7 @@ function sceneLinkRows(id, edges, idx) {
     const hidden = Boolean(u) && !state.seen(u.key);
     const node = ui.el('li', { class: ['rd-link', hidden ? 'after-cutoff' : ''] },
       ui.el('div', { class: 'rd-link-main' },
-        sc ? ui.link(`scene:${other}`, sc.title ?? fmt.sceneName(other)) : ui.el('span', {}, fmt.ref(other)),
+        sc ? ui.link(`scene:${other}`, fmt.sceneLabel(other)) : ui.el('span', {}, fmt.ref(other)),
         u ? ui.el('span', { class: 'rd-link-meta' }, ui.link(`unit:${otherUnit}`, u.title)) : null),
       linkWhy([e], idx) ? ui.el('div', { class: 'rd-link-ev' }, linkWhy([e], idx)) : null);
     return { type: e.type, node, s: e.s, n: 1, order: u?.order ?? 9999, after: hidden };
@@ -625,7 +625,7 @@ const RENDER = {
     }
     // 장면 — 번호 · 제목(+ 판 · 호감도 Lv) + 씬 한 줄. 줄 수는 싣지 않는다
     root.append(ui.panel(LABELS.scenes, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
-      ui.el('li', {}, ui.link(`scene:${s.id}`, `${s.seq}. ${s.title ?? fmt.sceneName(s.id)}`), s.part || s.level ? ui.el('span', { class: 'muted' }, ` ${[s.part, s.level ? `Lv.${s.level}` : null].filter(Boolean).join(' · ')}`) : null,
+      ui.el('li', {}, ui.link(`scene:${s.id}`, fmt.sceneTitle(s.id) ? `${s.seq}. ${fmt.sceneTitle(s.id)}` : fmt.sceneName(s.id)), s.part || s.level ? ui.el('span', { class: 'muted' }, ` ${[s.part, s.level ? `Lv.${s.level}` : null].filter(Boolean).join(' · ')}`) : null,
         !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty(LABELS.noScenes)));
     if (recs.length) root.append(fold(kindsTitle(recs), (body) => body.append(recordList(recs))));
     slipsPanel(idx.slipsOf.get(key), hidden);
@@ -637,7 +637,7 @@ const RENDER = {
     const u = idx.units.get(s.unit);
     const recs = idx.recordsOf.get(id) ?? [];
     const sub = joinDots([u ? ui.link(`unit:${u.key}`, u.title) : null, s.part ? ui.el('span', {}, s.part) : null, s.level ? ui.el('span', {}, `Lv.${s.level}`) : null].filter(Boolean));
-    root.append(head(s.title ?? fmt.sceneName(id), [], sub.length ? sub : null));
+    root.append(head(fmt.sceneLabel(id), [], sub.length ? sub : null));
     const line = sceneLineMap?.get(id);
     if (line) {
       const p = ui.el('p', { class: 'rd-logline' }, line);
@@ -648,7 +648,7 @@ const RENDER = {
     const next = siblings[s.seq];
     if (prev || next) {
       root.append(ui.panel(null, kv([
-        row(LABELS.move, ui.el('span', { class: 'nav' }, prev ? ui.link(`scene:${prev.id}`, `← ${prev.title ?? fmt.sceneName(prev.id)}`) : null, prev && next ? ' · ' : null, next ? ui.link(`scene:${next.id}`, `${next.title ?? fmt.sceneName(next.id)} →`) : null)),
+        row(LABELS.move, ui.el('span', { class: 'nav' }, prev ? ui.link(`scene:${prev.id}`, `← ${fmt.sceneLabel(prev.id)}`) : null, prev && next ? ' · ' : null, next ? ui.link(`scene:${next.id}`, `${fmt.sceneLabel(next.id)} →`) : null)),
       ])));
     }
     const body = ui.el('div', { class: 'rd-lazy' });

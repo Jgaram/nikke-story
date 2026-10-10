@@ -315,6 +315,7 @@ async function boot() {
     return;
   }
   fmt.use(idx);
+  fmt.useReading(() => state.reading());
   const ch00 = idx.mainTicks.find((t) => t.main === 'ch00')?.tick ?? idx.tickList[0]?.tick ?? 1;
   const firstVisit = !state.cutoffChosen(); // init이 URL에 t를 쓰기 전에 본다
   state.configure({ units: idx.units });

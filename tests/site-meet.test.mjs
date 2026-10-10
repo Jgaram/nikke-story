@@ -90,3 +90,18 @@ test('fmt.met · nameAt · aliasesAt · namesAt — 그 자리에서 아는 이�
   assert.equal(fmt.met(ev, mkR(units, 1, { ch01: false })), false);
   assert.equal(fmt.met(ev, mkR(units, 5, { ch01: false })), true);
 });
+
+test('fmt.sceneTitle · sceneName — 장면 제목은 그 스토리를 봤을 때만(사용자, 2026-10-10)', () => {
+  const units = new Map([['ch01', { key: 'ch01', tick: 1 }], ['ch40', { key: 'ch40', tick: 40 }]]);
+  const scenes = new Map([['a', { id: 'a', unit: 'ch01', seq: 2, title: '재회' }], ['b', { id: 'b', unit: 'ch40', seq: 7, title: '인자 살해자' }]]);
+  fmt.use({ units, scenes });
+  let R = mkR(units, 1);
+  fmt.useReading(() => R);
+  assert.equal(fmt.sceneName('a'), '2장면 「재회」');
+  assert.equal(fmt.sceneName('b'), '7장면', '안 본 스토리의 장면은 번호만');
+  assert.equal(fmt.sceneTitle('b'), null);
+  assert.equal(fmt.sceneLabel('b'), '7장면');
+  R = mkR(units, null);
+  assert.equal(fmt.sceneLabel('b'), '인자 살해자', '전부 보기면 제목');
+  fmt.useReading(null);
+});

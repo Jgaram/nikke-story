@@ -19,6 +19,7 @@
  *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
+ *   sceneTitle(scene) · sceneLabel(scene)   장면 제목은 그 스토리를 봤을 때만(안 봤으면 '2장면' — 사용자 2026-10-10). useReading(fn)으로 읽음 판정을 묶는다
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
  *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
  *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
@@ -354,6 +355,11 @@ let idx = null;
 export function use(i) {
   idx = i;
 }
+let readingOf = null;
+/** 여기까지 읽음 판정(state.reading)을 묶는다 — 장면 제목처럼 format.js 안에서 가려야 하는 것이 쓴다(app.js가 부팅 때 한 번) */
+export function useReading(fn) {
+  readingOf = fn;
+}
 
 export function unitTitle(u) {
   const unit = typeof u === 'string' ? idx?.units.get(u) : u;
@@ -489,8 +495,21 @@ export const refIn = (scene, unit) => (idx?.scenes.get(scene)?.unit === unit ? s
 /** 스토리 이름을 이미 보일 때 — '18장면 「에닉」' */
 export const sceneName = (scene) => {
   const s = idx?.scenes.get(scene);
-  return s ? `${s.seq}장면${s.title ? ` 「${s.title}」` : ''}` : String(scene ?? '');
+  const title = sceneTitle(scene);
+  return s ? `${s.seq}장면${title ? ` 「${title}」` : ''}` : String(scene ?? '');
 };
+/**
+ * 장면 제목 — 그 스토리를 봤을 때만(게임은 읽기 전 장면 제목을 보이지 않는다 — 사용자, 2026-10-10). 안 봤거나 제목이 없으면 null(화면은 '3장면'만).
+ * 읽음 판정은 app.js가 useReading(() => state.reading())으로 넘긴다 — 없으면(테스트) 늘 보인다
+ */
+export function sceneTitle(scene) {
+  const s = idx?.scenes.get(scene);
+  if (!s?.title) return null;
+  const R = readingOf?.();
+  return !R || R.all || R.seen(s.unit) ? s.title : null;
+}
+/** 장면 이름(목록 · 이동 칸) — 봤으면 제목, 아니면 '3장면' */
+export const sceneLabel = (scene) => sceneTitle(scene) ?? sceneName(scene);
 export const evidence = (ev) => (Array.isArray(ev) ? [...new Set(ev.map((e) => e.scene))].map((s) => ref(s)).join(' · ') : '');
 
 /**

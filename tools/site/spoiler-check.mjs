@@ -16,8 +16,9 @@
  *   대상     아직 이름이 안 나온 인물 · 항목(fmt.met 거짓)의 표준명(W15b) — 앞 글자가 낱말 안이면 세지 않는다. 스토리 제목과 같은 이름(호감도)은 --titles일 때만.
  *   다른이름 나온 대상의 다른 이름 가운데 그 자리에서 모르는 것(fmt.aliasesAt 밖, 3자 이상).
  *   시대     드러나기 전 시대 기준점(chrono.json points[].meet)의 이름.
- *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대는 공개 글(스토리 · 장면 제목 — --titles면 스토리 제목은 남김,
- *   fmt *_HELP 도움말)을 지우고 본다.
+ *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
+ *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
+ *   본 스토리의 장면 제목, fmt *_HELP 도움말)을 지우고 본다.
  * 접힌 '스포일러 보기'(닫힌 details) 안은 세지 않는다 — 설계대로 가린 것이다(innerText에 안 들고, title · aria-label은 닫힌 details 안이면 뺀다).
  * 출력: 칸(장면)마다 새는 수 · 앞 몇 건. --out이면 전부를 그 파일에. 새는 것이 있으면 종료 코드 1.
  */
@@ -107,10 +108,11 @@ const PROBE = async (skipMain, titles) => {
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름
   const knownNames = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));
   for (const t of targets) if (fmt.met(t, R)) for (const o of fmt.orgsAt(t, R.all ? null : R.t)) knownNames.add(o.name);
-  // 공개 글은 지우고 본다 — 스토리 · 장면 제목(감상 순서 탭 · 리더 장면 칸에 다 보인다, --titles면 남김) · 도움말(*_HELP — 스토리 종류 설명의 '금서고' · '전초기지')
+  // 공개 글은 지우고 본다 — 스토리 제목(감상 순서 탭에 다 보인다, --titles면 남김) · 본 스토리의 장면 제목 · 도움말(*_HELP — 스토리 종류 설명의 '금서고' · '전초기지')
+  // 안 본 스토리의 장면 제목은 공개가 아니다(게임도 읽기 전에는 안 보인다 — 사용자 2026-10-10) — 아래 '장면'으로 센다
   let bare = all;
-  const scenes = titles ? [] : await get('scenes');
-  const masks = [...(titles ? [] : units.map((u) => u.title)), ...scenes.map((x) => x.title), ...Object.entries(fmt).filter(([k]) => k.endsWith('_HELP')).flatMap(([, v]) => Object.values(v))];
+  const scenes = await get('scenes');
+  const masks = [...(titles ? [] : units.map((u) => u.title)), ...scenes.filter((x) => unitSeen(x.unit)).map((x) => x.title), ...Object.entries(fmt).filter(([k]) => k.endsWith('_HELP')).flatMap(([, v]) => Object.values(v))];
   for (const m of masks.filter((x) => typeof x === 'string' && x.length >= 2).sort((a, b) => b.length - a.length)) bare = bare.split(m).join(' '.repeat(m.length));
   /** 낱말 첫머리로 나온 곳(앞 글자가 한글 · 영문 · 숫자가 아님) — 아는 더 긴 이름 속(그레이 ⊂ 그레이브)은 빼고 */
   const longer = [...knownNames];
@@ -136,6 +138,13 @@ const PROBE = async (skipMain, titles) => {
     if ([...t.name].length < 2 || knownNames.has(t.name)) continue;
     const i = findWord(t.name);
     if (i >= 0) hits.push(`대상 ${t.id} … ${around(i, t.name.length)}`);
+  }
+  const titleSet = new Set(units.map((u) => u.title));
+  for (const x of scenes) {
+    if (unitSeen(x.unit) || !x.title || [...x.title].length < 4 || titleSet.has(x.title) || knownNames.has(x.title)) continue;
+    // 장면 이름 꼴로 나온 것만 — '7장면 「제목」' · 장면 목록 '7. 제목'(같은 말이 떡밥 제목 · 기록 문장에 우연히 들 수 있다)
+    const i = [`「${x.title}」`, `${x.seq}. ${x.title}`].map((k) => bare.indexOf(k)).find((j) => j >= 0) ?? -1;
+    if (i >= 0) hits.push(`장면 ${x.id} … ${around(i, x.title.length + 2)}`);
   }
   for (const p of chrono.points.filter((x) => x.era)) {
     if (R.all || (p.meet ?? []).some((k) => R.seen(k))) continue;
