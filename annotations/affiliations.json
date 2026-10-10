@@ -1527,56 +1527,60 @@
       "id": "T103",
       "person": "person:라푼젤",
       "org": "org:갓데스",
-      "act": "소속",
+      "act": "지난 소속",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
       "reason": "라푼젤이 '우린 [갓데스] 스쿼드'라며 구성 인원을 꼽음",
       "confidence": "확실",
       "status": "확정",
       "session": "W12d",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12f", "note": "act 소속 → 지난 소속 — 갓데스는 이야기 시작 전에 무너진 스쿼드라 다른 판 게임 소속도 이야기 기준 전 소속으로(사용자 결정, 2026-10-10)" }
       ]
     },
     {
       "id": "T104",
       "person": "person:스노우_화이트",
       "org": "org:갓데스",
-      "act": "소속",
+      "act": "지난 소속",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
       "reason": "라푼젤이 갓데스 구성 인원으로 스노우 화이트를 꼽음",
       "confidence": "확실",
       "status": "확정",
       "session": "W12d",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12f", "note": "act 소속 → 지난 소속 — 갓데스는 이야기 시작 전에 무너진 스쿼드라 다른 판 게임 소속도 이야기 기준 전 소속으로(사용자 결정, 2026-10-10)" }
       ]
     },
     {
       "id": "T105",
       "person": "person:홍련",
       "org": "org:갓데스",
-      "act": "소속",
+      "act": "지난 소속",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
       "reason": "라푼젤이 갓데스 구성 인원으로 홍련을 꼽음",
       "confidence": "확실",
       "status": "확정",
       "session": "W12d",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12f", "note": "act 소속 → 지난 소속 — 갓데스는 이야기 시작 전에 무너진 스쿼드라 다른 판 게임 소속도 이야기 기준 전 소속으로(사용자 결정, 2026-10-10)" }
       ]
     },
     {
       "id": "T106",
       "person": "person:레드_후드",
       "org": "org:갓데스",
-      "act": "소속",
+      "act": "지난 소속",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": [59, 61] }],
       "reason": "라푼젤이 갓데스 구성 인원으로 레드 후드를 꼽음",
       "confidence": "확실",
       "status": "확정",
       "session": "W12d",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12d", "note": "근거 줄에서 그 인물의 소속으로 드러나는지 직접 확인(W12d 검토 — 같은 씬에 이름만 있는 것은 뺌)" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12f", "note": "act 소속 → 지난 소속 — 갓데스는 이야기 시작 전에 무너진 스쿼드라 다른 판 게임 소속도 이야기 기준 전 소속으로(사용자 결정, 2026-10-10)" }
       ]
     },
     {

@@ -160,7 +160,10 @@ test('fmt.orgsAt past — 지난 소속 · 이탈한 조직은 전 소속으로 
   assert.equal(tip(5, '갓데스'), '전 소속: 갓데스 · 드러난 곳 라푼젤 호감도');
   assert.equal(tip(5, '실버건'), '전 소속: 실버건 — 사수 · 나간 곳 CH.10 동료', '이탈한 조직은 마지막 자리 · 나간 곳');
   const same = { orgs: [{ type: 'squad', org: 'org:갓데스', name: '갓데스', via: '다른 판', tick: 1 }], affs: [{ id: 'T9', org: 'org:갓데스', act: '지난 소속', tick: 1 }] };
-  assert.deepEqual(fmt.orgsAt(same, 1, { past: true }).map((o) => [o.name, Boolean(o.past)]), [['갓데스', false]], '다른 판의 게임 소속과 같은 조직이면 전 소속을 따로 안 보인다');
+  assert.deepEqual(fmt.orgsAt(same, 1, { past: true }).map((o) => [o.name, Boolean(o.past)]), [['갓데스', true]], '지난 소속 T가 있는 게임 소속(다른 판)은 전 소속 칩으로 바뀐다(W12f)');
+  assert.deepEqual(fmt.orgsAt(same, 1).map((o) => o.name), [], '지금 소속에서는 빠진다');
+  const back = { ...same, affs: [...same.affs, { id: 'T10', org: 'org:갓데스', act: '합류', tick: 2 }] };
+  assert.deepEqual(fmt.orgsAt(back, 2, { past: true }).map((o) => [o.name, Boolean(o.past)]), [['갓데스', false]], '다시 들어가면 지금 소속 한 번만');
 });
 
 test('지난 소속(W12e) — 실제 기록이 지금 소속 계산 · 게임 소속 공개 자리에 안 든다', () => {

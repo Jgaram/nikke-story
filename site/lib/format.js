@@ -374,12 +374,15 @@ export function orgsAt(target, t, { past = false } = {}) {
     now.set(a.org, a);
     if (a.act === '이탈') ago.set(a.org, a);
   }
+  // 이야기 기준 지난 소속인 게임 소속(다른 판의 갓데스 등 — 지난 소속 기록이 있고 지금 다시 들어가지 않음)은 지금 칩이 아니라 전 소속 칩으로
+  const pastAll = new Map((target.affs ?? []).filter((a) => a.act === '지난 소속').map((a) => [a.org, a]));
   const out = [];
   const shown = new Set();
   for (const o of target.orgs ?? []) {
     if (!all && !(o.tick != null && o.tick <= t)) continue;
     const rec = o.org ? now.get(o.org) : null;
     if (rec?.act === '이탈') continue;
+    if (o.org && pastAll.has(o.org) && rec?.act !== '소속' && rec?.act !== '합류') { if (!ago.has(o.org)) ago.set(o.org, pastAll.get(o.org)); continue; }
     const { tick, ...rest } = o;
     out.push({ ...rest, role: rec?.role, source: 'game' });
     shown.add(o.org ?? o.name);
