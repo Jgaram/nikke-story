@@ -100,7 +100,7 @@ node tools/records.mjs handoff          # 인계 파일 (annotations/read1/HANDO
 공개 사이트(W — GitHub Pages, 빌드 도구 없는 정적 사이트. 배치 · 규약은 [docs/views.md](docs/views.md) "파일 배치 · 모듈 규약 · 실행법 (W1)"):
 
 ```bash
-node tools/site/export.mjs              # data/views/ CSV · DB · 기록 → site/data/*.json (본문 칼럼은 읽지 않고, 40자 넘는 인용은 경고 · 80자는 자른다)
+node tools/site/export.mjs              # data/views/ CSV · DB · 기록 → site/data/*.json (본문 칼럼은 읽지 않고, 40자 넘는 인용은 경고)
 node tools/site/serve.mjs --port 8765   # 로컬 확인용 정적 서버 → http://localhost:8765/
 ```
 

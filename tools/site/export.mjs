@@ -8,7 +8,7 @@
  *   node tools/site/export.mjs --warnings 경로         # 경고 전부를 파일로(기본은 앞 20줄만 보인다)
  *
  * 대사 본문은 읽지 않는다 — 모듈은 tools/site/lib.mjs의 pick()으로 허용 칼럼만 고른다. 기록 문장 속 따옴표 인용은
- * 40자를 넘으면 경고(사람이 본다), 80자를 넘으면 자른다. 내보낸 뒤 `node tools/check-quotes.mjs`로 원문과 겹침을 다시 본다.
+ * 40자를 넘으면 경고(사람이 본다). 자르지 않는다. 내보낸 뒤 `node tools/check-quotes.mjs`로 원문과 겹침을 다시 본다.
  *
  * 모듈 규약: tools/site/export/<name>.mjs가 `name`과 `run(ctx) → { files: { '<이름>.json': 값 } }`을 내보낸다.
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn }. common이 먼저 돌고 ctx.common에 공용 데이터를 둔다.
@@ -104,7 +104,7 @@ async function main() {
   if (warnings.length) {
     const quotes = warnings.filter((w) => w.length);
     const others = warnings.filter((w) => !w.length);
-    console.log(`\n경고 ${warnings.length}건 — 따옴표 인용 ${quotes.length}건(40자 초과, 80자 초과는 잘랐다) · 그 밖 ${others.length}건`);
+    console.log(`\n경고 ${warnings.length}건 — 따옴표 인용 ${quotes.length}건(40자 초과) · 그 밖 ${others.length}건`);
     for (const w of others) console.log(`  ${w.where ? `${w.where}: ` : ''}${w.msg}`);
     const shown = quotes.sort((a, b) => b.length - a.length).slice(0, values.warnings ? 0 : 20);
     for (const w of shown) console.log(`  ${w.where} ${w.length}자 ${w.quote}`);

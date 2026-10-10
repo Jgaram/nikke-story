@@ -14,9 +14,8 @@ import { threadMembership } from '../records/threads.mjs';
 
 export { ROOT };
 
-/** 따옴표 인용 길이 — 넘으면 경고(사람이 본다) · 넘으면 자른다(…) */
+/** 따옴표 인용 길이 — 넘으면 경고(사람이 본다). 자르지 않는다 */
 export const QUOTE_WARN = 40;
-export const QUOTE_CLIP = 80;
 
 /** 레포 기준 경로(또는 절대 경로)의 CSV → 행 객체 배열 */
 export function readCsv(file) {
@@ -114,22 +113,8 @@ export function quoteWarnings(text, where = '', limit = QUOTE_WARN) {
     .map((q) => ({ where, length: chars(q.inner), quote: `${[...q.inner].slice(0, 30).join('')}…` }));
 }
 
-/** QUOTE_CLIP자를 넘는 인용을 앞 limit자 + '…'로 자른다. 뒤에서부터 바꿔 앞 구간 위치가 흔들리지 않게 한다 */
-export function clipQuotes(text, limit = QUOTE_CLIP) {
-  if (typeof text !== 'string' || !text) return text;
-  const long = quotesIn(text).filter((q) => chars(q.inner) > limit).sort((a, b) => b.start - a.start);
-  let out = text;
-  let floor = Infinity;
-  for (const q of long) {
-    if (q.end > floor) continue; // 이미 자른 구간과 겹치면 건너뛴다
-    out = `${out.slice(0, q.start + 1)}${[...q.inner].slice(0, limit).join('')}…${out.slice(q.end - 1)}`;
-    floor = q.start;
-  }
-  return out;
-}
-
 /**
- * 글 하나를 내보낼 모양으로 — 경고를 모으고 긴 인용을 자른다. warn(obj)은 export.mjs가 준다
+ * 글 하나를 내보낼 모양으로 — 긴 인용 경고를 모은다(자르지 않는다 — 길이는 우리가 지킨다, 사용자 2026-10-10). warn(obj)은 export.mjs가 준다
  * @param {string|null|undefined} text
  * @param {string} where
  * @param {(w: { where: string, length: number, quote: string }) => void} [warn]
@@ -137,7 +122,7 @@ export function clipQuotes(text, limit = QUOTE_CLIP) {
 export function publishText(text, where, warn) {
   if (typeof text !== 'string') return text ?? null;
   if (warn) for (const w of quoteWarnings(text, where)) warn(w);
-  return clipQuotes(text);
+  return text;
 }
 
 /**

@@ -7,7 +7,6 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { QUOTE_CLIP, quoteWarnings } from '../tools/site/lib.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', f), 'utf8'));
@@ -41,12 +40,11 @@ test('단위 · 조각의 자리가 축 안에 있고 분류와 맞는다', () =
   for (const n of chrono.narrows) assert.ok(unitKeys.has(n.unit), n.unit);
 });
 
-test('chrono.json에 대사 본문 칼럼이 없고 인용은 80자 이하다', () => {
+test('chrono.json에 대사 본문 칼럼이 없다', () => {
   const bad = new Set(['quest_name', 'scenario_localkey', 'speaker_name']);
   const walk = (v) => {
     if (Array.isArray(v)) v.forEach(walk);
     else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) { assert.ok(!bad.has(k), k); walk(x); }
-    else if (typeof v === 'string') assert.deepEqual(quoteWarnings(v, 'chrono', QUOTE_CLIP), []);
   };
   walk(chrono);
 });

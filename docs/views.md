@@ -383,18 +383,19 @@
 **공개 규칙** (사용자 결정 2026-10-09 — (나) 별도 public 레포에 Pages, 원문은 싣지 않는다. 같은 날 바뀜: 이 레포 자체를 public으로, 원문은 private 서브모듈 `data/raw/` — CLAUDE.md "저작물 취급"):
 - Pages는 이 레포에서 `site/`(HTML · JS · 내보낸 JSON)를 올린다(Actions로 `site/`만 배포). 코드 · 문서 · `annotations/` 기록은 레포에 공개돼 있고, `data/raw/`(원문 · 외부 참고 표) · DB는 공개되지 않는다.
 - **싣는 것**: 게임 메타데이터(단위 · 씬 ID · 제목 · 종류 · 공개일 · 선행 조건) · 우리가 쓴 기록 문장(사실 · 의문 · 변화 · 생활상 · 마무리) · **스토리별 공개 개요**(한 줄 소개 · 줄거리 · 씬 한 줄 — 2026-10-10) · 등급 · 줄기 · 관계선 · 집계 숫자 · 인물 · 개념 이름.
-- **싣지 않는 것**: 대사 본문(블라링크 · 금서고 모두) · 게임 이미지 · 아이콘 · 로고. "씬 전체 보기"는 없다.
+- **싣지 않는 것**: 대사 본문(블라링크 · 금서고 모두) 전문. "씬 전체 보기"는 없다.
+- **게임 이미지는 실어도 된다**(사용자, 2026-10-10 — 다른 팬 사이트들처럼): 캐릭터 · 컷신 · 아이콘 · 로고 등 범위 제한 없음. 시프트업이 게시 중단을 요청하면 내린다. 이미지를 어디서 받고 어떻게 두는지(직접 링크 · `site/`에 복사, 파일 크기)는 실제로 싣는 W 항목에서 정한다 — 받을 때는 CDN 요청 규칙을 따른다.
   원문을 어디서 읽었는지(블라링크 · 금서고)도 화면 · JSON에 싣지 않는다(사용자, 2026-10-09 — `units.json`에 `library` · `replaces` 없음).
 - **화면 문구는 간결하게**(사용자, 2026-10-09): "근거" · "왜 이렇게 읽었나" 같은 해석 설명은 추정일 때만 붙인다 — 메모 패널의 이유는 `추정`인 메모만("추정한 이유"), 근거 씬 목록은 "장면". 종류 칩으로 아는 말(호감도 제목의 "(호감도 5편)")은 되풀이하지 않는다.
   장면은 `CH.14 여행 · 18장면 「에닉」`(`fmt.ref` · 같은 스토리 안이면 `fmt.sceneName`)으로만 보인다 — 씬 ID · 스토리 키 · 줄 번호는 화면에 내지 않고, 분석 문장 속 키도 `fmt.plain`이 이름으로 바꾼다. 링크(`sel=scene:ID`) · URL에는 키가 그대로 쓰인다.
 - **공개 개요**(사용자, 2026-10-10 — 스토리별 요약을 사이트에 싣는다): 1회독 `summary` · `scenes`(작업 메모)는 내보내지 않고, 화면용으로 새로 써서 확정한 `annotations/synopsis/`만 싣는다(형식 · 쓰는 법 docs/annotations.md "공개 개요").
   대사를 옮기지 않은 우리 문장의 줄거리 소개이고, 따옴표는 이름 · 용어 · 짧은 말(20자 안쪽)만. 스포일러는 그 자리 독자가 본 것까지 — 컷오프 뒤 단위는 개요를 가린다. 세션은 SESSIONS.md W8–W10.
-- **근거 줄 인용**: 기록 하나에 한 줄, 길이 상한(80자, 넘으면 자름) · 출처(씬#줄) 표시. 인용은 분석의 부속이지 본문이 아니다(공표된 저작물의 인용 — 비평 · 연구 목적 · 정당한 범위 · 출처 표시).
+- **근거 줄 인용**: 기록 하나에 한 줄, 짧게 · 출처(씬#줄) 표시 — 숫자 상한 · 자동 자르기는 없고 길이는 우리가 지킨다(사용자, 2026-10-10). 인용은 분석의 부속이지 본문이 아니다(공표된 저작물의 인용 — 비평 · 연구 목적 · 정당한 범위 · 출처 표시).
 - **내보내기가 막는다**: `export.mjs`는 허용 칼럼만 고르고 대사 본문 칼럼(`quest_name` · `scenario_localkey` · DB `lines.text`)은 **읽지 않는다**. 기록 문장 안 따옴표 인용이 40자를 넘으면 경고로 뽑아 사람이 본다.
 - 게임사 가이드라인 — 확인함(2026-10-09, Claude): [시프트업 2차 창작 가이드라인](https://policy.shiftup.co.kr/ip/kr/index.html)(개정 2023-07-14 · 2023-09-05 · 2024-03-26, 문의 ugc@shiftup.co.kr).
   지킬 것과 이 사이트: 영리 금지 → 광고 · 후원 없음 / 원작(시프트업 · 게임 이름) 표기 의무 → 하단에 표기 / 공식 콘텐츠 · 제휴로 오인 금지 → 하단 "비공식 · 관계없음" /
-  공식 일러스트를 그대로 쓰는 것은 2차 창작이 아님 → 이미지 안 실음 / 정치 · 차별 · 혐오 표현 금지 / 시프트업이 부적절하다고 보면 게시 중단 요청 가능 → 요청이 오면 따른다.
-  가이드라인은 스토리 · 대사 인용과 정보성 팬 사이트를 따로 다루지 않는다 — 대사는 위 근거 줄 인용 규칙(한 줄 80자 · 출처)으로만. 가이드라인은 예고 없이 바뀌니 큰 공개 변경 전에 다시 본다.
+  공식 일러스트를 그대로 쓰는 것은 2차 창작이 아님 → 2차 창작으로 인정받지 못한다는 뜻이지 정보성 팬 사이트를 막는 문구는 아니라고 보고 이미지를 싣는다(사용자, 2026-10-10) / 정치 · 차별 · 혐오 표현 금지 / 시프트업이 부적절하다고 보면 게시 중단 요청 가능 → 요청이 오면 따른다.
+  가이드라인은 스토리 · 대사 인용과 정보성 팬 사이트를 따로 다루지 않는다 — 대사는 위 근거 줄 인용 규칙(짧게 · 출처)으로만. 가이드라인은 예고 없이 바뀌니 큰 공개 변경 전에 다시 본다.
 - Pages 켜기는 사용자가 GitHub 설정에서 한다(👤, W7 — Settings → Pages → Source "GitHub Actions"). 배포 워크플로는 W7에서 Claude가 쓴다.
 
 ## 파일 배치 · 모듈 규약 · 실행법 (W1, 2026-10-09)
@@ -406,7 +407,7 @@ W1이 만든 뼈대에 탭 여섯(W2–W7)과 통합 점검(2026-10-09)이 더�
 ```
 tools/site/
   export.mjs            node tools/site/export.mjs [--only <name>,…] [--out <dir>] [--warnings <파일>] [--quiet]
-                        → site/data/*.json + manifest.json. 경고(40자 넘는 따옴표 인용 등)는 stdout, 80자 넘는 인용은 자른다
+                        → site/data/*.json + manifest.json. 경고(40자 넘는 따옴표 인용 등)는 stdout (자르지 않는다)
   lib.mjs               readCsv · writeJson(compact) · num · list · compact · pick(허용 칼럼) · quotesIn · quoteWarnings · clipQuotes · publishText ·
                         loadRecords(annotations 전체 → { ds, membership, confirmed, byId }) · firstRef · evidenceOut · inputsFingerprint
   export/common.mjs     공용 데이터(아래) — 늘 먼저 돈다. 결과를 ctx.common에 둔다
@@ -420,7 +421,7 @@ site/
   lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
   tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈 여섯(order · links · threads · persons · chrono · world) — 아래 "탭별 (W2–W7)"
   data/*.json           내보낸 데이터(커밋한다 — Pages가 그대로 낸다)
-tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest 건수 · 단위 481 · 자리 158 · 본문 칼럼 이름 없음 · 인용 80자 이하 · 40자 초과는 경고 · 소스 정적 검사 · 정적 서버
+tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest 건수 · 단위 481 · 자리 158 · 본문 칼럼 이름 없음 · 40자 초과 인용은 경고 · 소스 정적 검사 · 정적 서버
 ```
 
 **실행법** — `node tools/site/export.mjs` → `node tools/check-quotes.mjs`(원문과 40자 이상 겹침 0인지) → `node --test` → `node tools/site/serve.mjs` 뒤 `http://localhost:8765/`.
@@ -454,7 +455,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 기록 공통 칸: `id` · `kind` · `unit` · `scene`(첫 근거 씬) · `line`(첫 근거 첫 줄) · `evidence[{scene, lines[]}]`(줄은 숫자 또는 "12-17") · `text` · `about[]` · `confidence` · `tick` · `order`(단위의 자리) · `threads[]` · `reason`(왜 이렇게 읽었나) · `user`(사용자가 확정했으면 true).
 종류별: F · Q는 `state`(열림 · 일부 · 풀림 · 뒤집힘) · `first_tick` · `hint_tick` · `partial_tick` · `solved_tick` · `reversed_tick` · `replaced_by` · `last_tick` · `reinforce` · `callbacks`(timeline/records.csv);
 F-k · Q-k는 `act` · `parent` · `answer` · `degree` · `replaced_by`; S는 `time_kind` · `ref` · `subject` · `at` · `years`; I는 `target` · `speaker`(text 없음); E는 `act` · `points[]`; D는 `person` · `aspect` · `act` · `before` · `after` · `with[]` · `trigger` · `time` · `points[]`(변화는 text 없음 — `fmt.recordText`가 전 → 후로 만든다); U는 `topic` · `points[]`; O는 `type` · `chain` · `built[]` · `end` · `closing[]`(unit = end, scene 없음); H는 `title` · `end` · `members[]`.
-기각 · 후보 기록은 싣지 않는다. 기록 문장 속 따옴표 인용은 80자에서 잘린다(…).
+기각 · 후보 기록은 싣지 않는다. 기록 문장은 그대로 싣는다(인용을 자르지 않는다).
 
 **URL 상태(`lib/state.js`)** — 해시 하나: `#tab=order&t=20&layers=1,2&q=라피&sel=unit:ch07&p.kind=event`.
 `tab`(여섯 중 하나) · `t`(컷오프 공개 자리, `all` = 끔) · `layers`(없으면 셋 다) · `q`(검색어) · `sel`(`종류:ID` — `unit:ch07` · `scene:d_main_07_02` · `record:F203` · `person:person:라피` · `target:place:방주` · `thread:J1` · `tick:20`; 있으면 리더가 열린다) · `p.<key>`(지금 탭의 파라미터 — 탭을 바꾸면 지워진다).

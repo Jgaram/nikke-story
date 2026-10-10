@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
 import { exportSite } from '../tools/site/export.mjs';
-import { QUOTE_CLIP, QUOTE_WARN, clipQuotes, pick, publishText, quoteWarnings, quotesIn } from '../tools/site/lib.mjs';
+import { QUOTE_WARN, pick, publishText, quoteWarnings, quotesIn } from '../tools/site/lib.mjs';
 import { handle } from '../tools/site/serve.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -124,18 +124,13 @@ test('확정 기록만 · 공통 칸 · 종류 코드', () => {
   assert.ok(targets.find((t) => t.id === 'person:모더니아').same_as.includes('person:마리안'));
 });
 
-test('따옴표 인용 — 80자 초과는 없고, 40자 초과는 경고 목록에 잡힌다', () => {
-  let longest = 0;
-  walk([read('records.json'), read('records2.json'), read('threads.json'), read('targets.json'), read('slips.json')], (o) => {
-    for (const v of Object.values(o)) if (typeof v === 'string') for (const q of quotesIn(v)) longest = Math.max(longest, [...q.inner].length);
-  });
-  assert.ok(longest <= QUOTE_CLIP + 1, `가장 긴 인용 ${longest}자`); // 자른 뒤 '…' 하나
+test('따옴표 인용 — 40자 초과는 경고 목록에 잡히고, 자르지 않는다', () => {
   const quoteWarns = result.warnings.filter((w) => w.length);
   assert.ok(quoteWarns.every((w) => w.length > QUOTE_WARN && w.where));
-  // 실제 기록에 있는 긴 인용(F2145 text 94자)이 경고에 잡혀 있고 잘렸다
+  // 실제 기록에 있는 긴 인용(F2145 text 94자)이 경고에 잡혀 있고 그대로 실렸다
   assert.ok(quoteWarns.some((w) => w.where === 'F2145 text'));
   const f2145 = read('records.json').find((r) => r.id === 'F2145');
-  assert.ok(f2145.text.includes('…'));
+  assert.ok(quotesIn(f2145.text).some((q) => [...q.inner].length > 80));
 });
 
 test('인용 검사 함수 — 픽스처', () => {
@@ -145,11 +140,8 @@ test('인용 검사 함수 — 픽스처', () => {
   const warns = quoteWarnings(text, 'X1');
   assert.deepEqual(warns.map((w) => w.length), [50, 100]);
   assert.equal(warns[0].where, 'X1');
-  const clipped = clipQuotes(text);
-  assert.ok(clipped.includes(`“${long}”`), '50자는 그대로');
-  assert.ok(clipped.includes(`"${'나'.repeat(QUOTE_CLIP)}…"`), '100자는 80자 + …');
-  assert.ok(!clipped.includes(veryLong));
-  assert.equal(clipQuotes("don't say 'ok'"), "don't say 'ok'", '아포스트로피는 따옴표가 아니다');
+  assert.equal(publishText(text, 'X1'), text, '긴 인용도 자르지 않는다');
+  assert.deepEqual(quoteWarnings("don't say 'ok'"), [], '아포스트로피는 따옴표가 아니다');
   const got = [];
   assert.equal(publishText('짧다', 'w', (w) => got.push(w)), '짧다');
   assert.equal(got.length, 0);

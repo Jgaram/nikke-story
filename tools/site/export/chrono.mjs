@@ -12,7 +12,7 @@
  *   pieces[109]  조각(회상 · 기준점 구간 — 단위의 '지금'과 다른 때) — { id(S…), unit, kind(회상 · 기준점), class, place, lo, hi, years, relations, narrow · narrow_confidence, text, seq, slot }
  *   narrows[366] 좁힘 항목(chronology.json units — Claude 확정) — { unit, piece, at[[관계, 기준, 간격?]], years, basis[], reason, confidence, session, note }. at이 없으면(빈 배열은 compact가 뺀다) "단서 없음 — 시점 불명"을 확인한 표시
  * }
- * 기록 · 이유 문장은 publishText로 인용을 검사 · 자른다. 축의 점 수와 CSV의 lo · hi 범위가 맞는지, 판별 단위의 place가 같은 축 라벨인지 확인해 어긋나면 경고한다.
+ * 기록 · 이유 문장은 publishText로 인용을 검사한다. 축의 점 수와 CSV의 lo · hi 범위가 맞는지, 판별 단위의 place가 같은 축 라벨인지 확인해 어긋나면 경고한다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
