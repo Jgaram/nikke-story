@@ -1,0 +1,14 @@
+{
+  "unit": "char:470",
+  "why": {
+    "text": "RED ASH에서 '자랑스러운 동료'로 작별하러 돌아가던 레드 후드가, 보고 싶은 동료도 만나지 않고 남은 몫을 라피에게 돌려주기로 마음을 정한다.",
+    "src": "b0455d021d",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "80f3bf8df1", "note": "O8 · D1482 대조 — 앞 RED ASH의 다짐이 여기서 마무리" }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "unit": "event_darkhero",
+  "why": {
+    "text": "CH.28에서 알면 방주에 살기 싫어진다던 동력원에 한 걸음 더 — 트로니가 본 붉은 빛 속 공간에는 수많은 시신이 널려 있었다.",
+    "src": "b77f96dfb7",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "bcd8ffebbd", "note": "F1474 · Q171 대조 — 동력원 정체(CH.45)는 안 씀" }
+    ]
+  }
+}

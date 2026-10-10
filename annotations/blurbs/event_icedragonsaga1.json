@@ -1,0 +1,14 @@
+{
+  "unit": "event_icedragonsaga1",
+  "why": {
+    "text": "CH.23에서 메이든을 동료로 깨달은 길로틴에게 메이든도 손을 내밀고, 길로틴이 멈춰 선 이레귤러 사건과 메이든이 익스터너에 온 사정이 여기 있다.",
+    "src": "8f00baa822",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "b1b4488a07", "note": "O20 · D1619 · F1731 · F1732 · D275 대조" }
+    ]
+  }
+}

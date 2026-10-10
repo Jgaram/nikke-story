@@ -1,0 +1,23 @@
+{
+  "unit": "char:221",
+  "why": {
+    "text": "쓰러진 니케에게서 떠오르는 황금색 입자는 그 니케의 NIMPH이고, 라푼젤이 그것을 로사리오에 모아 지상을 떠도는 까닭이 여기 있다.",
+    "later": "OVER ZONE에서 라푼젤의 로사리오로 들어간 황금색 입자가 무엇인지가 여기 있다.",
+    "gate": "event_overzone",
+    "src": "0b2af2cd06",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "9eb6001af7",
+        "note": "F489 대조 — later는 Q130(OVER ZONE)까지, CH.48은 안 씀"
+      }
+    ]
+  }
+}

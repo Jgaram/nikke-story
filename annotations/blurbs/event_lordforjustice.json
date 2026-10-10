@@ -1,0 +1,12 @@
+{
+  "unit": "event_lordforjustice",
+  "why": {
+    "text": "DIRTY BACKYARD 뒤 '아무것도 해결된 게 없다'며 괴로워하던 목단이, 마을을 부순 일을 후회하지 않고 잘못은 고치면 된다는 자기 정의를 세운다.",
+    "src": "23c87f8fac",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "d938c7cbf1", "note": "D715 대조 — CH.44 D1058은 안 씀" }]
+  }
+}

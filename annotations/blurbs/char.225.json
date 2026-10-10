@@ -1,0 +1,12 @@
+{
+  "unit": "char:225",
+  "why": {
+    "text": "RED ASH에서 릴리바이스가 한 방에 쓰러뜨려 데려왔다던 홍련 — 근접 전투 스쿼드를 잃고 혼자 남았던 홍련이 그 주먹에 진 날이 여기 있다.",
+    "src": "228e0b1632",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "ab3f82b67b", "note": "D1511 · E284 대조" }]
+  }
+}

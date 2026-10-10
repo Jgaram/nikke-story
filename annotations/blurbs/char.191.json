@@ -1,0 +1,12 @@
+{
+  "unit": "char:191",
+  "why": {
+    "text": "CH.05에서 앨리스가 '하트의 여왕' 세계를 믿고 사는 까닭 — 심장병으로 오래 입원했던 인간 시절, 다시 태어나면 책 속 앨리스가 되고 싶었던 소원이 여기 있다.",
+    "src": "fec166b1a0",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "5d948dbfd0", "note": "F604 · Q22 대조" }]
+  }
+}

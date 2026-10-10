@@ -1,0 +1,12 @@
+{
+  "unit": "fl:absolute",
+  "why": {
+    "text": "베스티를 뒤에 두고 지키려던 은화가 '그 녀석 대신으로 생각한 적 없다'며 그녀를 믿고, 말끝을 흐리던 베스티도 물러서지 않고 막아선다.",
+    "src": "769f913190",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "0b67d5fc26", "note": "O32 · O35 · D806 대조 — 인용 15자" }]
+  }
+}

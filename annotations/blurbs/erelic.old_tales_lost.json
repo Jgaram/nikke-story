@@ -1,0 +1,21 @@
+{
+  "unit": "erelic:old_tales_lost",
+  "why": {
+    "text": "OLD TALES에서 침식된 신데렐라를 '퀸을 위해'로 이끈 목소리의 답 — 헬레틱은 퀸이 고른 니케만 될 수 있고, 인격 박리와 진화한 인격 데이터가 그 길을 이끈다.",
+    "src": "8c44890d94",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "7d70fe72dd",
+        "note": "F1703 · Q220 대조 — 목소리의 이름 · 정체(뒤에 밝혀짐)는 안 씀"
+      }
+    ]
+  }
+}

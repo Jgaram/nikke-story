@@ -1,0 +1,14 @@
+{
+  "unit": "erelic:red_ash_mini",
+  "why": {
+    "text": "OVER ZONE에서 방주가 비밀리에 준비했다던 '카운터'가 무엇인지, 시뮬레이션에 몰래 놀러 온 이름 없는 A.I.가 직접 털어놓는다.",
+    "src": "b022a96e9f",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "e776555b29", "note": "F1190 · Q128 대조 — 뒤 챕터의 카운터 정체는 안 씀" }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unit": "event_dirtybackyard",
+  "why": {
+    "text": "포그 할로우 괴멸 뒤 목단에게 씌워진 누명과 아우터 림의 나쁜 소문이 모두 식스오의 손에서 나왔다는 것이 여기서 드러난다.",
+    "later": "CH.30에서 식스오의 이름에 지휘관이 떠올리는 '목단의 일'이 이것이다.",
+    "gate": "ch30",
+    "src": "d660075de5",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "9ba5bc9f91",
+        "note": "F1264 대조 — later는 E379(CH.30)만, CH.40 · CH.44는 안 씀"
+      }
+    ]
+  }
+}

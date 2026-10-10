@@ -1,0 +1,21 @@
+{
+  "unit": "side:wordless",
+  "why": {
+    "text": "기억 소거로 어긋나 서로를 '가짜'로 대하던 유니와 미하라가 용서 끝에 다시 짝이 되고, 유니와 슈엔의 매듭도 여기서 지어진다.",
+    "src": "b1c24fbae4",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "b25f7980c5",
+        "note": "O13 · O14 · F1618 대조 — 뒤의 두 사람 행방(MUDFISH · CH.35)은 안 씀"
+      }
+    ]
+  }
+}

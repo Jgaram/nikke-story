@@ -1,0 +1,14 @@
+{
+  "unit": "event_unbreakablesphere1",
+  "why": {
+    "text": "MUDFISH에서 삼켜진 세이렌의 뒷이야기 — 홀로 물거품이 되려던 세이렌이 함께 살아남자는 마음에 이르고, WORDLESS와 MUDFISH의 줄기가 여기서 닫힌다.",
+    "src": "cdd73af810",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "159e0a411f", "note": "Q236 · O28 · O25 대조 — CH.41 · CH.42는 안 씀" }
+    ]
+  }
+}

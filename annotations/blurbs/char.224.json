@@ -1,0 +1,23 @@
+{
+  "unit": "char:224",
+  "why": {
+    "text": "'언니'라 부르기 싫어 고개도 들지 않던 스노우 화이트가, 홀로 랩쳐 대부대를 쓸어버린 릴리바이스를 처음 언니라 부르는 순간이 여기 있다.",
+    "later": "ARK GUARDIAN에서 스노우 화이트가 부르는 언니와의 인연이 여기서 맺어진다.",
+    "gate": "fl:ark_guardian",
+    "src": "c6603f89cf",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "68860161a0",
+        "note": "D1489 대조 — 무기 약속은 한 줄 소개가 말해 '언니' 쪽으로, later는 ARK GUARDIAN의 기억 상실(D994)은 안 쓰고 인연만"
+      }
+    ]
+  }
+}

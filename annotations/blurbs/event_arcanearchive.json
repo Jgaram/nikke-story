@@ -1,0 +1,23 @@
+{
+  "unit": "event_arcanearchive",
+  "why": {
+    "text": "금서고 골방에는 갓데스 스쿼드의 결성부터 마지막 작전까지의 행적과 인류를 위해 싸운 이들의 이름 · 최후가 남아 있고, 그걸 아는 이는 열 명 남짓이다.",
+    "later": "CH.44에서 아이리가 도로시의 기록을 보여 달라 조르는 금서고와 아르카나가 여기서 나온다.",
+    "gate": "ch44",
+    "src": "d73b53fb3f",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "030802c1ef",
+        "note": "F1934 대조 — 뒤 작전 이름(ARK GUARDIAN)은 text에서 '마지막 작전'으로, later는 F2465. later의 '기록' 경고는 작품 속 금서고 기록이라 그대로"
+      }
+    ]
+  }
+}

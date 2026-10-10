@@ -1,0 +1,14 @@
+{
+  "unit": "fl:boom_the_ghost",
+  "why": {
+    "text": "OVER ZONE에서 잃은 피나를 닮은 홀로그램을 도로시가 제 손으로 보내고, 라피에게는 방주를 빼앗을 테니 막아 보라고 말한다.",
+    "src": "77b81999d9",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "c9ac8d2eb5", "note": "O29 · F2037 · F924 대조 — CH.45 · CH.46은 안 씀" }
+    ]
+  }
+}

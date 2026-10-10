@@ -1,0 +1,12 @@
+{
+  "unit": "char:102",
+  "why": {
+    "text": "CH.02에서 말한 지휘관의 '뭔가' 한 조각 — 유대감이 높을수록 니케가 강해진다는 것을, 맥스웰이 슈엔의 부탁으로 몰래 확인한다.",
+    "src": "dc3a760b0d",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "0eccfd2593", "note": "F529 · Q6 대조" }]
+  }
+}

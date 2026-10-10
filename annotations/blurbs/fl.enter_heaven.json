@@ -1,0 +1,12 @@
+{
+  "unit": "fl:enter_heaven",
+  "why": {
+    "text": "CH.22에서 E.H.가 '엘리시온 하퍼'란 이름을 버린 까닭과 잉그리드와의 사이 — 엘리시온의 후계자였던 그녀가 엔터 헤븐을 만들기까지가 여기 있다.",
+    "src": "509cc98d46",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "76beaf124b", "note": "Q125 · E240 대조" }]
+  }
+}

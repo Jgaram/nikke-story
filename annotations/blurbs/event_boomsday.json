@@ -1,0 +1,14 @@
+{
+  "unit": "event_boomsday",
+  "why": {
+    "text": "CH.28에서 일레그가 알면 방주에 살기 싫어질 거라던 동력원의 한 조각 — 전력은 모자라기는커녕 넘쳐흐르고, 그걸 본 트로니는 공포를 혼자 떠안았다.",
+    "src": "b9f7bf50e4",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "9617965e4c", "note": "F1339 · Q171 대조 — CH.30 · CH.45는 안 씀" }
+    ]
+  }
+}

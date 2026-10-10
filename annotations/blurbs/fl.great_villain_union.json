@@ -1,0 +1,12 @@
+{
+  "unit": "fl:great_villain_union",
+  "why": {
+    "text": "CH.42에서 지즈에게 빌런 연합에 넣어 주겠다던 드레이크가 약속대로 그녀를 첫 합격자로 받고, 실수한 부하를 감싸며 책임을 지는 리더가 된다.",
+    "src": "9539f51a88",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "6030c4f3c4", "note": "O110 · D1776 대조" }]
+  }
+}

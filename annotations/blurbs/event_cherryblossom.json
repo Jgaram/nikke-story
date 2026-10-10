@@ -1,0 +1,23 @@
+{
+  "unit": "event_cherryblossom",
+  "why": {
+    "text": "언더월드 퀸이 무엇을 하려고 만든 스쿼드인지, 사쿠라 · 목단 · 로산나가 머스탱과 맺은 '꽃의 맹약'이 무엇인지가 여기 있다.",
+    "later": "CH.21에서 소개 없이 나오는 뒷세계의 세 보스가 어떤 사이인지가 여기 있다.",
+    "gate": "ch21",
+    "src": "40b56f68b4",
+    "session": "W14b",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14b",
+        "hash": "9103732f65",
+        "note": "F830 · F831 대조 — later는 CH.21 자리만(CH.22 내용 안 씀)"
+      }
+    ]
+  }
+}
