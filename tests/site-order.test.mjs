@@ -189,6 +189,9 @@ test('guideOf — 실제 데이터: 짚었던 줄(B-SIDE IDOL · 길로틴 · �
   assert.deepEqual(guideOf('fl:bitter_spice', ctx).must, ['event_staranis1', 'fl:b-side_idol'], 'BITTER SPICE는 STAR ANIS(판정 자리) · B-SIDE IDOL(앞 편) 먼저');
   assert.ok(guideOf(byTitle('길로틴'), ctx).must.includes('ch12'), '길로틴은 CH.12 먼저');
   assert.equal(guideOf(byTitle('랩칠리언 1'), ctx).due?.key, 'ch27', '랩칠리언 1은 CH.27 전까지');
+  // 메인 챕터도 같은 기준(필수 선행만) — CH.48은 SECOND AFFECTION(준필수), CH.27의 추천(권장 선행)은 먼저 볼 것이 아니다
+  assert.deepEqual(guideOf('ch48', ctx).must, [byTitle('SECOND AFFECTION')]);
+  assert.deepEqual(guideOf('ch27', ctx).must, []);
   for (const j of order.units) {
     const g = guideOf(j.key, ctx);
     const pos = units.get(j.key).order;

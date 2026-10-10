@@ -20,8 +20,8 @@
  *     본 것 · 안 본 것은 출시 시점이 아니라 스토리마다 R = state.reading(s)로 정한다 — 척추 이벤트 · 사이드는 '봤음' 예외(x)를 따르고,
  *     예외가 없으면 R.seen(키) ≡ 출시 시점 ≤ t. 구분 줄 위인데 안 봄으로 둔 척추 이벤트 · 사이드는 줄에 '안 봄' 표시.
  *   목록: 감상 순서 한 줄(ol). 척추 줄은 종류 필터(+ 척추 이벤트 · 사이드는 등급 '필수')에 들면 보이고, 그 사이에 필터에 든 메인 밖 스토리를 읽는 자리 순서대로 끼운다.
- *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 다른 표시 없음). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 줄 안내 요약).
- *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 메인 밖 줄 · 척추 이벤트 · 사이드 줄.
+ *     메인 챕터 = 구획 줄(굵은 CH 표기 + 이름, 아래에 '먼저 볼 것'만 — 메인 밖 줄과 같은 기준, 사용자 2026-10-10). 그 밖의 줄 = [호감도는 그 니케 초상] 제목 + 회색 작은 글자(등급 이름 · 종류 · 줄 안내 요약).
+ *   줄 안내(fmt.guideOf — 사용자, 2026-10-10: 처음 보는 사람의 가이드 — 필수만 먼저 보는 사람도, 차근차근 다 보는 사람도). 모든 등급, 메인 밖 줄 · 척추 줄(메인 챕터는 '먼저 볼 것'만).
  *     두 방향 하나씩만: '먼저 볼 것: CH.12 · 랩칠리언 1'(줄 아래 — 최소 선행: 판정 자리가 앞인 척추 + 필수 선행) · 'CH.27 전까지'(회색 글자 줄 — 뒤에서 이 스토리를
  *     필수 · 권장 선행으로 쓰는 가장 앞 척추, 없으면 메인 밖 스토리). 둘 다 없으면 목록 자리 뒤 언제든(머리 아래 한 줄 설명). 왜 선행인가(떡밥 → 회수 · 다시 언급 등)는
  *     스포일러가 될 수 있어 싣지 않는다(사용자, 2026-10-10). 흐리게 끼운 앞 편은 'X의 앞 편'이 기한을 말하므로 기한을 다시 쓰지 않는다.
@@ -182,7 +182,7 @@ export async function mount(root, ctx) {
     const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
     if (item.spine && unit.kind === 'main') {
       attrs.class = 'order-row is-main';
-      return ui.el('li', attrs, ui.el('span', { class: 'order-line' }, ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, chTitle(unit.title)))));
+      return ui.el('li', attrs, ui.el('span', { class: 'order-line' }, ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, chTitle(unit.title)))), mustLine(key));
     }
     const ghost = Boolean(item.ghostOf);
     const g = item.spine ? '척추' : item.grade;
