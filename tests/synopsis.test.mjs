@@ -42,7 +42,7 @@ test('화면에 내면 안 되는 꼴은 오류다 — 씬 ID · 단위 키 · �
     assert.ok(checkSynopsis(s).errors.some((m) => m.includes('넣지 않는 꼴')), bad);
   }
   // 니케 이름 · 스쿼드 번호 · 기체 이름은 걸리지 않는다
-  const ok = { ...good(), synopsis: `${good().synopsis} 스쿼드 04-F와 BA-01, AED, A.C.P.U., E2 크리스탈, X1 온리 원, A2와 2B` };
+  const ok = { ...good(), synopsis: `${good().synopsis} 스쿼드 04-F와 BA-01, AED, A.C.P.U., E2 크리스탈, X1 온리 원, A2와 2B, N102` };
   assert.deepEqual(checkSynopsis(ok).errors, []);
 });
 
