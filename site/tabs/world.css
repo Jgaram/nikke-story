@@ -1,4 +1,5 @@
-/* 탭 world(세계) — 모든 규칙은 .tab-world 아래. 색은 공용 토큰(--accent · --state-* · --ink-* · --line-*)만 쓴다 — 새 색 없음. */
+/* 탭 world(세계) — 모든 규칙은 .tab-world 아래. 색은 공용 토큰(--accent · --state-* · --ink-* · --line-*)만 쓴다 — 새 색 없음.
+ * W13d: 종류 · 갈래는 회색 작은 글자(.w-kind · .w-item-sub · .w-card-kind), 숫자 · 막대는 없다. 목록은 종류별 묶음 머리(.w-group-head) + 한 줄 이름. */
 .tab-world .w-app { min-width: 0; }
 
 /* 머리: 제목 + 보기 전환 + 찾기 */
@@ -23,7 +24,6 @@
 }
 .tab-world .w-chip:hover { background: var(--surface-2); }
 .tab-world .w-chip[aria-pressed="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
-.tab-world .w-chip-n { font-size: 11px; opacity: 0.7; font-variant-numeric: tabular-nums; }
 .tab-world .w-linkbtn { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
 .tab-world .w-hidden { display: flex; flex-wrap: wrap; gap: 2px 14px; padding: 8px 0 2px; font-size: 13px; color: var(--ink-2); }
 
@@ -44,35 +44,30 @@
 .tab-world .w-list-body { overflow: auto; min-height: 0; flex: 1 1 auto; }
 .tab-world .w-list-note { padding: 4px 12px 10px; }
 .tab-world .w-items { list-style: none; margin: 0; padding: 0; }
-.tab-world .w-item { padding: 8px 12px 7px; border-top: 1px solid var(--line); cursor: pointer; }
-.tab-world .w-item:first-child { border-top: 0; }
+.tab-world .w-group-head {
+  position: sticky; top: 0; z-index: 1; padding: 6px 12px 4px; font-size: 12px; font-weight: 700; color: var(--ink-muted);
+  background: var(--surface-2); border-top: 1px solid var(--line);
+}
+.tab-world .w-group-head:first-child { border-top: 0; }
+.tab-world .w-item { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; padding: 7px 12px; border-top: 1px solid var(--line); cursor: pointer; }
+.tab-world .w-group-head + .w-item, .tab-world .w-item:first-child { border-top: 0; }
 .tab-world .w-item:hover { background: var(--surface-2); }
 .tab-world .w-item.is-selected { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); box-shadow: inset 3px 0 0 var(--accent); }
-.tab-world .w-item-main { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .tab-world .w-item-name { font-weight: 600; min-width: 0; overflow-wrap: anywhere; }
-.tab-world .w-item-nums { display: inline-flex; align-items: baseline; gap: 8px; flex: none; font-variant-numeric: tabular-nums; }
-.tab-world .w-facts { font-weight: 600; }
-.tab-world .w-open { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; color: var(--ink-2); }
-.tab-world .w-open i { width: 8px; height: 8px; border-radius: 50%; background: var(--state-open); }
-.tab-world .w-item-sub { font-size: 12px; color: var(--ink-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.tab-world .w-bar { display: block; height: 3px; margin-top: 5px; }
-.tab-world .w-bar i { display: block; height: 100%; border-radius: 2px; background: color-mix(in srgb, var(--accent) 60%, transparent); }
+.tab-world .w-item-sub { font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
+/* 종류 · 갈래 · 분류 — 색 없는 회색 작은 글자 */
+.tab-world .w-kind { font-size: 12px; font-weight: 400; color: var(--ink-muted); white-space: nowrap; }
 
 /* 사전: 상세 */
 .tab-world .w-detail { min-width: 0; }
 .tab-world .w-card { padding: 2px 0 14px; border-bottom: 1px solid var(--line); }
-.tab-world .w-card-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.tab-world .w-card-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
 .tab-world .w-card-title h3 { font-size: 24px; letter-spacing: -0.01em; }
-.tab-world .w-card .chips { margin: 0; }
+.tab-world .w-card-kind { font-size: 13px; color: var(--ink-muted); }
 .tab-world .w-note { margin: 10px 0 4px; font-size: 15px; max-width: 68ch; }
-.tab-world .w-aliases, .tab-world .w-evidence { margin: 4px 0 0; font-size: 13px; max-width: none; }
+.tab-world .w-aliases { margin: 4px 0 0; font-size: 13px; max-width: none; }
 .tab-world .w-alias.has-note { border-bottom: 1px dotted var(--ink-muted); cursor: help; }
-.tab-world .w-stats { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 14px 0 0; }
-.tab-world .w-stat { min-width: 0; }
-.tab-world .w-stat dt { font-size: 12px; color: var(--ink-muted); }
-.tab-world .w-stat dd { margin: 0; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-.tab-world .w-stat dd a { font-size: 15px; font-weight: 500; }
-.tab-world .w-stat-sub { font-size: 12px; font-weight: 400; color: var(--ink-2); }
+.tab-world .w-facts-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin: 10px 0 0; font-size: 14px; max-width: none; }
 .tab-world .w-locked { padding: 24px 4px; }
 .tab-world .w-locked h3 { font-size: 18px; margin-bottom: 4px; }
 
@@ -84,7 +79,6 @@
   transform: translateY(-2px) rotate(-45deg); transition: transform 0.12s;
 }
 .tab-world .w-sec[open] > summary::before { transform: translateY(-3px) rotate(45deg); }
-.tab-world .w-sec-n { font-weight: 400; color: var(--ink-muted); font-size: 13px; font-variant-numeric: tabular-nums; }
 .tab-world .w-sec-hidden { font-weight: 400; color: var(--ink-muted); font-size: 12px; }
 .tab-world .w-sec-body { padding: 0 0 14px; }
 .tab-world .w-nb-tools[hidden] { display: none; }
@@ -114,6 +108,7 @@
 .tab-world .w-thread-row { padding: 8px 4px; border-top: 1px solid var(--line); }
 .tab-world .w-thread-row:first-child { border-top: 0; }
 .tab-world .w-thread-title { font-weight: 500; overflow-wrap: anywhere; }
+.tab-world .w-thread-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
 .tab-world .w-unit-row { padding: 6px 4px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
 .tab-world .w-unit-row:first-child { border-top: 0; }
 
@@ -132,22 +127,21 @@
 .tab-world .w-node-label { font-size: 12.5px; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
 .tab-world .w-node.is-hub .w-node-label { fill: var(--ink-2); }
 .tab-world .w-node-label.is-center { font-size: 14px; font-weight: 700; }
-.tab-world .w-nb-list { list-style: none; margin: 0; padding: 0; }
-.tab-world .w-nb-row { display: grid; grid-template-columns: minmax(110px, 250px) 3.6em minmax(48px, 320px) 3ch; justify-content: start; gap: 4px 12px; align-items: center; padding: 6px 4px; border-top: 1px solid var(--line); cursor: pointer; border-radius: 4px; }
-.tab-world .w-nb-row:first-child { border-top: 0; }
-.tab-world .w-nb-row:hover { background: var(--surface-2); }
-.tab-world .w-nb-row.is-hub { opacity: 0.6; }
-.tab-world .w-nb-name { overflow-wrap: anywhere; }
-.tab-world .w-nb-type { font-size: 12px; }
-.tab-world .w-nb-bar { margin: 0; }
-.tab-world .w-nb-n { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tab-world .w-nb-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tab-world .w-nb-item {
+  display: inline-flex; align-items: baseline; gap: 6px; max-width: 100%; padding: 3px 10px; font: inherit; font-size: 13px; color: var(--ink); text-align: left;
+  background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; cursor: pointer; overflow-wrap: anywhere;
+}
+.tab-world .w-nb-item:hover { background: var(--surface-2); }
+.tab-world .w-nb-item:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.tab-world .w-nb-item .w-kind { font-size: 11.5px; }
 
 /* 세계의 모습 */
 .tab-world .w-life { max-width: 920px; }
 .tab-world .w-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
 .tab-world .w-life-hidden:empty { display: none; }
 .tab-world .w-life-hidden { margin: 0 0 6px; }
-.tab-world .w-group h3 { display: flex; align-items: baseline; gap: 8px; margin: 22px 0 4px; font-size: 16px; }
+.tab-world .w-group h3 { margin: 22px 0 4px; font-size: 16px; }
 .tab-world .w-group:first-of-type h3 { margin-top: 10px; }
 .tab-world .w-group h3 .w-linkbtn { color: var(--ink); text-decoration: none; font-weight: 600; }
 .tab-world .w-group h3 .w-linkbtn:hover { text-decoration: underline; }
@@ -176,7 +170,4 @@
 .tab-world .w-app.is-narrow .w-card-title h3 { font-size: 21px; }
 @media (max-width: 600px) {
   .tab-world .w-find { flex-basis: 100%; max-width: none; }
-  .tab-world .w-nb-row { grid-template-columns: minmax(0, 1fr) auto 3ch; justify-content: stretch; }
-  .tab-world .w-nb-bar { display: none; }
-  .tab-world .w-stats { gap: 8px 22px; }
 }

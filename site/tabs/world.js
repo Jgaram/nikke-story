@@ -5,28 +5,36 @@
  *   world.json(이 탭 — tools/site/export/world.mjs): entries[225](항목 — 메모 · 다른 이름 · 근거 · 집계 · recs{F|Q|U|E|I|D: [[기록 ID, 출시 시점, 범위, 아는 단위], …]} ·
  *     units[[단위 키, 기록 수], …] · neighbors[{id, n, recs[[기록 ID, 출시 시점], …]}] · threads[{id, n, about}] · hub) · life[449](세계의 모습 — 문장 · 분류 · 단위 · 근거) ·
  *     topics[{topic, n}] · hubs[](자주 나오는 항목) · hub_share
- *   공용(ctx.idx): units(제목 · 출시 시점 · 범위) · ticks · threads(떡밥 제목 · 중요도) · targets(이름) · records(사실 · 의문 문장 — 처음 보일 때 받는다)
+ *   공용(ctx.idx): units(제목 · 출시 시점) · ticks · threads(떡밥 제목 · 무게) · targets(이름) · records(사실 · 의문 문장 — 처음 보일 때 받는다)
  *
  * URL 파라미터(p.*)
  *   mode   dict(사전, 기본) | life(세계의 모습)
  *   item   사전에서 고른 항목 ID(없으면 니케 — 가림 상태면 목록 첫 항목)
  *   type   사전 종류 필터 concept | incident | item | org | place (없으면 전체)
- *   sort   사전 정렬 facts(기본, 사실 많은 순) | name | first | open
+ *   sort   사전 정렬 — 없으면 분류(종류)별 이름순, first면 나온 순서. 옛 값(facts · name · open)은 기본으로 읽는다
  *   find   찾기 낱말 — 사전은 이름 · 다른 이름 · 메모, 세계의 모습은 문장 · 항목 · 스토리
  *   topic  세계의 모습 분류 필터(없으면 분류별 묶음)
- *   hubs   1이면 함께 나온 항목에 자주 나오는 항목도 넣는다
+ *   hubs   1이면 함께 나온 항목에 자주 나오는 항목(니케 · 랩쳐 · 방주 …)도 넣는다
  *
- * 그리는 규칙
- *   - 여기까지 읽음(state.reading — 메인 자리 t + 척추 이벤트 · 사이드 예외 x)과 범위(layers)를 모든 숫자 · 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
+ * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13d)
+ *   - 여기까지 읽음(state.reading — 메인 자리 t + 척추 이벤트 · 사이드 예외 x)을 모든 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
  *     기록은 그 기록을 아는 스토리(recs의 아는 단위 — 사실 · 의문은 know_units)를 봤으면 보이고, 항목은 나온 곳(처음 나온 스토리 · 기록 · 처음 소개된 스토리)
- *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠지고 "스포일러로 가림 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
- *     안 본 기록 · 스토리는 빼고 같은 식으로 센다. 나온 곳을 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 출시 자리(tick0)는 '나온 순서' 정렬 · 안내 문구에만 쓴다. 줄이 없는 섹션은 접고 머리에 가린 수를 적는다(사용자가 직접 연 · 접은 섹션만 기억).
- *     바뀌면 목록 · 상세를 다시 만들지 않고 숫자와 줄만 갈아 끼운다(스크롤 · 접힘 · 찾기 낱말 유지).
+ *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠지고 "스포일러로 가린 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
+ *     안 본 기록 · 스토리는 빼고 같은 식으로 센다. 나온 곳을 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 출시 자리(tick0)는 '나온 순서' 정렬 · 안내 문구에만 쓴다.
+ *     범위(층) 필터는 없다(W13a) — 층 검사는 걷었다.
+ *     바뀌면 목록 · 상세를 다시 만들지 않고 줄만 갈아 끼운다(스크롤 · 접힘 · 찾기 낱말 유지).
+ *   - 목록: 기본은 종류(개념 · 사건 · 물건 · 조직 · 장소)별 묶음 + 이름순, 줄 = 이름 + 회색 갈래(도시 · 스쿼드 …). 숫자 · 막대 · '자주 나옴' 꼬리표는 싣지 않는다.
+ *     '나온 순서'로 고르면 묶음 없이 처음 나온 자리순(줄에 회색 'CH.01').
+ *   - 상세 머리: 이름 + 회색 종류 · 갈래, 사전 설명, 다른 이름, "처음 나온 곳 · 나온 스토리 N편". 사실 · 의문 수 · 근거 장면 줄은 싣지 않는다.
+ *     칸(사실 · 의문 · 세계의 모습 · 떡밥 · 함께 나온 항목 · 나온 스토리)은 줄이 있으면 열고, 가린 것만 있으면 접어 머리에 가린 수, 아무것도 없으면 칸을 그리지 않는다.
+ *     칸 제목에 줄 수를 달지 않는다(사용자가 직접 연 · 접은 칸만 기억).
+ *   - 줄(사실 · 의문 · 세계의 모습): 문장 + 회색 한 줄(스토리 · 장면 링크 — 이름은 한 번만, '추정'은 추정일 때만). 의문 칸 머리에 상태별 수(미해결 · 일부 회수 · 회수).
+ *     떡밥 줄은 제목 + '주요 떡밥'(주요일 때만), 나온 스토리 줄은 제목 + 회색 종류(메인은 빼고). 기록 수는 싣지 않는다.
  *   - 열린 의문 = 그 자리에서 열림 또는 일부 회수인 의문(fmt.stateAt). 사실이 나중에 뒤집히면 "뒤집힘" 표시.
- *   - 함께 나온 항목: world.json의 이웃 기록 중 본 것 · 범위 안만 센 수(이웃 기록의 아는 단위는 이 항목 recs에서 찾는다). 그림은 가운데 항목 + 많이 겹친 상위 10(고리 배치, 선 굵기 = 함께 나온 기록 수).
- *     자주 나오는 항목(니케 · 랩쳐 · 방주 …)은 그림에서 기본으로 빼고 목록에서는 흐리게 — 토글로 넣는다. 480px보다 좁으면 그림 없이 목록만.
- *   - 색은 공용 토큰(--accent · --state-* · --ink-*)만 쓴다. 종류(개념 · 사건 …)는 색 없이 글자 칩으로 — 5색 범주 팔레트를 새로 두지 않는다.
- *   - 사실 · 의문 · 세계의 모습 줄을 누르면 리더(sel=record:ID), 스토리 · 떡밥 링크는 unit: · thread:. 사전 메모의 작업 표기는 내보낼 때 걷는다(export 주석).
+ *   - 함께 나온 항목: world.json의 이웃 기록 중 본 것만 센 수로 순서를 정한다(숫자는 싣지 않는다). 그림은 가운데 항목 + 많이 겹친 상위 10(고리 배치, 선 굵기 = 겹친 정도),
+ *     목록은 이름 + 회색 종류. 자주 나오는 항목(니케 · 랩쳐 · 방주 …)은 그림 · 목록에서 기본으로 빼고 토글로 넣는다. 480px보다 좁으면 그림 없이 목록만.
+ *   - 색은 공용 토큰(--accent · --state-* · --ink-*)만 쓴다. 종류(개념 · 사건 …)는 색 없이 회색 글자로.
+ *   - 사실 · 의문 · 세계의 모습 줄을 누르면 리더(sel=record:ID), 스토리 · 장면 · 떡밥 링크는 unit: · scene: · thread:. 사전 메모의 작업 표기는 내보낼 때 걷는다(export 주석).
  */
 export const meta = { id: 'world', title: '세계', blurb: '개념 · 사건 · 물건 · 조직 · 장소 사전과 세계의 모습' };
 
@@ -38,27 +46,24 @@ const LABELS = {
   findDict: '항목 찾기',
   findLife: '문장 찾기',
   sortAria: '정렬',
-  sort: { facts: '사실 많은 순', name: '가나다순', first: '나온 순서', open: '열린 의문 순' },
+  sort: { group: '분류별', first: '나온 순서' },
   listAria: '항목 목록',
   count: (n) => `${n}개`,
   pickerHint: '다른 항목 고르기',
-  hubTag: '자주 나옴',
-  hubTip: '여러 스토리에 걸쳐 자주 나오는 항목',
-  stats: { facts: '사실', questions: '의문', open: '열린 의문', units: '나온 스토리', first: '처음 나온 곳' },
+  first: '처음 나온 곳',
+  unitsN: (n) => `나온 스토리 ${n}편`,
   aliases: '다른 이름',
   sec: { facts: '사실', questions: '의문', life: '세계의 모습', neighbors: '함께 나온 항목', units: '나온 스토리' },
   filterIn: '이 안에서 찾기',
   more: (n) => `더 보기 (${n})`,
   empty: { facts: '여기까지 읽은 범위에는 사실이 없다', questions: '여기까지 읽은 범위에는 의문이 없다', life: '이 항목이 어떻게 그려지는지는 아직 없다', threads: '이 항목이 걸린 떡밥이 아직 없다', neighbors: '함께 나온 항목이 아직 없다', units: '나온 스토리가 없다' },
   noMatch: (q) => `‘${q}’에 맞는 줄이 없다`,
-  unitCount: (n) => `기록 ${n}`,
-  recordsLoading: '기록 불러오는 중…',
+  recordsLoading: '불러오는 중…',
   notYet: '아직 나오지 않은 항목이다',
   notYetNote: (when) => `${when}부터 나온다.`,
   skippedNote: '안 봤다고 고른 스토리에서 나온다.',
   noItem: '고를 항목이 없다',
   noItemHint: '찾기 낱말이나 종류를 풀면 보인다.',
-  neighborBy: (n) => `함께 나온 기록 ${n}`,
   hubsToggle: '자주 나오는 항목 포함',
   graphAria: '함께 나온 항목 그림',
   lifeEmpty: (when) => `여기까지 읽은 범위에는 세계의 모습이 없다. ${when}부터 나온다.`,
@@ -94,7 +99,6 @@ export async function mount(root, ctx) {
   const lifeById = new Map(world.life.map((l) => [l.id, l]));
   const hubs = new Set(world.hubs);
   const unitTick = (k) => idx.units.get(k)?.tick ?? null;
-  const unitLayer = (k) => idx.units.get(k)?.layer ?? null;
   /** 항목이 처음 나온 출시 시점 — 기록 · 처음 소개된 스토리 중 가장 이른 것('나온 순서' 정렬 · 안내 문구용). 어디에서도 못 찾으면 null */
   const tick0 = new Map();
   for (const e of entries) {
@@ -124,13 +128,13 @@ export async function mount(root, ctx) {
   const nameOf = (id) => byId.get(id)?.name ?? fmt.targetName(id);
 
   // ── 상태 읽기 ──
-  /** c = { R(여기까지 읽음 — state.reading), sig, layers } */
-  const cutOf = (s = state.get()) => { const R = state.reading(s); return { R, sig: cutSig(R), layers: new Set(s.layers) }; };
+  /** c = { R(여기까지 읽음 — state.reading), sig } */
+  const cutOf = (s = state.get()) => { const R = state.reading(s); return { R, sig: cutSig(R) }; };
   const paramsOf = (s = state.get()) => ({
     mode: s.p.mode === 'life' ? 'life' : 'dict',
     item: s.p.item ?? null,
     type: TYPE_ORDER.includes(s.p.type) ? s.p.type : null,
-    sort: ['name', 'first', 'open'].includes(s.p.sort) ? s.p.sort : 'facts',
+    sort: s.p.sort === 'first' ? 'first' : 'group',
     find: s.p.find ?? '',
     topic: s.p.topic ?? null,
     hubs: s.p.hubs === '1',
@@ -138,36 +142,26 @@ export async function mount(root, ctx) {
   const setP = (patch, replace = true) => state.set({ p: patch }, { replace });
   let recordsReady = idx.hasRecords;
 
-  /** [[id, tick, layer, 아는 단위], …]를 여기까지 읽음 · 범위로 가른다. e를 주면 아는 단위의 숫자를 그 항목 units[]로 푼다 */
+  /** [[id, tick, 범위, 아는 단위], …]를 여기까지 읽음으로 가른다. e를 주면 아는 단위의 숫자를 그 항목 units[]로 푼다(범위 칸은 쓰지 않는다 — 층 필터 없음) */
   function split(list, c, e = null) {
     const shown = [];
     let cutHidden = 0;
-    let layerHidden = 0;
     for (const x of list) {
-      const okT = recKnown(c.R, e ? recUnits(e, x) : x[3] ?? null, x[1]);
-      const okL = x[2] == null || c.layers.has(x[2]);
-      if (okT && okL) shown.push(x);
-      else if (!okT) cutHidden++;
-      else layerHidden++;
+      if (recKnown(c.R, e ? recUnits(e, x) : x[3] ?? null, x[1])) shown.push(x);
+      else cutHidden++;
     }
-    return { shown, cutHidden, layerHidden };
+    return { shown, cutHidden };
   }
 
-  // 항목별 숫자 — 컷오프 · 범위 · 기록 로딩이 바뀔 때만 다시 센다
+  // 항목이 보이나 — 여기까지 읽음이 바뀔 때만 다시 본다
   let viewKey = '';
   let views = new Map();
   function viewOf(e, c) {
-    const key = `${c.sig}|${[...c.layers].join()}|${recordsReady}`;
-    if (key !== viewKey) { viewKey = key; views = new Map(); }
+    if (c.sig !== viewKey) { viewKey = c.sig; views = new Map(); }
     let v = views.get(e.id);
     if (v) return v;
-    const F = split(e.recs.F ?? [], c, e);
-    const Q = split(e.recs.Q ?? [], c, e);
-    const all = Object.values(e.recs).flat();
     const cutOk = appeared(e, c.R);
-    const layerOk = all.length === 0 || all.some((x) => x[2] == null || c.layers.has(x[2]));
-    const open = recordsReady ? Q.shown.filter((x) => ['열림', '일부'].includes(fmt.stateAt(idx.records.get(x[0]), c.R))).length : null;
-    v = { e, f: F.shown.length, q: Q.shown.length, open, cutOk, layerOk, shown: cutOk && layerOk };
+    v = { e, cutOk, shown: cutOk };
     views.set(e.id, v);
     return v;
   }
@@ -176,9 +170,8 @@ export async function mount(root, ctx) {
 
   // ── 작은 조각 ──
   const dots = (items) => items.filter(Boolean).flatMap((x, i) => (i ? [h('span', { class: 'w-dot', 'aria-hidden': 'true' }, '·'), x] : [x]));
-  // 범위(층) 필터는 없다(state.layers는 늘 [1,2,3]) — 층 계산이 남은 곳은 늘 참이라 안내는 스포일러 가림만(W13a)
   const hiddenNote = (cutHidden) => (cutHidden ? h('div', { class: 'w-hidden' }, ui.hiddenNote(fmt.hiddenLabel(cutHidden), () => state.set({ t: null }))) : null);
-  const evidenceLinks = (ev, max = 3) => (ev ?? []).slice(0, max).map((x, i) => [i ? ' · ' : null, ui.link(`scene:${x.scene}`, fmt.ref(x.scene), { class: 'w-ref' })]);
+  const kindText = (u) => (u && u.kind !== 'main' ? h('span', { class: 'w-kind', title: fmt.help('kind', u.kind) }, fmt.KIND[u.kind]?.label ?? u.kind) : null);
   const itemLink = (id) => {
     if (byId.has(id)) {
       return h('a', { href: '#', class: 'link w-about', dataset: { item: id }, onClick: (ev) => { ev.preventDefault(); gotoItem(id); } }, nameOf(id));
@@ -196,18 +189,17 @@ export async function mount(root, ctx) {
     return unitTick(j.first_unit) == null || c.R.seen(j.first_unit);
   };
 
-  /** 기록 한 줄(사실 · 의문 · 세계의 모습) — 누르면 리더 */
+  /** 기록 한 줄(사실 · 의문 · 세계의 모습) — 누르면 리더. 회색 줄 = 스토리 · 장면(스토리 이름은 한 번만) */
   function recRow(r, c, { chips = [], showTopic = false, showAbout = false, about: aboutIds = null } = {}) {
     const u = idx.units.get(r.unit);
     const ev = r.evidence?.[0];
     const li = h('li', { class: 'w-rec', tabindex: 0, dataset: { id: r.id } },
       h('div', { class: 'w-rec-text' }, chips.length ? h('span', { class: 'chips w-rec-chips' }, chips) : null, fmt.recordText(r)),
       h('div', { class: 'w-meta' }, dots([
-        showTopic && r.topic ? ui.chip('plain', r.topic, r.topic) : null,
+        showTopic && r.topic ? h('span', { class: 'w-kind' }, r.topic) : null,
         u ? ui.link(`unit:${r.unit}`, u.title, { class: 'w-unit' }) : null,
-        u && u.kind !== 'main' ? h('span', { class: 'muted' }, whenLabel(r.tick)) : null,
+        ev ? ui.link(`scene:${ev.scene}`, u ? fmt.refIn(ev.scene, r.unit) : fmt.ref(ev.scene), { class: 'w-ref' }) : null,
         r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
-        ev ? ui.link(`scene:${ev.scene}`, fmt.ref(ev.scene), { class: 'w-ref' }) : null,
       ])),
       showAbout && aboutIds?.length ? h('div', { class: 'w-meta w-aboutline' }, aboutIds.map((a) => itemLink(a))) : null);
     const open = () => state.set({ sel: `record:${r.id}` });
@@ -218,7 +210,7 @@ export async function mount(root, ctx) {
 
   /**
    * 갱신되는 줄 목록 — 찾기 입력 · 더 보기를 스스로 들고 있어, refresh()는 줄만 다시 그린다.
-   * get() → { items, cutHidden, layerHidden } / row(item) → li / text(item) → 찾기 대상 글 / refresh()는 센 수를 돌려준다.
+   * get() → { items, cutHidden } / row(item) → li / text(item) → 찾기 대상 글 / refresh()는 센 수를 돌려준다.
    */
   function reactiveList({ get, row, text, size, empty, finder = true, lead = null }) {
     let limit = size;
@@ -248,10 +240,10 @@ export async function mount(root, ctx) {
       if (items.length > limit) {
         foot.append(h('button', { type: 'button', class: 'btn', onClick: () => { limit += PAGE.more; refresh(); } }, LABELS.more(items.length - limit)));
       }
-      const note = hiddenNote(g.cutHidden, g.layerHidden);
+      const note = hiddenNote(g.cutHidden);
       if (note) foot.append(note);
       if (input) bar.hidden = g.items.length <= size;
-      api.hidden = g.cutHidden + g.layerHidden;
+      api.hidden = g.cutHidden;
       api.loading = Boolean(g.loading);
       return g.items.length;
     }
@@ -283,7 +275,7 @@ export async function mount(root, ctx) {
 
   // ── 사전: 왼쪽 목록 ──
   const typeChips = h('div', { class: 'w-types', role: 'group', 'aria-label': '종류' });
-  const sortSel = h('select', { class: 'w-select', 'aria-label': LABELS.sortAria, onChange: () => setP({ sort: sortSel.value === 'facts' ? null : sortSel.value }) },
+  const sortSel = h('select', { class: 'w-select', 'aria-label': LABELS.sortAria, onChange: () => setP({ sort: sortSel.value === 'group' ? null : sortSel.value }) },
     Object.entries(LABELS.sort).map(([v, l]) => h('option', { value: v }, l)));
   const listCount = h('span', { class: 'w-count muted' });
   const listUl = h('ul', { class: 'w-items', role: 'listbox', 'aria-label': LABELS.listAria });
@@ -317,37 +309,33 @@ export async function mount(root, ctx) {
     const c = cutOf(s);
     const all = entries.map((e) => viewOf(e, c));
     const visible = all.filter((v) => v.shown);
-    const cutHidden = all.filter((v) => !v.cutOk).length;
-    const layerHidden = all.filter((v) => v.cutOk && !v.layerOk).length;
+    const cutHidden = all.length - visible.length;
     const q = norm(P.find);
-    const counts = Object.fromEntries(TYPE_ORDER.map((t) => [t, 0]));
     const matched = visible.filter((v) => !q || norm([v.e.name, v.e.id, v.e.kind, v.e.note, ...(v.e.aliases ?? []).map((a) => a.name)].join(' ')).includes(q));
-    for (const v of matched) counts[v.e.type]++;
     ui.clear(typeChips);
-    const chip = (value, label, n) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.type ?? 'all') === value), onClick: () => setP({ type: value === 'all' ? null : value, item: P.item }) }, label, h('span', { class: 'w-chip-n' }, fmt.num(n)));
-    put(typeChips, chip('all', LABELS.all, matched.length), TYPE_ORDER.map((t) => chip(t, typeLabel(t), counts[t])));
+    // 종류 칩 — 숫자 없이 이름만(감상 순서 칩과 같다)
+    const chip = (value, label) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.type ?? 'all') === value), onClick: () => setP({ type: value === 'all' ? null : value, item: P.item }) }, label);
+    put(typeChips, chip('all', LABELS.all), TYPE_ORDER.filter((t) => matched.some((v) => v.e.type === t) || P.type === t).map((t) => chip(t, typeLabel(t))));
     const rows = matched.filter((v) => !P.type || v.e.type === P.type);
-    const cmp = {
-      facts: (a, b) => b.f - a.f || a.e.name.localeCompare(b.e.name, 'ko'),
-      name: (a, b) => a.e.name.localeCompare(b.e.name, 'ko'),
-      first: (a, b) => (tick0.get(a.e.id) ?? 0) - (tick0.get(b.e.id) ?? 0) || (a.e.first_order ?? 0) - (b.e.first_order ?? 0) || b.f - a.f,
-      open: (a, b) => (b.open ?? 0) - (a.open ?? 0) || b.q - a.q || b.f - a.f,
-    }[P.sort];
-    rows.sort(cmp);
+    const byName = (a, b) => a.e.name.localeCompare(b.e.name, 'ko');
+    const byFirst = (a, b) => (tick0.get(a.e.id) ?? Infinity) - (tick0.get(b.e.id) ?? Infinity) || (a.e.first_order ?? 0) - (b.e.first_order ?? 0) || byName(a, b);
+    rows.sort(P.sort === 'first' ? byFirst : (a, b) => TYPE_ORDER.indexOf(a.e.type) - TYPE_ORDER.indexOf(b.e.type) || byName(a, b));
     sortSel.value = P.sort;
     listCount.textContent = LABELS.count(fmt.num(rows.length));
-    const maxF = Math.max(1, ...rows.map((v) => v.f));
     ui.clear(listUl);
+    const grouped = P.sort === 'group' && !P.type; // 종류 하나로 거르면 묶음 머리가 필요 없다
+    let lastType = null;
     for (const v of rows) {
       const e = v.e;
-      listUl.append(h('li', { class: ['w-item', hubs.has(e.id) ? 'is-hub' : ''], role: 'option', tabindex: -1, dataset: { id: e.id }, 'aria-selected': 'false' },
-        h('div', { class: 'w-item-main' },
-          h('span', { class: 'w-item-name' }, e.name),
-          h('span', { class: 'w-item-nums' },
-            v.open ? h('span', { class: 'w-open', title: `${LABELS.stats.open} ${v.open}` }, h('i', { 'aria-hidden': 'true' }), v.open) : null,
-            h('span', { class: 'w-facts', title: `${LABELS.stats.facts} ${v.f}` }, fmt.num(v.f)))),
-        h('div', { class: 'w-item-sub' }, [typeLabel(e.type), e.kind, v.q ? `${LABELS.stats.questions} ${v.q}` : null].filter(Boolean).join(' · ')),
-        h('div', { class: 'w-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${Math.max(v.f ? 3 : 0, (v.f / maxF) * 100)}%` } }))));
+      if (grouped && e.type !== lastType) {
+        lastType = e.type;
+        listUl.append(h('li', { class: 'w-group-head', role: 'presentation' }, typeLabel(e.type)));
+      }
+      const t0 = tick0.get(e.id);
+      listUl.append(h('li', { class: 'w-item', role: 'option', tabindex: -1, dataset: { id: e.id }, 'aria-selected': 'false' },
+        h('span', { class: 'w-item-name' }, e.name),
+        P.sort === 'first' && t0 != null ? h('span', { class: 'w-item-sub' }, fmt.tickShort(t0)) : null,
+        e.kind ? h('span', { class: 'w-item-sub' }, e.kind) : null));
     }
     ui.clear(listNote);
     if (!rows.length) {
@@ -356,20 +344,21 @@ export async function mount(root, ctx) {
       if (P.find) findInput.value = P.find;
     }
     ui.clear(hiddenSlot);
-    put(hiddenSlot, hiddenNote(cutHidden, layerHidden));
+    put(hiddenSlot, hiddenNote(cutHidden));
     markSelected();
   }
   function markSelected() {
     const id = effectiveItem();
     let target = null;
-    for (const li of listUl.children) {
+    const items = listUl.querySelectorAll('.w-item');
+    for (const li of items) {
       const on = li.dataset.id === id;
       li.setAttribute('aria-selected', String(on));
       li.classList.toggle('is-selected', on);
       li.tabIndex = on ? 0 : -1;
       if (on) target = li;
     }
-    if (!target && listUl.firstElementChild) listUl.firstElementChild.tabIndex = 0;
+    if (!target && items.length) items[0].tabIndex = 0;
     const e = byId.get(id);
     const known = e && viewOf(e, cutOf()).cutOk;
     ui.clear(pickerSum);
@@ -392,7 +381,7 @@ export async function mount(root, ctx) {
   listUl.addEventListener('keydown', (ev) => {
     const li = ev.target.closest('.w-item');
     if (!li) return;
-    const items = [...listUl.children];
+    const items = [...listUl.querySelectorAll('.w-item')];
     const i = items.indexOf(li);
     const move = (n) => { ev.preventDefault(); const t = items[Math.max(0, Math.min(items.length - 1, n))]; for (const x of items) x.tabIndex = -1; t.tabIndex = 0; t.focus(); };
     if (ev.key === 'ArrowDown') move(i + 1);
@@ -405,20 +394,20 @@ export async function mount(root, ctx) {
   // ═══ 사전 상세 ═══
   const secOpen = new Map(); // 사용자가 직접 접거나 편 섹션만 기억한다. 나머지는 줄이 있으면 열고 없으면 접는다
   let detail = null; // { id, parts: Map(key → { part, sec, ... }), headerEl }
+  /** 접는 칸 — 제목에 줄 수를 달지 않는다. 보이는 줄 없이 가린 것만 있으면 머리에 '스포일러로 가린 N', 아무것도 없으면 칸을 숨긴다 */
   function section(key, title, part, open) {
-    const nEl = h('span', { class: 'w-sec-n' });
     const hEl = h('span', { class: 'w-sec-hidden' });
-    const sum = h('summary', {}, h('span', { class: 'w-sec-title' }, title), nEl, hEl);
+    const sum = h('summary', {}, h('span', { class: 'w-sec-title' }, title), hEl);
     const sec = h('details', { class: 'w-sec', dataset: { key }, open: secOpen.has(key) ? secOpen.get(key) : open }, sum, h('div', { class: 'w-sec-body' }, part.el));
     let touched = secOpen.has(key);
     sum.addEventListener('click', () => { touched = true; });
     sec.addEventListener('toggle', () => { if (touched) secOpen.set(key, sec.open); });
-    return { sec, nEl, hEl, part, open, isTouched: () => touched };
+    return { sec, hEl, part, open, isTouched: () => touched };
   }
   function refreshPart(p) {
     const n = p.part.refresh();
-    p.nEl.textContent = n != null ? fmt.num(n) : '';
-    p.hEl.textContent = p.part.hidden ? `· ${fmt.hiddenLabel(p.part.hidden)}` : '';
+    p.hEl.textContent = !n && p.part.hidden ? `· ${fmt.hiddenLabel(p.part.hidden)}` : '';
+    p.sec.hidden = !n && !p.part.hidden && !p.part.loading;
     if (!p.isTouched() && !p.part.loading) p.sec.open = n > 0 && p.open;
   }
 
@@ -430,10 +419,10 @@ export async function mount(root, ctx) {
       size: PAGE.facts, empty: LABELS.empty.facts, text: (r) => r.text,
       get() {
         const c = cutOf();
-        if (!recordsReady) return { items: [], cutHidden: 0, layerHidden: 0, loading: true };
+        if (!recordsReady) return { items: [], cutHidden: 0, loading: true };
         const g = split(e.recs.F ?? [], c, e);
         const items = g.shown.map((x) => idx.records.get(x[0])).filter(Boolean).sort(byRecord);
-        return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
+        return { items, cutHidden: g.cutHidden };
       },
       lead: (g) => (g.loading ? ui.spinner(LABELS.recordsLoading) : null),
       row: (r) => { const c = cutOf(); return recRow(r, c, { chips: fmt.stateAt(r, c.R) === '뒤집힘' ? [ui.chip('state', '뒤집힘')] : [] }); },
@@ -445,11 +434,11 @@ export async function mount(root, ctx) {
       size: PAGE.questions, empty: LABELS.empty.questions, text: (r) => r.text,
       get() {
         const c = cutOf();
-        if (!recordsReady) return { items: [], cutHidden: 0, layerHidden: 0, loading: true };
+        if (!recordsReady) return { items: [], cutHidden: 0, loading: true };
         const g = split(e.recs.Q ?? [], c, e);
         const items = g.shown.map((x) => idx.records.get(x[0])).filter(Boolean).map((r) => ({ r, st: fmt.stateAt(r, c.R) }))
           .sort((a, b) => (qRank[a.st] ?? 3) - (qRank[b.st] ?? 3) || byRecord(a.r, b.r));
-        return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
+        return { items, cutHidden: g.cutHidden };
       },
       lead: (g) => {
         if (g.loading) return ui.spinner(LABELS.recordsLoading);
@@ -474,7 +463,7 @@ export async function mount(root, ctx) {
         const c = cutOf();
         const g = split(e.recs.U ?? [], c, e);
         const items = g.shown.map((x) => lifeById.get(x[0])).filter(Boolean).sort(byRecord);
-        return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
+        return { items, cutHidden: g.cutHidden };
       },
       row: (l) => recRow(l, cutOf(), { showTopic: true }),
     });
@@ -487,7 +476,7 @@ export async function mount(root, ctx) {
         const count = new Map();
         if (recordsReady) {
           for (const x of Object.values(e.recs).flat()) {
-            if (!recKnown(c.R, recUnits(e, x), x[1]) || !(x[2] == null || c.layers.has(x[2]))) continue;
+            if (!recKnown(c.R, recUnits(e, x), x[1])) continue;
             for (const j of idx.records.get(x[0])?.threads ?? []) count.set(j, (count.get(j) ?? 0) + 1);
           }
         }
@@ -495,11 +484,12 @@ export async function mount(root, ctx) {
           .map((t) => ({ ...t, n: recordsReady ? (count.get(t.id) ?? 0) : t.n, title: idx.threads.get(t.id)?.title ?? t.id, j: idx.threads.get(t.id) }))
           .filter((t) => t.n > 0 || t.about)
           .sort((a, b) => ({ 뼈대: 0, 보강: 1, 독립: 2 }[a.j?.weight] ?? 3) - ({ 뼈대: 0, 보강: 1, 독립: 2 }[b.j?.weight] ?? 3) || b.n - a.n);
-        return { items, cutHidden: 0, layerHidden: 0 };
+        return { items, cutHidden: 0 };
       },
+      // 제목 + '주요 떡밥'(주요일 때만 — 무게 칩 · 기록 수는 싣지 않는다)
       row: (t) => h('li', { class: 'w-thread-row' },
         ui.link(`thread:${t.id}`, t.title, { class: 'w-thread-title' }),
-        h('span', { class: 'w-meta' }, dots([t.j?.weight ? ui.chip('plain', t.j.weight, fmt.THREAD_WEIGHT[t.j.weight]?.label ?? t.j.weight) : null, t.n ? LABELS.unitCount(t.n) : null]))),
+        fmt.majorThread(t.j) ? h('span', { class: 'w-kind', title: fmt.help('weight', t.j.weight) }, fmt.majorThread(t.j)) : null),
     });
     parts.set('threads', section('threads', fmt.TERM.thread, threads, false));
     // 함께 나온 항목
@@ -510,46 +500,40 @@ export async function mount(root, ctx) {
       get() {
         const c = cutOf();
         const all = (e.units ?? []).filter((u) => idx.units.has(u[0]));
-        const items = [];
-        let cutHidden = 0;
-        let layerHidden = 0;
-        for (const u of all) {
-          if (!c.R.seen(u[0])) cutHidden++;
-          else if (!c.layers.has(unitLayer(u[0]))) layerHidden++;
-          else items.push(u);
-        }
-        return { items, cutHidden, layerHidden };
+        const items = all.filter((u) => c.R.seen(u[0]));
+        return { items, cutHidden: all.length - items.length };
       },
-      row: ([k, n]) => {
+      // 제목 + 회색 종류(메인은 제목이 CH라 뺀다)
+      row: ([k]) => {
         const u = idx.units.get(k);
-        return h('li', { class: 'w-unit-row' }, ui.chip('kind', u.kind), ' ', ui.link(`unit:${k}`, u.title), ' ', h('span', { class: 'w-meta muted' }, `${LABELS.unitCount(n)} · ${whenLabel(u.tick)}`));
+        return h('li', { class: 'w-unit-row' }, ui.link(`unit:${k}`, u.title), kindText(u));
       },
     });
     parts.set('units', section('units', LABELS.sec.units, units, false));
     return { id, parts, headerEl: h('header', { class: 'w-card' }) };
   }
 
+  /** 상세 머리 — 이름 + 회색 종류 · 갈래, 설명, 다른 이름, '처음 나온 곳 · 나온 스토리 N편'(본 스토리만) */
   function fillHeader(d, e, v, c) {
     const el = d.headerEl;
     ui.clear(el);
-    const firstUnit = e.first_unit && idx.units.get(e.first_unit);
-    const stat = (label, value, sub) => h('div', { class: 'w-stat' }, h('dt', {}, label), h('dd', {}, value, sub ? h('span', { class: 'w-stat-sub' }, sub) : null));
+    const seenUnits = (e.units ?? []).map((u) => u[0]).filter((k) => idx.units.has(k) && c.R.seen(k));
+    // 처음 나온 곳 — 처음 나온 스토리를 봤으면 그것, 아니면 본 스토리 가운데 가장 앞(안 봄으로 둔 척추 이벤트 · 사이드)
+    const firstKey = e.first_unit && idx.units.has(e.first_unit) && c.R.seen(e.first_unit) ? e.first_unit
+      : [...seenUnits].sort((a, b) => (idx.units.get(a).order ?? 0) - (idx.units.get(b).order ?? 0))[0];
+    const firstUnit = firstKey ? idx.units.get(firstKey) : null;
     put(el,
-      h('div', { class: 'w-card-title' }, h('h3', {}, e.name), h('div', { class: 'chips' }, ui.chip('plain', e.type, typeLabel(e.type)), e.kind ? ui.chip('plain', e.kind, e.kind) : null,
-        hubs.has(e.id) ? h('span', { title: LABELS.hubTip }, ui.chip('plain', 'hub', LABELS.hubTag)) : null)),
+      h('div', { class: 'w-card-title' }, h('h3', {}, e.name), h('span', { class: 'w-card-kind' }, [typeLabel(e.type), e.kind].filter(Boolean).join(' · '))),
       fmt.prose(e.note) ? h('p', { class: 'w-note' }, fmt.prose(e.note)) : null,
       (e.aliases ?? []).length ? h('p', { class: 'w-aliases' }, h('span', { class: 'muted' }, `${LABELS.aliases} `), e.aliases.map((a, i) => [i ? ' · ' : null,
         h('span', { class: a.caution ? 'w-alias has-note' : 'w-alias', title: a.caution ?? undefined }, a.name, a.how ? h('span', { class: 'muted' }, ` (${a.how})`) : null)])) : null,
-      e.evidence?.length ? h('p', { class: 'w-evidence' }, h('span', { class: 'muted' }, `${fmt.TERM.evidence} `), evidenceLinks(e.evidence)) : null,
-      h('dl', { class: 'w-stats' },
-        stat(LABELS.stats.facts, fmt.num(v.f)),
-        stat(LABELS.stats.questions, fmt.num(v.q), v.open ? ` · ${LABELS.stats.open} ${v.open}` : null),
-        stat(LABELS.stats.units, fmt.num(visibleUnitCount(e, c))),
-        firstUnit && c.R.seen(firstUnit.key) ? stat(LABELS.stats.first, ui.link(`unit:${firstUnit.key}`, firstUnit.title), firstUnit.kind === 'main' ? null : ` · ${whenLabel(firstUnit.tick)}`) : null));
+      firstUnit || seenUnits.length ? h('p', { class: 'w-facts-line' }, dots([
+        firstUnit ? h('span', {}, h('span', { class: 'muted' }, `${LABELS.first} `), ui.link(`unit:${firstUnit.key}`, firstUnit.title)) : null,
+        seenUnits.length ? h('span', {}, LABELS.unitsN(fmt.num(seenUnits.length))) : null,
+      ])) : null);
   }
-  const visibleUnitCount = (e, c) => (e.units ?? []).filter((u) => idx.units.has(u[0]) && c.R.seen(u[0]) && c.layers.has(unitLayer(u[0]))).length;
 
-  /** 함께 나온 항목 — 그림(고리 배치) + 순위 목록 */
+  /** 함께 나온 항목 — 그림(고리 배치) + 이름 목록(많이 겹친 순, 숫자는 싣지 않는다). 자주 나오는 항목은 토글을 켜야 그림 · 목록에 든다 */
   function neighborsPart(e) {
     const hubToggle = ui.toggle({ label: LABELS.hubsToggle, checked: paramsOf().hubs, onChange: (on) => setP({ hubs: on ? '1' : null }) });
     const figure = h('div', { class: 'w-figure' });
@@ -560,7 +544,7 @@ export async function mount(root, ctx) {
     const api = { el, hidden: 0, loading: false, refresh: null };
     let limit = PAGE.neighbors;
     function neighborsAt(c) {
-      // 이웃 기록은 이 항목 recs에도 있다 — 범위 · 아는 단위를 거기서 찾는다
+      // 이웃 기록은 이 항목 recs에도 있다 — 아는 단위를 거기서 찾는다
       const recOf = new Map(Object.values(e.recs).flat().map((x) => [x[0], x]));
       const out = [];
       for (const nb of e.neighbors ?? []) {
@@ -568,7 +552,7 @@ export async function mount(root, ctx) {
         if (!other || !viewOf(other, c).shown) continue;
         const n = nb.recs.filter(([rid, tick]) => {
           const x = recOf.get(rid);
-          return recKnown(c.R, x ? recUnits(e, x) : null, tick) && (x?.[2] == null || c.layers.has(x[2]));
+          return recKnown(c.R, x ? recUnits(e, x) : null, tick);
         }).length;
         if (n) out.push({ id: nb.id, e: other, n, hub: hubs.has(nb.id) });
       }
@@ -579,22 +563,20 @@ export async function mount(root, ctx) {
       const P = paramsOf();
       hubToggle.set(P.hubs);
       const items = neighborsAt(c);
-      const maxN = Math.max(1, ...items.map((x) => x.n));
+      const shown = items.filter((x) => P.hubs || !x.hub);
+      const maxN = Math.max(1, ...shown.map((x) => x.n));
       ui.clear(figure);
       ui.clear(list);
       ui.clear(foot);
-      const drawable = items.filter((x) => P.hubs || !x.hub).slice(0, GRAPH.max);
+      const drawable = shown.slice(0, GRAPH.max);
       if (drawable.length && detailEl.clientWidth >= GRAPH.minWidth) figure.append(drawGraph(e, drawable, maxN));
-      for (const it of items.slice(0, limit)) {
-        list.append(h('li', { class: ['w-nb-row', it.hub ? 'is-hub' : ''], tabindex: 0, dataset: { id: it.id }, onClick: () => gotoItem(it.id), onKeydown: (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); gotoItem(it.id); } } },
-          h('span', { class: 'w-nb-name' }, it.e.name, it.hub ? h('span', { class: 'muted w-hubtag' }, ` · ${LABELS.hubTag}`) : null),
-          h('span', { class: 'w-nb-type muted' }, typeLabel(it.e.type)),
-          h('span', { class: 'w-bar w-nb-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${(it.n / maxN) * 100}%` } })),
-          h('span', { class: 'w-nb-n', title: LABELS.neighborBy(it.n) }, fmt.num(it.n))));
+      for (const it of shown.slice(0, limit)) {
+        list.append(h('li', {}, h('button', { type: 'button', class: 'w-nb-item', dataset: { id: it.id }, onClick: () => gotoItem(it.id) },
+          it.e.name, h('span', { class: 'w-kind' }, typeLabel(it.e.type)))));
       }
-      tools.hidden = !items.length;
-      if (!items.length) foot.append(h('div', { class: 'empty' }, LABELS.empty.neighbors));
-      if (items.length > limit) foot.append(h('button', { type: 'button', class: 'btn', onClick: () => { limit += PAGE.more; refresh(); } }, LABELS.more(items.length - limit)));
+      tools.hidden = !items.some((x) => x.hub);
+      if (!shown.length) foot.append(h('div', { class: 'empty' }, LABELS.empty.neighbors));
+      if (shown.length > limit) foot.append(h('button', { type: 'button', class: 'btn', onClick: () => { limit += PAGE.more; refresh(); } }, LABELS.more(shown.length - limit)));
       return items.length;
     }
     api.refresh = refresh;
@@ -622,14 +604,14 @@ export async function mount(root, ctx) {
       const x = cx + rx * Math.cos(a);
       const y = cy + ry * Math.sin(a);
       edges.append(mk('line', { x1: cx, y1: cy, x2: x, y2: y, 'stroke-width': (1.5 + 5 * (it.n / maxN)).toFixed(1), class: it.hub ? 'w-edge is-hub' : 'w-edge' }));
-      const g = mk('g', { class: it.hub ? 'w-node is-hub' : 'w-node', tabindex: 0, role: 'button', 'aria-label': `${it.e.name} — ${LABELS.neighborBy(it.n)}` });
+      const g = mk('g', { class: it.hub ? 'w-node is-hub' : 'w-node', tabindex: 0, role: 'button', 'aria-label': it.e.name });
       const cos = Math.cos(a);
       const sin = Math.sin(a);
       const anchor = cos > 0.3 ? 'start' : cos < -0.3 ? 'end' : 'middle';
       const lx = anchor === 'start' ? x + 11 : anchor === 'end' ? x - 11 : x;
       const ly = anchor === 'middle' ? (sin < 0 ? y - 12 : y + 20) : y + 4;
       g.append(mk('circle', { cx: x, cy: y, r: 16, class: 'w-hit' }), mk('circle', { cx: x, cy: y, r: 5.5, class: 'w-dot-node' }), mk('text', { x: lx, y: ly, 'text-anchor': anchor, class: 'w-node-label' }, clip(it.e.name, 12)));
-      ui.tooltip(g, () => h('div', {}, h('b', {}, it.e.name), h('div', {}, `${typeLabel(it.e.type)}${it.e.kind ? ` · ${it.e.kind}` : ''}`), h('div', {}, LABELS.neighborBy(it.n))));
+      ui.tooltip(g, () => h('div', {}, h('b', {}, it.e.name), h('div', {}, `${typeLabel(it.e.type)}${it.e.kind ? ` · ${it.e.kind}` : ''}`)));
       g.addEventListener('click', () => gotoItem(it.id));
       g.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); gotoItem(it.id); } });
       nodes.append(g);
@@ -683,22 +665,23 @@ export async function mount(root, ctx) {
     const P = paramsOf(s);
     const c = cutOf(s);
     const q = norm(P.find);
-    const g = split(world.life.map((l) => [l.id, l.tick, l.layer, l.unit ?? null]), c);
+    const g = split(world.life.map((l) => [l.id, l.tick, null, l.unit ?? null]), c);
     const pool = g.shown.map((x) => lifeById.get(x[0]));
     const text = (l) => norm([l.text, l.topic, idx.units.get(l.unit)?.title, ...(l.about ?? []).map(nameOf)].join(' '));
     const matched = q ? pool.filter((l) => text(l).includes(q)) : pool;
     const counts = new Map();
     for (const l of matched) counts.set(l.topic, (counts.get(l.topic) ?? 0) + 1);
     ui.clear(lifeBar);
-    const chip = (value, label, n) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.topic ?? 'all') === value), onClick: () => setP({ topic: value === 'all' ? null : value }) }, label, h('span', { class: 'w-chip-n' }, fmt.num(n)));
-    put(lifeBar, chip('all', LABELS.all, matched.length), world.topics.map((t) => chip(t.topic, t.topic, counts.get(t.topic) ?? 0)));
+    // 분류 칩 — 숫자 없이 이름만, 찾기에 걸린 줄이 없는 분류는 뺀다(고른 것은 남긴다)
+    const chip = (value, label) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.topic ?? 'all') === value), onClick: () => setP({ topic: value === 'all' ? null : value }) }, label);
+    put(lifeBar, chip('all', LABELS.all), world.topics.filter((t) => counts.get(t.topic) || P.topic === t.topic).map((t) => chip(t.topic, t.topic)));
     ui.clear(lifeList);
     ui.clear(lifeHidden);
-    put(lifeHidden, hiddenNote(g.cutHidden, g.layerHidden));
+    put(lifeHidden, hiddenNote(g.cutHidden));
     const moreBtn = (key, left, step) => h('button', { type: 'button', class: 'btn', onClick: () => { lifeMore.set(key, (lifeMore.get(key) ?? step) + PAGE.more); renderLife(); } }, LABELS.more(left));
     if (!matched.length) {
       // 메인 자리를 올려서 보이게 되는 것 중 가장 이른 자리(척추 이벤트 · 사이드를 안 봄으로 둔 것은 t를 올려도 안 보여서 뺀다)
-      const next = world.life.filter((l) => !recKnown(c.R, l.unit ?? null, l.tick) && l.tick > c.R.t && !(l.unit in c.R.x) && c.layers.has(l.layer)).reduce((m, l) => Math.min(m, l.tick), Infinity);
+      const next = world.life.filter((l) => !recKnown(c.R, l.unit ?? null, l.tick) && l.tick > c.R.t && !(l.unit in c.R.x)).reduce((m, l) => Math.min(m, l.tick), Infinity);
       const hiddenByCut = !pool.length && Number.isFinite(next);
       lifeList.append(h('div', { class: 'w-empty' },
         h('p', { class: 'muted' }, hiddenByCut ? LABELS.lifeEmpty(whenLabel(next)) : LABELS.lifeEmptyAll),
@@ -717,7 +700,7 @@ export async function mount(root, ctx) {
         if (!rows.length) continue;
         const lim = lifeMore.get(t.topic) ?? PAGE.groupLife;
         lifeList.append(h('section', { class: 'w-group' },
-          h('h3', {}, h('button', { type: 'button', class: 'w-linkbtn', onClick: () => setP({ topic: t.topic }) }, t.topic), h('span', { class: 'w-sec-n' }, fmt.num(rows.length))),
+          h('h3', {}, h('button', { type: 'button', class: 'w-linkbtn', onClick: () => setP({ topic: t.topic }) }, t.topic)),
           h('ul', { class: 'w-recs w-recs-life' }, rows.slice(0, lim).map((l) => lifeRow(l, {}))),
           rows.length > lim ? moreBtn(t.topic, rows.length - lim, PAGE.groupLife) : null));
       }
@@ -772,10 +755,10 @@ export async function mount(root, ctx) {
     if (document.activeElement !== findInput && findInput.value !== P.find) findInput.value = P.find;
     if (P.mode !== before.mode) { renderAll(); return; }
     if (P.mode === 'life') {
-      if (changed.has('t') || changed.has('layers') || P.find !== before.find || P.topic !== before.topic) { lifeMore.clear(); renderLife(); }
+      if (changed.has('t') || P.find !== before.find || P.topic !== before.topic) { lifeMore.clear(); renderLife(); }
       return;
     }
-    const cutChanged = changed.has('t') || changed.has('layers');
+    const cutChanged = changed.has('t');
     if (cutChanged || P.find !== before.find || P.type !== before.type || P.sort !== before.sort) renderList();
     if (P.item !== before.item) {
       markSelected();
