@@ -2,7 +2,7 @@
  * 탭 6 세계(W7) — 개념 · 사건 · 물건 · 조직 · 장소 사전(화면 4 개념 쪽)과 "세계의 모습"(생활상) 분류별 목록.
  *
  * 쓰는 JSON
- *   world.json(이 탭 — tools/site/export/world.mjs): entries[225](항목 — 메모 · 다른 이름 · 근거 · 집계 · recs{F|Q|U|E|I|D: [[기록 ID, 출시 시점, 범위], …]} ·
+ *   world.json(이 탭 — tools/site/export/world.mjs): entries[225](항목 — 메모 · 다른 이름 · 근거 · 집계 · recs{F|Q|U|E|I|D: [[기록 ID, 출시 시점, 범위, 아는 단위], …]} ·
  *     units[[단위 키, 기록 수], …] · neighbors[{id, n, recs[[기록 ID, 출시 시점], …]}] · threads[{id, n, about}] · hub) · life[449](세계의 모습 — 문장 · 분류 · 단위 · 근거) ·
  *     topics[{topic, n}] · hubs[](자주 나오는 항목) · hub_share
  *   공용(ctx.idx): units(제목 · 출시 시점 · 범위) · ticks · threads(떡밥 제목 · 중요도) · targets(이름) · records(사실 · 의문 문장 — 처음 보일 때 받는다)
@@ -17,12 +17,13 @@
  *   hubs   1이면 함께 나온 항목에 자주 나오는 항목도 넣는다
  *
  * 그리는 규칙
- *   - 여기까지 읽음(컷오프 t)과 범위(layers)를 모든 숫자 · 목록에 건다. 항목은 처음 나온 자리(= 기록 · 처음 소개된 스토리 중 가장 이른 출시 시점)가 t 뒤면 목록에서 빠지고
- *     "스포일러로 가림 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도 t 뒤 기록은 빼고 같은 식으로 센다.
- *     처음 나온 자리를 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 줄이 없는 섹션은 접고 머리에 가린 수를 적는다(사용자가 직접 연 · 접은 섹션만 기억).
+ *   - 여기까지 읽음(state.reading — 메인 자리 t + 본편 이벤트 · 사이드 예외 x)과 범위(layers)를 모든 숫자 · 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
+ *     기록은 그 기록을 아는 스토리(recs의 아는 단위 — 사실 · 의문은 know_units)를 봤으면 보이고, 항목은 나온 곳(처음 나온 스토리 · 기록 · 처음 소개된 스토리)
+ *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠지고 "스포일러로 가림 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
+ *     안 본 기록 · 스토리는 빼고 같은 식으로 센다. 나온 곳을 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 출시 자리(tick0)는 '나온 순서' 정렬 · 안내 문구에만 쓴다. 줄이 없는 섹션은 접고 머리에 가린 수를 적는다(사용자가 직접 연 · 접은 섹션만 기억).
  *     바뀌면 목록 · 상세를 다시 만들지 않고 숫자와 줄만 갈아 끼운다(스크롤 · 접힘 · 찾기 낱말 유지).
  *   - 열린 의문 = 그 자리에서 열림 또는 일부 회수인 의문(fmt.stateAt). 사실이 나중에 뒤집히면 "뒤집힘" 표시.
- *   - 함께 나온 항목: world.json의 이웃 기록 중 t 이내 · 범위 안만 센 수. 그림은 가운데 항목 + 많이 겹친 상위 10(고리 배치, 선 굵기 = 함께 나온 기록 수).
+ *   - 함께 나온 항목: world.json의 이웃 기록 중 본 것 · 범위 안만 센 수(이웃 기록의 아는 단위는 이 항목 recs에서 찾는다). 그림은 가운데 항목 + 많이 겹친 상위 10(고리 배치, 선 굵기 = 함께 나온 기록 수).
  *     자주 나오는 항목(니케 · 랩쳐 · 방주 …)은 그림에서 기본으로 빼고 목록에서는 흐리게 — 토글로 넣는다. 480px보다 좁으면 그림 없이 목록만.
  *   - 색은 공용 토큰(--accent · --state-* · --ink-*)만 쓴다. 종류(개념 · 사건 …)는 색 없이 글자 칩으로 — 5색 범주 팔레트를 새로 두지 않는다.
  *   - 사실 · 의문 · 세계의 모습 줄을 누르면 리더(sel=record:ID), 스토리 · 떡밥 링크는 unit: · thread:. 사전 메모의 작업 표기는 내보낼 때 걷는다(export 주석).
@@ -54,6 +55,7 @@ const LABELS = {
   recordsLoading: '기록 불러오는 중…',
   notYet: '아직 나오지 않은 항목이다',
   notYetNote: (when) => `${when}부터 나온다.`,
+  skippedNote: '안 봤다고 고른 스토리에서 나온다.',
   noItem: '고를 항목이 없다',
   noItemHint: '찾기 낱말이나 종류를 풀면 보인다.',
   neighborBy: (n) => `함께 나온 기록 ${n}`,
@@ -93,18 +95,37 @@ export async function mount(root, ctx) {
   const hubs = new Set(world.hubs);
   const unitTick = (k) => idx.units.get(k)?.tick ?? null;
   const unitLayer = (k) => idx.units.get(k)?.layer ?? null;
-  /** 항목이 처음 나온 출시 시점 — 기록 · 처음 소개된 스토리 중 가장 이른 것. 어디에서도 못 찾으면 null(늘 보임) */
+  /** 항목이 처음 나온 출시 시점 — 기록 · 처음 소개된 스토리 중 가장 이른 것('나온 순서' 정렬 · 안내 문구용). 어디에서도 못 찾으면 null */
   const tick0 = new Map();
   for (const e of entries) {
     const ts = [e.first_tick, ...Object.values(e.recs ?? {}).flatMap((l) => l.map((x) => x[1])), ...(e.introduced ?? []).map(unitTick)].filter((t) => t != null);
     tick0.set(e.id, ts.length ? Math.min(...ts) : null);
   }
+  /** recs 한 줄 [ID, 출시 시점, 범위, 아는 단위]의 아는 단위 → 단위 키 · 키 배열 · null. 숫자면 그 항목 units[] 안 자리 */
+  const recUnits = (e, x) => (typeof x[3] === 'number' ? e.units?.[x[3]]?.[0] ?? null : x[3] ?? null);
+  /** 기록을 아나 — 아는 단위(배열이면 하나라도)를 봤으면. 단위가 없으면 출시 시점(state.reading().known과 같은 규칙) */
+  const recKnown = (R, u, tick) => (R.all ? true : Array.isArray(u) ? R.seenAny(u) : u != null ? R.seen(u) : state.visible(tick, R.t));
+  /** 항목이 나온 곳(공개 자리가 있는 스토리 · 기록) 중 하나라도 봤나 — 하나도 없으면 전부 보기일 때만 */
+  const appearUnits = new Map();
+  for (const e of entries) {
+    const us = [e.first_unit, ...(e.introduced ?? [])].filter((k) => k != null && unitTick(k) != null);
+    const rs = Object.values(e.recs ?? {}).flat().filter((x) => x[1] != null).map((x) => [recUnits(e, x), x[1]]);
+    appearUnits.set(e.id, { us: [...new Set(us)], rs });
+  }
+  const appeared = (e, R) => {
+    if (R.all) return true;
+    const a = appearUnits.get(e.id);
+    return a.us.some((k) => R.seen(k)) || a.rs.some(([u, tick]) => recKnown(R, u, tick));
+  };
+  /** 여기까지 읽음 서명 — t와 본편 이벤트 · 사이드 예외(x)(숫자 캐시 키) */
+  const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
   const typeLabel = (t) => fmt.TARGET_TYPE[t] ?? t;
   const whenLabel = (tick) => fmt.tickLabel(tick, { date: false });
   const nameOf = (id) => byId.get(id)?.name ?? fmt.targetName(id);
 
   // ── 상태 읽기 ──
-  const cutOf = (s = state.get()) => ({ T: s.t, layers: new Set(s.layers) });
+  /** c = { R(여기까지 읽음 — state.reading), sig, layers } */
+  const cutOf = (s = state.get()) => { const R = state.reading(s); return { R, sig: cutSig(R), layers: new Set(s.layers) }; };
   const paramsOf = (s = state.get()) => ({
     mode: s.p.mode === 'life' ? 'life' : 'dict',
     item: s.p.item ?? null,
@@ -117,13 +138,13 @@ export async function mount(root, ctx) {
   const setP = (patch, replace = true) => state.set({ p: patch }, { replace });
   let recordsReady = idx.hasRecords;
 
-  /** [[id, tick, layer], …]를 컷오프 · 범위로 가른다 */
-  function split(list, c) {
+  /** [[id, tick, layer, 아는 단위], …]를 여기까지 읽음 · 범위로 가른다. e를 주면 아는 단위의 숫자를 그 항목 units[]로 푼다 */
+  function split(list, c, e = null) {
     const shown = [];
     let cutHidden = 0;
     let layerHidden = 0;
     for (const x of list) {
-      const okT = state.visible(x[1], c.T);
+      const okT = recKnown(c.R, e ? recUnits(e, x) : x[3] ?? null, x[1]);
       const okL = x[2] == null || c.layers.has(x[2]);
       if (okT && okL) shown.push(x);
       else if (!okT) cutHidden++;
@@ -136,17 +157,16 @@ export async function mount(root, ctx) {
   let viewKey = '';
   let views = new Map();
   function viewOf(e, c) {
-    const key = `${c.T}|${[...c.layers].join()}|${recordsReady}`;
+    const key = `${c.sig}|${[...c.layers].join()}|${recordsReady}`;
     if (key !== viewKey) { viewKey = key; views = new Map(); }
     let v = views.get(e.id);
     if (v) return v;
-    const F = split(e.recs.F ?? [], c);
-    const Q = split(e.recs.Q ?? [], c);
+    const F = split(e.recs.F ?? [], c, e);
+    const Q = split(e.recs.Q ?? [], c, e);
     const all = Object.values(e.recs).flat();
-    const t0 = tick0.get(e.id);
-    const cutOk = t0 == null ? c.T == null : state.visible(t0, c.T);
+    const cutOk = appeared(e, c.R);
     const layerOk = all.length === 0 || all.some((x) => x[2] == null || c.layers.has(x[2]));
-    const open = recordsReady ? Q.shown.filter((x) => ['열림', '일부'].includes(fmt.stateAt(idx.records.get(x[0]), c.T))).length : null;
+    const open = recordsReady ? Q.shown.filter((x) => ['열림', '일부'].includes(fmt.stateAt(idx.records.get(x[0]), c.R))).length : null;
     v = { e, f: F.shown.length, q: Q.shown.length, open, cutOk, layerOk, shown: cutOk && layerOk };
     views.set(e.id, v);
     return v;
@@ -177,8 +197,7 @@ export async function mount(root, ctx) {
   const threadVisible = (id, c) => {
     const j = idx.threads.get(id);
     if (!j) return false;
-    const t = unitTick(j.first_unit);
-    return t == null || state.visible(t, c.T);
+    return unitTick(j.first_unit) == null || c.R.seen(j.first_unit);
   };
 
   /** 기록 한 줄(사실 · 의문 · 세계의 모습) — 누르면 리더 */
@@ -417,12 +436,12 @@ export async function mount(root, ctx) {
       get() {
         const c = cutOf();
         if (!recordsReady) return { items: [], cutHidden: 0, layerHidden: 0, loading: true };
-        const g = split(e.recs.F ?? [], c);
+        const g = split(e.recs.F ?? [], c, e);
         const items = g.shown.map((x) => idx.records.get(x[0])).filter(Boolean).sort(byRecord);
         return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
       },
       lead: (g) => (g.loading ? ui.spinner(LABELS.recordsLoading) : null),
-      row: (r) => recRow(r, cutOf(), { chips: fmt.stateAt(r, state.get().t) === '뒤집힘' ? [ui.chip('state', '뒤집힘')] : [] }),
+      row: (r) => { const c = cutOf(); return recRow(r, c, { chips: fmt.stateAt(r, c.R) === '뒤집힘' ? [ui.chip('state', '뒤집힘')] : [] }); },
     });
     parts.set('facts', section('facts', LABELS.sec.facts, facts, true));
     // 의문
@@ -432,9 +451,8 @@ export async function mount(root, ctx) {
       get() {
         const c = cutOf();
         if (!recordsReady) return { items: [], cutHidden: 0, layerHidden: 0, loading: true };
-        const g = split(e.recs.Q ?? [], c);
-        const T = c.T;
-        const items = g.shown.map((x) => idx.records.get(x[0])).filter(Boolean).map((r) => ({ r, st: fmt.stateAt(r, T) }))
+        const g = split(e.recs.Q ?? [], c, e);
+        const items = g.shown.map((x) => idx.records.get(x[0])).filter(Boolean).map((r) => ({ r, st: fmt.stateAt(r, c.R) }))
           .sort((a, b) => (qRank[a.st] ?? 3) - (qRank[b.st] ?? 3) || byRecord(a.r, b.r));
         return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
       },
@@ -459,7 +477,7 @@ export async function mount(root, ctx) {
       size: PAGE.life, empty: LABELS.empty.life, text: (l) => l.text, finder: false,
       get() {
         const c = cutOf();
-        const g = split((e.recs.U ?? []).map((x) => [x[0], x[1], x[2]]), c);
+        const g = split(e.recs.U ?? [], c, e);
         const items = g.shown.map((x) => lifeById.get(x[0])).filter(Boolean).sort(byRecord);
         return { items, cutHidden: g.cutHidden, layerHidden: g.layerHidden };
       },
@@ -474,7 +492,7 @@ export async function mount(root, ctx) {
         const count = new Map();
         if (recordsReady) {
           for (const x of Object.values(e.recs).flat()) {
-            if (!state.visible(x[1], c.T) || !(x[2] == null || c.layers.has(x[2]))) continue;
+            if (!recKnown(c.R, recUnits(e, x), x[1]) || !(x[2] == null || c.layers.has(x[2]))) continue;
             for (const j of idx.records.get(x[0])?.threads ?? []) count.set(j, (count.get(j) ?? 0) + 1);
           }
         }
@@ -501,7 +519,7 @@ export async function mount(root, ctx) {
         let cutHidden = 0;
         let layerHidden = 0;
         for (const u of all) {
-          if (!state.visible(unitTick(u[0]), c.T)) cutHidden++;
+          if (!c.R.seen(u[0])) cutHidden++;
           else if (!c.layers.has(unitLayer(u[0]))) layerHidden++;
           else items.push(u);
         }
@@ -532,9 +550,9 @@ export async function mount(root, ctx) {
         stat(LABELS.stats.facts, fmt.num(v.f)),
         stat(LABELS.stats.questions, fmt.num(v.q), v.open ? ` · ${LABELS.stats.open} ${v.open}` : null),
         stat(LABELS.stats.units, fmt.num(visibleUnitCount(e, c))),
-        firstUnit && state.visible(firstUnit.tick, c.T) ? stat(LABELS.stats.first, ui.link(`unit:${firstUnit.key}`, firstUnit.title), firstUnit.kind === 'main' ? null : ` · ${whenLabel(firstUnit.tick)}`) : null));
+        firstUnit && c.R.seen(firstUnit.key) ? stat(LABELS.stats.first, ui.link(`unit:${firstUnit.key}`, firstUnit.title), firstUnit.kind === 'main' ? null : ` · ${whenLabel(firstUnit.tick)}`) : null));
   }
-  const visibleUnitCount = (e, c) => (e.units ?? []).filter((u) => idx.units.has(u[0]) && state.visible(unitTick(u[0]), c.T) && c.layers.has(unitLayer(u[0]))).length;
+  const visibleUnitCount = (e, c) => (e.units ?? []).filter((u) => idx.units.has(u[0]) && c.R.seen(u[0]) && c.layers.has(unitLayer(u[0]))).length;
 
   /** 함께 나온 항목 — 그림(고리 배치) + 순위 목록 */
   function neighborsPart(e) {
@@ -547,12 +565,16 @@ export async function mount(root, ctx) {
     const api = { el, hidden: 0, loading: false, refresh: null };
     let limit = PAGE.neighbors;
     function neighborsAt(c) {
-      const layerOfRec = new Map(Object.values(e.recs).flat().map((x) => [x[0], x[2]]));
+      // 이웃 기록은 이 항목 recs에도 있다 — 범위 · 아는 단위를 거기서 찾는다
+      const recOf = new Map(Object.values(e.recs).flat().map((x) => [x[0], x]));
       const out = [];
       for (const nb of e.neighbors ?? []) {
         const other = byId.get(nb.id);
         if (!other || !viewOf(other, c).shown) continue;
-        const n = nb.recs.filter(([rid, tick]) => state.visible(tick, c.T) && (layerOfRec.get(rid) == null || c.layers.has(layerOfRec.get(rid)))).length;
+        const n = nb.recs.filter(([rid, tick]) => {
+          const x = recOf.get(rid);
+          return recKnown(c.R, x ? recUnits(e, x) : null, tick) && (x?.[2] == null || c.layers.has(x[2]));
+        }).length;
         if (n) out.push({ id: nb.id, e: other, n, hub: hubs.has(nb.id) });
       }
       return out.sort((a, b) => b.n - a.n || a.e.name.localeCompare(b.e.name, 'ko'));
@@ -637,7 +659,7 @@ export async function mount(root, ctx) {
     const v = viewOf(e, c);
     if (!v.cutOk) {
       const t0 = tick0.get(e.id);
-      detailEl.append(h('div', { class: 'w-locked' }, h('h3', {}, LABELS.notYet), t0 != null ? h('p', { class: 'muted' }, LABELS.notYetNote(whenLabel(t0))) : null,
+      detailEl.append(h('div', { class: 'w-locked' }, h('h3', {}, LABELS.notYet), t0 != null ? h('p', { class: 'muted' }, state.visible(t0, c.R.t) ? LABELS.skippedNote : LABELS.notYetNote(whenLabel(t0))) : null,
         h('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
       return;
     }
@@ -666,7 +688,7 @@ export async function mount(root, ctx) {
     const P = paramsOf(s);
     const c = cutOf(s);
     const q = norm(P.find);
-    const g = split(world.life.map((l) => [l.id, l.tick, l.layer]), c);
+    const g = split(world.life.map((l) => [l.id, l.tick, l.layer, l.unit ?? null]), c);
     const pool = g.shown.map((x) => lifeById.get(x[0]));
     const text = (l) => norm([l.text, l.topic, idx.units.get(l.unit)?.title, ...(l.about ?? []).map(nameOf)].join(' '));
     const matched = q ? pool.filter((l) => text(l).includes(q)) : pool;
@@ -680,7 +702,8 @@ export async function mount(root, ctx) {
     put(lifeHidden, hiddenNote(g.cutHidden, g.layerHidden));
     const moreBtn = (key, left, step) => h('button', { type: 'button', class: 'btn', onClick: () => { lifeMore.set(key, (lifeMore.get(key) ?? step) + PAGE.more); renderLife(); } }, LABELS.more(left));
     if (!matched.length) {
-      const next = world.life.filter((l) => !state.visible(l.tick, c.T) && c.layers.has(l.layer)).reduce((m, l) => Math.min(m, l.tick), Infinity);
+      // 메인 자리를 올려서 보이게 되는 것 중 가장 이른 자리(본편 이벤트 · 사이드를 안 봄으로 둔 것은 t를 올려도 안 보여서 뺀다)
+      const next = world.life.filter((l) => !recKnown(c.R, l.unit ?? null, l.tick) && l.tick > c.R.t && !(l.unit in c.R.x) && c.layers.has(l.layer)).reduce((m, l) => Math.min(m, l.tick), Infinity);
       const hiddenByCut = !pool.length && Number.isFinite(next);
       lifeList.append(h('div', { class: 'w-empty' },
         h('p', { class: 'muted' }, hiddenByCut ? LABELS.lifeEmpty(whenLabel(next)) : LABELS.lifeEmptyAll),

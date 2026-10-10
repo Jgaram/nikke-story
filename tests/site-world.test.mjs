@@ -85,6 +85,25 @@ test('world.json — 기록 ID · 이웃 · 단위 키가 실제로 있다', () 
   }
 });
 
+test('world.json — recs의 아는 단위가 records.json(know_units · unit)과 같다 · 예외가 없으면 출시 시점 규칙과 같다', () => {
+  const unitTick = new Map(read('units.json').map((u) => [u.key, u.tick]));
+  const ticks = [...new Set([...unitTick.values()].filter((t) => t != null))].sort((a, b) => a - b);
+  for (const e of world.entries) {
+    for (const x of Object.values(e.recs ?? {}).flat()) {
+      const r = records.get(x[0]);
+      const want = (r.kind === 'F' || r.kind === 'Q') && r.know_units?.length ? r.know_units : r.unit ?? null;
+      const got = typeof x[3] === 'number' ? e.units[x[3]]?.[0] : x[3];
+      assert.deepEqual(got, want, `${e.id} ${x[0]} 아는 단위`);
+      if (typeof want === 'string') assert.equal(typeof x[3], 'number', `${x[0]} 단위 하나는 units[] 자리로 줄인다`);
+      // 예외(x)가 없을 때 '아는 단위 중 하나라도 tick ≤ t' ≡ '기록 tick ≤ t'
+      const us = Array.isArray(want) ? want : want == null ? [] : [want];
+      if (!us.length || x[1] == null) continue;
+      const min = Math.min(...us.map((k) => unitTick.get(k) ?? -Infinity));
+      for (const t of [x[1] - 1, x[1], min - 1, min]) if (ticks.includes(t)) assert.equal(min <= t, x[1] <= t, `${x[0]} t=${t}`);
+    }
+  }
+});
+
 test('world.json — 사전 메모에 작업 표기가 없다 · 본문 칼럼 이름이 없다', () => {
   const work = /\bR\d+\b|에서 더함|1회독|2회독|\bQ-[A-Z0-9]+-\d+|\bd_main_|\bep:d_|(?:^|\W)event_[a-z]+|speakers\.json|사용자\(RV/;
   const forbidden = ['quest_name', 'scenario_localkey', 'speaker_name', 'window'];

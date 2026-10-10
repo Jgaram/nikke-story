@@ -12,7 +12,9 @@
  * world.json = { entries[], life[], topics[], hubs[], hub_share }
  *   entries[] (비인물 대상 225): id · type · name · kind · note · aliases[{name, how, caution}] · evidence[{scene, lines}](무엇인지 보여 주는 줄) ·
  *     stories · lines(이름 기준 범위 안 건수) · facts · questions · open(열린 의문) · events · units_n · first_unit · first_tick · first_order · introduced[] ·
- *     hub(흔한 개념이면 true) · spread · recs{ F|Q|U|E|I|D: [[기록 ID, 공개 자리, 층], …] }(컷오프 · 층 거르개 계산용 — 문장은 records*.json) ·
+ *     hub(흔한 개념이면 true) · spread · recs{ F|Q|U|E|I|D: [[기록 ID, 공개 자리, 층, 단위], …] }(여기까지 읽음 · 층 거르개 계산용 — 문장은 records*.json.
+ *     단위 = 그 기록을 아는 스토리: 사실 · 의문에 know_units가 있으면 그 단위 키 배열, 아니면 기록 단위의 units[] 안 자리(숫자 — 키를 되풀이하지 않게),
+ *     단위가 없으면 null — 사이트 state.reading().known과 같은 규칙) ·
  *     units[[단위 키, 기록 수], …](읽는 자리 순) · neighbors[{ id, n, units, recs[[기록 ID, 공개 자리], …] }](함께 나온 기록 수 순) ·
  *     threads[{ id, n, about(줄기 자신의 about이면 true), sample[] }]
  *   life[] (생활상 449): id · topic · unit · tick · order · layer · scene · line · evidence · about[] · text · confidence · threads[]
@@ -29,7 +31,7 @@ export const name = 'world';
 const DICT_FILES = { concepts: 'concept', incidents: 'incident', items: 'item', orgs: 'org', places: 'place' };
 /** 흔한 개념 — 중심인 단위가 읽기 단위의 이 몫을 넘는 대상(tools/views/links.mjs COMMON_SHARE와 같은 값 · 같은 뜻) */
 export const HUB_SHARE = 0.1;
-/** 항목에 잇는 기록 종류(about으로) — 문장은 싣지 않고 ID · 공개 자리 · 층만 */
+/** 항목에 잇는 기록 종류(about으로) — 문장은 싣지 않고 ID · 공개 자리 · 층 · 아는 단위만 */
 const REC_KINDS = ['F', 'Q', 'U', 'E', 'I', 'D'];
 
 /**
@@ -73,6 +75,9 @@ function readDictionary(warn) {
   return out;
 }
 
+/** 기록을 아는 스토리 — 사실 · 의문은 know_units(여러 단위면 배열), 그 밖은 단위 키. 없으면 null(사이트는 공개 자리로 본다) */
+export const knowUnits = (r) => ((r.kind === 'F' || r.kind === 'Q') && Array.isArray(r.know_units) && r.know_units.length ? [...r.know_units] : r.unit ?? null);
+
 export async function run(ctx) {
   const { csv, common, warn } = ctx;
   if (!common) throw new Error('world: 공용 데이터(ctx.common)가 먼저 있어야 한다');
@@ -111,7 +116,7 @@ export async function run(ctx) {
     });
   }
 
-  // ── 기록 ↔ 항목(about) — ID · 공개 자리 · 층만. 생활상은 문장째 따로 ──
+  // ── 기록 ↔ 항목(about) — ID · 공개 자리 · 층 · 아는 단위만. 생활상은 문장째 따로 ──
   const life = [];
   for (const r of common.records) {
     if (r.kind === 'U') {
@@ -124,7 +129,7 @@ export async function run(ctx) {
     for (const a of new Set(r.about)) {
       const e = entries.get(a);
       if (!e) continue;
-      e.recs[r.kind].push([r.id, r.tick ?? null, layerOf(r.unit)]);
+      e.recs[r.kind].push([r.id, r.tick ?? null, layerOf(r.unit), knowUnits(r)]);
       if (r.unit) e.unitCount.set(r.unit, (e.unitCount.get(r.unit) ?? 0) + 1);
     }
   }
@@ -185,13 +190,19 @@ export async function run(ctx) {
 
   // ── 내보낼 모양 ──
   const sortRecs = (xs) => xs.sort((a, b) => (a[1] ?? 1e9) - (b[1] ?? 1e9) || String(a[0]).localeCompare(String(b[0])));
-  const out = [...entries.values()].map((e) => compact({
+  const out = [...entries.values()].map((e) => {
+    const units = [...e.unitCount].sort((a, b) => (placeOf(a[0]).order ?? 1e9) - (placeOf(b[0]).order ?? 1e9));
+    const at = new Map(units.map(([k], i) => [k, i]));
+    // 아는 단위가 기록 단위 하나면 units[] 안 자리로 줄인다
+    for (const k of REC_KINDS) for (const x of e.recs[k]) if (typeof x[3] === 'string') x[3] = at.get(x[3]) ?? null;
+    return { e, units };
+  }).map(({ e, units }) => compact({
     id: e.id, type: e.type, name: e.name, kind: e.kind, note: e.note, aliases: e.aliases, evidence: e.evidence, stories: e.stories, lines: e.lines,
     facts: e.facts, questions: e.questions, open: e.open, events: e.events, units_n: e.unitCount.size,
     first_unit: e.first_unit, first_tick: e.first_tick, first_order: e.first_order, introduced: e.introduced,
     hub: e.hub, spread: e.spread || undefined,
     recs: Object.fromEntries(REC_KINDS.filter((k) => e.recs[k].length).map((k) => [k, sortRecs(e.recs[k])])),
-    units: [...e.unitCount].sort((a, b) => (placeOf(a[0]).order ?? 1e9) - (placeOf(b[0]).order ?? 1e9)),
+    units,
     neighbors: e.neighbors.sort((a, b) => b.n - a.n || a.id.localeCompare(b.id)),
     threads: e.threads.sort((a, b) => b.n - a.n || a.id.localeCompare(b.id)),
   }));

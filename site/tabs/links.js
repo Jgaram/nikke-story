@@ -29,10 +29,11 @@
  *   굵기 = 연결된 씬 수(세기 2 이상만 볼 때는 약한 연결 weak를 뺀 수), 점선(긴 점선) = 확정 전 후보. 이 탭에는 스토리 종류 색이 없다 —
  *   종류는 글자로 쓰고 전체 보기에서는 가로 띠(행)가 종류다(색 두 갈래가 겹치지 않게).
  *   자주 나오는 인물 · 항목(links.json targets.common)만 나눈 연결은 세기 1이라 기본(세기 2 이상)에서 빠진다. 그 항목을 인물 · 항목 거르개로 고르면 풀린다.
- *   컷오프(t) 뒤 스토리와 범위(layers) 밖 스토리의 선은 숨기고 개수만 보인다("스포일러로 가린 N"). 컷오프 뒤 스토리를 가운데로 둘 수 없다.
+ *   안 본 스토리(state.reading().seen — 메인 자리 t + 본편 이벤트 · 사이드 예외 x, 출시 자리로 정하지 않는다)와 범위(layers) 밖 스토리의 선은 숨기고
+ *   개수만 보인다("스포일러로 가린 N"). 선 · 근거는 양 끝 스토리를 다 봤을 때만, 인물 · 항목 · 떡밥 거르개 후보도 그런 선에서만. 안 본 스토리를 가운데로 둘 수 없다.
  *   이웃 보기: 가운데 카드 + 앞(먼저 나온)·뒤(이어지는) 스토리 카드, 선은 카드 사이 곡선. 한쪽 8장씩 연결이 센 순(이야기 연결 → 세기 → 씬 수)으로 뽑아 출시순으로 놓고 "더 보기".
  *   전체 보기: 행 = 스토리 종류, 가로 = 읽는 순서, 점 = 스토리(크기 = 이어진 스토리 수). 이야기 연결(다음 편 · 떡밥→회수 · 다시 언급 · 뒤집힘)만 기본, 많이 이어진 상위 80개만 그리고 "150개까지"로 넓힌다(상한 150).
- *   연작: links.json chains. 컷오프 뒤 편은 가리고 첫 편이 가려진 사슬은 개수만 센다.
+ *   연작: links.json chains. 처음 안 본 편부터 뒤는 가리고 첫 편이 가려진 사슬은 개수만 센다.
  *   카드를 누르면 sel=unit:키(리더 패널)와 그 쌍의 씬 → 씬 근거(분석 메모 문장 · 근거 줄), 카드의 "중심으로" 단추 또는 더블클릭이면 그 스토리가 가운데가 된다.
  *   가운데 카드는 스크롤을 따라 붙고(sticky) 선의 가운데 쪽 끝이 따라 움직인다. 640px 아래에서는 앞 → 가운데 → 뒤를 세로 한 줄로 접고 선 대신 선 종류 단추로 본다.
  *   근거 목록: 선 종류별 구역, 씬마다 "앞 씬 → 뒤 씬(씬 제목 · 씬 ID · 줄)" + 분석 메모 문장 + 가리키는 의문 · 사실 + 답. 세기 설정으로 가린 약한 연결은 개수와 "약한 연결까지 보기".
@@ -187,14 +188,13 @@ export async function mount(root, ctx) {
   for (const e of edges) for (const t of e.threads) threadUse.set(t, (threadUse.get(t) ?? 0) + 1);
   const threadList = [...threadUse].map(([id, n]) => ({ id, n, title: idx.threads.get(id)?.title ?? id }))
     .sort((x, y) => x.title.localeCompare(y.title, 'ko'));
-  /** 거르개 후보는 여기까지 읽음 안(양 끝 스토리가 보이는) 선에 걸린 것만 — 이름 · 떡밥 제목이 스포일러라서 */
-  const candidatesFor = (T) => {
-    if (T == null) return { targets: targetList, threads: threadList };
+  /** 거르개 후보는 여기까지 읽음 안(양 끝 스토리를 다 본) 선에 걸린 것만 — 이름 · 떡밥 제목이 스포일러라서. R = state.reading() */
+  const candidatesFor = (R) => {
+    if (R.all) return { targets: targetList, threads: threadList };
     const tu = new Map();
     const hu = new Map();
     for (const e of edges) {
-      if (e.a.tick != null && e.a.tick > T) continue;
-      if (e.b.tick != null && e.b.tick > T) continue;
+      if (!R.seen(e.from) || !R.seen(e.to)) continue;
       for (const t of e.targets) tu.set(t, (tu.get(t) ?? 0) + 1);
       for (const t of e.threads) hu.set(t, (hu.get(t) ?? 0) + 1);
     }
@@ -203,8 +203,11 @@ export async function mount(root, ctx) {
       threads: threadList.filter((t) => hu.has(t.id)).map((t) => ({ ...t, n: hu.get(t.id) })),
     };
   };
-  let cand = candidatesFor(state.get().t);
-  let candT = state.get().t;
+  /** 여기까지 읽음 서명 — t와 본편 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
+  const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
+  const READ_ALL = state.reading({ t: null, x: {} });
+  let cand = candidatesFor(state.reading(state.get()));
+  let candT = cutSig(state.reading(state.get()));
 
   // ── 거르개 (URL 파라미터 → F) ──
   const listParam = (v, allowed) => {
@@ -230,11 +233,13 @@ export async function mount(root, ctx) {
       kinds: listParam(p.kd, kindsPresent),
       wide: p.nn === '150',
       mm: p.mm === '1',
-      T: s.t,
+      R: state.reading(s), // 여기까지 읽음 — 스토리마다 R.seen(키)
+      cut: cutSig(state.reading(s)),
       layers: s.layers,
     };
   }
-  const inCut = (F, u) => F.T == null || u.tick == null || u.tick <= F.T;
+  /** 그 스토리를 봤나(여기까지 읽음 안) — 출시 자리가 아니라 스토리 단위(본편 이벤트 · 사이드 예외 x 반영) */
+  const inCut = (F, u) => F.R.seen(u.key);
   const inRange = (F, u) => u.layer == null || F.layers.includes(u.layer);
   const kindOk = (F, u) => !F.kinds || F.kinds.has(u.kind);
   /** 자주 나오는 항목을 고르면 그 항목의 약한 연결(세기 1)도 보인다 */
@@ -247,7 +252,7 @@ export async function mount(root, ctx) {
   }
   /** 선 굵기 — 세기 2 이상만 볼 때는 약한 연결을 뺀다 */
   const effCount = (e, F) => (F.minS >= 2 && !relaxed(F, e) ? Math.max(1, e.count - (e.weak ?? 0)) : e.count);
-  const structSig = (F) => JSON.stringify([F.mode, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.T, F.layers, F.wide, F.mm]);
+  const structSig = (F) => JSON.stringify([F.mode, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.layers, F.wide, F.mm]);
 
   /** 스토리별 이어진 이웃 수(지금 거르개 · 컷오프 · 범위 안, 종류 거르개는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
   function degrees(F) {
@@ -572,7 +577,7 @@ export async function mount(root, ctx) {
     }
     if (!c) c = bestCenter(F, nb);
     if (!c) {
-      const cutAll = degreesCached({ ...F, T: null }); // 컷오프를 풀면 보일 스토리
+      const cutAll = degreesCached({ ...F, R: READ_ALL, cut: 'all' }); // 컷오프를 풀면 보일 스토리
       body.append(emptyState(LABELS.noNeighborsFiltered, { cut: cutAll.size ? cutAll.size : 0, filtered: filtered(F) }));
       summary.replaceChildren();
       centerCombo.set('');
@@ -1259,7 +1264,7 @@ export async function mount(root, ctx) {
     modeSeg.set(F.mode);
     strengthSeg.set(String(F.minS));
     targetCombo.set(F.tg ? fmt.targetName(F.tg) : '');
-    if (candT !== F.T) { candT = F.T; cand = candidatesFor(F.T); rebuildThreadOptions(); }
+    if (candT !== F.cut) { candT = F.cut; cand = candidatesFor(F.R); rebuildThreadOptions(); }
     threadSelect.value = F.th ?? '';
     kindChips.sync(F.kinds);
     typeChips.sync(F.types);
