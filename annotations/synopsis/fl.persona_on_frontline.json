@@ -1,0 +1,49 @@
+{
+  "unit": "fl:persona_on_frontline",
+  "session": "W9l",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "의식 소실 사건과 검은 괴물 소문이 번진 방주에서, 지휘관이 다른 세계에서 온 페르소나 구사자들과 손잡는다.",
+  "synopsis": "카운터스가 휴가를 보내던 무렵, 방주 곳곳에서 사람들이 까닭 없이 의식을 잃고 검은 괴물을 보았다는 소문이 번진다. 정의 괴도단과 함께 수수께끼의 괴도를 쫓던 지휘관은 D-WAVE가 일어난 곳과 괴물 목격 지점이 겹친다는 것을 알게 되고, 그 과정에서 다른 세계에서 소환된 아마기 유키코와 말하는 곰, 아이기스, 그리고 괴도의 정체였던 퀸과 모나를 만난다. 모두 마음에서 태어난 힘 페르소나를 부리는 이들이었다.\n\n일행은 사람들을 쓰러뜨리는 그림자를 D-섀도라 부르고 그 근원을 쫓는다. 지휘관을 원망하던 남자가 아우터 림 격벽을 거미줄로 뒤덮고는 무언가에게서 받은 힘이라며 두 주 뒤 방주 전체를 덮겠다고 예고한다. 그 남자가 아우터 림 출신의 앨든임을 알아낸 일행은 은화의 훈련을 거쳐 심판의 괴도단을 꾸리고, 앨든의 마음이 만든 이세계 깊은 곳에서 거대한 거미가 된 그를 쓰러뜨린다. 개심한 앨든은 죗값을 치르기로 하고, 소환자들은 이틀 뒤 자취를 감춘다. 앨든에게 힘을 준 것이 무엇이었는지는 남은 채다.",
+  "scenes": [
+    { "scene": "fl:persona_on_frontline_00", "text": "휴가 중인 카운터스가 원인 모를 의식 소실 사건과 검은 괴물 목격담 뉴스를 본다" },
+    { "scene": "fl:persona_on_frontline_01", "text": "정의 괴도단과 잠복하던 지휘관 앞에 괴도 둘이 나타나 거대한 그림자를 불러내고 달아난다" },
+    { "scene": "fl:persona_on_frontline_02", "text": "엔더슨이 D-WAVE와 괴물 목격 지점이 겹친다며 조사를 맡기고, 거리에서 레오나와 곰을 만난다" },
+    { "scene": "fl:persona_on_frontline_03", "text": "레오나가 지키던 말하는 곰에게 유키코가 달려온다" },
+    { "scene": "fl:persona_on_frontline_04", "text": "소환된 유키코에게 지휘관이 머물 곳과 돌아갈 길을 약속하고, 유키코는 돕겠다고 한다" },
+    { "scene": "fl:persona_on_frontline_05", "text": "공원에서 하늘만 보던 소녀 아이기스가 유키코에게 페르소나를 부리는지 묻는다" },
+    { "scene": "fl:persona_on_frontline_06", "text": "페르소나와 D-WAVE에 대해 이야기를 나누고, 셋이 일행에 합류한다" },
+    { "scene": "fl:persona_on_frontline_07", "text": "첫 의식 소실이 일어나기 두 시간 전, 지휘관을 원망하던 남자에게 무언가가 파고든다" },
+    { "scene": "fl:persona_on_frontline_08", "text": "옥상에서 괴도 둘과 다시 만나고, 덮쳐 온 그림자를 유키코와 곰의 페르소나가 물리친다" },
+    { "scene": "fl:persona_on_frontline_09", "text": "에이드의 카페에서 괴도 퀸과 모나의 사정을 듣고, 그보다 먼저 온 누군가가 있음을 알게 된다" },
+    { "scene": "fl:persona_on_frontline_10", "text": "사건을 정리하며 괴물을 D-섀도라 부르기로 하고, 모나와 거래를 맺는다" },
+    { "scene": "fl:persona_on_frontline_11", "text": "처음 D-WAVE가 일어난 뒷골목에서 D-섀도와 싸우고, 괴물 영상이 처음으로 보도된다" },
+    { "scene": "fl:persona_on_frontline_12", "text": "끝없이 나타나는 D-섀도를 쫓아, 곰과 모나가 아우터 림 쪽의 기운을 느낀다" },
+    { "scene": "fl:persona_on_frontline_13", "text": "거미줄로 뒤덮인 아우터 림 격벽 앞에 그 남자가 나타나 두 주 뒤를 예고한다" },
+    { "scene": "fl:persona_on_frontline_14", "text": "격벽이 통제되지만 중앙 정부는 움직이지 않고, 모나가 남은 시간을 짚는다" },
+    { "scene": "fl:persona_on_frontline_15", "text": "거미줄의 성질을 짐작하고, 퀀시에게 안으로 들어갈 길을 찾게 한다" },
+    { "scene": "fl:persona_on_frontline_16", "text": "정비 통로로 아우터 림에 들어가자 거미줄 대신 D-섀도가 돌아다니고, 아이기스가 소중한 사람을 이야기한다" },
+    { "scene": "fl:persona_on_frontline_17", "text": "주민 하나 없이 끝없이 이어지는 이상한 공간에서 일행이 물러난다" },
+    { "scene": "fl:persona_on_frontline_18", "text": "곰이 냄새로 남자를 찾을 수 있다고 해, 셋으로 나눠 조사에 나선다" },
+    { "scene": "fl:persona_on_frontline_19", "text": "도서관 · 중앙 정부 · 뒷골목에서 남자의 뒤를 캔다" },
+    { "scene": "fl:persona_on_frontline_20", "text": "남자의 이름이 앨든임을 알아내고 냄새로 위치를 찾지만, 경비가 삼엄해 물러난다" },
+    { "scene": "fl:persona_on_frontline_21", "text": "소환자들이 쓸 총과 장비를 보급받는다" },
+    { "scene": "fl:persona_on_frontline_22", "text": "은화의 기초 전술 훈련이 시작되고, 지휘관도 함께 구른다" },
+    { "scene": "fl:persona_on_frontline_23", "text": "쉬는 시간에 두 괴도단이 모여 심판의 괴도단을 꾸린다" },
+    { "scene": "fl:persona_on_frontline_24", "text": "훈련을 마친 일행이 예고장을 준비하고, 모나의 잠입 도구로 보안문을 연다" },
+    { "scene": "fl:persona_on_frontline_25", "text": "가장 깊은 곳의 고치를 부수자 앨든이 나와 거대한 거미가 된다" },
+    { "scene": "fl:persona_on_frontline_26", "text": "쓰러진 앨든이 개심해 체포되고, 그의 마음이 만든 세계가 무너진다" },
+    { "scene": "fl:persona_on_frontline_27", "text": "귀환 전날 함께 식사를 나눈 소환자들이 이틀 뒤 사라지고, 비리 사건 뉴스가 이어진다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9l",
+      "hash": "66f5d1d2e0",
+      "note": "입력(요약 · 사실 F2850–F2868 · F2904–F2905 · 시점)과 대조: 최초의 소환자 · 힘을 준 무언가(Q371 · Q372)는 열어 둠, 앨든은 이름이 드러나는 자리 전까지 '지휘관을 원망하던 남자'로"
+    }
+  ]
+}
