@@ -1,0 +1,24 @@
+{
+  "subject": "concept:꽃의_맹약",
+  "versions": [
+    {
+      "at": "event_cherryblossom",
+      "text": "사쿠라 · 목단 · 로산나가 니케가 되기로 했을 때 머스탱과 맺은 약속. 뒷세계의 어둠을 인정하되 그 위에 군림해 정도를 벗어난 것을 벌하고, 어기면 반드시 대가를 치른다.",
+      "src": "ac596ac19c",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "3a8b35eb3d",
+          "note": "F831·F829(세 보스와 머스탱의 약속 · 어둠 위에 군림해 벌함 · 대가) — 1판"
+        }
+      ]
+    }
+  ]
+}

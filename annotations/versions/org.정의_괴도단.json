@@ -1,0 +1,43 @@
+{
+  "subject": "org:정의_괴도단",
+  "versions": [
+    {
+      "at": "event_phantomthiefvsdetective",
+      "text": "괴도 팬텀이 조수 퀀시, 경찰 미란다와 함께 결성한 괴도단. 반지를 주인에게 돌려주는 임무를 위해 잠시 모였다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "c2d6bbc4d7",
+          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), fl:go_ninja_thief_00 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
+        }
+      ]
+    },
+    {
+      "at": "fl:go_ninja_thief",
+      "text": "괴도 팬텀이 이끄는 괴도단. 한 임무를 위해 잠시 모였던 것이 이어져, 넷이던 단원에 델타가 들어와 다섯이 되었다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "9227623a5c",
+          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), fl:go_ninja_thief_00 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "subject": "item:화무십일홍",
+  "versions": [
+    {
+      "at": "event_newyearnewsword",
+      "text": "홍련의 언니 장화의 검. 장화가 죽은 뒤 홍련이 지상에서 살아남으려 써 왔고, 부서진 칼날은 한 무기 장인이 장화의 코어 조각으로 보완해 고쳤다.",
+      "src": "9215ebb203",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "8a893d71d4",
+          "note": "F1239·F1241(언니 장화의 검 · 홍련이 씀 · 코어 조각으로 수리) — 앞 체크 칸 내용은 안 씀, 1판"
+        }
+      ]
+    }
+  ]
+}

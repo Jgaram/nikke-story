@@ -1,0 +1,24 @@
+{
+  "subject": "org:리콜&릴리즈",
+  "versions": [
+    {
+      "at": "char:120",
+      "text": "NIMPH로 니케의 기억을 어디까지 제어할 수 있는지 확인하는 프로젝트를 위한 특수 스쿼드. 여기 속한 N102는 기본 정보만 남긴 채 날마다 기억 소거를 받는다.",
+      "src": "22d2cf08a9",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "0aa8bec060",
+          "note": "F663(NIMPH 기억 제어 프로젝트용 특수 스쿼드 · N102 매일 기억 소거) — 1판"
+        }
+      ]
+    }
+  ]
+}

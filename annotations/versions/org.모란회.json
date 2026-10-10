@@ -1,0 +1,24 @@
+{
+  "subject": "org:모란회",
+  "versions": [
+    {
+      "at": "event_cherryblossom",
+      "text": "방주 뒷세계의 3대 조직 가운데 하나로, 협객이라 불리는 소수 정예 조직. 보스 목단은 뒷세계의 질서를 맡은 니케 스쿼드 언더월드 퀸의 한 사람이다.",
+      "src": "341aa52e22",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "52aa9dced4",
+          "note": "F830(3대 조직 · 소수 정예 협객 · 보스 목단 · 언더월드 퀸) — 뒤 기록은 일화라 1판"
+        }
+      ]
+    }
+  ]
+}

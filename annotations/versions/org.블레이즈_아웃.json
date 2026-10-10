@@ -1,0 +1,17 @@
+{
+  "subject": "org:블레이즈_아웃",
+  "versions": [
+    {
+      "at": "fl:reborn_evil",
+      "text": "방주의 전염병 대응 스쿼드. 바이러스가 퍼질 수 있는 곳을 주변 거주지째 불태우며, 사태가 심각하면 아우터 림 전체도 태울 수 있다.",
+      "src": "77605216ea",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W15e", "hash": "f337b77d22", "note": "F2132·U330(전염병 대응 스쿼드 · 거주지째 불태움) — 1판" }
+      ]
+    }
+  ]
+}

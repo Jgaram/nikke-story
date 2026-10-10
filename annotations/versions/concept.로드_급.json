@@ -1,0 +1,24 @@
+{
+  "subject": "concept:로드_급",
+  "versions": [
+    {
+      "at": "ch01",
+      "text": "중대 급 랩쳐를 지휘하는 랩쳐. 강한 에너지 반응을 내고 전투력이 높아, 한 스쿼드가 맞서면 전멸할 수도 있다.",
+      "src": "44b2c97b5c",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "621fb08190",
+          "note": "d_main_01_06_s#0·F12(중대 급 지휘 개체 · 전멸 위험) — 뒤는 사례라 1판"
+        }
+      ]
+    }
+  ]
+}

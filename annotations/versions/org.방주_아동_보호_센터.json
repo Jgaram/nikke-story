@@ -1,0 +1,43 @@
+{
+  "subject": "org:방주_아동_보호_센터",
+  "versions": [
+    {
+      "at": "sub:제니퍼f_00",
+      "text": "학대받거나 집 없는 아이를 보호한다는 비영리 단체. 아이들에게 위치 추적 장치를 달아 두었고, 아이들 사이엔 성인이 되면 강제로 뇌를 기증시켜 니케로 만든다는 소문이 돈다.",
+      "src": "83a68eeb07",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "adb4c24595",
+          "note": "F693·F694·U100(보호 단체 · 추적 장치 · 소문), fl:lie_cause_recoil F2478·F2479·F2482(암살자 훈육소 내막 — 정체가 드러나 판)"
+        }
+      ]
+    },
+    {
+      "at": "fl:lie_cause_recoil",
+      "text": "아이를 보호한다는 비영리 단체였지만, 실은 원장 제니퍼가 아이들을 암살자로 키우던 곳으로 드러났다. 센터와 아이들은 중앙 정부에 넘겨졌다.",
+      "src": "fd8de3b92e",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2ed7455235",
+          "note": "F693·F694·U100(보호 단체 · 추적 장치 · 소문), fl:lie_cause_recoil F2478·F2479·F2482(암살자 훈육소 내막 — 정체가 드러나 판)"
+        }
+      ]
+    }
+  ]
+}

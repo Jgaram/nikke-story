@@ -1,0 +1,24 @@
+{
+  "subject": "item:네이키드_킹",
+  "versions": [
+    {
+      "at": "event_goddessfall1",
+      "text": "크라운의 무장으로, 모아 둔 에블라 입자를 한순간에 열 충격파로 바꾸어 쓴다. 크게 다친 크라운에게서 넘겨받은 차임이 이것으로 인디빌리아를 쓰러뜨렸다.",
+      "src": "ebe053c2a3",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "544ad90d0b",
+          "note": "event_goddessfall2_01_e#63-71 원문·F2303·F2309(크라운 무장 · 에블라 입자→열 충격파 · 차임이 씀) — 앞 체크 칸 세부는 안 씀, 1판"
+        }
+      ]
+    }
+  ]
+}

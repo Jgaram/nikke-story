@@ -1,0 +1,24 @@
+{
+  "subject": "place:글리터_산맥",
+  "versions": [
+    {
+      "at": "event_alonesurvivor",
+      "text": "북부의 해발 3,000m에 이르는 설산 산맥. 극한의 추위와 지형 때문에 언리미티드도 꺼리고, 핸드폰 신호도 닿지 않는 오지다.",
+      "src": "f9144b4cf9",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "fbe074b575",
+          "note": "F1203·F1204(북부 해발 3,000m 설산 · 언리미티드도 꺼림 · 신호 안 닿음) — 1판"
+        }
+      ]
+    }
+  ]
+}
