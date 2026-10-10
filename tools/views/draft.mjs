@@ -34,6 +34,7 @@
  *
  * X3 — 중요도 판정 시안 표(판정 · 기준 시점 · 이력 · 2회독을 얹은 시안 · 다시 볼 단위)도 같이 뽑는다 → data/views/importance/ (tools/views/importance.mjs)
  * X3f-1c — 척추 선정 계산(문 · ⓐ · ⓒ · ⓑ)도 같은 디렉터리에 → spine.md · spine.csv (tools/views/spine.mjs)
+ * X3g-1b — 주요 인물 계산(말한 씬 × 변화 줄 · 끊는 선 · 변형)도 같은 디렉터리에 → majors.md · majors.csv (tools/views/majors.mjs)
  * X3f-1d — 빌드업 마무리((가) 긴 회수 · 복선의 답 · (나) · (다) 마무리 기록과 사슬)도 같이 뽑는다 → data/views/closures/ (tools/views/closures.mjs)
  * X3d — 인물별 집계(등장 합치기 · 함께 나옴 · 기록 · 줄기 · 변화 · 마무리 — 화면 5)도 같이 뽑는다 → data/views/persons/ (tools/views/persons.mjs)
  */
@@ -50,6 +51,7 @@ import { LINKS_DIR, buildLinks, renderLinksReport, writeLinksViews } from './lin
 import { IMPORTANCE_DIR, buildImportance, renderImportanceReport, writeImportanceViews } from './importance.mjs';
 import { LEADS_DIR, buildLeads, renderLeadsReport, writeLeadsViews } from './leads.mjs';
 import { renderSpineReport, spineMetrics, writeSpineViews } from './spine.mjs';
+import { majorMetrics, renderMajorsReport, writeMajorsViews } from './majors.mjs';
 import { CLOSURES_DIR, buildClosures, renderClosuresReport, writeClosuresViews } from './closures.mjs';
 import { PERSONS_DIR, buildPersons, renderPersonsReport, writePersonsViews } from './persons.mjs';
 
@@ -446,6 +448,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const v5 = buildImportance(ds, ctx, order, { readLayers: dir === READ1_DIR ? loadReadLayers() : null });
   const v6 = buildLeads(ds, ctx, order);
   const v7 = spineMetrics(ds, ctx, order);
+  const v10 = majorMetrics(ds, ctx, order);
   const v8 = buildClosures(ds, ctx, order);
   const v9 = buildPersons(ds, ctx, order, { rel: v3.rel, st: v3.st, ct: { rows: v3.changes } });
   ctx.close();
@@ -467,6 +470,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.log(`→ ${displayPath(out5)}/ (중요도 판정 X3 — tools/views/importance.mjs)`);
     writeSpineViews(v7, out5, { source });
     console.log(`→ ${displayPath(out5)}/spine.md (척추 선정 계산 X3f-1c — tools/views/spine.mjs)`);
+    writeMajorsViews(v10, out5, { source });
+    console.log(`→ ${displayPath(out5)}/majors.md (주요 인물 계산 X3g-1b — tools/views/majors.mjs)`);
     const out6 = out === VIEWS_DIR ? LEADS_DIR : path.join(out, 'leads');
     writeLeadsViews(v6, out6, { source });
     console.log(`→ ${displayPath(out6)}/ (주역 명단 X3f — tools/views/leads.mjs)`);
@@ -477,7 +482,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     writePersonsViews(v9, out8, { source });
     console.log(`→ ${displayPath(out8)}/ (인물별 집계 X3d — tools/views/persons.mjs)`);
   } else console.log(renderReport(v, { source }) + '\n' + renderRead2Report(v, v2, { source }) + '\n' + renderTimelineReport(v3, { source }) + '\n' + renderLinksReport(v4, { source }) +
-    '\n' + renderImportanceReport(v5, { source }) + '\n' + renderSpineReport(v7, { source }) + '\n' + renderLeadsReport(v6, { source }) + '\n' + renderClosuresReport(v8.b, v8.v, { source }) + '\n' + renderPersonsReport(v9, { source }));
+    '\n' + renderImportanceReport(v5, { source }) + '\n' + renderSpineReport(v7, { source }) + '\n' + renderMajorsReport(v10, { source }) + '\n' + renderLeadsReport(v6, { source }) + '\n' + renderClosuresReport(v8.b, v8.v, { source }) + '\n' + renderPersonsReport(v9, { source }));
   console.log(`단위 ${v.totals.units} · 씬 엣지 ${v.sceneEdges.length} · 단위 엣지 ${v.unitEdges.length} · 의문 ${v.questions.length} · 대상 ${v.targets.length}${v.problems.length ? ` · 문제 ${v.problems.length}` : ''}`);
   console.log(`2회독 — 단위 ${v2.totals.read2Units} · 씬 엣지 ${v2.sceneEdges.length} · 합친 단위 엣지 ${v2.unitEdges.length} · 인물 변화 ${v2.totals.changes}${v2.problems.length ? ` · 문제 ${v2.problems.length}` : ''}`);
 }

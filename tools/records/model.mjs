@@ -13,6 +13,7 @@
  *   G<n>    줄기 관계 — annotations/threads.json relations (B0b): 원인 · 포함 · 같은 진실 · 맞물림
  *   K<n>    층 판정 — annotations/layers.json units (B0b-2): 메인 밖 단위 하나의 등급(필수 · 보강 · 참고 · 독립 — X3f)과 그 근거 한 건. 층은 계산(tools/records/layers.mjs)
  *   Z<n>    주역 — annotations/leads.json leads (X3f): 메인 주역 명단의 한 사람 — 주역이 되는 메인 챕터(from)와 범위(arcs). 초안은 tools/views/leads.mjs
+ *   C<n>    주요 인물 — annotations/majors.json majors (X3g-1b): 감정 기준(결정적 순간 → 필수)의 인물 — 척추가 오래 머물고 바뀌는 것을 보여 준 인물과 그 자리(from). 계산은 tools/views/majors.mjs
  *   B<n>    척추 — annotations/spine.json spine (X3f-1b · 1c): 메인 챕터와 함께 채점하지 않는 기준 단위(이벤트 · 사이드). 확정 = 척추, 기각 = 문 안이지만 미달. 계산은 tools/views/spine.mjs
  *   O<n>    마무리 — annotations/closures.json closures (X3f-1d): 오래 쌓인 연작 · 갈등 · 관계 · 성장이 끝난 자리(end)와 쌓인 자리(built — 기록 ID · 단위 키). 사슬 초안은 tools/views/closures.mjs
  *   H<n>    합류 — annotations/closures.json merges (X3f-1g): 한 결판(end)에서 함께 끝난 마무리 기록 O 둘 이상(members)을 한 이야기의 끝으로 묶는다
@@ -43,6 +44,8 @@ export const THREADS_PATH = path.join(ROOT, 'annotations/threads.json');
 export const LAYERS_PATH = path.join(ROOT, 'annotations/layers.json');
 /** 주역 명단 (X3f) — 하나. 예시 디렉터리에서는 `_leads.json` */
 export const LEADS_PATH = path.join(ROOT, 'annotations/leads.json');
+/** 주요 인물 (X3g-1b) — 감정 기준에서 결정적 순간이 필수까지 오르는 인물. 예시 디렉터리에서는 `_majors.json` */
+export const MAJORS_PATH = path.join(ROOT, 'annotations/majors.json');
 /** 척추 (X3f-1b · 1c) — 메인 챕터와 함께 채점하지 않는 기준 단위(이벤트 · 사이드). 예시 디렉터리에서는 `_spine.json` */
 export const SPINE_PATH = path.join(ROOT, 'annotations/spine.json');
 /** 마무리 기록 (X3f-1d) — 하나. 예시 디렉터리에서는 `_closures.json` */
@@ -109,6 +112,7 @@ export const KINDS = {
   layer: { label: '층', prefix: 'K' },
   lead: { label: '주역', prefix: 'Z' },
   spine: { label: '척추', prefix: 'B' },
+  major: { label: '주요 인물', prefix: 'C' },
   closure: { label: '마무리', prefix: 'O' },
   merge: { label: '합류', prefix: 'H' },
   mention: { label: '언급', prefix: 'I' },
@@ -130,6 +134,7 @@ export const ID = {
   layer: /^K(\d+)$/,
   lead: /^Z(\d+)$/,
   spine: /^B(\d+)$/,
+  major: /^C(\d+)$/,
   closure: /^O(\d+)$/,
   merge: /^H(\d+)$/,
   mention: /^I(\d+)$/,
@@ -141,7 +146,7 @@ export const ID = {
   watch: /^W(\d+)$/,
 };
 /** 한 글자 접두 + 번호인 ID의 종류 — 범위 고르기(I3..I9) · 다음 번호에 쓴다 */
-export const SINGLE_PREFIX = { L: 'link', J: 'thread', G: 'relation', K: 'layer', Z: 'lead', B: 'spine', O: 'closure', H: 'merge', I: 'mention', E: 'echo', D: 'change', U: 'life', Y: 'edge', T: 'affil' };
+export const SINGLE_PREFIX = { L: 'link', J: 'thread', G: 'relation', K: 'layer', Z: 'lead', B: 'spine', C: 'major', O: 'closure', H: 'merge', I: 'mention', E: 'echo', D: 'change', U: 'life', Y: 'edge', T: 'affil' };
 
 /** 파일 · 항목에 쓸 수 있는 칸. 모르는 칸은 경고한다(오타 잡기) */
 export const FIELDS = {
@@ -174,6 +179,10 @@ export const FIELDS = {
   // gate: 문(공지가 소개한 말 — 1주년 · 신년 · 사이드) · notice: 공지 근거(게시일 · 제목 · 말), 사이드는 없다
   spineFile: ['_comment', 'session', 'by', 'date', 'note', 'criteria', 'spine'],
   spine: ['id', 'unit', 'gate', 'notice', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
+  // 주요 인물 (X3g-1b) — 인물 하나에 하나: 확정 = 주요 인물(결정적 순간 → 필수), 기각 = 띠 안이지만 끊는 선 아래. criteria: 점수 문턱 · 띠(tools/views/majors.mjs)
+  // from: 주요 인물이 되는 척추 자리(그때까지 읽은 척추의 몫으로 줄인 문턱을 그 뒤 내내 넘는 첫 자리 — 감정 필수의 --from) · scenes · changes · score: 계산 그대로 적어 둔 수(표시 · 근거용)
+  majorsFile: ['_comment', 'session', 'by', 'date', 'note', 'criteria', 'majors'],
+  major: ['id', 'person', 'from', 'scenes', 'changes', 'score', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
   // 마무리 기록 (X3f-1d) — type: 연작 · 갈등 · 관계 · 성장 · chain: 사슬 초안 키(tools/views/closures.mjs — 손으로 더한 것은 없다) ·
   // built: 쌓인 자리(기록 ID — 사실 · 의문 · 사건 · 인물 변화 · 떡밥 …, 또는 단위 키 — 연작의 앞 편) · end: 끝난 단위 키 · closing: 끝난 단위의 닫는 기록 ID
   closuresFile: ['_comment', 'session', 'by', 'date', 'note', 'closures', 'merges'],
@@ -202,7 +211,7 @@ export const FIELDS = {
 export const READ2_SECTIONS = { mentions: 'mention', echoes: 'echo', changes: 'change', life: 'life' };
 
 /** 1회독 읽기 단위 기록(사실 · 의문 · 사건 · 시점, 2회독 바로잡기 포함)인가 — 정체 연결 · 줄기 · 층 판정 · 주역 · 2회독 기록 · 수동 엣지가 아니다 */
-export const isRecord = (c) => !c.people && !c.threads && !c.layers && !c.leads && !c.spine && !c.closures && !c.read2 && !c.links && !c.affil;
+export const isRecord = (c) => !c.people && !c.threads && !c.layers && !c.leads && !c.spine && !c.majors && !c.closures && !c.read2 && !c.links && !c.affil;
 
 /** 단위 키 → 파일 이름. 파트를 나눠 읽는 단위는 첫 파트를 붙인다(event_staranis1.p4.json) */
 export function fileNameFor(unit, parts = null) {
@@ -292,7 +301,7 @@ function readRecordFiles(dir, problems, prefix = '') {
  *   annotations/watch.json · `_watch.json`.
  *   read2: 2회독 기록 디렉터리(기본 read2DirFor(dir)). 2회독 파일 이름은 `read2/<파일>`로 보인다
  */
-export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, spine, closures, read2, links, watch, affiliations } = {}) {
+export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, spine, majors, closures, read2, links, watch, affiliations } = {}) {
   const problems = [];
   const files = readRecordFiles(dir, problems);
   const dir2 = read2 !== undefined ? read2 : read2DirFor(dir);
@@ -317,15 +326,17 @@ export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, s
   const watchFile = side(watch !== undefined ? watch : isMain ? WATCH_PATH : path.join(dir, '_watch.json'));
   const closuresFile = side(closures !== undefined ? closures : isMain ? CLOSURES_PATH : path.join(dir, '_closures.json'));
   const affilFile = side(affiliations !== undefined ? affiliations : isMain ? AFFILIATIONS_PATH : path.join(dir, '_affiliations.json'));
+  const majorsFile = side(majors !== undefined ? majors : isMain ? MAJORS_PATH : path.join(dir, '_majors.json'));
   const base = collect(files, peopleFile, threadsFile, layersFile, leadsFile, spineFile);
   collect2(files2, linksFile, base);
   collectClosures(closuresFile, base);
   collectAffiliations(affilFile, base);
+  collectMajors(majorsFile, base);
   // 볼 거리는 후보가 아니라 작업 메모다 — 후보 목록 밖에 따로 둔다
   const watchItems = watchFile?.data && typeof watchFile.data === 'object'
     ? arr(watchFile.data.items).map((o, i) => ({ file: watchFile.name, index: i, obj: o, id: o?.id ?? null, unit: o?.unit ?? null, parts: o?.parts ?? null }))
     : [];
-  return { dir, dir2, files, files2, people: peopleFile, threads: threadsFile, layers: layersFile, leads: leadsFile, spine: spineFile, closures: closuresFile, links: linksFile, affiliations: affilFile, watch: watchFile, watchItems, problems, ...base };
+  return { dir, dir2, files, files2, people: peopleFile, threads: threadsFile, layers: layersFile, leads: leadsFile, spine: spineFile, majors: majorsFile, closures: closuresFile, links: linksFile, affiliations: affilFile, watch: watchFile, watchItems, problems, ...base };
 }
 
 /** 소속 기록 — act는 소속 · 합류 · 이탈, text는 "인물 → 조직". 단위에 딸리지 않는다(근거 씬은 evidence) */
@@ -338,6 +349,17 @@ function collectAffiliations(file, { candidates }) {
       text: `${o?.person ?? '?'} → ${o?.org ?? '?'}${o?.role ? ` (${o.role})` : ''}`,
       evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence, status: o?.status, by: o?.by ?? d.by ?? null, reviews: arr(o?.reviews),
       note: o?.note ?? null, section: 'affiliations', index: i, obj: o }));
+}
+
+/** 주요 인물(X3g-1b) — act는 비우고, text는 인물과 주요 인물이 되는 자리. 단위에 딸리지 않는다 */
+function collectMajors(file, { candidates }) {
+  if (!file?.data || typeof file.data !== 'object') return;
+  const d = file.data;
+  arr(d.majors).forEach((o, i) =>
+    candidates.push({ file: file.name, unit: null, parts: null, session: d.session ?? null, fileBy: d.by ?? null, majors: true,
+      kind: 'major', role: 'major', act: null, parent: null, id: o?.id ?? null, text: `${o?.person ?? '?'} ${o?.from ?? '?'}부터`,
+      evidence: undefined, reason: o?.reason, confidence: o?.confidence, status: o?.status, by: o?.by ?? d.by ?? null, reviews: arr(o?.reviews),
+      note: o?.note ?? null, section: 'majors', index: i, obj: o }));
 }
 
 const arr = (x) => (Array.isArray(x) ? x : []);
@@ -491,7 +513,7 @@ function collect2(files2, linksFile, { candidates, revisits, revisitDone }) {
 
 /** 다음에 쓸 번호 — 데이터셋 전체(기각 포함)에서 가장 큰 번호 + 1. 사건 번호는 사실 · 의문마다 따로 */
 export function nextIds(ds) {
-  const max = { F: 0, Q: 0, S: 0, V: 0, L: 0, J: 0, G: 0, K: 0, Z: 0, B: 0, O: 0, H: 0, I: 0, E: 0, D: 0, U: 0, Y: 0, T: 0, W: 0 };
+  const max = { F: 0, Q: 0, S: 0, V: 0, L: 0, J: 0, G: 0, K: 0, Z: 0, B: 0, C: 0, O: 0, H: 0, I: 0, E: 0, D: 0, U: 0, Y: 0, T: 0, W: 0 };
   const events = new Map();
   const bump = (p, n) => {
     if (n > max[p]) max[p] = n;
@@ -503,7 +525,7 @@ export function nextIds(ds) {
     else if ((m = id.match(ID.event))) {
       const k = `${m[1]}${m[2]}`;
       events.set(k, Math.max(events.get(k) ?? 1, Number(m[3])));
-    } else if ((m = id.match(/^([LJGKZBOHIEDUYT])(\d+)$/))) bump(m[1], Number(m[2]));
+    } else if ((m = id.match(/^([LJGKZBCOHIEDUYT])(\d+)$/))) bump(m[1], Number(m[2]));
   }
   for (const r of ds.revisits) {
     const m = String(r.id ?? '').match(ID.revisit);

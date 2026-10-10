@@ -157,7 +157,7 @@ test('주역 명단 초안(X3f ① · X3f-1c) — 척추 축 · 같은 인물 �
   assert.match(rep, /\| 신데렐라 \(= 거울_공주 · 아나키오르\) \|/);
 });
 
-test('감정 재료 ⑧(X3g) — 주역 · 척추 인물의 변화 D · 마무리 O만, 지휘관과의 관계 빼고, 같은 인물 합침', () => {
+test('감정 재료 ⑧(X3g) — 주요 인물 · 척추 인물의 변화 D · 마무리 O만, 지휘관과의 관계 빼고, 같은 인물 합침', () => {
   const sig = layerSignals(ds, buildRead1Views(ds, ctx, order), read2Edges(ds, ctx, order));
   const byId = new Map(ds.candidates.filter((c) => c.id).map((c) => [c.id, c]));
   const spine = spineUnits(ds);
@@ -165,7 +165,7 @@ test('감정 재료 ⑧(X3g) — 주역 · 척추 인물의 변화 D · 마무�
   assert.ok(all.length > 50, `${all.length}`);
   for (const m of all) {
     assert.ok(!/^ch\d/.test(m.unit) && !spine.has(m.unit), `${m.record} — 척추 단위는 모으지 않는다`);
-    assert.equal(m.grade, EMOTION_GRADE[m.cls], `${m.record} — 주역 필수 · 척추 인물 보강`);
+    assert.equal(m.grade, EMOTION_GRADE[m.cls], `${m.record} — 주요 인물 필수 · 척추 인물 보강`);
     if (m.type === 'D') {
       const c = byId.get(m.record);
       assert.ok(c.kind === 'change' && c.act === '변화' && c.unit === m.unit && EMOTION_ASPECTS.includes(c.obj.aspect), `${m.record} — 이 단위의 변화 D(성격 빼고)`);
@@ -177,15 +177,19 @@ test('감정 재료 ⑧(X3g) — 주역 · 척추 인물의 변화 D · 마무�
       assert.ok(c.obj.type === '성장' || !c.obj.about.includes('person:지휘관'), `${m.record} — 지휘관과의 관계 · 갈등 마무리는 뺀다`);
     }
   }
-  // 지휘관 자신의 변화(신념 · 기억)는 주역의 것
-  assert.ok(all.some((m) => m.person === 'person:지휘관' && m.cls === '주역' && m.aspect !== '관계'));
-  // 같은 인물 — 릴리바이스의 변화는 주역 릴리스의 것
-  assert.ok(all.some((m) => m.person === 'person:릴리바이스' && m.lead === 'person:릴리스' && m.cls === '주역'));
-  // 사이드 SECOND AFFECTION — 마리안(주역, ch00)의 소속 변화 D418 · 척추가 쌓은 성장의 끝 O12(닫는 기록 D417)
+  // 주요 인물 = annotations/majors.json 확정 항목(X3g-1b — 주역 명단과 따로)
+  const majors = new Map(ds.candidates.filter((c) => c.kind === 'major' && c.status === '확정').map((c) => [c.obj.person, c.obj.from]));
+  assert.ok(majors.size >= 1);
+  for (const m of all.filter((x) => x.cls === '주요 인물')) assert.equal(m.from, majors.get(m.major), `${m.record} — from은 주요 인물의 from`);
+  // 지휘관 자신의 변화(신념 · 기억)는 명단대로(지금 주요 인물)
+  assert.ok(all.some((m) => m.person === 'person:지휘관' && m.cls === '주요 인물' && m.aspect !== '관계'));
+  // 주역이어도 주요 인물이 아니면 보강까지 — 같은 인물: 릴리바이스의 변화는 릴리스와 합쳐 센 척추 인물의 것
+  assert.ok(all.some((m) => m.person === 'person:릴리바이스' && m.cls === '척추 인물' && m.grade === '보강'));
+  // 사이드 SECOND AFFECTION — 마리안(주요 인물, ch48)의 소속 변화 D418 · 척추가 쌓은 성장의 끝 O12(닫는 기록 D417)
   const sa = sig.get('side:second_affection').emotion;
-  assert.deepEqual([sa.grade, sa.from], ['필수', 'ch00']);
+  assert.equal(sa.grade, '필수');
   const d418 = sa.moments.find((m) => m.record === 'D418');
-  assert.deepEqual([d418.cls, d418.aspect, d418.from], ['주역', '소속', 'ch00']);
+  assert.deepEqual([d418.cls, d418.aspect, d418.from], ['주요 인물', '소속', majors.get('person:마리안')]);
   assert.ok(d418.same.length && d418.same.every((x) => /^D\d+@/.test(x)), '척추의 같은 줄 단서');
   const o12 = sa.moments.find((m) => m.record === 'O12');
   assert.deepEqual([o12.type, o12.basis, o12.spineBuilt], ['O', 'D417', true]);
@@ -231,8 +235,8 @@ test('records.mjs layers — 판정 · 시안 · 2회독 입력을 함께 보인
   const sp = node(['tools/records.mjs', 'layers', 'event_redash']);
   assert.match(sp.stdout, /^■ event_redash \[이벤트\] 척추 — 채점하지 않는다/, '척추 단위는 머리에 알린다');
   const sa = node(['tools/records.mjs', 'layers', 'side:second_affection']);
-  assert.match(sa.stdout, /감정 재료\(X3g — 결정적 순간 후보.*\): 상한 필수 · ch00부터/);
-  assert.match(sa.stdout, /D418 마리안 소속(\([^)]*\))? \[주역 → 필수 · ch00부터\]: .* \| 척추 같은 줄 D\d+@/);
+  assert.match(sa.stdout, /감정 재료\(X3g — 결정적 순간 후보.*\): 상한 필수 · [\w:]+부터/);
+  assert.match(sa.stdout, /D418 마리안 소속(\([^)]*\))? \[주요 인물 → 필수 · [\w:]+부터\]: .* \| 척추 같은 줄 D\d+@/);
   const r1 = node(['tools/records.mjs', 'layers', 'char:90', '--read1']);
   assert.match(r1.stdout, /시안 참고 · 근거 F622 — 줄기에 안 묶인 기록/, '--read1이면 1회독만(2회독 메인 연결이 빠져 참고 시안)');
 });

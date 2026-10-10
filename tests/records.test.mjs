@@ -178,7 +178,7 @@ test('리뷰 화면 — 근거 줄에 ▶, 앞뒤 문맥, 미룬 후보가 먼�
   const pages = reviewPages(ds.candidates.filter((c) => c.status === '후보'), ds, ctx, order, {});
   assert.equal(pages.length, 1);
   assert.ok(pages[0].indexOf('### L1') < pages[0].indexOf('### F5'), '보류된 L1이 먼저');
-  const brief = reviewPages(ds.candidates, ds, ctx, order, { brief: true })[0].split('\n').filter((l) => /^[FQSLJGKZBOHIEDUYT]\d/.test(l));
+  const brief = reviewPages(ds.candidates, ds, ctx, order, { brief: true })[0].split('\n').filter((l) => /^[FQSLJGKZBCOHIEDUYT]\d/.test(l));
   assert.equal(brief.length, ds.candidates.length, '간단히 보기는 후보마다 한 줄');
   const sel = select(ds, ['F3..F5', '의문']);
   assert.deepEqual(sel.picked.map((c) => c.id), [], '범위는 사실만인데 의문으로 거르면 비어야 한다');

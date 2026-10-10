@@ -24,7 +24,7 @@
  *   참고 후보     지금 독립 — 줄기에 안 묶인 세계 · 메인 인물 사실 · 생활상 · 줄기 인물 변화 · 뼈대 · 보강 줄기 암시 · 뼈대 about이 있다(참고의 문턱 ③)
  *   독립 그대로   지금 독립 — 위 입력이 없다
  * 감정 기준 후보(X3g — 카드 3절 "결정적 순간", 판정 입력 ⑧ tools/views/layers.mjs emotionSignals) — 다시 볼 묶음과 따로 센다(이해 등급은 그대로 두고 올릴지만 본다):
- *   오름        감정 상한(주역의 결정적 순간 필수 · 척추 인물 보강)이 지금 등급보다 높다
+ *   오름        감정 상한(주요 인물의 결정적 순간 필수 · 척추 인물 보강 — 주요 인물은 annotations/majors.json, X3g-1b)이 지금 등급보다 높다
  *   이른 자리   등급은 같은데 감정 쪽 from이 지금 from보다 이르다(카드 4절 — 그 등급에 처음 닿는 자리)
  *   검토 기록(세션 X3g · N3, 또는 사용자)이 있으면 다시 봄 — emotion.md 후보 표에서 빠진다. 후보 표는 공개 자리 순(X3g-3이 나눠 판정한다).
  * 같은 기록이면 같은 결과다.
@@ -359,9 +359,9 @@ export function renderEmotionReport(v, { source = '' } = {}) {
   const em = emotionCounts(v);
   const nm = (p) => String(p).replace(/^\w+:/, '');
   L.push('# 감정 기준 후보 — 결정적 순간 (X3g)', '');
-  L.push(`출처: ${source} + 2회독 인물 변화 D · 마무리 기록 O · 주역 명단 — 거르기 규칙 tools/views/layers.mjs emotionSignals(판정 입력 ⑧), 기준 docs/importance.md 3절 "결정적 순간".`);
+  L.push(`출처: ${source} + 2회독 인물 변화 D · 마무리 기록 O · 주요 인물 명단(annotations/majors.json) — 거르기 규칙 tools/views/layers.mjs emotionSignals(판정 입력 ⑧), 기준 docs/importance.md 3절 "결정적 순간".`);
   L.push('결정적인지 · 여기에만 장면으로인지는 판정이 기록 문장으로 본다 — 이 표는 고르지 않는다. 단위 하나: `node tools/records.mjs layers <단위 키> --summary`(⑧ "감정 재료" 줄).', '');
-  L.push(`- 결정적 순간 후보가 있는 판정 단위 ${v.emotion.length} — 상한 필수(주역) ${em.capMust} · 보강(척추 인물만) ${em.capPlus}`);
+  L.push(`- 결정적 순간 후보가 있는 판정 단위 ${v.emotion.length} — 상한 필수(주요 인물) ${em.capMust} · 보강(척추 인물만) ${em.capPlus}`);
   L.push(`- 후보 ${em.up.length + em.early.length}: 오름 ${em.up.length}(필수로 ${em.up.filter((u) => u.emotion === '필수').length} · 보강으로 ${em.up.filter((u) => u.emotion === '보강').length}) · 이른 자리 ${em.early.length}(같은 등급, 감정 쪽 from이 이르다)` +
     ` · 다시 봄(세션 X3g · N3 · 사용자) ${em.done.length} · **남음 ${em.left.length}**`);
   const tr = new Map();
@@ -371,17 +371,17 @@ export function renderEmotionReport(v, { source = '' } = {}) {
   for (const u of [...em.up, ...em.early]) kinds.set(u.kind, (kinds.get(u.kind) ?? 0) + 1);
   L.push(`- 후보 종류: ${[...kinds].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(' · ') || '없음'}`);
   const who = new Map();
-  for (const u of [...em.up, ...em.early]) for (const p of new Set(u.moments.filter((m) => m.grade === u.emotion).map((m) => nm(m.lead ?? m.person)))) who.set(p, (who.get(p) ?? 0) + 1);
+  for (const u of [...em.up, ...em.early]) for (const p of new Set(u.moments.filter((m) => m.grade === u.emotion).map((m) => nm(m.major ?? m.person)))) who.set(p, (who.get(p) ?? 0) + 1);
   L.push(`- 후보의 주인(상한을 낸 인물 — 단위 수): ${[...who].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([p, n]) => `${p} ${n}`).join(' · ') || '없음'}`, '');
   L.push('## 후보 — 공개 자리 순', '');
-  L.push('상한 = 그 단위의 결정적 순간 후보 가운데 가장 높은 등급(주역 필수 · 척추 인물 보강)과 그 등급에 처음 닿는 자리. 판정은 이해 등급과 둘 가운데 높은 쪽(카드 3절 3a · 4a).', '');
+  L.push('상한 = 그 단위의 결정적 순간 후보 가운데 가장 높은 등급(주요 인물 필수 · 척추 인물 보강)과 그 등급에 처음 닿는 자리. 판정은 이해 등급과 둘 가운데 높은 쪽(카드 3절 3a · 4a).', '');
   L.push('| 공개 자리 | 단위 | 종류 | 지금 판정 | 상한 | 까닭 | 결정적 순간 후보 (주인 · 측면) | 다시 봄 |', '|---:|---|---|---|---|---|---|---|');
   const cand = [...em.up, ...em.early].sort((a, b) => (a.pos || 0) - (b.pos || 0) || a.order - b.order);
   for (const u of cand) {
-    const ms = u.moments.map((m) => `${m.record} ${nm(m.person)} ${m.aspect}${m.cls === '주역' ? '*' : ''}`).join(' · ');
+    const ms = u.moments.map((m) => `${m.record} ${nm(m.person)} ${m.aspect}${m.cls === '주요 인물' ? '*' : ''}`).join(' · ');
     L.push(`| ${u.pos} | \`${u.unit}\` ${u.title} | ${u.kind} | ${u.judgment} ${u.grade_path}${u.from && !u.from_pos ? `(${u.from})` : ''} | ${u.emotion}${u.emotion_from ? ` · ${u.emotion_from}부터` : ''} | ${u.emotion_check} | ${ms} | ${u.emotion_done} |`);
   }
-  L.push('', '`*` = 주역의 것. 결정적 순간 후보가 있지만 상한이 지금 등급 이하인 단위(후보 아님):', '');
+  L.push('', '`*` = 주요 인물의 것. 결정적 순간 후보가 있지만 상한이 지금 등급 이하인 단위(후보 아님):', '');
   const rest = v.emotion.filter((u) => !u.emotion_check).sort((a, b) => (a.pos || 0) - (b.pos || 0));
   L.push(rest.map((u) => `\`${u.unit}\` ${u.grade}`).join(' · ') || '없음', '');
   return L.join('\n');

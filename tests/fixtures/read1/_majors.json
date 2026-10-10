@@ -1,0 +1,33 @@
+{
+  "_comment": "주요 인물 예시 — 형식 · 규칙은 docs/annotations.md \"주요 인물\". 실제 명단은 annotations/majors.json(계산 tools/views/majors.mjs)",
+  "session": "X3g-1b",
+  "by": "claude",
+  "date": "2026-10-10",
+  "criteria": { "score": 32, "band": 0.5 },
+  "majors": [
+    {
+      "id": "C1",
+      "person": "person:라피",
+      "from": "ch00",
+      "scenes": 40,
+      "changes": 30,
+      "score": 34.6,
+      "reason": "말한 씬 40 · 변화 줄 30 · 점수 34.6 — 문턱 32 위(예시)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "X3g-1b" }]
+    },
+    {
+      "id": "C2",
+      "person": "person:마리안",
+      "from": "ch01",
+      "scenes": 20,
+      "changes": 20,
+      "score": 20,
+      "reason": "말한 씬 20 · 변화 줄 20 · 점수 20 — 문턱 32 아래(예시)",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [{ "decision": "기각", "by": "claude", "date": "2026-10-10", "session": "X3g-1b" }]
+    }
+  ]
+}

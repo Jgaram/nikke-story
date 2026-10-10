@@ -5,7 +5,7 @@
  *   node tools/normalize/ensure-db.mjs --check   상태만 본다 (최신이면 종료 코드 0, 아니면 1)
  *   node tools/normalize/ensure-db.mjs --force   무조건 다시 만든다
  *
- * 입력은 data/raw/ · annotations/(1회독 · 2회독 기록 annotations/read1/ · read2/ · 떡밥 줄기 annotations/threads.json · 층 판정 annotations/layers.json · 주역 명단 annotations/leads.json · 척추 annotations/spine.json · 마무리 기록 annotations/closures.json · 수동 엣지 annotations/links.json · 2회독 볼 거리 annotations/watch.json · 공개 개요 annotations/synopsis/ 빼고) · tools/normalize/ · data/release/다. 파일마다 경로·크기·수정 시각을 모아 해시한
+ * 입력은 data/raw/ · annotations/(1회독 · 2회독 기록 annotations/read1/ · read2/ · 떡밥 줄기 annotations/threads.json · 층 판정 annotations/layers.json · 주역 명단 annotations/leads.json · 척추 annotations/spine.json · 주요 인물 annotations/majors.json · 마무리 기록 annotations/closures.json · 수동 엣지 annotations/links.json · 2회독 볼 거리 annotations/watch.json · 공개 개요 annotations/synopsis/ 빼고) · tools/normalize/ · data/release/다. 파일마다 경로·크기·수정 시각을 모아 해시한
  * 값(지문)을 build.mjs가 시작할 때 계산해 DB의 meta 테이블까지 넘기고, 여기서 지금 지문과 비교한다.
  * 내용이 아니라 stat만 보므로 3,300여 개 파일에 30ms 남짓이다.
  *
@@ -30,9 +30,9 @@ const INPUT_DIRS = ['data/raw', 'annotations', 'tools/normalize', 'data/release'
  */
 const EXCLUDE_DIRS = new Set(['annotations/read1', 'annotations/read2', 'annotations/synopsis']);
 /** 같은 까닭으로 뺀다 — 떡밥 줄기(B0b) · 층 판정(B0b-2) · 수동 엣지(B1a — DB에 싣지 않고 관계선 tools/views/links.mjs가 읽는다, X2) · 2회독 볼 거리(B1b) ·
- * 척추(X3f-1c) · 마무리 기록(X3f-1d)도 기록 도구가 바로 읽는다 */
+ * 척추(X3f-1c) · 주요 인물(X3g-1b) · 마무리 기록(X3f-1d)도 기록 도구가 바로 읽는다 */
 const EXCLUDE_FILES = new Set(['annotations/threads.json', 'annotations/layers.json', 'annotations/leads.json', 'annotations/links.json', 'annotations/watch.json',
-  'annotations/spine.json', 'annotations/closures.json']);
+  'annotations/spine.json', 'annotations/majors.json', 'annotations/closures.json']);
 const STEPS = ['tools/normalize/build.mjs', 'tools/normalize/build-db.mjs'];
 const LOCK_WAIT_MS = 5 * 60_000;
 const LOCK_MAX_AGE_MS = 10 * 60_000;

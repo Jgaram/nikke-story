@@ -14,7 +14,7 @@ import { findItem, kindTally } from './order.mjs';
 import { parseCite } from './read2.mjs';
 
 const SECTION_ORDER = {
-  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, edges: 14, closures: 15, merges: 16, affiliations: 17,
+  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, majors: 14, edges: 15, closures: 16, merges: 17, affiliations: 18,
 };
 
 /** 순서 안의 자리 — 읽기 순서, 없으면 뒤로. 파트가 안 맞으면(2회독은 파트를 다르게 묶기도 한다) 그 단위의 첫 자리 */
@@ -22,12 +22,12 @@ export function orderIndex(order, unit, parts) {
   if (!unit) return Number.MAX_SAFE_INTEGER;
   return (findItem(order, unit, parts) ?? order.items.find((it) => it.key === unit))?.index ?? Number.MAX_SAFE_INTEGER - 1;
 }
-/** 단위에 딸리지 않은 후보 — 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 주역 · 수동 엣지 */
-const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.closures || c.links || c.affil);
+/** 단위에 딸리지 않은 후보 — 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 주역 · 주요 인물 · 수동 엣지 */
+const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.majors || c.closures || c.links || c.affil);
 
 /** 후보를 읽는 순서로 — 단위(순서) → 1회독 기록(사실 · 의문 · 사건 · 시점) → 2회독 기록 → 파일 안 순서. 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 수동 엣지는 맨 뒤 ID 순 */
 export function sortCandidates(list, order, { byKind = false } = {}) {
-  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, edge: 13, closure: 14, merge: 15, affil: 16 };
+  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, major: 13, edge: 14, closure: 15, merge: 16, affil: 17 };
   return [...list].sort((a, b) =>
     (byKind ? kindRank[a.kind] - kindRank[b.kind] : 0) ||
     orderIndex(order, a.unit, a.parts) - orderIndex(order, b.unit, b.parts) ||
@@ -57,7 +57,7 @@ export function select(ds, tokens) {
   let filtered = false;
   const kinds = [];
   for (const t of tokens) {
-    const range = t.match(/^([FQSLJGKZBOHIEDUY])(\d+)\.\.\1?(\d+)$/);
+    const range = t.match(/^([FQSLJGKZBCOHIEDUY])(\d+)\.\.\1?(\d+)$/);
     if (byId.has(t)) {
       picked.add(byId.get(t));
       explicit = true;
@@ -171,6 +171,7 @@ export function renderCandidate(c, ctx, byId, { context = 2, brief = false, laye
   if (c.layers) return renderLayerItem(c, byId, { kind, act, where, brief, info: layers?.byUnit.get(c.layerUnit) ?? null });
   if (c.leads) return renderLeadItem(c, byId, { kind, act, where, brief });
   if (c.spine) return renderSpineItem(c, { kind, act, where, brief });
+  if (c.majors) return renderMajorItem(c, { kind, where, brief });
   if (c.kind === 'merge') return renderMergeItem(c, byId, { kind, where, brief });
   if (c.closures) return renderClosureItem(c, byId, { kind, act, where, brief });
   if (c.read2 || c.links || c.affil) return renderRead2Item(c, ctx, byId, { kind, where, brief, context });
@@ -303,6 +304,21 @@ function renderSpineItem(c, { kind, act, where, brief }) {
   return out.join('\n');
 }
 
+function renderMajorItem(c, { kind, where, brief }) {
+  const o = c.obj ?? {};
+  const meta = `${statusLabel(c)} · ${c.confidence ?? '?'}`;
+  const nums = `말한 씬 ${o.scenes ?? '?'} · 변화 줄 ${o.changes ?? '?'} · 점수 ${o.score ?? '?'}`;
+  if (brief) return `${c.id} [${meta}] ${o.person ?? '?'} ${o.from ?? '?'}부터 — ${c.reason ?? nums}`.replace(/\s+/g, ' ').trim();
+  const out = [`### ${c.id} · ${kind} · ${meta} — ${where} (${c.session ?? '?'} · ${c.by ?? '?'})`];
+  out.push(`${o.person ?? '?'} — ${c.status === '확정' ? `${o.from ?? '?'}부터 주요 인물(결정적 순간 → 필수)` : c.status === '기각' ? '띠 안이지만 끊는 선 아래(결정적 순간은 척추 인물이면 보강까지)' : '후보'} · ${nums}`);
+  out.push(`이유: ${c.reason ?? '(없음)'}`);
+  if (c.note) out.push(`메모: ${c.note}`);
+  for (const r of c.reviews ?? []) {
+    out.push(`검토: ${r.date ?? '?'} ${r.decision ?? '?'} — ${r.by ?? '?'}${r.session ? ` (${r.session})` : ''}${r.note ? ` · ${r.note}` : ''}${r.before ? ` · 고치기 전: ${r.before}` : ''}`);
+  }
+  return out.join('\n');
+}
+
 function renderLeadItem(c, byId, { kind, act, where, brief }) {
   const o = c.obj ?? {};
   const meta = `${statusLabel(c)} · ${c.confidence ?? '?'}`;
@@ -382,7 +398,7 @@ export function reviewPages(list, ds, ctx, order, { context = 2, brief = false, 
   const deferred = sortCandidates(list.filter(isDeferred), order, { byKind });
   const rest = sortCandidates(list.filter((c) => !isDeferred(c)), order, { byKind });
   const groupOf = (c) =>
-    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.links || c.affil ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
+    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.majors || c.links || c.affil ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
   const blocks = [];
   if (deferred.length) {
     blocks.push(`## 미뤄 둔 후보 ${deferred.length} — 먼저 본다`);
@@ -433,7 +449,7 @@ export function applyDecision(list, decision, { by = '사용자', date = today()
   if (evidence !== null && list.length !== 1) throw new Error('--evidence는 후보 하나에만 쓴다');
   if (confidence !== null && !CONFIDENCES.includes(confidence)) throw new Error(`--confidence는 ${CONFIDENCES.join(' · ')}`);
   // 근거를 고칠 수 있는 것은 씬 줄 근거를 가진 기록뿐이다 — 줄기 · 줄기 관계 · 층 판정은 근거가 기록 ID다
-  if (evidence !== null && (list[0].threads || list[0].layers || list[0].leads || list[0].spine)) throw new Error('--evidence는 씬 줄 근거가 있는 기록(사실 · 의문 · 사건 · 시점 · 정체 연결 · 2회독 기록 · 수동 엣지)에만');
+  if (evidence !== null && (list[0].threads || list[0].layers || list[0].leads || list[0].spine || list[0].majors)) throw new Error('--evidence는 씬 줄 근거가 있는 기록(사실 · 의문 · 사건 · 시점 · 정체 연결 · 2회독 기록 · 수동 엣지)에만');
   const evid = evidence === null ? null : typeof evidence === 'string' ? parseCite(evidence) : evidence;
   const citeText = (ev) => (Array.isArray(ev) ? ev.map(citeOf).join(' ') : '');
   if ((grade !== null || layer !== null || basis !== null || asof !== null) && (list.length !== 1 || list[0].kind !== 'layer')) throw new Error('--grade · --layer · --basis · --asof는 판정(K<n>) 하나에만 쓴다');
@@ -442,8 +458,8 @@ export function applyDecision(list, decision, { by = '사용자', date = today()
   if (grade !== null && !GRADES.includes(grade)) throw new Error(`--grade는 ${GRADES.join(' · ')}`);
   // 메인 자리(X3f ⑤) — 판정(K): --from 메인 챕터 · --before 그 앞 등급, 주역(Z): --from 주역이 되는 챕터 · --arcs 아크 범위 · --origin 원점 단위
   // 빈 문자열("")은 칸을 지운다(--from "" — 메인 자리 없음)
-  const kindOk = list.length === 1 && (list[0].kind === 'layer' || (list[0].kind === 'lead' && beforeGrade === null));
-  if ((from !== null || beforeGrade !== null) && !kindOk) throw new Error('--from · --before는 판정(K<n>) 하나에만(--from은 주역 Z<n> 하나에도) 쓴다');
+  const kindOk = list.length === 1 && (list[0].kind === 'layer' || (['lead', 'major'].includes(list[0].kind) && beforeGrade === null));
+  if ((from !== null || beforeGrade !== null) && !kindOk) throw new Error('--from · --before는 판정(K<n>) 하나에만(--from은 주역 Z<n> · 주요 인물 C<n> 하나에도) 쓴다');
   if ((arcs !== null || origin !== null || records !== null) && (list.length !== 1 || list[0].kind !== 'lead')) throw new Error('--arcs · --origin · --records는 주역(Z<n>) 하나에만 쓴다');
   // --records: 근거 기록 ID들(띄어서) — 줄기 · 사실 · 의문 · 사건 · 인물 변화. 빈 문자열은 칸을 지운다
   const recList = records === null ? null : String(records).split(/[\s,·]+/).filter(Boolean);
@@ -492,7 +508,7 @@ export function applyDecision(list, decision, { by = '사용자', date = today()
     // 바뀌는 게 없으면 건너뛴다. 보류된 후보를 '후보'로 두면 보류만 풀린다(검토 기록이 남는다)
     // 판정(K)은 다른 세션이 다시 보면 바뀐 게 없어도 검토 기록을 남긴다 — 다시 판정 이력(X3a, docs/annotations.md "중요도 판정")
     const lastSession = (Array.isArray(c.obj.reviews) ? c.obj.reviews : []).at(-1)?.session ?? null;
-    const recheck = (c.kind === 'layer' || c.kind === 'lead' || c.kind === 'spine') && session && session !== lastSession && decision === '확정' && c.status === '확정';
+    const recheck = (c.kind === 'layer' || c.kind === 'lead' || c.kind === 'spine' || c.kind === 'major') && session && session !== lastSession && decision === '확정' && c.status === '확정';
     const noop = !recheck && sameText && (decision === '보류' ? isDeferred(c) : to === c.status && !(decision === '후보' && isDeferred(c)));
     if (noop) {
       skipped.push({ c, why: `이미 ${statusLabel(c)}` });
@@ -576,7 +592,7 @@ export function applyDecision(list, decision, { by = '사용자', date = today()
 export function writeDecisions(ds, perFile) {
   const written = [];
   for (const [name, { changes }] of perFile) {
-    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.closures, ds.links, ds.affiliations].find((x) => x?.name === name) ?? null;
+    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.majors, ds.closures, ds.links, ds.affiliations].find((x) => x?.name === name) ?? null;
     if (!file) throw new Error(`파일을 못 찾았다: ${name}`);
     const text = fs.readFileSync(file.path, 'utf8');
     if (text !== file.text) throw new Error(`${name}이(가) 읽은 뒤에 바뀌었다 — 다시 실행한다`);
@@ -593,7 +609,7 @@ const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '—');
 
 /** 후보 묶음의 집계 */
 export function tally(list) {
-  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0, affil: 0 };
+  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, major: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0, affil: 0 };
   for (const c of list) {
     if (STATUSES.includes(c.status)) t[c.status]++;
     if (isDeferred(c)) t.보류++;
@@ -641,6 +657,11 @@ export function progressReport(ds, ctx, order, { all = false } = {}) {
   if (spine.length) {
     const t = tally(spine);
     out.push(`척추(${ds.spine?.name}): 문 안 ${t.all} — 척추 ${t.확정} · 미달 ${t.기각} · 남음 ${t.후보}`);
+  }
+  const majors = ds.candidates.filter((c) => c.majors && c.id);
+  if (majors.length) {
+    const t = tally(majors);
+    out.push(`주요 인물(${ds.majors?.name}): 띠 ${t.all} — 주요 인물 ${t.확정} · 선 아래 ${t.기각} · 남음 ${t.후보}`);
   }
   for (const [kind, label] of [['closure', '마무리 기록'], ['merge', '합류 기록']]) {
     const xs = ds.candidates.filter((c) => c.closures && c.kind === kind && c.id);

@@ -10,7 +10,7 @@ import { oneLine } from '../lib/render.mjs';
 import { computeLayers, layerKind } from './layers.mjs';
 import {
   AFFIL_ACTS, ASPECTS, CHANGE_ACTS, CLOSURE_TYPES, CONFIDENCES, DECISIONS, DEGREES, ECHO_ACTS, EDGE_TYPES, FACT_ACTS, FIELDS, FROM_GRADES, GRADES, ID, LAYERS, LIFE_TOPICS, QUESTION_ACTS,
-  READ1_DIR, READ2_SECTIONS, RELATION_TYPES, STATUSES, THREAD_WEIGHTS, TIME_KINDS, WATCH_KINDS, expandLines, fileNameFor, isRecord, spineUnits, statusFromReviews,
+  READ1_DIR, READ2_SECTIONS, RELATION_TYPES, STATUSES, THREAD_WEIGHTS, TIME_KINDS, WATCH_KINDS, expandLines, fileNameFor, isRecord, sameAsGroups, spineUnits, statusFromReviews,
 } from './model.mjs';
 import { READ2_PREFIXES, findItem, kindOfKey, loadOrder, loadReadLayers, partsOverlap } from './order.mjs';
 
@@ -33,7 +33,7 @@ export const LIMITS = { summary: 1500, sceneLine: 150, text: 200 };
 
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
 const SECTION_LABEL = {
-  facts: '사실', questions: '의문', events: '사건', times: '시점', candidates: '정체 연결', threads: '줄기', relations: '줄기 관계', units: '층 판정', leads: '주역', spine: '척추', closures: '마무리', merges: '합류',
+  facts: '사실', questions: '의문', events: '사건', times: '시점', candidates: '정체 연결', threads: '줄기', relations: '줄기 관계', units: '층 판정', leads: '주역', spine: '척추', majors: '주요 인물', closures: '마무리', merges: '합류',
   mentions: '암시 언급', echoes: '떡밥', changes: '인물 변화', life: '생활상', edges: '수동 엣지', affiliations: '소속',
 };
 /** 2회독 세션 모양 — P1 · M03 */
@@ -453,6 +453,9 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
   const orderAt = (k) => orderPos.get(k) ?? Infinity;
   const judgedOf = new Map(ds.candidates.filter((c) => c.kind === 'layer' && c.status !== '기각' && isStr(c.obj?.unit)).map((c) => [c.obj.unit, c]));
   const leadPersons = new Map();
+  // 주요 인물(X3g-1b) — 같은 인물 묶음(확정 정체 연결)마다 항목 하나
+  const sameGroups = sameAsGroups(ds);
+  const majorSeen = new Map();
   const closureChains = new Map();
   const mergedIn = new Map();
 
@@ -705,6 +708,21 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       if (o.notice !== undefined && !isStr(o.notice)) err(where, c.id, 'notice는 공지 근거 문자열(게시일 · 제목 · 말)');
       if (!isStr(c.reason)) err(where, c.id, '이유(reason)가 없다 — 문 · ⓐ 뼈대 기록 · ⓒ 마무리 · ⓑ 메인 연결 수와 까닭(tools/views/spine.mjs)');
       checkCommon(c, where);
+    } else if (c.section === 'majors') {
+      // 주요 인물(X3g-1b) — 인물(같은 인물 묶음)마다 하나: 확정 = 주요 인물(결정적 순간 → 필수), 기각 = 띠 안이지만 끊는 선 아래
+      idOk(ID.major, 'C<번호> (주요 인물)');
+      unknown(o, FIELDS.major, (m) => warn(where, c.id, m));
+      if (!isStr(o.person) || !String(o.person).startsWith('person:') || !ctx.targetIds.has(o.person)) err(where, c.id, `person ${JSON.stringify(o.person ?? '')} — 사전의 인물 ID(person:…)`);
+      else {
+        const g = sameGroups.get(o.person)?.[0] ?? o.person;
+        if (majorSeen.has(g)) err(where, c.id, `${o.person}의 주요 인물 항목이 둘이다 — ${majorSeen.get(g)}에도 있다(같은 인물은 대표 ID 하나로)`);
+        else majorSeen.set(g, c.id);
+      }
+      if (c.status === '확정' && !(isStr(o.from) && spineKeys.has(o.from))) err(where, c.id, `from ${JSON.stringify(o.from ?? '')} — 주요 인물이 되는 척추 자리(메인 챕터 ch19나 척추 이벤트 · 사이드 키)`);
+      else if (o.from !== undefined && !(isStr(o.from) && spineKeys.has(o.from))) err(where, c.id, `from ${JSON.stringify(o.from)} — 척추 자리 키`);
+      for (const k of ['scenes', 'changes', 'score']) if (o[k] !== undefined && typeof o[k] !== 'number') err(where, c.id, `${k}는 수(tools/views/majors.mjs가 센 값)`);
+      if (!isStr(c.reason)) err(where, c.id, '이유(reason)가 없다 — 말한 씬 · 변화 · 점수와 끊는 선(tools/views/majors.mjs)');
+      checkCommon(c, where);
     } else if (c.section === 'closures') {
       // 마무리 기록(X3f-1d) — 쌓인 자리(built) → 끝난 자리(end · closing). 형식 docs/annotations.md "마무리 기록"
       idOk(ID.closure, 'O<번호> (마무리)');
@@ -715,7 +733,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       const endOk = isStr(o.end) && (!order || orderPos.has(o.end));
       if (!isStr(o.end)) err(where, c.id, '끝난 단위(end)가 없다 — 읽기 단위 키');
       else if (!endOk) err(where, c.id, `end: 읽기 순서에 없는 단위 ${o.end}`);
-      const sideRec = (r) => r.people || r.threads || r.layers || r.leads || r.spine || r.closures || r.links;
+      const sideRec = (r) => r.people || r.threads || r.layers || r.leads || r.spine || r.majors || r.closures || r.links;
       if (!Array.isArray(o.built) || !o.built.length) err(where, c.id, '쌓인 자리(built)가 없다 — 기록 ID(사실 · 의문 · 사건 · 인물 변화 · 떡밥 · 생활상)나 단위 키(연작의 앞 편) 배열');
       else {
         for (const x of o.built) {
@@ -812,6 +830,17 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     else {
       unknown(d, FIELDS.leadsFile, (m) => warn(ds.leads.name, null, m));
       if (d.leads !== undefined && !Array.isArray(d.leads)) err(ds.leads.name, null, 'leads는 배열이어야 한다');
+    }
+  }
+
+  // ── 주요 인물 파일(X3g-1b) ──
+  if (ds.majors?.data) {
+    const d = ds.majors.data;
+    if (typeof d !== 'object' || Array.isArray(d)) err(ds.majors.name, null, '파일 전체가 객체({ … })여야 한다');
+    else {
+      unknown(d, FIELDS.majorsFile, (m) => warn(ds.majors.name, null, m));
+      if (d.majors !== undefined && !Array.isArray(d.majors)) err(ds.majors.name, null, 'majors는 배열이어야 한다');
+      if (d.criteria !== undefined && (typeof d.criteria !== 'object' || Array.isArray(d.criteria) || Object.values(d.criteria).some((v) => typeof v !== 'number'))) err(ds.majors.name, null, 'criteria는 { 이름: 수 } 객체(tools/views/majors.mjs DEFAULT_CRITERIA)');
     }
   }
 
