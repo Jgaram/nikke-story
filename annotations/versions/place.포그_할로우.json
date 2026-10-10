@@ -1,0 +1,24 @@
+{
+  "subject": "place:포그_할로우",
+  "versions": [
+    {
+      "at": "event_dirtybackyard",
+      "text": "매연과 안개로 늘 뿌연 아우터 림의 공장 마을. 모란회가 뒤를 봐주던 곳으로, 식스오의 협박에 미스트를 만들다 목단의 손에 무너졌다.",
+      "src": "926e0d56b7",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "68d6227cf5",
+          "note": "DIRTY BACKYARD U190·F1261·F1263(아우터 림 공장 마을, 모란회 비호, 식스오 협박의 미스트 생산, 목단이 무너뜨림) — 재건은 세부라 1판"
+        }
+      ]
+    }
+  ]
+}

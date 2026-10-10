@@ -1,0 +1,24 @@
+{
+  "subject": "org:스컬_헤드",
+  "versions": [
+    {
+      "at": "event_footstepwalkrun1",
+      "text": "이름으로 불릴 만큼 실력 있는 전투 특화 스쿼드. 양산형 니케 리오 · 웬디가 라피를 데려갔지만, 붉은 눈이 된 리오가 동료들을 쏜 날 전멸해 해체되었다.",
+      "src": "361bb2378a",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "4d94193dcc",
+          "note": "FOOTSTEP, WALK, RUN 05_e#22-34·F1745·F1749(이름 있는 전투 특화 스쿼드, 리오·웬디·라피, 전멸 해체) — 침식이라 쓰지 않고 원문대로 붉은 눈, 1판"
+        }
+      ]
+    }
+  ]
+}

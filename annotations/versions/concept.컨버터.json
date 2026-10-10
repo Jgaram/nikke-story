@@ -1,0 +1,25 @@
+{
+  "subject": "concept:컨버터",
+  "versions": [
+    { "at": "char:401", "text": "", "src": "97d170e155", "session": "W15e", "by": "claude", "date": "2026-10-10", "status": "후보", "reviews": [] },
+    {
+      "at": "event_boomsday",
+      "text": "방주 변전소에 달린 장치. 동력원이 넘치게 만든 전력을 손실시켜 과부하로 인한 정전을 막는다 — 일렉트릭 쇼크의 트로니가 만들었다.",
+      "src": "343917a68a",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "1ae25f75de",
+          "note": "BOOMS DAY F1337·F1339·F1341, 원문 01_s#20(변전소 장치, 넘치는 전력 손실, 트로니 제작) — 첫 판 자리 char:401은 신의 입 컨버터(동음 오탐)라 비워 둠, 언급 고치면 이 판이 첫 판"
+        }
+      ]
+    }
+  ]
+}

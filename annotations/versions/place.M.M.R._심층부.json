@@ -1,0 +1,25 @@
+{
+  "subject": "place:M.M.R._심층부",
+  "versions": [
+    { "at": "ch32", "text": "", "src": "97d170e155", "session": "W15e", "by": "claude", "date": "2026-10-10", "status": "후보", "reviews": [] },
+    {
+      "at": "ch41",
+      "text": "M.M.R.의 극비 중의 극비 구역. 중앙 정부 고위층도 수십 가지 절차를 밟아야 들어올 수 있고, 인증 없이 복도에 들어서면 목숨을 잃는다.",
+      "src": "f2400785c1",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "1e72ff6c0d",
+          "note": "CH.41 d_main_41_af_04#19-28(M.M.R. 심층부, 극비 구역, 절차·인증) — 첫 판 자리 ch32 '심층부'는 베히모스가 있는 지상 시설 깊은 곳(동음 오탐)이라 비워 둠, 언급 고치면 meet=WISDOM SPRING(체크 칸)·ch41이라 이 판이 첫 판"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "subject": "item:마녀의_아궁이",
+  "versions": [
+    {
+      "at": "event_oldtales1",
+      "text": "헨젤 · 그레텔이 함께 쓰는 전용 무장. 그레텔이 조합하고 헨젤이 제어하는 만능 조합 · 발사 장치로, 만들지 못하는 것이 없다고 한다.",
+      "src": "e31ae00c3b",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "e3003c4401",
+          "note": "OLD TALES 06_s#51-53·F1666(헨젤·그레텔 전용 무장, 조합·발사 장치) — 1판"
+        }
+      ]
+    }
+  ]
+}

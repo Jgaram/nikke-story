@@ -1,0 +1,24 @@
+{
+  "subject": "org:헤도니아",
+  "versions": [
+    {
+      "at": "event_cherryblossom",
+      "text": "세이메이카이 · 모란회와 함께 뒷세계 3대 조직으로 꼽히는 신생 세력. 보스는 언더월드 퀸의 일원인 로산나다.",
+      "src": "341aa52e22",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "d71be568c0",
+          "note": "CHERRY BLOSSOM 원문 part2 #22·#33(뒷세계 3대 조직, 신생 세력, 보스 로산나)·F830(언더월드 퀸) — 뒤 이벤트는 일화라 1판"
+        }
+      ]
+    }
+  ]
+}

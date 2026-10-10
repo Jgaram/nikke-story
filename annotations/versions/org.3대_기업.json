@@ -1,0 +1,24 @@
+{
+  "subject": "org:3대_기업",
+  "versions": [
+    {
+      "at": "ch02",
+      "text": "니케를 만드는 세 회사. 미실리스 인더스트리도 그중 하나이며, 각 CEO는 부사령관과 같은 명령권을 가진다.",
+      "src": "4277f98dcb",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "b7f9a57326",
+          "note": "CH.02 F42·F43(니케 제작 3대 회사, CEO 명령권) — 표준명은 relic 니케실험대상자모집부터라 글에 쓰지 않음, 뒤는 세부라 1판"
+        }
+      ]
+    }
+  ]
+}
