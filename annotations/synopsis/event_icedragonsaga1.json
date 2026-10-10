@@ -1,0 +1,49 @@
+{
+  "unit": "event_icedragonsaga1",
+  "session": "W9i",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "시뮬레이션 속 이세계에서 용사가 된 길로틴이, 메이든 · 지휘관과 함께 백빙룡과 자신의 과거에 맞선다.",
+  "synopsis": "길로틴은 여신의 부름을 받아 겨울의 저주를 내린 백빙룡을 쓰러뜨릴 용사가 된다. 이 봄의 나라는 잉크가 만든 시뮬레이션 MK-II로, 아는 니케들이 엉뚱한 배역을 맡고 본인이 가장 두려워하는 것이 보스로 선다. 시험 도중 길로틴이 허가 없이 눈의 힘을 쓰는 바람에, 36시간 안에 이레귤러가 되지 않았음을 증명해 사후승인을 받지 못하면 뇌가 파괴될 처지가 된다. 잉그리드는 근신 중인 메이든과 지휘관을 들여보내고, 판단은 지휘관이, 만일의 사살은 메이든이 맡는다. 메이든은 이 임무를 끝으로 기억 소거를 받기로 해 두었다.\n\n파티는 협회의 재판과 아르바이트를 거쳐 동료와 용사의 검을 모으지만, 눈의 힘을 쓴 길로틴은 편익의 마왕에 먹혀 이레귤러는 모두 쓰러뜨린다며 덤비고, 조직의 사천왕이 앞을 막는다. 마왕성의 문은 백빙룡을 두려워하는 길로틴을 들이지 않는다. 길로틴은 다시 눈의 힘으로 적을 쓰러뜨린 뒤, 이레귤러가 된 자신을 쓰러뜨려 복귀하라고 메이든에게 말하고 쓰러진다.\n\n메이든이 언령으로 시간을 멈추자 길로틴의 기억이 드러난다. 인간 소녀 클로이와 나눈 우정과 이세계 놀이, 이레귤러 앞에서 망설인 탓에 벌어진 총기 난사와 클로이의 혼수상태, 그리고 메이든의 기억 소거를 막아 달라던 부탁. 메이든은 길로틴을 쓰러뜨리는 대신 의지를 되찾게 하고, 둘은 백빙룡을 쓰러뜨린다. 메이든은 기억 소거 없이 복귀하고, 길로틴은 성인이 된 클로이를 찾아가 모험담을 들려주기 시작한다.",
+  "scenes": [
+    { "scene": "event_icedragonsaga1_prologue", "text": "여신이 길로틴을 이세계로 불러 겨울의 저주를 끝낼 용사로 삼는다" },
+    { "scene": "event_icedragonsaga1_01_s", "text": "봄의 나라에 내려선 길로틴이 협회와 조직의 니케들에게 총을 맞는다" },
+    { "scene": "event_icedragonsaga1_01_e", "text": "길로틴이 즉사의 마안으로 적을 쓰러뜨리고 그 반동에 정신을 잃는다" },
+    { "scene": "event_icedragonsaga1_02_s", "text": "여관에서 깨어난 길로틴이 용사 전설을 듣고 동료를 모으기로 한다" },
+    { "scene": "event_icedragonsaga1_02_e", "text": "현실에서는 길로틴의 무단 안구 사용과 36시간의 사후승인 기한이 문제가 된다" },
+    { "scene": "event_icedragonsaga1_03_s", "text": "소환된 메이든과 지휘관이 길로틴과 만나 최종보스를 잡고 나가자고 한다" },
+    { "scene": "event_icedragonsaga1_03_e", "text": "상자와 항아리를 부수며 돈을 모으던 일행이 협회에 빌런으로 붙잡힌다" },
+    { "scene": "event_icedragonsaga1_intermission_01", "text": "재판에서 금화 1000닢 벌금이 떨어지고 지휘관이 볼모로 남는다" },
+    { "scene": "event_icedragonsaga1_04_s", "text": "벌금을 벌려고 협회 퀘스트를 받은 일행에 베스티가 합류한다" },
+    { "scene": "event_icedragonsaga1_04_e", "text": "설원 토벌을 마친 일행에게 촌장이 부탁을 하고, 마을에서 연회가 열린다" },
+    { "scene": "event_icedragonsaga1_05_s", "text": "무기를 사고 피리를 얻지만, 신전의 검의 정령은 깨어나지 않는다" },
+    { "scene": "event_icedragonsaga1_05_e", "text": "피리의 사연을 듣고 볼륨이 합류하는 사이, 사천왕이 모여 회의를 연다" },
+    { "scene": "event_icedragonsaga1_06_s", "text": "검의 정령을 깨워 용사의 검을 얻자, 마안을 쓴 길로틴이 일행에게 덤빈다" },
+    { "scene": "event_icedragonsaga1_06_e", "text": "메이든이 임무 뒤 기억 소거를 받기로 했다고 털어놓고, 조직이 습격해 온다" },
+    { "scene": "event_icedragonsaga2_01_s", "text": "악몽에 시달리던 길로틴이 다가온 적을 베어 넘긴다" },
+    { "scene": "event_icedragonsaga2_01_e", "text": "마을 곳곳에서 일행과 조직의 니케들이 맞붙는다" },
+    { "scene": "event_icedragonsaga2_02_s", "text": "사천왕의 댄스 배틀이 끝나고, 촌장이 마왕성으로 가는 문을 연다" },
+    { "scene": "event_icedragonsaga2_02_e", "text": "모닥불 곁에서 길로틴이 자신을 쓰러뜨리라 하고, 지휘관은 사천왕 하나를 막는다" },
+    { "scene": "event_icedragonsaga2_03_s", "text": "마왕성 문이 길로틴을 받지 않아 메이든 혼자 들어간다" },
+    { "scene": "event_icedragonsaga2_03_e", "text": "사천왕 잉그리드의 다그침에 길로틴이 다시 걸음을 뗀다" },
+    { "scene": "event_icedragonsaga2_intermission_01", "text": "길로틴이 마안으로 메이든을 구한 뒤, 자신을 쓰러뜨려 복귀하라며 쓰러진다" },
+    { "scene": "event_icedragonsaga2_04_s", "text": "마왕에 먹힌 길로틴과 싸우던 메이든이 언령으로 시간을 멈추고 그의 기억을 본다" },
+    { "scene": "event_icedragonsaga2_04_e", "text": "클로이와의 만남과 이세계 놀이, 총기 난사와 클로이의 혼수상태가 떠오른다" },
+    { "scene": "event_icedragonsaga2_05_s", "text": "신병 메이든을 길러 낸 길로틴이 그 기억 소거를 막아 달라고 부탁한 일이 드러난다" },
+    { "scene": "event_icedragonsaga2_05_e", "text": "메이든이 종료를 거두고 언령으로 길로틴의 의지를 되찾게 한다" },
+    { "scene": "event_icedragonsaga2_06_s", "text": "베스티와 볼륨이 합류해 백빙룡 공략전이 시작된다" },
+    { "scene": "event_icedragonsaga2_06_e", "text": "길로틴이 백빙룡을 끝내고, 촌장의 정체가 잉크였음이 드러난다" },
+    { "scene": "event_icedragonsaga2_epilogue", "text": "메이든은 임무에 복귀하고, 길로틴은 성인이 된 클로이를 찾아간다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9i",
+      "hash": "5ebe69f0dc",
+      "note": "입력(1·2부 28장면 요약 · F1727–F1736 · Q196 회수)과 대조 — 단위 안에서 드러나는 촌장 정체 · 클로이 회복까지만, 경고 없음"
+    }
+  ]
+}

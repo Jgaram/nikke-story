@@ -1,0 +1,43 @@
+{
+  "unit": "erelic:unbreakable_sphere_dialog",
+  "session": "W9i",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "글러트니 목구멍 속 물거품 정원의 일상과, 물거품에 비치는 세이렌의 옛 기억들.",
+  "synopsis": "글러트니의 목구멍 속 물거품 정원에서는 세이렌의 옛 기억이 담긴 물거품이 이따금 떠올라 그 장면을 비춘다. 신데렐라의 머리카락을 손질하던 날, 헨젤과 그레텔의 일을 대신했다가 에이브에게 꾸중을 듣던 날, 동화를 해피 엔딩으로 끝내자던 신데렐라의 맹세, 그리고 레비와 생선구이를 나누던 날. 에이브는 언령을 쓰는 이는 선해야 한다고 가르쳤고, 세이렌은 신데렐라를 닮은 인형을 울면서 만들었다.\n\n미하라 · 유니 · 모리는 정원에서 저마다의 시간을 보내고, 셋이 떠난 뒤 세이렌은 놀이터와 침대를 치우지 못한다. 구출된 뒤 세이렌은 데리러 와 준 모리에게 고마워하고, 그레이브와 물거품 보드게임을 즐기며, 모리는 물거품으로만 보던 신데렐라를 실제로 만난다. 일행은 물거품 정원에 작별을 고한다.",
+  "scenes": [
+    { "scene": "erelic:unbreakable_sphere_dialog_00", "text": "기록이라도 하듯 일행을 따라다니며 찍는 물방울이 있다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_01", "text": "기억의 물거품에 신데렐라와 세이렌이 머리카락을 손질하던 날이 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_02", "text": "움직이지 않는 시소 앞에서 유니가 마음이 무겁다고 한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_03", "text": "모리가 물거품 침대에서 깊이 잠든다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_04", "text": "헨젤과 그레텔의 일을 대신한 세이렌을 에이브가 나무라던 기억이 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_05", "text": "AA 필러의 에너지가 줄지 않아 세이렌이 더는 기다릴 수 없다고 한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_06", "text": "유니가 잠든 미하라의 곁을 지킨다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_07", "text": "헨젤과 그레텔이 해변을 꿈꾸던 기억이 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_08", "text": "셋이 떠난 조용한 놀이터에서 세이렌이 그네 타던 모리를 떠올린다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_09", "text": "세이렌이 셋이 쓰던 물거품 침대를 치우지 못한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_10", "text": "동화를 해피 엔딩으로 끝내자던 신데렐라의 맹세가 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_11", "text": "공방을 정리하며 밖으로 내보낸 친구들의 물거품을 떠올린다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_12", "text": "레비와 생선구이를 나누던 기억에, 세이렌은 레비가 자책하지 않기를 바란다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_13", "text": "언령을 쓰는 이는 선해야 한다던 에이브의 가르침이 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_14", "text": "세이렌이 데리러 와 준 모리에게 고마워한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_15", "text": "언령을 다루게 된 세이렌에게 그레이브가 쉼터를 칭찬하며 늦어서 미안하다고 한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_16", "text": "에이브가 알려 준 물거품 보드게임을 꺼낸다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_17", "text": "물거품으로만 보던 신데렐라를 모리가 실제로 만난다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_18", "text": "미하라가 유니를 혼자 두고 떠나지 않겠다고 한다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_19", "text": "그레이브가 보드게임의 모든 단계를 깬다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_20", "text": "신데렐라 인형을 만들며 울던 세이렌의 기억이 비친다" },
+    { "scene": "erelic:unbreakable_sphere_dialog_21", "text": "일행이 물거품 정원에 작별을 고한다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9i",
+      "hash": "4de1c16577",
+      "note": "입력(필드 대화 22장면 · 기록 4편 · F1904–F1909)과 대조 — 놀이터 장면은 원문 9줄로 확인, 물거품 구름의 결과(Q244)는 열어 둠, 경고 없음"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "unit": "event_footstepwalkrun1",
+  "session": "W9i",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "변신한 라피가 처음으로 털어놓는 과거 — 병상의 소녀가 양산형 니케가 되어 레드 후드를 만나기까지.",
+  "synopsis": "변신을 겪은 라피가 카운터스를 지휘관실로 불러 처음으로 자기 이야기를 꺼낸다. 인간 라피는 희귀병으로 평생 병원에 누워 TV 속 니케를 승리의 여신이라 동경했다. 1차 지상 탈환전이 실패하자 니케 박해가 번지고, 병원이 문을 닫을 위기에 라피는 위험한 임상 실험을 자원해 완치된다. 그러나 퇴원한 날 맨발로 헤매다 니케 시위의 강경 진압에 휘말려 총에 맞아 죽는다.\n\n양산형 니케가 된 라피는 첫 친구 세이라를 얻지만 스쿼드는 전멸하고, 동료들의 머리를 들고 홀로 돌아와 표창을 받고도 거짓말 시비 끝에 갱생관에 간다. 그곳에서 만난 리오 · 웬디와 전투 특화 스쿼드 스컬 헤드에서 지내지만, 아이돌을 꿈꾸던 리오가 침식되며 스쿼드는 끝난다. 이후 동료를 잃기만 하던 라피는 2차 지상 탈환전 2년째에 30년 만에 깨어난 갓데스의 레드 후드를 만난다.\n\n침식 말기라 남은 시간이 일주일뿐이라는 레드 후드는 라피의 소원을 들어주겠다고 한다. 궤도 엘리베이터를 보러 가는 길에 둘은 그 지하에서 방주의 수호자라 자칭하는 D.E.E.P.을 만나고, 라피는 레드 후드 같은 존재가 되고 싶다고 말한다. 레드 후드는 살라는 말을 남기고 죽고, 라피는 그의 몸이 사라진 채 깨어나 4년 만에 방주로 돌아온다. 코어가 둘이 된 라피는 앱솔루트에서 레드 후드의 모습으로 변하고, 잉그리드는 그 연구를 묻는다. 이제 라피는 레드 후드처럼 되겠다고 말한다.",
+  "scenes": [
+    { "scene": "event_footstepwalkrun1_prologue", "text": "변신을 겪은 라피가 카운터스를 불러 인간이던 시절부터 이야기를 시작한다" },
+    { "scene": "event_footstepwalkrun1_01_s", "text": "병원에 누운 어린 라피가 1차 지상 탈환전의 패배와 간호사의 죽음을 겪는다" },
+    { "scene": "event_footstepwalkrun1_01_e", "text": "병원이 문을 닫을 위기에 라피가 위험한 임상 실험을 자원해 병이 낫기 시작한다" },
+    { "scene": "event_footstepwalkrun1_02_s", "text": "완치되어 퇴원한 라피에게 의사가 집과 돈을 남기고 떠난다" },
+    { "scene": "event_footstepwalkrun1_02_e", "text": "맨발로 거리를 헤매던 라피가 니케 시위 진압에 휘말려 총에 맞는다" },
+    { "scene": "event_footstepwalkrun1_03_s", "text": "양산형 니케가 된 라피가 자원 채취 스쿼드로 곧장 실전에 나간다" },
+    { "scene": "event_footstepwalkrun1_03_e", "text": "같은 날 니케가 된 세이라가 말을 걸어 와 라피의 첫 친구가 된다" },
+    { "scene": "event_footstepwalkrun1_intermission_01", "text": "스쿼드가 전멸하고, 라피가 머리만 남은 동료 앞에서 세이라에게 자기 이야기를 한다" },
+    { "scene": "event_footstepwalkrun1_04_s", "text": "동료들의 머리를 들고 홀로 돌아온 라피가 표창을 받지만 시비 끝에 갱생관에 간다" },
+    { "scene": "event_footstepwalkrun1_04_e", "text": "갱생관 철창 안에서 아이돌 광고를 보던 리오와 웬디를 만난다" },
+    { "scene": "event_footstepwalkrun1_05_s", "text": "리오와 웬디가 라피에게 인사치레를 가르치며 친구가 된다" },
+    { "scene": "event_footstepwalkrun1_05_e", "text": "출소한 라피를 둘이 전투 특화 스쿼드 스컬 헤드로 데려간다" },
+    { "scene": "event_footstepwalkrun1_06_s", "text": "아이돌 프리티가 살해당하고, 리오를 응원하던 날 스컬 헤드가 무너진다" },
+    { "scene": "event_footstepwalkrun1_06_e", "text": "2차 지상 탈환전 2년째, 홀로 남은 라피가 깨어난 레드 후드를 만난다" },
+    { "scene": "event_footstepwalkrun2_01_s", "text": "레드 후드가 갓데스 소속임을 밝히고 라피에게 존댓말을 그만두게 한다" },
+    { "scene": "event_footstepwalkrun2_01_e", "text": "전사자를 함께 묻은 뒤, 레드 후드가 남은 시간에 라피의 소원을 들어주겠다고 한다" },
+    { "scene": "event_footstepwalkrun2_02_s", "text": "라피가 레드 후드를 피하려고 궤도 엘리베이터를 보고 싶다는 소원을 지어낸다" },
+    { "scene": "event_footstepwalkrun2_02_e", "text": "레드 후드가 음악과 음식, 사격을 라피에게 마구 권한다" },
+    { "scene": "event_footstepwalkrun2_03_s", "text": "궤도 엘리베이터를 멀리서 본 둘이 포격을 피해 달아난다" },
+    { "scene": "event_footstepwalkrun2_03_e", "text": "갈라진 땅에 빠진 라피를 끝까지 지킨 레드 후드에게 라피가 진짜 소원을 말한다" },
+    { "scene": "event_footstepwalkrun2_intermission_01", "text": "궤도 엘리베이터 지하에서 D.E.E.P.이 쌍둥이 코어를 보여 주고 라피의 다리를 고친다" },
+    { "scene": "event_footstepwalkrun2_04_s", "text": "레드 후드가 라피에게 자신이 가진 모든 것을 넘겨주기로 한다" },
+    { "scene": "event_footstepwalkrun2_04_e", "text": "레드 후드가 동료와 고향, 니케가 된 내력을 들려준다" },
+    { "scene": "event_footstepwalkrun2_05_s", "text": "방주로 걷던 라피가 무너지자 레드 후드가 다잡아 준다" },
+    { "scene": "event_footstepwalkrun2_05_e", "text": "레드 후드가 살라는 말을 남기고 죽고, 라피는 계절이 바뀌도록 움직이지 않는다" },
+    { "scene": "event_footstepwalkrun2_06_s", "text": "레드 후드의 몸이 사라진 채 깨어난 라피가 4년 만에 방주로 돌아온다" },
+    { "scene": "event_footstepwalkrun2_06_e", "text": "앱솔루트 시절 라피가 레드 후드로 변하고, 잉그리드가 그 일을 묻어 버린다" },
+    { "scene": "event_footstepwalkrun2_epilogue", "text": "앱솔루트를 나온 라피가 아니스와 둘만의 스쿼드가 된다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9i",
+      "hash": "48808fa32b",
+      "note": "입력(1·2부 28장면 · F1738–F1765)과 대조 — D.E.E.P.의 손길 · 레드 후드 몸의 행방(Q223 · Q224)은 열어 둠, 경고 없음"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "unit": "event_lordforjustice",
+  "session": "W9i",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "기억을 잃은 시지 패러리스 K가, 자신이 무엇을 위해 판결을 집행해 왔는지 마주한다.",
+  "synopsis": "미스트가 널린 안전 가옥에서 판결을 집행하던 K는 집행 거부를 요청하지만 기각되고, 저지스의 X는 스스로 고른 선택을 받아들이라 한다. 얼마 뒤 K는 일주일치 기억을 잃고 다친 몸으로 지휘관의 샤워실에 나타난다. 아르카나는 금서고의 시지 패러리스 전용 통로가 찢겼는데도 경보가 울리지 않았고, 두 사람의 임무 기록이 사라졌다고 알린다.\n\n대 열람실에서 식스오를 쫓던 목단을 만난 일행은, 미스트 일당 가운데 살아남은 여자가 말한 범인의 인상이 K 자신과 꼭 닮았음을 알게 된다. 찾아간 여자는 이미 죽어 있고, D가 나타나 전화를 건넨다. 전화 속 VII은 지휘관에게 판결을 명하며, 그 대상은 자기 자신이라고 말한다. 안전 가옥의 기록에서는 악이 사라진 방주에 일부러 악을 존재하게 하려던 VII의 계획과, K가 그 임무를 기꺼이 맡았던 사실이 드러난다. 기억을 되찾은 K는 무너진다.\n\n목단은 K를 재건 중인 포그 할로우로 데려가, 잘못은 고치면 된다는 자신의 정의를 보여 준다. VII은 K가 꼭두각시가 된 것도 기억을 지운 것도 K 자신의 선택이었다고 말하고, X의 재촉 속에 스스로 목숨을 끊는다. X는 VII의 자리를 지휘관에게 주려다 자기 독단이었음을 인정하고 K의 처분을 맡기지만, 지휘관은 아무것도 고르지 않는다. K는 저지스를 떠나 자경단으로서 D와 함께 데이파라를 찾아 나선다.",
+  "scenes": [
+    { "scene": "event_lordforjustice_prologue", "text": "판결을 집행하던 K가 집행 거부를 요청하지만 기각되고, X가 선택을 받아들이라 한다" },
+    { "scene": "event_lordforjustice_01_s", "text": "다친 K가 지휘관의 샤워실에 나타나고, 무거운 특급 임무용 바디가 꼼짝하지 않는다" },
+    { "scene": "event_lordforjustice_01_e", "text": "일주일치 기억을 잃은 K에게, 아르카나가 금서고 침입 소식을 전한다" },
+    { "scene": "event_lordforjustice_02_s", "text": "찢긴 통로를 지나, 시지 패러리스의 임무 기록이 사라진 방을 확인한다" },
+    { "scene": "event_lordforjustice_02_e", "text": "식스오를 쫓던 목단을 만나고, 살아남은 여자가 말한 범인이 K를 닮았음을 안다" },
+    { "scene": "event_lordforjustice_03_s", "text": "찾아간 여자는 이미 죽어 있고, D가 지휘관에게 전화를 건넨다" },
+    { "scene": "event_lordforjustice_03_e", "text": "VII이 지휘관에게 판결을 명하며 그 대상이 자기 자신이라고 한다" },
+    { "scene": "event_lordforjustice_intermission_01", "text": "VII이 K를 꼭두각시라 부르고, K의 품에서 기록 보관소 열쇠가 나온다" },
+    { "scene": "event_lordforjustice_04_s", "text": "안전 가옥의 기록에서 악을 존재하게 하려던 VII의 계획이 드러난다" },
+    { "scene": "event_lordforjustice_04_e", "text": "VII에게서 임무를 받던 기억이 돌아오고, K가 절망한다" },
+    { "scene": "event_lordforjustice_05_s", "text": "목단이 재건 중인 포그 할로우와 무덤들을 보이며 자신의 정의를 말한다" },
+    { "scene": "event_lordforjustice_05_e", "text": "VII이 기억 소거도 꼭두각시도 K의 선택이었다고 하고, X의 전화가 온다" },
+    { "scene": "event_lordforjustice_06_s", "text": "X의 재촉에 VII이 스스로 목숨을 끊고, X는 K의 처분을 지휘관에게 맡긴다" },
+    { "scene": "event_lordforjustice_06_e", "text": "지휘관이 아무것도 고르지 않고, K는 다시 정의를 향하기로 한다" },
+    { "scene": "event_lordforjustice_epilogue", "text": "자경단이 된 K가 D와 함께 데이파라를 찾아 나서고, X는 의미심장한 통화를 한다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-10-10",
+      "session": "W9i",
+      "hash": "8ed2bcf25a",
+      "note": "입력(15장면 · F1947–F1972)과 대조 — #000000의 정체는 추정이라 쓰지 않음, 검열된 대상 · 급진 집단 · X(Q249–Q251)와 여자를 죽인 이는 열어 둠, 경고 없음"
+    }
+  ]
+}

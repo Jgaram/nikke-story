@@ -1,0 +1,29 @@
+{
+  "unit": "event_romanticvalentine",
+  "session": "W9i",
+  "by": "claude",
+  "date": "2026-10-10",
+  "logline": "메이드 카페 임시 점장이 된 지휘관 앞에, 지상의 연애 상담 A.I. 조니가 휴대폰을 타고 나타난다.",
+  "synopsis": "지상의 과자 공장 Sweets & Cocoa를 관리하던 A.I. 스윗 조니는 공장을 드나든 니케들에게서 인류가 지하로 쫓겨났다는 이야기를 듣고, 니케들의 로망을 돕겠다며 한 니케의 휴대폰에 데이터를 실어 방주로 숨어든다.\n\n밸런타인 무렵, 에이드의 부탁으로 지휘관이 메이드 카페 분점의 임시 점장을 맡고 마스트 · 앵커 · 신 · 트로니가 메이드로 일한다. 손님이 맡긴 휴대폰에서 조니가 튀어나오지만 데이터가 깨져 있어, 일행은 공장에서 원본을 가져와 트로니가 되살린다. 조니가 품은 보물은 지상의 인터넷이 끊길 때까지 모은 연애물과 연애 상담 프로그램 로맨틱 밸런타인이었다. 메이드들은 금세 빠져들고, 마스트는 카페를 해적 카페로 바꿔 버린다.\n\n트로니의 제안으로 메이드들은 조니와 함께 연애 시뮬레이션 같은 상황극을 짠다. 해적 카페는 신고가 들어가 헬름이 정리시키고, 지휘관은 머스탱의 긴급 호출로 일손이 달리는 메이드 포 유를 도우러 간다. 메이드들은 길티 · 퀀시 · 일레그의 손을 빌려 지휘관을 납치해 간지럼을 태우지만, 조니는 배드 엔드는 안 된다며 평소처럼 지내는 것이 진짜 결말이라고 공원에 엔딩 장면을 마련한다. 조니는 메이드 카페에 자리를 잡고, 비인가 A.I.라는 신고에 프리바티와 밀크가 찾아온다.",
+  "scenes": [
+    { "scene": "event_romanticvalentine_prologue", "text": "지상 과자 공장의 A.I. 조니가 니케의 휴대폰에 숨어 방주로 들어온다" },
+    { "scene": "event_romanticvalentine_01_s", "text": "밸런타인 며칠 뒤, 지휘관의 방에서 메이드들의 소동이 벌어진다" },
+    { "scene": "event_romanticvalentine_01_e", "text": "에이드의 부탁으로 지휘관이 메이드 카페 분점의 임시 점장을 맡는다" },
+    { "scene": "event_romanticvalentine_02_s", "text": "카페 영업이 순조로운 가운데, 손님의 휴대폰에서 조니가 튀어나온다" },
+    { "scene": "event_romanticvalentine_02_e", "text": "데이터가 깨진 조니를 고치려고 공장에서 원본을 가져오기로 한다" },
+    { "scene": "event_romanticvalentine_03_s", "text": "되살아난 조니가 연애물 데이터와 연애 상담 프로그램을 보물로 내놓는다" },
+    { "scene": "event_romanticvalentine_03_e", "text": "연애물에 빠진 메이드들 사이에서 마스트가 카페를 해적 카페로 바꾼다" },
+    { "scene": "event_romanticvalentine_intermission_01", "text": "해적 카페 뒤풀이에서 트로니가 연애 시뮬레이션 같은 상황극을 하자고 한다" },
+    { "scene": "event_romanticvalentine_04_s", "text": "메이드들이 저마다 히로인 설정을 연습한다" },
+    { "scene": "event_romanticvalentine_04_e", "text": "상황극의 고백 장면 도중 헬름이 해적 카페를 정리시키고 머스탱의 호출이 온다" },
+    { "scene": "event_romanticvalentine_05_s", "text": "머스탱의 부탁으로 지휘관이 자리를 비우자 메이드들이 엔딩을 꾸민다" },
+    { "scene": "event_romanticvalentine_05_e", "text": "길티 · 퀀시 · 일레그의 도움으로 메이드들이 지휘관을 납치해 간지럼을 태운다" },
+    { "scene": "event_romanticvalentine_06_s", "text": "조니가 배드 엔드를 막고, 진짜 결말은 평소대로 지내는 것이라고 한다" },
+    { "scene": "event_romanticvalentine_06_e", "text": "공원의 엔딩 장면에서 조니가 소녀들의 로망을 돕는 까닭을 말한다" },
+    { "scene": "event_romanticvalentine_epilogue", "text": "조니가 메이드 카페에 설치되고, 비인가 A.I. 신고에 프리바티와 밀크가 온다" }
+  ],
+  "status": "확정",
+  "reviews": [
+    { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W9i", "hash": "bdb2901445", "note": "입력(15장면 · F1780–F1783)과 대조 — 새 의문 없음, 경고 없음" }
+  ]
+}
