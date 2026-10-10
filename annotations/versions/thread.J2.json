@@ -118,6 +118,14 @@
           "session": "W15d",
           "hash": "b16e41dc01",
           "note": "W15d 검토 — at까지의 흐름만, 뒤 이름 없음, 체크 칸(FOOTSTEP)만의 사실은 그 판에 두고 RED ASH 사실은 쓰지 않음, CH.34는 FOOTSTEP에 · CH.42는 CH.44에 묶음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15f",
+          "hash": "4bf4fa3028",
+          "note": "곁 판으로 바꿈(until ch44) — F1763 · Q224는 FOOTSTEP에서만. 안 본 독자는 CH.34 → CH.44로 이어 감. CH.44는 두 번째 코어 물음을 이어 받아 넘어감"
         }
       ],
       "side": true,

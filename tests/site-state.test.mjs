@@ -76,3 +76,11 @@ test('stateAt · gradeAt이 reading을 받는다', () => {
   assert.equal(fmt.gradeAt({ key: 'ev_a', tick: 15, grade: '보강' }, R), null);
   assert.equal(fmt.gradeAt({ key: 'ev_c', tick: 18, grade: '보강', from_tick: 30, before: '참고' }, R), '참고');
 });
+
+test('stateAt — 처음(know_units)을 모르면 뒤 단계도 모른다(W15f — 체크 칸에서 던진 의문이 메인에서 일부 회수)', () => {
+  const q = { kind: 'Q', unit: 'side', first_tick: 2, partial_tick: 5, partial_units: ['ch05'] };
+  const R = (seen) => ({ all: false, t: 9, seen: (k) => seen.includes(k), seenAny(ks) { return ks.some((k) => seen.includes(k)); } });
+  assert.equal(fmt.stateAt(q, R(['ch05'])), '아직');
+  assert.equal(fmt.stateAt(q, R(['side', 'ch05'])), '일부');
+  assert.equal(fmt.stateAt({ ...q, hint_tick: 1, hint_units: ['ch01'] }, R(['ch01', 'ch05'])), '암시만');
+});

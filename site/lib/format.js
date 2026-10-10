@@ -995,6 +995,8 @@ export function stateAt(r, T) {
     const us = r[STAGE_UNITS[key]] ?? (key === 'first_tick' && r.unit ? [r.unit] : null);
     return us ? R.seenAny(us) : x <= R.t;
   };
+  // 처음(던짐 · 밝혀짐 — know_units)을 모르면 뒤 단계도 모른다(W15f): 체크 칸 스토리에서 던진 의문이 뒤 메인에서 일부 회수돼도, 그 칸을 안 본 독자에겐 아직 없는 의문이다
+  if (R && !R.all && r.first_tick != null && !le('first_tick')) return le('hint_tick') ? '암시만' : '아직';
   if (r.kind === 'F') {
     if (le('reversed_tick')) return '뒤집힘';
     if (le('first_tick')) return '앎';
