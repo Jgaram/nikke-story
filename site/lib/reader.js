@@ -80,11 +80,13 @@ function tabLink(tab, p = {}, { sel = '' } = {}) {
 const tabAction = (tab, p, opts) => ui.el('span', { class: 'panel-action' }, tabLink(tab, p, opts));
 
 let orderMap = null;
+let preMap = {};
 async function loadOrder() {
   if (orderMap) return orderMap;
   try {
     const o = await data.load('order');
     orderMap = new Map(o.units.map((j) => [j.key, j]));
+    preMap = o.pre ?? {};
   } catch {
     orderMap = new Map(); // 못 받아도 리더는 쓴다
   }
@@ -216,8 +218,13 @@ function linksPanel(idx, { sel, tabAct, pick, build, emptyText }) {
 function classPanel(u, idx) {
   const j = orderMap?.get(u.key);
   const action = tabAction('order', {}, { sel: `unit:${u.key}` });
+  const p = preMap[u.key];
+  // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름 + 왜
+  const preRow = p ? row('선행', fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', {},
+    ui.el('b', { title: fmt.help('pre', l) }, `${l} `),
+    p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`)])))) : null;
   if (!j) {
-    if (u.grade === '메인' || u.grade === '척추') return ui.panel(fmt.TERM.judgment, ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), { actions: action });
+    if (u.grade === '메인' || u.grade === '척추') return ui.panel(fmt.TERM.judgment, [ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), preRow ? kv([preRow]) : null], { actions: action });
     return null;
   }
   const t = T();
@@ -232,6 +239,8 @@ function classPanel(u, idx) {
   const why = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, withLinks(full)))) : null;
   return ui.panel(fmt.TERM.judgment, kv([
     row(t == null ? '등급' : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
+    j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order ? row('선행인 곳', ui.link(`unit:${j.from}`, fmt.preOf(spineName(j.from)))) : null,
+    preRow,
     row(fmt.TERM.basis, why),
   ]), { actions: action });
 }

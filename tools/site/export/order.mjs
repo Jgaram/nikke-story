@@ -1,5 +1,5 @@
 /**
- * 탭 "읽기 순서" 데이터(W2) — 화면 1(docs/views.md "1. 스토리 중요도 분류", 판정 카드 docs/importance.md).
+ * 탭 "감상 순서" 데이터(W2) — 화면 1(docs/views.md "1. 스토리 중요도 분류", 판정 카드 docs/importance.md).
  *
  *   order.json        = { units[421], spine[60], leads[20], counts }                 — 첫 화면에 필요한 것(목록 · 지도 · 한 줄 근거)
  *   order-detail.json = { notes[], units: { <key>: { history, basis_text, reviews } } } — 분류 카드를 열 때만 받는다(판정 이력 · 근거 문장 · 검토 기록 — 전체의 3분의 1이라 뺐다)
@@ -12,6 +12,7 @@
  *             lead_facts(주역 사연 조각 — '네온(ch01) 사실 3') · closures('O9(관계 · 지휘관 · 확정)') · origin_of[](이 단위가 원점인 주역 person ID)
  *   spine[]   척추 자리 60 = 메인 챕터 49 + 척추 이벤트 8 · 사이드 3(공용 units.json의 spine 표시) — key · tick · order, 공개 자리순
  *   leads[]   주역 명단(annotations/leads.json 확정) — id · person · from(주역이 되는 자리의 단위 키) · from_tick · origin(원점 단위 키 또는 '메인') · origin_tick · arcs[] · records[] · reason · confidence
+ *   pre       { <단위 키>: { 필수: [[키, 왜]], 권장: [...], 선택: [...] } } — 선행 스토리(계산, PRE_RULES · prereqsOf). 선행이 없는 단위는 싣지 않는다
  *   counts    { grade: { 필수, 보강, 참고, 독립 }, judged, spine, leads, asof }
  *   detail    basis_text(결정 근거 기록의 우리 문장) · history('B0b-2 독립 · X3c 그대로 → X3f-6a 참고') ·
  *             reviews[{ session, date, decision, before, note }](검토 기록 — annotations/layers.json; note는 notes[]의 번호 — 같은 메모가 수백 번 반복돼 표로 뺐다)
@@ -28,6 +29,50 @@ export function gradeTrail(history) {
   const grades = String(history ?? '').match(/필수|보강|참고|독립/g) ?? [];
   const trail = grades.filter((g, i) => i === 0 || g !== grades[i - 1]);
   return trail.length > 1 ? trail : undefined;
+}
+
+/**
+ * 선행 스토리 계산(사용자 2026-10-10 — 판정 · 연결에서 계산, 새로 판정하지 않는다).
+ * A가 X의 선행 = A가 X보다 앞(읽는 자리)이고 아래 중 하나. 여러 개에 걸리면 높은 칸 하나.
+ *   필수  sequel(다음 편 — A가 X의 앞 편, X가 메인 챕터면 뺀다) · judged(A의 판정 from이 X이고 A가 필수)
+ *   권장  judged(from이 X이고 A가 보강) · X가 메인 밖일 때 setup_payoff · reversal 강함(3)
+ *   선택  callback 강함(3) · setup_payoff · callback 보통(2) · X가 척추일 때 setup_payoff · reversal 강함(3)(판정이 그 자리를 짚지 않았다)
+ * 척추(메인 챕터 + 척추 이벤트 · 사이드)는 감상 순서에 늘 있으므로 A로 세지 않는다. 같은 인물 · 같은 대상(character · keyword)은 세지 않는다.
+ * @param {{ from_unit, to_unit, type, strength }[]} edges  data/views/links/unit-edges.csv 줄
+ * @param {{ key, grade, from }[]} judged  판정 단위
+ * @param {Map<string, { order: number, kind: string, spine?: boolean }>} unitByKey
+ */
+export function prereqsOf(edges, judged, unitByKey) {
+  const LEVEL = ['필수', '권장', '선택'];
+  const isSpine = (k) => unitByKey.get(k)?.kind === 'main' || Boolean(unitByKey.get(k)?.spine);
+  const ord = (k) => unitByKey.get(k)?.order ?? Infinity;
+  const pre = new Map(); // X → Map(A → [level, why])
+  const put = (x, a, level, why) => {
+    if (a === x || isSpine(a) || !unitByKey.has(a) || !unitByKey.has(x) || !(ord(a) < ord(x))) return;
+    const m = pre.get(x) ?? pre.set(x, new Map()).get(x);
+    const had = m.get(a);
+    if (!had || LEVEL.indexOf(level) < LEVEL.indexOf(had[0])) m.set(a, [level, why]);
+  };
+  for (const j of judged) {
+    if (!j.from || !isSpine(j.from)) continue;
+    if (j.grade === '필수') put(j.from, j.key, '필수', 'judged');
+    else if (j.grade === '보강') put(j.from, j.key, '권장', 'judged');
+  }
+  for (const e of edges) {
+    const a = e.from_unit; const x = e.to_unit; const st = Number(e.strength);
+    const xSpine = isSpine(x);
+    if (e.type === 'sequel') { if (unitByKey.get(x)?.kind !== 'main') put(x, a, '필수', 'sequel'); }
+    else if ((e.type === 'setup_payoff' || e.type === 'reversal') && st >= 3) put(x, a, xSpine ? '선택' : '권장', e.type);
+    else if (e.type === 'callback' && st >= 3) put(x, a, '선택', e.type);
+    else if ((e.type === 'setup_payoff' || e.type === 'callback') && st === 2) put(x, a, '선택', e.type);
+  }
+  const out = {};
+  for (const [x, m] of [...pre].sort((p, q) => ord(p[0]) - ord(q[0]))) {
+    const row = {};
+    for (const [a, [level, why]] of [...m].sort((p, q) => ord(p[0]) - ord(q[0]))) (row[level] ??= []).push([a, why]);
+    out[x] = row;
+  }
+  return out;
 }
 
 export async function run(ctx) {
@@ -111,10 +156,12 @@ export async function run(ctx) {
     .map((u) => ({ key: u.key, tick: u.tick, order: u.order }))
     .sort((a, b) => a.tick - b.tick || a.order - b.order);
 
+  const pre = prereqsOf(csv('data/views/links/unit-edges.csv'), units, unitByKey);
+
   const asof = [...new Set(units.map((u) => u.asof).filter(Boolean))].sort().at(-1);
   return {
     files: {
-      'order.json': { units, spine, leads, counts: { grade: counts, judged: units.length, spine: spine.length, leads: leads.length, asof } },
+      'order.json': { units, spine, leads, pre, counts: { grade: counts, judged: units.length, spine: spine.length, leads: leads.length, asof } },
       'order-detail.json': { notes: reviewNotes, units: detail },
     },
   };

@@ -9,6 +9,7 @@
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · THREAD_WEIGHT(핵심 · 보조 · 곁가지)
+ *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(필수 · 권장 · 선택) · 뜻 · 왜 선행인가 · 'CH.30 선행'
  *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · layer · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
@@ -228,6 +229,16 @@ export const LINK_TYPE_HELP = {
 /** 연결 강도(세기 1–3) */
 export const LINK_LEVEL = { 1: '약함', 2: '보통', 3: '강함' };
 
+/** 선행 스토리(order.json pre — tools/site/export/order.mjs prereqsOf): 칸 · 칸 뜻 · 왜 선행인가 */
+export const PRE_LEVEL = ['필수', '권장', '선택'];
+export const PRE_HELP = {
+  필수: '먼저 봐야 이 스토리를 따라갈 수 있다 — 앞 편이거나, 이 자리에 필수로 분류된 스토리',
+  권장: '먼저 보면 이 스토리의 장면 · 떡밥이 이어진다',
+  선택: '이 스토리가 다시 꺼내는 일이 나온다 — 봐 두면 좋지만 안 봐도 된다',
+};
+export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
+export const preOf = (spineLabel) => `${spineLabel} 선행`; // 'CH.30 선행' — 이 스토리가 그 본편의 선행이다
+
 // ── 탭 ──
 export const TAB = {
   order: { title: '감상 순서', hint: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' },
@@ -296,6 +307,7 @@ const HELP = {
   drift: DRIFT_HELP,
   link: LINK_TYPE_HELP,
   target: TARGET_TYPE_HELP,
+  pre: PRE_HELP,
 };
 /** 툴팁용 한 줄 정의. 없으면 빈 문자열 */
 export const help = (group, key) => HELP[group]?.[key] ?? '';

@@ -72,3 +72,39 @@ test('gradeTrail — 이력 문자열에서 등급이 바뀐 순서만 뽑는다
   // order.json의 trail은 이력 문자열에서 온다 — 마지막 등급이 최종 등급과 같다
   for (const u of order.units) if (u.trail) assert.equal(u.trail.at(-1), u.grade, u.key);
 });
+
+test('prereqsOf — 앞 편은 필수 · 분류가 짚은 자리는 필수/권장 · 떡밥은 권장/선택, 척추 · 뒤 단위는 선행이 아니다', async () => {
+  const { prereqsOf } = await import('../tools/site/export/order.mjs');
+  const units = new Map([
+    ['ch01', { order: 1, kind: 'main' }], ['a', { order: 2, kind: 'sub' }], ['b', { order: 3, kind: 'sub' }],
+    ['ev', { order: 4, kind: 'event', spine: true }], ['c', { order: 5, kind: 'event' }], ['ch02', { order: 6, kind: 'main' }],
+  ]);
+  const edges = [
+    { from_unit: 'a', to_unit: 'b', type: 'sequel', strength: '3' },
+    { from_unit: 'a', to_unit: 'c', type: 'setup_payoff', strength: '3' },
+    { from_unit: 'b', to_unit: 'c', type: 'callback', strength: '3' },
+    { from_unit: 'a', to_unit: 'c', type: 'callback', strength: '2' }, // 같은 짝은 높은 칸 하나
+    { from_unit: 'ev', to_unit: 'c', type: 'setup_payoff', strength: '3' }, // 척추는 선행으로 세지 않는다
+    { from_unit: 'c', to_unit: 'b', type: 'setup_payoff', strength: '3' }, // 뒤 단위는 선행이 아니다
+    { from_unit: 'a', to_unit: 'ch02', type: 'setup_payoff', strength: '3' }, // 척추 X — 판정이 안 짚은 떡밥은 선택
+    { from_unit: 'a', to_unit: 'c', type: 'keyword', strength: '2' },
+  ];
+  const judged = [{ key: 'c', grade: '보강', from: 'ch02' }, { key: 'b', grade: '필수', from: 'ch02' }];
+  const pre = prereqsOf(edges, judged, units);
+  assert.deepEqual(pre.b, { 필수: [['a', 'sequel']] });
+  assert.deepEqual(pre.c, { 권장: [['a', 'setup_payoff']], 선택: [['b', 'callback']] });
+  assert.deepEqual(pre.ch02, { 필수: [['b', 'judged']], 권장: [['c', 'judged']], 선택: [['a', 'setup_payoff']] });
+});
+
+test('order.json pre — 선행은 모두 앞 단위이고 척추가 아니다', () => {
+  const units = new Map(read('units.json').map((u) => [u.key, u]));
+  for (const [x, row] of Object.entries(order.pre)) {
+    for (const l of Object.keys(row)) {
+      assert.ok(['필수', '권장', '선택'].includes(l), `${x} ${l}`);
+      for (const [a] of row[l]) {
+        assert.ok(units.get(a).order < units.get(x).order, `${a} → ${x}`);
+        assert.ok(units.get(a).kind !== 'main' && !units.get(a).spine, `${a} 척추`);
+      }
+    }
+  }
+});

@@ -45,7 +45,7 @@ const LABELS = {
   find: '제목 · 이유 검색', findAria: '스토리 검색',
   count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(본편 포함)와 대사 글자 수',
   extras: (n) => `본편 밖 ${n}`,
-  riseTo: (at, grade) => `→ ${at}부터 ${grade}`, riseByList: (at) => `${at} 전까지 보면 된다`, riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
+  riseTo: (at, grade) => `→ ${at}부터 ${grade}`, preOfHelp: (at) => `${at}을 보기 전에 보면 좋다`, pre: '선행', riseSince: (at) => `${at}부터`, riseBefore: (at, grade) => `${at} 앞에서는 ${grade}`,
   rowsGrade: '등급별', rowsKind: '종류별', rows: '행',
   legendSpine: { main: '본편 챕터', event: '본편 이벤트', side: '본편 사이드' }, legendRise: '테두리 = 나중에 오를 등급',
   mapHint: '점을 누르면 분류 · 아래 축을 누르면 그 시점까지 읽은 것으로 둔다',
@@ -59,7 +59,7 @@ const LABELS = {
   card: '분류', cardClose: '닫기',
   rows2: {
     grade: '등급', why: '관련 메모', reason: '이유', judg: '분류', threads: '떡밥', lead: '주역', origins: '첫 이야기', endings: '결말', history: '분류가 바뀐 기록',
-    release: '출시 시점', climbs: '여기서 등급이 오르는 스토리', touched: '여기에 닿는 스토리', touch: '닿는 본편',
+    pre: '선행 스토리', preFor: '이 스토리가 선행인 곳', release: '출시 시점', touch: '닿는 본편',
   },
   none: '없음',
   after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
@@ -104,6 +104,10 @@ export async function mount(root, ctx) {
   const spine = order.spine.map((s) => ({ ...s, unit: idx.units.get(s.key) })).filter((s) => s.unit);
   const spineByKey = new Map(spine.map((s) => [s.key, s]));
   const spineTicks = spine.map((s) => s.tick);
+  const pre = order.pre ?? {};
+  /** 거꾸로 — A가 선행인 스토리들 [X, 칸] */
+  const preFor = new Map();
+  for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
   /** 출시 시점 → 본편 칸(그 시점 ≤ 인 마지막 본편 스토리) */
   const colOf = (tick) => {
     let lo = 0; let hi = spineTicks.length - 1; let ans = 0;
@@ -160,12 +164,23 @@ export async function mount(root, ctx) {
   const listView = ui.el('div', { class: 'order-list' });
   const listEl = ui.el('ol', { class: 'order-seq' });
   listView.append(listEl);
-  const riseNote = (j) => {
-    if (!j.from_tick) return null;
+  /** 'CH.30 선행' — 판정이 짚은 본편 자리(from)의 선행이다. 등급이 그 자리부터 오르면 툴팁에 */
+  const preOfChip = (j) => {
+    // 본편이 이 스토리보다 앞이면(출시 전 본편이 닿는 자리) 선행이 아니다 — prereqsOf와 같은 규칙
+    if (!j.from || !spineByKey.has(j.from) || !(j.unit.order < spineByKey.get(j.from).unit.order)) return null;
     const at = spineLabel(j.from);
-    if (curT == null) return ui.el('span', { class: 'order-rise', title: LABELS.riseBefore(at, gl(j.before ?? j.grade)) }, LABELS.riseByList(at));
-    if (curT < j.from_tick) return ui.el('span', { class: 'order-rise is-future', title: `${at}에서 이 스토리를 다루기 시작하면 ${gl(j.grade)}` }, LABELS.riseTo(at, gl(j.grade)));
-    return ui.el('span', { class: 'order-rise' }, LABELS.riseSince(at));
+    let tip = LABELS.preOfHelp(at);
+    if (j.from_tick) tip += curT != null && curT < j.from_tick ? ` · ${LABELS.riseTo(at, gl(j.grade))}` : ` · ${LABELS.riseBefore(at, gl(j.before ?? j.grade))}`;
+    return ui.el('span', { class: ['order-preof', j.from_tick && curT != null && curT < j.from_tick ? 'is-future' : ''], title: tip }, fmt.preOf(at));
+  };
+  /** 선행 한 줄 — 필수는 이름으로, 권장 · 선택은 개수만(전부는 분류 카드 · 리더) */
+  const preLine = (key) => {
+    const p = pre[key];
+    if (!p) return null;
+    const parts = [];
+    if (p.필수?.length) parts.push([ui.el('b', { title: fmt.help('pre', '필수') }, '필수 '), p.필수.map(([k], i) => [i ? ', ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k))])]);
+    for (const l of ['권장', '선택']) if (p[l]?.length) parts.push(ui.el('span', { title: fmt.help('pre', l) }, `${l} ${p[l].length}`));
+    return ui.el('span', { class: 'order-pre', onClick: (e) => e.stopPropagation() }, `${LABELS.pre} `, parts.map((x, i) => [i ? ' · ' : null, x]));
   };
   /** 감상 순서의 한 줄. 본편이면 sp, 메인 밖이면 j */
   const seqRow = (item, n, T) => {
@@ -179,13 +194,13 @@ export async function mount(root, ctx) {
       attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}`;
       return ui.el('li', attrs, num,
         ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind)),
-        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title)), chars);
+        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preLine(key)), chars);
     }
     const g = gradeAt(item, T);
     attrs.class = 'order-row is-extra';
     return ui.el('li', attrs, num,
       ui.el('span', { class: 'order-badges' }, ui.chip('grade', g), ui.chip('kind', unit.kind)),
-      ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), riseNote(item)),
+      ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preOfChip(item), preLine(key)),
       chars);
   };
   const markSelected = (key) => {
@@ -426,6 +441,18 @@ export async function mount(root, ctx) {
   };
 
   // ── 분류 카드 ──
+  const preRows = (key) => {
+    const R = LABELS.rows2;
+    const p = pre[key];
+    const lines = p ? fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', { class: 'order-pre-line' },
+      ui.el('b', { title: fmt.help('pre', l) }, `${l} `),
+      p[l].map(([k, why], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[why] ?? why})`)]))) : [];
+    const back = (preFor.get(key) ?? []).filter(([x]) => state.visible(idx.units.get(x)?.tick, curT));
+    return [
+      [R.pre, lines.length ? lines : ui.el('span', { class: 'muted' }, LABELS.none)],
+      back.length ? [R.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${l}`)])] : null,
+    ];
+  };
   const kv = (rows) => ui.el('dl', { class: 'order-kv' }, rows.filter(Boolean).flatMap(([k, v]) => [ui.el('dt', {}, k), ui.el('dd', {}, v)]));
   const detail = () => data.load('order-detail');
   const renderCard = (s) => {
@@ -440,15 +467,10 @@ export async function mount(root, ctx) {
     const close = ui.el('button', { type: 'button', class: 'btn order-card-close', 'aria-label': LABELS.cardClose, onClick: () => state.set({ sel: '' }) }, ui.icon('close'));
     const R = LABELS.rows2;
     if (sp) {
-      const climbs = judged.filter((x) => x.from === sp.key && x.from_tick);
-      const touched = judged.filter((x) => x.from === sp.key && !x.from_tick);
-      const list = (xs, tail) => xs.map((x, i) => [i ? ' · ' : null, ui.link(`unit:${x.key}`, x.unit.title), tail?.(x)]);
       card.append(ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', sp.unit.kind), ' ', ui.link(`unit:${sp.key}`, sp.unit.title)), close),
         kv([[R.grade, ui.chip('grade', sp.unit.kind === 'main' ? '메인' : '척추')],
           [R.release, [fmt.tickLabel(sp.tick), ' · ', ui.link(`tick:${sp.tick}`, fmt.unitTitle(sp.key))]],
-          climbs.length ? [R.climbs, list(climbs, (x) => ui.el('span', { class: 'muted' }, ` ${gl(x.before)} → ${gl(x.grade)}`))] : null,
-          touched.length ? [R.touched, list(touched, (x) => ui.el('span', { class: 'muted' }, ` ${gl(x.grade)}`))] : null,
-          climbs.length || touched.length ? null : [R.touched, ui.el('span', { class: 'muted' }, LABELS.none)]]));
+          ...preRows(sp.key)]));
       return;
     }
     const T = s.t;
@@ -464,6 +486,7 @@ export async function mount(root, ctx) {
       ui.el('div', { class: 'panel-head' }, ui.el('h3', {}, ui.chip('kind', j.unit.kind), ' ', ui.link(`unit:${j.key}`, j.unit.title), ui.el('span', { class: 'muted order-card-sub' }, ` · ${fmt.tickLabel(j.tick)} · ${fmt.num(j.unit.chars)}자 · ${fmt.num(j.unit.scenes)}${LABELS.scene}`)), close),
       kv([
         [T == null ? R.grade : TERM.gradeAt, gradeRow],
+        ...preRows(j.key),
         j.reason ? [R.reason, withLinks(j.reason)] : null,
         basisRow ? [R.why, basisRow] : null,
         [R.judg, [j.confidence ? ui.chip('confidence', j.confidence) : null, ' ', j.unit.layer ? ui.chip('layer', j.unit.layer) : null, j.asof ? ui.el('span', { class: 'muted' }, ` · ${LABELS.asof} ${j.asof}`) : null]],

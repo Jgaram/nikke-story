@@ -59,8 +59,14 @@
 .tab-order .order-badges { display: flex; flex-wrap: wrap; gap: 4px; }
 .tab-order .order-title { line-height: 1.4; overflow-wrap: anywhere; word-break: keep-all; }
 .tab-order .order-chars { color: var(--ink-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
-.tab-order .order-rise { display: block; font-size: 12px; color: var(--ink-muted); }
-.tab-order .order-rise.is-future { color: var(--link); font-weight: 600; }
+.tab-order .order-preof {
+  display: inline-block; margin-left: 6px; padding: 0 7px; vertical-align: 1px; font-size: 11.5px; line-height: 18px; white-space: nowrap;
+  color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 9px;
+}
+.tab-order .order-preof.is-future { color: var(--link); border-color: var(--link); }
+.tab-order .order-pre { display: block; font-size: 12px; font-weight: 400; color: var(--ink-muted); }
+.tab-order .order-pre b { font-weight: 600; color: var(--ink-2); }
+.tab-order .order-pre-line + .order-pre-line { margin-top: 2px; }
 /* 본편 — 메인 챕터는 굵은 구분 줄(제목이 칩 칸까지 넓게), 본편 이벤트 · 사이드는 본편 칩 */
 .tab-order .order-row.is-main { padding-top: 9px; padding-bottom: 9px; background: var(--surface-2); border-top-color: var(--line-2); }
 .tab-order .order-row.is-main .order-badges { display: none; }
