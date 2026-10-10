@@ -5,6 +5,7 @@
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
+ *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
@@ -58,6 +59,15 @@ export async function run(ctx) {
   const events = new Map(csv('data/views/timeline/events.csv').map((r) => [r.unit, r]));
   const eventScenes = new Map(csv('data/views/timeline/event-scenes.csv').map((r) => [r.scene, r]));
   const roots = new Map(csv('data/views/timeline/records.csv').map((r) => [r.id, r]));
+  // 단계별 단위 — 여기까지 읽음이 '본 스토리 목록'일 때(본편 이벤트 · 사이드를 건너뛸 수 있다) 앎 · 상태를 단위로 계산한다
+  const STAGE_KEY = { '처음 밝혀짐': 'know_units', 보강: 'know_units', 제기: 'know_units', 암시: 'hint_units', 뒤집힘: 'reversed_units', '일부 회수': 'partial_units', 회수: 'solved_units' };
+  const stageUnits = new Map();
+  for (const r of csv('data/views/timeline/reveals.csv')) {
+    const key = STAGE_KEY[r.stage];
+    if (!key || !r.unit) continue;
+    const m = stageUnits.get(r.root) ?? stageUnits.set(r.root, {}).get(r.root);
+    (m[key] ??= new Set()).add(r.unit);
+  }
   const threadRows = new Map(csv('data/views/read1/threads.csv').map((r) => [r.id, r]));
   const unitKeys = new Set(unitRows.map((r) => r.unit));
   const placeOf = new Map(unitRows.map((r) => [r.unit, { tick: num(r.tick), order: num(r.order), date: r.date }]));
@@ -157,6 +167,12 @@ export async function run(ctx) {
         replaced_by: r?.replaced_by || undefined, partial_tick: num(r?.partial_tick), solved_tick: num(r?.solved_tick), last_tick: num(r?.last_tick),
         root_units: num(r?.units) || undefined,
       });
+      // 단계별 단위(공개 자리순) — know_units가 [unit] 하나뿐이면 싣지 않는다(읽는 쪽이 [unit]으로 본다)
+      const su = stageUnits.get(c.id) ?? {};
+      const byPlace = (set) => (set ? [...set].sort((a, b) => (placeOf.get(a)?.order ?? 0) - (placeOf.get(b)?.order ?? 0)) : undefined);
+      const know = byPlace(su.know_units);
+      if (know && !(know.length === 1 && know[0] === unit)) rec.know_units = know;
+      for (const k of ['hint_units', 'reversed_units', 'partial_units', 'solved_units']) if (su[k]) rec[k] = byPlace(su[k]);
     } else if (kind === 'F-k' || kind === 'Q-k') {
       Object.assign(rec, { act: c.act, parent: c.parent, answer: o.answer, degree: o.degree, replaced_by: o.replacedBy, threads: threadsOfRoot(c.parent) });
     } else if (kind === 'S') {

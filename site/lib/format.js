@@ -254,15 +254,22 @@ export const openInTab = (tab) => `${TAB[tab]?.title ?? tab} 탭에서 보기`;
 /** 여기까지 읽음 팝업(첫 방문이면 저절로 뜬다) */
 export const FIRST_VISIT = {
   ask: '어디까지 읽으셨나요?',
-  help: '고른 데까지 나온 이야기만 보여 스포일러를 막는다. 감상 순서 탭은 이와 관계없이 전부 보인다.',
-  pick: '메인 챕터 선택',
-  fine: '세밀하게',
+  help: '본 데까지 나온 이야기만 보여 스포일러를 막는다. 감상 순서 탭은 이와 관계없이 전부 보인다.',
+  mainHead: '메인 스토리',
+  mainAria: '메인 스토리 어디까지',
+  prev: '이전 챕터',
+  next: '다음 챕터',
+  exHead: '본편 이벤트 · 사이드',
+  exHint: '순서대로 안 봤다면 본 것만 체크',
+  exBadge: (n, all) => `+본편 ${n}/${all}`,
+  exBadgeHelp: '본편 이벤트 · 사이드를 메인 순서와 다르게 골랐다',
   all: '전부 보기',
   later: '나중에',
+  ok: '확인',
   close: '닫기',
   open: '눌러서 바꾸기',
   allHelp: '스포일러를 가리지 않고 모든 시점의 이야기를 본다',
-};
+}
 
 /** 자주 쓰는 말 — 탭은 하드코딩하지 말고 여기서 가져다 쓴다 */
 export const TERM = {
@@ -384,6 +391,12 @@ export const hiddenLabel = (n) => `스포일러로 가린 ${num(n)}`;
 
 /** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */
 export function gradeAt(u, T) {
+  if (T != null && typeof T === 'object') { // state.reading() — 본 스토리 목록 기준
+    if (T.all) return u.grade;
+    if (!T.seen(u.key)) return null;
+    if (u.from_tick && T.t < u.from_tick) return u.before ?? u.grade; // 등급이 오르는 자리는 메인 챕터(t) 기준
+    return u.grade;
+  }
   if (T == null) return u.grade;
   if (T < u.tick) return null;
   if (u.from_tick && T < u.from_tick) return u.before ?? u.grade;
@@ -458,20 +471,31 @@ export function recordText(r) {
 /**
  * 사실 · 의문의 컷오프 상태. 사실: 앎(처음 밝혀짐 ≤ T) · 뒤집힘(뒤집힘 ≤ T) · 암시만(암시 ≤ T < 처음) · 아직.
  * 의문: 풀림(회수 ≤ T) · 일부(일부 회수 ≤ T) · 열림(제기 ≤ T) · 암시만 · 아직. T가 null이면 끝 상태.
+ * T 자리에 state.reading()을 주면 단계마다 그 단계가 일어난 스토리(know_units · hint_units …)를 하나라도 봤는지로 본다.
  */
+const STAGE_UNITS = { first_tick: 'know_units', hint_tick: 'hint_units', reversed_tick: 'reversed_units', partial_tick: 'partial_units', solved_tick: 'solved_units' };
 export function stateAt(r, T) {
   if (!r || (r.kind !== 'F' && r.kind !== 'Q')) return null;
-  const le = (x) => x != null && (T == null || x <= T);
+  const R = T != null && typeof T === 'object' ? T : null;
+  if (R?.all) T = null;
+  /** 그 단계(칸 이름)가 T 안에 일어났나 */
+  const le = (key) => {
+    const x = r[key];
+    if (x == null) return false;
+    if (!R) return T == null || x <= T;
+    const us = r[STAGE_UNITS[key]] ?? (key === 'first_tick' && r.unit ? [r.unit] : null);
+    return us ? R.seenAny(us) : x <= R.t;
+  };
   if (r.kind === 'F') {
-    if (le(r.reversed_tick)) return '뒤집힘';
-    if (le(r.first_tick)) return '앎';
-    if (le(r.hint_tick)) return '암시만';
+    if (le('reversed_tick')) return '뒤집힘';
+    if (le('first_tick')) return '앎';
+    if (le('hint_tick')) return '암시만';
     return '아직';
   }
-  if (le(r.solved_tick)) return '풀림';
-  if (le(r.partial_tick)) return '일부';
-  if (le(r.first_tick)) return '열림';
-  if (le(r.hint_tick)) return '암시만';
+  if (le('solved_tick')) return '풀림';
+  if (le('partial_tick')) return '일부';
+  if (le('first_tick')) return '열림';
+  if (le('hint_tick')) return '암시만';
   return '아직';
 }
 

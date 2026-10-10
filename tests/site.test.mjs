@@ -107,6 +107,11 @@ test('확정 기록만 · 공통 칸 · 종류 코드', () => {
   const q = r1.find((r) => r.id === 'Q1');
   assert.equal(q.state, '풀림');
   assert.ok(q.first_tick && q.solved_tick);
+  // 단계별 단위(reveals.csv) — 메인이 다시 밝힌 사실은 know_units에 두 곳, 하나뿐이면 싣지 않는다
+  const f40 = r1.find((r) => r.id === 'F40');
+  assert.deepEqual(f40.know_units, ['ch02', 'ch07']);
+  assert.ok(r1.filter((r) => r.kind === 'F' || r.kind === 'Q').every((r) => !r.know_units || r.know_units.length > 1 || r.know_units[0] !== r.unit));
+  assert.ok(q.solved_units?.length);
   const f1 = r1.find((r) => r.id === 'F1');
   assert.equal(f1.state, '뒤집힘');
   const rev = r1.find((r) => r.id === 'F1-2');

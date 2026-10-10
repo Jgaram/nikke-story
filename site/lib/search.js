@@ -28,7 +28,7 @@ export function init({ input, container, state, data, fmt, ui }) {
 
   const build = (idx) => {
     entries = [];
-    for (const u of idx.unitList) entries.push({ type: 'unit', sel: `unit:${u.key}`, label: u.title, sub: `${fmt.KIND[u.kind]?.label ?? u.kind} · ${fmt.tickShort(u.tick)}`, keys: [norm(u.title), norm(u.key), norm(u.name)] });
+    for (const u of idx.unitList) entries.push({ type: 'unit', sel: `unit:${u.key}`, unit: u.key, label: u.title, sub: `${fmt.KIND[u.kind]?.label ?? u.kind} · ${fmt.tickShort(u.tick)}`, keys: [norm(u.title), norm(u.key), norm(u.name)] });
     for (const t of idx.targetList) {
       const type = t.type === 'person' ? 'person' : 'target';
       entries.push({ type, sel: `${type}:${t.id}`, label: t.name, sub: `${fmt.TARGET_TYPE[t.type] ?? t.type}${t.kind ? ` · ${t.kind}` : ''}`, keys: [norm(t.name), ...(t.aliases ?? []).map((a) => norm(a.name)), norm(t.id)] });
@@ -36,7 +36,7 @@ export function init({ input, container, state, data, fmt, ui }) {
     for (const j of idx.threadList) entries.push({ type: 'thread', sel: `thread:${j.id}`, label: j.title, sub: `${fmt.THREAD_WEIGHT[j.weight]?.label ?? j.weight} · 의문 ${j.questions?.length ?? 0}`, keys: [norm(j.title), norm(j.text), norm(j.id)] });
   };
   const buildRecords = (idx) => {
-    recordEntries = idx.recordList.map((r) => ({ type: 'record', sel: `record:${r.id}`, label: fmt.recordText(r), sub: `${fmt.recordLabel(r)} · ${fmt.unitTitle(r.unit)}`, id: r.id, tick: r.tick, keys: [norm(r.id), norm(fmt.recordText(r))] }));
+    recordEntries = idx.recordList.map((r) => ({ type: 'record', sel: `record:${r.id}`, label: fmt.recordText(r), sub: `${fmt.recordLabel(r)} · ${fmt.unitTitle(r.unit)}`, id: r.id, rec: r, keys: [norm(r.id), norm(fmt.recordText(r))] }));
   };
 
   const buildSynopsis = (idx, list) => {
@@ -99,7 +99,7 @@ export function init({ input, container, state, data, fmt, ui }) {
       if (!q) return close();
       container.append(ui.empty('결과 없음'));
     }
-    const t = state.get().t;
+    const R = state.reading();
     let i = 0;
     for (const [type, label] of GROUPS) {
       const group = list.filter((e) => e.type === type);
@@ -107,7 +107,7 @@ export function init({ input, container, state, data, fmt, ui }) {
       container.append(ui.el('div', { class: 'search-group', role: 'presentation' }, label));
       for (const e of group) {
         const k = i++;
-        const after = e.tick != null && !state.visible(e.tick, t);
+        const after = e.rec ? !R.known(e.rec) : e.unit ? !R.seen(e.unit) : false;
         const node = ui.el('div', { class: ['search-item', after ? 'after-cutoff' : ''], role: 'option', id: `search-opt-${k}`, 'aria-selected': 'false', dataset: { i: String(k) }, onMousedown: (ev) => { ev.preventDefault(); choose(e); } },
           ui.el('span', { class: 'search-label' }, e.label),
           ui.el('span', { class: 'search-sub' }, e.type === 'synopsis' ? (after ? '스포일러 — 여기까지 읽음 뒤 스토리' : snippet(e.text, q)) : e.sub, e.type !== 'synopsis' && after ? ' · 스포일러' : null, e.id ? [' · ', ui.el('span', { class: 'mono' }, e.id)] : null));

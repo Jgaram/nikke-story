@@ -189,12 +189,12 @@ function unitLinkRows(key, edges, idx) {
     const u = idx.units.get(g.other);
     const self = g.other === key;
     const s = best.s;
-    const node = ui.el('li', { class: ['rd-link', u && !state.visible(u.tick) ? 'after-cutoff' : ''] },
+    const node = ui.el('li', { class: ['rd-link', u && !state.seen(u.key) ? 'after-cutoff' : ''] },
       ui.el('div', { class: 'rd-link-main' },
         self ? ui.el('span', {}, '이 스토리 안') : (u ? ui.link(`unit:${g.other}`, u.title) : ui.el('span', { class: 'mono' }, g.other)),
         ui.el('span', { class: 'rd-link-meta' }, `${levelText(s)}${g.edges.length > 1 ? ` · 씬 ${g.edges.length}쌍` : ''}`)),
       ui.el('div', { class: 'rd-link-ev' }, linkEvidence(best, idx), g.edges.length > 1 ? ui.el('span', { class: 'muted' }, ` 외 ${g.edges.length - 1}`) : null));
-    return { type: g.type, node, s, n: g.edges.length, order: u?.order ?? 9999, after: Boolean(u) && !state.visible(u.tick) };
+    return { type: g.type, node, s, n: g.edges.length, order: u?.order ?? 9999, after: Boolean(u) && !state.seen(u.key) };
   });
 }
 
@@ -206,7 +206,7 @@ function sceneLinkRows(id, edges, idx) {
     const otherUnit = mine ? e.tu : e.fu;
     const sc = idx.scenes.get(other);
     const u = idx.units.get(otherUnit);
-    const hidden = Boolean(u) && !state.visible(u.tick);
+    const hidden = Boolean(u) && !state.seen(u.key);
     const ev = [];
     if (e.record) ev.push(ui.link(`record:${e.record}`, e.record, { class: 'mono', title: e.act ? (fmt.ACT[e.act] ?? e.act) : '분석 메모' }));
     const node = ui.el('li', { class: ['rd-link', hidden ? 'after-cutoff' : ''] },
@@ -249,7 +249,7 @@ function classPanel(u, idx) {
     return null;
   }
   const t = T();
-  const g = fmt.gradeAt(j, t);
+  const g = fmt.gradeAt(j, state.reading());
   const spineName = (k) => { const s = idx.units.get(k); return s?.kind === 'main' ? fmt.tickShort(s.tick) : fmt.unitTitle(k); };
   const gradeRow = [ui.chip('grade', g ?? j.grade)];
   if (g == null) gradeRow.push(' ', ui.el('span', { class: 'muted' }, '여기까지 읽음 뒤에 나온 스토리'));
@@ -290,8 +290,8 @@ const cutoffName = () => fmt.tickShort(T());
 
 /** 메모 한 줄 — 종류 칩 · 확신도 · 문장 · 근거 링크 · 작은 메모 ID. "여기까지 읽음" 뒤면 흐리게 */
 function recordLine(r, { showUnit = false } = {}) {
-  const hidden = !state.visible(r.tick);
-  const st = fmt.stateAt(r, T());
+  const hidden = !state.known(r);
+  const st = fmt.stateAt(r, state.reading());
   return ui.el('li', { class: ['record-line', hidden ? 'after-cutoff' : ''] },
     ui.el('div', { class: 'chips' },
       ui.chip('record', r.kind, fmt.recordLabel(r)),
@@ -307,11 +307,11 @@ function recordLine(r, { showUnit = false } = {}) {
 /** 메모 목록을 "여기까지 읽음" 앞 · 뒤로 갈라 그린다 — 뒤는 details 안 */
 function recordList(records, opts = {}) {
   if (!records?.length) return ui.empty('메모 없음');
-  const t = T();
+  const R = state.reading();
   const order = (r) => (fmt.RECORD_ORDER.indexOf(r.kind) + 1 || 99);
   const sorted = [...records].sort((a, b) => order(a) - order(b) || (a.line ?? 0) - (b.line ?? 0) || String(a.id).localeCompare(String(b.id)));
-  const before = sorted.filter((r) => state.visible(r.tick, t));
-  const after = sorted.filter((r) => !state.visible(r.tick, t));
+  const before = sorted.filter((r) => R.known(r));
+  const after = sorted.filter((r) => !R.known(r));
   return ui.el('div', { class: 'record-lists' },
     before.length ? ui.el('ul', { class: 'records' }, before.map((r) => recordLine(r, opts))) : ui.empty('여기까지 읽은 범위엔 없음'),
     after.length ? ui.details(spoilerSummary(after.length), ui.el('ul', { class: 'records' }, after.map((r) => recordLine(r, opts))), { class: 'spoiler' }) : null);
@@ -344,9 +344,10 @@ const RENDER = {
   unit(key, idx) {
     const u = idx.units.get(key);
     if (!u) return root.append(head('찾을 수 없음'), ui.empty(`스토리 없음: ${key}`));
-    const hidden = !state.visible(u.tick);
+    const hidden = !state.seen(u.key);
     root.append(head(u.title, [ui.chip('kind', u.kind), gradeChip(u), u.layer ? ui.chip('layer', u.layer) : null]));
-    if (hidden) root.append(ui.notice(`여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
+    // 메인 위치 앞에 나왔는데 안 봤으면 '안 봤다고 고른 스토리'(본편 이벤트 · 사이드 체크)
+    if (hidden) root.append(ui.notice(state.visible(u.tick) ? '안 봤다고 고른 스토리 — 아래는 스포일러일 수 있다' : `여기까지 읽음(${cutoffName()}) 뒤에 나온 스토리 — 아래는 스포일러일 수 있다`, 'warn'));
     const syn = synopsisPanel(key, hidden);
     if (syn) root.append(syn);
     const scenes = idx.scenesOf.get(key) ?? [];
@@ -376,7 +377,7 @@ const RENDER = {
     const line = sceneLineMap?.get(id);
     if (line) {
       const p = ui.el('p', { class: 'rd-logline' }, line);
-      root.append(u && !state.visible(u.tick) ? ui.details(spoilerSummary(), p, { class: 'spoiler' }) : p);
+      root.append(u && !state.seen(u.key) ? ui.details(spoilerSummary(), p, { class: 'spoiler' }) : p);
     }
     const siblings = idx.scenesOf.get(s.unit) ?? [];
     const prev = siblings[s.seq - 2];
@@ -396,8 +397,8 @@ const RENDER = {
   record(id, idx) {
     const r = idx.records?.get(id);
     if (!r) return root.append(head('찾을 수 없음'), ui.empty(`메모 없음: ${id}`));
-    const hidden = !state.visible(r.tick);
-    const st = fmt.stateAt(r, T());
+    const hidden = !state.known(r);
+    const st = fmt.stateAt(r, state.reading());
     root.append(head(fmt.recordLabel(r), [r.confidence === '추정' ? ui.chip('confidence', '추정') : null, st && st !== '앎' ? ui.chip('state', st) : null], mono(r.id)));
     const recLinks = (ids) => ids?.length ? joinNodes(ids.map((c) => ui.link(`record:${c}`, c, { class: 'mono' }))) : null;
     const body = ui.el('div', {});

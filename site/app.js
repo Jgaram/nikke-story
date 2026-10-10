@@ -39,87 +39,122 @@ function themeButton() {
   });
 }
 
-// ── 여기까지 읽음(컷오프) — 상단은 지금 값을 보이는 단추 하나, 누르면 고르는 팝업(dialog)이 뜬다. 첫 방문이면 팝업이 저절로 뜬다 ──
+// ── 여기까지 읽음(컷오프) — 상단은 지금 값을 보이는 단추 하나, 누르면 팝업(dialog). 첫 방문이면 팝업이 저절로 뜬다 ──
+// 팝업: 메인은 순서대로 보니 슬라이더 + 이전 · 다음 챕터 단추 하나로, 본편 이벤트 · 사이드는 순서 없이 볼 수 있어 따로 체크(사용자, 2026-10-10)
 const FV_LATER_KEY = 'nikke-story.fv-later';
 function cutoffControl(idx, firstVisit) {
   const wrap = $('#cutoff');
   const V = fmt.FIRST_VISIT;
   const first = idx.tickList[0]?.tick ?? 1;
   const last = idx.tickList.at(-1)?.tick ?? 1;
+  const mains = idx.mainTicks.map((m) => m.tick);
+  const extras = state.spineExtras();
   const short = (t) => (t == null ? fmt.TERM.showAll : idx.ticks.get(t)?.main ? fmt.tickShort(t) : fmt.tickLabel(t, { date: false }));
 
   // 상단 단추
   const value = ui.el('span', { class: 'cutoff-value' });
+  const extraEl = ui.el('span', { class: 'cutoff-extra' });
   const dateEl = ui.el('span', { class: 'cutoff-date' });
   const btn = ui.el('button', { type: 'button', class: 'cutoff-btn', 'aria-haspopup': 'dialog', title: fmt.TERM_HELP.cutoff },
     ui.el('span', { class: 'cutoff-stack' },
       ui.el('span', { class: 'cutoff-name' }, fmt.TERM.cutoff),
-      ui.el('span', { class: 'cutoff-read' }, value, dateEl)),
+      ui.el('span', { class: 'cutoff-read' }, value, extraEl, dateEl)),
     ui.el('span', { class: 'cutoff-caret', 'aria-hidden': 'true' }, '▾'));
   wrap.append(btn);
 
-  // 팝업 — 메인 챕터 단추 격자(누르면 고르고 닫힌다) + 세밀 슬라이더(이벤트 단위) + 전부 보기
+  // 팝업
   const dlg = ui.el('dialog', { class: 'cutoff-dlg', 'aria-labelledby': 'cutoff-dlg-title' });
   const close = (chosen) => {
-    if (!chosen && firstVisit) { try { sessionStorage.setItem(FV_LATER_KEY, '1'); } catch { /* 없음 */ } }
+    if (firstVisit) {
+      if (chosen) state.set({ t: state.get().t ?? null }); // 확인 = 지금 값을 고른 것으로 남긴다
+      else { try { sessionStorage.setItem(FV_LATER_KEY, '1'); } catch { /* 없음 */ } }
+    }
     firstVisit = false;
     if (dlg.open) dlg.close();
   };
-  const choose = (t) => { state.set({ t }); close(true); };
-  const chapters = idx.mainTicks.map((t) => ui.el('button', { type: 'button', class: 'cutoff-ch', title: fmt.unitTitle(t.main), dataset: { t: t.tick }, onClick: () => choose(t.tick) }, fmt.tickShort(t.tick)));
-  const slider = ui.el('input', { type: 'range', id: 'cutoff-slider', min: first, max: last, step: 1, 'aria-label': V.fine });
+  const slider = ui.el('input', { type: 'range', id: 'cutoff-slider', min: first, max: last, step: 1, 'aria-label': V.mainAria });
   const list = ui.el('datalist', { id: 'cutoff-marks' }, idx.mainTicks.map((t) => ui.el('option', { value: t.tick, label: fmt.tickShort(t.tick) })));
   slider.setAttribute('list', 'cutoff-marks');
-  const now = ui.el('output', { for: 'cutoff-slider', class: 'cutoff-now' });
-  const allBtn = ui.el('button', { type: 'button', class: 'btn', title: V.allHelp, onClick: () => choose(null) }, V.all);
+  const nowName = ui.el('b', { class: 'cutoff-now-name' });
+  const nowSub = ui.el('span', { class: 'cutoff-now-sub muted' });
+  const stepBtn = (dir) => ui.el('button', { type: 'button', class: 'btn cutoff-step', 'aria-label': dir < 0 ? V.prev : V.next, title: dir < 0 ? V.prev : V.next, onClick: () => {
+    const cur = state.get().t ?? last;
+    const to = dir < 0 ? [...mains].reverse().find((m) => m < cur) ?? first : mains.find((m) => m > cur) ?? last;
+    state.set({ t: to });
+  } }, dir < 0 ? '‹' : '›');
+  const prevBtn = stepBtn(-1);
+  const nextBtn = stepBtn(1);
+  // 본편 이벤트 · 사이드 체크 칸 — 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
+  const boxes = extras.map((e) => {
+    const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
+    input.addEventListener('change', () => {
+      const s = state.get();
+      state.set({ t: s.t ?? last, x: { ...s.x, [e.key]: input.checked } });
+    });
+    const u = idx.units.get(e.key);
+    const at = idx.ticks.get(e.tick)?.upto;
+    return ui.el('label', { class: 'cutoff-ex' }, input,
+      ui.el('span', { class: 'cutoff-ex-title' }, u?.title ?? e.key),
+      ui.el('span', { class: 'cutoff-ex-sub muted' }, `${fmt.KIND[u?.kind]?.label ?? ''}${at ? ` · ${fmt.tickShort(idx.mainTicks.find((m) => m.main === at)?.tick)} 뒤` : ''}`));
+  });
+  const allBtn = ui.el('button', { type: 'button', class: 'btn', title: V.allHelp, onClick: () => { state.set({ t: null }); close(true); } }, V.all);
   const laterBtn = ui.el('button', { type: 'button', class: 'btn btn-quiet', onClick: () => close(false) }, V.later);
+  const okBtn = ui.el('button', { type: 'button', class: 'btn btn-primary', onClick: () => close(true) }, V.ok);
   dlg.append(
     ui.el('div', { class: 'cutoff-dlg-head' },
       ui.el('h2', { id: 'cutoff-dlg-title' }, V.ask),
       ui.el('button', { type: 'button', class: 'btn cutoff-dlg-x', 'aria-label': V.close, onClick: () => close(false) }, ui.icon('close'))),
     ui.el('p', { class: 'cutoff-dlg-help muted' }, V.help),
-    ui.el('div', { class: 'cutoff-chs', role: 'group', 'aria-label': V.pick }, chapters),
-    ui.el('div', { class: 'cutoff-fine' }, ui.el('span', { class: 'cutoff-fine-name' }, V.fine), slider, list, now),
-    ui.el('div', { class: 'cutoff-dlg-foot' }, allBtn, laterBtn));
+    ui.el('section', { class: 'cutoff-sec' },
+      ui.el('h3', {}, V.mainHead),
+      ui.el('div', { class: 'cutoff-now' }, prevBtn, ui.el('output', { for: 'cutoff-slider', class: 'cutoff-now-read' }, nowName, nowSub), nextBtn),
+      slider, list),
+    ui.el('section', { class: 'cutoff-sec' },
+      ui.el('h3', {}, V.exHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.exHint)),
+      ui.el('div', { class: 'cutoff-exs' }, boxes)),
+    ui.el('div', { class: 'cutoff-dlg-foot' }, allBtn, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn));
   document.body.append(dlg);
-  // 바깥(배경)을 누르면 닫는다 · Esc도 고르지 않고 닫은 것
   dlg.addEventListener('click', (e) => { if (e.target === dlg) close(false); });
   dlg.addEventListener('cancel', (e) => { e.preventDefault(); close(false); });
 
   const fill = (v) => slider.style.setProperty('--fill', `${last > first ? ((v - first) / (last - first)) * 100 : 0}%`);
   const showNow = (t) => {
-    now.textContent = t == null ? fmt.TERM.showAll : fmt.tickLabel(t);
-    if (t != null) { slider.setAttribute('aria-valuetext', fmt.tickLabel(t)); fill(t); }
-  };
-  /** 고른 챕터 = 그 시점 ≤ 인 마지막 메인 챕터(이벤트 단위로 맞췄으면 그 앞 챕터에 옅게) */
-  const markChapter = (t) => {
-    let at = null;
-    if (t != null) for (const m of idx.mainTicks) if (m.tick <= t) at = m.tick;
-    for (const b of chapters) {
-      const v = Number(b.dataset.t);
-      b.setAttribute('aria-pressed', String(v === t));
-      b.classList.toggle('is-near', v === at && v !== t);
-      b.classList.toggle('is-read', t == null || v <= t);
-    }
-    allBtn.setAttribute('aria-pressed', String(t == null));
+    if (t == null) { nowName.textContent = fmt.TERM.showAll; nowSub.textContent = ''; return; }
+    const tk = idx.ticks.get(t);
+    const mainAt = tk?.main ?? tk?.upto;
+    nowName.textContent = tk?.main ? fmt.unitTitle(tk.main) : fmt.tickLabel(t, { date: false });
+    nowSub.textContent = [tk?.main ? null : mainAt ? fmt.unitTitle(mainAt) : null, tk?.date].filter(Boolean).join(' · ');
+    slider.setAttribute('aria-valuetext', fmt.tickLabel(t));
+    fill(t);
   };
   const sync = (s) => {
     const t = s.t;
+    const R = state.reading(s);
+    const diff = Object.keys(s.x ?? {}).length;
     value.textContent = short(t);
+    extraEl.textContent = t != null && diff ? V.exBadge(extras.filter((e) => R.seen(e.key)).length, extras.length) : '';
+    extraEl.title = extraEl.textContent ? V.exBadgeHelp : '';
     dateEl.textContent = t == null ? '' : idx.ticks.get(t)?.date ?? '';
     btn.classList.toggle('is-off', t == null);
-    btn.setAttribute('aria-label', `${fmt.TERM.cutoff}: ${t == null ? fmt.TERM.showAll : fmt.tickLabel(t)} — ${V.open}`);
+    btn.setAttribute('aria-label', `${fmt.TERM.cutoff}: ${t == null ? fmt.TERM.showAll : fmt.tickLabel(t)}${extraEl.textContent ? ` (${extraEl.textContent})` : ''} — ${V.open}`);
     slider.value = t ?? last;
     showNow(t);
-    markChapter(t);
+    prevBtn.disabled = t != null && t <= first;
+    nextBtn.disabled = t == null || t >= last;
+    for (const b of boxes) {
+      const input = b.querySelector('input');
+      input.checked = R.seen(input.dataset.key);
+      b.classList.toggle('is-diff', input.dataset.key in (s.x ?? {}));
+    }
+    allBtn.setAttribute('aria-pressed', String(t == null));
   };
-  slider.addEventListener('input', () => { showNow(Number(slider.value)); markChapter(Number(slider.value)); });
-  slider.addEventListener('change', () => state.set({ t: Number(slider.value) })); // 슬라이더는 팝업을 닫지 않는다(세밀하게 맞추는 중)
+  slider.addEventListener('input', () => showNow(Number(slider.value)));
+  slider.addEventListener('change', () => state.set({ t: Number(slider.value) }));
   const open = () => {
     laterBtn.hidden = !firstVisit;
     sync(state.get());
     dlg.showModal();
-    (chapters.find((b) => b.getAttribute('aria-pressed') === 'true' || b.classList.contains('is-near')) ?? chapters[0])?.focus();
+    slider.focus();
   };
   btn.addEventListener('click', open);
   sync(state.get());
@@ -255,6 +290,7 @@ async function boot() {
   fmt.use(idx);
   const ch00 = idx.mainTicks.find((t) => t.main === 'ch00')?.tick ?? idx.tickList[0]?.tick ?? 1;
   const firstVisit = !state.cutoffChosen(); // init이 URL에 t를 쓰기 전에 본다
+  state.configure({ units: idx.units });
   state.init({ defaultCutoff: ch00 });
   cutoffControl(idx, firstVisit);
   scopeControl();
@@ -271,6 +307,7 @@ async function boot() {
   state.subscribe((s, changed) => {
     if (changed.has('tab')) mountTab(ctx);
     if (changed.has('sel')) { if (s.sel) reader.open(s.sel); else reader.close(); }
+    else if (changed.has('t') && s.sel) reader.open(s.sel); // 여기까지 읽음이 바뀌면 리더의 가림도 다시
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && reader.isOpen() && !e.target.closest('#search')) state.set({ sel: '' });
