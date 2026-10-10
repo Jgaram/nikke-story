@@ -257,7 +257,7 @@ function classPanel(u, idx) {
   if (g == null) gradeRow.push(' ', ui.el('span', { class: 'muted' }, '여기까지 읽음 뒤에 나온 스토리'));
   else if (g !== j.grade) gradeRow.push(' ', ui.el('span', { class: 'muted' }, ['→ ', ui.link(`unit:${j.from}`, spineName(j.from)), '부터 '], ui.chip('grade', j.grade)));
   else if (j.from_tick) gradeRow.push(' ', ui.el('span', { class: 'muted' }, t == null ? `${spineName(j.from)} 앞에서는 ${fmt.GRADE[j.before ?? j.grade]?.label}` : `${spineName(j.from)}부터`));
-  const full = fmt.prose(j.reason ?? '');
+  const full = fmt.reasonText(j.reason ?? ''); // 판정 과정 마디는 걷는다(W13b — 감상 순서 카드와 같다)
   const short = clipText(full, 90);
   const why = full ? (short === full ? ui.el('div', {}, full) : ui.details(short, ui.el('div', { class: 'rd-why-full' }, full))) : null;
   return ui.panel(fmt.TERM.judgment, kv([

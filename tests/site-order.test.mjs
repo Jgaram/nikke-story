@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gradeAt as siteGradeAt, cutRowAt } from '../site/tabs/order.js';
+import { gradeAt as siteGradeAt, cutRowAt, ghostKeys } from '../site/tabs/order.js';
 import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
@@ -144,6 +144,29 @@ test('cutRowAt — 예외가 없으면 tick ≤ cut인 마지막 척추 줄, 안
   // 뒤에 나왔지만 봤음으로 둔 것은 자리를 옮기지 않는다
   const later = extrasJson.find((e) => e.tick > t);
   if (later) assert.equal(cutRowAt(seq, t, siteState.reading({ t, x: { [later.key]: true } })), atDefault);
+});
+
+test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)에서 등급으로만 숨은 앞 편을 앞 편의 앞 편까지 끼운다', () => {
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  const judged = new Map(order.units.map((j) => [j.key, j]));
+  const kinds = ['main', 'side', 'event', 'episode', 'sub', 'elevator'];
+  const shown = [...order.spine.filter((s) => kinds.includes(units.get(s.key).kind)).map((s) => s.key),
+    ...order.units.filter((j) => ['필수', '보강'].includes(j.grade) && kinds.includes(units.get(j.key).kind)).map((j) => j.key)];
+  const pass = (k) => judged.has(k) && kinds.includes(units.get(k).kind);
+  const ghosts = ghostKeys(shown, order.pre, pass);
+  const title = (k) => units.get(k).title;
+  const pairs = new Set([...ghosts].map(([a, by]) => `${title(by)} ← ${title(a)}`));
+  // 이야기가 끊기던 넷(SESSIONS W13b) — 랩칠리언 6 ← 5는 5 ← 4 ← 3 ← 2까지 거슬러 간다
+  for (const p of ['랩칠리언 6 ← 랩칠리언 5', '세르반 2 ← 세르반 1', '세르반 4 ← 세르반 3', 'BITTER SPICE ← B-SIDE IDOL', '랩칠리언 3 ← 랩칠리언 2']) assert.ok(pairs.has(p), p);
+  for (const [a, by] of ghosts) {
+    assert.ok(!shown.includes(a), `${a}: 이미 보이는 줄`);
+    assert.ok(['참고', '독립'].includes(judged.get(a).grade), `${a}: 등급 필터 밖`);
+    assert.ok(order.pre[by].필수.some(([k]) => k === a), `${a}: ${by}의 필수 선행`);
+    assert.ok(units.get(a).order < units.get(by).order, `${a}: 앞에 온다`);
+  }
+  // 종류로 숨은 것은 끼우지 않는다
+  assert.equal(ghostKeys(shown, order.pre, (k) => pass(k) && units.get(k).kind !== 'sub').size < ghosts.size, true);
+  assert.equal(ghostKeys([], order.pre, pass).size, 0);
 });
 
 test('탭 소스(감상 순서 · 연대기): 스토리를 숨기거나 등급을 정할 때 출시 시점(visible · 숫자 T)을 쓰지 않는다', () => {

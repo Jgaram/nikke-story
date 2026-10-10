@@ -7,7 +7,7 @@
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · THREAD_WEIGHT(핵심 · 보조 · 곁가지)
- *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 선행'
+ *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 전까지'
  *   CHRONO_CLASS · DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
@@ -27,6 +27,7 @@
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
+ *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   num(n) · pct(x) · date(s)
  */
 
@@ -219,7 +220,7 @@ export const PRE_HELP = {
   선택: '이 스토리가 다시 꺼내는 일이 나온다 — 봐 두면 좋지만 안 봐도 된다',
 };
 export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
-export const preOf = (spineLabel) => `${spineLabel} 선행`; // 'CH.30 선행' — 이 스토리가 그 필수 스토리의 선행이다
+export const preOf = (spineLabel) => `${spineLabel} 전까지`; // 'CH.30 전까지' — 그 필수 스토리를 보기 전에 보면 좋다(W13b — 전 'CH.30 선행')
 
 // ── 탭 ──
 export const TAB = {
@@ -542,6 +543,46 @@ export function prose(text) {
   // 문장마다 바꾸고, 못 바꾸는 문장만 뺀다(‘…CH.15. 1회독도 같은 근거로 …’ → 앞 문장만). 'V.T.C.'처럼 글자 뒤 마침표는 문장 끝이 아니다
   const parts = src.split(/(?<=[가-힣)」』'"]\.)\s+/u).map((x) => proseOne(x) || proseClauses(x, /\.$/.test(x))).filter(Boolean);
   return parts.join(' ');
+}
+/**
+ * 분류 이유(order.json reason) — prose를 거친 뒤 판정 과정 말이 든 마디를 뺀다(W13b — 팬이 묻는 것만, docs/views.md "화면 문구는 간결하게").
+ * 이유 문장은 판정 기록이라 '이 스토리에 무엇이 있나' 마디와 '그래서 이 등급' 마디가 섞여 있다. 뒤쪽(잣대 · 문턱 · about · 판정 카드 절 · 빌드업 ·
+ * 기록 묶음 말 · '앞은 참고' 같은 등급 이력 · 남은 판정 ID K12 · Z4)만 ' — ' 마디 · 문장 단위로 걷고, 그런 말만 든 괄호는 괄호째 걷는다. 다 빠지면 ''.
+ */
+const G_WORD = '(?:준필수|추천|참고|독립|보강)';
+const JUDGE_WORD = new RegExp([
+  'about', '문턱', '잣대', '카드 ?\\d', '\\d절', '빌드업', '나온 때부터', '편마다', '규칙:', '(?<![A-Za-z0-9_])[KZ]\\d+',
+  '(?:이어진|든|묶인|걸친|인물|지휘관|않은) 기록', '기록(?:이)? 없', '기록 · ', '요지', '빈틈이 아니', 'basis', 'find ', '떡밥라',
+  `${G_WORD}(?:이|가)? 아님`, `앞은 [^—]*${G_WORD}`, `(?:^|\\s)${G_WORD}$`,
+].join('|'));
+const JUDGE_PAREN = new RegExp(`\\s?\\((?:[^()]*(?:about|카드|잣대|문턱|떡밥 밖|· 떡밥|${G_WORD})[^()]*|(?:[KZ]\\d+(?:\\s*·\\s*)?)+)\\)`, 'g');
+/** 괄호 밖에서만 가른다 — at(s, i)가 참인 자리에서 [끊을 앞 끝, 다음 시작]을 돌려준다. 괄호 안의 ' — ' · 마침표(물음 · 인용 풀이)는 가르지 않는다 */
+function splitOutside(text, at) {
+  const out = [];
+  let depth = 0, from = 0;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '(') depth++;
+    else if (c === ')') depth = Math.max(0, depth - 1);
+    else if (depth === 0) { const cut = at(text, i); if (cut) { out.push(text.slice(from, cut[0])); from = cut[1]; } }
+  }
+  out.push(text.slice(from));
+  return out;
+}
+const atDash = (t, i) => (t[i] === '—' && t[i - 1] === ' ' && t[i + 1] === ' ' ? [i - 1, i + 2] : null);
+const atStop = (t, i) => (t[i] === '.' && /[가-힣)」』'"]/u.test(t[i - 1] ?? '') && /\s/.test(t[i + 1] ?? '') ? [i + 1, i + 2] : null);
+const balanced = (t) => (t.match(/\(/g)?.length ?? 0) === (t.match(/\)/g)?.length ?? 0);
+export function reasonText(text) {
+  const s = prose(text).replace(/세계 기록/g, '세계').replace(/곁 기록/g, '곁 이야기').replace(JUDGE_PAREN, '');
+  const out = [];
+  for (const sen of splitOutside(s, atStop).map((x) => x.trim())) {
+    const period = /\.$/.test(sen);
+    const kept = splitOutside(sen.replace(/\.$/, ''), atDash).map((c) => c.trim()).filter((c) => c && balanced(c) && !JUDGE_WORD.test(c));
+    const t = kept.join(' — ').replace(/\s{2,}/g, ' ').replace(/^[\s·,;:—–-]+|[\s·,;:—–-]+$/g, '').trim();
+    if ([...t.replace(/[^가-힣]/g, '')].length < 6) continue;
+    out.push(period ? `${t}.` : t);
+  }
+  return out.join(' ');
 }
 /** 문장을 통째로 못 바꾸면 ' — ' 마디마다 — 바꿀 수 있는 마디만 남긴다('S169와 같은 때 — 콜라보 이벤트 … 동안' → 뒤 마디) */
 function proseClauses(text, period = false) {

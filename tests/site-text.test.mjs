@@ -149,6 +149,24 @@ test('prose — 내보낸 자유 문장 전부에 기록 ID · 스토리 키 · 
   assert.ok(lost <= 10, `기록 문장 ${recTexts.length} 가운데 못 낸 것 ${lost}`);
 });
 
+test('reasonText — 분류 이유에서 판정 과정 마디(잣대 · 문턱 · about · 카드 절 · 등급 이력 · 판정 ID)를 걷는다', () => {
+  useIdx();
+  assert.equal(fmt.reasonText('남는 것은 코리의 죽음, 스토리 안에서 끝나는 일화. 참고의 문턱 아래'), '남는 것은 코리의 죽음, 스토리 안에서 끝나는 일화.');
+  assert.equal(fmt.reasonText('메인과 이어진 기록 · 떡밥에 든 기록 · about으로 걸친 떡밥이 없다'), '');
+  assert.equal(fmt.reasonText('중앙 정부의 답신이 여기만 있다. ch19가 앞이라 나온 때부터 보강'), '중앙 정부의 답신이 여기만 있다.');
+  assert.equal(fmt.reasonText('주역 지휘관(Z4)의 첫 이야기 — 수조 장면이 처음 나온다(카드 3절 2)'), '주역 지휘관의 첫 이야기 — 수조 장면이 처음 나온다');
+  // 괄호 안의 ' — '는 마디로 가르지 않는다
+  assert.equal(fmt.reasonText('ch12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다'), 'CH.12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다');
+  assert.equal(fmt.reasonText(''), '');
+  // 내보낸 이유 전부 — 판정 말이 남지 않고, 준필수 · 추천은 거의 다 이유가 남는다
+  const JUDGE = /about|문턱|잣대|카드 ?\d|빌드업|나온 때부터|(?<![A-Za-z0-9_])[KZ]\d+|기록이 없|이어진 기록/;
+  const order = J('order');
+  const left = order.units.map((u) => fmt.reasonText(u.reason)).filter((t) => JUDGE.test(t));
+  assert.deepEqual(left.slice(0, 3), []);
+  const lostHigh = order.units.filter((u) => ['필수', '보강'].includes(u.grade) && !fmt.reasonText(u.reason)).length;
+  assert.ok(lostHigh <= 5, `준필수 · 추천 이유가 빈 것 ${lostHigh}`);
+});
+
 test('자리 표기 — CH.17 이후 · 메인은 CH.07(과 함께 출시 없음) · 자리 번호 없음', () => {
   useIdx();
   const main = ticks.find((t) => t.main);
