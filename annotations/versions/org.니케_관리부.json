@@ -1,0 +1,17 @@
+{
+  "subject": "org:니케_관리부",
+  "versions": [
+    {
+      "at": "ch00",
+      "text": "중앙 정부의 부서 — 지휘관이 제 소속으로 대는 곳이다.",
+      "src": "1c64e725da",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W15e", "hash": "92b7e32670", "note": "F2 지휘관 소속 — LTK 뇌물(F854)은 세부라 판 없음, 1판" }
+      ]
+    }
+  ]
+}

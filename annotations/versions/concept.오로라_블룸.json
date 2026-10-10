@@ -1,0 +1,24 @@
+{
+  "subject": "concept:오로라_블룸",
+  "versions": [
+    {
+      "at": "event_secretgarden",
+      "text": "'마음의 꽃'이라고도 불리는, 여러 색 꽃잎의 지상 희귀종 꽃. 수액이 안 좋은 기억을 잊게 해 준다고 하며, 정원에서 늘 시들다 지상에서 구해 온 씨앗으로 처음 꽃을 피웠다.",
+      "src": "4b1641ee86",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "621a8c93fb",
+          "note": "F1724 · event_secretgarden_01_s#21-49 마음의 꽃 · 여러 색 · 재배 실패 → 씨앗으로 피움, 1판"
+        }
+      ]
+    }
+  ]
+}

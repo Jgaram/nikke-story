@@ -1,0 +1,24 @@
+{
+  "subject": "place:언더_아레나",
+  "versions": [
+    {
+      "at": "char:141",
+      "text": "방주의 불법 사설 니케 격투장. 맨손이라는 것 말고는 규칙이 없어 죽는 일도 잦다.",
+      "src": "8b96944577",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "eb89f9439b",
+          "note": "F556 불법 사설 격투장 — CLAY, MORE!의 승부 조작 · 폐기(F1502)는 참고 이벤트 세부라 판 없음, 1판"
+        }
+      ]
+    }
+  ]
+}

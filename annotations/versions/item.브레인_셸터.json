@@ -1,0 +1,24 @@
+{
+  "subject": "item:브레인_셸터",
+  "versions": [
+    {
+      "at": "event_hightechtoy",
+      "text": "육체를 잃은 니케의 뇌를 딱 7일까지 썩지 않게 보관하는 냉동 창고. 오래 지상에서 일하는 양산형 니케와 구조 스쿼드에 주로 지급된다.",
+      "src": "00172cecd2",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "0b3daa16f1",
+          "note": "F714 7일 보관 냉동 창고 · 지급 대상 — 뒤 쓰임(해머링 · 리버렐리오 · 바디 메이커)은 사례라 판 없음, 1판"
+        }
+      ]
+    }
+  ]
+}

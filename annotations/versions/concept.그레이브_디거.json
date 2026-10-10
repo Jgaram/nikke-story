@@ -1,0 +1,24 @@
+{
+  "subject": "concept:그레이브_디거",
+  "versions": [
+    {
+      "at": "ch02",
+      "text": "'땅굴 파는 녀석'이라 불리는 타일런트 급 랩쳐. 발전소 지하에 나타난 이것과의 싸움에서 라피는 머리만 남고 몸을 잃었다.",
+      "src": "b7ad29dc8f",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2957ad3618",
+          "note": "F36 · E10 (d_main_02_08_s#29) — ch42 바디 회수 이야기(F2214)는 라피 쪽 세부라 판 없음, 1판"
+        }
+      ]
+    }
+  ]
+}
