@@ -23,6 +23,10 @@
  *   보강 다시     지금 보강 — 보강(메인의 빈틈) / 참고(열린 줄기의 복선 · 세계 · 곁 일화)로 가른다(X3f ④)
  *   참고 후보     지금 독립 — 줄기에 안 묶인 세계 · 메인 인물 사실 · 생활상 · 줄기 인물 변화 · 뼈대 · 보강 줄기 암시 · 뼈대 about이 있다(참고의 문턱 ③)
  *   독립 그대로   지금 독립 — 위 입력이 없다
+ * 감정 기준 후보(X3g — 카드 3절 "결정적 순간", 판정 입력 ⑧ tools/views/layers.mjs emotionSignals) — 다시 볼 묶음과 따로 센다(이해 등급은 그대로 두고 올릴지만 본다):
+ *   오름        감정 상한(주역의 결정적 순간 필수 · 척추 인물 보강)이 지금 등급보다 높다
+ *   이른 자리   등급은 같은데 감정 쪽 from이 지금 from보다 이르다(카드 4절 — 그 등급에 처음 닿는 자리)
+ *   검토 기록(세션 X3g · N3, 또는 사용자)이 있으면 다시 봄 — emotion.md 후보 표에서 빠진다. 후보 표는 공개 자리 순(X3g-3이 나눠 판정한다).
  * 같은 기록이면 같은 결과다.
  */
 import fs from 'node:fs';
@@ -43,6 +47,8 @@ const W = { 뼈대: 0, 보강: 1, 독립: 2 };
 const G = { 필수: 0, 보강: 1, 참고: 2, 독립: 3 };
 /** 기준 바꿈(X3f) 뒤 다시 봄으로 치는 검토 세션 */
 export const RECHECK_SESSION = /^(X3f|N3)/;
+/** 감정 기준(X3g) 뒤 다시 봄으로 치는 검토 세션 */
+export const EMOTION_SESSION = /^(X3g|N3)/;
 const KIND_ROWS = ['서브퀘스트', '유실물', '그 밖', '사이드', '이벤트', '이벤트 유실물', '호감도'];
 /** 다시 볼 묶음 — 이름 · 뜻 (머리말 RECHECK) */
 export const RECHECK_GROUPS = [
@@ -56,7 +62,7 @@ export const RECHECK_GROUPS = [
 
 const COLUMNS = ['order', 'unit', 'kind', 'title', 'judgment', 'grade', 'from', 'before', 'lead', 'pos', 'from_pos', 'grade_path', 'basis', 'confidence', 'status', 'asof',
   'last_session', 'history', 'by_user', 'draft', 'draft_basis', 'draft_read1', 'main1', 'main2', 'heavy', 'hints', 'changes', 'life', 'loose_world', 'loose_main', 'leads', 'buildup', 'closures',
-  'read_layer', 'layer', 'recheck', 'rechecked', 'reason'];
+  'read_layer', 'layer', 'recheck', 'rechecked', 'reason', 'emotion', 'emotion_from', 'emotion_from_pos', 'emotion_moments', 'emotion_check', 'emotion_done'];
 
 const mainW = (m) => Math.min(9, ...m.threads.map((j) => W[m.weights[j]] ?? 9));
 const counted2 = (m) => m.src === 2 && !(m.dir === 'in' && m.act === '재언급');
@@ -86,6 +92,20 @@ export function recheckReasons(grade, s, { origins = new Set() } = {}) {
     else if (!why.length) why.push('독립 그대로');
   }
   return why;
+}
+
+/**
+ * 감정 기준 후보(X3g) — 머리말 "감정 기준 후보"
+ * @param {{ grade: string, pos: number|'', from_pos: number|'' }} row units.csv 한 줄(지금 판정)
+ * @param {string|null} cap 감정 상한(판정 입력 ⑧의 grade)
+ * @param {number|''} capPos 감정 쪽 from의 공개 자리(단위보다 뒤일 때만, 아니면 '')
+ * @returns {'오름'|'이른 자리'|''}
+ */
+export function emotionCheck(row, cap, capPos) {
+  if (!cap || !row.grade) return '';
+  if (G[cap] < G[row.grade]) return '오름';
+  if (cap === row.grade && row.from_pos && (!capPos || capPos < row.from_pos)) return '이른 자리';
+  return '';
 }
 
 /**
@@ -181,6 +201,16 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
       recheck: why.join(' · '), rechecked: rechecked ? '다시 봄' : '', reason: j?.reason ?? '',
     };
     row.grade_path = row.from_pos && row.before && row.before !== row.grade ? `${row.before} → ${row.from} ${row.grade}` : row.grade;
+    // 감정 기준(X3g) — 판정 입력 ⑧
+    const em = s.emotion ?? { moments: [], grade: null, from: null };
+    const emPos = em.from ? tickOf(em.from) : '';
+    Object.assign(row, {
+      emotion: em.grade ?? '', emotion_from: em.from ?? '', emotion_from_pos: emPos && pos && emPos > pos ? emPos : '',
+      emotion_moments: em.moments.map((m) => `${m.record} ${m.person.replace('person:', '')} ${m.aspect}(${m.cls})`).join(' · '),
+      emotion_done: reviews.some((r) => EMOTION_SESSION.test(r.session ?? '') || r.by === '사용자') ? '다시 봄' : '',
+    });
+    row.emotion_check = emotionCheck(row, em.grade, row.emotion_from_pos);
+    row.emotionList = em.moments;
     row.leadsList = s.leads ?? [];
     units.push(row);
   }
@@ -203,8 +233,12 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
   const byLead = new Map();
   for (const u of units) for (const x of u.leadsList) (byLead.get(x.person) ?? byLead.set(x.person, []).get(x.person)).push({ unit: u.unit, grade: u.grade, judgment: u.judgment, deep: x.deep.length, facts: x.facts.length, pos: u.pos });
   for (const xs of byLead.values()) xs.sort((a, b) => b.deep - a.deep || b.facts - a.facts || (a.pos || 0) - (b.pos || 0));
-  for (const u of units) delete u.leadsList;
-  return { units, spine: spineRows, pending, chapters: atChapters, byLead, leadFrom, origins, ticks: rel.ticks.length, layersFile: ds.layers?.name ?? null, spineFile: ds.spine?.name ?? null,
+  const emotion = units.filter((u) => u.emotion).map((u) => ({ ...u, moments: u.emotionList }));
+  for (const u of units) {
+    delete u.leadsList;
+    delete u.emotionList;
+  }
+  return { units, spine: spineRows, pending, emotion, chapters: atChapters, byLead, leadFrom, origins, ticks: rel.ticks.length, layersFile: ds.layers?.name ?? null, spineFile: ds.spine?.name ?? null,
     totals: { units: units.length, spine: spineRows.length, judged: units.filter((u) => u.judgment).length } };
 }
 
@@ -296,12 +330,60 @@ export function renderImportanceReport(v, { source = '' } = {}) {
     }
     L.push('');
   }
+  const em = emotionCounts(v);
+  L.push('## 감정 기준 후보 (X3g — 판정 입력 ⑧)', '');
+  L.push(`결정적 순간 후보가 있는 판정 단위 ${v.emotion.length}(상한 필수 ${em.capMust} · 보강 ${em.capPlus}) · 후보 — 오름 ${em.up.length}(필수로 ${em.up.filter((u) => u.emotion === '필수').length} · 보강으로 ${em.up.filter((u) => u.emotion === '보강').length}) · 이른 자리 ${em.early.length}` +
+    ` · 다시 봄 ${em.done.length} · **남음 ${em.left.length}** — 후보 표 data/views/importance/emotion.md(공개 자리 순), 기준 docs/importance.md 3절 "결정적 순간".`, '');
   const changed = v.units.filter((u) => /→/.test(u.history));
   L.push('## 이력 — 등급이 바뀐 판정', '');
   if (!changed.length) L.push('없다.', '');
   else L.push(...changed.map((u) => `- \`${u.unit}\` ${u.judgment}: ${u.history}`), '');
   L.push('## 다시 볼 묶음 (규칙 — tools/views/importance.mjs 머리말)', '', ...RECHECK_GROUPS.map(([g, what]) => `- ${g}: ${what}.`),
     '- 기준 바꿈 뒤 검토 기록(세션 X3f · N3, 또는 사용자)이 있으면 다시 봄 — 목록에서 빠진다. 앞 묶음이 이긴다.', '');
+  return L.join('\n');
+}
+
+/** 감정 기준 후보 수 — 상한 · 오름 · 이른 자리 · 다시 봄 · 남음 */
+function emotionCounts(v) {
+  const cand = v.emotion.filter((u) => u.emotion_check);
+  return {
+    capMust: v.emotion.filter((u) => u.emotion === '필수').length, capPlus: v.emotion.filter((u) => u.emotion === '보강').length,
+    up: cand.filter((u) => u.emotion_check === '오름'), early: cand.filter((u) => u.emotion_check === '이른 자리'),
+    done: cand.filter((u) => u.emotion_done), left: cand.filter((u) => !u.emotion_done),
+  };
+}
+
+/** 감정 기준 후보 표(X3g) — 공개 자리 순. X3g-3이 이 표를 나눠 판정한다 */
+export function renderEmotionReport(v, { source = '' } = {}) {
+  const L = [];
+  const em = emotionCounts(v);
+  const nm = (p) => String(p).replace(/^\w+:/, '');
+  L.push('# 감정 기준 후보 — 결정적 순간 (X3g)', '');
+  L.push(`출처: ${source} + 2회독 인물 변화 D · 마무리 기록 O · 주역 명단 — 거르기 규칙 tools/views/layers.mjs emotionSignals(판정 입력 ⑧), 기준 docs/importance.md 3절 "결정적 순간".`);
+  L.push('결정적인지 · 여기에만 장면으로인지는 판정이 기록 문장으로 본다 — 이 표는 고르지 않는다. 단위 하나: `node tools/records.mjs layers <단위 키> --summary`(⑧ "감정 재료" 줄).', '');
+  L.push(`- 결정적 순간 후보가 있는 판정 단위 ${v.emotion.length} — 상한 필수(주역) ${em.capMust} · 보강(척추 인물만) ${em.capPlus}`);
+  L.push(`- 후보 ${em.up.length + em.early.length}: 오름 ${em.up.length}(필수로 ${em.up.filter((u) => u.emotion === '필수').length} · 보강으로 ${em.up.filter((u) => u.emotion === '보강').length}) · 이른 자리 ${em.early.length}(같은 등급, 감정 쪽 from이 이르다)` +
+    ` · 다시 봄(세션 X3g · N3 · 사용자) ${em.done.length} · **남음 ${em.left.length}**`);
+  const tr = new Map();
+  for (const u of em.up) tr.set(`${u.grade} → ${u.emotion}`, (tr.get(`${u.grade} → ${u.emotion}`) ?? 0) + 1);
+  L.push(`- 오름 — 지금 등급 → 상한: ${[...tr].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(' · ') || '없음'}`);
+  const kinds = new Map();
+  for (const u of [...em.up, ...em.early]) kinds.set(u.kind, (kinds.get(u.kind) ?? 0) + 1);
+  L.push(`- 후보 종류: ${[...kinds].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(' · ') || '없음'}`);
+  const who = new Map();
+  for (const u of [...em.up, ...em.early]) for (const p of new Set(u.moments.filter((m) => m.grade === u.emotion).map((m) => nm(m.lead ?? m.person)))) who.set(p, (who.get(p) ?? 0) + 1);
+  L.push(`- 후보의 주인(상한을 낸 인물 — 단위 수): ${[...who].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([p, n]) => `${p} ${n}`).join(' · ') || '없음'}`, '');
+  L.push('## 후보 — 공개 자리 순', '');
+  L.push('상한 = 그 단위의 결정적 순간 후보 가운데 가장 높은 등급(주역 필수 · 척추 인물 보강)과 그 등급에 처음 닿는 자리. 판정은 이해 등급과 둘 가운데 높은 쪽(카드 3절 3a · 4a).', '');
+  L.push('| 공개 자리 | 단위 | 종류 | 지금 판정 | 상한 | 까닭 | 결정적 순간 후보 (주인 · 측면) | 다시 봄 |', '|---:|---|---|---|---|---|---|---|');
+  const cand = [...em.up, ...em.early].sort((a, b) => (a.pos || 0) - (b.pos || 0) || a.order - b.order);
+  for (const u of cand) {
+    const ms = u.moments.map((m) => `${m.record} ${nm(m.person)} ${m.aspect}${m.cls === '주역' ? '*' : ''}`).join(' · ');
+    L.push(`| ${u.pos} | \`${u.unit}\` ${u.title} | ${u.kind} | ${u.judgment} ${u.grade_path}${u.from && !u.from_pos ? `(${u.from})` : ''} | ${u.emotion}${u.emotion_from ? ` · ${u.emotion_from}부터` : ''} | ${u.emotion_check} | ${ms} | ${u.emotion_done} |`);
+  }
+  L.push('', '`*` = 주역의 것. 결정적 순간 후보가 있지만 상한이 지금 등급 이하인 단위(후보 아님):', '');
+  const rest = v.emotion.filter((u) => !u.emotion_check).sort((a, b) => (a.pos || 0) - (b.pos || 0));
+  L.push(rest.map((u) => `\`${u.unit}\` ${u.grade}`).join(' · ') || '없음', '');
   return L.join('\n');
 }
 
@@ -315,6 +397,7 @@ export function writeImportanceViews(v, outDir, opts) {
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'units.csv'), toCsv(v.units, COLUMNS));
   fs.writeFileSync(path.join(outDir, 'report.md'), renderImportanceReport(v, opts));
+  fs.writeFileSync(path.join(outDir, 'emotion.md'), renderEmotionReport(v, opts));
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -332,7 +415,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (opt.example) console.log(renderImportanceReport(v, { source }));
   else {
     writeImportanceViews(v, IMPORTANCE_DIR, { source });
-    console.log(`→ ${displayPath(IMPORTANCE_DIR)}/ (units.csv · report.md)`);
+    console.log(`→ ${displayPath(IMPORTANCE_DIR)}/ (units.csv · report.md · emotion.md)`);
   }
   console.log(`메인 밖 ${v.units.length} · 판정 ${v.totals.judged} · 다시 볼 단위 ${v.pending.length}`);
 }

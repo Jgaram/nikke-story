@@ -24,12 +24,16 @@
  *      (가) 긴 회수(척추가 제기한 의문을 제기 뒤 20칸 이상 지나 여기서 전부 회수) · 복선의 답(척추가 먼저 흘린 암시의 사실이 여기서 처음 밝혀짐),
  *      (나) · (다) 마무리 기록 O(연작 · 갈등 · 관계 · 성장 — 쌓인 자리에 척추가 있고 끝이 여기). (가)는 ①의 in 회수 · in 암시와 겹친다 — 오래 쌓였다는 표시다.
  *      O는 확정만 시안에 쓴다(후보는 보이기만). 지휘관과의 관계 마무리는 표시만 — 지휘관은 어디에나 있다(카드 3절 5)
+ *   ⑧ 감정 재료(X3g — 카드 3절 "결정적 순간", emotionSignals): 척추 인물의 결정적 순간 후보 — 이 단위의 인물 변화 D(신념 · 소속 · 신체 · 기억 · 관계)와
+ *      여기서 끝나는 마무리 기록 O(관계 · 갈등 · 성장, 확정). 주인이 주역이면 필수까지(from = 주역의 from), 척추 인물이면 보강까지(from = 척추 사실 3건째 자리).
+ *      지휘관과의 관계는 뺀다. 같은 인물(people.json same_as 확정)은 한 사람으로 센다. 결정적인지 · 여기에만 장면으로인지는 판정이 본다 — 이것은 거르기와 단서(척추의 같은 줄)뿐.
+ *      시안(draft)에는 쓰지 않는다 — 이해 등급과 따로 보고 둘 가운데 높은 쪽이 등급이다
  * 시안 규칙(X3f — 등급 넷): 뼈대 줄기의 메인 연결이 out · 전부 회수 · 뒤집음(2회독은 out 재언급 · in 암시)이면 필수 · 메인 연결이 있으면 보강 ·
  *   뼈대 · 보강 줄기에 곧바로 들면 보강(추정) · 척추가 쌓은 마무리 기록(확정, 지휘관 관계 빼고)이 있으면 보강(추정) · 뼈대 · 보강 줄기의 2회독 암시(열린 줄기의 복선 — X3f ④) · 뼈대 줄기 about 사실 2건 이상 ·
  *   줄기에 안 묶인 세계 · 메인 인물 사실 · 주역 사연 · 생활상 · 줄기 인물 변화가 있으면 참고(추정 — 메인이 말하지 않은 기록인지는 판정이 본다) · 그 밖은 독립.
  *   `draft1`은 2회독 없이(1회독 + 바로잡기만) 낸 시안 — 2회독이 시안을 바꾼 단위를 가린다.
  */
-import { compareIds, isRecord, spineUnits } from '../records/model.mjs';
+import { compareIds, isRecord, sameAsGroups, spineUnits } from '../records/model.mjs';
 import { kindOfKey } from '../records/order.mjs';
 import { threadMembership } from '../records/threads.mjs';
 
@@ -44,6 +48,14 @@ const ACT_RANK = { reversal: 0, setup_payoff: 1, callback: 2 };
 export const CHANGE_ASPECTS = ['기억', '소속', '신체', '신념'];
 /** ⑥ 뒤 척추 의문 — 단위마다 보이는 최대 수(대상이 겹치는 순서대로, 읽는 순서) */
 export const LATER_QUESTIONS = 8;
+/** ⑧ 결정적 순간을 찾는 인물 변화의 측면(X3g) — 성격은 단독으로 걸리지 않는다(쌓인 성격 변화가 이룸에 닿으면 마무리 O 성장으로 잡힌다) */
+export const EMOTION_ASPECTS = ['신념', '소속', '신체', '기억', '관계'];
+/** ⑧ 결정적 순간으로 보는 마무리 기록의 종류 — 연작은 이야기의 결판이라 빼고, 그 안의 인물 순간은 D로 본다 */
+export const EMOTION_CLOSURES = ['관계', '갈등', '성장'];
+/** ⑧ 주인마다 오르는 등급의 상한 — 주역 필수 · 척추 인물 보강 */
+export const EMOTION_GRADE = { 주역: '필수', '척추 인물': '보강' };
+/** ⑧ 척추의 같은 줄 — 결정적 순간마다 보이는 최대 수(가까운 자리 순) */
+const SAME_LINE = 3;
 
 /** 척추 단위의 이름 — 메인 챕터는 "메인 ch38", 척추 이벤트 · 사이드는 "척추 event_redash" */
 export const refLabel = (u) => (kindOfKey(u) === '메인' ? `메인 ${u}` : `척추 ${u}`);
@@ -54,7 +66,8 @@ export const refLabel = (u) => (kindOfKey(u) === '메인' ? `메인 ${u}` : `척
  * @param {{ edges: object[] }|null} [r2] 2회독 떡밥 엣지(tools/records/read2.mjs read2Edges) — 없으면 1회독만(B0b-2와 같다)
  * @param {{ spine?: Set<string>, closures?: ReturnType<import('./closures.mjs').buildClosures>|null }} [opts] spine: 메인 챕터 밖 척추 단위(기본 annotations/spine.json 확정) — 빈 집합이면 메인 챕터만 기준(척추 선정 계산) ·
  *   closures: 빌드업 마무리(⑦) — 없으면 ⑦을 비운다
- * @returns {Map<string, object>} 단위 → { unit, kind, main[], direct[], echo[], about[], changes[], life{}, loose{world[], main[]}, leads[], later[], buildup{payoffs[], answers[], closures[]}, draft, draft1 }
+ * @returns {Map<string, object>} 단위 → { unit, kind, main[], direct[], echo[], about[], changes[], life{}, loose{world[], main[]}, leads[], later[], buildup{payoffs[], answers[], closures[]},
+ *   emotion{moments[], grade, from}, draft, draft1 }
  */
 export function layerSignals(ds, views, r2 = null, { spine = spineUnits(ds), closures = null } = {}) {
   const tm = threadMembership(ds);
@@ -82,7 +95,7 @@ export function layerSignals(ds, views, r2 = null, { spine = spineUnits(ds), clo
   const isMain = (u) => kindOfKey(u) === '메인' || spine.has(u);
   const out = new Map();
   const S = (u) => {
-    if (!out.has(u)) out.set(u, { unit: u, kind: kindOfKey(u), main: [], direct: [], echo: [], about: new Map(), changes: [], life: {}, loose: { world: [], main: [] }, leads: new Map(), later: [], buildup: emptyBuildup() });
+    if (!out.has(u)) out.set(u, { unit: u, kind: kindOfKey(u), main: [], direct: [], echo: [], about: new Map(), changes: [], life: {}, loose: { world: [], main: [] }, leads: new Map(), later: [], buildup: emptyBuildup(), emotion: emptyEmotion() });
     return out.get(u);
   };
   const pushMain = (unit, m) => S(unit).main.push({ ...m, weights: Object.fromEntries(m.threads.map((j) => [j, weightOf(j)])) });
@@ -208,6 +221,8 @@ export function layerSignals(ds, views, r2 = null, { spine = spineUnits(ds), clo
       if (mine.length) S(u).buildup.closures = mine;
     }
   }
+  // ⑧ 감정 재료(X3g) — 2회독 기록(인물 변화 D)이 있을 때만
+  if (r2) for (const [u, e] of emotionSignals(ds, { isMain, orderOf, factDefs })) S(u).emotion = e;
   for (const s of out.values()) {
     s.about = [...s.about].map(([thread, n]) => ({ thread, weight: weightOf(thread), n })).sort((a, b) => W[a.weight] - W[b.weight] || b.n - a.n);
     // 주역 사연 — 사실 2건 이상이거나 깊은 변화가 있는 주역만(사실 한 건은 스침), 무거운 순
@@ -225,10 +240,113 @@ const emptyBuildup = () => ({ payoffs: [], answers: [], closures: [] });
 /** 시안에 쓰는 마무리 기록 — 확정 · 지휘관 관계 아님 */
 const closureCounts = (x) => x.status === '확정' && !x.commander;
 
+/** ⑧ 감정 재료의 빈 값 */
+const emptyEmotion = () => ({ moments: [], grade: null, from: null });
+
 /** 판정 입력이 하나도 없는 단위의 신호 — layerSignals에 안 나오는 단위 */
 export function emptySignal(unit, kind = kindOfKey(unit)) {
   const draft = { grade: '독립', basis: null, confidence: '확실', reason: '메인과 이어진 기록 · 줄기에 든 기록 · about으로 걸친 줄기가 없다' };
-  return { unit, kind, main: [], direct: [], echo: [], about: [], changes: [], life: {}, loose: { world: [], main: [] }, leads: [], later: [], buildup: emptyBuildup(), draft, draft1: draft };
+  return { unit, kind, main: [], direct: [], echo: [], about: [], changes: [], life: {}, loose: { world: [], main: [] }, leads: [], later: [], buildup: emptyBuildup(), emotion: emptyEmotion(), draft, draft1: draft };
+}
+
+/**
+ * ⑧ 감정 재료(X3g — docs/importance.md 3절 "결정적 순간") — 척추 밖 단위마다 척추 인물의 결정적 순간 후보를 거른다. 결정적인지 · 여기에만 장면으로인지는 판정이 본다.
+ *   후보 = 이 단위의 인물 변화 D(act 변화, 측면 EMOTION_ASPECTS) · 이 단위에서 끝나는 마무리 기록 O(확정, 종류 EMOTION_CLOSURES — about의 인물마다).
+ *   주인 = D의 person · O의 about. 주역(annotations/leads.json, 기각 빼고)이면 필수까지 · from = 주역의 from,
+ *   척추 인물(척추 사실 정의 MAIN_PERSON_FACTS건 이상에 about, 지휘관 빼고)이면 보강까지 · from = 그 인물의 척추 사실 MAIN_PERSON_FACTS건째가 든 척추 단위. 그 밖 인물은 거른다.
+ *   지휘관과의 관계(관계 D의 person · with, 관계 · 갈등 O의 about에 지휘관)는 뺀다 — 지휘관 자신의 신념 · 기억 · 소속 · 신체 변화는 주역의 것.
+ *   같은 인물(people.json same_as 확정)은 한 사람으로 센다 — 이명 ID의 변화도 주역 · 척추 인물의 것.
+ *   단서(여기에만 — 판정이 문장을 맞댄다): same = 척추의 같은 줄(같은 인물 · 같은 측면, 관계면 같은 상대의 D — 기준 · 변화, 가까운 자리 순),
+ *   pair = 관계 D · 관계 · 갈등 O에서 척추가 그 둘을 다룬 기록 수(둘이 about인 척추 사실 + 척추의 둘 사이 관계 D) — '큰 관계'의 단서,
+ *   spineBuilt = O의 쌓인 자리에 척추가 있다(그러면 이해 기준 4)의 빌드업의 끝과 겹친다).
+ * @param {ReturnType<import('../records/model.mjs').loadDataset>} ds
+ * @param {{ isMain: (u: string) => boolean, orderOf: Map<string, number>, factDefs: object[] }} ctx layerSignals 안의 것
+ * @returns {Map<string, { moments: object[], grade: string|null, from: string|null }>} 단위 → 감정 재료. moments는 주역 먼저 · 기록 ID 순
+ */
+export function emotionSignals(ds, { isMain, orderOf, factDefs }) {
+  const same = sameAsGroups(ds);
+  const gk = (p) => same.get(p)?.[0] ?? p;
+  const CMD = gk(COMMANDER);
+  const liveAll = ds.candidates.filter((c) => c.id && c.status !== '기각');
+  const byIdAll = new Map(liveAll.map((c) => [c.id, c]));
+  const persons = (xs) => (Array.isArray(xs) ? xs : []).filter((p) => String(p).startsWith('person:'));
+  // 주역 — 같은 인물 묶음 → { person(명단의 대표), from }
+  const leadOf = new Map();
+  for (const c of ds.candidates) if (c.kind === 'lead' && c.status !== '기각' && c.obj?.person) leadOf.set(gk(c.obj.person), { person: c.obj.person, from: c.obj.from ?? null });
+  // 척추 인물 — 척추 사실 정의를 읽는 순서로 세어 MAIN_PERSON_FACTS건째가 든 척추 단위
+  const spineFacts = factDefs.filter((c) => isMain(c.unit) && orderOf.has(c.unit)).sort((a, b) => orderOf.get(a.unit) - orderOf.get(b.unit) || compareIds(a.id, b.id));
+  const seen = new Map();
+  const spinePlace = new Map();
+  const pairFacts = [];
+  for (const c of spineFacts) {
+    const gs = [...new Set(persons(c.obj?.about).map(gk))];
+    if (gs.length >= 2) pairFacts.push(new Set(gs));
+    for (const g of gs) {
+      const n = (seen.get(g) ?? 0) + 1;
+      seen.set(g, n);
+      if (n === MAIN_PERSON_FACTS && g !== CMD) spinePlace.set(g, c.unit);
+    }
+  }
+  const ownerOf = (g) => {
+    if (leadOf.has(g)) return { cls: '주역', grade: EMOTION_GRADE.주역, from: leadOf.get(g).from, lead: leadOf.get(g).person };
+    if (spinePlace.has(g)) return { cls: '척추 인물', grade: EMOTION_GRADE['척추 인물'], from: spinePlace.get(g), lead: null };
+    return null;
+  };
+  // 척추의 인물 변화 — 같은 줄 · 둘 사이 관계의 단서
+  const spineChanges = liveAll.filter((c) => c.read2 && c.kind === 'change' && c.unit && isMain(c.unit) && orderOf.has(c.unit))
+    .map((c) => ({ id: c.id, unit: c.unit, order: orderOf.get(c.unit), g: gk(c.obj?.person), aspect: c.obj?.aspect, with: persons(c.obj?.with).map(gk) }));
+  const sameLine = (g, aspect, withs, unit) => {
+    const at = orderOf.get(unit) ?? 0;
+    return spineChanges.filter((x) => x.g === g && x.aspect === aspect && (aspect !== '관계' || x.with.some((w) => withs.includes(w))))
+      .sort((a, b) => Math.abs(a.order - at) - Math.abs(b.order - at) || compareIds(a.id, b.id)).slice(0, SAME_LINE)
+      .sort((a, b) => a.order - b.order || compareIds(a.id, b.id)).map((x) => `${x.id}@${x.unit}`);
+  };
+  const pairCount = (g, withs) => withs.reduce((n, w) => n + pairFacts.filter((s) => s.has(g) && s.has(w)).length +
+    spineChanges.filter((x) => x.aspect === '관계' && ((x.g === g && x.with.includes(w)) || (x.g === w && x.with.includes(g)))).length, 0);
+  const out = new Map();
+  const add = (unit, m) => {
+    if (!out.has(unit)) out.set(unit, emptyEmotion());
+    out.get(unit).moments.push(m);
+  };
+  for (const c of liveAll) {
+    if (!c.read2 || c.kind !== 'change' || c.act !== '변화' || !c.unit || isMain(c.unit)) continue;
+    const o = c.obj ?? {};
+    if (!EMOTION_ASPECTS.includes(o.aspect)) continue;
+    const g = gk(o.person);
+    const withs = persons(o.with).map(gk);
+    if (o.aspect === '관계' && (g === CMD || withs.includes(CMD))) continue;
+    const who = ownerOf(g);
+    if (!who) continue;
+    add(c.unit, { record: c.id, type: 'D', person: o.person, ...who, aspect: o.aspect, with: Array.isArray(o.with) ? o.with : [], text: `${o.before ?? ''} → ${o.after ?? ''}`, basis: c.id,
+      same: sameLine(g, o.aspect, withs, c.unit), pair: o.aspect === '관계' ? pairCount(g, withs) : null, spineBuilt: null });
+  }
+  for (const c of ds.candidates) {
+    if (c.kind !== 'closure' || c.status !== '확정') continue;
+    const o = c.obj ?? {};
+    if (!EMOTION_CLOSURES.includes(o.type) || typeof o.end !== 'string' || isMain(o.end)) continue;
+    const about = persons(o.about);
+    const gs = about.map(gk);
+    if (o.type !== '성장' && gs.includes(CMD)) continue;
+    const builtUnits = (Array.isArray(o.built) ? o.built : []).map((b) => byIdAll.get(b)?.unit ?? b);
+    const spineBuilt = builtUnits.some((u) => typeof u === 'string' && isMain(u));
+    for (const p of about) {
+      const g = gk(p);
+      const who = ownerOf(g);
+      if (!who) continue;
+      const withs = gs.filter((x) => x !== g);
+      add(o.end, { record: c.id, type: 'O', person: p, ...who, aspect: o.type, with: about.filter((x) => gk(x) !== g), text: o.text ?? '', basis: (o.closing ?? [])[0] ?? null,
+        same: [], pair: o.type === '성장' ? null : pairCount(g, withs), spineBuilt });
+    }
+  }
+  const rank = (m) => (m.cls === '주역' ? 0 : 1);
+  for (const e of out.values()) {
+    e.moments.sort((a, b) => rank(a) - rank(b) || (a.type === b.type ? compareIds(a.record, b.record) : a.type === 'D' ? -1 : 1) || a.person.localeCompare(b.person));
+    const top = e.moments.filter((m) => rank(m) === rank(e.moments[0]));
+    e.grade = top[0].grade;
+    // from — 그 등급에 처음 닿는 자리(카드 4절): 상한이 같은 순간들의 from 가운데 이른 쪽
+    e.from = top.map((m) => m.from).filter(Boolean).sort((a, b) => (orderOf.get(a) ?? Infinity) - (orderOf.get(b) ?? Infinity))[0] ?? null;
+  }
+  return out;
 }
 
 /** 메인 연결 한 줄을 사람이 읽는 말로 */
@@ -345,6 +463,21 @@ export function renderSignals(s, byId, { width = 110, judgment = null, texts = 6
       ...bu.closures.map((x) => `${x.id} ${x.type}${x.commander ? '(지휘관)' : ''} [${x.status}] ${x.built.slice(0, 4).join(' · ')}${x.built.length > 4 ? ' …' : ''} → 여기 ${x.span}칸${x.status === '확정' ? ` — ${x.text}` : ''}`),
     ].filter(Boolean);
     L.push(`  빌드업 마무리(척추가 쌓음): ${parts.join(' · ')}`);
+  }
+  const em = s.emotion ?? emptyEmotion();
+  if (em.moments.length) {
+    const nm = (p) => String(p).replace(/^\w+:/, '');
+    L.push(`  감정 재료(X3g — 결정적 순간 후보, 카드 3절 '결정적 순간'): 상한 ${em.grade}${em.from ? ` · ${em.from}부터` : ''} — 결정적인지 · 여기에만 장면으로인지는 문장으로 본다`);
+    for (const m of em.moments) {
+      const head = `${m.record} ${nm(m.person)}${m.lead && m.lead !== m.person ? `(= ${nm(m.lead)})` : ''} ${m.aspect}${m.with.length ? `(${m.with.map(nm).join(',')})` : ''} [${m.cls} → ${m.grade}${m.from ? ` · ${m.from}부터` : ''}]`;
+      const tail = [
+        m.type === 'O' && m.basis ? `닫는 기록 ${m.basis}` : '',
+        m.spineBuilt ? '척추가 쌓음(이해 4)과 겹침)' : '',
+        m.pair != null ? `척추의 둘 ${m.pair}` : '',
+        m.same.length ? `척추 같은 줄 ${m.same.join(' · ')}` : '',
+      ].filter(Boolean).join(' · ');
+      L.push(`   ${cut(`${head}: ${m.text}`)}${tail ? ` | ${tail}` : ''}`);
+    }
   }
   if (summary) L.push(`  요약(1회독): ${summary}`);
   const hints = (s.echo ?? []).filter((e) => e.act === '암시' && W[e.weight] <= 1).map((e) => e.record);

@@ -1,6 +1,6 @@
 /**
  * X3 중요도 판정 — 판정 입력에 2회독을 얹은 시안(tools/views/layers.mjs) · 다시 볼 묶음 · 이력 · 자리별 등급(tools/views/importance.mjs) · records.mjs layers ·
- * 주역 명단 초안(tools/views/leads.mjs — X3f).
+ * 주역 명단 초안(tools/views/leads.mjs — X3f) · 감정 재료 ⑧(X3g — 결정적 순간 후보).
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -11,8 +11,8 @@ import { ROOT, loadDataset, spineUnits } from '../tools/records/model.mjs';
 import { loadOrder, loadReadLayers } from '../tools/records/order.mjs';
 import { read2Edges } from '../tools/records/read2.mjs';
 import { buildRead1Views } from '../tools/views/read1.mjs';
-import { emptySignal, layerSignals, mainText } from '../tools/views/layers.mjs';
-import { RECHECK_GROUPS, buildImportance, gradeAt, gradeHistory, recheckReasons } from '../tools/views/importance.mjs';
+import { EMOTION_ASPECTS, EMOTION_CLOSURES, EMOTION_GRADE, emptySignal, layerSignals, mainText } from '../tools/views/layers.mjs';
+import { RECHECK_GROUPS, buildImportance, emotionCheck, gradeAt, gradeHistory, recheckReasons, renderEmotionReport } from '../tools/views/importance.mjs';
 import { buildLeads, leadSignals, renderLeadsReport } from '../tools/views/leads.mjs';
 import { GRADES } from '../tools/records/model.mjs';
 
@@ -157,6 +157,60 @@ test('주역 명단 초안(X3f ① · X3f-1c) — 척추 축 · 같은 인물 �
   assert.match(rep, /\| 신데렐라 \(= 거울_공주 · 아나키오르\) \|/);
 });
 
+test('감정 재료 ⑧(X3g) — 주역 · 척추 인물의 변화 D · 마무리 O만, 지휘관과의 관계 빼고, 같은 인물 합침', () => {
+  const sig = layerSignals(ds, buildRead1Views(ds, ctx, order), read2Edges(ds, ctx, order));
+  const byId = new Map(ds.candidates.filter((c) => c.id).map((c) => [c.id, c]));
+  const spine = spineUnits(ds);
+  const all = [...sig.values()].flatMap((s) => s.emotion.moments.map((m) => ({ ...m, unit: s.unit })));
+  assert.ok(all.length > 50, `${all.length}`);
+  for (const m of all) {
+    assert.ok(!/^ch\d/.test(m.unit) && !spine.has(m.unit), `${m.record} — 척추 단위는 모으지 않는다`);
+    assert.equal(m.grade, EMOTION_GRADE[m.cls], `${m.record} — 주역 필수 · 척추 인물 보강`);
+    if (m.type === 'D') {
+      const c = byId.get(m.record);
+      assert.ok(c.kind === 'change' && c.act === '변화' && c.unit === m.unit && EMOTION_ASPECTS.includes(c.obj.aspect), `${m.record} — 이 단위의 변화 D(성격 빼고)`);
+      assert.ok(!(c.obj.aspect === '관계' && [c.obj.person, ...(c.obj.with ?? [])].includes('person:지휘관')), `${m.record} — 지휘관과의 관계는 뺀다`);
+      assert.equal(m.basis, m.record);
+    } else {
+      const c = byId.get(m.record);
+      assert.ok(c.kind === 'closure' && c.status === '확정' && c.obj.end === m.unit && EMOTION_CLOSURES.includes(c.obj.type), `${m.record} — 여기서 끝나는 확정 O(연작 빼고)`);
+      assert.ok(c.obj.type === '성장' || !c.obj.about.includes('person:지휘관'), `${m.record} — 지휘관과의 관계 · 갈등 마무리는 뺀다`);
+    }
+  }
+  // 지휘관 자신의 변화(신념 · 기억)는 주역의 것
+  assert.ok(all.some((m) => m.person === 'person:지휘관' && m.cls === '주역' && m.aspect !== '관계'));
+  // 같은 인물 — 릴리바이스의 변화는 주역 릴리스의 것
+  assert.ok(all.some((m) => m.person === 'person:릴리바이스' && m.lead === 'person:릴리스' && m.cls === '주역'));
+  // 사이드 SECOND AFFECTION — 마리안(주역, ch00)의 소속 변화 D418 · 척추가 쌓은 성장의 끝 O12(닫는 기록 D417)
+  const sa = sig.get('side:second_affection').emotion;
+  assert.deepEqual([sa.grade, sa.from], ['필수', 'ch00']);
+  const d418 = sa.moments.find((m) => m.record === 'D418');
+  assert.deepEqual([d418.cls, d418.aspect, d418.from], ['주역', '소속', 'ch00']);
+  assert.ok(d418.same.length && d418.same.every((x) => /^D\d+@/.test(x)), '척추의 같은 줄 단서');
+  const o12 = sa.moments.find((m) => m.record === 'O12');
+  assert.deepEqual([o12.type, o12.basis, o12.spineBuilt], ['O', 'D417', true]);
+  assert.deepEqual(emptySignal('char:1').emotion, { moments: [], grade: null, from: null });
+  assert.equal(layerSignals(ds, buildRead1Views(ds, ctx, order)).get('side:second_affection').emotion.moments.length, 0, '2회독 없이는 모으지 않는다');
+});
+
+test('감정 기준 후보(X3g) — 오름 · 이른 자리, 후보 표', () => {
+  assert.equal(emotionCheck({ grade: '참고', pos: 10, from_pos: '' }, '필수', 30), '오름');
+  assert.equal(emotionCheck({ grade: '필수', pos: 10, from_pos: '' }, '보강', ''), '', '상한이 낮으면 후보가 아니다');
+  assert.equal(emotionCheck({ grade: '보강', pos: 10, from_pos: 40 }, '보강', 20), '이른 자리');
+  assert.equal(emotionCheck({ grade: '보강', pos: 10, from_pos: 40 }, '보강', ''), '이른 자리', '감정 쪽은 나온 때부터');
+  assert.equal(emotionCheck({ grade: '보강', pos: 10, from_pos: '' }, '보강', 20), '', '지금 등급이 나온 때부터면 더 이를 수 없다');
+  assert.equal(emotionCheck({ grade: '참고', pos: 10, from_pos: '' }, null, ''), '');
+  const v = buildImportance(ds, ctx, order, { readLayers: loadReadLayers() });
+  assert.ok(v.emotion.length > 50 && v.emotion.every((u) => u.emotion && u.moments.length), '결정적 순간 후보가 있는 단위');
+  for (const u of v.units) assert.equal(u.emotion_check, emotionCheck(u, u.emotion || null, u.emotion_from_pos), u.unit);
+  assert.ok(v.units.some((u) => u.emotion_check === '오름'));
+  const rep = renderEmotionReport(v);
+  const rows = rep.split('\n').filter((l) => /^\| \d+ \| `/.test(l));
+  assert.equal(rows.length, v.units.filter((u) => u.emotion_check).length, '후보마다 한 줄');
+  const pos = rows.map((l) => Number(l.split('|')[1]));
+  assert.deepEqual(pos, [...pos].sort((a, b) => a - b), '공개 자리 순');
+});
+
 test('records.mjs layers — 판정 · 시안 · 2회독 입력을 함께 보인다', () => {
   const r = node(['tools/records.mjs', 'layers', 'char:90']);
   assert.equal(r.status, 0, r.stderr);
@@ -176,6 +230,9 @@ test('records.mjs layers — 판정 · 시안 · 2회독 입력을 함께 보인
   assert.match(r.stdout, /척추 연결 2회독: in 암시 E102→F622@ch15/);
   const sp = node(['tools/records.mjs', 'layers', 'event_redash']);
   assert.match(sp.stdout, /^■ event_redash \[이벤트\] 척추 — 채점하지 않는다/, '척추 단위는 머리에 알린다');
+  const sa = node(['tools/records.mjs', 'layers', 'side:second_affection']);
+  assert.match(sa.stdout, /감정 재료\(X3g — 결정적 순간 후보.*\): 상한 필수 · ch00부터/);
+  assert.match(sa.stdout, /D418 마리안 소속(\([^)]*\))? \[주역 → 필수 · ch00부터\]: .* \| 척추 같은 줄 D\d+@/);
   const r1 = node(['tools/records.mjs', 'layers', 'char:90', '--read1']);
   assert.match(r1.stdout, /시안 참고 · 근거 F622 — 줄기에 안 묶인 기록/, '--read1이면 1회독만(2회독 메인 연결이 빠져 참고 시안)');
 });

@@ -436,7 +436,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 435,relic:아무한테나말해주는거아니야.wav,유실물,1,1,2,0,0,2,,,고립,0,0,,place:아우터_림,아무한테나 말해주는 거 아니야.wav
 436,ch44,메인,35,12,46,2,28,33,,,,,,,person:앨트루이아 org:인헤르트 person:라이온 org:모란회 person:진 person:프레자일,CHAPTER.44 행보
 437,relic:거인을찾아서,유실물,1,2,0,0,0,3,,고립,고립,0,0,,place:지상 concept:랩쳐,거인을 찾아서.txt
-438,fl:lie_cause_recoil,이벤트,8,6,13,0,2,13,,,,0,0,,person:레인 person:제니퍼 person:제인 org:방주_아동_보호_센터 person:치사토 person:쿠루미,LIE CAUSE RECOIL
+438,fl:lie_cause_recoil,이벤트,8,6,13,0,2,13,,,,0,0,,org:찻집_리코리코 person:레인 person:제니퍼 person:제인 org:방주_아동_보호_센터 person:치사토,LIE CAUSE RECOIL
 439,char:860,호감도,1,0,1,0,0,1,,,고립,0,0,,person:치사토 person:슈가,치사토
 440,char:862,호감도,3,1,4,0,0,4,,,고립,0,0,,person:쿠루미 person:프림 person:트로니 person:엑시아,쿠루미
 441,char:861,호감도,1,0,1,0,0,1,,,고립,0,0,,person:타키나 person:밀크,타키나
@@ -472,7 +472,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 471,relic:승리를_부르는_그림자,유실물,2,1,2,0,2,2,,,,1,0,ch47,place:승리의_날개_호 org:갓데스 concept:랩쳐,승리를 부르는 그림자
 472,ch48,메인,22,3,23,1,19,11,,,,,,,concept:일곱의_조율자 person:앨트루이아 person:에고비스타 person:애니힐리오 item:브레인_셸터 person:장화,CHAPTER.48 재탄
 473,relic:불길한_소리.wav,유실물,3,0,3,0,3,2,,,,4,0,ch46 ch47 ch48,concept:신생_랩쳐 person:나유타 place:궤도_엘리베이터 concept:다크_매터,불길한 소리.wav
-474,fl:persona_on_frontline,이벤트,17,4,19,1,11,14,,,,0,0,,person:모나 person:곰 person:아이기스 person:앨든 person:유키코 person:퀸(마코토),PERSONA ON FRONTLINE
+474,fl:persona_on_frontline,이벤트,17,4,19,1,11,14,,,,0,0,,org:마음의_괴도단 person:모나 person:곰 person:아이기스 person:앨든 person:유키코,PERSONA ON FRONTLINE
 475,char:872,호감도,2,1,2,0,1,3,,,,0,0,,person:아이기스 person:라이 place:방주 concept:니케,아이기스
 476,char:870,호감도,3,1,2,0,2,3,,,,0,0,,person:모르가나 person:퀸(마코토) person:팬텀 org:중앙_정부 place:방주,퀸(마코토)
 477,char:871,호감도,2,0,2,0,1,2,,,,0,0,,person:곰 person:유키코 place:설온장 person:미카,유키코

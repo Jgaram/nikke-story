@@ -3289,6 +3289,7 @@ relic:거인을찾아서,437,place:지상,place,3,0,,1,132,기록
 fl:lie_cause_recoil,438,concept:게이트_키퍼,concept,2,0,,6,3,기록+이름
 fl:lie_cause_recoil,438,concept:니케,concept,1,0,,12,186,이름
 fl:lie_cause_recoil,438,org:방주_아동_보호_센터,org,9,0,,10,2,기록+이름
+fl:lie_cause_recoil,438,org:찻집_리코리코,org,0,0,,6,1,이름
 fl:lie_cause_recoil,438,org:카페_스위티,org,8,0,,16,4,기록+이름
 fl:lie_cause_recoil,438,person:레인,person,11,58,3,40,1,기록
 fl:lie_cause_recoil,438,person:마스트,person,2,45,2,7,9,기록
@@ -3715,6 +3716,7 @@ relic:불길한_소리.wav,473,place:궤도_엘리베이터,place,3,0,,9,11,기�
 fl:persona_on_frontline,474,concept:D-WAVE,concept,10,0,,39,4,기록+이름
 fl:persona_on_frontline,474,concept:니케,concept,2,0,,35,186,기록+이름
 fl:persona_on_frontline,474,org:A.C.P.U.,org,0,0,,7,9,이름
+fl:persona_on_frontline,474,org:마음의_괴도단,org,0,0,,7,1,이름
 fl:persona_on_frontline,474,org:중앙_정부,org,4,0,,39,67,기록+이름
 fl:persona_on_frontline,474,person:곰,person,9,171,9,115,2,기록
 fl:persona_on_frontline,474,person:모나,person,18,222,12,54,1,기록+말함

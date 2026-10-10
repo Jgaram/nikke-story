@@ -621,6 +621,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
         if (!r || r.people || r.layers || r.kind === 'relation' || r.kind === 'time') err(where, c.id, `basis: 없는 기록 ${o.basis} — 사실 · 의문 · 사건 · 줄기 ID를 쓴다`);
         else if (r.status === '기각' && c.status !== '기각') err(where, c.id, `basis: 기각된 ${o.basis}를 가리킨다`);
         else if (!r.threads && isStr(o.unit) && r.unit !== o.unit) warn(where, c.id, `basis ${o.basis}는 ${r.unit ?? '?'}의 기록이다 — 판정하는 단위(${o.unit})의 기록을 든다`);
+        // 감정 기준(X3g — docs/importance.md 3절 "결정적 순간"): 감정으로 오른 판정의 근거는 그 결정적 순간의 인물 변화 D(마무리 O면 그 닫는 기록 D)
+        else if (/^감정 —/.test(c.reason ?? '') && r.kind !== 'change') warn(where, c.id, `감정으로 오른 판정(reason "감정 — …")의 basis ${o.basis}는 인물 변화 D가 아니다 — 결정적 순간의 D(마무리 O면 닫는 기록 D)를 든다`);
       }
       // 기준 시점(X3a) — 판정이 반영한 스토리의 마지막 공개일
       if (o.asof !== undefined && !(isStr(o.asof) && /^\d{4}-\d{2}-\d{2}$/.test(o.asof))) err(where, c.id, `asof ${JSON.stringify(o.asof)} — YYYY-MM-DD(판정이 반영한 스토리의 마지막 공개일)`);
