@@ -1,0 +1,105 @@
+{
+  "subject": "thread:J24",
+  "versions": [
+    {
+      "at": "ch04",
+      "title": "아니스와 머스탱 — 돌아오라는 사장님",
+      "text": "아니스가 '사장님'이라 부르는 테트라 라인의 CEO 머스탱은 슬슬 돌아오라며 기다리겠다고 한다 — 아니스는 테트라 라인과 무슨 관계이고, 왜 아직 돌아가지 않나.",
+      "src": "8b0e905a1b",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "681dab6d6c",
+          "note": "판마다 at까지의 흐름만으로 씀 — 첫 판은 CH.04의 '돌아오라' 의문, 체크 칸 둘(PRETTY STAR · STAR ANIS)에 판, 한슨은 정체가 드러나는 STAR ANIS에서만"
+        }
+      ]
+    },
+    {
+      "at": "ch35",
+      "title": "아니스와 머스탱 — T.T.STAR",
+      "text": "아니스는 테트라 라인의 아이돌 그룹 T.T.STAR였고, 정식 은퇴를 청하자 머스탱은 은퇴 공연을 조건으로 걸었다 — 아니스는 왜 무대를 떠났고, 누구도 다 믿지 못하게 된 일은 무엇인가.",
+      "src": "b4aec62769",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "f296d3fb3f",
+          "note": "판마다 at까지의 흐름만으로 씀 — 첫 판은 CH.04의 '돌아오라' 의문, 체크 칸 둘(PRETTY STAR · STAR ANIS)에 판, 한슨은 정체가 드러나는 STAR ANIS에서만"
+        }
+      ]
+    },
+    {
+      "at": "ch41",
+      "title": "아니스와 머스탱 — T.T.STAR · 스마일 박스",
+      "text": "아니스는 한 팬이 올린 가짜 해명 영상 탓에 거짓말쟁이로 몰려 무대를 떠났고, T.T.STAR는 멤버 하나가 폭력 사태에 휘말려 해체했다 — 스마일 박스 시절 죽은 두 사람은 누구이고, 그때의 머스탱은 무엇을 했나.",
+      "src": "befcd9176f",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "abe01d8ee9",
+          "note": "판마다 at까지의 흐름만으로 씀 — 첫 판은 CH.04의 '돌아오라' 의문, 체크 칸 둘(PRETTY STAR · STAR ANIS)에 판, 한슨은 정체가 드러나는 STAR ANIS에서만"
+        }
+      ]
+    },
+    {
+      "at": "side:pretty_star",
+      "title": "아니스와 머스탱 — 프리티의 콘서트",
+      "text": "인간 아니스는 프리티의 데뷔곡을 듣고 살기로 했고, 프리티의 복귀 콘서트에서 죽어 테트라의 니케 아이돌이 되었다 — 머스탱은 데뷔를 앞둔 니케들로 정부의 약점을 쥐었다. 스마일 박스에서는 무슨 일이 있었나.",
+      "src": "c654d83aac",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "1d604c3a59",
+          "note": "판마다 at까지의 흐름만으로 씀 — 첫 판은 CH.04의 '돌아오라' 의문, 체크 칸 둘(PRETTY STAR · STAR ANIS)에 판, 한슨은 정체가 드러나는 STAR ANIS에서만"
+        }
+      ]
+    },
+    {
+      "at": "event_staranis1",
+      "title": "아니스와 머스탱 — 스마일 박스 · 진짜 머스탱",
+      "text": "스마일 박스에서 아니스를 지키려던 리스는 비난 끝에 숨졌고, 아니스는 리스를 죽였다는 요요를 때린 뒤 아이돌을 그만두었다 — 지금의 머스탱은 머스탱을 흉내 내는 한슨이다. 진짜 머스탱은 어떻게 되었나.",
+      "src": "d0987bad39",
+      "session": "W15d",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15d",
+          "hash": "5f5aa13b0e",
+          "note": "판마다 at까지의 흐름만으로 씀 — 첫 판은 CH.04의 '돌아오라' 의문, 체크 칸 둘(PRETTY STAR · STAR ANIS)에 판, 한슨은 정체가 드러나는 STAR ANIS에서만"
+        }
+      ]
+    }
+  ]
+}
