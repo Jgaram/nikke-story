@@ -8,5 +8,16 @@
     "date": "2026-10-10",
     "status": "확정",
     "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "0eccfd2593", "note": "F529 · Q6 대조" }]
+  },
+  "when": {
+    "text": "맥스웰이 아는 사이인 지휘관을 불러 테스터를 맡긴다. 맥스웰은 CH.11에 처음 나와 CH.12에 침식되고 CH.15에 깨어나니, 그 앞 짧은 틈보다 CH.15 뒤로 본다.",
+    "src": "f4bd62fb9c",
+    "session": "W14c",
+    "by": "claude",
+    "date": "2026-10-10",
+    "status": "확정",
+    "reviews": [
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14c", "hash": "c9cb3fdc74", "note": "추정 이유 · 근거 기록 대조, 뒤 스토리 이름 · 암시 없음 확인" }
+    ]
   }
 }
