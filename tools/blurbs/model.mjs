@@ -152,7 +152,11 @@ export function laterNames(text, unit, units) {
 }
 
 /** 문장 수 — 마침표 · 물음표 · 느낌표 뒤가 끝이나 빈칸인 곳(CH.44의 점은 세지 않는다) */
-export const sentenceCount = (t) => (String(t).trim().match(/[.?!…](?=\s|$)/g) ?? []).length || (String(t).trim() ? 1 : 0);
+// 약어(V.T.C. · D.E.E.P.)의 마침표는 문장 끝으로 세지 않는다 — 약어로 끝나는 문장은 하나 덜 세지만 경고만 쓰는 수라 괜찮다
+export const sentenceCount = (t) => {
+  const s = String(t).trim().replace(/(?:[A-Z]\.){2,}/g, 'X');
+  return (s.match(/[.?!…](?=\s|$)/g) ?? []).length || (s ? 1 : 0);
+};
 
 /**
  * 화면 글 한 토막 검사 — 길이 · 금지 꼴 · 뒤 스토리 이름 · 판정 말 · 작업 냄새 · 따옴표.

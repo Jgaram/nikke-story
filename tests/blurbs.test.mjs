@@ -53,6 +53,7 @@ test('길이 — 권장 밖은 경고, 상한을 넘으면 오류 · 문장은 �
   assert.ok(checkEntry('why', entry('짧다. CH.44 전.'), cur).warnings.some((m) => m.includes('권장')));
   assert.ok(checkEntry('why', entry('가'.repeat(LIMITS.max + 1)), cur).errors.some((m) => m.includes(`${LIMITS.max}자`)));
   assert.equal(sentenceCount('CH.44 전에 본다. 그 뒤 CH.45로 간다.'), 2);
+  assert.equal(sentenceCount('D.E.E.P.가 안경과 이어지고 V.T.C.가 나선다. 남은 물음은 무엇인가?'), 2); // 약어 마침표는 세지 않는다
   assert.ok(checkEntry('why', entry('버닝엄이 나온다. 지휘관이 간다. 세르반을 구한다. 그리고 CH.44 전에 본다.'), cur).warnings.some((m) => m.includes('문장')));
 });
 
