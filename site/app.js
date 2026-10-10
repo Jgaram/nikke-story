@@ -15,7 +15,7 @@ const $ = (sel) => document.querySelector(sel);
 // ── 여기까지 읽음(컷오프) — 상단은 지금 값을 보이는 단추 하나, 누르면 팝업(dialog). 첫 방문이면 팝업이 저절로 뜬다 ──
 // 팝업: 메인은 순서대로 보니 슬라이더 + 이전 · 다음 챕터 단추 하나로, 척추 이벤트 · 사이드는 순서 없이 볼 수 있어 따로 체크(사용자, 2026-10-10)
 // 팝업 안에서 바꾼 값은 초안(draft)이다 — [확인]을 눌러야 적용하고, 더 많이 보이게 되는 쪽이면 한 번 더 묻는다(사용자, 2026-10-10)
-// 마지막 메인 뒤에 나온 스토리가 있으면 '최신 업데이트까지'를 챕터 단추 · 눈금의 한 자리로 둔다(사용자, 2026-10-10)
+// 마지막 메인 뒤에 나온 스토리가 있으면 '사이트 수록분 끝까지'를 챕터 단추 · 눈금의 한 자리로 둔다 — 인게임 최신과 헷갈리지 않게(사용자, 2026-10-10)
 const FV_LATER_KEY = 'nikke-story.fv-later';
 function cutoffControl(idx, firstVisit) {
   const wrap = $('#cutoff');
@@ -23,7 +23,7 @@ function cutoffControl(idx, firstVisit) {
   const first = idx.tickList[0]?.tick ?? 1;
   const last = idx.tickList.at(-1)?.tick ?? 1;
   const lastMain = idx.mainTicks.at(-1);
-  const latest = lastMain && last > lastMain.tick ? last : null; // 마지막 메인 뒤 최신 자리(없으면 null — 메인이 마지막 업데이트일 때)
+  const latest = lastMain && last > lastMain.tick ? last : null; // 마지막 메인 뒤 수록분 끝 자리(없으면 null — 메인이 마지막 업데이트일 때)
   const afterMain = latest ? idx.tickList.filter((t) => t.tick > lastMain.tick).reduce((n, t) => n + (t.units?.length ?? 0), 0) : 0;
   const stops = [...idx.mainTicks.map((m) => m.tick), ...(latest ? [latest] : [])];
   const extras = state.spineExtras();
@@ -106,8 +106,10 @@ function cutoffControl(idx, firstVisit) {
   } }, dir < 0 ? '‹' : '›');
   const prevBtn = stepBtn(-1);
   const nextBtn = stepBtn(1);
-  const latestBtn = latest ? ui.el('button', { type: 'button', class: 'btn cutoff-latest', title: V.latestHelp(fmt.tickShort(lastMain.tick), afterMain), onClick: () => setDraft({ t: latest }) },
-    V.latest, ui.el('span', { class: 'muted' }, ` · ${fmt.tickShort(lastMain.tick)} 뒤 ${afterMain}편`)) : null;
+  // 사이트 수록분 끝 — 늘 둔다(하단 [전부 보기]를 대신한다, 사용자 2026-10-10). 메인이 마지막이면 그 챕터 자리
+  const endSub = latest ? `${fmt.tickShort(lastMain.tick)} 뒤 ${afterMain}편` : fmt.tickShort(last);
+  const latestBtn = ui.el('button', { type: 'button', class: 'btn cutoff-latest', title: V.latestHelp(endSub, idx.ticks.get(last)?.date ?? ''), onClick: () => setDraft({ t: last }) },
+    V.latest, ui.el('span', { class: 'muted' }, ` · ${endSub}`));
   // 척추 이벤트 · 사이드 체크 칸 — 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다)
   const boxes = extras.map((e) => {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
@@ -118,7 +120,6 @@ function cutoffControl(idx, firstVisit) {
       ui.el('span', { class: 'cutoff-ex-title' }, u?.title ?? e.key),
       ui.el('span', { class: 'cutoff-ex-sub muted' }, `${fmt.KIND[u?.kind]?.label ?? ''}${at ? ` · ${fmt.tickShort(idx.mainTicks.find((m) => m.main === at)?.tick)} 뒤` : ''}`));
   });
-  const allBtn = ui.el('button', { type: 'button', class: 'btn', title: V.allHelp, onClick: () => { draft = { t: null, x: {} }; syncDraft(); commit(); } }, V.all);
   const laterBtn = ui.el('button', { type: 'button', class: 'btn btn-quiet', onClick: () => close(false) }, V.later);
   const okBtn = ui.el('button', { type: 'button', class: 'btn btn-guard', onClick: commit }, V.ok);
   const editPane = ui.el('div', { class: 'cutoff-edit' },
@@ -129,11 +130,11 @@ function cutoffControl(idx, firstVisit) {
     ui.el('section', { class: 'cutoff-sec' },
       ui.el('h3', {}, V.mainHead),
       ui.el('div', { class: 'cutoff-now' }, prevBtn, ui.el('output', { for: 'cutoff-slider', class: 'cutoff-now-read' }, nowName, nowSub), nextBtn),
-      slider, list, latestBtn ? ui.el('div', { class: 'cutoff-latest-row' }, latestBtn) : null),
+      slider, list, ui.el('div', { class: 'cutoff-latest-row' }, latestBtn)),
     ui.el('section', { class: 'cutoff-sec' },
       ui.el('h3', {}, V.exHead, ui.el('span', { class: 'cutoff-sec-hint muted' }, V.exHint)),
       ui.el('div', { class: 'cutoff-exs' }, boxes)),
-    ui.el('div', { class: 'cutoff-dlg-foot' }, allBtn, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
+    ui.el('div', { class: 'cutoff-dlg-foot' }, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
     ui.el('p', { class: 'cutoff-ai' }, fmt.AI_NOTE.full));
   dlg.append(editPane, confirmPane);
   document.body.append(dlg);
@@ -168,13 +169,12 @@ function cutoffControl(idx, firstVisit) {
     showNow(t);
     prevBtn.disabled = t != null && t <= first;
     nextBtn.disabled = t == null || t >= last;
-    if (latestBtn) latestBtn.setAttribute('aria-pressed', String(t === latest));
+    latestBtn.setAttribute('aria-pressed', String(t === last));
     for (const b of boxes) {
       const input = b.querySelector('input');
       input.checked = R.seen(input.dataset.key);
       b.classList.toggle('is-diff', input.dataset.key in draft.x);
     }
-    allBtn.setAttribute('aria-pressed', String(t == null));
   }
   // 상단 단추 — 적용된 값을 보인다
   const sync = (s) => {
