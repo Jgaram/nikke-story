@@ -66,7 +66,7 @@ export const FORBIDDEN = [
 /** 금지 꼴에 걸리지만 게임 안 용어인 것 — 금지 꼴 검사 전에 지운다 */
 export const GAME_TERMS = [/E2\s?크리스탈/g, /X1\s?온리\s?원/g];
 /** 뒤 이름을 품은 흔한 낱말 — 앞에 나온 이름처럼 덮어서 스포일러로 잡지 않는다(사라지다 속 사라) */
-export const COMMON_WORDS = ['사라지', '사라진', '사라졌', '사라질', '사라짐', '사라져'];
+export const COMMON_WORDS = ['사라지', '사라진', '사라졌', '사라질', '사라짐', '사라져', '라이플', '라이벌'];
 export const WORK_WORDS = /[12]회독|되짚기|바로잡기|확신도|\((?:추정|확실)\)|후보로|판정 카드|볼 거리/g;
 
 const arr = (x) => (Array.isArray(x) ? x : []);
