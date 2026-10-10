@@ -48,7 +48,7 @@
 .tab-order .order-list { container: order-seq / inline-size; }
 .tab-order .order-seq { margin: 0 0 22px; padding: 0; list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 .tab-order .order-row {
-  display: grid; grid-template-columns: 2.6em 9.5em minmax(0, 1fr) 5.2em; align-items: baseline; gap: 0 10px;
+  display: grid; grid-template-columns: 2.6em 9.5em minmax(0, 1fr) 6.4em 5.2em; align-items: baseline; gap: 0 10px;
   padding: 6px 12px; border-top: 1px solid var(--line); cursor: pointer;
 }
 .tab-order .order-row:first-child { border-top: 0; }
@@ -58,7 +58,7 @@
 .tab-order .order-n { color: var(--ink-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; }
 .tab-order .order-badges { display: flex; flex-wrap: wrap; gap: 4px; }
 .tab-order .order-title { line-height: 1.4; overflow-wrap: anywhere; word-break: keep-all; }
-.tab-order .order-chars { color: var(--ink-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.tab-order .order-chars, .tab-order .order-date { color: var(--ink-muted); font-size: 12px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 .tab-order .order-preof {
   display: inline-block; margin-left: 6px; padding: 0 7px; vertical-align: 1px; font-size: 11.5px; line-height: 18px; white-space: nowrap;
   color: var(--ink-2); border: 1px solid var(--line-2); border-radius: 9px;
@@ -88,12 +88,13 @@
 .tab-order .order-spoiler-rows { margin-top: 8px; }
 
 @container order-seq (max-width: 640px) {
-  .tab-order .order-row { grid-template-columns: 2.2em minmax(0, 1fr) auto; grid-template-areas: "n badges chars" "n title title"; gap: 2px 8px; }
+  .tab-order .order-row { grid-template-columns: 2.2em minmax(0, 1fr) auto auto; grid-template-areas: "n badges date chars" "n title title title"; gap: 2px 8px; }
   .tab-order .order-n { grid-area: n; }
   .tab-order .order-badges { grid-area: badges; }
   .tab-order .order-chars { grid-area: chars; }
+  .tab-order .order-date { grid-area: date; }
   .tab-order .order-title, .tab-order .order-row.is-spine .order-title { grid-area: title; grid-column: auto; }
-  .tab-order .order-row.is-main { grid-template-areas: "n title chars"; }
+  .tab-order .order-row.is-main { grid-template-areas: "n title date chars"; }
   .tab-order .order-row.is-main .order-title { grid-area: title; grid-column: auto; }
 }
 

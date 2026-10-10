@@ -14,7 +14,7 @@
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · layer · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
- *   tickLabel(tick, { date })       'CH.20 시점 · 2023-01-12' / 'CH.17 이후 · 2022-11-10' / null → '전부 보기'
+ *   tickLabel(tick, { date })       'CH.20과 함께 출시 · 2023-01-12' / 'CH.17 다음 출시 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
  *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
@@ -360,7 +360,7 @@ export function tickLabel(tick, { date = true } = {}) {
   if (tick == null) return TERM.showAll;
   const t = tickObj(tick);
   if (!t) return `시점 ${tick}`;
-  const head = t.main ? `${chNum(t.main)} 시점` : t.upto ? `${chNum(t.upto)} 이후` : `시점 ${tick}`;
+  const head = t.main ? `${chNum(t.main)}과 함께 출시` : t.upto ? `${chNum(t.upto)} 다음 출시` : `시점 ${tick}`;
   return date && t.date ? `${head} · ${t.date}` : head;
 }
 

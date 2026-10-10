@@ -54,7 +54,7 @@ const LABELS = {
   },
   none: '없음',
   after: (at) => `여기까지 읽음 뒤 — ${at}에 나온다`, unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리', spoiler: '여기까지 읽음 뒤 — 스포일러 보기', reviews: (n) => `검토 기록 ${n}`, before: '그 전: ', asof: '기준일', scene: '씬',
-  trailNone: '바뀐 적 없다',
+  trailNone: '바뀐 적 없다', dateEst: '날짜 추정',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
 const DEFAULT_GRADES = ['필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
@@ -169,20 +169,23 @@ export async function mount(root, ctx) {
     const attrs = { class: 'order-row', dataset: { key }, tabindex: 0, role: 'button', title: fmt.tickLabel(item.tick), onClick: go, onKeydown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } } };
     const num = ui.el('span', { class: 'order-n' }, String(n));
     const chars = ui.el('span', { class: 'order-chars' }, fmt.num(unit.chars));
+    // 출시 날짜 — 목록이 출시순이라 날짜만(메인 기준 자리는 줄 툴팁 · 분류 카드). 추정 날짜는 '~'
+    const est = unit.date_confidence === '추정';
+    const date = ui.el('span', { class: 'order-date', title: `${LABELS.rows2.release}${est ? ` (${LABELS.dateEst})` : ''}` }, unit.date ? `${est ? '~' : ''}${unit.date}` : '');
     if (item.spine) {
       const isMain = unit.kind === 'main';
       attrs.class = `order-row ${isMain ? 'is-main' : 'is-spine'}${unseen ? ' is-unseen' : ''}`;
       return ui.el('li', attrs, num,
         ui.el('span', { class: 'order-badges' }, isMain ? null : ui.chip('grade', '척추'), isMain ? null : ui.chip('kind', unit.kind),
           unseen ? ui.el('span', { class: 'order-unseen', title: LABELS.unseenHelp }, LABELS.unseen) : null),
-        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preLine(key)), chars);
+        ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preLine(key)), date, chars);
     }
     const g = item.grade;
     attrs.class = 'order-row is-extra';
     return ui.el('li', attrs, num,
       ui.el('span', { class: 'order-badges' }, ui.chip('grade', g), ui.chip('kind', unit.kind)),
       ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, unit.title), preOfChip(item), preLine(key)),
-      chars);
+      date, chars);
   };
   const markSelected = (key) => {
     for (const li of listEl.children) { const on = li.dataset.key === key; li.classList.toggle('is-selected', on); li.setAttribute('aria-current', on ? 'true' : 'false'); }
