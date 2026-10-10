@@ -2,6 +2,8 @@
   "unit": "erelic:white_memory",
   "why": {
     "text": "스노우 화이트가 사라진 언니의 머리를 찾아 언니의 소원을 이루겠다고 결심하는 순간이 여기 있다.",
+    "later": "ARK GUARDIAN의 스노우 화이트는 이 결심을 안고 출발한다.",
+    "gate": "fl:ark_guardian",
     "src": "54a1d00399",
     "session": "W14a",
     "by": "claude",
@@ -23,6 +25,14 @@
         "session": "W14a",
         "hash": "25df50cf72",
         "note": "사용자 조율 — 읽는 때 안내 · 뒤 스토리 이름 빼고 이 스토리 · 앞 스토리 내용만, 이을 것 없는 독립은 고정 문장"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "bfed07b476",
+        "note": "사용자 — 스포일러 먼저, 본 사람에겐 짧은 이유: later(gate를 지난 사람에게만) 더함 · 기록 대조(D974 · D902 · E1025 · Q300)"
       }
     ]
   }

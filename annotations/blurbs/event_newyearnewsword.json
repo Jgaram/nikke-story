@@ -2,6 +2,8 @@
   "unit": "event_newyearnewsword",
   "why": {
     "text": "OVER ZONE에서 검만 남기고 죽었다던 홍련의 언니, 장화가 왜 그렇게 죽었는지가 여기 있다.",
+    "later": "GODDESS FALL에서 장화가 나서면 홍련이 불행해진다는 까닭이 여기 있다.",
+    "gate": "event_goddessfall1",
     "src": "4b6226a8ea",
     "session": "W14a",
     "by": "claude",
@@ -23,6 +25,14 @@
         "session": "W14a",
         "hash": "9f97eeba92",
         "note": "사용자 조율 — 읽는 때 안내 · 뒤 스토리 이름 빼고 이 스토리 · 앞 스토리 내용만, 이을 것 없는 독립은 고정 문장"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "a3a1204725",
+        "note": "사용자 — 스포일러 먼저, 본 사람에겐 짧은 이유: later(gate를 지난 사람에게만) 더함 · 기록 대조(D974 · D902 · E1025 · Q300)"
       }
     ]
   }

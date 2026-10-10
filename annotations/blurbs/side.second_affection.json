@@ -2,6 +2,8 @@
   "unit": "side:second_affection",
   "why": {
     "text": "마리안이 지휘관 · 카운터스 · 필그림을 모두 지키겠다는 신념을 세우는 장면은 여기에만 있다.",
+    "later": "GODDESS FALL에서 마리안이 품는 새 뜻은 이 신념에서 자라난다.",
+    "gate": "event_goddessfall1",
     "src": "9c07bc92fd",
     "session": "W14a",
     "by": "claude",
@@ -23,6 +25,14 @@
         "session": "W14a",
         "hash": "e43626ce8e",
         "note": "사용자 조율 — 읽는 때 안내 · 뒤 스토리 이름 빼고 이 스토리 · 앞 스토리 내용만, 이을 것 없는 독립은 고정 문장"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "1002bc6ad6",
+        "note": "사용자 — 스포일러 먼저, 본 사람에겐 짧은 이유: later(gate를 지난 사람에게만) 더함 · 기록 대조(D974 · D902 · E1025 · Q300)"
       }
     ]
   }

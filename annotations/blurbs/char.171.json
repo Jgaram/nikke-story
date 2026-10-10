@@ -2,6 +2,8 @@
   "unit": "char:171",
   "when": {
     "text": "버닝엄의 부관 파피용이 방주 중앙 정부에서 율하를 놀리는 모습으로 때를 가늠한다.",
+    "later": "파피용은 CH.21에서 에덴에 남으니, 방주에서 일하는 이 모습은 그 전이다.",
+    "gate": "ch21",
     "src": "371b9806db",
     "session": "W14a",
     "by": "claude",
@@ -9,7 +11,8 @@
     "status": "확정",
     "reviews": [
       { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "626fb9316a", "note": "W14a 시안 — 추정 이유 · 근거 기록 대조" },
-      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "487e90bdff", "note": "사용자 조율 — 뒤 챕터(CH.21) 이름 빼기" }
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "487e90bdff", "note": "사용자 조율 — 뒤 챕터(CH.21) 이름 빼기" },
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14a", "hash": "b9dbdbaa7a", "note": "later(gate ch21) 더함 — D218" }
     ]
   }
 }

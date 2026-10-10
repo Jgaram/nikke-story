@@ -22,7 +22,9 @@ import { scenePlaces } from './records/read2.mjs';
 import { sourceWindows } from './check-quotes.mjs';
 import { nameFirsts, overlapProblems, spoilerProblems } from './synopsis/model.mjs';
 import { buildInput, loadContext } from './blurbs/input.mjs';
-import { BLURB_DIR, DECIDERS, PARTS, STATUSES, blurbPath, checkBlurb, contentHash, loadBlurbs, shownTexts, srcHash, stateOf } from './blurbs/model.mjs';
+import {
+  BLURB_DIR, DECIDERS, PARTS, STATUSES, blurbPath, checkBlurb, contentHash, laterTexts, loadBlurbs, needsLater, shownTexts, srcHash, stateOf,
+} from './blurbs/model.mjs';
 
 const USAGE = `팬용 문장 도구 (tools/blurbs.mjs) — 형식 · 기준: docs/annotations.md "팬용 문장"
   new <단위 …> [--part why|when] [--refresh]   입력 묶음 + 틀(후보)
@@ -70,6 +72,14 @@ const write = (p, b) => {
   fs.writeFileSync(p, formatJson(out));
 };
 const partsOf = (key) => PART_KEYS.filter((p) => ctx()[p].has(key));
+/** 원문 겹침 · 스포일러 이름 — text는 그 단위 자리, later는 gate 자리로 */
+function heavyProblems(b, e) {
+  const texts = shownTexts(b);
+  const laters = laterTexts(b);
+  const out = [overlapProblems(b, e.windows, [...texts, ...laters.map(([w, t]) => [w, t])]), spoilerProblems(b, e.places.unitPos.get(b?.unit), e.firsts, texts)];
+  for (const [w, t, gate] of laters) out.push(spoilerProblems(b, e.places.unitPos.get(gate), e.firsts, [[w, t]]));
+  return out;
+}
 const curSrc = (part, key) => srcHash(part, ctx()[part].get(key));
 
 function cmdNew() {
@@ -87,8 +97,10 @@ function cmdNew() {
       const cur = curSrc(part, key);
       if (!cur) continue;
       if (!b[part]) {
-        b[part] = { text: '', src: cur, session: opt.session ?? 'W14', by: 'claude', date: opt.date ?? today(), status: '후보', reviews: [] };
-        notes.push(`${part} 틀`);
+        const j = ctx()[part].get(key);
+        const later = part === 'why' && needsLater(j, key, ctx().units) ? { later: '', gate: j.from } : {};
+        b[part] = { text: '', ...later, src: cur, session: opt.session ?? 'W14', by: 'claude', date: opt.date ?? today(), status: '후보', reviews: [] };
+        notes.push(`${part} 틀${later.gate ? ` (later · gate ${later.gate})` : ''}`);
       } else if (b[part].src !== cur) {
         if (opt.refresh) {
           b[part].src = cur;
@@ -115,8 +127,7 @@ async function cmdCheck() {
     const where = b?.unit ?? item.file;
     const res = [checkBlurb(b, ctx())];
     if (item.file !== path.basename(blurbPath(b?.unit ?? '', DIR))) res.push({ errors: [`파일 이름이 단위와 다르다 — ${path.basename(blurbPath(b?.unit ?? '', DIR))}`], warnings: [] });
-    const texts = shownTexts(b);
-    res.push(overlapProblems(b, e.windows, texts), spoilerProblems(b, e.places.unitPos.get(b?.unit), e.firsts, texts));
+    res.push(...heavyProblems(b, e));
     for (const r of res) {
       errors += r.errors.length;
       warnings += r.warnings.length;
@@ -173,8 +184,7 @@ async function cmdSet() {
       // 확정 전에 검사 — 오류가 있으면 확정하지 않는다(경고는 보이고 통과). 낡은 칸은 --refresh부터
       if (st.stale) { console.log(`✗ ${key}: ${part}는 판정이 바뀌었다 — 고친 뒤 new ${key} --part ${part} --refresh`); failed++; continue; }
       const one = { unit: key, [part]: { ...entry, status: '확정', reviews: [{ decision: '확정', by, hash: contentHash(entry) }] } };
-      const texts = shownTexts(one);
-      const rs = [checkBlurb(one, ctx()), overlapProblems(one, e.windows, texts), spoilerProblems(one, e.places.unitPos.get(key), e.firsts, texts)];
+      const rs = [checkBlurb(one, ctx()), ...heavyProblems(one, e)];
       for (const m of rs.flatMap((r) => r.warnings)) console.log(`⚠ ${key}: ${m}`);
       const errs = rs.flatMap((r) => r.errors);
       if (errs.length) { for (const m of errs) console.log(`✗ ${key}: ${m}`); failed++; continue; }

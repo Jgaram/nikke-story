@@ -78,6 +78,21 @@ test('뒤 스토리 이름은 오류 — 메인 챕터 · 제목 단위, 앞 스
   assert.ok(r.errors.some((m) => m.includes('뒤 스토리 이름')));
 });
 
+test('본 사람용 짧은 이유(later) — gate가 뒤 스토리여야 하고, gate까지 이름은 되고 그 뒤는 오류 · 뒤 필수 스토리로 오른 단위는 확정에 꼭', () => {
+  const cur = srcHash('why', JUDGED);
+  const o = { unit: JUDGED.key, units: UNITS };
+  const withLater = (later, gate) => ({ ...entry(GOOD), later, gate });
+  assert.deepEqual(checkEntry('why', withLater('CH.44에서 버닝엄이 아들의 일로 지휘관을 믿는 까닭이 이 이야기다.', 'ch44'), cur, o).errors, []);
+  assert.ok(checkEntry('why', withLater('CH.44에서 버닝엄이 지휘관을 믿는다.', 'ch06'), cur, o).errors.some((m) => m.includes('gate가 이 스토리보다 앞')));
+  assert.ok(checkEntry('why', withLater('GODDESS FALL과 CH.44에서 이어진다.', 'event_goddessfall1'), cur, o).errors.some((m) => m.includes('later: 뒤 스토리 이름 — CH.44')));
+  assert.ok(checkEntry('why', withLater('CH.44에서 이어진다.', undefined), cur, o).errors.some((m) => m.includes('gate')));
+  assert.ok(checkEntry('why', confirm(entry(GOOD)), cur, { ...o, needLater: true }).errors.some((m) => m.includes('later · gate')));
+  assert.ok(checkEntry('why', entry(GOOD), cur, { ...o, needLater: true }).warnings.some((m) => m.includes('later · gate')));
+  // later가 바뀌면 지문이 바뀐다 — 없으면 예전 지문 그대로
+  assert.notEqual(contentHash(withLater('가', 'ch44')), contentHash(withLater('나', 'ch44')));
+  assert.equal(contentHash(entry(GOOD)), contentHash({ ...entry(GOOD), later: undefined }));
+});
+
 test('독립 고정 문장 — 길이 검사 밖, 독립 밖에 쓰면 오류', () => {
   const cur = srcHash('why', JUDGED);
   assert.deepEqual(checkEntry('why', entry(STANDALONE_TEXT), cur, { grade: '독립' }), { errors: [], warnings: [] });

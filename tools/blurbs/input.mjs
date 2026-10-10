@@ -5,7 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { PARTS, SITE_DATA, STANDALONE_TEXT, loadSources, srcHash, titledUnit } from './model.mjs';
+import { PARTS, SITE_DATA, STANDALONE_TEXT, loadSources, needsLater, srcHash, titledUnit } from './model.mjs';
 
 /** 입력에 쓸 사이트 데이터 — 원본(loadSources) + 기록 · 줄기 · 개요 · 자리 */
 export function loadContext(dir = SITE_DATA) {
@@ -100,6 +100,7 @@ export function buildInput(key, part, C) {
     const GL = { 필수: '준필수', 보강: '추천', 참고: '참고', 독립: '독립' };
     lines.push(`등급: ${GL[j.grade] ?? j.grade}${j.confidence === '추정' ? ' (추정)' : ''}${j.path ? ` · 자리에 따라 ${j.path}` : ''}${j.before ? ` — 그 앞 자리는 ${GL[j.before] ?? j.before}` : ''}`);
     if (j.from) lines.push(`딛는 필수 스토리: ${unitName(j.from, C)} (공개 ${tickName(j.from_tick ?? C.units.get(j.from)?.tick, C)}) [${rel(key, j.from, C)}]`);
+    if (needsLater(j, key, C.units)) lines.push(`→ 뒤 필수 스토리로 오른 등급: text는 이 스토리 내용만, 이어지는 까닭은 later(gate ${j.from} — 그 스토리를 본 사람에게만, 그 스토리 내용까지)`);
     lines.push('판정 이유(분석용 — 옮기지 말고 팬 말로):', `  ${j.reason}`);
     if (j.grade === '독립') lines.push(`이을 것이 없으면 고정 문장: ${STANDALONE_TEXT}`);
     if (j.basis) lines.push(`결정 장면 기록: ${j.basis}`);
