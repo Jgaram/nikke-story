@@ -19,7 +19,9 @@
  *   접힌 칸은 URL이 아니라 localStorage(nikke-story.persons.fold)에 남긴다 — 처음에는 결말 · 떡밥만 접혀 있다(건수는 접어도 보인다).
  *
  * 그리는 규칙
- *   여기까지 읽음(t)과 범위(layers)는 모든 숫자 · 목록 · 그림에 걸린다 — 출시 시점이 t보다 뒤인 스토리 · 기록 · 변화는 빼고 센다(persons-detail.json에서 다시 센다).
+ *   여기까지 읽음과 범위(layers)는 모든 숫자 · 목록 · 그림에 걸린다 — 안 본 스토리(R.seen — 메인 위치 t + 본편 이벤트 · 사이드 '봤음' 예외 x)의 등장 · 변화와
+ *     모르는 기록(R.known — 사실 · 의문은 know_units 중 하나라도 봤으면 앎)은 빼고 센다(persons-detail.json에서 다시 센다). 쌍은 by[]의 칸마다(본편 이벤트 · 사이드 칸은 그 키로) 본다.
+ *     자리(tick)는 히트맵의 '아직 안 읽은 부분' 빗금(t 뒤) 같은 위치에만 쓴다 — t 앞이어도 안 봤다고 체크한 스토리 칸은 빗금 칸으로 그린다.
  *   뺀 개수는 도구줄 아래 한 줄에 "스포일러로 가린 …"으로 모으고 [전부 보기]를 단다(범위 밖은 따로). 아직 나오지 않은 인물은 목록에서 빠지고, 주소로 들어오면 안내만 보인다.
  *   같은 인물(정체 연결)은 밝혀지는 자리를 따로 갖고 있지 않아 컷오프로 거를 수 없다 — 읽는 중(t 켬)에는 "스포일러" 접이로 감춘다.
  *   히트맵: 가로 = 읽는 순서(출시순) 481칸을 폭에 맞춰 줄여 그린다, 줄 = 스토리 종류, 칸 색 = 말한 줄 수(파랑 한 색 5단계, 절대 구간 — 인물끼리 견줄 수 있다),
@@ -114,11 +116,16 @@ const push = (m, k, v) => (m.get(k) ?? m.set(k, []).get(k)).push(v);
 const bucketOf = (n) => BUCKETS.reduce((b, lo, i) => (n >= lo ? i + 1 : b), 0);
 const cmpKo = (a, b) => String(a).localeCompare(String(b), 'ko');
 
-/** 쌍의 by[](= [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리])를 여기까지 읽음 T(null이면 끔) · 범위 layers로 더한다 */
+/**
+ * 쌍의 by[](= [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 본편 이벤트 · 사이드 키)])를 여기까지 읽음 · 범위 layers로 더한다.
+ * T: state.reading()의 R(키가 있는 칸은 R.seen(키), 없는 칸은 자리 ≤ R.t) · 숫자(자리 ≤ T) · null(끔)
+ */
 export function pairTotals(by, T, layers) {
   let scenes = 0; let talk = 0; let units = 0;
-  for (const [tick, layer, sc, tk, un] of by) {
-    if (T != null && tick > T) break;
+  const R = T != null && typeof T === 'object' ? (T.all ? null : T) : null;
+  const t = R ? R.t : typeof T === 'object' ? null : T;
+  for (const [tick, layer, sc, tk, un, ex] of by) {
+    if (R && ex) { if (!R.seen(ex)) continue; } else if (t != null && tick > t) { if (!R) break; continue; }
     if (layer && !layers.includes(layer)) continue;
     scenes += sc; talk += tk; units += un;
   }
@@ -159,17 +166,17 @@ export async function mount(root, ctx) {
   const maxOrder = idx.unitList.reduce((m, u) => Math.max(m, u.order ?? 0), 0);
 
   // ── 컷오프 · 범위 ──
-  let V = { T: null, layers: [1, 2, 3] };
+  let V = { T: null, layers: [1, 2, 3], R: state.reading() }; // T는 자리(빗금 · 안내)에만, 가리기는 R(스토리마다)로
   const hideMemo = new Map();
   /** 스토리가 가려지는 이유: 'cut'(여기까지 읽음 뒤) · 'layer'(범위 밖) · null */
   const hideWhy = (unitKey) => {
     if (hideMemo.has(unitKey)) return hideMemo.get(unitKey);
     const u = idx.units.get(unitKey);
-    const why = !u ? null : !state.visible(u.tick, V.T) ? 'cut' : u.layer != null && !V.layers.includes(u.layer) ? 'layer' : null;
+    const why = !u ? null : !V.R.seen(unitKey) ? 'cut' : u.layer != null && !V.layers.includes(u.layer) ? 'layer' : null;
     hideMemo.set(unitKey, why);
     return why;
   };
-  const recWhy = (r) => (!state.visible(r.tick, V.T) ? 'cut' : hideWhy(r.unit) === 'layer' ? 'layer' : null);
+  const recWhy = (r) => (!V.R.known(r) ? 'cut' : hideWhy(r.unit) === 'layer' ? 'layer' : null);
 
   // ── 기록 · 쌍(처음 필요할 때) ──
   const recs = () => (idx.hasRecords ? idx.records : null);
@@ -191,14 +198,14 @@ export async function mount(root, ctx) {
     return pairsP;
   };
   const pairOf = (pm, x, y) => pm.pairMap.get(x < y ? `${x}\t${y}` : `${y}\t${x}`);
-  const pairStat = (pr) => pairTotals(pr.by, V.T, V.layers);
+  const pairStat = (pr) => pairTotals(pr.by, V.R, V.layers);
 
   // ── 인물마다 지금 기준 집계 ──
   let agg = new Map();
   let defaultWho = 'person:라피';
   const recompute = () => {
     const s = state.get();
-    V = { T: s.t, layers: s.layers };
+    V = { T: s.t, layers: s.layers, R: state.reading(s) };
     hideMemo.clear();
     agg = new Map();
     const R = recs();
@@ -231,7 +238,7 @@ export async function mount(root, ctx) {
             if (why === 'cut') { a.recCut++; continue; }
             if (why) continue;
             a.recs++;
-            if (r.kind === 'Q' && fmt.stateAt(r, V.T) === '열림') a.open++;
+            if (r.kind === 'Q' && fmt.stateAt(r, V.R) === '열림') a.open++;
             for (const j of r.threads ?? []) threads.add(j);
           }
           a.threadN = threads.size;
@@ -399,7 +406,7 @@ export async function mount(root, ctx) {
     const parts = [];
     const view = prm('view') === 'table' ? 'table' : 'person';
     const a = agg.get(whoId());
-    if (V.T != null) {
+    if (!V.R.all) {
       if (hiddenPersons) parts.push(`${LABELS.hiddenPerson} ${fmt.num(hiddenPersons)}`);
       if (view === 'person' && a?.visible) {
         if (a.cut) parts.push(`${T_UNIT} ${fmt.num(a.cut)}`);
@@ -480,7 +487,7 @@ export async function mount(root, ctx) {
       if (p.same_as?.length) {
         const links = p.same_as.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]);
         // 같은 인물(정체 연결)은 밝혀지는 자리를 따로 갖고 있지 않아 컷오프로 거를 수 없다 — 읽는 중이면 접어 둔다
-        sub.push(V.T == null ? el('span', {}, el('span', { class: 'muted' }, `${LABELS.same} `), links)
+        sub.push(V.R.all ? el('span', {}, el('span', { class: 'muted' }, `${LABELS.same} `), links)
           : ui.details(`${LABELS.same} (${TERM.spoiler ?? '스포일러'})`, links, { class: 'spoiler pm-same' }));
       }
     }
@@ -527,7 +534,7 @@ export async function mount(root, ctx) {
     for (const r of mine) {
       for (const j of r.threads ?? []) {
         const s_ = slot(j);
-        if (r.kind === 'Q') { s_.q++; if (fmt.stateAt(r, V.T) === '열림') s_.open++; } else if (r.kind === 'F') s_.f++; else if (r.kind === 'E') s_.e++;
+        if (r.kind === 'Q') { s_.q++; if (fmt.stateAt(r, V.R) === '열림') s_.open++; } else if (r.kind === 'F') s_.f++; else if (r.kind === 'E') s_.e++;
       }
     }
     for (const j of idx.threadList) if ((j.about?.includes(p.id) || j.owners?.includes(p.id)) && !map.has(j.id) && !hideWhy(j.first_unit)) slot(j.id);
@@ -562,25 +569,31 @@ export async function mount(root, ctx) {
       svg.append(sv('text', { class: 'pm-svg-label', x: LW - 8, y: rowY(k) + RH / 2, 'text-anchor': 'end', 'dominant-baseline': 'central' }, fmt.KIND[k].label));
     }
     let bg = '';
-    let maxVis = 0;
+    let skip = ''; // t 앞인데 안 봤다고 체크한 스토리 칸(빗금)
+    let maxVis = 0; // 메인 위치 t까지의 마지막 읽는 자리(빗금 띠의 시작 — 자리라 tick으로)
     const cells = new Map(kindList.map((k) => [k, []]));
     for (const u of idx.unitList) {
       const why = hideWhy(u.key);
-      if (why === 'cut') continue;
-      maxVis = Math.max(maxVis, u.order);
-      if (why === 'layer') continue;
+      const before = state.visible(u.tick, V.T);
+      if (before) maxVis = Math.max(maxVis, u.order);
       const x = xOf(u.order); const y = rowY(u.kind);
       if (y == null || Number.isNaN(y)) continue;
       const w = Math.max(cw - 0.25, 0.9);
+      if (why === 'cut') { if (before) skip += `M${x.toFixed(2)} ${y}h${w.toFixed(2)}v${RH}h${(-w).toFixed(2)}z`; continue; }
+      if (why === 'layer') continue;
       bg += `M${x.toFixed(2)} ${y}h${w.toFixed(2)}v${RH}h${(-w).toFixed(2)}z`;
       if (present.has(u.key)) cells.get(u.kind)?.push({ x, w: Math.max(cw - 0.2, u.kind === 'main' ? 2.6 : 1.5), y, u, e: present.get(u.key) });
     }
-    svg.append(sv('path', { class: 'pm-heat-bg', d: bg }));
-    // 읽은 곳 뒤
+    // 읽은 곳 뒤(빗금 띠를 먼저 깔고 — t 뒤라도 봤다고 체크한 스토리 칸은 그 위에 그린다)
     if (V.T != null && maxVis < maxOrder) {
       const x0 = xOf(maxVis + 1);
       svg.append(sv('rect', { class: 'pm-unread', x: x0, y: TOP - 2, width: W - 6 - x0, height: kindList.length * (RH + GAP) }));
-      if (W - 6 - x0 > 90) svg.append(sv('text', { class: 'pm-svg-note', x: (x0 + W - 6) / 2, y: TOP + (kindList.length * (RH + GAP)) / 2, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, LABELS.unread));
+    }
+    svg.append(sv('path', { class: 'pm-heat-bg', d: bg }));
+    if (skip) svg.append(sv('path', { class: 'pm-unread', d: skip }));
+    if (V.T != null && maxVis < maxOrder && W - 6 - xOf(maxVis + 1) > 90) {
+      const x0 = xOf(maxVis + 1);
+      svg.append(sv('text', { class: 'pm-svg-note', x: (x0 + W - 6) / 2, y: TOP + (kindList.length * (RH + GAP)) / 2, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, LABELS.unread));
     }
     // 축 — 메인 챕터 10단위
     const axisY = TOP + kindList.length * (RH + GAP) + 2;
@@ -922,14 +935,14 @@ export async function mount(root, ctx) {
     const mine = mineRecs(p);
     if (!mine) { sec.body.append(recsPending()); return; }
     const by = recGroups(mine);
-    const openN = by.q.filter((r) => fmt.stateAt(r, V.T) === '열림').length;
+    const openN = by.q.filter((r) => fmt.stateAt(r, V.R) === '열림').length;
     const tab = ['q', 'f', 'k', 'e'].includes(prm('fq')) ? prm('fq') : 'q';
     const seg = fqSeg(Object.fromEntries(Object.entries(by).map(([k, v]) => [k, fmt.num(v.length)])));
     sec.body.append(el('div', { class: 'toolbar pm-sectools' }, seg.el, openN ? el('span', { class: 'pm-open-note' }, el('i', { class: 'pm-dot-open', 'aria-hidden': 'true' }), `${OPEN} ${openN}`) : null));
     const list = by[tab];
     if (!list.length) { sec.body.append(ui.empty(LABELS.fqEmpty[tab])); return; }
     const row = (r) => {
-      const st = r.kind === 'Q' || r.kind === 'F' ? fmt.stateAt(r, V.T) : null;
+      const st = r.kind === 'Q' || r.kind === 'F' ? fmt.stateAt(r, V.R) : null;
       const showState = st && tab !== 'q' && (r.kind === 'Q' || st === '뒤집힘' || st === '암시만');
       const label = tab === 'k' || tab === 'e' ? (r.kind === 'E' ? fmt.ACT[r.act] ?? fmt.RECORD_KIND.E.label : fmt.recordLabel(r)) : null;
       return el('li', { class: ['pm-rec', st === '열림' ? 'is-open' : ''], dataset: { sel: `record:${r.id}` }, tabindex: 0, onClick: (e) => { if (!e.target.closest('a')) state.set({ sel: `record:${r.id}` }); },
@@ -943,13 +956,13 @@ export async function mount(root, ctx) {
     if (tab === 'q') {
       // 상태별로 묶는다 — 미해결이 맨 위. 정렬이 상태 묶음 먼저라 보이는 몫도 상태순으로 고른다
       const order = ['열림', '일부', '풀림', '암시만'];
-      const sorted = [...list].sort((x, y) => order.indexOf(fmt.stateAt(x, V.T)) - order.indexOf(fmt.stateAt(y, V.T)) || (x.order ?? 0) - (y.order ?? 0));
+      const sorted = [...list].sort((x, y) => order.indexOf(fmt.stateAt(x, V.R)) - order.indexOf(fmt.stateAt(y, V.R)) || (x.order ?? 0) - (y.order ?? 0));
       const take = sorted.slice(0, limit);
       const g2 = new Map(order.map((s) => [s, []]));
-      for (const r of take) (g2.get(fmt.stateAt(r, V.T)) ?? g2.get('암시만')).push(r);
+      for (const r of take) (g2.get(fmt.stateAt(r, V.R)) ?? g2.get('암시만')).push(r);
       for (const [s, rs] of g2) {
         if (!rs.length) continue;
-        const total = sorted.filter((r) => fmt.stateAt(r, V.T) === s).length;
+        const total = sorted.filter((r) => fmt.stateAt(r, V.R) === s).length;
         ul.append(el('li', { class: 'pm-group' }, `${fmt.STATE[s]?.label ?? s} ${total}`));
         for (const r of rs) ul.append(row(r));
       }

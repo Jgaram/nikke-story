@@ -4,6 +4,7 @@
  *
  *   threads-flow.json   { <줄기 ID>: { roots[], echoes[], units[] } } — 줄기마다 곧바로 든 의문(Q) · 사실(F)의 단계 줄(data/views/timeline/reveals.csv)
  *     roots[]   id · kind(Q · F) · text · unit · tick · order · state(끝 상태) · first_tick · hint_tick · partial_tick · solved_tick · reversed_tick · replaced_by · hints · units
+ *               · know_units · hint_units · partial_units · solved_units · reversed_units(단계별 단위 — 공용 records.json과 같은 칸, 있을 때만. 화면이 fmt.stateAt(뿌리, R)로 단위마다 본다)
  *               points[]: r(기록 ID) · s(단계: 제기 · 암시 · 재언급 · 일부 회수 · 회수 · 처음 밝혀짐 · 보강 · 뒤집힘) · u(단위) · t(공개 자리) · o(읽는 자리) · sc(씬) · ln(줄)
  *                         · rel(뿌리 첫 자리와 견줘 앞 · 뒤 — 동시는 칸 없음) · a(답 사실 · 바꾼 사실) · c('추정'일 때만) · bu(빌드업 마무리: 긴 회수 · 복선의 답) · from(쌓은 쪽)
  *     echoes[]  줄기(J)만 가리키는 2회독 떡밥 E — r · s · u · t · o · sc · ln (뿌리 줄이 없어 reveals에 없는 것)
@@ -11,8 +12,9 @@
  *   threads-map.json    { concepts[], edges[], pairs[], relations{}, closures[], merges[], chrono{} }
  *     concepts[]  줄기와 이어진 비인물 대상(links/thread-targets.csv) — id · type · name · threads(걸친 줄기 수) · records
  *     edges[]     줄기 ↔ 개념 — j · target · records · own(줄기 자신의 about) · sample[](기록 ID) · tick(근거 기록의 가장 앞 공개 자리)
+ *                 · units[](근거 기록을 알게 되는 단위 — 사실 · 의문은 know_units, 그 밖은 unit. 공개 자리순, 하나라도 봤으면 보인다)
  *     pairs[]     개념 ↔ 개념(links/target-pairs.csv) — a · b · records · units
- *     relations   { <G ID>: { tick } } — 줄기 ↔ 줄기 관계의 근거 기록 가장 앞 자리(컷오프용)
+ *     relations   { <G ID>: { tick, units[] } } — 줄기 ↔ 줄기 관계의 근거 기록 가장 앞 자리 · 근거를 알게 되는 단위(edges와 같은 규칙, 컷오프용)
  *     closures[]  연작 · 갈등의 결말 O(closures/closures.csv) — id · type · end · end_tick · built[] · closing[] · about[] · merge · text · threads[](붙는 줄기) · how
  *     merges[]    합류 H(closures/merges.csv) — id · title · end · end_tick · members[] · types[] · persons[] · text · threads[]
  *     chrono{}    흐름 · 결말에 든 스토리의 작중 순서(timeline/chrono-order.csv의 '지금' 줄) — <단위 키>: { seq(작중 순서, 상대 · 불명은 칸 없음) · class(판별 · 범위 · 상대 · 불명) · drift(출시순과 비교) }
@@ -39,6 +41,18 @@ export async function run(ctx) {
     const ts = ids.map(tickOfRec).filter((t) => t != null);
     return ts.length ? Math.min(...ts) : null;
   };
+  /** 근거 기록들을 알게 되는 단위(사실 · 의문은 know_units — 없으면 [unit], 그 밖은 unit) — 공개 자리순. 화면은 R.seenAny로 본다 */
+  const knowUnits = (ids) => {
+    const us = new Set();
+    for (const id of ids) {
+      const r = recById.get(id);
+      if (!r) continue;
+      for (const u of (r.kind === 'F' || r.kind === 'Q') && r.know_units ? r.know_units : r.unit ? [r.unit] : []) us.add(u);
+    }
+    const out = [...us].sort((a, b) => (common.placeOf.get(a)?.order ?? 1e9) - (common.placeOf.get(b)?.order ?? 1e9));
+    return out.length ? out : undefined;
+  };
+  const STAGE_UNITS = ['know_units', 'hint_units', 'partial_units', 'solved_units', 'reversed_units'];
   const targetById = new Map(common.targets.map((t) => [t.id, t]));
 
   // ── 흐름: 줄기별 뿌리 · 단계 줄 ──
@@ -79,7 +93,8 @@ export async function run(ctx) {
       id, kind: row.kind === '의문' ? 'Q' : 'F', text: text(row.text, `${id} text`), unit: rec.unit, tick: rec.tick, order: rec.order,
       state: row.state || undefined, first_tick: num(row.first_tick), hint_tick: num(row.hint_tick), partial_tick: num(row.partial_tick),
       solved_tick: num(row.solved_tick), reversed_tick: num(row.reversed_tick), replaced_by: row.replaced_by || undefined,
-      hints: num(row.hints) || undefined, units: num(row.units) || undefined, points,
+      hints: num(row.hints) || undefined, units: num(row.units) || undefined,
+      ...Object.fromEntries(STAGE_UNITS.filter((k) => rec[k]?.length).map((k) => [k, rec[k]])), points,
     });
   };
 
@@ -116,7 +131,7 @@ export async function run(ctx) {
     const agg = conceptAgg.get(r.target) ?? conceptAgg.set(r.target, { id: r.target, type: r.type, threads: 0, records: 0 }).get(r.target);
     agg.threads += 1;
     agg.records += num(r.records) ?? 0;
-    return compact({ j: r.thread, target: r.target, records: num(r.records), own: r.thread_about === '줄기' ? true : undefined, sample, tick: minTick(sample) });
+    return compact({ j: r.thread, target: r.target, records: num(r.records), own: r.thread_about === '줄기' ? true : undefined, sample, tick: minTick(sample), units: knowUnits(sample) });
   });
   const concepts = [...conceptAgg.values()].map((c) => {
     const t = targetById.get(c.id);
@@ -127,7 +142,7 @@ export async function run(ctx) {
   const pairs = csv('data/views/links/target-pairs.csv')
     .filter((p) => conceptIds.has(p.a) && conceptIds.has(p.b))
     .map((p) => compact({ a: p.a, b: p.b, records: num(p.records), units: num(p.units) }));
-  const relations = Object.fromEntries(common.relations.map((g) => [g.id, compact({ tick: minTick(g.basis ?? []) })]));
+  const relations = Object.fromEntries(common.relations.map((g) => [g.id, compact({ tick: minTick(g.basis ?? []), units: knowUnits(g.basis ?? []) })]));
 
   // ── 결말 · 합류 → 줄기에 붙인다 ──
   const attach = (unitsOfC, persons, { needBuilt = false, end = null, built = [] } = {}) => {

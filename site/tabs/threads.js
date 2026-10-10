@@ -19,8 +19,11 @@
  *   sort    목록 정렬 — open(미해결 많은 순) · start(먼저 나온 순), 없으면 중요도순
  *
  * 그리는 규칙
- *   여기까지 읽음 T: 의문 · 사실의 상태는 fmt.stateAt(뿌리, T)로 T에서 다시 계산한다. T 뒤 단계 · 스토리 열은 지우고 개수만 "스포일러로 가림"에 보인다.
- *     떡밥이 시작됐는가 = 뿌리 하나라도 첫 자리(첫 던짐 · 첫 밝혀짐)가 T 안. 시작 전 떡밥은 지도에서 이름 없는 점(자리는 그대로 — 슬라이더를 움직여도 배치가 튀지 않는다)이다.
+ *   여기까지 읽음 R(state.reading — 메인 위치 t + 본편 이벤트 · 사이드 '봤음' 예외 x): 가리기는 자리가 아니라 스토리(단위)마다 정한다.
+ *     의문 · 사실의 상태는 fmt.stateAt(뿌리, R)(단계별 단위 know_units · hint_units · partial_units · solved_units · reversed_units 중 본 것으로).
+ *     단계 점 · 복선 · 결말 · 함께 맺음은 그 스토리를 봤을 때만(R.seen), 떡밥 ↔ 항목 선 · 떡밥끼리 관계는 근거 기록을 알게 되는 스토리 중 하나라도 봤을 때만(R.seenAny(units)).
+ *     안 본 단계 · 스토리 열은 지우고 개수만 "스포일러로 가림"에 보인다. 자리(tick)는 시작 시점 안내 · 정렬 같은 위치에만 쓴다.
+ *     떡밥이 시작됐는가 = 뿌리 하나라도 첫 단계(첫 던짐 · 첫 밝혀짐)를 봤다. 시작 전 떡밥은 지도에서 이름 없는 점(자리는 그대로 — 슬라이더를 움직여도 배치가 튀지 않는다)이다.
  *     첫 자리 앞에 복선만 나온 뿌리("복선만")는 문장을 가린 줄로 접어 두고(p.hints), 범위(layers) 밖 스토리의 단계도 같이 가린다 —
  *     가린 개수는 맨 위에 "스포일러로 가림 · 떡밥 N · 이 떡밥의 단계 M"(전부 보기) / "범위 밖 …"(범위 전부)로 보인다.
  *   지도: 관계가 있는 떡밥(원인 · 맞물림 · 같은 진실 · 포함)만 결정적 힘 배치(핵심은 가운데, 보조는 바깥)로, 나머지는 아래 격자로. 노드 크기 · 색 = 중요도(핵심 > 보조 > 곁가지),
@@ -46,7 +49,7 @@ const LABELS = {
   details: '자세히', legend: '범례', sortName: '정렬', sortWeight: '중요도순', sortOpen: '미해결 많은 순', sortStart: '먼저 나온 순', pick: '떡밥 고르기',
   hiddenThreads: '떡밥', hiddenSteps: '이 떡밥의 단계', hiddenMemo: '스포일러로 가린',
   notStarted: '아직 시작하지 않은 떡밥', noneStarted: '여기까지 읽은 범위에는 아직 떡밥이 없다',
-  startsAt: (t) => `${t}부터 나온다`, startsCount: (t, n) => `${t}부터 떡밥 ${n}개가 나온다`, raiseCutoff: (t) => `${t}까지 읽음으로`,
+  startsAt: (t) => `${t}부터 나온다`, startsIn: (names) => `${names}에서 나온다`, markSeen: '봤음으로', startsCount: (t, n) => `${t}부터 떡밥 ${n}개가 나온다`, raiseCutoff: (t) => `${t}까지 읽음으로`,
   stories: '스토리', unsolved: '미해결', itemsOf: '다루는 항목', related: '이어진 떡밥', moreItems: (n) => `+${n}`,
   noRelation: (n) => `관계가 없는 떡밥 ${n}`, ghost: '아직 안 나온 떡밥',
   commonItems: '자주 나오는 항목 포함', itemSearch: '항목 찾기', itemMore: '더 보기', itemNone: '조건에 맞는 항목이 없다',
@@ -299,6 +302,9 @@ export async function mount(root, ctx) {
     const ts = (flow[t.id]?.roots ?? []).map((r) => r.first_tick).filter((x) => x != null);
     startTick.set(t.id, ts.length ? Math.min(...ts) : null);
   }
+  /** 떡밥이 처음 나오는 스토리들(뿌리의 첫 단계 단위) — 자리로는 지났는데 안 본 본편 이벤트 · 사이드 때문에 시작 전일 때 안내에 쓴다 */
+  const startUnits = (j) => [...new Set((flow[j]?.roots ?? []).filter((r) => r.first_tick != null).flatMap((r) => r.know_units ?? (r.unit ? [r.unit] : [])))]
+    .sort((a, b) => (idx.units.get(a)?.order ?? 1e9) - (idx.units.get(b)?.order ?? 1e9));
   const wLabel = (w) => fmt.THREAD_WEIGHT[w]?.label ?? w;
   const when = (tick) => {
     const sh = fmt.tickShort(tick);
@@ -314,17 +320,21 @@ export async function mount(root, ctx) {
   // 지금 상태(파라미터 · 컷오프)
   const P = (k) => state.param(meta.id, k);
   const cutoff = () => state.get().t;
+  /** 여기까지 읽음(스토리마다) — 가리기 · 세기는 모두 이것으로. t(cutoff)는 자리 안내에만 */
+  const reading = () => state.reading(state.get());
+  /** 근거 기록을 알게 되는 스토리(units) 중 하나라도 봤나 — units가 없으면 자리(tick)로 */
+  const seenBy = (Rd, o) => Rd.all || (o?.units?.length ? Rd.seenAny(o.units) : o?.tick == null || state.visible(o.tick, Rd.t));
   let stats = new Map();
   const computeStats = () => {
-    const T = cutoff();
+    const Rd = reading();
     stats = new Map();
     for (const t of threads) {
       const c = { 열림: 0, 일부: 0, 풀림: 0, 앎: 0, 뒤집힘: 0, 암시만: 0, 아직: 0, q: 0, f: 0 };
       const us = new Set();
       for (const r of flow[t.id]?.roots ?? []) {
-        c[fmt.stateAt(r, T)] += 1;
+        c[fmt.stateAt(r, Rd)] += 1;
         if (r.kind === 'Q') c.q += 1; else c.f += 1;
-        for (const p of r.points) if (T == null || p.t <= T) us.add(p.u);
+        for (const p of r.points) if (Rd.seen(p.u)) us.add(p.u);
       }
       c.units = us.size;
       c.started = c.열림 + c.일부 + c.풀림 + c.앎 + c.뒤집힘 > 0;
@@ -507,11 +517,11 @@ export async function mount(root, ctx) {
 
   // 지도 갱신: 컷오프(시작 전 떡밥) · 선택 · 관련 강조 · 항목 겹침
   const refreshMap = () => {
-    const T = cutoff();
+    const Rd = reading();
     const cur = currentId();
     const mode = modeNow();
     const cId = mode === 'item' ? conceptNow() : null;
-    const cThreads = new Set(cId ? (edgesOfConcept.get(cId) ?? []).filter((e) => T == null || e.tick == null || e.tick <= T).map((e) => e.j) : []);
+    const cThreads = new Set(cId ? (edgesOfConcept.get(cId) ?? []).filter((e) => seenBy(Rd, e)).map((e) => e.j) : []);
     const near = new Set();
     for (const g of relations) { if (g.from === cur) near.add(g.to); if (g.to === cur) near.add(g.from); }
     for (const [id, { g, d }] of nodeEls) {
@@ -533,8 +543,7 @@ export async function mount(root, ctx) {
     for (const { grp, g } of edgeEls) {
       const aOn = stats.get(g.from)?.started;
       const bOn = stats.get(g.to)?.started;
-      const tick = map.relations?.[g.id]?.tick;
-      const shown = aOn && bOn && (T == null || tick == null || tick <= T);
+      const shown = aOn && bOn && seenBy(Rd, map.relations?.[g.id]);
       grp.style.display = shown ? '' : 'none';
       grp.classList.toggle('is-hot', shown && (g.from === cur || g.to === cur));
       grp.classList.toggle('is-faint', shown && mode === 'item' && Boolean(cId));
@@ -566,8 +575,8 @@ export async function mount(root, ctx) {
   const itemMore = ui.el('button', { type: 'button', class: 'btn', onClick: () => { itemShown += 40; refreshItems(); } }, LABELS.itemMore);
   itemPane.append(ui.el('div', { class: 'thr-itemtools' }, itemSearch, commonToggle), itemInfo, itemList, itemMore);
   const visibleEdges = (cid) => {
-    const T = cutoff();
-    return (edgesOfConcept.get(cid) ?? []).filter((e) => (T == null || e.tick == null || e.tick <= T) && stats.get(e.j)?.started);
+    const Rd = reading();
+    return (edgesOfConcept.get(cid) ?? []).filter((e) => seenBy(Rd, e) && stats.get(e.j)?.started);
   };
   const chooseItem = (cid) => state.setParam(meta.id, 'c', cid);
   /** 지금 읽은 데까지 둘 이상의 떡밥에 걸친 항목 — 떡밥을 많이 잇는 순 */
@@ -683,10 +692,11 @@ export async function mount(root, ctx) {
   // 흐름 모델
   let model = null;
   const buildModel = (j) => {
-    const T = cutoff();
+    const Rd = reading();
     const layers = state.get().layers;
     const f = flow[j] ?? { roots: [] };
-    const inT = (t) => T == null || t == null || t <= T;
+    /** 그 스토리를 봤나(스토리가 없으면 자리로) */
+    const inR = (u, t) => (u ? Rd.seen(u) : t == null || state.visible(t, Rd.t));
     const layerOk = (u) => { const un = idx.units.get(u); return !un?.layer || layers.includes(un.layer); };
     let total = 0;
     let shown = 0;
@@ -695,9 +705,9 @@ export async function mount(root, ctx) {
     const maskedLanes = [];
     for (const r of f.roots) {
       total += r.points.length;
-      const st = fmt.stateAt(r, T);
+      const st = fmt.stateAt(r, Rd);
       if (st === '아직') continue;
-      const inPts = r.points.filter((p) => inT(p.t));
+      const inPts = r.points.filter((p) => inR(p.u, p.t));
       const pts = inPts.filter((p) => layerOk(p.u));
       hiddenL += inPts.length - pts.length;
       if (!pts.length) continue;
@@ -707,7 +717,7 @@ export async function mount(root, ctx) {
     }
     if (f.echoes?.length) {
       total += f.echoes.length;
-      const inE = f.echoes.filter((e) => inT(e.t));
+      const inE = f.echoes.filter((e) => inR(e.u, e.t));
       const pts = inE.filter((e) => layerOk(e.u)).map((e) => ({ ...e }));
       hiddenL += inE.length - pts.length;
       if (pts.length) { shown += pts.length; lanes.push({ type: 'echo', id: `echo:${j}`, kind: 'E', text: LABELS.echoLane, state: null, pts }); }
@@ -728,16 +738,16 @@ export async function mount(root, ctx) {
       for (const c of map.closures) {
         if (!c.threads?.includes(j)) continue;
         total += 1;
-        if (!inT(c.end_tick)) continue;
+        if (!inR(c.end, c.end_tick)) continue;
         if (!layerOk(c.end)) { hiddenL += 1; continue; }
-        const built = c.built.filter((u) => layerOk(u) && inT(idx.units.get(u)?.tick));
+        const built = c.built.filter((u) => layerOk(u) && Rd.seen(u));
         shown += 1;
         shownLanes.push({ type: 'closure', id: c.id, text: c.text, ctype: c.type, built, end: c.end, state: null, pts: [] });
       }
       for (const m of map.merges) {
         if (!m.threads?.includes(j)) continue;
         total += 1;
-        if (!inT(m.end_tick)) continue;
+        if (!inR(m.end, m.end_tick)) continue;
         if (!layerOk(m.end)) { hiddenL += 1; continue; }
         shown += 1;
         shownLanes.push({ type: 'merge', id: m.id, text: m.title, end: m.end, members: m.members, state: null, pts: [] });
@@ -1066,8 +1076,8 @@ export async function mount(root, ctx) {
       const rest = chips.slice(limit);
       return [...chips.slice(0, limit), rest.length ? ui.el('details', { class: 'thr-more' }, ui.el('summary', {}, LABELS.moreItems(rest.length)), ui.el('span', { class: 'thr-more-body' }, rest)) : null];
     };
-    const T = cutoff();
-    const rels = relations.filter((g) => (g.from === j || g.to === j) && stats.get(g.from)?.started && stats.get(g.to)?.started && (T == null || map.relations?.[g.id]?.tick == null || map.relations[g.id].tick <= T));
+    const Rd = reading();
+    const rels = relations.filter((g) => (g.from === j || g.to === j) && stats.get(g.from)?.started && stats.get(g.to)?.started && seenBy(Rd, map.relations?.[g.id]));
     if (rels.length) {
       const relChips = rels.map((g) => {
         const out = g.from === j;
@@ -1079,7 +1089,7 @@ export async function mount(root, ctx) {
     }
     // 다루는 항목
     const showCommon = P('common') === '1';
-    const es = (edgesOfThread.get(j) ?? []).filter((e) => (T == null || e.tick == null || e.tick <= T) && concepts.has(e.target) && (showCommon || concepts.get(e.target).threads < COMMON_MIN)).sort((a, b) => b.records - a.records);
+    const es = (edgesOfThread.get(j) ?? []).filter((e) => seenBy(Rd, e) && concepts.has(e.target) && (showCommon || concepts.get(e.target).threads < COMMON_MIN)).sort((a, b) => b.records - a.records);
     if (es.length) {
       const chip = (e) => ui.el('button', { type: 'button', class: ['thr-chip', e.target === P('c') ? 'is-sel' : ''], title: `${fmt.TARGET_TYPE[concepts.get(e.target).type] ?? ''} · ${e.records}`,
         onClick: () => state.set({ p: { map: 'item', c: e.target } }) }, concepts.get(e.target).name);
@@ -1115,9 +1125,9 @@ export async function mount(root, ctx) {
   /** 가린 개수 — 스포일러(떡밥 · 이 떡밥의 단계)와 범위 밖(이 떡밥의 단계) */
   const renderNote = () => {
     ui.clear(noteEl);
-    const T = cutoff();
-    const hiddenThreads = T == null ? 0 : threads.filter((t) => !stats.get(t.id).started).length;
-    const hiddenSteps = T == null ? 0 : model?.hidden ?? 0;
+    const all = reading().all;
+    const hiddenThreads = all ? 0 : threads.filter((t) => !stats.get(t.id).started).length;
+    const hiddenSteps = all ? 0 : model?.hidden ?? 0;
     if (hiddenThreads || hiddenSteps) {
       noteEl.append(ui.hiddenNote(`${LABELS.hiddenMemo} ${[hiddenThreads ? `${LABELS.hiddenThreads} ${fmt.num(hiddenThreads)}` : null, hiddenSteps ? `${LABELS.hiddenSteps} ${fmt.num(hiddenSteps)}` : null].filter(Boolean).join(' · ')}`, () => state.set({ t: null })));
     }
@@ -1157,6 +1167,12 @@ export async function mount(root, ctx) {
         emptyEl.append(ui.el('p', {}, `${LABELS.noneStarted} — ${LABELS.startsCount(fmt.tickShort(t0), n0)}`), ui.el('div', { class: 'thr-empty-actions' },
           ui.el('button', { type: 'button', class: 'btn', onClick: () => goT(t0) }, LABELS.raiseCutoff(fmt.tickShort(t0))),
           ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ t: null }) }, fmt.TERM.showAll)));
+      } else if (first != null && state.visible(first, cutoff())) {
+        // 자리로는 지났다 — 안 봤다고 체크한 본편 이벤트 · 사이드에서 나오는 떡밥
+        const us = startUnits(j);
+        emptyEl.append(ui.el('p', {}, `${LABELS.notStarted} — ${LABELS.startsIn(us.map(fmt.unitTitle).join(' · '))}`), ui.el('div', { class: 'thr-empty-actions' },
+          us.length ? ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ x: { ...(state.get().x ?? {}), ...Object.fromEntries(us.map((u) => [u, true])) } }) }, LABELS.markSeen) : null,
+          ui.el('button', { type: 'button', class: 'btn', onClick: () => state.set({ p: { j: startedThreads()[0].id } }) }, LABELS.pick)));
       } else {
         emptyEl.append(ui.el('p', {}, first != null ? `${LABELS.notStarted} — ${LABELS.startsAt(fmt.tickShort(first))}` : LABELS.notStarted), ui.el('div', { class: 'thr-empty-actions' },
           first != null ? ui.el('button', { type: 'button', class: 'btn', onClick: () => goT(first) }, LABELS.raiseCutoff(fmt.tickShort(first))) : null,

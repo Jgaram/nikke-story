@@ -21,6 +21,7 @@ const pairs = read('persons-pairs.json');
 const units = read('units.json');
 const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
+const extras = new Set(units.filter((u) => u.spine && u.kind !== 'main').map((u) => u.key));
 
 test('persons.json — 인물 386, 중복 없음, 이름 · 집계 칸', () => {
   assert.equal(persons.length, 386);
@@ -56,7 +57,7 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
   }
 });
 
-test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리]의 합이 pairs.csv와 같다', () => {
+test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리(, 본편 이벤트 · 사이드 키)]의 합이 pairs.csv와 같다', () => {
   const csv = new Map(readCsv(path.join(ROOT, 'data/views/persons/pairs.csv')).map((r) => [`${r.a}\t${r.b}`, r]));
   assert.equal(pairs.length, csv.size);
   const layersAll = [1, 2, 3];
@@ -64,7 +65,9 @@ test('persons-pairs.json — by[] = [자리, 범위, 씬, 대화, 스토리]의 
     assert.ok(personIds.has(pr.a) && personIds.has(pr.b) && pr.a < pr.b, `${pr.a} ${pr.b}`);
     const row = csv.get(`${pr.a}\t${pr.b}`);
     assert.ok(row, `${pr.a} ${pr.b}`);
-    for (const x of pr.by) assert.equal(x.length, 5);
+    for (const x of pr.by) {
+      assert.ok(x.length === 5 || (x.length === 6 && extras.has(x[5]) && unitByKey.get(x[5]).tick === x[0]), `${pr.a} ${pr.b} by 칸 ${JSON.stringify(x)}`);
+    }
     const tot = pairTotals(pr.by, null, layersAll);
     assert.equal(tot.scenes, Number(row.scenes), `${pr.a} ${pr.b} 씬`);
     assert.equal(tot.talk, Number(row.talk_scenes), `${pr.a} ${pr.b} 대화`);
@@ -78,6 +81,26 @@ test('pairTotals — 여기까지 읽음과 범위가 합을 줄인다', () => {
   assert.deepEqual(pairTotals(by, 3, [1, 2, 3]), { scenes: 7, talk: 4, units: 4 });
   assert.deepEqual(pairTotals(by, 3, [1]), { scenes: 2, talk: 1, units: 1 });
   assert.deepEqual(pairTotals(by, 0, [1, 2, 3]), { scenes: 0, talk: 0, units: 0 });
+});
+
+/** state.reading()의 R을 흉내 낸다 — 본편 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
+const mkR = (t, x = {}) => {
+  const seen = (k) => (extras.has(k) && k in x ? x[k] : (unitByKey.get(k)?.tick ?? 0) <= t);
+  return { all: false, t, x, seen, seenAny: (ks) => ks.some(seen) };
+};
+
+test('pairTotals(by, R) — 예외가 없으면 자리 규칙과 같고, 본편 이벤트 · 사이드 칸은 봤음 예외를 따른다', () => {
+  const L = [1, 2, 3];
+  for (const t of [1, 55, 119, 144]) {
+    const R = mkR(t);
+    for (const pr of pairs) assert.deepEqual(pairTotals(pr.by, R, L), pairTotals(pr.by, t, L), `${pr.a} ${pr.b} @${t}`);
+  }
+  assert.deepEqual(pairTotals([[1, 1, 2, 1, 1]], { all: true }, L), { scenes: 2, talk: 1, units: 1 });
+  const by = [[1, 1, 2, 1, 1], [5, 1, 3, 2, 1, 'ev_a'], [5, 1, 1, 0, 1], [9, 1, 4, 4, 1, 'ev_b'], [9, 1, 7, 7, 1]];
+  const fake = (t, x) => ({ all: false, t, seen: (k) => (k in x ? x[k] : { ev_a: 5, ev_b: 9 }[k] <= t) });
+  assert.deepEqual(pairTotals(by, fake(5, {}), L), { scenes: 6, talk: 3, units: 3 });
+  assert.deepEqual(pairTotals(by, fake(5, { ev_a: false }), L), { scenes: 3, talk: 1, units: 2 });
+  assert.deepEqual(pairTotals(by, fake(5, { ev_b: true }), L), { scenes: 10, talk: 7, units: 4 }, 't 뒤라도 봤다고 체크한 칸은 더한다');
 });
 
 test('bucketOf — 말한 줄 수 5단계(0은 말한 줄 없음)', () => {

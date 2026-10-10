@@ -61,6 +61,49 @@ test('지도 — 항목 · 선 · 결말 · 합류가 서로 가리키는 것이
   }
 });
 
+/** state.reading()의 R을 흉내 낸다 — 본편 이벤트 · 사이드는 x 예외 우선, 그 밖은 tick ≤ t */
+const extras = new Set([...units.values()].filter((u) => u.spine && u.kind !== 'main').map((u) => u.key));
+const mkR = (t, x = {}) => {
+  const seen = (k) => (extras.has(k) && k in x ? x[k] : (units.get(k)?.tick ?? 0) <= t);
+  return { all: false, t, x, seen, seenAny: (ks) => ks.some(seen) };
+};
+const STAGE_UNITS = { first_tick: 'know_units', hint_tick: 'hint_units', partial_tick: 'partial_units', solved_tick: 'solved_units', reversed_tick: 'reversed_units' };
+
+test('흐름 · 지도 — 스토리마다 가리는 칸(단계별 단위 · 근거 단위)이 자리와 맞는다', () => {
+  for (const f of Object.values(flow)) {
+    for (const r of f.roots) {
+      for (const [tk, uk] of Object.entries(STAGE_UNITS)) {
+        if (!r[uk]) continue;
+        assert.ok(r[tk] != null, `${r.id}: ${uk}가 있으면 ${tk}도 있다`);
+        for (const u of r[uk]) assert.ok(units.has(u), `${r.id} ${uk} ${u}`);
+        assert.equal(Math.min(...r[uk].map((u) => units.get(u).tick)), r[tk], `${r.id}: ${uk}의 가장 앞 자리 = ${tk}`);
+      }
+    }
+  }
+  const check = (o, where) => {
+    if (o.tick == null) { assert.equal(o.units, undefined, where); return; }
+    assert.ok(o.units?.length, `${where}: 자리가 있으면 단위도`);
+    assert.equal(Math.min(...o.units.map((u) => units.get(u).tick)), o.tick, `${where}: 단위의 가장 앞 자리 = tick`);
+  };
+  for (const e of map.edges) check(e, `선 ${e.j} ${e.target}`);
+  for (const [id, g] of Object.entries(map.relations)) check(g, `관계 ${id}`);
+});
+
+test('fmt.stateAt(뿌리, R) — 예외가 없으면 자리 규칙과 같고, 안 본 본편 이벤트의 단계는 빠진다', async () => {
+  const fmt = await import('../site/lib/format.js');
+  const roots = Object.values(flow).flatMap((f) => f.roots);
+  for (const t of [1, 40, 55, 96, 119, 144, 1e9]) {
+    const R = mkR(t);
+    for (const r of roots) assert.equal(fmt.stateAt(r, R), fmt.stateAt(r, t), `${r.id} @${t}`);
+  }
+  // 본편 이벤트에서만 풀리는 의문: 그 이벤트를 안 봤다고 하면 풀리기 전 상태로
+  const ex = roots.find((r) => r.kind === 'Q' && r.solved_units?.length && r.solved_units.every((u) => extras.has(u)) && r.first_tick < r.solved_tick);
+  assert.ok(ex, '본편 이벤트에서 풀리는 의문이 하나는 있다');
+  const T = 1e9;
+  assert.equal(fmt.stateAt(ex, mkR(T)), fmt.stateAt(ex, T));
+  assert.notEqual(fmt.stateAt(ex, mkR(T, Object.fromEntries(ex.solved_units.map((u) => [u, false])))), '풀림', `${ex.id}`);
+});
+
 test('내보낸 JSON에 대사 본문 칼럼 이름이 없다', () => {
   for (const f of ['threads-flow.json', 'threads-map.json']) {
     const raw = fs.readFileSync(path.join(ROOT, 'site/data', f), 'utf8');
