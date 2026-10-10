@@ -1,0 +1,24 @@
+{
+  "subject": "org:A.F.F.",
+  "versions": [
+    {
+      "at": "char:100",
+      "text": "방주의 화재 진압을 맡는 소방 조직.",
+      "src": "76ebfb5d6e",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "108da75cef",
+          "note": "char:100 F719 · ep:d_nikke_laplace_02#97(방주의 소방관)로 1판"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "subject": "concept:적합자",
+  "versions": [
+    {
+      "at": "char:221",
+      "text": "1차 랩쳐 침공 몇 년 뒤 세계 각지에서 찾아 나선, 니케가 될 수 있다고 판명된 사람. 갓데스 스쿼드도 그렇게 뽑혀 니케로 다시 태어났다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "0be1783ece",
+          "note": "char:221은 기록 없어 원문 ep:d_nikke_rapunzel_04#54-57(1차 침공 뒤 찾은 니케 될 사람, 갓데스)로 씀, event_redash(척추 체크 칸) event_redash1_02_s#50-52 · F1145로 자아가 강한 이 → 페어리 테일 모델, 아니면 양산형이라는 뜻이 바뀌어 그 자리에 판"
+        }
+      ]
+    },
+    {
+      "at": "event_redash",
+      "text": "자아가 강해 고유 능력을 발현할 수 있어, 막대한 자금 · 기술을 들인 페어리 테일 모델 니케가 되는 사람. 그러지 못한 이들은 양산형이 된다.",
+      "src": "f1e1ae48ba",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "59d0a07a85",
+          "note": "char:221은 기록 없어 원문 ep:d_nikke_rapunzel_04#54-57(1차 침공 뒤 찾은 니케 될 사람, 갓데스)로 씀, event_redash(척추 체크 칸) event_redash1_02_s#50-52 · F1145로 자아가 강한 이 → 페어리 테일 모델, 아니면 양산형이라는 뜻이 바뀌어 그 자리에 판"
+        }
+      ]
+    }
+  ]
+}

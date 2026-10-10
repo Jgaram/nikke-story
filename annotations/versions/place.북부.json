@@ -1,0 +1,24 @@
+{
+  "subject": "place:북부",
+  "versions": [
+    {
+      "at": "ch04",
+      "text": "지상의 춥고 넓은 북쪽 지역. 연구 기지가 있고, 토커티브를 물리친 필그림이 모습을 드러낸 곳이다.",
+      "src": "95352a74b2",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "63ebea7e26",
+          "note": "d_main_04af_07#0-13(춥고 넓은 북부 · 연구 기지) · F93(필그림 출현)으로 1판. ch05 언리미티드 · 기지 점령, fl:absolute 마의 지대는 일화 · 세부라 판 안 둠"
+        }
+      ]
+    }
+  ]
+}

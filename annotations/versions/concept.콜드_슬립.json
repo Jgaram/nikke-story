@@ -1,0 +1,24 @@
+{
+  "subject": "concept:콜드_슬립",
+  "versions": [
+    {
+      "at": "ch12",
+      "text": "침식된 니케를 잠재워 보관하는 조치 — 침식은 더 진행되지 않지만 전력으로는 쓸 수 없게 된다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "f9d8a021d9",
+          "note": "ch12는 기록 없어 원문 d_main_12af_01#5-6(콜드 슬립 — 침식 진행 멈춤, 전력 불가)으로 1판. event_redash 3시간 한도 · 그레이브 관은 세부라 판 안 둠"
+        }
+      ]
+    }
+  ]
+}

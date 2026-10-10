@@ -1,0 +1,24 @@
+{
+  "subject": "place:언더_그레이스",
+  "versions": [
+    {
+      "at": "fl:good_world",
+      "text": "로열 로드에 있는 카페 — 재단의 후원을 받은 전쟁고아 사라가 차렸다.",
+      "src": "e19c73a687",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "77117ab816",
+          "note": "fl:good_world_04#12 · F2563(로열 로드의 카페, 재단 후원 전쟁고아 사라가 차림)으로 1판"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "subject": "item:AA_필러",
+  "versions": [
+    {
+      "at": "ch34",
+      "text": "A 필러를 훨씬 크고 강하게 만든 강화판 — 수정 지역을 한 번에 쓸어버리려고 준비했지만, 위력만 높여 휘말릴 위험이 커 그동안 쓰지 못했다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "563942409c",
+          "note": "ch34 d_main_34_af_01#82-87 · F1659(A 필러 강화판, 수정 지역 한 번에 섬멸, 휘말릴 위험으로 못 씀)로 1판. event_unbreakablesphere1 글러트니 일화는 판 안 둠"
+        }
+      ]
+    }
+  ]
+}

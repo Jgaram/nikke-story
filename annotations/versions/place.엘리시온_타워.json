@@ -1,0 +1,43 @@
+{
+  "subject": "place:엘리시온_타워",
+  "versions": [
+    {
+      "at": "char:212",
+      "text": "엘리시온의 시설 — 네온이 화력 리미터를 풀고 날뛰다 왔다는 곳으로, 무엇을 하는 곳인지는 아직 자세히 모른다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "08d2ecda6f",
+          "note": "char:212 ep:d_nikke_novel_01#51(네온이 리미터 풀고 날뛰다 옴)뿐이라 얇게, char:92 F630(갓 제조 양산형 니케 훈련 · 73% 폐기)로 무엇인지 드러나 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "char:92",
+      "text": "엘리시온의 시설 — 갓 제조된 양산형 니케가 2박 3일 동안 모의전과 지상 실전 훈련을 받는 곳으로, 평균 73%가 폐기된다.",
+      "src": "0c54eac7cb",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "3a67c656fe",
+          "note": "char:212 ep:d_nikke_novel_01#51(네온이 리미터 풀고 날뛰다 옴)뿐이라 얇게, char:92 F630(갓 제조 양산형 니케 훈련 · 73% 폐기)로 무엇인지 드러나 판을 둠"
+        }
+      ]
+    }
+  ]
+}

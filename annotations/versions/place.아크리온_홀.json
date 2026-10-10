@@ -1,0 +1,43 @@
+{
+  "subject": "place:아크리온_홀",
+  "versions": [
+    {
+      "at": "ch40",
+      "text": "아니스가 1년 치를 미리 예약해 두어 원할 때 쓸 수 있게 된 공연 무대.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "3c5ee9612b",
+          "note": "ch40 d_main_40_af_07#15 아니스가 1년 예약한 무대뿐이라 얇게, event_staranis1 F2668(방주에서 가장 큰 무대)로 무엇인지 드러나 판을 둠"
+        }
+      ]
+    },
+    {
+      "at": "event_staranis1",
+      "text": "방주에서 가장 큰 공연 무대 — 객석을 가득 채운 이곳에서 T.T.STAR가 공연을 열었다.",
+      "src": "42597cde23",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "72d850d8c5",
+          "note": "ch40 d_main_40_af_07#15 아니스가 1년 예약한 무대뿐이라 얇게, event_staranis1 F2668(방주에서 가장 큰 무대)로 무엇인지 드러나 판을 둠"
+        }
+      ]
+    }
+  ]
+}
