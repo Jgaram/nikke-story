@@ -10,8 +10,10 @@
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
  * URL 파라미터(p.*)
- *   g      등급 거르개(쉼표 목록: 필수 · 보강 · 참고 · 독립), 없으면 필수 · 보강(DEFAULT_GRADES)
- *   k      종류 거르개(쉼표 목록: event · episode · sub · relic · side · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다
+ *   g      등급 거르개(쉼표 목록: 척추 · 필수 · 보강 · 참고 · 독립 — 화면 말로 필수 · 준필수 · 추천 · 참고 · 독립), 없으면 척추 · 필수 · 보강(DEFAULT_GRADES).
+ *          척추를 끄면 척추 이벤트 · 사이드가 빠진다(메인 챕터는 등급이 아니라 종류 main으로만 거른다)
+ *   k      종류 거르개(쉼표 목록, 칩 순서 KIND_PICK_ORDER: main · side · event · episode · sub · relic · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다.
+ *          척추 줄도 종류를 따른다 — 이벤트를 끄면 필수 이벤트도 빠진다(사용자, 2026-10-10)
  *   find   제목 · 키 · 이유 안 낱말 검색
  *
  * 그리는 규칙
@@ -23,7 +25,7 @@
  *   분류 카드는 여기까지 읽음을 따른다 — 그 시점의 등급 gradeAt(u, R)(tools/views/importance.mjs와 같다: 전부 보기면 최종 등급, 안 본 스토리면 아직 없음,
  *     from 시점이 있고 t < from 시점이면 그 앞 등급(before), 그 밖은 최종 등급), 안 본 스토리는 한 줄 소개를 안 그리고 이유 · 떡밥 등은 "스포일러 보기" 접이 안에.
  *     '이 스토리가 선행인 곳'도 본 스토리만 든다.
- *   목록: 감상 순서 한 줄(ol). 척추 줄(메인 챕터는 굵은 구분 줄, 척추 이벤트 · 사이드는 '필수' 칩)은 늘 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
+ *   목록: 감상 순서 한 줄(ol). 척추 줄(메인 챕터는 굵은 구분 줄, 척추 이벤트 · 사이드는 '필수' 칩)은 종류 거르개(+ 척추 이벤트 · 사이드는 등급 '필수')에 들면 보이고, 그 사이에 거르개에 든 메인 밖 스토리를
  *     읽는 자리 순서대로 들여 끼운다. 한 줄 = 순번 · 등급 · 종류 · 제목(+ 뒤에 오를 등급) · 글자. 이유(분석 문장)는 목록에 싣지 않고 분류 카드 · 리더에만(사용자 — 목록이 설명으로 길어진다).
  *     거르개는 최종 등급으로 본다. 본문 폭이 좁으면(컨테이너 쿼리 640px) 순번 | 칩 · 글자 / 제목으로 접는다.
  *   스토리를 누르면 sel=unit:키 → 리더 패널 + (넓은 화면에서) 아래에 붙는 분류 카드(등급 · 등급 변화 · 이유 · 관련 메모 · 떡밥 · 주역 · 분류가 바뀐 기록).
@@ -39,7 +41,7 @@ export const meta = { id: 'order', title: '감상 순서', blurb: '메인 스토
 /** fmt에 없는 화면 말 — 고칠 때는 여기 한 곳만 */
 const LABELS = {
   title: '감상 순서',
-  lede: '메인 스토리를 순서대로 두고, 고른 등급의 스토리를 그 사이사이 볼 자리에 끼워 넣었다. 기본은 필수 · 추천만 — 등급 · 종류를 켜면 늘어난다.',
+  lede: '메인 스토리를 순서대로 두고, 고른 등급의 스토리를 그 사이사이 볼 자리에 끼워 넣었다. 기본은 필수 · 준필수 · 추천만 — 등급 · 종류를 켜면 늘어난다.',
   grade: '등급', kind: '종류',
   find: '제목 · 이유 검색', findAria: '스토리 검색',
   count: (n, chars) => `${n}편 · ${chars}자`, countHelp: '지금 목록에 든 스토리 수(필수 스토리 포함)와 대사 글자 수',
@@ -57,8 +59,11 @@ const LABELS = {
   trailNone: '바뀐 적 없다', dateEst: '날짜 추정',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
-const DEFAULT_GRADES = ['필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
+const PICK_GRADES = ['척추', ...GRADES]; // 거르개 칩 — 척추(화면 말 '필수')도 끌 수 있다(사용자, 2026-10-10)
+const DEFAULT_GRADES = ['척추', '필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
 const OFF_KINDS = ['relic', 'erelic']; // 유실물은 기본으로 뺀다(사용자, 2026-10-09)
+/** 종류 칩 순서(사용자, 2026-10-10) — 다른 탭의 KIND_ORDER와 따로 */
+const KIND_PICK_ORDER = ['main', 'side', 'event', 'episode', 'sub', 'relic', 'erelic', 'elevator'];
 /** 쉼표 목록 파라미터 → 고른 값(없으면 기본값). 모르는 값은 버린다 */
 const listParam = (v, all, dflt) => (v == null ? dflt : v.split(',').filter((x) => all.includes(x)));
 
@@ -95,7 +100,7 @@ export async function mount(root, ctx) {
   /** 거꾸로 — A가 선행인 스토리들 [X, 칸] */
   const preFor = new Map();
   for (const [x, row] of Object.entries(pre)) for (const l of fmt.PRE_LEVEL) for (const [a] of row[l] ?? []) (preFor.get(a) ?? preFor.set(a, []).get(a)).push([x, l]);
-  const kindsPresent = fmt.KIND_ORDER.filter((k) => judged.some((j) => j.unit.kind === k));
+  const kindsPresent = KIND_PICK_ORDER.filter((k) => judged.some((j) => j.unit.kind === k) || spine.some((sp) => sp.unit.kind === k));
   const spineLabel = (key) => (spineByKey.get(key)?.unit.kind === 'main' ? fmt.tickShort(spineByKey.get(key).tick) : fmt.unitTitle(key));
   const recId = (id) => (/^J\d/.test(id) ? ui.link(`thread:${id}`, id) : ui.link(`record:${id}`, id));
   /** 문장 속 메모 ID(F48 · Q36 · J2 · D18 …)를 링크로 */
@@ -124,7 +129,7 @@ export async function mount(root, ctx) {
     }
     return { el: box, cur, sync: () => { const on = new Set(cur()); for (const [v, b] of btns) b.setAttribute('aria-pressed', String(on.has(v))); } };
   };
-  const gradePick = picks({ label: LABELS.grade, param: 'g', dflt: DEFAULT_GRADES, options: GRADES.map((g) => ({ value: g, label: gl(g), title: fmt.help('grade', g), dot: fmt.GRADE[g].color })) });
+  const gradePick = picks({ label: LABELS.grade, param: 'g', dflt: DEFAULT_GRADES, options: PICK_GRADES.map((g) => ({ value: g, label: gl(g), title: fmt.help('grade', g), dot: fmt.GRADE[g].color })) });
   const kindDefault = kindsPresent.filter((k) => !OFF_KINDS.includes(k));
   const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: kindDefault, options: kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k) })) });
   const find = ui.el('input', { type: 'search', class: 'order-find', placeholder: LABELS.find, 'aria-label': LABELS.findAria, value: state.param('order', 'find') ?? '' });
@@ -214,8 +219,9 @@ export async function mount(root, ctx) {
     kindPick.sync();
     const inLayer = judged.filter((j) => j.unit.layer == null || s.layers.includes(j.unit.layer));
     const rows = inLayer.filter((j) => match(j, s, kinds));
-    // 감상 순서: 척추(늘) + 고른 등급(최종 등급)의 메인 밖 스토리, 읽는 자리 순서
-    const spineRows = spine.filter((sp) => findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
+    // 감상 순서: 척추(종류 거르개 + 메인 밖은 등급 '척추') + 고른 등급(최종 등급)의 메인 밖 스토리, 읽는 자리 순서
+    const spineOn = grades.includes('척추');
+    const spineRows = spine.filter((sp) => kinds.includes(sp.unit.kind) && (sp.unit.kind === 'main' || spineOn) && findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
     const extras = rows.filter((j) => grades.includes(j.grade));
     const seq = [...spineRows, ...extras].sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
     const hiddenLayer = judged.length - inLayer.length;
