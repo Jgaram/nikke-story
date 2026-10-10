@@ -289,7 +289,9 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .kind-icon { flex: none; display: inline-block; width: var(--kind-icon-size, 18px); height: var(--kind-icon-size, 18px); vertical-align: -0.2em; background: var(--kind-c, var(--ink-muted)); -webkit-mask: var(--kind-shape) center / contain no-repeat; mask: var(--kind-shape) center / contain no-repeat; }
 .kind-icon[data-kind="side"] { --kind-c: var(--kind-side); --kind-shape: url(img/kinds/side.svg); }
 .kind-icon[data-kind="event"] { --kind-c: var(--kind-event); --kind-shape: url(img/kinds/event.svg); }
-.kind-icon[data-kind="episode"] { --kind-c: var(--kind-episode); --kind-shape: url(img/kinds/episode.svg); }
+/* 호감도는 니케 초상 자리의 빈 프로필 — 둥근 회색 바탕에 밝은 사람 실루엣(아래는 원에 잘린다) */
+.kind-icon[data-kind="episode"] { position: relative; overflow: hidden; border-radius: 50%; background: var(--line-2); -webkit-mask: none; mask: none; }
+.kind-icon[data-kind="episode"]::after { content: ''; position: absolute; inset: 0; background: var(--surface); -webkit-mask: url(img/kinds/episode.svg) center / contain no-repeat; mask: url(img/kinds/episode.svg) center / contain no-repeat; }
 .kind-icon[data-kind="sub"] { --kind-c: var(--kind-sub); --kind-shape: url(img/kinds/sub.png); }
 .kind-icon[data-kind="relic"] { --kind-c: var(--kind-relic); --kind-shape: url(img/kinds/relic.svg); }
 .kind-icon[data-kind="erelic"] { --kind-c: var(--kind-erelic); --kind-shape: url(img/kinds/relic.svg); }

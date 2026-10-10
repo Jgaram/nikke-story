@@ -121,3 +121,4 @@
 - 반영: docs/views.md "스토리 종류 아이콘" · 감상 순서 행, docs/data-sources.md 11절, `site/img/kinds/`, `ui.kindIcon`, style.css, site/tabs/order.*
 - 이어서(사용자): 줄거리가 나오는 리더 머리에도 — 호감도처럼 다른 종류도 그림. → 같은 문서 "스토리 종류 아이콘" 쓰는 곳, site/lib/reader.js
 - 이어서(사용자): 종류 칩의 호감도에도 그림 — 사진 없는 프로필 같은 단색 사람 모양. → 같은 문서, `site/img/kinds/episode.svg`
+- 이어서(사용자): 실루엣에 둥근 바탕 — 캐릭터 아이콘과 비슷하게, 초록은 너무 튄다. → 회색 원 + 밝은 실루엣(같은 문서)
