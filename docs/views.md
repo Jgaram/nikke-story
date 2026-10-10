@@ -412,6 +412,7 @@ tools/site/
                         loadRecords(annotations 전체 → { ds, membership, confirmed, byId }) · firstRef · evidenceOut · inputsFingerprint
   export/common.mjs     공용 데이터(아래) — 늘 먼저 돈다. 결과를 ctx.common에 둔다
   export/<name>.mjs     탭별(order · links · threads · persons · chrono · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
+  export/synopsis.mjs   공개 개요(W8) → synopsis.json — 확정 · 지문이 맞는 annotations/synopsis/만(docs/annotations.md "공개 개요"). 리더 · 감상 순서 분류 카드가 쓴다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
   index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 · 범위 · 테마) · 탭 nav · 첫 방문 선택 바 · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
@@ -510,6 +511,9 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 척추는 목록에 늘 있으므로 선행으로 세지 않고, 같은 인물 · 같은 대상은 세지 않는다. 목록 줄에는 필수만 이름으로, 권장 · 선택은 개수만. 분류 카드 · 리더 분류 칸에 전부(왜 선행인가 함께)와 "이 스토리가 선행인 곳".
 
 **처음 상태로(2026-10-10, 사용자)** — 상단 로고를 누르면 사이트가 남긴 기억(`localStorage` · `sessionStorage`의 `nikke-story.*` — 어디까지 읽음 · 테마 · 인물 탭 접은 칸 · 첫 방문 "나중에")을 지우고 해시 없이 다시 연다 → 첫 방문 선택 바부터(`app.js` `resetButton`). 수정 키 · 가운데 클릭(새 탭)은 그대로 둔다.
+
+**공개 개요(W8, 2026-10-10)** — `synopsis.json`(`[{ key, logline, synopsis, scenes?{씬 ID: 한 줄} }]`)을 리더가 스토리 · 씬을 열 때 받는다. 스토리 칸 맨 위 "줄거리"(한 줄 소개 굵게 + 문단) ·
+씬 목록의 씬 제목 아래 한 줄 · 씬 칸 제목 아래 한 줄, 감상 순서 분류 카드 머리 아래 한 줄 소개. 여기까지 읽음 뒤 스토리는 리더에서 접어 가리고(스포일러 보기) 카드에는 안 그린다. 개요가 없으면 칸이 없다(W9가 채우는 대로 늘어남).
 
 **탭별 (W2–W7)** — 쓰는 JSON · URL 파라미터(`p.<키>`, 탭을 바꾸면 지워진다) · 보기 모드. 그리는 규칙 · 칸 설명은 각 `site/tabs/<name>.js` 머리말 주석.
 

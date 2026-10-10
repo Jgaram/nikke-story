@@ -1,7 +1,7 @@
 /**
  * 공개 개요 도구(W8) — 사이트에 싣는 스토리별 한 줄 소개 · 줄거리 · 씬 한 줄. 형식 · 규칙은 docs/annotations.md "공개 개요".
  *
- *   node tools/synopsis.mjs new ch00                 입력 묶음(1회독 요약 · 씬 한 줄 · 사실 · 의문 · 사건 · 바로잡기 · 기각)을 찍고,
+ *   node tools/synopsis.mjs new ch00 [ch01 …]        입력 묶음(1회독 요약 · 씬 한 줄 · 사실 · 의문 · 사건 · 바로잡기 · 기각)을 찍고,
  *                                                    개요 파일이 없으면 틀(annotations/synopsis/ch00.json, 후보)을 만든다
  *   node tools/synopsis.mjs check [단위 …] [--all]   검사 — 오류가 있으면 종료 코드 1. --all이면 빠진 단위 · 확정 안 된 단위도 경고
  *   node tools/synopsis.mjs set ch00 확정 [--by claude|사용자] [--note …] [--session W9a]   검토 기록(지문 포함)
@@ -30,7 +30,7 @@ import {
 } from './synopsis/model.mjs';
 
 const USAGE = `공개 개요 도구 (tools/synopsis.mjs) — 형식 · 규칙: docs/annotations.md "공개 개요"
-  new <단위>                       입력 묶음을 찍고, 개요 파일이 없으면 틀을 만든다(후보)
+  new <단위 …>                     입력 묶음을 찍고, 개요 파일이 없으면 틀을 만든다(후보)
   check [단위 …] [--all]           검사 (오류 → 종료 코드 1) · --all은 빠진 단위 · 확정 안 된 단위도
   set <단위 …> <확정|기각|후보> [--by claude|사용자] [--note 메모] [--session W9a]
   progress [W9a]                   진행률 · 묶음의 단위 목록
@@ -77,32 +77,34 @@ const readBatches = () => {
 const batchOf = (batches, key) => batches?.batches?.find((b) => b.units.includes(key))?.id ?? null;
 
 async function cmdNew() {
-  const key = args[0];
-  if (!key) throw new Error('단위 키를 준다 — 예: node tools/synopsis.mjs new ch00');
+  if (!args.length) throw new Error('단위 키를 준다 — 예: node tools/synopsis.mjs new ch00 (여럿도 된다)');
   const e = await env();
-  if (!e.places.unitPos.has(key)) throw new Error(`읽는 순서에 없는 단위: ${key}`);
-  const text = buildInput(key, { ds: dataset(e), ctx: e.ctx, places: e.places, units: e.units });
-  console.log(text);
-  const p = synopsisPath(key, DIR);
-  if (fs.existsSync(p)) {
-    console.log(`\n(개요 파일이 이미 있다 — ${rel(p)})`);
-    return;
+  for (const key of args) if (!e.places.unitPos.has(key)) throw new Error(`읽는 순서에 없는 단위: ${key}`);
+  const batches = readBatches();
+  for (const [i, key] of args.entries()) {
+    if (i) console.log('\n' + '─'.repeat(40) + '\n');
+    console.log(buildInput(key, { ds: dataset(e), ctx: e.ctx, places: e.places, units: e.units }));
+    const p = synopsisPath(key, DIR);
+    if (fs.existsSync(p)) {
+      console.log(`\n(개요 파일이 이미 있다 — ${rel(p)} · ${stateOf(JSON.parse(fs.readFileSync(p, 'utf8'))).status})`);
+      continue;
+    }
+    const scenes = e.ctx.resolve(key)?.scenes ?? [];
+    const skeleton = {
+      unit: key,
+      session: opt.session ?? batchOf(batches, key) ?? 'W8',
+      by: 'claude',
+      date: opt.date ?? today(),
+      logline: '',
+      synopsis: '',
+      scenes: scenes.length > 1 || unitKind(key) === 'episode' ? scenes.map((scene) => ({ scene, text: '' })) : [],
+      status: '후보',
+      reviews: [],
+    };
+    fs.mkdirSync(DIR, { recursive: true });
+    fs.writeFileSync(p, formatJson(skeleton));
+    console.log(`\n→ 틀을 만들었다: ${rel(p)} (씬 한 줄 칸 ${skeleton.scenes.length} — 필요 없으면 지운다)`);
   }
-  const scenes = e.ctx.resolve(key)?.scenes ?? [];
-  const skeleton = {
-    unit: key,
-    session: opt.session ?? batchOf(readBatches(), key) ?? 'W8',
-    by: 'claude',
-    date: opt.date ?? today(),
-    logline: '',
-    synopsis: '',
-    scenes: scenes.length > 1 || unitKind(key) === 'episode' ? scenes.map((scene) => ({ scene, text: '' })) : [],
-    status: '후보',
-    reviews: [],
-  };
-  fs.mkdirSync(DIR, { recursive: true });
-  fs.writeFileSync(p, formatJson(skeleton));
-  console.log(`\n→ 틀을 만들었다: ${rel(p)} (씬 한 줄 칸 ${skeleton.scenes.length} — 필요 없으면 지운다)`);
 }
 
 async function cmdCheck() {

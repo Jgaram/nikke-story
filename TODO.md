@@ -308,6 +308,7 @@
       ✅ 자료(X1a): 공개 자리 T로 거른다 — `data/views/timeline/records.csv`의 자리 칸, `query.mjs known <단위|자리|날짜>`
 - [ ] **T5-9** 스토리별 공개 개요: 단위마다 한 줄 소개 · 줄거리 · 씬 한 줄을 사이트에 (P1) — 사용자, 2026-10-10.
       1회독 요약(작업 메모)을 입력으로 화면용으로 새로 쓰고 확정한 것만 싣는다. 형식 docs/annotations.md "공개 개요", 세션 SESSIONS.md W8–W10
+      ✅ W8(2026-10-10): 도구 `tools/synopsis.mjs` · 내보내기 `synopsis.json` · 리더 줄거리 칸 · 분류 카드 한 줄 소개 · 시범 3단위. 남은 것: W9a–W9r 쓰기(481단위) · W10 점검
 
 ## T6. 운영
 

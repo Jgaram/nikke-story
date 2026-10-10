@@ -16,7 +16,7 @@ export const name = 'synopsis';
 export async function run(ctx) {
   const { units: siteUnits, scenesOf } = ctx.common;
   const known = new Set(siteUnits.map((u) => u.key));
-  const set = loadSynopses();
+  const set = loadSynopses(ctx.synopsisDir); // 테스트는 ctx.synopsisDir로 다른 디렉터리를 준다
   for (const p of set.problems) ctx.warn({ where: `synopsis/${p.file}`, msg: p.msg });
   const order = new Map(siteUnits.map((u) => [u.key, u.order]));
   const out = [];

@@ -175,6 +175,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
   1회독 · 2회독 기록 · 검증 · 리뷰 · 인계는 `node tools/records.mjs`(형식과 쓰는 법은 docs/annotations.md — 2회독은 "2회독 기록" · "2회독 인계 파일").
   판정 세션은 `records.mjs find <낱말> --spine`(척추 — 메인 챕터 + `annotations/spine.json` 확정 단위 — 안 기록만) · `layers <단위>` · `leads` · `closures <단위>`로 본다(docs/importance.md 6절).
   빌드업 마무리(오래 쌓인 연작 · 갈등 · 관계 · 성장의 끝)는 `records.mjs closures`(마무리 기록 O — `annotations/closures.json`, 형식 docs/annotations.md "마무리 기록").
+- 사이트에 싣는 스토리별 공개 개요는 `node tools/synopsis.mjs`(`progress W9a` · `new <단위 …>` · `check` · `set … 확정`, 형식 docs/annotations.md "공개 개요").
 
 ## 저작물 취급
 
