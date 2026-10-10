@@ -1,0 +1,24 @@
+{
+  "subject": "item:울프스_베인",
+  "versions": [
+    {
+      "at": "event_redash",
+      "text": "레드 후드의 초대구경 라이플. 직격보다 상식을 벗어난 화력으로 착탄 지점을 뒤흔들어 폭발과 충격파로 랩쳐를 쓸어버린다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "6bb0fae122",
+          "note": "event_redash1_05_e #17–23(이름 · 초대구경 라이플의 화력 서술)으로 씀. 다룬 기록 없음, 뒤에 답이 바뀔 것 없어 1판"
+        }
+      ]
+    }
+  ]
+}

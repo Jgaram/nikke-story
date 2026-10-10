@@ -1,0 +1,24 @@
+{
+  "subject": "concept:게이트_키퍼",
+  "versions": [
+    {
+      "at": "event_ce006",
+      "text": "다른 세계의 존재를 D-WAVE로 이쪽 세계에 불러오는 랩쳐. 쓰러뜨리면 불려 온 이들이 원래 세계로 돌아갈 수 있다.",
+      "src": "547eef8d45",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "b3544053f9",
+          "note": "event_ce006 F1976 · 1_01_e #71–75(이 일을 일으킨 랩쳐, 쓰러뜨리면 돌아감, 소환체)로 씀. 뒤 REBORN EVIL · LIE CAUSE RECOIL은 방주 안 관측 · 새 사례라 1판"
+        }
+      ]
+    }
+  ]
+}

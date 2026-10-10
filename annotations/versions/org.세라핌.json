@@ -1,0 +1,43 @@
+{
+  "subject": "org:세라핌",
+  "versions": [
+    {
+      "at": "char:91",
+      "text": "누가 다치면 곧바로 연락하는 곳. 의료를 맡은 쪽으로 보이지만 자세한 것은 아직 모른다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "aba210d12a",
+          "note": "char:91 vesti_04 #120(다친 지휘관에 '세라핌에 연락')만으로 열린 첫 판, event_bluewaterisland F968 · 06_s #42(메어리 · 페퍼, 함께 파견)와 그 앞 char:142 frima_03 #1–5(환자 있는 곳에 달려간다)로 무엇인지 드러나 2판 — 기록이 있는 앞 자리에 둠"
+        }
+      ]
+    },
+    {
+      "at": "event_bluewaterisland",
+      "text": "메어리 · 페퍼의 의료 스쿼드. 환자가 있는 곳이면 어디든 달려가고, 지상 조사에는 낯선 독 · 세균을 방주에 들이지 않으려 함께 나간다.",
+      "src": "a8c708fe04",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "8e2d13fedc",
+          "note": "char:91 vesti_04 #120(다친 지휘관에 '세라핌에 연락')만으로 열린 첫 판, event_bluewaterisland F968 · 06_s #42(메어리 · 페퍼, 함께 파견)와 그 앞 char:142 frima_03 #1–5(환자 있는 곳에 달려간다)로 무엇인지 드러나 2판 — 기록이 있는 앞 자리에 둠"
+        }
+      ]
+    }
+  ]
+}

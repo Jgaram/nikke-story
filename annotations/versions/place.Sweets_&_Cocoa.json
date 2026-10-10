@@ -1,0 +1,24 @@
+{
+  "subject": "place:Sweets_&_Cocoa",
+  "versions": [
+    {
+      "at": "event_maidinvalentine",
+      "text": "지상에 남은 구시대 디저트 회사와 그 초콜릿 공장. 관리 A.I. 홀로그램 스윗 조니가 남아 수십 년째 카카오를 보존하며 지킨다.",
+      "src": "1fb1c163cf",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "0340b3f61f",
+          "note": "event_maidinvalentine F808(02_e #31 디저트 회사 공장 · 스윗 조니 · 카카오 보존)로 씀. 뒤 ROMANTIC VALENTINE은 조니의 일이라 공장의 답이 바뀌지 않아 1판"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "subject": "incident:피사_돔_폭발_사고",
+  "versions": [
+    {
+      "at": "char:241",
+      "text": "3년 전 라이프 토닉 니케가 일으켰다고 시민들이 말하는 사고. 어떤 사고였는지는 아직 모른다.",
+      "src": "c34fe338b6",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "6b68d647d2",
+          "note": "char:241 F616 · Q87(epinel_02 #19 시민 인터뷰 한 번)으로 씀. 뒤 기록 없어 무엇인지 열린 채 1판"
+        }
+      ]
+    }
+  ]
+}

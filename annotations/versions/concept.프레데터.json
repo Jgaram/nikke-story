@@ -1,0 +1,24 @@
+{
+  "subject": "concept:프레데터",
+  "versions": [
+    {
+      "at": "fl:absolute",
+      "text": "북부에 나타난 거대한 늑대 모양의 신형 랩쳐 무리. 광학미채 · 재밍을 쓰고 사냥 전술을 이해하며, 랩쳐 · 니케의 코어를 먹고 자라고 상위 개체는 싸우며 상대의 수를 배운다.",
+      "src": "076e9dd990",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "d290e2e2c1",
+          "note": "fl:absolute F2098 · F2099 · F2101로 씀(한 스토리에만 나와 1판). 서식 기원(돌연변이 추측)은 열린 추측이라 뺌"
+        }
+      ]
+    }
+  ]
+}
