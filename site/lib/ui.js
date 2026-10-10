@@ -13,7 +13,6 @@
  *   panel(title, body, { actions, class })      section.panel
  *   details(summary, body, { open, class })     접는 블록
  *   empty(text, action?) · spinner(text) · notice(text, kind)     empty의 action = { label, onClick } → 문구 옆 링크 모양 버튼
- *   hiddenNote(text)                            "● 스포일러로 가린 N" 한 줄 — 모든 탭이 같은 모양으로 쓴다(text는 fmt.hiddenLabel(n)). [전부 보기] 단추는 없다(여기까지 읽음은 상단 팝업에서만)
  *   toggle({ label, checked, onChange, id })    스위치(role=switch)
  *   segmented({ options: [{ value, label, title? }], value, onChange, label }) → { el, set(value) }
  *   orgMarks(orgs, { size, bare })              소속 마크 칩(fmt.orgsAt 결과) — 어두운 칩에 흰 마크 + 이름(bare면 마크만, 이름은 툴팁) · 전 소속(past)은 점선 · 흐리게
@@ -102,12 +101,6 @@ export function details(summary, body, { open = false, class: cls = '' } = {}) {
 export const empty = (text = '없음', action = null) => el('div', { class: 'empty' }, text, action ? [' ', el('button', { type: 'button', class: 'link-btn', onClick: action.onClick }, action.label)] : null);
 export const spinner = (text = '불러오는 중…') => el('div', { class: 'spinner', role: 'status', 'aria-live': 'polite' }, el('i', { 'aria-hidden': 'true' }), text);
 export const notice = (text, kind = 'info') => el('div', { class: ['notice', `notice-${kind}`], role: kind === 'error' ? 'alert' : 'status' }, text);
-
-/** 스포일러(여기까지 읽음 뒤)로 가린 것의 안내 — 점 + 글. 탭마다 따로 만들지 않는다.
- *  [전부 보기] 단추는 두지 않는다 — 여기까지 읽음은 상단 팝업에서만(재확인을 거쳐) 바꾼다(사용자, 2026-10-10) */
-export function hiddenNote(text) {
-  return el('span', { class: 'hidden-note' }, el('span', { class: 'hn-text' }, text));
-}
 
 export function toggle({ label, checked = false, onChange, id, title } = {}) {
   const input = el('input', { type: 'checkbox', role: 'switch', id, 'aria-checked': String(checked) });

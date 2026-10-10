@@ -9,10 +9,6 @@
 /* ── 틀 ── */
 .tab-threads { --thr-sticky: calc(var(--topbar-h) + var(--tabs-h)); }
 .tab-threads .thr-tabhead { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
-.tab-threads .thr-tabhead:has(.thr-note:not(:empty)) { margin-bottom: 12px; }
-.tab-threads .thr-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 13px; color: var(--ink-2); }
-.tab-threads .thr-note:empty { display: none; }
-.tab-threads .thr-note-part { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
 .tab-threads .thr-wrap { container-type: inline-size; container-name: thr; }
 .tab-threads .thr-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
 .tab-threads .thr-flow { order: 1; min-width: 0; }

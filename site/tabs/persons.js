@@ -68,9 +68,7 @@ const LABELS = {
   pick: '인물 고르기',
   people: (n) => `${n}명`,
   none: '찾는 인물이 없다 — 찾기를 비우거나 갈래를 전체로 바꾼다.',
-  noneCut: '아직 나온 인물이 없다 — 여기까지 읽음을 올리거나 전부 보기를 켠다.',
-  hiddenPeople: (n) => `인물 ${n}명`,
-  hiddenStories: (n) => `스토리 ${n}편`,
+  noneCut: '아직 나온 인물이 없다 — 위의 여기까지 읽음을 올리면 보인다.',
   notYet: '아직 나오지 않은 인물이다.',
   notYetHelp: '위의 여기까지 읽음을 올리면 볼 수 있다.',
   detail: '인물 상세',
@@ -282,8 +280,7 @@ export async function mount(root, ctx) {
   const kindSeg = ui.segmented({ label: LABELS.kindLabel, options: [{ value: 'all', label: LABELS.all }, ...kinds.map((k) => ({ value: k, label: k }))], value: prm('kind') ?? 'all', onChange: (v) => state.setParam('persons', 'kind', v === 'all' ? null : v) });
   const leadToggle = ui.toggle({ label: LABELS.leadOnly, checked: prm('lead') === '1', title: LABELS.leadHelp, onChange: (v) => state.setParam('persons', 'lead', v ? '1' : null) });
   const bar = el('div', { class: 'toolbar pm-bar' }, modeSeg.el, find, kindSeg.el, leadToggle);
-  const note = el('div', { class: 'pm-note', role: 'status', 'aria-live': 'polite' });
-  root.append(bar, note);
+  root.append(bar);
 
   // ── 목록 · 도감 ──
   const sortSel = el('select', { class: 'pm-select', 'aria-label': LABELS.sortLabel, onChange: () => state.setParam('persons', 'sort', sortSel.value === 'scenes' ? null : sortSel.value) },
@@ -431,18 +428,6 @@ export async function mount(root, ctx) {
     if (it) selectPerson(it.dataset.id);
   });
 
-  // ── 가린 것 한 줄 ──
-  const renderNote = () => {
-    ui.clear(note);
-    const parts = [];
-    const a = agg.get(whoId());
-    if (!V.R.all) {
-      if (hiddenPersons) parts.push(LABELS.hiddenPeople(fmt.num(hiddenPersons)));
-      if (!isDex() && a?.visible && a.cut) parts.push(LABELS.hiddenStories(fmt.num(a.cut)));
-    }
-    if (parts.length) note.append(ui.hiddenNote(`${TERM.spoiler}로 가린 ${parts.join(' · ')}`));
-    note.hidden = !note.childNodes.length;
-  };
 
   // ── 상세: 접는 칸 ──
   let foldPref = {};
@@ -1078,7 +1063,6 @@ export async function mount(root, ctx) {
     recompute();
     renderViewMode();
     renderRows();
-    renderNote();
     renderDetail();
     markSel();
   };
@@ -1105,10 +1089,10 @@ export async function mount(root, ctx) {
       const was = prevP;
       const diff = (k) => was[k] !== s.p[k];
       prevP = { ...s.p };
-      if (diff('view') || diff('find') || diff('kind') || diff('lead') || diff('sort')) { renderViewMode(); renderRows(); renderNote(); }
+      if (diff('view') || diff('find') || diff('kind') || diff('lead') || diff('sort')) { renderViewMode(); renderRows(); }
       if (diff('who')) {
         renderViewMode(); markListSel(); scrollSelIntoView(); pickLabel();
-        renderNote(); renderDetail(); rerender = true;
+        renderDetail(); rerender = true;
         const top = head.getBoundingClientRect().top;
         const stick = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--topbar-h')) || 56) + 44 + 8;
         if (top < stick) window.scrollTo({ top: window.scrollY + top - stick - 8 });

@@ -53,7 +53,6 @@ const LABELS = {
   maskedBar: (n) => `정체가 아직 안 밝혀진 복선 ${n}`, maskedShow: '보기', maskedHide: '숨기기',
   maskedQ: '아직 던져지지 않은 떡밥', maskedF: '아직 밝혀지지 않은 사실',
   details: '자세히', sortName: '정렬', sortWeight: '주요 떡밥부터', sortOpen: '미해결 많은 순', sortStart: '나온 순', pick: '떡밥 고르기',
-  hiddenNote: (what) => `스포일러로 가린 ${what}`, hiddenThreads: (n) => `떡밥 ${n}`, hiddenSteps: '이 떡밥의 뒷이야기',
   notStarted: '아직 시작하지 않은 떡밥', noneStarted: '여기까지 읽은 데에는 아직 떡밥이 없다',
   startsAt: (t) => `${t}부터 나온다`, startsIn: (names) => `${names}에서 나온다`, markSeen: '봤음으로', startsCount: (t, n) => `${t}부터 떡밥 ${n}개가 나온다`, raiseCutoff: (t) => `${t}까지 읽음으로`,
   itemsOf: '다루는 항목', related: '이어진 떡밥', moreItems: (n) => `+${n}`,
@@ -399,8 +398,7 @@ export async function mount(root, ctx) {
   const tipFor = (el, make) => { el.setAttribute('data-tip', ''); tips.set(el, make); };
 
   // ── 뼈대 DOM ──
-  const noteEl = ui.el('div', { class: 'thr-note', role: 'status', 'aria-live': 'polite' });
-  root.append(ui.el('div', { class: 'thr-tabhead' }, ui.el('h2', { class: 'sr-only' }, meta.title), noteEl));
+  root.append(ui.el('div', { class: 'thr-tabhead' }, ui.el('h2', { class: 'sr-only' }, meta.title)));
   const wrap = ui.el('div', { class: 'thr-wrap' });
   const grid = ui.el('div', { class: 'thr-grid' });
   const side = ui.el('aside', { class: 'thr-side', 'aria-label': LABELS.sideView });
@@ -1118,14 +1116,6 @@ export async function mount(root, ctx) {
     controlsEl.append(...[aseg.el, fseg?.el].filter(Boolean));
   };
 
-  /** 스포일러로 가린 것 — 시작 전 떡밥 수와, 이 떡밥에 안 본 뒷이야기가 있는지(단계 개수는 내지 않는다) */
-  const renderNote = () => {
-    ui.clear(noteEl);
-    if (reading().all) return;
-    const hiddenThreads = threads.filter((t) => !stats.get(t.id).started).length;
-    const parts = [hiddenThreads ? LABELS.hiddenThreads(fmt.num(hiddenThreads)) : null, model?.spoiled ? LABELS.hiddenSteps : null].filter(Boolean);
-    if (parts.length) noteEl.append(ui.hiddenNote(LABELS.hiddenNote(parts.join(' · '))));
-  };
 
   /** 흐름 영역 전체를 지금 상태로 */
   const renderFlow = () => {
@@ -1180,7 +1170,6 @@ export async function mount(root, ctx) {
     refreshSideMode();
     refreshMap();
     renderFlow();
-    renderNote();
     last = snap();
   };
 
@@ -1206,7 +1195,7 @@ export async function mount(root, ctx) {
       const now = snap();
       refreshSideMode();
       refreshMap();
-      if (now.j !== last.j || now.axis !== last.axis || now.f !== last.f || now.common !== last.common || now.hints !== last.hints) { renderFlow(); renderNote(); } else renderHead();
+      if (now.j !== last.j || now.axis !== last.axis || now.f !== last.f || now.common !== last.common || now.hints !== last.hints) renderFlow(); else renderHead();
       last = now;
     }
   });

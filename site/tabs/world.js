@@ -19,7 +19,7 @@
  * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13d)
  *   - 여기까지 읽음(state.reading — 메인 자리 t + 척추 이벤트 · 사이드 예외 x)을 모든 목록에 건다. 출시 자리가 아니라 스토리 단위로 본다:
  *     기록은 그 기록을 아는 스토리(recs의 아는 단위 — 사실 · 의문은 know_units)를 봤으면 보이고, 항목은 나온 곳(처음 나온 스토리 · 기록 · 처음 소개된 스토리)
- *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠지고 "스포일러로 가린 N — 전부 보기"로 센다. 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
+ *     중 하나라도 봤으면 보인다. 아니면 목록에서 빠진다(가린 개수는 내지 않는다). 사실 · 의문 · 세계의 모습 · 함께 나온 항목 · 나온 스토리도
  *     안 본 기록 · 스토리는 빼고 같은 식으로 센다. 나온 곳을 알 수 없는 항목은 컷오프가 켜져 있으면 가린다. 출시 자리(tick0)는 '나온 순서' 정렬 · 안내 문구에만 쓴다.
  *     범위(층) 필터는 없다(W13a) — 층 검사는 걷었다.
  *     바뀌면 목록 · 상세를 다시 만들지 않고 줄만 갈아 끼운다(스크롤 · 접힘 · 찾기 낱말 유지).
@@ -170,7 +170,6 @@ export async function mount(root, ctx) {
 
   // ── 작은 조각 ──
   const dots = (items) => items.filter(Boolean).flatMap((x, i) => (i ? [h('span', { class: 'w-dot', 'aria-hidden': 'true' }, '·'), x] : [x]));
-  const hiddenNote = (cutHidden) => (cutHidden ? h('div', { class: 'w-hidden' }, ui.hiddenNote(fmt.hiddenLabel(cutHidden))) : null);
   const kindText = (u) => (u && u.kind !== 'main' ? h('span', { class: 'w-kind', title: fmt.help('kind', u.kind) }, fmt.KIND[u.kind]?.label ?? u.kind) : null);
   const itemLink = (id) => {
     if (byId.has(id)) {
@@ -240,8 +239,6 @@ export async function mount(root, ctx) {
       if (items.length > limit) {
         foot.append(h('button', { type: 'button', class: 'btn', onClick: () => { limit += PAGE.more; refresh(); } }, LABELS.more(items.length - limit)));
       }
-      const note = hiddenNote(g.cutHidden);
-      if (note) foot.append(note);
       if (input) bar.hidden = g.items.length <= size;
       api.hidden = g.cutHidden;
       api.loading = Boolean(g.loading);
@@ -282,17 +279,15 @@ export async function mount(root, ctx) {
   const listNote = h('div', { class: 'w-list-note' });
   const listBody = h('div', { class: 'w-list-body' }, listUl, listNote);
   const pickerSum = h('summary', { class: 'w-picker-sum' });
-  const hiddenSlot = h('div', { class: 'w-list-hidden' });
-  const listPanel = h('div', { class: 'w-list-panel' }, h('div', { class: 'w-list-top' }, typeChips, h('div', { class: 'w-list-tools' }, sortSel, listCount), hiddenSlot), listBody);
+  const listPanel = h('div', { class: 'w-list-panel' }, h('div', { class: 'w-list-top' }, typeChips, h('div', { class: 'w-list-tools' }, sortSel, listCount)), listBody);
   const picker = h('details', { class: 'w-picker', open: true }, pickerSum, listPanel);
   picker.addEventListener('toggle', () => { if (picker.open) scrollToSelected(); });
   const listCol = h('aside', { class: 'w-list' }, picker);
   const detailEl = h('section', { class: 'w-detail', 'aria-live': 'polite' });
   dictView.append(listCol, detailEl);
   const lifeBar = h('div', { class: 'w-topics', role: 'group', 'aria-label': LABELS.topicAria });
-  const lifeHidden = h('div', { class: 'w-life-hidden' });
   const lifeList = h('div', { class: 'w-life-list' });
-  lifeView.append(lifeBar, lifeHidden, lifeList);
+  lifeView.append(lifeBar, lifeList);
 
   // ═══ 사전 목록 ═══
   function effectiveItem(s = state.get()) {
@@ -309,7 +304,6 @@ export async function mount(root, ctx) {
     const c = cutOf(s);
     const all = entries.map((e) => viewOf(e, c));
     const visible = all.filter((v) => v.shown);
-    const cutHidden = all.length - visible.length;
     const q = norm(P.find);
     const matched = visible.filter((v) => !q || norm([v.e.name, v.e.id, v.e.kind, v.e.note, ...(v.e.aliases ?? []).map((a) => a.name)].join(' ')).includes(q));
     ui.clear(typeChips);
@@ -343,8 +337,6 @@ export async function mount(root, ctx) {
         P.find || P.type ? h('button', { type: 'button', class: 'btn', onClick: () => setP({ find: null, type: null }) }, LABELS.clearFilters) : null);
       if (P.find) findInput.value = P.find;
     }
-    ui.clear(hiddenSlot);
-    put(hiddenSlot, hiddenNote(cutHidden));
     markSelected();
   }
   function markSelected() {
@@ -394,7 +386,7 @@ export async function mount(root, ctx) {
   // ═══ 사전 상세 ═══
   const secOpen = new Map(); // 사용자가 직접 접거나 편 섹션만 기억한다. 나머지는 줄이 있으면 열고 없으면 접는다
   let detail = null; // { id, parts: Map(key → { part, sec, ... }), headerEl }
-  /** 접는 칸 — 제목에 줄 수를 달지 않는다. 보이는 줄 없이 가린 것만 있으면 머리에 '스포일러로 가린 N', 아무것도 없으면 칸을 숨긴다 */
+  /** 접는 칸 — 제목에 줄 수를 달지 않는다. 보이는 줄이 없으면 칸을 숨긴다(가린 개수는 내지 않는다) */
   function section(key, title, part, open) {
     const hEl = h('span', { class: 'w-sec-hidden' });
     const sum = h('summary', {}, h('span', { class: 'w-sec-title' }, title), hEl);
@@ -406,8 +398,7 @@ export async function mount(root, ctx) {
   }
   function refreshPart(p) {
     const n = p.part.refresh();
-    p.hEl.textContent = !n && p.part.hidden ? `· ${fmt.hiddenLabel(p.part.hidden)}` : '';
-    p.sec.hidden = !n && !p.part.hidden && !p.part.loading;
+    p.sec.hidden = !n && !p.part.loading; // 가린 것만 있는 칸은 숨긴다 — 가린 개수는 내지 않는다(사용자, 2026-10-10)
     if (!p.isTouched() && !p.part.loading) p.sec.open = n > 0 && p.open;
   }
 
@@ -675,8 +666,6 @@ export async function mount(root, ctx) {
     const chip = (value, label) => h('button', { type: 'button', class: 'w-chip', 'aria-pressed': String((P.topic ?? 'all') === value), onClick: () => setP({ topic: value === 'all' ? null : value }) }, label);
     put(lifeBar, chip('all', LABELS.all), world.topics.filter((t) => counts.get(t.topic) || P.topic === t.topic).map((t) => chip(t.topic, t.topic)));
     ui.clear(lifeList);
-    ui.clear(lifeHidden);
-    put(lifeHidden, hiddenNote(g.cutHidden));
     const moreBtn = (key, left, step) => h('button', { type: 'button', class: 'btn', onClick: () => { lifeMore.set(key, (lifeMore.get(key) ?? step) + PAGE.more); renderLife(); } }, LABELS.more(left));
     if (!matched.length) {
       // 메인 자리를 올려서 보이게 되는 것 중 가장 이른 자리(척추 이벤트 · 사이드를 안 봄으로 둔 것은 t를 올려도 안 보여서 뺀다)

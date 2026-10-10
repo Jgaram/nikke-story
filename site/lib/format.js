@@ -21,7 +21,6 @@
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
  *   recordText(r) · recordLabel(r)  기록 한 줄(prose를 거친다 — 회수 줄에 문장이 없으면 답의 문장) · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
- *   hiddenLabel(n)                  '스포일러로 가린 N'
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
  *   LINK_LEVEL                      세기 1–3 → 약함 · 보통 · 강함
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
@@ -477,7 +476,6 @@ export function sameAsKnown(t, R) {
   return ids.filter((_, i) => { const u = t.same_as_unit?.[i]; return u ? R.seen(u) : false; });
 }
 
-export const hiddenLabel = (n) => `스포일러로 가린 ${num(n)}`;
 
 /** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */
 export function gradeAt(u, T) {

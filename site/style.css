@@ -447,9 +447,6 @@ p { margin: 0 0 8px; max-width: 72ch; }
 }
 .btn:hover { background: var(--surface-2); }
 .btn.btn-sm { height: 24px; padding: 0 9px; font-size: 12.5px; }
-/* 스포일러 · 범위 밖 안내 — 모든 탭 공용(ui.hiddenNote) */
-.hidden-note { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 13px; color: var(--ink-2); }
-.hn-text::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 7px; border-radius: 50%; background: var(--spoiler); vertical-align: 0.1em; }
 .btn:active { transform: translateY(1px); }
 .btn:disabled { opacity: 0.45; cursor: default; transform: none; }
 input[type="search"], input[type="text"], select, textarea {

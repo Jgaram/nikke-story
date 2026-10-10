@@ -25,7 +25,6 @@
 .tab-world .w-chip:hover { background: var(--surface-2); }
 .tab-world .w-chip[aria-pressed="true"] { color: var(--bg); background: var(--ink); border-color: var(--ink); }
 .tab-world .w-linkbtn { font: inherit; color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
-.tab-world .w-hidden { display: flex; flex-wrap: wrap; gap: 2px 14px; padding: 8px 0 2px; font-size: 13px; color: var(--ink-2); }
 
 /* 사전: 왼쪽 목록 + 오른쪽 상세 */
 .tab-world .w-split { display: grid; grid-template-columns: 304px minmax(0, 1fr); gap: 24px; align-items: start; }
@@ -38,9 +37,6 @@
 .tab-world .w-types { display: flex; flex-wrap: wrap; gap: 6px; }
 .tab-world .w-list-tools { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
 .tab-world .w-count { font-size: 12px; }
-.tab-world .w-list-hidden:empty { display: none; }
-.tab-world .w-list-hidden { margin-top: 6px; padding: 6px 8px; background: var(--surface-2); border-radius: var(--radius); }
-.tab-world .w-list-hidden .w-hidden { padding: 0; }
 .tab-world .w-list-body { overflow: auto; min-height: 0; flex: 1 1 auto; }
 .tab-world .w-list-note { padding: 4px 12px 10px; }
 .tab-world .w-items { list-style: none; margin: 0; padding: 0; }
@@ -139,8 +135,6 @@
 /* 세계의 모습 */
 .tab-world .w-life { max-width: 920px; }
 .tab-world .w-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
-.tab-world .w-life-hidden:empty { display: none; }
-.tab-world .w-life-hidden { margin: 0 0 6px; }
 .tab-world .w-group h3 { margin: 22px 0 4px; font-size: 16px; }
 .tab-world .w-group:first-of-type h3 { margin-top: 10px; }
 .tab-world .w-group h3 .w-linkbtn { color: var(--ink); text-decoration: none; font-weight: 600; }

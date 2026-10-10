@@ -201,7 +201,6 @@ export async function mount(root, ctx) {
   };
   /** 여기까지 읽음 서명 — t와 척추 이벤트 · 사이드 예외(x)를 같이 담는다(캐시 · 다시 그리기 판단) */
   const cutSig = (R) => (R.all ? 'all' : `${R.t}|${Object.entries(R.x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',')}`);
-  const READ_ALL = state.reading({ t: null, x: {} });
   let cand = { targets: [], threads: [] }; // syncControls가 필터가 바뀔 때마다 다시 센다
 
   // ── 필터 (URL 파라미터 → F) ──
@@ -549,13 +548,10 @@ export async function mount(root, ctx) {
   let alive = true;
 
   const resetFilters = () => setP({ ty: null, s: null, tg: null, th: null, kd: null, mm: null, nn: null, n: null, lt: null, pr: null });
-  /** 스포일러 안내 한 줄(가린 것이 있을 때만) */
-  const hiddenNote = (cut) => (cut > 0 ? [ui.hiddenNote(fmt.hiddenLabel(cut))] : []);
-  function emptyState(text, { cut = 0, filtered = false } = {}) {
+  function emptyState(text, { filtered = false } = {}) {
     return h('div', { class: 'lk-empty-state' },
       h('p', {}, text),
       h('div', { class: 'lk-empty-actions' },
-        cut > 0 ? ui.hiddenNote(fmt.hiddenLabel(cut)) : null,
         filtered ? h('button', { type: 'button', class: 'btn', onClick: resetFilters }, LABELS.resetFilters) : null));
   }
   const filtered = (f) => Boolean((f.types && f.mode !== 'net') || f.minS !== 2 || f.tg || f.th || f.kinds);
@@ -568,7 +564,7 @@ export async function mount(root, ctx) {
     const nb = degreesCached(F);
     let c = F.center ? units.get(F.center) : null;
     if (c && !inCut(F, c)) {
-      body.append(emptyState(LABELS.centerHidden, { cut: 1 }));
+      body.append(emptyState(LABELS.centerHidden));
       summary.replaceChildren(); // 빈 상태 상자에 같은 단추가 있다
       centerCombo.set('');
       setTypeCounts(null);
@@ -576,8 +572,7 @@ export async function mount(root, ctx) {
     }
     if (!c) c = bestCenter(F, nb);
     if (!c) {
-      const cutAll = degreesCached({ ...F, R: READ_ALL, cut: 'all' }); // 컷오프를 풀면 보일 스토리
-      body.append(emptyState(LABELS.noNeighborsFiltered, { cut: cutAll.size ? cutAll.size : 0, filtered: filtered(F) }));
+      body.append(emptyState(LABELS.noNeighborsFiltered, { filtered: filtered(F) }));
       summary.replaceChildren();
       centerCombo.set('');
       setTypeCounts(null);
@@ -607,11 +602,11 @@ export async function mount(root, ctx) {
     view = { center: c, shown, activeKey, before, after, hiddenCut };
 
     // 요약 줄은 스포일러 안내뿐 — 이웃 · 선 개수와 범례 글은 싣지 않는다(작업량 숫자 · 당연한 설명)
-    summary.replaceChildren(...hiddenNote(hiddenCut));
+    summary.replaceChildren();
 
     if (!shown.length) {
       summary.replaceChildren();
-      body.append(emptyState(hiddenCut && !filtered(F) ? LABELS.allHidden : filtered(F) ? LABELS.noNeighborsFiltered : LABELS.noNeighbors, { cut: hiddenCut, filtered: filtered(F) }));
+      body.append(emptyState(hiddenCut && !filtered(F) ? LABELS.allHidden : filtered(F) ? LABELS.noNeighborsFiltered : LABELS.noNeighbors, { filtered: filtered(F) }));
       view.empty = true;
       renderDetail();
       return;
@@ -1031,11 +1026,11 @@ export async function mount(root, ctx) {
     for (const e of es) { deg.set(e.from, deg.get(e.from) + 1); deg.set(e.to, deg.get(e.to) + 1); }
 
     // 요약 줄은 스포일러 안내뿐(스토리 · 선 개수와 범례 글은 싣지 않는다)
-    summary.replaceChildren(...hiddenNote(hiddenCut));
+    summary.replaceChildren();
 
     if (!es.length) {
       summary.replaceChildren();
-      body.append(emptyState(LABELS.netEmpty, { cut: hiddenCut, filtered: filtered(F) }));
+      body.append(emptyState(LABELS.netEmpty, { filtered: filtered(F) }));
       renderDetail();
       return;
     }
@@ -1223,7 +1218,7 @@ export async function mount(root, ctx) {
       const es = ch.edges.filter((e) => keys.has(e.from) && keys.has(e.to));
       (groups.get(us[0].kind) ?? groups.set(us[0].kind, []).get(us[0].kind)).push({ ch, shown, es, tail: us.length - cutAt });
     }
-    summary.replaceChildren(...hiddenNote(hiddenChains));
+    summary.replaceChildren();
     if (![...groups.values()].some((g) => g.length)) { summary.replaceChildren(); body.append(emptyState(LABELS.chainEmpty, { cut: hiddenChains })); return; }
     for (const [kind, items] of groups) {
       if (!items.length) continue;

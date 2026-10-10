@@ -14,7 +14,6 @@
 /* ── 도구줄 · 숨김 안내 ── */
 .tab-persons .pm-bar { margin-top: 4px; gap: 10px 14px; }
 .tab-persons .pm-find { width: 220px; max-width: 100%; height: 34px; }
-.tab-persons .pm-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: -4px 0 10px; font-size: 13px; color: var(--ink-2); }
 
 /* ── 배치: 왼쪽 목록 + 오른쪽 상세 (좁으면 위아래) ── */
 .tab-persons .pm-wrap { container-type: inline-size; container-name: pm; }

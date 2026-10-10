@@ -19,7 +19,6 @@
 }
 .tab-order .order-status { margin-left: auto; color: var(--ink-2); font-size: 13px; }
 .tab-order .order-count { font-weight: 600; color: var(--ink); }
-.tab-order .order-status .hidden-note { margin-left: 10px; }
 
 /* ── 목록(감상 순서 한 줄) ── */
 .tab-order .order-picks { display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 4px; }

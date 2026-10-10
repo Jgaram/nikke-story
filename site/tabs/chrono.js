@@ -27,7 +27,7 @@
  *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만 — 종류 칩의 점이 그 범례, 모양 범례는 셋(이때 · 이 무렵 어딘가 · 회상 장면).
  *     축 머리: 메인 이전(시대 기준점 — 숫자 없는 눈금, 이름은 툴팁) · 메인 챕터(5 단위 숫자). 줄 순서는 작중순(계단). 툴팁 = 제목 · 종류 · 작중 때.
  *   작중 때를 모르는 스토리(키 상대 · 불명)는 목록 아래 접이식 한 칸(읽는 순서) — 줄에 다른 스토리와의 앞뒤가 있으면 그것만.
- *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨기고 "스포일러로 가린 N — 전부 보기".
+ *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨긴다(가린 개수는 내지 않는다).
  *     모두 DOM을 다시 만들지 않고 hidden만 바꾼다(스크롤 · 선택 유지). 머리에 지금 보이는 편 수 · 목록이면 "읽은 자리로"(여기까지 읽음 선으로).
  *   줄을 누르면 sel=unit:키 → 리더 + 줄 바로 아래 카드: 작중 순 · 장면(시점 기록 문장 링크) · 회상 장면 · 추정한 이유(추정인 좁힘만) · 출시(어긋난 것만).
  *     추정한 이유 = blurbs.json 팬용 문장(gate를 봤으면 later까지 — 좁힘이 여럿이어도 한 덩어리), 없거나 낡았으면 좁힘마다 거른 판정 문장(whyText).
@@ -249,9 +249,8 @@ export async function mount(root, ctx) {
   };
 
   const statusText = el('span', { class: 'cr-count' });
-  const statusNote = el('span', { class: 'cr-status-note' });
   const jumpBtn = el('button', { type: 'button', class: 'btn cr-jump', onClick: () => root.querySelector('.cr-cutline:not([hidden])')?.scrollIntoView({ block: 'center' }) }, LABELS.jump);
-  root.append(el('div', { class: 'cr-status', role: 'status', 'aria-live': 'polite' }, statusText, statusNote, jumpBtn));
+  root.append(el('div', { class: 'cr-status', role: 'status', 'aria-live': 'polite' }, statusText, jumpBtn));
 
   // ══ 줄 ═══════════════════════════════════════════════════════════════════
   const sep = () => el('span', { class: 'cr-sep', 'aria-hidden': 'true' }, '·');
@@ -547,8 +546,6 @@ export async function mount(root, ctx) {
 
   function updateStatus(s) {
     statusText.textContent = LABELS.count(fmt.num(counts.shown));
-    ui.clear(statusNote);
-    if (counts.cut && s.t != null) statusNote.append(ui.hiddenNote(fmt.hiddenLabel(counts.cut)));
     jumpBtn.hidden = !(cur.view === 'list' && cutSlot != null && counts.shown > 0);
     ui.clear(emptyBox);
     const placedShown = byStory.some((c) => isOk(c.unit));
