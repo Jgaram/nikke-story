@@ -369,12 +369,12 @@ export function orgsAt(target, t) {
   }
   return [...now.values()].map((a) => {
     const o = idx?.targets.get(a.org);
-    return { type: o?.kind === '기업' ? 'corp' : 'squad', name: targetName(a.org), mark: o?.mark, org: a.org, role: a.role, source: 'record' };
+    return { type: o?.kind === '기업' ? 'corp' : 'squad', name: targetName(a.org), mark: o?.mark, org: a.org, role: a.role, from: a.from ? targetName(a.from) : undefined, source: 'record' };
   }).sort((a, b) => (a.type === 'corp' ? 0 : 1) - (b.type === 'corp' ? 0 : 1));
 }
 /** 소속 칩 툴팁 — '카운터스 · 게임 데이터 기준 현재 소속' / '갓데스 (스노우 화이트 : 이노센트 데이즈) · …' */
 export function orgTip(o) {
-  return `${o.name}${o.role ? ` — ${o.role}` : ''}${o.via ? ` (${o.via})` : ''} · ${ORG_SOURCE[o.source] ?? ''}`;
+  return `${o.name}${o.role ? ` — ${o.role}` : ''}${o.via ? ` (${o.via})` : ''} · ${ORG_SOURCE[o.source] ?? ''}${o.from ? ` (${o.from}의 기록)` : ''}`;
 }
 
 export function tickShort(tick) {

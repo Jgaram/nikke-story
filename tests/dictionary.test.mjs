@@ -143,3 +143,12 @@ test('확인된 시드 표기 (docs/schema.md "키워드 표기 주의")가 사�
   }
   for (const w of ['헤레틱', '니힐리스터', '랩처', '오버스펙']) assert.equal(countInScope(w), 0, `${w}가 범위 안에 나온다`);
 });
+
+test('표기를 나누는 항목(shares — 장소이자 조직)은 검색 이름 없이 대상만 둔다', () => {
+  const shared = entries.filter((e) => e.shares);
+  assert.ok(shared.some((e) => e.id === 'org:에덴'), 'org:에덴 ↔ place:에덴');
+  for (const e of shared) {
+    assert.equal(one('SELECT COUNT(*) n FROM target_names WHERE target_id = ?', e.id).n, 0, `${e.id}는 이름을 두지 않는다`);
+    assert.ok(one('SELECT 1 x FROM target_names WHERE target_id = ? AND name = ?', e.shares, e.name), `${e.name}은 ${e.shares}의 이름`);
+  }
+});

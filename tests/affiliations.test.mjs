@@ -113,4 +113,5 @@ test('fmt.orgsAt — 기록이 없으면 게임 데이터, 기록이 있으면 �
   assert.deepEqual(fmt.orgsAt(p, 20).map((o) => [o.name, o.type, o.mark]), [['엘리시온', 'corp', 'icn_corp_01'], ['카운터스', 'squad', 'icn_counters']], '이탈은 빼고 기업이 앞');
   assert.deepEqual(fmt.orgsAt(p, null).map((o) => o.name), ['엘리시온', '카운터스'], '전부 보기 = 기록 전부');
   assert.match(fmt.orgTip({ name: '갓데스', via: '스노우 화이트 : 이노센트 데이즈', source: 'game' }), /갓데스 \(스노우 화이트 : 이노센트 데이즈\) · 게임 데이터/);
+  assert.deepEqual(fmt.orgsAt({ affs: [{ id: 'T5', org: 'org:중앙_정부', act: '소속', tick: 7, from: 'person:레비아탄' }] }, 7).map((o) => o.from), ['레비아탄'], '같은 인물의 기록을 빌린 것은 적은 이름을 단다');
 });

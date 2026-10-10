@@ -283,6 +283,18 @@ export async function run(ctx) {
       id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
     }));
   }
+  // 같은 인물(정체 연결)의 다른 이름 — 소속 기록은 대표 ID 하나에만 적는다(docs/annotations.md "소속 기록"). 기록도 게임 소속도 없는 이름(레비 ↔ 레비아탄)은
+  // 대표의 기록을 빌려 보이되, 정체가 밝혀지는 단위(same_as_unit)보다 앞서 보이지 않게 그 자리로 늦춘다(from = 기록을 적은 이름). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로
+  for (const [id, others] of sameAs) {
+    if (!id.startsWith('person:') || affsOf.has(id) || gameOrgs.has(id)) continue;
+    const lent = [];
+    others.forEach((o, i) => {
+      const reveal = placeOf.get(sameAsUnit.get(id)?.[i]);
+      if (!reveal?.tick || !affsOf.has(o)) return;
+      for (const a of affsOf.get(o)) lent.push({ ...a, tick: Math.max(a.tick ?? 0, reveal.tick), order: Math.max(a.order ?? 0, reveal.order ?? 0), from: o });
+    });
+    if (lent.length) affsOf.set(id, lent);
+  }
   for (const l of affsOf.values()) l.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.id.localeCompare(b.id, 'en', { numeric: true }));
   const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
     const r = pick(t, TARGET_COLUMNS);

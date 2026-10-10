@@ -209,7 +209,12 @@ export function buildDictionary({ characters }) {
     targets.set(e.id, {
       id: e.id, type: e.type, name: e.name, kind: e.kind ?? null, resourceIds: [], note: e.note ?? null, origin: '사전',
     });
-    for (const n of e.names) addName(e.id, n.name, n.how, { caution: n.caution ?? null, excludes: n.except ?? [] });
+    // 이름을 다른 대상과 나누는 항목(shares — 장소이자 조직인 에덴)은 검색 이름을 두지 않는다: 언급 · 건수는 그 대상 쪽에 남는다
+    if (!e.shares) for (const n of e.names) addName(e.id, n.name, n.how, { caution: n.caution ?? null, excludes: n.except ?? [] });
+  }
+  for (const e of terms.entries.filter((x) => x.shares)) {
+    const o = terms.entries.find((x) => x.id === e.shares);
+    if (!o || o.name !== e.name) problems.push(`${e.file}: ${e.id}의 shares ${e.shares} — 표준명이 같은 비인물 대상이어야 한다`);
   }
   // 같은 표기가 두 대상에 걸리면 자동 기록(언급)이 어느 쪽인지 모른다 — 비인물 이름끼리, 비인물 ↔ 인물 이름 모두 막는다
   const owners = new Map();
@@ -240,8 +245,9 @@ export function buildDictionary({ characters }) {
 
 /**
  * 종류별 파일을 읽어 항목을 고르게 편다. 항목 칸(파일 형식은 docs/schema.md "비인물 사전"):
- *   id · name(표준명) · kind(갈래) · note · evidence([{scene, lines}]) · caution · except · names([{name, how, caution, except}]) · wrong([표기])
+ *   id · name(표준명) · kind(갈래) · note · evidence([{scene, lines}]) · caution · except · names([{name, how, caution, except}]) · wrong([표기]) · shares
  * 표준명도 검색 이름이다 — caution · except는 표준명에 붙는 규칙이고, names의 규칙은 그 이름에만 붙는다.
+ * shares: 같은 표기의 다른 비인물 대상 ID(장소이자 조직 — org:에덴 ↔ place:에덴). 그 항목은 검색 이름 없이 대상만 둔다(소속 기록 T가 가리킬 자리).
  * @returns {{ entries: object[], problems: string[] }}
  */
 export function loadTerms() {
@@ -277,6 +283,9 @@ export function loadTerms() {
         }
       }
       for (const w of e.wrong ?? []) if (seen.has(w)) problems.push(`${where}: 틀린 표기 "${w}"가 이름에도 있다`);
+      if (e.shares !== undefined && (typeof e.shares !== 'string' || e.shares.startsWith(`${type}:`) || (e.names ?? []).length)) {
+        problems.push(`${where}: shares는 같은 표기의 다른 종류 대상 ID 하나 — 다른 이름(names)은 둘 수 없다`);
+      }
       entries.push({ ...e, type, file, names });
     }
   }
