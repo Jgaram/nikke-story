@@ -5,7 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { PARTS, SITE_DATA, loadSources, srcHash } from './model.mjs';
+import { PARTS, SITE_DATA, STANDALONE_TEXT, loadSources, srcHash, titledUnit } from './model.mjs';
 
 /** 입력에 쓸 사이트 데이터 — 원본(loadSources) + 기록 · 줄기 · 개요 · 자리 */
 export function loadContext(dir = SITE_DATA) {
@@ -18,7 +18,7 @@ export function loadContext(dir = SITE_DATA) {
   const judgment = new Map([...src.why.values()].filter((u) => u.judgment).map((u) => [u.judgment, u.key]));
   const points = new Map((src.chrono.points ?? []).map((p) => [p.id, p]));
   // 제목으로 불리는 단위(척추 이벤트 · 사이드 — 'OVER ZONE') — 판정 글이 키 대신 제목을 쓴다
-  const titled = [...src.units.values()].filter((u) => u.kind !== 'main' && /^[A-Z][A-Z0-9 .,'!&:-]{4,}$/.test(u.title ?? ''));
+  const titled = [...src.units.values()].filter(titledUnit);
   return { ...src, records, threads, logline, ticks, judgment, points, titled };
 }
 
@@ -38,7 +38,7 @@ function rel(key, other, C) {
   const a = C.units.get(key)?.order;
   const b = C.units.get(other)?.order;
   if (a == null || b == null) return '?';
-  return b < a ? '앞' : '뒤 — 자리만';
+  return b < a ? '앞' : '뒤 — 쓰지 않음';
 }
 const unitName = (k, C) => {
   const u = C.units.get(k);
@@ -101,6 +101,7 @@ export function buildInput(key, part, C) {
     lines.push(`등급: ${GL[j.grade] ?? j.grade}${j.confidence === '추정' ? ' (추정)' : ''}${j.path ? ` · 자리에 따라 ${j.path}` : ''}${j.before ? ` — 그 앞 자리는 ${GL[j.before] ?? j.before}` : ''}`);
     if (j.from) lines.push(`딛는 필수 스토리: ${unitName(j.from, C)} (공개 ${tickName(j.from_tick ?? C.units.get(j.from)?.tick, C)}) [${rel(key, j.from, C)}]`);
     lines.push('판정 이유(분석용 — 옮기지 말고 팬 말로):', `  ${j.reason}`);
+    if (j.grade === '독립') lines.push(`이을 것이 없으면 고정 문장: ${STANDALONE_TEXT}`);
     if (j.basis) lines.push(`결정 장면 기록: ${j.basis}`);
     if (j.lead_facts) lines.push(`주역 사연: ${j.lead_facts}`);
     if (j.threads?.length) lines.push(`걸린 떡밥: ${j.threads.map((t) => `${t} 「${C.threads.get(t)?.title ?? '?'}」`).join(' · ')}`);

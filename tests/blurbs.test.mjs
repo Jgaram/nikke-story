@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  BLURB_DIR, LIMITS, blurbPath, checkBlurb, checkEntry, contentHash, loadBlurbs, loadSources, sentenceCount, shownTexts, srcHash, stateOf,
+  BLURB_DIR, LIMITS, STANDALONE_TEXT, blurbPath, checkBlurb, checkEntry, contentHash, laterNames, loadBlurbs, loadSources, sentenceCount, shownTexts, srcHash, stateOf,
 } from '../tools/blurbs/model.mjs';
 
 const JUDGED = { key: 'sub:세르반_03', grade: '보강', from: 'ch44', reason: '척추 ch44에서 … (F349)' };
@@ -19,7 +19,14 @@ const NARROWS = [{ unit: 'char:171', at: [['전', 'ch21']], reason: '파피용�
 const SOURCES = { why: new Map([[JUDGED.key, JUDGED]]), when: new Map([['char:171', NARROWS]]) };
 const entry = (text, src = srcHash('why', JUDGED)) => ({ text, src, session: 'W14a', by: 'claude', date: '2026-10-10', status: '후보', reviews: [] });
 const confirm = (e, by = 'claude') => ({ ...e, status: '확정', reviews: [...e.reviews, { decision: '확정', by, date: '2026-10-10', session: 'W14a', hash: contentHash(e) }] });
-const GOOD = '버닝엄 부사령관과 지휘관이 직접 얽히는 것은 이 이야기부터다 — CH.44 전에 알아 두면 좋다.';
+const GOOD = '버닝엄 부사령관은 지휘관을 엔더슨 쪽 사람으로 보면서도, 정부군을 움직일 수 없는 아들 일만은 지휘관에게 맡긴다.';
+const UNITS = new Map([
+  ['ch06', { key: 'ch06', kind: 'main', title: 'CH.06 순례', order: 40 }],
+  ['sub:세르반_03', { key: 'sub:세르반_03', kind: 'sub', title: '세르반 4', order: 77 }],
+  ['ch44', { key: 'ch44', kind: 'main', title: 'CH.44 행보', order: 400 }],
+  ['event_goddessfall1', { key: 'event_goddessfall1', kind: 'event', title: 'GODDESS FALL', order: 380 }],
+  ['char:200', { key: 'char:200', kind: 'episode', title: '루피', order: 105 }],
+]);
 
 test('맞는 문장은 오류 · 경고가 없다', () => {
   const b = { unit: JUDGED.key, why: confirm(entry(GOOD)) };
@@ -61,6 +68,20 @@ test('화면에 그 칸이 없는 단위 · 모르는 칸은 오류', () => {
   const when = { ...entry('파피용이 방주 중앙 정부에서 율하를 놀리는 모습이라, 파피용의 처지로 보아 CH.21 전의 일로 본다.', srcHash('when', NARROWS)) };
   assert.deepEqual(checkBlurb({ unit: 'char:171', when }, SOURCES).errors, []);
   assert.deepEqual(shownTexts({ unit: 'char:171', when }).map(([w]) => w), ['when']);
+});
+
+test('뒤 스토리 이름은 오류 — 메인 챕터 · 제목 단위, 앞 스토리 · 호감도 제목(인물 이름)은 된다', () => {
+  assert.deepEqual(laterNames('CH.44 전에 알아 두면 좋다 — GODDESS FALL과 이어진다', 'sub:세르반_03', UNITS).sort(), ['CH.44', 'GODDESS FALL']);
+  assert.deepEqual(laterNames('CH.06에서 말한 이야기 — 루피도 나온다', 'sub:세르반_03', UNITS), []);
+  const cur = srcHash('why', JUDGED);
+  const r = checkEntry('why', entry('버닝엄 부사령관과 지휘관이 직접 얽히는 것은 이 이야기부터다 — CH.44 전에 알아 두면 좋다.'), cur, { unit: JUDGED.key, units: UNITS });
+  assert.ok(r.errors.some((m) => m.includes('뒤 스토리 이름')));
+});
+
+test('독립 고정 문장 — 길이 검사 밖, 독립 밖에 쓰면 오류', () => {
+  const cur = srcHash('why', JUDGED);
+  assert.deepEqual(checkEntry('why', entry(STANDALONE_TEXT), cur, { grade: '독립' }), { errors: [], warnings: [] });
+  assert.ok(checkEntry('why', entry(STANDALONE_TEXT), cur, { grade: '보강' }).errors.some((m) => m.includes('고정 문장')));
 });
 
 test('실제 파일 — 깨진 파일 · 오류 없음, 확정은 지문이 맞고 판정과 이어진다', () => {

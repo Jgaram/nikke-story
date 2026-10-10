@@ -1,7 +1,7 @@
 {
   "unit": "event_fullfoolday",
   "why": {
-    "text": "필수 스토리와 얽히는 것 없이 하루 만에 끝나는 만우절 소동극 — 니케들의 거짓말 장난을 가볍게 즐기면 된다.",
+    "text": "필수 스토리와 얽히지 않는 이야기.",
     "src": "1695fb6ff6",
     "session": "W14a",
     "by": "claude",
@@ -15,6 +15,22 @@
         "session": "W14a",
         "hash": "9f93eaab29",
         "note": "W14a 시안 — 판정 이유 · 기록 문장 대조, 뒤 스토리는 제목 · 자리만"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "2f50c3d3c4",
+        "note": "뒷이야기 LIAR'S END가 있어(선행 sequel) '하루 만에 끝나는'을 뺌"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-10",
+        "session": "W14a",
+        "hash": "61dbb16fa9",
+        "note": "사용자 조율 — 읽는 때 안내 · 뒤 스토리 이름 빼고 이 스토리 · 앞 스토리 내용만, 이을 것 없는 독립은 고정 문장"
       }
     ]
   }

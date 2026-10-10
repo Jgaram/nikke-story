@@ -28,6 +28,9 @@ export const LIMITS = {
   quotes: 1, // 문장 하나의 따옴표 수
 };
 
+/** 이을 것이 없는 독립 스토리의 고정 문장(사용자, 2026-10-10) — 길이 검사를 받지 않는다. 독립 밖에는 못 쓴다 */
+export const STANDALONE_TEXT = '필수 스토리와 얽히지 않는 이야기.';
+
 /** 판정 말 — 화면 글에 넣지 않는다(오류). '필수 스토리'는 화면 말이라 된다 */
 export const JUDGE_WORDS = /척추|잣대|문턱|판정|등급|준필수|상한|하한|빌드업|about|basis/g;
 /** 작업 냄새 — 경고. 작품 속 물건(세이렌이 쓴 기록)처럼 맞는 말이면 그대로 둔다 */
@@ -109,6 +112,28 @@ export function stateOf(e, cur) {
   return { status: e?.status ?? '후보', last, lastBy: last?.by ?? null, hash, changed, stale, ok: e?.status === '확정' && !changed && !stale };
 }
 
+/** 제목으로 불리는 단위인가(척추 이벤트 · 사이드 'OVER ZONE' 꼴) — 호감도 제목(인물 이름)은 이름 언급과 갈리지 않아 뺀다 */
+export const titledUnit = (u) => u?.kind !== 'main' && /^[A-Z][A-Z0-9 .,'!&:-]{4,}$/.test(u?.title ?? '');
+
+/**
+ * 뒤 스토리 이름 — 그 단위보다 읽는 순서가 뒤인 메인 챕터('CH.44') · 제목 단위('GODDESS FALL')가 글에 들었나(사용자, 2026-10-10 — 이름도 암시도 안 쓴다).
+ * @param {string} text
+ * @param {string} unit
+ * @param {Map<string, object> | undefined} units 사이트 units.json(key → { order, title, kind })
+ * @returns {string[]} 걸린 이름
+ */
+export function laterNames(text, unit, units) {
+  const me = units?.get(unit)?.order;
+  if (me == null) return [];
+  const hits = new Set();
+  for (const m of String(text).matchAll(/CH\.(\d+)/g)) {
+    const u = units.get(`ch${m[1].padStart(2, '0')}`);
+    if (u && u.order > me) hits.add(`CH.${m[1]}`);
+  }
+  for (const u of units.values()) if (u.order > me && titledUnit(u) && String(text).includes(u.title)) hits.add(u.title);
+  return [...hits];
+}
+
 /** 문장 수 — 마침표 · 물음표 · 느낌표 뒤가 끝이나 빈칸인 곳(CH.44의 점은 세지 않는다) */
 export const sentenceCount = (t) => (String(t).trim().match(/[.?!…](?=\s|$)/g) ?? []).length || (String(t).trim() ? 1 : 0);
 
@@ -118,7 +143,7 @@ export const sentenceCount = (t) => (String(t).trim().match(/[.?!…](?=\s|$)/g)
  * @param {object} e 칸
  * @param {string | null} cur 지금 판정 지문
  */
-export function checkEntry(part, e, cur) {
+export function checkEntry(part, e, cur, { unit = null, units = null, grade = null } = {}) {
   const errors = [];
   const warnings = [];
   if (!e || typeof e !== 'object') return { errors: ['칸이 객체가 아니다'], warnings };
@@ -128,7 +153,9 @@ export function checkEntry(part, e, cur) {
   if (cur == null) errors.push(`화면에 이 칸이 없다 — ${part === 'why' ? '분류 단위(척추 밖)가 아니다' : '연대기 카드에 추정한 이유가 뜨지 않는 단위다'}`);
   else if (e.src !== cur && e.status !== '기각') warnings.push(`쓴 뒤 판정이 바뀌었다(낡음 — 화면은 거른 판정 문장) — 입력을 다시 보고 고쳐 \`new … --refresh\` 뒤 확정`);
   if (!text) (e.status === '확정' ? errors : warnings).push('text가 비었다');
-  else {
+  else if (text === STANDALONE_TEXT) {
+    if (part !== 'why' || (grade && grade !== '독립')) errors.push('고정 문장은 이을 것이 없는 독립 스토리의 분류 이유에만');
+  } else {
     const n = chars(text);
     if (n > LIMITS.max) errors.push(`${n}자 — ${LIMITS.max}자 안쪽(권장 ${LIMITS.text.join('–')})`);
     else if (n < LIMITS.text[0] || n > LIMITS.text[1]) warnings.push(`${n}자 — 권장 ${LIMITS.text.join('–')}자`);
@@ -139,6 +166,8 @@ export function checkEntry(part, e, cur) {
       const hits = [...new Set(plain.match(f.re) ?? [])];
       if (hits.length) errors.push(`화면 글에 넣지 않는 꼴(${f.what}) — ${hits.slice(0, 3).join(' · ')}`);
     }
+    const later = laterNames(text, unit, units);
+    if (later.length) errors.push(`뒤 스토리 이름 — ${later.join(' · ')} (그 스토리와 앞 스토리 내용만 — ${part === 'why' ? "읽는 때는 '언제 읽나' 줄이" : '자리는 카드의 굵은 줄이'} 말한다)`);
     const judge = [...new Set(text.match(JUDGE_WORDS) ?? [])];
     if (judge.length) errors.push(`판정 말 — ${judge.join(' · ')} (화면 말로: 척추 → 필수 스토리)`);
     const work = [...new Set([...(text.match(WORK_WORDS) ?? []), ...(text.match(SOFT_WORDS) ?? [])])];
@@ -170,7 +199,7 @@ export function checkBlurb(b, sources) {
   if (!parts.some((k) => k in PARTS)) errors.push('칸이 없다');
   for (const part of Object.keys(PARTS)) {
     if (!b?.[part]) continue;
-    const r = checkEntry(part, b[part], srcHash(part, sources[part].get(b.unit)));
+    const r = checkEntry(part, b[part], srcHash(part, sources[part].get(b.unit)), { unit: b.unit, units: sources.units, grade: sources.why.get(b.unit)?.grade ?? null });
     errors.push(...r.errors.map((m) => `${part}: ${m}`));
     warnings.push(...r.warnings.map((m) => `${part}: ${m}`));
   }
