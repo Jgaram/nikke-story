@@ -1,0 +1,15 @@
+{
+  "subject": "place:모던_바",
+  "versions": [
+    {
+      "at": "char:290",
+      "text": "도수 높은 술로 유명한 바. 마나는 율하 · 브리드와 일주일에 한 번 이곳에 모여 하소연하고, 스트레스받는 날엔 혼자서도 온다.",
+      "src": "4981feccbd",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W15e", "hash": "8185054a2b", "note": "F1778 · mana_01#27-30 — 1판" }]
+    }
+  ]
+}

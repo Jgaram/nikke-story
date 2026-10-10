@@ -1,0 +1,43 @@
+{
+  "subject": "org:Twinkle_Twin_Star",
+  "versions": [
+    {
+      "at": "fl:b-side_idol",
+      "text": "민트와 프리카 두 사람이 무대에서 내세우는 아이돌 그룹 이름. 방주에서 가장 유명한 아이돌로, 진행자나 기사는 흔히 T.T.STAR라 부른다.",
+      "src": "bcda82fda3",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "37cdb3ac24",
+          "note": "F2716 · b-side_idol_10#101 민트 · 프리카 그룹 이름(체크 칸 STAR ANIS의 탈퇴는 안 씀), BITTER SPICE에서 아니스가 떠난 뒤의 둘(bitter_spice_01#52-58 · F2721 · F2724)이 드러나 2판"
+        }
+      ]
+    },
+    {
+      "at": "fl:bitter_spice",
+      "text": "아니스가 떠난 뒤 민트와 프리카 둘이 이어 가는 아이돌 그룹. 흔히 T.T.STAR라 불리며, 불화설을 딛고 둘만의 첫 정규 앨범을 냈다.",
+      "src": "6c6487cf53",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "ae9d7abb51",
+          "note": "F2716 · b-side_idol_10#101 민트 · 프리카 그룹 이름(체크 칸 STAR ANIS의 탈퇴는 안 씀), BITTER SPICE에서 아니스가 떠난 뒤의 둘(bitter_spice_01#52-58 · F2721 · F2724)이 드러나 2판"
+        }
+      ]
+    }
+  ]
+}

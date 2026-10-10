@@ -1,0 +1,24 @@
+{
+  "subject": "org:찻집_리코리코",
+  "versions": [
+    {
+      "at": "fl:lie_cause_recoil",
+      "text": "치사토와 타키나가 원래 세계에서 일하던 가게. 맛있는 커피와 디저트를 즐길 수 있는 찻집이다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "d5d4e83bdc",
+          "note": "fl:lie_cause_recoil_03#31-39 치사토 · 타키나가 일했던 가게, 커피 · 디저트 찻집으로 씀 — 1판"
+        }
+      ]
+    }
+  ]
+}

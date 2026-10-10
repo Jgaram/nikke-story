@@ -1,0 +1,24 @@
+{
+  "subject": "concept:일곱의_조율자",
+  "versions": [
+    {
+      "at": "ch48",
+      "text": "온리 원에 따르면 퀸이 함께 세상을 만들어 나가야 하는 일곱. 누구인지, 무엇인지는 아직 모른다.",
+      "src": "070a05bc0d",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "174fc6e98d",
+          "note": "F2835 · Q365 · d_main_48_05#60 온리 원의 말만, 정체 열린 꼴 — 1판"
+        }
+      ]
+    }
+  ]
+}

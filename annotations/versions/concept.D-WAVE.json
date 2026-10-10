@@ -1,0 +1,43 @@
+{
+  "subject": "concept:D-WAVE",
+  "versions": [
+    {
+      "at": "char:810",
+      "text": "2B와 9S를 만난 공장에서 일어났다는 현상. 무엇인지는 아직 자세히 나오지 않는다.",
+      "src": "97d170e155",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "768da10a5e",
+          "note": "첫 자리 2B 에피 ce_02_01_01#0은 공장에서 일어났다는 이름뿐이라 얇게, MEMORIES TELLER ce006_1_01_e#33-40 · F1976에서 다른 세계 소환 · 게이트 키퍼가 드러나 2판(뒤 REBORN EVIL · PERSONA는 새 사례 · 세부)"
+        }
+      ]
+    },
+    {
+      "at": "event_ce006",
+      "text": "다른 세계의 존재를 이쪽 세계로 불러오는 파장. 불려 온 이들은 랩쳐 게이트 키퍼를 쓰러뜨리면 돌아갈 수 있고, 방주는 이 파장을 관측해 소환을 알아챈다.",
+      "src": "2cf99022e7",
+      "session": "W15e",
+      "by": "claude",
+      "date": "2026-10-10",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-10",
+          "session": "W15e",
+          "hash": "2d7d42c281",
+          "note": "첫 자리 2B 에피 ce_02_01_01#0은 공장에서 일어났다는 이름뿐이라 얇게, MEMORIES TELLER ce006_1_01_e#33-40 · F1976에서 다른 세계 소환 · 게이트 키퍼가 드러나 2판(뒤 REBORN EVIL · PERSONA는 새 사례 · 세부)"
+        }
+      ]
+    }
+  ]
+}
