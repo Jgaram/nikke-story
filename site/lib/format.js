@@ -246,8 +246,8 @@ export const TAB = {
   order: { title: '감상 순서', hint: '메인 스토리 사이사이에 꼭 볼 스토리를 끼워 넣은 순서' },
   links: { title: '연결', hint: '스토리 사이의 연결' },
   threads: { title: '떡밥', hint: '복선과 떡밥이 이어지는 흐름' },
-  persons: { title: '인물', hint: '인물별 등장과 변화' },
   chrono: { title: '연대기', hint: '작중 시간순으로 본 스토리' },
+  persons: { title: '인물', hint: '인물별 등장과 변화' },
   world: { title: '세계', hint: '용어 · 장소 · 조직 · 세계의 모습' },
 };
 export const TAB_ORDER = Object.keys(TAB);

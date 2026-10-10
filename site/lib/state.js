@@ -3,7 +3,7 @@
  * 링크를 복사하면 같은 화면이 열리고, 뒤로 가기가 된다(set은 history를 쌓고, replace는 덮는다).
  *
  * 키
- *   tab     order | links | threads | persons | chrono | world
+ *   tab     order | links | threads | chrono | persons | world
  *   t       컷오프 공개 자리(숫자) · 'all'(끔). 처음 열면 CH.00의 자리(공개 사이트라 기본 켬 — W0). 바꾼 값은 localStorage에 남아 다음 방문에 쓴다
  *   x       척추 이벤트 · 사이드(units.json spine이고 메인이 아닌 것)의 '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다.
  *           순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10). t가 바뀌면 새 기본과 같아진 예외는 지운다. localStorage에도 남는다
@@ -30,7 +30,7 @@
  *   구독자의 changed에 't'가 있으면 t나 x가 바뀐 것이다(여기까지 읽음이 바뀜). x만 바뀌어도 't'와 'x'가 같이 든다
  *   cutoffChosen()                   URL에 t가 실려 왔거나 localStorage에 고른 컷오프가 있나 — init() **전에** 불러야 한다(init이 URL에 t를 쓴다). 첫 방문 선택 바가 쓴다
  */
-export const TABS = ['order', 'links', 'threads', 'persons', 'chrono', 'world'];
+export const TABS = ['order', 'links', 'threads', 'chrono', 'persons', 'world'];
 export const ALL_LAYERS = [1, 2, 3];
 const STORAGE_T = 'nikke-story.t';
 const STORAGE_X = 'nikke-story.x';

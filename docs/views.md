@@ -419,7 +419,7 @@ tools/site/
   lib.mjs               readCsv · writeJson(compact) · num · list · compact · pick(허용 칼럼) · quotesIn · quoteWarnings · clipQuotes · publishText ·
                         loadRecords(annotations 전체 → { ds, membership, confirmed, byId }) · firstRef · evidenceOut · inputsFingerprint
   export/common.mjs     공용 데이터(아래) — 늘 먼저 돈다. 결과를 ctx.common에 둔다
-  export/<name>.mjs     탭별(order · links · threads · persons · chrono · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
+  export/<name>.mjs     탭별(order · links · threads · chrono · persons · world) — export const name; export async function run(ctx) → { files: { '<이름>.json': 값 } }
   export/synopsis.mjs   공개 개요(W8) → synopsis.json — 확정 · 지문이 맞는 annotations/synopsis/만(docs/annotations.md "공개 개요"). 리더 · 감상 순서 분류 카드가 쓴다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
 site/
@@ -428,7 +428,7 @@ site/
   app.js                부팅: data.index() → fmt.use(idx) → state.init(그 전에 첫 방문인지 본다) → 상단 바(여기까지 읽음 팝업 — 첫 방문이면 연다) · 탭 nav → 탭 모듈 동적 import → mount. sel이 있으면 리더를 연다
   lib/d3.js             export * from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm' — 브라우저 쪽 유일한 외부 의존성. 탭은 ctx.d3로 쓴다
   lib/state.js  data.js  format.js  ui.js  reader.js  search.js      ← 공용 API(머리말 주석 = 명세)
-  tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈 여섯(order · links · threads · persons · chrono · world) — 아래 "탭별 (W2–W7)"
+  tabs/<name>.js  tabs/<name>.css                                   ← 탭 모듈 여섯(order · links · threads · chrono · persons · world) — 아래 "탭별 (W2–W7)"
   data/*.json           내보낸 데이터(커밋한다 — Pages가 그대로 낸다)
 tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest 건수 · 단위 481 · 자리 158 · 본문 칼럼 이름 없음 · 40자 초과 인용은 경고 · 소스 정적 검사 · 정적 서버
 ```
@@ -532,6 +532,8 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 상단 검색에도 넣는다(W10) — "줄거리" 묶음(한 줄 소개 · 줄거리 · 씬 한 줄 글, 처음 검색할 때 받는다). 흔한 이름이면 수백 편이 맞으므로 다른 결과 뒤에 읽는 순서로 10건까지, 결과는 스토리 제목 + 맞은 곳 앞뒤 글이고 여기까지 읽음 뒤 스토리는 글 없이 "스포일러"만(`site/lib/search.js`).
 481단위 전부 확정(W10). 스포일러 경고는 tick 기준으로 다시 재도 읽는 순서 기준과 같다(출시 tick이 읽는 순서와 거꾸로 가는 곳 0) — 리더 · 카드 · 검색이 tick으로 가리는 것과 검사가 맞물린다.
 
+**탭 순서**(사용자, 2026-10-10): 스토리를 보는 탭(감상 순서 · 연결 · 떡밥 · 연대기) 다음에 찾아보는 탭(인물 · 세계). 순서는 `state.js` `TABS` · `format.js` `TAB` 키 순서.
+
 **탭별 (W2–W7)** — 쓰는 JSON · URL 파라미터(`p.<키>`, 탭을 바꾸면 지워진다) · 보기 모드. 그리는 규칙 · 칸 설명은 각 `site/tabs/<name>.js` 머리말 주석.
 
 | 탭 | 쓰는 JSON | 파라미터 | 보기 모드 |
@@ -539,8 +541,8 @@ export async function mount(root, ctx) { /* root(main)에 그린다 */ return ()
 | **감상 순서** `order` (W2) | `order.json` · `order-detail.json`(분류 카드) | `g`(등급, 쉼표 목록 — 기본 필수 · 보강) · `k`(스토리 종류, 쉼표 목록 — 기본 유실물 · 이벤트 유실물을 뺀 전부) · `find` | 목록(감상 순서 한 줄 — 척추 줄은 늘, 그 사이에 거르개에 든 메인 밖 스토리를 읽는 자리 순서로 끼운다. 한 줄 = 순번 · 등급 · 종류 · 스토리 · 출시 날짜(추정은 `~` — 출시순이라 날짜만, 사용자 2026-10-10) · 글자(이유는 분류 카드 · 리더에만), 머리에 편 수 · 글자 합). **목록은 여기까지 읽음과 관계없이 전부**(안 본 사람의 감상 안내 — 사용자, 2026-10-10): 등급은 최종 등급, 목록은 그 시점 ≤ 인 마지막 척추 줄 아래 "여기까지 읽음 · CH.07" 구분 줄(머리의 "읽은 자리로"가 거기로 옮긴다). 스토리를 누르면 리더 + 아래 분류 카드 — 카드는 여기까지 읽음을 따른다(그 시점의 등급, 뒤 스토리는 한 줄 소개 없이 이유 · 떡밥 · 주역 등을 "스포일러 보기" 접이 안에) |
 | **연결** `links` (W3) | `links.json` · `links-scenes.json`(근거) | `m`(ego · net · chain) · `ck`(중심 스토리 종류) · `c`(가운데 스토리) · `n` · `pr` · `lt` · `ty`(선 종류) · `s`(연결 강도 1–3) · `tg`(인물 · 항목) · `th`(떡밥) · `kd`(스토리 종류) · `nn` · `mm` | 이웃(가운데 스토리 + 앞 · 뒤 카드, 기본) / 전체(읽는 순서 축 위 점 · 선) / 연작(다음 편 사슬). 선을 누르면 씬 → 씬 근거. 중심은 두 단계 — 스토리 종류(`ck`)를 고르면 중심 후보 · 기본 가운데가 그 종류로 좁혀지고, 그다음 스토리를 고른다. 인물 · 항목 · 떡밥 거르개 후보는 지금 가운데 · 선 종류 · 세기 · 스토리 종류 · 여기까지 읽음에서 실제로 보이는 선에 걸린 것만(인물 후보는 고른 떡밥을, 떡밥 후보는 고른 인물을 따른다) |
 | **떡밥** `threads` (W4) | `threads-flow.json` · `threads-map.json` · 공용 `threads.json` | `j`(떡밥 ID) · `axis`(story면 작중 시간순) · `f`(unsolved · solved · fact) · `map`(rel · item · list) · `c` · `common` · `hints` · `sort`(open · start) | 왼쪽 떡밥 지도(떡밥끼리 · 항목 · 목록) + 오른쪽 떡밥 하나의 흐름(의문 · 사실 줄마다 던짐 → 복선 → 일부 회수 → 회수 · 뒤집힘, 출시 순서 / 작중 시간순) |
-| **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |
 | **연대기** `chrono` (W6) | `chrono.json` | `axis`(story 기본 · release) · `view`(list · band) · `by`(kind) · `kind` · `find` · `drift`(1) | 목록(작중순: 칸마다 묶음 + "여기까지 읽음" 선 / 출시순: 출시 시점별 묶음 + 출시순과 비교) / 띠 그림(가로 = 작중 축, 줄 = 스토리). 줄을 누르면 "자리 근거" 카드 |
+| **인물** `persons` (W5) | `persons.json` · `persons-detail.json` · `persons-pairs.json` | `who`(person:라피) · `view`(table) · `find` · `kind` · `lead` · `sort` · `net`(list · graph) · `common` · `fq`(q · f · k · e) · `chg`(release) | 인물별(목록 + 상세: 등장 히트맵 · 함께 나온 인물 목록/관계도 · 변화 점 차트 · 사실 · 의문 · 떡밥 · 결말) / 전체 표 |
 | **세계** `world` (W7) | `world.json` | `mode`(dict · life) · `item`(항목 ID) · `type`(concept · incident · item · org · place) · `sort`(facts · name · first · open) · `find` · `topic` · `hubs`(1) | 사전(항목 목록 + 상세: 사실 · 의문 · 함께 나온 항목 · 나온 스토리 · 떡밥) / 세계의 모습(분류별 목록) |
 
 ## 1층 끝 시안 (C1, 2026-10-08) — 1회독 + 2회독
