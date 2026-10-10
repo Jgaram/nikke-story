@@ -16,6 +16,7 @@
  *   unitTitle(u | key)              'CH.07 재회' · '라피'(호감도는 종류 칩으로 안다)
  *   tickLabel(tick, { date })       'CH.20과 함께 출시 · 2023-01-12' / 'CH.17 다음 출시 · 2022-11-10' / null → '전부 보기'
  *   tickShort(tick)                 'CH.20' / 'CH.17+'
+ *   orgsAt(target, t)               그 자리의 소속(기업 · 스쿼드 마크) — 확정 소속 기록(affs)이 t까지 있으면 그것, 없으면 게임 데이터(orgs). ORG_SOURCE · orgTip(o)
  *   iconAt(target, t)               그 자리의 인물 아이콘 — 메인에서 바뀐 모습(target.icons [[자리, 아이콘]])을 t까지 따른다. t null(전부) = 마지막 모습
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
@@ -347,6 +348,33 @@ export function iconAt(target, t) {
   let icon = target.icon ?? null;
   for (const [tick, ic] of target.icons ?? []) if (t == null || tick <= t) icon = ic;
   return icon;
+}
+
+/** 소속 출처 — 게임 데이터(실장 니케의 지금 소속)인지 작중 기록인지 */
+export const ORG_SOURCE = { game: '게임 데이터 기준 현재 소속', record: '이 자리까지 읽은 스토리 기준 소속' };
+
+/**
+ * 그 자리의 소속(docs/views.md "소속 마크") — 확정 소속 기록 T(target.affs, 공개 자리 tick)가 t까지 하나라도 있으면 그것을 차례로 쌓고
+ * (소속 · 합류 → 더함, 이탈 → 뺌), 없으면 게임 데이터(target.orgs — 실장 니케의 지금 소속, 스포일러로 보지 않는다). t null(전부) = 기록 전부.
+ * @returns {{ type: 'corp'|'squad', name: string, mark?: string, org?: string, role?: string, via?: string, source: 'game'|'record' }[]} 기업이 앞
+ */
+export function orgsAt(target, t) {
+  if (!target) return [];
+  const recs = (target.affs ?? []).filter((a) => t == null || (a.tick != null && a.tick <= t));
+  if (!recs.length) return (target.orgs ?? []).map((o) => ({ ...o, source: 'game' }));
+  const now = new Map();
+  for (const a of recs) {
+    if (a.act === '이탈') now.delete(a.org);
+    else now.set(a.org, a);
+  }
+  return [...now.values()].map((a) => {
+    const o = idx?.targets.get(a.org);
+    return { type: o?.kind === '기업' ? 'corp' : 'squad', name: targetName(a.org), mark: o?.mark, org: a.org, role: a.role, source: 'record' };
+  }).sort((a, b) => (a.type === 'corp' ? 0 : 1) - (b.type === 'corp' ? 0 : 1));
+}
+/** 소속 칩 툴팁 — '카운터스 · 게임 데이터 기준 현재 소속' / '갓데스 (스노우 화이트 : 이노센트 데이즈) · …' */
+export function orgTip(o) {
+  return `${o.name}${o.role ? ` — ${o.role}` : ''}${o.via ? ` (${o.via})` : ''} · ${ORG_SOURCE[o.source] ?? ''}`;
 }
 
 export function tickShort(tick) {

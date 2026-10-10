@@ -41,6 +41,8 @@
 .tab-persons .pm-item { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto auto; align-items: center; gap: 8px; padding: 5px 9px; border-radius: 6px; cursor: pointer; line-height: 1.45; }
 .tab-persons .pm-item:hover { background: var(--surface-2); }
 .tab-persons .pm-item.is-sel { background: color-mix(in srgb, var(--accent) 14%, var(--surface)); box-shadow: inset 2px 0 0 var(--accent); }
+.tab-persons .pm-item-who { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.tab-persons .pm-item-who .org-marks { flex: none; flex-wrap: nowrap; }
 .tab-persons .pm-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
 .tab-persons .pm-item.is-sel .pm-item-name { font-weight: 600; }
 .tab-persons .pm-item-pic { width: 24px; height: 24px; border-radius: 5px; }

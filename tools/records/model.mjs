@@ -22,6 +22,7 @@
  *   E<n>    떡밥 — 1회독 사실 · 의문 · 줄기를 미리 흘림(암시) · 다시 꺼냄(재언급). 엣지 setup_payoff · callback
  *   D<n>    인물 변화 — 인물 · 측면의 처음 모습(기준)과 바뀜(변화: 전 → 후 · 계기 씬)
  *   U<n>    세계 생활상 — 주제별로 이 세상 사람들이 사는 모습
+ *   T<n>    소속 — annotations/affiliations.json affiliations: 실장 니케 밖 인물의 소속과 작중 소속 이동(합류 · 이탈). 실장 니케의 지금 소속은 게임 데이터(기록 아님)
  *   Y<n>    수동 엣지 — annotations/links.json edges (T4-3): 기록에서 안 나오는 스토리 사이 관계, 자동 엣지를 뒤집기도 한다(T4-4)
  *   W<n>    2회독 볼 거리 — annotations/watch.json items (B1b): 1회독이 '2회독 몫'으로 넘긴 것. 작업 메모라 후보가 아니다(되짚기 메모처럼)
  * 1회독 바로잡기(놓친 회수 · 사실 등)는 2회독 파일이 아니라 그 단위의 1회독 파일에 1회독 형식으로, 항목에 session(P1 · M03 …)을 달아 적는다.
@@ -50,6 +51,8 @@ export const CLOSURES_PATH = path.join(ROOT, 'annotations/closures.json');
 export const READ2_DIR = path.join(ROOT, 'annotations/read2');
 /** 수동 엣지 (T4-3) — 하나. 예시 디렉터리에서는 `_links.json` */
 export const LINKS_PATH = path.join(ROOT, 'annotations/links.json');
+/** 소속 기록 — 하나. 예시 디렉터리에서는 `_affiliations.json`. 형식은 docs/annotations.md "소속 기록" */
+export const AFFILIATIONS_PATH = path.join(ROOT, 'annotations/affiliations.json');
 /** 2회독 볼 거리 (B1b) — 하나. 예시 디렉터리에서는 `_watch.json` */
 export const WATCH_PATH = path.join(ROOT, 'annotations/watch.json');
 /** 작중 연대기 — 시대 기준점(X1b). 예시 디렉터리는 그 안의 `_chronology.json` */
@@ -82,6 +85,8 @@ export const ECHO_ACTS = ['암시', '재언급'];
 /** 인물 변화(D) — 기준: 그 측면의 처음 모습 · 변화: 전 → 후 */
 export const CHANGE_ACTS = ['기준', '변화'];
 /** 인물 변화의 측면 (T4-8): 성격·태도 / 관계(지휘관 · 다른 인물) / 소속·지위 / 신체·상태 / 목표·신념 / 기억·정체 */
+/** 소속 기록(T)의 act — 소속: 그 자리에서 드러난(처음부터의) 소속 · 합류: 그 자리에서 들어감 · 이탈: 그 자리에서 나감 */
+export const AFFIL_ACTS = ['소속', '합류', '이탈'];
 export const ASPECTS = ['성격', '관계', '소속', '신체', '신념', '기억'];
 /** 세계 생활상(U)의 주제 (T4-9) — 읽으면서 늘린다. 늘릴 때는 여기와 docs/annotations.md "2회독 기록"에 더한다 */
 export const LIFE_TOPICS = ['방주 사회', '지상', '구시대', '전초기지', '기업 · 조직', '일상 · 문화', '경제', '기술'];
@@ -110,6 +115,7 @@ export const KINDS = {
   change: { label: '변화', prefix: 'D' },
   life: { label: '생활상', prefix: 'U' },
   edge: { label: '엣지', prefix: 'Y' },
+  affil: { label: '소속', prefix: 'T' },
 };
 export const KIND_BY_LABEL = Object.fromEntries(Object.entries(KINDS).map(([k, v]) => [v.label, k]));
 
@@ -130,10 +136,11 @@ export const ID = {
   change: /^D(\d+)$/,
   life: /^U(\d+)$/,
   edge: /^Y(\d+)$/,
+  affil: /^T(\d+)$/,
   watch: /^W(\d+)$/,
 };
 /** 한 글자 접두 + 번호인 ID의 종류 — 범위 고르기(I3..I9) · 다음 번호에 쓴다 */
-export const SINGLE_PREFIX = { L: 'link', J: 'thread', G: 'relation', K: 'layer', Z: 'lead', B: 'spine', O: 'closure', H: 'merge', I: 'mention', E: 'echo', D: 'change', U: 'life', Y: 'edge' };
+export const SINGLE_PREFIX = { L: 'link', J: 'thread', G: 'relation', K: 'layer', Z: 'lead', B: 'spine', O: 'closure', H: 'merge', I: 'mention', E: 'echo', D: 'change', U: 'life', Y: 'edge', T: 'affil' };
 
 /** 파일 · 항목에 쓸 수 있는 칸. 모르는 칸은 경고한다(오타 잡기) */
 export const FIELDS = {
@@ -182,6 +189,10 @@ export const FIELDS = {
   // 수동 엣지 (T4-3 · T4-4)
   linksFile: ['_comment', 'session', 'by', 'date', 'note', 'edges'],
   edge: ['id', 'type', 'from', 'to', 'strength', 'drop', 'records', 'evidence', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
+  // 소속 기록 — game: 게임 코드 → org ID(corporations · squads, 원문에 이름이 없으면 null) · affiliations: 해석 기록(T)
+  // act: 소속(처음부터 · 그 자리에서 드러난 소속) · 합류 · 이탈 · role: 그 조직 안 자리(짧게) · records: 근거 기록(인물 변화 D 등)
+  affiliationsFile: ['_comment', 'session', 'by', 'date', 'note', 'game', 'affiliations'],
+  affil: ['id', 'person', 'org', 'act', 'role', 'records', 'evidence', 'reason', 'confidence', 'status', 'by', 'session', 'note', 'reviews'],
   // 2회독 볼 거리 (B1b) — 작업 메모. parts: 나눠 읽는 단위의 파트(1회독 파트 — 2회독 파트와 겹치는 항목에 붙는다)
   watchFile: ['_comment', 'session', 'by', 'date', 'note', 'items'],
   watch: ['id', 'unit', 'parts', 'kind', 'text', 'evidence', 'points', 'from', 'note'],
@@ -190,7 +201,7 @@ export const FIELDS = {
 export const READ2_SECTIONS = { mentions: 'mention', echoes: 'echo', changes: 'change', life: 'life' };
 
 /** 1회독 읽기 단위 기록(사실 · 의문 · 사건 · 시점, 2회독 바로잡기 포함)인가 — 정체 연결 · 줄기 · 층 판정 · 주역 · 2회독 기록 · 수동 엣지가 아니다 */
-export const isRecord = (c) => !c.people && !c.threads && !c.layers && !c.leads && !c.spine && !c.closures && !c.read2 && !c.links;
+export const isRecord = (c) => !c.people && !c.threads && !c.layers && !c.leads && !c.spine && !c.closures && !c.read2 && !c.links && !c.affil;
 
 /** 단위 키 → 파일 이름. 파트를 나눠 읽는 단위는 첫 파트를 붙인다(event_staranis1.p4.json) */
 export function fileNameFor(unit, parts = null) {
@@ -280,7 +291,7 @@ function readRecordFiles(dir, problems, prefix = '') {
  *   annotations/watch.json · `_watch.json`.
  *   read2: 2회독 기록 디렉터리(기본 read2DirFor(dir)). 2회독 파일 이름은 `read2/<파일>`로 보인다
  */
-export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, spine, closures, read2, links, watch } = {}) {
+export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, spine, closures, read2, links, watch, affiliations } = {}) {
   const problems = [];
   const files = readRecordFiles(dir, problems);
   const dir2 = read2 !== undefined ? read2 : read2DirFor(dir);
@@ -304,14 +315,28 @@ export function loadDataset({ dir = READ1_DIR, people, threads, layers, leads, s
   const linksFile = side(links !== undefined ? links : isMain ? LINKS_PATH : path.join(dir, '_links.json'));
   const watchFile = side(watch !== undefined ? watch : isMain ? WATCH_PATH : path.join(dir, '_watch.json'));
   const closuresFile = side(closures !== undefined ? closures : isMain ? CLOSURES_PATH : path.join(dir, '_closures.json'));
+  const affilFile = side(affiliations !== undefined ? affiliations : isMain ? AFFILIATIONS_PATH : path.join(dir, '_affiliations.json'));
   const base = collect(files, peopleFile, threadsFile, layersFile, leadsFile, spineFile);
   collect2(files2, linksFile, base);
   collectClosures(closuresFile, base);
+  collectAffiliations(affilFile, base);
   // 볼 거리는 후보가 아니라 작업 메모다 — 후보 목록 밖에 따로 둔다
   const watchItems = watchFile?.data && typeof watchFile.data === 'object'
     ? arr(watchFile.data.items).map((o, i) => ({ file: watchFile.name, index: i, obj: o, id: o?.id ?? null, unit: o?.unit ?? null, parts: o?.parts ?? null }))
     : [];
-  return { dir, dir2, files, files2, people: peopleFile, threads: threadsFile, layers: layersFile, leads: leadsFile, spine: spineFile, closures: closuresFile, links: linksFile, watch: watchFile, watchItems, problems, ...base };
+  return { dir, dir2, files, files2, people: peopleFile, threads: threadsFile, layers: layersFile, leads: leadsFile, spine: spineFile, closures: closuresFile, links: linksFile, affiliations: affilFile, watch: watchFile, watchItems, problems, ...base };
+}
+
+/** 소속 기록 — act는 소속 · 합류 · 이탈, text는 "인물 → 조직". 단위에 딸리지 않는다(근거 씬은 evidence) */
+function collectAffiliations(file, { candidates }) {
+  if (!file?.data || typeof file.data !== 'object') return;
+  const d = file.data;
+  arr(d.affiliations).forEach((o, i) =>
+    candidates.push({ file: file.name, unit: null, parts: null, session: (typeof o?.session === 'string' && o.session) || d.session || null, fileBy: d.by ?? null, affil: true,
+      kind: 'affil', role: 'affil', act: o?.act ?? null, parent: null, id: o?.id ?? null,
+      text: `${o?.person ?? '?'} → ${o?.org ?? '?'}${o?.role ? ` (${o.role})` : ''}`,
+      evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence, status: o?.status, by: o?.by ?? d.by ?? null, reviews: arr(o?.reviews),
+      note: o?.note ?? null, section: 'affiliations', index: i, obj: o }));
 }
 
 const arr = (x) => (Array.isArray(x) ? x : []);
@@ -465,7 +490,7 @@ function collect2(files2, linksFile, { candidates, revisits, revisitDone }) {
 
 /** 다음에 쓸 번호 — 데이터셋 전체(기각 포함)에서 가장 큰 번호 + 1. 사건 번호는 사실 · 의문마다 따로 */
 export function nextIds(ds) {
-  const max = { F: 0, Q: 0, S: 0, V: 0, L: 0, J: 0, G: 0, K: 0, Z: 0, B: 0, O: 0, H: 0, I: 0, E: 0, D: 0, U: 0, Y: 0, W: 0 };
+  const max = { F: 0, Q: 0, S: 0, V: 0, L: 0, J: 0, G: 0, K: 0, Z: 0, B: 0, O: 0, H: 0, I: 0, E: 0, D: 0, U: 0, Y: 0, T: 0, W: 0 };
   const events = new Map();
   const bump = (p, n) => {
     if (n > max[p]) max[p] = n;
@@ -477,7 +502,7 @@ export function nextIds(ds) {
     else if ((m = id.match(ID.event))) {
       const k = `${m[1]}${m[2]}`;
       events.set(k, Math.max(events.get(k) ?? 1, Number(m[3])));
-    } else if ((m = id.match(/^([LJGKZBOHIEDUY])(\d+)$/))) bump(m[1], Number(m[2]));
+    } else if ((m = id.match(/^([LJGKZBOHIEDUYT])(\d+)$/))) bump(m[1], Number(m[2]));
   }
   for (const r of ds.revisits) {
     const m = String(r.id ?? '').match(ID.revisit);

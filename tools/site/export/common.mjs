@@ -9,6 +9,7 @@
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
+ *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터), affs — 확정 소속 기록 T(공개 자리 tick), 조직 mark — site/img/orgs/{mark}.png)
  *   slips.json     설정 오류 추정 메모(기록 파일 slips)
  *
  * DB에서는 허용 칼럼만 SELECT한다(아래 STORY_COLUMNS) — 본문 칼럼은 이름조차 이 파일에 없다.
@@ -17,6 +18,8 @@ import fs from 'node:fs';
 import { kindOfKey } from '../../records/order.mjs';
 import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
 import { INDEX_FILE as ICONS_FILE, IMG_DIR } from '../portraits.mjs';
+/** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
+const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
 export const name = 'common';
 
@@ -239,11 +242,47 @@ export async function run(ctx) {
     if (!fs.existsSync(`${IMG_DIR}/${r.icon}.png`)) { warn({ where: 'portraits', msg: `${r.target} 모습 ${r.icon}을 받지 않았다 — node tools/site/portraits.mjs` }); continue; }
     (iconForms.get(r.target) ?? iconForms.set(r.target, []).get(r.target)).push([num(r.tick), r.icon]);
   }
+  // 소속 마크 — tools/blabla/marks.mjs가 모은 게임 소속(실장 니케의 지금 소속)과 받아 둔 마크, 확정 소속 기록(T — annotations/affiliations.json)
+  const marks = fs.existsSync(ORGS_FILE) ? JSON.parse(fs.readFileSync(ORGS_FILE, 'utf8')) : null;
+  if (!marks) warn({ where: 'orgs', msg: '소속 마크가 없다 — node tools/blabla/marks.mjs' });
+  const markOfOrg = new Map();
+  for (const [sec, type] of [['corporations', 'corp'], ['squads', 'squad']]) for (const m of Object.values(marks?.[sec] ?? {})) if (m.org && m.icon && !markOfOrg.has(m.org)) markOfOrg.set(m.org, m.icon);
+  const gameOrgs = new Map();
+  if (marks) {
+    const chars = all('SELECT resource_id, name, target_id FROM characters WHERE target_id IS NOT NULL ORDER BY resource_id');
+    const tname = new Map(all("SELECT id, name FROM targets WHERE type = 'person'").map((t) => [t.id, t.name]));
+    // 표준명과 같은 이름의 판을 먼저 — 다른 판(이노센트 데이즈 등)의 소속이 다르면 via(판 이름)를 붙여 뒤에
+    chars.sort((a, b) => (b.name === tname.get(b.target_id)) - (a.name === tname.get(a.target_id)) || a.resource_id - b.resource_id);
+    for (const c of chars) {
+      const [corp, squad] = marks.chars[String(c.resource_id)] ?? [];
+      if (!corp) continue;
+      const list = gameOrgs.get(c.target_id) ?? gameOrgs.set(c.target_id, []).get(c.target_id);
+      const via = list.length && c.name !== tname.get(c.target_id) ? c.name : undefined;
+      for (const [type, code, m] of [['corp', corp, marks.corporations[corp]], ['squad', squad, marks.squads[squad]]]) {
+        if (!m) { warn({ where: 'orgs', msg: `${c.name}: 모르는 게임 코드 ${code}` }); continue; }
+        if (list.some((x) => x.type === type && x.name === m.name)) continue;
+        list.push(compact({ type, org: m.org ?? undefined, name: m.name, mark: m.icon, via }));
+      }
+    }
+  }
+  const sceneUnit = new Map(scenes.map((s) => [s.id, s.unit]));
+  const affsOf = new Map();
+  for (const c of ctx.records.confirmed.filter((x) => x.kind === 'affil')) {
+    const o = c.obj ?? {};
+    const { scene } = firstRef(c.evidence);
+    const place = placeOf.get(sceneUnit.get(scene)) ?? {};
+    if (place.tick == null) warn({ where: 'orgs', msg: `${c.id}: 근거 씬 ${scene}의 공개 자리가 없다` });
+    (affsOf.get(o.person) ?? affsOf.set(o.person, []).get(o.person)).push(compact({
+      id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, confidence: c.confidence,
+    }));
+  }
+  for (const l of affsOf.values()) l.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.id.localeCompare(b.id, 'en', { numeric: true }));
   const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
     const r = pick(t, TARGET_COLUMNS);
     return compact({
       id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: names.get(r.id),
       same_as: sameAs.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
+      orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });
   });
 

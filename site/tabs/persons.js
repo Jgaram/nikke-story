@@ -360,7 +360,7 @@ export async function mount(root, ctx) {
     for (const [i, r] of rowsNow.entries()) {
       frag.append(el('div', { class: ['pm-item', r.id === who ? 'is-sel' : ''], role: 'option', id: `pm-opt-${i}`, 'aria-selected': String(r.id === who), dataset: { id: r.id, i } },
         ui.portrait(fmt.iconAt(idx.targets.get(r.id), V.T), { size: 24, class: 'pm-item-pic' }) ?? el('span', { class: 'pm-item-pic' }),
-        el('span', { class: 'pm-item-name' }, r.name),
+        el('span', { class: 'pm-item-who' }, el('span', { class: 'pm-item-name' }, r.name), ui.orgMarks(fmt.orgsAt(idx.targets.get(r.id), V.T), { size: 14, bare: true })),
         r.kind ? el('span', { class: 'pm-item-kind' }, r.kind) : null,
         el('span', { class: 'pm-item-metric' }, metricOf(r, sort))));
     }
@@ -485,7 +485,7 @@ export async function mount(root, ctx) {
     const chips = [p.kind ? ui.chip('plain', p.kind) : null, p.common ? ui.chip('plain', T_COMMON, T_COMMON) : null, p.owner ? ui.chip('plain', T_LEAD, T_LEAD) : null];
     chips[1]?.setAttribute('title', LABELS.commonHelp);
     chips[2]?.setAttribute('title', LABELS.leadHelp);
-    head.append(el('div', { class: 'pm-title' }, ui.portrait(fmt.iconAt(idx.targets.get(p.id), V.T), { size: 64, class: 'pm-title-pic' }), el('h3', {}, p.name), el('div', { class: 'chips' }, chips), el('span', { class: 'pm-title-link' }, ui.link(`person:${p.id}`, LABELS.openDict))));
+    head.append(el('div', { class: 'pm-title' }, ui.portrait(fmt.iconAt(idx.targets.get(p.id), V.T), { size: 64, class: 'pm-title-pic' }), el('h3', {}, p.name), el('div', { class: 'chips' }, chips), ui.orgMarks(fmt.orgsAt(idx.targets.get(p.id), V.T), { size: 18, class: 'pm-title-orgs' }), el('span', { class: 'pm-title-link' }, ui.link(`person:${p.id}`, LABELS.openDict))));
     const sub = [];
     if (a.visible) {
       if (p.aliases?.length) sub.push(el('span', {}, el('span', { class: 'muted' }, `${LABELS.alias} `), p.aliases.join(' · ')));

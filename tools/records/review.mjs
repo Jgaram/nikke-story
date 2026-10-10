@@ -14,7 +14,7 @@ import { findItem, kindTally } from './order.mjs';
 import { parseCite } from './read2.mjs';
 
 const SECTION_ORDER = {
-  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, edges: 14, closures: 15, merges: 16,
+  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, edges: 14, closures: 15, merges: 16, affiliations: 17,
 };
 
 /** 순서 안의 자리 — 읽기 순서, 없으면 뒤로. 파트가 안 맞으면(2회독은 파트를 다르게 묶기도 한다) 그 단위의 첫 자리 */
@@ -23,11 +23,11 @@ export function orderIndex(order, unit, parts) {
   return (findItem(order, unit, parts) ?? order.items.find((it) => it.key === unit))?.index ?? Number.MAX_SAFE_INTEGER - 1;
 }
 /** 단위에 딸리지 않은 후보 — 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 주역 · 수동 엣지 */
-const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.closures || c.links);
+const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.closures || c.links || c.affil);
 
 /** 후보를 읽는 순서로 — 단위(순서) → 1회독 기록(사실 · 의문 · 사건 · 시점) → 2회독 기록 → 파일 안 순서. 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 수동 엣지는 맨 뒤 ID 순 */
 export function sortCandidates(list, order, { byKind = false } = {}) {
-  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, edge: 13, closure: 14, merge: 15 };
+  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, edge: 13, closure: 14, merge: 15, affil: 16 };
   return [...list].sort((a, b) =>
     (byKind ? kindRank[a.kind] - kindRank[b.kind] : 0) ||
     orderIndex(order, a.unit, a.parts) - orderIndex(order, b.unit, b.parts) ||
@@ -165,7 +165,7 @@ const refText = (byId, id) => {
  */
 export function renderCandidate(c, ctx, byId, { context = 2, brief = false, layers = null } = {}) {
   const kind = KINDS[c.kind]?.label ?? c.kind;
-  const act = c.role === 'event' ? ` ${c.act ?? '?'}${c.obj?.degree ? `(${c.obj.degree})` : ''}` : c.kind === 'time' ? ` ${c.act ?? ''}` : ['link', 'thread', 'relation', 'layer', 'lead', 'mention', 'echo', 'change', 'life', 'edge', 'closure'].includes(c.kind) ? `(${c.act ?? ''})` : '';
+  const act = c.role === 'event' ? ` ${c.act ?? '?'}${c.obj?.degree ? `(${c.obj.degree})` : ''}` : c.kind === 'time' ? ` ${c.act ?? ''}` : ['link', 'thread', 'relation', 'layer', 'lead', 'mention', 'echo', 'change', 'life', 'edge', 'closure', 'affil'].includes(c.kind) ? `(${c.act ?? ''})` : '';
   const where = isSide(c) ? c.file : `${c.unit ?? '?'}${c.parts ? ` 파트 ${c.parts}` : ''}${c.read2 ? ' 2회독' : ''}`;
   if (c.threads) return renderThreadItem(c, byId, { kind, act, where, brief });
   if (c.layers) return renderLayerItem(c, byId, { kind, act, where, brief, info: layers?.byUnit.get(c.layerUnit) ?? null });
@@ -173,7 +173,7 @@ export function renderCandidate(c, ctx, byId, { context = 2, brief = false, laye
   if (c.spine) return renderSpineItem(c, { kind, act, where, brief });
   if (c.kind === 'merge') return renderMergeItem(c, byId, { kind, where, brief });
   if (c.closures) return renderClosureItem(c, byId, { kind, act, where, brief });
-  if (c.read2 || c.links) return renderRead2Item(c, ctx, byId, { kind, where, brief, context });
+  if (c.read2 || c.links || c.affil) return renderRead2Item(c, ctx, byId, { kind, where, brief, context });
   const meta = `${statusLabel(c)} · ${c.confidence ?? '?'}`;
   if (brief) {
     const target = c.obj?.answer ? ` → ${c.obj.answer}` : c.obj?.replacedBy ? ` → ${c.obj.replacedBy}` : '';
@@ -382,7 +382,7 @@ export function reviewPages(list, ds, ctx, order, { context = 2, brief = false, 
   const deferred = sortCandidates(list.filter(isDeferred), order, { byKind });
   const rest = sortCandidates(list.filter((c) => !isDeferred(c)), order, { byKind });
   const groupOf = (c) =>
-    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.links ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
+    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.links || c.affil ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
   const blocks = [];
   if (deferred.length) {
     blocks.push(`## 미뤄 둔 후보 ${deferred.length} — 먼저 본다`);
@@ -576,7 +576,7 @@ export function applyDecision(list, decision, { by = '사용자', date = today()
 export function writeDecisions(ds, perFile) {
   const written = [];
   for (const [name, { changes }] of perFile) {
-    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.closures, ds.links].find((x) => x?.name === name) ?? null;
+    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.closures, ds.links, ds.affiliations].find((x) => x?.name === name) ?? null;
     if (!file) throw new Error(`파일을 못 찾았다: ${name}`);
     const text = fs.readFileSync(file.path, 'utf8');
     if (text !== file.text) throw new Error(`${name}이(가) 읽은 뒤에 바뀌었다 — 다시 실행한다`);
@@ -593,7 +593,7 @@ const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '—');
 
 /** 후보 묶음의 집계 */
 export function tally(list) {
-  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0 };
+  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0, affil: 0 };
   for (const c of list) {
     if (STATUSES.includes(c.status)) t[c.status]++;
     if (isDeferred(c)) t.보류++;
@@ -647,6 +647,11 @@ export function progressReport(ds, ctx, order, { all = false } = {}) {
     if (!xs.length) continue;
     const t = tally(xs);
     out.push(`${label}(${ds.closures?.name}): ${t.all} — 확정 ${t.확정} · 기각 ${t.기각} · 남음 ${t.후보}${t.보류 ? `(보류 ${t.보류})` : ''}`);
+  }
+  const affils = ds.candidates.filter((c) => c.affil && c.id);
+  if (affils.length) {
+    const t = tally(affils);
+    out.push(`소속 기록(${ds.affiliations?.name}): ${t.all} — 확정 ${t.확정} · 기각 ${t.기각} · 남음 ${t.후보}${t.보류 ? `(보류 ${t.보류})` : ''}`);
   }
   const leads = ds.candidates.filter((c) => c.leads && c.id);
   if (leads.length) {

@@ -25,7 +25,18 @@
 
 ### W. 시각화 (W0–W11은 docs/history/analysis.md)
 
-(남은 항목 없음)
+**W12 소속 마크** (사용자, 2026-10-10 — 인물 옆에 기업 · 스쿼드 마크. 소속도 스토리 정보). 형식 docs/annotations.md "소속 기록", 화면 docs/views.md "소속 마크", 이미지 docs/data-sources.md 10절.
+
+- [x] **W12a 형식 · 마크 · 화면** — 인계: `annotations/affiliations.json`(게임 코드 → org 대응 `game` + 해석 기록 `affiliations` T, records.mjs check · review · set에 붙음),
+  orgs.json에 게임 스쿼드 7 더함(범위 안 0건인 12종은 `null` — 게임 이름만), `tools/blabla/marks.mjs`로 마크 57개(404 0) → `site/img/orgs/`,
+  인물 탭 목록 · 상세 머리 · 리더 패널에 마크 칩(실장 니케 = 게임 데이터, 확정 T가 있으면 그 자리까지의 기록). 테스트 `tests/affiliations.test.mjs`. → 각 문서에 반영.
+- [ ] **W12b 실장 밖 인물의 소속** — 범위 안 대사 50줄 이상 인물 51명(`SELECT id, name, lines_in_scope FROM targets WHERE type='person' AND kind='인물' AND lines_in_scope>=50 ORDER BY lines_in_scope DESC`)의 소속을
+  원문 · 기존 기록으로 정해 `annotations/affiliations.json` `affiliations`에 T 후보로 쓴다(`act: 소속`, 근거 = 소속이 처음 드러난 씬 · 줄, 이유, 확신도, role 짧게). 실장 니케(`resource_ids` 있음)는 하지 않는다.
+  찾는 법: 확정 사실 · 변화 기록(`node tools/records.mjs find <이름>` · `query.mjs chrono person:…` — D aspect `소속`은 W12c 몫이지만 처음 소속의 근거로 쓴다), `query.mjs who <이름>` · `query.mjs search "<이름> <조직>"`, 필요한 씬만 `read.mjs --num`.
+  소속이 원문에 없으면 쓰지 않는다(빈칸 = 이름만). 조직이 사전에 없으면 orgs.json에 먼저(범위 안 1줄 이상). 한 사람씩 검토해 `set T… 확정|기각 --by claude --session W12b` → `records.mjs check` → `export.mjs --only common` → 사이트 확인.
+- [ ] **W12c 작중 소속 이동** — 확정 인물 변화 D 가운데 aspect `소속` 73건(48명, `annotations/read2/`)을 소속 기록으로 옮긴다: 조직이 바뀐 것마다 T `합류` · `이탈`(records = 그 D, 근거 = D의 evidence),
+  지위만 바뀐 것은 `role`이 다른 `소속`으로. **이동을 적는 인물은 처음 소속(`소속`)부터 다 적는다** — 화면은 T가 하나라도 있으면 게임 데이터 대신 기록만 쌓기 때문(실장 니케 포함, docs/annotations.md "시점별 소속 규칙").
+  조직이 아닌 변화(신분 · 직업 · 처지만 바뀜)는 옮기지 않고 이유를 남긴다. 검토 · 확정은 W12b와 같다(`--session W12c`). 끝나면 컷오프를 옮기며 인물 몇 명의 마크가 바뀌는지 스크린샷으로 확인.
 
 ## 나중에 할 일 — N. 전체 갱신 · 신작
 

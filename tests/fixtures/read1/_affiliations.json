@@ -1,0 +1,34 @@
+{
+  "_comment": "소속 기록 예시 — 형식은 docs/annotations.md \"소속 기록\". 실제 파일은 annotations/affiliations.json. 문장 · 근거는 형식을 보이려는 예시다.",
+  "session": "예시",
+  "by": "claude",
+  "date": "2026-10-10",
+  "game": {
+    "corporations": { "ELYSION": "org:엘리시온", "ABNORMAL": null },
+    "squads": { "Counters": "org:카운터스", "Replace": null }
+  },
+  "affiliations": [
+    {
+      "id": "T1",
+      "person": "person:라피",
+      "org": "org:카운터스",
+      "act": "소속",
+      "role": "분대장",
+      "evidence": [{ "scene": "d_ex_elevator_01", "lines": [22] }],
+      "reason": "카운터스로 작전에 나선 자리 — 처음부터의 소속",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "예시" }]
+    },
+    {
+      "id": "T2",
+      "person": "person:로망티스트",
+      "org": "org:달란트",
+      "act": "이탈",
+      "evidence": [{ "scene": "sub:로망티스트_01", "lines": [113] }],
+      "reason": "형식 예시 — 이탈(실제 기록은 records에 그 인물의 변화 D를 단다)",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

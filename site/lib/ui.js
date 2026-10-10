@@ -16,6 +16,7 @@
  *   hiddenNote(text, onShowAll, { action })     "● 스포일러로 가린 N [전부 보기]" 한 줄 — 모든 탭이 같은 모양으로 쓴다(text는 fmt.hiddenLabel(n)). action = 단추 글자(기본 "전부 보기")
  *   toggle({ label, checked, onChange, id })    스위치(role=switch)
  *   segmented({ options: [{ value, label, title? }], value, onChange, label }) → { el, set(value) }
+ *   orgMarks(orgs, { size, bare })              소속 마크 칩(fmt.orgsAt 결과) — 어두운 칩에 흰 마크 + 이름(bare면 마크만, 이름은 툴팁)
  *   icon(name, attrs?)                          인라인 SVG 아이콘(search · close · sun · moon · auto · arrow · chevron) → span.icon
  */
 import * as fmt from './format.js';
@@ -165,6 +166,19 @@ const ICONS = {
 export function portrait(icon, { size = 32, class: cls = '' } = {}) {
   if (!icon) return null;
   return el('img', { class: ['portrait', cls], src: `img/people/${icon}.png`, width: size, height: size, alt: '', loading: 'lazy', decoding: 'async' });
+}
+/**
+ * 소속 마크(기업 · 스쿼드) — fmt.orgsAt 결과를 어두운 칩으로. 마크(site/img/orgs/{mark}.png)는 흰 그림이라 칩 바탕이 어둡다.
+ * bare: 마크만(이름은 툴팁) — 목록 줄처럼 좁은 곳. 다른 판(via)의 소속은 흐리게. 소속이 없으면 null
+ */
+export function orgMarks(orgs, { size = 16, bare = false, class: cls = '' } = {}) {
+  if (!orgs?.length) return null;
+  const list = bare ? orgs.filter((o) => o.mark && !o.via) : orgs;
+  if (!list.length) return null;
+  return el('span', { class: ['org-marks', bare ? 'bare' : '', cls] }, ...list.map((o) =>
+    el('span', { class: ['org-mark', `org-${o.type}`, o.mark ? '' : 'no-img', o.via ? 'alt' : ''], title: fmt.orgTip(o) },
+      o.mark ? el('img', { src: `img/orgs/${o.mark}.png`, width: size, height: size, alt: bare ? o.name : '', loading: 'lazy', decoding: 'async' }) : null,
+      bare ? null : o.name)));
 }
 /** 인라인 SVG 아이콘 — 색은 currentColor, 크기는 1em. 장식이라 aria-hidden */
 export function icon(name, attrs = {}) {

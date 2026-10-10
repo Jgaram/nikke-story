@@ -183,6 +183,7 @@
 | `H<n>` | 합류 기록(closures.json `merges`) — 한 결판에 하나 | 전체에서 하나씩 |
 | `I<n>` · `E<n>` · `D<n>` · `U<n>` | 2회독 암시 언급 · 떡밥(암시 · 재언급) · 인물 변화 · 생활상(annotations/read2/) | 종류마다 전체에서 하나씩 |
 | `Y<n>` | 수동 엣지(links.json) | 전체에서 하나씩 |
+| `T<n>` | 소속 기록(affiliations.json) — 인물 · 조직 · 자리 하나에 하나 | 전체에서 하나씩 |
 
 - **한 번 붙인 ID는 바꾸지 않는다** — 다른 기록 · 2회독 · 분석이 ID로 가리킨다. 문장을 고쳐도 ID는 그대로다.
 - 다음 번호: `node tools/records.mjs next` · `next F12`. 인계 파일(HANDOFF.md)에도 적혀 있다. 세션은 한 번에 하나만 도므로 겹치지 않는다(겹치면 검증기가 잡는다).
@@ -990,6 +991,43 @@ X1b(2026-10-08)에 Claude가 1회독 파일의 394건(2회독 바로잡기 포�
   `node tools/query.mjs chrono <단위>`의 "단서". 기계적 신호라 해석이 아니다 — 위 원칙으로 Claude가 본다(메인에서 처음 나왔다고 작중에서 그때 생긴 것은 아니다).
 - **계산**(chrono.mjs) — 좁힘은 단위 노드에 관계를 더한다. via에 `좁힘`(자기 시점 기록과 함께면 `단위 · 좁힘`)이 붙고, chrono.csv `narrow`(관계 글 · '단서 없음') · `narrow_confidence`. `piece` 항목은 그 조각 노드에 더하고 chrono-pieces.csv `narrow` · `narrow_confidence`에 뜬다. 시점 기록과 부딪치면 모순으로 뜬다.
 - **검증기** — unit(읽기 순서 · 메인 아님 · 겹침) · piece(그 단위의 살아 있는 구간 시점 기록 · 조각마다 하나) · at 꼴 · 자기 단위 기준 · basis(있는 기록 · codes에 있는 코드 · 씬 · 줄 꼴) · reason · confidence · session, codes의 code(원문에 있음) · person(사전) · first.
+
+## 소속 기록 — `annotations/affiliations.json` (W12, 2026-10-10)
+
+인물 옆 기업 · 스쿼드 마크(사이트 — docs/views.md "소속 마크")의 근거. 소속도 스토리 정보다(사용자). 두 갈래로 나눈다:
+
+- **실장 니케의 지금 소속은 기록하지 않는다** — 게임 데이터(roledata `corporation` · `squad_detail`, docs/data-sources.md 10절)에서 `tools/blabla/marks.mjs`가 계산한다.
+  파일 `game`은 게임 코드 → 사전 조직 ID 대응만 둔다: `corporations`(ELYSION …) · `squads`(roledata `squad` 코드 — Counters …). 원문 범위 안에 이름이 0건이면 `null`(사전에 못 넣는다 — 사이트는 게임 이름만 보인다).
+  게임에 새 스쿼드가 생기면 `orgs.mjs`가 ⚠로 알린다 — 사전에 있으면 그 ID, 범위 안에 나오면 orgs.json에 더하고 ID, 아니면 `null`. 테스트(`tests/affiliations.test.mjs`)가 빠진 코드를 잡는다.
+- **해석 기록(T)** — 실장 밖 인물의 소속(W12b)과 작중 소속 이동(W12c). 후보로 쓰고 Claude가 확정 · 기각한다(CLAUDE.md "해석이 필요한 기록"). 사용자가 뒤집은 것(`--by 사용자`)은 다시 바꾸지 않는다.
+
+```json
+{ "session": "W12b", "by": "claude", "date": "2026-10-10", "game": { "corporations": { … }, "squads": { … } },
+  "affiliations": [
+    { "id": "T1", "person": "person:엔더슨", "org": "org:중앙_정부", "act": "소속", "role": "부사령관", "evidence": [{ "scene": "d_main_…", "lines": [12] }],
+      "reason": "…", "confidence": "확실", "status": "후보" },
+    { "id": "T60", "person": "person:…", "org": "org:…", "act": "이탈", "records": ["D1234"], "evidence": [{ "scene": "…", "lines": [40] }], "reason": "…", "confidence": "추정", "status": "후보" }
+  ] }
+```
+
+| 칸 | 필수 | 뜻 |
+|---|---|---|
+| `id` | ✓ | `T<n>` — 한 번 붙이면 바꾸지 않는다(`node tools/records.mjs next` 끝의 "소속") |
+| `person` | ✓ | 인물 대상 ID(사전). 같은 인물 묶음은 대표 ID 하나로(이명 · 이름표가 달라도 — 인물 변화 D와 같다) |
+| `org` | ✓ | 조직 대상 ID(`org:` — annotations/dictionary/orgs.json). 없으면 사전에 먼저 더한다(docs/schema.md "비인물 사전" — 범위 안 1줄 이상) |
+| `act` | ✓ | `소속`(그 자리에서 드러난 소속 — 처음부터 그랬다) · `합류`(그 자리에서 들어감) · `이탈`(그 자리에서 나감 — 해체 · 탈퇴 · 추방 · 죽음으로 끝남) |
+| `role` | | 조직 안 자리 — 짧게(30자 안쪽): `부사령관` · `분대장` · `CEO` |
+| `evidence` | ✓ | 그 소속이 **드러난** 씬 · 줄. 첫 근거 씬의 단위가 이 기록의 공개 자리(사이트 스포일러 컷오프)다 — 처음 드러난 곳을 든다 |
+| `records` | | 근거 기록 — 인물 변화 `D`(aspect `소속`) · 사실 `F`. 이동(합류 · 이탈)은 그 변화 D를 단다(남의 변화면 경고) |
+| `reason` · `confidence` · `status` · `by` · `session` · `note` · `reviews` | | 후보 공통 칸(위 "상태 · 검토") |
+
+**시점별 소속 규칙**(화면 — `fmt.orgsAt`): 인물의 확정 T가 그 자리(여기까지 읽음)까지 하나라도 있으면 그것을 공개 순으로 쌓는다(소속 · 합류 → 더함, 이탈 → 뺌) — 이때는 게임 데이터를 쓰지 않는다.
+없으면 게임 데이터(실장 니케의 지금 소속). 그래서 **한 인물에 T를 쓰기 시작하면 그 인물의 소속을 처음부터 다 적는다** — 실장 니케도 이동을 적으면 처음 소속(`소속`)부터.
+작중 시점 순 정렬은 하지 않는다(공개 순 — 독자가 안 순서). 기업(`kind` 기업)이 앞, 나머지는 스쿼드 칸으로 보인다.
+
+**쓰는 법** — 파일을 고친 뒤 `node tools/records.mjs check`(검증: 인물 · 조직 ID, act, 근거 씬 · 줄, records, game 대응 · 같은 (인물, 조직, act, 근거 씬) 겹침 경고) ·
+`review 소속 --brief` · `set T3 T5 확정 --by claude --session W12b --note "…"`(고치기 `--text`는 없다 — 칸은 손으로 고치고 `set`으로 결정만) ·
+`node tools/site/export.mjs --only common`(`targets.json` 인물 `affs`). 예시: [tests/fixtures/read1/_affiliations.json](../tests/fixtures/read1/_affiliations.json).
 
 ## 공개 개요 — `annotations/synopsis/<키>.json` (W8, 2026-10-10)
 

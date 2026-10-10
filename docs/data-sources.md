@@ -349,3 +349,5 @@ NPC 이미지는 **128px 아이콘이면 충분**하다(사용자, 2026-10-10).
 - nikke-db에는 `images/manufacturer/icn_corp_{elysion|missilis|pilgrim|tetraline}.png` 4개뿐(앱노멀 · 스쿼드 없음) — 쓰지 않는다.
 - **한계**: 게임 데이터는 실장 니케의 **현재** 소속만 준다. 비실장 인물의 소속과 작중 소속 이동은 원문 해석 기록(사실 · 변화 D `소속`)에서 와야 한다.
 - 요청: 블라링크 페이지 1 · 번들 6 · CDN 이미지 14(404 5) · nikke-db 파일 목록 1 — 한 번에 하나, 1초 간격.
+- **받기**(W12a, 2026-10-10): `node tools/blabla/marks.mjs` — 기업 5 + 스쿼드 아이콘 52(`icn_abnormal`은 콜라보 14종이 같이 씀) = 57개 모두 200, 404 0. `site/img/orgs/`(0.64MB). 동시 4 · 받은 것 건너뜀 · 백오프 3회 · 404 기록.
+  게임 코드 → 사전 조직 대응과 기록 형식은 docs/annotations.md "소속 기록", 화면은 docs/views.md "소속 마크".

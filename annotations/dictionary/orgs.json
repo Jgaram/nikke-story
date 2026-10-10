@@ -2,7 +2,8 @@
   "_comment": [
     "비인물 사전 — 조직 · 세력 (A2 · T3-2). 형식 · 검색 규칙은 docs/schema.md \"비인물 사전\". 조회: node tools/query.mjs terms org",
     "칸은 places.json과 같다. 기업 · 정부 · 스쿼드(니케 부대) · 단체를 넣는다. 스쿼드 이름 뒤 '스쿼드'는 접두 검색에 저절로 걸리므로 따로 적지 않는다.",
-    "원문에 0건이라 넣지 않은 추측: 아브노멀 · 어브노멀 · 와일드 헌트 · 리플레이스 · 탈렌툼 · 레드 애쉬 · 방위군(1건) — docs/schema.md \"키워드 표기 주의\""
+    "원문에 0건이라 넣지 않은 추측: 아브노멀 · 어브노멀 · 와일드 헌트 · 리플레이스 · 탈렌툼 · 레드 애쉬 · 방위군(1건) — docs/schema.md \"키워드 표기 주의\"",
+    "게임 기업 · 스쿼드(소속 마크) 가운데 원문 범위 안 0건이라 넣지 않은 것 — 앱노멀 · 마스터 핸드 · 아카데미아 · 스쿨 서클 · 다즐링 펄 · 올드 테일즈 · 요르하 · NERV · WILLE · 에밀리아 진영 · 2차 강하 부대 · 자칭 특별수사대: annotations/affiliations.json game에서 null(게임 이름만 보인다)"
   ],
   "entries": [
     {
@@ -499,6 +500,13 @@
     { "id": "org:Twinkle_Twin_Star", "name": "Twinkle Twin Star", "kind": "팀", "note": "아니스가 T.T.STAR를 탈퇴한 뒤 민트 · 프리카가 데뷔한 테트라의 아이돌 그룹 — 아비스타 · 미세스 미스가 함께한다(R92 event_staranis1에서 더함)", "evidence": [{"scene": "event_staranis2_epilogue", "lines": [39]}] },
     { "id": "org:니케_인권_위원회", "name": "니케 인권 위원회", "kind": "단체", "note": "방주 초기 니케의 인권을 외치던 시민 단체 — 프리시아가 팀장, 프리티가 홍보 대사였다(R87 side:pretty_star에서 더함)", "evidence": [{"scene": "side:pretty_star_00", "lines": [49]}] },
     { "id": "org:블레이즈_아웃", "name": "블레이즈 아웃", "kind": "스쿼드", "note": "방주의 전염병 대응 스쿼드 — 바이러스가 퍼질 곳을 거주지째 불태운다(R70 fl:reborn_evil에서 더함)", "evidence": [{"scene": "fl:reborn_evil_10", "lines": [43]}] },
-    { "id": "org:베일드_오더", "name": "베일드 오더", "kind": "스쿼드", "note": "계약의 증인 · 감시자로 존재하는 스쿼드 — 인류 연합군과 V.T.C.가 중앙 정부로 통합할 때 계약을 감시하며, 어기는 쪽을 무력 진압할 수 있다. 백학이 속한다(R88 fl:good_world에서 더함)", "evidence": [{"scene": "fl:good_world_12", "lines": [26]}] }
+    { "id": "org:베일드_오더", "name": "베일드 오더", "kind": "스쿼드", "note": "계약의 증인 · 감시자로 존재하는 스쿼드 — 인류 연합군과 V.T.C.가 중앙 정부로 통합할 때 계약을 감시하며, 어기는 쪽을 무력 진압할 수 있다. 백학이 속한다(R88 fl:good_world에서 더함)", "evidence": [{"scene": "fl:good_world_12", "lines": [26]}] },
+    { "id": "org:리얼_카인드니스", "name": "리얼 카인드니스", "kind": "스쿼드", "note": "길티 · 신 · 퀀시의 스쿼드 — 게임 스쿼드 RealKindness(소속 마크 1단계에서 더함, annotations/affiliations.json)", "evidence": [{ "scene": "d_main_46_af_07", "lines": [244] }] },
+    { "id": "org:7차_강하_부대", "name": "7차 강하 부대", "kind": "부대", "note": "이브의 부대(콜라보) — 게임 스쿼드 CE006_01(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "ep:d_nikke_ce006_01_01", "lines": [36] }] },
+    { "id": "org:5차_강하_부대", "name": "5차 강하 부대", "kind": "부대", "note": "릴리의 부대(콜라보) — 게임 스쿼드 CE006_03(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "ep:d_nikke_ce006_01_01", "lines": [38] }] },
+    { "id": "org:B.S.T.", "name": "B.S.T.", "kind": "팀", "note": "에이다 · 질 · 클레어의 팀(콜라보) — 게임 스쿼드 CE007(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:reborn_evil_20", "lines": [75] }] },
+    { "id": "org:찻집_리코리코", "name": "찻집 리코리코", "kind": "가게", "names": [{ "name": "리코리코", "how": "약칭" }], "note": "치사토 · 타키나 · 쿠루미의 찻집(콜라보) — 게임 스쿼드 CE008(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:lie_cause_recoil_03", "lines": [37] }] },
+    { "id": "org:마음의_괴도단", "name": "마음의 괴도단", "kind": "단체", "note": "콜라보 인물들의 단체 — 게임 스쿼드 CE009_01(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [99] }] },
+    { "id": "org:특별과외활동부", "name": "특별과외활동부", "kind": "단체", "note": "아이기스의 단체(콜라보) — 게임 스쿼드 CE009_03(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [123] }] }
   ]
 }

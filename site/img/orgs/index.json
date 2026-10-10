@@ -1,0 +1,1167 @@
+{
+ "_comment": "기업 · 스쿼드 마크 — tools/blabla/marks.mjs가 만든다(손으로 고치지 않는다). chars: resource_id → [기업 코드, 스쿼드 코드]",
+ "corporations": {
+  "ELYSION": {
+   "name": "엘리시온",
+   "org": "org:엘리시온",
+   "icon": "icn_corp_01"
+  },
+  "MISSILIS": {
+   "name": "미실리스",
+   "org": "org:미실리스",
+   "icon": "icn_corp_02"
+  },
+  "TETRA": {
+   "name": "테트라",
+   "org": "org:테트라",
+   "icon": "icn_corp_03"
+  },
+  "PILGRIM": {
+   "name": "필그림",
+   "org": "org:필그림",
+   "icon": "icn_corp_04"
+  },
+  "ABNORMAL": {
+   "name": "앱노멀",
+   "org": null,
+   "icon": "icn_corp_05"
+  }
+ },
+ "squads": {
+  "777": {
+   "name": "-",
+   "org": "org:777",
+   "icon": "icn_777"
+  },
+  "Absolute": {
+   "name": "앱솔루트",
+   "org": "org:앱솔루트",
+   "icon": "icn_absolut"
+  },
+  "ACPU": {
+   "name": "A.C.P.U.",
+   "org": "org:A.C.P.U.",
+   "icon": "icn_acpu"
+  },
+  "Aegis": {
+   "name": "이지스",
+   "org": "org:이지스",
+   "icon": "icn_aegis"
+  },
+  "Akademeia": {
+   "name": "아카데미아",
+   "org": null,
+   "icon": "icn_academia"
+  },
+  "ArkRanger": {
+   "name": "여신전대 아크레인저",
+   "org": "org:아크레인저",
+   "icon": "icn_arkranger"
+  },
+  "BestSeller": {
+   "name": "베스트 셀러",
+   "org": "org:베스트셀러",
+   "icon": "icn_bestseller"
+  },
+  "BotanicGarden": {
+   "name": "보타닉 가든",
+   "org": "org:보타닉_가든",
+   "icon": "icn_botanicgarden"
+  },
+  "CafeSweety": {
+   "name": "카페 스위티",
+   "org": "org:카페_스위티",
+   "icon": "icn_cafesweety"
+  },
+  "ce_01": {
+   "name": "데블 헌터",
+   "org": "org:데블_헌터",
+   "icon": "icn_abnormal"
+  },
+  "ce002_01": {
+   "name": "요르하",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "ce002_02": {
+   "name": "기계생명체",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE003": {
+   "name": "에밀리아 진영",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE004": {
+   "name": "NERV",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE005": {
+   "name": "WILLE",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE006_01": {
+   "name": "7차 강하 부대",
+   "org": "org:7차_강하_부대",
+   "icon": "icn_abnormal"
+  },
+  "CE006_02": {
+   "name": "2차 강하 부대",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE006_03": {
+   "name": "5차 강하 부대",
+   "org": "org:5차_강하_부대",
+   "icon": "icn_abnormal"
+  },
+  "CE007": {
+   "name": "B.S.T.",
+   "org": "org:B.S.T.",
+   "icon": "icn_abnormal"
+  },
+  "CE008": {
+   "name": "찻집 리코리코",
+   "org": "org:찻집_리코리코",
+   "icon": "icn_abnormal"
+  },
+  "CE009_01": {
+   "name": "마음의 괴도단",
+   "org": "org:마음의_괴도단",
+   "icon": "icn_abnormal"
+  },
+  "CE009_02": {
+   "name": "자칭 특별수사대",
+   "org": null,
+   "icon": "icn_abnormal"
+  },
+  "CE009_03": {
+   "name": "특별과외활동부",
+   "org": "org:특별과외활동부",
+   "icon": "icn_abnormal"
+  },
+  "CookingOil": {
+   "name": "쿠킹오일",
+   "org": "org:쿠킹오일",
+   "icon": "icn_cookingoil"
+  },
+  "Counters": {
+   "name": "카운터스",
+   "org": "org:카운터스",
+   "icon": "icn_counters"
+  },
+  "DazzlingPearl": {
+   "name": "다즐링 펄",
+   "org": null,
+   "icon": "icn_dazzlingpearl"
+  },
+  "ElectricShock": {
+   "name": "일렉트릭 쇼크",
+   "org": "org:일렉트릭_쇼크",
+   "icon": "icn_electricshock"
+  },
+  "Exotic": {
+   "name": "이그조틱",
+   "org": "org:이그조틱",
+   "icon": "icn_exotic"
+  },
+  "External": {
+   "name": "익스터너",
+   "org": "org:익스터너",
+   "icon": "icn_external"
+  },
+  "Goddess": {
+   "name": "갓데스",
+   "org": "org:갓데스",
+   "icon": "icn_goddess"
+  },
+  "HappyZoo": {
+   "name": "해피 주",
+   "org": "org:해피_주",
+   "icon": "icn_happyzoo"
+  },
+  "HeavyGram": {
+   "name": "헤비그램",
+   "org": "org:헤비그램",
+   "icon": "icn_heavygram"
+  },
+  "Heretic": {
+   "name": "헬레틱",
+   "org": null,
+   "icon": "icn_heretic"
+  },
+  "Incubator": {
+   "name": "인큐베이터",
+   "org": "org:인큐베이터",
+   "icon": "icn_incubator"
+  },
+  "InfinityRail": {
+   "name": "인피니티 레일",
+   "org": "org:인피니티_레일",
+   "icon": "icn_infinityrail"
+  },
+  "Inherit": {
+   "name": "인헤르트",
+   "org": "org:인헤르트",
+   "icon": "icn_inherit"
+  },
+  "LifeTonic": {
+   "name": "라이프 토닉",
+   "org": "org:라이프_토닉",
+   "icon": "icn_lifetonic"
+  },
+  "LittleCannon": {
+   "name": "리틀 캐논",
+   "org": "org:리틀_캐논",
+   "icon": "icn_littlecannon"
+  },
+  "MaidForYou": {
+   "name": "메이드 포 유",
+   "org": "org:메이드_포_유",
+   "icon": "icn_maidforyou"
+  },
+  "MasterHand": {
+   "name": "마스터 핸드",
+   "org": null,
+   "icon": "icn_masterhand"
+  },
+  "Matis": {
+   "name": "메티스",
+   "org": "org:메티스",
+   "icon": "icn_matis"
+  },
+  "MightyTools": {
+   "name": "마이티 툴즈",
+   "org": "org:마이티_툴즈",
+   "icon": "icn_mightytools"
+  },
+  "MMR": {
+   "name": "M.M.R.",
+   "org": "org:M.M.R.",
+   "icon": "icn_mmr"
+  },
+  "OldTales": {
+   "name": "올드 테일즈",
+   "org": null,
+   "icon": "icn_oldtales"
+  },
+  "Overseer": {
+   "name": "오버시어",
+   "org": "org:오버시어",
+   "icon": "icn_overseer"
+  },
+  "OverTheHorizon": {
+   "name": "오버 더 호라이즌",
+   "org": "org:오버_더_호라이즌",
+   "icon": "icn_overthehorizon"
+  },
+  "Pioneer": {
+   "name": "파이오니아",
+   "org": "org:파이오니아",
+   "icon": "icn_pioneer"
+  },
+  "PrimaDonna": {
+   "name": "프리마돈나",
+   "org": "org:프리마돈나",
+   "icon": "icn_primadonna"
+  },
+  "Protocol": {
+   "name": "프로토콜",
+   "org": "org:프로토콜",
+   "icon": "icn_protocol"
+  },
+  "RealKindness": {
+   "name": "리얼 카인드니스",
+   "org": "org:리얼_카인드니스",
+   "icon": "icn_realkindness"
+  },
+  "RecallRelease": {
+   "name": "리콜&릴리즈",
+   "org": "org:리콜&릴리즈",
+   "icon": "icn_recallrelease"
+  },
+  "Replace": {
+   "name": "리플레이스",
+   "org": null,
+   "icon": "icn_replace"
+  },
+  "Rewind": {
+   "name": "리와인드",
+   "org": "org:리와인드",
+   "icon": "icn_rewind"
+  },
+  "SchoolCircle": {
+   "name": "스쿨 서클",
+   "org": null,
+   "icon": "icn_schoolcircle"
+  },
+  "Scouting": {
+   "name": "스카우팅",
+   "org": "org:스카우팅",
+   "icon": "icn_scouting"
+  },
+  "Seraphim": {
+   "name": "세라핌",
+   "org": "org:세라핌",
+   "icon": "icn_seraphim"
+  },
+  "SiegePerilous": {
+   "name": "시지 패러리스",
+   "org": "org:시지_패러리스",
+   "icon": "icn_siegeperilous"
+  },
+  "T.T.STAR": {
+   "name": "T.T. STAR",
+   "org": "org:Twinkle_Twin_Star",
+   "icon": "icn_ttstar"
+  },
+  "Talentum": {
+   "name": "달란트",
+   "org": "org:달란트",
+   "icon": "icn_talentum"
+  },
+  "Triangle": {
+   "name": "트라이앵글",
+   "org": "org:트라이앵글",
+   "icon": "icn_triangle"
+  },
+  "UnderworldQueen": {
+   "name": "언더월드 퀸",
+   "org": "org:언더월드_퀸",
+   "icon": "icn_underworldqueen"
+  },
+  "Unlimited": {
+   "name": "언리미티드",
+   "org": "org:언리미티드",
+   "icon": "icn_unlimited"
+  },
+  "VeiledOrder": {
+   "name": "베일드 오더",
+   "org": "org:베일드_오더",
+   "icon": "icn_veiledorder"
+  },
+  "Wardress": {
+   "name": "워드리스",
+   "org": "org:워드리스",
+   "icon": "icn_wardress"
+  },
+  "Weissritter": {
+   "name": "바이스리터",
+   "org": "org:바이스리터",
+   "icon": "icn_weissritter"
+  }
+ },
+ "chars": {
+  "10": [
+   "ELYSION",
+   "Counters"
+  ],
+  "11": [
+   "ELYSION",
+   "Counters"
+  ],
+  "12": [
+   "TETRA",
+   "Counters"
+  ],
+  "14": [
+   "ELYSION",
+   "Counters"
+  ],
+  "15": [
+   "TETRA",
+   "Counters"
+  ],
+  "16": [
+   "ELYSION",
+   "Counters"
+  ],
+  "17": [
+   "TETRA",
+   "Counters"
+  ],
+  "18": [
+   "MISSILIS",
+   "Counters"
+  ],
+  "20": [
+   "ELYSION",
+   "Scouting"
+  ],
+  "22": [
+   "ELYSION",
+   "Scouting"
+  ],
+  "23": [
+   "ELYSION",
+   "Scouting"
+  ],
+  "30": [
+   "ELYSION",
+   "ACPU"
+  ],
+  "32": [
+   "ELYSION",
+   "ACPU"
+  ],
+  "33": [
+   "ELYSION",
+   "ACPU"
+  ],
+  "40": [
+   "ELYSION",
+   "SiegePerilous"
+  ],
+  "41": [
+   "ELYSION",
+   "SiegePerilous"
+  ],
+  "43": [
+   "ELYSION",
+   "SiegePerilous"
+  ],
+  "60": [
+   "TETRA",
+   "LittleCannon"
+  ],
+  "61": [
+   "TETRA",
+   "LittleCannon"
+  ],
+  "62": [
+   "TETRA",
+   "LittleCannon"
+  ],
+  "70": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "71": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "72": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "73": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "74": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "75": [
+   "ELYSION",
+   "InfinityRail"
+  ],
+  "80": [
+   "MISSILIS",
+   "MightyTools"
+  ],
+  "82": [
+   "MISSILIS",
+   "MightyTools"
+  ],
+  "90": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "91": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "92": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "93": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "94": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "95": [
+   "ELYSION",
+   "Absolute"
+  ],
+  "100": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "101": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "102": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "103": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "104": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "105": [
+   "MISSILIS",
+   "Matis"
+  ],
+  "110": [
+   "MISSILIS",
+   "Exotic"
+  ],
+  "111": [
+   "MISSILIS",
+   "Exotic"
+  ],
+  "112": [
+   "TETRA",
+   "Exotic"
+  ],
+  "113": [
+   "ELYSION",
+   "Exotic"
+  ],
+  "120": [
+   "MISSILIS",
+   "RecallRelease"
+  ],
+  "121": [
+   "MISSILIS",
+   "RecallRelease"
+  ],
+  "130": [
+   "TETRA",
+   "Seraphim"
+  ],
+  "131": [
+   "MISSILIS",
+   "Seraphim"
+  ],
+  "132": [
+   "TETRA",
+   "Seraphim"
+  ],
+  "140": [
+   "TETRA",
+   "CafeSweety"
+  ],
+  "141": [
+   "TETRA",
+   "CafeSweety"
+  ],
+  "142": [
+   "TETRA",
+   "CafeSweety"
+  ],
+  "143": [
+   "TETRA",
+   "CafeSweety"
+  ],
+  "150": [
+   "MISSILIS",
+   "MasterHand"
+  ],
+  "160": [
+   "MISSILIS",
+   "Wardress"
+  ],
+  "161": [
+   "MISSILIS",
+   "Wardress"
+  ],
+  "162": [
+   "MISSILIS",
+   "Wardress"
+  ],
+  "170": [
+   "ELYSION",
+   "Triangle"
+  ],
+  "171": [
+   "TETRA",
+   "Triangle"
+  ],
+  "172": [
+   "MISSILIS",
+   "Triangle"
+  ],
+  "180": [
+   "ELYSION",
+   "External"
+  ],
+  "181": [
+   "ELYSION",
+   "External"
+  ],
+  "182": [
+   "ELYSION",
+   "External"
+  ],
+  "183": [
+   "ELYSION",
+   "External"
+  ],
+  "190": [
+   "TETRA",
+   "Unlimited"
+  ],
+  "191": [
+   "TETRA",
+   "Unlimited"
+  ],
+  "192": [
+   "MISSILIS",
+   "Unlimited"
+  ],
+  "193": [
+   "TETRA",
+   "Unlimited"
+  ],
+  "194": [
+   "TETRA",
+   "Unlimited"
+  ],
+  "195": [
+   "TETRA",
+   "Unlimited"
+  ],
+  "200": [
+   "TETRA",
+   "Talentum"
+  ],
+  "201": [
+   "TETRA",
+   "Talentum"
+  ],
+  "202": [
+   "TETRA",
+   "Talentum"
+  ],
+  "203": [
+   "TETRA",
+   "Talentum"
+  ],
+  "210": [
+   "TETRA",
+   "Protocol"
+  ],
+  "212": [
+   "TETRA",
+   "Protocol"
+  ],
+  "220": [
+   "PILGRIM",
+   "Pioneer"
+  ],
+  "221": [
+   "PILGRIM",
+   "Pioneer"
+  ],
+  "222": [
+   "PILGRIM",
+   "Pioneer"
+  ],
+  "223": [
+   "PILGRIM",
+   "Pioneer"
+  ],
+  "224": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "225": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "226": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "230": [
+   "PILGRIM",
+   "Inherit"
+  ],
+  "231": [
+   "PILGRIM",
+   "Inherit"
+  ],
+  "232": [
+   "PILGRIM",
+   "Inherit"
+  ],
+  "233": [
+   "PILGRIM",
+   "Inherit"
+  ],
+  "234": [
+   "PILGRIM",
+   "Inherit"
+  ],
+  "240": [
+   "TETRA",
+   "LifeTonic"
+  ],
+  "241": [
+   "MISSILIS",
+   "LifeTonic"
+  ],
+  "242": [
+   "TETRA",
+   "LifeTonic"
+  ],
+  "260": [
+   "PILGRIM",
+   "Heretic"
+  ],
+  "261": [
+   "PILGRIM",
+   "Heretic"
+  ],
+  "262": [
+   "PILGRIM",
+   "Heretic"
+  ],
+  "270": [
+   "TETRA",
+   "777"
+  ],
+  "271": [
+   "TETRA",
+   "777"
+  ],
+  "272": [
+   "TETRA",
+   "777"
+  ],
+  "280": [
+   "TETRA",
+   "UnderworldQueen"
+  ],
+  "281": [
+   "TETRA",
+   "UnderworldQueen"
+  ],
+  "282": [
+   "TETRA",
+   "UnderworldQueen"
+  ],
+  "283": [
+   "TETRA",
+   "UnderworldQueen"
+  ],
+  "284": [
+   "TETRA",
+   "UnderworldQueen"
+  ],
+  "290": [
+   "MISSILIS",
+   "MMR"
+  ],
+  "291": [
+   "MISSILIS",
+   "MMR"
+  ],
+  "300": [
+   "ELYSION",
+   "Replace"
+  ],
+  "301": [
+   "ELYSION",
+   "Replace"
+  ],
+  "302": [
+   "MISSILIS",
+   "Replace"
+  ],
+  "303": [
+   "MISSILIS",
+   "Replace"
+  ],
+  "304": [
+   "TETRA",
+   "Replace"
+  ],
+  "305": [
+   "TETRA",
+   "Replace"
+  ],
+  "306": [
+   "ELYSION",
+   "Replace"
+  ],
+  "307": [
+   "MISSILIS",
+   "Replace"
+  ],
+  "308": [
+   "TETRA",
+   "Replace"
+  ],
+  "310": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "311": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "312": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "313": [
+   "ELYSION",
+   "MaidForYou"
+  ],
+  "314": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "315": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "316": [
+   "TETRA",
+   "MaidForYou"
+  ],
+  "321": [
+   "ELYSION",
+   "Akademeia"
+  ],
+  "322": [
+   "ELYSION",
+   "Akademeia"
+  ],
+  "330": [
+   "PILGRIM",
+   "Weissritter"
+  ],
+  "331": [
+   "PILGRIM",
+   "Weissritter"
+  ],
+  "350": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "351": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "352": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "353": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "354": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "355": [
+   "ELYSION",
+   "Aegis"
+  ],
+  "361": [
+   "MISSILIS",
+   "HeavyGram"
+  ],
+  "380": [
+   "TETRA",
+   "HappyZoo"
+  ],
+  "381": [
+   "TETRA",
+   "HappyZoo"
+  ],
+  "382": [
+   "TETRA",
+   "HappyZoo"
+  ],
+  "390": [
+   "ELYSION",
+   "SchoolCircle"
+  ],
+  "391": [
+   "MISSILIS",
+   "SchoolCircle"
+  ],
+  "392": [
+   "TETRA",
+   "SchoolCircle"
+  ],
+  "400": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "401": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "402": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "403": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "404": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "405": [
+   "MISSILIS",
+   "RealKindness"
+  ],
+  "411": [
+   "MISSILIS",
+   "BotanicGarden"
+  ],
+  "412": [
+   "MISSILIS",
+   "BotanicGarden"
+  ],
+  "430": [
+   "TETRA",
+   "PrimaDonna"
+  ],
+  "431": [
+   "TETRA",
+   "PrimaDonna"
+  ],
+  "432": [
+   "TETRA",
+   "PrimaDonna"
+  ],
+  "441": [
+   "ELYSION",
+   "Overseer"
+  ],
+  "450": [
+   "MISSILIS",
+   "DazzlingPearl"
+  ],
+  "451": [
+   "MISSILIS",
+   "DazzlingPearl"
+  ],
+  "470": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "471": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "500": [
+   "MISSILIS",
+   "ElectricShock"
+  ],
+  "501": [
+   "MISSILIS",
+   "ElectricShock"
+  ],
+  "502": [
+   "MISSILIS",
+   "ElectricShock"
+  ],
+  "511": [
+   "PILGRIM",
+   "OldTales"
+  ],
+  "513": [
+   "PILGRIM",
+   "OldTales"
+  ],
+  "514": [
+   "PILGRIM",
+   "OldTales"
+  ],
+  "515": [
+   "PILGRIM",
+   "OldTales"
+  ],
+  "520": [
+   "TETRA",
+   "CookingOil"
+  ],
+  "521": [
+   "TETRA",
+   "CookingOil"
+  ],
+  "532": [
+   "ELYSION",
+   "OverTheHorizon"
+  ],
+  "550": [
+   "TETRA",
+   "Rewind"
+  ],
+  "551": [
+   "TETRA",
+   "Rewind"
+  ],
+  "570": [
+   "TETRA",
+   "ArkRanger"
+  ],
+  "580": [
+   "ELYSION",
+   "BestSeller"
+  ],
+  "581": [
+   "ELYSION",
+   "BestSeller"
+  ],
+  "582": [
+   "ELYSION",
+   "BestSeller"
+  ],
+  "583": [
+   "ELYSION",
+   "BestSeller"
+  ],
+  "590": [
+   "MISSILIS",
+   "Incubator"
+  ],
+  "600": [
+   "TETRA",
+   "T.T.STAR"
+  ],
+  "601": [
+   "TETRA",
+   "T.T.STAR"
+  ],
+  "620": [
+   "MISSILIS",
+   "VeiledOrder"
+  ],
+  "800": [
+   "ABNORMAL",
+   "ce_01"
+  ],
+  "801": [
+   "ABNORMAL",
+   "ce_01"
+  ],
+  "802": [
+   "ABNORMAL",
+   "ce_01"
+  ],
+  "810": [
+   "ABNORMAL",
+   "ce002_01"
+  ],
+  "811": [
+   "ABNORMAL",
+   "ce002_01"
+  ],
+  "812": [
+   "ABNORMAL",
+   "ce002_02"
+  ],
+  "820": [
+   "ABNORMAL",
+   "CE003"
+  ],
+  "821": [
+   "ABNORMAL",
+   "CE003"
+  ],
+  "822": [
+   "ABNORMAL",
+   "CE003"
+  ],
+  "830": [
+   "ABNORMAL",
+   "CE004"
+  ],
+  "831": [
+   "ABNORMAL",
+   "CE004"
+  ],
+  "832": [
+   "ABNORMAL",
+   "CE004"
+  ],
+  "833": [
+   "ABNORMAL",
+   "CE004"
+  ],
+  "834": [
+   "ABNORMAL",
+   "CE004"
+  ],
+  "835": [
+   "ABNORMAL",
+   "CE005"
+  ],
+  "836": [
+   "ABNORMAL",
+   "CE005"
+  ],
+  "840": [
+   "ABNORMAL",
+   "CE007"
+  ],
+  "841": [
+   "ABNORMAL",
+   "CE007"
+  ],
+  "842": [
+   "ABNORMAL",
+   "CE007"
+  ],
+  "850": [
+   "ABNORMAL",
+   "CE006_01"
+  ],
+  "851": [
+   "ABNORMAL",
+   "CE006_02"
+  ],
+  "852": [
+   "ABNORMAL",
+   "CE006_03"
+  ],
+  "860": [
+   "ABNORMAL",
+   "CE008"
+  ],
+  "861": [
+   "ABNORMAL",
+   "CE008"
+  ],
+  "862": [
+   "ABNORMAL",
+   "CE008"
+  ],
+  "870": [
+   "ABNORMAL",
+   "CE009_01"
+  ],
+  "871": [
+   "ABNORMAL",
+   "CE009_02"
+  ],
+  "872": [
+   "ABNORMAL",
+   "CE009_03"
+  ]
+ }
+}

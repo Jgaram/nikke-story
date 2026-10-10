@@ -9,7 +9,7 @@ import path from 'node:path';
 import { oneLine } from '../lib/render.mjs';
 import { computeLayers, layerKind } from './layers.mjs';
 import {
-  ASPECTS, CHANGE_ACTS, CLOSURE_TYPES, CONFIDENCES, DECISIONS, DEGREES, ECHO_ACTS, EDGE_TYPES, FACT_ACTS, FIELDS, FROM_GRADES, GRADES, ID, LAYERS, LIFE_TOPICS, QUESTION_ACTS,
+  AFFIL_ACTS, ASPECTS, CHANGE_ACTS, CLOSURE_TYPES, CONFIDENCES, DECISIONS, DEGREES, ECHO_ACTS, EDGE_TYPES, FACT_ACTS, FIELDS, FROM_GRADES, GRADES, ID, LAYERS, LIFE_TOPICS, QUESTION_ACTS,
   READ1_DIR, READ2_SECTIONS, RELATION_TYPES, STATUSES, THREAD_WEIGHTS, TIME_KINDS, WATCH_KINDS, expandLines, fileNameFor, isRecord, spineUnits, statusFromReviews,
 } from './model.mjs';
 import { READ2_PREFIXES, findItem, kindOfKey, loadOrder, loadReadLayers, partsOverlap } from './order.mjs';
@@ -34,7 +34,7 @@ export const LIMITS = { summary: 1500, sceneLine: 150, text: 200 };
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
 const SECTION_LABEL = {
   facts: '사실', questions: '의문', events: '사건', times: '시점', candidates: '정체 연결', threads: '줄기', relations: '줄기 관계', units: '층 판정', leads: '주역', spine: '척추', closures: '마무리', merges: '합류',
-  mentions: '암시 언급', echoes: '떡밥', changes: '인물 변화', life: '생활상', edges: '수동 엣지',
+  mentions: '암시 언급', echoes: '떡밥', changes: '인물 변화', life: '생활상', edges: '수동 엣지', affiliations: '소속',
 };
 /** 2회독 세션 모양 — P1 · M03 */
 const READ2_SESSION = new RegExp(`^(?:${READ2_PREFIXES.join('|')})\\d+[a-z]?$`);
@@ -271,6 +271,28 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
   }
 
   /** 수동 엣지 (T4-3) — 끝점은 씬 ID나 읽기 단위 키, 같은 단계끼리 */
+  /** 소속 기록(T) — 인물 · 조직은 사전 ID, act · 근거 씬 필수, records는 인물 변화 D · 사실 F */
+  function checkAffil(c, where) {
+    const o = c.obj;
+    if (!ID.affil.test(c.id)) err(where, c.id, 'ID 모양이 틀렸다 — T<번호> (소속)');
+    unknown(o, FIELDS.affil, (m) => warn(where, c.id, m));
+    if (!isStr(o.person) || !o.person.startsWith('person:') || !ctx.targetIds.has(o.person)) err(where, c.id, `person ${JSON.stringify(o.person ?? '')} — 사전의 인물 ID(person:…)`);
+    if (!isStr(o.org) || !o.org.startsWith('org:') || !ctx.targetIds.has(o.org)) err(where, c.id, `org ${JSON.stringify(o.org ?? '')} — 사전의 조직 ID(org:…, annotations/dictionary/orgs.json에 먼저 더한다)`);
+    if (!AFFIL_ACTS.includes(o.act)) err(where, c.id, `act "${o.act ?? ''}" — ${AFFIL_ACTS.join(' · ')} 중 하나`);
+    if (o.role !== undefined && (!isStr(o.role) || o.role.length > 30)) err(where, c.id, 'role은 조직 안 자리를 짧게(30자 안쪽) — 없으면 칸을 지운다');
+    if (o.records !== undefined) {
+      if (!Array.isArray(o.records) || !o.records.length) err(where, c.id, 'records는 근거 기록 ID 배열(D · F)');
+      else for (const id of o.records) {
+        const r = isStr(id) ? byId.get(id) : null;
+        if (!r || !(r.kind === 'change' || (r.kind === 'fact' && r.role !== 'event'))) err(where, c.id, `records: 없는 기록 ${JSON.stringify(id)} — 인물 변화 D<n> · 사실 F<n>`);
+        else if (r.status === '기각' && c.status !== '기각') err(where, c.id, `records: 기각된 ${id}를 가리킨다`);
+        else if (r.kind === 'change' && isStr(o.person) && r.obj?.person !== o.person) warn(where, c.id, `records: ${id}는 ${r.obj?.person}의 변화다(이 기록은 ${o.person})`);
+      }
+    }
+    checkEvidence(o.evidence, where, c.id, null, null);
+    checkCommon(c, where);
+  }
+
   function checkEdge(c, where) {
     const o = c.obj;
     if (!ID.edge.test(c.id)) err(where, c.id, 'ID 모양이 틀렸다 — Y<번호> (수동 엣지)');
@@ -535,6 +557,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       checkRead2(c, where, u);
     } else if (c.section === 'edges') {
       checkEdge(c, where);
+    } else if (c.section === 'affiliations') {
+      checkAffil(c, where);
     } else if (c.section === 'candidates') {
       idOk(ID.link, 'L<번호> (정체 연결)');
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
@@ -850,6 +874,33 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       for (const e of ds.candidates.filter((x) => x.section === 'edges' && x.links && x.status !== '기각')) {
         const k = `${e.obj?.from}\t${e.obj?.to}\t${e.obj?.type}`;
         if (keys.has(k)) warn(where, e.id, `같은 (from, to, type) 수동 엣지가 또 있다 — ${keys.get(k)}`);
+        else keys.set(k, e.id);
+      }
+    }
+  }
+
+  // ── 소속 기록 파일 — game 대응(게임 코드 → org ID 또는 null)과 같은 (인물, 조직, act) 겹침 ──
+  if (ds.affiliations?.data) {
+    const d = ds.affiliations.data;
+    const where = ds.affiliations.name;
+    if (typeof d !== 'object' || Array.isArray(d)) err(where, null, '파일 전체가 객체({ … })여야 한다');
+    else {
+      unknown(d, FIELDS.affiliationsFile, (m) => warn(where, null, m));
+      if (d.affiliations !== undefined && !Array.isArray(d.affiliations)) err(where, null, 'affiliations는 배열이어야 한다');
+      const g = d.game ?? {};
+      for (const sec of ['corporations', 'squads']) {
+        const m = g[sec];
+        if (m === undefined) continue;
+        if (!m || typeof m !== 'object' || Array.isArray(m)) { err(where, null, `game.${sec}는 { 게임 코드: org ID | null } 객체`); continue; }
+        for (const [code, id] of Object.entries(m)) {
+          if (id === null) continue;
+          if (!isStr(id) || !id.startsWith('org:') || !ctx.targetIds.has(id)) err(where, null, `game.${sec}.${code}: ${JSON.stringify(id)} — 사전의 조직 ID(org:…)나 null(원문에 이름이 없음)`);
+        }
+      }
+      const keys = new Map();
+      for (const e of ds.candidates.filter((x) => x.affil && x.status !== '기각')) {
+        const k = `${e.obj?.person}\t${e.obj?.org}\t${e.obj?.act}\t${JSON.stringify(e.obj?.evidence?.[0]?.scene ?? null)}`;
+        if (keys.has(k)) warn(where, e.id, `같은 (인물, 조직, act, 근거 씬) 소속 기록이 또 있다 — ${keys.get(k)}`);
         else keys.set(k, e.id);
       }
     }

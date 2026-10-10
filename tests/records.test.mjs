@@ -93,7 +93,7 @@ test('예시 기록이 오류 · 경고 없이 통과한다', (t) => {
   assert.ok(ds.candidates.some((c) => c.evidence?.some((e) => e.scene.startsWith('d_'))), '블라링크 씬 예시');
   const n = nextIds(ds);
   assert.deepEqual([n.F, n.Q, n.S, n.V, n.L, n.J, n.G, n.K, n.eventOf('F2'), n.eventOf('F5')], ['F8', 'Q5', 'S3', 'V3', 'L2', 'J3', 'G2', 'K4', 'F2-3', 'F5-2']);
-  assert.deepEqual([n.I, n.E, n.D, n.U, n.Y], ['I2', 'E4', 'D4', 'U2', 'Y3'], '2회독 · 수동 엣지 번호');
+  assert.deepEqual([n.I, n.E, n.D, n.U, n.Y, n.T], ['I2', 'E4', 'D4', 'U2', 'Y3', 'T3'], '2회독 · 수동 엣지 · 소속 번호');
   t.diagnostic(`예시: 파일 ${ds.files.length} · 후보 ${ds.candidates.length}`);
 });
 
@@ -178,7 +178,7 @@ test('리뷰 화면 — 근거 줄에 ▶, 앞뒤 문맥, 미룬 후보가 먼�
   const pages = reviewPages(ds.candidates.filter((c) => c.status === '후보'), ds, ctx, order, {});
   assert.equal(pages.length, 1);
   assert.ok(pages[0].indexOf('### L1') < pages[0].indexOf('### F5'), '보류된 L1이 먼저');
-  const brief = reviewPages(ds.candidates, ds, ctx, order, { brief: true })[0].split('\n').filter((l) => /^[FQSLJGKZBOHIEDUY]\d/.test(l));
+  const brief = reviewPages(ds.candidates, ds, ctx, order, { brief: true })[0].split('\n').filter((l) => /^[FQSLJGKZBOHIEDUYT]\d/.test(l));
   assert.equal(brief.length, ds.candidates.length, '간단히 보기는 후보마다 한 줄');
   const sel = select(ds, ['F3..F5', '의문']);
   assert.deepEqual(sel.picked.map((c) => c.id), [], '범위는 사실만인데 의문으로 거르면 비어야 한다');
