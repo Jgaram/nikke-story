@@ -10,7 +10,7 @@
  * 스토리 패널(팬의 질문 순서 — 무슨 이야기 · 누가 나오나 · 언제 읽나):
  *   머리 = [호감도는 그 니케 초상] 제목 + 회색 한 줄(등급 이름 — 띠 색 글자 · 종류 · 출시 날짜). 순번 · 분량은 없다(날짜만 — 감상 순서 목록이 날짜를 리더로 보냈다).
  *   → 줄거리(synopsis.json — 한 줄 소개 · 줄거리, 머리에 'AI 정리' 표지) → 나오는 인물(persons-detail.json — 그 스토리에서 말한 인물 초상 줄, 많이 말한 순, 지휘관은 뺀다)
- *   → 분류(order.json — 그 시점 등급 · 언제 읽나 'CH.44 전까지' · 선행(왜 선행인가는 앞 편 · 떡밥 → 회수처럼 이야기 말만 — 판정 말 '분류에서 짚음'은 뺀다) ·
+ *   → 분류(order.json — 그 시점 등급 · 언제 읽나 'CH.44 전까지'(fmt.guideOf — 감상 순서 줄과 같은 기한) · 선행(이름만 — 왜 선행인가는 스포일러가 될 수 있어 뺀다) ·
  *     작중 순(과거 · 앞선 · 나중 이야기일 때만) · 이유(blurbs.json 팬용 문장 — gate를 봤으면 later까지, 없거나 낡았으면 fmt.reasonText 판정 문장 —
  *     뒤 필수 스토리로 오른 스토리의 판정 문장은 그 스토리를 안 봤으면 스포일러 접이))
  *   → 접힌 칸: 이어진 스토리(links-scenes.json — 펼 때 처음 받는다, 상대 스토리마다 한 줄 + 왜 이어졌나 한 줄) · 떡밥
@@ -149,12 +149,14 @@ const tabAction = (tab, p, opts) => ui.el('span', { class: 'panel-action' }, tab
 
 let orderMap = null;
 let preMap = {};
+let guideCtx = null; // fmt.guideOf 재료(척추 · 선행 거꾸로) — 분류 칸 '언제 읽나'가 감상 순서 줄의 기한과 같게
 async function loadOrder() {
   if (orderMap) return orderMap;
   try {
     const o = await data.load('order');
     orderMap = new Map(o.units.map((j) => [j.key, j]));
     preMap = o.pre ?? {};
+    guideCtx = { spine: new Set(o.spine.map((s) => s.key)), pre: preMap, rev: fmt.preRev(preMap), judged: orderMap };
   } catch {
     orderMap = new Map(); // 못 받아도 리더는 쓴다
   }
@@ -421,11 +423,10 @@ function classPanel(u, idx, hidden) {
   const j = orderMap?.get(u.key);
   const action = state.get().tab === 'order' ? null : tabAction('order', {}, { sel: `unit:${u.key}` }); // 감상 순서 탭 안에서는 자기 탭 링크를 달지 않는다
   const p = preMap[u.key];
-  // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름 + 왜(이야기 말만 — '분류에서 짚음'은 판정 말이라 뺀다, 감상 순서 카드와 같다)
-  const why = (w) => (w === 'judged' ? null : ui.el('span', { class: 'muted' }, ` (${fmt.PRE_WHY[w] ?? w})`));
+  // 선행 스토리 — 칸마다 한 줄(필수 · 권장 · 선택), 스토리 이름만. 왜 선행인가(떡밥 → 회수 · 다시 언급 등)는 스포일러가 될 수 있어 싣지 않는다(사용자, 2026-10-10)
   const preRow = p ? row(LABELS.pre, fmt.PRE_LEVEL.filter((l) => p[l]?.length).map((l) => ui.el('div', {},
     ui.el('b', { title: fmt.help('pre', l) }, `${fmt.PRE_LABEL[l]} `),
-    p[l].map(([k, w], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k)), why(w)])))) : null;
+    p[l].map(([k], i) => [i ? ' · ' : null, ui.link(`unit:${k}`, fmt.unitTitle(k))])))) : null;
   const back = preForOf(u.key).filter(([x]) => state.seen(x));
   const preForRow = back.length ? row(LABELS.preFor, back.map(([x, l], i) => [i ? ' · ' : null, ui.link(`unit:${x}`, fmt.unitTitle(x)), ui.el('span', { class: 'muted' }, ` ${fmt.PRE_LABEL[l]}`)])) : null;
   const chrono = chronoRow(u);
@@ -447,6 +448,7 @@ function classPanel(u, idx, hidden) {
   const full = blurb ? fmt.blurbText(blurb, state.seen) : fmt.reasonText(j.reason ?? '');
   const short = blurb ? full : clipText(full, 90);
   const before = j.from && idx.units.has(j.from) && u.order < idx.units.get(j.from).order;
+  const due = guideCtx ? fmt.guideOf(u.key, { ...guideCtx, units: idx.units }).due : null; // 감상 순서 줄의 'CH.27 전까지'와 같은 기한
   // 판정 문장은 최종 등급의 것이라, 뒤 필수 스토리로 오른 스토리면 그 스토리를 안 본 사람에게 뒤 내용이 보인다 — 스포일러 접이로
   const lateReason = !blurb && full && !hidden && before && !state.seen(j.from);
   // 여기까지 읽음 뒤 스토리는 이유도 아래 내용 칸과 함께 스포일러 접이 하나에 넣는다
@@ -468,7 +470,7 @@ function classPanel(u, idx, hidden) {
   ].filter(Boolean);
   return ui.panel(fmt.TERM.judgment, [kv([
     row(t == null ? LABELS.grade : fmt.TERM.gradeAt, ui.el('span', {}, gradeRow)),
-    before ? row(LABELS.whenRead, ui.link(`unit:${j.from}`, fmt.preOf(spineName(j.from)))) : null,
+    due ? row(LABELS.whenRead, ui.link(`unit:${due.key}`, fmt.preOf(spineName(due.key)))) : null,
     preRow,
     preForRow,
     chrono,

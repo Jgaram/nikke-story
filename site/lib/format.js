@@ -7,7 +7,8 @@
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · majorThread(무게는 '주요 떡밥' 하나) · THREAD_WEIGHT_HELP
- *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가 · 'CH.30 전까지'
+ *   PRE_LEVEL · PRE_HELP · PRE_WHY · preOf  선행 스토리 칸(키 필수 · 권장 · 선택 — 화면 말은 PRE_LABEL) · 뜻 · 왜 선행인가(화면에는 안 싣는다 — 스포일러) · 'CH.30 전까지'
+ *   preRev · guideOf(키, ctx)        감상 안내 — 먼저 볼 것(최소 선행) · 기한(감상 순서 줄 · 리더 '언제 읽나')
  *   DRIFT · LINK_TYPE · ACT · CHANGE_ACT · TIME_KIND · TERM    작중 시점 · 출시순 비교 · 관계선 · 떡밥 단계 · 변화 · 시간 단서 · 자주 쓰는 말
  *   *_HELP · help(group, key)       라벨마다 한 줄 정의(툴팁용). group: kind · grade · state · record · confidence · weight · chrono · drift · link · target
  *   use(idx)                        색인을 묶는다 — 아래 함수가 스토리 · 출시 시점 · 대상 이름을 찾을 수 있게(app.js가 부팅 때 한 번)
@@ -214,6 +215,44 @@ export const PRE_HELP = {
 };
 export const PRE_WHY = { sequel: '앞 편', judged: '분류에서 짚음', setup_payoff: '떡밥 → 회수', reversal: '뒤집힘', callback: '다시 언급' };
 export const preOf = (spineLabel) => `${spineLabel} 전까지`; // 'CH.30 전까지' — 그 필수 스토리를 보기 전에 보면 좋다(W13b — 전 'CH.30 선행')
+
+/** 선행 거꾸로 — Map(선행 키 → [[그것을 선행으로 쓰는 키, 칸, 왜]]) */
+export function preRev(pre) {
+  const rev = new Map();
+  for (const [x, levels] of Object.entries(pre ?? {})) {
+    for (const [level, list] of Object.entries(levels)) for (const [a, why] of list) {
+      if (!rev.has(a)) rev.set(a, []);
+      rev.get(a).push([x, level, why]);
+    }
+  }
+  return rev;
+}
+
+/**
+ * 감상 안내(감상 순서 줄 · 리더 '언제 읽나' — 사용자, 2026-10-10: 처음 보는 사람의 가이드). 판정 자리(from) · 선행(order.json pre)과 그 거꾸로에서 기계적으로 낸다.
+ *   ctx: { units: Map(키 → { order }), spine: Set(척추 키), pre, rev: preRev(pre), judged: Map(키 → { grade, from }) }
+ *   must  먼저 볼 것(최소 선행) [키] — 판정 자리가 앞인 척추(그 빈틈을 채운다 — 길로틴 → CH.12) + 필수 선행(앞 편 등), 읽는 자리 순.
+ *         권장 · 선택 선행은 '보면 좋다'라 넣지 않는다(리더 선행 칸에 있다)
+ *   due   기한 { key, level } — 뒤에서 이 스토리를 필수 · 권장 선행으로 쓰는 것 가운데: 가장 앞의 척추(판정 자리가 뒤면 그것도 — 준필수 = 필수 · 추천 = 권장),
+ *         없으면 가장 앞의 메인 밖 스토리. 선택 선행(다시 언급 등)은 기한이 아니다
+ */
+export function guideOf(key, { units, spine, pre, rev, judged }) {
+  const pos = units.get(key)?.order ?? Infinity;
+  const at = (k) => units.get(k)?.order;
+  const after = (k) => units.has(k) && at(k) > pos;
+  const byOrder = (a, b) => at(a[0]) - at(b[0]);
+  const j = judged.get(key);
+  const cites = (rev.get(key) ?? []).filter(([x, l]) => l !== '선택' && after(x)).sort(byOrder);
+  const spineCites = cites.filter(([x]) => spine.has(x));
+  if (j?.from && spine.has(j.from) && after(j.from)) spineCites.push([j.from, j.grade === '필수' ? '필수' : '권장']);
+  spineCites.sort(byOrder);
+  const pick = spineCites[0] ?? cites[0];
+  const due = pick ? { key: pick[0], level: pick[1] } : null;
+  const fill = j?.from && j.from !== key && spine.has(j.from) && units.has(j.from) && !after(j.from) ? [j.from] : [];
+  const req = (pre?.[key]?.필수 ?? []).map(([a]) => a).filter((a) => units.has(a) && !fill.includes(a));
+  const must = [...fill, ...req].sort((a, b) => at(a) - at(b));
+  return { must, due };
+}
 
 // ── 탭 ──
 export const TAB = {
