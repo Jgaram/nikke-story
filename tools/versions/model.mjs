@@ -279,7 +279,11 @@ export function checkFile(f, C) {
   if (!(kind in SUBJECTS)) return { errors: [`모르는 대상 — ${f?.subject} (${Object.keys(SUBJECTS).map((k) => `${k}:…`).join(' · ')})`], warnings };
   const S = specOf(f.subject, C);
   if (S.error) return { errors: [S.error], warnings };
-  for (const k of Object.keys(f)) if (!['subject', 'versions'].includes(k)) errors.push(`모르는 칸 — ${k}`);
+  for (const k of Object.keys(f)) if (!['subject', 'versions', 'no_side'].includes(k)) errors.push(`모르는 칸 — ${k}`);
+  // no_side(W15f) — 곁 판 후보 경고를 검토해 '필요 없음'으로 정한 체크 칸 스토리 { <단위>: 이유 }
+  const noSide = f.no_side ?? {};
+  if (typeof noSide !== 'object' || Array.isArray(noSide)) errors.push('no_side는 { 단위: 이유 }');
+  else for (const [k, why] of Object.entries(noSide)) if (!C.units.has(k) || typeof why !== 'string' || !why.trim()) errors.push(`no_side ${k}: 단위 · 이유가 있어야 한다`);
   const vs = arr(f.versions);
   if (!vs.length) return { errors: [...errors, '판이 없다'], warnings };
   if (vs.length > S.limits.versions) warnings.push(`판이 ${vs.length}개 — 큰 고비에서만 나눈다(${S.limits.versions}개 안쪽)`);
@@ -335,6 +339,18 @@ export function checkFile(f, C) {
       if (!STATUSES.includes(r?.decision)) E(`reviews[${j}]: decision이 이상하다`);
       if (!DECIDERS.includes(r?.by)) E(`reviews[${j}]: by는 ${DECIDERS.join(' · ')}`);
     }
+  }
+  // 곁 판 후보(W15f) — 첫 본판 앞 체크 칸 스토리에 이 항목의 사실 기록이 있는데 판이 없다: 그 칸을 본 독자는 이름만 보고 설명은 빈다.
+  // 찾기는 자동, 쓰기는 손으로 — 곁 판(new --at <단위> --side)을 쓰거나, 필요 없으면 no_side에 이유를 적는다
+  if (S.dict && C.checkable && live[0] && noSide && typeof noSide === 'object') {
+    const firstOrder = C.units.get(live[0].at)?.order ?? Infinity;
+    const has = new Set(vs.filter((v) => v?.status !== '기각').map((v) => v?.at));
+    const cand = new Map();
+    for (const p of dictRecords(f.subject, C)) {
+      if (p.o >= firstOrder || !C.checkable.has(p.u) || has.has(p.u) || noSide[p.u] || p.rec?.kind !== 'F') continue;
+      (cand.get(p.u) ?? cand.set(p.u, []).get(p.u)).push(p.r);
+    }
+    for (const [u, rs] of cand) warnings.push(`곁 판 후보: ${u}(${C.units.get(u)?.title ?? ''} — 체크 칸)에 사실 기록 ${rs.join(' · ')} — 곁 판을 쓰거나(new --at ${u} --side) 필요 없으면 no_side에 이유`);
   }
   return { errors, warnings };
 }

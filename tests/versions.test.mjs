@@ -372,3 +372,15 @@ test('곁 판 검사 — 체크 칸 스토리에만 · until은 뒤 본판 · �
   const list = publishable(file(good), C2).list;
   assert.deepEqual(list.map((x) => [x.at, x.side ?? false, x.until ?? null]), [['char:222', false, null], ['event_newyearnewsword', true, 'ch46'], ['ch46', false, null]]);
 });
+
+test('곁 판 후보 경고(W15f) — 첫 본판 앞 체크 칸에 사실 기록이 있고 판이 없으면 경고, no_side에 이유를 적으면 끈다', () => {
+  // char:222를 체크 칸으로(준필수), 거기에 세븐스 드워프 사실 기록
+  const C3 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'char:222' ? { ...u, grade: '필수' } : u)), threads: THREADS, flow: FLOW, targets: DT,
+    records: [...DREC, { id: 'F9', kind: 'F', unit: 'char:222', about: ['item:세븐스_드워프'], text: '…' }] });
+  const v = (at, text, extra = {}) => ({ at, text, src: srcHash(DS, at, C3), session: 'W15f', by: 'claude', date: '2026-10-11', status: '후보', reviews: [], ...extra });
+  const base = [v('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.')];
+  assert.ok(checkFile({ subject: DS, versions: base }, C3).warnings.some((m) => /곁 판 후보: char:222/.test(m)));
+  assert.ok(!checkFile({ subject: DS, no_side: { 'char:222': '본판이 담는다' }, versions: base }, C3).warnings.some((m) => /곁 판 후보/.test(m)));
+  assert.ok(!checkFile({ subject: DS, versions: [v('char:222', '홍련의 검과 짝을 이루는 무기.', { side: true }), ...base] }, C3).warnings.some((m) => /곁 판 후보/.test(m)));
+  assert.ok(checkFile({ subject: DS, no_side: { 'char:222': '' }, versions: base }, C3).errors.some((m) => /no_side char:222/.test(m)));
+});

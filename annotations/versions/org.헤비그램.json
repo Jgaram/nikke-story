@@ -1,5 +1,8 @@
 {
   "subject": "org:헤비그램",
+  "no_side": {
+    "event_lastkingdom1": "LAST KINGDOM은 킬로의 스쿼드라는 것뿐 — 본판이 더 담는다(W15f 검토)"
+  },
   "versions": [
     {
       "at": "char:361",
