@@ -315,7 +315,7 @@ async function main() {
       title: j.name_localkey,
       orderIndex: 0,
       isHidden: false,
-      hasText: 0,       // 애장품에는 대사 데이터가 없다 (docs/coverage.md)
+      hasText: 0,       // 애장품에는 대사 데이터가 없다 (docs/history/coverage.md)
       lineCount: 0,
       description: j.description_localkey ?? null,
       nameCode: j.name_code ?? null,

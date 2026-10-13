@@ -201,7 +201,7 @@ ko / en / ja / zh 모두 응답이 존재한다.
 애장품은 `/equip/favorite_rare_map.json`(SSR 21종) + `/equip/{lang}/favorite_{id}.json`으로
 이름·설명·스탯만 받을 수 있다. **대사 데이터는 존재하지 않는다.**
 
-카테고리별 커버리지 전체는 [coverage.md](coverage.md) 참고.
+카테고리별 커버리지 전체는 [history/coverage.md](history/coverage.md) 참고.
 
 ## 6. 유의 사항
 
@@ -259,7 +259,7 @@ ko / en / ja / zh 모두 응답이 존재한다.
 
 카테고리: `main_story`(49파일, 우리와 같음) · `event_stories`(77) · `side_stories`(5) · `sub_quests`(44) · `lost_relics`(55) ·
 `event_lost_relics`(9) · `outpost_stories`(27, 돌발과 거의 같음) · `character_episodes`(163, 우리가 30명 많음).
-목록 · 앱 코드 어디에도 서브퀘스트 · 유실물의 챕터 정보는 없다(TODO.md 결정 #9).
+목록 · 앱 코드 어디에도 서브퀘스트 · 유실물의 챕터 정보는 없다(docs/decisions.md 결정 #9).
 
 ### 원문 형식과 정규화
 

@@ -29,7 +29,7 @@
    메인·이벤트 범위의 선행 관계는 원문에서 우리가 새로 찾는다(T3-5).
 
 또한 `접근성` 칼럼이 수집 가능 여부를 그대로 예측한다
-(`아카이브O` = 수집 가능, `아카이브X` = 불가). 자세한 대조는 [../docs/coverage.md](../docs/coverage.md).
+(`아카이브O` = 수집 가능, `아카이브X` = 불가). 자세한 대조는 [../docs/history/coverage.md](../docs/history/coverage.md).
 
 시트에서 빠진 카테고리는 **돌발**(전초기지 건물별 대화 301씬)과 **서브퀘스트**다.
 돌발은 데이터가 이미 있고, 서브퀘스트는 소재 조사가 필요하다.
@@ -42,7 +42,7 @@
 
 ## scope.json — 분석 범위
 
-TODO.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d_ex_elevator_01` 빼고, 시트 참고 노드)는 `stories.in_scope = 0`이 되고
+docs/decisions.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d_ex_elevator_01` 빼고, 시트 참고 노드)는 `stories.in_scope = 0`이 되고
 통계 · 자동 기록 · 후보 · 이름표 분류 검사에서 빠진다. 읽기(`read.mjs`)는 그대로 된다. 자세한 것은 [../docs/schema.md](../docs/schema.md) "분석 범위".
 
 ## dictionary/ — 인물 사전 · 이름표 분류 (A1) · 비인물 사전 (A2)

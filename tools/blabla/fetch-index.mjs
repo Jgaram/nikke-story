@@ -42,7 +42,7 @@ export async function fetchIndexes(collector, { quiet = false } = {}) {
 
 /**
  * 애장품은 등급 매핑에서 ID를 얻어 개별 파일을 받는다.
- * 대사는 없지만(docs/coverage.md) 이름·설명·소유 캐릭터(name_code)가 필요하다.
+ * 대사는 없지만(docs/history/coverage.md) 이름·설명·소유 캐릭터(name_code)가 필요하다.
  */
 export async function fetchFavorites(collector, { quiet = false } = {}) {
   const { json: rareMap } = await collector.fetchOne('/equip/favorite_rare_map.json');

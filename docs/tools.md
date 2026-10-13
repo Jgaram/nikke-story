@@ -54,7 +54,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
 메인 챕터 · 사이드 스토리 · 이벤트 · 호감도 스토리의 공개 순서는 **공식 공지(nikke-kr.com)** 에서 뽑는다. 게임 데이터에는 출시일이 없다.
 금서고 단위(사이드 스토리 `side:` · 블라링크에 없는 이벤트 `fl:`)는 금서고 목록 제목으로 공지 이름에 잇는다.
 서브퀘스트 · 유실물은 공지에 개방 기록이 없어 순서표에 없다. 대신 지역(= 챕터)을 `annotations/subquest-regions.json` ·
-`annotations/relic-regions.json`에 근거 · 확신도와 함께 두고, 그 챕터 바로 뒤에 읽는다(TODO.md 결정 #9).
+`annotations/relic-regions.json`에 근거 · 확신도와 함께 두고, 그 챕터 바로 뒤에 읽는다(docs/decisions.md 결정 #9).
 읽기 순서(docs/history/reading.md R · M)는 이 순서표 + 두 지역 파일로 짠 출시순 한 줄이다.
 **자리의 원본은 지역 파일이다**(S1, 2026-10-10): 1회독 항목에는 몰아 읽은 자리(ch06 뒤 서브퀘스트 · 유실물 묶음)와 옛 지역이 남아 있지만,
 항목은 "어느 세션이 무엇을 읽었나" 기록이라 고쳐 쓰지 않는다. `loadOrder()`(1회독 순서 — 뷰 · 사이트 · 검증기 전부)가 `placeByRegion`으로

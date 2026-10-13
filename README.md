@@ -11,7 +11,7 @@
   확정 · 기각하며, 사용자는 그 기준과 결과를 보고 조율한다(CLAUDE.md "해석이 필요한 기록"). 외부 연관성 시트는 판정을 다 끝낸 뒤
   비교용으로만 쓴다([docs/reference-table.md](docs/reference-table.md)).
 - 분석 범위는 메인 · 이벤트 · 사이드 · 서브퀘스트 · 유실물 · 호감도 스토리다. 돌발은 엘리베이터 첫 스토리만 넣는다
-  (수집 · 정규화는 전부 해 둔다 — [TODO.md](TODO.md) 결정 #5).
+  (수집 · 정규화는 전부 해 둔다 — [docs/decisions.md](docs/decisions.md) 결정 #5).
 - 코드 · 문서 · 분석 기록은 공개한다. 원문(블라링크 · 금서고 · 공지 원본)과 외부 참고 표는 **private 서브모듈**
   `data/raw/`(`Jgaram/nikke-story-raw`)에만 있고, 원문 대사는 재배포하지 않는다(CLAUDE.md "저작물 취급").
   원본 레포 권한이 없으면 코드 · 기록 · 사이트는 볼 수 있지만 DB 빌드 · 원문 읽기는 안 된다.
@@ -20,16 +20,16 @@
 
 | 단계 | 상태 |
 |---|---|
-| 수집 · 정규화 | ✅ 블라링크 씬 2,134 + 호감도 965편 · 금서고 136단위 · 공지 → 출시 순서. [docs/schema.md](docs/schema.md) · [docs/coverage.md](docs/coverage.md) |
+| 수집 · 정규화 | ✅ 블라링크 씬 2,134 + 호감도 965편 · 금서고 136단위 · 공지 → 출시 순서. [docs/schema.md](docs/schema.md) · [docs/history/coverage.md](docs/history/coverage.md) |
 | 인물 · 사전 | ✅ 대상 386(인물 216 · 니케 159 · 랩쳐 11) · 이름표 859종 전부 분류 · 비인물 사전 234(조직 · 개념 · 장소 · 물건 · 사건) · 소속 기록 |
 | 1회독 | ✅ 단위마다 사실 2,906 · 의문 372 · 사건 399 · 시점 394 — [docs/annotations.md](docs/annotations.md) |
 | 2회독 | ✅ 암시 언급 688 · 떡밥 1,630 · 인물 변화 2,234 · 생활상 449, 떡밥 줄기 60 |
 | 분석 (X) | ✅ 공개 자리 · 진실 공개 단계 · 작중 연대기 · 중요도 등급(척추 · 필수 …) · 스토리 간 연결 · 인물별 집계 · 결말 — [docs/importance.md](docs/importance.md) · [docs/views.md](docs/views.md) |
 | 공개 개요 | ✅ 481단위의 한 줄 소개 · 줄거리 · 씬 한 줄 (`annotations/synopsis/`) |
-| 사이트 (W) | ✅ 여섯 탭 · 스포일러 컷오프(여기까지 읽음) · 씬 리더 패널 · 인물 아이콘 · 소속 마크 · 팬 사이트답게 다듬기(W13) |
-| 진행 중 | W14 팬용 문장(분류 이유 · 연대기 추정 이유) — [SESSIONS.md](SESSIONS.md) |
+| 사이트 (W) | ✅ 여섯 탭 · 스포일러 컷오프(여기까지 읽음) · 씬 리더 패널 · 인물 아이콘 · 소속 마크 · 팬 사이트답게 다듬기(W13) · 팬용 문장(W14) · 스포일러 새는 곳 막기(W15) |
+| 진행 중 | 없음 — 남은 일은 [SESSIONS.md](SESSIONS.md) |
 
-남은 일은 [SESSIONS.md](SESSIONS.md), 남은 로드맵 · 유효한 결정은 [TODO.md](TODO.md), 운용(지시 세션 · "다음 일" · 관리자)은 [docs/operations.md](docs/operations.md),
+남은 일은 [SESSIONS.md](SESSIONS.md), 유효한 결정은 [docs/decisions.md](docs/decisions.md), 운용(지시 세션 · "다음 일" · 관리자)은 [docs/operations.md](docs/operations.md),
 지난 세션 기록은 [docs/history/](docs/history/). 새 세션에서 "다음 일"이라고 하면 SESSIONS.md의 첫 미완료 항목을 하고, 다른 일을 시키면 그 일을 한다.
 
 ## 받기
