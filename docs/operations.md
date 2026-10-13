@@ -17,7 +17,7 @@ CLAUDE.md에서 가리키는 자세한 운용 문서다. 무엇을 할지는 [SE
 2. **어디부터 보나**
    | 시킨 일 | 먼저 볼 곳 |
    |---|---|
-   | 사이트 화면 · 동작 | docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)"과 그 탭의 절 → `site/tabs/<탭>.js` · `tools/site/export/<탭>.mjs` |
+   | 사이트 화면 · 동작 | docs/views.md "파일 배치 · 모듈 규약 · 실행법"의 **필요한 소제목만**(`grep -n '^##' docs/views.md` — 탭 모듈 규약 · 데이터 파일 · 탭별 · 컷오프 …)과 그 탭의 절 → `site/tabs/<탭>.js` · `tools/site/export/<탭>.mjs` |
    | 화면에 뜬 기록 내용(사실 · 의문 · 줄기 · 변화 …)이 틀림 | `node tools/records.mjs find <낱말>` · `review <단위>` → docs/annotations.md 그 기록의 절 |
    | 중요도 등급 · 선행 | docs/importance.md(판정 카드)만. 외부 참고 표는 열지 않는다(CLAUDE.md) |
    | 줄거리(공개 개요) | docs/annotations.md "공개 개요" · `node tools/synopsis.mjs` |
@@ -59,7 +59,9 @@ SESSIONS.md "할 일"의 첫 `[ ]` · `[~]` 하나를 한다. 상태: `[ ]` 할 
 - **바뀐 날**(기준 문서를 고침 — docs/importance.md 등) — `## YYYY-MM-DD <문서> <고친 곳>` + 1–3줄.
 - 여러 세션이 같이 써도 끝에 덧붙이기만 하므로 충돌이 적다. 충돌이 나면 양쪽을 다 남긴다.
 - 옛 파일(reading · analysis · todo · operations · open-questions · site-cleanup · coverage)은 그대로 둔다. `reading.md`의 항목 줄은 기록일 뿐이고, 도구가 읽는 순서는 annotations/reading-order.md다.
-- 쌓이지 않게 막는 것: `tests/docs-budget.test.mjs` — SESSIONS.md에 끝난 항목(`[x]` · `[-]`)이 남거나 SESSIONS.md · CLAUDE.md · `.claude/rules/`가 상한을 넘으면 실패한다.
+- 쌓이지 않게 막는 것: `tests/docs-budget.test.mjs` — SESSIONS.md에 끝난 항목(`[x]` · `[-]`)이 남거나 SESSIONS.md · CLAUDE.md · `.claude/rules/`가 상한을 넘거나,
+  주제 문서(docs/*.md)의 소제목 하나에 딸린 본문이 1만 자를 넘으면 실패한다. 절이 크면 파일을 쪼개지 말고 소제목(###)으로 나누고
+  `node tools/check-doc-headings.mjs <문서>`로 본문이 그대로인지 본다(파일을 쪼개면 `문서 "절 이름"` 참조가 깨진다).
   상한에 걸리면 상한을 올리지 말고 끝난 것을 기록으로, 자세한 것을 주제 문서로 옮긴다.
 
 ## 동시에 여러 세션

@@ -57,3 +57,28 @@ test('.claude/rules/ — 경로(paths)가 있는 규칙만 둔다', () => {
     assert.ok(head && /^paths:/m.test(head[1]), `.claude/rules/${f}에 paths 머리말이 없다`);
   }
 });
+
+/** 주제 문서(docs/*.md, 기록 docs/history/ 빼고)의 소제목 하나에 딸린 본문 상한(글자) — 세션은 절 단위로 읽는다(docs/operations.md "컨텍스트 예산") */
+const SECTION_LIMIT = 10000;
+
+/** 소제목(#–######)마다 다음 소제목까지의 본문 글자 수. 코드 블록 안의 # 줄은 소제목이 아니다 */
+function sectionSizes(text) {
+  const out = [];
+  let cur = { head: '(머리)', line: 1, n: 0 };
+  let fence = false;
+  text.split('\n').forEach((l, i) => {
+    if (/^```/.test(l)) fence = !fence;
+    if (!fence && /^#{1,6} /.test(l)) { out.push(cur); cur = { head: l, line: i + 1, n: 0 }; }
+    else cur.n += chars(l) + 1;
+  });
+  out.push(cur);
+  return out;
+}
+
+test(`주제 문서 — 소제목 하나의 본문이 ${SECTION_LIMIT}자 이하`, () => {
+  const docs = fs.readdirSync(path.join(ROOT, 'docs')).filter((f) => f.endsWith('.md'));
+  const over = docs.flatMap((f) => sectionSizes(read(`docs/${f}`))
+    .filter((s) => s.n > SECTION_LIMIT)
+    .map((s) => `docs/${f}:${s.line} ${s.head.slice(0, 40)} — ${s.n}자`));
+  assert.deepEqual(over, [], '절이 너무 크다 — 내용은 그대로 두고 소제목(###)으로 나눈 뒤 `node tools/check-doc-headings.mjs <문서>`로 본문이 그대로인지 확인한다. 경위는 월별 기록으로.');
+});
