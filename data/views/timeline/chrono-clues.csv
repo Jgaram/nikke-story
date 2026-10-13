@@ -316,7 +316,7 @@ order,unit,kind,class,place,narrow,codes,intro,changes
 350,event_footstepwalkrun1,이벤트,판별,ch34–ch35 ~ ch35,,rapi_red(뒤 ch34) 49줄,ch23 프리티(16) · ch23 1차_지상_탈환전(4) · ch19 요한(1) · ch17 샛별(3) · ch12 마나(1) · ch09 NIMPH(7),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 레드_후드: ch26; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45; 프리티: ch39
 351,event_outofuniform,이벤트,범위,ch15 ~,뒤 ch13,,ch15 루피(1) · ch13 디젤(29) · ch13 브리드(16) · ch12 아인(209) · ch02 전초기지(5) · ch01 네온(2),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 352,char:16,호감도,범위,ch34–ch35 ~,단서 없음,rapi_red(뒤 ch34) 264줄,ch16 A.C.P.U.(1) · ch02 전초기지(2) · ch01 네온(27) · ch00 라피(331) · ch00 지휘관(179) · ch00 아니스(54),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
-353,event_wisdomspring,이벤트,범위,ch34–ch35 ~,단서 없음,,ch32 M.M.R._심층부(31) · ch16 총사령관(1) · ch14 D(4) · ch12 마나(391) · ch06 헬레틱(1) · ch04 에닉(2),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 슈엔: ch24 ch25; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
+353,event_wisdomspring,이벤트,범위,ch34–ch35 ~,단서 없음,,ch16 총사령관(1) · ch14 D(4) · ch12 마나(391) · ch06 헬레틱(1) · ch04 에닉(2) · ch04 필그림(1),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 슈엔: ch24 ch25; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 354,char:290,호감도,범위,ch34–ch35 ~,단서 없음,,ch13 디젤(11) · ch13 브리드(9) · ch12 마나(204) · ch09 율하(21) · ch09 프리바티(7) · ch02 슈엔(6),라피: ch09 ch24 ch26 ch30 ch34 ch44; 슈엔: ch24 ch25; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 355,event_romanticvalentine,이벤트,범위,ch09–ch10 ~,단서 없음,,ch27 일레그(23) · ch13 슈가(1) · ch12 카페_스위티(1) · ch09 프리바티(57) · ch09 퍼펙트(2) · ch07 엑시아(2),엑시아: ch09; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 356,char:354,호감도,범위,ch09–ch10 ~,단서 없음,,ch09 프리바티(5) · ch02 전초기지(4) · ch00 지휘관(133) · ch00 지상(3) · ch00 랩쳐(1) · ch00 방주(1),지휘관: ch01 ch07 ch35 ch37 ch40 ch45
@@ -372,7 +372,7 @@ order,unit,kind,class,place,narrow,codes,intro,changes
 412,fl:go_ninja_thief,이벤트,범위,ch26–ch27 ~,단서 없음,,ch16 A.C.P.U.(4) · ch16 스카우팅(1) · ch06 헬레틱(1) · ch02 전초기지(2) · ch00 지휘관(179) · ch00 라피(33),라피: ch09 ch24 ch26 ch30 ch34 ch44; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 413,char:23,호감도,범위,ch26–ch27 ~,단서 없음,,ch04 크레디트(1) · ch02 3대_기업(1) · ch00 지휘관(113) · ch00 방주(8),지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 415,relic:거꾸로적힌기록,유실물,불명,,단서 없음,,ch34 바하무트(25) · ch34 지즈(2) · ch31 베히모스(2),베히모스: ch32 ch33 ch34 ch40
-417,relic:주의용광로사용법,유실물,범위,~ ch40–ch41,전 ch41,,ch34 바하무트(1) · ch32 다크_매터(3) · ch24 용광로(2) · ch06 퀸(4),
+417,relic:주의용광로사용법,유실물,범위,~ ch40–ch41,전 ch41,,ch41 용광로(2) · ch34 바하무트(1) · ch32 다크_매터(3) · ch06 퀸(4),
 418,event_goddessfall1,이벤트,판별,ch40–ch41,,,ch40 퀸_인자(14) · ch39 에덴의_창(26) · ch39 3차_지상_탈환전(2) · ch33 미러(250) · ch31 포비스트(1) · ch26 크라운_왕국(14),나유타: ch40 ch46; 니힐리스타: ch25; 도로시: ch48; 라푼젤: ch48; 레드_후드: ch26; 리버렐리오: ch44; 마리안: ch01 ch07 ch13 ch14 ch48; 스노우_화이트: ch44; 신데렐라: ch32; 장화: ch46 ch48; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45; 토커티브: ch13; 파피용: ch21 ch44; 홍련: ch48
 419,erelic:goddess_fall_mini,유실물,판별,ch40–ch41,,,ch39 에덴의_창(3) · ch23 1차_지상_탈환전(2) · ch19 요한(153) · ch17 샛별(9) · ch09 퍼펙트(2) · ch06 퀸(13),도로시: ch48; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 420,char:223,호감도,판별,ch39,,maxwell_p(뒤 ch37) 2줄; rapi_red(뒤 ch34) 2줄,ch34 지즈(1) · ch32 레비아탄(1) · ch31 포비스트(2) · ch27 웨일리(3) · ch14 홍련(1) · ch11 맥스웰(2),나유타: ch40 ch46; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 레비아탄: ch37 ch40 ch42; 마리안: ch01 ch07 ch13 ch14 ch48; 맥스웰: ch12 ch15 ch38; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45; 홍련: ch48

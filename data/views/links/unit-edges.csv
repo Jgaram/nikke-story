@@ -1159,7 +1159,6 @@ char:400,event_beautyfullshot1,character,1,2,auto,0,,person:길티,170,305,호�
 char:401,char:111,keyword,1,2,auto,0,,concept:퍼펙트,171,172,호감도,호감도
 char:401,char:402,character,1,2,auto,0,,person:마나,171,173,호감도,호감도
 char:401,char:402,keyword,1,2,auto,0,,place:갱생관,171,173,호감도,호감도
-char:401,event_boomsday,keyword,1,2,auto,0,,concept:컨버터,171,280,호감도,이벤트
 char:401,event_romanticvalentine,callback,2,3,record,0,E1417,,171,355,호감도,이벤트
 char:401,event_romanticvalentine,character,1,2,auto,0,,person:신,171,355,호감도,이벤트
 char:111,char:112,character,1,2,auto,0,,person:크로우,172,174,호감도,호감도

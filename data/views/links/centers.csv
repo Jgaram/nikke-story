@@ -980,7 +980,6 @@ event_doutsiders,169,place:아우터_림,place,10,0,,25,43,기록+이름
 char:400,170,person:길티,person,12,350,77,78,3,기록+말함
 char:400,170,person:마나,person,2,61,13,0,12,기록+말함
 char:400,170,place:갱생관,place,4,0,,14,7,기록+이름
-char:401,171,concept:컨버터,concept,0,0,,5,2,이름
 char:401,171,concept:퍼펙트,concept,0,0,,5,16,이름
 char:401,171,person:마나,person,2,61,15,1,12,기록+말함
 char:401,171,person:신,person,9,331,81,33,4,기록+말함
@@ -1770,7 +1769,7 @@ relic:조난일지,279,place:수정_지역,place,3,0,,0,14,기록
 event_boomsday,280,concept:니케,concept,0,0,,6,186,이름
 event_boomsday,280,concept:방주_동력원,concept,7,0,,4,3,기록
 event_boomsday,280,concept:이터널_스카이,concept,3,0,,11,2,기록+이름
-event_boomsday,280,concept:컨버터,concept,4,0,,24,2,기록+이름
+event_boomsday,280,concept:컨버터,concept,4,0,,24,1,기록+이름
 event_boomsday,280,org:미실리스,org,2,0,,6,32,기록+이름
 event_boomsday,280,org:아크레인저,org,1,0,,13,4,이름
 event_boomsday,280,org:일렉트릭_쇼크,org,2,0,,18,5,기록+이름

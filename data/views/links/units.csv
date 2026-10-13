@@ -169,7 +169,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 168,sub:데이파라_00,서브퀘스트,4,7,4,0,4,8,,,,0,0,,person:데이파라 org:구원의_성화 person:네온 person:라피 person:아니스 place:지상,데이파라 · 데이파라 1
 169,event_doutsiders,이벤트,7,7,10,0,1,14,,,,0,0,,person:조셉 concept:이터널_스카이 concept:아웃로 org:엔터_헤븐 person:크로우 person:바이퍼,D-OUTSIDERS
 170,char:400,호감도,1,2,3,0,0,3,,,고립,0,0,,person:길티 place:갱생관 person:마나,길티
-171,char:401,호감도,2,4,6,0,1,6,,,,0,0,,concept:컨버터 person:신 place:갱생관 person:마나 concept:퍼펙트,신
+171,char:401,호감도,2,3,5,0,1,5,,,,0,0,,person:신 place:갱생관 person:마나 concept:퍼펙트,신
 172,char:111,호감도,3,3,6,0,0,6,,,고립,0,0,,person:자칼 person:크로우 concept:퍼펙트,자칼
 173,char:402,호감도,2,5,5,0,2,6,,,,0,0,,person:퀀시 place:갱생관 person:마나 place:방주,퀀시
 174,char:112,호감도,3,7,8,0,1,9,,,,0,1,ch24,person:크로우 person:바이퍼 org:이그조틱 person:시프티 place:아우터_림 org:중앙_정부,바이퍼
@@ -278,7 +278,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 277,sub:핸섬_커맨더_01,서브퀘스트,2,2,2,1,0,4,,,고립,0,0,,person:이안_맥스 person:핸섬_커맨더 place:수정_지역 place:방주,핸섬 커맨더 · 핸섬 커맨더 2
 278,sub:MMR지킴이_00,서브퀘스트,3,3,5,0,1,6,,,,0,0,,person:MMR지킴이 org:M.M.R. person:에테르 place:수정_지역 person:네온,MMR지킴이 · MMR지킴이 1
 279,relic:조난일지,유실물,3,1,4,0,2,2,,,,1,0,ch27,place:수정_지역,조난 일지
-280,event_boomsday,이벤트,7,12,16,1,10,12,,,,4,4,ch27 ch28 ch30 ch45 ch46,concept:이터널_스카이 concept:컨버터 concept:방주_동력원 org:아크레인저 person:아크레인저_블랙 org:일렉트릭_쇼크,BOOMS DAY
+280,event_boomsday,이벤트,6,12,15,1,10,11,,,,4,4,ch27 ch28 ch30 ch45 ch46,concept:컨버터 concept:이터널_스카이 concept:방주_동력원 org:아크레인저 person:아크레인저_블랙 org:일렉트릭_쇼크,BOOMS DAY
 281,char:500,호감도,2,2,4,0,0,4,,,고립,0,0,,person:일레그 person:맥스웰,일레그
 282,event_killthelord,이벤트,8,7,12,3,5,14,,,,0,0,,org:화양연화 person:카밀라 org:헤도니아 concept:로열 concept:미스트 person:K,KILL THE LORD
 283,char:43,호감도,2,2,2,0,0,4,,,고립,0,0,,person:D concept:니케,D : 킬러 와이프
