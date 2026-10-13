@@ -2,9 +2,8 @@
 
 2026-10-10 SESSIONS.md에서 그대로 옮겼다(내용은 고치지 않았다). 지금 할 일은 [SESSIONS.md](../../SESSIONS.md), 운용은 [docs/operations.md](../operations.md).
 
-**이 파일은 도구가 읽는다** — 읽기 순서(출시순 한 줄)의 원본이다. `tools/records/order.mjs`가 이 파일과 SESSIONS.md의
-`- [x] **R01** …` · `**P1**` · `**M01**` 항목과 `#### N층` 머리줄을 읽어 1회독 · 2회독 순서와 층을 얻는다(검증기 · 진행률 · 사이트 내보내기 등).
-항목 줄의 모양(굵은 이름 · 백틱 키 · `chNN–MM`)을 바꾸지 않는다. 신작을 읽을 항목(N3)은 SESSIONS.md에 같은 모양으로 넣으면 순서 뒤에 이어진다.
+**읽기 순서 데이터는 2026-10-13 [annotations/reading-order.md](../../annotations/reading-order.md)로 옮겼다** — 이 파일의 항목 줄은 그때의 기록으로 남겨 두고 도구는 더 읽지 않는다.
+여기 항목 줄을 고쳐도 순서는 바뀌지 않는다. 순서를 고치려면 그 파일을 고치고 `node tools/records/order-snapshot.mjs check`로 견준다.
 
 인계 메모는 그때의 기록이다. 그 뒤 바뀐 결정은 주제 문서(docs/*.md · CLAUDE.md)가 이긴다.
 

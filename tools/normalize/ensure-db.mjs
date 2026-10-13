@@ -30,9 +30,9 @@ const INPUT_DIRS = ['data/raw', 'annotations', 'tools/normalize', 'data/release'
  */
 const EXCLUDE_DIRS = new Set(['annotations/read1', 'annotations/read2', 'annotations/synopsis', 'annotations/blurbs', 'annotations/versions']);
 /** 같은 까닭으로 뺀다 — 떡밥 줄기(B0b) · 층 판정(B0b-2) · 수동 엣지(B1a — DB에 싣지 않고 관계선 tools/views/links.mjs가 읽는다, X2) · 2회독 볼 거리(B1b) ·
- * 척추(X3f-1c) · 주요 인물(X3g-1b) · 마무리 기록(X3f-1d)도 기록 도구가 바로 읽는다 */
+ * 척추(X3f-1c) · 주요 인물(X3g-1b) · 마무리 기록(X3f-1d) · 읽기 순서(tools/records/order.mjs)도 기록 도구가 바로 읽는다 */
 const EXCLUDE_FILES = new Set(['annotations/threads.json', 'annotations/layers.json', 'annotations/leads.json', 'annotations/links.json', 'annotations/watch.json',
-  'annotations/spine.json', 'annotations/majors.json', 'annotations/closures.json']);
+  'annotations/spine.json', 'annotations/majors.json', 'annotations/closures.json', 'annotations/reading-order.md']);
 const STEPS = ['tools/normalize/build.mjs', 'tools/normalize/build-db.mjs'];
 const LOCK_WAIT_MS = 5 * 60_000;
 const LOCK_MAX_AGE_MS = 10 * 60_000;

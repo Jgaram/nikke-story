@@ -1,9 +1,10 @@
 /**
  * 읽는 순서 — 읽기 항목(R · RE · P · M …)에서 단위 키를 차례로 뽑는다.
  * 진행률 · 인계 파일 · 검증기가 "어느 세션이 어느 단위를 읽나"를 여기서 얻는다.
- * 순서의 원본은 docs/history/reading.md(끝난 1회독 · 2회독 항목)이고, 그 뒤에 SESSIONS.md를 잇는다(신작 N3처럼 새로 넣는 읽기 항목).
+ * 순서의 원본은 annotations/reading-order.md 하나다(2026-10-13 docs/history/reading.md에서 항목 줄만 옮김 — SESSIONS.md는 읽지 않는다).
+ * 옮기거나 고친 뒤에는 tools/records/order-snapshot.mjs check로 기준과 견준다.
  *
- * 항목 모양 (docs/history/reading.md "순서"):
+ * 항목 모양 (annotations/reading-order.md):
  *   - [ ] **R01** ch00–02 · `sub:칠리페퍼_00` `sub:테트라_커넥트_00` · ch03 · … — 8.0만 자 · 12파트
  *   - [ ] **RE30** `fl:boom_the_ghost`(= `event_boomtheghost1` 본문) — …        (= …)는 설명이라 뺀다
  *   - [ ] **RE32** `event_arcanearchive` `event_staranis1` 파트 1–3 — …       파트를 나눠 읽는 단위
@@ -16,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 /** 읽기 순서를 읽는 파일 — 이 차례로 이어 붙여 읽는다 */
-export const ORDER_PATHS = [path.join(ROOT, 'docs/history/reading.md'), path.join(ROOT, 'SESSIONS.md')];
+export const ORDER_PATHS = [path.join(ROOT, 'annotations/reading-order.md')];
 
 /** 있는 파일만 이어 붙인 내용. 하나도 없으면 null */
 function readOrderText(files) {

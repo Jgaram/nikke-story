@@ -422,7 +422,7 @@ ${list(errors)}`);
   assert.ok(!w2.some((w) => w.id === 'K3' && /읽었는데/.test(w.msg)), '같은 층이면 경고하지 않는다');
 });
 
-test('2회독에서 읽은 층 — docs/history/reading.md P · M의 #### N층 머리줄', () => {
+test('2회독에서 읽은 층 — annotations/reading-order.md P · M의 #### N층 머리줄', () => {
   const text = ['### P · M. 2회독', '#### 1층 — …', '- [x] **P1 👤 파일럿** ch00–01 · `sub:a_00` — 1만 자', '- [x] **M01** `sub:a_01` — 1만 자',
     '#### 2층 — …', '- [ ] **M02** `event_x` `char:10` — 2만 자', '### X. 분석', '- [ ] **M99** `char:11` — 머리줄 밖'].join('\n');
   const r = parseReadLayers(text);

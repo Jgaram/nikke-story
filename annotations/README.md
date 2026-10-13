@@ -63,6 +63,12 @@ docs/decisions.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d
 (`node tools/query.mjs terms`). 표기는 반드시 실측으로 넣는다 — 범위 안 0건인 이름은 빌드가 ⚠를 띄우고 `node --test`가 실패한다.
 형식 · 검색 규칙 · 넣는 기준은 [../docs/schema.md](../docs/schema.md) "비인물 사전".
 
+## reading-order.md — 읽기 순서 (1회독 출시순 한 줄 · 2회독 층별)
+
+`tools/records/order.mjs`가 읽는 순서 원본 — 항목 줄(`- [x] **R01** ch00–02 · …`)과 `#### N층` 머리줄. 기록 검증 · 자리 번호 · 화면 데이터 ·
+사이트 내보내기가 모두 이 순서를 쓴다. 2026-10-13 docs/history/reading.md에서 항목 줄만 그대로 옮겼다(인계 · 경위는 거기).
+줄 모양을 바꾸지 않고, 지금 몫이 기준(`tests/fixtures/reading-order.json`)과 같아야 한다(`node tools/records/order-snapshot.mjs check`).
+
 ## read1/ — 1회독 기록 (A3)
 
 읽기 세션(R)이 읽기 단위마다 JSON 하나(`<키>.json`, `:`는 `.`)로 남기는 기록 — 단위 요약(작업 메모) · 밝혀진 사실(`F`) · 던져진 의문(`Q`) ·

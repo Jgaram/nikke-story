@@ -314,7 +314,7 @@
 | 칸 | 필수 | 뜻 |
 |---|---|---|
 | `id` | ✓ | `K<n>` — 한 번 붙이면 바꾸지 않는다 |
-| `unit` | ✓ | 판정하는 읽기 단위(docs/history/reading.md R 순서의 키). 메인은 채점하지 않아 넣지 않는다. 단위 하나에 판정 하나(틀린 것은 기각하고 새로) |
+| `unit` | ✓ | 판정하는 읽기 단위(annotations/reading-order.md R 순서의 키). 메인은 채점하지 않아 넣지 않는다. 단위 하나에 판정 하나(틀린 것은 기각하고 새로) |
 | `grade` | ✓ | 등급 — 아래(X3f부터 넷: 필수 · 보강 · 참고 · 독립) |
 | `basis` | 필수 · 보강 ✓ | 등급을 정한 **한 건** — 이 단위의 사실 · 의문 · 사건 ID(`Q105-2` · `F768-2`), 드물게 줄기 ID(`J12`). 참고는 메인이 말하지 않은 기록 하나, 독립은 걸린 독립 줄기나 대표 기록, 없으면 비운다 |
 | `from` · `before` | 필수 · 보강 (X3f) | 메인이 이 단위를 딛기 시작하는 챕터(`ch38`)와 그 앞 자리의 등급(더 가벼운 등급) — 아래 "중요도 판정" X3f ⑤. 단위가 그 챕터보다 뒤에 나왔으면 `before`는 없어도 된다 |
@@ -354,7 +354,7 @@
 - 새 단위(신작 N3 · 순서 추가): `node tools/records.mjs layers --add`가 1회독 기록이 있는데 판정이 없는 단위에 시안(후보)을 더한다 → 단위마다 한 건을 골라 고친 뒤 `set … 확정`.
   검증기가 판정 없는 단위를 경고한다.
 - 다시 판정(2회독 · X3 · N3): 판정 객체를 고쳐 쓰지 말고 `set`으로 바꿔 이력을 남긴다 — 아래 "중요도 판정". 단위 하나에 판정 `K` 하나를 끝까지 쓴다(X3a — 근거를 바꿀 때도 `--basis`).
-- 층이 바뀌면 docs/history/reading.md M 목록을 다시 뽑는다(`node tools/records/plan.mjs <디렉터리> --layers`) — 이미 읽은 항목은 그대로 두고 남은 것만 고친다.
+- 층이 바뀌면 annotations/reading-order.md M 목록을 다시 뽑는다(`node tools/records/plan.mjs <디렉터리> --layers`) — 이미 읽은 항목은 그대로 두고 남은 것만 고친다.
 - 판정 파일은 DB 빌드 입력이 아니다(`ensure-db.mjs` 지문에서 뺀다). 시안 표 `data/views/read1/units.csv`의 `grade` · `layer` · `layer_basis` 칸과 report.md "2회독 층",
   사용자가 훑는 표 `data/views/read1/layers.md`(층 · 종류별로 판정 ID · 등급 · 근거 · 이유)에 나온다(`node tools/views/draft.mjs`).
 
@@ -406,7 +406,7 @@ node tools/records.mjs set K330 확정 --grade 필수 --from event_redash --befo
 - **기준 시점**(`asof`) = 판정이 반영한 스토리의 마지막 공개일. B0b-2 판정은 모두 2026-09-24(그날까지 공개된 481단위 — X3a가 채웠다). 다시 판정하면 그때 반영한 마지막 공개일로 고친다(같으면 그대로).
   1회독 기준인지 2회독 기준인지는 검토 기록의 세션(B0b-2 → X3 · N3)이 말한다.
 - **이력** = 검토 기록. 시안 표의 `history` 칸이 `B0b-2 독립 → X3c 보강 · N3 그대로`처럼 편다(tools/views/importance.mjs `gradeHistory`).
-- **층은 읽은 층으로 묶는다** — 2회독이 끝났으므로 층은 그 단위를 2회독에서 읽은 층(docs/history/reading.md P · M의 `#### N층` — `parseReadLayers`)이다. 등급을 바꿔 규칙 층이 달라지면
+- **층은 읽은 층으로 묶는다** — 2회독이 끝났으므로 층은 그 단위를 2회독에서 읽은 층(annotations/reading-order.md P · M의 `#### N층` — `parseReadLayers`)이다. 등급을 바꿔 규칙 층이 달라지면
   검증기가 경고한다 → `set K… 확정 --layer <읽은 층> --note "2회독은 N층에서 읽음"`. 층은 2회독의 깊이(생활상은 1층에서만)를 말하므로 바꾸지 않는다.
   `--layer`와 함께 준 `--note`는 검토 기록과 판정의 `note`(층을 뒤집은 까닭 — 검증기가 본다)에 함께 남는다(X3b). 등급과 층을 한 번에 바꿀 때는 note에 층 까닭도 적는다.
 
@@ -868,7 +868,7 @@ node tools/records.mjs progress [--all]       # 단위별 진행률 — 읽음 �
 | `annotations/read2/handoff/threads.md` (넘치면 `threads-1.md` …) | 필요할 때 | 떡밥 줄기 전부 — 든 의문(상태 · 답) · 곧바로 든 사실 · 줄기 관계 |
 | `annotations/read1/handoff/*` | 필요할 때 | 1회독 인계 그대로 — 사실 목록 전체 · 의문 · 1회독 세션 요약(단위 요약은 여기에만 있다) |
 
-- **다음 세션** = 2회독 순서(docs/history/reading.md P · M)에서 2회독 파일(`annotations/read2/<키>.json`)이 없는 첫 항목의 세션. 그 세션에서 남은 항목만 다룬다(진행 중 `[~]`이면 이어서 읽을 것만).
+- **다음 세션** = 2회독 순서(annotations/reading-order.md P · M)에서 2회독 파일(`annotations/read2/<키>.json`)이 없는 첫 항목의 세션. 그 세션에서 남은 항목만 다룬다(진행 중 `[~]`이면 이어서 읽을 것만).
   파트를 나눠 읽는 단위는 파트까지 맞아야 읽은 것이다. 진행 위치는 단위로 센다(파트를 다 읽어야 읽은 단위).
 - 파일 하나는 2만 자 안쪽 — next · threads는 절(단위 · 줄기) 경계에서 나뉜다. **먼저 읽을 것은 6만 자 안쪽**(docs/operations.md "컨텍스트 예산"):
   next 몫(6만 − HANDOFF 몫 6천 − focus 최소 8천)을 넘을 세션은 **줄기 절을 단계적으로 줄인다**(`THREAD_LEVELS` — ① 풀린 의문은 문장 없이 ID와 답만 ② 결말 사실 4건 ③ 2건,

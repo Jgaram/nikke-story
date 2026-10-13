@@ -26,7 +26,7 @@ test('SESSIONS.md — 끝난 항목이 남아 있지 않다', () => {
     .map((l, i) => ({ l, n: i + 1 }))
     .filter(({ l }) => /^\s*- \[[xX-]\]/.test(l));
   assert.deepEqual(left.map(({ l, n }) => `${n}: ${l.slice(0, 60)}`), [],
-    `SESSIONS.md에 끝난 항목 ${left.length}개 — ${HOWTO}. 읽기 항목(R · RE · P · M)은 docs/history/reading.md 끝으로.`);
+    `SESSIONS.md에 끝난 항목 ${left.length}개 — ${HOWTO}. 읽기 항목(R · RE · P · M)은 SESSIONS.md가 아니라 annotations/reading-order.md에 둔다.`);
 });
 
 for (const f of ['SESSIONS.md', 'CLAUDE.md']) {

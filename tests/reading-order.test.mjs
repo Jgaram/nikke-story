@@ -53,3 +53,18 @@ for (const [name, fn] of Object.entries(MUTATIONS)) {
     assert.ok(diffs.length > 0, '바꾼 사본인데 차이를 못 찾았다');
   });
 }
+
+test('순서 파일의 체크 칸 줄은 모두 읽기 항목으로 읽힌다 — 모양이 틀려 조용히 빠지는 줄이 없다', () => {
+  const head = /^- \[.\] \*\*(?:R|RE|P|M)\d+[a-z]?(?:\s[^*]*)?\*\*/;
+  const bad = ORDER_PATHS.flatMap((f) => fs.readFileSync(f, 'utf8').split('\n')
+    .map((l, i) => ({ l, n: i + 1 }))
+    .filter(({ l }) => /^\s*- \[/.test(l) && !head.test(l))
+    .map(({ l, n }) => `${path.basename(f)}:${n} ${l.slice(0, 50)}`));
+  assert.deepEqual(bad, [], '항목 모양: `- [ ] **R01** ch00–02 · `키` … — 분량` (tools/records/order.mjs 머리말)');
+});
+
+test('SESSIONS.md에 읽기 항목이 없다 — 도구는 annotations/reading-order.md만 읽는다', () => {
+  const left = fs.readFileSync(path.join(import.meta.dirname, '../SESSIONS.md'), 'utf8').split('\n')
+    .filter((l) => /^\s*- \[.\] \*\*(?:R|RE|P|M)\d/.test(l));
+  assert.deepEqual(left, [], '읽기 항목은 annotations/reading-order.md 그 절 끝에 덧붙인다');
+});
