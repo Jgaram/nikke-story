@@ -4,7 +4,7 @@
     {
       "at": "event_lionheart",
       "text": "해피 주 보호소를 함께 운영하는 방주의 단체 — 보호소가 빈 틈에 희귀 맹수를 빼돌리려다 실패하자 휴무를 늘리게 했다.",
-      "src": "b616549560",
+      "src": "16c5d01d29",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "338ab39458",
           "note": "event_lionheart intermission_01#28·F1252, 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "f3c797d853", "note": "근거 F1246(해피 주 보호소) · F1252 · 원문 줄(함께 운영)" }
+      ],
+      "refs": ["F1246", "F1252", "event_lionheart_intermission_01#28"]
     }
   ]
 }
