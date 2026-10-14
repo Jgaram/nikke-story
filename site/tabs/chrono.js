@@ -180,6 +180,8 @@ export async function mount(root, ctx) {
   const atText = (at) => (at ?? []).map(([rel, ref, gap]) => relPhrase(rel, ref, gap ? ` (${gap})` : '')).filter(Boolean).join(' · ');
   /** 자유 문장 — 시대 기준점 ID → 이름, fmt.prose, 모습 코드 걷기(조사가 붙은 코드는 그 마디째 뺀다) */
   const whyText = (text) => fmt.dropClauses(cprose(text), WHY_JUDGE);
+  /** 회상 · 다른 때 장면 글 — 그 자리에서 아직 모르는 대상 이름이 들면(체크 칸에서만 처음 나온 이름 — W16a) 글 없이(줄은 비우고 카드는 장면 이름표로) */
+  const pieceText = (p) => (fmt.unknownNameIn(p.text, state.reading()) ? '' : cprose(p.text));
   function cprose(text) {
     const pre = String(text ?? '')
       .replace(/[—~]?\s*(직후|직전|뒤|전|무렵) (@[\p{L}\p{N}_]+)/gu, (m, rel, id) => (pointById.has(id) ? `${pointShort(pointById.get(id))} ${rel}` : m))
@@ -310,9 +312,9 @@ export async function mount(root, ctx) {
       return isOneSlot(target) ? '' : spanText(target);
     };
     const when = whenOf();
-    const ptext = piece ? cprose(piece.text) : '';
+    const ptext = piece ? pieceText(piece) : '';
     const whenEl = when ? el('span', {}, when) : null;
-    const ptextEl = ptext ? el('span', { class: 'cr-ptext' }, clip(ptext, 120)) : null;
+    const ptextEl = piece?.text ? el('span', { class: 'cr-ptext', hidden: !ptext }, clip(ptext, 120)) : null;
     const row = el('div', { class: ['cr-row', piece && 'is-piece'], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
       el('span', { class: 'cr-line' },
         el('span', { class: 'cr-title' }, chTitle(u.title)),
@@ -324,7 +326,7 @@ export async function mount(root, ctx) {
       ptextEl);
     row.paint = () => {
       if (whenEl) whenEl.textContent = whenOf();
-      if (ptextEl) ptextEl.textContent = clip(cprose(piece.text), 120);
+      if (ptextEl) { const t = pieceText(piece); ptextEl.textContent = clip(t, 120); ptextEl.hidden = !t; }
     };
     return row;
   }
@@ -630,7 +632,7 @@ export async function mount(root, ctx) {
     const pieceList = shownPieces.length
       ? el('ul', { class: 'cr-plist' }, shownPieces.map((p) => el('li', {},
         el('span', { class: 'cr-pwhen' }, p.slot != null ? spanText(p) : relText(p.relations) || LABELS.unknown), ' ',
-        ui.link(`record:${p.id}`, clip(cprose(p.text), 80) || pieceTag(p)))))
+        ui.link(`record:${p.id}`, clip(pieceText(p), 80) || pieceTag(p)))))
       : null;
     // 추정한 이유 — 추정으로 좁힌 것만(확실 · 단서 없음은 이유를 달지 않는다). 근거 링크는 여기까지 읽음 뒤 스토리의 것을 숨긴다(W14c)
     const rd = state.reading();
