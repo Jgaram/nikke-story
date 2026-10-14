@@ -1,0 +1,21 @@
+{
+  "unit": "fl:coin_rush_show_down",
+  "why": {
+    "text": "중앙 정부의 고위 인사가 기업 박람회를 꾸며 3대 기업의 기밀 기술을 빼내고, 방주가 망할 거라며 방주 밖의 누군가에게 팔려 했다.",
+    "src": "e2bd4b22a2",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-10-14",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "N3",
+        "hash": "0eec27b3c2",
+        "note": "판정 근거 F2932 · F2925 · F2918과 대조 — 고객이 누구인지는 열린 채"
+      }
+    ]
+  }
+}

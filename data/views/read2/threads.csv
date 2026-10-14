@@ -17,7 +17,7 @@ J15,뼈대,직계 헬레틱 — 토커티브 · 니힐리스타 · 인디빌리�
 J16,뼈대,에닉 — 거래 · 판결 · 카운터,4,3,0,14,17,3,ch01 ch04 relic:에닉탄핵포스터
 J17,보강,식스오와 블랙넷,9,6,0,12,14,2,ch28 fl:ark_ranger
 J18,뼈대,D.E.E.P.와 V.T.C. — 방주의 어둠과 열쇠,15,1,0,11,13,2,ch28 ch30
-J19,뼈대,방주 동력원 — 쌍둥이 초거대 코어,13,6,0,11,17,6,ch27 ch30 event_beautyfullshot1 event_wisdomspring fl:ark_ranger ch47
+J19,뼈대,방주 동력원 — 쌍둥이 초거대 코어,13,7,0,11,18,7,ch27 ch30 event_beautyfullshot1 event_wisdomspring fl:ark_ranger ch47 fl:coin_rush_show_down
 J20,보강,필그림 — 스노우 화이트 · 라푼젤 · 나유타,4,3,0,9,12,3,char:221 ch47 relic:불길한_소리.wav
 J21,보강,이그조틱과 방주 침공 — 크로우 · JohnD · E.H.,16,5,1,10,15,5,sub:콜렉터_00 sub:테트라_커넥트_01 char:112 side:wordless fl:ark_ranger
 J22,보강,슈엔과 메티스,13,4,0,10,18,8,ch13 ch15 sub:랩칠리언_05 char:102 char:90 ch18 event_hightechtoy ch35
@@ -59,3 +59,4 @@ J57,독립,지상의 생존자 — 롬 · 콤 · 벙커,9,2,0,2,4,2,sub:롬_01 s
 J58,독립,노라의 종착역,3,0,0,2,2,0,
 J59,독립,아일랜드 이터,0,0,0,1,1,0,
 J60,독립,D-WAVE,1,0,0,1,1,0,
+J61,독립,코인 러시 쇼다운 — 경비 팀장의 고객,2,0,0,1,1,0,

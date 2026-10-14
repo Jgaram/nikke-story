@@ -2147,6 +2147,21 @@
       "by": "claude",
       "session": "W23d",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "근거 줄에서 CEO 자리가 아들에게 넘어가는 것 확인 — 아버지의 죽음 자체는 직접 나오지 않아 '자리를 넘김'으로" }]
+    },
+    {
+      "id": "T142",
+      "person": "person:경비_팀장",
+      "org": "org:중앙_정부",
+      "act": "소속",
+      "role": "고위 인사",
+      "records": ["F2918"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_08", "lines": [17] }],
+      "reason": "머스탱이 진행자 경비 팀장을 '중앙 정부의 High 한 분'이라 밝힌다(#17) — 시합이 끝나면 원래 자리로 돌아간다(F2918)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "N3",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N3", "note": "근거 줄 확인 — 실장 밖 인물, 이 단위에서 처음 드러남" }]
     }
   ]
 }

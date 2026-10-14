@@ -217,6 +217,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:파피용 신념,성장,ch48,154,26,1,1,event_goddessfall1 ch48,D926 D937 D1335,D1335,O108,확정
 성장 person:홍련 신념,성장,ch48,154,137,1,1,char:222 event_overzone char:225 ch48,D1412 D251 D1516 D1333,D1333,O109,확정
 관계 person:드레이크 ↔ person:지즈,관계,fl:great_villain_union,156,28,1,,ch42 fl:great_villain_union,D876 D1780 D1776 D1782 D1779,D1776 D1782 D1779,O110,확정
-관계 person:길티 ↔ person:지휘관,관계,char:404,157,131,,,char:400 char:404,D1979 D1980 D1981 D2232,D2232,O219,확정
+관계 person:길티 ↔ person:지휘관,관계,char:404,157,131,,,char:400 fl:coin_rush_show_down char:404,D1979 D1980 D1981 D2238 D2232,D2232,O219,확정
 성장 person:길티 성격,성장,char:404,157,131,,,char:400 event_beautyfullshot1 char:404,D1976 D489 D2231,D2231,O220,확정
-관계 person:신 ↔ person:지휘관,관계,char:405,158,132,,,char:401 event_romanticvalentine char:405,D1985 D1986 D1628 D2234,D2234,O221,확정
+관계 person:신 ↔ person:지휘관,관계,char:405,158,132,,,char:401 event_romanticvalentine fl:coin_rush_show_down char:405,D1985 D1986 D1628 D2237 D2234,D2234,O221,확정
+성장 person:신 성격,성장,char:405,158,132,,,char:401 fl:coin_rush_show_down char:405,D1983 D2236 D2235,D2235,O222,확정

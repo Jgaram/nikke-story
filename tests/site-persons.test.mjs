@@ -22,8 +22,8 @@ const units = read('units.json');
 const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
 
-test('persons.json — 인물 387, 중복 없음, 이름 · 집계 칸', () => {
-  assert.equal(persons.length, 387); // 아버지 머스탱(다른 인물 L36 — 손으로 세운 같은 이름의 다른 사람)
+test('persons.json — 인물 388, 중복 없음, 이름 · 집계 칸', () => {
+  assert.equal(persons.length, 388); // 아버지 머스탱(다른 인물 L36 — 손으로 세운 같은 이름의 다른 사람) · N3 COIN RUSH SHOWDOWN 경비 팀장
   assert.equal(personIds.size, persons.length);
   for (const p of persons) {
     assert.ok(p.id.startsWith('person:') && p.name, p.id);

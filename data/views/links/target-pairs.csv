@@ -386,6 +386,8 @@ incident:랩쳐_침공,place:쉘터,incident,place,2,2,F229 F287
 incident:방주_테러,place:아우터_림,incident,place,2,1,F985 F991
 incident:아크_가디언_작전,org:V.T.C.,incident,org,2,2,F2365 F2653
 incident:아크_가디언_작전,org:중앙_정부,incident,org,2,1,F2360 F2365
+incident:코인_러시_쇼다운,org:3대_기업,incident,org,2,1,F2910 F2925
+incident:코인_러시_쇼다운,place:코인_러시,incident,place,2,1,F2910 F2924
 incident:피사_돔_폭발_사고,org:라이프_토닉,incident,org,2,1,F616 Q87
 item:A_필러,place:수정_지역,item,place,2,2,F1626 F1659
 item:방주_추첨권,place:방주,item,place,2,2,F132 U182

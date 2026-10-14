@@ -1,0 +1,18 @@
+{
+  "subject": "incident:코인_러시_쇼다운",
+  "versions": [
+    {
+      "at": "fl:coin_rush_show_down",
+      "text": "첫 기업 박람회를 기념해 코인 러시에서 열린 3대 기업 니케 대항전 — 실은 탈락자의 장비에서 기밀 기술을 빼내는 판이었다.",
+      "src": "697eae3a35",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N3", "hash": "f23b49603a", "note": "처음 나온 스토리 하나에서만 다뤄 1판 — 근거 refs로 대조" }
+      ],
+      "refs": ["F2910", "F2925"]
+    }
+  ]
+}

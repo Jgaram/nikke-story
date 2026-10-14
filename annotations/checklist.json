@@ -44,6 +44,62 @@
       "note": "연작의 다음 편 없음 — 뒤의 char:404 · char:405 바니 호감도는 이 행사 뒤를 그리지만, 수동 엣지는 이벤트 · 사이드 연작만 두어 온 관례(X2)대로 더하지 않음",
       "session": "U01",
       "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "spine",
+      "note": "9월 17일 공지에 주년 · 하프 · 신년 말 없음(COIN RUSH SHOWDOWN은 STORY I · II 이벤트) — 척추 문 밖, spine.json에 더하지 않음",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "leads",
+      "note": "새 줄기는 J61(독립)뿐 — 뼈대 줄기 · 주인이 새로 생기지 않아 주역 명단 그대로(records.mjs leads 20명)",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "majors",
+      "note": "majors.mjs 다시 셈 — 주요 인물 8 · 어긋남 0, 문턱 그대로",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "closures",
+      "note": "closures --add: 새 사슬 O222(신 성격 — char:401 → 이 단위 D2236 → char:405 D2235) 확정, 같은 char:405의 O221과 합류 H28(신의 호감도 마지막 편). 이 단위의 D2237 · D2238을 O221 · O219 쌓인 자리에 더함 — 끝은 그대로",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "versions",
+      "note": "새 떡밥 J61 1판 · 새 사전 4항목(코인 러시 쇼다운 · 테크 웨어 · 바니 슈트 · 대테러부대) 1판씩 확정, versions.mjs check 낡은 판 0",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "addresses",
+      "note": "이 단위에 새 실장판 없음 — 신 · 길티 · 플로라 · 마나 · 에이드 · 소다는 기존 판(호칭은 판마다라 이벤트로 바뀌지 않음)",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "portraits",
+      "note": "새 이름표(경비 팀장 · 경비원 · 인형 · 스태츄 · M.M.R. 연구원)는 nikke-db 이름에 없는 단역 — portraits.mjs 다시 돌려 새 아이콘 0. 메인 밖이라 모습 코드 해당 없음, 새 스쿼드 마크 없음",
+      "session": "U01",
+      "date": "2026-10-14"
     }
   ]
 }

@@ -1047,6 +1047,7 @@ F787,사실,F787,처음 밝혀짐,드러냄,,26,2023-01-12,170,char:400,ep:d_nik
 F788,사실,F788,처음 밝혀짐,드러냄,,26,2023-01-12,170,char:400,ep:d_nikke_guilty_05,동시,,확실,확정,ch13–ch14 ~,44,
 F789,사실,F789,처음 밝혀짐,드러냄,,26,2023-01-12,171,char:401,ep:d_nikke_sin_01,동시,,확실,확정,,,
 F789,사실,E1417,재언급,재언급,F789,99,2025-01-30,355,event_romanticvalentine,event_romanticvalentine_01_e,뒤,,확실,확정,ch09–ch10 ~,36,
+F789,사실,E1641,재언급,재언급,F789,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_16,뒤,,확실,확정,ch22–ch23 ~,62,
 F790,사실,F790,처음 밝혀짐,드러냄,,26,2023-01-12,171,char:401,ep:d_nikke_sin_02,동시,,확실,확정,,,
 F791,사실,F791,처음 밝혀짐,드러냄,,26,2023-01-12,171,char:401,ep:d_nikke_sin_04,동시,,확실,확정,,,
 F791,사실,E1417,재언급,재언급,F791,99,2025-01-30,355,event_romanticvalentine,event_romanticvalentine_01_e,뒤,,확실,확정,ch09–ch10 ~,36,
@@ -2185,7 +2186,9 @@ F1514,사실,F1514,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyful
 F1515,사실,F1515,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyfullshot1,event_beautyfullshot2_intermission,동시,,확실,확정,ch22–ch23 ~,62,
 F1516,사실,F1516,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyfullshot1,event_beautyfullshot2_03_e,동시,,확실,확정,ch22–ch23 ~,62,
 F1517,사실,F1517,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyfullshot1,event_beautyfullshot2_05_e,동시,,확실,확정,ch22–ch23 ~,62,
+F1517,사실,E1642,재언급,재언급,F1517,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,뒤,,확실,확정,ch22–ch23 ~,62,
 F1518,사실,F1518,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyfullshot1,event_beautyfullshot2_05_e,동시,,확실,확정,ch22–ch23 ~,62,
+F1518,사실,E1642,재언급,재언급,F1518,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,뒤,,확실,확정,ch22–ch23 ~,62,
 F1519,사실,F1519,처음 밝혀짐,드러냄,,78,2024-07-04,305,event_beautyfullshot1,event_beautyfullshot2_epilogue,동시,,확실,확정,ch22–ch23 ~,62,
 F1520,사실,F1520,처음 밝혀짐,드러냄,,78,2024-07-04,306,char:284,ep:d_nikke_sakura_bloominsummer_01,동시,,확실,확정,ch22–ch23 ~,62,
 F1521,사실,F1521,처음 밝혀짐,드러냄,,79,2024-07-11,307,char:283,ep:d_nikke_rosanna_chicocean_04,동시,,확실,확정,ch22–ch23 ~,62,
@@ -4063,6 +4066,7 @@ F2606,사실,E425,암시,암시,F2606,78,2024-07-04,305,event_beautyfullshot1,ev
 F2606,사실,E793,암시,암시,F2606,116,2025-07-17,393,fl:boom_the_ghost,fl:boom_the_ghost_26,앞,,추정,확정,ch38–ch39 ~,94,
 F2606,사실,F2606,처음 밝혀짐,드러냄,,143,2026-04-23,450,ch45,d_main_45_11,동시,,확실,확정,ch45,107,107
 F2606,사실,E1178,재언급,재언급,F2606,148,2026-06-11,462,fl:ark_ranger,fl:ark_ranger_17,뒤,,확실,확정,~ ch21–ch22 / ch22 / ch42 / ch45 / ch46–ch47 ~ ch47,,111
+F2606,사실,E1643,재언급,재언급,F2606,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,뒤,,추정,확정,ch22–ch23 ~,62,
 F2607,사실,F2607,처음 밝혀짐,드러냄,,143,2026-04-23,450,ch45,d_main_45_11,동시,,확실,확정,ch45,107,107
 F2608,사실,F2608,처음 밝혀짐,드러냄,,143,2026-04-23,450,ch45,d_main_45_11,동시,,확실,확정,ch45,107,107
 F2609,사실,E650,암시,암시,F2609,108,2025-04-24,373,ch37,d_main_37_04,앞,,확실,확정,ch37,91,91
@@ -4530,7 +4534,7 @@ F2876,사실,E1590,재언급,재언급,F2876,156,2026-09-03,478,fl:great_villain
 F2876,사실,F2876,처음 밝혀짐,드러냄,,156,2026-09-03,478,fl:great_villain_union,fl:great_villain_union_08,동시,,확실,확정,ch42–ch43 ~,102,
 F2877,사실,F2877,처음 밝혀짐,드러냄,,156,2026-09-03,478,fl:great_villain_union,fl:great_villain_union_12,동시,,확실,확정,ch42–ch43 ~,102,
 F2878,사실,F2878,처음 밝혀짐,드러냄,,156,2026-09-03,479,char:104,ep:d_nikke_drake_greatvillain_01,동시,,확실,확정,ch38–ch39 ~,94,
-F2879,사실,F2879,처음 밝혀짐,드러냄,,158,2026-09-24,481,char:405,ep:d_nikke_sin_swiftbunny_01,동시,,확실,확정,ch09–ch10 ~,36,
+F2879,사실,F2879,처음 밝혀짐,드러냄,,158,2026-09-24,482,char:405,ep:d_nikke_sin_swiftbunny_01,동시,,확실,확정,ch09–ch10 ~,36,
 F2880,사실,F2880,처음 밝혀짐,드러냄,,2,2022-11-04,2,ch01,d_main_01_06_e,동시,,확실,확정,ch01,19,19
 F2880,사실,E16,재언급,재언급,F2880,4,2022-11-04,10,ch03,d_main_03_02,뒤,,확실,확정,ch03,23,23
 F2880,사실,E53,재언급,재언급,F2880,8,2022-11-04,31,ch07,d_main_07_06_e,뒤,,확실,확정,ch07,31,31
@@ -4593,6 +4597,43 @@ F2906,사실,F2906,처음 밝혀짐,드러냄,,156,2026-09-03,478,fl:great_villa
 F2907,사실,F2907,처음 밝혀짐,드러냄,,8,2022-11-04,33,sub:세르반_02,sub:세르반_02,동시,,확실,확정,,,
 F2908,사실,F2908,처음 밝혀짐,드러냄,,144,2026-04-23,452,ch46,d_main_46_af_07,동시,,확실,확정,ch46,109,109
 F2909,사실,F2909,처음 밝혀짐,드러냄,,138,2026-02-12,436,ch44,d_main_44_af_05,동시,,확실,확정,ch44,105,105
+F2910,사실,F2910,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_00,동시,,확실,확정,ch22–ch23 ~,62,
+F2911,사실,F2911,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_02,동시,,확실,확정,ch22–ch23 ~,62,
+F2912,사실,F2912,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_02,동시,,확실,확정,ch22–ch23 ~,62,
+F2912,사실,F2912-2,보강,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_26,동시,,확실,확정,ch22–ch23 ~,62,
+F2913,사실,F2913,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_07,동시,,확실,확정,ch22–ch23 ~,62,
+F2914,사실,F2914,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_13,동시,,확실,확정,ch22–ch23 ~,62,
+F2915,사실,F2915,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_09,동시,,확실,확정,ch22–ch23 ~,62,
+F2916,사실,F2916,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_06,동시,,확실,확정,ch22–ch23 ~,62,
+F2917,사실,F2917,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_07,동시,,확실,확정,ch22–ch23 ~,62,
+F2918,사실,F2918,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_08,동시,,확실,확정,ch22–ch23 ~,62,
+F2919,사실,F2919,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_05,동시,,확실,확정,ch22–ch23 ~,62,
+F2920,사실,F2920,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_10,동시,,확실,확정,ch22–ch23 ~,62,
+F2921,사실,F2921,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_14,동시,,추정,확정,ch22–ch23 ~,62,
+F2922,사실,F2922,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_11,동시,,확실,확정,ch22–ch23 ~,62,
+F2923,사실,F2923,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_17,동시,,확실,확정,ch22–ch23 ~,62,
+F2924,사실,F2924,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_18,동시,,확실,확정,ch22–ch23 ~,62,
+F2925,사실,E1636,암시,암시,F2925,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_05,동시,,추정,확정,ch22–ch23 ~,62,
+F2925,사실,F2925,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_18,동시,,확실,확정,ch22–ch23 ~,62,
+F2926,사실,F2926,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_19,동시,,확실,확정,ch22–ch23 ~,62,
+F2926,사실,F2926-2,보강,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2927,사실,F2927,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_19,동시,,확실,확정,ch22–ch23 ~,62,
+F2928,사실,F2928,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_21,동시,,확실,확정,ch22–ch23 ~,62,
+F2929,사실,F2929,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_22,동시,,확실,확정,ch22–ch23 ~,62,
+F2930,사실,F2930,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_24,동시,,확실,확정,ch22–ch23 ~,62,
+F2931,사실,E1635,암시,암시,F2931,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_08,동시,,확실,확정,ch22–ch23 ~,62,
+F2931,사실,E1637,암시,암시,F2931,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_14,동시,,추정,확정,ch22–ch23 ~,62,
+F2931,사실,E1638,암시,암시,F2931,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_20,동시,,확실,확정,ch22–ch23 ~,62,
+F2931,사실,F2931,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2932,사실,F2932,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2933,사실,F2933,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2934,사실,F2934,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2935,사실,F2935,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+F2936,사실,E1639,암시,암시,F2936,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_06,동시,,확실,확정,ch22–ch23 ~,62,
+F2936,사실,F2936,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_26,동시,,확실,확정,ch22–ch23 ~,62,
+F2937,사실,F2937,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_24,동시,,확실,확정,ch22–ch23 ~,62,
+F2938,사실,F2938,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,동시,,확실,확정,ch22–ch23 ~,62,
+F2939,사실,F2939,처음 밝혀짐,드러냄,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,동시,,확실,확정,ch22–ch23 ~,62,
 Q1,의문,E6,암시,암시,Q1,2,2022-11-04,2,ch01,d_main_01af_02,동시,,확실,확정,ch01,19,19
 Q1,의문,Q1,제기,제기,,2,2022-11-04,2,ch01,d_main_01af_01,동시,,확실,확정,ch01,19,19
 Q1,의문,Q1-2,일부 회수,회수,,5,2022-11-04,15,ch04,d_main_04af_04,뒤,F84,확실,확정,ch04,25,25
@@ -5410,3 +5451,13 @@ Q370,의문,Q370,제기,제기,,154,2026-08-13,473,relic:불길한_소리.wav,re
 Q371,의문,E1560,암시,암시,Q371,154,2026-08-13,474,fl:persona_on_frontline,fl:persona_on_frontline_02,동시,,확실,확정,ch22–ch23 ~,62,
 Q371,의문,Q371,제기,제기,,154,2026-08-13,474,fl:persona_on_frontline,fl:persona_on_frontline_09,동시,,확실,확정,ch22–ch23 ~,62,
 Q372,의문,Q372,제기,제기,,154,2026-08-13,474,fl:persona_on_frontline,fl:persona_on_frontline_13,동시,,확실,확정,ch22–ch23 ~,62,
+Q373,의문,Q373,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_02,동시,,확실,확정,ch22–ch23 ~,62,
+Q373,의문,Q373-2,회수,회수,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_26,동시,F2936,확실,확정,ch22–ch23 ~,62,
+Q374,의문,Q374,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_13,동시,,확실,확정,ch22–ch23 ~,62,
+Q374,의문,Q374-2,회수,회수,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_18,동시,F2924,확실,확정,ch22–ch23 ~,62,
+Q375,의문,Q375,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_11,동시,,확실,확정,ch22–ch23 ~,62,
+Q375,의문,Q375-2,회수,회수,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,F2935,확실,확정,ch22–ch23 ~,62,
+Q376,의문,Q376,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,
+Q377,의문,E1640,암시,암시,Q377,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_15,동시,,추정,확정,ch22–ch23 ~,62,
+Q377,의문,Q377,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,동시,,확실,확정,ch22–ch23 ~,62,
+Q378,의문,Q378,제기,제기,,157,2026-09-17,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,동시,,확실,확정,ch22–ch23 ~,62,

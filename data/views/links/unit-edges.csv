@@ -1166,6 +1166,7 @@ char:401,char:402,character,1,2,auto,0,,person:마나,171,173,호감도,호감�
 char:401,char:402,keyword,1,2,auto,0,,place:갱생관,171,173,호감도,호감도
 char:401,event_romanticvalentine,callback,2,3,record,0,E1417,,171,355,호감도,이벤트
 char:401,event_romanticvalentine,character,1,2,auto,0,,person:신,171,355,호감도,이벤트
+char:401,fl:coin_rush_show_down,callback,1,3,record,0,E1641,,171,480,호감도,이벤트
 char:111,char:112,character,1,2,auto,0,,person:크로우,172,174,호감도,호감도
 char:111,char:800,keyword,1,2,auto,0,,concept:퍼펙트,172,178,호감도,호감도
 char:111,ch23,character,1,2,auto,0,,person:자칼,172,214,호감도,메인
@@ -2004,6 +2005,7 @@ event_boomsday,fl:sin_editor,callback,1,2,record,0,E999,,280,430,이벤트,이�
 event_boomsday,ch45,setup_payoff,1,3,record,0,E348,,280,450,이벤트,메인
 event_boomsday,ch45,callback,1,3,record,0,E1083,,280,450,이벤트,메인
 event_boomsday,ch46,setup_payoff,1,2,record,0,E352,,280,452,이벤트,메인
+event_boomsday,fl:coin_rush_show_down,keyword,1,2,auto,0,,concept:컨버터,280,480,이벤트,이벤트
 char:500,ch29,character,1,2,auto,0,,person:일레그,281,291,호감도,메인
 char:500,char:183,character,1,2,auto,0,,person:맥스웰,281,348,호감도,호감도
 event_killthelord,char:43,character,1,2,auto,0,,person:D,282,283,이벤트,호감도
@@ -2188,7 +2190,8 @@ event_beautyfullshot1,ch44,keyword,3,2,auto,0,,org:세이메이카이 org:언더
 event_beautyfullshot1,fl:enter_heaven,character,1,2,auto,0,,person:자칼,305,442,이벤트,이벤트
 event_beautyfullshot1,ch45,setup_payoff,1,2,record,0,E425,,305,450,이벤트,메인
 event_beautyfullshot1,ch46,setup_payoff,1,2,record,0,E425,,305,452,이벤트,메인
-event_beautyfullshot1,char:404,character,1,2,auto,0,,person:길티,305,480,이벤트,호감도
+event_beautyfullshot1,fl:coin_rush_show_down,callback,2,3,record,0,E1642,,305,480,이벤트,이벤트
+event_beautyfullshot1,fl:coin_rush_show_down,character,1,2,auto,0,,person:길티,305,480,이벤트,이벤트
 char:284,ch44,character,1,2,auto,0,,person:사쿠라,306,436,호감도,메인
 char:283,ch31,keyword,1,1,auto,0,,place:방주,307,308,호감도,메인
 char:283,ch44,character,1,2,auto,0,,person:로산나,307,436,호감도,메인
@@ -2337,6 +2340,7 @@ event_phantomthiefvsdetective,fl:persona_on_frontline,callback,1,3,record,0,E155
 char:403,side:wordless,keyword,1,1,auto,0,,place:방주,329,331,호감도,사이드
 char:403,ch36,character,1,2,auto,0,,person:드레이크,329,360,호감도,메인
 char:403,fl:go_ninja_thief,character,1,2,auto,0,,person:퀀시,329,412,호감도,이벤트
+char:403,fl:coin_rush_show_down,keyword,1,2,auto,0,,place:갱생관,329,480,호감도,이벤트
 char:580,event_arcanearchive,setup_payoff,1,3,record,0,Q212-2,,330,383,호감도,이벤트
 char:580,event_arcanearchive,character,1,2,auto,0,,person:팬텀,330,383,호감도,이벤트
 char:580,event_arcanearchive,keyword,1,2,auto,0,,org:베스트셀러,330,383,호감도,이벤트
@@ -2583,7 +2587,7 @@ event_romanticvalentine,fl:lie_cause_recoil,callback,1,3,record,0,E1471,,355,438
 char:354,char:355,character,1,2,auto,0,,person:마스트,356,357,호감도,호감도
 char:355,char:315,character,1,2,auto,0,,person:코코아,357,405,호감도,호감도
 char:355,fl:lie_cause_recoil,character,1,2,auto,0,,person:마스트,357,438,호감도,이벤트
-char:355,char:405,character,1,2,auto,0,,person:신,357,481,호감도,호감도
+char:355,fl:coin_rush_show_down,character,1,2,auto,0,,person:신,357,480,호감도,이벤트
 ch35,relic:알관련전달사항,setup_payoff,1,3,record,0,Q229-2,,358,359,메인,유실물
 ch35,relic:알관련전달사항,keyword,2,2,auto,0,,concept:다크_매터 org:포비스트,358,359,메인,유실물
 ch35,ch36,sequel,1,3,auto,0,,,358,360,메인,메인
@@ -2658,6 +2662,7 @@ fl:for_rest,event_unbreakablesphere1,character,1,2,auto,0,,person:마나,365,377
 fl:for_rest,event_ce006,keyword,1,2,auto,0,,item:이터널_라이프,365,387,이벤트,이벤트
 char:412,fl:reborn_evil,character,1,2,auto,0,,person:폴리,366,407,호감도,이벤트
 char:412,char:841,character,1,2,auto,0,,person:미란다,366,410,호감도,호감도
+char:412,fl:coin_rush_show_down,character,1,2,auto,0,,person:플로라,366,480,호감도,이벤트
 event_newflavor,char:520,character,2,2,auto,0,,person:브래디 person:크러스트,367,368,이벤트,호감도
 event_newflavor,side:mudfish,keyword,2,1,auto,0,,concept:니케 place:지상,367,370,이벤트,사이드
 event_newflavor,event_trueflavor,sequel,1,3,manual,0,Y40,,367,371,이벤트,이벤트
@@ -2996,6 +3001,7 @@ fl:reborn_evil,fl:ark_guardian,keyword,1,2,auto,0,,concept:양산형_니케,407,
 fl:reborn_evil,fl:lie_cause_recoil,keyword,1,2,auto,0,,concept:게이트_키퍼,407,438,이벤트,이벤트
 fl:reborn_evil,fl:ark_ranger,keyword,1,2,auto,0,,org:블레이즈_아웃,407,462,이벤트,이벤트
 fl:reborn_evil,fl:persona_on_frontline,keyword,1,2,auto,0,,org:A.C.P.U.,407,474,이벤트,이벤트
+fl:reborn_evil,fl:coin_rush_show_down,character,1,2,auto,0,,person:마나,407,480,이벤트,이벤트
 char:840,char:841,keyword,3,2,auto,0,,concept:NEO_바이러스 concept:랩쳐 org:구원의_성화,408,410,호감도,호감도
 char:840,side:eden_spear,keyword,1,1,auto,0,,concept:니케,408,411,호감도,사이드
 char:840,fl:persona_on_frontline,keyword,1,2,auto,0,,concept:D-WAVE,408,474,호감도,이벤트
@@ -3186,6 +3192,7 @@ fl:fatal_maid,char:103,character,1,2,auto,0,,person:코코아,432,468,이벤트,
 fl:fatal_maid,fl:persona_on_frontline,sequel,1,2,manual,0,Y53,,432,474,이벤트,이벤트
 fl:fatal_maid,fl:persona_on_frontline,callback,4,3,record,0,E1562 E1566 E1573 E1580,,432,474,이벤트,이벤트
 fl:fatal_maid,fl:persona_on_frontline,character,2,2,auto,0,,person:앨든 person:에이드,432,474,이벤트,이벤트
+fl:fatal_maid,fl:coin_rush_show_down,keyword,1,2,auto,0,,place:코인_러시,432,480,이벤트,이벤트
 ch43,relic:아무한테나말해주는거아니야.wav,keyword,1,2,auto,0,,place:아우터_림,434,435,메인,유실물
 ch43,ch44,sequel,1,3,auto,0,,,434,436,메인,메인
 ch43,ch44,setup_payoff,3,3,record,0,E1009 E1017 Q315-2,,434,436,메인,메인
@@ -3232,7 +3239,8 @@ fl:lie_cause_recoil,char:862,character,2,2,auto,0,,person:쿠루미 person:프�
 fl:lie_cause_recoil,char:861,character,2,2,auto,0,,person:밀크 person:타키나,438,441,이벤트,호감도
 fl:lie_cause_recoil,fl:enter_heaven,keyword,2,1,auto,0,,concept:니케 place:방주,438,442,이벤트,이벤트
 fl:lie_cause_recoil,ch46,character,1,2,auto,0,,person:엔더슨,438,452,이벤트,메인
-fl:lie_cause_recoil,char:405,character,1,2,auto,0,,person:마스트,438,481,이벤트,호감도
+fl:lie_cause_recoil,char:405,character,1,2,auto,0,,person:마스트,438,482,이벤트,호감도
+char:860,fl:coin_rush_show_down,character,1,2,auto,0,,person:슈가,439,480,호감도,이벤트
 char:862,ch45,character,1,2,auto,0,,person:트로니,440,450,호감도,메인
 fl:enter_heaven,char:113,callback,1,3,record,0,E1630,,442,443,이벤트,호감도
 fl:enter_heaven,char:113,character,3,2,auto,0,,person:E.H. person:바이퍼 person:자칼,442,443,이벤트,호감도
@@ -3290,6 +3298,7 @@ ch45,event_staranis1,keyword,1,2,auto,0,,org:엘리시온,450,454,메인,이벤�
 ch45,fl:ark_ranger,callback,3,3,record,0,E1173 E1178 E1181,,450,462,메인,이벤트
 ch45,fl:ark_ranger,character,1,2,auto,0,,person:트로니,450,462,메인,이벤트
 ch45,ch47,character,1,2,auto,0,,person:라푼젤,450,470,메인,메인
+ch45,fl:coin_rush_show_down,callback,1,2,record,0,E1643,,450,480,메인,이벤트
 relic:신에게닿기위한탑,ch46,keyword,3,2,auto,0,,org:V.T.C. org:미실리스 place:궤도_엘리베이터,451,452,유실물,메인
 relic:신에게닿기위한탑,relic:궤도엘리베이터음모론,callback,1,2,record,0,F2610-2,,451,453,유실물,유실물
 ch46,relic:궤도엘리베이터음모론,callback,1,2,record,0,E1118,,452,453,메인,유실물
@@ -3328,6 +3337,7 @@ event_staranis1,fl:ark_ranger,character,1,2,auto,0,,person:에닉,454,462,이벤
 event_staranis1,fl:ark_ranger,keyword,4,2,auto,0,,org:엘리시온 org:중앙_정부 org:테트라 place:지상,454,462,이벤트,이벤트
 event_staranis1,fl:project_matis,keyword,1,2,auto,0,,org:미실리스,454,467,이벤트,이벤트
 event_staranis1,fl:persona_on_frontline,callback,2,2,record,0,E1561 E1578,,454,474,이벤트,이벤트
+event_staranis1,fl:coin_rush_show_down,keyword,1,2,auto,0,,org:3대_기업,454,480,이벤트,이벤트
 char:17,char:18,keyword,1,1,auto,0,,place:방주,455,457,호감도,호감도
 char:17,fl:b-side_idol,character,1,1,auto,0,,person:아니스,455,458,호감도,이벤트
 char:441,fl:ark_ranger,character,1,1,auto,0,,person:라피,456,462,호감도,이벤트
@@ -3354,6 +3364,8 @@ fl:ark_ranger,ch47,character,2,2,auto,0,,person:애니힐리오 person:퀸,462,4
 fl:ark_ranger,ch47,keyword,4,2,auto,0,,concept:헬레틱 incident:3차_지상_탈환전 place:궤도_엘리베이터 place:승리의_날개_호,462,470,이벤트,메인
 fl:ark_ranger,ch48,callback,1,3,record,0,E1227,,462,472,이벤트,메인
 fl:ark_ranger,ch48,keyword,1,2,auto,0,,item:세븐스_드워프,462,472,이벤트,메인
+fl:ark_ranger,fl:coin_rush_show_down,character,2,2,auto,0,,person:머스탱 person:잉그리드,462,480,이벤트,이벤트
+fl:ark_ranger,fl:coin_rush_show_down,keyword,2,2,auto,0,,org:엘리시온 org:테트라,462,480,이벤트,이벤트
 char:570,fl:wave_to_you,keyword,1,1,auto,0,,place:방주,463,464,호감도,이벤트
 fl:wave_to_you,char:515,character,1,2,auto,0,,person:신데렐라,464,465,이벤트,호감도
 fl:wave_to_you,char:322,character,3,2,auto,0,,person:나가 person:마르차나 person:티아,464,466,이벤트,호감도
@@ -3368,6 +3380,8 @@ fl:project_matis,ch47,character,2,2,auto,0,,person:샛별 person:요한 person:�
 fl:project_matis,ch47,keyword,5,2,auto,0,,concept:NIMPH concept:랩쳐 concept:지상_탈환 place:방주 place:지상,467,470,이벤트,메인
 fl:project_matis,fl:persona_on_frontline,keyword,1,1,auto,0,,org:중앙_정부,467,474,이벤트,이벤트
 fl:project_matis,fl:great_villain_union,character,1,2,auto,0,,person:드레이크,467,478,이벤트,이벤트
+fl:project_matis,fl:coin_rush_show_down,character,1,2,auto,0,,person:슈엔,467,480,이벤트,이벤트
+fl:project_matis,fl:coin_rush_show_down,keyword,1,2,auto,0,,org:미실리스,467,480,이벤트,이벤트
 char:105,ch47,keyword,1,1,auto,0,,concept:니케,469,470,호감도,메인
 ch47,relic:승리를_부르는_그림자,callback,1,3,record,0,E1226,,470,471,메인,유실물
 ch47,relic:승리를_부르는_그림자,keyword,3,2,auto,0,,concept:랩쳐 org:갓데스 place:승리의_날개_호,470,471,메인,유실물
@@ -3393,7 +3407,13 @@ fl:persona_on_frontline,char:870,keyword,1,1,auto,0,,org:중앙_정부,474,476,�
 fl:persona_on_frontline,char:871,setup_payoff,1,3,record,0,E1582,,474,477,이벤트,호감도
 fl:persona_on_frontline,char:871,character,2,2,auto,0,,person:곰 person:유키코,474,477,이벤트,호감도
 fl:persona_on_frontline,fl:great_villain_union,keyword,1,1,auto,0,,place:지상,474,478,이벤트,이벤트
+fl:persona_on_frontline,fl:coin_rush_show_down,character,2,2,auto,0,,person:에이드 person:퀀시,474,480,이벤트,이벤트
 char:872,char:870,keyword,1,1,auto,0,,place:방주,475,476,호감도,호감도
+char:872,fl:coin_rush_show_down,keyword,1,1,auto,0,,concept:니케,475,480,호감도,이벤트
 char:870,char:104,keyword,1,1,auto,0,,place:방주,476,479,호감도,호감도
+char:870,fl:coin_rush_show_down,keyword,1,1,auto,0,,org:중앙_정부,476,480,호감도,이벤트
 fl:great_villain_union,char:104,character,1,2,auto,0,,person:드레이크,478,479,이벤트,호감도
 fl:great_villain_union,char:104,keyword,1,2,auto,0,,org:빌런_연합,478,479,이벤트,호감도
+char:104,fl:coin_rush_show_down,keyword,1,1,auto,0,,place:방주,479,480,호감도,이벤트
+fl:coin_rush_show_down,char:404,character,1,2,auto,0,,person:길티,480,481,이벤트,호감도
+fl:coin_rush_show_down,char:405,character,1,2,auto,0,,person:신,480,482,이벤트,호감도

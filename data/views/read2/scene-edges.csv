@@ -1713,3 +1713,12 @@ callback,E1631,재언급,F589,ep:d_nikke_anis_01,ep:d_nikke_anis_star_02,char:12
 callback,E1632,재언급,F594,ep:d_nikke_anis_03,ep:d_nikke_anis_star_04,char:12,char:17,115,455,확실,확정
 callback,E1633,재언급,F530,ep:d_nikke_maxwell_03,ep:d_nikke_maxwell_mechanic_01,char:102,char:105,99,469,확실,확정
 callback,E1634,재언급,F1931,event_arcanearchive_04_e,ep:d_nikke_ce009_01_05,event_arcanearchive,char:870,383,476,추정,확정
+setup_payoff,E1635,암시,F2931,fl:coin_rush_show_down_08,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,확실,확정
+setup_payoff,E1636,암시,F2925,fl:coin_rush_show_down_05,fl:coin_rush_show_down_18,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,추정,확정
+setup_payoff,E1637,암시,F2931,fl:coin_rush_show_down_14,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,추정,확정
+setup_payoff,E1638,암시,F2931,fl:coin_rush_show_down_20,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,확실,확정
+setup_payoff,E1639,암시,F2936,fl:coin_rush_show_down_06,fl:coin_rush_show_down_26,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,확실,확정
+callback,E1641,재언급,F789,ep:d_nikke_sin_01,fl:coin_rush_show_down_16,char:401,fl:coin_rush_show_down,171,480,확실,확정
+callback,E1642,재언급,F1517,event_beautyfullshot2_05_e,fl:coin_rush_show_down_27,event_beautyfullshot1,fl:coin_rush_show_down,305,480,확실,확정
+callback,E1642,재언급,F1518,event_beautyfullshot2_05_e,fl:coin_rush_show_down_27,event_beautyfullshot1,fl:coin_rush_show_down,305,480,확실,확정
+callback,E1643,재언급,F2606,d_main_45_11,fl:coin_rush_show_down_25,ch45,fl:coin_rush_show_down,450,480,추정,확정

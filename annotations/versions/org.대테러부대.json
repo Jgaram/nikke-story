@@ -1,0 +1,18 @@
+{
+  "subject": "org:대테러부대",
+  "versions": [
+    {
+      "at": "fl:coin_rush_show_down",
+      "text": "방주의 대테러 무장 부대 — 머스탱의 요청으로 코인 러시에 출동했다.",
+      "src": "d8f5e5e9d6",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N3", "hash": "10bb84e785", "note": "처음 나온 스토리 하나에서만 다뤄 1판 — 근거 refs로 대조" }
+      ],
+      "refs": ["F2930", "F2931"]
+    }
+  ]
+}

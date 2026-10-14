@@ -1,0 +1,26 @@
+{
+  "subject": "thread:J61",
+  "versions": [
+    {
+      "at": "fl:coin_rush_show_down",
+      "title": "코인 러시 쇼다운 — 경비 팀장의 고객",
+      "text": "3대 기업의 기밀 기술을 빼돌린 경비 팀장은 방주 밖의 누구에게 팔려 했고, 갱생관에서 그를 쏜 이는 누구인가.",
+      "src": "ff66534974",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "N3",
+          "hash": "f45b8c85b7",
+          "note": "독립 떡밥 — 처음이자 마지막으로 움직인 스토리 하나라 1판. 고객 · 총을 쏜 이는 열린 물음 꼴로"
+        }
+      ],
+      "refs": ["Q376", "Q377", "F2925"]
+    }
+  ]
+}

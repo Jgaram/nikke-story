@@ -104,6 +104,8 @@ callback,F2528-2,F2528,fl:2x2_love_2ch_18,fl:2x2_love_2ch_50,fl:2x2_love_2ch,fl:
 callback,F2530-2,F2530,fl:2x2_love_2ch_22,fl:2x2_love_2ch_56,fl:2x2_love_2ch,fl:2x2_love_2ch,445,445,,,확실,확정
 callback,F2543-2,F2543,side:pretty_star_01,d_main_45_09,side:pretty_star,ch45,447,450,,,확실,확정
 callback,F2610-2,F2610,relic:신에게닿기위한탑_00,relic:궤도엘리베이터음모론_01,relic:신에게닿기위한탑,relic:궤도엘리베이터음모론,451,453,,,추정,확정
+callback,F2912-2,F2912,fl:coin_rush_show_down_02,fl:coin_rush_show_down_26,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,,,확실,확정
+callback,F2926-2,F2926,fl:coin_rush_show_down_19,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,,,확실,확정
 setup_payoff,Q1-2,Q1,d_main_01af_01,d_main_04af_04,ch01,ch04,2,15,일부,F84,확실,확정
 setup_payoff,Q1-3,Q1,d_main_01af_01,d_main_14af_03,ch01,ch14,2,69,전부,F376,확실,확정
 setup_payoff,Q2-2,Q2,d_main_01_07_s,event_footstepwalkrun2_epilogue,ch01,event_footstepwalkrun1,2,350,전부,F1765,확실,확정
@@ -398,3 +400,6 @@ setup_payoff,Q354-2,Q354,fl:ark_ranger_26,d_main_47_05,fl:ark_ranger,ch47,462,47
 setup_payoff,Q363-2,Q363,d_main_47_04,d_main_47_04,ch47,ch47,470,470,전부,F1239,추정,확정
 setup_payoff,Q364-2,Q364,d_main_47_02,d_main_48_05,ch47,ch48,470,472,일부,F2835,확실,확정
 setup_payoff,Q364-3,Q364,d_main_47_02,d_main_48_06_e,ch47,ch48,470,472,일부,F2838,추정,확정
+setup_payoff,Q373-2,Q373,fl:coin_rush_show_down_02,fl:coin_rush_show_down_26,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2936,확실,확정
+setup_payoff,Q374-2,Q374,fl:coin_rush_show_down_13,fl:coin_rush_show_down_18,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2924,확실,확정
+setup_payoff,Q375-2,Q375,fl:coin_rush_show_down_11,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2935,확실,확정

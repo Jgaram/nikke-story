@@ -101,8 +101,9 @@ D1981,person:길티,길티,관계,변화,person:지휘관,교관을 믿게 된 �
 D490,person:길티,길티,관계,기준,person:메이든,,,"'같이 있는 편이 너도 좋잖아' 하며 낚시에 따라붙고, 백상아리를 두고 맨손 대 낚싯대로 겨룬다",event_beautyfullshot1,305,event_beautyfullshot1_03_s,,,,,확실,확정
 D489,person:길티,길티,성격,변화,,부수는 게 너무 즐거웠다,만지는 게 더 즐겁지만 다 부서져 되돌아오지 않으니 만지기를 무서워한다,,event_beautyfullshot1,305,event_beautyfullshot2_05_e,,,S157,,확실,확정
 D491,person:길티,길티,관계,변화,person:메이든,따라붙어 겨루던 낚시 상대였다,"'부서지지 않는다'는 말에 친구가 되어, 처음으로 '만져도 될까?' 묻고 함께 낚싯대를 잡는다",,event_beautyfullshot1,305,event_beautyfullshot2_05_e,event_beautyfullshot2_05_e,event_beautyfullshot1,S157,,확실,확정
-D2231,person:길티,길티,성격,변화,,"교관을 독점하려 바니걸로 백허그를 계획하고, 벌을 받으려 일부러 지각하고 거짓말로 골탕 먹인다","꾸중에 속상해 쥔 주먹을 스스로 풀고, 같이 해온 일이 물거품이 되는 게 싫다며 거짓말을 그만둔다",,char:404,480,ep:d_nikke_guilty_mightybunny_04,ep:d_nikke_guilty_mightybunny_03,char:404,S393,,확실,확정
-D2232,person:길티,길티,관계,변화,person:지휘관,"교관 곁에 있으려면 갱생해야 하지만, 완전히 갱생해 유죄가 아니게 되면 교관이 떠날까 불안하다","갱생해도 떠나지 않고 서로 배워 가자는 말에 처음으로 진심으로 기뻐 웃고, 팔 힘을 조절해 부드럽게 안는 법을 익힌다",,char:404,480,ep:d_nikke_guilty_mightybunny_05,ep:d_nikke_guilty_mightybunny_04,char:404,S393,,확실,확정
+D2238,person:길티,길티,관계,변화,person:지휘관,믿음이 깨지면 그 두 손을 틀어쥐겠다고 웃던 갱생수였다,교관의 허락 없이는 구속구를 풀지 않겠다며 교관을 믿는다고 한다,,fl:coin_rush_show_down,480,fl:coin_rush_show_down_17,fl:coin_rush_show_down_17,fl:coin_rush_show_down,S395,,추정,확정
+D2231,person:길티,길티,성격,변화,,"교관을 독점하려 바니걸로 백허그를 계획하고, 벌을 받으려 일부러 지각하고 거짓말로 골탕 먹인다","꾸중에 속상해 쥔 주먹을 스스로 풀고, 같이 해온 일이 물거품이 되는 게 싫다며 거짓말을 그만둔다",,char:404,481,ep:d_nikke_guilty_mightybunny_04,ep:d_nikke_guilty_mightybunny_03,char:404,S393,,확실,확정
+D2232,person:길티,길티,관계,변화,person:지휘관,"교관 곁에 있으려면 갱생해야 하지만, 완전히 갱생해 유죄가 아니게 되면 교관이 떠날까 불안하다","갱생해도 떠나지 않고 서로 배워 가자는 말에 처음으로 진심으로 기뻐 웃고, 팔 힘을 조절해 부드럽게 안는 법을 익힌다",,char:404,481,ep:d_nikke_guilty_mightybunny_05,ep:d_nikke_guilty_mightybunny_04,char:404,S393,,확실,확정
 D164,person:김작가,김작가,관계,변화,person:지휘관,'요 근래 뜨거운 인기를 끄는 GHOST 지휘관'에게 금단의 사랑 소설의 모델이 되어 달라는 의뢰인,로맨스 대신 받은 전투 기록에 영감을 얻어 새 장르에 도전하겠다며 시놉시스를 보여 주겠다는 사이,,sub:김작가_00,47,sub:김작가_00,sub:김작가_00,sub:김작가_00,,,확실,확정
 D1471,person:나가,나가,성격,기준,,,,"티아의 옷 · 준비물 · 점심까지 챙기고 다른 학생과 선생까지 챙기는, 굉장히 어른스럽고 성숙한 학생",event_dazzlingcupid,236,event_dazzlingcupid_prologue,,,,,확실,확정
 D1474,person:나가,나가,관계,기준,person:티아,,,'우리 애가 아직 철이 좀 없어서' 하며 티아를 혼내고 챙기는 보호자 같은 단짝,event_dazzlingcupid,236,event_dazzlingcupid_prologue,,,,,확실,확정
@@ -1201,9 +1202,11 @@ D1984,person:신,신,신념,기준,,,,"남이 자기를 위해 죄를 짓는 것
 D1986,person:신,신,관계,변화,person:지휘관,상점 · 벌점으로 부리던 교관이었다,"독방을 두려워하는 속을 꿰뚫리자 갱생을 골라 그를 따라 나오고, '말이 통하면 사이 좋아진다'의 산증인이라 부른다",,char:401,171,ep:d_nikke_sin_05,ep:d_nikke_sin_05,char:401,,F792,추정,확정
 D1987,person:신,신,소속,변화,,갱생관 3대 흉악범이었다,능력을 제한하는 장치를 상시 차고 카운터스와 같은 기지 숙소에서 지낸다,,char:401,171,ep:d_nikke_sin_05,ep:d_nikke_sin_05,char:401,,F792,확실,확정
 D1628,person:신,신,관계,변화,person:지휘관,벌점 · 상점으로 교관을 끌고 다니던 갱생관 흉악범,나쁜 짓 않겠다 약속하고 벌점보다 상점을 더 주는 '기브 앤 테이크' 사이,,event_romanticvalentine,355,event_romanticvalentine_03_e,,,,,확실,확정
-D2233,person:신,신,신념,변화,,남이 자기를 위해 죄를 짓는 것을 가장 성의 있는 행동으로 여겼다,"[부탁]으로 장부를 손에 넣거나 컨버터를 벗는 대신, 어렵더라도 [제대로 된] 옳은 방식으로 직접 해결하려 한다",,char:405,481,ep:d_nikke_sin_swiftbunny_03,ep:d_nikke_sin_swiftbunny_02,char:405,S394,,확실,확정
-D2235,person:신,신,성격,변화,,거절도 호의도 해 본 적 · 받아 본 적이 없어 평범한 친절에 어쩔 줄 몰랐다,'감사합니다'라고 말하는 법을 배워 어르신의 대접을 웃으며 받는다,,char:405,481,ep:d_nikke_sin_swiftbunny_04,ep:d_nikke_sin_swiftbunny_03,char:405,S394,,확실,확정
-D2234,person:신,신,관계,변화,person:지휘관,나쁜 짓 않겠다 약속하고 상점 · 벌점을 주고받는 '기브 앤 테이크' 사이였다,"처음으로 '도와줘'라고 청하고, 컨버터를 벗어 진짜 목소리로 '고마워'를 전한다",,char:405,481,ep:d_nikke_sin_swiftbunny_05,ep:d_nikke_sin_swiftbunny_02,char:405,S394,,확실,확정
+D2236,person:신,신,성격,변화,,말을 남을 조종하는 무기로만 쓰며 속내는 말을 돌려 감췄다,억울함 · 미안함 · 부탁을 솔직히 말하고 그 편이 마음 편하다고 한다,,fl:coin_rush_show_down,480,fl:coin_rush_show_down_24,fl:coin_rush_show_down_17,fl:coin_rush_show_down,S395,,확실,확정
+D2237,person:신,신,관계,변화,person:지휘관,믿지 않고 재미있는 사람으로만 여기던 교관이었다,외로워서 나왔다는 속내를 털어놓고 또 같이 놀자고 약속한 교관이다,,fl:coin_rush_show_down,480,fl:coin_rush_show_down_26,fl:coin_rush_show_down_22,fl:coin_rush_show_down,S395,,확실,확정
+D2233,person:신,신,신념,변화,,남이 자기를 위해 죄를 짓는 것을 가장 성의 있는 행동으로 여겼다,"[부탁]으로 장부를 손에 넣거나 컨버터를 벗는 대신, 어렵더라도 [제대로 된] 옳은 방식으로 직접 해결하려 한다",,char:405,482,ep:d_nikke_sin_swiftbunny_03,ep:d_nikke_sin_swiftbunny_02,char:405,S394,,확실,확정
+D2235,person:신,신,성격,변화,,거절도 호의도 해 본 적 · 받아 본 적이 없어 평범한 친절에 어쩔 줄 몰랐다,'감사합니다'라고 말하는 법을 배워 어르신의 대접을 웃으며 받는다,,char:405,482,ep:d_nikke_sin_swiftbunny_04,ep:d_nikke_sin_swiftbunny_03,char:405,S394,,확실,확정
+D2234,person:신,신,관계,변화,person:지휘관,나쁜 짓 않겠다 약속하고 상점 · 벌점을 주고받는 '기브 앤 테이크' 사이였다,"처음으로 '도와줘'라고 청하고, 컨버터를 벗어 진짜 목소리로 '고마워'를 전한다",,char:405,482,ep:d_nikke_sin_swiftbunny_05,ep:d_nikke_sin_swiftbunny_02,char:405,S394,,확실,확정
 D510,person:신데렐라,신데렐라,기억,변화,,백지상태로 깨어나 '아나키오르'를 제 이름이라 한다,그레이브의 부서진 얼굴을 알아보고 신데렐라로 돌아왔다,,ch32,310,d_main_32_09_e,d_main_32_09_e,ch32,,F1554 F1556,확실,확정
 D511,person:신데렐라,신데렐라,관계,기준,person:그레이브,,,"그를 '내 최고의 관객'이라 부르며 울고, 요청대로 이야기를 다시 이어 쓰겠다고 한다",ch32,310,d_main_32_09_e,,,,,확실,확정
 D513,person:신데렐라,신데렐라,성격,기준,,,,"구구절절한 설명은 아름답지 않다며 손거울을 보고, 100m마다 전신 거울을 달라고 하며 모든 것을 아름다움으로 잰다",ch32,310,d_main_32_af_01,,,,,확실,확정

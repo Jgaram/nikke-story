@@ -478,5 +478,6 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 477,char:871,호감도,5,12,10,0,0,0
 478,fl:great_villain_union,이벤트,15,19,10,0,0,2
 479,char:104,호감도,5,2,4,0,0,0
-480,char:404,호감도,5,10,7,0,0,0
-481,char:405,호감도,5,7,4,0,0,0
+480,fl:coin_rush_show_down,이벤트,28,19,25,1,4,0
+481,char:404,호감도,5,10,7,0,0,0
+482,char:405,호감도,5,7,4,0,0,0

@@ -358,6 +358,7 @@ sub:데이파라_00,fl:reborn_evil,callback,2,0,2,168,407,서브퀘스트,이벤
 sub:데이파라_00,fl:reborn_evil,setup_payoff,1,1,0,168,407,서브퀘스트,이벤트,Q108-3
 sub:데이파라_00,char:840,setup_payoff,1,1,0,168,408,서브퀘스트,호감도,Q108-4
 char:401,event_romanticvalentine,callback,2,0,2,171,355,호감도,이벤트,E1417
+char:401,fl:coin_rush_show_down,callback,1,0,1,171,480,호감도,이벤트,E1641
 char:402,event_phantomthiefvsdetective,callback,3,0,3,173,328,호감도,이벤트,E1388 E1389 E1391
 char:402,fl:go_ninja_thief,callback,1,0,1,173,412,호감도,이벤트,E1441
 char:112,ch24,setup_payoff,1,0,1,174,219,호감도,메인,E1601
@@ -690,6 +691,7 @@ event_beautyfullshot1,event_icedragonsaga1,callback,1,0,1,305,347,이벤트,이�
 event_beautyfullshot1,event_footstepwalkrun1,setup_payoff,1,1,0,305,350,이벤트,이벤트,Q198-2
 event_beautyfullshot1,ch45,setup_payoff,1,0,1,305,450,이벤트,메인,E425
 event_beautyfullshot1,ch46,setup_payoff,1,0,1,305,452,이벤트,메인,E425
+event_beautyfullshot1,fl:coin_rush_show_down,callback,2,0,2,305,480,이벤트,이벤트,E1642
 ch31,relic:말뚝프로젝트보고서,setup_payoff,1,0,1,308,309,메인,유실물,E435
 ch31,ch32,callback,1,1,0,308,310,메인,메인,F1530-2
 ch31,ch32,setup_payoff,10,1,9,308,310,메인,메인,Q200-2 E437 E438 E441 E442 E443 E444 E445 E446 E447
@@ -1063,6 +1065,7 @@ fl:good_world,ch46,setup_payoff,1,0,1,448,452,이벤트,메인,E1077
 ch45,ch46,callback,1,0,1,450,452,메인,메인,E1111
 ch45,ch46,setup_payoff,5,3,2,450,452,메인,메인,Q335-2 Q336-2 Q340-2 E1084 E1088
 ch45,fl:ark_ranger,callback,3,0,3,450,462,메인,이벤트,E1173 E1178 E1181
+ch45,fl:coin_rush_show_down,callback,1,0,1,450,480,메인,이벤트,E1643
 relic:신에게닿기위한탑,relic:궤도엘리베이터음모론,callback,1,1,0,451,453,유실물,유실물,F2610-2
 ch46,relic:궤도엘리베이터음모론,callback,1,0,1,452,453,메인,유실물,E1118
 ch46,ch47,callback,3,0,3,452,470,메인,메인,E1208 E1209 E1223

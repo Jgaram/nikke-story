@@ -253,7 +253,6 @@ rid,name,target,source,word,lines,first
 62,미카 : 스노우 버디,person:미카,story,선생님,4,event_neverland2_01_e#45
 62,미카 : 스노우 버디,person:미카,story,손님,1,event_neverland1_01_e#75
 63,벨로타 : 펌킨 위치,person:벨로타,voice,아저씨,13,c063_Lobby_Touch_1
-63,벨로타 : 펌킨 위치,person:벨로타,episode,아저씨,30,ep:d_nikke_belorta_pumpkinwitch_01#1
 63,벨로타 : 펌킨 위치,person:벨로타,story,아저씨,33,event_neverland1_01_e#74
 63,벨로타 : 펌킨 위치,person:벨로타,story,선생님,1,event_neverland2_01_e#19
 70,브리드,person:브리드,voice,지휘관,4,c070_Lobby_Touch_Love_2
@@ -739,8 +738,8 @@ rid,name,target,source,word,lines,first
 284,사쿠라 : 블룸 인 서머,person:사쿠라,story,부사령관님,1,d_main_22_10#10
 290,마나,person:마나,voice,지휘관,14,c290_01_Lobby_Touch_3
 290,마나,person:마나,episode,지휘관,3,ep:d_nikke_mana_01#79
-290,마나,person:마나,story,지휘관,41,event_wisdomspring_prologue#8
-290,마나,person:마나,story,당신,36,side:wordless_00#2
+290,마나,person:마나,story,지휘관,44,event_wisdomspring_prologue#8
+290,마나,person:마나,story,당신,37,side:wordless_00#2
 290,마나,person:마나,story,선배,1,d_main_33_02_e#57
 290,마나,person:마나,story,손님,1,event_wisdomspring_03_e#7
 291,에테르,person:에테르,episode,사장님,1,ep:d_nikke_ether_03#114
@@ -755,7 +754,7 @@ rid,name,target,source,word,lines,first
 310,에이드,person:에이드,voice,손님,1,c310_Outpost_Touch_1
 310,에이드,person:에이드,episode,주인님,29,ep:d_nikke_ade_01#15
 310,에이드,person:에이드,episode,당신,1,ep:d_nikke_ade_02#38
-310,에이드,person:에이드,story,주인님,177,event_perfectmaid_prologue#12
+310,에이드,person:에이드,story,주인님,182,event_perfectmaid_prologue#12
 310,에이드,person:에이드,story,손님,19,event_maidinvalentine_prologue#15
 310,에이드,person:에이드,story,사장님,18,fl:coins_in_rush_00#9
 310,에이드,person:에이드,story,당신,4,fl:fatal_maid_09#1
@@ -771,7 +770,7 @@ rid,name,target,source,word,lines,first
 312,소다,person:소다,voice,당신,1,c312_Lobby_Touch_Love_1
 312,소다,person:소다,episode,주인님,22,ep:d_nikke_soda_01#50
 312,소다,person:소다,episode,손님,1,ep:d_nikke_soda_03#6
-312,소다,person:소다,story,주인님,64,event_goldencoinrush1_prologue#53
+312,소다,person:소다,story,주인님,65,event_goldencoinrush1_prologue#53
 312,소다,person:소다,story,사장님,4,event_goldencoinrush1_01_s#51
 312,소다,person:소다,story,손님,3,fl:fatal_maid_06#4
 313,프리바티 : 언카인드 메이드,person:프리바티,voice,주인님,12,c313_Lobby_Touch_Love_2
@@ -793,13 +792,13 @@ rid,name,target,source,word,lines,first
 313,프리바티 : 언카인드 메이드,person:프리바티,story,집사님,1,fl:2x2_love_2ch_08#93
 314,소다 : 트윙클링 바니,person:소다,voice,주인님,7,c314_Lobby_Touch_1
 314,소다 : 트윙클링 바니,person:소다,episode,주인님,23,ep:d_nikke_soda_twinklingbunny_01#41
-314,소다 : 트윙클링 바니,person:소다,story,주인님,64,event_goldencoinrush1_prologue#53
+314,소다 : 트윙클링 바니,person:소다,story,주인님,65,event_goldencoinrush1_prologue#53
 314,소다 : 트윙클링 바니,person:소다,story,사장님,4,event_goldencoinrush1_01_s#51
 314,소다 : 트윙클링 바니,person:소다,story,손님,3,fl:fatal_maid_06#4
 315,에이드 : 에이전트 바니,person:에이드,voice,주인님,15,c315_Lobby_Touch_1
 315,에이드 : 에이전트 바니,person:에이드,episode,주인님,52,ep:d_nikke_ade_agentbunny_01#29
 315,에이드 : 에이전트 바니,person:에이드,episode,지휘관,1,ep:d_nikke_ade_agentbunny_05#56
-315,에이드 : 에이전트 바니,person:에이드,story,주인님,177,event_perfectmaid_prologue#12
+315,에이드 : 에이전트 바니,person:에이드,story,주인님,182,event_perfectmaid_prologue#12
 315,에이드 : 에이전트 바니,person:에이드,story,손님,19,event_maidinvalentine_prologue#15
 315,에이드 : 에이전트 바니,person:에이드,story,사장님,18,fl:coins_in_rush_00#9
 315,에이드 : 에이전트 바니,person:에이드,story,당신,4,fl:fatal_maid_09#1
@@ -850,7 +849,7 @@ rid,name,target,source,word,lines,first
 351,앵커,person:앵커,voice,아님,1,c351_Gift_3
 351,앵커,person:앵커,episode,사장님,4,ep:d_nikke_anchor_04#19
 351,앵커,person:앵커,story,오라버니,11,event_romanticvalentine_01_s#8
-351,앵커,person:앵커,story,주인님,8,event_romanticvalentine_01_e#106
+351,앵커,person:앵커,story,주인님,9,event_romanticvalentine_01_e#106
 351,앵커,person:앵커,story,아저씨,4,event_romanticvalentine_02_e#34
 351,앵커,person:앵커,story,손님,2,event_romanticvalentine_02_s#21
 351,앵커,person:앵커,story,점장님,1,event_romanticvalentine_01_e#26
@@ -871,7 +870,7 @@ rid,name,target,source,word,lines,first
 355,앵커 : 이노센트 메이드,person:앵커,voice,주인님,12,c355_Lobby_Touch_2
 355,앵커 : 이노센트 메이드,person:앵커,episode,주인님,35,ep:d_nikke_anchor_innocentmaid_01#36
 355,앵커 : 이노센트 메이드,person:앵커,story,오라버니,11,event_romanticvalentine_01_s#8
-355,앵커 : 이노센트 메이드,person:앵커,story,주인님,8,event_romanticvalentine_01_e#106
+355,앵커 : 이노센트 메이드,person:앵커,story,주인님,9,event_romanticvalentine_01_e#106
 355,앵커 : 이노센트 메이드,person:앵커,story,아저씨,4,event_romanticvalentine_02_e#34
 355,앵커 : 이노센트 메이드,person:앵커,story,손님,2,event_romanticvalentine_02_s#21
 355,앵커 : 이노센트 메이드,person:앵커,story,점장님,1,event_romanticvalentine_01_e#26
@@ -969,17 +968,21 @@ rid,name,target,source,word,lines,first
 411,플로라,person:플로라,episode,안개꽃님,2,ep:d_nikke_flora_03#5
 411,플로라,person:플로라,episode,개나리님,1,ep:d_nikke_flora_01#31
 411,플로라,person:플로라,episode,팬지님,1,ep:d_nikke_flora_01#7
-411,플로라,person:플로라,story,꽃님,36,event_secretgarden_01_s#3
+411,플로라,person:플로라,story,꽃님,40,event_secretgarden_01_s#3
 411,플로라,person:플로라,story,해바라기님,17,event_secretgarden_01_s#86
 411,플로라,person:플로라,story,샐비어님,10,event_secretgarden_prologue#19
-411,플로라,person:플로라,story,아스타님,6,fl:for_rest_01#59
+411,플로라,person:플로라,story,아스타님,7,fl:coin_rush_show_down_01#62
 411,플로라,person:플로라,story,로벨리아님,3,fl:for_rest_01#143
 411,플로라,person:플로라,story,스타티스님,3,event_secretgarden_intermission_01#0
 411,플로라,person:플로라,story,개나리님,1,event_secretgarden_prologue#4
 411,플로라,person:플로라,story,금잔화님,1,fl:for_rest_14#25
 411,플로라,person:플로라,story,마스터,1,d_main_27_09_e#46
+411,플로라,person:플로라,story,밀크위드님,1,fl:coin_rush_show_down_09#37
 411,플로라,person:플로라,story,복숭아꽃님,1,event_secretgarden_04_s#91
+411,플로라,person:플로라,story,셰프님,1,fl:coin_rush_show_down_08#52
 411,플로라,person:플로라,story,손님,1,fl:for_rest_01#55
+411,플로라,person:플로라,story,엉겅퀴님,1,fl:coin_rush_show_down_22#21
+411,플로라,person:플로라,story,협죽도님,1,fl:coin_rush_show_down_05#66
 412,트리나,person:트리나,voice,햇님,6,c412_Lobby_Touch_Love_2
 412,트리나,person:트리나,episode,햇님,20,ep:d_nikke_trina_01#27
 412,트리나,person:트리나,story,햇님,4,fl:b-side_idol_07#75

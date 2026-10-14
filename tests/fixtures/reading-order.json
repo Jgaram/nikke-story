@@ -484,7 +484,8 @@
     "R99|x|fl:great_villain_union|",
     "R99|x|char:104|",
     "R99|x|char:404|",
-    "R99|x|char:405|"
+    "R99|x|char:405|",
+    "U01|x|fl:coin_rush_show_down|"
   ],
   "read1Placed": [
     "R01|x|ch00|",
@@ -970,6 +971,7 @@
     "R99|x|char:871|",
     "R99|x|fl:great_villain_union|",
     "R99|x|char:104|",
+    "U01|x|fl:coin_rush_show_down|",
     "R99|x|char:404|",
     "R99|x|char:405|"
   ],
@@ -1073,7 +1075,8 @@
     "R96|x|fl:project_matis",
     "R97|x|char:103 char:105 ch47 relic:승리를_부르는_그림자 ch48 relic:불길한_소리.wav",
     "R98|x|fl:persona_on_frontline char:872",
-    "R99|x|char:870 char:871 fl:great_villain_union char:104 char:404 char:405"
+    "R99|x|char:870 char:871 fl:great_villain_union char:104 char:404 char:405",
+    "U01|x|fl:coin_rush_show_down"
   ],
   "read2": [
     "P1|x|ch00|",
@@ -1559,7 +1562,8 @@
     "M104|x|char:871|",
     "M104|x|char:104|",
     "M104|x|char:404|",
-    "M104|x|char:405|"
+    "M104|x|char:405|",
+    "U01|x|fl:coin_rush_show_down|"
   ],
   "sessions2": [
     "P1|x|ch00 ch01 relic:어느남자의수기 ch02 sub:칠리페퍼_00 sub:콜렉터_00 sub:콜렉터_01 sub:테트라_커넥트_00 relic:생존가이드1 relic:통화기록017515 ch03 sub:세르반_00 relic:방주추첨권",
@@ -1666,7 +1670,8 @@
     "M101|x|char:841 char:23 char:223 char:331 char:262 char:74 char:75 char:73 char:471",
     "M102|x|char:582 char:316 char:860 char:862 char:861 char:113 char:583 char:620 char:17 char:441",
     "M103|x|char:600 char:601 char:570 char:515 char:322 char:103 char:105 char:872 char:870",
-    "M104|x|char:871 char:104 char:404 char:405"
+    "M104|x|char:871 char:104 char:404 char:405",
+    "U01|x|fl:coin_rush_show_down"
   ],
   "layers": [
     "ch00|1",

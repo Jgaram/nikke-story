@@ -114,7 +114,7 @@ test('중요도 시안 표 — 메인 밖 판정 전부 · 기준 시점 · 다�
   assert.ok(v.units.every((u) => !/^ch\d/.test(u.unit) && !spine.has(u.unit)), '메인 · 척추는 채점하지 않는다');
   assert.ok(v.spine.every((u) => spine.has(u.unit) && u.judgment && u.spine && u.layer === 1), '척추 단위는 판정 K를 "척추" 표시로 남기고 1층');
   assert.ok(v.units.every((u) => /^\d{4}-\d{2}-\d{2}$/.test(u.asof)), '확정 판정은 모두 기준 시점이 있다');
-  assert.ok(v.units.every((u) => u.layer === u.read_layer), '층은 2회독에서 읽은 층 그대로');
+  assert.ok(v.units.every((u) => u.read_layer === '' || u.layer === u.read_layer), '층은 2회독에서 읽은 층 그대로'); // U 항목(N3)은 층 머리줄 밖 — 규칙 층(docs/annotations.md "층 판정")
   assert.ok(v.pending.every((u) => u.recheck && !u.rechecked));
   assert.ok(v.units.every((u) => RECHECK_GROUPS.some(([g]) => u.recheck.startsWith(g))), '판정마다 묶음이 하나 있다(기준 바꿈 — 모두 다시 본다)');
   const k = (unit) => v.units.find((u) => u.unit === unit);
