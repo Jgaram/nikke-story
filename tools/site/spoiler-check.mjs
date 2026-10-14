@@ -8,6 +8,9 @@
  *   node tools/site/spoiler-check.mjs --root <사이트 폴더>      # site/ 말고 다른 사본을 띄운다(고치기 전 · 뒤 비교)
  *   node tools/site/spoiler-check.mjs --skip                   # 체크 칸 스토리(사이드 · 픽업 이벤트)를 다 끈 독자(W15f)
  *   node tools/site/spoiler-check.mjs --skip-all               # 고를 수 있는 스토리를 다 끈 독자(이벤트 · 호감도까지 — 메인 갈래만 본 독자, W16b)
+ *   node tools/site/spoiler-check.mjs --readers base,skip,skip-all   # 세 독자를 크로미움 한 번에(이름 앞에 [독자])
+ *   --jobs N(함께 띄우는 페이지, 기본 CPU 수 · 많아야 6) · --timing(오래 걸린 화면) · --quiet · --cap — 기다리는 법 · 시간은 docs/tools.md "스포일러 점검"
+ * 화면마다 새 문서로 띄우고, 고정 대기 대신 할 일(네트워크 · fetch · 짧은 타이머 · rAF · idle)이 다 끝나고 DOM이 잠잠해질 때 점검한다.
  *
  * 무엇을 '새는 것'으로 세나(화면의 보이는 글자 — #main · #reader · 검색 결과의 innerText, 보이는 SVG 글자, title · aria-label):
  *   줄거리   안 본 스토리(R.seen 거짓)의 한 줄 소개(synopsis.json logline) 앞 20자.
@@ -46,7 +49,12 @@ const { values: args } = parseArgs({
     tabs: { type: 'string', default: 'order,links,threads,chrono,persons,world' },
     out: { type: 'string' },
     port: { type: 'string', default: '0' },
-    wait: { type: 'string', default: '3000' },
+    wait: { type: 'string', default: '3000' }, // 이만큼 안에 불리는 setTimeout은 끝날 때까지 기다린다(전의 고정 대기 길이)
+    quiet: { type: 'string', default: '300' }, // 할 일이 없고 DOM이 이만큼 안 바뀌면 다 그린 것
+    cap: { type: 'string', default: '30000' }, // 한 화면을 이보다 오래 기다리면 경고하고 점검한다
+    jobs: { type: 'string' }, // 함께 돌리는 페이지 수(기본 CPU 수, 많아야 6)
+    readers: { type: 'string' }, // base,skip,skip-all — 여럿이면 한 번 띄워 같이 돈다
+    timing: { type: 'boolean', default: false },
     show: { type: 'string', default: '5' },
     titles: { type: 'boolean', default: false },
     root: { type: 'string' },
@@ -57,6 +65,9 @@ const { values: args } = parseArgs({
 const CHROME = process.env.CHROME || ['/opt/pw-browsers/chromium', '/usr/bin/chromium', '/usr/bin/google-chrome'].find((p) => fs.existsSync(p));
 if (!CHROME) { console.error('크로미움을 못 찾았다 — CHROME=경로로 알려 준다'); process.exit(2); }
 const WAIT = Number(args.wait);
+const QUIET = Number(args.quiet);
+const CAP = Number(args.cap);
+const POLL = 50;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // 리더로 열어 볼 것 — 뒤에 나오는 떡밥 · 인물 · 항목 · 스토리(컷오프가 낮으면 가려져야 한다)
@@ -282,53 +293,167 @@ const PROBE = async (skipMain, titles, focus) => {
   return { t: R.t, hits };
 };
 
+// ── 다 그렸나(조건 대기) ──
+// 고정 sleep 대신, 페이지 시작 전에 심은 계수기로 '할 일이 다 끝나고 잠잠하다'를 본다 — 네트워크(CDP Network, 모듈 import 포함)
+// · fetch와 그 본문 읽기 · 짧은 setTimeout(LIMIT ms 이하 — 전의 고정 대기 안에 불렸을 것) · requestAnimationFrame · requestIdleCallback이
+// 하나도 안 남고, DOM이 QUIET ms 동안 안 바뀌면 다 그린 것. 전의 3초보다 늦게 끝나는 일(기록 6MB 받기 등)도 끝까지 기다린다.
+const INSTRUMENT = (LIMIT) => {
+  const W = window;
+  let pend = 0;
+  let last = performance.now();
+  const bump = () => { last = performance.now(); };
+  const live = { t: new Set(), r: new Set(), i: new Set() };
+  const wrap = (setName, clearName, bag, short) => {
+    const set0 = W[setName];
+    const clr0 = W[clearName];
+    if (!set0) return;
+    W[setName] = function (fn, ms, ...rest) {
+      if (typeof fn !== 'function' || !short(ms)) return set0.call(W, fn, ms, ...rest);
+      const id = set0.call(W, (...a) => { bag.delete(id); bump(); return fn(...a); }, ms, ...rest);
+      bag.add(id);
+      return id;
+    };
+    if (clr0) W[clearName] = function (id) { bag.delete(id); return clr0.call(W, id); };
+  };
+  wrap('setTimeout', 'clearTimeout', live.t, (ms) => (Number(ms) || 0) <= LIMIT);
+  wrap('requestAnimationFrame', 'cancelAnimationFrame', live.r, () => true);
+  wrap('requestIdleCallback', 'cancelIdleCallback', live.i, () => true);
+  const track = (p) => { pend++; return p.finally(() => { pend--; bump(); }); };
+  const f0 = W.fetch;
+  W.fetch = function (...a) { return track(f0.apply(this, a)); };
+  for (const m of ['json', 'text', 'arrayBuffer', 'blob']) {
+    const m0 = Response.prototype[m];
+    Response.prototype[m] = function (...a) { return track(m0.apply(this, a)); };
+  }
+  new MutationObserver(bump).observe(document, { subtree: true, childList: true, characterData: true, attributes: true });
+  W.__spoilBusy = () => ({ busy: pend + live.t.size + live.r.size + live.i.size, quiet: performance.now() - last, ready: document.readyState === 'complete' });
+};
+
 // ── CDP ──
 async function cdp(wsUrl) {
   const ws = new WebSocket(wsUrl);
   await new Promise((res, rej) => { ws.onopen = res; ws.onerror = rej; });
   let id = 0;
   const wait = new Map();
-  ws.onmessage = (m) => { const d = JSON.parse(m.data); if (d.id && wait.has(d.id)) { wait.get(d.id)(d); wait.delete(d.id); } };
+  const listeners = new Set();
+  ws.onmessage = (m) => {
+    const d = JSON.parse(m.data);
+    if (d.id && wait.has(d.id)) { wait.get(d.id)(d); wait.delete(d.id); }
+    else if (d.method) for (const f of listeners) f(d);
+  };
   const send = (method, params = {}, sessionId) => new Promise((res) => { const i = ++id; wait.set(i, res); ws.send(JSON.stringify({ id: i, method, params, sessionId })); });
-  return { send, close: () => ws.close() };
+  return { send, on: (f) => listeners.add(f), close: () => ws.close() };
 }
+
+// 독자 — --readers가 없으면 --skip · --skip-all로 하나를 고른다(전과 같다)
+const READERS = (args.readers ?? (args['skip-all'] ? 'skip-all' : args.skip ? 'skip' : 'base')).split(',').map((x) => x.trim()).filter(Boolean);
+for (const r of READERS) if (!['base', 'skip', 'skip-all'].includes(r)) { console.error(`--readers: 모르는 독자 ${r} (base · skip · skip-all)`); process.exit(2); }
+const JOBS = Math.max(1, Number(args.jobs ?? Math.min(6, os.availableParallelism())));
 
 const server = await serve({ port: Number(args.port), ...(args.root ? { root: path.resolve(args.root) } : {}) });
 const base = `http://127.0.0.1:${server.address().port}`;
 const prof = fs.mkdtempSync(path.join(os.tmpdir(), 'spoil-'));
-const chrome = spawn(CHROME, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=0', `--user-data-dir=${prof}`, '--window-size=1400,1000', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+// 여러 페이지를 함께 돌리므로 뒤에 있는 창도 타이머 · 그리기를 늦추지 않게 한다
+const chrome = spawn(CHROME, ['--headless=new', '--no-sandbox', '--disable-gpu', '--remote-debugging-port=0', `--user-data-dir=${prof}`, '--window-size=1400,1000',
+  '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows', 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
 const wsUrl = await new Promise((res, rej) => {
   let buf = '';
   chrome.stderr.on('data', (d) => { buf += d; const m = buf.match(/DevTools listening on (ws:\S+)/); if (m) res(m[1]); });
   chrome.on('exit', () => rej(new Error('크로미움이 바로 끝났다')));
 });
 const c = await cdp(wsUrl);
-const { result: { targetId } } = await c.send('Target.createTarget', { url: 'about:blank' });
-const { result: { sessionId } } = await c.send('Target.attachToTarget', { targetId, flatten: true });
-const S = (m, p) => c.send(m, p, sessionId);
-await S('Page.enable');
-await S('Runtime.enable');
 
-let n = 0;
+/** 페이지(창) 하나 — 화면을 차례로 띄우고, 다 그릴 때까지 기다리고, 점검한다 */
+async function newPage() {
+  const { result: { targetId } } = await c.send('Target.createTarget', { url: 'about:blank', newWindow: true, width: 1400, height: 1000 });
+  const { result: { sessionId } } = await c.send('Target.attachToTarget', { targetId, flatten: true });
+  const S = (m, p) => c.send(m, p, sessionId);
+  const net = new Set();
+  let netAt = Date.now();
+  c.on((d) => {
+    if (d.sessionId !== sessionId) return;
+    const rid = d.params?.requestId;
+    if (d.method === 'Network.requestWillBeSent') net.add(rid);
+    else if (d.method === 'Network.loadingFinished' || d.method === 'Network.loadingFailed') net.delete(rid);
+    else return;
+    netAt = Date.now();
+  });
+  await S('Page.enable');
+  await S('Runtime.enable');
+  await S('Network.enable');
+  await S('Page.addScriptToEvaluateOnNewDocument', { source: `(${INSTRUMENT})(${WAIT})` });
+  const evaluate = async (expr) => {
+    const r = await S('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true });
+    if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? '평가 실패');
+    return r.result?.result?.value;
+  };
+  let n = 0;
+  const settle = async (name) => {
+    const t0 = Date.now();
+    for (;;) {
+      await sleep(POLL);
+      let b = null;
+      try { b = await evaluate('window.__spoilBusy?.() ?? null'); } catch { /* 새 문서로 넘어가는 중 */ }
+      if (b && b.ready && !b.busy && !net.size && b.quiet >= QUIET && Date.now() - netAt >= QUIET) return Date.now() - t0;
+      if (Date.now() - t0 > CAP) {
+        console.error(`⚠ ${name} — ${CAP}ms 안에 잠잠해지지 않았다(${b ? `할 일 ${b.busy} · ready ${b.ready}` : '계수기 없음'} · 네트워크 ${net.size}) — 그대로 점검한다`);
+        return Date.now() - t0;
+      }
+    }
+  };
+  return {
+    evaluate,
+    settle,
+    open: async (hash, x, name) => { await S('Page.navigate', { url: `${base}/?n=${++n}#${hash}${x}` }); return settle(name); },
+    close: () => c.send('Target.closeTarget', { targetId }),
+  };
+}
+
 /** 떡밥 탭이 지금 그리는 떡밥 — 목록에서 고른 줄(없으면 p.j) */
 const THREAD_NOW = `(async () => { const st = await import('/lib/state.js'); return document.querySelector('.thr-listrow.is-sel')?.dataset.j ?? st.param('threads', 'j') ?? 'J1'; })()`;
-const evaluate = async (expr) => {
-  const r = await S('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true });
-  if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? '평가 실패');
-  return r.result?.result?.value;
-};
+const probe = (pg, skipMain = false, focus = null) => pg.evaluate(`(${PROBE})(${skipMain}, ${args.titles}, ${JSON.stringify(focus)})`);
 // --skip — 체크 칸 스토리(units.json check — 사이드 · 픽업 이벤트, W16a)를 다 끈 독자(W15f). 딸린 유실물 키는 state가 버리고 딸린 이벤트의 칸을 따른다. 게임에서 아무 때나 보는 스토리라, 거기서만 먼저 나온 것이 메인만 본 독자에게 새는지
 const unitsJson = JSON.parse(fs.readFileSync(path.join(args.root ?? path.resolve(import.meta.dirname, '../../site'), 'data/units.json'), 'utf8'));
 const checkKeys = unitsJson.filter((u) => u.check);
 // --skip-all(W16b) — 갈래 통째 안 봄(state.js 압축 형식 '-@갈래')
-const xFor = (t) => (t === 'all' ? '' : args['skip-all'] ? `&x=${encodeURIComponent('-@major,-@side,-@event,-@episode')}`
-  : args.skip ? `&x=${encodeURIComponent(checkKeys.filter((u) => u.tick <= Number(t)).map((u) => `-${u.key}`).join(','))}` : '');
-let curX = '';
-const open = async (hash) => { await S('Page.navigate', { url: `${base}/?n=${++n}#${hash}${curX}` }); await sleep(WAIT); };
-const probe = (skipMain = false, focus = null) => evaluate(`(${PROBE})(${skipMain}, ${args.titles}, ${JSON.stringify(focus)})`);
+const xFor = (reader, t) => (t === 'all' ? '' : reader === 'skip-all' ? `&x=${encodeURIComponent('-@major,-@side,-@event,-@episode')}`
+  : reader === 'skip' ? `&x=${encodeURIComponent(checkKeys.filter((u) => u.tick <= Number(t)).map((u) => `-${u.key}`).join(','))}` : '');
+
+// 할 일 목록 — 화면 하나가 일 하나(새 문서로 띄운다). 검색은 전처럼 세계 탭 한 문서에서 차례로 친다(앞 검색이 받은 기록 · 줄거리를 이어 쓴다)
+const tabs = args.tabs.split(',');
+const jobs = [];
+for (const reader of READERS) {
+  const pre = READERS.length > 1 ? `[${reader}] ` : '';
+  for (const t of args.t.split(',')) {
+    const x = xFor(reader, t);
+    const screen = (name, hash, how) => jobs.push({ x, run: async (pg) => [[`${pre}${name}`, await pg.open(hash, x, `${pre}${name}`), await how(pg)]] });
+    for (const tab of tabs) {
+      screen(`t=${t} ${tab}`, `tab=${tab}&t=${t}`, async (pg) => probe(pg, tab === 'order', tab === 'threads' ? await pg.evaluate(THREAD_NOW) : null));
+      if (tab === 'threads') for (const j of THREAD_TAB) screen(`t=${t} threads ${j}`, `tab=threads&t=${t}&p.j=${j}`, async (pg) => probe(pg, false, await pg.evaluate(THREAD_NOW)));
+    }
+    if (tabs.includes('links')) for (const [j, cc] of LINKS_TH) screen(`t=${t} links ${j} ${cc}`, `tab=links&t=${t}&p.th=${j}&p.c=${encodeURIComponent(cc)}`, (pg) => probe(pg, false));
+    if (tabs.includes('persons')) for (const who of PERSONS_WHO) screen(`t=${t} persons ${who}`, `tab=persons&t=${t}&p.who=${encodeURIComponent(who)}`, (pg) => probe(pg, false));
+    for (const sel of [...READER_SELS, ...READER_UNITS]) screen(`t=${t} 리더 ${sel}`, `tab=world&t=${t}&sel=${encodeURIComponent(sel)}`, (pg) => probe(pg, true, sel.startsWith('thread:') ? sel.slice(7) : null));
+    jobs.push({
+      x,
+      run: async (pg) => {
+        const out = [];
+        let ms = await pg.open(`tab=world&t=${t}`, x, `${pre}t=${t} 검색`);
+        for (const q of SEARCHES) {
+          await pg.evaluate(`(() => { const i = document.querySelector('#search'); i.focus(); i.value = ${JSON.stringify(q)}; i.dispatchEvent(new Event('input', { bubbles: true })); })()`);
+          ms += await pg.settle(`${pre}t=${t} 검색 '${q}'`);
+          out.push([`${pre}t=${t} 검색 '${q}'`, ms, await probe(pg, true)]);
+          ms = 0;
+        }
+        return out;
+      },
+    });
+  }
+}
 
 const report = [];
 let total = 0;
+const waits = [];
 const note = (name, r) => {
   total += r.hits.length;
   report.push(`== ${name} — ${r.hits.length}`, ...r.hits.map((h) => `  ${h}`));
@@ -336,39 +461,27 @@ const note = (name, r) => {
   for (const h of r.hits.slice(0, Number(args.show))) console.log(`    ${h}`);
 };
 
+const started = Date.now();
+const pages = [];
 try {
-  for (const t of args.t.split(',')) {
-    curX = xFor(t);
-    for (const tab of args.tabs.split(',')) {
-      await open(`tab=${tab}&t=${t}`);
-      note(`t=${t} ${tab}`, await probe(tab === 'order', tab === 'threads' ? await evaluate(THREAD_NOW) : null));
-      if (tab === 'threads') {
-        for (const j of THREAD_TAB) {
-          await open(`tab=threads&t=${t}&p.j=${j}`);
-          note(`t=${t} threads ${j}`, await probe(false, await evaluate(THREAD_NOW)));
-        }
-      }
+  // 일은 여럿이 함께 돌리되, 출력 · 보고서는 목록 차례대로 낸다
+  const done = new Array(jobs.length);
+  let shown = 0;
+  let next = 0;
+  const flush = () => { for (; shown < jobs.length && done[shown]; shown++) for (const [name, , r] of done[shown]) note(name, r); };
+  const worker = async () => {
+    const pg = await newPage();
+    pages.push(pg);
+    for (let i = next++; i < jobs.length; i = next++) {
+      const t0 = Date.now();
+      done[i] = await jobs[i].run(pg);
+      waits.push({ name: done[i][0][0], ms: Date.now() - t0, wait: done[i].reduce((a, [, w]) => a + w, 0), screens: done[i].length });
+      flush();
     }
-    if (args.tabs.split(',').includes('links')) for (const [j, c] of LINKS_TH) {
-      await open(`tab=links&t=${t}&p.th=${j}&p.c=${encodeURIComponent(c)}`);
-      note(`t=${t} links ${j} ${c}`, await probe(false));
-    }
-    if (args.tabs.split(',').includes('persons')) for (const who of PERSONS_WHO) {
-      await open(`tab=persons&t=${t}&p.who=${encodeURIComponent(who)}`);
-      note(`t=${t} persons ${who}`, await probe(false));
-    }
-    for (const sel of [...READER_SELS, ...READER_UNITS]) {
-      await open(`tab=world&t=${t}&sel=${encodeURIComponent(sel)}`);
-      note(`t=${t} 리더 ${sel}`, await probe(true, sel.startsWith('thread:') ? sel.slice(7) : null));
-    }
-    await open(`tab=world&t=${t}`);
-    for (const q of SEARCHES) {
-      await evaluate(`(() => { const i = document.querySelector('#search'); i.focus(); i.value = ${JSON.stringify(q)}; i.dispatchEvent(new Event('input', { bubbles: true })); })()`);
-      await sleep(WAIT);
-      note(`t=${t} 검색 '${q}'`, await probe(true));
-    }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(JOBS, jobs.length) }, worker));
 } finally {
+  for (const pg of pages) await pg.close().catch(() => {});
   c.close();
   const gone = new Promise((r) => chrome.once('exit', r));
   chrome.kill();
@@ -377,5 +490,9 @@ try {
   try { fs.rmSync(prof, { recursive: true, force: true, maxRetries: 3 }); } catch { /* 임시 폴더 — 남아도 된다 */ }
 }
 if (args.out) fs.writeFileSync(args.out, `${report.join('\n')}\n`);
+const screens = waits.reduce((a, w) => a + w.screens, 0);
+const sum = (k) => waits.reduce((a, w) => a + w[k], 0);
 console.log(`\n새는 것 ${total}건${args.out ? ` → ${args.out}` : ''}`);
+console.log(`걸린 시간 ${((Date.now() - started) / 1000).toFixed(1)}초 — 화면 ${screens}개 · 페이지 ${JOBS}개 함께 · 화면당 ${(sum('ms') / screens / 1000).toFixed(2)}초(그리기 대기 ${(sum('wait') / screens / 1000).toFixed(2)}초)`);
+if (args.timing) for (const w of [...waits].sort((a, b) => b.ms - a.ms).slice(0, 10)) console.log(`  ${(w.ms / 1000).toFixed(2)}초 (대기 ${(w.wait / 1000).toFixed(2)}) ${w.name}${w.screens > 1 ? ` 외 ${w.screens - 1}` : ''}`);
 process.exit(total ? 1 : 0);

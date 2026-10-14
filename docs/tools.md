@@ -85,6 +85,27 @@ node tools/query.mjs person 라피             # 인물별 집계(X3d) — 등�
 - 새로 못 찾은 것 · 스토리 데이터에 없는 이벤트 · 못 읽은 인물 이름은 `data/release/report.md`에 뜬다.
   공지 표기가 다른 콜라보 이름은 `tools/notices/aliases.json`에 잇는다.
 
+## 스포일러 점검 — `tools/site/spoiler-check.mjs` (속도, 2026-10-14)
+
+무엇을 세나는 파일 머리 주석 · docs/views.md. 여기는 돌리는 법과 시간만.
+
+```
+node tools/site/spoiler-check.mjs --readers base,skip,skip-all --out /tmp/spoil.txt   # 세 독자를 크로미움 한 번에(마무리 점검)
+node tools/site/spoiler-check.mjs --skip                     # 한 독자만(전과 같다 — --readers 없으면 --skip · --skip-all로 고른다)
+  --jobs N     함께 띄우는 페이지 수(기본 CPU 수, 많아야 6)   --timing  오래 걸린 화면 10개
+  --wait 3000  이 안에 불리는 setTimeout은 끝날 때까지 기다린다   --quiet 300  할 일 없이 DOM이 이만큼 잠잠하면 다 그린 것
+  --cap 30000  한 화면을 이보다 오래 기다리면 ⚠ 경고하고 점검한다(경고가 뜨면 결과를 믿지 말고 다시)
+```
+
+- **기다리는 법** — 화면마다 고정 3초 대신 조건 대기: 페이지 시작 전에 심은 계수기로 네트워크(모듈 import 포함) · fetch와 본문 읽기 ·
+  `--wait` 안의 setTimeout · requestAnimationFrame · requestIdleCallback이 다 끝나고 DOM이 `--quiet` 동안 안 바뀌면 점검한다.
+  전에는 떡밥 탭이 1.5초 뒤 받기 시작하는 기록(6MB)이 3초 안에 끝나는지가 운이었다 — 지금은 끝까지 기다린다.
+- **함께 돌리기** — 화면 하나가 일 하나(새 문서), 페이지 `--jobs`개가 나눠 든다. 검색 아홉은 전처럼 한 문서에서 차례로. 출력 · `--out`은 전과 같은 차례
+  (`--readers`가 둘 이상이면 이름 앞에 `[독자]`).
+- **시간**(4코어 컨테이너, 화면 120개/독자): 고치기 전 독자 하나 약 400초(세 독자 20분 12초) → 독자 하나 약 100초, `--readers` 셋 한 번에 310초.
+  이제 CPU가 막는다(혼자 돌 때 화면당 1.7초 — 그리기 · 데이터 읽기 1.2초 + 점검 0.45초). 새는 것 목록은 전 · 뒤가 바이트까지 같았고,
+  일부러 새게 만든 사본(--root)에서도 전 · 뒤가 같은 것을 잡았다 → docs/history/2026-10.md.
+
 ## 데이터 다룰 때 함정
 
 - **대사 본문 필드 이름이 `quest_name`이다.** `scene_name`이나 `text`가 아니다.
