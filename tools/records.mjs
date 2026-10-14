@@ -65,6 +65,7 @@ const USAGE = `1회독 · 2회독 기록 도구 (tools/records.mjs) — 형식 �
                                           줄기에 안 묶인 세계 · 메인 인물 사실 · 주역 사연 · 빌드업 마무리 · 감정 재료)과 시안 · --summary는 1회독 요약까지 · 판정 없는 단위에 시안(후보) 더하기
   leads [인물 …] [--add]                  주역 명단(X3f) · 한 사람의 메인 챕터별 신호(말한 줄 · 이름이 나온 씬 · 뼈대 줄기 · 인물 변화) · 명단에 없는 초안을 후보로 더하기
   closures [O… | H… | 단위 …] [--add] [--all]  마무리 기록(X3f-1d) · 사슬(초안 — 연작 · 인물 변화 관계 · 성장)과 그 기록 · 합류 기록(H — X3f-1g) · 기록 없는 사슬을 후보로 더하기 · --all은 사슬 전부
+  closures --merge --members "O1 O2" --end <단위> --title … --text … --reason … [--confidence]   합류 H 하나를 후보로 더하기(파일 꼴 그대로 — N2e)
 공통: --example(예시 tests/fixtures/read1) · --dir <디렉터리> · --out <인계 파일 디렉터리>(handoff · check, 기본 = 기록 디렉터리 — 2회독 인계는 그 안 read2/)`;
 
 const { values: opt, positionals } = parseArgs({
@@ -86,6 +87,7 @@ const { values: opt, positionals } = parseArgs({
     date: { type: 'string' },
     all: { type: 'boolean' },
     add: { type: 'boolean' },
+    merge: { type: 'boolean' },
     grade: { type: 'string' },
     layer: { type: 'string' },
     confidence: { type: 'string' },
@@ -492,6 +494,28 @@ switch (cmd) {
         const x = v.closures.find((y) => y.c.id === id);
         return `  ${id} ${x ? `${x.type} [${x.c.status}] ${x.c.obj?.text ?? ''}` : '(없는 기록)'}`;
       }), ''];
+    if (opt.merge) {
+      // 합류 H 하나를 후보로 — 손으로 JSON을 다시 쓰면 파일 꼴이 통째로 바뀌므로(N2e) 도구가 formatJson으로 쓴다. 확정은 set H… 확정
+      const members = (opt.members ?? '').split(/[\s,]+/).filter(Boolean);
+      if (members.length < 2) fail('--members "O1 O2" — 함께 끝난 마무리 기록 O 둘 이상');
+      for (const id of members) {
+        const x = v.closures.find((y) => y.c.id === id);
+        if (!x) fail(`${id}: 마무리 기록이 없다`);
+        if (x.c.status === '기각') fail(`${id}: 기각된 마무리 기록은 합류에 못 넣는다`);
+        const hs = v.mergeOf.get(id) ?? [];
+        if (hs.length) console.warn(`⚠ ${id}는 이미 합류 ${hs.join(' · ')}에 들어 있다(한 O는 한 합류에만 — 검증기 경고)`);
+      }
+      if (!opt.end || !ctx.resolve(opt.end)) fail(`--end <함께 끝난 단위> — ${opt.end ?? '(없음)'}는 단위 키가 아니다`);
+      for (const k of ['title', 'text', 'reason']) if (!opt[k]) fail(`--${k}가 필요하다(형식 docs/annotations.md "합류 기록")`);
+      const file = ds.closures?.path ?? (isReal ? CLOSURES_PATH : path.join(DIR, '_closures.json'));
+      const data = ds.closures?.data ?? { session: opt.session ?? 'X3f-1d', by: 'claude', date: today(), closures: [] };
+      if (!Array.isArray(data.merges)) data.merges = [];
+      const id = nextIds(ds).H;
+      data.merges.push({ id, title: opt.title, end: opt.end, members, text: opt.text, reason: opt.reason, confidence: opt.confidence ?? '추정', status: '후보' });
+      fs.writeFileSync(file, formatJson(data));
+      console.log(`${rel(file)}에 합류 ${id}를 후보로 더했다 — 보고 set ${id} 확정 --session … (또는 기각)`);
+      break;
+    }
     if (args.length) {
       for (const a of args) {
         const merge = v.merges.find((m) => m.c.id === a);

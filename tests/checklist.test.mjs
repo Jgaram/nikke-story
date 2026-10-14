@@ -113,6 +113,15 @@ test('판정 — 자동 · 기록 근거 · 표시 · 해당 없음 · 단계', 
   assert.equal(findMark(env.marks, { patch: '2026-09-17', unit: null, item: 'spine' }), undefined);
 });
 
+test('판정 — DB에서 보는 패치 항목(출시 표 · 이름표 · 표본 정밀도, N2e)', () => {
+  const check = (id, env) => itemById(id).check({ unplaced: [], ...env });
+  for (const id of ['release', 'speakers', 'precision']) assert.equal(check(id, { undated: [], unclassifiedSpeakers: [], unmeasuredNames: [] }), null, id);
+  assert.match(check('release', { undated: ['event_x'] }), /release-order/);
+  assert.match(check('speakers', { unclassifiedSpeakers: ['경비원 A'] }), /경비원 A/);
+  assert.match(check('precision', { unmeasuredNames: ['신'] }), /신/);
+  assert.equal(itemById('layer').stage, 'U2', '층 판정은 2회독 전 — 층이 2회독 깊이를 정한다');
+});
+
 test('mentions — 단위 키 · 그 단위 씬 ID가 값으로 나오면', () => {
   assert.ok(mentions({ a: [{ scene: 'x_01' }] }, 'x', new Set(['x_01'])));
   assert.ok(mentions({ unit: 'x' }, 'x', new Set()));

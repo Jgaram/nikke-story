@@ -44,7 +44,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
 - 후보의 근거를 쓸 때는 `--num`으로 읽는다 — 줄 앞 `#N`(= DB `lines.seq`, 씬 안 0부터)이 근거 줄 번호다.
   1회독 · 2회독 기록 · 검증 · 리뷰 · 인계는 `node tools/records.mjs`(형식과 쓰는 법은 docs/annotations.md — 2회독은 "2회독 기록" · "2회독 인계 파일").
   판정 세션은 `records.mjs find <낱말> --spine`(척추 — 메인 챕터 + `annotations/spine.json` 확정 단위 — 안 기록만) · `layers <단위>` · `leads` · `closures <단위>`로 본다(docs/importance.md 6절).
-  빌드업 마무리(오래 쌓인 연작 · 갈등 · 관계 · 성장의 끝)는 `records.mjs closures`(마무리 기록 O — `annotations/closures.json`, 형식 docs/annotations.md "마무리 기록").
+  빌드업 마무리(오래 쌓인 연작 · 갈등 · 관계 · 성장의 끝)는 `records.mjs closures`(마무리 기록 O — `annotations/closures.json`, 형식 docs/annotations.md "마무리 기록"). 합류 H는 `closures --merge --members "O1 O2" --end … --title … --text … --reason …`로 후보를 더한다.
 - 사이트에 싣는 스토리별 공개 개요는 `node tools/synopsis.mjs`(`progress W9a` · `new <단위 …>` · `check` · `set … 확정`, 형식 docs/annotations.md "공개 개요").
 - 화면의 분류 이유 · 연대기 추정 이유를 팬용 문장으로 쓰는 것은 `node tools/blurbs.mjs`(`progress` · `new <단위 …>` · `check` · `set <단위> why|when 확정`, 형식 · 기준 docs/annotations.md "팬용 문장").
 - 떡밥 제목 · 요약을 읽은 자리마다 따로 쓰는 것은 `node tools/versions.mjs`(`progress` · `new J30 [--at 단위]` · `check` · `set J30 <at …> 확정` · 근거 `refs J30 <at> <ID …>` · 병렬 묶음 `batches`, 형식 · 기준 docs/annotations.md "시점별 판").
@@ -109,6 +109,7 @@ node tools/update/checklist.mjs --unit fl:coin_rush_show_down   # 패치 없이 
 ```
 
 - 판단 항목은 기록이 없으면 `annotations/checklist.json` `marks`에 표시(무엇을 봤고 왜 없는지)를 남겨야 채워진다.
+- DB도 본다(N2e) — 출시 표(`releases`)에 날짜 없는 단위(`release`) · 범위 안 미분류 이름표(`speakers`) · 표본 정밀도를 안 잰 인물 이름(`precision`). 테스트만 잡던 것을 단계 안에서 잡는다.
 
 ## 늦게 들어온 단위 — `tools/update/late.mjs` (N2d)
 

@@ -2,7 +2,7 @@
  * 탭 "인물" 데이터(W5) — 화면 5(docs/views.md "5. 인물별 집계")의 시안 표(data/views/persons/, X3d)를 사이트용 JSON으로.
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn } — docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
  *
- *   persons.json          인물 387(사전 person: 전부) — 전체 기준 집계 + 정적 메타. 화면은 컷오프 · 층에 맞춰 persons-detail.json에서 다시 센다
+ *   persons.json          인물(사전 person: 전부) — 전체 기준 집계 + 정적 메타. 화면은 컷오프 · 층에 맞춰 persons-detail.json에서 다시 센다
  *     id · name · kind(갈래 — 니케 · 인물 · 랩쳐) · common(지휘관 · 흔한 대상) · spread · leads[](주역인 줄기 ID — 화면은 첫 스토리를 본 줄기만) · same_as[] · aliases[]
  *     scenes · units · lines · speaker_lines · named_lines · implied_lines · implied_scenes
  *     first_unit · first_tick · first_order · first_scene · first_how(이름표로 말함 · 이름 · 다른 이름 · 암시 언급) · first_speaks_unit · last_unit · last_tick · last_order

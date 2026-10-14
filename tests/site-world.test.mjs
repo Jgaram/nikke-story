@@ -31,10 +31,14 @@ test('cleanNote — 근거 괄호 · 작업 문장 · 머리 · 꼬리를 걷는
   assert.equal(cleanNote('원문 그대로 짧은 메모'), '원문 그대로 짧은 메모');
 });
 
-test('world.json — 항목 238 · 생활상 449 · 분류 합 · 흔한 항목', () => {
+test('world.json — 항목 = 사전 다섯 파일 · 생활상 = U 기록 · 분류 합 · 흔한 항목', () => {
   assert.ok(Array.isArray(world.entries) && Array.isArray(world.life) && Array.isArray(world.topics) && Array.isArray(world.hubs));
-  assert.equal(world.entries.length, 238); // W12a 게임 스쿼드 7 · W12c org:에덴 · W12d 정의 괴도단 · N3 COIN RUSH SHOWDOWN 4(코인 러시 쇼다운 · 테크 웨어 · 바니 슈트 · 대테러부대)
-  assert.equal(world.life.length, 449);
+  // 수를 박지 않는다 — 패치마다 사전 항목 · 생활상이 는다(N2e). 사전 파일 · 대상 표 · 기록과 견준다
+  const dictCount = ['concepts', 'incidents', 'items', 'orgs', 'places']
+    .reduce((s, f) => s + JSON.parse(fs.readFileSync(path.join(ROOT, 'annotations/dictionary', `${f}.json`), 'utf8')).entries.length, 0);
+  assert.equal(world.entries.length, dictCount, '사전 다섯 파일의 항목 수');
+  assert.equal(world.entries.length, read('targets.json').filter((t) => t.type !== 'person').length, '대상 표의 인물 아닌 것');
+  assert.equal(world.life.length, [...records.values()].filter((r) => r.kind === 'U').length, '생활상 = 2회독 U 기록');
   assert.equal(world.topics.reduce((s, t) => s + t.n, 0), world.life.length);
   const ids = new Set(world.entries.map((e) => e.id));
   assert.equal(ids.size, world.entries.length, '항목 ID 중복');

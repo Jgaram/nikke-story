@@ -670,7 +670,7 @@ X3b(2026-10-08) · X3c(2026-10-09) 판단 재료와 X3f(2026-10-09) 판단 원�
 - **묶지 않는다**: 같은 단위라도 줄이 다른 이야기 — 메인 챕터의 다른 줄(ch35 그레이브 · 라플라스, ch45 리버린 · E.H., ch46 나유타 · 도로시, ch47 도로시 · 요한 · 에닉), 한 이벤트의 다른 두 이야기(NEW YEAR, NEW SWORD 노이즈 · 홍련),
   같은 챕터의 다른 결판(ch42 모리는 레비아탄과 따로 묶는다). 끝이 다른 단위인 같은 인물의 측면(마리안 O12 · O106)은 두 단계라 묶지 않는다 — 인물로 이어 보는 것은 화면 5의 계산이다.
 - **셋 이상의 관계를 기록 하나가 닫으면**(쌍 사슬이 하나뿐 — 아인 · 츠바이 · 라이 O148, 마스트 · 헬름 · 앵커 O159, E.H. · 바이퍼 · 자칼 O197) 합류가 아니라 그 O의 `about`을 셋으로 넓힌다(`set O… 확정 --about "…"`).
-- 쓰기: 손으로 `merges`에 후보로 더하고 `set H… 확정 --session … --by claude`. 고치기는 `--members "O1 O2"` · `--title` · `--end` · `--text`. 보기: `records.mjs closures H9`(멤버 문장) · `closures <단위>`(그 단위의 합류) · `data/views/closures/merges.csv` · report.md "합류".
+- 쓰기: `records.mjs closures --merge --members "O1 O2" --end <단위> --title … --text … --reason …`로 후보를 더하고(파일 꼴 그대로 — 손으로 JSON을 다시 쓰지 않는다, N2e) `set H… 확정 --session … --by claude`. 고치기는 `--members "O1 O2"` · `--title` · `--end` · `--text`. 보기: `records.mjs closures H9`(멤버 문장) · `closures <단위>`(그 단위의 합류) · `data/views/closures/merges.csv` · report.md "합류".
 - 판정 입력 ⑦은 낱낱의 O를 그대로 센다 — 묶어도 판정 묶음 수는 바뀌지 않는다(X3f-1g에서 draft.mjs로 확인).
 - X3f-1g: 합류 27(묶인 마무리 87 — 결전 · 무대 · 연작 · 한 장면 17, 호감도 마지막 편 10).
 

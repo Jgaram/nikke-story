@@ -77,7 +77,14 @@ export const CHECKLIST = [
   {
     id: 'release', stage: 'U1', scope: 'patch', how: 'auto', name: '출시 자리 — 공지 · 손 보정 · 별칭으로 모든 단위를 패치에 넣는다',
     files: ['release-overrides.json'], doc: 'docs/update.md "확인"',
-    check: (env) => (env.unplaced.length ? `패치에 못 넣은 단위 ${env.unplaced.map((u) => u.key).join(' ')} — tools/notices/aliases.json · release-overrides.json` : null),
+    check: (env) => {
+      const why = [];
+      if (env.unplaced.length) why.push(`패치에 못 넣은 단위 ${env.unplaced.map((u) => u.key).join(' ')} — tools/notices/aliases.json · release-overrides.json`);
+      // hold 줄을 지운 뒤 release-order를 안 돌리면 DB 출시 표에 단위가 없다 — 화면 자리 · 연대기 테스트가 앞 단위 자리를 물려받는다(N2e)
+      const undated = (env.undated ?? []);
+      if (undated.length) why.push(`DB 출시 표(releases)에 날짜가 없는 단위 ${undated.join(' ')} — node tools/notices/release-order.mjs 뒤 DB 다시 만들기`);
+      return why.length ? why.join(' · ') : null;
+    },
   },
   {
     id: 'regions', stage: 'U1', scope: 'patch', how: 'auto', name: '서브퀘스트 · 유실물 지역(근거 · 확신도)',
@@ -121,6 +128,21 @@ export const CHECKLIST = [
     },
   },
   {
+    id: 'speakers', stage: 'U2', scope: 'patch', how: 'auto', name: '새 이름표 분류 — 범위 안 미분류 이름표 0(speakers.json 갈래)',
+    files: ['dictionary/speakers.json'], doc: 'docs/schema.md "이름표 분류"',
+    check: (env) => (env.unclassifiedSpeakers?.length ? `갈래 없는 이름표 ${env.unclassifiedSpeakers.join(' · ')} — annotations/dictionary/speakers.json` : null),
+  },
+  {
+    id: 'precision', stage: 'U2', scope: 'patch', how: 'auto', name: '인물 이름 표본 정밀도 — 걸린 줄이 있는 새 인물 이름을 재서 mention-precision.json에',
+    files: ['dictionary/mention-precision.json'], doc: 'docs/schema.md "언급 DB"',
+    check: (env) => (env.unmeasuredNames?.length ? `표본 정밀도를 안 잰 인물 이름 ${env.unmeasuredNames.join(' · ')} — node tools/query.mjs sample <이름>` : null),
+  },
+  {
+    id: 'layer', stage: 'U2', scope: 'unit', how: 'auto', name: '중요도 판정 — 1회독 뒤 records.mjs layers --add → 판정 카드 → 확정(층이 2회독 깊이를 정한다)',
+    files: ['layers.json'], doc: 'docs/importance.md', when: (env, u) => !isMain(u.key),
+    check: (env, u) => (env.layerOf(u.key)?.status === '확정' ? null : env.layerOf(u.key) ? '층 판정이 확정이 아니다' : '층 판정이 없다'),
+  },
+  {
     id: 'read2', stage: 'U2', scope: 'unit', how: 'auto', name: '2회독 층 read2/<키>.json — I · E(points) · D · U, 같은 세션에',
     files: ['read2/'], doc: 'docs/annotations.md "2회독 기록"',
     check: (env, u) => (env.read2(u.key).length ? null : '2회독 파일이 없다'),
@@ -157,11 +179,6 @@ export const CHECKLIST = [
     files: ['links.json'], doc: 'docs/schema.md "수동 엣지"', evidence: inFile('links.json'),
   },
   // ── U3 판정 · 화면 글 ──
-  {
-    id: 'layer', stage: 'U3', scope: 'unit', how: 'auto', name: '중요도 판정 — records.mjs layers --add → 판정 카드 → 확정',
-    files: ['layers.json'], doc: 'docs/importance.md', when: (env, u) => !isMain(u.key),
-    check: (env, u) => (env.layerOf(u.key)?.status === '확정' ? null : env.layerOf(u.key) ? '층 판정이 확정이 아니다' : '층 판정이 없다'),
-  },
   {
     id: 'rejudge', stage: 'U3', scope: 'unit', how: 'auto', name: '앞 단위 다시 판정 — 회수 · 다시 드러남 · 뒤집음의 앞 단위(안 바뀌어도 set으로 이력, 세션 N3)',
     files: ['layers.json'], doc: 'docs/annotations.md "중요도 판정"',
@@ -367,11 +384,20 @@ export async function loadEnv({ patchDay = null, units = null, today }) {
   const flMap = readJson(path.join(ANN, 'forbidden-library-events.json'), {});
   const flEventFiles = [...new Set(manifest.filter((m) => m.categoryKey === 'event_stories').map((m) => `event_stories/${m.mainChapterFile}`))]
     .filter((k) => fs.existsSync(path.join(ROOT, 'data/raw/forbidden-library/scripts', k)));
+  // DB에서 — 출시 표 날짜(출시 자리), 범위 안 미분류 이름표, 표본 정밀도를 안 잰 인물 이름(N2e — 테스트만 잡던 것)
+  const q = (sql, ...p) => ctx.db.prepare(sql).all(...p);
+  const dated = new Set(q('SELECT key FROM releases WHERE date IS NOT NULL').map((r) => r.key));
+  const undated = patchUnits.filter((u) => u.inDb && /^(ch\d+$|side:|event_|fl:|char:)/.test(u.key) && !dated.has(u.key)).map((u) => u.key);
+  const unclassifiedSpeakers = q('SELECT name FROM speakers WHERE lines_in_scope > 0 AND class IS NULL ORDER BY lines_in_scope DESC').map((r) => r.name);
+  const { loadPrecision } = await import('../normalize/mentions.mjs');
+  const measured = new Set(arr(loadPrecision().names).map((e) => `${e.target}\t${e.name}`));
+  const unmeasuredNames = q("SELECT target_id, name FROM target_names WHERE target_id LIKE 'person:%' AND lines_in_scope > 0")
+    .filter((r) => !measured.has(`${r.target_id}\t${r.name}`)).map((r) => r.name);
   ctx.close();
   // 늦게 들어온 단위(N2d) — 이 패치의 U 항목(단위로 고르면 그 단위가 든 U 항목)만
   const lateRows = lateAnchors(orderText, unitRanks(patches)).filter((r) => (patch ? r.patch === patch.day : r.keys.some((k) => keys.includes(k))));
   return {
-    patch, patchUnits,
+    patch, patchUnits, undated, unclassifiedSpeakers, unmeasuredNames,
     lateProblems: anchorProblems(lateRows),
     isLate: (key) => lateRows.some((r) => r.expected && r.keys.includes(key)), unplaced, ds, spineUnits: spineSet, json, threadQuestions, flMap, flEventFiles, inScopeUnits,
     regions: loadRegions(),

@@ -290,6 +290,22 @@ function rawAhead() {
   return Number(tryGit(['-C', RAW, 'rev-list', '--count', `${TRACKING}..HEAD`]) ?? 0);
 }
 
+/**
+ * `git pull`은 서브모듈 체크아웃을 옮기지 않아, 받은 포인터보다 data/raw/가 뒤에 남아 "커밋 안 된 변경"으로 보인다(N2e — 관리자가 겪음).
+ * 깨끗하고 main에 붙은 체크아웃이 포인터의 조상이면 포인터까지 fast-forward한다(main에 붙인 채 — submodule update는 HEAD를 떼어 낸다).
+ */
+function syncRawPointer() {
+  const sub = (args, opts) => tryGit(['-C', RAW, ...args], opts);
+  if (sub(['rev-parse', '--show-superproject-working-tree']) === null) return null;
+  const pointer = tryGit(['rev-parse', `HEAD:${RAW}`]);
+  const head = sub(['rev-parse', 'HEAD']);
+  if (!pointer || !head || pointer === head) return null;
+  if (sub(['branch', '--show-current']) !== BRANCH || (sub(['status', '--porcelain']) ?? 'x') !== '') return null;
+  if (sub(['cat-file', '-e', `${pointer}^{commit}`]) === null) return null; // 포인터 커밋이 아직 없다(rawAhead가 origin/main을 받았다)
+  if (sub(['merge-base', '--is-ancestor', head, pointer]) === null) return null; // 앞서거나 갈라졌으면 손대지 않는다
+  return sub(['merge', '--ff-only', '--quiet', pointer]) === null ? null : pointer.slice(0, 8);
+}
+
 function stop(input) {
   const raw = rawAhead();
   if (raw && !input.stop_hook_active) {
@@ -329,10 +345,13 @@ function stop(input) {
     return;
   }
 
+  const synced = syncRawPointer();
   const dirty = dirtyCount();
-  if (dirty) {
-    emit({ systemMessage: `⚠ 커밋되지 않은 변경이 ${dirty}개 있습니다. 작업이 끝났다면 커밋해서 main에 올려야 남습니다.` });
-  }
+  const msgs = [
+    synced && `${RAW}/가 받은 포인터보다 뒤에 있어 ${synced}까지 앞으로 감았다(git pull은 서브모듈을 안 옮긴다).`,
+    dirty && `⚠ 커밋되지 않은 변경이 ${dirty}개 있습니다. 작업이 끝났다면 커밋해서 main에 올려야 남습니다.`,
+  ].filter(Boolean);
+  if (msgs.length) emit({ systemMessage: msgs.join('\n') });
 }
 
 // ── 진입점 ──────────────────────────────────────────────────────────────────
