@@ -92,33 +92,15 @@
 .tab-persons .pm-us-tools { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 .tab-persons .legend { margin: 8px 0 0; }
 
-/* ── 함께 나온 인물 ── */
-.tab-persons .pm-partners { list-style: none; margin: 0; padding: 0; }
-.tab-persons .pm-partner { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr); align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); }
-.tab-persons .pm-partner:last-child { border-bottom: 0; }
-.tab-persons .pm-partner-name { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; }
-.tab-persons .pm-partner-name > a { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.tab-persons .pm-partner-pic { flex: none; width: 22px; height: 22px; border-radius: 5px; }
-.tab-persons .pm-bar-track { display: block; height: 10px; border-radius: 5px; background: var(--pm-0); overflow: hidden; }
-.tab-persons .pm-bar-fill { display: block; height: 100%; background: var(--pm-3); border-radius: 5px; overflow: hidden; }
-.tab-persons .pm-bar-talk { display: block; height: 100%; background: var(--pm-5); }
+/* ── 관계 상대 — 상대마다 흐름 · 맺음 ── */
+.tab-persons .pm-rels { list-style: none; margin: 0; padding: 0; }
+.tab-persons .pm-rel { padding: 8px 0 4px; border-top: 1px solid var(--line); }
+.tab-persons .pm-rel:first-child { border-top: 0; }
+.tab-persons .pm-rel-head { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; font-weight: 600; }
+.tab-persons .pm-rel-pic { flex: none; width: 22px; height: 22px; border-radius: 5px; }
+.tab-persons .pm-rel-mid { padding: 0 8px; }
+.tab-persons .pm-rel-mid .pm-more { margin: 2px 0 4px; }
 .tab-persons .pm-more { margin-top: 8px; }
-.tab-persons .pm-graph-frame { overflow: hidden; }
-.tab-persons .pm-graph { display: block; width: 100%; height: auto; }
-.tab-persons .pm-edge { fill: none; stroke-linecap: round; transition: opacity 0.12s; }
-.tab-persons .pm-edge-c { stroke: var(--pm-3); opacity: 0.6; }
-.tab-persons .pm-edge-pp { stroke: var(--line-2); opacity: 0.95; }
-.tab-persons .pm-graph.has-hot .pm-edge { opacity: 0.1; }
-.tab-persons .pm-graph.has-hot .pm-edge.is-hot { opacity: 1; }
-.tab-persons .pm-graph.has-hot .pm-edge-c.is-hot { stroke: var(--pm-5); }
-.tab-persons .pm-node { cursor: pointer; outline: none; }
-.tab-persons .pm-node-hit { fill: transparent; }
-.tab-persons .pm-node-dot { fill: var(--pm-4); stroke: var(--surface); stroke-width: 2; transition: fill 0.12s; }
-.tab-persons .pm-node:hover .pm-node-dot, .tab-persons .pm-node.is-hot .pm-node-dot { fill: var(--pm-5); }
-.tab-persons .pm-node:focus-visible .pm-node-dot { stroke: var(--focus); stroke-width: 3; }
-.tab-persons .pm-node-label, .tab-persons .pm-center-label { fill: var(--ink); font-size: 12.5px; paint-order: stroke; stroke: var(--surface); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
-.tab-persons .pm-center-label { font-size: 14px; font-weight: 700; }
-.tab-persons .pm-center { fill: var(--ink); stroke: var(--surface); stroke-width: 3; }
 
 /* ── 변화 ── */
 .tab-persons .pm-chg-frame { overflow-x: auto; overflow-y: hidden; }
@@ -195,15 +177,12 @@
 @container pm (max-width: 520px) {
   .tab-persons .pm-head { padding: 14px 14px 12px; }
   .tab-persons .pm-sec { padding: 0 14px 10px; }
-  .tab-persons .pm-partner { grid-template-columns: minmax(96px, 140px) minmax(0, 1fr); gap: 8px; }
   .tab-persons .pm-title { gap: 12px; }
   .tab-persons .pm-title h3 { font-size: 21px; }
 }
 @media (max-width: 600px) {
   .tab-persons .pm-find { width: 100%; }
 }
-.tab-persons .pm-center-pill { fill: var(--surface); stroke: var(--line-2); stroke-width: 1; }
-.tab-persons .pm-center-label { stroke: none; }
 .tab-persons .pm-thread { cursor: pointer; }
 .tab-persons .pm-thread:hover { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
 

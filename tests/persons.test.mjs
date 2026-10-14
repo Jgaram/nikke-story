@@ -1,5 +1,5 @@
 /**
- * X3d 인물별 집계 — 등장 합치기(자동 줄 + 2회독 암시 언급, 줄 합집합) · 함께 나옴 · 기록 집계 · 따로 두는 인물(tools/views/persons.mjs).
+ * X3d 인물별 집계 — 등장 합치기(자동 줄 + 2회독 암시 언급, 줄 합집합) · 관계 쌍(W21) · 기록 집계 · 따로 두는 인물(tools/views/persons.mjs).
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -24,7 +24,7 @@ test('사전 인물 전부 한 줄 · 정렬 결정적 · 문제 없음', () => 
   assert.deepEqual(v.problems, []);
   const again = buildPersons(ds, ctx, order);
   assert.deepEqual(again.persons, v.persons);
-  assert.deepEqual(again.pairs.slice(0, 50), v.pairs.slice(0, 50));
+  assert.deepEqual(again.relations, v.relations);
 });
 
 test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이름 줄 = 등장 줄, 단위 표와 합이 같다', () => {
@@ -44,16 +44,33 @@ test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이�
   }
 });
 
-test('함께 나옴 — 쌍은 ID 순 · 둘 다 말한 씬 ≤ 씬 · 쌍의 씬 ≤ 두 인물 각자의 씬', () => {
-  for (const p of v.pairs) {
-    assert.ok(p.a < p.b, `${p.a} ${p.b}`);
-    assert.ok(p.talk_scenes <= p.scenes);
-    assert.ok(p.units <= p.scenes);
-    assert.ok(p.scenes <= byId.get(p.a).scenes && p.scenes <= byId.get(p.b).scenes, `${p.a} ${p.b}`);
+test('관계 쌍(W21) — 기록에서만: D 관계의 person ↔ with · O 관계 사슬 · 그 O의 합류 H, 같은 씬 횟수는 없다', () => {
+  const live = ds.candidates.filter((c) => c.id && c.status !== '기각');
+  const key = (x, y) => (x < y ? `${x}\t${y}` : `${y}\t${x}`);
+  const want = new Map();
+  const add = (x, y, id) => (want.get(key(x, y)) ?? want.set(key(x, y), new Set()).get(key(x, y))).add(id);
+  for (const c of live.filter((x) => x.kind === 'change' && x.obj?.aspect === '관계' && x.obj?.person?.startsWith('person:'))) {
+    for (const w of c.obj.with ?? []) if (w.startsWith('person:') && w !== c.obj.person) add(c.obj.person, w, c.id);
   }
-  // 지휘관 · 흔한 대상이 낀 쌍에 common 칸
-  for (const p of v.pairs.slice(0, 300)) assert.equal(Boolean(p.common), [p.a, p.b].some((t) => byId.get(t).common), `${p.a} ${p.b}`);
+  for (const c of live.filter((x) => x.kind === 'closure')) {
+    const m = /^관계 (\S+) ↔ (\S+)$/.exec(c.obj?.chain ?? '');
+    if (m) add(m[1], m[2], c.id);
+  }
+  assert.equal(v.relations.length, want.size);
+  for (const r of v.relations) {
+    assert.ok(r.a < r.b, `${r.a} ${r.b}`);
+    const ids = [r.changes, r.closures].join(' ').split(' ').filter(Boolean);
+    assert.deepEqual(new Set(ids), want.get(`${r.a}\t${r.b}`), `${r.a} ${r.b}`);
+    for (const h of r.merges.split(' ').filter(Boolean)) {
+      const members = live.find((c) => c.id === h)?.obj?.members ?? [];
+      assert.ok(members.some((o) => r.closures.split(' ').includes(o)), `${h} — 이 쌍의 결말을 묶은 합류`);
+    }
+    assert.ok(!('scenes' in r) && !('talk_scenes' in r), '같은 씬 횟수를 싣지 않는다');
+  }
+  // 인물 표의 관계 상대 수 = 그 인물이 낀 쌍(만우절 기록뿐인 쌍 빼고)
+  for (const p of v.persons) assert.equal(p.relations, v.relations.filter((r) => !r.fool && (r.a === p.target || r.b === p.target)).length, p.target);
   assert.equal(byId.get('person:지휘관').common, '지휘관');
+  assert.ok(v.relations.some((r) => r.a === 'person:마스트' && r.b === 'person:헬름' && r.merges.includes('H19')), '마스트 ↔ 헬름 — 결말 O159 · 합류 H19');
 });
 
 test('기록 — about으로 센 사실 · 의문 수, 의문 상태 합 = 의문, 변화는 D의 person', () => {

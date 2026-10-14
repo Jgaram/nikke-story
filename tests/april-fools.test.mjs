@@ -38,7 +38,7 @@ test('함수 — 단위 키 · 씬 ID', () => {
 test('숫자 집계에서 빠졌다 — 인물 등장 · 쌍 · 판정 표 · 다른 단위와의 연결 선', () => {
   const csv = (f) => readCsv(path.join(ROOT, 'data/views', f));
   assert.ok(csv('persons/person-units.csv').every((r) => !isAprilFools(r.unit)), '인물 × 단위');
-  assert.ok(csv('persons/pairs.csv').every((r) => !isAprilFools(r.first_unit) && !isAprilFools(r.last_unit)), '함께 나옴');
+  assert.ok(csv('persons/relations.csv').every((r) => !r.fool === !(isAprilFools(r.first_unit) && isAprilFools(r.last_unit))), '관계 쌍 — 만우절 기록뿐인 쌍만 fool');
   assert.ok(csv('importance/units.csv').every((r) => !isAprilFools(r.unit)), '판정 표');
   assert.ok(csv('links/unit-edges.csv').every((r) => isAprilFools(r.from_unit) === isAprilFools(r.to_unit)), '연결 선은 만우절끼리만');
   assert.ok(csv('links/centers.csv').every((r) => !isAprilFools(r.unit)), '중심 대상');

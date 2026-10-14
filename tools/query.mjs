@@ -28,7 +28,7 @@
  *   node tools/query.mjs chrono ch20 | @방주_밀봉     메인 챕터 · 시대 기준점 — 그 점 무렵(앞뒤 칸)에 놓인 단위 · 조각도. 인자 없이 = 요약
  *                                                   단위에는 출시순과 어긋남(X1d — 공개 당시 메인과 견줌)도 찍는다
  *   node tools/query.mjs chrono person:라피 | 라피   인물 변화의 작중 시점(X1d) — 2회독 기준 · 변화를 작중 순서로, 먼저 공개된 변화보다 작중 앞인 것(뒤바뀜) 표시
- *   node tools/query.mjs person 라피 [--list]        인물별 집계(X3d — 화면 5) — 등장(자동 + 암시 언급) · 단위별 등장 · 자주 함께 나온 인물 · 기록 · 줄기 · 변화 · 마무리 (--list 기록 ID 목록)
+ *   node tools/query.mjs person 라피 [--list]        인물별 집계(X3d — 화면 5) — 등장(자동 + 암시 언급) · 단위별 등장 · 관계 상대 · 기록 · 줄기 · 변화 · 마무리 (--list 기록 ID 목록)
  *   node tools/query.mjs sql "SELECT ..."           임의 질의 (읽기 전용)
  *
  * 한국어 검색 전략은 docs/schema.md 참고. 기본은 FTS 접두 검색이다.
@@ -749,9 +749,9 @@ const commands = {
     console.log(`처음 ${p.first_unit || '-'}(공개 자리 ${p.first_tick || '-'}, ${p.first_scene || '-'}) · 처음 말함 ${p.first_speaks_unit || '-'} · 마지막 ${p.last_unit || '-'}(${p.last_tick || '-'})`);
     const us = v.personUnits.filter((r) => r.person === id);
     if (us.length) console.log(`단위별 등장(씬 수, 출시순): ${us.slice(0, 60).map((r) => `${r.unit} ${r.scenes}`).join(' · ')}${us.length > 60 ? ` … 외 ${us.length - 60}` : ''}`);
-    const ps = v.pairs.filter((r) => r.a === id || r.b === id).map((r) => ({ ...r, other: r.a === id ? r.b : r.a, other_name: r.a === id ? r.b_name : r.a_name }));
-    const shown = ps.filter((r) => r.other !== 'person:지휘관' && !r.same_as).slice(0, 15);
-    console.log(`함께 나온 인물 ${p.partners}: ${shown.map((r) => `${r.other_name} ${r.scenes}씬(대화 ${r.talk_scenes})`).join(' · ') || '-'}`);
+    const rs_ = v.relations.filter((r) => r.a === id || r.b === id);
+    const relText = (r) => `${r.a === id ? r.b_name : r.a_name}(${[r.changes, r.closures, r.merges].filter(Boolean).join(' ')}${r.fool ? ' — 만우절' : ''})`;
+    console.log(`관계 상대 ${p.relations}(읽는 자리 순 — 변화 D · 마무리 O · 합류 H): ${rs_.map(relText).join(' · ') || '-'}`);
     console.log(`기록: 사실 ${p.facts}${p.reversed ? `(뒤집힘 ${p.reversed})` : ''} · 의문 ${p.questions}(열림 ${p.open} · 일부 ${p.partial} · 풀림 ${p.solved}) · 사건 ${p.events} · 떡밥 ${p.echoes} · 생활상 ${p.life}`);
     console.log(`줄기: ${p.threads || '-'}`);
     console.log(`변화: 기준 ${p.baselines} · 변화 ${p.changes}${p.aspects ? `(${p.aspects})` : ''} · 관계 상대로 ${p.with_others} · 뒤바뀜 ${p.inverted} — 작중 순서는 node tools/query.mjs chrono ${id}`);

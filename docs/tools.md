@@ -70,7 +70,7 @@ node tools/query.mjs known ch20         # 컷오프(X1a) — 그 공개 자리�
 node tools/query.mjs chrono event_redash # 작중 연대기(X1b) — 단위의 작중 자리(판별 · 범위 · 상대 · 불명) · 시점 기록 관계 · 출시순과 어긋남 (ch20 · @방주_밀봉 = 그 점 무렵)
 node tools/query.mjs chrono person:라피    # 인물 변화의 작중 시점(X1d) — 2회독 기준 · 변화를 작중 순서로, 뒤바뀜 표시
 node tools/query.mjs grades ch38           # 중요도 컷오프(X3f) — 그 자리까지 나온 메인 밖 단위의 그 자리 등급(필수 · 보강 · 참고 · 독립, --list)
-node tools/query.mjs person 라피             # 인물별 집계(X3d) — 등장(자동 + 암시 언급) · 함께 나온 인물 · 사실 · 의문 · 줄기 · 변화 · 마무리 (--list 기록 ID)
+node tools/query.mjs person 라피             # 인물별 집계(X3d) — 등장(자동 + 암시 언급) · 관계 상대 · 사실 · 의문 · 줄기 · 변화 · 마무리 (--list 기록 ID)
 ```
 
 - 공지 요청도 CDN 규칙과 같은 태도로: 한 번에 하나, 요청 사이 1초, 지수 백오프 3회. 받은 공지는 다시 받지 않는다.

@@ -6,8 +6,8 @@
  *   인물 하나: node tools/query.mjs person 라피 [--list]
  *
  * 출력:
- *   persons.csv         인물마다(사전 person: 전부) — 등장(씬 · 단위 · 줄 · 처음/마지막) · 함께 나온 인물 · 기록(사실 · 의문 · 사건 · 떡밥 · 생활상) · 줄기 · 변화 · 마무리 · 정체 연결
- *   pairs.csv           함께 나옴 — 같은 씬에 나온 인물 쌍(씬 · 단위 수 · 둘 다 말한 씬 · 처음/마지막)
+ *   persons.csv         인물마다(사전 person: 전부) — 등장(씬 · 단위 · 줄 · 처음/마지막) · 관계 상대 수 · 기록(사실 · 의문 · 사건 · 떡밥 · 생활상) · 줄기 · 변화 · 마무리 · 정체 연결
+ *   relations.csv       관계 쌍 — 기록에서 온 인물 쌍(변화 D · 마무리 O · 합류 H의 ID, 처음/마지막 — W21)
  *   person-units.csv    인물 × 단위 — 등장 히트맵(씬 · 줄 · 말한 줄 · 암시 줄)
  *   person-records.csv  인물 × 기록 — 그 인물을 다룬 기록 ID와 자리 · 상태 · 줄기(문장은 timeline/records.csv · chrono-changes.csv · closures/에)
  *   report.md           요약 · 순위 · 빈 곳
@@ -15,7 +15,8 @@
  * 등장 = 언급 DB 자동 줄(speaks · named · alias, 빌드 — docs/schema.md "언급 DB") + 2회독 암시 언급(I — tools/records/read2.mjs mentionRows).
  *   합치기(T3-9 — 둘 다 두고 줄 합집합): (씬, 인물)마다 줄 집합을 합친다. 말한 줄 = 자동 speaks 줄 ∪ 암시 언급 speaker: true 줄(`???` 정체).
  *   암시 줄 = 암시 언급 줄 가운데 자동 줄에 없는 것(2회독이 더한 몫). 자리는 읽는 순서(출시순 한 줄 — docs/history/reading.md R), 공개 자리는 tools/views/reveal.mjs.
- * 함께 나옴 = 같은 씬에 두 인물 다 등장(위 합집합). 둘 다 말한 씬(대화)은 따로 센다.
+ * 관계 쌍(W21 — 같은 씬 횟수 '함께 나옴'을 대신한다: 씬이 시나리오 파일 하나라 다른 시공간이 묶였다) = 기록이 이은 두 인물:
+ *   변화 D 관계의 person ↔ with(어느 쪽의 변화든 그 쌍에) · 마무리 O의 관계 사슬(chain '관계 A ↔ B') · 그 O를 묶은 합류 H. 수 · 순위가 아니라 쌍마다 기록 ID를 읽는 자리 순으로.
  * 따로 두는 인물(common 칸 — 화면 기본값에서 숨기기 좋다):
  *   지휘관   플레이어라 어디에나 있다(links.mjs SKIP_TARGETS)
  *   흔한 대상 관계선(X2)과 같은 잣대 — 대상이 중심(links.mjs CENTER)인 단위가 읽기 단위의 COMMON_SHARE(10%)를 넘는다(spread 칸)
@@ -24,7 +25,7 @@
  *   떡밥 · 생활상 = 2회독 E · U의 about, 줄기 = 그 인물을 다룬 사실 · 의문이 든 줄기 ∪ 줄기 about에 그 인물,
  *   변화 = 2회독 D(person — 작중 순서 · 뒤바뀜은 chrono-order.mjs changeTimeline), 관계 상대 = D의 with,
  *   마무리 = O(about) · 합류 H(그 인물의 O를 묶은 것 · persons), 정체 연결 = 확정 same_as(sameAsGroups — 묶지 않고 칸으로만 단다).
- * 만우절 단위(결정 #11 — tools/lib/fools.mjs)는 숫자에서 뺀다: 등장 · 함께 나옴 · 흔한 대상(분모 포함) · 기록 수. person-records.csv에는 fool 칸을 달아 남긴다(상세 표시).
+ * 만우절 단위(결정 #11 — tools/lib/fools.mjs)는 숫자에서 뺀다: 등장 · 흔한 대상(분모 포함) · 기록 수 · 관계 상대 수. person-records.csv · relations.csv에는 fool 칸을 달아 남긴다(상세 표시).
  * 기각된 기록은 뺀다. 후보는 세되 unconfirmed 칸에 남긴다. 같은 기록이면 같은 결과다(정렬 끝까지 결정적). 원문 대사 · 기록 문장은 담지 않는다(ID · 이름 · 수만).
  */
 import fs from 'node:fs';
@@ -49,13 +50,13 @@ const TOP = 30;
 const COLUMNS = {
   persons: ['target', 'name', 'common', 'spread', 'scenes', 'units', 'lines', 'speaker_lines', 'named_lines', 'implied_lines', 'implied_scenes',
     'first_order', 'first_tick', 'first_unit', 'first_scene', 'first_speaks_unit', 'last_order', 'last_tick', 'last_unit',
-    'partners', 'top_partners', 'facts', 'questions', 'open', 'partial', 'solved', 'reversed', 'events', 'echoes', 'life',
+    'relations', 'facts', 'questions', 'open', 'partial', 'solved', 'reversed', 'events', 'echoes', 'life',
     'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'unconfirmed'],
-  pairs: ['a', 'b', 'a_name', 'b_name', 'scenes', 'units', 'talk_scenes', 'first_order', 'first_unit', 'last_order', 'last_unit', 'common', 'same_as'],
+  relations: ['a', 'b', 'a_name', 'b_name', 'changes', 'closures', 'merges', 'first_order', 'first_unit', 'last_order', 'last_unit', 'fool'],
   personUnits: ['person', 'order', 'tick', 'unit', 'kind', 'scenes', 'lines', 'speaker_lines', 'implied_lines', 'first_scene'],
   personRecords: ['person', 'record', 'kind', 'role', 'unit', 'order', 'tick', 'state', 'threads', 'with', 'status', 'fool'],
 };
-const FILES = { persons: 'persons.csv', pairs: 'pairs.csv', personUnits: 'person-units.csv', personRecords: 'person-records.csv' };
+const FILES = { persons: 'persons.csv', relations: 'relations.csv', personUnits: 'person-units.csv', personRecords: 'person-records.csv' };
 
 const arr = (x) => (Array.isArray(x) ? x : x == null ? [] : [x]);
 const isPerson = (x) => typeof x === 'string' && x.startsWith('person:');
@@ -120,7 +121,6 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   // ── 등장 ──
   const ps = personScenes(ctx, ds);
   const app = new Map(); // 인물 → 집계
-  const sceneMembers = new Map(); // 씬 → [{ t, talk }]
   const unitRows = [];
   for (const [t, scenes] of [...ps].sort((a, b) => a[0].localeCompare(b[0]))) {
     if (!ctx.targetIds.has(t)) {
@@ -130,7 +130,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     const a = { scenes: 0, units: new Map(), lines: 0, speak: 0, named: 0, implied: 0, impliedScenes: 0, first: null, last: null, firstSpeaks: null, unplaced: 0 };
     const placed = [];
     for (const [s, x] of scenes) {
-      if (isAprilFools(places.unitOf(s))) continue; // 만우절 — 등장 · 함께 나옴에서 뺀다
+      if (isAprilFools(places.unitOf(s))) continue; // 만우절 — 등장에서 뺀다
       const p = places.posOf(s);
       if (!p) {
         a.unplaced++;
@@ -156,7 +156,6 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       a.first ??= { scene: s, unit, pos };
       a.last = { scene: s, unit, pos };
       if (x.speak.size && !a.firstSpeaks) a.firstSpeaks = { scene: s, unit };
-      getOr(sceneMembers, s, () => []).push({ t, talk: x.speak.size > 0 });
     }
     app.set(t, a);
     for (const [u, r] of a.units) {
@@ -164,40 +163,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     }
   }
 
-  // ── 함께 나옴 ──
   const groups = sameAsGroups(ds);
-  const sameAs = (a, b) => (groups.get(a) ?? []).includes(b);
-  const pairs = new Map();
-  for (const [s, ms] of [...sceneMembers].sort((x, y) => {
-    const p = places.posOf(x[0]);
-    const q = places.posOf(y[0]);
-    return p[0] - q[0] || p[1] - q[1];
-  })) {
-    ms.sort((x, y) => x.t.localeCompare(y.t));
-    const unit = places.unitOf(s);
-    for (let i = 0; i < ms.length; i++) {
-      for (let j = i + 1; j < ms.length; j++) {
-        const key = `${ms[i].t}\t${ms[j].t}`;
-        const p = getOr(pairs, key, () => ({ a: ms[i].t, b: ms[j].t, scenes: 0, units: new Set(), talk: 0, first: unit, last: unit }));
-        p.scenes++;
-        p.units.add(unit);
-        if (ms[i].talk && ms[j].talk) p.talk++;
-        p.last = unit;
-      }
-    }
-  }
-  const pairRows = [...pairs.values()].map((p) => ({
-    a: p.a, b: p.b, a_name: short(p.a), b_name: short(p.b), scenes: p.scenes, units: p.units.size, talk_scenes: p.talk,
-    first_order: orderOf(p.first), first_unit: p.first, last_order: orderOf(p.last), last_unit: p.last,
-    common: [commonOf(p.a), commonOf(p.b)].filter(Boolean).length ? [...new Set([commonOf(p.a), commonOf(p.b)].filter(Boolean))].join(' · ') : '',
-    same_as: sameAs(p.a, p.b) ? '같은 인물' : '',
-  })).sort((x, y) => y.scenes - x.scenes || x.a.localeCompare(y.a) || x.b.localeCompare(y.b));
-  const partnersOf = new Map();
-  for (const p of pairRows) {
-    if (p.same_as) continue;
-    getOr(partnersOf, p.a, () => []).push({ t: p.b, n: p.scenes });
-    getOr(partnersOf, p.b, () => []).push({ t: p.a, n: p.scenes });
-  }
 
   // ── 기록 ──
   const recRows = [];
@@ -278,6 +244,37 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       push(t, c, '마무리', c.obj?.type ?? '', { unit, order: orderOf(unit), tick: tickOf(unit), state: mergeOf.get(c.id) ?? '' });
     }
   }
+  // ── 관계 쌍(W21) — 변화 D 관계의 person ↔ with · 마무리 O의 관계 사슬 · 그 O를 묶은 합류 H ──
+  const rels = new Map();
+  const relOf = (x, y) => {
+    const [a, b] = x < y ? [x, y] : [y, x];
+    return getOr(rels, `${a}\t${b}`, () => ({ a, b, recs: [], merges: new Set() }));
+  };
+  const recOrder = (c) => Number(orderOf(c.kind === 'closure' ? c.closureEnd ?? c.obj?.end : c.unit)) || 1e9;
+  for (const c of live.filter((x) => x.kind === 'change' && isPerson(x.obj?.person) && x.obj.aspect === '관계')) {
+    for (const w of new Set(arr(c.obj.with).filter(isPerson))) if (w !== c.obj.person) relOf(c.obj.person, w).recs.push(c);
+  }
+  for (const c of live.filter((x) => x.kind === 'closure')) {
+    const m = /^관계 (\S+) ↔ (\S+)$/.exec(c.obj?.chain ?? '');
+    if (!m || !isPerson(m[1]) || !isPerson(m[2]) || m[1] === m[2]) continue;
+    const r = relOf(m[1], m[2]);
+    r.recs.push(c);
+    if (mergeOf.has(c.id)) r.merges.add(mergeOf.get(c.id));
+  }
+  const relRows = [...rels.values()].map((r) => {
+    const xs = r.recs.sort((x, y) => recOrder(x) - recOrder(y) || compareIds(x.id, y.id));
+    const unitOf = (c) => (c.kind === 'closure' ? c.closureEnd ?? c.obj?.end : c.unit) ?? '';
+    const first = unitOf(xs[0]);
+    const last = unitOf(xs.at(-1));
+    const ids = (k) => xs.filter((c) => c.kind === k).map((c) => c.id).join(' ');
+    return {
+      a: r.a, b: r.b, a_name: short(r.a), b_name: short(r.b), changes: ids('change'), closures: ids('closure'), merges: [...r.merges].sort(compareIds).join(' '),
+      first_order: orderOf(first), first_unit: first, last_order: orderOf(last), last_unit: last, fool: xs.every(fool) ? 1 : '',
+    };
+  }).sort((x, y) => (Number(x.first_order) || 1e9) - (Number(y.first_order) || 1e9) || x.a.localeCompare(y.a) || x.b.localeCompare(y.b));
+  const relCount = new Map(); // 만우절 기록뿐인 쌍은 세지 않는다(결정 #11)
+  for (const r of relRows) if (!r.fool) for (const t of [r.a, r.b]) relCount.set(t, (relCount.get(t) ?? 0) + 1);
+
   recRows.sort((a, b) => a.person.localeCompare(b.person) || (Number(a.order) || 1e9) - (Number(b.order) || 1e9) || compareIds(a.record, b.record) || a.kind.localeCompare(b.kind));
 
   // ── 인물 표 ──
@@ -285,15 +282,13 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   const rows = persons.map(({ id, name }) => {
     const a = app.get(id);
     const r = R.get(id) ?? rec(id);
-    const partners = (partnersOf.get(id) ?? []).sort((x, y) => y.n - x.n || x.t.localeCompare(y.t));
-    const named = partners.filter((x) => !SKIP_TARGETS.has(x.t));
     return {
       target: id, name, common: commonOf(id), spread: spread.get(id) ?? 0,
       scenes: a?.scenes ?? 0, units: a?.units.size ?? 0, lines: a?.lines ?? 0, speaker_lines: a?.speak ?? 0, named_lines: a?.named ?? 0,
       implied_lines: a?.implied ?? 0, implied_scenes: a?.impliedScenes ?? 0,
       first_order: a?.first?.pos[0] ?? '', first_tick: a?.first ? tickOf(a.first.unit) : '', first_unit: a?.first?.unit ?? '', first_scene: a?.first?.scene ?? '',
       first_speaks_unit: a?.firstSpeaks?.unit ?? '', last_order: a?.last?.pos[0] ?? '', last_tick: a?.last ? tickOf(a.last.unit) : '', last_unit: a?.last?.unit ?? '',
-      partners: named.length, top_partners: named.slice(0, 5).map((x) => `${short(x.t)} ${x.n}`).join(' · '),
+      relations: relCount.get(id) ?? 0,
       facts: r.facts, questions: r.questions, open: r.open, partial: r.partial, solved: r.solved, reversed: r.reversed, events: r.events, echoes: r.echoes, life: r.life,
       threads: [...r.threads].sort(compareIds).join(' '), baselines: r.baselines, changes: r.changes,
       aspects: ASPECTS.filter((x) => r.aspects.has(x)).map((x) => `${x} ${r.aspects.get(x)}`).join(' · '), with_others: r.withOthers, inverted: r.inverted,
@@ -303,7 +298,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   }).sort((x, y) => y.scenes - x.scenes || y.facts + y.questions - (x.facts + x.questions) || x.target.localeCompare(y.target));
   unitRows.sort((x, y) => x.person.localeCompare(y.person) || x.order - y.order);
   for (const id of R.keys()) if (!nameOf.has(id)) problems.push(`기록이 가리키는 인물이 사전에 없다: ${id}`);
-  return { persons: rows, pairs: pairRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: counted, problems };
+  return { persons: rows, relations: relRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: counted, problems };
 }
 
 const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '-');
@@ -321,7 +316,8 @@ export function renderPersonsReport(v, { source }) {
   L.push(`- 사전 인물 ${P.length} · 등장한 인물 ${seen.length} (등장 없음 ${P.length - seen.length}: ${P.filter((p) => !p.scenes).map((p) => p.name).join(' · ') || '-'}).`);
   L.push(`- 따로 두는 인물: 지휘관 + 흔한 대상 ${P.filter((p) => p.common === '흔한 대상').length}(중심인 단위 > ${v.commonLimit}/${v.units} — ${P.filter((p) => p.common === '흔한 대상').map((p) => `${p.name} ${p.spread}`).join(' · ')}).`);
   L.push(`- 등장 줄 ${sum('lines').toLocaleString('ko-KR')} — 말한 줄 ${sum('speaker_lines').toLocaleString('ko-KR')} · 이름 · 다른 이름 ${sum('named_lines').toLocaleString('ko-KR')}. 2회독 암시 언급이 더한 줄 ${sum('implied_lines')} · 암시로만 나온 씬 ${sum('implied_scenes')}(인물 ${P.filter((p) => p.implied_scenes).length}).`);
-  L.push(`- 함께 나옴 — 인물 쌍 ${v.pairs.length.toLocaleString('ko-KR')}(2씬 이상 ${v.pairs.filter((p) => p.scenes >= 2).length.toLocaleString('ko-KR')} · 10씬 이상 ${v.pairs.filter((p) => p.scenes >= 10).length}), 지휘관 · 흔한 대상이 낀 쌍 ${v.pairs.filter((p) => p.common).length.toLocaleString('ko-KR')}, 같은 인물(정체 연결) 쌍 ${v.pairs.filter((p) => p.same_as).length}.`);
+  const R2 = v.relations.filter((r) => !r.fool);
+  L.push(`- 관계 쌍(기록에서 — 변화 D 관계 · 마무리 O 관계 사슬 · 합류 H) ${R2.length}(지휘관이 낀 쌍 ${R2.filter((r) => r.a === 'person:지휘관' || r.b === 'person:지휘관').length} · 맺음 있는 쌍 ${R2.filter((r) => r.closures).length} · 합류에 든 쌍 ${R2.filter((r) => r.merges).length}), 관계 상대가 있는 인물 ${P.filter((p) => p.relations).length}.`);
   const withRec = P.filter((p) => p.facts + p.questions + p.echoes + p.life + p.baselines + p.changes);
   L.push(`- 기록이 다룬 인물 ${withRec.length} — 사실 ${sum('facts')} · 의문 ${sum('questions')}(열림 ${sum('open')} · 일부 ${sum('partial')} · 풀림 ${sum('solved')}) · 사건 ${sum('events')} · 떡밥 ${sum('echoes')} · 생활상 ${sum('life')} (기록 하나가 여러 인물을 다루면 인물마다 센다).`);
   L.push(`- 변화 — 인물 ${P.filter((p) => p.baselines + p.changes).length} · 기준 ${sum('baselines')} · 변화 ${sum('changes')}(작중 순서가 뒤바뀐 변화 ${sum('inverted')}) · 관계 상대로 나온 수 ${sum('with_others')}. 마무리가 있는 인물 ${P.filter((p) => p.closures).length} · 합류 결판에 든 인물 ${P.filter((p) => p.merges).length}.`);
@@ -333,10 +329,10 @@ export function renderPersonsReport(v, { source }) {
     L.push('');
   };
   table(`등장 순위 (따로 두는 인물 빼고 위 ${TOP})`, plain.slice(0, TOP),
-    ['name', 'scenes', 'units', 'speaker_lines', (p) => `${p.first_unit}(${p.first_tick})`, (p) => `${p.last_unit}(${p.last_tick})`, 'partners', (p) => p.top_partners.replace(/ · /g, ', ')],
-    ['인물', '씬', '단위', '말한 줄', '처음(공개 자리)', '마지막', '함께 나온 인물', '자주 함께']);
+    ['name', 'scenes', 'units', 'speaker_lines', (p) => `${p.first_unit}(${p.first_tick})`, (p) => `${p.last_unit}(${p.last_tick})`, 'relations'],
+    ['인물', '씬', '단위', '말한 줄', '처음(공개 자리)', '마지막', '관계 상대']);
   table('따로 두는 인물', P.filter((p) => p.common),
-    ['name', 'common', 'spread', 'scenes', 'units', 'speaker_lines', 'partners'], ['인물', '왜', '중심 단위', '씬', '단위', '말한 줄', '함께 나온 인물']);
+    ['name', 'common', 'spread', 'scenes', 'units', 'speaker_lines', 'relations'], ['인물', '왜', '중심 단위', '씬', '단위', '말한 줄', '관계 상대']);
   const byRec = [...P].filter((p) => p.facts + p.questions).sort((a, b) => b.facts + b.questions - (a.facts + a.questions) || a.target.localeCompare(b.target));
   table(`기록 순위 (사실 + 의문 위 ${TOP})`, byRec.slice(0, TOP),
     ['name', 'facts', 'questions', 'open', 'events', 'echoes', (p) => p.threads.split(' ').filter(Boolean).length, 'changes', (p) => p.closures.split(' ').filter(Boolean).length],
@@ -344,16 +340,18 @@ export function renderPersonsReport(v, { source }) {
   const byChange = [...P].filter((p) => p.changes).sort((a, b) => b.changes - a.changes || a.target.localeCompare(b.target));
   table(`변화 순위 (위 ${TOP})`, byChange.slice(0, TOP), ['name', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges'],
     ['인물', '기준', '변화', '측면', '관계 상대', '뒤바뀜', '마무리', '합류']);
-  table(`함께 나옴 (따로 두는 인물 빼고 위 ${TOP})`, v.pairs.filter((p) => !p.common && !p.same_as).slice(0, TOP),
-    ['a_name', 'b_name', 'scenes', 'units', 'talk_scenes', (p) => `${p.first_unit} → ${p.last_unit}`], ['인물', '인물', '씬', '단위', '둘 다 말함', '처음 → 마지막']);
+  const nIds = (x) => x.split(' ').filter(Boolean).length;
+  const byRel = [...v.relations].filter((r) => !r.fool).sort((x, y) => nIds(y.changes) - nIds(x.changes) || x.a.localeCompare(y.a) || x.b.localeCompare(y.b));
+  table(`관계 쌍 (변화 많은 위 ${TOP})`, byRel.slice(0, TOP),
+    ['a_name', 'b_name', (r) => nIds(r.changes), (r) => r.closures || '-', (r) => r.merges || '-', (r) => `${r.first_unit} → ${r.last_unit}`], ['인물', '인물', '변화', '맺음', '합류', '처음 → 마지막']);
 
   L.push('## 빈 곳', '');
   const thin = seen.filter((p) => !p.common && !(p.facts + p.questions + p.echoes + p.life + p.baselines + p.changes));
-  L.push(`- 등장했지만 다룬 기록이 하나도 없는 인물 ${thin.length}/${seen.length}(${pct(thin.length, seen.length)}) — 씬 많은 순: ${thin.slice(0, 15).map((p) => `${p.name} ${p.scenes}`).join(' · ')}${thin.length > 15 ? ' …' : ''}. 등장 · 함께 나옴만 보인다.`);
+  L.push(`- 등장했지만 다룬 기록이 하나도 없는 인물 ${thin.length}/${seen.length}(${pct(thin.length, seen.length)}) — 씬 많은 순: ${thin.slice(0, 15).map((p) => `${p.name} ${p.scenes}`).join(' · ')}${thin.length > 15 ? ' …' : ''}. 등장만 보인다.`);
   const noApp = P.filter((p) => !p.scenes && p.facts + p.questions + p.changes);
   L.push(`- 기록은 있는데 등장 줄이 없는 인물 ${noApp.length}${noApp.length ? ` — ${noApp.map((p) => p.name).join(' · ')}` : ''} (이름이 안 걸리는 인물 — 언급 DB 사전 몫).`);
-  const solo = seen.filter((p) => !p.partners);
-  L.push(`- 함께 나온 인물이 없는(지휘관만) 인물 ${solo.length}${solo.length ? ` — ${solo.slice(0, 15).map((p) => p.name).join(' · ')}${solo.length > 15 ? ' …' : ''}` : ''}.`);
+  const solo = seen.filter((p) => !p.common && p.changes + p.baselines && !p.relations);
+  L.push(`- 변화 기록은 있는데 관계 상대가 없는 인물 ${solo.length}${solo.length ? ` — ${solo.slice(0, 15).map((p) => p.name).join(' · ')}${solo.length > 15 ? ' …' : ''}` : ''}.`);
   const imp = [...P].filter((p) => p.implied_scenes).sort((a, b) => b.implied_scenes - a.implied_scenes);
   L.push(`- 2회독 암시 언급으로만 나온 씬이 많은 인물: ${imp.slice(0, 10).map((p) => `${p.name} ${p.implied_scenes}`).join(' · ') || '-'} — 자동 줄만으로는 등장이 모자랐던 곳.`, '');
   if (v.problems.length) L.push('## 문제', '', ...v.problems.map((p) => `- ${p}`), '');
@@ -383,5 +381,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     writePersonsViews(v, PERSONS_DIR, { source });
     console.log(`→ ${displayPath(PERSONS_DIR)}/ (${Object.values(FILES).join(' · ')} · report.md)`);
   }
-  console.log(`인물 ${v.persons.length} · 등장 ${v.persons.filter((p) => p.scenes).length} · 쌍 ${v.pairs.length} · 기록 줄 ${v.personRecords.length}${v.problems.length ? ` · 문제 ${v.problems.length}` : ''}`);
+  console.log(`인물 ${v.persons.length} · 등장 ${v.persons.filter((p) => p.scenes).length} · 관계 쌍 ${v.relations.length} · 기록 줄 ${v.personRecords.length}${v.problems.length ? ` · 문제 ${v.problems.length}` : ''}`);
 }

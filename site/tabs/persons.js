@@ -1,13 +1,13 @@
 /**
  * 탭 4 인물(W5) — 화면 5 "인물별 집계"(docs/views.md 5절, 시안 표 data/views/persons/ — X3d).
- * 첫 쓸모: 인물 하나(기본 라피)가 "누구고, 어디 나왔고, 누구와 같이 나왔고, 어떻게 바뀌었고, 무엇이 아직 풀리지 않았나".
+ * 첫 쓸모: 인물 하나(기본 라피)가 "누구고, 어디 나왔고, 누구와 어떤 사이였고, 어떻게 바뀌었고, 무엇이 아직 풀리지 않았나".
  * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 접는 칸). 도구줄의 [인물 도감]은 초상 격자를 기업 · 스쿼드로 묶어 보인다.
  *
  * 쓰는 JSON
  *   persons.json          인물 386(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
- *                         이름이 아직 안 나온 인물(fmt.met — targets.json meet)은 목록 · 도감 · 함께 나온 인물에서 빼고, 이름 · 다른 이름 · 찾기는 그 자리의 것(fmt.nameAt · aliasesAt · namesAt — W15b)
- *   persons-detail.json   등장 · 기록 · 변화가 하나라도 있는 인물 381 — { units[](등장: 스토리 · 씬 · 줄 · 말한 줄), records[](확정 기록 ID), changes[](변화: 작중 순서 seq · 측면 · 처음 모습/바뀜 · 상대 · 출시순과 반대) }
- *   persons-pairs.json    함께 나온 쌍 — by[] = [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 체크 칸 스토리 키 — 픽업 이벤트 · 사이드)](처음 열 때 받는다)
+ *                         이름이 아직 안 나온 인물(fmt.met — targets.json meet)은 목록 · 도감 · 관계 상대에서 빼고, 이름 · 다른 이름 · 찾기는 그 자리의 것(fmt.nameAt · aliasesAt · namesAt — W15b)
+ *   persons-detail.json   등장 · 기록 · 변화가 하나라도 있는 인물 381 — { units[](등장: 스토리 · 씬 · 줄 · 말한 줄), records[](확정 기록 ID), changes[](변화: 작중 순서 seq · 측면 · 처음 모습/바뀜 · 상대 · 출시순과 반대),
+ *                         rel[](관계 상대 — { with, recs[] }: 변화 D(양쪽의 것) · 결말 O(관계 사슬) · 함께 맺음 H의 ID, 읽는 자리 순 — W21) }
  *   공용(idx)             units(읽는 순서 · 출시 시점) · ticks · targets(초상 · 소속) · threads · records(6MB — 열 때 받아 오면 기록 칸이 채워진다)
  *   기록 문장 · 전 → 후는 records*.json의 것을 쓴다(persons*.json에는 문장이 없다). 원문 본문은 어디에도 없다.
  *
@@ -15,15 +15,14 @@
  *   who    고른 인물(person:라피). 없으면 리더에서 연 인물 → 라피 → 목록 첫 인물. 리더에서 인물을 누르면 따라온다
  *   view   dex면 인물 도감(옛 주소의 table도 도감), 없으면 인물별
  *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      lead  1이면 주역만(첫 스토리를 본 떡밥의 주역 — W15b)      sort  목록 · 도감 정렬(없으면 많이 나온 순 | first 처음 등장 순 | name 이름순)
- *   net    함께 나온 인물 보기(list 기본 | graph 관계도)      common  1이면 어디에나 나오는 인물(persons.json common — 지휘관 · 라피 · 아니스 · 네온)도 포함
  *   us     나온 스토리 목록의 정렬(없으면 감상 순서 | speak 많이 말한 순)
  *   fq     사실 · 의문 칸의 탭(q 의문 기본 | f 사실 | k 밝혀짐 · 회수 | e 복선 — 든 것이 있는 탭만 보인다)      chg  release면 변화를 출시순으로(없으면 작중 순)
  *   접힌 칸은 URL이 아니라 localStorage(nikke-story.persons.fold)에 남긴다 — 처음에는 결말 · 떡밥만 접혀 있다.
  *
  * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13c)
  *   여기까지 읽음은 모든 목록 · 그림에 걸린다 — 안 본 스토리(R.seen — 메인 위치 t + 척추 이벤트 · 사이드 '봤음' 예외 x)의 등장 · 변화와
- *     모르는 기록(R.known — 사실 · 의문은 know_units 중 하나라도 봤으면 앎)은 뺀다(persons-detail.json에서 다시 센다). 쌍은 by[]의 칸마다(척추 이벤트 · 사이드 칸은 그 키로) 본다.
- *   만우절 단위(결정 #11 — units.json fool)는 등장 · 쌍에서 이미 빠졌고(export), 기록 · 변화는 목록에 남기되 수에서 빼고 스토리 이름 옆에 '만우절' 칩을 단다.
+ *     모르는 기록(R.known — 사실 · 의문은 know_units 중 하나라도 봤으면 앎)은 뺀다(persons-detail.json에서 다시 센다). 관계 상대도 아는 기록만으로 고른다.
+ *   만우절 단위(결정 #11 — units.json fool)는 등장에서 이미 빠졌고(export), 기록 · 변화 · 관계는 목록에 남기되 수에서 빼고 스토리 이름 옆에 '만우절' 칩을 단다.
  *     자리(tick)는 히트맵의 '아직 안 읽은 부분' 빗금(t 뒤) · 초상(fmt.iconAt) · 소속(fmt.orgsAt)에만 쓴다 — t 앞이어도 안 봤다고 체크한 스토리 칸은 빗금 칸으로 그린다.
  *   가린 것은 도구줄 아래 한 줄에 "스포일러로 가린 인물 N명 · 스토리 N편"으로 모으고 [전부 보기]를 단다. 아직 나오지 않은 인물은 목록에서 빠지고, 주소로 들어오면 안내만 보인다.
  *   작업 흔적은 싣지 않는다: 기록 ID · 작업량 숫자(말한 줄 · 기록 수 · 씬 · 순번) · 판정 용어(시점 확정 · 대략 범위 …) · 만든 방법 설명. 근거는 링크로만(누르면 장면).
@@ -36,20 +35,20 @@
  *   머리: 초상(얼굴이 없으면 이름 첫 글자) · 이름(+ 회색 갈래 — 니케 · 랩쳐만, '인물'은 탭 이름과 같아 쓰지 않는다) · 소속 마크 · 다른 이름 · 같은 인물 ·
  *     "처음 등장 [스토리]" 하나. 그 첫 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만)을 덧붙인다(말함은 당연해서 쓰지 않는다).
  *     같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 보이고, 아니면 있다는 것 자체를 보이지 않는다.
- *   칸은 든 것이 없으면 통째로 숨긴다(기록이 오기 전에는 기록 칸을 '불러오는 중'으로 둔다). 칸 머리의 수는 등장(N편) · 함께 나온 인물(N명)만.
+ *   칸은 든 것이 없으면 통째로 숨긴다(기록이 오기 전에는 기록 칸을 '불러오는 중'으로 둔다). 칸 머리의 수는 등장(N편) · 관계 상대(N명)만.
  *   등장: 히트맵 — 가로 = 읽는 순서(출시순) 481칸을 폭에 맞춰 줄여 그린다, 줄 = 스토리 종류(종류가 축이라 줄 이름은 종류), 칸 색 = 말한 양(파랑 한 색 5단계,
  *     절대 구간 — 인물끼리 견줄 수 있다), 회색 = 이름만 나온 스토리, 빗금 = 아직 안 읽은 부분. 범례는 '말 적음 → 말 많음' 띠(숫자 없음). 칸에 올리면 제목 · 종류, 누르면 리더.
  *     그 아래 나온 스토리 제목 목록: 종류마다 묶고, 앞 점 색 = 말한 양(히트맵과 같은 구간). 종류마다 많으면(메인 36 · 그 밖 20 초과) 앞 24 · 12개만 보이고 [더 보기].
- *   함께 나온 인물: [초상] 이름 + 막대(같이 나온 장면, 진한 부분 = 그중 대화한 장면 — 숫자 없음). 어디에나 나오는 인물(common)은 기본으로 빼고 토글 글자에 그 이름을 적는다.
- *     관계도는 가운데가 고른 인물, 가장자리가 같이 나온 상위 N명(좁으면 10), 선 굵기 · 점 크기 = 같이 나온 장면, 가는 곡선 = 상대끼리 같이 나온 장면(3장면 이상, 가장 센 것의 1/4 이상),
- *     같이 나온 상대끼리 이웃하게 둘러 세운다. 같은 인물 쌍은 뺀다. 상대를 누르면 그 인물로 옮긴다.
+ *   관계 상대(W21 — 옛 '함께 나온 인물'의 같은 씬 횟수를 대신한다: 씬이 시나리오 파일 하나라 다른 시공간이 묶였다): 기록이 이은 상대마다 한 덩이 —
+ *     머리 [초상] 이름, 흐름 = 그 사이의 변화(처음 모습 · 바뀜 + 전 → 후, 상대 쪽 변화면 회색 상대 이름)를 읽는 자리 순으로, 맺음 = 결말(관계) · 함께 맺음.
+ *     횟수 · 순위 없이 처음 이어진 차례로 늘어놓는다(지휘관도 한 상대). 흐름이 길면(5줄 이상) 처음 하나 · 마지막 둘만 두고 가운데를 접는다.
  *   변화: 그림 — 줄 = 측면(성격 · 관계 · 소속 · 신체 · 신념 · 기억), 가로 = 작중 순(또는 출시순)의 차례. ● 바뀜 · ○ 처음 모습 · 노란 테두리 = 출시순과 반대
  *     (먼저 공개된 변화보다 작중으로 앞) · 깃발 = 결말. 때를 모르는 변화는 맨 뒤 점선 뒤로. 띠 = 같은 스토리, 아래 글자 = 공개된 챕터.
  *     목록은 같은 차례를 스토리(챕터)마다 묶는다(순번 없음) — 묶음 머리 = 스토리 링크, 줄 = 바뀜/처음 모습 · 회색 측면 · 상대 · 전 → 후. 점과 줄이 서로 강조된다.
  *   사실 · 의문 · 떡밥 · 결말은 확정 기록만(후보 · 기각은 export가 싣지 않는다). 의문은 미해결을 맨 위에 묶는다. 줄 아래는 스토리 링크(+ 추정일 때만 '추정').
  *   떡밥 줄 = 제목 + 회색 '주요 떡밥' · '주역' + 이 인물의 미해결 의문이 있으면 '미해결'.
  */
-export const meta = { id: 'persons', title: '인물', blurb: '인물별 등장 · 함께 나온 인물 · 변화 · 결말' };
+export const meta = { id: 'persons', title: '인물', blurb: '인물별 등장 · 관계 상대 · 변화 · 결말' };
 
 const NS = 'http://www.w3.org/2000/svg';
 /** 화면 말 중 fmt에 없는 것 — 고칠 때는 여기 한 곳만 */
@@ -81,7 +80,7 @@ const LABELS = {
   quiet: { named: '이름만 나옴', seen: '등장만' },
   quietHelp: { named: '이 스토리에서는 말하지 않고 이름만 나온다', seen: '이 스토리에서는 이름 없이 모습만 나온다' },
   plinkHelp: (name) => `${name} — 이 탭에서 보기`,
-  sec: { heat: '등장', partners: '함께 나온 인물', changes: '변화', closure: '결말', records: '사실 · 의문', threads: '떡밥' },
+  sec: { heat: '등장', rel: '관계 상대', changes: '변화', closure: '결말', records: '사실 · 의문', threads: '떡밥' },
   stories: (n) => `${n}편`,
   ramp: { few: '말 적음', many: '말 많음' },
   nameOnly: '이름만 나옴',
@@ -89,11 +88,8 @@ const LABELS = {
   usLabel: '나온 스토리 정렬',
   us: { order: '감상 순서', speak: '많이 말한 순' },
   usFold: '접기',
-  net: { list: '목록', graph: '관계도' },
-  commonIncl: (names) => `${names} 포함`,
-  withNone: '여기까지 읽은 곳에서 함께 나온 인물이 없다.',
-  together: '함께 나옴',
-  talk: '대화함',
+  relMid: (n) => `가운데 ${n}개 더`,
+  relSide: '상대 쪽 변화',
   more: (n) => `더 보기 (${n})`,
   fq: { q: '의문', f: '사실', k: '밝혀짐 · 회수', e: '복선' },
   chg: { story: '작중 순', release: '출시순' },
@@ -125,21 +121,6 @@ const push = (m, k, v) => (m.get(k) ?? m.set(k, []).get(k)).push(v);
 const bucketOf = (n) => BUCKETS.reduce((b, lo, i) => (n >= lo ? i + 1 : b), 0);
 const cmpKo = (a, b) => String(a).localeCompare(String(b), 'ko');
 
-/**
- * 쌍의 by[](= [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 척추 이벤트 · 사이드 키 또는 ''(, 1 = 이름 안 쓰인 칸))])를 여기까지 읽음으로 더한다(범위 칸은 쓰지 않는다 — 늘 셋 다).
- * T: state.reading()의 R(키가 있는 칸은 R.seen(키), 없는 칸은 자리 ≤ R.t) · 숫자(자리 ≤ T) · null(끔)
- */
-export function pairTotals(by, T) {
-  let scenes = 0; let talk = 0; let units = 0;
-  const R = T != null && typeof T === 'object' ? (T.all ? null : T) : null;
-  const t = R ? R.t : typeof T === 'object' ? null : T;
-  for (const [tick, , sc, tk, un, ex, hid] of by) {
-    if (hid && (R || t != null)) continue; // 한쪽 이름이 그 스토리에 안 쓰인 칸('???'로만 — W15f)은 전부 보기에서만
-    if (R && ex) { if (!R.seen(ex)) continue; } else if (t != null && tick > t) { if (!R) break; continue; }
-    scenes += sc; talk += tk; units += un;
-  }
-  return { scenes, talk, units };
-}
 /** 말한 줄 수의 히트맵 단계(0 = 말한 줄 없음) */
 export { bucketOf };
 
@@ -172,7 +153,6 @@ export async function mount(root, ctx) {
   /** 그 자리에서 부르는 이름(fmt.nameAt — 표준명이 아직이면 먼저 나온 다른 이름) */
   const nameOf = (id) => fmt.nameAt(idx.targets.get(id), V.R) ?? P.get(id)?.name ?? fmt.targetName(id);
   const kinds = [...new Set(persons.map((p) => p.kind).filter(Boolean))].sort((a, b) => (b === '니케') - (a === '니케') || cmpKo(a, b));
-  const commonIds = persons.filter((p) => p.common).map((p) => p.id); // 어디에나 나오는 인물(지휘관 · 라피 · 아니스 · 네온) — 함께 나온 인물에서 기본으로 뺀다
   const maxOrder = idx.unitList.reduce((m, u) => Math.max(m, u.order ?? 0), 0);
 
   // ── 여기까지 읽음 ──
@@ -204,27 +184,8 @@ export async function mount(root, ctx) {
   /** 인물이 그 떡밥에 드는 줄 그 자리에서 아나 — 떡밥 전체를 알거나, 묶음 안 아는 뿌리가 그 인물을 다룬다 */
   const inThread = (pid, jid) => { const b = bundleNow(jid); return Boolean(b && (b.whole || b.about.has(pid))); };
 
-  // ── 기록 · 쌍(처음 필요할 때) ──
+  // ── 기록(처음 필요할 때) ──
   const recs = () => (idx.hasRecords ? idx.records : null);
-  let pairsP = null;
-  let pmCache = null;
-  const pairsIndex = () => {
-    pairsP ??= data.load('persons-pairs').then((arr) => {
-      const partnersOf = new Map();
-      const pairMap = new Map();
-      for (const pr of arr) {
-        pairMap.set(`${pr.a}\t${pr.b}`, pr);
-        push(partnersOf, pr.a, { o: pr.b, pair: pr });
-        push(partnersOf, pr.b, { o: pr.a, pair: pr });
-      }
-      pmCache = { partnersOf, pairMap };
-      return pmCache;
-    });
-    pairsP.catch(() => { pairsP = null; });
-    return pairsP;
-  };
-  const pairOf = (pm, x, y) => pm.pairMap.get(x < y ? `${x}\t${y}` : `${y}\t${x}`);
-  const pairStat = (pr) => pairTotals(pr.by, V.R);
 
   // ── 인물마다 지금 기준 집계(목록 정렬 · 보이나 · 머리의 처음 등장) ──
   let agg = new Map();
@@ -555,15 +516,21 @@ export async function mount(root, ctx) {
     return (D.get(p.id)?.records ?? []).map((id) => R.get(id)).filter((r) => r && !recHidden(r));
   };
   const visibleChanges = (p) => (D.get(p.id)?.changes ?? []).filter((c) => !hidden(c.unit));
-  const partnerRows = (p, pm) => {
-    const incl = prm('common') === '1';
-    const all = (pm.partnersOf.get(p.id) ?? [])
-      .filter(({ pair }) => !pair.same_as)
-      .map(({ o, pair }) => ({ id: o, po: P.get(o), st: pairStat(pair), pair }))
-      .filter((x) => x.po && x.st.scenes > 0 && agg.get(x.id)?.met)
-      .sort((x, y) => y.st.scenes - x.st.scenes || y.st.talk - x.st.talk || cmpKo(nameOf(x.id), nameOf(y.id)));
-    const present = new Set(all.filter((x) => x.po.common).map((x) => x.id));
-    return { all, list: incl ? all : all.filter((x) => !x.po.common), commons: commonIds.filter((id) => present.has(id)), incl };
+  /**
+   * 관계 상대(W21) — 아는 기록이 하나라도 있고 이름이 나온 상대만, 처음 이어진 차례로(수 · 순위 없음). 기록이 오기 전에는 null.
+   * { id, flow[](변화 D), ends[](결말 O · 함께 맺음 H), fool(만우절 기록뿐 — 수에서 뺀다) }
+   */
+  const relRows = (p) => {
+    const R = recs();
+    if (!R) return null;
+    const out = [];
+    for (const x of D.get(p.id)?.rel ?? []) {
+      if (!agg.get(x.with)?.met) continue;
+      const rs = x.recs.map((id) => R.get(id)).filter((r) => r && !recHidden(r));
+      if (!rs.length) continue;
+      out.push({ id: x.with, flow: rs.filter((r) => r.kind === 'D'), ends: rs.filter((r) => r.kind === 'O' || r.kind === 'H'), first: rs[0].order ?? 0, fool: rs.every((r) => idx.units.get(r.unit)?.fool) });
+    }
+    return out.sort((x, y) => x.first - y.first); // 같으면 내보낸 차례(쌍이 처음 나온 자리 순)
   };
   const threadRows = (p, mine) => {
     const map = new Map();
@@ -730,101 +697,43 @@ export async function mount(root, ctx) {
     storyList(p, sec.body);
   }, { count: (p, a) => LABELS.stories(fmt.num(a.units)), has: (p, a) => a.units > 0 });
 
-  // ── 칸 2: 함께 나온 인물 ──
-  const netSeg = ui.segmented({ label: LABELS.viewLabel, options: [{ value: 'list', label: LABELS.net.list }, { value: 'graph', label: LABELS.net.graph }], value: prm('net') === 'graph' ? 'graph' : 'list', onChange: (v) => state.setParam('persons', 'net', v === 'graph' ? 'graph' : null) });
-  const commonToggle = ui.toggle({ label: '', checked: prm('common') === '1', onChange: (v) => state.setParam('persons', 'common', v ? '1' : null) });
-  let partnerLimit = PAGE + 4;
-  const secPartners = makeSection('partners', LABELS.sec.partners, async (p, a, sec, tk) => {
+  // ── 칸 2: 관계 상대 — 상대마다 변화 흐름 · 맺음(W21) ──
+  let relLimit = PAGE;
+  const relOpen = new Set(); // 가운데를 편 상대
+  const relChange = (p, r) => recRow(['pm-change', r.act === '변화' ? 'is-change' : 'is-base'], `record:${r.id}`,
+    el('div', { class: 'pm-change-head' },
+      el('span', { class: 'pm-act' }, fmt.CHANGE_ACT[r.act] ?? r.act),
+      r.person && r.person !== p.id ? el('span', { class: 'pm-kind', title: LABELS.relSide }, nameOf(r.person)) : null,
+      guess(r)),
+    el('div', { class: 'pm-change-text' }, changeBody(r, r)),
+    el('div', { class: 'pm-change-meta' }, storyRef(r.unit)));
+  const relEnd = (r) => recRow('pm-closure', `record:${r.id}`,
+    el('div', { class: 'pm-change-head' }, el('span', { class: 'pm-tag is-end', title: fmt.help('record', r.kind) }, fmt.RECORD_KIND[r.kind].label), guess(r)),
+    el('div', { class: 'pm-change-text' }, fmt.prose(r.text)),
+    el('div', { class: 'pm-change-meta' }, storyRef(r.end ?? r.unit)));
+  const secRel = makeSection('rel', LABELS.sec.rel, (p, a, sec) => {
     ui.clear(sec.body);
-    sec.body.append(ui.spinner());
-    let pm;
-    try { pm = await pairsIndex(); } catch (err) { if (!stale(sec, tk)) { ui.clear(sec.body); sec.body.append(ui.notice(err.message, 'error')); } return; }
-    if (stale(sec, tk)) return;
-    const { list, commons } = partnerRows(p, pm);
-    ui.clear(sec.body);
-    // 어디에나 나와서 기본으로 빼는 인물 — 설명 대신 토글 글자에 이름을 적는다
-    commonToggle.querySelector('.toggle-label').textContent = LABELS.commonIncl(commons.map((id) => nameOf(id)).join(' · '));
-    sec.body.append(el('div', { class: 'toolbar pm-sectools' }, netSeg.el, commons.length ? commonToggle : null));
-    if (!list.length) { sec.body.append(ui.empty(LABELS.withNone)); return; }
-    const mode = prm('net') === 'graph' ? 'graph' : 'list';
-    if (mode === 'graph') drawGraph(sec, p, list, pm);
-    else drawPartnerList(sec, list);
-  }, { count: (p) => (pmCache ? LABELS.people(fmt.num(partnerRows(p, pmCache).list.length)) : ''), has: (p, a) => a.units > 0 });
-  const drawPartnerList = (sec, list) => {
-    const max = list[0].st.scenes;
-    const ul = el('ul', { class: 'pm-partners' });
-    for (const x of list.slice(0, partnerLimit)) {
-      ul.append(el('li', { class: 'pm-partner' },
-        el('span', { class: 'pm-partner-name' }, ui.portrait(fmt.iconAt(idx.targets.get(x.id), V.T), { size: 22, class: 'pm-partner-pic' }) ?? el('span', { class: 'pm-partner-pic' }), personLink(x.id)),
-        el('span', { class: 'pm-bar-track', 'aria-hidden': 'true' },
-          el('span', { class: 'pm-bar-fill', style: { width: `${(x.st.scenes / max) * 100}%` } }, el('span', { class: 'pm-bar-talk', style: { width: `${x.st.scenes ? (x.st.talk / x.st.scenes) * 100 : 0}%` } })))));
+    const list = relRows(p);
+    if (!list) { sec.body.append(recsPending()); return; }
+    const ul = el('ul', { class: 'pm-rels' });
+    for (const x of list.slice(0, relLimit)) {
+      const rows = el('ul', { class: 'pm-chg-rows' });
+      const fold = x.flow.length >= 5 && !relOpen.has(x.id);
+      x.flow.forEach((r, i) => {
+        if (fold && i > 0 && i < x.flow.length - 2) {
+          if (i === 1) rows.append(el('li', { class: 'pm-rel-mid' }, el('button', { type: 'button', class: 'btn pm-more', onClick: () => { relOpen.add(x.id); paintSection(sec); } }, LABELS.relMid(fmt.num(x.flow.length - 3)))));
+          return;
+        }
+        rows.append(relChange(p, r));
+      });
+      for (const r of x.ends) rows.append(relEnd(r));
+      ul.append(el('li', { class: 'pm-rel' },
+        el('div', { class: 'pm-rel-head' }, ui.portrait(fmt.iconAt(idx.targets.get(x.id), V.T), { size: 22, class: 'pm-rel-pic' }) ?? el('span', { class: 'pm-rel-pic' }), personLink(x.id)),
+        rows));
     }
     sec.body.append(ul);
-    if (list.length > partnerLimit) sec.body.append(showMore(list.length - partnerLimit, () => { partnerLimit += 20; paintSection(sec); }));
-    sec.body.append(ui.legend([{ label: LABELS.together, color: 'var(--pm-3)' }, { label: LABELS.talk, color: 'var(--pm-5)' }]));
-  };
-  const drawGraph = (sec, p, list, pm) => {
-    const W = Math.max(280, sec.body.clientWidth || 640);
-    const compact = W < 520;
-    const H = compact ? 350 : 400;
-    const padX = compact ? 66 : 96;
-    const n = Math.min(list.length, compact ? 10 : 16);
-    const items = list.slice(0, n);
-    const cx = W / 2; const cy = H / 2;
-    const R = Math.max(72, Math.min(W / 2 - padX, H / 2 - 30));
-    const pp = (x, y) => (x.id === y.id ? 0 : pairStat(pairOf(pm, x.id, y.id) ?? { by: [] }).scenes);
-    const w = new Map();
-    for (const x of items) for (const y of items) if (x.id < y.id) w.set(`${x.id}\t${y.id}`, pp(x, y));
-    const tie = (x, y) => w.get(x.id < y.id ? `${x.id}\t${y.id}` : `${y.id}\t${x.id}`) ?? 0;
-    // 서로 많이 같이 나온 상대끼리 이웃하게 둘러 세운다
-    const rest = items.slice(1);
-    const ring = [items[0]];
-    while (rest.length) {
-      const last = ring.at(-1);
-      let bi = 0; let bs = -1;
-      rest.forEach((c, i) => { const sc = tie(last, c) + c.st.scenes * 0.001; if (sc > bs) { bs = sc; bi = i; } });
-      ring.push(rest.splice(bi, 1)[0]);
-    }
-    const maxS = items[0].st.scenes;
-    const pos = ring.map((x, i) => { const ang = -Math.PI / 2 + Math.PI / n + (i * 2 * Math.PI) / n; return { x, ang, px: cx + R * Math.cos(ang), py: cy + R * Math.sin(ang), r: 5 + 7 * Math.sqrt(x.st.scenes / maxS) }; });
-    const svg = sv('svg', { class: 'pm-graph', width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: 'group', 'aria-label': `${nameOf(p.id)} ${LABELS.sec.partners} ${LABELS.net.graph}` });
-    // 상대끼리 선
-    const ppEdges = [];
-    for (let i = 0; i < pos.length; i++) for (let j = i + 1; j < pos.length; j++) { const s = tie(pos[i].x, pos[j].x); if (s >= 3) ppEdges.push({ i, j, s }); }
-    ppEdges.sort((x, y) => y.s - x.s);
-    const maxPP = ppEdges[0]?.s ?? 1;
-    const ppKeep = ppEdges.filter((e) => e.s >= Math.max(3, maxPP * 0.25)).slice(0, n + 4);
-    const gE = sv('g', { class: 'pm-edges' });
-    for (const e of ppKeep) {
-      const A = pos[e.i]; const B = pos[e.j];
-      const qx = cx + ((A.px + B.px) / 2 - cx) * 0.3; const qy = cy + ((A.py + B.py) / 2 - cy) * 0.3;
-      gE.append(sv('path', { class: 'pm-edge pm-edge-pp', d: `M${A.px} ${A.py}Q${qx} ${qy} ${B.px} ${B.py}`, 'stroke-width': (0.8 + 2.4 * Math.sqrt(e.s / maxPP)).toFixed(2), 'data-a': A.x.id, 'data-b': B.x.id }));
-    }
-    for (const A of pos) gE.append(sv('line', { class: 'pm-edge pm-edge-c', x1: cx, y1: cy, x2: A.px, y2: A.py, 'stroke-width': (1 + 4 * Math.sqrt(A.x.st.scenes / maxS)).toFixed(2), 'data-a': A.x.id }));
-    svg.append(gE);
-    const gN = sv('g', { class: 'pm-nodes' });
-    for (const A of pos) {
-      const cosA = Math.cos(A.ang); const sinA = Math.sin(A.ang);
-      const lx = A.px + (A.r + 6) * cosA; const ly = A.py + (A.r + 6) * sinA;
-      const anchor = cosA > 0.3 ? 'start' : cosA < -0.3 ? 'end' : 'middle';
-      const g = sv('g', { class: 'pm-node', tabindex: 0, role: 'button', 'aria-label': nameOf(A.x.id), 'data-id': A.x.id },
-        sv('circle', { class: 'pm-node-hit', cx: A.px, cy: A.py, r: Math.max(A.r + 6, 14) }),
-        sv('circle', { class: 'pm-node-dot', cx: A.px, cy: A.py, r: A.r }),
-        sv('text', { class: 'pm-node-label', x: lx, y: ly, 'text-anchor': anchor, 'dominant-baseline': sinA > 0.55 ? 'hanging' : sinA < -0.55 ? 'auto' : 'central' }, clip(nameOf(A.x.id), compact ? 5 : 8)));
-      ui.tooltip(g, nameOf(A.x.id));
-      const go = () => selectPerson(A.x.id);
-      g.addEventListener('click', go);
-      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-      g.addEventListener('mouseenter', () => svg.classList.add('has-hot') || svg.querySelectorAll(`[data-a="${CSS.escape(A.x.id)}"],[data-b="${CSS.escape(A.x.id)}"]`).forEach((n_) => n_.classList.add('is-hot')) || g.classList.add('is-hot'));
-      g.addEventListener('mouseleave', () => { svg.classList.remove('has-hot'); svg.querySelectorAll('.is-hot').forEach((n_) => n_.classList.remove('is-hot')); });
-      gN.append(g);
-    }
-    const cw_ = Math.max(36, [...nameOf(p.id)].length * 14 + 16);
-    gN.append(sv('circle', { class: 'pm-center', cx, cy, r: 14 }), sv('rect', { class: 'pm-center-pill', x: cx - cw_ / 2, y: cy + 18, width: cw_, height: 22, rx: 11 }),
-      sv('text', { class: 'pm-center-label', x: cx, y: cy + 29, 'text-anchor': 'middle', 'dominant-baseline': 'central' }, nameOf(p.id)));
-    svg.append(gN);
-    sec.body.append(el('div', { class: 'pm-graph-frame' }, svg));
-  };
+    if (list.length > relLimit) sec.body.append(showMore(list.length - relLimit, () => { relLimit += 20; paintSection(sec); }));
+  }, { count: (p) => { const xs = relRows(p); return xs ? LABELS.people(fmt.num(xs.filter((x) => !x.fool).length)) : ''; }, has: (p) => { const xs = relRows(p); return !xs || xs.length > 0; } });
 
   // ── 칸 3: 변화 — 그림 + 스토리(챕터)마다 묶은 목록 ──
   const chgSeg = ui.segmented({ label: LABELS.chgOrder, options: [{ value: 'story', label: LABELS.chg.story }, { value: 'release', label: LABELS.chg.release }], value: prm('chg') === 'release' ? 'release' : 'story', onChange: (v) => state.setParam('persons', 'chg', v === 'release' ? 'release' : null) });
@@ -1068,7 +977,8 @@ export async function mount(root, ctx) {
     const p = P.get(whoId());
     const a = agg.get(p.id);
     for (const k of Object.keys(fqLimit)) fqLimit[k] = PAGE;
-    partnerLimit = PAGE + 4;
+    relLimit = PAGE;
+    relOpen.clear();
     usLimit.clear();
     chgLimit = 15;
     for (const sec of sections) {
@@ -1137,7 +1047,6 @@ export async function mount(root, ctx) {
         if (top < stick) window.scrollTo({ top: window.scrollY + top - stick - 8 });
       }
       if (!rerender) {
-        if (diff('net') || diff('common')) { netSeg.set(prm('net') === 'graph' ? 'graph' : 'list'); commonToggle.set(prm('common') === '1'); paintSection(secPartners); }
         if (diff('fq')) paintSection(secRecords);
         if (diff('us')) { usSeg.set(prm('us') === 'speak' ? 'speak' : 'order'); paintSection(secHeat); }
         if (diff('chg')) { chgSeg.set(prm('chg') === 'release' ? 'release' : 'story'); paintSection(secChanges); }
@@ -1145,7 +1054,7 @@ export async function mount(root, ctx) {
     }
   });
 
-  // 폭이 바뀌면 그림만 다시(히트맵 · 관계도 · 변화)
+  // 폭이 바뀌면 그림만 다시(히트맵 · 변화)
   let lastW = detail.clientWidth;
   let rz = null;
   const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(() => {
@@ -1153,19 +1062,14 @@ export async function mount(root, ctx) {
     if (!w || Math.abs(w - lastW) < 12) return;
     lastW = w;
     clearTimeout(rz);
-    rz = setTimeout(() => { if (agg.get(whoId())?.visible) for (const s of [secHeat, secChanges]) if (!s.det.hidden) paintSection(s); if (prm('net') === 'graph' && !secPartners.det.hidden) paintSection(secPartners); }, 140);
+    rz = setTimeout(() => { if (agg.get(whoId())?.visible) for (const s of [secHeat, secChanges]) if (!s.det.hidden) paintSection(s); }, 140);
   }) : null;
   ro?.observe(detail);
 
   renderAll();
-  pairsIndex().then(() => {
-    if (disposed) return;
-    const p = P.get(whoId());
-    if (p && agg.get(p.id)?.visible) secPartners.countEl.textContent = secPartners.count(p) ?? '';
-  }).catch((err) => console.warn('함께 나온 인물 표를 받지 못했다', err));
   if (!idx.hasRecords) {
     idx.withRecords().then(() => { if (!disposed) renderAll(); })
-      .catch((err) => { console.warn('기록을 받지 못했다', err); recsError = true; if (!disposed) for (const sec of [secRecords, secClosure, secThreads]) if (sec.det.open) paintSection(sec); });
+      .catch((err) => { console.warn('기록을 받지 못했다', err); recsError = true; if (!disposed) for (const sec of [secRel, secRecords, secClosure, secThreads]) if (sec.det.open) paintSection(sec); });
   }
   setTimeout(scrollSelIntoView, 0);
 

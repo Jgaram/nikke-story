@@ -67,7 +67,7 @@ node tools/site/portraits.mjs             # 인물 아이콘 → site/img/people
 node tools/query.mjs stats                  # 전체 집계 (search · speaker · speakers · stats는 범위 안만, --all이면 돌발까지)
 node tools/query.mjs search 니힐리스타       # 대사 전문 검색
 node tools/query.mjs who 라피                # 인물 사전 — 대상 · 이름 · 이어진 이름표 · 정체 연결
-node tools/query.mjs person 라피             # 인물별 집계 — 등장 · 함께 나온 인물 · 사실 · 의문 · 변화 · 결말
+node tools/query.mjs person 라피             # 인물별 집계 — 등장 · 관계 상대 · 사실 · 의문 · 변화 · 결말
 node tools/query.mjs releases event         # 공개 순서(출시순)
 node tools/query.mjs known ch20             # 그 공개 자리까지 아는 사실 · 의문 (스포일러 컷오프)
 node tools/query.mjs chrono event_redash    # 작중 연대기 — 작중 자리 · 출시순과 어긋남
