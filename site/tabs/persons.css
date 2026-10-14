@@ -202,7 +202,7 @@
 .tab-persons .pm-sw.pm-b4 { background: var(--pm-4); }
 .tab-persons .pm-sw.pm-b5 { background: var(--pm-5); }
 .tab-persons .pm-sw.pm-name { background: var(--pm-name); }
-/* 사칭(W23a) — 드러난 뒤 등장 줄의 'OO 행세' · 'OO의 사칭' 표. 줄을 다 옮긴 스토리(이름표 주인 쪽)는 흐리고 점을 비운다 */
+/* 다른 인물(W24a) — 드러난 뒤 등장 줄의 'OO 이름으로' · '다른 인물' 표. 줄을 다 옮긴 스토리(이름 주인 쪽)는 흐리고 점을 비운다 */
 .tab-persons .pm-imp { font-size: 11px; padding: 0 5px; border: 1px solid var(--line); border-radius: 8px; flex: none; }
 .tab-persons .pm-us-item.is-posed > a { color: var(--ink-muted); }
 .tab-persons .pm-us-item.is-posed .pm-sw { background: transparent; box-shadow: inset 0 0 0 1px var(--ink-muted); }

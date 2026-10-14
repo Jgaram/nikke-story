@@ -23,7 +23,7 @@ const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
 
 test('persons.json — 인물 387, 중복 없음, 이름 · 집계 칸', () => {
-  assert.equal(persons.length, 387); // W23e 진짜 머스탱(이름 승계 사칭 L33의 real)이 더해졌다
+  assert.equal(persons.length, 387); // 아버지 머스탱(다른 인물 L36 — 손으로 세운 같은 이름의 다른 사람)
   assert.equal(personIds.size, persons.length);
   for (const p of persons) {
     assert.ok(p.id.startsWith('person:') && p.name, p.id);
@@ -52,7 +52,7 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
     assert.equal(scenes, p.scenes, `${d.id} 씬`);
     assert.equal(lines, p.lines, `${d.id} 줄`);
     assert.ok(d.units.every((e) => !unitByKey.get(e.unit).fool), `${d.id} — 만우절 단위의 등장은 세지 않는다(결정 #11)`);
-    // 변화는 목록에 남기고 수에서만 뺀다. 사칭에 가려지는 변화(W23b — imp)는 이름표 주인 쪽에도 실린다(person = 실제 인물) — 그 줄은 실제 인물의 수에만
+    // 변화는 목록에 남기고 수에서만 뺀다. 다른 인물 줄을 근거로 한 변화(W24a — imp)는 이름 주인 쪽에도 실린다(person = 실제 사람) — 그 줄은 실제 사람의 수에만
     const own = d.changes.filter((c) => !c.imp || c.person === d.id);
     const counted = own.filter((c) => !unitByKey.get(c.unit)?.fool).length;
     assert.equal(counted, (p.baselines ?? 0) + (p.changes ?? 0), `${d.id} 변화`);
@@ -65,7 +65,7 @@ test('rel[] — 관계 상대는 relations.csv의 쌍을 양쪽에, 확정 기�
   const csv = readCsv(path.join(ROOT, 'data/views/persons/relations.csv'));
   const want = new Map();
   const add = (a, b, id) => (want.get(`${a}\t${b}`) ?? want.set(`${a}\t${b}`, new Set()).get(`${a}\t${b}`)).add(id);
-  // 사칭에 가려지는 기록(W23b — imp)은 드러나기 전 모습의 쌍에도 실린다
+  // 다른 인물 줄을 근거로 한 기록(W24a — imp)은 드러나기 전 모습의 쌍에도 실린다
   const face = (x, r) => r.imp?.find((m) => m.a === x)?.b ?? x;
   const facePeople = (r) => [r.person, ...(r.with ?? [])].map((x) => face(x, r));
   for (const r of csv) {

@@ -687,7 +687,7 @@ export async function mount(root, ctx) {
   // ═══ 세계의 모습 ═══
   const lifeMore = new Map();
   function lifeRow(l, opts) {
-    return recRow(l, cutOf(), { ...opts, showAbout: true, about: fmt.recAt(l, state.reading()).about }); // 사칭 가림(W23b)
+    return recRow(l, cutOf(), { ...opts, showAbout: true, about: fmt.recAt(l, state.reading()).about }); // 다른 인물 가림(W24a)
   }
   function renderLife() {
     const s = state.get();

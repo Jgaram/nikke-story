@@ -427,7 +427,7 @@ export function orgsAt(target, t, { past = false } = {}) {
   const R = t != null && typeof t === 'object' ? t : null;
   if (R) t = R.all ? null : R.t;
   const all = t == null;
-  // 사칭(W23d) — 가려지는 소속(imp)은 드러나기 전에는 이름표 주인 쪽(side b), 뒤에는 실제 인물 쪽(side a)에만
+  // 다른 인물(W24a) — 다른 인물 줄을 근거로 한 소속(imp)은 드러나기 전에는 이름 주인 쪽(side b), 뒤에는 실제 사람 쪽(side a)에만
   const impOk = (a) => !a.imp || (a.imp.side === 'a') === (R ? impKnown(a.imp, R) : all || (a.imp.rev_tick != null && a.imp.rev_tick <= t));
   const affSeen = (a) => impOk(a) && (all || (R && a.unit ? R.seen(a.unit) : a.tick != null && a.tick <= t));
   const now = new Map(); // org → 마지막 기록(이탈이면 나감) — 지난 소속은 지금 소속 계산에 안 든다
@@ -555,12 +555,12 @@ export function sameAsKnown(t, R) {
   return ids.filter((_, i) => { const u = t.same_as_unit?.[i]; return u ? R.seen(u) : false; });
 }
 
-/** 사칭이 드러났나(W23a) — 드러난 스토리(rev)를 봤거나 전부 보기. x = persons.json imp[] 항목이나 persons-detail 등장 행 */
+/** 다른 인물이 드러났나(W24a) — 드러나는 스토리(rev)를 봤거나 전부 보기. x = persons.json imp[] 항목이나 persons-detail 등장 행 */
 export const impKnown = (x, R) => !R || R.all || Boolean(x?.rev && R.seen(x.rev));
 
 /**
- * 기록의 그 자리 모습(W23b) — 사칭에 가려지는 기록(imp [{ a, b, rev }] — 기록은 실제 인물로 적혔다)은 드러난 스토리(rev)를 읽기 전에는
- * 실제 인물(a) 자리에 이름표 주인(b)을 둔다(about · person · with · target). 인물 상세의 변화 줄(person · with · imp)에도 쓴다. 가릴 것이 없으면 그대로.
+ * 기록의 그 자리 모습(W24a) — 다른 인물 줄을 근거로 한 기록(imp [{ a, b, rev }] — 내보낸 인물 칸은 드러난 뒤 모습)은 드러나는 스토리(rev)를 읽기 전에는
+ * 실제 사람(a) 자리에 이름 주인(b)을 둔다(about · person · with · target). 인물 상세의 변화 줄(person · with · imp)에도 쓴다. 가릴 것이 없으면 그대로.
  */
 export function recAt(r, R) {
   const hide = r?.imp?.filter((m) => !impKnown(m, R));
@@ -577,9 +577,9 @@ export function recHas(r, pid, R) {
 }
 
 /**
- * 등장 행(persons-detail units[])의 그 자리 모습(W23a 사칭). 사칭이 걸린 스토리(pre가 있는 행)는 드러나기 전에는 옮기기 전 모습 —
- * 이름표 주인은 그 줄까지, 사칭한 인물은 그 줄 없이(이름표 그대로 보인다) — 이고 상대(as · by)를 지운다(있다는 것이 샌다).
- * 드러난 뒤에는 옮긴 모습(사칭한 인물에)이고, 사칭한 쪽(as)은 '이름 안 쓰인 등장'(hid) 가림이 풀린다 — 누구였는지 안다.
+ * 등장 행(persons-detail units[])의 그 자리 모습(다른 인물 W24a). 다른 인물 줄이 걸린 스토리(pre가 있는 행)는 드러나기 전에는 옮기기 전 모습 —
+ * 이름 주인은 그 줄까지, 실제 사람은 그 줄 없이(이름표 그대로 보인다) — 이고 상대(as · by)를 지운다(있다는 것이 샌다).
+ * 드러난 뒤에는 옮긴 모습(실제 사람에)이고, 실제 사람 쪽(as)은 '이름 안 쓰인 등장'(hid) 가림이 풀린다 — 누구였는지 안다.
  */
 export function rowAt(e, R) {
   if (!e?.pre) return e;

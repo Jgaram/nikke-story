@@ -507,7 +507,7 @@ tools/site/
   export/blurbs.mjs     팬용 문장(W14) → blurbs.json — 확정 · 고치지 않음 · 낡지 않은 annotations/blurbs/ 칸만(docs/annotations.md "팬용 문장"). 판정 지문은 ctx.made(이번 내보내기의 order · chrono · units)로 잰다. 리더 · 연대기가 쓴다
   export/versions.mjs   시점별 판(W15c) → versions.json — 앞에서부터 확정 · 성한 annotations/versions/ 판까지(docs/annotations.md "시점별 판"). 지문 · 이름 검사는 ctx.made(units · threads · threads-flow · targets). data.js가 떡밥마다 j.v로 붙이고 fmt.threadAt이 고른다
   serve.mjs             node tools/site/serve.mjs [--port 8765] [--root site] — 표준 http 정적 서버(MIME · no-cache · 404 · 루트 밖 403)
-  spoiler-check.mjs     node tools/site/spoiler-check.mjs [--t 1,11,26] [--tabs …] [--out <파일>] [--titles] [--root <사이트 사본>] [--skip] [--skip-all] [--readers base,skip,skip-all] [--jobs N] [--timing] — 스포일러 새는 곳 점검(W15). 사용법 · 걸리는 시간은 docs/tools.md "스포일러 점검". --skip = 체크 칸 스토리를 다 끈 독자(W15f). W15f 더한 칸: 결말(떡밥 탭 p.j의 묶음 밖 결말 · 함께 맺음 줄) · 떡밥갈래(연결 탭 p.th × p.c 이웃) · 이름없음(리더 '나오는 인물' · 인물 탭 p.who 등장 목록의 hid). W23a: 사칭(드러나기 전의 사칭한 인물 등장 · 사칭 표). 헤드리스 크로미움(CDP · 내장 WebSocket)으로 탭 · 리더 · 검색을 띄워 안 본 줄거리 · 모르는 기록 문장 · 안 나온 떡밥 제목 · 근거 모르는 떡밥 관계 설명 · 그 자리 판이 아닌 떡밥 제목 · 요약(떡밥판) · 묶음 밖 의문 · 사실(묶음 — 떡밥 탭 p.j · 리더 thread:J)이 보이면 센다(있으면 종료 코드 1). --root로 고치기 전 사본(git archive)을 띄워 전 · 뒤를 잰다. 크로미움 경로는 CHROME
+  spoiler-check.mjs     node tools/site/spoiler-check.mjs [--t 1,11,26] [--tabs …] [--out <파일>] [--titles] [--root <사이트 사본>] [--skip] [--skip-all] [--readers base,skip,skip-all] [--jobs N] [--timing] — 스포일러 새는 곳 점검(W15). 사용법 · 걸리는 시간은 docs/tools.md "스포일러 점검". --skip = 체크 칸 스토리를 다 끈 독자(W15f). W15f 더한 칸: 결말(떡밥 탭 p.j의 묶음 밖 결말 · 함께 맺음 줄) · 떡밥갈래(연결 탭 p.th × p.c 이웃) · 이름없음(리더 '나오는 인물' · 인물 탭 p.who 등장 목록의 hid). W24a · W24c: 다른인물(드러나기 전의 실제 사람 등장 · 다른 인물 표) · 같은인물(드러나기 전 카드에 묶인 이름). 헤드리스 크로미움(CDP · 내장 WebSocket)으로 탭 · 리더 · 검색을 띄워 안 본 줄거리 · 모르는 기록 문장 · 안 나온 떡밥 제목 · 근거 모르는 떡밥 관계 설명 · 그 자리 판이 아닌 떡밥 제목 · 요약(떡밥판) · 묶음 밖 의문 · 사실(묶음 — 떡밥 탭 p.j · 리더 thread:J)이 보이면 센다(있으면 종료 코드 1). --root로 고치기 전 사본(git archive)을 띄워 전 · 뒤를 잰다. 크로미움 경로는 CHROME
 site/
   index.html            뼈대 — 상단 바(이름 · 검색 · 여기까지 읽음 단추) · 탭 nav · main + aside(리더) · 하단(데이터 기준 · 저작권 한 줄)
   style.css             디자인 토큰(테마 하나 — 아래 "색") + 공용 컴포넌트 스타일. 탭은 여기 안 쓴다
@@ -623,7 +623,7 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
   `fmt.labelAt(t)` 한 곳(`nameAt` · `targetName`이 쓴다). 찾기 · 아는 이름 검사(`namesAt`)는 표준명도 넣는다. 인물 화면 이름이 겹치면 테스트가 막는다.
 - 인물 탭: 드러난 뒤 머리에 '다른 인물' 줄(상대 링크 · 'OO 이름으로 나옴' / 'OO이 이 이름으로 나옴' — 걸린 스토리), 등장 목록 줄에 'OO 이름으로' · '다른 인물'(누구인지는 도움말) 표.
   이름 주인의 다 옮긴 스토리는 목록에 흐린 줄로만 남고 등장 수 · 히트맵에서 빠진다.
-- 점검: `spoiler-check.mjs` 사칭 칸(드러나기 전에 실제 사람을 그 스토리의 등장으로 낸 것 · 다른 인물 표 · 머리 '다른 인물' 줄) · 사칭 기록 칸 · 사칭이름 칸(드러나기 전에 실제 사람의 구분 이름 — persons imp as) ·
+- 점검: `spoiler-check.mjs` 다른인물 칸(드러나기 전에 실제 사람을 그 스토리의 등장으로 낸 것 · 다른 인물 표 · 머리 '다른 인물' 줄) · 다른인물 기록 칸 · 다른인물이름 칸(드러나기 전에 실제 사람의 구분 이름 — persons imp as) ·
   같은인물 칸(W24c — 밝혀진 연결만 따라 따로 센 묶음 밖의 같은 인물 이름이 카드 머리에 보이면. 묶어 버린 사본에서 모더니아 · 한슨 2건을 잡는다). 점검 인물에 언노운 · 모더니아 · 슈엔 · 시프티 · 한슨 · 머스탱 · 아버지 머스탱.
   드러나기 전 · 뒤 자리는 t=7 · 8(CH.07), 72 · 73(CH.30), 143 · 144(PRETTY STAR 142 · STAR ANIS 144).
 - **연결 탭 · 주요 인물 · 주역 · 마무리 사슬 · 판정 시안은 실제 사람으로 센다**(W24a — W23c의 '이름표 주인으로'를 걷었다) — 같은 인물은 묶음으로, 다른 인물은 줄 · 기록을 옮겨서.

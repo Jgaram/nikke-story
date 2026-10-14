@@ -232,9 +232,9 @@ function loadBlurbs() {
   }).catch(() => { /* 없어도 판정 문장으로 */ }));
 }
 
-let people = null; // { byUnit(스토리 → [{ id, unit, x(persons-detail 등장 행) }]), byPerson(인물 → 같은 줄들) — 그 자리 모습은 rowNow(사칭 W23a). hid = 그 스토리에 이름이 안 쓰임('???'로만 — W15f, 읽는 중에는 뺀다) }
+let people = null; // { byUnit(스토리 → [{ id, unit, x(persons-detail 등장 행) }]), byPerson(인물 → 같은 줄들) — 그 자리 모습은 rowNow(다른 인물 W24a). hid = 그 스토리에 이름이 안 쓰임('???'로만 — W15f, 읽는 중에는 뺀다) }
 let peopleReady = null;
-/** 등장 행의 그 자리 모습 — 사칭(W23a)이 걸린 스토리는 드러나기 전에는 이름표 주인으로(fmt.rowAt). R이 없으면 다 안다 */
+/** 등장 행의 그 자리 모습 — 다른 인물(W24a)이 걸린 스토리는 드러나기 전에는 이름 주인으로(fmt.rowAt). R이 없으면 다 안다 */
 const rowNow = (r, R) => {
   const x = fmt.rowAt(r.x, R);
   return { id: r.id, unit: r.unit, scenes: x.scenes ?? 0, speaker: x.speaker ?? 0, lines: x.lines ?? 0, implied: x.implied ?? 0, hid: Boolean(x.hid) };
@@ -740,7 +740,7 @@ const RENDER = {
     if (r.evidence?.length) body.append(ui.panel(LABELS.scene, ui.el('ul', { class: 'plain' }, [...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.el('li', {}, ui.link(`scene:${sc}`, fmt.ref(sc)))))));
     // 해석 이유는 추정일 때만 — 확실한 기록은 문장만으로 읽힌다. 못 바꾸는 이유 문장은 내지 않는다
     if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel(LABELS.guessWhy, ui.el('p', { class: 'reason' }, fmt.prose(r.reason))));
-    const about = fmt.recAt(r, state.reading()).about; // 사칭에 가려지는 기록은 드러나기 전 이름표 주인으로(W23b)
+    const about = fmt.recAt(r, state.reading()).about; // 다른 인물 줄을 근거로 한 기록은 드러나기 전 이름 주인으로(W24a)
     if (about?.length) body.append(ui.panel(LABELS.related, ui.el('p', {}, joinNodes(about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) {
       // 이 기록이 그 떡밥과 이어진 줄 그 자리에서 알 때만 이름으로(떡밥 묶음 — W15d), 아니면 스포일러 접이에

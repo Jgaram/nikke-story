@@ -107,7 +107,7 @@ function addRecords(core, list) {
     if (r.unit) push(recordsOfUnit, r.unit, r);
     if (r.parent) push(eventsOf, r.parent, r);
     for (const j of r.threads ?? []) push(recordsOfThread, j, r);
-    for (const a of new Set([...(r.about ?? []), ...(r.imp ?? []).map((m) => m.b)])) push(recordsAbout, a, r); // 사칭 가림(W23b) — 이름표 주인 쪽에도(그 자리 모습은 fmt.recHas)
+    for (const a of new Set([...(r.about ?? []), ...(r.imp ?? []).map((m) => m.b)])) push(recordsAbout, a, r); // 다른 인물(W24a) — 이름 주인 쪽에도(그 자리 모습은 fmt.recHas)
   }
   Object.assign(core, { hasRecords: true, records, recordList: list, recordsOf, recordsOfUnit, eventsOf, recordsOfThread, recordsAbout });
   return core;

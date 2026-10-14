@@ -30,9 +30,9 @@
  *   결말     떡밥 탭 흐름(p.j)의 결말 · 함께 맺음 줄 가운데 이 떡밥에 든다는 것을 아직 모르는 것(fmt.threadTies units 밖)의 문장 앞 16자(W15f).
  *   떡밥갈래 연결 탭 떡밥 필터(p.th · 가운데 p.c)에서 이웃으로 보이는 스토리인데, 가운데와의 그 떡밥 선에 아는 기록(threadTies ids)이 하나도 없는 것(W15f).
  *   이름없음 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)이 리더 '나오는 인물' · 인물 탭 등장 목록(p.who)에 보이는 것(W15f).
- *   사칭     드러나기 전(사칭 W23a — 드러난 스토리 rev를 안 봄) 스토리에서 사칭한 인물을 리더 '나오는 인물' · 인물 탭 등장 목록에 낸 것, 그 인물 탭에 보인 사칭 표 · 머리 '사칭' 줄.
- *            W23b: 사칭에 가려지는 기록(imp)이 그 자리 모습으로는 다른 인물 것인데 인물 탭에 보인 것(사칭 기록).
- *            W23d · W24a: 다른 인물(split)의 실제 사람을 가르는 화면 이름(label — persons.json imp as)이 드러나기 전에 보인 것(사칭이름).
+ *   다른인물 드러나기 전(다른 인물 split — 드러나는 스토리 rev를 안 봄) 스토리에서 실제 사람을 리더 '나오는 인물' · 인물 탭 등장 목록에 낸 것, 그 인물 탭에 보인 다른 인물 표 · 머리 '다른 인물' 줄.
+ *            다른 인물 줄을 근거로 한 기록(imp)이 그 자리 모습으로는 다른 사람 것인데 인물 탭에 보인 것(다른인물 기록).
+ *            실제 사람을 가르는 화면 이름(label — persons.json imp as, '머스탱 (한슨의 아버지)')이 드러나기 전에 보인 것(다른인물이름).
  *   같은인물 W24c: 같은 인물로 드러나기 전(same_as_unit을 안 봄)에 그 이름이 인물 탭 카드 머리에 묶여 보인 것 — 카드는 fmt.personAt(점검 인물에 언노운 · 모더니아).
  *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
  *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
@@ -229,7 +229,7 @@ const PROBE = async (skipMain, titles, focus) => {
     }
   }
   // 이름없음(W15f) — 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)을 그 인물의 등장으로 낸 것: 리더 '나오는 인물' · 인물 탭 등장 목록
-  // 사칭(W23a) — 드러나기 전(fmt.impKnown 거짓) 스토리에서 그 자리 모습(fmt.rowAt)으로는 없는 등장(사칭한 인물)을 낸 것 · 드러나기 전에 보인 사칭 표 · 머리 '사칭' 줄
+  // 다른인물(W24a) — 드러나기 전(fmt.impKnown 거짓) 스토리에서 그 자리 모습(fmt.rowAt)으로는 없는 등장(실제 사람 인물)을 낸 것 · 드러나기 전에 보인 사칭 표 · 머리 '사칭' 줄
   if (!R.all) {
     const det = await get('persons-detail');
     const rows = det.map((p) => [p.id, p.units.map((u) => fmt.rowAt(u, R))]);
@@ -244,7 +244,7 @@ const PROBE = async (skipMain, titles, focus) => {
         if (!shown(a)) continue;
         const pid = a.dataset.sel.slice(7);
         if (hid.has(`${pid}|${u}`)) hits.push(`이름없음 리더 ${u} ${pid}`);
-        if (quiet.has(`${pid}|${u}`)) hits.push(`사칭 리더 ${u} ${pid}`);
+        if (quiet.has(`${pid}|${u}`)) hits.push(`다른인물 리더 ${u} ${pid}`);
       }
     }
     const who0 = (await import('/lib/state.js')).param('persons', 'who');
@@ -259,8 +259,8 @@ const PROBE = async (skipMain, titles, focus) => {
         const cr = cardRows(u);
         // 이름없음 — 묶인 이름 가운데 그 스토리에 등장이 있는 것이 모두 '이름 안 쓰임'(hid)
         if (cr.some((e) => e.scenes) && cr.filter((e) => e.scenes).every((e) => e.hid)) hits.push(`이름없음 인물 ${who} ${u}`);
-        // 사칭 — 드러나기 전인데 줄을 다 옮긴 행만 있다(그 자리 모습으로는 등장이 없다)
-        if (cr.length && cr.every((e) => !e.scenes && e.pre && !fmt.impKnown(e, R)) && !cr.some((e) => e.by)) hits.push(`사칭 인물 ${who} ${u}`);
+        // 다른인물 — 드러나기 전인데 줄을 다 옮긴 행만 있다(그 자리 모습으로는 등장이 없다)
+        if (cr.length && cr.every((e) => !e.scenes && e.pre && !fmt.impKnown(e, R)) && !cr.some((e) => e.by)) hits.push(`다른인물 인물 ${who} ${u}`);
       }
       // 같은인물(W24c) — 같은 인물로 드러나기 전에 그 이름이 이 카드 머리(이름 · 다른 이름)에 묶여 보이면.
       // 화면의 묶음(fmt.personAt)과 따로 센다 — 밝혀진 연결(fmt.sameAsKnown)만 따라간 묶음(known) 밖의 같은 인물 이름이 머리에 있으면 샌 것
@@ -277,10 +277,10 @@ const PROBE = async (skipMain, titles, focus) => {
       const P_ = await get('persons');
       const me = { imp: card.ids.flatMap((m) => P_.find((p) => p.id === m)?.imp ?? []) };
       if (!(me?.imp ?? []).some((x) => fmt.impKnown(x, R))) {
-        for (const c of document.querySelectorAll('#main .pm-imp')) if (shown(c)) hits.push(`사칭 표 ${who} ${c.textContent}`);
-        for (const c of document.querySelectorAll('#main .pm-fact-l')) if (shown(c) && c.textContent === '사칭') hits.push(`사칭 머리 ${who}`);
+        for (const c of document.querySelectorAll('#main .pm-imp')) if (shown(c)) hits.push(`다른인물 표 ${who} ${c.textContent}`);
+        for (const c of document.querySelectorAll('#main .pm-fact-l')) if (shown(c) && c.textContent === '다른 인물') hits.push(`다른인물 머리 ${who}`);
       }
-      // 사칭 기록(W23b) — 실제 인물로 적힌 기록(imp)이 그 자리 모습(fmt.recAt)으로는 이 인물 것이 아닌데 인물 탭에 보인 것
+      // 다른인물 기록(W24a) — 다른 인물 줄을 근거로 한 기록(imp)이 그 자리 모습(fmt.recAt)으로는 이 카드의 것이 아닌데 인물 탭에 보인 것
       const recs = new Map([...(await get('records')), ...(await get('records2'))].filter((r) => r.imp).map((r) => [r.id, r]));
       const seenRec = new Set();
       for (const a of document.querySelectorAll('#main [data-sel^="record:"]')) {
@@ -288,16 +288,16 @@ const PROBE = async (skipMain, titles, focus) => {
         const r = recs.get(id);
         if (!r || seenRec.has(id) || !shown(a)) continue;
         seenRec.add(id);
-        if (!card.ids.some((m) => fmt.recHas(r, m, R))) hits.push(`사칭 기록 ${who} ${id}`);
+        if (!card.ids.some((m) => fmt.recHas(r, m, R))) hits.push(`다른인물 기록 ${who} ${id}`);
       }
     }
   }
-  // 사칭이름(W23d · W24a) — 다른 인물(split)의 실제 사람을 가르는 화면 이름(label — '머스탱 (한슨의 아버지)')이 드러나기 전에 보인 것
+  // 다른인물이름(W23d · W24a) — 다른 인물(split)의 실제 사람을 가르는 화면 이름(label — '머스탱 (한슨의 아버지)')이 드러나기 전에 보인 것
   const splitRev = new Map((await get('persons')).flatMap((p) => (p.imp ?? []).filter((x) => x.as).map((x) => [p.id, x])));
   for (const t of targets) {
     if (!splitRev.has(t.id) || !t.label || fmt.impKnown(splitRev.get(t.id), R)) continue;
     const i = all.indexOf(t.label);
-    if (i >= 0) hits.push(`사칭이름 ${t.id} ${t.label} … ${around(i, t.label.length)}`);
+    if (i >= 0) hits.push(`다른인물이름 ${t.id} ${t.label} … ${around(i, t.label.length)}`);
   }
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름
   const knownNames = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));
