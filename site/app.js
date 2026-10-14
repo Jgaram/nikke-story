@@ -125,10 +125,8 @@ function cutoffControl(idx, firstVisit) {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
     input.addEventListener('change', () => setDraft({ t: draft.t ?? last, x: { ...draft.x, [e.key]: input.checked } }));
     const u = idx.units.get(e.key);
-    const at = idx.ticks.get(e.tick)?.upto;
-    return ui.el('label', { class: 'cutoff-ex' }, input,
-      ui.el('span', { class: 'cutoff-ex-title' }, exIcon(u), u?.title ?? e.key),
-      ui.el('span', { class: 'cutoff-ex-sub muted' }, at ? `${fmt.tickShort(idx.mainTicks.find((m) => m.main === at)?.tick)} 뒤` : ''));
+    // 칸에는 'CH.nn 뒤' 같은 출시 자리를 적지 않는다 — 메인 위치와 상관없이 고른다(사용자, 2026-10-14)
+    return ui.el('label', { class: 'cutoff-ex' }, input, ui.el('span', { class: 'cutoff-ex-title' }, exIcon(u), u?.title ?? e.key));
   };
   const groupBoxes = new Map(state.GROUPS.map((g) => [g, extras.filter((e) => e.group === g).map(box)]));
   const boxes = [...groupBoxes.values()].flat();

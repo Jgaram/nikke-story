@@ -66,16 +66,16 @@ const LABELS = {
   laterStory: '뒤에 나오는 스토리',
   spoiler: '여기까지 읽음 뒤 — 스포일러 보기',
   loose: '작중 때를 모르는 이야기', looseHint: '단서가 없거나 다른 스토리와의 앞뒤만 안다',
-  /** 출시순과 비교 — 줄(짧게) · 카드(문장). ch = 출시 때의 메인 챕터, n = 몇 챕터 */
+  /** 출시순과 비교 — 줄(짧게) · 카드(문장). ch = 출시 때의 메인 챕터(null = 오픈 스토리 — 게임 출시 때부터 있던 스토리, 사용자 2026-10-14), n = 몇 챕터 */
   drift: {
-    과거: (ch) => `${ch} 때 출시 · 메인 이전 이야기`,
-    앞: (ch, n) => `${ch} 때 출시 · ${n}챕터 앞`,
-    뒤: (ch, n) => `${ch} 때 출시 · ${n}챕터 뒤`,
+    과거: (ch) => `${ch ? `${ch} 때 출시` : '오픈 스토리'} · 메인 이전 이야기`,
+    앞: (ch, n) => `${ch ? `${ch} 때 출시` : '오픈 스토리'} · ${n}챕터 앞`,
+    뒤: (ch, n) => `${ch ? `${ch} 때 출시` : '오픈 스토리'} · ${n}챕터 뒤`,
   },
   driftLong: {
-    과거: (ch) => `${ch} 때 나왔지만 메인 스토리가 시작되기 전의 이야기`,
-    앞: (ch, n) => `${ch} 때 나왔지만 메인으로 ${n}챕터 앞선 때의 이야기`,
-    뒤: (ch, n) => `${ch} 때 나왔지만 메인보다 ${n}챕터 뒤의 이야기 — 앞질러 간다`,
+    과거: (ch) => `${ch ? `${ch} 때 나왔지만` : '게임 출시 때부터 있었지만'} 메인 스토리가 시작되기 전의 이야기`,
+    앞: (ch, n) => `${ch ? `${ch} 때 나왔지만` : '게임 출시 때부터 있었지만'} 메인으로 ${n}챕터 앞선 때의 이야기`,
+    뒤: (ch, n) => `${ch ? `${ch} 때 나왔지만` : '게임 출시 때부터 있었지만'} 메인보다 ${n}챕터 뒤의 이야기 — 앞질러 간다`,
   },
   card: { scenes: '장면', narrow: '추정한 이유', release: '출시', close: '닫기' },
   bandHead: '스토리',
@@ -277,7 +277,9 @@ export async function mount(root, ctx) {
   };
   /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
   const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title); return m ? [el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
-  const mainChOf = (c) => (c.release_main ? chNum(c.release_main) : fmt.tickShort(c.u.tick));
+  // 게임 출시 때부터 있던 스토리(출시일 = 가장 이른 출시일)는 출시 자리(첫날 마지막 챕터 CH.16)로 부르지 않고 '오픈 스토리'로 — null
+  const launch = [...idx.units.values()].map((u) => u.date).filter(Boolean).sort()[0] ?? null;
+  const mainChOf = (c) => (launch && c.u?.date && c.u.date <= launch ? null : c.release_main ? chNum(c.release_main) : fmt.tickShort(c.u.tick));
   const driftShort = (c) => (DRIFT_STRONG.has(c.drift) ? LABELS.drift[c.drift](mainChOf(c), c.drift_gap) : '');
   const pieceTag = (p) => LABELS.pieceTag[p.kind] ?? LABELS.pieceTag.other;
   /** 기록 링크 — 글자는 기록 문장(줄임). ID는 화면에 내지 않는다(W13a) */
