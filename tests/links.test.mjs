@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
 import { openContext } from '../tools/records/context.mjs';
-import { EDGE_TYPES, EXAMPLE_DIR, ROOT, loadDataset } from '../tools/records/model.mjs';
+import { EDGE_TYPES, EXAMPLE_DIR, ROOT, loadDataset, sameAsGroups } from '../tools/records/model.mjs';
 import { loadOrder } from '../tools/records/order.mjs';
 import { mergeEdges, read2Edges } from '../tools/records/read2.mjs';
 import { read1Edges } from '../tools/views/read1.mjs';
@@ -91,7 +91,7 @@ test('실제 기록 — 타입 · 세기 · 방향 · 기록 엣지 수가 맞�
 });
 
 test('실제 기록 — 대상 공유는 대상마다 중심인 단위의 사슬(중심 단위 수 − 1), 지휘관은 없다, 흔한 대상만 세기 1', () => {
-  const shared = v.edges.filter((e) => (e.type === 'character' || e.type === 'keyword') && e.origin === 'auto');
+  const shared = v.edges.filter((e) => (e.type === 'character' || e.type === 'keyword') && e.origin === 'auto' && !e.reveal); // 같은 인물 다리는 아래 따로
   const byT = new Map();
   for (const e of shared) byT.set(e.target, (byT.get(e.target) ?? 0) + 1);
   for (const [t, us] of v.chains) assert.equal(byT.get(t) ?? 0, us.length - 1, t);
@@ -105,6 +105,25 @@ test('실제 기록 — 대상 공유는 대상마다 중심인 단위의 사슬
   const rapi = v.chains.get('person:라피');
   const pairs = new Set(shared.filter((e) => e.target === 'person:라피').map((e) => `${e.from_unit}>${e.to_unit}`));
   for (let i = 1; i < rapi.length; i++) assert.ok(pairs.has(`${rapi[i - 1]}>${rapi[i]}`));
+});
+
+test('실제 기록 — 같은 인물 다리는 두 이름 사슬을 합쳐 이름이 바뀌는 자리만, 드러나는 단위가 있다', () => {
+  const groups = sameAsGroups(ds);
+  const bridges = v.edges.filter((e) => e.reveal);
+  assert.ok(bridges.length > 0);
+  for (const e of bridges) {
+    assert.equal(e.type, 'character');
+    assert.ok(groups.get(e.target)?.includes(e.to_target), `${e.target} · ${e.to_target}`);
+    assert.ok(e.from_order < e.to_order);
+    // 앞 단위는 앞 이름만, 뒤 단위는 뒤 이름만 중심 — 그 사이에 두 이름 어느 쪽도 중심인 단위가 없다
+    const cx = v.chains.get(e.target);
+    const cy = v.chains.get(e.to_target);
+    assert.ok(cx.includes(e.from_unit) && !cy.includes(e.from_unit));
+    assert.ok(cy.includes(e.to_unit) && !cx.includes(e.to_unit));
+    assert.ok(![...cx, ...cy].some((u) => { const o = v.places.unitPos.get(u); return o > e.from_order && o < e.to_order; }), `${e.from_unit} → ${e.to_unit}`);
+  }
+  // 모더니아 = 마리안(ch07에서 드러남) — ch01 마리안 → ch06 모더니아
+  assert.ok(bridges.some((e) => e.target === 'person:마리안' && e.to_target === 'person:모더니아' && e.from_unit === 'ch01' && e.to_unit === 'ch06' && e.reveal === 'ch07'));
 });
 
 test('같은 기록이면 같은 결과', () => {

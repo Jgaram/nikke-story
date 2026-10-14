@@ -6,11 +6,14 @@
  *     edges[]   단위 쌍 × 타입(3,370) — from · to(단위 키, 읽는 순서 앞 → 뒤) · type(prereq · sequel · setup_payoff · callback · reversal · character · keyword) ·
  *               count(씬 엣지 수 = 선 굵기) · strength(1–3) · origin(auto · record · manual · game-condition) · records[](기록 ID) · targets[](대상 ID —
  *               대상 공유는 그 대상, 기록 엣지는 기록의 about) · hid[](대상 공유인데 한쪽 스토리에 이름이 안 쓰인 대상 — W15f, 읽는 중에는 뺀다) · threads[](기록의 줄기) · unconfirmed(후보로 만든 수, 0이면 칸 없음) · note(까닭 한 줄 — 수동 연작의 reason · 자동 규칙 이름) ·
- *               weak(count 중 세기 1인 씬 엣지 수 = 자주 나오는 대상만 나눈 것, 0이면 칸 없음 — 세기 2 이상만 볼 때 선 굵기에서 뺀다)
+ *               weak(count 중 세기 1인 씬 엣지 수 = 자주 나오는 대상만 나눈 것, 0이면 칸 없음 — 세기 2 이상만 볼 때 선 굵기에서 뺀다) ·
+ *               sa[](같은 인물 다리 — W24e: { t: [앞 이름, 뒤 이름], rv[](드러나는 단위 — 다 읽어야 보인다), n(씬 엣지 수) }) · sg[](다리로만 걸린 이름 — 드러나기 전에는 targets에서 뺀다).
+ *               다리가 섞인 선의 strength는 다리 빼고 잰 것
  *     chains[]  연작 — 메인 밖 sequel 엣지의 연결 성분. units[](읽는 순서) · edges[{ from, to, strength, origin, record, note }] · linear(갈래 없는 한 줄이면 true)
  *     targets[] 중심 대상 — id · spread(그 대상이 중심인 단위 수) · common(흔한 대상 = 읽기 단위의 10%를 넘음 → 화면 기본값에서 숨김)
  *   links-scenes.json  씬 엣지(6,257) — 선 하나의 근거. type · origin · s(세기) · from · fl(앞 씬 · 줄) · to · tl(뒤 씬 · 줄) · fu · tu(앞 · 뒤 단위) ·
- *               record · act · point(기록 엣지) · target · fb · tb(대상 공유 — 앞 · 뒤 단위에서 중심인 까닭) · hid(1 = 대상 공유인데 한쪽 스토리에 그 이름이 안 쓰임 — W15f) · confidence · status · note
+ *               record · act · point(기록 엣지) · target · fb · tb(대상 공유 — 앞 · 뒤 단위에서 중심인 까닭) · hid(1 = 대상 공유인데 한쪽 스토리에 그 이름이 안 쓰임 — W15f) · confidence · status · note ·
+ *               tt · rv(같은 인물 다리 — W24e: target = 앞 스토리의 이름, tt = 뒤 스토리의 이름, rv[] = 드러나는 단위들. 다 읽기 전에는 없는 선)
  *               씬으로 찾기: e.from === id || e.to === id, 단위로: e.fu === key || e.tu === key, 단위 쌍은 (fu, tu). 애장품 씬(fav:…)은 scenes.json에 없다(prereq → 애장품 21).
  *
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn } — docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)". DB는 열지 않는다(CSV + 공용 기록만).
@@ -62,8 +65,9 @@ export async function run(ctx) {
       type: r.type, origin: r.origin, s: num(r.strength),
       from: r.from_scene, fl: num(r.from_line), to: r.to_scene, tl: num(r.to_line), fu: r.from_unit, tu: r.to_unit,
       record: r.record || undefined, act: r.act || undefined, point: r.point || undefined, target: r.target || undefined,
+      tt: r.to_target || undefined, rv: list(r.reveal).length ? list(r.reveal) : undefined,
       fb: r.from_basis || undefined, tb: r.to_basis || undefined,
-      hid: shared(r.type) && (nameless(r.target, r.from_unit) || nameless(r.target, r.to_unit)) ? 1 : undefined,
+      hid: shared(r.type) && (nameless(r.target, r.from_unit) || nameless(r.to_target || r.target, r.to_unit)) ? 1 : undefined,
       confidence: r.confidence || undefined, status: r.status === '후보' ? '후보' : undefined,
       note: text(r.note, `links ${r.from_scene}→${r.to_scene} note`),
     });
@@ -74,7 +78,7 @@ export async function run(ctx) {
   // 단위 쌍 · 타입마다 까닭 한 줄(수동 연작의 reason · 자동 규칙 이름) — 첫 메모
   const noteOf = new Map();
   for (const e of scenes) {
-    if (!e.note || e.note === '흔한 대상' || /^(일부|전부)? ?·? ?답 /.test(e.note)) continue;
+    if (!e.note || e.rv || e.note === '흔한 대상' || /^(일부|전부)? ?·? ?답 /.test(e.note)) continue; // 같은 인물 다리(rv)의 메모는 드러나기 전에 샌다
     const k = `${e.fu}\t${e.tu}\t${e.type}`;
     if (!noteOf.has(k)) noteOf.set(k, e.note);
   }
@@ -82,9 +86,27 @@ export async function run(ctx) {
   // 단위 쌍 · 타입마다 세기 1인 씬 엣지 수(자주 나오는 대상만 나눈 약한 연결)
   const weakOf = new Map();
   for (const e of scenes) {
-    if (e.s !== 1 || e.fu === e.tu) continue;
+    if (e.s !== 1 || e.fu === e.tu || e.rv) continue; // 같은 인물 다리는 화면이 드러남에 따라 따로 뺀다
     const k = `${e.fu}\t${e.tu}\t${e.type}`;
     weakOf.set(k, (weakOf.get(k) ?? 0) + 1);
+  }
+
+  // 같은 인물 다리(W24e — tools/views/links.mjs sameAsBridges) — 단위 쌍 · 타입마다 다리 { t: [앞 이름, 뒤 이름], rv(드러나는 단위들), n(씬 엣지 수) } ·
+  // 다리로만 걸린 이름 · 다리 빼고의 세기. 화면은 rv를 다 읽기 전에는 다리를 없는 것으로 본다
+  const bridgeOf = new Map();
+  for (const e of scenes) {
+    if (e.fu === e.tu || !shared(e.type)) continue;
+    const k = `${e.fu}\t${e.tu}\t${e.type}`;
+    const x = bridgeOf.get(k) ?? bridgeOf.set(k, { sa: new Map(), own: new Set(), s: 0 }).get(k);
+    if (!e.rv) {
+      if (e.target) x.own.add(e.target);
+      x.s = Math.max(x.s, e.s ?? 0);
+      continue;
+    }
+    const bk = `${e.target}\t${e.tt}\t${e.rv.join(' ')}`;
+    const b = x.sa.get(bk) ?? x.sa.set(bk, { t: [e.target, e.tt], rv: e.rv, n: 0, s: 0 }).get(bk);
+    b.n++;
+    b.s = Math.max(b.s, e.s ?? 0);
   }
 
   // ── 단위 엣지 ──
@@ -94,15 +116,24 @@ export async function run(ctx) {
     if (!unitKeys.has(r.from_unit) || !unitKeys.has(r.to_unit)) unknownUnit++;
     const records = list(r.records);
     const targets = new Set(list(r.targets));
-    const hid = shared(r.type) ? [...targets].filter((t) => nameless(t, r.from_unit) || nameless(t, r.to_unit)).sort() : [];
+    const br = bridgeOf.get(`${r.from_unit}\t${r.to_unit}\t${r.type}`);
+    const sa = br?.sa.size ? [...br.sa.values()] : null;
+    const sg = sa ? [...new Set(sa.flatMap((b) => b.t))].filter((t) => !br.own.has(t)).sort() : [];
+    // 이름 안 쓰인 쪽 — 다리로만 걸린 이름은 그 이름이 선 쪽 끝(앞 이름은 앞 스토리, 뒤 이름은 뒤 스토리)만 본다
+    const namelessIn = (t) => (sg.includes(t)
+      ? sa.some((b) => (b.t[0] === t && nameless(t, r.from_unit)) || (b.t[1] === t && nameless(t, r.to_unit)))
+      : nameless(t, r.from_unit) || nameless(t, r.to_unit));
+    const hid = shared(r.type) ? [...targets].filter(namelessIn).sort() : [];
     const threads = new Set();
     for (const id of records) {
       for (const t of aboutOf(id)) targets.add(t);
       for (const j of threadsOf(id)) threads.add(j);
     }
     return compact({
-      from: r.from_unit, to: r.to_unit, type: r.type, count: num(r.count), strength: num(r.strength), origin: r.origins.split(/\s+/)[0],
+      // 다리가 섞인 선의 세기는 다리 빼고(드러나기 전에 다리가 선을 세게 보이면 샌다 — 드러난 뒤에는 덜 센 쪽으로 남는다)
+      from: r.from_unit, to: r.to_unit, type: r.type, count: num(r.count), strength: sa && br.s ? br.s : num(r.strength), origin: r.origins.split(/\s+/)[0],
       records, targets: [...targets].sort(), hid: hid.length ? hid : undefined, threads: [...threads].sort(), unconfirmed: num(r.unconfirmed) || undefined,
+      sa: sa?.map((b) => ({ t: b.t, rv: b.rv, n: b.n })), sg: sg.length ? sg : undefined,
       note: noteOf.get(`${r.from_unit}\t${r.to_unit}\t${r.type}`),
       weak: weakOf.get(`${r.from_unit}\t${r.to_unit}\t${r.type}`) || undefined,
     });

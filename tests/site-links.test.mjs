@@ -66,7 +66,7 @@ test('links.json — 연작 사슬 · 중심 항목', () => {
 });
 
 test('links-scenes.json — 씬 엣지에 본문 칼럼이 없다 · 이름 있는 칸만', () => {
-  const allowed = new Set(['type', 'origin', 's', 'from', 'fl', 'to', 'tl', 'fu', 'tu', 'record', 'act', 'point', 'target', 'fb', 'tb', 'confidence', 'status', 'note', 'hid']);
+  const allowed = new Set(['type', 'origin', 's', 'from', 'fl', 'to', 'tl', 'fu', 'tu', 'record', 'act', 'point', 'target', 'fb', 'tb', 'confidence', 'status', 'note', 'hid', 'tt', 'rv']);
   for (const r of scenes) {
     for (const k of Object.keys(r)) assert.ok(allowed.has(k), `허용 밖 칸 ${k}`);
     assert.ok(TYPES.includes(r.type));
@@ -96,4 +96,34 @@ test('탭 화면 말 — 근거 줄에 작업 흔적(만든 방법 · 세기 이
   for (const w of ['연결 강도', '직접 확정', '게임 선행 조건', '키 · 게임 순서', '말한 줄', '씬 연결', '확정 전 후보', 'TERM.strength', 'layers', 'inRange']) {
     assert.ok(!code.includes(w), `links.js에 '${w}'`);
   }
+});
+
+test('같은 인물 다리(W24e) — 두 이름은 같은 인물 묶음, 드러나는 단위가 있고, 다리로만 걸린 이름 · 메모가 드러나기 전에 새지 않는다', () => {
+  const targets = read('targets.json');
+  const tById = new Map((Array.isArray(targets) ? targets : targets.targets ?? Object.values(targets)).map((t) => [t.id, t]));
+  const group = (id) => {
+    const seen = new Set([id]);
+    const q = [id];
+    while (q.length) for (const x of tById.get(q.shift())?.same_as ?? []) if (!seen.has(x)) { seen.add(x); q.push(x); }
+    return seen;
+  };
+  const bridges = scenes.filter((r) => r.rv);
+  assert.ok(bridges.length > 0, '다리가 하나도 없다');
+  for (const r of bridges) {
+    assert.equal(r.type, 'character');
+    assert.ok(r.tt && r.tt !== r.target, `${r.fu} → ${r.tu}`);
+    assert.ok(group(r.target).has(r.tt), `${r.target} · ${r.tt}는 같은 인물 묶음이 아니다`);
+    for (const u of r.rv) assert.ok(unitByKey.has(u), `드러나는 단위 ${u}가 units.json에 없다`);
+  }
+  for (const e of links.edges.filter((x) => x.sa)) {
+    assert.equal(e.type, 'character');
+    for (const b of e.sa) {
+      assert.ok(b.rv.length && b.n > 0);
+      for (const t of b.t) assert.ok(e.targets.includes(t), `${e.from} → ${e.to} ${t}`);
+    }
+    for (const t of e.sg ?? []) assert.ok(e.sa.some((b) => b.t.includes(t)));
+    if (e.sg?.length === e.targets.length) assert.ok(!e.note, `다리만 있는 선 ${e.from} → ${e.to}에 메모가 있다`);
+  }
+  // 다리 아닌 이름 사슬은 그대로 — sg 밖 이름만으로도 선이 선다
+  assert.ok(links.edges.filter((e) => e.sa && e.sg?.length !== e.targets.length).every((e) => e.targets.some((t) => !e.sg?.includes(t))));
 });

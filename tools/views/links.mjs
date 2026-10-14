@@ -15,6 +15,8 @@
  *            origin record, 기록 ID · 상태를 단다 — 확정 전 후보는 status 칸에 남고 보고서 · 조회가 따로 표시한다
  *   대상 공유 character(인물) · keyword(비인물) — 대상이 단위의 '중심'(CENTER)이면 그 대상이 중심인 바로 앞 단위와 잇는다(대상마다 사슬).
  *            지휘관(플레이어)은 뺀다. 끝점 = 앞 단위에서 대상이 마지막으로 나온 씬 → 뒤 단위에서 처음 나온 씬
+ *            같은 인물 다리(W24e — sameAsBridges): 같은 인물로 확정한 두 이름의 사슬을 합쳐 이름이 바뀌는 자리를 character로 잇는다(target 앞 이름 · to_target 뒤 이름 ·
+ *            reveal 드러나는 단위들 — 화면은 다 읽은 뒤에만)
  *   수동     annotations/links.json(Y<n>) — mergeEdges(수동이 이기고 자동값은 auto에 보존, drop은 dropped에). 끝점이 단위 키면 단위 쌍으로 견준다
  *
  * 중심(CENTER) — 단위 U에서 대상 T가 중심이다 = 아래 하나:
@@ -31,7 +33,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { openContext } from '../records/context.mjs';
-import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, expandLines, isRecord, loadDataset } from '../records/model.mjs';
+import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, expandLines, isRecord, loadDataset, sameAsGroups } from '../records/model.mjs';
 import { KIND_ORDER, kindOfKey, loadOrder } from '../records/order.mjs';
 import { mentionRows, mergeEdges, read2Edges, scenePlaces } from '../records/read2.mjs';
 import { ERELIC_EVENT } from '../records/layers.mjs';
@@ -55,7 +57,7 @@ const RECORD_ACT = { setup_payoff: '회수', callback: '드러냄', reversal: '�
 
 const COLUMNS = {
   sceneEdges: ['type', 'origin', 'strength', 'from_scene', 'from_line', 'to_scene', 'to_line', 'from_unit', 'to_unit', 'from_order', 'to_order',
-    'record', 'act', 'point', 'target', 'spread', 'from_basis', 'to_basis', 'confidence', 'status', 'note'],
+    'record', 'act', 'point', 'target', 'to_target', 'reveal', 'spread', 'from_basis', 'to_basis', 'confidence', 'status', 'note'],
   unitEdges: ['from_unit', 'to_unit', 'type', 'count', 'strength', 'origins', 'unconfirmed', 'records', 'targets', 'from_order', 'to_order', 'from_kind', 'to_kind'],
   units: ['order', 'unit', 'kind', 'in_units', 'out_units', 'strong_units', 'sequel', 'records_units', 'shared_units', 'isolated', 'isolated_strong',
     'record_only_isolated', 'main_in', 'main_out', 'main_units', 'center', 'title'],
@@ -143,6 +145,67 @@ export function unitTargets(ds, ctx, places) {
   return { per, total };
 }
 
+/**
+ * 같은 인물 다리(W24e) — 확정한 같은 인물(정체 연결 same_as, 인물끼리) 묶음의 두 이름 x · y마다 두 사슬(chains — 이름마다 중심 단위)을 읽는 순서로 합쳐,
+ * 이웃한 두 단위가 x · y 가운데 함께 중심인 이름이 없을 때(앞은 x만, 뒤는 y만) 앞 → 뒤로 잇는다. 이름이 같은 자리는 이미 이름 사슬이 잇는다.
+ * reveal = 그 두 이름이 한 사람이라는 것이 드러나는 단위들(정체 연결 근거 첫 씬의 단위 — 내보내기 same_as_unit과 같다).
+ * 직접 연결이 없으면 묶음 안 길(드러나는 자리 가운데 가장 늦은 것이 가장 이른 길)의 단위를 다 든다 — 화면은 다 읽었을 때만 보인다.
+ * 셋 이상 묶음은 두 이름씩이라 사이에 세 번째 이름의 단위가 있어도 x → y를 따로 잇는다(그 자리에서 셋째를 모르는 독자에게도 맞는 선).
+ * @returns {{ from_unit, to_unit, target, to_target, reveal: string[], spread }[]}
+ */
+export function sameAsBridges(ds, places, chains, posOf) {
+  const links = [];
+  for (const c of ds.candidates) {
+    if (c.kind !== 'link' || c.status !== '확정' || c.obj?.type !== 'same_as') continue;
+    const { a, b } = c.obj;
+    if (typeof a !== 'string' || typeof b !== 'string' || !a.startsWith('person:') || !b.startsWith('person:')) continue;
+    const unit = places.unitOf(firstScene(c) ?? firstScene(c.obj));
+    if (unit) links.push({ a, b, unit });
+  }
+  const groups = sameAsGroups(ds);
+  const order = (u) => posOf(u) ?? 1e9;
+  /** x → y 길의 드러나는 단위들 — 가장 늦은 자리가 가장 이른 길 */
+  const gateOf = (x, y) => {
+    let best = null;
+    const walk = (at, seen, us) => {
+      if (at === y) {
+        const late = Math.max(...us.map(order));
+        if (!best || late < best.late) best = { late, us: [...new Set(us)].sort((p, q) => order(p) - order(q)) };
+        return;
+      }
+      for (const l of links) {
+        const nx = l.a === at ? l.b : l.b === at ? l.a : null;
+        if (nx && !seen.has(nx)) walk(nx, new Set([...seen, nx]), [...us, l.unit]);
+      }
+    };
+    walk(x, new Set([x]), []);
+    return best?.us ?? null;
+  };
+  const out = [];
+  const done = new Set();
+  for (const names of groups.values()) {
+    const key = names.join('\t');
+    if (done.has(key)) continue;
+    done.add(key);
+    for (let i = 0; i < names.length; i++) {
+      for (let j = i + 1; j < names.length; j++) {
+        const [x, y] = [names[i], names[j]];
+        const reveal = gateOf(x, y);
+        if (!reveal) continue;
+        const has = new Map();
+        for (const n of [x, y]) for (const u of chains.get(n) ?? []) (has.get(u) ?? has.set(u, new Set()).get(u)).add(n);
+        const us = [...has.keys()].sort((p, q) => order(p) - order(q));
+        for (let k = 1; k < us.length; k++) {
+          const [p, q] = [has.get(us[k - 1]), has.get(us[k])];
+          if ([...p].some((n) => q.has(n))) continue;
+          out.push({ from_unit: us[k - 1], to_unit: us[k], target: [...p][0], to_target: [...q][0], reveal, spread: us.length });
+        }
+      }
+    }
+  }
+  return out;
+}
+
 /** 중심인가 — 까닭(why) 또는 null */
 export function centerWhy(target, x, unitTotal) {
   if (SKIP_TARGETS.has(target)) return null;
@@ -173,7 +236,7 @@ export function buildLinks(ds, ctx, order) {
   const scenesOf = new Map(units.map((u) => [u, (ctx.resolve(u)?.scenes ?? []).filter((s) => places.unitOf(s) === u)]));
   const problems = [];
   const raw = [];
-  const push = (e) => raw.push({ from_line: '', to_line: '', record: '', act: '', point: '', target: '', spread: '', from_basis: '', to_basis: '', confidence: '', status: '', note: '', ...e });
+  const push = (e) => raw.push({ from_line: '', to_line: '', record: '', act: '', point: '', target: '', to_target: '', reveal: '', spread: '', from_basis: '', to_basis: '', confidence: '', status: '', note: '', ...e });
 
   // ── 게임 (DB) ──
   for (const e of ctx.db.prepare("SELECT * FROM edges WHERE origin <> 'sheet' ORDER BY rowid").all()) {
@@ -230,6 +293,18 @@ export function buildLinks(ds, ctx, order) {
       });
     }
   }
+  // ── 같은 인물 다리(W24e) — 사슬은 이름마다라, 같은 인물(정체 연결)로 이어진 두 이름의 사슬을 합쳐 이름이 바뀌는 자리만 잇는다 ──
+  for (const b of sameAsBridges(ds, places, chains, posOf)) {
+    const a = per.get(b.from_unit).get(b.target);
+    const z = per.get(b.to_unit).get(b.to_target);
+    push({
+      type: 'character', origin: 'auto', strength: b.spread > common ? 1 : 2,
+      from_scene: a.last?.scene ?? scenesOf.get(b.from_unit).at(-1), from_line: a.last?.seq ?? '', to_scene: z.first?.scene ?? scenesOf.get(b.to_unit)[0], to_line: z.first?.seq ?? '',
+      from_unit: b.from_unit, to_unit: b.to_unit, target: b.target, to_target: b.to_target, reveal: b.reveal.join(' '), spread: b.spread,
+      from_basis: basisOf(a, total.get(b.from_unit) ?? 0, true), to_basis: basisOf(z, total.get(b.to_unit) ?? 0, true),
+      note: b.spread > common ? '흔한 대상' : '같은 인물',
+    });
+  }
   // ── 수동 (annotations/links.json) ──
   const isUnit = (k) => places.unitPos.has(k);
   const manual = ds.candidates.filter((c) => c.kind === 'edge');
@@ -244,7 +319,7 @@ export function buildLinks(ds, ctx, order) {
       const tu = unitLevel ? to : places.unitOf(to);
       const m = manual.find((c) => c.id === e.record);
       edges.push({
-        from_line: '', to_line: '', act: '', point: '', target: '', spread: '', from_basis: '', to_basis: '',
+        from_line: '', to_line: '', act: '', point: '', target: '', to_target: '', reveal: '', spread: '', from_basis: '', to_basis: '',
         type: e.type, origin: 'manual', strength: e.strength ?? 2, record: e.record, status: e.status, confidence: m?.confidence ?? '',
         from_scene: unitLevel ? scenesOf.get(from)?.at(-1) ?? from : from, to_scene: unitLevel ? scenesOf.get(to)?.[0] ?? to : to, from_unit: fu, to_unit: tu,
         note: [e.note, autos?.length ? `자동 ${autos.length}건을 이김` : ''].filter(Boolean).join(' · '),
@@ -290,6 +365,7 @@ export function buildLinks(ds, ctx, order) {
     if (e.status === '후보') x.unconfirmed++;
     if (e.record) x.records.push(e.record);
     if (e.target) x.targets.push(e.target);
+    if (e.to_target) x.targets.push(e.to_target);
   }
   const unitEdges = [...ue.values()].map((x) => ({
     ...x, origins: [...x.origins].sort().join(' '), records: [...new Set(x.records)].join(' '), targets: [...new Set(x.targets)].join(' '),

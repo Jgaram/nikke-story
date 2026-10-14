@@ -345,7 +345,8 @@ function recLink(id, n = 48) {
 function linkWhy(edges, idx) {
   const rec = edges.find((e) => e.record && idx.records?.has(e.record));
   if (rec) return recLink(rec.record, 70);
-  const targets = [...new Set(edges.map((e) => e.target).filter(Boolean))];
+  const all = edges.flatMap((e) => [e.target, e.tt]).filter(Boolean);
+  const targets = all.filter((t, i) => all.findIndex((x) => fmt.targetName(x) === fmt.targetName(t)) === i); // 같은 인물로 묶인 이름은 한 이름 — 하나만
   if (!targets.length) return null;
   return [joinNodes(targets.slice(0, 4).map((t) => ui.link(`${t.startsWith('person:') ? 'person' : 'target'}:${t}`, fmt.targetName(t)))), targets.length > 4 ? ' …' : null];
 }
@@ -425,7 +426,10 @@ function loadLinksInto(body, idx, { sel, pick, build, emptyText }) {
   body.append(ui.spinner());
   loadLinks().then((li) => {
     if (current !== sel) return;
-    fillLinks(body, build(pick(li), idx), emptyText);
+    // 같은 인물 다리(rv — W24e)는 두 이름이 한 사람이라는 것이 드러나는 단위를 다 읽었을 때만 — 아니면 없는 선(스포일러 접이에도 넣지 않는다)
+    const R = state.reading();
+    const known = (e) => !e.rv || R.all || e.rv.every((u) => R.seen(u));
+    fillLinks(body, build(pick(li).filter(known), idx), emptyText);
   }).catch((err) => {
     if (current !== sel) return;
     ui.clear(body);

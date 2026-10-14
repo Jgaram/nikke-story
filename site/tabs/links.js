@@ -189,12 +189,20 @@ export async function mount(root, ctx) {
     }
     return tiesMemo.get(k);
   };
+  /** 같은 인물 다리(W24e — e.sa · 씬 엣지 rv)가 그 자리에서 보이나 — 두 이름이 한 사람이라는 것이 드러나는 단위(rv)를 다 읽었을 때만 */
+  const saKnown = (F, rv) => F.R.all || rv.every((u) => F.R.seen(u));
   /**
    * 선의 대상 — 읽는 중에는 대상 공유 선에서 한쪽 스토리에 이름이 안 쓰인 대상(e.hid — '???'로만 · 암시 언급만)을 뺀다(W15f: 그 등장을 이 대상으로 내면 정체가 샌다).
-   * 그렇게 대상이 다 빠진 대상 공유 선은 없는 선이다(gone)
+   * 같은 인물 다리로만 걸린 이름(e.sg)은 그 다리가 드러나기 전에는 뺀다(W24e). 그렇게 대상이 다 빠진 대상 공유 선은 없는 선이다(gone)
    */
-  const tgs = (F, e) => (!e.hid || F.R.all ? e.targets : e.targets.filter((t) => !e.hid.includes(t)));
-  const gone = (F, e) => Boolean(e.hid && !F.R.all && (e.type === 'character' || e.type === 'keyword') && !tgs(F, e).length);
+  const tgs = (F, e) => {
+    if (F.R.all || (!e.hid && !e.sg)) return e.targets;
+    const on = e.sg ? new Set(e.sa.filter((b) => saKnown(F, b.rv)).flatMap((b) => b.t)) : null;
+    return e.targets.filter((t) => !e.hid?.includes(t) && (!e.sg?.includes(t) || on.has(t)));
+  };
+  const gone = (F, e) => Boolean((e.hid || e.sg) && !F.R.all && (e.type === 'character' || e.type === 'keyword') && !tgs(F, e).length);
+  /** 아직 안 드러난 같은 인물 다리의 씬 엣지 수 — 선 굵기에서 뺀다 */
+  const saHidden = (F, e) => (e.sa && !F.R.all ? e.sa.reduce((n, b) => n + (saKnown(F, b.rv) ? 0 : b.n), 0) : 0);
   const onThread = (F, e, j) => {
     if (!e.threads.includes(j)) return false;
     const t = tiesAt(F, j);
@@ -278,7 +286,7 @@ export async function mount(root, ctx) {
     return e.strength >= F.minS || relaxed(F, e);
   }
   /** 선 굵기 — 세기 2 이상만 볼 때는 약한 연결을 뺀다 */
-  const effCount = (e, F) => (F.minS >= 2 && !relaxed(F, e) ? Math.max(1, e.count - (e.weak ?? 0)) : e.count);
+  const effCount = (e, F) => Math.max(1, e.count - saHidden(F, e) - (F.minS >= 2 && !relaxed(F, e) ? e.weak ?? 0 : 0));
   const structSig = (F) => JSON.stringify([F.mode, F.ck, F.types && [...F.types], F.minS, F.tg, F.th, F.kinds && [...F.kinds], F.cut, F.wide, F.mm]);
 
   /** 스토리별 이어진 이웃 수(지금 필터 · 컷오프 · 범위 안, 종류 필터는 이웃에만) — 기본 가운데 · 후보 순서에 쓴다 */
@@ -777,7 +785,8 @@ export async function mount(root, ctx) {
     if (e.origin === 'manual') return clip(fmt.prose(e.note), 90) || null;
     if (e.type === 'character' || e.type === 'keyword') {
       const ids = [...tgs(F, e)].sort((x, y) => Number(commonSet.has(x)) - Number(commonSet.has(y)));
-      return ids.length ? `${ids.slice(0, 4).map(fmt.targetName).join(' · ')}${ids.length > 4 ? ' …' : ''}` : null;
+      const names = [...new Set(ids.map((id) => fmt.targetName(id)))]; // 같은 인물로 묶인 이름은 한 이름으로 부른다(W24c) — 겹치면 하나
+      return names.length ? `${names.slice(0, 4).join(' · ')}${names.length > 4 ? ' …' : ''}` : null;
     }
     if (e.origin === 'record' && idx.hasRecords) {
       for (const id of e.records) { const s = sentenceOf(id); if (s) return clip(s.text, 90); }
@@ -897,7 +906,8 @@ export async function mount(root, ctx) {
       return t ? h('p', { class: 'lk-why' }, t, guess) : null;
     }
     if (r.type === 'character' || r.type === 'keyword') {
-      const ids = r.targets ?? (r.target ? [r.target] : []);
+      const all = r.targets ?? [r.target, r.tt].filter(Boolean);
+      const ids = all.filter((id, i) => all.findIndex((x) => fmt.targetName(x) === fmt.targetName(id)) === i); // 같은 인물 다리의 두 이름은 드러난 뒤 한 이름 — 하나만
       return ids.length ? h('div', { class: 'lk-why lk-names' }, ids.map((id, i) => [i ? ' · ' : null, idx.targets.has(id) ? ui.link(`target:${id}`, fmt.targetName(id)) : fmt.targetName(id)])) : null;
     }
     if (r.origin !== 'record' || !r.record || /^Y/.test(r.record)) return null;
@@ -917,7 +927,7 @@ export async function mount(root, ctx) {
       out.push(nr);
     }
     for (const r of at.values()) {
-      r.targets = r.list.sort((x, y) => y.s - x.s || fmt.targetName(x.target).localeCompare(fmt.targetName(y.target), 'ko')).map((x) => x.target).filter(Boolean);
+      r.targets = [...new Set(r.list.sort((x, y) => y.s - x.s || fmt.targetName(x.target).localeCompare(fmt.targetName(y.target), 'ko')).flatMap((x) => [x.target, x.tt]).filter(Boolean))];
     }
     return out;
   }
@@ -963,9 +973,11 @@ export async function mount(root, ctx) {
     const relaxedAny = F.tg && commonSet.has(F.tg);
     const allRows = sc.pair.get(`${pair.from.key}\t${pair.to.key}`) ?? [];
     const typesHere = pair.edges.map((e) => e.type);
-    const rowOk = (r) => typesHere.includes(r.type) && (!r.hid || F.R.all) && (r.s >= F.minS || relaxedAny) && (!F.tg || !r.target || r.target === F.tg); // hid — 이름 안 쓰인 쪽(W15f)
+    // hid — 이름 안 쓰인 쪽(W15f), rv — 같은 인물 다리는 드러난 뒤에만(W24e)
+    const known = (r) => (!r.hid || F.R.all) && (!r.rv || saKnown(F, r.rv));
+    const rowOk = (r) => typesHere.includes(r.type) && known(r) && (r.s >= F.minS || relaxedAny) && (!F.tg || !r.target || r.target === F.tg || r.tt === F.tg);
     const rows = mergeNames(allRows.filter(rowOk));
-    const weak = allRows.some((r) => typesHere.includes(r.type) && (!r.hid || F.R.all) && !rowOk(r) && r.s < F.minS);
+    const weak = allRows.some((r) => typesHere.includes(r.type) && known(r) && !rowOk(r) && r.s < F.minS);
     const byType = new Map();
     for (const r of rows) (byType.get(r.type) ?? byType.set(r.type, []).get(r.type)).push(r);
     const shownTypes = typesHere.filter((t) => byType.has(t));
