@@ -31,7 +31,8 @@ test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이�
   for (const p of v.persons) {
     assert.equal(p.speaker_lines + p.named_lines, p.lines, p.target);
     const us = v.personUnits.filter((r) => r.person === p.target);
-    assert.equal(us.length, p.units, p.target);
+    assert.equal(us.filter((r) => r.scenes).length, p.units, p.target); // scenes 0 행 = 사칭으로 줄을 다 옮긴 단위(W23a — pre_*만)
+    assert.ok(us.every((r) => r.scenes || r.imp), `${p.target}: 빈 행은 사칭 단위뿐`);
     assert.equal(us.reduce((s, r) => s + r.scenes, 0), p.scenes, p.target);
     assert.equal(us.reduce((s, r) => s + r.lines, 0), p.lines, p.target);
   }

@@ -8,8 +8,11 @@
  *     first_unit · first_tick · first_order · first_scene · first_how(이름표로 말함 · 이름 · 다른 이름 · 암시 언급) · first_speaks_unit · last_unit · last_tick · last_order
  *     facts · questions · open · partial · solved · reversed · events · echoes · life · records(다룬 기록 수) · threads[](J)
  *     baselines · changes · inverted · with_others · closures[](O) · merges[](H)
+ *     imp[]      사칭(W23a — people.json impersonates) { id, as(이 인물이 행세한 인물) | by(이 인물로 행세한 인물), rev(드러난 스토리), units[](걸린 스토리) } — 화면은 rev를 읽었을 때만 보인다
  *   persons-detail.json   인물마다(등장 · 기록 · 변화가 하나라도 있는 381) { id, units[], records[], changes[], rel[] }
  *     units[]    등장 히트맵 — { unit, scenes, lines, speaker, implied, first_scene, hid } (자리 · 종류 · 층은 units.json에서. hid = 그 스토리에 이름이 안 쓰임 — '???'로만, W15f)
+ *                사칭이 걸린 스토리(W23a — person-units.csv imp)는 + { rev(드러난 스토리), as[](이 인물이 행세한 인물) | by[](이 인물로 행세한 인물), pre{ scenes, lines, speaker, implied, first_scene } }.
+ *                수치는 옮긴 뒤(사칭한 인물에), pre는 드러나기 전 모습 — 화면은 rev를 읽기 전에는 pre를 쓴다. 줄을 다 옮긴 스토리는 scenes 0 행(pre만)으로 남는다
  *     records[]  그 인물을 다룬 확정 기록 ID(person-records.csv — 사실 · 의문 정의, 사건, 떡밥, 생활상, 변화 · 기준 · 관계 상대, 마무리). 문장 · 자리는 records*.json에서
  *     changes[]  변화 타임라인(chrono-changes.csv) — { id, seq(작중 순서, 없으면 상대 · 불명), act, aspect, with, unit, tick, order, time, class, place, lo, hi, inverted[] }
  *                place는 단위(units.json chrono.place)와 다를 때만(시점 기록 · 조각으로 좁힌 변화)
@@ -18,6 +21,7 @@
  *
  * 대사 본문 · 원문 파일 · 외부 참고 표는 읽지 않는다. 기록 문장은 여기 없다(records.json · records2.json의 것을 쓴다).
  */
+import { impersonations } from '../../records/model.mjs';
 import { compact, list, num } from '../lib.mjs';
 
 export const name = 'persons';
@@ -42,6 +46,12 @@ export async function run(ctx) {
   const changeRows = csv('data/views/timeline/chrono-changes.csv');
   const mention = new Map(csv('data/views/mentions/targets.csv').map((r) => [r.target, r]));
 
+  // ── 사칭(W23a) — person-units.csv와 같은 기록(기각 빼고). 후보면 알린다(화면은 확정처럼 쓴다) ──
+  const imps = new Map(impersonations(ctx.records.ds).map((x) => [x.id, x]));
+  for (const x of imps.values()) if (x.status !== '확정') warn({ where: 'persons', msg: `사칭 ${x.id}가 아직 후보다 — 화면이 확정처럼 쓴다` });
+  const orderOf = (u) => placeOf.get(u)?.order ?? 1e9;
+  const impOf = new Map(); // 인물 → [{ id, as | by, rev, units }]
+
   // ── 상세: 단위 등장 · 기록 · 변화 ──
   const detail = new Map();
   const slot = (id) => detail.get(id) ?? detail.set(id, { units: [], records: [], changes: [], rel: [] }).get(id);
@@ -51,7 +61,19 @@ export async function run(ctx) {
     // hid — 그 스토리에 이름(표준명 · 다른 이름 · 그 이름이 든 이름표)이 한 번도 안 쓰임 = '???' 등으로만 나왔다(W15f). 화면은 읽는 중에 이 스토리의 인물로 내지 않는다
     const hid = common.namedUnits && !common.namedUnits.get(r.person)?.has(r.unit) ? 1 : undefined;
     if (hid) hidden++;
-    slot(r.person).units.push(compact({ unit: r.unit, scenes: num(r.scenes), lines: num(r.lines), speaker: num(r.speaker_lines) || undefined, implied: num(r.implied_lines) || undefined, first_scene: r.first_scene || undefined, hid }));
+    // 사칭 — 드러난 스토리(여럿이면 가장 늦은 것: 다 드러나야 옮긴 모습)와 상대, 드러나기 전 모습
+    const xs = list(r.imp).map((id) => imps.get(id)).filter(Boolean);
+    const imp = xs.length ? {
+      rev: xs.map((x) => x.revealed).filter(Boolean).sort((a, b) => orderOf(b) - orderOf(a))[0],
+      as: xs.filter((x) => x.a === r.person).map((x) => x.b), by: xs.filter((x) => x.b === r.person).map((x) => x.a),
+      pre: compact({ scenes: num(r.pre_scenes), lines: num(r.pre_lines), speaker: num(r.pre_speaker_lines) || undefined, implied: num(r.pre_implied_lines) || undefined, first_scene: r.pre_first_scene || undefined }),
+    } : {};
+    for (const x of xs) {
+      const mine = impOf.get(r.person) ?? impOf.set(r.person, []).get(r.person);
+      const e = mine.find((m) => m.id === x.id) ?? mine[mine.push({ id: x.id, as: x.a === r.person ? x.b : undefined, by: x.b === r.person ? x.a : undefined, rev: x.revealed ?? undefined, units: [] }) - 1];
+      e.units.push(r.unit);
+    }
+    slot(r.person).units.push(compact({ unit: r.unit, scenes: num(r.scenes), lines: num(r.lines), speaker: num(r.speaker_lines) || undefined, implied: num(r.implied_lines) || undefined, first_scene: r.first_scene || undefined, hid, ...imp }));
   }
   let missing = 0;
   for (const r of recRows) {
@@ -102,7 +124,7 @@ export async function run(ctx) {
       facts: num(r.facts), questions: num(r.questions), open: num(r.open), partial: num(r.partial), solved: num(r.solved), reversed: num(r.reversed),
       events: num(r.events), echoes: num(r.echoes), life: num(r.life), records: d.records.length, threads: list(r.threads),
       baselines: num(r.baselines), changes: num(r.changes), inverted: num(r.inverted), with_others: num(r.with_others),
-      closures: list(r.closures), merges: list(r.merges),
+      closures: list(r.closures), merges: list(r.merges), imp: impOf.get(r.target)?.map(compact),
     });
   });
   const foolUnits = new Set(common.units.filter((u) => u.fool).map((u) => u.key));

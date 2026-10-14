@@ -551,6 +551,21 @@ export function sameAsKnown(t, R) {
   return ids.filter((_, i) => { const u = t.same_as_unit?.[i]; return u ? R.seen(u) : false; });
 }
 
+/** 사칭이 드러났나(W23a) — 드러난 스토리(rev)를 봤거나 전부 보기. x = persons.json imp[] 항목이나 persons-detail 등장 행 */
+export const impKnown = (x, R) => !R || R.all || Boolean(x?.rev && R.seen(x.rev));
+
+/**
+ * 등장 행(persons-detail units[])의 그 자리 모습(W23a 사칭). 사칭이 걸린 스토리(pre가 있는 행)는 드러나기 전에는 옮기기 전 모습 —
+ * 이름표 주인은 그 줄까지, 사칭한 인물은 그 줄 없이(이름표 그대로 보인다) — 이고 상대(as · by)를 지운다(있다는 것이 샌다).
+ * 드러난 뒤에는 옮긴 모습(사칭한 인물에)이고, 사칭한 쪽(as)은 '이름 안 쓰인 등장'(hid) 가림이 풀린다 — 누구였는지 안다.
+ */
+export function rowAt(e, R) {
+  if (!e?.pre) return e;
+  if (impKnown(e, R)) return e.as ? { ...e, hid: undefined } : e;
+  const p = e.pre;
+  return { ...e, scenes: p.scenes ?? 0, lines: p.lines ?? 0, speaker: p.speaker, implied: p.implied, first_scene: p.first_scene, as: undefined, by: undefined };
+}
+
 
 /**
  * 대상(인물 · 항목)이 그 자리에서 나왔나(W15b) — 이름(표준명 · 다른 이름)이 쓰인 스토리(target.meet — 내보내기가 읽는 순서로 자른 것)를 하나라도 봤으면.
@@ -645,7 +660,7 @@ const finalOf = (w) => {
   return c >= 0 && c < 11172 ? c % 28 : 0;
 };
 /** 바꾼 낱말 뒤 조사를 받침에 맞춘다 — withJosa('필수 스토리', '가') → '필수 스토리가' */
-const withJosa = (word, j) => {
+export const withJosa = (word, j) => {
   if (!j) return word;
   const pick = JOSA.find((x) => x[0] === j);
   if (!pick) return word + j;

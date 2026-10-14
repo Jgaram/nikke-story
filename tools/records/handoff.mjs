@@ -21,7 +21,7 @@ import { KIND_LABEL } from '../lib/units.mjs';
 import { citeOf, isRecord, nextIds } from './model.mjs';
 import { orderIndex } from './review.mjs';
 import { kindTally } from './order.mjs';
-import { pickFacts, sourceTargets } from './focus.mjs';
+import { impersonationWatch, pickFacts, sourceTargets } from './focus.mjs';
 
 /** 목록 · 요약 파일 하나의 상한(글자) */
 export const FILE_MAX = 20_000;
@@ -293,6 +293,10 @@ export function buildHandoff(ds, ctx, order) {
     (all.length ? ` (검토 ${Math.round((100 * done) / all.length)}%)` : '') +
     (links.length ? ` · 정체 연결(people.json) ${links.length} — 남음 ${links.filter((c) => c.status === '후보').length}` : ''));
   head.push(`- 다음 번호: 사실 ${n.F} · 의문 ${n.Q} · 시점 ${n.S} · 되짚기 ${n.V} · 정체 연결 ${n.L} — 사건 번호(F12-2)는 사실 · 의문마다 따로: \`node tools/records.mjs next F12\``);
+  // 사칭 볼 줄(W23a) — 다음 항목 원문에 사칭 기록의 이름표 주인이 말한 줄이 있으면
+  for (const w of nextKeys.length ? impersonationWatch(ctx, nextKeys, links.map((c) => c.obj)) : []) {
+    head.push(`- 사칭 볼 줄: 이름표 ${tName(w.b)} ${w.total}줄(그중 ${w.id} 범위 안 ${w.inSpan}) — ${w.id}는 ${tName(w.a)}의 ${tName(w.b)} 사칭(드러남 ${w.revealed ?? '?'}). 범위 밖 줄이 누구인지 읽고 사칭이면 ${w.id} spans에 더한다(docs/annotations.md "사칭 기록")`);
+  }
   head.push('', '## 되짚기 메모 — 열린 것', '');
   if (openRevisits.length) for (const v of openRevisits) head.push(`- ${v.id} (${v.session ?? ''} ${v.unit}) ${v.obj.text ?? ''}${v.obj.where?.length ? ` — ${v.obj.where.join(' · ')}` : ''}`);
   else head.push('- 없음');

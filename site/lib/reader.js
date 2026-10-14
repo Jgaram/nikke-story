@@ -232,15 +232,20 @@ function loadBlurbs() {
   }).catch(() => { /* 없어도 판정 문장으로 */ }));
 }
 
-let people = null; // { byUnit(스토리 → [{ id, speaker, lines, implied, hid }]), byPerson(인물 → 같은 줄들) — hid = 그 스토리에 이름이 안 쓰임('???'로만 — W15f, 읽는 중에는 뺀다) }
+let people = null; // { byUnit(스토리 → [{ id, unit, x(persons-detail 등장 행) }]), byPerson(인물 → 같은 줄들) — 그 자리 모습은 rowNow(사칭 W23a). hid = 그 스토리에 이름이 안 쓰임('???'로만 — W15f, 읽는 중에는 뺀다) }
 let peopleReady = null;
+/** 등장 행의 그 자리 모습 — 사칭(W23a)이 걸린 스토리는 드러나기 전에는 이름표 주인으로(fmt.rowAt). R이 없으면 다 안다 */
+const rowNow = (r, R) => {
+  const x = fmt.rowAt(r.x, R);
+  return { id: r.id, unit: r.unit, scenes: x.scenes ?? 0, speaker: x.speaker ?? 0, lines: x.lines ?? 0, implied: x.implied ?? 0, hid: Boolean(x.hid) };
+};
 /** persons-detail.json(인물 탭과 같은 파일) — 스토리별 나온 인물 · 인물별 처음 등장. 못 받으면 칸을 그리지 않는다 */
 function loadPeople() {
   return (peopleReady ??= data.load('persons-detail').then((list) => {
     const byUnit = new Map();
     const byPerson = new Map();
     for (const p of list) {
-      const rows = (p.units ?? []).map((x) => ({ id: p.id, unit: x.unit, speaker: x.speaker ?? 0, lines: x.lines ?? 0, implied: x.implied ?? 0, hid: Boolean(x.hid) }));
+      const rows = (p.units ?? []).map((x) => ({ id: p.id, unit: x.unit, x }));
       byPerson.set(p.id, rows);
       for (const r of rows) (byUnit.get(r.unit) ?? byUnit.set(r.unit, []).get(r.unit)).push(r);
     }
@@ -271,7 +276,10 @@ function peoplePanel(key, hidden, idx) {
     // ('???'로만 말함 — 정체 숨김 장면, hid) 읽는 중에는 뺀다(W15f). 접은 스토리는 전부
     const R = hidden ? null : state.reading();
     const masked = (r) => r.hid && R && !R.all;
-    const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
+    // 사칭(W23a) — 드러난 스토리를 봤으면 사칭한 인물로, 아니면 이름표 주인으로. 접은 스토리는 그 스토리가 드러나는 자리일 때만 사칭한 인물로
+    const now = state.reading();
+    const Rimp = { all: now.all, seen: (u) => now.seen(u) || (hidden && u === key) };
+    const list = (people.byUnit.get(key) ?? []).map((r) => rowNow(r, Rimp)).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
     if (!list.length) return;
     // 초상은 그 스토리 자리의 모습(사용자, 2026-10-14 — 여기까지 읽음이 아니라). 바뀐 모습은 메인 챕터에서 오므로 본 스토리라도
     // 여기까지 읽음 뒤 메인의 모습은 쓰지 않는다(봤음으로 고른 뒤 이벤트). 접은 스토리는 그 자리 그대로, 자리 없는 스토리면 여기까지 읽음
@@ -595,8 +603,8 @@ const kindsTitle = (records) => {
 
 /** 인물의 처음 등장(여기까지 읽음 안 — 본 스토리 가운데 가장 앞) + 그 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만). 인물 탭 머리(quietOf)와 같은 규칙 */
 function firstAppearance(pid, idx) {
-  const rows = people?.byPerson.get(pid) ?? [];
   const R = state.reading();
+  const rows = (people?.byPerson.get(pid) ?? []).map((r) => rowNow(r, R)).filter((x) => x.scenes > 0); // 사칭으로 줄을 다 옮긴 스토리는 등장이 아니다(W23a)
   const seen = rows.filter((x) => idx.units.has(x.unit) && R.seen(x.unit) && (R.all || !x.hid)); // '???'로만 나온 스토리는 읽는 중에는 처음 등장이 아니다(W15f)
   if (!seen.length) return null;
   const first = seen.reduce((a, b) => ((idx.units.get(a.unit).order ?? 0) <= (idx.units.get(b.unit).order ?? 0) ? a : b));

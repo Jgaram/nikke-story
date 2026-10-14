@@ -161,7 +161,7 @@ CREATE TABLE speakers (
 -- 정체 연결 후보 (annotations/dictionary/people.json candidates). 확정 · 기각은 사용자가 한다
 CREATE TABLE target_links (
   id            TEXT,               -- 후보 ID L<n> (리뷰 도구 tools/records.mjs가 이 ID로 확정 · 기각한다)
-  type          TEXT NOT NULL,      -- same_as
+  type          TEXT NOT NULL,      -- same_as | impersonates(사칭 — 범위 · 드러난 단위는 people.json에만)
   a             TEXT NOT NULL,      -- 대상 ID 또는 이름표:<이름표>
   b             TEXT NOT NULL,      -- 대상 ID
   status        TEXT NOT NULL,      -- 후보 | 확정 | 기각

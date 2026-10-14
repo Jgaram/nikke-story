@@ -126,6 +126,9 @@ export const KINDS = {
   affil: { label: '소속', prefix: 'T' },
   addr: { label: '호칭', prefix: 'A' },
 };
+/** 정체 연결의 type — same_as(처음부터 한 인물) · impersonates(사칭 — a가 b의 이름표 · 이름으로 행세, 둘은 다른 인물. W23a) */
+export const LINK_TYPES = ['same_as', 'impersonates'];
+const LINK_ACT = { same_as: '같은 인물', impersonates: '사칭' };
 export const KIND_BY_LABEL = Object.fromEntries(Object.entries(KINDS).map(([k, v]) => [v.label, k]));
 
 export const ID = {
@@ -167,7 +170,8 @@ export const FIELDS = {
   revisit: ['id', 'text', 'where'],
   revisitDone: ['id', 'note'],
   review: ['decision', 'by', 'date', 'session', 'note', 'before'],
-  link: ['id', 'type', 'a', 'b', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
+  // 사칭(impersonates, W23a) — spans: 이름표 · 이름 b가 실제로는 a인 줄 [{scene, lines?}] · revealed: 독자가 사칭을 아는 읽기 단위
+  link: ['id', 'type', 'a', 'b', 'spans', 'revealed', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
   threadsFile: ['_comment', 'session', 'by', 'date', 'note', 'threads', 'relations'],
   thread: ['id', 'title', 'text', 'weight', 'questions', 'facts', 'about', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
   relation: ['id', 'type', 'a', 'b', 'text', 'evidence', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
@@ -435,8 +439,8 @@ function collect(files, peopleFile, threadsFile, layersFile, leadsFile, spineFil
     arr(peopleFile.data.candidates).forEach((o, i) => {
       candidates.push({
         file: peopleFile.name, unit: null, parts: null, session: null, fileBy: null, people: true,
-        kind: 'link', role: 'link', act: o?.type === 'same_as' ? '같은 인물' : o?.type ?? null, parent: null,
-        id: o?.id ?? null, text: `${o?.a ?? '?'} = ${o?.b ?? '?'}`, evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence,
+        kind: 'link', role: 'link', act: LINK_ACT[o?.type] ?? o?.type ?? null, parent: null,
+        id: o?.id ?? null, text: o?.type === 'impersonates' ? `${o?.a ?? '?'} → ${o?.b ?? '?'}` : `${o?.a ?? '?'} = ${o?.b ?? '?'}`, evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence,
         status: o?.status, by: o?.by ?? null, reviews: arr(o?.reviews), note: o?.note ?? null, section: 'candidates', index: i, obj: o,
       });
     });
@@ -619,3 +623,25 @@ export function sameAsGroups(ds) {
   return out;
 }
 
+
+/**
+ * 사칭(W23a) — 정체 연결 가운데 type impersonates(기각 빼고, confirmed면 확정만). a가 b의 이름표 · 이름으로 행세했다 — 둘은 다른 인물(same_as와 다름).
+ * spans를 편다: seqs = 줄 번호 Set, lines를 안 적은 span은 null(씬 전체).
+ * @param {ReturnType<typeof loadDataset>} ds
+ * @returns {{ id: string, a: string, b: string, revealed: string|null, status: string, spans: { scene: string, seqs: Set<number>|null }[] }[]} ID 순
+ */
+export function impersonations(ds, { confirmed = false } = {}) {
+  const out = [];
+  for (const c of ds.candidates) {
+    if (c.kind !== 'link' || c.obj?.type !== 'impersonates' || c.status === '기각' || (confirmed && c.status !== '확정')) continue;
+    const { a, b, revealed } = c.obj;
+    if (typeof a !== 'string' || typeof b !== 'string') continue;
+    const spans = [];
+    for (const s of Array.isArray(c.obj.spans) ? c.obj.spans : []) {
+      if (typeof s?.scene !== 'string') continue;
+      spans.push({ scene: s.scene, seqs: s.lines === undefined ? null : new Set(expandLines(s.lines).seqs) });
+    }
+    out.push({ id: c.id, a, b, revealed: typeof revealed === 'string' ? revealed : null, status: c.status, spans });
+  }
+  return out.sort((x, y) => compareIds(x.id, y.id));
+}

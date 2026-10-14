@@ -36,6 +36,8 @@
  *   머리: 초상(얼굴이 없으면 이름 첫 글자) · 이름(+ 회색 갈래 — 니케 · 랩쳐만, '인물'은 탭 이름과 같아 쓰지 않는다) · 소속 마크 · 다른 이름 · 같은 인물 ·
  *     "처음 등장 [스토리]" 하나. 그 첫 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만)을 덧붙인다(말함은 당연해서 쓰지 않는다).
  *     같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 보이고, 아니면 있다는 것 자체를 보이지 않는다.
+ *     사칭(W23a — persons.json imp · 등장 행 pre · rev · as · by)은 드러난 스토리(rev)를 읽기 전에는 이름표 주인의 등장으로(fmt.rowAt), 읽은 뒤에는 사칭한 인물의 등장으로 센다.
+ *     드러난 뒤에만 머리에 '사칭' 줄(상대 · 걸린 스토리), 등장 목록 줄에 'OO 행세' · 'OO의 사칭' 표 — 줄을 다 옮긴 스토리는 이름표 주인 목록에 흐린 줄로만 남는다(수 · 히트맵에서 뺀다).
  *   실장판(W22 — targets.json vers): 머리 아래 표 — 판마다 이름 · 등급 · 기업 · 스쿼드 · 출시일(게임 시작 로스터는 '서비스 시작') · 지휘관 호칭(확정 호칭 기록 A, 다른 호칭은 회색).
  *     판은 그 출시 자리(tick)를 지났을 때만 보인다(게임 소속의 공개 자리와 같다). 실장판 이름은 '다른 이름'에서 뺀다. 도감 칸은 판이 둘 이상이면 왼쪽 위에 'N판'.
  *   칸은 든 것이 없으면 통째로 숨긴다(기록이 오기 전에는 기록 칸을 '불러오는 중'으로 둔다). 칸 머리의 수는 등장(N편) · 관계 상대(N명)만.
@@ -79,6 +81,13 @@ const LABELS = {
   detail: '인물 상세',
   alias: '다른 이름',
   same: '같은 인물',
+  imp: '사칭',
+  impAs: (name) => `${name} 행세`,
+  impBy: (name) => `${name}의 사칭`,
+  impAsHelp: (name, me) => `이 스토리에서 ${name} 이름표로 말한 것은 ${me} — 그 줄은 ${me}의 등장으로 센다`,
+  impByHelp: (name, me) => `이 스토리에서 ${me} 이름표로 말한 것은 ${name} — 그 줄은 ${name}의 등장으로 센다`,
+  impAsTail: ' 행세 — ',
+  impByTail: (j) => `${j} 이 인물로 행세 — `,
   first: '처음 등장',
   quiet: { named: '이름만 나옴', seen: '등장만' },
   quietHelp: { named: '이 스토리에서는 말하지 않고 이름만 나온다', seen: '이 스토리에서는 이름 없이 모습만 나온다' },
@@ -176,6 +185,9 @@ export async function mount(root, ctx) {
   };
   /** 등장 줄을 가리나 — 안 본 스토리, 또는 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — hid, W15f: 정체 숨김 장면을 그 인물의 등장으로 내면 정체가 샌다). 전부 보기는 다 보인다 */
   const offRow = (e) => hidden(e.unit) || (e.hid && !V.R.all);
+  /** 인물의 등장 행 — 그 자리 모습(W23a 사칭: 드러나기 전에는 이름표 주인으로, 뒤에는 사칭한 인물로 — fmt.rowAt). scenes 0 = 사칭으로 다 옮긴 스토리(이름표 주인 쪽 표시만) */
+  const rowsMemo = new Map();
+  const unitsNow = (pid) => rowsMemo.get(pid) ?? rowsMemo.set(pid, (D.get(pid)?.units ?? []).map((e) => fmt.rowAt(e, V.R))).get(pid);
   const recHidden = (r) => !V.R.known(r);
   /**
    * 떡밥의 그 자리 묶음(W15d) — { whole, ids(묶음 안 뿌리 · 본 단계 줄 · 복선의 기록), about(묶음 안 아는 뿌리가 다루는 대상) }.
@@ -204,13 +216,15 @@ export async function mount(root, ctx) {
     V = { T: s.t, R: state.reading(s) };
     hideMemo.clear();
     bundleMemo.clear();
+    rowsMemo.clear();
     agg = new Map();
     const R = recs();
     for (const p of persons) {
       const d = D.get(p.id);
       const a = { scenes: 0, units: 0, cut: 0, firstUnit: null, firstEntry: null, firstOrder: Infinity, changes: 0, chCut: 0, recs: null, recCut: 0, hasData: Boolean(d) };
       if (d) {
-        for (const e of d.units) {
+        for (const e of unitsNow(p.id)) {
+          if (!e.scenes) continue; // 사칭으로 다 옮긴 스토리 — 이 인물의 등장이 아니다(W23a)
           if (hidden(e.unit)) { a.cut++; continue; }
           if (offRow(e)) continue; // 이름 안 쓰인 등장은 가린 수에도 안 센다(있다는 것이 샌다)
           a.scenes += e.scenes; a.units++;
@@ -273,6 +287,11 @@ export async function mount(root, ctx) {
   /** 그 자리에서 보이는 실장판(W22 — targets.json vers): 판이 보이는 자리(tick — 그 판의 출시)를 지났으면. tick이 없으면 전부 보기에서만 */
   const versAt = (id) => (idx.targets.get(id)?.vers ?? []).filter((v) => V.R.all || (v.tick != null && v.tick <= V.R.t));
   /** 그 스토리에서 말이 없으면 '이름만 나옴' · '등장만'(말했으면 null — 당연해서 쓰지 않는다) */
+  /** 사칭 표(W23a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 사칭한 쪽은 'OO 행세', 이름표 주인 쪽은 'OO의 사칭' */
+  const impChips = (p, e) => [
+    ...(e.as ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impAsHelp(nameOf(id), nameOf(p.id)) }, LABELS.impAs(nameOf(id)))),
+    ...(e.by ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impByHelp(nameOf(id), nameOf(p.id)) }, LABELS.impBy(nameOf(id)))),
+  ];
   const quietOf = (e) => (!e || (e.speaker ?? 0) > 0 ? null : e.lines > 0 ? 'named' : 'seen');
 
   // ── 도구줄 ──
@@ -525,6 +544,14 @@ export async function mount(root, ctx) {
       // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
       const same = fmt.sameAsKnown(p, V.R);
       if (same.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.same), el('span', {}, same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]))));
+      // 사칭(W23a) — 드러난 것만(드러나기 전에는 있다는 것 자체를 보이지 않는다). 같은 인물과 달리 둘은 다른 인물이다
+      for (const x of (p.imp ?? []).filter((x) => fmt.impKnown(x, V.R))) {
+        const other = x.as ?? x.by;
+        const who = P.has(other) ? personLink(other) : ui.link(`person:${other}`, fmt.targetName(other));
+        const tail = x.as ? LABELS.impAsTail : LABELS.impByTail(fmt.withJosa(nameOf(other), '이').slice(nameOf(other).length));
+        const units = x.units.filter((u) => !hidden(u)).map((u, i) => [i ? ' · ' : null, storyRef(u)]);
+        facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.imp), el('span', {}, who, tail, units)));
+      }
       if (a.firstUnit) {
         const q = quietOf(a.firstEntry);
         facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.first), storyRef(a.firstUnit),
@@ -601,7 +628,8 @@ export async function mount(root, ctx) {
   const usLimit = new Map();
   const usFirst = (k, n) => (n <= (k === 'main' ? 36 : 20) ? n : k === 'main' ? 24 : 12);
   const usSeg = ui.segmented({ label: LABELS.usLabel, options: [{ value: 'order', label: LABELS.us.order }, { value: 'speak', label: LABELS.us.speak }], value: prm('us') === 'speak' ? 'speak' : 'order', onChange: (v) => state.setParam('persons', 'us', v === 'speak' ? 'speak' : null) });
-  const storyRows = (p) => (D.get(p.id)?.units ?? []).filter((e) => !offRow(e) && idx.units.has(e.unit));
+  // 사칭으로 다 옮긴 스토리(scenes 0)는 드러난 뒤 이름표 주인 쪽에 'OO의 사칭'으로만 남긴다(W23a — 양쪽 표시)
+  const storyRows = (p) => unitsNow(p.id).filter((e) => !offRow(e) && idx.units.has(e.unit) && (e.scenes || e.by));
   /** 등장 칸 아래의 제목 목록 — 히트맵과 같은 등장을 종류마다 글로 늘어놓는다(앞 점 = 말한 양) */
   const storyList = (p, box) => {
     const rows = storyRows(p);
@@ -620,9 +648,9 @@ export async function mount(root, ctx) {
       const ul = el('ul', { class: `pm-us-list${k === 'main' ? ' is-main' : ''}` });
       for (const e of list.slice(0, limit)) {
         const u = idx.units.get(e.unit);
-        const b = bucketOf(e.speaker ?? 0);
-        ul.append(el('li', { class: ['pm-us-item', b ? '' : 'is-name'], dataset: { sel: `unit:${e.unit}` }, title: u.title },
-          el('i', { class: `pm-sw ${b ? `pm-b${b}` : 'pm-name'}`, 'aria-hidden': 'true' }), ui.link(`unit:${e.unit}`, k === 'main' ? chTitle(u.title) : u.title)));
+        const b = e.scenes ? bucketOf(e.speaker ?? 0) : 0;
+        ul.append(el('li', { class: ['pm-us-item', b ? '' : 'is-name', e.scenes ? '' : 'is-posed'], dataset: { sel: `unit:${e.unit}` }, title: u.title },
+          el('i', { class: `pm-sw ${b ? `pm-b${b}` : 'pm-name'}`, 'aria-hidden': 'true' }), ui.link(`unit:${e.unit}`, k === 'main' ? chTitle(u.title) : u.title), impChips(p, e)));
       }
       const grp = el('div', { class: 'pm-us-group' }, el('div', { class: 'pm-us-head', title: fmt.help('kind', k) }, fmt.KIND[k]?.label ?? k), ul);
       if (list.length > limit) grp.append(showMore(list.length - limit, () => { usLimit.set(k, list.length); paintSection(secHeat); }));
@@ -639,8 +667,7 @@ export async function mount(root, ctx) {
 
   const secHeat = makeSection('heat', LABELS.sec.heat, (p, a, sec) => {
     ui.clear(sec.body);
-    const d = D.get(p.id);
-    const present = new Map((d?.units ?? []).filter((e) => !e.hid || V.R.all).map((e) => [e.unit, e]));
+    const present = new Map(unitsNow(p.id).filter((e) => e.scenes && (!e.hid || V.R.all)).map((e) => [e.unit, e]));
     const W = Math.max(280, sec.body.clientWidth || 640);
     const compact = W < 520;
     const kindList = fmt.KIND_ORDER.filter((k) => idx.unitList.some((u) => u.kind === k));

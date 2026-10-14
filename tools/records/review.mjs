@@ -190,6 +190,10 @@ export function renderCandidate(c, ctx, byId, { context = 2, brief = false, laye
   } else {
     out.push(c.text ?? '(문장 없음)');
     if (c.kind === 'time' && c.obj?.ref) out.push(`기준: ${[].concat(c.obj.ref).join(' · ')}`);
+    if (c.kind === 'link' && c.obj?.type === 'impersonates') {
+      const spans = Array.isArray(c.obj.spans) ? c.obj.spans : [];
+      out.push(`사칭 범위(이름표 · 이름 ${c.obj.b ?? '?'}가 실제로는 ${c.obj.a ?? '?'}): ${spans.map((s) => (s?.lines ? citeOf(s) : `${s?.scene ?? '?'}(씬 전체)`)).join(' ') || '(없음)'} · 드러남 ${c.obj.revealed ?? '?'}`);
+    }
   }
   if (c.obj?.about?.length) out.push(`대상: ${c.obj.about.join(' · ')}`);
   out.push(`이유: ${c.reason ?? '(없음)'}`);

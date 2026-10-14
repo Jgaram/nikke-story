@@ -6,7 +6,8 @@
     "persons: 자동으로 만들면 안 되거나(동명이인) 이름표가 없거나 메모가 필요한 인물. id가 자동 대상과 같으면 그 대상에 name · kind · note를 덮는다.",
     "  resourceIds를 적으면 그 니케 목록 행은 자동 묶음에서 빠지고 이 인물에 붙는다.",
     "candidates: 정체 연결 후보(같은 인물로 드러남 등). 1회독에서 근거를 읽을 때 Claude가 확정 · 기각한다(사용자, RV1 2026-09-29 — CLAUDE.md).",
-    "  칸: id(L<번호> — 전체에서 하나, 바꾸지 않는다) · type(same_as) · a · b(대상 ID, a는 `이름표:<이름표>`도 된다) · status(후보/확정/기각) · confidence(확실/추정) ·",
+    "  칸: id(L<번호> — 전체에서 하나, 바꾸지 않는다) · type(same_as 같은 인물 · impersonates 사칭) · a · b(대상 ID, same_as의 a는 `이름표:<이름표>`도 된다) · status(후보/확정/기각) · confidence(확실/추정) ·",
+    "  사칭(impersonates — a가 b의 이름표 · 이름으로 행세, 둘은 다른 인물)만 spans([{scene, lines?}] — b로 잡힌 줄이 실제로는 a, lines 없으면 씬 전체) · revealed(독자가 아는 읽기 단위)를 더 적는다 — docs/annotations.md \"사칭 기록\".",
     "  reason · evidence([{scene, lines}], 비면 1회독이 채운다) · by(기록자) · reviews(리뷰 도구가 붙이는 검토 기록). 형식은 docs/schema.md \"정체 연결 후보\".",
     "  새 후보는 다음 번호(node tools/records.mjs next)로 더하고, 상태는 손으로 바꾸지 않는다 — node tools/records.mjs set L3 확정 (docs/annotations.md)"
   ],
@@ -598,6 +599,42 @@
       "by": "claude",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-2", "note": "1회독 확정 사실 F762 · F861로 확정 — 원문은 근거 씬만 다시 봤다" },
         { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W16b", "note": "근거 순서를 바로잡음 — 밝혀지는 자리(첫 근거 씬)는 CH.20 d_main_20af_01 #102-110(요한이 샛별이라 밝힘, 확정 사실 F762). CH.21이 먼저 적혀 화면이 하루 늦게 이었다(J8 판 검사 경고로 찾음)" }]
+    },
+    {
+      "id": "L32",
+      "type": "impersonates",
+      "a": "person:슈엔",
+      "b": "person:시프티",
+      "spans": [
+        { "scene": "d_main_08_01" },
+        { "scene": "d_main_08_02" },
+        { "scene": "d_main_08_06" },
+        { "scene": "d_main_08_07" },
+        { "scene": "d_main_08_08" },
+        { "scene": "d_main_09_01" },
+        { "scene": "d_main_09_02_s" },
+        { "scene": "d_main_09_02_e" },
+        { "scene": "d_main_09_03" },
+        { "scene": "d_main_09_04" },
+        { "scene": "d_main_09_05_s" },
+        { "scene": "d_main_09_05_e" },
+        { "scene": "d_main_09_06_s", "lines": ["0-21"] }
+      ],
+      "revealed": "ch09",
+      "status": "확정",
+      "confidence": "확실",
+      "reason": "W23a: CH.08–09에서 오퍼레이터 시프티 이름표로 말한 것은 딥페이크를 쓴 슈엔이다(F248). 라피가 '넌 누구냐'라 추궁하자(d_main_09_06_s #14-21) #22에서 이름표가 슈엔으로 바뀌며 '사실 시프티는 미실리스의 CEO 슈엔'이라 밝히고, '처음부터 시프티인 척'(#40-41)이라 한다. 08_01 · 08_02 · 09_01–09_05의 '시프티' 부름(이름 줄)도 그 오퍼레이터를 가리켜 씬 전체를 범위로, 09_06_s는 밝히기 전 #0-21만(#36 · #38 · #40은 진짜 시프티). 진짜 시프티는 한 달 전부터 합숙 훈련 중(#39)",
+      "evidence": [{ "scene": "d_main_09_06_s", "lines": ["12-22", "34-41"] }],
+      "by": "claude",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23a",
+          "note": "원문 대조 — 08_01 · 08_02 · 09_01–09_05의 시프티 이름표 · 부름은 모두 그 오퍼레이터, 09_06_s #22에서 드러남"
+        }
+      ]
     }
   ]
 }

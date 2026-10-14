@@ -8,13 +8,16 @@
  * 출력:
  *   persons.csv         인물마다(사전 person: 전부) — 등장(씬 · 단위 · 줄 · 처음/마지막) · 관계 상대 수 · 기록(사실 · 의문 · 사건 · 떡밥 · 생활상) · 줄기 · 변화 · 마무리 · 정체 연결
  *   relations.csv       관계 쌍 — 기록에서 온 인물 쌍(변화 D · 마무리 O · 합류 H의 ID, 처음/마지막 — W21)
- *   person-units.csv    인물 × 단위 — 등장 히트맵(씬 · 줄 · 말한 줄 · 암시 줄)
+ *   person-units.csv    인물 × 단위 — 등장 히트맵(씬 · 줄 · 말한 줄 · 암시 줄, 사칭이 걸린 단위는 imp · pre_* — 드러나기 전 모습)
  *   person-records.csv  인물 × 기록 — 그 인물을 다룬 기록 ID와 자리 · 상태 · 줄기(문장은 timeline/records.csv · chrono-changes.csv · closures/에)
  *   report.md           요약 · 순위 · 빈 곳
  *
  * 등장 = 언급 DB 자동 줄(speaks · named · alias, 빌드 — docs/schema.md "언급 DB") + 2회독 암시 언급(I — tools/records/read2.mjs mentionRows).
  *   합치기(T3-9 — 둘 다 두고 줄 합집합): (씬, 인물)마다 줄 집합을 합친다. 말한 줄 = 자동 speaks 줄 ∪ 암시 언급 speaker: true 줄(`???` 정체).
  *   암시 줄 = 암시 언급 줄 가운데 자동 줄에 없는 것(2회독이 더한 몫). 자리는 읽는 순서(출시순 한 줄 — docs/history/reading.md R), 공개 자리는 tools/views/reveal.mjs.
+ *   사칭(W23a — people.json 정체 연결 impersonates, 기각 빼고): 범위(spans) 줄에서 b(이름표 · 이름 주인)로 잡힌 줄을 a(사칭한 인물)에게 옮겨 센다 — 수치는 사칭한 인물에.
+ *   person-units.csv의 imp · pre_* = 그 단위의 사칭 L과 옮기기 전 모습(b는 옮긴 줄까지, a는 옮겨 받은 줄 없이 — 화면이 revealed 단위를 읽기 전에 보인다).
+ *   줄을 다 옮긴 단위는 b 쪽에 scenes 0 · pre_*만 있는 행으로 남는다. persons.csv impersonation = 그 인물이 a나 b인 사칭 L.
  * 관계 쌍(W21 — 같은 씬 횟수 '함께 나옴'을 대신한다: 씬이 시나리오 파일 하나라 다른 시공간이 묶였다) = 기록이 이은 두 인물:
  *   변화 D 관계의 person ↔ with(어느 쪽의 변화든 그 쌍에) · 마무리 O의 관계 사슬(chain '관계 A ↔ B') · 그 O를 묶은 합류 H. 수 · 순위가 아니라 쌍마다 기록 ID를 읽는 자리 순으로.
  * 따로 두는 인물(common 칸 — 화면 기본값에서 숨기기 좋다):
@@ -32,7 +35,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { openContext } from '../records/context.mjs';
-import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, expandLines, isRecord, loadDataset, sameAsGroups } from '../records/model.mjs';
+import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, expandLines, impersonations, isRecord, loadDataset, sameAsGroups } from '../records/model.mjs';
 import { kindOfKey, loadOrder } from '../records/order.mjs';
 import { mentionRows, scenePlaces } from '../records/read2.mjs';
 import { threadMembership } from '../records/threads.mjs';
@@ -51,9 +54,10 @@ const COLUMNS = {
   persons: ['target', 'name', 'common', 'spread', 'scenes', 'units', 'lines', 'speaker_lines', 'named_lines', 'implied_lines', 'implied_scenes',
     'first_order', 'first_tick', 'first_unit', 'first_scene', 'first_speaks_unit', 'last_order', 'last_tick', 'last_unit',
     'relations', 'facts', 'questions', 'open', 'partial', 'solved', 'reversed', 'events', 'echoes', 'life',
-    'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'unconfirmed'],
+    'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'impersonation', 'unconfirmed'],
   relations: ['a', 'b', 'a_name', 'b_name', 'changes', 'closures', 'merges', 'first_order', 'first_unit', 'last_order', 'last_unit', 'fool'],
-  personUnits: ['person', 'order', 'tick', 'unit', 'kind', 'scenes', 'lines', 'speaker_lines', 'implied_lines', 'first_scene'],
+  personUnits: ['person', 'order', 'tick', 'unit', 'kind', 'scenes', 'lines', 'speaker_lines', 'implied_lines', 'first_scene',
+    'imp', 'pre_scenes', 'pre_lines', 'pre_speaker_lines', 'pre_implied_lines', 'pre_first_scene'],
   personRecords: ['person', 'record', 'kind', 'role', 'unit', 'order', 'tick', 'state', 'threads', 'with', 'status', 'fool'],
 };
 const FILES = { persons: 'persons.csv', relations: 'relations.csv', personUnits: 'person-units.csv', personRecords: 'person-records.csv' };
@@ -64,7 +68,7 @@ const getOr = (m, k, mk) => m.get(k) ?? m.set(k, mk()).get(k);
 const firstScene = (c) => arr(c.evidence)[0]?.scene ?? null;
 
 /**
- * (씬, 인물)마다 합친 줄 — Map(인물 → Map(씬 → { all: Set, speak: Set, implied: Set }))
+ * (씬, 인물)마다 합친 줄 — Map(인물 → Map(씬 → { all, speak, auto, implied: Set, pre?: 사칭이 드러나기 전 모습(같은 모양), imp?: Set(사칭 L) }))
  */
 export function personScenes(ctx, ds) {
   const out = new Map();
@@ -84,6 +88,30 @@ export function personScenes(ctx, ds) {
       x.all.add(n);
       x.implied.add(n);
       if (r.speaker) x.speak.add(n);
+    }
+  }
+  // 사칭(W23a — people.json impersonates) — 범위 줄에서 b(이름표 · 이름 주인)로 잡힌 줄을 a(사칭한 인물)에게 옮긴다.
+  // 옮기기 전 모습을 pre에 남긴다 — 화면은 드러난 단위(revealed)를 읽기 전에는 이것을 보인다(b는 옮긴 줄까지, a는 옮겨 받은 줄 없이)
+  const copy = (x) => ({ all: new Set(x.all), speak: new Set(x.speak), auto: new Set(x.auto), implied: new Set(x.implied) });
+  for (const imp of impersonations(ds)) {
+    if (!ctx.targetIds.has(imp.a) || !ctx.targetIds.has(imp.b)) continue;
+    for (const span of imp.spans) {
+      const bx = out.get(imp.b)?.get(span.scene);
+      const moved = bx ? [...bx.all].filter((n) => !span.seqs || span.seqs.has(n)) : [];
+      if (!moved.length) continue;
+      const ax = slot(imp.a, span.scene);
+      bx.pre ??= copy(bx);
+      if (!ax.pre) {
+        // a의 드러나기 전 모습 — 옮겨 받을 줄은 a 자신의 자동 줄이 아니면 뺀다(그 줄의 2회독 speaker 암시 언급도 사칭이 드러나야 안다)
+        ax.pre = copy(ax);
+        for (const n of moved) if (!ax.auto.has(n)) for (const k of ['all', 'speak', 'implied']) ax.pre[k].delete(n);
+      }
+      for (const n of moved) {
+        ax.all.add(n);
+        for (const k of ['speak', 'auto', 'implied']) if (bx[k].has(n)) ax[k].add(n);
+        for (const k of ['all', 'speak', 'auto', 'implied']) bx[k].delete(n);
+      }
+      for (const x of [ax, bx]) (x.imp ??= new Set()).add(imp.id);
     }
   }
   return out;
@@ -127,7 +155,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       problems.push(`사전에 없는 인물: ${t}`);
       continue;
     }
-    const a = { scenes: 0, units: new Map(), lines: 0, speak: 0, named: 0, implied: 0, impliedScenes: 0, first: null, last: null, firstSpeaks: null, unplaced: 0 };
+    const a = { scenes: 0, units: new Map(), lines: 0, speak: 0, named: 0, implied: 0, impliedScenes: 0, first: null, last: null, firstSpeaks: null, unplaced: 0, imp: new Set() };
     const placed = [];
     for (const [s, x] of scenes) {
       if (isAprilFools(places.unitOf(s))) continue; // 만우절 — 등장에서 뺀다
@@ -136,30 +164,43 @@ export function buildPersons(ds, ctx, order, pre = {}) {
         a.unplaced++;
         continue;
       }
-      const lo = Math.min(...x.all);
+      const lo = Math.min(...(x.all.size ? x.all : x.pre?.all ?? [0]));
       placed.push({ s, x, pos: [...p, lo], unit: places.unitOf(s) });
     }
     placed.sort((m, n) => m.pos[0] - n.pos[0] || m.pos[1] - n.pos[1] || m.pos[2] - n.pos[2]);
+    const blankUnit = () => ({ scenes: 0, lines: 0, speak: 0, implied: 0, first_scene: '' });
+    const addScene = (u, s, x) => {
+      if (!x.all.size) return;
+      u.scenes++;
+      u.lines += x.all.size;
+      u.speak += x.speak.size;
+      u.implied += [...x.implied].filter((n) => !x.auto.has(n)).length;
+      u.first_scene ||= s;
+    };
     for (const { s, x, unit, pos } of placed) {
+      // 드러나기 전 모습(pre — 사칭 W23a)은 단위 행에만 따로 센다. 인물 수치는 옮긴 뒤(사칭한 인물에)
+      const u = getOr(a.units, unit, () => ({ ...blankUnit(), pre: blankUnit(), imp: new Set() }));
+      addScene(u.pre, s, x.pre ?? x);
+      for (const id of x.imp ?? []) {
+        u.imp.add(id);
+        a.imp.add(id);
+      }
+      if (!x.all.size) continue; // 사칭으로 줄을 다 옮긴 씬 — 드러나기 전 모습에만 있다
+      addScene(u, s, x);
       a.scenes++;
       a.lines += x.all.size;
       a.speak += x.speak.size;
       a.named += [...x.all].filter((n) => !x.speak.has(n)).length;
-      const onlyImplied = [...x.implied].filter((n) => !x.auto.has(n)).length;
-      a.implied += onlyImplied;
+      a.implied += [...x.implied].filter((n) => !x.auto.has(n)).length;
       if (!x.auto.size) a.impliedScenes++;
-      const u = getOr(a.units, unit, () => ({ scenes: 0, lines: 0, speak: 0, implied: 0, first_scene: s }));
-      u.scenes++;
-      u.lines += x.all.size;
-      u.speak += x.speak.size;
-      u.implied += onlyImplied;
       a.first ??= { scene: s, unit, pos };
       a.last = { scene: s, unit, pos };
       if (x.speak.size && !a.firstSpeaks) a.firstSpeaks = { scene: s, unit };
     }
     app.set(t, a);
     for (const [u, r] of a.units) {
-      unitRows.push({ person: t, order: orderOf(u), tick: tickOf(u), unit: u, kind: kindOfKey(u), scenes: r.scenes, lines: r.lines, speaker_lines: r.speak, implied_lines: r.implied, first_scene: r.first_scene });
+      const imp = r.imp.size ? { imp: [...r.imp].sort(compareIds).join(' '), pre_scenes: r.pre.scenes, pre_lines: r.pre.lines, pre_speaker_lines: r.pre.speak, pre_implied_lines: r.pre.implied, pre_first_scene: r.pre.first_scene } : {};
+      unitRows.push({ person: t, order: orderOf(u), tick: tickOf(u), unit: u, kind: kindOfKey(u), scenes: r.scenes, lines: r.lines, speaker_lines: r.speak, implied_lines: r.implied, first_scene: r.first_scene, ...imp });
     }
   }
 
@@ -284,7 +325,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     const r = R.get(id) ?? rec(id);
     return {
       target: id, name, common: commonOf(id), spread: spread.get(id) ?? 0,
-      scenes: a?.scenes ?? 0, units: a?.units.size ?? 0, lines: a?.lines ?? 0, speaker_lines: a?.speak ?? 0, named_lines: a?.named ?? 0,
+      scenes: a?.scenes ?? 0, units: a ? [...a.units.values()].filter((u) => u.scenes).length : 0, lines: a?.lines ?? 0, speaker_lines: a?.speak ?? 0, named_lines: a?.named ?? 0,
       implied_lines: a?.implied ?? 0, implied_scenes: a?.impliedScenes ?? 0,
       first_order: a?.first?.pos[0] ?? '', first_tick: a?.first ? tickOf(a.first.unit) : '', first_unit: a?.first?.unit ?? '', first_scene: a?.first?.scene ?? '',
       first_speaks_unit: a?.firstSpeaks?.unit ?? '', last_order: a?.last?.pos[0] ?? '', last_tick: a?.last ? tickOf(a.last.unit) : '', last_unit: a?.last?.unit ?? '',
@@ -293,7 +334,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       threads: [...r.threads].sort(compareIds).join(' '), baselines: r.baselines, changes: r.changes,
       aspects: ASPECTS.filter((x) => r.aspects.has(x)).map((x) => `${x} ${r.aspects.get(x)}`).join(' · '), with_others: r.withOthers, inverted: r.inverted,
       closures: [...r.closures].sort(compareIds).join(' '), merges: [...r.merges].sort(compareIds).join(' '),
-      same_as: (groups.get(id) ?? []).filter((x) => x !== id).join(' '), unconfirmed: r.unconfirmed,
+      same_as: (groups.get(id) ?? []).filter((x) => x !== id).join(' '), impersonation: a ? [...a.imp].sort(compareIds).join(' ') : '', unconfirmed: r.unconfirmed,
     };
   }).sort((x, y) => y.scenes - x.scenes || y.facts + y.questions - (x.facts + x.questions) || x.target.localeCompare(y.target));
   unitRows.sort((x, y) => x.person.localeCompare(y.person) || x.order - y.order);
@@ -321,7 +362,10 @@ export function renderPersonsReport(v, { source }) {
   const withRec = P.filter((p) => p.facts + p.questions + p.echoes + p.life + p.baselines + p.changes);
   L.push(`- 기록이 다룬 인물 ${withRec.length} — 사실 ${sum('facts')} · 의문 ${sum('questions')}(열림 ${sum('open')} · 일부 ${sum('partial')} · 풀림 ${sum('solved')}) · 사건 ${sum('events')} · 떡밥 ${sum('echoes')} · 생활상 ${sum('life')} (기록 하나가 여러 인물을 다루면 인물마다 센다).`);
   L.push(`- 변화 — 인물 ${P.filter((p) => p.baselines + p.changes).length} · 기준 ${sum('baselines')} · 변화 ${sum('changes')}(작중 순서가 뒤바뀐 변화 ${sum('inverted')}) · 관계 상대로 나온 수 ${sum('with_others')}. 마무리가 있는 인물 ${P.filter((p) => p.closures).length} · 합류 결판에 든 인물 ${P.filter((p) => p.merges).length}.`);
-  L.push(`- 줄기에 관여한 인물 ${P.filter((p) => p.threads).length}. 확정 전 기록을 센 인물 ${P.filter((p) => p.unconfirmed).length}.`, '');
+  L.push(`- 줄기에 관여한 인물 ${P.filter((p) => p.threads).length}. 확정 전 기록을 센 인물 ${P.filter((p) => p.unconfirmed).length}.`);
+  const impUnits = v.personUnits.filter((u) => u.imp);
+  L.push(`- 사칭(정체 연결 impersonates — 이름표 주인 줄을 사칭한 인물에 옮겨 셈): ${[...new Set(impUnits.flatMap((u) => u.imp.split(' ')))].sort(compareIds).join(' · ') || '없음'}` +
+    `${impUnits.length ? ` — 걸린 인물 × 단위 ${impUnits.length}(줄을 다 옮겨 드러나기 전 모습만 남은 것 ${impUnits.filter((u) => !u.scenes).length})` : ''}.`, '');
 
   const table = (title, xs, cols, head) => {
     L.push(`## ${title}`, '', `| ${head.join(' | ')} |`, `|${head.map(() => '---').join('|')}|`);

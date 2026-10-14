@@ -30,6 +30,7 @@
  *   결말     떡밥 탭 흐름(p.j)의 결말 · 함께 맺음 줄 가운데 이 떡밥에 든다는 것을 아직 모르는 것(fmt.threadTies units 밖)의 문장 앞 16자(W15f).
  *   떡밥갈래 연결 탭 떡밥 필터(p.th · 가운데 p.c)에서 이웃으로 보이는 스토리인데, 가운데와의 그 떡밥 선에 아는 기록(threadTies ids)이 하나도 없는 것(W15f).
  *   이름없음 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)이 리더 '나오는 인물' · 인물 탭 등장 목록(p.who)에 보이는 것(W15f).
+ *   사칭     드러나기 전(사칭 W23a — 드러난 스토리 rev를 안 봄) 스토리에서 사칭한 인물을 리더 '나오는 인물' · 인물 탭 등장 목록에 낸 것, 그 인물 탭에 보인 사칭 표 · 머리 '사칭' 줄.
  *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
  *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
  *   본 스토리의 장면 제목, fmt *_HELP 도움말)을 지우고 본다.
@@ -79,7 +80,7 @@ const THREAD_TAB = ['J3', 'J7', 'J21'];
 // (고치기 전 새던 곳 — J16 ch01–ch04 · J15 ch06–ch12 · J5 ch14–ch17 · J10 MUDFISH · J18 FOOTSTEP–ch39)
 const LINKS_TH = [['J1', 'ch05'], ['J16', 'ch01'], ['J15', 'ch12'], ['J5', 'ch17'], ['J10', 'side:mudfish'], ['J18', 'ch39']];
 // 인물 탭 등장 목록 · 리더 '나오는 인물' — 이름 없이('???') 나온 스토리가 그 인물의 등장으로 보이나(W15f)
-const PERSONS_WHO = ['person:그레이브', 'person:슈엔', 'person:스노우_화이트'];
+const PERSONS_WHO = ['person:그레이브', 'person:슈엔', 'person:시프티', 'person:스노우_화이트']; // 슈엔 · 시프티 — 사칭(W23a, 드러남 CH.09)
 const READER_UNITS = ['unit:ch28', 'unit:ch29', 'unit:ch08', 'unit:ch04'];
 
 // ── 화면 안에서 도는 점검 ──
@@ -225,9 +226,14 @@ const PROBE = async (skipMain, titles, focus) => {
     }
   }
   // 이름없음(W15f) — 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)을 그 인물의 등장으로 낸 것: 리더 '나오는 인물' · 인물 탭 등장 목록
+  // 사칭(W23a) — 드러나기 전(fmt.impKnown 거짓) 스토리에서 그 자리 모습(fmt.rowAt)으로는 없는 등장(사칭한 인물)을 낸 것 · 드러나기 전에 보인 사칭 표 · 머리 '사칭' 줄
   if (!R.all) {
     const det = await get('persons-detail');
-    const hid = new Set(det.flatMap((p) => p.units.filter((u) => u.hid).map((u) => `${p.id}|${u.unit}`)));
+    const rows = det.map((p) => [p.id, p.units.map((u) => fmt.rowAt(u, R))]);
+    const hid = new Set(rows.flatMap(([id, us]) => us.filter((u) => u.hid).map((u) => `${id}|${u.unit}`)));
+    const pre = (u) => u.pre && !fmt.impKnown(u, R);
+    const quiet = new Set(rows.flatMap(([id, us]) => us.filter((u) => pre(u) && !(u.speaker > 0)).map((u) => `${id}|${u.unit}`))); // 리더는 말한 인물만
+    const absent = new Set(rows.flatMap(([id, us]) => us.filter((u) => pre(u) && !u.scenes).map((u) => `${id}|${u.unit}`)));
     const sel = (await import('/lib/state.js')).get().sel ?? '';
     if (sel.startsWith('unit:')) {
       const u = sel.slice(5);
@@ -235,12 +241,21 @@ const PROBE = async (skipMain, titles, focus) => {
         if (!shown(a)) continue;
         const pid = a.dataset.sel.slice(7);
         if (hid.has(`${pid}|${u}`)) hits.push(`이름없음 리더 ${u} ${pid}`);
+        if (quiet.has(`${pid}|${u}`)) hits.push(`사칭 리더 ${u} ${pid}`);
       }
     }
     const who = (await import('/lib/state.js')).param('persons', 'who');
-    if (who) for (const li of document.querySelectorAll('#main .pm-us-item[data-sel^="unit:"]')) {
-      const u = li.dataset.sel.slice(5);
-      if (hid.has(`${who}|${u}`)) hits.push(`이름없음 인물 ${who} ${u}`);
+    if (who) {
+      for (const li of document.querySelectorAll('#main .pm-us-item[data-sel^="unit:"]')) {
+        const u = li.dataset.sel.slice(5);
+        if (hid.has(`${who}|${u}`)) hits.push(`이름없음 인물 ${who} ${u}`);
+        if (absent.has(`${who}|${u}`)) hits.push(`사칭 인물 ${who} ${u}`);
+      }
+      const me = (await get('persons')).find((p) => p.id === who);
+      if (!(me?.imp ?? []).some((x) => fmt.impKnown(x, R))) {
+        for (const c of document.querySelectorAll('#main .pm-imp')) if (shown(c)) hits.push(`사칭 표 ${who} ${c.textContent}`);
+        for (const c of document.querySelectorAll('#main .pm-fact-l')) if (shown(c) && c.textContent === '사칭') hits.push(`사칭 머리 ${who}`);
+      }
     }
   }
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름

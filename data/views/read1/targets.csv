@@ -8,7 +8,7 @@ concept:니케,concept,니케,145,4,3,7,101,ch00,1,fl:project_matis,467,,0
 concept:랩쳐,concept,랩쳐,126,13,6,14,83,ch01,2,ch48,472,,0
 person:잉그리드,person,잉그리드,125,8,4,9,59,ch01,2,ch48,472,ch01,1
 org:갓데스,org,갓데스,127,4,0,12,43,relic:갓데스스쿼드리포트,19,relic:승리를_부르는_그림자,471,relic:갓데스스쿼드리포트,0
-person:슈엔,person,슈엔,120,6,3,4,47,ch02,4,char:105,469,ch02,0
+person:슈엔,person,슈엔,120,6,3,4,47,ch02,4,char:105,469,ch02,1
 person:퀸,person,퀸,112,14,6,16,33,ch06,26,ch48,472,ch06,0
 person:마리안,person,마리안,110,14,8,9,29,ch00,1,ch48,472,ch00,1
 person:스노우_화이트,person,스노우 화이트,118,4,0,14,42,ch06,26,ch48,472,ch06,0
@@ -85,7 +85,7 @@ person:인디빌리아,person,인디빌리아,34,1,0,2,10,char:261,184,event_god
 person:드레이크,person,드레이크,34,0,0,0,19,ch11,53,char:104,479,,0
 person:사쿠라,person,사쿠라,34,0,0,2,13,char:311,176,ch44,436,,0
 person:루드밀라,person,루드밀라,31,2,1,2,13,ch05,20,char:871,477,ch05,0
-person:시프티,person,시프티,32,1,0,3,21,ch01,2,event_unbreakablesphere1,377,ch01,0
+person:시프티,person,시프티,32,1,0,3,21,ch01,2,event_unbreakablesphere1,377,ch01,1
 person:지즈,person,지즈,33,0,0,1,15,ch34,336,fl:great_villain_union,478,ch37,0
 person:폴리,person,폴리,33,0,0,1,24,char:180,85,char:570,463,,0
 person:K,person,K,32,0,0,0,8,ch14,69,fl:reborn_evil,407,sub:랩칠리언_06,0

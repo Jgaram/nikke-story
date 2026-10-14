@@ -274,7 +274,9 @@ const commands = {
       }
       for (const c of all('SELECT * FROM target_links WHERE a = ? OR b = ?', id, id)) {
         const ev = JSON.parse(c.evidence ?? '[]').map((e) => `${e.scene}#${e.lines.join(',')}`).join(' ');
-        console.log(`  정체 연결 ${c.id ?? ''} [${c.status} · ${c.confidence}] ${c.a} ↔ ${c.b} — ${c.reason}${ev ? ` (근거 ${ev})` : ''}`);
+        // 사칭(W23a) — a가 b의 이름표 · 이름으로 행세. 범위 · 드러난 단위는 people.json(records.mjs review L…)
+        const link = c.type === 'impersonates' ? `사칭 ${c.a} → ${c.b} 이름표` : `${c.a} ↔ ${c.b}`;
+        console.log(`  정체 연결 ${c.id ?? ''} [${c.status} · ${c.confidence}] ${link} — ${c.reason}${ev ? ` (근거 ${ev})` : ''}`);
       }
       console.log('');
     }
@@ -736,19 +738,30 @@ const commands = {
     if (!q) return console.error('인물이 필요합니다: node tools/query.mjs person 라피 | person:라피 [--list]');
     const id = q.startsWith('person:') ? q : one("SELECT id FROM targets WHERE name = ? AND id LIKE 'person:%' ORDER BY id LIMIT 1", q)?.id ?? `person:${q.replace(/\s+/g, '_')}`;
     const { openContext } = await import('./records/context.mjs');
-    const { loadDataset } = await import('./records/model.mjs');
+    const { impersonations, loadDataset } = await import('./records/model.mjs');
     const { loadOrder } = await import('./records/order.mjs');
     const { buildPersons } = await import('./views/persons.mjs');
     const ctx = await openContext(db);
-    const v = buildPersons(loadDataset(), ctx, loadOrder());
+    const ds = loadDataset();
+    const v = buildPersons(ds, ctx, loadOrder());
     ctx.close();
     const p = v.persons.find((x) => x.target === id);
     if (!p) return console.error(`사전에 없는 인물: ${q}`);
     console.log(`${p.target} ${p.name}${p.common ? ` — 따로 두는 인물(${p.common}${p.spread ? `, 중심 단위 ${p.spread}` : ''})` : ''}${p.same_as ? ` · 같은 인물 ${p.same_as}` : ''}`);
     console.log(`등장: 씬 ${p.scenes} · 단위 ${p.units} · 말한 줄 ${p.speaker_lines} · 이름 줄 ${p.named_lines} · 암시 언급이 더한 줄 ${p.implied_lines}(암시로만 나온 씬 ${p.implied_scenes})`);
     console.log(`처음 ${p.first_unit || '-'}(공개 자리 ${p.first_tick || '-'}, ${p.first_scene || '-'}) · 처음 말함 ${p.first_speaks_unit || '-'} · 마지막 ${p.last_unit || '-'}(${p.last_tick || '-'})`);
+    // 사칭(W23a) — 이 인물이 사칭한 쪽(a)이나 이름표를 빌려준 쪽(b)인 기록. 수치는 사칭한 인물에 옮겨 센 것이다
+    const nm = (t) => v.persons.find((x) => x.target === t)?.name ?? t;
+    const iga = (w) => { const c = [...w].pop().charCodeAt(0) - 0xac00; return w + (c >= 0 && c < 11172 && c % 28 ? '이' : '가'); };
+    for (const imp of impersonations(ds).filter((x) => x.a === id || x.b === id)) {
+      const units = [...new Set(v.personUnits.filter((r) => r.person === id && r.imp?.split(' ').includes(imp.id)).map((r) => r.unit))].join(' · ');
+      console.log(imp.a === id
+        ? `사칭 ${imp.id}${imp.status === '확정' ? '' : `(${imp.status})`}: ${nm(imp.b)} 이름표로 행세 — ${units || '-'}, 드러남 ${imp.revealed ?? '?'}. 그 줄은 이 인물에 센다`
+        : `사칭 ${imp.id}${imp.status === '확정' ? '' : `(${imp.status})`}: ${iga(nm(imp.a))} 이 인물로 행세 — ${units || '-'}, 드러남 ${imp.revealed ?? '?'}. 그 줄은 ${nm(imp.a)}에 센다(화면은 드러나기 전까지 이 인물로)`);
+    }
     const us = v.personUnits.filter((r) => r.person === id);
-    if (us.length) console.log(`단위별 등장(씬 수, 출시순): ${us.slice(0, 60).map((r) => `${r.unit} ${r.scenes}`).join(' · ')}${us.length > 60 ? ` … 외 ${us.length - 60}` : ''}`);
+    const unitText = (r) => `${r.unit} ${r.scenes}${r.imp ? `(사칭 ${r.imp} — 드러나기 전 ${r.pre_scenes})` : ''}`;
+    if (us.length) console.log(`단위별 등장(씬 수, 출시순): ${us.slice(0, 60).map(unitText).join(' · ')}${us.length > 60 ? ` … 외 ${us.length - 60}` : ''}`);
     const rs_ = v.relations.filter((r) => r.a === id || r.b === id);
     const relText = (r) => `${r.a === id ? r.b_name : r.a_name}(${[r.changes, r.closures, r.merges].filter(Boolean).join(' ')}${r.fool ? ' — 만우절' : ''})`;
     console.log(`관계 상대 ${p.relations}(읽는 자리 순 — 변화 D · 마무리 O · 합류 H): ${rs_.map(relText).join(' · ') || '-'}`);

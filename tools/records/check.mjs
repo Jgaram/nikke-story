@@ -11,7 +11,7 @@ import { oneLine } from '../lib/render.mjs';
 import { computeLayers, layerKind } from './layers.mjs';
 import {
   AFFIL_ACTS, ASPECTS, CHANGE_ACTS, CLOSURE_TYPES, CONFIDENCES, DECISIONS, DEGREES, ECHO_ACTS, EDGE_TYPES, FACT_ACTS, FIELDS, FROM_GRADES, GRADES, ID, LAYERS, LIFE_TOPICS, QUESTION_ACTS,
-  READ1_DIR, READ2_SECTIONS, RELATION_TYPES, STATUSES, THREAD_WEIGHTS, TIME_KINDS, WATCH_KINDS, expandLines, fileNameFor, isRecord, sameAsGroups, spineUnits, statusFromReviews,
+  LINK_TYPES, READ1_DIR, READ2_SECTIONS, RELATION_TYPES, STATUSES, THREAD_WEIGHTS, TIME_KINDS, WATCH_KINDS, expandLines, fileNameFor, isRecord, sameAsGroups, spineUnits, statusFromReviews,
 } from './model.mjs';
 import { READ2_PREFIXES, findItem, kindOfKey, loadOrder, loadReadLayers, partsOverlap } from './order.mjs';
 
@@ -361,6 +361,68 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     checkCommon(c, where);
   }
 
+  // 사칭(W23a — people.json 정체 연결 type impersonates) — a가 b의 이름표 · 이름으로 행세한 줄(spans)과 독자가 아는 단위(revealed). 둘은 다른 인물
+  let impStmt = null;
+  function checkImpersonation(c, where) {
+    const o = c.obj;
+    for (const side of ['a', 'b']) {
+      if (!isStr(o[side]) || !o[side].startsWith('person:') || !ctx.targetIds.has(o[side])) {
+        err(where, c.id, `${side} ${JSON.stringify(o[side] ?? '')} — 사전의 인물 ID(person:…). 사칭은 인물끼리 잇는다(이름표:…는 same_as로)`);
+      }
+    }
+    if (isStr(o.a) && o.a === o.b) err(where, c.id, 'a와 b가 같은 인물이다');
+    else if (isStr(o.a) && isStr(o.b) && sameAsGroups(ds).get(o.a)?.includes(o.b)) err(where, c.id, `${o.a} · ${o.b}는 같은 인물(same_as)로 묶였다 — 사칭은 다른 두 인물`);
+    if (order) places ??= scenePlaces(order, ctx);
+    const pos = order ? unitOrderPos() : null;
+    const spanUnits = [];
+    if (!Array.isArray(o.spans) || !o.spans.length) {
+      err(where, c.id, 'spans가 없다 — 이름표 · 이름 b가 실제로는 a인 줄 [{ "scene": 씬 ID, "lines": [12, "20-25"] }] (lines가 없으면 씬 전체)');
+    } else {
+      impStmt ??= ctx.db.prepare('SELECT seq_from, seq_to FROM mentions WHERE story_id = ? AND target = ?');
+      const seenScenes = new Set();
+      for (const s of o.spans) {
+        if (!s || typeof s !== 'object' || Array.isArray(s)) {
+          err(where, c.id, `spans ${JSON.stringify(s)}: { "scene": …, "lines": […] } 모양이어야 한다(lines는 없어도 된다 — 씬 전체)`);
+          continue;
+        }
+        unknown(s, ['scene', 'lines'], (m) => warn(where, c.id, `spans ${s.scene ?? '?'}: ${m}`));
+        const st = ctx.story(s.scene);
+        if (!st) {
+          err(where, c.id, `spans: 없는 씬 ${s.scene}`);
+          continue;
+        }
+        if (seenScenes.has(s.scene)) warn(where, c.id, `spans: 씬 ${s.scene}이 두 번 나온다 — 한 항목에 줄을 모은다`);
+        seenScenes.add(s.scene);
+        if (st.in_scope !== 1) err(where, c.id, `spans: 분석 범위 밖 씬 ${s.scene}`);
+        let seqs = null;
+        if (s.lines !== undefined) {
+          const r = expandLines(s.lines);
+          for (const p of r.problems) err(where, c.id, `spans ${s.scene}: ${p}`);
+          const n = ctx.lines(s.scene).length;
+          const bad = r.seqs.filter((x) => x >= n);
+          if (bad.length) err(where, c.id, `spans: 없는 줄 ${s.scene}#${bad.join(',')} — 이 씬은 #0–#${n - 1}`);
+          seqs = r.seqs;
+        }
+        // 옮길 것 — 범위 안에 b로 잡힌 자동 언급(이름표로 말함 · 이름)이 있어야 한다
+        if (isStr(o.b) && !impStmt.all(s.scene, o.b).some((m) => seqs === null || seqs.some((x) => x >= m.seq_from && x <= m.seq_to))) {
+          warn(where, c.id, `spans ${s.scene}: 범위에 ${o.b}로 잡힌 줄(이름표 · 이름)이 없다 — 옮길 줄이 없다`);
+        }
+        const u = places?.unitOf(s.scene);
+        if (u) spanUnits.push(u);
+      }
+    }
+    if (!isStr(o.revealed)) err(where, c.id, 'revealed가 없다 — 독자가 사칭을 알게 되는 읽기 단위 키(그 단위를 읽기 전에는 화면이 이름표 주인으로 보인다)');
+    else if (pos) {
+      if (!pos.has(o.revealed)) err(where, c.id, `revealed: 읽기 순서에 없는 단위 ${o.revealed}`);
+      else {
+        const first = Math.min(...spanUnits.map((u) => pos.get(u) ?? Infinity));
+        if (first < Infinity && pos.get(o.revealed) < first) warn(where, c.id, `revealed ${o.revealed}가 사칭 범위의 첫 단위보다 앞이다 — 드러난 뒤의 행세면 그 단위를 적는다`);
+        const evUnits = (Array.isArray(o.evidence) ? o.evidence : []).map((e) => places?.unitOf(e?.scene)).filter(Boolean);
+        if (evUnits.length && !evUnits.includes(o.revealed)) warn(where, c.id, `근거(드러나는 줄)가 revealed 단위(${o.revealed}) 밖이다`);
+      }
+    }
+  }
+
   function checkEdge(c, where) {
     const o = c.obj;
     if (!ID.edge.test(c.id)) err(where, c.id, 'ID 모양이 틀렸다 — Y<번호> (수동 엣지)');
@@ -641,7 +703,10 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     } else if (c.section === 'candidates') {
       idOk(ID.link, 'L<번호> (정체 연결)');
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
-      checkEvidence(o.evidence, where, c.id, null, null, { required: false });
+      if (!LINK_TYPES.includes(o.type)) err(where, c.id, `type "${o.type ?? ''}" — ${LINK_TYPES.join(' · ')} 중 하나`);
+      if (o.type === 'impersonates') checkImpersonation(c, where);
+      else if (o.spans !== undefined || o.revealed !== undefined) warn(where, c.id, 'spans · revealed는 사칭(type impersonates)에만 쓴다');
+      checkEvidence(o.evidence, where, c.id, null, null, { required: o.type === 'impersonates' });
       checkCommon(c, where);
     } else if (c.section === 'threads') {
       idOk(ID.thread, 'J<번호> (떡밥 줄기)');
