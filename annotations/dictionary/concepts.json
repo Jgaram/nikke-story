@@ -254,7 +254,7 @@
       "evidence": [{ "scene": "event_dirtybackyard_03_s", "lines": [2] }]
     },
     {"id": "concept:웨일리", "name": "웨일리", "kind": "존재", "note": "랩칠리언이 타고 다니는 마더 웨일 — 채식으로 외형이 바뀌었다(R37 ch27에서 더함)", "evidence": [{"scene": "d_main_26af_01", "lines": [102]}]},
-    {"id": "concept:컨버터", "name": "컨버터", "kind": "설비", "note": "일렉트릭 쇼크(일레그 · 트로니)가 만든 변전소 장치 — 방주 동력원의 넘치는 전력을 손실시켜 정전을 막는다(R38 event_boomsday에서 더함)", "evidence": [{"scene": "event_boomsday_01_s", "lines": [20]}], "not_scenes": ["ep:d_nikke_sin_*"], "not_scenes_note": "신의 입에 씌운 세뇌 필터(호감도 스토리)는 다른 물건"},
+    {"id": "concept:컨버터", "name": "컨버터", "kind": "설비", "note": "일렉트릭 쇼크(일레그 · 트로니)가 만든 변전소 장치 — 방주 동력원의 넘치는 전력을 손실시켜 정전을 막는다(R38 event_boomsday에서 더함)", "evidence": [{"scene": "event_boomsday_01_s", "lines": [20]}], "not_scenes": ["ep:d_nikke_sin_*", "d_main_35bf_02"], "not_scenes_note": "신의 입에 씌운 세뇌 필터(호감도 스토리)는 다른 물건 · CH.35 d_main_35bf_02#44는 '컨버터블'(자동차 지붕 — W16b ②에서 찾음)"},
     {"id": "concept:방주_동력원", "name": "방주 동력원", "kind": "설비", "note": "방주 전체에 전력을 대는 정체불명의 동력원 — 무한한 에너지를 만들고, 트로니가 역추적해 직접 보았다(R38 event_boomsday에서 더함)", "evidence": [{"scene": "event_boomsday_04_s", "lines": [91]}], "caution": "본문은 '동력원' · '방주의 동력원'으로 나온다 — 일반 낱말 '동력원'과 겹친다"},
     {"id": "concept:크리스탈_체임버", "name": "크리스탈 체임버", "kind": "존재", "note": "랩쳐와 수정이 융합된 것 — 수정이 기생한 로드 급(움직이는 수정 정원)을 부르는 이름, 수정 지역 지하에 생산 시설(하이브)이 있다(R41 ch30에서 더함)", "evidence": [{"scene": "d_main_30_04", "lines": [32]}]},
     { "id": "concept:하이퍼_푸드", "name": "하이퍼 푸드", "kind": "식량", "note": "심으면 석 달 만에 거두는 차세대 곡물 씨앗 — 완성 기록 뒤 행방이 끊겼고, 크라운 왕국 고성의 냉동 창고에 보관되어 있다(R42 event_lastkingdom1에서 더함)", "evidence": [{"scene": "event_lastkingdom1_04_s", "lines": [41]}] },

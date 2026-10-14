@@ -15,7 +15,7 @@ import path from 'node:path';
 import { run as exportVersions } from '../tools/site/export/versions.mjs';
 import { fileNameFor } from '../tools/records/model.mjs';
 import {
-  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom, srcHash, stateOf,
+  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, threadFirst, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom, srcHash, stateOf,
   versionNeed,
 } from '../tools/versions/model.mjs';
 
@@ -264,7 +264,7 @@ test('내보낸 versions.json — 확정 판과 같고, 판마다 그 자리 뒤
     for (const v of list) assert.deepEqual(lateNames(v.text, real.units.get(v.at).order, real.names, real.units), [], `${id} ${v.at}: ${v.text}`);
   }
   for (const [id, list] of Object.entries(out.threads)) {
-    assert.equal(list.find((v) => !v.side).at, real.threads.get(id).first_unit, `${id} 첫 판`);
+    assert.equal(list.find((v) => !v.side).at, threadFirst(real.threads.get(id), real), `${id} 첫 판`); // 첫 스토리가 이벤트 · 호감도면 메인 줄기 첫 자리(W16b ②)
     for (const v of list) {
       const o = real.units.get(v.at).order;
       for (const t of [v.title, v.text]) assert.deepEqual(lateNames(t, o, real.names, real.units), [], `${id} ${v.at}: ${t}`);
@@ -362,11 +362,11 @@ test('곁 판(side — W15f) — 체크 칸 스토리 판: 안 본 독자는 건
   assert.equal(fmt.versionAt(b, null).text, '다');
 });
 
-test('곁 판 검사 — 체크 칸 스토리에만 · until은 뒤 본판 · 내보내기는 곁 판을 싣는다', () => {
+test('곁 판 검사 — 고를 수 있는 스토리에만 · until은 뒤 본판 · 내보내기는 곁 판을 싣는다', () => {
   const C2 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'event_newyearnewsword' ? { ...u, check: 1 } : u)), threads: THREADS, flow: FLOW, targets: TARGETS });
   const v = (at, extra) => confirm({ ...ver(at, GOOD[1].title, GOOD[1].text), ...extra, src: srcHash(S, at, C2) });
   const errs = (vs) => checkFile(file(vs), C2).errors;
-  assert.ok(errs([confirm(GOOD[0]), v('ch45', { side: true })]).some((m) => /곁 판\(side\)은 체크 칸/.test(m)));
+  assert.ok(errs([confirm(GOOD[0]), v('ch45', { side: true })]).some((m) => /곁 판\(side\)은 고를 수 있는 스토리/.test(m)));
   assert.ok(errs([confirm(GOOD[0]), v('event_newyearnewsword', { side: true, until: 'ch99' })]).some((m) => /until은 뒤 본판/.test(m)));
   const good = [confirm(GOOD[0]), v('event_newyearnewsword', { side: true, until: 'ch46' }), v('ch46', {})];
   assert.deepEqual(errs(good), []);
@@ -384,4 +384,19 @@ test('곁 판 후보 경고(W15f) — 첫 본판 앞 체크 칸에 사실 기록
   assert.ok(!checkFile({ subject: DS, no_side: { 'char:222': '본판이 담는다' }, versions: base }, C3).warnings.some((m) => /곁 판 후보/.test(m)));
   assert.ok(!checkFile({ subject: DS, versions: [v('char:222', '홍련의 검과 짝을 이루는 무기.', { side: true }), ...base] }, C3).warnings.some((m) => /곁 판 후보/.test(m)));
   assert.ok(checkFile({ subject: DS, no_side: { 'char:222': '' }, versions: base }, C3).errors.some((m) => /no_side char:222/.test(m)));
+});
+
+test('W16b ② — 이벤트 · 호감도(opt, 체크 칸 아님) 판은 뒤에 본판이 오면 곁 판, 첫 판 자리는 메인 줄기에서 처음 나온 곳', () => {
+  // 홍련 호감도(char:222)를 고를 수 있는 스토리로(opt), RED ASH 돌발(erelic)은 체크 칸, 나머지는 메인 갈래
+  const OU = UNITS.map((u) => (u.key === 'char:222' ? { ...u, opt: 1 } : u.key === 'erelic:red_ash_lost' ? { ...u, check: 1, opt: 1 } : u));
+  const C4 = sourcesFrom({ units: OU, threads: THREADS, flow: FLOW, targets: DT });
+  assert.equal(threadFirst(C4.threads.get('J30'), C4), 'erelic:red_ash_lost', '첫 스토리가 호감도면 그 뒤 처음 움직인 메인 갈래 · 체크 칸');
+  assert.equal(threadFirst(C4.threads.get('J30'), DC), 'char:222', '호감도가 고를 수 있는 스토리가 아니면 그대로');
+  assert.equal(dictFirst(DC.targetMap.get(DS), C4), 'ch45', 'meet에서 고를 수 있는 스토리를 건너뛴 첫 메인 갈래');
+  const g = (at) => (at === 'char:222' ? GOOD[0] : GOOD[1]); // 장화는 NEW YEAR, NEW SWORD부터 — 앞 판은 첫 판 글
+  const v = (at, extra = {}) => confirm({ ...ver(at, g(at).title, g(at).text), ...extra, src: srcHash(S, at, C4) });
+  const errs = (vs) => checkFile(file(vs), C4).errors;
+  assert.ok(errs([v('char:222'), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]).some((m) => /이벤트 · 호감도의 판인데 뒤에 메인 갈래 · 체크 칸 본판이 있다/.test(m)), '본판이면 오류');
+  assert.ok(errs([v('char:222'), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]).some((m) => /첫 판의 at은/.test(m)), '첫 본판은 erelic');
+  assert.deepEqual(errs([v('char:222', { side: true, until: 'erelic:red_ash_lost' }), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]), []);
 });

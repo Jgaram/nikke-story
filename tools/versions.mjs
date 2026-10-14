@@ -23,7 +23,7 @@ import { scenePlaces } from './records/read2.mjs';
 import { sourceWindows } from './check-quotes.mjs';
 import { nameFirsts, overlapProblems, spoilerProblems } from './synopsis/model.mjs';
 import { buildInput, loadContext } from './versions/input.mjs';
-import { DECIDERS, DICT_KINDS, STATUSES, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, loadVersions, shownTexts, srcHash, stateOf, subjectKind, versionPath } from './versions/model.mjs';
+import { DECIDERS, DICT_KINDS, STATUSES, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, threadFirst, loadVersions, shownTexts, srcHash, stateOf, subjectKind, versionPath } from './versions/model.mjs';
 
 const USAGE = `시점별 판 도구 (tools/versions.mjs) — 형식 · 기준: docs/annotations.md "시점별 판"
   new <J… | thread:J… | place:방주 …> [--at 단위 [--side]] [--refresh] [--full]   입력 묶음 + 틀(후보) — --side = 곁 판(체크 칸 스토리)
@@ -82,7 +82,7 @@ function cmdNew() {
   if (!args.length) throw new Error('대상을 준다 — 예: node tools/versions.mjs new J30');
   for (const [i, raw] of args.entries()) {
     const subject = subjectOf(raw);
-    const first = isDict(subject) ? dictFirst(ctx().targetMap.get(subject), ctx()) : ctx().threads.get(subject.replace(/^thread:/, ''))?.first_unit;
+    const first = isDict(subject) ? dictFirst(ctx().targetMap.get(subject), ctx()) : threadFirst(ctx().threads.get(subject.replace(/^thread:/, '')), ctx());
     if (isDict(subject) ? !ctx().targetMap.has(subject) : !ctx().threads.has(subject.replace(/^thread:/, ''))) throw new Error(`${isDict(subject) ? '사전 항목' : '떡밥'}이 없다 — ${raw}`);
     if (!first) throw new Error(`처음 나온 자리가 없다 — ${raw} (판을 둘 수 없다)`);
     const p = versionPath(subject, DIR);

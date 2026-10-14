@@ -1,9 +1,12 @@
 {
   "subject": "item:이터널_라이프",
+  "no_side": { "event_ce006": "세부뿐 — 맞다 끊으면 늙는다는 한 노인의 일화. 무엇인지(노화 방지 주사)는 FOR REST 곁 판 · GOOD WORLD 판이 담는다(W16b 검토)" },
   "versions": [
     {
       "at": "fl:for_rest",
       "text": "중앙 정부가 인증한 노화 방지 주사 — 1차 침공 직후엔 값이 비싸 로열만 맞았지만, 지금은 누구나 쉽게 맞을 수 있다.",
+      "side": true,
+      "until": "fl:good_world",
       "src": "02dbc4f5c7",
       "session": "W15e",
       "by": "claude",
@@ -17,12 +20,39 @@
           "session": "W15e",
           "hash": "5b708aedc7",
           "note": "for_rest F1828 정의, good_world F2568·U396 양산의 기원(프로젝트 A.D.)이 드러나 판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "60ff2360df",
+          "note": "W16b ②: 메인만 본 독자는 CH.43(d_main_43_12#30-31)에서 맞으면 이론상 200살 중반까지 산다는 말과 프린세스가 그 대신 뇌를 옮겼다는 것만 안다 → ch43 판은 수명 연장 주사. FOR REST 판은 곁 판, until=fl:good_world(노화 방지 주사라는 핵심을 다시 담는 첫 뒤 본판 — CH.43 판은 '중앙 정부 인증 노화 방지'를 담지 못함). GOOD WORLD 판의 '중앙 정부가 인증한'은 FOR REST에서만 나와 걷음"
+        }
+      ]
+    },
+    {
+      "at": "ch43",
+      "text": "맞으면 수명을 크게 늘려 주는 것 — 이론상 200살 중반까지 살 수 있다고 한다.",
+      "src": "6dcc1994b1",
+      "session": "W15c",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "5e9136d010",
+          "note": "W16b ②: 메인만 본 독자는 CH.43(d_main_43_12#30-31)에서 맞으면 이론상 200살 중반까지 산다는 말과 프린세스가 그 대신 뇌를 옮겼다는 것만 안다 → ch43 판은 수명 연장 주사. FOR REST 판은 곁 판, until=fl:good_world(노화 방지 주사라는 핵심을 다시 담는 첫 뒤 본판 — CH.43 판은 '중앙 정부 인증 노화 방지'를 담지 못함). GOOD WORLD 판의 '중앙 정부가 인증한'은 FOR REST에서만 나와 걷음"
         }
       ]
     },
     {
       "at": "fl:good_world",
-      "text": "중앙 정부가 인증한 노화 방지 주사 — 꾸준히 맞으면 젊게 살고 끊으면 늙는다. 그 양산은 총사령관이 참여한 프로젝트 A.D.에서 이뤘다.",
+      "text": "노화를 막는 주사 — 꾸준히 맞으면 젊게 살고 끊으면 늙는다. 그 양산은 총사령관이 참여한 프로젝트 A.D.에서 이뤘다.",
       "src": "60b16eae48",
       "session": "W15e",
       "by": "claude",
@@ -36,6 +66,14 @@
           "session": "W15e",
           "hash": "e8a4031c0a",
           "note": "for_rest F1828 정의, good_world F2568·U396 양산의 기원(프로젝트 A.D.)이 드러나 판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "494e8f5e36",
+          "note": "W16b ②: 메인만 본 독자는 CH.43(d_main_43_12#30-31)에서 맞으면 이론상 200살 중반까지 산다는 말과 프린세스가 그 대신 뇌를 옮겼다는 것만 안다 → ch43 판은 수명 연장 주사. FOR REST 판은 곁 판, until=fl:good_world(노화 방지 주사라는 핵심을 다시 담는 첫 뒤 본판 — CH.43 판은 '중앙 정부 인증 노화 방지'를 담지 못함). GOOD WORLD 판의 '중앙 정부가 인증한'은 FOR REST에서만 나와 걷음"
         }
       ]
     }

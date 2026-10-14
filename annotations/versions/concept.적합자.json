@@ -1,5 +1,10 @@
 {
   "subject": "concept:적합자",
+  "no_side": {
+    "erelic:red_ash_lost": "도로시가 적합자로 배속된 인물 세부 — 무엇인지는 event_redash 곁 판이 담는다",
+    "char:470": "적합자는 몸에 맞는 신체 조건만 갖추면 된다는 보탬 — 무엇인지(페어리 테일 모델이 되는 사람)는 event_redash 곁 판이 담는다",
+    "event_newyearnewsword": "적합자의 기억 잔류에 대한 한마디 세부 — 무엇인지는 event_redash 곁 판이 담는다"
+  },
   "versions": [
     {
       "at": "char:221",
@@ -17,8 +22,17 @@
           "session": "W15e",
           "hash": "0be1783ece",
           "note": "char:221은 기록 없어 원문 ep:d_nikke_rapunzel_04#54-57(1차 침공 뒤 찾은 니케 될 사람, 갓데스)로 씀, event_redash(척추 체크 칸) event_redash1_02_s#50-52 · F1145로 자아가 강한 이 → 페어리 테일 모델, 아니면 양산형이라는 뜻이 바뀌어 그 자리에 판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "d2ca3680c9",
+          "note": "메인 갈래만 본 독자는 relic:잘지내라친구_01#0-3(녹음 — 사고로 죽었다던 친구가 적합자가 되어 TV에 나옴)에서 이름만 만나 무엇인지 모른다 — 얇게. char:221(호감도)과 event_redash(주요 이벤트 — 체크 칸)는 dictFirst 앞이라 곁 판, 뒤 본판이 없어 둘 다 until 없음(본 독자는 끝까지 곁 판, 둘 다 본 독자는 뒤 것 event_redash)"
         }
-      ]
+      ],
+      "side": true
     },
     {
       "at": "event_redash",
@@ -36,6 +50,34 @@
           "session": "W15e",
           "hash": "59d0a07a85",
           "note": "char:221은 기록 없어 원문 ep:d_nikke_rapunzel_04#54-57(1차 침공 뒤 찾은 니케 될 사람, 갓데스)로 씀, event_redash(척추 체크 칸) event_redash1_02_s#50-52 · F1145로 자아가 강한 이 → 페어리 테일 모델, 아니면 양산형이라는 뜻이 바뀌어 그 자리에 판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "148c3e1e92",
+          "note": "메인 갈래만 본 독자는 relic:잘지내라친구_01#0-3(녹음 — 사고로 죽었다던 친구가 적합자가 되어 TV에 나옴)에서 이름만 만나 무엇인지 모른다 — 얇게. char:221(호감도)과 event_redash(주요 이벤트 — 체크 칸)는 dictFirst 앞이라 곁 판, 뒤 본판이 없어 둘 다 until 없음(본 독자는 끝까지 곁 판, 둘 다 본 독자는 뒤 것 event_redash)"
+        }
+      ],
+      "side": true
+    },
+    {
+      "at": "relic:잘지내라친구",
+      "text": "사고로 죽었다던 사람이 이것이 되어 TV에 나왔다고만 나온다 — 무엇인지는 아직 모른다.",
+      "src": "983531ab7c",
+      "session": "W16b",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "6fca13f8f4",
+          "note": "메인 갈래만 본 독자는 relic:잘지내라친구_01#0-3(녹음 — 사고로 죽었다던 친구가 적합자가 되어 TV에 나옴)에서 이름만 만나 무엇인지 모른다 — 얇게. char:221(호감도)과 event_redash(주요 이벤트 — 체크 칸)는 dictFirst 앞이라 곁 판, 뒤 본판이 없어 둘 다 until 없음(본 독자는 끝까지 곁 판, 둘 다 본 독자는 뒤 것 event_redash)"
         }
       ]
     }

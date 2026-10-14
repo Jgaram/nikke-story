@@ -1,5 +1,6 @@
 {
   "subject": "item:브레인_셸터",
+  "no_side": { "event_alonesurvivor": "배터리가 떨어져 가는 셸터 일화 — 무엇인지(뇌를 7일까지 보관하는 냉동 창고)는 event_hightechtoy 곁 판이 담는다" },
   "versions": [
     {
       "at": "event_hightechtoy",
@@ -17,6 +18,34 @@
           "session": "W15e",
           "hash": "0b3daa16f1",
           "note": "F714 7일 보관 냉동 창고 · 지급 대상 — 뒤 쓰임(해머링 · 리버렐리오 · 바디 메이커)은 사례라 판 없음, 1판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "41f7fb7354",
+          "note": "메인만 본 독자는 ch30 d_main_30_08_e#27 · #34-36(해머링이 위험하면 머리를 떼어 복귀 — 그 대비로 트로니에게 준비시킴)에서 처음 만난다 — 니케 머리를 떼어 담아 두는 장치까지. 7일 냉동 보관이라는 정의는 메인에 끝내 나오지 않아 event_hightechtoy(이벤트) 곁 판은 until 없음"
+        }
+      ],
+      "side": true
+    },
+    {
+      "at": "ch30",
+      "text": "몸을 버려야 하는 니케의 머리를 떼어 담아 보관하는 장치. 지상 탐색에 대비해 챙겨 간다.",
+      "src": "7d7a1352a5",
+      "session": "W16b",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "4c1779d331",
+          "note": "메인만 본 독자는 ch30 d_main_30_08_e#27 · #34-36(해머링이 위험하면 머리를 떼어 복귀 — 그 대비로 트로니에게 준비시킴)에서 처음 만난다 — 니케 머리를 떼어 담아 두는 장치까지. 7일 냉동 보관이라는 정의는 메인에 끝내 나오지 않아 event_hightechtoy(이벤트) 곁 판은 until 없음"
         }
       ]
     }

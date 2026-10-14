@@ -5,7 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { SITE_DATA, dictFirst, dictRecords, flowPoints, isDict, loadSources, srcHash, stateOf, threadId } from './model.mjs';
+import { SITE_DATA, dictFirst, dictRecords, flowPoints, isDict, loadSources, srcHash, stateOf, threadFirst, threadId } from './model.mjs';
 
 /** 입력에 쓸 사이트 데이터 — 원본(loadSources) + 기록 */
 export function loadContext(dir = SITE_DATA) {
@@ -48,7 +48,8 @@ export function buildInput(subject, file, C, o = {}) {
   L.push(`# ${id} 시점별 판 입력 — 중요도 ${th.weight}`);
   L.push(`분석용 이름(결말을 아는 자리에서 쓴 것 — 판 글에 그대로 옮기지 않는다): ${th.title}`);
   L.push(`분석용 요약: ${th.text}`);
-  L.push(`처음 나온 스토리(첫 판 at): ${unitLine(th.first_unit, C)} · 마지막으로 움직인 스토리: ${unitLine(th.last_unit, C)}`);
+  const first = threadFirst(th, C);
+  L.push(`처음 나온 스토리(첫 판 at): ${unitLine(first, C)}${first !== th.first_unit ? ` — 그 앞 이벤트 · 호감도 ${unitLine(th.first_unit, C)}에서 먼저 나옴(곁 판으로)` : ''} · 마지막으로 움직인 스토리: ${unitLine(th.last_unit, C)}`);
   L.push('');
   L.push('## 흐름 — 읽는 순서. ★ = 판을 나눌 만한 자리(제기 · 처음 밝혀짐 · 회수 · 뒤집힘)');
   const byUnit = new Map();
@@ -95,7 +96,7 @@ export function buildDictInput(subject, file, C, { full = false } = {}) {
   L.push(`분석용 설명(전부 아는 자리에서 쓴 것 — 판 글에 그대로 옮기지 않는다): ${w?.note ?? t.note ?? '(없음)'}`);
   const first = dictFirst(t, C);
   const before = arr(t.meet).slice(0, Math.max(0, arr(t.meet).indexOf(first)));
-  L.push(`처음 나온 자리(첫 판 at): ${first ? unitLine(first, C) : '없음 — 판을 둘 수 없다'}${before.length ? ` · 그 앞 체크 칸 스토리: ${before.map((k) => unitLine(k, C)).join(' · ')}` : ''}`);
+  L.push(`처음 나온 자리(첫 판 at): ${first ? unitLine(first, C) : '없음 — 판을 둘 수 없다'}${before.length ? ` · 그 앞 고를 수 있는 스토리(곁 판 자리): ${before.map((k) => unitLine(k, C)).join(' · ')}` : ''}`);
   if (t.name_meet) L.push(`표준명이 처음 쓰인 자리: ${t.name_meet.map((k) => unitLine(k, C)).join(' · ')} — 그 앞은 먼저 나온 다른 이름으로 부른다`);
   for (const a of arr(t.aliases)) L.push(`다른 이름: ${a.name}${a.how ? ` (${a.how})` : ''} — ${a.never ? '쓰인 곳 없음' : a.meet ? a.meet.map((k) => unitLine(k, C)).join(' · ') : '표준명과 같이'}`);
   const ev = arr(w?.evidence);

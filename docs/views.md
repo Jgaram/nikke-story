@@ -689,7 +689,7 @@ OVER ZONE · FOOTSTEP → CH.39 · ARK GUARDIAN → CH.43 · GODDESS FALL → CH
   바뀐 체크 칸(2026-10-14): 더 — NEW YEAR, NEW SWORD · UNBREAKABLE SPHERE · BOOM! THE GHOST! · WAVE TO YOU · WORDLESS와 딸린 유실물 7, 빠짐 — WISDOM SPRING · 스노우 화이트 : 이노센트 데이즈(준필수였다). 판 다시 판정은 docs/history/2026-10.md W16a.
 - **고를 수 있는 스토리(W16b)** — `units.json` `opt`(`common.mjs isOpt` — 메인 갈래 밖 전부 = 체크 칸 + 이벤트 · 호감도). 메인 갈래(메인 챕터 · 서브퀘스트 · 유실물 · 돌발)만 차례로 본다고 친다.
   `meetList`는 첫 메인 갈래 스토리까지 이어 붙이고(처음 나온 자리), 판의 `need`는 메인 갈래만 '늘 본 것'으로 치고(`versions/model.mjs versionNeed` — C.optional), 사전 첫 판은 meet에서 **체크 칸이 아닌** 첫 스토리(`dictFirst(t, C)` — 판은 체크 칸만 곁 판으로 다시 쓴다), 인물 쌍은 opt 스토리를 따로 뗀다.
-  감상 순서 ✓ · 지남은 체크 칸이거나 팝업에서 고른 것만(`state.decided`). 이벤트 · 호감도의 판(그 스토리에 at이 있는 판)은 지금은 안 봤으면 그 앞에서 멈춘다 — 건너뛰고 뒤 판이 그 내용 없이 읽히는지 다시 보는 것은 W16b ②(SESSIONS.md).
+  감상 순서 ✓ · 지남은 체크 칸이거나 팝업에서 고른 것만(`state.decided`). 이벤트 · 호감도의 판은 뒤에 본판이 오면 곁 판이라(W16b ② — docs/annotations.md "사전 설명 판" 기준 8) 안 본 독자는 건너뛰고, 첫 판 자리는 메인 줄기에서 처음 나온 곳(`dictFirst` · `threadFirst`).
   점검: `spoiler-check.mjs --skip-all`(고를 수 있는 스토리를 다 끈 독자).
 - **종류 갈래** — `units.json` `group`(`common.mjs groupOf`): 메인 = 메인 챕터 + 서브퀘스트 · 유실물 · 돌발(서브퀘스트는 메인 — 사용자, 유실물 · 돌발도 챕터에 딸려 — Claude) · 사이드 · 주요 이벤트 · 이벤트(그 밖) · 호감도.
   이벤트 유실물 · 미니게임 · 필드 대화(erelic)는 딸린 이벤트의 갈래(사용자) — 딸린 이벤트 = 읽는 순서에서 바로 앞 이벤트(`parent`, 결정 #9). 지금 메인 191 · 사이드 5 · 주요 이벤트 21(이벤트 12 + 딸린 9) · 이벤트 71 · 호감도 193.

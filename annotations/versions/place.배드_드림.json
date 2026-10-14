@@ -1,5 +1,6 @@
 {
   "subject": "place:배드_드림",
+  "no_side": { "char:280": "세부뿐 — 로산나가 이곳에서 태어났다는 출신 이야기. 시설이 무엇인지는 D-OUTSIDERS 곁 판과 CH.39 본판이 담는다(W16b 검토)" },
   "versions": [
     {
       "at": "event_doutsiders",
@@ -17,8 +18,18 @@
           "session": "W15e",
           "hash": "1316a64277",
           "note": "event_doutsiders 03 #3–5(아우터 림 최대 환락가, 로열 로드 부자 · 중앙 정부 간부) · F779(통신 차단)로 첫 판, ch39 F2061 · U305 · U306(라이온이 단독 관리, 돈 있으면 안전, 비밀 엄수)로 관리 내막이 드러나 2판. CH.43 아이들 이야기는 세부라 판 없음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "007366929b",
+          "note": "W16b ② 곁 판 — dictFirst가 CH.39라 D-OUTSIDERS(이벤트) 판은 곁 판. CH.39 판이 아우터 림 최대 환락가 · 고위층 출입 · 라이온 관리로 넘어서 담는다 → until ch39. CH.39 판은 CH.39 기록(F2061 · U305 · U306)만으로 쓰였다"
         }
-      ]
+      ],
+      "side": true,
+      "until": "ch39"
     },
     {
       "at": "ch39",

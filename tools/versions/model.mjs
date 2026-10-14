@@ -48,13 +48,25 @@ export const subjectKind = (subject) => String(subject ?? '').split(':')[0];
 export const threadId = (subject) => (subjectKind(subject) === 'thread' ? String(subject).slice('thread:'.length) : null);
 export const isDict = (subject) => DICT_KINDS.has(subjectKind(subject));
 /**
- * 사전 항목이 처음 나온 자리 — meet(읽는 순서) 가운데 체크 칸(C.checkable — 사이드 · 주요 이벤트)이 아닌 첫 스토리. 그 앞 체크 칸을 안 골라도 여기서는 만난다.
- * meet는 W16b부터 첫 메인 갈래 스토리까지라(이벤트 · 호감도도 안 볼 수 있다) 마지막이 아니라 체크 칸이 아닌 첫 것을 찾는다 — 판은 체크 칸만 곁 판으로 다시 쓴다. 다 체크 칸이면 마지막. meet가 없으면 null
+ * 사전 항목이 처음 나온 자리 — meet(읽는 순서, 첫 메인 갈래 스토리까지) 가운데 고를 수 있는 스토리(C.optional — 체크 칸 · 이벤트 · 호감도)가 아닌 첫 스토리
+ * = 메인 갈래에서 처음 나온 곳. 그 앞 스토리를 안 골라도 여기서는 만난다 — 그 앞 이벤트 · 호감도 · 체크 칸에서 드러난 것은 곁 판(W16b ② — 기준 8).
+ * 메인 갈래에 안 나오면(이벤트 · 호감도에만) 체크 칸이 아닌 첫 스토리, 다 체크 칸이면 마지막. meet가 없으면 null
  */
 export const dictFirst = (t, C) => {
   if (!Array.isArray(t?.meet) || !t.meet.length) return null;
-  return (C?.checkable && t.meet.find((k) => !C.checkable.has(k))) || t.meet.at(-1);
+  return (C?.optional && t.meet.find((k) => !C.optional.has(k))) || (C?.checkable && t.meet.find((k) => !C.checkable.has(k))) || t.meet.at(-1);
 };
+/**
+ * 떡밥이 처음 나온 자리(첫 본판 at) — first_unit이 이벤트 · 호감도(C.skippable — 안 볼 수 있고 판을 다시 쓰지 않는 스토리)면 흐름에서 그 뒤 처음 움직인 메인 갈래 · 체크 칸 스토리(W16b ②).
+ * 그런 스토리가 없으면(이벤트 · 호감도에서만 움직이는 떡밥) first_unit
+ */
+export function threadFirst(th, C) {
+  if (!th?.first_unit || !C?.skippable?.has(th.first_unit)) return th?.first_unit ?? null;
+  const o0 = C.units.get(th.first_unit)?.order ?? -Infinity;
+  const pts = flowPoints(C.flow?.[th.id] ?? { roots: [] }).filter((p) => !C.skippable.has(p.u) && (C.units.get(p.u)?.order ?? -Infinity) > o0);
+  pts.sort((a, b) => (C.units.get(a.u)?.order ?? 0) - (C.units.get(b.u)?.order ?? 0));
+  return pts[0]?.u ?? th.first_unit;
+}
 
 /** 떡밥이 움직인 자리 — threads-flow.json 줄기의 roots[].points · echoes를 읽는 순서로 [{ r, s, u, o }] */
 export function flowPoints(flow) {
@@ -118,6 +130,8 @@ export function sourcesFrom({ units: unitList, threads, flow, targets, records =
   C.checkable = new Set([...units.values()].filter((u) => u.check).map((u) => u.key));
   // 고를 수 있는 스토리(W16b — units.json opt: 체크 칸 + 이벤트 · 호감도) — 판의 need는 메인 갈래만 '늘 본 것'으로 친다
   C.optional = new Set([...units.values()].filter((u) => u.opt || u.check).map((u) => u.key));
+  // 이벤트 · 호감도(W16b ②) — 안 볼 수 있고, 거기서만 드러난 것은 곁 판으로(본판 줄기는 이것 없이 읽혀야 한다)
+  C.skippable = new Set([...units.values()].filter((u) => u.opt && !u.check).map((u) => u.key));
   C.titled = new Map();
   for (const u of units.values()) if (titledUnit(u)) (C.titled.get(u.title) ?? C.titled.set(u.title, []).get(u.title)).push(u.key);
   C.aboutOf = new Map();
@@ -315,7 +329,12 @@ export function checkFile(f, C) {
     ats.add(v.at);
     // 곁 판(W15f) — 체크 칸 스토리에서만 드러난 것을 그 칸을 본 독자에게만. 안 본 독자는 건너뛰고(멈추지 않는다), 본 독자는 until(뒤 본판의 at — 그 내용을 다 담는 판)까지 이것을 본다
     if ('side' in v && v.side !== true) E('side는 true만');
-    if (v.side && u && C.checkable && !C.checkable.has(v.at)) E('곁 판(side)은 체크 칸 스토리(사이드 · 주요 이벤트)에만');
+    if (v.side && u && C.checkable && !(C.optional ?? C.checkable).has(v.at)) E('곁 판(side)은 고를 수 있는 스토리(사이드 · 주요 이벤트 · 이벤트 · 호감도)에만');
+    // 이벤트 · 호감도(W16b ②)의 판은 뒤에 메인 갈래 · 체크 칸 본판이 오면 곁 판이어야 한다 — 본판이면 그 스토리를 안 본 독자의 줄기가 거기서 멈춘다.
+    // 첫 판 자리(S.first — 메인 갈래에 이름이 안 나와 첫 자리가 이벤트 · 호감도인 항목, AFX 열차 테러 ← char:72)는 본판일 수밖에 없어 뺀다
+    if (!v.side && v.status !== '기각' && C.skippable?.has(v.at) && v.at !== S.first && vs.some((w) => w && w !== v && !w.side && w.status !== '기각' && !C.skippable.has(w.at) && (C.units.get(w.at)?.order ?? -1) > (u?.order ?? Infinity))) {
+      E('이벤트 · 호감도의 판인데 뒤에 메인 갈래 · 체크 칸 본판이 있다 — 곁 판(side)으로(W16b ②)');
+    }
     if ('until' in v && !v.side) E('until은 곁 판에만');
     if (v.side && v.until != null) {
       const w = vs.find((x) => x?.at === v.until && !x.side && x.status !== '기각');
@@ -357,10 +376,10 @@ export function checkFile(f, C) {
     const has = new Set(vs.filter((v) => v?.status !== '기각').map((v) => v?.at));
     const cand = new Map();
     for (const p of dictRecords(f.subject, C)) {
-      if (p.o >= firstOrder || !C.checkable.has(p.u) || has.has(p.u) || noSide[p.u] || p.rec?.kind !== 'F') continue;
+      if (p.o >= firstOrder || !(C.optional ?? C.checkable).has(p.u) || has.has(p.u) || noSide[p.u] || p.rec?.kind !== 'F') continue;
       (cand.get(p.u) ?? cand.set(p.u, []).get(p.u)).push(p.r);
     }
-    for (const [u, rs] of cand) warnings.push(`곁 판 후보: ${u}(${C.units.get(u)?.title ?? ''} — 체크 칸)에 사실 기록 ${rs.join(' · ')} — 곁 판을 쓰거나(new --at ${u} --side) 필요 없으면 no_side에 이유`);
+    for (const [u, rs] of cand) warnings.push(`곁 판 후보: ${u}(${C.units.get(u)?.title ?? ''} — ${C.checkable.has(u) ? '체크 칸' : '이벤트 · 호감도'})에 사실 기록 ${rs.join(' · ')} — 곁 판을 쓰거나(new --at ${u} --side) 필요 없으면 no_side에 이유`);
   }
   return { errors, warnings };
 }
@@ -378,7 +397,7 @@ function specOf(subject, C) {
     const first = dictFirst(t, C);
     if (!first) return { error: `처음 나온 자리(meet)가 없는 항목 — 판을 둘 수 없다(전부 보기에서만 분석용 설명) — ${subject}` };
     return {
-      dict: true, first, firstWhat: '항목이 처음 나온 자리(meet에서 체크 칸이 아닌 첫 스토리)', lastOrder: Infinity, last: null,
+      dict: true, first, firstWhat: '항목이 처음 나온 자리(meet에서 메인 갈래 첫 스토리 — dictFirst)', lastOrder: Infinity, last: null,
       moved: new Set([...dictRecords(subject, C).map((p) => p.u), ...arr(t.meet)]),
       unmoved: '이 스토리에서 항목을 다룬 기록이 없다 — 판은 항목에 대해 새로 알게 되는 자리에서 나눈다',
       limits: DICT_LIMITS, fields: [['text', DICT_LIMITS.text, DICT_LIMITS.textMax, DICT_LIMITS.sentences]],
@@ -388,7 +407,7 @@ function specOf(subject, C) {
   const th = C.threads.get(id);
   if (!th) return { error: `떡밥이 없다 — ${id}` };
   return {
-    dict: false, first: th.first_unit, firstWhat: '떡밥이 처음 나온 스토리', lastOrder: C.units.get(th.last_unit)?.order ?? Infinity, last: th.last_unit,
+    dict: false, first: threadFirst(th, C), firstWhat: '떡밥이 처음 나온 스토리(이벤트 · 호감도면 그 뒤 처음 움직인 메인 갈래 · 체크 칸 — threadFirst)', lastOrder: C.units.get(th.last_unit)?.order ?? Infinity, last: th.last_unit,
     moved: new Set(flowPoints(C.flow[id]).map((p) => p.u)),
     unmoved: '이 스토리에서 떡밥이 움직이지 않는다(제기 · 회수 · 암시가 없다) — 판은 움직인 자리에서 나눈다',
     limits: LIMITS, fields: [['title', LIMITS.title, LIMITS.titleMax, null], ['text', LIMITS.text, LIMITS.textMax, LIMITS.sentences]],

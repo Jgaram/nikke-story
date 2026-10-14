@@ -4,6 +4,7 @@
     {
       "at": "event_newyearnewsword",
       "text": "홍련의 언니 장화의 검. 장화가 죽은 뒤 홍련이 지상에서 살아남으려 써 왔고, 부서진 칼날은 한 무기 장인이 장화의 코어 조각으로 보완해 고쳤다.",
+      "side": true,
       "src": "9215ebb203",
       "session": "W16a",
       "by": "claude",
@@ -26,12 +27,13 @@
           "hash": "60da18dad6",
           "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: NEW YEAR, NEW SWORD가 체크 칸이 되어 곁 판으로, 첫 본판은 이름이 처음 나오는 체크 칸 아닌 MEMORIES TELLER(event_ce006_2 #93 — 홍련이 쓰는 검으로만 나온다)"
         }
-      ],
-      "side": true
+      ]
     },
     {
       "at": "event_ce006",
       "text": "홍련이 쓰는 검. 어떤 내력이 있는 검인지는 아직 모른다.",
+      "side": true,
+      "until": "ch48",
       "src": "9215ebb203",
       "session": "W16a",
       "by": "claude",
@@ -45,6 +47,33 @@
           "session": "W16a",
           "hash": "fd54179fe6",
           "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: NEW YEAR, NEW SWORD가 체크 칸이 되어 곁 판으로, 첫 본판은 이름이 처음 나오는 체크 칸 아닌 MEMORIES TELLER(event_ce006_2 #93 — 홍련이 쓰는 검으로만 나온다)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "0ebbd92a73",
+          "note": "W16b ②: 메인에서 이 이름은 CH.48(d_main_48_04#122-130) 장화의 말로만 나온다 — '열흘 붉은 꽃은 없다'는 말을 싫어했고 자기의 열흘은 끝났지만 하루 더 붉을 수 있었다는 것. 검이라는 것은 메인에 없어 ch48 판은 말의 뜻만. MEMORIES TELLER 판(홍련이 쓰는 검)은 곁 판, until=ch48 — 메인 판이 이 핵심을 담지 못하지만, until이 없으면 NEW YEAR, NEW SWORD 곁 판(내력 전부)을 본 독자에게도 뒤 곁 판인 이 얇은 판이 끝까지 이기므로 ch48에서 놓는다(그 뒤 NYNS 독자는 NYNS 곁 판으로 돌아감)"
+        }
+      ]
+    },
+    {
+      "at": "ch48",
+      "text": "'열흘 붉은 꽃은 없다'는 뜻의 말. 장화는 이 말이 싫었다며, 자기의 열흘은 오래전에 끝났지만 마지막으로 하루 더 붉을 수 있었다고 했다.",
+      "src": "9215ebb203",
+      "session": "W15c",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16b",
+          "hash": "046e0c8196",
+          "note": "W16b ②: 메인에서 이 이름은 CH.48(d_main_48_04#122-130) 장화의 말로만 나온다 — '열흘 붉은 꽃은 없다'는 말을 싫어했고 자기의 열흘은 끝났지만 하루 더 붉을 수 있었다는 것. 검이라는 것은 메인에 없어 ch48 판은 말의 뜻만. MEMORIES TELLER 판(홍련이 쓰는 검)은 곁 판, until=ch48 — 메인 판이 이 핵심을 담지 못하지만, until이 없으면 NEW YEAR, NEW SWORD 곁 판(내력 전부)을 본 독자에게도 뒤 곁 판인 이 얇은 판이 끝까지 이기므로 ch48에서 놓는다(그 뒤 NYNS 독자는 NYNS 곁 판으로 돌아감)"
         }
       ]
     }
