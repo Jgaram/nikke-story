@@ -6,7 +6,7 @@
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
 | handoff/facts-1.md | 사실 목록 R01 | 11,464 |
-| handoff/facts-2.md | 사실 목록 R02 | 10,912 |
+| handoff/facts-2.md | 사실 목록 R02 | 11,064 |
 | handoff/facts-3.md | 사실 목록 R03 | 10,856 |
 | handoff/facts-4.md | 사실 목록 R04–R05 | 15,609 |
 | handoff/facts-5.md | 사실 목록 R06–R09 | 18,244 |
@@ -33,16 +33,16 @@
 | handoff/facts-26.md | 사실 목록 R72–R73 | 14,577 |
 | handoff/facts-27.md | 사실 목록 R74–R75 | 19,919 |
 | handoff/facts-28.md | 사실 목록 R76–R79 | 14,286 |
-| handoff/facts-29.md | 사실 목록 R80–R83 | 19,053 |
+| handoff/facts-29.md | 사실 목록 R80–R83 | 19,212 |
 | handoff/facts-30.md | 사실 목록 R84–R88 | 12,887 |
-| handoff/facts-31.md | 사실 목록 R89–R90 | 18,585 |
+| handoff/facts-31.md | 사실 목록 R89–R90 | 18,690 |
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
 | handoff/facts-34.md | 사실 목록 R98–P1 | 12,215 |
 | handoff/questions-solved.md | 풀린 의문 97건 | 15,677 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
-| handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 18,957 |
+| handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 19,109 |
 | handoff/R02-2.md | 단위 요약 — relic:채팅로그_얼리어답터 … sub:산해진미_01 (17단위) | 13,932 |
 | handoff/R03-1.md | 단위 요약 — sub:코리_00 … relic:구시대의플레이리스트 (15단위) | 17,398 |
 | handoff/R03-2.md | 단위 요약 — ch12 … sub:음악_애호가_01 (11단위) | 11,978 |
@@ -127,7 +127,7 @@
 | handoff/R77.md | 단위 요약 — fl:ark_guardian · char:471 | 10,612 |
 | handoff/R78.md | 단위 요약 — fl:sin_editor … char:316 (4단위) | 8,473 |
 | handoff/R79.md | 단위 요약 — ch43 · relic:아무한테나말해주는거아니야.wav | 8,777 |
-| handoff/R80.md | 단위 요약 — ch44 · relic:거인을찾아서 | 12,615 |
+| handoff/R80.md | 단위 요약 — ch44 · relic:거인을찾아서 | 12,769 |
 | handoff/R81.md | 단위 요약 — fl:lie_cause_recoil … char:861 (4단위) | 8,991 |
 | handoff/R82.md | 단위 요약 — fl:enter_heaven · char:113 | 9,560 |
 | handoff/R83.md | 단위 요약 — fl:2x2_love_1ch 파트 1-6 | 4,449 |
@@ -138,7 +138,7 @@
 | handoff/R87.md | 단위 요약 — side:pretty_star | 7,702 |
 | handoff/R88.md | 단위 요약 — fl:good_world · char:620 | 6,802 |
 | handoff/R89.md | 단위 요약 — ch45 · relic:신에게닿기위한탑 | 11,912 |
-| handoff/R90.md | 단위 요약 — ch46 · relic:궤도엘리베이터음모론 | 15,742 |
+| handoff/R90.md | 단위 요약 — ch46 · relic:궤도엘리베이터음모론 | 15,842 |
 | handoff/R91.md | 단위 요약 — event_staranis1 파트 1-3 | 7,404 |
 | handoff/R92.md | 단위 요약 — event_staranis1 파트 4-6 … char:18 (4단위) | 13,100 |
 | handoff/R93.md | 단위 요약 — fl:b-side_idol … char:601 (4단위) | 7,248 |

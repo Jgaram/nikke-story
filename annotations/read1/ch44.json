@@ -592,6 +592,17 @@
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R80", "note": "R80 자체 검토 — 원문 근거 줄 대조" }]
+    },
+    {
+      "id": "F2909",
+      "text": "진에 따르면 식스오에게 싸움을 건 모란회는 크게 망가졌고, 누명을 쓰고도 아무도 믿어 주지 않아 평판이 바닥이라 일을 못 받는다 — 포그 할로우 쪽을 고치는 마무리 작업이 한창이지만 그것으로 먹고살 수는 없다",
+      "about": ["org:모란회", "person:진", "person:목단", "person:식스오", "place:포그_할로우"],
+      "evidence": [{ "scene": "d_main_44_af_05", "lines": [23, "41-45"] }],
+      "reason": "진이 목단을 말리며 하는 말(#23 · #41-45) — 포그 할로우 일 뒤 모란회의 처지. W19에서 판 근거로 더함",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W19", "note": "W19 자체 검토 — 근거 줄 · 문장 확인(판 근거로 더함)" }]
     }
   ],
   "questions": [

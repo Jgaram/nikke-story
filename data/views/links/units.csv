@@ -31,7 +31,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 30,sub:코리_00,서브퀘스트,2,1,0,0,0,3,,고립,고립,0,0,,person:코리 person:아니스 place:방주,코리 · 코리 1
 31,ch07,메인,8,17,18,2,14,15,,,,,,,person:모더니아 person:엑시아 person:토커티브 person:마리안 org:필그림 person:스노우_화이트,CHAPTER.07 재회
 32,sub:중앙_정부_공식__01,서브퀘스트,3,4,2,2,1,7,,,,0,0,,person:제인_밀러 person:네온 org:중앙_정부 person:라피 person:아니스 place:지상,중앙 정부 공식 · 중앙 정부 공식 2
-33,sub:세르반_02,서브퀘스트,3,3,4,2,2,6,,,,0,0,,person:세르반 concept:로열 person:아니스 place:지상,세르반 · 세르반 3
+33,sub:세르반_02,서브퀘스트,3,4,5,2,2,7,,,,0,0,,org:동식물_관리국 person:세르반 concept:로열 person:아니스 place:지상,세르반 · 세르반 3
 34,relic:채팅로그_얼리어답터,유실물,0,0,0,0,0,0,고립,고립,고립,0,0,,,채팅 로그_얼리어답터.txt
 35,d_ex_elevator_01,그 밖,3,5,2,0,1,7,,,,0,0,,incident:갓데스_폴 person:네온 person:라피 person:아니스 place:지상 place:방주,엘리베이터 · 엘리베이터 괴담
 36,sub:랩칠리언_04,서브퀘스트,3,3,2,2,0,6,,,고립,0,0,,person:시니스터 person:랩칠리언 org:중앙_정부 concept:랩쳐,랩칠리언 · 랩칠리언 5
@@ -193,7 +193,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 192,sub:에덴_Notice_02,서브퀘스트,2,5,7,1,4,4,,,,0,2,ch39 ch40,person:노아 person:하란 person:이사벨 person:요한 place:에덴,에덴 Notice · 에덴 Notice 3
 193,relic:특이랩쳐보고서-전,유실물,2,2,2,1,1,2,,,,1,0,ch21,concept:랩쳐,특이 랩쳐 보고서 - 전
 194,relic:특이랩쳐보고서-후,유실물,1,0,1,1,0,0,,,고립,0,0,,,특이 랩쳐 보고서 - 후
-195,ch22,메인,19,19,35,2,13,30,,,,,,,person:JohnD concept:로드_급 org:777 person:도라 person:진 org:익스터너,CHAPTER.22 침략
+195,ch22,메인,19,19,35,2,13,30,,,,,,,person:JohnD concept:로드_급 org:777 person:도라 person:진 incident:방주_테러,CHAPTER.22 침략
 196,sub:문구점_00,서브퀘스트,2,2,1,0,1,3,,,,0,1,ch30,person:문구점 person:아니스 place:방주,문구점 · 문구점 1
 197,sub:2호_쉘터_관리계정_00,서브퀘스트,2,4,5,0,3,5,,,,0,0,,person:데이파라 place:쉘터 org:구원의_성화 person:라피,2호 쉘터 관리계정 · 2호 쉘터 관리계정 1
 198,sub:할아범_01,서브퀘스트,3,4,2,1,2,6,,,,0,1,ch45,person:할아범 org:중앙_정부 person:아니스 place:방주,할아범 · 할아범 2
@@ -212,12 +212,12 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 211,char:14,호감도,2,2,2,0,1,4,,,,0,0,,org:마이티_툴즈 person:리타 person:네온,네온 : 블루 오션
 212,event_nyanyaparadise,이벤트,1,2,1,0,1,3,,,,0,0,,person:루루 person:네로 place:방주,NYA NYA PARADISE
 213,char:380,호감도,1,0,1,0,1,1,,,,0,0,,person:네로,네로
-214,ch23,메인,20,20,36,2,17,29,,,,,,,org:테트라_커넥트 place:쉘터 org:익스터너 person:길로틴 person:디젤 person:자칼,CHAPTER.23 감옥
+214,ch23,메인,20,20,36,2,17,29,,,,,,,org:테트라_커넥트 place:쉘터 incident:방주_테러 org:익스터너 person:길로틴 person:디젤,CHAPTER.23 감옥
 215,sub:상인연합_달란트_00,서브퀘스트,5,4,7,0,0,9,,,고립,0,0,,org:달란트 person:도라 person:얀 person:루피 person:아니스,상인연합 : 달란트 · 상인연합 : 달란트 1
 216,sub:콜렉터_02,서브퀘스트,3,3,4,1,2,5,,,,0,0,,person:콜렉터 place:아우터_림 person:라피 concept:랩쳐 place:방주,콜렉터 · 콜렉터 3
 217,relic:필그림조우보고서,유실물,1,1,0,0,0,2,,고립,고립,0,0,,concept:니케,필그림 조우 보고서
 218,sub:중앙정부_트라이앵글_00,서브퀘스트,6,4,7,0,1,9,,,,1,0,ch14,org:트라이앵글 person:율하 person:프리바티 place:아우터_림 org:중앙_정부 person:아니스,중앙정부 : 트라이앵글 · 중앙정부 : 트라이앵글 1
-219,ch24,메인,22,36,53,2,29,38,,,,,,,item:아틀라스_케이지 concept:마테리얼_H incident:방주_테러 place:쉘터 org:인피니티_레일 person:디젤,CHAPTER.24 추방
+219,ch24,메인,22,36,53,2,29,38,,,,,,,item:아틀라스_케이지 concept:마테리얼_H place:쉘터 incident:방주_테러 org:인피니티_레일 person:디젤,CHAPTER.24 추방
 220,sub:해결사_카페_스위티_00,서브퀘스트,5,4,4,0,0,9,,,고립,0,0,,org:카페_스위티 person:프림 person:밀크 person:네온 org:중앙_정부 person:아니스,해결사 : 카페 스위티 · 해결사 : 카페 스위티 1
 221,relic:긴급뉴스대본_FB_3_final_2.pdf,유실물,3,3,2,0,2,5,,,,1,0,ch24,org:중앙_정부 concept:랩쳐 place:방주,긴급뉴스대본_FB_3_final_2.pdf
 222,sub:중앙정부_프로토콜_00,서브퀘스트,3,2,3,0,0,5,,,고립,0,0,,place:쉘터 person:엑시아 place:방주,중앙정부 : 프로토콜 · 중앙정부 : 프로토콜 1
@@ -226,7 +226,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 225,char:350,호감도,1,1,2,0,0,2,,,고립,0,0,,person:마스트 place:지상,마스트
 226,event_seayouagain1,이벤트,9,12,16,1,5,20,,,,0,0,,place:블루워터_아일랜드 concept:크라켄 org:이지스 person:앵커 person:헬름 person:리타,"SEA, YOU, AGAIN"
 227,char:15,호감도,1,1,0,0,0,2,,고립,고립,0,0,,person:아니스,아니스 : 스파클링 서머
-228,char:351,호감도,2,5,6,0,0,7,,,고립,0,0,,org:동식물_관리국 person:앵커 person:헬름 place:어드마이어_호 person:잉그리드 concept:니케,앵커
+228,char:351,호감도,3,5,7,0,0,8,,,고립,0,0,,org:동식물_관리국 person:앵커 person:헬름 place:어드마이어_호 person:잉그리드 concept:니케,앵커
 229,char:353,호감도,1,1,2,0,0,2,,,고립,0,0,,person:헬름,헬름 : 아쿠아마린
 230,event_firstaffection,이벤트,4,4,2,0,0,8,,,고립,0,0,,person:마리안 person:네온 person:라피 person:아니스,First Affection
 231,char:810,호감도,3,3,1,0,0,6,,,고립,0,0,,person:2B org:인류연합군 person:라피 concept:랩쳐 concept:니케,2B
@@ -440,7 +440,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 439,char:860,호감도,1,0,1,0,0,1,,,고립,0,0,,person:치사토 person:슈가,치사토
 440,char:862,호감도,3,1,4,0,0,4,,,고립,0,0,,person:쿠루미 person:프림 person:트로니 person:엑시아,쿠루미
 441,char:861,호감도,1,0,1,0,0,1,,,고립,0,0,,person:타키나 person:밀크,타키나
-442,fl:enter_heaven,이벤트,15,5,16,0,8,14,,,,14,0,ch16 ch18 ch22 ch24 ch33 ch35 ch39,person:멜런 person:엘리시온_프랑카 person:엘리시온_하퍼 incident:AFX_열차_테러 incident:방주_테러 concept:아웃로,ENTER HEAVEN
+442,fl:enter_heaven,이벤트,15,5,16,0,8,14,,,,14,0,ch16 ch18 ch22 ch24 ch33 ch35 ch39,person:멜런 person:엘리시온_프랑카 person:엘리시온_하퍼 incident:AFX_열차_테러 concept:아웃로 incident:방주_테러,ENTER HEAVEN
 443,char:113,호감도,1,1,2,0,1,2,,,,0,0,,person:자칼 person:E.H. person:바이퍼 place:아우터_림,E.H.
 444,fl:2x2_love_1ch,이벤트,13,2,14,1,9,7,,,,1,0,ch44,person:에이미 place:금서고 person:아르카나 person:프리바티 place:미미르_부속_고등학교 concept:니케,2X2 LOVE 1부
 445,fl:2x2_love_2ch,이벤트,13,6,18,1,9,12,,,,0,0,,person:에이미 person:소라 person:크러스트 person:아인 person:츠바이 person:아르카나,2X2 LOVE 2부
@@ -448,14 +448,14 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 447,side:pretty_star,사이드,22,5,25,1,18,15,,,,9,3,ch04 ch08 ch33 ch34 ch40 ch45 ch46,concept:With_Nikke concept:니케포비아 org:니케_인권_위원회 person:한슨 person:프리시아 org:베스트셀러,PRETTY STAR
 448,fl:good_world,이벤트,10,6,15,0,7,12,,,,2,1,ch00 ch26 ch46,org:베일드_오더 person:레오 person:사라 person:올리버 person:총사령관 concept:PROJECT_A.D.,GOOD WORLD
 449,char:620,호감도,2,0,2,0,0,2,,,고립,0,0,,person:백학 person:크러스트,백학
-450,ch45,메인,27,6,32,2,21,20,,,,,,,place:펑크_스트리트 concept:방주_동력원 item:초거대_코어 person:엔드리스 person:이터니티 person:프레자일,CHAPTER.45 죗값
+450,ch45,메인,27,5,32,2,21,19,,,,,,,place:펑크_스트리트 concept:방주_동력원 item:초거대_코어 person:엔드리스 person:이터니티 person:프레자일,CHAPTER.45 죗값
 451,relic:신에게닿기위한탑,유실물,4,2,6,0,3,4,,,,1,0,ch43,org:V.T.C. place:궤도_엘리베이터 org:미실리스,신에게 닿기 위한 탑.txt
 452,ch46,메인,34,10,43,2,33,24,,,,,,,concept:신생_랩쳐 person:에고비스타 item:초거대_코어 person:피나 place:금서고 incident:3차_지상_탈환전,CHAPTER.46 신생
 453,relic:궤도엘리베이터음모론,유실물,4,2,6,0,3,4,,,,2,0,ch43 ch46,org:인류연합군 org:V.T.C. place:궤도_엘리베이터 org:미실리스 concept:랩쳐,궤도 엘리베이터 음모론
 454,event_staranis1,이벤트,21,7,27,2,18,13,,,,20,0,ch04 ch08 ch14 ch34 ch36 ch37 ch38 ch39 ch40 ch41,person:ELYSION_Line._0 person:MISSILIS_Line._0 person:리스 person:요요 place:아크리온_홀 concept:스마일_박스,STAR ANIS
 455,char:17,호감도,2,2,1,0,1,3,,,,0,0,,person:아니스 place:방주,아니스 : 스타
 456,char:441,호감도,3,1,2,0,0,4,,,고립,0,0,,org:오버시어 person:아비스타 person:라피 concept:니케,아비스타
-457,char:18,호감도,4,2,3,0,1,6,,,,5,0,ch43,person:프린세스 place:아우터_림 person:네온 place:방주,네온 : 비전 아이
+457,char:18,호감도,3,2,3,0,1,5,,,,5,0,ch43,person:프린세스 place:아우터_림 person:네온 place:방주,네온 : 비전 아이
 458,fl:b-side_idol,이벤트,4,2,5,2,3,5,,,,1,0,ch38,person:민트 person:프리카 place:전초기지 person:머스탱 person:아니스,B-SIDE IDOL
 459,char:600,호감도,1,1,2,0,0,2,,,고립,0,0,,person:민트,민트
 460,fl:bitter_spice,이벤트,5,2,7,1,5,4,,,,2,0,ch36 ch38,org:Twinkle_Twin_Star person:민트 person:프리카 person:머스탱 person:아니스,BITTER SPICE

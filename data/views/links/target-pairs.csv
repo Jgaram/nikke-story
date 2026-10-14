@@ -68,6 +68,7 @@ concept:헬레틱,org:메티스,concept,org,6,5,F257 F275 F276 F1379 F1527 F2737
 concept:헬레틱,org:중앙_정부,concept,org,6,5,F216 F1379 F1624 F1676 F1696 U38
 incident:아크_가디언_작전,place:방주,incident,place,6,4,F909 F940 F1691 F2359 F2360 F2365
 org:T.T.STAR,org:테트라,org,org,6,3,F1798 F2673 F2685 F2687 F2690 U258
+org:모란회,place:포그_할로우,org,place,6,3,F1257 F1260 F1263 F2909 U190 U284
 org:미실리스,place:미미르_부속_고등학교,org,place,6,3,F1071 F2516 F2524 F2527 F2528 Q330
 org:엔터_헤븐,org:중앙_정부,org,org,6,3,F371 F596 F2485 F2498 F2499 F2501
 place:방주,place:쉘터,place,place,6,4,F993 F996 F1004 F1041 F1110 U174
@@ -93,13 +94,13 @@ concept:페어리_테일,org:갓데스,concept,org,5,3,F1145 F1177 F1179 F1180 F
 concept:헬레틱,org:앱솔루트,concept,org,5,4,F257 F275 F276 F1379 F1527
 incident:2차_지상_탈환전,org:중앙_정부,incident,org,5,3,F1747 F1751 F2334 F2771 U355
 incident:랩쳐_침공,place:방주,incident,place,5,5,F329 F479 F666 F687 F695
+incident:방주_테러,place:방주,incident,place,5,3,F881 F894 F992 F993 F1022
 item:A_필러,item:하모니_큐브,item,item,5,2,F1525 F1526 F1530 F1549 U228
 item:초거대_코어,place:방주,item,place,5,3,F1755 F2581 F2606 F2620 Q346
 org:A.C.P.U.,place:방주,org,place,5,5,F189 F600 F605 F621 U133
 org:갓데스,place:궤도_엘리베이터,org,place,5,3,F1140 F1152 F1153 F1667 F2666
 org:메티스,org:카운터스,org,org,5,5,F623 F690 F701 F1527 F2738
 org:모란회,org:언더월드_퀸,org,org,5,4,F830 F953 F1263 F1264 U135
-org:모란회,place:포그_할로우,org,place,5,2,F1257 F1260 F1263 U190 U284
 org:시지_패러리스,org:저지스,org,org,5,2,E737 F850 F851 F852 F1960
 org:앱솔루트,org:카운터스,org,org,5,5,F261 F1213 F1527 F2109 Q52
 org:언더월드_퀸,org:이그조틱,org,org,5,5,F830 F886 F1514 F2087 F2819
@@ -140,6 +141,7 @@ concept:인식_칩,place:아우터_림,concept,place,4,3,F594 F595 F901 F1499
 concept:헬레틱,place:수정_지역,concept,place,4,3,F1379 F1533 F1624 F1636
 incident:2차_지상_탈환전,place:방주,incident,place,4,3,F994 F2327 U112 U352
 incident:AFX_열차_테러,org:엔터_헤븐,incident,org,4,3,F482 F596 F2500 F2501
+incident:방주_테러,org:이그조틱,incident,org,4,3,E1170 F985 F992 Q124
 item:에덴의_창,place:에덴,item,place,4,3,F2170 F2257 F2260 F2337
 item:하모니_큐브,org:포비스트,item,org,4,4,F1568 F1636 F1642 F2185
 item:하모니_큐브,place:수정_지역,item,place,4,4,F1396 F1420 F1636 F1642
@@ -220,6 +222,7 @@ incident:3차_지상_탈환전,org:중앙_정부,incident,org,3,2,F2060 F2608 Q2
 incident:AFX_열차_테러,org:엘리시온,incident,org,3,2,F1006 F2500 F2501
 incident:AFX_열차_테러,org:인피니티_레일,incident,org,3,2,F483 F484 F1006
 incident:랩쳐_침공,org:갓데스,incident,org,3,2,F682 F687 F1068
+incident:방주_테러,org:엔터_헤븐,incident,org,3,2,F991 F992 Q124
 item:유리_구두,item:하모니_큐브,item,item,3,2,F1542 F1553 F1630
 item:유리_구두,org:갓데스,item,org,3,1,F1145 F1152 F1171
 item:하모니_큐브,place:방주,item,place,3,3,F1393 F1395 F1660
@@ -272,6 +275,7 @@ concept:E2_크리스탈,org:중앙_정부,concept,org,2,2,F1525 F1897
 concept:E2_크리스탈,place:펑크_스트리트,concept,place,2,1,F2232 F2237
 concept:NIMPH,concept:다크_매터,concept,concept,2,2,F1638 F1654
 concept:NIMPH,concept:사고_전환,concept,concept,2,2,F679 F2370
+concept:NIMPH,incident:방주_테러,concept,incident,2,2,F993 F1018
 concept:NIMPH,org:앱솔루트,concept,org,2,1,F1762 F1763
 concept:NIMPH,place:방주,concept,place,2,2,F689 F993
 concept:NIMPH,place:쉘터,concept,place,2,2,F993 F1021
@@ -303,6 +307,7 @@ concept:랩쳐,place:에덴,concept,place,2,2,F862 F875
 concept:로드_급,concept:양산형_니케,concept,concept,2,2,F775 F1994
 concept:로드_급,concept:콜링_시그널,concept,concept,2,2,F700 F894
 concept:로드_급,concept:타일런트_급,concept,concept,2,2,F632 F700
+concept:로드_급,incident:방주_테러,concept,incident,2,1,F881 F894
 concept:로드_급,place:방주,concept,place,2,1,F881 F894
 concept:로드_급,place:수정_지역,concept,place,2,2,F1300 F1321
 concept:로열,place:방주,concept,place,2,2,F66 F222
@@ -358,6 +363,7 @@ concept:퍼펙트,org:중앙_정부,concept,org,2,2,F643 F906
 concept:퍼펙트,place:아우터_림,concept,place,2,2,F643 U364
 concept:페어리_테일,item:유리_구두,concept,item,2,1,F1145 F1146
 concept:페어리_테일,org:엘리시온,concept,org,2,1,F1145 F1146
+concept:헬레틱,item:아틀라스_케이지,concept,item,2,2,F341 F1448
 concept:헬레틱,org:V.T.C.,concept,org,2,2,F1670 F2363
 concept:헬레틱,org:갓데스,concept,org,2,2,F682 F2362
 concept:헬레틱,place:궤도_엘리베이터,concept,place,2,2,F2617 F2822
@@ -377,6 +383,7 @@ incident:갓데스_폴,org:중앙_정부,incident,org,2,2,F231 F1403
 incident:갓데스_폴,org:테트라,incident,org,2,2,F1746 F2545
 incident:데일리_아크_신문사_테러_사건,org:데일리_아크,incident,org,2,1,F637 F638
 incident:랩쳐_침공,place:쉘터,incident,place,2,2,F229 F287
+incident:방주_테러,place:아우터_림,incident,place,2,1,F985 F991
 incident:아크_가디언_작전,org:V.T.C.,incident,org,2,2,F2365 F2653
 incident:아크_가디언_작전,org:중앙_정부,incident,org,2,1,F2360 F2365
 incident:피사_돔_폭발_사고,org:라이프_토닉,incident,org,2,1,F616 Q87
@@ -386,6 +393,7 @@ item:브레인_셸터,org:언리미티드,item,org,2,2,F1205 F2102
 item:브레인_셸터,place:갱생관,item,place,2,2,F1744 F2089
 item:세븐스_드워프,org:갓데스,item,org,2,2,F1545 F1625
 item:아모르_테트라,org:언더월드_퀸,item,org,2,1,F1507 F1519
+item:아틀라스_케이지,org:M.M.R.,item,org,2,1,F1031 F1032
 item:유리_구두,org:엘리시온,item,org,2,1,F1145 F1146
 item:이터널_라이프,org:V.T.C.,item,org,2,2,F2403 F2694
 item:이터널_라이프,org:미실리스,item,org,2,1,F2790 U438

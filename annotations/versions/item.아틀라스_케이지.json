@@ -4,7 +4,7 @@
     {
       "at": "ch13",
       "text": "쓰러뜨린 토커티브의 파편을 거두어 넣어 둔 보관 장치.",
-      "src": "b2d2751af5",
+      "src": "da15a0a08a",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -25,14 +25,22 @@
           "session": "W17",
           "hash": "4336981fb4",
           "note": "근거 d_main_13af_03#3-4 · F1032 · d_main_24_11#9 · d_main_24_13#3-4"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W19",
+          "hash": "6a5fe96494",
+          "note": "W19 — 원문 줄 근거를 기록으로(F341 · F1031 · F1032 about에 이 항목), 글 그대로"
         }
       ],
-      "refs": ["d_main_13af_03#3-4"]
+      "refs": ["F341"]
     },
     {
       "at": "ch24",
       "text": "M.M.R.이 헬레틱과 그 파편을 가둬 두는 우리. 사로잡은 니힐리스타와 토커티브의 파편, 마테리얼 H가 이곳에 갇혀 있었다.",
-      "src": "3536db7c4b",
+      "src": "aaee616d73",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -53,9 +61,17 @@
           "session": "W17",
           "hash": "dfb3a9ffb4",
           "note": "근거 d_main_13af_03#3-4 · F1032 · d_main_24_11#9 · d_main_24_13#3-4"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W19",
+          "hash": "34220328dd",
+          "note": "W19 — 원문 줄 근거를 기록으로(F341 · F1031 · F1032 about에 이 항목), 글 그대로"
         }
       ],
-      "refs": ["F1032", "d_main_24_11#9", "d_main_24_13#3-4"]
+      "refs": ["F1031", "F1032"]
     }
   ]
 }

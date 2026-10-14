@@ -142,7 +142,7 @@
     {
       "id": "F341",
       "text": "엔더슨에 따르면 총력전은 성공으로, 지하 시설이 괴멸되고 토커티브를 처리해 파편을 아틀라스 케이지에 보관했으며 헬레틱 1체를 무력화했고, 양산형 말고는 큰 피해가 없었다",
-      "about": ["person:엔더슨", "person:토커티브", "concept:헬레틱"],
+      "about": ["person:엔더슨", "person:토커티브", "concept:헬레틱", "item:아틀라스_케이지"],
       "evidence": [{ "scene": "d_main_13af_01", "lines": ["47-48"] }, { "scene": "d_main_13af_03", "lines": [4, "10-13"] }],
       "reason": "엔더슨 보고",
       "confidence": "확실",

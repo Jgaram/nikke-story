@@ -610,6 +610,17 @@
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R90", "note": "R90 자체 검토 — 근거 줄 · 문장 확인" }]
+    },
+    {
+      "id": "F2908",
+      "text": "네온이 도로시와 라피가 같은 스쿼드가 되면 범법자 스쿼드라고 하자, 아니스는 리얼 카인드니스가 그렇지 않냐고 한다",
+      "about": ["org:리얼_카인드니스", "person:네온", "person:아니스", "person:도로시", "person:라피"],
+      "evidence": [{ "scene": "d_main_46_af_07", "lines": ["243-244"] }],
+      "reason": "면회 장면의 농담(#243-244) — 리얼 카인드니스가 본편 원문에 나오는 유일한 줄이고 구성원은 나오지 않는다. W19에서 판 근거로 더함",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W19", "note": "W19 자체 검토 — 근거 줄 · 문장 확인(판 근거로 더함)" }]
     }
   ],
   "questions": [

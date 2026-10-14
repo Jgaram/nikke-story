@@ -278,6 +278,7 @@ sub:세르반_02,sub:세르반_03,sequel,1,3,auto,0,,,33,65,서브퀘스트,서�
 sub:세르반_02,sub:세르반_03,setup_payoff,2,3,record,0,E60 Q41-2,,33,65,서브퀘스트,서브퀘스트
 sub:세르반_02,sub:세르반_03,character,1,2,auto,0,,person:세르반,33,65,서브퀘스트,서브퀘스트
 sub:세르반_02,char:190,keyword,1,2,auto,0,,concept:로열,33,96,서브퀘스트,호감도
+sub:세르반_02,char:351,keyword,1,2,auto,0,,org:동식물_관리국,33,228,서브퀘스트,호감도
 d_ex_elevator_01,ch08,character,3,1,auto,0,,person:네온 person:라피 person:아니스,35,37,그 밖,메인
 d_ex_elevator_01,ch08,keyword,1,1,auto,0,,concept:니케,35,37,그 밖,메인
 d_ex_elevator_01,sub:칠리페퍼_01,keyword,1,1,auto,0,,place:지상,35,38,그 밖,서브퀘스트
@@ -1320,7 +1321,7 @@ ch22,ch23,sequel,1,3,auto,0,,,195,214,메인,메인
 ch22,ch23,setup_payoff,1,3,record,0,Q124-2,,195,214,메인,메인
 ch22,ch23,callback,1,3,record,0,F893-2,,195,214,메인,메인
 ch22,ch23,character,5,2,auto,0,,person:E.H. person:니힐리스타 person:도반 person:바이퍼 person:잉그리드,195,214,메인,메인
-ch22,ch23,keyword,6,2,auto,0,,concept:언체인드 concept:헬레틱 org:메티스 org:엔터_헤븐 org:이그조틱 org:익스터너,195,214,메인,메인
+ch22,ch23,keyword,7,2,auto,0,,concept:언체인드 concept:헬레틱 incident:방주_테러 org:메티스 org:엔터_헤븐 org:이그조틱 org:익스터너,195,214,메인,메인
 ch22,sub:상인연합_달란트_00,character,1,2,auto,0,,person:도라,195,215,메인,서브퀘스트
 ch22,ch24,setup_payoff,1,3,record,0,Q126-2,,195,219,메인,메인
 ch22,ch24,callback,1,2,record,0,E235,,195,219,메인,메인
@@ -1467,7 +1468,7 @@ ch23,sub:중앙정부_트라이앵글_00,keyword,1,1,auto,0,,org:중앙_정부,2
 ch23,ch24,sequel,1,3,auto,0,,,214,219,메인,메인
 ch23,ch24,setup_payoff,10,3,record,0,E219 E222 E224 E225 E229 E230 E231 Q137-2 Q139-2 Q140-2,,214,219,메인,메인
 ch23,ch24,character,14,2,auto,0,,person:E.H. person:니힐리스타 person:도로시 person:도반 person:디젤 person:바이퍼 person:버닝엄 person:사쿠라 person:슈엔 person:에닉 person:유니 person:잉그리드 person:자칼 person:크로우,214,219,메인,메인
-ch23,ch24,keyword,8,2,auto,0,,concept:언체인드 concept:헬레틱 org:미실리스 org:이그조틱 org:필그림 place:쉘터 place:에덴 place:지상,214,219,메인,메인
+ch23,ch24,keyword,9,2,auto,0,,concept:언체인드 concept:헬레틱 incident:방주_테러 org:미실리스 org:이그조틱 org:필그림 place:쉘터 place:에덴 place:지상,214,219,메인,메인
 ch23,char:812,keyword,1,2,auto,0,,concept:양산형_니케,214,232,메인,호감도
 ch23,ch25,setup_payoff,2,3,record,0,Q136-2 Q141-2,,214,241,메인,메인
 ch23,ch25,keyword,1,2,auto,0,,org:갓데스,214,241,메인,메인
@@ -3280,10 +3281,9 @@ ch45,relic:신에게닿기위한탑,keyword,1,2,auto,0,,org:미실리스,450,451
 ch45,ch46,sequel,1,3,auto,0,,,450,452,메인,메인
 ch45,ch46,setup_payoff,5,3,record,0,E1084 E1088 Q335-2 Q336-2 Q340-2,,450,452,메인,메인
 ch45,ch46,callback,1,3,record,0,E1111,,450,452,메인,메인
-ch45,ch46,character,12,2,auto,0,,person:도로시 person:도반 person:라피 person:머스탱 person:버닝엄 person:스노우_화이트 person:아니스 person:아이리 person:에닉 person:요한 person:잉그리드 person:홍련,450,452,메인,메인
+ch45,ch46,character,13,2,auto,0,,person:네온 person:도로시 person:도반 person:라피 person:머스탱 person:버닝엄 person:스노우_화이트 person:아니스 person:아이리 person:에닉 person:요한 person:잉그리드 person:홍련,450,452,메인,메인
 ch45,ch46,keyword,8,2,auto,0,,concept:니케 concept:랩쳐 item:초거대_코어 org:중앙_정부 org:카운터스 place:방주 place:아우터_림 place:지상,450,452,메인,메인
 ch45,event_staranis1,keyword,1,2,auto,0,,org:엘리시온,450,454,메인,이벤트
-ch45,char:18,character,1,1,auto,0,,person:네온,450,457,메인,호감도
 ch45,fl:ark_ranger,callback,3,3,record,0,E1173 E1178 E1181,,450,462,메인,이벤트
 ch45,fl:ark_ranger,character,1,2,auto,0,,person:트로니,450,462,메인,이벤트
 ch45,ch47,character,1,2,auto,0,,person:라푼젤,450,470,메인,메인
@@ -3294,6 +3294,7 @@ ch46,relic:궤도엘리베이터음모론,keyword,4,2,auto,0,,concept:랩쳐 org
 ch46,event_staranis1,character,3,2,auto,0,,person:머스탱 person:아니스 person:에닉,452,454,메인,이벤트
 ch46,event_staranis1,keyword,5,2,auto,0,,concept:니케 org:T.T.STAR org:중앙_정부 place:방주 place:지상,452,454,메인,이벤트
 ch46,char:441,character,1,1,auto,0,,person:라피,452,456,메인,호감도
+ch46,char:18,character,1,1,auto,0,,person:네온,452,457,메인,호감도
 ch46,char:18,keyword,1,2,auto,0,,place:아우터_림,452,457,메인,호감도
 ch46,fl:ark_ranger,character,2,2,auto,0,,person:잉그리드 person:퀸,452,462,메인,이벤트
 ch46,fl:ark_ranger,keyword,3,2,auto,0,,concept:헬레틱 incident:3차_지상_탈환전 org:카운터스,452,462,메인,이벤트

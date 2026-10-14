@@ -11,7 +11,7 @@ ch01,2,org:스쿼드_04-F,org,2,0,,0,2,기록
 ch01,2,org:엘리시온,org,2,0,,2,17,기록
 ch01,2,org:중앙_정부,org,1,0,,6,67,이름
 ch01,2,org:카운터스,org,5,0,,2,32,기록
-ch01,2,person:네온,person,3,10,2,1,55,기록
+ch01,2,person:네온,person,3,10,2,1,56,기록
 ch01,2,person:라피,person,2,105,26,10,85,기록+말함
 ch01,2,person:마리안,person,12,55,13,18,20,기록+말함
 ch01,2,person:시프티,person,3,66,16,7,18,기록+말함
@@ -28,7 +28,7 @@ ch02,4,concept:랩쳐,concept,3,0,,15,142,기록+이름
 ch02,4,org:3대_기업,org,2,0,,3,6,기록
 ch02,4,org:워드리스,org,2,0,,2,3,기록
 ch02,4,org:카운터스,org,4,0,,1,32,기록
-ch02,4,person:네온,person,2,85,18,8,55,기록+말함
+ch02,4,person:네온,person,2,85,18,8,56,기록+말함
 ch02,4,person:라피,person,4,88,19,10,85,기록+말함
 ch02,4,person:미하라,person,3,13,3,9,14,기록
 ch02,4,person:슈엔,person,5,68,15,10,30,기록+말함
@@ -45,7 +45,7 @@ sub:칠리페퍼_00,5,place:방주,place,2,0,,3,171,기록
 sub:테트라_커넥트_00,6,concept:니케,concept,3,0,,7,186,기록+이름
 sub:테트라_커넥트_00,6,org:테트라,org,0,0,,5,13,이름
 sub:테트라_커넥트_00,6,org:테트라_커넥트,org,4,0,,5,3,기록+이름
-sub:테트라_커넥트_00,6,person:네온,person,0,8,40,0,55,말함
+sub:테트라_커넥트_00,6,person:네온,person,0,8,40,0,56,말함
 sub:테트라_커넥트_00,6,person:아니스,person,0,9,45,0,119,말함
 sub:콜렉터_00,7,org:중앙_정부,org,2,0,,2,67,기록
 sub:콜렉터_00,7,person:콜렉터,person,3,59,84,5,3,기록+말함
@@ -104,7 +104,7 @@ sub:트레저_헌터_01,16,person:라피,person,0,12,16,0,85,말함
 sub:트레저_헌터_01,16,person:아니스,person,1,14,19,1,119,말함
 sub:트레저_헌터_01,16,person:트레저_헌터,person,3,42,57,2,4,기록+말함
 sub:이례의_기록자_00,17,org:니푸르,org,3,0,,3,1,기록
-sub:이례의_기록자_00,17,person:네온,person,0,9,11,0,55,말함
+sub:이례의_기록자_00,17,person:네온,person,0,9,11,0,56,말함
 sub:이례의_기록자_00,17,person:아니스,person,0,9,11,1,119,말함
 sub:이례의_기록자_00,17,person:이례의_기록자,person,2,57,69,3,1,기록+말함
 sub:랩칠리언_01,18,concept:랩쳐,concept,1,0,,15,142,이름
@@ -115,7 +115,7 @@ ch05,20,concept:니케,concept,1,0,,9,186,이름
 ch05,20,concept:랩쳐,concept,0,0,,6,142,이름
 ch05,20,org:언리미티드,org,4,0,,4,6,기록
 ch05,20,org:필그림,org,5,0,,5,21,기록+이름
-ch05,20,person:네온,person,0,57,14,3,55,말함
+ch05,20,person:네온,person,0,57,14,3,56,말함
 ch05,20,person:라피,person,2,78,19,13,85,기록+말함
 ch05,20,person:루드밀라,person,7,128,31,4,11,기록+말함
 ch05,20,person:아니스,person,2,64,16,8,119,기록+말함
@@ -172,18 +172,19 @@ ch07,31,person:토커티브,person,2,0,0,6,15,기록
 ch07,31,place:방주,place,3,0,,9,171,기록+이름
 ch07,31,place:지상,place,0,0,,7,132,이름
 sub:중앙_정부_공식__01,32,org:중앙_정부,org,2,0,,6,67,기록+이름
-sub:중앙_정부_공식__01,32,person:네온,person,0,5,22,0,55,말함
+sub:중앙_정부_공식__01,32,person:네온,person,0,5,22,0,56,말함
 sub:중앙_정부_공식__01,32,person:라피,person,0,8,35,0,85,말함
 sub:중앙_정부_공식__01,32,person:아니스,person,0,10,43,2,119,말함
 sub:중앙_정부_공식__01,32,person:제인_밀러,person,3,0,0,1,3,기록
 sub:중앙_정부_공식__01,32,place:지상,place,2,0,,3,132,기록
 sub:세르반_02,33,concept:로열,concept,3,0,,1,7,기록
-sub:세르반_02,33,person:세르반,person,4,45,75,2,4,기록+말함
-sub:세르반_02,33,person:아니스,person,0,11,18,0,119,말함
+sub:세르반_02,33,org:동식물_관리국,org,2,0,,2,2,기록
+sub:세르반_02,33,person:세르반,person,5,45,75,2,4,기록+말함
+sub:세르반_02,33,person:아니스,person,1,11,18,0,119,말함
 sub:세르반_02,33,place:지상,place,0,0,,5,132,이름
 d_ex_elevator_01,35,concept:니케,concept,3,0,,8,186,기록+이름
 d_ex_elevator_01,35,incident:갓데스_폴,incident,3,0,,1,2,기록
-d_ex_elevator_01,35,person:네온,person,1,24,30,1,55,말함
+d_ex_elevator_01,35,person:네온,person,1,24,30,1,56,말함
 d_ex_elevator_01,35,person:라피,person,0,21,27,1,85,말함
 d_ex_elevator_01,35,person:아니스,person,0,34,43,3,119,말함
 d_ex_elevator_01,35,place:방주,place,1,0,,9,171,이름
@@ -194,7 +195,7 @@ sub:랩칠리언_04,36,person:랩칠리언,person,3,91,87,3,11,기록+말함
 sub:랩칠리언_04,36,person:시니스터,person,2,4,4,6,1,기록
 ch08,37,concept:니케,concept,2,0,,2,186,기록
 ch08,37,org:카운터스,org,2,0,,1,32,기록
-ch08,37,person:네온,person,0,50,16,11,55,말함
+ch08,37,person:네온,person,0,50,16,11,56,말함
 ch08,37,person:라피,person,2,31,10,4,85,기록+말함
 ch08,37,person:슈엔,person,2,46,15,0,30,기록+말함
 ch08,37,person:시프티,person,5,47,15,4,18,기록+말함
@@ -235,7 +236,7 @@ ch09,43,person:프리바티,person,2,21,4,2,11,기록
 ch09,43,place:방주,place,0,0,,10,171,이름
 ch09,43,place:아우터_림,place,2,0,,2,43,기록
 sub:미실리스_연구팀_00,44,org:미실리스,org,2,0,,5,32,기록+이름
-sub:미실리스_연구팀_00,44,person:네온,person,0,16,36,0,55,말함
+sub:미실리스_연구팀_00,44,person:네온,person,0,16,36,0,56,말함
 sub:미실리스_연구팀_00,44,person:라피,person,0,6,14,0,85,말함
 sub:미실리스_연구팀_00,44,person:볼트_MK.II,person,2,4,9,0,4,기록
 sub:미실리스_연구팀_00,44,person:아니스,person,0,18,41,3,119,말함
@@ -262,7 +263,7 @@ sub:시리얼_00,51,person:시리얼,person,2,43,67,3,2,기록+말함
 sub:시리얼_00,51,person:아니스,person,0,14,22,0,119,말함
 sub:스페이드_00,52,concept:니케,concept,3,0,,10,186,기록+이름
 sub:스페이드_00,52,concept:랩쳐,concept,0,0,,7,142,이름
-sub:스페이드_00,52,person:네온,person,0,7,11,0,55,말함
+sub:스페이드_00,52,person:네온,person,0,7,11,0,56,말함
 sub:스페이드_00,52,person:스페이드,person,3,45,69,7,1,기록+말함
 sub:스페이드_00,52,person:아니스,person,0,8,12,0,119,말함
 sub:스페이드_00,52,place:지상,place,2,0,,2,132,기록
@@ -279,7 +280,7 @@ ch11,53,person:맥스웰,person,3,83,26,1,15,기록+말함
 ch11,53,person:슈엔,person,4,14,4,5,30,기록
 ch11,53,person:시프티,person,0,32,10,6,18,말함
 ch11,53,person:잉그리드,person,3,17,5,1,37,기록
-sub:음악_애호가_00,54,person:네온,person,0,9,13,0,55,말함
+sub:음악_애호가_00,54,person:네온,person,0,9,13,0,56,말함
 sub:음악_애호가_00,54,person:뮤직_마스터,person,1,12,17,0,1,말함
 sub:음악_애호가_00,54,person:아니스,person,1,9,13,1,119,말함
 sub:음악_애호가_00,54,person:율리아,person,2,6,8,5,4,기록
@@ -363,7 +364,7 @@ relic:여자친구의편지,67,incident:랩쳐_침공,incident,4,0,,0,12,기록
 sub:미실리스_연구팀_01,68,concept:니케,concept,3,0,,5,186,기록+이름
 sub:미실리스_연구팀_01,68,concept:랩쳐,concept,1,0,,6,142,이름
 sub:미실리스_연구팀_01,68,org:미실리스,org,4,0,,5,32,기록+이름
-sub:미실리스_연구팀_01,68,person:네온,person,0,22,27,0,55,말함
+sub:미실리스_연구팀_01,68,person:네온,person,0,22,27,0,56,말함
 sub:미실리스_연구팀_01,68,person:라피,person,1,22,27,1,85,말함
 sub:미실리스_연구팀_01,68,person:볼트_MK.II,person,2,8,10,0,4,기록
 sub:미실리스_연구팀_01,68,person:아니스,person,0,31,37,0,119,말함
@@ -391,13 +392,13 @@ ch14,69,person:프리바티,person,3,77,10,6,11,기록+말함
 ch14,69,place:방주,place,3,0,,21,171,기록+이름
 ch14,69,place:전초기지,place,2,0,,3,13,기록
 ch14,69,place:지상,place,0,0,,9,132,이름
-sub:칠리페퍼_02,70,person:네온,person,0,10,11,0,55,말함
+sub:칠리페퍼_02,70,person:네온,person,0,10,11,0,56,말함
 sub:칠리페퍼_02,70,person:아니스,person,0,11,13,0,119,말함
 sub:칠리페퍼_02,70,person:칠리페퍼,person,2,60,68,3,3,기록+말함
 sub:칠리페퍼_02,70,place:전초기지,place,2,0,,2,13,기록
 relic:기후변화보고서,71,incident:랩쳐_침공,incident,4,0,,0,12,기록
 relic:인터넷BJ라이브방송녹화분,72,incident:랩쳐_침공,incident,2,0,,0,12,기록
-sub:롬_01,73,person:네온,person,0,16,21,0,55,말함
+sub:롬_01,73,person:네온,person,0,16,21,0,56,말함
 sub:롬_01,73,person:롬,person,3,36,47,9,4,기록+말함
 sub:롬_01,73,person:아니스,person,0,17,22,1,119,말함
 sub:롬_01,73,place:방주,place,0,0,,9,171,이름
@@ -416,7 +417,7 @@ ch15,75,org:달란트,org,3,0,,6,4,기록+이름
 ch15,75,org:메티스,org,4,0,,11,21,기록+이름
 ch15,75,org:미실리스,org,5,0,,14,32,기록+이름
 ch15,75,org:카운터스,org,2,0,,4,32,기록
-ch15,75,person:네온,person,0,67,14,3,55,말함
+ch15,75,person:네온,person,0,67,14,3,56,말함
 ch15,75,person:도라,person,2,64,14,5,4,기록+말함
 ch15,75,person:라피,person,0,61,13,3,85,말함
 ch15,75,person:루피,person,2,59,13,4,7,기록+말함
@@ -463,7 +464,7 @@ sub:방주_난민_03,81,person:아니스,person,0,9,15,0,119,말함
 sub:방주_난민_03,81,place:방주,place,0,0,,7,171,이름
 relic:장보기목록,82,incident:랩쳐_침공,incident,2,0,,0,12,기록
 sub:트레저_헌터_03,83,org:자원_채집_부대,org,3,0,,1,5,기록
-sub:트레저_헌터_03,83,person:네온,person,0,9,10,0,55,말함
+sub:트레저_헌터_03,83,person:네온,person,0,9,10,0,56,말함
 sub:트레저_헌터_03,83,person:트레저_헌터,person,4,65,73,4,4,기록+말함
 sub:랩칠리언_05,84,concept:랩쳐,concept,1,0,,7,142,이름
 sub:랩칠리언_05,84,org:미실리스,org,2,0,,1,32,기록
@@ -481,7 +482,7 @@ char:180,85,person:잉그리드,person,3,0,0,8,37,기록
 char:180,85,place:방주,place,3,0,,5,171,기록+이름
 char:11,86,concept:니케,concept,1,0,,5,186,이름
 char:11,86,org:엘리시온,org,2,0,,1,17,기록
-char:11,86,person:네온,person,5,277,54,20,55,기록+말함
+char:11,86,person:네온,person,5,277,54,20,56,기록+말함
 char:11,86,person:밀크,person,2,39,8,5,10,기록
 char:11,86,person:잉그리드,person,1,64,12,8,37,말함
 char:11,86,place:지상,place,0,0,,5,132,이름
@@ -655,7 +656,7 @@ char:90,123,org:카운터스,org,2,0,,2,32,기록
 char:90,123,person:슈엔,person,2,0,0,4,30,기록
 char:90,123,person:엠마,person,4,244,76,8,10,기록+말함
 char:90,123,place:지상,place,0,0,,8,132,이름
-char:160,124,person:네온,person,0,59,15,3,55,말함
+char:160,124,person:네온,person,0,59,15,3,56,말함
 char:160,124,person:미하라,person,1,60,15,8,14,말함
 char:160,124,person:아니스,person,0,87,22,11,119,말함
 char:160,124,person:유니,person,3,168,43,69,13,기록+말함
@@ -729,7 +730,7 @@ char:120,137,person:앤,person,9,0,0,64,3,기록
 event_nocallerid,138,concept:랩쳐,concept,2,0,,21,142,기록+이름
 event_nocallerid,138,incident:랩쳐_침공,incident,2,0,,1,12,기록
 event_nocallerid,138,org:중앙_정부,org,2,0,,6,67,기록+이름
-event_nocallerid,138,person:네온,person,0,65,20,5,55,말함
+event_nocallerid,138,person:네온,person,0,65,20,5,56,말함
 event_nocallerid,138,person:라피,person,1,115,35,6,85,말함
 event_nocallerid,138,person:아니스,person,0,112,34,4,119,말함
 event_nocallerid,138,person:엔더슨,person,2,37,11,1,32,기록+말함
@@ -785,7 +786,7 @@ sub:숲속요정_00,144,concept:NIMPH,concept,3,0,,5,24,기록+이름
 sub:숲속요정_00,144,person:라피,person,0,11,14,0,85,말함
 sub:숲속요정_00,144,person:숲속요정,person,3,50,63,2,1,기록+말함
 sub:숲속요정_00,144,person:아니스,person,0,12,15,0,119,말함
-sub:알콜러버_00,145,person:네온,person,0,6,12,0,55,말함
+sub:알콜러버_00,145,person:네온,person,0,6,12,0,56,말함
 sub:알콜러버_00,145,person:아니스,person,0,11,22,0,119,말함
 sub:알콜러버_00,145,person:알콜러버,person,1,30,61,2,1,말함
 ch18,146,concept:NIMPH,concept,2,0,,23,24,기록+이름
@@ -820,7 +821,7 @@ sub:테트라_커넥트_01,147,person:아니스,person,0,12,40,0,119,말함
 sub:테트라_커넥트_01,147,person:잉그리드,person,1,8,27,3,37,말함
 sub:중앙_정부_공식__02,148,concept:랩쳐,concept,1,0,,6,142,이름
 sub:중앙_정부_공식__02,148,org:중앙_정부,org,0,0,,6,67,이름
-sub:중앙_정부_공식__02,148,person:네온,person,1,16,29,2,55,말함
+sub:중앙_정부_공식__02,148,person:네온,person,1,16,29,2,56,말함
 sub:중앙_정부_공식__02,148,person:라피,person,0,13,23,0,85,말함
 sub:중앙_정부_공식__02,148,person:아니스,person,0,16,29,1,119,말함
 sub:중앙_정부_공식__02,148,person:제인_밀러,person,2,11,20,7,3,기록+말함
@@ -843,7 +844,7 @@ event_hightechtoy,151,place:방주,place,0,0,,8,171,이름
 event_hightechtoy,151,place:지상,place,0,0,,15,132,이름
 char:100,152,concept:니케,concept,0,0,,7,186,이름
 char:100,152,org:미실리스,org,1,0,,5,32,이름
-char:100,152,person:네온,person,0,31,11,1,55,말함
+char:100,152,person:네온,person,0,31,11,1,56,말함
 char:100,152,person:라플라스,person,8,173,60,49,13,기록+말함
 char:100,152,person:아니스,person,0,59,20,2,119,말함
 char:100,152,place:방주,place,1,0,,10,171,이름
@@ -879,7 +880,7 @@ event_brandnewyear,157,place:어드마이어_호,place,3,0,,18,9,기록+이름
 event_brandnewyear,157,place:지상,place,1,0,,14,132,이름
 char:260,158,concept:니케,concept,2,0,,4,186,기록
 char:260,158,concept:랩쳐,concept,2,0,,3,142,기록
-char:260,158,person:네온,person,0,79,16,7,55,말함
+char:260,158,person:네온,person,0,79,16,7,56,말함
 char:260,158,person:라피,person,2,59,12,11,85,기록+말함
 char:260,158,person:마리안,person,10,0,0,0,20,기록
 char:260,158,person:모더니아,person,0,129,26,0,6,말함
@@ -923,7 +924,7 @@ sub:미실리스_연구팀_02,162,person:센티,person,2,14,19,2,4,기록+말함
 sub:미실리스_연구팀_02,162,person:아니스,person,0,9,13,0,119,말함
 sub:롬_02,163,concept:니케,concept,0,0,,5,186,이름
 sub:롬_02,163,concept:랩쳐,concept,0,0,,5,142,이름
-sub:롬_02,163,person:네온,person,0,13,14,0,55,말함
+sub:롬_02,163,person:네온,person,0,13,14,0,56,말함
 sub:롬_02,163,person:롬,person,3,58,62,9,4,기록+말함
 sub:롬_02,163,person:아니스,person,0,16,17,0,119,말함
 sub:롬_02,163,place:방주,place,0,0,,5,171,이름
@@ -960,7 +961,7 @@ sub:미실리스_연구팀_03,167,person:아니스,person,0,13,20,0,119,말함
 sub:미실리스_연구팀_03,167,place:지상,place,2,0,,3,132,기록
 sub:데이파라_00,168,concept:랩쳐,concept,2,0,,4,142,기록
 sub:데이파라_00,168,org:구원의_성화,org,4,0,,1,5,기록
-sub:데이파라_00,168,person:네온,person,0,14,14,0,55,말함
+sub:데이파라_00,168,person:네온,person,0,14,14,0,56,말함
 sub:데이파라_00,168,person:데이파라,person,4,56,58,2,4,기록+말함
 sub:데이파라_00,168,person:라피,person,0,15,15,2,85,말함
 sub:데이파라_00,168,person:아니스,person,0,12,12,0,119,말함
@@ -1100,7 +1101,7 @@ ch21,189,concept:언체인드,concept,5,0,,40,25,기록+이름
 ch21,189,concept:헬레틱,concept,0,0,,11,40,이름
 ch21,189,incident:2차_지상_탈환전,incident,2,0,,6,5,기록+이름
 ch21,189,incident:랩쳐_침공,incident,1,0,,5,12,이름
-ch21,189,person:네온,person,2,128,12,13,55,기록+말함
+ch21,189,person:네온,person,2,128,12,13,56,기록+말함
 ch21,189,person:노아,person,5,72,7,19,9,기록
 ch21,189,person:도로시,person,2,21,2,7,31,기록
 ch21,189,person:마리안,person,2,0,0,3,20,기록
@@ -1132,6 +1133,7 @@ ch22,195,concept:로드_급,concept,2,0,,2,3,기록
 ch22,195,concept:양산형_니케,concept,1,0,,5,26,이름
 ch22,195,concept:언체인드,concept,2,0,,4,25,기록
 ch22,195,concept:헬레틱,concept,0,0,,5,40,이름
+ch22,195,incident:방주_테러,incident,3,0,,0,5,기록
 ch22,195,org:777,org,2,0,,4,4,기록
 ch22,195,org:메티스,org,3,0,,4,21,기록
 ch22,195,org:세이메이카이,org,0,0,,8,6,이름
@@ -1239,7 +1241,7 @@ event_bluewaterisland,209,concept:니케,concept,2,0,,13,186,기록+이름
 event_bluewaterisland,209,concept:랩쳐,concept,2,0,,13,142,기록+이름
 event_bluewaterisland,209,concept:크라켄,concept,0,0,,9,4,이름
 event_bluewaterisland,209,org:세라핌,org,2,0,,1,1,기록
-event_bluewaterisland,209,person:네온,person,1,445,21,44,55,말함
+event_bluewaterisland,209,person:네온,person,1,445,21,44,56,말함
 event_bluewaterisland,209,person:리타,person,3,194,9,9,8,기록
 event_bluewaterisland,209,person:메어리,person,13,714,33,57,9,기록+말함
 event_bluewaterisland,209,person:얀,person,2,114,5,6,6,기록
@@ -1249,10 +1251,10 @@ event_bluewaterisland,209,place:리페어_센터,place,4,0,,13,5,기록+이름
 event_bluewaterisland,209,place:방주,place,5,0,,21,171,기록+이름
 event_bluewaterisland,209,place:블루워터_아일랜드,place,7,0,,3,2,기록
 event_bluewaterisland,209,place:어드마이어_호,place,1,0,,10,9,이름
-char:132,210,person:네온,person,1,51,11,14,55,말함
+char:132,210,person:네온,person,1,51,11,14,56,말함
 char:132,210,person:메어리,person,5,337,69,37,9,기록+말함
 char:14,211,org:마이티_툴즈,org,0,0,,5,1,이름
-char:14,211,person:네온,person,2,265,74,42,55,기록+말함
+char:14,211,person:네온,person,2,265,74,42,56,기록+말함
 char:14,211,person:리타,person,1,83,23,17,8,말함
 event_nyanyaparadise,212,person:네로,person,7,415,65,43,2,기록+말함
 event_nyanyaparadise,212,person:루루,person,1,140,22,160,1,말함
@@ -1263,6 +1265,7 @@ ch23,214,concept:랩쳐,concept,0,0,,60,142,이름
 ch23,214,concept:양산형_니케,concept,1,0,,7,26,이름
 ch23,214,concept:언체인드,concept,2,0,,4,25,기록
 ch23,214,concept:헬레틱,concept,0,0,,9,40,이름
+ch23,214,incident:방주_테러,incident,4,0,,2,5,기록
 ch23,214,org:갓데스,org,3,0,,6,30,기록+이름
 ch23,214,org:메티스,org,1,0,,9,21,이름
 ch23,214,org:미실리스,org,3,0,,18,32,기록+이름
@@ -1320,8 +1323,8 @@ ch24,219,concept:마테리얼_H,concept,2,0,,5,3,기록+이름
 ch24,219,concept:언체인드,concept,3,0,,7,25,기록+이름
 ch24,219,concept:에블라_입자,concept,1,0,,6,9,이름
 ch24,219,concept:헬레틱,concept,1,0,,20,40,이름
-ch24,219,incident:방주_테러,incident,3,0,,8,3,기록+이름
-ch24,219,item:아틀라스_케이지,item,0,0,,5,2,이름
+ch24,219,incident:방주_테러,incident,3,0,,8,5,기록+이름
+ch24,219,item:아틀라스_케이지,item,2,0,,5,2,기록+이름
 ch24,219,org:M.M.R.,org,4,0,,18,12,기록+이름
 ch24,219,org:미실리스,org,1,0,,26,32,이름
 ch24,219,org:이그조틱,org,3,0,,9,14,기록+이름
@@ -1357,7 +1360,7 @@ ch24,219,place:에덴,place,1,0,,9,25,이름
 ch24,219,place:지상,place,0,0,,17,132,이름
 sub:해결사_카페_스위티_00,220,org:중앙_정부,org,2,0,,4,67,기록
 sub:해결사_카페_스위티_00,220,org:카페_스위티,org,2,0,,4,4,기록
-sub:해결사_카페_스위티_00,220,person:네온,person,0,10,14,1,55,말함
+sub:해결사_카페_스위티_00,220,person:네온,person,0,10,14,1,56,말함
 sub:해결사_카페_스위티_00,220,person:밀크,person,1,31,45,4,10,말함
 sub:해결사_카페_스위티_00,220,person:아니스,person,0,11,16,0,119,말함
 sub:해결사_카페_스위티_00,220,person:프림,person,1,10,14,6,7,말함
@@ -1368,7 +1371,7 @@ sub:중앙정부_프로토콜_00,222,person:엑시아,person,1,45,79,3,12,말함
 sub:중앙정부_프로토콜_00,222,place:방주,place,2,0,,1,171,기록
 sub:중앙정부_프로토콜_00,222,place:쉘터,place,2,0,,0,4,기록
 sub:코인_러시_00,223,org:테트라,org,2,0,,1,13,기록
-sub:코인_러시_00,223,person:네온,person,0,8,10,1,55,말함
+sub:코인_러시_00,223,person:네온,person,0,8,10,1,56,말함
 sub:코인_러시_00,223,person:누아르,person,2,29,38,2,7,기록+말함
 sub:코인_러시_00,223,person:블랑,person,2,24,31,4,6,기록+말함
 sub:코인_러시_00,223,person:아니스,person,1,13,17,0,119,말함
@@ -1403,13 +1406,13 @@ event_seayouagain1,226,place:어드마이어_호,place,12,0,,203,9,기록+이름
 event_seayouagain1,226,place:지상,place,0,0,,21,132,이름
 char:15,227,person:아니스,person,2,333,98,58,119,기록+말함
 char:351,228,concept:니케,concept,2,0,,4,186,기록
-char:351,228,org:동식물_관리국,org,1,0,,5,1,이름
+char:351,228,org:동식물_관리국,org,1,0,,5,2,이름
 char:351,228,person:앵커,person,9,198,47,75,5,기록+말함
 char:351,228,person:잉그리드,person,1,88,21,4,37,말함
 char:351,228,person:헬름,person,1,75,18,6,7,말함
 char:351,228,place:어드마이어_호,place,1,0,,8,9,이름
 char:353,229,person:헬름,person,4,426,84,26,7,기록+말함
-event_firstaffection,230,person:네온,person,0,27,11,6,55,말함
+event_firstaffection,230,person:네온,person,0,27,11,6,56,말함
 event_firstaffection,230,person:라피,person,1,31,12,2,85,말함
 event_firstaffection,230,person:마리안,person,5,71,28,20,20,기록+말함
 event_firstaffection,230,person:아니스,person,0,53,21,9,119,말함
@@ -1467,7 +1470,7 @@ ch25,241,org:미실리스,org,2,0,,5,32,기록+이름
 ch25,241,org:중앙_정부,org,6,0,,10,67,기록+이름
 ch25,241,org:카운터스,org,2,0,,1,32,기록
 ch25,241,org:필그림,org,1,0,,14,21,이름
-ch25,241,person:네온,person,4,168,16,13,55,기록+말함
+ch25,241,person:네온,person,4,168,16,13,56,기록+말함
 ch25,241,person:니힐리스타,person,4,27,3,18,11,기록
 ch25,241,person:도로시,person,19,247,23,40,31,기록+말함
 ch25,241,person:도반,person,3,43,4,1,8,기록
@@ -1487,7 +1490,7 @@ ch25,241,place:에덴,place,4,0,,12,25,기록+이름
 ch25,241,place:지상,place,1,0,,18,132,이름
 relic:마더웨일아종목격보고.wav,242,concept:마더_웨일,concept,1,0,,5,6,이름
 sub:산해진미_01,243,org:A.C.P.U.,org,2,0,,2,9,기록
-sub:산해진미_01,243,person:네온,person,0,13,15,0,55,말함
+sub:산해진미_01,243,person:네온,person,0,13,15,0,56,말함
 sub:산해진미_01,243,person:산해진미,person,1,59,69,3,2,말함
 sub:산해진미_01,243,person:아니스,person,0,11,13,0,119,말함
 sub:산해진미_01,243,place:지상,place,0,0,,5,132,이름
@@ -1510,7 +1513,7 @@ ch26,246,org:갓데스,org,6,0,,11,30,기록+이름
 ch26,246,org:미실리스,org,2,0,,1,32,기록
 ch26,246,org:바이스리터,org,4,0,,7,1,기록+이름
 ch26,246,org:필그림,org,2,0,,2,21,기록
-ch26,246,person:네온,person,2,89,8,10,55,기록
+ch26,246,person:네온,person,2,89,8,10,56,기록
 ch26,246,person:도로시,person,15,235,21,36,31,기록+말함
 ch26,246,person:라푼젤,person,2,7,1,2,18,기록
 ch26,246,person:라피,person,19,58,5,73,85,기록
@@ -1528,14 +1531,14 @@ ch26,246,person:크라운,person,4,48,4,6,8,기록
 ch26,246,place:방주,place,4,0,,23,171,기록+이름
 ch26,246,place:에덴,place,3,0,,10,25,기록+이름
 ch26,246,place:지상,place,0,0,,14,132,이름
-sub:로망티스트_01,247,person:네온,person,0,8,13,0,55,말함
+sub:로망티스트_01,247,person:네온,person,0,8,13,0,56,말함
 sub:로망티스트_01,247,person:라피,person,0,11,17,0,85,말함
 sub:로망티스트_01,247,person:로망티스트,person,4,32,51,3,2,기록+말함
 sub:로망티스트_01,247,person:아니스,person,0,12,19,0,119,말함
 relic:저주받은보석,248,concept:니케,concept,0,0,,9,186,이름
 relic:저주받은보석,248,concept:랩쳐,concept,0,0,,5,142,이름
 relic:저주받은보석,248,concept:마스터_급,concept,2,0,,1,1,기록
-sub:음악_애호가_01,249,person:네온,person,0,6,12,1,55,말함
+sub:음악_애호가_01,249,person:네온,person,0,6,12,1,56,말함
 sub:음악_애호가_01,249,person:라피,person,0,6,12,1,85,말함
 sub:음악_애호가_01,249,person:음악_애호가,person,0,36,69,2,2,말함
 sub:피라_00,250,person:라피,person,3,19,43,6,85,기록+말함
@@ -1589,7 +1592,7 @@ char:470,254,concept:니케,concept,0,0,,10,186,이름
 char:470,254,concept:랩쳐,concept,0,0,,10,142,이름
 char:470,254,concept:페어리_테일,concept,1,0,,9,7,이름
 char:470,254,org:갓데스,org,4,0,,17,30,기록+이름
-char:470,254,person:네온,person,0,43,13,0,55,말함
+char:470,254,person:네온,person,0,43,13,0,56,말함
 char:470,254,person:라피,person,2,0,0,4,85,기록
 char:470,254,person:레드_후드,person,11,226,66,8,26,기록+말함
 char:470,254,person:릴리바이스,person,2,0,0,6,14,기록
@@ -1710,7 +1713,7 @@ ch27,270,org:중앙_정부,org,1,0,,10,67,이름
 ch27,270,org:카운터스,org,1,0,,7,32,이름
 ch27,270,org:패스파인더,org,3,0,,2,2,기록
 ch27,270,org:해머&드릴,org,3,0,,4,2,기록
-ch27,270,person:네온,person,5,77,6,12,55,기록
+ch27,270,person:네온,person,5,77,6,12,56,기록
 ch27,270,person:도로시,person,2,0,0,1,31,기록
 ch27,270,person:라피,person,3,132,11,8,85,기록+말함
 ch27,270,person:랩칠리언,person,7,67,5,5,11,기록
@@ -1739,7 +1742,7 @@ relic:잘지내라친구,274,person:레드_후드,person,2,0,0,8,26,기록
 ch28,275,concept:랩쳐,concept,2,0,,29,142,기록+이름
 ch28,275,concept:타일런트_급,concept,0,0,,6,12,이름
 ch28,275,item:세븐스_드워프,item,2,0,,4,7,기록
-ch28,275,person:네온,person,3,104,9,20,55,기록
+ch28,275,person:네온,person,3,104,9,20,56,기록
 ch28,275,person:라피,person,11,170,15,11,85,기록+말함
 ch28,275,person:리버린,person,10,275,24,42,9,기록+말함
 ch28,275,person:시프티,person,4,61,5,4,18,기록
@@ -1750,7 +1753,7 @@ ch28,275,person:해머링,person,4,129,11,32,6,기록+말함
 ch28,275,place:방주,place,4,0,,11,171,기록+이름
 ch28,275,place:수정_지역,place,12,0,,0,14,기록
 ch28,275,place:지상,place,0,0,,6,132,이름
-sub:핸섬_커맨더_00,276,person:네온,person,0,11,10,1,55,말함
+sub:핸섬_커맨더_00,276,person:네온,person,0,11,10,1,56,말함
 sub:핸섬_커맨더_00,276,person:라피,person,1,13,12,1,85,말함
 sub:핸섬_커맨더_00,276,person:시프티,person,2,16,15,0,18,기록+말함
 sub:핸섬_커맨더_00,276,person:이안_맥스,person,3,0,0,2,2,기록
@@ -1762,7 +1765,7 @@ sub:핸섬_커맨더_01,277,place:방주,place,2,0,,4,171,기록
 sub:핸섬_커맨더_01,277,place:수정_지역,place,2,0,,0,14,기록
 sub:MMR지킴이_00,278,org:M.M.R.,org,2,0,,2,12,기록
 sub:MMR지킴이_00,278,person:MMR지킴이,person,1,78,71,2,1,말함
-sub:MMR지킴이_00,278,person:네온,person,1,14,13,1,55,말함
+sub:MMR지킴이_00,278,person:네온,person,1,14,13,1,56,말함
 sub:MMR지킴이_00,278,person:에테르,person,5,0,0,5,12,기록
 sub:MMR지킴이_00,278,place:수정_지역,place,2,0,,0,14,기록
 relic:조난일지,279,place:수정_지역,place,3,0,,0,14,기록
@@ -1898,7 +1901,7 @@ char:361,297,concept:니케,concept,0,0,,10,186,이름
 char:361,297,org:카운터스,org,0,0,,7,32,이름
 char:361,297,org:헤비그램,org,2,0,,3,1,기록
 char:361,297,person:T.A.L.O.S.,person,3,18,4,0,3,기록
-char:361,297,person:네온,person,0,61,12,2,55,말함
+char:361,297,person:네온,person,0,61,12,2,56,말함
 char:361,297,person:라피,person,1,134,27,4,85,말함
 char:361,297,person:아니스,person,0,73,15,2,119,말함
 char:361,297,person:킬로,person,5,209,42,20,3,기록+말함
@@ -2039,7 +2042,7 @@ ch32,310,place:방주,place,0,0,,6,171,이름
 ch32,310,place:에덴,place,2,0,,2,25,기록
 sub:관짝이_00,311,person:관짝이,person,1,59,34,3,3,말함
 sub:관짝이_00,311,person:그레이브,person,5,60,35,4,23,기록+말함
-sub:관짝이_00,311,person:네온,person,2,16,9,1,55,기록
+sub:관짝이_00,311,person:네온,person,2,16,9,1,56,기록
 sub:관짝이_00,311,person:신데렐라,person,3,0,0,11,26,기록
 sub:관짝이_00,311,person:아니스,person,1,30,17,2,119,말함
 sub:거울_공주_00,312,org:갓데스,org,2,0,,3,30,기록
@@ -2391,7 +2394,7 @@ ch35,358,org:엘리시온,org,2,0,,6,17,기록+이름
 ch35,358,org:카운터스,org,2,0,,2,32,기록
 ch35,358,org:포비스트,org,4,0,,8,20,기록+이름
 ch35,358,person:그레이브,person,10,114,8,16,23,기록
-ch35,358,person:네온,person,4,70,5,14,55,기록
+ch35,358,person:네온,person,4,70,5,14,56,기록
 ch35,358,person:라플라스,person,2,94,6,9,13,기록
 ch35,358,person:라피,person,13,252,17,26,85,기록+말함
 ch35,358,person:레비아탄,person,11,47,3,21,19,기록
@@ -2420,7 +2423,7 @@ ch36,360,org:오버시어,org,2,0,,17,3,기록+이름
 ch36,360,org:카운터스,org,2,0,,3,32,기록
 ch36,360,org:포비스트,org,5,0,,2,20,기록
 ch36,360,person:그레이브,person,4,54,6,5,23,기록
-ch36,360,person:네온,person,2,70,7,6,55,기록
+ch36,360,person:네온,person,2,70,7,6,56,기록
 ch36,360,person:도로시,person,2,0,0,1,31,기록
 ch36,360,person:드레이크,person,3,29,3,5,16,기록
 ch36,360,person:라플라스,person,4,57,6,14,13,기록
@@ -2537,7 +2540,7 @@ ch38,375,org:메티스,org,3,0,,14,21,기록+이름
 ch38,375,org:이지스,org,3,0,,7,4,기록+이름
 ch38,375,org:포비스트,org,2,0,,11,20,기록+이름
 ch38,375,person:글러트니,person,5,0,0,10,5,기록
-ch38,375,person:네온,person,4,91,8,6,55,기록
+ch38,375,person:네온,person,4,91,8,6,56,기록
 ch38,375,person:드레이크,person,3,47,4,24,16,기록
 ch38,375,person:라플라스,person,2,48,4,17,13,기록
 ch38,375,person:라피,person,8,155,13,13,85,기록+말함
@@ -2750,7 +2753,7 @@ ch39,396,org:필그림,org,1,0,,10,21,이름
 ch39,396,person:D.E.E.P.,person,3,0,0,2,4,기록
 ch39,396,person:E.H.,person,5,115,7,17,10,기록
 ch39,396,person:나유타,person,17,174,11,22,7,기록+말함
-ch39,396,person:네온,person,4,128,8,15,55,기록
+ch39,396,person:네온,person,4,128,8,15,56,기록
 ch39,396,person:노이즈,person,2,39,2,1,5,기록
 ch39,396,person:라이온,person,2,0,0,2,3,기록
 ch39,396,person:라피,person,6,96,6,8,85,기록
@@ -2790,7 +2793,7 @@ ch40,398,org:중앙_정부,org,0,0,,8,67,이름
 ch40,398,org:카운터스,org,0,0,,5,32,이름
 ch40,398,org:포비스트,org,5,0,,24,20,기록+이름
 ch40,398,person:나유타,person,13,158,10,19,7,기록+말함
-ch40,398,person:네온,person,4,122,8,29,55,기록
+ch40,398,person:네온,person,4,122,8,29,56,기록
 ch40,398,person:노이즈,person,2,2,0,2,5,기록
 ch40,398,person:라이온,person,4,0,0,10,3,기록
 ch40,398,person:레비아탄,person,7,67,4,28,19,기록
@@ -2966,7 +2969,7 @@ ch41,414,org:포비스트,org,8,0,,23,20,기록+이름
 ch41,414,person:#000000,person,2,104,7,0,1,기록
 ch41,414,person:D.E.E.P.,person,5,21,1,5,4,기록
 ch41,414,person:E.H.,person,4,50,3,16,10,기록
-ch41,414,person:네온,person,6,71,5,31,55,기록
+ch41,414,person:네온,person,6,71,5,31,56,기록
 ch41,414,person:라피,person,8,104,7,28,85,기록
 ch41,414,person:레비아탄,person,10,117,8,25,19,기록
 ch41,414,person:로지,person,3,0,0,8,1,기록
@@ -3112,7 +3115,7 @@ erelic:goddess_fall_mini,419,place:에덴,place,11,0,,28,25,기록+이름
 erelic:goddess_fall_mini,419,place:지상,place,0,0,,36,132,이름
 char:223,420,person:나유타,person,7,219,98,28,7,기록+말함
 char:223,420,place:지상,place,0,0,,7,132,이름
-char:331,421,person:네온,person,0,23,10,6,55,말함
+char:331,421,person:네온,person,0,23,10,6,56,말함
 char:331,421,person:차임,person,5,166,74,36,8,기록+말함
 char:331,421,person:크라운,person,2,15,7,11,8,기록
 char:262,422,person:리버렐리오,person,4,167,100,15,12,기록+말함
@@ -3214,7 +3217,7 @@ ch43,434,org:엔터_헤븐,org,2,0,,4,9,기록
 ch43,434,org:엘리시온,org,5,0,,6,17,기록+이름
 ch43,434,org:중앙_정부,org,8,0,,36,67,기록+이름
 ch43,434,person:D.E.E.P.,person,7,0,0,10,4,기록
-ch43,434,person:네온,person,10,64,5,21,55,기록
+ch43,434,person:네온,person,10,64,5,21,56,기록
 ch43,434,person:빅_마담,person,7,55,5,32,1,기록
 ch43,434,person:스톨_3세,person,23,314,26,31,1,기록+말함
 ch43,434,person:에테르,person,2,28,2,1,12,기록
@@ -3237,7 +3240,7 @@ ch44,436,concept:특수_별동대,concept,0,0,,5,5,이름
 ch44,436,concept:헬레틱,concept,1,0,,12,40,이름
 ch44,436,incident:3차_지상_탈환전,incident,2,0,,12,5,기록+이름
 ch44,436,org:갓데스,org,2,0,,4,30,기록
-ch44,436,org:모란회,org,4,0,,18,4,기록+이름
+ch44,436,org:모란회,org,5,0,,18,4,기록+이름
 ch44,436,org:세이메이카이,org,0,0,,7,6,이름
 ch44,436,org:언더월드_퀸,org,0,0,,9,9,이름
 ch44,436,org:이그조틱,org,1,0,,5,14,이름
@@ -3247,7 +3250,7 @@ ch44,436,org:중앙_정부,org,1,0,,20,67,이름
 ch44,436,org:포비스트,org,1,0,,9,20,이름
 ch44,436,org:헤도니아,org,1,0,,8,6,이름
 ch44,436,person:E.H.,person,4,62,3,6,10,기록
-ch44,436,person:네온,person,4,53,2,19,55,기록
+ch44,436,person:네온,person,4,53,2,19,56,기록
 ch44,436,person:노아,person,2,0,0,8,9,기록
 ch44,436,person:도로시,person,5,35,2,13,31,기록
 ch44,436,person:도반,person,2,35,2,6,8,기록
@@ -3260,14 +3263,14 @@ ch44,436,person:리버렐리오,person,3,31,1,18,12,기록
 ch44,436,person:리버린,person,9,104,5,49,9,기록
 ch44,436,person:릴리바이스,person,2,0,0,10,14,기록
 ch44,436,person:마리안,person,2,0,0,17,20,기록
-ch44,436,person:목단,person,6,150,7,25,9,기록
+ch44,436,person:목단,person,7,150,7,25,9,기록
 ch44,436,person:미러,person,2,0,0,1,7,기록
 ch44,436,person:버닝엄,person,11,141,6,12,14,기록
 ch44,436,person:사쿠라,person,3,86,4,12,10,기록
 ch44,436,person:세실,person,4,53,2,5,13,기록
 ch44,436,person:슈가,person,5,87,4,23,10,기록
 ch44,436,person:스노우_화이트,person,16,140,6,20,26,기록
-ch44,436,person:식스오,person,18,37,2,84,9,기록
+ch44,436,person:식스오,person,19,37,2,84,9,기록
 ch44,436,person:아니스,person,2,191,9,20,119,기록
 ch44,436,person:아이리,person,2,34,2,2,5,기록
 ch44,436,person:앨트루이아,person,7,46,2,7,2,기록
@@ -3276,7 +3279,7 @@ ch44,436,person:에테르,person,3,34,2,5,12,기록
 ch44,436,person:엔더슨,person,4,52,2,4,32,기록
 ch44,436,person:요한,person,3,37,2,5,13,기록
 ch44,436,person:지엔,person,3,20,1,2,7,기록
-ch44,436,person:진,person,2,78,4,0,4,기록
+ch44,436,person:진,person,3,78,4,0,4,기록
 ch44,436,person:퀸,person,4,0,0,40,20,기록
 ch44,436,person:파피용,person,4,36,2,8,9,기록
 ch44,436,person:프레자일,person,5,112,5,12,4,기록
@@ -3315,7 +3318,7 @@ char:861,441,person:타키나,person,0,89,43,4,2,말함
 fl:enter_heaven,442,concept:니케,concept,0,0,,12,186,이름
 fl:enter_heaven,442,concept:아웃로,concept,2,0,,8,5,기록+이름
 fl:enter_heaven,442,incident:AFX_열차_테러,incident,2,0,,2,3,기록
-fl:enter_heaven,442,incident:방주_테러,incident,0,0,,7,3,이름
+fl:enter_heaven,442,incident:방주_테러,incident,0,0,,7,5,이름
 fl:enter_heaven,442,org:언더월드_퀸,org,2,0,,2,9,기록
 fl:enter_heaven,442,org:엔터_헤븐,org,17,0,,50,9,기록+이름
 fl:enter_heaven,442,org:엘리시온,org,8,0,,23,17,기록+이름
@@ -3411,7 +3414,7 @@ ch45,450,org:일렉트릭_쇼크,org,2,0,,3,5,기록
 ch45,450,org:중앙_정부,org,2,0,,14,67,기록+이름
 ch45,450,org:카운터스,org,0,0,,6,32,이름
 ch45,450,person:E.H.,person,4,32,3,1,10,기록
-ch45,450,person:네온,person,9,93,7,32,55,기록
+ch45,450,person:네온,person,9,93,7,32,56,기록
 ch45,450,person:도로시,person,9,87,7,36,31,기록
 ch45,450,person:도반,person,2,0,0,2,8,기록
 ch45,450,person:라푼젤,person,2,0,0,1,18,기록
@@ -3420,7 +3423,7 @@ ch45,450,person:리버린,person,6,26,2,20,9,기록
 ch45,450,person:머스탱,person,5,58,5,5,27,기록
 ch45,450,person:버닝엄,person,5,38,3,0,14,기록
 ch45,450,person:스노우_화이트,person,3,10,1,2,26,기록
-ch45,450,person:식스오,person,12,19,1,66,9,기록
+ch45,450,person:식스오,person,13,19,1,66,9,기록
 ch45,450,person:아니스,person,16,144,11,63,119,기록+말함
 ch45,450,person:아르카나,person,2,42,3,8,8,기록
 ch45,450,person:아이리,person,2,39,3,14,5,기록
@@ -3461,9 +3464,10 @@ ch46,452,org:카운터스,org,1,0,,5,32,이름
 ch46,452,org:포비스트,org,5,0,,8,20,기록+이름
 ch46,452,org:필그림,org,0,0,,16,21,이름
 ch46,452,person:나유타,person,17,155,8,29,7,기록
-ch46,452,person:도로시,person,23,210,11,162,31,기록+말함
+ch46,452,person:네온,person,2,24,1,6,56,기록
+ch46,452,person:도로시,person,24,210,11,162,31,기록+말함
 ch46,452,person:도반,person,15,79,4,68,8,기록
-ch46,452,person:라피,person,3,48,3,15,85,기록
+ch46,452,person:라피,person,4,48,3,15,85,기록
 ch46,452,person:레드_슈즈,person,3,0,0,2,9,기록
 ch46,452,person:레비아탄,person,4,125,7,17,19,기록
 ch46,452,person:리버렐리오,person,4,0,0,6,12,기록
@@ -3474,7 +3478,7 @@ ch46,452,person:미러,person,20,201,11,30,7,기록+말함
 ch46,452,person:버닝엄,person,12,139,7,23,14,기록
 ch46,452,person:베히모스,person,4,41,2,5,14,기록
 ch46,452,person:스노우_화이트,person,8,153,8,40,26,기록
-ch46,452,person:아니스,person,2,42,2,18,119,기록
+ch46,452,person:아니스,person,3,42,2,18,119,기록
 ch46,452,person:아이리,person,3,28,1,4,5,기록
 ch46,452,person:에고비스타,person,6,27,1,13,2,기록
 ch46,452,person:에닉,person,4,23,1,4,22,기록
@@ -3532,7 +3536,7 @@ char:441,456,concept:니케,concept,0,0,,5,186,이름
 char:441,456,org:오버시어,org,1,0,,5,3,이름
 char:441,456,person:라피,person,0,27,11,8,85,말함
 char:441,456,person:아비스타,person,3,176,74,22,6,기록+말함
-char:18,457,person:네온,person,8,286,100,28,55,기록+말함
+char:18,457,person:네온,person,8,286,100,28,56,기록+말함
 char:18,457,person:프린세스,person,4,0,0,53,2,기록
 char:18,457,place:방주,place,0,0,,8,171,이름
 char:18,457,place:아우터_림,place,2,0,,12,43,기록+이름
@@ -3552,7 +3556,7 @@ fl:ark_ranger,462,concept:니케,concept,1,0,,22,186,이름
 fl:ark_ranger,462,concept:랩쳐,concept,0,0,,103,142,이름
 fl:ark_ranger,462,concept:헬레틱,concept,1,0,,11,40,이름
 fl:ark_ranger,462,incident:3차_지상_탈환전,incident,3,0,,2,5,기록
-fl:ark_ranger,462,incident:방주_테러,incident,2,0,,6,3,기록+이름
+fl:ark_ranger,462,incident:방주_테러,incident,2,0,,6,5,기록+이름
 fl:ark_ranger,462,item:세븐스_드워프,item,2,0,,4,7,기록
 fl:ark_ranger,462,org:A.F.F.,org,2,0,,4,1,기록
 fl:ark_ranger,462,org:메티스,org,4,0,,24,21,기록+이름
