@@ -17,7 +17,7 @@
  *   떡밥판   시작한 떡밥이 그 자리 판(fmt.threadAt)이 아닌 제목 · 요약으로 보이는 것(W15d) — 분석용 제목 · 요약 앞 20자(그 자리 글이 그것이 아닐 때) · 뒤 판의 제목 · 요약.
  *            지금 보이는 떡밥 제목들은 지우고 본다(앞 판 제목이 뒤 판 제목 속에 들 수 있다).
  *   사전     비인물 항목의 사전 설명이 그 자리 판(fmt.noteAt — W15e)이 아닌 글로 보이는 것 — 분석용 설명(world.json note) 앞 16자(그 자리 글에 들지 않을 때) ·
- *            뒤 판 설명 앞 16자. 전부 보기는 세지 않는다.
+ *            뒤 판 설명 앞 16자. 사전 설명 자리(.w-note · .rd-note)에서만 찾는다. 전부 보기는 세지 않는다.
  *   묶음     떡밥 하나를 보는 화면(떡밥 탭 흐름 — p.j, 리더 thread:J)에 그 떡밥과 이어진 줄 아직 모르는 의문 · 사실(fmt.threadBundle 밖)의 문장 앞 16자(W15d).
  *   관계     떡밥끼리 관계 설명 가운데 근거 기록을 하나도 모르는 것.
  *   대상     아직 이름이 안 나온 인물 · 항목(fmt.met 거짓)의 표준명(W15b) — 앞 글자가 낱말 안이면 세지 않는다. 스토리 제목과 같은 이름(호감도)은 --titles일 때만.
@@ -154,8 +154,12 @@ const PROBE = async (skipMain, titles, focus) => {
     }
   }
   // 사전 설명(W15e) — 그 자리 판(fmt.noteAt)이 아닌 설명(분석용 · 뒤 판)이 보이나
+  // 사전 설명이 그려지는 자리(세계 탭 .w-note · 리더 .rd-note)에서만 찾는다 — 화면 전체에서 찾으면 같은 말로 시작하는
+  // 다른 글(연대기 기준점 문장 등 — t=158 연대기의 S324와 T.T.STAR 분석용 설명)을 사전 설명으로 잘못 센다
   if (!R.all) {
     const world = await get('world');
+    const noteAll = roots.flatMap((sel) => [...(document.querySelector(sel)?.querySelectorAll('.w-note, .rd-note') ?? [])])
+      .filter(shown).map((el) => el.innerText).join('\n');
     for (const e of world.entries ?? []) {
       const t = idx.targets.get(e.id);
       if (!t) continue;
@@ -165,8 +169,8 @@ const PROBE = async (skipMain, titles, focus) => {
       const keys = [['분석용', e.note], ...vs.slice(pick + 1).map((v) => ['뒤 판', v.text])].map(([w, x]) => [w, String(fmt.prose(x ?? '') ?? '').slice(0, 16)]);
       for (const [what, k] of keys) {
         if (k.length < 12 || now.includes(k)) continue; // 그 자리 글 속에 든 것(분석용 설명 마디를 판이 그대로 쓴 것)은 보인 것이 맞다
-        const i = all.indexOf(k);
-        if (i >= 0) { hits.push(`사전 ${e.id} ${what} … ${around(i, k.length)}`); break; }
+        const i = noteAll.indexOf(k);
+        if (i >= 0) { hits.push(`사전 ${e.id} ${what} … ${noteAll.slice(Math.max(0, i - 24), i + k.length + 16).replace(/\s+/g, ' ')}`); break; }
       }
     }
   }
