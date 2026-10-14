@@ -76,7 +76,7 @@ export function eventMark(u) {
   const m = Number(String(u?.date ?? '').slice(5, 7));
   return m === 12 || m === 1 ? '신년 이벤트' : m >= 6 && m <= 8 ? '여름 이벤트' : u ? '이벤트' : '주년 · 신년 · 여름 이벤트';
 }
-export const PICKUP_HELP = (u) => (u?.pickup?.length ? `${u.pickup.join(' · ')} 모집과 함께 열린 이벤트` : '필그림 · 오버스펙 니케 첫 모집과 함께 열린 이벤트');
+export const PICKUP_HELP = (u) => (u?.pickup?.length ? `${u.pickup.join(' · ')} 모집` : '필그림 · 오버스펙 니케 모집');
 
 // ── 등급 ──
 export const GRADE = {
@@ -294,7 +294,7 @@ export const FIRST_VISIT = {
   prev: '이전 챕터',
   next: '다음 챕터',
   groups: {
-    major: { head: '주년 · 신년 · 여름 이벤트', hint: '필그림 · 오버스펙 니케 첫 모집과 함께' },
+    major: { head: '주년 · 신년 · 여름 이벤트', hint: '필그림 · 오버스펙 니케 모집' },
     side: { head: '사이드' },
     event: { head: '이벤트', fold: true },
     episode: { head: '호감도', fold: true },
