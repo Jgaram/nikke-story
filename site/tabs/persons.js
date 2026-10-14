@@ -7,7 +7,7 @@
  *   persons.json          인물 386(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
  *                         이름이 아직 안 나온 인물(fmt.met — targets.json meet)은 목록 · 도감 · 함께 나온 인물에서 빼고, 이름 · 다른 이름 · 찾기는 그 자리의 것(fmt.nameAt · aliasesAt · namesAt — W15b)
  *   persons-detail.json   등장 · 기록 · 변화가 하나라도 있는 인물 381 — { units[](등장: 스토리 · 씬 · 줄 · 말한 줄), records[](확정 기록 ID), changes[](변화: 작중 순서 seq · 측면 · 처음 모습/바뀜 · 상대 · 출시순과 반대) }
- *   persons-pairs.json    함께 나온 쌍 — by[] = [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 체크 칸 스토리 키 — 주요 이벤트 · 사이드)](처음 열 때 받는다)
+ *   persons-pairs.json    함께 나온 쌍 — by[] = [출시 시점, 범위, 같이 나온 장면, 대화한 장면, 스토리(, 체크 칸 스토리 키 — 픽업 이벤트 · 사이드)](처음 열 때 받는다)
  *   공용(idx)             units(읽는 순서 · 출시 시점) · ticks · targets(초상 · 소속) · threads · records(6MB — 열 때 받아 오면 기록 칸이 채워진다)
  *   기록 문장 · 전 → 후는 records*.json의 것을 쓴다(persons*.json에는 문장이 없다). 원문 본문은 어디에도 없다.
  *

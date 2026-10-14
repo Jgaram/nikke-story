@@ -1,5 +1,5 @@
 /**
- * W16a — 주요 이벤트(필그림 · 오버스펙 픽업 이벤트): 종류 갈래(units.json group)의 '주요 이벤트'.
+ * W16a — 픽업 이벤트(필그림 · 오버스펙 픽업 이벤트): 종류 갈래(units.json group)의 '픽업 이벤트'.
  *
  *   node tools/notices/major-events.mjs
  *
@@ -14,7 +14,7 @@
  *   - 후보 가운데 픽업 니케 이름(전체 이름 · ' : ' 앞 본래 이름 · 뒤 판 이름)이 이름표 · 대사에 든 줄이 가장 많은 이벤트 하나를 고른다.
  *     MIN_LINES줄 미만이면 아무것도 고르지 않는다(픽업 니케가 안 나오는 같은 철 이벤트 — BRAND NEW YEAR · CHERRY BLOSSOM).
  *   - 이벤트 유실물 · 미니게임 · 필드 대화(erelic:)는 딸린 이벤트를 따른다 — 내보내기(tools/site/export/common.mjs)가 읽는 순서에서 바로 앞 이벤트로 잇는다.
- * 결정 docs/decisions.md #10 · 문서 docs/views.md "주요 이벤트 · 종류 갈래".
+ * 결정 docs/decisions.md #10 · 문서 docs/views.md "픽업 이벤트 · 종류 갈래".
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -29,6 +29,26 @@ export const MAJOR_CSV = path.join(RELEASE_DIR, 'major-events.csv');
 export const COLUMNS = ['event', 'event_date', 'event_name', 'major', 'pickup', 'pickup_kind', 'pickup_date', 'lines', 'note'];
 const WINDOW = { before: 12, after: 3 };
 const MIN_LINES = 50;
+/** 게임 출시일(한국 2022-11-04) — 주년 · 반주년(annivOf)의 기준 */
+export const LAUNCH = '2022-11-04';
+const ANNIV_DAYS = 15;
+
+/**
+ * 주년 · 반주년 — 이벤트 출시일이 출시일에서 반년 단위 자리(N주년 · N.5주년) ±15일 안이면 그 수(1 · 1.5 …), 아니면 null.
+ * 기계 규칙이다: 지금 픽업 이벤트 12편 가운데 7편이 들고, 모두 공지가 그 주년(1 · 2 · 3주년 · 하프 0.5 · 1.5 · 2.5 · 3.5주년)으로 소개한다(2026-10-14 확인).
+ * @param {string} date YYYY-MM-DD
+ */
+export function annivOf(date) {
+  const d = Date.parse(`${date}T00:00:00Z`);
+  if (!Number.isFinite(d)) return null;
+  const [y, m, day] = LAUNCH.split('-').map(Number);
+  for (let half = 1; half <= 40; half++) {
+    const mark = Date.UTC(y, m - 1 + half * 6, day);
+    if (Math.abs(d - mark) <= ANNIV_DAYS * 86400e3) return half / 2;
+    if (mark - d > ANNIV_DAYS * 86400e3) break;
+  }
+  return null;
+}
 
 /** CSV 한 줄 → 칸(따옴표 칸 지원) */
 export function parseCsvLine(line) {
@@ -51,7 +71,7 @@ const readCsv = (file) => {
 };
 const cell = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : String(v));
 
-/** 주요 이벤트 표 읽기 — 내보내기 · 테스트가 쓴다. 돌려주는 것: Map(이벤트 키 → 픽업 니케 이름[]) */
+/** 픽업 이벤트 표 읽기 — 내보내기 · 테스트가 쓴다. 돌려주는 것: Map(이벤트 키 → 픽업 니케 이름[]) */
 export function loadMajorEvents(file = MAJOR_CSV) {
   const out = new Map();
   if (!fs.existsSync(file)) return out;
@@ -116,7 +136,7 @@ async function main() {
   fs.writeFileSync(MAJOR_CSV, [COLUMNS.join(','), ...out.map((r) => COLUMNS.map((c) => cell(r[c])).join(','))].join('\n') + '\n');
   const major = new Map();
   for (const r of out) if (r.major) (major.get(r.event_name) ?? major.set(r.event_name, []).get(r.event_name)).push(r.pickup);
-  console.log(`주요 이벤트 ${major.size}편 — 픽업 니케 ${picks.length}명(필그림 ${picks.filter((p) => pilgrim.has(p.name)).length} · 오버스펙 ${picks.filter((p) => !pilgrim.has(p.name)).length})`);
+  console.log(`픽업 이벤트 ${major.size}편 — 픽업 니케 ${picks.length}명(필그림 ${picks.filter((p) => pilgrim.has(p.name)).length} · 오버스펙 ${picks.filter((p) => !pilgrim.has(p.name)).length})`);
   for (const [e, ps] of major) console.log(`  ${e} ← ${ps.join(' · ')}`);
   for (const r of out.filter((x) => !x.major)) console.log(`  (뺌) ${r.event_name} ← ${r.pickup}: ${r.note}`);
   if (missing.length) console.log(`⚠ 출시 순서에 없는 오버스펙 니케: ${missing.join(' · ')}`);

@@ -362,8 +362,10 @@ NPC 이미지는 **128px 아이콘이면 충분**하다(사용자, 2026-10-10).
 |---|---|---|
 | `icon/atlas_common_corp/icn_corp_0N.png` | 128² | 01 엘리시온 · 02 미실리스 · 03 테트라 · 04 필그림 · 05 앱노멀 — 사이트 번들 `icon-*.js`의 대응 |
 | `icon/atlas_common_corp/img_logo_{corp 소문자}.png` | 400² | 글자 든 로고 |
+| `icon/atlas_common_corp/icn_corp_0N_os.png` | 128² | 오버스펙 마크(2026-10-14) — 01 · 02 · 03만(기업 마크 + 수리검 4꼭지 별). 로고는 `img_logo_elysion_os` 등. 04 · 05는 404. 사이트는 받지 않고 별 모양만 그려 쓴다(views.md "스토리 종류 아이콘") |
 | `icon/squad/{squad_detail.resource_id}.png` | 256² (`icn_absolut` 320×160) | 사이트 화면은 안 쓰지만 CDN에 있다. 5종 확인 |
 
+- 함정: `icn_corp_overspec.png`는 있지만 앱노멀 마크(`icn_corp_05`)와 같은 파일, `img_logo_overspec`는 필그림 로고다 — 오버스펙 마크가 아니다. 블라링크 사이트는 오버스펙 마크를 쓰지 않는다(번들 `icon-*.js`는 01–05뿐). 요청(2026-10-14): CDN 이미지 29(404 20) · 블라링크 페이지 1 · 번들 7 — 한 번에 하나, 1초 간격(번들 첫 받기는 간격 없이 하나).
 - 사이트 번들의 경로 함수: `ICONS_URL({path,name})` → `/icon/{path}/{name}.png|webp`. 다른 아틀라스는 `atlas_common_class`(클래스 · 원소 · 버스트) · `atlas_common_grade`. 스쿼드 경로는 번들에 없어 추측으로 찾았다(`icon/squad/` — `atlas_common_squad` 등은 404).
 - nikke-db에는 `images/manufacturer/icn_corp_{elysion|missilis|pilgrim|tetraline}.png` 4개뿐(앱노멀 · 스쿼드 없음) — 쓰지 않는다.
 - **한계**: 게임 데이터는 실장 니케의 **현재** 소속만 준다. 비실장 인물의 소속과 작중 소속 이동은 원문 해석 기록(사실 · 변화 D `소속`)에서 와야 한다.

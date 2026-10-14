@@ -3,9 +3,9 @@
  *
  *   units.json     읽기 단위 481(돌발 제외, 엘리베이터 포함 — data/views/timeline/units.csv의 집합)
  *                  호감도는 face — 그 스토리의 니케 판 아이콘(이격 · 코스튬도 그 판 그림, site/img/people/{face}.png — 받은 것만)
- *                  group — 종류 갈래(W16a, groupOf): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(주요 이벤트) · event · episode
- *                  주요 이벤트는 pickup(픽업 니케 이름 — data/release/major-events.csv), 이벤트 유실물은 parent(딸린 이벤트 — 읽는 순서에서 바로 앞 이벤트)
- *                  check: 1 — 체크 칸 스토리(사이드 · 주요 이벤트와 그 유실물 — 여기까지 읽음 팝업에서 메인과 따로 고르고, 판을 다시 쓰는 스토리, W16a). 체크 칸 규칙은 이 칸 하나다(state.js · versions · persons가 읽는다)
+ *                  group — 종류 갈래(W16a, groupOf): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(픽업 이벤트) · event · episode
+ *                  픽업 이벤트는 pickup(픽업 니케 이름 — data/release/major-events.csv) · anniv(주년 · 반주년 수, annivOf), 이벤트 유실물은 parent(딸린 이벤트 — 읽는 순서에서 바로 앞 이벤트)
+ *                  check: 1 — 체크 칸 스토리(사이드 · 픽업 이벤트와 그 유실물 — 여기까지 읽음 팝업에서 메인과 따로 고르고, 판을 다시 쓰는 스토리, W16a). 체크 칸 규칙은 이 칸 하나다(state.js · versions · persons가 읽는다)
  *                  opt: 1 — 고를 수 있는 스토리(메인 갈래가 아닌 것 전부 — check에 이벤트 · 호감도를 더한 것, W16b). 안 고르면 출시 순서(t)를 따르고, 안 봄으로 고르면 가린다
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
@@ -24,7 +24,7 @@ import fs from 'node:fs';
 import { kindOfKey } from '../../records/order.mjs';
 import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
 import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
-import { loadMajorEvents } from '../../notices/major-events.mjs';
+import { annivOf, loadMajorEvents } from '../../notices/major-events.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -49,7 +49,7 @@ export function kindId(key) {
 
 /**
  * 종류 갈래(W16a — 사용자 2026-10-14: 서브퀘스트는 메인에, 이벤트 유실물 · 미니게임은 그 이벤트에).
- * 유실물 · 돌발(엘리베이터)도 메인 챕터에 딸려 메인. major = 주요 이벤트 표에 든 이벤트와 그 이벤트 유실물.
+ * 유실물 · 돌발(엘리베이터)도 메인 챕터에 딸려 메인. major = 픽업 이벤트 표에 든 이벤트와 그 이벤트 유실물.
  * @param {string} kind kindId
  * @param {string} key 단위 키 @param {string|undefined} parent 이벤트 유실물의 딸린 이벤트 @param {Map} majors loadMajorEvents()
  */
@@ -61,7 +61,7 @@ export function groupOf(kind, key, parent, majors) {
   return undefined;
 }
 
-/** 체크 칸 스토리인가(W16a, 사용자 2026-10-14) — 종류 갈래가 사이드 · 주요 이벤트(유실물 · 미니게임은 딸린 이벤트를 따라 major). 메인은 슬라이더, 그 밖은 t를 따른다 */
+/** 체크 칸 스토리인가(W16a, 사용자 2026-10-14) — 종류 갈래가 사이드 · 픽업 이벤트(유실물 · 미니게임은 딸린 이벤트를 따라 major). 메인은 슬라이더, 그 밖은 t를 따른다 */
 export const isCheck = (group) => group === 'side' || group === 'major';
 /** 고를 수 있는 스토리인가(W16b, 사용자 2026-10-14) — 메인 갈래(메인 챕터 · 서브퀘스트 · 유실물 · 돌발) 말고 전부. 메인만 차례로 본다고 친다 */
 export const isOpt = (group) => isCheck(group) || group === 'event' || group === 'episode';
@@ -244,13 +244,16 @@ export async function run(ctx) {
   });
   // 종류 갈래(W16a) — 이벤트 유실물은 읽는 순서에서 바로 앞 이벤트에 딸린다(docs/decisions.md #9 '그 이벤트 바로 뒤')
   const majors = loadMajorEvents();
-  for (const k of majors.keys()) if (!units.some((u) => u.key === k)) warn({ where: 'major-events', msg: `주요 이벤트 ${k}가 단위에 없다 — node tools/notices/major-events.mjs` });
+  for (const k of majors.keys()) if (!units.some((u) => u.key === k)) warn({ where: 'major-events', msg: `픽업 이벤트 ${k}가 단위에 없다 — node tools/notices/major-events.mjs` });
   let lastEvent = null;
   for (const u of [...units].sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9))) {
     if (u.kind === 'event') lastEvent = u.key;
     if (u.kind === 'erelic') u.parent = lastEvent ?? undefined;
     u.group = groupOf(u.kind, u.key, u.parent, majors);
-    if (u.kind === 'event' && majors.has(u.key)) u.pickup = majors.get(u.key);
+    if (u.kind === 'event' && majors.has(u.key)) {
+      u.pickup = majors.get(u.key);
+      u.anniv = (u.date && annivOf(u.date)) || undefined; // 주년 · 반주년(1 · 1.5 …) — 케이크 표시
+    }
     if (isCheck(u.group)) u.check = 1;
     if (isOpt(u.group)) u.opt = 1;
   }

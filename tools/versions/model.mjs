@@ -5,7 +5,7 @@
  * 파일 = annotations/versions/<대상 파일 이름>.json — { subject: 'thread:J1', versions: [판 …] }. 판은 읽는 순서대로
  *   { at, title, text, src, session, by, date, status, reviews[] }
  *   at   = 이 판이 보이기 시작하는 스토리(단위 키). 화면은 앞 판들의 at까지 다 본(seen) 판 가운데 가장 뒤 판을 고른다(fmt.versionAt) —
- *          체크 칸 스토리(사이드 · 주요 이벤트)를 안 고른 독자는 그 at의 판에서 멈춘다(뒤 판은 앞 판들의 내용 위에 쓴다).
+ *          체크 칸 스토리(사이드 · 픽업 이벤트)를 안 고른 독자는 그 at의 판에서 멈춘다(뒤 판은 앞 판들의 내용 위에 쓴다).
  *          첫 판의 at은 그 떡밥이 처음 나온 스토리(threads.json first_unit) — 그 앞에서는 떡밥이 '아직 나오지 않음'.
  *   src  = 쓸 때 본 떡밥 흐름의 지문 — at까지(읽는 순서) 떡밥이 움직인 자리(threads-flow.json points · echoes의 기록 · 단계 · 스토리).
  *          기록이 바뀌어(2회독 바로잡기 · 신작) at 앞의 흐름이 달라지면 '낡음' — 내보내기가 그 판부터 빼고 화면은 그 앞 판으로 돌아간다(덜 아는 쪽이라 새지 않는다).
@@ -126,7 +126,7 @@ export function sourcesFrom({ units: unitList, threads, flow, targets, records =
   C.targetMap = new Map(C.targets.map((t) => [t.id, t]));
   C.names = nameIndex(C.targets, units);
   C.nameUnits = nameUnits(C.targets);
-  // 체크 칸 스토리(사이트 state.checkable과 같다 — units.json check: 사이드 · 주요 이벤트, W16a) · 제목으로 불리는 스토리(같은 제목은 묶어서)
+  // 체크 칸 스토리(사이트 state.checkable과 같다 — units.json check: 사이드 · 픽업 이벤트, W16a) · 제목으로 불리는 스토리(같은 제목은 묶어서)
   C.checkable = new Set([...units.values()].filter((u) => u.check).map((u) => u.key));
   // 고를 수 있는 스토리(W16b — units.json opt: 체크 칸 + 이벤트 · 호감도) — 판의 need는 메인 갈래만 '늘 본 것'으로 친다
   C.optional = new Set([...units.values()].filter((u) => u.opt || u.check).map((u) => u.key));
@@ -247,7 +247,7 @@ export function namesIn(text, names) {
 
 /**
  * 판을 보려면 봐야 하는 스토리 묶음(W15f) — 글(제목 · 요약)에 든 대상 이름 · 스토리 이름마다 '그것을 아는 스토리' 묶음, 판의 at들만 보고
- * 고를 수 있는 스토리(사이드 · 주요 이벤트 · 이벤트 · 호감도 — 게임에서 아무 때나 보고, 안 볼 수도 있다 — W16b)를 안 고른 독자도 늘 아는 묶음은 뺀다.
+ * 고를 수 있는 스토리(사이드 · 픽업 이벤트 · 이벤트 · 호감도 — 게임에서 아무 때나 보고, 안 볼 수도 있다 — W16b)를 안 고른 독자도 늘 아는 묶음은 뺀다.
  * 늘 아는 것 = 이 판의 at들 + 메인 갈래 at의 자리까지 메인 갈래 스토리(메인은 차례로 본다).
  * lateNames는 읽는 순서로만 재서, 앞 체크 칸 스토리에서만 먼저 쓰인 이름(J1 GODDESS FALL 판의 '퀸 인자' ← LAST KINGDOM)을 놓친다 — 화면 fmt.versionAt이 이것으로 멈춘다.
  * @param {string[]} texts 판의 제목 · 요약
@@ -329,7 +329,7 @@ export function checkFile(f, C) {
     ats.add(v.at);
     // 곁 판(W15f) — 체크 칸 스토리에서만 드러난 것을 그 칸을 본 독자에게만. 안 본 독자는 건너뛰고(멈추지 않는다), 본 독자는 until(뒤 본판의 at — 그 내용을 다 담는 판)까지 이것을 본다
     if ('side' in v && v.side !== true) E('side는 true만');
-    if (v.side && u && C.checkable && !(C.optional ?? C.checkable).has(v.at)) E('곁 판(side)은 고를 수 있는 스토리(사이드 · 주요 이벤트 · 이벤트 · 호감도)에만');
+    if (v.side && u && C.checkable && !(C.optional ?? C.checkable).has(v.at)) E('곁 판(side)은 고를 수 있는 스토리(사이드 · 픽업 이벤트 · 이벤트 · 호감도)에만');
     // 이벤트 · 호감도(W16b ②)의 판은 뒤에 메인 갈래 · 체크 칸 본판이 오면 곁 판이어야 한다 — 본판이면 그 스토리를 안 본 독자의 줄기가 거기서 멈춘다.
     // 첫 판 자리(S.first — 메인 갈래에 이름이 안 나와 첫 자리가 이벤트 · 호감도인 항목, AFX 열차 테러 ← char:72)는 본판일 수밖에 없어 뺀다
     if (!v.side && v.status !== '기각' && C.skippable?.has(v.at) && v.at !== S.first && vs.some((w) => w && w !== v && !w.side && w.status !== '기각' && !C.skippable.has(w.at) && (C.units.get(w.at)?.order ?? -1) > (u?.order ?? Infinity))) {

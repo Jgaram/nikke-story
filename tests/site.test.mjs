@@ -210,6 +210,10 @@ test('스토리 종류 아이콘 — style.css가 가리키는 그림이 site/im
   const css = fs.readFileSync(path.join(ROOT, 'site/style.css'), 'utf8');
   const rules = [...css.matchAll(/\.kind-icon\[data-kind="(\w+)"\][^}]*url\(([^)]+)\)/g)];
   // 호감도는 ::after 안의 마스크(둥근 바탕 위 실루엣)라 같은 식에 같이 걸린다
-  assert.deepEqual(rules.map((m) => m[1]).sort(), ['elevator', 'episode', 'erelic', 'event', 'relic', 'side', 'sub']);
+  assert.deepEqual([...new Set(rules.map((m) => m[1]))].sort(), ['elevator', 'episode', 'erelic', 'event', 'relic', 'side', 'sub']);
   for (const [, kind, url] of rules) assert.ok(fs.existsSync(path.join(ROOT, 'site', url)), `${kind}: ${url} 없음`);
+  // 픽업 이벤트 ✦ · 주년 케이크 배지(.kind-cake)까지 — img/kinds/를 가리키는 그림은 모두 있다
+  const all = [...css.matchAll(/url\((img\/kinds\/[^)]+)\)/g)].map((m) => m[1]);
+  for (const f of ['img/kinds/pickup.svg', 'img/kinds/cake.svg', 'img/kinds/cake-half.svg']) assert.ok(all.includes(f), `${f}를 쓰지 않는다`);
+  for (const url of all) assert.ok(fs.existsSync(path.join(ROOT, 'site', url)), `${url} 없음`);
 });

@@ -1,5 +1,5 @@
 /**
- * 사이트 여기까지 읽음(state.js) — 메인 위치 t + 체크 칸(사이드 · 주요 이벤트 — units.json check) 예외 x로 스토리 · 기록을 가리는 규칙.
+ * 사이트 여기까지 읽음(state.js) — 메인 위치 t + 체크 칸(사이드 · 픽업 이벤트 — units.json check) 예외 x로 스토리 · 기록을 가리는 규칙.
  * 브라우저 전역(location · history · localStorage)은 최소로 흉내 낸다.
  *
  *   node --test tests/site-state.test.mjs
@@ -16,7 +16,7 @@ globalThis.window = { addEventListener() {} };
 const state = await import('../site/lib/state.js');
 const fmt = await import('../site/lib/format.js');
 
-// 메인 셋(10 · 20 · 30) · 주요 이벤트 둘(15 · 25)과 ev_a에 딸린 유실물 · 그 밖 이벤트 하나(18 — opt 없음) · 사이드 하나(22) · 호감도 둘(12 · 28 — 고를 수 있음, W16b)
+// 메인 셋(10 · 20 · 30) · 픽업 이벤트 둘(15 · 25)과 ev_a에 딸린 유실물 · 그 밖 이벤트 하나(18 — opt 없음) · 사이드 하나(22) · 호감도 둘(12 · 28 — 고를 수 있음, W16b)
 const units = new Map([
   ['ch01', { key: 'ch01', kind: 'main', tick: 10 }],
   ['ch02', { key: 'ch02', kind: 'main', tick: 20 }],
@@ -40,7 +40,7 @@ test('예외가 없으면 출시 자리 규칙과 같다', () => {
   assert.deepEqual([...units.keys()].filter(state.checkable), ['ev_a', 'ev_a_lost', 'ev_b', 'semi'], '척추 · 준필수라도 check가 없으면 체크 칸이 아니다(ev_c)');
 });
 
-test('사이드 · 주요 이벤트는 체크 칸 — 메인만 보고 뒤늦게 챙기는 사람(메인 끝까지 · 사이드 · 주요 이벤트 모두 안 봄), 유실물은 딸린 이벤트를 따른다', () => {
+test('사이드 · 픽업 이벤트는 체크 칸 — 메인만 보고 뒤늦게 챙기는 사람(메인 끝까지 · 사이드 · 픽업 이벤트 모두 안 봄), 유실물은 딸린 이벤트를 따른다', () => {
   state.set({ t: 30, x: { ev_a: false, ev_b: false, semi: false } });
   const R = state.reading();
   assert.deepEqual(['ch03', 'ev_a', 'ev_a_lost', 'ev_b', 'semi', 'ev_c'].map(R.seen), [true, false, false, false, false, true]);

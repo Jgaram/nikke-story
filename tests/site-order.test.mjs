@@ -15,7 +15,7 @@ import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
 import { readCsv } from '../tools/site/lib.mjs';
-import { loadMajorEvents } from '../tools/notices/major-events.mjs';
+import { annivOf, loadMajorEvents } from '../tools/notices/major-events.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', f), 'utf8'));
@@ -178,10 +178,10 @@ test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)�
   assert.equal(ghostKeys(mains, order.pre, pass).size, 0);
 });
 
-test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 이벤트 · 사이드는 주요 이벤트 · 사이드, 이벤트 유실물은 딸린 이벤트를 따른다', () => {
+test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 이벤트 · 사이드는 픽업 이벤트 · 사이드, 이벤트 유실물은 딸린 이벤트를 따른다', () => {
   const units = new Map(unitsJson.map((u) => [u.key, u]));
   const majors = loadMajorEvents();
-  assert.ok(majors.size >= 12, `주요 이벤트 ${majors.size}`);
+  assert.ok(majors.size >= 12, `픽업 이벤트 ${majors.size}`);
   for (const u of unitsJson) assert.ok(['main', 'side', 'major', 'event', 'episode'].includes(u.group), `${u.key}: 갈래 ${u.group}`);
   for (const u of unitsJson) {
     if (['main', 'sub', 'relic', 'elevator'].includes(u.kind)) assert.equal(u.group, 'main', u.key);
@@ -194,17 +194,29 @@ test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에
       assert.equal(u.group, p.group, `${u.key}: 이벤트의 갈래`);
     }
   }
-  // 지금 판정의 척추(필수 이벤트 · 사이드)는 다 주요 이벤트 아니면 사이드다(2026-10-14 조사)
+  // 지금 판정의 척추(필수 이벤트 · 사이드)는 다 픽업 이벤트 아니면 사이드다(2026-10-14 조사)
   for (const s of order.spine) { const u = units.get(s.key); if (u.kind !== 'main') assert.ok(['major', 'side'].includes(u.group), `${u.key}: ${u.group}`); }
   for (const k of majors.keys()) assert.ok(units.has(k), `${k}: 단위에 없다`);
 });
 
-test('체크 칸(W16a) — units.json check = 사이드 · 주요 이벤트(유실물 포함), 팝업 칸은 주요 이벤트 · 사이드 단위만(유실물은 딸린 이벤트를 따른다)', () => {
+test('주년 · 반주년(anniv) — 출시일(2022-11-04)에서 반년 자리 ±15일인 픽업 이벤트만, 케이크 표시', () => {
+  assert.equal(annivOf('2023-11-02'), 1);
+  assert.equal(annivOf('2023-04-27'), 0.5);
+  assert.equal(annivOf('2026-04-23'), 3.5);
+  assert.equal(annivOf('2025-07-17'), null, '여름');
+  assert.equal(annivOf('2024-12-26'), null, '신년');
+  for (const u of unitsJson) if (u.anniv != null) assert.ok(u.pickup?.length, `${u.key}: anniv는 픽업 이벤트만`);
+  // 공지가 주년 · 하프 애니버서리로 소개하는 7편(2026-10-14 확인)
+  const got = Object.fromEntries(unitsJson.filter((u) => u.anniv).map((u) => [u.key, u.anniv]));
+  assert.deepEqual(got, { event_overzone: 0.5, event_redash: 1, event_lastkingdom1: 1.5, event_oldtales1: 2, event_unbreakablesphere1: 2.5, event_goddessfall1: 3, event_staranis1: 3.5 });
+});
+
+test('체크 칸(W16a) — units.json check = 사이드 · 픽업 이벤트(유실물 포함), 팝업 칸은 픽업 이벤트 · 사이드 단위만(유실물은 딸린 이벤트를 따른다)', () => {
   const units = new Map(unitsJson.map((u) => [u.key, u]));
   for (const u of unitsJson) assert.equal(Boolean(u.check), u.group === 'major' || u.group === 'side', `${u.key}: ${u.group} check ${u.check}`);
   const boxes = unitsJson.filter((u) => u.check && !(u.parent && units.get(u.parent)?.check));
   assert.deepEqual([...new Set(boxes.map((u) => u.kind))].sort(), ['event', 'side'], '칸은 이벤트 · 사이드만');
-  assert.equal(boxes.filter((u) => u.group === 'major').length, loadMajorEvents().size, '주요 이벤트마다 칸 하나');
+  assert.equal(boxes.filter((u) => u.group === 'major').length, loadMajorEvents().size, '픽업 이벤트마다 칸 하나');
   for (const u of unitsJson) if (u.check && u.kind === 'erelic') assert.ok(units.get(u.parent)?.check, `${u.key}: 딸린 이벤트도 체크 칸`);
 });
 

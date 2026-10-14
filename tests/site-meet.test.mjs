@@ -30,7 +30,7 @@ test('meetList — 읽는 순서로 늘어놓고 체크 칸 스토리가 아닌 
     { key: 'ch01', kind: 'main', order: 1 }, { key: 'event_a', kind: 'event', check: 1, opt: 1, order: 2 },
     { key: 'side:b', kind: 'side', check: 1, opt: 1, order: 3 }, { key: 'ep:d', kind: 'episode', opt: 1, order: 4 }, { key: 'sub:c', kind: 'sub', grade: '참고', order: 4.5 }, { key: 'ch02', kind: 'main', order: 5 },
   ];
-  assert.deepEqual(meetList(['ch02', 'sub:c', 'ep:d', 'event_a', 'side:b'], units), ['event_a', 'side:b', 'ep:d', 'sub:c'], '메인 갈래 밖(주요 이벤트 · 사이드 · 호감도)은 안 볼 수 있어 다음 스토리까지 — 서브퀘스트는 메인 갈래');
+  assert.deepEqual(meetList(['ch02', 'sub:c', 'ep:d', 'event_a', 'side:b'], units), ['event_a', 'side:b', 'ep:d', 'sub:c'], '메인 갈래 밖(픽업 이벤트 · 사이드 · 호감도)은 안 볼 수 있어 다음 스토리까지 — 서브퀘스트는 메인 갈래');
   assert.deepEqual(meetList(['ch02', 'ch01'], units), ['ch01']);
   assert.equal(meetList(['없는키'], units), undefined);
 });

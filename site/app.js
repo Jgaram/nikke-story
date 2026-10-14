@@ -109,7 +109,7 @@ function cutoffControl(idx, firstVisit) {
   const endSub = latest ? `${fmt.tickShort(lastMain.tick)} 뒤 ${afterMain}편` : fmt.tickShort(last);
   const latestBtn = ui.el('button', { type: 'button', class: 'btn cutoff-latest', title: V.latestHelp(endSub, idx.ticks.get(last)?.date ?? ''), onClick: () => setDraft({ t: last }) },
     V.latest, ui.el('span', { class: 'muted' }, ` · ${endSub}`));
-  // 칸 — 종류로 주요 이벤트(필그림 · 오버스펙 픽업) · 사이드(W16a) · 이벤트 · 호감도(W16b, 사용자 2026-10-14). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다).
+  // 칸 — 종류로 픽업 이벤트(필그림 · 오버스펙 픽업) · 사이드(W16a) · 이벤트 · 호감도(W16b, 사용자 2026-10-14). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다).
   // 이벤트 유실물 · 미니게임은 칸이 없고 딸린 이벤트를 따른다(state.pickable). 갈래마다 [모두 선택] [모두 해제] — x에 갈래 통째(@갈래)로 적는다
   const box = (e) => {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
@@ -127,7 +127,7 @@ function cutoffControl(idx, firstVisit) {
     const x = Object.fromEntries(Object.entries(draft.x).filter(([k]) => idx.units.get(k)?.group !== g));
     setDraft({ t: draft.t ?? last, x: { ...x, [`@${g}`]: on } });
   };
-  // 이벤트 · 호감도는 칸이 많아 접어 둔다(머리에 본 것 수). 주요 이벤트 · 사이드는 펼친다
+  // 이벤트 · 호감도는 칸이 많아 접어 둔다(머리에 본 것 수). 픽업 이벤트 · 사이드는 펼친다
   const exSec = (g) => {
     const list = groupBoxes.get(g);
     if (!list.length) return null;

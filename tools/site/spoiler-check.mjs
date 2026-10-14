@@ -6,7 +6,7 @@
  *   node tools/site/spoiler-check.mjs --t 1,11 --tabs threads,world --out /tmp/spoil.txt
  *   CHROME=/path/to/chromium node tools/site/spoiler-check.mjs
  *   node tools/site/spoiler-check.mjs --root <사이트 폴더>      # site/ 말고 다른 사본을 띄운다(고치기 전 · 뒤 비교)
- *   node tools/site/spoiler-check.mjs --skip                   # 체크 칸 스토리(사이드 · 주요 이벤트)를 다 끈 독자(W15f)
+ *   node tools/site/spoiler-check.mjs --skip                   # 체크 칸 스토리(사이드 · 픽업 이벤트)를 다 끈 독자(W15f)
  *   node tools/site/spoiler-check.mjs --skip-all               # 고를 수 있는 스토리를 다 끈 독자(이벤트 · 호감도까지 — 메인 갈래만 본 독자, W16b)
  *
  * 무엇을 '새는 것'으로 세나(화면의 보이는 글자 — #main · #reader · 검색 결과의 innerText, 보이는 SVG 글자, title · aria-label):
@@ -317,7 +317,7 @@ const evaluate = async (expr) => {
   if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.exception?.description ?? '평가 실패');
   return r.result?.result?.value;
 };
-// --skip — 체크 칸 스토리(units.json check — 사이드 · 주요 이벤트, W16a)를 다 끈 독자(W15f). 딸린 유실물 키는 state가 버리고 딸린 이벤트의 칸을 따른다. 게임에서 아무 때나 보는 스토리라, 거기서만 먼저 나온 것이 메인만 본 독자에게 새는지
+// --skip — 체크 칸 스토리(units.json check — 사이드 · 픽업 이벤트, W16a)를 다 끈 독자(W15f). 딸린 유실물 키는 state가 버리고 딸린 이벤트의 칸을 따른다. 게임에서 아무 때나 보는 스토리라, 거기서만 먼저 나온 것이 메인만 본 독자에게 새는지
 const unitsJson = JSON.parse(fs.readFileSync(path.join(args.root ?? path.resolve(import.meta.dirname, '../../site'), 'data/units.json'), 'utf8'));
 const checkKeys = unitsJson.filter((u) => u.check);
 // --skip-all(W16b) — 갈래 통째 안 봄(state.js 압축 형식 '-@갈래')

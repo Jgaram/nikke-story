@@ -16,7 +16,8 @@
  *   toggle({ label, checked, onChange, id })    스위치(role=switch)
  *   segmented({ options: [{ value, label, title? }], value, onChange, label }) → { el, set(value) }
  *   orgMarks(orgs, { size, bare })              소속 마크 칩(fmt.orgsAt 결과) — 어두운 칩에 흰 마크 + 이름(bare면 마크만, 이름은 툴팁) · 전 소속(past)은 점선 · 흐리게
- *   kindIcon(kind, { size })                    스토리 종류 아이콘(site/img/kinds/ 마스크에 종류 색) → span.kind-icon(role=img, 이름은 aria-label · 툴팁). 아이콘 없는 종류(main)는 null
+ *   kindIcon(kind, { size, unit })              스토리 종류 아이콘(site/img/kinds/ 마스크에 종류 색) → span.kind-icon(role=img, 이름은 aria-label · 툴팁). 아이콘 없는 종류(main)는 null.
+ *                                               unit을 주면 픽업 이벤트는 ✦, 주년 · 반주년은 케이크 배지를 단 span.kind-mark
  *   icon(name, attrs?)                          인라인 SVG 아이콘(search · close · arrow · chevron) → span.icon
  */
 import * as fmt from './format.js';
@@ -157,11 +158,26 @@ export function portrait(icon, { size = 32, class: cls = '' } = {}) {
 }
 /** 아이콘이 있는 스토리 종류 — 메인은 줄 모양으로 구분된다. 호감도 사람 실루엣은 칩 · 초상이 없을 때만(줄 · 리더는 니케 초상) */
 const KIND_ICONS = new Set(['side', 'event', 'episode', 'sub', 'relic', 'erelic', 'elevator']);
-/** 스토리 종류 아이콘 — 모양은 style.css의 .kind-icon[data-kind] 마스크, 색은 종류 색(--kind-*) */
-export function kindIcon(kind, { size = 18, class: cls = '' } = {}) {
+/**
+ * 스토리 종류 아이콘 — 모양은 style.css의 .kind-icon[data-kind] 마스크, 색은 종류 색(--kind-*).
+ * unit을 주면 이벤트를 더 가른다: 픽업 이벤트(pickup)는 ✦(오버스펙 마크의 수리검 별 — 일반 이벤트는 테두리 마름모),
+ * 주년 · 반주년(anniv)은 케이크 배지(마스크가 자식을 자르므로 바깥 칸에 아이콘 · 배지를 나란히 둔다)
+ */
+export function kindIcon(kind, { size = 18, class: cls = '', unit = null } = {}) {
   if (!KIND_ICONS.has(kind)) return null;
-  const label = fmt.KIND[kind]?.label ?? kind;
-  const node = el('span', { class: ['kind-icon', cls], role: 'img', 'aria-label': label, title: fmt.help('kind', kind) || label, dataset: { kind } });
+  const pickup = kind === 'event' && Boolean(unit?.pickup?.length);
+  const anniv = pickup ? unit.anniv : null;
+  const label = pickup ? fmt.eventMark(unit) : fmt.KIND[kind]?.label ?? kind;
+  const title = pickup ? `${label} — ${fmt.PICKUP_HELP(unit)}` : fmt.help('kind', kind) || label;
+  const attrs = { role: 'img', 'aria-label': label, title };
+  if (!anniv) {
+    const node = el('span', { class: ['kind-icon', cls], ...attrs, dataset: pickup ? { kind, pickup: '1' } : { kind } });
+    node.style.setProperty('--kind-icon-size', `${size}px`);
+    return node;
+  }
+  const node = el('span', { class: ['kind-mark', cls], ...attrs },
+    el('span', { class: 'kind-icon', 'aria-hidden': 'true', dataset: { kind, pickup: '1' } }),
+    el('span', { class: 'kind-cake', 'aria-hidden': 'true', dataset: Number.isInteger(anniv) ? {} : { half: '1' } }));
   node.style.setProperty('--kind-icon-size', `${size}px`);
   return node;
 }

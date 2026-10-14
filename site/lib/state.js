@@ -5,7 +5,7 @@
  * 키
  *   tab     order | links | threads | chrono | persons | world
  *   t       컷오프 공개 자리(숫자) · 'all'(끔). 처음 열면 CH.00의 자리(공개 사이트라 기본 켬 — W0). 바꾼 값은 localStorage에 남아 다음 방문에 쓴다
- *   x       고를 수 있는 스토리(units.json opt — 메인 갈래 밖 전부: 체크 칸 = 사이드 · 주요 이벤트(check, W16a) + 이벤트 · 호감도(W16b), 사용자 2026-10-14)의
+ *   x       고를 수 있는 스토리(units.json opt — 메인 갈래 밖 전부: 체크 칸 = 사이드 · 픽업 이벤트(check, W16a) + 이벤트 · 호감도(W16b), 사용자 2026-10-14)의
  *           '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다. 순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10).
  *           이벤트 유실물 · 미니게임은 칸이 따로 없고 딸린 이벤트(parent)의 칸을 따른다.
  *           압축 형식(W16b — 칸이 260여 개라): 갈래 통째 '@episode' · '-@episode'(그 갈래 전부 봄 · 안 봄 — t와 상관없이, 낱개 키가 이긴다)와 호감도 키 줄임 'c224' = 'char:224'.
@@ -29,8 +29,8 @@
  *   seenAny(keys) → boolean          하나라도 봤나
  *   known(record) → boolean          그 기록을 아나: 사실 · 의문은 know_units(없으면 [unit]) 중 하나라도 봤으면, 그 밖은 seen(unit)(unit 없으면 visible(tick))
  *   reading(s?) → R                  { all, t, x, seen, seenAny, known } — fmt.stateAt(r, R) · fmt.gradeAt(u, R)에 T 대신 넘긴다
- *   checkExtras() → [{ key, tick, group }]  팝업의 칸 — group 'major'(주요 이벤트) · 'side'(사이드) · 'event'(이벤트) · 'episode'(호감도), 출시 시점순. 딸린 유실물은 칸이 없다
- *   checkable(unitKey) → boolean     체크 칸 스토리인가(사이드 · 주요 이벤트, 딸린 유실물 포함) — 메인 챕터와 함께 '본 것'을 사람이 정하는 스토리(감상 순서 ✓ · 지남이 쓴다)
+ *   checkExtras() → [{ key, tick, group }]  팝업의 칸 — group 'major'(픽업 이벤트) · 'side'(사이드) · 'event'(이벤트) · 'episode'(호감도), 출시 시점순. 딸린 유실물은 칸이 없다
+ *   checkable(unitKey) → boolean     체크 칸 스토리인가(사이드 · 픽업 이벤트, 딸린 유실물 포함) — 메인 챕터와 함께 '본 것'을 사람이 정하는 스토리(감상 순서 ✓ · 지남이 쓴다)
  *   pickable(unitKey) → boolean      고를 수 있는 스토리인가(체크 칸 + 이벤트 · 호감도)
  *   decided(unitKey, s?) → boolean   '봤음'을 사람이 정했나 — 체크 칸이거나, x에 그 칸 · 그 갈래 통째가 적혔다(감상 순서 ✓ · 지남 — 출시 시점 짐작은 쓰지 않는다)
  *   GROUPS                           칸 갈래 ['major', 'side', 'event', 'episode']
@@ -50,7 +50,7 @@ export const GROUPS = ['major', 'side', 'event', 'episode'];
 let extras = []; // 팝업 칸 — 고를 수 있는 스토리 [{ key, tick, group }]
 let extraKeys = new Set();
 let checkOwner = new Map(); // 고를 수 있는 스토리 → 그 칸의 키(딸린 유실물은 딸린 이벤트, 그 밖은 자기)
-let checkKeys = new Set(); // 체크 칸 스토리(check — 사이드 · 주요 이벤트)
+let checkKeys = new Set(); // 체크 칸 스토리(check — 사이드 · 픽업 이벤트)
 let defaultCutoff = 1;
 const listeners = new Set();
 

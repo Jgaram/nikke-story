@@ -66,6 +66,10 @@ export const KIND_HELP = {
   elevator: '돌발 스토리 — 전초기지 건물 대화(지금은 엘리베이터 첫 스토리만)',
   other: '그 밖의 스토리',
 };
+/** 픽업 이벤트(units.json pickup — 필그림 · 오버스펙 니케 1% 픽업과 함께 열린 이벤트) · 주년(anniv — 1 · 1.5 …) */
+export const annivLabel = (n) => (n ? `${n}주년` : '');
+export const eventMark = (u) => ['픽업 이벤트', annivLabel(u?.anniv)].filter(Boolean).join(' · ');
+export const PICKUP_HELP = (u) => `${(u?.pickup ?? []).join(' · ')} 픽업과 함께 열린 이벤트`;
 
 // ── 등급 ──
 export const GRADE = {
@@ -283,7 +287,7 @@ export const FIRST_VISIT = {
   prev: '이전 챕터',
   next: '다음 챕터',
   groups: {
-    major: { head: '주요 이벤트', hint: '필그림 · 오버스펙 픽업 — 주년 · 신년 · 여름' },
+    major: { head: '픽업 이벤트', hint: '필그림 · 오버스펙 픽업 — 주년 · 신년 · 여름' },
     side: { head: '사이드' },
     event: { head: '이벤트', fold: true },
     episode: { head: '호감도', fold: true },
@@ -731,7 +735,7 @@ export function blurbText(b, seen) {
 }
 /**
  * 시점별 판(W15c) — 판 목록 [{ at, title, text }](읽는 순서)에서 그 자리에 보일 판: 앞에서부터 at을 본(R.seen) 판이 이어지는 데까지의 마지막 판.
- * 뒤 판은 앞 판들의 내용 위에 쓰므로 체크 칸 스토리(사이드 · 주요 이벤트)를 안 고른 독자는 그 at의 판 앞에서 멈춘다.
+ * 뒤 판은 앞 판들의 내용 위에 쓰므로 체크 칸 스토리(사이드 · 픽업 이벤트)를 안 고른 독자는 그 at의 판 앞에서 멈춘다.
  * 판의 need(묶음마다 하나라도 봐야 하는 스토리 — 글에 든 이름 · 스토리 이름, 내보내기 versionNeed)를 못 채워도 그 판 앞에서 멈춘다(W15f).
  * 전부 보기(R.all · R 없음)면 마지막 판. 첫 판(at = 떡밥이 처음 나온 스토리)을 안 봤으면 null — 떡밥이 아직 안 나왔다.
  */

@@ -64,7 +64,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
 ```bash
 node tools/notices/fetch.mjs            # 새 공지 · 제목이 바뀐 공지 · 최근 45일 공지만 받는다 (--force 전부)
 node tools/notices/release-order.mjs    # → data/release/release-order.csv · report.md (커밋한다)
-node tools/notices/major-events.mjs     # 주요 이벤트(필그림 · 오버스펙 픽업, 결정 #10) → data/release/major-events.csv (커밋한다 — release-order 뒤에)
+node tools/notices/major-events.mjs     # 픽업 이벤트(필그림 · 오버스펙 픽업, 결정 #10) → data/release/major-events.csv (커밋한다 — release-order 뒤에)
 node tools/query.mjs releases [main|side|event|episode] [--from 날짜] [--to 날짜]
 node tools/query.mjs known ch20         # 컷오프(X1a) — 그 공개 자리까지 아는 사실 · 의문 (숫자 = 공개 자리, 날짜 = 그날까지, --thread · --about · --list)
 node tools/query.mjs chrono event_redash # 작중 연대기(X1b) — 단위의 작중 자리(판별 · 범위 · 상대 · 불명) · 시점 기록 관계 · 출시순과 어긋남 (ch20 · @방주_밀봉 = 그 점 무렵)
