@@ -32,7 +32,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadNotices } from './text.mjs';
-import { findPoints, findSpanStarts, kstDay, stampKey } from './kdate.mjs';
+import { findPoints, findSpanStarts, findSpans, kstDay, stampKey } from './kdate.mjs';
 import { ensureDb } from '../normalize/ensure-db.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -59,7 +59,7 @@ const STRIP_RE = /[\s:：・·.,\-–—_'"()\[\]{}!?/\\]+/g;
 export const nameKey = (s) => String(s ?? '').normalize('NFKC').toLowerCase().replace(STRIP_RE, '');
 
 /** 업데이트 공지가 말하는 업데이트 날짜 — 제목의 날짜("4월 25일 업데이트 공지"), 없으면 게시일. */
-function updateDay(notice) {
+export function updateDay(notice) {
   const pub = kstDay(notice.publishedAt);
   return findPoints(notice.title, pub)[0]?.day ?? pub;
 }
@@ -73,7 +73,7 @@ function firstStamp(line, refDay) {
 
 // ── 출시일 · 메인 ──────────────────────────────────────────────────────
 
-function findLaunch(notices) {
+export function findLaunch(notices) {
   const n = notices.find((x) => x.title.includes('정식 서비스 오픈'));
   if (!n) throw new Error('출시 공지("정식 서비스 오픈")를 찾지 못했다');
   const day = kstDay(n.publishedAt);
@@ -87,9 +87,9 @@ function findLaunch(notices) {
   return { day, notice: n, chapters };
 }
 
-const MAIN_OPEN_RE = /메인\s*시나리오\s*(?<list>\d{1,2}(?:\s*(?:챕터)?\s*(?:와|과|및|,)\s*\d{1,2})*)\s*챕터가\s*신규\s*개방/;
+export const MAIN_OPEN_RE = /메인\s*시나리오\s*(?<list>\d{1,2}(?:\s*(?:챕터)?\s*(?:와|과|및|,)\s*\d{1,2})*)\s*챕터가\s*신규\s*개방/;
 
-function extractMain(notices) {
+export function extractMain(notices) {
   const found = new Map(); // 챕터 번호 → { day, notice, line }
   for (const notice of notices) {
     for (const line of notice.lines) {
@@ -107,14 +107,14 @@ function extractMain(notices) {
 
 // ── 이벤트 ─────────────────────────────────────────────────────────────
 
-const EVENT_HEAD_RES = [
+export const EVENT_HEAD_RES = [
   /^(?:[(（]?\d{1,2}(?:[.\-]\d{1,2})*\s*[.)）]?\s*)?(?:신규\s*)?(?:풀\s*보이스\s*|연애\s*시뮬레이션\s*)?(?:스토리|스페셜|스폐셜)\s*이벤트\s*[:：]\s*(?<name>.+)$/,
   /^(?:[(（]?\d{1,2}(?:[.\-]\d{1,2})*\s*[.)）]?\s*)?.{0,24}콜라보\s*이벤트\s*[-–:：]\s*(?<name>.+)$/,
   /^(?:[(（]?\d{1,2}(?:[.\-]\d{1,2})*\s*[.)）]?\s*)?.{0,10}이벤트\s*미션\s*\[(?<name>[^\]]+)\]\s*$/,
 ];
-const SIDE_HEAD_RE = /^(?:[(（]?\d{1,2}(?:[.\-]\d{1,2})*\s*[.)）]?\s*)?사이드\s*스토리\s*[-–:：]\s*(?<name>.+)$/;
+export const SIDE_HEAD_RE = /^(?:[(（]?\d{1,2}(?:[.\-]\d{1,2})*\s*[.)）]?\s*)?사이드\s*스토리\s*[-–:：]\s*(?<name>.+)$/;
 const PERIOD_LINE_RE = /(기간|오픈\s*시간|시작\s*시간)\s*[:：]/;
-const PART_RE = /Part\s*(?<no>\d)\s*[:：]\s*(?<label>STORY\s*[IVX\d]+)/i;
+export const PART_RE = /Part\s*(?<no>\d)\s*[:：]\s*(?<label>STORY\s*[IVX\d]+)/i;
 
 /** "하이테크 토이(HIGHTECH TOY)" → 전체 · 괄호 안 · 괄호 밖을 모두 후보로. */
 function nameCandidates(raw) {
@@ -133,8 +133,11 @@ function eventHeading(line, heads = EVENT_HEAD_RES) {
   return null;
 }
 
-/** 이벤트(기본) 또는 사이드 스토리(heads = [SIDE_HEAD_RE]) 머리줄을 찾아 첫 개방일을 뽑는다 */
-function extractEvents(notices, heads = EVENT_HEAD_RES) {
+/**
+ * 이벤트(기본) 또는 사이드 스토리(heads = [SIDE_HEAD_RE]) 머리줄을 찾아 첫 개방일을 뽑는다.
+ * end는 첫 기간 줄의 끝 날짜, from · to는 그 절의 줄 범위(tools/update.mjs가 스토리 표지를 찾는다).
+ */
+export function extractEvents(notices, heads = EVENT_HEAD_RES) {
   const announced = []; // { name, day, time, basis, notice, evidence, parts[] }
   for (const notice of notices) {
     const refDay = kstDay(notice.publishedAt);
@@ -143,9 +146,11 @@ function extractEvents(notices, heads = EVENT_HEAD_RES) {
       const name = eventHeading(lines[i], heads);
       if (!name) continue;
       let start = null;
+      let end = null;
       let evidence = lines[i];
       const parts = [];
-      for (let j = i + 1; j < lines.length; j++) {
+      let j = i + 1;
+      for (; j < lines.length; j++) {
         const line = lines[j];
         if (HEADING_RE.test(line) || eventHeading(line, heads)) break;
         const part = line.match(PART_RE);
@@ -157,7 +162,7 @@ function extractEvents(notices, heads = EVENT_HEAD_RES) {
         }
         if (!start && PERIOD_LINE_RE.test(line)) {
           const s = firstStamp(line, refDay);
-          if (s) [start, evidence] = [s, line];
+          if (s) [start, evidence, end] = [s, line, findSpans(line, refDay)[0]?.end ?? null];
         }
       }
       announced.push({
@@ -168,6 +173,9 @@ function extractEvents(notices, heads = EVENT_HEAD_RES) {
         notice,
         evidence: start ? `${lines[i]} / ${evidence}` : lines[i],
         parts,
+        end,
+        from: i,
+        to: j,
       });
     }
   }
@@ -178,7 +186,7 @@ function extractEvents(notices, heads = EVENT_HEAD_RES) {
  * 공지 이름 → 단위. 아카이브 이벤트는 게임 ID로, 금서고 단위(이벤트 · 사이드 스토리)는 금서고 목록 제목으로 잇는다.
  * 한 이름이 여러 단위에 이어질 수 있다 — 금서고의 `2X2 LOVE 1부`와 `2부`는 공지 한 줄(2X2 LOVE)에 둘 다 이어진다.
  */
-function matchEvents(announced, cats, aliases) {
+export function matchEvents(announced, cats, aliases) {
   const byKey = new Map();
   const put = (k, cat) => {
     if (!k || !cat) return;
@@ -228,7 +236,7 @@ const isDebutSection = (title) =>
   title.includes('신규') && (title.includes('니케') || title.includes('캐릭터')) &&
   !NOT_DEBUT_SECTION_WORDS.some((w) => title.includes(w));
 
-class UnitMatcher {
+export class UnitMatcher {
   constructor(characters, aliases) {
     this.byKey = new Map(); // 이름 키 → [character]
     const add = (key, c) => {
@@ -272,7 +280,7 @@ class UnitMatcher {
   }
 }
 
-function extractDebuts(notice, matcher) {
+export function extractDebuts(notice, matcher) {
   const debuts = []; // { unit, day, time, basis, notice, evidence }
   const unresolved = [];
   const refDay = kstDay(notice.publishedAt);

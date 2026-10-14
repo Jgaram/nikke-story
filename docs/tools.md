@@ -85,6 +85,19 @@ node tools/query.mjs person 라피             # 인물별 집계(X3d) — 등�
 - 새로 못 찾은 것 · 스토리 데이터에 없는 이벤트 · 못 읽은 인물 이름은 `data/release/report.md`에 뜬다.
   공지 표기가 다른 콜라보 이름은 `tools/notices/aliases.json`에 잇는다.
 
+## 업데이트 확인 — `tools/update.mjs` (N2b)
+
+"업데이트"의 첫 단계(docs/update.md "확인"). 공지 · 블라링크 · 금서고를 증분으로 받고(`tools/notices/fetch.mjs` → `tools/blabla/update.mjs`를 차례로 부른다),
+공지에서 출발한 패치 목록을 만들어 단위마다 원문 있음 · 없음, 패치마다 처리됨 · 준비 · 보류를 `data/release/updates.md`에 쓴다(커밋한다).
+
+```bash
+node tools/update.mjs              # 받고 판정 — 블라링크 목록이 404면 exit 2(규칙 재추출)
+node tools/update.mjs --no-fetch   # 받아 둔 것만으로 판정 (--today YYYY-MM-DD 기준일)
+```
+
+- 판정만 하고 고치지 않는다 — 출시 순서(`release-order.mjs`) · 읽기 항목은 U1이 한다. 새로 받은 단위는 수집이 `annotations/hold.json`에 "업데이트 전"으로 넣어 DB에 바로 안 들어간다.
+- 이름 잇기는 출시 순서와 같은 파서 · 별칭(`tools/notices/aliases.json`)을 쓴다. "패치에 못 넣은 단위"가 뜨면 별칭 · 손 보정으로 잇는다(테스트가 0을 본다).
+
 ## 스포일러 점검 — `tools/site/spoiler-check.mjs` (속도, 2026-10-14)
 
 무엇을 세나는 파일 머리 주석 · docs/views.md. 여기는 돌리는 법과 시간만.

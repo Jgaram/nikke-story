@@ -37,6 +37,11 @@ test('블라링크 씬: 원본 파일마다 대사 있는 노드 하나, 줄 수
   // 받아 두었지만 아직 들이지 않는 블라링크 이벤트(annotations/hold.json)는 노드가 없다
   const hold = Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'))).filter((k) => !k.startsWith('_'));
   const heldIds = new Set(archiveEvents(readJson(path.join(RAW, 'archive/ko/archive_list.json'))).filter((e) => hold.includes(e.key)).flatMap((e) => e.ids));
+  // 메인 챕터(chNN)도 hold로 받는다 — scene_list의 chapter_name_N
+  for (const cat of readJson(path.join(RAW, 'scene/ko/scene_list.json'))) {
+    const n = cat.sub_category_name_localkey?.value?.match(/chapter_name_(\d+)/)?.[1];
+    if (n && hold.includes(`ch${n.padStart(2, '0')}`)) for (const s of cat.sub_category_id?.scenes?.value ?? []) heldIds.add(s.value.scenario_group_id);
+  }
   const held = (id) => heldIds.has(id);
   const orphan = [...raw.keys()].filter((id) => !byId.get(id)?.has_text && !held(id));
   assert.deepEqual(orphan, [], `노드가 안 된 원본 파일: ${list(orphan, (id) => id)}`);
@@ -52,6 +57,9 @@ test('호감도 스토리: 원본 파일마다 노드 하나, 줄 수가 records
     const m = f.match(/^(.+)-ko\.json$/);
     if (m) raw.set(`ep:${m[1]}`, (readJson(path.join(dir, f)).records ?? []).length);
   }
+  // 받아 두었지만 아직 들이지 않는 호감도(annotations/hold.json의 char:N)는 노드가 없다
+  const hold = new Set(Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'))));
+  for (const ep of readJson(path.join(RAW, 'episode-index.json')).episodes) if (hold.has(`char:${ep.resourceId}`)) raw.delete(`ep:${ep.groupId}`);
   const rows = all("SELECT id, has_text, line_count FROM stories WHERE source = 'episode' AND has_text = 1");
   assert.equal(rows.length, raw.size, `대사 있는 호감도 스토리 ${rows.length} ≠ 원본 파일 ${raw.size}`);
   const wrong = rows.filter((r) => r.line_count !== raw.get(r.id));

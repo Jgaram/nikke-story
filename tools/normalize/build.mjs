@@ -203,11 +203,18 @@ async function main() {
   const m = readSceneList(mainList, 'main');
   const s = readSceneList(suddenList, 'sudden');
   const a = readArchiveList(archiveList);
-  // 받아 두었지만 아직 들이지 않는 원문(annotations/hold.json) — 블라링크 이벤트는 여기서, 금서고 파일은 readLibrary가 뺀다
+  // 받아 두었지만 아직 들이지 않는 원문(annotations/hold.json) — 블라링크 이벤트 · 메인 챕터(chNN)는 여기서,
+  // 호감도(char:N)는 아래 호감도에서, 금서고 파일은 readLibrary가 뺀다
   const hold = readHold();
-  const held = new Set(a.categories.filter((c) => hold.has(c.idPrefix)).map((c) => c.id));
+  const chapterKey = (c) => `ch${String(c.localeKey?.match(/chapter_name_(\d+)/)?.[1] ?? '').padStart(2, '0')}`;
+  const held = new Set([
+    ...a.categories.filter((c) => hold.has(c.idPrefix)).map((c) => c.id),
+    ...m.categories.filter((c) => hold.has(chapterKey(c))).map((c) => c.id),
+  ]);
   a.categories = a.categories.filter((c) => !held.has(c.id));
   a.stories = a.stories.filter((st) => !held.has(st.categoryId));
+  m.categories = m.categories.filter((c) => !held.has(c.id));
+  m.stories = m.stories.filter((st) => !held.has(st.categoryId));
 
   const categories = [...m.categories, ...s.categories, ...a.categories];
   const stories = [...m.stories, ...s.stories, ...a.stories];
@@ -278,6 +285,7 @@ async function main() {
   for (const ep of episodeIndex) {
     const id = `ep:${ep.groupId}`;
     const categoryId = `char:${ep.resourceId}`;
+    if (hold.has(categoryId)) continue; // 들이지 않은 호감도(annotations/hold.json)
     if (!categories.some((c) => c.id === categoryId)) {
       categories.push({
         id: categoryId,

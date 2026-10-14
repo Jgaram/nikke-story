@@ -83,6 +83,17 @@ export function findSpanStarts(text, refDay) {
   return out;
 }
 
+/** 글 속 `시작 ~ 끝` 구간들. 끝이 날짜가 아니면(`~ 추후 안내`, 시각만) end는 null이다. */
+export function findSpans(text, refDay) {
+  const out = [];
+  for (const m of text.matchAll(RANGE_RE)) {
+    const start = stampOf(m.groups, 'a', refDay);
+    if (!start) continue;
+    out.push({ start, end: m.groups.openEnd ? null : stampOf(m.groups, 'b', start.day) });
+  }
+  return out;
+}
+
 /** 글 속 날짜 전부(구간은 시작으로). */
 export function findPoints(text, refDay) {
   const out = [];

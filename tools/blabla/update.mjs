@@ -11,6 +11,9 @@
  * 3. 금서고 이벤트 매핑(annotations/forbidden-library-events.json)의 null과, 매핑에 안 든 블라링크 이벤트의 이름을 맞춰
  *    "전환 후보"를 띄운다. 확정은 Claude가 원문을 대조해 한다(묻지 않는다). 그 금서고 단위에 기록이 이미 있으면
  *    annotations/hold.json에 "전환 대기"로 두어 블라링크 쪽을 단위로 만들지 않고, 기록을 옮긴다(tools/forbidden-library/convert.mjs — hold 줄 · 매핑 null도 고친다).
+ * 4. 새로 들어온 단위는 annotations/hold.json에 "업데이트 전"으로 넣는다(N2b) — 빌드가 빼므로 읽기 순서 · 출시 순서 테스트가
+ *    깨지지 않고, 그 패치의 U1이 지우며 들인다. 새 블라링크 이벤트 · 새 니케의 호감도 · 새 메인 챕터(chNN) · 새 금서고 단위 파일.
+ *    매핑에 키가 있는 금서고 이벤트에 블라링크 본문이 생기면(자동으로 돌아감) 그 키를 "전환 대기"로 넣는다 — 기록은 convert.mjs가 옮긴다.
  * 리포트: data/release/collect.md(원문 없이 키 · 개수만 — 공개 레포). 요청 규칙은 docs/data-sources.md "0. 요청 규칙".
  *
  * 블라링크가 경로 규칙을 바꾸면 ObfuscationBrokenError로 멈춘다 — 번들에서 규칙을 다시 뽑아야 한다(같은 문서 "난독화 규칙이 깨지면").
@@ -25,12 +28,42 @@ import { fetchIndexes, fetchFavorites, RAW_DIR } from './fetch-index.mjs';
 import { collectScenes } from './fetch-scenes.mjs';
 import { collectEpisodes } from './fetch-episodes.mjs';
 import { syncLibrary, EVENTS_MAP_PATH, MANIFEST_PATH as LIBRARY_MANIFEST } from '../forbidden-library/fetch.mjs';
+import { LIBRARY_KINDS } from '../normalize/library.mjs';
 
 const HOLD_PATH = path.join(path.dirname(EVENTS_MAP_PATH), 'hold.json');
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const REPORT = path.join(ROOT, 'data/release/collect.md');
 const ARCHIVE_LIST = path.join(RAW_DIR, 'archive/ko/archive_list.json');
+const MAIN_LIST = path.join(RAW_DIR, 'scene/ko/scene_list.json');
+const LIBRARY_FETCHED = path.join(RAW_DIR, 'forbidden-library/fetched.json');
+
+/** 메인 챕터 키(chNN) — scene_list의 chapter_name_N(build.mjs와 같은 규칙). */
+const mainChapters = (list) =>
+  new Set((list ?? []).map((c) => c.sub_category_name_localkey?.value?.match(/chapter_name_(\d+)/)?.[1]).filter(Boolean).map((n) => `ch${n.padStart(2, '0')}`));
+
+/**
+ * 새로 들어온 단위를 hold에 넣는다(이미 있는 키는 그대로). 넣은 키 목록을 돌려준다.
+ * @param {object} hold annotations/hold.json 내용(고친다)
+ * @param {{events?: string[], episodes?: number[], chapters?: string[], libraryFiles?: string[], switched?: [string, string][], day: string}} found
+ */
+export function holdNewUnits(hold, { events = [], episodes = [], chapters = [], libraryFiles = [], switched = [], day }) {
+  const added = [];
+  const put = (key, value) => {
+    if (hold[key]) return;
+    hold[key] = value;
+    added.push(key);
+  };
+  const before = (what) => ({ 까닭: '업데이트 전', '들이는 곳': '그 패치의 U1(docs/update.md "단계")', 근거: `${day} 증분 수집에서 새로 들어온 ${what}` });
+  for (const k of events) put(k, before('블라링크 이벤트'));
+  for (const rid of episodes) put(`char:${rid}`, before('니케의 호감도 스토리'));
+  for (const k of chapters) put(k, before('메인 챕터'));
+  for (const f of libraryFiles) if (LIBRARY_KINDS[f.split('/')[0]]) put(f, before('금서고 파일'));
+  for (const [file, key] of switched) {
+    put(key, { 까닭: '전환 대기', 금서고: file, '들이는 곳': `node tools/forbidden-library/convert.mjs ${key}`, 근거: `${day} 블라링크 본문이 새로 들어옴 — 매핑에 키가 있는 금서고 이벤트` });
+  }
+  return added;
+}
 
 const readJson = (file, fallback) => {
   try {
@@ -111,6 +144,9 @@ async function main() {
     scenes: new Set(Object.values(readJson(path.join(RAW_DIR, 'scene-ids.json'), { bySource: {} }).bySource).flat()),
     episodes: new Set((readJson(path.join(RAW_DIR, 'episode-index.json'), { episodes: [] }).episodes).map((e) => e.groupId)),
     events: new Set(archiveEvents(readJson(ARCHIVE_LIST, [])).map((e) => e.key)),
+    episodeRids: new Set((readJson(path.join(RAW_DIR, 'episode-index.json'), { episodes: [] }).episodes).map((e) => e.resourceId)),
+    chapters: mainChapters(readJson(MAIN_LIST, [])),
+    libraryFiles: new Set(Object.keys(readJson(LIBRARY_FETCHED, { files: {} }).files ?? {})),
   };
   const collector = await new Collector({ rawDir: RAW_DIR }).init();
   const missingBefore = new Set(collector.missingPaths);
@@ -183,7 +219,20 @@ async function main() {
     .filter(([k, v]) => v && !k.startsWith('_'))
     .filter(([, v]) => recovered.some((p) => p.includes(`scene_detail_${v}_`)));
 
-  // 5. 리포트
+  // 5. 새 단위는 hold "업데이트 전"으로 — 그 패치의 U1이 들인다
+  const holdFile = readJson(HOLD_PATH, {});
+  const holdAdded = holdNewUnits(holdFile, {
+    // 매핑에 키가 있는 이벤트(금서고가 대신 읽힌 것)는 본문이 오면 전환 대기로 — 여기서는 뺀다
+    events: newEvents.map((e) => e.key).filter((k) => !Object.values(eventsMap).includes(k)),
+    episodes: [...new Set(newEpisodes.map((e) => e.resourceId))].filter((rid) => !before.episodeRids.has(rid)),
+    chapters: [...mainChapters(readJson(MAIN_LIST, []))].filter((k) => !before.chapters.has(k)),
+    libraryFiles: (library?.written ?? []).filter((k) => !before.libraryFiles.has(k)),
+    switched,
+    day: started.toISOString().slice(0, 10),
+  });
+  if (holdAdded.length) await fs.writeFile(HOLD_PATH, JSON.stringify(holdFile, null, 2) + '\n');
+
+  // 6. 리포트
   const L = [];
   L.push('# 증분 수집 리포트');
   L.push('');
@@ -208,6 +257,10 @@ async function main() {
       L.push(`- 매핑에 없는 이벤트 파일 ${library.unmapped.length} — ${library.unmapped.map((f) => `\`${f.key}\`(${f.title})`).join(' · ')} → annotations/forbidden-library-events.json에 적어야 받는다`);
   }
   L.push('');
+  L.push('## 들이지 않은 원문에 넣은 것');
+  L.push('');
+  L.push(holdAdded.length ? `- annotations/hold.json ${holdAdded.length} — ${holdAdded.map((k) => `\`${k}\`(${holdFile[k].까닭})`).join(' · ')}` : '- 없음.');
+  L.push('');
   L.push('## 금서고 → 블라링크 전환');
   L.push('');
   L.push(`매핑 null ${Object.values(eventsMap).filter((v) => v === null).length}건(전환 대기 포함). 후보는 Claude가 두 원문을 대조해 확정하고 매핑의 null을 블라링크 키로 바꾼다(SESSIONS.md N2a).`);
@@ -227,7 +280,7 @@ async function main() {
   const { fetched, cached, bytes } = collector.stats;
   console.log(`\n요청 ${fetched}건 받음 (${formatBytes(bytes)}) · 캐시 ${cached}`);
   console.log(`새 씬 ${newScenes.length} · 새 이벤트 ${newEvents.length} · 새 호감도 ${newEpisodes.length} · 이번에 받은 누락 ${recovered.length} · 아직 없음 ${missingAfter.size}`);
-  console.log(`전환 후보 ${candidates.length}${switched.length ? ` · 자동 전환 ${switched.length}` : ''}`);
+  console.log(`전환 후보 ${candidates.length}${switched.length ? ` · 자동 전환 ${switched.length}` : ''} · hold에 넣음 ${holdAdded.length}`);
   console.log(`리포트: ${path.relative(ROOT, REPORT)}`);
   if (fetched || library?.written.length) console.log('data/raw/가 바뀌었다 — 원본 레포에 먼저 push하고 포인터를 커밋한다(CLAUDE.md "브랜치 규칙").');
 }
