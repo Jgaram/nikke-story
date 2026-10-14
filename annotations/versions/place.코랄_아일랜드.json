@@ -4,7 +4,7 @@
     {
       "at": "event_beautyfullshot1",
       "text": "지상 바다의 크고 작은 섬들. 화보 촬영 중에 라피 일행이 머스탱의 부탁으로, 방주가 없어질 경우 인간이 살 만한 곳인지 조사했다.",
-      "src": "37ef46578f",
+      "src": "40f43d36f3",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "c9ac63802e",
           "note": "E425 · F1509 · event_beautyfullshot1_03_e#2-18 — 1판(fl:wave_to_you는 새 사례)"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "2bde896a9c", "note": "근거 — 사실 기록 + 원문 줄(크고 작은 섬들 · 화보 촬영)" }
+      ],
+      "refs": ["F1509", "event_beautyfullshot1_03_e#2", "event_beautyfullshot1_02_s#29"]
     }
   ]
 }
