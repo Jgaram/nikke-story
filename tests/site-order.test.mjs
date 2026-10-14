@@ -199,6 +199,15 @@ test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에
   for (const k of majors.keys()) assert.ok(units.has(k), `${k}: 단위에 없다`);
 });
 
+test('체크 칸(W16a) — units.json check = 사이드 · 주요 이벤트(유실물 포함), 팝업 칸은 주요 이벤트 · 사이드 단위만(유실물은 딸린 이벤트를 따른다)', () => {
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  for (const u of unitsJson) assert.equal(Boolean(u.check), u.group === 'major' || u.group === 'side', `${u.key}: ${u.group} check ${u.check}`);
+  const boxes = unitsJson.filter((u) => u.check && !(u.parent && units.get(u.parent)?.check));
+  assert.deepEqual([...new Set(boxes.map((u) => u.kind))].sort(), ['event', 'side'], '칸은 이벤트 · 사이드만');
+  assert.equal(boxes.filter((u) => u.group === 'major').length, loadMajorEvents().size, '주요 이벤트마다 칸 하나');
+  for (const u of unitsJson) if (u.check && u.kind === 'erelic') assert.ok(units.get(u.parent)?.check, `${u.key}: 딸린 이벤트도 체크 칸`);
+});
+
 test('guideOf — 먼저 볼 것 = 판정 자리가 앞인 척추 + 필수 선행, 기한 = 뒤의 필수 · 권장 선행(척추 먼저), 선택 선행은 둘 다 아니다', () => {
   const units = new Map([['ch01', { order: 1 }], ['a', { order: 2 }], ['b', { order: 3 }], ['ch02', { order: 4 }], ['c', { order: 5 }], ['ch03', { order: 6 }]]);
   const spine = new Set(['ch01', 'ch02', 'ch03']);

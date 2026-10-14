@@ -3,8 +3,9 @@
  *
  *   units.json     읽기 단위 481(돌발 제외, 엘리베이터 포함 — data/views/timeline/units.csv의 집합)
  *                  호감도는 face — 그 스토리의 니케 판 아이콘(이격 · 코스튬도 그 판 그림, site/img/people/{face}.png — 받은 것만)
- *                  group — 종류 갈래(W16a, groupOf — 여기까지 읽음 팝업에 쓸 데이터, 화면은 아직): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(주요 이벤트) · event · episode
+ *                  group — 종류 갈래(W16a, groupOf): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(주요 이벤트) · event · episode
  *                  주요 이벤트는 pickup(픽업 니케 이름 — data/release/major-events.csv), 이벤트 유실물은 parent(딸린 이벤트 — 읽는 순서에서 바로 앞 이벤트)
+ *                  check: 1 — 체크 칸 스토리(사이드 · 주요 이벤트와 그 유실물 — 여기까지 읽음 팝업에서 메인과 따로 고른다, W16a). 체크 칸 규칙은 이 칸 하나다(state.js · versions · persons가 읽는다)
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
@@ -59,8 +60,11 @@ export function groupOf(kind, key, parent, majors) {
   return undefined;
 }
 
+/** 체크 칸 스토리인가(W16a, 사용자 2026-10-14) — 종류 갈래가 사이드 · 주요 이벤트(유실물 · 미니게임은 딸린 이벤트를 따라 major). 메인은 슬라이더, 그 밖은 t를 따른다 */
+export const isCheck = (group) => group === 'side' || group === 'major';
+
 /**
- * 처음 나온 자리(W15b) — 스토리 키들을 읽는 순서로 늘어놓고 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수 — '봤음' 예외가 걸린다)가 아닌 첫 스토리까지 자른다.
+ * 처음 나온 자리(W15b) — 스토리 키들을 읽는 순서로 늘어놓고 체크 칸 스토리(사이드 · 주요 이벤트 — '봤음' 예외가 걸린다)가 아닌 첫 스토리까지 자른다.
  * 화면은 R.seenAny(meet)로 '나왔나'를 본다 — 체크 칸 아닌 스토리는 자리 ≤ t면 봤음이라 그 뒤 스토리는 더 볼 필요가 없다. 없으면 undefined
  */
 export function meetList(keys, units) {
@@ -70,7 +74,7 @@ export function meetList(keys, units) {
   for (const k of sorted) {
     out.push(k);
     const u = byKey.get(k);
-    if (!(u.kind !== 'main' && (u.spine || u.grade === '필수'))) break; // state.js checkable과 같은 규칙
+    if (!u.check) break; // 체크 칸 스토리(units.json check)
   }
   return out.length ? out : undefined;
 }
@@ -244,6 +248,7 @@ export async function run(ctx) {
     if (u.kind === 'erelic') u.parent = lastEvent ?? undefined;
     u.group = groupOf(u.kind, u.key, u.parent, majors);
     if (u.kind === 'event' && majors.has(u.key)) u.pickup = majors.get(u.key);
+    if (isCheck(u.group)) u.check = 1;
   }
 
   // ── 공개 자리 ──

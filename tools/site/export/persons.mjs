@@ -126,13 +126,13 @@ export async function run(ctx) {
 
 /**
  * 같은 씬에 나온 인물 쌍을 공개 자리 · 층마다 — Map('a\tb' → Map('자리 층 예외키' → { tick, layer, ex, scenes, talk, units: Set })).
- * 체크 칸 스토리(척추 이벤트 · 사이드 + 준필수 — 메인이 아니고 spine이거나 grade 필수)는 '봤음' 예외(x)가 걸리므로 같은 자리 · 층의 다른 단위와 섞지 않고 ex = 그 단위 키로 뗀다(W15b에 준필수를 더함).
+ * 체크 칸 스토리(units.json check — 사이드 · 주요 이벤트, W16a)는 '봤음' 예외(x)가 걸리므로 같은 자리 · 층의 다른 단위와 섞지 않고 ex = 그 단위 키로 뗀다.
  * 등장 = personScenes의 합집합(자동 줄 + 암시 언급), 둘 다 말한 씬 = 둘 다 speak 줄이 있는 씬 — tools/views/persons.mjs와 같은 규칙.
  */
 function pairsByTick(ctx, targets) {
   const unitOfScene = new Map(ctx.common.scenes.map((s) => [s.id, s.unit]));
   const layerOfUnit = new Map(ctx.common.units.map((u) => [u.key, u.layer ?? 0]));
-  const extra = new Set(ctx.common.units.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key)); // state.js checkable과 같다
+  const extra = new Set(ctx.common.units.filter((u) => u.check).map((u) => u.key)); // state.js checkable과 같다
   const ps = personScenes({ db: ctx.db, targetIds: new Set(targets.keys()) }, ctx.records.ds);
   const members = new Map(); // 씬 → [{ t, talk }]
   for (const [t, scenes] of ps) {

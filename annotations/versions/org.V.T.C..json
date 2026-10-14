@@ -1,16 +1,19 @@
 {
   "subject": "org:V.T.C.",
   "no_side": {
-    "event_redash": "바로 다음 본판(RED ASH 돌발 스토리)이 정체를 담는다 — RED ASH는 공동 연구 세부뿐(W15f 검토)"
+    "event_redash": "바로 다음 곁 판(RED ASH 돌발 스토리)이 정체를 담는다 — RED ASH는 공동 연구 세부뿐(W15f 검토, W16a 곁 판으로)",
+    "event_oldtales1": "세부뿐 — 2세대 페어리 테일을 인류연합군과 함께 만들고 함께 중앙 정부가 된 일. 무엇인지의 답(생명 공학 연구소 · 중앙 정부 실권)은 CH.43 본판이 담는다(W16a 검토)",
+    "erelic:old_tales_lost": "세부뿐 — 레드 슈즈가 쓴 V.T.C. 인맥 · 옛 연구실. 단체가 무엇인지는 바꾸지 않는다(W16a 검토)",
+    "erelic:old_tales_mini_memory": "세부뿐 — 폐쇄된 옛 V.T.C. 연구실 잠입 보고. 단체가 무엇인지는 바꾸지 않는다(W16a 검토)"
   },
   "versions": [
     {
       "at": "erelic:red_ash_lost",
       "text": "거대 교단이 운용하는 의료 센터 — 라푼젤의 출신지로, 라푼젤은 그곳이 쌓아 온 데이터로 침식 치료제를 만들어 경과를 알린다.",
       "src": "de8db97f0e",
-      "session": "W15e",
+      "session": "W16a",
       "by": "claude",
-      "date": "2026-10-10",
+      "date": "2026-10-14",
       "status": "확정",
       "reviews": [
         {
@@ -20,6 +23,35 @@
           "session": "W15e",
           "hash": "ea11c71016",
           "note": "red_ash_lost F1174 · F1178(교단 의료 센터 · 라푼젤 출신 · 치료제 데이터)로 첫 판, ch43 F2410 · F2411에서 생명 공학 연구소라는 내막 · 중앙 정부 실권 · 숙청이 드러나 판(ark_guardian은 체크 칸이라 메인 ch43에)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16a",
+          "hash": "d8be94ba6e",
+          "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: RED ASH 돌발이 체크 칸이 되어 곁 판(until CH.43), 첫 본판은 라푼젤 : 퓨어 그레이스(d_nikke_rapunzel_puregrace_03 #0 · #18 · #43 — 라푼젤이 보고하러 가는 연구 기관, 침식 치료 연구). OLD TALES 셋은 세부라 no_side"
+        }
+      ],
+      "side": true,
+      "until": "ch43"
+    },
+    {
+      "at": "char:226",
+      "text": "라푼젤이 침식에 대해 보고하고 의논하러 가는 연구 기관. 침식 치료법 연구를 시작했다고 한다.",
+      "src": "06a0fa6f5d",
+      "session": "W16a",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16a",
+          "hash": "6d9181fe59",
+          "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: RED ASH 돌발이 체크 칸이 되어 곁 판(until CH.43), 첫 본판은 라푼젤 : 퓨어 그레이스(d_nikke_rapunzel_puregrace_03 #0 · #18 · #43 — 라푼젤이 보고하러 가는 연구 기관, 침식 치료 연구). OLD TALES 셋은 세부라 no_side"
         }
       ]
     },

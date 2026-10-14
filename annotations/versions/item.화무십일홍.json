@@ -5,9 +5,9 @@
       "at": "event_newyearnewsword",
       "text": "홍련의 언니 장화의 검. 장화가 죽은 뒤 홍련이 지상에서 살아남으려 써 왔고, 부서진 칼날은 한 무기 장인이 장화의 코어 조각으로 보완해 고쳤다.",
       "src": "9215ebb203",
-      "session": "W15e",
+      "session": "W16a",
       "by": "claude",
-      "date": "2026-10-10",
+      "date": "2026-10-14",
       "status": "확정",
       "reviews": [
         {
@@ -17,6 +17,34 @@
           "session": "W15e",
           "hash": "8a893d71d4",
           "note": "F1239·F1241(언니 장화의 검 · 홍련이 씀 · 코어 조각으로 수리) — 앞 체크 칸 내용은 안 씀, 1판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16a",
+          "hash": "60da18dad6",
+          "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: NEW YEAR, NEW SWORD가 체크 칸이 되어 곁 판으로, 첫 본판은 이름이 처음 나오는 체크 칸 아닌 MEMORIES TELLER(event_ce006_2 #93 — 홍련이 쓰는 검으로만 나온다)"
+        }
+      ],
+      "side": true
+    },
+    {
+      "at": "event_ce006",
+      "text": "홍련이 쓰는 검. 어떤 내력이 있는 검인지는 아직 모른다.",
+      "src": "9215ebb203",
+      "session": "W16a",
+      "by": "claude",
+      "date": "2026-10-14",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W16a",
+          "hash": "fd54179fe6",
+          "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: NEW YEAR, NEW SWORD가 체크 칸이 되어 곁 판으로, 첫 본판은 이름이 처음 나오는 체크 칸 아닌 MEMORIES TELLER(event_ce006_2 #93 — 홍련이 쓰는 검으로만 나온다)"
         }
       ]
     }

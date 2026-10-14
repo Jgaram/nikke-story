@@ -315,7 +315,7 @@ test('실제 판 — 판을 볼 수 있는 가장 덜 본 독자(판의 at들만
   for (const [id, l] of Object.entries(V.threads)) if (threads.has(id)) threads.get(id).v = l;
   for (const [id, l] of Object.entries(V.targets)) if (targets.has(id)) targets.get(id).v = l;
   fmt.use({ units, targets, threads, scenes: new Map(), ticks: new Map() });
-  const checkable = new Set(unitList.filter((u) => u.kind !== 'main' && (u.spine || u.grade === '필수')).map((u) => u.key));
+  const checkable = new Set(unitList.filter((u) => u.check).map((u) => u.key));
   const titled = new Map();
   for (const u of unitList) if (u.kind !== 'main' && /^[A-Z][A-Z0-9 .,'!&:-]{4,}$/.test(u.title ?? '')) (titled.get(u.title) ?? titled.set(u.title, []).get(u.title)).push(u.key);
   // 판의 at들만 고르고 메인은 그 at들 가운데 체크 칸이 아닌 것의 자리까지 — 게임에서 체크 칸 스토리는 아무 때나 본다
@@ -362,7 +362,7 @@ test('곁 판(side — W15f) — 체크 칸 스토리 판: 안 본 독자는 건
 });
 
 test('곁 판 검사 — 체크 칸 스토리에만 · until은 뒤 본판 · 내보내기는 곁 판을 싣는다', () => {
-  const C2 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'event_newyearnewsword' ? { ...u, spine: true } : u)), threads: THREADS, flow: FLOW, targets: TARGETS });
+  const C2 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'event_newyearnewsword' ? { ...u, check: 1 } : u)), threads: THREADS, flow: FLOW, targets: TARGETS });
   const v = (at, extra) => confirm({ ...ver(at, GOOD[1].title, GOOD[1].text), ...extra, src: srcHash(S, at, C2) });
   const errs = (vs) => checkFile(file(vs), C2).errors;
   assert.ok(errs([confirm(GOOD[0]), v('ch45', { side: true })]).some((m) => /곁 판\(side\)은 체크 칸/.test(m)));
@@ -374,8 +374,8 @@ test('곁 판 검사 — 체크 칸 스토리에만 · until은 뒤 본판 · �
 });
 
 test('곁 판 후보 경고(W15f) — 첫 본판 앞 체크 칸에 사실 기록이 있고 판이 없으면 경고, no_side에 이유를 적으면 끈다', () => {
-  // char:222를 체크 칸으로(준필수), 거기에 세븐스 드워프 사실 기록
-  const C3 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'char:222' ? { ...u, grade: '필수' } : u)), threads: THREADS, flow: FLOW, targets: DT,
+  // char:222를 체크 칸으로(units.json check), 거기에 세븐스 드워프 사실 기록
+  const C3 = sourcesFrom({ units: UNITS.map((u) => (u.key === 'char:222' ? { ...u, check: 1 } : u)), threads: THREADS, flow: FLOW, targets: DT,
     records: [...DREC, { id: 'F9', kind: 'F', unit: 'char:222', about: ['item:세븐스_드워프'], text: '…' }] });
   const v = (at, text, extra = {}) => ({ at, text, src: srcHash(DS, at, C3), session: 'W15f', by: 'claude', date: '2026-10-11', status: '후보', reviews: [], ...extra });
   const base = [v('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.')];

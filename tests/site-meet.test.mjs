@@ -1,7 +1,7 @@
 /**
  * 처음 나온 자리(W15b) — 아직 안 나온 인물 · 항목 · 다른 이름 · 시대 기준점을 그 자리에서 숨기는 데이터와 화면 함수.
  *   ① 내보내기: targets.json meet · name_meet · 다른 이름 meet(판 이름은 호감도 스토리), chrono.json 시대 기준점 meet
- *   ② common.mjs meetList — 체크 칸 스토리(척추 이벤트 · 사이드 · 준필수)가 아닌 첫 스토리까지 자른다
+ *   ② common.mjs meetList — 체크 칸 스토리(units.json check — 사이드 · 주요 이벤트)가 아닌 첫 스토리까지 자른다
  *   ③ fmt.met · nameAt · aliasesAt · namesAt — 그 자리의 이름
  *
  *   node --test tests/site-meet.test.mjs   (site/data/가 없으면 ①은 건너뛴다 — node tools/site/export.mjs)
@@ -27,10 +27,10 @@ const mkR = (units, t, x = {}) => ({
 
 test('meetList — 읽는 순서로 늘어놓고 체크 칸 스토리가 아닌 첫 스토리까지', () => {
   const units = [
-    { key: 'ch01', kind: 'main', order: 1 }, { key: 'event_a', kind: 'event', spine: true, order: 2 },
-    { key: 'side:b', kind: 'side', grade: '필수', order: 3 }, { key: 'sub:c', kind: 'sub', grade: '참고', order: 4 }, { key: 'ch02', kind: 'main', order: 5 },
+    { key: 'ch01', kind: 'main', order: 1 }, { key: 'event_a', kind: 'event', check: 1, order: 2 },
+    { key: 'side:b', kind: 'side', check: 1, order: 3 }, { key: 'sub:c', kind: 'sub', grade: '참고', order: 4 }, { key: 'ch02', kind: 'main', order: 5 },
   ];
-  assert.deepEqual(meetList(['ch02', 'sub:c', 'event_a', 'side:b'], units), ['event_a', 'side:b', 'sub:c'], '척추 이벤트 · 준필수는 건너뛸 수 있어 다음 스토리까지');
+  assert.deepEqual(meetList(['ch02', 'sub:c', 'event_a', 'side:b'], units), ['event_a', 'side:b', 'sub:c'], '주요 이벤트 · 사이드는 건너뛸 수 있어 다음 스토리까지');
   assert.deepEqual(meetList(['ch02', 'ch01'], units), ['ch01']);
   assert.equal(meetList(['없는키'], units), undefined);
 });

@@ -5,9 +5,9 @@
       "at": "event_wisdomspring",
       "text": "M.M.R. 지하 연구실보다 깊은 구역. 방주의 비밀을 묻어 봉인하는 곳이라 통신이 막히고, 지휘관이 '7호'로 불린 비밀 프로젝트도 여기서 진행되었다.",
       "src": "f2400785c1",
-      "session": "W15f",
+      "session": "W16a",
       "by": "claude",
-      "date": "2026-10-10",
+      "date": "2026-10-14",
       "status": "확정",
       "reviews": [
         {
@@ -17,26 +17,14 @@
           "session": "W15f",
           "hash": "45ad2fb8f7",
           "note": "곁 판 — F1768 · F1776(WISDOM SPRING)로 방주 비밀 봉인 구역 · 비밀 프로젝트 자리. 본판 CH.41은 극비 구역만이라 until 없음"
-        }
-      ],
-      "side": true
-    },
-    {
-      "at": "ch41",
-      "text": "M.M.R.의 극비 중의 극비 구역. 중앙 정부 고위층도 수십 가지 절차를 밟아야 들어올 수 있고, 인증 없이 복도에 들어서면 목숨을 잃는다.",
-      "src": "f2400785c1",
-      "session": "W15e",
-      "by": "claude",
-      "date": "2026-10-10",
-      "status": "확정",
-      "reviews": [
+        },
         {
           "decision": "확정",
           "by": "claude",
-          "date": "2026-10-10",
-          "session": "W15e",
-          "hash": "1e72ff6c0d",
-          "note": "CH.41 d_main_41_af_04#19-28(M.M.R. 심층부, 극비 구역, 절차·인증) — 첫 판 자리 ch32 '심층부'는 베히모스가 있는 지상 시설 깊은 곳(동음 오탐)이라 비워 둠, 언급 고치면 meet=WISDOM SPRING(체크 칸)·ch41이라 이 판이 첫 판"
+          "date": "2026-10-14",
+          "session": "W16a",
+          "hash": "b5cab896a2",
+          "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: WISDOM SPRING이 첫 본판(곁 판 아님). CH.41 판은 다룬 기록이 없는 세부라 뺐다(사전 판 기준 2)"
         }
       ]
     }

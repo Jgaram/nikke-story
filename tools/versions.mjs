@@ -67,7 +67,7 @@ async function env() {
 }
 const write = (p, f) => {
   fs.mkdirSync(path.dirname(p), { recursive: true });
-  fs.writeFileSync(p, formatJson({ subject: f.subject, versions: f.versions }));
+  fs.writeFileSync(p, formatJson({ subject: f.subject, ...(f.no_side ? { no_side: f.no_side } : {}), versions: f.versions })); // no_side(W15f)도 지키며 쓴다
 };
 /** 원문 겹침(오류) · DB에서 처음 나온 이름(경고) — 판마다 그 at 자리로 */
 function heavyProblems(f, e) {
