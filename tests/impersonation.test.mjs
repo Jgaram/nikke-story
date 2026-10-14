@@ -2,7 +2,9 @@
  * 사칭(W23a) — people.json 정체 연결 type impersonates: 검사기 · 집계(이름표 주인 줄을 사칭한 인물에) · 인계 규칙(focus swap · 사칭 볼 줄) ·
  * 화면 함수(fmt.rowAt · impKnown) · 내보낸 persons*.json. 실제 기록은 L32(슈엔 → 시프티, CH.08–09, 드러남 CH.09)로 본다.
  * W23b: L33(한슨 → 머스탱) · 실제 인물로 적은 기록의 가림(masksOf · fmt.recAt · recHas) · 계산은 이름표 주인으로(faceDataset — W23c).
- * W23d: 화면 이름 — 드러난 뒤에도 이어지는 사칭의 이름표 주인(imp_name) · 동명이인(label) 자동 구분, 소속의 가림(fmt.orgsAt), 검사기 b_name · 소속.
+ * W23d: 동명이인(label) 자동 구분, 소속의 가림(fmt.orgsAt), 검사기 소속.
+ * W23e: 이름 승계(L.real) — 독자가 알던 b(지금의 머스탱)는 드러나면 a(한슨)와 같은 인물, 이름의 원래 주인(진짜 머스탱)은 빌드가 세운 real:
+ *       범위 밖 b 줄 · real 기록의 가림, 검사기 real, 화면 이름(real_of), 내보낸 same_as · meet.
  *
  *   node --test tests/impersonation.test.mjs
  */
@@ -21,7 +23,7 @@ import { identityRules, impersonationWatch, sourceTargets } from '../tools/recor
 import { buildPersons, personScenes } from '../tools/views/persons.mjs';
 import * as fmt from '../site/lib/format.js';
 import { impKnown, recAt, recHas, rowAt } from '../site/lib/format.js';
-import { continuesAfterReveal, displayNameAfter, faceDataset, homonymLabels, impersonationUnits, masksOf } from '../tools/records/impersonation.mjs';
+import { continuesAfterReveal, faceDataset, homonymLabels, impersonated, impersonationUnits, masksOf } from '../tools/records/impersonation.mjs';
 import { scenePlaces } from '../tools/records/read2.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -135,8 +137,10 @@ test('내보낸 데이터 — 사칭 행은 rev · as 또는 by · pre, persons.
         assert.ok(e.scenes > 0 && !e.rev && !e.as && !e.by, `${d.id} ${e.unit}: 사칭 없는 행`);
         continue;
       }
-      assert.ok(e.rev && Boolean(e.as) !== Boolean(e.by), `${d.id} ${e.unit}: rev · as | by`);
-      assert.ok(persons.get(d.id).imp?.some((x) => x.units.includes(e.unit)), `${d.id} ${e.unit}: persons.json imp`);
+      // 이름 승계(W23e)의 b(독자가 알던 인물)와 real(회상 속 제 줄)의 행은 상대가 없다 — b는 드러나면 a와 같은 인물(same_as)
+      const heir = imps.some((x) => x.real && (x.b === d.id || x.real === d.id));
+      assert.ok(e.rev && (heir ? !e.as && !e.by : Boolean(e.as) !== Boolean(e.by)), `${d.id} ${e.unit}: rev · as | by`);
+      if (!heir) assert.ok(persons.get(d.id).imp?.some((x) => x.units.includes(e.unit)), `${d.id} ${e.unit}: persons.json imp`);
     }
   }
   assert.deepEqual(persons.get('person:슈엔').imp, [{ id: 'L32', as: 'person:시프티', rev: 'ch09', units: ['ch08', 'ch09'] }]);
@@ -161,7 +165,8 @@ test('W23b — 기록은 실제 인물로, 드러나기 전에는 이름표 주�
   assert.deepEqual(byId.get('F94').obj.about.filter((x) => x.startsWith('person:')), ['person:한슨'], 'CH.04 사장 소개는 한슨');
   assert.deepEqual(masksOf(byId.get('F94'), units).map((m) => [m.a, m.b, m.rev]), [['person:한슨', 'person:머스탱', 'event_staranis1']]);
   assert.equal(masksOf(byId.get('F2544'), units).length, 0, 'PRETTY STAR의 이사 한슨은 가리지 않는다');
-  assert.ok(byId.get('F2200').obj.about.includes('person:머스탱') && !byId.get('F2200').obj.about.includes('person:한슨'), "'당시의 머스탱'은 진짜 머스탱");
+  assert.ok(byId.get('F2200').obj.about.includes('person:머스탱_한슨의_아버지') && !byId.get('F2200').obj.about.includes('person:한슨'), "'당시의 머스탱'은 진짜 머스탱(W23e — real)");
+  assert.deepEqual(masksOf(byId.get('F2200'), units).map((m) => [m.a, m.b]), [['person:머스탱_한슨의_아버지', 'person:머스탱']], '진짜 머스탱도 드러나기 전에는 머스탱');
   assert.ok(byId.get('Q42').obj.about.includes('person:슈엔'), 'CH.08 오퍼레이터 감시 의문은 슈엔(L32)');
   // 계산은 이름표 주인으로
   const faced = faceDataset(ds, ctx, order);
@@ -212,13 +217,34 @@ test('W23d — 드러난 뒤에도 이어지는 사칭만 이름표 주인에 �
   const L = (id) => imps.find((x) => x.id === id);
   assert.equal(continuesAfterReveal(L('L33'), places.unitOf, (u) => pos.get(u)), true, '한슨은 STAR ANIS 뒤에도 머스탱으로 산다');
   assert.equal(continuesAfterReveal(L('L32'), places.unitOf, (u) => pos.get(u)), false, '슈엔의 시프티 행세는 CH.09에서 끝난다');
-  assert.equal(displayNameAfter(L('L33'), '머스탱'), L('L33').b_name ?? '진짜 머스탱');
-  assert.equal(displayNameAfter({ b_name: null }, '머스탱'), '진짜 머스탱', 'b_name이 없으면 자동');
+  // 이어지면 이름 승계 — 이름의 원래 주인은 real(빌드가 세운 인물), 한때의 행세는 b가 진짜 b
+  assert.equal(L('L33').real, 'person:머스탱_한슨의_아버지');
+  assert.equal(L('L32').real, null);
+  assert.equal(impersonated(L('L33')), 'person:머스탱_한슨의_아버지');
+  assert.equal(impersonated(L('L32')), 'person:시프티');
+  const t = ctx.db.prepare('SELECT name, kind, origin FROM targets WHERE id = ?').get('person:머스탱_한슨의_아버지');
+  assert.deepEqual({ ...t }, { name: '머스탱', kind: '인물', origin: '사칭' }, '빌드가 세운 진짜 머스탱 — 표준명은 같다(동명이인)');
+  assert.equal(ctx.db.prepare('SELECT COUNT(*) n FROM target_names WHERE target_id = ?').get('person:머스탱_한슨의_아버지').n, 0, '검색 이름은 b에만');
 });
 
-test('W23d — 화면 fmt.labelAt · targetName · nameAt: 드러나기 전에는 표준명, 뒤 · 전부 보기에는 imp_name, 동명이인은 늘 label', () => {
+test('W23e — 이름 승계: 범위 밖 b 줄은 real에게, b에는 드러나기 전 모습만 · 인계도 real로 센다', () => {
+  const L = imps.find((x) => x.id === 'L33');
+  const ps = personScenes(ctx, ds);
+  const real = ps.get(L.real);
+  assert.ok(real?.get('side:pretty_star_05')?.speak.size > 0, 'PRETTY STAR의 사장 머스탱 줄은 진짜 머스탱');
+  assert.ok([...ps.get(L.b).values()].every((x) => x.all.size === 0), '독자가 알던 머스탱 줄은 모두 한슨 · 진짜 머스탱에게');
+  assert.ok(ps.get(L.b).get('side:pretty_star_05').pre.all.size > 0, '드러나기 전 모습은 머스탱');
+  assert.equal(real.get('side:pretty_star_05').pre.all.size, 0, '진짜 머스탱은 드러나기 전에 따로 없다');
+  const x = ps.get(L.b).get('event_staranis2_05_s');
+  assert.ok(ps.get(L.a).get('event_staranis2_05_s').all.has(144) && real.get('event_staranis2_05_s').all.has(119) && !x.all.size, '바뀌는 씬은 줄마다 갈린다');
+  const hits = sourceTargets(ctx, ['side:pretty_star'], { identity: true, links: people });
+  assert.equal(hits.get('person:머스탱'), undefined, '회상의 머스탱은 진짜 머스탱');
+  assert.ok(hits.get(L.real) > 0);
+});
+
+test('W23e — 화면 fmt.labelAt · targetName · nameAt: 진짜 머스탱(real_of)은 드러나기 전에는 표준명, 뒤 · 전부 보기에는 label, 동명이인은 늘 label', () => {
   const R = (seen, all = false) => ({ all, seen: (u) => seen.includes(u), seenAny: (us) => us.some((u) => seen.includes(u)) });
-  const must = { id: 'person:머스탱', type: 'person', name: '머스탱', meet: ['ch04'], imp_name: { name: '머스탱 (한슨의 아버지)', rev: 'event_staranis1' } };
+  const must = { id: 'person:머스탱', type: 'person', name: '머스탱', label: '머스탱 (한슨의 아버지)', meet: ['ch04'], real_of: { b: 'person:머스탱', a: 'person:한슨', rev: 'event_staranis1' } };
   const saku = { id: 'person:사쿠라_콜라보', type: 'person', name: '사쿠라', label: '사쿠라 (콜라보)', meet: ['char:836'] };
   fmt.use({ targets: new Map([[must.id, must], [saku.id, saku]]) });
   assert.equal(fmt.labelAt(must, R(['ch04'])), '머스탱');
@@ -248,18 +274,24 @@ test('W23d — 가려지는 소속(imp)은 드러나기 전 이름표 주인 쪽
   assert.deepEqual([has(b, 100), has(a, 100), has(b, 144), has(a, 144), has(b, null), has(a, null)], [true, false, false, true, false, true], '자리(t)로 부를 때는 rev_tick');
 });
 
-test('W23d — 검사기: b_name은 이어지는 사칭에만 · 빈 값 오류, 소속도 사칭 범위를 본다', () => {
+test('W23e — 검사기: real은 이어지는 사칭에만 · 이어지면 꼭, a · b와 다르게 · 사전에 있게, 소속도 사칭 범위를 본다', () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'imp-'));
   const file = path.join(dir, '_people.json');
   const base = { status: '후보', confidence: '확실', reason: '시험', by: 'claude', evidence: [{ scene: 'd_main_09_06_s', lines: [22] }] };
   fs.writeFileSync(file, JSON.stringify({ candidates: [
-    { id: 'L911', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }], revealed: 'ch09', b_name: '진짜 시프티', ...base },
-    { id: 'L912', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }], revealed: 'ch09', b_name: ' ', ...base },
+    { id: 'L911', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }], revealed: 'ch09', real: 'person:라피', ...base },
+    { id: 'L912', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }, { scene: 'd_main_10_01' }], revealed: 'ch09', ...base },
+    { id: 'L913', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }, { scene: 'd_main_10_01' }], revealed: 'ch09', real: 'person:슈엔', ...base },
+    { id: 'L914', type: 'impersonates', a: 'person:슈엔', b: 'person:시프티', spans: [{ scene: 'd_main_08_01' }, { scene: 'd_main_10_01' }], revealed: 'ch09', real: 'person:없는_시프티', ...base },
   ] }));
   const { errors, warnings } = checkDataset(loadDataset({ dir: EXAMPLE_DIR, people: file }), ctx, order);
   fs.rmSync(dir, { recursive: true, force: true });
-  assert.ok(warnings.some((e) => e.id === 'L911' && /b_name은 행세가 드러난 뒤에도/.test(e.msg)));
-  assert.ok(errors.some((e) => e.id === 'L912' && /b_name은 비지 않은 문자열/.test(e.msg)));
+  const err = (id, re) => assert.ok(errors.some((e) => e.id === id && re.test(e.msg)), `${id} ${re}\n${errors.map((e) => `${e.id} ${e.msg}`).join('\n')}`);
+  err('L911', /real은 행세가 드러난 뒤에도 이어지는 사칭/);
+  err('L912', /이름의 원래 주인은 따로 세운다: real/);
+  err('L913', /real은 a · b와 다른 인물/);
+  err('L914', /사전에 없다/);
+  assert.ok(!warnings.concat(errors).some((e) => e.id === 'L33'), '실제 L33은 real이 있어 조용하다');
   // 실제 데이터 — 소속 T6(CH.04 테트라 CEO)은 한슨으로, 경고 없음
   const real = checkDataset(ds, ctx, order);
   assert.ok(!real.warnings.some((e) => e.id === 'T6'), real.warnings.filter((e) => e.id === 'T6').map((e) => e.msg).join('\n'));
@@ -267,10 +299,28 @@ test('W23d — 검사기: b_name은 이어지는 사칭에만 · 빈 값 오류,
   assert.equal(t6.obj.person, 'person:한슨');
 });
 
-test('W23d — 내보낸 targets: 진짜 머스탱의 드러난 뒤 이름 · 사쿠라 동명이인 · 소속 가림', { skip: !fs.existsSync(path.join(ROOT, 'site/data/targets.json')) }, () => {
+test('W23e — 내보낸 targets: 독자가 알던 머스탱 = 한슨(드러난 뒤) · 진짜 머스탱은 따로 · 사쿠라 동명이인 · 소속 가림', { skip: !fs.existsSync(path.join(ROOT, 'site/data/targets.json')) }, () => {
   const T = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/targets.json'), 'utf8')).map((t) => [t.id, t]));
-  assert.deepEqual(T.get('person:머스탱').imp_name, { name: '머스탱 (한슨의 아버지)', rev: 'event_staranis1' });
-  assert.equal(T.get('person:시프티').imp_name, undefined, '한때의 행세는 그대로');
+  const F = 'person:머스탱_한슨의_아버지';
+  const sameAt = (id, other) => T.get(id).same_as_unit?.[T.get(id).same_as?.indexOf(other)];
+  assert.equal(sameAt('person:머스탱', 'person:한슨'), 'event_staranis1', '라피 = 피라처럼 드러나면 같은 인물');
+  assert.equal(sameAt('person:한슨', 'person:머스탱'), 'event_staranis1');
+  assert.deepEqual(T.get(F).real_of, { b: 'person:머스탱', a: 'person:한슨', rev: 'event_staranis1' });
+  assert.equal(T.get(F).label, '머스탱 (한슨의 아버지)');
+  assert.deepEqual(T.get(F).meet, ['event_staranis1'], '진짜 머스탱은 드러난 스토리부터 따로 나온다');
+  assert.equal(T.get('person:머스탱').label, undefined);
+  assert.equal(T.get('person:시프티').real_of, undefined, '한때의 행세는 그대로');
+  assert.equal(T.get(F).affs.find((a) => a.id === 'T140')?.imp?.side, 'a', '진짜 머스탱의 테트라 CEO');
+  // 인물 표 — 한슨은 진짜 머스탱 행세, 진짜 머스탱의 '사칭' 걸린 스토리는 한슨이 행세한 스토리, 독자가 알던 머스탱에는 사칭 줄이 없다
+  const P = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/persons.json'), 'utf8')).map((p) => [p.id, p]));
+  const hanImp = P.get('person:한슨').imp.find((x) => x.id === 'L33');
+  const fImp = P.get(F).imp.find((x) => x.id === 'L33');
+  assert.equal(hanImp.as, F);
+  assert.equal(fImp.by, 'person:한슨');
+  assert.deepEqual(fImp.units, hanImp.units);
+  assert.ok(fImp.units.includes('ch04') && fImp.units.includes('fl:b-side_idol'), 'CH.04부터 드러난 뒤 B-SIDE IDOL까지');
+  assert.equal(P.get('person:머스탱').imp, undefined);
+  assert.equal(T.get('person:머스탱').affs.find((a) => a.id === 'T140')?.imp?.side, 'b');
   assert.equal(T.get('person:사쿠라_콜라보').label, '사쿠라 (콜라보)');
   assert.equal(T.get('person:사쿠라').label, undefined);
   assert.equal(T.get('person:한슨').affs.find((a) => a.id === 'T6')?.imp?.side, 'a');
@@ -279,7 +329,7 @@ test('W23d — 내보낸 targets: 진짜 머스탱의 드러난 뒤 이름 · �
   const names = new Map();
   for (const t of T.values()) {
     if (t.type !== 'person') continue;
-    const n = t.imp_name?.name ?? t.label ?? t.name;
+    const n = t.label ?? t.name;
     assert.ok(!names.has(n), `화면 이름 '${n}'이 ${names.get(n)} · ${t.id}에 겹친다`);
     names.set(n, t.id);
   }

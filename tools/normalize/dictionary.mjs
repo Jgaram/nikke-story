@@ -175,6 +175,19 @@ export function buildDictionary({ characters }) {
   const unknownGroups = Object.keys(L).filter((k) => !['인물', '랩쳐', ...NO_TARGET, '대상', '여럿'].includes(k));
   if (unknownGroups.length) problems.push(`speakers.json labels: 모르는 갈래 ${unknownGroups.join(', ')}`);
 
+  // 3b) 이름 승계 사칭의 진짜 b(W23e — people.json impersonates real). 이름표 대상 b는 독자가 알던 인물(드러나면 a)이라 이름의 원래 주인을 따로 세운다.
+  //     표준명은 b와 같고(동명이인 — 화면은 ID 구분어로 가른다) 검색 이름은 두지 않는다: 언급은 b에 남고 범위 밖 줄을 화면 · 집계가 real로 옮긴다
+  for (const l of people.candidates ?? []) {
+    if (l?.type !== 'impersonates' || l.status === '기각' || typeof l.real !== 'string' || !l.real.startsWith('person:')) continue;
+    const b = targets.get(l.b);
+    if (!b) { problems.push(`people.json ${l.id}: real을 세울 b ${l.b}가 없다`); continue; }
+    if (targets.has(l.real)) continue; // persons에 손으로 적었으면 그것
+    targets.set(l.real, {
+      id: l.real, type: 'person', name: b.name, kind: b.kind, resourceIds: [], origin: '사칭',
+      note: `정체 연결 ${l.id}(이름 승계 사칭)에서 세운 진짜 ${b.name} — 이름의 원래 주인. 이름표 대상 ${l.b}는 독자가 알던 인물로, 드러나면 ${l.a}와 같은 인물`,
+    });
+  }
+
   // 4) 코드 규칙 — 화면 이름표는 그대로 두고 이름표 코드로 대상을 푼다 (`???` + unknown_grave → 그레이브)
   const codes = new Map();
   for (const r of speakers.codes ?? []) codes.set(`${r.label}\t${r.code}`, { ...r });

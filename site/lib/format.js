@@ -992,12 +992,13 @@ function proseOne(text) {
 }
 
 /**
- * 표준명의 화면 이름(W23d) — 드러난 뒤에도 이어지는 사칭의 이름표 주인은 드러난 스토리(imp_name.rev)를 읽은 뒤 imp_name.name('진짜 머스탱' 등),
- * 동명이인은 label('사쿠라 (콜라보)'), 그 밖은 표준명. 찾기 · 스포일러 검사(namesAt · unknownNameIn)는 표준명 그대로 쓴다.
+ * 표준명의 화면 이름(W23d) — 동명이인은 label('사쿠라 (콜라보)' · '머스탱 (한슨의 아버지)'), 그 밖은 표준명.
+ * 이름 승계 사칭의 진짜 b(W23e — real_of)는 드러난 스토리(real_of.rev)를 읽기 전에는 독자에게 b와 한 사람이라 구분어 없이 표준명.
+ * 찾기 · 스포일러 검사(namesAt · unknownNameIn)는 표준명 그대로 쓴다.
  */
 export function labelAt(target, R) {
   if (!target) return '';
-  if (target.imp_name && impKnown(target.imp_name, R)) return target.imp_name.name;
+  if (target.real_of && !impKnown(target.real_of, R)) return target.name;
   return target.label ?? target.name;
 }
 

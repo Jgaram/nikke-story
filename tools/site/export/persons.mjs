@@ -2,13 +2,14 @@
  * 탭 "인물" 데이터(W5) — 화면 5(docs/views.md "5. 인물별 집계")의 시안 표(data/views/persons/, X3d)를 사이트용 JSON으로.
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn } — docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
  *
- *   persons.json          인물 386(사전 person: 전부) — 전체 기준 집계 + 정적 메타. 화면은 컷오프 · 층에 맞춰 persons-detail.json에서 다시 센다
+ *   persons.json          인물 387(사전 person: 전부) — 전체 기준 집계 + 정적 메타. 화면은 컷오프 · 층에 맞춰 persons-detail.json에서 다시 센다
  *     id · name · kind(갈래 — 니케 · 인물 · 랩쳐) · common(지휘관 · 흔한 대상) · spread · leads[](주역인 줄기 ID — 화면은 첫 스토리를 본 줄기만) · same_as[] · aliases[]
  *     scenes · units · lines · speaker_lines · named_lines · implied_lines · implied_scenes
  *     first_unit · first_tick · first_order · first_scene · first_how(이름표로 말함 · 이름 · 다른 이름 · 암시 언급) · first_speaks_unit · last_unit · last_tick · last_order
  *     facts · questions · open · partial · solved · reversed · events · echoes · life · records(다룬 기록 수) · threads[](J)
  *     baselines · changes · inverted · with_others · closures[](O) · merges[](H)
  *     imp[]      사칭(W23a — people.json impersonates) { id, as(이 인물이 행세한 인물) | by(이 인물로 행세한 인물), rev(드러난 스토리), units[](걸린 스토리) } — 화면은 rev를 읽었을 때만 보인다
+ *                이름 승계(W23e — real)는 행세한 인물이 real(이름의 원래 주인)이고, b(독자가 알던 인물)에는 imp가 없다(드러나면 a와 같은 인물 — same_as)
  *   persons-detail.json   인물마다(등장 · 기록 · 변화가 하나라도 있는 381) { id, units[], records[], changes[], rel[] }
  *     units[]    등장 히트맵 — { unit, scenes, lines, speaker, implied, first_scene, hid } (자리 · 종류 · 층은 units.json에서. hid = 그 스토리에 이름이 안 쓰임 — '???'로만, W15f)
  *                사칭이 걸린 스토리(W23a — person-units.csv imp)는 + { rev(드러난 스토리), as[](이 인물이 행세한 인물) | by[](이 인물로 행세한 인물), pre{ scenes, lines, speaker, implied, first_scene } }.
@@ -23,6 +24,7 @@
  * 대사 본문 · 원문 파일 · 외부 참고 표는 읽지 않는다. 기록 문장은 여기 없다(records.json · records2.json의 것을 쓴다).
  */
 import { impersonations } from '../../records/model.mjs';
+import { impersonated } from '../../records/impersonation.mjs';
 import { compact, list, num } from '../lib.mjs';
 
 export const name = 'persons';
@@ -66,13 +68,23 @@ export async function run(ctx) {
     const xs = list(r.imp).map((id) => imps.get(id)).filter(Boolean);
     const imp = xs.length ? {
       rev: xs.map((x) => x.revealed).filter(Boolean).sort((a, b) => orderOf(b) - orderOf(a))[0],
-      as: xs.filter((x) => x.a === r.person).map((x) => x.b), by: xs.filter((x) => x.b === r.person).map((x) => x.a),
+      // 줄 표는 그 스토리에서 이름표 b로 말한 것이 누구인지 — 이름 승계(W23e)의 real 행(회상 속 제 줄)과 b 행에는 상대가 없다
+      as: xs.filter((x) => x.a === r.person).map(impersonated), by: xs.filter((x) => x.b === r.person && !x.real).map((x) => x.a),
       pre: compact({ scenes: num(r.pre_scenes), lines: num(r.pre_lines), speaker: num(r.pre_speaker_lines) || undefined, implied: num(r.pre_implied_lines) || undefined, first_scene: r.pre_first_scene || undefined }),
     } : {};
     for (const x of xs) {
-      const mine = impOf.get(r.person) ?? impOf.set(r.person, []).get(r.person);
-      const e = mine.find((m) => m.id === x.id) ?? mine[mine.push({ id: x.id, as: x.a === r.person ? x.b : undefined, by: x.b === r.person ? x.a : undefined, rev: x.revealed ?? undefined, units: [] }) - 1];
-      e.units.push(r.unit);
+      // 이름 승계(W23e) — b(독자가 알던 인물)는 사칭의 상대가 아니고(드러나면 a와 같은 인물 — 머리의 '같은 인물'),
+      // 행세당한 real의 걸린 스토리는 제 등장(회상)이 아니라 a가 행세한 스토리다(a 행에서 함께 모은다)
+      if (x.real && x.b === r.person) continue;
+      const add = (pid, side) => {
+        const mine = impOf.get(pid) ?? impOf.set(pid, []).get(pid);
+        const e = mine.find((m) => m.id === x.id) ?? mine[mine.push({ id: x.id, [side]: side === 'as' ? impersonated(x) : x.a, rev: x.revealed ?? undefined, units: [] }) - 1];
+        e.units.push(r.unit);
+      };
+      if (x.a === r.person) {
+        add(r.person, 'as');
+        if (x.real) add(x.real, 'by');
+      } else if (!x.real) add(r.person, 'by');
     }
     slot(r.person).units.push(compact({ unit: r.unit, scenes: num(r.scenes), lines: num(r.lines), speaker: num(r.speaker_lines) || undefined, implied: num(r.implied_lines) || undefined, first_scene: r.first_scene || undefined, hid, ...imp }));
   }

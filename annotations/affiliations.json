@@ -2099,7 +2099,7 @@
     },
     {
       "id": "T140",
-      "person": "person:머스탱",
+      "person": "person:머스탱_한슨의_아버지",
       "org": "org:테트라",
       "act": "소속",
       "role": "CEO",
@@ -2113,7 +2113,7 @@
     },
     {
       "id": "T141",
-      "person": "person:머스탱",
+      "person": "person:머스탱_한슨의_아버지",
       "org": "org:테트라",
       "act": "이탈",
       "role": "CEO",

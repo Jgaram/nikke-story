@@ -371,7 +371,7 @@
         "Q352",
         "Q353"
       ],
-      "about": ["person:머스탱", "person:한슨", "org:T.T.STAR", "person:프리티", "org:쉐이드", "concept:스마일_박스", "person:요요", "person:리스"],
+      "about": ["person:머스탱_한슨의_아버지", "person:한슨", "org:T.T.STAR", "person:프리티", "org:쉐이드", "concept:스마일_박스", "person:요요", "person:리스"],
       "reason": "메인 주역 아니스의 배경으로 메인 ch35–45에 걸치지만 답은 대부분 사이드 · 이벤트에 있다(F2546 · F2705) — 메인 줄거리는 따라간다",
       "confidence": "확실",
       "status": "확정",

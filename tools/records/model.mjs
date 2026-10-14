@@ -171,8 +171,8 @@ export const FIELDS = {
   revisitDone: ['id', 'note'],
   review: ['decision', 'by', 'date', 'session', 'note', 'before'],
   // 사칭(impersonates, W23a) — spans: 이름표 · 이름 b가 실제로는 a인 줄 [{scene, lines?}] · revealed: 독자가 사칭을 아는 읽기 단위
-  // b_name(W23d): 행세가 드러난 뒤에도 이어질 때 드러난 뒤 b의 화면 이름(없으면 '진짜 <b>')
-  link: ['id', 'type', 'a', 'b', 'spans', 'revealed', 'b_name', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
+  // real(W23e): 행세가 드러난 뒤에도 이어질 때(이름 승계) 이름의 원래 주인 — 진짜 b의 인물 ID. b(이름표 대상)는 독자가 알던 인물이라 드러나면 a와 같은 인물
+  link: ['id', 'type', 'a', 'b', 'spans', 'revealed', 'real', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
   threadsFile: ['_comment', 'session', 'by', 'date', 'note', 'threads', 'relations'],
   thread: ['id', 'title', 'text', 'weight', 'questions', 'facts', 'about', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
   relation: ['id', 'type', 'a', 'b', 'text', 'evidence', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
@@ -629,7 +629,8 @@ export function sameAsGroups(ds) {
  * 사칭(W23a) — 정체 연결 가운데 type impersonates(기각 빼고, confirmed면 확정만). a가 b의 이름표 · 이름으로 행세했다 — 둘은 다른 인물(same_as와 다름).
  * spans를 편다: seqs = 줄 번호 Set, lines를 안 적은 span은 null(씬 전체).
  * @param {ReturnType<typeof loadDataset>} ds
- * @returns {{ id: string, a: string, b: string, revealed: string|null, b_name: string|null, status: string, spans: { scene: string, seqs: Set<number>|null }[] }[]} ID 순
+ * real(W23e — 이름 승계): 진짜 b의 인물 ID. 있으면 범위 밖에서 b로 잡힌 줄 · b를 다룬 기록의 실제 인물은 real이다(docs/annotations.md "사칭 기록").
+ * @returns {{ id: string, a: string, b: string, revealed: string|null, real: string|null, status: string, spans: { scene: string, seqs: Set<number>|null }[] }[]} ID 순
  */
 export function impersonations(ds, { confirmed = false } = {}) {
   const out = [];
@@ -642,8 +643,8 @@ export function impersonations(ds, { confirmed = false } = {}) {
       if (typeof s?.scene !== 'string') continue;
       spans.push({ scene: s.scene, seqs: s.lines === undefined ? null : new Set(expandLines(s.lines).seqs) });
     }
-    const bName = typeof c.obj.b_name === 'string' && c.obj.b_name.trim() ? c.obj.b_name.trim() : null;
-    out.push({ id: c.id, a, b, revealed: typeof revealed === 'string' ? revealed : null, b_name: bName, status: c.status, spans });
+    const real = typeof c.obj.real === 'string' && c.obj.real.trim() ? c.obj.real.trim() : null;
+    out.push({ id: c.id, a, b, revealed: typeof revealed === 'string' ? revealed : null, real, status: c.status, spans });
   }
   return out.sort((x, y) => compareIds(x.id, y.id));
 }

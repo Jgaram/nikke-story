@@ -536,7 +536,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
 | `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다. 둘 다 사칭에 가려지는 기록은 `imp`(W23b — 아래 "사칭") |
 | `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
-| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `label`(동명이인 화면 이름, W23d) · `imp_name{name, rev}`(드러난 뒤 사칭 이름표 주인의 화면 이름, W23d) · `kind` · `note` · `aliases[{name, how, meet?, never?}]` · `meet[]` · `name_meet[]` · `name_never`(처음 나온 자리 — 아래 "처음 나온 자리(W15b)") · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
+| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `label`(동명이인 화면 이름, W23d) · `real_of{b, a, rev}`(이름 승계 사칭의 진짜 b — rev를 읽기 전에는 b로 보이고 따로 없다, W23e) · `kind` · `note` · `aliases[{name, how, meet?, never?}]` · `meet[]` · `name_meet[]` · `name_never`(처음 나온 자리 — 아래 "처음 나온 자리(W15b)") · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
 | `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
 | `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}`(공용 8 + 탭 JSON 11 전부) · `warnings` |
 
@@ -547,7 +547,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | order | `order.json`(판정 단위 421 · 척추 자리 60 · 주역 20 · 224KB) · `order-detail.json`(리더 분류 칸의 '장면' 줄을 그릴 때 — 근거 문장 · 검토 기록 · 메모 86 · 293KB) |
 | links | `links.json`(스토리 쌍 선 3,370 · 연작 40 · 항목 537 · 580KB) · `links-scenes.json`(씬 선 6,257 — 선을 누르거나 리더의 연결 칸을 열 때 처음 받는다 · 1.4MB) |
 | threads | `threads-flow.json`(떡밥 60개의 흐름 · 426KB) · `threads-map.json`(떡밥 ↔ 항목 · 결말 · 함께 맺음 · 100KB) |
-| persons | `persons.json`(인물 386 · 225KB) · `persons-detail.json`(인물마다 히트맵 · 변화 · 기록 ID · 888KB)(관계 상대 `rel[]` 포함 · 940KB) |
+| persons | `persons.json`(인물 387 · 225KB) · `persons-detail.json`(인물마다 히트맵 · 변화 · 기록 ID · 888KB)(관계 상대 `rel[]` 포함 · 940KB) |
 | chrono | `chrono.json`(작중 축 57 · 스토리 481 · 회상 장면 109 · 좁힘 근거 366 · 242KB) |
 | world | `world.json`(항목 225 · 세계의 모습 449 · 분류 8 · 542KB) |
 
@@ -619,11 +619,16 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
   인물 상세(`persons-detail` records · changes · rel)는 가릴 기록을 이름표 주인 쪽에도 싣고(변화 줄은 + `person`(실제) · `imp`), 인물 탭은 `recHas`로 고른다 — 드러나기 전 머스탱 상세는 예전처럼 한 사람,
   뒤에는 한슨 상세에 머스탱 행세 시절의 기록 · 변화 · 관계 상대가 모인다. 리더 기록 패널 '관련' · 대상 기록 목록(`data.recordsAbout`은 b에도 건다) · 떡밥 묶음(`threadBundle` · `threadTies`, threads-flow 뿌리 · 복선에 `imp`) · 세계 탭 생활상도 `recAt`.
 - 점검: 사칭 기록 칸(그 자리 모습으로는 다른 인물 것인 기록이 인물 탭에 보이면) — 점검 인물에 한슨 · 머스탱. 드러나기 전 · 뒤 자리는 t=143 · 144(PRETTY STAR 142 · STAR ANIS 144). 가림을 끈 사본에서 33건을 잡았다.
-- **화면 이름(W23d)** — 드러난 뒤에도 이어지는 사칭의 이름표 주인(진짜 머스탱)은 드러난 스토리를 읽은 뒤(전부 보기 포함) `targets.json` `imp_name { name, rev }`로 보인다('머스탱 (한슨의 아버지)').
-  동명이인은 늘 `label`('사쿠라 (콜라보)'). 한 곳 `fmt.labelAt(t, R)` — `nameAt` · `targetName(id, R?)`(R을 안 주면 묶인 읽기 자리 `useReading`, `.map`의 순번은 R로 치지 않는다)이 쓴다.
-  찾기 · 아는 이름 검사(`namesAt`)는 표준명도 넣는다. 정하는 규칙은 docs/annotations.md "사칭 기록" '화면 이름'.
+- **이름 승계(W23e — people.json `real`)** — 독자가 알던 b(지금의 머스탱)는 드러나면 a(한슨)와 같은 인물: export가 `same_as` · `same_as_unit`(= revealed)에 더한다(라피 = 피라와 같은 '같은 인물' 줄).
+  이름의 원래 주인(진짜 머스탱)은 빌드가 세운 따로 인물 — `targets.json` `real_of { b, a, rev }`, `meet` = [revealed](그 전에는 목록 · 찾기에 없다), 이름이 쓰인 스토리(`named`)는 b의 것.
+  그의 줄(범위 밖 b 줄)은 집계가 옮겨 드러나기 전에는 b의 등장으로(pre), 그를 다룬 기록 · 소속은 가림(`imp` — a: real, b)으로 b에 보인다.
+  인물 탭: b는 드러난 뒤 등장이 모두 옮겨져도 목록에 남고(보던 인물 — `scenes: 0` 행의 pre가 있고 같은 인물을 알면) 머리에 '같은 인물 한슨' · '이름의 원래 주인 머스탱 (한슨의 아버지)'.
+  `persons.json` `imp[]`는 a(`as` = real) · real(`by` = a, 걸린 스토리는 a가 행세한 스토리)에만 — b에는 없다. 등장 줄 표는 이름표에 뜬 이름('머스탱 행세'), 구분 이름은 도움말.
+- **화면 이름(W23d)** — 동명이인은 `label`('사쿠라 (콜라보)' · '머스탱 (한슨의 아버지)'). 이름 승계의 진짜 b는 드러난 스토리를 읽은 뒤(전부 보기 포함)에만 label, 그 전에는 표준명.
+  한 곳 `fmt.labelAt(t, R)` — `nameAt` · `targetName(id, R?)`(R을 안 주면 묶인 읽기 자리 `useReading`, `.map`의 순번은 R로 치지 않는다)이 쓴다.
+  찾기 · 아는 이름 검사(`namesAt`)는 표준명도 넣는다. 정하는 규칙은 docs/annotations.md "사칭 기록" '이름 승계'.
 - **소속(W23d)** — 실제 인물로 적힌 소속 T가 가려지는 자리면 export가 양쪽 `affs`에 싣고 `imp { rev, rev_tick, side: a|b }` — `fmt.orgsAt`은 드러나기 전 b 쪽, 뒤 a 쪽만(자리 t로 부르면 rev_tick).
-- 점검: '사칭이름' 칸 — 드러나기 전에 imp_name이 보이면(가림을 끈 사본에서 t=143 인물 탭 8건을 잡았다).
+- 점검: '사칭이름' 칸 — 드러나기 전에 진짜 b의 구분 이름(`real_of`가 있는 대상의 label)이 보이면. 점검 인물에 진짜 머스탱(`person:머스탱_한슨의_아버지`)을 더했다.
 - **연결 탭(대상 공유 선) · 주요 인물 · 주역 · 마무리 사슬 · 판정 시안은 이름표 주인으로 센다**(W23c) — 공개 자리마다 바뀌지 않는 계산이고, 독자가 쌓는 것은 그 이름의 인물이라서(docs/annotations.md "계산은 이름표 주인으로").
 
 ### 상단 바 · 여기까지 읽음 팝업

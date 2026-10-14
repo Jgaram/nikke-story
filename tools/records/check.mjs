@@ -438,12 +438,19 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
         if (first < Infinity && pos.get(o.revealed) < first) warn(where, c.id, `revealed ${o.revealed}가 사칭 범위의 첫 단위보다 앞이다 — 드러난 뒤의 행세면 그 단위를 적는다`);
         const evUnits = (Array.isArray(o.evidence) ? o.evidence : []).map((e) => places?.unitOf(e?.scene)).filter(Boolean);
         if (evUnits.length && !evUnits.includes(o.revealed)) warn(where, c.id, `근거(드러나는 줄)가 revealed 단위(${o.revealed}) 밖이다`);
-        // 드러난 뒤 화면 이름(W23d) — 범위가 revealed 뒤까지 이어지면 진짜 b는 드러난 뒤 b_name(없으면 '진짜 <b>')으로 보인다. 이어지지 않으면 b_name은 쓰이지 않는다
+        // 이름 승계(W23e) — 범위가 revealed 뒤까지 이어지면 독자가 알던 b는 a이고 이름의 원래 주인은 다른 인물: real이 있어야 한다. 한때의 행세면 b가 진짜 b라 real은 틀린 것
         const continues = spanUnits.some((u) => (pos.get(u) ?? -1) > pos.get(o.revealed));
-        if (o.b_name !== undefined && !continues) warn(where, c.id, 'b_name은 행세가 드러난 뒤에도 이어지는 사칭(범위에 revealed 뒤 단위가 있는 것)에만 쓰인다');
+        if (continues && o.real === undefined && c.status !== '기각') {
+          err(where, c.id, `행세가 드러난 뒤에도 이어진다(범위에 ${o.revealed} 뒤 단위) — 독자가 알던 ${o.b}는 ${o.a}이고 이름의 원래 주인은 따로 세운다: real에 그 인물 ID를 적는다(예: "${o.b}_진짜" — 원문에 맞는 구분어가 있으면 그것, 빌드가 그 인물을 만든다)`);
+        }
+        if (!continues && o.real !== undefined) err(where, c.id, 'real은 행세가 드러난 뒤에도 이어지는 사칭(이름 승계 — 범위에 revealed 뒤 단위가 있는 것)에만 쓴다 — 한때의 행세는 b가 진짜 b');
       }
     }
-    if (o.b_name !== undefined && (!isStr(o.b_name) || !o.b_name.trim())) err(where, c.id, 'b_name은 비지 않은 문자열 — 드러난 뒤 진짜 b의 화면 이름(예: "진짜 머스탱")');
+    if (o.real !== undefined) {
+      if (!isStr(o.real) || !o.real.startsWith('person:')) err(where, c.id, `real ${JSON.stringify(o.real)} — 이름의 원래 주인 인물 ID(person:…)`);
+      else if (o.real === o.a || o.real === o.b) err(where, c.id, 'real은 a · b와 다른 인물이다 — b는 독자가 알던 인물(드러나면 a), real은 이름의 원래 주인');
+      else if (!ctx.targetIds.has(o.real)) err(where, c.id, `real ${o.real}이 사전에 없다 — DB를 다시 만든다(node tools/normalize/ensure-db.mjs — 빌드가 세운다)`);
+    }
   }
 
   function checkEdge(c, where) {
@@ -728,7 +735,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
       if (!LINK_TYPES.includes(o.type)) err(where, c.id, `type "${o.type ?? ''}" — ${LINK_TYPES.join(' · ')} 중 하나`);
       if (o.type === 'impersonates') checkImpersonation(c, where);
-      else if (o.spans !== undefined || o.revealed !== undefined || o.b_name !== undefined) warn(where, c.id, 'spans · revealed · b_name은 사칭(type impersonates)에만 쓴다');
+      else if (o.spans !== undefined || o.revealed !== undefined || o.real !== undefined) warn(where, c.id, 'spans · revealed · real은 사칭(type impersonates)에만 쓴다');
       checkEvidence(o.evidence, where, c.id, null, null, { required: o.type === 'impersonates' });
       checkCommon(c, where);
     } else if (c.section === 'threads') {
@@ -1276,6 +1283,10 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       }
       if (hasA && L.spanUnits.has(c.unit) && L.ownUnits.has(c.unit) && c.unit !== L.revealed && inside) {
         warn(where, c.id, `${L.a}가 제 이름으로도 나오는 단위라 가리지 않는데 근거가 사칭 ${L.id} 범위에 걸린다 — 드러나기 전 화면에 ${L.a}로 보인다`);
+      }
+      // 이름 승계(W23e) — b는 독자가 알던 이름일 뿐 실제 인물은 a(범위 줄) · real(그 밖)이다. 이름 언급(I)만 b로 적는다(줄은 화면 · 집계가 옮긴다)
+      if (L.real && ppl.includes(L.b) && c.kind !== 'mention') {
+        warn(where, c.id, `이름 승계 사칭 ${L.id}의 ${L.b}로 적혔다 — 실제 인물로 적는다: 범위 줄의 그는 ${L.a}, 그 밖(이름의 원래 주인)은 ${L.real}(드러나기 전 화면은 둘 다 ${L.b}로 보인다)`);
       }
     }
   }

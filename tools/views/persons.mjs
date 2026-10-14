@@ -93,13 +93,23 @@ export function personScenes(ctx, ds) {
   // 사칭(W23a — people.json impersonates) — 범위 줄에서 b(이름표 · 이름 주인)로 잡힌 줄을 a(사칭한 인물)에게 옮긴다.
   // 옮기기 전 모습을 pre에 남긴다 — 화면은 드러난 단위(revealed)를 읽기 전에는 이것을 보인다(b는 옮긴 줄까지, a는 옮겨 받은 줄 없이)
   const copy = (x) => ({ all: new Set(x.all), speak: new Set(x.speak), auto: new Set(x.auto), implied: new Set(x.implied) });
+  // 이름 승계(W23e — real이 있는 사칭)는 범위 밖에서 b로 잡힌 줄(회상 속 진짜 머스탱)을 real에게 옮긴다 — b(독자가 알던 인물)에는 드러나기 전 모습만 남는다
   for (const imp of impersonations(ds)) {
     if (!ctx.targetIds.has(imp.a) || !ctx.targetIds.has(imp.b)) continue;
-    for (const span of imp.spans) {
-      const bx = out.get(imp.b)?.get(span.scene);
-      const moved = bx ? [...bx.all].filter((n) => !span.seqs || span.seqs.has(n)) : [];
+    const moves = imp.spans.map((span) => ({ scene: span.scene, to: imp.a, has: (n) => !span.seqs || span.seqs.has(n) }));
+    if (imp.real && ctx.targetIds.has(imp.real)) {
+      const span = new Map(imp.spans.map((x) => [x.scene, x.seqs]));
+      for (const scene of out.get(imp.b)?.keys() ?? []) {
+        const seqs = span.get(scene);
+        if (seqs === null) continue;
+        moves.push({ scene, to: imp.real, has: (n) => !seqs?.has(n) });
+      }
+    }
+    for (const { scene, to, has } of moves) {
+      const bx = out.get(imp.b)?.get(scene);
+      const moved = bx ? [...bx.all].filter(has) : [];
       if (!moved.length) continue;
-      const ax = slot(imp.a, span.scene);
+      const ax = slot(to, scene);
       bx.pre ??= copy(bx);
       if (!ax.pre) {
         // a의 드러나기 전 모습 — 옮겨 받을 줄은 a 자신의 자동 줄이 아니면 뺀다(그 줄의 2회독 speaker 암시 언급도 사칭이 드러나야 안다)

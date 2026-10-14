@@ -97,7 +97,7 @@
     {
       "id": "F833",
       "text": "사쿠라에 따르면 머스탱은 3대 기업이 생긴 지상 시절부터 지금까지 — 미실리스 · 엘리시온의 CEO가 차례로 바뀌는 동안 — 단 한 번도 바뀌지 않은 테트라의 유일무이한 CEO다",
-      "about": ["person:머스탱", "person:한슨", "org:테트라", "org:미실리스", "org:엘리시온"],
+      "about": ["person:머스탱_한슨의_아버지", "person:한슨", "org:테트라", "org:미실리스", "org:엘리시온"],
       "evidence": [{ "scene": "event_cherryblossom_intermission_01", "lines": ["40-43"] }],
       "reason": "사쿠라의 말(#40–43). 어떻게 그럴 수 있는지는 말하지 않는다 → Q115",
       "confidence": "확실",

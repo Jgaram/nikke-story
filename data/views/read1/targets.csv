@@ -91,7 +91,7 @@ person:K,person,K,32,0,0,0,8,ch14,69,fl:reborn_evil,407,sub:랩칠리언_06,0
 person:목단,person,목단,31,1,0,6,14,event_cherryblossom,183,fl:ark_ranger,462,event_cherryblossom,0
 person:은화,person,은화,31,1,0,3,12,ch04,15,fl:persona_on_frontline,474,ch04,0
 person:랩칠리언,person,랩칠리언,28,3,1,3,12,sub:랩칠리언_00,13,ch42,416,sub:랩칠리언_00,0
-person:머스탱,person,머스탱,25,6,1,7,7,event_cherryblossom,183,event_staranis1,454,ch04,1
+person:머스탱_한슨의_아버지,person,머스탱,25,6,1,7,7,event_cherryblossom,183,event_staranis1,454,,0
 person:메어리,person,메어리,31,0,0,1,16,char:130,100,fl:terminus_ticket,425,ch13,0
 person:세이렌,person,세이렌,30,1,0,9,12,sub:거울_공주_01,315,side:eden_spear,411,sub:거울_공주_01,1
 place:갱생관,place,갱생관,31,0,0,0,17,char:20,90,ch46,452,ch02,0
@@ -564,6 +564,7 @@ item:울프스_베인,item,울프스 베인,0,0,0,0,0,,,,,event_redash,0
 item:커넥팅_디바이스,item,커넥팅 디바이스,0,0,0,0,0,,,,,ch02,0
 person:김작가,person,김작가,0,0,0,0,0,,,,,sub:김작가_00,0
 person:든?셀,person,든?셀,0,0,0,0,0,,,,,,1
+person:머스탱,person,머스탱,0,0,0,0,0,,,,,ch04,1
 person:메카_시프티,person,메카 시프티,0,0,0,0,0,,,,,event_foolburstday,0
 person:에밀리아,person,에밀리아,0,0,0,0,0,,,,,char:821,0
 person:엘리시온_하퍼,person,엘리시온 하퍼,0,0,0,0,0,,,,,,1

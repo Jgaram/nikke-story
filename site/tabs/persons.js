@@ -4,7 +4,7 @@
  * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 접는 칸). 도구줄의 [인물 도감]은 초상 격자를 기업 · 스쿼드로 묶어 보인다.
  *
  * 쓰는 JSON
- *   persons.json          인물 386(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
+ *   persons.json          인물 387(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
  *                         이름이 아직 안 나온 인물(fmt.met — targets.json meet)은 목록 · 도감 · 관계 상대에서 빼고, 이름 · 다른 이름 · 찾기는 그 자리의 것(fmt.nameAt · aliasesAt · namesAt — W15b)
  *   persons-detail.json   등장 · 기록 · 변화가 하나라도 있는 인물 381 — { units[](등장: 스토리 · 씬 · 줄 · 말한 줄), records[](확정 기록 ID), changes[](변화: 작중 순서 seq · 측면 · 처음 모습/바뀜 · 상대 · 출시순과 반대),
  *                         rel[](관계 상대 — { with, recs[] }: 변화 D(양쪽의 것) · 결말 O(관계 사슬) · 함께 맺음 H의 ID, 읽는 자리 순 — W21) }
@@ -82,6 +82,8 @@ const LABELS = {
   alias: '다른 이름',
   same: '같은 인물',
   imp: '사칭',
+  realOf: '이름의 원래 주인',
+  realOfHelp: '이 이름을 이어받기 전의 주인 — 다른 인물이다',
   impAs: (name) => `${name} 행세`,
   impBy: (name) => `${name}의 사칭`,
   impAsHelp: (name, me) => `이 스토리에서 ${name} 이름표로 말한 것은 ${me} — 그 줄은 ${me}의 등장으로 센다`,
@@ -165,6 +167,9 @@ export async function mount(root, ctx) {
   loading.remove();
 
   const P = new Map(persons.map((p) => [p.id, p]));
+  /** 이름 승계 사칭(W23e — targets real_of): 독자가 알던 인물(b) → 이름의 원래 주인 대상들 */
+  const heirsOf = new Map();
+  for (const t of idx.targets.values()) if (t.real_of) (heirsOf.get(t.real_of.b) ?? heirsOf.set(t.real_of.b, []).get(t.real_of.b)).push(t);
   const D = new Map(detailArr.map((d) => [d.id, d]));
   /** 찾기 글 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt) */
   const hayOf = (p) => fmt.namesAt(idx.targets.get(p.id) ?? p, V.R).join(' ').toLowerCase();
@@ -224,7 +229,7 @@ export async function mount(root, ctx) {
       const a = { scenes: 0, units: 0, cut: 0, firstUnit: null, firstEntry: null, firstOrder: Infinity, changes: 0, chCut: 0, recs: null, recCut: 0, hasData: Boolean(d) };
       if (d) {
         for (const e of unitsNow(p.id)) {
-          if (!e.scenes) continue; // 사칭으로 다 옮긴 스토리 — 이 인물의 등장이 아니다(W23a)
+          if (!e.scenes) { if (e.pre?.scenes && !hidden(e.unit)) a.known = true; continue; } // 사칭으로 다 옮긴 스토리 — 이 인물의 등장이 아니다(W23a). 드러나기 전에는 보던 인물(known)
           if (hidden(e.unit)) { a.cut++; continue; }
           if (offRow(e)) continue; // 이름 안 쓰인 등장은 가린 수에도 안 센다(있다는 것이 샌다)
           a.scenes += e.scenes; a.units++;
@@ -244,7 +249,8 @@ export async function mount(root, ctx) {
       }
       // 이름이 나온 인물만(W15b — 이름표 '???'나 암시 언급으로만 나온 인물은 아직 안 나옴)
       a.met = fmt.met(idx.targets.get(p.id), V.R);
-      a.visible = a.met && (a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0);
+      // 이름 승계 사칭(W23e)의 b(독자가 알던 머스탱)는 드러난 뒤 등장이 모두 한슨 · 진짜 머스탱에게 가도 보던 인물이라 남긴다(머리의 '같은 인물'로 잇는다)
+      a.visible = a.met && (a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0 || Boolean(a.known && fmt.sameAsKnown(idx.targets.get(p.id), V.R).length));
       agg.set(p.id, a);
     }
     const lappy = agg.get('person:라피');
@@ -287,9 +293,11 @@ export async function mount(root, ctx) {
   /** 그 자리에서 보이는 실장판(W22 — targets.json vers): 판이 보이는 자리(tick — 그 판의 출시)를 지났으면. tick이 없으면 전부 보기에서만 */
   const versAt = (id) => (idx.targets.get(id)?.vers ?? []).filter((v) => V.R.all || (v.tick != null && v.tick <= V.R.t));
   /** 그 스토리에서 말이 없으면 '이름만 나옴' · '등장만'(말했으면 null — 당연해서 쓰지 않는다) */
-  /** 사칭 표(W23a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 사칭한 쪽은 'OO 행세', 이름표 주인 쪽은 'OO의 사칭' */
+  /** 사칭 표(W23a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 사칭한 쪽은 'OO 행세', 이름표 주인 쪽은 'OO의 사칭'.
+   *  표는 이름표에 뜬 이름(표준명 — '머스탱 행세'), 동명이인 구분 이름('머스탱 (한슨의 아버지)')은 도움말에(W23e — 줄 표가 길면 스토리 이름이 잘린다) */
+  const plainName = (id) => idx.targets.get(id)?.name ?? nameOf(id);
   const impChips = (p, e) => [
-    ...(e.as ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impAsHelp(nameOf(id), nameOf(p.id)) }, LABELS.impAs(nameOf(id)))),
+    ...(e.as ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impAsHelp(nameOf(id), nameOf(p.id)) }, LABELS.impAs(plainName(id)))),
     ...(e.by ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impByHelp(nameOf(id), nameOf(p.id)) }, LABELS.impBy(nameOf(id)))),
   ];
   const quietOf = (e) => (!e || (e.speaker ?? 0) > 0 ? null : e.lines > 0 ? 'named' : 'seen');
@@ -544,6 +552,11 @@ export async function mount(root, ctx) {
       // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
       const same = fmt.sameAsKnown(p, V.R);
       if (same.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.same), el('span', {}, same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]))));
+      // 이름 승계 사칭(W23e) — 독자가 알던 이 인물(지금의 머스탱)의 이름은 원래 다른 인물(진짜 머스탱)의 것: 드러난 뒤에만 잇는다
+      for (const t of heirsOf.get(p.id) ?? []) {
+        if (!fmt.impKnown(t.real_of, V.R)) continue;
+        facts.push(el('div', { class: 'pm-fact', title: LABELS.realOfHelp }, el('span', { class: 'pm-fact-l' }, LABELS.realOf), el('span', {}, P.has(t.id) ? personLink(t.id) : fmt.targetName(t.id))));
+      }
       // 사칭(W23a) — 드러난 것만(드러나기 전에는 있다는 것 자체를 보이지 않는다). 같은 인물과 달리 둘은 다른 인물이다
       for (const x of (p.imp ?? []).filter((x) => fmt.impKnown(x, V.R))) {
         const other = x.as ?? x.by;

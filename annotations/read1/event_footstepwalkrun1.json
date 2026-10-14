@@ -212,7 +212,7 @@
     {
       "id": "F1746",
       "text": "웬디에 따르면 양산형 스쿼드는 지상 자원 확보(처우가 나쁘고 사망률이 높음) · 방주 방위(사실상 총알받이 · 감정 쓰레기통) · 전투 특화(가장 많이 죽고 공도 가장 많이 세움)로 나뉘고 — 니케는 갓데스 폴 사건과 테트라 CEO 머스탱이 추진한 With Nikke 캠페인 덕분에 예전의 영광을 어느 정도 되찾아 대우가 좋아졌다",
-      "about": ["concept:양산형_니케", "incident:갓데스_폴", "person:머스탱", "org:테트라"],
+      "about": ["concept:양산형_니케", "incident:갓데스_폴", "person:머스탱_한슨의_아버지", "org:테트라"],
       "evidence": [{ "scene": "event_footstepwalkrun1_05_e", "lines": ["37-53"] }, { "scene": "event_footstepwalkrun1_04_e", "lines": ["0-2"] }],
       "reason": "웬디의 설명(#37-53), 테트라 후원 광고 'With Nikke'(04_e #0-2)",
       "confidence": "확실",

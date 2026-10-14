@@ -8,6 +8,7 @@
     "candidates: 정체 연결 후보(같은 인물로 드러남 등). 1회독에서 근거를 읽을 때 Claude가 확정 · 기각한다(사용자, RV1 2026-09-29 — CLAUDE.md).",
     "  칸: id(L<번호> — 전체에서 하나, 바꾸지 않는다) · type(same_as 같은 인물 · impersonates 사칭) · a · b(대상 ID, same_as의 a는 `이름표:<이름표>`도 된다) · status(후보/확정/기각) · confidence(확실/추정) ·",
     "  사칭(impersonates — a가 b의 이름표 · 이름으로 행세, 둘은 다른 인물)만 spans([{scene, lines?}] — b로 잡힌 줄이 실제로는 a, lines 없으면 씬 전체) · revealed(독자가 아는 읽기 단위)를 더 적는다 — docs/annotations.md \"사칭 기록\".",
+    "  드러난 뒤에도 a가 b의 이름으로 살면(이름 승계) real(이름의 원래 주인 ID — 빌드가 그 인물을 세운다)도 적는다. b(이름표 대상)는 독자가 알던 인물(= a), 범위 밖 b 줄과 그를 다룬 기록은 real.",
     "  reason · evidence([{scene, lines}], 비면 1회독이 채운다) · by(기록자) · reviews(리뷰 도구가 붙이는 검토 기록). 형식은 docs/schema.md \"정체 연결 후보\".",
     "  새 후보는 다음 번호(node tools/records.mjs next)로 더하고, 상태는 손으로 바꾸지 않는다 — node tools/records.mjs set L3 확정 (docs/annotations.md)"
   ],
@@ -808,8 +809,8 @@
         { "scene": "ep:d_nikke_guilty_mightybunny_04" }
       ],
       "revealed": "event_staranis1",
-      "b_name": "머스탱 (한슨의 아버지)",
-      "note": "W23d: 범위가 드러난 뒤(b-side_idol · CH.45–47 등)까지 이어져 그 뒤 '머스탱'은 한슨을 가리킨다 — 진짜 머스탱의 드러난 뒤 화면 이름은 F2700('아버지 머스탱의 자리')에서",
+      "real": "person:머스탱_한슨의_아버지",
+      "note": "W23e: 범위가 드러난 뒤(b-side_idol · CH.45–47 등)까지 이어지는 이름 승계 — 독자가 알던 머스탱(이름표 대상 person:머스탱)은 한슨이고, 이름의 원래 주인은 따로 세운 real(F2700 '아버지 머스탱의 자리' · F2674 '한슨은 머스탱의 아들')",
       "status": "확정",
       "confidence": "확실",
       "reason": "W23b: 한슨은 에닉의 승인을 받아 아버지 머스탱의 자리를 이어받고(F2700) 공식적으로 죽은 것으로 처리된 뒤 머스탱으로 산다(F2701) — STAR ANIS 2부 event_staranis2_05_s #142부터 이름표 '머스탱'은 한슨이고, 06_e #68-71에서 선글라스를 벗고 이름표가 한슨으로 바뀐다. 그 뒤가 '지금'이라 CH.04부터의 이름표 · 이름 '머스탱'(테트라 CEO, 'Entertainment' 말투)은 모두 한슨이다. 진짜 머스탱은 회상에만 나온다 — PRETTY STAR 01–13(프리티 시절), STAR ANIS 1부 01_s #9 이후–06_e · 2부 01_s–04_e · 05_s #0-141(바뀌기 전). 범위에서 뺀 줄: 진짜 머스탱을 가리키는 이름 — event_staranis2_05_s #149('머스탱 흉내') · 05_e #5('머스탱은 어디 갔니') · d_main_41_af_01 #103('[당시의 머스탱]') · fl:coins_in_rush_16 #95(쉐이드 시절) · event_footstepwalkrun1_05_e #51(With Nikke 캠페인, F2547). PRETTY STAR 00 #0-4는 지금의 머스탱이 프리티를 떠올리는 틀(I439), STAR ANIS 1부 프롤로그 · 01_s #4는 지금의 아크리온 홀(S321). 암시 언급만 있는 씬(I224 · I300 · I492 · I501 · I555 · I689)도 넣었다",

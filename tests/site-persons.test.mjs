@@ -22,8 +22,8 @@ const units = read('units.json');
 const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
 
-test('persons.json — 인물 386, 중복 없음, 이름 · 집계 칸', () => {
-  assert.equal(persons.length, 386);
+test('persons.json — 인물 387, 중복 없음, 이름 · 집계 칸', () => {
+  assert.equal(persons.length, 387); // W23e 진짜 머스탱(이름 승계 사칭 L33의 real)이 더해졌다
   assert.equal(personIds.size, persons.length);
   for (const p of persons) {
     assert.ok(p.id.startsWith('person:') && p.name, p.id);

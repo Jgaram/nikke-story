@@ -6,6 +6,9 @@
  *   a를 다루고(about · person · with · target) 기록 단위가 사칭 범위가 걸린 단위(spanUnits)이면서
  *   a가 제 이름으로 나오는 단위(ownUnits — 범위 밖에 a의 언급이 있는 단위)가 아닌 것.
  * PRETTY STAR처럼 a가 제 이름으로도 나오는 단위의 기록은 그 a가 진짜 a라서 가리지 않는다(그 단위의 범위 줄을 근거로 쓴 기록은 검사가 경고).
+ *
+ * 이름 승계(W23e — L.real이 있는 사칭: 드러난 뒤에도 a가 b의 이름으로 산다): 이름표 대상 b는 독자가 알던 인물(= a)이고, 이름의 원래 주인은 real이다.
+ * real을 다룬 기록은 단위와 상관없이 드러나기 전에는 b로 보인다(독자는 회상 속 사장도 같은 머스탱으로 안다) — 같은 가림 { a: real, b }.
  */
 import { impersonations } from './model.mjs';
 import { mentionRows, scenePlaces } from './read2.mjs';
@@ -51,8 +54,12 @@ export function impersonationUnits(ds, db, unitOf) {
 export function masksOf(c, imps) {
   if (!c?.unit) return [];
   const people = new Set(peopleOf(c.obj));
-  return imps.filter((L) => people.has(L.a) && L.spanUnits.has(c.unit) && !L.ownUnits.has(c.unit))
-    .map((L) => ({ id: L.id, a: L.a, b: L.b, rev: L.revealed }));
+  const out = [];
+  for (const L of imps) {
+    if (people.has(L.a) && L.spanUnits.has(c.unit) && !L.ownUnits.has(c.unit)) out.push({ id: L.id, a: L.a, b: L.b, rev: L.revealed });
+    if (L.real && people.has(L.real)) out.push({ id: L.id, a: L.real, b: L.b, rev: L.revealed });
+  }
+  return out;
 }
 
 /** 기록 obj의 인물 칸을 가린 모습(드러나기 전) — about · person · with · target에서 a → b(겹치면 하나로) */
@@ -93,8 +100,8 @@ export function faceDataset(ds, ctx, order) {
 }
 
 /**
- * 드러난 뒤에도 이어지는 행세인가(W23d) — 범위에 revealed보다 뒤에 읽는 단위가 있으면 그 뒤로 이야기 속 b의 이름은 a를 가리킨다(이름을 이어받은 한슨).
- * 그러면 진짜 b는 드러난 뒤 화면에서 그 이름만으로는 a와 구분되지 않으므로 다른 화면 이름(displayNameAfter)을 붙인다. 한때의 행세(슈엔 → 시프티)는 아니다.
+ * 드러난 뒤에도 이어지는 행세(이름 승계)인가(W23d · W23e) — 범위에 revealed보다 뒤에 읽는 단위가 있으면 그 뒤로 이야기 속 b의 이름은 a를 가리킨다(이름을 이어받은 한슨).
+ * 그러면 독자가 알던 b는 a이고 이름의 원래 주인은 다른 인물이라 L에 real을 적어야 한다(검사기가 막는다). 한때의 행세(슈엔 → 시프티)는 아니다 — 독자가 알던 b가 진짜 b.
  * @param {{ revealed: string|null, spans: { scene: string }[] }} L impersonations() 항목
  * @param {(scene: string) => string|null} unitOf 씬 → 단위 키
  * @param {(unit: string) => number|undefined} posOf 단위 → 읽는 순서
@@ -109,8 +116,8 @@ export function continuesAfterReveal(L, unitOf, posOf) {
   });
 }
 
-/** 드러난 뒤 진짜 b의 화면 이름 — L의 b_name, 없으면 '진짜 <b 이름>'(W23d) */
-export const displayNameAfter = (L, bName) => L.b_name ?? `진짜 ${bName}`;
+/** 사칭에서 a가 행세한 실제 인물 — 이름 승계면 이름의 원래 주인(real), 아니면 b(W23e) */
+export const impersonated = (L) => L.real ?? L.b;
 
 /**
  * 동명이인 화면 이름(W23d) — 같은 종류(type)에서 표준명이 겹치는 대상은 ID 구분어로 가른다: `person:사쿠라_콜라보` → '사쿠라 (콜라보)'.

@@ -460,7 +460,7 @@
       "person": "person:에이드",
       "aspect": "관계",
       "act": "기준",
-      "with": ["person:머스탱", "person:한슨"],
+      "with": ["person:머스탱_한슨의_아버지", "person:한슨"],
       "text": "서툴던 니케 초기부터 '사장님'으로 모셔 옛 머스탱을 알고, 그가 그냥 해본 말을 하는 사람이 된 변화를 놀라워하며 기뻐한다",
       "evidence": [{ "scene": "fl:coins_in_rush_00", "lines": ["9-25"] }],
       "reason": "#15-25 — 16#96-99에서도 과오를 갚아 가고 있다고 믿는다.",
