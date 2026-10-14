@@ -4,7 +4,7 @@
     {
       "at": "char:72",
       "text": "엔터 헤븐이 일반인이 탄 AFX 열차에 폭탄을 터뜨려 500명 가까운 시민이 죽은 테러. 해마다 추모식이 열리고, 이 일로 열차를 지키는 니케 스쿼드 인피니티 레일이 생겼다.",
-      "src": "738a28bbe5",
+      "src": "ebfc4772ac",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -25,13 +25,22 @@
           "session": "W16b",
           "hash": "da118cf2ac",
           "note": "W16b ② — 이름이 쓰인 자리(meet)가 디젤 호감도 · TERMINUS TICKET · ENTER HEAVEN뿐이라 dictFirst = char:72(본판). CH.24는 'AFX'만 말하고 항목 이름을 안 써 meet에 없다 — CH.24 본판은 char:72를 곁 판으로 만들어 dictFirst와 부딪혀 걷고, 크로우 내막은 ENTER HEAVEN 판(fl:enter_heaven_10#174-198 · _11#0-3 — 크로우가 이끈 강경파 · 엔터 헤븐과 아우터 림이 알려짐)에 둔다. 500명은 앞 판 char:72를 본 독자만 이 판에 닿아 안다"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W17",
+          "hash": "21bc59c5ef",
+          "note": "근거 F482 F483 · F1006 d_main_24_02#17(이그조틱) · F2500 F2501"
         }
-      ]
+      ],
+      "refs": ["F482", "F483"]
     },
     {
       "at": "ch24",
       "text": "엔터 헤븐이 일반인이 탄 AFX 열차에 폭탄을 터뜨려 500명 가까이 죽은 테러. 이그조틱의 크로우가 자기가 터뜨렸다고 인정했고, 이 일로 인피니티 레일이 생겼다.",
-      "src": "297a699d27",
+      "src": "f719b9d66c",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -44,13 +53,22 @@
           "session": "W15e",
           "hash": "cbd09f01bb",
           "note": "디젤 호감도 F482·F483(엔터 헤븐 테러, 인피니티 레일 계기) → CH.24 F1006 d_main_24_02#28-29(크로우가 터뜨렸다고 인정, 크로우의 엔터 헤븐 연루는 CH.16 루머로 이미 나옴) — 범인이 드러난 메인 자리에 2판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W17",
+          "hash": "fd26641178",
+          "note": "근거 F482 F483 · F1006 d_main_24_02#17(이그조틱) · F2500 F2501"
         }
-      ]
+      ],
+      "refs": ["F1006", "d_main_24_02#17"]
     },
     {
       "at": "fl:enter_heaven",
       "text": "엔터 헤븐이 일반인이 탄 AFX 열차에 폭탄을 터뜨려 500명 가까이 죽은 테러. 크로우가 이끈 강경파가 벌인 일로, 이 일로 엔터 헤븐과 아우터 림이 방주 전역에 알려졌다.",
-      "src": "167de0abfd",
+      "src": "59452925a7",
       "session": "W16b",
       "by": "claude",
       "date": "2026-10-14",
@@ -63,8 +81,17 @@
           "session": "W16b",
           "hash": "0ed1d05e1b",
           "note": "W16b ② — 이름이 쓰인 자리(meet)가 디젤 호감도 · TERMINUS TICKET · ENTER HEAVEN뿐이라 dictFirst = char:72(본판). CH.24는 'AFX'만 말하고 항목 이름을 안 써 meet에 없다 — CH.24 본판은 char:72를 곁 판으로 만들어 dictFirst와 부딪혀 걷고, 크로우 내막은 ENTER HEAVEN 판(fl:enter_heaven_10#174-198 · _11#0-3 — 크로우가 이끈 강경파 · 엔터 헤븐과 아우터 림이 알려짐)에 둔다. 500명은 앞 판 char:72를 본 독자만 이 판에 닿아 안다"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W17",
+          "hash": "fe7beb4c53",
+          "note": "근거 F482 F483 · F1006 d_main_24_02#17(이그조틱) · F2500 F2501"
         }
-      ]
+      ],
+      "refs": ["F2500", "F2501"]
     }
   ]
 }
