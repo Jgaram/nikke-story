@@ -1,6 +1,7 @@
 /**
  * 사칭(W23a) — people.json 정체 연결 type impersonates: 검사기 · 집계(이름표 주인 줄을 사칭한 인물에) · 인계 규칙(focus swap · 사칭 볼 줄) ·
  * 화면 함수(fmt.rowAt · impKnown) · 내보낸 persons*.json. 실제 기록은 L32(슈엔 → 시프티, CH.08–09, 드러남 CH.09)로 본다.
+ * W23b: L33(한슨 → 머스탱) · 실제 인물로 적은 기록의 가림(masksOf · fmt.recAt · recHas) · 계산은 이름표 주인으로(faceDataset — W23c).
  *
  *   node --test tests/impersonation.test.mjs
  */
@@ -17,7 +18,9 @@ import { EXAMPLE_DIR, impersonations, loadDataset } from '../tools/records/model
 import { loadOrder } from '../tools/records/order.mjs';
 import { identityRules, impersonationWatch, sourceTargets } from '../tools/records/focus.mjs';
 import { buildPersons, personScenes } from '../tools/views/persons.mjs';
-import { impKnown, rowAt } from '../site/lib/format.js';
+import { impKnown, recAt, recHas, rowAt } from '../site/lib/format.js';
+import { faceDataset, impersonationUnits, masksOf } from '../tools/records/impersonation.mjs';
+import { scenePlaces } from '../tools/records/read2.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const db = await openDb();
@@ -136,4 +139,53 @@ test('내보낸 데이터 — 사칭 행은 rev · as 또는 by · pre, persons.
   }
   assert.deepEqual(persons.get('person:슈엔').imp, [{ id: 'L32', as: 'person:시프티', rev: 'ch09', units: ['ch08', 'ch09'] }]);
   assert.deepEqual(persons.get('person:시프티').imp, [{ id: 'L32', by: 'person:슈엔', rev: 'ch09', units: ['ch08', 'ch09'] }]);
+});
+
+test('W23b — L33 한슨 → 머스탱(드러남 STAR ANIS), 회상의 진짜 머스탱은 범위 밖', () => {
+  const L = imps.find((x) => x.id === 'L33');
+  assert.ok(L && L.a === 'person:한슨' && L.b === 'person:머스탱' && L.revealed === 'event_staranis1' && L.status === '확정');
+  const span = new Map(L.spans.map((s) => [s.scene, s.seqs]));
+  assert.ok(span.has('d_main_04af_08') && span.get('d_main_04af_08') === null, 'CH.04의 사장 머스탱은 한슨');
+  assert.ok(!span.has('side:pretty_star_13') && !span.has('event_staranis1_03_s'), '회상의 진짜 머스탱');
+  assert.ok(span.get('event_staranis2_05_s').has(144) && !span.get('event_staranis2_05_s').has(119) && !span.get('event_staranis2_05_s').has(149), '바뀌는 자리 · 머스탱 흉내 줄');
+});
+
+test('W23b — 기록은 실제 인물로, 드러나기 전에는 이름표 주인으로 가린다(a가 제 이름으로 나오는 단위는 가리지 않음)', () => {
+  const places = scenePlaces(order, ctx);
+  const units = impersonationUnits(ds, db, places.unitOf);
+  const L = units.find((x) => x.id === 'L33');
+  assert.ok(L.ownUnits.has('side:pretty_star') && L.ownUnits.has('event_staranis1') && !L.ownUnits.has('ch04'));
+  const byId = new Map(ds.candidates.filter((c) => c.id).map((c) => [c.id, c]));
+  assert.deepEqual(byId.get('F94').obj.about.filter((x) => x.startsWith('person:')), ['person:한슨'], 'CH.04 사장 소개는 한슨');
+  assert.deepEqual(masksOf(byId.get('F94'), units).map((m) => [m.a, m.b, m.rev]), [['person:한슨', 'person:머스탱', 'event_staranis1']]);
+  assert.equal(masksOf(byId.get('F2544'), units).length, 0, 'PRETTY STAR의 이사 한슨은 가리지 않는다');
+  assert.ok(byId.get('F2200').obj.about.includes('person:머스탱') && !byId.get('F2200').obj.about.includes('person:한슨'), "'당시의 머스탱'은 진짜 머스탱");
+  assert.ok(byId.get('Q42').obj.about.includes('person:슈엔'), 'CH.08 오퍼레이터 감시 의문은 슈엔(L32)');
+  // 계산은 이름표 주인으로
+  const faced = faceDataset(ds, ctx, order);
+  assert.ok(faced.candidates.find((c) => c.id === 'F94').obj.about.includes('person:머스탱'));
+  assert.ok(ds.candidates.find((c) => c.id === 'F94').obj.about.includes('person:한슨'), '원본은 그대로');
+});
+
+test('W23b — 화면 fmt.recAt · recHas: 드러난 스토리를 읽기 전에는 이름표 주인', () => {
+  const r = { id: 'D1', person: 'person:한슨', with: ['person:아니스'], about: ['person:한슨', 'person:아니스'], imp: [{ a: 'person:한슨', b: 'person:머스탱', rev: 'event_staranis1' }] };
+  const before = { all: false, seen: (k) => k !== 'event_staranis1' };
+  const after = { all: false, seen: () => true };
+  assert.equal(recAt(r, before).person, 'person:머스탱');
+  assert.deepEqual(recAt(r, before).about, ['person:머스탱', 'person:아니스']);
+  assert.equal(recAt(r, after), r);
+  assert.ok(recHas(r, 'person:머스탱', before) && !recHas(r, 'person:한슨', before));
+  assert.ok(recHas(r, 'person:한슨', after) && !recHas(r, 'person:머스탱', after));
+  assert.ok(recHas({ id: 'F1', about: ['person:라피'] }, 'person:라피', before), '가림 없는 기록은 그대로');
+  assert.ok(impKnown(r.imp[0], null), '전부 보기는 드러난 뒤');
+});
+
+test('W23b — 내보낸 기록 imp · 인물 상세는 이름표 주인 쪽에도 싣는다', { skip: !fs.existsSync(path.join(ROOT, 'site/data/records.json')) }, () => {
+  const recs = [...JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/records.json'), 'utf8')), ...JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/records2.json'), 'utf8'))];
+  const f94 = recs.find((r) => r.id === 'F94');
+  assert.deepEqual(f94.imp, [{ a: 'person:한슨', b: 'person:머스탱', rev: 'event_staranis1' }]);
+  const det = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data/persons-detail.json'), 'utf8')).map((d) => [d.id, d]));
+  assert.ok(det.get('person:한슨').records.includes('F94') && det.get('person:머스탱').records.includes('F94'));
+  const c = det.get('person:머스탱').changes.find((x) => x.id === 'D42');
+  assert.ok(c && c.person === 'person:한슨' && c.imp?.length, 'CH.04 첫 모습(D42)은 드러나기 전 머스탱 쪽에도');
 });

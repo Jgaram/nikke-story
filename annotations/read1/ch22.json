@@ -47,12 +47,21 @@
     {
       "id": "F883",
       "text": "777 스쿼드가 운용하는 게임 센터 코인 러시는 방주에서 가장 많은 돈을 버는 곳 가운데 하나로, 머스탱의 숙원인 엔터테인먼트 테마 파크다",
-      "about": ["place:코인_러시", "org:777", "person:머스탱"],
+      "about": ["place:코인_러시", "org:777", "person:한슨"],
       "evidence": [{ "scene": "d_main_22_05_s", "lines": ["2-5"] }, { "scene": "d_main_22_04_e", "lines": [12] }],
       "reason": "폴리의 설명. 블랑 · 누아르가 운영하고 루주 · 쥰이 연수 중이다(d_main_22_04_s#22)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F884",

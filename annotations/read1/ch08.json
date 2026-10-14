@@ -18,12 +18,21 @@
     {
       "id": "F234",
       "text": "시프티가 카운터스 전속 오퍼레이터로 지원해 곧바로 배정되었다",
-      "about": ["person:시프티", "org:카운터스"],
+      "about": ["person:슈엔", "org:카운터스"],
       "evidence": [{ "scene": "d_main_08_01", "lines": ["3-4"] }],
       "reason": "시프티 본인 말 — 지원자가 없어 바로 당첨",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: CH.08의 오퍼레이터 시프티는 딥페이크를 쓴 슈엔(사칭 L32) — 시프티 → 슈엔으로 고쳐 적음. 화면은 CH.09를 읽기 전까지 시프티로 보인다"
+        }
+      ]
     },
     {
       "id": "F235",
@@ -58,24 +67,42 @@
     {
       "id": "F238",
       "text": "오퍼레이터 행동 강령에는 니케에게 정을 붙이지 말라는 조항이 있다 — 정을 붙일 만하면 니케들이 사라지기 때문이다",
-      "about": ["person:시프티", "concept:니케"],
+      "about": ["person:슈엔", "concept:니케"],
       "evidence": [{ "scene": "d_main_08_06", "lines": ["22-30"] }],
       "reason": "시프티의 말. 시프티는 그게 안 된다며 카운터스가 오래 살아남도록 돕고 싶다고 한다. ch09에서 이 시프티가 딥페이크를 쓴 슈엔으로 드러나(F248) 슈엔이 지어낸 말일 수도 있어 추정으로 둔다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: CH.08의 오퍼레이터 시프티는 딥페이크를 쓴 슈엔(사칭 L32) — 시프티 → 슈엔으로 고쳐 적음. 화면은 CH.09를 읽기 전까지 시프티로 보인다"
+        }
+      ]
     }
   ],
   "questions": [
     {
       "id": "Q42",
       "text": "시프티는 누군가의 지시로 카운터스를 감시하고 있나?",
-      "about": ["person:시프티", "org:카운터스"],
+      "about": ["person:슈엔", "org:카운터스"],
       "evidence": [{ "scene": "d_main_08_02", "lines": ["4-8"] }, { "scene": "d_main_08_01", "lines": ["14-20"] }],
       "reason": "아니스가 엑시아 말고 아무도 모르는 출격에 시프티가 붙은 것을 의심하고, 스파이 농담에 시프티가 굳는다. 시프티는 부인하며 믿어 달라고 한다(08_06#22-32)",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: CH.08의 오퍼레이터 시프티는 딥페이크를 쓴 슈엔(사칭 L32) — 시프티 → 슈엔으로 고쳐 적음. 화면은 CH.09를 읽기 전까지 시프티로 보인다"
+        }
+      ]
     },
     {
       "id": "Q43",

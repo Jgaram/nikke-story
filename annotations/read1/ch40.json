@@ -296,7 +296,7 @@
     {
       "id": "F2091",
       "text": "미세스 미스는 작사 · 작곡 · 안무까지 하는 비밀리의 전설적인 프로듀서로, 프리티의 시작과 끝을 함께한 유일한 프로듀서였다 — 방주에 있던 '별'이 없어져 프로듀싱을 그만두었고 관심은 오직 '방주의 별'뿐이며, 회사 비리로 갱생관에 갔다 아우터 림까지 간 것도 별을 찾아서였다고 머스탱은 말한다",
-      "about": ["person:미세스_미스", "person:프리티", "person:머스탱"],
+      "about": ["person:미세스_미스", "person:프리티", "person:한슨"],
       "evidence": [
         { "scene": "d_main_40_af_03", "lines": ["22-41"] },
         { "scene": "d_main_40_af_05", "lines": ["4-12"] },
@@ -305,17 +305,35 @@
       "reason": "미세스 미스의 말(af_03 #36-41, af_08 #49-54), 민트 · 프리카의 말(af_08 #26-40), 머스탱의 말(af_05 #11-12)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R67", "note": "R67 자체 검토 — 원문 근거 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R67", "note": "R67 자체 검토 — 원문 근거 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2092",
       "text": "머스탱은 미세스 미스가 연예계의 '몬스터 메이커'라 아니스를 그에게서 숨겨 왔고, 연예계를 가르치지 말고 노래 · 춤에만 한정하는 조건으로 미세스 미스가 아니스('My Star')를 돕는 것을 허락했다 — 미세스 미스는 머스탱이 메이저 데뷔도 못 한 T.T.STAR의 영상을 가졌다는 네온의 말에 곧장 머스탱을 찾아갔다",
-      "about": ["person:머스탱", "person:미세스_미스", "person:아니스", "org:T.T.STAR"],
+      "about": ["person:한슨", "person:미세스_미스", "person:아니스", "org:T.T.STAR"],
       "evidence": [{ "scene": "d_main_40_af_03", "lines": ["80-98"] }, { "scene": "d_main_40_af_05", "lines": ["13-28"] }],
       "reason": "미세스 미스 · 머스탱의 대화(af_05 #13-28)와 af_03 #84-96",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R67", "note": "R67 자체 검토 — 원문 근거 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R67", "note": "R67 자체 검토 — 원문 근거 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2093",

@@ -15,12 +15,21 @@
     {
       "id": "F654",
       "text": "카페 스위티는 머스탱이 손수 이름을 지은 테트라 라인 최고의 무력 스쿼드로 [해결사]라는 이름으로 더 자주 불리고, 리더는 프림이다",
-      "about": ["org:카페_스위티", "person:프림", "person:머스탱", "org:테트라"],
+      "about": ["org:카페_스위티", "person:프림", "person:한슨", "org:테트라"],
       "evidence": [{ "scene": "ep:d_nikke_frima_01", "lines": ["0-2"] }],
       "reason": "지휘관 독백의 소개(#0–2). F441(카페 스위티 구성)에 스쿼드의 위상 · 이름 · 리더를 더한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R14", "note": "R14 자체 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R14", "note": "R14 자체 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F655",

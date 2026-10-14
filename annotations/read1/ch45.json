@@ -51,12 +51,21 @@
     {
       "id": "F2575",
       "text": "머스탱은 아니스에게 확장 무장 STAR와 짝을 이루는 무기 — 총과 함께, 아니스가 가장 아름답게 보이게 맞춰 섬광탄으로는 못 쓰는 떠다니는 조명(스포트라이트)과 방패 같은 스피커 — 를 주며 '테트라의 니케는 전장에서도 아이돌이어야 한다'고 했다",
-      "about": ["person:아니스", "person:머스탱", "org:테트라"],
+      "about": ["person:아니스", "person:한슨", "org:테트라"],
       "evidence": [{ "scene": "d_main_45_02", "lines": ["23-41"] }],
       "reason": "머스탱 말(#23-41)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2576",
@@ -301,22 +310,40 @@
     {
       "id": "F2599",
       "text": "머스탱은 배틀 데이터로 STAR의 진짜 기능이 광학 병기만이 아닌 모든 에너지의 제어이고, 흡수할 에너지가 아주 많으면 드레스 형태의 '스타라이트 모드'로 잠시 전설의 니케 릴리바이스의 힘을 재현한다고 밝혔다 — 프리티는 포스트 릴리바이스라 할 바디를 타고났고, 머스탱은 STAR를 쓰기로 마음먹기까지 오래 걸려 보는 것조차 힘들었다고 했다",
-      "about": ["person:머스탱", "person:아니스", "person:릴리바이스", "person:프리티"],
+      "about": ["person:한슨", "person:아니스", "person:릴리바이스", "person:프리티"],
       "evidence": [{ "scene": "d_main_45_09", "lines": ["138-162"] }],
       "reason": "머스탱 말(#141-159)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2600",
       "text": "머스탱은 에너지를 제어하는 능력을 응용한 니케가 어딘가에 있다고 들었다 했고 지휘관은 길로틴의 능력을 떠올렸다 — 조명 · 스피커는 어떤 상황에서도 아니스를 보고 목소리를 듣게 해 절망 속에서도 희망을 잃지 말라는 머스탱의 철학이라 했다",
-      "about": ["person:머스탱", "person:길로틴", "person:아니스", "person:지휘관"],
+      "about": ["person:한슨", "person:길로틴", "person:아니스", "person:지휘관"],
       "evidence": [{ "scene": "d_main_45_09", "lines": ["164-178"] }],
       "reason": "머스탱 말(#165, #170-173)과 지휘관 독백(#166). 길로틴의 에너지 흩기는 F308",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R89", "note": "R89 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2601",

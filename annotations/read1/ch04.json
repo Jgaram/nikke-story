@@ -338,19 +338,26 @@
     {
       "id": "F94",
       "text": "머스탱은 방주의 엔터테인먼트를 맡는 테트라 라인의 CEO로, 카운터스에게 북부 연구 기지 출입증을 주었다",
-      "about": ["person:머스탱", "org:테트라", "org:카운터스"],
+      "about": ["person:한슨", "org:테트라", "org:카운터스"],
       "evidence": [{ "scene": "d_main_04af_08", "lines": ["14-16", "37-58"] }],
       "reason": "본인 소개와 출입증. 잉그리드가 맘에 들어 한 이들을 보고 싶었다고 흘린다(#66)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
-        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" }
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
       ]
     },
     {
       "id": "F95",
       "text": "아니스는 머스탱과 아는 사이로, 머스탱은 아니스가 자기 쪽으로 돌아오기를 기다린다",
-      "about": ["person:아니스", "person:머스탱"],
+      "about": ["person:아니스", "person:한슨"],
       "evidence": [{ "scene": "d_main_04af_08", "lines": ["22-29"] }],
       "reason": "아니스 '사장님. 오랜만이네요', 머스탱 '그럼 이제 슬슬 Return?' — 어디로 돌아오라는지는 말하지 않는다",
       "confidence": "확실",
@@ -364,6 +371,13 @@
           "session": "M01",
           "note": "ch35 F1798 — 머스탱이 아니스의 은퇴를 장기 휴가로 처리해 기다렸다고 되짚는다",
           "before": "확신도 추정"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     }
@@ -445,14 +459,21 @@
     {
       "id": "Q19",
       "text": "아니스는 테트라 라인(머스탱)과 무슨 관계이고, 왜 아직 돌아가지 않나?",
-      "about": ["person:아니스", "person:머스탱", "org:테트라"],
+      "about": ["person:아니스", "person:한슨", "org:테트라"],
       "evidence": [{ "scene": "d_main_04af_08", "lines": ["22-29"] }],
       "reason": "머스탱이 돌아오라 하고 아니스는 '아직은 좀'이라고만 한다",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "RV1", "note": "Claude 자체 검토 — 사용자가 1회독 후보 확정을 Claude에게 맡김(2026-09-29)" },
-        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F1798 · F2556 · F2705)이 답한다 — 실제 의문이었다", "before": "확신도 추정" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01", "note": "뒤 원문(F1798 · F2556 · F2705)이 답한다 — 실제 의문이었다", "before": "확신도 추정" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
       ]
     }
   ],

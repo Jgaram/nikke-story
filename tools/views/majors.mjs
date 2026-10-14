@@ -38,6 +38,7 @@ import { mentionRows } from '../records/read2.mjs';
 import { IMPORTANCE_DIR } from './importance.mjs';
 import { EMOTION_ASPECTS } from './layers.mjs';
 import { COMMANDER, leadSignals } from './leads.mjs';
+import { faceDataset } from '../records/impersonation.mjs';
 
 /** 기준값 기본 — annotations/majors.json criteria가 이긴다. score: 주요 인물 문턱(점수) · band: 명단에 적는 띠(문턱의 몫) */
 export const DEFAULT_CRITERIA = { score: 32, band: 0.5 };
@@ -76,6 +77,7 @@ export function gapsOf(values, [lo, hi] = GAP_RANGE) {
  * @param {{ items: {key:string}[] }} order 1회독 순서
  */
 export function majorMetrics(ds, ctx, order) {
+  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
   const criteria = { ...DEFAULT_CRITERIA, ...Object.fromEntries(Object.entries(ds.majors?.data?.criteria ?? {}).filter(([k]) => k in DEFAULT_CRITERIA)) };
   const L = leadSignals(ds, ctx, order);
   const chapters = L.chapters;

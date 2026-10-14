@@ -5,7 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
 import { openContext } from '../tools/records/context.mjs';
-import { EXAMPLE_DIR, loadDataset } from '../tools/records/model.mjs';
+import { EXAMPLE_DIR, impersonations, loadDataset } from '../tools/records/model.mjs';
 import { loadOrder } from '../tools/records/order.mjs';
 import { mentionRows } from '../tools/records/read2.mjs';
 import { buildPersons, personScenes, renderPersonsReport } from '../tools/views/persons.mjs';
@@ -38,8 +38,11 @@ test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이�
   }
   // 암시 언급이 있는 인물은 그 씬이 등장에 든다
   const ps = personScenes(ctx, ds);
+  // 사칭 범위(W23a · b)의 이름표 주인 줄은 사칭한 인물에게 옮겨 센다 — 그 암시 언급은 사칭한 인물의 등장에 든다
+  const imps = impersonations(ds);
+  const holder = (r) => imps.find((L) => L.b === r.target && L.spans.some((s) => s.scene === r.scene && (!s.seqs || s.seqs.has(r.from_seq))))?.a ?? r.target;
   for (const r of mentionRows(ds).filter((x) => x.target?.startsWith('person:')).slice(0, 200)) {
-    const x = ps.get(r.target)?.get(r.scene);
+    const x = ps.get(holder(r))?.get(r.scene);
     assert.ok(x && x.all.has(r.from_seq) && x.implied.has(r.from_seq), `${r.record}`);
     if (r.speaker) assert.ok(x.speak.has(r.from_seq), `${r.record} speaker`);
   }

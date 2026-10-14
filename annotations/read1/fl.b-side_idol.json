@@ -64,12 +64,21 @@
     {
       "id": "F2718",
       "text": "머스탱(한슨)은 민트를 아주 오래 보아 왔지만 남자와 함께 다니는 것을 한 번도 본 적이 없다며 지휘관과 민트의 사이를 반대했고, 민트는 선을 완벽하게 지켜 스캔들이 절대 나지 않는 민트라며 오해라고 넘겼다",
-      "about": ["person:머스탱", "person:민트", "person:지휘관"],
+      "about": ["person:한슨", "person:민트", "person:지휘관"],
       "evidence": [{ "scene": "fl:b-side_idol_12", "lines": ["4-7", "37-41"] }, { "scene": "fl:b-side_idol_14", "lines": ["15-22", "34-36"] }],
       "reason": "'Me는 절대 두 사람을 허rock 할 수 없습니Da'(_12 #4) · 민트 '선은 완벽하게 지키고, 모두가 사랑하지만 스캔들은 절대 나지 않는 민트요'(#39) · 머스탱 'Mint를 VeryVeryVery Long Time 동안 봐왔습니Da … 남자와 함께 다니는 Girl See 한 적이 없습니Da'(_14 #20-22). 이름표 '머스탱'은 F2701에 따라 지금의 머스탱 = 한슨",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R93" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R93" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2719",

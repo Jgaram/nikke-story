@@ -44,6 +44,7 @@ import { buildRead1Views } from './read1.mjs';
 import { emptySignal, layerSignals } from './layers.mjs';
 import { buildClosures } from './closures.mjs';
 import { releasePlaces } from './reveal.mjs';
+import { faceDataset } from '../records/impersonation.mjs';
 
 export const IMPORTANCE_DIR = path.join(ROOT, 'data/views/importance');
 const W = { 뼈대: 0, 보강: 1, 독립: 2 };
@@ -155,6 +156,7 @@ export function gradeHistory(obj) {
  * @param {{ readLayers?: Map<string, number>|null }} [opts]
  */
 export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
+  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
   const views = buildRead1Views(ds, ctx, order);
   const spine = spineUnits(ds);
   const signals = layerSignals(ds, views, read2Edges(ds, ctx, order), { spine, closures: buildClosures(ds, ctx, order) });

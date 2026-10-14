@@ -70,12 +70,21 @@
       "act": "암시",
       "points": ["F886"],
       "text": "슈엔이 머스탱에게 '게임 센터인지 뭔지 하는 곳에 웬 하이에나들이 어슬렁거린다던데, 토끼 뱃속의 황금들을 다 파 먹힐 것'이라 비꼰다 — 이그조틱이 엔터 헤븐을 부추겨 코인 러시를 털게 한다(F886)",
-      "about": ["person:머스탱", "person:슈엔"],
+      "about": ["person:한슨", "person:슈엔"],
       "reason": "#38-39. ch22 코인 러시 사건. 슈엔이 말한 하이에나가 그 일당이라는 확인은 원문에 없다",
       "confidence": "추정",
       "evidence": [{ "scene": "d_main_18af_01", "lines": ["37-39"] }],
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M04" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E132",

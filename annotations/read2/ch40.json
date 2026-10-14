@@ -174,12 +174,21 @@
       "act": "암시",
       "points": ["F2240"],
       "text": "머스탱이 'Ark에 Star는 항상 있었다, 빛나지 않았을 뿐'이라 한다",
-      "about": ["person:머스탱"],
+      "about": ["person:한슨"],
       "reason": "#5-6. ch42에서 아니스가 '방주에 별은 언제나 있었다'고 깨닫는다(F2240).",
       "evidence": [{ "scene": "d_main_40_af_05", "lines": ["4-6"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ],
   "changes": [
@@ -555,7 +564,7 @@
     },
     {
       "id": "D797",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:미세스_미스"],
@@ -573,6 +582,13 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "연예계의 '몬스터 메이커'라 My Star를 숨겨 왔고, 노래 · 춤만 가르치는 조건을 어기면 용서하지 않겠다며 허락하는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     },

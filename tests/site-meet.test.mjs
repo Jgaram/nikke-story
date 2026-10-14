@@ -120,5 +120,6 @@ test('이름 없이 나온 등장(W15f) — persons-detail hid · links hid는 �
     assert.ok(e.type === 'character' || e.type === 'keyword', `${e.from} ${e.to} ${e.type}`);
     for (const t of e.hid) assert.ok(e.targets.includes(t));
   }
-  assert.ok(links.edges.some((e) => e.hid?.includes('person:슈엔') && (e.from === 'ch08' || e.to === 'ch08')));
+  // 그레이브는 CH.29에서 '???'로만 말한다(슈엔 CH.08은 W23b부터 사칭 L32 — 관계선은 이름표 주인 시프티로 센다)
+  assert.ok(links.edges.some((e) => e.hid?.includes('person:그레이브') && (e.from === 'ch29' || e.to === 'ch29')));
 });

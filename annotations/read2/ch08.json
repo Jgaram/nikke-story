@@ -12,8 +12,17 @@
       "evidence": [{ "scene": "d_main_08_01", "lines": [0, "2-4", 6, 14, 17, "20-24", 27, "32-33", "36-37"] }],
       "reason": "시프티 이름표 줄 — ch08부터 시프티 행세를 한 것은 딥페이크를 쓴 슈엔이다(F248, ch09 d_main_09_06_s#14-41)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I16",
@@ -22,8 +31,17 @@
       "evidence": [{ "scene": "d_main_08_06", "lines": [8, "10-14", 19, "21-30", 32, 35, 37] }],
       "reason": "시프티 이름표 줄 — 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I17",
@@ -32,8 +50,17 @@
       "evidence": [{ "scene": "d_main_08_07", "lines": [0, 8, "10-11"] }],
       "reason": "시프티 이름표 줄 — 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I18",
@@ -42,8 +69,17 @@
       "evidence": [{ "scene": "d_main_08_08", "lines": ["3-4", "7-8", 23] }],
       "reason": "시프티 이름표 줄 — 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     }
   ],
   "echoes": [
@@ -52,24 +88,42 @@
       "act": "암시",
       "points": ["F248"],
       "text": "아니스의 '스파이' 농담에 '시프티'가 정색하고 겁먹으며, 특수 별동대라 정보가 안 들어온다며 행선지를 캐묻는다 — 딥페이크로 시프티 행세를 하며 감시하는 슈엔(F248)",
-      "about": ["person:시프티", "person:슈엔"],
+      "about": ["person:슈엔"],
       "evidence": [{ "scene": "d_main_08_01", "lines": ["14-24"] }],
       "reason": "#17 침묵 · #20 '저도 모르게 겁먹어서는' · #22-24. 정체는 ch09에서 드러난다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: CH.08의 오퍼레이터 시프티는 딥페이크를 쓴 슈엔(사칭 L32) — 시프티 → 슈엔으로 고쳐 적음. 화면은 CH.09를 읽기 전까지 시프티로 보인다"
+        }
+      ]
     },
     {
       "id": "E64",
       "act": "암시",
       "points": ["F248"],
       "text": "다시 나타난 '시프티'가 '의심받아도 할 말은 없다'면서 니케들이 좋다며 믿어 달라고 한다 — 시프티 행세를 한 슈엔(F248)",
-      "about": ["person:시프티", "person:슈엔"],
+      "about": ["person:슈엔"],
       "evidence": [{ "scene": "d_main_08_06", "lines": ["21-32"] }],
       "reason": "#22 · #32. 감시자의 호소라 반어",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: CH.08의 오퍼레이터 시프티는 딥페이크를 쓴 슈엔(사칭 L32) — 시프티 → 슈엔으로 고쳐 적음. 화면은 CH.09를 읽기 전까지 시프티로 보인다"
+        }
+      ]
     }
   ],
   "changes": [

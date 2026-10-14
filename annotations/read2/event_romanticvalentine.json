@@ -131,7 +131,7 @@
     },
     {
       "id": "D1629",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
@@ -144,7 +144,14 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡기는" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡기는" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
       ]
     }
   ],

@@ -45,7 +45,7 @@
     {
       "id": "F603",
       "text": "지휘관은 버려진 고양이를 닮은 인형을 받으려 머스탱이 광고하는 코스모 버거 해피 메테오 세트의 STAR 배지를 애드미와 함께 모았고, 끝나면 버려질까 봐 마지막을 앞두고 달아난 애드미를 로열 로드 골목에서 기다려 떠나지 않겠다며 머리를 쓰다듬었다 — 애드미도 지휘관의 머리를 쓰다듬어 관계를 시작했다",
-      "about": ["person:애드미", "person:지휘관", "place:코스모_버거", "person:머스탱"],
+      "about": ["person:애드미", "person:지휘관", "place:코스모_버거", "person:한슨"],
       "evidence": [
         { "scene": "ep:d_nikke_admi_02", "lines": ["13-19", "104-116"] },
         { "scene": "ep:d_nikke_admi_04", "lines": ["85-108"] },
@@ -54,7 +54,16 @@
       "reason": "줄거리의 뼈대. 해피 메테오 버거는 퍼펙트 패티 · 채소 퍼펙트로 만든다(02 #92–93) — 방주 음식이 퍼펙트라는 F590과 맞는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R11", "note": "원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R11", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ],
   "questions": [],

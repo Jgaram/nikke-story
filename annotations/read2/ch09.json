@@ -12,8 +12,17 @@
       "evidence": [{ "scene": "d_main_09_01", "lines": [1, 5, 8, 10, "29-30", 33] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I21",
@@ -22,8 +31,17 @@
       "evidence": [{ "scene": "d_main_09_02_s", "lines": [9, 13, 18] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I22",
@@ -32,8 +50,17 @@
       "evidence": [{ "scene": "d_main_09_02_e", "lines": [9, 11] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I23",
@@ -42,8 +69,17 @@
       "evidence": [{ "scene": "d_main_09_03", "lines": [6, 16, 19, 21] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I24",
@@ -52,8 +88,17 @@
       "evidence": [{ "scene": "d_main_09_04", "lines": [37] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I25",
@@ -62,8 +107,17 @@
       "evidence": [{ "scene": "d_main_09_05_s", "lines": ["2-3", 18] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I26",
@@ -72,8 +126,17 @@
       "evidence": [{ "scene": "d_main_09_05_e", "lines": ["1-2", 4] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248)",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     },
     {
       "id": "I27",
@@ -82,8 +145,17 @@
       "evidence": [{ "scene": "d_main_09_06_s", "lines": [3, 5, 8, 13, "15-16", 18, "20-21"] }],
       "reason": "시프티 이름표 줄 — 정체를 드러낸 09_06_s#22 전까지 시프티 행세를 한 것은 딥페이크 슈엔(F248) — #22에서 '사실 시프티는 미실리스의 CEO 슈엔'",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M02" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L32 사칭 범위(CH.08–09 씬 전체 · 09_06_s #0-21)가 같은 줄을 슈엔에 옮겨 센다 — 두 기록이 한 줄을 세지 않게 정리"
+        }
+      ]
     }
   ],
   "echoes": [

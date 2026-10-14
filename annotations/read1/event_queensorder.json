@@ -80,12 +80,21 @@
     {
       "id": "F951",
       "text": "로산나에 따르면 머스탱이 만든 그녀의 몸은 리미트가 느슨해 지휘관의 목숨을 위협하는 행동을 보면 제대로 쓸 수 있는 것 같고, 지휘관이 곁에 있으면 더 풀린다 — 로산나는 이를 실험해 보려고 지휘관을 붉은 덤불의 창고로 데려갔다",
-      "about": ["person:로산나", "person:머스탱"],
+      "about": ["person:로산나", "person:한슨"],
       "evidence": [{ "scene": "event_queensorder_04_s", "lines": ["198-210"] }, { "scene": "event_queensorder_intermission_01", "lines": ["47-49"] }],
       "reason": "로산나 말 '지휘관의 목숨에 위협이 되는 행동을 발견하면 제대로 사용할 수 있는 것 같더라고'(#204), '머스탱의 솜씨'(#209). 본인도 '것 같다'고 하므로 로산나에 따르면으로 적었다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R24", "note": "원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R24", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F952",
@@ -139,12 +148,21 @@
     {
       "id": "F956",
       "text": "잉그리드는 언더월드 퀸과의 일을 머스탱에게 전해 듣고 방주 뒷골목의 폭력 사태는 엘리시온이 정리하겠다고 했고, 시지 패러리스는 이를 [어쩔 수 없는 일]로 판단해 움직이지 않기로 했다 — 엠마가 잉그리드의 대리인으로 지휘관에게 전했다",
-      "about": ["person:잉그리드", "person:머스탱", "org:시지_패러리스", "org:언더월드_퀸", "person:엠마"],
+      "about": ["person:잉그리드", "person:한슨", "org:시지_패러리스", "org:언더월드_퀸", "person:엠마"],
       "evidence": [{ "scene": "event_queensorder_06_e", "lines": ["17-27", "31-32"] }],
       "reason": "엠마가 전한 잉그리드의 전언 그대로. '이쪽에서 정리'의 이쪽은 잉그리드(엘리시온)로 읽었다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R24", "note": "원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R24", "note": "원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F957",

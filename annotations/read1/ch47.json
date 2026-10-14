@@ -228,12 +228,21 @@
     {
       "id": "F2818",
       "text": "에닉에 따르면 3차 지상 탈환전 준비는 순조롭다 — 민심은 T.T. STAR부터 연 대규모 릴레이 콘서트와 머스탱의 지상 탈환 암시 발언으로 안정권에 들었고, 거대 리프트 위에 지은 도시인 방주를 들어올릴 부상 기능은 미실리스의 관리로 작동하지만 동력원 출력이 급감해 리프트 전력은 일렉트릭 쇼크 스쿼드와 엔드리스 · 이터니티로 메우기로 했다",
-      "about": ["person:에닉", "org:T.T.STAR", "person:머스탱", "org:미실리스", "org:일렉트릭_쇼크", "person:엔드리스", "person:이터니티", "concept:방주_동력원", "place:방주"],
+      "about": ["person:에닉", "org:T.T.STAR", "person:한슨", "org:미실리스", "org:일렉트릭_쇼크", "person:엔드리스", "person:이터니티", "concept:방주_동력원", "place:방주"],
       "evidence": [{ "scene": "d_main_47_07", "lines": ["71-83"] }],
       "reason": "에닉(#73-74 · #79-83)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R97", "note": "R97 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-04", "session": "R97", "note": "R97 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2819",

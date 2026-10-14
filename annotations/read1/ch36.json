@@ -162,12 +162,21 @@
     {
       "id": "F1817",
       "text": "T.T.STAR는 세 명의 그룹으로 해체된 지 좀 되었고 나머지 둘은 같은 테트라 사무실에서 따로 활동한다 — 아니스는 그룹을 나올 때 '작은 트러블'이 있었다 하고, 머스탱은 잉그리드에게 그 둘을 직접 돕는 것을 금했다 — 잉그리드는 방주 테러 감사를 마친 오버시어(감찰 부대)의 아이리 · 아비스타를 붙여 주었다",
-      "about": ["org:T.T.STAR", "person:아니스", "person:머스탱", "person:잉그리드", "org:오버시어", "person:아이리", "person:아비스타"],
+      "about": ["org:T.T.STAR", "person:아니스", "person:한슨", "person:잉그리드", "org:오버시어", "person:아이리", "person:아비스타"],
       "evidence": [{ "scene": "d_main_36_04", "lines": ["11-57", "84-91"] }, { "scene": "d_main_36_08_s", "lines": ["34-47"] }],
       "reason": "네온 · 잉그리드 · 아니스의 대화(36_04), 아이리의 소개(36_08_s)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R57", "note": "R57 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-02", "session": "R57", "note": "R57 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F1818",

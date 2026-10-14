@@ -13,7 +13,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 12,sub:트레저_헌터_00,서브퀘스트,2,5,3,1,2,5,,,,0,0,,person:트레저_헌터 person:아니스 place:지상,트레저 헌터 · 트레저 헌터 1
 13,sub:랩칠리언_00,서브퀘스트,2,2,1,1,0,4,,,고립,0,0,,person:랩칠리언 place:지상 concept:랩쳐,랩칠리언 · 랩칠리언 1
 14,relic:방주추첨권,유실물,1,3,2,0,1,3,,,,0,0,,item:방주_추첨권 place:방주,방주 추첨권
-15,ch04,메인,7,26,28,2,22,19,,,,,,,concept:페어리_테일 place:북부 person:베스티 concept:기억_소거 person:은화 person:엠마,CHAPTER.04 헌화
+15,ch04,메인,7,25,27,2,22,18,,,,,,,concept:페어리_테일 place:북부 person:베스티 concept:기억_소거 person:은화 person:엠마,CHAPTER.04 헌화
 16,sub:트레저_헌터_01,서브퀘스트,2,4,3,2,1,5,,,,0,0,,person:트레저_헌터 org:자원_채집_부대 person:라피 person:아니스 concept:니케,트레저 헌터 · 트레저 헌터 2
 17,sub:이례의_기록자_00,서브퀘스트,3,1,1,0,1,3,,,,1,0,ch02,org:니푸르 person:이례의_기록자 person:네온 person:아니스,이례의 기록자 · 이례의 기록자 1
 18,sub:랩칠리언_01,서브퀘스트,2,3,3,2,1,4,,,,0,0,,person:랩칠리언 concept:랩쳐,랩칠리언 · 랩칠리언 2
@@ -35,7 +35,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 34,relic:채팅로그_얼리어답터,유실물,0,0,0,0,0,0,고립,고립,고립,0,0,,,채팅 로그_얼리어답터.txt
 35,d_ex_elevator_01,그 밖,3,5,2,0,1,7,,,,0,0,,incident:갓데스_폴 person:네온 person:라피 person:아니스 place:지상 place:방주,엘리베이터 · 엘리베이터 괴담
 36,sub:랩칠리언_04,서브퀘스트,3,3,2,2,0,6,,,고립,0,0,,person:시니스터 person:랩칠리언 org:중앙_정부 concept:랩쳐,랩칠리언 · 랩칠리언 5
-37,ch08,메인,4,7,7,2,4,8,,,,,,,person:엑시아 person:시프티 person:슈엔 org:카운터스 person:네온 person:라피,CHAPTER.08 갈등
+37,ch08,메인,3,7,6,2,4,7,,,,,,,person:엑시아 person:시프티 org:카운터스 person:네온 person:라피 person:아니스,CHAPTER.08 갈등
 38,sub:칠리페퍼_01,서브퀘스트,3,3,4,2,2,6,,,,0,0,,person:칠리페퍼 place:전초기지 place:지상,칠리페퍼 · 칠리페퍼 2
 39,relic:광고팜플렛,유실물,0,0,0,0,0,0,고립,고립,고립,0,0,,,광고 팜플렛
 40,relic:UFO챈.zip,유실물,1,5,4,0,4,3,,,,0,1,ch35,place:궤도_엘리베이터 concept:랩쳐,UFO챈.zip

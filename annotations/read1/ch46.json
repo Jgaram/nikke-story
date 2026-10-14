@@ -534,12 +534,21 @@
     {
       "id": "F2656",
       "text": "중앙 회의에서 엔더슨은 출력이 20%로 떨어지며 계속 줄어드는 방주 동력원, 도로시의 처분, 흔들리는 민심을 문제로 꼽았다 — 에닉은 인프라가 점점 마비될 것인데 대안이 없다 했고, 잉그리드는 방주 인근 물자는 씨가 말랐고 들여와도 가공할 동력이 없다 했으며, 머스탱은 수상한 집단이 많이 생겨난다고 했다",
-      "about": ["person:엔더슨", "person:에닉", "person:잉그리드", "person:머스탱", "place:방주"],
+      "about": ["person:엔더슨", "person:에닉", "person:잉그리드", "person:한슨", "place:방주"],
       "evidence": [{ "scene": "d_main_46_af_08", "lines": ["1-25"] }],
       "reason": "회의 대사(#2-5, #13-25)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R90", "note": "R90 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R90", "note": "R90 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2657",
@@ -584,12 +593,21 @@
     {
       "id": "F2661",
       "text": "머스탱은 민심이 최악인 지금 전쟁 선포는 테러를 부를 수 있다며 3차 지상 탈환전을 축하하는 대형 콘서트를 여러 번 열어 축제로 포장하자 했고 중앙 정부가 지원하기로 했다 — 그 첫 무대는 T.T.STAR가 맡는다",
-      "about": ["person:머스탱", "incident:3차_지상_탈환전", "org:T.T.STAR", "person:엔더슨"],
+      "about": ["person:한슨", "incident:3차_지상_탈환전", "org:T.T.STAR", "person:엔더슨"],
       "evidence": [{ "scene": "d_main_46_af_08", "lines": ["107-130"] }],
       "reason": "머스탱(#109-123, #129-130), 엔더슨 '중앙 정부 측에서 적극 지원'(#124)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R90", "note": "R90 자체 검토 — 근거 줄 · 문장 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R90", "note": "R90 자체 검토 — 근거 줄 · 문장 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2662",

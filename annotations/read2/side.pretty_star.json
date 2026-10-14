@@ -12,8 +12,17 @@
       "evidence": [{ "scene": "side:pretty_star_00", "lines": ["3-4"] }],
       "reason": "회상 틀의 이름표 '머스탱'은 지금의 머스탱 — 그 뒤의 머스탱은 한슨(F2701)이고, 프리티를 부르며 회상하는 이는 그녀를 사랑한 한슨(13#208)이다",
       "confidence": "추정",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L33 사칭 범위가 같은 줄을 한슨에 옮겨 센다 — 이 암시 언급은 드러나기 전(STAR ANIS 앞)에도 한슨을 내 스포일러였고 범위와 겹친다"
+        }
+      ]
     },
     {
       "id": "I440",

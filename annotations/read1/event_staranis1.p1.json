@@ -67,34 +67,19 @@
     {
       "id": "F2668",
       "text": "T.T.STAR는 방주에서 가장 큰 무대인 아크리온 홀을 관객으로 가득 채운 공연에 올랐다 — 아비스타가 카운터스를 특별 초대석으로 안내했고, 머스탱은 이것이 단순한 복귀 공연이 아닌 아주 중요한 무대라 했다",
-      "about": [
-        "org:T.T.STAR",
-        "place:아크리온_홀",
-        "person:머스탱",
-        "person:아비스타",
-        "person:아니스"
-      ],
-      "evidence": [
-        {
-          "scene": "event_staranis1_prologue",
-          "lines": [
-            "1-2",
-            "19-28",
-            "77-87",
-            "138-150"
-          ]
-        }
-      ],
+      "about": ["org:T.T.STAR", "place:아크리온_홀", "person:한슨", "person:아비스타", "person:아니스"],
+      "evidence": [{ "scene": "event_staranis1_prologue", "lines": ["1-2", "19-28", "77-87", "138-150"] }],
       "reason": "서술(#1-2), 아비스타(#26-28), 미세스 미스(#77-78)와 머스탱(#80-81)의 말 그대로",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R91", "note": "원문 대조 검토" },
         {
           "decision": "확정",
           "by": "claude",
-          "date": "2026-10-03",
-          "session": "R91",
-          "note": "원문 대조 검토"
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     },

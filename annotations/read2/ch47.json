@@ -38,8 +38,17 @@
       "evidence": [{ "scene": "d_main_47_02", "lines": [151] }],
       "reason": "'머스탱 사장님' — 지금(S321 뒤)의 CEO 머스탱은 한슨(F2701 · I458과 같은 처리).",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L33 사칭 범위가 같은 줄을 한슨에 옮겨 센다 — 이 암시 언급은 드러나기 전(STAR ANIS 앞)에도 한슨을 내 스포일러였고 범위와 겹친다"
+        }
+      ]
     },
     {
       "id": "I472",
@@ -47,8 +56,17 @@
       "evidence": [{ "scene": "d_main_47_07", "lines": [74] }],
       "reason": "'머스탱 CEO'의 지상 탈환 암시 발언 — 지금의 CEO 머스탱은 한슨(F2701 · I458).",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: L33 사칭 범위가 같은 줄을 한슨에 옮겨 센다 — 이 암시 언급은 드러나기 전(STAR ANIS 앞)에도 한슨을 내 스포일러였고 범위와 겹친다"
+        }
+      ]
     }
   ],
   "echoes": [

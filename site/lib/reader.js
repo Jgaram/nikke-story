@@ -731,7 +731,8 @@ const RENDER = {
     if (r.evidence?.length) body.append(ui.panel(LABELS.scene, ui.el('ul', { class: 'plain' }, [...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.el('li', {}, ui.link(`scene:${sc}`, fmt.ref(sc)))))));
     // 해석 이유는 추정일 때만 — 확실한 기록은 문장만으로 읽힌다. 못 바꾸는 이유 문장은 내지 않는다
     if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel(LABELS.guessWhy, ui.el('p', { class: 'reason' }, fmt.prose(r.reason))));
-    if (r.about?.length) body.append(ui.panel(LABELS.related, ui.el('p', {}, joinNodes(r.about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
+    const about = fmt.recAt(r, state.reading()).about; // 사칭에 가려지는 기록은 드러나기 전 이름표 주인으로(W23b)
+    if (about?.length) body.append(ui.panel(LABELS.related, ui.el('p', {}, joinNodes(about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) {
       // 이 기록이 그 떡밥과 이어진 줄 그 자리에서 알 때만 이름으로(떡밥 묶음 — W15d), 아니면 스포일러 접이에
       const R = state.reading();
@@ -777,7 +778,7 @@ const RENDER = {
     const aliasList = fmt.aliasesAt(t, RR);
     const aliases = aliasList.length ? aliasList.map((a) => a.name).join(' · ') : null;
     const name = fmt.nameAt(t, RR) ?? t.name;
-    const recs = idx.recordsAbout.get(id) ?? [];
+    const recs = (idx.recordsAbout.get(id) ?? []).filter((r) => fmt.recHas(r, id, state.reading())); // 사칭 가림(W23b) — 그 자리 모습의 대상만
     if (isPerson) {
       out.append(shown ? head(name, [ui.orgMarks(fmt.orgsAt(t, state.reading(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
       const fa = firstAppearance(id, idx);

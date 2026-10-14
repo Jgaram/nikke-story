@@ -14,6 +14,7 @@
  *                사칭이 걸린 스토리(W23a — person-units.csv imp)는 + { rev(드러난 스토리), as[](이 인물이 행세한 인물) | by[](이 인물로 행세한 인물), pre{ scenes, lines, speaker, implied, first_scene } }.
  *                수치는 옮긴 뒤(사칭한 인물에), pre는 드러나기 전 모습 — 화면은 rev를 읽기 전에는 pre를 쓴다. 줄을 다 옮긴 스토리는 scenes 0 행(pre만)으로 남는다
  *     records[]  그 인물을 다룬 확정 기록 ID(person-records.csv — 사실 · 의문 정의, 사건, 떡밥, 생활상, 변화 · 기준 · 관계 상대, 마무리). 문장 · 자리는 records*.json에서
+ *                사칭에 가려지는 기록(W23b — imp)은 이름표 주인 쪽에도 싣는다(records · changes · rel). 화면은 fmt.recHas(그 자리 모습)로 고른다. 그 변화 줄은 + { person(실제 인물), imp }
  *     changes[]  변화 타임라인(chrono-changes.csv) — { id, seq(작중 순서, 없으면 상대 · 불명), act, aspect, with, unit, tick, order, time, class, place, lo, hi, inverted[] }
  *                place는 단위(units.json chrono.place)와 다를 때만(시점 기록 · 조각으로 좁힌 변화)
  *     rel[]      관계 상대(W21 — relations.csv) — { with, recs[] } 쌍이 처음 나온 자리 순. recs = 변화 D(양쪽의 것) · 마무리 O(관계 사슬) · 합류 H의 확정 기록 ID를 읽는 자리 순으로.
@@ -101,10 +102,35 @@ export async function run(ctx) {
     slot(r.b).rel.push({ with: r.a, recs });
   }
   if (relCut) warn({ where: 'persons', msg: `확정 기록이 없는 관계 쌍 ${relCut}개를 뺐다(relations.csv)` });
+  // 사칭에 가려지는 기록(W23b — records*.json imp): 드러나기 전 모습으로도 싣는다 — 실제 인물(a) 목록에 더해 이름표 주인(b) 목록에도.
+  // 화면은 fmt.recHas로 그 자리 모습에 그 인물이 있을 때만 보인다(변화 줄은 person · imp를 실어 기록이 오기 전에도 고른다)
+  const recImp = new Map(common.records.filter((r) => r.imp).map((r) => [r.id, r.imp]));
+  const faceOf = (x, imp) => imp.find((m) => m.a === x)?.b ?? x;
+  for (const [pid, d] of [...detail]) {
+    for (const id of d.records) for (const m of recImp.get(id) ?? []) if (m.a === pid && !slot(m.b).records.includes(id)) slot(m.b).records.push(id);
+    for (const c of d.changes) {
+      const imp = recImp.get(c.id);
+      if (!imp) continue;
+      Object.assign(c, { person: pid, imp });
+      const face = faceOf(pid, imp);
+      if (face !== pid && !slot(face).changes.some((x) => x.id === c.id)) slot(face).changes.push({ ...c });
+    }
+    for (const x of d.rel ?? []) {
+      for (const id of x.recs) {
+        const imp = recImp.get(id);
+        if (!imp) continue;
+        const [fa, fb] = [faceOf(pid, imp), faceOf(x.with, imp)];
+        if (fa === pid && fb === x.with) continue;
+        const rel = slot(fa).rel.find((y) => y.with === fb) ?? slot(fa).rel[slot(fa).rel.push({ with: fb, recs: [] }) - 1];
+        if (!rel.recs.includes(id)) rel.recs.push(id);
+      }
+    }
+  }
   for (const d of detail.values()) {
     if (!d.rel.length) delete d.rel;
     d.units.sort((a, b) => (placeOf.get(a.unit)?.order ?? 1e9) - (placeOf.get(b.unit)?.order ?? 1e9));
     d.changes.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || String(a.id).localeCompare(String(b.id)));
+    for (const x of d.rel ?? []) x.recs.sort((a, b) => (recOrder.get(a) ?? 1e9) - (recOrder.get(b) ?? 1e9));
   }
 
   // ── 인물 표 ──
@@ -133,7 +159,7 @@ export async function run(ctx) {
     if (!d) continue;
     const sum = (k) => d.units.reduce((n, u) => n + (u[k] ?? 0), 0);
     if (sum('scenes') !== (p.scenes ?? 0) || sum('lines') !== (p.lines ?? 0)) warn({ where: 'persons', msg: `${p.id}: 단위 표의 합(${sum('scenes')}씬 ${sum('lines')}줄)이 인물 표(${p.scenes}씬 ${p.lines}줄)와 다르다` });
-    const counted = d.changes.filter((c) => !foolUnits.has(c.unit)).length; // 인물 표의 수는 만우절 단위를 뺐다(결정 #11)
+    const counted = d.changes.filter((c) => !foolUnits.has(c.unit) && (!c.imp || c.person === p.id)).length; // 인물 표의 수는 만우절 단위를 뺐다(결정 #11). 사칭의 드러나기 전 모습 줄(W23b)은 실제 인물 몫
     if (counted !== (p.baselines ?? 0) + (p.changes ?? 0)) warn({ where: 'persons', msg: `${p.id}: 변화 타임라인 ${counted}건(만우절 빼고) ≠ 기준 ${p.baselines} + 변화 ${p.changes}` });
   }
 

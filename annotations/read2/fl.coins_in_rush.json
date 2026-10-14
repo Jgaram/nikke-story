@@ -179,12 +179,21 @@
       "act": "암시",
       "points": ["Q279"],
       "text": "에이드가 '[그] 머스탱 사장님'이 어느새 그냥 해본 말을 하는 분이 됐다며 놀라고, 머스탱은 'Time은 많은 것을 Change'라 한다",
-      "about": ["person:머스탱", "person:에이드"],
+      "about": ["person:한슨", "person:에이드"],
       "evidence": [{ "scene": "fl:coins_in_rush_00", "lines": ["13-23"] }],
       "reason": "#15-18 옛 머스탱과 달라진 지금을 짚는다 — 16#96-106 머스탱이 어느 시점에 완전히 변했다는 Q279로 이어진다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E854",
@@ -299,24 +308,42 @@
       "act": "암시",
       "points": ["F2120"],
       "text": "벨벳이 머스탱이 '최대한 요란하게 해라'라고 했을 것까지 알고 있어 지휘관을 놀라게 한다",
-      "about": ["person:벨벳", "person:머스탱"],
+      "about": ["person:벨벳", "person:한슨"],
       "evidence": [{ "scene": "fl:coins_in_rush_17", "lines": ["84-87"] }],
       "reason": "20에서 드러나는 벨벳 · 머스탱의 사전 만남과 조건(F2120)을 미리 흘린다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E864",
       "act": "암시",
       "points": ["F2122"],
       "text": "머스탱의 방송이 벨벳의 위치를 알리면서 경호원들을 'Rabbit의 Cute한 동료'로 붙여 주자 에이드가 '사장님은 대체 무슨 생각이신지' 한다",
-      "about": ["person:머스탱", "person:벨벳"],
+      "about": ["person:한슨", "person:벨벳"],
       "evidence": [{ "scene": "fl:coins_in_rush_21", "lines": ["63-69"] }],
       "reason": "편파적인 진행 — 27에서 일행이 알게 되는 벨벳 · 머스탱의 거래(F2122)를 흘린다.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E865",
@@ -433,7 +460,7 @@
       "person": "person:에이드",
       "aspect": "관계",
       "act": "기준",
-      "with": ["person:머스탱"],
+      "with": ["person:머스탱", "person:한슨"],
       "text": "서툴던 니케 초기부터 '사장님'으로 모셔 옛 머스탱을 알고, 그가 그냥 해본 말을 하는 사람이 된 변화를 놀라워하며 기뻐한다",
       "evidence": [{ "scene": "fl:coins_in_rush_00", "lines": ["9-25"] }],
       "reason": "#15-25 — 16#96-99에서도 과오를 갚아 가고 있다고 믿는다.",
@@ -448,6 +475,13 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "서툴던 니케 초기부터 '사장님'으로 모셔 옛 머스탱을 알고, 그가 그냥 해본 말을 하는 사람이 된 변화를 놀라워하며 기뻐하는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 진짜 머스탱(쉐이드 시절 · 옛 모습)과 그 뒤의 머스탱인 한슨(사칭 L33)을 함께 다룬다 — 한슨을 더함"
         }
       ]
     },
@@ -700,7 +734,7 @@
     },
     {
       "id": "D831",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:벨벳"],
@@ -718,12 +752,19 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "'My Velvet'이라 부르며 예전에 신세를 진 옛 쉐이드 리더를, 이벤트를 성공시키는 조건으로 늦기 전에 거두는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     },
     {
       "id": "D832",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
@@ -741,6 +782,13 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "지휘관을 미끼 · 악당 역으로 쓰면서도 서로 믿고 움직이는 'Entertainment 관계'라 여기는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     }
@@ -796,12 +844,21 @@
       "id": "U326",
       "topic": "일상 · 문화",
       "text": "손님들은 머스탱이 우승 상품으로 장난친 적이 없다고 믿고, 상품이 아니어도 이벤트 자체를 즐기러 코인 러시를 찾는다",
-      "about": ["person:머스탱", "place:코인_러시"],
+      "about": ["person:한슨", "place:코인_러시"],
       "evidence": [{ "scene": "fl:coins_in_rush_18", "lines": ["96-109"] }],
       "reason": "#99-100 '머스탱이 우승 상품 같은 거로 장난친 적 없을걸' · #102-109.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M35", "note": "M35 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ],
   "note": "정체 볼 줄 28줄 모두 정함(베이 2곳 · 벨벳 3곳). 이름표 '인자해 보이는 남자'(타겟 국장)는 정체 연결 L29로 앨든인데 자동 언급에 안 잡혀 씬마다 암시 언급으로 적었다. 07#19-20 밀크가 '부끄러운 옷을 입으면 슈가 · 프림의 딸'이라 했다는 앞 장면, 19#87-88 슈가가 지난 이벤트 때 코인 러시 안에서 바이크를 탄 장면은 1회독 사실이 없어 적지 않음. 23#8 벨벳 '예전에 쓰던 거랑 다르네'(에이드의 요원 장비)는 쉐이드 장비인지 원문이 대지 않아 적지 않음."

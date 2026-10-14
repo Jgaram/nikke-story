@@ -183,12 +183,21 @@
       "act": "암시",
       "points": ["F1798"],
       "text": "아니스가 네온에게 '일단 사장님을 찾아갈 거야'라 해, 테트라의 머스탱에게 가는 은퇴 이야기를 미리 흘린다",
-      "about": ["person:아니스", "person:머스탱"],
+      "about": ["person:아니스", "person:한슨"],
       "evidence": [{ "scene": "d_main_35bf_07", "lines": ["114-118"] }],
       "reason": "#116. 같은 단위 35_04에서 머스탱을 찾아가 은퇴를 청한다(F1798).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E598",
@@ -663,7 +672,7 @@
     },
     {
       "id": "D610",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아니스"],
@@ -672,7 +681,16 @@
       "reason": "#10-11 'Me는 Always. 기다리고 있어' · #110.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M25", "note": "M25 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "D611",

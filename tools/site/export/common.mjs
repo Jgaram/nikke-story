@@ -11,6 +11,7 @@
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
+ *                  사칭에 가려지는 기록은 imp [{ a(실제 인물), b(이름표 주인), rev(드러난 스토리) }] — 화면은 rev를 읽기 전 a 자리에 b(W23b)
  *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
@@ -27,6 +28,7 @@ import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } fr
 import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
 import { annivOf, loadMajorEvents } from '../../notices/major-events.mjs';
 import { APRIL_FOOLS_LABEL, isAprilFools } from '../../lib/fools.mjs';
+import { impersonationUnits, masksOf } from '../../records/impersonation.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -275,6 +277,9 @@ export async function run(ctx) {
   const records1 = [];
   const records2 = [];
   const threadsOfPoints = (points) => [...new Set((Array.isArray(points) ? points : []).flatMap((p) => threadsOfRoot(String(p).replace(/-\d+$/, ''))))];
+  // 사칭(W23b) — 실제 인물로 적힌 기록 중 드러나기 전에 이름표 주인으로 보일 것: imp [{ a, b, rev }] (화면은 fmt.recAt)
+  const sceneUnitOf = new Map(scenes.map((s) => [s.id, s.unit]));
+  const impUnits = impersonationUnits(ctx.records.ds, ctx.db, (s) => sceneUnitOf.get(s) ?? null);
   for (const c of ctx.records.confirmed) {
     const kind = recordKind(c);
     if (!kind) continue;
@@ -324,6 +329,8 @@ export async function run(ctx) {
     } else if (kind === 'H') {
       Object.assign(rec, { title: o.title, end: o.end, members: o.members });
     }
+    const masks = masksOf(c, impUnits);
+    if (masks.length) rec.imp = masks.map(({ a, b, rev }) => ({ a, b, rev }));
     (READ1_KINDS.has(kind) ? records1 : records2).push(compact(rec));
   }
   const sortRec = (a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || String(a.scene).localeCompare(String(b.scene)) || (a.line ?? 0) - (b.line ?? 0);

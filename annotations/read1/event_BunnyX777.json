@@ -85,7 +85,7 @@
     {
       "id": "F946",
       "text": "매출이 뛰어 리뉴얼한 코인 러시의 이벤트 [Bunny X 777]에서 지휘관이 우승했다 — 결승 [Lucky 21] 머신을 개조 토끼 인형 리모컨으로 교란한 사기꾼(부품을 날마다 조금씩 반입해 코인 러시 안에서 조립)을 머스탱은 죗값을 치른 뒤 코인 러시의 전기 기술자로 고용하기로 했다",
-      "about": ["place:코인_러시", "person:머스탱", "person:지휘관", "person:루주"],
+      "about": ["place:코인_러시", "person:한슨", "person:지휘관", "person:루주"],
       "evidence": [
         { "scene": "event_BunnyX777_01_s", "lines": ["19-21"] },
         { "scene": "event_BunnyX777_05_e", "lines": ["39-40", "63-73"] },
@@ -94,7 +94,16 @@
       "reason": "블랑의 설명(01_s #19–21), 우승 선언(05_e #39–40), 사기꾼의 자백(06_s #7–18), 머스탱의 결정(#81–87)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R23" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-30", "session": "R23" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ]
 }

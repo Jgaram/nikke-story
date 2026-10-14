@@ -83,24 +83,42 @@
       "act": "재언급",
       "points": ["F2708"],
       "text": "머스탱이 '아니스에 이어서 민트까지 뺏으려 한다'며 아니스가 지휘관 곁(카운터스)으로 떠난 일을 꺼낸다",
-      "about": ["person:머스탱", "person:아니스"],
+      "about": ["person:한슨", "person:아니스"],
       "evidence": [{ "scene": "fl:b-side_idol_14", "lines": [16] }],
       "reason": "14#16 'Anis에 이어서, Mint까지' — STAR ANIS 끝에 아니스가 탈퇴하고 카운터스와 지상으로(F2708).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E1532",
       "act": "암시",
       "points": ["F2723"],
       "text": "머스탱이 '프리카만큼은 안 된다'고 못 박는다 — 다음 이야기에서 프리카가 지휘관을 '뮤즈'라 부르게 된다",
-      "about": ["person:머스탱", "person:프리카"],
+      "about": ["person:한슨", "person:프리카"],
       "evidence": [{ "scene": "fl:b-side_idol_14", "lines": ["34-36"] }],
       "reason": "14#35 'Prika만큼은 안됩니Da' → bitter_spice 06 지휘관을 뮤즈라 부르는 프리카(F2723). 개그의 반어라 추정.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ],
   "changes": [
@@ -171,7 +189,7 @@
     },
     {
       "id": "D1737",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:민트"],
@@ -180,11 +198,20 @@
       "reason": "12#30 'My Precious Idol은 그 무엇과도 비교할 수 없습니Da' · 14#20-22 오래 봐 왔다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M76" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "D1738",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
@@ -205,6 +232,13 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "전 자기는 사장일 뿐이라며 니케들을 맡기는 믿음 · 후 Good Person이라 믿지만 아니스에 이어 민트까지 뺏으려 한다며 '남자 대 남자로는' 인정 못 하는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
         }
       ]
     }

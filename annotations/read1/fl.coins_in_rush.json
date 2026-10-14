@@ -38,22 +38,40 @@
     {
       "id": "F2115",
       "text": "에이드는 정규 메이드 교육(프로 메이드 육성 커리큘럼)의 일환으로 특수전 훈련을 받았고, 머스탱은 노출이 많은 다른 테트라 니케 대신 표적이 예측하지 못할 에이드에게 코인 러시 잠입 비밀 임무를 맡기며 지휘관을 미끼로 함께 보냈다",
-      "about": ["person:에이드", "person:머스탱", "place:코인_러시"],
+      "about": ["person:에이드", "person:한슨", "place:코인_러시"],
       "evidence": [{ "scene": "fl:coins_in_rush_00", "lines": ["26-30", "38-43", "57-66"] }, { "scene": "fl:coins_in_rush_07", "lines": [135, 137] }],
       "reason": "머스탱 · 에이드의 대화(00 #26-30 특수전 Training, #38-43 적임자, #61-66 Commander가 미끼), 에이드 본인 말(07 #135)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2116",
       "text": "머스탱이 잡아 달라고 한 타겟은 중앙 정부 지정 협력업체인 유령 단체 [푸른내일지속가능기획지원사무국]의 국장으로 — 아우터 림에서 사업을 벌이다 붙잡혔지만 쓸모를 입증해 풀려나 비밀리에 중앙 정부의 지원을 받는 사업가 — 코인 러시를 도박과 유흥의 소굴로 바꾸려 했고, 머스탱은 중앙 정부의 비호 때문에 직접 나설 수 없었다",
-      "about": ["person:머스탱", "org:중앙_정부", "place:아우터_림", "place:코인_러시"],
+      "about": ["person:한슨", "org:중앙_정부", "place:아우터_림", "place:코인_러시"],
       "evidence": [{ "scene": "fl:coins_in_rush_02", "lines": ["18-29", "35-38", "45-47"] }, { "scene": "fl:coins_in_rush_09", "lines": ["47-59"] }],
       "reason": "머스탱의 설명(02 #18-29 유령 단체 · 협력업체 · 풀려남, #35-38 도박과 유흥, #45-47 Protect), 타겟과 투자자의 대화(09 #48 사업 허가, #58 술과 도박과 여자)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2117",
@@ -68,12 +86,21 @@
     {
       "id": "F2118",
       "text": "에이드에 따르면 테트라에는 비밀 스쿼드 [쉐이드]가 실제로 있었다 — 도청 · 여론조작 · 납치 등을 맡아 엔터테인먼트라는 양지의 뒤 음지에서 테트라를 지원했지만, 머스탱이 어느 시점에 완전히 변해 진정한 엔터테인먼트를 추구하면서 해체한 지 오래다 — 에이드가 물어도 머스탱은 웃거나 말을 돌렸다",
-      "about": ["org:쉐이드", "org:테트라", "person:머스탱", "person:에이드"],
+      "about": ["org:쉐이드", "org:테트라", "person:머스탱", "person:한슨", "person:에이드"],
       "evidence": [{ "scene": "fl:coins_in_rush_16", "lines": ["85-99", "105-106"] }, { "scene": "fl:coins_in_rush_10", "lines": ["7-12"] }],
       "reason": "에이드의 설명(16 #89-93 이름 · 임무 · 해체, #96-99 변한 머스탱, #105-106 대답을 피함). 밀크는 연예계 음모론의 심화판 같은 소문으로만 알았다(10 #7-12)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 진짜 머스탱(쉐이드 시절 · 옛 모습)과 그 뒤의 머스탱인 한슨(사칭 L33)을 함께 다룬다 — 한슨을 더함"
+        }
+      ]
     },
     {
       "id": "F2119",
@@ -91,44 +118,80 @@
     {
       "id": "F2120",
       "text": "벨벳은 괴도 소동 뒤 코인 러시 VIP 대기실로 머스탱을 찾아가 도망 다니고 숨어 지내는 데 지쳐 쉴 곳이 필요하다고 했다 — 머스탱은 빠져나갈 구석을 없애려 화려하게 나타난 것임을 짐작하고 이벤트를 성공시키는 조건으로 안전을 보장했으며, 벨벳은 예전에 머스탱이 자기 신세를 많이 졌다 했고, 머스탱은 스스로를 'Bad Guy'라 했다",
-      "about": ["person:벨벳", "person:머스탱"],
+      "about": ["person:벨벳", "person:한슨"],
       "evidence": [{ "scene": "fl:coins_in_rush_20", "lines": ["5-25", "33-43", "52-54", "64-65"] }],
       "reason": "둘의 대화(#16-18 지쳤다 · 쉴 곳, #20-21 화려한 등장의 뜻, #42-43 안전 보장, #53-54 신세, #65 Bad Guy). 장면은 드링크존 만남 한 시간 전(#0)이고, 머스탱이 '그래서 그렇게 화려하게 등장했다'고 해 방송 뒤로 읽었다. 벨벳이 지휘관을 고른 까닭은 '좋은 사람이라 나 같은 것도 받아 줄 정도'(#38-39)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2121",
       "text": "머스탱은 괴도의 현상금 선언을 즉석에서 메인 이벤트 전 '추격 이벤트'(Rabbit 벨벳을 쫓는 Villain 지휘관을 손님들이 쫓는 것)로 바꿨고, 끝에 지휘관 일행을 악당 역으로 소개하며 손님 모두에게 선물을, 일행 여섯에게 1억 크레디트씩과 메인 이벤트 와일드 카드를 주었다 — 루주는 실질적 효과가 훨씬 크다고 했다",
-      "about": ["person:머스탱", "person:벨벳", "person:지휘관", "place:코인_러시"],
+      "about": ["person:한슨", "person:벨벳", "person:지휘관", "place:코인_러시"],
       "evidence": [{ "scene": "fl:coins_in_rush_15", "lines": ["5-24", "64-69"] }, { "scene": "fl:coins_in_rush_26", "lines": ["24-70", "100-105"] }],
       "reason": "머스탱의 선언(15 #7-19)과 '사장님도 몰랐다 — 급한 대로 대처'(#64-69), 시상(26 #34-45 박수, #57-61 인당 1억, #101 와일드 카드), 루주(#68-70)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F2122",
       "text": "벨벳과 머스탱의 거래를 알게 된 뒤 벨벳은 전초기지로 따라왔고, 머스탱은 지휘관에게 벨벳을 잘 부탁한다며 소속 스쿼드는 알아서 정하라는 메일을 보냈다 — 머스탱의 추천은 메이드 포 유였다",
-      "about": ["person:벨벳", "person:머스탱", "org:메이드_포_유", "person:지휘관"],
+      "about": ["person:벨벳", "person:한슨", "org:메이드_포_유", "person:지휘관"],
       "evidence": [{ "scene": "fl:coins_in_rush_27", "lines": ["0-9", "35-59"] }],
       "reason": "밀크가 전한 머스탱의 해명(#1-9), 벨벳이 따라옴(#35-36), 메일 내용(#49-55)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     }
   ],
   "questions": [
     {
       "id": "Q279",
       "text": "[쉐이드]로 도청 · 여론조작 · 납치를 하던 시절의 머스탱은 어땠고, 언제 무엇 때문에 변해 쉐이드를 해체하고 '진정한 엔터테인먼트'를 좇게 되었나 — 머스탱이 스스로를 'Bad Guy'라 하는 과거는 무엇인가?",
-      "about": ["person:머스탱", "org:쉐이드"],
+      "about": ["person:머스탱", "person:한슨", "org:쉐이드"],
       "evidence": [{ "scene": "fl:coins_in_rush_16", "lines": ["96-106"] }, { "scene": "fl:coins_in_rush_20", "lines": ["64-65"] }],
       "reason": "에이드는 '어느 시점엔가 완전히 변했다'고만 하고 머스탱은 대답을 피함(16 #96-106), 머스탱 '벨벳은 잊은 것 같지만 Me는 Bad Guy'(20 #64-65). 에이드도 '[그] 머스탱 사장님'이 변했다고 놀람(00 #15-18)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-03", "session": "R69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 진짜 머스탱(쉐이드 시절 · 옛 모습)과 그 뒤의 머스탱인 한슨(사칭 L33)을 함께 다룬다 — 한슨을 더함"
+        }
+      ]
     },
     {
       "id": "Q280",

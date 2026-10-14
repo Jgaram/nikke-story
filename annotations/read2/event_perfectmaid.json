@@ -6,6 +6,16 @@
   "date": "2026-10-08",
   "mentions": [
     {
+      "id": "I689",
+      "target": "person:머스탱",
+      "evidence": [{ "scene": "event_perfectmaid_01_s", "lines": ["10-11"] }],
+      "reason": "코코아의 '작년에 사장님이 … 진심이 없따구' — Maid in Valentine에서 초콜릿을 막은 메이드 포 유의 사장 머스탱(F807). 이 씬엔 이름이 없다. 이름표 주인 쪽으로 적는다 — 사칭 L33 범위가 한슨으로 옮긴다(W23b)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23b" }]
+    },
+    {
       "id": "I536",
       "target": "person:드레이크",
       "speaker": true,
@@ -22,12 +32,21 @@
       "act": "재언급",
       "points": ["F807"],
       "text": "코코아가 '작년 밸런타인에 사장님이 초콜릿에 진심이 없다며 만들지 말라 해 주인이 도와줬다'고 되짚는다",
-      "about": ["person:코코아", "person:머스탱"],
+      "about": ["person:코코아", "person:한슨"],
       "evidence": [{ "scene": "event_perfectmaid_01_s", "lines": ["4-12"] }],
       "reason": "#10-12 — Maid in Valentine의 일(F807).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M62" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "E1357",

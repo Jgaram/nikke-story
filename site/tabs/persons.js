@@ -232,12 +232,12 @@ export async function mount(root, ctx) {
           if (o < a.firstOrder) { a.firstOrder = o; a.firstUnit = e.unit; a.firstEntry = e; }
         }
         const fool = (k) => Boolean(idx.units.get(k)?.fool); // 만우절 — 목록에는 남기고 수에서는 뺀다(결정 #11)
-        for (const c of d.changes) { if (fool(c.unit)) continue; if (hidden(c.unit)) a.chCut++; else a.changes++; }
+        for (const c of d.changes) { if (fool(c.unit) || !fmt.recHas(c, p.id, V.R)) continue; if (hidden(c.unit)) a.chCut++; else a.changes++; }
         if (R) {
           a.recs = 0;
           for (const id of d.records) {
             const r = R.get(id);
-            if (!r || fool(r.unit)) continue;
+            if (!r || fool(r.unit) || !fmt.recHas(r, p.id, V.R)) continue; // 사칭에 가려지는 기록은 그 자리 모습의 인물에게만(W23b)
             if (recHidden(r)) a.recCut++; else a.recs++;
           }
         }
@@ -576,9 +576,9 @@ export async function mount(root, ctx) {
   const mineRecs = (p) => {
     const R = recs();
     if (!R) return null;
-    return (D.get(p.id)?.records ?? []).map((id) => R.get(id)).filter((r) => r && !recHidden(r));
+    return (D.get(p.id)?.records ?? []).map((id) => R.get(id)).filter((r) => r && !recHidden(r) && fmt.recHas(r, p.id, V.R));
   };
-  const visibleChanges = (p) => (D.get(p.id)?.changes ?? []).filter((c) => !hidden(c.unit));
+  const visibleChanges = (p) => (D.get(p.id)?.changes ?? []).filter((c) => !hidden(c.unit) && fmt.recHas(c, p.id, V.R));
   /**
    * 관계 상대(W21) — 아는 기록이 하나라도 있고 이름이 나온 상대만, 처음 이어진 차례로(수 · 순위 없음). 기록이 오기 전에는 null.
    * { id, flow[](변화 D), ends[](결말 O · 함께 맺음 H), fool(만우절 기록뿐 — 수에서 뺀다) }
@@ -589,7 +589,7 @@ export async function mount(root, ctx) {
     const out = [];
     for (const x of D.get(p.id)?.rel ?? []) {
       if (!agg.get(x.with)?.met) continue;
-      const rs = x.recs.map((id) => R.get(id)).filter((r) => r && !recHidden(r));
+      const rs = x.recs.map((id) => R.get(id)).filter((r) => r && !recHidden(r) && fmt.recHas(r, p.id, V.R) && fmt.recHas(r, x.with, V.R));
       if (!rs.length) continue;
       out.push({ id: x.with, flow: rs.filter((r) => r.kind === 'D'), ends: rs.filter((r) => r.kind === 'O' || r.kind === 'H'), first: rs[0].order ?? 0, fool: rs.every((r) => idx.units.get(r.unit)?.fool) });
     }
@@ -766,7 +766,7 @@ export async function mount(root, ctx) {
   const relChange = (p, r) => recRow(['pm-change', r.act === '변화' ? 'is-change' : 'is-base'], `record:${r.id}`,
     el('div', { class: 'pm-change-head' },
       el('span', { class: 'pm-act' }, fmt.CHANGE_ACT[r.act] ?? r.act),
-      r.person && r.person !== p.id ? el('span', { class: 'pm-kind', title: LABELS.relSide }, nameOf(r.person)) : null,
+      fmt.recAt(r, V.R).person && fmt.recAt(r, V.R).person !== p.id ? el('span', { class: 'pm-kind', title: LABELS.relSide }, nameOf(fmt.recAt(r, V.R).person)) : null,
       guess(r)),
     el('div', { class: 'pm-change-text' }, changeBody(r, r)),
     el('div', { class: 'pm-change-meta' }, storyRef(r.unit)));
@@ -816,7 +816,10 @@ export async function mount(root, ctx) {
     if (!r) return null;
     return c.act === '변화' ? `${fmt.prose(r.before) || '?'} → ${fmt.prose(r.after) || '?'}` : fmt.prose(r.text);
   };
-  const withLink = (c) => (c.with ? (P.has(c.with) ? personLink(c.with) : ui.link(`target:${c.with}`, fmt.targetName(c.with))) : null);
+  const withLink = (c) => {
+    const w = fmt.recAt(c, V.R).with; // 사칭에 가려지는 상대(W23b)
+    return w ? (P.has(w) ? personLink(w) : ui.link(`target:${w}`, fmt.targetName(w))) : null;
+  };
   const secChanges = makeSection('changes', LABELS.sec.changes, (p, a, sec) => {
     ui.clear(sec.body);
     const d = D.get(p.id);
@@ -929,7 +932,7 @@ export async function mount(root, ctx) {
   function changeTip(c, r, endRec) {
     const bodyText = changeBody(c, r);
     return el('div', { class: 'pm-ctip' },
-      el('div', { class: 'pm-tip-title' }, `${c.aspect} · ${fmt.CHANGE_ACT[c.act] ?? c.act}${c.with ? ` · ${fmt.targetName(c.with)}` : ''}`),
+      el('div', { class: 'pm-tip-title' }, `${c.aspect} · ${fmt.CHANGE_ACT[c.act] ?? c.act}${fmt.recAt(c, V.R).with ? ` · ${fmt.targetName(fmt.recAt(c, V.R).with)}` : ''}`),
       bodyText ? el('div', {}, clip(bodyText, 120)) : null,
       el('div', { class: 'pm-tip-sub' }, fmt.unitTitle(c.unit)),
       c.inverted?.length ? el('div', { class: 'pm-tip-sub' }, `${T_INV} — ${LABELS.invHelp}`) : null,
@@ -959,7 +962,7 @@ export async function mount(root, ctx) {
       const hl = el('ul', { class: 'pm-closures' });
       for (const h of hs) {
         const others = new Set();
-        for (const oid of h.members ?? []) for (const t of R.get(oid)?.about ?? []) if (t.startsWith('person:') && t !== p.id) others.add(t);
+        for (const oid of h.members ?? []) for (const t of fmt.recAt(R.get(oid), V.R)?.about ?? []) if (t.startsWith('person:') && t !== p.id) others.add(t);
         hl.append(recRow('pm-closure', `record:${h.id}`,
           el('div', { class: 'pm-change-head' }, el('strong', {}, h.title ? fmt.prose(h.title) : LABELS.togetherEnd)),
           el('div', { class: 'pm-change-text' }, fmt.prose(h.text)),

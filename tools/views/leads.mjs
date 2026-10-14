@@ -31,6 +31,7 @@ import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, isRecord, loadDa
 import { kindOfKey, loadOrder } from '../records/order.mjs';
 import { mentionRows } from '../records/read2.mjs';
 import { threadMembership } from '../records/threads.mjs';
+import { faceDataset } from '../records/impersonation.mjs';
 
 export const LEADS_DIR = path.join(ROOT, 'data/views/leads');
 export const SCENE_SHARE = 0.4;
@@ -266,6 +267,7 @@ export function renderPerson(x, chapters, { judgment = null } = {}) {
  *   missing: 주인 · 카운터스인데 명단에 항목이 없는 인물(--add) · revive: 기각된 항목만 있는 인물(set Z… 확정으로 되살린다) · extra: 명단(기각 빼고)에 있는데 주인 · 카운터스가 아닌 인물(기각할 것)
  */
 export function buildLeads(ds, ctx, order) {
+  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
   const sig = leadSignals(ds, ctx, order);
   const leads = ds.candidates.filter((c) => c.kind === 'lead' && c.id).sort((a, b) => compareIds(a.id, b.id));
   const listed = new Map(leads.filter((c) => c.status !== '기각').map((c) => [c.obj?.person, c]));

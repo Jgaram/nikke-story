@@ -52,8 +52,11 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
     assert.equal(scenes, p.scenes, `${d.id} 씬`);
     assert.equal(lines, p.lines, `${d.id} 줄`);
     assert.ok(d.units.every((e) => !unitByKey.get(e.unit).fool), `${d.id} — 만우절 단위의 등장은 세지 않는다(결정 #11)`);
-    const counted = d.changes.filter((c) => !unitByKey.get(c.unit)?.fool).length; // 변화는 목록에 남기고 수에서만 뺀다
+    // 변화는 목록에 남기고 수에서만 뺀다. 사칭에 가려지는 변화(W23b — imp)는 이름표 주인 쪽에도 실린다(person = 실제 인물) — 그 줄은 실제 인물의 수에만
+    const own = d.changes.filter((c) => !c.imp || c.person === d.id);
+    const counted = own.filter((c) => !unitByKey.get(c.unit)?.fool).length;
     assert.equal(counted, (p.baselines ?? 0) + (p.changes ?? 0), `${d.id} 변화`);
+    for (const c of d.changes.filter((x) => x.imp && x.person !== d.id)) assert.ok(c.imp.some((m) => m.a === c.person && m.b === d.id), `${d.id} ${c.id} — 드러나기 전 모습만 이 인물`);
     for (const c of d.changes) assert.ok(['기준', '변화'].includes(c.act) && c.aspect && unitByKey.has(c.unit), `${d.id} ${c.id}`);
   }
 });
@@ -61,11 +64,19 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
 test('rel[] — 관계 상대는 relations.csv의 쌍을 양쪽에, 확정 기록만 읽는 자리 순으로(수 · 순위 없음)', () => {
   const csv = readCsv(path.join(ROOT, 'data/views/persons/relations.csv'));
   const want = new Map();
+  const add = (a, b, id) => (want.get(`${a}\t${b}`) ?? want.set(`${a}\t${b}`, new Set()).get(`${a}\t${b}`)).add(id);
+  // 사칭에 가려지는 기록(W23b — imp)은 드러나기 전 모습의 쌍에도 실린다
+  const face = (x, r) => r.imp?.find((m) => m.a === x)?.b ?? x;
+  const facePeople = (r) => [r.person, ...(r.with ?? [])].map((x) => face(x, r));
   for (const r of csv) {
     const ids = [r.changes, r.closures, r.merges].join(' ').split(' ').filter((id) => id && records.has(id));
-    if (!ids.length) continue;
-    want.set(`${r.a}\t${r.b}`, new Set(ids));
-    want.set(`${r.b}\t${r.a}`, new Set(ids));
+    for (const id of ids) {
+      add(r.a, r.b, id);
+      add(r.b, r.a, id);
+      const rec = records.get(id);
+      const [fa, fb] = [face(r.a, rec), face(r.b, rec)];
+      if (fa !== r.a || fb !== r.b) { add(fa, fb, id); add(fb, fa, id); }
+    }
   }
   let n = 0;
   for (const d of detail) {
@@ -78,7 +89,9 @@ test('rel[] — 관계 상대는 relations.csv의 쌍을 양쪽에, 확정 기�
       for (const id of x.recs) {
         const r = records.get(id);
         assert.ok(['D', 'O', 'H'].includes(r.kind), id);
-        if (r.kind === 'D') assert.ok(r.aspect === '관계' && [r.person, ...(r.with ?? [])].includes(d.id) && [r.person, ...(r.with ?? [])].includes(x.with), `${id} — 두 사람 사이의 변화`);
+        const ppl = [r.person, ...(r.with ?? [])];
+        const both = (xs) => xs.includes(d.id) && xs.includes(x.with);
+        if (r.kind === 'D') assert.ok(r.aspect === '관계' && (both(ppl) || both(facePeople(r))), `${id} — 두 사람 사이의 변화`);
       }
     }
   }

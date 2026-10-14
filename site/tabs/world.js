@@ -687,7 +687,7 @@ export async function mount(root, ctx) {
   // ═══ 세계의 모습 ═══
   const lifeMore = new Map();
   function lifeRow(l, opts) {
-    return recRow(l, cutOf(), { ...opts, showAbout: true, about: l.about });
+    return recRow(l, cutOf(), { ...opts, showAbout: true, about: fmt.recAt(l, state.reading()).about }); // 사칭 가림(W23b)
   }
   function renderLife() {
     const s = state.get();
@@ -696,7 +696,7 @@ export async function mount(root, ctx) {
     const q = norm(P.find);
     const g = split(world.life.map((l) => [l.id, l.tick, null, l.unit ?? null]), c);
     const pool = g.shown.map((x) => lifeById.get(x[0]));
-    const text = (l) => norm([l.text, l.topic, idx.units.get(l.unit)?.title, ...(l.about ?? []).map(nameOf)].join(' '));
+    const text = (l) => norm([l.text, l.topic, idx.units.get(l.unit)?.title, ...(fmt.recAt(l, state.reading()).about ?? []).map(nameOf)].join(' '));
     const matched = q ? pool.filter((l) => text(l).includes(q)) : pool;
     const counts = new Map();
     for (const l of matched) counts.set(l.topic, (counts.get(l.topic) ?? 0) + 1);

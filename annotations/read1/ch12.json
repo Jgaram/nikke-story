@@ -234,12 +234,21 @@
     {
       "id": "F323",
       "text": "엔더슨 · 잉그리드 · 슈엔 · 머스탱은 지하 시설을 폭파해 묻고 모더니아를 확보하는 총력전을 세웠고, 카운터스가 모더니아를 설득하다 실패하면 언체인드를 쏘기로 했다",
-      "about": ["person:엔더슨", "person:잉그리드", "person:슈엔", "person:머스탱", "person:모더니아", "org:카운터스"],
+      "about": ["person:엔더슨", "person:잉그리드", "person:슈엔", "person:한슨", "person:모더니아", "org:카운터스"],
       "evidence": [{ "scene": "d_main_12af_04", "lines": ["4-34", 46] }],
       "reason": "작전 회의 — 폭파조는 앱솔루트 · 카페 스위티, 미실리스는 빠진다(#14-17). 잉그리드는 마리안을 구하고 싶다면 어떻게든 해 보라며 기회를 준다(#29-32)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R03", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23b",
+          "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        }
+      ]
     },
     {
       "id": "F324",

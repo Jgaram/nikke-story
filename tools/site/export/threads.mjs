@@ -3,7 +3,7 @@
  * 이 모듈은 두 파일을 더 낸다. 규칙은 docs/views.md "3. 떡밥 하나가 풀려 온 흐름" · "4. 개념 · 떡밥끼리의 관계" · "공개 축".
  *
  *   threads-flow.json   { <줄기 ID>: { roots[], echoes[], units[] } } — 줄기마다 곧바로 든 의문(Q) · 사실(F)의 단계 줄(data/views/timeline/reveals.csv)
- *     roots[]   id · kind(Q · F) · text · unit · tick · order · about(기록의 대상 — 떡밥 묶음 거르기 W15d, fmt.threadRoots) · state(끝 상태) · first_tick · hint_tick · partial_tick · solved_tick · reversed_tick · replaced_by · hints · units
+ *     roots[]   id · kind(Q · F) · text · unit · tick · order · about(기록의 대상 — 떡밥 묶음 거르기 W15d, fmt.threadRoots) · imp(사칭 가림 W23b — fmt.recAt) · state(끝 상태) · first_tick · hint_tick · partial_tick · solved_tick · reversed_tick · replaced_by · hints · units
  *               · know_units · hint_units · partial_units · solved_units · reversed_units(단계별 단위 — 공용 records.json과 같은 칸, 있을 때만. 화면이 fmt.stateAt(뿌리, R)로 단위마다 본다)
  *               points[]: r(기록 ID) · s(단계: 제기 · 암시 · 재언급 · 일부 회수 · 회수 · 처음 밝혀짐 · 보강 · 뒤집힘) · u(단위) · t(공개 자리) · o(읽는 자리) · sc(씬) · ln(줄)
  *                         · rel(뿌리 첫 자리와 견줘 앞 · 뒤 — 동시는 칸 없음) · a(답 사실 · 바꾼 사실) · c('추정'일 때만) · bu(빌드업 마무리: 긴 회수 · 복선의 답) · from(쌓은 쪽)
@@ -90,7 +90,7 @@ export async function run(ctx) {
     }
     points.sort((a, b) => (a.o ?? 1e9) - (b.o ?? 1e9) || String(a.sc).localeCompare(String(b.sc)) || (a.ln ?? 0) - (b.ln ?? 0));
     return compact({
-      id, kind: row.kind === '의문' ? 'Q' : 'F', text: text(row.text, `${id} text`), unit: rec.unit, tick: rec.tick, order: rec.order, about: rec.about?.length ? rec.about : undefined,
+      id, kind: row.kind === '의문' ? 'Q' : 'F', text: text(row.text, `${id} text`), unit: rec.unit, tick: rec.tick, order: rec.order, about: rec.about?.length ? rec.about : undefined, imp: rec.imp,
       state: row.state || undefined, first_tick: num(row.first_tick), hint_tick: num(row.hint_tick), partial_tick: num(row.partial_tick),
       solved_tick: num(row.solved_tick), reversed_tick: num(row.reversed_tick), replaced_by: row.replaced_by || undefined,
       hints: num(row.hints) || undefined, units: num(row.units) || undefined,
@@ -107,7 +107,8 @@ export async function run(ctx) {
     const place = common.placeOf.get(c.unit) ?? {};
     const { scene, line } = firstRef(c.evidence);
     const about = recById.get(c.id)?.about;
-    for (const j of js) (echoesOf.get(j) ?? echoesOf.set(j, []).get(j)).push(compact({ r: c.id, s: c.act, u: c.unit, t: place.tick, o: place.order, sc: scene, ln: line, about: about?.length ? about : undefined }));
+    const imp = recById.get(c.id)?.imp;
+    for (const j of js) (echoesOf.get(j) ?? echoesOf.set(j, []).get(j)).push(compact({ r: c.id, s: c.act, u: c.unit, t: place.tick, o: place.order, sc: scene, ln: line, about: about?.length ? about : undefined, imp }));
   }
 
   const flow = {};

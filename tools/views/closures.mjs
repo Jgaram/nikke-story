@@ -30,6 +30,7 @@ import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, loadDataset, spi
 import { kindOfKey, loadOrder } from '../records/order.mjs';
 import { comparePlace, recordPlace, scenePlaces } from '../records/read2.mjs';
 import { releasePlaces, revealStages } from './reveal.mjs';
+import { faceDataset } from '../records/impersonation.mjs';
 
 export const CLOSURES_DIR = path.join(ROOT, 'data/views/closures');
 /** 마무리 기록의 종류 — (나) 연작 · 갈등, (다) 관계 · 성장 */
@@ -304,6 +305,7 @@ export function writeClosuresViews(b, v, outDir, opts) {
 
 /** 한 번에 — draft.mjs · records.mjs가 부른다 */
 export function buildClosures(ds, ctx, order) {
+  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
   const spine = spineUnits(ds);
   const rel = releasePlaces(ctx, order);
   const b = buildupMetrics(ds, ctx, order, { spine, rel });

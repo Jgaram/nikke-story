@@ -23,6 +23,7 @@
  *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
  *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
  *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
+ *   rowAt(e, R) · recAt(r, R) · recHas(r, pid, R)   사칭(W23a · b) — 등장 행 · 기록의 그 자리 모습(드러나기 전에는 이름표 주인) · 그 모습이 그 인물을 다루나
  *   recordText(r) · recordLabel(r)  기록 한 줄(prose를 거친다 — 회수 줄에 문장이 없으면 답의 문장) · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
@@ -555,6 +556,24 @@ export function sameAsKnown(t, R) {
 export const impKnown = (x, R) => !R || R.all || Boolean(x?.rev && R.seen(x.rev));
 
 /**
+ * 기록의 그 자리 모습(W23b) — 사칭에 가려지는 기록(imp [{ a, b, rev }] — 기록은 실제 인물로 적혔다)은 드러난 스토리(rev)를 읽기 전에는
+ * 실제 인물(a) 자리에 이름표 주인(b)을 둔다(about · person · with · target). 인물 상세의 변화 줄(person · with · imp)에도 쓴다. 가릴 것이 없으면 그대로.
+ */
+export function recAt(r, R) {
+  const hide = r?.imp?.filter((m) => !impKnown(m, R));
+  if (!hide?.length) return r;
+  const swap = (x) => hide.find((m) => m.a === x)?.b ?? x;
+  const face = (xs) => (Array.isArray(xs) ? [...new Set(xs.map(swap))] : typeof xs === 'string' ? swap(xs) : xs);
+  return { ...r, about: face(r.about), person: face(r.person), with: face(r.with), target: face(r.target) };
+}
+/** 그 자리 모습의 기록이 그 인물을 다루나 — 가림이 없는 기록은 늘 참(인물 상세 목록이 이미 그 인물 것) */
+export function recHas(r, pid, R) {
+  if (!r?.imp) return true;
+  const x = recAt(r, R);
+  return [...(x.about ?? []), x.person, ...[].concat(x.with ?? []), x.target].includes(pid);
+}
+
+/**
  * 등장 행(persons-detail units[])의 그 자리 모습(W23a 사칭). 사칭이 걸린 스토리(pre가 있는 행)는 드러나기 전에는 옮기기 전 모습 —
  * 이름표 주인은 그 줄까지, 사칭한 인물은 그 줄 없이(이름표 그대로 보인다) — 이고 상대(as · by)를 지운다(있다는 것이 샌다).
  * 드러난 뒤에는 옮긴 모습(사칭한 인물에)이고, 사칭한 쪽(as)은 '이름 안 쓰인 등장'(hid) 가림이 풀린다 — 누구였는지 안다.
@@ -863,7 +882,7 @@ export function threadBundle(j, f, R) {
   const faceIds = new Set();
   const faceNames = new Set();
   if (title) {
-    const cand = new Set([...(j.owners ?? []), ...(j.about ?? []), ...roots.flatMap((r) => r.about ?? []), ...echoes.flatMap((e) => e.about ?? [])]);
+    const cand = new Set([...(j.owners ?? []), ...(j.about ?? []), ...roots.flatMap((r) => recAt(r, R).about ?? []), ...echoes.flatMap((e) => recAt(e, R).about ?? [])]);
     for (const id of cand) {
       const t = idx?.targets?.get(id);
       if (!t) continue;
@@ -871,7 +890,7 @@ export function threadBundle(j, f, R) {
       if (ns.length) { faceIds.add(id); ns.forEach((n) => faceNames.add(n)); }
     }
   }
-  const onFace = (x) => (x.about ?? []).some((a) => faceIds.has(a)) || [...faceNames].some((n) => String(x.text ?? '').includes(n));
+  const onFace = (x) => (recAt(x, R).about ?? []).some((a) => faceIds.has(a)) || [...faceNames].some((n) => String(x.text ?? '').includes(n));
   const ids = new Set(roots.map((r) => r.id));
   const tied = new Set(roots.filter((r) => (j.first_unit && r.unit === j.first_unit) || onFace(r)).map((r) => r.id));
   for (let grew = true; grew;) {
@@ -901,7 +920,7 @@ export function threadTies(j, f, R) {
     started, whole: started && b.whole,
     ids: new Set([...known.map((r) => r.id), ...pts.map((p) => p.r), ...echoes.map((e) => e.r)]),
     units: new Set([...pts.map((p) => p.u), ...echoes.map((e) => e.u)]),
-    about: new Set(known.flatMap((r) => r.about ?? [])),
+    about: new Set(known.flatMap((r) => recAt(r, R).about ?? [])),
   };
 }
 /** 문장 · ' — ' 마디(괄호 밖) 가운데 bad에 걸린 마디를 뺀다 — 이미 prose를 거친 문장에. 한글 6자 못 되게 남은 문장도 뺀다 */
