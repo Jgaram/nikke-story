@@ -112,12 +112,21 @@
       "act": "암시",
       "points": ["F2701"],
       "text": "미세스 미스가 '[당시의 머스탱]이라면 그러고도 남았다 — 지금은 그 흔적도 찾아볼 수 없다'고 한다",
-      "about": ["person:머스탱_한슨의_아버지", "person:미세스_미스"],
+      "about": ["person:머스탱", "person:미세스_미스"],
       "evidence": [{ "scene": "d_main_41_af_01", "lines": ["103-104"] }],
       "reason": "지금의 머스탱이 당시의 머스탱이 아니라 그를 흉내 내는 한슨이라는 것(F2701)을 흘린다.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E899",

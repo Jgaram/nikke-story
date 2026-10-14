@@ -73,24 +73,42 @@
       "act": "암시",
       "points": ["F2701"],
       "text": "머스탱이 무대 위 영어 섞인 쇼맨 노릇을 '거지 같은 광대 꼬라지'라 한다",
-      "about": ["person:머스탱_한슨의_아버지", "person:한슨"],
+      "about": ["person:머스탱", "person:한슨"],
       "evidence": [{ "scene": "side:pretty_star_01", "lines": [99] }],
       "reason": "#99 — 진짜 머스탱이 싫어한 그 광대 연기를 뒤에 한슨이 머스탱 흉내로 이어 간다(F2701). 같은 일이라는 확인은 원문에 없다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1050",
       "act": "암시",
       "points": ["F2694"],
       "text": "머스탱이 '배드 드림으로 갈 거다'라 하고 한슨이 '요즘 너무 잦다'고 한다",
-      "about": ["person:머스탱_한슨의_아버지", "place:배드_드림"],
+      "about": ["person:머스탱", "place:배드_드림"],
       "evidence": [{ "scene": "side:pretty_star_01", "lines": ["151-153"] }],
       "reason": "#151-153 — 머스탱은 배드 드림에서 놀아 생긴 병으로 시한부가 된다(F2694)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1051",
@@ -133,24 +151,42 @@
       "act": "암시",
       "points": ["F2674"],
       "text": "프리티 데뷔 성공에 머스탱이 한슨에게 '잘했다. 넌 내 자랑이다'라 한다",
-      "about": ["person:머스탱_한슨의_아버지", "person:한슨"],
+      "about": ["person:머스탱", "person:한슨"],
       "evidence": [{ "scene": "side:pretty_star_04", "lines": ["60-61"] }],
       "reason": "#60 — 늘 정강이를 차던 상사의 말. 한슨은 머스탱의 아들이다(F2674)",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1055",
       "act": "암시",
       "points": ["F2547"],
       "text": "머스탱이 프리티 성공을 보고 '기업 세탁'을 하겠다고 한다",
-      "about": ["person:머스탱_한슨의_아버지", "org:테트라"],
+      "about": ["person:머스탱", "org:테트라"],
       "evidence": [{ "scene": "side:pretty_star_04", "lines": ["89-95"] }],
       "reason": "#90-94 — 05에서 With Nikke 캠페인으로 친 니케 기업이 된다(F2547)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1056",
@@ -169,24 +205,42 @@
       "act": "재언급",
       "points": ["F909-2", "F2376"],
       "text": "머스탱이 로봇의 음성 메시지 · 밀봉 대화 내역과 '인류를 위해 싸워준, 갓데스 스쿼드에게 감사를'을 들먹인다",
-      "about": ["person:머스탱_한슨의_아버지", "person:오스왈드", "org:갓데스"],
+      "about": ["person:머스탱", "person:오스왈드", "org:갓데스"],
       "evidence": [{ "scene": "side:pretty_star_08", "lines": ["68-72"] }],
       "reason": "#69-71 — 밀봉 뒤 로봇으로 보낸 음성 보고(F909-2)와 오스왈드의 경례 '갓데스 스쿼드에게 감사를'(F2376)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1058",
       "act": "암시",
       "points": ["F2700"],
       "text": "프리시아가 '머스탱한테서 벗어날 수 있어?'라 묻자 한슨이 '할 수 있어'라 한다",
-      "about": ["person:한슨", "person:머스탱_한슨의_아버지"],
+      "about": ["person:한슨", "person:머스탱"],
       "evidence": [{ "scene": "side:pretty_star_09", "lines": ["61-65"] }],
       "reason": "#64-65 — 지금은 키스도 못 하지만, 뒤에 한슨은 머스탱에게 '죽어 주십시오'라 하고 그 자리를 갖는다(F2700)",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "E1059",
@@ -409,7 +463,7 @@
     },
     {
       "id": "D1091",
-      "person": "person:머스탱_한슨의_아버지",
+      "person": "person:머스탱",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:한슨"],
@@ -418,20 +472,38 @@
       "reason": "#96 · #102-104 '대답 좀 해주세요. 한슨 이사님' — 한슨이 머스탱이 되기(F2701) 전의 진짜 머스탱",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "D1092",
       "person": "person:한슨",
       "aspect": "관계",
       "act": "기준",
-      "with": ["person:머스탱_한슨의_아버지"],
+      "with": ["person:머스탱"],
       "text": "정강이를 차여도 '예'라며 머스탱의 뒷수습을 떠안는 이사",
       "evidence": [{ "scene": "side:pretty_star_01", "lines": ["64-81", "145-147"] }],
       "reason": "#66 · #77 직원을 감싸고 #147 '예. 알겠습니다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "D1093",
@@ -516,7 +588,7 @@
     },
     {
       "id": "D1098",
-      "person": "person:머스탱_한슨의_아버지",
+      "person": "person:머스탱",
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리티"],
@@ -527,7 +599,14 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려는" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려는" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
       ]
     },
     {
@@ -535,7 +614,7 @@
       "person": "person:미세스_미스",
       "aspect": "관계",
       "act": "기준",
-      "with": ["person:머스탱_한슨의_아버지"],
+      "with": ["person:머스탱"],
       "text": "공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따른다",
       "evidence": [{ "scene": "side:pretty_star_05", "lines": ["49-70"] }],
       "reason": "#50 · #53 · #68-70 — 미세스 미스 쪽에서 본 머스탱(D797은 머스탱 쪽)",
@@ -550,6 +629,13 @@
           "session": "W18",
           "note": "끝맺음",
           "before": "공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따르는"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
         }
       ]
     },
@@ -679,7 +765,7 @@
       "person": "person:한슨",
       "aspect": "관계",
       "act": "변화",
-      "with": ["person:머스탱_한슨의_아버지"],
+      "with": ["person:머스탱"],
       "before": "차여도 '예'라며 떠안았다",
       "after": "'부녀 사이를 갈라놓을 것까진 없다'며 처음 대들었다 맞고 다시 '예'",
       "trigger": [{ "scene": "side:pretty_star_08", "lines": ["95-115"] }],
@@ -689,7 +775,14 @@
       "status": "확정",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 차여도 '예'라며 떠안던" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 차여도 '예'라며 떠안던" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
       ]
     },
     {

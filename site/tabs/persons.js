@@ -82,8 +82,6 @@ const LABELS = {
   alias: '다른 이름',
   same: '같은 인물',
   imp: '사칭',
-  realOf: '이름의 원래 주인',
-  realOfHelp: '이 이름을 이어받기 전의 주인 — 다른 인물이다',
   impAs: (name) => `${name} 행세`,
   impBy: (name) => `${name}의 사칭`,
   impAsHelp: (name, me) => `이 스토리에서 ${name} 이름표로 말한 것은 ${me} — 그 줄은 ${me}의 등장으로 센다`,
@@ -167,9 +165,6 @@ export async function mount(root, ctx) {
   loading.remove();
 
   const P = new Map(persons.map((p) => [p.id, p]));
-  /** 이름 승계 사칭(W23e — targets real_of): 독자가 알던 인물(b) → 이름의 원래 주인 대상들 */
-  const heirsOf = new Map();
-  for (const t of idx.targets.values()) if (t.real_of) (heirsOf.get(t.real_of.b) ?? heirsOf.set(t.real_of.b, []).get(t.real_of.b)).push(t);
   const D = new Map(detailArr.map((d) => [d.id, d]));
   /** 찾기 글 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt) */
   const hayOf = (p) => fmt.namesAt(idx.targets.get(p.id) ?? p, V.R).join(' ').toLowerCase();
@@ -552,11 +547,6 @@ export async function mount(root, ctx) {
       // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
       const same = fmt.sameAsKnown(p, V.R);
       if (same.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.same), el('span', {}, same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]))));
-      // 이름 승계 사칭(W23e) — 독자가 알던 이 인물(지금의 머스탱)의 이름은 원래 다른 인물(진짜 머스탱)의 것: 드러난 뒤에만 잇는다
-      for (const t of heirsOf.get(p.id) ?? []) {
-        if (!fmt.impKnown(t.real_of, V.R)) continue;
-        facts.push(el('div', { class: 'pm-fact', title: LABELS.realOfHelp }, el('span', { class: 'pm-fact-l' }, LABELS.realOf), el('span', {}, P.has(t.id) ? personLink(t.id) : fmt.targetName(t.id))));
-      }
       // 사칭(W23a) — 드러난 것만(드러나기 전에는 있다는 것 자체를 보이지 않는다). 같은 인물과 달리 둘은 다른 인물이다
       for (const x of (p.imp ?? []).filter((x) => fmt.impKnown(x, V.R))) {
         const other = x.as ?? x.by;

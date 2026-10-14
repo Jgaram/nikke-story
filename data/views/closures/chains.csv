@@ -163,7 +163,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 관계 person:네온 ↔ person:아니스,관계,event_staranis1,144,135,1,1,ch08 ch35 ch38 event_staranis1,D75 D602 D660 D667 D1239,D1239,O67,확정
 관계 person:도로시 ↔ person:라피,관계,ch46,144,28,,1,fl:boom_the_ghost ch46,D756 D758 D757 D759 D1169,D1169,O206,기각
 관계 person:라피 ↔ person:아니스,관계,event_staranis1,144,139,1,1,ch04 ch34 ch35 event_staranis1,D37 D561 D603 D1239,D1239,O68,확정
-관계 person:머스탱 ↔ person:한슨,관계,event_staranis1,144,2,1,1,side:pretty_star event_staranis1,D1092 D1091 D1106 D1184 D1196 D1197 D1227,D1184 D1196 D1197 D1227,O69,기각
+관계 person:머스탱_한슨의_아버지 ↔ person:한슨,관계,event_staranis1,144,2,1,1,side:pretty_star event_staranis1,D1092 D1091 D1106 D1184 D1196 D1197 D1227,D1184 D1196 D1197 D1227,O69,기각
 관계 person:아니스 ↔ person:지휘관,관계,char:17,144,143,1,,ch00 ch01 ch02 ch05 char:12 char:15 sub:트윙클_00 ch33 ch35 event_staranis1 char:17,D7 D10 D25 D59 D1399 D2050 D383 D536 D601 D1239 D2213,D2213,O70,확정
 성장 person:나유타 신념,성장,ch46,144,26,1,1,ch39 event_goddessfall1 ch46,D764 D904 D1152,D1152,O71,확정
 성장 person:민트 신념,성장,event_staranis1,144,17,1,1,ch41 event_staranis1,D860 D1207 D1211 D1222,D1207 D1211 D1222,O72,확정

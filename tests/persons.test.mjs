@@ -5,7 +5,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
 import { openContext } from '../tools/records/context.mjs';
-import { EXAMPLE_DIR, impersonations, loadDataset } from '../tools/records/model.mjs';
+import { EXAMPLE_DIR, loadDataset, splits } from '../tools/records/model.mjs';
+import { actualDataset } from '../tools/records/identity.mjs';
 import { loadOrder } from '../tools/records/order.mjs';
 import { mentionRows } from '../tools/records/read2.mjs';
 import { buildPersons, personScenes, renderPersonsReport } from '../tools/views/persons.mjs';
@@ -31,15 +32,15 @@ test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이�
   for (const p of v.persons) {
     assert.equal(p.speaker_lines + p.named_lines, p.lines, p.target);
     const us = v.personUnits.filter((r) => r.person === p.target);
-    assert.equal(us.filter((r) => r.scenes).length, p.units, p.target); // scenes 0 행 = 사칭으로 줄을 다 옮긴 단위(W23a — pre_*만)
-    assert.ok(us.every((r) => r.scenes || r.imp), `${p.target}: 빈 행은 사칭 단위뿐`);
+    assert.equal(us.filter((r) => r.scenes).length, p.units, p.target); // scenes 0 행 = 다른 인물로 줄을 다 옮긴 단위(W24a — pre_*만)
+    assert.ok(us.every((r) => r.scenes || r.imp), `${p.target}: 빈 행은 다른 인물 단위뿐`);
     assert.equal(us.reduce((s, r) => s + r.scenes, 0), p.scenes, p.target);
     assert.equal(us.reduce((s, r) => s + r.lines, 0), p.lines, p.target);
   }
   // 암시 언급이 있는 인물은 그 씬이 등장에 든다
   const ps = personScenes(ctx, ds);
-  // 사칭 범위(W23a · b)의 이름표 주인 줄은 사칭한 인물에게 옮겨 센다 — 그 암시 언급은 사칭한 인물의 등장에 든다
-  const imps = impersonations(ds);
+  // 다른 인물 범위(W24a)의 이름 주인 줄은 실제 사람에게 옮겨 센다 — 그 암시 언급은 실제 사람의 등장에 든다
+  const imps = splits(ds);
   const holder = (r) => imps.find((L) => L.b === r.target && L.spans.some((s) => s.scene === r.scene && (!s.seqs || s.seqs.has(r.from_seq))))?.a ?? r.target;
   for (const r of mentionRows(ds).filter((x) => x.target?.startsWith('person:')).slice(0, 200)) {
     const x = ps.get(holder(r))?.get(r.scene);
@@ -49,7 +50,7 @@ test('등장 — 줄 합집합: 자동 줄만 센 것 이상, 말한 줄 + 이�
 });
 
 test('관계 쌍(W21) — 기록에서만: D 관계의 person ↔ with · O 관계 사슬 · 그 O의 합류 H, 같은 씬 횟수는 없다', () => {
-  const live = ds.candidates.filter((c) => c.id && c.status !== '기각');
+  const live = actualDataset(ds, ctx, order).candidates.filter((c) => c.id && c.status !== '기각');
   const key = (x, y) => (x < y ? `${x}\t${y}` : `${y}\t${x}`);
   const want = new Map();
   const add = (x, y, id) => (want.get(key(x, y)) ?? want.set(key(x, y), new Set()).get(key(x, y))).add(id);
@@ -78,7 +79,7 @@ test('관계 쌍(W21) — 기록에서만: D 관계의 person ↔ with · O 관�
 });
 
 test('기록 — about으로 센 사실 · 의문 수, 의문 상태 합 = 의문, 변화는 D의 person', () => {
-  const live = ds.candidates.filter((c) => c.id && c.status !== '기각');
+  const live = actualDataset(ds, ctx, order).candidates.filter((c) => c.id && c.status !== '기각');
   const facts = live.filter((c) => c.kind === 'fact' && c.role === 'def' && (c.obj?.about ?? []).includes('person:마리안')).length;
   assert.equal(byId.get('person:마리안').facts, facts);
   for (const p of v.persons) assert.equal(p.open + p.partial + p.solved, p.questions, p.target);

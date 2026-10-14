@@ -32,7 +32,7 @@
  *   이름없음 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)이 리더 '나오는 인물' · 인물 탭 등장 목록(p.who)에 보이는 것(W15f).
  *   사칭     드러나기 전(사칭 W23a — 드러난 스토리 rev를 안 봄) 스토리에서 사칭한 인물을 리더 '나오는 인물' · 인물 탭 등장 목록에 낸 것, 그 인물 탭에 보인 사칭 표 · 머리 '사칭' 줄.
  *            W23b: 사칭에 가려지는 기록(imp)이 그 자리 모습으로는 다른 인물 것인데 인물 탭에 보인 것(사칭 기록).
- *            W23d · W23e: 이름 승계 사칭의 진짜 b를 가르는 화면 이름(targets real_of의 label)이 드러나기 전에 보인 것(사칭이름).
+ *            W23d · W24a: 다른 인물(split)의 실제 사람을 가르는 화면 이름(label — persons.json imp as)이 드러나기 전에 보인 것(사칭이름).
  *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
  *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
  *   본 스토리의 장면 제목, fmt *_HELP 도움말)을 지우고 본다.
@@ -82,7 +82,7 @@ const THREAD_TAB = ['J3', 'J7', 'J21'];
 // (고치기 전 새던 곳 — J16 ch01–ch04 · J15 ch06–ch12 · J5 ch14–ch17 · J10 MUDFISH · J18 FOOTSTEP–ch39)
 const LINKS_TH = [['J1', 'ch05'], ['J16', 'ch01'], ['J15', 'ch12'], ['J5', 'ch17'], ['J10', 'side:mudfish'], ['J18', 'ch39']];
 // 인물 탭 등장 목록 · 리더 '나오는 인물' — 이름 없이('???') 나온 스토리가 그 인물의 등장으로 보이나(W15f)
-const PERSONS_WHO = ['person:그레이브', 'person:슈엔', 'person:시프티', 'person:스노우_화이트', 'person:한슨', 'person:머스탱', 'person:머스탱_한슨의_아버지']; // 슈엔 · 시프티 — 사칭 L32(드러남 CH.09), 한슨 · 머스탱 · 진짜 머스탱 — L33(드러남 STAR ANIS)
+const PERSONS_WHO = ['person:그레이브', 'person:슈엔', 'person:시프티', 'person:스노우_화이트', 'person:한슨', 'person:머스탱', 'person:머스탱_한슨의_아버지']; // 슈엔 · 시프티 — 다른 인물 L32(드러남 CH.09), 한슨 = 머스탱(L33) · 아버지 머스탱 — L36(드러남 STAR ANIS)
 const READER_UNITS = ['unit:ch28', 'unit:ch29', 'unit:ch08', 'unit:ch04'];
 
 // ── 화면 안에서 도는 점검 ──
@@ -270,9 +270,10 @@ const PROBE = async (skipMain, titles, focus) => {
       }
     }
   }
-  // 사칭이름(W23d · W23e) — 이름 승계 사칭의 진짜 b(targets real_of)를 가르는 화면 이름(label — '머스탱 (한슨의 아버지)')이 드러나기 전에 보인 것
+  // 사칭이름(W23d · W24a) — 다른 인물(split)의 실제 사람을 가르는 화면 이름(label — '머스탱 (한슨의 아버지)')이 드러나기 전에 보인 것
+  const splitRev = new Map((await get('persons')).flatMap((p) => (p.imp ?? []).filter((x) => x.as).map((x) => [p.id, x])));
   for (const t of targets) {
-    if (!t.real_of || !t.label || fmt.impKnown(t.real_of, R)) continue;
+    if (!splitRev.has(t.id) || !t.label || fmt.impKnown(splitRev.get(t.id), R)) continue;
     const i = all.indexOf(t.label);
     if (i >= 0) hits.push(`사칭이름 ${t.id} ${t.label} … ${around(i, t.label.length)}`);
   }

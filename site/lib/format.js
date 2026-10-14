@@ -20,7 +20,7 @@
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   sceneTitle(scene) · sceneLabel(scene)   장면 제목은 그 스토리를 봤을 때만(안 봤으면 '2장면' — 사용자 2026-10-10). useReading(fn)으로 읽음 판정을 묶는다
- *   targetName(id, R?)              'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명 — 화면 이름 labelAt: 동명이인 구분 · 드러난 뒤 사칭 이름표 주인, W23d)
+ *   targetName(id, R?)              'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명 — 화면 이름 labelAt: 동명이인 구분, W23d)
  *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
  *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
  *   rowAt(e, R) · recAt(r, R) · recHas(r, pid, R)   사칭(W23a · b) — 등장 행 · 기록의 그 자리 모습(드러나기 전에는 이름표 주인) · 그 모습이 그 인물을 다루나
@@ -605,7 +605,7 @@ const nameKnown = (target, R) => met(target, R) && (!R || R.all || (!target.name
 /** 그 자리에서 부르는 이름 — 표준명을 알면 표준명, 아니면 먼저 나온 다른 이름. 대상이 아직 안 나왔으면 null(화면은 '아직 나오지 않은 인물 · 항목') */
 export function nameAt(target, R) {
   if (!target || !met(target, R)) return null;
-  if (nameKnown(target, R)) return labelAt(target, R);
+  if (nameKnown(target, R)) return labelAt(target);
   const known = (target.aliases ?? []).filter((a) => a.meet && aliasKnown(target, a, R)).sort((a, b) => metOrder(a) - metOrder(b));
   return known[0]?.name ?? target.name;
 }
@@ -645,7 +645,7 @@ export function aliasesAt(target, R) {
 /** 찾기 · 검색에 쓰는 이름 — 그 자리에서 아는 이름만(표준명은 알 때만) */
 export function namesAt(target, R) {
   if (!target || !met(target, R)) return [];
-  // 화면 이름(labelAt — '사쿠라 (콜라보)' · '진짜 머스탱')과 함께 표준명도 — 찾기 · 아는 이름 검사는 표준명으로도 된다(W23d)
+  // 화면 이름(labelAt — '사쿠라 (콜라보)' · '머스탱 (한슨의 아버지)')과 함께 표준명도 — 찾기 · 아는 이름 검사는 표준명으로도 된다(W23d)
   return [...new Set([nameAt(target, R), ...(nameKnown(target, R) ? [target.name] : []), ...(target.aliases ?? []).filter((a) => aliasKnown(target, a, R)).map((a) => a.name)])];
 }
 
@@ -993,12 +993,10 @@ function proseOne(text) {
 
 /**
  * 표준명의 화면 이름(W23d) — 동명이인은 label('사쿠라 (콜라보)' · '머스탱 (한슨의 아버지)'), 그 밖은 표준명.
- * 이름 승계 사칭의 진짜 b(W23e — real_of)는 드러난 스토리(real_of.rev)를 읽기 전에는 독자에게 b와 한 사람이라 구분어 없이 표준명.
  * 찾기 · 스포일러 검사(namesAt · unknownNameIn)는 표준명 그대로 쓴다.
  */
-export function labelAt(target, R) {
+export function labelAt(target) {
   if (!target) return '';
-  if (target.real_of && !impKnown(target.real_of, R)) return target.name;
   return target.label ?? target.name;
 }
 
@@ -1006,7 +1004,7 @@ export function labelAt(target, R) {
 export function targetName(id, R) {
   if (!id) return '';
   const t = idx?.targets.get(id);
-  if (t) return labelAt(t, R && typeof R === 'object' ? R : readingOf?.());
+  if (t) return labelAt(t);
   return String(id).replace(/^[a-z]+:/, '').replace(/_/g, ' ');
 }
 

@@ -74,7 +74,7 @@ setup_payoff,record,3,d_main_02af_07,,d_main_03_03,,ch02,ch03,4,10,Q8-2,회수,Q
 callback,record,3,d_main_02af_07,,d_main_03_03,,ch02,ch03,4,10,F43-2,드러냄,F43,,,,,확실,확정,
 character,auto,1,d_main_02af_07,152,d_main_03_01,0,ch02,ch03,4,10,,,,person:라피,85,기록 4 · 말함 88줄(19%) · 이름 10줄,기록 1 · 말함 48줄(27%) · 이름 4줄,,,흔한 대상
 character,auto,2,d_main_02af_07,153,d_main_03_01,2,ch02,ch03,4,10,,,,person:미하라,14,기록 3 · 말함 13줄(3%) · 이름 9줄,기록 6 · 말함 73줄(42%) · 이름 10줄,,,
-character,auto,2,d_main_02af_07,154,d_main_03_01,2,ch02,ch03,4,10,,,,person:슈엔,28,기록 5 · 말함 68줄(15%) · 이름 10줄,기록 5 · 이름 3줄,,,
+character,auto,2,d_main_02af_07,154,d_main_03_01,2,ch02,ch03,4,10,,,,person:슈엔,29,기록 5 · 말함 68줄(15%) · 이름 10줄,기록 5 · 이름 3줄,,,
 character,auto,2,d_main_02af_07,132,d_main_03_01,9,ch02,ch03,4,10,,,,person:유니,13,기록 2 · 말함 3줄(1%) · 이름 3줄,기록 4 · 말함 19줄(11%) · 이름 9줄,,,
 keyword,auto,2,d_main_02af_07,78,d_main_03_01,2,ch02,ch03,4,10,,,,org:워드리스,3,기록 2 · 이름 2줄,기록 6 · 이름 1줄,,,
 keyword,auto,1,d_main_02af_07,148,sub:트레저_헌터_00,2,ch02,sub:트레저_헌터_00,4,12,,,,place:지상,129,기록 4 · 이름 8줄,이름 5줄,,,흔한 대상
@@ -84,7 +84,7 @@ keyword,auto,2,d_main_02af_07,151,relic:니케실험대상자모집_00,0,ch02,re
 setup_payoff,record,2,d_main_02af_01,,d_main_06_07,,ch02,ch06,4,26,Q6-2,회수,Q6,,,,,추정,확정,일부 · 답 F120
 callback,record,3,d_main_02af_01,,d_main_07af_03,,ch02,ch07,4,31,F40-2,드러냄,F40,,,,,확실,확정,
 keyword,auto,2,d_main_02af_07,80,d_main_07_06_s,48,ch02,ch07,4,31,,,,org:카운터스,32,기록 4 · 이름 1줄,기록 4 · 이름 2줄,,,
-character,auto,2,d_main_02_08_e,3,d_main_08_01,0,ch02,ch08,4,37,,,,person:시프티,16,기록 1 · 말함 48줄(10%) · 이름 3줄,기록 5 · 말함 47줄(18%) · 이름 4줄,,,
+character,auto,2,d_main_02_08_e,3,d_main_08_01,0,ch02,ch08,4,37,,,,person:시프티,16,기록 1 · 말함 48줄(10%) · 이름 3줄,말함 47줄(18%) · 이름 4줄,,,
 keyword,auto,2,d_main_02af_04,24,sub:칠리페퍼_01,44,ch02,sub:칠리페퍼_01,4,38,,,,place:전초기지,13,기록 3 · 이름 4줄,기록 3 · 이름 5줄,,,
 setup_payoff,record,2,d_main_02_05,,d_main_10_06,,ch02,ch10,4,48,E11,암시,Q16,,,,,추정,확정,
 callback,record,2,d_main_02af_07,,sub:랩칠리언_05,,ch02,sub:랩칠리언_05,4,84,E36,재언급,Q8,,,,,추정,확정,
@@ -124,7 +124,7 @@ setup_payoff,record,3,d_main_03_04,,d_main_04_04_s,,ch03,ch04,10,15,Q12-2,회수
 reversal,record,3,d_main_03_04,,d_main_04_03_s,,ch03,ch04,10,15,F61-2,뒤집음,F61,,,,,확실,확정,답 F71
 character,auto,1,d_main_03_07,15,d_main_04_01,0,ch03,ch04,10,15,,,,person:라피,85,기록 1 · 말함 48줄(27%) · 이름 4줄,기록 11 · 말함 141줄(19%) · 이름 25줄,,,흔한 대상
 character,auto,2,d_main_03_07,13,d_main_04_01,16,ch03,ch04,10,15,,,,person:미하라,14,기록 6 · 말함 73줄(42%) · 이름 10줄,기록 8 · 말함 95줄(13%) · 이름 22줄,,,
-character,auto,2,d_main_03_06,40,d_main_04_07,12,ch03,ch04,10,15,,,,person:슈엔,28,기록 5 · 이름 3줄,기록 4 · 말함 29줄(4%) · 이름 12줄,,,
+character,auto,2,d_main_03_06,40,d_main_04_07,12,ch03,ch04,10,15,,,,person:슈엔,29,기록 5 · 이름 3줄,기록 4 · 말함 29줄(4%) · 이름 12줄,,,
 character,auto,2,d_main_03_06,33,d_main_04_01,20,ch03,ch04,10,15,,,,person:유니,13,기록 4 · 말함 19줄(11%) · 이름 9줄,기록 6 · 말함 56줄(7%) · 이름 42줄,,,
 character,auto,2,d_main_03_04,10,d_main_04_03_s,5,ch03,ch04,10,15,,,,person:토커티브,15,기록 4 · 이름 4줄,기록 11 · 말함 26줄(3%) · 이름 20줄,,,
 keyword,auto,1,d_main_03_06,51,d_main_04_02,12,ch03,ch04,10,15,,,,concept:니케,185,기록 1 · 이름 5줄,기록 3 · 이름 19줄,,,흔한 대상
@@ -170,8 +170,8 @@ character,auto,2,d_main_04af_07,4,d_main_06_06,19,ch04,ch06,15,26,,,,person:토�
 keyword,auto,1,d_main_04af_08,64,d_main_06_03,32,ch04,ch06,15,26,,,,place:방주,170,기록 3 · 이름 14줄,기록 2 · 이름 4줄,,,흔한 대상
 keyword,auto,1,d_main_04af_07,9,d_main_06_04,24,ch04,ch06,15,26,,,,place:지상,129,기록 1 · 이름 12줄,기록 2 · 이름 2줄,,,흔한 대상
 callback,record,3,d_main_04_04_s,,d_main_07_02,,ch04,ch07,15,31,E56,재언급,Q13,,,,,확실,확정,
+character,auto,2,d_main_04af_06,33,d_main_08_01,3,ch04,ch08,15,37,,,,person:슈엔,29,기록 4 · 말함 29줄(4%) · 이름 12줄,기록 5,,,
 setup_payoff,record,2,d_main_04af_04,,d_main_09af_06,,ch04,ch09,15,43,Q18-2,회수,Q18,,,,,추정,확정,일부 · 답 F259
-character,auto,2,d_main_04af_06,33,d_main_09_01,4,ch04,ch09,15,43,,,,person:슈엔,28,기록 4 · 말함 29줄(4%) · 이름 12줄,기록 8 · 말함 41줄(8%) · 이름 4줄,,,
 character,auto,2,d_main_04af_08,8,d_main_09af_01,58,ch04,ch09,15,43,,,,person:엔더슨,32,기록 8 · 말함 68줄(9%) · 이름 4줄,기록 2 · 말함 30줄(6%) · 이름 3줄,,,
 keyword,auto,2,d_main_04af_06,21,d_main_09_06_s,20,ch04,ch09,15,43,,,,concept:기억_소거,9,기록 6 · 이름 7줄,이름 5줄,,,
 keyword,auto,2,d_main_04_09_e,50,d_main_09af_05,41,ch04,ch09,15,43,,,,org:앱솔루트,15,기록 3 · 이름 3줄,기록 2 · 이름 2줄,,,
@@ -183,7 +183,7 @@ setup_payoff,record,3,d_main_04af_04,,d_main_12af_01,,ch04,ch12,15,59,Q18-3,회�
 character,auto,2,d_main_04af_04,60,d_main_12af_02,7,ch04,ch12,15,59,,,,person:미하라,14,기록 8 · 말함 95줄(13%) · 이름 22줄,기록 2 · 말함 10줄(2%) · 이름 12줄,,,
 character,auto,2,d_main_04af_04,57,d_main_12af_02,7,ch04,ch12,15,59,,,,person:유니,13,기록 6 · 말함 56줄(7%) · 이름 42줄,기록 3 · 말함 18줄(3%) · 이름 7줄,,,
 keyword,auto,2,d_main_04af_04,23,d_main_12_07_s,12,ch04,ch12,15,59,,,,concept:침식,21,기록 2 · 이름 3줄,기록 3 · 이름 15줄,,,
-character,auto,2,d_main_04af_08,71,sub:러블리_드림_00,113,ch04,sub:러블리_드림_00,15,61,,,,person:머스탱,27,기록 5 · 말함 38줄(5%) · 이름 5줄,기록 2 · 이름 3줄,,,
+character,auto,2,d_main_04af_08,71,sub:러블리_드림_00,113,ch04,sub:러블리_드림_00,15,61,,,,person:머스탱,26,기록 5 · 말함 38줄(5%) · 이름 5줄,기록 2 · 이름 3줄,,,
 setup_payoff,record,3,d_main_04_04_e,,d_main_13_08_e,,ch04,ch13,15,64,Q14-2,회수,Q14,,,,,확실,확정,일부 · 답 F336
 setup_payoff,record,2,d_main_04af_01,,d_main_14af_03,,ch04,ch14,15,69,E25,암시,F376,,,,,추정,확정,
 character,auto,2,d_main_04af_03,7,d_main_14af_02,7,ch04,ch14,15,69,,,,person:에닉,22,기록 4 · 말함 18줄(2%) · 이름 1줄,기록 6 · 말함 52줄(7%) · 이름 6줄,,,
@@ -269,7 +269,7 @@ setup_payoff,record,3,d_main_06_08_e,,d_main_07_06_e,,ch06,ch07,26,31,E50,암시
 callback,record,3,d_main_06_08_s,,d_main_07_05,,ch06,ch07,26,31,F124-2,드러냄,F124,,,,,확실,확정,
 callback,record,3,d_main_06_08_e,,d_main_07_02,,ch06,ch07,26,31,F127-2,드러냄,F127,,,,,확실,확정,
 character,auto,1,d_main_06_06,54,d_main_07_06_s,78,ch06,ch07,26,31,,,,person:라피,85,말함 38줄(12%) · 이름 4줄,기록 1 · 말함 49줄(13%) · 이름 1줄,,,흔한 대상
-character,auto,2,d_main_06_08_e,38,d_main_07_06_s,4,ch06,ch07,26,31,,,,person:모더니아,6,기록 2 · 말함 9줄(3%) · 이름 1줄,기록 6 · 말함 49줄(13%) · 이름 8줄,,,
+character,auto,2,d_main_06_08_e,38,d_main_07_06_s,4,ch06,ch07,26,31,,,,person:모더니아,6,기록 3 · 말함 9줄(3%) · 이름 1줄,기록 6 · 말함 49줄(13%) · 이름 8줄,,,
 character,auto,2,d_main_06_08_e,39,d_main_07_01,0,ch06,ch07,26,31,,,,person:스노우_화이트,26,기록 9 · 말함 28줄(9%) · 이름 4줄,기록 10 · 말함 127줄(34%) · 이름 20줄,,,
 character,auto,2,d_main_06_08_e,31,d_main_07_02,20,ch06,ch07,26,31,,,,person:토커티브,15,기록 9 · 말함 51줄(16%) · 이름 8줄,기록 2 · 이름 6줄,,,
 keyword,auto,2,d_main_06_08_e,24,d_main_07_03,18,ch06,ch07,26,31,,,,concept:헬레틱,40,기록 2 · 이름 1줄,기록 2 · 이름 19줄,,,
@@ -368,7 +368,8 @@ setup_payoff,record,3,d_main_08_01,,d_main_09_06_s,,ch08,ch09,37,43,E63,암시,F
 setup_payoff,record,2,d_main_08_06,,d_main_09_06_s,,ch08,ch09,37,43,E64,암시,F248,,,,,추정,확정,
 setup_payoff,record,3,d_main_08_02,,d_main_09_06_s,,ch08,ch09,37,43,Q42-2,회수,Q42,,,,,확실,확정,전부 · 답 F248
 reversal,record,3,d_main_08_01,,d_main_09_06_s,,ch08,ch09,37,43,F234-2,뒤집음,F234,,,,,확실,확정,답 F248
-character,auto,2,d_main_08_08,23,d_main_09_01,1,ch08,ch09,37,43,,,,person:시프티,16,기록 5 · 말함 47줄(18%) · 이름 4줄,기록 2 · 말함 32줄(6%) · 이름 14줄,,,
+character,auto,2,d_main_08_06,22,d_main_09_01,4,ch08,ch09,37,43,,,,person:슈엔,29,기록 5,기록 8 · 말함 41줄(8%) · 이름 4줄,,,
+character,auto,2,d_main_08_08,23,d_main_09_01,1,ch08,ch09,37,43,,,,person:시프티,16,말함 47줄(18%) · 이름 4줄,기록 2 · 말함 32줄(6%) · 이름 14줄,,,
 character,auto,2,d_main_08_08,28,d_main_09_01,0,ch08,ch09,37,43,,,,person:엑시아,12,기록 3 · 말함 52줄(20%) · 이름 1줄,기록 7 · 말함 89줄(17%) · 이름 32줄,,,
 keyword,auto,2,d_main_08_02,4,d_main_09_06_s,14,ch08,ch09,37,43,,,,org:카운터스,32,기록 2 · 이름 1줄,기록 2 · 이름 1줄,,,
 character,auto,1,d_main_08_08,53,sub:미실리스_연구팀_00,42,ch08,sub:미실리스_연구팀_00,37,44,,,,person:네온,56,말함 50줄(19%) · 이름 11줄,말함 16줄(36%),,,흔한 대상
@@ -412,7 +413,7 @@ character,auto,2,d_main_09_06_s,40,d_main_10_01,6,ch09,ch10,43,48,,,,person:시�
 keyword,auto,2,d_main_09af_06,44,d_main_10_01,15,ch09,ch10,43,48,,,,org:앱솔루트,15,기록 2 · 이름 2줄,기록 6 · 이름 8줄,,,
 keyword,auto,1,d_main_09_06_s,63,sub:스페이드_00,17,ch09,sub:스페이드_00,43,52,,,,concept:랩쳐,140,이름 7줄,이름 7줄,,,흔한 대상
 setup_payoff,record,3,d_main_09af_06,,d_main_11_04,,ch09,ch11,43,53,E70,암시,F291,,,,,확실,확정,
-character,auto,2,d_main_09af_05,73,d_main_11_01,12,ch09,ch11,43,53,,,,person:슈엔,28,기록 8 · 말함 41줄(8%) · 이름 4줄,기록 4 · 말함 14줄(4%) · 이름 5줄,,,
+character,auto,2,d_main_09af_05,73,d_main_11_01,12,ch09,ch11,43,53,,,,person:슈엔,29,기록 8 · 말함 41줄(8%) · 이름 4줄,기록 4 · 말함 14줄(4%) · 이름 5줄,,,
 character,auto,2,d_main_09af_06,53,d_main_11_04,9,ch09,ch11,43,53,,,,person:잉그리드,37,기록 5 · 말함 26줄(5%) · 이름 1줄,기록 3 · 말함 17줄(5%) · 이름 1줄,,,
 keyword,auto,1,d_main_09af_05,75,relic:기업-랩쳐음모론_01,1,ch09,relic:기업-랩쳐음모론,43,55,,,,place:방주,170,이름 10줄,기록 4 · 이름 4줄,,,흔한 대상
 keyword,auto,2,d_main_09af_05,45,sub:저스틴_00,65,ch09,sub:저스틴_00,43,58,,,,place:아우터_림,43,기록 2 · 이름 2줄,기록 2 · 이름 1줄,,,
@@ -485,7 +486,7 @@ setup_payoff,record,3,d_main_11_06_e,,d_main_12_07_s,,ch11,ch12,53,59,Q56-2,회�
 character,auto,2,d_main_11_06_s,54,d_main_12_01,10,ch11,ch12,53,59,,,,person:드레이크,16,기록 2 · 말함 27줄(8%),기록 2 · 말함 9줄(1%) · 이름 7줄,,,
 character,auto,2,d_main_11_06_e,10,d_main_12_01,1,ch11,ch12,53,59,,,,person:라플라스,13,기록 5 · 말함 69줄(22%) · 이름 6줄,기록 2 · 말함 48줄(8%) · 이름 12줄,,,
 character,auto,2,d_main_11_06_e,12,d_main_12_01,6,ch11,ch12,53,59,,,,person:맥스웰,15,기록 3 · 말함 83줄(26%) · 이름 1줄,기록 2 · 말함 38줄(6%) · 이름 2줄,,,
-character,auto,2,d_main_11_04,54,d_main_12af_01,4,ch11,ch12,53,59,,,,person:슈엔,28,기록 4 · 말함 14줄(4%) · 이름 5줄,기록 8 · 말함 43줄(7%) · 이름 5줄,,,
+character,auto,2,d_main_11_04,54,d_main_12af_01,4,ch11,ch12,53,59,,,,person:슈엔,29,기록 4 · 말함 14줄(4%) · 이름 5줄,기록 8 · 말함 43줄(7%) · 이름 5줄,,,
 character,auto,2,d_main_11_04,49,d_main_12_07_e,7,ch11,ch12,53,59,,,,person:잉그리드,37,기록 3 · 말함 17줄(5%) · 이름 1줄,기록 5 · 말함 61줄(10%) · 이름 2줄,,,
 keyword,auto,2,d_main_11_06_s,43,d_main_12_02_e,25,ch11,ch12,53,59,,,,concept:헬레틱,40,기록 2 · 이름 12줄,기록 3 · 이름 18줄,,,
 keyword,auto,2,d_main_11_06_s,58,d_main_12_01,35,ch11,ch12,53,59,,,,org:메티스,20,기록 5 · 이름 8줄,기록 10 · 이름 16줄,,,
@@ -528,7 +529,7 @@ keyword,auto,2,d_main_12af_04,37,d_main_13_08_s,32,ch12,ch13,59,64,,,,concept:�
 keyword,auto,2,d_main_12af_03,28,d_main_13_08_e,187,ch12,ch13,59,64,,,,concept:침식,21,기록 3 · 이름 15줄,기록 2 · 이름 5줄,,,
 keyword,auto,2,d_main_12af_04,38,d_main_13_02,19,ch12,ch13,59,64,,,,concept:헬레틱,40,기록 3 · 이름 18줄,기록 1 · 이름 5줄,,,
 callback,record,3,d_main_12af_02,,d_main_15_04,,ch12,ch15,59,75,E100,재언급,Q58,,,,,확실,확정,
-character,auto,2,d_main_12af_04,26,d_main_15_04,11,ch12,ch15,59,75,,,,person:슈엔,28,기록 8 · 말함 43줄(7%) · 이름 5줄,기록 9 · 말함 67줄(14%) · 이름 18줄,,,
+character,auto,2,d_main_12af_04,26,d_main_15_04,11,ch12,ch15,59,75,,,,person:슈엔,29,기록 8 · 말함 43줄(7%) · 이름 5줄,기록 9 · 말함 67줄(14%) · 이름 18줄,,,
 keyword,auto,2,d_main_12af_03,23,d_main_15_04,11,ch12,ch15,59,75,,,,org:메티스,20,기록 10 · 이름 16줄,기록 4 · 이름 11줄,,,
 character,auto,2,d_main_12af_02,120,d_main_16af_02,4,ch12,ch16,59,80,,,,person:미하라,14,기록 2 · 말함 10줄(2%) · 이름 12줄,기록 2 · 말함 6줄(1%) · 이름 1줄,,,
 setup_payoff,record,3,d_main_12_07_e,,ep:d_nikke_guillotine_04,,ch12,char:180,59,85,Q60-2,회수,Q60,,,,,확실,확정,전부 · 답 F431
@@ -560,7 +561,7 @@ keyword,auto,1,relic:어느의사의수기_02,2,d_main_13_01,4,relic:어느의�
 keyword,auto,2,relic:어느의사의수기_01,1,relic:여자친구의편지_00,4,relic:어느의사의수기,relic:여자친구의편지,60,67,,,,incident:랩쳐_침공,12,기록 2,기록 4,,,
 keyword,auto,1,sub:러블리_드림_00,132,sub:테디_00,16,sub:러블리_드림_00,sub:테디_00,61,63,,,,concept:니케,185,기록 1 · 이름 8줄,기록 2 · 이름 7줄,,,흔한 대상
 keyword,auto,1,sub:러블리_드림_00,129,sub:테디_00,11,sub:러블리_드림_00,sub:테디_00,61,63,,,,place:지상,129,이름 8줄,이름 7줄,,,흔한 대상
-character,auto,2,sub:러블리_드림_00,138,ep:d_nikke_mary_01,74,sub:러블리_드림_00,char:130,61,100,,,,person:머스탱,27,기록 2 · 이름 3줄,기록 3 · 말함 13줄(3%) · 이름 3줄,,,
+character,auto,2,sub:러블리_드림_00,138,ep:d_nikke_mary_01,74,sub:러블리_드림_00,char:130,61,100,,,,person:머스탱,26,기록 2 · 이름 3줄,기록 3 · 말함 13줄(3%) · 이름 3줄,,,
 sequel,auto,3,sub:러블리_드림_00,,sub:러블리_드림_01,,sub:러블리_드림_00,sub:러블리_드림_01,61,161,,,,,,,,,,서브퀘스트 다음 편
 character,auto,2,sub:러블리_드림_00,149,sub:러블리_드림_01,0,sub:러블리_드림_00,sub:러블리_드림_01,61,161,,,,person:러블리_드림☆,2,기록 3 · 말함 105줄(84%) · 이름 3줄,기록 1 · 말함 49줄(69%) · 이름 3줄,,,
 setup_payoff,record,2,sub:러블리_드림_00,,event_staranis2_02_s,,sub:러블리_드림_00,event_staranis1,61,454,E61,암시,F2690,,,,,추정,확정,
@@ -680,7 +681,7 @@ character,auto,1,d_main_15af_06,23,sub:제니퍼f_00,36,ch15,sub:제니퍼f_00,7
 keyword,auto,1,d_main_15af_06,4,sub:제니퍼f_00,13,ch15,sub:제니퍼f_00,75,79,,,,place:지상,129,이름 13줄,이름 7줄,,,흔한 대상
 sequel,auto,3,d_main_15af_06,,d_main_16_01,,ch15,ch16,75,80,,,,,,,,,,다음 챕터
 character,auto,1,d_main_15af_06,31,d_main_16_01,0,ch15,ch16,75,80,,,,person:라피,85,말함 61줄(13%) · 이름 3줄,기록 1 · 말함 64줄(11%) · 이름 2줄,,,흔한 대상
-character,auto,2,d_main_15af_06,29,d_main_16_01,16,ch15,ch16,75,80,,,,person:슈엔,28,기록 9 · 말함 67줄(14%) · 이름 18줄,기록 6 · 말함 29줄(5%) · 이름 7줄,,,
+character,auto,2,d_main_15af_06,29,d_main_16_01,16,ch15,ch16,75,80,,,,person:슈엔,29,기록 9 · 말함 67줄(14%) · 이름 18줄,기록 6 · 말함 29줄(5%) · 이름 7줄,,,
 keyword,auto,1,d_main_15af_04,46,d_main_16_01,17,ch15,ch16,75,80,,,,concept:니케,185,이름 13줄,기록 3 · 이름 28줄,,,흔한 대상
 keyword,auto,2,d_main_15af_06,29,d_main_16_10,4,ch15,ch16,75,80,,,,concept:언체인드,25,기록 7 · 이름 29줄,기록 2 · 이름 8줄,,,
 keyword,auto,2,d_main_15af_06,16,d_main_16_10,8,ch15,ch16,75,80,,,,concept:침식,21,이름 16줄,이름 7줄,,,
@@ -725,7 +726,7 @@ setup_payoff,record,3,d_main_16_13_s,,d_main_16_13_e,,ch16,ch16,80,80,E111,암�
 character,auto,1,d_main_16_13_e,38,sub:방주_난민_03,20,ch16,sub:방주_난민_03,80,81,,,,person:아니스,119,기록 1 · 말함 102줄(17%) · 이름 5줄,말함 9줄(15%),,,흔한 대상
 keyword,auto,1,d_main_16af_03,10,sub:방주_난민_03,0,ch16,sub:방주_난민_03,80,81,,,,place:방주,170,기록 5 · 이름 18줄,이름 7줄,,,흔한 대상
 character,auto,1,d_main_16af_02,56,sub:랩칠리언_05,44,ch16,sub:랩칠리언_05,80,84,,,,person:라피,85,기록 1 · 말함 64줄(11%) · 이름 2줄,말함 10줄(11%),,,흔한 대상
-character,auto,2,d_main_16af_03,56,sub:랩칠리언_05,0,ch16,sub:랩칠리언_05,80,84,,,,person:슈엔,28,기록 6 · 말함 29줄(5%) · 이름 7줄,기록 5 · 말함 60줄(67%) · 이름 4줄,,,
+character,auto,2,d_main_16af_03,56,sub:랩칠리언_05,0,ch16,sub:랩칠리언_05,80,84,,,,person:슈엔,29,기록 6 · 말함 29줄(5%) · 이름 7줄,기록 5 · 말함 60줄(67%) · 이름 4줄,,,
 keyword,auto,1,d_main_16_13_e,47,sub:랩칠리언_05,11,ch16,sub:랩칠리언_05,80,84,,,,concept:랩쳐,140,기록 1 · 이름 14줄,기록 1 · 이름 7줄,,,흔한 대상
 keyword,auto,2,d_main_16af_03,8,sub:랩칠리언_05,9,ch16,sub:랩칠리언_05,80,84,,,,org:미실리스,32,기록 2 · 이름 7줄,기록 2 · 이름 1줄,,,
 keyword,auto,1,d_main_16af_02,39,ep:d_nikke_guillotine_02,17,ch16,char:180,80,85,,,,concept:니케,185,기록 3 · 이름 28줄,기록 3 · 이름 24줄,,,흔한 대상
@@ -766,7 +767,7 @@ keyword,auto,1,sub:랩칠리언_05,87,ep:d_nikke_guillotine_02,93,sub:랩칠리�
 keyword,auto,1,sub:랩칠리언_05,69,ep:d_nikke_guillotine_02,99,sub:랩칠리언_05,char:180,84,85,,,,place:방주,170,기록 2 · 이름 4줄,기록 3 · 이름 5줄,,,흔한 대상
 character,auto,1,sub:랩칠리언_05,68,ep:d_nikke_rapi_01,1,sub:랩칠리언_05,char:10,84,95,,,,person:라피,85,말함 10줄(11%),기록 4 · 말함 309줄(94%) · 이름 12줄,,,흔한 대상
 character,auto,1,sub:랩칠리언_05,65,ep:d_nikke_rapi_01,85,sub:랩칠리언_05,char:10,84,95,,,,person:아니스,119,말함 11줄(12%),기록 2 · 말함 14줄(4%) · 이름 3줄,,,흔한 대상
-character,auto,2,sub:랩칠리언_05,83,ep:d_nikke_maxwell_01,1,sub:랩칠리언_05,char:102,84,99,,,,person:슈엔,28,기록 5 · 말함 60줄(67%) · 이름 4줄,기록 4 · 말함 23줄(6%) · 이름 12줄,,,
+character,auto,2,sub:랩칠리언_05,83,ep:d_nikke_maxwell_01,1,sub:랩칠리언_05,char:102,84,99,,,,person:슈엔,29,기록 5 · 말함 60줄(67%) · 이름 4줄,기록 4 · 말함 23줄(6%) · 이름 12줄,,,
 keyword,auto,2,sub:랩칠리언_05,24,ep:d_nikke_maxwell_01,1,sub:랩칠리언_05,char:102,84,99,,,,org:미실리스,32,기록 2 · 이름 1줄,기록 1 · 이름 10줄,,,
 sequel,auto,3,sub:랩칠리언_05,,sub:랩칠리언_06,,sub:랩칠리언_05,sub:랩칠리언_06,84,143,,,,,,,,,,서브퀘스트 다음 편
 character,auto,2,sub:랩칠리언_05,61,sub:랩칠리언_06,0,sub:랩칠리언_05,sub:랩칠리언_06,84,143,,,,person:랩칠리언,11,기록 2 · 말함 2줄(2%) · 이름 5줄,기록 6 · 말함 46줄(48%) · 이름 8줄,,,
@@ -901,6 +902,7 @@ character,auto,2,ep:d_nikke_rapunzel_05,105,d_main_17_01_s,2,char:221,ch17,94,14
 keyword,auto,2,ep:d_nikke_rapunzel_05,71,d_main_17_02,34,char:221,ch17,94,140,,,,concept:NIMPH,24,기록 4 · 이름 5줄,기록 3 · 이름 22줄,,,
 keyword,auto,2,ep:d_nikke_rapunzel_04,78,d_main_17_04,8,char:221,ch17,94,140,,,,org:갓데스,30,기록 2 · 이름 1줄,기록 11 · 이름 8줄,,,
 setup_payoff,record,3,ep:d_nikke_rapunzel_04,,event_overzone1_01_e,,char:221,event_overzone,94,200,Q84-3,회수,Q84,,,,,확실,확정,전부 · 답 F907
+character,auto,2,ep:d_nikke_rapunzel_04,111,erelic:white_memory_04,0,char:221,erelic:white_memory,94,201,,,,person:릴리스,3,기록 2 · 이름 4줄,기록 6,,,
 setup_payoff,record,2,ep:d_nikke_rapunzel_04,,d_main_24_02,,char:221,ch24,94,219,E1259,암시,F1007,,,,,추정,확정,
 setup_payoff,record,3,ep:d_nikke_rapunzel_04,,d_main_25_08_e,,char:221,ch25,94,241,Q82-2,회수,Q82,,,,,확실,확정,일부 · 답 F1109
 setup_payoff,record,3,ep:d_nikke_rapunzel_04,,event_footstepwalkrun2_06_e,,char:221,event_footstepwalkrun1,94,350,Q82-3,회수,Q82,,,,,확실,확정,일부 · 답 F1763
@@ -954,7 +956,7 @@ prereq,game-condition,3,ep:d_nikke_maxwell_02,,ep:d_nikke_maxwell_03,,char:102,c
 prereq,game-condition,3,ep:d_nikke_maxwell_03,,ep:d_nikke_maxwell_04,,char:102,char:102,99,99,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_maxwell_04,,ep:d_nikke_maxwell_05,,char:102,char:102,99,99,,,,,,,,,,condition_scenario_group_id
 keyword,auto,1,ep:d_nikke_maxwell_05,34,ep:d_nikke_maiden_01,0,char:102,char:181,99,101,,,,concept:니케,185,기록 2 · 이름 20줄,이름 15줄,,,흔한 대상
-character,auto,2,ep:d_nikke_maxwell_05,48,ep:d_nikke_emma_01,14,char:102,char:90,99,123,,,,person:슈엔,28,기록 4 · 말함 23줄(6%) · 이름 12줄,기록 2 · 이름 4줄,,,
+character,auto,2,ep:d_nikke_maxwell_05,48,ep:d_nikke_emma_01,14,char:102,char:90,99,123,,,,person:슈엔,29,기록 4 · 말함 23줄(6%) · 이름 12줄,기록 2 · 이름 4줄,,,
 keyword,auto,2,ep:d_nikke_maxwell_02,34,d_main_17af_01,6,char:102,ch17,99,140,,,,org:미실리스,32,기록 1 · 이름 10줄,기록 2 · 이름 8줄,,,
 character,auto,2,ep:d_nikke_maxwell_05,93,d_main_18_01,7,char:102,ch18,99,146,,,,person:맥스웰,15,기록 12 · 말함 390줄(94%) · 이름 29줄,기록 3 · 말함 181줄(17%) · 이름 15줄,,,
 setup_payoff,record,2,ep:d_nikke_maxwell_03,,d_main_40_01,,char:102,ch40,99,398,E1263,암시,F2071,,,,,추정,확정,
@@ -971,7 +973,7 @@ setup_payoff,record,2,ep:d_nikke_mary_01,,ep:d_nikke_mary_04,,char:130,char:130,
 callback,record,2,ep:d_nikke_mary_04,,ep:d_nikke_mary_05,,char:130,char:130,100,100,E1269,재언급,F536,,,,,추정,확정,
 character,auto,2,ep:d_nikke_mary_05,105,ep:d_nikke_pepper_01,4,char:130,char:131,100,130,,,,person:메어리,9,기록 19 · 말함 305줄(79%) · 이름 40줄,기록 1 · 말함 51줄(18%) · 이름 9줄,,,
 character,auto,2,ep:d_nikke_mary_05,84,ep:d_nikke_pepper_01,4,char:130,char:131,100,130,,,,person:페퍼,3,기록 6 · 말함 67줄(17%) · 이름 16줄,기록 6 · 말함 229줄(80%) · 이름 55줄,,,
-character,auto,2,ep:d_nikke_mary_05,67,d_main_18af_01,2,char:130,ch18,100,146,,,,person:머스탱,27,기록 3 · 말함 13줄(3%) · 이름 3줄,기록 2 · 말함 7줄(1%),,,
+character,auto,2,ep:d_nikke_mary_05,67,d_main_18af_01,2,char:130,ch18,100,146,,,,person:머스탱,26,기록 3 · 말함 13줄(3%) · 이름 3줄,기록 2 · 말함 7줄(1%),,,
 setup_payoff,record,2,ep:d_nikke_mary_04,,event_bluewaterisland2_05_e,,char:130,event_bluewaterisland,100,209,E1268,암시,F971,,,,,추정,확정,
 setup_payoff,record,3,ep:d_nikke_mary_03,,event_bluewaterisland2_05_e,,char:130,event_bluewaterisland,100,209,Q85-2,회수,Q85,,,,,확실,확정,일부 · 답 F971
 callback,record,3,ep:d_nikke_mary_04,,event_bluewaterisland2_05_e,,char:130,event_bluewaterisland,100,209,E218,재언급,F540,,,,,확실,확정,
@@ -1198,7 +1200,7 @@ setup_payoff,record,2,ep:d_nikke_emma_01,,ep:d_nikke_emma_02,,char:90,char:90,12
 keyword,auto,1,ep:d_nikke_emma_04,31,ep:d_nikke_julia_02,72,char:90,char:150,123,125,,,,concept:니케,185,이름 6줄,이름 6줄,,,흔한 대상
 keyword,auto,1,ep:d_nikke_emma_05,19,ep:d_nikke_julia_02,62,char:90,char:150,123,125,,,,place:지상,129,이름 8줄,이름 10줄,,,흔한 대상
 keyword,auto,2,ep:d_nikke_emma_03,56,ep:d_nikke_isabel_01,7,char:90,char:231,123,128,,,,org:카운터스,32,기록 2 · 이름 2줄,기록 2 · 이름 7줄,,,
-character,auto,2,ep:d_nikke_emma_03,55,d_main_17_01_e,9,char:90,ch17,123,140,,,,person:슈엔,28,기록 2 · 이름 4줄,기록 4 · 말함 148줄(16%) · 이름 23줄,,,
+character,auto,2,ep:d_nikke_emma_03,55,d_main_17_01_e,9,char:90,ch17,123,140,,,,person:슈엔,29,기록 2 · 이름 4줄,기록 4 · 말함 148줄(16%) · 이름 23줄,,,
 character,auto,2,ep:d_nikke_emma_05,62,d_main_31_02_s,1,char:90,ch31,123,308,,,,person:엠마,10,기록 4 · 말함 244줄(76%) · 이름 8줄,기록 3 · 말함 76줄(9%) · 이름 3줄,,,
 prereq,game-condition,3,ep:d_nikke_yuni_01,,ep:d_nikke_yuni_02,,char:160,char:160,124,124,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_yuni_02,,ep:d_nikke_yuni_03,,char:160,char:160,124,124,,,,,,,,,,condition_scenario_group_id
@@ -1395,7 +1397,7 @@ character,auto,1,d_main_17af_02,118,sub:랩칠리언_06,12,ch17,sub:랩칠리언
 keyword,auto,1,d_main_17af_04,135,sub:랩칠리언_06,31,ch17,sub:랩칠리언_06,140,143,,,,concept:랩쳐,140,기록 1 · 이름 22줄,기록 2 · 이름 11줄,,,흔한 대상
 keyword,auto,2,d_main_17af_04,51,sub:숲속요정_00,21,ch17,sub:숲속요정_00,140,144,,,,concept:NIMPH,24,기록 3 · 이름 22줄,기록 3 · 이름 5줄,,,
 sequel,auto,3,d_main_17af_04,,d_main_18_01,,ch17,ch18,140,146,,,,,,,,,,다음 챕터
-character,auto,2,d_main_17af_04,148,d_main_18_01,5,ch17,ch18,140,146,,,,person:슈엔,28,기록 4 · 말함 148줄(16%) · 이름 23줄,기록 11 · 말함 185줄(17%) · 이름 36줄,,,
+character,auto,2,d_main_17af_04,148,d_main_18_01,5,ch17,ch18,140,146,,,,person:슈엔,29,기록 4 · 말함 148줄(16%) · 이름 23줄,기록 11 · 말함 185줄(17%) · 이름 36줄,,,
 character,auto,2,d_main_17af_02,36,d_main_18af_01,3,ch17,ch18,140,146,,,,person:엔더슨,32,기록 2 · 이름 16줄,기록 2 · 말함 55줄(5%) · 이름 4줄,,,
 character,auto,2,d_main_17af_03,43,d_main_18af_06,20,ch17,ch18,140,146,,,,person:유니,13,기록 2 · 말함 21줄(2%) · 이름 12줄,기록 2 · 말함 35줄(3%) · 이름 16줄,,,
 keyword,auto,2,d_main_17_08,49,d_main_18af_03,49,ch17,ch18,140,146,,,,concept:언체인드,25,기록 6 · 이름 27줄,기록 2 · 이름 6줄,,,
@@ -1449,7 +1451,7 @@ callback,record,2,d_main_18_10,,relic:XX중학교가정통신문_01,,ch18,relic:
 character,auto,2,d_main_18af_02,30,event_hightechtoy_prologue,14,ch18,event_hightechtoy,146,151,,,,person:드레이크,16,기록 3 · 말함 64줄(6%) · 이름 10줄,기록 2 · 말함 39줄(9%) · 이름 17줄,,,
 character,auto,2,d_main_18af_02,122,event_hightechtoy_prologue,12,ch18,event_hightechtoy,146,151,,,,person:라플라스,13,기록 13 · 말함 250줄(24%) · 이름 71줄,기록 4 · 말함 131줄(32%) · 이름 26줄,,,
 character,auto,2,d_main_18af_02,30,event_hightechtoy_prologue,4,ch18,event_hightechtoy,146,151,,,,person:맥스웰,15,기록 3 · 말함 181줄(17%) · 이름 15줄,기록 3 · 말함 201줄(48%) · 이름 19줄,,,
-character,auto,2,d_main_18af_06,82,event_hightechtoy_prologue,8,ch18,event_hightechtoy,146,151,,,,person:슈엔,28,기록 11 · 말함 185줄(17%) · 이름 36줄,기록 3 · 말함 32줄(8%) · 이름 27줄,,,
+character,auto,2,d_main_18af_06,82,event_hightechtoy_prologue,8,ch18,event_hightechtoy,146,151,,,,person:슈엔,29,기록 11 · 말함 185줄(17%) · 이름 36줄,기록 3 · 말함 32줄(8%) · 이름 27줄,,,
 keyword,auto,2,d_main_18_12_s,27,event_hightechtoy_prologue,0,ch18,event_hightechtoy,146,151,,,,concept:타일런트_급,12,기록 1 · 이름 6줄,기록 1 · 이름 20줄,,,
 keyword,auto,2,d_main_18af_02,64,event_hightechtoy_prologue,0,ch18,event_hightechtoy,146,151,,,,org:메티스,20,기록 4 · 이름 14줄,기록 6 · 이름 23줄,,,
 keyword,auto,2,d_main_18af_06,37,event_hightechtoy_prologue,0,ch18,event_hightechtoy,146,151,,,,org:미실리스,32,기록 2 · 이름 7줄,기록 1 · 이름 9줄,,,
@@ -1462,7 +1464,7 @@ keyword,auto,2,d_main_18af_06,80,d_main_19_04,3,ch18,ch19,146,159,,,,concept:언
 keyword,auto,2,d_main_18af_05,18,d_main_20_06_s,7,ch18,ch20,146,164,,,,org:카운터스,32,기록 2 · 이름 2줄,기록 1 · 이름 7줄,,,
 character,auto,2,d_main_18af_06,8,event_doutsiders_prologue,8,ch18,event_doutsiders,146,169,,,,person:엔더슨,32,기록 2 · 말함 55줄(5%) · 이름 4줄,기록 2 · 말함 37줄(9%) · 이름 1줄,,,
 character,auto,2,d_main_18af_06,101,event_doutsiders_01_s,19,ch18,event_doutsiders,146,169,,,,person:크로우,9,기록 3 · 말함 81줄(8%) · 이름 3줄,기록 4 · 말함 64줄(15%) · 이름 7줄,,,
-character,auto,2,d_main_18af_01,42,event_maidinvalentine_prologue,5,ch18,event_maidinvalentine,146,175,,,,person:머스탱,27,기록 2 · 말함 7줄(1%),기록 2 · 말함 35줄(7%) · 이름 2줄,,,
+character,auto,2,d_main_18af_01,42,event_maidinvalentine_prologue,5,ch18,event_maidinvalentine,146,175,,,,person:머스탱,26,기록 2 · 말함 7줄(1%),기록 2 · 말함 35줄(7%) · 이름 2줄,,,
 setup_payoff,record,2,d_main_18af_01,,d_main_22_06,,ch18,ch22,146,195,E131,암시,F886,,,,,추정,확정,
 callback,record,3,d_main_18af_04,,d_main_22_11,,ch18,ch22,146,195,E174,재언급,F706,,,,,확실,확정,
 character,auto,2,d_main_18af_03,31,d_main_22_01_s,18,ch18,ch22,146,195,,,,person:에닉,22,기록 2 · 이름 4줄,기록 8 · 말함 76줄(8%) · 이름 12줄,,,
@@ -1501,7 +1503,7 @@ character,auto,2,event_hightechtoy_epilogue,61,ep:d_nikke_laplace_01,10,event_hi
 keyword,auto,1,event_hightechtoy_epilogue,67,ep:d_nikke_laplace_01,23,event_hightechtoy,char:100,151,152,,,,concept:니케,185,이름 52줄,이름 7줄,,,흔한 대상
 keyword,auto,2,event_hightechtoy_epilogue,11,ep:d_nikke_laplace_02,89,event_hightechtoy,char:100,151,152,,,,org:미실리스,32,기록 1 · 이름 9줄,기록 1 · 이름 5줄,,,
 keyword,auto,1,event_hightechtoy_epilogue,10,ep:d_nikke_laplace_01,2,event_hightechtoy,char:100,151,152,,,,place:방주,170,이름 8줄,기록 1 · 이름 10줄,,,흔한 대상
-character,auto,2,event_hightechtoy_epilogue,72,event_miraclesnow2_01_s,73,event_hightechtoy,event_miraclesnow1,151,153,,,,person:슈엔,28,기록 3 · 말함 32줄(8%) · 이름 27줄,기록 4 · 말함 116줄(9%) · 이름 14줄,,,
+character,auto,2,event_hightechtoy_epilogue,72,event_miraclesnow2_01_s,73,event_hightechtoy,event_miraclesnow1,151,153,,,,person:슈엔,29,기록 3 · 말함 32줄(8%) · 이름 27줄,기록 4 · 말함 116줄(9%) · 이름 14줄,,,
 keyword,auto,2,event_hightechtoy_epilogue,34,event_miraclesnow1_06_s,33,event_hightechtoy,event_miraclesnow1,151,153,,,,concept:양산형_니케,26,기록 3 · 이름 52줄,이름 7줄,,,
 keyword,auto,1,event_hightechtoy_05_s,22,event_miraclesnow1_06_s,23,event_hightechtoy,event_miraclesnow1,151,153,,,,place:지상,129,이름 15줄,이름 9줄,,,흔한 대상
 keyword,auto,1,event_hightechtoy_epilogue,3,ep:d_nikke_neve_02,54,event_hightechtoy,char:193,151,154,,,,concept:랩쳐,140,이름 27줄,이름 8줄,,,흔한 대상
@@ -1537,7 +1539,7 @@ keyword,auto,1,event_miraclesnow2_06_s,71,event_brandnewyear_01_s,23,event_mirac
 keyword,auto,1,event_miraclesnow2_05_e,23,ep:d_nikke_marian_p_03,69,event_miraclesnow1,char:260,153,158,,,,concept:니케,185,기록 2 · 이름 24줄,기록 2 · 이름 4줄,,,흔한 대상
 keyword,auto,2,event_miraclesnow2_epilogue,33,d_main_19_05,64,event_miraclesnow1,ch19,153,159,,,,concept:NIMPH,24,기록 3 · 이름 7줄,기록 2 · 이름 2줄,,,
 keyword,auto,2,event_miraclesnow2_04_e,24,event_ltk_01_s,21,event_miraclesnow1,event_ltk,153,187,,,,concept:양산형_니케,26,이름 7줄,기록 2 · 이름 24줄,,,
-character,auto,2,event_miraclesnow2_epilogue,51,d_main_23_01_e,103,event_miraclesnow1,ch23,153,214,,,,person:슈엔,28,기록 4 · 말함 116줄(9%) · 이름 14줄,기록 3 · 말함 60줄(5%) · 이름 11줄,,,
+character,auto,2,event_miraclesnow2_epilogue,51,d_main_23_01_e,103,event_miraclesnow1,ch23,153,214,,,,person:슈엔,29,기록 4 · 말함 116줄(9%) · 이름 14줄,기록 3 · 말함 60줄(5%) · 이름 11줄,,,
 keyword,auto,2,event_miraclesnow2_epilogue,2,d_main_23_01_e,104,event_miraclesnow1,ch23,153,214,,,,org:미실리스,32,기록 2 · 이름 13줄,기록 3 · 이름 18줄,,,
 character,auto,2,event_miraclesnow2_03_e,5,sub:중앙정부_프로토콜_00,0,event_miraclesnow1,sub:중앙정부_프로토콜_00,153,222,,,,person:엑시아,12,기록 2 · 말함 79줄(6%) · 이름 5줄,기록 1 · 말함 45줄(79%) · 이름 3줄,,,
 keyword,auto,2,event_miraclesnow1_01_s,12,ep:d_nikke_quiry_01,50,event_miraclesnow1,char:33,153,240,,,,place:전초기지,13,기록 1 · 이름 7줄,기록 1 · 이름 12줄,,,
@@ -1771,7 +1773,7 @@ character,game-condition,3,ep:d_nikke_viper_01,,fav:200501,,char:112,,174,,,,,,,
 character,auto,2,event_maidinvalentine_06_e,54,ep:d_nikke_cocoa_01,6,event_maidinvalentine,char:311,175,176,,,,person:코코아,10,기록 2 · 말함 92줄(18%) · 이름 38줄,기록 4 · 말함 185줄(52%) · 이름 47줄,,,
 character,auto,2,event_maidinvalentine_06_e,50,ep:d_nikke_soda_01,1,event_maidinvalentine,char:312,175,177,,,,person:소다,6,기록 2 · 말함 91줄(17%) · 이름 14줄,기록 5 · 말함 232줄(82%) · 이름 83줄,,,
 keyword,auto,1,event_maidinvalentine_epilogue,16,ep:d_nikke_c_1_01,12,event_maidinvalentine,char:800,175,178,,,,place:지상,129,이름 6줄,이름 14줄,,,흔한 대상
-character,auto,2,event_maidinvalentine_06_s,24,event_cherryblossom_intermission_01,37,event_maidinvalentine,event_cherryblossom,175,183,,,,person:머스탱,27,기록 2 · 말함 35줄(7%) · 이름 2줄,기록 4 · 말함 50줄(6%) · 이름 3줄,,,
+character,auto,2,event_maidinvalentine_06_s,24,event_cherryblossom_intermission_01,37,event_maidinvalentine,event_cherryblossom,175,183,,,,person:머스탱,26,기록 2 · 말함 35줄(7%) · 이름 2줄,기록 4 · 말함 50줄(6%) · 이름 3줄,,,
 callback,record,3,event_maidinvalentine_prologue,,event_perfectmaid_01_s,,event_maidinvalentine,event_perfectmaid,175,267,E1356,재언급,F807,,,,,확실,확정,
 character,auto,2,event_maidinvalentine_06_e,56,event_perfectmaid_prologue,0,event_maidinvalentine,event_perfectmaid,175,267,,,,person:에이드,9,기록 1 · 말함 135줄(26%) · 이름 10줄,기록 13 · 말함 314줄(29%) · 이름 91줄,,,
 keyword,auto,2,event_maidinvalentine_epilogue,12,event_perfectmaid_prologue,7,event_maidinvalentine,event_perfectmaid,175,267,,,,org:메이드_포_유,4,기록 2 · 이름 3줄,기록 4 · 이름 2줄,,,
@@ -1849,7 +1851,7 @@ keyword,auto,2,event_cherryblossom_04_e,40,event_ltk_01_s,21,event_cherryblossom
 callback,record,3,event_cherryblossom_04_e,,d_main_22_09,,event_cherryblossom,ch22,183,195,F835-2,드러냄,F835,,,,,확실,확정,
 character,auto,2,event_cherryblossom_intermission_01,126,d_main_22_04_s,6,event_cherryblossom,ch22,183,195,,,,person:로산나,9,기록 3 · 말함 13줄(2%) · 이름 3줄,기록 9 · 말함 185줄(19%) · 이름 11줄,,,
 keyword,auto,2,event_cherryblossom_04_e,9,d_main_22_05_s,0,event_cherryblossom,ch22,183,195,,,,org:언더월드_퀸,9,기록 4 · 이름 7줄,기록 4 · 이름 7줄,,,
-character,auto,2,event_cherryblossom_intermission_01,130,event_queensorder_04_s,198,event_cherryblossom,event_queensorder,183,207,,,,person:머스탱,27,기록 4 · 말함 50줄(6%) · 이름 3줄,기록 2 · 이름 2줄,,,
+character,auto,2,event_cherryblossom_intermission_01,130,event_queensorder_04_s,198,event_cherryblossom,event_queensorder,183,207,,,,person:머스탱,26,기록 4 · 말함 50줄(6%) · 이름 3줄,기록 2 · 이름 2줄,,,
 character,auto,2,event_cherryblossom_epilogue,60,event_queensorder_03_s,71,event_cherryblossom,event_queensorder,183,207,,,,person:목단,9,기록 5 · 말함 143줄(19%) · 이름 31줄,기록 2 · 말함 23줄(3%) · 이름 8줄,,,
 character,auto,2,event_cherryblossom_epilogue,62,event_newyearnewsword_prologue,0,event_cherryblossom,event_newyearnewsword,183,261,,,,person:노이즈,5,기록 2 · 말함 30줄(4%) · 이름 3줄,기록 3 · 말함 16줄(2%) · 이름 6줄,,,
 callback,record,3,event_cherryblossom_06_e,,fl:for_rest_00,,event_cherryblossom,fl:for_rest,183,365,E1420,재언급,F836,,,,,확실,확정,
@@ -2109,7 +2111,7 @@ callback,record,2,erelic:white_memory_19,,erelic:red_ash_lost_16,,erelic:white_m
 callback,record,2,erelic:white_memory_19,,erelic:red_ash_mini_01,,erelic:white_memory,erelic:red_ash_mini,201,253,E306,재언급,F932,,,,,추정,확정,
 setup_payoff,record,3,erelic:white_memory_20,,side:eden_spear_08,,erelic:white_memory,side:eden_spear,201,411,Q132-2,회수,Q132,,,,,확실,확정,일부 · 답 F2163
 setup_payoff,record,3,erelic:white_memory_20,,event_goddessfall1_02_e,,erelic:white_memory,event_goddessfall1,201,418,Q132-3,회수,Q132,,,,,확실,확정,전부 · 답 F2268
-character,auto,2,erelic:white_memory_20,26,event_goddessfall1_02_e,48,erelic:white_memory,event_goddessfall1,201,418,,,,person:릴리스,2,기록 6,기록 2 · 이름 4줄,,,
+character,auto,2,erelic:white_memory_20,26,event_goddessfall1_02_e,48,erelic:white_memory,event_goddessfall1,201,418,,,,person:릴리스,3,기록 6,기록 2 · 이름 4줄,,,
 setup_payoff,record,3,erelic:white_memory_19,,fl:ark_guardian_25,,erelic:white_memory,fl:ark_guardian,201,428,Q131-2,회수,Q131,,,,,확실,확정,전부 · 답 F2373
 callback,record,3,erelic:white_memory_20,,ep:d_nikke_snowwhite_heavyarms_02,,erelic:white_memory,char:471,201,429,E1628,재언급,F933,,,,,확실,확정,
 callback,record,3,erelic:white_memory_12,,ep:d_nikke_snowwhite_heavyarms_03,,erelic:white_memory,char:471,201,429,F930-2,드러냄,F930,,,,,확실,확정,
@@ -2173,7 +2175,7 @@ character,auto,2,event_queensorder_epilogue,78,ep:d_nikke_rosanna_01,1,event_que
 keyword,auto,2,event_queensorder_06_e,21,ep:d_nikke_rosanna_01,62,event_queensorder,char:280,207,208,,,,org:언더월드_퀸,9,기록 2 · 이름 7줄,기록 2 · 이름 4줄,,,
 keyword,auto,2,event_queensorder_epilogue,54,ep:d_nikke_rosanna_01,10,event_queensorder,char:280,207,208,,,,org:헤도니아,6,기록 6 · 이름 17줄,기록 4 · 이름 10줄,,,
 keyword,auto,1,event_queensorder_epilogue,35,event_bluewaterisland_prologue,7,event_queensorder,event_bluewaterisland,207,209,,,,place:방주,170,기록 2 · 이름 25줄,기록 5 · 이름 21줄,,,흔한 대상
-character,auto,2,event_queensorder_06_e,21,d_main_23_02_s,6,event_queensorder,ch23,207,214,,,,person:머스탱,27,기록 2 · 이름 2줄,기록 3 · 말함 38줄(3%) · 이름 5줄,,,
+character,auto,2,event_queensorder_06_e,21,d_main_23_02_s,6,event_queensorder,ch23,207,214,,,,person:머스탱,26,기록 2 · 이름 2줄,기록 3 · 말함 38줄(3%) · 이름 5줄,,,
 character,auto,2,event_queensorder_epilogue,41,d_main_23_03_s,16,event_queensorder,ch23,207,214,,,,person:목단,9,기록 2 · 말함 23줄(3%) · 이름 8줄,기록 4 · 말함 127줄(11%) · 이름 8줄,,,
 character,auto,2,event_queensorder_epilogue,41,d_main_23_03_e,16,event_queensorder,ch23,207,214,,,,person:사쿠라,10,기록 2 · 말함 86줄(13%) · 이름 21줄,기록 2 · 말함 28줄(2%) · 이름 5줄,,,
 keyword,auto,1,event_queensorder_epilogue,35,d_main_23_02_s,54,event_queensorder,ch23,207,214,,,,org:중앙_정부,66,기록 1 · 이름 6줄,기록 2 · 이름 16줄,,,흔한 대상
@@ -2260,7 +2262,7 @@ character,auto,2,d_main_23af_02,3,d_main_24_01,35,ch23,ch24,214,219,,,,person:�
 character,auto,2,d_main_23_11_e,36,d_main_24_02,144,ch23,ch24,214,219,,,,person:바이퍼,11,기록 7 · 말함 104줄(9%) · 이름 27줄,기록 10 · 말함 131줄(9%) · 이름 22줄,,,
 character,auto,2,d_main_23af_02,81,d_main_24_11,2,ch23,ch24,214,219,,,,person:버닝엄,14,기록 2 · 말함 44줄(4%) · 이름 2줄,기록 4 · 말함 83줄(6%) · 이름 1줄,,,
 character,auto,2,d_main_23_07_e,80,d_main_24_04,3,ch23,ch24,214,219,,,,person:사쿠라,10,기록 2 · 말함 28줄(2%) · 이름 5줄,기록 2 · 말함 13줄(1%) · 이름 2줄,,,
-character,auto,2,d_main_23af_02,64,d_main_24_03,29,ch23,ch24,214,219,,,,person:슈엔,28,기록 3 · 말함 60줄(5%) · 이름 11줄,기록 8 · 말함 74줄(5%) · 이름 46줄,,,
+character,auto,2,d_main_23af_02,64,d_main_24_03,29,ch23,ch24,214,219,,,,person:슈엔,29,기록 3 · 말함 60줄(5%) · 이름 11줄,기록 8 · 말함 74줄(5%) · 이름 46줄,,,
 character,auto,2,d_main_23af_02,37,d_main_24_09,2,ch23,ch24,214,219,,,,person:에닉,22,기록 3 · 말함 21줄(2%) · 이름 12줄,기록 10 · 말함 103줄(7%) · 이름 17줄,,,
 character,auto,2,d_main_23_11_e,78,d_main_24_03,25,ch23,ch24,214,219,,,,person:유니,13,기록 4 · 말함 39줄(3%) · 이름 20줄,기록 8 · 말함 99줄(7%) · 이름 45줄,,,
 character,auto,2,d_main_23af_02,75,d_main_24_03,29,ch23,ch24,214,219,,,,person:잉그리드,37,기록 3 · 말함 52줄(4%),기록 8 · 말함 82줄(6%) · 이름 5줄,,,
@@ -2281,7 +2283,7 @@ setup_payoff,record,2,d_main_23af_02,,d_main_24af_06,,ch23,ch25,214,241,Q141-2,�
 keyword,auto,2,d_main_23af_01,52,d_main_25_04,101,ch23,ch25,214,241,,,,org:갓데스,30,기록 3 · 이름 6줄,기록 5 · 이름 3줄,,,
 setup_payoff,record,2,d_main_23af_02,,erelic:red_ash_mini_07,,ch23,erelic:red_ash_mini,214,253,Q141-3,회수,Q141,,,,,추정,확정,일부 · 답 F1190
 character,auto,2,d_main_23_10_e,79,event_lionheart_prologue,0,ch23,event_lionheart,214,263,,,,person:길로틴,6,기록 2 · 말함 51줄(4%) · 이름 9줄,기록 3 · 말함 59줄(6%) · 이름 26줄,,,
-character,auto,2,d_main_23af_02,52,event_lionheart_03_s,22,ch23,event_lionheart,214,263,,,,person:머스탱,27,기록 3 · 말함 38줄(3%) · 이름 5줄,기록 4 · 말함 56줄(5%) · 이름 3줄,,,
+character,auto,2,d_main_23af_02,52,event_lionheart_03_s,22,ch23,event_lionheart,214,263,,,,person:머스탱,26,기록 3 · 말함 38줄(3%) · 이름 5줄,기록 4 · 말함 56줄(5%) · 이름 3줄,,,
 character,auto,2,d_main_23_07_e,109,event_dirtybackyard_prologue,0,ch23,event_dirtybackyard,214,265,,,,person:목단,9,기록 4 · 말함 127줄(11%) · 이름 8줄,기록 13 · 말함 419줄(50%) · 이름 73줄,,,
 keyword,auto,2,d_main_23_07_e,88,event_dirtybackyard_05_e,0,ch23,event_dirtybackyard,214,265,,,,org:언더월드_퀸,9,기록 2 · 이름 2줄,기록 2 · 이름 3줄,,,
 keyword,auto,2,d_main_23_11_e,59,event_perfectmaid_01_e,40,ch23,event_perfectmaid,214,267,,,,org:메티스,20,기록 1 · 이름 9줄,이름 6줄,,,
@@ -2333,7 +2335,7 @@ character,auto,2,d_main_24af_03,55,d_main_24af_05,16,ch24,ch25,219,241,,,,person
 character,auto,2,d_main_24af_01,53,d_main_24af_05,13,ch24,ch25,219,241,,,,person:도로시,31,기록 11 · 말함 95줄(6%) · 이름 27줄,기록 19 · 말함 247줄(23%) · 이름 40줄,,,
 character,auto,2,d_main_24_09,61,d_main_25_04,2,ch24,ch25,219,241,,,,person:도반,8,기록 2 · 말함 32줄(2%) · 이름 7줄,기록 3 · 말함 43줄(4%) · 이름 1줄,,,
 character,auto,2,d_main_24af_03,73,d_main_25_03_s,15,ch24,ch25,219,241,,,,person:레드_후드,26,기록 4 · 이름 2줄,기록 5 · 말함 38줄(4%) · 이름 6줄,,,
-character,auto,2,d_main_24af_02,27,d_main_24af_06,33,ch24,ch25,219,241,,,,person:슈엔,28,기록 8 · 말함 74줄(5%) · 이름 46줄,기록 3 · 말함 49줄(5%) · 이름 14줄,,,
+character,auto,2,d_main_24af_02,27,d_main_24af_06,33,ch24,ch25,219,241,,,,person:슈엔,29,기록 8 · 말함 74줄(5%) · 이름 46줄,기록 3 · 말함 49줄(5%) · 이름 14줄,,,
 character,auto,2,d_main_24af_02,21,d_main_24af_06,79,ch24,ch25,219,241,,,,person:에닉,22,기록 10 · 말함 103줄(7%) · 이름 17줄,기록 6 · 말함 43줄(4%) · 이름 9줄,,,
 character,auto,2,d_main_24af_03,53,d_main_24af_05,8,ch24,ch25,219,241,,,,person:인디빌리아,9,기록 5 · 말함 24줄(2%) · 이름 12줄,기록 2 · 이름 7줄,,,
 character,auto,2,d_main_24af_03,54,d_main_24af_05,16,ch24,ch25,219,241,,,,person:토커티브,15,기록 5 · 말함 26줄(2%) · 이름 11줄,기록 2 · 이름 9줄,,,
@@ -2576,7 +2578,7 @@ setup_payoff,record,3,d_main_25_08_e,,d_main_26_02_s,,ch25,ch26,241,246,Q151-2,�
 character,auto,2,d_main_25_08_e,74,d_main_26_01_s,13,ch25,ch26,241,246,,,,person:도로시,31,기록 19 · 말함 247줄(23%) · 이름 40줄,기록 15 · 말함 235줄(21%) · 이름 36줄,,,
 character,auto,2,d_main_25_08_e,98,d_main_26_01_s,1,ch25,ch26,241,246,,,,person:레드_후드,26,기록 5 · 말함 38줄(4%) · 이름 6줄,기록 32 · 말함 353줄(31%) · 이름 66줄,,,
 character,auto,2,d_main_25_04,116,d_main_26_09,0,ch25,ch26,241,246,,,,person:버닝엄,14,기록 3 · 말함 30줄(3%) · 이름 4줄,기록 4 · 말함 34줄(3%),,,
-character,auto,2,d_main_25_07_s,34,d_main_26_10,5,ch25,ch26,241,246,,,,person:슈엔,28,기록 3 · 말함 49줄(5%) · 이름 14줄,기록 3 · 말함 24줄(2%) · 이름 4줄,,,
+character,auto,2,d_main_25_07_s,34,d_main_26_10,5,ch25,ch26,241,246,,,,person:슈엔,29,기록 3 · 말함 49줄(5%) · 이름 14줄,기록 3 · 말함 24줄(2%) · 이름 4줄,,,
 character,auto,2,d_main_25_04,117,d_main_26_10,0,ch25,ch26,241,246,,,,person:엔더슨,32,기록 9 · 말함 100줄(9%),기록 2 · 말함 33줄(3%),,,
 character,auto,2,d_main_25_08_e,59,d_main_26_01_s,21,ch25,ch26,241,246,,,,person:차임,8,기록 2 · 말함 23줄(2%) · 이름 2줄,기록 4 · 말함 76줄(7%) · 이름 11줄,,,
 character,auto,2,d_main_25_08_e,60,d_main_26_01_s,34,ch25,ch26,241,246,,,,person:크라운,8,기록 2 · 말함 14줄(1%),기록 4 · 말함 48줄(4%) · 이름 6줄,,,
@@ -2673,7 +2675,7 @@ keyword,auto,2,d_main_26_03_s,63,d_main_28_af_01,4,ch26,ch29,246,291,,,,org:필�
 setup_payoff,record,3,d_main_26_07_e,,d_main_32_01,,ch26,ch32,246,310,E270,암시,F1541,,,,,확실,확정,
 callback,record,3,d_main_26_07_e,,d_main_32_01,,ch26,ch32,246,310,E449,재언급,F1129,,,,,확실,확정,
 keyword,auto,2,d_main_26_12_s,22,d_main_32_07,13,ch26,ch32,246,310,,,,place:에덴,25,기록 3 · 이름 10줄,기록 2 · 이름 2줄,,,
-character,auto,2,d_main_26_12_s,5,side:wordless_02,9,ch26,side:wordless,246,331,,,,person:슈엔,28,기록 3 · 말함 24줄(2%) · 이름 4줄,기록 8 · 말함 85줄(8%) · 이름 48줄,,,
+character,auto,2,d_main_26_12_s,5,side:wordless_02,9,ch26,side:wordless,246,331,,,,person:슈엔,29,기록 3 · 말함 24줄(2%) · 이름 4줄,기록 8 · 말함 85줄(8%) · 이름 48줄,,,
 setup_payoff,record,3,d_main_26_08,,d_main_34_09_e,,ch26,ch34,246,336,E271,암시,Q168,,,,,확실,확정,
 callback,record,3,d_main_26_07_s,,event_footstepwalkrun2_06_e,,ch26,event_footstepwalkrun1,246,350,E575,재언급,F1126,,,,,확실,확정,
 setup_payoff,record,3,d_main_26_08,,d_main_35bf_01,,ch26,ch35,246,358,E271,암시,F1786,,,,,확실,확정,
@@ -2919,7 +2921,7 @@ character,auto,2,event_lionheart_epilogue,48,ep:d_nikke_leona_01,1,event_lionhea
 character,auto,2,event_lionheart_06_e,92,ep:d_nikke_leona_01,7,event_lionheart,char:382,263,264,,,,person:티미,2,기록 2 · 말함 14줄(1%) · 이름 55줄,기록 2 · 말함 33줄(11%) · 이름 80줄,,,
 keyword,auto,2,event_lionheart_06_s,83,ep:d_nikke_leona_01,19,event_lionheart,char:382,263,264,,,,org:해피_주,3,기록 5 · 이름 2줄,기록 2 · 이름 1줄,,,
 keyword,auto,1,event_lionheart_epilogue,47,ep:d_nikke_leona_02,40,event_lionheart,char:382,263,264,,,,place:지상,129,이름 24줄,이름 12줄,,,흔한 대상
-character,auto,2,event_lionheart_epilogue,47,event_dirtybackyard_06_e,1,event_lionheart,event_dirtybackyard,263,265,,,,person:머스탱,27,기록 4 · 말함 56줄(5%) · 이름 3줄,기록 2 · 이름 3줄,,,
+character,auto,2,event_lionheart_epilogue,47,event_dirtybackyard_06_e,1,event_lionheart,event_dirtybackyard,263,265,,,,person:머스탱,26,기록 4 · 말함 56줄(5%) · 이름 3줄,기록 2 · 이름 3줄,,,
 character,auto,2,event_lionheart_06_e,88,event_secretgarden_01_s,21,event_lionheart,event_secretgarden,263,345,,,,person:비스킷,5,기록 1 · 말함 238줄(23%) · 이름 23줄,기록 3 · 말함 278줄(26%) · 이름 26줄,,,
 character,auto,2,event_lionheart_epilogue,17,event_icedragonsaga1_prologue,14,event_lionheart,event_icedragonsaga1,263,347,,,,person:길로틴,6,기록 3 · 말함 59줄(6%) · 이름 26줄,기록 25 · 말함 902줄(37%) · 이름 205줄,,,
 prereq,game-condition,3,ep:d_nikke_leona_01,,ep:d_nikke_leona_02,,char:382,char:382,264,264,,,,,,,,,,condition_scenario_group_id
@@ -2943,7 +2945,7 @@ setup_payoff,record,2,event_dirtybackyard_04_e,,d_main_30_02,,event_dirtybackyar
 callback,record,3,event_dirtybackyard_06_e,,d_main_30_02,,event_dirtybackyard,ch30,265,293,E379,재언급,F1265,,,,,확실,확정,
 callback,record,3,event_dirtybackyard_06_e,,d_main_30_02,,event_dirtybackyard,ch30,265,293,E379,재언급,F1264,,,,,확실,확정,
 keyword,auto,2,event_dirtybackyard_04_e,30,d_main_30_02,99,event_dirtybackyard,ch30,265,293,,,,place:블랙넷,6,기록 3 · 이름 2줄,기록 1 · 이름 7줄,,,
-character,auto,2,event_dirtybackyard_06_e,49,event_goldencoinrush1_prologue,0,event_dirtybackyard,event_goldencoinrush1,265,300,,,,person:머스탱,27,기록 2 · 이름 3줄,기록 2 · 말함 322줄(11%) · 이름 25줄,,,
+character,auto,2,event_dirtybackyard_06_e,49,event_goldencoinrush1_prologue,0,event_dirtybackyard,event_goldencoinrush1,265,300,,,,person:머스탱,26,기록 2 · 이름 3줄,기록 2 · 말함 322줄(11%) · 이름 25줄,,,
 character,auto,2,event_dirtybackyard_epilogue,15,event_beautyfullshot1_prologue,30,event_dirtybackyard,event_beautyfullshot1,265,305,,,,person:사쿠라,10,기록 2 · 말함 23줄(3%) · 이름 3줄,기록 10 · 말함 509줄(25%) · 이름 93줄,,,
 keyword,auto,2,event_dirtybackyard_06_e,70,event_beautyfullshot1_01_s,0,event_dirtybackyard,event_beautyfullshot1,265,305,,,,org:언더월드_퀸,9,기록 2 · 이름 3줄,기록 5 · 이름 4줄,,,
 keyword,auto,2,event_dirtybackyard_epilogue,107,event_beautyfullshot2_03_s,75,event_dirtybackyard,event_beautyfullshot1,265,305,,,,place:아우터_림,43,기록 8 · 이름 26줄,기록 2 · 이름 5줄,,,
@@ -3417,7 +3419,7 @@ character,auto,2,event_goldencoinrush2_epilogue,24,ep:d_nikke_alice_wonderlandbu
 character,auto,2,event_goldencoinrush2_epilogue,28,ep:d_nikke_alice_wonderlandbunny_01,2,event_goldencoinrush1,char:195,300,302,,,,person:앨리스,6,기록 5 · 말함 428줄(15%) · 이름 88줄,기록 4 · 말함 188줄(57%) · 이름 66줄,,,
 character,auto,2,event_goldencoinrush2_06_e,25,event_claymore_02_e,81,event_goldencoinrush1,event_claymore,300,303,,,,person:밀크,10,기록 3 · 말함 109줄(4%) · 이름 26줄,기록 6 · 말함 234줄(24%) · 이름 85줄,,,
 keyword,auto,1,event_goldencoinrush1_b02_s,6,event_claymore_prologue,6,event_goldencoinrush1,event_claymore,300,303,,,,concept:니케,185,이름 11줄,이름 17줄,,,흔한 대상
-character,auto,2,event_goldencoinrush2_06_s,56,event_beautyfullshot1_01_e,0,event_goldencoinrush1,event_beautyfullshot1,300,305,,,,person:머스탱,27,기록 2 · 말함 322줄(11%) · 이름 25줄,기록 5 · 말함 60줄(3%) · 이름 7줄,,,
+character,auto,2,event_goldencoinrush2_06_s,56,event_beautyfullshot1_01_e,0,event_goldencoinrush1,event_beautyfullshot1,300,305,,,,person:머스탱,26,기록 2 · 말함 322줄(11%) · 이름 25줄,기록 5 · 말함 60줄(3%) · 이름 7줄,,,
 character,auto,2,event_goldencoinrush2_06_e,36,event_beautyfullshot1_prologue,11,event_goldencoinrush1,event_beautyfullshot1,300,305,,,,person:메어리,9,기록 3 · 말함 121줄(4%) · 이름 22줄,기록 3 · 말함 75줄(4%) · 이름 9줄,,,
 character,auto,2,event_goldencoinrush2_06_e,39,event_jinxplayer_01_s,7,event_goldencoinrush1,event_jinxplayer,300,325,,,,person:누아르,7,기록 2 · 말함 16줄(1%) · 이름 10줄,기록 2 · 말함 86줄(9%) · 이름 15줄,,,
 character,auto,2,event_goldencoinrush2_06_e,38,event_jinxplayer_01_s,8,event_goldencoinrush1,event_jinxplayer,300,325,,,,person:블랑,6,기록 3 · 말함 67줄(2%) · 이름 22줄,기록 2 · 말함 117줄(12%) · 이름 17줄,,,
@@ -3466,7 +3468,7 @@ keyword,auto,1,event_beautyfullshot2_05_e,65,d_main_33_01,1,event_beautyfullshot
 callback,record,3,event_beautyfullshot2_02_e,,event_icedragonsaga2_01_s,,event_beautyfullshot1,event_icedragonsaga1,305,347,E1412,재언급,F1513,,,,,확실,확정,
 character,auto,2,event_beautyfullshot2_epilogue,23,event_icedragonsaga1_02_s,114,event_beautyfullshot1,event_icedragonsaga1,305,347,,,,person:메이든,6,기록 6 · 말함 189줄(9%) · 이름 31줄,기록 16 · 말함 576줄(23%) · 이름 129줄,,,
 setup_payoff,record,3,event_beautyfullshot1_01_e,,event_footstepwalkrun1_06_s,,event_beautyfullshot1,event_footstepwalkrun1,305,350,Q198-2,회수,Q198,,,,,확실,확정,일부 · 답 F1748
-character,auto,2,event_beautyfullshot2_epilogue,68,event_romanticvalentine_04_e,90,event_beautyfullshot1,event_romanticvalentine,305,355,,,,person:머스탱,27,기록 5 · 말함 60줄(3%) · 이름 7줄,기록 2 · 말함 20줄(2%) · 이름 3줄,,,
+character,auto,2,event_beautyfullshot2_epilogue,68,event_romanticvalentine_04_e,90,event_beautyfullshot1,event_romanticvalentine,305,355,,,,person:머스탱,26,기록 5 · 말함 60줄(3%) · 이름 7줄,기록 2 · 말함 20줄(2%) · 이름 3줄,,,
 character,auto,2,event_beautyfullshot2_06_e,76,ep:d_nikke_ce005_03_01,0,event_beautyfullshot1,char:836,305,362,,,,person:메어리,9,기록 3 · 말함 75줄(4%) · 이름 9줄,기록 1 · 말함 73줄(36%) · 이름 17줄,,,
 keyword,auto,2,event_beautyfullshot2_03_e,54,d_main_38_07_e,52,event_beautyfullshot1,ch38,305,375,,,,place:아우터_림,43,기록 2 · 이름 5줄,기록 3 · 이름 8줄,,,
 character,auto,2,event_beautyfullshot2_epilogue,18,event_lordforjustice_01_s,5,event_beautyfullshot1,event_lordforjustice,305,385,,,,person:목단,9,기록 2 · 말함 53줄(3%) · 이름 7줄,기록 10 · 말함 150줄(21%) · 이름 37줄,,,
@@ -3749,7 +3751,7 @@ keyword,auto,2,side:wordless_09,74,d_main_33_02_s,15,side:wordless,ch33,331,334,
 keyword,auto,1,side:wordless_13,87,d_main_33_02_e,37,side:wordless,ch33,331,334,,,,concept:랩쳐,140,이름 10줄,이름 5줄,,,흔한 대상
 keyword,auto,1,side:wordless_09,65,d_main_33_01,9,side:wordless,ch33,331,334,,,,place:방주,170,기록 1 · 이름 9줄,기록 1 · 이름 15줄,,,흔한 대상
 keyword,auto,1,side:wordless_13,75,d_main_34_06_e,142,side:wordless,ch34,331,336,,,,place:지상,129,이름 8줄,기록 1 · 이름 6줄,,,흔한 대상
-character,auto,2,side:wordless_13,78,event_secretgarden_prologue,17,side:wordless,event_secretgarden,331,345,,,,person:슈엔,28,기록 8 · 말함 85줄(8%) · 이름 48줄,기록 2 · 이름 19줄,,,
+character,auto,2,side:wordless_13,78,event_secretgarden_prologue,17,side:wordless,event_secretgarden,331,345,,,,person:슈엔,29,기록 8 · 말함 85줄(8%) · 이름 48줄,기록 2 · 이름 19줄,,,
 keyword,auto,2,side:wordless_08,57,event_secretgarden_prologue,21,side:wordless,event_secretgarden,331,345,,,,org:미실리스,32,기록 3 · 이름 10줄,기록 3 · 이름 7줄,,,
 callback,record,2,side:wordless_03,,event_wisdomspring_06_s,,side:wordless,event_wisdomspring,331,353,E584,재언급,Q213,,,,,추정,확정,
 character,auto,2,side:wordless_03,72,event_wisdomspring_03_e,19,side:wordless,event_wisdomspring,331,353,,,,person:지엔,7,기록 2 · 이름 6줄,기록 9 · 말함 90줄(13%) · 이름 12줄,,,
@@ -4044,7 +4046,7 @@ character,auto,2,event_secretgarden_epilogue,41,ep:d_nikke_flora_01,6,event_secr
 keyword,auto,1,event_secretgarden_02_e,30,event_icedragonsaga1_02_s,10,event_secretgarden,event_icedragonsaga1,345,347,,,,concept:랩쳐,140,이름 9줄,이름 15줄,,,흔한 대상
 keyword,auto,1,event_secretgarden_06_s,100,event_icedragonsaga1_02_s,4,event_secretgarden,event_icedragonsaga1,345,347,,,,place:방주,170,이름 7줄,이름 17줄,,,흔한 대상
 keyword,auto,1,event_secretgarden_04_s,38,event_footstepwalkrun1_01_s,4,event_secretgarden,event_footstepwalkrun1,345,350,,,,place:지상,129,이름 19줄,이름 46줄,,,흔한 대상
-character,auto,2,event_secretgarden_06_e,114,ep:d_nikke_mana_02,19,event_secretgarden,char:290,345,354,,,,person:슈엔,28,기록 2 · 이름 19줄,기록 2 · 이름 6줄,,,
+character,auto,2,event_secretgarden_06_e,114,ep:d_nikke_mana_02,19,event_secretgarden,char:290,345,354,,,,person:슈엔,29,기록 2 · 이름 19줄,기록 2 · 이름 6줄,,,
 keyword,auto,2,event_secretgarden_06_e,114,d_main_35bf_07,54,event_secretgarden,ch35,345,358,,,,org:미실리스,32,기록 3 · 이름 7줄,기록 2 · 이름 5줄,,,
 callback,record,3,event_secretgarden_04_s,,fl:for_rest_03,,event_secretgarden,fl:for_rest,345,365,E1424,재언급,F1723,,,,,확실,확정,
 callback,record,3,event_secretgarden_prologue,,fl:for_rest_03,,event_secretgarden,fl:for_rest,345,365,E1424,재언급,F1722,,,,,확실,확정,
@@ -4181,13 +4183,13 @@ prereq,game-condition,3,ep:d_nikke_mana_02,,ep:d_nikke_mana_03,,char:290,char:29
 prereq,game-condition,3,ep:d_nikke_mana_03,,ep:d_nikke_mana_04,,char:290,char:290,354,354,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_mana_04,,ep:d_nikke_mana_05,,char:290,char:290,354,354,,,,,,,,,,condition_scenario_group_id
 keyword,auto,1,ep:d_nikke_mana_04,52,event_romanticvalentine_prologue,32,char:290,event_romanticvalentine,354,355,,,,concept:니케,185,이름 5줄,이름 8줄,,,흔한 대상
-character,auto,2,ep:d_nikke_mana_04,28,d_main_35bf_07,64,char:290,ch35,354,358,,,,person:슈엔,28,기록 2 · 이름 6줄,기록 8 · 이름 24줄,,,
+character,auto,2,ep:d_nikke_mana_04,28,d_main_35bf_07,64,char:290,ch35,354,358,,,,person:슈엔,29,기록 2 · 이름 6줄,기록 8 · 이름 24줄,,,
 character,auto,2,ep:d_nikke_mana_05,79,fl:for_rest_01,47,char:290,fl:for_rest,354,365,,,,person:마나,12,기록 5 · 말함 167줄(75%) · 이름 37줄,기록 2 · 말함 38줄(4%) · 이름 1줄,,,
 character,auto,2,ep:d_nikke_mana_02,50,d_main_41_af_03,0,char:290,ch41,354,414,,,,person:에테르,12,말함 30줄(13%) · 이름 8줄,기록 2 · 말함 35줄(2%) · 이름 5줄,,,
 keyword,auto,2,ep:d_nikke_mana_05,54,d_main_41_af_03,0,char:290,ch41,354,414,,,,org:M.M.R.,12,기록 1 · 이름 5줄,기록 3 · 이름 1줄,,,
 character,auto,2,event_romanticvalentine_epilogue,85,ep:d_nikke_mast_romanticmaid_01,5,event_romanticvalentine,char:354,355,356,,,,person:마스트,9,기록 1 · 말함 338줄(30%) · 이름 35줄,기록 3 · 말함 253줄(90%) · 이름 60줄,,,
 character,auto,2,event_romanticvalentine_epilogue,84,ep:d_nikke_anchor_innocentmaid_02,32,event_romanticvalentine,char:355,355,357,,,,person:신,4,기록 3 · 말함 157줄(14%) · 이름 22줄,말함 33줄(11%) · 이름 2줄,,,
-character,auto,2,event_romanticvalentine_06_e,7,d_main_35bf_02,17,event_romanticvalentine,ch35,355,358,,,,person:머스탱,27,기록 2 · 말함 20줄(2%) · 이름 3줄,기록 4 · 말함 46줄(3%) · 이름 8줄,,,
+character,auto,2,event_romanticvalentine_06_e,7,d_main_35bf_02,17,event_romanticvalentine,ch35,355,358,,,,person:머스탱,26,기록 2 · 말함 20줄(2%) · 이름 3줄,기록 4 · 말함 46줄(3%) · 이름 8줄,,,
 keyword,auto,1,event_romanticvalentine_06_e,19,d_main_35bf_02,35,event_romanticvalentine,ch35,355,358,,,,concept:니케,185,이름 8줄,이름 17줄,,,흔한 대상
 keyword,auto,1,event_romanticvalentine_epilogue,77,d_main_35bf_01,29,event_romanticvalentine,ch35,355,358,,,,place:방주,170,이름 8줄,기록 1 · 이름 23줄,,,흔한 대상
 keyword,auto,1,event_romanticvalentine_epilogue,77,d_main_35bf_02,26,event_romanticvalentine,ch35,355,358,,,,place:지상,129,이름 9줄,기록 1 · 이름 16줄,,,흔한 대상
@@ -4222,7 +4224,7 @@ character,auto,1,d_main_35_09_e,98,d_main_36_01,51,ch35,ch36,358,360,,,,person:�
 character,auto,2,d_main_35_09_e,97,d_main_36_01,0,ch35,ch36,358,360,,,,person:레비아탄,19,기록 11 · 말함 47줄(3%) · 이름 21줄,기록 15 · 말함 325줄(33%) · 이름 28줄,,,
 character,auto,2,d_main_35_08_e,105,d_main_36_01,39,ch35,ch36,358,360,,,,person:베히모스,14,기록 2 · 이름 9줄,기록 7 · 이름 31줄,,,
 character,auto,2,d_main_35_07,83,d_main_36_02,25,ch35,ch36,358,360,,,,person:세이렌,14,기록 3 · 이름 13줄,기록 4 · 이름 15줄,,,
-character,auto,2,d_main_35_09_s,41,d_main_36_04,97,ch35,ch36,358,360,,,,person:슈엔,28,기록 8 · 이름 24줄,기록 2 · 이름 10줄,,,
+character,auto,2,d_main_35_09_s,41,d_main_36_04,97,ch35,ch36,358,360,,,,person:슈엔,29,기록 8 · 이름 24줄,기록 2 · 이름 10줄,,,
 character,auto,2,d_main_35_09_e,94,d_main_36_01,10,ch35,ch36,358,360,,,,person:신데렐라,26,기록 10 · 말함 180줄(12%) · 이름 49줄,기록 4 · 말함 106줄(11%) · 이름 33줄,,,
 character,auto,1,d_main_35_04,126,d_main_36_04,2,ch35,ch36,358,360,,,,person:아니스,119,기록 7 · 말함 126줄(9%) · 이름 28줄,기록 4 · 말함 83줄(8%) · 이름 13줄,,,흔한 대상
 keyword,auto,1,d_main_35_08_e,66,d_main_36_02,90,ch35,ch36,358,360,,,,concept:니케,185,이름 17줄,이름 13줄,,,흔한 대상
@@ -4241,7 +4243,7 @@ character,auto,2,d_main_35bf_06,31,d_main_37_02_e,23,ch35,ch37,358,373,,,,person
 keyword,auto,2,d_main_35_07,60,d_main_37_02_s,45,ch35,ch37,358,373,,,,org:미실리스,32,기록 2 · 이름 5줄,기록 2 · 이름 6줄,,,
 keyword,auto,2,d_main_35bf_06,21,d_main_37_02_s,45,ch35,ch37,358,373,,,,org:엘리시온,17,기록 2 · 이름 6줄,기록 3 · 이름 8줄,,,
 keyword,auto,2,d_main_35_08_e,95,event_unbreakablesphere1_intermission_01,35,ch35,event_unbreakablesphere1,358,377,,,,concept:콜링_시그널,4,기록 1 · 이름 7줄,기록 4 · 이름 13줄,,,
-character,auto,2,d_main_35_04,125,d_main_39_af_05,4,ch35,ch39,358,396,,,,person:머스탱,27,기록 4 · 말함 46줄(3%) · 이름 8줄,기록 6 · 말함 41줄(3%) · 이름 5줄,,,
+character,auto,2,d_main_35_04,125,d_main_39_af_05,4,ch35,ch39,358,396,,,,person:머스탱,26,기록 4 · 말함 46줄(3%) · 이름 8줄,기록 6 · 말함 41줄(3%) · 이름 5줄,,,
 character,auto,2,d_main_35_07,11,d_main_39_af_03,0,ch35,ch39,358,396,,,,person:에닉,22,기록 2,기록 2 · 이름 5줄,,,
 keyword,auto,2,d_main_35_06,36,d_main_39_11,31,ch35,ch39,358,396,,,,concept:언체인드,25,기록 5 · 이름 10줄,기록 2 · 이름 1줄,,,
 keyword,auto,2,d_main_35_08_e,80,fl:absolute_01,62,ch35,fl:absolute,358,400,,,,org:앱솔루트,15,이름 5줄,기록 6 · 이름 40줄,,,
@@ -4265,7 +4267,7 @@ character,auto,2,d_main_36_09_e,51,relic:할일목록_00,0,ch36,relic:할일목�
 character,auto,2,d_main_36_09_s,96,relic:할일목록_00,0,ch36,relic:할일목록,360,361,,,,person:베히모스,14,기록 7 · 이름 31줄,기록 2 · 이름 3줄,,,
 keyword,auto,1,d_main_36_09_e,13,ep:d_nikke_ce005_03_01,10,ch36,char:836,360,362,,,,concept:니케,185,이름 13줄,이름 16줄,,,흔한 대상
 keyword,auto,1,d_main_36_09_e,15,ep:d_nikke_ce005_02_01,39,ch36,char:835,360,363,,,,place:방주,170,기록 1 · 이름 15줄,이름 6줄,,,흔한 대상
-character,auto,2,d_main_36_09_e,54,fl:for_rest_01,91,ch36,fl:for_rest,360,365,,,,person:슈엔,28,기록 2 · 이름 10줄,기록 2 · 이름 5줄,,,
+character,auto,2,d_main_36_09_e,54,fl:for_rest_01,91,ch36,fl:for_rest,360,365,,,,person:슈엔,29,기록 2 · 이름 10줄,기록 2 · 이름 5줄,,,
 setup_payoff,record,2,d_main_36_07_e,,side:mudfish_12,,ch36,side:mudfish,360,370,E625,암시,F1849,,,,,추정,확정,
 setup_payoff,record,3,d_main_36_05,,side:mudfish_14,,ch36,side:mudfish,360,370,Q232-2,회수,Q232,,,,,확실,확정,전부 · 답 F1849
 callback,record,3,d_main_36_07_s,,side:mudfish_09,,ch36,side:mudfish,360,370,F1815-2,드러냄,F1815,,,,,확실,확정,
@@ -4337,7 +4339,7 @@ character,auto,2,fl:for_rest_14,25,ep:d_nikke_trina_03,53,fl:for_rest,char:412,3
 keyword,auto,1,fl:for_rest_13,83,event_newflavor_01_e,64,fl:for_rest,event_newflavor,365,367,,,,concept:니케,185,이름 23줄,이름 7줄,,,흔한 대상
 keyword,auto,1,fl:for_rest_14,104,event_newflavor_prologue,7,fl:for_rest,event_newflavor,365,367,,,,place:방주,170,기록 2 · 이름 17줄,기록 2 · 이름 8줄,,,흔한 대상
 keyword,auto,1,fl:for_rest_13,25,event_newflavor_02_e,83,fl:for_rest,event_newflavor,365,367,,,,place:지상,129,이름 26줄,이름 16줄,,,흔한 대상
-character,auto,2,fl:for_rest_03,33,d_main_37_01,1,fl:for_rest,ch37,365,373,,,,person:슈엔,28,기록 2 · 이름 5줄,기록 3 · 이름 11줄,,,
+character,auto,2,fl:for_rest_03,33,d_main_37_01,1,fl:for_rest,ch37,365,373,,,,person:슈엔,29,기록 2 · 이름 5줄,기록 3 · 이름 11줄,,,
 character,auto,2,fl:for_rest_01,180,event_unbreakablesphere1_prologue,0,fl:for_rest,event_unbreakablesphere1,365,377,,,,person:마나,12,기록 2 · 말함 38줄(4%) · 이름 1줄,기록 4 · 말함 123줄(4%) · 이름 19줄,,,
 keyword,auto,2,fl:for_rest_12,17,event_ce006_1_06_e,89,fl:for_rest,event_ce006,365,387,,,,item:이터널_라이프,4,기록 2 · 이름 4줄,기록 2 · 이름 2줄,,,
 prereq,game-condition,3,ep:d_nikke_trina_01,,ep:d_nikke_trina_02,,char:412,char:412,366,366,,,,,,,,,,condition_scenario_group_id
@@ -4430,7 +4432,7 @@ keyword,auto,2,d_main_37_05,62,d_main_38_01_s,74,ch37,ch38,373,375,,,,org:이지
 keyword,auto,2,d_main_37_08_s,34,d_main_38_01_s,78,ch37,ch38,373,375,,,,org:포비스트,20,기록 3 · 이름 2줄,기록 2 · 이름 11줄,,,
 keyword,auto,1,d_main_37_08_s,16,d_main_38_01_s,92,ch37,ch38,373,375,,,,place:방주,170,기록 4 · 이름 20줄,기록 1 · 이름 14줄,,,흔한 대상
 keyword,auto,2,d_main_37_08_e,51,d_main_38_01_s,45,ch37,ch38,373,375,,,,place:어드마이어_호,9,기록 2 · 이름 35줄,기록 1 · 이름 17줄,,,
-character,auto,2,d_main_37_05,77,event_unbreakablesphere1_01_s,70,ch37,event_unbreakablesphere1,373,377,,,,person:슈엔,28,기록 3 · 이름 11줄,기록 2 · 이름 3줄,,,
+character,auto,2,d_main_37_05,77,event_unbreakablesphere1_01_s,70,ch37,event_unbreakablesphere1,373,377,,,,person:슈엔,29,기록 3 · 이름 11줄,기록 2 · 이름 3줄,,,
 keyword,auto,2,d_main_37_05,63,event_unbreakablesphere1_04_s,7,ch37,event_unbreakablesphere1,373,377,,,,org:미실리스,32,기록 2 · 이름 6줄,기록 2 · 이름 2줄,,,
 keyword,auto,1,d_main_37_07,7,event_unbreakablesphere1_01_s,73,ch37,event_unbreakablesphere1,373,377,,,,place:지상,129,기록 1 · 이름 15줄,이름 26줄,,,흔한 대상
 character,auto,2,d_main_37_05,72,event_arcanearchive_prologue,0,ch37,event_arcanearchive,373,383,,,,person:잉그리드,37,기록 2 · 이름 4줄,기록 7 · 말함 59줄(6%) · 이름 18줄,,,
@@ -4542,7 +4544,7 @@ callback,record,3,event_unbreakablesphere2_epilogue,,d_main_42_af_08,,event_unbr
 character,auto,2,event_unbreakablesphere2_epilogue,124,d_main_42_02,129,event_unbreakablesphere1,ch42,377,416,,,,person:글러트니,5,기록 9 · 이름 144줄,기록 6 · 이름 35줄,,,
 keyword,auto,2,event_unbreakablesphere1_04_s,29,fl:2x2_love_2ch_01,2,event_unbreakablesphere1,fl:2x2_love_2ch,377,445,,,,org:미실리스,32,기록 2 · 이름 2줄,기록 5 · 이름 14줄,,,
 callback,record,3,event_unbreakablesphere2_06_e,,fl:wave_to_you_19,,event_unbreakablesphere1,fl:wave_to_you,377,464,E1555,재언급,F1903,,,,,확실,확정,
-character,auto,2,event_unbreakablesphere2_04_s,268,fl:project_matis_00,1,event_unbreakablesphere1,fl:project_matis,377,467,,,,person:슈엔,28,기록 2 · 이름 3줄,기록 49 · 말함 1139줄(39%) · 이름 231줄,,,
+character,auto,2,event_unbreakablesphere2_04_s,268,fl:project_matis_00,1,event_unbreakablesphere1,fl:project_matis,377,467,,,,person:슈엔,29,기록 2 · 이름 3줄,기록 49 · 말함 1139줄(39%) · 이름 231줄,,,
 character,auto,2,erelic:unbreakable_sphere_dialog_20,13,erelic:unbreakable_sphere_lost_00,0,erelic:unbreakable_sphere_dialog,erelic:unbreakable_sphere_lost,378,379,,,,person:세이렌,14,기록 5 · 이름 13줄,기록 4,,,
 callback,record,3,erelic:unbreakable_sphere_dialog_13,,ep:d_nikke_littlemermaid_03,,erelic:unbreakable_sphere_dialog,char:513,378,380,E1430,재언급,F1906,,,,,확실,확정,
 character,auto,2,erelic:unbreakable_sphere_dialog_19,14,ep:d_nikke_littlemermaid_01,0,erelic:unbreakable_sphere_dialog,char:513,378,380,,,,person:그레이브,23,기록 2 · 말함 22줄(6%) · 이름 1줄,기록 2 · 말함 8줄(2%),,,
@@ -4831,7 +4833,7 @@ character,auto,1,d_main_39_af_08,11,d_main_40_af_01,39,ch39,ch40,396,398,,,,pers
 character,auto,2,d_main_39_af_05,146,d_main_40_af_06,61,ch39,ch40,396,398,,,,person:노이즈,5,기록 2 · 말함 39줄(2%) · 이름 1줄,기록 2 · 말함 2줄(0%) · 이름 2줄,,,
 character,auto,2,d_main_39_af_04,88,d_main_40_af_01,0,ch39,ch40,396,398,,,,person:라이온,3,기록 2 · 이름 2줄,기록 4 · 이름 10줄,,,
 character,auto,2,d_main_39_11,122,d_main_40_02,92,ch39,ch40,396,398,,,,person:레비아탄,19,기록 6 · 말함 91줄(6%) · 이름 5줄,기록 7 · 말함 67줄(4%) · 이름 28줄,,,
-character,auto,2,d_main_39_af_07,87,d_main_40_af_03,22,ch39,ch40,396,398,,,,person:머스탱,27,기록 6 · 말함 41줄(3%) · 이름 5줄,기록 4 · 말함 17줄(1%) · 이름 8줄,,,
+character,auto,2,d_main_39_af_07,87,d_main_40_af_03,22,ch39,ch40,396,398,,,,person:머스탱,26,기록 6 · 말함 41줄(3%) · 이름 5줄,기록 4 · 말함 17줄(1%) · 이름 8줄,,,
 character,auto,1,d_main_39_af_08,149,d_main_40_af_03,45,ch39,ch40,396,398,,,,person:아니스,119,기록 15 · 말함 215줄(13%) · 이름 77줄,기록 7 · 말함 147줄(9%) · 이름 27줄,,,흔한 대상
 character,auto,2,d_main_39_11,121,d_main_40_02,92,ch39,ch40,396,398,,,,person:지즈,9,기록 3 · 말함 86줄(5%) · 이름 5줄,기록 5 · 말함 69줄(4%) · 이름 32줄,,,
 character,auto,2,d_main_39_af_07,88,d_main_40_af_03,22,ch39,ch40,396,398,,,,person:프리티,8,기록 3 · 이름 5줄,기록 2 · 이름 9줄,,,
@@ -4898,7 +4900,7 @@ keyword,auto,1,d_main_40_af_04,34,fl:absolute_02,42,ch40,fl:absolute,398,400,,,,
 keyword,auto,2,d_main_40_af_07,48,fl:absolute_03,65,ch40,fl:absolute,398,400,,,,org:카운터스,32,이름 5줄,기록 2 · 이름 4줄,,,
 keyword,auto,1,d_main_40_af_08,56,fl:absolute_02,27,ch40,fl:absolute,398,400,,,,place:방주,170,이름 17줄,이름 14줄,,,흔한 대상
 keyword,auto,1,d_main_40_af_07,47,fl:absolute_00,1,ch40,fl:absolute,398,400,,,,place:지상,129,기록 1 · 이름 8줄,이름 35줄,,,흔한 대상
-character,auto,2,d_main_40_af_05,26,fl:coins_in_rush_00,1,ch40,fl:coins_in_rush,398,404,,,,person:머스탱,27,기록 4 · 말함 17줄(1%) · 이름 8줄,기록 13 · 말함 221줄(12%) · 이름 28줄,,,
+character,auto,2,d_main_40_af_05,26,fl:coins_in_rush_00,1,ch40,fl:coins_in_rush,398,404,,,,person:머스탱,26,기록 4 · 말함 17줄(1%) · 이름 8줄,기록 12 · 말함 221줄(12%) · 이름 28줄,,,
 keyword,auto,1,d_main_40_af_01,21,fl:coins_in_rush_02,18,ch40,fl:coins_in_rush,398,404,,,,org:중앙_정부,66,이름 8줄,기록 3 · 이름 13줄,,,흔한 대상
 keyword,auto,2,d_main_40_af_04,71,fl:coins_in_rush_02,18,ch40,fl:coins_in_rush,398,404,,,,place:아우터_림,43,기록 5 · 이름 17줄,기록 2 · 이름 4줄,,,
 setup_payoff,record,2,d_main_40_07,,side:eden_spear_12,,ch40,side:eden_spear,398,411,Q272-2,회수,Q272,,,,,추정,확정,일부 · 답 F2172
@@ -5006,8 +5008,8 @@ keyword,auto,2,fl:coins_in_rush_26,16,ep:d_nikke_milk_bloomingbunny_01,9,fl:coin
 keyword,auto,1,fl:coins_in_rush_11,84,fl:reborn_evil_00,0,fl:coins_in_rush,fl:reborn_evil,404,407,,,,org:중앙_정부,66,기록 3 · 이름 13줄,기록 4 · 이름 22줄,,,흔한 대상
 keyword,auto,1,fl:coins_in_rush_17,48,fl:reborn_evil_00,0,fl:coins_in_rush,fl:reborn_evil,404,407,,,,place:방주,170,이름 5줄,기록 4 · 이름 42줄,,,흔한 대상
 keyword,auto,2,fl:coins_in_rush_08,60,fl:reborn_evil_00,53,fl:coins_in_rush,fl:reborn_evil,404,407,,,,place:아우터_림,43,기록 2 · 이름 4줄,기록 6 · 이름 24줄,,,
-character,auto,2,fl:coins_in_rush_27,55,d_main_41_af_01,63,fl:coins_in_rush,ch41,404,414,,,,person:머스탱,27,기록 13 · 말함 221줄(12%) · 이름 28줄,기록 3 · 이름 3줄,,,
 keyword,auto,2,fl:coins_in_rush_16,92,d_main_41_af_01,105,fl:coins_in_rush,ch41,404,414,,,,org:테트라,13,기록 3 · 이름 10줄,기록 2 · 이름 4줄,,,
+character,auto,2,fl:coins_in_rush_27,55,d_main_42_af_06,46,fl:coins_in_rush,ch42,404,416,,,,person:머스탱,26,기록 12 · 말함 221줄(12%) · 이름 28줄,기록 7 · 말함 52줄(3%) · 이름 1줄,,,
 sequel,manual,2,fl:coins_in_rush_27,,fl:fatal_maid_00,,fl:coins_in_rush,fl:fatal_maid,404,432,Y48,,,,,,,확실,확정,"fatal_maid는 coins_in_rush 결말에서 지휘관에게 맡겨져 메이드 포 유에 들어온 벨벳과, 그때 붙잡혔던 국장의 보복을 출발점으로 한다."
 setup_payoff,record,3,fl:coins_in_rush_17,,fl:fatal_maid_04,,fl:coins_in_rush,fl:fatal_maid,404,432,E862,암시,F2389,,,,,확실,확정,
 setup_payoff,record,2,fl:coins_in_rush_24,,fl:fatal_maid_04,,fl:coins_in_rush,fl:fatal_maid,404,432,E867,암시,F2389,,,,,추정,확정,
@@ -5166,7 +5168,6 @@ character,auto,1,d_main_41_08,109,d_main_42_01,0,ch41,ch42,414,416,,,,person:라
 character,auto,2,d_main_41_09,30,d_main_42_01,67,ch41,ch42,414,416,,,,person:리버렐리오,12,기록 11 · 말함 122줄(8%) · 이름 12줄,기록 16 · 말함 145줄(8%) · 이름 12줄,,,
 character,auto,2,d_main_41_af_06,12,d_main_42_af_01,79,ch41,ch42,414,416,,,,person:리버린,9,기록 6 · 말함 41줄(3%) · 이름 16줄,기록 3 · 말함 17줄(1%) · 이름 7줄,,,
 character,auto,2,d_main_41_08,136,d_main_42_01,64,ch41,ch42,414,416,,,,person:맥스웰,15,기록 3 · 말함 51줄(3%) · 이름 11줄,기록 4 · 말함 21줄(1%) · 이름 12줄,,,
-character,auto,2,d_main_41_af_01,103,d_main_42_af_06,46,ch41,ch42,414,416,,,,person:머스탱,27,기록 3 · 이름 3줄,기록 7 · 말함 52줄(3%) · 이름 1줄,,,
 character,auto,2,d_main_41_af_07,22,d_main_42_af_06,74,ch41,ch42,414,416,,,,person:미세스_미스,5,기록 7 · 말함 91줄(6%) · 이름 3줄,기록 3 · 말함 36줄(2%) · 이름 3줄,,,
 character,auto,2,d_main_41_08,140,d_main_42_01,13,ch41,ch42,414,416,,,,person:베히모스,14,기록 3 · 말함 88줄(6%) · 이름 37줄,기록 8 · 말함 63줄(3%) · 이름 23줄,,,
 character,auto,2,d_main_41_af_06,90,d_main_42_af_02,16,ch41,ch42,414,416,,,,person:식스오,9,기록 6 · 말함 15줄(1%) · 이름 1줄,기록 4 · 이름 7줄,,,
@@ -5200,6 +5201,7 @@ character,auto,2,d_main_41_af_04,143,d_main_43_01,11,ch41,ch43,414,434,,,,person
 character,auto,2,d_main_41_af_04,144,d_main_43_01,11,ch41,ch43,414,434,,,,person:지엔,7,기록 2 · 말함 76줄(5%) · 이름 4줄,기록 6 · 말함 130줄(11%) · 이름 1줄,,,
 callback,record,3,d_main_41_af_05,,d_main_44_af_06,,ch41,ch44,414,436,E1033,재언급,F2207,,,,,확실,확정,
 keyword,auto,2,d_main_41_af_06,25,d_main_44_af_04,9,ch41,ch44,414,436,,,,concept:미스트,7,기록 2 · 이름 3줄,기록 5 · 이름 28줄,,,
+character,auto,2,d_main_41_af_01,103,side:pretty_star_01,85,ch41,side:pretty_star,414,447,,,,person:머스탱_한슨의_아버지,3,기록 3,기록 15,,,
 keyword,auto,2,d_main_41_af_07,6,side:pretty_star_00,209,ch41,side:pretty_star,414,447,,,,org:테트라,13,기록 2 · 이름 4줄,기록 13 · 이름 23줄,,,
 keyword,auto,2,d_main_41_af_04,19,fl:good_world_12,0,ch41,fl:good_world,414,448,,,,org:M.M.R.,12,기록 3 · 이름 1줄,기록 2 · 이름 2줄,,,
 callback,record,3,d_main_41_af_01,,d_main_45_07,,ch41,ch45,414,450,E1087,재언급,F2200,,,,,확실,확정,
@@ -5244,7 +5246,7 @@ keyword,auto,1,d_main_42_af_09,35,event_goddessfall1_prologue,53,ch42,event_godd
 keyword,auto,1,d_main_42_af_09,25,event_goddessfall1_prologue,98,ch42,event_goddessfall1,416,418,,,,place:지상,129,기록 1 · 이름 5줄,이름 47줄,,,흔한 대상
 keyword,auto,1,d_main_42_af_05,133,erelic:goddess_fall_mini_09,22,ch42,erelic:goddess_fall_mini,416,419,,,,org:중앙_정부,66,기록 1 · 이름 10줄,기록 2 · 이름 2줄,,,흔한 대상
 character,auto,2,d_main_42_af_09,37,fl:sin_editor_00,2,ch42,fl:sin_editor,416,430,,,,person:에닉,22,기록 14 · 말함 137줄(7%) · 이름 15줄,기록 4 · 말함 29줄(4%) · 이름 2줄,,,
-character,auto,2,d_main_42_af_09,37,fl:fatal_maid_04,19,ch42,fl:fatal_maid,416,432,,,,person:머스탱,27,기록 7 · 말함 52줄(3%) · 이름 1줄,기록 3 · 이름 1줄,,,
+character,auto,2,d_main_42_af_09,37,fl:fatal_maid_04,19,ch42,fl:fatal_maid,416,432,,,,person:머스탱,26,기록 7 · 말함 52줄(3%) · 이름 1줄,기록 3 · 이름 1줄,,,
 sequel,auto,3,d_main_42_af_09,,d_main_43_01,,ch42,ch43,416,434,,,,,,,,,,다음 챕터
 keyword,auto,2,d_main_42_af_08,13,d_main_43_02,52,ch42,ch43,416,434,,,,place:아우터_림,43,기록 8 · 이름 24줄,기록 8 · 이름 30줄,,,
 setup_payoff,record,2,d_main_42_af_08,,d_main_44_08_e,,ch42,ch44,416,436,E929,암시,F2435,,,,,추정,확정,
@@ -5552,7 +5554,7 @@ setup_payoff,record,3,fl:fatal_maid_08,,fl:fatal_maid_09,,fl:fatal_maid,fl:fatal
 callback,record,2,fl:fatal_maid_04,,fl:fatal_maid_13,,fl:fatal_maid,fl:fatal_maid,432,432,E1470,재언급,F2388,,,,,추정,확정,
 character,auto,2,fl:fatal_maid_14,55,ep:d_nikke_velvet_01,8,fl:fatal_maid,char:316,432,433,,,,person:벨벳,3,기록 18 · 말함 408줄(58%) · 이름 93줄,기록 1 · 말함 238줄(100%) · 이름 57줄,,,
 keyword,auto,1,fl:fatal_maid_10,55,d_main_43_03,90,fl:fatal_maid,ch43,432,434,,,,place:방주,170,이름 7줄,기록 3 · 이름 36줄,,,흔한 대상
-character,auto,2,fl:fatal_maid_10,69,side:pretty_star_00,0,fl:fatal_maid,side:pretty_star,432,447,,,,person:머스탱,27,기록 3 · 이름 1줄,기록 15 · 말함 353줄(19%) · 이름 26줄,,,
+character,auto,2,fl:fatal_maid_10,69,side:pretty_star_00,0,fl:fatal_maid,side:pretty_star,432,447,,,,person:머스탱,26,기록 3 · 이름 1줄,말함 353줄(19%) · 이름 26줄,,,
 character,auto,2,fl:fatal_maid_14,55,ep:d_nikke_laplace_ultimatehero_02,0,fl:fatal_maid,char:103,432,468,,,,person:코코아,10,기록 6 · 말함 83줄(12%) · 이름 46줄,말함 52줄(17%) · 이름 17줄,,,
 sequel,manual,2,fl:fatal_maid_14,,fl:persona_on_frontline_00,,fl:fatal_maid,fl:persona_on_frontline,432,474,Y53,,,,,,,확실,확정,"persona_on_frontline의 악역 앨든은 coins_in_rush · fatal_maid에서 지휘관 때문에 재기하지 못한 국장으로, 그 원한에서 사건이 시작되고 체포로 그의 줄이 끝난다."
 callback,record,3,fl:fatal_maid_09,,fl:persona_on_frontline_07,,fl:fatal_maid,fl:persona_on_frontline,432,474,E1562,재언급,F2390,,,,,확실,확정,
@@ -5781,7 +5783,7 @@ keyword,auto,1,side:pretty_star_14,86,fl:good_world_00,0,side:pretty_star,fl:goo
 keyword,auto,1,side:pretty_star_10,167,fl:good_world_00,1,side:pretty_star,fl:good_world,447,448,,,,place:지상,129,이름 15줄,이름 13줄,,,흔한 대상
 setup_payoff,record,3,side:pretty_star_01,,d_main_45_09,,side:pretty_star,ch45,447,450,E1051,암시,F2599,,,,,확실,확정,
 callback,record,3,side:pretty_star_01,,d_main_45_09,,side:pretty_star,ch45,447,450,F2543-2,드러냄,F2543,,,,,확실,확정,
-character,auto,2,side:pretty_star_13,254,d_main_45_01,160,side:pretty_star,ch45,447,450,,,,person:머스탱,27,기록 15 · 말함 353줄(19%) · 이름 26줄,기록 5 · 말함 58줄(5%) · 이름 5줄,,,
+character,auto,2,side:pretty_star_13,254,d_main_45_01,160,side:pretty_star,ch45,447,450,,,,person:머스탱,26,말함 353줄(19%) · 이름 26줄,기록 5 · 말함 58줄(5%) · 이름 5줄,,,
 character,auto,2,side:pretty_star_14,115,d_main_45_03,7,side:pretty_star,ch45,447,450,,,,person:버닝엄,14,기록 3 · 말함 5줄(0%) · 이름 2줄,기록 5 · 말함 38줄(3%),,,
 character,auto,1,side:pretty_star_14,33,d_main_45_01,54,side:pretty_star,ch45,447,450,,,,person:아니스,119,기록 11 · 말함 225줄(12%) · 이름 101줄,기록 16 · 말함 144줄(11%) · 이름 63줄,,,흔한 대상
 character,auto,2,side:pretty_star_13,168,d_main_45_03,12,side:pretty_star,ch45,447,450,,,,person:에닉,22,기록 2 · 이름 2줄,기록 20 · 말함 217줄(17%) · 이름 33줄,,,
@@ -5809,6 +5811,7 @@ callback,record,3,side:pretty_star_05,,event_staranis1_06_s,,side:pretty_star,ev
 callback,record,3,side:pretty_star_13,,event_staranis2_01_e,,side:pretty_star,event_staranis1,447,454,E1142,재언급,F1748-2,,,,,확실,확정,
 callback,record,3,side:pretty_star_02,,event_staranis2_04_e,,side:pretty_star,event_staranis1,447,454,E1160,재언급,F2546,,,,,확실,확정,
 callback,record,2,side:pretty_star_13,,event_staranis2_06_s,,side:pretty_star,event_staranis1,447,454,E1165,재언급,F2556,,,,,추정,확정,
+character,auto,2,side:pretty_star_13,237,event_staranis1_03_s,17,side:pretty_star,event_staranis1,447,454,,,,person:머스탱_한슨의_아버지,3,기록 15,기록 34,,,
 character,auto,2,side:pretty_star_13,231,event_staranis1_prologue,37,side:pretty_star,event_staranis1,447,454,,,,person:미세스_미스,5,기록 12 · 말함 154줄(8%) · 이름 9줄,기록 5 · 말함 60줄(2%) · 이름 4줄,,,
 character,auto,2,side:pretty_star_14,6,event_staranis1_prologue,1,side:pretty_star,event_staranis1,447,454,,,,person:한슨,2,기록 12 · 말함 218줄(12%) · 이름 50줄,기록 49 · 말함 503줄(15%) · 이름 89줄,,,
 keyword,auto,2,side:pretty_star_08,68,event_staranis1_02_e,60,side:pretty_star,event_staranis1,447,454,,,,org:3대_기업,6,이름 5줄,이름 5줄,,,
@@ -5848,7 +5851,7 @@ character,auto,1,d_main_45_09,131,d_main_46_af_03,138,ch45,ch46,450,452,,,,perso
 character,auto,2,d_main_45_11,173,d_main_46_af_02,0,ch45,ch46,450,452,,,,person:도로시,31,기록 9 · 말함 87줄(7%) · 이름 36줄,기록 24 · 말함 210줄(11%) · 이름 162줄,,,
 character,auto,2,d_main_45_11,173,d_main_46_af_02,0,ch45,ch46,450,452,,,,person:도반,8,기록 2 · 이름 2줄,기록 15 · 말함 79줄(4%) · 이름 68줄,,,
 character,auto,1,d_main_45_09,129,d_main_46_af_03,22,ch45,ch46,450,452,,,,person:라피,85,기록 6 · 말함 71줄(6%) · 이름 25줄,기록 4 · 말함 48줄(3%) · 이름 15줄,,,흔한 대상
-character,auto,2,d_main_45_11,66,d_main_46_af_08,1,ch45,ch46,450,452,,,,person:머스탱,27,기록 5 · 말함 58줄(5%) · 이름 5줄,기록 2 · 말함 21줄(1%) · 이름 1줄,,,
+character,auto,2,d_main_45_11,66,d_main_46_af_08,1,ch45,ch46,450,452,,,,person:머스탱,26,기록 5 · 말함 58줄(5%) · 이름 5줄,기록 2 · 말함 21줄(1%) · 이름 1줄,,,
 character,auto,2,d_main_45_11,175,d_main_46_af_02,188,ch45,ch46,450,452,,,,person:버닝엄,14,기록 5 · 말함 38줄(3%),기록 12 · 말함 139줄(7%) · 이름 23줄,,,
 character,auto,2,d_main_45_09,100,d_main_46_01,0,ch45,ch46,450,452,,,,person:스노우_화이트,26,기록 3 · 말함 10줄(1%) · 이름 2줄,기록 8 · 말함 153줄(8%) · 이름 40줄,,,
 character,auto,1,d_main_45_09,177,d_main_46_af_03,138,ch45,ch46,450,452,,,,person:아니스,119,기록 16 · 말함 144줄(11%) · 이름 63줄,기록 3 · 말함 42줄(2%) · 이름 18줄,,,흔한 대상
@@ -5884,7 +5887,7 @@ keyword,auto,1,d_main_46_af_08,66,relic:궤도엘리베이터음모론_00,1,ch46
 keyword,auto,2,d_main_46_af_07,94,relic:궤도엘리베이터음모론_01,1,ch46,relic:궤도엘리베이터음모론,452,453,,,,org:V.T.C.,10,기록 3 · 이름 5줄,기록 4 · 이름 2줄,,,
 keyword,auto,2,d_main_46_af_10,13,relic:궤도엘리베이터음모론_01,1,ch46,relic:궤도엘리베이터음모론,452,453,,,,org:미실리스,32,기록 2 · 이름 3줄,기록 3 · 이름 3줄,,,
 keyword,auto,2,d_main_46_06,98,relic:궤도엘리베이터음모론_00,1,ch46,relic:궤도엘리베이터음모론,452,453,,,,place:궤도_엘리베이터,11,기록 6 · 이름 14줄,기록 7 · 이름 9줄,,,
-character,auto,2,d_main_46_af_08,129,event_staranis1_prologue,38,ch46,event_staranis1,452,454,,,,person:머스탱,27,기록 2 · 말함 21줄(1%) · 이름 1줄,기록 34 · 말함 569줄(17%) · 이름 72줄,,,
+character,auto,2,d_main_46_af_08,129,event_staranis1_prologue,38,ch46,event_staranis1,452,454,,,,person:머스탱,26,기록 2 · 말함 21줄(1%) · 이름 1줄,말함 569줄(17%) · 이름 72줄,,,
 character,auto,1,d_main_46_af_10,61,event_staranis1_prologue,1,ch46,event_staranis1,452,454,,,,person:아니스,119,기록 3 · 말함 42줄(2%) · 이름 18줄,기록 57 · 말함 908줄(28%) · 이름 226줄,,,흔한 대상
 character,auto,2,d_main_46_af_08,99,event_staranis2_03_s,8,ch46,event_staranis1,452,454,,,,person:에닉,22,기록 4 · 말함 23줄(1%) · 이름 4줄,기록 3 · 말함 22줄(1%) · 이름 5줄,,,
 keyword,auto,1,d_main_46_af_10,52,event_staranis1_01_s,107,ch46,event_staranis1,452,454,,,,concept:니케,185,이름 67줄,기록 2 · 이름 43줄,,,흔한 대상
@@ -5988,7 +5991,7 @@ character,auto,2,event_staranis2_epilogue,46,ep:d_nikke_avistar_01,4,event_stara
 keyword,auto,1,event_staranis2_05_e,104,ep:d_nikke_avistar_02,53,event_staranis1,char:441,454,456,,,,concept:니케,185,기록 2 · 이름 43줄,이름 5줄,,,흔한 대상
 sequel,manual,2,event_staranis2_epilogue,,fl:b-side_idol_00,,event_staranis1,fl:b-side_idol,454,458,Y56,,,,,,,확실,확정,b-side_idol은 staranis1 결말(아니스 탈퇴 · 민트 · 프리카의 Twinkle Twin Star 데뷔 · 머스탱이 된 한슨)을 출발점으로 한 다음 편이다.
 callback,record,3,event_staranis2_epilogue,,fl:b-side_idol_14,,event_staranis1,fl:b-side_idol,454,458,E1531,재언급,F2708,,,,,확실,확정,
-character,auto,2,event_staranis2_06_e,68,fl:b-side_idol_00,14,event_staranis1,fl:b-side_idol,454,458,,,,person:머스탱,27,기록 34 · 말함 569줄(17%) · 이름 72줄,기록 5 · 말함 69줄(10%) · 이름 8줄,,,
+character,auto,2,event_staranis2_06_e,68,fl:b-side_idol_00,14,event_staranis1,fl:b-side_idol,454,458,,,,person:머스탱,26,말함 569줄(17%) · 이름 72줄,기록 5 · 말함 69줄(10%) · 이름 8줄,,,
 character,auto,2,event_staranis2_epilogue,43,fl:b-side_idol_00,0,event_staranis1,fl:b-side_idol,454,458,,,,person:민트,6,기록 14 · 말함 358줄(11%) · 이름 50줄,기록 11 · 말함 559줄(78%) · 이름 98줄,,,
 character,auto,2,event_staranis2_epilogue,43,fl:b-side_idol_01,26,event_staranis1,fl:b-side_idol,454,458,,,,person:프리카,7,기록 12 · 말함 265줄(8%) · 이름 56줄,기록 3 · 말함 28줄(4%) · 이름 6줄,,,
 callback,record,3,event_staranis2_intermission_01,,fl:bitter_spice_05,,event_staranis1,fl:bitter_spice,454,460,E1536,재언급,F2697,,,,,확실,확정,
@@ -6028,7 +6031,7 @@ sequel,manual,2,fl:b-side_idol_14,,fl:bitter_spice_00,,fl:b-side_idol,fl:bitter_
 setup_payoff,record,3,fl:b-side_idol_12,,fl:bitter_spice_01,,fl:b-side_idol,fl:bitter_spice,458,460,E1530,암시,F2721,,,,,확실,확정,
 setup_payoff,record,2,fl:b-side_idol_14,,fl:bitter_spice_06,,fl:b-side_idol,fl:bitter_spice,458,460,E1532,암시,F2723,,,,,추정,확정,
 callback,record,3,fl:b-side_idol_11,,fl:bitter_spice_07,,fl:b-side_idol,fl:bitter_spice,458,460,E1537,재언급,F2717,,,,,확실,확정,
-character,auto,2,fl:b-side_idol_14,47,fl:bitter_spice_08,65,fl:b-side_idol,fl:bitter_spice,458,460,,,,person:머스탱,27,기록 5 · 말함 69줄(10%) · 이름 8줄,기록 2 · 말함 17줄(2%),,,
+character,auto,2,fl:b-side_idol_14,47,fl:bitter_spice_08,65,fl:b-side_idol,fl:bitter_spice,458,460,,,,person:머스탱,26,기록 5 · 말함 69줄(10%) · 이름 8줄,기록 2 · 말함 17줄(2%),,,
 character,auto,1,fl:b-side_idol_14,16,fl:bitter_spice_00,19,fl:b-side_idol,fl:bitter_spice,458,460,,,,person:아니스,119,기록 2 · 이름 18줄,기록 3 · 말함 60줄(7%) · 이름 33줄,,,흔한 대상
 character,auto,2,fl:b-side_idol_14,34,fl:bitter_spice_00,3,fl:b-side_idol,fl:bitter_spice,458,460,,,,person:프리카,7,기록 3 · 말함 28줄(4%) · 이름 6줄,기록 13 · 말함 462줄(57%) · 이름 131줄,,,
 prereq,game-condition,3,ep:d_nikke_mint_01,,ep:d_nikke_mint_02,,char:600,char:600,459,459,,,,,,,,,,condition_scenario_group_id
@@ -6039,7 +6042,7 @@ character,auto,2,ep:d_nikke_mint_05,85,fl:bitter_spice_00,3,char:600,fl:bitter_s
 setup_payoff,record,3,fl:bitter_spice_01,,fl:bitter_spice_07,,fl:bitter_spice,fl:bitter_spice,460,460,E1533,암시,F2724,,,,,확실,확정,
 setup_payoff,record,2,fl:bitter_spice_04,,ep:d_nikke_prika_01,,fl:bitter_spice,char:601,460,461,E1535,암시,F2725,,,,,추정,확정,
 character,auto,2,fl:bitter_spice_14,76,ep:d_nikke_prika_01,4,fl:bitter_spice,char:601,460,461,,,,person:프리카,7,기록 13 · 말함 462줄(57%) · 이름 131줄,기록 3 · 말함 146줄(85%) · 이름 56줄,,,
-character,auto,2,fl:bitter_spice_08,96,fl:ark_ranger_00,48,fl:bitter_spice,fl:ark_ranger,460,462,,,,person:머스탱,27,기록 2 · 말함 17줄(2%),기록 11 · 말함 110줄(6%) · 이름 13줄,,,
+character,auto,2,fl:bitter_spice_08,96,fl:ark_ranger_00,48,fl:bitter_spice,fl:ark_ranger,460,462,,,,person:머스탱,26,기록 2 · 말함 17줄(2%),기록 11 · 말함 110줄(6%) · 이름 13줄,,,
 character,auto,1,fl:bitter_spice_13,88,fl:ark_ranger_10,70,fl:bitter_spice,fl:ark_ranger,460,462,,,,person:아니스,119,기록 3 · 말함 60줄(7%) · 이름 33줄,기록 3 · 말함 79줄(4%) · 이름 24줄,,,흔한 대상
 prereq,game-condition,3,ep:d_nikke_prika_01,,ep:d_nikke_prika_02,,char:601,char:601,461,461,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_prika_02,,ep:d_nikke_prika_03,,char:601,char:601,461,461,,,,,,,,,,condition_scenario_group_id

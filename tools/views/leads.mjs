@@ -13,6 +13,7 @@
  * 축의 자리 c · 인물 p마다 (원문은 읽지 않는다 — DB와 기록에서 센다):
  *   ⓐ lines    이름표로 말한 줄(lines.speaker_target ∈ p의 묶음, 2회독 암시 언급의 speaker 줄 포함). 지휘관은 Self 창. 몫 = 그 자리 대사(Speech · Self) 가운데
  *   ⓑ scenes   이름이 나온 씬(언급 DB scene_targets — 말함 · 이름 · 별칭, 2회독 암시 언급 포함). 몫 = 그 자리 씬 가운데
+ *              다른 인물(W24a — people.json split) 범위 줄의 이름 b는 실제 사람 a로 센다(ⓐ · ⓑ — 기록은 actualDataset). 같은 인물(same_as)은 아래 묶음으로 합친다
  *   ⓒ threads  뼈대 줄기 가운데 about에 p가 든 것의 기록(의문 · 사건 · 사실)이 그 자리에 있다
  *   ⓓ changes  그 자리의 2회독 인물 변화(D — 기준 · 변화). 근거 기록(records)에는 주인인 줄기 · about 줄기와 신념 · 기억 · 소속 · 신체 변화 앞 3건을 든다
  * 걸림(hit): 씬 몫 ≥ SCENE_SHARE · 대사 몫 ≥ LINE_SHARE · 나온 자리에 ⓓ가 있음(여기까지 '중심') · 이름이 나온 자리에 ⓒ가 있음 — 하나라도.
@@ -31,7 +32,7 @@ import { EXAMPLE_DIR, READ1_DIR, ROOT, compareIds, displayPath, isRecord, loadDa
 import { kindOfKey, loadOrder } from '../records/order.mjs';
 import { mentionRows } from '../records/read2.mjs';
 import { threadMembership } from '../records/threads.mjs';
-import { faceDataset } from '../records/impersonation.mjs';
+import { actualDataset, lineOwners, splitUnits } from '../records/identity.mjs';
 
 export const LEADS_DIR = path.join(ROOT, 'data/views/leads');
 export const SCENE_SHARE = 0.4;
@@ -116,6 +117,8 @@ export function leadSignals(ds, ctx, order) {
     if (!x.byCh.has(ch)) x.byCh.set(ch, { lines: 0, lineShare: 0, scenes: new Set(), sceneShare: 0, threads: [], changes: [], hit: false, center: false });
     return x.byCh.get(ch);
   };
+  // 다른 인물(W24a — people.json split): 범위 줄의 이름 b는 실제로 a — 말한 줄 · 등장 씬도 실제 사람으로 센다(기록과 같다 — actualDataset)
+  const own = lineOwners(splitUnits(ds, ctx.db, () => null));
   for (const r of all("SELECT story_id, window, speaker_target t, count(*) n FROM lines WHERE window IN ('Speech', 'Self') GROUP BY story_id, window, speaker_target")) {
     const ch = sceneCh.get(r.story_id);
     if (!ch) continue;
@@ -123,15 +126,26 @@ export function leadSignals(ds, ctx, order) {
     const p = r.window === 'Self' ? COMMANDER : r.t;
     if (p && String(p).startsWith('person:')) C(canon(p), ch).lines += r.n;
   }
+  const speechOf = ctx.db.prepare("SELECT seq FROM lines WHERE story_id = ? AND window = 'Speech' AND speaker_target = ?");
+  for (const x of own.spanScenes) {
+    const ch = sceneCh.get(x.scene);
+    if (!ch) continue;
+    const moved = speechOf.all(x.scene, x.b).filter((r) => x.inSpan(r.seq)).length;
+    if (moved) {
+      C(canon(x.b), ch).lines -= moved;
+      C(canon(x.a), ch).lines += moved;
+    }
+    if (x.bSeqs.length) C(canon(x.a), ch).scenes.add(x.scene);
+  }
   for (const r of all("SELECT story_id, target FROM scene_targets WHERE target LIKE 'person:%'")) {
     const ch = sceneCh.get(r.story_id);
-    if (ch) C(canon(r.target), ch).scenes.add(r.story_id);
+    if (ch && !own.movedOut(r.story_id, r.target)) C(canon(r.target), ch).scenes.add(r.story_id);
   }
   // 2회독 암시 언급 — 이름 없이 가리킨 씬, speaker면 말한 줄
   for (const m of mentionRows(ds)) {
     const ch = sceneCh.get(m.scene);
     if (!ch || !String(m.target ?? '').startsWith('person:')) continue;
-    const c = C(canon(m.target), ch);
+    const c = C(canon(own.owner(m.scene, m.from_seq, m.target)), ch);
     c.scenes.add(m.scene);
     if (m.speaker) c.lines += m.to_seq - m.from_seq + 1;
   }
@@ -267,7 +281,7 @@ export function renderPerson(x, chapters, { judgment = null } = {}) {
  *   missing: 주인 · 카운터스인데 명단에 항목이 없는 인물(--add) · revive: 기각된 항목만 있는 인물(set Z… 확정으로 되살린다) · extra: 명단(기각 빼고)에 있는데 주인 · 카운터스가 아닌 인물(기각할 것)
  */
 export function buildLeads(ds, ctx, order) {
-  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
+  ds = actualDataset(ds, ctx, order); // 다른 인물 줄을 근거로 한 기록은 실제 사람으로 센다(W24a — tools/records/identity.mjs actualDataset)
   const sig = leadSignals(ds, ctx, order);
   const leads = ds.candidates.filter((c) => c.kind === 'lead' && c.id).sort((a, b) => compareIds(a.id, b.id));
   const listed = new Map(leads.filter((c) => c.status !== '기각').map((c) => [c.obj?.person, c]));

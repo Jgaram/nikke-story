@@ -18,7 +18,7 @@
  */
 import { KIND_LABEL } from '../lib/units.mjs';
 import { FILE_MAX, FIRST_MAX, FOCUS_MAX, FOCUS_MIN } from './handoff.mjs';
-import { identityRules, impersonationWatch, pickFacts, sourceTargets } from './focus.mjs';
+import { identityRules, pickFacts, sourceTargets, splitWatch } from './focus.mjs';
 import { computeLayers } from './layers.mjs';
 import { citeOf, compareIds, expandLines, isRecord, nextIds } from './model.mjs';
 import { kindOfKey, partsOverlap } from './order.mjs';
@@ -152,7 +152,7 @@ export function buildHandoff2(ds, ctx, order, order2) {
   const watchFor = (it) => ds.watchItems.filter((w) => w.unit === it.key && partsOverlap(w.parts, it.parts) && w.id);
   const openRevisits = ds.revisits.filter((v) => v.id && v.read2 && !ds.revisitDone.some((d) => d.id === v.id));
   const revisitsFor = (it) => openRevisits.filter((v) => arr(v.obj?.where).some((w) => w === it.key || (ctx.resolve(it.key)?.scenes ?? []).includes(w)));
-  // 사칭 볼 줄(W23a) — 정체 연결 후보 객체 · 대상 이름
+  // 다른 인물 볼 줄(W24a) — 정체 연결 후보 객체 · 대상 이름
   const peopleLinks = ds.candidates.filter((c) => c.people && c.id).map((c) => c.obj);
   const nameOfTarget = new Map(ctx.db.prepare('SELECT id, name FROM targets').all().map((t) => [t.id, t.name]));
   const plainName = (t) => nameOfTarget.get(t) ?? t;
@@ -215,8 +215,8 @@ export function buildHandoff2(ds, ctx, order, order2) {
     if (unk.total) {
       out.push(`정체 볼 줄 — 미상 이름표 ${unk.total}줄(2회독이 적은 것 ${unk.known})${it.parts ? ' · 단위 전체(이번 파트 밖 씬도 있다)' : ''}: 누구인지 씬마다 읽어 암시 언급 speaker: true로 적는다`, ...unk.rows);
     }
-    for (const w of impersonationWatch(ctx, [it.key], peopleLinks)) {
-      out.push(`사칭 볼 줄 — 이름표 ${plainName(w.b)} ${w.total}줄(그중 ${w.id} 범위 안 ${w.inSpan}): ${w.id}는 ${plainName(w.a)}의 ${plainName(w.b)} 사칭(드러남 ${w.revealed ?? '?'}). 범위 밖 줄이 누구인지 읽고 사칭이면 ${w.id} spans에 더한다`);
+    for (const w of splitWatch(ctx, [it.key], peopleLinks)) {
+      out.push(`다른 인물 볼 줄 — 이름표 ${plainName(w.b)} ${w.total}줄(그중 ${w.id} 범위 안 ${w.inSpan}): ${w.id}는 ${plainName(w.b)} 이름으로 나온 다른 사람 ${plainName(w.a)}. 범위 밖 줄이 누구인지 읽고 ${plainName(w.a)}이면 ${w.id} spans에 더한다`);
     }
     const vs = revisitsFor(it);
     if (vs.length) {

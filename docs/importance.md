@@ -190,7 +190,8 @@
 | 주요 인물 명단(3a — 점수 · from · 끊는 선 · 변형) | [data/views/importance/majors.md](../data/views/importance/majors.md) · `node tools/records.mjs review "주요 인물" --status 전부 --brief` |
 | 척추 목록 · 선정 계산 | `node tools/records.mjs review 척추 --brief` · [data/views/importance/spine.md](../data/views/importance/spine.md) |
 
-사칭(people.json impersonates — 지금의 머스탱 = 한슨 등)은 **이름표 주인으로** 센다: 기록은 실제 인물로 적혀 있어도 주요 인물 · 주역 · 마무리 · 판정 시안 계산은 드러나기 전 모습으로 본다(W23c — docs/annotations.md "계산은 이름표 주인으로").
+인물은 **실제 한 사람으로** 센다(결정 #12 · W24a): 같은 인물(same_as — 지금의 머스탱 = 한슨)은 묶음으로 합치고, 다른 인물(split — 회상 속 아버지 머스탱 · CH.08의 가짜 시프티)은
+그 줄 · 기록을 실제 사람에게 옮겨 주요 인물 · 주역 · 마무리 · 판정 시안을 계산한다(docs/annotations.md "같은 사람 · 다른 사람" — W23c의 '이름표 주인으로'는 걷었다).
 
 이 단위와 척추의 기록 파일(`annotations/read1/<키>.json` · `annotations/read2/<키>.json` — 2회독 E가 가리키는 기록 `points`는 여기)은 직접 봐도 된다. `annotations/layers.json`의 판정 줄은 옛 판정이다.
 

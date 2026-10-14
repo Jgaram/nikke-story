@@ -38,7 +38,7 @@ import { ERELIC_EVENT } from '../records/layers.mjs';
 import { threadMembership } from '../records/threads.mjs';
 import { read1Edges } from './read1.mjs';
 import { isAprilFools } from '../lib/fools.mjs';
-import { faceDataset } from '../records/impersonation.mjs';
+import { actualDataset } from '../records/identity.mjs';
 
 export const LINKS_DIR = path.join(ROOT, 'data/views/links');
 export const TYPE_ORDER = ['prereq', 'sequel', 'setup_payoff', 'callback', 'reversal', 'character', 'keyword'];
@@ -166,7 +166,7 @@ const basisOf = (x, total, person) => [
  * @param {object} order loadOrder() — 1회독 순서(출시순 한 줄)
  */
 export function buildLinks(ds, ctx, order) {
-  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
+  ds = actualDataset(ds, ctx, order); // 다른 인물 줄을 근거로 한 기록은 실제 사람으로 센다(W24a — tools/records/identity.mjs actualDataset)
   const places = scenePlaces(order, ctx);
   const units = [...places.unitPos.keys()];
   const posOf = (u) => places.unitPos.get(u) ?? null;

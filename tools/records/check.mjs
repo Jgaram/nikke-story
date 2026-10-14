@@ -27,7 +27,7 @@ export function splitArc(text, keys) {
   return null;
 }
 import { echoEdgesOf, mentionRows, scenePlaces } from './read2.mjs';
-import { impersonationUnits, masksOf, peopleOf } from './impersonation.mjs';
+import { peopleOf, splitUnits, targetLines } from './identity.mjs';
 import { chronologyProblems, loadChronology, subjectOf, timeShapeProblems } from '../views/chrono.mjs';
 
 /** 단위 요약 · 씬 한 줄 · 사실 문장이 이보다 길면 경고한다 — 인계 파일 크기 때문 */
@@ -197,18 +197,12 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
   let liveById = null;
   const mentionSeen = new Map(); // 대상 \t 씬 → [{ id, seqs }]
   const baselines = new Map(); // 인물 \t 측면 → 기준 ID
-  // 사칭(W23b) — 기록의 드러나기 전 모습(docs/annotations.md "사칭 기록"). 읽기 순서가 없으면(예시) 가리지 않는다
-  let impUnits = null;
-  const impUnitsNow = () => {
+  // 다른 인물(W24a — docs/annotations.md "같은 사람 · 다른 사람"). 읽기 순서가 없으면(예시) 단위를 몰라 보지 않는다
+  let splitUnitsCache = null;
+  const splitUnitsNow = () => {
     if (!order) return [];
     places ??= scenePlaces(order, ctx);
-    return (impUnits ??= impersonationUnits(ds, ctx.db, places.unitOf));
-  };
-  const impFace = (c) => {
-    const ms = masksOf(c, impUnitsNow());
-    if (!ms.length) return {};
-    const swap = (x) => ms.find((m) => m.a === x)?.b ?? x;
-    return { person: isStr(c.obj?.person) ? swap(c.obj.person) : undefined, with: Array.isArray(c.obj?.with) ? c.obj.with.map(swap) : undefined };
+    return (splitUnitsCache ??= splitUnits(ds, ctx.db, places.unitOf));
   };
 
   function checkRead2(c, where, u) {
@@ -278,10 +272,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
         for (const k of ['before', 'after', 'trigger']) if (o[k] !== undefined) warn(where, c.id, `기준에는 ${k}를 쓰지 않는다 — 바뀌었으면 변화로`);
         if (c.status !== '기각' && isStr(o.person) && isStr(o.aspect)) {
           // 관계는 상대마다 따로 — 유니 → 미하라와 유니 → 지휘관은 다른 기준이다(P1)
-          // 사칭에 가려지는 기록(W23b)은 드러나기 전 모습으로 센다 — 머스탱 이름표의 한슨(D208)과 회상 속 한슨(D1094)은 독자에게 다른 인물이었다
-          const face = impFace(c);
-          const rel = o.aspect === '관계' && Array.isArray(o.with) && o.with.length ? `\t${[...(face.with ?? o.with)].sort().join(',')}` : '';
-          const k = `${face.person ?? o.person}\t${o.aspect}${rel}`;
+          const rel = o.aspect === '관계' && Array.isArray(o.with) && o.with.length ? `\t${[...o.with].sort().join(',')}` : '';
+          const k = `${o.person}\t${o.aspect}${rel}`;
           if (baselines.has(k)) warn(where, c.id, `${o.person} ${o.aspect}${rel ? `(${o.with.join(' · ')})` : ''}의 기준이 또 있다 — ${baselines.get(k)}. 인물 · 측면(관계는 상대)마다 기준 하나(출시순으로 더 앞선 모습이면 그쪽을 남기고 다른 하나는 기각)`);
           else baselines.set(k, c.id);
         }
@@ -377,79 +369,52 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     checkCommon(c, where);
   }
 
-  // 사칭(W23a — people.json 정체 연결 type impersonates) — a가 b의 이름표 · 이름으로 행세한 줄(spans)과 독자가 아는 단위(revealed). 둘은 다른 인물
-  let impStmt = null;
-  let impImplied = null;
-  function checkImpersonation(c, where) {
+  // 다른 인물(W24a — people.json 정체 연결 type split) — 이름 b로 잡힌 줄 가운데 spans는 실제로 다른 사람 a. 드러나는 자리는 근거 첫 씬의 단위
+  let splitStmt = null;
+  let splitImplied = null;
+  function checkSplit(c, where) {
     const o = c.obj;
     for (const side of ['a', 'b']) {
       if (!isStr(o[side]) || !o[side].startsWith('person:') || !ctx.targetIds.has(o[side])) {
-        err(where, c.id, `${side} ${JSON.stringify(o[side] ?? '')} — 사전의 인물 ID(person:…). 사칭은 인물끼리 잇는다(이름표:…는 same_as로)`);
+        err(where, c.id, `${side} ${JSON.stringify(o[side] ?? '')} — 사전의 인물 ID(person:…). 다른 인물은 인물끼리 가른다`);
       }
     }
     if (isStr(o.a) && o.a === o.b) err(where, c.id, 'a와 b가 같은 인물이다');
-    else if (isStr(o.a) && isStr(o.b) && sameAsGroups(ds).get(o.a)?.includes(o.b)) err(where, c.id, `${o.a} · ${o.b}는 같은 인물(same_as)로 묶였다 — 사칭은 다른 두 인물`);
-    if (order) places ??= scenePlaces(order, ctx);
-    const pos = order ? unitOrderPos() : null;
-    const spanUnits = [];
+    else if (isStr(o.a) && isStr(o.b) && sameAsGroups(ds).get(o.a)?.includes(o.b)) err(where, c.id, `${o.a} · ${o.b}는 같은 인물(same_as)로 묶였다 — split은 다른 두 사람`);
     if (!Array.isArray(o.spans) || !o.spans.length) {
-      err(where, c.id, 'spans가 없다 — 이름표 · 이름 b가 실제로는 a인 줄 [{ "scene": 씬 ID, "lines": [12, "20-25"] }] (lines가 없으면 씬 전체)');
-    } else {
-      impStmt ??= ctx.db.prepare('SELECT seq_from, seq_to FROM mentions WHERE story_id = ? AND target = ?');
-      const seenScenes = new Set();
-      for (const s of o.spans) {
-        if (!s || typeof s !== 'object' || Array.isArray(s)) {
-          err(where, c.id, `spans ${JSON.stringify(s)}: { "scene": …, "lines": […] } 모양이어야 한다(lines는 없어도 된다 — 씬 전체)`);
-          continue;
-        }
-        unknown(s, ['scene', 'lines'], (m) => warn(where, c.id, `spans ${s.scene ?? '?'}: ${m}`));
-        const st = ctx.story(s.scene);
-        if (!st) {
-          err(where, c.id, `spans: 없는 씬 ${s.scene}`);
-          continue;
-        }
-        if (seenScenes.has(s.scene)) warn(where, c.id, `spans: 씬 ${s.scene}이 두 번 나온다 — 한 항목에 줄을 모은다`);
-        seenScenes.add(s.scene);
-        if (st.in_scope !== 1) err(where, c.id, `spans: 분석 범위 밖 씬 ${s.scene}`);
-        let seqs = null;
-        if (s.lines !== undefined) {
-          const r = expandLines(s.lines);
-          for (const p of r.problems) err(where, c.id, `spans ${s.scene}: ${p}`);
-          const n = ctx.lines(s.scene).length;
-          const bad = r.seqs.filter((x) => x >= n);
-          if (bad.length) err(where, c.id, `spans: 없는 줄 ${s.scene}#${bad.join(',')} — 이 씬은 #0–#${n - 1}`);
-          seqs = r.seqs;
-        }
-        // 옮길 것 — 범위 안에 b로 잡힌 자동 언급(이름표로 말함 · 이름)이나 2회독 암시 언급(I)이 있어야 한다
-        impImplied ??= mentionRows(ds).map((m) => ({ ...m, seq_from: m.from_seq, seq_to: m.to_seq }));
-        const bRows = isStr(o.b) ? [...impStmt.all(s.scene, o.b), ...impImplied.filter((m) => m.scene === s.scene && m.target === o.b)] : [];
-        if (isStr(o.b) && !bRows.some((m) => seqs === null || seqs.some((x) => x >= m.seq_from && x <= m.seq_to))) {
-          warn(where, c.id, `spans ${s.scene}: 범위에 ${o.b}로 잡힌 줄(이름표 · 이름 · 암시 언급)이 없다 — 옮길 줄이 없다`);
-        }
-        const u = places?.unitOf(s.scene);
-        if (u) spanUnits.push(u);
-      }
+      err(where, c.id, 'spans가 없다 — 이름 b로 잡혔지만 실제로는 a인 줄 [{ "scene": 씬 ID, "lines": [12, "20-25"] }] (lines가 없으면 씬 전체)');
+      return;
     }
-    if (!isStr(o.revealed)) err(where, c.id, 'revealed가 없다 — 독자가 사칭을 알게 되는 읽기 단위 키(그 단위를 읽기 전에는 화면이 이름표 주인으로 보인다)');
-    else if (pos) {
-      if (!pos.has(o.revealed)) err(where, c.id, `revealed: 읽기 순서에 없는 단위 ${o.revealed}`);
-      else {
-        const first = Math.min(...spanUnits.map((u) => pos.get(u) ?? Infinity));
-        if (first < Infinity && pos.get(o.revealed) < first) warn(where, c.id, `revealed ${o.revealed}가 사칭 범위의 첫 단위보다 앞이다 — 드러난 뒤의 행세면 그 단위를 적는다`);
-        const evUnits = (Array.isArray(o.evidence) ? o.evidence : []).map((e) => places?.unitOf(e?.scene)).filter(Boolean);
-        if (evUnits.length && !evUnits.includes(o.revealed)) warn(where, c.id, `근거(드러나는 줄)가 revealed 단위(${o.revealed}) 밖이다`);
-        // 이름 승계(W23e) — 범위가 revealed 뒤까지 이어지면 독자가 알던 b는 a이고 이름의 원래 주인은 다른 인물: real이 있어야 한다. 한때의 행세면 b가 진짜 b라 real은 틀린 것
-        const continues = spanUnits.some((u) => (pos.get(u) ?? -1) > pos.get(o.revealed));
-        if (continues && o.real === undefined && c.status !== '기각') {
-          err(where, c.id, `행세가 드러난 뒤에도 이어진다(범위에 ${o.revealed} 뒤 단위) — 독자가 알던 ${o.b}는 ${o.a}이고 이름의 원래 주인은 따로 세운다: real에 그 인물 ID를 적는다(예: "${o.b}_진짜" — 원문에 맞는 구분어가 있으면 그것, 빌드가 그 인물을 만든다)`);
-        }
-        if (!continues && o.real !== undefined) err(where, c.id, 'real은 행세가 드러난 뒤에도 이어지는 사칭(이름 승계 — 범위에 revealed 뒤 단위가 있는 것)에만 쓴다 — 한때의 행세는 b가 진짜 b');
+    splitStmt ??= ctx.db.prepare('SELECT seq_from, seq_to FROM mentions WHERE story_id = ? AND target = ?');
+    const seenScenes = new Set();
+    for (const sp of o.spans) {
+      if (!sp || typeof sp !== 'object' || Array.isArray(sp)) {
+        err(where, c.id, `spans ${JSON.stringify(sp)}: { "scene": …, "lines": […] } 모양이어야 한다(lines는 없어도 된다 — 씬 전체)`);
+        continue;
       }
-    }
-    if (o.real !== undefined) {
-      if (!isStr(o.real) || !o.real.startsWith('person:')) err(where, c.id, `real ${JSON.stringify(o.real)} — 이름의 원래 주인 인물 ID(person:…)`);
-      else if (o.real === o.a || o.real === o.b) err(where, c.id, 'real은 a · b와 다른 인물이다 — b는 독자가 알던 인물(드러나면 a), real은 이름의 원래 주인');
-      else if (!ctx.targetIds.has(o.real)) err(where, c.id, `real ${o.real}이 사전에 없다 — DB를 다시 만든다(node tools/normalize/ensure-db.mjs — 빌드가 세운다)`);
+      unknown(sp, ['scene', 'lines'], (m) => warn(where, c.id, `spans ${sp.scene ?? '?'}: ${m}`));
+      const st = ctx.story(sp.scene);
+      if (!st) {
+        err(where, c.id, `spans: 없는 씬 ${sp.scene}`);
+        continue;
+      }
+      if (seenScenes.has(sp.scene)) warn(where, c.id, `spans: 씬 ${sp.scene}이 두 번 나온다 — 한 항목에 줄을 모은다`);
+      seenScenes.add(sp.scene);
+      if (st.in_scope !== 1) err(where, c.id, `spans: 분석 범위 밖 씬 ${sp.scene}`);
+      let seqs = null;
+      if (sp.lines !== undefined) {
+        const r = expandLines(sp.lines);
+        for (const m of r.problems) err(where, c.id, `spans ${sp.scene}: ${m}`);
+        const n = ctx.lines(sp.scene).length;
+        const bad = r.seqs.filter((x) => x >= n);
+        if (bad.length) err(where, c.id, `spans: 없는 줄 ${sp.scene}#${bad.join(',')} — 이 씬은 #0–#${n - 1}`);
+        seqs = r.seqs;
+      }
+      // 줄을 적은 범위에는 b로 잡힌 자동 언급(이름표로 말함 · 이름)이나 2회독 암시 언급(I)이 있어야 한다(씬 전체 범위는 기록 근거를 덮으려고 넓게 잡아도 된다)
+      if (seqs === null || !isStr(o.b)) continue;
+      splitImplied ??= mentionRows(ds).map((m) => ({ ...m, seq_from: m.from_seq, seq_to: m.to_seq }));
+      const bRows = [...splitStmt.all(sp.scene, o.b), ...splitImplied.filter((m) => m.scene === sp.scene && m.target === o.b)];
+      if (!bRows.some((m) => seqs.some((x) => x >= m.seq_from && x <= m.seq_to))) warn(where, c.id, `spans ${sp.scene}: 범위에 ${o.b}로 잡힌 줄(이름표 · 이름 · 암시 언급)이 없다 — 옮길 줄이 없다`);
     }
   }
 
@@ -734,9 +699,10 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       idOk(ID.link, 'L<번호> (정체 연결)');
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
       if (!LINK_TYPES.includes(o.type)) err(where, c.id, `type "${o.type ?? ''}" — ${LINK_TYPES.join(' · ')} 중 하나`);
-      if (o.type === 'impersonates') checkImpersonation(c, where);
-      else if (o.spans !== undefined || o.revealed !== undefined || o.real !== undefined) warn(where, c.id, 'spans · revealed · real은 사칭(type impersonates)에만 쓴다');
-      checkEvidence(o.evidence, where, c.id, null, null, { required: o.type === 'impersonates' });
+      if (o.type === 'split') checkSplit(c, where);
+      else if (o.spans !== undefined) warn(where, c.id, 'spans는 다른 인물(type split)에만 쓴다');
+      // 드러나는 자리 = 근거 첫 씬의 단위(W24a) — split은 근거가 꼭 있어야 한다
+      checkEvidence(o.evidence, where, c.id, null, null, { required: o.type === 'split' });
       checkCommon(c, where);
     } else if (c.section === 'threads') {
       idOk(ID.thread, 'J<번호> (떡밥 줄기)');
@@ -1262,31 +1228,38 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     for (const p of cp.warnings) warn(chron.name, p.id, p.msg);
   }
 
-  // 사칭(W23b) — 기록이 실제 인물로 적혔는지, 드러나기 전 화면에 사칭한 인물이 새지 않는지
-  // 단위 파일 밖 기록(소속 T — W23d)은 첫 근거 씬의 단위로 본다
+  // 기록은 그 장면에서 보인 이름으로 적는다(W24a) — 드러나기 전 화면 · 계산은 적힌 그대로 쓰므로, 그 단위에서 아직 드러나지 않은 이름으로 적으면 정체가 샌다.
+  // 단위 파일 밖 기록(소속 T)은 첫 근거 씬의 단위로 본다. 드러나는 단위 그 자체의 기록은 실제 인물로 적어도 된다(그 단위를 읽으면 드러난다)
   const unitOfCand = (c) => c.unit ?? (c.kind === 'affil' ? places?.unitOf(arr(c.evidence)[0]?.scene) ?? null : null);
-  for (const L of impUnitsNow()) {
-    for (const c0 of ds.candidates) {
-      const unit = c0.id ? unitOfCand(c0) : null;
-      if (!c0.id || !unit || c0.status === '기각' || c0.kind === 'mention' || c0.people || c0.links) continue;
-      const c = c0.unit ? c0 : { ...c0, unit };
-      const ppl = peopleOf(c.obj);
-      const hasA = ppl.includes(L.a);
-      const where = c.file;
-      const seqs = arr(c.evidence).flatMap((ev) => expandLines(ev?.lines).seqs.map((n) => [ev.scene, n]));
-      const inside = seqs.filter(([s, n]) => L.inSpan(s, n)).length;
-      if (!hasA && ppl.includes(L.b) && L.spanUnits.has(c.unit) && !L.ownUnits.has(c.unit) && seqs.length && inside === seqs.length) {
-        warn(where, c.id, `근거가 모두 사칭 ${L.id} 범위 안인데 ${L.b}로 적혔다 — 그 줄은 ${L.a}의 것이다 — 실제 인물로 적는다(드러나기 전 화면은 ${L.b}로 보인다)`);
-      }
-      if (hasA && !L.spanUnits.has(c.unit) && !L.ownUnits.has(c.unit)) {
-        warn(where, c.id, `${L.a}가 이 단위(${c.unit})에서 제 이름으로도 사칭 ${L.id} 범위로도 나오지 않는다 — 드러나기 전 화면에 그대로 보인다. 그 줄을 ${L.b}의 암시 언급(I)으로 적고 범위에 더한다`);
-      }
-      if (hasA && L.spanUnits.has(c.unit) && L.ownUnits.has(c.unit) && c.unit !== L.revealed && inside) {
-        warn(where, c.id, `${L.a}가 제 이름으로도 나오는 단위라 가리지 않는데 근거가 사칭 ${L.id} 범위에 걸린다 — 드러나기 전 화면에 ${L.a}로 보인다`);
-      }
-      // 이름 승계(W23e) — b는 독자가 알던 이름일 뿐 실제 인물은 a(범위 줄) · real(그 밖)이다. 이름 언급(I)만 b로 적는다(줄은 화면 · 집계가 옮긴다)
-      if (L.real && ppl.includes(L.b) && c.kind !== 'mention') {
-        warn(where, c.id, `이름 승계 사칭 ${L.id}의 ${L.b}로 적혔다 — 실제 인물로 적는다: 범위 줄의 그는 ${L.a}, 그 밖(이름의 원래 주인)은 ${L.real}(드러나기 전 화면은 둘 다 ${L.b}로 보인다)`);
+  const records = order ? ds.candidates.filter((c) => c.id && c.status !== '기각' && c.kind !== 'mention' && !c.people && !c.links) : [];
+  const pos = order ? unitOrderPos() : new Map();
+  // ① 다른 인물(split) — a가 그 단위에서 b의 이름으로만 나오면 b로 적는다(드러난 뒤 화면이 범위 근거의 b를 a로 옮긴다)
+  for (const L of splitUnitsNow()) {
+    for (const c of records) {
+      const unit = unitOfCand(c);
+      if (!unit || unit === L.revealed || L.ownUnits.has(unit) || !peopleOf(c.obj).includes(L.a)) continue;
+      if (L.spanUnits.has(unit)) warn(c.file, c.id, `${L.a}는 이 단위(${unit})에서 ${L.b}의 이름으로만 나온다 — 그 장면에서 보인 이름(${L.b})으로 적는다(드러난 뒤에는 다른 인물 ${L.id}가 ${L.a}로 옮긴다)`);
+      else if (L.revealed && (pos.get(unit) ?? 0) < (pos.get(L.revealed) ?? 0)) warn(c.file, c.id, `${L.a}가 드러나기(${L.revealed}) 전 단위(${unit})에 이름으로 나오지 않는다 — 화면에 그대로 보여 정체가 샌다. 그 장면에서 보인 이름으로 적는다`);
+    }
+  }
+  // ② 같은 인물(same_as) — 그 단위에 이 이름은 안 나오고 같은 사람의 다른 이름만 나오는데, 둘이 같다고 드러나기 전이면 보인 이름으로 적는다
+  if (order) {
+    const links = ds.candidates.filter((c) => c.kind === 'link' && c.status === '확정' && c.obj?.type === 'same_as' && isStr(c.obj.a) && isStr(c.obj.b));
+    const revOf = (c) => places.unitOf(arr(c.obj.evidence).find((e) => isStr(e?.scene))?.scene) ?? null;
+    const faces = new Set(links.flatMap((c) => [c.obj.a, c.obj.b]).filter((x) => x.startsWith('person:')));
+    const unitsOf = new Map();
+    for (const [t, byScene] of targetLines(ds, ctx.db, faces)) unitsOf.set(t, new Set([...byScene.keys()].map((sc) => places.unitOf(sc)).filter(Boolean)));
+    for (const c of records) {
+      const unit = unitOfCand(c);
+      if (!unit) continue;
+      for (const f of peopleOf(c.obj)) {
+        if (!faces.has(f) || unitsOf.get(f)?.has(unit)) continue;
+        for (const l of links) {
+          const g = l.obj.a === f ? l.obj.b : l.obj.b === f ? l.obj.a : null;
+          const rev = g ? revOf(l) : null;
+          if (!g || !rev || rev === unit || !unitsOf.get(g)?.has(unit) || (pos.get(unit) ?? 0) >= (pos.get(rev) ?? 0)) continue;
+          warn(c.file, c.id, `${f}는 이 단위(${unit})에 이름으로 나오지 않고 같은 사람 ${g}로 나온다 — 같은 인물로 드러나기(${l.id} · ${rev}) 전이라 그 장면에서 보인 이름(${g})으로 적는다`);
+        }
       }
     }
   }

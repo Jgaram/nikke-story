@@ -168,7 +168,7 @@
     },
     {
       "id": "T6",
-      "person": "person:한슨",
+      "person": "person:머스탱",
       "org": "org:테트라",
       "act": "소속",
       "role": "CEO",
@@ -180,7 +180,20 @@
       "session": "W12b",
       "reviews": [
         { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12b", "note": "근거 줄에서 조직 이름 · 자리를 직접 확인(W12b 검토)" },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "person 머스탱 → 한슨 — 근거가 L33 범위 안(W23b 바로잡기에서 소속만 빠졌다). 진짜 머스탱의 CEO는 T140 · 끝은 T141" }
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23d",
+          "note": "person 머스탱 → 한슨 — 근거가 L33 범위 안(W23b 바로잡기에서 소속만 빠졌다). 진짜 머스탱의 CEO는 T140 · 끝은 T141"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 한슨 → 머스탱: 지금의 머스탱은 한슨(L33 같은 인물)이라 드러난 뒤 한 사람으로 보인다"
+        }
       ]
     },
     {
@@ -2099,7 +2112,7 @@
     },
     {
       "id": "T140",
-      "person": "person:머스탱_한슨의_아버지",
+      "person": "person:머스탱",
       "org": "org:테트라",
       "act": "소속",
       "role": "CEO",
@@ -2109,7 +2122,16 @@
       "status": "확정",
       "by": "claude",
       "session": "W23d",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "근거 줄에서 조직 · 자리 확인, 이 줄이 L33 범위 밖(진짜 머스탱)인 것 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "근거 줄에서 조직 · 자리 확인, 이 줄이 L33 범위 밖(진짜 머스탱)인 것 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 아버지 → 머스탱: 근거가 아버지의 줄(L36 다른 인물)이면 드러난 뒤 아버지로 보인다"
+        }
+      ]
     },
     {
       "id": "T141",

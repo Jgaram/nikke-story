@@ -17,7 +17,7 @@
  *     단위가 없으면 null — 사이트 state.reading().known과 같은 규칙) ·
  *     units[[단위 키, 기록 수], …](읽는 자리 순) · neighbors[{ id, n, units, recs[[기록 ID, 공개 자리], …] }](함께 나온 기록 수 순) ·
  *     threads[{ id, n, about(줄기 자신의 about이면 true), sample[] }]
- *   life[] (생활상 449): id · topic · unit · tick · order · layer · scene · line · evidence · about[] · imp(사칭 가림 W23b) · text · confidence · threads[]
+ *   life[] (생활상 449): id · topic · unit · tick · order · layer · scene · line · evidence · about[] · imp(다른 인물 가림 W24a) · text · confidence · threads[]
  *   topics[] { topic, n } · hubs[] 흔한 개념 ID · hub_share 흔한 개념 기준(중심인 단위 몫)
  * ctx = { db, csv(path), records, units, unitByKey, common, out, warn } — docs/views.md "파일 배치 · 모듈 규약 · 실행법 (W1)".
  */

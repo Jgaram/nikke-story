@@ -11,8 +11,7 @@
  *              `이름표:X = B`는 그 연결의 근거 씬 안에서만 X 줄을 B로(`노인` · `여학생` 같은 이름표는 씬마다 다른 사람일 수 있다),
  *              2회독 암시 언급 `speaker: true` 줄은 그 인물로. 그 밖의 `???` · 미상 이름표 줄은 누구로도 치지 않는다 — 매번 다른 사람이라
  *              정체는 2회독이 씬 · 줄마다 읽어서 정한다(연결의 근거 줄도 정체를 보여 줄 뿐 그 인물이 말한 줄이라는 보장이 없다).
- *              사칭(impersonates, W23a — `a → b`)은 범위(spans) 줄에서 b로 잡힌 것을 a로 바꾼다(둘은 다른 인물 — 무리로 묶지 않는다).
- *              이름 승계(W23e — real이 있는 사칭)는 범위 밖에서 b로 잡힌 것을 real(이름의 원래 주인)로 바꾼다.
+ *              다른 인물(split, W24a — `a ≠ b`)은 범위(spans) 줄에서 b로 잡힌 것을 a로 바꾼다(둘은 다른 사람 — 무리로 묶지 않는다).
  *              `A = B`(이명 · 숨은 정체)는 같은 인물 무리를 대상 하나로 친다 —
  *              줄마다 무리의 대표 하나로 세고(canon), 사실의 about도 대표로 바꿔 센다. 이명마다 따로 세면 사실이 적은 이명이 점수 앞자리를 차지한다.
  * 같은 원문 · 같은 기록이면 같은 결과다(정렬 끝까지 결정적).
@@ -54,18 +53,10 @@ export function sourceTargets(ctx, keys, { identity = false, links = [], speaker
           if (l.speaker_target) hit.add(l.speaker_target);
           for (const x of id.byLabel.get(l.speaker_name) ?? []) if (x.scenes.has(scene)) hit.add(x.b);
           for (const t of id.byLine.get(`${scene}\t${l.seq}`) ?? []) hit.add(t);
-          const swapped = new Set();
           for (const x of id.swap.get(scene) ?? []) {
             if (hit.has(x.b) && (!x.seqs || x.seqs.has(l.seq))) {
               hit.delete(x.b);
               hit.add(x.a);
-              swapped.add(x.b);
-            }
-          }
-          for (const [b, real] of id.rest) {
-            if (hit.has(b) && !swapped.has(b)) {
-              hit.delete(b);
-              hit.add(real);
             }
           }
         }
@@ -78,9 +69,9 @@ export function sourceTargets(ctx, keys, { identity = false, links = [], speaker
 
 /**
  * 정체 연결에서 대상 뽑기 규칙을 만든다 (2회독)
- * @returns {{ byLabel: Map<string, {b: string, scenes: Set<string>}[]>, byLine: Map<string, string[]>, swap: Map<string, {a: string, b: string, seqs: Set<number>|null}[]>, rest: Map<string, string>, canon: (t: string) => string, members: Map<string, string[]> }}
+ * @returns {{ byLabel: Map<string, {b: string, scenes: Set<string>}[]>, byLine: Map<string, string[]>, swap: Map<string, {a: string, b: string, seqs: Set<number>|null}[]>, canon: (t: string) => string, members: Map<string, string[]> }}
  *   byLabel: 이름표 → 그 이름표가 가리키는 인물과 근거 씬 · byLine: `씬\t줄` → 그 줄을 말한 인물(2회독 암시 언급 speaker: true만) ·
- *   swap: 씬 → 사칭 범위(그 줄의 b는 실제로 a, seqs null이면 씬 전체) · rest: 이름 승계 사칭의 b → real(범위 밖 b 줄의 실제 인물 — W23e) ·
+ *   swap: 씬 → 다른 인물 범위(그 줄의 b는 실제로 a, seqs null이면 씬 전체) ·
  *   canon: 대상 → 같은 인물 무리의 대표(연결의 b 쪽 — 숨은 정체 · 본명. 무리가 없으면 자기) · members: 대표 → 무리(대표 먼저)
  */
 export function identityRules(ctx, links = [], speakerLines = null) {
@@ -109,12 +100,10 @@ export function identityRules(ctx, links = [], speakerLines = null) {
     } else if (ctx.targetIds.has(l.a)) union(l.a, l.b);
   }
   for (const [k, ts] of speakerLines ?? []) for (const t of ts) addLine(k, t);
-  // 사칭(W23a) — 범위 줄의 b를 a로. 이름 승계(W23e — real)는 그 밖의 b 줄을 real로(rest)
+  // 다른 인물(W24a) — 범위 줄의 b를 a로
   const swap = new Map();
-  const rest = new Map();
   for (const l of links) {
-    if (!l || l.status === '기각' || l.type !== 'impersonates' || !ctx.targetIds.has(l.a) || !ctx.targetIds.has(l.b)) continue;
-    if (typeof l.real === 'string' && ctx.targetIds.has(l.real)) rest.set(l.b, l.real);
+    if (!l || l.status === '기각' || l.type !== 'split' || !ctx.targetIds.has(l.a) || !ctx.targetIds.has(l.b)) continue;
     for (const sp of arr(l.spans)) {
       if (typeof sp?.scene !== 'string') continue;
       (swap.get(sp.scene) ?? swap.set(sp.scene, []).get(sp.scene)).push({ a: l.a, b: l.b, seqs: sp.lines === undefined ? null : new Set(expandLines(sp.lines).seqs) });
@@ -134,7 +123,7 @@ export function identityRules(ctx, links = [], speakerLines = null) {
     members.set(head, [head, ...ms.filter((x) => x !== head)]);
     for (const x of ms) rep.set(x, head);
   }
-  return { byLabel, byLine, swap, rest, canon: (t) => rep.get(t) ?? t, members };
+  return { byLabel, byLine, swap, canon: (t) => rep.get(t) ?? t, members };
 }
 
 const aboutRaw = (c) => (Array.isArray(c.obj?.about) ? c.obj.about.filter((x) => typeof x === 'string') : []);
@@ -183,15 +172,15 @@ export function pickFacts(facts, pool, hits, budget, size, { canon = null } = {}
 }
 
 /**
- * 사칭 볼 줄(W23a) — 읽을 원문에 사칭 기록(people.json impersonates, 기각 빼고)의 이름표 주인(b)이 이름표로 말한 줄이 있으면 알린다.
- * 범위(spans) 밖 줄은 아직 아무도 정하지 않은 것 — 읽는 세션이 누구인지 보고, 사칭이면 그 기록의 spans에 더한다(N3 신작 · 되짚어 읽기).
+ * 다른 인물 볼 줄(W24a) — 읽을 원문에 다른 인물 기록(people.json split, 기각 빼고)의 이름 주인(b)이 이름표로 말한 줄이 있으면 알린다.
+ * 범위(spans) 밖 줄은 아직 아무도 정하지 않은 것 — 읽는 세션이 누구인지 보고, 그 사람(a)이면 그 기록의 spans에 더한다(N3 신작 · 되짚어 읽기).
  * @param {object} ctx openContext()
  * @param {string[]} keys 읽기 키(단위 · 씬)
  * @param {object[]} links 정체 연결 후보 객체(people.json candidates)
- * @returns {{ id: string, a: string, b: string, revealed: string|null, total: number, inSpan: number }[]} 이름표 줄이 있는 사칭만, ID 순
+ * @returns {{ id: string, a: string, b: string, total: number, inSpan: number }[]} 이름표 줄이 있는 다른 인물 기록만, ID 순
  */
-export function impersonationWatch(ctx, keys, links = []) {
-  const imps = links.filter((l) => l && l.status !== '기각' && l.type === 'impersonates' && typeof l.id === 'string' && ctx.targetIds.has(l.b));
+export function splitWatch(ctx, keys, links = []) {
+  const imps = links.filter((l) => l && l.status !== '기각' && l.type === 'split' && typeof l.id === 'string' && ctx.targetIds.has(l.b));
   if (!imps.length) return [];
   const scenes = [...new Set(keys.flatMap((k) => ctx.resolve(k)?.scenes ?? []))];
   const out = [];
@@ -207,7 +196,7 @@ export function impersonationWatch(ctx, keys, links = []) {
         if (span.has(s) && (span.get(s) === null || span.get(s).has(ln.seq))) inSpan++;
       }
     }
-    if (total) out.push({ id: l.id, a: l.a, b: l.b, revealed: typeof l.revealed === 'string' ? l.revealed : null, total, inSpan });
+    if (total) out.push({ id: l.id, a: l.a, b: l.b, total, inSpan });
   }
   return out.sort((x, y) => Number(x.id.slice(1)) - Number(y.id.slice(1)));
 }

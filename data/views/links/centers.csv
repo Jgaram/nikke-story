@@ -31,7 +31,7 @@ ch02,4,org:카운터스,org,4,0,,1,32,기록
 ch02,4,person:네온,person,2,85,18,8,56,기록+말함
 ch02,4,person:라피,person,4,88,19,10,85,기록+말함
 ch02,4,person:미하라,person,3,13,3,9,14,기록
-ch02,4,person:슈엔,person,5,68,15,10,28,기록+말함
+ch02,4,person:슈엔,person,5,68,15,10,29,기록+말함
 ch02,4,person:시프티,person,1,48,10,3,16,말함
 ch02,4,person:아니스,person,3,128,28,7,119,기록+말함
 ch02,4,person:엔더슨,person,2,23,5,1,32,기록
@@ -59,7 +59,7 @@ ch03,10,concept:랩쳐,concept,2,0,,17,140,기록+이름
 ch03,10,org:워드리스,org,6,0,,1,3,기록
 ch03,10,person:라피,person,1,48,27,4,85,말함
 ch03,10,person:미하라,person,6,73,42,10,14,기록+말함
-ch03,10,person:슈엔,person,5,0,0,3,28,기록
+ch03,10,person:슈엔,person,5,0,0,3,29,기록
 ch03,10,person:아니스,person,0,20,11,0,119,말함
 ch03,10,person:유니,person,4,19,11,9,13,기록+말함
 ch03,10,person:토커티브,person,4,0,0,4,15,기록
@@ -84,10 +84,10 @@ ch04,15,org:앱솔루트,org,3,0,,3,15,기록
 ch04,15,org:테트라,org,2,0,,3,13,기록
 ch04,15,org:필그림,org,4,0,,4,21,기록
 ch04,15,person:라피,person,11,141,19,25,85,기록+말함
-ch04,15,person:머스탱,person,5,38,5,5,27,기록
+ch04,15,person:머스탱,person,5,38,5,5,26,기록
 ch04,15,person:미하라,person,8,95,13,22,14,기록+말함
 ch04,15,person:베스티,person,2,7,1,1,8,기록
-ch04,15,person:슈엔,person,4,29,4,12,28,기록
+ch04,15,person:슈엔,person,4,29,4,12,29,기록
 ch04,15,person:아니스,person,6,148,19,15,119,기록+말함
 ch04,15,person:에닉,person,4,18,2,1,22,기록
 ch04,15,person:엔더슨,person,8,68,9,4,32,기록
@@ -139,7 +139,7 @@ ch06,26,org:언리미티드,org,3,0,,0,6,기록
 ch06,26,org:필그림,org,7,0,,8,21,기록+이름
 ch06,26,person:라피,person,0,38,12,4,85,말함
 ch06,26,person:루드밀라,person,5,113,36,2,11,기록+말함
-ch06,26,person:모더니아,person,2,9,3,1,6,기록
+ch06,26,person:모더니아,person,3,9,3,1,6,기록
 ch06,26,person:스노우_화이트,person,9,28,9,4,26,기록
 ch06,26,person:앨리스,person,2,27,9,9,6,기록
 ch06,26,person:퀸,person,3,0,0,2,20,기록
@@ -197,7 +197,8 @@ ch08,37,concept:니케,concept,2,0,,2,185,기록
 ch08,37,org:카운터스,org,2,0,,1,32,기록
 ch08,37,person:네온,person,0,50,19,11,56,말함
 ch08,37,person:라피,person,2,31,12,4,85,기록+말함
-ch08,37,person:시프티,person,5,47,18,4,16,기록+말함
+ch08,37,person:슈엔,person,5,0,0,0,29,기록
+ch08,37,person:시프티,person,0,47,18,4,16,말함
 ch08,37,person:아니스,person,4,81,31,13,119,기록+말함
 ch08,37,person:엑시아,person,3,52,20,1,12,기록+말함
 sub:칠리페퍼_01,38,person:칠리페퍼,person,5,58,83,3,3,기록+말함
@@ -225,7 +226,7 @@ ch09,43,org:카운터스,org,2,0,,1,32,기록
 ch09,43,org:트라이앵글,org,3,0,,3,7,기록
 ch09,43,person:노벨,person,2,56,11,8,3,기록+말함
 ch09,43,person:라피,person,6,88,17,7,85,기록+말함
-ch09,43,person:슈엔,person,8,41,8,4,28,기록
+ch09,43,person:슈엔,person,8,41,8,4,29,기록
 ch09,43,person:시프티,person,2,32,6,14,16,기록
 ch09,43,person:아니스,person,0,69,13,3,119,말함
 ch09,43,person:엑시아,person,7,89,17,32,12,기록+말함
@@ -276,7 +277,7 @@ ch11,53,person:드레이크,person,2,27,8,0,16,기록
 ch11,53,person:라플라스,person,5,69,22,6,13,기록+말함
 ch11,53,person:라피,person,2,42,13,3,85,기록+말함
 ch11,53,person:맥스웰,person,3,83,26,1,15,기록+말함
-ch11,53,person:슈엔,person,4,14,4,5,28,기록
+ch11,53,person:슈엔,person,4,14,4,5,29,기록
 ch11,53,person:시프티,person,0,32,10,6,16,말함
 ch11,53,person:잉그리드,person,3,17,5,1,37,기록
 sub:음악_애호가_00,54,person:네온,person,0,9,13,0,56,말함
@@ -314,7 +315,7 @@ ch12,59,person:맥스웰,person,2,38,6,2,15,기록
 ch12,59,person:메이든,person,2,8,1,1,6,기록
 ch12,59,person:모더니아,person,2,0,0,6,6,기록
 ch12,59,person:미하라,person,2,10,2,12,14,기록
-ch12,59,person:슈엔,person,8,43,7,5,28,기록
+ch12,59,person:슈엔,person,8,43,7,5,29,기록
 ch12,59,person:엔더슨,person,2,45,7,3,32,기록
 ch12,59,person:엠마,person,2,16,3,3,10,기록
 ch12,59,person:유니,person,3,18,3,7,13,기록
@@ -324,7 +325,7 @@ relic:어느의사의수기,60,incident:랩쳐_침공,incident,2,0,,0,12,기록
 relic:어느의사의수기,60,place:방주,place,2,0,,2,170,기록
 sub:러블리_드림_00,61,concept:니케,concept,1,0,,8,185,이름
 sub:러블리_드림_00,61,person:러블리_드림☆,person,3,105,84,3,2,기록+말함
-sub:러블리_드림_00,61,person:머스탱,person,2,0,0,3,27,기록
+sub:러블리_드림_00,61,person:머스탱,person,2,0,0,3,26,기록
 sub:러블리_드림_00,61,place:지상,place,0,0,,8,129,이름
 sub:든_셀_00,62,concept:에블라_입자,concept,2,0,,2,9,기록
 sub:든_셀_00,62,person:든?셀,person,0,7,10,2,1,말함
@@ -420,7 +421,7 @@ ch15,75,person:네온,person,0,67,14,3,56,말함
 ch15,75,person:도라,person,2,64,14,5,4,기록+말함
 ch15,75,person:라피,person,0,61,13,3,85,말함
 ch15,75,person:루피,person,2,59,13,4,7,기록+말함
-ch15,75,person:슈엔,person,9,67,14,18,28,기록+말함
+ch15,75,person:슈엔,person,9,67,14,18,29,기록+말함
 ch15,75,person:스노우_화이트,person,2,0,0,3,26,기록
 ch15,75,person:아니스,person,0,79,17,4,119,말함
 ch15,75,person:얀,person,2,56,12,2,6,기록+말함
@@ -451,7 +452,7 @@ ch16,80,person:JohnD,person,4,0,0,9,2,기록
 ch16,80,person:라피,person,1,64,11,2,85,말함
 ch16,80,person:미하라,person,2,6,1,1,14,기록
 ch16,80,person:바이퍼,person,8,69,11,9,11,기록+말함
-ch16,80,person:슈엔,person,6,29,5,7,28,기록
+ch16,80,person:슈엔,person,6,29,5,7,29,기록
 ch16,80,person:아니스,person,1,102,17,5,119,말함
 ch16,80,person:자칼,person,4,56,9,9,7,기록
 ch16,80,person:크로우,person,17,201,33,12,9,기록+말함
@@ -469,7 +470,7 @@ sub:랩칠리언_05,84,concept:랩쳐,concept,1,0,,7,140,이름
 sub:랩칠리언_05,84,org:미실리스,org,2,0,,1,32,기록
 sub:랩칠리언_05,84,person:라피,person,0,10,11,0,85,말함
 sub:랩칠리언_05,84,person:랩칠리언,person,2,2,2,5,11,기록
-sub:랩칠리언_05,84,person:슈엔,person,5,60,67,4,28,기록+말함
+sub:랩칠리언_05,84,person:슈엔,person,5,60,67,4,29,기록+말함
 sub:랩칠리언_05,84,person:아니스,person,0,11,12,0,119,말함
 sub:랩칠리언_05,84,place:방주,place,2,0,,4,170,기록
 char:180,85,concept:니케,concept,3,0,,24,185,기록+이름
@@ -533,6 +534,7 @@ char:221,94,concept:랩쳐,concept,2,0,,18,140,기록+이름
 char:221,94,org:갓데스,org,2,0,,1,30,기록
 char:221,94,org:필그림,org,3,0,,1,21,기록
 char:221,94,person:라푼젤,person,16,340,95,28,18,기록+말함
+char:221,94,person:릴리스,person,2,0,0,4,3,기록
 char:10,95,concept:니케,concept,5,0,,31,185,기록+이름
 char:10,95,concept:이레귤러,concept,2,0,,4,3,기록
 char:10,95,org:중앙_정부,org,4,0,,16,66,기록+이름
@@ -557,8 +559,8 @@ char:82,98,place:지상,place,0,0,,5,129,이름
 char:102,99,concept:니케,concept,2,0,,20,185,기록+이름
 char:102,99,org:미실리스,org,1,0,,10,32,이름
 char:102,99,person:맥스웰,person,12,390,94,29,15,기록+말함
-char:102,99,person:슈엔,person,4,23,6,12,28,기록
-char:130,100,person:머스탱,person,3,13,3,3,27,기록
+char:102,99,person:슈엔,person,4,23,6,12,29,기록
+char:130,100,person:머스탱,person,3,13,3,3,26,기록
 char:130,100,person:메어리,person,19,305,79,40,9,기록+말함
 char:130,100,person:페퍼,person,6,67,17,16,3,기록+말함
 char:181,101,concept:니케,concept,0,0,,15,185,이름
@@ -652,7 +654,7 @@ char:241,121,place:리페어_센터,place,1,0,,5,5,이름
 char:210,122,person:엑시아,person,5,263,79,26,12,기록+말함
 char:90,123,concept:니케,concept,0,0,,6,185,이름
 char:90,123,org:카운터스,org,2,0,,2,32,기록
-char:90,123,person:슈엔,person,2,0,0,4,28,기록
+char:90,123,person:슈엔,person,2,0,0,4,29,기록
 char:90,123,person:엠마,person,4,244,76,8,10,기록+말함
 char:90,123,place:지상,place,0,0,,8,129,이름
 char:160,124,person:네온,person,0,59,15,3,56,말함
@@ -763,7 +765,7 @@ ch17,140,person:라푼젤,person,10,220,24,18,18,기록+말함
 ch17,140,person:라피,person,3,79,9,11,85,기록
 ch17,140,person:레드_후드,person,3,0,0,6,26,기록
 ch17,140,person:마리안,person,2,3,0,8,20,기록
-ch17,140,person:슈엔,person,4,148,16,23,28,기록+말함
+ch17,140,person:슈엔,person,4,148,16,23,29,기록+말함
 ch17,140,person:스노우_화이트,person,11,97,11,16,26,기록+말함
 ch17,140,person:아니스,person,0,128,14,16,119,말함
 ch17,140,person:엔더슨,person,2,0,0,16,32,기록
@@ -802,8 +804,8 @@ ch18,146,org:카운터스,org,2,0,,2,32,기록
 ch18,146,person:드레이크,person,3,64,6,10,16,기록
 ch18,146,person:라플라스,person,13,250,24,71,13,기록+말함
 ch18,146,person:맥스웰,person,3,181,17,15,15,기록+말함
-ch18,146,person:머스탱,person,2,7,1,0,27,기록
-ch18,146,person:슈엔,person,11,185,17,36,28,기록+말함
+ch18,146,person:머스탱,person,2,7,1,0,26,기록
+ch18,146,person:슈엔,person,11,185,17,36,29,기록+말함
 ch18,146,person:에닉,person,2,0,0,4,22,기록
 ch18,146,person:엔더슨,person,2,55,5,4,32,기록
 ch18,146,person:유니,person,2,35,3,16,13,기록
@@ -838,7 +840,7 @@ event_hightechtoy,151,org:미실리스,org,1,0,,9,32,이름
 event_hightechtoy,151,person:드레이크,person,2,39,9,17,16,기록
 event_hightechtoy,151,person:라플라스,person,4,131,32,26,13,기록+말함
 event_hightechtoy,151,person:맥스웰,person,3,201,48,19,15,기록+말함
-event_hightechtoy,151,person:슈엔,person,3,32,8,27,28,기록
+event_hightechtoy,151,person:슈엔,person,3,32,8,27,29,기록
 event_hightechtoy,151,place:방주,place,0,0,,8,170,이름
 event_hightechtoy,151,place:지상,place,0,0,,15,129,이름
 char:100,152,concept:니케,concept,0,0,,7,185,이름
@@ -854,7 +856,7 @@ event_miraclesnow1,153,concept:양산형_니케,concept,0,0,,7,26,이름
 event_miraclesnow1,153,org:리콜&릴리즈,org,2,0,,2,1,기록
 event_miraclesnow1,153,org:미실리스,org,2,0,,13,32,기록+이름
 event_miraclesnow1,153,person:루피,person,4,477,36,67,7,기록+말함
-event_miraclesnow1,153,person:슈엔,person,4,116,9,14,28,기록
+event_miraclesnow1,153,person:슈엔,person,4,116,9,14,29,기록
 event_miraclesnow1,153,person:안젤리나,person,6,199,15,14,1,기록+말함
 event_miraclesnow1,153,person:앤,person,10,222,17,142,3,기록+말함
 event_miraclesnow1,153,person:엑시아,person,2,79,6,5,12,기록
@@ -999,7 +1001,7 @@ char:112,174,person:시프티,person,2,26,8,0,16,기록
 char:112,174,person:크로우,person,4,17,5,3,9,기록
 char:112,174,place:아우터_림,place,3,0,,5,43,기록+이름
 event_maidinvalentine,175,org:메이드_포_유,org,2,0,,3,4,기록
-event_maidinvalentine,175,person:머스탱,person,2,35,7,2,27,기록
+event_maidinvalentine,175,person:머스탱,person,2,35,7,2,26,기록
 event_maidinvalentine,175,person:소다,person,2,91,17,14,6,기록+말함
 event_maidinvalentine,175,person:스윗_조니,person,3,81,16,1,2,기록+말함
 event_maidinvalentine,175,person:시그널,person,2,35,7,9,2,기록
@@ -1051,7 +1053,7 @@ event_cherryblossom,183,org:언더월드_퀸,org,4,0,,7,9,기록+이름
 event_cherryblossom,183,org:중앙_정부,org,0,0,,5,66,이름
 event_cherryblossom,183,person:노이즈,person,2,30,4,3,5,기록
 event_cherryblossom,183,person:로산나,person,3,13,2,3,9,기록
-event_cherryblossom,183,person:머스탱,person,4,50,6,3,27,기록
+event_cherryblossom,183,person:머스탱,person,4,50,6,3,26,기록
 event_cherryblossom,183,person:목단,person,5,143,19,31,9,기록+말함
 event_cherryblossom,183,person:사쿠라,person,10,493,64,58,10,기록+말함
 event_cherryblossom,183,place:방주,place,3,0,,16,170,기록+이름
@@ -1194,7 +1196,7 @@ event_overzone,200,place:지상,place,0,0,,16,129,이름
 erelic:white_memory,201,concept:랩쳐,concept,2,0,,4,140,기록
 erelic:white_memory,201,person:라푼젤,person,3,0,0,9,18,기록
 erelic:white_memory,201,person:레드_후드,person,2,0,0,2,26,기록
-erelic:white_memory,201,person:릴리스,person,6,0,0,0,2,기록
+erelic:white_memory,201,person:릴리스,person,6,0,0,0,3,기록
 erelic:white_memory,201,person:스노우_화이트,person,9,0,0,44,26,기록
 char:233,202,concept:니케,concept,1,0,,19,185,이름
 char:233,202,concept:랩쳐,concept,0,0,,8,140,이름
@@ -1222,7 +1224,7 @@ event_queensorder,207,org:언더월드_퀸,org,2,0,,7,9,기록+이름
 event_queensorder,207,org:중앙_정부,org,1,0,,6,66,이름
 event_queensorder,207,org:헤도니아,org,6,0,,17,6,기록+이름
 event_queensorder,207,person:로산나,person,13,530,78,86,9,기록+말함
-event_queensorder,207,person:머스탱,person,2,0,0,2,27,기록
+event_queensorder,207,person:머스탱,person,2,0,0,2,26,기록
 event_queensorder,207,person:목단,person,2,23,3,8,9,기록
 event_queensorder,207,person:사쿠라,person,2,86,13,21,10,기록+말함
 event_queensorder,207,place:방주,place,2,0,,25,170,기록+이름
@@ -1277,12 +1279,12 @@ ch23,214,person:도로시,person,3,56,5,6,31,기록
 ch23,214,person:도반,person,5,14,1,27,8,기록
 ch23,214,person:디젤,person,2,20,2,2,7,기록
 ch23,214,person:로산나,person,2,37,3,3,9,기록
-ch23,214,person:머스탱,person,3,38,3,5,27,기록
+ch23,214,person:머스탱,person,3,38,3,5,26,기록
 ch23,214,person:목단,person,4,127,11,8,9,기록+말함
 ch23,214,person:바이퍼,person,7,104,9,27,11,기록
 ch23,214,person:버닝엄,person,2,44,4,2,14,기록
 ch23,214,person:사쿠라,person,2,28,2,5,10,기록
-ch23,214,person:슈엔,person,3,60,5,11,28,기록
+ch23,214,person:슈엔,person,3,60,5,11,29,기록
 ch23,214,person:에닉,person,3,21,2,12,22,기록
 ch23,214,person:유니,person,4,39,3,20,13,기록
 ch23,214,person:잉그리드,person,3,52,4,0,37,기록
@@ -1339,7 +1341,7 @@ ch24,219,person:바이퍼,person,10,131,9,22,11,기록
 ch24,219,person:버닝엄,person,4,83,6,1,14,기록
 ch24,219,person:사쿠라,person,2,13,1,2,10,기록
 ch24,219,person:솔린,person,2,38,3,9,9,기록
-ch24,219,person:슈엔,person,8,74,5,46,28,기록
+ch24,219,person:슈엔,person,8,74,5,46,29,기록
 ch24,219,person:에닉,person,10,103,7,17,22,기록
 ch24,219,person:유니,person,8,99,7,45,13,기록
 ch24,219,person:인디빌리아,person,5,24,2,12,9,기록
@@ -1471,7 +1473,7 @@ ch25,241,person:도반,person,3,43,4,1,8,기록
 ch25,241,person:라피,person,6,0,0,51,85,기록
 ch25,241,person:레드_후드,person,5,38,4,6,26,기록
 ch25,241,person:버닝엄,person,3,30,3,4,14,기록
-ch25,241,person:슈엔,person,3,49,5,14,28,기록
+ch25,241,person:슈엔,person,3,49,5,14,29,기록
 ch25,241,person:아니스,person,5,274,26,12,119,기록+말함
 ch25,241,person:에닉,person,6,43,4,9,22,기록
 ch25,241,person:엔더슨,person,9,100,9,0,32,기록
@@ -1514,7 +1516,7 @@ ch26,246,person:라피,person,19,58,5,73,85,기록
 ch26,246,person:레드_후드,person,32,353,31,66,26,기록+말함
 ch26,246,person:마리안,person,2,0,0,5,20,기록
 ch26,246,person:버닝엄,person,4,34,3,0,14,기록
-ch26,246,person:슈엔,person,3,24,2,4,28,기록
+ch26,246,person:슈엔,person,3,24,2,4,29,기록
 ch26,246,person:스노우_화이트,person,2,3,0,5,26,기록
 ch26,246,person:아니스,person,3,151,13,14,119,기록+말함
 ch26,246,person:엔더슨,person,2,33,3,0,32,기록
@@ -1661,7 +1663,7 @@ event_lionheart,263,org:동물권_단체,org,2,0,,4,1,기록
 event_lionheart,263,org:해피_주,org,5,0,,2,3,기록
 event_lionheart,263,person:길로틴,person,3,59,6,26,6,기록
 event_lionheart,263,person:레오나,person,14,558,54,51,3,기록+말함
-event_lionheart,263,person:머스탱,person,4,56,5,3,27,기록
+event_lionheart,263,person:머스탱,person,4,56,5,3,26,기록
 event_lionheart,263,person:비스킷,person,1,238,23,23,5,말함
 event_lionheart,263,person:티미,person,2,14,1,55,2,기록
 event_lionheart,263,place:지상,place,0,0,,24,129,이름
@@ -1672,7 +1674,7 @@ char:382,264,place:지상,place,0,0,,12,129,이름
 event_dirtybackyard,265,concept:미스트,concept,6,0,,51,7,기록+이름
 event_dirtybackyard,265,org:모란회,org,7,0,,30,4,기록+이름
 event_dirtybackyard,265,org:언더월드_퀸,org,2,0,,3,9,기록
-event_dirtybackyard,265,person:머스탱,person,2,0,0,3,27,기록
+event_dirtybackyard,265,person:머스탱,person,2,0,0,3,26,기록
 event_dirtybackyard,265,person:목단,person,13,419,50,73,9,기록+말함
 event_dirtybackyard,265,person:사쿠라,person,2,23,3,3,10,기록
 event_dirtybackyard,265,person:슈가,person,11,293,35,41,10,기록+말함
@@ -1929,7 +1931,7 @@ event_goldencoinrush1,300,org:프리마돈나,org,2,0,,0,1,기록
 event_goldencoinrush1,300,person:누아르,person,2,16,1,10,7,기록
 event_goldencoinrush1,300,person:루드밀라,person,2,4,0,4,11,기록
 event_goldencoinrush1,300,person:루주,person,2,86,3,14,6,기록
-event_goldencoinrush1,300,person:머스탱,person,2,322,11,25,27,기록+말함
+event_goldencoinrush1,300,person:머스탱,person,2,322,11,25,26,기록+말함
 event_goldencoinrush1,300,person:메어리,person,3,121,4,22,9,기록
 event_goldencoinrush1,300,person:밀크,person,3,109,4,26,10,기록
 event_goldencoinrush1,300,person:볼륨,person,3,97,3,27,3,기록
@@ -1969,7 +1971,7 @@ event_beautyfullshot1,305,org:헤도니아,org,3,0,,7,6,기록+이름
 event_beautyfullshot1,305,person:길티,person,7,132,6,28,3,기록
 event_beautyfullshot1,305,person:라피,person,4,78,4,8,85,기록
 event_beautyfullshot1,305,person:로산나,person,11,315,15,45,9,기록+말함
-event_beautyfullshot1,305,person:머스탱,person,5,60,3,7,27,기록
+event_beautyfullshot1,305,person:머스탱,person,5,60,3,7,26,기록
 event_beautyfullshot1,305,person:메어리,person,3,75,4,9,9,기록
 event_beautyfullshot1,305,person:메이든,person,6,189,9,31,6,기록
 event_beautyfullshot1,305,person:목단,person,2,53,3,7,9,기록
@@ -2125,7 +2127,7 @@ side:wordless,331,org:미실리스,org,3,0,,10,32,기록+이름
 side:wordless,331,org:워드리스,org,4,0,,8,3,기록+이름
 side:wordless,331,person:마나,person,6,198,19,16,12,기록+말함
 side:wordless,331,person:미하라,person,13,469,45,75,14,기록+말함
-side:wordless,331,person:슈엔,person,8,85,8,48,28,기록
+side:wordless,331,person:슈엔,person,8,85,8,48,29,기록
 side:wordless,331,person:유니,person,14,151,15,138,13,기록+말함
 side:wordless,331,person:지엔,person,2,0,0,6,7,기록
 side:wordless,331,person:토커티브,person,2,0,0,3,15,기록
@@ -2280,7 +2282,7 @@ event_secretgarden,345,org:보타닉_가든,org,3,0,,2,3,기록
 event_secretgarden,345,org:해피_주,org,0,0,,7,3,이름
 event_secretgarden,345,person:리안,person,6,93,9,17,2,기록
 event_secretgarden,345,person:비스킷,person,3,278,26,26,5,기록+말함
-event_secretgarden,345,person:슈엔,person,2,0,0,19,28,기록
+event_secretgarden,345,person:슈엔,person,2,0,0,19,29,기록
 event_secretgarden,345,person:플로라,person,8,482,45,66,5,기록+말함
 event_secretgarden,345,place:방주,place,0,0,,7,170,이름
 event_secretgarden,345,place:지상,place,0,0,,19,129,이름
@@ -2351,12 +2353,12 @@ event_wisdomspring,353,place:지상,place,0,0,,7,129,이름
 char:290,354,concept:니케,concept,0,0,,5,185,이름
 char:290,354,org:M.M.R.,org,1,0,,5,12,이름
 char:290,354,person:마나,person,5,167,75,37,12,기록+말함
-char:290,354,person:슈엔,person,2,0,0,6,28,기록
+char:290,354,person:슈엔,person,2,0,0,6,29,기록
 char:290,354,person:에테르,person,0,30,13,8,12,말함
 char:290,354,place:모던_바,place,2,0,,3,1,기록
 event_romanticvalentine,355,concept:니케,concept,0,0,,8,185,이름
 event_romanticvalentine,355,person:마스트,person,1,338,30,35,9,말함
-event_romanticvalentine,355,person:머스탱,person,2,20,2,3,27,기록
+event_romanticvalentine,355,person:머스탱,person,2,20,2,3,26,기록
 event_romanticvalentine,355,person:스윗_조니,person,6,191,17,4,2,기록+말함
 event_romanticvalentine,355,person:신,person,3,157,14,22,4,기록+말함
 event_romanticvalentine,355,person:트로니,person,3,182,16,27,11,기록+말함
@@ -2388,11 +2390,11 @@ ch35,358,person:라플라스,person,2,94,6,9,13,기록
 ch35,358,person:라피,person,13,252,17,26,85,기록+말함
 ch35,358,person:레비아탄,person,11,47,3,21,19,기록
 ch35,358,person:맥스웰,person,4,251,17,9,15,기록+말함
-ch35,358,person:머스탱,person,4,46,3,8,27,기록
+ch35,358,person:머스탱,person,4,46,3,8,26,기록
 ch35,358,person:미하라,person,2,0,0,1,14,기록
 ch35,358,person:베히모스,person,2,0,0,9,14,기록
 ch35,358,person:세이렌,person,3,0,0,13,14,기록
-ch35,358,person:슈엔,person,8,0,0,24,28,기록
+ch35,358,person:슈엔,person,8,0,0,24,29,기록
 ch35,358,person:신데렐라,person,10,180,12,49,26,기록+말함
 ch35,358,person:아니스,person,7,126,9,28,119,기록
 ch35,358,person:에닉,person,2,0,0,0,22,기록
@@ -2420,7 +2422,7 @@ ch36,360,person:라피,person,5,80,8,4,85,기록
 ch36,360,person:레비아탄,person,15,325,33,28,19,기록+말함
 ch36,360,person:베히모스,person,7,0,0,31,14,기록
 ch36,360,person:세이렌,person,4,0,0,15,14,기록
-ch36,360,person:슈엔,person,2,0,0,10,28,기록
+ch36,360,person:슈엔,person,2,0,0,10,29,기록
 ch36,360,person:신데렐라,person,4,106,11,33,26,기록+말함
 ch36,360,person:아니스,person,4,83,8,13,119,기록
 ch36,360,person:아비스타,person,2,22,2,4,6,기록
@@ -2445,7 +2447,7 @@ fl:for_rest,365,person:리타,person,8,301,28,52,8,기록+말함
 fl:for_rest,365,person:린네,person,6,83,8,47,1,기록
 fl:for_rest,365,person:마나,person,2,38,4,1,12,기록
 fl:for_rest,365,person:센티,person,3,73,7,16,4,기록
-fl:for_rest,365,person:슈엔,person,2,0,0,5,28,기록
+fl:for_rest,365,person:슈엔,person,2,0,0,5,29,기록
 fl:for_rest,365,person:조쉬_허밋,person,3,83,8,5,1,기록
 fl:for_rest,365,person:트리나,person,11,276,26,79,2,기록+말함
 fl:for_rest,365,person:플로라,person,5,132,12,22,5,기록+말함
@@ -2502,7 +2504,7 @@ ch37,373,person:라피,person,6,154,17,21,85,기록+말함
 ch37,373,person:레비아탄,person,8,23,2,19,19,기록
 ch37,373,person:맥스웰,person,5,108,12,8,15,기록+말함
 ch37,373,person:베히모스,person,2,0,0,8,14,기록
-ch37,373,person:슈엔,person,3,0,0,11,28,기록
+ch37,373,person:슈엔,person,3,0,0,11,29,기록
 ch37,373,person:아니스,person,3,89,10,0,119,기록
 ch37,373,person:아비스타,person,2,27,3,7,6,기록
 ch37,373,person:아이리,person,4,63,7,12,5,기록
@@ -2562,7 +2564,7 @@ event_unbreakablesphere1,377,person:마나,person,4,123,4,19,12,기록
 event_unbreakablesphere1,377,person:모리,person,33,915,31,210,5,기록+말함
 event_unbreakablesphere1,377,person:미하라,person,29,773,26,140,14,기록+말함
 event_unbreakablesphere1,377,person:세이렌,person,32,5,0,92,14,기록
-event_unbreakablesphere1,377,person:슈엔,person,2,0,0,3,28,기록
+event_unbreakablesphere1,377,person:슈엔,person,2,0,0,3,29,기록
 event_unbreakablesphere1,377,person:시프티,person,2,44,1,3,16,기록
 event_unbreakablesphere1,377,person:신데렐라,person,7,22,1,8,26,기록
 event_unbreakablesphere1,377,person:에이브,person,2,0,0,2,9,기록
@@ -2743,7 +2745,7 @@ ch39,396,person:라이온,person,2,0,0,2,3,기록
 ch39,396,person:라피,person,6,96,6,8,85,기록
 ch39,396,person:랩칠리언,person,10,98,6,24,11,기록
 ch39,396,person:레비아탄,person,6,91,6,5,19,기록
-ch39,396,person:머스탱,person,6,41,3,5,27,기록
+ch39,396,person:머스탱,person,6,41,3,5,26,기록
 ch39,396,person:바이퍼,person,2,150,9,12,11,기록
 ch39,396,person:볼륨,person,2,33,2,1,3,기록
 ch39,396,person:아니스,person,15,215,13,77,119,기록+말함
@@ -2783,7 +2785,7 @@ ch40,398,person:라이온,person,4,0,0,10,3,기록
 ch40,398,person:레비아탄,person,7,67,4,28,19,기록
 ch40,398,person:리버렐리오,person,12,132,8,21,12,기록
 ch40,398,person:리버린,person,3,0,0,5,9,기록
-ch40,398,person:머스탱,person,4,17,1,8,27,기록
+ch40,398,person:머스탱,person,4,17,1,8,26,기록
 ch40,398,person:미세스_미스,person,6,132,8,12,5,기록
 ch40,398,person:베히모스,person,6,27,2,11,14,기록
 ch40,398,person:식스오,person,4,0,0,10,9,기록
@@ -2838,7 +2840,7 @@ fl:coins_in_rush,404,org:쉐이드,org,7,0,,12,2,기록+이름
 fl:coins_in_rush,404,org:중앙_정부,org,3,0,,13,66,기록+이름
 fl:coins_in_rush,404,org:테트라,org,3,0,,10,13,기록+이름
 fl:coins_in_rush,404,person:루주,person,4,196,11,40,6,기록+말함
-fl:coins_in_rush,404,person:머스탱,person,13,221,12,28,27,기록+말함
+fl:coins_in_rush,404,person:머스탱,person,12,221,12,28,26,기록+말함
 fl:coins_in_rush,404,person:밀크,person,4,473,26,88,10,기록+말함
 fl:coins_in_rush,404,person:베이,person,2,135,8,29,5,기록
 fl:coins_in_rush,404,person:벨벳,person,17,207,12,74,3,기록+말함
@@ -2960,7 +2962,7 @@ ch41,414,person:로지,person,3,0,0,8,1,기록
 ch41,414,person:리버렐리오,person,11,122,8,12,12,기록
 ch41,414,person:리버린,person,6,41,3,16,9,기록
 ch41,414,person:맥스웰,person,3,51,3,11,15,기록
-ch41,414,person:머스탱,person,3,0,0,3,27,기록
+ch41,414,person:머스탱_한슨의_아버지,person,3,0,0,0,3,기록
 ch41,414,person:미세스_미스,person,7,91,6,3,5,기록
 ch41,414,person:민트,person,7,47,3,8,6,기록
 ch41,414,person:바하무트,person,6,108,7,56,4,기록
@@ -3007,7 +3009,7 @@ ch42,416,person:리버렐리오,person,16,145,8,12,12,기록
 ch42,416,person:리버린,person,3,17,1,7,9,기록
 ch42,416,person:리틀_머메이드,person,9,95,5,28,8,기록
 ch42,416,person:맥스웰,person,4,21,1,12,15,기록
-ch42,416,person:머스탱,person,7,52,3,1,27,기록
+ch42,416,person:머스탱,person,7,52,3,1,26,기록
 ch42,416,person:모리,person,5,71,4,11,5,기록
 ch42,416,person:미세스_미스,person,3,36,2,3,5,기록
 ch42,416,person:바이퍼,person,2,36,2,5,11,기록
@@ -3058,7 +3060,7 @@ event_goddessfall1,418,person:도로시,person,8,59,2,21,31,기록
 event_goddessfall1,418,person:라푼젤,person,10,110,3,32,18,기록
 event_goddessfall1,418,person:리버렐리오,person,4,0,0,12,12,기록
 event_goddessfall1,418,person:릴리바이스,person,5,0,0,13,14,기록
-event_goddessfall1,418,person:릴리스,person,2,0,0,4,2,기록
+event_goddessfall1,418,person:릴리스,person,2,0,0,4,3,기록
 event_goddessfall1,418,person:마리안,person,27,128,4,137,20,기록
 event_goddessfall1,418,person:미러,person,24,244,7,6,7,기록
 event_goddessfall1,418,person:세실,person,7,127,4,11,13,기록
@@ -3185,7 +3187,7 @@ char:582,431,person:레이블,person,2,394,100,93,2,기록+말함
 char:582,431,place:방주,place,0,0,,8,170,이름
 fl:fatal_maid,432,org:메이드_포_유,org,4,0,,3,4,기록
 fl:fatal_maid,432,org:쉐이드,org,5,0,,6,2,기록+이름
-fl:fatal_maid,432,person:머스탱,person,3,0,0,1,27,기록
+fl:fatal_maid,432,person:머스탱,person,3,0,0,1,26,기록
 fl:fatal_maid,432,person:벨벳,person,18,408,58,93,3,기록+말함
 fl:fatal_maid,432,person:앨든,person,3,0,0,14,2,기록
 fl:fatal_maid,432,person:에이드,person,3,116,16,19,9,기록+말함
@@ -3354,7 +3356,8 @@ side:pretty_star,447,org:중앙_정부,org,14,0,,68,66,기록+이름
 side:pretty_star,447,org:테트라,org,13,0,,23,13,기록+이름
 side:pretty_star,447,person:레드_후드,person,2,0,0,5,26,기록
 side:pretty_star,447,person:릴리바이스,person,2,0,0,6,14,기록
-side:pretty_star,447,person:머스탱,person,15,353,19,26,27,기록+말함
+side:pretty_star,447,person:머스탱,person,0,353,19,26,26,말함
+side:pretty_star,447,person:머스탱_한슨의_아버지,person,15,0,0,0,3,기록
 side:pretty_star,447,person:미세스_미스,person,12,154,8,9,5,기록
 side:pretty_star,447,person:버닝엄,person,3,5,0,2,14,기록
 side:pretty_star,447,person:아니스,person,11,225,12,101,119,기록+말함
@@ -3404,7 +3407,7 @@ ch45,450,person:도반,person,2,0,0,2,8,기록
 ch45,450,person:라푼젤,person,2,0,0,1,18,기록
 ch45,450,person:라피,person,6,71,6,25,85,기록
 ch45,450,person:리버린,person,6,26,2,20,9,기록
-ch45,450,person:머스탱,person,5,58,5,5,27,기록
+ch45,450,person:머스탱,person,5,58,5,5,26,기록
 ch45,450,person:버닝엄,person,5,38,3,0,14,기록
 ch45,450,person:스노우_화이트,person,3,10,1,2,26,기록
 ch45,450,person:식스오,person,13,19,1,66,9,기록
@@ -3457,7 +3460,7 @@ ch46,452,person:레비아탄,person,4,125,7,17,19,기록
 ch46,452,person:리버렐리오,person,4,0,0,6,12,기록
 ch46,452,person:릴리바이스,person,3,0,0,2,14,기록
 ch46,452,person:마리안,person,5,0,0,6,20,기록
-ch46,452,person:머스탱,person,2,21,1,1,27,기록
+ch46,452,person:머스탱,person,2,21,1,1,26,기록
 ch46,452,person:미러,person,20,201,11,30,7,기록+말함
 ch46,452,person:버닝엄,person,12,139,7,23,14,기록
 ch46,452,person:베히모스,person,4,41,2,5,14,기록
@@ -3501,7 +3504,8 @@ event_staranis1,454,org:테트라,org,17,0,,113,13,기록+이름
 event_staranis1,454,person:ELYSION_Line._0,person,3,49,1,0,1,기록
 event_staranis1,454,person:MISSILIS_Line._0,person,3,36,1,0,1,기록
 event_staranis1,454,person:리스,person,20,252,8,48,1,기록
-event_staranis1,454,person:머스탱,person,34,569,17,72,27,기록+말함
+event_staranis1,454,person:머스탱,person,0,569,17,72,26,말함
+event_staranis1,454,person:머스탱_한슨의_아버지,person,34,0,0,0,3,기록
 event_staranis1,454,person:미세스_미스,person,5,60,2,4,5,기록
 event_staranis1,454,person:민트,person,14,358,11,50,6,기록+말함
 event_staranis1,454,person:아니스,person,57,908,28,226,119,기록+말함
@@ -3524,14 +3528,14 @@ char:18,457,person:네온,person,8,286,100,28,56,기록+말함
 char:18,457,person:프린세스,person,4,0,0,53,2,기록
 char:18,457,place:방주,place,0,0,,8,170,이름
 char:18,457,place:아우터_림,place,2,0,,12,43,기록+이름
-fl:b-side_idol,458,person:머스탱,person,5,69,10,8,27,기록
+fl:b-side_idol,458,person:머스탱,person,5,69,10,8,26,기록
 fl:b-side_idol,458,person:민트,person,11,559,78,98,6,기록+말함
 fl:b-side_idol,458,person:아니스,person,2,0,0,18,119,기록
 fl:b-side_idol,458,person:프리카,person,3,28,4,6,7,기록
 fl:b-side_idol,458,place:전초기지,place,1,0,,10,13,이름
 char:600,459,person:민트,person,3,258,88,43,6,기록+말함
 fl:bitter_spice,460,org:Twinkle_Twin_Star,org,2,0,,4,1,기록
-fl:bitter_spice,460,person:머스탱,person,2,17,2,0,27,기록
+fl:bitter_spice,460,person:머스탱,person,2,17,2,0,26,기록
 fl:bitter_spice,460,person:민트,person,5,201,25,104,6,기록+말함
 fl:bitter_spice,460,person:아니스,person,3,60,7,33,119,기록
 fl:bitter_spice,460,person:프리카,person,13,462,57,131,7,기록+말함
@@ -3552,7 +3556,7 @@ fl:ark_ranger,462,org:카운터스,org,3,0,,9,32,기록+이름
 fl:ark_ranger,462,org:테트라,org,2,0,,5,13,기록+이름
 fl:ark_ranger,462,person:라피,person,2,98,5,6,85,기록
 fl:ark_ranger,462,person:루크,person,6,69,3,11,1,기록
-fl:ark_ranger,462,person:머스탱,person,11,110,6,13,27,기록
+fl:ark_ranger,462,person:머스탱,person,11,110,6,13,26,기록
 fl:ark_ranger,462,person:목단,person,4,134,7,11,9,기록
 fl:ark_ranger,462,person:소라,person,3,28,1,1,4,기록
 fl:ark_ranger,462,person:아니스,person,3,79,4,24,119,기록
@@ -3617,7 +3621,7 @@ fl:project_matis,467,person:라라,person,3,6,0,19,1,기록
 fl:project_matis,467,person:라플라스,person,17,265,9,94,13,기록
 fl:project_matis,467,person:맥스웰,person,19,907,31,146,15,기록+말함
 fl:project_matis,467,person:샛별,person,2,0,0,1,4,기록
-fl:project_matis,467,person:슈엔,person,49,1139,39,231,28,기록+말함
+fl:project_matis,467,person:슈엔,person,49,1139,39,231,29,기록+말함
 fl:project_matis,467,person:에닉,person,4,7,0,4,22,기록
 fl:project_matis,467,person:엔메,person,24,211,7,34,1,기록
 fl:project_matis,467,person:지엔,person,18,353,12,38,7,기록+말함

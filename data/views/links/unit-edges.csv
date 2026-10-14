@@ -132,8 +132,9 @@ ch04,ch06,setup_payoff,2,3,record,0,Q13-2 Q15-2,,15,26,메인,메인
 ch04,ch06,character,1,2,auto,0,,person:토커티브,15,26,메인,메인
 ch04,ch06,keyword,2,1,auto,0,,place:방주 place:지상,15,26,메인,메인
 ch04,ch07,callback,1,3,record,0,E56,,15,31,메인,메인
+ch04,ch08,character,1,2,auto,0,,person:슈엔,15,37,메인,메인
 ch04,ch09,setup_payoff,1,2,record,0,Q18-2,,15,43,메인,메인
-ch04,ch09,character,2,2,auto,0,,person:슈엔 person:엔더슨,15,43,메인,메인
+ch04,ch09,character,1,2,auto,0,,person:엔더슨,15,43,메인,메인
 ch04,ch09,keyword,2,2,auto,0,,concept:기억_소거 org:앱솔루트,15,43,메인,메인
 ch04,ch10,setup_payoff,1,3,record,0,Q16-2,,15,48,메인,메인
 ch04,ch10,character,3,2,auto,0,,person:베스티 person:엠마 person:은화,15,48,메인,메인
@@ -294,7 +295,7 @@ ch08,sub:할아범_00,character,1,1,auto,0,,person:라피,37,42,메인,서브퀘
 ch08,ch09,sequel,1,3,auto,0,,,37,43,메인,메인
 ch08,ch09,setup_payoff,3,3,record,0,E63 E64 Q42-2,,37,43,메인,메인
 ch08,ch09,reversal,1,3,record,0,F234-2,,37,43,메인,메인
-ch08,ch09,character,2,2,auto,0,,person:시프티 person:엑시아,37,43,메인,메인
+ch08,ch09,character,3,2,auto,0,,person:슈엔 person:시프티 person:엑시아,37,43,메인,메인
 ch08,ch09,keyword,1,2,auto,0,,org:카운터스,37,43,메인,메인
 ch08,sub:미실리스_연구팀_00,character,1,1,auto,0,,person:네온,37,44,메인,서브퀘스트
 ch08,ch39,setup_payoff,1,3,record,0,Q43-2,,37,396,메인,메인
@@ -681,6 +682,7 @@ char:221,ch17,setup_payoff,2,3,record,0,Q83-2 Q84-2,,94,140,호감도,메인
 char:221,ch17,character,1,2,auto,0,,person:라푼젤,94,140,호감도,메인
 char:221,ch17,keyword,2,2,auto,0,,concept:NIMPH org:갓데스,94,140,호감도,메인
 char:221,event_overzone,setup_payoff,1,3,record,0,Q84-3,,94,200,호감도,이벤트
+char:221,erelic:white_memory,character,1,2,auto,0,,person:릴리스,94,201,호감도,유실물
 char:221,ch24,setup_payoff,1,2,record,0,E1259,,94,219,호감도,메인
 char:221,ch25,setup_payoff,1,3,record,0,Q82-2,,94,241,호감도,메인
 char:221,event_footstepwalkrun1,setup_payoff,1,3,record,0,Q82-3,,94,350,호감도,이벤트
@@ -2945,8 +2947,8 @@ fl:coins_in_rush,char:143,setup_payoff,1,2,record,0,E857,,404,406,이벤트,호�
 fl:coins_in_rush,char:143,character,1,2,auto,0,,person:밀크,404,406,이벤트,호감도
 fl:coins_in_rush,char:143,keyword,1,2,auto,0,,place:코인_러시,404,406,이벤트,호감도
 fl:coins_in_rush,fl:reborn_evil,keyword,3,2,auto,0,,org:중앙_정부 place:방주 place:아우터_림,404,407,이벤트,이벤트
-fl:coins_in_rush,ch41,character,1,2,auto,0,,person:머스탱,404,414,이벤트,메인
 fl:coins_in_rush,ch41,keyword,1,2,auto,0,,org:테트라,404,414,이벤트,메인
+fl:coins_in_rush,ch42,character,1,2,auto,0,,person:머스탱,404,416,이벤트,메인
 fl:coins_in_rush,fl:fatal_maid,sequel,1,2,manual,0,Y48,,404,432,이벤트,이벤트
 fl:coins_in_rush,fl:fatal_maid,setup_payoff,3,3,record,0,E862 E867 Q280-2,,404,432,이벤트,이벤트
 fl:coins_in_rush,fl:fatal_maid,callback,4,3,record,0,E1466 E1468 E1469,,404,432,이벤트,이벤트
@@ -3011,7 +3013,7 @@ ch41,relic:거꾸로적힌기록,character,2,2,auto,0,,person:레비아탄 perso
 ch41,ch42,sequel,1,3,auto,0,,,414,416,메인,메인
 ch41,ch42,setup_payoff,3,3,record,0,Q286-2 Q288-2 Q293-2,,414,416,메인,메인
 ch41,ch42,callback,3,3,record,0,E923 E924 E928,,414,416,메인,메인
-ch41,ch42,character,15,2,auto,0,,person:E.H. person:라피 person:리버렐리오 person:리버린 person:맥스웰 person:머스탱 person:미세스_미스 person:베히모스 person:식스오 person:아니스 person:에닉 person:온리_원 person:지즈 person:퀸 person:프리티,414,416,메인,메인
+ch41,ch42,character,14,2,auto,0,,person:E.H. person:라피 person:리버렐리오 person:리버린 person:맥스웰 person:미세스_미스 person:베히모스 person:식스오 person:아니스 person:에닉 person:온리_원 person:지즈 person:퀸 person:프리티,414,416,메인,메인
 ch41,ch42,keyword,11,2,auto,0,,concept:E2_크리스탈 concept:니케 concept:다크_매터 concept:랩쳐 concept:웨일리 concept:헬레틱 org:포비스트 place:방주 place:아우터_림 place:유사_방주 place:지상,414,416,메인,메인
 ch41,relic:주의용광로사용법,callback,1,3,record,0,F2184-2,,414,417,메인,유실물
 ch41,relic:주의용광로사용법,keyword,1,2,auto,0,,concept:용광로,414,417,메인,유실물
@@ -3023,6 +3025,7 @@ ch41,ch43,setup_payoff,2,3,record,0,Q289-2 Q290-2,,414,434,메인,메인
 ch41,ch43,character,3,2,auto,0,,person:D.E.E.P. person:에테르 person:지엔,414,434,메인,메인
 ch41,ch44,callback,1,3,record,0,E1033,,414,436,메인,메인
 ch41,ch44,keyword,1,2,auto,0,,concept:미스트,414,436,메인,메인
+ch41,side:pretty_star,character,1,2,auto,0,,person:머스탱_한슨의_아버지,414,447,메인,사이드
 ch41,side:pretty_star,keyword,1,2,auto,0,,org:테트라,414,447,메인,사이드
 ch41,fl:good_world,keyword,1,2,auto,0,,org:M.M.R.,414,448,메인,이벤트
 ch41,ch45,callback,2,3,record,0,E1087 E1091,,414,450,메인,메인
@@ -3250,7 +3253,7 @@ side:pretty_star,ch46,keyword,3,2,auto,0,,concept:양산형_니케 concept:지�
 side:pretty_star,event_staranis1,sequel,1,2,manual,0,Y55,,447,454,사이드,이벤트
 side:pretty_star,event_staranis1,setup_payoff,7,3,record,0,E1049 E1050 E1052 E1054 E1058 E1062 Q331-2,,447,454,사이드,이벤트
 side:pretty_star,event_staranis1,callback,10,3,record,0,E1119 E1120 E1124 E1130 E1131 E1133 E1136 E1142 E1160 E1165,,447,454,사이드,이벤트
-side:pretty_star,event_staranis1,character,2,2,auto,0,,person:미세스_미스 person:한슨,447,454,사이드,이벤트
+side:pretty_star,event_staranis1,character,3,2,auto,0,,person:머스탱_한슨의_아버지 person:미세스_미스 person:한슨,447,454,사이드,이벤트
 side:pretty_star,event_staranis1,keyword,2,2,auto,0,,org:3대_기업 org:테트라,447,454,사이드,이벤트
 side:pretty_star,ch48,character,1,2,auto,0,,person:레드_후드,447,472,사이드,메인
 fl:good_world,char:620,character,1,2,auto,0,,person:백학,448,449,이벤트,호감도

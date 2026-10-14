@@ -1490,9 +1490,9 @@
     {
       "id": "O69",
       "type": "관계",
-      "chain": "관계 person:머스탱 ↔ person:한슨",
-      "about": ["person:머스탱", "person:한슨"],
-      "text": "(초안) 관계 person:머스탱 ↔ person:한슨의 끝",
+      "chain": "관계 person:머스탱_한슨의_아버지 ↔ person:한슨",
+      "about": ["person:머스탱_한슨의_아버지", "person:한슨"],
+      "text": "(초안) 관계 person:머스탱_한슨의_아버지 ↔ person:한슨의 끝",
       "built": ["D1092", "D1091", "D1106"],
       "end": "event_staranis1",
       "closing": ["D1184", "D1196", "D1197", "D1227"],
@@ -1506,6 +1506,14 @@
           "date": "2026-10-09",
           "session": "X3f-1e",
           "note": "PRETTY STAR · STAR ANIS에서 한슨이 아들로서 처음 맞서지만, 머스탱이 치료제를 깨며 '역시 내 아들'이라 즐기는 데서 멈춤 — 대립이 열린 채라 결판이 아니다"
+        },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "사슬 열쇠를 실제 사람으로 — 회상 속 머스탱은 아버지(L36 다른 인물). 기각 까닭은 그대로",
+          "before": "(초안) 관계 person:머스탱 ↔ person:한슨의 끝"
         }
       ]
     },

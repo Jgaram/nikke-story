@@ -18,12 +18,21 @@
     {
       "id": "F227",
       "text": "테트라 라인의 CEO 머스탱은 \"니케는 모두 스타가 되어야 한다\"고 말하며, 러블리 드림☆은 그를 존경한다",
-      "about": ["person:한슨", "person:러블리_드림☆", "org:테트라"],
+      "about": ["person:머스탱", "person:러블리_드림☆", "org:테트라"],
       "evidence": [{ "scene": "sub:러블리_드림_00", "lines": ["113-138"] }],
       "reason": "러블리 드림☆이 전하는 머스탱의 명언 \"소녀는 모두 빛나야 하는 법, 니케는 모두 스타가 되어야 한다\"",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-09-29", "session": "R02", "note": "Claude 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 한슨 → 머스탱: 지금의 머스탱은 한슨(L33 같은 인물)이라 드러난 뒤 한 사람으로 보인다"
+        }
+      ]
     }
   ],
   "questions": [],

@@ -33,6 +33,7 @@ import { EXAMPLE_DIR, READ1_DIR, ROOT, displayPath, loadDataset } from '../recor
 import { KIND_ORDER, loadOrder } from '../records/order.mjs';
 import { chronology, loadChronology } from './chrono.mjs';
 import { changeTimeline, chronoOrder, prequelPairs, releaseDrift, revealChrono, unitSpans } from './chrono-order.mjs';
+import { actualDataset } from '../records/identity.mjs';
 import { chronoClues } from './chrono-clues.mjs';
 import { archiveEvents } from './events.mjs';
 import { knownAt, releasePlaces, revealStages } from './reveal.mjs';
@@ -99,6 +100,7 @@ export function buildChronology(ds, ctx, rel) {
  * @returns {{ units, ticks, rows, roots, events, scenes, chrono, pieces, clues, corder, changes, rel, st, ch, x1d, problems }}
  */
 export function buildTimelineViews(ds, ctx, order) {
+  ds = actualDataset(ds, ctx, order); // 인물 변화는 실제 사람으로(W24a — 다른 인물 줄을 근거로 한 기록)
   const rel = releasePlaces(ctx, order);
   const st = revealStages(ds, ctx, order, rel);
   const ev = archiveEvents(ctx, rel.byUnit);

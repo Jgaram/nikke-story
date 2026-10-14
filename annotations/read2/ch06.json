@@ -46,12 +46,21 @@
       "act": "암시",
       "points": ["F209", "J1"],
       "text": "하늘이 갈라지며 랩쳐를 입은 니케가 내려와 토커티브를 '제 동료'라 부르며 구해 가고, 지휘관은 그것을 인류를 향한 '명백한 악의'로 느낀다 — 바이저 아래 얼굴은 처분된 마리안이다(F209)",
-      "about": ["person:마리안", "person:토커티브"],
+      "about": ["person:모더니아", "person:토커티브"],
       "evidence": [{ "scene": "d_main_06_08_e", "lines": ["14-33"] }],
       "reason": "#16-20 · #21-23. ch07에서 모더니아의 얼굴이 마리안으로 드러난다(F209 · Q37)",
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M01" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 마리안 → 모더니아: 같은 인물로 드러나기(L1 · ch07) 전 단위라 그 장면 이름으로"
+        }
+      ]
     }
   ],
   "changes": [

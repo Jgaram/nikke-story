@@ -31,12 +31,21 @@
       "act": "암시",
       "points": ["F2373"],
       "text": "니케들을 사람이자 동료로 대한 최초의 지휘관을 '우리 모두는, 아마 그 사람을…' 하고 말을 흐린다 — 릴리바이스와 서로 사랑한 갓데스의 지휘관 엔더슨",
-      "about": ["person:엔더슨", "person:릴리바이스"],
+      "about": ["person:엔더슨", "person:릴리스"],
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["86-96"] }],
       "reason": "흐린 말 #92가 ark_guardian의 고백 장면(F2373 — 릴리바이스와 서로 사랑한다 고백)을 미리 비춘다. '모두'라 해 누구의 마음인지는 원문이 잇지 않는다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 릴리바이스 → 릴리스: 같은 인물로 드러나기(L8 · event_overzone) 전 단위라 그 장면 이름으로"
+        }
+      ]
     },
     {
       "id": "E1258",
@@ -156,13 +165,22 @@
       "person": "person:라푼젤",
       "aspect": "관계",
       "act": "기준",
-      "with": ["person:릴리바이스"],
+      "with": ["person:릴리스"],
       "text": "시종일관 무서운 표정으로 잔소리하면서도 누구보다 우리를 사랑해 준, 홍련도 한 수 접는 맏언니 리더로 기억한다",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["69-73"] }],
       "reason": "#69-72 리더이자 맏언니 · '그 누구보다 우리를 사랑해 줬어요'. 이름 '릴리스'는 릴리바이스(people.json)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 릴리바이스 → 릴리스: 같은 인물로 드러나기(L8 · event_overzone) 전 단위라 그 장면 이름으로"
+        }
+      ]
     }
   ],
   "life": []

@@ -309,7 +309,7 @@ D1373,person:라푼젤,라푼젤,성격,기준,,,,"'하악 하악' 음란한 망
 D1374,person:라푼젤,라푼젤,관계,기준,person:지휘관,,,모래 폭풍에 쓰러진 지휘관을 구해 '형제님'이라 부르며 망상을 늘어놓으면서도 하나뿐인 물을 양보하고 합류 지점까지 호위하는 구원자,char:221,94,ep:d_nikke_rapunzel_01,,,,,확실,확정
 D1376,person:라푼젤,라푼젤,신념,기준,,,,"지상에서 외롭게 쓰러진 자매님들의 NIMPH를 로사리오에 모아, NIMPH가 기억하는 고향에 무덤을 만들어 주는 것을 자기 할 일로 삼는다",char:221,94,ep:d_nikke_rapunzel_03,,,,,확실,확정
 D1377,person:라푼젤,라푼젤,기억,기준,,,,"먼 과거와 최근 1년의 기억만 남기고 그 사이를 지우며, 과거를 지우면 5년은 기억할 수 있어도 갓데스가 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는다",char:221,94,ep:d_nikke_rapunzel_04,,,,,확실,확정
-D1378,person:라푼젤,라푼젤,관계,기준,person:릴리바이스,,,"시종일관 무서운 표정으로 잔소리하면서도 누구보다 우리를 사랑해 준, 홍련도 한 수 접는 맏언니 리더로 기억한다",char:221,94,ep:d_nikke_rapunzel_04,,,,,확실,확정
+D1378,person:라푼젤,라푼젤,관계,기준,person:릴리스,,,"시종일관 무서운 표정으로 잔소리하면서도 누구보다 우리를 사랑해 준, 홍련도 한 수 접는 맏언니 리더로 기억한다",char:221,94,ep:d_nikke_rapunzel_04,,,,,확실,확정
 D1375,person:라푼젤,라푼젤,관계,변화,person:지휘관,모래 폭풍에서 우연히 구한 '형제님',보면 마음이 편하고 그리움이 느껴진다며 선한 사람이라 축복하고 다시 만나자고 한다,,char:221,94,ep:d_nikke_rapunzel_05,ep:d_nikke_rapunzel_03,char:221,,,확실,확정
 D250,person:라푼젤,라푼젤,신념,변화,,죽은 이들의 목소리에 끌려 기도만 하며 죽음의 고요를 동경했다,먼저 떠난 이들의 고향을 찾아 주는 것을 자기 할 일로 정했다,,event_overzone,200,event_overzone2_02_e,event_overzone1_05_s,event_overzone,S71,F918,확실,확정
 D259,person:라푼젤,라푼젤,관계,기준,person:레드_후드,,,"도색 잡지로 자기를 부끄럽게 하며 놀리던 레드 후드가 싫었지만, 떠난 뒤엔 그 부끄러움마저 그립다는 동료",erelic:white_memory,201,erelic:white_memory_16,,,,,확실,확정
@@ -694,8 +694,24 @@ D1292,person:맥스웰,맥스웰,관계,변화,person:슈엔,'내 빌어먹을 �
 D2225,person:맥스웰,맥스웰,성격,변화,,철저히 이해관계 · 효율로만 움직인다며 회사가 주는 것 말고는 먹지 않았다,"밀려 넘어진 아이를 먼저 일으키고 사과를 받아 내며, 비효율이라던 미지근한 레모네이드를 '베이비가 준 것'이라 마신다",,char:105,469,ep:d_nikke_maxwell_mechanic_04,ep:d_nikke_maxwell_mechanic_03,char:105,S391,F528,확실,확정
 D2227,person:맥스웰,맥스웰,관계,변화,person:지휘관,남에게 뺏길 수 없는 귀한 실험체이다,"실험 · 데이터를 떼고 더 알고 싶어져, 다른 니케처럼 케어를 청하고 입을 맞춘 뒤 '이제 부정하지 않겠다'며 연구를 함께 하자고 한다",,char:105,469,ep:d_nikke_maxwell_mechanic_05,ep:d_nikke_maxwell_mechanic_01,char:105,S391,,확실,확정
 D2226,person:맥스웰,맥스웰,신념,변화,,감정까지 호르몬의 메커니즘이라 과학으로 증명할 수 없는 것은 없다고 했다,"과학으로 증명하기 힘든 '무언가'가 있음을 인정하되, 그것을 증명하는 것이 연구원의 본분이라고 한다",,char:105,469,ep:d_nikke_maxwell_mechanic_05,ep:d_nikke_maxwell_mechanic_04,char:105,S391,,확실,확정
-D1091,person:머스탱_한슨의_아버지,머스탱,관계,기준,person:한슨,,,이사 한슨의 정강이를 걷어차며 '어떻게든 하라'고 부리는 폭군 상사 — 진짜 머스탱,side:pretty_star,447,side:pretty_star_01,,,,,확실,확정
-D1098,person:머스탱_한슨의_아버지,머스탱,관계,기준,person:프리티,,,이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려 한다,side:pretty_star,447,side:pretty_star_04,,,,,확실,확정
+D42,person:머스탱,머스탱,성격,기준,,,,영어를 섞어 외치고 미러볼 조명 · 기괴한 춤과 함께 나타나는 '엔-터테인먼트!'의 테트라 CEO — 속내는 '잉그리드가 맘에 들어 한 이들을 보고 싶었다'고 흘린다,ch04,15,d_main_04af_08,,,,,확실,확정
+D1394,person:머스탱,머스탱,관계,기준,person:메어리,,,"복수를 청한 테트라 걸들 대신, 관례인 기억 소거를 하지 않고 업보를 기억하며 살게 하는 벌을 준 사장",char:130,100,ep:d_nikke_mary_04,,,,,확실,확정
+D1424,person:머스탱,머스탱,관계,기준,org:메이드_포_유,,,"'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 준다",event_maidinvalentine,175,event_maidinvalentine_01_s,,,,,확실,확정
+D208,person:머스탱,머스탱,신념,기준,,,,"양극화된 방주가 증오로 무너지지 않게 어둠을 아는 자에게 왕관을 씌우고, 갓데스가 지켜 낸 인류는 그저 살아만 있지 말고 엔터테인먼트하게 살아야 한다고 믿는다",event_cherryblossom,183,event_cherryblossom_intermission_01,,,,F832,확실,확정
+D1519,person:머스탱,머스탱,관계,기준,person:레오나,,,"동물권 단체와 함께 운영한다며 반대하다가도, 결심하면 밀어붙이는 'Lion Heart' 레오나의 직접 부탁이라는 말에 모두 안전히 돌아오라는 조건으로 허락하는 사장",event_lionheart,263,event_lionheart_intermission_01,,,,,확실,확정
+D1629,person:머스탱,머스탱,관계,변화,person:지휘관,서로 믿고 움직이는 'Entertainment 관계',자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡긴다,,event_romanticvalentine,355,event_romanticvalentine_05_s,,,,F1783,추정,확정
+D610,person:머스탱,머스탱,관계,기준,person:아니스,,,"'My 아니스'라 부르며 은퇴를 장기 휴가로 돌려 늘 돌아오길 기다리고, 정식 은퇴엔 T.T.STAR 은퇴 공연을 조건으로 거는 사장",ch35,358,d_main_35_04,,,,,확실,확정
+D797,person:머스탱,머스탱,관계,기준,person:미세스_미스,,,"연예계의 '몬스터 메이커'라 My Star를 숨겨 왔고, 노래 · 춤만 가르치는 조건을 어기면 용서하지 않겠다며 허락한다",ch40,398,d_main_40_af_05,,,,,확실,확정
+D831,person:머스탱,머스탱,관계,기준,person:벨벳,,,"'My Velvet'이라 부르며 예전에 신세를 진 옛 쉐이드 리더를, 이벤트를 성공시키는 조건으로 늦기 전에 거둔다",fl:coins_in_rush,404,fl:coins_in_rush_20,,,,,확실,확정
+D832,person:머스탱,머스탱,관계,기준,person:지휘관,,,지휘관을 미끼 · 악당 역으로 쓰면서도 서로 믿고 움직이는 'Entertainment 관계'라 여긴다,fl:coins_in_rush,404,fl:coins_in_rush_20,,,,,확실,확정
+D1091,person:머스탱,머스탱,관계,기준,person:한슨,,,이사 한슨의 정강이를 걷어차며 '어떻게든 하라'고 부리는 폭군 상사 — 진짜 머스탱,side:pretty_star,447,side:pretty_star_01,,,,,확실,확정
+D1098,person:머스탱,머스탱,관계,기준,person:프리티,,,이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려 한다,side:pretty_star,447,side:pretty_star_04,,,,,확실,확정
+D1140,person:머스탱,머스탱,관계,변화,person:아니스,'My 아니스'라 부르며 돌아오길 기다렸다,프리티로 만든 STAR를 맡긴 아니스에게 오히려 '고맙다'고 한다,,ch45,450,d_main_45_09,d_main_45_08,ch45,S314,,추정,확정
+D1737,person:머스탱,머스탱,관계,기준,person:민트,,,'My Precious Idol은 무엇과도 비교할 수 없다'며 아주 오래 지켜본 민트 곁의 남자를 결사반대하는 사장,fl:b-side_idol,458,fl:b-side_idol_12,,,,,확실,확정
+D1738,person:머스탱,머스탱,관계,변화,person:지휘관,자기는 사장일 뿐이라며 니케들을 맡기는 믿음이다,Good Person이라 믿지만 아니스에 이어 민트까지 뺏으려 한다며 '남자 대 남자로는' 인정 못 한다,,fl:b-side_idol,458,fl:b-side_idol_14,fl:b-side_idol_11,fl:b-side_idol,S327,,확실,확정
+D1745,person:머스탱,머스탱,관계,기준,person:프리카,,,"신곡을 재촉하면서도 일주일을 주고, 커지는 불화설엔 'My Star들을 믿는다, You들은 Strong'이라며 묻지도 않는 사장",fl:bitter_spice,460,fl:bitter_spice_08,,,,,확실,확정
+D1265,person:머스탱,머스탱,관계,기준,person:아크레인저_블랙,,,"Heavy Body와 무장을 주되 'Body의 Power가 Hero의 자격이라 생각하면 오산'이라 일러두고, 탈퇴는 'TV 속에 있다고 Fake 아니다'로 물린다",fl:ark_ranger,462,fl:ark_ranger_08,,,,,확실,확정
+D1266,person:머스탱,머스탱,관계,변화,person:아크레인저_블랙,힘이 자격은 아니라며 지켜보던 사장이다,'You들의 Mind는 이미 Hero' — 그 마음에 걸맞은 힘(아크 머신)을 주며 출격시킨다,,fl:ark_ranger,462,fl:ark_ranger_21,fl:ark_ranger_21,fl:ark_ranger,S335,F2741,확실,확정
 D1185,person:머스탱_한슨의_아버지,머스탱,관계,기준,person:요요,,,"'쥐뿔도 없는 거 니케로 만들어 포스트 프리티로 밀어줬다'며 1위 요요를 깔보고, 머리에 총 맞고 죽을 생각은 없냐고 묻는다",event_staranis1,454,event_staranis1_03_s,,,S322,F2676,확실,확정
 D1184,person:머스탱_한슨의_아버지,머스탱,관계,변화,person:한슨,정강이를 걷어차며 부리는 폭군 상사,'내 소중한 한슨' — 이사 자리를 비워 두고 '아버지'라 부르라는 아버지,,event_staranis1,454,event_staranis1_03_s,,,S322,F2674,확실,확정
 D1197,person:머스탱_한슨의_아버지,머스탱,관계,변화,person:한슨,이사 자리를 비워 두고 돌아오길 바랐다,달려드는 아들이 재밌다며 더 부숴 보겠다고 한다,,event_staranis1,454,event_staranis1_05_s,event_staranis1_05_s,event_staranis1,S322,F2680,확실,확정
@@ -784,7 +800,7 @@ D858,person:미세스_미스,미세스 미스,신념,변화,,방주에 별이 �
 D859,person:미세스_미스,미세스 미스,관계,변화,person:아니스 person:민트 person:프리카,첫날 춤과 노래를 보고 '이쪽별은 아니구나' 했다,스마일 박스를 겪고도 노래하겠다는 셋을 '훌륭한 새끼별'이라 부르고 다 타지는 말라 이른다,,ch41,414,d_main_41_af_01,,,S269,,확실,확정
 D895,person:미세스_미스,미세스 미스,관계,기준,person:아니스,,,"별들의 별은 완전무결해야 해 힘들다며, 조금 삐뚤어진 별이어도 되니 다 태우지 말라고 등을 떠민다",ch42,416,d_main_42_af_06,,,S271,F2244,확실,확정
 D1093,person:미세스_미스,미세스 미스,성격,기준,,,,'사연이 재능'이라며 비운의 사연을 무대 상품으로 바로 알아보는 프로듀서,side:pretty_star,447,side:pretty_star_01,,,,,확실,확정
-D1099,person:미세스_미스,미세스 미스,관계,기준,person:머스탱_한슨의_아버지,,,공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따른다,side:pretty_star,447,side:pretty_star_05,,,,,확실,확정
+D1099,person:미세스_미스,미세스 미스,관계,기준,person:머스탱,,,공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따른다,side:pretty_star,447,side:pretty_star_05,,,,,확실,확정
 D1103,person:미세스_미스,미세스 미스,관계,기준,person:프리티,,,"연설 퍼포먼스를 함께 짜며, 프리티를 정부에 팔겠다는 머스탱에게 '그렇게 버리는 건 용납 못 해'라 막아서는 프로듀서",side:pretty_star,447,side:pretty_star_07,,,,,확실,확정
 D1114,person:미세스_미스,미세스 미스,소속,변화,,테트라의 프로듀서다,'찾을 것'이 있다며 퇴사했다,,side:pretty_star,447,side:pretty_star_13,side:pretty_star_13,side:pretty_star,,F2557 F2091-2,확실,확정
 D1230,person:미세스_미스,미세스 미스,소속,변화,,'찾을 것'이 있다며 퇴사했다,"전권을 받아 테트라의 부정을 뿌리까지 쓸고, 끝나면 다시 나가기로 했다",,event_staranis1,454,event_staranis2_05_e,,,S323,F2703,확실,확정
@@ -1448,7 +1464,7 @@ D1527,person:에이드,에이드,관계,변화,person:지휘관,너무 소중해
 D1525,person:에이드,에이드,신념,변화,,"아무도 감동하지 않는 완벽함이 잘못이었나, 니케보다 인간처럼 서툴렀어야 했나 의심했다",노력을 알아주는 이들과 특별한 주인님이 있으니 주인님의 자랑스러운 메이드가 되려 더 완벽해지겠다고 한다,,event_perfectmaid,267,event_perfectmaid_epilogue,event_perfectmaid_06_e,event_perfectmaid,S124,F1278,확실,확정
 D2092,person:에이드,에이드,성격,변화,,가리는 것도 좋아하는 것도 없이 주인님을 기다리는 시간이 곧 쉬는 시간이라 했다,"전 메뉴를 맛보다 촉촉한 오므라이스를 좋아하게 되고, 처음으로 남이 아닌 자기를 위한 내일을 기대한다",,char:310,269,ep:d_nikke_ade_03,ep:d_nikke_ade_02,char:310,,F1282,확실,확정
 D2093,person:에이드,에이드,관계,변화,person:지휘관,주인님과 메이드라는 선을 지켜 곁에서 모시기만 했다,"처음으로 직접 안아 보고 싶다고 부탁하고 욕심을 감출 수 없을 것 같다며, 영업 재개 뒤 먼저 찻잎 페스티벌에 함께 가자고 청한다",,char:310,269,ep:d_nikke_ade_05,ep:d_nikke_ade_04,char:310,,F1283,확실,확정
-D817,person:에이드,에이드,관계,기준,person:머스탱_한슨의_아버지 person:한슨,,,"서툴던 니케 초기부터 '사장님'으로 모셔 옛 머스탱을 알고, 그가 그냥 해본 말을 하는 사람이 된 변화를 놀라워하며 기뻐한다",fl:coins_in_rush,404,fl:coins_in_rush_00,,,,,확실,확정
+D817,person:에이드,에이드,관계,기준,person:머스탱,,,"서툴던 니케 초기부터 '사장님'으로 모셔 옛 머스탱을 알고, 그가 그냥 해본 말을 하는 사람이 된 변화를 놀라워하며 기뻐한다",fl:coins_in_rush,404,fl:coins_in_rush_00,,,,,확실,확정
 D816,person:에이드,에이드,관계,변화,person:지휘관,부끄러워 주인님과 함께하는 임무를 거절했다,주인님의 메이드로서 부끄러운 모습을 더 보이지 않겠다며 곁에서 돕겠다고 나선다,,fl:coins_in_rush,404,fl:coins_in_rush_07,fl:coins_in_rush_07,fl:coins_in_rush,S254,,확실,확정
 D2181,person:에이드,에이드,성격,변화,,코인 러시 뒤 메이드 일을 완벽히 하면서도 임무만 완수하려는 특수요원처럼 굴어 손님들이 위화감을 느꼈다,"옷차림을 스위치 삼아 메이드와 특수요원 두 모습을 나눠, 메이드복을 입으면 예전의 우아한 메이드로 돌아왔다",,char:315,405,ep:d_nikke_ade_agentbunny_05,ep:d_nikke_ade_agentbunny_04,char:315,S255,F2123,확실,확정
 D2182,person:에이드,에이드,관계,변화,person:지휘관,주인님의 메이드로서 부끄러운 모습을 더 보이지 않겠다며 곁에서 도왔다,"도와주는 동안 커진 마음을 특수요원 차림으로 털어놓고 입을 맞춰, 오늘 밤 욕심을 전부 받아 달라고 한다",,char:315,405,ep:d_nikke_ade_agentbunny_05,ep:d_nikke_ade_agentbunny_03,char:315,S255,,확실,확정
@@ -1587,7 +1603,7 @@ D2230,person:유키코,유키코,신념,변화,,모르는 세계에 던져져 �
 D94,person:율리아,율리아,성격,기준,,,,"'저물어간 시대의 음악을 좇는 자'라 자처하며 시처럼 말하고, 지상의 낡은 주크박스를 '스승님'으로 모시는 니케",sub:음악_애호가_00,54,sub:음악_애호가_00,,,,,확실,확정
 D1905,person:율리아,율리아,관계,기준,person:지휘관,,,"지휘관을 '마에스트로'라 부르며 반기고, 무슨 말이든 자기를 위한 호의로 받아들여 그대로 따른다",char:150,125,ep:d_nikke_julia_01,,,,,확실,확정
 D1903,person:율리아,율리아,신념,기준,,,,"자기 음악엔 혼도 뼈도 없이 남의 악보를 읽을 뿐이라 여기며, 그것을 찾으려 밤낮없이 연주만 하는 '기록 장치'",char:150,125,ep:d_nikke_julia_01,,,,,확실,확정
-D1904,person:율리아,율리아,관계,기준,person:한슨,,,"처음으로 음악가라는 이름을 준 은사 머스탱의 말을 그대로 받들고, 지금의 자기를 보고 실망했을까 두려워한다",char:150,125,ep:d_nikke_julia_02,,,,,확실,확정
+D1904,person:율리아,율리아,관계,기준,person:머스탱,,,"처음으로 음악가라는 이름을 준 은사 머스탱의 말을 그대로 받들고, 지금의 자기를 보고 실망했을까 두려워한다",char:150,125,ep:d_nikke_julia_02,,,,,확실,확정
 D1906,person:율리아,율리아,신념,변화,,쉬면 실력이 무뎌진다며 잘해야만 한다고 매달림,기록이 아니니 잘하지 않아도 된다는 걸 받아들임,,char:150,125,ep:d_nikke_julia_03,ep:d_nikke_julia_03,char:150,,,확실,확정
 D1907,person:율리아,율리아,신념,변화,,혼 없는 기록 장치라 체념,지상에 자기 혼과 뼈가 있다며 자기 음악을 연주,,char:150,125,ep:d_nikke_julia_04,ep:d_nikke_julia_03,char:150,,F626,확실,확정
 D1909,person:율리아,율리아,소속,변화,,머스탱 밑에서 방주 · 전초기지에 머무는 음악가,악기의 데코이 능력에 기대 지상 황야를 떠도는 음악가,,char:150,125,ep:d_nikke_julia_05,ep:d_nikke_julia_04,char:150,,F626,확실,확정
@@ -2074,23 +2090,12 @@ D958,person:하란,하란,신념,변화,,승리의 여신을 동경해 지상 �
 D959,person:하란,하란,관계,기준,person:이사벨,,,"살아남은 건 다시 사랑하고 싶다는 뜻이라며 사랑할 존재를 찾아보라 하고, 못 찾아 죽고 싶어지면 고통 없이 끝내 주겠다고 약속한다",erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_03,,,,,확실,확정
 D965,person:하란,하란,관계,기준,person:노아,,,"'널 통과시킨 건 나'라며 내 눈을 믿으라 하고, 나약한 너 앞에 오만한 너를 방패로 세우라 가르친다",erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_05,,,,,확실,확정
 D970,person:하란,하란,관계,기준,person:요한,,,"먼 존재였던 방주의 샛별을 지휘관으로 삼은 걸 신기해하며, 그 역시 방주가 버린 '영웅이라는 이름의 사냥개'라 원망 없이 동료로 여긴다",erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_10,,,,,확실,확정
-D42,person:한슨,한슨,성격,기준,,,,영어를 섞어 외치고 미러볼 조명 · 기괴한 춤과 함께 나타나는 '엔-터테인먼트!'의 테트라 CEO — 속내는 '잉그리드가 맘에 들어 한 이들을 보고 싶었다'고 흘린다,ch04,15,d_main_04af_08,,,,,확실,확정
-D1394,person:한슨,한슨,관계,기준,person:메어리,,,"복수를 청한 테트라 걸들 대신, 관례인 기억 소거를 하지 않고 업보를 기억하며 살게 하는 벌을 준 사장",char:130,100,ep:d_nikke_mary_04,,,,,확실,확정
-D1424,person:한슨,한슨,관계,기준,org:메이드_포_유,,,"'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 준다",event_maidinvalentine,175,event_maidinvalentine_01_s,,,,,확실,확정
-D208,person:한슨,한슨,신념,기준,,,,"양극화된 방주가 증오로 무너지지 않게 어둠을 아는 자에게 왕관을 씌우고, 갓데스가 지켜 낸 인류는 그저 살아만 있지 말고 엔터테인먼트하게 살아야 한다고 믿는다",event_cherryblossom,183,event_cherryblossom_intermission_01,,,,F832,확실,확정
-D1519,person:한슨,한슨,관계,기준,person:레오나,,,"동물권 단체와 함께 운영한다며 반대하다가도, 결심하면 밀어붙이는 'Lion Heart' 레오나의 직접 부탁이라는 말에 모두 안전히 돌아오라는 조건으로 허락하는 사장",event_lionheart,263,event_lionheart_intermission_01,,,,,확실,확정
-D1629,person:한슨,한슨,관계,변화,person:지휘관,서로 믿고 움직이는 'Entertainment 관계',자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡긴다,,event_romanticvalentine,355,event_romanticvalentine_05_s,,,,F1783,추정,확정
-D610,person:한슨,한슨,관계,기준,person:아니스,,,"'My 아니스'라 부르며 은퇴를 장기 휴가로 돌려 늘 돌아오길 기다리고, 정식 은퇴엔 T.T.STAR 은퇴 공연을 조건으로 거는 사장",ch35,358,d_main_35_04,,,,,확실,확정
-D797,person:한슨,한슨,관계,기준,person:미세스_미스,,,"연예계의 '몬스터 메이커'라 My Star를 숨겨 왔고, 노래 · 춤만 가르치는 조건을 어기면 용서하지 않겠다며 허락한다",ch40,398,d_main_40_af_05,,,,,확실,확정
-D831,person:한슨,한슨,관계,기준,person:벨벳,,,"'My Velvet'이라 부르며 예전에 신세를 진 옛 쉐이드 리더를, 이벤트를 성공시키는 조건으로 늦기 전에 거둔다",fl:coins_in_rush,404,fl:coins_in_rush_20,,,,,확실,확정
-D832,person:한슨,한슨,관계,기준,person:지휘관,,,지휘관을 미끼 · 악당 역으로 쓰면서도 서로 믿고 움직이는 'Entertainment 관계'라 여긴다,fl:coins_in_rush,404,fl:coins_in_rush_20,,,,,확실,확정
-D1092,person:한슨,한슨,관계,기준,person:머스탱_한슨의_아버지,,,정강이를 차여도 '예'라며 머스탱의 뒷수습을 떠안는 이사,side:pretty_star,447,side:pretty_star_01,,,,,확실,확정
+D1092,person:한슨,한슨,관계,기준,person:머스탱,,,정강이를 차여도 '예'라며 머스탱의 뒷수습을 떠안는 이사,side:pretty_star,447,side:pretty_star_01,,,,,확실,확정
 D1094,person:한슨,한슨,신념,기준,,,,어릴 때 TV 속 니케를 보고 자라 니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다고 믿는다,side:pretty_star,447,side:pretty_star_03,,,,,확실,확정
 D1095,person:한슨,한슨,관계,기준,person:프리티,,,오스왈드의 조건대로 테트라 이사이면서 매니저로 붙어 프리시아와 악수한다,side:pretty_star,447,side:pretty_star_03,,,,,확실,확정
 D1100,person:한슨,한슨,관계,변화,person:프리티,조건으로 붙은 매니저다,반말로 투닥이다 '맞으니까'라 마음을 들킨다,,side:pretty_star,447,side:pretty_star_05,side:pretty_star_03,side:pretty_star,,,확실,확정
-D1106,person:한슨,한슨,관계,변화,person:머스탱_한슨의_아버지,차여도 '예'라며 떠안았다,'부녀 사이를 갈라놓을 것까진 없다'며 처음 대들었다 맞고 다시 '예',,side:pretty_star,447,side:pretty_star_08,side:pretty_star_08,side:pretty_star,,,확실,확정
+D1106,person:한슨,한슨,관계,변화,person:머스탱,차여도 '예'라며 떠안았다,'부녀 사이를 갈라놓을 것까진 없다'며 처음 대들었다 맞고 다시 '예',,side:pretty_star,447,side:pretty_star_08,side:pretty_star_08,side:pretty_star,,,확실,확정
 D1115,person:한슨,한슨,성격,변화,,위로도 반항도 못 하고 멀리서 지켜보기만 했다,니케를 탓하는 시민에게 나서서 외친다,,side:pretty_star,447,side:pretty_star_13,side:pretty_star_13,side:pretty_star,,,확실,확정
-D1140,person:한슨,한슨,관계,변화,person:아니스,'My 아니스'라 부르며 돌아오길 기다렸다,프리티로 만든 STAR를 맡긴 아니스에게 오히려 '고맙다'고 한다,,ch45,450,d_main_45_09,d_main_45_08,ch45,S314,,추정,확정
 D1181,person:한슨,한슨,관계,기준,person:아니스 person:민트 person:프리카,,,"스폰서 로비가 오가는 판에서 '그래서 아낀다'며 영업을 혼자 뛰고, 연습하는 셋을 넋 놓고 바라보는 사장",event_staranis1,454,event_staranis1_01_e,,,S322,,확실,확정
 D1183,person:한슨,한슨,소속,변화,,테트라 이사 · 프리티 매니저,스톡까지 다 내놓고 나와 열 명도 안 되는 사무실의 사장 겸 매니저 · 프로듀서,,event_staranis1,454,event_staranis1_03_e,,,S322,F2669 F2675,확실,확정
 D1196,person:한슨,한슨,관계,변화,person:머스탱_한슨의_아버지,정강이를 차여도 '예'라며 뒷수습하던 이사,"'내 아이돌한테 손대지 마라, 역병 같은 놈'이라 맞서 경고하는 아들",,event_staranis1,454,event_staranis1_05_s,,,S322,F2680,확실,확정
@@ -2102,11 +2107,6 @@ D1228,person:한슨,한슨,신념,변화,,이번엔 T.T.STAR를 구하겠다고 
 D1229,person:한슨,한슨,소속,변화,,위약금에 묶여 돌아온 테트라 이사였다,한슨은 죽은 것으로 하고 테트라 CEO 머스탱으로 산다,,event_staranis1,454,event_staranis2_05_s,,,S323,F2701,확실,확정
 D1231,person:한슨,한슨,관계,변화,person:아니스,"'너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'고 했다","'죽을 생각이군, 또 늦었구나' 하며 지상행을 받아들인다",,event_staranis1,454,event_staranis2_05_e,,,S323,F2705,확실,확정
 D1236,person:한슨,한슨,관계,변화,person:아니스,'또 늦었구나' 하며 보내 줬다,STAR를 보여 주며 방주를 다시 사랑할 날까지 '이번엔 늦지 않게' 변함없이 기다리겠다고 한다,,event_staranis1,454,event_staranis2_06_s,,,S323,F2706,확실,확정
-D1737,person:한슨,한슨,관계,기준,person:민트,,,'My Precious Idol은 무엇과도 비교할 수 없다'며 아주 오래 지켜본 민트 곁의 남자를 결사반대하는 사장,fl:b-side_idol,458,fl:b-side_idol_12,,,,,확실,확정
-D1738,person:한슨,한슨,관계,변화,person:지휘관,자기는 사장일 뿐이라며 니케들을 맡기는 믿음이다,Good Person이라 믿지만 아니스에 이어 민트까지 뺏으려 한다며 '남자 대 남자로는' 인정 못 한다,,fl:b-side_idol,458,fl:b-side_idol_14,fl:b-side_idol_11,fl:b-side_idol,S327,,확실,확정
-D1745,person:한슨,한슨,관계,기준,person:프리카,,,"신곡을 재촉하면서도 일주일을 주고, 커지는 불화설엔 'My Star들을 믿는다, You들은 Strong'이라며 묻지도 않는 사장",fl:bitter_spice,460,fl:bitter_spice_08,,,,,확실,확정
-D1265,person:한슨,한슨,관계,기준,person:아크레인저_블랙,,,"Heavy Body와 무장을 주되 'Body의 Power가 Hero의 자격이라 생각하면 오산'이라 일러두고, 탈퇴는 'TV 속에 있다고 Fake 아니다'로 물린다",fl:ark_ranger,462,fl:ark_ranger_08,,,,,확실,확정
-D1266,person:한슨,한슨,관계,변화,person:아크레인저_블랙,힘이 자격은 아니라며 지켜보던 사장이다,'You들의 Mind는 이미 Hero' — 그 마음에 걸맞은 힘(아크 머신)을 주며 출격시킨다,,fl:ark_ranger,462,fl:ark_ranger_21,fl:ark_ranger_21,fl:ark_ranger,S335,F2741,확실,확정
 D54,person:할아범,할아범,관계,기준,person:지휘관,,,"죽기 전 마지막 부탁을 맡기고, 아무것도 없었다는 확인과 무사한 귀환에 고마워하며 '자네라면 지상 탈환에 성공할지도'라 응원하는 노인",sub:할아범_00,42,sub:할아범_00,,,,,확실,확정
 D378,person:해머링,해머링,성격,기준,,,,"'~슴다' 말투로 우직하게 시키는 대로 몸부터 던지는, 어디서나 곯아떨어지는 착한 광부",ch27,270,d_main_27_01_s,,,,,확실,확정
 D379,person:해머링,해머링,관계,기준,person:센티,,,센티를 '선배'라 부르며 우상으로 모시는 후배 — 말투까지 닮았다,ch27,270,d_main_27_01_e,,,,,확실,확정

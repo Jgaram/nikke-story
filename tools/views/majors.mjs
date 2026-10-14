@@ -38,7 +38,7 @@ import { mentionRows } from '../records/read2.mjs';
 import { IMPORTANCE_DIR } from './importance.mjs';
 import { EMOTION_ASPECTS } from './layers.mjs';
 import { COMMANDER, leadSignals } from './leads.mjs';
-import { faceDataset } from '../records/impersonation.mjs';
+import { actualDataset, lineOwners, splitUnits } from '../records/identity.mjs';
 
 /** 기준값 기본 — annotations/majors.json criteria가 이긴다. score: 주요 인물 문턱(점수) · band: 명단에 적는 띠(문턱의 몫) */
 export const DEFAULT_CRITERIA = { score: 32, band: 0.5 };
@@ -77,7 +77,7 @@ export function gapsOf(values, [lo, hi] = GAP_RANGE) {
  * @param {{ items: {key:string}[] }} order 1회독 순서
  */
 export function majorMetrics(ds, ctx, order) {
-  ds = faceDataset(ds, ctx, order); // 사칭은 이름표 주인으로 센다(W23c — tools/records/impersonation.mjs faceDataset)
+  ds = actualDataset(ds, ctx, order); // 다른 인물 줄을 근거로 한 기록은 실제 사람으로 센다(W24a — tools/records/identity.mjs actualDataset)
   const criteria = { ...DEFAULT_CRITERIA, ...Object.fromEntries(Object.entries(ds.majors?.data?.criteria ?? {}).filter(([k]) => k in DEFAULT_CRITERIA)) };
   const L = leadSignals(ds, ctx, order);
   const chapters = L.chapters;
@@ -111,15 +111,22 @@ export function majorMetrics(ds, ctx, order) {
     if (!x.speak.has(ch)) x.speak.set(ch, new Set());
     x.speak.get(ch).add(scene);
   };
+  // 다른 인물(W24a — people.json split) 범위 줄의 이름표 b는 실제 사람 a가 말한 것이다(주역 leadSignals와 같다)
+  const own = lineOwners(splitUnits(ds, ctx.db, () => null));
+  const spanScene = new Set(own.spanScenes.map((x) => x.scene));
   for (const r of ctx.db.prepare("SELECT DISTINCT story_id, window, speaker_target t FROM lines WHERE window IN ('Speech', 'Self')").all()) {
     const ch = sceneCh.get(r.story_id);
-    if (!ch) continue;
+    if (!ch || (r.window === 'Speech' && spanScene.has(r.story_id))) continue;
     const p = r.window === 'Self' ? COMMANDER : r.t;
     if (p && String(p).startsWith('person:')) spoke(canon(p), ch, r.story_id);
   }
+  for (const r of ctx.db.prepare("SELECT story_id, seq, speaker_target t FROM lines WHERE window = 'Speech' AND speaker_target LIKE 'person:%'").all()) {
+    const ch = spanScene.has(r.story_id) ? sceneCh.get(r.story_id) : null;
+    if (ch) spoke(canon(own.owner(r.story_id, r.seq, r.t)), ch, r.story_id);
+  }
   for (const m of mentionRows(ds)) {
     const ch = sceneCh.get(m.scene);
-    if (ch && m.speaker && String(m.target ?? '').startsWith('person:')) spoke(canon(m.target), ch, m.scene);
+    if (ch && m.speaker && String(m.target ?? '').startsWith('person:')) spoke(canon(own.owner(m.scene, m.from_seq, m.target)), ch, m.scene);
   }
   // 변화 — 척추의 2회독 인물 변화 D(결정적 순간 후보와 같은 거름)
   const persons = (xs) => arr(xs).filter((p) => String(p).startsWith('person:'));

@@ -11,13 +11,12 @@
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
  *   records.json   확정 기록 1회독(F · Q · F-k · Q-k · S), records2.json 2회독 + 마무리(I · E · D · U · O · H)
- *                  사칭에 가려지는 기록은 imp [{ a(실제 인물), b(이름표 주인), rev(드러난 스토리) }] — 화면은 rev를 읽기 전 a 자리에 b(W23b)
+ *                  다른 인물 줄을 근거로 한 기록(W24a)은 인물 칸이 드러난 뒤 모습이고 imp [{ a(실제 인물), b(이름 주인), rev(드러나는 스토리) }] — 화면은 rev를 읽기 전 a 자리에 b
  *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *                  화면 이름(W23d): label = 동명이인 구분 이름(ID 구분어 — 사쿠라 (콜라보) · 머스탱 (한슨의 아버지))
- *                  이름 승계 사칭(W23e — people.json impersonates real): real 대상에 real_of { b, a, rev } — rev를 읽기 전에는 b로 보이고(이름 · 목록에 따로 없음),
- *                  b(독자가 알던 인물)는 rev를 읽으면 a와 같은 인물(same_as · same_as_unit에 더한다)
+ *                  다른 인물(W24a)의 실제 인물이 제 이름으로 나온 곳이 없으면(아버지 머스탱) 처음 나온 자리(meet)는 드러나는 스토리 — 그 전에는 목록에도 없다
  *                  + 처음 나온 자리(W15b — meet · name_meet · name_never, 다른 이름마다 meet · never: 이름이 처음 쓰인 스토리, 아래 meetsOf)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
  *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리 — 출시와 확정 T 가운데 이른 것), affs — 확정 소속 기록 T(공개 자리 tick · 근거 단위 unit — '지난 소속'은 화면에서 전 소속), 조직 mark — site/img/orgs/{mark}.png)
@@ -31,7 +30,7 @@ import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } fr
 import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
 import { annivOf, loadMajorEvents } from '../../notices/major-events.mjs';
 import { APRIL_FOOLS_LABEL, isAprilFools } from '../../lib/fools.mjs';
-import { homonymLabels, impersonationUnits, masksOf } from '../../records/impersonation.mjs';
+import { homonymLabels, revealedPeople, splitHits, splitUnits } from '../../records/identity.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -280,9 +279,10 @@ export async function run(ctx) {
   const records1 = [];
   const records2 = [];
   const threadsOfPoints = (points) => [...new Set((Array.isArray(points) ? points : []).flatMap((p) => threadsOfRoot(String(p).replace(/-\d+$/, ''))))];
-  // 사칭(W23b) — 실제 인물로 적힌 기록 중 드러나기 전에 이름표 주인으로 보일 것: imp [{ a, b, rev }] (화면은 fmt.recAt)
+  // 다른 인물(W24a — 결정 #12) — 기록은 그 장면에서 보인 이름(b)으로 적혔다. 다른 인물 줄을 근거로 b를 다룬 기록은 드러난 뒤 a의 것:
+  // 인물 칸(about · person · with · target)은 드러난 뒤 모습, imp [{ a, b, rev }]는 드러나기 전에 a 자리에 b를 보이라는 것(화면 fmt.recAt)
   const sceneUnitOf = new Map(scenes.map((s) => [s.id, s.unit]));
-  const impUnits = impersonationUnits(ctx.records.ds, ctx.db, (s) => sceneUnitOf.get(s) ?? null);
+  const splitL = splitUnits(ctx.records.ds, ctx.db, (s) => sceneUnitOf.get(s) ?? null);
   for (const c of ctx.records.confirmed) {
     const kind = recordKind(c);
     if (!kind) continue;
@@ -332,8 +332,11 @@ export async function run(ctx) {
     } else if (kind === 'H') {
       Object.assign(rec, { title: o.title, end: o.end, members: o.members });
     }
-    const masks = masksOf(c, impUnits);
-    if (masks.length) rec.imp = masks.map(({ a, b, rev }) => ({ a, b, rev }));
+    const hits = splitHits(c, splitL);
+    if (hits.length) {
+      for (const [k, v] of Object.entries(revealedPeople(rec, hits))) rec[k] = v;
+      rec.imp = hits.map(({ a, b, rev }) => ({ a, b, rev }));
+    }
     (READ1_KINDS.has(kind) ? records1 : records2).push(compact(rec));
   }
   const sortRec = (a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || String(a.scene).localeCompare(String(b.scene)) || (a.line ?? 0) - (b.line ?? 0);
@@ -376,14 +379,6 @@ export async function run(ctx) {
       (sameAsUnit.get(x) ?? sameAsUnit.set(x, []).get(x)).push(unit);
     }
   }
-  // 이름 승계 사칭(W23e) — 독자가 알던 b(지금의 머스탱)는 드러나면 a(한슨)와 같은 인물: 라피 = 피라처럼 드러난 스토리(revealed)를 읽은 뒤에 보인다
-  for (const L of impUnits) {
-    if (!L.real || !placeOf.has(L.revealed)) continue;
-    for (const [x, y] of [[L.a, L.b], [L.b, L.a]]) {
-      (sameAs.get(x) ?? sameAs.set(x, []).get(x)).push(y);
-      (sameAsUnit.get(x) ?? sameAsUnit.set(x, []).get(x)).push(L.revealed);
-    }
-  }
   // 인물 아이콘(W11) — tools/site/portraits.mjs가 받아 둔 것만. 없으면 칸을 비운다
   const icons = fs.existsSync(ICONS_FILE) ? JSON.parse(fs.readFileSync(ICONS_FILE, 'utf8')) : {};
   // 바뀐 모습 — tools/views/portrait-forms.mjs가 메인 챕터마다 정한 것(data/views/portraits/forms.csv). 받아 둔 아이콘만
@@ -408,11 +403,16 @@ export async function run(ctx) {
     const aff = compact({
       id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, unit: sceneUnit.get(scene), confidence: c.confidence,
     });
-    // 사칭(W23d) — 실제 인물(a)로 적힌 소속이 가려지는 자리면 드러나기 전에는 이름표 주인(b) 쪽에 보인다: imp { rev, rev_tick, side } (화면 fmt.orgsAt)
-    const masks = masksOf({ unit: aff.unit, obj: o }, impUnits);
+    // 다른 인물(W24a) — 그 장면 이름(b)으로 적힌 소속이 다른 인물 줄을 근거로 하면 드러난 뒤에는 a의 것: imp { rev, rev_tick, side } (화면 fmt.orgsAt —
+    // b 쪽은 드러나기 전에만, a 쪽은 드러난 뒤에만 보인다). 소속은 한 사람 칸이라 근거가 모두 범위 안일 때만 옮긴다
+    const hit = splitHits(c, splitL).find((h) => h.all && h.b === o.person);
     const push = (pid, x) => (affsOf.get(pid) ?? affsOf.set(pid, []).get(pid)).push(x);
-    push(o.person, masks.length ? { ...aff, imp: { rev: masks[0].rev, rev_tick: placeOf.get(masks[0].rev)?.tick, side: 'a' } } : aff);
-    for (const m of masks) push(m.b, { ...aff, imp: { rev: m.rev, rev_tick: placeOf.get(m.rev)?.tick, side: 'b' } });
+    if (!hit) push(o.person, aff);
+    else {
+      const imp = { rev: hit.rev, rev_tick: placeOf.get(hit.rev)?.tick };
+      push(hit.a, { ...aff, imp: { ...imp, side: 'a' } });
+      push(hit.b, { ...aff, imp: { ...imp, side: 'b' } });
+    }
   }
   // 게임 시작 로스터(affiliations.json game.launch — 사용자 확인): 호감도 단위가 없어도 출시 자리를 맨 처음(1)으로 본다
   const launch = new Set(JSON.parse(fs.readFileSync(`${ROOT}/annotations/affiliations.json`, 'utf8')).game?.launch?.resource_ids ?? []);
@@ -487,17 +487,14 @@ export async function run(ctx) {
     const m = meets.get(id);
     if (m && !m.meet) m.meet = meetList(us, units);
   }
-  // 이름 승계 사칭의 진짜 b(W23e — real) — 드러나기 전에는 독자에게 따로 있지 않다(그 자리 모습은 b): 처음 나온 자리 = 드러난 스토리.
+  // 다른 인물(W24a)의 실제 인물 — 범위 줄 · 그 기록은 드러나기 전에 이름 주인(b)으로 보이므로, 제 이름으로 나온 곳이 없으면(아버지 머스탱) 처음 나온 자리는 드러나는 스토리다.
   // 그 이름이 쓰인 스토리(named — '???'로만 나온 스토리 가리기)는 b의 것(같은 이름표 · 이름)
-  const realOf = new Map();
-  for (const L of impUnits) {
-    if (!L.real || !placeOf.has(L.revealed)) continue;
-    realOf.set(L.real, compact({ b: L.b, a: L.a, rev: L.revealed }));
-    const bm = meets.get(L.b) ?? {};
-    meets.set(L.real, { named: bm.named ?? new Set(), meet: meetList([L.revealed], units) });
+  for (const L of splitL) {
+    if (!placeOf.has(L.revealed) || meets.get(L.a)?.named?.size) continue;
+    meets.set(L.a, { ...meets.get(L.a), named: meets.get(L.b)?.named ?? new Set(), meet: meetList([L.revealed], units) });
   }
   const unmet = [];
-  // 화면 이름(W23d) — 동명이인은 ID 구분어로(label). 이름 승계의 진짜 b(real_of)는 화면이 드러난 뒤에만 label을 쓴다
+  // 화면 이름(W23d) — 동명이인은 ID 구분어로(label)
   const targetRows = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`);
   const labels = homonymLabels(targetRows);
   const targets = targetRows.map((t) => {
@@ -505,7 +502,7 @@ export async function run(ctx) {
     const m = meets.get(r.id) ?? {};
     if (!m.meet) unmet.push(r.id);
     return compact({
-      id: r.id, type: r.type, name: r.name, label: labels.get(r.id), real_of: realOf.get(r.id), kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
+      id: r.id, type: r.type, name: r.name, label: labels.get(r.id), kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
       same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
       orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), vers: versOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });

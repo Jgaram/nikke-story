@@ -168,9 +168,10 @@
 
 ### `target_links` — 정체 연결 후보
 
-`annotations/dictionary/people.json`의 `candidates`. 칸: `id`(후보 ID `L<n>` — 리뷰 도구가 이 ID로 확정 · 기각한다, docs/annotations.md) · `type`(`same_as` 같은 인물 · `impersonates` 사칭 — a가 b의 이름표로 행세, W23a) · `a`(대상 ID, same_as는 대상 없는 이름표 `이름표:곰…?`도) · `b`(대상 ID) ·
+`annotations/dictionary/people.json`의 `candidates`. 칸: `id`(후보 ID `L<n>` — 리뷰 도구가 이 ID로 확정 · 기각한다, docs/annotations.md) · `type`(`same_as` 같은 인물 · `split` 다른 인물 — 이름 b로 잡힌 줄 가운데 일부가 실제로는 a, W24a) · `a`(대상 ID, same_as는 대상 없는 이름표 `이름표:곰…?`도) · `b`(대상 ID) ·
 `status`(`후보` · `확정` · `기각`) · `confidence`(`확실` · `추정`) · `reason` · `evidence`(JSON `[{scene, lines}]` — 비면 1회독이 채운다) · `recorder`(기록자).
-사칭의 범위(`spans`) · 드러난 단위(`revealed`) · 이름의 원래 주인(`real`, W23e — 빌드가 그 인물을 targets에 세운다, origin '사칭')은 target_links에 싣지 않는다 — 기록 도구가 people.json을 바로 읽는다(docs/annotations.md "사칭 기록").
+다른 인물의 범위(`spans`)는 target_links에 싣지 않는다 — 기록 도구가 people.json을 바로 읽는다. 드러나는 자리는 둘 다 근거 첫 씬의 단위(docs/annotations.md "같은 사람 · 다른 사람").
+같은 이름의 다른 사람(아버지 머스탱)은 people.json `persons`에 손으로 세우고 `search: false`(검색 이름 없음 — 그 이름 줄은 이름 주인에게 잡히고 split이 가른다).
 Claude가 후보를 쓰고 확정 · 기각한다. 확정 · 기각은 `node tools/records.mjs set L3 확정`으로 적고(`reviews`에 누가 · 언제가 남는다),
 1회독 기록(사실 · 의문 · 시점 후보, `annotations/read1/`)과 같은 리뷰 도구로 본다 — 형식은 [annotations.md](annotations.md).
 

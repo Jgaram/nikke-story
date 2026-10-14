@@ -126,9 +126,9 @@ export const KINDS = {
   affil: { label: '소속', prefix: 'T' },
   addr: { label: '호칭', prefix: 'A' },
 };
-/** 정체 연결의 type — same_as(처음부터 한 인물) · impersonates(사칭 — a가 b의 이름표 · 이름으로 행세, 둘은 다른 인물. W23a) */
-export const LINK_TYPES = ['same_as', 'impersonates'];
-const LINK_ACT = { same_as: '같은 인물', impersonates: '사칭' };
+/** 정체 연결의 type(W24a, 결정 #12) — same_as(두 이름이 같은 사람) · split(이름 b로 잡힌 줄 가운데 spans는 실제로 다른 사람 a) */
+export const LINK_TYPES = ['same_as', 'split'];
+const LINK_ACT = { same_as: '같은 인물', split: '다른 인물' };
 export const KIND_BY_LABEL = Object.fromEntries(Object.entries(KINDS).map(([k, v]) => [v.label, k]));
 
 export const ID = {
@@ -170,9 +170,8 @@ export const FIELDS = {
   revisit: ['id', 'text', 'where'],
   revisitDone: ['id', 'note'],
   review: ['decision', 'by', 'date', 'session', 'note', 'before'],
-  // 사칭(impersonates, W23a) — spans: 이름표 · 이름 b가 실제로는 a인 줄 [{scene, lines?}] · revealed: 독자가 사칭을 아는 읽기 단위
-  // real(W23e): 행세가 드러난 뒤에도 이어질 때(이름 승계) 이름의 원래 주인 — 진짜 b의 인물 ID. b(이름표 대상)는 독자가 알던 인물이라 드러나면 a와 같은 인물
-  link: ['id', 'type', 'a', 'b', 'spans', 'revealed', 'real', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
+  // 다른 인물(split, W24a) — spans: 이름 b로 잡힌 줄 가운데 실제로는 a인 곳 [{scene, lines?}]. 드러나는 자리는 근거(evidence) 첫 씬의 단위(same_as와 같다)
+  link: ['id', 'type', 'a', 'b', 'spans', 'status', 'confidence', 'reason', 'evidence', 'by', 'note', 'reviews'],
   threadsFile: ['_comment', 'session', 'by', 'date', 'note', 'threads', 'relations'],
   thread: ['id', 'title', 'text', 'weight', 'questions', 'facts', 'about', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
   relation: ['id', 'type', 'a', 'b', 'text', 'evidence', 'reason', 'confidence', 'status', 'by', 'note', 'reviews'],
@@ -441,7 +440,7 @@ function collect(files, peopleFile, threadsFile, layersFile, leadsFile, spineFil
       candidates.push({
         file: peopleFile.name, unit: null, parts: null, session: null, fileBy: null, people: true,
         kind: 'link', role: 'link', act: LINK_ACT[o?.type] ?? o?.type ?? null, parent: null,
-        id: o?.id ?? null, text: o?.type === 'impersonates' ? `${o?.a ?? '?'} → ${o?.b ?? '?'}` : `${o?.a ?? '?'} = ${o?.b ?? '?'}`, evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence,
+        id: o?.id ?? null, text: `${o?.a ?? '?'} ${o?.type === 'split' ? '≠' : '='} ${o?.b ?? '?'}`, evidence: o?.evidence, reason: o?.reason, confidence: o?.confidence,
         status: o?.status, by: o?.by ?? null, reviews: arr(o?.reviews), note: o?.note ?? null, section: 'candidates', index: i, obj: o,
       });
     });
@@ -626,25 +625,23 @@ export function sameAsGroups(ds) {
 
 
 /**
- * 사칭(W23a) — 정체 연결 가운데 type impersonates(기각 빼고, confirmed면 확정만). a가 b의 이름표 · 이름으로 행세했다 — 둘은 다른 인물(same_as와 다름).
- * spans를 편다: seqs = 줄 번호 Set, lines를 안 적은 span은 null(씬 전체).
+ * 다른 인물(W24a — 결정 #12) — 정체 연결 가운데 type split(기각 빼고, confirmed면 확정만). 이름 b로 잡힌 줄 가운데 spans는 실제로는 a다.
+ * spans를 편다: seqs = 줄 번호 Set, lines를 안 적은 span은 null(씬 전체). 드러나는 자리(단위)는 근거 첫 씬 — tools/records/identity.mjs가 단위로 바꾼다.
  * @param {ReturnType<typeof loadDataset>} ds
- * real(W23e — 이름 승계): 진짜 b의 인물 ID. 있으면 범위 밖에서 b로 잡힌 줄 · b를 다룬 기록의 실제 인물은 real이다(docs/annotations.md "사칭 기록").
- * @returns {{ id: string, a: string, b: string, revealed: string|null, real: string|null, status: string, spans: { scene: string, seqs: Set<number>|null }[] }[]} ID 순
+ * @returns {{ id: string, a: string, b: string, status: string, evidence: object[], spans: { scene: string, seqs: Set<number>|null }[] }[]} ID 순
  */
-export function impersonations(ds, { confirmed = false } = {}) {
+export function splits(ds, { confirmed = false } = {}) {
   const out = [];
   for (const c of ds.candidates) {
-    if (c.kind !== 'link' || c.obj?.type !== 'impersonates' || c.status === '기각' || (confirmed && c.status !== '확정')) continue;
-    const { a, b, revealed } = c.obj;
+    if (c.kind !== 'link' || c.obj?.type !== 'split' || c.status === '기각' || (confirmed && c.status !== '확정')) continue;
+    const { a, b } = c.obj;
     if (typeof a !== 'string' || typeof b !== 'string') continue;
     const spans = [];
     for (const s of Array.isArray(c.obj.spans) ? c.obj.spans : []) {
       if (typeof s?.scene !== 'string') continue;
       spans.push({ scene: s.scene, seqs: s.lines === undefined ? null : new Set(expandLines(s.lines).seqs) });
     }
-    const real = typeof c.obj.real === 'string' && c.obj.real.trim() ? c.obj.real.trim() : null;
-    out.push({ id: c.id, a, b, revealed: typeof revealed === 'string' ? revealed : null, real, status: c.status, spans });
+    out.push({ id: c.id, a, b, status: c.status, evidence: Array.isArray(c.obj.evidence) ? c.obj.evidence : [], spans });
   }
   return out.sort((x, y) => compareIds(x.id, y.id));
 }

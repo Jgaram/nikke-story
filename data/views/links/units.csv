@@ -13,7 +13,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 12,sub:트레저_헌터_00,서브퀘스트,2,5,3,1,2,5,,,,0,0,,person:트레저_헌터 person:아니스 place:지상,트레저 헌터 · 트레저 헌터 1
 13,sub:랩칠리언_00,서브퀘스트,2,2,1,1,0,4,,,고립,0,0,,person:랩칠리언 place:지상 concept:랩쳐,랩칠리언 · 랩칠리언 1
 14,relic:방주추첨권,유실물,1,3,2,0,1,3,,,,0,0,,item:방주_추첨권 place:방주,방주 추첨권
-15,ch04,메인,7,25,27,2,22,18,,,,,,,concept:페어리_테일 place:북부 person:베스티 concept:기억_소거 person:은화 person:엠마,CHAPTER.04 헌화
+15,ch04,메인,7,26,28,2,22,19,,,,,,,concept:페어리_테일 place:북부 person:베스티 concept:기억_소거 person:은화 person:엠마,CHAPTER.04 헌화
 16,sub:트레저_헌터_01,서브퀘스트,2,4,3,2,1,5,,,,0,0,,person:트레저_헌터 org:자원_채집_부대 person:라피 person:아니스 concept:니케,트레저 헌터 · 트레저 헌터 2
 17,sub:이례의_기록자_00,서브퀘스트,3,1,1,0,1,3,,,,1,0,ch02,org:니푸르 person:이례의_기록자 person:네온 person:아니스,이례의 기록자 · 이례의 기록자 1
 18,sub:랩칠리언_01,서브퀘스트,2,3,3,2,1,4,,,,0,0,,person:랩칠리언 concept:랩쳐,랩칠리언 · 랩칠리언 2
@@ -35,7 +35,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 34,relic:채팅로그_얼리어답터,유실물,0,0,0,0,0,0,고립,고립,고립,0,0,,,채팅 로그_얼리어답터.txt
 35,d_ex_elevator_01,그 밖,3,5,2,0,1,7,,,,0,0,,incident:갓데스_폴 person:네온 person:라피 person:아니스 place:지상 place:방주,엘리베이터 · 엘리베이터 괴담
 36,sub:랩칠리언_04,서브퀘스트,3,3,2,2,0,6,,,고립,0,0,,person:시니스터 person:랩칠리언 org:중앙_정부 concept:랩쳐,랩칠리언 · 랩칠리언 5
-37,ch08,메인,3,7,6,2,4,7,,,,,,,person:엑시아 person:시프티 org:카운터스 person:네온 person:라피 person:아니스,CHAPTER.08 갈등
+37,ch08,메인,4,7,7,2,4,8,,,,,,,person:엑시아 person:시프티 person:슈엔 org:카운터스 person:네온 person:라피,CHAPTER.08 갈등
 38,sub:칠리페퍼_01,서브퀘스트,3,3,4,2,2,6,,,,0,0,,person:칠리페퍼 place:전초기지 place:지상,칠리페퍼 · 칠리페퍼 2
 39,relic:광고팜플렛,유실물,0,0,0,0,0,0,고립,고립,고립,0,0,,,광고 팜플렛
 40,relic:UFO챈.zip,유실물,1,5,4,0,4,3,,,,0,1,ch35,place:궤도_엘리베이터 concept:랩쳐,UFO챈.zip
@@ -92,7 +92,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 91,char:202,호감도,6,5,10,0,1,10,,,,0,0,,person:도라 place:블랙넷 org:엔터_헤븐 person:시프티 place:아우터_림 place:방주,도라
 92,char:101,호감도,3,9,10,0,3,10,,,,0,1,ch18,org:빌런_연합 org:엔터_헤븐 concept:퍼펙트 person:드레이크 org:메티스 place:방주,드레이크
 93,char:72,호감도,5,8,13,0,4,10,,,,0,0,,org:아크_익스프레스 incident:AFX_열차_테러 org:인피니티_레일 person:브리드 person:디젤 place:로열_로드,디젤
-94,char:221,호감도,7,10,14,0,11,8,,,,2,5,ch06 ch07 ch17 ch24 ch25 ch48,person:라푼젤 org:필그림 concept:NIMPH org:갓데스 concept:랩쳐 concept:니케,라푼젤
+94,char:221,호감도,7,11,15,0,11,9,,,,2,5,ch06 ch07 ch17 ch24 ch25 ch48,person:릴리스 person:라푼젤 org:필그림 concept:NIMPH org:갓데스 concept:랩쳐,라푼젤
 95,char:10,호감도,5,7,3,0,2,10,,,,0,1,ch32,concept:이레귤러 org:중앙_정부 person:라피 person:아니스 place:지상 place:방주,라피
 96,char:190,호감도,5,5,8,0,3,8,,,,2,0,ch05 ch06,concept:로열 person:루드밀라 person:엔더슨 place:방주 concept:니케,루드밀라
 97,char:200,호감도,3,4,4,0,0,7,,,고립,0,0,,person:루피 place:로열_로드 place:방주 concept:니케,루피
@@ -199,7 +199,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 198,sub:할아범_01,서브퀘스트,3,4,2,1,2,6,,,,0,1,ch45,person:할아범 org:중앙_정부 person:아니스 place:방주,할아범 · 할아범 2
 199,relic:에닉탄핵포스터,유실물,2,3,3,0,1,4,,,,0,1,ch25,person:에닉 place:방주,에닉 탄핵 포스터
 200,event_overzone,이벤트,17,23,37,1,25,20,,,,4,9,ch07 ch19 ch20 ch21 ch39 ch46 ch48,person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 person:릴리바이스,OVER ZONE
-201,erelic:white_memory,유실물,2,11,12,1,8,6,,,,0,0,,person:릴리스 person:라푼젤 person:레드_후드 person:스노우_화이트 concept:랩쳐,WHITE MEMORY
+201,erelic:white_memory,유실물,3,11,13,1,8,7,,,,0,0,,person:릴리스 person:라푼젤 person:레드_후드 person:스노우_화이트 concept:랩쳐,WHITE MEMORY
 202,char:233,호감도,3,8,8,0,3,9,,,,0,0,,person:피나 incident:아크_가디언_작전 person:노아 place:에덴 org:갓데스 person:도로시,도로시
 203,char:392,호감도,0,6,6,0,4,3,,,,0,0,,person:라이 person:아인 place:미미르_부속_고등학교,라이
 204,event_BunnyX777,이벤트,1,3,4,0,2,4,,,,0,0,,org:777 person:루주 person:블랑 person:누아르 place:코인_러시,Bunny x 777
@@ -402,7 +402,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 401,char:93,호감도,1,0,1,0,0,1,,,고립,0,0,,person:엠마,엠마 : 택티컬 업
 402,char:95,호감도,3,4,6,0,1,6,,,,0,0,,person:은화 concept:NIMPH person:잉그리드 concept:랩쳐,은화 : 택티컬 업
 403,char:94,호감도,1,0,1,0,0,1,,,고립,0,0,,person:베스티,베스티 : 택티컬 업
-404,fl:coins_in_rush,이벤트,14,9,22,1,11,15,,,,1,0,ch35,org:쉐이드 concept:크레디트 person:벨벳 person:베이 person:루주 person:에이드,COINS IN RUSH
+404,fl:coins_in_rush,이벤트,14,10,23,1,11,16,,,,1,0,ch35,org:쉐이드 concept:크레디트 person:벨벳 person:베이 person:루주 person:에이드,COINS IN RUSH
 405,char:315,호감도,2,3,5,0,1,4,,,,0,0,,person:에이드 person:코코아,에이드 : 에이전트 바니
 406,char:143,호감도,4,4,6,0,1,8,,,,0,0,,person:에이드 person:밀크 person:슈가 place:코인_러시 concept:랩쳐,밀크 : 블루밍 바니
 407,fl:reborn_evil,이벤트,15,10,21,1,6,23,,,,0,0,,org:블레이즈_아웃 org:엄브렐러 person:X person:에이다 person:엘세리아_나인 person:질,REBORN EVIL
@@ -414,9 +414,9 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 413,char:23,호감도,2,3,3,0,0,5,,,고립,0,0,,person:델타 person:퀀시 person:미란다 person:팬텀 place:방주,델타 : 닌자 시프
 414,ch41,메인,21,14,33,2,24,22,,,,,,,person:#000000 person:로지 person:트리키_보이 concept:스마일_박스 concept:용광로 place:유사_방주,CHAPTER.41 탄생
 415,relic:거꾸로적힌기록,유실물,1,1,2,0,1,2,,,,2,0,ch41,person:바하무트 person:레비아탄,거꾸로 적힌 기록
-416,ch42,메인,22,16,36,2,22,28,,,,,,,item:스타_스테이지 place:유사_방주 place:펑크_스트리트 person:엔드리스 person:이터니티 person:바하무트,CHAPTER.42 유일
+416,ch42,메인,23,16,37,2,22,29,,,,,,,item:스타_스테이지 place:유사_방주 place:펑크_스트리트 person:엔드리스 person:이터니티 person:바하무트,CHAPTER.42 유일
 417,relic:주의용광로사용법,유실물,5,2,7,0,5,4,,,,7,0,ch31 ch32 ch34 ch41 ch42,concept:용광로 person:바하무트 concept:다크_매터 org:포비스트,※주의※ 용광로 사용법
-418,event_goddessfall1,이벤트,30,10,40,4,28,23,,,,23,14,ch06 ch07 ch13 ch14 ch20 ch21 ch22 ch24 ch25 ch26 ch35 ch39 ch40 ch41 ch42 ch44 ch46 ch47 ch48,item:네이키드_킹 item:에덴의_창 person:릴리스 concept:릴리스의_바디 concept:스톰_브링어 concept:퀸_인자,GODDESS FALL
+418,event_goddessfall1,이벤트,30,10,40,4,28,23,,,,23,14,ch06 ch07 ch13 ch14 ch20 ch21 ch22 ch24 ch25 ch26 ch35 ch39 ch40 ch41 ch42 ch44 ch46 ch47 ch48,item:네이키드_킹 item:에덴의_창 concept:릴리스의_바디 concept:스톰_브링어 concept:퀸_인자 org:인헤르트,GODDESS FALL
 419,erelic:goddess_fall_mini,유실물,16,9,21,1,14,15,,,,5,2,ch21 ch23 ch44 ch46,incident:갓데스_폴 incident:2차_지상_탈환전 concept:지상_탈환 person:노아 person:하란 person:이사벨,GODDESS FALL
 420,char:223,호감도,3,2,3,0,3,4,,,,0,1,ch46,person:나유타 place:지상,나유타
 421,char:331,호감도,4,1,3,0,2,3,,,,0,0,,person:차임 person:크라운 person:네온,차임
@@ -445,7 +445,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 444,fl:2x2_love_1ch,이벤트,13,2,14,1,9,7,,,,1,0,ch44,person:에이미 place:금서고 person:아르카나 person:프리바티 place:미미르_부속_고등학교 concept:니케,2X2 LOVE 1부
 445,fl:2x2_love_2ch,이벤트,13,6,18,1,9,12,,,,0,0,,person:에이미 person:소라 person:크러스트 person:아인 person:츠바이 person:아르카나,2X2 LOVE 2부
 446,char:583,호감도,1,1,2,0,0,2,,,고립,0,0,,person:아르카나,아르카나 : 포츈 메이트
-447,side:pretty_star,사이드,22,5,25,1,18,15,,,,9,3,ch04 ch08 ch33 ch34 ch40 ch45 ch46,concept:With_Nikke concept:니케포비아 org:니케_인권_위원회 person:한슨 person:프리시아 org:베스트셀러,PRETTY STAR
+447,side:pretty_star,사이드,22,5,25,1,18,15,,,,9,3,ch04 ch08 ch33 ch34 ch40 ch45 ch46,concept:With_Nikke concept:니케포비아 org:니케_인권_위원회 person:한슨 person:머스탱_한슨의_아버지 person:프리시아,PRETTY STAR
 448,fl:good_world,이벤트,10,6,15,0,7,12,,,,2,1,ch00 ch26 ch46,org:베일드_오더 person:레오 person:사라 person:올리버 person:총사령관 concept:PROJECT_A.D.,GOOD WORLD
 449,char:620,호감도,2,0,2,0,0,2,,,고립,0,0,,person:백학 person:크러스트,백학
 450,ch45,메인,27,5,32,2,21,19,,,,,,,place:펑크_스트리트 concept:방주_동력원 item:초거대_코어 person:엔드리스 person:이터니티 person:프레자일,CHAPTER.45 죗값

@@ -70,7 +70,7 @@
     {
       "id": "F807",
       "text": "메이드 포 유(에이드 · 메이드장 코코아 · 소다)는 머스탱을 '사장님'으로 모시는 메이드 카페의 메이드들로, 머스탱은 그들의 밸런타인 초콜릿에 진심이 없다며 진정한 밸런타인 초콜릿을 만들기 전에는 행사를 허락하지 않았다가 다시 만든 초콜릿에 합격을 주었다",
-      "about": ["org:메이드_포_유", "person:에이드", "person:코코아", "person:소다", "person:한슨"],
+      "about": ["org:메이드_포_유", "person:에이드", "person:코코아", "person:소다", "person:머스탱"],
       "evidence": [
         { "scene": "event_maidinvalentine_prologue", "lines": [5, 9] },
         { "scene": "event_maidinvalentine_01_s", "lines": ["1-31"] },
@@ -87,6 +87,13 @@
           "date": "2026-10-14",
           "session": "W23b",
           "note": "W23b: 지금의 머스탱은 한슨(F2701 · 사칭 L33) — 머스탱 → 한슨으로 고쳐 적음. 화면은 STAR ANIS를 읽기 전까지 머스탱으로 보인다"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W24a",
+          "note": "그 장면에서 보인 이름으로(W24a) — 한슨 → 머스탱: 지금의 머스탱은 한슨(L33 같은 인물)이라 드러난 뒤 한 사람으로 보인다"
         }
       ]
     },
