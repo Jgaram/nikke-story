@@ -31,6 +31,26 @@ import { chronologyProblems, loadChronology, subjectOf, timeShapeProblems } from
 /** 단위 요약 · 씬 한 줄 · 사실 문장이 이보다 길면 경고한다 — 인계 파일 크기 때문 */
 export const LIMITS = { summary: 1500, sceneLine: 150, text: 200 };
 
+// 끝맺음(2026-10-14 사용자 — docs/annotations.md "끝맺음") — 기록 문장은 "~다"로 끝내거나 명사로 맺는다. 관형형(~하는 · ~하던 · ~한) ·
+// 연결어미(~하며 · ~하지만) · 조사(~을)로 끊지 않는다. 끝의 따옴표 인용 · 괄호는 보지 않는다.
+// 명사로 끝나는 낱말(마을 · 인간 · 의뢰인 · 장난 …)을 잡지 않게 좁게 본다 — 놓치는 것은 있어도 잘못 잡지는 않게.
+const ENDING_RULES = [
+  ['연결어미', /..(며|면서|지만|는데|다가|도록|려고|어서|아서|해서|라서|다고|라고|하고|되고|으나|더니)$/],
+  ['관형형', /.[는던]$/],
+  ['관형형', /.(?<![마노가고])은$/],
+  ['조사', /.(?<![마노가고])[을를]$/],
+  ['관형형', /^(한|된|선|준|온|간|난|진|든)$|.(?<![제권기무요원유대])한$|.된$|[힘싫]든$|(라|너|해|어|아|러|려|숨|세|여|켜)진$|(아|어|떠|러)난$|(러|려|쉬|지|세|치|누)운$|(아|어|져|나)간$|(아|어|와)온$|(적|들|붙|섞|모|벌|베|로|뿐)인$/],
+];
+/** 문장 끝이 관형형 · 연결어미 · 조사로 끊겼으면 그 갈래, 아니면 null */
+export function unfinishedEnding(s) {
+  if (typeof s !== 'string') return null;
+  const t = s.trim().replace(/(\s*\([^()]*\))+$/, '').replace(/[\s.…,·!?]+$/, '');
+  if (!/[가-힣]$/.test(t)) return null;
+  const last = t.split(/\s+/).pop();
+  for (const [kind, re] of ENDING_RULES) if (re.test(last)) return kind;
+  return null;
+}
+
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
 const SECTION_LABEL = {
   facts: '사실', questions: '의문', events: '사건', times: '시점', candidates: '정체 연결', threads: '줄기', relations: '줄기 관계', units: '층 판정', leads: '주역', spine: '척추', majors: '주요 인물', closures: '마무리', merges: '합류',
@@ -403,6 +423,11 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     fileUnit.set(f.name, { key: d.unit, scenes });
   }
 
+  // 끝맺음이 끊긴 칸 — 파일마다 한 줄로 모은다(docs/annotations.md "끝맺음")
+  const cutEndings = new Map();
+  const cutAt = (file, label) => (cutEndings.get(file) ?? cutEndings.set(file, []).get(file)).push(label);
+  const PROSE_SECTIONS = new Set(['facts', 'questions', 'events', 'times', 'changes', 'echoes', 'life', 'revisit', 'threads']);
+
   // ── 씬 한 줄 요약 ──
   for (const s of ds.scenes) {
     const o = s.obj;
@@ -415,6 +440,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     if (u?.scenes && !u.scenes.includes(o.scene)) err(s.file, null, `scenes: ${o.scene}는 이 단위(${u.key})의 씬이 아니다`);
     if (!isStr(o.text)) err(s.file, null, `scenes: ${o.scene}의 한 줄 요약(text)이 비었다`);
     else if (o.text.length > LIMITS.sceneLine) warn(s.file, null, `scenes: ${o.scene} 요약이 ${o.text.length}자 — 한 줄(${LIMITS.sceneLine}자 안쪽)로`);
+    else if (unfinishedEnding(o.text)) cutAt(s.file, o.scene);
   }
 
   // ── 후보 ──
@@ -1075,13 +1101,30 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
     for (const p of cp.warnings) warn(chron.name, p.id, p.msg);
   }
 
+  for (const c of ds.candidates) {
+    if (!PROSE_SECTIONS.has(c.section) || !c.obj || !isStr(c.id) || c.status === '기각') continue;
+    for (const k of ['text', 'before', 'after']) if (unfinishedEnding(c.obj[k])) cutAt(c.file, k === 'text' ? c.id : `${c.id}.${k}`);
+  }
+  for (const [file, labels] of cutEndings) {
+    warnings.push({ file, id: null, msg: `끝맺음이 끊긴 칸 ${labels.length}개: ${labels.join(' ')}`, group: 'ending', count: labels.length });
+  }
+
   return { errors, warnings };
 }
 
 /** 검사 결과를 사람이 읽는 줄로 */
-export function formatProblems({ errors, warnings }, { limit = 60 } = {}) {
+export function formatProblems({ errors, warnings }, { limit = 60, endings = false } = {}) {
   const line = (x, mark) => `${mark} ${x.file}${x.id ? ` ${x.id}` : ''}: ${x.msg}`;
   const out = [];
+  // 끝맺음(파일마다 한 줄)은 한 줄로 접는다 — 전부는 check --endings
+  const cut = warnings.filter((x) => x.group === 'ending');
+  if (endings) return cut.map((x) => line(x, '⚠'));
+  if (cut.length) {
+    warnings = [...warnings.filter((x) => x.group !== 'ending'), {
+      file: '끝맺음', id: null,
+      msg: `관형형 · 연결어미 · 조사로 끊긴 칸 ${cut.reduce((n, x) => n + x.count, 0)}개(파일 ${cut.length}) — "~다"로 끝내거나 명사로 맺는다(docs/annotations.md "끝맺음"). 목록: node tools/records.mjs check --endings`,
+    }];
+  }
   for (const x of errors.slice(0, limit)) out.push(line(x, '✗'));
   if (errors.length > limit) out.push(`✗ … 오류 ${errors.length - limit}건 더`);
   for (const x of warnings.slice(0, limit)) out.push(line(x, '⚠'));

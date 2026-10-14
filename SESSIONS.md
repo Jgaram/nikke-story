@@ -10,6 +10,10 @@
   ① 끝(2026-10-14) — 형식 · 검사 · 도구(`refs` · `batches`), 시험 3대상(J30 · 방주 · 하이퍼 푸드). docs/annotations.md "근거 기록 — `refs`".
   ② 병렬(관리자) — 남은 판 약 480(226대상)에 refs를 붙이고 검사가 새로 잡는 것(근거보다 더 말한 글 · 빠진 곁 판)을 고쳐 다시 확정.
   묶음 `node tools/versions.mjs batches --n 12`(대상 = 파일 하나라 안 겹친다) → 한 물결 4–6묶음 · 에이전트 지시 · 묶음마다 확인 명령 · 마지막 단계(`REFS_REQUIRED = true` · 내보내기 `node tools/site/export.mjs` · `spoiler-check` 세 독자 0)는 docs/annotations.md "② 병렬로 붙이기 — 관리자 지시".
+- [ ] **W18 끝맺음 다시 쓰기** (사용자, 2026-10-14 — 한 세션 또는 관리자 병렬) — 관형형 · 연결어미로 끊긴 기록 문장 약 2,220칸(인물 변화가 거의 전부)을 "~다"나 명사 맺음으로 고친다. 기준 docs/annotations.md "끝맺음".
+  목록 `node tools/records.mjs check --endings`(파일마다 ID — `D12.after` · 씬 요약은 씬 ID). 뜻 · 길이는 그대로, 끝만 고친다. 원문은 뜻이 모호할 때만 그 씬을 연다.
+  고치기: `set <ID> 확정 --text …`(기준 · 떡밥 · 사실) · `--prior … --after …`(변화의 전 · 후 — 전 · 후는 같은 꼴로) · `--session W18 --note 끝맺음`. 씬 한 줄 요약(14)은 파일을 직접 고친다.
+  병렬이면 에이전트당 파일 묶음(read2/ch* · char.* · 나머지)으로. 끝나면 `check`의 끝맺음 0 → 다시 뽑기(docs/operations.md "지시 세션" 4).
 
 ## 물을 것
 

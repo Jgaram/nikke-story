@@ -443,11 +443,13 @@ function withField(obj, key, value, kind) {
  * 결정을 파일에 쓴다. explicit가 아니면(단위 · 세션으로 골랐으면) 상태가 후보인 것만 바꾼다.
  * @returns {{ changed: {c:object, from:string, to:string}[], skipped: {c:object, why:string}[], files: string[] }}
  */
-export function applyDecision(list, decision, { by = 'claude', date = today(), session = null, note = null, text = null, grade = null, layer = null, basis = null, reason = null, asof = null, confidence = null, evidence = null, from = null, before: beforeGrade = null, origin = null, arcs = null, records = null, type = null, end = null, closing = null, built = null, about = null, members = null, title = null, explicit = true } = {}) {
+export function applyDecision(list, decision, { by = 'claude', date = today(), session = null, note = null, text = null, grade = null, layer = null, basis = null, reason = null, asof = null, confidence = null, evidence = null, from = null, before: beforeGrade = null, origin = null, arcs = null, records = null, type = null, end = null, closing = null, built = null, about = null, members = null, title = null, prior = null, after = null, explicit = true } = {}) {
   if (!DECISIONS.includes(decision)) throw new Error(`결정은 ${DECISIONS.join(' · ')} 중 하나`);
   if (by !== 'claude') throw new Error('--by는 claude뿐이다 — 기록은 Claude가 정한다(CLAUDE.md "일하는 법")');
   if (text !== null && list.length !== 1) throw new Error('--text는 후보 하나에만 쓴다');
   if (evidence !== null && list.length !== 1) throw new Error('--evidence는 후보 하나에만 쓴다');
+  // 인물 변화의 전 · 후(before · after) — --before는 판정의 앞 등급이라 전은 --prior
+  if ((prior !== null || after !== null) && (list.length !== 1 || list[0].kind !== 'change' || list[0].obj?.act !== '변화')) throw new Error('--prior · --after는 인물 변화(D<n>, act 변화) 하나에만 쓴다');
   if (confidence !== null && !CONFIDENCES.includes(confidence)) throw new Error(`--confidence는 ${CONFIDENCES.join(' · ')}`);
   // 근거를 고칠 수 있는 것은 씬 줄 근거를 가진 기록뿐이다 — 줄기 · 줄기 관계 · 층 판정은 근거가 기록 ID다
   if (evidence !== null && (list[0].threads || list[0].layers || list[0].leads || list[0].spine || list[0].majors)) throw new Error('--evidence는 씬 줄 근거가 있는 기록(사실 · 의문 · 사건 · 시점 · 정체 연결 · 2회독 기록 · 수동 엣지)에만');
@@ -501,7 +503,8 @@ export function applyDecision(list, decision, { by = 'claude', date = today(), s
       (closingList === null || closingList.join(' ') === (Array.isArray(c.obj.closing) ? c.obj.closing : []).join(' ')) &&
       (builtList === null || builtList.join(' ') === (Array.isArray(c.obj.built) ? c.obj.built : []).join(' ')) &&
       (aboutList === null || aboutList.join(' ') === (Array.isArray(c.obj.about) ? c.obj.about : []).join(' ')) &&
-      (memberList === null || memberList.join(' ') === (Array.isArray(c.obj.members) ? c.obj.members : []).join(' ')) && (title === null || title === c.obj.title);
+      (memberList === null || memberList.join(' ') === (Array.isArray(c.obj.members) ? c.obj.members : []).join(' ')) && (title === null || title === c.obj.title) &&
+      (prior === null || prior === c.obj.before) && (after === null || after === c.obj.after);
     if (decision === '보류' && c.status !== '후보') {
       skipped.push({ c, why: `보류는 후보에만 — 지금 ${c.status}. 되돌리려면 후보로` });
       continue;
@@ -524,6 +527,14 @@ export function applyDecision(list, decision, { by = 'claude', date = today(), s
       if (text !== null && text !== obj.text) {
         before.push(obj.text);
         obj.text = text;
+      }
+      if (prior !== null && prior !== obj.before) {
+        before.push(`전 ${obj.before}`);
+        obj.before = prior;
+      }
+      if (after !== null && after !== obj.after) {
+        before.push(`후 ${obj.after}`);
+        obj.after = after;
       }
       if (grade !== null && grade !== obj.grade) {
         before.push(`등급 ${obj.grade}`);

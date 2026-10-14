@@ -6,10 +6,12 @@
  *   node tools/records.mjs next [F12]                 다음 번호 (사실 F · 의문 Q · 시점 S · 되짚기 V · 정체 연결 L, 사건 F12-2, 2회독 I · E · D · U, 수동 엣지 Y)
  *   node tools/records.mjs find 기억                  사실 · 의문 · 시점 문장에서 찾기 — 이미 있는 사실인지 볼 때
  *   node tools/records.mjs check                      검증기 — 오류가 있으면 종료 코드 1. 인계 파일이 오래됐는지도 본다
+ *   node tools/records.mjs check --endings            끝맺음이 끊긴 칸 전부 — 파일마다 기록 ID(before · after는 D12.after) · 씬 요약은 씬 ID
  *   node tools/records.mjs handoff                    인계 파일을 다시 만든다 (1회독 annotations/read1/HANDOFF.md · handoff/, 2회독 annotations/read2/HANDOFF.md · handoff/)
  *   node tools/records.mjs review [ch00|R01|F12|사실 …] 후보를 근거 줄 · 앞뒤 문맥과 함께 (기본: 상태가 후보인 것 전부)
  *   node tools/records.mjs set F3 F5 Q2-2 확정 --note "…"   채팅으로 받은 결정 반영 (확정 · 기각 · 보류 · 후보)
  *   node tools/records.mjs set F12 확정 --confidence 확실 --evidence "d_main_01_01_s#12,20-25" --session P1   2회독 바로잡기
+ *   node tools/records.mjs set D12 확정 --prior "…" --after "…"   인물 변화의 전 · 후 고치기(고치기 전은 검토 기록 before에)
  *   node tools/records.mjs progress [--all] [--read2] 단위별 진행률 (읽음 · 후보 · 검토) — 2회독 파일이 있으면 2회독도
  *   node tools/records.mjs layers [단위 키 …] [--add]   층 표 (annotations/layers.json) · 단위의 판정과 판정 입력(2회독 포함, --read1이면 1회독만) · 판정 없는 단위에 시안 더하기
  *   node tools/records.mjs leads [인물 …] [--add]      주역 명단 (annotations/leads.json, X3f) · 한 사람의 메인 챕터별 신호 · 명단에 없는 초안을 후보로 더하기
@@ -46,10 +48,11 @@ const USAGE = `1회독 · 2회독 기록 도구 (tools/records.mjs) — 형식 �
   new <키> [--session R01|M03] [--parts 4-6]   기록 파일 뼈대 — 1회독 기록이 없으면 annotations/read1/<키>.json, 있으면 2회독 annotations/read2/<키>.json
   next [F12|Q3]                           다음 번호
   find <낱말>                             사실 · 의문 · 시점 · 요약에서 찾기
-  check                                   검증기 (오류 → 종료 코드 1) + 인계 파일이 최신인지
+  check [--endings]                       검증기 (오류 → 종료 코드 1) + 인계 파일이 최신인지 · --endings는 끝맺음이 끊긴 칸 전부
   handoff                                 인계 파일 다시 만들기 (1회독 annotations/read1/ · 2회독 annotations/read2/)
   review [ID|범위 F3..F9|단위 키|세션|종류 …] [--status 후보|확정|기각|보류|전부] [--kind-order] [--context N] [--brief] [--page N]
   set <ID|범위|단위 키|세션 …> <확정|기각|보류|후보> [--note 메모] [--session M03] [--text 고친 문장] [--date YYYY-MM-DD]
+      인물 변화(D, act 변화)는 --prior <전> · --after <후>(짧은 구절 — 끝맺음은 docs/annotations.md "끝맺음")
       판정(K)은 --grade 필수|보강|참고|독립 · --basis <기록 ID> · --reason <이유> · --asof YYYY-MM-DD(기준 시점) · --layer 1|2|3 (규칙 층을 뒤집거나 읽은 층으로 묶을 때 — --note에 까닭)
         · --from ch38(메인이 이 단위를 딛기 시작하는 챕터 — 필수 · 보강) · --before 참고|독립(그 앞 자리의 등급) — 빈 값("")은 지운다
       주역(Z)은 --from ch19(주역이 되는 챕터) · --arcs "ch20-ch29 ch44-ch48"(아크 범위, 전체면 --arcs 전체) · --origin <단위 키>|메인(원점 — 그 판정은 필수)
@@ -106,6 +109,9 @@ const { values: opt, positionals } = parseArgs({
     about: { type: 'string' },
     members: { type: 'string' },
     title: { type: 'string' },
+    endings: { type: 'boolean' },
+    prior: { type: 'string' },
+    after: { type: 'string' },
     help: { type: 'boolean', short: 'h' },
   },
   allowPositionals: true,
@@ -266,8 +272,14 @@ switch (cmd) {
       console.log(`2회독: 파일 ${ds.files2.length} · 기록 ${t2.all}(암시 언급 ${t2.mention} · 떡밥 ${t2.echo} · 인물 변화 ${t2.change} · 생활상 ${t2.life}) · 바로잡기로 더한 1회독 항목 ${fixes}` +
         `${ds.links ? ` · 수동 엣지 ${tally(ds.candidates.filter((c) => c.kind === 'edge')).all}(${ds.links.name})` : ''}`);
     }
+    if (opt.endings) {
+      for (const l of formatProblems(res, { endings: true })) console.log(l);
+      exitWith(res.errors.length ? 1 : 0);
+      break;
+    }
     for (const l of formatProblems(res)) console.log(l);
-    console.log(`오류 ${res.errors.length} · 경고 ${res.warnings.length}`);
+    const cut = res.warnings.filter((x) => x.group === 'ending');
+    console.log(`오류 ${res.errors.length} · 경고 ${res.warnings.length - cut.length}${cut.length ? ` · 끝맺음 ${cut.reduce((n, x) => n + x.count, 0)}칸` : ''}`);
     if (OUT && !res.errors.length) {
       const built = buildHandoff(ds, ctx, order);
       const built2 = buildHandoff2(ds, ctx, order, order2);
@@ -340,7 +352,7 @@ switch (cmd) {
         basis: opt.basis ?? null, reason: opt.reason ?? null, asof: opt.asof ?? null,
         confidence: opt.confidence ?? null, evidence: opt.evidence ?? null, from: opt.from ?? null, before: opt.before ?? null, origin: opt.origin ?? null,
         arcs: opt.arcs ?? null, records: opt.records ?? null, type: opt.type ?? null, end: opt.end ?? null, closing: opt.closing ?? null, built: opt.built ?? null,
-        about: opt.about ?? null, members: opt.members ?? null, title: opt.title ?? null, explicit,
+        about: opt.about ?? null, members: opt.members ?? null, title: opt.title ?? null, prior: opt.prior ?? null, after: opt.after ?? null, explicit,
       });
     } catch (err) {
       fail(err.message);
