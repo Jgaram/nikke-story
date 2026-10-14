@@ -1,120 +1,120 @@
 {
-  "unit": "fl:absolute",
+  "unit": "event_absolute1",
   "session": "R68",
   "by": "claude",
   "date": "2026-10-03",
-  "summary": "ABSOLUTE — 앱솔루트(은화 · 베스티 · 엠마)가 포비스트 전 · 수정 지역에서 돌아온 직후의 이야기(금서고 원문). 은화는 인디빌리아 전과 베히모스 전(몸이 반 날아간 베스티)이 섞인 악몽을 꾸고(00), 그 뒤 임무마다 자기가 미끼를 맡고 베스티를 뒤에 둔다. 블랙스미스 토벌에서 양산형 스쿼드(이글 · 팔콘 · 오울과 '삼류' 지휘관)를 구한다(01–02). 잉그리드는 블랙스미스의 대구경 라이플이 맹수 이빨 같은 것에 찢겨 있었고 북부에 랩쳐를 사냥하는 [미지의 존재]가 나타났다며 스카우팅을 보낸다. 은화는 카운터스 없이 베히모스를 이길 수 있냐고 묻지만 잉그리드는 판단을 맡긴다(03). 베스티가 '내가 라피가 아니라서냐'며 따지자 은화가 쏘아붙이고 다툰다(04). 사관학교 근처 놀이터 — 잉그리드가 은화를 앱솔루트에 들인 곳 — 에서 엠마가 베스티의 '하고 싶은 것' 메모를 알려 준다(05). 언리미티드가 끊긴 시그널의 구조 신호를 받는다(06). 베스티의 회상 — 첫 임무, 라피의 탈퇴(07). 쉬는 날 아침, 시뮬레이션으로 베히모스와 수십 번 싸우던 은화에게 호출(08–09). 북부 기지에서 수색 브리핑 뒤 블랙스미스 사체를 조사하다 광학미채 늑대형 랩쳐와 싸우고(10–12), 버려진 도시의 지하 벙커에서 랩쳐가 상위 개체의 코어를 먹고 변형하는 것을 본 뒤 포위 · 재밍 폭발로 떨어져 셋이 흩어진다(13). 엠마의 회상과 시그널 · 생존자들(14–15), 에블라 입자 발생 장치가 깔린 [마의 지대] · 낡은 무기고, 은화 · 엠마 합류(16–17). 엠마가 무리하는 은화를 '삼류 지휘관'이라 막고(18–19), 혼자 떨어진 베스티는 델타를 구하며 싸운다(20–21). 은화는 사과하려다 베스티 · 엠마의 말에 '완벽한 건 우리'라 다짐한다(22). 벙커를 폭파해 하위 개체를 묻고(23–24) 진화하는 상위 개체를 원시적 전술로 쓰러뜨리며, 언리미티드가 팔콘의 브레인 쉘터를 구해 온다(25–26). 잉그리드의 분석 — 프레데터는 기록에 없는 새 개체, 벙커는 기록에 없는 양식. 셋은 미뤄 둔 쇼핑 · 파르페 · 파자마 파티를 한다(27).",
+  "summary": "ABSOLUTE — 앱솔루트(은화 · 베스티 · 엠마)가 포비스트 전 · 수정 지역에서 돌아온 직후의 이야기(금서고 원문). 은화는 인디빌리아 전과 베히모스 전(몸이 반 날아간 베스티)이 섞인 악몽을 꾸고(event_absolute1_prologue), 그 뒤 임무마다 자기가 미끼를 맡고 베스티를 뒤에 둔다. 블랙스미스 토벌에서 양산형 스쿼드(이글 · 팔콘 · 오울과 '삼류' 지휘관)를 구한다(event_absolute1_01_s–event_absolute1_01_e). 잉그리드는 블랙스미스의 대구경 라이플이 맹수 이빨 같은 것에 찢겨 있었고 북부에 랩쳐를 사냥하는 [미지의 존재]가 나타났다며 스카우팅을 보낸다. 은화는 카운터스 없이 베히모스를 이길 수 있냐고 묻지만 잉그리드는 판단을 맡긴다(event_absolute1_02_s). 베스티가 '내가 라피가 아니라서냐'며 따지자 은화가 쏘아붙이고 다툰다(event_absolute1_02_e). 사관학교 근처 놀이터 — 잉그리드가 은화를 앱솔루트에 들인 곳 — 에서 엠마가 베스티의 '하고 싶은 것' 메모를 알려 준다(event_absolute1_03_s). 언리미티드가 끊긴 시그널의 구조 신호를 받는다(event_absolute1_03_e). 베스티의 회상 — 첫 임무, 라피의 탈퇴(event_absolute1_intermission_01). 쉬는 날 아침, 시뮬레이션으로 베히모스와 수십 번 싸우던 은화에게 호출(event_absolute1_04_s–event_absolute1_04_e). 북부 기지에서 수색 브리핑 뒤 블랙스미스 사체를 조사하다 광학미채 늑대형 랩쳐와 싸우고(event_absolute1_05_s–event_absolute1_06_s), 버려진 도시의 지하 벙커에서 랩쳐가 상위 개체의 코어를 먹고 변형하는 것을 본 뒤 포위 · 재밍 폭발로 떨어져 셋이 흩어진다(event_absolute1_06_e). 엠마의 회상과 시그널 · 생존자들(event_absolute2_01_s–event_absolute2_01_e), 에블라 입자 발생 장치가 깔린 [마의 지대] · 낡은 무기고, 은화 · 엠마 합류(event_absolute2_02_s–event_absolute2_02_e). 엠마가 무리하는 은화를 '삼류 지휘관'이라 막고(event_absolute2_03_s–event_absolute2_03_e), 혼자 떨어진 베스티는 델타를 구하며 싸운다(event_absolute2_intermission_01–event_absolute2_04_s). 은화는 사과하려다 베스티 · 엠마의 말에 '완벽한 건 우리'라 다짐한다(event_absolute2_04_e). 벙커를 폭파해 하위 개체를 묻고(event_absolute2_05_s–event_absolute2_05_e) 진화하는 상위 개체를 원시적 전술로 쓰러뜨리며, 언리미티드가 팔콘의 브레인 쉘터를 구해 온다(event_absolute2_06_s–event_absolute2_06_e). 잉그리드의 분석 — 프레데터는 기록에 없는 새 개체, 벙커는 기록에 없는 양식. 셋은 미뤄 둔 쇼핑 · 파르페 · 파자마 파티를 한다(event_absolute2_epilogue).",
   "scenes": [
     {
-      "scene": "fl:absolute_00",
+      "scene": "event_absolute1_prologue",
       "text": "은화의 악몽 — 인디빌리아 전과 베히모스 전이 섞인 꿈, 수송기에서 깨어 먼저 뛰어내림"
     },
     {
-      "scene": "fl:absolute_01",
+      "scene": "event_absolute1_01_s",
       "text": "침식된 오울을 은화가 저격 — 블랙스미스 응전, 은화가 미끼를 자처"
     },
     {
-      "scene": "fl:absolute_02",
+      "scene": "event_absolute1_01_e",
       "text": "블랙스미스 침묵 — 엠마가 이글에게 제압탄과 기억 소거를 권함, 남은 발자국"
     },
     {
-      "scene": "fl:absolute_03",
+      "scene": "event_absolute1_02_s",
       "text": "잉그리드의 분석 — 이빨 자국, 북부의 [미지의 존재], 카운터스 없이 베히모스를 이길 수 있나"
     },
     {
-      "scene": "fl:absolute_04",
+      "scene": "event_absolute1_02_e",
       "text": "베스티 · 은화의 다툼('내가 라피가 아니라서?') — 놀이터 그네 위의 은화"
     },
     {
-      "scene": "fl:absolute_05",
+      "scene": "event_absolute1_03_s",
       "text": "엠마 · 은화 — 앱솔루트가 결성된 놀이터, 베스티 방의 메모"
     },
     {
-      "scene": "fl:absolute_06",
+      "scene": "event_absolute1_03_e",
       "text": "언리미티드 기지에 끊긴 시그널의 구조 신호 — 델타 희생 · 고립"
     },
     {
-      "scene": "fl:absolute_07",
+      "scene": "event_absolute1_intermission_01",
       "text": "베스티의 회상 — 앱솔루트 첫 만남, 첫 임무의 은화, 라피 탈퇴 통보"
     },
     {
-      "scene": "fl:absolute_08",
+      "scene": "event_absolute1_04_s",
       "text": "늦잠 잔 베스티를 깨우는 엠마 — 쇼핑 · 장난감 가게 · 파르페 · 파자마 파티 계획"
     },
     {
-      "scene": "fl:absolute_09",
+      "scene": "event_absolute1_04_e",
       "text": "시뮬레이션 베히모스 전 수십 번 — 잉그리드의 호출"
     },
     {
-      "scene": "fl:absolute_10",
+      "scene": "event_absolute1_05_s",
       "text": "북부 기지 브리핑 — 글리터 산맥 수색 구역, '죽기 싫어, 이글'"
     },
     {
-      "scene": "fl:absolute_11",
+      "scene": "event_absolute1_05_e",
       "text": "코어만 물어뜯긴 블랙스미스 사체 — 광학미채 적의 기습"
     },
     {
-      "scene": "fl:absolute_12",
+      "scene": "event_absolute1_06_s",
       "text": "늑대 형태 랩쳐 격파 — 더 큰 반응을 추적"
     },
     {
-      "scene": "fl:absolute_13",
+      "scene": "event_absolute1_06_e",
       "text": "지하 벙커 — 코어를 먹고 변형하는 랩쳐, 포위 · 재밍 폭발로 추락"
     },
     {
-      "scene": "fl:absolute_14",
+      "scene": "event_absolute2_01_s",
       "text": "엠마의 회상 — 놀이터의 은화, 라피 탈퇴 뒤 등을 맞댄 밤"
     },
     {
-      "scene": "fl:absolute_15",
+      "scene": "event_absolute2_01_e",
       "text": "시그널의 은신처에서 깬 엠마 — [프레데터] 명명, 델타의 희생, 은화를 쫓아감"
     },
     {
-      "scene": "fl:absolute_16",
+      "scene": "event_absolute2_02_s",
       "text": "에블라 입자 발생 장치의 [마의 지대] · 낡은 무기고 — 진형을 갖춘 프레데터"
     },
     {
-      "scene": "fl:absolute_17",
+      "scene": "event_absolute2_02_e",
       "text": "카모플라쥬로 프레데터 저격 — 엠마 합류"
     },
     {
-      "scene": "fl:absolute_18",
+      "scene": "event_absolute2_03_s",
       "text": "프레데터 분석 — 전술을 이해하고 코어를 먹어 성장"
     },
     {
-      "scene": "fl:absolute_19",
+      "scene": "event_absolute2_03_e",
       "text": "엠마가 은화를 '삼류 지휘관'이라 막아섬 — 잔해 너머 폭발"
     },
     {
-      "scene": "fl:absolute_20",
+      "scene": "event_absolute2_intermission_01",
       "text": "홀로 깬 베스티 — 델타를 지키며 미사일 발사"
     },
     {
-      "scene": "fl:absolute_21",
+      "scene": "event_absolute2_04_s",
       "text": "싸우는 베스티를 본 은화"
     },
     {
-      "scene": "fl:absolute_22",
+      "scene": "event_absolute2_04_e",
       "text": "델타의 보고(상위 개체 회복) — 은화의 사과와 '완벽한 건 우리'"
     },
     {
-      "scene": "fl:absolute_23",
+      "scene": "event_absolute2_05_s",
       "text": "작전 [TACTICAL UP] 회의 — 벙커 폭파 · 상위 개체 집중, '그 녀석 대신으로 생각한 적 없어'"
     },
     {
-      "scene": "fl:absolute_24",
+      "scene": "event_absolute2_05_e",
       "text": "탈출 · 시그널이 언리미티드와 연결 — 엠마 · 베스티가 남아 벙커를 무너뜨림"
     },
     {
-      "scene": "fl:absolute_25",
+      "scene": "event_absolute2_06_s",
       "text": "벙커 밖 고지전 — 수를 읽고 총구를 피하는 상위 개체, 퇴각"
     },
     {
-      "scene": "fl:absolute_26",
+      "scene": "event_absolute2_06_e",
       "text": "상위 개체 격파 · 언리미티드 합류 — 팔콘의 브레인 쉘터, '완벽한 전술은 없다'"
     },
     {
-      "scene": "fl:absolute_27",
+      "scene": "event_absolute2_epilogue",
       "text": "잉그리드의 분석(새 개체 · 기록에 없는 벙커) — 셋의 쇼핑 · 파르페 · 파자마 파티"
     }
   ],
@@ -131,7 +131,7 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_03",
+          "scene": "event_absolute1_02_s",
           "lines": [
             "30-45",
             "51-53"
@@ -159,39 +159,39 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_15",
+          "scene": "event_absolute2_01_e",
           "lines": [
             "23-30"
           ]
         },
         {
-          "scene": "fl:absolute_11",
+          "scene": "event_absolute1_05_e",
           "lines": [
             "11-15",
             "26-27"
           ]
         },
         {
-          "scene": "fl:absolute_13",
+          "scene": "event_absolute1_06_e",
           "lines": [
             "82-85",
             "99-103"
           ]
         },
         {
-          "scene": "fl:absolute_16",
+          "scene": "event_absolute2_02_s",
           "lines": [
             "47-50"
           ]
         },
         {
-          "scene": "fl:absolute_18",
+          "scene": "event_absolute2_03_s",
           "lines": [
             "30-42"
           ]
         }
       ],
-      "reason": "시그널의 명명(15 #23-28), 코어만 물어뜯긴 사체(11 #14-15), 대신 맞음 · 재밍(13), 진형(16 #49-50), 은화의 분석(18 #38-42)",
+      "reason": "시그널의 명명(event_absolute2_01_e#23-28), 코어만 물어뜯긴 사체(event_absolute1_05_e#14-15), 대신 맞음 · 재밍(event_absolute1_06_e), 진형(event_absolute2_02_s#49-50), 은화의 분석(event_absolute2_03_s#38-42)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -213,25 +213,25 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_13",
+          "scene": "event_absolute1_06_e",
           "lines": [
             "29-33"
           ]
         },
         {
-          "scene": "fl:absolute_22",
+          "scene": "event_absolute2_04_e",
           "lines": [
             "16-26"
           ]
         },
         {
-          "scene": "fl:absolute_23",
+          "scene": "event_absolute2_05_s",
           "lines": [
             "38-43"
           ]
         }
       ],
-      "reason": "변형 장면(13 #30-33), 델타의 보고와 은화의 해석(22 #16-26), 작전 회의 정리(23 #40-43 — '어디까지나 추측')",
+      "reason": "변형 장면(event_absolute1_06_e#30-33), 델타의 보고와 은화의 해석(event_absolute2_04_e#16-26), 작전 회의 정리(event_absolute2_05_s#40-43 — '어디까지나 추측')",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -253,19 +253,19 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_13",
+          "scene": "event_absolute1_06_e",
           "lines": [
             "1-9"
           ]
         },
         {
-          "scene": "fl:absolute_16",
+          "scene": "event_absolute2_02_s",
           "lines": [
             "2-15"
           ]
         }
       ],
-      "reason": "벙커 진입(13 #1-9), 마의 지대 · 무기고(16 #2-6, #11-15 — '뭘 상대하려고 배치해 둔 거지?')",
+      "reason": "벙커 진입(event_absolute1_06_e#1-9), 마의 지대 · 무기고(event_absolute2_02_s#2-6, #11-15 — '뭘 상대하려고 배치해 둔 거지?')",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -286,20 +286,20 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_25",
+          "scene": "event_absolute2_06_s",
           "lines": [
             "107-155"
           ]
         },
         {
-          "scene": "fl:absolute_26",
+          "scene": "event_absolute2_06_e",
           "lines": [
             "0-5",
             "52-56"
           ]
         }
       ],
-      "reason": "고지전(25 #108, #119-122, #135-139, #145-153)과 정리(26 #0-5), 상위 개체의 [계산] · [학습](26 #52-56)",
+      "reason": "고지전(event_absolute2_06_s#108, #119-122, #135-139, #145-153)과 정리(event_absolute2_06_e#0-5), 상위 개체의 [계산] · [학습](event_absolute2_06_e#52-56)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -323,20 +323,20 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_24",
+          "scene": "event_absolute2_05_e",
           "lines": [
             "89-96"
           ]
         },
         {
-          "scene": "fl:absolute_26",
+          "scene": "event_absolute2_06_e",
           "lines": [
-            "81-91",
-            "127-137"
+            "82-92",
+            "128-138"
           ]
         }
       ],
-      "reason": "벙커 붕괴(24 #95-96), 상위 개체 격파 · 은화의 정리(26 #83, #88-90), 토브의 브레인 쉘터(26 #129-137)",
+      "reason": "벙커 붕괴(event_absolute2_05_e#95-96), 상위 개체 격파 · 은화의 정리(event_absolute2_06_e#84, #89-91), 토브의 브레인 쉘터(event_absolute2_06_e#130-138)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -358,7 +358,7 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "2-13"
           ]
@@ -386,7 +386,7 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "14-30"
           ]
@@ -418,32 +418,32 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_14",
+          "scene": "event_absolute2_01_s",
           "lines": [
             "0-40",
             "47-55"
           ]
         },
         {
-          "scene": "fl:absolute_22",
+          "scene": "event_absolute2_04_e",
           "lines": [
             "83-106"
           ]
         },
         {
-          "scene": "fl:absolute_05",
+          "scene": "event_absolute1_03_s",
           "lines": [
             "13-18"
           ]
         },
         {
-          "scene": "fl:absolute_04",
+          "scene": "event_absolute1_02_e",
           "lines": [
             90
           ]
         }
       ],
-      "reason": "엠마의 회상(14 #1-13 · #40, 라피 · 베스티 순서 #47-54), 은화가 떠올린 영입 대화(22 #83-106), 결성일(05 #16-17), 장소(04 #90)",
+      "reason": "엠마의 회상(event_absolute2_01_s#1-13 · #40, 라피 · 베스티 순서 #47-54), 은화가 떠올린 영입 대화(event_absolute2_04_e#83-106), 결성일(event_absolute1_03_s#16-17), 장소(event_absolute1_02_e#90)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -464,7 +464,7 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_14",
+          "scene": "event_absolute2_01_s",
           "lines": [
             "23-28"
           ]
@@ -492,7 +492,7 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_07",
+          "scene": "event_absolute1_intermission_01",
           "lines": [
             "27-59"
           ]
@@ -521,31 +521,31 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_04",
+          "scene": "event_absolute1_02_e",
           "lines": [
             "38-68"
           ]
         },
         {
-          "scene": "fl:absolute_03",
+          "scene": "event_absolute1_02_s",
           "lines": [
             "13-21"
           ]
         },
         {
-          "scene": "fl:absolute_19",
+          "scene": "event_absolute2_03_e",
           "lines": [
             "37-73"
           ]
         },
         {
-          "scene": "fl:absolute_22",
+          "scene": "event_absolute2_04_e",
           "lines": [
             "47-63"
           ]
         }
       ],
-      "reason": "다툼(04 #38-68), 잉그리드의 지적(03 #14-20), 엠마의 비판과 은화의 속마음(19 #43-73), 베스티의 말(22 #51-63)",
+      "reason": "다툼(event_absolute1_02_e#38-68), 잉그리드의 지적(event_absolute1_02_s#14-20), 엠마의 비판과 은화의 속마음(event_absolute2_03_e#43-73), 베스티의 말(event_absolute2_04_e#51-63)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -569,25 +569,25 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_22",
+          "scene": "event_absolute2_04_e",
           "lines": [
             "109-135"
           ]
         },
         {
-          "scene": "fl:absolute_23",
+          "scene": "event_absolute2_05_s",
           "lines": [
             "126-137"
           ]
         },
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "55-62"
           ]
         }
       ],
-      "reason": "은화의 다짐(22 #109-135), 베스티에게(23 #128-130), 잉그리드의 앞 질문(03 #67-78)에 대한 답(27 #57-62)",
+      "reason": "은화의 다짐(event_absolute2_04_e#109-135), 베스티에게(event_absolute2_05_s#128-130), 잉그리드의 앞 질문(event_absolute1_02_s#67-78)에 대한 답(event_absolute2_epilogue#57-62)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -611,19 +611,19 @@
       ],
       "evidence": [
         {
-          "scene": "fl:absolute_01",
+          "scene": "event_absolute1_01_s",
           "lines": [
             "2-45"
           ]
         },
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "33-40"
           ]
         }
       ],
-      "reason": "블랙스미스에게 쫓기던 스쿼드 · 침식된 오울 저격(01), 잉그리드의 소식(27 #35-40)",
+      "reason": "블랙스미스에게 쫓기던 스쿼드 · 침식된 오울 저격(event_absolute1_01_s), 잉그리드의 소식(event_absolute2_epilogue#35-40)",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -639,8 +639,8 @@
       "id": "F2889",
       "text": "은화가 오래 짊어 온 목소리에는 [미친개]의 '넌 반드시 지상을 탈환한다 — 우리 인간의 방식으로!'와, 인류의 미래라 믿었다며 스러져 간 사관학교 동료의 말이 있다 — 은화는 걱정이 있을 때마다 사관학교 근처 버려진 놀이터의 그네에 온다",
       "about": ["person:은화", "person:미친개", "place:사관학교"],
-      "evidence": [{ "scene": "fl:absolute_04", "lines": ["90-116"] }],
-      "reason": "#97-105 기억 속 목소리, #112 '오래전부터 짊어온 수많은 목소리', 05#22 엠마의 말. 미친개와 은화의 관계(교관 · 상관)는 원문에 없다",
+      "evidence": [{ "scene": "event_absolute1_02_e", "lines": ["90-116"] }],
+      "reason": "#97-105 기억 속 목소리, #112 '오래전부터 짊어온 수많은 목소리', event_absolute1_03_s#22 엠마의 말. 미친개와 은화의 관계(교관 · 상관)는 원문에 없다",
       "confidence": "확실",
       "status": "확정",
       "session": "M34",
@@ -653,19 +653,19 @@
       "text": "북부의 프레데터 벙커와 비슷한 벙커들 — 에블라 입자 발생 장치와 재래식 무기고를 갖춘, 어떤 기록에도 없는 양식 — 은 누가 무엇을 상대하려고 만들었나, 인간이 아닌 [누군가]인가?",
       "evidence": [
         {
-          "scene": "fl:absolute_16",
+          "scene": "event_absolute2_02_s",
           "lines": [
             "14-15"
           ]
         },
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "14-22"
           ]
         }
       ],
-      "reason": "은화의 물음(16 #14-15 '뭘 상대하려고 배치해 둔 거지?')과 잉그리드의 [누군가](27 #17-22), 추적은 뒤로 미뤄짐",
+      "reason": "은화의 물음(event_absolute2_02_s#14-15 '뭘 상대하려고 배치해 둔 거지?')과 잉그리드의 [누군가](event_absolute2_epilogue#17-22), 추적은 뒤로 미뤄짐",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -682,19 +682,19 @@
       "text": "전술을 이해하고 코어를 먹어 성장하는, 기록에 없던 프레데터는 어디에서 왔나 — 다른 서식지에서 옮겨 온 것인가, 랩쳐 진화의 돌연변이인가?",
       "evidence": [
         {
-          "scene": "fl:absolute_18",
+          "scene": "event_absolute2_03_s",
           "lines": [
             "43-50"
           ]
         },
         {
-          "scene": "fl:absolute_27",
+          "scene": "event_absolute2_epilogue",
           "lines": [
             "7-13"
           ]
         }
       ],
-      "reason": "엠마의 물음(18 #43-45)과 은화의 두 가지 짐작(27 #11-12) — 잉그리드 '그럴지도 모르지'",
+      "reason": "엠마의 물음(event_absolute2_03_s#43-45)과 은화의 두 가지 짐작(event_absolute2_epilogue#11-12) — 잉그리드 '그럴지도 모르지'",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -714,7 +714,7 @@
       "text": "잉그리드가 앱솔루트에 라피 제외를 통보하며 본인의 요청이고 몇 번이고 설득했지만 완고했으며 말할 수 없는 사연이 있는 듯했다고 했다 — 은화는 아무 말도 듣지 못했다며 뛰쳐나갔다",
       "evidence": [
         {
-          "scene": "fl:absolute_07",
+          "scene": "event_absolute1_intermission_01",
           "lines": [
             "74-100"
           ]
@@ -741,11 +741,11 @@
       "ref": "ch34",
       "at": [["뒤", "ch34"]],
       "evidence": [
-        { "scene": "fl:absolute_00", "lines": ["116-117"] },
-        { "scene": "fl:absolute_03", "lines": ["56-57"] },
-        { "scene": "fl:absolute_04", "lines": [19, 44] }
+        { "scene": "event_absolute1_prologue", "lines": ["116-117"] },
+        { "scene": "event_absolute1_02_s", "lines": ["56-57"] },
+        { "scene": "event_absolute1_02_e", "lines": [19, 44] }
       ],
-      "reason": "'수정 지역에 다녀온 이후로 쉬지도 못하고'(00 #116), '포비스트 전을 치르고 돌아온 지 얼마 안 되었는데'(03 #56), 택티컬 업 완료(04 #44) — 택티컬 업은 F1644(ch34). 메인 챕터 어디와 바로 잇는지는 원문이 말하지 않아 추정",
+      "reason": "'수정 지역에 다녀온 이후로 쉬지도 못하고'(event_absolute1_prologue#116), '포비스트 전을 치르고 돌아온 지 얼마 안 되었는데'(event_absolute1_02_s#56), 택티컬 업 완료(event_absolute1_02_e#44) — 택티컬 업은 F1644(ch34). 메인 챕터 어디와 바로 잇는지는 원문이 말하지 않아 추정",
       "confidence": "확실",
       "status": "확정",
       "reviews": [
@@ -755,7 +755,7 @@
           "by": "claude",
           "date": "2026-10-07",
           "session": "M34",
-          "note": "03#56-57 '포비스트 전을 치르고 돌아온 지 얼마 안 됐는데 단기간에 세 번' · 00#116-117 · 05#26 — 수정 지역 직후가 원문에 분명",
+          "note": "event_absolute1_02_s#56-57 '포비스트 전을 치르고 돌아온 지 얼마 안 됐는데 단기간에 세 번' · event_absolute1_prologue#116-117 · event_absolute1_03_s#26 — 수정 지역 직후가 원문에 분명",
           "before": "확신도 추정"
         }
       ]
@@ -766,7 +766,7 @@
       "text": "앱솔루트 결성일 — 잉그리드가 놀이터에서 은화를 영입하고 엠마가 합류한 날, 이어 라피 · 베스티 합류와 라피의 탈퇴",
       "ref": "org:앱솔루트",
       "at": [["뒤", "@2차_지상_탈환전"], ["전", "ch00"]],
-      "evidence": [{ "scene": "fl:absolute_14", "lines": ["0-66"] }, { "scene": "fl:absolute_07", "lines": ["1-100"] }],
+      "evidence": [{ "scene": "event_absolute2_01_s", "lines": ["0-66"] }, { "scene": "event_absolute1_intermission_01", "lines": ["1-100"] }],
       "reason": "엠마 · 베스티의 회상 구간",
       "confidence": "확실",
       "status": "확정",
@@ -778,7 +778,7 @@
       "target": "concept:프레데터",
       "evidence": [
         {
-          "scene": "fl:absolute_15",
+          "scene": "event_absolute2_01_e",
           "lines": [
             "23-28"
           ]

@@ -682,7 +682,7 @@
       "about": ["person:베스티", "person:은화"],
       "text": "보호받기만 해 서운하던 베스티와 그녀를 뒤에 두고 지키려던 은화가, '난 네가 쓸 최강의 괴물' · '그 녀석 대신으로 생각한 적 없다, 믿는다'로 서로를 믿는 짝이 된다",
       "built": ["D503"],
-      "end": "fl:absolute",
+      "end": "event_absolute1",
       "closing": ["D811", "D813", "D806"],
       "reason": "ch32 D503 · ABSOLUTE D804 · D811의 어긋남이 D813 · D806 신뢰 확인으로 자리 잡는다",
       "confidence": "추정",
@@ -693,7 +693,7 @@
           "by": "claude",
           "date": "2026-10-09",
           "session": "X3f-1e",
-          "before": "(초안) 관계 person:베스티 ↔ person:은화의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D811 D813 D806@fl:absolute"
+          "before": "(초안) 관계 person:베스티 ↔ person:은화의 끝 · 이유 (초안) 5건 · 단위 2 · 변화 3, 마지막 변화 D811 D813 D806@event_absolute1"
         }
       ]
     },
@@ -748,7 +748,7 @@
       "about": ["person:베스티"],
       "text": "말을 더듬고 은화에게 눌려 말끝을 흐리던 베스티가 '난 물러나선 안 돼'라며 혼자 델타 앞을 막아서는 데 이른다",
       "built": ["D41", "D1837", "D502"],
-      "end": "fl:absolute",
+      "end": "event_absolute1",
       "closing": ["D812"],
       "reason": "ch04 D41 → 호감도 D1837 · ch32 D502 → ABSOLUTE D812 — 호감도 char:94 D2180(꾸밈 · 존재감)은 다른 갈래라 끝을 ABSOLUTE로",
       "confidence": "추정",
@@ -3710,7 +3710,7 @@
       "about": ["person:은화"],
       "text": "지상 탈환의 꿈을 관짝에 묻고 살아남을 쓸모만 가르치던 은화가, 그 꿈을 다른 방식으로 이룰 가능성을 본 뒤, ABSOLUTE에서 혼자 희생하는 승리 대신 이길 때까지 다 같이 싸우는 [우리]를 완벽이라 여긴다",
       "built": ["D1916", "D1919"],
-      "end": "fl:absolute",
+      "end": "event_absolute1",
       "closing": ["D805"],
       "reason": "호감도 char:92 D1916 · D1919(꿈을 다시 봄) → ABSOLUTE D805([우리]) — 동료를 잃은 상처에서 묻은 꿈이 새 스쿼드의 신념으로 선다",
       "confidence": "추정",
@@ -3721,7 +3721,7 @@
           "by": "claude",
           "date": "2026-10-09",
           "session": "X3f-1f",
-          "before": "(초안) 성장 person:은화 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D805@fl:absolute"
+          "before": "(초안) 성장 person:은화 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D805@event_absolute1"
         }
       ]
     },
@@ -4941,7 +4941,7 @@
     {
       "id": "H4",
       "title": "ABSOLUTE — 베스티와 은화의 [우리]",
-      "end": "fl:absolute",
+      "end": "event_absolute1",
       "members": ["O32", "O35", "O168"],
       "text": "델타 앞의 결전 ABSOLUTE에서 베스티가 물러서지 않고 막아서고, 은화가 혼자의 희생 대신 [우리]를 택하며, 둘이 서로를 믿는 짝이 되는 것이 함께 닫힌다",
       "reason": "O32(베스티 ↔ 은화)의 닫는 기록 D806 · D811 · D813이 O35(베스티 D812) · O168(은화 D805)과 같은 결전의 이웃 장면 — 한 짝의 이야기",

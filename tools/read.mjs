@@ -35,7 +35,7 @@ const MAX_CHARS = 20_000;
 const USAGE = `원문 읽기 (tools/read.mjs)
   list [main|event|side|sub|relic|erelic|sudden|char]   목차 — 키 · 씬 수 · 글자 수 · 파트 수
   <키>                            ch07 · event_nocallerid · sudden:22 · char:10 · char:마리안 · d_main_07_01
-                                  금서고: side:mudfish · sub:칠리페퍼 · relic:어느남자의수기 · erelic:old_tales_dialog · fl:absolute
+                                  금서고: side:mudfish · sub:칠리페퍼 · relic:어느남자의수기 · erelic:old_tales_dialog · fl:reborn_evil
   chapter|event|side|sub|relic|erelic|sudden|char <이름>  이름·번호로 찾기
 옵션: --part N · --num(줄마다 줄 번호 #N — 1회독 · 2회독은 이것으로 읽는다) · --lines(인물이 말한 대사만) · --context N ·
       --speaker <이름표> · --max <글자 수>`;
@@ -463,7 +463,7 @@ function listAll() {
     out.push(`${LIST_LABEL[kind]} ${rows.length}단위 · ${source === 'episode' ? '호감도 스토리' : '씬'} ${fmt(scenes)} · ${fmt(size)}자 · 파트 ${parts} — node tools/read.mjs list ${kind}`);
   }
   out.push('키: ch07 · event_nocallerid · sudden:22 · char:10 · char:마리안 · d_main_07_01 (씬) — 그대로 넣으면 읽는다');
-  out.push('금서고 키: side:mudfish · sub:칠리페퍼 · relic:어느남자의수기 · erelic:old_tales_dialog · fl:absolute (씬은 끝에 _NN)');
+  out.push('금서고 키: side:mudfish · sub:칠리페퍼 · relic:어느남자의수기 · erelic:old_tales_dialog · fl:reborn_evil (씬은 끝에 _NN)');
   process.stdout.write(`${out.join('\n')}\n`);
 }
 

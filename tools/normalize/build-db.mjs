@@ -231,7 +231,7 @@ CREATE TABLE sheet_rows (
 CREATE TABLE releases (
   category_id  TEXT PRIMARY KEY,   -- categories.id (main:N · archive:N · char:N)
   kind         TEXT NOT NULL,      -- main / side / event / episode
-  key          TEXT NOT NULL,      -- read.mjs 키 (ch07 · side:mudfish · event_… · fl:absolute · char:10)
+  key          TEXT NOT NULL,      -- read.mjs 키 (ch07 · side:mudfish · event_… · fl:reborn_evil · char:10)
   name         TEXT,
   rank         INTEGER,            -- 같은 날 = 같은 순위. 날짜가 없으면 NULL
   date         TEXT,               -- YYYY-MM-DD (KST)

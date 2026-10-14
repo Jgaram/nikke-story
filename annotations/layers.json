@@ -9639,7 +9639,7 @@
     },
     {
       "id": "K359",
-      "unit": "fl:absolute",
+      "unit": "event_absolute1",
       "grade": "보강",
       "basis": "D806",
       "from": "ch32",

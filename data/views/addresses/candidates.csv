@@ -252,6 +252,10 @@ rid,name,target,source,word,lines,first
 62,미카 : 스노우 버디,person:미카,story,아저씨,23,event_neverland1_01_e#73
 62,미카 : 스노우 버디,person:미카,story,선생님,4,event_neverland2_01_e#45
 62,미카 : 스노우 버디,person:미카,story,손님,1,event_neverland1_01_e#75
+63,벨로타 : 펌킨 위치,person:벨로타,voice,아저씨,13,c063_Lobby_Touch_1
+63,벨로타 : 펌킨 위치,person:벨로타,episode,아저씨,30,ep:d_nikke_belorta_pumpkinwitch_01#1
+63,벨로타 : 펌킨 위치,person:벨로타,story,아저씨,33,event_neverland1_01_e#74
+63,벨로타 : 펌킨 위치,person:벨로타,story,선생님,1,event_neverland2_01_e#19
 70,브리드,person:브리드,voice,지휘관,4,c070_Lobby_Touch_Love_2
 70,브리드,person:브리드,episode,지휘관,28,ep:d_nikke_brid_01#47
 70,브리드,person:브리드,episode,손님,1,ep:d_nikke_brid_03#22
@@ -745,8 +749,8 @@ rid,name,target,source,word,lines,first
 291,에테르,person:에테르,story,지휘관,2,event_wisdomspring_01_e#23
 291,에테르,person:에테르,story,아님,1,event_darkhero_04_e#22
 291,에테르,person:에테르,story,이사장님,1,event_schooloflock_06_e#4
-300,솔져 E.G.,person:솔져_E.G.,story,지휘관,6,fl:absolute_01#8
-300,솔져 E.G.,person:솔져_E.G.,story,공주님,1,fl:absolute_26#128
+300,솔져 E.G.,person:솔져_E.G.,story,지휘관,6,event_absolute1_01_s#8
+300,솔져 E.G.,person:솔져_E.G.,story,공주님,1,event_absolute2_06_e#129
 310,에이드,person:에이드,voice,주인님,15,c310_Lobby_Touch_1
 310,에이드,person:에이드,voice,손님,1,c310_Outpost_Touch_1
 310,에이드,person:에이드,episode,주인님,29,ep:d_nikke_ade_01#15

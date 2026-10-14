@@ -160,7 +160,7 @@
 ## 근거 — 씬 ID와 줄 번호
 
 - `scene`은 씬 ID다. 블라링크는 게임 씬 ID(`d_main_01_01_s` · `event_nocallerid_01_s` · 호감도 스토리 `ep:…`), 금서고는 씬 키
-  (`sub:로망티스트_00` · `side:mudfish_03` · `fl:absolute_03` — 금서고 파일 안 순서이고 게임 씬 ID가 아니다). read.mjs 씬 머리줄(`## …`)에 나온 그대로다.
+  (`sub:로망티스트_00` · `side:mudfish_03` · `fl:reborn_evil_03` — 금서고 파일 안 순서이고 게임 씬 ID가 아니다). read.mjs 씬 머리줄(`## …`)에 나온 그대로다.
 - `lines`는 **줄 번호 = DB `lines.seq`** — 씬 안에서 0부터, 빈틈없이 이어진다. `read.mjs --num`이 줄 앞에 붙이는 `#N`, 이동 표시 `→#N`,
   `query.mjs search` 결과의 `(씬 ID#N)`, `query.mjs story`의 줄 앞 번호가 모두 같은 번호다(블라링크 · 금서고 똑같다 — `tests/records.test.mjs`가 확인한다).
   금서고 원본 파일의 줄 번호(빌드 경고의 "원문 1955줄")와는 다르다.

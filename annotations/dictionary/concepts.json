@@ -129,8 +129,8 @@
       "id": "concept:프레데터",
       "name": "프레데터",
       "kind": "랩쳐 종류",
-      "note": "\"프레데터 3기\" — 여러 개체. fl:absolute에만 나온다",
-      "evidence": [{ "scene": "fl:absolute_18", "lines": [1] }]
+      "note": "\"프레데터 3기\" — 여러 개체. event_absolute1에만 나온다",
+      "evidence": [{ "scene": "event_absolute2_03_s", "lines": [1] }]
     },
     {
       "id": "concept:하베스터",

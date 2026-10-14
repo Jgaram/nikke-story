@@ -22,7 +22,7 @@
 | `ep:` | 호감도 스토리 (니케별 개인 스토리 5편, 데이터 `episode`) | `ep:d_nikke_emma_01` |
 | `fav:` | 애장품 | `fav:200101` |
 | `sheet:` | 시트에만 있는 이름 (원문 없음, 참고용) | `sheet:second-quest`, `sheet:bullet-x-chainsaw` |
-| `fl:` | **금서고**: 블라링크에 원문이 없는 이벤트 (단위 · 씬) | `fl:absolute`, `fl:absolute_03` |
+| `fl:` | **금서고**: 블라링크에 원문이 없는 이벤트 (단위 · 씬) | `fl:reborn_evil`, `fl:reborn_evil_03` |
 | `side:` | **금서고**: 사이드 스토리 | `side:mudfish`, `side:mudfish_00` |
 | `sub:` | **금서고**: 서브퀘스트(메신저 · 퀘스트 대화) | `sub:칠리페퍼`, `sub:칠리페퍼_01` |
 | `relic:` | **금서고**: 유실물(문서) | `relic:어느남자의수기`, `relic:어느남자의수기_00` |
@@ -179,7 +179,7 @@ Claude가 후보를 쓰고 확정 · 기각한다. 확정 · 기각은 `node too
 
 | 칼럼 | 설명 |
 |---|---|
-| `id` | `main:1`, `sudden:46`, `archive:event_nocallerid`, `char:90`, 금서고 `fl:absolute` · `side:mudfish` 등 |
+| `id` | `main:1`, `sudden:46`, `archive:event_nocallerid`, `char:90`, 금서고 `fl:reborn_evil` · `side:mudfish` 등 |
 | `source`, `name`, `order_index` | 금서고 단위의 `name`은 금서고 목록 제목, `order_index`는 금서고 목록 순서 |
 | `game_key` | 금서고 이벤트가 대신하는 블라링크 이벤트 키(`event_forrest` · `event_boomtheghost1`, 본문 없음). 모르면 NULL |
 

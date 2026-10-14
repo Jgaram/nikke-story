@@ -73,4 +73,4 @@
 
 `*` = 주요 인물의 것. 결정적 순간 후보가 있지만 상한이 지금 등급 이하인 단위(후보 아님):
 
-`char:190` 보강 · `char:191` 보강 · `erelic:white_memory` 필수 · `char:224` 필수 · `event_newyearnewsword` 보강 · `event_boomsday` 보강 · `event_darkhero` 보강 · `sub:관짝이_00` 보강 · `side:wordless` 보강 · `char:511` 보강 · `char:514` 보강 · `event_icedragonsaga1` 보강 · `event_wisdomspring` 필수 · `event_unbreakablesphere1` 보강 · `char:513` 보강 · `event_arcanearchive` 보강 · `event_lordforjustice` 보강 · `relic:정갈하게쓴기록` 보강 · `fl:absolute` 보강 · `erelic:goddess_fall_mini` 필수 · `fl:enter_heaven` 보강 · `fl:project_matis` 보강 · `fl:great_villain_union` 보강
+`char:190` 보강 · `char:191` 보강 · `erelic:white_memory` 필수 · `char:224` 필수 · `event_newyearnewsword` 보강 · `event_boomsday` 보강 · `event_darkhero` 보강 · `sub:관짝이_00` 보강 · `side:wordless` 보강 · `char:511` 보강 · `char:514` 보강 · `event_icedragonsaga1` 보강 · `event_wisdomspring` 필수 · `event_unbreakablesphere1` 보강 · `char:513` 보강 · `event_arcanearchive` 보강 · `event_lordforjustice` 보강 · `relic:정갈하게쓴기록` 보강 · `event_absolute1` 보강 · `erelic:goddess_fall_mini` 필수 · `fl:enter_heaven` 보강 · `fl:project_matis` 보강 · `fl:great_villain_union` 보강

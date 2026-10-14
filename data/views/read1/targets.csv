@@ -120,7 +120,7 @@ person:노아,person,노아,23,1,0,3,11,char:232,88,ch47,470,,0
 person:자칼,person,자칼,24,0,0,3,14,ch16,80,ch45,450,,0
 person:헨젤,person,헨젤,23,1,0,5,11,sub:거울_공주_01,315,fl:wave_to_you,464,,0
 person:메이든,person,메이든,22,1,0,1,8,ch12,59,char:182,349,,0
-org:언리미티드,org,언리미티드,22,0,0,0,10,ch05,20,fl:absolute,400,ch05,0
+org:언리미티드,org,언리미티드,22,0,0,0,10,ch05,20,event_absolute1,400,ch05,0
 org:인류연합군,org,인류연합군,21,1,1,0,10,char:810,231,relic:궤도엘리베이터음모론,453,char:810,0
 org:저지스,org,저지스,22,0,0,0,7,event_ltk,187,ch44,436,event_ltk,0
 person:엑시아,person,엑시아,21,1,1,0,12,ch07,31,ch33,334,ch07,0
@@ -291,7 +291,7 @@ place:탈환지_01,place,탈환지 01,8,1,0,1,6,ch27,270,ch29,291,ch27,0
 concept:신생_랩쳐,concept,신생 랩쳐,8,0,0,0,3,ch46,452,relic:불길한_소리.wav,473,ch46,0
 concept:인식_칩,concept,인식 칩,8,0,0,0,6,char:12,115,event_claymore,303,char:12,0
 org:바이스리터,org,바이스리터,7,1,1,0,7,ch17,140,ch47,470,ch17,0
-org:스카우팅,org,스카우팅,8,0,0,0,6,ch16,80,fl:absolute,400,,0
+org:스카우팅,org,스카우팅,8,0,0,0,6,ch16,80,event_absolute1,400,,0
 org:아크레인저,org,아크레인저,8,0,0,1,4,event_brandnewyear,157,ch48,472,,0
 person:길티,person,길티,8,0,0,0,2,char:400,170,event_beautyfullshot1,305,,0
 person:네로,person,네로,8,0,0,0,6,char:381,182,fl:terminus_ticket,425,,0
@@ -323,8 +323,8 @@ person:진,person,진,7,0,0,0,4,ch22,195,ch44,436,ch22,0
 person:칠리페퍼,person,칠리페퍼,5,2,0,2,3,sub:칠리페퍼_00,5,sub:칠리페퍼_02,70,sub:칠리페퍼_00,0
 place:사관학교,place,사관학교,7,0,0,1,7,char:10,95,char:95,402,char:10,0
 place:유사_방주,place,유사 방주,7,0,0,0,3,ch41,414,ch46,452,ch41,0
-concept:블랙스미스,concept,블랙스미스,6,0,0,1,3,ch01,2,fl:absolute,400,ch01,0
-concept:프레데터,concept,프레데터,6,0,0,0,1,fl:absolute,400,fl:absolute,400,fl:absolute,0
+concept:블랙스미스,concept,블랙스미스,6,0,0,1,3,ch01,2,event_absolute1,400,ch01,0
+concept:프레데터,concept,프레데터,6,0,0,0,1,event_absolute1,400,event_absolute1,400,event_absolute1,0
 incident:갓데스_폴,incident,갓데스 폴,6,0,0,2,5,d_ex_elevator_01,35,side:pretty_star,447,d_ex_elevator_01,0
 org:라이프_토닉,org,라이프 토닉,5,1,1,0,3,char:241,121,event_lifeagain,332,char:241,0
 org:빌런_연합,org,빌런 연합,6,0,0,0,3,char:101,92,fl:great_villain_union,478,,0
@@ -475,7 +475,7 @@ person:모르가나,person,모르가나,2,0,0,0,2,fl:persona_on_frontline,474,ch
 person:미사토,person,미사토,1,1,1,0,1,char:833,321,char:833,321,,0
 person:사라,person,사라,2,0,0,0,1,fl:good_world,448,fl:good_world,448,,0
 person:산해진미,person,산해진미,2,0,0,0,2,sub:산해진미_00,57,sub:산해진미_01,243,sub:산해진미_00,0
-person:솔져_F.A.,person,솔져 F.A.,2,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:솔져_F.A.,person,솔져 F.A.,2,0,0,0,1,event_absolute1,400,event_absolute1,400,,0
 person:스페이드,person,스페이드,2,0,0,0,1,sub:스페이드_00,52,sub:스페이드_00,52,sub:스페이드_00,0
 person:시니스터,person,시니스터,2,0,0,0,1,sub:랩칠리언_04,36,sub:랩칠리언_04,36,sub:랩칠리언_04,0
 person:싹싹이,person,싹싹이,2,0,0,0,1,fl:boom_the_ghost,393,fl:boom_the_ghost,393,,0
@@ -497,7 +497,7 @@ place:라쿤_시티,place,라쿤 시티,2,0,0,0,2,fl:reborn_evil,407,char:842,40
 place:모던_바,place,모던 바,2,0,0,0,1,char:290,354,char:290,354,char:290,0
 place:미들_시티,place,미들 시티,2,0,0,0,1,sub:고스트_00,22,sub:고스트_00,22,sub:고스트_00,0
 place:바우_와우_파라다이스,place,바우 와우 파라다이스,2,0,0,0,1,event_bowwowparadise,181,event_bowwowparadise,181,event_bowwowparadise,0
-place:엘리시온_타워,place,엘리시온 타워,2,0,0,0,2,char:92,127,fl:absolute,400,char:92,0
+place:엘리시온_타워,place,엘리시온 타워,2,0,0,0,2,char:92,127,event_absolute1,400,char:92,0
 place:정크_마운틴,place,정크 마운틴,2,0,0,0,2,char:11,86,char:140,112,char:11,0
 place:제2의_방주,place,제2의 방주,2,0,0,0,1,event_ce006,387,event_ce006,387,event_ce006,0
 place:해피_판타지_랜드,place,해피 판타지 랜드,1,1,1,0,1,event_nocallerid,138,event_nocallerid,138,event_nocallerid,0
@@ -533,13 +533,13 @@ person:맥스,person,맥스,1,0,0,0,1,event_bowwowparadise,181,event_bowwowparad
 person:메이슨_박사,person,메이슨 박사,1,0,0,0,1,char:311,176,char:311,176,char:311,0
 person:문구점,person,문구점,1,0,0,0,1,sub:문구점_00,196,sub:문구점_00,196,,0
 person:뮤직_마스터,person,뮤직 마스터,1,0,0,0,1,sub:음악_애호가_00,54,sub:음악_애호가_00,54,,0
-person:미친개,person,미친개,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:미친개,person,미친개,1,0,0,0,1,event_absolute1,400,event_absolute1,400,,0
 person:베아트리체,person,베아트리체,1,0,0,0,1,char:381,182,char:381,182,char:381,0
 person:볼트,person,볼트,1,0,0,0,1,sub:미실리스_연구팀_00,44,sub:미실리스_연구팀_00,44,,0
 person:사쿠라_콜라보,person,사쿠라,1,0,0,0,1,char:836,362,char:836,362,,0
 person:세이라,person,세이라,1,0,0,0,1,event_footstepwalkrun1,350,event_footstepwalkrun1,350,event_footstepwalkrun1,0
-person:솔져_E.G.,person,솔져 E.G.,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
-person:솔져_O.W.,person,솔져 O.W.,1,0,0,0,1,fl:absolute,400,fl:absolute,400,,0
+person:솔져_E.G.,person,솔져 E.G.,1,0,0,0,1,event_absolute1,400,event_absolute1,400,,0
+person:솔져_O.W.,person,솔져 O.W.,1,0,0,0,1,event_absolute1,400,event_absolute1,400,,0
 person:스카이,person,스카이,1,0,0,0,1,event_overthehorizon,391,event_overthehorizon,391,,0
 person:스퀴드,person,스퀴드,1,0,0,0,1,sub:랩칠리언_03,27,sub:랩칠리언_03,27,sub:랩칠리언_03,0
 person:알콜러버,person,알콜러버,1,0,0,0,1,sub:알콜러버_00,145,sub:알콜러버_00,145,,0

@@ -63,7 +63,7 @@
 | 428 | `fl:ark_guardian` | 이벤트 | 40 | 25 | 26 | concept:머신_메사이어 concept:스톰_브링어 person:프리시아 place:리페어_센터 place:승리의_날개_호 incident:아크_가디언_작전 |
 | 200 | `event_overzone` | 이벤트 | 37 | 25 | 21 | person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 person:릴리바이스 |
 | 377 | `event_unbreakablesphere1` | 이벤트 | 32 | 16 | 27 | item:AA_필러 org:인큐베이터 concept:은색_액체 concept:콜링_시그널 person:글러트니 person:모리 |
-| 400 | `fl:absolute` | 이벤트 | 30 | 9 | 26 | concept:프레데터 person:미친개 person:솔져_E.G. person:솔져_F.A. org:스카우팅 concept:블랙스미스 |
+| 400 | `event_absolute1` | 이벤트 | 30 | 9 | 26 | concept:프레데터 person:미친개 person:솔져_E.G. person:솔져_F.A. org:스카우팅 concept:블랙스미스 |
 | 300 | `event_goldencoinrush1` | 이벤트 | 29 | 6 | 29 | org:프리마돈나 person:볼륨 person:폴크방 org:777 org:달란트 org:메이드_포_유 |
 | 411 | `side:eden_spear` | 사이드 | 28 | 20 | 19 | item:아틀라스_케이지 item:에덴의_창 concept:릴리스의_바디 org:인헤르트 org:파이오니아 person:나유타 |
 | 251 | `event_redash` | 이벤트 | 27 | 22 | 21 | concept:적합자 concept:콜드_슬립 concept:울트라 person:프리시아 item:유리_구두 concept:페어리_테일 |

@@ -998,7 +998,7 @@
       "session": "X1c-1"
     },
     {
-      "unit": "fl:absolute",
+      "unit": "event_absolute1",
       "at": [],
       "reason": "더 좁힐 단서 없음 — CH.34 뒤에서 상한 단서가 없다",
       "confidence": "추정",

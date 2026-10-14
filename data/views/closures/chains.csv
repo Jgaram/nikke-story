@@ -86,13 +86,13 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 관계 person:도로시 ↔ person:피나,관계,fl:boom_the_ghost,116,80,1,,event_overzone fl:boom_the_ghost,D239 D245 D240 D760,D760,O29,확정
 관계 person:일레그 ↔ person:지휘관,관계,char:502,117,51,1,,event_boomsday char:500 ch29 char:502,D400 D2094 D430 D2175,D2175,O30,확정
 성장 person:랩칠리언 신념,성장,relic:정갈하게쓴기록,118,114,1,,sub:랩칠리언_00 ch27 relic:정갈하게쓴기록,D48 D373 D780,D780,O31,확정
-관계 person:베스티 ↔ person:은화,관계,fl:absolute,119,38,1,,ch32 fl:absolute,D503 D804 D811 D813 D806,D811 D813 D806,O32,확정
+관계 person:베스티 ↔ person:은화,관계,event_absolute1,119,38,1,,ch32 event_absolute1,D503 D804 D811 D813 D806,D811 D813 D806,O32,확정
 관계 person:아니스 ↔ person:아비스타,관계,ch40,119,1,1,1,ch39 ch40,D774 D779 D799,D799,O33,확정
 관계 person:엠마 ↔ person:지휘관,관계,char:93,119,102,,,char:90 char:93,D1898 D1899 D2176,D2176,O167,확정
-성장 person:은화 신념,성장,fl:absolute,119,102,,,char:92 fl:absolute,D1916 D1919 D805,D805,O168,확정
+성장 person:은화 신념,성장,event_absolute1,119,102,,,char:92 event_absolute1,D1916 D1919 D805,D805,O168,확정
 관계 person:은화 ↔ person:지휘관,관계,char:95,120,103,1,,char:92 ch31 char:95,D1915 D1918 D496 D2178,D2178,O34,확정
 관계 person:베스티 ↔ person:지휘관,관계,char:94,121,104,,,char:91 char:94,D1834 D1835 D1836 D2179,D2179,O169,확정
-성장 person:베스티 성격,성장,char:94,121,116,1,,ch04 char:91 ch32 fl:absolute char:94,D41 D1837 D502 D812 D2180,D2180,O35,확정
+성장 person:베스티 성격,성장,char:94,121,116,1,,ch04 char:91 ch32 event_absolute1 char:94,D41 D1837 D502 D812 D2180,D2180,O35,확정
 관계 person:루주 ↔ person:지휘관,관계,fl:coins_in_rush,122,36,,,event_jinxplayer char:272 fl:coins_in_rush,D2129 D2131 D821 D822,D822,O170,확정
 관계 person:에이드 ↔ person:지휘관,관계,char:315,122,59,,,event_perfectmaid char:310 fl:coins_in_rush char:315,D1526 D1527 D2093 D816 D2182,D2182,O171,확정
 성장 person:베이 성격,성장,fl:coins_in_rush,122,51,,,event_onemoretime char:550 fl:coins_in_rush,D1534 D2102 D2103 D825,D825,O172,확정

@@ -59,7 +59,7 @@ order,tick,unit,source,archive_order,archive_id,event_id,type,name,date,parts,re
 387,113,event_ce006,아카이브,49,4900,82100,스토리 이벤트,MEMORIES TELLER,2025-06-12,STORY I 14 · STORY II 20,STORY I 2025-06-12; STORY II 2025-06-19,34,34,,
 391,115,event_overthehorizon,아카이브,50,5000,40081,스토리 이벤트,OVER THE HORIZON,2025-07-03,STORY 15,,15,15,,
 393,116,fl:boom_the_ghost,아카이브,51,5100,82400,스토리 이벤트,BOOM! THE GHOST!,2025-07-17,STORY I 14 · STORY II 14,STORY I 2025-07-17; STORY II 2025-07-24,28,0,event_boomtheghost1,
-400,119,fl:absolute,금서고,,,,,ABSOLUTE,2025-08-07,,STORY I 2025-08-07; STORY II 2025-08-14,28,28,,
+400,119,event_absolute1,아카이브,57,5700,40086,스토리 이벤트,ABSOLUTE,2025-08-07,STORY I 28,STORY I 2025-08-07; STORY II 2025-08-14,28,28,,
 404,122,fl:coins_in_rush,금서고,,,,,COINS IN RUSH,2025-09-04,,STORY I 2025-09-04; STORY II 2025-09-11,28,28,,
 407,124,fl:reborn_evil,금서고,,,,,REBORN EVIL,2025-09-24,,STORY I 2025-09-24; STORY II 2025-10-02,28,28,,
 412,126,fl:go_ninja_thief,금서고,,,,,GO! NINJA THIEF!,2025-10-16,,,15,15,,

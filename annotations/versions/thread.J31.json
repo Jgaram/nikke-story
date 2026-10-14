@@ -46,10 +46,10 @@
       "refs": ["E48", "Q74"]
     },
     {
-      "at": "fl:absolute",
+      "at": "event_absolute1",
       "title": "북부 — 연구 기지 · 괴물 · 벙커",
       "text": "북부에서 코어를 먹고 자라는 프레데터가 거점 삼은 벙커는 과거 어디에서도 찾을 수 없는 양식이었다 — 방주의 인간이 아닌 누군가가 지었나. 연구 기지가 된 뭔가와 잠든 괴물은 무엇인가.",
-      "src": "e02eb3a302",
+      "src": "12e1722ad5",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -63,7 +63,8 @@
           "hash": "3773484bb3",
           "note": "판마다 at까지의 흐름 · 근거 씬으로만 썼는지, 뒤 이름 · 묶음 암시 · 판정 말이 없는지 다시 봄"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "75eb15bb9e", "note": "근거 refs 붙임" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "1975ae5de9", "note": "근거 refs 붙임" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N2a2", "hash": "b0c2f45917", "note": "금서고 → 블라링크 단위 옮기기(키만 바뀜) — 문장 · 근거 그대로" }
       ],
       "refs": ["Q277", "Q278"]
     }

@@ -145,7 +145,7 @@ sub:트레저_헌터_02,sub:트레저_헌터_03,setup_payoff,1,0,1,46,83,서브�
 ch10,ch11,setup_payoff,2,2,0,48,53,메인,메인,Q52-2 Q53-2
 ch10,ch12,setup_payoff,1,0,1,48,59,메인,메인,E72
 ch10,ch32,callback,1,0,1,48,310,메인,메인,E459
-ch10,fl:absolute,callback,1,0,1,48,400,메인,이벤트,E830
+ch10,event_absolute1,callback,1,0,1,48,400,메인,이벤트,E830
 sub:롬_00,event_ce006,callback,1,0,1,49,387,서브퀘스트,이벤트,E745
 sub:롬_00,event_ce006,setup_payoff,1,1,0,49,387,서브퀘스트,이벤트,Q54-2
 ch11,ch12,setup_payoff,3,2,1,53,59,메인,메인,Q55-2 Q56-2 E75
@@ -257,7 +257,7 @@ char:220,ch17,setup_payoff,1,0,1,113,140,호감도,메인,E1272
 char:220,ch19,setup_payoff,1,0,1,113,159,호감도,메인,E1273
 char:220,event_overzone,setup_payoff,1,0,1,113,200,호감도,이벤트,E1272
 char:22,event_maidinvalentine,callback,1,0,1,114,175,호감도,이벤트,E1298
-char:22,fl:absolute,callback,1,0,1,114,400,호감도,이벤트,E848
+char:22,event_absolute1,callback,1,0,1,114,400,호감도,이벤트,E848
 char:12,event_boomsday,callback,2,1,1,115,280,호감도,이벤트,F589-2 E349
 char:12,event_wisdomspring,setup_payoff,1,1,0,115,353,호감도,이벤트,Q86-2
 char:12,ch35,setup_payoff,2,0,2,115,358,호감도,메인,E1274 E1275
@@ -484,7 +484,7 @@ ch24,ch37,setup_payoff,1,0,1,219,373,메인,메인,E242
 ch24,event_unbreakablesphere1,callback,2,0,2,219,377,메인,이벤트,E700 E701
 ch24,fl:boom_the_ghost,setup_payoff,1,0,1,219,393,메인,이벤트,E242
 ch24,ch39,callback,1,0,1,219,396,메인,메인,E804
-ch24,fl:absolute,callback,2,0,2,219,400,메인,이벤트,E830 E840
+ch24,event_absolute1,callback,2,0,2,219,400,메인,이벤트,E830 E840
 ch24,side:eden_spear,callback,2,0,2,219,411,메인,사이드,E887
 ch24,event_goddessfall1,setup_payoff,1,0,1,219,418,메인,이벤트,E242
 ch24,ch44,callback,1,0,1,219,436,메인,메인,E1035
@@ -612,7 +612,7 @@ ch27,ch38,callback,1,0,1,270,375,메인,메인,E675
 ch27,ch39,setup_payoff,1,0,1,270,396,메인,메인,E322
 ch27,relic:정갈하게쓴기록,callback,1,1,0,270,397,메인,유실물,F1285-2
 ch27,relic:어떤소녀의그림일기,callback,1,0,1,270,399,메인,유실물,E828
-ch27,fl:absolute,callback,1,0,1,270,400,메인,이벤트,E845
+ch27,event_absolute1,callback,1,0,1,270,400,메인,이벤트,E845
 ch27,ch41,setup_payoff,1,1,0,270,414,메인,메인,Q165-2
 ch27,ch43,setup_payoff,1,1,0,270,434,메인,메인,Q165-3
 ch27,fl:ark_ranger,callback,1,0,1,270,462,메인,이벤트,E1174
@@ -699,7 +699,7 @@ ch31,event_oldtales1,callback,1,1,0,308,338,메인,이벤트,F1523-2
 ch31,ch35,setup_payoff,1,0,1,308,358,메인,메인,E434
 ch31,ch36,callback,1,0,1,308,360,메인,메인,E627
 ch31,relic:할일목록,setup_payoff,1,0,1,308,361,메인,유실물,E440
-ch31,fl:absolute,callback,1,1,0,308,400,메인,이벤트,F1529-2
+ch31,event_absolute1,callback,1,1,0,308,400,메인,이벤트,F1529-2
 ch31,ch41,setup_payoff,1,0,1,308,414,메인,메인,E440
 ch31,relic:주의용광로사용법,setup_payoff,2,1,1,308,417,메인,유실물,Q199-2 E439
 ch32,relic:수정지역깊은곳어딘가,callback,2,0,2,310,316,메인,유실물,E468
@@ -715,7 +715,7 @@ ch32,ch36,callback,1,0,1,310,360,메인,메인,E623
 ch32,relic:할일목록,callback,1,0,1,310,361,메인,유실물,E631
 ch32,ch38,callback,1,0,1,310,375,메인,메인,E670
 ch32,ch38,setup_payoff,1,0,1,310,375,메인,메인,E456
-ch32,fl:absolute,callback,6,0,6,310,400,메인,이벤트,E831 E838 E839 E841 E842 E849
+ch32,event_absolute1,callback,6,0,6,310,400,메인,이벤트,E831 E838 E839 E841 E842 E849
 ch32,side:eden_spear,setup_payoff,1,1,0,310,411,메인,사이드,Q203-2
 ch32,ch41,setup_payoff,1,0,1,310,414,메인,메인,E453
 ch32,relic:주의용광로사용법,setup_payoff,1,0,1,310,417,메인,유실물,E452
@@ -762,7 +762,7 @@ ch33,ch36,setup_payoff,2,1,1,334,360,메인,메인,Q215-4 E485
 ch33,ch37,callback,2,0,2,334,373,메인,메인,E647 E651
 ch33,ch38,setup_payoff,1,1,0,334,375,메인,메인,Q215-5
 ch33,relic:은색액체,callback,1,0,1,334,376,메인,유실물,E677
-ch33,fl:absolute,callback,2,0,2,334,400,메인,이벤트,E837 E850
+ch33,event_absolute1,callback,2,0,2,334,400,메인,이벤트,E837 E850
 ch33,ch42,setup_payoff,1,0,1,334,416,메인,메인,E481
 ch33,fl:enter_heaven,callback,1,0,1,334,442,메인,이벤트,E1040
 ch33,side:pretty_star,setup_payoff,3,0,3,334,447,메인,사이드,E479 E480
@@ -778,7 +778,7 @@ ch34,ch36,callback,2,0,2,336,360,메인,메인,E619 E628
 ch34,side:mudfish,setup_payoff,2,0,2,336,370,메인,사이드,E493 E512
 ch34,ch37,callback,1,0,1,336,373,메인,메인,E653
 ch34,ch37,setup_payoff,1,0,1,336,373,메인,메인,E518
-ch34,fl:absolute,callback,1,0,1,336,400,메인,이벤트,E844
+ch34,event_absolute1,callback,1,0,1,336,400,메인,이벤트,E844
 ch34,ch41,callback,1,0,1,336,414,메인,메인,E892
 ch34,ch41,setup_payoff,1,0,1,336,414,메인,메인,E509
 ch34,ch42,setup_payoff,2,0,2,336,416,메인,메인,E510 E511
@@ -912,7 +912,7 @@ erelic:unbreakable_sphere_dialog,fl:wave_to_you,callback,1,0,1,378,464,유실물
 erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,1,0,379,411,유실물,사이드,Q244-2
 event_arcanearchive,event_lordforjustice,callback,2,0,2,383,385,이벤트,이벤트,E734 E739
 event_arcanearchive,event_lordforjustice,setup_payoff,4,0,4,383,385,이벤트,이벤트,E718 E721 E723 E727
-event_arcanearchive,fl:absolute,callback,1,0,1,383,400,이벤트,이벤트,E852
+event_arcanearchive,event_absolute1,callback,1,0,1,383,400,이벤트,이벤트,E852
 event_arcanearchive,fl:go_ninja_thief,setup_payoff,1,0,1,383,412,이벤트,이벤트,E729
 event_arcanearchive,fl:ark_guardian,setup_payoff,1,1,0,383,428,이벤트,이벤트,Q248-2
 event_arcanearchive,fl:sin_editor,setup_payoff,1,0,1,383,430,이벤트,이벤트,E722

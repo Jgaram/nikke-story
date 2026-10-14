@@ -210,7 +210,7 @@ ch31,ch32,callback,1,0,308,310,메인,메인,F1530-2
 ch31,ch32,setup_payoff,1,0,308,310,메인,메인,Q200-2
 ch31,ch33,setup_payoff,1,0,308,334,메인,메인,Q200-3
 ch31,event_oldtales1,callback,1,0,308,338,메인,이벤트,F1523-2
-ch31,fl:absolute,callback,1,0,308,400,메인,이벤트,F1529-2
+ch31,event_absolute1,callback,1,0,308,400,메인,이벤트,F1529-2
 ch31,relic:주의용광로사용법,setup_payoff,1,0,308,417,메인,유실물,Q199-2
 ch32,ch33,setup_payoff,1,0,310,334,메인,메인,Q204-2
 ch32,ch34,setup_payoff,2,0,310,336,메인,메인,Q204-3 Q205-2

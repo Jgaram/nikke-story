@@ -117,7 +117,7 @@ tick,date,main,count,units
 116,2025-07-17,,2,fl:boom_the_ghost char:234
 117,2025-07-24,,1,char:502
 118,2025-08-07,ch39,2,ch39 relic:정갈하게쓴기록
-119,2025-08-07,ch40,4,ch40 relic:어떤소녀의그림일기 fl:absolute char:93
+119,2025-08-07,ch40,4,ch40 relic:어떤소녀의그림일기 event_absolute1 char:93
 120,2025-08-14,,1,char:95
 121,2025-08-21,,1,char:94
 122,2025-09-04,,2,fl:coins_in_rush char:315

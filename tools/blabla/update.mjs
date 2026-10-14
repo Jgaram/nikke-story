@@ -10,7 +10,7 @@
  * 2. 금서고는 tools/forbidden-library/fetch.mjs와 같다 — 목록은 사이트 배포 시각이 바뀔 때만.
  * 3. 금서고 이벤트 매핑(annotations/forbidden-library-events.json)의 null과, 매핑에 안 든 블라링크 이벤트의 이름을 맞춰
  *    "전환 후보"를 띄운다. 확정은 Claude가 원문을 대조해 한다(묻지 않는다). 그 금서고 단위에 기록이 이미 있으면
- *    annotations/hold.json에 "전환 대기"로 두어 블라링크 쪽을 단위로 만들지 않고, 기록을 옮긴 뒤 매핑의 null을 키로 바꾼다.
+ *    annotations/hold.json에 "전환 대기"로 두어 블라링크 쪽을 단위로 만들지 않고, 기록을 옮긴다(tools/forbidden-library/convert.mjs — hold 줄 · 매핑 null도 고친다).
  * 리포트: data/release/collect.md(원문 없이 키 · 개수만 — 공개 레포). 요청 규칙은 docs/data-sources.md "0. 요청 규칙".
  *
  * 블라링크가 경로 규칙을 바꾸면 ObfuscationBrokenError로 멈춘다 — 번들에서 규칙을 다시 뽑아야 한다(같은 문서 "난독화 규칙이 깨지면").
@@ -214,8 +214,8 @@ async function main() {
   L.push('');
   const pendingKeys = Object.keys(pending);
   if (pendingKeys.length)
-    L.push(`- 확정 · 기록 옮기기 전(annotations/hold.json — 블라링크 쪽은 단위로 안 만든다): ${pendingKeys.map((k) => `\`${k}\` ← \`${pending[k].금서고}\``).join(' · ')}`);
-  if (switched.length) L.push(`- 블라링크 원문이 새로 들어와 자동으로 돌아감: ${switched.map(([k, v]) => `\`${k}\` → \`${v}\``).join(' · ')}`);
+    L.push(`- 확정 · 기록 옮기기 전(annotations/hold.json — 블라링크 쪽은 단위로 안 만든다): ${pendingKeys.map((k) => `\`${k}\` ← \`${pending[k].금서고}\``).join(' · ')} → \`node tools/forbidden-library/convert.mjs <키>\``);
+  if (switched.length) L.push(`- 블라링크 원문이 새로 들어와 자동으로 돌아감: ${switched.map(([k, v]) => `\`${k}\` → \`${v}\``).join(' · ')} — 그 금서고 단위에 기록이 있으면 \`node tools/forbidden-library/convert.mjs <키>\`로 옮긴다`);
   if (candidates.length) {
     L.push('- 전환 후보:');
     for (const c of candidates) L.push(`  - \`${c.blabla}\`${c.isNew ? '(새)' : ''} ↔ \`${c.file}\`(${c.title}) — 이름 닮음 ${c.score.toFixed(2)}`);

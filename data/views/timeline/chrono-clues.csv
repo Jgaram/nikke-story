@@ -357,7 +357,7 @@ order,unit,kind,class,place,narrow,codes,intro,changes
 395,char:502,호감도,범위,ch38–ch39 ~,단서 없음,,ch27 일레그(328) · ch15 얀(18) · ch13 페퍼(15) · ch00 지휘관(147) · ch00 라피(24) · ch00 방주(8),도로시: ch48; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 397,relic:정갈하게쓴기록,유실물,범위,ch02–ch03 ~ ch38–ch39,전 ch39,,ch27 웨일리(6) · ch06 퀸(1) · ch01 타일런트_급(2) · ch00 랩쳐(11) · ch00 니케(2) · ch00 지상(1),
 399,relic:어떤소녀의그림일기,유실물,범위,ch02–ch03 ~ ch38–ch39,뒤 relic:정갈하게쓴기록; 전 ch39,,,
-400,fl:absolute,이벤트,범위,ch34–ch35 ~,단서 없음,,ch32 레비아탄(1) · ch31 베히모스(18) · ch31 포비스트(2) · ch31 A_필러(1) · ch27 수정_지역(5) · ch16 스카우팅(6),드레이크: ch12 ch15 ch38; 라플라스: ch12 ch15 ch38; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 레비아탄: ch37 ch40 ch42; 맥스웰: ch12 ch15 ch38; 베히모스: ch32 ch33 ch34 ch40; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
+400,event_absolute1,이벤트,범위,ch34–ch35 ~,단서 없음,,ch32 레비아탄(1) · ch31 베히모스(18) · ch31 포비스트(2) · ch31 A_필러(1) · ch27 수정_지역(5) · ch16 스카우팅(6),드레이크: ch12 ch15 ch38; 라플라스: ch12 ch15 ch38; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 레비아탄: ch37 ch40 ch42; 맥스웰: ch12 ch15 ch38; 베히모스: ch32 ch33 ch34 ch40; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 401,char:93,호감도,범위,ch04–ch05 ~,뒤 ch04,,ch04 엠마(221) · ch00 지휘관(95),지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 402,char:95,호감도,범위,ch04–ch05 ~,뒤 ch04,,ch09 NIMPH(8) · ch04 은화(378) · ch04 베스티(3) · ch04 엠마(3) · ch01 잉그리드(44) · ch01 엘리시온(2),지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 403,char:94,호감도,범위,ch15–ch16 ~,뒤 ch15,,ch12 길로틴(26) · ch11 라플라스(23) · ch04 베스티(344) · ch04 은화(43) · ch04 엠마(34) · ch00 지휘관(197),라플라스: ch12 ch15 ch38; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45

@@ -8,7 +8,7 @@
 | handoff/threads-2.md | 떡밥 줄기 J7–J11 — 든 의문 · 곧바로 든 사실 | 16,907 |
 | handoff/threads-3.md | 떡밥 줄기 J12–J17 — 든 의문 · 곧바로 든 사실 | 18,574 |
 | handoff/threads-4.md | 떡밥 줄기 J18–J24 — 든 의문 · 곧바로 든 사실 | 19,022 |
-| handoff/threads-5.md | 떡밥 줄기 J25–J60 — 든 의문 · 곧바로 든 사실 | 18,032 |
+| handoff/threads-5.md | 떡밥 줄기 J25–J60 — 든 의문 · 곧바로 든 사실 | 18,040 |
 | handoff/threads-6.md | 떡밥 줄기 줄기 관계–줄기 관계 — 든 의문 · 곧바로 든 사실 · 줄기 관계 | 2,792 |
 
 1회독 인계 파일도 그대로 쓴다 — annotations/read1/handoff/index.md: 사실 목록 전체(facts*.md) · 풀린 의문 · 열린 의문(questions*.md) · 1회독 세션 요약(R01*.md …).

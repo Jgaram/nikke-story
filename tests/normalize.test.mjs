@@ -60,9 +60,12 @@ test('호감도 스토리: 원본 파일마다 노드 하나, 줄 수가 records
 
 test('금서고: 하위 챕터(@@@SCRIPT_ID) 하나 = 씬 하나, 출처 ID가 겹치지 않는다', () => {
   const ids = [];
-  // 받아 두었지만 아직 들이지 않는 금서고 파일(annotations/hold.json)은 빼고 센다
+  // 받아 두었지만 아직 들이지 않는 금서고 파일(annotations/hold.json)과 블라링크 원문으로 넘어간 이벤트 파일(매핑 키에 본문이 있음)은 빼고 센다
   const scripts = path.join(RAW, 'forbidden-library/scripts');
   const hold = new Set(Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'))));
+  for (const [file, key] of Object.entries(readJson(path.join(ROOT, 'annotations/forbidden-library-events.json')))) {
+    if (typeof key === 'string' && one("SELECT COUNT(*) n FROM stories WHERE id LIKE ? ESCAPE '\\' AND has_text = 1", `${key.replaceAll('_', '\\_')}\\_%`).n) hold.add(file);
+  }
   const walk = (d) => {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
       const p = path.join(d, e.name);

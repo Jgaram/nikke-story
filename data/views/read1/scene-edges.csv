@@ -59,7 +59,7 @@ callback,F1398-2,F1398,d_main_30_02,d_main_44_af_06,ch30,ch44,293,436,,,확실,�
 callback,F1400-2,F1400,d_main_30_02,d_main_30_af_01,ch30,ch30,293,293,,,확실,확정
 callback,F1476-2,F1476,event_darkhero_03_e,fl:ark_ranger_10,event_darkhero,fl:ark_ranger,298,462,,,확실,확정
 callback,F1523-2,F1523,d_main_31_01_s,event_oldtales1_04_s,ch31,event_oldtales1,308,338,,,추정,확정
-callback,F1529-2,F1529,d_main_31_05,fl:absolute_07,ch31,fl:absolute,308,400,,,확실,확정
+callback,F1529-2,F1529,d_main_31_05,event_absolute1_intermission_01,ch31,event_absolute1,308,400,,,확실,확정
 callback,F1530-2,F1530,d_main_31_04_s,d_main_32_03,ch31,ch32,308,310,,,확실,확정
 callback,F1543-2,F1543,d_main_32_03,erelic:old_tales_dialog_18,ch32,erelic:old_tales_dialog,310,339,,,추정,확정
 callback,F1654-2,F1654,d_main_34_07_e,event_oldtales1_06_s,ch34,event_oldtales1,336,338,,,확실,확정

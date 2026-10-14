@@ -108,8 +108,8 @@
 
 ## 이벤트 메타데이터 (T1-5)
 
-- 이벤트 83: 아카이브 62(스토리 56 · 특별 6) · 금서고에만 21. 아카이브 씬 1144 · 본문 없는 씬 43.
-- 파트: STORY 39 · STORY I · STORY II 16 · (파트 없음) 6 · STORY I 1. 금서고가 본문을 대신하는 아카이브 이벤트: event_forrest → fl:for_rest · event_boomtheghost1 → fl:boom_the_ghost.
+- 이벤트 83: 아카이브 63(스토리 57 · 특별 6) · 금서고에만 20. 아카이브 씬 1172 · 본문 없는 씬 43.
+- 파트: STORY 39 · STORY I · STORY II 16 · (파트 없음) 6 · STORY I 2. 금서고가 본문을 대신하는 아카이브 이벤트: event_forrest → fl:for_rest · event_boomtheghost1 → fl:boom_the_ghost.
 - 아카이브 순서(`archive_order`)는 앨범 순서라 공개 순서와 다르다 — 공개 순서는 `order` · `tick`(공지).
 
 ## 작중 연대기 — 시점 기록 구조화 (X1b)

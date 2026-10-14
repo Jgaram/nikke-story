@@ -4,13 +4,6 @@
     "들일 때 여기서 지운다(그 항목이 정한 곳에서). 까닭: 전환 대기 = 금서고 단위의 기록(fl: 키 · 씬 · 줄 번호)을 아직 블라링크 키로 옮기지 않음 /",
     "  업데이트 전 = 수집은 됐고 docs/update.md U1(사전 · 읽기 항목)을 아직 안 함."
   ],
-  "event_absolute1": {
-    "까닭": "전환 대기",
-    "금서고": "event_stories/absolute.txt",
-    "들이는 곳": "SESSIONS.md N2a2",
-    "확정": "2026-10-14",
-    "근거": "증분 수집에서 블라링크 아카이브에 새로 생김(event_absolute1 14씬 + event_absolute2 14씬). 금서고 absolute.txt도 28씬. 블라링크 대사 1,969줄 중 1,552줄(79%)의 앞 20자가 금서고 본문에 그대로 있고 씬마다 고르게 맞는다(가장 낮은 씬 59%). 대조군 reborn_evil.txt는 0.3%."
-  },
   "event_stories/coin_rush_show_down.txt": {
     "까닭": "업데이트 전",
     "들이는 곳": "SESSIONS.md N2e",

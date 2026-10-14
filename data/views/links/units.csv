@@ -398,7 +398,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 397,relic:정갈하게쓴기록,유실물,5,3,8,0,5,4,,,,1,2,ch27 ch40 ch42,concept:웨일리 person:랩칠리언 person:퀸 concept:랩쳐,정갈하게 쓴 기록
 398,ch40,메인,18,13,31,2,21,19,,,,,,,person:칼슨 person:피노키오 concept:퀸_인자 person:라이온 place:배드_드림 item:브레인_셸터,CHAPTER.40 선택
 399,relic:어떤소녀의그림일기,유실물,3,0,3,0,2,2,,,,3,0,ch27 ch40,person:피노키오 person:랩칠리언,어떤 소녀의 그림일기
-400,fl:absolute,이벤트,22,11,30,0,9,26,,,,14,0,ch10 ch24 ch27 ch31 ch32 ch33 ch34,concept:프레데터 person:미친개 person:솔져_E.G. person:솔져_F.A. org:스카우팅 concept:블랙스미스,ABSOLUTE
+400,event_absolute1,이벤트,22,11,30,0,9,26,,,,14,0,ch10 ch24 ch27 ch31 ch32 ch33 ch34,concept:프레데터 person:미친개 person:솔져_E.G. person:솔져_F.A. org:스카우팅 concept:블랙스미스,ABSOLUTE
 401,char:93,호감도,1,0,1,0,0,1,,,고립,0,0,,person:엠마,엠마 : 택티컬 업
 402,char:95,호감도,3,4,6,0,1,6,,,,0,0,,person:은화 concept:NIMPH person:잉그리드 concept:랩쳐,은화 : 택티컬 업
 403,char:94,호감도,1,0,1,0,0,1,,,고립,0,0,,person:베스티,베스티 : 택티컬 업

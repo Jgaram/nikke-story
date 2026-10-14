@@ -22,14 +22,14 @@
 | handoff/facts-15.md | 사실 목록 R38–R40 | 15,321 |
 | handoff/facts-16.md | 사실 목록 R41–R43 | 19,503 |
 | handoff/facts-17.md | 사실 목록 R44–R46 | 9,566 |
-| handoff/facts-18.md | 사실 목록 R47–R49 | 18,206 |
+| handoff/facts-18.md | 사실 목록 R47–R49 | 18,210 |
 | handoff/facts-19.md | 사실 목록 R50–R51 | 10,518 |
 | handoff/facts-20.md | 사실 목록 R52–R54 | 17,404 |
 | handoff/facts-21.md | 사실 목록 R55–R57 | 18,827 |
 | handoff/facts-22.md | 사실 목록 R58–R61 | 18,983 |
 | handoff/facts-23.md | 사실 목록 R62–R64 | 19,833 |
 | handoff/facts-24.md | 사실 목록 R65–R67 | 18,586 |
-| handoff/facts-25.md | 사실 목록 R68–R71 | 17,120 |
+| handoff/facts-25.md | 사실 목록 R68–R71 | 17,279 |
 | handoff/facts-26.md | 사실 목록 R72–R73 | 14,577 |
 | handoff/facts-27.md | 사실 목록 R74–R75 | 19,919 |
 | handoff/facts-28.md | 사실 목록 R76–R79 | 14,286 |
@@ -38,7 +38,7 @@
 | handoff/facts-31.md | 사실 목록 R89–R90 | 18,690 |
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
-| handoff/facts-34.md | 사실 목록 R98–P1 | 12,215 |
+| handoff/facts-34.md | 사실 목록 R98–P1 | 12,225 |
 | handoff/questions-solved.md | 풀린 의문 97건 | 15,677 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
@@ -115,7 +115,7 @@
 | handoff/R66.md | 단위 요약 — fl:boom_the_ghost … char:502 (3단위) | 10,744 |
 | handoff/R67-1.md | 단위 요약 — ch39 … ch40 (3단위) | 19,648 |
 | handoff/R67-2.md | 단위 요약 — relic:어떤소녀의그림일기 | 866 |
-| handoff/R68.md | 단위 요약 — fl:absolute … char:94 (4단위) | 9,767 |
+| handoff/R68.md | 단위 요약 — event_absolute1 … char:94 (4단위) | 10,640 |
 | handoff/R69.md | 단위 요약 — fl:coins_in_rush … char:143 (3단위) | 8,058 |
 | handoff/R70.md | 단위 요약 — fl:reborn_evil … char:841 (4단위) | 12,306 |
 | handoff/R71.md | 단위 요약 — side:eden_spear … char:23 (3단위) | 10,841 |
