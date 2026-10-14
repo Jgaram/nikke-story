@@ -51,6 +51,7 @@ Node 22+만 있으면 된다 — 외부 의존성 · 빌드 단계가 없다. `d
 원문은 서브모듈에 커밋되어 있으니 클론한 뒤 다시 돌리지 않는다. 신작이 나왔을 때 증분만 받는다(SESSIONS.md N).
 
 ```bash
+node tools/blabla/update.mjs              # 증분 — 새 패치는 이것 하나(인덱스 diff → 새 것만 + 금서고, data/release/collect.md)
 node tools/blabla/fetch-index.mjs         # 카테고리 · 인물 인덱스
 node tools/blabla/fetch-scenes.mjs        # 씬 본문 (--source main · --limit 20)
 node tools/blabla/fetch-episodes.mjs      # 호감도 스토리

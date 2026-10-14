@@ -11,6 +11,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
+import { archiveEvents } from '../tools/blabla/update.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const RAW = path.join(ROOT, 'data/raw');
@@ -33,11 +34,15 @@ test('블라링크 씬: 원본 파일마다 대사 있는 노드 하나, 줄 수
   const noFile = withText.filter((r) => !raw.has(r.id));
   assert.deepEqual(noFile, [], `원본 파일 없이 대사가 있는 노드: ${list(noFile, (r) => r.id)}`);
   const byId = new Map(rows.map((r) => [r.id, r]));
-  const orphan = [...raw.keys()].filter((id) => !byId.get(id)?.has_text);
+  // 받아 두었지만 아직 들이지 않는 블라링크 이벤트(annotations/hold.json)는 노드가 없다
+  const hold = Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'))).filter((k) => !k.startsWith('_'));
+  const heldIds = new Set(archiveEvents(readJson(path.join(RAW, 'archive/ko/archive_list.json'))).filter((e) => hold.includes(e.key)).flatMap((e) => e.ids));
+  const held = (id) => heldIds.has(id);
+  const orphan = [...raw.keys()].filter((id) => !byId.get(id)?.has_text && !held(id));
   assert.deepEqual(orphan, [], `노드가 안 된 원본 파일: ${list(orphan, (id) => id)}`);
   const wrong = withText.filter((r) => r.line_count !== raw.get(r.id));
   assert.deepEqual(wrong, [], `줄 수가 원본과 다른 씬: ${list(wrong, (r) => `${r.id} ${r.line_count}≠${raw.get(r.id)}`)}`);
-  assert.equal(withText.length, raw.size);
+  assert.equal(withText.length, [...raw.keys()].filter((id) => !held(id)).length);
 });
 
 test('호감도 스토리: 원본 파일마다 노드 하나, 줄 수가 records 수와 같다', () => {
@@ -55,14 +60,18 @@ test('호감도 스토리: 원본 파일마다 노드 하나, 줄 수가 records
 
 test('금서고: 하위 챕터(@@@SCRIPT_ID) 하나 = 씬 하나, 출처 ID가 겹치지 않는다', () => {
   const ids = [];
+  // 받아 두었지만 아직 들이지 않는 금서고 파일(annotations/hold.json)은 빼고 센다
+  const scripts = path.join(RAW, 'forbidden-library/scripts');
+  const hold = new Set(Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'))));
   const walk = (d) => {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
       const p = path.join(d, e.name);
       if (e.isDirectory()) walk(p);
+      else if (hold.has(path.relative(scripts, p).split(path.sep).join('/'))) continue;
       else if (e.name.endsWith('.txt')) for (const m of fs.readFileSync(p, 'utf8').matchAll(/^@@@SCRIPT_ID:[ \t]*(.+?)[ \t\r]*$/gm)) ids.push(m[1]);
     }
   };
-  walk(path.join(RAW, 'forbidden-library/scripts'));
+  walk(scripts);
   const rows = all("SELECT id, source_ref, has_text FROM stories WHERE source LIKE 'fl-%'");
   assert.equal(rows.length, ids.length, `금서고 씬 ${rows.length} ≠ 원본 하위 챕터 ${ids.length}`);
   assert.equal(new Set(rows.map((r) => r.source_ref)).size, rows.length, '출처 ID(source_ref)가 겹친다');

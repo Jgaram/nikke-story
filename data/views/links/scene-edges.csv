@@ -256,7 +256,7 @@ character,auto,1,sub:고스트_00,48,sub:코리_00,30,sub:고스트_00,sub:코�
 sequel,auto,3,sub:랩칠리언_02,,sub:랩칠리언_03,,sub:랩칠리언_02,sub:랩칠리언_03,23,27,,,,,,,,,,,,서브퀘스트 다음 편
 character,auto,2,sub:랩칠리언_02,74,sub:랩칠리언_03,0,sub:랩칠리언_02,sub:랩칠리언_03,23,27,,,,person:랩칠리언,,,11,말함 63줄(94%) · 이름 4줄,말함 75줄(94%) · 이름 2줄,,,
 keyword,auto,1,sub:랩칠리언_02,74,sub:랩칠리언_03,5,sub:랩칠리언_02,sub:랩칠리언_03,23,27,,,,concept:랩쳐,,,140,기록 2 · 이름 12줄,기록 2 · 이름 13줄,,,흔한 대상
-keyword,auto,2,relic:니케실험대상자모집_02,3,relic:니케실험반대피켓_00,0,relic:니케실험대상자모집,relic:니케실험반대피켓,24,29,,,,org:3대_기업,,,6,기록 3 · 이름 3줄,기록 3 · 이름 2줄,,,
+keyword,auto,2,relic:니케실험대상자모집_02,2,relic:니케실험반대피켓_00,0,relic:니케실험대상자모집,relic:니케실험반대피켓,24,29,,,,org:3대_기업,,,6,기록 3 · 이름 3줄,기록 3 · 이름 2줄,,,
 setup_payoff,record,2,relic:니케실험대상자모집_02,,ep:d_nikke_alice_04,,relic:니케실험대상자모집,char:191,24,118,E46,암시,F604,,,,,,,추정,확정,
 setup_payoff,record,2,relic:니케실험대상자모집_01,,sub:중앙_정부_공식__02,,relic:니케실험대상자모집,sub:중앙_정부_공식__02,24,148,E45,암시,F711,,,,,,,추정,확정,
 setup_payoff,record,2,relic:니케실험대상자모집_02,,d_main_48_05,,relic:니케실험대상자모집,ch48,24,472,E46,암시,Q63,,,,,,,추정,확정,
@@ -6275,3 +6275,7 @@ prereq,game-condition,3,ep:d_nikke_sin_swiftbunny_01,,ep:d_nikke_sin_swiftbunny_
 prereq,game-condition,3,ep:d_nikke_sin_swiftbunny_02,,ep:d_nikke_sin_swiftbunny_03,,char:405,char:405,481,481,,,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_sin_swiftbunny_03,,ep:d_nikke_sin_swiftbunny_04,,char:405,char:405,481,481,,,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_sin_swiftbunny_04,,ep:d_nikke_sin_swiftbunny_05,,char:405,char:405,481,481,,,,,,,,,,,,condition_scenario_group_id
+prereq,game-condition,3,ep:d_nikke_belorta_pumpkinwitch_01,,ep:d_nikke_belorta_pumpkinwitch_02,,,,,,,,,,,,,,,,,condition_scenario_group_id
+prereq,game-condition,3,ep:d_nikke_belorta_pumpkinwitch_02,,ep:d_nikke_belorta_pumpkinwitch_03,,,,,,,,,,,,,,,,,condition_scenario_group_id
+prereq,game-condition,3,ep:d_nikke_belorta_pumpkinwitch_03,,ep:d_nikke_belorta_pumpkinwitch_04,,,,,,,,,,,,,,,,,condition_scenario_group_id
+prereq,game-condition,3,ep:d_nikke_belorta_pumpkinwitch_04,,ep:d_nikke_belorta_pumpkinwitch_05,,,,,,,,,,,,,,,,,condition_scenario_group_id

@@ -242,12 +242,18 @@ const readJson = (file, fallback) => {
   }
 };
 
+/** annotations/hold.json — 받아 두었지만 아직 단위로 들이지 않는 원문의 키(블라링크 이벤트 키 · 금서고 파일 키). */
+export function readHold() {
+  return new Set(Object.keys(readJson(path.join(ROOT, 'annotations/hold.json'), {})).filter((k) => !k.startsWith('_')));
+}
+
 /**
  * 금서고 원문을 읽는다.
  * @param {(eventKey: string) => boolean} blablaHasText 블라링크 아카이브에 그 이벤트의 원문이 있는가.
  *   있으면 금서고 것을 쓰지 않는다 — 블라링크가 이긴다(사용자, 2026-09-28).
+ * @param {Set<string>} [hold] readHold() — 이 금서고 파일은 뺀다.
  */
-export function readLibrary({ blablaHasText }) {
+export function readLibrary({ blablaHasText, hold = new Set() }) {
   const manifest = readJson(path.join(LIBRARY_DIR, 'script-manifest.json'), []);
   const eventsMap = readJson(EVENTS_MAP_PATH, {});
   const categories = [];
@@ -268,6 +274,7 @@ export function readLibrary({ blablaHasText }) {
     if (!kind) continue;
     const full = path.join(LIBRARY_DIR, 'scripts', f.category, f.file);
     if (!fs.existsSync(full)) continue; // 받지 않은 파일(블라링크에 있는 단위 등)
+    if (hold.has(f.key)) continue; // 받아 두었지만 아직 들이지 않는 원문(annotations/hold.json)
     const gameKey = f.category === 'event_stories' ? eventsMap[f.key] ?? null : null;
     if (gameKey && blablaHasText(gameKey)) {
       skipped.push(`${f.key} → ${gameKey}`);

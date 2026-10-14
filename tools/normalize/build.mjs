@@ -16,7 +16,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parsePrereq } from './parse-prereq.mjs';
 import { parseCsv } from './csv.mjs';
-import { readLibrary } from './library.mjs';
+import { readLibrary, readHold } from './library.mjs';
 import { inputsFingerprint } from './ensure-db.mjs';
 import { applyScope, buildDictionary, countTermMentions, resolveSpeakers, TARGET_TYPES } from './dictionary.mjs';
 import { buildMentions } from './mentions.mjs';
@@ -203,6 +203,11 @@ async function main() {
   const m = readSceneList(mainList, 'main');
   const s = readSceneList(suddenList, 'sudden');
   const a = readArchiveList(archiveList);
+  // 받아 두었지만 아직 들이지 않는 원문(annotations/hold.json) — 블라링크 이벤트는 여기서, 금서고 파일은 readLibrary가 뺀다
+  const hold = readHold();
+  const held = new Set(a.categories.filter((c) => hold.has(c.idPrefix)).map((c) => c.id));
+  a.categories = a.categories.filter((c) => !held.has(c.id));
+  a.stories = a.stories.filter((st) => !held.has(st.categoryId));
 
   const categories = [...m.categories, ...s.categories, ...a.categories];
   const stories = [...m.stories, ...s.stories, ...a.stories];
@@ -227,7 +232,8 @@ async function main() {
   const archiveWithText = new Set(
     a.categories.filter((c) => stories.some((st) => st.categoryId === c.id && st.hasText)).map((c) => c.idPrefix),
   );
-  const lib = readLibrary({ blablaHasText: (key) => archiveWithText.has(key) });
+  const lib = readLibrary({ blablaHasText: (key) => archiveWithText.has(key), hold });
+  if (hold.size) console.log(`  들이지 않은 원문 ${hold.size} — ${[...hold].join(' · ')} (annotations/hold.json)`);
   categories.push(...lib.categories);
   stories.push(...lib.stories);
   for (const l of lib.lines) lines.push(l);

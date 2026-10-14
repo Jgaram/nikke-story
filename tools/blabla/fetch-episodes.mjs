@@ -11,10 +11,12 @@
  * 동시 요청 상한·캐시·재시도는 client.mjs가 처리한다 (docs/data-sources.md "0. 요청 규칙").
  */
 import fs from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { Collector, formatBytes } from './client.mjs';
+import { formatLangPath } from './obfuscate.mjs';
 import { RAW_DIR } from './fetch-index.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -51,6 +53,17 @@ export function extractEpisodes(roledataResults) {
     }
   }
   return episodes;
+}
+
+/** 받아 둔 roledata에 에피소드가 하나도 없는가. 받아 둔 것이 없으면 false(어차피 받는다). */
+function cachedEmpty(collector, template) {
+  try {
+    const file = collector.fileFor(formatLangPath(template, collector.lang));
+    const json = JSON.parse(readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
+    return !(json.attractive_scenario_list ?? []).length;
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -95,13 +108,24 @@ async function main() {
   });
 
   const collector = await new Collector({ rawDir: RAW_DIR, lang: values.lang, force: values.force }).init();
+  await collectEpisodes(collector, { limit: values.limit && Number(values.limit), indexOnly: values['index-only'] });
+  const { fetched, cached, missing, bytes } = collector.stats;
+  console.log(`\n완료: 수집 ${fetched} / 캐시 ${cached} / 없음 ${missing} (${formatBytes(bytes)})`);
+}
 
+/**
+ * roledata → 에피소드 목록(episode-index.json) → 본문. 캐시에 있으면 건너뛰므로
+ * 새 니케의 roledata · 본문과 앞서 404였던 편만 요청이 나간다. 에피소드 목록을 돌려준다.
+ * recheckEmpty면 받아 둔 roledata 중 에피소드가 빈 것(출시 전에 받았을 수 있다)만 다시 받는다.
+ */
+export async function collectEpisodes(collector, { limit, indexOnly = false, recheckEmpty = false } = {}) {
   const { json: nikkeList } = await collector.fetchOne(NIKKE_LIST);
   let characters = [...new Set((nikkeList ?? []).map((n) => n.resource_id))].filter(Boolean);
-  if (values.limit) characters = characters.slice(0, Number(values.limit));
+  if (limit) characters = characters.slice(0, limit);
   console.log(`캐릭터 ${characters.length}명의 roledata 수집`);
 
   const roledata = await collector.fetchMany(characters.map(roledataTemplate), {
+    refetch: recheckEmpty ? (t) => cachedEmpty(collector, t) : undefined,
     onProgress: (done, total) => {
       if (done % 50 === 0 || done === total) console.log(`  roledata ${done}/${total}`);
     },
@@ -125,13 +149,13 @@ async function main() {
   const indexPath = path.join(RAW_DIR, 'episode-index.json');
   await fs.writeFile(
     indexPath,
-    JSON.stringify({ lang: values.lang, generatedAt: new Date().toISOString(), episodes }, null, 2) + '\n',
+    JSON.stringify({ lang: collector.lang, generatedAt: new Date().toISOString(), episodes }, null, 2) + '\n',
   );
   console.log(`  목록 저장: ${path.relative(ROOT, indexPath)}`);
 
-  if (values['index-only']) {
+  if (indexOnly) {
     await collector.saveManifest();
-    return;
+    return episodes;
   }
 
   console.log(`\n에피소드 본문 수집 — 대상 ${episodes.length}편`);
@@ -149,9 +173,7 @@ async function main() {
   } finally {
     await collector.saveManifest();
   }
-
-  const { fetched, cached, missing, bytes } = collector.stats;
-  console.log(`\n완료: 수집 ${fetched} / 캐시 ${cached} / 없음 ${missing} (${formatBytes(bytes)})`);
+  return episodes;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

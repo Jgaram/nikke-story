@@ -80,12 +80,12 @@ export class Collector {
     return path.join(this.rawDir, logicalPath.replace(/^\//, ''));
   }
 
-  /** 템플릿 하나를 받아온다. 캐시가 있으면 네트워크를 타지 않는다. */
-  async fetchOne(template) {
+  /** 템플릿 하나를 받아온다. 캐시가 있으면 네트워크를 타지 않는다(force면 다시 받는다). */
+  async fetchOne(template, { force = this.force } = {}) {
     const logical = formatLangPath(template, this.lang).replace(/^\//, '');
     const file = this.fileFor(logical);
 
-    if (!this.force) {
+    if (!force) {
       try {
         const json = JSON.parse(stripBom(await fs.readFile(file, 'utf8')));
         this.stats.cached++;
@@ -147,11 +147,11 @@ export class Collector {
     throw new Error(`${RETRIES + 1}회 시도 실패: ${logical}\n  ${lastError?.message ?? lastError}`);
   }
 
-  /** 여러 템플릿을 동시 실행 상한을 지키며 받아온다. */
-  async fetchMany(templates, { onProgress } = {}) {
+  /** 여러 템플릿을 동시 실행 상한을 지키며 받아온다. refetch(template)가 참인 것은 캐시가 있어도 다시 받는다. */
+  async fetchMany(templates, { onProgress, refetch } = {}) {
     let done = 0;
     return pool(templates, MAX_CONCURRENCY, async (t) => {
-      const result = await this.fetchOne(t);
+      const result = await this.fetchOne(t, refetch?.(t) ? { force: true } : undefined);
       onProgress?.(++done, templates.length, result);
       return result;
     });

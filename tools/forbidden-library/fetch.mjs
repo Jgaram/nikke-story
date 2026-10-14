@@ -127,7 +127,16 @@ async function main() {
   const { values: args } = parseArgs({
     options: { plan: { type: 'boolean', default: false }, force: { type: 'boolean', default: false } },
   });
+  await syncLibrary(args);
+}
+
+/**
+ * 목록 확인(배포 시각이 바뀔 때만 다시 받는다) → 고르기 → 받기. tools/blabla/update.mjs도 부른다.
+ * { siteVersion, listChanged, written, missing, unmapped }을 돌려준다(written · missing은 파일 키).
+ */
+export async function syncLibrary(args = {}) {
   await fs.mkdir(LIBRARY_DIR, { recursive: true });
+  const result = { siteVersion: null, listChanged: false, written: [], missing: [], unmapped: [] };
 
   // 1. 배포 시각 → 바뀌었을 때만 매니페스트를 다시 받는다.
   const versionBody = await get('/app-version.json');
@@ -141,6 +150,7 @@ async function main() {
     manifest = JSON.parse(body.toString('utf8'));
     await fs.writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 1) + '\n');
     await fs.writeFile(VERSION_PATH, JSON.stringify({ version: siteVersion }, null, 2) + '\n');
+    result.listChanged = prevVersion !== siteVersion;
     console.log(`목록을 받았다: 사이트 배포 ${siteVersion} · ${manifest.length}항목`);
   } else {
     console.log(`목록 그대로: 사이트 배포 ${siteVersion} · ${manifest.length}항목`);
@@ -151,6 +161,8 @@ async function main() {
   delete eventsMap._설명;
   const files = filesOf(manifest);
   const { wanted, unmapped, skipped } = plan(files, eventsMap);
+  result.siteVersion = siteVersion;
+  result.unmapped = unmapped.map((f) => ({ key: f.key, title: f.items[0]?.title ?? '' }));
   const fetched = await readJson(FETCHED_PATH, { version: 1, files: {} });
   const queue = wanted.filter((f) => {
     const prev = fetched.files[f.key];
@@ -167,7 +179,7 @@ async function main() {
   }
   if (args.plan) {
     for (const f of queue) console.log(`  받을 것: ${f.key}  (${f.reason})  ${f.items[0]?.title ?? ''}`);
-    return;
+    return result;
   }
 
   // 3. 받는다.
@@ -179,6 +191,7 @@ async function main() {
     if (!body) {
       fetched.files[f.key] = { version: f.version, missing: true, checkedAt: new Date().toISOString() };
       missing++;
+      result.missing.push(f.key);
       console.log(`  [없음] ${f.key}`);
       continue;
     }
@@ -187,17 +200,19 @@ async function main() {
     await fs.writeFile(out, body);
     fetched.files[f.key] = { version: f.version, bytes: body.length, fetchedAt: new Date().toISOString() };
     written++;
+    result.written.push(f.key);
     if ((i + 1) % 20 === 0) console.log(`  … ${i + 1}/${queue.length}`);
   }
 
   if (!written && !missing) {
     console.log('새로 받은 파일 없음');
-    return;
+    return result;
   }
   fetched.updatedAt = new Date().toISOString();
   fetched.files = Object.fromEntries(Object.entries(fetched.files).sort((a, b) => a[0].localeCompare(b[0])));
   await fs.writeFile(FETCHED_PATH, JSON.stringify(fetched, null, 2) + '\n');
   console.log(`원문 ${written}개 저장 · 없음 ${missing}개 → ${path.relative(ROOT, SCRIPTS_DIR)}/`);
+  return result;
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

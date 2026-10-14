@@ -59,9 +59,16 @@ async function main() {
   }
 
   const collector = await new Collector({ rawDir: RAW_DIR, lang: values.lang, force: values.force }).init();
-
   console.log(`인덱스 확인 (언어: ${values.lang})`);
   const indexResults = await fetchIndexes(collector, { quiet: true });
+  await collectScenes(collector, indexResults, { wanted, limit: values.limit && Number(values.limit) });
+}
+
+/**
+ * 인덱스의 씬 본문을 받는다 — 캐시에 있으면 건너뛰므로 새 씬과 앞서 404였던 씬만 요청이 나간다.
+ * scene-ids.json(출처별 씬 ID)을 새로 쓰고 { bySource, missing }을 돌려준다.
+ */
+export async function collectScenes(collector, indexResults, { wanted = SOURCE_ORDER, limit } = {}) {
   const bySource = classifyScenes(indexResults);
 
   for (const source of SOURCE_ORDER) {
@@ -73,13 +80,13 @@ async function main() {
   // 출처 매핑을 남겨둔다. 누락 씬이 어느 인덱스에서 왔는지 되짚을 때 쓴다.
   await fs.writeFile(
     path.join(RAW_DIR, 'scene-ids.json'),
-    JSON.stringify({ lang: values.lang, generatedAt: new Date().toISOString(), bySource: Object.fromEntries(bySource) }, null, 2) + '\n',
+    JSON.stringify({ lang: collector.lang, generatedAt: new Date().toISOString(), bySource: Object.fromEntries(bySource) }, null, 2) + '\n',
   );
 
   let targets = wanted.flatMap((s) => bySource.get(s).map((id) => ({ id, source: s })));
-  if (values.limit) targets = targets.slice(0, Number(values.limit));
+  if (limit) targets = targets.slice(0, limit);
 
-  console.log(`\n씬 본문 수집 시작 — 대상 ${targets.length}개${values.force ? ' (강제 재수집)' : ''}`);
+  console.log(`\n씬 본문 수집 시작 — 대상 ${targets.length}개${collector.force ? ' (강제 재수집)' : ''}`);
   const started = Date.now();
   const sourceOf = new Map(targets.map((t) => [t.id, t.source]));
   const missing = [];
@@ -93,7 +100,7 @@ async function main() {
             const id = result.logical.match(/scene_detail_(.+)\.json$/)?.[1] ?? result.logical;
             missing.push({ id, source: sourceOf.get(id) ?? '?' });
           }
-          if (done % 100 === 0 || done === total) {
+          if (done % 500 === 0 || done === total) {
             const pct = ((done / total) * 100).toFixed(0).padStart(3);
             console.log(`  ${pct}%  ${done}/${total}`);
           }
@@ -110,12 +117,13 @@ async function main() {
   console.log(`\n완료 (${secs}초): 수집 ${fetched} / 캐시 ${cached} / 없음 ${missCount} (${formatBytes(bytes)})`);
 
   if (missing.length) {
-    const bySource = missing.reduce((acc, m) => ((acc[m.source] = (acc[m.source] ?? 0) + 1), acc), {});
-    const summary = Object.entries(bySource).map(([s, n]) => `${SOURCE_LABEL[s] ?? s} ${n}`).join(' / ');
+    const counts = missing.reduce((acc, m) => ((acc[m.source] = (acc[m.source] ?? 0) + 1), acc), {});
+    const summary = Object.entries(counts).map(([s, n]) => `${SOURCE_LABEL[s] ?? s} ${n}`).join(' / ');
     console.log(`\n누락 ${missing.length}건 — ${summary}`);
     console.log(`  예: ${missing.slice(0, 5).map((m) => m.id).join(', ')}`);
     console.log(`  전체 목록은 ${path.relative(ROOT, collector.manifestPath)} 의 missing 항목 참고`);
   }
+  return { bySource, missing };
 }
 
 /** 실제로 대사가 들어왔는지 눈으로 확인할 수 있게 요약한다. */
