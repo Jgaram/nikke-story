@@ -24,6 +24,7 @@
  * 세기(strength 1–3 — "앞 단위를 먼저 볼 만한 정도"):
  *   3 게임 조건 · 다음 편(sequel auto · 수동 3) · 확실한 기록 / 2 추정 기록 · 연작이지만 사이가 떨어진 다음 편(수동 2) · 대상 공유 / 1 흔한 대상 공유.
  *   흔한 대상 = 중심인 단위(spread 칸)가 읽기 단위의 COMMON_SHARE(10%)를 넘는 대상 — note '흔한 대상', 화면 기본값에서 숨기기 좋다.
+ * 만우절 단위(결정 #11 — tools/lib/fools.mjs)는 만우절 단위끼리만 잇는다 — 다른 단위와의 선은 빼고, 중심 · 대상 공유 사슬 · 흔한 대상의 분모에도 넣지 않는다.
  * 같은 기록이면 같은 결과다(정렬 끝까지 결정적). 기록 문장 · 원문 대사는 담지 않는다(ID · 대상 · 수만).
  */
 import fs from 'node:fs';
@@ -36,6 +37,7 @@ import { mentionRows, mergeEdges, read2Edges, scenePlaces } from '../records/rea
 import { ERELIC_EVENT } from '../records/layers.mjs';
 import { threadMembership } from '../records/threads.mjs';
 import { read1Edges } from './read1.mjs';
+import { isAprilFools } from '../lib/fools.mjs';
 
 export const LINKS_DIR = path.join(ROOT, 'data/views/links');
 export const TYPE_ORDER = ['prereq', 'sequel', 'setup_payoff', 'callback', 'reversal', 'character', 'keyword'];
@@ -111,7 +113,7 @@ export function unitTargets(ds, ctx, places) {
   };
   const add = (scene, seq, target, how, lines) => {
     const unit = places.unitOf(scene);
-    if (!unit || !ctx.targetIds.has(target)) return;
+    if (!unit || isAprilFools(unit) || !ctx.targetIds.has(target)) return; // 만우절 단위는 세지 않는다
     const x = slot(unit, target);
     if (how === 'speaks') {
       x.speaks += lines;
@@ -130,7 +132,7 @@ export function unitTargets(ds, ctx, places) {
     else if (c.kind === 'change') ts = [o.person];
     const scene = firstScene(c);
     const unit = places.unitOf(scene);
-    if (!unit) continue;
+    if (!unit || isAprilFools(unit)) continue;
     for (const t of new Set(ts.filter((x) => typeof x === 'string' && ctx.targetIds.has(x)))) {
       const x = slot(unit, t);
       x.records.add(c.id);
@@ -210,7 +212,7 @@ export function buildLinks(ds, ctx, order) {
     }
   }
   const spreadOf = (t) => chains.get(t)?.length ?? 0;
-  const common = Math.round(units.length * COMMON_SHARE);
+  const common = Math.round(units.filter((u) => !isAprilFools(u)).length * COMMON_SHARE); // 분모 — 만우절 단위 빼고
   for (const [t, us] of chains) {
     const person = t.startsWith('person:');
     const spread = us.length;
@@ -255,6 +257,10 @@ export function buildLinks(ds, ctx, order) {
     }
   }
   for (const m of merged.unmatched) problems.push(`수동 ${m.id}(drop ${m.type} ${m.from} → ${m.to}): 지울 자동 엣지가 없다`);
+  // 만우절 단위는 만우절 단위끼리만 잇는다(결정 #11) — 다른 단위와의 선을 뺀다
+  const crossFool = (e) => isAprilFools(e.from_unit) !== isAprilFools(e.to_unit);
+  const foolCut = edges.filter(crossFool).length;
+  for (let i = edges.length - 1; i >= 0; i--) if (crossFool(edges[i])) edges.splice(i, 1);
   const cmpEdge = (a, b) => (a.from_order ?? 1e9) - (b.from_order ?? 1e9) || (a.to_order ?? 1e9) - (b.to_order ?? 1e9) || typeRank(a.type) - typeRank(b.type)
     || cmpRecord(a.record, b.record) || String(a.target).localeCompare(String(b.target))
     || String(a.from_scene).localeCompare(String(b.from_scene)) || String(a.to_scene).localeCompare(String(b.to_scene));
@@ -333,7 +339,7 @@ export function buildLinks(ds, ctx, order) {
   const dropped = merged.dropped.map((d) => ({ ...d, from_scene: d.from, to_scene: d.to }));
   const sources = { read2: ds.dir2 ? `${displayPath(ds.dir2)}/` : null, links: ds.links?.name ?? null };
   const cl = conceptLinks(ds, ctx, places);
-  return { edges, sceneEdges: edges, unitEdges, units: unitRows, centers, dropped, unmatched: merged.unmatched, chains, common, internal, unplaced, problems, places, sources,
+  return { edges, sceneEdges: edges, unitEdges, units: unitRows, centers, dropped, unmatched: merged.unmatched, chains, common, internal, unplaced, foolCut, problems, places, sources,
     threadTargets: cl.threadTargets, targetPairs: cl.targetPairs };
 }
 
@@ -372,7 +378,7 @@ export function conceptLinks(ds, ctx, places) {
   const pairs = new Map();
   for (const c of live) {
     const ok = ((c.kind === 'fact' || c.kind === 'question') && c.role === 'def' && isRecord(c)) || c.kind === 'echo' || c.kind === 'life';
-    if (!ok) continue;
+    if (!ok || isAprilFools(c.unit)) continue; // 만우절 단위의 기록은 세지 않는다
     const xs = aboutOf(c).sort();
     for (let i = 0; i < xs.length; i++) {
       for (let j = i + 1; j < xs.length; j++) {
@@ -423,7 +429,7 @@ export function renderLinksReport(v, { source }) {
     const c = tallyBy(es, (e) => e.origin);
     L.push(`| \`${t}\` ${TYPE_LABEL[t]} | ${origins.map((o) => c.get(o) ?? 0).join(' | ')} | ${es.length} | ${v.unitEdges.filter((x) => x.type === t).length} | ${es.filter((e) => e.status === '후보').length} |`);
   }
-  L.push('', `- 씬 엣지 ${v.edges.length} · 단위 쌍(타입별) ${v.unitEdges.length} · 같은 단위 안 ${v.internal}(단위 그래프에서 뺌 — 호감도 스토리 조건은 모두 한 인물 안) · 읽기 단위 밖 끝점 ${v.unplaced}(애장품 \`fav:\` 등).`);
+  L.push('', `- 씬 엣지 ${v.edges.length} · 단위 쌍(타입별) ${v.unitEdges.length} · 같은 단위 안 ${v.internal}(단위 그래프에서 뺌 — 호감도 스토리 조건은 모두 한 인물 안) · 읽기 단위 밖 끝점 ${v.unplaced}(애장품 \`fav:\` 등) · 만우절 단위와 다른 단위 사이라 뺀 엣지 ${v.foolCut ?? 0}(결정 #11).`);
   const unconf = v.edges.filter((e) => e.status === '후보');
   L.push(`- 확정 전 후보로 만든 엣지 ${unconf.length}${unconf.length ? ` — ${[...tallyBy(unconf, (e) => e.type)].map(([t, n]) => `${t} ${n}`).join(' · ')}. 화면 · 조회는 '후보'로 따로 표시한다` : ' — 기록 · 수동 엣지가 모두 확정이다'}.`);
   L.push(`- 세기: ${[3, 2, 1].map((s) => `${s} = ${v.edges.filter((e) => e.strength === s).length}`).join(' · ')} — 3 게임 조건 · 다음 편 · 확실한 기록, 2 추정 기록 · 대상 공유, 1 흔한 대상 공유.`, '');

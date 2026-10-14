@@ -23,6 +23,7 @@
  * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13c)
  *   여기까지 읽음은 모든 목록 · 그림에 걸린다 — 안 본 스토리(R.seen — 메인 위치 t + 척추 이벤트 · 사이드 '봤음' 예외 x)의 등장 · 변화와
  *     모르는 기록(R.known — 사실 · 의문은 know_units 중 하나라도 봤으면 앎)은 뺀다(persons-detail.json에서 다시 센다). 쌍은 by[]의 칸마다(척추 이벤트 · 사이드 칸은 그 키로) 본다.
+ *   만우절 단위(결정 #11 — units.json fool)는 등장 · 쌍에서 이미 빠졌고(export), 기록 · 변화는 목록에 남기되 수에서 빼고 스토리 이름 옆에 '만우절' 칩을 단다.
  *     자리(tick)는 히트맵의 '아직 안 읽은 부분' 빗금(t 뒤) · 초상(fmt.iconAt) · 소속(fmt.orgsAt)에만 쓴다 — t 앞이어도 안 봤다고 체크한 스토리 칸은 빗금 칸으로 그린다.
  *   가린 것은 도구줄 아래 한 줄에 "스포일러로 가린 인물 N명 · 스토리 N편"으로 모으고 [전부 보기]를 단다. 아직 나오지 않은 인물은 목록에서 빠지고, 주소로 들어오면 안내만 보인다.
  *   작업 흔적은 싣지 않는다: 기록 ID · 작업량 숫자(말한 줄 · 기록 수 · 씬 · 순번) · 판정 용어(시점 확정 · 대략 범위 …) · 만든 방법 설명. 근거는 링크로만(누르면 장면).
@@ -246,12 +247,13 @@ export async function mount(root, ctx) {
           const o = idx.units.get(e.unit)?.order ?? 0;
           if (o < a.firstOrder) { a.firstOrder = o; a.firstUnit = e.unit; a.firstEntry = e; }
         }
-        for (const c of d.changes) { if (hidden(c.unit)) a.chCut++; else a.changes++; }
+        const fool = (k) => Boolean(idx.units.get(k)?.fool); // 만우절 — 목록에는 남기고 수에서는 뺀다(결정 #11)
+        for (const c of d.changes) { if (fool(c.unit)) continue; if (hidden(c.unit)) a.chCut++; else a.changes++; }
         if (R) {
           a.recs = 0;
           for (const id of d.records) {
             const r = R.get(id);
-            if (!r) continue;
+            if (!r || fool(r.unit)) continue;
             if (recHidden(r)) a.recCut++; else a.recs++;
           }
         }
@@ -292,7 +294,8 @@ export async function mount(root, ctx) {
     const u = idx.units.get(key);
     if (!u) return fmt.unitTitle(key);
     return el('span', { class: 'pm-story' }, ui.link(`unit:${key}`, u.kind === 'main' ? chTitle(u.title) : u.title),
-      u.kind === 'main' ? null : el('span', { class: 'pm-kind', title: fmt.help('kind', u.kind) }, fmt.KIND[u.kind]?.label ?? u.kind));
+      u.kind === 'main' ? null : el('span', { class: 'pm-kind', title: fmt.help('kind', u.kind) }, fmt.KIND[u.kind]?.label ?? u.kind),
+      u.fool ? [' ', ui.chip('grade', '만우절')] : null); // 만우절 — 수에서 뺐지만 기록은 남긴다(결정 #11)
   };
   /** 얼굴 — 그 자리 모습의 초상, 없으면 이름 첫 글자 칸(머리 · 도감) */
   const face = (id, size, cls) => ui.portrait(fmt.iconAt(idx.targets.get(id), V.T), { size, class: cls })

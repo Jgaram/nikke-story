@@ -57,7 +57,7 @@ export function clear(node) {
 
 const CHIP_VAR = {
   kind: (v) => `var(--kind-${v})`,
-  grade: (v) => `var(--grade-${{ 필수: 'must', 보강: 'support', 참고: 'ref', 독립: 'standalone', 척추: 'spine', 메인: 'main' }[v] ?? 'none'})`,
+  grade: (v) => `var(--grade-${{ 필수: 'must', 보강: 'support', 참고: 'ref', 독립: 'standalone', 척추: 'spine', 메인: 'main', 만우절: 'none' }[v] ?? 'none'})`,
   state: (v) => `var(--state-${{ 열림: 'open', 일부: 'partial', 풀림: 'solved', 뒤집힘: 'reversed', 암시만: 'hint', 아직: 'none', 앎: 'known' }[v] ?? 'none'})`,
 };
 const CHIP_TEXT = {

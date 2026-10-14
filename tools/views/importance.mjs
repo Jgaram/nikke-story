@@ -10,6 +10,8 @@
  * 척추(X3f-1b · 1c) = 메인 챕터 + annotations/spine.json 확정 단위(이벤트 8 · 사이드 3 — tools/views/spine.mjs). 척추 단위는 채점하지 않는다 —
  *   시안 표에서 빼고(units에 없다 — 화면 1의 척추 줄) spine 목록에 따로 둔다. 그 단위의 판정(K)은 기각하지 않고 "척추" 표시로 남긴다(척추에서 빼면 판정으로 돌아온다).
  *   아래의 "메인"(메인 연결 · 메인이 딛음 · 메인 자리)은 모두 척추를 뜻한다 — 척추 이벤트 · 사이드와 이어진 기록은 메인 챕터와 같은 무게, from에 척추 키가 올 수 있다.
+ * 만우절 단위(결정 #11 — annotations/april-fools.json, tools/lib/fools.mjs)도 채점하지 않는다 — 척추처럼 시안 표에서 빼고 fools 목록에 따로 둔다.
+ *   그 판정(K)은 기각하지 않고 "만우절" 표시로 남긴다. 사이트 감상 순서는 등급 없이 '만우절' 표시로 싣는다(tools/site/export/order.mjs).
  * 자리별 등급(X3f ⑤): 필수 · 보강 판정은 메인이 이 단위를 딛기 시작하는 챕터(from)와 그 앞 자리의 등급(before)을 단다.
  *   공개 자리 T(query.mjs known과 같은 자리 — tools/views/reveal.mjs releasePlaces)에서 단위의 등급 = 아직 안 나왔으면 없음 ·
  *   T가 from 챕터의 자리보다 앞이면 before(없으면 등급) · 그 밖은 등급. 내려가는 자리는 없다(메인이 뒤에서 스스로 설명해도 그 자리에서 막힌 것은 그대로 — ②).
@@ -33,6 +35,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { openContext } from '../records/context.mjs';
+import { APRIL_FOOLS_LABEL, isAprilFools } from '../lib/fools.mjs';
 import { EXAMPLE_DIR, GRADES, READ1_DIR, ROOT, displayPath, loadDataset, spineUnits } from '../records/model.mjs';
 import { computeLayers, layerKind } from '../records/layers.mjs';
 import { kindOfKey, loadOrder, loadReadLayers } from '../records/order.mjs';
@@ -169,8 +172,13 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
   for (const c of liveLeads) if (c.obj.origin && c.obj.origin !== '메인') (originOf.get(c.obj.origin) ?? originOf.set(c.obj.origin, []).get(c.obj.origin)).push(c.obj.person.replace('person:', ''));
   // 척추 — 채점하지 않는다. 지금 판정(K)은 "척추" 표시로 남긴다(기각하지 않는다)
   const spineRows = [];
+  const foolRows = []; // 만우절 — 채점하지 않는다(결정 #11). 지금 판정(K)은 "만우절" 표시로 남긴다
   for (const u of lay.units) {
     if (u.kind === '메인' || (!u.judgment && !missing.has(u.key))) continue;
+    if (isAprilFools(u.key)) {
+      foolRows.push({ order: u.order, unit: u.key, kind: layerKind(u.key), title: ctx.resolve(u.key)?.title ?? '', judgment: u.judgment?.id ?? '', grade: u.judgment?.obj?.grade ?? '', pos: tickOf(u.key) });
+      continue;
+    }
     if (spine.has(u.key)) {
       const o = u.judgment?.obj ?? {};
       spineRows.push({ order: u.order, unit: u.key, kind: layerKind(u.key), title: ctx.resolve(u.key)?.title ?? '', spine: spineJudged.get(u.key)?.id ?? '', gate: spineJudged.get(u.key)?.obj?.gate ?? '',
@@ -238,8 +246,8 @@ export function buildImportance(ds, ctx, order, { readLayers = null } = {}) {
     delete u.leadsList;
     delete u.emotionList;
   }
-  return { units, spine: spineRows, pending, emotion, chapters: atChapters, byLead, leadFrom, origins, ticks: rel.ticks.length, layersFile: ds.layers?.name ?? null, spineFile: ds.spine?.name ?? null,
-    totals: { units: units.length, spine: spineRows.length, judged: units.filter((u) => u.judgment).length } };
+  return { units, spine: spineRows, fools: foolRows, pending, emotion, chapters: atChapters, byLead, leadFrom, origins, ticks: rel.ticks.length, layersFile: ds.layers?.name ?? null, spineFile: ds.spine?.name ?? null,
+    totals: { units: units.length, spine: spineRows.length, fools: foolRows.length, judged: units.filter((u) => u.judgment).length } };
 }
 
 /** 사람이 읽는 보고서 */
@@ -252,7 +260,7 @@ export function renderImportanceReport(v, { source = '' } = {}) {
   L.push('단위 하나의 판정 · 시안 · 판정 입력: `node tools/records.mjs layers <단위 키> [--summary]`. 공개 자리 하나: `node tools/query.mjs grades <ch20>`. 등급을 뒤집기: `node tools/records.mjs set K… 확정 --by 사용자 --grade … --note "…"`.', '');
   const asof = new Map();
   for (const u of v.units) asof.set(u.asof || '없음', (asof.get(u.asof || '없음') ?? 0) + 1);
-  L.push(`- 척추 ${v.spine.length}(이벤트 ${v.spine.filter((u) => u.kind === '이벤트').length} · 사이드 ${v.spine.filter((u) => u.kind === '사이드').length} — 채점하지 않는다, 아래 "척추") · 판정 단위 ${v.units.length} — ${GRADES.map((g) => `${g} ${by(g)}`).join(' · ')}${n((u) => !u.grade) ? ` · 판정 없음 ${n((u) => !u.grade)}` : ''}` +
+  L.push(`- 척추 ${v.spine.length}(이벤트 ${v.spine.filter((u) => u.kind === '이벤트').length} · 사이드 ${v.spine.filter((u) => u.kind === '사이드').length} — 채점하지 않는다, 아래 "척추") · 만우절 ${(v.fools ?? []).length}(채점 밖) · 판정 단위 ${v.units.length} — ${GRADES.map((g) => `${g} ${by(g)}`).join(' · ')}${n((u) => !u.grade) ? ` · 판정 없음 ${n((u) => !u.grade)}` : ''}` +
     ` (확신도 추정 ${n((u) => u.confidence === '추정')} · 상태 확정 ${n((u) => u.status === '확정')})`);
   L.push(`- 기준 시점: ${[...asof].sort().map(([d, k]) => `${d} ${k}`).join(' · ')}`);
   L.push(`- 기준 바꿈(X3f) 뒤 다시 본 판정 ${n((u) => u.rechecked)} · 등급이 바뀐 판정 ${n((u) => /→/.test(u.history))} · 메인 자리(from)가 있는 판정 ${n((u) => u.from)}` +
@@ -262,6 +270,11 @@ export function renderImportanceReport(v, { source = '' } = {}) {
   L.push('선정 기준 · 계산: data/views/importance/spine.md(`node tools/views/spine.mjs`). 판정 K는 척추에 들기 전 것 — 척추에서 빼면 판정으로 돌아온다. 뒤집기: `set B… 기각 --by 사용자`.', '');
   L.push('| 자리 | 단위 | 종류 | 문 | 척추 | 판정 K(척추 전) | 층 |', '|---:|---|---|---|---|---|---:|');
   for (const u of v.spine) L.push(`| ${u.order} | \`${u.unit}\` ${u.title} | ${u.kind} | ${u.gate} | ${u.spine} | ${u.judgment} ${u.grade} → 척추 | ${u.layer} |`);
+  L.push('');
+  L.push(`## ${APRIL_FOOLS_LABEL} — 채점하지 않는다 (결정 #11)`, '');
+  L.push('annotations/april-fools.json의 단위 — 숫자 집계에서 뺀다. 판정 K는 그대로 두고 쓰지 않는다(목록에서 빼면 판정으로 돌아온다).', '');
+  L.push('| 자리 | 단위 | 종류 | 판정 K |', '|---:|---|---|---|');
+  for (const u of v.fools ?? []) L.push(`| ${u.order} | \`${u.unit}\` ${u.title} | ${u.kind} | ${u.judgment} ${u.grade} → ${APRIL_FOOLS_LABEL} |`);
   L.push('');
   L.push('## 종류 × 등급', '', `| 종류 | ${GRADES.join(' | ')} | 다시 볼 단위 |`, `|---|${GRADES.map(() => '---:').join('|')}|---:|`);
   for (const k of KIND_ROWS) {

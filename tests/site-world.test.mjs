@@ -16,6 +16,8 @@ const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', f), 
 const world = read('world.json');
 const records = new Map([...read('records.json'), ...read('records2.json')].map((r) => [r.id, r]));
 const unitKeys = new Set(read('units.json').map((u) => u.key));
+const foolUnits = new Set(read('units.json').filter((u) => u.fool).map((u) => u.key));
+const foolUnit = (rid) => foolUnits.has(records.get(rid)?.unit);
 
 test('cleanNote — 근거 괄호 · 작업 문장 · 머리 · 꼬리를 걷는다', () => {
   assert.equal(cleanNote('니케 전용 병원(R02 sub:저스틴_00에서 더함)'), '니케 전용 병원');
@@ -70,8 +72,10 @@ test('world.json — 기록 ID · 이웃 · 단위 키가 실제로 있다', () 
       assert.ok(unitKeys.has(key), `${e.id} 단위 ${key}`);
       assert.ok(n > 0);
     }
-    assert.equal(e.facts, (e.recs?.F ?? []).length, `${e.id} 사실 수`);
-    assert.equal(e.questions, (e.recs?.Q ?? []).length, `${e.id} 의문 수`);
+    // 수는 만우절 단위의 기록을 뺀다(결정 #11) — 목록(recs)에는 남는다
+    const counted = (xs) => (xs ?? []).filter(([rid]) => !foolUnit(rid)).length;
+    assert.equal(e.facts, counted(e.recs?.F), `${e.id} 사실 수`);
+    assert.equal(e.questions, counted(e.recs?.Q), `${e.id} 의문 수`);
   }
   // 이웃은 양쪽에서 같은 수로 보인다
   const nbOf = new Map(world.entries.map((e) => [e.id, new Map((e.neighbors ?? []).map((n) => [n.id, n.n]))]));

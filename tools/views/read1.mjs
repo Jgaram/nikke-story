@@ -10,6 +10,7 @@
  *   - 읽는 순서 = R 항목 순서(출시순 한 줄). 단위의 자리는 그 단위가 처음 나온 자리(1부터).
  *   - 단위 → 단위 엣지는 (from, to, 타입)마다 사건 수를 센다. 같은 단위 안의 사건은 단위 그래프에서 빼고 따로 센다.
  *   - 의문 상태: 회수 중 `전부`가 있으면 풀림, 회수가 있으면 일부, 없으면 열림(인계 파일과 같다).
+ *   - 대상별 수(targets.csv)는 만우절 단위(결정 #11 — tools/lib/fools.mjs)의 기록을 세지 않는다.
  *   - 메인과 이어진 기록(메인 밖 단위만): in = 메인에서 던진 의문 · 드러난 사실이 이 단위에서 회수 · 다시 드러남 · 뒤집힘,
  *     out = 이 단위의 의문 · 사실이 메인에서 회수 · 다시 드러남 · 뒤집힘. 메인은 중요도를 매기지 않아 비운다(사용자, 2026-10-04).
  *   - 대상별 수: 사실 · 의문 정의의 about. 사건(회수 · 드러냄 · 뒤집음)은 about이 없어 부모 정의의 about을 물려받는다.
@@ -20,6 +21,7 @@ import { kindOfKey } from '../records/order.mjs';
 import { compareIds, isRecord } from '../records/model.mjs';
 import { computeLayers } from '../records/layers.mjs';
 import { threadMembership } from '../records/threads.mjs';
+import { isAprilFools } from '../lib/fools.mjs';
 
 export const EDGE_OF_ACT = { 회수: 'setup_payoff', 드러냄: 'callback', 뒤집음: 'reversal' };
 /** 드문 대상 — about으로 다룬 단위가 이 수 이하인 대상(빈 곳 재기에만 쓴다) */
@@ -220,16 +222,20 @@ export function buildRead1Views(ds, ctx, order) {
     if (!tg.has(id)) tg.set(id, { facts: 0, questions: 0, open: 0, events: 0, units: new Set(), introduced: [], links: 0 });
     return tg.get(id);
   };
+  // 만우절 단위의 기록은 세지 않는다(결정 #11 — tools/lib/fools.mjs)
   for (const f of facts) for (const t of new Set(aboutOf(f))) {
+    if (isAprilFools(recUnit(f))) break;
     T(t).facts++;
     T(t).units.add(recUnit(f));
   }
   for (const q of questions) for (const t of new Set(aboutOf(q))) {
+    if (isAprilFools(recUnit(q))) break;
     T(t).questions++;
     if (qState(q) === '열림') T(t).open++;
     T(t).units.add(recUnit(q));
   }
   for (const e of events) for (const t of new Set(aboutOf(byId.get(e.parent)))) {
+    if (isAprilFools(recUnit(e))) break;
     T(t).events++;
     T(t).units.add(recUnit(e));
   }

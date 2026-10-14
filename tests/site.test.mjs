@@ -57,7 +57,8 @@ test('단위 481 · 공개 자리 158 · 씬 단위 매핑 · 키 이름은 영�
   for (const u of units) {
     assert.ok(u.kind && u.title && u.order && u.tick && u.date, u.key);
     assert.ok(['main', 'event', 'side', 'sub', 'relic', 'erelic', 'episode', 'elevator'].includes(u.kind), `${u.key} ${u.kind}`);
-    assert.ok(['메인', '척추', '필수', '보강', '참고', '독립'].includes(u.grade), `${u.key} ${u.grade}`);
+    assert.ok(['메인', '척추', '필수', '보강', '참고', '독립', '만우절'].includes(u.grade), `${u.key} ${u.grade}`);
+    assert.equal(u.grade === '만우절', u.fool === 1, `${u.key} — 만우절 표시는 fool 칸과 같이 간다(결정 #11)`);
     assert.ok([1, 2, 3].includes(u.layer), `${u.key} layer ${u.layer}`);
   }
   assert.equal(units.find((u) => u.key === 'ch07').title, 'CH.07 재회');

@@ -220,6 +220,7 @@ export async function mount(root, ctx) {
       h('div', { class: 'w-meta' }, dots([
         showTopic && r.topic ? h('span', { class: 'w-kind' }, r.topic) : null,
         u ? ui.link(`unit:${r.unit}`, u.title, { class: 'w-unit' }) : null,
+        u?.fool ? ui.chip('grade', '만우절') : null, // 만우절 — 수에서 뺐지만 기록은 남긴다(결정 #11)
         ev ? ui.link(`scene:${ev.scene}`, u ? fmt.refIn(ev.scene, r.unit) : fmt.ref(ev.scene), { class: 'w-ref' }) : null,
         r.confidence === '추정' ? ui.chip('confidence', '추정') : null,
       ])),

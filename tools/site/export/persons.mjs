@@ -96,12 +96,14 @@ export async function run(ctx) {
       closures: list(r.closures), merges: list(r.merges),
     });
   });
+  const foolUnits = new Set(common.units.filter((u) => u.fool).map((u) => u.key));
   for (const p of persons) {
     const d = detail.get(p.id);
     if (!d) continue;
     const sum = (k) => d.units.reduce((n, u) => n + (u[k] ?? 0), 0);
     if (sum('scenes') !== (p.scenes ?? 0) || sum('lines') !== (p.lines ?? 0)) warn({ where: 'persons', msg: `${p.id}: 단위 표의 합(${sum('scenes')}씬 ${sum('lines')}줄)이 인물 표(${p.scenes}씬 ${p.lines}줄)와 다르다` });
-    if (d.changes.length !== (p.baselines ?? 0) + (p.changes ?? 0)) warn({ where: 'persons', msg: `${p.id}: 변화 타임라인 ${d.changes.length}건 ≠ 기준 ${p.baselines} + 변화 ${p.changes}` });
+    const counted = d.changes.filter((c) => !foolUnits.has(c.unit)).length; // 인물 표의 수는 만우절 단위를 뺐다(결정 #11)
+    if (counted !== (p.baselines ?? 0) + (p.changes ?? 0)) warn({ where: 'persons', msg: `${p.id}: 변화 타임라인 ${counted}건(만우절 빼고) ≠ 기준 ${p.baselines} + 변화 ${p.changes}` });
   }
 
   // ── 쌍 — 공개 자리마다 다시 센다 ──
@@ -133,6 +135,7 @@ function pairsByTick(ctx, targets) {
   const unitOfScene = new Map(ctx.common.scenes.map((s) => [s.id, s.unit]));
   const layerOfUnit = new Map(ctx.common.units.map((u) => [u.key, u.layer ?? 0]));
   const extra = new Set(ctx.common.units.filter((u) => u.opt).map((u) => u.key)); // state.js pickable과 같다
+  const foolUnits = new Set(ctx.common.units.filter((u) => u.fool).map((u) => u.key));
   const ps = personScenes({ db: ctx.db, targetIds: new Set(targets.keys()) }, ctx.records.ds);
   const members = new Map(); // 씬 → [{ t, talk }]
   for (const [t, scenes] of ps) {
@@ -144,7 +147,7 @@ function pairsByTick(ctx, targets) {
     if (ms.length < 2) continue;
     const unit = unitOfScene.get(s);
     const tick = unit ? ctx.common.placeOf.get(unit)?.tick : null;
-    if (tick == null) continue;
+    if (tick == null || foolUnits.has(unit)) continue; // 만우절 단위는 세지 않는다(결정 #11 — tools/views/persons.mjs와 같다)
     ms.sort((x, y) => (x.t < y.t ? -1 : x.t > y.t ? 1 : 0));
     for (let i = 0; i < ms.length; i++) {
       for (let j = i + 1; j < ms.length; j++) {

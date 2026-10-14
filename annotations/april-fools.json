@@ -1,0 +1,15 @@
+{
+  "_comment": [
+    "만우절 단위 — docs/decisions.md 결정 #11. 여기 든 읽기 단위는 숫자 집계(등장 수 · 말한 줄 · 등급 판정 · 연결 선 · 흔한 대상의 분모)에서 빠진다.",
+    "원문 · 기록은 그대로 두고 화면은 '만우절' 표시로 남긴다. 범위 밖(scope.json, 결정 #5)과 따로다 — 읽기 · 기록 검사는 그대로 된다.",
+    "앞으로의 4월 1일 이벤트도 넣는다 — tests/april-fools.test.mjs가 출시일 4월 1일인 이벤트와 이 목록을 맞댄다. 함수는 tools/lib/fools.mjs."
+  ],
+  "units": [
+    { "unit": "event_fullfoolday", "title": "FULL FOOL DAY", "date": "2023-04-01" },
+    { "unit": "event_liarsend", "title": "LIAR'S END", "date": "2024-04-01" },
+    { "unit": "event_foolburstday", "title": "FOOL BURST DAY", "date": "2025-04-01" }
+  ],
+  "missing": [
+    { "title": "FOOL METAL PANIC!", "date": "2026-04-01", "note": "원문이 없다(블라링크 · 금서고에 아직 없음) — 원문이 들어오면 units로 옮긴다" }
+  ]
+}

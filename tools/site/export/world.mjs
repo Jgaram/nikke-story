@@ -24,6 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, compact, evidenceOut, list, num } from '../lib.mjs';
+import { isAprilFools } from '../../lib/fools.mjs';
 
 export const name = 'world';
 
@@ -136,11 +137,13 @@ export async function run(ctx) {
   }
   life.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || String(a.scene).localeCompare(String(b.scene)) || (a.line ?? 0) - (b.line ?? 0));
   const recIndex = new Map(common.records.map((r) => [r.id, r]));
+  const foolRecs = new Set(common.records.filter((r) => isAprilFools(r.unit)).map((r) => r.id));
   for (const e of entries.values()) {
     // targets.csv의 사실 수와 about 집계가 어긋나면 알린다(기록이 바뀌었는데 draft를 안 돌린 경우)
-    if (e.facts != null && e.facts !== e.recs.F.length) warn({ where: 'world', msg: `${e.id} 사실 수가 다르다: targets.csv ${e.facts} · about 집계 ${e.recs.F.length}(집계 쪽을 쓴다)` });
-    e.facts = e.recs.F.length;
-    e.questions = e.recs.Q.length;
+    if (e.facts != null && e.facts !== e.recs.F.filter((x) => !foolRecs.has(x[0])).length) warn({ where: 'world', msg: `${e.id} 사실 수가 다르다: targets.csv ${e.facts} · about 집계 ${e.recs.F.length}(집계 쪽을 쓴다)` });
+    // 수는 만우절 단위의 기록을 빼고(결정 #11), 목록(recs)에는 남긴다 — 화면이 단위의 '만우절' 표시를 단다
+    e.facts = e.recs.F.filter((x) => !foolRecs.has(x[0])).length;
+    e.questions = e.recs.Q.filter((x) => !foolRecs.has(x[0])).length;
     if (e.first_tick == null) {
       // targets.csv에 없는 항목(사실 · 의문이 없는 사전 항목) — 어느 기록이든 첫 자리
       const all = REC_KINDS.flatMap((k) => e.recs[k]);
@@ -157,7 +160,7 @@ export async function run(ctx) {
     const ea = entries.get(a);
     const ids = new Set(REC_KINDS.flatMap((k) => ea.recs[k].map((x) => x[0])));
     const out = [];
-    for (const k of REC_KINDS) for (const [id, tick] of entries.get(b).recs[k]) if (ids.has(id)) out.push([id, tick]);
+    for (const k of REC_KINDS) for (const [id, tick] of entries.get(b).recs[k]) if (ids.has(id) && !foolRecs.has(id)) out.push([id, tick]); // 만우절 기록은 세지 않는다(target-pairs.csv와 같다)
     return out.sort((x, y) => (x[1] ?? 1e9) - (y[1] ?? 1e9) || String(x[0]).localeCompare(String(y[0])));
   };
   let pairMismatch = 0;
@@ -180,7 +183,7 @@ export async function run(ctx) {
   }
 
   // ── 흔한 개념 — 중심인 단위(spread)가 읽기 단위의 HUB_SHARE를 넘는 대상(X2와 같은 규칙) ──
-  const hubLimit = Math.round(common.units.length * HUB_SHARE);
+  const hubLimit = Math.round(common.units.filter((u) => !u.fool).length * HUB_SHARE); // 분모 — 만우절 단위 빼고
   const spread = new Map();
   for (const r of csv('data/views/links/centers.csv')) if (entries.has(r.target)) spread.set(r.target, num(r.spread) ?? 0);
   const hubs = [];

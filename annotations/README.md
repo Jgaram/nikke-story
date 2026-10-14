@@ -45,6 +45,12 @@
 docs/decisions.md 결정 #5를 적은 것. 여기 걸리는 노드(돌발 — `d_ex_elevator_01` 빼고, 시트 참고 노드)는 `stories.in_scope = 0`이 되고
 통계 · 자동 기록 · 후보 · 이름표 분류 검사에서 빠진다. 읽기(`read.mjs`)는 그대로 된다. 자세한 것은 [../docs/schema.md](../docs/schema.md) "분석 범위".
 
+## april-fools.json — 만우절 단위
+
+docs/decisions.md 결정 #11을 적은 것. 여기 든 읽기 단위는 범위 안이지만 **숫자 집계에서 빠진다**(등장 · 말한 줄 · 등급 판정 · 연결 선 · 흔한 대상의 분모).
+원문 · 기록은 그대로, 화면은 '만우절' 표시. 함수는 `tools/lib/fools.mjs`, 무엇에서 빠지는지는 [../docs/views.md](../docs/views.md) "화면 공통".
+4월 1일 이벤트가 새로 들어오면 넣는다 — `tests/april-fools.test.mjs`가 출시일 4월 1일인 이벤트와 맞댄다(원문이 아직 없는 것은 `missing`).
+
 ## dictionary/ — 인물 사전 · 이름표 분류 (A1) · 비인물 사전 (A2)
 
 | 파일 | 내용 |

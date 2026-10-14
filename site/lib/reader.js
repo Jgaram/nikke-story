@@ -430,11 +430,11 @@ function fold(title, build, { open = false, cls = '' } = {}) {
 /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
 const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title ?? ''); return m ? [ui.el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
 /** 등급 → 띠 색 글자 꾸밈(style.css .g-label) — 참고 · 독립은 회색, 필수(척추)는 잉크 */
-const GRADE_TONE = { 참고: 'is-quiet', 독립: 'is-quiet', 척추: 'is-spine' };
+const GRADE_TONE = { 참고: 'is-quiet', 독립: 'is-quiet', 척추: 'is-spine', 만우절: 'is-quiet' };
 
 /** 스토리 머리의 회색 한 줄 — 등급 이름(그 시점) · 종류(메인은 빼고) · 출시 날짜(메인은 날짜만 — 제목에 CH가 있다) */
 function unitSub(u, j) {
-  const g = u.kind === 'main' ? null : j ? fmt.gradeAt(j, state.reading()) : (u.grade === '척추' ? '척추' : null);
+  const g = u.kind === 'main' ? null : j ? fmt.gradeAt(j, state.reading()) : (u.grade === '척추' || u.grade === '만우절' ? u.grade : null);
   const date = u.date ?? idx0()?.ticks.get(u.tick)?.date ?? null;
   const when = u.kind === 'main' ? date : [fmt.tickShort(u.tick), date].filter(Boolean).join(' · ');
   const parts = [
@@ -466,7 +466,7 @@ function classPanel(u, idx, hidden) {
   const chrono = chronoRow(u);
   if (!j) {
     const rows = [preRow, preForRow, chrono].filter(Boolean);
-    if (u.grade === '척추') return ui.panel(fmt.TERM.judgment, [ui.el('div', { class: 'chips' }, ui.chip('grade', '척추')), rows.length ? kv(rows) : null], { actions: action });
+    if (u.grade === '척추' || u.grade === '만우절') return ui.panel(fmt.TERM.judgment, [ui.el('div', { class: 'chips' }, ui.chip('grade', u.grade)), rows.length ? kv(rows) : null], { actions: action });
     return rows.length ? ui.panel(fmt.TERM.judgment, kv(rows), { actions: action }) : null;
   }
   const t = T();

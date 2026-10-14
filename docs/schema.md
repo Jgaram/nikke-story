@@ -387,6 +387,7 @@ DB는 다 만든 뒤 롤백 저널 모드로 바꿔 파일 하나(`-wal`/`-shm` 
 - 범위 밖도 **수집 · 정규화 · `read.mjs` 읽기는 그대로** 된다. `read.mjs`는 머리말에 범위 밖이라고 알려 준다.
 - `query.mjs`의 `search` · `speaker` · `speakers` · `stats`는 범위 안만 센다. `--all`이면 범위 밖도 넣는다.
 - 자동 기록(B2) · 후보 · 통계는 `in_scope = 1`만 본다.
+- **만우절 단위**(결정 #11 — `annotations/april-fools.json`)는 범위 안이다 — DB는 그대로 세고, 시안 표 · 사이트의 숫자 집계에서만 뺀다(`tools/lib/fools.mjs`, docs/views.md "화면 공통" 만우절).
 
 ## 이름표 분류 (A1 · T2-6)
 

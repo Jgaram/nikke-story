@@ -750,8 +750,7 @@ char:91,char:220,keyword,1,1,auto,0,,concept:랩쳐,106,113,호감도,호감도
 char:91,char:92,keyword,1,2,auto,0,,org:앱솔루트,106,127,호감도,호감도
 char:91,ch31,character,1,2,auto,0,,person:베스티,106,308,호감도,메인
 char:60,char:172,keyword,1,2,auto,0,,concept:퍼펙트,107,117,호감도,호감도
-char:60,event_fullfoolday,character,1,2,auto,0,,person:벨로타,107,186,호감도,이벤트
-char:60,event_neverland1,character,1,2,auto,0,,person:미카,107,258,호감도,이벤트
+char:60,event_neverland1,character,2,2,auto,0,,person:미카 person:벨로타,107,258,호감도,이벤트
 char:431,char:80,keyword,1,1,auto,0,,place:방주,108,110,호감도,호감도
 char:431,event_goldencoinrush1,character,1,2,auto,0,,person:볼륨,108,300,호감도,이벤트
 char:70,char:71,character,1,2,auto,0,,person:솔린,109,111,호감도,호감도
@@ -813,8 +812,8 @@ char:191,char:291,keyword,2,1,auto,0,,concept:니케 place:방주,118,120,호감
 char:191,char:193,character,2,2,auto,0,,person:루드밀라 person:앨리스,118,154,호감도,호감도
 char:201,char:160,character,1,1,auto,0,,person:아니스,119,124,호감도,호감도
 char:201,char:203,keyword,1,2,auto,0,,place:로열_로드,119,155,호감도,호감도
-char:201,event_fullfoolday,keyword,1,2,auto,0,,concept:크레디트,119,186,호감도,이벤트
 char:201,event_bluewaterisland,character,1,2,auto,0,,person:얀,119,209,호감도,이벤트
+char:201,char:281,keyword,1,2,auto,0,,concept:크레디트,119,266,호감도,호감도
 char:291,char:90,keyword,2,1,auto,0,,concept:니케 place:지상,120,123,호감도,호감도
 char:291,char:160,keyword,1,1,auto,0,,place:방주,120,124,호감도,호감도
 char:291,event_hightechtoy,keyword,1,2,auto,0,,concept:양산형_니케,120,151,호감도,이벤트
@@ -1174,11 +1173,11 @@ char:402,fl:go_ninja_thief,callback,1,3,record,0,E1441,,173,412,호감도,이벤
 char:112,char:311,keyword,1,1,auto,0,,concept:니케,174,176,호감도,호감도
 char:112,char:800,keyword,1,1,auto,0,,org:중앙_정부,174,178,호감도,호감도
 char:112,event_cherryblossom,keyword,1,2,auto,0,,place:아우터_림,174,183,호감도,이벤트
-char:112,event_fullfoolday,character,1,2,auto,0,,person:시프티,174,186,호감도,이벤트
 char:112,ch22,character,1,2,auto,0,,person:바이퍼,174,195,호감도,메인
 char:112,ch22,keyword,1,2,auto,0,,org:이그조틱,174,195,호감도,메인
 char:112,ch23,character,1,2,auto,0,,person:크로우,174,214,호감도,메인
 char:112,ch24,setup_payoff,1,2,record,0,E1601,,174,219,호감도,메인
+char:112,ch27,character,1,2,auto,0,,person:시프티,174,270,호감도,메인
 event_maidinvalentine,char:311,character,1,2,auto,0,,person:코코아,175,176,이벤트,호감도
 event_maidinvalentine,char:312,character,1,2,auto,0,,person:소다,175,177,이벤트,호감도
 event_maidinvalentine,char:800,keyword,1,1,auto,0,,place:지상,175,178,이벤트,호감도
@@ -1231,10 +1230,10 @@ event_cherryblossom,event_newyearnewsword,character,1,2,auto,0,,person:노이즈
 event_cherryblossom,fl:for_rest,callback,2,3,record,0,E1420 F836-2,,183,365,이벤트,이벤트
 event_cherryblossom,event_staranis1,setup_payoff,1,3,record,0,Q115-2,,183,454,이벤트,이벤트
 char:261,char:282,keyword,1,1,auto,0,,place:방주,184,185,호감도,호감도
-char:261,event_fullfoolday,keyword,2,1,auto,0,,concept:랩쳐 place:지상,184,186,호감도,이벤트
 char:261,event_ltk,keyword,1,1,auto,0,,concept:니케,184,187,호감도,이벤트
+char:261,char:40,keyword,1,1,auto,0,,place:지상,184,188,호감도,호감도
 char:261,ch21,character,1,1,auto,0,,person:아니스,184,189,호감도,메인
-char:261,ch21,keyword,3,2,auto,0,,concept:언체인드 concept:헬레틱 place:에덴,184,189,호감도,메인
+char:261,ch21,keyword,4,2,auto,0,,concept:랩쳐 concept:언체인드 concept:헬레틱 place:에덴,184,189,호감도,메인
 char:261,ch22,character,2,2,auto,0,,person:니힐리스타 person:토커티브,184,195,호감도,메인
 char:261,event_overzone,character,1,2,auto,0,,person:퀸,184,200,호감도,이벤트
 char:261,event_lastkingdom1,callback,1,2,record,0,E399,,184,295,호감도,이벤트
@@ -1246,11 +1245,6 @@ char:261,fl:ark_guardian,callback,1,3,record,0,E969,,184,428,호감도,이벤트
 char:282,event_ltk,keyword,1,1,auto,0,,place:방주,185,187,호감도,이벤트
 char:282,ch22,character,1,2,auto,0,,person:사쿠라,185,195,호감도,메인
 char:282,ch22,keyword,1,2,auto,0,,org:세이메이카이,185,195,호감도,메인
-event_fullfoolday,char:40,keyword,1,1,auto,0,,place:지상,186,188,이벤트,호감도
-event_fullfoolday,ch21,keyword,1,1,auto,0,,concept:랩쳐,186,189,이벤트,메인
-event_fullfoolday,event_neverland1,character,1,2,auto,0,,person:벨로타,186,258,이벤트,이벤트
-event_fullfoolday,char:281,keyword,1,2,auto,0,,concept:크레디트,186,266,이벤트,호감도
-event_fullfoolday,ch27,character,1,2,auto,0,,person:시프티,186,270,이벤트,메인
 event_fullfoolday,event_liarsend,sequel,1,2,manual,0,Y5,,186,287,이벤트,이벤트
 event_ltk,char:40,character,1,2,auto,0,,person:D,187,188,이벤트,호감도
 event_ltk,char:40,keyword,3,2,auto,0,,org:저지스 place:방주 place:아우터_림,187,188,이벤트,호감도
@@ -1639,7 +1633,6 @@ event_freezeacpu,ch25,character,1,1,auto,0,,person:아니스,239,241,이벤트,�
 event_freezeacpu,ch25,keyword,1,2,auto,0,,org:카운터스,239,241,이벤트,메인
 event_freezeacpu,event_perfectmaid,character,1,2,auto,0,,person:드레이크,239,267,이벤트,이벤트
 event_freezeacpu,event_phantomthiefvsdetective,callback,1,3,record,0,E1390,,239,328,이벤트,이벤트
-event_freezeacpu,event_foolburstday,callback,1,3,record,0,E1429,,239,369,이벤트,이벤트
 char:33,ch25,keyword,1,1,auto,0,,place:방주,240,241,호감도,메인
 char:33,sub:산해진미_01,keyword,1,2,auto,0,,org:A.C.P.U.,240,243,호감도,서브퀘스트
 char:33,event_onemoretime,callback,1,3,record,0,E1362,,240,289,호감도,이벤트
@@ -1704,13 +1697,13 @@ ch26,ch27,sequel,1,3,auto,0,,,246,270,메인,메인
 ch26,ch27,setup_payoff,1,3,record,0,Q155-2,,246,270,메인,메인
 ch26,ch27,keyword,2,2,auto,0,,concept:마더_웨일 concept:웨일리,246,270,메인,메인
 ch26,relic:잘지내라친구,callback,1,3,record,0,E333,,246,274,메인,유실물
-ch26,event_liarsend,character,1,2,auto,0,,person:슈엔,246,287,메인,이벤트
 ch26,side:second_affection,callback,2,3,record,0,E362 E367,,246,288,메인,사이드
 ch26,side:second_affection,character,3,2,auto,0,,person:마리안 person:차임 person:크라운,246,288,메인,사이드
 ch26,ch29,keyword,1,2,auto,0,,org:필그림,246,291,메인,메인
 ch26,ch32,setup_payoff,1,3,record,0,E270,,246,310,메인,메인
 ch26,ch32,callback,1,3,record,0,E449,,246,310,메인,메인
 ch26,ch32,keyword,1,2,auto,0,,place:에덴,246,310,메인,메인
+ch26,side:wordless,character,1,2,auto,0,,person:슈엔,246,331,메인,사이드
 ch26,ch34,setup_payoff,1,3,record,0,E271,,246,336,메인,메인
 ch26,event_footstepwalkrun1,callback,1,3,record,0,E575,,246,350,메인,이벤트
 ch26,ch35,setup_payoff,1,3,record,0,E271,,246,358,메인,메인
@@ -1884,10 +1877,10 @@ event_perfectmaid,char:313,character,1,2,auto,0,,person:프리바티,267,268,이
 event_perfectmaid,char:310,character,2,2,auto,0,,person:에이드 person:코코아,267,269,이벤트,호감도
 event_perfectmaid,ch27,keyword,1,1,auto,0,,concept:니케,267,270,이벤트,메인
 event_perfectmaid,event_boomsday,keyword,1,2,auto,0,,org:미실리스,267,280,이벤트,이벤트
-event_perfectmaid,event_liarsend,keyword,1,2,auto,0,,org:메티스,267,287,이벤트,이벤트
 event_perfectmaid,event_goldencoinrush1,callback,1,2,record,0,E1365,,267,300,이벤트,이벤트
 event_perfectmaid,event_goldencoinrush1,keyword,1,2,auto,0,,org:메이드_포_유,267,300,이벤트,이벤트
 event_perfectmaid,char:403,character,1,2,auto,0,,person:드레이크,267,329,이벤트,호감도
+event_perfectmaid,ch35,keyword,1,2,auto,0,,org:메티스,267,358,이벤트,메인
 event_perfectmaid,fl:coins_in_rush,callback,1,2,record,0,E866,,267,404,이벤트,이벤트
 event_perfectmaid,fl:2x2_love_1ch,callback,1,3,record,0,E1498,,267,444,이벤트,이벤트
 event_perfectmaid,fl:2x2_love_2ch,callback,1,2,record,0,E1513,,267,445,이벤트,이벤트
@@ -1948,14 +1941,14 @@ ch28,sub:핸섬_커맨더_01,keyword,1,1,auto,0,,place:방주,275,277,메인,서
 ch28,event_boomsday,setup_payoff,1,3,record,0,Q171-2,,275,280,메인,이벤트
 ch28,event_boomsday,callback,1,3,record,0,E350,,275,280,메인,이벤트
 ch28,event_boomsday,character,1,2,auto,0,,person:일레그,275,280,메인,이벤트
-ch28,event_liarsend,keyword,2,1,auto,0,,concept:랩쳐 place:지상,275,287,메인,이벤트
-ch28,side:second_affection,keyword,1,2,auto,0,,concept:타일런트_급,275,288,메인,사이드
+ch28,side:second_affection,keyword,2,2,auto,0,,concept:랩쳐 concept:타일런트_급,275,288,메인,사이드
 ch28,ch29,sequel,1,3,auto,0,,,275,291,메인,메인
 ch28,ch29,setup_payoff,1,2,record,0,Q172-2,,275,291,메인,메인
 ch28,ch29,callback,1,3,record,0,E373,,275,291,메인,메인
 ch28,ch29,character,4,2,auto,0,,person:리버린 person:아니스 person:언노운 person:해머링,275,291,메인,메인
 ch28,ch29,keyword,1,2,auto,0,,item:세븐스_드워프,275,291,메인,메인
 ch28,ch30,setup_payoff,2,3,record,0,E338 Q170-2,,275,293,메인,메인
+ch28,event_lastkingdom1,keyword,1,1,auto,0,,place:지상,275,295,메인,이벤트
 ch28,event_darkhero,setup_payoff,1,3,record,0,Q171-3,,275,298,메인,이벤트
 ch28,ch31,setup_payoff,2,3,record,0,E340 Q170-3,,275,308,메인,메인
 ch28,ch32,setup_payoff,1,3,record,0,Q170-4,,275,310,메인,메인
@@ -2014,17 +2007,12 @@ event_killthelord,event_lordforjustice,sequel,1,2,manual,0,Y24,,282,385,이벤�
 event_killthelord,event_lordforjustice,callback,1,3,record,0,E735,,282,385,이벤트,이벤트
 event_killthelord,event_lordforjustice,keyword,1,2,auto,0,,concept:미스트,282,385,이벤트,이벤트
 event_killthelord,fl:reborn_evil,callback,1,3,record,0,E883,,282,407,이벤트,이벤트
-char:43,event_liarsend,keyword,1,1,auto,0,,concept:니케,283,287,호감도,이벤트
+char:43,event_onemoretime,keyword,1,1,auto,0,,concept:니케,283,289,호감도,이벤트
 char:43,event_arcanearchive,character,1,2,auto,0,,person:D,283,383,호감도,이벤트
 char:822,event_goldencoinrush1,character,1,2,auto,0,,person:코코아,284,300,호감도,이벤트
 char:821,event_goldencoinrush1,character,1,2,auto,0,,person:소다,285,300,호감도,이벤트
 char:821,fl:terminus_ticket,character,1,2,auto,0,,person:디젤,285,425,호감도,이벤트
 char:820,fl:blank_ticket,character,1,2,auto,0,,person:솔린,286,423,호감도,이벤트
-event_liarsend,side:second_affection,keyword,1,1,auto,0,,concept:랩쳐,287,288,이벤트,사이드
-event_liarsend,event_onemoretime,keyword,1,1,auto,0,,concept:니케,287,289,이벤트,이벤트
-event_liarsend,event_lastkingdom1,keyword,1,1,auto,0,,place:지상,287,295,이벤트,이벤트
-event_liarsend,side:wordless,character,1,2,auto,0,,person:슈엔,287,331,이벤트,사이드
-event_liarsend,ch35,keyword,1,2,auto,0,,org:메티스,287,358,이벤트,메인
 side:second_affection,event_onemoretime,keyword,1,1,auto,0,,place:방주,288,289,사이드,이벤트
 side:second_affection,ch29,keyword,1,1,auto,0,,concept:랩쳐,288,291,사이드,메인
 side:second_affection,event_lastkingdom1,sequel,1,2,manual,0,Y25,,288,295,사이드,이벤트
@@ -2375,11 +2363,11 @@ ch33,event_wisdomspring,character,1,2,auto,0,,person:마나,334,353,메인,이�
 ch33,ch35,callback,3,3,record,0,E604 E609 E615,,334,358,메인,메인
 ch33,ch36,setup_payoff,2,3,record,0,E485 Q215-4,,334,360,메인,메인
 ch33,ch36,character,2,2,auto,0,,person:도로시 person:인디빌리아,334,360,메인,메인
-ch33,event_foolburstday,character,1,2,auto,0,,person:시프티,334,369,메인,이벤트
 ch33,ch37,callback,2,3,record,0,E647 E651,,334,373,메인,메인
 ch33,ch37,keyword,1,2,auto,0,,place:에덴,334,373,메인,메인
 ch33,ch38,setup_payoff,1,3,record,0,Q215-5,,334,375,메인,메인
 ch33,relic:은색액체,callback,1,3,record,0,E677,,334,376,메인,유실물
+ch33,event_unbreakablesphere1,character,1,2,auto,0,,person:시프티,334,377,메인,이벤트
 ch33,fl:absolute,callback,2,3,record,0,E837 E850,,334,400,메인,이벤트
 ch33,fl:coins_in_rush,character,1,2,auto,0,,person:엑시아,334,404,메인,이벤트
 ch33,side:eden_spear,character,2,2,auto,0,,person:니힐리스타 person:세실,334,411,메인,사이드
@@ -2522,7 +2510,7 @@ event_footstepwalkrun1,event_wisdomspring,keyword,3,1,auto,0,,concept:니케 pla
 event_footstepwalkrun1,ch35,callback,1,2,record,0,E585,,350,358,이벤트,메인
 event_footstepwalkrun1,ch35,character,1,2,auto,0,,person:잉그리드,350,358,이벤트,메인
 event_footstepwalkrun1,ch35,keyword,3,2,auto,0,,concept:랩쳐 org:앱솔루트 org:엘리시온,350,358,이벤트,메인
-event_footstepwalkrun1,event_foolburstday,keyword,1,1,auto,0,,org:중앙_정부,350,369,이벤트,이벤트
+event_footstepwalkrun1,event_unbreakablesphere1,keyword,1,1,auto,0,,org:중앙_정부,350,377,이벤트,이벤트
 event_footstepwalkrun1,event_arcanearchive,keyword,1,2,auto,0,,org:갓데스,350,383,이벤트,이벤트
 event_footstepwalkrun1,event_ce006,keyword,1,2,auto,0,,concept:양산형_니케,350,387,이벤트,이벤트
 event_footstepwalkrun1,fl:boom_the_ghost,character,1,2,auto,0,,person:레드_후드,350,393,이벤트,이벤트
@@ -2656,20 +2644,16 @@ fl:for_rest,event_ce006,keyword,1,2,auto,0,,item:이터널_라이프,365,387,이
 char:412,fl:reborn_evil,character,1,2,auto,0,,person:폴리,366,407,호감도,이벤트
 char:412,char:841,character,1,2,auto,0,,person:미란다,366,410,호감도,호감도
 event_newflavor,char:520,character,2,2,auto,0,,person:브래디 person:크러스트,367,368,이벤트,호감도
-event_newflavor,event_foolburstday,keyword,2,1,auto,0,,place:방주 place:지상,367,369,이벤트,이벤트
-event_newflavor,side:mudfish,keyword,1,1,auto,0,,concept:니케,367,370,이벤트,사이드
+event_newflavor,side:mudfish,keyword,2,1,auto,0,,concept:니케 place:지상,367,370,이벤트,사이드
 event_newflavor,event_trueflavor,sequel,1,3,manual,0,Y40,,367,371,이벤트,이벤트
 event_newflavor,event_trueflavor,setup_payoff,1,3,record,0,E639,,367,371,이벤트,이벤트
 event_newflavor,event_trueflavor,keyword,1,2,auto,0,,org:쿠킹오일,367,371,이벤트,이벤트
 event_newflavor,char:521,keyword,1,2,auto,0,,concept:퍼펙트,367,372,이벤트,호감도
+event_newflavor,ch37,keyword,1,1,auto,0,,place:방주,367,373,이벤트,메인
 event_newflavor,fl:reborn_evil,character,1,2,auto,0,,person:엔더슨,367,407,이벤트,이벤트
 event_newflavor,fl:sin_editor,callback,1,2,record,0,E999,,367,430,이벤트,이벤트
 event_newflavor,fl:2x2_love_2ch,callback,1,3,record,0,E1508,,367,445,이벤트,이벤트
 char:520,event_trueflavor,character,2,2,auto,0,,person:브래디 person:크러스트,368,371,호감도,이벤트
-event_foolburstday,side:mudfish,keyword,1,1,auto,0,,place:지상,369,370,이벤트,사이드
-event_foolburstday,ch37,keyword,1,1,auto,0,,place:방주,369,373,이벤트,메인
-event_foolburstday,event_unbreakablesphere1,character,1,2,auto,0,,person:시프티,369,377,이벤트,이벤트
-event_foolburstday,event_unbreakablesphere1,keyword,1,1,auto,0,,org:중앙_정부,369,377,이벤트,이벤트
 side:mudfish,char:521,keyword,1,1,auto,0,,place:지상,370,372,사이드,호감도
 side:mudfish,ch37,setup_payoff,1,2,record,0,E643,,370,373,사이드,메인
 side:mudfish,ch37,character,1,2,auto,0,,person:레비아탄,370,373,사이드,메인

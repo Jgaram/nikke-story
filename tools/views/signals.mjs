@@ -11,6 +11,7 @@
  *     존댓말 비율 = 존댓말 / (존댓말 + 반말). 판정한 문장이 MIN_SENTENCES 이상인 단위끼리 비교해 SHIFT 이상 달라지면 표시.
  *   - 호칭: 지휘관을 부를 법한 말(ADDRESS)의 수 — 인물 이름과 같은 경계 규칙(낱말 앞 · 꼬리 규칙 · 가장 긴 것). 누구를 부르는지는 안 가린다.
  *     `당신`을 뺀 호칭 가운데 MIN_ADDRESS번 이상 나온 가장 많은 것이 앞 단위의 그것과 다르면 표시.
+ * 만우절 단위(결정 #11 — tools/lib/fools.mjs)는 세지 않는다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,6 +20,7 @@ import { COMMANDER, compilePersonNames } from '../normalize/mentions.mjs';
 import { loadPlaces } from '../lib/mentions.mjs';
 import { toCsv } from './draft.mjs';
 import { MENTIONS_DIR } from './mentions.mjs';
+import { isAprilFools } from '../lib/fools.mjs';
 
 export const ADDRESS = ['지휘관님', '지휘관', '주인님', '마스터', '오빠', '오라버니', '선배님', '선배', '형님', '아저씨', '선생님', '쌤', '보스', '여보', '당신'];
 export const MIN_SENTENCES = 8;
@@ -68,7 +70,7 @@ export async function buildSignals(db, { target } = {}) {
   const cells = new Map(); // `${t}\t${unit}` → 칸
   for (const l of lines) {
     const unit = places.unitOf(l.story_id);
-    if (!unit) continue;
+    if (!unit || isAprilFools(unit)) continue; // 만우절 단위는 세지 않는다(결정 #11)
     const k = `${l.t}\t${unit}`;
     let c = cells.get(k);
     if (!c) cells.set(k, (c = { target: l.t, name: names.get(l.t) ?? l.t, unit, order: places.unitPos.get(unit), lines: 0, polite: 0, plain: 0, other: 0, labels: new Map(), address: new Map() }));

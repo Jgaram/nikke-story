@@ -8,7 +8,8 @@
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
  * URL 파라미터(p.*)
- *   g      등급 필터(쉼표 목록: 척추 · 필수 · 보강 · 참고 · 독립 — 화면 말로 필수 · 준필수 · 추천 · 참고 · 독립), 없으면 척추 · 필수 · 보강(DEFAULT_GRADES).
+ *   g      등급 필터(쉼표 목록: 척추 · 필수 · 보강 · 참고 · 독립 · 만우절 — 화면 말로 필수 · 준필수 · 추천 · 참고 · 독립 · 만우절), 없으면 척추 · 필수 · 보강(DEFAULT_GRADES).
+ *          만우절은 등급이 아니라 표시다(결정 #11 — order.json fools, 등급 칩 줄 끝에 둔다).
  *          척추를 끄면 척추 이벤트 · 사이드가 빠진다(메인 챕터는 등급이 아니라 종류 main으로만 거른다)
  *   k      종류 필터(쉼표 목록, 칩 순서 KIND_PICK_ORDER: main · side · event · episode · sub · relic · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다.
  *          척추 줄도 종류를 따른다 — 이벤트를 끄면 필수 이벤트도 빠진다(사용자, 2026-10-10)
@@ -65,10 +66,10 @@ const LABELS = {
   openLine: (d) => `여기까지 오픈 스토리 · ${d}`, openLineHelp: '게임 출시 때부터 있던 스토리는 여기까지',
 };
 const GRADES = ['필수', '보강', '참고', '독립'];
-const PICK_GRADES = ['척추', ...GRADES]; // 필터 칩 — 척추(화면 말 '필수')도 끌 수 있다(사용자, 2026-10-10)
+const PICK_GRADES = ['척추', ...GRADES, '만우절']; // 필터 칩 — 척추(화면 말 '필수')도 끌 수 있다(사용자, 2026-10-10). 만우절은 등급 없는 표시(결정 #11)
 const DEFAULT_GRADES = ['척추', '필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
 /** 등급 → 띠 클래스(style.css .g-band — 필수 굵은 띠 + 진한 바탕 + 굵은 제목 · 준필수 굵은 띠 + 옅은 바탕 · 추천 얇은 띠 · 참고 · 독립 회색) */
-const BAND = { 척추: 'g-spine', 필수: 'g-must', 보강: 'g-support', 참고: 'g-quiet', 독립: 'g-quiet' };
+const BAND = { 척추: 'g-spine', 필수: 'g-must', 보강: 'g-support', 참고: 'g-quiet', 독립: 'g-quiet', 만우절: 'g-quiet' };
 const OFF_KINDS = ['relic', 'erelic']; // 유실물은 기본으로 뺀다(사용자, 2026-10-09)
 /** 종류 칩 순서(사용자, 2026-10-10) — 다른 탭의 KIND_ORDER와 따로 */
 const KIND_PICK_ORDER = ['main', 'side', 'event', 'episode', 'sub', 'relic', 'erelic', 'elevator'];
@@ -140,7 +141,8 @@ export async function mount(root, ctx) {
   const order = await data.load('order');
   wait.remove();
   const gl = (g) => fmt.GRADE[g]?.label ?? g;
-  const judged = order.units.map((j) => ({ ...j, unit: idx.units.get(j.key) })).filter((j) => j.unit);
+  // 만우절(order.json fools)은 등급 칸에 '만우절'을 넣어 같은 줄로 그린다 — 필터 칩 하나로 켜고 끈다
+  const judged = [...order.units, ...(order.fools ?? []).map((f) => ({ ...f, grade: '만우절' }))].map((j) => ({ ...j, unit: idx.units.get(j.key) })).filter((j) => j.unit);
   const judgedByKey = new Map(judged.map((j) => [j.key, j]));
   const spine = order.spine.map((s) => ({ ...s, unit: idx.units.get(s.key) })).filter((s) => s.unit);
   const spineByKey = new Map(spine.map((s) => [s.key, s]));

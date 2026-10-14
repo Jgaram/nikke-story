@@ -15,6 +15,7 @@ import { EMOTION_ASPECTS, EMOTION_CLOSURES, EMOTION_GRADE, emptySignal, layerSig
 import { RECHECK_GROUPS, buildImportance, emotionCheck, gradeAt, gradeHistory, recheckReasons, renderEmotionReport } from '../tools/views/importance.mjs';
 import { buildLeads, leadSignals, renderLeadsReport } from '../tools/views/leads.mjs';
 import { GRADES } from '../tools/records/model.mjs';
+import { aprilFoolUnits, isAprilFools } from '../tools/lib/fools.mjs';
 
 const db = await openDb();
 const ctx = await openContext(db);
@@ -104,14 +105,16 @@ test('중요도 시안 표 — 메인 밖 판정 전부 · 기준 시점 · 다�
   const v = buildImportance(ds, ctx, order, { readLayers: loadReadLayers() });
   const judged = ds.candidates.filter((c) => c.kind === 'layer' && c.status !== '기각').length;
   const spine = spineUnits(ds);
-  assert.equal(v.units.length + v.spine.length, judged, '판정 하나에 줄 하나 — 척추 단위는 spine 목록으로');
+  assert.equal(v.units.length + v.spine.length + v.fools.length, judged, '판정 하나에 줄 하나 — 척추 단위는 spine, 만우절 단위는 fools 목록으로');
+  assert.deepEqual(v.fools.map((u) => u.unit).sort(), [...aprilFoolUnits()].sort(), '만우절(결정 #11)은 채점하지 않는다 — 판정 K는 표시로 남긴다');
+  assert.ok(v.units.every((u) => !isAprilFools(u.unit)));
   assert.equal(v.spine.length, spine.size, '척추(X3f-1b) — 이벤트 8 · 사이드 3');
   assert.ok(v.units.every((u) => !/^ch\d/.test(u.unit) && !spine.has(u.unit)), '메인 · 척추는 채점하지 않는다');
   assert.ok(v.spine.every((u) => spine.has(u.unit) && u.judgment && u.spine && u.layer === 1), '척추 단위는 판정 K를 "척추" 표시로 남기고 1층');
   assert.ok(v.units.every((u) => /^\d{4}-\d{2}-\d{2}$/.test(u.asof)), '확정 판정은 모두 기준 시점이 있다');
   assert.ok(v.units.every((u) => u.layer === u.read_layer), '층은 2회독에서 읽은 층 그대로');
   assert.ok(v.pending.every((u) => u.recheck && !u.rechecked));
-  assert.ok(v.units.every((u) => RECHECK_GROUPS.some(([g]) => u.recheck.startsWith(g))), '판정마다 묶음이 하나 있다(기준 바꿈 — 432 모두 다시 본다)');
+  assert.ok(v.units.every((u) => RECHECK_GROUPS.some(([g]) => u.recheck.startsWith(g))), '판정마다 묶음이 하나 있다(기준 바꿈 — 모두 다시 본다)');
   const k = (unit) => v.units.find((u) => u.unit === unit);
   assert.match(k('char:90').recheck, /메인이 딛음/, '메인 ch15의 복선(E102)의 답이 여기 — 필수 후보로 본다');
   assert.match(k('event_wisdomspring').recheck, /^필수 다시/);

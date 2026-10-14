@@ -25,6 +25,8 @@
 | `event_overzone` OVER ZONE · `event_redash` RED ASH · `event_lastkingdom1` LAST KINGDOM · `event_oldtales1` OLD TALES · `event_goddessfall1` GODDESS FALL · `event_staranis1` STAR ANIS · `event_footstepwalkrun1` FOOTSTEP, WALK, RUN · `fl:ark_guardian` ARK GUARDIAN | `side:mudfish` MUDFISH · `side:eden_spear` EDEN SPEAR · `side:pretty_star` PRETTY STAR |
 
 - 척추 단위는 **채점하지 않는다**. 지금 판정(K)은 기각하지 않고 "척추" 표시로 남긴다(도구 — X3f-1c).
+- **만우절 단위**(결정 #11 — `annotations/april-fools.json`)도 채점하지 않는다 — 척추가 아니라 판정 밖이다. 판정(K)은 기각하지 않고 "만우절" 표시로 남는다(`importance.mjs` fools).
+  만우절이 아닌 개그 · 코미디는 다른 스토리와 같은 잣대다 — 개그라서 독립으로 보지 않는다(결정 #11).
 - 척추 이벤트 · 사이드와 이어진 기록(1회독 in · out, 2회독 떡밥 E)은 메인 챕터와 이어진 기록과 **같은 무게**다. 아래의 "척추"는 늘 메인 챕터 + 이 11을 뜻한다.
 - 이벤트 유실물(척추 이벤트 것도)과 연작의 다른 편(SECOND AFFECTION · WORDLESS · UNBREAKABLE SPHERE 등)은 척추가 **아니다** — 판정 단위다(5절).
 - 신작의 주년 · 신년 이벤트 · 사이드는 Claude가 같은 선정 기준으로 척추인지 정하고 알린다.

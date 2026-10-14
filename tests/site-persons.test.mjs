@@ -52,7 +52,9 @@ test('persons-detail.json — 히트맵 단위는 단위 표에 있고 읽는 �
     }
     assert.equal(scenes, p.scenes, `${d.id} 씬`);
     assert.equal(lines, p.lines, `${d.id} 줄`);
-    assert.equal(d.changes.length, (p.baselines ?? 0) + (p.changes ?? 0), `${d.id} 변화`);
+    assert.ok(d.units.every((e) => !unitByKey.get(e.unit).fool), `${d.id} — 만우절 단위의 등장은 세지 않는다(결정 #11)`);
+    const counted = d.changes.filter((c) => !unitByKey.get(c.unit)?.fool).length; // 변화는 목록에 남기고 수에서만 뺀다
+    assert.equal(counted, (p.baselines ?? 0) + (p.changes ?? 0), `${d.id} 변화`);
     for (const c of d.changes) assert.ok(['기준', '변화'].includes(c.act) && c.aspect && unitByKey.has(c.unit), `${d.id} ${c.id}`);
   }
 });

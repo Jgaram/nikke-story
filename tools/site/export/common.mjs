@@ -6,6 +6,7 @@
  *                  group — 종류 갈래(W16a, groupOf): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(픽업 이벤트) · event · episode
  *                  픽업 이벤트는 pickup(픽업 니케 이름 — data/release/major-events.csv) · anniv(주년 · 반주년 수, annivOf), 이벤트 유실물은 parent(딸린 이벤트 — 읽는 순서에서 바로 앞 이벤트)
  *                  check: 1 — 체크 칸 스토리(사이드 · 픽업 이벤트와 그 유실물 — 여기까지 읽음 팝업에서 메인과 따로 고르고, 판을 다시 쓰는 스토리, W16a). 체크 칸 규칙은 이 칸 하나다(state.js · versions · persons가 읽는다)
+ *                  grade: '메인' · '척추' · 판정 등급 · '만우절'(결정 #11 — 등급 없이 표시만, annotations/april-fools.json) · fool: 1(만우절 단위 — 숫자 집계에서 빠졌다)
  *                  opt: 1 — 고를 수 있는 스토리(메인 갈래가 아닌 것 전부 — check에 이벤트 · 호감도를 더한 것, W16b). 안 고르면 출시 순서(t)를 따르고, 안 봄으로 고르면 가린다
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
@@ -25,6 +26,7 @@ import { kindOfKey } from '../../records/order.mjs';
 import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } from '../lib.mjs';
 import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
 import { annivOf, loadMajorEvents } from '../../notices/major-events.mjs';
+import { APRIL_FOOLS_LABEL, isAprilFools } from '../../lib/fools.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -229,7 +231,8 @@ export async function run(ctx) {
     const r2 = read2.get(key);
     const ch = chrono.get(key);
     const scs = scenesOf.get(key) ?? [];
-    const grade = kind === 'main' ? '메인' : spine.has(key) ? '척추' : im?.grade || null;
+    const fool = isAprilFools(key);
+    const grade = kind === 'main' ? '메인' : spine.has(key) ? '척추' : fool ? APRIL_FOOLS_LABEL : im?.grade || null;
     const face = kind === 'episode' && u?.rid != null ? episodeIconOf(u.rid) : null;
     const hasFace = face && fs.existsSync(`${IMG_DIR}/${face}.png`);
     if (face && !hasFace) warn({ where: 'portraits', msg: `${key} 호감도 초상 ${face}을 받지 않았다 — node tools/site/portraits.mjs` });
@@ -238,7 +241,7 @@ export async function run(ctx) {
       order: num(r.order), tick: num(r.tick), date: r.date, date_confidence: r.confidence || undefined, via: r.via || undefined,
       grade, layer: num(r2?.layer), chars: num(r2?.chars), scenes: scs.length, lines: scs.reduce((n, s) => n + (s.lines ?? 0), 0),
       chrono: ch ? compact({ class: ch.class, place: ch.place, lo: num(ch.lo), hi: num(ch.hi), release_main: ch.release_main, drift: ch.drift }) : undefined,
-      judgment: im?.judgment || undefined, spine: spine.has(key) ? true : undefined,
+      judgment: im?.judgment || undefined, spine: spine.has(key) ? true : undefined, fool: fool ? 1 : undefined,
       face: hasFace ? face : undefined,
     });
   });

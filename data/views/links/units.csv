@@ -1,6 +1,6 @@
 order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_units,isolated,isolated_strong,record_only_isolated,main_in,main_out,main_units,center,title
 1,ch00,메인,0,7,6,1,6,2,,,,,,,org:스쿼드_04-F person:마리안 person:라피 person:아니스 concept:랩쳐,CHAPTER.00 추락
-2,ch01,메인,1,22,22,2,20,9,,,,,,,org:스쿼드_04-F place:시뮬레이션_룸 concept:블랙스미스 org:엘리시온 person:시프티 person:마리안,CHAPTER.01 침식
+2,ch01,메인,1,22,22,2,20,9,,,,,,,org:스쿼드_04-F place:시뮬레이션_룸 concept:블랙스미스 person:시프티 org:엘리시온 person:마리안,CHAPTER.01 침식
 3,relic:어느남자의수기,유실물,1,1,0,0,0,2,,고립,고립,0,0,,concept:랩쳐,어느 남자의 수기
 4,ch02,메인,2,19,16,2,12,12,,,,,,,concept:그레이브_디거 org:워드리스 org:3대_기업 person:유니 place:전초기지 person:미하라,CHAPTER.02 인식
 5,sub:칠리페퍼_00,서브퀘스트,1,3,1,1,1,4,,,,0,0,,person:칠리페퍼 person:아니스 place:방주,칠리페퍼 · 칠리페퍼 1
@@ -101,11 +101,11 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 100,char:130,호감도,1,3,4,0,1,3,,,,0,0,,person:페퍼 person:메어리 person:머스탱,메어리
 101,char:181,호감도,5,6,9,0,2,10,,,,0,0,,concept:이레귤러 person:메이든 concept:양산형_니케 person:잉그리드 concept:니케,메이든
 102,char:32,호감도,1,4,3,0,1,4,,,,0,0,,person:미란다 org:A.C.P.U. person:폴리 concept:니케,미란다
-103,char:61,호감도,2,3,5,0,1,4,,,,0,0,,person:미카 person:벨로타 place:전초기지 concept:퍼펙트,미카
+103,char:61,호감도,2,3,5,0,1,4,,,,0,0,,person:벨로타 person:미카 place:전초기지 concept:퍼펙트,미카
 104,char:161,호감도,1,2,3,0,1,2,,,,0,0,,person:미하라,미하라
 105,char:141,호감도,3,5,6,0,2,7,,,,0,0,,place:언더_아레나 person:밀크 person:슈가 concept:니케,밀크
 106,char:91,호감도,4,4,4,0,0,8,,,고립,0,0,,person:베스티 org:앱솔루트 concept:랩쳐 concept:니케,베스티
-107,char:60,호감도,1,3,4,0,0,4,,,고립,0,0,,person:미카 person:벨로타 concept:퍼펙트,벨로타
+107,char:60,호감도,1,2,3,0,0,3,,,고립,0,0,,person:벨로타 person:미카 concept:퍼펙트,벨로타
 108,char:431,호감도,1,2,1,0,0,3,,,고립,0,0,,person:볼륨 place:방주,볼륨
 109,char:70,호감도,2,3,4,0,0,5,,,고립,0,0,,person:브리드 person:디젤 person:솔린 concept:니케,브리드
 110,char:80,호감도,3,5,6,0,1,7,,,,0,0,,org:달란트 person:센티 person:얀 place:방주,센티
@@ -184,10 +184,10 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 183,event_cherryblossom,이벤트,7,8,11,0,4,13,,,,0,1,ch22,concept:꽃의_맹약 person:노이즈 org:세이메이카이 org:언더월드_퀸 person:로산나 person:목단,CHERRY BLOSSOM
 184,char:261,호감도,5,12,11,0,6,12,,,,4,0,ch20,person:니힐리스타 person:리버렐리오 person:토커티브 person:퀸 concept:언체인드 place:에덴,니힐리스타
 185,char:282,호감도,2,2,2,0,0,4,,,고립,0,0,,person:겐조 org:세이메이카이 person:사쿠라 place:방주,사쿠라
-186,event_fullfoolday,이벤트,4,6,7,1,0,9,,,고립,0,0,,concept:크레디트 person:벨로타 person:시프티 place:지상 concept:랩쳐,FULL FOOL DAY
+186,event_fullfoolday,이벤트,0,1,1,1,0,0,,,고립,0,0,,,FULL FOOL DAY
 187,event_ltk,이벤트,5,6,8,1,3,10,,,,0,0,,org:시지_패러리스 org:저지스 person:K person:D concept:양산형_니케 place:아우터_림,License to Kill
 188,char:40,호감도,2,4,4,0,0,6,,,고립,0,0,,org:저지스 person:D place:아우터_림 place:지상 place:방주,D
-189,ch21,메인,12,18,23,2,12,22,,,,,,,incident:2차_지상_탈환전 concept:마더_웨일 person:노아 person:파피용 person:하란 person:이사벨,CHAPTER.21 거경
+189,ch21,메인,11,18,23,2,12,21,,,,,,,incident:2차_지상_탈환전 concept:마더_웨일 person:노아 person:파피용 person:하란 person:이사벨,CHAPTER.21 거경
 190,sub:에덴_Notice_00,서브퀘스트,2,1,3,1,1,2,,,,0,0,,person:이사벨 person:세실 place:에덴,에덴 Notice · 에덴 Notice 1
 191,sub:에덴_Notice_01,서브퀘스트,3,3,4,2,1,5,,,,0,0,,person:이사벨 person:세실 place:에덴 concept:랩쳐,에덴 Notice · 에덴 Notice 2
 192,sub:에덴_Notice_02,서브퀘스트,2,5,7,1,4,4,,,,0,2,ch39 ch40,person:노아 person:하란 person:이사벨 person:요한 place:에덴,에덴 Notice · 에덴 Notice 3
@@ -237,7 +237,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 236,event_dazzlingcupid,이벤트,2,3,5,0,4,2,,,,0,0,,person:티아 person:나가 place:미미르_부속_고등학교,DAZZLING CUPID
 237,char:450,호감도,2,3,5,0,3,4,,,,0,0,,person:티아 person:나가 person:마르차나 place:미미르_부속_고등학교,나가
 238,char:451,호감도,2,2,4,0,2,3,,,,0,0,,person:티아 person:나가,티아
-239,event_freezeacpu,이벤트,7,5,10,0,4,9,,,,0,0,,person:키리 org:A.C.P.U. person:폴리 person:드레이크 org:카운터스 person:아니스,A.C.P.U.! FREEZE!
+239,event_freezeacpu,이벤트,7,4,9,0,3,9,,,,0,0,,person:키리 org:A.C.P.U. person:폴리 person:드레이크 org:카운터스 person:아니스,A.C.P.U.! FREEZE!
 240,char:33,호감도,3,6,8,0,2,9,,,,0,0,,person:키리 person:리타 org:A.C.P.U. person:폴리 place:전초기지 place:방주,키리
 241,ch25,메인,15,18,26,2,19,20,,,,,,,person:도반 person:차임 person:크라운 person:인디빌리아 person:니힐리스타 person:버닝엄,CHAPTER.25 추적
 242,relic:마더웨일아종목격보고.wav,유실물,1,2,3,0,1,2,,,,0,2,ch27,concept:마더_웨일,마더 웨일 아종 목격 보고.wav
@@ -256,9 +256,9 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 255,char:224,호감도,3,4,5,0,2,6,,,,0,0,,person:릴리바이스 person:스노우_화이트 concept:랩쳐 concept:니케,스노우 화이트 : 이노센트 데이즈
 256,event_alonesurvivor,이벤트,5,2,4,0,1,7,,,,0,0,,place:글리터_산맥 person:네베 person:토브 org:언리미티드 place:북부 person:루드밀라,ALONE SURVIVOR
 257,char:192,호감도,2,3,5,0,1,4,,,,2,0,ch06,person:토브 org:언리미티드 place:북부 person:루드밀라 concept:니케,토브
-258,event_neverland1,이벤트,13,7,17,0,3,18,,,,0,0,,org:스카우팅 place:천사_고아원 place:설온장 person:미카 person:벨로타 person:블랑,NEVERLAND
-259,char:194,호감도,2,4,5,0,2,5,,,,0,0,,place:천사_고아원 place:설온장 person:미카 person:벨로타 concept:로열 person:루드밀라,루드밀라 : 윈터 오너
-260,char:62,호감도,1,1,2,0,0,2,,,고립,0,0,,place:설온장 person:미카 person:벨로타,미카 : 스노우 버디
+258,event_neverland1,이벤트,12,7,16,0,3,17,,,,0,0,,org:스카우팅 place:천사_고아원 place:설온장 person:벨로타 person:미카 person:블랑,NEVERLAND
+259,char:194,호감도,2,4,5,0,2,5,,,,0,0,,place:천사_고아원 place:설온장 person:벨로타 person:미카 concept:로열 person:루드밀라,루드밀라 : 윈터 오너
+260,char:62,호감도,1,1,2,0,0,2,,,고립,0,0,,place:설온장 person:벨로타 person:미카,미카 : 스노우 버디
 261,event_newyearnewsword,이벤트,9,13,17,0,10,15,,,,0,5,ch46 ch47 ch48,item:화무십일홍 org:근접_전투_스쿼드 person:노이즈 person:장화 concept:페어리_테일 org:인류연합군,"NEW YEAR, NEW SWORD"
 262,char:225,호감도,5,5,10,0,2,9,,,,0,0,,org:근접_전투_스쿼드 person:릴리바이스 person:홍련 person:레드_후드 org:갓데스 person:도로시,홍련 : 흑영
 263,event_lionheart,이벤트,3,4,6,0,0,7,,,고립,0,0,,org:동물권_단체 person:티미 org:해피_주 person:레오나 person:비스킷 person:길로틴,LION HEART
@@ -285,8 +285,8 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 284,char:822,호감도,1,1,2,0,0,2,,,고립,0,0,,person:람 person:코코아,람
 285,char:821,호감도,2,2,4,0,0,4,,,고립,0,0,,person:에밀리아 person:소다 person:디젤,에밀리아
 286,char:820,호감도,1,1,2,0,0,2,,,고립,0,0,,person:렘 person:솔린,렘
-287,event_liarsend,이벤트,5,5,5,1,0,9,,,고립,0,0,,org:메티스 person:슈엔 place:지상 concept:랩쳐 concept:니케,LIAR'S END
-288,side:second_affection,사이드,8,5,9,1,3,12,,,,2,0,ch26,person:차임 person:크라운 concept:에블라_입자 concept:타일런트_급 person:라푼젤 person:홍련,SECOND AFFECTION
+287,event_liarsend,이벤트,1,0,1,1,0,0,,,고립,0,0,,,LIAR'S END
+288,side:second_affection,사이드,7,5,9,1,3,11,,,,2,0,ch26,person:차임 person:크라운 concept:에블라_입자 concept:타일런트_급 person:라푼젤 person:홍련,SECOND AFFECTION
 289,event_onemoretime,이벤트,3,6,5,1,3,8,,,,0,0,,org:리와인드 person:클레이 person:베이 person:폴리 place:방주 concept:니케,ONE MORE TIME
 290,char:550,호감도,1,2,3,0,1,2,,,,0,0,,org:리와인드 person:베이,베이
 291,ch29,메인,9,7,13,2,6,13,,,,,,,org:해머&드릴 person:드릴리 person:언노운 person:프레자일 person:해머링 item:세븐스_드워프,CHAPTER.29 구출
@@ -367,15 +367,15 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 366,char:412,호감도,3,2,5,0,0,5,,,고립,0,0,,person:트리나 person:플로라 person:미란다 person:폴리,트리나
 367,event_newflavor,이벤트,5,8,10,1,5,9,,,,0,0,,org:쿠킹오일 person:브래디 person:크러스트 concept:퍼펙트 person:엔더슨 place:지상,NEW FLAVOR
 368,char:520,호감도,1,1,2,0,0,2,,,고립,0,0,,person:브래디 person:크러스트,브래디
-369,event_foolburstday,이벤트,4,3,3,0,1,6,,,,0,0,,person:메카_시프티 person:시프티 org:중앙_정부 place:지상 place:방주,FOOL BURST DAY
-370,side:mudfish,사이드,9,6,12,2,10,12,,,,6,6,ch34 ch35 ch36 ch37 ch38 ch42,person:레비 person:글러트니 person:리틀_머메이드 person:유니 person:미하라 person:세이렌,MUDFISH
+369,event_foolburstday,이벤트,0,0,0,0,0,0,고립,고립,고립,0,0,,,FOOL BURST DAY
+370,side:mudfish,사이드,8,6,12,2,10,11,,,,6,6,ch34 ch35 ch36 ch37 ch38 ch42,person:레비 person:글러트니 person:리틀_머메이드 person:유니 person:미하라 person:세이렌,MUDFISH
 371,event_trueflavor,이벤트,2,1,3,1,1,3,,,,0,0,,org:쿠킹오일 person:브래디 person:크러스트,TRUE FLAVOR
 372,char:521,호감도,3,3,4,0,0,6,,,고립,0,0,,org:쿠킹오일 person:브래디 person:크러스트 concept:퍼펙트 place:지상,크러스트
 373,ch37,메인,18,12,28,2,20,20,,,,,,,org:오버시어 org:이지스 person:아이리 person:아비스타 person:헬름 person:지즈,CHAPTER.37 분투
 374,relic:주워갈것들메모,유실물,1,2,3,0,3,0,,,,1,3,ch25 ch38 ch42,,주워갈 것 들 메모
 375,ch38,메인,13,14,26,2,22,13,,,,,,,concept:은색_액체 org:이지스 person:글러트니 person:민트 person:프리카 person:헬름,CHAPTER.38 탐식
 376,relic:은색액체,유실물,2,2,4,0,2,3,,,,2,0,ch33 ch38,concept:은색_액체 concept:다크_매터 person:레비아탄 org:포비스트,은색 액체
-377,event_unbreakablesphere1,이벤트,20,15,32,3,16,26,,,,7,1,ch12 ch18 ch24 ch36 ch42,item:AA_필러 org:인큐베이터 concept:은색_액체 concept:콜링_시그널 person:글러트니 person:모리,UNBREAKABLE SPHERE
+377,event_unbreakablesphere1,이벤트,21,15,32,3,16,27,,,,7,1,ch12 ch18 ch24 ch36 ch42,item:AA_필러 org:인큐베이터 concept:은색_액체 concept:콜링_시그널 person:글러트니 person:모리,UNBREAKABLE SPHERE
 378,erelic:unbreakable_sphere_dialog,유실물,3,5,8,1,5,6,,,,1,0,ch36,person:레비 person:모리 person:그레텔 person:리틀_머메이드 person:헨젤 person:에이브,UNBREAKABLE SPHERE 필드 대화
 379,erelic:unbreakable_sphere_lost,유실물,4,2,6,1,4,2,,,,1,0,ch36,person:세이렌,UNBREAKABLE SPHERE 유실물
 380,char:513,호감도,6,4,8,0,3,8,,,,0,0,,person:그레텔 person:리틀_머메이드 person:헨젤 person:레드_슈즈 person:에이브 person:세이렌,리틀 머메이드
@@ -402,7 +402,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 401,char:93,호감도,1,0,1,0,0,1,,,고립,0,0,,person:엠마,엠마 : 택티컬 업
 402,char:95,호감도,3,4,6,0,1,6,,,,0,0,,person:은화 concept:NIMPH person:잉그리드 concept:랩쳐,은화 : 택티컬 업
 403,char:94,호감도,1,0,1,0,0,1,,,고립,0,0,,person:베스티,베스티 : 택티컬 업
-404,fl:coins_in_rush,이벤트,14,9,22,1,11,15,,,,1,0,ch35,org:쉐이드 person:벨벳 concept:크레디트 person:베이 person:루주 person:에이드,COINS IN RUSH
+404,fl:coins_in_rush,이벤트,14,9,22,1,11,15,,,,1,0,ch35,org:쉐이드 concept:크레디트 person:벨벳 person:베이 person:루주 person:에이드,COINS IN RUSH
 405,char:315,호감도,2,3,5,0,1,4,,,,0,0,,person:에이드 person:코코아,에이드 : 에이전트 바니
 406,char:143,호감도,4,4,6,0,1,8,,,,0,0,,person:에이드 person:밀크 person:슈가 place:코인_러시 concept:랩쳐,밀크 : 블루밍 바니
 407,fl:reborn_evil,이벤트,15,10,21,1,6,23,,,,0,0,,org:블레이즈_아웃 org:엄브렐러 person:X person:에이다 person:엘세리아_나인 person:질,REBORN EVIL

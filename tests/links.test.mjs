@@ -11,6 +11,7 @@ import { loadOrder } from '../tools/records/order.mjs';
 import { mergeEdges, read2Edges } from '../tools/records/read2.mjs';
 import { read1Edges } from '../tools/views/read1.mjs';
 import { CENTER, SKIP_TARGETS, TYPE_ORDER, buildLinks, centerWhy, keySequels } from '../tools/views/links.mjs';
+import { isAprilFools } from '../tools/lib/fools.mjs';
 
 const db = await openDb();
 const ctx = await openContext(db);
@@ -75,8 +76,11 @@ test('실제 기록 — 타입 · 세기 · 방향 · 기록 엣지 수가 맞�
   assert.deepEqual(TYPE_ORDER.slice().sort(), EDGE_TYPES.slice().sort());
   // 기록 엣지 = 1회독 사건 + 2회독 떡밥 (수동이 이긴 것은 manual로 넘어간다)
   const places = v.places;
-  const n1 = read1Edges(ds, places.unitOf, (u) => places.unitPos.get(u) ?? null).sceneEdges.length;
-  const n2 = read2Edges(ds, ctx, order).edges.length;
+  // 만우절 단위와 다른 단위 사이의 기록 엣지는 뺀다(결정 #11)
+  const kept = (e) => isAprilFools(e.from_unit ?? places.unitOf(e.from_scene)) === isAprilFools(e.to_unit ?? places.unitOf(e.to_scene));
+  const n1 = read1Edges(ds, places.unitOf, (u) => places.unitPos.get(u) ?? null).sceneEdges.filter(kept).length;
+  const n2 = read2Edges(ds, ctx, order).edges.filter(kept).length;
+  assert.ok(v.edges.every(kept), '만우절 단위는 만우절 단위끼리만 잇는다');
   const recs = v.edges.filter((e) => e.origin === 'record').length;
   const droppedRecs = v.dropped.filter((d) => d.origin === 'record').length;
   // 수동 엣지가 기록 엣지를 이기면 그만큼 manual로 넘어간다 — 그런 수동 엣지가 없을 때만 딱 맞춘다

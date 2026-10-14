@@ -373,7 +373,6 @@ person:네온,172,26,char:111,호감도,3,37,34,0,ep:d_nikke_jackal_02
 person:네온,176,28,char:311,호감도,1,13,13,0,ep:d_nikke_cocoa_01
 person:네온,179,30,char:801,호감도,1,3,3,0,ep:d_nikke_c_2_05
 person:네온,184,32,char:261,호감도,5,31,30,0,ep:d_nikke_nihilister_01
-person:네온,186,33,event_fullfoolday,이벤트,2,24,23,0,event_fullfoolday_07
 person:네온,188,34,char:40,호감도,1,2,0,0,ep:d_nikke_d_02
 person:네온,189,35,ch21,메인,16,141,128,0,d_main_21_01_s
 person:네온,192,35,sub:에덴_Notice_02,서브퀘스트,1,1,1,0,sub:에덴_Notice_02
@@ -414,7 +413,6 @@ person:네온,277,66,sub:핸섬_커맨더_01,서브퀘스트,1,3,3,0,sub:핸섬_
 person:네온,278,66,sub:MMR지킴이_00,서브퀘스트,1,15,14,0,sub:MMR지킴이_00
 person:네온,282,67,event_killthelord,이벤트,1,1,0,0,event_killthelord_06_s
 person:네온,283,67,char:43,호감도,1,7,6,0,ep:d_nikke_d_killerwife_03
-person:네온,287,70,event_liarsend,이벤트,1,13,13,0,event_liarsend_12
 person:네온,288,71,side:second_affection,사이드,2,2,0,0,side:second_affection_01
 person:네온,291,72,ch29,메인,16,91,88,0,d_main_28_af_01
 person:네온,293,73,ch30,메인,9,43,37,0,d_main_30_01_s
@@ -446,7 +444,6 @@ person:네온,353,98,event_wisdomspring,이벤트,2,16,16,0,event_wisdomspring_0
 person:네온,358,101,ch35,메인,9,84,70,0,d_main_35bf_01
 person:네온,360,102,ch36,메인,4,76,70,0,d_main_36_04
 person:네온,367,105,event_newflavor,이벤트,1,6,6,0,event_newflavor_06_e
-person:네온,369,106,event_foolburstday,이벤트,1,7,6,0,event_foolburstday_14
 person:네온,373,108,ch37,메인,3,46,44,0,d_main_37_03
 person:네온,375,109,ch38,메인,5,97,91,0,d_main_38_05_s
 person:네온,381,109,char:590,호감도,4,34,32,0,ep:d_nikke_mori_01
@@ -490,7 +487,6 @@ person:노벨,308,80,ch31,메인,1,1,0,0,d_main_31_04_e
 person:노벨,320,82,char:390,호감도,1,1,1,0,ep:d_nikke_zwei_03
 person:노벨,328,87,event_phantomthiefvsdetective,이벤트,10,212,190,4,event_phantomthiefvsdetective_01_e
 person:노벨,347,94,event_icedragonsaga1,이벤트,1,14,14,0,event_icedragonsaga1_intermission_01
-person:노벨,369,106,event_foolburstday,이벤트,1,1,0,0,event_foolburstday_02
 person:노아,88,17,char:232,호감도,5,357,333,0,ep:d_nikke_noah_01
 person:노아,159,25,ch19,메인,2,10,7,0,d_main_19_05
 person:노아,164,26,ch20,메인,7,27,22,0,d_main_20_01
@@ -530,7 +526,6 @@ person:누아르,206,38,char:271,호감도,5,425,360,0,ep:d_nikke_noir_01
 person:누아르,223,44,sub:코인_러시_00,서브퀘스트,1,31,29,0,sub:코인_러시_00
 person:누아르,236,51,event_dazzlingcupid,이벤트,1,14,10,0,event_dazzlingcupid_01_e
 person:누아르,258,57,event_neverland1,이벤트,16,75,56,0,event_neverland1_02_e
-person:누아르,287,70,event_liarsend,이벤트,1,5,5,0,event_liarsend_06
 person:누아르,289,71,event_onemoretime,이벤트,1,18,14,0,event_onemoretime_02_e
 person:누아르,300,75,event_goldencoinrush1,이벤트,7,25,16,0,event_goldencoinrush1_02_s
 person:누아르,302,76,char:195,호감도,1,1,0,0,ep:d_nikke_alice_wonderlandbunny_02
@@ -573,7 +568,6 @@ person:델타,111,17,char:71,호감도,1,8,7,0,ep:d_nikke_soline_04
 person:델타,114,17,char:22,호감도,2,24,24,0,ep:d_nikke_signal_02
 person:델타,154,21,char:193,호감도,1,3,0,0,ep:d_nikke_neve_04
 person:델타,258,57,event_neverland1,이벤트,10,31,21,0,event_neverland1_01_e
-person:델타,287,70,event_liarsend,이벤트,1,31,28,0,event_liarsend_04
 person:델타,383,111,event_arcanearchive,이벤트,1,21,16,0,event_arcanearchive_epilogue
 person:델타,400,119,fl:absolute,이벤트,11,58,33,1,fl:absolute_03
 person:델타,412,126,fl:go_ninja_thief,이벤트,15,376,284,0,fl:go_ninja_thief_00
@@ -586,7 +580,6 @@ person:도라,105,17,char:141,호감도,2,29,27,0,ep:d_nikke_milk_02
 person:도라,112,17,char:140,호감도,1,10,10,0,ep:d_nikke_sugar_02
 person:도라,119,17,char:201,호감도,1,1,0,0,ep:d_nikke_yan_02
 person:도라,171,26,char:401,호감도,1,1,0,0,ep:d_nikke_sin_05
-person:도라,186,33,event_fullfoolday,이벤트,1,18,17,0,event_fullfoolday_11
 person:도라,195,36,ch22,메인,1,34,33,0,d_main_22_07
 person:도라,206,38,char:271,호감도,1,1,0,0,ep:d_nikke_noir_04
 person:도라,215,43,sub:상인연합_달란트_00,서브퀘스트,1,20,18,0,sub:상인연합_달란트_00
@@ -658,7 +651,6 @@ person:드레이크,146,20,ch18,메인,15,74,64,0,d_main_18_01
 person:드레이크,151,20,event_hightechtoy,이벤트,12,56,39,0,event_hightechtoy_prologue
 person:드레이크,179,30,char:801,호감도,5,191,170,0,ep:d_nikke_c_2_01
 person:드레이크,180,30,char:802,호감도,1,2,0,0,ep:d_nikke_c_3_05
-person:드레이크,186,33,event_fullfoolday,이벤트,1,37,32,0,event_fullfoolday_10
 person:드레이크,239,53,event_freezeacpu,이벤트,6,129,111,1,event_freezeacpu_02_e
 person:드레이크,267,63,event_perfectmaid,이벤트,10,83,64,2,event_perfectmaid_01_e
 person:드레이크,299,74,char:501,호감도,2,7,0,0,ep:d_nikke_trony_04
@@ -667,7 +659,6 @@ person:드레이크,347,94,event_icedragonsaga1,이벤트,5,70,65,0,event_icedra
 person:드레이크,348,94,char:183,호감도,1,3,0,0,ep:d_nikke_maiden_icerose_04
 person:드레이크,358,101,ch35,메인,10,97,81,0,d_main_35bf_07
 person:드레이크,360,102,ch36,메인,6,34,29,0,d_main_36_01
-person:드레이크,369,106,event_foolburstday,이벤트,1,6,4,0,event_foolburstday_03
 person:드레이크,373,108,ch37,메인,7,73,62,0,d_main_37_01
 person:드레이크,375,109,ch38,메인,5,70,47,0,d_main_38_01_s
 person:드레이크,396,118,ch39,메인,8,54,43,0,d_main_39_03
@@ -909,7 +900,6 @@ person:라피,172,26,char:111,호감도,3,22,20,0,ep:d_nikke_jackal_02
 person:라피,176,28,char:311,호감도,1,9,8,0,ep:d_nikke_cocoa_01
 person:라피,179,30,char:801,호감도,1,6,6,0,ep:d_nikke_c_2_05
 person:라피,184,32,char:261,호감도,5,55,53,0,ep:d_nikke_nihilister_01
-person:라피,186,33,event_fullfoolday,이벤트,2,17,16,0,event_fullfoolday_07
 person:라피,188,34,char:40,호감도,1,2,0,0,ep:d_nikke_d_02
 person:라피,189,35,ch21,메인,15,108,104,0,d_main_21_01_s
 person:라피,192,35,sub:에덴_Notice_02,서브퀘스트,1,4,4,0,sub:에덴_Notice_02
@@ -957,7 +947,6 @@ person:라피,277,66,sub:핸섬_커맨더_01,서브퀘스트,1,9,9,0,sub:핸섬_
 person:라피,278,66,sub:MMR지킴이_00,서브퀘스트,1,10,10,0,sub:MMR지킴이_00
 person:라피,282,67,event_killthelord,이벤트,1,1,0,0,event_killthelord_06_s
 person:라피,283,67,char:43,호감도,1,14,12,0,ep:d_nikke_d_killerwife_03
-person:라피,287,70,event_liarsend,이벤트,2,11,9,0,event_liarsend_01
 person:라피,288,71,side:second_affection,사이드,2,2,0,0,side:second_affection_01
 person:라피,291,72,ch29,메인,18,95,91,0,d_main_28_af_01
 person:라피,293,73,ch30,메인,13,170,136,0,d_main_30_01_s
@@ -988,7 +977,6 @@ person:라피,354,98,char:290,호감도,1,2,0,0,ep:d_nikke_mana_05
 person:라피,358,101,ch35,메인,18,278,252,0,d_main_35bf_01
 person:라피,360,102,ch36,메인,10,84,80,0,d_main_36_01
 person:라피,367,105,event_newflavor,이벤트,3,34,30,0,event_newflavor_01_s
-person:라피,369,106,event_foolburstday,이벤트,1,5,4,0,event_foolburstday_14
 person:라피,373,108,ch37,메인,9,174,154,0,d_main_37_01
 person:라피,375,109,ch38,메인,9,168,155,0,d_main_38_01_s
 person:라피,381,109,char:590,호감도,4,58,52,0,ep:d_nikke_mori_01
@@ -1188,7 +1176,6 @@ person:로산나,219,44,ch24,메인,2,15,11,0,d_main_24_04
 person:로산나,265,62,event_dirtybackyard,이벤트,4,31,28,0,event_dirtybackyard_01_s
 person:로산나,266,62,char:281,호감도,1,4,3,0,ep:d_nikke_moran_01
 person:로산나,282,67,event_killthelord,이벤트,7,157,137,3,event_killthelord_02_e
-person:로산나,287,70,event_liarsend,이벤트,1,7,7,0,event_liarsend_06
 person:로산나,305,78,event_beautyfullshot1,이벤트,21,360,315,0,event_beautyfullshot1_prologue
 person:로산나,307,79,char:283,호감도,5,227,203,0,ep:d_nikke_rosanna_chicocean_01
 person:로산나,347,94,event_icedragonsaga1,이벤트,2,12,11,0,event_icedragonsaga1_06_e
@@ -1235,7 +1222,6 @@ person:루마니,289,71,event_onemoretime,이벤트,2,4,0,0,event_onemoretime_02
 person:루마니,300,75,event_goldencoinrush1,이벤트,1,1,0,0,event_goldencoinrush1_03_e
 person:루마니,332,89,event_lifeagain,이벤트,15,755,663,0,event_lifeagain_prologue
 person:루마니,333,89,char:240,호감도,5,285,259,0,ep:d_nikke_rumani_01
-person:루마니,369,106,event_foolburstday,이벤트,1,25,23,0,event_foolburstday_05
 person:루비,263,61,event_lionheart,이벤트,5,30,6,0,event_lionheart_02_s
 person:루시안,425,131,fl:terminus_ticket,이벤트,8,143,115,7,fl:terminus_ticket_10
 person:루주,195,36,ch22,메인,1,1,0,0,d_main_22_04_s
@@ -1256,13 +1242,11 @@ person:루피,119,17,char:201,호감도,2,35,34,0,ep:d_nikke_yan_02
 person:루피,153,21,event_miraclesnow1,이벤트,26,525,477,0,event_miraclesnow1_01_s
 person:루피,155,21,char:203,호감도,5,289,269,0,ep:d_nikke_rupee_wintershopper_01
 person:루피,156,22,char:121,호감도,4,5,0,0,ep:d_nikke_anne_miraclefairy_01
-person:루피,186,33,event_fullfoolday,이벤트,1,13,13,0,event_fullfoolday_11
 person:루피,204,37,event_BunnyX777,이벤트,2,32,27,0,event_BunnyX777_03_s
 person:루피,215,43,sub:상인연합_달란트_00,서브퀘스트,1,15,13,0,sub:상인연합_달란트_00
 person:루피,266,62,char:281,호감도,1,1,1,0,ep:d_nikke_moran_02
 person:루피,281,66,char:500,호감도,1,3,2,0,ep:d_nikke_elegg_01
 person:루피,283,67,char:43,호감도,1,6,5,0,ep:d_nikke_d_killerwife_03
-person:루피,287,70,event_liarsend,이벤트,1,5,5,0,event_liarsend_06
 person:루피,300,75,event_goldencoinrush1,이벤트,10,154,136,0,event_goldencoinrush1_03_s
 person:루피,317,81,event_juveniledays,이벤트,6,109,95,0,event_juveniledays_02_s
 person:루피,318,81,char:391,호감도,4,96,86,0,ep:d_nikke_ein_02
@@ -1558,7 +1542,6 @@ person:머스탱,156,22,char:121,호감도,1,3,0,0,ep:d_nikke_anne_miraclefairy_
 person:머스탱,175,28,event_maidinvalentine,이벤트,2,37,35,1,event_maidinvalentine_01_s
 person:머스탱,183,32,event_cherryblossom,이벤트,1,53,50,0,event_cherryblossom_intermission_01
 person:머스탱,185,32,char:282,호감도,1,1,0,0,ep:d_nikke_sakura_02
-person:머스탱,186,33,event_fullfoolday,이벤트,1,2,0,0,event_fullfoolday_08
 person:머스탱,195,36,ch22,메인,3,5,0,0,d_main_22_04_e
 person:머스탱,204,37,event_BunnyX777,이벤트,7,69,65,0,event_BunnyX777_prologue
 person:머스탱,207,39,event_queensorder,이벤트,2,2,0,0,event_queensorder_04_s
@@ -1570,7 +1553,6 @@ person:머스탱,246,55,ch26,메인,1,1,0,0,d_main_26_05_s
 person:머스탱,258,57,event_neverland1,이벤트,2,23,21,0,event_neverland1_01_s
 person:머스탱,263,61,event_lionheart,이벤트,3,59,56,0,event_lionheart_intermission_01
 person:머스탱,265,62,event_dirtybackyard,이벤트,1,3,0,0,event_dirtybackyard_06_e
-person:머스탱,287,70,event_liarsend,이벤트,1,3,3,1,event_liarsend_12
 person:머스탱,300,75,event_goldencoinrush1,이벤트,19,347,322,0,event_goldencoinrush1_prologue
 person:머스탱,302,76,char:195,호감도,1,1,1,0,ep:d_nikke_alice_wonderlandbunny_03
 person:머스탱,303,77,event_claymore,이벤트,1,1,0,0,event_claymore_epilogue
@@ -1618,7 +1600,6 @@ person:메어리,210,40,char:132,호감도,5,373,337,0,ep:d_nikke_Mary_BayGoddes
 person:메어리,211,41,char:14,호감도,2,12,10,0,ep:d_nikke_neon_blueocean_02
 person:메어리,226,45,event_seayouagain1,이벤트,18,55,49,0,event_seayouagain1_01_e
 person:메어리,266,62,char:281,호감도,1,1,1,0,ep:d_nikke_moran_02
-person:메어리,287,70,event_liarsend,이벤트,1,4,4,0,event_liarsend_06
 person:메어리,300,75,event_goldencoinrush1,이벤트,11,143,121,0,event_goldencoinrush1_03_s
 person:메어리,304,77,char:551,호감도,1,8,7,0,ep:d_nikke_clay_01
 person:메어리,305,78,event_beautyfullshot1,이벤트,14,84,75,0,event_beautyfullshot1_prologue
@@ -1642,7 +1623,6 @@ person:메이든,348,94,char:183,호감도,5,214,205,0,ep:d_nikke_maiden_icerose
 person:메이든,349,95,char:182,호감도,3,16,8,0,ep:d_nikke_guillotine_winterslayer_01
 person:메이든,365,104,fl:for_rest,이벤트,1,1,0,0,fl:for_rest_09
 person:메이슨_박사,176,28,char:311,호감도,3,22,20,4,ep:d_nikke_cocoa_01
-person:메카_시프티,369,106,event_foolburstday,이벤트,16,343,284,0,event_foolburstday_01
 person:멜런,442,140,fl:enter_heaven,이벤트,6,42,38,8,fl:enter_heaven_04
 person:모건,224,44,event_goldenship,이벤트,3,9,5,0,event_goldenship_01_s
 person:모건,225,44,char:350,호감도,3,14,6,0,ep:d_nikke_mast_01
@@ -1707,7 +1687,6 @@ person:미란다,179,30,char:801,호감도,1,5,2,0,ep:d_nikke_c_2_02
 person:미란다,180,30,char:802,호감도,5,94,70,0,ep:d_nikke_c_3_01
 person:미란다,181,31,event_bowwowparadise,이벤트,2,23,20,0,event_bowwowparadise_02_s
 person:미란다,182,31,char:381,호감도,1,4,3,0,ep:d_nikke_biscuit_04
-person:미란다,186,33,event_fullfoolday,이벤트,1,3,1,0,event_fullfoolday_10
 person:미란다,189,35,ch21,메인,1,18,16,0,d_main_21af_03
 person:미란다,195,36,ch22,메인,6,59,44,0,d_main_22_01_e
 person:미란다,214,43,ch23,메인,3,22,16,0,d_main_23_01_s
@@ -1716,7 +1695,6 @@ person:미란다,230,47,event_firstaffection,이벤트,1,9,8,0,event_firstaffect
 person:미란다,239,53,event_freezeacpu,이벤트,9,121,101,0,event_freezeacpu_01_e
 person:미란다,240,53,char:33,호감도,4,48,28,0,ep:d_nikke_quiry_01
 person:미란다,260,58,char:62,호감도,1,1,0,0,ep:d_nikke_mica_snowbuddy_03
-person:미란다,287,70,event_liarsend,이벤트,1,36,32,0,event_liarsend_05
 person:미란다,289,71,event_onemoretime,이벤트,1,21,17,0,event_onemoretime_03_s
 person:미란다,328,87,event_phantomthiefvsdetective,이벤트,15,399,325,0,event_phantomthiefvsdetective_prologue
 person:미란다,329,87,char:403,호감도,1,27,24,0,ep:d_nikke_quency_escapequeen_03
@@ -1724,7 +1702,6 @@ person:미란다,347,94,event_icedragonsaga1,이벤트,2,24,20,0,event_icedragon
 person:미란다,349,95,char:182,호감도,1,6,5,0,ep:d_nikke_guillotine_winterslayer_02
 person:미란다,352,97,char:16,호감도,2,31,27,0,ep:d_nikke_rapi_redhood_01
 person:미란다,366,104,char:412,호감도,2,45,41,0,ep:d_nikke_trina_01
-person:미란다,369,106,event_foolburstday,이벤트,1,7,6,0,event_foolburstday_03
 person:미란다,383,111,event_arcanearchive,이벤트,1,3,3,0,event_arcanearchive_epilogue
 person:미란다,407,124,fl:reborn_evil,이벤트,15,173,139,0,fl:reborn_evil_05
 person:미란다,409,124,char:842,호감도,1,1,0,0,ep:d_nikke_ce007_03_01
@@ -1759,7 +1736,6 @@ person:미친개,400,119,fl:absolute,이벤트,1,4,4,0,fl:absolute_04
 person:미카,103,17,char:61,호감도,5,329,286,0,ep:d_nikke_mica_01
 person:미카,107,17,char:60,호감도,3,37,33,0,ep:d_nikke_belorta_01
 person:미카,153,21,event_miraclesnow1,이벤트,1,2,1,0,event_miraclesnow1_01_e
-person:미카,186,33,event_fullfoolday,이벤트,1,31,23,0,event_fullfoolday_08
 person:미카,204,37,event_BunnyX777,이벤트,1,16,11,0,event_BunnyX777_02_s
 person:미카,228,45,char:351,호감도,1,27,20,0,ep:d_nikke_anchor_03
 person:미카,230,47,event_firstaffection,이벤트,1,9,8,0,event_firstaffection_04
@@ -1767,10 +1743,8 @@ person:미카,258,57,event_neverland1,이벤트,27,739,537,0,event_neverland1_01
 person:미카,259,57,char:194,호감도,3,21,13,0,ep:d_nikke_ludmilla_winterowner_03
 person:미카,260,58,char:62,호감도,5,292,210,0,ep:d_nikke_mica_snowbuddy_01
 person:미카,266,62,char:281,호감도,1,6,5,0,ep:d_nikke_moran_02
-person:미카,287,70,event_liarsend,이벤트,1,11,8,0,event_liarsend_02
 person:미카,325,86,event_jinxplayer,이벤트,1,1,0,0,event_jinxplayer_04_e
 person:미카,351,97,event_outofuniform,이벤트,1,16,12,0,event_outofuniform_03
-person:미카,369,106,event_foolburstday,이벤트,1,1,0,0,event_foolburstday_02
 person:미카,400,119,fl:absolute,이벤트,1,1,0,0,fl:absolute_27
 person:미카,477,155,char:871,호감도,3,43,35,0,ep:d_nikke_ce009_02_02
 person:미하라,4,3,ch02,메인,1,22,13,0,d_main_02af_07
@@ -1815,7 +1789,6 @@ person:밀크,134,17,char:142,호감도,5,110,99,0,ep:d_nikke_frima_01
 person:밀크,153,21,event_miraclesnow1,이벤트,1,3,2,0,event_miraclesnow1_01_e
 person:밀크,157,23,event_brandnewyear,이벤트,2,4,0,0,event_brandnewyear_02_s
 person:밀크,175,28,event_maidinvalentine,이벤트,1,19,17,0,event_maidinvalentine_epilogue
-person:밀크,186,33,event_fullfoolday,이벤트,1,23,23,0,event_fullfoolday_09
 person:밀크,203,36,char:392,호감도,1,1,0,0,ep:d_nikke_rei_03
 person:밀크,204,37,event_BunnyX777,이벤트,1,10,7,0,event_BunnyX777_02_s
 person:밀크,209,40,event_bluewaterisland,이벤트,1,1,0,0,event_bluewaterisland2_01_e
@@ -1823,7 +1796,6 @@ person:밀크,220,44,sub:해결사_카페_스위티_00,서브퀘스트,1,35,31,0
 person:밀크,224,44,event_goldenship,이벤트,1,2,0,0,event_goldenship_01_e
 person:밀크,240,53,char:33,호감도,1,38,36,0,ep:d_nikke_quiry_04
 person:밀크,266,62,char:281,호감도,1,4,3,0,ep:d_nikke_moran_02
-person:밀크,287,70,event_liarsend,이벤트,1,2,0,0,event_liarsend_02
 person:밀크,300,75,event_goldencoinrush1,이벤트,10,132,109,0,event_goldencoinrush1_03_s
 person:밀크,302,76,char:195,호감도,1,2,0,0,ep:d_nikke_alice_wonderlandbunny_04
 person:밀크,303,77,event_claymore,이벤트,10,319,234,3,event_claymore_02_e
@@ -1938,7 +1910,6 @@ person:베이,289,71,event_onemoretime,이벤트,15,685,550,0,event_onemoretime_
 person:베이,290,71,char:550,호감도,5,375,277,0,ep:d_nikke_bay_01
 person:베이,303,77,event_claymore,이벤트,9,116,69,2,event_claymore_01_s
 person:베이,304,77,char:551,호감도,3,42,21,1,ep:d_nikke_clay_01
-person:베이,369,106,event_foolburstday,이벤트,1,17,15,0,event_foolburstday_05
 person:베이,404,122,fl:coins_in_rush,이벤트,17,164,135,4,fl:coins_in_rush_04
 person:베이,406,123,char:143,호감도,2,4,0,0,ep:d_nikke_milk_bloomingbunny_02
 person:베이,411,126,side:eden_spear,사이드,1,1,0,0,side:eden_spear_07
@@ -1972,17 +1943,14 @@ person:베히모스,478,156,fl:great_villain_union,이벤트,1,2,2,0,fl:great_vi
 person:벨로타,103,17,char:61,호감도,5,190,105,0,ep:d_nikke_mica_01
 person:벨로타,107,17,char:60,호감도,5,288,232,0,ep:d_nikke_belorta_01
 person:벨로타,153,21,event_miraclesnow1,이벤트,1,2,1,0,event_miraclesnow1_01_e
-person:벨로타,186,33,event_fullfoolday,이벤트,1,51,41,0,event_fullfoolday_08
 person:벨로타,228,45,char:351,호감도,1,38,35,0,ep:d_nikke_anchor_03
 person:벨로타,230,47,event_firstaffection,이벤트,1,13,11,0,event_firstaffection_04
 person:벨로타,258,57,event_neverland1,이벤트,27,612,399,2,event_neverland1_01_s
 person:벨로타,259,57,char:194,호감도,3,4,0,0,ep:d_nikke_ludmilla_winterowner_03
 person:벨로타,260,58,char:62,호감도,5,201,126,0,ep:d_nikke_mica_snowbuddy_01
 person:벨로타,266,62,char:281,호감도,1,11,10,0,ep:d_nikke_moran_02
-person:벨로타,287,70,event_liarsend,이벤트,1,1,0,0,event_liarsend_02
 person:벨로타,325,86,event_jinxplayer,이벤트,3,54,46,2,event_jinxplayer_04_s
 person:벨로타,351,97,event_outofuniform,이벤트,2,33,28,0,event_outofuniform_03
-person:벨로타,369,106,event_foolburstday,이벤트,1,1,0,0,event_foolburstday_02
 person:벨로타,400,119,fl:absolute,이벤트,1,1,0,0,fl:absolute_27
 person:벨벳,404,122,fl:coins_in_rush,이벤트,16,279,207,41,fl:coins_in_rush_09
 person:벨벳,432,136,fl:fatal_maid,이벤트,15,500,408,0,fl:fatal_maid_00
@@ -2048,7 +2016,6 @@ person:블랑,206,38,char:271,호감도,5,30,7,0,ep:d_nikke_noir_01
 person:블랑,223,44,sub:코인_러시_00,서브퀘스트,1,28,24,0,sub:코인_러시_00
 person:블랑,236,51,event_dazzlingcupid,이벤트,1,15,12,0,event_dazzlingcupid_01_e
 person:블랑,258,57,event_neverland1,이벤트,18,141,118,0,event_neverland1_02_e
-person:블랑,287,70,event_liarsend,이벤트,1,7,7,0,event_liarsend_06
 person:블랑,289,71,event_onemoretime,이벤트,1,22,14,0,event_onemoretime_02_e
 person:블랑,300,75,event_goldencoinrush1,이벤트,9,88,67,0,event_goldencoinrush1_prologue
 person:블랑,302,76,char:195,호감도,1,1,0,0,ep:d_nikke_alice_wonderlandbunny_02
@@ -2172,7 +2139,6 @@ person:센티,395,117,char:502,호감도,1,1,0,0,ep:d_nikke_eleggboomandshock_05
 person:소다,175,28,event_maidinvalentine,이벤트,13,105,91,0,event_maidinvalentine_prologue
 person:소다,176,28,char:311,호감도,4,16,12,0,ep:d_nikke_cocoa_01
 person:소다,177,29,char:312,호감도,5,315,232,0,ep:d_nikke_soda_01
-person:소다,186,33,event_fullfoolday,이벤트,1,7,6,0,event_fullfoolday_09
 person:소다,205,37,char:270,호감도,1,13,12,0,ep:d_nikke_blanc_01
 person:소다,238,52,char:451,호감도,1,13,11,0,ep:d_nikke_tia_02
 person:소다,266,62,char:281,호감도,1,10,8,0,ep:d_nikke_moran_02
@@ -2182,14 +2148,12 @@ person:소다,269,64,char:310,호감도,2,16,15,0,ep:d_nikke_ade_01
 person:소다,281,66,char:500,호감도,1,2,1,0,ep:d_nikke_elegg_03
 person:소다,285,68,char:821,호감도,2,30,28,0,ep:d_nikke_ce_003_02_01
 person:소다,286,69,char:820,호감도,2,34,26,0,ep:d_nikke_ce_003_01_01
-person:소다,287,70,event_liarsend,이벤트,1,17,14,0,event_liarsend_03
 person:소다,300,75,event_goldencoinrush1,이벤트,38,1230,1009,0,event_goldencoinrush1_prologue
 person:소다,301,75,char:314,호감도,5,245,196,0,ep:d_nikke_soda_twinklingbunny_01
 person:소다,302,76,char:195,호감도,4,54,42,0,ep:d_nikke_alice_wonderlandbunny_02
 person:소다,351,97,event_outofuniform,이벤트,1,1,0,0,event_outofuniform_02
 person:소다,355,99,event_romanticvalentine,이벤트,3,4,2,0,event_romanticvalentine_01_e
 person:소다,357,100,char:355,호감도,3,15,11,0,ep:d_nikke_anchor_innocentmaid_01
-person:소다,369,106,event_foolburstday,이벤트,1,9,5,0,event_foolburstday_04
 person:소다,404,122,fl:coins_in_rush,이벤트,3,22,14,0,fl:coins_in_rush_19
 person:소다,405,122,char:315,호감도,1,1,0,0,ep:d_nikke_ade_agentbunny_03
 person:소다,406,123,char:143,호감도,1,11,9,0,ep:d_nikke_milk_bloomingbunny_01
@@ -2234,7 +2198,6 @@ person:슈가,153,21,event_miraclesnow1,이벤트,3,16,13,0,event_miraclesnow1_0
 person:슈가,155,21,char:203,호감도,1,3,3,0,ep:d_nikke_rupee_wintershopper_03
 person:슈가,157,23,event_brandnewyear,이벤트,11,156,139,0,event_brandnewyear_01_s
 person:슈가,175,28,event_maidinvalentine,이벤트,1,1,0,0,event_maidinvalentine_epilogue
-person:슈가,186,33,event_fullfoolday,이벤트,1,19,19,0,event_fullfoolday_09
 person:슈가,209,40,event_bluewaterisland,이벤트,7,37,34,0,event_bluewaterisland1_01_s
 person:슈가,220,44,sub:해결사_카페_스위티_00,서브퀘스트,1,8,1,0,sub:해결사_카페_스위티_00
 person:슈가,224,44,event_goldenship,이벤트,1,2,0,0,event_goldenship_01_e
@@ -2243,7 +2206,6 @@ person:슈가,240,53,char:33,호감도,4,49,39,0,ep:d_nikke_quiry_01
 person:슈가,265,62,event_dirtybackyard,이벤트,13,334,293,0,event_dirtybackyard_01_e
 person:슈가,266,62,char:281,호감도,1,1,0,0,ep:d_nikke_moran_02
 person:슈가,281,66,char:500,호감도,1,12,11,0,ep:d_nikke_elegg_01
-person:슈가,287,70,event_liarsend,이벤트,1,7,5,0,event_liarsend_02
 person:슈가,300,75,event_goldencoinrush1,이벤트,5,50,47,0,event_goldencoinrush1_03_s
 person:슈가,304,77,char:551,호감도,1,1,0,0,ep:d_nikke_clay_02
 person:슈가,320,82,char:390,호감도,2,37,32,0,ep:d_nikke_zwei_02
@@ -2280,7 +2242,6 @@ person:슈엔,151,20,event_hightechtoy,이벤트,11,58,32,0,event_hightechtoy_pr
 person:슈엔,153,21,event_miraclesnow1,이벤트,7,130,116,0,event_miraclesnow2_01_s
 person:슈엔,169,26,event_doutsiders,이벤트,2,2,0,0,event_doutsiders_01_s
 person:슈엔,174,27,char:112,호감도,1,1,0,0,ep:d_nikke_viper_01
-person:슈엔,186,33,event_fullfoolday,이벤트,1,2,0,0,event_fullfoolday_03
 person:슈엔,203,36,char:392,호감도,1,2,0,0,ep:d_nikke_rei_03
 person:슈엔,209,40,event_bluewaterisland,이벤트,2,14,13,0,event_bluewaterisland_prologue
 person:슈엔,214,43,ch23,메인,6,71,60,0,d_main_23_01_e
@@ -2291,7 +2252,6 @@ person:슈엔,246,55,ch26,메인,3,28,24,3,d_main_26_10
 person:슈엔,258,57,event_neverland1,이벤트,1,3,0,0,event_neverland1_01_s
 person:슈엔,280,66,event_boomsday,이벤트,5,15,0,0,event_boomsday_01_s
 person:슈엔,281,66,char:500,호감도,1,1,0,0,ep:d_nikke_elegg_05
-person:슈엔,287,70,event_liarsend,이벤트,4,71,65,0,event_liarsend_08
 person:슈엔,297,73,char:361,호감도,2,2,0,0,ep:d_nikke_kilo_04
 person:슈엔,298,74,event_darkhero,이벤트,3,6,3,0,event_darkhero_01_s
 person:슈엔,299,74,char:501,호감도,1,2,0,0,ep:d_nikke_trony_01
@@ -2391,7 +2351,6 @@ person:시그널,175,28,event_maidinvalentine,이벤트,3,44,35,0,event_maidinva
 person:시그널,258,57,event_neverland1,이벤트,11,61,51,0,event_neverland1_01_e
 person:시그널,264,61,char:382,호감도,1,1,0,0,ep:d_nikke_leona_05
 person:시그널,283,67,char:43,호감도,1,6,5,0,ep:d_nikke_d_killerwife_03
-person:시그널,287,70,event_liarsend,이벤트,1,1,0,0,event_liarsend_04
 person:시그널,308,80,ch31,메인,1,2,0,0,d_main_31_03
 person:시그널,332,89,event_lifeagain,이벤트,1,1,0,0,event_lifeagain_04_e
 person:시그널,358,101,ch35,메인,1,1,0,0,d_main_35bf_06
@@ -2429,14 +2388,12 @@ person:시프티,140,19,ch17,메인,1,3,3,0,d_main_17_07
 person:시프티,146,20,ch18,메인,1,1,1,0,d_main_18_05
 person:시프티,170,26,char:400,호감도,2,10,9,0,ep:d_nikke_guilty_02
 person:시프티,174,27,char:112,호감도,1,26,26,0,ep:d_nikke_viper_01
-person:시프티,186,33,event_fullfoolday,이벤트,6,71,59,0,event_fullfoolday_01
 person:시프티,189,35,ch21,메인,1,1,0,0,d_main_21af_02
 person:시프티,209,40,event_bluewaterisland,이벤트,1,13,12,0,event_bluewaterisland2_epilogue
 person:시프티,270,65,ch27,메인,12,121,114,0,d_main_26af_01
 person:시프티,275,66,ch28,메인,12,65,61,0,d_main_28_01_s
 person:시프티,276,66,sub:핸섬_커맨더_00,서브퀘스트,1,16,16,0,sub:핸섬_커맨더_00
 person:시프티,277,66,sub:핸섬_커맨더_01,서브퀘스트,1,4,4,0,sub:핸섬_커맨더_01
-person:시프티,287,70,event_liarsend,이벤트,2,20,16,0,event_liarsend_11
 person:시프티,291,72,ch29,메인,13,110,103,0,d_main_28_af_01
 person:시프티,293,73,ch30,메인,8,129,125,0,d_main_30_01_e
 person:시프티,308,80,ch31,메인,8,42,37,0,d_main_31_01_s
@@ -2447,7 +2404,6 @@ person:시프티,343,91,char:511,호감도,1,18,15,0,ep:d_nikke_cinderella_03
 person:시프티,347,94,event_icedragonsaga1,이벤트,3,3,0,0,event_icedragonsaga1_02_s
 person:시프티,348,94,char:183,호감도,1,1,0,0,ep:d_nikke_maiden_icerose_03
 person:시프티,358,101,ch35,메인,1,1,0,0,d_main_35_01
-person:시프티,369,106,event_foolburstday,이벤트,11,152,136,0,event_foolburstday_01
 person:시프티,377,109,event_unbreakablesphere1,이벤트,2,46,44,0,event_unbreakablesphere1_prologue
 person:시프티,474,154,fl:persona_on_frontline,이벤트,1,5,4,0,fl:persona_on_frontline_21
 person:식스오,265,62,event_dirtybackyard,이벤트,7,30,0,0,event_dirtybackyard_04_s
@@ -2649,7 +2605,6 @@ person:아니스,172,26,char:111,호감도,3,44,40,0,ep:d_nikke_jackal_02
 person:아니스,176,28,char:311,호감도,1,14,12,0,ep:d_nikke_cocoa_01
 person:아니스,179,30,char:801,호감도,1,6,6,0,ep:d_nikke_c_2_05
 person:아니스,184,32,char:261,호감도,5,82,76,0,ep:d_nikke_nihilister_01
-person:아니스,186,33,event_fullfoolday,이벤트,2,25,24,0,event_fullfoolday_07
 person:아니스,188,34,char:40,호감도,1,2,0,0,ep:d_nikke_d_02
 person:아니스,189,35,ch21,메인,17,148,144,0,d_main_21_01_s
 person:아니스,192,35,sub:에덴_Notice_02,서브퀘스트,1,1,1,0,sub:에덴_Notice_02
@@ -2693,7 +2648,6 @@ person:아니스,277,66,sub:핸섬_커맨더_01,서브퀘스트,1,4,4,0,sub:핸�
 person:아니스,278,66,sub:MMR지킴이_00,서브퀘스트,1,8,8,0,sub:MMR지킴이_00
 person:아니스,282,67,event_killthelord,이벤트,1,1,0,0,event_killthelord_06_s
 person:아니스,283,67,char:43,호감도,1,14,12,0,ep:d_nikke_d_killerwife_03
-person:아니스,287,70,event_liarsend,이벤트,2,33,29,0,event_liarsend_01
 person:아니스,288,71,side:second_affection,사이드,2,2,0,0,side:second_affection_01
 person:아니스,291,72,ch29,메인,19,139,137,0,d_main_28_af_01
 person:아니스,293,73,ch30,메인,9,50,46,0,d_main_30_01_s
@@ -2725,7 +2679,6 @@ person:아니스,358,101,ch35,메인,9,154,126,0,d_main_35bf_01
 person:아니스,360,102,ch36,메인,3,95,83,0,d_main_36_04
 person:아니스,365,104,fl:for_rest,이벤트,1,1,0,0,fl:for_rest_00
 person:아니스,367,105,event_newflavor,이벤트,1,13,13,0,event_newflavor_06_e
-person:아니스,369,106,event_foolburstday,이벤트,1,9,8,0,event_foolburstday_14
 person:아니스,372,107,char:521,호감도,1,19,18,0,ep:d_nikke_crust_05
 person:아니스,373,108,ch37,메인,3,89,89,0,d_main_37_03
 person:아니스,375,109,ch38,메인,5,200,155,0,d_main_38_05_s
@@ -2904,7 +2857,6 @@ person:얀,97,17,char:200,호감도,2,12,12,0,ep:d_nikke_rupee_01
 person:얀,110,17,char:80,호감도,2,37,33,0,ep:d_nikke_centi_02
 person:얀,112,17,char:140,호감도,1,13,13,0,ep:d_nikke_sugar_02
 person:얀,119,17,char:201,호감도,5,206,183,3,ep:d_nikke_yan_01
-person:얀,186,33,event_fullfoolday,이벤트,1,24,22,0,event_fullfoolday_11
 person:얀,206,38,char:271,호감도,1,12,9,1,ep:d_nikke_noir_01
 person:얀,209,40,event_bluewaterisland,이벤트,11,120,114,0,event_bluewaterisland1_01_e
 person:얀,210,40,char:132,호감도,2,26,23,0,ep:d_nikke_Mary_BayGoddess_01
@@ -2985,7 +2937,6 @@ person:에이다,408,124,char:840,호감도,5,124,106,0,ep:d_nikke_ce007_01_01
 person:에이드,175,28,event_maidinvalentine,이벤트,14,145,135,0,event_maidinvalentine_prologue
 person:에이드,176,28,char:311,호감도,2,9,8,0,ep:d_nikke_cocoa_01
 person:에이드,177,29,char:312,호감도,5,29,25,0,ep:d_nikke_soda_01
-person:에이드,186,33,event_fullfoolday,이벤트,1,1,0,0,event_fullfoolday_09
 person:에이드,236,51,event_dazzlingcupid,이벤트,1,4,4,0,event_dazzlingcupid_03_e
 person:에이드,238,52,char:451,호감도,1,10,8,0,ep:d_nikke_tia_02
 person:에이드,266,62,char:281,호감도,1,1,0,0,ep:d_nikke_moran_02
@@ -2995,14 +2946,12 @@ person:에이드,269,64,char:310,호감도,5,259,207,0,ep:d_nikke_ade_01
 person:에이드,281,66,char:500,호감도,1,18,15,0,ep:d_nikke_elegg_03
 person:에이드,285,68,char:821,호감도,5,29,20,0,ep:d_nikke_ce_003_02_01
 person:에이드,286,69,char:820,호감도,3,13,12,0,ep:d_nikke_ce_003_01_01
-person:에이드,287,70,event_liarsend,이벤트,1,15,12,0,event_liarsend_03
 person:에이드,300,75,event_goldencoinrush1,이벤트,9,80,63,0,event_goldencoinrush1_prologue
 person:에이드,301,75,char:314,호감도,1,1,0,0,ep:d_nikke_soda_twinklingbunny_05
 person:에이드,351,97,event_outofuniform,이벤트,1,1,0,0,event_outofuniform_02
 person:에이드,352,97,char:16,호감도,1,1,0,0,ep:d_nikke_rapi_redhood_03
 person:에이드,355,99,event_romanticvalentine,이벤트,6,63,48,0,event_romanticvalentine_01_e
 person:에이드,367,105,event_newflavor,이벤트,3,62,55,0,event_newflavor_03_s
-person:에이드,369,106,event_foolburstday,이벤트,1,10,7,0,event_foolburstday_04
 person:에이드,371,107,event_trueflavor,이벤트,6,91,77,1,event_trueflavor_04_s
 person:에이드,404,122,fl:coins_in_rush,이벤트,22,389,307,0,fl:coins_in_rush_00
 person:에이드,405,122,char:315,호감도,5,319,252,0,ep:d_nikke_ade_agentbunny_01
@@ -3086,7 +3035,6 @@ person:엑시아,334,90,ch33,메인,1,1,0,0,d_main_33_02_s
 person:엑시아,347,94,event_icedragonsaga1,이벤트,5,43,30,2,event_icedragonsaga1_01_s
 person:엑시아,349,95,char:182,호감도,1,12,9,1,ep:d_nikke_guillotine_winterslayer_02
 person:엑시아,355,99,event_romanticvalentine,이벤트,1,2,0,0,event_romanticvalentine_03_s
-person:엑시아,369,106,event_foolburstday,이벤트,2,14,13,0,event_foolburstday_02
 person:엑시아,404,122,fl:coins_in_rush,이벤트,20,293,233,0,fl:coins_in_rush_03
 person:엑시아,440,138,char:862,호감도,3,30,27,0,ep:d_nikke_ce008_03_02
 person:엔더슨,2,2,ch01,메인,3,57,54,0,d_main_01af_01
@@ -3115,7 +3063,6 @@ person:엔더슨,164,26,ch20,메인,1,2,2,0,d_main_20af_01
 person:엔더슨,169,26,event_doutsiders,이벤트,3,38,37,0,event_doutsiders_01_s
 person:엔더슨,174,27,char:112,호감도,1,1,0,0,ep:d_nikke_viper_01
 person:엔더슨,178,30,char:800,호감도,2,53,52,0,ep:d_nikke_c_1_01
-person:엔더슨,186,33,event_fullfoolday,이벤트,3,20,16,0,event_fullfoolday_04
 person:엔더슨,200,36,event_overzone,이벤트,3,5,0,5,event_overzone_prologue
 person:엔더슨,201,36,erelic:white_memory,유실물,1,4,0,4,erelic:white_memory_19
 person:엔더슨,202,36,char:233,호감도,2,2,0,2,ep:d_nikke_dorothy_02
@@ -3135,7 +3082,6 @@ person:엔더슨,258,57,event_neverland1,이벤트,3,45,40,0,event_neverland1_01
 person:엔더슨,261,59,event_newyearnewsword,이벤트,1,1,0,1,event_newyearnewsword_02_s
 person:엔더슨,262,60,char:225,호감도,3,15,0,15,ep:d_nikke_hongryeon_blackshadow_01
 person:엔더슨,270,65,ch27,메인,1,76,76,0,d_main_26af_02
-person:엔더슨,287,70,event_liarsend,이벤트,2,3,2,0,event_liarsend_05
 person:엔더슨,326,86,event_nonsensered,이벤트,4,15,0,15,event_nonsensered_4
 person:엔더슨,338,91,event_oldtales1,이벤트,2,32,0,32,event_oldtales1_prologue
 person:엔더슨,339,91,erelic:old_tales_dialog,유실물,1,12,0,12,erelic:old_tales_dialog_01
@@ -3187,7 +3133,6 @@ person:엠마,127,17,char:92,호감도,1,32,30,0,ep:d_nikke_eunhwa_05
 person:엠마,131,17,char:30,호감도,1,24,20,0,ep:d_nikke_poli_04
 person:엠마,153,21,event_miraclesnow1,이벤트,5,57,43,3,event_miraclesnow1_04_s
 person:엠마,156,22,char:121,호감도,3,47,40,2,ep:d_nikke_anne_miraclefairy_02
-person:엠마,186,33,event_fullfoolday,이벤트,1,12,10,0,event_fullfoolday_10
 person:엠마,207,39,event_queensorder,이벤트,1,28,25,0,event_queensorder_06_e
 person:엠마,258,57,event_neverland1,이벤트,12,122,108,0,event_neverland1_01_e
 person:엠마,259,57,char:194,호감도,1,1,0,0,ep:d_nikke_ludmilla_winterowner_03
@@ -3290,7 +3235,6 @@ person:율하,178,30,char:800,호감도,3,59,51,0,ep:d_nikke_c_1_01
 person:율하,204,37,event_BunnyX777,이벤트,1,14,8,0,event_BunnyX777_02_s
 person:율하,218,43,sub:중앙정부_트라이앵글_00,서브퀘스트,1,10,10,0,sub:중앙정부_트라이앵글_00
 person:율하,267,63,event_perfectmaid,이벤트,1,14,11,0,event_perfectmaid_epilogue
-person:율하,287,70,event_liarsend,이벤트,1,6,5,0,event_liarsend_06
 person:율하,319,82,event_colorless,이벤트,3,4,0,0,event_colorless_02_s
 person:율하,320,82,char:390,호감도,4,94,89,0,ep:d_nikke_zwei_02
 person:율하,347,94,event_icedragonsaga1,이벤트,3,34,33,0,event_icedragonsaga1_intermission_01
@@ -3311,7 +3255,6 @@ person:은화,127,17,char:92,호감도,5,370,330,0,ep:d_nikke_eunhwa_01
 person:은화,154,21,char:193,호감도,1,2,0,0,ep:d_nikke_neve_04
 person:은화,179,30,char:801,호감도,1,13,10,0,ep:d_nikke_c_2_03
 person:은화,258,57,event_neverland1,이벤트,10,66,52,0,event_neverland1_01_e
-person:은화,287,70,event_liarsend,이벤트,1,8,7,0,event_liarsend_02
 person:은화,289,71,event_onemoretime,이벤트,1,9,8,0,event_onemoretime_02_e
 person:은화,299,74,char:501,호감도,2,24,22,0,ep:d_nikke_trony_02
 person:은화,308,80,ch31,메인,11,149,128,0,d_main_31_02_s
@@ -3388,7 +3331,6 @@ person:일레그,347,94,event_icedragonsaga1,이벤트,3,12,0,9,event_icedragons
 person:일레그,355,99,event_romanticvalentine,이벤트,4,23,16,0,event_romanticvalentine_02_s
 person:일레그,357,100,char:355,호감도,1,1,0,0,ep:d_nikke_anchor_innocentmaid_02
 person:일레그,363,102,char:835,호감도,3,26,23,0,ep:d_nikke_ce005_02_02
-person:일레그,369,106,event_foolburstday,이벤트,2,18,17,0,event_foolburstday_02
 person:일레그,387,113,event_ce006,이벤트,19,197,175,0,event_ce006_1_intermission_01
 person:일레그,388,113,char:852,호감도,5,133,121,0,ep:d_nikke_ce006_03_01
 person:일레그,393,116,fl:boom_the_ghost,이벤트,26,569,495,0,fl:boom_the_ghost_00
@@ -3706,7 +3648,6 @@ person:지휘관,182,31,char:381,호감도,5,89,86,0,ep:d_nikke_biscuit_01
 person:지휘관,183,32,event_cherryblossom,이벤트,14,143,133,0,event_cherryblossom_01_s
 person:지휘관,184,32,char:261,호감도,5,81,74,0,ep:d_nikke_nihilister_01
 person:지휘관,185,32,char:282,호감도,5,66,64,0,ep:d_nikke_sakura_01
-person:지휘관,186,33,event_fullfoolday,이벤트,12,129,112,0,event_fullfoolday_01
 person:지휘관,187,34,event_ltk,이벤트,14,143,143,0,event_ltk_01_s
 person:지휘관,188,34,char:40,호감도,5,74,73,0,ep:d_nikke_d_01
 person:지휘관,189,35,ch21,메인,20,193,158,0,d_main_21_01_s
@@ -3795,7 +3736,6 @@ person:지휘관,281,66,char:500,호감도,5,61,53,0,ep:d_nikke_elegg_01
 person:지휘관,282,67,event_killthelord,이벤트,13,149,148,0,event_killthelord_01_s
 person:지휘관,283,67,char:43,호감도,5,168,160,0,ep:d_nikke_d_killerwife_01
 person:지휘관,284,68,char:822,호감도,2,13,12,0,ep:d_nikke_ce_003_03_01
-person:지휘관,287,70,event_liarsend,이벤트,11,152,131,0,event_liarsend_01
 person:지휘관,288,71,side:second_affection,사이드,9,17,0,0,side:second_affection_01
 person:지휘관,289,71,event_onemoretime,이벤트,13,175,170,0,event_onemoretime_01_s
 person:지휘관,290,71,char:550,호감도,4,134,134,0,ep:d_nikke_bay_02
@@ -3863,7 +3803,6 @@ person:지휘관,365,104,fl:for_rest,이벤트,11,95,92,0,fl:for_rest_02
 person:지휘관,366,104,char:412,호감도,5,155,149,0,ep:d_nikke_trina_01
 person:지휘관,367,105,event_newflavor,이벤트,14,281,249,0,event_newflavor_01_s
 person:지휘관,368,105,char:520,호감도,5,88,86,0,ep:d_nikke_bready_01
-person:지휘관,369,106,event_foolburstday,이벤트,15,176,148,0,event_foolburstday_01
 person:지휘관,371,107,event_trueflavor,이벤트,14,119,117,0,event_trueflavor_prologue
 person:지휘관,372,107,char:521,호감도,5,107,106,0,ep:d_nikke_crust_01
 person:지휘관,373,108,ch37,메인,9,82,69,0,d_main_37_01
@@ -4020,7 +3959,6 @@ person:코코,181,31,event_bowwowparadise,이벤트,2,2,1,0,event_bowwowparadise
 person:코코아,175,28,event_maidinvalentine,이벤트,13,112,92,0,event_maidinvalentine_prologue
 person:코코아,176,28,char:311,호감도,5,201,185,0,ep:d_nikke_cocoa_01
 person:코코아,177,29,char:312,호감도,3,31,25,1,ep:d_nikke_soda_02
-person:코코아,186,33,event_fullfoolday,이벤트,1,1,0,0,event_fullfoolday_09
 person:코코아,205,37,char:270,호감도,1,1,0,0,ep:d_nikke_blanc_01
 person:코코아,235,50,char:321,호감도,1,40,25,0,ep:d_nikke_marciana_03
 person:코코아,238,52,char:451,호감도,1,13,12,0,ep:d_nikke_tia_02
@@ -4032,13 +3970,11 @@ person:코코아,281,66,char:500,호감도,1,7,6,0,ep:d_nikke_elegg_03
 person:코코아,284,68,char:822,호감도,5,108,95,0,ep:d_nikke_ce_003_03_01
 person:코코아,285,68,char:821,호감도,2,13,13,0,ep:d_nikke_ce_003_02_01
 person:코코아,286,69,char:820,호감도,3,5,2,0,ep:d_nikke_ce_003_01_01
-person:코코아,287,70,event_liarsend,이벤트,1,40,32,0,event_liarsend_03
 person:코코아,300,75,event_goldencoinrush1,이벤트,9,86,66,0,event_goldencoinrush1_prologue
 person:코코아,301,75,char:314,호감도,1,1,0,0,ep:d_nikke_soda_twinklingbunny_05
 person:코코아,351,97,event_outofuniform,이벤트,1,12,12,0,event_outofuniform_02
 person:코코아,355,99,event_romanticvalentine,이벤트,2,4,3,0,event_romanticvalentine_01_e
 person:코코아,357,100,char:355,호감도,2,31,29,0,ep:d_nikke_anchor_innocentmaid_01
-person:코코아,369,106,event_foolburstday,이벤트,1,29,22,0,event_foolburstday_04
 person:코코아,404,122,fl:coins_in_rush,이벤트,1,1,0,0,fl:coins_in_rush_18
 person:코코아,405,122,char:315,호감도,3,43,33,0,ep:d_nikke_ade_agentbunny_01
 person:코코아,432,136,fl:fatal_maid,이벤트,10,122,83,0,fl:fatal_maid_00
@@ -4148,19 +4084,16 @@ person:클레이,289,71,event_onemoretime,이벤트,15,487,344,0,event_onemoreti
 person:클레이,290,71,char:550,호감도,1,8,6,0,ep:d_nikke_bay_05
 person:클레이,303,77,event_claymore,이벤트,15,703,605,0,event_claymore_prologue
 person:클레이,304,77,char:551,호감도,5,247,201,0,ep:d_nikke_clay_01
-person:클레이,369,106,event_foolburstday,이벤트,1,10,8,0,event_foolburstday_05
 person:클레이,404,122,fl:coins_in_rush,이벤트,2,3,0,0,fl:coins_in_rush_12
 person:클로이,347,94,event_icedragonsaga1,이벤트,11,206,178,0,event_icedragonsaga1_04_e
 person:키리,239,53,event_freezeacpu,이벤트,12,351,301,0,event_freezeacpu_01_e
 person:키리,240,53,char:33,호감도,5,252,198,0,ep:d_nikke_quiry_01
 person:키리,260,58,char:62,호감도,1,1,0,0,ep:d_nikke_mica_snowbuddy_03
-person:키리,287,70,event_liarsend,이벤트,1,28,25,0,event_liarsend_05
 person:키리,289,71,event_onemoretime,이벤트,1,14,13,0,event_onemoretime_03_s
 person:키리,328,87,event_phantomthiefvsdetective,이벤트,10,139,108,2,event_phantomthiefvsdetective_01_e
 person:키리,347,94,event_icedragonsaga1,이벤트,2,17,12,0,event_icedragonsaga1_01_s
 person:키리,349,95,char:182,호감도,1,2,2,0,ep:d_nikke_guillotine_winterslayer_02
 person:키리,366,104,char:412,호감도,1,1,0,0,ep:d_nikke_trina_01
-person:키리,369,106,event_foolburstday,이벤트,1,18,16,0,event_foolburstday_03
 person:키리,407,124,fl:reborn_evil,이벤트,14,174,135,0,fl:reborn_evil_05
 person:키리,409,124,char:842,호감도,5,112,95,0,ep:d_nikke_ce007_03_01
 person:키리,410,125,char:841,호감도,1,1,0,0,ep:d_nikke_ce007_02_04
@@ -4336,7 +4269,6 @@ person:폴리,179,30,char:801,호감도,1,14,10,0,ep:d_nikke_c_2_02
 person:폴리,180,30,char:802,호감도,5,198,166,0,ep:d_nikke_c_3_01
 person:폴리,181,31,event_bowwowparadise,이벤트,2,46,37,0,event_bowwowparadise_02_s
 person:폴리,182,31,char:381,호감도,2,28,22,0,ep:d_nikke_biscuit_04
-person:폴리,186,33,event_fullfoolday,이벤트,1,6,3,0,event_fullfoolday_10
 person:폴리,189,35,ch21,메인,1,19,16,0,d_main_21af_03
 person:폴리,195,36,ch22,메인,7,90,82,0,d_main_22_01_e
 person:폴리,204,37,event_BunnyX777,이벤트,1,17,13,0,event_BunnyX777_02_s
@@ -4348,7 +4280,6 @@ person:폴리,240,53,char:33,호감도,4,98,81,0,ep:d_nikke_quiry_01
 person:폴리,243,54,sub:산해진미_01,서브퀘스트,1,7,0,7,sub:산해진미_01
 person:폴리,260,58,char:62,호감도,1,19,16,0,ep:d_nikke_mica_snowbuddy_03
 person:폴리,266,62,char:281,호감도,1,8,7,0,ep:d_nikke_moran_05
-person:폴리,287,70,event_liarsend,이벤트,1,4,0,0,event_liarsend_05
 person:폴리,289,71,event_onemoretime,이벤트,8,196,145,1,event_onemoretime_02_e
 person:폴리,328,87,event_phantomthiefvsdetective,이벤트,12,119,86,0,event_phantomthiefvsdetective_01_e
 person:폴리,329,87,char:403,호감도,2,41,37,0,ep:d_nikke_quency_escapequeen_03
@@ -4356,7 +4287,6 @@ person:폴리,347,94,event_icedragonsaga1,이벤트,2,46,39,0,event_icedragonsag
 person:폴리,349,95,char:182,호감도,1,11,10,0,ep:d_nikke_guillotine_winterslayer_02
 person:폴리,352,97,char:16,호감도,1,1,0,0,ep:d_nikke_rapi_redhood_02
 person:폴리,366,104,char:412,호감도,3,34,27,0,ep:d_nikke_trina_01
-person:폴리,369,106,event_foolburstday,이벤트,1,43,37,0,event_foolburstday_03
 person:폴리,381,109,char:590,호감도,1,11,8,0,ep:d_nikke_mori_01
 person:폴리,404,122,fl:coins_in_rush,이벤트,1,7,6,0,fl:coins_in_rush_01
 person:폴리,407,124,fl:reborn_evil,이벤트,14,101,63,0,fl:reborn_evil_00
@@ -4368,10 +4298,8 @@ person:폴리,448,142,fl:good_world,이벤트,1,2,0,0,fl:good_world_02
 person:폴리,463,148,char:570,호감도,1,4,2,0,ep:d_nikke_arkrangerblack_02
 person:폴리,474,154,fl:persona_on_frontline,이벤트,5,15,7,0,fl:persona_on_frontline_01
 person:폴크방,132,17,char:242,호감도,5,318,266,0,ep:d_nikke_folkwang_01
-person:폴크방,186,33,event_fullfoolday,이벤트,1,13,12,0,event_fullfoolday_10
 person:폴크방,226,45,event_seayouagain1,이벤트,1,1,0,0,event_seayouagain1_01_s
 person:폴크방,283,67,char:43,호감도,1,3,2,0,ep:d_nikke_d_killerwife_03
-person:폴크방,287,70,event_liarsend,이벤트,1,6,6,0,event_liarsend_06
 person:폴크방,289,71,event_onemoretime,이벤트,2,60,55,0,event_onemoretime_02_s
 person:폴크방,290,71,char:550,호감도,1,1,0,0,ep:d_nikke_bay_02
 person:폴크방,300,75,event_goldencoinrush1,이벤트,10,114,95,0,event_goldencoinrush1_03_s
@@ -4397,7 +4325,6 @@ person:프리바티,178,30,char:800,호감도,3,61,57,0,ep:d_nikke_c_1_01
 person:프리바티,218,43,sub:중앙정부_트라이앵글_00,서브퀘스트,1,58,53,0,sub:중앙정부_트라이앵글_00
 person:프리바티,267,63,event_perfectmaid,이벤트,13,537,464,0,event_perfectmaid_01_e
 person:프리바티,268,63,char:313,호감도,5,319,299,0,ep:d_nikke_privaty_unkindmaid_01
-person:프리바티,287,70,event_liarsend,이벤트,1,13,13,0,event_liarsend_06
 person:프리바티,319,82,event_colorless,이벤트,10,236,207,0,event_colorless_01_e
 person:프리바티,320,82,char:390,호감도,4,14,6,0,ep:d_nikke_zwei_01
 person:프리바티,347,94,event_icedragonsaga1,이벤트,6,62,42,0,event_icedragonsaga1_01_s
@@ -4407,7 +4334,6 @@ person:프리바티,354,98,char:290,호감도,2,8,5,1,ep:d_nikke_mana_01
 person:프리바티,355,99,event_romanticvalentine,이벤트,5,57,46,0,event_romanticvalentine_01_e
 person:프리바티,356,99,char:354,호감도,1,6,6,1,ep:d_nikke_mast_romanticmaid_02
 person:프리바티,365,104,fl:for_rest,이벤트,1,7,7,0,fl:for_rest_00
-person:프리바티,369,106,event_foolburstday,이벤트,1,34,28,0,event_foolburstday_04
 person:프리바티,387,113,event_ce006,이벤트,16,390,337,0,event_ce006_1_intermission_01
 person:프리바티,432,136,fl:fatal_maid,이벤트,4,11,11,0,fl:fatal_maid_01
 person:프리바티,444,141,fl:2x2_love_1ch,이벤트,40,2058,1686,0,fl:2x2_love_1ch_00
@@ -4455,7 +4381,6 @@ person:프림,133,17,char:170,호감도,2,5,2,0,ep:d_nikke_privaty_01
 person:프림,134,17,char:142,호감도,5,252,211,0,ep:d_nikke_frima_01
 person:프림,153,21,event_miraclesnow1,이벤트,1,1,1,0,event_miraclesnow1_01_e
 person:프림,157,23,event_brandnewyear,이벤트,2,5,0,0,event_brandnewyear_02_s
-person:프림,186,33,event_fullfoolday,이벤트,1,15,13,0,event_fullfoolday_09
 person:프림,209,40,event_bluewaterisland,이벤트,14,65,58,0,event_bluewaterisland1_01_s
 person:프림,210,40,char:132,호감도,2,24,18,0,ep:d_nikke_Mary_BayGoddess_01
 person:프림,220,44,sub:해결사_카페_스위티_00,서브퀘스트,1,16,10,0,sub:해결사_카페_스위티_00

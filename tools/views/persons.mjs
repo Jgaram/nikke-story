@@ -24,6 +24,7 @@
  *   떡밥 · 생활상 = 2회독 E · U의 about, 줄기 = 그 인물을 다룬 사실 · 의문이 든 줄기 ∪ 줄기 about에 그 인물,
  *   변화 = 2회독 D(person — 작중 순서 · 뒤바뀜은 chrono-order.mjs changeTimeline), 관계 상대 = D의 with,
  *   마무리 = O(about) · 합류 H(그 인물의 O를 묶은 것 · persons), 정체 연결 = 확정 same_as(sameAsGroups — 묶지 않고 칸으로만 단다).
+ * 만우절 단위(결정 #11 — tools/lib/fools.mjs)는 숫자에서 뺀다: 등장 · 함께 나옴 · 흔한 대상(분모 포함) · 기록 수. person-records.csv에는 fool 칸을 달아 남긴다(상세 표시).
  * 기각된 기록은 뺀다. 후보는 세되 unconfirmed 칸에 남긴다. 같은 기록이면 같은 결과다(정렬 끝까지 결정적). 원문 대사 · 기록 문장은 담지 않는다(ID · 이름 · 수만).
  */
 import fs from 'node:fs';
@@ -39,6 +40,7 @@ import { releasePlaces, revealStages } from './reveal.mjs';
 import { buildChronology } from './timeline.mjs';
 import { changeTimeline, unitSpans } from './chrono-order.mjs';
 import { toCsv } from './draft.mjs';
+import { isAprilFools } from '../lib/fools.mjs';
 
 export const PERSONS_DIR = path.join(ROOT, 'data/views/persons');
 /** 순위 · 상대 표에 보일 수 */
@@ -51,7 +53,7 @@ const COLUMNS = {
     'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'unconfirmed'],
   pairs: ['a', 'b', 'a_name', 'b_name', 'scenes', 'units', 'talk_scenes', 'first_order', 'first_unit', 'last_order', 'last_unit', 'common', 'same_as'],
   personUnits: ['person', 'order', 'tick', 'unit', 'kind', 'scenes', 'lines', 'speaker_lines', 'implied_lines', 'first_scene'],
-  personRecords: ['person', 'record', 'kind', 'role', 'unit', 'order', 'tick', 'state', 'threads', 'with', 'status'],
+  personRecords: ['person', 'record', 'kind', 'role', 'unit', 'order', 'tick', 'state', 'threads', 'with', 'status', 'fool'],
 };
 const FILES = { persons: 'persons.csv', pairs: 'pairs.csv', personUnits: 'person-units.csv', personRecords: 'person-records.csv' };
 
@@ -111,7 +113,8 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   const { per, total } = unitTargets(ds, ctx, places);
   const spread = new Map();
   for (const [u, m] of per) for (const [t, x] of m) if (isPerson(t) && centerWhy(t, x, total.get(u) ?? 0)) spread.set(t, (spread.get(t) ?? 0) + 1);
-  const commonLimit = Math.round(places.unitPos.size * COMMON_SHARE);
+  const counted = [...places.unitPos.keys()].filter((u) => !isAprilFools(u)).length; // 분모 — 만우절 단위 빼고
+  const commonLimit = Math.round(counted * COMMON_SHARE);
   const commonOf = (t) => (SKIP_TARGETS.has(t) ? '지휘관' : (spread.get(t) ?? 0) > commonLimit ? '흔한 대상' : '');
 
   // ── 등장 ──
@@ -127,6 +130,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     const a = { scenes: 0, units: new Map(), lines: 0, speak: 0, named: 0, implied: 0, impliedScenes: 0, first: null, last: null, firstSpeaks: null, unplaced: 0 };
     const placed = [];
     for (const [s, x] of scenes) {
+      if (isAprilFools(places.unitOf(s))) continue; // 만우절 — 등장 · 함께 나옴에서 뺀다
       const p = places.posOf(s);
       if (!p) {
         a.unplaced++;
@@ -198,15 +202,20 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   // ── 기록 ──
   const recRows = [];
   const R = new Map(); // 인물 → 기록 집계
-  const rec = (t) => getOr(R, t, () => ({ facts: 0, questions: 0, open: 0, partial: 0, solved: 0, reversed: 0, events: 0, echoes: 0, life: 0,
-    threads: new Set(), baselines: 0, changes: 0, aspects: new Map(), withOthers: 0, inverted: 0, closures: new Set(), merges: new Set(), unconfirmed: 0 }));
+  const blank = () => ({ facts: 0, questions: 0, open: 0, partial: 0, solved: 0, reversed: 0, events: 0, echoes: 0, life: 0,
+    threads: new Set(), baselines: 0, changes: 0, aspects: new Map(), withOthers: 0, inverted: 0, closures: new Set(), merges: new Set(), unconfirmed: 0 });
+  const rec = (t) => getOr(R, t, blank);
   const live = ds.candidates.filter((c) => c.id && c.status !== '기각');
   const byId = new Map(live.map((c) => [c.id, c]));
   const mem = threadMembership(ds);
   const rootOf = new Map(st.roots.map((r) => [r.id, r]));
+  // 만우절 단위의 기록 — 줄은 남기고(fool 칸) 수에서는 뺀다. 그 몫은 sink에 센다(버림)
+  const fool = (c) => isAprilFools(c.kind === 'closure' ? c.closureEnd ?? c.obj?.end : c.unit);
+  const sink = blank();
+  const cnt = (t, c) => (fool(c) ? sink : rec(t));
   const push = (t, c, kind, role, extra = {}) => {
     const unit = c.unit ?? '';
-    recRows.push({ person: t, record: c.id, kind, role, unit, order: orderOf(unit), tick: tickOf(unit), state: '', threads: '', with: '', status: c.status ?? '', ...extra });
+    recRows.push({ person: t, record: c.id, kind, role, unit, order: orderOf(unit), tick: tickOf(unit), state: '', threads: '', with: '', status: c.status ?? '', fool: fool(c) ? 1 : '', ...extra });
     if (c.status !== '확정') rec(t).unconfirmed++;
   };
   for (const c of live.filter(isRecord).sort((a, b) => compareIds(a.id, b.id))) {
@@ -214,7 +223,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       const root = rootOf.get(c.id);
       const threads = c.kind === 'fact' ? mem.ofFact.get(c.id) ?? [] : mem.ofQuestion.has(c.id) ? [mem.ofQuestion.get(c.id)] : [];
       for (const t of new Set(arr(c.obj?.about).filter(isPerson))) {
-        const r = rec(t);
+        const r = cnt(t, c);
         if (c.kind === 'fact') {
           r.facts++;
           if (root?.state === '뒤집힘') r.reversed++;
@@ -229,7 +238,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
       }
     } else if (c.role === 'event' && c.parent) {
       for (const t of new Set(arr(byId.get(c.parent)?.obj?.about).filter(isPerson))) {
-        rec(t).events++;
+        cnt(t, c).events++;
         push(t, c, '사건', c.act ?? '');
       }
     }
@@ -237,14 +246,14 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   for (const th of mem.threads) for (const t of arr(th.c.obj?.about).filter(isPerson)) rec(t).threads.add(th.id);
   for (const c of live.filter((x) => x.kind === 'echo' || x.kind === 'life').sort((a, b) => compareIds(a.id, b.id))) {
     for (const t of new Set(arr(c.obj?.about).filter(isPerson))) {
-      rec(t)[c.kind === 'echo' ? 'echoes' : 'life']++;
+      cnt(t, c)[c.kind === 'echo' ? 'echoes' : 'life']++;
       push(t, c, c.kind === 'echo' ? '떡밥' : '생활상', c.act ?? c.obj?.topic ?? '', { unit: c.unit });
     }
   }
   const ctById = new Map(ct.rows.map((r) => [r.id, r]));
   for (const c of live.filter((x) => x.kind === 'change' && isPerson(x.obj?.person)).sort((a, b) => compareIds(a.id, b.id))) {
     const t = c.obj.person;
-    const r = rec(t);
+    const r = cnt(t, c);
     const with_ = arr(c.obj.with).filter(isPerson);
     if (c.act === '기준') r.baselines++;
     else {
@@ -255,7 +264,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     push(t, c, c.act === '기준' ? '기준' : '변화', c.obj.aspect ?? '', { with: with_.join(' ') });
     for (const w of with_) {
       if (w === t) continue;
-      rec(w).withOthers++;
+      cnt(w, c).withOthers++;
       push(w, c, '관계 상대', c.obj.aspect ?? '', { with: t });
     }
   }
@@ -264,8 +273,8 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   for (const c of live.filter((x) => x.kind === 'closure').sort((a, b) => compareIds(a.id, b.id))) {
     const unit = c.closureEnd ?? c.obj?.end ?? '';
     for (const t of new Set(arr(c.obj?.about).filter(isPerson))) {
-      rec(t).closures.add(c.id);
-      if (mergeOf.has(c.id)) rec(t).merges.add(mergeOf.get(c.id));
+      cnt(t, c).closures.add(c.id);
+      if (mergeOf.has(c.id)) cnt(t, c).merges.add(mergeOf.get(c.id));
       push(t, c, '마무리', c.obj?.type ?? '', { unit, order: orderOf(unit), tick: tickOf(unit), state: mergeOf.get(c.id) ?? '' });
     }
   }
@@ -294,7 +303,7 @@ export function buildPersons(ds, ctx, order, pre = {}) {
   }).sort((x, y) => y.scenes - x.scenes || y.facts + y.questions - (x.facts + x.questions) || x.target.localeCompare(y.target));
   unitRows.sort((x, y) => x.person.localeCompare(y.person) || x.order - y.order);
   for (const id of R.keys()) if (!nameOf.has(id)) problems.push(`기록이 가리키는 인물이 사전에 없다: ${id}`);
-  return { persons: rows, pairs: pairRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: places.unitPos.size, problems };
+  return { persons: rows, pairs: pairRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: counted, problems };
 }
 
 const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '-');

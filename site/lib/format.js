@@ -3,7 +3,7 @@
  * 색은 CSS 변수를 가리키고 값은 style.css 토큰 한 곳에만 있다. 레포 용어 → 화면 말 대응은 라벨 값에만 걸리고, 상수의 키는 그대로다.
  *
  *   KIND[id] · KIND_ORDER           스토리 종류(main · event · side · sub · relic · erelic · episode · elevator) → label · color
- *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립 · 필수(키 '척추') · 메인 — 색은 준필수 · 추천 띠만(style.css "등급")
+ *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립 · 필수(키 '척추') · 메인 · 만우절(등급 없는 표시 — 결정 #11) — 색은 준필수 · 추천 띠만(style.css "등급")
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
  *   TARGET_TYPE · CONFIDENCE · majorThread(무게는 '주요 떡밥' 하나) · THREAD_WEIGHT_HELP
@@ -86,8 +86,9 @@ export const GRADE = {
   독립: { label: '독립', color: 'var(--grade-standalone)', rank: 4 },
   척추: { label: '필수', color: 'var(--grade-spine)', rank: 0 },
   메인: { label: '메인', color: 'var(--grade-main)', rank: 0 },
+  만우절: { label: '만우절', color: 'var(--grade-none)', rank: 5 },
 };
-export const GRADE_ORDER = ['메인', '척추', '필수', '보강', '참고', '독립'];
+export const GRADE_ORDER = ['메인', '척추', '필수', '보강', '참고', '독립', '만우절'];
 export const GRADE_HELP = {
   필수: '안 읽으면 필수 스토리의 장면 · 인물을 따라갈 수 없거나, 주요 인물의 결정적 순간을 놓친다',
   보강: '읽으면 필수 스토리에서 "뭐 있나 보다" 하고 넘긴 빈틈이 채워지거나, 필수 스토리 인물의 결정적 순간을 본다',
@@ -95,6 +96,7 @@ export const GRADE_HELP = {
   독립: '그 스토리 안에서 끝나는 이야기 — 안 읽어도 필수 스토리에 지장 없다',
   척추: '꼭 읽을 스토리 — 메인 챕터와 필수 이벤트 · 사이드. 등급을 매기지 않고 다른 스토리 등급의 기준이 된다',
   메인: '메인 스토리 챕터',
+  만우절: '만우절 이벤트 — 등급을 매기지 않고, 등장 · 대사 수 · 연결 같은 숫자에서도 뺀다',
 };
 
 // ── 의문 · 사실의 상태 ──

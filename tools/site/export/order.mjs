@@ -10,6 +10,7 @@
  *             reason(판정 이유) · confidence · asof(기준 시점) · judgment(K-ID) · trail(['독립', '참고'] — 판정 이력에서 등급이 바뀐 순서, 바뀐 적 없으면 없음) ·
  *             threads[](이 단위의 확정 기록이 든 줄기) ·
  *             lead_facts(주역 사연 조각 — '네온(ch01) 사실 3') · closures('O9(관계 · 지휘관 · 확정)') · origin_of[](이 단위가 원점인 주역 person ID)
+ *   fools[]   만우절 단위(결정 #11 — 등급 없이 '만우절' 표시로 싣는다, 공용 units.json fool) — key · tick. 판정 단위 · counts에 넣지 않는다
  *   spine[]   척추 자리 60 = 메인 챕터 49 + 척추 이벤트 8 · 사이드 3(공용 units.json의 spine 표시) — key · tick · order, 공개 자리순
  *   leads[]   주역 명단(annotations/leads.json 확정) — id · person · from(주역이 되는 자리의 단위 키) · from_tick · origin(원점 단위 키 또는 '메인') · origin_tick · arcs[] · records[] · reason · confidence
  *   pre       { <단위 키>: { 필수: [[키, 왜]], 권장: [...], 선택: [...] } } — 선행 스토리(계산, PRE_RULES · prereqsOf). 선행이 없는 단위는 싣지 않는다
@@ -173,12 +174,16 @@ export async function run(ctx) {
     .map((u) => ({ key: u.key, tick: u.tick, order: u.order }))
     .sort((a, b) => a.tick - b.tick || a.order - b.order);
 
+  // 만우절 — 등급 없이 표시만(결정 #11). 선행(pre)은 연결 선에서 오므로 만우절끼리의 다음 편만 남는다(links.mjs)
+  const fools = common.units.filter((u) => u.fool).map((u) => ({ key: u.key, tick: u.tick })).sort((a, b) => (a.tick ?? 1e9) - (b.tick ?? 1e9));
+  for (const f of fools) if (units.some((u) => u.key === f.key)) warn({ where: `order ${f.key}`, msg: '만우절 단위가 판정 단위에도 있다' });
+
   const pre = prereqsOf(csv('data/views/links/unit-edges.csv'), units, unitByKey);
 
   const asof = [...new Set(units.map((u) => u.asof).filter(Boolean))].sort().at(-1);
   return {
     files: {
-      'order.json': { units, spine, leads, pre, counts: { grade: counts, judged: units.length, spine: spine.length, leads: leads.length, asof } },
+      'order.json': { units, fools, spine, leads, pre, counts: { grade: counts, judged: units.length, spine: spine.length, leads: leads.length, asof } },
       'order-detail.json': { notes: reviewNotes, units: detail },
     },
   };
