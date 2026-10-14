@@ -1,0 +1,4144 @@
+{
+ "session": "W22",
+ "by": "claude",
+ "date": "2026-10-14",
+ "note": "실장판 202 가운데 지휘관 호칭이 원문에 있는 183판. 없는 판(19): 142 프림 · 300 솔져 E.G. · 301 솔져 F.A. · 302 프로덕트 08 · 303 프로덕트 12 · 304 iDoll 플라워 · 305 iDoll 오션 · 306 솔져 O.W. · 307 프로덕트 23 · 308 iDoll 썬 · 800 마키마 · 820 렘 · 831 레이 · 833 미사토 · 851 레이븐 · 852 릴리 · 860 치사토 · 861 타키나 · 862 쿠루미",
+ "addresses": [
+  {
+    "id": "A1",
+    "rid": 10,
+    "person": "person:라피",
+    "address": "지휘관",
+    "also": ["당신"],
+    "voice": ["c010_Lobby_Touch_Love_1", "c010_Lobby_Stay_1", "c010_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rapi_01", "lines": [1, 26] }, { "scene": "ep:d_nikke_rapi_05", "lines": [50, 74] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리 전편에서 지휘관으로 부른다. 마지막 호감도 편의 고백 대목에서만 당신으로 바꿔 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A2",
+    "rid": 11,
+    "person": "person:네온",
+    "address": "스승님",
+    "also": ["지휘관"],
+    "voice": ["c011_Lobby_Touch_1", "c011_Lobby_Stay_1", "c011_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_neon_01", "lines": [9, 113] }, { "scene": "d_main_02_02", "lines": [24] }],
+    "reason": "음성 대사 대부분과 호감도 스토리, 그 밖의 스토리 200여 줄에서 스승님으로 부른다. 메인 초반에는 지휘관으로 부른 적이 있다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A3",
+    "rid": 12,
+    "person": "person:아니스",
+    "address": "지휘관님",
+    "voice": ["c012_Lobby_Touch_Love_1", "c012_Gift_3", "c012_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_anis_01", "lines": [47, 56] }, { "scene": "ep:d_nikke_anis_05", "lines": [88] }],
+    "reason": "음성 대사와 호감도 스토리, 그 밖의 스토리 290여 줄 모두 지휘관님이다. 지휘관(님 없이)은 지휘관 일반을 말할 때 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A4",
+    "rid": 14,
+    "person": "person:네온",
+    "address": "스승님",
+    "voice": ["c014_Lobby_Touch_1", "c014_Outpost_Touch_2", "c014_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_neon_blueocean_01", "lines": [2, 46] }, { "scene": "ep:d_nikke_neon_blueocean_05", "lines": [95] }],
+    "reason": "음성 대사와 호감도 스토리 거의 모든 호칭이 스승님이다. 수력의 길에서도 스승으로 모신다는 설정이 이어진다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A5",
+    "rid": 15,
+    "person": "person:아니스",
+    "address": "지휘관님",
+    "voice": ["c015_Lobby_Stay_1", "c015_Gift_1", "c015_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_anis_sparklingsummer_01", "lines": [8] }, { "scene": "ep:d_nikke_anis_sparklingsummer_05", "lines": [72, 108] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리 40줄 가까이에서 지휘관님으로 부른다. 다른 호칭은 지휘관을 향한 것이 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A6",
+    "rid": 16,
+    "person": "person:라피",
+    "address": "지휘관",
+    "voice": ["c016_Lobby_Touch_1", "c016_01_Lobby_Touch_2", "c016_02_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rapi_redhood_01", "lines": [1, 71] }, { "scene": "ep:d_nikke_rapi_redhood_05", "lines": [73] }],
+    "reason": "세 벌 음성 대사 모두와 호감도 스토리 전편에서 지휘관으로 부른다. 님을 붙이지 않는 기본 라피와 같다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A7",
+    "rid": 17,
+    "person": "person:아니스",
+    "address": "지휘관님",
+    "voice": ["c017_Lobby_Stay_1", "c017_Gift_1", "c017_02_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_anis_star_02", "lines": [16, 73] }, { "scene": "ep:d_nikke_anis_star_05", "lines": [31, 55] }],
+    "reason": "세 벌 음성 대사와 호감도 스토리 전편에서 지휘관님으로 부른다. 한 번 길게 늘인 지휘관니임도 같은 호칭이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A8",
+    "rid": 18,
+    "person": "person:네온",
+    "address": "스승님",
+    "voice": ["c018_Lobby_Touch_Love_1", "c018_Lobby_Stay_1", "c018_Gift_2"],
+    "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_01", "lines": [5, 44] }, { "scene": "ep:d_nikke_neon_visioneye_05", "lines": [65] }],
+    "reason": "음성 대사와 호감도 스토리에서 스승님으로 부른다. 공주님은 과거의 다른 인물을 가리키는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A9",
+    "rid": 20,
+    "person": "person:델타",
+    "address": "지휘관",
+    "voice": ["c020_Lobby_Touch_Love_1", "c020_Lobby_Touch_Love_3", "c020_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_delta_01", "lines": [1, 34] }, { "scene": "ep:d_nikke_delta_02", "lines": [123] }],
+    "reason": "음성 대사 세 곳과 호감도 스토리 전편에서 지휘관으로 부르고 높일 때는 지휘관께를 쓴다. 당신은 아니스를 부른 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A10",
+    "rid": 22,
+    "person": "person:시그널",
+    "address": "지휘관",
+    "voice": ["c022_Lobby_Touch_Love_2", "c022_Attractive_Up_3", "c022_Lobby_Touch_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_signal_03", "lines": [76] }, { "scene": "ep:d_nikke_signal_04", "lines": [81] }],
+    "reason": "음성 대사와 호감도 스토리, 그 밖의 스토리 모두 지휘관이다. 더듬으며 부르는 형태도 같은 호칭이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A11",
+    "rid": 23,
+    "person": "person:델타",
+    "address": "지휘관",
+    "also": ["괴도 지휘관"],
+    "voice": ["c023_Lobby_Touch_Love_1", "c023_Lobby_Stay_1", "c023_Lobby_Touch_Love_3"],
+    "evidence": [{ "scene": "ep:d_nikke_delta_ninjathief_01", "lines": [59, 92] }, { "scene": "ep:d_nikke_delta_ninjathief_05", "lines": [119] }],
+    "reason": "음성 대사 여럿과 호감도 스토리에서 지휘관으로 부른다. 괴도단 설정에 맞춘 괴도 지휘관이 음성 한 곳에 있고, 당신은 변장한 상대를 몰라본 대목이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A12",
+    "rid": 30,
+    "person": "person:폴리",
+    "address": "지휘관",
+    "voice": ["c030_Lobby_Touch_Love_1", "c030_Gift_1", "c030_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_poli_02", "lines": [12, 23] }, { "scene": "ep:d_nikke_poli_05", "lines": [92] }],
+    "reason": "음성 대사 대부분과 호감도 스토리에서 지휘관으로 부른다. 사장님은 잉그리드를 부르는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A13",
+    "rid": 32,
+    "person": "person:미란다",
+    "address": "지휘관",
+    "voice": ["c032_Lobby_Touch_Love_1", "c032_Lobby_Stay_1", "c032_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_miranda_01", "lines": [5, 95] }, { "scene": "ep:d_nikke_miranda_05", "lines": [117] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로 부른다. 팀장님은 다른 상관을 부르는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A14",
+    "rid": 33,
+    "person": "person:키리",
+    "address": "지휘관",
+    "voice": ["c033_Lobby_Touch_Love_1", "c033_Lobby_Stay_1", "c033_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_quiry_02", "lines": [102] }, { "scene": "ep:d_nikke_quiry_05", "lines": [69] }],
+    "reason": "음성 대사 거의 모두와 호감도 스토리, 이벤트 스토리에서 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A15",
+    "rid": 40,
+    "person": "person:D",
+    "address": "지휘관",
+    "also": ["너", "여보"],
+    "voice": ["c040_Lobby_Touch_Love_2", "c040_Attractive_Up_1"],
+    "evidence": [
+      { "scene": "fl:reborn_evil_18", "lines": [15] },
+      { "scene": "ep:d_nikke_d_05", "lines": [86] },
+      { "scene": "event_killthelord_02_s", "lines": [158] }
+    ],
+    "reason": "음성과 호감도 스토리에서는 직함 없이 너로만 부른다. 지휘관 호칭은 그 밖의 스토리에서 몇 번, 여보는 위장 부부 이벤트에서만 나온다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A16",
+    "rid": 41,
+    "person": "person:K",
+    "address": "너",
+    "also": ["지휘관"],
+    "voice": ["c041_Lobby_Touch_Love_1", "c041_Attractive_Up_2"],
+    "evidence": [{ "scene": "fl:reborn_evil_25", "lines": [10] }, { "scene": "ep:d_nikke_k_05", "lines": [57, 67] }],
+    "reason": "음성 · 호감도 스토리 모두 너로 부른다. 지휘관은 남에게 3인칭으로 가리킬 때만 몇 번 나온다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "note": "W22 검토: 지휘관 / 너 → 너 / 지휘관 (한두 장면 · 3인칭에만 나온 직함은 also)",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A17",
+    "rid": 43,
+    "person": "person:D",
+    "address": "여보",
+    "also": ["당신", "지휘관", "너"],
+    "voice": ["c043_Lobby_Touch_1", "c043_Lobby_Stay_Love_1", "c043_02_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_d_killerwife_03", "lines": [12, 64] }, { "scene": "ep:d_nikke_d_killerwife_04", "lines": [98] }],
+    "reason": "위장 부부 설정의 음성 대사와 호감도 스토리 20여 줄에서 여보로 부른다. 연기 중에는 당신, 연기를 벗으면 너, 다른 의상 음성에서는 지휘관을 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A18",
+    "rid": 60,
+    "person": "person:벨로타",
+    "address": "아저씨",
+    "voice": ["c060_Lobby_Touch_1", "c060_Gacha_Get_1", "c060_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_belorta_04", "lines": [41] }, { "scene": "ep:d_nikke_belorta_05", "lines": [113] }],
+    "reason": "음성 대사와 호감도 스토리, 이벤트 스토리 모두 아저씨다. 호감도 스토리에서 지휘관이 아니라 아저씨라고 짚기도 한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A19",
+    "rid": 61,
+    "person": "person:미카",
+    "address": "아저씨",
+    "voice": ["c061_Lobby_Touch_1", "c061_Gift_2", "c061_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_mica_03", "lines": [60, 114] }, { "scene": "ep:d_nikke_mica_04", "lines": [16] }],
+    "reason": "음성 대사 대부분과 호감도 스토리에서 아저씨로 부른다. 지휘관님은 이전에 쫓겨난 다른 지휘관을 가리키는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A20",
+    "rid": 62,
+    "person": "person:미카",
+    "address": "아저씨",
+    "voice": ["c062_Outpost_Touch_1", "c062_Gift_1", "c062_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_mica_snowbuddy_03", "lines": [18] }, { "scene": "ep:d_nikke_mica_snowbuddy_05", "lines": [15] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 아저씨로 부른다. 기본 미카와 같다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A21",
+    "rid": 70,
+    "person": "person:브리드",
+    "address": "지휘관",
+    "voice": ["c070_Lobby_Touch_Love_2", "c070_Attractive_Up_2", "c070_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_brid_04", "lines": [98, 120] }, { "scene": "ep:d_nikke_brid_05", "lines": [54] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로 부르고, 높일 때 지휘관께를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A22",
+    "rid": 71,
+    "person": "person:솔린",
+    "address": "지휘관",
+    "voice": ["c071_Lobby_Touch_Love_3", "c071_Gift_2", "c071_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_soline_04", "lines": [52, 125] }, { "scene": "fl:blank_ticket_05", "lines": [87] }],
+    "reason": "음성 대사와 호감도 스토리, 그 밖의 스토리 모두 지휘관이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A23",
+    "rid": 72,
+    "person": "person:디젤",
+    "address": "지휘관",
+    "voice": ["c072_Lobby_Stay_1", "c072_Gift_2", "c072_Outpost_Touch_3"],
+    "evidence": [{ "scene": "ep:d_nikke_diesel_03", "lines": [40, 132] }, { "scene": "ep:d_nikke_diesel_05", "lines": [67] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로, 다정하게는 우리 지휘관으로 부른다. 동생은 세상을 떠난 친동생을 말한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A24",
+    "rid": 73,
+    "person": "person:브리드",
+    "address": "지휘관",
+    "voice": ["c073_Lobby_Touch_Love_1", "c073_Gift_3", "c073_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_brid_silenttrack_01", "lines": [3, 10] }, { "scene": "ep:d_nikke_brid_silenttrack_05", "lines": [2] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로 부른다. 기본 브리드와 같다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A25",
+    "rid": 74,
+    "person": "person:솔린",
+    "address": "지휘관",
+    "voice": ["c074_Lobby_Touch_3", "c074_Gacha_Get_1", "c074_Gift_2"],
+    "evidence": [{ "scene": "ep:d_nikke_soline_frostticket_01", "lines": [50] }, { "scene": "ep:d_nikke_soline_frostticket_05", "lines": [73, 101] }],
+    "reason": "음성 대사 대부분과 호감도 스토리 전편에서 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A26",
+    "rid": 75,
+    "person": "person:디젤",
+    "address": "지휘관",
+    "voice": ["c075_Lobby_Stay_1", "c075_Die_1", "c075_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_diesel_wintersweets_03", "lines": [19, 22] }, { "scene": "ep:d_nikke_diesel_wintersweets_05", "lines": [78] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로 부른다. 당신은 노래 가사 속 한 번뿐이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A27",
+    "rid": 80,
+    "person": "person:센티",
+    "address": "반장님",
+    "voice": ["c080_Lobby_Touch_Love_1", "c080_Lobby_Touch_Love_2", "c080_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_centi_01", "lines": [28] }, { "scene": "ep:d_nikke_centi_05", "lines": [35, 55] }],
+    "reason": "음성 대사와 호감도 스토리, 그 밖의 스토리에서 반장님으로 부른다. 선배는 리타를 부르는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A28",
+    "rid": 82,
+    "person": "person:리타",
+    "address": "애송이",
+    "also": ["네놈", "젊은 녀석"],
+    "voice": ["c082_Lobby_Touch_Love_1", "c082_01_Attractive_Up_1", "c082_Lobby_Stay_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_liter_02", "lines": [67] },
+      { "scene": "ep:d_nikke_liter_04", "lines": [41] },
+      { "scene": "ep:d_nikke_liter_05", "lines": [118] }
+    ],
+    "reason": "세 벌 음성 대사와 호감도 스토리에서 애송이(부를 때 애송아)로 부르고 네놈을 곁들인다. 지휘관은 거의 쓰지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A29",
+    "rid": 90,
+    "person": "person:엠마",
+    "address": "지휘관",
+    "voice": ["c090_01_Lobby_Touch_2", "c090_01_Field_Touch_1", "c090_Gift_2"],
+    "evidence": [{ "scene": "ep:d_nikke_emma_03", "lines": [61] }, { "scene": "ep:d_nikke_emma_05", "lines": [30] }],
+    "reason": "두 벌 음성 대사와 호감도 스토리, 이벤트 스토리 모두 지휘관이다. 용사님은 판타지 이벤트에서 다른 인물을 부른 것으로 보인다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A30",
+    "rid": 91,
+    "person": "person:베스티",
+    "address": "지휘관님",
+    "also": ["지휘관", "갑옷 기사님"],
+    "voice": ["c091_Lobby_Touch_3", "c091_Lobby_Touch_Love_1", "c091_01_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_vesti_01", "lines": [37, 79] }, { "scene": "ep:d_nikke_vesti_03", "lines": [84] }],
+    "reason": "호감도 스토리 30줄 가까이와 그 밖의 스토리 모두 지휘관님이다. 음성은 지휘관 님과 지휘관이 섞이고, 판타지 의상 음성은 갑옷 기사님이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A31",
+    "rid": 92,
+    "person": "person:은화",
+    "address": "삼류",
+    "also": ["꼴통 후배님", "인간 지휘관"],
+    "voice": ["c092_Lobby_Touch_1", "c092_Lobby_Touch_Love_3", "c092_Attractive_Up_3"],
+    "evidence": [
+      { "scene": "ep:d_nikke_eunhwa_02", "lines": [131] },
+      { "scene": "ep:d_nikke_eunhwa_03", "lines": [142] },
+      { "scene": "d_main_31_06", "lines": [63, 66] }
+    ],
+    "reason": "음성 대사 네 곳과 그 밖의 스토리 수십 줄에서 삼류로 부른다. 인정한 뒤에는 꼴통 후배(님)를, 훈련 편에서는 인간 지휘관을 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A32",
+    "rid": 93,
+    "person": "person:엠마",
+    "address": "지휘관",
+    "voice": ["c093_Lobby_Touch_2", "c093_Lobby_Stay_1", "c093_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_emma_tactical_03", "lines": [8] }, { "scene": "ep:d_nikke_emma_tactical_05", "lines": [2, 27] }],
+    "reason": "음성 대사 대부분과 호감도 스토리 전편에서 지휘관으로 부른다. 기본 엠마와 같다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A33",
+    "rid": 94,
+    "person": "person:베스티",
+    "address": "지휘관님",
+    "also": ["선배"],
+    "voice": ["c094_Lobby_Touch_1", "c094_Gift_2", "c094_01_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_vesti_tactical_01", "lines": [9, 42] }, { "scene": "ep:d_nikke_vesti_tactical_05", "lines": [44] }],
+    "reason": "두 벌 음성 대사와 호감도 스토리 80줄 가까이에서 지휘관님으로 부른다. 교복 의상 음성에서 한 번 장난으로 선배라 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A34",
+    "rid": 95,
+    "person": "person:은화",
+    "address": "꼴통 후배",
+    "also": ["꼴통 후배님", "삼류 지휘관"],
+    "voice": ["c095_Lobby_Touch_1", "c095_Lobby_Touch_Love_1", "c095_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_eunhwa_tactical_01", "lines": [9, 22] }, { "scene": "d_main_31_06", "lines": [66] }],
+    "reason": "음성 대사 5곳과 이 판 호감도 스토리 23줄에서 지휘관을 꼴통 후배로 부른다. 칭찬할 때 꼴통 후배님, 본편에서 한 번 삼류 지휘관.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A35",
+    "rid": 100,
+    "person": "person:라플라스",
+    "address": "버드 보이",
+    "voice": ["c100_Lobby_Touch_Love_1", "c100_Attractive_Up_1", "c100_Ult_Skill_Ready_1"],
+    "evidence": [{ "scene": "ep:d_nikke_laplace_02", "lines": [108] }],
+    "reason": "음성 대사 7곳에서 지휘관을 버드 보이로 부르고, 스토리 전체에서도 거의 이 말만 쓴다(약 100줄).",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A36",
+    "rid": 101,
+    "person": "person:드레이크",
+    "address": "네놈",
+    "also": ["주인놈"],
+    "voice": ["c101_Lobby_Touch_Love_2", "c101_Attractive_Up_1", "c101_02_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_drake_01", "lines": [0, 11] }],
+    "reason": "음성 대사와 호감도 스토리(40줄)에서 지휘관을 네놈으로 부른다. 메이드 의상 음성에서는 주인놈.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A37",
+    "rid": 102,
+    "person": "person:맥스웰",
+    "address": "베이비",
+    "also": ["지휘관"],
+    "voice": ["c102_Lobby_Touch_1", "c102_Gacha_Get_1", "c102_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_maxwell_01", "lines": [0, 19, 76] }],
+    "reason": "음성 대사 거의 전부와 호감도 스토리 50줄에서 베이비라 부른다. 같은 스토리에서 지휘관이라고도 15줄 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A38",
+    "rid": 103,
+    "person": "person:라플라스",
+    "address": "버드 보이",
+    "voice": ["c103_Lobby_Touch_3", "c103_Lobby_Touch_Love_1", "c103_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_laplace_ultimatehero_01", "lines": [1, 13] }],
+    "reason": "기본 음성 대사 다수와 이 판 호감도 스토리 21줄에서 버드 보이로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A39",
+    "rid": 104,
+    "person": "person:드레이크",
+    "address": "네놈",
+    "voice": ["c104_Lobby_Stay_Love_1", "c104_Attractive_Up_1", "c104_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_drake_greatvillain_01", "lines": [14, 23] }],
+    "reason": "음성 대사 6곳(띄어 쓴 네 놈 4곳 포함)과 이 판 호감도 스토리 20줄에서 지휘관을 네놈으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A40",
+    "rid": 105,
+    "person": "person:맥스웰",
+    "address": "베이비",
+    "voice": ["c105_Lobby_Touch_2", "c105_Lobby_Stay_1", "c105_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_maxwell_mechanic_01", "lines": [32, 46] }],
+    "reason": "음성 대사 10곳 넘게, 이 판 호감도 스토리 51줄에서 베이비라 부른다. 지휘관은 한 번 3인칭으로만.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A41",
+    "rid": 110,
+    "person": "person:크로우",
+    "address": "지휘관",
+    "also": ["감시견 씨"],
+    "voice": ["c110_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_crow_01", "lines": [2] }, { "scene": "d_main_16_10", "lines": [11] }, { "scene": "d_main_16_05_e", "lines": [23] }],
+    "reason": "주로 너로 말하고 직함 호칭은 드물다. 지휘관이 호감도 · 본편에 몇 번, 음성 승리 대사에 비꼬는 감시견 씨가 한 번.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A42",
+    "rid": 111,
+    "person": "person:자칼",
+    "address": "지휘관",
+    "voice": ["c111_Lobby_Touch_Love_2", "c111_Gift_2", "c111_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_jackal_03", "lines": [44, 57] }],
+    "reason": "음성 대사 8곳과 호감도 스토리 30줄에서 지휘관을 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A43",
+    "rid": 112,
+    "person": "person:바이퍼",
+    "address": "자기",
+    "voice": ["c112_Lobby_Touch_3", "c112_Gift_3", "c112_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_viper_02", "lines": [0, 14] }],
+    "reason": "세 의상 음성 대사 대부분과 호감도 스토리 57줄에서 자기(자기야)로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A44",
+    "rid": 113,
+    "person": "person:E.H.",
+    "address": "너",
+    "evidence": [{ "scene": "fl:enter_heaven_13", "lines": [52] }, { "scene": "ep:d_nikke_eh_02", "lines": [26] }],
+    "reason": "음성 · 호감도 스토리 모두 너로 부른다. 직함으로 직접 부르는 것은 외전의 지휘관 한 번뿐이다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "also": ["지휘관"],
+    "note": "W22 검토: 지휘관 → 너 / 지휘관 (한두 장면 · 3인칭에만 나온 직함은 also)",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A45",
+    "rid": 120,
+    "person": "person:N102",
+    "address": "선생님",
+    "voice": ["c120_Lobby_Touch_2", "c120_Lobby_Touch_Love_2", "c120_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_n102_01", "lines": [43, 49] }],
+    "reason": "음성 대사 9곳과 호감도 스토리 40줄 넘게 지휘관을 선생님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A46",
+    "rid": 121,
+    "person": "person:앤",
+    "address": "선생님",
+    "voice": ["c121_Gacha_Get_1", "c121_Gift_3", "c121_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_anne_miraclefairy_03", "lines": [2, 79] }],
+    "reason": "음성 대사 6곳과 호감도 스토리 30줄 넘게 선생님으로 부른다. 산타님 · 히어로님은 다른 니케를 부르는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A47",
+    "rid": 130,
+    "person": "person:메어리",
+    "address": "지휘관",
+    "also": ["지휘관 님"],
+    "voice": ["c130_Lobby_Touch_Love_3", "c130_Lobby_Stay_Love_1", "c130_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_mary_01", "lines": [85, 90] }, { "scene": "ep:d_nikke_mary_02", "lines": [81] }],
+    "reason": "음성 대사 10곳 넘게, 호감도 스토리 30줄 가까이 지휘관으로 부른다. 놀릴 때 우리 지휘관 님이 두어 번.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A48",
+    "rid": 131,
+    "person": "person:페퍼",
+    "address": "지휘관",
+    "voice": ["c131_Lobby_Touch_1", "c131_Lobby_Touch_Love_1", "c131_01_Lobby_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_pepper_01", "lines": [53, 119] }],
+    "reason": "두 의상 음성 대사 다수와 호감도 스토리 30줄에서 지휘관으로 부른다. 선배 · 아저씨는 메어리 · 환자를 부르는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A49",
+    "rid": 132,
+    "person": "person:메어리",
+    "address": "지휘관",
+    "voice": ["c132_Lobby_Touch_Love_3", "c132_Gift_2", "c132_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_Mary_BayGoddess_02", "lines": [0, 16] }],
+    "reason": "음성 대사 6곳과 이 판 호감도 스토리 28줄에서 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A50",
+    "rid": 140,
+    "person": "person:슈가",
+    "address": "파트너",
+    "voice": ["c140_Lobby_Touch_3", "c140_Gacha_Get_1", "c140_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_sugar_01", "lines": [8, 54] }],
+    "reason": "두 의상 음성 대사 다수와 호감도 스토리 26줄에서 파트너로 부른다. 마스터는 카페 주인을 부르는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A51",
+    "rid": 141,
+    "person": "person:밀크",
+    "address": "형씨",
+    "also": ["쨔샤"],
+    "voice": ["c141_Lobby_Touch_2", "c141_Lobby_Touch_Love_2", "c141_Gift_2"],
+    "evidence": [{ "scene": "ep:d_nikke_milk_01", "lines": [23, 40] }],
+    "reason": "음성 대사 6곳과 호감도 스토리 30줄 넘게 형씨로 부른다. 시비조로 이 쨔샤라고도 한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A52",
+    "rid": 143,
+    "person": "person:밀크",
+    "address": "형씨",
+    "also": ["오빠", "짜샤"],
+    "voice": ["c143_Lobby_Stay_Love_1", "c143_Gift_1", "c143_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_milk_bloomingbunny_01", "lines": [4, 10] }, { "scene": "ep:d_nikke_milk_bloomingbunny_03", "lines": [66, 72] }],
+    "reason": "음성 대사 9곳과 이 판 호감도 스토리 18줄에서 형씨로 부른다. 연인 행세 장면에서 오빠, 쑥스러울 때 이 짜샤.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A53",
+    "rid": 150,
+    "person": "person:율리아",
+    "address": "마에스트로",
+    "also": ["당신"],
+    "voice": ["c150_Lobby_Touch_Love_1", "c150_Lobby_Touch_Love_3", "c150_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_julia_01", "lines": [37, 86] }, { "scene": "ep:d_nikke_julia_05", "lines": [34] }],
+    "reason": "음성 대사 4곳과 호감도 스토리 15줄에서 마에스트로로 부르고, 진지한 대목에서는 당신. 은사님은 다른 인물.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A54",
+    "rid": 160,
+    "person": "person:유니",
+    "address": "지휘관",
+    "voice": ["c160_Lobby_Touch_1", "c160_Attractive_Up_1", "c160_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_yuni_02", "lines": [31, 46] }],
+    "reason": "음성 대사 6곳과 호감도 스토리 30줄 넘게 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A55",
+    "rid": 161,
+    "person": "person:미하라",
+    "address": "지휘관",
+    "voice": ["c161_Lobby_Touch_3", "c161_Gift_2", "c161_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_mihara_01", "lines": [41, 130] }],
+    "reason": "음성 대사 6곳과 호감도 스토리 16줄에서 지휘관으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A56",
+    "rid": 162,
+    "person": "person:미하라",
+    "address": "지휘관",
+    "evidence": [{ "scene": "d_main_03_02", "lines": [19] }, { "scene": "event_cherryblossom_01_e", "lines": [21] }],
+    "reason": "이 판 음성 대사와 호감도 스토리에는 지휘관 호칭이 없다(기억 속 얼굴에 당신 한 번). 같은 인물 다른 스토리에서는 지휘관.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A57",
+    "rid": 170,
+    "person": "person:프리바티",
+    "address": "지휘관",
+    "also": ["당신", "선생님", "주인님"],
+    "voice": ["c170_Lobby_Touch_3", "c170_Attractive_Up_2"],
+    "evidence": [
+      { "scene": "ep:d_nikke_privaty_02", "lines": [0, 12] },
+      { "scene": "ep:d_nikke_privaty_04", "lines": [83, 95] },
+      { "scene": "fl:2x2_love_2ch_00", "lines": [192, 219] }
+    ],
+    "reason": "음성은 당신만 쓰지만 호감도 스토리에서는 지휘관으로 직접 부르며, 다른 스토리에서도 지휘관이 175줄로 가장 많다. 선생님·주인님은 이벤트 설정에 따른 호칭.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A58",
+    "rid": 171,
+    "person": "person:율하",
+    "address": "신입",
+    "voice": ["c171_Lobby_Touch_Love_1", "c171_Attractive_Up_3", "c171_Battle_Ready_2"],
+    "evidence": [{ "scene": "ep:d_nikke_yulha_02", "lines": [27] }, { "scene": "ep:d_nikke_yulha_04", "lines": [0] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리에서 지휘관을 신입이라 부른다. 지휘관이라는 말은 일반 직함으로만 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A59",
+    "rid": 172,
+    "person": "person:애드미",
+    "address": "지휘관",
+    "voice": ["c172_Lobby_Touch_Love_1", "c172_Outpost_Touch_1", "c172_Battle_Enter_1"],
+    "evidence": [{ "scene": "ep:d_nikke_admi_04", "lines": [63, 96] }],
+    "reason": "음성 대사 대부분과 호감도 스토리 전편에서 지휘관으로 직접 부른다. 다른 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A60",
+    "rid": 180,
+    "person": "person:길로틴",
+    "address": "벗",
+    "also": ["그대", "서번트"],
+    "voice": ["c180_Lobby_Touch_Love_1", "c180_Attractive_Up_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_guillotine_03", "lines": [2, 21] },
+      { "scene": "ep:d_nikke_guillotine_04", "lines": [25] },
+      { "scene": "ep:d_nikke_guillotine_05", "lines": [27, 105] }
+    ],
+    "reason": "음성은 2인칭 그대만 쓰고, 호감도 스토리와 다른 스토리(41줄)에서 벗이여로 직접 부른다. 서번트는 가입 의식 장면의 호칭.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A61",
+    "rid": 181,
+    "person": "person:메이든",
+    "address": "지휘관",
+    "voice": ["c181_Lobby_Stay_1", "c181_Battle_Ready_2", "c181_Lobby_Touch_Love_3"],
+    "evidence": [{ "scene": "ep:d_nikke_maiden_02", "lines": [7] }, { "scene": "ep:d_nikke_maiden_05", "lines": [17, 124] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 지휘관으로 직접 부른다. 사장님은 다른 인물을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A62",
+    "rid": 182,
+    "person": "person:길로틴",
+    "address": "벗",
+    "also": ["그대"],
+    "voice": ["c182_Field_Touch_1", "c182_Lobby_Touch_2", "c182_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_guillotine_winterslayer_01", "lines": [24] }, { "scene": "ep:d_nikke_guillotine_winterslayer_03", "lines": [61, 102] }],
+    "reason": "음성 대사 여러 곳과 판 고유 스토리에서 벗이여로 부르고, 2인칭으로 그대를 함께 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A63",
+    "rid": 183,
+    "person": "person:메이든",
+    "address": "지휘관",
+    "voice": ["c183_Lobby_Stay_Love_1", "c183_Attractive_Up_2", "c183_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_maiden_icerose_01", "lines": [40, 116] }, { "scene": "ep:d_nikke_maiden_icerose_02", "lines": [13] }],
+    "reason": "음성 대사와 판 고유 스토리 전편에서 지휘관으로 직접 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A64",
+    "rid": 190,
+    "person": "person:루드밀라",
+    "address": "시종",
+    "also": ["그대"],
+    "voice": ["c190_Lobby_Touch_1", "c190_Lobby_Touch_Love_2", "c190_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_ludmilla_01", "lines": [97] }, { "scene": "ep:d_nikke_ludmilla_03", "lines": [35] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리에서 지휘관을 시종이라 부르고, 2인칭은 그대를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A65",
+    "rid": 191,
+    "person": "person:앨리스",
+    "address": "토끼 씨",
+    "voice": ["c191_Lobby_Touch_3", "c191_02_Gacha_Get_1", "c191_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_alice_01", "lines": [36] }, { "scene": "ep:d_nikke_alice_02", "lines": [28, 63] }],
+    "reason": "음성 대사 대부분과 스토리 246줄에서 토끼 씨로 부른다(일부 음성은 붙여 씀). 여왕님은 루드밀라를 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A66",
+    "rid": 192,
+    "person": "person:토브",
+    "address": "생존가님",
+    "voice": ["c192_Lobby_Touch_Love_2", "c192_Attractive_Up_1", "c192_02_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_tove_01", "lines": [3, 26] }, { "scene": "ep:d_nikke_tove_05", "lines": [99] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 생존가님으로 부른다. 선배님은 스쿼드 동료를 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A67",
+    "rid": 193,
+    "person": "person:네베",
+    "address": "큰곰 씨",
+    "voice": ["c193_Lobby_Touch_Love_1", "c193_Lobby_Touch_Love_3", "c193_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_neve_02", "lines": [14, 16] }, { "scene": "ep:d_nikke_neve_04", "lines": [3] }],
+    "reason": "음성 대사와 호감도 스토리에서 큰곰 씨로 부르며, 스토리에서 이 호칭을 붙이는 장면이 있다. 음성 일부는 띄어 씀.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A68",
+    "rid": 194,
+    "person": "person:루드밀라",
+    "address": "시종",
+    "also": ["그대"],
+    "voice": ["c194_Lobby_Touch_Love_1", "c194_Battle_Ready_2", "c194_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_ludmilla_winterowner_01", "lines": [23, 41] }, { "scene": "ep:d_nikke_ludmilla_winterowner_03", "lines": [42] }],
+    "reason": "음성 대사 여러 곳과 판 고유 스토리에서 시종으로 부르고, 2인칭은 그대를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A69",
+    "rid": 195,
+    "person": "person:앨리스",
+    "address": "토끼 씨",
+    "voice": ["c195_Lobby_Touch_Love_2", "c195_Gacha_Get_1", "c195_Attractive_Up_1"],
+    "reason": "음성 대사 대부분에서 토끼 씨로 부른다. 판 고유 스토리의 여왕님·북극곰님은 다른 인물을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A70",
+    "rid": 200,
+    "person": "person:루피",
+    "address": "오빠",
+    "also": ["지휘관 오빠"],
+    "voice": ["c200_Lobby_Stay_1", "c200_Gift_1", "c200_01_Lobby_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rupee_02", "lines": [30, 48] }, { "scene": "ep:d_nikke_rupee_05", "lines": [34] }],
+    "reason": "음성 대사와 호감도 스토리 대부분에서 오빠로 부르고, 이따금 지휘관 오빠로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A71",
+    "rid": 201,
+    "person": "person:얀",
+    "address": "신참",
+    "also": ["니"],
+    "voice": ["c201_Lobby_Touch_1", "c201_Battle_Ready_1", "c201_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_yan_01", "lines": [0] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리에서 신참으로 부르고, 2인칭은 사투리 니를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A72",
+    "rid": 202,
+    "person": "person:도라",
+    "address": "고객님",
+    "also": ["지휘관"],
+    "voice": ["c202_Lobby_Touch_3", "c202_Lobby_Touch_Love_1", "c202_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_dolla_04", "lines": [124] }, { "scene": "ep:d_nikke_dolla_02", "lines": [86] }],
+    "reason": "음성 대사와 호감도 스토리 후반에서 고객님으로 부른다. 스토리 초반에는 지휘관으로 불렀다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A73",
+    "rid": 203,
+    "person": "person:루피",
+    "address": "오빠",
+    "voice": ["c203_Lobby_Stay_1", "c203_Gift_1", "c203_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_rupee_wintershopper_02", "lines": [37] }, { "scene": "ep:d_nikke_rupee_wintershopper_04", "lines": [12] }],
+    "reason": "음성 대사와 판 고유 스토리 전편에서 오빠로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A74",
+    "rid": 210,
+    "person": "person:엑시아",
+    "address": "뉴비",
+    "also": ["당신"],
+    "voice": ["c210_Lobby_Touch_3", "c210_Lobby_Touch_Love_2", "c210_01_Lobby_Touch_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_exia_03", "lines": [1] }, { "scene": "ep:d_nikke_exia_02", "lines": [21] }],
+    "reason": "음성 대사와 호감도 스토리에서 뉴비로 부르고, 이따금 당신을 덧붙인다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A75",
+    "rid": 212,
+    "person": "person:노벨",
+    "address": "왓슨",
+    "also": ["당신"],
+    "voice": ["c212_Lobby_Touch_Love_1", "c212_Lobby_Stay_1", "c212_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_novel_05", "lines": [6, 140] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리에서 지휘관을 왓슨이라 부르고, 왓슨 당신처럼 2인칭을 덧붙인다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A76",
+    "rid": 220,
+    "person": "person:스노우_화이트",
+    "address": "너",
+    "voice": ["c220_Lobby_Touch_Love_1", "c220_Attractive_Up_1", "c220_01_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_snowwhite_03", "lines": [58] }, { "scene": "ep:d_nikke_snowwhite_04", "lines": [134] }],
+    "reason": "음성과 호감도 스토리에서 2인칭 너로만 가리키고 이름·직함 호칭이 없다. 지휘관을 부르는 대목은 옛 지휘관을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A77",
+    "rid": 221,
+    "person": "person:라푼젤",
+    "address": "형제님",
+    "voice": ["c221_Lobby_Touch_Love_2", "c221_Attractive_Up_2", "c221_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rapunzel_02", "lines": [0] }, { "scene": "ep:d_nikke_rapunzel_05", "lines": [77] }],
+    "reason": "음성 대사와 호감도 스토리 전편, 메인 스토리에서 형제님으로 부른다. 자매님은 니케들을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A78",
+    "rid": 222,
+    "person": "person:홍련",
+    "address": "도령",
+    "also": ["자네"],
+    "voice": ["c222_Lobby_Touch_Love_3", "c222_01_Attractive_Up_2", "c222_Outpost_Touch_2"],
+    "evidence": [{ "scene": "ep:d_nikke_hongryeon_01", "lines": [78] }],
+    "reason": "음성 대사 여러 곳과 호감도 스토리에서 도령으로 부르고, 2인칭은 자네를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A79",
+    "rid": 223,
+    "person": "person:나유타",
+    "address": "대협",
+    "voice": ["c223_Lobby_Touch_3", "c223_01_Attractive_Up_2", "c223_01_Die_1"],
+    "evidence": [{ "scene": "ep:d_nikke_nayuta_01", "lines": [19, 34] }],
+    "reason": "음성 대사 대부분과 호감도 스토리에서 대협으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A80",
+    "rid": 224,
+    "person": "person:스노우_화이트",
+    "address": "너",
+    "evidence": [{ "scene": "ep:d_nikke_snowwhite_03", "lines": [58] }, { "scene": "ep:d_nikke_snowwhite_04", "lines": [134] }],
+    "reason": "음성에 호칭이 없고 이 판의 스토리는 갓데스 시절이라 지휘관이 옛 지휘관이다. 같은 인물(기본 판)이 지휘관을 너로 부르는 것을 따랐다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "note": "W22 검토: 지휘관 → 너 (한두 장면 · 3인칭에만 나온 직함은 also)",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A81",
+    "rid": 225,
+    "person": "person:홍련",
+    "address": "도령",
+    "evidence": [{ "scene": "ep:d_nikke_hongryeon_01", "lines": [78] }],
+    "reason": "음성과 판 고유 스토리(갓데스 시절)에는 지휘관을 부르는 말이 없어, 같은 인물이 다른 스토리에서 쓰는 도령을 따랐다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A82",
+    "rid": 226,
+    "person": "person:라푼젤",
+    "address": "형제님",
+    "evidence": [{ "scene": "d_main_17_01_s", "lines": [4, 8] }, { "scene": "d_main_17_01_e", "lines": [22] }],
+    "reason": "음성엔 호칭이 없고 호감도 스토리는 갓데스 시절이라 지휘관은 옛 지휘관을 가리킨다. 같은 인물이 다른 스토리에서 지휘관을 형제님으로 41줄 부른다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A83",
+    "rid": 230,
+    "person": "person:하란",
+    "address": "종자",
+    "also": ["너"],
+    "voice": ["c230_Attractive_Up_2", "c230_01_Lobby_Touch_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_harran_03", "lines": [3] },
+      { "scene": "d_main_21_07_s", "lines": [23] },
+      { "scene": "ep:d_nikke_harran_01", "lines": [16, 64] }
+    ],
+    "reason": "보통은 너로 말하고, 부를 때는 종자야라고 한다(호감도 · 메인 · 상담). 그 밖의 스토리의 지휘관은 요한을 부르는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A84",
+    "rid": 231,
+    "person": "person:이사벨",
+    "address": "사랑스러운 분",
+    "also": ["당신"],
+    "voice": ["c231_01_Field_Touch_1", "c231_Lobby_Stay_Love_1", "c231_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_isabel_03", "lines": [59, 89] }],
+    "reason": "음성 5줄과 호감도 · 메인 스토리에서 사랑스러운 분으로 부른다. 2인칭은 당신을 압도적으로 많이 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A85",
+    "rid": 232,
+    "person": "person:노아",
+    "address": "가짜",
+    "also": ["가짜 지휘관"],
+    "voice": ["c232_Lobby_Stay_Love_1", "c232_Attractive_Up_3", "c232_Lobby_Touch_3"],
+    "evidence": [{ "scene": "ep:d_nikke_noah_01", "lines": [2] }, { "scene": "ep:d_nikke_noah_04", "lines": [62, 87] }],
+    "reason": "음성과 호감도 스토리에서 지휘관을 가짜로 부른다(30줄 넘게). 가끔 가짜 지휘관으로 길게 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A86",
+    "rid": 233,
+    "person": "person:도로시",
+    "address": "귀하",
+    "also": ["당신"],
+    "voice": ["c233_Lobby_Touch_1", "c233_02_Lobby_Touch_Love_2", "c233_Outpost_Touch_1"],
+    "evidence": [{ "scene": "d_main_19af_01", "lines": [116] }, { "scene": "ep:d_nikke_dorothy_03", "lines": [90] }],
+    "reason": "음성 대사 10줄 남짓에서 귀하로 부르고 메인 첫 만남도 귀하다. 호감도 스토리에서는 당신으로 바뀐다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A87",
+    "rid": 234,
+    "person": "person:도로시",
+    "address": "귀하",
+    "also": ["당신"],
+    "voice": ["c234_Attractive_Up_1", "c234_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_dorothy_serendipity_01", "lines": [27] }, { "scene": "ep:d_nikke_dorothy_serendipity_05", "lines": [4] }],
+    "reason": "음성에서는 귀하로 2줄 부른다. 이 판의 호감도 스토리는 당신만 27줄 써서 also로 둔다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A88",
+    "rid": 240,
+    "person": "person:루마니",
+    "address": "회원님",
+    "voice": ["c240_Lobby_Touch_Love_1", "c240_Lobby_Stay_1", "c240_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rumani_01", "lines": [138] }, { "scene": "ep:d_nikke_rumani_05", "lines": [61] }],
+    "reason": "음성 10줄과 호감도 스토리 30줄 가까이에서 지휘관을 회원님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A89",
+    "rid": 241,
+    "person": "person:에피넬",
+    "address": "코치",
+    "voice": ["c241_Field_Touch_1", "c241_Gift_1", "c241_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_epinel_01", "lines": [87] }, { "scene": "ep:d_nikke_epinel_03", "lines": [35] }],
+    "reason": "음성 대사와 호감도 스토리(30줄 남짓), 상담에서 지휘관을 코치로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A90",
+    "rid": 242,
+    "person": "person:폴크방",
+    "address": "감독님",
+    "voice": ["c242_Lobby_Touch_Love_1", "c242_Attractive_Up_3", "c242_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_folkwang_01", "lines": [71] }, { "scene": "ep:d_nikke_folkwang_05", "lines": [93] }],
+    "reason": "음성 10줄과 호감도 스토리 30줄 가까이, 이벤트에서도 감독님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A91",
+    "rid": 260,
+    "person": "person:모더니아",
+    "address": "지휘관",
+    "voice": ["c260_Lobby_Touch_1", "c260_Field_Touch_1", "c260_01_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_marian_p_04", "lines": [47] }, { "scene": "ep:d_nikke_marian_p_05", "lines": [121] }],
+    "reason": "기본 · 의상 음성 수십 줄과 호감도 스토리 15줄에서 지휘관으로 부른다. 님은 붙이지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A92",
+    "rid": 261,
+    "person": "person:니힐리스타",
+    "address": "인간",
+    "also": ["너"],
+    "voice": ["c261_Gacha_Get_1", "c261_Outpost_Touch_2", "c261_Lobby_Touch_Love_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_nihilister_04", "lines": [0] },
+      { "scene": "ep:d_nikke_nihilister_05", "lines": [42] },
+      { "scene": "ep:d_nikke_nihilister_01", "lines": [185] }
+    ],
+    "reason": "음성과 호감도 스토리에서 지휘관을 인간으로 부르고, 2인칭은 너를 쓴다. 지휘관은 직함으로만 말한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A93",
+    "rid": 262,
+    "person": "person:리버렐리오",
+    "address": "인간",
+    "also": ["너", "한 명의 인간"],
+    "voice": ["c262_01_Lobby_Stay_1", "c262_Lobby_Touch_Love_1", "c262_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_liberalio_01", "lines": [14, 38] }, { "scene": "d_main_40_09", "lines": [25] }],
+    "reason": "음성 · 호감도 · 메인 스토리에서 지휘관을 인간으로 부르고 2인칭은 너. 메인에서는 한 명의 인간으로 부르기도 한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A94",
+    "rid": 270,
+    "person": "person:블랑",
+    "address": "점장님",
+    "voice": ["c270_Lobby_Touch_Love_2", "c270_01_Lobby_Touch_1", "c270_02_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_blanc_01", "lines": [97] }, { "scene": "ep:d_nikke_blanc_05", "lines": [157] }],
+    "reason": "기본 · 의상 음성 수십 줄과 호감도 스토리 50줄 넘게 점장님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A95",
+    "rid": 271,
+    "person": "person:누아르",
+    "address": "점장님",
+    "voice": ["c271_Lobby_Stay_1", "c271_Lobby_Touch_Love_3", "c271_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_noir_05", "lines": [41, 107] }],
+    "reason": "음성 7줄과 호감도 스토리 30줄 넘게 점장님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A96",
+    "rid": 272,
+    "person": "person:루주",
+    "address": "플레이어님",
+    "voice": ["c272_Lobby_Touch_1", "c272_Gift_1", "c272_01_Outpost_Touch_2"],
+    "evidence": [{ "scene": "ep:d_nikke_rouge_01", "lines": [13] }, { "scene": "ep:d_nikke_rouge_05", "lines": [44] }],
+    "reason": "음성 대사 여러 줄과 호감도 스토리 30줄 넘게 플레이어님으로 부른다. 손님은 다른 손님들에게 쓰는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A97",
+    "rid": 280,
+    "person": "person:로산나",
+    "address": "미스터",
+    "voice": ["c280_Lobby_Touch_Love_1", "c280_Lobby_Stay_1", "c280_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_rosanna_01", "lines": [70] }, { "scene": "ep:d_nikke_rosanna_02", "lines": [53] }],
+    "reason": "음성 7줄과 호감도 스토리 30줄 넘게 미스터로 부른다. 보스는 자기를 가리키는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A98",
+    "rid": 281,
+    "person": "person:목단",
+    "address": "동생",
+    "voice": ["c281_Lobby_Touch_1", "c281_Field_Touch_1", "c281_02_Lobby_Touch_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_moran_01", "lines": [112] }, { "scene": "ep:d_nikke_moran_05", "lines": [109] }],
+    "reason": "기본 · 의상 음성 대부분과 호감도 스토리 30줄 넘게 동생으로 부른다. 누님은 자기를 가리키는 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A99",
+    "rid": 282,
+    "person": "person:사쿠라",
+    "address": "군",
+    "voice": ["c282_Lobby_Touch_Love_1", "c282_Lobby_Stay_Love_1", "c282_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_sakura_03", "lines": [1, 99] }, { "scene": "ep:d_nikke_sakura_01", "lines": [6] }],
+    "reason": "음성 6줄과 호감도 스토리 30줄 넘게 지휘관을 군으로 부른다. 당신은 목단 등 다른 인물에게 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A100",
+    "rid": 283,
+    "person": "person:로산나",
+    "address": "미스터",
+    "voice": ["c283_Lobby_Touch_1", "c283_Field_Touch_1", "c283_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_rosanna_chicocean_01", "lines": [33, 67] }, { "scene": "ep:d_nikke_rosanna_chicocean_02", "lines": [12] }],
+    "reason": "음성 8줄과 이 판의 호감도 스토리에서 미스터로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A101",
+    "rid": 284,
+    "person": "person:사쿠라",
+    "address": "군",
+    "voice": ["c284_Field_Touch_1", "c284_Lobby_Touch_1", "c284_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_sakura_bloominsummer_01", "lines": [18, 72] }],
+    "reason": "음성 대사 대부분과 이 판의 호감도 스토리 20줄 넘게 군으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A102",
+    "rid": 290,
+    "person": "person:마나",
+    "address": "지휘관",
+    "voice": ["c290_Lobby_Stay_Love_1", "c290_01_Gift_3", "c290_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_mana_01", "lines": [79] }, { "scene": "event_wisdomspring_03_e", "lines": [25] }],
+    "reason": "기본 · 의상 음성 10줄 넘게, 호감도 · 이벤트 스토리에서 지휘관으로 부른다. 님은 붙이지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A103",
+    "rid": 291,
+    "person": "person:에테르",
+    "address": "7호",
+    "also": ["너"],
+    "voice": ["c291_Lobby_Touch_1", "c291_Attractive_Up_3", "c291_Lobby_Stay_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ether_01", "lines": [58] }, { "scene": "ep:d_nikke_ether_02", "lines": [30] }],
+    "reason": "음성 5줄과 호감도 · 상담 스토리에서 지휘관을 실험체 7호로 부르고, 2인칭은 너를 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A104",
+    "rid": 310,
+    "person": "person:에이드",
+    "address": "주인님",
+    "also": ["당신"],
+    "voice": ["c310_Lobby_Touch_1", "c310_Gacha_Get_1", "c310_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ade_01", "lines": [15, 40, 89] }, { "scene": "ep:d_nikke_ade_02", "lines": [38] }],
+    "reason": "음성 대사 대부분과 호감도 스토리 전편에서 지휘관을 주인님으로 부른다. 메이드 콘셉트의 고정 호칭이고 당신은 한 번 섞인다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A105",
+    "rid": 311,
+    "person": "person:코코아",
+    "address": "주인",
+    "voice": ["c311_Lobby_Touch_2", "c311_Lobby_Stay_1", "c311_Attractive_Up_3"],
+    "reason": "음성 대사 열 줄 남짓에서 님 없이 주인이라고 부른다. 호감도 스토리 후보는 가게 손님을 가리키는 말뿐이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A106",
+    "rid": 312,
+    "person": "person:소다",
+    "address": "주인님",
+    "voice": ["c312_Lobby_Touch_1", "c312_Attractive_Up_2", "c312_Outpost_Touch_2"],
+    "evidence": [{ "scene": "ep:d_nikke_soda_02", "lines": [23, 75, 115] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 주인님으로 부르고, 이벤트 스토리에서도 같다(60여 줄).",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A107",
+    "rid": 313,
+    "person": "person:프리바티",
+    "address": "주인님",
+    "also": ["지휘관"],
+    "voice": ["c313_Gacha_Get_1", "c313_Lobby_Touch_Love_2", "c313_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_privaty_unkindmaid_02", "lines": [6, 8, 19] }, { "scene": "ep:d_nikke_privaty_unkindmaid_03", "lines": [62, 81] }],
+    "reason": "메이드 판이라 음성과 호감도 스토리에서 주인님으로 부른다. 본래 호칭인 지휘관이 혼잣말이나 말실수로 섞인다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A108",
+    "rid": 314,
+    "person": "person:소다",
+    "address": "주인님",
+    "voice": ["c314_Lobby_Touch_1", "c314_Gacha_Get_1", "c314_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_soda_twinklingbunny_02", "lines": [1, 74] }, { "scene": "ep:d_nikke_soda_twinklingbunny_05", "lines": [63] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 주인님으로 부른다. 같은 인물의 기본 판과 같다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A109",
+    "rid": 315,
+    "person": "person:에이드",
+    "address": "주인님",
+    "voice": ["c315_Lobby_Touch_1", "c315_Gacha_Get_1", "c315_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ade_agentbunny_04", "lines": [25, 44] }, { "scene": "ep:d_nikke_ade_agentbunny_05", "lines": [86, 100] }],
+    "reason": "바니 판이지만 음성 대사와 호감도 스토리 50여 줄에서 그대로 주인님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A110",
+    "rid": 316,
+    "person": "person:벨벳",
+    "address": "주인님",
+    "also": ["지휘관"],
+    "voice": ["c316_Lobby_Touch_1", "c316_Gacha_Get_1", "c316_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_velvet_01", "lines": [8, 14] }, { "scene": "fl:coins_in_rush_25", "lines": [6, 44] }],
+    "reason": "음성 대사와 호감도 스토리 전편에서 반말투로 주인님이라 부른다. 메이드 역할 밖의 스토리에서는 지휘관으로도 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A111",
+    "rid": 321,
+    "person": "person:마르차나",
+    "address": "지휘관님",
+    "also": ["선생님"],
+    "voice": ["c321_Lobby_Touch_2", "c321_Attractive_Up_3", "c321_01_Lobby_Touch_Love_2"],
+    "evidence": [{ "scene": "ep:d_nikke_marciana_01", "lines": [79, 84] }, { "scene": "ep:d_nikke_marciana_04", "lines": [128] }],
+    "reason": "기본 음성과 호감도 스토리에서 지휘관님으로 부른다. 교복 차림 음성(_01)에서는 학생 역할이라 선생님으로 고쳐 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A112",
+    "rid": 322,
+    "person": "person:마르차나",
+    "address": "지휘관님",
+    "also": ["당신"],
+    "voice": ["c322_Lobby_Touch_Love_3", "c322_Lobby_Stay_Love_1", "c322_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_marciana_marinestudy_05", "lines": [21, 73, 86] }],
+    "reason": "음성 대사와 호감도 스토리 30여 줄에서 지휘관님으로 부른다. 고백 장면에서만 당신으로 바꿔 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A113",
+    "rid": 330,
+    "person": "person:크라운",
+    "address": "당신",
+    "voice": ["c330_Lobby_Touch_1", "c330_Lobby_Touch_Love_1", "c330_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_crown_04", "lines": [44, 46, 133] }],
+    "reason": "음성 대사와 호감도 스토리에서 지휘관을 늘 당신으로 부르고 직함 호칭은 없다. 책사 · 백성은 역할을 가리키는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A114",
+    "rid": 331,
+    "person": "person:차임",
+    "address": "네놈",
+    "also": ["이놈"],
+    "voice": ["c331_Lobby_Touch_Love_2", "c331_Attractive_Up_2", "c331_Lobby_Stay_1"],
+    "evidence": [{ "scene": "ep:d_nikke_chime_01", "lines": [57, 93] }, { "scene": "ep:d_nikke_chime_05", "lines": [28] }],
+    "reason": "음성 대사와 호감도 스토리에서 지휘관을 네놈으로 부른다(전체 50줄 가까이). 꾸짖을 때는 이놈이라고도 한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A115",
+    "rid": 350,
+    "person": "person:마스트",
+    "address": "선장 양반",
+    "also": ["주인장", "당신"],
+    "voice": ["c350_Lobby_Touch_Love_2", "c350_Attractive_Up_1", "c350_02_Lobby_Touch_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_mast_01", "lines": [71] },
+      { "scene": "ep:d_nikke_mast_05", "lines": [0, 18] },
+      { "scene": "event_romanticvalentine_04_s", "lines": [48] }
+    ],
+    "reason": "음성 대사와 호감도 스토리 전편에서 선장 양반으로 부른다(전체 70여 줄). 메이드 카페 이벤트에서는 주인장으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A116",
+    "rid": 351,
+    "person": "person:앵커",
+    "address": "함장",
+    "also": ["주인님", "오라버니"],
+    "voice": ["c351_Lobby_Stay_1", "c351_Attractive_Up_2", "c351_01_Gacha_Get_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_anchor_02", "lines": [47, 69] },
+      { "scene": "ep:d_nikke_anchor_05", "lines": [156] },
+      { "scene": "event_romanticvalentine_01_s", "lines": [22, 30] }
+    ],
+    "reason": "음성 대사와 호감도 스토리에서 함장으로 부른다. 메이드 카페 이벤트의 역할극에서는 주인님 · 오라버니로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A117",
+    "rid": 352,
+    "person": "person:헬름",
+    "address": "귀관",
+    "voice": ["c352_Gacha_Get_1", "c352_Lobby_Stay_1", "c352_02_Lobby_Touch_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_helm_02", "lines": [46, 123] }, { "scene": "ep:d_nikke_helm_03", "lines": [30] }],
+    "reason": "음성 대사와 호감도 스토리에서 지휘관을 귀관으로 부른다(전체 150줄 남짓). 부사령관님은 다른 인물을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A118",
+    "rid": 353,
+    "person": "person:헬름",
+    "address": "귀관",
+    "voice": ["c353_Gacha_Get_1", "c353_Lobby_Touch_3", "c353_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_helm_aquamarine_01", "lines": [4, 124] }, { "scene": "ep:d_nikke_helm_aquamarine_05", "lines": [126] }],
+    "reason": "음성 대사와 호감도 스토리 60여 줄에서 귀관으로 부른다. 지휘관은 신분을 말할 때 한 번 나올 뿐이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A119",
+    "rid": 354,
+    "person": "person:마스트",
+    "address": "주인장",
+    "also": ["선장 양반"],
+    "voice": ["c354_Lobby_Touch_Love_1", "c354_Field_Touch_1", "c354_01_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_mast_romanticmaid_02", "lines": [42] }, { "scene": "ep:d_nikke_mast_romanticmaid_04", "lines": [9, 82] }],
+    "reason": "메이드 판이라 음성 대사와 호감도 스토리 20여 줄에서 주인장으로 부른다. 같은 인물의 평소 호칭은 선장 양반이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A120",
+    "rid": 355,
+    "person": "person:앵커",
+    "address": "주인님",
+    "also": ["함장", "오라버니"],
+    "voice": ["c355_Lobby_Touch_2", "c355_Gacha_Get_1", "c355_Ult_Skill_Ready_1"],
+    "evidence": [{ "scene": "ep:d_nikke_anchor_innocentmaid_01", "lines": [36, 107] }, { "scene": "ep:d_nikke_anchor_innocentmaid_02", "lines": [86] }],
+    "reason": "메이드 판이라 음성 대사와 호감도 스토리 30여 줄에서 주인님으로 부른다. 평소 호칭 함장을 언급하고, 오라버니라고 말을 꺼냈다가 고치기도 한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A121",
+    "rid": 361,
+    "person": "person:킬로",
+    "address": "지휘관",
+    "voice": ["c361_Attractive_Up_1", "c361_Attractive_Up_2"],
+    "reason": "호감도 상승 음성 두 줄과 탈로스의 선물 대사, 그 밖의 스토리 직접 호명 모두 지휘관이다. 다른 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A122",
+    "rid": 380,
+    "person": "person:네로",
+    "address": "집사",
+    "voice": ["c380_Lobby_Touch_Love_3", "c380_Ult_Skill_Ready_1", "c380_Kill_Monster_1"],
+    "reason": "음성 대사 열 줄 가까이 지휘관을 집사로 부르고, 그 밖의 스토리에서도 집사가 70줄 넘게 나온다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A123",
+    "rid": 381,
+    "person": "person:비스킷",
+    "address": "훈련사님",
+    "voice": ["c381_Lobby_Touch_Love_1", "c381_Ult_Skill_Ready_1", "c381_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_biscuit_04", "lines": [98] }, { "scene": "ep:d_nikke_biscuit_05", "lines": [2] }],
+    "reason": "음성 대사 대부분과 호감도 스토리 전편, 그 밖의 스토리 64줄에서 지휘관을 훈련사님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A124",
+    "rid": 382,
+    "person": "person:레오나",
+    "address": "사육사님",
+    "voice": ["c382_Lobby_Touch_Love_1", "c382_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_leona_03", "lines": [74] }, { "scene": "ep:d_nikke_leona_05", "lines": [69, 108] }],
+    "reason": "음성 호감도 대사와 호감도 스토리 20줄 넘게, 사자왕 이벤트에서도 지휘관을 사육사님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A125",
+    "rid": 390,
+    "person": "person:츠바이",
+    "address": "선생님",
+    "voice": ["c390_Gift_2", "c390_Attractive_Up_2", "c390_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_zwei_01", "lines": [18] }, { "scene": "event_outofuniform_01", "lines": [18, 62] }],
+    "reason": "음성과 호감도 스토리, 그 밖의 스토리 66줄에서 지휘관을 선생님으로 부른다. 지휘관님은 졸업 뒤 부르고 싶다는 바람으로만 나온다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A126",
+    "rid": 391,
+    "person": "person:아인",
+    "address": "쌤",
+    "voice": ["c391_Lobby_Touch_2", "c391_01_Ult_Skill_Ready_1", "c391_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ein_02", "lines": [3, 61] }, { "scene": "event_outofuniform_01", "lines": [10] }],
+    "reason": "두 음성 세트와 호감도 스토리, 그 밖의 스토리 180줄에서 지휘관을 쌤으로 부른다. 지휘관은 졸업 뒤 부르고 싶다는 말로만 나온다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A127",
+    "rid": 392,
+    "person": "person:라이",
+    "address": "선생님",
+    "voice": ["c392_Gacha_Get_1", "c392_Attractive_Up_2", "c392_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_rei_05", "lines": [125, 129] }, { "scene": "ep:d_nikke_rei_01", "lines": [28] }],
+    "reason": "음성 대사 열 줄 넘게, 호감도 스토리 전편에서 지휘관을 선생님으로 부른다. 주인님은 메이드 카페 손님에게 쓰는 말이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A128",
+    "rid": 400,
+    "person": "person:길티",
+    "address": "교관",
+    "voice": ["c400_Gacha_Get_1", "c400_Lobby_Touch_Love_2", "c400_01_Battle_Enter_1"],
+    "evidence": [{ "scene": "ep:d_nikke_guilty_01", "lines": [39] }],
+    "reason": "두 음성 세트 모두 지휘관을 교관(늘여 말하면 교과안)으로 부르고, 호감도 스토리도 교관이 90줄 넘는다. 교관님은 첫 만남 한 번뿐.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A129",
+    "rid": 401,
+    "person": "person:신",
+    "address": "교관",
+    "also": ["주인님", "후배님"],
+    "voice": ["c401_Lobby_Touch_Love_1", "c401_Lobby_Stay_1", "c401_01_Lobby_Touch_Love_2"],
+    "evidence": [
+      { "scene": "ep:d_nikke_sin_01", "lines": [29, 95] },
+      { "scene": "event_romanticvalentine_01_e", "lines": [104, 109] },
+      { "scene": "event_romanticvalentine_01_s", "lines": [9] }
+    ],
+    "reason": "기본 음성과 호감도 스토리에서 교관이 대표 호칭이다. 메이드 옷 음성 · 밸런타인 이벤트에선 주인님, 같은 이벤트 선후배 놀이에선 후배님.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A130",
+    "rid": 402,
+    "person": "person:퀀시",
+    "address": "교관님",
+    "voice": ["c402_Lobby_Touch_1", "c402_Lobby_Touch_Love_1", "c402_Kill_Monster_1"],
+    "evidence": [{ "scene": "ep:d_nikke_quency_01", "lines": [26, 48] }, { "scene": "ep:d_nikke_quency_03", "lines": [3] }],
+    "reason": "음성 대사 아홉 줄과 호감도 스토리 70줄 가까이, 괴도 이벤트에서도 지휘관을 교관님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A131",
+    "rid": 403,
+    "person": "person:퀀시",
+    "address": "교관님",
+    "voice": ["c403_Lobby_Touch_1", "c403_Attractive_Up_3", "c403_01_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_quency_escapequeen_01", "lines": [17, 153] }, { "scene": "ep:d_nikke_quency_escapequeen_02", "lines": [9] }],
+    "reason": "두 음성 세트와 이 판 호감도 스토리 20줄 넘게 지휘관을 교관님으로 부른다. 다른 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A132",
+    "rid": 404,
+    "person": "person:길티",
+    "address": "교관",
+    "voice": ["c404_Lobby_Touch_Love_1", "c404_Ult_Skill_Ready_1", "c404_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_guilty_01", "lines": [39] }],
+    "reason": "이 판 음성 대사 열 줄 넘게 교관(늘여 말하면 교과안)으로 부른다. 이 판 스토리의 지휘관은 혼잣말 속 3인칭이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A133",
+    "rid": 405,
+    "person": "person:신",
+    "address": "교관",
+    "also": ["주인님", "후배님"],
+    "voice": ["c405_Lobby_Touch_2", "c405_Lobby_Touch_Love_1", "c405_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_sin_swiftbunny_01", "lines": [22, 26, 57] }, { "scene": "event_romanticvalentine_01_s", "lines": [9] }],
+    "reason": "이 판 음성 대사 열 줄 넘게 교관이다. 이 판 애장품 스토리에선 바니걸 차림으로 교관을 주인님으로 고쳐 부르고, 밸런타인 이벤트엔 후배님.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A134",
+    "rid": 411,
+    "person": "person:플로라",
+    "address": "꽃님",
+    "also": ["당신", "튤립님", "달맞이꽃님"],
+    "voice": ["c411_Lobby_Touch_2", "c411_Field_Touch_1", "c411_Attractive_Up_3"],
+    "evidence": [
+      { "scene": "ep:d_nikke_flora_05", "lines": [46, 67] },
+      { "scene": "ep:d_nikke_flora_03", "lines": [5, 56] },
+      { "scene": "ep:d_nikke_flora_04", "lines": [2] }
+    ],
+    "reason": "음성 대사 열 줄 넘게 꽃님이다. 호감도 스토리에선 그날 닮은 꽃 이름(안개꽃님 · 튤립님 · 달맞이꽃님)과 당신으로 부르다 끝에 꽃님으로 정한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A135",
+    "rid": 412,
+    "person": "person:트리나",
+    "address": "햇님",
+    "voice": ["c412_Lobby_Touch_Love_2", "c412_Lobby_Stay_1", "c412_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_trina_02", "lines": [61] }, { "scene": "ep:d_nikke_trina_05", "lines": [77] }],
+    "reason": "음성 대사와 호감도 스토리 20줄, 그 밖의 스토리에서도 지휘관을 햇님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A136",
+    "rid": 430,
+    "person": "person:노이즈",
+    "address": "프로듀서",
+    "voice": ["c430_Lobby_Touch_1", "c430_02_Lobby_Touch_3", "c430_Ult_Skill_Ready_1"],
+    "reason": "두 음성 세트 스무 줄 가까이와 그 밖의 스토리 48줄에서 지휘관을 프로듀서로 부른다. 당신은 노래 문구에만 나온다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A137",
+    "rid": 431,
+    "person": "person:볼륨",
+    "address": "매니저",
+    "voice": ["c431_Lobby_Touch_Love_1", "c431_Lobby_Touch_Love_3", "c431_Reinforce_2"],
+    "reason": "음성 대사 다섯 줄과 그 밖의 스토리 40줄에서 지휘관을 매니저로 부른다. Honey는 제안으로 한 번 나올 뿐이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A138",
+    "rid": 432,
+    "person": "person:아리아",
+    "address": "세뇨르",
+    "also": ["당신", "세뇨르 @UserName"],
+    "voice": ["c432_Lobby_Touch_Love_2", "c432_Ult_Skill_Ready_1", "c432_Attractive_Up_1"],
+    "evidence": [
+      { "scene": "ep:d_nikke_aria_01", "lines": [18, 44] },
+      { "scene": "ep:d_nikke_aria_02", "lines": [13, 81] },
+      { "scene": "ep:d_nikke_aria_05", "lines": [90] }
+    ],
+    "reason": "음성 다섯 줄과 호감도 스토리 30줄 넘게 세뇨르다. 격식 차릴 땐 이름을 붙이고, 고백조 대사에선 당신을 섞는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A139",
+    "rid": 441,
+    "person": "person:아비스타",
+    "address": "특별 관리 대상님",
+    "voice": ["c441_Lobby_Touch_Love_2", "c441_Lobby_Touch_Love_3", "c441_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_avistar_01", "lines": [11] }, { "scene": "ep:d_nikke_avistar_05", "lines": [9] }],
+    "reason": "음성 다섯 줄과 호감도 스토리, 그 밖의 스토리에서 감찰 대상인 지휘관을 특별 관리 대상님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A140",
+    "rid": 450,
+    "person": "person:나가",
+    "address": "선생님",
+    "voice": ["c450_Lobby_Touch_Love_1", "c450_02_Gacha_Get_1", "c450_Field_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_naga_02", "lines": [40, 78] }, { "scene": "ep:d_nikke_naga_05", "lines": [69] }],
+    "reason": "두 음성 세트 서른 줄 가까이와 호감도 스토리, 그 밖의 스토리 160줄에서 지휘관을 선생님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A141",
+    "rid": 451,
+    "person": "person:티아",
+    "address": "선생님",
+    "voice": ["c451_Lobby_Touch_Love_2", "c451_03_Field_Touch_1", "c451_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_tia_01", "lines": [49] }, { "scene": "ep:d_nikke_tia_04", "lines": [116, 128] }],
+    "reason": "두 음성 세트와 호감도 스토리 전편, 그 밖의 스토리 117줄에서 지휘관을 선생님으로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A142",
+    "rid": 470,
+    "person": "person:레드_후드",
+    "address": "미남",
+    "voice": ["c470_02_Lobby_Touch_Love_3", "c470_02_Ult_Skill_Ready_1", "c470_02_Gift_2"],
+    "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": [25, 76] }, { "scene": "ep:d_nikke_RedHood_01", "lines": [71] }],
+    "reason": "두 번째 음성 세트 열 줄 가까이와 호감도 스토리, 메인 26장에서 지휘관을 미남으로 부른다. 기본 음성은 너로만 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A143",
+    "rid": 471,
+    "person": "person:스노우_화이트",
+    "address": "@UserName",
+    "evidence": [
+      { "scene": "ep:d_nikke_snowwhite_heavyarms_05", "lines": [105, 109] },
+      { "scene": "d_main_44_07", "lines": [142] },
+      { "scene": "ep:d_nikke_snowwhite_04", "lines": [28] }
+    ],
+    "reason": "음성은 너로만 가리키고 직함 호칭이 없다. 이 판 스토리 끝과 메인 · 다른 판 스토리에서 지휘관을 이름으로 직접 부른다(10줄).",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A144",
+    "rid": 500,
+    "person": "person:일레그",
+    "address": "지휘관 씨",
+    "voice": ["c500_Gift_2", "c500_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_elegg_01", "lines": [48] }, { "scene": "ep:d_nikke_elegg_05", "lines": [99] }],
+    "reason": "음성 두 줄과 호감도 스토리, 그 밖의 스토리 60줄 넘게 지휘관 씨로 부른다. 다른 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A145",
+    "rid": 501,
+    "person": "person:트로니",
+    "address": "지휘관",
+    "also": ["주인님"],
+    "voice": ["c501_Lobby_Touch_3", "c501_Gift_1", "c501_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_trony_02", "lines": [29, 59] }, { "scene": "event_romanticvalentine_intermission_01", "lines": [139] }],
+    "reason": "음성 3줄과 호감도 스토리 전반에서 지휘관으로 부른다. 주인님은 밸런타인 이벤트 메이드 역할 때 한정.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A146",
+    "rid": 502,
+    "person": "person:일레그",
+    "address": "지휘관 씨",
+    "voice": ["c502_Lobby_Touch_Love_2", "c502_Gift_3", "c502_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_01", "lines": [4, 13] }],
+    "reason": "음성 3줄과 이 판 호감도 스토리 22줄이 모두 지휘관 씨. 다른 스토리에서도 같은 호칭을 62줄 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A147",
+    "rid": 511,
+    "person": "person:신데렐라",
+    "address": "왕자님",
+    "voice": ["c511_Lobby_Touch_Love_1", "c511_01_Lobby_Touch_3", "c511_Ult_Skill_Ready_1"],
+    "evidence": [{ "scene": "ep:d_nikke_cinderella_02", "lines": [106, 132] }, { "scene": "d_main_33_01", "lines": [54] }],
+    "reason": "음성 두 벌 모두 왕자님으로 부르고 호감도 스토리 23줄, 메인 스토리 43줄도 같다. 메인에서 그렇게 부르겠다고 스스로 정한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A148",
+    "rid": 513,
+    "person": "person:리틀_머메이드",
+    "address": "왕자님",
+    "voice": ["c513_03_Lobby_Touch_Love_1", "c513_03_Lobby_Stay_Love_1", "c513_03_Attractive_Up_3"],
+    "evidence": [{ "scene": "fl:wave_to_you_12", "lines": [42, 45] }],
+    "reason": "수영복 판 음성 여러 줄에서 왕자님으로 부른다. 기본 음성과 호감도 스토리에는 호칭이 없고 다른 스토리에서도 왕자님 12줄.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A149",
+    "rid": 514,
+    "person": "person:그레이브",
+    "address": "탈인간",
+    "also": ["너"],
+    "voice": ["c514_Lobby_Stay_Love_1", "c514_01_Gift_3", "c514_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_grave_03", "lines": [2] }, { "scene": "ep:d_nikke_grave_05", "lines": [31] }],
+    "reason": "음성 4줄과 호감도 스토리, 메인 스토리(19줄)에서 지휘관을 탈인간으로 부르고, 그 밖에는 너로 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A150",
+    "rid": 515,
+    "person": "person:신데렐라",
+    "address": "왕자님",
+    "voice": ["c515_Lobby_Touch_Love_1", "c515_Party_Deploy_1", "c515_Win_1"],
+    "evidence": [{ "scene": "ep:d_nikke_cinderella_crystalwave_02", "lines": [9, 16] }],
+    "reason": "음성 10줄 넘게, 이 판 호감도 스토리 33줄에서 모두 왕자님. 다른 호칭은 쓰지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A151",
+    "rid": 520,
+    "person": "person:브래디",
+    "address": "미미",
+    "also": ["지휘관"],
+    "voice": ["c520_Lobby_Touch_Love_1", "c520_01_Field_Touch_1", "c520_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_bready_02", "lines": [1] }, { "scene": "event_newflavor_01_e", "lines": [23] }],
+    "reason": "음성 십여 줄과 호감도 스토리 29줄에서 지휘관을 미미라 부른다. 이벤트 스토리 초반에는 지휘관이라 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A152",
+    "rid": 521,
+    "person": "person:크러스트",
+    "address": "미식가님",
+    "also": ["지휘관님"],
+    "voice": ["c521_Lobby_Touch_Love_1", "c521_Lobby_Stay_1", "c521_Gift_1"],
+    "evidence": [{ "scene": "ep:d_nikke_crust_01", "lines": [67] }, { "scene": "event_newflavor_01_e", "lines": [12, 16] }],
+    "reason": "음성 8줄과 호감도 스토리 17줄이 미식가님. 첫 만남 이벤트에서 지휘관님이라 부르다가 미식가님으로 바꾼다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A153",
+    "rid": 532,
+    "person": "person:소라",
+    "address": "캡틴",
+    "also": ["오빠"],
+    "voice": ["c532_Lobby_Stay_1", "c532_Field_Touch_1", "c532_Gacha_Get_1"],
+    "evidence": [{ "scene": "ep:d_nikke_sora_02", "lines": [66, 67] }, { "scene": "ep:d_nikke_sora_01", "lines": [55] }],
+    "reason": "음성 7줄과 스토리 76줄에서 캡틴. 호감도 스토리 초반엔 오빠라 부르다가 캡틴으로 바꿔 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A154",
+    "rid": 550,
+    "person": "person:베이",
+    "address": "코치님",
+    "voice": ["c550_Lobby_Touch_2", "c550_01_Gacha_Get_1", "c550_Lobby_Touch_Love_3"],
+    "evidence": [{ "scene": "ep:d_nikke_bay_02", "lines": [5] }, { "scene": "ep:d_nikke_bay_05", "lines": [86] }],
+    "reason": "두 벌 음성 십여 줄과 호감도 스토리 22줄, 이벤트 스토리 52줄에서 모두 코치님.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A155",
+    "rid": 551,
+    "person": "person:클레이",
+    "address": "코치님",
+    "voice": ["c551_Lobby_Touch_1", "c551_Lobby_Touch_Love_3", "c551_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_clay_05", "lines": [0, 97] }],
+    "reason": "음성 11줄과 호감도 스토리 15줄, 이벤트 스토리 46줄에서 모두 코치님.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A156",
+    "rid": 570,
+    "person": "person:아크레인저_블랙",
+    "address": "너",
+    "voice": ["c570_Lobby_Touch_Love_1", "c570_Lobby_Touch_Love_2", "c570_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_arkrangerblack_01", "lines": [40] }],
+    "reason": "직함 호칭은 어디에도 없고, 음성 3줄과 호감도 스토리에서 지휘관을 너로 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A157",
+    "rid": 580,
+    "person": "person:팬텀",
+    "address": "그대",
+    "voice": ["c580_Gacha_Get_1", "c580_Lobby_Touch_Love_1", "c580_Party_Deploy_1"],
+    "evidence": [{ "scene": "ep:d_nikke_phantom_01", "lines": [46, 47] }, { "scene": "ep:d_nikke_phantom_05", "lines": [107] }],
+    "reason": "직함 호칭 없이 음성 십여 줄과 호감도 스토리 16줄에서 그대로 부른다. 당신은 다른 인물에게 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A158",
+    "rid": 581,
+    "person": "person:아르카나",
+    "address": "그쪽",
+    "also": ["지휘관님", "선배"],
+    "voice": ["c581_Lobby_Touch_1", "c581_Lobby_Touch_Love_1", "c581_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_arcana_01", "lines": [46, 54] }, { "scene": "fl:2x2_love_2ch_02", "lines": [17] }],
+    "reason": "음성 5줄과 스토리 168줄에서 그쪽. 지휘관님은 놀리듯 가끔, 선배는 금서고 학원물 역할극에서 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A159",
+    "rid": 582,
+    "person": "person:레이블",
+    "address": "당신",
+    "voice": ["c582_Lobby_Touch_Love_1", "c582_01_Gacha_Get_1", "c582_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_label_01", "lines": [0, 10] }],
+    "reason": "이름 · 직함 호칭이 전혀 없고 음성 10줄, 호감도 스토리 24줄, 다른 스토리 51줄이 모두 당신.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A160",
+    "rid": 583,
+    "person": "person:아르카나",
+    "address": "그쪽",
+    "also": ["오빠"],
+    "voice": ["c583_Gacha_Get_1", "c583_Lobby_Touch_Love_2", "c583_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_arcana_fortunemate_04", "lines": [43, 44] }, { "scene": "ep:d_nikke_arcana_fortunemate_02", "lines": [48] }],
+    "reason": "음성 3줄과 이 판 호감도 스토리 10줄에서 그쪽. 오빠는 아이들 앞에서 지휘관을 가리킬 때 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A161",
+    "rid": 590,
+    "person": "person:모리",
+    "address": "평가자님",
+    "voice": ["c590_Lobby_Touch_2", "c590_Lobby_Touch_Love_2", "c590_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_mori_05", "lines": [73, 80] }],
+    "reason": "음성 4줄과 호감도 스토리 9줄, 메인 · 금서고 13줄에서 모두 평가자님.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A162",
+    "rid": 600,
+    "person": "person:민트",
+    "address": "아기 고양이 씨",
+    "also": ["지휘관님"],
+    "voice": ["c600_Lobby_Stay_1", "c600_01_Lobby_Touch_Love_2", "c600_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_mint_01", "lines": [1, 10] }, { "scene": "fl:b-side_idol_03", "lines": [16] }],
+    "reason": "음성 6줄과 스토리 56줄에서 아기 고양이 씨(띄어 쓴 표기 37줄, 붙인 표기 19줄). 금서고 초반에만 지휘관님이라 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A163",
+    "rid": 601,
+    "person": "person:프리카",
+    "address": "뮤즈",
+    "voice": ["c601_Lobby_Touch_Love_1", "c601_01_Field_Touch_1", "c601_Lobby_Stay_Love_1"],
+    "evidence": [{ "scene": "ep:d_nikke_prika_02", "lines": [37, 89] }],
+    "reason": "두 벌 음성 십여 줄과 호감도 스토리 13줄, 스토리 32줄에서 뮤즈로 부른다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A164",
+    "rid": 620,
+    "person": "person:백학",
+    "address": "친구",
+    "voice": ["c620_Gacha_Get_1", "c620_Field_Touch_1", "c620_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_snowcrane_01", "lines": [7, 20] }],
+    "reason": "음성 9줄과 호감도 스토리 26줄에서 친구, 우리 친구로 부른다. 계약자님 · 당신은 다른 인물을 향한 말.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A165",
+    "rid": 801,
+    "person": "person:파워",
+    "address": "인간",
+    "voice": ["c801_Gacha_Get_1", "c801_Outpost_Touch_1", "c801_Attractive_Up_2"],
+    "evidence": [{ "scene": "ep:d_nikke_c_2_03", "lines": [17, 18] }, { "scene": "ep:d_nikke_c_2_04", "lines": [79] }],
+    "reason": "음성 4줄과 호감도 스토리에서 지휘관을 인간으로 부른다. 그 밖엔 너 · 녀석 정도.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A166",
+    "rid": 802,
+    "person": "person:히메노",
+    "address": "너",
+    "also": ["이봐"],
+    "voice": ["c802_Lobby_Touch_1", "c802_Lobby_Touch_Love_3"],
+    "reason": "직함 호칭이 없고 음성 1줄에서 너, 1줄에서 이봐로 지휘관을 부르는 것이 전부. 호감도 스토리 속 너희는 다른 니케들에게 한 말.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A167",
+    "rid": 810,
+    "person": "person:2B",
+    "address": "너",
+    "voice": ["c810_02_Outpost_Touch_3"],
+    "reason": "직함 호칭이 없고 음성 1줄에서만 지휘관을 너로 가리킨다. 호감도 스토리의 너는 라피에게 한 말.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A168",
+    "rid": 811,
+    "person": "person:A2",
+    "address": "너",
+    "also": ["이봐"],
+    "voice": ["c811_Attractive_Up_1", "c811_Lobby_Touch_Love_3", "c811_Attractive_Up_3"],
+    "reason": "이름 · 직함 호칭은 없고 음성 대사에서 지휘관을 너로 가리키며 이봐로 부른다. 호감도 스토리는 지휘관이 나오지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A169",
+    "rid": 812,
+    "person": "person:파스칼",
+    "address": "당신",
+    "voice": ["c812_Lobby_Touch_2"],
+    "reason": "음성 대사에서 지휘관을 당신으로 한 번 가리킨다. 호감도 스토리는 양산형 니케와의 이야기라 지휘관 호칭이 없고 직함 호칭도 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A170",
+    "rid": 821,
+    "person": "person:에밀리아",
+    "address": "너",
+    "also": ["당신"],
+    "voice": ["c821_01_Gift_2", "c821_Reinforce_3", "c821_01_Lobby_Touch_1"],
+    "reason": "반말로 음성 대사에서 지휘관을 너(네) 2회로 가리키고, 정령의 축복을 비는 인사에서만 당신 2회를 쓴다. 이름 · 직함 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A171",
+    "rid": 822,
+    "person": "person:람",
+    "address": "지휘관",
+    "evidence": [{ "scene": "ep:d_nikke_ce_003_03_01", "lines": [28] }],
+    "reason": "음성 대사에는 호칭이 없고, 호감도 스토리에서 지휘관에게 말하며 상대를 지휘관이라 한 번 가리킬 뿐이다. 드물어 추정.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A172",
+    "rid": 830,
+    "person": "person:아스카",
+    "address": "너",
+    "also": ["이봐"],
+    "voice": ["c830_03_Lobby_Touch_Love_2", "c830_Lobby_Stay_1", "c830_03_Lobby_Stay_Love_1"],
+    "reason": "음성 대사 여러 줄에서 지휘관을 너로 부르고 이봐로 재촉한다. 호감도 스토리는 츠바이와의 이야기라 지휘관이 나오지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A173",
+    "rid": 832,
+    "person": "person:마리",
+    "address": "군",
+    "also": ["너"],
+    "voice": ["c832_04_Lobby_Touch_1", "c832_04_Gift_1", "c832_Attractive_Up_1"],
+    "reason": "음성 대사(04 의상)에서 이름 없이 군으로 지휘관을 3회 부르고, 기본 음성에선 너 2회. 호감도 스토리는 라이와의 이야기다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A174",
+    "rid": 834,
+    "person": "person:레이_(가칭)",
+    "address": "너",
+    "voice": ["c834_Outpost_Touch_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ce005_01_05", "lines": [39] }],
+    "reason": "음성 대사와 호감도 스토리에서 지휘관을 너(네)로 가리킨다. 이름 · 직함 호칭은 쓰지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A175",
+    "rid": 835,
+    "person": "person:아스카",
+    "address": "릴림",
+    "also": ["너"],
+    "voice": ["c835_Gacha_Get_1", "c835_Win_1", "c835_Outpost_Touch_3"],
+    "evidence": [{ "scene": "ep:d_nikke_ce005_02_01", "lines": [3] }],
+    "reason": "음성 대사 4줄과 호감도 스토리 첫 장면에서 지휘관을 릴림이라 부르고, 그 밖엔 너로 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A176",
+    "rid": 836,
+    "person": "person:사쿠라_콜라보",
+    "address": "지휘관",
+    "also": ["당신"],
+    "voice": ["c836_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ce005_03_01", "lines": [17, 30] }, { "scene": "ep:d_nikke_ce005_03_02", "lines": [15, 63] }],
+    "reason": "호감도 스토리에서 지휘관을 지휘관으로 직접 부르는 줄이 열 줄 가까이 된다. 음성 대사에선 당신을 한 번 쓴다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A177",
+    "rid": 840,
+    "person": "person:에이다",
+    "address": "당신",
+    "also": ["지휘관", "@UserName"],
+    "voice": ["c840_Lobby_Touch_Love_1", "c840_Attractive_Up_3"],
+    "evidence": [
+      { "scene": "fl:reborn_evil_09", "lines": [69] },
+      { "scene": "fl:reborn_evil_21", "lines": [44] },
+      { "scene": "ep:d_nikke_ce007_01_04", "lines": [32] }
+    ],
+    "reason": "음성과 스토리 대부분에서 당신으로 부른다. 지휘관은 이벤트 두 장면, 이름은 호감도 스토리 두 줄에만 나온다.",
+    "confidence": "추정",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "note": "W22 검토: 지휘관 / 당신·@UserName → 당신 / 지휘관·@UserName (한두 장면 · 3인칭에만 나온 직함은 also)",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A178",
+    "rid": 841,
+    "person": "person:질",
+    "address": "당신",
+    "voice": ["c841_Lobby_Touch_Love_3", "c841_Attractive_Up_1", "c841_Attractive_Up_3"],
+    "reason": "음성 대사 5줄에서 지휘관을 당신으로 가리키고, 이벤트 스토리에서도 당신만 쓴다. 이름 · 직함 호칭은 없다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A179",
+    "rid": 842,
+    "person": "person:클레어",
+    "address": "당신",
+    "also": ["그쪽"],
+    "voice": ["c842_Attractive_Up_2", "c842_Die_1", "c842_Gacha_Get_1"],
+    "reason": "음성 대사 3줄에서 지휘관을 당신으로, 첫 만남에선 그쪽으로 가리킨다. 이름 · 직함 호칭은 없고 오빠는 친오빠를 말한다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A180",
+    "rid": 850,
+    "person": "person:이브",
+    "address": "지휘관",
+    "also": ["너"],
+    "voice": ["c850_02_Attractive_Up_2", "c850_Attractive_Up_2"],
+    "evidence": [{ "scene": "event_ce006_1_05_s", "lines": [36, 37, 67] }],
+    "reason": "음성 대사 2줄에서 지휘관에게 말하며 상대를 지휘관이라 하고, 이벤트에서도 지휘관 · 너로 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A181",
+    "rid": 870,
+    "person": "person:퀸(마코토)",
+    "address": "지휘관",
+    "voice": ["c870_Lobby_Touch_Love_3"],
+    "evidence": [{ "scene": "fl:persona_on_frontline_12", "lines": [29] }, { "scene": "fl:persona_on_frontline_13", "lines": [20, 74] }],
+    "reason": "음성 대사에서 지휘관을 지휘관이라 가리키고, 이벤트 스토리에서 지휘관 16줄 — 직접 부르는 줄이 여럿이다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A182",
+    "rid": 871,
+    "person": "person:유키코",
+    "address": "지휘관",
+    "also": ["너"],
+    "voice": ["c871_Lobby_Touch_Love_1", "c871_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_ce009_02_01", "lines": [7, 28] }, { "scene": "ep:d_nikke_ce009_02_05", "lines": [63] }],
+    "reason": "호감도 스토리 10여 줄 · 이벤트 20줄에서 지휘관으로 직접 부른다. 음성 대사에선 이름 없이 너(네)로 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  },
+  {
+    "id": "A183",
+    "rid": 872,
+    "person": "person:아이기스",
+    "address": "지휘관",
+    "also": ["당신"],
+    "voice": ["c872_Lobby_Touch_Love_2", "c872_Attractive_Up_1"],
+    "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": [42, 93] }],
+    "reason": "음성 대사와 이벤트 스토리 8줄에서 지휘관으로 부르고, 음성 한 줄에서 당신을 쓴다. 호감도의 당신 · 선생님은 다른 상대다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "W22",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W22",
+        "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
+      }
+    ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+  "_comment": "호칭 기록 예시 — 형식은 docs/annotations.md \"호칭 기록\". 실제 파일은 annotations/addresses.json. 근거 · 이유는 형식을 보이려는 예시다.",
+  "session": "예시",
+  "by": "claude",
+  "date": "2026-10-14",
+  "addresses": [
+    {
+      "id": "A1",
+      "rid": 10,
+      "person": "person:라피",
+      "address": "지휘관",
+      "voice": ["c010_Lobby_Touch_2", "c010_Lobby_Touch_Love_1"],
+      "reason": "로비 음성에서 지휘관을 직함으로 부른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "예시" }]
+    },
+    {
+      "id": "A2",
+      "rid": 11,
+      "person": "person:네온",
+      "address": "스승님",
+      "voice": ["c011_Lobby_Touch_1"],
+      "reason": "로비 음성에서 지휘관을 스승으로 부른다",
+      "confidence": "확실",
+      "status": "후보"
+    },
+    {
+      "id": "A3",
+      "rid": 16,
+      "person": "person:라피",
+      "address": "지휘관",
+      "evidence": [{ "scene": "ep:d_nikke_rapi_redhood_01", "lines": [1, 15] }],
+      "reason": "형식 예시 — 음성 없이 씬 줄만 근거로 든 기록(같은 인물의 다른 판)",
+      "confidence": "추정",
+      "status": "후보"
+    }
+  ]
+}

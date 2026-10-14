@@ -1,6 +1,7 @@
 /**
  * 검증기 — 1회독 기록(annotations/read1/*.json)과 정체 연결 후보(people.json candidates) · 떡밥 줄기(threads.json) · 층 판정(layers.json) · 주역 명단(leads.json),
- * 2회독 기록(annotations/read2/*.json — 암시 언급 · 떡밥 · 인물 변화 · 생활상) · 수동 엣지(links.json) · 2회독 볼 거리(watch.json)를 원문 · 사전과 대조한다.
+ * 2회독 기록(annotations/read2/*.json — 암시 언급 · 떡밥 · 인물 변화 · 생활상) · 수동 엣지(links.json) · 2회독 볼 거리(watch.json) · 소속(affiliations.json) ·
+ * 호칭(addresses.json — 실장판 · 음성 대사는 DB characters · character_voices)을 원문 · 사전과 대조한다.
  * 잡는 것: 없는 씬 ID · 줄 번호, 상태 · 확신도 · 결정 값 오타, 필수 칸 누락, 모르는 칸(오타), ID 모양 · 겹침,
  * 없는 사실 · 의문 · 대상을 가리키는 참조, 기각된 항목을 가리키는 참조, 검토 기록과 어긋난 상태.
  * 오류는 고쳐야 커밋한다. 경고는 확인만 한다(되짚어 읽기로 다른 단위의 씬을 근거로 든 것 등).
@@ -54,7 +55,7 @@ export function unfinishedEnding(s) {
 const isStr = (x) => typeof x === 'string' && x.trim().length > 0;
 const SECTION_LABEL = {
   facts: '사실', questions: '의문', events: '사건', times: '시점', candidates: '정체 연결', threads: '줄기', relations: '줄기 관계', units: '층 판정', leads: '주역', spine: '척추', majors: '주요 인물', closures: '마무리', merges: '합류',
-  mentions: '암시 언급', echoes: '떡밥', changes: '인물 변화', life: '생활상', edges: '수동 엣지', affiliations: '소속',
+  mentions: '암시 언급', echoes: '떡밥', changes: '인물 변화', life: '생활상', edges: '수동 엣지', affiliations: '소속', addresses: '호칭',
 };
 /** 2회독 세션 모양 — P1 · M03 */
 const READ2_SESSION = new RegExp(`^(?:${READ2_PREFIXES.join('|')})\\d+[a-z]?$`);
@@ -310,6 +311,53 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       }
     }
     checkEvidence(o.evidence, where, c.id, null, null);
+    checkCommon(c, where);
+  }
+
+  /** 호칭 기록(A, W22) — 실장판(rid)은 DB characters에, person은 그 판의 target_id, voice는 그 판의 음성 대사(character_voices). voice가 비면 근거 씬 필수 */
+  let addrDb = null;
+  const addrStmts = () => {
+    if (addrDb) return addrDb;
+    const has = (t) => Boolean(ctx.db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?").get(t));
+    addrDb = {
+      char: ctx.db.prepare('SELECT resource_id, target_id, name FROM characters WHERE resource_id = ?'),
+      voice: has('character_voices') ? ctx.db.prepare('SELECT resource_id FROM character_voices WHERE speech_id = ?') : null,
+    };
+    return addrDb;
+  };
+  function checkAddr(c, where) {
+    const o = c.obj;
+    if (!ID.addr.test(c.id)) err(where, c.id, 'ID 모양이 틀렸다 — A<번호> (호칭)');
+    unknown(o, FIELDS.addr, (m) => warn(where, c.id, m));
+    const q = addrStmts();
+    const ch = Number.isInteger(o.rid) ? q.char.get(o.rid) : null;
+    if (!Number.isInteger(o.rid)) err(where, c.id, `rid ${JSON.stringify(o.rid ?? null)} — 실장판 번호(DB characters.resource_id, 정수)`);
+    else if (!ch) err(where, c.id, `rid ${o.rid}: DB characters에 없는 실장판`);
+    if (!isStr(o.person) || !o.person.startsWith('person:') || !ctx.targetIds.has(o.person)) err(where, c.id, `person ${JSON.stringify(o.person ?? '')} — 사전의 인물 ID(person:…)`);
+    else if (ch && ch.target_id !== o.person) err(where, c.id, `person ${o.person} — rid ${o.rid}(${ch.name})의 인물은 ${ch.target_id ?? '(DB에 없음)'}다`);
+    if (!isStr(o.address)) err(where, c.id, 'address(지휘관을 부르는 대표 호칭)가 없다');
+    else if (o.address.length > 20) err(where, c.id, `address가 ${o.address.length}자 — 호칭 하나(20자 안쪽)`);
+    if (o.also !== undefined) {
+      if (!Array.isArray(o.also) || !o.also.every(isStr)) err(where, c.id, 'also는 다른 호칭 문자열 배열');
+      else {
+        if (isStr(o.address) && o.also.some((x) => x.trim() === o.address.trim())) warn(where, c.id, `also에 address(${o.address})가 또 있다`);
+        if (new Set(o.also.map((x) => x.trim())).size !== o.also.length) warn(where, c.id, 'also에 같은 호칭이 둘이다');
+      }
+    }
+    const voices = o.voice === undefined ? [] : o.voice;
+    if (!Array.isArray(voices) || !voices.every(isStr)) err(where, c.id, 'voice는 음성 대사 speech_id 문자열 배열(DB character_voices)');
+    else if (voices.length) {
+      if (!q.voice) err(where, c.id, 'DB에 character_voices가 없다 — node .claude/hooks/ensure-db.mjs로 DB를 다시 만든다');
+      else for (const v of voices) {
+        const r = q.voice.get(v);
+        if (!r) err(where, c.id, `voice: 없는 음성 대사 ${v}`);
+        else if (Number.isInteger(o.rid) && r.resource_id !== o.rid) err(where, c.id, `voice: ${v}는 rid ${r.resource_id}의 음성 대사다(이 기록은 rid ${o.rid})`);
+      }
+    }
+    const hasVoice = Array.isArray(voices) && voices.length > 0;
+    const noEvidence = o.evidence === undefined || (Array.isArray(o.evidence) && !o.evidence.length);
+    if (!hasVoice && noEvidence) err(where, c.id, '근거가 없다 — voice(음성 대사 speech_id)나 evidence([{ "scene": 씬 ID, "lines": [12] }]) 중 하나는 있어야 한다');
+    checkEvidence(o.evidence, where, c.id, null, null, { required: false });
     checkCommon(c, where);
   }
 
@@ -588,6 +636,8 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       checkEdge(c, where);
     } else if (c.section === 'affiliations') {
       checkAffil(c, where);
+    } else if (c.section === 'addresses') {
+      checkAddr(c, where);
     } else if (c.section === 'candidates') {
       idOk(ID.link, 'L<번호> (정체 연결)');
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
@@ -759,7 +809,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       const endOk = isStr(o.end) && (!order || orderPos.has(o.end));
       if (!isStr(o.end)) err(where, c.id, '끝난 단위(end)가 없다 — 읽기 단위 키');
       else if (!endOk) err(where, c.id, `end: 읽기 순서에 없는 단위 ${o.end}`);
-      const sideRec = (r) => r.people || r.threads || r.layers || r.leads || r.spine || r.majors || r.closures || r.links;
+      const sideRec = (r) => r.people || r.threads || r.layers || r.leads || r.spine || r.majors || r.closures || r.links || r.affil || r.addr;
       if (!Array.isArray(o.built) || !o.built.length) err(where, c.id, '쌓인 자리(built)가 없다 — 기록 ID(사실 · 의문 · 사건 · 인물 변화 · 떡밥 · 생활상)나 단위 키(연작의 앞 편) 배열');
       else {
         for (const x of o.built) {
@@ -960,6 +1010,22 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
         const k = `${e.obj?.person}\t${e.obj?.org}\t${e.obj?.act}\t${JSON.stringify(e.obj?.evidence?.[0]?.scene ?? null)}`;
         if (keys.has(k)) warn(where, e.id, `같은 (인물, 조직, act, 근거 씬) 소속 기록이 또 있다 — ${keys.get(k)}`);
         else keys.set(k, e.id);
+      }
+    }
+  }
+
+  // ── 호칭 기록 파일 (W22) — 실장판(rid) 하나에 기록 하나(기각 제외) ──
+  if (ds.addresses?.data) {
+    const d = ds.addresses.data;
+    const where = ds.addresses.name;
+    if (typeof d !== 'object' || Array.isArray(d)) err(where, null, '파일 전체가 객체({ … })여야 한다');
+    else {
+      unknown(d, FIELDS.addressesFile, (m) => warn(where, null, m));
+      if (d.addresses !== undefined && !Array.isArray(d.addresses)) err(where, null, 'addresses는 배열이어야 한다');
+      const rids = new Map();
+      for (const e of ds.candidates.filter((x) => x.addr && x.status !== '기각' && Number.isInteger(x.obj?.rid))) {
+        if (rids.has(e.obj.rid)) err(where, e.id, `rid ${e.obj.rid}의 호칭 기록이 둘이다 — ${rids.get(e.obj.rid)}에도 있다(실장판 하나에 기록 하나)`);
+        else rids.set(e.obj.rid, e.id);
       }
     }
   }

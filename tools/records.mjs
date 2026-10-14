@@ -3,7 +3,7 @@
  *
  *   node tools/records.mjs new ch00                   기록 파일 뼈대 — 1회독 기록이 없으면 annotations/read1/ch00.json,
  *                                                     있으면 2회독 annotations/read2/ch00.json. 세션은 읽기 순서(docs/history/reading.md R · P/M)에서
- *   node tools/records.mjs next [F12]                 다음 번호 (사실 F · 의문 Q · 시점 S · 되짚기 V · 정체 연결 L, 사건 F12-2, 2회독 I · E · D · U, 수동 엣지 Y)
+ *   node tools/records.mjs next [F12]                 다음 번호 (사실 F · 의문 Q · 시점 S · 되짚기 V · 정체 연결 L, 사건 F12-2, 2회독 I · E · D · U, 수동 엣지 Y, 소속 T, 호칭 A)
  *   node tools/records.mjs find 기억                  사실 · 의문 · 시점 문장에서 찾기 — 이미 있는 사실인지 볼 때
  *   node tools/records.mjs check                      검증기 — 오류가 있으면 종료 코드 1. 인계 파일이 오래됐는지도 본다
  *   node tools/records.mjs check --endings            끝맺음이 끊긴 칸 전부 — 파일마다 기록 ID(before · after는 D12.after) · 씬 요약은 씬 ID
@@ -225,7 +225,7 @@ switch (cmd) {
       }
     } else {
       console.log(`다음 번호: 사실 ${n.F} · 의문 ${n.Q} · 시점 ${n.S} · 되짚기 ${n.V} · 정체 연결 ${n.L} · 줄기 ${n.J} · 줄기 관계 ${n.G} · 층 판정 ${n.K} · 주역 ${n.Z} · 척추 ${n.B} · 마무리 ${n.O} (${rel(DIR)})`);
-      console.log(`2회독: 암시 언급 ${n.I} · 떡밥 ${n.E} · 인물 변화 ${n.D} · 생활상 ${n.U} · 수동 엣지 ${n.Y} · 볼 거리 ${n.W} · 소속 ${n.T}`);
+      console.log(`2회독: 암시 언급 ${n.I} · 떡밥 ${n.E} · 인물 변화 ${n.D} · 생활상 ${n.U} · 수동 엣지 ${n.Y} · 볼 거리 ${n.W} · 소속 ${n.T} · 호칭 ${n.A}`);
     }
     break;
   }

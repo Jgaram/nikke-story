@@ -186,11 +186,13 @@
 | `I<n>` · `E<n>` · `D<n>` · `U<n>` | 2회독 암시 언급 · 떡밥(암시 · 재언급) · 인물 변화 · 생활상(annotations/read2/) | 종류마다 전체에서 하나씩 |
 | `Y<n>` | 수동 엣지(links.json) | 전체에서 하나씩 |
 | `T<n>` | 소속 기록(affiliations.json) — 인물 · 조직 · 자리 하나에 하나 | 전체에서 하나씩 |
+| `A<n>` | 호칭 기록(addresses.json) — 실장판(니케 목록 한 행) 하나에 하나 | 전체에서 하나씩 |
 
 - **한 번 붙인 ID는 바꾸지 않는다** — 다른 기록 · 2회독 · 분석이 ID로 가리킨다. 문장을 고쳐도 ID는 그대로다.
 - 다음 번호: `node tools/records.mjs next` · `next F12`. 인계 파일(HANDOFF.md)에도 적혀 있다. 세션은 한 번에 하나만 도므로 겹치지 않는다(겹치면 검증기가 잡는다).
   2회독도 같은 데이터셋이라 `F` · `Q` · `S` · `V`는 1회독 번호를 이어 쓴다(바로잡기로 더하는 사실 · 의문 · 시점, 2회독 되짚기 메모).
 - ID 접두는 세션 이름(R · P · M · B · C · X · W · N · H · A)과 겹치지 않게 골랐다 — `review P1`이 세션인지 기록인지 헷갈리지 않는다.
+  호칭 `A<n>`(W22)만 세션 A와 겹친다 — 세션 A1 · A2는 끝난 사전 세션이고 기록 `session` 값으로 쓰인 적이 없다. `review`는 ID를 먼저 보므로 `review A1`은 호칭 기록 A1이다.
 - 채팅에서도 이 ID로 말한다: "F3 · F5 확정, Q2-2 기각".
 
 ## 새 대상과 사전
@@ -1122,6 +1124,47 @@ X1b(2026-10-08)에 Claude가 1회독 파일의 394건(2회독 바로잡기 포�
 **쓰는 법** — 파일을 고친 뒤 `node tools/records.mjs check`(검증: 인물 · 조직 ID, act, 근거 씬 · 줄, records, game 대응 · 같은 (인물, 조직, act, 근거 씬) 겹침 경고) ·
 `review 소속 --brief` · `set T3 T5 확정 --by claude --session W12b --note "…"`(고치기 `--text`는 없다 — 칸은 손으로 고치고 `set`으로 결정만) ·
 `node tools/site/export.mjs --only common`(`targets.json` 인물 `affs`). 예시: [tests/fixtures/read1/_affiliations.json](../tests/fixtures/read1/_affiliations.json).
+
+## 호칭 기록 — `annotations/addresses.json` (W22, 2026-10-14)
+
+실장 니케가 지휘관을 부르는 말(지휘관 · 스승님 …). 같은 인물이라도 판(이벤트 · 코스튬 판)마다 다를 수 있어 **실장판(니케 목록 한 행, DB `characters.resource_id`) 하나에 기록 하나**다.
+원문을 해석하는 기록이라 후보로 쓰고 Claude가 확정 · 기각한다(CLAUDE.md "해석이 필요한 기록"). 근거는 그 판의 음성 대사(DB `character_voices` — roledata) · 씬 줄.
+
+```json
+{ "session": "W22", "by": "claude", "date": "2026-10-14", "note": "…",
+  "addresses": [
+    { "id": "A1", "rid": 10, "person": "person:라피", "address": "지휘관", "also": ["당신"],
+      "voice": ["c010_Lobby_Touch_2"], "evidence": [{ "scene": "ep:d_nikke_rapi_01", "lines": [1] }],
+      "reason": "…", "confidence": "확실", "status": "후보", "by": "claude", "session": "W22", "note": "…", "reviews": [] }
+  ] }
+```
+
+| 칸 | 필수 | 뜻 |
+|---|---|---|
+| `id` | ✓ | `A<n>` — 한 번 붙이면 바꾸지 않는다(`node tools/records.mjs next` 끝의 "호칭") |
+| `rid` | ✓ | 실장판 번호 — DB `characters.resource_id`(정수). 같은 `rid`의 기록은 하나뿐(기각 제외 — 둘이면 오류) |
+| `person` | ✓ | 그 판의 인물 대상 ID — DB `characters.target_id`와 같아야 한다(다르면 오류) |
+| `address` | ✓ | 지휘관을 부르는 대표 호칭 하나 — 비지 않은 문자열, 20자 안쪽 |
+| `also` | | 다른 호칭(문자열 배열). `address`와 겹치면 경고 |
+| `voice` | | 근거 음성 대사 `speech_id` 배열 — DB `character_voices`에서 **그 `rid`의 것**이어야 한다(아니면 오류) |
+| `evidence` | voice가 비면 ✓ | 근거 씬 · 줄(위 "근거") — `voice`와 `evidence` 가운데 하나는 있어야 한다 |
+| `reason` · `confidence` · `status` · `by` · `session` · `note` · `reviews` | | 후보 공통 칸(위 "상태 · 검토") — 소속 기록과 같다 |
+
+**판정 기준**(W22, Claude — 202판을 이 기준으로 정했다. 기록 183 · 호칭 없는 판 19 — 양산형 · 말이 적은 콜라보):
+- `address` = 그 판의 니케가 지휘관을 **직접 부르거나 2인칭으로 가리킬 때** 가장 대표적으로 쓰는 말 하나. 출처 우선순위는 그 판의 음성 대사(판 고유) → 그 판의 호감도 · 애장품 스토리(판 고유) → 같은 인물의 그 밖의 스토리. 같은 인물이라도 판마다 따로 정한다(D → 킬러 와이프는 `여보`).
+- 직함 · 별명(`지휘관` · `스승님` · `삼류` · `귀하` · `꽃님` …)을 여러 장면에서 쓰면 대명사가 더 많아도 그것을 앞세운다(대명사는 말법일 뿐 — 프리바티 `지휘관`).
+  직함이 한두 장면 · 놀림 · 역할극 · 남에게 하는 3인칭에만 나오면 also로 내리고, 그때는 2인칭 대명사(`당신` · `너` · `그쪽` · `그대`)가 address다(K · E.H. `너`, 에이다 `당신`, 아르카나 `그쪽`).
+- 판 고유 출처에 지휘관을 부르는 말이 없으면(갓데스 시절 호감도 — 이노센트 데이즈 · 흑영 · 퓨어 그레이스) 같은 인물의 다른 판 · 다른 스토리를 따르고 `추정`.
+- `지휘관`과 `지휘관님`은 다른 호칭 — 실제로 많이 쓰는 쪽, 비슷하면 음성 대사 쪽. 표기는 원문 그대로(띄어쓰기 포함, 조사는 뗀다). 게임이 플레이어 이름을 넣는 자리는 `@UserName` 그대로 적는다(화면은 '(지휘관 이름)').
+- **지휘관이 아닌 상대를 부르는 말은 뺀다** — 옛 지휘관 · 요한을 부르는 `지휘관`(갓데스 · 에덴 회상), 메이드 카페 손님에게 하는 `주인님`, 남을 부르는 `…님`. 졸업 뒤 그렇게 부르고 싶다는 바람으로만 나온 말도 뺀다.
+- `also` = 같은 판이 지휘관에게 쓰는 다른 호칭(상황별 · 역할극 · 의상 음성 세트) 최대 3개.
+- 지휘관을 부르는 말이 어느 출처에도 없는 판(양산형 · 말이 적은 콜라보)은 기록하지 않고 파일 `note`에 rid를 적는다.
+- `confidence`: `확실` = 음성 대사나 판 고유 스토리에서 지휘관에게 직접 쓰는 것이 분명, `추정` = 그 밖의 스토리로만 · 근거 한두 줄 · 모호.
+- 후보 뽑기(`node tools/views/addresses.mjs`)는 signals.mjs `ADDRESS` + '…님' 낱말만 센다 — `선장 양반` · `함장` · `애송이` · `탈인간` · `미남`처럼 목록에 없는 말은 덤프의 음성 대사 전부와 원문으로 찾는다(기계 후보가 0이어도 판정한다).
+
+**쓰는 법** — 파일을 고친 뒤 `node tools/records.mjs check`(검증: 실장판 · 인물 대응, 호칭 길이, 음성 대사가 그 판의 것인지, 근거 씬 · 줄, 같은 실장판 둘) ·
+`node tools/records.mjs review 호칭 --brief`(음성은 `음성 <speech_id>`로, 자세히 보면 음성 종류 · 대사가 붙는다) · `set A3 A5 확정 --by claude --session W22 --note "…"`
+(고치기 `--text`는 없다 — 칸은 손으로 고치고 `set`으로 결정만). 파일이 없으면 검증기 · 리뷰는 조용히 넘어간다. 예시: [tests/fixtures/read1/_addresses.json](../tests/fixtures/read1/_addresses.json) · 테스트 `tests/addresses.test.mjs`.
 
 ## 공개 개요 — `annotations/synopsis/<키>.json` (W8, 2026-10-10)
 

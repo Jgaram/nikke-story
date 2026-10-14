@@ -14,7 +14,7 @@ import { findItem, kindTally } from './order.mjs';
 import { parseCite } from './read2.mjs';
 
 const SECTION_ORDER = {
-  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, majors: 14, edges: 15, closures: 16, merges: 17, affiliations: 18,
+  facts: 0, questions: 1, events: 2, times: 3, mentions: 4, echoes: 5, changes: 6, life: 7, candidates: 8, threads: 9, relations: 10, units: 11, leads: 12, spine: 13, majors: 14, edges: 15, closures: 16, merges: 17, affiliations: 18, addresses: 19,
 };
 
 /** 순서 안의 자리 — 읽기 순서, 없으면 뒤로. 파트가 안 맞으면(2회독은 파트를 다르게 묶기도 한다) 그 단위의 첫 자리 */
@@ -22,12 +22,12 @@ export function orderIndex(order, unit, parts) {
   if (!unit) return Number.MAX_SAFE_INTEGER;
   return (findItem(order, unit, parts) ?? order.items.find((it) => it.key === unit))?.index ?? Number.MAX_SAFE_INTEGER - 1;
 }
-/** 단위에 딸리지 않은 후보 — 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 주역 · 주요 인물 · 수동 엣지 */
-const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.majors || c.closures || c.links || c.affil);
+/** 단위에 딸리지 않은 후보 — 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 주역 · 주요 인물 · 수동 엣지 · 소속 · 호칭 */
+const isSide = (c) => Boolean(c.people || c.threads || c.layers || c.leads || c.spine || c.majors || c.closures || c.links || c.affil || c.addr);
 
 /** 후보를 읽는 순서로 — 단위(순서) → 1회독 기록(사실 · 의문 · 사건 · 시점) → 2회독 기록 → 파일 안 순서. 정체 연결 · 줄기 · 줄기 관계 · 층 판정 · 수동 엣지는 맨 뒤 ID 순 */
 export function sortCandidates(list, order, { byKind = false } = {}) {
-  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, major: 13, edge: 14, closure: 15, merge: 16, affil: 17 };
+  const kindRank = { fact: 0, question: 1, time: 2, mention: 3, echo: 4, change: 5, life: 6, link: 7, thread: 8, relation: 9, layer: 10, lead: 11, spine: 12, major: 13, edge: 14, closure: 15, merge: 16, affil: 17, addr: 18 };
   return [...list].sort((a, b) =>
     (byKind ? kindRank[a.kind] - kindRank[b.kind] : 0) ||
     orderIndex(order, a.unit, a.parts) - orderIndex(order, b.unit, b.parts) ||
@@ -57,7 +57,7 @@ export function select(ds, tokens) {
   let filtered = false;
   const kinds = [];
   for (const t of tokens) {
-    const range = t.match(/^([FQSLJGKZBCOHIEDUY])(\d+)\.\.\1?(\d+)$/);
+    const range = t.match(/^([FQSLJGKZBCOHIEDUYTA])(\d+)\.\.\1?(\d+)$/);
     if (byId.has(t)) {
       picked.add(byId.get(t));
       explicit = true;
@@ -174,7 +174,7 @@ export function renderCandidate(c, ctx, byId, { context = 2, brief = false, laye
   if (c.majors) return renderMajorItem(c, { kind, where, brief });
   if (c.kind === 'merge') return renderMergeItem(c, byId, { kind, where, brief });
   if (c.closures) return renderClosureItem(c, byId, { kind, act, where, brief });
-  if (c.read2 || c.links || c.affil) return renderRead2Item(c, ctx, byId, { kind, where, brief, context });
+  if (c.read2 || c.links || c.affil || c.addr) return renderRead2Item(c, ctx, byId, { kind, where, brief, context });
   const meta = `${statusLabel(c)} · ${c.confidence ?? '?'}`;
   if (brief) {
     const target = c.obj?.answer ? ` → ${c.obj.answer}` : c.obj?.replacedBy ? ` → ${c.obj.replacedBy}` : '';
@@ -345,7 +345,8 @@ function renderRead2Item(c, ctx, byId, { kind, where, brief, context }) {
   const act = c.act && !(c.kind === 'change' && c.act === '변화') ? `(${c.act})` : '';
   if (brief) {
     const pts = ids(o.points).length ? ` ⇢ ${ids(o.points).join(' ')}` : ids(o.records).length ? ` ⇢ ${ids(o.records).join(' ')}` : '';
-    return `${c.id} [${meta}] ${kind}${act} ${c.text ?? ''}${pts} — ${citeAll(c.evidence) || where}`.replace(/\s+/g, ' ').trim();
+    const cite = [ids(o.voice).length ? `음성 ${o.voice.join(' ')}` : '', citeAll(c.evidence)].filter(Boolean).join(' ');
+    return `${c.id} [${meta}] ${kind}${act} ${c.text ?? ''}${pts} — ${cite || where}`.replace(/\s+/g, ' ').trim();
   }
   const out = [`### ${c.id} · ${kind}${act} · ${meta} — ${where} (${c.session ?? '?'} · ${c.by ?? '?'})`];
   out.push(c.text ?? '(문장 없음)');
@@ -363,12 +364,28 @@ function renderRead2Item(c, ctx, byId, { kind, where, brief, context }) {
     out.push('계기:');
     for (const ev of ids(o.trigger)) out.push(...evidenceLines(ctx, ev, context));
   }
+  if (ids(o.voice).length) out.push(...voiceLines(ctx, o.voice));
   for (const ev of ids(c.evidence)) out.push(...evidenceLines(ctx, ev, context));
   for (const r of c.reviews ?? []) {
     out.push(`검토: ${r.date ?? '?'} ${r.decision ?? '?'} — ${r.by ?? '?'}${r.session ? ` (${r.session})` : ''}${r.note ? ` · ${r.note}` : ''}${r.before ? ` · 고치기 전: ${r.before}` : ''}`);
   }
   return out.join('\n');
 }
+
+/** 호칭 기록(A)의 근거 음성 대사 — DB character_voices에서 종류 · 대사 */
+function voiceLines(ctx, voice) {
+  let stmt = null;
+  try {
+    stmt = ctx.db.prepare('SELECT resource_id, kind, text FROM character_voices WHERE speech_id = ?');
+  } catch {
+    return [`음성: ${voice.join(' · ')} (DB에 character_voices가 없다)`];
+  }
+  return voice.map((v) => {
+    const r = stmt.get(v);
+    return r ? `음성 ${v} (rid ${r.resource_id} · ${r.kind ?? '?'}): ${oneLineText(r.text)}` : `음성 ${v}: (DB에 없음)`;
+  });
+}
+const oneLineText = (t) => String(t ?? '').replace(/\s+/g, ' ').trim();
 
 /** 쪽 나누기 — 후보 경계에서 max 글자까지 */
 export function paginate(blocks, max) {
@@ -398,7 +415,7 @@ export function reviewPages(list, ds, ctx, order, { context = 2, brief = false, 
   const deferred = sortCandidates(list.filter(isDeferred), order, { byKind });
   const rest = sortCandidates(list.filter((c) => !isDeferred(c)), order, { byKind });
   const groupOf = (c) =>
-    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.majors || c.links || c.affil ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
+    byKind ? KINDS[c.kind]?.label ?? c.kind : c.people ? `정체 연결 (${c.file})` : c.threads || c.layers || c.leads || c.spine || c.majors || c.links || c.affil || c.addr ? `${KINDS[c.kind]?.label} (${c.file})` : `${unitLabel(ctx, c.unit)}${c.session ? ` · ${c.session}` : ''}${c.read2 ? ' 2회독' : ''}`;
   const blocks = [];
   if (deferred.length) {
     blocks.push(`## 미뤄 둔 후보 ${deferred.length} — 먼저 본다`);
@@ -604,7 +621,7 @@ export function applyDecision(list, decision, { by = 'claude', date = today(), s
 export function writeDecisions(ds, perFile) {
   const written = [];
   for (const [name, { changes }] of perFile) {
-    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.majors, ds.closures, ds.links, ds.affiliations].find((x) => x?.name === name) ?? null;
+    const file = [...ds.files, ...(ds.files2 ?? [])].find((f) => f.name === name) ?? [ds.people, ds.threads, ds.layers, ds.leads, ds.spine, ds.majors, ds.closures, ds.links, ds.affiliations, ds.addresses].find((x) => x?.name === name) ?? null;
     if (!file) throw new Error(`파일을 못 찾았다: ${name}`);
     const text = fs.readFileSync(file.path, 'utf8');
     if (text !== file.text) throw new Error(`${name}이(가) 읽은 뒤에 바뀌었다 — 다시 실행한다`);
@@ -621,7 +638,7 @@ const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '—');
 
 /** 후보 묶음의 집계 */
 export function tally(list) {
-  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, major: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0, affil: 0 };
+  const t = { all: list.length, 후보: 0, 확정: 0, 기각: 0, 보류: 0, fact: 0, question: 0, event: 0, time: 0, link: 0, thread: 0, relation: 0, layer: 0, lead: 0, spine: 0, major: 0, closure: 0, merge: 0, mention: 0, echo: 0, change: 0, life: 0, edge: 0, affil: 0, addr: 0 };
   for (const c of list) {
     if (STATUSES.includes(c.status)) t[c.status]++;
     if (isDeferred(c)) t.보류++;
@@ -685,6 +702,11 @@ export function progressReport(ds, ctx, order, { all = false } = {}) {
   if (affils.length) {
     const t = tally(affils);
     out.push(`소속 기록(${ds.affiliations?.name}): ${t.all} — 확정 ${t.확정} · 기각 ${t.기각} · 남음 ${t.후보}${t.보류 ? `(보류 ${t.보류})` : ''}`);
+  }
+  const addrs = ds.candidates.filter((c) => c.addr && c.id);
+  if (addrs.length) {
+    const t = tally(addrs);
+    out.push(`호칭 기록(${ds.addresses?.name}): ${t.all} — 확정 ${t.확정} · 기각 ${t.기각} · 남음 ${t.후보}${t.보류 ? `(보류 ${t.보류})` : ''}`);
   }
   const leads = ds.candidates.filter((c) => c.leads && c.id);
   if (leads.length) {
