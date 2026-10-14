@@ -4,7 +4,7 @@
     {
       "at": "event_bowwowparadise",
       "text": "비스킷이 돌보는 강아지 보호소를, 강아지들이 방주처럼 자유롭게 뛰놀 수 있게 새로 고쳐 지은 곳.",
-      "src": "c25d278293",
+      "src": "ed19044a93",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "cfde180cf7",
           "note": "event_bowwowparadise F824 · F825(보호소 · 고쳐 지은 곳)로 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "4b7a9661be", "note": "근거 — F825" }
+      ],
+      "refs": ["F825"]
     }
   ]
 }

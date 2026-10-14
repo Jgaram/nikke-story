@@ -4,7 +4,7 @@
     {
       "at": "fl:lie_cause_recoil",
       "text": "치사토와 타키나가 원래 세계에서 일하던 가게. 맛있는 커피와 디저트를 즐길 수 있는 찻집이다.",
-      "src": "97d170e155",
+      "src": "d35c628606",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "d5d4e83bdc",
           "note": "fl:lie_cause_recoil_03#31-39 치사토 · 타키나가 일했던 가게, 커피 · 디저트 찻집으로 씀 — 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "3818a25e79", "note": "근거 — 기록 없음, 원문 lie_cause_recoil_03#30-41" }
+      ],
+      "refs": ["fl:lie_cause_recoil_03#30-41"]
     }
   ]
 }
