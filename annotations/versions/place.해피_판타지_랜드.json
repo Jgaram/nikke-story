@@ -4,7 +4,7 @@
     {
       "at": "event_nocallerid",
       "text": "수십 년 전 멈춘 지상의 테마파크. 이곳 놀이기구 광고 방송이 방주에 닿아 지상 생존자의 음성 메시지라는 소문이 돌았지만, 어떻게 닿았는지는 모른다.",
-      "src": "0cfb99e468",
+      "src": "25a303cd04",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "5d945017ed",
           "note": "F667 · Q92(event_nocallerid) — 같은 스토리에서 정체가 드러나 1판, 열린 물음은 물음 꼴로"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "8aecaf846d", "note": "근거 W17 B9 — 판 글은 그대로" }
+      ],
+      "refs": ["F667", "Q92"]
     }
   ]
 }

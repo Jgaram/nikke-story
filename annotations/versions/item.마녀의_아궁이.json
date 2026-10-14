@@ -4,7 +4,7 @@
     {
       "at": "event_oldtales1",
       "text": "헨젤 · 그레텔이 함께 쓰는 전용 무장. 그레텔이 조합하고 헨젤이 제어하는 만능 조합 · 발사 장치로, 만들지 못하는 것이 없다고 한다.",
-      "src": "e31ae00c3b",
+      "src": "78d1c01b2c",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "e3003c4401",
           "note": "OLD TALES 06_s#51-53·F1666(헨젤·그레텔 전용 무장, 조합·발사 장치) — 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "7b36533eb0", "note": "근거 W17 B9 — 판 글은 그대로" }
+      ],
+      "refs": ["F1666", "event_oldtales1_06_s#51-53"]
     }
   ]
 }
