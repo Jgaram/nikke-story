@@ -4,7 +4,7 @@
     {
       "at": "event_onemoretime",
       "text": "베이가 리더인 치어리딩 팀. 불화설과 베이의 주목 공포증으로 팀원이 모두 나갔다가, 오랜 팬 클레이가 들어와 둘이서 다시 정상에 올랐다.",
-      "src": "cfbec661f8",
+      "src": "e1851ef768",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "e57a8d1fbb",
           "note": "F1372 · F1375 · F1376 베이의 팀 · 구설수 · 클레이와 재기 — 뒤 CLAY, MORE!는 일화라 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "cf12e3f9f0", "note": "근거 F1372 F1376" }
+      ],
+      "refs": ["F1372", "F1376"]
     }
   ]
 }
