@@ -4,7 +4,7 @@
     {
       "at": "ch40",
       "text": "아니스가 1년 치를 미리 예약해 두어 원할 때 쓸 수 있게 된 공연 무대.",
-      "src": "97d170e155",
+      "src": "ff5d0c9494",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,13 +17,15 @@
           "session": "W15e",
           "hash": "3c5ee9612b",
           "note": "ch40 d_main_40_af_07#15 아니스가 1년 예약한 무대뿐이라 얇게, event_staranis1 F2668(방주에서 가장 큰 무대)로 무엇인지 드러나 판을 둠"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "012381d0f1", "note": "근거 — 원문 줄(아니스의 예약)과 사실 기록(고친 글 없음)" }
+      ],
+      "refs": ["d_main_40_af_07#8-15"]
     },
     {
       "at": "event_staranis1",
       "text": "방주에서 가장 큰 공연 무대 — 객석을 가득 채운 이곳에서 T.T.STAR가 공연을 열었다.",
-      "src": "42597cde23",
+      "src": "ea8e596e64",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -36,8 +38,10 @@
           "session": "W15e",
           "hash": "72d850d8c5",
           "note": "ch40 d_main_40_af_07#15 아니스가 1년 예약한 무대뿐이라 얇게, event_staranis1 F2668(방주에서 가장 큰 무대)로 무엇인지 드러나 판을 둠"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "8f52c98d6b", "note": "근거 — 원문 줄(아니스의 예약)과 사실 기록(고친 글 없음)" }
+      ],
+      "refs": ["F2668"]
     }
   ]
 }
