@@ -20,11 +20,11 @@
  *   목록(작중순): 칸마다 묶는다(시대 기준점 · 메인 챕터 · 그 사이). 메인 챕터 칸은 머리가 곧 그 챕터 줄(굵은 CH 표기 + 이름, 누르면 챕터)이라
  *     메인 줄을 따로 두지 않는다 — 챕터를 안 봤거나 걸렀으면 머리는 'CH.30'만. 시대 칸 머리는 이름 + '약 N년 전'.
  *     판별은 제자리, 범위는 앞 끝 칸(앞 끝을 모르면 뒤 끝 칸), 회상 장면은 따로 한 줄(한 스토리가 두 자리에).
- *     줄 = 제목 + 회색 작은 글자(종류 · 회상 · 칸 하나가 아닐 때만 자리 — 양 끝을 알면 칸 머리가 앞 끝이라 '~ CH.24 전', 한쪽만 알면 'CH.13 뒤' · 'CH.24 전'). 칸 · 줄에 개수 · 출시 날짜 · 확정 정도는 싣지 않는다(날짜는 리더).
+ *     줄 = 종류 그림(감상 순서와 같다 — 호감도는 니케 초상, 메인은 그림 없이 글자) + 제목 + 회색 작은 글자(회상 · 칸 하나가 아닐 때만 자리 — 양 끝을 알면 칸 머리가 앞 끝이라 '~ CH.24 전', 한쪽만 알면 'CH.13 뒤' · 'CH.24 전'). 칸 · 줄에 개수 · 출시 날짜 · 확정 정도는 싣지 않는다(날짜는 리더).
  *     출시순과 비교는 drift=1일 때만 줄에 'CH.12 때 출시 · 3챕터 앞'(색 없이 글자). 같은 때 · 걸침은 화면에 내지 않는다(예외만).
  *     "여기까지 읽음" 선(자리 표시 — t의 메인 챕터로만 정한다): 컷오프 챕터 뒤 칸부터 위쪽 줄과 갈라 보인다 — 선 아래 줄은 읽은 것보다 작중으로 뒤인 이야기.
  *   띠 그림: 가로 = 작중 축, 줄 = 스토리 하나. 때가 정해짐 = 점(칸 폭이 있으면 꽉 찬 막대), 범위 = 반투명 막대(끝을 모르는 쪽은 흐려진다),
- *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만 — 종류 칩의 점이 그 범례, 모양 범례는 셋(이때 · 이 무렵 어딘가 · 회상 장면).
+ *     회상 · 다른 때 장면 = 속 빈 표시(본체와 점선으로 이음). 색은 종류 색(--kind-*)만 — 종류 칩의 그림(메인은 점)이 그 범례, 모양 범례는 셋(이때 · 이 무렵 어딘가 · 회상 장면).
  *     축 머리: 메인 이전(시대 기준점 — 숫자 없는 눈금, 이름은 툴팁) · 메인 챕터(5 단위 숫자). 줄 순서는 작중순(계단). 툴팁 = 제목 · 종류 · 작중 때.
  *   작중 때를 모르는 스토리(키 상대 · 불명)는 목록 아래 접이식 한 칸(읽는 순서) — 줄에 다른 스토리와의 앞뒤가 있으면 그것만.
  *   컷오프: 안 본 스토리(R = state.reading(s)의 R.seen(키) — 척추 이벤트 · 사이드는 '봤음' 예외를 따르고, 예외가 없으면 출시 시점 ≤ t)는 숨긴다(가린 개수는 내지 않는다).
@@ -142,6 +142,16 @@ export async function mount(root, ctx) {
   const units = [...byKey.values()];
   for (const c of units) c.search = `${c.u.title} ${c.unit} ${c.pieces.map((p) => p.text ?? '').join(' ')}`.toLowerCase();
   const kindsPresent = fmt.KIND_ORDER.filter((k) => units.some((c) => c.u.kind === k));
+  /** 종류 그림 — 감상 순서와 같다: 호감도는 그 니케 판 초상, 나머지는 종류 아이콘(이름은 툴팁 · 종류 칩). 그림 없는 종류(메인)는 null */
+  const storyIcon = (u, { size = 20, face = 28, class: cls = '' } = {}) => (u.kind === 'episode' ? ui.portrait(fmt.episodeIcon(u), { size: face, class: `cr-face ${cls}` }) : ui.kindIcon(u.kind, { size, class: `cr-kind-icon ${cls}`, unit: u }));
+  /** 종류 칩 · 묶음 머리의 그림 — 이름이 곁에 있어 장식으로 둔다. 그림 없는 종류(메인)는 종류 색 점 */
+  const kindDot = (k) => {
+    const n = ui.kindIcon(k, { size: 14 });
+    if (!n) return el('i', { class: 'cr-pick-dot', 'aria-hidden': 'true' });
+    for (const a of ['role', 'aria-label', 'title']) n.removeAttribute(a);
+    n.setAttribute('aria-hidden', 'true');
+    return n;
+  };
   /** 시점 기록 ID(S169) → 그 장면(조각)이나 스토리 — 관계 글의 기준이 기록일 때 이름으로 */
   const pieceById = new Map(chrono.pieces.map((p) => [p.id, p]));
   const recUnit = new Map();
@@ -252,7 +262,7 @@ export async function mount(root, ctx) {
   kindBox.append(allBtn);
   for (const k of kindsPresent) {
     const b = el('button', { type: 'button', class: 'cr-pick', title: fmt.help('kind', k), onClick: () => { const next = new Set(cur.kinds); if (next.has(k)) next.delete(k); else next.add(k); setP('kind', [...next].join(',') || null); } },
-      el('i', { class: 'cr-pick-dot', 'aria-hidden': 'true' }), fmt.KIND[k].label);
+      kindDot(k), fmt.KIND[k].label);
     b.style.setProperty('--c', `var(--kind-${k})`);
     kindBtns.set(k, b);
     kindBox.append(b);
@@ -315,13 +325,15 @@ export async function mount(root, ctx) {
     };
     const when = whenOf();
     const ptext = piece ? pieceText(piece) : '';
+    const icon = storyIcon(u);
     const whenEl = when ? el('span', {}, when) : null;
     const ptextEl = piece?.text ? el('span', { class: 'cr-ptext', hidden: !ptext }, clip(ptext, 120)) : null;
     const row = el('div', { class: ['cr-row', piece && 'is-piece'], dataset: { key: c.unit }, role: 'button', tabindex: 0 },
       el('span', { class: 'cr-line' },
+        icon,
         el('span', { class: 'cr-title' }, chTitle(u.title)),
         metaLine([
-          el('span', {}, fmt.KIND[u.kind]?.label ?? u.kind),
+          icon ? null : el('span', {}, fmt.KIND[u.kind]?.label ?? u.kind),
           piece ? el('span', { class: 'cr-ptag' }, pieceTag(piece)) : null,
           whenEl,
         ], !piece && mode === 'story' && driftShort(c) ? el('span', { class: 'cr-dmeta' }, sep(), driftShort(c)) : null)),
@@ -375,7 +387,7 @@ export async function mount(root, ctx) {
     }
     for (const m of marks) plot.append(markNode(m));
     row.append(
-      el('div', { class: 'cg-label' }, el('span', { class: 'cg-title' }, u.title), c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null),
+      el('div', { class: 'cg-label' }, storyIcon(u, { size: 14, face: 20 }), el('span', { class: 'cg-title' }, u.title), c.parallel ? el('span', { class: 'cg-par', title: LABELS.parallelHint }, '∥') : null),
       plot);
     return row;
   }
@@ -468,7 +480,7 @@ export async function mount(root, ctx) {
     const groups = [];
     const rows = [];
     const makeGroup = (k, items) => {
-      const headEl = k ? el('div', { class: 'cg-ghead' }, el('i', { class: 'cr-pick-dot', 'aria-hidden': 'true' }), fmt.KIND[k].label) : null;
+      const headEl = k ? el('div', { class: 'cg-ghead' }, kindDot(k), fmt.KIND[k].label) : null;
       headEl?.style.setProperty('--c', `var(--kind-${k})`);
       const g = { head: headEl, rows: [] };
       if (headEl) body.append(headEl);
