@@ -3017,6 +3017,13 @@
           "date": "2026-10-09",
           "session": "X3f-1f",
           "note": "만우절 개그 두 편(FULL FOOL DAY → LIAR'S END) — 1회독 요약대로 줄거리 사실이 없고, LIAR'S END는 작년에 당한 지휘관의 되갚음일 뿐 닫을 물음 · 대립이 쌓이지 않았다"
+        },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W20",
+          "note": "만우절 단위(FULL FOOL DAY → LIAR'S END) — 판정 밖(결정 #11). 옛 까닭(개그라 쌓인 것이 없다)은 쓰지 않는다"
         }
       ]
     },
@@ -3923,6 +3930,13 @@
           "date": "2026-10-09",
           "session": "X3f-1f",
           "note": "GO! NINJA THIEF!는 정의 괴도단에 델타가 수습으로 드는 코미디 뒷이야기 — PHANTOM THIEF VS DETECTIVE의 물음(반지 · 유착 · 팬텀)을 잇거나 닫지 않고, 결판은 앞 편 안에서 나 쌓인 것이 없다"
+        },
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W20",
+          "note": "개그 기준 걷음(결정 #11) — 다시 봐도 기각: 뒷이야기 편(델타가 수습으로 듦)이 PHANTOM THIEF VS DETECTIVE의 물음(반지 · 유착 · 팬텀)을 잇거나 닫지 않고 결판은 앞 편 안에서 났다 — 한 사건 안이라 쌓인 것이 없다(판례 O54 · O84)"
         }
       ]
     },

@@ -2,13 +2,21 @@
   "unit": "sub:김작가_00",
   "why": {
     "text": "필수 스토리와 얽히지 않는 이야기.",
-    "src": "f71e89e6f0",
+    "src": "6598d569d8",
     "session": "W14b",
     "by": "claude",
     "date": "2026-10-10",
     "status": "확정",
     "reviews": [
-      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "400fda1bd9", "note": "고정 문장 — 대중문화 요지는 필수 스토리가 말하고 남는 것은 개그 일화" }
+      { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W14b", "hash": "400fda1bd9", "note": "고정 문장 — 대중문화 요지는 필수 스토리가 말하고 남는 것은 개그 일화" },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-14",
+        "session": "W20",
+        "hash": "0b32353113",
+        "note": "W20 — 판정 이유를 개그 아닌 카드 잣대로 고쳐 씀(등급 독립 그대로): 등장 · 성격 · 지휘관 일화뿐이라 고정 문장"
+      }
     ]
   }
 }
