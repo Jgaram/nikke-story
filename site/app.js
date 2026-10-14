@@ -111,8 +111,13 @@ function cutoffControl(idx, firstVisit) {
     V.latest, ui.el('span', { class: 'muted' }, ` · ${endSub}`));
   // 칸 — 종류로 픽업 이벤트(필그림 · 오버스펙 픽업) · 사이드(W16a) · 이벤트 · 호감도(W16b, 사용자 2026-10-14). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다).
   // 이벤트 유실물 · 미니게임은 칸이 없고 딸린 이벤트를 따른다(state.pickable). 갈래마다 [모두 선택] [모두 해제] — x에 갈래 통째(@갈래)로 적는다
-  // 칸 · 갈래 머리에도 감상 순서와 같은 종류 표식(이벤트 ◇ · 주년 · 신년 · 여름 이벤트 ✦ · 주년 케이크 · 사이드). 호감도는 칸이 많아 머리에만
-  const exIcon = (u) => (u && u.kind !== 'episode' ? ui.kindIcon(u.kind, { size: 15, unit: u, class: 'cutoff-ex-icon' }) : null);
+  // 칸 · 갈래 머리에도 감상 순서와 같은 종류 표식(이벤트 ◇ · 주년 · 신년 · 여름 이벤트 ✦ · 주년 케이크 · 사이드 · 호감도는 니케 초상)
+  const exIcon = (u) => {
+    if (!u) return null;
+    // 호감도는 감상 순서 줄처럼 그 니케 초상(없으면 종류 아이콘) — 칸이 193이라 lazy로 접힌 묶음을 열 때 받는다
+    const face = u.kind === 'episode' ? fmt.episodeIcon(u) : null;
+    return face ? ui.portrait(face, { size: 22, class: 'cutoff-ex-face' }) : ui.kindIcon(u.kind, { size: 15, unit: u, class: 'cutoff-ex-icon' });
+  };
   const deco = (n) => { if (n) { n.removeAttribute('role'); n.removeAttribute('aria-label'); n.setAttribute('aria-hidden', 'true'); } return n; }; // 머리 글자가 이름이라 그림은 장식
   const HEAD_ICON = { major: { kind: 'event', pickup: true }, side: { kind: 'side' }, event: { kind: 'event' }, episode: { kind: 'episode' } };
   const headIcon = (g) => (HEAD_ICON[g] ? deco(ui.kindIcon(HEAD_ICON[g].kind, { size: 15, pickup: HEAD_ICON[g].pickup })) : null);
