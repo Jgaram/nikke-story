@@ -3,7 +3,7 @@
  *
  *   units.json     읽기 단위 481(돌발 제외, 엘리베이터 포함 — data/views/timeline/units.csv의 집합)
  *                  호감도는 face — 그 스토리의 니케 판 아이콘(이격 · 코스튬도 그 판 그림, site/img/people/{face}.png — 받은 것만)
- *                  group — 감상 순서 종류 필터의 갈래(W16a, groupOf): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(주요 이벤트) · event · episode
+ *                  group — 종류 갈래(W16a, groupOf — 여기까지 읽음 팝업에 쓸 데이터, 화면은 아직): main(메인 · 서브퀘스트 · 유실물 · 돌발) · side · major(주요 이벤트) · event · episode
  *                  주요 이벤트는 pickup(픽업 니케 이름 — data/release/major-events.csv), 이벤트 유실물은 parent(딸린 이벤트 — 읽는 순서에서 바로 앞 이벤트)
  *   ticks.json     공개 자리 158 — 컷오프 슬라이더의 눈금
  *   scenes.json    씬 메타(ID · 단위 · 순서 · 제목 · 줄 수 · 파트) — 본문 없음
@@ -46,7 +46,7 @@ export function kindId(key) {
 }
 
 /**
- * 감상 순서 종류 필터의 갈래(W16a — 사용자 2026-10-14: 서브퀘스트는 메인에, 이벤트 유실물 · 미니게임은 그 이벤트에).
+ * 종류 갈래(W16a — 사용자 2026-10-14: 서브퀘스트는 메인에, 이벤트 유실물 · 미니게임은 그 이벤트에).
  * 유실물 · 돌발(엘리베이터)도 메인 챕터에 딸려 메인. major = 주요 이벤트 표에 든 이벤트와 그 이벤트 유실물.
  * @param {string} kind kindId
  * @param {string} key 단위 키 @param {string|undefined} parent 이벤트 유실물의 딸린 이벤트 @param {Map} majors loadMajorEvents()

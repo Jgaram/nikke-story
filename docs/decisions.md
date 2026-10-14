@@ -18,4 +18,4 @@
 9. **서브퀘스트 · 유실물의 자리** — 지역(= 메인 챕터) 바로 뒤에 읽는다. 근거 · 확신도는 `annotations/subquest-regions.json` · `annotations/relic-regions.json`,
    이벤트 유실물은 그 이벤트 바로 뒤. 읽다가 다른 챕터를 가리키면 Claude가 파일을 고치고 근거를 적는다.
 10. **주요 이벤트** — 필그림 · 오버스펙 니케 첫 모집 무렵(D-12일 ~ D+3일) 열린 이벤트 가운데 그 니케가 가장 많이 나오는 것(50줄 이상)을 주요 이벤트로 따로 둔다(사용자, 2026-10-14 — 주년 · 신년 · 여름의 픽업 이벤트, 반주년도 같은 규칙으로 든다).
-    공지 · 게임 데이터에서 기계적으로 뽑고(`tools/notices/major-events.mjs` → `data/release/major-events.csv`) 중요도 판정과 따로 간다. 이벤트 유실물 · 미니게임은 그 이벤트를 따른다. docs/views.md "감상 순서 — 종류 필터 · 주요 이벤트".
+    공지 · 게임 데이터에서 기계적으로 뽑고(`tools/notices/major-events.mjs` → `data/release/major-events.csv`) 중요도 판정과 따로 간다. 이벤트 유실물 · 미니게임은 그 이벤트를 따른다. docs/views.md "주요 이벤트 · 종류 갈래".

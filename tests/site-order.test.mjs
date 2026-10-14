@@ -10,13 +10,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gradeAt as siteGradeAt, cutRowAt, guideOf, preRev } from '../site/tabs/order.js';
-import { GROUP_ORDER } from '../site/lib/format.js';
-import { loadMajorEvents } from '../tools/notices/major-events.mjs';
+import { gradeAt as siteGradeAt, cutRowAt, ghostKeys, guideOf, preRev } from '../site/tabs/order.js';
 import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
 import { readCsv } from '../tools/site/lib.mjs';
+import { loadMajorEvents } from '../tools/notices/major-events.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'site/data', f), 'utf8'));
@@ -153,15 +152,41 @@ test('cutRowAt — 예외가 없으면 tick ≤ cut인 마지막 척추 줄, 안
   if (later) assert.equal(cutRowAt(seq, t, siteState.reading({ t, x: { [later.key]: true } })), atDefault);
 });
 
-test('종류 갈래(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 이벤트 · 사이드는 주요 이벤트 · 사이드, 이벤트 유실물은 딸린 이벤트를 따른다', () => {
+test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)에서 등급으로만 숨은 앞 편을 앞 편의 앞 편까지 끼운다', () => {
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  const judged = new Map(order.units.map((j) => [j.key, j]));
+  const kinds = ['main', 'side', 'event', 'episode', 'sub', 'elevator'];
+  const shown = [...order.spine.filter((s) => kinds.includes(units.get(s.key).kind)).map((s) => s.key),
+    ...order.units.filter((j) => ['필수', '보강'].includes(j.grade) && kinds.includes(units.get(j.key).kind)).map((j) => j.key)];
+  const pass = (k) => judged.has(k) && kinds.includes(units.get(k).kind);
+  const ghosts = ghostKeys(shown, order.pre, pass);
+  const title = (k) => units.get(k).title;
+  const pairs = new Set([...ghosts].map(([a, by]) => `${title(by)} ← ${title(a)}`));
+  // 이야기가 끊기던 넷(SESSIONS W13b) — 랩칠리언 6 ← 5는 5 ← 4 ← 3 ← 2까지 거슬러 간다
+  for (const p of ['랩칠리언 6 ← 랩칠리언 5', '세르반 2 ← 세르반 1', '세르반 4 ← 세르반 3', 'BITTER SPICE ← B-SIDE IDOL', '랩칠리언 3 ← 랩칠리언 2']) assert.ok(pairs.has(p), p);
+  for (const [a, by] of ghosts) {
+    assert.ok(!shown.includes(a), `${a}: 이미 보이는 줄`);
+    assert.ok(['참고', '독립'].includes(judged.get(a).grade), `${a}: 등급 필터 밖`);
+    assert.ok(order.pre[by].필수.some(([k, w]) => k === a && w === 'sequel'), `${a}: ${by}의 앞 편`);
+    assert.ok(units.get(a).order < units.get(by).order, `${a}: 앞에 온다`);
+  }
+  // 종류로 숨은 것은 끼우지 않는다
+  assert.equal(ghostKeys(shown, order.pre, (k) => pass(k) && units.get(k).kind !== 'sub').size < ghosts.size, true);
+  assert.equal(ghostKeys([], order.pre, pass).size, 0);
+  // 메인만(등급 칩 모두 끔): 준필수(CH.48 ← SECOND AFFECTION)처럼 판정으로 기대는 것은 끼우지 않는다 — '먼저 볼 것'이 말한다
+  const mains = order.spine.filter((s) => units.get(s.key).kind === 'main').map((s) => s.key);
+  assert.equal(ghostKeys(mains, order.pre, pass).size, 0);
+});
+
+test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 이벤트 · 사이드는 주요 이벤트 · 사이드, 이벤트 유실물은 딸린 이벤트를 따른다', () => {
   const units = new Map(unitsJson.map((u) => [u.key, u]));
   const majors = loadMajorEvents();
   assert.ok(majors.size >= 12, `주요 이벤트 ${majors.size}`);
-  for (const u of unitsJson) assert.ok(GROUP_ORDER.includes(u.group), `${u.key}: 갈래 ${u.group}`);
+  for (const u of unitsJson) assert.ok(['main', 'side', 'major', 'event', 'episode'].includes(u.group), `${u.key}: 갈래 ${u.group}`);
   for (const u of unitsJson) {
     if (['main', 'sub', 'relic', 'elevator'].includes(u.kind)) assert.equal(u.group, 'main', u.key);
     if (u.kind === 'event') assert.equal(u.group, majors.has(u.key) ? 'major' : 'event', u.key);
-    if (u.kind === 'event') assert.equal(Boolean(u.pickup), majors.has(u.key), `${u.key}: 마크`);
+    if (u.kind === 'event') assert.equal(Boolean(u.pickup), majors.has(u.key), `${u.key}: 픽업 니케`);
     if (u.kind === 'erelic') {
       const p = units.get(u.parent);
       assert.equal(p?.kind, 'event', `${u.key}: 딸린 이벤트 ${u.parent}`);
@@ -169,7 +194,7 @@ test('종류 갈래(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 �
       assert.equal(u.group, p.group, `${u.key}: 이벤트의 갈래`);
     }
   }
-  // 지금 판정의 척추(필수 이벤트 · 사이드)는 다 주요 이벤트 아니면 사이드다(2026-10-14 조사 — 갈래가 판정을 덮는다)
+  // 지금 판정의 척추(필수 이벤트 · 사이드)는 다 주요 이벤트 아니면 사이드다(2026-10-14 조사)
   for (const s of order.spine) { const u = units.get(s.key); if (u.kind !== 'main') assert.ok(['major', 'side'].includes(u.group), `${u.key}: ${u.group}`); }
   for (const k of majors.keys()) assert.ok(units.has(k), `${k}: 단위에 없다`);
 });

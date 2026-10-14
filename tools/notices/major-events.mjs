@@ -1,5 +1,5 @@
 /**
- * W16a — 주요 이벤트(필그림 · 오버스펙 픽업 이벤트): 감상 순서 종류 필터의 '주요 이벤트' 갈래와 그 마크.
+ * W16a — 주요 이벤트(필그림 · 오버스펙 픽업 이벤트): 종류 갈래(units.json group)의 '주요 이벤트'.
  *
  *   node tools/notices/major-events.mjs
  *
@@ -14,7 +14,7 @@
  *   - 후보 가운데 픽업 니케 이름(전체 이름 · ' : ' 앞 본래 이름 · 뒤 판 이름)이 이름표 · 대사에 든 줄이 가장 많은 이벤트 하나를 고른다.
  *     MIN_LINES줄 미만이면 아무것도 고르지 않는다(픽업 니케가 안 나오는 같은 철 이벤트 — BRAND NEW YEAR · CHERRY BLOSSOM).
  *   - 이벤트 유실물 · 미니게임 · 필드 대화(erelic:)는 딸린 이벤트를 따른다 — 내보내기(tools/site/export/common.mjs)가 읽는 순서에서 바로 앞 이벤트로 잇는다.
- * 결정 docs/decisions.md #10 · 화면 docs/views.md "감상 순서 — 종류 필터 · 주요 이벤트".
+ * 결정 docs/decisions.md #10 · 문서 docs/views.md "주요 이벤트 · 종류 갈래".
  */
 import fs from 'node:fs';
 import path from 'node:path';
