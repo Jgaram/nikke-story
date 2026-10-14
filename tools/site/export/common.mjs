@@ -16,6 +16,7 @@
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
  *                  화면 이름(W23d): label = 동명이인 구분 이름(ID 구분어 — 사쿠라 (콜라보) · 머스탱 (한슨의 아버지))
+ *                  같은 인물 묶음의 이름 순위 rank(W24b — 1 = 기본 이름, 최근 10편 표)
  *                  다른 인물(W24a)의 실제 인물이 제 이름으로 나온 곳이 없으면(아버지 머스탱) 처음 나온 자리(meet)는 드러나는 스토리 — 그 전에는 목록에도 없다
  *                  + 처음 나온 자리(W15b — meet · name_meet · name_never, 다른 이름마다 meet · never: 이름이 처음 쓰인 스토리, 아래 meetsOf)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
@@ -494,6 +495,8 @@ export async function run(ctx) {
     meets.set(L.a, { ...meets.get(L.a), named: meets.get(L.b)?.named ?? new Set(), meet: meetList([L.revealed], units) });
   }
   const unmet = [];
+  // 같은 인물 묶음의 이름 순위(W24b, 결정 #12 — 최근 10편 표, tools/views/persons.mjs): rank 1 = 기본 이름. 화면은 그 자리에서 한 사람으로 묶인 이름 가운데 순위가 앞인 이름으로 부른다
+  const rankOf = new Map(csv('data/views/persons/persons.csv').filter((r) => r.name_rank).map((r) => [r.target, Number(r.name_rank)]));
   // 화면 이름(W23d) — 동명이인은 ID 구분어로(label)
   const targetRows = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`);
   const labels = homonymLabels(targetRows);
@@ -503,7 +506,7 @@ export async function run(ctx) {
     if (!m.meet) unmet.push(r.id);
     return compact({
       id: r.id, type: r.type, name: r.name, label: labels.get(r.id), kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
-      same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
+      same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), rank: rankOf.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
       orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), vers: versOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });
   });

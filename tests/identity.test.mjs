@@ -17,7 +17,7 @@ import { checkDataset } from '../tools/records/check.mjs';
 import { EXAMPLE_DIR, loadDataset, sameAsGroups, splits } from '../tools/records/model.mjs';
 import { loadOrder } from '../tools/records/order.mjs';
 import { identityRules, sourceTargets, splitWatch } from '../tools/records/focus.mjs';
-import { actualDataset, homonymLabels, lineOwners, revealedPeople, splitHits, splitUnits } from '../tools/records/identity.mjs';
+import { actualDataset, familiarNames, homonymLabels, lineOwners, revealedPeople, splitHits, splitUnits } from '../tools/records/identity.mjs';
 import { buildPersons, personScenes } from '../tools/views/persons.mjs';
 import * as fmt from '../site/lib/format.js';
 import { impKnown, recAt, recHas, rowAt } from '../site/lib/format.js';
@@ -249,4 +249,30 @@ test('내보낸 데이터 — 같은 인물 한슨 = 머스탱, 아버지는 드
     assert.ok(!names.has(n), `화면 이름 '${n}'이 ${names.get(n)} · ${t.id}에 겹친다`);
     names.set(n, t.id);
   }
+});
+
+test('기본 이름(W24b) — 최근 10편 표: 편마다 가장 많이 보인 이름에 한 표, 같으면 최근 줄 · 전체 줄 · ID', () => {
+  const groups = new Map();
+  const g = ['person:a', 'person:b', 'person:c'];
+  for (const id of g) groups.set(id, g);
+  const solo = ['person:z'];
+  groups.set('person:z', solo);
+  const rows = [];
+  // a는 옛날에 많이(1–20편), b는 최근 10편 가운데 7편에서 더 많이 — 전체 수는 a가 크지만 기본 이름은 b
+  for (let o = 1; o <= 20; o++) rows.push({ person: 'person:a', order: o, lines: 50 });
+  for (let o = 21; o <= 30; o++) rows.push({ person: 'person:a', order: o, lines: o <= 23 ? 9 : 1 });
+  for (let o = 21; o <= 30; o++) rows.push({ person: 'person:b', order: o, lines: o <= 23 ? 1 : 5 });
+  rows.push({ person: 'person:c', order: 30, lines: 3 }, { person: 'person:z', order: 1, lines: 9 });
+  const f = familiarNames(groups, rows);
+  assert.deepEqual([f.get('person:b').rank, f.get('person:a').rank, f.get('person:c').rank], [1, 2, 3]);
+  assert.equal(f.get('person:a').head, 'person:b');
+  assert.deepEqual([f.get('person:b').votes, f.get('person:a').votes], [7, 3]);
+  assert.equal(f.has('person:z'), false, '혼자인 인물은 묶음이 아니다');
+  // 실제 — 그레이브(에이브 · 언노운 · 관짝이) · 마리안(모더니아) · 머스탱(한슨)
+  const v = buildPersons(ds, ctx, order);
+  const head = (id) => v.persons.find((p) => p.target === id).name_head;
+  assert.equal(head('person:에이브'), 'person:그레이브');
+  assert.equal(head('person:모더니아'), 'person:마리안');
+  assert.equal(head('person:한슨'), 'person:머스탱');
+  assert.equal(head('person:피라'), 'person:라피');
 });

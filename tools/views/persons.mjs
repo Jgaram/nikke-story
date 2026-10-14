@@ -43,7 +43,7 @@ import { COMMON_SHARE, SKIP_TARGETS, centerWhy, unitTargets } from './links.mjs'
 import { releasePlaces, revealStages } from './reveal.mjs';
 import { buildChronology } from './timeline.mjs';
 import { changeTimeline, unitSpans } from './chrono-order.mjs';
-import { actualDataset } from '../records/identity.mjs';
+import { FAMILIAR_WINDOW, actualDataset, familiarNames } from '../records/identity.mjs';
 import { toCsv } from './draft.mjs';
 import { isAprilFools } from '../lib/fools.mjs';
 
@@ -55,7 +55,7 @@ const COLUMNS = {
   persons: ['target', 'name', 'common', 'spread', 'scenes', 'units', 'lines', 'speaker_lines', 'named_lines', 'implied_lines', 'implied_scenes',
     'first_order', 'first_tick', 'first_unit', 'first_scene', 'first_speaks_unit', 'last_order', 'last_tick', 'last_unit',
     'relations', 'facts', 'questions', 'open', 'partial', 'solved', 'reversed', 'events', 'echoes', 'life',
-    'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'split', 'unconfirmed'],
+    'threads', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges', 'same_as', 'name_head', 'name_rank', 'split', 'unconfirmed'],
   relations: ['a', 'b', 'a_name', 'b_name', 'changes', 'closures', 'merges', 'first_order', 'first_unit', 'last_order', 'last_unit', 'fool'],
   personUnits: ['person', 'order', 'tick', 'unit', 'kind', 'scenes', 'lines', 'speaker_lines', 'implied_lines', 'first_scene',
     'imp', 'pre_scenes', 'pre_lines', 'pre_speaker_lines', 'pre_implied_lines', 'pre_first_scene'],
@@ -340,8 +340,14 @@ export function buildPersons(ds, ctx, order, pre = {}) {
     };
   }).sort((x, y) => y.scenes - x.scenes || y.facts + y.questions - (x.facts + x.questions) || x.target.localeCompare(y.target));
   unitRows.sort((x, y) => x.person.localeCompare(y.person) || x.order - y.order);
+  // 같은 인물 묶음의 기본 이름(W24b, 결정 #12) — 최근 10편 표. name_head = 묶음의 기본 이름, name_rank = 이 이름의 순위(1 = 기본)
+  const familiar = familiarNames(groups, unitRows);
+  for (const r of rows) {
+    const f = familiar.get(r.target);
+    Object.assign(r, { name_head: f?.head ?? '', name_rank: f?.rank ?? '' });
+  }
   for (const id of R.keys()) if (!nameOf.has(id)) problems.push(`기록이 가리키는 인물이 사전에 없다: ${id}`);
-  return { persons: rows, relations: relRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: counted, problems };
+  return { persons: rows, relations: relRows, personUnits: unitRows, personRecords: recRows, commonLimit, units: counted, familiar, problems };
 }
 
 const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : '-');
@@ -386,6 +392,18 @@ export function renderPersonsReport(v, { source }) {
   const byChange = [...P].filter((p) => p.changes).sort((a, b) => b.changes - a.changes || a.target.localeCompare(b.target));
   table(`변화 순위 (위 ${TOP})`, byChange.slice(0, TOP), ['name', 'baselines', 'changes', 'aspects', 'with_others', 'inverted', 'closures', 'merges'],
     ['인물', '기준', '변화', '측면', '관계 상대', '뒤바뀜', '마무리', '합류']);
+  // 같은 인물 묶음의 기본 이름(W24b, 결정 #12)
+  const heads = P.filter((p) => p.name_rank === 1).sort((a, b) => a.name.localeCompare(b.name));
+  const pname = new Map(P.map((p) => [p.target, p.name]));
+  if (heads.length) {
+    L.push(`## 같은 인물 — 기본 이름 (최근 ${FAMILIAR_WINDOW}편 표, 결정 #12)`, '', '| 기본 이름 | 표 · 최근 줄 · 전체 줄 | 다른 이름(순위 순 — 표 · 최근 줄 · 전체 줄) |', '|---|---|---|');
+    const st = (id) => { const f = v.familiar?.get(id); return f ? `${f.votes} · ${f.recent} · ${f.lines}` : '-'; };
+    for (const h of heads) {
+      const rest = P.filter((p) => p.name_head === h.target && p.name_rank > 1).sort((a, b) => a.name_rank - b.name_rank);
+      L.push(`| ${h.name} | ${st(h.target)} | ${rest.map((p) => `${pname.get(p.target)}(${st(p.target)})`).join(' · ')} |`);
+    }
+    L.push('');
+  }
   const nIds = (x) => x.split(' ').filter(Boolean).length;
   const byRel = [...v.relations].filter((r) => !r.fool).sort((x, y) => nIds(y.changes) - nIds(x.changes) || x.a.localeCompare(y.a) || x.b.localeCompare(y.b));
   table(`관계 쌍 (변화 많은 위 ${TOP})`, byRel.slice(0, TOP),

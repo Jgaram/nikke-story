@@ -180,3 +180,36 @@ export function lineOwners(sps) {
   const movedOut = (scene, t) => sps.some((L) => L.b === t && L.bLines.has(scene) && [...L.bLines.get(scene)].every((n) => L.inSpan(scene, n)));
   return { owner, movedOut, spanScenes };
 }
+
+/** 기본 이름을 정하는 창 — 그 사람이 나온 최근 몇 편(결정 #12) */
+export const FAMILIAR_WINDOW = 10;
+
+/**
+ * 같은 인물 묶음의 기본 이름(W24b, 결정 #12) — 그 사람이 나온 최근 10편에서 가장 많이 보인 이름.
+ * 편마다 그 편에서 줄(이름표로 말한 줄 · 이름 · 다른 이름 · 암시 언급 — 다른 인물 범위는 옮긴 뒤)이 가장 많은 이름에 한 표(같으면 ID 순 앞),
+ * 순위는 최근 10편의 표 → 그 10편의 줄 → 전체 줄 → ID 순. 전체 수만 보면 인물이 바뀐 채 이야기가 이어져도 따라가지 못하고, 마지막 한 편만 보면
+ * 잠깐 다른 이름으로 불릴 때마다 흔들린다(사용자, 2026-10-14). 새 스토리가 들어오면 다시 센다.
+ * @param {Map<string, string[]>} groups sameAsGroups — 인물 → 같은 인물 전부
+ * @param {{ person: string, order: number|string, lines: number|string }[]} unitRows 인물 × 단위(만우절 뺀 — person-units.csv)
+ * @returns {Map<string, { head: string, rank: number, votes: number, recent: number, lines: number }>} 묶음에 든 인물 → 기본 이름(head) · 이 이름의 순위(1 = 기본) · 표 · 최근 줄 · 전체 줄
+ */
+export function familiarNames(groups, unitRows, window = FAMILIAR_WINDOW) {
+  const out = new Map();
+  const byPerson = new Map();
+  for (const r of unitRows) if (Number(r.lines) > 0) getOr(byPerson, r.person, () => []).push(r);
+  for (const members of new Set(groups.values())) {
+    if (members.length < 2 || out.has(members[0])) continue;
+    const units = new Map(); // 차례 → Map(이름 → 줄)
+    for (const id of members) for (const r of byPerson.get(id) ?? []) getOr(units, Number(r.order), () => new Map()).set(id, Number(r.lines));
+    const recent = [...units.keys()].sort((a, b) => a - b).slice(-window).map((o) => units.get(o));
+    const stat = new Map(members.map((id) => [id, { id, votes: 0, recent: 0, lines: (byPerson.get(id) ?? []).reduce((s, r) => s + Number(r.lines), 0) }]));
+    for (const u of recent) {
+      const [top] = [...u].sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]));
+      stat.get(top[0]).votes++;
+      for (const [id, n] of u) stat.get(id).recent += n;
+    }
+    const ranked = [...stat.values()].sort((x, y) => y.votes - x.votes || y.recent - x.recent || y.lines - x.lines || x.id.localeCompare(y.id));
+    ranked.forEach((s, i) => out.set(s.id, { head: ranked[0].id, rank: i + 1, votes: s.votes, recent: s.recent, lines: s.lines }));
+  }
+  return out;
+}
