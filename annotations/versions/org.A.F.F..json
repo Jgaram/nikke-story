@@ -4,7 +4,7 @@
     {
       "at": "char:100",
       "text": "방주의 화재 진압을 맡는 소방 조직.",
-      "src": "76ebfb5d6e",
+      "src": "5aa7af1cb7",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "108da75cef",
           "note": "char:100 F719 · ep:d_nikke_laplace_02#97(방주의 소방관)로 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "3a0676d67a", "note": "근거 laplace_02#97-98" }
+      ],
+      "refs": ["ep:d_nikke_laplace_02#97-98"]
     }
   ]
 }

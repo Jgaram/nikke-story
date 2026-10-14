@@ -4,7 +4,7 @@
     {
       "at": "fl:reborn_evil",
       "text": "질 · 클레어 · 에이다가 빠져나오다 방주로 넘어온 다른 세계의 도시 — 제약회사 엄브렐러가 만든 바이러스에 파멸했다.",
-      "src": "34ea9214ea",
+      "src": "29dae20ff4",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -17,8 +17,10 @@
           "session": "W15e",
           "hash": "4fb1c5bcf5",
           "note": "reborn_evil _06#67·#72, _09#27, _10#11-19 — 다른 세계·엄브렐러 바이러스로 파멸, 1판"
-        }
-      ]
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "7cd6006c2b", "note": "근거 F2128" }
+      ],
+      "refs": ["F2128"]
     }
   ]
 }
