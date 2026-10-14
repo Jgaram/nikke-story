@@ -100,6 +100,14 @@
       "note": "새 이름표(경비 팀장 · 경비원 · 인형 · 스태츄 · M.M.R. 연구원)는 nikke-db 이름에 없는 단역 — portraits.mjs 다시 돌려 새 아이콘 0. 메인 밖이라 모습 코드 해당 없음, 새 스쿼드 마크 없음",
       "session": "U01",
       "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": null,
+      "item": "regen",
+      "note": "records check 오류 0 · release-order · draft · mentions · signals · addresses · handoff · order-snapshot · export · check-quotes 0 · node --test 354 통과 · spoiler-check 세 독자 기본 0건 + 자리 t=156–158(char:104 뒤 · char:404 앞) 0건 — 감상 순서 · 연결에 출시 자리(157)로 섬",
+      "session": "U01",
+      "date": "2026-10-14"
     }
   ]
 }
