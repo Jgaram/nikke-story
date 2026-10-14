@@ -3,6 +3,7 @@
  * 색은 CSS 변수를 가리키고 값은 style.css 토큰 한 곳에만 있다. 레포 용어 → 화면 말 대응은 라벨 값에만 걸리고, 상수의 키는 그대로다.
  *
  *   KIND[id] · KIND_ORDER           스토리 종류(main · event · side · sub · relic · erelic · episode · elevator) → label · color
+ *   GROUP[id] · GROUP_ORDER         감상 순서 종류 필터의 갈래(units.json group — main · side · major · event · episode) → label · kind(칩 아이콘). MAJOR_MARK = 주요 이벤트 마크
  *   GRADE[등급]                      준필수(키 '필수') · 추천(키 '보강') · 참고 · 독립 · 필수(키 '척추') · 메인 — 색은 준필수 · 추천 띠만(style.css "등급")
  *   STATE[상태]                      의문 · 사실의 "여기까지 읽음" 상태 — 열림 · 일부 · 풀림 · 뒤집힘 · 암시만 · 아직 · 앎
  *   RECORD_KIND[코드]                F · Q · F-k · Q-k · S · I · E · D · U · O · H → label · group(분석 메모 종류)
@@ -66,6 +67,25 @@ export const KIND_HELP = {
   elevator: '돌발 스토리 — 전초기지 건물 대화(지금은 엘리베이터 첫 스토리만)',
   other: '그 밖의 스토리',
 };
+
+// ── 종류 갈래(W16a — 감상 순서 필터: 서브퀘스트 · 유실물은 메인에, 이벤트 유실물 · 미니게임은 그 이벤트에) ──
+export const GROUP = {
+  main: { label: '메인', kind: 'main' },
+  side: { label: '사이드', kind: 'side' },
+  major: { label: '주요 이벤트', kind: 'event' },
+  event: { label: '이벤트', kind: 'event' },
+  episode: { label: '호감도', kind: 'episode' },
+};
+export const GROUP_ORDER = ['main', 'side', 'major', 'event', 'episode'];
+export const GROUP_HELP = {
+  main: '메인 챕터와 그 지역의 서브퀘스트 · 유실물',
+  side: '사이드 스토리',
+  major: '필그림 · 오버스펙 니케가 픽업된 이벤트(주년 · 반주년 · 신년 · 여름) — 딸린 유실물 · 미니게임 포함',
+  event: '그 밖의 이벤트 — 딸린 유실물 · 미니게임 포함',
+  episode: '니케마다 호감도로 열리는 개인 스토리',
+};
+/** 주요 이벤트 줄에 붙는 마크 — 이벤트에만(딸린 유실물에는 없다) */
+export const MAJOR_MARK = { label: '주요', help: (pickup) => `필그림 · 오버스펙 픽업 이벤트${pickup?.length ? ` — ${pickup.join(' · ')}` : ''}` };
 
 // ── 등급 ──
 export const GRADE = {
@@ -342,6 +362,7 @@ export const TERM_HELP = {
 
 const HELP = {
   kind: KIND_HELP,
+  group: GROUP_HELP,
   grade: GRADE_HELP,
   state: STATE_HELP,
   record: RECORD_HELP,

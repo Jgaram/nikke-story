@@ -1,0 +1,24 @@
+event,event_date,event_name,major,pickup,pickup_kind,pickup_date,lines,note
+event_brandnewyear,2022-12-29,BRAND NEW YEAR,0,모더니아,필그림,2023-01-01,0,픽업 니케가 50줄 미만
+event_cherryblossom,2023-03-30,CHERRY BLOSSOM,0,니힐리스타,필그림,2023-03-30,0,픽업 니케가 50줄 미만
+event_fullfoolday,2023-04-01,FULL FOOL DAY,0,니힐리스타,필그림,2023-03-30,0,픽업 니케가 50줄 미만
+event_overzone,2023-04-27,OVER ZONE,1,도로시,필그림,2023-04-27,1090,
+event_redash,2023-11-02,RED ASH,1,레드 후드,필그림,2023-11-02,889,
+event_redash,2023-11-02,RED ASH,1,스노우 화이트 : 이노센트 데이즈,필그림,2023-11-02,417,
+event_newyearnewsword,2023-12-28,"NEW YEAR, NEW SWORD",1,홍련 : 흑영,필그림,2024-01-01,507,
+event_lastkingdom1,2024-04-25,LAST KINGDOM,1,크라운,필그림,2024-04-25,570,
+event_oldtales1,2024-10-31,OLD TALES,1,신데렐라,필그림,2024-10-31,943,
+event_oldtales1,2024-10-31,OLD TALES,0,라푼젤 : 퓨어 그레이스,필그림,2024-10-31,26,픽업 니케가 50줄 미만
+event_oldtales1,2024-10-31,OLD TALES,0,그레이브,필그림,2024-11-07,0,픽업 니케가 50줄 미만
+event_footstepwalkrun1,2024-12-26,"FOOTSTEP, WALK, RUN",1,라피 : 레드 후드,오버스펙,2025-01-01,1399,
+event_outofuniform,2025-01-01,OUT OF UNIFORM,0,라피 : 레드 후드,오버스펙,2025-01-01,2,"같은 철 FOOTSTEP, WALK, RUN에 더 많이 나온다"
+event_unbreakablesphere1,2025-04-24,UNBREAKABLE SPHERE,1,리틀 머메이드,필그림,2025-04-24,838,
+event_unbreakablesphere1,2025-04-24,UNBREAKABLE SPHERE,1,미하라 : 본딩 체인,오버스펙,2025-05-01,912,
+fl:boom_the_ghost,2025-07-17,BOOM! THE GHOST!,1,도로시 : 세렌디피티,필그림,2025-07-17,448,
+event_goddessfall1,2025-10-30,GODDESS FALL,1,나유타,필그림,2025-10-30,703,
+event_goddessfall1,2025-10-30,GODDESS FALL,1,차임,필그림,2025-10-30,190,
+event_goddessfall1,2025-10-30,GODDESS FALL,0,리버렐리오,필그림,2025-11-06,3,픽업 니케가 50줄 미만
+fl:ark_guardian,2025-12-30,ARK GUARDIAN,1,스노우 화이트 : 헤비암즈,필그림,2026-01-01,431,
+event_staranis1,2026-04-23,STAR ANIS,1,아니스 : 스타,오버스펙,2026-04-23,1158,
+event_staranis1,2026-04-23,STAR ANIS,0,네온 : 비전 아이,오버스펙,2026-04-30,37,픽업 니케가 50줄 미만
+fl:wave_to_you,2026-07-02,WAVE TO YOU,1,신데렐라 : 크리스탈 웨이브,필그림,2026-07-02,417,

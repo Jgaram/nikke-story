@@ -1,17 +1,16 @@
 /**
  * 탭 1 감상 순서(W2) — 화면 1 "스토리 중요도 분류"(docs/views.md 1절, 판정 카드 docs/importance.md).
- * 첫 쓸모: 스토리를 다 보지 않고 중요한 것만 빠르게 — 척추(메인 챕터 + 척추 이벤트 · 사이드)을 출시순 한 줄로 두고,
- *   등급 필터(기본 필수 · 추천)에 든 메인 밖 스토리를 그 사이사이 제자리(읽는 자리 units.json order)에 끼워 넣은 감상 순서.
+ * 첫 쓸모: 어떤 순서로 볼지 — 척추(메인 챕터 + 척추 이벤트 · 사이드)를 출시순 한 줄로 두고,
+ *   종류 필터에 든 메인 밖 스토리를 그 사이사이 제자리(읽는 자리 units.json order)에 끼워 넣은 감상 순서. 중요도는 줄의 등급 띠 · 이름으로만 보인다.
  *
  * 쓰는 JSON
  *   order.json(이 탭 — tools/site/export/order.mjs): units[421](판정 단위 — 등급 · 출시 시점 · from · before · basis · reason · trail · 떡밥 · 주역) · spine[60](척추 자리) · leads[20](주역 명단 — 이 탭은 쓰지 않는다) · counts
  *   공용(idx): units.json(종류 · 제목 · 글자 수 · 범위) · ticks.json(출시 시점 라벨)
  *
  * URL 파라미터(p.*)
- *   g      등급 필터(쉼표 목록: 척추 · 필수 · 보강 · 참고 · 독립 — 화면 말로 필수 · 준필수 · 추천 · 참고 · 독립), 없으면 척추 · 필수 · 보강(DEFAULT_GRADES).
- *          척추를 끄면 척추 이벤트 · 사이드가 빠진다(메인 챕터는 등급이 아니라 종류 main으로만 거른다)
- *   k      종류 필터(쉼표 목록, 칩 순서 KIND_PICK_ORDER: main · side · event · episode · sub · relic · erelic · elevator), 없으면 유실물 둘(relic · erelic)을 뺀 전부 — 유실물은 사용자가 켜야 보인다.
- *          척추 줄도 종류를 따른다 — 이벤트를 끄면 필수 이벤트도 빠진다(사용자, 2026-10-10)
+ *   k      종류 필터(쉼표 목록, 칩 순서 fmt.GROUP_ORDER: main · side · major · event · episode — units.json group), 없으면 전부.
+ *          등급 필터는 뺐다(사용자, 2026-10-14 — 중요도 말고 종류로). 갈래: 메인 = 메인 챕터 + 서브퀘스트 · 유실물 · 돌발, 주요 이벤트 = 필그림 · 오버스펙 픽업 이벤트
+ *          (data/release/major-events.csv — 줄에 '주요' 마크), 이벤트 유실물 · 미니게임은 딸린 이벤트의 갈래. 척추 줄도 갈래를 따른다(메인을 끄면 챕터 구획 줄도 빠진다)
  *   find   제목 검색
  *
  * 그리는 규칙(화면 말은 팬이 묻는 것만 — docs/views.md "화면 문구는 간결하게", W13b)
@@ -32,9 +31,8 @@
  *     준필수 = 굵은 띠 + 옅은 바탕, 추천 = 얇은 띠, 참고 · 독립 = 띠 없이 회색 제목. 종류는 글자(색 없음).
  *     넓은 폭(목록 760px 이상 — 리더가 열려 좁아지면 접는다)은 '먼저 볼 것'을 줄 오른쪽 칸에, 좁은 폭은 줄 아래에(사용자, 2026-10-10 — 데스크톱은 쌓을 까닭이 없다).
  *     순번 · 날짜 · 글자 수는 싣지 않는다(날짜 · 분량은 리더). 이유(분석 문장)도 목록에는 없고 리더 분류 칸에만.
- *     선행: 앞 편(필수 선행)이 등급 필터로만 숨으면 그 줄을 흐리게 끼운다(ghostKeys — 이야기가 1 · 6 · 7로 끊기지 않게, 앞 편의 앞 편도).
- *     권장 · 선택 선행은 목록에 없다(리더 분류 칸에 전부).
- *     필터는 최종 등급으로 본다. 한 줄 한 칸이라 좁은 폭(390px)에서도 제목이 줄바꿈될 뿐 접지 않는다.
+ *     권장 · 선택 선행은 목록에 없다(리더 분류 칸에 전부). 등급 필터가 없어져 앞 편을 흐리게 끼우던 줄(ghostKeys)도 뺐다 — 앞 편은 줄 아래 "먼저 볼 것"이 이름을 말한다.
+ *     한 줄 한 칸이라 좁은 폭(390px)에서도 제목이 줄바꿈될 뿐 접지 않는다.
  *   스토리를 누르면 sel=unit:키 → 리더 패널 하나(사용자, 2026-10-10 — 따로 있던 분류 카드를 리더 분류 칸으로 합쳤다: 그 시점의 등급 gradeAt ·
  *     언제 읽나 · 선행 · 선행인 곳 · 이유 · 장면 · 이어지는 필수 스토리 · 주역 · 결말 — lib/reader.js classPanel).
  *   용어는 fmt(GRADE · help · ref)에서 가져오고, 없는 말만 아래 LABELS에 둔다.
@@ -46,25 +44,18 @@ export const meta = { id: 'order', title: '감상 순서', blurb: '메인 스토
 /** fmt에 없는 화면 말 — 고칠 때는 여기 한 곳만 */
 const LABELS = {
   title: '감상 순서',
-  grade: '등급', kind: '종류',
+  kind: '종류',
   find: '제목 검색', findAria: '스토리 제목 검색',
-  count: (n) => `${n}편`, countHelp: '지금 목록에 든 스토리 수(흐리게 끼운 앞 편은 빼고)',
+  count: (n) => `${n}편`, countHelp: '지금 목록에 든 스토리 수',
   must: '먼저 볼 것', mustHelp: '이 스토리 전에 꼭 볼 스토리 — 앞 편이거나, 이 스토리가 빈틈을 채우는 필수 스토리',
   dueHelp: (at) => `뒤의 ${at}에서 이 스토리를 이어받는다 — 그 전에 보면 좋다`,
   passed: ' · 지남', passedHelp: (at) => `${at}을(를) 이미 봤다 — 지금 봐도 ${at}에서 넘긴 빈틈이 채워진다`, seenMark: '봤음(여기까지 읽음)',
-  ghost: (t) => `${t}의 앞 편`, ghostHelp: (t) => `${t}의 앞 편 — 등급 필터 밖이지만 이야기가 끊기지 않게 흐리게 끼워 두었다`,
   cutLine: (at) => `여기까지 읽음 · ${at}`, cutLineHelp: '이 아래가 다음에 볼 순서', goCut: '읽은 자리로', emptyFilter: '필터에 맞는 스토리가 없다.',
   clearFilter: '필터 풀기',
   unseen: '안 봄', unseenHelp: '여기까지 읽음 앞이지만 안 본 것으로 둔 스토리',
 };
-const GRADES = ['필수', '보강', '참고', '독립'];
-const PICK_GRADES = ['척추', ...GRADES]; // 필터 칩 — 척추(화면 말 '필수')도 끌 수 있다(사용자, 2026-10-10)
-const DEFAULT_GRADES = ['척추', '필수', '보강']; // 중요한 것만 빠르게 — 사용자가 참고 · 독립을 켠다
 /** 등급 → 띠 클래스(style.css .g-band — 필수 굵은 띠 + 진한 바탕 + 굵은 제목 · 준필수 굵은 띠 + 옅은 바탕 · 추천 얇은 띠 · 참고 · 독립 회색) */
 const BAND = { 척추: 'g-spine', 필수: 'g-must', 보강: 'g-support', 참고: 'g-quiet', 독립: 'g-quiet' };
-const OFF_KINDS = ['relic', 'erelic']; // 유실물은 기본으로 뺀다(사용자, 2026-10-09)
-/** 종류 칩 순서(사용자, 2026-10-10) — 다른 탭의 KIND_ORDER와 따로 */
-const KIND_PICK_ORDER = ['main', 'side', 'event', 'episode', 'sub', 'relic', 'erelic', 'elevator'];
 /** 쉼표 목록 파라미터 → 고른 값(없으면 기본값). 모르는 값은 버린다 */
 const listParam = (v, all, dflt) => (v == null ? dflt : v.split(',').filter((x) => all.includes(x)));
 
@@ -83,26 +74,6 @@ export function cutRowAt(seq, cut, R) {
   return at;
 }
 
-/**
- * 흐리게 끼울 앞 편 — 보이는 줄(keys)의 앞 편(order.json pre 필수 가운데 sequel) 가운데 pass(키)가 참인 것(종류 · 찾기는 통과하고 등급 필터로만 숨은 것)을
- * 앞 편의 앞 편까지 거슬러 모은다. 돌려주는 것: Map(앞 편 키 → 그것을 부른 줄의 키)
- */
-export function ghostKeys(keys, pre, pass) {
-  const shown = new Set(keys);
-  const out = new Map();
-  const stack = [...keys];
-  while (stack.length) {
-    const k = stack.pop();
-    for (const [a, why] of pre[k]?.필수 ?? []) {
-      // 앞 편(sequel)만 — 연작이 끊기지 않게. 준필수 · 척추 이벤트처럼 판정으로 기대는 것은 '먼저 볼 것'이 이름을 말한다(메인만 보는 사람이 끈 것을 되살리지 않는다)
-      if (why !== 'sequel' || shown.has(a) || out.has(a) || !pass(a)) continue;
-      out.set(a, k);
-      stack.push(a);
-    }
-  }
-  return out;
-}
-
 export async function mount(root, ctx) {
   const { state, data, fmt, ui, idx } = ctx;
   const wait = ui.spinner();
@@ -116,7 +87,7 @@ export async function mount(root, ctx) {
   const spineByKey = new Map(spine.map((s) => [s.key, s]));
   const pre = order.pre ?? {};
   /** 거꾸로 — A가 선행인 스토리들 [X, 칸] */
-  const kindsPresent = KIND_PICK_ORDER.filter((k) => judged.some((j) => j.unit.kind === k) || spine.some((sp) => sp.unit.kind === k));
+  const groupsPresent = fmt.GROUP_ORDER.filter((k) => judged.some((j) => j.unit.group === k) || spine.some((sp) => sp.unit.group === k));
   const spineLabel = (key) => (spineByKey.get(key)?.unit.kind === 'main' ? fmt.tickShort(spineByKey.get(key).tick) : fmt.unitTitle(key));
   // 줄 안내 — 필터와 상관없이 한 번 낸다
   const guideCtx = { units: idx.units, spine: new Set(spine.map((sp) => sp.key)), pre, rev: preRev(pre), judged: judgedByKey };
@@ -132,7 +103,7 @@ export async function mount(root, ctx) {
     const box = ui.el('div', { class: 'order-picks', role: 'group', 'aria-label': label }, ui.el('span', { class: 'order-picks-label' }, label));
     const cur = () => listParam(state.param('order', param), options.map((o) => o.value), dflt);
     for (const o of options) {
-      const b = ui.el('button', { type: 'button', class: 'order-pick', 'aria-pressed': 'false', title: o.title, dataset: { v: o.value } }, o.band ? ui.el('i', { class: `order-pick-band ${o.band}`, 'aria-hidden': 'true' }) : null, o.icon ?? null, o.label);
+      const b = ui.el('button', { type: 'button', class: 'order-pick', 'aria-pressed': 'false', title: o.title, dataset: { v: o.value } }, o.icon ?? null, o.label);
       b.addEventListener('click', () => {
         const on = new Set(cur());
         if (on.has(o.value)) on.delete(o.value); else on.add(o.value);
@@ -145,11 +116,9 @@ export async function mount(root, ctx) {
     }
     return { el: box, cur, sync: () => { const on = new Set(cur()); for (const [v, b] of btns) b.setAttribute('aria-pressed', String(on.has(v))); } };
   };
-  const gradePick = picks({ label: LABELS.grade, param: 'g', dflt: DEFAULT_GRADES, options: PICK_GRADES.map((g) => ({ value: g, label: gl(g), title: fmt.help('grade', g), band: BAND[g] === 'g-quiet' ? null : BAND[g] })) });
   /** 종류 칩의 그림 — 목록 줄에 글자 없이 뜨는 아이콘을 여기서 익힌다(이름은 칩 글자에 있어 그림은 장식) */
   const chipIcon = (k) => { const n = ui.kindIcon(k, { size: 14 }); if (n) { n.removeAttribute('role'); n.removeAttribute('aria-label'); n.removeAttribute('title'); n.setAttribute('aria-hidden', 'true'); } return n; };
-  const kindDefault = kindsPresent.filter((k) => !OFF_KINDS.includes(k));
-  const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: kindDefault, options: kindsPresent.map((k) => ({ value: k, label: fmt.KIND[k].label, title: fmt.help('kind', k), icon: chipIcon(k) })) });
+  const kindPick = picks({ label: LABELS.kind, param: 'k', dflt: groupsPresent, options: groupsPresent.map((k) => ({ value: k, label: fmt.GROUP[k].label, title: fmt.help('group', k), icon: chipIcon(fmt.GROUP[k].kind) })) });
   const find = ui.el('input', { type: 'search', class: 'order-find', placeholder: LABELS.find, 'aria-label': LABELS.findAria, value: state.param('order', 'find') ?? '' });
   let findTimer = null;
   let findPending = false; // 입력 뒤 URL에 싣기 전 — 그 사이 다른 필터가 바뀌어도 입력칸을 되돌리지 않는다
@@ -158,7 +127,7 @@ export async function mount(root, ctx) {
     findPending = true;
     findTimer = setTimeout(() => { findPending = false; state.setParam('order', 'find', find.value.trim() || null); }, 200);
   });
-  root.append(ui.el('div', { class: 'toolbar order-toolbar' }, gradePick.el, ui.el('div', { class: 'order-kinds' }, kindPick.el), find, status));
+  root.append(ui.el('div', { class: 'toolbar order-toolbar' }, ui.el('div', { class: 'order-kinds' }, kindPick.el), find, status));
   const emptyBox = ui.el('div', { class: 'order-empty' });
   emptyBox.hidden = true;
   root.append(emptyBox);
@@ -172,10 +141,10 @@ export async function mount(root, ctx) {
    * 그 밖은 출시 시점으로 짐작한 것이라 쓰지 않는다(메인만 보고 뒤늦게 챙기는 사람에게 안 본 준필수를 ✓로 보이지 않게)
    */
   const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || state.checkable(k)) && rd.seen(k);
-  /** 'CH.27 전까지' — 회색 글자 줄에. 그 스토리를 이미 봤으면 '· 지남'(뒤늦게 챙기는 사람 — 지금 봐도 빈틈이 채워진다). 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
+  /** 'CH.27 전까지' — 회색 글자 줄에. 그 스토리를 이미 봤으면 '· 지남'(뒤늦게 챙기는 사람 — 지금 봐도 빈틈이 채워진다) */
   const dueText = (item, rd) => {
     const d = guide(item.key).due;
-    if (!d || item.ghostOf === d.key) return null; // 척추 이벤트 · 사이드도 — 메인만 보는 사람에게 'CH.43 전까지'
+    if (!d) return null; // 척추 이벤트 · 사이드도 — 메인만 보는 사람에게 'CH.43 전까지'
     const at = spineLabel(d.key);
     const passed = doneSeen(d.key, rd);
     return ui.el('span', { class: ['order-due', passed ? 'is-passed' : ''], title: passed ? LABELS.passedHelp(at) : LABELS.dueHelp(at) }, fmt.preOf(at), passed ? LABELS.passed : null);
@@ -192,7 +161,7 @@ export async function mount(root, ctx) {
   };
   /** 'CH.07 재회' → 굵은 CH 표기 + 이름 */
   const chTitle = (title) => { const m = /^(CH\.\d+)\s*(.*)$/.exec(title); return m ? [ui.el('span', { class: 'ch' }, m[1]), m[2] ? ` ${m[2]}` : null] : title; };
-  /** 감상 순서의 한 줄. 척추이면 item.spine, 흐리게 끼운 앞 편이면 item.ghostOf(부른 줄의 키) */
+  /** 감상 순서의 한 줄. 척추이면 item.spine */
   const seqRow = (item, rd, unseen = false) => {
     const { key, unit } = item;
     const go = () => state.set({ sel: `unit:${key}` });
@@ -201,14 +170,13 @@ export async function mount(root, ctx) {
       attrs.class = 'order-row is-main';
       return ui.el('li', attrs, ui.el('span', { class: 'order-line' }, ui.el('span', { class: 'order-title' }, ui.link(`unit:${key}`, chTitle(unit.title)))), mustLine(key, rd));
     }
-    const ghost = Boolean(item.ghostOf);
     const g = item.spine ? '척추' : item.grade;
-    attrs.class = ['order-row g-band', item.spine ? 'is-spine' : 'is-extra', ghost ? 'is-ghost g-quiet' : BAND[g] ?? '', unseen ? 'is-unseen' : ''].filter(Boolean).join(' ');
+    attrs.class = ['order-row g-band', item.spine ? 'is-spine' : 'is-extra', BAND[g] ?? '', unseen ? 'is-unseen' : ''].filter(Boolean).join(' ');
     // 종류는 글자 대신 그림 — 호감도는 니케 초상, 나머지는 종류 아이콘(이름은 툴팁 · 종류 칩에서 익힌다 — 사용자, 2026-10-10)
     const icon = unit.kind === 'episode' ? ui.portrait(fmt.episodeIcon(unit), { size: 28, class: 'order-face' }) : ui.kindIcon(unit.kind, { size: 20, class: 'order-kind-icon' });
-    // 흐리게 끼운 앞 편은 왜 끼웠는지를 먼저(등급 필터 밖이라 원래 등급만 보면 헷갈린다)
+    // 주요 이벤트 마크(W16a) — 등급 이름 앞, 이벤트에만(딸린 유실물 · 미니게임은 갈래만 따른다)
     const meta = [
-      ghost ? ui.el('span', { class: 'order-ghost', title: LABELS.ghostHelp(fmt.unitTitle(item.ghostOf)) }, LABELS.ghost(fmt.unitTitle(item.ghostOf))) : null,
+      unit.pickup ? ui.el('span', { class: 'order-major', title: fmt.MAJOR_MARK.help(unit.pickup) }, fmt.MAJOR_MARK.label) : null,
       ui.el('span', { class: 'g-label', title: fmt.help('grade', g) }, gl(g)),
       icon ? null : ui.el('span', { class: 'order-kind', title: fmt.help('kind', unit.kind) }, fmt.KIND[unit.kind]?.label ?? unit.kind),
       dueText(item, rd),
@@ -230,24 +198,19 @@ export async function mount(root, ctx) {
     const q = (s.p.find ?? '').toLowerCase();
     return !q || String(x.unit.title).toLowerCase().includes(q);
   };
-  const match = (j, s, kinds) => kinds.includes(j.unit.kind) && findOk(j, s);
-  const clearFilters = () => state.set({ p: { g: null, k: null, find: null } }, { replace: true });
+  const match = (j, s, kinds) => kinds.includes(j.unit.group) && findOk(j, s);
+  const clearFilters = () => state.set({ p: { k: null, find: null } }, { replace: true });
   const apply = (s) => {
     const cut = s.t; // 여기까지 읽음 — 목록은 거르지 않고 자리만 표시한다
     const rd = state.reading(s);
-    const grades = gradePick.cur();
     const kinds = kindPick.cur();
-    gradePick.sync();
     kindPick.sync();
-    // 감상 순서: 척추(종류 필터 + 메인 밖은 등급 '척추') + 고른 등급(최종 등급)의 메인 밖 스토리 + 등급 필터로만 숨은 앞 편(흐리게), 읽는 자리 순서
-    const spineOn = grades.includes('척추');
-    const spineRows = spine.filter((sp) => kinds.includes(sp.unit.kind) && (sp.unit.kind === 'main' || spineOn) && findOk(sp, s)).map((sp) => ({ ...sp, spine: true }));
-    const extras = judged.filter((j) => grades.includes(j.grade) && match(j, s, kinds));
-    const shown = [...spineRows, ...extras];
-    const ghosts = ghostKeys(shown.map((x) => x.key), pre, (k) => judgedByKey.has(k) && match(judgedByKey.get(k), s, kinds));
-    const seq = [...shown, ...[...ghosts].map(([k, by]) => ({ ...judgedByKey.get(k), ghostOf: by }))].sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
+    // 감상 순서: 척추 + 메인 밖 스토리 가운데 고른 갈래에 든 것, 읽는 자리 순서
+    const spineRows = spine.filter((sp) => match(sp, s, kinds)).map((sp) => ({ ...sp, spine: true }));
+    const extras = judged.filter((j) => match(j, s, kinds));
+    const seq = [...spineRows, ...extras].sort((a, b) => a.unit.order - b.unit.order || a.tick - b.tick);
     ui.clear(status);
-    status.append(ui.el('span', { class: 'order-count', title: LABELS.countHelp }, LABELS.count(fmt.num(shown.length))));
+    status.append(ui.el('span', { class: 'order-count', title: LABELS.countHelp }, LABELS.count(fmt.num(seq.length))));
     // 목록
     const sel = state.parseSel(s.sel);
     const selKey = sel?.type === 'unit' ? sel.id : null;
