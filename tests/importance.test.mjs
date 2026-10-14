@@ -22,6 +22,8 @@ const ctx = await openContext(db);
 test.after(() => db.close());
 const order = loadOrder();
 const ds = loadDataset();
+/** 메인 챕터 수 — 신작이 들어오면 늘어난다(읽는 순서에서 센다, N2c) */
+const MAIN_CHAPTERS = new Set(order.items.map((it) => it.key).filter((k) => /^ch\d+$/.test(k))).size;
 const node = (args) => spawnSync(process.execPath, args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 << 20 });
 
 test('이력 — 검토 기록의 before에서 등급을 거꾸로 편다', () => {
@@ -127,12 +129,13 @@ test('중요도 시안 표 — 메인 밖 판정 전부 · 기준 시점 · 다�
     const out = v.units.filter((u) => u.pos <= c.tick).length;
     assert.equal(GRADES.reduce((a, g) => a + c.counts[g], 0), out, c.key);
   }
-  assert.equal(v.chapters.length, 49);
+  assert.equal(v.chapters.length, MAIN_CHAPTERS);
+  assert.ok(MAIN_CHAPTERS >= 49);
 });
 
 test('주역 명단 초안(X3f ① · X3f-1c) — 척추 축 · 같은 인물 합침 · 줄기의 주인 · 명단과 견줌', () => {
   const sig = leadSignals(ds, ctx, order);
-  assert.equal(sig.chapters.length, 49 + spineUnits(ds).size, '축 = 메인 챕터 49 + 척추 이벤트 · 사이드');
+  assert.equal(sig.chapters.length, MAIN_CHAPTERS + spineUnits(ds).size, '축 = 메인 챕터 + 척추 이벤트 · 사이드');
   assert.ok(sig.chapters.includes('event_redash') && sig.chapters.indexOf('event_redash') > sig.chapters.indexOf('ch26'), '척추 단위는 읽는 순서 자리에');
   const p = (x) => sig.persons.get(`person:${x}`);
   assert.ok(sig.chapters.every((ch) => p('지휘관').byCh.get(ch).hit), '지휘관은 늘 걸린다');

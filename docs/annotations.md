@@ -69,6 +69,7 @@
 | `annotations/closures.json` | 마무리 기록(`O<n>`) — 연작 · 갈등 · 관계 · 성장이 쌓인 자리와 끝난 자리, 아래 "마무리 기록" · 합류 기록(`H<n>`, `merges`) — 한 결판에서 함께 끝난 마무리 묶음. 사슬 초안은 `tools/views/closures.mjs` | X3f-1d … · 신작 처리 (상태 · 고치기는 리뷰 도구) |
 | `annotations/read2/<키>.json` | 2회독 기록(`I` · `E` · `D` · `U`) — 읽기 단위 하나에 하나, 아래 "2회독 기록" | 2회독 세션 P · M (상태는 리뷰 도구) |
 | `annotations/links.json` | 수동 엣지(`Y<n>`) — 기록에서 안 나오는 스토리 사이 관계 · 자동 엣지 지우기. 형식은 docs/schema.md "수동 엣지". X2가 만들었다 — 이벤트 · 사이드 연작의 다음 편 57(확정 28 · 기각 29). 관계선(`tools/views/links.mjs`)이 읽는다 | X2 · N3 (상태는 리뷰 도구) |
+| `annotations/checklist.json` | 업데이트 체크리스트 표시 — 판단 항목을 봤는데 그 단위 기록이 없을 때 '봤다'(`{ patch, unit, item, note }`). 형식 docs/update.md "체크리스트" | 업데이트 U2–U4 |
 | `annotations/watch.json` | 2회독 볼 거리(`W<n>`) — 1회독이 '2회독 몫'으로 넘긴 것, 단위별. 작업 메모라 후보가 아니다 — 아래 "2회독 인계 파일" | B1b · 넘길 것이 생기는 세션 |
 | `annotations/read2/HANDOFF.md` · `handoff/*.md` | 2회독 인계 파일 — 기록에서 만든다(아래 "2회독 인계 파일") | `records.mjs handoff` (손으로 고치지 않는다) |
 | `tests/fixtures/read1/` · `read2/` | **예시** — 형식을 보이는 고정 파일(`_people.json` · `_threads.json` · `_layers.json` · `_leads.json` · `_closures.json` · `_links.json` · `_watch.json`은 read1/ 안). 실제 기록 · 진행률 · 인계 파일에 섞이지 않는다 | 테스트 |

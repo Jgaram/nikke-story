@@ -98,6 +98,18 @@ node tools/update.mjs --no-fetch   # 받아 둔 것만으로 판정 (--today YYY
 - 판정만 하고 고치지 않는다 — 출시 순서(`release-order.mjs`) · 읽기 항목은 U1이 한다. 새로 받은 단위는 수집이 `annotations/hold.json`에 "업데이트 전"으로 넣어 DB에 바로 안 들어간다.
 - 이름 잇기는 출시 순서와 같은 파서 · 별칭(`tools/notices/aliases.json`)을 쓴다. "패치에 못 넣은 단위"가 뜨면 별칭 · 손 보정으로 잇는다(테스트가 0을 본다).
 
+## 업데이트 체크리스트 — `tools/update/checklist.mjs` (N2c)
+
+새 패치의 새 단위마다 할 일의 원본(`CHECKLIST`)이자 빠진 칸 검사기(docs/update.md "체크리스트").
+
+```bash
+node tools/update/checklist.mjs --list                          # 단계 · 항목 · 다루는 파일 · 문서 절
+node tools/update/checklist.mjs --patch 2026-09-17 --stage U2   # 그 패치 새 단위의 U2까지 빠진 칸 (빠지면 exit 1)
+node tools/update/checklist.mjs --unit fl:coin_rush_show_down   # 패치 없이 단위만
+```
+
+- 판단 항목은 기록이 없으면 `annotations/checklist.json` `marks`에 표시(무엇을 봤고 왜 없는지)를 남겨야 채워진다.
+
 ## 스포일러 점검 — `tools/site/spoiler-check.mjs` (속도, 2026-10-14)
 
 무엇을 세나는 파일 머리 주석 · docs/views.md. 여기는 돌리는 법과 시간만.

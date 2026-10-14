@@ -13,6 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { openDb } from '../tools/normalize/ensure-db.mjs';
 import { exportSite } from '../tools/site/export.mjs';
+import { READ1_PREFIXES, loadOrder } from '../tools/records/order.mjs';
 import { QUOTE_WARN, pick, publishText, quoteWarnings, quotesIn } from '../tools/site/lib.mjs';
 import { handle } from '../tools/site/serve.mjs';
 
@@ -46,14 +47,17 @@ test('내보낸 JSON이 모두 파싱되고 manifest의 건수와 맞는다', ()
   assert.equal(m.warnings, result.warnings.length);
 });
 
-test('단위 481 · 공개 자리 158 · 씬 단위 매핑 · 키 이름은 영문 소문자', () => {
+test('단위 · 공개 자리 · 씬 단위 매핑 · 키 이름은 영문 소문자', () => {
   const units = read('units.json');
   const ticks = read('ticks.json');
   const scenes = read('scenes.json');
-  assert.equal(units.length, 481);
-  assert.equal(ticks.length, 158);
+  // 단위 = 읽는 순서의 단위(2026-09-24까지 481 · 공개 자리 158). 신작이 들어오면 늘어난다 — 수를 박지 않는다(N2c)
+  const ordered = new Set(loadOrder(READ1_PREFIXES).items.map((it) => it.key));
+  assert.ok(units.length >= 481 && ticks.length >= 158);
+  assert.equal(units.length, ordered.size);
+  assert.equal(new Set(units.map((u) => u.tick)).size, ticks.length, '공개 자리마다 단위가 있다');
   const keys = new Set(units.map((u) => u.key));
-  assert.equal(keys.size, 481);
+  assert.equal(keys.size, units.length);
   for (const u of units) {
     assert.ok(u.kind && u.title && u.order && u.tick && u.date, u.key);
     assert.ok(['main', 'event', 'side', 'sub', 'relic', 'erelic', 'episode', 'elevator'].includes(u.kind), `${u.key} ${u.kind}`);

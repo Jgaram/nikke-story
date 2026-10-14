@@ -25,10 +25,10 @@ function readOrderText(files) {
   return list.length ? list.map((f) => fs.readFileSync(f, 'utf8')).join('\n') : null;
 }
 
-/** 1회독 읽기 항목의 접두 — RV(리뷰)는 읽기 항목이 아니다 */
-export const READ1_PREFIXES = ['R', 'RE'];
-/** 2회독 읽기 항목의 접두 — 파일럿 P1 · 층별 M01 … (`#### 1층` 머리줄은 항목이 아니다) */
-export const READ2_PREFIXES = ['P', 'M'];
+/** 1회독 읽기 항목의 접두 — RV(리뷰)는 읽기 항목이 아니다. U는 업데이트 항목(1회독 · 2회독 함께 — docs/update.md "읽기 항목") */
+export const READ1_PREFIXES = ['R', 'RE', 'U'];
+/** 2회독 읽기 항목의 접두 — 파일럿 P1 · 층별 M01 … · 업데이트 U01 … (`#### 1층` 머리줄은 항목이 아니다) */
+export const READ2_PREFIXES = ['P', 'M', 'U'];
 
 const pad2 = (n) => String(n).padStart(2, '0');
 

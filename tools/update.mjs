@@ -50,8 +50,8 @@ const ALIASES = path.join(ROOT, 'tools/notices/aliases.json');
  */
 export const GRACE_DAYS = 28;
 
-/** 읽기 항목 접두 — 1회독 R · RE, 2회독 P · M. 새 패치의 U 항목 모양은 N2c에서 정한다(정하면 여기에 더한다). */
-export const ORDER_PREFIXES = ['R', 'RE', 'P', 'M'];
+/** 읽기 항목 접두 — 1회독 R · RE, 2회독 P · M, 업데이트 U(1회독 · 2회독 함께 — docs/update.md "읽기 항목"). */
+export const ORDER_PREFIXES = ['R', 'RE', 'P', 'M', 'U'];
 
 /**
  * 공지에 있는데 블라링크 · 금서고 어디에도 원문이 없는 옛 이벤트(docs/update.md "보류" — 그대로 둔다). 공지 이름의 nameKey.
