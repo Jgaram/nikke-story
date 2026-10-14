@@ -55,7 +55,7 @@ for (const [name, fn] of Object.entries(MUTATIONS)) {
 }
 
 test('순서 파일의 체크 칸 줄은 모두 읽기 항목으로 읽힌다 — 모양이 틀려 조용히 빠지는 줄이 없다', () => {
-  const head = /^- \[.\] \*\*(?:R|RE|P|M)\d+[a-z]?(?:\s[^*]*)?\*\*/;
+  const head = /^- \[.\] \*\*(?:R|RE|P|M|U)\d+[a-z]?(?:\s[^*]*)?\*\*/;
   const bad = ORDER_PATHS.flatMap((f) => fs.readFileSync(f, 'utf8').split('\n')
     .map((l, i) => ({ l, n: i + 1 }))
     .filter(({ l }) => /^\s*- \[/.test(l) && !head.test(l))

@@ -102,7 +102,8 @@ export const CHECKLIST = [
     files: ['reading-order.md'], doc: 'docs/update.md "읽기 항목"',
     check: (env) => {
       const miss = [...env.patchUnits.filter((u) => !u.updateItem).map((u) => u.key), ...env.unordered];
-      return miss.length ? `U 항목에 없는 단위 ${[...new Set(miss)].join(' ')}` : null;
+      const late = env.lateProblems ?? []; // 늦게 들어온 단위의 출시 자리(N2d)
+      return miss.length || late.length ? [miss.length ? `U 항목에 없는 단위 ${[...new Set(miss)].join(' ')}` : null, ...late].filter(Boolean).join(' · ') : null;
     },
   },
   // ── U2 읽기 ──
@@ -138,6 +139,10 @@ export const CHECKLIST = [
     id: 'identity', stage: 'U2', scope: 'unit', how: 'mark', name: '정체 연결 L — 같은 사람 · 다른 사람이 드러났나(앞 기록은 고치지 않는다)',
     files: ['dictionary/'], doc: 'docs/annotations.md "같은 사람 · 다른 사람"',
     evidence: (env, u) => mentions(env.json('dictionary/people.json'), u.key, u.scenes),
+  },
+  {
+    id: 'late', stage: 'U2', scope: 'unit', how: 'mark', name: '늦게 들어온 단위 — 먼저 읽은 뒤 단위 기록에서 이 단위가 먼저 드러낸 것을 옮김(late.mjs 후보)',
+    files: [], doc: 'docs/update.md "늦게 들어온 단위"', when: (env, u) => Boolean(env.isLate?.(u.key)),
   },
   {
     id: 'foreshadow', stage: 'U2', scope: 'unit', how: 'mark', name: '복선 거슬러 찾기 — 새로 드러난 것을 앞 단위에서(검색 · 언급 DB)',
@@ -312,6 +317,7 @@ export async function loadEnv({ patchDay = null, units = null, today }) {
   const updateItems = parseUpdateItems(orderText);
   const allOrdered = new Set([...oldKeys, ...updateItems.map((it) => it.key)]);
   const { patches, unplaced } = buildPatches(loadInputs({ today }));
+  const { anchorProblems, lateAnchors, unitRanks } = await import('./late.mjs');
 
   let patch = null;
   let keys;
@@ -362,8 +368,12 @@ export async function loadEnv({ patchDay = null, units = null, today }) {
   const flEventFiles = [...new Set(manifest.filter((m) => m.categoryKey === 'event_stories').map((m) => `event_stories/${m.mainChapterFile}`))]
     .filter((k) => fs.existsSync(path.join(ROOT, 'data/raw/forbidden-library/scripts', k)));
   ctx.close();
+  // 늦게 들어온 단위(N2d) — 이 패치의 U 항목(단위로 고르면 그 단위가 든 U 항목)만
+  const lateRows = lateAnchors(orderText, unitRanks(patches)).filter((r) => (patch ? r.patch === patch.day : r.keys.some((k) => keys.includes(k))));
   return {
-    patch, patchUnits, unplaced, ds, spineUnits: spineSet, json, threadQuestions, flMap, flEventFiles, inScopeUnits,
+    patch, patchUnits,
+    lateProblems: anchorProblems(lateRows),
+    isLate: (key) => lateRows.some((r) => r.expected && r.keys.includes(key)), unplaced, ds, spineUnits: spineSet, json, threadQuestions, flMap, flEventFiles, inScopeUnits,
     regions: loadRegions(),
     // 순서에 없는 단위 — 단위 키나 그 씬(서브퀘스트 · 엘리베이터는 씬 키로 읽는다)이 항목에 하나도 없다
     unordered: inScopeUnits.filter((u) => !allOrdered.has(u.key) && !u.scenes.some((s) => allOrdered.has(s))).map((u) => u.key),

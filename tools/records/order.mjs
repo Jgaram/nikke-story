@@ -167,14 +167,47 @@ export function placeByRegion(order, regions) {
 }
 
 /**
+ * 늦게 들어온 단위의 자리 — U 항목 줄의 ` — ` 뒤 `자리 \`키\` 앞`(docs/update.md "늦게 들어온 단위"). 항목 ID → 그 앞에 놓을 단위 키.
+ * @param {string} text 읽기 순서 파일 내용
+ * @returns {Map<string, string>}
+ */
+export function parseLateAnchors(text) {
+  const out = new Map();
+  for (const line of text.split('\n')) {
+    const m = line.match(/^- \[.\] \*\*(U\d+[a-z]?)[^*]*\*\*.*? — .*?자리 `([^`]+)` 앞/);
+    if (m) out.set(m[1], m[2]);
+  }
+  return out;
+}
+
+/**
+ * 늦게 들어온 단위를 출시 자리로 — 그 U 항목의 단위들을 자리 키 단위 바로 앞으로 옮긴다(항목 안 차례 그대로).
+ * 읽기 항목 줄은 "그때 읽은 기록"이라 고쳐 쓰지 않고, 출시순 한 줄에서만 끼운다(placeByRegion과 같은 생각). 지역 자리를 놓은 뒤에 한다.
+ * 자리 키가 순서에 없으면 그대로 둔다(체크리스트 order가 잡는다).
+ * @param {{ items: object[], sessions: object[] }} order
+ * @param {Map<string, string>} anchors parseLateAnchors 결과
+ */
+export function placeLate(order, anchors) {
+  let items = order.items;
+  for (const [session, anchor] of anchors) {
+    const moving = items.filter((it) => it.session === session);
+    const rest = items.filter((it) => it.session !== session);
+    const at = rest.findIndex((it) => it.key === anchor);
+    if (!moving.length || at < 0) continue;
+    items = [...rest.slice(0, at), ...moving, ...rest.slice(at)];
+  }
+  return items === order.items ? order : { ...order, items: items.map((it, index) => ({ ...it, index })) };
+}
+
+/**
  * 읽기 순서 파일을 읽어 순서를 낸다. 파일이 없으면 빈 순서.
- * 1회독(출시순 한 줄)은 서브퀘스트 · 유실물을 지역 자리로 다시 놓는다 — 항목 그대로가 필요하면 { region: false }
+ * 1회독(출시순 한 줄)은 서브퀘스트 · 유실물을 지역 자리로, 늦게 들어온 단위를 출시 자리로 다시 놓는다 — 항목 그대로가 필요하면 { region: false }
  */
 export function loadOrder(prefixes = READ1_PREFIXES, files = ORDER_PATHS, { region = prefixes === READ1_PREFIXES } = {}) {
   const text = readOrderText(files);
   if (text == null) return { items: [], sessions: [] };
   const order = parseOrder(text, prefixes);
-  return region ? placeByRegion(order, loadRegions()) : order;
+  return region ? placeLate(placeByRegion(order, loadRegions()), parseLateAnchors(text)) : order;
 }
 
 /** (단위 키, 파트) → 순서 항목. 파트를 나눠 읽는 단위는 파트까지 맞아야 한다 */

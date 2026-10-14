@@ -110,6 +110,18 @@ node tools/update/checklist.mjs --unit fl:coin_rush_show_down   # 패치 없이 
 
 - 판단 항목은 기록이 없으면 `annotations/checklist.json` `marks`에 표시(무엇을 봤고 왜 없는지)를 남겨야 채워진다.
 
+## 늦게 들어온 단위 — `tools/update/late.mjs` (N2d)
+
+보류됐다 뒤 패치보다 늦게 들어온 단위의 출시 자리와 뒤 단위 고칠 거리 후보(docs/update.md "늦게 들어온 단위"). 읽기만 한다.
+
+```bash
+node tools/update/late.mjs fl:coin_rush_show_down            # 단위 키나 U 항목 ID — 그 단위가 든 U 항목이 있어야 한다
+node tools/update/late.mjs U01 --out <scratchpad>/late.md    # 큰 출력은 파일로
+```
+
+- 찍는 것: 써야 할 ``자리 `키` 앞``(쓴 것과 맞나) · 먼저 읽은 뒤 단위 · 그 단위들의 새 대상 · 사실 · 의문 후보(이 단위 원문의 대상 — focus 점수) · 화면 글의 '처음'.
+- 자리 계산(`lateAnchors`)은 체크리스트 `order`도 쓴다. 출시순 한 줄에 끼우는 것은 `tools/records/order.mjs` `placeLate`(`loadOrder`가 지역 자리 다음에).
+
 ## 스포일러 점검 — `tools/site/spoiler-check.mjs` (속도, 2026-10-14)
 
 무엇을 세나는 파일 머리 주석 · docs/views.md. 여기는 돌리는 법과 시간만.
