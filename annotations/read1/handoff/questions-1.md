@@ -1,7 +1,7 @@
 # 의문 목록 — 1회독 (열림 · 일부 풀림) (1/2)
 
 자동으로 만든 파일이다 — 손으로 고치지 않는다(node tools/records.mjs handoff). 형식 · 규칙은 docs/annotations.md.
-의문 371건 — 열림 157 · 일부 풀림 117 · 풀림 97 (기각 뺌). `✓` 확정. 풀린 의문은 questions-solved.md(필요할 때).
+의문 377건 — 열림 160 · 일부 풀림 117 · 풀림 100 (기각 뺌). `✓` 확정. 풀린 의문은 questions-solved.md(필요할 때).
 `일부 → F7 (Q3-2 단위)`: 회수 기록과 답이 된 사실. 새로 풀리는 것을 보면 events에 회수를 적는다.
 
 ## 열린 의문 — R01
@@ -294,3 +294,8 @@
 ## 열린 의문 — R98
 - Q371 ✓ 8일 전 빌딩 위를 뛰어다닌 [괴도] 영상의 인물 — 퀸 일행보다 먼저 외곽 D-WAVE로 소환된 '최초의 소환자' — 는 누구이고 어디로 갔나? · fl:persona_on_frontline fl:persona_on_frontline_09#104-121
 - Q372 ✓ 앨든에게 '또다시 기회를 주어' 거미줄의 힘을 쥐여 준 [무언가]는 무엇인가 — 이번 D-WAVE의 게이트 키퍼인가? · fl:persona_on_frontline fl:persona_on_frontline_13#61-66
+
+## 열린 의문 — U01
+- Q376 ✓ 경비 팀장이 기술을 팔려던 '고객' — 방주 밖 넓은 세계의 누구 — 는 누구이고, 왜 방주가 망한다고 하나? · fl:coin_rush_show_down fl:coin_rush_show_down_25#32-41,65-71
+- Q377 ✓ 갱생관의 경비 팀장 앞에 허공에서 일렁이며 나타나 총을 쏜 '괴물'은 누구이고, 경비 팀장은 죽었나? · fl:coin_rush_show_down fl:coin_rush_show_down_27#53-61
+- Q378 ✓ 머스탱이 말하길 꺼린 코인 러시 지하 구역의 '더러운 일'은 무엇이었나? · fl:coin_rush_show_down fl:coin_rush_show_down_25#45-47,62-63

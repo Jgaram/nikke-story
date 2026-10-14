@@ -88,6 +88,7 @@
       "note": "아웃로 잭의 신문사 총기 난사 — 크로우가 주범이라며 자수했다(R13 char:110에서 더함)",
       "evidence": [{ "scene": "ep:d_nikke_crow_01", "lines": [11] }],
       "names": [{ "name": "데일리 아크 신문사 테러", "how": "약칭" }]
-    }
+    },
+    { "id": "incident:코인_러시_쇼다운", "name": "코인 러시 쇼다운", "kind": "사건", "note": "1회 기업 박람회 기념으로 코인 러시에서 열린 3대 기업 니케 대항전(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_03", "lines": [38] }], "names": [{ "name": "COIN RUSH SHOWDOWN", "how": "표기" }] }
   ]
 }

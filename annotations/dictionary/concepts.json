@@ -273,6 +273,8 @@
     { "id": "concept:머신_메사이어", "name": "머신 메사이어", "kind": "기술", "note": "오래전의 프로젝트 — V.T.C. 여사제에 따르면 갓데스의 지휘관(엔더슨)의 피에 언체인드가 있는 것이 그 일환이다(R77 fl:ark_guardian에서 더함)", "evidence": [{"scene": "fl:ark_guardian_16", "lines": [23]}] },
     { "id": "concept:신생_랩쳐", "name": "신생 랩쳐", "kind": "랩쳐 종류", "note": "퀸이 궤도 엘리베이터를 개조한 생산 시설에서 지금의 랩쳐를 재료로 만드는 새 랩쳐 — 니케의 신체 일부를 흉내 내고 코어 없이 응축한 다크 매터를 동력으로 쓴다(R90 ch46에서 더함)", "evidence": [{"scene": "d_main_46_05", "lines": [38]}] },
     { "id": "concept:아일랜드_이터", "name": "아일랜드 이터", "kind": "랩쳐 종류", "note": "등에 섬을 싣고 해저에 고정되어 있던 거대 랩쳐 — 라피가 랜드 이터로 알아보고 섬을 싣고 있어 아일랜드 이터라 불렀다. 옛 주민이 구속 장치로 묶어 두었다(R95 fl:wave_to_you에서 더함). '랜드 이터'(5줄)는 이 낱말과 겹쳐 별칭으로 두지 않았다", "evidence": [{"scene": "fl:wave_to_you_14", "lines": [7]}] },
-    { "id": "concept:일곱의_조율자", "name": "일곱의 조율자", "kind": "랩쳐 질서", "note": "온리 원에 따르면 퀸이 함께 세상을 만들어 나가야 하는 일곱 — 정체는 나오지 않았다(R97 ch48에서 더함)", "evidence": [{"scene": "d_main_48_05", "lines": [60]}] }
+    { "id": "concept:일곱의_조율자", "name": "일곱의 조율자", "kind": "랩쳐 질서", "note": "온리 원에 따르면 퀸이 함께 세상을 만들어 나가야 하는 일곱 — 정체는 나오지 않았다(R97 ch48에서 더함)", "evidence": [{"scene": "d_main_48_05", "lines": [60]}] },
+    { "id": "concept:테크_웨어", "name": "테크 웨어", "kind": "기술", "note": "입기만 해도 완력 · 시야 · 반사신경 같은 신체 능력을 키워 주는 미실리스의 옷(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_07", "lines": [62] }], "names": [{ "name": "테크-웨어", "how": "표기" }] },
+    { "id": "concept:바니_슈트", "name": "바니 슈트", "kind": "기술", "note": "미실리스 테크 웨어 최신 모델(가칭) — 길티 · 신에게 지급된 바니걸 복장, 인게이지 모드로 충격파 · 가속(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_06", "lines": [106] }] }
   ]
 }

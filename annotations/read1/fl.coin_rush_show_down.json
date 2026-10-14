@@ -1,0 +1,613 @@
+{
+  "_comment": "근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N",
+  "unit": "fl:coin_rush_show_down",
+  "session": "U01",
+  "by": "claude",
+  "date": "2026-10-14",
+  "summary": "코인 러시에서 열린 3대 기업 박람회와 니케 대항전 [코인 러시 쇼다운] 이야기(금서고 원문). 중앙 정부 고위 인사의 제안이라며 머스탱이 잉그리드 · 슈엔에게 알리고 — 우승 기업은 중앙 정부의 공식 지원을 받는다(00) — 미실리스는 플랜 C로 리얼 카인드니스의 길티 · 신에 플로라(자원) · 마나(감독)를 바니 슈트 차림으로 내보내며 지휘관을 지휘로 끌어들인다(01-02). 1라운드 택티컬-메뉴버(잉그리드)에서 신의 반칙으로 통과하지만(03-04) 하이라이트가 플랜 C를 악역으로 찍고(05), 2라운드 엔터-캐치 코인(머스탱)에서 길티의 충격파는 부정 행위로 무효가 된다(06-07). 진행자 경비 팀장이 주최자인 중앙 정부 고위 인사로 밝혀지고(08), 메이드 · 바니 군단과 식사(09). 슈가는 경비원 물갈이 · 낯선 제압탄 · 노골적 악역 몰이를 수상히 여긴다(10-11). 3라운드 테크-엉덩이 레슬링(슈엔)과 4라운드 택티컬-카모플라쥬에서 주최측의 조롱 · 견제 속에 지휘관은 '대악당이 되자'며 이기라 한다(12-15). 신이 컨버터를 벗어 캐다 지휘관에게 막히고, 경비원이 팀장의 차별 명령을 털어놓는다 — 지휘관은 신에게 말을 무기로만 쓰지 말라 한다(16-17). 탈락한 마나와 잠입한 슈가는 지하 '회복실'에서 박람회 · 탈락자에게서 3대 기업 기밀 기술을 빼내는 것을 알아내지만 팀장의 강화 경비원들에게 붙잡힌다(18-20). 마나의 모스 부호와 플로라의 꽃 향기로 숨은 엘리베이터를 찾고 신 · 길티가 둘을 구해 자료 가방을 빼앗는다(20-23). 팀장은 플랜 C를 폭탄 테러범으로 몰지만, 신이 솔직한 말로 메이드 · 바니 군단의 믿음을 얻고 대테러부대와 머스탱이 주모자를 잡는다(24). 머스탱은 기술 유출 정보를 듣고 코인 러시를 빌려 준 것이었고, 팀장은 '세계는 넓다' · '방주는 망할 것'이라며 고객을 숨기고, 슈엔에 대한 오해 섞인 원한을 털어놓는다(25). 지휘관이 연 즉석 결승 뒤 신은 외로워서 참가했다고 털어놓는다(26). 신은 듀얼-클래스 카페에서 일하고, 갱생관에 갇힌 팀장은 자백하려던 순간 허공에서 나타난 누군가의 총에 맞는다(27).",
+  "scenes": [
+    {
+      "scene": "fl:coin_rush_show_down_00",
+      "text": "중앙 정부 고위 인사의 제안 — 머스탱이 잉그리드 · 슈엔에게 기업 박람회와 니케 시합을 알림"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_01",
+      "text": "바니걸 차림의 신 · 길티 · 플로라 · 마나가 지휘관의 방에 찾아옴"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_02",
+      "text": "마나가 플랜 C 결성 경위를 설명, 신의 연출에 지휘관이 플랜 C 합류를 선언"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_03",
+      "text": "99명 집결, 경비 팀장 진행 · 1라운드 택티컬-메뉴버(무궁화 꽃) — 초정밀 미사일로 탈락 처리"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_04",
+      "text": "신이 앞 그룹을 반칙으로 탈락시키고 레이저 선을 넘어 1라운드 통과(52명 생존)"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_05",
+      "text": "경비원 제압탄 사격, 경비팀의 슈가, 신의 반칙만 보여 준 하이라이트로 악역이 됨"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_06",
+      "text": "숙소에서 신의 고백(말 말고 가진 것이 없다), 2라운드 엔터-캐치 코인 · 길티 인게이지 모드"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_07",
+      "text": "길티의 충격파로 두 군단 제압, 바니 슈트 설명, 2라운드가 미실리스 부정 행위로 무효"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_08",
+      "text": "CEO 셋 — 경비 팀장이 주최자인 중앙 정부 고위 인사, 메이드 · 바니 군단과 식사 자리"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_09",
+      "text": "식사 — 신의 목소리 · 앵커의 불가사리 마스크, 플로라 · 밀크, 마나 · 마스트의 술자리"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_10",
+      "text": "박람회 부스 견학, 슈가가 경비원 물갈이 · 낯선 제압탄을 알림"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_11",
+      "text": "슈가가 플랜 C를 악당으로 모는 의도를 짚음, 3라운드 시작"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_12",
+      "text": "3라운드 테크-레슬링에 엉덩이 룰 추가 · 슈엔 조롱, 지휘관이 수단을 가리지 말고 이기라 함"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_13",
+      "text": "엉덩이 레슬링 — 플로라 · 마나 · 길티 · 신 전원 생존, 슈가가 탈락자 실종을 의심"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_14",
+      "text": "소화전 속 슈가의 경고(탈락자 없음 · 시리얼 제압탄), 4라운드 택티컬-카모플라쥬"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_15",
+      "text": "숨바꼭질 — 위치 노출로 괴롭힘, 마나 자멸 탈락, 플로라는 경비원의 추억으로 생존"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_16",
+      "text": "플로라 기권 · 꽃 심기, 신이 컨버터를 벗고 경비원을 캐다 지휘관의 명령으로 멈춤"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_17",
+      "text": "경비원이 팀장의 차별 명령을 털어놓음, 지휘관과 신의 [말] 문답, 슈가가 지하로 잠입"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_18",
+      "text": "지하 — 깨어난 마나가 회복실의 탈락자와 기밀 기술 저장 장치를 발견, 슈가와 만남"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_19",
+      "text": "마나 · 슈가의 추리, 경비 팀장의 통화, 강화 경비원과의 싸움 · 가방 탈취 뒤 다시 포위"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_20",
+      "text": "5라운드 엔터-플로어 — 플로라의 추리, 마나의 술 난입, 길티 · 신이 생존 셋으로 끝냄"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_21",
+      "text": "마나의 '술'을 플로라가 모스 부호 EV HELP로 해독"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_22",
+      "text": "플로라의 꽃 향기로 숨은 엘리베이터 발견, 신 돌입, 에이드가 대테러부대 출동을 알림"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_23",
+      "text": "신의 지하 돌파 · 팀장의 탈출 계획, 신이 가방을 빼앗고 둘을 구함, 길티 합류"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_24",
+      "text": "팀장의 폭탄 테러 누명, 신의 솔직한 말, 경비원 제압 · 대테러부대 · 주모자 확보"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_25",
+      "text": "머스탱의 방 — 진상 · 머스탱의 미끼 · 팀장의 고객 · 원한과 슈엔의 오해"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_26",
+      "text": "지휘관이 연 즉석 파이널 테크-런, 신이 참가 이유를 털어놓음"
+    },
+    {
+      "scene": "fl:coin_rush_show_down_27",
+      "text": "듀얼-클래스 카페의 신, 갱생관의 경비 팀장이 허공에서 나타난 누군가에게 총을 맞음"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2910",
+      "text": "중앙 정부 고위 인사가 머스탱에게 코인 러시에서의 3대 기업 박람회를 제안했다 — 시민에게 방주가 아직 안전하고 기술이 발전함을 보이고, 니케 시합의 최종 우승자가 속한 회사가 승자로 중앙 정부의 공식 · 적극 지원을 받고 다음 박람회의 메인이 된다",
+      "about": ["org:3대_기업", "person:머스탱", "place:코인_러시", "incident:코인_러시_쇼다운"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_00", "lines": ["14-19", "40-41", "58-61"] }, { "scene": "fl:coin_rush_show_down_02", "lines": ["1-5"] }],
+      "reason": "머스탱의 설명(00 #14-19 · #40-41 · #58-61)과 신의 요약(02 #1-5)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2911",
+      "text": "미실리스는 메티스(지상 방위) · 일렉트릭 쇼크 · 마이티 툴즈(방주 중역) · 스쿨 서클 · 다즐링 펄(학생)을 내보낼 수 없어 플랜 C로 리얼 카인드니스의 길티 · 신을 내보냈고, 플로라가 자원하고 M.M.R. 연구원이자 갱생 프로그램 담당인 마나가 감독 겸 책임자가 되었다 — 퀀시는 연락이 닿지 않았다",
+      "about": ["org:리얼_카인드니스", "person:길티", "person:신", "person:플로라", "person:마나", "person:퀀시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_02", "lines": ["20-32", "42-44", 48, "63-68"] }],
+      "reason": "마나의 설명(#20-32 · #63-68), 퀀시(#43)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2912",
+      "text": "플로라는 머스탱(카네이션)의 눈에 들어 코인 러시에 꽃을 주기적으로 납품해 정원의 위상을 높이고 변덕스러운 슈엔(로벨리아)에게서 살아남으려 자원했다",
+      "about": ["person:플로라", "person:머스탱", "person:슈엔"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_02", "lines": ["49-57"] }],
+      "reason": "플로라 말(#49-57), 카네이션 = 머스탱(#51)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2913",
+      "text": "미실리스의 테크 웨어 최신 모델(가칭 바니 슈트)이 길티 · 신에게 지급되었다 — 길티의 것은 구속복을 겸하며 인게이지 모드로 팔을 휘두르는 방향에 충격파(살상력 없음)를 낸다",
+      "about": ["concept:바니_슈트", "concept:테크_웨어", "person:길티", "person:신"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_07", "lines": ["62-67"] }],
+      "reason": "마나의 설명(#62-67). 신의 것은 비밀(#69)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2914",
+      "text": "신의 바니 슈트는 신발 롤러로 순간 가속을 낸다",
+      "about": ["concept:바니_슈트", "person:신"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_13", "lines": ["82-85", "99-100"] }],
+      "reason": "인게이지 모드 뒤 신이 사라짐(#82-85), 밀크 '가속 기능'(#99-100)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2915",
+      "text": "신의 목소리에는 뇌파를 어지럽히는 무언가가 있어 컨버터 없이는 말하는 것 자체가 죄이고, 신은 만들어질 때부터 그랬다",
+      "about": ["person:신", "concept:컨버터"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_09", "lines": ["7-8", 15] }],
+      "reason": "신 말(#7-8 · #15)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2916",
+      "text": "신은 자기 말이 남을 조종하는 데만 쓰이고, 원하는 것을 자기 힘으로 얻지 못해 말로 남의 손을 빌려 얻어 왔다고 했다",
+      "about": ["person:신"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_06", "lines": ["36-48"] }],
+      "reason": "신의 고백(#36-48)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2917",
+      "text": "2라운드 엔터-캐치 코인에서 길티가 충격파로 엘리시온 메이드 군단 · 테트라 바니 군단을 날려 버리자, 주최측은 의도적 폭력이라며 미실리스의 부정 행위로 라운드를 무효로 하고 전원을 3라운드에 올렸다",
+      "about": ["person:길티", "org:미실리스", "incident:코인_러시_쇼다운"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_07", "lines": ["27-45", "85-98"] }],
+      "reason": "충격파(#27-45), 경비 팀장 방송(#85-98)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2918",
+      "text": "머스탱에 따르면 진행을 맡은 경비 팀장이 코인 러시 쇼다운을 제안 · 주최한 중앙 정부 고위 인사로, 시합이 끝나면 원래 자리로 돌아간다",
+      "about": ["person:경비_팀장", "person:머스탱", "org:중앙_정부"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_08", "lines": ["14-23"] }],
+      "reason": "머스탱 말(#17-23)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2919",
+      "text": "슈가는 코인 러시에서 친 사고의 책임을 묻지 않는 대신 머스탱의 지시로 행사 경비팀에서 일했다 — 블랙 타이푼은 입장을 거부당했다",
+      "about": ["person:슈가", "person:머스탱", "place:코인_러시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_05", "lines": ["34-41"] }],
+      "reason": "슈가 말(#34-36 · #41)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2920",
+      "text": "경비 팀장은 코인 러시의 원래 경비원을 단체 휴가 보내고 오래 훈련시켰다는 사람들로 경비를 물갈이했고, 탈락자에게 쏘는 제압탄은 중앙 정부 사양이 아닌 처음 보는 것이었다",
+      "about": ["person:경비_팀장", "person:슈가", "place:코인_러시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_10", "lines": ["60-77"] }],
+      "reason": "슈가 말(#60-77)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2921",
+      "text": "제압탄은 한 발마다 시리얼 넘버를 매겨 시합 때 불출 · 반납하게 관리되었다 — 마나에 따르면 3대 회사 어디도 따로 개발하지 않는 것이라 중앙 정부가 직접 만든 것으로 보인다",
+      "about": ["person:마나", "person:슈가"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_14", "lines": ["31-35"] }],
+      "reason": "슈가(#31-33) · 마나(#35)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2922",
+      "text": "주최측은 더 심한 반칙을 한 참가자들은 두고 플랜 C의 반칙만 악의적인 하이라이트와 방송 비난으로 키웠다",
+      "about": ["person:슈가", "person:신"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_11", "lines": ["19-42"] }],
+      "reason": "슈가가 주최측으로서 본 것(#19-42), 하이라이트(05 #68)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2923",
+      "text": "경비원에 따르면 경비 팀장은 플랜 C 스쿼드를 악역으로 만들고 작은 실수나 악의도 크게 포장하며 미실리스 참가자 전원을 대놓고 차별하라고 명령했다 — 그 경비원은 지원자 모집으로 가벼운 훈련만 받고 참가했다",
+      "about": ["person:경비_팀장", "org:미실리스"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_17", "lines": ["35-43", "54-56"] }],
+      "reason": "나른한 경비원 말(#35-43 · #54-56)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2924",
+      "text": "탈락자들은 엘리베이터로만 닿는 코인 러시 지하의 '회복실'에 의식을 잃은 채 눕혀져 있었다",
+      "about": ["place:코인_러시", "incident:코인_러시_쇼다운"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_18", "lines": ["53-63"] }],
+      "reason": "마나가 깬 곳(#53-63), 지하 공간(17 #131-139)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2925",
+      "text": "지하의 저장 장치에는 박람회 전시품과 참가 니케들의 장비 — 3대 기업의 최신 기밀 기술 정보가 모여 있었다 — 박람회 · 시합은 탈락자를 제압탄으로 재워 옮겨 기술을 빼내는 판이었다",
+      "about": ["org:3대_기업", "person:경비_팀장", "incident:코인_러시_쇼다운"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_18", "lines": ["94-100"] }],
+      "reason": "마나가 저장 장치를 읽음(#94-100), 추리(19 #1-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2926",
+      "text": "경비 팀장의 정예 경비원들은 옷 아래에서 빛이 새는 [갑옷]을 입어 고무탄을 맞고도 일어나는 등 인간을 아득히 넘는 힘을 냈다",
+      "about": ["person:경비_팀장", "person:슈가"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_19", "lines": ["85-109"] }],
+      "reason": "경비원이 일어남(#85-87), 팀장 '[갑옷]의 성능'(#90), 슈가의 판단(#103-109)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2927",
+      "text": "경비 팀장은 빼낸 자료를 넘길 상대와 '약속'을 해 두고 있었고, 마나의 머리를 따 M.M.R. 정보를 거래 보너스로 얹으려 했으며, 머스탱이 화려하게 열 우승 시상식의 소란 때 빠져나갈 계획이었다",
+      "about": ["person:경비_팀장", "person:마나"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_19", "lines": ["59-63"] }],
+      "reason": "통화(#59-63), 계획(23 #27-44)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2928",
+      "text": "갇힌 마나는 중계석에 끌려 나와 '술!' 장단으로 모스 부호 EV HELP를 보냈고, 플로라가 이를 '엘리베이터 · 도움'으로 풀었다",
+      "about": ["person:마나", "person:플로라"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_21", "lines": ["14-36"] }],
+      "reason": "지휘관의 짐작(#14-16), 플로라의 해독(#18-36)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2929",
+      "text": "플로라는 코인 러시 곳곳에 심은 꽃의 꽃가루 향이 막힌 벽에서 사라지는 곳을 짚어 숨은 엘리베이터를 찾았다 — 슈가가 탈락자가 안 보인다고 한 때부터 준비했다",
+      "about": ["person:플로라", "place:코인_러시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_22", "lines": ["12-25"] }],
+      "reason": "플로라 설명(#12-25)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2930",
+      "text": "경비 팀장은 자료 가방을 든 플랜 C를 코인 러시를 폭파하려는 테러범으로 몰아 관람객을 대피시키고 제압하려 했지만, 플랜 C와 슈가가 경비원들을 쓰러뜨렸고 대테러부대가 도착한 뒤 머스탱이 주모자를 확보했다",
+      "about": ["person:경비_팀장", "org:대테러부대", "person:머스탱"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_24", "lines": ["19-34", "117-121", "135-138"] }],
+      "reason": "방송(#19-34), 제압 · 도착(#117-121), 머스탱(#135-138)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2931",
+      "text": "머스탱은 3대 회사의 주요 기술을 빼돌리는 누군가가 있다는 정보를 들은 차에 경비 팀장의 제안이 와 코인 러시를 빌려 주었고, 테트라 니케에 심은 위치 추적 칩으로 탈락자가 지하에 머무는 것과 지하의 전력 사용을 알아채 대테러부대를 불렀다 — 잉그리드도 알고 있었고 슈엔만 몰랐다",
+      "about": ["person:머스탱", "person:잉그리드", "person:슈엔", "org:대테러부대"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["17-24", "50-56"] }],
+      "reason": "머스탱 말(#17-21 · #50-56), 슈엔(#23-24)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2932",
+      "text": "경비 팀장은 기술을 '고객'에게 팔려 했다 — '방주는 좁지만 세계는 넓다', '방주는 망할 것이라 그랬다'며 뒤에 누가 있는지는 말하지 않았다",
+      "about": ["person:경비_팀장"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["32-41", "65-71"] }],
+      "reason": "잉그리드 · 슈엔의 물음과 답(#32-41 · #65-71)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2933",
+      "text": "코인 러시의 지하 구역은 더러운 일이 많이 일어나 오래 쓰지 않았고 아는 이도 극소수인데, 경비 팀장은 중앙 정부의 오래된 데이터베이스에서 찾아냈다 — 머스탱은 그곳에서 있었던 일을 듣기를 거절했다",
+      "about": ["place:코인_러시", "person:머스탱", "person:경비_팀장"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["45-47", "59-63"] }],
+      "reason": "머스탱 · 팀장(#45-47 · #59-63)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2934",
+      "text": "경비 팀장의 경비원들이 입은 것은 미실리스 테크 웨어를 조악하게 흉내 낸 슈트였고, 입은 경비원들은 신경이 망가져 평생 불구가 되었다",
+      "about": ["concept:테크_웨어", "person:슈엔", "person:경비_팀장"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["75-87"] }],
+      "reason": "팀장 '바니걸 슈트'(#77), 슈엔(#79-87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2935",
+      "text": "경비 팀장은 작은 기술 회사의 말단이던 때 슈엔에게 테크 웨어 기술을 브리핑했다가 '미실리스의 발톱 때 수준, 돈 좀 쥐여 주고 보내'라는 말에 치욕을 느껴 중앙 정부 요직까지 오르며 복수를 노렸고, 그래서 미실리스를 망신 줬다 — 슈엔은 그 말이 극찬이자 계약 제안이었고 연락을 끊은 것은 그였다고 했다",
+      "about": ["person:경비_팀장", "person:슈엔"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["94-133"] }],
+      "reason": "팀장 고백(#102-119), 슈엔(#123-133)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2936",
+      "text": "신은 길티가 '다 같이 놀면 재밌다'고 한 말과, 퀀시는 이상한 활동으로 바쁘고 길티는 바다에 다녀와 혼자 웃는 모습에 외롭고 부러워 시합에 나왔다고 털어놓았다",
+      "about": ["person:신", "person:길티", "person:퀀시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_26", "lines": ["75-84"] }],
+      "reason": "신 말(#77-84)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2937",
+      "text": "신은 길티의 재촉으로 메이드 · 바니 군단에게 억울함과 미안함을 솔직히 말해 믿음을 얻었고 '남을 움직이는 게 이렇게 쉬웠다'고 했다",
+      "about": ["person:신", "person:길티", "person:에이드"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_24", "lines": ["59-110"] }],
+      "reason": "길티(#61-76), 신의 말(#82-91), 에이드(#93), 신(#109-110)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2938",
+      "text": "그 뒤 신은 바니 · 메이드 차림의 듀얼-클래스 카페에서 에이드 · 소다와 일하며 솔직히 말하니 마음이 편하다고 했다",
+      "about": ["person:신", "person:에이드", "person:소다"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_27", "lines": ["0-18"] }],
+      "reason": "#0-11 · #14-18",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2939",
+      "text": "갱생관에 갇혀 심문에 지친 경비 팀장이 모두 털어놓겠다고 하자, 허공이 일렁이며 나타난 누군가가 총을 겨눴고 팀장은 '빌어먹을 괴물자식'이라 한 뒤 총성이 울렸다",
+      "about": ["person:경비_팀장", "place:갱생관"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_27", "lines": ["39-61"] }],
+      "reason": "#39-61",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q373",
+      "text": "신은 무슨 속셈으로 슈엔을 돕겠다며 플랜 C에 나와 지휘관까지 끌어들였나?",
+      "about": ["person:신"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_02", "lines": ["97-116"] }],
+      "reason": "지휘관 '무슨 속셈'(#97), 말을 바꾸는 신(#99-116)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q374",
+      "text": "탈락해 [회복실]로 옮겨진 참가자들은 어디에 있나 — 왜 한 명도 보이지 않나?",
+      "about": ["place:코인_러시"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_13", "lines": ["144-147"] }],
+      "reason": "슈가(#144-147), 이어 14 #20-24",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q375",
+      "text": "주최측(경비 팀장)은 왜 플랜 C와 미실리스를 노골적으로 악당 · 웃음거리로 만드나?",
+      "about": ["person:경비_팀장", "org:미실리스"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_11", "lines": ["38-45"] }],
+      "reason": "슈가와 지휘관(#38-45), 이어 17 #35-41(이유 모름)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q376",
+      "text": "경비 팀장이 기술을 팔려던 '고객' — 방주 밖 넓은 세계의 누구 — 는 누구이고, 왜 방주가 망한다고 하나?",
+      "about": ["person:경비_팀장"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["32-41", "65-71"] }],
+      "reason": "#33 · #40-41 · #68-71, 뒤는 말하지 않음",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q377",
+      "text": "갱생관의 경비 팀장 앞에 허공에서 일렁이며 나타나 총을 쏜 '괴물'은 누구이고, 경비 팀장은 죽었나?",
+      "about": ["person:경비_팀장", "place:갱생관"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_27", "lines": ["53-61"] }],
+      "reason": "#53-61",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q378",
+      "text": "머스탱이 말하길 꺼린 코인 러시 지하 구역의 '더러운 일'은 무엇이었나?",
+      "about": ["place:코인_러시", "person:머스탱"],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["45-47", "62-63"] }],
+      "reason": "#45-47 · #62-63",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q373-2",
+      "act": "회수",
+      "answer": "F2936",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:coin_rush_show_down_26", "lines": ["75-84"] }],
+      "reason": "참가 이유를 털어놓음 — 속셈이 아니라 외로움",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q374-2",
+      "act": "회수",
+      "answer": "F2924",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:coin_rush_show_down_18", "lines": ["53-63"] }],
+      "reason": "지하 회복실에서 의식 없이 발견",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q375-2",
+      "act": "회수",
+      "answer": "F2935",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["94-119"] }],
+      "reason": "팀장이 슈엔에 대한 복수라 밝힘",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F2926-2",
+      "act": "드러냄",
+      "text": "그 [갑옷]은 미실리스 테크 웨어를 흉내 낸 조악한 슈트였다(F2934)",
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["77-85"] }],
+      "reason": "팀장 · 슈엔(#77-85)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S395",
+      "kind": "기준점",
+      "text": "신 · 길티 갱생 뒤(char:400 · char:401), 길티가 메이든과 섬 촬영 · 낚시를 다녀온 뒤(event_beautyfullshot1)",
+      "ref": "char:401",
+      "at": [["뒤", "char:400"], ["뒤", "char:401"], ["뒤", "event_beautyfullshot1"]],
+      "evidence": [{ "scene": "fl:coin_rush_show_down_02", "lines": [36, "99-100"] }, { "scene": "fl:coin_rush_show_down_26", "lines": [80] }],
+      "reason": "'우린 갱생했으니까'(02 #36), 처분 않고 갱생까지 기다린 CEO(#99), 길티 '바다 한번 갔다 오더니'(26 #80) — 섬 낚시(F1518)로 봄. 메인과 잇는 단서 없음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:경비_팀장",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_03",
+          "lines": [
+            38
+          ]
+        }
+      ],
+      "note": "코인 러시 쇼다운 진행자 — 실은 행사를 꾸민 중앙 정부 고위 인사",
+      "new": true
+    },
+    {
+      "target": "incident:코인_러시_쇼다운",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_03",
+          "lines": [
+            38
+          ]
+        }
+      ],
+      "note": "1회 기업 박람회 기념 3대 기업 니케 대항전",
+      "new": true
+    },
+    {
+      "target": "concept:테크_웨어",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_07",
+          "lines": [
+            62
+          ]
+        }
+      ],
+      "note": "미실리스의 신체 능력 증폭 옷",
+      "new": true
+    },
+    {
+      "target": "concept:바니_슈트",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_06",
+          "lines": [
+            106
+          ]
+        }
+      ],
+      "note": "길티 · 신의 테크 웨어(가칭)",
+      "new": true
+    },
+    {
+      "target": "org:대테러부대",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_22",
+          "lines": [
+            95
+          ]
+        }
+      ],
+      "note": "방주의 대테러 무장 부대",
+      "new": true
+    }
+  ],
+  "revisit": []
+}

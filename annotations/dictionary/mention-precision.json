@@ -400,6 +400,7 @@
   {"target":"place:미미르_부속_고등학교","name":"미미르","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-05"},
   {"target":"place:북부","name":"북부","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-05"},
   {"target":"place:쉘터","name":"쉘터","sample":10,"correct":7,"auto":"off","note":"X · ?: 브레인 쉘터(장치)","by":"claude","date":"2026-10-05"},
-  {"target":"place:지상","name":"지상","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-05"}
+  {"target":"place:지상","name":"지상","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-05"},
+  {"target":"person:경비_팀장","name":"경비 팀장","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-14"}
  ]
 }
