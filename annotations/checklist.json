@@ -4,5 +4,46 @@
     "줄 하나 = { patch: 패치 날짜, unit: 단위 키(패치 단위 항목은 null), item: 체크리스트 항목 id, note: 무엇을 봤고 왜 기록이 없는지 한 줄, session: U 읽기 항목 · N3 세션, date }.",
     "기록이 생기면(근거 씬 · 단위 키가 그 파일에 들면) 표시 없이 채워진다. 형식 · 쓰는 법은 docs/update.md \"체크리스트\"."
   ],
-  "marks": []
+  "marks": [
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "identity",
+      "note": "같은 사람 · 다른 사람 드러남 없음 — 새 이름표 경비 팀장은 끝까지 이름이 없고, 머스탱 이름표 줄은 모두 지금의 머스탱(L36 범위 밖), 가린 이름표(???) 없음",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "late",
+      "note": "late.mjs 후보 1건(F2879 char:405 옥장판 사기) 다른 내용 — 옮길 것 없음. 뒤 단위 char:404 · char:405 요약은 '코인 러시 행사 뒤'로 이 단위를 앞에 두고, 새 대상 · 화면 글의 '처음' 후보 0",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "foreshadow",
+      "note": "새로 드러난 기술 유출 · 경비 팀장 · 지하 구역 · 위치 추적 칩을 앞 단위에서 찾음(검색 '위치 추적' · '기밀 기술' · '지하' · '세계는 넓') — 앞서 흘린 곳 없음. 거꾸로 팀장의 '방주는 망할 거다'는 ch45 동력원(F2606) 재언급 E1643으로 둠",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "chronology",
+      "note": "S395는 char:400 · char:401 · event_beautyfullshot1 뒤라는 상대 자리뿐 — 시대 기준점을 좁히지 않는다",
+      "session": "U01",
+      "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-09-17",
+      "unit": "fl:coin_rush_show_down",
+      "item": "links",
+      "note": "연작의 다음 편 없음 — 뒤의 char:404 · char:405 바니 호감도는 이 행사 뒤를 그리지만, 수동 엣지는 이벤트 · 사이드 연작만 두어 온 관례(X2)대로 더하지 않음",
+      "session": "U01",
+      "date": "2026-10-14"
+    }
+  ]
 }

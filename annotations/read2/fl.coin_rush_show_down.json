@@ -1,0 +1,468 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"U01\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "fl:coin_rush_show_down",
+  "session": "U01",
+  "by": "claude",
+  "date": "2026-10-14",
+  "mentions": [
+    {
+      "id": "I690",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_00",
+          "lines": [
+            "14-15",
+            74
+          ]
+        }
+      ],
+      "reason": "'중앙 정부의 High 한 분' — 08 #17에서 경비 팀장으로 밝혀짐",
+      "confidence": "확실",
+      "status": "확정",
+      "target": "person:경비_팀장",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "I691",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_22",
+          "lines": [
+            21
+          ]
+        }
+      ],
+      "reason": "플로라가 '엉겅퀴님'이라 부르는 이 — 탈락자가 안 보인다고 한 슈가(14 #20-24)",
+      "confidence": "확실",
+      "status": "확정",
+      "target": "person:슈가",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "I692",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_27",
+          "lines": [
+            24
+          ]
+        }
+      ],
+      "reason": "길티에게 바다에서 낚시를 가르친 '친구' — 섬에서 함께 낚싯대를 드리운 메이든(F1517 · F1518)",
+      "confidence": "추정",
+      "status": "확정",
+      "target": "person:메이든",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1635",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_08",
+          "lines": [
+            "5-9"
+          ]
+        }
+      ],
+      "reason": "#6-9 — 25 #17-24에서 둘은 기술 유출을 알고 미끼로 코인 러시를 빌려 줬다고 밝혀진다",
+      "confidence": "확실",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "F2931"
+      ],
+      "text": "잉그리드와 머스탱이 무언가 눈치챘다며 '아직은 아니다, 좀 더 지켜봐야 한다'고 입을 맞춘다",
+      "about": [
+        "person:잉그리드",
+        "person:머스탱"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1636",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_05",
+          "lines": [
+            "13-21"
+          ]
+        }
+      ],
+      "reason": "#13-21 — 탈락자를 재워 옮겨 기술을 빼내는 판(F2925)",
+      "confidence": "추정",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "F2925"
+      ],
+      "text": "탈락자마다 제압탄을 쏘고 '안전한 회복실'로 옮긴다는 과한 연출이 처음 보인다",
+      "about": [
+        "person:경비_팀장"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1637",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_14",
+          "lines": [
+            "39-41"
+          ]
+        }
+      ],
+      "reason": "#39-41 — 머스탱은 일부러 미끼로 빌려 줬다(F2931)",
+      "confidence": "추정",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "F2931"
+      ],
+      "text": "신과 지휘관이 위험한 엔터를 꺼리고 행사를 남에게 맡길 사람이 아니라며 머스탱답지 않다고 짚는다",
+      "about": [
+        "person:머스탱"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1638",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_20",
+          "lines": [
+            "59-71"
+          ]
+        }
+      ],
+      "reason": "#59-71 — 탈락자 위치 칩 신호로 지하를 찾았다(F2931)",
+      "confidence": "확실",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "F2931"
+      ],
+      "text": "플로라가 머스탱의 시합은 반드시 탈락자가 나오게 짜였다며 그가 탈락자를 만들려 한다고 읽는다",
+      "about": [
+        "person:플로라",
+        "person:머스탱"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1639",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_06",
+          "lines": [
+            23
+          ]
+        }
+      ],
+      "reason": "#23 — 26 #77-84의 참가 이유(F2936)를 미리 흘림",
+      "confidence": "확실",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "F2936"
+      ],
+      "text": "숙소에서 신이 '길티 말대로 다 같이 어울려 노는 건 재밌다'고 한다",
+      "about": [
+        "person:신",
+        "person:길티"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1640",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_15",
+          "lines": [
+            "26-31"
+          ]
+        }
+      ],
+      "reason": "#26-31 — 27 #53-56에서 허공이 일렁이며 총을 든 누군가가 나타난다. 같은 은폐 기술인지는 원문에 없음",
+      "confidence": "추정",
+      "status": "확정",
+      "act": "암시",
+      "points": [
+        "Q377"
+      ],
+      "text": "카모플라쥬 원단을 두른 엘리시온 니케가 화단처럼 '일렁'이며 숨어 있다",
+      "about": [],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1641",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_16",
+          "lines": [
+            "77-99"
+          ]
+        }
+      ],
+      "reason": "#77-99 — F789(char:401)",
+      "confidence": "확실",
+      "status": "확정",
+      "act": "재언급",
+      "points": [
+        "F789"
+      ],
+      "text": "신이 컨버터를 벗자 정신이 몽롱해지는 단내가 퍼지고 경비원이 신의 물음에 끌려간다 — 컨버터가 거르는 세뇌 능력",
+      "about": [
+        "person:신",
+        "concept:컨버터"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1642",
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_27",
+          "lines": [
+            "21-30"
+          ]
+        }
+      ],
+      "reason": "#21-30 — 섬의 낚시와 메이든과의 우정(F1517 · F1518)",
+      "confidence": "확실",
+      "status": "확정",
+      "act": "재언급",
+      "points": [
+        "F1517",
+        "F1518"
+      ],
+      "text": "길티가 바다에서 '친구'에게 손으로 물고기 낚는 법을 배웠다고 한다",
+      "about": [
+        "person:길티"
+      ],
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1643",
+      "evidence": [{ "scene": "fl:coin_rush_show_down_25", "lines": ["68-69"] }],
+      "reason": "#68-69 — 중앙 정부 요직인 팀장의 말. 반년 안에 멈출 방주 동력원(F2606, ch45)을 아는 것인지는 원문에 없음",
+      "confidence": "추정",
+      "status": "확정",
+      "act": "재언급",
+      "points": ["F2606"],
+      "text": "중앙 정부 요직의 경비 팀장이 '방주는 망할 거다, 그래서다'라며 기술을 방주 밖에 팔려 한 까닭을 댄다",
+      "about": ["person:경비_팀장"],
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 2회독 — 동력원 쇠퇴(ch45) 뒤의 말로 추정" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2236",
+      "person": "person:신",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "말을 남을 조종하는 무기로만 쓰며 속내는 말을 돌려 감췄다",
+      "after": "억울함 · 미안함 · 부탁을 솔직히 말하고 그 편이 마음 편하다고 한다",
+      "trigger": [
+        {
+          "scene": "fl:coin_rush_show_down_17",
+          "lines": [
+            "78-111"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_24",
+          "lines": [
+            "59-110"
+          ]
+        }
+      ],
+      "reason": "지휘관의 [말] 문답(17) 뒤 길티의 재촉에 '믿어줘. 부탁이야'(24 #82-91), 27 #14-18 '마음이 편해'",
+      "confidence": "확실",
+      "time": "S395",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2237",
+      "person": "person:신",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "믿지 않고 재미있는 사람으로만 여기던 교관이었다",
+      "after": "외로워서 나왔다는 속내를 털어놓고 또 같이 놀자고 약속한 교관이다",
+      "trigger": [
+        {
+          "scene": "fl:coin_rush_show_down_22",
+          "lines": [
+            "41-48"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_26",
+          "lines": [
+            "65-104"
+          ]
+        }
+      ],
+      "reason": "02 #109-110 '너도 날 믿지 않잖아', 22 #41-48 지휘관 '믿어', 26 #65-104 고백 · 약속",
+      "confidence": "확실",
+      "time": "S395",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2238",
+      "person": "person:길티",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "믿음이 깨지면 그 두 손을 틀어쥐겠다고 웃던 갱생수였다",
+      "after": "교관의 허락 없이는 구속구를 풀지 않겠다며 교관을 믿는다고 한다",
+      "trigger": [
+        {
+          "scene": "fl:coin_rush_show_down_17",
+          "lines": [
+            "63-69"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "scene": "fl:coin_rush_show_down_17",
+          "lines": [
+            "118-123"
+          ]
+        }
+      ],
+      "reason": "#118-123 — 앞 모습 D1981(char:400)",
+      "confidence": "추정",
+      "time": "S395",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "U01",
+          "note": "U01 2회독 — 원문 대조 검토"
+        }
+      ]
+    }
+  ],
+  "life": [],
+  "note": "2층 기준(생활상 없음)으로 읽음 — 층은 U3에서 정한다. ??? 이름표 없음"
+}
