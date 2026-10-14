@@ -10,7 +10,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { gradeAt as siteGradeAt, cutRowAt, ghostKeys, guideOf, preRev } from '../site/tabs/order.js';
+import { gradeAt as siteGradeAt, cutRowAt, ghostKeys, guideOf, preRev, seriesOf, sameSeries, openRowAt } from '../site/tabs/order.js';
 import * as siteState from '../site/lib/state.js';
 import { gradeAt as toolGradeAt } from '../tools/views/importance.mjs';
 import { gradeTrail } from '../tools/site/export/order.mjs';
@@ -176,6 +176,24 @@ test('ghostKeys — 기본 필터(필수 · 준필수 · 추천, 유실물 뺌)�
   // 메인만(등급 칩 모두 끔): 준필수(CH.48 ← SECOND AFFECTION)처럼 판정으로 기대는 것은 끼우지 않는다 — '먼저 볼 것'이 말한다
   const mains = order.spine.filter((s) => units.get(s.key).kind === 'main').map((s) => s.key);
   assert.equal(ghostKeys(mains, order.pre, pass).size, 0);
+});
+
+test('sameSeries · openRowAt — 같은 제목 연작(번호만 다름)은 앞 편 표시를 빼고, 오픈 스토리 줄은 게임 출시일까지의 마지막 줄 아래', () => {
+  assert.deepEqual(seriesOf('랩칠리언 2'), ['랩칠리언', 2]);
+  assert.deepEqual(seriesOf('테트라 커넥트1'), ['테트라 커넥트', 1]);
+  assert.equal(seriesOf('CHERRY BLOSSOM'), null);
+  assert.ok(sameSeries('랩칠리언 1', '랩칠리언 6'));
+  assert.ok(!sameSeries('랩칠리언 1', '랩칠리언 1'));
+  assert.ok(!sameSeries('세르반 1', '방주 난민 1'));
+  assert.ok(!sameSeries('B-SIDE IDOL', 'BITTER SPICE'));
+  // 실제 데이터: 게임 출시일 = 가장 이른 출시일, 그날 나온 마지막 메인 챕터는 CH.16
+  const units = new Map(unitsJson.map((u) => [u.key, u]));
+  const launch = unitsJson.map((u) => u.date).filter(Boolean).sort()[0];
+  const seq = order.spine.map((s) => ({ ...s, unit: units.get(s.key) })).filter((s) => s.unit?.kind === 'main').sort((a, b) => a.unit.order - b.unit.order);
+  const at = openRowAt(seq, launch);
+  assert.equal(seq[at].unit.title.split(' ')[0], 'CH.16');
+  assert.ok(seq[at + 1].unit.date > launch);
+  assert.equal(openRowAt(seq, null), -1);
 });
 
 test('종류 갈래 데이터(W16a) — 모든 단위가 다섯 갈래 하나에, 척추 이벤트 · 사이드는 픽업 이벤트 · 사이드, 이벤트 유실물은 딸린 이벤트를 따른다', () => {

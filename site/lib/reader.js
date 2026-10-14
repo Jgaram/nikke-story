@@ -273,7 +273,11 @@ function peoplePanel(key, hidden, idx) {
     const masked = (r) => r.hid && R && !R.all;
     const list = (people.byUnit.get(key) ?? []).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
     if (!list.length) return;
-    const T = state.get().t;
+    // 초상은 그 스토리 자리의 모습(사용자, 2026-10-14 — 여기까지 읽음이 아니라). 바뀐 모습은 메인 챕터에서 오므로 본 스토리라도
+    // 여기까지 읽음 뒤 메인의 모습은 쓰지 않는다(봤음으로 고른 뒤 이벤트). 접은 스토리는 그 자리 그대로, 자리 없는 스토리면 여기까지 읽음
+    const cut = state.get().t;
+    const at = idx.units.get(key)?.tick;
+    const T = at == null ? cut : hidden || cut == null ? at : Math.min(at, cut);
     const face = (r) => {
       const t = idx.targets.get(r.id);
       const icon = fmt.iconAt(t, T);
