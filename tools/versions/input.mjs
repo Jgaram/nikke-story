@@ -5,7 +5,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { SITE_DATA, dictFirst, dictRecords, flowPoints, isDict, loadSources, srcHash, stateOf, threadFirst, threadId } from './model.mjs';
+import { SITE_DATA, curSrc, dictFirst, dictRecords, flowPoints, isDict, loadSources, refKnown, refPool, stateOf, threadFirst, threadId } from './model.mjs';
 
 /** 입력에 쓸 사이트 데이터 — 원본(loadSources) + 기록 */
 export function loadContext(dir = SITE_DATA) {
@@ -70,10 +70,11 @@ export function buildInput(subject, file, C, o = {}) {
   L.push('## 이름이 처음 쓰이는 자리 — 판의 at이 이 자리보다 앞이면 그 이름은 쓰지 않는다(검사가 잡는다)');
   for (const [name, f] of namesIn([th.title, th.text, ...texts], C)) L.push(`  ${name} — ${f.unit ? unitLine(f.unit, C) : '쓰인 곳 없음'}`);
   L.push('');
+  L.push(...refSection(subject, file, C, o.at));
   L.push('## 지금 판');
   const vs = Array.isArray(file?.versions) ? file.versions : [];
   if (!vs.length) L.push('  (없음)');
-  for (const v of vs) L.push(`  ${v.at} [${stateOf(v, srcHash(subject, v.at, C)).status}] ${v.title} — ${v.text}`);
+  for (const v of vs) L.push(`  ${v.at} [${stateOf(v, curSrc(subject, v, C)).status}] ${v.title} — ${v.text}${refLine(v)}`);
   return L.join('\n');
 }
 
@@ -87,7 +88,7 @@ const DICT_RECORD_CAP = 60;
  * 항목을 다룬 기록을 읽는 순서로(종류 · 문장) · 글에 든 이름이 처음 쓰이는 자리 · 지금 판.
  * @param {{ full?: boolean }} o full = 기록을 전부 문장째
  */
-export function buildDictInput(subject, file, C, { full = false } = {}) {
+export function buildDictInput(subject, file, C, { full = false, at } = {}) {
   const t = C.targetMap.get(subject);
   if (!t) throw new Error(`사전 항목이 없다 — ${subject}`);
   const w = C.world?.get(subject);
@@ -128,10 +129,48 @@ export function buildDictInput(subject, file, C, { full = false } = {}) {
   L.push('## 이름이 처음 쓰이는 자리 — 판의 at이 이 자리보다 앞이면 그 이름은 쓰지 않는다(검사가 잡는다)');
   for (const [name, f] of namesIn([w?.note ?? t.note ?? '', ...texts], C)) L.push(`  ${name} — ${f.unit ? unitLine(f.unit, C) : '쓰인 곳 없음'}`);
   L.push('');
+  L.push(...refSection(subject, file, C, at));
   L.push('## 지금 판');
   const vs = Array.isArray(file?.versions) ? file.versions : [];
   if (!vs.length) L.push('  (없음)');
-  for (const v of vs) L.push(`  ${v.at} [${stateOf(v, srcHash(subject, v.at, C)).status}] ${v.text}`);
+  for (const v of vs) L.push(`  ${v.at} [${stateOf(v, curSrc(subject, v, C)).status}] ${v.text}${refLine(v)}`);
   return L.join('\n');
 }
 const arr = (x) => (Array.isArray(x) ? x : []);
+const refLine = (v) => (Array.isArray(v.refs) ? `\n      근거 ${v.refs.join(' ') || '(없음)'}` : '\n      근거 —(refs 없음)');
+
+/**
+ * 근거 후보(W17) — 판마다 그 자리 독자가 아는 이 대상의 기록(F · Q · E)을, 앞 판 뒤에 새로 알게 된 것만. 판 글이 기대는 것을 골라 refs로(`versions.mjs refs`).
+ * 그 자리 독자가 모르는 것(이벤트 · 호감도에서만 — 곁 판이면 든다 · 체크 칸에서만)은 따로 적는다. 뒤 자리 기록은 싣지 않는다.
+ */
+function refSection(subject, file, C, extraAt) {
+  const vs = arr(file?.versions).filter((v) => v && v.status !== '기각');
+  const list = [...vs.map((v) => ({ at: v.at, side: !!v.side }))];
+  if (extraAt && !list.some((x) => x.at === extraAt)) list.push({ at: extraAt, side: false, extra: true });
+  list.sort((a, b) => (C.units.get(a.at)?.order ?? 1e9) - (C.units.get(b.at)?.order ?? 1e9));
+  const pool = refPool(subject, C);
+  const L = ['## 근거 후보 — 판마다 그 자리 독자가 아는 이 대상의 기록(앞 판 뒤 새로). 글이 기대는 것을 refs로: node tools/versions.mjs refs <대상> <at> <ID …>'];
+  const done = new Set();
+  const mains = [];
+  for (const x of list) {
+    const chain = [...mains, x.at];
+    const me = C.units.get(x.at)?.order ?? -Infinity;
+    const ok = [];
+    const side = [];
+    const check = [];
+    for (const p of pool) {
+      if (p.o > me && !(p.rec.know_units ?? []).some((k) => (C.units.get(k)?.order ?? Infinity) <= me)) continue;
+      const k = refKnown(p.rec, chain, x.at, C);
+      if (k.known) { if (!done.has(p.id)) ok.push(p); }
+      else if (k.skip.length) side.push(p);
+      else if (k.check.length) check.push(p);
+    }
+    L.push(`판 ${x.at}${x.side ? '(곁 판)' : ''}${x.extra ? '(새 --at)' : ''} ${C.units.get(x.at)?.title ?? ''} — 새로 아는 근거 ${ok.length}`);
+    for (const p of ok) L.push(`  ${p.id} [${p.rec.unit}] ${clip(p.rec.text ?? '', 90)}`);
+    if (side.length) L.push(`  이벤트 · 호감도에서만 아는 것(곁 판에만): ${side.map((p) => `${p.id}[${p.rec.unit}]`).join(' ')}`);
+    if (check.length) L.push(`  체크 칸에서만 아는 것(그 칸 판 · 곁 판에만): ${check.map((p) => `${p.id}[${p.rec.unit}]`).join(' ')}`);
+    if (!x.side) { mains.push(x.at); for (const p of ok) done.add(p.id); }
+  }
+  L.push('');
+  return L;
+}

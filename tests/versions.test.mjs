@@ -3,6 +3,7 @@
  *   ① 검사: 첫 판 자리 · 읽는 순서 · 마지막 스토리 뒤 · 뒤 스토리 이름 · 그 자리 뒤에 처음 쓰이는 대상 이름(다른 이름 · 표준명이 늦은 대상) · 정체 연결
  *   ② 지문: at 앞의 흐름이 바뀌면 낡음(뒤는 상관없음) · 확정 뒤 고치면 오류 · 내보내기는 확정 · 성한 판만
  *   ③ 실제 파일 · 내보낸 versions.json · 화면 fmt.versionAt · threadAt
+ *   ⑤ 근거(W17) — refs마다 그 판의 독자가 아는가(이벤트 · 호감도만 → 곁 판, 체크 칸만 → 그 칸 판, 뒤 → 오류) · 원문 줄 근거 · 근거가 바뀌면 낡음 · 근거보다 더 말한 글(경고)
  *   ④ need(W15f) — 체크 칸 스토리를 안 고른 독자: 판 글에 든 이름 · 스토리 이름을 모르면 그 앞 판에서 멈춘다. 실제 판 전부를 '가장 덜 본 독자'로 재본다
  *
  *   node --test tests/versions.test.mjs   (site/data/가 없으면 실제 데이터 쪽은 건너뛴다 — node tools/site/export.mjs)
@@ -16,7 +17,7 @@ import { run as exportVersions } from '../tools/site/export/versions.mjs';
 import { fileNameFor } from '../tools/records/model.mjs';
 import {
   SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, threadFirst, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom, srcHash, stateOf,
-  versionNeed,
+  versionNeed, refPool, unbackedWords, curSrc,
 } from '../tools/versions/model.mjs';
 
 const fmt = await import('../site/lib/format.js');
@@ -243,7 +244,7 @@ test('실제 파일 — 깨진 파일 · 오류 없음, 확정 판은 지문이 
   for (const { file: f, data } of set.list) {
     const r = checkFile(data, real);
     assert.deepEqual(r.errors, [], `${f}\n${r.errors.join('\n')}`);
-    for (const v of data.versions) if (v.status === '확정') assert.equal(stateOf(v, srcHash(data.subject, v.at, real)).ok, true, `${f} ${v.at}`);
+    for (const v of data.versions) if (v.status === '확정') assert.equal(stateOf(v, curSrc(data.subject, v, real)).ok, true, `${f} ${v.at}`);
   }
 });
 
@@ -399,4 +400,76 @@ test('W16b ② — 이벤트 · 호감도(opt, 체크 칸 아님) 판은 뒤에 
   assert.ok(errs([v('char:222'), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]).some((m) => /이벤트 · 호감도의 판인데 뒤에 메인 갈래 · 체크 칸 본판이 있다/.test(m)), '본판이면 오류');
   assert.ok(errs([v('char:222'), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]).some((m) => /첫 판의 at은/.test(m)), '첫 본판은 erelic');
   assert.deepEqual(errs([v('char:222', { side: true, until: 'erelic:red_ash_lost' }), v('erelic:red_ash_lost', { title: GOOD[0].title, text: GOOD[0].text }), v('ch46')]), []);
+});
+
+test('W17 근거(refs) — 그 판의 독자가 아는 기록만, 이벤트 · 호감도에서만이면 곁 판, 체크 칸에서만이면 그 칸 판, 뒤면 오류', () => {
+  // 홍련 호감도(char:222)는 이벤트 · 호감도(opt), RED ASH 돌발은 체크 칸, 나머지는 메인 갈래
+  const OU = UNITS.map((u) => (u.key === 'char:222' ? { ...u, opt: 1 } : u.key === 'erelic:red_ash_lost' ? { ...u, check: 1, opt: 1 } : u));
+  const REC = [
+    { id: 'Q90', kind: 'Q', unit: 'char:222', text: '홍련은 전멸한 스쿼드의 유일한 생존자인가?' },
+    { id: 'F1181', kind: 'F', unit: 'erelic:red_ash_lost', text: '홍련은 궤멸한 근접전 부대에서 홀로 남았다' },
+    { id: 'F1238', kind: 'F', unit: 'event_newyearnewsword', text: '홍련은 언니 장화를 제 검으로 벴다' },
+    { id: 'F2619', kind: 'F', unit: 'ch46', text: '장화는 되살려졌다' },
+    { id: 'F5', kind: 'F', unit: 'char:222', know_units: ['char:222', 'ch45'], text: '홍련은 술에 약하다' },
+    { id: 'Q90-2', kind: 'Q-k', unit: 'erelic:red_ash_lost', parent: 'Q90', answer: 'F1181' },
+  ];
+  const SC = [{ id: 'd_main_45_01', unit: 'ch45', lines: 40 }, { id: 'ep_222_01', unit: 'char:222', lines: 20 }];
+  const C5 = sourcesFrom({ units: OU, threads: THREADS, flow: FLOW, targets: TARGETS, records: REC, scenes: SC });
+  const v = (at, refs, extra = {}) => { const x = { ...ver(at, GOOD[0].title, GOOD[0].text), refs, ...extra }; return { ...x, src: curSrc(S, x, C5) }; };
+  const errs = (vs) => checkFile(file(vs), C5).errors;
+  const side = v('char:222', ['Q90'], { side: true, until: 'erelic:red_ash_lost' });
+  assert.deepEqual(errs([side, v('erelic:red_ash_lost', ['F1181']), v('ch46', ['F1181', 'F1238', 'F2619'])]), []);
+  // 본판(체크 칸 erelic)에 호감도에서만 아는 Q90 — 곁 판으로
+  assert.ok(errs([side, v('erelic:red_ash_lost', ['Q90'])]).some((m) => /근거 Q90: 이벤트 · 호감도\(홍련\)에서만/.test(m)));
+  // 메인 본판(ch46)에 체크 칸에서만 아는 F1181 — 체크 칸 판이 앞에 없으면 오류, 있으면(chain) 된다
+  // 메인 본판에 체크 칸에서만 아는 기록 — 앞에 그 칸 판이 있으면(chain) 되고, 없으면 오류
+  assert.deepEqual(errs([side, v('erelic:red_ash_lost', []), v('ch46', ['F1181'])]), []);
+  const C6 = sourcesFrom({ units: OU, threads: { threads: [{ ...THREADS.threads[0], first_unit: 'ch14' }] }, flow: FLOW, targets: TARGETS, records: REC, scenes: SC });
+  const w = (at, refs) => { const x = { ...ver(at, GOOD[0].title, GOOD[0].text), refs }; return { ...x, src: curSrc(S, x, C6) }; };
+  assert.ok(checkFile(file([w('ch14', []), w('ch46', ['F1181'])]), C6).errors.some((m) => /근거 F1181: 체크 칸 스토리\(RED ASH 돌발 스토리\)에서만/.test(m)));
+  assert.deepEqual(checkFile(file([w('ch14', []), w('ch46', ['F1238'])]), C6).errors, [], 'NEW YEAR(메인 갈래)는 at까지 읽는 순서대로 본 것');
+  // 뒤에 아는 기록 · 없는 기록 · 조각 기록
+  const r = errs([side, v('erelic:red_ash_lost', ['F2619', 'F404', 'Q90-2'])]);
+  assert.ok(r.some((m) => /근거 F2619: 이 자리 뒤에 아는 기록/.test(m)), r.join('\n'));
+  assert.ok(r.some((m) => /근거 F404: 확정 기록에 없다/.test(m)));
+  assert.ok(r.some((m) => /근거 Q90-2: Q-k 기록은 근거로 들지 않는다.*F1181/.test(m)));
+  // know_units — 호감도에서 처음 나왔어도 메인(ch45)이 다시 밝혔으면 그 뒤 본판에 쓴다
+  assert.ok(!errs([side, v('erelic:red_ash_lost', ['F1181']), v('ch46', ['F5'])]).some((m) => /F5/.test(m)));
+  assert.ok(errs([side, v('erelic:red_ash_lost', ['F5'])]).some((m) => /근거 F5: 이벤트 · 호감도/.test(m)));
+  // 원문 줄 근거 — 씬 단위로 같은 규칙, 없는 씬 · 줄 범위
+  assert.deepEqual(errs([side, v('erelic:red_ash_lost', ['F1181']), v('ch46', ['d_main_45_01#3-5'])]), []);
+  const L = errs([side, v('erelic:red_ash_lost', ['ep_222_01#2', 'd_main_45_01#3', 'nope#1', 'd_main_45_01#30-99'])]);
+  assert.ok(L.some((m) => /근거 ep_222_01#2: 이벤트 · 호감도\(홍련\)의 줄/.test(m)));
+  assert.ok(L.some((m) => /근거 d_main_45_01#3: 이 자리 뒤 스토리/.test(m)));
+  assert.ok(L.some((m) => /근거 nope#1: 씬이 없다/.test(m)));
+  assert.ok(L.some((m) => /근거 d_main_45_01#30-99: 줄 범위/.test(m)));
+  assert.ok(errs([v('erelic:red_ash_lost', ['F1181', 'F1181'])]).some((m) => /같은 기록이 둘/.test(m)));
+  assert.ok(errs([v('erelic:red_ash_lost', 'F1181')]).some((m) => /refs는 기록 ID 목록/.test(m)));
+});
+
+test('W17 근거 — 지문: refs가 없으면 옛 지문 그대로, 근거 기록이 바뀌면 낡음 · 확정 판에 refs가 없으면 파일 경고', () => {
+  const REC = [{ id: 'F1181', kind: 'F', unit: 'erelic:red_ash_lost', text: '홍련은 궤멸한 근접전 부대에서 홀로 남았다' }];
+  const Ca = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: TARGETS, records: REC });
+  const Cb = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: TARGETS, records: [{ ...REC[0], text: '홍련은 부대를 잃었다' }] });
+  assert.equal(srcHash(S, 'erelic:red_ash_lost', Ca), srcHash(S, 'erelic:red_ash_lost', C), '근거가 없으면 기록과 상관없이 옛 지문');
+  const x = { at: 'erelic:red_ash_lost', refs: ['F1181'] };
+  assert.notEqual(curSrc(S, x, Ca), srcHash(S, x.at, Ca), '근거가 있으면 지문에 든다');
+  assert.notEqual(curSrc(S, x, Ca), curSrc(S, x, Cb), '근거 기록 문장이 바뀌면 지문이 바뀐다(낡음)');
+  const conf = confirm(GOOD[0]);
+  assert.ok(checkFile(file([conf]), C).warnings.some((m) => /근거\(refs\)가 없는 판 1/.test(m)));
+  assert.ok(!checkFile(file([GOOD[0]]), C).warnings.some((m) => /근거\(refs\)/.test(m)), '후보는 아직');
+});
+
+test('W17 근거보다 더 말한 글(경고) — 근거 · 앞 판 · 제 이름 · 본 스토리 제목에 없는 이름 · 숫자, 세계 기본 낱말은 빼고', () => {
+  const REC = [{ id: 'F1', kind: 'F', unit: 'ch14', text: '홍련은 스쿼드원 12명과 함께 싸웠다', about: ['person:홍련'] }];
+  const Cx = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: [...TARGETS, { id: 'concept:니케', name: '니케', meet: ['ch14'] }], records: REC });
+  const recs = [Cx.recordMap.get('F1')];
+  assert.deepEqual(unbackedWords(['홍련은 12명의 니케와 싸웠다'], recs, [], S, ['ch14'], Cx), []);
+  assert.deepEqual(unbackedWords(['홍련과 아나키오르는 30명과 싸웠다'], recs, [], S, ['ch14'], Cx), ["이름 '아나키오르'", "숫자 '30'"]);
+  assert.deepEqual(unbackedWords(['아나키오르는 CH.14에서 싸웠다'], recs, ['아나키오르가 나온다'], S, ['ch14'], Cx), [], '앞 판에 있으면 · CH.nn은 숫자로 안 친다');
+  // 근거 후보 — 떡밥은 흐름의 기록과 답(조각 기록은 답 · 부모로)
+  const Cp = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: TARGETS, records: [
+    { id: 'Q90', kind: 'Q', unit: 'char:222' }, { id: 'Q90-2', kind: 'Q-k', unit: 'erelic:red_ash_lost', parent: 'Q90', answer: 'F1181' }, { id: 'F1181', kind: 'F', unit: 'erelic:red_ash_lost' },
+    { id: 'E1', kind: 'E', unit: 'ch48' }] });
+  assert.deepEqual(refPool(S, Cp).map((p) => p.id), ['Q90', 'F1181', 'E1']);
 });

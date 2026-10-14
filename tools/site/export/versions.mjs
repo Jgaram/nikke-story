@@ -17,7 +17,7 @@ export const name = 'versions';
 export async function run(ctx) {
   const C = sourcesFrom({
     units: ctx.made['units.json'] ?? ctx.common.units, threads: ctx.made['threads.json'], flow: ctx.made['threads-flow.json'], targets: ctx.made['targets.json'],
-    records: [...(ctx.made['records.json'] ?? []), ...(ctx.made['records2.json'] ?? [])],
+    records: [...(ctx.made['records.json'] ?? []), ...(ctx.made['records2.json'] ?? [])], scenes: ctx.made['scenes.json'] ?? null,
   });
   const set = loadVersions(ctx.versionDir ?? VERSION_DIR); // 테스트는 ctx.versionDir로 다른 디렉터리를 준다
   for (const p of set.problems) ctx.warn({ where: `versions/${p.file}`, msg: p.msg });

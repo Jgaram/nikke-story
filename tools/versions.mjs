@@ -7,6 +7,8 @@
  *                                                                           --full = 사전 항목의 다룬 기록을 전부 문장째(기본은 앞 60건)
  *   node tools/versions.mjs check [대상 …] [--all]                          검사 — 오류면 종료 코드 1. --all이면 판이 없는 떡밥 · 사전 항목 수도
  *   node tools/versions.mjs set <대상> <at …> <확정|기각|후보> [--note …] [--session W15c]
+ *   node tools/versions.mjs refs <대상> <at> <기록 ID …> [--add]            근거(W17) — 판의 refs를 이것으로(--add면 더한다). 지문을 새로 재고, 바뀌었으면 후보로 — 다시 set … 확정
+ *   node tools/versions.mjs batches [--n 12]                                근거(W17 ②) 병렬 묶음 — 판 수가 고르게 대상을 나눈다(대상 = 파일 하나라 묶음끼리 쓰는 파일이 안 겹친다). 근거를 다 단 대상은 뺀다
  *   node tools/versions.mjs progress                                        중요도별 진행률
  *
  * 해석이 필요한 기록이라 후보 → Claude가 판마다 검토해 확정한다(CLAUDE.md "해석이 필요한 기록"). 확정 뒤 판을 고치면 지문이 달라져 오류 — 다시 set 한다.
@@ -23,12 +25,14 @@ import { scenePlaces } from './records/read2.mjs';
 import { sourceWindows } from './check-quotes.mjs';
 import { nameFirsts, overlapProblems, spoilerProblems } from './synopsis/model.mjs';
 import { buildInput, loadContext } from './versions/input.mjs';
-import { DECIDERS, DICT_KINDS, STATUSES, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, threadFirst, loadVersions, shownTexts, srcHash, stateOf, subjectKind, versionPath } from './versions/model.mjs';
+import { DECIDERS, DICT_KINDS, STATUSES, VERSION_DIR, checkFile, contentHash, curSrc, dictFirst, isDict, threadFirst, loadVersions, shownTexts, srcHash, stateOf, subjectKind, versionPath } from './versions/model.mjs';
 
 const USAGE = `시점별 판 도구 (tools/versions.mjs) — 형식 · 기준: docs/annotations.md "시점별 판"
   new <J… | thread:J… | place:방주 …> [--at 단위 [--side]] [--refresh] [--full]   입력 묶음 + 틀(후보) — --side = 곁 판(체크 칸 스토리)
   check [대상 …] [--all]                        검사 (오류 → 종료 코드 1)
   set <대상> <at …> <확정|기각|후보> [--note 메모] [--session W15c]
+  refs <대상> <at> <기록 ID …> [--add]          근거(W17) — refs를 정하고 지문을 새로(바뀌면 후보로)
+  batches [--n 12]                              근거(W17 ②) 병렬 묶음 — 근거가 덜 붙은 대상을 판 수로 고르게
   progress                                      진행률
 공통: --dir <디렉터리>(테스트) · --data <사이트 데이터 디렉터리>(테스트)`;
 
@@ -42,6 +46,8 @@ const { values: opt, positionals } = parseArgs({
     refresh: { type: 'boolean' },
     full: { type: 'boolean' },
     all: { type: 'boolean' },
+    add: { type: 'boolean' },
+    n: { type: 'string' },
     by: { type: 'string' },
     note: { type: 'string' },
     session: { type: 'string' },
@@ -63,6 +69,9 @@ async function env() {
   const db = await openDb();
   const places = scenePlaces(loadOrder(READ1_PREFIXES), await openContext(db));
   heavy = { db, places, firsts: nameFirsts(db, places), windows: sourceWindows(db) };
+  // 원문 줄 근거(W17)의 글 — 근거보다 더 말했나(경고)를 볼 때만 메모리에서. 파일 · 출력에는 쓰지 않는다
+  const q = db.prepare('SELECT text FROM lines WHERE story_id = ? AND seq BETWEEN ? AND ? ORDER BY seq');
+  ctx().sceneText = (scene, a, b) => q.all(scene, a, b).map((r) => r.text).join('\n');
   return heavy;
 }
 const write = (p, f) => {
@@ -78,7 +87,18 @@ function heavyProblems(f, e) {
 const blank = (subject, at) => ({ at, ...(isDict(subject) ? {} : { title: '' }), text: '', src: srcHash(subject, at, ctx()), session: opt.session ?? 'W15c', by: 'claude', date: opt.date ?? today(), status: '후보', reviews: [] });
 const orderOf = (k) => ctx().units.get(k)?.order ?? 1e9;
 
-function cmdNew() {
+/** 사전 항목 이름(표준명 · 다른 이름)이 그 단위 원문에 나오는 줄 — '씬#줄' 목록(W17 — 기록이 없는 판의 원문 줄 근거 찾기). 본문은 싣지 않는다 */
+function nameLines(subject, unit, e) {
+  const t = ctx().targetMap.get(subject);
+  const names = [t?.name, ...(t?.aliases ?? []).map((a) => a.name)].filter((n) => n && [...n].length >= 2);
+  const scenes = [...(ctx().scenes?.values() ?? [])].filter((x) => x.unit === unit).map((x) => x.id);
+  if (!names.length || !scenes.length) return [];
+  const q = e.db.prepare(`SELECT story_id, seq FROM lines WHERE story_id IN (${scenes.map(() => '?').join(',')}) AND (${names.map(() => 'text LIKE ?').join(' OR ')}) ORDER BY story_id, seq`);
+  return q.all(...scenes, ...names.map((n) => `%${n}%`)).map((r) => `${r.story_id}#${r.seq}`);
+}
+
+async function cmdNew() {
+  const e = await env();
   if (!args.length) throw new Error('대상을 준다 — 예: node tools/versions.mjs new J30');
   for (const [i, raw] of args.entries()) {
     const subject = subjectOf(raw);
@@ -95,12 +115,20 @@ function cmdNew() {
       else { f.versions.push({ ...blank(subject, opt.at), ...(opt.side ? { side: true } : {}) }); f.versions.sort((a, b) => orderOf(a.at) - orderOf(b.at)); notes.push(`${opt.side ? '곁 판' : '판'} 틀(${opt.at})`); }
     }
     for (const v of f.versions) {
-      const cur = srcHash(subject, v.at, ctx());
+      const cur = curSrc(subject, v, ctx());
       if (!cur || v.src === cur) continue;
       if (opt.refresh) { v.src = cur; v.status = '후보'; notes.push(`${v.at} 지문 새로 — 후보로`); } else notes.push(`${v.at}은 흐름이 바뀌었다(낡음) — 고친 뒤 --refresh`);
     }
     if (i) console.log('\n' + '─'.repeat(40) + '\n');
-    console.log(buildInput(subject, f, ctx(), { full: opt.full }));
+    console.log(buildInput(subject, f, ctx(), { full: opt.full, at: opt.at }));
+    if (isDict(subject)) {
+      const lines = [];
+      for (const at of new Set([...f.versions.map((v) => v.at), ...(opt.at ? [opt.at] : [])])) {
+        const hits = nameLines(subject, at, e);
+        if (hits.length) lines.push(`  ${at}: ${hits.slice(0, 12).join(' ')}${hits.length > 12 ? ` … ${hits.length}줄` : ''}`);
+      }
+      if (lines.length) console.log(`\n## 원문에서 이름이 나오는 줄 — 기록이 없는 마디의 근거('씬#줄')를 찾을 때 read.mjs로 읽는다\n${lines.join('\n')}`);
+    }
     write(p, f);
     console.log(`\n→ ${rel(p)}${notes.length ? ` — ${notes.join(' · ')}` : ''}`);
   }
@@ -152,7 +180,7 @@ function tally(set) {
 function countFile(f, t) {
   let all = true;
   for (const v of f.versions) {
-    const st = stateOf(v, srcHash(f.subject, v.at, ctx()));
+    const st = stateOf(v, curSrc(f.subject, v, ctx()));
     if (st.ok) t.ok++;
     else if (st.status === '기각') t.rejected++;
     else { all = false; if (st.changed) t.changed++; else if (st.stale) t.stale++; else t.draft++; }
@@ -191,7 +219,7 @@ async function cmdSet() {
   for (const at of ats) {
     const v = f.versions.find((x) => x.at === at);
     if (!v) { console.log(`✗ ${subject}: ${at} 판이 없다`); failed++; continue; }
-    const cur = srcHash(subject, at, ctx());
+    const cur = curSrc(subject, v, ctx());
     if (decision === '확정') {
       // 확정 전에 검사 — 이 판의 오류가 있으면 확정하지 않는다(경고는 보이고 통과). 낡은 판은 --refresh부터
       if (stateOf(v, cur).stale) { console.log(`✗ ${subject} ${at}: 흐름이 바뀌었다 — 고친 뒤 new ${subject} --refresh`); failed++; continue; }
@@ -213,6 +241,54 @@ async function cmdSet() {
   if (failed) process.exitCode = 1;
 }
 
+/** 근거(W17) — 판 하나의 refs를 정하고 지문을 새로 잰다. 바뀌었으면 후보로(확정은 set이 다시 검사한다) */
+async function cmdRefs() {
+  await env();
+  const [raw, at, ...ids] = args;
+  const subject = subjectOf(raw ?? '');
+  if (!at || (!ids.length && opt.add)) throw new Error('예: node tools/versions.mjs refs J30 char:222 Q90 F1181');
+  const item = loadVersions(DIR).bySubject.get(subject);
+  if (!item) throw new Error(`판 파일이 없다 — new ${subject}`);
+  const f = item.data;
+  const v = f.versions.find((x) => x.at === at);
+  if (!v) throw new Error(`${subject}: ${at} 판이 없다`);
+  const refs = opt.add ? [...new Set([...(v.refs ?? []), ...ids])] : [...new Set(ids)];
+  const was = JSON.stringify([v.refs ?? null, v.src]);
+  v.refs = refs;
+  const cur = curSrc(subject, v, ctx());
+  if (cur) v.src = cur;
+  const changed = was !== JSON.stringify([v.refs, v.src]);
+  if (changed && v.status === '확정') v.status = '후보';
+  write(item.path, f);
+  const r = checkFile(f, ctx());
+  const mine = (m) => m.startsWith(`판 ${at}:`);
+  for (const m of r.errors.filter(mine)) console.log(`✗ ${subject}: ${m}`);
+  for (const m of r.warnings.filter(mine)) console.log(`⚠ ${subject}: ${m}`);
+  console.log(`${changed ? '✓' : '·'} ${subject} ${at}: 근거 ${refs.join(' ') || '(없음)'}${changed ? ` — 지문 새로${v.status === '후보' ? ' · 후보(다시 set … 확정)' : ''}` : ' — 그대로'}`);
+  if (r.errors.some(mine)) process.exitCode = 1;
+}
+
+/**
+ * 근거(W17 ②) 병렬 묶음 — 판(기각 뺌)에 refs가 하나라도 빠진 대상을, 판 수가 고르게 n묶음으로(큰 대상부터 가장 가벼운 묶음에).
+ * 대상마다 파일이 하나라 묶음끼리 쓰는 파일이 겹치지 않는다. 묶음마다 대상 목록 한 줄 — check · 에이전트 지시에 그대로 넘긴다
+ */
+function cmdBatches() {
+  const n = Math.max(1, Number(opt.n ?? 12));
+  const todo = [];
+  let done = 0;
+  for (const { data: f } of loadVersions(DIR).list) {
+    const live = (f?.versions ?? []).filter((v) => v?.status !== '기각');
+    if (!live.length) continue;
+    if (live.every((v) => Array.isArray(v.refs))) { done++; continue; }
+    todo.push({ subject: f.subject, n: live.length });
+  }
+  todo.sort((a, b) => b.n - a.n || a.subject.localeCompare(b.subject));
+  const bins = Array.from({ length: Math.min(n, todo.length) }, () => ({ n: 0, list: [] }));
+  for (const t of todo) { const b = bins.reduce((m, x) => (x.n < m.n ? x : m)); b.n += t.n; b.list.push(t.subject); }
+  console.log(`근거를 다 단 대상 ${done} · 남은 대상 ${todo.length}(판 ${todo.reduce((s, t) => s + t.n, 0)}) → ${bins.length}묶음`);
+  bins.forEach((b, i) => console.log(`B${i + 1} (판 ${b.n} · 대상 ${b.list.length}): ${b.list.join(' ')}`));
+}
+
 function cmdProgress() {
   const t = tally(loadVersions(DIR));
   console.log(`떡밥 ${t.done}/${t.n} 판 전부 확정 · 판 있음 ${t.files} · 판 확정 ${t.ok} · 후보 ${t.draft} · 낡음 ${t.stale} · 확정 뒤 고침 ${t.changed} · 기각 ${t.rejected}`);
@@ -224,9 +300,11 @@ function cmdProgress() {
 
 try {
   if (opt.help || !cmd) console.log(USAGE);
-  else if (cmd === 'new') cmdNew();
+  else if (cmd === 'new') await cmdNew();
   else if (cmd === 'check') await cmdCheck();
   else if (cmd === 'set') await cmdSet();
+  else if (cmd === 'refs') await cmdRefs();
+  else if (cmd === 'batches') cmdBatches();
   else if (cmd === 'progress') cmdProgress();
   else throw new Error(`모르는 명령: ${cmd}\n${USAGE}`);
 } catch (err) {

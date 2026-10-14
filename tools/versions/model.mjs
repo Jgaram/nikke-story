@@ -13,6 +13,8 @@
  * 사전 설명(W15e)도 같은 꼴 — subject가 비인물 대상 ID(place:방주 · org:… · concept:… · incident:… · item:…)이고 판은 { at, text, … }(제목 없음 —
  *   이름은 W15b fmt.nameAt이 고른다). 첫 판의 at = 항목이 처음 나온 자리(targets.json meet에서 체크 칸이 아닌 첫 스토리 — dictFirst),
  *   src = at까지 항목을 다룬 기록(about)의 [기록, 단위]. 화면은 fmt.noteAt.
+ * 근거 기록(W17) — 판의 refs = 글이 기대는 기록 ID(사실 F · 의문 Q · 떡밥 암시 E), 기록이 없는 마디는 원문 줄('씬#줄' · '씬#줄-줄'). 근거마다 그 판을 보는 독자가 아는지(refProblems),
+ *   글의 이름 · 숫자가 근거 · 앞 판에 있는지(경고) 보고, 근거 기록의 내용이 src 지문에 들어 바뀌면 낡음.
  */
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -39,6 +41,15 @@ export const LIMITS = {
 };
 /** 사전 설명(W15e) — 지금 분석용 설명이 중앙값 43자 · 가장 긴 것 108자 */
 export const DICT_LIMITS = { text: [10, 100], textMax: 160, sentences: 2, versions: 4 };
+
+/** 근거로 쓰는 기록 종류(W17) — 사실 · 의문 · 떡밥 암시 · 재언급. 조각 기록(F-k · Q-k)은 그 답 · 부모를 든다 */
+export const REF_KINDS = new Set(['F', 'Q', 'E']);
+/** 확정 판에 refs가 없으면 — false: 파일마다 경고 하나(W17 ② 진행 중), true: 판마다 오류(② 끝에 관리자가 켠다) */
+export const REFS_REQUIRED = false;
+/** 근거 없이 써도 되는 세계 기본 낱말(W17 — '근거 · 앞 판에 없는 말' 경고에서 뺀다). 작품 첫머리부터 늘 쓰여 사실을 더하지 않는다 */
+export const BASIC_WORDS = new Set(['니케', '랩쳐', '방주', '지상', '지휘관', '인류', '인간']);
+/** 원문 줄 근거 — '씬#줄' · '씬#줄-줄'(기록이 없는 마디. 씬은 scenes.json) */
+export const LINE_REF = /^(.+)#(\d+)(?:-(\d+))?$/;
 
 const arr = (x) => (Array.isArray(x) ? x : []);
 const sha = (v) => crypto.createHash('sha1').update(JSON.stringify(v)).digest('hex').slice(0, 10);
@@ -86,13 +97,124 @@ export function dictRecords(id, C) {
   return out.sort((a, b) => a.o - b.o || String(a.r).localeCompare(String(b.r), 'en', { numeric: true }));
 }
 
-/** 판 지문 — at까지(읽는 순서 order 이하) 떡밥이 움직인 자리 · 사전 항목을 다룬 기록. at이 없는 단위면 null */
-export function srcHash(subject, at, C) {
+/**
+ * 판 지문 — at까지(읽는 순서 order 이하) 떡밥이 움직인 자리 · 사전 항목을 다룬 기록. at이 없는 단위면 null.
+ * refs(W17)가 있으면 근거 기록의 내용(종류 · 단위 · 아는 단위 · 문장 · 답)도 — 근거가 바뀌면 낡음. 없으면 옛 지문 그대로
+ */
+export function srcHash(subject, at, C, refs) {
   const me = C.units.get(at)?.order;
-  if (isDict(subject)) return me == null || !C.targetMap?.has(subject) ? null : sha(dictRecords(subject, C).filter((p) => p.o <= me).map((p) => [p.r, p.u]));
-  const id = threadId(subject);
-  if (!id || me == null || !C.flow[id]) return null;
-  return sha(flowPoints(C.flow[id]).filter((p) => p.o != null && p.o <= me).map((p) => [p.r, p.s, p.u]));
+  let base;
+  if (isDict(subject)) base = me == null || !C.targetMap?.has(subject) ? null : sha(dictRecords(subject, C).filter((p) => p.o <= me).map((p) => [p.r, p.u]));
+  else {
+    const id = threadId(subject);
+    base = !id || me == null || !C.flow[id] ? null : sha(flowPoints(C.flow[id]).filter((p) => p.o != null && p.o <= me).map((p) => [p.r, p.s, p.u]));
+  }
+  if (base == null || !Array.isArray(refs)) return base;
+  return sha([base, refs.map((id) => { if (LINE_REF.test(id)) return [id, C.scenes?.get(LINE_REF.exec(id)[1])?.unit ?? null]; const r = C.recordMap?.get(id); return r ? [id, r.kind, r.unit, knowUnits(r), r.text ?? '', r.answer ?? ''] : [id, null]; })]);
+}
+/** 판 하나의 지금 지문 — srcHash(대상, at, C, refs) */
+export const curSrc = (subject, v, C) => srcHash(subject, v?.at, C, v?.refs);
+
+/** 기록을 아는 스토리(W17) — 사실 · 의문은 know_units(메인이 다시 밝힌 곳까지 — 하나라도 보면 안다), 없으면 제 단위 */
+export const knowUnits = (r) => ((r?.kind === 'F' || r?.kind === 'Q') && arr(r.know_units).length ? [...r.know_units] : r?.unit ? [r.unit] : []);
+
+/**
+ * 근거 검사(W17) — 판 v의 refs마다 그 판을 보는 독자가 아는가. 독자 = 앞 본판들의 at + 이 판의 at(chain)을 봤고, 메인 갈래(고를 수 없는 스토리)는 at까지 읽는 순서대로 본 사람.
+ * 체크 칸 · 이벤트 · 호감도는 chain에 든 것만 본 것으로 친다(가장 덜 본 독자 — 체크 칸에서만 드러난 것은 그 칸에 판을, 이벤트 · 호감도에서만은 곁 판으로).
+ * @param {string[]} chain 이 판을 보는 독자가 늘 본 at
+ * @returns {{ errors: string[], warnings: string[], recs: object[] }} recs = 찾은 근거 기록
+ */
+export function refProblems(v, chain, C) {
+  const errors = [];
+  const warnings = [];
+  const recs = [];
+  if (!('refs' in v)) return { errors, warnings, recs };
+  if (!Array.isArray(v.refs) || v.refs.some((x) => typeof x !== 'string' || !x)) return { errors: ['refs는 기록 ID 목록(["F12", "Q3", …])'], warnings, recs };
+  if (new Set(v.refs).size !== v.refs.length) errors.push('refs에 같은 기록이 둘');
+  const title = (k) => C.units.get(k)?.title ?? k;
+  for (const id of v.refs) {
+    const line = LINE_REF.exec(id);
+    if (line) {
+      const [, scene, a, b = a] = line;
+      const sc = C.scenes?.get(scene);
+      if (!C.scenes) continue; // 씬 목록이 없는 맥락(옛 테스트) — 건너뛴다
+      if (!sc) { errors.push(`근거 ${id}: 씬이 없다(scenes.json)`); continue; }
+      if (+a < 0 || +b < +a || +b > (sc.lines ?? Infinity)) { errors.push(`근거 ${id}: 줄 범위가 이상하다(씬 ${sc.lines}줄)`); continue; }
+      const r = { id, kind: 'L', unit: sc.unit, text: C.sceneText?.(scene, +a, +b) ?? '', about: [] };
+      recs.push(r);
+      const { known, skip, check } = refKnown(r, chain, v.at, C);
+      if (known) continue;
+      if (skip.length && !v.side) errors.push(`근거 ${id}: 이벤트 · 호감도(${title(sc.unit)})의 줄 — 곁 판(side)으로 옮기거나 빼기(W16b ②)`);
+      else if (skip.length) errors.push(`근거 ${id}: 이 곁 판의 스토리가 아닌 이벤트 · 호감도(${title(sc.unit)})의 줄`);
+      else if (check.length) errors.push(`근거 ${id}: 체크 칸 스토리(${title(sc.unit)})의 줄 — 그 칸에 판을 두거나 곁 판으로(기준 8)`);
+      else errors.push(`근거 ${id}: 이 자리 뒤 스토리(${title(sc.unit)})의 줄`);
+      continue;
+    }
+    const r = C.recordMap?.get(id);
+    if (!r) { errors.push(`근거 ${id}: 확정 기록에 없다(기각 · 고친 ID인가)`); continue; }
+    if (!REF_KINDS.has(r.kind)) {
+      const to = [r.answer, r.parent, r.replaced_by].filter(Boolean).join(' · ');
+      errors.push(`근거 ${id}: ${r.kind} 기록은 근거로 들지 않는다 — 사실 F · 의문 Q · 암시 E만${to ? `(${to}를)` : ''}`);
+      continue;
+    }
+    recs.push(r);
+    const { known, skip, check } = refKnown(r, chain, v.at, C);
+    if (known) continue;
+    const ks = knowUnits(r);
+    if (skip.length && !v.side) errors.push(`근거 ${id}: 이벤트 · 호감도(${skip.map(title).join(' · ')})에서만 아는 기록 — 본판 줄기는 그것 없이 읽혀야 한다. 곁 판(side)으로 옮기거나 빼기(W16b ②)`);
+    else if (skip.length) errors.push(`근거 ${id}: 이 곁 판의 스토리가 아닌 이벤트 · 호감도(${skip.map(title).join(' · ')})에서만 아는 기록`);
+    else if (check.length) errors.push(`근거 ${id}: 체크 칸 스토리(${check.map(title).join(' · ')})에서만 아는 기록 — 그 칸에 판을 두거나 곁 판으로(기준 8)`);
+    else errors.push(`근거 ${id}: 이 자리 뒤에 아는 기록(${ks.map(title).join(' · ')}) — 판의 글은 at까지의 스토리 내용만`);
+  }
+  return { errors, warnings, recs };
+}
+
+/**
+ * 기록 r을 at 자리 독자(chain을 봤고 메인 갈래는 at까지)가 아는가 — 모르면 at 앞에서 그것을 아는 이벤트 · 호감도(skip) · 체크 칸(check) 스토리
+ * @returns {{ known: boolean, skip: string[], check: string[] }}
+ */
+export function refKnown(r, chain, at, C) {
+  const me = C.units.get(at)?.order ?? -Infinity;
+  const seen = new Set(chain);
+  const opt = C.optional ?? C.checkable ?? new Set();
+  const ks = knowUnits(r);
+  if (ks.some((k) => seen.has(k) || (!opt.has(k) && (C.units.get(k)?.order ?? Infinity) <= me))) return { known: true, skip: [], check: [] };
+  const pre = ks.filter((k) => (C.units.get(k)?.order ?? Infinity) <= me);
+  return { known: false, skip: pre.filter((k) => C.skippable?.has(k)), check: pre.filter((k) => C.checkable?.has(k)) };
+}
+
+/**
+ * 근거 후보(W17 — versions.mjs new) — 대상과 이어진 기록 가운데 근거로 드는 종류(F · Q · E): 떡밥은 흐름의 기록과 그 답(조각 기록 Q-k · F-k는 답 · 부모로),
+ * 사전은 항목을 다룬 기록. 읽는 순서로 [{ id, rec, o }]
+ */
+export function refPool(subject, C) {
+  const out = new Map();
+  const put = (id) => {
+    const r = C.recordMap?.get(id);
+    if (!r || out.has(id)) return;
+    if (!REF_KINDS.has(r.kind)) { for (const x of [r.answer, r.parent]) if (x && x !== id) put(x); return; }
+    out.set(id, { id, rec: r, o: C.units.get(r.unit)?.order ?? 1e9 });
+  };
+  if (isDict(subject)) for (const p of dictRecords(subject, C)) put(p.r);
+  else for (const p of flowPoints(C.flow?.[threadId(subject)])) { put(p.r); if (p.a) put(p.a); }
+  return [...out.values()].sort((a, b) => a.o - b.o || a.id.localeCompare(b.id, 'en', { numeric: true }));
+}
+
+/** 대상 ID들의 이름 · 다른 이름 */
+const targetNames = (ids, C) => arr(ids).flatMap((id) => { const t = C.targetMap?.get(id); return t ? [t.name, ...arr(t.aliases).map((a) => a.name)] : []; });
+
+/**
+ * 글이 근거보다 더 말하나(W17, 경고) — 글에 든 대상 이름 · 숫자가 근거 기록(문장 · about) · 앞 판들의 글 · 대상 제 이름 · at까지 본판 스토리 제목에 없으면.
+ * @param {string[]} texts 이 판의 제목 · 요약
+ * @param {object[]} recs 근거 기록
+ * @param {string[]} prior 앞 판들(chain)의 제목 · 요약
+ */
+export function unbackedWords(texts, recs, prior, subject, chainAts, C) {
+  const pool = [...recs.flatMap((r) => [r.text ?? '', ...targetNames(r.about, C)]), ...prior, ...targetNames([subject], C), ...chainAts.map((k) => C.units.get(k)?.title ?? '')].join('\n');
+  const body = texts.join('\n');
+  const names = namesIn(body, C.nameUnits.keys()).filter((n) => !pool.includes(n) && !BASIC_WORDS.has(n));
+  const nums = [...new Set([...body.replace(/CH\.\d+/g, ' ').matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => m[0]))].filter((n) => !new RegExp(`(^|\\D)${n.replace('.', '\\.')}(\\D|$)`).test(pool));
+  return [...names.map((n) => `이름 '${n}'`), ...nums.map((n) => `숫자 '${n}'`)];
 }
 
 /** 내용 지문 — 확정한 뒤 판(자리 · 제목 · 요약 · 지문)이 바뀌었는지 본다 */
@@ -116,11 +238,12 @@ export function loadSources(dir = SITE_DATA) {
   const read = (f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
   return sourcesFrom({
     units: read('units.json'), threads: read('threads.json'), flow: read('threads-flow.json'), targets: read('targets.json'), records: [...read('records.json'), ...read('records2.json')],
+    scenes: fs.existsSync(path.join(dir, 'scenes.json')) ? read('scenes.json') : null,
   });
 }
 
 /** records = 확정 기록(records.json + records2.json) — 사전 판의 지문 · 입력에 쓴다(없으면 사전 판은 지문이 빈 목록) */
-export function sourcesFrom({ units: unitList, threads, flow, targets, records = [] }) {
+export function sourcesFrom({ units: unitList, threads, flow, targets, records = [], scenes = null }) {
   const units = new Map(arr(unitList).map((u) => [u.key, u]));
   const C = { units, threads: new Map(arr(threads?.threads).map((t) => [t.id, t])), flow: flow ?? {}, targets: arr(targets) };
   C.targetMap = new Map(C.targets.map((t) => [t.id, t]));
@@ -134,6 +257,8 @@ export function sourcesFrom({ units: unitList, threads, flow, targets, records =
   C.skippable = new Set([...units.values()].filter((u) => u.opt && !u.check).map((u) => u.key));
   C.titled = new Map();
   for (const u of units.values()) if (titledUnit(u)) (C.titled.get(u.title) ?? C.titled.set(u.title, []).get(u.title)).push(u.key);
+  C.recordMap = new Map(arr(records).map((r) => [r?.id, r])); // 근거(refs — W17) 찾기
+  if (scenes) C.scenes = new Map(arr(scenes).map((x) => [x.id, x])); // 원문 줄 근거의 씬 → 단위 · 줄 수
   C.aboutOf = new Map();
   for (const r of arr(records)) for (const id of arr(r?.about)) if (DICT_KINDS.has(subjectKind(id))) (C.aboutOf.get(id) ?? C.aboutOf.set(id, []).get(id)).push(r);
   return C;
@@ -316,6 +441,7 @@ export function checkFile(f, C) {
   if (first && live[0] && live[0].at !== first) errors.push(`첫 판의 at은 ${S.firstWhat}(${first} ${C.units.get(first)?.title ?? ''})여야 한다 — 지금 ${live[0].at}`);
   let prev = null;
   const ats = new Set();
+  const noRefs = [];
   for (const [i, v] of vs.entries()) {
     const where = `판 ${v?.at ?? i + 1}`;
     const E = (m) => errors.push(`${where}: ${m}`);
@@ -344,7 +470,19 @@ export function checkFile(f, C) {
     if (u && u.order > lastOrder) E(`떡밥이 마지막으로 움직인 스토리(${S.last}) 뒤다`);
     if (u && !moved.has(v.at)) W(S.unmoved);
     if (u) prev = u;
-    const cur = srcHash(f.subject, v.at, C);
+    const cur = curSrc(f.subject, v, C);
+    // 근거(W17) — 이 판을 보는 독자(앞 본판들 + 이 판의 at)가 아는 기록인가 · 글이 근거보다 더 말하나
+    const before = vs.slice(0, i).filter((x) => x && x.status !== '기각' && !x.side);
+    const chain = [...before.map((x) => x.at), v.at];
+    if (v.status !== '기각') {
+      if (!('refs' in v) && v.status === '확정') noRefs.push(v.at);
+      const rp = refProblems(v, chain, C);
+      rp.errors.forEach(E);
+      if (Array.isArray(v.refs) && !rp.errors.length) {
+        const more = unbackedWords([v.title ?? '', v.text ?? ''], rp.recs, before.flatMap((x) => [x.title ?? '', x.text ?? '']), f.subject, chain, C);
+        if (more.length) W(`근거 · 앞 판에 없는 말 — ${more.join(' · ')}(근거를 더하거나 글을 근거만큼으로)`);
+      }
+    }
     if (cur && v.src !== cur && v.status !== '기각') W(`쓴 뒤 이 자리까지의 ${S.dict ? '항목을 다룬 기록' : '떡밥 흐름'}이 바뀌었다(낡음 — 화면은 앞 판) — 입력을 다시 보고 고쳐 \`new … --refresh\` 뒤 확정`);
     const ctx = { part: 'versions', unit: v.at, units: C.units, laterHint: '판의 글은 at까지의 스토리 내용만' };
     if (S.dict && typeof v.title === 'string' && v.title.trim()) E('사전 판에는 title을 두지 않는다 — 이름은 W15b(fmt.nameAt)가 고른다');
@@ -368,6 +506,10 @@ export function checkFile(f, C) {
       if (!STATUSES.includes(r?.decision)) E(`reviews[${j}]: decision이 이상하다`);
       if (!DECIDERS.includes(r?.by)) E(`reviews[${j}]: by는 ${DECIDERS.join(' · ')}`);
     }
+  }
+  if (noRefs.length) {
+    if (REFS_REQUIRED) noRefs.forEach((at) => errors.push(`판 ${at}: 근거(refs)가 없다 — 글이 기대는 기록 ID(W17)`));
+    else warnings.push(`근거(refs)가 없는 판 ${noRefs.length} — ${noRefs.join(' · ')}(W17 ②)`);
   }
   // 곁 판 후보(W15f) — 첫 본판 앞 체크 칸 스토리에 이 항목의 사실 기록이 있는데 판이 없다: 그 칸을 본 독자는 이름만 보고 설명은 빈다.
   // 찾기는 자동, 쓰기는 손으로 — 곁 판(new --at <단위> --side)을 쓰거나, 필요 없으면 no_side에 이유를 적는다
@@ -455,7 +597,7 @@ export function publishable(f, C) {
   const list = [];
   for (const v of arr(f.versions)) {
     if (v?.status === '기각') continue;
-    const ok = stateOf(v, srcHash(f.subject, v.at, C)).ok && !bad.has(v.at);
+    const ok = stateOf(v, curSrc(f.subject, v, C)).ok && !bad.has(v.at);
     if (!ok && v.side) continue; // 곁 판은 빠져도 본판 줄기는 이어진다
     if (!ok) break;
     const side = v.side ? { side: true, ...(v.until ? { until: v.until } : {}) } : {};

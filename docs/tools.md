@@ -47,7 +47,7 @@ node tools/read.mjs side:mudfish          # 금서고 단위: side:(사이드) �
   빌드업 마무리(오래 쌓인 연작 · 갈등 · 관계 · 성장의 끝)는 `records.mjs closures`(마무리 기록 O — `annotations/closures.json`, 형식 docs/annotations.md "마무리 기록").
 - 사이트에 싣는 스토리별 공개 개요는 `node tools/synopsis.mjs`(`progress W9a` · `new <단위 …>` · `check` · `set … 확정`, 형식 docs/annotations.md "공개 개요").
 - 화면의 분류 이유 · 연대기 추정 이유를 팬용 문장으로 쓰는 것은 `node tools/blurbs.mjs`(`progress` · `new <단위 …>` · `check` · `set <단위> why|when 확정`, 형식 · 기준 docs/annotations.md "팬용 문장").
-- 떡밥 제목 · 요약을 읽은 자리마다 따로 쓰는 것은 `node tools/versions.mjs`(`progress` · `new J30 [--at 단위]` · `check` · `set J30 <at …> 확정`, 형식 · 기준 docs/annotations.md "시점별 판").
+- 떡밥 제목 · 요약을 읽은 자리마다 따로 쓰는 것은 `node tools/versions.mjs`(`progress` · `new J30 [--at 단위]` · `check` · `set J30 <at …> 확정` · 근거 `refs J30 <at> <ID …>` · 병렬 묶음 `batches`, 형식 · 기준 docs/annotations.md "시점별 판").
 
 ## 출시 순서 · 질의 — `tools/notices/` · `tools/query.mjs` (T3-7)
 
