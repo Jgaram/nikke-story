@@ -160,15 +160,15 @@ export function portrait(icon, { size = 32, class: cls = '' } = {}) {
 const KIND_ICONS = new Set(['side', 'event', 'episode', 'sub', 'relic', 'erelic', 'elevator']);
 /**
  * 스토리 종류 아이콘 — 모양은 style.css의 .kind-icon[data-kind] 마스크, 색은 종류 색(--kind-*).
- * unit을 주면 이벤트를 더 가른다: 픽업 이벤트(pickup)는 ✦(오버스펙 마크의 수리검 별 — 일반 이벤트는 테두리 마름모),
+ * unit을 주면 이벤트를 더 가른다(pickup: true면 unit 없이 ✦만 — 팝업 갈래 머리): 픽업 이벤트(pickup)는 ✦(오버스펙 마크의 수리검 별 — 일반 이벤트는 테두리 마름모),
  * 주년 · 반주년(anniv)은 케이크 배지(마스크가 자식을 자르므로 바깥 칸에 아이콘 · 배지를 나란히 둔다)
  */
-export function kindIcon(kind, { size = 18, class: cls = '', unit = null } = {}) {
+export function kindIcon(kind, { size = 18, class: cls = '', unit = null, pickup: asPickup = false } = {}) {
   if (!KIND_ICONS.has(kind)) return null;
-  const pickup = kind === 'event' && Boolean(unit?.pickup?.length);
-  const anniv = pickup ? unit.anniv : null;
+  const pickup = kind === 'event' && (asPickup || Boolean(unit?.pickup?.length));
+  const anniv = pickup ? unit?.anniv : null;
   const label = pickup ? fmt.eventMark(unit) : fmt.KIND[kind]?.label ?? kind;
-  const title = pickup ? `${label} — ${fmt.PICKUP_HELP(unit)}` : fmt.help('kind', kind) || label;
+  const title = pickup ? [label, fmt.PICKUP_HELP(unit)].filter(Boolean).join(' — ') : fmt.help('kind', kind) || label;
   const attrs = { role: 'img', 'aria-label': label, title };
   if (!anniv) {
     const node = el('span', { class: ['kind-icon', cls], ...attrs, dataset: pickup ? { kind, pickup: '1' } : { kind } });

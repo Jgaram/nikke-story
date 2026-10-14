@@ -218,6 +218,10 @@ p { margin: 0 0 8px; max-width: 72ch; }
 .cutoff-ex input { grid-row: 1 / 3; width: 16px; height: 16px; margin: 0; accent-color: var(--guard); cursor: pointer; }
 .cutoff-ex-title { font-size: 13.5px; font-weight: 600; overflow-wrap: anywhere; }
 .cutoff-ex-sub { font-size: 11.5px; }
+.cutoff-ex-icon { margin-right: 5px; }
+.cutoff-ex-icon.kind-mark { margin-right: 9px; }
+.cutoff-sec-name { display: inline-flex; align-items: center; gap: 6px; }
+.cutoff-fold > summary .kind-icon { margin-right: -4px; }
 .cutoff-ex.is-diff .cutoff-ex-title::after { content: " •"; color: var(--guard); }
 .cutoff-extra { font-size: 11.5px; font-weight: 600; color: var(--hd-guard-ink); }
 .cutoff-foot-gap { flex: 1 1 auto; }

@@ -66,10 +66,17 @@ export const KIND_HELP = {
   elevator: '돌발 스토리 — 전초기지 건물 대화(지금은 엘리베이터 첫 스토리만)',
   other: '그 밖의 스토리',
 };
-/** 픽업 이벤트(units.json pickup — 필그림 · 오버스펙 니케 1% 픽업과 함께 열린 이벤트) · 주년(anniv — 1 · 1.5 …) */
+/**
+ * 픽업 이벤트(units.json pickup — 필그림 · 오버스펙 니케 첫 모집과 함께 열린 이벤트) · 주년(anniv — 1 · 1.5 …)의 화면 이름.
+ * 화면에는 '주요' · '픽업'을 쓰지 않는다(사용자, 2026-10-14) — 주년이면 'N주년 이벤트', 아니면 철(12 · 1월 신년, 6–8월 여름)로 부른다
+ */
 export const annivLabel = (n) => (n ? `${n}주년` : '');
-export const eventMark = (u) => ['픽업 이벤트', annivLabel(u?.anniv)].filter(Boolean).join(' · ');
-export const PICKUP_HELP = (u) => `${(u?.pickup ?? []).join(' · ')} 픽업과 함께 열린 이벤트`;
+export function eventMark(u) {
+  if (u?.anniv) return `${annivLabel(u.anniv)} 이벤트`;
+  const m = Number(String(u?.date ?? '').slice(5, 7));
+  return m === 12 || m === 1 ? '신년 이벤트' : m >= 6 && m <= 8 ? '여름 이벤트' : u ? '이벤트' : '주년 · 신년 · 여름 이벤트';
+}
+export const PICKUP_HELP = (u) => (u?.pickup?.length ? `${u.pickup.join(' · ')} 모집과 함께 열린 이벤트` : '필그림 · 오버스펙 니케 첫 모집과 함께 열린 이벤트');
 
 // ── 등급 ──
 export const GRADE = {
@@ -287,7 +294,7 @@ export const FIRST_VISIT = {
   prev: '이전 챕터',
   next: '다음 챕터',
   groups: {
-    major: { head: '픽업 이벤트', hint: '필그림 · 오버스펙 픽업 — 주년 · 신년 · 여름' },
+    major: { head: '주년 · 신년 · 여름 이벤트', hint: '필그림 · 오버스펙 니케 첫 모집과 함께' },
     side: { head: '사이드' },
     event: { head: '이벤트', fold: true },
     episode: { head: '호감도', fold: true },
