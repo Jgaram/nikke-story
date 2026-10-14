@@ -91,12 +91,17 @@ export function init({ input, container, state, data, fmt, ui }) {
     };
     const hits = [];
     const R = state.reading();
+    const tgById = new Map(entries.filter((x) => x.tg).map((x) => [x.tg.id, x.tg]));
     for (const e of entries) {
       // 아직 안 나온 떡밥은 찾기에서 뺀다(W15a) — 나왔나 · 이름 · 요약은 그 자리 판(fmt.threadStarted · threadAt — W15d). 판이 아직 없으면 찾는 말이 없어 안 맞는다
       const ta = e.thread ? fmt.threadAt(e.thread, R) : null;
       if (ta && (!ta.started || !ta.title)) continue;
       if (e.tg && !fmt.met(e.tg, R)) continue; // 아직 안 나온 인물 · 항목도 뺀다(W15b)
-      const hit = e.tg ? { ...e, label: fmt.nameAt(e.tg, R), keys: nameKeys(e.tg, R) } : ta ? { ...e, label: ta.title, keys: [norm(ta.title), norm(ta.text)] } : e;
+      // 한 사람 한 카드(W24c) — 그 자리에서 같은 인물로 묶인 이름은 기본 이름 한 줄로, 묶인 이름 모두로 찾는다
+      const card = e.tg?.type === 'person' ? fmt.personAt(e.tg.id, R) : null;
+      if (card && card.head !== e.tg.id) continue;
+      const keys = card ? card.ids.flatMap((m) => (tgById.has(m) ? nameKeys(tgById.get(m), R) : [])) : e.tg ? nameKeys(e.tg, R) : null;
+      const hit = e.tg ? { ...e, label: fmt.nameAt(e.tg, R), keys } : ta ? { ...e, label: ta.title, keys: [norm(ta.title), norm(ta.text)] } : e;
       const s = score(hit);
       if (s) hits.push({ e: hit, s });
     }

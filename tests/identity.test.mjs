@@ -276,3 +276,34 @@ test('기본 이름(W24b) — 최근 10편 표: 편마다 가장 많이 보인 �
   assert.equal(head('person:한슨'), 'person:머스탱');
   assert.equal(head('person:피라'), 'person:라피');
 });
+
+test('화면 — 한 사람 한 카드(W24c): fmt.personAt은 밝혀진 연결만 잇고, 기본 이름(rank)으로 부른다', () => {
+  const R = (seen, all = false) => ({ all, seen: (u) => seen.includes(u), seenAny: (us) => us.some((u) => seen.includes(u)) });
+  const T = [
+    { id: 'person:마리안', type: 'person', name: '마리안', meet: ['ch00'], rank: 1, same_as: ['person:모더니아'], same_as_unit: ['ch07'] },
+    { id: 'person:모더니아', type: 'person', name: '모더니아', meet: ['ch06'], rank: 2, same_as: ['person:마리안'], same_as_unit: ['ch07'] },
+    { id: 'person:그레이브', type: 'person', name: '그레이브', meet: ['ch30'], rank: 1, same_as: ['person:언노운', 'person:에이브'], same_as_unit: ['ch30', 'ch34'] },
+    { id: 'person:언노운', type: 'person', name: '언노운', meet: ['ch28'], rank: 3, same_as: ['person:그레이브'], same_as_unit: ['ch30'] },
+    { id: 'person:에이브', type: 'person', name: '에이브', meet: ['ch34'], rank: 2, same_as: ['person:그레이브'], same_as_unit: ['ch34'] },
+    { id: 'person:라피', type: 'person', name: '라피', meet: ['ch00'] },
+  ];
+  fmt.use({ targets: new Map(T.map((t) => [t.id, t])) });
+  const at6 = R(['ch00', 'ch06']);
+  const at7 = R(['ch00', 'ch06', 'ch07']);
+  assert.deepEqual(fmt.personAt('person:모더니아', at6), { head: 'person:모더니아', ids: ['person:모더니아'] }, '드러나기 전에는 따로');
+  assert.deepEqual(fmt.personAt('person:모더니아', at7), { head: 'person:마리안', ids: ['person:마리안', 'person:모더니아'] });
+  assert.equal(fmt.nameAt(T[1], at6), '모더니아');
+  assert.equal(fmt.nameAt(T[1], at7), '마리안', '드러난 뒤에는 기본 이름');
+  assert.equal(fmt.ownNameAt(T[1], at7), '모더니아', '그 이름 그대로');
+  // 연결이 차례로 드러난다 — 언노운 → (ch30) 그레이브 → (ch34) 에이브
+  const at29 = R(['ch28']);
+  const at30 = R(['ch28', 'ch30']);
+  const at34 = R(['ch28', 'ch30', 'ch34']);
+  assert.deepEqual(fmt.personAt('person:언노운', at29).ids, ['person:언노운']);
+  assert.deepEqual(fmt.personAt('person:언노운', at30), { head: 'person:그레이브', ids: ['person:그레이브', 'person:언노운'] });
+  assert.deepEqual(fmt.personAt('person:에이브', at34).ids, ['person:그레이브', 'person:에이브', 'person:언노운']);
+  assert.deepEqual(fmt.personAt('person:에이브', R([], true)).head, 'person:그레이브', '전부 보기는 다 잇는다');
+  assert.equal(fmt.targetName('person:에이브', at34), '그레이브');
+  assert.equal(fmt.targetName('person:에이브', at30), '에이브', '에이브는 ch34 전에는 따로');
+  assert.deepEqual(fmt.personAt('person:라피', at7), { head: 'person:라피', ids: ['person:라피'] });
+});

@@ -171,7 +171,9 @@ export async function mount(root, ctx) {
   // 인물 · 항목 필터 후보 — 선에 걸린 항목, 걸린 선 수 순
   const targetUse = new Map();
   for (const e of edges) for (const t of e.targets) targetUse.set(t, (targetUse.get(t) ?? 0) + 1);
-  const targetList = [...targetUse].map(([id, n]) => ({ id, n, name: fmt.targetName(id), type: idx.targets.get(id)?.type, common: commonSet.has(id) }))
+  // 선은 이름(사전 대상)마다 — 같은 인물로 묶인 이름도 따로 고른다(W24c — 묶으면 드러나기 전 선이 정체를 흘린다). 그래서 고르기 이름은 그 이름 그대로(fmt.labelAt)
+  const ownName = (id) => (idx.targets.has(id) ? fmt.labelAt(idx.targets.get(id)) : fmt.targetName(id));
+  const targetList = [...targetUse].map(([id, n]) => ({ id, n, name: ownName(id), type: idx.targets.get(id)?.type, common: commonSet.has(id) }))
     .sort((x, y) => y.n - x.n || x.name.localeCompare(y.name, 'ko'));
   /**
    * 선이 떡밥 j에 드나(그 자리에서) — 선의 떡밥 갈래는 기록의 줄기라 결말을 아는 자리의 묶음이다(W15f). 그 자리 독자가 이 떡밥과 이어진 줄 아는
@@ -1296,7 +1298,7 @@ export async function mount(root, ctx) {
   function syncControls() {
     modeSeg.set(F.mode);
     strengthSeg.set(String(F.minS));
-    targetCombo.set(F.tg ? (inCutAny(F, 'targets', F.tg) ? fmt.targetName(F.tg) : LABELS.afterCut) : '');
+    targetCombo.set(F.tg ? (inCutAny(F, 'targets', F.tg) ? ownName(F.tg) : LABELS.afterCut) : '');
     cand = candidatesFor(F);
     rebuildThreadOptions();
     rebuildKindOptions();

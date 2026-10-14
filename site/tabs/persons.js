@@ -35,9 +35,10 @@
  *     기업 순서는 게임 마크 순(엘리시온 · 미실리스 · 테트라 · 필그림 · 앱노멀), 스쿼드 순서는 정렬 기준으로 가장 앞선 멤버 순. 칸을 누르면 인물별 보기로.
  *   머리: 초상(얼굴이 없으면 이름 첫 글자) · 이름(+ 회색 갈래 — 니케 · 랩쳐만, '인물'은 탭 이름과 같아 쓰지 않는다) · 소속 마크 · 다른 이름 · 같은 인물 ·
  *     "처음 등장 [스토리]" 하나. 그 첫 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만)을 덧붙인다(말함은 당연해서 쓰지 않는다).
- *     같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 보이고, 아니면 있다는 것 자체를 보이지 않는다.
- *     사칭(W23a — persons.json imp · 등장 행 pre · rev · as · by)은 드러난 스토리(rev)를 읽기 전에는 이름표 주인의 등장으로(fmt.rowAt), 읽은 뒤에는 사칭한 인물의 등장으로 센다.
- *     드러난 뒤에만 머리에 '사칭' 줄(상대 · 걸린 스토리), 등장 목록 줄에 'OO 행세' · 'OO의 사칭' 표 — 줄을 다 옮긴 스토리는 이름표 주인 목록에 흐린 줄로만 남는다(수 · 히트맵에서 뺀다).
+ *     한 사람 한 카드(W24c, 결정 #12): 같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 카드 하나로 묶고(fmt.personAt — 등장 · 기록 · 변화 · 관계 상대 ·
+ *     초상 · 소속 · 실장판을 합친다), 이름은 기본 이름(최근 10편 표 — targets rank), 묶인 이름은 '다른 이름'. 안 읽었으면 이름마다 따로 카드다(있다는 것 자체를 보이지 않는다).
+ *     다른 인물(W24a — persons.json imp · 등장 행 pre · rev · as · by)은 드러나는 스토리(rev)를 읽기 전에는 이름 주인의 등장으로(fmt.rowAt), 읽은 뒤에는 실제 사람의 등장으로 센다.
+ *     드러난 뒤에만 머리에 '다른 인물' 줄(상대 · 걸린 스토리), 등장 목록 줄에 'OO 이름으로' · '다른 인물'(누구인지는 도움말) 표 — 줄을 다 옮긴 스토리는 이름 주인 목록에 흐린 줄로만 남는다(수 · 히트맵에서 뺀다).
  *   실장판(W22 — targets.json vers): 머리 아래 표 — 판마다 이름 · 등급 · 기업 · 스쿼드 · 출시일(게임 시작 로스터는 '서비스 시작') · 지휘관 호칭(확정 호칭 기록 A, 다른 호칭은 회색).
  *     판은 그 출시 자리(tick)를 지났을 때만 보인다(게임 소속의 공개 자리와 같다). 실장판 이름은 '다른 이름'에서 뺀다. 도감 칸은 판이 둘 이상이면 왼쪽 위에 'N판'.
  *   칸은 든 것이 없으면 통째로 숨긴다(기록이 오기 전에는 기록 칸을 '불러오는 중'으로 둔다). 칸 머리의 수는 등장(N편) · 관계 상대(N명)만.
@@ -80,14 +81,13 @@ const LABELS = {
   notYetHelp: '위의 여기까지 읽음을 올리면 볼 수 있다.',
   detail: '인물 상세',
   alias: '다른 이름',
-  same: '같은 인물',
-  imp: '사칭',
-  impAs: (name) => `${name} 행세`,
-  impBy: (name) => `${name}의 사칭`,
-  impAsHelp: (name, me) => `이 스토리에서 ${name} 이름표로 말한 것은 ${me} — 그 줄은 ${me}의 등장으로 센다`,
-  impByHelp: (name, me) => `이 스토리에서 ${me} 이름표로 말한 것은 ${name} — 그 줄은 ${name}의 등장으로 센다`,
-  impAsTail: ' 행세 — ',
-  impByTail: (j) => `${j} 이 인물로 행세 — `,
+  imp: '다른 인물',
+  impAs: (name) => `${name} 이름으로`,
+  impBy: () => '다른 인물',
+  impAsHelp: (name, me) => `이 스토리에서 ${name} 이름으로 나온 것은 ${me} — 그 줄은 ${me}의 등장으로 센다`,
+  impByHelp: (name, me) => `이 스토리에서 ${me} 이름으로 나온 것은 실제로는 ${name} — 그 줄은 ${name}의 등장으로 센다`,
+  impAsTail: ' 이름으로 나옴 — ',
+  impByTail: (j) => `${j} 이 이름으로 나옴 — `,
   first: '처음 등장',
   quiet: { named: '이름만 나옴', seen: '등장만' },
   quietHelp: { named: '이 스토리에서는 말하지 않고 이름만 나온다', seen: '이 스토리에서는 이름 없이 모습만 나온다' },
@@ -164,10 +164,56 @@ export async function mount(root, ctx) {
   }
   loading.remove();
 
-  const P = new Map(persons.map((p) => [p.id, p]));
-  const D = new Map(detailArr.map((d) => [d.id, d]));
-  /** 찾기 글 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt) */
-  const hayOf = (p) => fmt.namesAt(idx.targets.get(p.id) ?? p, V.R).join(' ').toLowerCase();
+  const P0 = new Map(persons.map((p) => [p.id, p]));
+  const D0 = new Map(detailArr.map((d) => [d.id, d]));
+  // ── 한 사람 한 카드(W24c, 결정 #12) — 그 자리에서 같은 인물로 밝혀진 이름들(fmt.personAt)을 카드 하나로 묶는다. 카드 ID = 기본 이름(head — 최근 10편 표).
+  //    드러나기 전에는 이름마다 따로 카드다. 묶인 카드의 인물 · 상세 · 대상은 이름들의 것을 합친다(P · D · cardTarget — 그 자리마다 다시 만든다) ──
+  const cardMemo = new Map();
+  const cardOf = (id) => cardMemo.get(id) ?? cardMemo.set(id, fmt.personAt(id, V.R)).get(id);
+  const membersOf = (id) => cardOf(id).ids;
+  const isHead = (id) => cardOf(id).head === id;
+  const headOf = (id) => cardOf(id).head;
+  /** 기록이 이 카드의 사람을 다루나 — 묶인 이름 가운데 하나라도(그 자리 모습 fmt.recHas) */
+  const recHasCard = (r, id) => membersOf(id).some((m) => fmt.recHas(r, m, V.R));
+  const uniqBy = (xs, key) => { const m = new Map(); for (const x of xs) if (!m.has(key(x))) m.set(key(x), x); return [...m.values()]; };
+  const P = new Map();
+  P.has = (id) => P0.has(id);
+  P.get = (id) => {
+    const ms = P0.has(id) ? membersOf(id) : [id];
+    if (ms.length < 2) return P0.get(id);
+    const ps = ms.map((m) => P0.get(m)).filter(Boolean);
+    return { ...P0.get(id), imp: ps.flatMap((x) => x.imp ?? []), leads: [...new Set(ps.flatMap((x) => x.leads ?? []))], members: ms };
+  };
+  const D = new Map();
+  D.get = (id) => {
+    const ms = membersOf(id);
+    if (ms.length < 2) return D0.get(id);
+    const ds = ms.map((m) => D0.get(m)).filter(Boolean);
+    if (!ds.length) return undefined;
+    // 변화의 작중 차례(seq)는 이름마다 따로 셌다 — 묶으면 작중 자리(lo · hi)로 다시 줄 세운다(chrono-order.mjs changeTimeline과 같은 순서: 자리 → 처음 모습 먼저 → 공개 자리)
+    const ch = uniqBy(ds.flatMap((x) => x.changes), (c) => c.id);
+    const placed = ch.filter((c) => c.seq != null && c.lo != null).sort((x, y) => x.lo - y.lo || (x.hi ?? x.lo) - (y.hi ?? y.lo) || (x.act === '기준' ? 0 : 1) - (y.act === '기준' ? 0 : 1) || (x.tick ?? 0) - (y.tick ?? 0) || (x.order ?? 0) - (y.order ?? 0));
+    const changes = [...placed.map((c, i) => ({ ...c, seq: i + 1 })), ...ch.filter((c) => !placed.includes(c)).map((c) => ({ ...c, seq: undefined }))];
+    const rel = new Map();
+    for (const x of ds) for (const r of x.rel ?? []) { const cur = rel.get(r.with) ?? rel.set(r.with, { with: r.with, recs: [] }).get(r.with); for (const id of r.recs) if (!cur.recs.includes(id)) cur.recs.push(id); }
+    return { id, units: ds.flatMap((x) => x.units), records: [...new Set(ds.flatMap((x) => x.records))], changes, rel: [...rel.values()] };
+  };
+  /** 카드의 대상 — 초상 · 소속 · 실장판은 묶인 이름들의 것을 합친다(기본 이름의 것 먼저) */
+  const targetMemo = new Map();
+  const cardTarget = (id) => {
+    if (targetMemo.has(id)) return targetMemo.get(id);
+    const t = idx.targets.get(id);
+    const ts = membersOf(id).map((x) => idx.targets.get(x)).filter(Boolean);
+    const out = ts.length < 2 || !t ? t : {
+      ...t, icon: ts.find((x) => x.icon)?.icon, icons: ts.find((x) => x.icon)?.icons,
+      orgs: uniqBy(ts.flatMap((x) => x.orgs ?? []), (o) => `${o.type}|${o.org ?? o.name}|${o.via ?? ''}`), affs: uniqBy(ts.flatMap((x) => x.affs ?? []), (a) => `${a.id}|${a.imp?.side ?? ''}`),
+      vers: ts.flatMap((x) => x.vers ?? []), aliases: ts.flatMap((x) => x.aliases ?? []),
+    };
+    targetMemo.set(id, out);
+    return out;
+  };
+  /** 찾기 글 — 그 자리에서 아는 이름 · 다른 이름만(W15b, fmt.namesAt), 묶인 카드는 이름마다 */
+  const hayOf = (p) => membersOf(p.id).flatMap((m) => fmt.namesAt(idx.targets.get(m) ?? p, V.R)).join(' ').toLowerCase();
   /** 그 자리에서 부르는 이름(fmt.nameAt — 표준명이 아직이면 먼저 나온 다른 이름) */
   const nameOf = (id) => fmt.nameAt(idx.targets.get(id), V.R) ?? P.get(id)?.name ?? fmt.targetName(id);
   const kinds = [...new Set(persons.map((p) => p.kind).filter(Boolean))].sort((a, b) => (b === '니케') - (a === '니케') || cmpKo(a, b));
@@ -185,9 +231,28 @@ export async function mount(root, ctx) {
   };
   /** 등장 줄을 가리나 — 안 본 스토리, 또는 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — hid, W15f: 정체 숨김 장면을 그 인물의 등장으로 내면 정체가 샌다). 전부 보기는 다 보인다 */
   const offRow = (e) => hidden(e.unit) || (e.hid && !V.R.all);
-  /** 인물의 등장 행 — 그 자리 모습(W23a 사칭: 드러나기 전에는 이름표 주인으로, 뒤에는 사칭한 인물로 — fmt.rowAt). scenes 0 = 사칭으로 다 옮긴 스토리(이름표 주인 쪽 표시만) */
+  /** 카드의 등장 행 — 그 자리 모습(다른 인물 W24a: 드러나기 전에는 이름 주인으로, 뒤에는 실제 사람으로 — fmt.rowAt). scenes 0 = 다른 인물로 다 옮긴 스토리(이름 주인 쪽 표시만) */
   const rowsMemo = new Map();
-  const unitsNow = (pid) => rowsMemo.get(pid) ?? rowsMemo.set(pid, (D.get(pid)?.units ?? []).map((e) => fmt.rowAt(e, V.R))).get(pid);
+  const unitsNow = (pid) => {
+    if (rowsMemo.has(pid)) return rowsMemo.get(pid);
+    const ms = membersOf(pid);
+    let rows = ms.flatMap((m) => (D0.get(m)?.units ?? []).map((e) => fmt.rowAt(e, V.R)));
+    if (ms.length > 1) {
+      // 같은 스토리는 한 행 — 수는 더하고(한 줄에 두 이름이 함께 나오면 두 번 — 화면에 숫자로는 안 보인다), 이름이 하나라도 쓰였으면 hid를 푼다
+      const by = new Map();
+      for (const e of rows) {
+        const x = by.get(e.unit);
+        if (!x) { by.set(e.unit, { ...e }); continue; }
+        for (const k of ['scenes', 'lines', 'speaker', 'implied']) if (e[k] != null) x[k] = (x[k] ?? 0) + e[k];
+        x.hid = x.hid && e.hid ? 1 : undefined;
+        for (const k of ['as', 'by']) if (e[k]?.length) x[k] = [...(x[k] ?? []), ...e[k]];
+        if (!x.first_scene) x.first_scene = e.first_scene;
+      }
+      rows = [...by.values()].sort((x, y) => (idx.units.get(x.unit)?.order ?? 0) - (idx.units.get(y.unit)?.order ?? 0));
+    }
+    rowsMemo.set(pid, rows);
+    return rows;
+  };
   const recHidden = (r) => !V.R.known(r);
   /**
    * 떡밥의 그 자리 묶음(W15d) — { whole, ids(묶음 안 뿌리 · 본 단계 줄 · 복선의 기록), about(묶음 안 아는 뿌리가 다루는 대상) }.
@@ -217,14 +282,17 @@ export async function mount(root, ctx) {
     hideMemo.clear();
     bundleMemo.clear();
     rowsMemo.clear();
+    cardMemo.clear();
+    targetMemo.clear();
     agg = new Map();
     const R = recs();
     for (const p of persons) {
+      if (!isHead(p.id)) { agg.set(p.id, { merged: true, visible: false, met: true, hasData: false }); continue; } // 같은 인물로 묶여 기본 이름 카드에 들었다(W24c)
       const d = D.get(p.id);
       const a = { scenes: 0, units: 0, cut: 0, firstUnit: null, firstEntry: null, firstOrder: Infinity, changes: 0, chCut: 0, recs: null, recCut: 0, hasData: Boolean(d) };
       if (d) {
         for (const e of unitsNow(p.id)) {
-          if (!e.scenes) { if (e.pre?.scenes && !hidden(e.unit)) a.known = true; continue; } // 사칭으로 다 옮긴 스토리 — 이 인물의 등장이 아니다(W23a). 드러나기 전에는 보던 인물(known)
+          if (!e.scenes) continue; // 다른 인물로 다 옮긴 스토리 — 이 인물의 등장이 아니다(W24a)
           if (hidden(e.unit)) { a.cut++; continue; }
           if (offRow(e)) continue; // 이름 안 쓰인 등장은 가린 수에도 안 센다(있다는 것이 샌다)
           a.scenes += e.scenes; a.units++;
@@ -232,20 +300,19 @@ export async function mount(root, ctx) {
           if (o < a.firstOrder) { a.firstOrder = o; a.firstUnit = e.unit; a.firstEntry = e; }
         }
         const fool = (k) => Boolean(idx.units.get(k)?.fool); // 만우절 — 목록에는 남기고 수에서는 뺀다(결정 #11)
-        for (const c of d.changes) { if (fool(c.unit) || !fmt.recHas(c, p.id, V.R)) continue; if (hidden(c.unit)) a.chCut++; else a.changes++; }
+        for (const c of d.changes) { if (fool(c.unit) || !recHasCard(c, p.id)) continue; if (hidden(c.unit)) a.chCut++; else a.changes++; }
         if (R) {
           a.recs = 0;
           for (const id of d.records) {
             const r = R.get(id);
-            if (!r || fool(r.unit) || !fmt.recHas(r, p.id, V.R)) continue; // 사칭에 가려지는 기록은 그 자리 모습의 인물에게만(W23b)
+            if (!r || fool(r.unit) || !recHasCard(r, p.id)) continue; // 다른 인물 줄을 근거로 한 기록은 그 자리 모습의 인물에게만(W24a)
             if (recHidden(r)) a.recCut++; else a.recs++;
           }
         }
       }
       // 이름이 나온 인물만(W15b — 이름표 '???'나 암시 언급으로만 나온 인물은 아직 안 나옴)
       a.met = fmt.met(idx.targets.get(p.id), V.R);
-      // 이름 승계 사칭(W23e)의 b(독자가 알던 머스탱)는 드러난 뒤 등장이 모두 한슨 · 진짜 머스탱에게 가도 보던 인물이라 남긴다(머리의 '같은 인물'로 잇는다)
-      a.visible = a.met && (a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0 || Boolean(a.known && fmt.sameAsKnown(idx.targets.get(p.id), V.R).length));
+      a.visible = a.met && (a.scenes > 0 || (a.recs ?? 0) > 0 || a.changes > 0);
       agg.set(p.id, a);
     }
     const lappy = agg.get('person:라피');
@@ -257,9 +324,9 @@ export async function mount(root, ctx) {
   const isDex = () => DEX_VIEWS.includes(prm('view'));
   const whoId = () => {
     const w = prm('who');
-    if (w && P.has(w)) return w;
+    if (w && P.has(w)) return headOf(w);
     const sel = state.parseSel(state.get().sel);
-    if (sel?.type === 'person' && P.has(sel.id)) return sel.id;
+    if (sel?.type === 'person' && P.has(sel.id)) return headOf(sel.id);
     return defaultWho;
   };
   const selectPerson = (id, { replace = false } = {}) => {
@@ -283,13 +350,13 @@ export async function mount(root, ctx) {
       u.fool ? [' ', ui.chip('grade', '만우절')] : null); // 만우절 — 수에서 뺐지만 기록은 남긴다(결정 #11)
   };
   /** 얼굴 — 그 자리 모습의 초상, 없으면 이름 첫 글자 칸(머리 · 도감) */
-  const face = (id, size, cls) => ui.portrait(fmt.iconAt(idx.targets.get(id), V.T), { size, class: cls })
+  const face = (id, size, cls) => ui.portrait(fmt.iconAt(cardTarget(id), V.T), { size, class: cls })
     ?? el('span', { class: ['pm-noface', cls], style: { width: `${size}px`, height: `${size}px`, fontSize: `${Math.round(size * 0.4)}px` }, 'aria-hidden': 'true' }, [...(nameOf(id) ?? '?')][0]);
   /** 그 자리에서 보이는 실장판(W22 — targets.json vers): 판이 보이는 자리(tick — 그 판의 출시)를 지났으면. tick이 없으면 전부 보기에서만 */
-  const versAt = (id) => (idx.targets.get(id)?.vers ?? []).filter((v) => V.R.all || (v.tick != null && v.tick <= V.R.t));
+  const versAt = (id) => (cardTarget(id)?.vers ?? []).filter((v) => V.R.all || (v.tick != null && v.tick <= V.R.t));
   /** 그 스토리에서 말이 없으면 '이름만 나옴' · '등장만'(말했으면 null — 당연해서 쓰지 않는다) */
-  /** 사칭 표(W23a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 사칭한 쪽은 'OO 행세', 이름표 주인 쪽은 'OO의 사칭'.
-   *  표는 이름표에 뜬 이름(표준명 — '머스탱 행세'), 동명이인 구분 이름('머스탱 (한슨의 아버지)')은 도움말에(W23e — 줄 표가 길면 스토리 이름이 잘린다) */
+  /** 다른 인물 표(W24a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 실제 사람 쪽은 'OO 이름으로', 이름 주인 쪽은 '다른 인물'(누구인지는 도움말).
+   *  표는 이름표에 뜬 이름(표준명 — '머스탱 이름으로'), 동명이인 구분 이름('머스탱 (한슨의 아버지)')은 도움말에(줄 표가 길면 스토리 이름이 잘린다) */
   const plainName = (id) => idx.targets.get(id)?.name ?? nameOf(id);
   const impChips = (p, e) => [
     ...(e.as ?? []).map((id) => el('span', { class: 'pm-kind pm-imp', title: LABELS.impAsHelp(nameOf(id), nameOf(p.id)) }, LABELS.impAs(plainName(id)))),
@@ -338,7 +405,7 @@ export async function mount(root, ctx) {
       if (!a.visible) { if (a.hasData && (a.cut || a.recCut || a.chCut || !a.met)) hiddenPersons++; continue; }
       if (kind !== 'all' && p.kind !== kind) continue;
       if ((pl === '1' || pl === '0') && (versAt(p.id).length > 0) !== (pl === '1')) continue;
-      if (lead && !leadNow(p)) continue;
+      if (lead && !leadNow(P.get(p.id))) continue;
       if (find_ && !hayOf(p).includes(find_)) continue;
       rows.push({ id: p.id, p, a, name: nameOf(p.id), scenes: a.scenes, firstOrder: a.firstOrder });
     }
@@ -355,8 +422,8 @@ export async function mount(root, ctx) {
     const frag = document.createDocumentFragment();
     for (const [i, r] of rowsNow.entries()) {
       frag.append(el('div', { class: ['pm-item', r.id === who ? 'is-sel' : ''], role: 'option', id: `pm-opt-${i}`, 'aria-selected': String(r.id === who), dataset: { id: r.id, i } },
-        ui.portrait(fmt.iconAt(idx.targets.get(r.id), V.T), { size: 24, class: 'pm-item-pic' }) ?? el('span', { class: 'pm-item-pic' }),
-        el('span', { class: 'pm-item-who' }, el('span', { class: 'pm-item-name' }, r.name), ui.orgMarks(fmt.orgsAt(idx.targets.get(r.id), V.R, { past: true }), { size: 14, bare: true }))));
+        ui.portrait(fmt.iconAt(cardTarget(r.id), V.T), { size: 24, class: 'pm-item-pic' }) ?? el('span', { class: 'pm-item-pic' }),
+        el('span', { class: 'pm-item-who' }, el('span', { class: 'pm-item-name' }, r.name), ui.orgMarks(fmt.orgsAt(cardTarget(r.id), V.R, { past: true }), { size: 14, bare: true }))));
     }
     listEl.replaceChildren(frag);
     if (!rowsNow.length) listEl.append(el('div', { class: 'empty pm-empty' }, hiddenPersons ? LABELS.noneCut : LABELS.none));
@@ -403,7 +470,7 @@ export async function mount(root, ctx) {
   const orgKey = (o) => o.org ?? o.name;
   /** 묶을 소속 하나씩 — 기업 하나 · 스쿼드 하나(게임 스쿼드 → 사전 스쿼드 → 그 밖의 무리). 다른 판(via) 소속은 뺀다 */
   const groupOf = (id) => {
-    const os = fmt.orgsAt(idx.targets.get(id), V.R).filter((o) => !o.via);
+    const os = fmt.orgsAt(cardTarget(id), V.R).filter((o) => !o.via);
     const squads = os.filter((o) => o.type === 'squad');
     const squad = squads.find((o) => o.source === 'game') ?? squads.find((o) => idx.targets.get(o.org)?.kind === '스쿼드') ?? squads[0] ?? null;
     return { corp: os.find((o) => o.type === 'corp') ?? null, squad };
@@ -448,8 +515,8 @@ export async function mount(root, ctx) {
           el('div', { class: 'pm-dex-grid' }, b.members.map(({ r, corp }) => dexCard(r, who, s.mixed ? corp : null))))))));
     }
     if (none.length) {
-      const withFace = none.filter((r) => fmt.iconAt(idx.targets.get(r.id), V.T));
-      const noFace = none.filter((r) => !fmt.iconAt(idx.targets.get(r.id), V.T));
+      const withFace = none.filter((r) => fmt.iconAt(cardTarget(r.id), V.T));
+      const noFace = none.filter((r) => !fmt.iconAt(cardTarget(r.id), V.T));
       out.push(el('section', { class: 'pm-dex-sec' }, el('h3', { class: 'pm-dex-head' }, LABELS.dex.none),
         withFace.length ? el('div', { class: 'pm-dex-grid' }, withFace.map((r) => dexCard(r, who))) : null,
         noFace.length ? el('p', { class: 'pm-dex-names' }, noFace.map((r, i) => [i ? el('span', { class: 'pm-sep', 'aria-hidden': 'true' }, '·') : null, el('button', { type: 'button', class: ['link-btn pm-dex-card is-name', r.id === who ? 'is-sel' : ''], dataset: { id: r.id } }, r.name)])) : null));
@@ -538,16 +605,17 @@ export async function mount(root, ctx) {
     ui.clear(head);
     const p = P.get(whoId());
     const a = agg.get(p.id);
-    const tg = idx.targets.get(p.id);
+    const tg = cardTarget(p.id);
     const facts = [];
     if (a.visible) {
       const verNames = new Set(versAt(p.id).map((v) => v.name));
-      const aliases = fmt.aliasesAt(tg, V.R).map((x) => x.name).filter((n) => !verNames.has(n)); // 그 자리에서 아는 다른 이름만(W15b). 실장판 이름은 실장판 칸에
+      // 다른 이름 — 그 자리에서 아는 것만(W15b). 같은 인물로 묶인 이름(W24c — 드러난 뒤에만 묶인다)과 그 이름들의 다른 이름도. 실장판 이름은 실장판 칸에
+      const shown = nameOf(p.id);
+      const ms = membersOf(p.id).map((m) => idx.targets.get(m)).filter(Boolean);
+      const aliases = [...new Set([...ms.slice(1).map((t) => fmt.ownNameAt(t, V.R)), ...ms.flatMap((t) => fmt.aliasesAt(t, V.R).map((x) => x.name))])]
+        .filter((n) => n && n !== shown && !verNames.has(n));
       if (aliases.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.alias), el('span', {}, aliases.join(' · '))));
-      // 같은 인물(정체 연결)은 밝혀지는 단위를 읽었을 때만 — 안 읽었으면 있다는 것 자체를 보이지 않는다
-      const same = fmt.sameAsKnown(p, V.R);
-      if (same.length) facts.push(el('div', { class: 'pm-fact' }, el('span', { class: 'pm-fact-l' }, LABELS.same), el('span', {}, same.map((s, i) => [i ? ' · ' : null, P.has(s) ? personLink(s) : ui.link(`person:${s}`, fmt.targetName(s))]))));
-      // 사칭(W23a) — 드러난 것만(드러나기 전에는 있다는 것 자체를 보이지 않는다). 같은 인물과 달리 둘은 다른 인물이다
+      // 다른 인물(W24a — split) — 드러난 것만(드러나기 전에는 있다는 것 자체를 보이지 않는다). 같은 인물과 달리 둘은 다른 사람이다
       for (const x of (p.imp ?? []).filter((x) => fmt.impKnown(x, V.R))) {
         const other = x.as ?? x.by;
         const who = P.has(other) ? personLink(other) : ui.link(`person:${other}`, fmt.targetName(other));
@@ -579,9 +647,9 @@ export async function mount(root, ctx) {
   const mineRecs = (p) => {
     const R = recs();
     if (!R) return null;
-    return (D.get(p.id)?.records ?? []).map((id) => R.get(id)).filter((r) => r && !recHidden(r) && fmt.recHas(r, p.id, V.R));
+    return (D.get(p.id)?.records ?? []).map((id) => R.get(id)).filter((r) => r && !recHidden(r) && recHasCard(r, p.id));
   };
-  const visibleChanges = (p) => (D.get(p.id)?.changes ?? []).filter((c) => !hidden(c.unit) && fmt.recHas(c, p.id, V.R));
+  const visibleChanges = (p) => (D.get(p.id)?.changes ?? []).filter((c) => !hidden(c.unit) && recHasCard(c, p.id));
   /**
    * 관계 상대(W21) — 아는 기록이 하나라도 있고 이름이 나온 상대만, 처음 이어진 차례로(수 · 순위 없음). 기록이 오기 전에는 null.
    * { id, flow[](변화 D), ends[](결말 O · 함께 맺음 H), fool(만우절 기록뿐 — 수에서 뺀다) }
@@ -589,13 +657,21 @@ export async function mount(root, ctx) {
   const relRows = (p) => {
     const R = recs();
     if (!R) return null;
-    const out = [];
+    // 상대도 그 자리의 카드로(W24c) — 같은 사람의 다른 이름끼리는 한 상대, 자기 카드와의 쌍은 뺀다
+    const by = new Map();
     for (const x of D.get(p.id)?.rel ?? []) {
-      if (!agg.get(x.with)?.met) continue;
-      const rs = x.recs.map((id) => R.get(id)).filter((r) => r && !recHidden(r) && fmt.recHas(r, p.id, V.R) && fmt.recHas(r, x.with, V.R));
+      if (!agg.get(x.with)?.met && !agg.get(headOf(x.with))?.met) continue;
+      const w = headOf(x.with);
+      if (w === p.id) continue;
+      const rs = x.recs.map((id) => R.get(id)).filter((r) => r && !recHidden(r) && recHasCard(r, p.id) && recHasCard(r, w));
       if (!rs.length) continue;
-      out.push({ id: x.with, flow: rs.filter((r) => r.kind === 'D'), ends: rs.filter((r) => r.kind === 'O' || r.kind === 'H'), first: rs[0].order ?? 0, fool: rs.every((r) => idx.units.get(r.unit)?.fool) });
+      const cur = by.get(w) ?? by.set(w, { id: w, rs: [] }).get(w);
+      for (const r of rs) if (!cur.rs.includes(r)) cur.rs.push(r);
     }
+    const out = [...by.values()].map(({ id, rs }) => {
+      rs.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+      return { id, flow: rs.filter((r) => r.kind === 'D'), ends: rs.filter((r) => r.kind === 'O' || r.kind === 'H'), first: rs[0].order ?? 0, fool: rs.every((r) => idx.units.get(r.unit)?.fool) };
+    });
     return out.sort((x, y) => x.first - y.first); // 같으면 내보낸 차례(쌍이 처음 나온 자리 순)
   };
   const threadRows = (p, mine) => {
@@ -631,7 +707,7 @@ export async function mount(root, ctx) {
   const usLimit = new Map();
   const usFirst = (k, n) => (n <= (k === 'main' ? 36 : 20) ? n : k === 'main' ? 24 : 12);
   const usSeg = ui.segmented({ label: LABELS.usLabel, options: [{ value: 'order', label: LABELS.us.order }, { value: 'speak', label: LABELS.us.speak }], value: prm('us') === 'speak' ? 'speak' : 'order', onChange: (v) => state.setParam('persons', 'us', v === 'speak' ? 'speak' : null) });
-  // 사칭으로 다 옮긴 스토리(scenes 0)는 드러난 뒤 이름표 주인 쪽에 'OO의 사칭'으로만 남긴다(W23a — 양쪽 표시)
+  // 다른 인물로 다 옮긴 스토리(scenes 0)는 드러난 뒤 이름 주인 쪽에 '다른 인물'(누구인지는 도움말)로만 남긴다(양쪽 표시)
   const storyRows = (p) => unitsNow(p.id).filter((e) => !offRow(e) && idx.units.has(e.unit) && (e.scenes || e.by));
   /** 등장 칸 아래의 제목 목록 — 히트맵과 같은 등장을 종류마다 글로 늘어놓는다(앞 점 = 말한 양) */
   const storyList = (p, box) => {
@@ -794,7 +870,7 @@ export async function mount(root, ctx) {
       });
       for (const r of x.ends) rows.append(relEnd(r));
       ul.append(el('li', { class: 'pm-rel' },
-        el('div', { class: 'pm-rel-head' }, ui.portrait(fmt.iconAt(idx.targets.get(x.id), V.T), { size: 22, class: 'pm-rel-pic' }) ?? el('span', { class: 'pm-rel-pic' }), personLink(x.id)),
+        el('div', { class: 'pm-rel-head' }, ui.portrait(fmt.iconAt(cardTarget(x.id), V.T), { size: 22, class: 'pm-rel-pic' }) ?? el('span', { class: 'pm-rel-pic' }), personLink(x.id)),
         rows));
     }
     sec.body.append(ul);
@@ -820,7 +896,7 @@ export async function mount(root, ctx) {
     return c.act === '변화' ? `${fmt.prose(r.before) || '?'} → ${fmt.prose(r.after) || '?'}` : fmt.prose(r.text);
   };
   const withLink = (c) => {
-    const w = fmt.recAt(c, V.R).with; // 사칭에 가려지는 상대(W23b)
+    const w = fmt.recAt(c, V.R).with; // 다른 인물 줄을 근거로 한 상대(W24a — 드러나기 전 모습)
     return w ? (P.has(w) ? personLink(w) : ui.link(`target:${w}`, fmt.targetName(w))) : null;
   };
   const secChanges = makeSection('changes', LABELS.sec.changes, (p, a, sec) => {

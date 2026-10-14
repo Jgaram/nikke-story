@@ -276,10 +276,19 @@ function peoplePanel(key, hidden, idx) {
     // ('???'로만 말함 — 정체 숨김 장면, hid) 읽는 중에는 뺀다(W15f). 접은 스토리는 전부
     const R = hidden ? null : state.reading();
     const masked = (r) => r.hid && R && !R.all;
-    // 사칭(W23a) — 드러난 스토리를 봤으면 사칭한 인물로, 아니면 이름표 주인으로. 접은 스토리는 그 스토리가 드러나는 자리일 때만 사칭한 인물로
+    // 다른 인물(W24a) — 드러나는 스토리를 봤으면 실제 사람으로, 아니면 이름 주인으로. 접은 스토리는 그 스토리가 드러나는 자리일 때만 실제 사람으로
     const now = state.reading();
-    const Rimp = { all: now.all, seen: (u) => now.seen(u) || (hidden && u === key) };
-    const list = (people.byUnit.get(key) ?? []).map((r) => rowNow(r, Rimp)).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R)).sort((a, b) => b.speaker - a.speaker);
+    const Rimp = { all: now.all, seen: (u) => now.seen(u) || (hidden && u === key), seenAny: (us) => us.some((u) => now.seen(u) || (hidden && u === key)) };
+    const rows = (people.byUnit.get(key) ?? []).map((r) => rowNow(r, Rimp)).filter((r) => r.speaker > 0 && !masked(r) && r.id !== 'person:지휘관' && idx.targets.has(r.id) && fmt.met(idx.targets.get(r.id), R));
+    // 한 사람 한 카드(W24c) — 그 자리에서 같은 인물로 묶인 이름은 한 사람으로(기본 이름, 말한 양을 더한다)
+    const byHead = new Map();
+    for (const r of rows) {
+      const card = fmt.personAt(r.id, R ?? Rimp);
+      const x = byHead.get(card.head);
+      if (x) x.speaker += r.speaker;
+      else byHead.set(card.head, { ...r, id: card.head, ids: card.ids });
+    }
+    const list = [...byHead.values()].sort((a, b) => b.speaker - a.speaker);
     if (!list.length) return;
     // 초상은 그 스토리 자리의 모습(사용자, 2026-10-14 — 여기까지 읽음이 아니라). 바뀐 모습은 메인 챕터에서 오므로 본 스토리라도
     // 여기까지 읽음 뒤 메인의 모습은 쓰지 않는다(봤음으로 고른 뒤 이벤트). 접은 스토리는 그 자리 그대로, 자리 없는 스토리면 여기까지 읽음
@@ -288,7 +297,7 @@ function peoplePanel(key, hidden, idx) {
     const T = at == null ? cut : hidden || cut == null ? at : Math.min(at, cut);
     const face = (r) => {
       const t = idx.targets.get(r.id);
-      const icon = fmt.iconAt(t, T);
+      const icon = r.ids.map((m) => fmt.iconAt(idx.targets.get(m), T)).find(Boolean);
       const name = fmt.nameAt(t, R) ?? t.name;
       return ui.link(`person:${r.id}`, [
         icon ? ui.portrait(icon, { size: 44, class: 'rd-face' }) : ui.el('span', { class: 'rd-face rd-face-blank', 'aria-hidden': 'true' }, [...name][0]),
@@ -604,7 +613,7 @@ const kindsTitle = (records) => {
 /** 인물의 처음 등장(여기까지 읽음 안 — 본 스토리 가운데 가장 앞) + 그 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만). 인물 탭 머리(quietOf)와 같은 규칙 */
 function firstAppearance(pid, idx) {
   const R = state.reading();
-  const rows = (people?.byPerson.get(pid) ?? []).map((r) => rowNow(r, R)).filter((x) => x.scenes > 0); // 사칭으로 줄을 다 옮긴 스토리는 등장이 아니다(W23a)
+  const rows = fmt.personAt(pid, R).ids.flatMap((m) => people?.byPerson.get(m) ?? []).map((r) => rowNow(r, R)).filter((x) => x.scenes > 0); // 다른 인물로 줄을 다 옮긴 스토리는 등장이 아니다(W24a). 같은 인물로 묶인 이름은 함께(W24c)
   const seen = rows.filter((x) => idx.units.has(x.unit) && R.seen(x.unit) && (R.all || !x.hid)); // '???'로만 나온 스토리는 읽는 중에는 처음 등장이 아니다(W15f)
   if (!seen.length) return null;
   const first = seen.reduce((a, b) => ((idx.units.get(a.unit).order ?? 0) <= (idx.units.get(b.unit).order ?? 0) ? a : b));
@@ -773,14 +782,19 @@ const RENDER = {
     }
     const out = shown ? root : ui.el('div', {});
     const RR = shown ? R : null; // 접이 안은 전부 보기와 같게 — 표준명 · 다른 이름 전부
-    const same = fmt.sameAsKnown(t, R);
+    // 한 사람 한 카드(W24c) — 그 자리에서 같은 인물로 묶인 이름은 한 사람: 이름은 기본 이름, 묶인 이름은 다른 이름, 기록 · 초상 · 소속은 합친다
+    const card = isPerson && shown ? fmt.personAt(id, R) : { head: id, ids: [id] };
+    const ts = card.ids.map((m) => idx.targets.get(m)).filter(Boolean);
+    const same = isPerson ? [] : fmt.sameAsKnown(t, R);
     const sameRow = same.length ? joinNodes(same.map((s) => ui.link(`${s.startsWith('person:') ? 'person' : 'target'}:${s}`, fmt.targetName(s)))) : null;
-    const aliasList = fmt.aliasesAt(t, RR);
-    const aliases = aliasList.length ? aliasList.map((a) => a.name).join(' · ') : null;
     const name = fmt.nameAt(t, RR) ?? t.name;
-    const recs = (idx.recordsAbout.get(id) ?? []).filter((r) => fmt.recHas(r, id, state.reading())); // 사칭 가림(W23b) — 그 자리 모습의 대상만
+    const aliasNames = [...new Set([...ts.map((x) => fmt.ownNameAt(x, RR)), ...ts.flatMap((x) => fmt.aliasesAt(x, RR).map((a) => a.name))])].filter((n) => n && n !== name);
+    const aliases = aliasNames.length ? aliasNames.join(' · ') : null;
+    const recs = [...new Set(card.ids.flatMap((m) => (idx.recordsAbout.get(m) ?? []).filter((r) => fmt.recHas(r, m, state.reading()))))] // 다른 인물 가림(W24a) — 그 자리 모습의 대상만
+      .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     if (isPerson) {
-      out.append(shown ? head(name, [ui.orgMarks(fmt.orgsAt(t, state.reading(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
+      const orgs = ts.flatMap((x) => fmt.orgsAt(x, state.reading(), { past: true })).filter((o, i, xs) => xs.findIndex((y) => y.type === o.type && (y.org ?? y.name) === (o.org ?? o.name)) === i);
+      out.append(shown ? head(name, [ui.orgMarks(orgs, { size: 16 })], null, ui.portrait(ts.map((x) => fmt.iconAt(x, T())).find(Boolean), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
       const fa = firstAppearance(id, idx);
       out.append(ui.panel(null, kv([
         row(LABELS.aliases, aliases),

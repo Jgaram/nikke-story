@@ -20,10 +20,11 @@
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   sceneTitle(scene) · sceneLabel(scene)   장면 제목은 그 스토리를 봤을 때만(안 봤으면 '2장면' — 사용자 2026-10-10). useReading(fn)으로 읽음 판정을 묶는다
- *   targetName(id, R?)              'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명 — 화면 이름 labelAt: 동명이인 구분, W23d)
- *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
- *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
- *   rowAt(e, R) · recAt(r, R) · recHas(r, pid, R)   사칭(W23a · b) — 등장 행 · 기록의 그 자리 모습(드러나기 전에는 이름표 주인) · 그 모습이 그 인물을 다루나
+ *   targetName(id, R?)              'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명 — 화면 이름 labelAt: 동명이인 구분, W23d. 같은 인물로 묶였으면 그 사람의 기본 이름)
+ *   personAt(id, R)                 그 자리에서 한 사람으로 묶인 이름들 { head(기본 이름 — rank), ids }(W24c, 결정 #12 — 드러나기 전에는 따로)
+ *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(같은 인물로 묶였으면 그 사람의 기본 이름, 표준명이 아직이면
+ *                                   먼저 나온 다른 이름, 안 나왔으면 null — ownNameAt은 묶음을 보지 않는다) · 아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
+ *   rowAt(e, R) · recAt(r, R) · recHas(r, pid, R)   다른 인물(W23a → W24a) — 등장 행 · 기록의 그 자리 모습(드러나기 전에는 이름 주인) · 그 모습이 그 인물을 다루나
  *   recordText(r) · recordLabel(r)  기록 한 줄(prose를 거친다 — 회수 줄에 문장이 없으면 답의 문장) · 종류 라벨(사건은 act까지)
  *   stateAt(r, T)                   사실 · 의문의 T 상태(docs/views.md "공개 축" 규칙)
  *   TAB · TAB_ORDER · openInTab(tab)   탭 이름 · 한 줄 설명 · '연결 탭에서 보기'
@@ -602,12 +603,47 @@ const metOrder = (a) => idx?.units.get(a.meet?.[0])?.order ?? 1e9;
 const aliasKnown = (target, a, R) => (!R || R.all ? true : a.never ? false : a.meet ? R.seenAny(a.meet) : nameKnown(target, R));
 /** 표준명을 그 자리에서 아나 — 대상이 나왔고, 표준명이 늦게 나오면(name_meet) 그곳을 봤을 때 */
 const nameKnown = (target, R) => met(target, R) && (!R || R.all || (!target.name_never && (!target.name_meet || R.seenAny(target.name_meet))));
-/** 그 자리에서 부르는 이름 — 표준명을 알면 표준명, 아니면 먼저 나온 다른 이름. 대상이 아직 안 나왔으면 null(화면은 '아직 나오지 않은 인물 · 항목') */
-export function nameAt(target, R) {
+/** 그 이름 하나를 그 자리에서 부르는 말 — 표준명을 알면 표준명, 아니면 먼저 나온 다른 이름. 아직 안 나왔으면 null. 같은 인물 묶음은 보지 않는다(nameAt이 본다) */
+export function ownNameAt(target, R) {
   if (!target || !met(target, R)) return null;
   if (nameKnown(target, R)) return labelAt(target);
   const known = (target.aliases ?? []).filter((a) => a.meet && aliasKnown(target, a, R)).sort((a, b) => metOrder(a) - metOrder(b));
   return known[0]?.name ?? target.name;
+}
+/**
+ * 그 자리에서 한 사람으로 묶인 이름들(W24c, 결정 #12) — 같은 인물(same_as) 가운데 밝혀지는 단위(same_as_unit)를 읽은 연결로 이어진, 이름이 나온 인물.
+ * head = 이름 순위(targets rank — 최근 10편 표, W24b)가 가장 앞인 이름(같으면 ID 순), ids = 묶음(head 먼저). 묶음이 없으면 { head: id, ids: [id] }.
+ * R이 없거나 전부 보기면 확정 연결을 다 잇는다. 인물 탭 카드 · 부르는 이름(nameAt · targetName)이 쓴다.
+ */
+export function personAt(id, R) {
+  const t0 = idx?.targets.get(id);
+  if (!t0?.same_as?.length) return { head: id, ids: [id] };
+  const seen = new Set([id]);
+  const queue = [t0];
+  while (queue.length) {
+    const t = queue.shift();
+    (t.same_as ?? []).forEach((x, i) => {
+      if (seen.has(x) || !String(x).startsWith('person:')) return;
+      const u = t.same_as_unit?.[i];
+      if (R && !R.all && !(u && R.seen(u))) return;
+      const tx = idx.targets.get(x);
+      if (!tx || !met(tx, R)) return;
+      seen.add(x);
+      queue.push(tx);
+    });
+  }
+  const rank = (x) => idx.targets.get(x)?.rank ?? Infinity;
+  const ids = [...seen].sort((a, b) => rank(a) - rank(b) || a.localeCompare(b));
+  return { head: ids[0], ids };
+}
+/** 그 자리에서 부르는 이름 — 같은 인물로 묶였으면 그 사람의 기본 이름(personAt head), 아니면 ownNameAt. 대상이 아직 안 나왔으면 null(화면은 '아직 나오지 않은 인물 · 항목') */
+export function nameAt(target, R) {
+  if (!target || !met(target, R)) return null;
+  if (target.type === 'person' && target.same_as?.length) {
+    const { head } = personAt(target.id, R);
+    if (head !== target.id) return ownNameAt(idx.targets.get(head), R);
+  }
+  return ownNameAt(target, R);
 }
 /**
  * 글 속에 그 자리에서 모르는 대상 이름이 낱말 첫머리로 나오나(W15d) — 결말을 아는 자리에서 쓴 분석 문장(떡밥끼리 관계 설명 등)이
@@ -1000,10 +1036,11 @@ export function labelAt(target) {
   return target.label ?? target.name;
 }
 
-/** 대상 ID → 화면 이름. R(state.reading 모양)을 안 주면 지금 읽은 자리(useReading) — 묶이지 않았으면(도구) 전부 보기. `.map(targetName)`의 순번은 R로 치지 않는다 */
+/** 대상 ID → 화면 이름. 같은 인물로 묶였으면 그 사람의 기본 이름(W24c — personAt). R(state.reading 모양)을 안 주면 지금 읽은 자리(useReading) — 묶이지 않았으면(도구) 전부 보기. `.map(targetName)`의 순번은 R로 치지 않는다 */
 export function targetName(id, R) {
   if (!id) return '';
   const t = idx?.targets.get(id);
+  if (t?.type === 'person' && t.same_as?.length) return labelAt(idx.targets.get(personAt(id, R && typeof R === 'object' ? R : readingOf?.()).head) ?? t);
   if (t) return labelAt(t);
   return String(id).replace(/^[a-z]+:/, '').replace(/_/g, ' ');
 }
