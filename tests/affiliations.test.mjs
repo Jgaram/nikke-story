@@ -187,3 +187,13 @@ test('게임 소속의 공개 자리(W12d · W15b) — export가 출시 · 기�
   assert.ok(org('person:라피', '엘리시온')?.tick > org('person:라피', '카운터스').tick, '원문에서 안 드러나면 출시(호감도 단위)');
   assert.ok(byId.get('person:그레이브').affs.some((a) => a.org === 'org:빌런_연합' && a.act === '합류'), '그레이브 이동이 기록으로');
 });
+
+test('orgsAt에 R을 주면 기록은 그 스토리를 봤을 때만(W16b — 안 본 이벤트에서 드러난 전 소속이 새지 않게), 게임 소속은 자리로', async () => {
+  const fmt = await import('../site/lib/format.js');
+  const tg = { orgs: [{ type: 'corp', org: 'org:필그림', name: '필그림', tick: 80 }], affs: [{ id: 'T130', org: 'org:V.T.C.', act: '지난 소속', tick: 91, unit: 'event_oldtales1' }] };
+  const R = (seen) => ({ all: false, t: 119, seen: (k) => seen.includes(k) });
+  assert.deepEqual(fmt.orgsAt(tg, 119, { past: true }).map((o) => o.org), ['org:필그림', 'org:V.T.C.'], '자리로만 보면 보인다');
+  assert.deepEqual(fmt.orgsAt(tg, R([]), { past: true }).map((o) => o.org), ['org:필그림'], 'OLD TALES를 안 봤으면 전 소속을 뺀다');
+  assert.deepEqual(fmt.orgsAt(tg, R(['event_oldtales1']), { past: true }).map((o) => o.org), ['org:필그림', 'org:V.T.C.']);
+  assert.equal(fmt.orgsAt(tg, { all: true, t: null, seen: () => true }, { past: true }).length, 2, '전부 보기');
+});

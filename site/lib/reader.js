@@ -767,7 +767,7 @@ const RENDER = {
     const name = fmt.nameAt(t, RR) ?? t.name;
     const recs = idx.recordsAbout.get(id) ?? [];
     if (isPerson) {
-      out.append(shown ? head(name, [ui.orgMarks(fmt.orgsAt(t, T(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
+      out.append(shown ? head(name, [ui.orgMarks(fmt.orgsAt(t, state.reading(), { past: true }), { size: 16 })], null, ui.portrait(fmt.iconAt(t, T()), { size: 56, class: 'reader-pic' })) : ui.el('p', {}, ui.el('strong', {}, name)));
       const fa = firstAppearance(id, idx);
       out.append(ui.panel(null, kv([
         row(LABELS.aliases, aliases),

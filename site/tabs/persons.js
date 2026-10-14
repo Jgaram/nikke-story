@@ -356,7 +356,7 @@ export async function mount(root, ctx) {
     for (const [i, r] of rowsNow.entries()) {
       frag.append(el('div', { class: ['pm-item', r.id === who ? 'is-sel' : ''], role: 'option', id: `pm-opt-${i}`, 'aria-selected': String(r.id === who), dataset: { id: r.id, i } },
         ui.portrait(fmt.iconAt(idx.targets.get(r.id), V.T), { size: 24, class: 'pm-item-pic' }) ?? el('span', { class: 'pm-item-pic' }),
-        el('span', { class: 'pm-item-who' }, el('span', { class: 'pm-item-name' }, r.name), ui.orgMarks(fmt.orgsAt(idx.targets.get(r.id), V.T, { past: true }), { size: 14, bare: true }))));
+        el('span', { class: 'pm-item-who' }, el('span', { class: 'pm-item-name' }, r.name), ui.orgMarks(fmt.orgsAt(idx.targets.get(r.id), V.R, { past: true }), { size: 14, bare: true }))));
     }
     listEl.replaceChildren(frag);
     if (!rowsNow.length) listEl.append(el('div', { class: 'empty pm-empty' }, hiddenPersons ? LABELS.noneCut : LABELS.none));
@@ -403,7 +403,7 @@ export async function mount(root, ctx) {
   const orgKey = (o) => o.org ?? o.name;
   /** 묶을 소속 하나씩 — 기업 하나 · 스쿼드 하나(게임 스쿼드 → 사전 스쿼드 → 그 밖의 무리). 다른 판(via) 소속은 뺀다 */
   const groupOf = (id) => {
-    const os = fmt.orgsAt(idx.targets.get(id), V.T).filter((o) => !o.via);
+    const os = fmt.orgsAt(idx.targets.get(id), V.R).filter((o) => !o.via);
     const squads = os.filter((o) => o.type === 'squad');
     const squad = squads.find((o) => o.source === 'game') ?? squads.find((o) => idx.targets.get(o.org)?.kind === '스쿼드') ?? squads[0] ?? null;
     return { corp: os.find((o) => o.type === 'corp') ?? null, squad };
@@ -539,7 +539,7 @@ export async function mount(root, ctx) {
       named ? face(p.id, 72, 'pm-title-pic') : el('span', { class: ['pm-noface', 'pm-title-pic'], style: { width: '72px', height: '72px', fontSize: '29px' }, 'aria-hidden': 'true' }, '?'),
       el('div', { class: 'pm-title-main' },
         el('div', { class: 'pm-title-name' }, el('h3', {}, named ? nameOf(p.id) : LABELS.notYetName), named && p.kind && p.kind !== '인물' ? el('span', { class: 'pm-kind' }, p.kind) : null),
-        named ? ui.orgMarks(fmt.orgsAt(tg, V.T, { past: true }), { size: 18, class: 'pm-title-orgs' }) : null,
+        named ? ui.orgMarks(fmt.orgsAt(tg, V.R, { past: true }), { size: 18, class: 'pm-title-orgs' }) : null,
         facts.length ? el('div', { class: 'pm-facts' }, facts) : null)));
     if (!a.visible) head.append(ui.notice(`${LABELS.notYet} ${LABELS.notYetHelp}`, 'info'));
   };
