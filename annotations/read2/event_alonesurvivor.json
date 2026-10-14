@@ -50,12 +50,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "지휘관을 '생존가님'이라 부르며, 이 분야의 문외한이라도 생존 전문가인 자기가 반드시 살려 주겠다고 큰소리치는",
+      "text": "지휘관을 '생존가님'이라 부르며, 이 분야의 문외한이라도 생존 전문가인 자기가 반드시 살려 주겠다고 큰소리친다",
       "evidence": [{ "scene": "event_alonesurvivor_01_e", "lines": ["14-28"] }],
       "reason": "#17 · #26-28.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지휘관을 '생존가님'이라 부르며, 이 분야의 문외한이라도 생존 전문가인 자기가 반드시 살려 주겠다고 큰소리치는"
+        }
+      ]
     },
     {
       "id": "D1495",
@@ -63,33 +73,53 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "문외한을 살려 주겠다고 큰소리치던",
-      "after": "그동안 생각보다 많이 의지했다고 털어놓고, 앓는 지휘관을 업고 '꼭 살려서 보내 드리겠다'는",
+      "before": "문외한을 살려 주겠다고 큰소리쳤다",
+      "after": "그동안 생각보다 많이 의지했다고 털어놓고, 앓는 지휘관을 업고 '꼭 살려서 보내 드리겠다'고 한다",
       "evidence": [{ "scene": "event_alonesurvivor_05_s", "lines": ["60-73"] }],
       "reason": "#67-71. 지휘관의 격려(intermission_01#69-77)로 버텨 온 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 문외한을 살려 주겠다고 큰소리치던 · 후 그동안 생각보다 많이 의지했다고 털어놓고, 앓는 지휘관을 업고 '꼭 살려서 보내 드리겠다'는"
+        }
+      ]
     },
     {
       "id": "D1496",
       "person": "person:토브",
       "aspect": "신념",
       "act": "기준",
-      "text": "오지를 개척하며 길 잃은 사람을 구하고 살리는 언리미티드의 일에 프라이드를 갖고, 그 마음만은 선배들에게 지지 않는다는",
+      "text": "오지를 개척하며 길 잃은 사람을 구하고 살리는 언리미티드의 일에 프라이드를 갖고, 그 마음만은 선배들에게 지지 않는다고 한다",
       "evidence": [{ "scene": "event_alonesurvivor_04_e", "lines": ["47-56"] }],
       "reason": "#49-54.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "오지를 개척하며 길 잃은 사람을 구하고 살리는 언리미티드의 일에 프라이드를 갖고, 그 마음만은 선배들에게 지지 않는다는"
+        }
+      ]
     },
     {
       "id": "D1497",
       "person": "person:토브",
       "aspect": "신념",
       "act": "변화",
-      "before": "프라이드는 있지만 실전마다 허둥대던",
-      "after": "왼팔이 타들어 가도 '살리겠다는 말을 포기하려고 내뱉은 게 아니다'며 홰를 놓지 않는",
+      "before": "프라이드는 있지만 실전마다 허둥댔다",
+      "after": "왼팔이 타들어 가도 '살리겠다는 말을 포기하려고 내뱉은 게 아니다'며 홰를 놓지 않는다",
       "trigger": [{ "scene": "event_alonesurvivor_05_e", "lines": ["70-91"] }],
       "time": "S111",
       "points": ["F1206"],
@@ -97,15 +127,25 @@
       "reason": "#124-127 · #134-136, 06_e#35-39 '후회는 안 해요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 프라이드는 있지만 실전마다 허둥대던 · 후 왼팔이 타들어 가도 '살리겠다는 말을 포기하려고 내뱉은 게 아니다'며 홰를 놓지 않는"
+        }
+      ]
     },
     {
       "id": "D1498",
       "person": "person:토브",
       "aspect": "소속",
       "act": "변화",
-      "before": "롤아웃되자마자 배정된 신입",
-      "after": "구해 낸 양산형의 '고마워요'에 울며 어엿한 언리미티드의 일원이 된",
+      "before": "롤아웃되자마자 배정된 신입이었다",
+      "after": "구해 낸 양산형의 '고마워요'에 울며 어엿한 언리미티드의 일원이 됐다",
       "trigger": [{ "scene": "event_alonesurvivor_06_e", "lines": ["100-109"] }],
       "time": "S111",
       "points": ["F1208"],
@@ -113,7 +153,17 @@
       "reason": "#71-73 독백 '이제는 어엿한 [언리미티드]의 일원'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 롤아웃되자마자 배정된 신입 · 후 구해 낸 양산형의 '고마워요'에 울며 어엿한 언리미티드의 일원이 된"
+        }
+      ]
     },
     {
       "id": "D1499",
@@ -121,12 +171,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:토브"],
-      "text": "다소 엉뚱하지만 지휘관을 지키는 데 도움이 될 거라며 붙이고, 첫 구조라 초조한 신입을 '평정심을 유지하라'고 다독이는",
+      "text": "다소 엉뚱하지만 지휘관을 지키는 데 도움이 될 거라며 붙이고, 첫 구조라 초조한 신입을 '평정심을 유지하라'고 다독인다",
       "evidence": [{ "scene": "event_alonesurvivor_01_s", "lines": ["58-74"] }],
       "reason": "#62-63 · #73-74, 02_s#28-40.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "다소 엉뚱하지만 지휘관을 지키는 데 도움이 될 거라며 붙이고, 첫 구조라 초조한 신입을 '평정심을 유지하라'고 다독이는"
+        }
+      ]
     },
     {
       "id": "D1500",
@@ -134,14 +194,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:토브"],
-      "before": "엉뚱한 신입을 믿어 주려던",
-      "after": "품에 안긴 토브에게 '수고했다, 고맙다' 하고 이 일을 업으로 삼을 수 있겠느냐 묻는",
+      "before": "엉뚱한 신입을 믿어 주려 했다",
+      "after": "품에 안긴 토브에게 '수고했다, 고맙다' 하고 이 일을 업으로 삼을 수 있겠느냐 묻는다",
       "time": "S111",
       "evidence": [{ "scene": "event_alonesurvivor_06_e", "lines": ["24-44"] }],
       "reason": "03_e#56 '믿어주는 것이 내 역할' → #26-27 · #43, #105-106.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 엉뚱한 신입을 믿어 주려던 · 후 품에 안긴 토브에게 '수고했다, 고맙다' 하고 이 일을 업으로 삼을 수 있겠느냐 묻는"
+        }
+      ]
     }
   ],
   "life": [],

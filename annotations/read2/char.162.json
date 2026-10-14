@@ -102,30 +102,50 @@
       "person": "person:미하라",
       "aspect": "기억",
       "act": "변화",
-      "before": "'그 사람'이 누구였는지조차 떠오르지 않던",
-      "after": "세이렌의 언령으로 지휘관과의 대화 조각과 흐릿한 얼굴을 떠올린",
+      "before": "'그 사람'이 누구였는지조차 떠오르지 않았다",
+      "after": "세이렌의 언령으로 지휘관과의 대화 조각과 흐릿한 얼굴을 떠올렸다",
       "trigger": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": ["43-45"] }],
       "time": "S228",
       "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_04", "lines": ["72-81"] }],
       "reason": "01#86-87 '그게 누구였…' → 04#75 '그 사람이었어' · #80-81 '얼굴 조금은 알 것 같아'. 기억 소거 뒤 지휘관을 떠올린 첫 모습(F2898).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '그 사람'이 누구였는지조차 떠오르지 않던 · 후 세이렌의 언령으로 지휘관과의 대화 조각과 흐릿한 얼굴을 떠올린"
+        }
+      ]
     },
     {
       "id": "D1641",
       "person": "person:미하라",
       "aspect": "신념",
       "act": "변화",
-      "before": "새 바디와 특수 능력으로 목숨을 걸면 유니와 희귀 랩쳐를 잡으리라 여긴",
-      "after": "자기 약함을 받아들이고 '나중 일은 믿는 사람들에게 맡기고 지금 할 수 있는 일'을 하러 연구실로 가는",
+      "before": "새 바디와 특수 능력으로 목숨을 걸면 유니와 희귀 랩쳐를 잡으리라 여겼다",
+      "after": "자기 약함을 받아들이고 '나중 일은 믿는 사람들에게 맡기고 지금 할 수 있는 일'을 하러 연구실로 간다",
       "trigger": [{ "scene": "ep:d_nikke_mihara_bondingchain_02", "lines": ["61-72"] }],
       "time": "S227",
       "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_05", "lines": ["68-79"] }],
       "reason": "02#61-69 기대 → 글러트니에서 깨달은 약함, 05#71-72 '지금은 내가 할 수 있는 일을 하자' · #79 망설임 없이 나아감(F1919 · F1920).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 새 바디와 특수 능력으로 목숨을 걸면 유니와 희귀 랩쳐를 잡으리라 여긴 · 후 자기 약함을 받아들이고 '나중 일은 믿는 사람들에게 맡기고 지금 할 수 있는 일'을 하러 연구실로 가는"
+        }
+      ]
     },
     {
       "id": "D1642",
@@ -133,12 +153,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:세이렌"],
-      "text": "포커페이스를 꿰뚫어 본 세이렌에게 불안을 털어놓고, 믿는 소중한 사람으로 세이렌의 얼굴부터 만들어 달라는",
+      "text": "포커페이스를 꿰뚫어 본 세이렌에게 불안을 털어놓고, 믿는 소중한 사람으로 세이렌의 얼굴부터 만들어 달라고 한다",
       "evidence": [{ "scene": "ep:d_nikke_mihara_bondingchain_03", "lines": ["21-34"] }],
       "reason": "02#9-10 '세이렌에게는 들켜버렸네' · 03#23-26 '믿고 있는 소중한 사람'. 미하라 → 세이렌 기준이 앞에 없다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "포커페이스를 꿰뚫어 본 세이렌에게 불안을 털어놓고, 믿는 소중한 사람으로 세이렌의 얼굴부터 만들어 달라는"
+        }
+      ]
     }
   ],
   "life": [],

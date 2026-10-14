@@ -138,15 +138,25 @@
       "person": "person:드레이크",
       "aspect": "신체",
       "act": "변화",
-      "before": "공중에서 파워 업해 세진",
-      "after": "인히비터를 없앤 대가로 과출력 때 전격이 불안정해진 — 낼 수 있는 힘은 맥스웰 · 라플라스와 비슷한",
+      "before": "공중에서 파워 업해 세졌다",
+      "after": "인히비터를 없앤 대가로 과출력 때 전격이 불안정해졌다 — 낼 수 있는 힘은 맥스웰 · 라플라스와 비슷하다",
       "points": ["F2873"],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_08", "lines": ["14-20"] }],
       "reason": "08#16-20 '대가 없는 파워 업이 아니라고' — 앞은 D670",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공중에서 파워 업해 세진 · 후 인히비터를 없앤 대가로 과출력 때 전격이 불안정해진 — 낼 수 있는 힘은 맥스웰 · 라플라스와 비슷한"
+        }
+      ]
     },
     {
       "id": "D1775",
@@ -154,12 +164,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:그레이브"],
-      "text": "관심 없다는 그레이브를 '그레그레'라 부르며 빌런 연합에 끌어들이려 해 와, 지원하자 감동해 바로 합격시키는",
+      "text": "관심 없다는 그레이브를 '그레그레'라 부르며 빌런 연합에 끌어들이려 해 와, 지원하자 감동해 바로 합격시킨다",
       "evidence": [{ "scene": "fl:great_villain_union_03", "lines": ["98-99", "118-124"] }],
       "reason": "03#98-99 '드디어 빌런 연합에 흥미가 생긴 건가' · #122-124",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "관심 없다는 그레이브를 '그레그레'라 부르며 빌런 연합에 끌어들이려 해 와, 지원하자 감동해 바로 합격시키는"
+        }
+      ]
     },
     {
       "id": "D1776",
@@ -167,45 +187,75 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지즈"],
-      "before": "빌런 연합에 넣어 주겠다고 약속한",
-      "after": "압박 면접 끝에 첫 합격자로 받아들이고, 실수를 털어놓은 부하를 '이미 훌륭한 빌런'이라 감싸며 책임을 지는",
+      "before": "빌런 연합에 넣어 주겠다고 약속했다",
+      "after": "압박 면접 끝에 첫 합격자로 받아들이고, 실수를 털어놓은 부하를 '이미 훌륭한 빌런'이라 감싸며 책임을 진다",
       "trigger": [{ "scene": "fl:great_villain_union_02", "lines": ["83-92"] }],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_08", "lines": ["37-50"] }],
       "reason": "08#38 '나를 비난해라' · #45 '네 죄를 스스로 털어놓은 것만으로' · #49 '부하의 잘못을 감싸는 것은 빌런의 필수 덕목'. 앞은 D876",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 빌런 연합에 넣어 주겠다고 약속한 · 후 압박 면접 끝에 첫 합격자로 받아들이고, 실수를 털어놓은 부하를 '이미 훌륭한 빌런'이라 감싸며 책임을 지는"
+        }
+      ]
     },
     {
       "id": "D1777",
       "person": "person:드레이크",
       "aspect": "성격",
       "act": "변화",
-      "before": "큰소리치며 혼자 앞장서던",
-      "after": "처음으로 무력함을 느끼고 진중해져, 그동안 맥스웰 · 지휘관에게 의지했다며 지휘를 넘기고 연합을 해체하려는",
+      "before": "큰소리치며 혼자 앞장섰다",
+      "after": "처음으로 무력함을 느끼고 진중해져, 그동안 맥스웰 · 지휘관에게 의지했다며 지휘를 넘기고 연합을 해체하려 한다",
       "trigger": [{ "scene": "fl:great_villain_union_10", "lines": ["20-34"] }],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_10", "lines": ["71-113"] }],
       "reason": "10#75 '처음으로 자신의 무력함' · #95 '리더로서의 무게' · #97-98 의지 · #111 해체. 계기는 그레이브의 '리더의 책임'(10#30-31). W81",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 큰소리치며 혼자 앞장서던 · 후 처음으로 무력함을 느끼고 진중해져, 그동안 맥스웰 · 지휘관에게 의지했다며 지휘를 넘기고 연합을 해체하려는"
+        }
+      ]
     },
     {
       "id": "D1778",
       "person": "person:드레이크",
       "aspect": "신념",
       "act": "변화",
-      "before": "최전방에서 혼자 격파하면 다 해결된다던",
-      "after": "'함께 있을 때 의미가 있다'며 동료의 안전을 리더로서 책임지고 협동 공격을 이끄는",
+      "before": "최전방에서 혼자 격파하면 다 해결된다고 했다",
+      "after": "'함께 있을 때 의미가 있다'며 동료의 안전을 리더로서 책임지고 협동 공격을 이끈다",
       "trigger": [{ "scene": "fl:great_villain_union_11", "lines": ["37-89"] }],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_13", "lines": ["90-93"] }],
       "reason": "13#91 '네놈의 안전은 리더인 나 — 보장' · #93 '함께 있을 때 의미가 있는 거라고'. 10#99와 대비. W81",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 최전방에서 혼자 격파하면 다 해결된다던 · 후 '함께 있을 때 의미가 있다'며 동료의 안전을 리더로서 책임지고 협동 공격을 이끄는"
+        }
+      ]
     },
     {
       "id": "D1779",
@@ -213,8 +263,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지즈", "person:그레이브"],
-      "before": "부하 · 수하로 부리던",
-      "after": "'빌런 연합이 없었다면 해내지 못했다'며 공을 돌리고 '최고의 동료'라 부르는",
+      "before": "부하 · 수하로 부렸다",
+      "after": "'빌런 연합이 없었다면 해내지 못했다'며 공을 돌리고 '최고의 동료'라 부른다",
       "points": ["F2906"],
       "trigger": [{ "scene": "fl:great_villain_union_13", "lines": ["98-101"] }],
       "time": "S347",
@@ -222,7 +272,17 @@
       "reason": "14#21-22 '지금도 감사하고 있다' · #57 '역시 너희들은 최고의 동료다'. 지휘관 · 신데렐라도 놀란다(#24-28)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 부하 · 수하로 부리던 · 후 '빌런 연합이 없었다면 해내지 못했다'며 공을 돌리고 '최고의 동료'라 부르는"
+        }
+      ]
     },
     {
       "id": "D1780",
@@ -230,12 +290,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:드레이크"],
-      "text": "예전부터 빌런 연합에 들어가고 싶었다며, '넣어 주겠다'던 드레이크의 약속을 기억해 줄까 조마조마하며 찾아온",
+      "text": "예전부터 빌런 연합에 들어가고 싶었다며, '넣어 주겠다'던 드레이크의 약속을 기억해 줄까 조마조마하며 찾아왔다",
       "evidence": [{ "scene": "fl:great_villain_union_02", "lines": ["29-31"] }],
       "reason": "02#29-31 — ch42 약속(F2213) 뒤 처음 드레이크와 마주한 장면",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "예전부터 빌런 연합에 들어가고 싶었다며, '넣어 주겠다'던 드레이크의 약속을 기억해 줄까 조마조마하며 찾아온"
+        }
+      ]
     },
     {
       "id": "D1781",
@@ -258,15 +328,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:드레이크"],
-      "before": "칭찬받고 싶어 따르던 지원자",
-      "after": "물러난 그에게 '내가 인정하는 빌런 연합의 리더는 드레이크 하나뿐'이라 하며 되돌리는",
+      "before": "칭찬받고 싶어 따르던 지원자다",
+      "after": "물러난 그에게 '내가 인정하는 빌런 연합의 리더는 드레이크 하나뿐'이라 하며 되돌린다",
       "trigger": [{ "scene": "fl:great_villain_union_10", "lines": ["103-113"] }],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_11", "lines": ["72-73"] }],
       "reason": "11#73. 08#43 '칭찬받을 수 있을 것 같아서'와 대비",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 칭찬받고 싶어 따르던 지원자 · 후 물러난 그에게 '내가 인정하는 빌런 연합의 리더는 드레이크 하나뿐'이라 하며 되돌리는"
+        }
+      ]
     },
     {
       "id": "D1783",
@@ -302,15 +382,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:드레이크"],
-      "before": "관심 없다며 떠밀려 들어온 부하",
-      "after": "'바보여도 리더는 리더'라며 물러난 그를 다시 세우고, 해낸 그를 '첫인상과 다르다 — 성장했다'고 인정하는",
+      "before": "관심 없다며 떠밀려 들어온 부하다",
+      "after": "'바보여도 리더는 리더'라며 물러난 그를 다시 세우고, 해낸 그를 '첫인상과 다르다 — 성장했다'고 인정한다",
       "trigger": [{ "scene": "fl:great_villain_union_11", "lines": ["37-71"] }],
       "time": "S347",
       "evidence": [{ "scene": "fl:great_villain_union_13", "lines": ["134-135"] }],
       "reason": "13#134-135. 계기 11#43-45(수장 자리를 빼앗는 척) · #70-71",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M79", "note": "M79 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 관심 없다며 떠밀려 들어온 부하 · 후 '바보여도 리더는 리더'라며 물러난 그를 다시 세우고, 해낸 그를 '첫인상과 다르다 — 성장했다'고 인정하는"
+        }
+      ]
     }
   ],
   "life": [],

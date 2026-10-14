@@ -96,37 +96,60 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "모래 폭풍에서 우연히 구한 '형제님'",
-      "after": "보면 마음이 편하고 그리움이 느껴진다며 선한 사람이라 축복하고 다시 만나자는",
+      "after": "보면 마음이 편하고 그리움이 느껴진다며 선한 사람이라 축복하고 다시 만나자고 한다",
       "trigger": [{ "scene": "ep:d_nikke_rapunzel_03", "lines": ["44-52"] }],
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_05", "lines": ["84-94"] }],
       "reason": "03 지휘관이 자매님들을 함께 수습 · 인사 → 04#24-26 '그리움이 느껴진다' → 05#91-94 '선한 사람 … 축복만이 가득하기를'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 보면 마음이 편하고 그리움이 느껴진다며 선한 사람이라 축복하고 다시 만나자는" }
+      ]
     },
     {
       "id": "D1376",
       "person": "person:라푼젤",
       "aspect": "신념",
       "act": "기준",
-      "text": "지상에서 외롭게 쓰러진 자매님들의 NIMPH를 로사리오에 모아, NIMPH가 기억하는 고향에 무덤을 만들어 주는 것을 자기 할 일로 삼는",
+      "text": "지상에서 외롭게 쓰러진 자매님들의 NIMPH를 로사리오에 모아, NIMPH가 기억하는 고향에 무덤을 만들어 주는 것을 자기 할 일로 삼는다",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_03", "lines": ["75-84"] }],
       "reason": "#81 '무덤을 만들어주기 위해서예요' · 05#83 '그게 제가 할 일이니까요' — 출시 첫날 단위라 ch17의 신념 기준(D143)보다 앞선다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지상에서 외롭게 쓰러진 자매님들의 NIMPH를 로사리오에 모아, NIMPH가 기억하는 고향에 무덤을 만들어 주는 것을 자기 할 일로 삼는"
+        }
+      ]
     },
     {
       "id": "D1377",
       "person": "person:라푼젤",
       "aspect": "기억",
       "act": "기준",
-      "text": "먼 과거와 최근 1년의 기억만 남기고 그 사이를 지우며, 과거를 지우면 5년은 기억할 수 있어도 갓데스가 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는",
+      "text": "먼 과거와 최근 1년의 기억만 남기고 그 사이를 지우며, 과거를 지우면 5년은 기억할 수 있어도 갓데스가 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는다",
       "evidence": [{ "scene": "ep:d_nikke_rapunzel_04", "lines": ["16-18", "102-115"] }],
       "reason": "#17-18 '내일이 되면 1년 전 오늘의 기억이 사라지는' · #109-112 '존재했다는 유일한 흔적 … 제가 기억해야 해요'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "먼 과거와 최근 1년의 기억만 남기고 그 사이를 지우며, 과거를 지우면 5년은 기억할 수 있어도 갓데스가 그때 그곳에 있었다는 유일한 흔적이라 지우지 않는"
+        }
+      ]
     },
     {
       "id": "D1378",

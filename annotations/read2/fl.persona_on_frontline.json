@@ -495,10 +495,20 @@
       "person": "person:유키코",
       "aspect": "성격",
       "act": "기준",
-      "text": "돌려보내기 위한 일이라면 돕게 해 달라고 먼저 나서는 — 지휘관이 검은 눈동자에서 곧고 강한 의지를 느끼는",
+      "text": "돌려보내기 위한 일이라면 돕게 해 달라고 먼저 나선다 — 지휘관이 검은 눈동자에서 곧고 강한 의지를 느낀다",
       "evidence": [{ "scene": "fl:persona_on_frontline_04", "lines": ["57-66"] }],
       "reason": "04#59-62 '저희도 돕고 싶어요' · #66 '곧고, 올바른. 강한 의지'.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "돌려보내기 위한 일이라면 돕게 해 달라고 먼저 나서는 — 지휘관이 검은 눈동자에서 곧고 강한 의지를 느끼는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -522,10 +532,13 @@
       "person": "person:곰",
       "aspect": "성격",
       "act": "기준",
-      "text": "처음 만난 미란다 · 퀀시와 금세 친해져 '곰이 전~부 해결해버릴거야'라 큰소리치는",
+      "text": "처음 만난 미란다 · 퀀시와 금세 친해져 '곰이 전~부 해결해버릴거야'라 큰소리친다",
       "evidence": [{ "scene": "fl:persona_on_frontline_04", "lines": ["73-81"] }],
       "reason": "04#76 · #80-81 '원래 저렇게 빨리 친해져?' · '응··· 미안'.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "처음 만난 미란다 · 퀀시와 금세 친해져 '곰이 전~부 해결해버릴거야'라 큰소리치는" }
+      ]
     },
     {
       "confidence": "확실",
@@ -535,11 +548,21 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관", "person:미란다", "person:레오나"],
-      "before": "지퍼를 들켜 '망했다곰' 하며 도와 달라 외치던 낯선 곰",
-      "after": "헤어지기 싫을 만큼 정들어 그 마음을 간직하고 밝게 작별하려는",
+      "before": "지퍼를 들켜 '망했다곰' 하며 도와 달라 외치던 낯선 곰이다",
+      "after": "헤어지기 싫을 만큼 정들어 그 마음을 간직하고 밝게 작별하려 한다",
       "evidence": [{ "scene": "fl:persona_on_frontline_27", "lines": ["29-33"] }],
       "reason": "27#32 '지휘관이나 미라짱, 레오짱 … 헤어지고 싶지 않다곰' · #33 '이 마음을 소중히 간직하고'(앞 03#43 · #56).",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지퍼를 들켜 '망했다곰' 하며 도와 달라 외치던 낯선 곰 · 후 헤어지기 싫을 만큼 정들어 그 마음을 간직하고 밝게 작별하려는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -548,10 +571,20 @@
       "person": "person:아이기스",
       "aspect": "신념",
       "act": "기준",
-      "text": "섀도를 섬멸하는 병기를 자처하면서도, 가장 중요한 사명은 소중한 사람(그)을 지키고 그 곁에 있는 것이라 하는",
+      "text": "섀도를 섬멸하는 병기를 자처하면서도, 가장 중요한 사명은 소중한 사람(그)을 지키고 그 곁에 있는 것이라 한다",
       "evidence": [{ "scene": "fl:persona_on_frontline_16", "lines": ["34-43"] }],
       "reason": "16#37 '소중한 사람의 곁에 있는 것이, 가장 중요합니다' · #43 '그는, 소중한 사람'. 볼 거리 W80.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "섀도를 섬멸하는 병기를 자처하면서도, 가장 중요한 사명은 소중한 사람(그)을 지키고 그 곁에 있는 것이라 하는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -561,10 +594,20 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["concept:니케"],
-      "text": "니케의 바디 기술에 놀라면서도 말과 행동이 자기가 아는 [인간]과 다르지 않다며, 원래 인간이라 인간다운 [마음]을 가졌다고 보는",
+      "text": "니케의 바디 기술에 놀라면서도 말과 행동이 자기가 아는 [인간]과 다르지 않다며, 원래 인간이라 인간다운 [마음]을 가졌다고 본다",
       "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": ["71-76"] }],
       "reason": "23#72 '제가 아는 [인간]과 다르지 않습니다' · #76 '[마음]을 가지고 있다'. 볼 거리 W80.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "니케의 바디 기술에 놀라면서도 말과 행동이 자기가 아는 [인간]과 다르지 않다며, 원래 인간이라 인간다운 [마음]을 가졌다고 보는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -586,10 +629,13 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "코드네임 [퀸]만 밝히고 '시작은 이상했지만 나쁜 사람은 아닌 것 같다'며 협력하는",
+      "text": "코드네임 [퀸]만 밝히고 '시작은 이상했지만 나쁜 사람은 아닌 것 같다'며 협력한다",
       "evidence": [{ "scene": "fl:persona_on_frontline_09", "lines": ["39-44"] }],
       "reason": "09#39 '[퀸]이라고 부르면 돼' · #44 '너는 나쁜 사람은 아닌 것 같네'.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "코드네임 [퀸]만 밝히고 '시작은 이상했지만 나쁜 사람은 아닌 것 같다'며 협력하는" }
+      ]
     },
     {
       "confidence": "확실",
@@ -599,12 +645,22 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "코드네임 [퀸]으로만 불리던 협력자",
-      "after": "본명 니지마 마코토로 불러 주면 기쁘겠다는",
+      "before": "코드네임 [퀸]으로만 불리던 협력자다",
+      "after": "본명 니지마 마코토로 불러 주면 기쁘겠다고 한다",
       "trigger": [{ "scene": "fl:persona_on_frontline_26", "lines": ["22-24"] }],
       "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": ["177-184"] }],
       "reason": "26#179-180 '지금까지는 코드 네임으로 불렀지만 · [마코토]라고 불러주면 기쁠 것 같아' — 사건 해결 뒤.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 코드네임 [퀸]으로만 불리던 협력자 · 후 본명 니지마 마코토로 불러 주면 기쁘겠다는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -627,11 +683,21 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관", "person:미란다"],
-      "before": "목적이 같아 손잡은 거래 상대",
-      "after": "방주에서의 추억이 사라지는 게 싫을 만큼 정들어 잊는다는 것을 겨우 인정하는",
+      "before": "목적이 같아 손잡은 거래 상대다",
+      "after": "방주에서의 추억이 사라지는 게 싫을 만큼 정들어 잊는다는 것을 겨우 인정한다",
       "evidence": [{ "scene": "fl:persona_on_frontline_27", "lines": ["44-52"] }],
       "reason": "27#44 '이 추억이 사라져버린다는 건, 싫다고 느낄 정도' · #51-52 '그런··· 셈이지'(앞 10#95 '거래 성사').",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 목적이 같아 손잡은 거래 상대 · 후 방주에서의 추억이 사라지는 게 싫을 만큼 정들어 잊는다는 것을 겨우 인정하는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -653,10 +719,20 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "코인 러시 · 메이드 카페에서 막혀 재기하지 못한 것이 '전부 그놈 탓'이라 원망하는",
+      "text": "코인 러시 · 메이드 카페에서 막혀 재기하지 못한 것이 '전부 그놈 탓'이라 원망한다",
       "evidence": [{ "scene": "fl:persona_on_frontline_07", "lines": ["4-8"] }],
       "reason": "07#4 '전부 그놈 탓이야' · #5-8 코인 러시 · 메이드 카페.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "코인 러시 · 메이드 카페에서 막혀 재기하지 못한 것이 '전부 그놈 탓'이라 원망하는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -666,12 +742,22 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "재기를 막은 원수로 원망",
-      "after": "덕분에 힘을 얻었다며 비꼬는 감사 — 2주의 유예를 '보답'이라 하는",
+      "before": "재기를 막은 원수로 원망했다",
+      "after": "덕분에 힘을 얻었다며 비꼬는 감사 — 2주의 유예를 '보답'이라 한다",
       "trigger": [{ "scene": "fl:persona_on_frontline_07", "lines": ["12-30"] }],
       "evidence": [{ "scene": "fl:persona_on_frontline_13", "lines": ["108-115"] }],
       "reason": "13#109-111 '전에는 당신이 원망스러웠지만, 지금은 꽤나 감사 … 그에 대한 보답'.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 재기를 막은 원수로 원망 · 후 덕분에 힘을 얻었다며 비꼬는 감사 — 2주의 유예를 '보답'이라 하는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -681,13 +767,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'너 한 새X는 꼭 죽인다'며 지휘관만 노리던",
-      "after": "무릎 꿇고 용서를 빌지 않고 죗값을 받겠다며 아내만 부탁하는",
+      "before": "'너 한 새X는 꼭 죽인다'며 지휘관만 노렸다",
+      "after": "무릎 꿇고 용서를 빌지 않고 죗값을 받겠다며 아내만 부탁한다",
       "trigger": [{ "scene": "fl:persona_on_frontline_26", "lines": ["13-24"] }],
       "points": ["F2865"],
       "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": ["55-73"] }],
       "reason": "앞 25#129-130 → 26#59 무릎 · #61 '용서를 빌지는 않겠습니다' · #69 아내 부탁 — [보물]을 빼앗겨 개심.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '너 한 새X는 꼭 죽인다'며 지휘관만 노리던 · 후 무릎 꿇고 용서를 빌지 않고 죗값을 받겠다며 아내만 부탁하는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -696,10 +792,20 @@
       "person": "person:앨든",
       "aspect": "성격",
       "act": "기준",
-      "text": "자신을 포장하는 허세와 신중함 — '악당'이라는 말에 손을 내려다보다 '악당답게 행동해 드리죠'라며 물러나는",
+      "text": "자신을 포장하는 허세와 신중함 — '악당'이라는 말에 손을 내려다보다 '악당답게 행동해 드리죠'라며 물러난다",
       "evidence": [{ "scene": "fl:persona_on_frontline_13", "lines": ["86-101"] }],
       "reason": "13#95 '악당은, 악당답게' · #99-101 '승산이 낮으니까 · 신중한 성격'(15#34-35 지휘관 '허세가 엄청났거든').",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "자신을 포장하는 허세와 신중함 — '악당'이라는 말에 손을 내려다보다 '악당답게 행동해 드리죠'라며 물러나는"
+        }
+      ]
     },
     {
       "confidence": "확실",
@@ -708,13 +814,23 @@
       "person": "person:앨든",
       "aspect": "성격",
       "act": "변화",
-      "before": "허세 · 신중함으로 꾸민 악당",
-      "after": "개심해 대성통곡하며 지금까지 한 짓을 뉘우치는",
+      "before": "허세 · 신중함으로 꾸민 악당이다",
+      "after": "개심해 대성통곡하며 지금까지 한 짓을 뉘우친다",
       "trigger": [{ "scene": "fl:persona_on_frontline_26", "lines": ["13-24"] }],
       "points": ["F2865"],
       "evidence": [{ "scene": "fl:persona_on_frontline_26", "lines": ["34-41"] }],
       "reason": "26#37 '엉엉 울기 시작했다' · #39-40 '대체 지금까지 무슨 짓을' — 퀸 #24 [개심].",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M78", "note": "M78 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 허세 · 신중함으로 꾸민 악당 · 후 개심해 대성통곡하며 지금까지 한 짓을 뉘우치는"
+        }
+      ]
     },
     {
       "confidence": "확실",

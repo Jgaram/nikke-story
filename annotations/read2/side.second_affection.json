@@ -108,12 +108,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "'그 녀석은 없다', '지금 돌아가면 해부당해 죽는다'고 잘라 말하고 '걸어라'만 되풀이하며 밤에도 쉬지 않고 몰아세우는",
+      "text": "'그 녀석은 없다', '지금 돌아가면 해부당해 죽는다'고 잘라 말하고 '걸어라'만 되풀이하며 밤에도 쉬지 않고 몰아세운다",
       "evidence": [{ "scene": "side:second_affection_01", "lines": ["25-39", "55-56"] }],
       "reason": "#25 · #32 · #55 — 02 · 03에서도 '걸어라', 잠을 안 재운다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'그 녀석은 없다', '지금 돌아가면 해부당해 죽는다'고 잘라 말하고 '걸어라'만 되풀이하며 밤에도 쉬지 않고 몰아세우는"
+        }
+      ]
     },
     {
       "id": "D410",
@@ -121,14 +131,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "'걸어라'만 하는 엄한 길잡이",
-      "after": "늘 배고파하던 자기 생선구이를 '받아라' 하고 내주는",
+      "before": "'걸어라'만 하는 엄한 길잡이다",
+      "after": "늘 배고파하던 자기 생선구이를 '받아라' 하고 내준다",
       "trigger": [{ "scene": "side:second_affection_06", "lines": ["14-15"] }],
       "evidence": [{ "scene": "side:second_affection_06", "lines": ["16-33"] }],
       "reason": "#17-18 — 홍련이 '사고 전환이라도 온 건가'(#25) 할 만큼 처음 보는 일. 10#51 '다시 만나러 오겠다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '걸어라'만 하는 엄한 길잡이 · 후 늘 배고파하던 자기 생선구이를 '받아라' 하고 내주는"
+        }
+      ]
     },
     {
       "id": "D411",
@@ -175,12 +195,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["org:필그림"],
-      "text": "업혀 가다 깨자 '이거 놔요'라며 발버둥치고, 지휘관에게 돌아가겠다며 필그림 셋에게 떼를 쓰는",
+      "text": "업혀 가다 깨자 '이거 놔요'라며 발버둥치고, 지휘관에게 돌아가겠다며 필그림 셋에게 떼를 쓴다",
       "evidence": [{ "scene": "side:second_affection_01", "lines": ["4-24", "27-33"] }],
       "reason": "#4 · #14 · #28 — 11#74 '그 하얀 사람들처럼 제가 귀찮잖아요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "업혀 가다 깨자 '이거 놔요'라며 발버둥치고, 지휘관에게 돌아가겠다며 필그림 셋에게 떼를 쓰는"
+        }
+      ]
     },
     {
       "id": "D415",
@@ -188,14 +218,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["org:필그림"],
-      "before": "자기를 버리고 떠났다고 여긴",
-      "after": "바쁜데도 데려다준 고마운 분들이라 깨닫고 보고 싶어 하는",
+      "before": "자기를 버리고 떠났다고 여겼다",
+      "after": "바쁜데도 데려다준 고마운 분들이라 깨닫고 보고 싶어 한다",
       "trigger": [{ "scene": "side:second_affection_12", "lines": ["32-39"] }],
       "evidence": [{ "scene": "side:second_affection_13", "lines": ["54-62"] }],
       "reason": "#58-62 — F1367. 계기는 방주로 가다 돌아선 밤의 깨달음.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 자기를 버리고 떠났다고 여긴 · 후 바쁜데도 데려다준 고마운 분들이라 깨닫고 보고 싶어 하는"
+        }
+      ]
     },
     {
       "id": "D416",
@@ -203,58 +243,91 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:크라운"],
-      "before": "'당신도 제가 귀찮은 거죠?'라며 밀어내던",
-      "after": "'크라운'이라 이름으로 부르며 뱀술을 담가 주고, 앓는 크라운 대신 혼자 나가 왕국을 지키는",
+      "before": "'당신도 제가 귀찮은 거죠?'라며 밀어냈다",
+      "after": "'크라운'이라 이름으로 부르며 뱀술을 담가 주고, 앓는 크라운 대신 혼자 나가 왕국을 지킨다",
       "trigger": [{ "scene": "side:second_affection_12", "lines": ["40-47"] }],
       "evidence": [{ "scene": "side:second_affection_14", "lines": ["17-21", "33-39"] }],
       "reason": "#34-38 — 13#16-20 이름 · 뱀술, 11#70 '귀찮은 거죠'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '당신도 제가 귀찮은 거죠?'라며 밀어내던 · 후 '크라운'이라 이름으로 부르며 뱀술을 담가 주고, 앓는 크라운 대신 혼자 나가 왕국을 지키는"
+        }
+      ]
     },
     {
       "id": "D417",
       "person": "person:마리안",
       "aspect": "성격",
       "act": "변화",
-      "before": "떼쓰고 우기는 아이 같은",
-      "after": "굼벵이 요리 · 뱀술 · 고전 영화를 즐기며 '후후' 웃고 남을 챙기는, 차임이 '너무 급격하다' 할 만큼 성숙한",
+      "before": "떼쓰고 우기는 아이 같았다",
+      "after": "굼벵이 요리 · 뱀술 · 고전 영화를 즐기며 '후후' 웃고 남을 챙기는, 차임이 '너무 급격하다' 할 만큼 성숙하다",
       "points": ["F1367"],
       "trigger": [{ "scene": "side:second_affection_12", "lines": ["32-39"] }],
       "evidence": [{ "scene": "side:second_affection_13", "lines": ["3-22", "27-33"] }],
       "reason": "#14 · #27-33 — 앞 성격 변화 D111(아이처럼 제멋대로).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 떼쓰고 우기는 아이 같은 · 후 굼벵이 요리 · 뱀술 · 고전 영화를 즐기며 '후후' 웃고 남을 챙기는, 차임이 '너무 급격하다' 할 만큼 성숙한"
+        }
+      ]
     },
     {
       "id": "D418",
       "person": "person:마리안",
       "aspect": "소속",
       "act": "변화",
-      "before": "필그림 셋을 따라 지상을 걷던",
-      "after": "백기사 크라운 왕국의 백성",
+      "before": "필그림 셋을 따라 지상을 걸었다",
+      "after": "백기사 크라운 왕국의 백성이다",
       "with": ["place:크라운_왕국"],
       "trigger": [{ "scene": "side:second_affection_10", "lines": ["47-54"] }],
       "evidence": [{ "scene": "side:second_affection_12", "lines": ["45-47"] }],
       "reason": "#45-46 '왕과 백성 사이가 된 것' — 11#68 '왕국에 들어온 이상 제 백성'. 앞 소속 변화 D112.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 필그림 셋을 따라 지상을 걷던 · 후 백기사 크라운 왕국의 백성" }
+      ]
     },
     {
       "id": "D419",
       "person": "person:마리안",
       "aspect": "신념",
       "act": "변화",
-      "before": "쓰러진 랩쳐를 '불쌍해요, 왜 죽이나요?'라 묻던",
-      "after": "서로 지키면 끝없이 강해진다며 지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다는",
+      "before": "쓰러진 랩쳐를 '불쌍해요, 왜 죽이나요?'라 물었다",
+      "after": "서로 지키면 끝없이 강해진다며 지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다고 한다",
       "trigger": [{ "scene": "side:second_affection_15", "lines": ["29-34"] }],
       "evidence": [{ "scene": "side:second_affection_15", "lines": ["41-53", "63-69"] }],
       "reason": "#49-53 · #68 — 앞 신념 기준 D110. 07#19-27에서 '랩쳐가 왜 나빠요?'를 묻던 마리안이 14에서 타일런트 급을 막는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 쓰러진 랩쳐를 '불쌍해요, 왜 죽이나요?'라 묻던 · 후 서로 지키면 끝없이 강해진다며 지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다는"
+        }
+      ]
     },
     {
       "id": "D420",

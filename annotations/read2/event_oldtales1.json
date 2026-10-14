@@ -492,14 +492,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:신데렐라"],
-      "before": "건방지다고 받아치던 동료",
-      "after": "레드 슈즈를 죽인 신데렐라를 '저 헬레틱을 죽이자'며 겨누는",
+      "before": "건방지다고 받아치던 동료다",
+      "after": "레드 슈즈를 죽인 신데렐라를 '저 헬레틱을 죽이자'며 겨눈다",
       "trigger": [{ "scene": "event_oldtales2_intermission_01", "lines": ["121-122"] }],
       "evidence": [{ "scene": "event_oldtales2_intermission_01", "lines": ["183-193"] }],
       "reason": "#186 · #193 — 2_03_s에서도 무섭다 · 죽이고 싶다 했다(#42-51)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 건방지다고 받아치던 동료 · 후 레드 슈즈를 죽인 신데렐라를 '저 헬레틱을 죽이자'며 겨누는"
+        }
+      ]
     },
     {
       "id": "D571",
@@ -507,26 +517,46 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:신데렐라"],
-      "before": "헬레틱이라며 죽이려던",
-      "after": "'가족을 또 잃고 싶지 않다'며 사과하고 끌어안고 지켜 주겠다는",
+      "before": "헬레틱이라며 죽이려 했다",
+      "after": "'가족을 또 잃고 싶지 않다'며 사과하고 끌어안고 지켜 주겠다고 한다",
       "trigger": [{ "scene": "event_oldtales2_05_e", "lines": ["118-136"] }],
       "evidence": [{ "scene": "event_oldtales2_05_e", "lines": ["147-170"] }],
       "reason": "#151-155 · #161-166",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱이라며 죽이려던 · 후 '가족을 또 잃고 싶지 않다'며 사과하고 끌어안고 지켜 주겠다는"
+        }
+      ]
     },
     {
       "id": "D572",
       "person": "person:세이렌",
       "aspect": "성격",
       "act": "기준",
-      "text": "말이 명령이 되어 버리는 언령 때문에 '아으'로만 의사를 전하고, 다급할 때만 [ ]로 말하다 피를 토하는",
+      "text": "말이 명령이 되어 버리는 언령 때문에 '아으'로만 의사를 전하고, 다급할 때만 [ ]로 말하다 피를 토한다",
       "evidence": [{ "scene": "event_oldtales1_01_e", "lines": ["41-50"] }],
       "reason": "#46-47 '세이렌! 말하지 마!' — 04_e#38-49에서도 되풀이된다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "말이 명령이 되어 버리는 언령 때문에 '아으'로만 의사를 전하고, 다급할 때만 [ ]로 말하다 피를 토하는"
+        }
+      ]
     },
     {
       "id": "D573",
@@ -534,14 +564,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:신데렐라"],
-      "before": "붉은 눈의 신데렐라가 무서워 내민 손을 피하던",
-      "after": "먼저 손을 포개고 '많이 아팠지 · 외로웠지'라 우는",
+      "before": "붉은 눈의 신데렐라가 무서워 내민 손을 피했다",
+      "after": "먼저 손을 포개고 '많이 아팠지 · 외로웠지'라 운다",
       "trigger": [{ "scene": "event_oldtales2_05_e", "lines": ["118-136"] }],
       "evidence": [{ "scene": "event_oldtales2_05_e", "lines": ["173-191"] }],
       "reason": "#176-189 — 2_03_s#31-37의 피한 손을 스스로 되짚는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 붉은 눈의 신데렐라가 무서워 내민 손을 피하던 · 후 먼저 손을 포개고 '많이 아팠지 · 외로웠지'라 우는"
+        }
+      ]
     },
     {
       "id": "D574",
@@ -562,14 +602,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:헨젤", "person:그레텔", "person:세이렌"],
-      "before": "곧 따라오리라 믿던 동료",
-      "after": "믿어 주지 않는 그들에게 '괴물 구경을 하고 싶었을 뿐'이라며 따라오면 죽이겠다는",
+      "before": "곧 따라오리라 믿던 동료다",
+      "after": "믿어 주지 않는 그들에게 '괴물 구경을 하고 싶었을 뿐'이라며 따라오면 죽이겠다고 한다",
       "trigger": [{ "scene": "event_oldtales2_intermission_01", "lines": ["183-193"] }],
       "evidence": [{ "scene": "event_oldtales2_intermission_01", "lines": ["196-224"] }],
       "reason": "#213-224",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 곧 따라오리라 믿던 동료 · 후 믿어 주지 않는 그들에게 '괴물 구경을 하고 싶었을 뿐'이라며 따라오면 죽이겠다는"
+        }
+      ]
     },
     {
       "id": "D576",
@@ -577,43 +627,73 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:헨젤", "person:그레텔", "person:세이렌"],
-      "before": "따라오면 죽이겠다며 떠난",
-      "after": "'같이 가자 · 너희가 있으면 이길 수 있어'라 청하고 용서해 줘서 고맙다는",
+      "before": "따라오면 죽이겠다며 떠났다",
+      "after": "'같이 가자 · 너희가 있으면 이길 수 있어'라 청하고 용서해 줘서 고맙다고 한다",
       "trigger": [{ "scene": "event_oldtales2_05_s", "lines": ["91-101"] }],
       "evidence": [{ "scene": "event_oldtales2_05_e", "lines": ["94-95", "167-169", 190] }],
       "reason": "#94-95 · #169",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 따라오면 죽이겠다며 떠난 · 후 '같이 가자 · 너희가 있으면 이길 수 있어'라 청하고 용서해 줘서 고맙다는"
+        }
+      ]
     },
     {
       "id": "D577",
       "person": "person:신데렐라",
       "aspect": "신념",
       "act": "변화",
-      "before": "갓데스 곁에서 활약해 갓데스보다 아름다워지려던",
-      "after": "더럽혀진 이야기의 속죄로 아무것도 하지 않는 실험체로 남겠다는",
+      "before": "갓데스 곁에서 활약해 갓데스보다 아름다워지려 했다",
+      "after": "더럽혀진 이야기의 속죄로 아무것도 하지 않는 실험체로 남겠다고 한다",
       "trigger": [{ "scene": "event_oldtales2_01_s", "lines": ["59-68"] }],
       "evidence": [{ "scene": "event_oldtales2_01_s", "lines": ["69-91"] }],
       "reason": "#72-74 · #83-91. 처음 꿈은 2_02_s#37-39",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 갓데스 곁에서 활약해 갓데스보다 아름다워지려던 · 후 더럽혀진 이야기의 속죄로 아무것도 하지 않는 실험체로 남겠다는"
+        }
+      ]
     },
     {
       "id": "D578",
       "person": "person:신데렐라",
       "aspect": "신념",
       "act": "변화",
-      "before": "죽거나 실험체로 속죄하려던",
-      "after": "최고의 관객 에이브와 동료 · 자기를 위해 망친 것을 직접 수습하려 퀸을 치는",
+      "before": "죽거나 실험체로 속죄하려 했다",
+      "after": "최고의 관객 에이브와 동료 · 자기를 위해 망친 것을 직접 수습하려 퀸을 친다",
       "trigger": [{ "scene": "event_oldtales2_04_e", "lines": ["158-171"] }],
       "evidence": [{ "scene": "event_oldtales2_05_s", "lines": ["59-82"] }],
       "time": "S182",
       "reason": "#59-60 · #76-82 '인류를 위해서가 아니야 · 나를 위해서'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 죽거나 실험체로 속죄하려던 · 후 최고의 관객 에이브와 동료 · 자기를 위해 망친 것을 직접 수습하려 퀸을 치는"
+        }
+      ]
     },
     {
       "id": "D579",
@@ -649,30 +729,50 @@
       "person": "person:레드_슈즈",
       "aspect": "신체",
       "act": "변화",
-      "before": "고기동 부스터 무장 [레드 슈즈]를 단 2세대",
-      "after": "코어가 꿰뚫려 죽고, 잘린 두 다리는 어둠 속으로 사라진",
+      "before": "고기동 부스터 무장 [레드 슈즈]를 단 2세대다",
+      "after": "코어가 꿰뚫려 죽고, 잘린 두 다리는 어둠 속으로 사라졌다",
       "trigger": [{ "scene": "event_oldtales2_intermission_01", "lines": ["121-122"] }],
       "evidence": [{ "scene": "event_oldtales2_intermission_01", "lines": ["132-156"] }],
       "points": ["F1683"],
       "reason": "#147-156 — 죽음을 타임라인에 올린다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 고기동 부스터 무장 [레드 슈즈]를 단 2세대 · 후 코어가 꿰뚫려 죽고, 잘린 두 다리는 어둠 속으로 사라진"
+        }
+      ]
     },
     {
       "id": "D582",
       "person": "person:신데렐라",
       "aspect": "신체",
       "act": "변화",
-      "before": "청백색 머리 · 푸른 눈의 2세대",
-      "after": "침식이 풀린 뒤에도 눈만 '낙인'처럼 붉게 남고 전능감이 들 만큼 활력이 넘치는",
+      "before": "청백색 머리 · 푸른 눈의 2세대다",
+      "after": "침식이 풀린 뒤에도 눈만 '낙인'처럼 붉게 남고 전능감이 들 만큼 활력이 넘친다",
       "trigger": [{ "scene": "event_oldtales2_01_s", "lines": ["14-19"] }],
       "evidence": [{ "scene": "event_oldtales2_03_e", "lines": ["8-19"] }],
       "points": ["F1680"],
       "reason": "#9-11 · #18-19",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M23", "note": "M23 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 청백색 머리 · 푸른 눈의 2세대 · 후 침식이 풀린 뒤에도 눈만 '낙인'처럼 붉게 남고 전능감이 들 만큼 활력이 넘치는"
+        }
+      ]
     },
     {
       "id": "D583",

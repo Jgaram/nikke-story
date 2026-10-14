@@ -232,24 +232,44 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "TV로 알아본 '그 어렸던 아이'가 잘 자란 것이 자랑스러워 다 큰 어른인 그를 쓰다듬는",
+      "text": "TV로 알아본 '그 어렸던 아이'가 잘 자란 것이 자랑스러워 다 큰 어른인 그를 쓰다듬는다",
       "evidence": [{ "scene": "fl:good_world_03", "lines": [82, "89-91"] }],
       "reason": "#82 뉴스 볼 때부터 하고 싶던 쓰담쓰담 · #90 '그 어렸던 아이'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "TV로 알아본 '그 어렸던 아이'가 잘 자란 것이 자랑스러워 다 큰 어른인 그를 쓰다듬는"
+        }
+      ]
     },
     {
       "id": "D1122",
       "person": "person:백학",
       "aspect": "신념",
       "act": "기준",
-      "text": "계약 · 약속은 꼭 지켜야 하고, 세상에 당연한 건 없이 개인의 판단과 행동만 있다고 믿는",
+      "text": "계약 · 약속은 꼭 지켜야 하고, 세상에 당연한 건 없이 개인의 판단과 행동만 있다고 믿는다",
       "evidence": [{ "scene": "fl:good_world_04", "lines": ["73-75", 81, "85-86"] }],
       "reason": "#74-75 '당연한 건 없어요 · 개인의 판단과 행동만' · #81 대가를 [계약]으로.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "계약 · 약속은 꼭 지켜야 하고, 세상에 당연한 건 없이 개인의 판단과 행동만 있다고 믿는"
+        }
+      ]
     },
     {
       "id": "D1123",
@@ -270,20 +290,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:백학"],
-      "text": "길 잃은 백학을 데려다주지만, '그 어렸던 아이'라는 말에 자기 과거를 물으려 약속을 받아 내는",
+      "text": "길 잃은 백학을 데려다주지만, '그 어렸던 아이'라는 말에 자기 과거를 물으려 약속을 받아 낸다",
       "evidence": [{ "scene": "fl:good_world_04", "lines": ["88-99"] }],
       "reason": "#92-94 '반드시 물어봐야만 해' · #98-99 약속하자.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "길 잃은 백학을 데려다주지만, '그 어렸던 아이'라는 말에 자기 과거를 물으려 약속을 받아 내는"
+        }
+      ]
     },
     {
       "id": "D1125",
       "person": "person:지휘관",
       "aspect": "기억",
       "act": "변화",
-      "before": "[PROJECT. A.D.] 이름만 보고 자기가 무엇인지 모르던",
-      "after": "자기가 [프로젝트 A.D.]에서 태어난 아이라는 것을 남의 입으로 확인한",
+      "before": "[PROJECT. A.D.] 이름만 보고 자기가 무엇인지 몰랐다",
+      "after": "자기가 [프로젝트 A.D.]에서 태어난 아이라는 것을 남의 입으로 확인했다",
       "trigger": [{ "scene": "fl:good_world_11", "lines": ["88-101"] }],
       "time": "S312",
       "points": ["F2566"],
@@ -291,7 +321,17 @@
       "reason": "#99 '프로젝트에서 태어난 아이' · #101 '맞아요' — #109 무엇을 위해 어떤 존재로 태어났는지 알고 싶다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 [PROJECT. A.D.] 이름만 보고 자기가 무엇인지 모르던 · 후 자기가 [프로젝트 A.D.]에서 태어난 아이라는 것을 남의 입으로 확인한"
+        }
+      ]
     },
     {
       "id": "D1126",
@@ -299,15 +339,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:백학"],
-      "before": "과거를 물으려 돕던",
-      "after": "속셈을 털어놓고 백학이 지하를 나와 방주를 직접 체험하길 권하는",
+      "before": "과거를 물으려 도왔다",
+      "after": "속셈을 털어놓고 백학이 지하를 나와 방주를 직접 체험하길 권한다",
       "trigger": [{ "scene": "fl:good_world_13", "lines": ["81-98"] }],
       "time": "S312",
       "evidence": [{ "scene": "fl:good_world_13", "lines": ["81-82", "113-123"] }],
       "reason": "#82 '묻고 싶은 게 있어서' · #118 지하가 아니라 직접 방주를 체험한 다음에 · #123 침묵(신경 쓰였다).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 과거를 물으려 돕던 · 후 속셈을 털어놓고 백학이 지하를 나와 방주를 직접 체험하길 권하는"
+        }
+      ]
     },
     {
       "id": "D1127",
@@ -315,8 +365,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "잘 자란 '그 어렸던 아이'로 귀여워하던",
-      "after": "속셈이 있어도 좋은 사람이라 믿고 그가 만들 세계를 곁에서 지켜보기로 한",
+      "before": "잘 자란 '그 어렸던 아이'로 귀여워했다",
+      "after": "속셈이 있어도 좋은 사람이라 믿고 그가 만들 세계를 곁에서 지켜보기로 했다",
       "trigger": [{ "scene": "fl:good_world_13", "lines": ["38-56"] }],
       "time": "S312",
       "note": "볼 거리 W61 — 지휘관의 선택지 답 뒤 쓰다듬기 · 지켜보기",
@@ -324,15 +374,25 @@
       "reason": "#96-98 좋은 사람 · 그가 만들 세계가 [좋은 세계] · #104-109 지켜보겠다 · #127 볼 쓰다듬기.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 잘 자란 '그 어렸던 아이'로 귀여워하던 · 후 속셈이 있어도 좋은 사람이라 믿고 그가 만들 세계를 곁에서 지켜보기로 한"
+        }
+      ]
     },
     {
       "id": "D1128",
       "person": "person:백학",
       "aspect": "신념",
       "act": "변화",
-      "before": "계약 · 약속에 따라서만 지하에서 움직이던",
-      "after": "처음으로 자기 뜻으로 지하를 나와 방주에서 살며 지휘관의 세계를 지켜보기로 한",
+      "before": "계약 · 약속에 따라서만 지하에서 움직였다",
+      "after": "처음으로 자기 뜻으로 지하를 나와 방주에서 살며 지휘관의 세계를 지켜보기로 했다",
       "trigger": [{ "scene": "fl:good_world_13", "lines": ["113-131"] }],
       "time": "S312",
       "points": ["F2570"],
@@ -340,20 +400,40 @@
       "reason": "#47-48 '처음으로 계약이나 약속 때문이 아니라 제 자신의 의지로' — 13#130-131 더는 지하에 있지 않겠다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 계약 · 약속에 따라서만 지하에서 움직이던 · 후 처음으로 자기 뜻으로 지하를 나와 방주에서 살며 지휘관의 세계를 지켜보기로 한"
+        }
+      ]
     },
     {
       "id": "D1129",
       "person": "person:총사령관",
       "aspect": "신념",
       "act": "기준",
-      "text": "세상을 좀 더 좋은 세계로 만들려 방주를 그 시작점으로 삼아 자기 몸 · 재산까지 내놓은",
+      "text": "세상을 좀 더 좋은 세계로 만들려 방주를 그 시작점으로 삼아 자기 몸 · 재산까지 내놓았다",
       "evidence": [{ "scene": "fl:good_world_12", "lines": ["36-42", "57-58", 68] }],
       "points": ["F2568", "F2562"],
       "reason": "백학의 말 — #40-41 좋은 세계를 꿈꿈 · #36 자신을 실험체로 · #58 재산으로 재단.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M46" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "세상을 좀 더 좋은 세계로 만들려 방주를 그 시작점으로 삼아 자기 몸 · 재산까지 내놓은"
+        }
+      ]
     }
   ],
   "life": [

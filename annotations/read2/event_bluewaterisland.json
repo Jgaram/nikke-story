@@ -253,15 +253,25 @@
       "aspect": "신념",
       "act": "변화",
       "points": ["F972"],
-      "before": "페퍼가 그 계단에서 기억을 떠올릴까 두려워 섬을 떠나기 싫어하는",
-      "after": "경멸받더라도 자기 죄로 다친 니케들이 흘러드는 리페어 센터로 돌아가 속죄하겠다는",
+      "before": "페퍼가 그 계단에서 기억을 떠올릴까 두려워 섬을 떠나기 싫어했다",
+      "after": "경멸받더라도 자기 죄로 다친 니케들이 흘러드는 리페어 센터로 돌아가 속죄하겠다고 한다",
       "trigger": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["122-131"] }],
       "time": "S77",
       "evidence": [{ "scene": "event_bluewaterisland2_05_e", "lines": ["147-150", "159-179"] }],
       "reason": "#148-150 계단이 두려움 → #160-168 반드시 그곳에 있어야 · #177 돌아갈게요",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M09" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 페퍼가 그 계단에서 기억을 떠올릴까 두려워 섬을 떠나기 싫어하는 · 후 경멸받더라도 자기 죄로 다친 니케들이 흘러드는 리페어 센터로 돌아가 속죄하겠다는"
+        }
+      ]
     },
     {
       "id": "D264",

@@ -78,8 +78,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:프린세스"],
-      "before": "마지막 한마디도 남기지 못하고 격벽에서 잃은",
-      "after": "그 자리를 다시 찾아 건강해진 모습을 전하고 '고마워요 · 보고 싶어요'라 작별을 건넨",
+      "before": "마지막 한마디도 남기지 못하고 격벽에서 잃었다",
+      "after": "그 자리를 다시 찾아 건강해진 모습을 전하고 '고마워요 · 보고 싶어요'라 작별을 건넸다",
       "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["35-38"] }],
       "time": "S326",
       "points": ["F2715"],
@@ -87,7 +87,17 @@
       "reason": "#37 '마지막 한마디도 남기지 못한 게 계속 마음에 걸렸는데 이제야' — 앞 관계는 D1027(ch43).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 마지막 한마디도 남기지 못하고 격벽에서 잃은 · 후 그 자리를 다시 찾아 건강해진 모습을 전하고 '고마워요 · 보고 싶어요'라 작별을 건넨"
+        }
+      ]
     },
     {
       "id": "D1732",
@@ -95,23 +105,33 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "화력의 극의를 깨달았다며 모시는 스승님",
-      "after": "'가족 같은 스승님' — 곁에 있어 아우터 림에 갈 용기를 낼 수 있었다는",
+      "before": "화력의 극의를 깨달았다며 모시는 스승님이다",
+      "after": "'가족 같은 스승님' — 곁에 있어 아우터 림에 갈 용기를 낼 수 있었다고 한다",
       "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": [53] }],
       "time": "S326",
       "evidence": [{ "scene": "ep:d_nikke_neon_visioneye_05", "lines": ["30-41"] }],
       "reason": "04#53 '가족 같은 스승님이랑 동료들' · 05#37 '스승님이 곁에 있어서 용기 낼 수 있었어요'. 앞 관계 D20.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 화력의 극의를 깨달았다며 모시는 스승님 · 후 '가족 같은 스승님' — 곁에 있어 아우터 림에 갈 용기를 낼 수 있었다는"
+        }
+      ]
     },
     {
       "id": "D1733",
       "person": "person:네온",
       "aspect": "신념",
       "act": "변화",
-      "before": "당장의 미래도 생각하지 않고 오늘만 버티며 살던",
-      "after": "공주님께 받은 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다는",
+      "before": "당장의 미래도 생각하지 않고 오늘만 버티며 살았다",
+      "after": "공주님께 받은 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다고 한다",
       "trigger": [{ "scene": "ep:d_nikke_neon_visioneye_04", "lines": ["41-60"] }],
       "time": "S326",
       "points": ["F2715"],
@@ -119,7 +139,17 @@
       "reason": "#51-54 '당장의 미래도 생각 안 했는데 … 미래를 볼 수 있게 된 거죠' · #58-59 '더 많은 걸 지키겠어요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M75" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 당장의 미래도 생각하지 않고 오늘만 버티며 살던 · 후 공주님께 받은 '건강한 눈'으로 미래를 보며 더 많은 것을 지키겠다는"
+        }
+      ]
     }
   ],
   "life": [],

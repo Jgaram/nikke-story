@@ -59,14 +59,24 @@
       "person": "person:스윗_조니",
       "aspect": "신념",
       "act": "변화",
-      "before": "공장에 남아 카카오를 지키며 방주로 옮기자는 제안을 거절한",
-      "after": "전투복을 입은 니케 소녀들의 로망을 도우려 스스로 데이터를 실어 방주로 들어온",
+      "before": "공장에 남아 카카오를 지키며 방주로 옮기자는 제안을 거절했다",
+      "after": "전투복을 입은 니케 소녀들의 로망을 도우려 스스로 데이터를 실어 방주로 들어왔다",
       "points": ["F808", "F1780"],
       "evidence": [{ "scene": "event_romanticvalentine_02_e", "lines": ["29-32", "66-77"] }],
       "reason": "#66-69 예쁜 옷 대신 전투복 · #75-77 '도와주고 싶었다' — 공장에 남던 조니(F808)가 사명으로 방주행을 택했다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공장에 남아 카카오를 지키며 방주로 옮기자는 제안을 거절한 · 후 전투복을 입은 니케 소녀들의 로망을 도우려 스스로 데이터를 실어 방주로 들어온"
+        }
+      ]
     },
     {
       "id": "D1626",
@@ -87,13 +97,23 @@
       "person": "person:트로니",
       "aspect": "성격",
       "act": "변화",
-      "before": "남과 마주하기를 겁내 숨던",
-      "after": "대화에 조금 익숙해져 더 어려운 메이드 일에 스스로 나선",
+      "before": "남과 마주하기를 겁내 숨었다",
+      "after": "대화에 조금 익숙해져 더 어려운 메이드 일에 스스로 나섰다",
       "evidence": [{ "scene": "event_romanticvalentine_02_s", "lines": ["72-84"] }],
       "reason": "#80-81 '대화하는 거 조금 익숙해진 것 같아서 좀 더 어려운 걸' — 심사까지 통과해 메이드 카페에서 일한다(F1782).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 남과 마주하기를 겁내 숨던 · 후 대화에 조금 익숙해져 더 어려운 메이드 일에 스스로 나선"
+        }
+      ]
     },
     {
       "id": "D1628",
@@ -116,13 +136,16 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "서로 믿고 움직이는 'Entertainment 관계'",
-      "after": "자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡기는",
+      "after": "자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡긴다",
       "points": ["F1783"],
       "evidence": [{ "scene": "event_romanticvalentine_05_s", "lines": ["13-19", "28-31"] }],
       "reason": "#14 'Me는 사장이지 지휘관이 아니니까' · #29-30 'Nikke들을 잘 부탁합니다' — D832의 동업자 관계보다 한 걸음 맡기는 쪽.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M68" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 자기는 사장이지 지휘관이 아니라며 메이드들뿐 아니라 니케들을 맡기는" }
+      ]
     }
   ],
   "life": [],

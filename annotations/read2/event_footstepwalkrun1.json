@@ -287,30 +287,50 @@
       "person": "person:라피",
       "aspect": "성격",
       "act": "변화",
-      "before": "입력된 대처법대로만 움직이던",
-      "after": "처음 제 의지로 결과를 낸 데 고양되어 '다른 것도 해볼 수 있을까' 하는",
+      "before": "입력된 대처법대로만 움직였다",
+      "after": "처음 제 의지로 결과를 낸 데 고양되어 '다른 것도 해볼 수 있을까' 한다",
       "trigger": [{ "scene": "event_footstepwalkrun1_04_s", "lines": ["86-90"] }],
       "time": "S196",
       "evidence": [{ "scene": "event_footstepwalkrun1_04_e", "lines": ["4-7"] }],
       "reason": "#6 '처음으로 자신의 의지로 결과를 만들어 냈다는 사실에 고양됐다' · #7.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 입력된 대처법대로만 움직이던 · 후 처음 제 의지로 결과를 낸 데 고양되어 '다른 것도 해볼 수 있을까' 하는"
+        }
+      ]
     },
     {
       "id": "D587",
       "person": "person:라피",
       "aspect": "신념",
       "act": "변화",
-      "before": "평생 병상에 누워 원하는 게 무슨 소용이냐던",
-      "after": "희망이 허무함을 알아 의미 없는 삶이 끝나기만 바라는",
+      "before": "평생 병상에 누워 원하는 게 무슨 소용이냐고 했다",
+      "after": "희망이 허무함을 알아 의미 없는 삶이 끝나기만 바란다",
       "trigger": [{ "scene": "event_footstepwalkrun1_06_s", "lines": ["204-223"] }],
       "time": "S196",
       "evidence": [{ "scene": "event_footstepwalkrun1_06_e", "lines": ["0-15"] }],
       "reason": "#13-15 '이 아무 의미 없는 삶이 끝나는 날'. 앞은 01_s#78-81. 리오 · 웬디를 잃은 뒤다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 평생 병상에 누워 원하는 게 무슨 소용이냐던 · 후 희망이 허무함을 알아 의미 없는 삶이 끝나기만 바라는"
+        }
+      ]
     },
     {
       "id": "D588",
@@ -318,12 +338,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레드_후드"],
-      "text": "연도를 묻는 붉은 니케를 경계하며 존댓말로 대하고, 양산형이라 이름 같은 건 없다고 하는",
+      "text": "연도를 묻는 붉은 니케를 경계하며 존댓말로 대하고, 양산형이라 이름 같은 건 없다고 한다",
       "evidence": [{ "scene": "event_footstepwalkrun1_06_e", "lines": ["117-143"] }],
       "reason": "#118 · #135 '양산형인 저에겐 이름 같은 건 없습니다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "연도를 묻는 붉은 니케를 경계하며 존댓말로 대하고, 양산형이라 이름 같은 건 없다고 하는"
+        }
+      ]
     },
     {
       "id": "D589",
@@ -331,30 +361,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레드_후드"],
-      "before": "대가 없는 호의가 불편해 떠나 주기를 바라던",
-      "after": "죽거나 망가지지 않을 것 같아 '네가 되고 싶다'고 청하는",
+      "before": "대가 없는 호의가 불편해 떠나 주기를 바랐다",
+      "after": "죽거나 망가지지 않을 것 같아 '네가 되고 싶다'고 청한다",
       "trigger": [{ "scene": "event_footstepwalkrun2_03_e", "lines": ["39-58"] }],
       "time": "S197",
       "evidence": [{ "scene": "event_footstepwalkrun2_03_e", "lines": ["63-71"] }],
       "reason": "#19-24 · #42-44 불편함 → #64-68 '난 네가 되고 싶어'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 대가 없는 호의가 불편해 떠나 주기를 바라던 · 후 죽거나 망가지지 않을 것 같아 '네가 되고 싶다'고 청하는"
+        }
+      ]
     },
     {
       "id": "D590",
       "person": "person:라피",
       "aspect": "신념",
       "act": "변화",
-      "before": "의미 없는 삶이 끝나기만 바라던",
-      "after": "'살라'는 말대로 살아 반드시 레드 후드가 되겠다는",
+      "before": "의미 없는 삶이 끝나기만 바랐다",
+      "after": "'살라'는 말대로 살아 반드시 레드 후드가 되겠다고 한다",
       "trigger": [{ "scene": "event_footstepwalkrun2_05_e", "lines": ["26-30"] }],
       "time": "S197",
       "evidence": [{ "scene": "event_footstepwalkrun2_06_s", "lines": ["14-20"] }],
       "reason": "#18 '반드시 네가 될게' · 06_s#71 '저는 살아야 합니다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 의미 없는 삶이 끝나기만 바라던 · 후 '살라'는 말대로 살아 반드시 레드 후드가 되겠다는"
+        }
+      ]
     },
     {
       "id": "D591",
@@ -378,13 +428,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'나를 이끌어 줄 누군가'를 찾아 떠돌던",
-      "after": "이어받은 힘 · 동료 · 이끌어 줄 지휘관이 있어 실패할 이유가 없다며 앞으로 할 일을 생각하는",
+      "before": "'나를 이끌어 줄 누군가'를 찾아 떠돌았다",
+      "after": "이어받은 힘 · 동료 · 이끌어 줄 지휘관이 있어 실패할 이유가 없다며 앞으로 할 일을 생각한다",
       "evidence": [{ "scene": "event_footstepwalkrun2_06_e", "lines": ["84-87", "115-117", 119] }],
       "reason": "#86 '나를 이끌어줄 지휘관' — 앞은 epilogue#52-53. #119.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '나를 이끌어 줄 누군가'를 찾아 떠돌던 · 후 이어받은 힘 · 동료 · 이끌어 줄 지휘관이 있어 실패할 이유가 없다며 앞으로 할 일을 생각하는"
+        }
+      ]
     },
     {
       "id": "D593",

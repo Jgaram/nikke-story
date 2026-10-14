@@ -62,8 +62,8 @@
       "person": "person:홍련",
       "aspect": "소속",
       "act": "변화",
-      "before": "근접 전투 스쿼드가 궤멸한 뒤 혼자 남은",
-      "after": "릴리바이스의 주먹에 지고 갓데스 스쿼드에 합류한",
+      "before": "근접 전투 스쿼드가 궤멸한 뒤 혼자 남았다",
+      "after": "릴리바이스의 주먹에 지고 갓데스 스쿼드에 합류했다",
       "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_01", "lines": ["77-82"] }],
       "time": "S119",
       "points": ["F1242", "F1181"],
@@ -71,7 +71,17 @@
       "reason": "#96-97 '홍련이라고 하네. 잘 부탁하네' — 소속 이동을 타임라인에.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 근접 전투 스쿼드가 궤멸한 뒤 혼자 남은 · 후 릴리바이스의 주먹에 지고 갓데스 스쿼드에 합류한"
+        }
+      ]
     },
     {
       "id": "D1512",
@@ -105,12 +115,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:홍련"],
-      "text": "'검객'이라 부르며 놀리다가, 저격탄을 베어 내는 홍련에게 신이 나 시간이 끝나도 저녁까지 더 해 보자는",
+      "text": "'검객'이라 부르며 놀리다가, 저격탄을 베어 내는 홍련에게 신이 나 시간이 끝나도 저녁까지 더 해 보자고 한다",
       "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_03", "lines": ["78-99"] }],
       "reason": "#88 · #96-99.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'검객'이라 부르며 놀리다가, 저격탄을 베어 내는 홍련에게 신이 나 시간이 끝나도 저녁까지 더 해 보자는"
+        }
+      ]
     },
     {
       "id": "D1515",
@@ -118,23 +138,33 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:홍련"],
-      "before": "처음 보는 사람에게 칼을 휘두르는 홍련의 영입에 반대하던",
-      "after": "양산형 베이스인데도 몸 쓰는 법을 안다며 전력을 다하고 진 것을 인정하는",
+      "before": "처음 보는 사람에게 칼을 휘두르는 홍련의 영입에 반대했다",
+      "after": "양산형 베이스인데도 몸 쓰는 법을 안다며 전력을 다하고 진 것을 인정한다",
       "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_04", "lines": ["37-58"] }],
       "time": "S119",
       "evidence": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["27-30"] }],
       "reason": "#28-30. 앙숙 기준은 D355(출시순 앞)에 있다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 처음 보는 사람에게 칼을 휘두르는 홍련의 영입에 반대하던 · 후 양산형 베이스인데도 몸 쓰는 법을 안다며 전력을 다하고 진 것을 인정하는"
+        }
+      ]
     },
     {
       "id": "D1516",
       "person": "person:홍련",
       "aspect": "신념",
       "act": "변화",
-      "before": "'난 강해야 하니까' 갓데스 안에서 자기 위치를 증명하려던",
-      "after": "결이 다른 새 동료들과 함께 옛 전우들이 바라던 인류의 승리를 손에 넣겠다는",
+      "before": "'난 강해야 하니까' 갓데스 안에서 자기 위치를 증명하려 했다",
+      "after": "결이 다른 새 동료들과 함께 옛 전우들이 바라던 인류의 승리를 손에 넣겠다고 한다",
       "trigger": [{ "scene": "ep:d_nikke_hongryeon_blackshadow_05", "lines": ["54-58"] }],
       "time": "S119",
       "points": ["F1245"],
@@ -142,7 +172,17 @@
       "reason": "#59-62 · #71-72. 계기는 함께 달려 나온 갓데스의 외침.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '난 강해야 하니까' 갓데스 안에서 자기 위치를 증명하려던 · 후 결이 다른 새 동료들과 함께 옛 전우들이 바라던 인류의 승리를 손에 넣겠다는"
+        }
+      ]
     }
   ],
   "life": []

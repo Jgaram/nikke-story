@@ -391,15 +391,25 @@
       "person": "person:킬로",
       "aspect": "성격",
       "act": "변화",
-      "before": "포기부터 하고 탈로스 뒤에 숨는 겁쟁이",
-      "after": "'이젠 내가 너를 지킬게'라며 케이블을 제 가슴에 꽂는",
+      "before": "포기부터 하고 탈로스 뒤에 숨는 겁쟁이였다",
+      "after": "'이젠 내가 너를 지킬게'라며 케이블을 제 가슴에 꽂는다",
       "trigger": [{ "scene": "event_lastkingdom2_intermission", "lines": ["103-108"] }],
       "evidence": [{ "scene": "event_lastkingdom2_05_e", "lines": ["80-97"] }],
       "points": ["F1444"],
       "reason": "#81-82 · #85 — 2_03_e#59 '난 포기부터 했는데'와 대비",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 포기부터 하고 탈로스 뒤에 숨는 겁쟁이 · 후 '이젠 내가 너를 지킬게'라며 케이블을 제 가슴에 꽂는"
+        }
+      ]
     },
     {
       "id": "D447",
@@ -422,12 +432,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "헬레틱 모더니아로 알아본 마리안의 경고에 질려 방주 연락을 취소하고 숨을 몰아쉬는",
+      "text": "헬레틱 모더니아로 알아본 마리안의 경고에 질려 방주 연락을 취소하고 숨을 몰아쉰다",
       "evidence": [{ "scene": "event_lastkingdom1_01_e", "lines": ["94-123"] }],
       "reason": "#111-112 명령 취소 · #122-123 (F1426)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "헬레틱 모더니아로 알아본 마리안의 경고에 질려 방주 연락을 취소하고 숨을 몰아쉬는" }
+      ]
     },
     {
       "id": "D449",
@@ -435,14 +448,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "마리안의 경고에 질려 숨을 몰아쉬던",
-      "after": "두통에 시달리는 마리안의 손을 잡고 받은 '힘내요'를 돌려주는",
+      "before": "마리안의 경고에 질려 숨을 몰아쉬었다",
+      "after": "두통에 시달리는 마리안의 손을 잡고 받은 '힘내요'를 돌려준다",
       "trigger": [{ "scene": "event_lastkingdom1_03_e", "lines": ["6-18"] }],
       "evidence": [{ "scene": "event_lastkingdom2_02_e", "lines": ["69-76"] }],
       "reason": "#75-76 '저한테 힘내라고 말해주셨잖아요'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 마리안의 경고에 질려 숨을 몰아쉬던 · 후 두통에 시달리는 마리안의 손을 잡고 받은 '힘내요'를 돌려주는"
+        }
+      ]
     },
     {
       "id": "D450",
@@ -450,12 +473,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:킬로"],
-      "text": "방주에 알리려는 킬로에게 소중한 이들을 위험에 빠뜨리면 무슨 수를 써서라도 대가를 치르게 하겠다고 웃으며 경고하는",
+      "text": "방주에 알리려는 킬로에게 소중한 이들을 위험에 빠뜨리면 무슨 수를 써서라도 대가를 치르게 하겠다고 웃으며 경고한다",
       "evidence": [{ "scene": "event_lastkingdom1_01_e", "lines": ["98-119"] }],
       "reason": "#105-109 (F1426)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "방주에 알리려는 킬로에게 소중한 이들을 위험에 빠뜨리면 무슨 수를 써서라도 대가를 치르게 하겠다고 웃으며 경고하는"
+        }
+      ]
     },
     {
       "id": "D451",
@@ -463,14 +496,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:킬로"],
-      "before": "방주 연락을 막으려 경고하던",
-      "after": "토커티브의 팔을 떼어 내며 '킬로를 모욕하지 말아요'라 감싸는",
+      "before": "방주 연락을 막으려 경고했다",
+      "after": "토커티브의 팔을 떼어 내며 '킬로를 모욕하지 말아요'라 감싼다",
       "trigger": [{ "scene": "event_lastkingdom1_03_e", "lines": ["6-16"] }],
       "evidence": [{ "scene": "event_lastkingdom2_02_e", "lines": ["30-32"] }],
       "reason": "자기를 정의 못 하는 같은 처지에 '힘내요'(03_e) 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주 연락을 막으려 경고하던 · 후 토커티브의 팔을 떼어 내며 '킬로를 모욕하지 말아요'라 감싸는"
+        }
+      ]
     },
     {
       "id": "D452",
@@ -507,15 +550,25 @@
       "act": "변화",
       "with": ["person:크라운"],
       "time": "S144",
-      "before": "홀로 창고를 지키는 낯선 니케를 반말로 걱정해 데려가려던",
-      "after": "'왕이 되어 줘'라 청하고 목숨이 다할 때까지 모시겠다 맹세한 백성",
+      "before": "홀로 창고를 지키는 낯선 니케를 반말로 걱정해 데려가려 했다",
+      "after": "'왕이 되어 줘'라 청하고 목숨이 다할 때까지 모시겠다 맹세한 백성이다",
       "trigger": [{ "scene": "event_lastkingdom2_04_s", "lines": ["40-52"] }],
       "evidence": [{ "scene": "event_lastkingdom2_04_s", "lines": ["31-55"] }],
       "points": ["F1437"],
       "reason": "회상 — #45 · #51-52",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 홀로 창고를 지키는 낯선 니케를 반말로 걱정해 데려가려던 · 후 '왕이 되어 줘'라 청하고 목숨이 다할 때까지 모시겠다 맹세한 백성"
+        }
+      ]
     },
     {
       "id": "D455",
@@ -564,15 +617,25 @@
       "person": "person:크라운",
       "aspect": "신체",
       "act": "변화",
-      "before": "에블라 입자가 짙어지면 기침하며 앓는 몸",
-      "after": "모아 둔 입자로 네이키드 킹을 열어 손짓만으로 랩쳐를 전멸시키는",
+      "before": "에블라 입자가 짙어지면 기침하며 앓는 몸이었다",
+      "after": "모아 둔 입자로 네이키드 킹을 열어 손짓만으로 랩쳐를 전멸시킨다",
       "trigger": [{ "scene": "event_lastkingdom2_06_e", "lines": ["5-14"] }],
       "evidence": [{ "scene": "event_lastkingdom2_06_e", "lines": ["87-108"] }],
       "points": ["F1445", "F1446"],
       "reason": "#101-105 — 인디빌리아의 입자로 1년을 앞당김",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 에블라 입자가 짙어지면 기침하며 앓는 몸 · 후 모아 둔 입자로 네이키드 킹을 열어 손짓만으로 랩쳐를 전멸시키는"
+        }
+      ]
     },
     {
       "id": "D459",
@@ -606,14 +669,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:크라운"],
-      "before": "'이름만 왕'이라 가지고 놀려던",
-      "after": "말에 짓밟힌 뒤 '누군가를 죽이고 싶은 생각이 든 건 처음'이라는 원수",
+      "before": "'이름만 왕'이라 가지고 놀려 했다",
+      "after": "말에 짓밟힌 뒤 '누군가를 죽이고 싶은 생각이 든 건 처음'이라는 원수다",
       "trigger": [{ "scene": "event_lastkingdom1_06_e", "lines": ["98-106"] }],
       "evidence": [{ "scene": "event_lastkingdom2_01_e", "lines": ["23-32"] }],
       "reason": "#26",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '이름만 왕'이라 가지고 놀려던 · 후 말에 짓밟힌 뒤 '누군가를 죽이고 싶은 생각이 든 건 처음'이라는 원수"
+        }
+      ]
     },
     {
       "id": "D462",
@@ -650,15 +723,25 @@
       "person": "person:토커티브",
       "aspect": "신체",
       "act": "변화",
-      "before": "양팔에 화룡의 머리를 단 몸",
-      "after": "머리가 뽑혀 몸이 소멸했지만 랩쳐 무리 속에서 포식으로 신체를 재구축한",
+      "before": "양팔에 화룡의 머리를 단 몸이었다",
+      "after": "머리가 뽑혀 몸이 소멸했지만 랩쳐 무리 속에서 포식으로 신체를 재구축했다",
       "trigger": [{ "scene": "event_lastkingdom2_05_e", "lines": ["137-153"] }],
       "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["93-98"] }],
       "points": ["F1444", "F1453"],
       "reason": "#96-97",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 양팔에 화룡의 머리를 단 몸 · 후 머리가 뽑혀 몸이 소멸했지만 랩쳐 무리 속에서 포식으로 신체를 재구축한"
+        }
+      ]
     },
     {
       "id": "D465",
@@ -666,7 +749,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "'네가 누구인지 기억해라'며 데려가려 하고 인디빌리아에게 '건들지 마라'던",
+      "before": "'네가 누구인지 기억해라'며 데려가려 하고 인디빌리아에게 '건들지 마라'고 했다",
       "after": "의지와 상관없이 무릎 꿇고 '분부대로 하겠습니다, 여왕님'",
       "trigger": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["124-133"] }],
       "evidence": [{ "scene": "event_lastkingdom2_epilogue", "lines": ["136-139"] }],
@@ -674,22 +757,35 @@
       "reason": "#137 '몸에 새겨진 본능'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 '네가 누구인지 기억해라'며 데려가려 하고 인디빌리아에게 '건들지 마라'던" }
+      ]
     },
     {
       "id": "D466",
       "person": "person:마리안",
       "aspect": "기억",
       "act": "변화",
-      "before": "헬레틱 시절을 전혀 기억 못 하는",
-      "after": "'기원을 떠올려라'는 말에 두통 · 고열을 앓다 '여러분을 죽여야 할 것 같다'며 총을 겨누는",
+      "before": "헬레틱 시절을 전혀 기억 못 했다",
+      "after": "'기원을 떠올려라'는 말에 두통 · 고열을 앓다 '여러분을 죽여야 할 것 같다'며 총을 겨눈다",
       "trigger": [{ "scene": "event_lastkingdom2_02_e", "lines": ["5-11"] }],
       "evidence": [{ "scene": "event_lastkingdom2_04_e", "lines": ["8-36"] }],
       "points": ["F1441"],
       "reason": "#24 · #34-36 '랩쳐인지 니케인지 혼란스럽나요' — 예",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M18" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱 시절을 전혀 기억 못 하는 · 후 '기원을 떠올려라'는 말에 두통 · 고열을 앓다 '여러분을 죽여야 할 것 같다'며 총을 겨누는"
+        }
+      ]
     },
     {
       "id": "D467",

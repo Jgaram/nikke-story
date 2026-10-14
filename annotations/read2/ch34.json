@@ -385,245 +385,408 @@
       "person": "person:라피",
       "aspect": "성격",
       "act": "변화",
-      "before": "'내 문제'라며 속을 말하지 않고 무리하던",
-      "after": "동료에게 처음으로 열등감 · 질투를 털어놓고 '이기고 싶어'라 말하는",
+      "before": "'내 문제'라며 속을 말하지 않고 무리했다",
+      "after": "동료에게 처음으로 열등감 · 질투를 털어놓고 '이기고 싶어'라 말한다",
       "trigger": [{ "scene": "d_main_34_02", "lines": ["83-87"] }],
       "evidence": [{ "scene": "d_main_34_03", "lines": ["60-82", "102-103"] }],
       "reason": "#69-70 '열등감이… 생긴 거야?' '…응' · #103 — 02#83-87 동료로서 들어야겠다는 말이 계기.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '내 문제'라며 속을 말하지 않고 무리하던 · 후 동료에게 처음으로 열등감 · 질투를 털어놓고 '이기고 싶어'라 말하는"
+        }
+      ]
     },
     {
       "id": "D547",
       "person": "person:라피",
       "aspect": "신념",
       "act": "변화",
-      "before": "레드 후드가 되지 못해 계승을 포기하고 아무것도 남지 않았다던",
-      "after": "레드 후드가 되는 대신 이어받아 자기 길을 가며, 동료와 함께 '[나]'를 채워 가겠다는",
+      "before": "레드 후드가 되지 못해 계승을 포기하고 아무것도 남지 않았다고 했다",
+      "after": "레드 후드가 되는 대신 이어받아 자기 길을 가며, 동료와 함께 '[나]'를 채워 가겠다고 한다",
       "trigger": [{ "scene": "d_main_34_05", "lines": ["27-76"] }],
       "points": ["F1648"],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["197-229"] }],
       "reason": "#199 '지금은 알아' · #216 '타인으로 인해 [나]라는 존재가 정의될 수도' — 05 그레이브의 계승 이야기(F1648)가 계기.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 레드 후드가 되지 못해 계승을 포기하고 아무것도 남지 않았다던 · 후 레드 후드가 되는 대신 이어받아 자기 길을 가며, 동료와 함께 '[나]'를 채워 가겠다는"
+        }
+      ]
     },
     {
       "id": "D548",
       "person": "person:라피",
       "aspect": "신체",
       "act": "변화",
-      "before": "오버히트 없이 레드 후드를 쓰는",
-      "after": "변신해, 진짜 모습을 드러낸 세븐스 드워프로 베히모스를 꿰뚫는",
+      "before": "오버히트 없이 레드 후드를 쓴다",
+      "after": "변신해, 진짜 모습을 드러낸 세븐스 드워프로 베히모스를 꿰뚫는다",
       "trigger": [{ "scene": "d_main_34_09_e", "lines": ["223-229"] }],
       "points": ["F1655", "F1657"],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["245-275"] }],
       "reason": "#255 · #273 '변신인가요?' — 레드 후드와 작별(#223-229) 직후.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 오버히트 없이 레드 후드를 쓰는 · 후 변신해, 진짜 모습을 드러낸 세븐스 드워프로 베히모스를 꿰뚫는"
+        }
+      ]
     },
     {
       "id": "D549",
       "person": "person:라피",
       "aspect": "관계",
       "act": "변화",
-      "before": "아나키오르를 지키는 그를 노리다, 오해면 사과하겠다던",
-      "after": "긴 세월 이상을 이룬 그를 질투하다, 계승의 뜻을 물어 배우는",
+      "before": "아나키오르를 지키는 그를 노리다, 오해면 사과하겠다고 했다",
+      "after": "긴 세월 이상을 이룬 그를 질투하다, 계승의 뜻을 물어 배운다",
       "with": ["person:그레이브"],
       "trigger": [{ "scene": "d_main_34_03", "lines": ["63-75"] }],
       "evidence": [{ "scene": "d_main_34_05", "lines": ["4-9", 77] }],
       "reason": "#6-7 '어떻게 포기하지 않을 수 있었지?' — 03#63-75 열등감 고백 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아나키오르를 지키는 그를 노리다, 오해면 사과하겠다던 · 후 긴 세월 이상을 이룬 그를 질투하다, 계승의 뜻을 물어 배우는"
+        }
+      ]
     },
     {
       "id": "D550",
       "person": "person:은화",
       "aspect": "관계",
       "act": "변화",
-      "before": "'또 보자, 라피' 하고 비워 둔 자리를 거둔",
-      "after": "다그치면서도 함께 준비해 온 라피의 택티컬 업 OS를 건네는",
+      "before": "'또 보자, 라피' 하고 비워 둔 자리를 거뒀다",
+      "after": "다그치면서도 함께 준비해 온 라피의 택티컬 업 OS를 건넨다",
       "with": ["person:라피"],
       "points": ["F1645"],
       "evidence": [{ "scene": "d_main_34_04", "lines": ["25-36"] }],
       "reason": "#29 '우리의 것을 준비하면서 네 것도 함께' — 01_e#73-75에서 처음 '라피'라 이름을 불러 아니스 · 네온이 놀란다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '또 보자, 라피' 하고 비워 둔 자리를 거둔 · 후 다그치면서도 함께 준비해 온 라피의 택티컬 업 OS를 건네는"
+        }
+      ]
     },
     {
       "id": "D551",
       "person": "person:그레이브",
       "aspect": "관계",
       "act": "변화",
-      "before": "레드 후드를 이어받은 라피에게 세븐스 드워프를 맡긴",
-      "after": "조바심을 묻고 계승의 뜻을 일러 '힘내라, 너는 아름다우니까' 북돋는",
+      "before": "레드 후드를 이어받은 라피에게 세븐스 드워프를 맡겼다",
+      "after": "조바심을 묻고 계승의 뜻을 일러 '힘내라, 너는 아름다우니까' 북돋는다",
       "with": ["person:라피"],
       "evidence": [{ "scene": "d_main_34_05", "lines": ["0-2", "79-80"] }],
       "reason": "#2 '왜 그렇게 조바심을 내나' · #79-80.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 레드 후드를 이어받은 라피에게 세븐스 드워프를 맡긴 · 후 조바심을 묻고 계승의 뜻을 일러 '힘내라, 너는 아름다우니까' 북돋는"
+        }
+      ]
     },
     {
       "id": "D552",
       "person": "person:그레이브",
       "aspect": "신체",
       "act": "변화",
-      "before": "미러의 하모니 큐브 파편을 이식한",
-      "after": "라이터즈 스포일러로 바디를 보조 연산 장치로 써 말이 느려지고, 폭포에서 신데렐라를 내보낸 뒤 미동 없이 쓰러진",
+      "before": "미러의 하모니 큐브 파편을 이식했다",
+      "after": "라이터즈 스포일러로 바디를 보조 연산 장치로 써 말이 느려지고, 폭포에서 신데렐라를 내보낸 뒤 미동 없이 쓰러졌다",
       "trigger": [{ "scene": "d_main_34_08", "lines": ["43-71"] }],
       "points": ["F1649", "F1650"],
       "evidence": [{ "scene": "d_main_34_08", "lines": ["97-99"] }],
       "reason": "#97 '미동도 하지 않은 채' · #99 '신… 데… 렐…'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 미러의 하모니 큐브 파편을 이식한 · 후 라이터즈 스포일러로 바디를 보조 연산 장치로 써 말이 느려지고, 폭포에서 신데렐라를 내보낸 뒤 미동 없이 쓰러진"
+        }
+      ]
     },
     {
       "id": "D553",
       "person": "person:신데렐라",
       "aspect": "관계",
       "act": "변화",
-      "before": "'내 최고의 관객'이라 부르며 이야기를 다시 쓰겠다는",
-      "after": "그 힘에 담긴 뜻을 깨닫고 '에이브'라 부르며, 살아 있는 그에게 '다행이야' 하는",
+      "before": "'내 최고의 관객'이라 부르며 이야기를 다시 쓰겠다고 했다",
+      "after": "그 힘에 담긴 뜻을 깨닫고 '에이브'라 부르며, 살아 있는 그에게 '다행이야' 한다",
       "with": ["person:그레이브"],
       "evidence": [{ "scene": "d_main_34_08", "lines": ["63-69", "84-100"] }],
       "reason": "#69 '너는… 그렇게나…!' · #87 · #100.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '내 최고의 관객'이라 부르며 이야기를 다시 쓰겠다는 · 후 그 힘에 담긴 뜻을 깨닫고 '에이브'라 부르며, 살아 있는 그에게 '다행이야' 하는"
+        }
+      ]
     },
     {
       "id": "D554",
       "person": "person:신데렐라",
       "aspect": "관계",
       "act": "기준",
-      "text": "베히모스를 넘겨주며 '너를 위해서야, 라피 — 그 아름다운 승부욕을 정면으로 부딪혀 봐' 하는",
+      "text": "베히모스를 넘겨주며 '너를 위해서야, 라피 — 그 아름다운 승부욕을 정면으로 부딪혀 봐' 한다",
       "with": ["person:라피"],
       "evidence": [{ "scene": "d_main_34_04", "lines": ["189-193"] }],
       "reason": "#191 · #193.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "베히모스를 넘겨주며 '너를 위해서야, 라피 — 그 아름다운 승부욕을 정면으로 부딪혀 봐' 하는"
+        }
+      ]
     },
     {
       "id": "D555",
       "person": "person:신데렐라",
       "aspect": "신념",
       "act": "변화",
-      "before": "헬레틱 시절을 거울로 갚으며 지상 탈환에 합류한",
-      "after": "방주에 가지 않고 지상에 남아 옛 동료(세이렌)의 흔적을 찾는",
+      "before": "헬레틱 시절을 거울로 갚으며 지상 탈환에 합류했다",
+      "after": "방주에 가지 않고 지상에 남아 옛 동료(세이렌)의 흔적을 찾는다",
       "trigger": [{ "scene": "d_main_34_07_e", "lines": ["29-35"] }],
       "points": ["F1654"],
       "evidence": [{ "scene": "d_main_34_af_01", "lines": ["58-69"] }],
       "reason": "#64 '옛 동료의 흔적을 찾았어' — 07_e#29-35 레비아탄의 반응이 계기.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱 시절을 거울로 갚으며 지상 탈환에 합류한 · 후 방주에 가지 않고 지상에 남아 옛 동료(세이렌)의 흔적을 찾는"
+        }
+      ]
     },
     {
       "id": "D556",
       "person": "person:레비아탄",
       "aspect": "신념",
       "act": "기준",
-      "text": "도망치고 숨고 기다려 온 데 '자존심 상한다, 창피하다'며 리벤지를 고집하는",
+      "text": "도망치고 숨고 기다려 온 데 '자존심 상한다, 창피하다'며 리벤지를 고집한다",
       "evidence": [{ "scene": "d_main_34_01_s", "lines": ["64-82"] }],
       "reason": "#67-72 · #82 '끝장을 내주자'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "도망치고 숨고 기다려 온 데 '자존심 상한다, 창피하다'며 리벤지를 고집하는" }
+      ]
     },
     {
       "id": "D557",
       "person": "person:레비아탄",
       "aspect": "관계",
       "act": "기준",
-      "text": "'빨간 머리로 변하던 애, 라피' 이름까지 외워 동료로 삼으려 정신 붕괴로 무너뜨리려는",
+      "text": "'빨간 머리로 변하던 애, 라피' 이름까지 외워 동료로 삼으려 정신 붕괴로 무너뜨리려 한다",
       "with": ["person:라피"],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["84-94", "123-128"] }],
       "reason": "#86-87 '동료로 삼자' · #123-126.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'빨간 머리로 변하던 애, 라피' 이름까지 외워 동료로 삼으려 정신 붕괴로 무너뜨리려는"
+        }
+      ]
     },
     {
       "id": "D558",
       "person": "person:베히모스",
       "aspect": "관계",
       "act": "변화",
-      "before": "'레비'라 부르며 말리고, 쓰러지자 신데렐라에게 달려든",
-      "after": "바스러져 가는 몸으로 일어나 '내가 지킨다'며 처음 거대화하는",
+      "before": "'레비'라 부르며 말리고, 쓰러지자 신데렐라에게 달려들었다",
+      "after": "바스러져 가는 몸으로 일어나 '내가 지킨다'며 처음 거대화한다",
       "with": ["person:레비아탄"],
       "points": ["F1652"],
       "evidence": [{ "scene": "d_main_34_08", "lines": ["143-153"] }],
       "reason": "#149-153 — 09_s#7 '너를 지키고 싶다고 생각했더니'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '레비'라 부르며 말리고, 쓰러지자 신데렐라에게 달려든 · 후 바스러져 가는 몸으로 일어나 '내가 지킨다'며 처음 거대화하는"
+        }
+      ]
     },
     {
       "id": "D559",
       "person": "person:베히모스",
       "aspect": "신체",
       "act": "변화",
-      "before": "레비아탄의 반쪽으로 되살아난",
-      "after": "거대화로 회복하고 손가락을 튕겨 랩쳐 무리를 부리게 된",
+      "before": "레비아탄의 반쪽으로 되살아났다",
+      "after": "거대화로 회복하고 손가락을 튕겨 랩쳐 무리를 부리게 됐다",
       "trigger": [{ "scene": "d_main_34_08", "lines": ["169-179"] }],
       "points": ["F1652"],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["0-9", "20-29"] }],
       "reason": "#7 '회복까지 시켜주고' · #26-29.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 레비아탄의 반쪽으로 되살아난 · 후 거대화로 회복하고 손가락을 튕겨 랩쳐 무리를 부리게 된"
+        }
+      ]
     },
     {
       "id": "D560",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "'[나]는 뭘 해야 하냐'를 모르던 — 스스로 '부표'라 한",
-      "after": "라피를 보고 '뒤처질 수 없다'며 방주에서 마무리 지을 일을 하기로 정한",
+      "before": "'[나]는 뭘 해야 하냐'를 모르고 스스로 '부표'라 했다",
+      "after": "라피를 보고 '뒤처질 수 없다'며 방주에서 마무리 지을 일을 하기로 정했다",
       "trigger": [{ "scene": "d_main_34_af_01", "lines": ["75-81"] }],
       "points": ["Q217"],
       "evidence": [{ "scene": "d_main_34_af_02", "lines": ["43-60"] }],
       "reason": "03#133-135 '그냥 부표구나, 나' → af_01#77-81 신데렐라의 '마음을 정해' → #59-60.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '[나]는 뭘 해야 하냐'를 모르던 — 스스로 '부표'라 한 · 후 라피를 보고 '뒤처질 수 없다'며 방주에서 마무리 지을 일을 하기로 정한"
+        }
+      ]
     },
     {
       "id": "D561",
       "person": "person:아니스",
       "aspect": "관계",
       "act": "변화",
-      "before": "서로 구하려다 부딪친 뒤 손을 잡은",
-      "after": "처음 고민을 털어놓은 라피를 '무조건 이기게 해 주겠다'며 쓰러져도 일어나 돕는",
+      "before": "서로 구하려다 부딪친 뒤 손을 잡았다",
+      "after": "처음 고민을 털어놓은 라피를 '무조건 이기게 해 주겠다'며 쓰러져도 일어나 돕는다",
       "with": ["person:라피"],
       "trigger": [{ "scene": "d_main_34_03", "lines": ["104-108"] }],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["66-72"] }],
       "reason": "#69 '그 말없는 라피가 기껏 자기 고민을 얘기해 줬는데' — 03#104-108의 약속.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 서로 구하려다 부딪친 뒤 손을 잡은 · 후 처음 고민을 털어놓은 라피를 '무조건 이기게 해 주겠다'며 쓰러져도 일어나 돕는"
+        }
+      ]
     },
     {
       "id": "D562",
       "person": "person:레드_후드",
       "aspect": "관계",
       "act": "변화",
-      "before": "몸을 돌려주고 라피 안에서 완전히 떠난",
-      "after": "라피의 정신 공간에 나타나 레비아탄을 튕겨 내고, 주먹을 맞대 진짜로 작별한",
+      "before": "몸을 돌려주고 라피 안에서 완전히 떠났다",
+      "after": "라피의 정신 공간에 나타나 레비아탄을 튕겨 내고, 주먹을 맞대 진짜로 작별했다",
       "with": ["person:라피"],
       "points": ["F1655"],
       "evidence": [{ "scene": "d_main_34_09_e", "lines": ["185-196", "223-229"] }],
       "reason": "#194-196 '이게 정말 마지막이겠지?' · #223-225.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M22" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 몸을 돌려주고 라피 안에서 완전히 떠난 · 후 라피의 정신 공간에 나타나 레비아탄을 튕겨 내고, 주먹을 맞대 진짜로 작별한"
+        }
+      ]
     }
   ],
   "life": [

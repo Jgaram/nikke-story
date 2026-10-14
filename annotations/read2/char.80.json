@@ -13,40 +13,70 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "니케의 잠재력을 끌어낸다는 '반장님'의 수수께끼 힘을 믿고, 혼자보다 명령대로가 낫다며 뭐든 빡세게 시켜 달라고 매달리는",
+      "text": "니케의 잠재력을 끌어낸다는 '반장님'의 수수께끼 힘을 믿고, 혼자보다 명령대로가 낫다며 뭐든 빡세게 시켜 달라고 매달린다",
       "evidence": [{ "scene": "ep:d_nikke_centi_01", "lines": ["28-35", "41-47"] }],
       "reason": "01#33-35 '수수께끼의 힘 … 뭐든 빡세게 시켜 주셨음' · #42-43 '명령이 없으면 별별 잡념이'. 센티 → 지휘관 기준이 아직 없다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "니케의 잠재력을 끌어낸다는 '반장님'의 수수께끼 힘을 믿고, 혼자보다 명령대로가 낫다며 뭐든 빡세게 시켜 달라고 매달리는"
+        }
+      ]
     },
     {
       "id": "D1853",
       "person": "person:센티",
       "aspect": "신념",
       "act": "기준",
-      "text": "한번 받은 명령은 목숨 걸고 지키고, 명령을 어기는 건 반장님의 권위를 무시하는 일이라 여기는",
+      "text": "한번 받은 명령은 목숨 걸고 지키고, 명령을 어기는 건 반장님의 권위를 무시하는 일이라 여긴다",
       "evidence": [{ "scene": "ep:d_nikke_centi_02", "lines": ["13-23"] }],
       "points": ["F572"],
       "reason": "02#16 '한번 받은 명령은 목숨 걸고라도 지킴다' · #19 '명령을 어기는 건 반장님 권위를 무시하는'. 출시순으로 D754(fl:boom_the_ghost)보다 앞선다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "한번 받은 명령은 목숨 걸고 지키고, 명령을 어기는 건 반장님의 권위를 무시하는 일이라 여기는"
+        }
+      ]
     },
     {
       "id": "D1854",
       "person": "person:센티",
       "aspect": "신념",
       "act": "변화",
-      "before": "받은 명령은 목숨 걸고 지키던",
-      "after": "잘못된 명령은 지키지 않아도 된다는 말을 곱씹어 명령마다 스스로 판단해 융통성 있게 보완하는",
+      "before": "받은 명령은 목숨 걸고 지켰다",
+      "after": "잘못된 명령은 지키지 않아도 된다는 말을 곱씹어 명령마다 스스로 판단해 융통성 있게 보완한다",
       "trigger": [{ "scene": "ep:d_nikke_centi_02", "lines": ["17-20"] }],
       "evidence": [{ "scene": "ep:d_nikke_centi_05", "lines": ["11-16"] }],
       "points": ["F572"],
       "reason": "03#65-68 '이제 조금은 알 것 같슴다'를 거쳐 05#14-16 '명령을 주실 때마다 제 나름 생각이란 걸 했슴다 … 융통성 있게'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 받은 명령은 목숨 걸고 지키던 · 후 잘못된 명령은 지키지 않아도 된다는 말을 곱씹어 명령마다 스스로 판단해 융통성 있게 보완하는"
+        }
+      ]
     },
     {
       "id": "D1855",
@@ -55,14 +85,17 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "명령에 매달리던 '반장님'",
-      "after": "이름만 불러도 의도를 아는 한 몸 같은 콤비라 자부하는",
+      "after": "이름만 불러도 의도를 아는 한 몸 같은 콤비라 자부한다",
       "trigger": [{ "scene": "ep:d_nikke_centi_05", "lines": ["37-43"] }],
       "evidence": [{ "scene": "ep:d_nikke_centi_05", "lines": ["57-76"] }],
       "points": ["F572"],
       "reason": "05#60-62 '반장님과 저는 한 몸 같기도 함다 … 이름만 불러도 의도를 알 거 같슴다'. 독백 #96-97은 아직 완벽하진 않다고 덧붙인다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 이름만 불러도 의도를 아는 한 몸 같은 콤비라 자부하는" }
+      ]
     }
   ],
   "life": [],

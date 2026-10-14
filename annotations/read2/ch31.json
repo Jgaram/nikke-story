@@ -243,12 +243,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:그레이브"],
-      "text": "안쓰럽다며 자유롭게 해 주겠다고 회유하다, 남의 것만 맡아 둔다고 깎아내리고 수정으로 위협하는",
+      "text": "안쓰럽다며 자유롭게 해 주겠다고 회유하다, 남의 것만 맡아 둔다고 깎아내리고 수정으로 위협한다",
       "evidence": [{ "scene": "d_main_31_07", "lines": ["17-23", "45-49", "72-79"] }],
       "reason": "#18-19 · #49 · #72-75 — 관을 열게 하려 회유 · 협박을 오간다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "안쓰럽다며 자유롭게 해 주겠다고 회유하다, 남의 것만 맡아 둔다고 깎아내리고 수정으로 위협하는"
+        }
+      ]
     },
     {
       "id": "D495",
@@ -256,12 +266,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "'남자'인 지휘관만 말하게 하고, 관 여는 걸 도우면 수정 정보를 주겠다며 거래를 거는",
+      "text": "'남자'인 지휘관만 말하게 하고, 관 여는 걸 도우면 수정 정보를 주겠다며 거래를 건다",
       "evidence": [{ "scene": "d_main_31_08", "lines": ["51-54", "105-110", "124-130"] }],
       "reason": "#54 '너만 말해' · #106-109 거래 · #124 '받아가야 할 게'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'남자'인 지휘관만 말하게 하고, 관 여는 걸 도우면 수정 정보를 주겠다며 거래를 거는"
+        }
+      ]
     },
     {
       "id": "D496",
@@ -269,14 +289,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'삼류 지휘관'이라 깎아내리는",
-      "after": "말뚝 임기응변을 '훌륭했다', '꼴통 후배님이 많이 컸군'이라 인정하는",
+      "before": "'삼류 지휘관'이라 깎아내린다",
+      "after": "말뚝 임기응변을 '훌륭했다', '꼴통 후배님이 많이 컸군'이라 인정한다",
       "trigger": [{ "scene": "d_main_31_08", "lines": ["131-147"] }],
       "evidence": [{ "scene": "d_main_31_09_s", "lines": ["24-38"] }],
       "reason": "#25-26 칭찬 — 베스티는 라피와 있을 때 짓던 표정이라 한다(#31-36).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '삼류 지휘관'이라 깎아내리는 · 후 말뚝 임기응변을 '훌륭했다', '꼴통 후배님이 많이 컸군'이라 인정하는"
+        }
+      ]
     },
     {
       "id": "D497",
@@ -297,29 +327,42 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:그레이브"],
-      "before": "아나키오르를 지키는 그레이브를 추적해 관째 파괴하자는",
-      "after": "먼저 공격받지 않으면 싸우지 않고, 오해였다면 사과하겠다는",
+      "before": "아나키오르를 지키는 그레이브를 추적해 관째 파괴하자고 한다",
+      "after": "먼저 공격받지 않으면 싸우지 않고, 오해였다면 사과하겠다고 한다",
       "trigger": [{ "scene": "d_main_31_08", "lines": ["184-198"] }],
       "evidence": [{ "scene": "d_main_31_09_e", "lines": ["54-81"] }],
       "reason": "#57 · #73-81 — 관을 부수지 않고 그레이브를 업고 나온 뒤 맹목적이고 순수한 모습을 인정한다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아나키오르를 지키는 그레이브를 추적해 관째 파괴하자는 · 후 먼저 공격받지 않으면 싸우지 않고, 오해였다면 사과하겠다는"
+        }
+      ]
     },
     {
       "id": "D499",
       "person": "person:그레이브",
       "aspect": "신체",
       "act": "변화",
-      "before": "노화된 언어 회로로 말이 끊어지는",
-      "after": "마나가 회로를 갈아 끊김 없이 말하는",
+      "before": "노화된 언어 회로로 말이 끊어진다",
+      "after": "마나가 회로를 갈아 끊김 없이 말한다",
       "points": ["F1536"],
       "trigger": [{ "scene": "d_main_31_09_e", "lines": ["95-99"] }],
       "evidence": [{ "scene": "d_main_31_09_e", "lines": ["95-99"] }],
       "reason": "#95 '허튼수작 집어치워라. 인간.' · #99 언어 회로 교체.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M20" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 노화된 언어 회로로 말이 끊어지는 · 후 마나가 회로를 갈아 끊김 없이 말하는" }
+      ]
     }
   ],
   "life": [

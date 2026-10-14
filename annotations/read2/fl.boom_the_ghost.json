@@ -260,12 +260,22 @@
       "person": "person:프림",
       "aspect": "신념",
       "act": "기준",
-      "text": "너무 열심히 살아 꼬인 일로 많은 이를 상처 입혀, 친구 말대로 아무것도 하지 않고 잠만 자며 누구도 상처 주지도 받지도 않기로 한",
+      "text": "너무 열심히 살아 꼬인 일로 많은 이를 상처 입혀, 친구 말대로 아무것도 하지 않고 잠만 자며 누구도 상처 주지도 받지도 않기로 했다",
       "evidence": [{ "scene": "fl:boom_the_ghost_19", "lines": ["63-87"] }],
       "reason": "#63-87 싹싹이에게 털어놓은 지난 일(F2887). 늘 자는 까닭.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "너무 열심히 살아 꼬인 일로 많은 이를 상처 입혀, 친구 말대로 아무것도 하지 않고 잠만 자며 누구도 상처 주지도 받지도 않기로 한"
+        }
+      ]
     },
     {
       "id": "D756",
@@ -273,12 +283,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:도로시"],
-      "text": "크루즈에 같이 가자고 막무가내로 조르며 '아가씨'라 놀리고, 레드 후드 이야기를 미끼로 끌어내는",
+      "text": "크루즈에 같이 가자고 막무가내로 조르며 '아가씨'라 놀리고, 레드 후드 이야기를 미끼로 끌어낸다",
       "evidence": [{ "scene": "fl:boom_the_ghost_02", "lines": ["41-68"] }],
       "reason": "#44-68 — '원래 이렇게 막무가내였나요?' · '레드 후드가 생각나?'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "크루즈에 같이 가자고 막무가내로 조르며 '아가씨'라 놀리고, 레드 후드 이야기를 미끼로 끌어내는"
+        }
+      ]
     },
     {
       "id": "D757",
@@ -302,12 +322,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:라피"],
-      "text": "예전의 말 없던 라피가 나았다며, 거리를 좁혀 오는 지금의 라피를 레드 후드 흉내를 내는 무언가 같아 싫다는",
+      "text": "예전의 말 없던 라피가 나았다며, 거리를 좁혀 오는 지금의 라피를 레드 후드 흉내를 내는 무언가 같아 싫다고 한다",
       "evidence": [{ "scene": "fl:boom_the_ghost_11", "lines": ["19-35", "94-96"] }],
       "reason": "#19-21 · #28 · #96 '역시 당신은 예전이 더 나았어요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "예전의 말 없던 라피가 나았다며, 거리를 좁혀 오는 지금의 라피를 레드 후드 흉내를 내는 무언가 같아 싫다는"
+        }
+      ]
     },
     {
       "id": "D759",
@@ -332,7 +362,7 @@
       "act": "변화",
       "with": ["person:피나"],
       "before": "곁에 두고 싶은 '소중한 날개'",
-      "after": "닮은 홀로그램을 제 손으로 보내며 앞으로도 그리워하겠다는",
+      "after": "닮은 홀로그램을 제 손으로 보내며 앞으로도 그리워하겠다고 한다",
       "trigger": [{ "scene": "fl:boom_the_ghost_24", "lines": ["34-54"] }],
       "time": "S243",
       "evidence": [{ "scene": "fl:boom_the_ghost_25", "lines": ["58-95"] }],
@@ -340,7 +370,10 @@
       "confidence": "확실",
       "points": ["F2033"],
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 닮은 홀로그램을 제 손으로 보내며 앞으로도 그리워하겠다는" }
+      ]
     },
     {
       "id": "D761",
@@ -348,12 +381,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:도로시"],
-      "text": "목적 없이 필그림이 머물 리 없다며 부하를 닦달해 속내를 캐고, 그 누구도 '내 왕국'을 위협할 수 없다는",
+      "text": "목적 없이 필그림이 머물 리 없다며 부하를 닦달해 속내를 캐고, 그 누구도 '내 왕국'을 위협할 수 없다고 한다",
       "evidence": [{ "scene": "fl:boom_the_ghost_27", "lines": ["53-98"] }],
       "reason": "#71-75 · #94-98 (F2038).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M32", "note": "M32 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "목적 없이 필그림이 머물 리 없다며 부하를 닦달해 속내를 캐고, 그 누구도 '내 왕국'을 위협할 수 없다는"
+        }
+      ]
     }
   ],
   "life": [

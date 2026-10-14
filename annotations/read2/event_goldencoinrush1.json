@@ -115,12 +115,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:코코아", "person:에이드"],
-      "text": "실수투성이인 자기를 믿고 아껴 주는 '유일한 친구'라 그 무엇과도 비교할 수 없고, 둘의 기대를 저버리고 싶지 않은",
+      "text": "실수투성이인 자기를 믿고 아껴 주는 '유일한 친구'라 그 무엇과도 비교할 수 없고, 둘의 기대를 저버리고 싶지 않다",
       "evidence": [{ "scene": "event_goldencoinrush2_02_s", "lines": ["84-89"] }],
       "reason": "#87-89 '그 두 분은 저의 유일한 친구예요' · 2_03_s#62 '기대를 저버리고 싶지 않으니까'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "실수투성이인 자기를 믿고 아껴 주는 '유일한 친구'라 그 무엇과도 비교할 수 없고, 둘의 기대를 저버리고 싶지 않은"
+        }
+      ]
     },
     {
       "id": "D1547",
@@ -142,30 +152,50 @@
       "person": "person:소다",
       "aspect": "신념",
       "act": "변화",
-      "before": "남을 밟고 올라가는 경쟁을 용납 못 하던",
-      "after": "무언가를 지키려면 다른 것을 포기해야 하고, 정정당당한 경쟁은 남에게 아픔을 주는 게 아니라고 깨달은",
+      "before": "남을 밟고 올라가는 경쟁을 용납 못 했다",
+      "after": "무언가를 지키려면 다른 것을 포기해야 하고, 정정당당한 경쟁은 남에게 아픔을 주는 게 아니라고 깨달았다",
       "trigger": [{ "scene": "event_goldencoinrush2_03_s", "lines": ["38-45"] }],
       "time": "S149",
       "evidence": [{ "scene": "event_goldencoinrush2_05_s", "lines": ["53-59", "100-105"] }],
       "reason": "#53-54 · #104-105 — 이기는 길은 맞서 싸우는 것뿐(2_03_s#45) · 볼륨의 'I respect you'를 거쳐.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 남을 밟고 올라가는 경쟁을 용납 못 하던 · 후 무언가를 지키려면 다른 것을 포기해야 하고, 정정당당한 경쟁은 남에게 아픔을 주는 게 아니라고 깨달은"
+        }
+      ]
     },
     {
       "id": "D1549",
       "person": "person:소다",
       "aspect": "성격",
       "act": "변화",
-      "before": "눈치를 보며 '결과가 어떻게 되든 괜찮다'고 미리 물러서던",
-      "after": "긴장해도 두 사람과 자기를 믿고 최선을 다하겠다는",
+      "before": "눈치를 보며 '결과가 어떻게 되든 괜찮다'고 미리 물러섰다",
+      "after": "긴장해도 두 사람과 자기를 믿고 최선을 다하겠다고 한다",
       "trigger": [{ "scene": "event_goldencoinrush2_03_s", "lines": ["88-94"] }],
       "time": "S149",
       "evidence": [{ "scene": "event_goldencoinrush2_05_e", "lines": ["22-30"] }],
       "reason": "#27-30 '두 분을 믿고 그리고 저를 믿고' · 지휘관 '…변했구나, 소다' — 전은 02_e#129, 루피 2_05_s#164 '눈치를 보는 느낌'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 눈치를 보며 '결과가 어떻게 되든 괜찮다'고 미리 물러서던 · 후 긴장해도 두 사람과 자기를 믿고 최선을 다하겠다는"
+        }
+      ]
     },
     {
       "id": "D1550",
@@ -173,12 +203,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:소다"],
-      "text": "1점 차로 진 상대가 망치 한 번 제대로 안 휘두른 '의욕도 간절함도 없는 녀석'이라 치욕스럽다며 말도 걸지 말라는",
+      "text": "1점 차로 진 상대가 망치 한 번 제대로 안 휘두른 '의욕도 간절함도 없는 녀석'이라 치욕스럽다며 말도 걸지 말라고 한다",
       "evidence": [{ "scene": "event_goldencoinrush1_06_s", "lines": ["44-63"] }],
       "reason": "#46 · #60-63 — 첫 만남(03_s#464-465)은 '쭈구리처럼 있지 말라'는 한마디뿐이라 이 씬에 세운다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "1점 차로 진 상대가 망치 한 번 제대로 안 휘두른 '의욕도 간절함도 없는 녀석'이라 치욕스럽다며 말도 걸지 말라는"
+        }
+      ]
     },
     {
       "id": "D1551",
@@ -186,15 +226,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:소다"],
-      "before": "의욕도 간절함도 없는 녀석이라 말도 걸지 말라던",
-      "after": "열심히 할 줄 아는 녀석이라 자격이 있다며 커피를 사 주고 다음에 제대로 겨루자는",
+      "before": "의욕도 간절함도 없는 녀석이라 말도 걸지 말라고 했다",
+      "after": "열심히 할 줄 아는 녀석이라 자격이 있다며 커피를 사 주고 다음에 제대로 겨루자고 한다",
       "trigger": [{ "scene": "event_goldencoinrush2_b02_e", "lines": ["0-9"] }],
       "time": "S149",
       "evidence": [{ "scene": "event_goldencoinrush2_05_s", "lines": ["81-131"] }],
       "reason": "#119-123 '오늘 한 게임을 보고 나니까 생각이 조금 바뀌더라고' · 2_06_e#25-26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 의욕도 간절함도 없는 녀석이라 말도 걸지 말라던 · 후 열심히 할 줄 아는 녀석이라 자격이 있다며 커피를 사 주고 다음에 제대로 겨루자는"
+        }
+      ]
     },
     {
       "id": "D1552",
@@ -202,12 +252,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:소다"],
-      "text": "소다가 팀장이라 하자 '딱히 견제가 될 만한 팀은 아니'라 대놓고 얕보는",
+      "text": "소다가 팀장이라 하자 '딱히 견제가 될 만한 팀은 아니'라 대놓고 얕본다",
       "evidence": [{ "scene": "event_goldencoinrush1_03_s", "lines": ["228-232"] }],
       "reason": "#232 · 준결승 각오 '저쪽 팀은 우리 우승의 발판일 뿐'(2_b02_s#14).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "소다가 팀장이라 하자 '딱히 견제가 될 만한 팀은 아니'라 대놓고 얕보는" }
+      ]
     },
     {
       "id": "D1553",
@@ -215,15 +268,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:소다"],
-      "before": "견제할 것도 없다고 얕보던",
-      "after": "반칙을 말하지 않은 것도 당연하다며 'I respect you' — 꼭 1등 하라고 주먹을 맞대는",
+      "before": "견제할 것도 없다고 얕봤다",
+      "after": "반칙을 말하지 않은 것도 당연하다며 'I respect you'라 하고 꼭 1등 하라고 주먹을 맞댄다",
       "trigger": [{ "scene": "event_goldencoinrush2_intermission_01", "lines": ["43-62"] }],
       "time": "S149",
       "evidence": [{ "scene": "event_goldencoinrush2_05_s", "lines": ["16-48"] }],
       "reason": "#29-38 — 쓰러질 만큼 열심히 한 상대를 얕본 자기가 분했다며 인정한다(F1488).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M63" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 견제할 것도 없다고 얕보던 · 후 반칙을 말하지 않은 것도 당연하다며 'I respect you' — 꼭 1등 하라고 주먹을 맞대는"
+        }
+      ]
     },
     {
       "id": "D1554",

@@ -126,12 +126,15 @@
       "person": "person:장화",
       "aspect": "신념",
       "act": "기준",
-      "text": "'세상에 영원한 건 없다' — 긴장도 불안도 익숙해지면 아무것도 아니게 된다고 믿는",
+      "text": "'세상에 영원한 건 없다' — 긴장도 불안도 익숙해지면 아무것도 아니게 된다고 믿는다",
       "evidence": [{ "scene": "event_newyearnewsword_02_e", "lines": ["42-47"] }],
       "reason": "#43-46 — 02_s#24-25 · 06_s#37-38에서 되풀이하는 장화의 신조",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'세상에 영원한 건 없다' — 긴장도 불안도 익숙해지면 아무것도 아니게 된다고 믿는" }
+      ]
     },
     {
       "id": "D359",
@@ -152,15 +155,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:홍련"],
-      "before": "함께 살아남자며 동생을 다독이던 언니",
-      "after": "동생을 지키려 '인류의 적'이 되어 동생의 검을 끌어당겨 죽는",
+      "before": "함께 살아남자며 동생을 다독이던 언니다",
+      "after": "동생을 지키려 '인류의 적'이 되어 동생의 검을 끌어당겨 죽는다",
       "trigger": [{ "scene": "event_newyearnewsword_05_e", "lines": ["115-139"] }],
       "time": "S118",
       "evidence": [{ "scene": "event_newyearnewsword_06_e", "lines": ["27-43"] }],
       "reason": "05_e 독백 — 최후의 1인도 뜯어먹힌다는 것을 알고 결정, 06_e#29-31 검을 끌어당김 · '강해져야 해'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 함께 살아남자며 동생을 다독이던 언니 · 후 동생을 지키려 '인류의 적'이 되어 동생의 검을 끌어당겨 죽는"
+        }
+      ]
     },
     {
       "id": "D361",
@@ -181,15 +194,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:장화"],
-      "before": "언니를 꺾겠다던 동생",
-      "after": "언니를 제 검으로 베고 화무십일홍을 쥔 채 100년 동안 그리워하는",
+      "before": "언니를 꺾겠다던 동생이다",
+      "after": "언니를 제 검으로 베고 화무십일홍을 쥔 채 100년 동안 그리워한다",
       "trigger": [{ "scene": "event_newyearnewsword_06_e", "lines": ["27-44"] }],
       "time": "S117",
       "evidence": [{ "scene": "event_newyearnewsword_epilogue", "lines": ["38-63"] }],
       "reason": "epilogue — 검을 볼 때마다 언니 생각, '그때에도 다시 동생이라 불러 주겠는가'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 언니를 꺾겠다던 동생 · 후 언니를 제 검으로 베고 화무십일홍을 쥔 채 100년 동안 그리워하는"
+        }
+      ]
     },
     {
       "id": "D363",
@@ -218,7 +241,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'도령'을 시험하는",
+      "before": "'도령'을 시험한다",
       "after": "100년 동안 못 연 언니의 술을 함께 열어 준 '참 좋은 도령'",
       "trigger": [{ "scene": "event_newyearnewsword_06_e", "lines": ["106-114"] }],
       "time": "S117",
@@ -226,7 +249,10 @@
       "reason": "#19-22 '함께 마셔준 이가 있어서 끝까지' · '참 좋은 도령' — 앞 기준 D146",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 '도령'을 시험하는" }
+      ]
     },
     {
       "id": "D365",
@@ -235,13 +261,16 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "결혼 소문에 '최악'이라던 '프로듀서'",
-      "after": "1년 곁에서 도와준 프로듀서에게 무대에서 꽃을 건네고 볼에 입 맞추는",
+      "after": "1년 곁에서 도와준 프로듀서에게 무대에서 꽃을 건네고 볼에 입 맞춘다",
       "time": "S117",
       "evidence": [{ "scene": "event_newyearnewsword_prologue", "lines": ["22-38"] }],
       "reason": "#27 · #32-33 — 앞 기준 D209",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 1년 곁에서 도와준 프로듀서에게 무대에서 꽃을 건네고 볼에 입 맞추는" }
+      ]
     }
   ],
   "life": [

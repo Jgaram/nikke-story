@@ -48,11 +48,21 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "[그것]을 받은 뒤로 줄곧 지켜보며 서로 사랑한다 믿고, 다친 그를 손수 돌보면서 '여기서 나가지 말라'며 집에 가두는",
+      "text": "[그것]을 받은 뒤로 줄곧 지켜보며 서로 사랑한다 믿고, 다친 그를 손수 돌보면서 '여기서 나가지 말라'며 집에 가둔다",
       "evidence": [{ "scene": "ep:d_nikke_isabel_01", "lines": ["83-105"] }],
       "reason": "#83 '서로 사랑하고 있잖아요' · #105. 출시 첫날 단위라 ch21의 관계 기준(D215)보다 앞선다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "[그것]을 받은 뒤로 줄곧 지켜보며 서로 사랑한다 믿고, 다친 그를 손수 돌보면서 '여기서 나가지 말라'며 집에 가두는"
+        }
+      ]
     },
     {
       "status": "확정",
@@ -61,14 +71,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "나가지 말라며 집에 가두고 돌보던",
-      "after": "약속을 어기고 나온 그를 수갑으로 묶고 약을 먹여, 카운터스까지 '확실히 마무리'하려는",
+      "before": "나가지 말라며 집에 가두고 돌봤다",
+      "after": "약속을 어기고 나온 그를 수갑으로 묶고 약을 먹여, 카운터스까지 '확실히 마무리'하려 한다",
       "trigger": [{ "scene": "ep:d_nikke_isabel_04", "lines": ["57-64"] }],
       "time": "S357",
       "evidence": [{ "scene": "ep:d_nikke_isabel_04", "lines": ["108-118"] }],
       "reason": "#110-116 '약속 따위 무른 것' · '사지를 묶어둘게요' → 05#19-20 수갑 · #63 '확실히 마무리'",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M55" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 나가지 말라며 집에 가두고 돌보던 · 후 약속을 어기고 나온 그를 수갑으로 묶고 약을 먹여, 카운터스까지 '확실히 마무리'하려는"
+        }
+      ]
     },
     {
       "status": "확정",

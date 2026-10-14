@@ -114,14 +114,24 @@
       "person": "person:레비아탄",
       "aspect": "신체",
       "act": "변화",
-      "before": "양산형 동료들과 자원 수집을 나가던 방주 니케 LEV-20765",
-      "after": "검은 물웅덩이의 물을 마셔 머리에서 검은 물이 흐르고 얼굴 · 이름을 잃은",
+      "before": "양산형 동료들과 자원 수집을 나가던 방주 니케 LEV-20765였다",
+      "after": "검은 물웅덩이의 물을 마셔 머리에서 검은 물이 흐르고 얼굴 · 이름을 잃었다",
       "points": ["F1844"],
       "reason": "#17-19 녹아내림 · #58 다른 사람 얼굴 · #63.",
       "evidence": [{ "scene": "side:mudfish_07", "lines": ["15-22", "45-63"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 양산형 동료들과 자원 수집을 나가던 방주 니케 LEV-20765 · 후 검은 물웅덩이의 물을 마셔 머리에서 검은 물이 흐르고 얼굴 · 이름을 잃은"
+        }
+      ]
     },
     {
       "id": "D632",
@@ -142,14 +152,24 @@
       "person": "person:레비아탄",
       "aspect": "성격",
       "act": "변화",
-      "before": "겁에 질려 말을 더듬고 헬레틱 행세로 사람을 쫓아내던",
-      "after": "세이렌 곁에서 처음 '꺄하하' 소리 내 기쁘게 웃는",
+      "before": "겁에 질려 말을 더듬고 헬레틱 행세로 사람을 쫓아냈다",
+      "after": "세이렌 곁에서 처음 '꺄하하' 소리 내 기쁘게 웃는다",
       "time": "S216",
       "reason": "#133 '꺄하! 꺄하하!!' · #138 '이렇게 기쁘게 웃는 거 처음 봐서'. 지금의 '꺄하하'(D506)의 처음.",
       "evidence": [{ "scene": "side:mudfish_05", "lines": ["132-141"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 겁에 질려 말을 더듬고 헬레틱 행세로 사람을 쫓아내던 · 후 세이렌 곁에서 처음 '꺄하하' 소리 내 기쁘게 웃는"
+        }
+      ]
     },
     {
       "id": "D634",
@@ -157,15 +177,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "헬레틱이라 겁주며 '죽이지 마'라 숨던",
-      "after": "애칭 '레비'를 받고 돌아갈 곳 없는 서로 같이 있자고 청하는",
+      "before": "헬레틱이라 겁주며 '죽이지 마'라 숨었다",
+      "after": "애칭 '레비'를 받고 돌아갈 곳 없는 서로 같이 있자고 청한다",
       "time": "S216",
       "reason": "#70 '나쁘지 않네' · #108 '나랑 같이 있을래?' · #133. 계기는 03의 사과와 약속.",
       "evidence": [{ "scene": "side:mudfish_04", "lines": ["50-71", "104-133"] }],
       "trigger": [{ "scene": "side:mudfish_03", "lines": ["115-135"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱이라 겁주며 '죽이지 마'라 숨던 · 후 애칭 '레비'를 받고 돌아갈 곳 없는 서로 같이 있자고 청하는"
+        }
+      ]
     },
     {
       "id": "D635",
@@ -173,14 +203,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "함께 지내며 물거품을 배우는",
-      "after": "지레 포기한 것을 사과하고 '배신 안 해, 날 믿어줘'라 청하는",
+      "before": "함께 지내며 물거품을 배웠다",
+      "after": "지레 포기한 것을 사과하고 '배신 안 해, 날 믿어줘'라 청한다",
       "time": "S216",
       "reason": "#48-56.",
       "evidence": [{ "scene": "side:mudfish_08", "lines": ["46-59"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 함께 지내며 물거품을 배우는 · 후 지레 포기한 것을 사과하고 '배신 안 해, 날 믿어줘'라 청하는"
+        }
+      ]
     },
     {
       "id": "D636",
@@ -188,45 +228,75 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "함께 싸우자며 믿어 달라 한",
-      "after": "공포로 망설여 세이렌을 잃고 '날 믿어준 세이렌을 배신했다'며 제 얼굴을 내리치는",
+      "before": "함께 싸우자며 믿어 달라 했다",
+      "after": "공포로 망설여 세이렌을 잃고 '날 믿어준 세이렌을 배신했다'며 제 얼굴을 내리친다",
       "time": "S216",
       "points": ["F1849"],
       "reason": "#129 · #135-139 '배신자' · #152. 지금의 '착취하는 쪽'(D616)의 뿌리.",
       "evidence": [{ "scene": "side:mudfish_14", "lines": ["119-152"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 함께 싸우자며 믿어 달라 한 · 후 공포로 망설여 세이렌을 잃고 '날 믿어준 세이렌을 배신했다'며 제 얼굴을 내리치는"
+        }
+      ]
     },
     {
       "id": "D637",
       "person": "person:레비아탄",
       "aspect": "신념",
       "act": "변화",
-      "before": "'나 같은 게 할 수 있을 리 없다'며 희망 고문하지 말라던",
-      "after": "세이렌이 그랬듯 이 힘을 선하게 쓰겠다고 다짐하는",
+      "before": "'나 같은 게 할 수 있을 리 없다'며 희망 고문하지 말라고 했다",
+      "after": "세이렌이 그랬듯 이 힘을 선하게 쓰겠다고 다짐한다",
       "time": "S216",
       "reason": "#170-171 · #173 '에이브가 말한 대로'. 앞 모습은 06#110-123.",
       "evidence": [{ "scene": "side:mudfish_09", "lines": ["162-174"] }],
       "trigger": [{ "scene": "side:mudfish_08", "lines": ["20-34"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '나 같은 게 할 수 있을 리 없다'며 희망 고문하지 말라던 · 후 세이렌이 그랬듯 이 힘을 선하게 쓰겠다고 다짐하는"
+        }
+      ]
     },
     {
       "id": "D638",
       "person": "person:레비아탄",
       "aspect": "신체",
       "act": "변화",
-      "before": "머리에서 검은 물이 쉼 없이 흘러 매일 닦아 내던",
-      "after": "물거품을 알게 된 뒤 검은 물이 흐르지 않고 손끝에 검은 물방울을 빚는",
+      "before": "머리에서 검은 물이 쉼 없이 흘러 매일 닦아 냈다",
+      "after": "물거품을 알게 된 뒤 검은 물이 흐르지 않고 손끝에 검은 물방울을 빚는다",
       "points": ["F1847"],
       "time": "S216",
       "reason": "#5 '물거품을 다루게 된 이후로 안 흘러' · #20.",
       "evidence": [{ "scene": "side:mudfish_10", "lines": ["2-20"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 머리에서 검은 물이 쉼 없이 흘러 매일 닦아 내던 · 후 물거품을 알게 된 뒤 검은 물이 흐르지 않고 손끝에 검은 물방울을 빚는"
+        }
+      ]
     },
     {
       "id": "D639",
@@ -234,12 +304,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레비아탄"],
-      "text": "헬레틱이라는 말에 물방울을 겨누고 언령으로 묶어 '똑바로 말해'라 몰아세우는",
+      "text": "헬레틱이라는 말에 물방울을 겨누고 언령으로 묶어 '똑바로 말해'라 몰아세운다",
       "reason": "#57 · #59 [멈춰] · #69.",
       "evidence": [{ "scene": "side:mudfish_01", "lines": ["57-73"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "헬레틱이라는 말에 물방울을 겨누고 언령으로 묶어 '똑바로 말해'라 몰아세우는" }
+      ]
     },
     {
       "id": "D640",
@@ -247,14 +320,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레비아탄"],
-      "before": "헬레틱인 줄 알고 위협한",
-      "after": "생선구이를 내밀어 사과하고 다시는 위협하지 않겠다 약속하며 '레비'라 애칭을 지어 주는",
+      "before": "헬레틱인 줄 알고 위협했다",
+      "after": "생선구이를 내밀어 사과하고 다시는 위협하지 않겠다 약속하며 '레비'라 애칭을 지어 준다",
       "time": "S216",
       "reason": "#115-125. 다음 씬 04#50-63 '레비. 애칭'.",
       "evidence": [{ "scene": "side:mudfish_03", "lines": ["101-125"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱인 줄 알고 위협한 · 후 생선구이를 내밀어 사과하고 다시는 위협하지 않겠다 약속하며 '레비'라 애칭을 지어 주는"
+        }
+      ]
     },
     {
       "id": "D641",
@@ -262,26 +345,46 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레비아탄"],
-      "before": "위험하니 먼저 바다로 도망치라던",
-      "after": "레비의 용기를 믿고 함께 글러트니와 싸우자는",
+      "before": "위험하니 먼저 바다로 도망치라고 했다",
+      "after": "레비의 용기를 믿고 함께 글러트니와 싸우자고 한다",
       "time": "S216",
       "reason": "#29 '레비, 먼저 가' → #74-76 '레비의 용기를 믿어. 함께 싸우자'.",
       "evidence": [{ "scene": "side:mudfish_12", "lines": ["29-35", "62-77"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 위험하니 먼저 바다로 도망치라던 · 후 레비의 용기를 믿고 함께 글러트니와 싸우자는"
+        }
+      ]
     },
     {
       "id": "D642",
       "person": "person:세이렌",
       "aspect": "신념",
       "act": "기준",
-      "text": "잃어버린 동료들(신데렐라 · 에이브 · 헨젤 · 그레텔)이 살아 있다는 증거를 찾아 몸이 너덜너덜해져도 다시 물 위로 오르는",
+      "text": "잃어버린 동료들(신데렐라 · 에이브 · 헨젤 · 그레텔)이 살아 있다는 증거를 찾아 몸이 너덜너덜해져도 다시 물 위로 오른다",
       "reason": "#30-32 · #35-37.",
       "evidence": [{ "scene": "side:mudfish_00", "lines": ["26-38"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "잃어버린 동료들(신데렐라 · 에이브 · 헨젤 · 그레텔)이 살아 있다는 증거를 찾아 몸이 너덜너덜해져도 다시 물 위로 오르는"
+        }
+      ]
     },
     {
       "id": "D643",

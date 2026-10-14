@@ -156,14 +156,17 @@
       "aspect": "신념",
       "act": "변화",
       "before": "AFX 테러범에게 동생의 복수를 할 자격이 있다",
-      "after": "쏘지 못하고 말려 준 솔린에게 '고마워요'라 하는",
+      "after": "쏘지 못하고 말려 준 솔린에게 '고마워요'라 한다",
       "trigger": [{ "scene": "d_main_24_02", "lines": ["105-117"] }],
       "points": ["F1007"],
       "evidence": [{ "scene": "d_main_24_02", "lines": ["131-143"] }],
       "reason": "#104 '복수를 할 자격이 있으니까' → #141-143 '말려줘서, 고마워요'. 계기는 솔린의 이상향 이야기(#105-117)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 쏘지 못하고 말려 준 솔린에게 '고마워요'라 하는" }
+      ]
     },
     {
       "id": "D281",
@@ -186,13 +189,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:미하라"],
-      "before": "기억을 잃은 미하라를 예전으로 되돌리려 길들이는",
-      "after": "말리는 미하라를 '가짜'라 부정하며 '진짜 미하라는 슈엔 때문에 죽었다'고 소리치는",
+      "before": "기억을 잃은 미하라를 예전으로 되돌리려 길들인다",
+      "after": "말리는 미하라를 '가짜'라 부정하며 '진짜 미하라는 슈엔 때문에 죽었다'고 소리친다",
       "evidence": [{ "scene": "d_main_24_05_s", "lines": ["70-85"] }],
       "reason": "#71 '넌 미하라가 아냐' · #82-85. D98의 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 기억을 잃은 미하라를 예전으로 되돌리려 길들이는 · 후 말리는 미하라를 '가짜'라 부정하며 '진짜 미하라는 슈엔 때문에 죽었다'고 소리치는"
+        }
+      ]
     },
     {
       "id": "D283",
@@ -200,13 +213,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:유니"],
-      "before": "기억 소거로 유니를 처음 만나는 동료로 대함",
-      "after": "모든 걸 기억 못 해도 유니가 상냥한 아이라는 건 안다며 선을 넘지 말라 막아서는",
+      "before": "기억 소거로 유니를 처음 만나는 동료로 대한다",
+      "after": "모든 걸 기억 못 해도 유니가 상냥한 아이라는 건 안다며 선을 넘지 말라 막아선다",
       "evidence": [{ "scene": "d_main_24_05_s", "lines": ["64-80"] }],
       "reason": "#66 '더 이상 선을 넘지 마' · #76-79. D35의 뒤 — 뒤에 감각 교환으로 슈엔 대신 맞는다(F1013)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 기억 소거로 유니를 처음 만나는 동료로 대함 · 후 모든 걸 기억 못 해도 유니가 상냥한 아이라는 건 안다며 선을 넘지 말라 막아서는"
+        }
+      ]
     },
     {
       "id": "D284",
@@ -228,15 +251,25 @@
       "person": "person:지휘관",
       "aspect": "성격",
       "act": "변화",
-      "before": "니케를 사람처럼 대하는 상냥한 지휘관",
-      "after": "동료가 다 죽었다 믿고 '죽여버리자'며 크로우를 쫓는 — 너 같은 걸 없애려면 기꺼이 떨어지겠다는",
+      "before": "니케를 사람처럼 대하는 상냥한 지휘관이다",
+      "after": "동료가 다 죽었다 믿고 '죽여버리자'며 크로우를 쫓고, 너 같은 걸 없애려면 기꺼이 떨어지겠다고 한다",
       "trigger": [{ "scene": "d_main_24_06_s", "lines": ["114-129"] }],
       "points": ["F1014"],
       "evidence": [{ "scene": "d_main_24_06_e", "lines": ["10-14"] }],
       "reason": "#11-14 '쫓자…죽여버리자'. 계기는 크로우의 총성 세 발(F1014). 24_08_e에서 라피가 막는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케를 사람처럼 대하는 상냥한 지휘관 · 후 동료가 다 죽었다 믿고 '죽여버리자'며 크로우를 쫓는 — 너 같은 걸 없애려면 기꺼이 떨어지겠다는"
+        }
+      ]
     },
     {
       "id": "D286",
@@ -245,13 +278,16 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "숨긴 폭탄 앱을 맞바꾼 '공범자'",
-      "after": "반했음을 깨닫고 자수해 지휘관에게 기대려는",
+      "after": "반했음을 깨닫고 자수해 지휘관에게 기대려 한다",
       "points": ["F1015"],
       "evidence": [{ "scene": "d_main_24_07_s", "lines": ["49-66"] }],
       "reason": "#52-55 '반했구나 나' · #62-66. D199의 뒤, F1015",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 반했음을 깨닫고 자수해 지휘관에게 기대려는" }
+      ]
     },
     {
       "id": "D287",
@@ -259,14 +295,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:크로우"],
-      "before": "신중하다 핀잔해도 '고마워'라 받으며 쓸모를 인정받으려 함",
-      "after": "크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 서는",
+      "before": "신중하다 핀잔해도 '고마워'라 받으며 쓸모를 인정받으려 한다",
+      "after": "크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 선다",
       "trigger": [{ "scene": "d_main_24_07_s", "lines": ["71-79"] }],
       "evidence": [{ "scene": "d_main_24_07_e", "lines": ["14-27"] }],
       "reason": "#21 'E.H. 합류할게'. 계기는 24_07_s의 문자(#71-79). D137의 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 신중하다 핀잔해도 '고마워'라 받으며 쓸모를 인정받으려 함 · 후 크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 서는"
+        }
+      ]
     },
     {
       "id": "D288",
@@ -274,26 +320,46 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:크로우"],
-      "before": "크로우를 동료로 여김",
-      "after": "방주에 구멍을 낸 배신자라며 전신 화상의 몸으로 덮쳐 붙잡는",
+      "before": "크로우를 동료로 여긴다",
+      "after": "방주에 구멍을 낸 배신자라며 전신 화상의 몸으로 덮쳐 붙잡는다",
       "evidence": [{ "scene": "d_main_24_07_e", "lines": ["0-17"] }],
       "reason": "#14 '처음부터 날 배신할 생각이었어?' · #17 '동료라고 생각했는데'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 크로우를 동료로 여김 · 후 방주에 구멍을 낸 배신자라며 전신 화상의 몸으로 덮쳐 붙잡는"
+        }
+      ]
     },
     {
       "id": "D289",
       "person": "person:바이퍼",
       "aspect": "성격",
       "act": "변화",
-      "before": "'미안♡' 해 놓고 앙심을 감춘 애교",
-      "after": "진심으로 사과하려다 '사과를 어떻게 하는지 모르겠다'는",
+      "before": "'미안♡' 해 놓고 앙심을 감춘 애교다",
+      "after": "진심으로 사과하려다 '사과를 어떻게 하는지 모르겠다'고 한다",
       "evidence": [{ "scene": "d_main_24_08_s", "lines": ["79-95"] }],
       "reason": "#80-83 · #92-95. D135의 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '미안♡' 해 놓고 앙심을 감춘 애교 · 후 진심으로 사과하려다 '사과를 어떻게 하는지 모르겠다'는"
+        }
+      ]
     },
     {
       "id": "D290",
@@ -328,28 +394,48 @@
       "person": "person:유니",
       "aspect": "소속",
       "act": "변화",
-      "before": "슈엔의 워드리스",
-      "after": "쉘터 사태의 범인으로 갱생관 독방에 수감되어 말도 행동도 하지 않는",
+      "before": "슈엔의 워드리스다",
+      "after": "쉘터 사태의 범인으로 갱생관 독방에 수감되어 말도 행동도 하지 않는다",
       "points": ["F1021"],
       "evidence": [{ "scene": "d_main_24_09", "lines": ["85-91"] }],
       "reason": "#85-91. F1021",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 슈엔의 워드리스 · 후 쉘터 사태의 범인으로 갱생관 독방에 수감되어 말도 행동도 하지 않는"
+        }
+      ]
     },
     {
       "id": "D293",
       "person": "person:크로우",
       "aspect": "소속",
       "act": "변화",
-      "before": "이그조틱의 리더",
-      "after": "방주 테러 주동자로 확정되어 뇌를 헤집는 조사 뒤 에닉의 처우를 기다리는",
+      "before": "이그조틱의 리더다",
+      "after": "방주 테러 주동자로 확정되어 뇌를 헤집는 조사 뒤 에닉의 처우를 기다린다",
       "points": ["F1018"],
       "evidence": [{ "scene": "d_main_24_09", "lines": ["2-24"] }],
       "reason": "#4 · #10-17. F1018",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이그조틱의 리더 · 후 방주 테러 주동자로 확정되어 뇌를 헤집는 조사 뒤 에닉의 처우를 기다리는"
+        }
+      ]
     },
     {
       "id": "D294",
@@ -357,13 +443,16 @@
       "aspect": "신념",
       "act": "변화",
       "before": "스스로 지킬 무기와 엘리베이터를 쥐어야 한다",
-      "after": "많은 사람에게 안긴 공포를 속죄하려 니케가 되겠다는",
+      "after": "많은 사람에게 안긴 공포를 속죄하려 니케가 되겠다고 한다",
       "points": ["F1023"],
       "evidence": [{ "scene": "d_main_24_10", "lines": ["10-30"] }],
       "reason": "#12 '날 니케로 만들어줘' · #16-19. D232의 뒤, F1023",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 많은 사람에게 안긴 공포를 속죄하려 니케가 되겠다는" }
+      ]
     },
     {
       "id": "D295",
@@ -371,12 +460,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:E.H."],
-      "text": "E.H.를 '하퍼'라 부르며 니케로 만들어 달라는 부탁을 곧바로 받아들이되, 속죄할 수 있냐는 물음엔 '아니, 그래도 노력은 해볼 수 있겠지'라 답하는",
+      "text": "E.H.를 '하퍼'라 부르며 니케로 만들어 달라는 부탁을 곧바로 받아들이되, 속죄할 수 있냐는 물음엔 '아니, 그래도 노력은 해볼 수 있겠지'라 답한다",
       "evidence": [{ "scene": "d_main_24_10", "lines": ["1-30"] }],
       "reason": "#2 · #22-23 · #29-30. 둘의 관계는 F2490",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "E.H.를 '하퍼'라 부르며 니케로 만들어 달라는 부탁을 곧바로 받아들이되, 속죄할 수 있냐는 물음엔 '아니, 그래도 노력은 해볼 수 있겠지'라 답하는"
+        }
+      ]
     },
     {
       "id": "D296",

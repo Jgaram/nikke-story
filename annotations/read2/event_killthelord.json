@@ -157,14 +157,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "보호 · 감시 대상",
-      "after": "잠 못 드는 지휘관의 손목을 잡아 재우고, 함께해 줘 고맙다며 다음에도 잘 부탁한다는",
+      "before": "보호 · 감시 대상이었다",
+      "after": "잠 못 드는 지휘관의 손목을 잡아 재우고, 함께해 줘 고맙다며 다음에도 잘 부탁한다고 한다",
       "trigger": [{ "scene": "event_killthelord_intermission_01", "lines": ["76-84"] }],
       "evidence": [{ "scene": "event_killthelord_06_e", "lines": [56, "79-83"] }],
       "reason": "#80-83 고맙다 · 잘 부탁해(내버려 두는 갈래는 #151-153 '함께할 수 있어서 즐거웠어요').",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 보호 · 감시 대상 · 후 잠 못 드는 지휘관의 손목을 잡아 재우고, 함께해 줘 고맙다며 다음에도 잘 부탁한다는"
+        }
+      ]
     },
     {
       "id": "D405",
@@ -215,12 +225,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:D"],
-      "text": "D를 '도끼 살인마' · '도끼녀'라 부르며 재수 없다고 으르렁대면서도 이웃으로 엮였으니 손잡자고 제안하는",
+      "text": "D를 '도끼 살인마' · '도끼녀'라 부르며 재수 없다고 으르렁대면서도 이웃으로 엮였으니 손잡자고 제안한다",
       "evidence": [{ "scene": "event_killthelord_03_e", "lines": ["47-48", "95-98", "114-115"] }],
       "reason": "#47 도끼녀 · #98 '아주 진하게 엮여보자' — 03_s#98-99 도끼 살인마.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "D를 '도끼 살인마' · '도끼녀'라 부르며 재수 없다고 으르렁대면서도 이웃으로 엮였으니 손잡자고 제안하는"
+        }
+      ]
     },
     {
       "id": "D408",

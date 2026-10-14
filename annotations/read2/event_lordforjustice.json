@@ -225,28 +225,41 @@
       "person": "person:K",
       "aspect": "기억",
       "act": "기준",
-      "text": "특급 임무를 받은 뒤 일주일의 기억이 없고 그 앞도 듬성듬성 빠진 채 깨어난",
+      "text": "특급 임무를 받은 뒤 일주일의 기억이 없고 그 앞도 듬성듬성 빠진 채 깨어났다",
       "points": ["F1949"],
       "evidence": [{ "scene": "event_lordforjustice_01_e", "lines": ["12-20"] }],
       "reason": "K의 말.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "특급 임무를 받은 뒤 일주일의 기억이 없고 그 앞도 듬성듬성 빠진 채 깨어난" }
+      ]
     },
     {
       "id": "D710",
       "person": "person:K",
       "aspect": "기억",
       "act": "변화",
-      "before": "VII-1 임무를 잊은",
-      "after": "VII에게 '무슨 수를 써서라도' 정의를 보이겠다던 자기를 떠올리고 '난 꼭두각시였다'는",
+      "before": "VII-1 임무를 잊었다",
+      "after": "VII에게 '무슨 수를 써서라도' 정의를 보이겠다던 자기를 떠올리고 '난 꼭두각시였다'고 한다",
       "trigger": [{ "scene": "event_lordforjustice_04_s", "lines": ["82-87"] }],
       "points": ["F1963"],
       "evidence": [{ "scene": "event_lordforjustice_04_e", "lines": ["27-33"] }],
       "reason": "중간보고 '코드네임 K는 기쁘게 임무를 받아들임'을 보고 기억이 돌아온다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 VII-1 임무를 잊은 · 후 VII에게 '무슨 수를 써서라도' 정의를 보이겠다던 자기를 떠올리고 '난 꼭두각시였다'는"
+        }
+      ]
     },
     {
       "id": "D711",
@@ -269,15 +282,25 @@
       "person": "person:K",
       "aspect": "신념",
       "act": "변화",
-      "before": "저지스의 판결이 곧 정의라 믿던",
-      "after": "악인이라 자책하면서도 천칭 대신 고개를 기울이는 자기 방식으로 정의를 다시 찾아가겠다는",
+      "before": "저지스의 판결이 곧 정의라 믿었다",
+      "after": "악인이라 자책하면서도 천칭 대신 고개를 기울이는 자기 방식으로 정의를 다시 찾아가겠다고 한다",
       "trigger": [{ "scene": "event_lordforjustice_05_s", "lines": ["36-55"] }],
       "points": ["F1970"],
       "evidence": [{ "scene": "event_lordforjustice_06_e", "lines": ["33-38", "84-97"] }],
       "reason": "목단의 정의를 본 뒤 '변하게 해야겠네, 앞으로' · '네 정의는 뭔지 보여줘'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 저지스의 판결이 곧 정의라 믿던 · 후 악인이라 자책하면서도 천칭 대신 고개를 기울이는 자기 방식으로 정의를 다시 찾아가겠다는"
+        }
+      ]
     },
     {
       "id": "D713",
@@ -285,44 +308,74 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'인간 녀석들은 마음에 안 든다'던",
-      "after": "자기를 믿고 처분을 고르지 않은 지휘관의 정의를 참고하겠다는",
+      "before": "'인간 녀석들은 마음에 안 든다'고 했다",
+      "after": "자기를 믿고 처분을 고르지 않은 지휘관의 정의를 참고하겠다고 한다",
       "trigger": [{ "scene": "event_lordforjustice_06_e", "lines": ["7-13", "66-69"] }],
       "evidence": [{ "scene": "event_lordforjustice_06_e", "lines": ["78-81", "93-97"] }],
       "reason": "'인간이 싫어?' '…[예전]에는 그랬어'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '인간 녀석들은 마음에 안 든다'던 · 후 자기를 믿고 처분을 고르지 않은 지휘관의 정의를 참고하겠다는"
+        }
+      ]
     },
     {
       "id": "D714",
       "person": "person:K",
       "aspect": "소속",
       "act": "변화",
-      "before": "저지스의 판결을 집행하는 시지 패러리스",
-      "after": "지휘관이 책임을 지는 '프리랜서' 자경단으로 D의 사이비 조사를 돕는",
+      "before": "저지스의 판결을 집행하는 시지 패러리스였다",
+      "after": "지휘관이 책임을 지는 '프리랜서' 자경단으로 D의 사이비 조사를 돕는다",
       "trigger": [{ "scene": "event_lordforjustice_06_s", "lines": ["113-115"] }],
       "points": ["F1971"],
       "evidence": [{ "scene": "event_lordforjustice_epilogue", "lines": ["19-25"] }],
       "reason": "X가 K의 처분을 지휘관에게 맡긴 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 저지스의 판결을 집행하는 시지 패러리스 · 후 지휘관이 책임을 지는 '프리랜서' 자경단으로 D의 사이비 조사를 돕는"
+        }
+      ]
     },
     {
       "id": "D715",
       "person": "person:목단",
       "aspect": "신념",
       "act": "변화",
-      "before": "제 구역을 불태우고 '아무것도 해결된 게 없다'며 괴로워하던",
-      "after": "마을을 부순 것도 그들을 가슴에 묻고 사는 것도 후회하지 않고, 잘못은 고치면 된다는",
+      "before": "제 구역을 불태우고 '아무것도 해결된 게 없다'며 괴로워했다",
+      "after": "마을을 부순 것도 그들을 가슴에 묻고 사는 것도 후회하지 않고, 잘못은 고치면 된다고 한다",
       "trigger": [{ "scene": "event_lordforjustice_05_s", "lines": ["8-16"] }],
       "points": ["F1965"],
       "evidence": [{ "scene": "event_lordforjustice_05_s", "lines": ["36-55"] }],
       "reason": "재건 중인 포그 할로우와 무덤 앞에서 '이게 내 정의야'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 제 구역을 불태우고 '아무것도 해결된 게 없다'며 괴로워하던 · 후 마을을 부순 것도 그들을 가슴에 묻고 사는 것도 후회하지 않고, 잘못은 고치면 된다는"
+        }
+      ]
     },
     {
       "id": "D716",
@@ -330,12 +383,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:K"],
-      "text": "시지 패러리스를 '나쁜 놈들'이라 부르며 K와 말끝마다 부딪치는",
+      "text": "시지 패러리스를 '나쁜 놈들'이라 부르며 K와 말끝마다 부딪친다",
       "evidence": [{ "scene": "event_lordforjustice_02_e", "lines": ["41-60"] }],
       "reason": "'정의 같은 소리하네'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "시지 패러리스를 '나쁜 놈들'이라 부르며 K와 말끝마다 부딪치는" }
+      ]
     },
     {
       "id": "D717",
@@ -343,14 +399,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:K"],
-      "before": "'나쁜 놈들'이라 맞서던",
-      "after": "꼭두각시라 자책하는 K를 끌고 가 자기 정의를 보여 주는",
+      "before": "'나쁜 놈들'이라 맞섰다",
+      "after": "꼭두각시라 자책하는 K를 끌고 가 자기 정의를 보여 준다",
       "trigger": [{ "scene": "event_lordforjustice_04_e", "lines": ["36-41"] }],
       "evidence": [{ "scene": "event_lordforjustice_04_e", "lines": ["43-53"] }],
       "reason": "'아까부터 듣자 하니 시끄러워 죽겠네 … 내 정의'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M29" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '나쁜 놈들'이라 맞서던 · 후 꼭두각시라 자책하는 K를 끌고 가 자기 정의를 보여 주는"
+        }
+      ]
     }
   ],
   "life": [

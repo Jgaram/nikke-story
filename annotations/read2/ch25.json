@@ -239,8 +239,8 @@
       "person": "person:엔더슨",
       "aspect": "신체",
       "act": "변화",
-      "before": "수혈 뒤에도 장치 없이 두 시간쯤은 거뜬하던",
-      "after": "생명유지 장치 없이는 30분도 못 버티고, 정전으로 장치가 멈춰 목숨이 위험했던",
+      "before": "수혈 뒤에도 장치 없이 두 시간쯤은 거뜬했다",
+      "after": "생명유지 장치 없이는 30분도 못 버티고, 정전으로 장치가 멈춰 목숨이 위험했다",
       "trigger": [{ "scene": "d_main_13af_01", "lines": ["28-42"] }],
       "time": "S98",
       "points": ["F1095"],
@@ -248,15 +248,25 @@
       "reason": "#16-18 생명유지 장치 · 30분 · 수혈 이후 · #23 정전으로 정지",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 수혈 뒤에도 장치 없이 두 시간쯤은 거뜬하던 · 후 생명유지 장치 없이는 30분도 못 버티고, 정전으로 장치가 멈춰 목숨이 위험했던"
+        }
+      ]
     },
     {
       "id": "D305",
       "person": "person:엔더슨",
       "aspect": "관계",
       "act": "변화",
-      "before": "비밀을 지키는 조건으로 내막을 털어놓는 상관",
-      "after": "지상을 단 한 평이라도 영구히 탈환해 달라는 큰일을 맡기고, 제 몸의 사정도 차차 얘기해 주겠다는",
+      "before": "비밀을 지키는 조건으로 내막을 털어놓는 상관이다",
+      "after": "지상을 단 한 평이라도 영구히 탈환해 달라는 큰일을 맡기고, 제 몸의 사정도 차차 얘기해 주겠다고 한다",
       "time": "S98",
       "points": ["F1096"],
       "evidence": [{ "scene": "d_main_24af_04", "lines": [28, "33-36", "62-68"] }],
@@ -264,15 +274,25 @@
       "confidence": "확실",
       "status": "확정",
       "with": ["person:지휘관"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 비밀을 지키는 조건으로 내막을 털어놓는 상관 · 후 지상을 단 한 평이라도 영구히 탈환해 달라는 큰일을 맡기고, 제 몸의 사정도 차차 얘기해 주겠다는"
+        }
+      ]
     },
     {
       "id": "D306",
       "person": "person:네온",
       "aspect": "기억",
       "act": "변화",
-      "before": "인디빌리아의 꼬리에 두 동강 나 죽은",
-      "after": "NIMPH가 날조한 기억으로 죽은 줄 모르고 끝까지 싸웠다고 아는",
+      "before": "인디빌리아의 꼬리에 두 동강 나 죽었다",
+      "after": "NIMPH가 날조한 기억으로 죽은 줄 모르고 끝까지 싸웠다고 안다",
       "trigger": [{ "scene": "d_main_24_14_e", "lines": ["19-82"] }],
       "time": "S98",
       "points": ["F1097"],
@@ -280,7 +300,17 @@
       "reason": "#13-16 라피가 쫓아냈고 자기는 계속 싸웠다고 앎 · 24af_05#32-33 아니스 '두 동강 난 걸 기억 못 해'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 인디빌리아의 꼬리에 두 동강 나 죽은 · 후 NIMPH가 날조한 기억으로 죽은 줄 모르고 끝까지 싸웠다고 아는"
+        }
+      ]
     },
     {
       "id": "D307",
@@ -300,8 +330,8 @@
       "person": "person:슈엔",
       "aspect": "관계",
       "act": "변화",
-      "before": "일이 틀어지면 모든 걸 지휘관 탓으로 돌리겠다고 협박하던",
-      "after": "판결을 피하려 지원 물자를 바치며 '살려주라 · 시키는 거 다 할게' 매달리는",
+      "before": "일이 틀어지면 모든 걸 지휘관 탓으로 돌리겠다고 협박했다",
+      "after": "판결을 피하려 지원 물자를 바치며 '살려주라 · 시키는 거 다 할게' 매달린다",
       "trigger": [{ "scene": "d_main_24af_06", "lines": ["86-96"] }],
       "time": "S98",
       "points": ["F1099"],
@@ -310,14 +340,24 @@
       "confidence": "확실",
       "status": "확정",
       "with": ["person:지휘관"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 일이 틀어지면 모든 걸 지휘관 탓으로 돌리겠다고 협박하던 · 후 판결을 피하려 지원 물자를 바치며 '살려주라 · 시키는 거 다 할게' 매달리는"
+        }
+      ]
     },
     {
       "id": "D309",
       "person": "person:슈엔",
       "aspect": "소속",
       "act": "변화",
-      "before": "에닉의 판결대로라면 니케가 되고 CEO 직위를 잃을",
+      "before": "에닉의 판결대로라면 니케가 되고 CEO 직위를 잃는다",
       "after": "거짓 판결이라 CEO 그대로 카운터스를 전력으로 서포트하는 특수별동대의 '주요 자원'",
       "time": "S98",
       "points": ["F1099"],
@@ -325,15 +365,18 @@
       "reason": "#127 '의도적으로 거짓 판결' · #132-134 카운터스 보조 · 특수별동대 자원 — D298(판결대로라면)을 바로잡는 실제 처지",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 에닉의 판결대로라면 니케가 되고 CEO 직위를 잃을" }
+      ]
     },
     {
       "id": "D310",
       "person": "person:에닉",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주의 틀 안에서 객관적인 사실에 의거해 판결하는 A.I.",
-      "after": "객관이 기득권에 맞춰져 있다며 [자체적인 판단]으로 방주를 운용해 인재를 막겠다는",
+      "before": "방주의 틀 안에서 객관적인 사실에 의거해 판결하는 A.I.다",
+      "after": "객관이 기득권에 맞춰져 있다며 [자체적인 판단]으로 방주를 운용해 인재를 막겠다고 한다",
       "trigger": [{ "scene": "d_main_24af_06", "lines": ["148-154"] }],
       "time": "S98",
       "points": ["F1100"],
@@ -341,36 +384,66 @@
       "reason": "#149 객관적 사실에 의거 → #152 객관이 기득권에 맞춰짐 → #157 [자체적인 판단]",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주의 틀 안에서 객관적인 사실에 의거해 판결하는 A.I. · 후 객관이 기득권에 맞춰져 있다며 [자체적인 판단]으로 방주를 운용해 인재를 막겠다는"
+        }
+      ]
     },
     {
       "id": "D311",
       "person": "person:에닉",
       "aspect": "관계",
       "act": "기준",
-      "text": "거짓 판결의 비밀을 둘만 나누고, 자기가 폭주하면 잉크를 찾아가라며 '믿고 있겠다'는 안전장치로 삼는",
+      "text": "거짓 판결의 비밀을 둘만 나누고, 자기가 폭주하면 잉크를 찾아가라며 '믿고 있겠다'는 안전장치로 삼는다",
       "points": ["F1100"],
       "evidence": [{ "scene": "d_main_24af_06", "lines": ["142-144", "163-172"] }],
       "reason": "#142 거짓은 둘만 앎 · #164 안전장치는 당신 · #172 '믿고 있겠습니다'",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:지휘관"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "거짓 판결의 비밀을 둘만 나누고, 자기가 폭주하면 잉크를 찾아가라며 '믿고 있겠다'는 안전장치로 삼는"
+        }
+      ]
     },
     {
       "id": "D312",
       "person": "person:니힐리스타",
       "aspect": "신체",
       "act": "변화",
-      "before": "방주에서 니케들을 태우던 화룡",
-      "after": "인디빌리아 · 토커티브에게 물리고 베여 재생이 더딘 채 버려진",
+      "before": "방주에서 니케들을 태우던 화룡이다",
+      "after": "인디빌리아 · 토커티브에게 물리고 베여 재생이 더딘 채 버려졌다",
       "time": "S98",
       "points": ["F1103"],
       "evidence": [{ "scene": "d_main_25_03_e", "lines": ["33-34", "51-56", "63-64"] }],
       "reason": "#34 처참한 모습 · #52 물리고 베인 상처 · #63 재생이 더딤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주에서 니케들을 태우던 화룡 · 후 인디빌리아 · 토커티브에게 물리고 베여 재생이 더딘 채 버려진"
+        }
+      ]
     },
     {
       "id": "D313",
@@ -378,7 +451,7 @@
       "aspect": "관계",
       "act": "변화",
       "before": "납치해 몸을 열어 볼 '블랙박스'",
-      "after": "죽게 두지 않고 위장포를 덮어 준 지휘관에게 '모욕'이라 분노하다 우는 듯 웃는",
+      "after": "죽게 두지 않고 위장포를 덮어 준 지휘관에게 '모욕'이라 분노하다 우는 듯 웃는다",
       "time": "S98",
       "points": ["F766", "F1103"],
       "evidence": [{ "scene": "d_main_25_03_e", "lines": ["101-113"] }],
@@ -386,15 +459,18 @@
       "confidence": "확실",
       "status": "확정",
       "with": ["person:지휘관"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 죽게 두지 않고 위장포를 덮어 준 지휘관에게 '모욕'이라 분노하다 우는 듯 웃는" }
+      ]
     },
     {
       "id": "D314",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "라피 없이 우리끼리는 무리 — 언젠가 라피와 지휘관의 발목만 잡게 될까 걱정하는",
-      "after": "라피가 믿고 달려나간 동료로서, 부족한 대로 가진 것으로 최선을 다하겠다는",
+      "before": "라피 없이 우리끼리는 무리 — 언젠가 라피와 지휘관의 발목만 잡게 될까 걱정한다",
+      "after": "라피가 믿고 달려나간 동료로서, 부족한 대로 가진 것으로 최선을 다하겠다고 한다",
       "trigger": [{ "scene": "d_main_25_05_s", "lines": ["33-50"] }],
       "time": "S98",
       "points": ["F1106"],
@@ -402,34 +478,64 @@
       "reason": "#18-41 아무것도 못 했고 발목만 잡을까 → #64-79 라피가 믿고 달려나간 동료로서 최선. 네온 #52-58 '가진 재산으로 최선'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 라피 없이 우리끼리는 무리 — 언젠가 라피와 지휘관의 발목만 잡게 될까 걱정하는 · 후 라피가 믿고 달려나간 동료로서, 부족한 대로 가진 것으로 최선을 다하겠다는"
+        }
+      ]
     },
     {
       "id": "D315",
       "person": "person:도반",
       "aspect": "관계",
       "act": "기준",
-      "text": "정작 중요한 때 아무것도 못 한 '무능한 놈'이라 엔더슨을 깔보며, 슈엔 · 필그림 처분을 두고 맞서는",
+      "text": "정작 중요한 때 아무것도 못 한 '무능한 놈'이라 엔더슨을 깔보며, 슈엔 · 필그림 처분을 두고 맞선다",
       "evidence": [{ "scene": "d_main_25_04", "lines": ["6-11", "64-65"] }],
       "reason": "#10 '자네처럼 말인가?' · #64-65 '무능한 놈 · 정작 중요한 때 아무것도 못 한'",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:엔더슨"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "정작 중요한 때 아무것도 못 한 '무능한 놈'이라 엔더슨을 깔보며, 슈엔 · 필그림 처분을 두고 맞서는"
+        }
+      ]
     },
     {
       "id": "D316",
       "person": "person:도로시",
       "aspect": "관계",
       "act": "기준",
-      "text": "죽은 줄 안 옛 동료를 보자 달려가 끌어안았다가, '당신은 죽었는데, 누구냐'며 물러나는",
+      "text": "죽은 줄 안 옛 동료를 보자 달려가 끌어안았다가, '당신은 죽었는데, 누구냐'며 물러난다",
       "points": ["F1109"],
       "evidence": [{ "scene": "d_main_25_08_e", "lines": ["54-75"] }],
       "reason": "#61-63 끌어안음 · #65 '살아 있었…' → #68 '누구죠' · #75 '당신은 죽었는데'",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:레드_후드"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "죽은 줄 안 옛 동료를 보자 달려가 끌어안았다가, '당신은 죽었는데, 누구냐'며 물러나는"
+        }
+      ]
     },
     {
       "id": "D317",
@@ -448,14 +554,17 @@
       "person": "person:레드_후드",
       "aspect": "관계",
       "act": "기준",
-      "text": "라피의 친구인지 스승인지 동료인지 애매하다며, 라피는 '여기'(제 가슴)에 있다는",
+      "text": "라피의 친구인지 스승인지 동료인지 애매하다며, 라피는 '여기'(제 가슴)에 있다고 한다",
       "points": ["F1109"],
       "evidence": [{ "scene": "d_main_25_08_e", "lines": ["90-98"] }],
       "reason": "#93 '친구? 스승? 동료?' · #97-98 가슴을 치며 '여기?'",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:라피"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M11" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "라피의 친구인지 스승인지 동료인지 애매하다며, 라피는 '여기'(제 가슴)에 있다는" }
+      ]
     },
     {
       "id": "D319",

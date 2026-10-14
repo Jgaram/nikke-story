@@ -85,29 +85,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "목을 졸라 몸을 열어 보려던 '블랙박스'",
-      "after": "블러프에 놀아나 주고 '정이 좀 들었다'며, 다시 정복하러 올 때까지 다른 잡것 손에 죽지 말라는",
+      "before": "목을 졸라 몸을 열어 보려던 '블랙박스'였다",
+      "after": "블러프에 놀아나 주고 '정이 좀 들었다'며, 다시 정복하러 올 때까지 다른 잡것 손에 죽지 말라고 한다",
       "trigger": [{ "scene": "ep:d_nikke_nihilister_03", "lines": ["119-147"] }],
       "time": "S59",
       "evidence": [{ "scene": "ep:d_nikke_nihilister_05", "lines": ["17-19", "74-75"] }],
       "reason": "03#141-147 '건방진 것도 이 정도면 미덕' — 05#19 '널 가지고 놀면서 나도 정이 좀 들었거든' · #75",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 목을 졸라 몸을 열어 보려던 '블랙박스' · 후 블러프에 놀아나 주고 '정이 좀 들었다'며, 다시 정복하러 올 때까지 다른 잡것 손에 죽지 말라는"
+        }
+      ]
     },
     {
       "id": "D1427",
       "person": "person:니힐리스타",
       "aspect": "신념",
       "act": "기준",
-      "text": "퀸을 끌어내리는 데 그치지 않고 그 힘 · 병력 · 영향력을 모두 빼앗아 지상의 유일무이한 [최강]이 되어, 끝없는 싸움의 장작을 원하는",
+      "text": "퀸을 끌어내리는 데 그치지 않고 그 힘 · 병력 · 영향력을 모두 빼앗아 지상의 유일무이한 [최강]이 되어, 끝없는 싸움의 장작을 원한다",
       "time": "S59",
       "points": ["F844"],
       "evidence": [{ "scene": "ep:d_nikke_nihilister_05", "lines": ["50-67"] }],
       "reason": "#56-57 '언젠가 나는 그녀가 될 거야. [최강]이' · #63-64 '나는 불'. side:eden_spear D843(독살 계획)보다 출시가 앞서 이것을 기준으로 둔다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "퀸을 끌어내리는 데 그치지 않고 그 힘 · 병력 · 영향력을 모두 빼앗아 지상의 유일무이한 [최강]이 되어, 끝없는 싸움의 장작을 원하는"
+        }
+      ]
     }
   ],
   "life": [],

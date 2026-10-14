@@ -294,15 +294,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:데이파라"],
-      "before": "데이파라를 데리고 함께 '구원'받으러 지상으로 가려는",
-      "after": "죽어 가며 데이파라가 엘리베이터에 있음을 떠올리고 '내가 무슨 짓을' 하는",
+      "before": "데이파라를 데리고 함께 '구원'받으러 지상으로 가려 했다",
+      "after": "죽어 가며 데이파라가 엘리베이터에 있음을 떠올리고 '내가 무슨 짓을'이라 한다",
       "trigger": [{ "scene": "fl:reborn_evil_24", "lines": ["74-77"] }],
       "points": ["F2137"],
       "evidence": [{ "scene": "fl:reborn_evil_24", "lines": ["100-108"] }],
       "reason": "#101-102 따라간다던 약속에서 #104-108 딸을 떠올리고 무너진다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 데이파라를 데리고 함께 '구원'받으러 지상으로 가려는 · 후 죽어 가며 데이파라가 엘리베이터에 있음을 떠올리고 '내가 무슨 짓을' 하는"
+        }
+      ]
     },
     {
       "id": "D835",
@@ -322,43 +332,73 @@
       "person": "person:데이파라",
       "aspect": "신념",
       "act": "변화",
-      "before": "엄마의 죄를 혼자 막으려",
-      "after": "경찰이 되어 이런 일이 다시 없도록 막는 것으로 속죄하겠다는",
+      "before": "엄마의 죄를 혼자 막으려 했다",
+      "after": "경찰이 되어 이런 일이 다시 없도록 막는 것으로 속죄하겠다고 한다",
       "trigger": [{ "scene": "fl:reborn_evil_24", "lines": ["117-138"] }],
       "points": ["F2143"],
       "evidence": [{ "scene": "fl:reborn_evil_27", "lines": ["56-86"] }],
       "reason": "#63-65 혼자 해결하려 한 것을 자책하고 #77-79 키리와 약속한 속죄.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 엄마의 죄를 혼자 막으려 · 후 경찰이 되어 이런 일이 다시 없도록 막는 것으로 속죄하겠다는"
+        }
+      ]
     },
     {
       "id": "D837",
       "person": "person:미란다",
       "aspect": "성격",
       "act": "변화",
-      "before": "겁이 많고 엉뚱한",
-      "after": "괴생명체가 무서워 떨면서도 '경찰은 시민을 보호하고 방주를 지킨다'며 남아 시선을 끄는",
+      "before": "겁이 많고 엉뚱하다",
+      "after": "괴생명체가 무서워 떨면서도 '경찰은 시민을 보호하고 방주를 지킨다'며 남아 시선을 끈다",
       "trigger": [{ "scene": "d_main_22_01_e", "lines": ["11-29"] }],
       "evidence": [{ "scene": "fl:reborn_evil_22", "lines": ["27-50"] }],
       "reason": "#38-46 — ch22에서 폴리가 일깨운 말(D225)을 떠올려 남는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 겁이 많고 엉뚱한 · 후 괴생명체가 무서워 떨면서도 '경찰은 시민을 보호하고 방주를 지킨다'며 남아 시선을 끄는"
+        }
+      ]
     },
     {
       "id": "D838",
       "person": "person:키리",
       "aspect": "성격",
       "act": "변화",
-      "before": "행정만 맡아 와 큰일은 다른 이가 맡아야 한다며 물러서려는",
-      "after": "'마음이 중요하다'는 말에 런처를 고쳐 잡고 앞장서는",
+      "before": "행정만 맡아 와 큰일은 다른 이가 맡아야 한다며 물러서려 했다",
+      "after": "'마음이 중요하다'는 말에 런처를 고쳐 잡고 앞장선다",
       "trigger": [{ "scene": "fl:reborn_evil_24", "lines": ["38-57"] }],
       "evidence": [{ "scene": "fl:reborn_evil_24", "lines": ["60-71"] }],
       "reason": "#29-37 물러서려다 클레어의 말에 #62 · #71 '앞장 설게요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 행정만 맡아 와 큰일은 다른 이가 맡아야 한다며 물러서려는 · 후 '마음이 중요하다'는 말에 런처를 고쳐 잡고 앞장서는"
+        }
+      ]
     },
     {
       "id": "D839",
@@ -366,13 +406,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "함께해 줘 고맙다는 임무 동료",
-      "after": "정체를 숨기고 죽어도 상관없다 — 이젠 기억해 줄 사람이 있다는",
+      "before": "함께해 줘 고맙다는 임무 동료다",
+      "after": "정체를 숨기고 죽어도 상관없다 — 이젠 기억해 줄 사람이 있다고 한다",
       "evidence": [{ "scene": "fl:reborn_evil_23", "lines": ["55-62"] }],
       "reason": "#62 '이젠 그걸 기억해 줄 사람이 있기도 하고' — 이름은 없지만 지휘관을 가리키는 것으로 본다.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 함께해 줘 고맙다는 임무 동료 · 후 정체를 숨기고 죽어도 상관없다 — 이젠 기억해 줄 사람이 있다는"
+        }
+      ]
     }
   ],
   "life": [

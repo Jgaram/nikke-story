@@ -138,15 +138,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "진심으로 영원을 약속하고 싶어 입을 맞추는",
-      "after": "조직을 부숴서라도 갖고 싶어 흔들리지만, 조직과 지휘관을 다 가질 방법을 찾을 때까지 기다렸다 지아비로 맞겠다는",
+      "before": "진심으로 영원을 약속하고 싶어 입을 맞췄다",
+      "after": "조직을 부숴서라도 갖고 싶어 흔들리지만, 조직과 지휘관을 다 가질 방법을 찾을 때까지 기다렸다 지아비로 맞겠다고 한다",
       "trigger": [{ "scene": "event_beautyfullshot2_01_e", "lines": ["42-49"] }],
       "time": "S157",
       "evidence": [{ "scene": "event_beautyfullshot2_02_e", "lines": ["54-65"] }],
       "reason": "#55-58 '흔들립니다 … 하지만 기다릴 것입니다'. 기준 D201 · 앞 변화 D202",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 진심으로 영원을 약속하고 싶어 입을 맞추는 · 후 조직을 부숴서라도 갖고 싶어 흔들리지만, 조직과 지휘관을 다 가질 방법을 찾을 때까지 기다렸다 지아비로 맞겠다는"
+        }
+      ]
     },
     {
       "id": "D483",
@@ -154,12 +164,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:바이퍼"],
-      "text": "'독사'라 부르며 남의 것을 제 것처럼 탐내는 욕심뿐이라 깔보고, 덤비자 깔아뭉개 핸드폰까지 부수는",
+      "text": "'독사'라 부르며 남의 것을 제 것처럼 탐내는 욕심뿐이라 깔보고, 덤비자 깔아뭉개 핸드폰까지 부순다",
       "evidence": [{ "scene": "event_beautyfullshot2_03_s", "lines": ["35-45"] }],
       "reason": "#38-45 '참 악착같네 … 괜히 독사라고 불리는 게 아니란 말이지'. 03_e에서 바이퍼를 제압한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'독사'라 부르며 남의 것을 제 것처럼 탐내는 욕심뿐이라 깔보고, 덤비자 깔아뭉개 핸드폰까지 부수는"
+        }
+      ]
     },
     {
       "id": "D484",
@@ -167,7 +187,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:바이퍼"],
-      "before": "독사라 깔보고 깔아뭉개던",
+      "before": "독사라 깔보고 깔아뭉갰다",
       "after": "여전히 싫다면서 제 핸드폰을 주고 서핑 · 보트 운전을 가르치는 — '사진 정도는 같이 찍을 수 있는'",
       "trigger": [{ "scene": "event_beautyfullshot2_intermission", "lines": ["59-81"] }],
       "time": "S157",
@@ -175,7 +195,10 @@
       "reason": "자칼의 '사진 중요해'(#69-81)에 '하, 젠장' 하고 간다. #131 '대가 없는 호의'(F1516)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 독사라 깔보고 깔아뭉개던" }
+      ]
     },
     {
       "id": "D485",
@@ -183,12 +206,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:로산나"],
-      "text": "어둠의 상징인 언더월드 퀸이 너무 빛나 보여 동경하다 질투해, '다 부숴버리고 싶을 정도'로 부러워하는",
+      "text": "어둠의 상징인 언더월드 퀸이 너무 빛나 보여 동경하다 질투해, '다 부숴버리고 싶을 정도'로 부러워한다",
       "evidence": [{ "scene": "event_beautyfullshot2_03_e", "lines": ["17-20", "73-86"] }],
       "reason": "#19-20 '빛이나 보였다 · 동경은 곧 질투로' · #75 '부러워서 다 부숴버리고 싶을 정도'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "어둠의 상징인 언더월드 퀸이 너무 빛나 보여 동경하다 질투해, '다 부숴버리고 싶을 정도'로 부러워하는"
+        }
+      ]
     },
     {
       "id": "D486",
@@ -196,15 +229,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:로산나"],
-      "before": "동경하다 질투해 다 부수고 싶던",
-      "after": "'동정은 필요 없다'면서 핸드폰을 받아 들고 '진짜 맘에 안 들어♡' 하며 서핑을 배우러 따라 나가는",
+      "before": "동경하다 질투해 다 부수고 싶었다",
+      "after": "'동정은 필요 없다'면서 핸드폰을 받아 들고 '진짜 맘에 안 들어♡' 하며 서핑을 배우러 따라 나간다",
       "trigger": [{ "scene": "event_beautyfullshot2_intermission", "lines": ["98-131"] }],
       "time": "S157",
       "evidence": [{ "scene": "event_beautyfullshot2_intermission", "lines": ["132-151"] }],
       "reason": "#138 '나랑 같네' · #151. 다음 씬(04_s#6-7)에선 로산나를 '자기'라 부르며 보트를 배운다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 동경하다 질투해 다 부수고 싶던 · 후 '동정은 필요 없다'면서 핸드폰을 받아 들고 '진짜 맘에 안 들어♡' 하며 서핑을 배우러 따라 나가는"
+        }
+      ]
     },
     {
       "id": "D487",
@@ -212,15 +255,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:사쿠라"],
-      "before": "'규수' · '망나니'로 으르렁대는 동업자",
-      "after": "'어땠어' 묻고 '너무 좋았다'는 말에 '나도 그래' 하며 목단 · 부하들과 여기서 여름휴가를 보내자는",
+      "before": "'규수' · '망나니'로 으르렁대는 동업자였다",
+      "after": "'어땠어' 묻고 '너무 좋았다'는 말에 '나도 그래' 하며 목단 · 부하들과 여기서 여름휴가를 보내자고 한다",
       "trigger": [{ "scene": "event_beautyfullshot1_03_s", "lines": ["138-145"] }],
       "time": "S157",
       "evidence": [{ "scene": "event_beautyfullshot2_06_e", "lines": ["91-104"] }],
       "reason": "해파리 사진 앞에서 처음 함께 웃고(03_s#142-145) 끝에 휴가를 약속한다. 기준 D230",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '규수' · '망나니'로 으르렁대는 동업자 · 후 '어땠어' 묻고 '너무 좋았다'는 말에 '나도 그래' 하며 목단 · 부하들과 여기서 여름휴가를 보내자는"
+        }
+      ]
     },
     {
       "id": "D488",
@@ -228,26 +281,46 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:바이퍼"],
-      "text": "바이퍼가 울면 저도 슬프다며 매달리고, 사진은 시간을 멈춰 '진짜 내 것'이 된다는 바이퍼의 말을 그대로 믿고 지키는",
+      "text": "바이퍼가 울면 저도 슬프다며 매달리고, 사진은 시간을 멈춰 '진짜 내 것'이 된다는 바이퍼의 말을 그대로 믿고 지킨다",
       "evidence": [{ "scene": "event_beautyfullshot2_03_e", "lines": ["109-117"] }],
       "reason": "#115-116. 다음 씬 intermission#69-81에서 로산나 앞에 바이퍼의 말을 대신 외친다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "바이퍼가 울면 저도 슬프다며 매달리고, 사진은 시간을 멈춰 '진짜 내 것'이 된다는 바이퍼의 말을 그대로 믿고 지키는"
+        }
+      ]
     },
     {
       "id": "D489",
       "person": "person:길티",
       "aspect": "성격",
       "act": "변화",
-      "before": "부수는 게 너무 즐겁던",
-      "after": "만지는 게 더 즐겁지만 다 부서져 되돌아오지 않으니 만지기를 무서워하는",
+      "before": "부수는 게 너무 즐거웠다",
+      "after": "만지는 게 더 즐겁지만 다 부서져 되돌아오지 않으니 만지기를 무서워한다",
       "time": "S157",
       "evidence": [{ "scene": "event_beautyfullshot2_05_e", "lines": ["20-25"] }],
       "reason": "#23-25 '예전에는 부수는 게 너무 즐거웠는데 지금은 별로'. 계기는 갱생(char:400 F786)으로 보인다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 부수는 게 너무 즐겁던 · 후 만지는 게 더 즐겁지만 다 부서져 되돌아오지 않으니 만지기를 무서워하는"
+        }
+      ]
     },
     {
       "id": "D490",
@@ -255,12 +328,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:메이든"],
-      "text": "'같이 있는 편이 너도 좋잖아' 하며 낚시에 따라붙고, 백상아리를 두고 맨손 대 낚싯대로 겨루는",
+      "text": "'같이 있는 편이 너도 좋잖아' 하며 낚시에 따라붙고, 백상아리를 두고 맨손 대 낚싯대로 겨룬다",
       "evidence": [{ "scene": "event_beautyfullshot1_03_s", "lines": ["18-24"] }],
       "reason": "#21 · 03_e#120-134 대결",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'같이 있는 편이 너도 좋잖아' 하며 낚시에 따라붙고, 백상아리를 두고 맨손 대 낚싯대로 겨루는"
+        }
+      ]
     },
     {
       "id": "D491",
@@ -268,15 +351,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:메이든"],
-      "before": "따라붙어 겨루던 낚시 상대",
-      "after": "'부서지지 않는다'는 말에 친구가 되어, 처음으로 '만져도 될까?' 묻고 함께 낚싯대를 잡는",
+      "before": "따라붙어 겨루던 낚시 상대였다",
+      "after": "'부서지지 않는다'는 말에 친구가 되어, 처음으로 '만져도 될까?' 묻고 함께 낚싯대를 잡는다",
       "trigger": [{ "scene": "event_beautyfullshot2_05_e", "lines": ["27-29"] }],
       "time": "S157",
       "evidence": [{ "scene": "event_beautyfullshot2_05_e", "lines": ["30-40", "73-75"] }],
       "reason": "#31 '나랑 친구 해줄 거야?' · #37 '친구 해요' · #74 '만져도 될까?'(F1517)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 따라붙어 겨루던 낚시 상대 · 후 '부서지지 않는다'는 말에 친구가 되어, 처음으로 '만져도 될까?' 묻고 함께 낚싯대를 잡는"
+        }
+      ]
     },
     {
       "id": "D492",
@@ -284,12 +377,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:길티"],
-      "text": "자기는 길티보다 강해 부서지지 않는다며 친구가 되지만, 길티가 다시 죄를 지으면 '잡아야 하는데 그럴 수 있을지' 모르겠다는",
+      "text": "자기는 길티보다 강해 부서지지 않는다며 친구가 되지만, 길티가 다시 죄를 지으면 '잡아야 하는데 그럴 수 있을지' 모르겠다고 한다",
       "evidence": [{ "scene": "event_beautyfullshot2_05_e", "lines": ["27-37", "55-66"] }],
       "reason": "#34-37 직업상 친구를 만들기 힘들지만 힘내 보겠다 · #62 '잘 모르겠네요. 그럴 수 있을지'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "자기는 길티보다 강해 부서지지 않는다며 친구가 되지만, 길티가 다시 죄를 지으면 '잡아야 하는데 그럴 수 있을지' 모르겠다는"
+        }
+      ]
     }
   ],
   "life": [

@@ -137,21 +137,31 @@
       "person": "person:지휘관",
       "aspect": "관계",
       "act": "기준",
-      "text": "'폐급'이라며 내쫓으려는 요한에게, 어려운 한 번으로 더 많은 이를 구한다는 뜻을 '무가치하다고 말하게 두진 않는다'고 맞서는",
+      "text": "'폐급'이라며 내쫓으려는 요한에게, 어려운 한 번으로 더 많은 이를 구한다는 뜻을 '무가치하다고 말하게 두진 않는다'고 맞선다",
       "evidence": [{ "scene": "d_main_20_03", "lines": ["46-52", "62-63"] }],
       "reason": "#52 · 62-63",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:요한"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'폐급'이라며 내쫓으려는 요한에게, 어려운 한 번으로 더 많은 이를 구한다는 뜻을 '무가치하다고 말하게 두진 않는다'고 맞서는"
+        }
+      ]
     },
     {
       "id": "D188",
       "person": "person:지휘관",
       "aspect": "관계",
       "act": "변화",
-      "before": "자격을 따지는 요한에게 맞서는",
-      "after": "샛별인 줄 알고 '선배라고 불러야 됩니까?' · 사인을 받자고 다짐하는 후배",
+      "before": "자격을 따지는 요한에게 맞선다",
+      "after": "샛별인 줄 알고 '선배라고 불러야 됩니까?' · 사인을 받자고 다짐하는 후배다",
       "evidence": [{ "scene": "d_main_20af_01", "lines": ["105-121"] }],
       "reason": "#114 · 121. 20_04에서 시험을 끈질기게 거듭했다",
       "confidence": "확실",
@@ -159,7 +169,17 @@
       "with": ["person:요한"],
       "time": "S56",
       "trigger": [{ "scene": "d_main_20af_01", "lines": ["102-110"] }],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 자격을 따지는 요한에게 맞서는 · 후 샛별인 줄 알고 '선배라고 불러야 됩니까?' · 사인을 받자고 다짐하는 후배"
+        }
+      ]
     },
     {
       "id": "D189",
@@ -178,13 +198,16 @@
       "person": "person:하란",
       "aspect": "관계",
       "act": "기준",
-      "text": "평소엔 도로시를 따르지만 어디까지나 긍지를 저버리지 않는 선 안에서라고 못 박는",
+      "text": "평소엔 도로시를 따르지만 어디까지나 긍지를 저버리지 않는 선 안에서라고 못 박는다",
       "evidence": [{ "scene": "d_main_20_09", "lines": ["38-40"] }],
       "reason": "#39-40",
       "confidence": "확실",
       "status": "확정",
       "with": ["person:도로시"],
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "평소엔 도로시를 따르지만 어디까지나 긍지를 저버리지 않는 선 안에서라고 못 박는" }
+      ]
     },
     {
       "id": "D191",

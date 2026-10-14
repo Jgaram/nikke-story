@@ -129,12 +129,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:나유타"],
-      "text": "처음 본 하얀 머리의 아저씨 친구에게 손을 흔들고, 첫 친구가 생겼다고 기뻐하는",
+      "text": "처음 본 하얀 머리의 아저씨 친구에게 손을 흔들고, 첫 친구가 생겼다고 기뻐한다",
       "reason": "#3-11.",
       "evidence": [{ "scene": "relic:어떤소녀의그림일기_03", "lines": ["3-11"] }],
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "처음 본 하얀 머리의 아저씨 친구에게 손을 흔들고, 첫 친구가 생겼다고 기뻐하는" }
+      ]
     }
   ],
   "life": []

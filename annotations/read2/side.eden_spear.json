@@ -164,13 +164,23 @@
       "person": "person:요한",
       "aspect": "성격",
       "act": "변화",
-      "before": "우직하게 밀고만 나가던 어리숙한",
-      "after": "상대의 처지를 짚어 '증명하라'며 거래의 주도권을 쥐는",
+      "before": "어리숙하게 우직히 밀고만 나갔다",
+      "after": "상대의 처지를 짚어 '증명하라'며 거래의 주도권을 쥔다",
       "evidence": [{ "scene": "side:eden_spear_01", "lines": ["83-95"] }],
       "reason": "#83-92 파피용을 몰아붙이고 #94-95 하란이 '많이 늘었구나'라 한다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 우직하게 밀고만 나가던 어리숙한 · 후 상대의 처지를 짚어 '증명하라'며 거래의 주도권을 쥐는"
+        }
+      ]
     },
     {
       "id": "D841",
@@ -178,12 +188,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:나유타"],
-      "text": "머리가 터지고도 다시 나타나는 승려를 '몇 번을 봐도 적응이 안 된다'며 두려워하고 꺼리는",
+      "text": "머리가 터지고도 다시 나타나는 승려를 '몇 번을 봐도 적응이 안 된다'며 두려워하고 꺼린다",
       "evidence": [{ "scene": "side:eden_spear_03", "lines": ["54-61"] }],
       "reason": "#55-61. 06#70-83 '두렵소?' '그래 · 너는 몇 번째인가'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "머리가 터지고도 다시 나타나는 승려를 '몇 번을 봐도 적응이 안 된다'며 두려워하고 꺼리는"
+        }
+      ]
     },
     {
       "id": "D842",
@@ -191,7 +211,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "통신을 쥔 도로시와 서로 쥔 것을 거래하는",
+      "before": "통신을 쥔 도로시와 서로 쥔 것을 거래하는 상대",
       "after": "방주에서의 미래를 약속받고 에덴의 기술을 빼돌려 주는 협력자",
       "trigger": [{ "scene": "side:eden_spear_05", "lines": ["120-135"] }],
       "points": ["F2165"],
@@ -199,7 +219,10 @@
       "reason": "#138 '할게' · #145-147 웃으며 '줄 하나는 잘 잡는다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 통신을 쥔 도로시와 서로 쥔 것을 거래하는" }
+      ]
     },
     {
       "id": "D843",
@@ -228,13 +251,23 @@
       "person": "person:노아",
       "aspect": "성격",
       "act": "변화",
-      "before": "방주를 싫어하며 남을 놀리는",
-      "after": "우리끼리만 살 순 없다 하고, 도로시가 떠나면 쓸쓸할 것 같다는",
+      "before": "방주를 싫어하며 남을 놀렸다",
+      "after": "우리끼리만 살 순 없다 하고, 도로시가 떠나면 쓸쓸할 것 같다고 한다",
       "evidence": [{ "scene": "side:eden_spear_09", "lines": ["81-105"] }],
       "reason": "#82 · #102 — 하란이 #84 지휘관 일행과의 만남이 도움이 됐다 · #103 '성장했구나'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주를 싫어하며 남을 놀리는 · 후 우리끼리만 살 순 없다 하고, 도로시가 떠나면 쓸쓸할 것 같다는"
+        }
+      ]
     },
     {
       "id": "D845",
@@ -242,29 +275,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "긍지를 저버리지 않는 선 안에서 따르는",
-      "after": "버린 부모에게 복수하려 떼쓰는 여린 어린아이로 보고, 눈을 떼지 못한 채 두고 보는",
+      "before": "긍지를 저버리지 않는 선 안에서 따랐다",
+      "after": "버린 부모에게 복수하려 떼쓰는 여린 어린아이로 보고, 눈을 떼지 못한 채 두고 본다",
       "points": ["F2166"],
       "evidence": [{ "scene": "side:eden_spear_09", "lines": ["114-154"] }],
       "reason": "#140-147 · #150 '그 아이는 너무 여려' · #154.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 긍지를 저버리지 않는 선 안에서 따르는 · 후 버린 부모에게 복수하려 떼쓰는 여린 어린아이로 보고, 눈을 떼지 못한 채 두고 보는"
+        }
+      ]
     },
     {
       "id": "D846",
       "person": "person:마리안",
       "aspect": "소속",
       "act": "변화",
-      "before": "크라운 왕국의 백성",
-      "after": "다가오는 [존재]를 느끼고 빼앗으러 크라운 · 차임 곁을 떠나는",
+      "before": "크라운 왕국의 백성이다",
+      "after": "다가오는 [존재]를 느끼고 빼앗으러 크라운 · 차임 곁을 떠난다",
       "trigger": [{ "scene": "side:eden_spear_12", "lines": ["66-71"] }],
       "points": ["F2174"],
       "evidence": [{ "scene": "side:eden_spear_12", "lines": ["99-117"] }],
       "reason": "#101-105 '가서 빼앗아야 해요' · #113-117 작별처럼 고맙다 · 사랑한다고 한다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M36", "note": "M36 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 크라운 왕국의 백성 · 후 다가오는 [존재]를 느끼고 빼앗으러 크라운 · 차임 곁을 떠나는"
+        }
+      ]
     }
   ],
   "life": [

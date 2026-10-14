@@ -170,8 +170,8 @@
       "person": "person:하란",
       "aspect": "신념",
       "act": "변화",
-      "before": "승리의 여신을 동경해 지상 탈환에 오른 평범한 니케",
-      "after": "모두 공평하게 버려진 희생양이고 모든 원인은 방주에 있다는",
+      "before": "승리의 여신을 동경해 지상 탈환에 오른 평범한 니케였다",
+      "after": "모두 공평하게 버려진 희생양이고 모든 원인은 방주에 있다고 본다",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_02", "lines": ["44-46"] }],
       "time": "S277",
       "points": ["F2325"],
@@ -179,7 +179,17 @@
       "reason": "#30-31 동경 → 미끼로 죽은 동료들을 보고 #47-51.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 승리의 여신을 동경해 지상 탈환에 오른 평범한 니케 · 후 모두 공평하게 버려진 희생양이고 모든 원인은 방주에 있다는"
+        }
+      ]
     },
     {
       "id": "D959",
@@ -187,12 +197,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:이사벨"],
-      "text": "살아남은 건 다시 사랑하고 싶다는 뜻이라며 사랑할 존재를 찾아보라 하고, 못 찾아 죽고 싶어지면 고통 없이 끝내 주겠다고 약속하는",
+      "text": "살아남은 건 다시 사랑하고 싶다는 뜻이라며 사랑할 존재를 찾아보라 하고, 못 찾아 죽고 싶어지면 고통 없이 끝내 주겠다고 약속한다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_03", "lines": ["55-89"] }],
       "reason": "#64 · #68-76 · #82.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "살아남은 건 다시 사랑하고 싶다는 뜻이라며 사랑할 존재를 찾아보라 하고, 못 찾아 죽고 싶어지면 고통 없이 끝내 주겠다고 약속하는"
+        }
+      ]
     },
     {
       "id": "D960",
@@ -200,20 +220,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:하란"],
-      "text": "하란의 약속이 진심인 걸 보고 '그렇게 할게'라며 처음 이름을 나누는",
+      "text": "하란의 약속이 진심인 걸 보고 '그렇게 할게'라며 처음 이름을 나눈다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_03", "lines": ["78-89"] }],
       "reason": "#81-87. 11#65-66 '하란과 약속했던 것도 다 이루지 못했으니' 남는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "하란의 약속이 진심인 걸 보고 '그렇게 할게'라며 처음 이름을 나누는" }
+      ]
     },
     {
       "id": "D961",
       "person": "person:이사벨",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주와 동료를 사랑했지만 일방적이었음을 깨닫고 살 의미를 잃은",
-      "after": "다시 사랑할 수 있는 존재를 찾아보기로 한",
+      "before": "방주와 동료를 사랑했지만 일방적이었음을 깨닫고 살 의미를 잃었다",
+      "after": "다시 사랑할 수 있는 존재를 찾아보기로 했다",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_03", "lines": ["64-76"] }],
       "time": "S277",
       "points": ["F2327", "F2328"],
@@ -221,7 +244,17 @@
       "reason": "#30 '사랑이 있어야 살 수 있는 존재' · #50 허무 → #83-84.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주와 동료를 사랑했지만 일방적이었음을 깨닫고 살 의미를 잃은 · 후 다시 사랑할 수 있는 존재를 찾아보기로 한"
+        }
+      ]
     },
     {
       "id": "D962",
@@ -229,12 +262,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:하란", "person:이사벨"],
-      "text": "시험을 통과했어도 '자격 없는 자는 낙원에 필요 없다'며 예전 동료만큼 움직이라 몰아붙이는",
+      "text": "시험을 통과했어도 '자격 없는 자는 낙원에 필요 없다'며 예전 동료만큼 움직이라 몰아붙인다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_03", "lines": ["6-16"] }],
       "reason": "#9-16. 04#20-34도 같은 모습.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "시험을 통과했어도 '자격 없는 자는 낙원에 필요 없다'며 예전 동료만큼 움직이라 몰아붙이는"
+        }
+      ]
     },
     {
       "id": "D963",
@@ -242,8 +285,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:하란", "person:이사벨"],
-      "before": "예전 동료처럼 움직이라며 몰아붙이던",
-      "after": "두둔받고 '이해해 줘서 고마워요'라 하는",
+      "before": "예전 동료처럼 움직이라며 몰아붙였다",
+      "after": "두둔받고 '이해해 줘서 고마워요'라 한다",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_04", "lines": ["70-84"] }],
       "time": "S277",
       "points": ["F2329"],
@@ -251,7 +294,17 @@
       "reason": "#92 — 하란 '살다 보니 네게 인사도 다 받아보는구나'(#94).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 예전 동료처럼 움직이라며 몰아붙이던 · 후 두둔받고 '이해해 줘서 고마워요'라 하는"
+        }
+      ]
     },
     {
       "id": "D964",
@@ -259,12 +312,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:요한"],
-      "text": "훈련 때 혼나고 '그 남자가 내 지휘관이라니 너무 무서워'하는",
+      "text": "훈련 때 혼나고 '그 남자가 내 지휘관이라니 너무 무서워'한다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_05", "lines": ["9-19"] }],
       "reason": "#12-17 요한의 질책(회상) · #19. 뒤에 '진짜 지휘관'(F447)이 된다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "훈련 때 혼나고 '그 남자가 내 지휘관이라니 너무 무서워'하는" }
+      ]
     },
     {
       "id": "D965",
@@ -272,20 +328,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:노아"],
-      "text": "'널 통과시킨 건 나'라며 내 눈을 믿으라 하고, 나약한 너 앞에 오만한 너를 방패로 세우라 가르치는",
+      "text": "'널 통과시킨 건 나'라며 내 눈을 믿으라 하고, 나약한 너 앞에 오만한 너를 방패로 세우라 가르친다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_05", "lines": ["38-80"] }],
       "reason": "#40-51 · #67-74.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'널 통과시킨 건 나'라며 내 눈을 믿으라 하고, 나약한 너 앞에 오만한 너를 방패로 세우라 가르치는"
+        }
+      ]
     },
     {
       "id": "D966",
       "person": "person:노아",
       "aspect": "성격",
       "act": "변화",
-      "before": "또 버려질까 복도 구석에서 땅굴만 파며 주눅 든 겁쟁이",
-      "after": "'키득키득' 웃으며 지상 최강의 방패라 오만하게 구는",
+      "before": "또 버려질까 복도 구석에서 땅굴만 파며 주눅 든 겁쟁이였다",
+      "after": "'키득키득' 웃으며 지상 최강의 방패라 오만하게 군다",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_05", "lines": ["47-80"] }],
       "time": "S277",
       "points": ["F2330"],
@@ -293,7 +359,17 @@
       "reason": "#82-84 다음 날 · 이사벨 '그렇게 착했던 애가'(#88) · 하란 '땅굴만 파던 이전보다'(#93). W27.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 또 버려질까 복도 구석에서 땅굴만 파며 주눅 든 겁쟁이 · 후 '키득키득' 웃으며 지상 최강의 방패라 오만하게 구는"
+        }
+      ]
     },
     {
       "id": "D967",
@@ -301,7 +377,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["org:갓데스"],
-      "before": "그 시절로 돌아갈 수 없다며 이 스쿼드로 반드시 성공하겠다던",
+      "before": "그 시절로 돌아갈 수 없다며 이 스쿼드로 반드시 성공하겠다던 다짐",
       "after": "위업을 잇는 스쿼드를 이루고도 '허전해'라며 축하 자리를 떠나는 — 아직 실선을 넘지 못한 미련",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_06", "lines": ["2-24"] }],
       "time": "S277",
@@ -310,7 +386,10 @@
       "reason": "04#96-104 다짐 → #67 '허전해' · 07#90-92 '미련 · 그리워서'. W27.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 그 시절로 돌아갈 수 없다며 이 스쿼드로 반드시 성공하겠다던" }
+      ]
     },
     {
       "id": "D968",
@@ -318,12 +397,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:도로시"],
-      "text": "목숨을 구해 준 빚으로 함께하며, 동료를 수단으로만 여기는 도로시에게 '언제까지 선 밖에서 지켜만 볼 거냐' 묻는",
+      "text": "목숨을 구해 준 빚으로 함께하며, 동료를 수단으로만 여기는 도로시에게 '언제까지 선 밖에서 지켜만 볼 거냐' 묻는다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_07", "lines": ["26-77"] }],
       "reason": "#30-34 빚 · #51-66 · #76-77 사과.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "목숨을 구해 준 빚으로 함께하며, 동료를 수단으로만 여기는 도로시에게 '언제까지 선 밖에서 지켜만 볼 거냐' 묻는"
+        }
+      ]
     },
     {
       "id": "D969",
@@ -331,12 +420,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:하란"],
-      "text": "2차 지상 탈환전에 자기 책임도 있다며 원망하지 않느냐 묻고, '동료'라는 답에 '고맙다'는",
+      "text": "2차 지상 탈환전에 자기 책임도 있다며 원망하지 않느냐 묻고, '동료'라는 답에 '고맙다'고 한다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_10", "lines": ["32-67"] }],
       "reason": "#34 · #59-60 · #65. 하란 '그 샛별에게 고맙다는 말을'(#69).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "2차 지상 탈환전에 자기 책임도 있다며 원망하지 않느냐 묻고, '동료'라는 답에 '고맙다'는"
+        }
+      ]
     },
     {
       "id": "D970",
@@ -344,12 +443,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:요한"],
-      "text": "먼 존재였던 방주의 샛별을 지휘관으로 삼은 걸 신기해하며, 그 역시 방주가 버린 '영웅이라는 이름의 사냥개'라 원망 없이 동료로 여기는",
+      "text": "먼 존재였던 방주의 샛별을 지휘관으로 삼은 걸 신기해하며, 그 역시 방주가 버린 '영웅이라는 이름의 사냥개'라 원망 없이 동료로 여긴다",
       "evidence": [{ "scene": "erelic:goddess_fall_mini_10", "lines": ["29-61"] }],
       "reason": "#29-30 · #40-48 · #57-58.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "먼 존재였던 방주의 샛별을 지휘관으로 삼은 걸 신기해하며, 그 역시 방주가 버린 '영웅이라는 이름의 사냥개'라 원망 없이 동료로 여기는"
+        }
+      ]
     },
     {
       "id": "D971",
@@ -373,15 +482,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:하란", "person:이사벨", "person:노아"],
-      "before": "비현실적인 도박이라 여기며 빚을 갚으려 함께한",
-      "after": "그들이 남긴 말을 잊지 않고 꿈을 이어 가겠다는",
+      "before": "비현실적인 도박이라 여기며 빚을 갚으려 함께했다",
+      "after": "그들이 남긴 말을 잊지 않고 꿈을 이어 가겠다고 한다",
       "trigger": [{ "scene": "erelic:goddess_fall_mini_12", "lines": ["64-107"] }],
       "points": ["F2339"],
       "evidence": [{ "scene": "erelic:goddess_fall_mini_12", "lines": ["109-119"] }],
       "reason": "07#26-34 → #113-117. 틀 이야기(S276)의 끝.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M40", "note": "M40 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 비현실적인 도박이라 여기며 빚을 갚으려 함께한 · 후 그들이 남긴 말을 잊지 않고 꿈을 이어 가겠다는"
+        }
+      ]
     }
   ],
   "life": [

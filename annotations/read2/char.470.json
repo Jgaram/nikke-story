@@ -74,15 +74,25 @@
       "person": "person:레드_후드",
       "aspect": "신념",
       "act": "변화",
-      "before": "'자랑스러운 동료'로 작별하러 돌아가던",
-      "after": "다 채웠으니 보고 싶은 동료도 만나지 않고 라피에게 사는 재미를 돌려주겠다는",
+      "before": "'자랑스러운 동료'로 작별하러 돌아갔다",
+      "after": "다 채웠으니 보고 싶은 동료도 만나지 않고 라피에게 사는 재미를 돌려주겠다고 한다",
       "time": "S109",
       "points": ["F1196"],
       "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["61-72"] }],
       "reason": "#64 '흔들릴 것 같거든' · #68-71.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '자랑스러운 동료'로 작별하러 돌아가던 · 후 다 채웠으니 보고 싶은 동료도 만나지 않고 라피에게 사는 재미를 돌려주겠다는"
+        }
+      ]
     },
     {
       "id": "D1483",
@@ -90,14 +100,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'미남'이라 놀리며 라피를 돌려주겠다고 약속하던",
-      "after": "'미남. 너도 살아. 산다는 건 좋은 거야'라고 당부하는",
+      "before": "'미남'이라 놀리며 라피를 돌려주겠다고 약속했다",
+      "after": "'미남. 너도 살아. 산다는 건 좋은 거야'라고 당부한다",
       "time": "S109",
       "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["73-80"] }],
       "reason": "#76-77, 지휘관 '살게'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '미남'이라 놀리며 라피를 돌려주겠다고 약속하던 · 후 '미남. 너도 살아. 산다는 건 좋은 거야'라고 당부하는"
+        }
+      ]
     },
     {
       "id": "D1484",
@@ -105,22 +125,32 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:스노우_화이트"],
-      "before": "'우리 귀여운 스노우'라며 놀리던",
-      "after": "'그 꼬마가' 믿음직한 리더가 됐다니 웃고, 너무 보고 싶지만 흔들릴까 봐 연락을 마다하는",
+      "before": "'우리 귀여운 스노우'라며 놀렸다",
+      "after": "'그 꼬마가' 믿음직한 리더가 됐다니 웃고, 너무 보고 싶지만 흔들릴까 봐 연락을 마다한다",
       "time": "S109",
       "evidence": [{ "scene": "ep:d_nikke_RedHood_05", "lines": ["22-67"] }],
       "reason": "#30-32 · #55-64. 라푼젤 · 홍련의 소식에도 같은 반응.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '우리 귀여운 스노우'라며 놀리던 · 후 '그 꼬마가' 믿음직한 리더가 됐다니 웃고, 너무 보고 싶지만 흔들릴까 봐 연락을 마다하는"
+        }
+      ]
     },
     {
       "id": "D1485",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주의 인간들은 엉망이고 자기도 '방주에 갇힌 누군가'라던",
-      "after": "말도 탈도 많지만 모두 살아 있으니 목숨 바쳐 지킬 가치가 넘친다는",
+      "before": "방주의 인간들은 엉망이고 자기도 '방주에 갇힌 누군가'라 했다",
+      "after": "말도 탈도 많지만 모두 살아 있으니 목숨 바쳐 지킬 가치가 넘친다고 한다",
       "trigger": [{ "scene": "ep:d_nikke_RedHood_04", "lines": ["54-66"] }],
       "time": "S109",
       "points": ["F1195"],
@@ -128,7 +158,17 @@
       "reason": "#36-53 → 레드 후드의 '그냥 사람 사는 곳' · 가치를 묻는 말에 #71-77.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주의 인간들은 엉망이고 자기도 '방주에 갇힌 누군가'라던 · 후 말도 탈도 많지만 모두 살아 있으니 목숨 바쳐 지킬 가치가 넘친다는"
+        }
+      ]
     }
   ],
   "life": []

@@ -38,14 +38,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "금괴로 갚아 '관계는 0'이라 정리한 사이",
-      "after": "다시 신세를 져 무슨 일이든 목숨 바쳐 돕겠다는",
+      "before": "금괴로 갚아 '관계는 0'이라 정리한 사이다",
+      "after": "다시 신세를 져 무슨 일이든 목숨 바쳐 돕겠다고 한다",
       "trigger": [{ "scene": "sub:콜렉터_02", "lines": ["42-56"] }],
       "evidence": [{ "scene": "sub:콜렉터_02", "lines": ["58-62", "81-86"] }],
       "reason": "#81-82 '다시 또 신세를' · #86 '목숨 바쳐 돕겠습니다요'. 계기는 친구들의 시체를 찾아 준 수색. D28의 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M10" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 금괴로 갚아 '관계는 0'이라 정리한 사이 · 후 다시 신세를 져 무슨 일이든 목숨 바쳐 돕겠다는"
+        }
+      ]
     }
   ],
   "life": [

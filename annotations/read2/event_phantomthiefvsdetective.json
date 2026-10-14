@@ -118,14 +118,24 @@
       "person": "person:팬텀",
       "aspect": "신념",
       "act": "변화",
-      "before": "들키면 최선을 다해 도망쳐야 하는 혼자의 괴도",
-      "after": "팀으로 앞에서 정의를 보여 주는 게 이리도 기분 좋은 줄 몰랐다는",
+      "before": "들키면 최선을 다해 도망쳐야 하는 혼자의 괴도다",
+      "after": "팀으로 앞에서 정의를 보여 주는 게 이리도 기분 좋은 줄 몰랐다고 한다",
       "trigger": [{ "scene": "event_phantomthiefvsdetective_06_e", "lines": ["105-121"] }],
       "evidence": [{ "scene": "event_phantomthiefvsdetective_06_e", "lines": ["174-178"] }],
       "reason": "#176-177 '괴도단을 모아 팀으로서 활동을 해보니 생각이 바뀌었소' — 자산가 앞에서 정의 괴도단을 밝힌 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 들키면 최선을 다해 도망쳐야 하는 혼자의 괴도 · 후 팀으로 앞에서 정의를 보여 주는 게 이리도 기분 좋은 줄 몰랐다는"
+        }
+      ]
     },
     {
       "id": "D1585",
@@ -133,14 +143,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:퀀시", "person:미란다"],
-      "before": "'악한 자를 따르지 않소' — 탈옥범과 괴도 경찰을 이번 임무로만 마지못해 받은",
-      "after": "진귀한 경험을 하게 해 준 동료들에게 진심으로 감사하고 다시 괴도단을 소집하는",
+      "before": "'악한 자를 따르지 않소' — 탈옥범과 괴도 경찰을 이번 임무로만 마지못해 받았다",
+      "after": "진귀한 경험을 하게 해 준 동료들에게 진심으로 감사하고 다시 괴도단을 소집한다",
       "trigger": [{ "scene": "event_phantomthiefvsdetective_prologue", "lines": [56] }],
       "evidence": [{ "scene": "event_phantomthiefvsdetective_06_e", "lines": ["171-178", 186] }],
       "reason": "prologue#56 · 01_e#38-40(이번 임무로 잠시 결성) → #178 감사 · #186 미란다가 마지막을 함께 못 한 아쉬움, 에필로그의 집합 예고장.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '악한 자를 따르지 않소' — 탈옥범과 괴도 경찰을 이번 임무로만 마지못해 받은 · 후 진귀한 경험을 하게 해 준 동료들에게 진심으로 감사하고 다시 괴도단을 소집하는"
+        }
+      ]
     },
     {
       "id": "D1586",
@@ -148,12 +168,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "아는 사람과 닮았다는 지휘관 앞에서 시치미를 떼고, 지휘관실을 괴도단의 기지로 삼아 지휘관을 '그대'라 부르며 자동으로 끌어들이는",
+      "text": "아는 사람과 닮았다는 지휘관 앞에서 시치미를 떼고, 지휘관실을 괴도단의 기지로 삼아 지휘관을 '그대'라 부르며 자동으로 끌어들인다",
       "evidence": [{ "scene": "event_phantomthiefvsdetective_01_s", "lines": ["7-12"] }],
       "reason": "#7-11 '그런 말 살면서 처음 들어보오' — 지휘관은 모른 척해 준다(#12). 02_s#26-30 망토, 03_s#76 '자동 참가'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "아는 사람과 닮았다는 지휘관 앞에서 시치미를 떼고, 지휘관실을 괴도단의 기지로 삼아 지휘관을 '그대'라 부르며 자동으로 끌어들이는"
+        }
+      ]
     },
     {
       "id": "D1587",
@@ -161,12 +191,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:팬텀"],
-      "text": "자기 탈옥 루트에서 마주친 팬텀을 '어이없는 도둑놈' · '같은 범죄자면서 말만 멋들어진' 이라 놀리면서도 구멍으로 같이 달아나자고 하는",
+      "text": "자기 탈옥 루트에서 마주친 팬텀을 '어이없는 도둑놈' · '같은 범죄자면서 말만 멋들어진' 이라 놀리면서도 구멍으로 같이 달아나자고 한다",
       "evidence": [{ "scene": "event_phantomthiefvsdetective_prologue", "lines": ["29-35", "50-59"] }],
       "reason": "#35 · #58 — 퀀시와 팬텀의 첫 만남.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "자기 탈옥 루트에서 마주친 팬텀을 '어이없는 도둑놈' · '같은 범죄자면서 말만 멋들어진' 이라 놀리면서도 구멍으로 같이 달아나자고 하는"
+        }
+      ]
     },
     {
       "id": "D1588",
@@ -189,12 +229,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:팬텀"],
-      "text": "잃어버린 것을 돌려주는 팬텀을 '저와 같은 일'이라며 괴도 경찰로 돕겠다고 하고, 진짜 도둑이면 자기가 체포하겠다는",
+      "text": "잃어버린 것을 돌려주는 팬텀을 '저와 같은 일'이라며 괴도 경찰로 돕겠다고 하고, 진짜 도둑이면 자기가 체포하겠다고 한다",
       "evidence": [{ "scene": "event_phantomthiefvsdetective_01_s", "lines": ["99-130"] }],
       "reason": "#111 · #116-119 · #129-130.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "잃어버린 것을 돌려주는 팬텀을 '저와 같은 일'이라며 괴도 경찰로 돕겠다고 하고, 진짜 도둑이면 자기가 체포하겠다는"
+        }
+      ]
     },
     {
       "id": "D1590",
@@ -202,12 +252,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:팬텀"],
-      "text": "팬텀을 '숙명의 라이벌'이라 부르며 직접 잡겠다고 함정을 깔고, 지고도 '역시 팬텀'이라 기뻐하며 다음 예고장을 기다리는",
+      "text": "팬텀을 '숙명의 라이벌'이라 부르며 직접 잡겠다고 함정을 깔고, 지고도 '역시 팬텀'이라 기뻐하며 다음 예고장을 기다린다",
       "evidence": [{ "scene": "event_phantomthiefvsdetective_06_s", "lines": ["77-79", "97-99"] }],
       "reason": "#78 — 06_e#160-165 완벽한 패배를 인정하며 추리력을 키우겠다고 한다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M65" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "팬텀을 '숙명의 라이벌'이라 부르며 직접 잡겠다고 함정을 깔고, 지고도 '역시 팬텀'이라 기뻐하며 다음 예고장을 기다리는"
+        }
+      ]
     }
   ],
   "life": [],

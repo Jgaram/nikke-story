@@ -578,30 +578,50 @@
       "person": "person:스노우_화이트",
       "aspect": "신념",
       "act": "변화",
-      "before": "지상의 랩쳐를 섬멸하고 언니의 머리를 찾겠다는",
-      "after": "아름다운 하얀 꽃 릴리바이스를 모독하는 퀸을 반드시 죽이겠다는",
+      "before": "지상의 랩쳐를 섬멸하고 언니의 머리를 찾겠다고 했다",
+      "after": "아름다운 하얀 꽃 릴리바이스를 모독하는 퀸을 반드시 죽이겠다고 한다",
       "time": "S287",
       "points": ["F839"],
       "evidence": [{ "scene": "fl:ark_guardian_00", "lines": ["55-58", "73-78"] }],
       "reason": "퀸을 안일하게 봤다고 반성한 뒤 하나의 생각으로 정리된다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지상의 랩쳐를 섬멸하고 언니의 머리를 찾겠다는 · 후 아름다운 하얀 꽃 릴리바이스를 모독하는 퀸을 반드시 죽이겠다는"
+        }
+      ]
     },
     {
       "id": "D975",
       "person": "person:세실",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주를 떠나 에덴의 자존심을 지키던",
-      "after": "자존심 · 신념은 접고 방주와 기술을 주고받았어야 했다며 방주에 니케 제작 기술을 요구하기로 한",
+      "before": "방주를 떠나 에덴의 자존심을 지켰다",
+      "after": "자존심 · 신념은 접고 방주와 기술을 주고받았어야 했다며 방주에 니케 제작 기술을 요구하기로 했다",
       "time": "S287",
       "points": ["F2357"],
       "evidence": [{ "scene": "fl:ark_guardian_00", "lines": ["40-53"] }],
       "reason": "'후회하고 있어요'(#52) — 퀸 공략전에서 깨달았다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주를 떠나 에덴의 자존심을 지키던 · 후 자존심 · 신념은 접고 방주와 기술을 주고받았어야 했다며 방주에 니케 제작 기술을 요구하기로 한"
+        }
+      ]
     },
     {
       "id": "D976",
@@ -609,14 +629,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:스노우_화이트"],
-      "before": "실의에 빠진 아이로 보고 악역을 자처해 등을 떠밀려던",
-      "after": "슬픔을 묻고 동료의 장비를 만드는 모습에 '아이 취급하지 마시게' 감싸는",
+      "before": "실의에 빠진 아이로 보고 악역을 자처해 등을 떠밀려 했다",
+      "after": "슬픔을 묻고 동료의 장비를 만드는 모습에 '아이 취급하지 마시게' 감싼다",
       "time": "S288",
       "evidence": [{ "scene": "fl:ark_guardian_02", "lines": ["62-72", 99] }],
       "reason": "01#57-63 악역 자처 → 02#72 '너무 아이로 본 모양이야'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 실의에 빠진 아이로 보고 악역을 자처해 등을 떠밀려던 · 후 슬픔을 묻고 동료의 장비를 만드는 모습에 '아이 취급하지 마시게' 감싸는"
+        }
+      ]
     },
     {
       "id": "D977",
@@ -661,12 +691,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["org:갓데스"],
-      "text": "인류 대부분을 버리는 결정 앞에 주저앉을 때마다 갓데스가 함께한다는 사실에 구원받는",
+      "text": "인류 대부분을 버리는 결정 앞에 주저앉을 때마다 갓데스가 함께한다는 사실에 구원받는다",
       "evidence": [{ "scene": "fl:ark_guardian_05", "lines": ["48-56"] }],
       "confidence": "확실",
       "status": "확정",
       "reason": "05#53-56 \"수천 번 갓데스에게 구원받았다\".",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "인류 대부분을 버리는 결정 앞에 주저앉을 때마다 갓데스가 함께한다는 사실에 구원받는" }
+      ]
     },
     {
       "id": "D981",
@@ -687,12 +720,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리시아"],
-      "text": "모르는 아이라 거절하다 떨리는 어깨에 갓데스를 떠올리고, 이유도 모른 채 서명해 보호자가 된",
+      "text": "모르는 아이라 거절하다 떨리는 어깨에 갓데스를 떠올리고, 이유도 모른 채 서명해 보호자가 됐다",
       "evidence": [{ "scene": "fl:ark_guardian_06", "lines": ["42-72", "113-114"] }],
       "confidence": "확실",
       "status": "확정",
       "reason": "06#58-61 갓데스를 생각하고 서명, #114 \"왜 네가\"에 본인도 답을 모른다.",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "모르는 아이라 거절하다 떨리는 어깨에 갓데스를 떠올리고, 이유도 모른 채 서명해 보호자가 된"
+        }
+      ]
     },
     {
       "id": "D983",
@@ -712,29 +755,49 @@
       "person": "person:릴리바이스",
       "aspect": "신념",
       "act": "변화",
-      "before": "끝을 덤덤히 받아들이는 척하던",
-      "after": "스노우 화이트를 끌어안아 숨긴 뒤 얼굴을 감싸 쥐고 '죽기 싫다'는",
+      "before": "끝을 덤덤히 받아들이는 척했다",
+      "after": "스노우 화이트를 끌어안아 숨긴 뒤 얼굴을 감싸 쥐고 '죽기 싫다'고 한다",
       "time": "S288",
       "evidence": [{ "scene": "fl:ark_guardian_09", "lines": ["103-112", "126-129"] }],
       "reason": "볼 거리 W34 — 03의 덤덤함과 대비.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 끝을 덤덤히 받아들이는 척하던 · 후 스노우 화이트를 끌어안아 숨긴 뒤 얼굴을 감싸 쥐고 '죽기 싫다'는"
+        }
+      ]
     },
     {
       "id": "D985",
       "person": "person:릴리바이스",
       "aspect": "신체",
       "act": "변화",
-      "before": "부축이 필요할 만큼 한계가 잦아진 단기 결전용 바디",
-      "after": "전투 중 눈 · 코 · 입 · 귀에서 피를 쏟으며 쓰러지는",
+      "before": "부축이 필요할 만큼 한계가 잦아진 단기 결전용 바디다",
+      "after": "전투 중 눈 · 코 · 입 · 귀에서 피를 쏟으며 쓰러진다",
       "time": "S288",
       "points": ["F2358"],
       "evidence": [{ "scene": "fl:ark_guardian_13", "lines": ["87-97"] }],
       "reason": "'하필 이럴 때'(#95).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 부축이 필요할 만큼 한계가 잦아진 단기 결전용 바디 · 후 전투 중 눈 · 코 · 입 · 귀에서 피를 쏟으며 쓰러지는"
+        }
+      ]
     },
     {
       "id": "D986",
@@ -757,8 +820,8 @@
       "person": "person:도로시",
       "aspect": "신념",
       "act": "변화",
-      "before": "모두를 구하지 못하고 영웅 대접받을 자기가 싫은 자기혐오",
-      "after": "지상에 남는 대신 어떤 형태로든 보상받게 해 달라고 약속을 받는",
+      "before": "모두를 구하지 못하고 영웅 대접받을 자기가 싫은 자기혐오다",
+      "after": "지상에 남는 대신 어떤 형태로든 보상받게 해 달라고 약속을 받는다",
       "time": "S288",
       "trigger": [{ "scene": "fl:ark_guardian_09", "lines": ["55-68"] }],
       "points": ["F2367"],
@@ -766,7 +829,17 @@
       "reason": "볼 거리 W34 — 09의 자기혐오가 18의 요구로 바뀐다. 둘을 잇는 말은 없어 추정.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 모두를 구하지 못하고 영웅 대접받을 자기가 싫은 자기혐오 · 후 지상에 남는 대신 어떤 형태로든 보상받게 해 달라고 약속을 받는"
+        }
+      ]
     },
     {
       "id": "D988",
@@ -804,15 +877,25 @@
       "person": "person:홍련",
       "aspect": "성격",
       "act": "변화",
-      "before": "일도양단 · 정면 승부만 고집하는 불같은",
-      "after": "가벼운 사고 전환으로 마음이 사그라들고 약점을 정확히 노리는",
+      "before": "불같이 일도양단 · 정면 승부만 고집했다",
+      "after": "가벼운 사고 전환으로 마음이 사그라들고 약점을 정확히 노린다",
       "time": "S288",
       "points": ["F2372"],
       "evidence": [{ "scene": "fl:ark_guardian_25", "lines": ["26-60", "83-94"] }],
       "reason": "'불같던 마음이 흔적도 없이 사그라든'(#91).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 일도양단 · 정면 승부만 고집하는 불같은 · 후 가벼운 사고 전환으로 마음이 사그라들고 약점을 정확히 노리는"
+        }
+      ]
     },
     {
       "id": "D991",
@@ -820,15 +903,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:릴리바이스"],
-      "before": "농을 섞어 '죽지 마라' 하던 지휘관",
-      "after": "너희와 함께 죽겠다다 동생들을 맡고 '릴리스. 사랑한다' 고백하며 헤어진",
+      "before": "농을 섞어 '죽지 마라' 하던 지휘관이다",
+      "after": "너희와 함께 죽겠다며 동생들을 맡고 '릴리스. 사랑한다' 고백하며 헤어졌다",
       "time": "S288",
       "points": ["F2373"],
       "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["7-48"] }],
       "reason": "엘리베이터 문틈의 고백.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 농을 섞어 '죽지 마라' 하던 지휘관 · 후 너희와 함께 죽겠다다 동생들을 맡고 '릴리스. 사랑한다' 고백하며 헤어진"
+        }
+      ]
     },
     {
       "id": "D992",
@@ -836,38 +929,58 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:엔더슨"],
-      "before": "상부 명령을 무시하고 좋은 결과를 내는 지휘관을 믿는 리더",
-      "after": "살아서 동생들을 구해 달라며 엘리베이터로 보내고 '저도 사랑해요. 엔더슨' 하는",
+      "before": "상부 명령을 무시하고 좋은 결과를 내는 지휘관을 믿는 리더다",
+      "after": "살아서 동생들을 구해 달라며 엘리베이터로 보내고 '저도 사랑해요. 엔더슨' 한다",
       "time": "S288",
       "points": ["F2373"],
       "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["9-48"] }],
       "reason": "D342 기준에서.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 상부 명령을 무시하고 좋은 결과를 내는 지휘관을 믿는 리더 · 후 살아서 동생들을 구해 달라며 엘리베이터로 보내고 '저도 사랑해요. 엔더슨' 하는"
+        }
+      ]
     },
     {
       "id": "D993",
       "person": "person:릴리바이스",
       "aspect": "신체",
       "act": "변화",
-      "before": "피를 쏟으면서도 양산형 헬레틱 둘을 홀로 잡은",
-      "after": "벽에 기대 '멋있다. 내 동생들' 하며 미소 지은 채 숨진",
+      "before": "피를 쏟으면서도 양산형 헬레틱 둘을 홀로 잡았다",
+      "after": "벽에 기대 '멋있다. 내 동생들' 하며 미소 지은 채 숨졌다",
       "time": "S288",
       "points": ["F2374"],
       "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["84-94"] }],
       "reason": "죽음 — 타임라인에 올린다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 피를 쏟으면서도 양산형 헬레틱 둘을 홀로 잡은 · 후 벽에 기대 '멋있다. 내 동생들' 하며 미소 지은 채 숨진"
+        }
+      ]
     },
     {
       "id": "D994",
       "person": "person:스노우_화이트",
       "aspect": "기억",
       "act": "변화",
-      "before": "언니를 '살려줘요' 부르던 동생",
-      "after": "숨진 릴리바이스를 '누구지 이건' 하며 모르는 채 눈물만 흘리는",
+      "before": "언니를 '살려줘요' 부르던 동생이다",
+      "after": "숨진 릴리바이스를 '누구지 이건' 하며 모르는 채 눈물만 흘린다",
       "time": "S288",
       "trigger": [{ "scene": "fl:ark_guardian_24", "lines": ["34-37"] }],
       "points": ["F2371"],
@@ -875,7 +988,17 @@
       "reason": "뒤 D255에서 되찾는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 언니를 '살려줘요' 부르던 동생 · 후 숨진 릴리바이스를 '누구지 이건' 하며 모르는 채 눈물만 흘리는"
+        }
+      ]
     },
     {
       "id": "D995",
@@ -883,30 +1006,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:프리시아"],
-      "before": "가족이 될 수 없다며 같은 집에 살 일도 없다던 서류상 보호자",
-      "after": "혼자 못 간다는 아이 곁에 나타나 '자주 보진 못할 것'이라며 함께 방주로 내려가는",
+      "before": "가족이 될 수 없다며 같은 집에 살 일도 없다던 서류상 보호자다",
+      "after": "혼자 못 간다는 아이 곁에 나타나 '자주 보진 못할 것'이라며 함께 방주로 내려간다",
       "time": "S288",
       "points": ["F2361"],
       "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["112-126"] }],
       "reason": "12#112-117에서 거리를 두었다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가족이 될 수 없다며 같은 집에 살 일도 없다던 서류상 보호자 · 후 혼자 못 간다는 아이 곁에 나타나 '자주 보진 못할 것'이라며 함께 방주로 내려가는"
+        }
+      ]
     },
     {
       "id": "D996",
       "person": "person:오스왈드",
       "aspect": "신념",
       "act": "변화",
-      "before": "상부 명령을 그대로 이행하던 헬하운드",
-      "after": "회의록을 보고 갓데스를 영원한 우상으로 남길 구역질 나는 [계획]을 결심한",
+      "before": "상부 명령을 그대로 이행하던 헬하운드다",
+      "after": "회의록을 보고 갓데스를 영원한 우상으로 남길 구역질 나는 [계획]을 결심했다",
       "time": "S288",
       "points": ["F2376", "F2649"],
       "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["298-312"] }],
       "reason": "05의 기준에서.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M41", "note": "M41 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 상부 명령을 그대로 이행하던 헬하운드 · 후 회의록을 보고 갓데스를 영원한 우상으로 남길 구역질 나는 [계획]을 결심한"
+        }
+      ]
     }
   ],
   "life": [

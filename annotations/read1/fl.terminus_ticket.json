@@ -29,10 +29,7 @@
       "scene": "fl:terminus_ticket_05",
       "text": "사슴을 데리고 첫 지상 산책, 사슴 가족의 사체를 찾기로"
     },
-    {
-      "scene": "fl:terminus_ticket_06",
-      "text": "폐건물 수색 — 옛 신발 · 가족 사진 액자, 지휘관은 삶의 흔적 생각을 피한다고"
-    },
+    { "scene": "fl:terminus_ticket_06", "text": "폐건물 수색 — 옛 신발 · 가족 사진 액자, 지휘관은 삶의 흔적 생각을 피한다" },
     {
       "scene": "fl:terminus_ticket_07",
       "text": "모두 함께 수색, 마지막 건물에서 노라가 사슴 부모의 사체를 찾았다며 묻자고 함"
@@ -85,10 +82,7 @@
       "scene": "fl:terminus_ticket_19",
       "text": "설산 역 — 노라가 지은 담요 · 망토, 브리드와 커피"
     },
-    {
-      "scene": "fl:terminus_ticket_20",
-      "text": "검사 수치 악화를 엿들은 노라가 북쪽 절벽 끝에서 내려가지 않겠다고"
-    },
+    { "scene": "fl:terminus_ticket_20", "text": "검사 수치 악화를 엿들은 노라가 북쪽 절벽 끝에서 내려가지 않겠다고 한다" },
     {
       "scene": "fl:terminus_ticket_21",
       "text": "디젤이 옛 주소를 좌표로 바꿔 두었다 — 모두 노라의 집으로 가기로, 노라가 절벽에서 걸어 나옴"

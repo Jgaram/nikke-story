@@ -62,14 +62,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "망상 결투를 거는 [조직]의 에이스",
-      "after": "처분의 고통을 알아봐 준 그를 [협회] 예비 회원 · 서번트로 받아들이고 손등 키스에 얼굴을 붉히는",
+      "before": "망상 결투를 거는 [조직]의 에이스이다",
+      "after": "처분의 고통을 알아봐 준 그를 [협회] 예비 회원 · 서번트로 받아들이고 손등 키스에 얼굴을 붉힌다",
       "trigger": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["66-80"] }],
       "evidence": [{ "scene": "ep:d_nikke_guillotine_05", "lines": ["127-145", "166-178"] }],
       "reason": "#66 '너는 분명히 슬퍼 보였어' → #78-80 '맑은 눈' · #132 서번트로 받아들임 · #177 얼굴이 더 붉어짐",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 망상 결투를 거는 [조직]의 에이스 · 후 처분의 고통을 알아봐 준 그를 [협회] 예비 회원 · 서번트로 받아들이고 손등 키스에 얼굴을 붉히는"
+        }
+      ]
     },
     {
       "id": "D1355",

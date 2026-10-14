@@ -118,12 +118,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "지휘관을 '사육사님'이라 부르며 밤늦게 찾아와 '사육사님이 아니면 물어볼 곳이 없다'고 기대는",
+      "text": "지휘관을 '사육사님'이라 부르며 밤늦게 찾아와 '사육사님이 아니면 물어볼 곳이 없다'고 기댄다",
       "evidence": [{ "scene": "event_lionheart_01_s", "lines": ["4-12"] }],
       "reason": "#4 · #12.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지휘관을 '사육사님'이라 부르며 밤늦게 찾아와 '사육사님이 아니면 물어볼 곳이 없다'고 기대는"
+        }
+      ]
     },
     {
       "id": "D1519",
@@ -143,8 +153,8 @@
       "person": "person:레오나",
       "aspect": "신념",
       "act": "변화",
-      "before": "멸종 위기 맹수를 데려와 방주 보호소에서 훈련하고 보존하던",
-      "after": "맹수는 맹수로서 지상에서 살아야 한다며 맡은 아이들을 모두 풀어 주는",
+      "before": "멸종 위기 맹수를 데려와 방주 보호소에서 훈련하고 보존했다",
+      "after": "맹수는 맹수로서 지상에서 살아야 한다며 맡은 아이들을 모두 풀어 준다",
       "trigger": [{ "scene": "event_lionheart_03_s", "lines": ["29-31"] }],
       "time": "S120",
       "points": ["F1251"],
@@ -152,7 +162,17 @@
       "reason": "#89-93 · #104-108 '보호소가 문을 닫은 [덕분]'. 계기는 시위대와 휴무 연장.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 멸종 위기 맹수를 데려와 방주 보호소에서 훈련하고 보존하던 · 후 맹수는 맹수로서 지상에서 살아야 한다며 맡은 아이들을 모두 풀어 주는"
+        }
+      ]
     },
     {
       "id": "D1521",
@@ -160,15 +180,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:티미"],
-      "before": "손바닥만 한 새끼 때부터 돌보다 지상에 놓아 보낸",
-      "after": "제 발로 돌아와 곁을 택한 티미를 영원한 파트너로 지키겠다는",
+      "before": "손바닥만 한 새끼 때부터 돌보다 지상에 놓아 보냈다",
+      "after": "제 발로 돌아와 곁을 택한 티미를 영원한 파트너로 지키겠다고 한다",
       "trigger": [{ "scene": "event_lionheart_06_e", "lines": ["35-41"] }],
       "time": "S120",
       "evidence": [{ "scene": "event_lionheart_06_e", "lines": ["46-54"] }],
       "reason": "#50-54 '나의 영원한 파트너'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 손바닥만 한 새끼 때부터 돌보다 지상에 놓아 보낸 · 후 제 발로 돌아와 곁을 택한 티미를 영원한 파트너로 지키겠다는"
+        }
+      ]
     },
     {
       "id": "D1522",
@@ -176,15 +206,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레오나"],
-      "before": "큰 동물들을 데리고 다니고 무서운 것 없어 보이는 레오나를 어려워하던",
-      "after": "함께 맹수들을 데리고 지상에 다녀오며 많이 편해진",
+      "before": "큰 동물들을 데리고 다니고 무서운 것 없어 보이는 레오나를 어려워했다",
+      "after": "함께 맹수들을 데리고 지상에 다녀오며 많이 편해졌다",
       "trigger": [{ "scene": "event_lionheart_03_e", "lines": ["53-62"] }],
       "time": "S120",
       "evidence": [{ "scene": "event_lionheart_06_s", "lines": ["13-19"] }],
       "reason": "#13-18 '이번 일을 계기로 많이 편해졌어요'. 돌아와선 '레오나니까요'(06_e#82).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 큰 동물들을 데리고 다니고 무서운 것 없어 보이는 레오나를 어려워하던 · 후 함께 맹수들을 데리고 지상에 다녀오며 많이 편해진"
+        }
+      ]
     }
   ],
   "life": [],

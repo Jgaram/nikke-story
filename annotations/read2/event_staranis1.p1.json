@@ -287,28 +287,34 @@
       "person": "person:민트",
       "aspect": "신체",
       "act": "변화",
-      "before": "사람",
-      "after": "프리티 복귀 콘서트에서 죽어 니케가 된",
+      "before": "사람이었다",
+      "after": "프리티 복귀 콘서트에서 죽어 니케가 됐다",
       "points": ["F2672"],
       "evidence": [{ "scene": "event_staranis1_01_e", "lines": [96] }],
       "reason": "01_e#96 민트의 말. 아니스와 한날한시(F2556 · F2672)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 사람 · 후 프리티 복귀 콘서트에서 죽어 니케가 된" }
+      ]
     },
     {
       "id": "D1178",
       "person": "person:프리카",
       "aspect": "신체",
       "act": "변화",
-      "before": "사람으로 데뷔할 예정이던",
-      "after": "교통사고로 죽어 니케가 된",
+      "before": "사람으로 데뷔할 예정이었다",
+      "after": "교통사고로 죽어 니케가 됐다",
       "points": ["F2672"],
       "evidence": [{ "scene": "event_staranis1_01_e", "lines": ["97-98"] }],
       "reason": "01_e#97-98 프리카의 말 그대로",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 사람으로 데뷔할 예정이던 · 후 교통사고로 죽어 니케가 된" }
+      ]
     },
     {
       "id": "D1179",
@@ -332,15 +338,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스", "person:민트"],
-      "before": "한슨의 이력만 믿고 왔다 사기당했다며 그만두려던",
-      "after": "둘의 연습을 봐주다 정이 들어 못 나가는",
+      "before": "한슨의 이력만 믿고 왔다 사기당했다며 그만두려 했다",
+      "after": "둘의 연습을 봐주다 정이 들어 못 나간다",
       "time": "S322",
       "points": ["F2672"],
       "evidence": [{ "scene": "event_staranis1_01_e", "lines": ["100-116"] }],
       "reason": "01_e#103-105 '사기당했네' · #115-116 '정이 들어버렸어. 그래서 못 나가'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 한슨의 이력만 믿고 왔다 사기당했다며 그만두려던 · 후 둘의 연습을 봐주다 정이 들어 못 나가는"
+        }
+      ]
     },
     {
       "id": "D1181",
@@ -362,13 +378,16 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:한슨"],
-      "text": "'보내 달라'고 투덜대면서도 사장님이 열심히 뛰어 따온 일에는 불평하지 않겠다는",
+      "text": "'보내 달라'고 투덜대면서도 사장님이 열심히 뛰어 따온 일에는 불평하지 않겠다고 한다",
       "time": "S322",
       "evidence": [{ "scene": "event_staranis1_02_s", "lines": ["25-30"] }],
       "reason": "02_s#28-30 '사장님이 열심히 뛰어서 따온 거잖아요'. 01_s#134-139의 농담도 같은 결",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'보내 달라'고 투덜대면서도 사장님이 열심히 뛰어 따온 일에는 불평하지 않겠다는" }
+      ]
     },
     {
       "id": "D1183",
@@ -407,14 +426,24 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:요요"],
-      "text": "'쥐뿔도 없는 거 니케로 만들어 포스트 프리티로 밀어줬다'며 1위 요요를 깔보고, 머리에 총 맞고 죽을 생각은 없냐고 묻는",
+      "text": "'쥐뿔도 없는 거 니케로 만들어 포스트 프리티로 밀어줬다'며 1위 요요를 깔보고, 머리에 총 맞고 죽을 생각은 없냐고 묻는다",
       "time": "S322",
       "points": ["F2676"],
       "evidence": [{ "scene": "event_staranis1_03_s", "lines": ["17-31"] }],
       "reason": "03_s#19-20 · #31. 진짜 머스탱",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'쥐뿔도 없는 거 니케로 만들어 포스트 프리티로 밀어줬다'며 1위 요요를 깔보고, 머리에 총 맞고 죽을 생각은 없냐고 묻는"
+        }
+      ]
     },
     {
       "id": "D1186",
@@ -450,15 +479,18 @@
       "person": "person:요요",
       "aspect": "신체",
       "act": "변화",
-      "before": "인간 반장",
-      "after": "아버지를 졸라 니케가 된(얼굴도 싹 바뀐)",
+      "before": "인간 반장이었다",
+      "after": "아버지를 졸라 니케가 되어 얼굴도 싹 바뀌었다",
       "time": "S322",
       "points": ["F2677"],
       "evidence": [{ "scene": "event_staranis1_03_e", "lines": ["123-124"] }],
       "reason": "03_e#124. 얼굴이 바뀐 것은 06_s#147 머스탱의 말",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 인간 반장 · 후 아버지를 졸라 니케가 된(얼굴도 싹 바뀐)" }
+      ]
     },
     {
       "id": "D1189",
@@ -466,27 +498,40 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:요요"],
-      "text": "사과를 '미쳤냐'로 물리치고, 폭로 같은 지저분한 짓 없이 실력으로 밟겠다는",
+      "text": "사과를 '미쳤냐'로 물리치고, 폭로 같은 지저분한 짓 없이 실력으로 밟겠다고 한다",
       "time": "S322",
       "points": ["F2677"],
       "evidence": [{ "scene": "event_staranis1_03_e", "lines": ["140-167"] }],
       "reason": "03_e#140 · #164-167 '내가 너, 실력으로 밟는다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "사과를 '미쳤냐'로 물리치고, 폭로 같은 지저분한 짓 없이 실력으로 밟겠다는" }
+      ]
     },
     {
       "id": "D1190",
       "person": "person:요요",
       "aspect": "성격",
       "act": "기준",
-      "text": "사과하는 척 대화를 녹음하고, 시궁창을 기는 모습을 보니 '상상 이상으로' 기분이 좋다는",
+      "text": "사과하는 척 대화를 녹음하고, 시궁창을 기는 모습을 보니 '상상 이상으로' 기분이 좋다고 한다",
       "time": "S322",
       "evidence": [{ "scene": "event_staranis1_intermission_01", "lines": ["26-42"] }],
       "reason": "intermission_01#29 · #36 아니스를 비웃음",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "사과하는 척 대화를 녹음하고, 시궁창을 기는 모습을 보니 '상상 이상으로' 기분이 좋다는"
+        }
+      ]
     },
     {
       "id": "D1191",
@@ -522,13 +567,16 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:리스"],
-      "text": "약속을 지켜 찾아온 리스를 반기는 척하며 눈을 피하는",
+      "text": "약속을 지켜 찾아온 리스를 반기는 척하며 눈을 피한다",
       "time": "S322",
       "evidence": [{ "scene": "event_staranis1_04_e", "lines": ["5-17"] }],
       "reason": "04_e#10-17 · 민트 '얘 왜 이래'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "약속을 지켜 찾아온 리스를 반기는 척하며 눈을 피하는" }
+      ]
     },
     {
       "id": "D1194",
@@ -536,28 +584,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:리스"],
-      "before": "플라스틱 장난감이라 들킬까 봐 찾아가지 못하고 피하던",
-      "after": "평범해도 애쓰는 모습이 위로였다는 말에 '진짜 고마워 죽겠다'는",
+      "before": "플라스틱 장난감이라 들킬까 봐 찾아가지 못하고 피했다",
+      "after": "평범해도 애쓰는 모습이 위로였다는 말에 '진짜 고마워 죽겠다'고 한다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_05_s", "lines": ["160-182"] }],
       "evidence": [{ "scene": "event_staranis1_05_s", "lines": ["128-186"] }],
       "reason": "05_s#138 · #158 · #186. W65",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 플라스틱 장난감이라 들킬까 봐 찾아가지 못하고 피하던 · 후 평범해도 애쓰는 모습이 위로였다는 말에 '진짜 고마워 죽겠다'는"
+        }
+      ]
     },
     {
       "id": "D1195",
       "person": "person:리스",
       "aspect": "신념",
       "act": "기준",
-      "text": "평범한 나도 노력하면 특별해질 수 있다 — 아니스를 닮으려 애쓰다 언젠가 같이 특별해지고 싶은",
+      "text": "평범한 나도 노력하면 특별해질 수 있다며 아니스를 닮으려 애쓰고, 언젠가 같이 특별해지고 싶어 한다",
       "time": "S322",
       "evidence": [{ "scene": "event_staranis1_05_s", "lines": ["172-182"] }],
       "reason": "05_s#172-175 · #182",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "평범한 나도 노력하면 특별해질 수 있다 — 아니스를 닮으려 애쓰다 언젠가 같이 특별해지고 싶은"
+        }
+      ]
     },
     {
       "id": "D1196",
@@ -581,8 +649,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "이사 자리를 비워 두고 돌아오길 바라는",
-      "after": "달려드는 아들이 재밌다며 더 부숴 보겠다는",
+      "before": "이사 자리를 비워 두고 돌아오길 바랐다",
+      "after": "달려드는 아들이 재밌다며 더 부숴 보겠다고 한다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_05_s", "lines": ["81-87"] }],
       "points": ["F2680"],
@@ -590,37 +658,67 @@
       "reason": "05_s#90-92 '그런데 그게 내 아들이다? 못 참겠군'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이사 자리를 비워 두고 돌아오길 바라는 · 후 달려드는 아들이 재밌다며 더 부숴 보겠다는"
+        }
+      ]
     },
     {
       "id": "D1198",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "프리티처럼 희망을 주는 별이 되겠다는",
-      "after": "계속 당하고만 살아 '정말 이기고 싶다'며 요요를 이기려 몸을 혹사하는",
+      "before": "프리티처럼 희망을 주는 별이 되겠다고 했다",
+      "after": "계속 당하고만 살아 '정말 이기고 싶다'며 요요를 이기려 몸을 혹사한다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_05_s", "lines": ["5-17"] }],
       "evidence": [{ "scene": "event_staranis1_05_e", "lines": ["36-40"] }],
       "reason": "05_e#39-40 '나 정말 이기고 싶어'. 꿈(F2895)이 까닭 — #236-243",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 프리티처럼 희망을 주는 별이 되겠다는 · 후 계속 당하고만 살아 '정말 이기고 싶다'며 요요를 이기려 몸을 혹사하는"
+        }
+      ]
     },
     {
       "id": "D1199",
       "person": "person:아니스",
       "aspect": "신체",
       "act": "변화",
-      "before": "니케 바디로 아이돌을 하던",
-      "after": "통각 센서까지 끄고 무리하다 숨 쉬는 법을 잊어 사고 전환 직전에 기절당한",
+      "before": "니케 바디로 아이돌을 했다",
+      "after": "통각 센서까지 끄고 무리하다 숨 쉬는 법을 잊어 사고 전환 직전에 기절당했다",
       "time": "S322",
       "points": ["F2682"],
       "evidence": [{ "scene": "event_staranis1_05_e", "lines": ["109-169"] }],
       "reason": "05_e#112 · #146-156 · #166-169",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케 바디로 아이돌을 하던 · 후 통각 센서까지 끄고 무리하다 숨 쉬는 법을 잊어 사고 전환 직전에 기절당한"
+        }
+      ]
     },
     {
       "id": "D1200",
@@ -628,30 +726,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스", "person:민트", "person:프리카"],
-      "before": "로비에서 지키며 아끼는 사장",
-      "after": "'너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'는",
+      "before": "로비에서 지키며 아끼는 사장이다",
+      "after": "'너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'고 한다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_05_e", "lines": ["166-196"] }],
       "evidence": [{ "scene": "event_staranis1_05_e", "lines": ["264-289"] }],
       "reason": "05_e#283 · #287-289. 의사의 꾸지람(#193-201) 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 로비에서 지키며 아끼는 사장 · 후 '너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'는"
+        }
+      ]
     },
     {
       "id": "D1201",
       "person": "person:한슨",
       "aspect": "성격",
       "act": "변화",
-      "before": "'변하지 않으면 같은 일을 겪는다'며 정도로 버티던",
-      "after": "'타인의 괴로움은 나의 즐거움'이라며 뒷공작으로 요요를 무너뜨리는",
+      "before": "'변하지 않으면 같은 일을 겪는다'며 정도로 버텼다",
+      "after": "'타인의 괴로움은 나의 즐거움'이라며 뒷공작으로 요요를 무너뜨린다",
       "time": "S322",
       "points": ["F2684"],
       "evidence": [{ "scene": "event_staranis1_06_s", "lines": ["219-242"] }],
       "reason": "06_s#219 주치의 · #241-242 아버지의 말을 인정. 머스탱 '역시 넌 내 아들'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '변하지 않으면 같은 일을 겪는다'며 정도로 버티던 · 후 '타인의 괴로움은 나의 즐거움'이라며 뒷공작으로 요요를 무너뜨리는"
+        }
+      ]
     },
     {
       "id": "D1202",
@@ -659,8 +777,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "거짓 사과로 동료인 척 다가가던",
-      "after": "'다시 예전처럼 대해 주겠다' → 은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망하는",
+      "before": "거짓 사과로 동료인 척 다가갔다",
+      "after": "'다시 예전처럼 대해 주겠다' → 은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망한다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_06_s", "lines": ["54-118"] }],
       "points": ["F2686"],
@@ -668,7 +786,17 @@
       "reason": "06_s#116-118 본색 · 06_e#209-210",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 거짓 사과로 동료인 척 다가가던 · 후 '다시 예전처럼 대해 주겠다' → 은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망하는"
+        }
+      ]
     },
     {
       "id": "D1203",
@@ -691,8 +819,8 @@
       "person": "person:요요",
       "aspect": "소속",
       "act": "변화",
-      "before": "테트라 아이돌 랭킹 1위",
-      "after": "잘려 은퇴한 — 동료 · 스태프 연락 하나 없는",
+      "before": "테트라 아이돌 랭킹 1위였다",
+      "after": "잘려 은퇴했고, 동료 · 스태프 연락 하나 없다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_06_s", "lines": ["171-177"] }],
       "points": ["F2683", "F2686"],
@@ -700,7 +828,10 @@
       "reason": "06_e#3 '은퇴했다잖아' · #191 연락 없음 · #200 '다 잃었어'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 테트라 아이돌 랭킹 1위 · 후 잘려 은퇴한 — 동료 · 스태프 연락 하나 없는" }
+      ]
     },
     {
       "id": "D1205",
@@ -708,8 +839,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "투덜대며 따르는 사장님의 아이돌",
-      "after": "'우리 사장님이 행복했으면' 하며 테트라 계약서를 기쁘게 내미는",
+      "before": "투덜대며 따르는 사장님의 아이돌이다",
+      "after": "'우리 사장님이 행복했으면' 하며 테트라 계약서를 기쁘게 내민다",
       "time": "S322",
       "trigger": [{ "scene": "event_staranis1_06_e", "lines": ["120-160"] }],
       "points": ["F2685"],
@@ -717,7 +848,17 @@
       "reason": "06_e#162 · #175",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M48" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 투덜대며 따르는 사장님의 아이돌 · 후 '우리 사장님이 행복했으면' 하며 테트라 계약서를 기쁘게 내미는"
+        }
+      ]
     },
     {
       "id": "D1206",

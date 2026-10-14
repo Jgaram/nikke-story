@@ -48,24 +48,44 @@
       "person": "person:코코아",
       "aspect": "성격",
       "act": "기준",
-      "text": "어눌한 말투로 '프로 메이드 · 메이드장'을 자처하고, 무엇에든 케첩을 넣으려 하며 공룡 모양 초콜릿을 만드는",
+      "text": "어눌한 말투로 '프로 메이드 · 메이드장'을 자처하고, 무엇에든 케첩을 넣으려 하며 공룡 모양 초콜릿을 만든다",
       "evidence": [{ "scene": "event_maidinvalentine_prologue", "lines": ["7-11"] }],
       "reason": "#5 '시작하게따' · #11 '역시 마무리는 코코아가' — 01_s#20 '케첩을 더 너으께', 04_e#2 공룡",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "어눌한 말투로 '프로 메이드 · 메이드장'을 자처하고, 무엇에든 케첩을 넣으려 하며 공룡 모양 초콜릿을 만드는"
+        }
+      ]
     },
     {
       "id": "D1423",
       "person": "person:소다",
       "aspect": "성격",
       "act": "기준",
-      "text": "청소에 열심이지만 물 양동이를 쏟고 아무 버튼이나 누르는 덤벙대는 메이드로, '흐엥' 하며 금방 울상이 되는",
+      "text": "청소에 열심이지만 물 양동이를 쏟고 아무 버튼이나 누르는 덤벙대는 메이드로, '흐엥' 하며 금방 울상이 된다",
       "evidence": [{ "scene": "event_maidinvalentine_03_s", "lines": ["8-27"] }],
       "reason": "#21-24 양동이 · 03_e#1-2 버튼 — 에이드 #27 '가끔 실수하긴 해도 똑 부러지는 아이'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "청소에 열심이지만 물 양동이를 쏟고 아무 버튼이나 누르는 덤벙대는 메이드로, '흐엥' 하며 금방 울상이 되는"
+        }
+      ]
     },
     {
       "id": "D1424",
@@ -73,12 +93,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["org:메이드_포_유"],
-      "text": "'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 주는",
+      "text": "'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 준다",
       "evidence": [{ "scene": "event_maidinvalentine_01_s", "lines": ["1-31"] }],
       "reason": "#25-31 진심이 빠졌다며 불허 — 06_s#17-23 합격. F807과 같은 장면을 관계 쪽으로 적는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'My Lovely 메이드들'의 사장으로서 맛있기만 한 초콜릿에는 진심이 없다며 행사를 막았다가, 다시 만든 초콜릿에 '그 Mind 잊지 마세요' 하고 합격을 주는"
+        }
+      ]
     },
     {
       "id": "D1425",

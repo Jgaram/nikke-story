@@ -337,14 +337,24 @@
       "person": "person:민트",
       "aspect": "신념",
       "act": "변화",
-      "before": "한 번 하고 끝낼 무대가 아니라 계속하고 싶은",
-      "after": "특별하지 않은 우리도 테트라의 지원이면 특별해질 수 있다며 기회를 잡으려는",
+      "before": "한 번 하고 끝낼 무대가 아니라 계속하고 싶었다",
+      "after": "특별하지 않은 우리도 테트라의 지원이면 특별해질 수 있다며 기회를 잡으려 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_01_s", "lines": ["95-111"] }],
       "reason": "01_s#95-111 '아무것도 아닌 우리도 특별해질 수 있는 거잖아요'. 기준 D860",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 한 번 하고 끝낼 무대가 아니라 계속하고 싶은 · 후 특별하지 않은 우리도 테트라의 지원이면 특별해질 수 있다며 기회를 잡으려는"
+        }
+      ]
     },
     {
       "id": "D1208",
@@ -367,43 +377,73 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스", "person:민트"],
-      "before": "둘의 연습을 봐주다 정이 들어 못 나가는",
-      "after": "판을 부수려는 아니스 대신 바닥의 아이스크림을 제 얼굴에 밀어 넣고 웃어 셋을 지키는",
+      "before": "둘의 연습을 봐주다 정이 들어 못 나갔다",
+      "after": "판을 부수려는 아니스 대신 바닥의 아이스크림을 제 얼굴에 밀어 넣고 웃어 셋을 지킨다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_s", "lines": ["89-95"] }],
       "reason": "02_s#91-95 — 아니스 · 민트가 판을 깼을 때 닥칠 일을 이해한다. 앞 D1180",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 둘의 연습을 봐주다 정이 들어 못 나가는 · 후 판을 부수려는 아니스 대신 바닥의 아이스크림을 제 얼굴에 밀어 넣고 웃어 셋을 지키는"
+        }
+      ]
     },
     {
       "id": "D1210",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "계속 당하고만 살아 '정말 이기고 싶다'는",
-      "after": "장난감 취급을 받고도 메이저에 가고 싶어 '좀 더 할 수 있다'며 버티는",
+      "before": "계속 당하고만 살아 '정말 이기고 싶다'고 했다",
+      "after": "장난감 취급을 받고도 메이저에 가고 싶어 '좀 더 할 수 있다'며 버틴다",
       "time": "S323",
       "points": ["F2691"],
       "evidence": [{ "scene": "event_staranis2_02_s", "lines": ["127-146"] }],
       "reason": "02_s#128 · #145-146 '메이저. 가고 싶어요'. 앞 D1198",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 계속 당하고만 살아 '정말 이기고 싶다'는 · 후 장난감 취급을 받고도 메이저에 가고 싶어 '좀 더 할 수 있다'며 버티는"
+        }
+      ]
     },
     {
       "id": "D1211",
       "person": "person:민트",
       "aspect": "신념",
       "act": "변화",
-      "before": "테트라의 지원이면 특별해질 수 있다는",
-      "after": "웃는 것만이 빛날 길이라 스스로 다그치다 '이건 빛나는 게 아니야'라 깨닫는",
+      "before": "테트라의 지원이면 특별해질 수 있다고 했다",
+      "after": "웃는 것만이 빛날 길이라 스스로 다그치다 '이건 빛나는 게 아니야'라 깨닫는다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_e", "lines": ["14-17", "33-38"] }],
       "reason": "02_e#14-17 · #37 — 볼 거리 W66(민트의 속마음)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 테트라의 지원이면 특별해질 수 있다는 · 후 웃는 것만이 빛날 길이라 스스로 다그치다 '이건 빛나는 게 아니야'라 깨닫는"
+        }
+      ]
     },
     {
       "id": "D1212",
@@ -411,28 +451,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스", "person:프리카"],
-      "before": "빛나는 걸 보고 싶어 남은 응원자",
-      "after": "노력한 두 사람은 존중받아야 한다며 오물은 자기에게 오라고 대신 받으려는",
+      "before": "빛나는 걸 보고 싶어 남은 응원자다",
+      "after": "노력한 두 사람은 존중받아야 한다며 오물은 자기에게 오라고 대신 받으려 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_e", "lines": ["22-27"] }],
       "reason": "02_e#24-26 '둘 건드리지 마… 나한테 와'. 앞 D1179 · W66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 빛나는 걸 보고 싶어 남은 응원자 · 후 노력한 두 사람은 존중받아야 한다며 오물은 자기에게 오라고 대신 받으려는"
+        }
+      ]
     },
     {
       "id": "D1213",
       "person": "person:프리카",
       "aspect": "신념",
       "act": "변화",
-      "before": "아이돌은 춤과 노래면 충분하다는",
-      "after": "하기 싫어도 포기하지 못하는 친구들을 위해 같이 웃겠다는",
+      "before": "아이돌은 춤과 노래면 충분하다고 여겼다",
+      "after": "하기 싫어도 포기하지 못하는 친구들을 위해 같이 웃겠다고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_e", "lines": ["44-46", "57-69"] }],
       "reason": "02_e#45 · #66 '너희를 위해서 웃을게'. 기준 D663 · W66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아이돌은 춤과 노래면 충분하다는 · 후 하기 싫어도 포기하지 못하는 친구들을 위해 같이 웃겠다는"
+        }
+      ]
     },
     {
       "id": "D1214",
@@ -440,42 +500,72 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:민트", "person:프리카"],
-      "before": "'예전처럼 같이 하자, 도와줘'라 부탁한",
-      "after": "말한 적 없지만 따라와 준 둘이 너무 고마워 '너희가 있어서 견딜 수 있다'는",
+      "before": "'예전처럼 같이 하자, 도와줘'라 부탁했다",
+      "after": "말한 적 없지만 따라와 준 둘이 너무 고마워 '너희가 있어서 견딜 수 있다'고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_e", "lines": ["83-88"] }],
       "reason": "02_e#86-88 속마음. 앞 D800 · W66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '예전처럼 같이 하자, 도와줘'라 부탁한 · 후 말한 적 없지만 따라와 준 둘이 너무 고마워 '너희가 있어서 견딜 수 있다'는"
+        }
+      ]
     },
     {
       "id": "D1215",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "메이저에 가고 싶어 버티는",
-      "after": "프리티처럼 별이 되려 '이렇게라도 사랑받는 데 감사하자'며 자기를 다그치다 말이 부서지는",
+      "before": "메이저에 가고 싶어 버텼다",
+      "after": "프리티처럼 별이 되려 '이렇게라도 사랑받는 데 감사하자'며 자기를 다그치다 말이 부서진다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_02_e", "lines": ["103-115", "122-128"] }],
       "reason": "02_e#104-105 · #114-115 · #128 끊긴 말. W66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 메이저에 가고 싶어 버티는 · 후 프리티처럼 별이 되려 '이렇게라도 사랑받는 데 감사하자'며 자기를 다그치다 말이 부서지는"
+        }
+      ]
     },
     {
       "id": "D1216",
       "person": "person:한슨",
       "aspect": "신념",
       "act": "변화",
-      "before": "니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다는",
-      "after": "프리티는 구하지 못했으니 이번엔 T.T.STAR를 구하겠다는",
+      "before": "니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다고 믿었다",
+      "after": "프리티는 구하지 못했으니 이번엔 T.T.STAR를 구하겠다고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_03_s", "lines": ["117-121"] }],
       "reason": "03_s#119-121 '그래서, 이번엔 구할 겁니다'. 기준 D1094",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다는 · 후 프리티는 구하지 못했으니 이번엔 T.T.STAR를 구하겠다는"
+        }
+      ]
     },
     {
       "id": "D1217",
@@ -498,30 +588,43 @@
       "person": "person:리스",
       "aspect": "신체",
       "act": "변화",
-      "before": "사람",
-      "after": "3일 출입 금지 끝에 자택에서 숨진 채 발견된",
+      "before": "사람이었다",
+      "after": "3일 출입 금지 끝에 자택에서 숨진 채 발견됐다",
       "time": "S323",
       "points": ["F2695"],
       "evidence": [{ "scene": "event_staranis2_03_e", "lines": ["75-77"] }],
       "reason": "03_e#77 · #101 경동맥 압박 질식사",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 사람 · 후 3일 출입 금지 끝에 자택에서 숨진 채 발견된" }
+      ]
     },
     {
       "id": "D1219",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "이렇게라도 사랑받는 데 감사하자는",
-      "after": "'나는 별이 아니라 플라스틱으로 만든 조잡한 별, 주제에 맞지 않았다'며 리스의 죽음을 자기 탓으로 돌리는",
+      "before": "이렇게라도 사랑받는 데 감사하자고 했다",
+      "after": "'나는 별이 아니라 플라스틱으로 만든 조잡한 별, 주제에 맞지 않았다'며 리스의 죽음을 자기 탓으로 돌린다",
       "time": "S323",
       "trigger": [{ "scene": "event_staranis2_03_e", "lines": [77] }],
       "evidence": [{ "scene": "event_staranis2_03_e", "lines": ["114-134"] }],
       "reason": "03_e#116 · #125 · #131-132",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이렇게라도 사랑받는 데 감사하자는 · 후 '나는 별이 아니라 플라스틱으로 만든 조잡한 별, 주제에 맞지 않았다'며 리스의 죽음을 자기 탓으로 돌리는"
+        }
+      ]
     },
     {
       "id": "D1220",
@@ -529,22 +632,32 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "'우리 사장님이 행복했으면' 하는",
-      "after": "자리를 비운 사장에게 '지금처럼 늦지 말고' 빨리 해결하라는",
+      "before": "'우리 사장님이 행복했으면' 했다",
+      "after": "자리를 비운 사장에게 '지금처럼 늦지 말고' 빨리 해결하라고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_03_e", "lines": ["136-145"] }],
       "reason": "03_e#141-143 — 대답 없이 패널만 본다. 앞 D1205",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '우리 사장님이 행복했으면' 하는 · 후 자리를 비운 사장에게 '지금처럼 늦지 말고' 빨리 해결하라는"
+        }
+      ]
     },
     {
       "id": "D1221",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "리스의 죽음을 자기 탓으로 돌리는",
-      "after": "리스를 남 탓으로 돌리는 글에 '쓰레기들을 위해 춤추고 노래했다, 내 인생이 아깝다'는",
+      "before": "리스의 죽음을 자기 탓으로 돌렸다",
+      "after": "리스를 남 탓으로 돌리는 글에 '쓰레기들을 위해 춤추고 노래했다, 내 인생이 아깝다'고 한다",
       "time": "S323",
       "points": ["F2696"],
       "trigger": [{ "scene": "event_staranis2_intermission_01", "lines": ["26-40"] }],
@@ -552,44 +665,74 @@
       "reason": "intermission_01#66 '니들이 죽였잖아' · #73-79",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 리스의 죽음을 자기 탓으로 돌리는 · 후 리스를 남 탓으로 돌리는 글에 '쓰레기들을 위해 춤추고 노래했다, 내 인생이 아깝다'는"
+        }
+      ]
     },
     {
       "id": "D1222",
       "person": "person:민트",
       "aspect": "신념",
       "act": "변화",
-      "before": "'이건 빛나는 게 아니야'라 깨달은",
-      "after": "메이저가 되어 약자를 짓밟지 말라고 당당히 말하고 우리가 희망 · 별이 되자는",
+      "before": "'이건 빛나는 게 아니야'라 깨달았다",
+      "after": "메이저가 되어 약자를 짓밟지 말라고 당당히 말하고 우리가 희망 · 별이 되자고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_04_s", "lines": ["10-23", "39-60"] }],
       "reason": "04_s#16-23 · #44-60 — 리스가 바란 것을 짚는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '이건 빛나는 게 아니야'라 깨달은 · 후 메이저가 되어 약자를 짓밟지 말라고 당당히 말하고 우리가 희망 · 별이 되자는"
+        }
+      ]
     },
     {
       "id": "D1223",
       "person": "person:프리카",
       "aspect": "신념",
       "act": "변화",
-      "before": "친구들을 위해 하기 싫어도 웃겠다는",
-      "after": "평범해도 조금씩 특별해지고 있음을 보여 주고 빛나는 별이 되자는",
+      "before": "친구들을 위해 하기 싫어도 웃겠다고 했다",
+      "after": "평범해도 조금씩 특별해지고 있음을 보여 주고 빛나는 별이 되자고 한다",
       "time": "S323",
       "points": ["F2697"],
       "evidence": [{ "scene": "event_staranis2_04_s", "lines": ["80-89"] }],
       "reason": "04_s#86-89 '우리는 평범해. 하지만 조금씩 특별해지고 있다는 걸 보여주자'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 친구들을 위해 하기 싫어도 웃겠다는 · 후 평범해도 조금씩 특별해지고 있음을 보여 주고 빛나는 별이 되자는"
+        }
+      ]
     },
     {
       "id": "D1224",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "'쓰레기들을 위해 노래했다, 인생이 아깝다'는",
-      "after": "리스가 제목을 지은 [Be My Star]로 '해 보자'며 메이저 무대에 다시 서려는",
+      "before": "'쓰레기들을 위해 노래했다, 인생이 아깝다'고 했다",
+      "after": "리스가 제목을 지은 [Be My Star]로 '해 보자'며 메이저 무대에 다시 서려 한다",
       "time": "S323",
       "points": ["F2697"],
       "trigger": [{ "scene": "event_staranis2_04_s", "lines": ["73-96"] }],
@@ -597,7 +740,17 @@
       "reason": "04_s#96 · #99-100",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '쓰레기들을 위해 노래했다, 인생이 아깝다'는 · 후 리스가 제목을 지은 [Be My Star]로 '해 보자'며 메이저 무대에 다시 서려는"
+        }
+      ]
     },
     {
       "id": "D1225",
@@ -605,23 +758,33 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망하는",
-      "after": "학생 때로 돌아가 둘이서만 정정당당히 겨루자며 리스를 자기가 죽였다고 거짓말하는",
+      "before": "은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망했다",
+      "after": "학생 때로 돌아가 둘이서만 정정당당히 겨루자며 리스를 자기가 죽였다고 거짓말한다",
       "time": "S323",
       "points": ["F2698", "F2699"],
       "evidence": [{ "scene": "event_staranis2_04_e", "lines": ["71-106"] }],
       "reason": "04_e#82-83 · #97-98 · #106. 앞 D1202",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 은퇴 뒤 '또 얘가 내 걸 다 빼앗아 갔다'고 원망하는 · 후 학생 때로 돌아가 둘이서만 정정당당히 겨루자며 리스를 자기가 죽였다고 거짓말하는"
+        }
+      ]
     },
     {
       "id": "D1226",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "[Be My Star]로 '해 보자'던",
-      "after": "'내 별은 빼앗아 가지 말았어야지' — 아이돌을 그만두고 아이돌답지 못한 짓(요요를 죽이겠다)을 하려는",
+      "before": "[Be My Star]로 '해 보자'고 했다",
+      "after": "'내 별은 빼앗아 가지 말았어야지' — 아이돌을 그만두고 아이돌답지 못한 짓(요요를 죽이겠다)을 하려 한다",
       "time": "S323",
       "points": ["F2698"],
       "trigger": [{ "scene": "event_staranis2_04_e", "lines": ["106-112"] }],
@@ -629,7 +792,17 @@
       "reason": "04_e#158-164 · #167",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 [Be My Star]로 '해 보자'던 · 후 '내 별은 빼앗아 가지 말았어야지' — 아이돌을 그만두고 아이돌답지 못한 짓(요요를 죽이겠다)을 하려는"
+        }
+      ]
     },
     {
       "id": "D1227",
@@ -637,8 +810,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "달려드는 아들이 재밌다며 더 부숴 보겠다는",
-      "after": "'평생 흉내 내며 회사를 잇는 아들'이 죽여주게 재밌다며 치료제를 깨고 '역시 내 아들'이라는",
+      "before": "달려드는 아들이 재밌다며 더 부숴 보겠다고 했다",
+      "after": "'평생 흉내 내며 회사를 잇는 아들'이 죽여주게 재밌다며 치료제를 깨고 '역시 내 아들'이라 한다",
       "time": "S323",
       "points": ["F2700"],
       "evidence": [{ "scene": "event_staranis2_05_s", "lines": ["100-119"] }],
@@ -646,29 +819,42 @@
       "confidence": "확실",
       "note": "진짜 머스탱 — person:머스탱 한 ID(D1091 · D1197과 같다)",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 달려드는 아들이 재밌다며 더 부숴 보겠다는 · 후 '평생 흉내 내며 회사를 잇는 아들'이 죽여주게 재밌다며 치료제를 깨고 '역시 내 아들'이라는"
+        }
+      ]
     },
     {
       "id": "D1228",
       "person": "person:한슨",
       "aspect": "신념",
       "act": "변화",
-      "before": "이번엔 T.T.STAR를 구하겠다는",
+      "before": "이번엔 T.T.STAR를 구하겠다고 했다",
       "after": "누군가의 불행 없이 모두에게 즐거움을 주는 진정한 엔터테인먼트를 만들겠다는 — 방주엔 좋은 사람이 훨씬 많다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_05_s", "lines": ["78-93"] }],
       "reason": "05_s#78-81 · #86 · #90-91 — 머스탱의 쓰레기통론에 맞선다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 이번엔 T.T.STAR를 구하겠다는" }
+      ]
     },
     {
       "id": "D1229",
       "person": "person:한슨",
       "aspect": "소속",
       "act": "변화",
-      "before": "위약금에 묶여 돌아온 테트라 이사",
-      "after": "한슨은 죽은 것으로 하고 테트라 CEO 머스탱으로 사는",
+      "before": "위약금에 묶여 돌아온 테트라 이사였다",
+      "after": "한슨은 죽은 것으로 하고 테트라 CEO 머스탱으로 산다",
       "time": "S323",
       "points": ["F2701"],
       "evidence": [{ "scene": "event_staranis2_05_s", "lines": ["153-176"] }],
@@ -676,22 +862,42 @@
       "confidence": "확실",
       "note": "이름표는 머스탱 — 한슨으로 적는다(06_e#70 이름표 한슨)",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 위약금에 묶여 돌아온 테트라 이사 · 후 한슨은 죽은 것으로 하고 테트라 CEO 머스탱으로 사는"
+        }
+      ]
     },
     {
       "id": "D1230",
       "person": "person:미세스_미스",
       "aspect": "소속",
       "act": "변화",
-      "before": "'찾을 것'이 있다며 퇴사한",
-      "after": "전권을 받아 테트라의 부정을 뿌리까지 쓸고, 끝나면 다시 나가기로 한",
+      "before": "'찾을 것'이 있다며 퇴사했다",
+      "after": "전권을 받아 테트라의 부정을 뿌리까지 쓸고, 끝나면 다시 나가기로 했다",
       "time": "S323",
       "points": ["F2703"],
       "evidence": [{ "scene": "event_staranis2_05_e", "lines": ["18-33"] }],
       "reason": "05_e#23-33. 앞 D1114",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '찾을 것'이 있다며 퇴사한 · 후 전권을 받아 테트라의 부정을 뿌리까지 쓸고, 끝나면 다시 나가기로 한"
+        }
+      ]
     },
     {
       "id": "D1231",
@@ -699,8 +905,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "'너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'는",
-      "after": "'죽을 생각이군, 또 늦었구나' 하며 지상행을 받아들이는",
+      "before": "'너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'고 했다",
+      "after": "'죽을 생각이군, 또 늦었구나' 하며 지상행을 받아들인다",
       "time": "S323",
       "points": ["F2705"],
       "evidence": [{ "scene": "event_staranis2_05_e", "lines": ["139-153"] }],
@@ -708,22 +914,35 @@
       "confidence": "확실",
       "note": "이름표 머스탱(F2701 뒤의 한슨)",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '너는 이미 특별해, 무슨 수를 쓰든 빛나게 해 주겠다'는 · 후 '죽을 생각이군, 또 늦었구나' 하며 지상행을 받아들이는"
+        }
+      ]
     },
     {
       "id": "D1232",
       "person": "person:아니스",
       "aspect": "소속",
       "act": "변화",
-      "before": "T.T.STAR의 아이돌",
-      "after": "아이돌을 그만두고 지상 전투 부대로 간",
+      "before": "T.T.STAR의 아이돌이었다",
+      "after": "아이돌을 그만두고 지상 전투 부대로 갔다",
       "time": "S323",
       "points": ["F2705"],
       "evidence": [{ "scene": "event_staranis2_05_e", "lines": ["116-126"] }],
       "reason": "05_e#118 · #125-126 '전투 부대 소속으로'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 T.T.STAR의 아이돌 · 후 아이돌을 그만두고 지상 전투 부대로 간" }
+      ]
     },
     {
       "id": "D1233",
@@ -731,14 +950,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "'지금처럼 늦지 말고'라던",
-      "after": "'원망 안 해요'라면서 다시 시작하자는 말도 뿌리치고 보내 달라는",
+      "before": "'지금처럼 늦지 말고'라 했다",
+      "after": "'원망 안 해요'라면서 다시 시작하자는 말도 뿌리치고 보내 달라고 한다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_05_e", "lines": ["144-151"] }],
       "reason": "05_e#144-146 · #150-151",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '지금처럼 늦지 말고'라던 · 후 '원망 안 해요'라면서 다시 시작하자는 말도 뿌리치고 보내 달라는"
+        }
+      ]
     },
     {
       "id": "D1234",
@@ -746,15 +975,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "노력한 아니스 대신 오물을 받으려던",
-      "after": "버리고 간 것 같아 섭섭해도 이해한다며 아니스가 찾을 수 있게 연예계에 남아 기다리는",
+      "before": "노력한 아니스 대신 오물을 받으려 했다",
+      "after": "버리고 간 것 같아 섭섭해도 이해한다며 아니스가 찾을 수 있게 연예계에 남아 기다린다",
       "time": "S323",
       "points": ["F2705"],
       "evidence": [{ "scene": "event_staranis2_06_s", "lines": ["21-31"] }],
       "reason": "06_s#24-31",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 노력한 아니스 대신 오물을 받으려던 · 후 버리고 간 것 같아 섭섭해도 이해한다며 아니스가 찾을 수 있게 연예계에 남아 기다리는"
+        }
+      ]
     },
     {
       "id": "D1235",
@@ -762,15 +1001,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "아이스크림을 뒤집어쓰고 웃어 셋을 지킨",
-      "after": "한 명이라도 빠지면 실패로 끝난다며 셋이서가 아니면 다시 시작하지 않겠다는",
+      "before": "아이스크림을 뒤집어쓰고 웃어 셋을 지켰다",
+      "after": "한 명이라도 빠지면 실패로 끝난다며 셋이서가 아니면 다시 시작하지 않겠다고 한다",
       "time": "S323",
       "points": ["F2705"],
       "evidence": [{ "scene": "event_staranis2_06_s", "lines": ["37-44"] }],
       "reason": "06_s#38 '셋이서, 같이 하고 싶어요' · #42-44",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아이스크림을 뒤집어쓰고 웃어 셋을 지킨 · 후 한 명이라도 빠지면 실패로 끝난다며 셋이서가 아니면 다시 시작하지 않겠다는"
+        }
+      ]
     },
     {
       "id": "D1236",
@@ -778,44 +1027,74 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "'또 늦었구나' 하며 보내 준",
-      "after": "STAR를 보여 주며 방주를 다시 사랑할 날까지 '이번엔 늦지 않게' 변함없이 기다리겠다는",
+      "before": "'또 늦었구나' 하며 보내 줬다",
+      "after": "STAR를 보여 주며 방주를 다시 사랑할 날까지 '이번엔 늦지 않게' 변함없이 기다리겠다고 한다",
       "time": "S323",
       "points": ["F2706"],
       "evidence": [{ "scene": "event_staranis2_06_s", "lines": ["79-96"] }],
       "reason": "06_s#84 · #94-96. 이름표 머스탱",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '또 늦었구나' 하며 보내 준 · 후 STAR를 보여 주며 방주를 다시 사랑할 날까지 '이번엔 늦지 않게' 변함없이 기다리겠다는"
+        }
+      ]
     },
     {
       "id": "D1237",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "아이돌을 그만두고 요요를 죽이려던 — 방주 사람은 쓰레기라는",
-      "after": "괴롭히던 이들조차 자기를 못 알아보고 지나가자 '이런 곳이라고' 웃어넘기는",
+      "before": "방주 사람은 쓰레기라며 아이돌을 그만두고 요요를 죽이려 했다",
+      "after": "괴롭히던 이들조차 자기를 못 알아보고 지나가자 '이런 곳이라고' 웃어넘긴다",
       "time": "S323",
       "evidence": [{ "scene": "event_staranis2_06_s", "lines": ["97-127"] }],
       "reason": "06_s#105 · #124-127 — 볼 거리 W67(방주 사람을 다시 보는 아니스)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아이돌을 그만두고 요요를 죽이려던 — 방주 사람은 쓰레기라는 · 후 괴롭히던 이들조차 자기를 못 알아보고 지나가자 '이런 곳이라고' 웃어넘기는"
+        }
+      ]
     },
     {
       "id": "D1238",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "'이런 곳이라고' 웃어넘기던",
-      "after": "방주는 쓰레기통이 아니라 어둠 속에 빛나는 별들이 있는 곳 — 방주를 사랑해 그 별들을 위해 노래하겠다는",
+      "before": "'이런 곳이라고' 웃어넘겼다",
+      "after": "방주는 쓰레기통이 아니라 어둠 속에 빛나는 별들이 있는 곳이라며, 방주를 사랑해 그 별들을 위해 노래하겠다고 한다",
       "time": "S321",
       "points": ["F2707"],
       "evidence": [{ "scene": "event_staranis2_06_e", "lines": ["2-16"] }],
       "reason": "06_e#4-16 '오래 걸렸다'. W67",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '이런 곳이라고' 웃어넘기던 · 후 방주는 쓰레기통이 아니라 어둠 속에 빛나는 별들이 있는 곳 — 방주를 사랑해 그 별들을 위해 노래하겠다는"
+        }
+      ]
     },
     {
       "id": "D1239",
@@ -823,14 +1102,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관", "person:라피", "person:네온"],
-      "before": "대등한 동료가 되려 도움을 거절하는",
-      "after": "목이 터져라 외치는 지휘관 · 라피 · 네온을 자기를 특별하게 만드는 가장 빛나는 별로 보는",
+      "before": "대등한 동료가 되려 도움을 거절했다",
+      "after": "목이 터져라 외치는 지휘관 · 라피 · 네온을 자기를 특별하게 만드는 가장 빛나는 별로 본다",
       "time": "S321",
       "evidence": [{ "scene": "event_staranis2_06_e", "lines": ["21-24"] }],
       "reason": "06_e#22-24. 앞 D601(지휘관)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 대등한 동료가 되려 도움을 거절하는 · 후 목이 터져라 외치는 지휘관 · 라피 · 네온을 자기를 특별하게 만드는 가장 빛나는 별로 보는"
+        }
+      ]
     },
     {
       "id": "D1240",
@@ -852,15 +1141,25 @@
       "person": "person:아비스타",
       "aspect": "소속",
       "act": "변화",
-      "before": "감찰 부대 니케",
-      "after": "감찰 부대이면서 민트 · 프리카의 Twinkle Twin Star와 함께하는",
+      "before": "감찰 부대 니케다",
+      "after": "감찰 부대이면서 민트 · 프리카의 Twinkle Twin Star와 함께한다",
       "time": "S324",
       "points": ["F2708"],
       "evidence": [{ "scene": "event_staranis2_epilogue", "lines": ["43-47"] }],
       "reason": "epilogue#46-47 '감찰 부대인데 괜찮은 건가'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M49" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 감찰 부대 니케 · 후 감찰 부대이면서 민트 · 프리카의 Twinkle Twin Star와 함께하는"
+        }
+      ]
     }
   ],
   "life": [

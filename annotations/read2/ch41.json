@@ -210,13 +210,23 @@
       "person": "person:바하무트",
       "aspect": "성격",
       "act": "기준",
-      "text": "알 없는 안경 · 거꾸로 든 책으로 '똑똑한 바하무트'를 되뇌며 엉터리 지식을 설교하지만, 맡은 일은 우직하게 지키는",
+      "text": "알 없는 안경 · 거꾸로 든 책으로 '똑똑한 바하무트'를 되뇌며 엉터리 지식을 설교하지만, 맡은 일은 우직하게 지킨다",
       "evidence": [{ "scene": "d_main_41_01", "lines": ["14-20", "34-37"] }],
       "reason": "첫 등장. 인간의 뼈 370개 · '부딪히고 절망한 후 성장하라'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "알 없는 안경 · 거꾸로 든 책으로 '똑똑한 바하무트'를 되뇌며 엉터리 지식을 설교하지만, 맡은 일은 우직하게 지키는"
+        }
+      ]
     },
     {
       "id": "D848",
@@ -224,14 +234,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지즈"],
-      "before": "지즈가 거대화를 참아 왔음을 알고 제 몸을 바쳐 살려 달라던",
-      "after": "숨긴다고 고생했다며 처음 '구해줘서 고마워'라 하고 마음껏 날뛰라 보내는",
+      "before": "지즈가 거대화를 참아 왔음을 알고 제 몸을 바쳐 살려 달라고 했다",
+      "after": "숨긴다고 고생했다며 처음 '구해줘서 고마워'라 하고 마음껏 날뛰라 보낸다",
       "evidence": [{ "scene": "d_main_41_01", "lines": ["184-191"] }],
       "reason": "'이제 안 그래도 돼 · 구해줘서 고마워 · 죽지 말고'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지즈가 거대화를 참아 왔음을 알고 제 몸을 바쳐 살려 달라던 · 후 숨긴다고 고생했다며 처음 '구해줘서 고마워'라 하고 마음껏 날뛰라 보내는"
+        }
+      ]
     },
     {
       "id": "D849",
@@ -239,14 +259,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'우릴 갖다 바치려고'라며 걷어차고 달아나던",
-      "after": "정수를 채취해 인질로 잡되 '죽이기 찝찝하다'는",
+      "before": "'우릴 갖다 바치려고'라며 걷어차고 달아났다",
+      "after": "정수를 채취해 인질로 잡되 '죽이기 찝찝하다'고 한다",
       "evidence": [{ "scene": "d_main_41_01", "lines": ["199-212"] }],
       "reason": "방해하면 죽여도 된다면서 '너 죽이기가 좀 찝찝해서 그냥 인질로'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '우릴 갖다 바치려고'라며 걷어차고 달아나던 · 후 정수를 채취해 인질로 잡되 '죽이기 찝찝하다'는"
+        }
+      ]
     },
     {
       "id": "D850",
@@ -254,27 +284,47 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "'한 명의 인간'이라 부르며 포비스트를 없앨 한시적 동맹을 맺고, 아무것도 버리지 못해 여기까지 왔을 인간이라 평하는",
+      "text": "'한 명의 인간'이라 부르며 포비스트를 없앨 한시적 동맹을 맺고, 아무것도 버리지 못해 여기까지 왔을 인간이라 평한다",
       "evidence": [{ "scene": "d_main_41_04", "lines": ["5-29"] }],
       "reason": "이간질을 따지는 지휘관에게 승산 없는 설득이었다며 동맹을 다그친다.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'한 명의 인간'이라 부르며 포비스트를 없앨 한시적 동맹을 맺고, 아무것도 버리지 못해 여기까지 왔을 인간이라 평하는"
+        }
+      ]
     },
     {
       "id": "D851",
       "person": "person:리버렐리오",
       "aspect": "신념",
       "act": "기준",
-      "text": "어머니(원래의 퀸)는 잘못 판단할 리 없으니 역할을 몰라도 되고, 어머니가 올 때 지상엔 어머니의 자식만 있게 정리해야 한다는",
+      "text": "어머니(원래의 퀸)는 잘못 판단할 리 없으니 역할을 몰라도 되고, 어머니가 올 때 지상엔 어머니의 자식만 있게 정리해야 한다고 한다",
       "evidence": [{ "scene": "d_main_41_04", "lines": ["85-92", "119-122"] }],
       "reason": "'나는 그걸 위해 움직이는 거야' · '어머니가 잘못된 판단을 할 리가 없으니까'.",
       "confidence": "확실",
       "points": ["F2187"],
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "어머니(원래의 퀸)는 잘못 판단할 리 없으니 역할을 몰라도 되고, 어머니가 올 때 지상엔 어머니의 자식만 있게 정리해야 한다는"
+        }
+      ]
     },
     {
       "id": "D852",
@@ -282,13 +332,16 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레비아탄"],
-      "text": "레비의 말을 존중하고, 레비가 반드시 지키라 한 용광로를 고민 끝에 지키기로 하는",
+      "text": "레비의 말을 존중하고, 레비가 반드시 지키라 한 용광로를 고민 끝에 지키기로 한다",
       "evidence": [{ "scene": "d_main_41_04", "lines": ["40-50"] }],
       "reason": "직계를 쫓을지 망설이다 '레비가 용광로를 반드시 지키라고' 한 것을 따른다.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "레비의 말을 존중하고, 레비가 반드시 지키라 한 용광로를 고민 끝에 지키기로 하는" }
+      ]
     },
     {
       "id": "D853",
@@ -296,28 +349,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레비아탄"],
-      "before": "베히모스를 지키는 모습에 드릴을 거두고 '대화하자'던",
-      "after": "'뼛속부터 배신자'라며 대화를 그만두고 끝을 보자는",
+      "before": "베히모스를 지키는 모습에 드릴을 거두고 '대화하자'고 했다",
+      "after": "'뼛속부터 배신자'라며 대화를 그만두고 끝을 보자고 한다",
       "evidence": [{ "scene": "d_main_41_07", "lines": ["75-104"] }],
       "reason": "'적어도 나와 지휘관은 진심으로 대화하려 했어. 배신한 거야'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 베히모스를 지키는 모습에 드릴을 거두고 '대화하자'던 · 후 '뼛속부터 배신자'라며 대화를 그만두고 끝을 보자는"
+        }
+      ]
     },
     {
       "id": "D854",
       "person": "person:라피",
       "aspect": "신념",
       "act": "변화",
-      "before": "헬레틱이라도 동료가 될 수 있다며 모든 가능성을 열어 두던",
-      "after": "대화로 열릴 가능성을 애써 무시하고 할 일만 하겠다는",
+      "before": "헬레틱이라도 동료가 될 수 있다며 모든 가능성을 열어 두었다",
+      "after": "대화로 열릴 가능성을 애써 무시하고 할 일만 하겠다고 한다",
       "evidence": [{ "scene": "d_main_41_07", "lines": ["100-104"] }],
       "reason": "'수많은 가능성을 애써 무시하고 속 편하게 우리가 할 일을 할 거라고'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헬레틱이라도 동료가 될 수 있다며 모든 가능성을 열어 두던 · 후 대화로 열릴 가능성을 애써 무시하고 할 일만 하겠다는"
+        }
+      ]
     },
     {
       "id": "D855",
@@ -325,14 +398,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레비아탄"],
-      "before": "'나 버리면 안 돼'라며 숨긴 거대화로 레비 대신 싸우던",
-      "after": "'구제 불능' — 결정이 무서워 버리듯 결정한다고 처음 대놓고 나무라는",
+      "before": "'나 버리면 안 돼'라며 숨긴 거대화로 레비 대신 싸웠다",
+      "after": "'구제 불능' — 결정이 무서워 버리듯 결정한다고 처음 대놓고 나무란다",
       "evidence": [{ "scene": "d_main_41_07", "lines": ["173-178"] }],
       "reason": "볼 거리 W24. 레비아탄이 일행을 용광로에 던지기로 하자.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '나 버리면 안 돼'라며 숨긴 거대화로 레비 대신 싸우던 · 후 '구제 불능' — 결정이 무서워 버리듯 결정한다고 처음 대놓고 나무라는"
+        }
+      ]
     },
     {
       "id": "D856",
@@ -340,14 +423,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레비아탄"],
-      "before": "바스러지는 몸으로 '내가 지킨다'며 거대화하던",
-      "after": "끝을 볼지 결정하라 다그치고, 결정했으면 피하지 말라 이르는",
+      "before": "바스러지는 몸으로 '내가 지킨다'며 거대화했다",
+      "after": "끝을 볼지 결정하라 다그치고, 결정했으면 피하지 말라 이른다",
       "evidence": [{ "scene": "d_main_41_07", "lines": ["159-187"] }],
       "reason": "'이 녀석들과 계속 이렇게 지낼 순 없어 · 후회해도 되고 만족해도 돼. 피하지만 마'.",
       "confidence": "추정",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 바스러지는 몸으로 '내가 지킨다'며 거대화하던 · 후 끝을 볼지 결정하라 다그치고, 결정했으면 피하지 말라 이르는"
+        }
+      ]
     },
     {
       "id": "D857",
@@ -355,28 +448,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "공포로 망설여 세이렌을 잃고 배신했다며 제 얼굴을 치던",
-      "after": "살아 돌아온 세이렌 앞에 쪼그려 앉고 떨며 뒷걸음치는",
+      "before": "공포로 망설여 세이렌을 잃고 배신했다며 제 얼굴을 쳤다",
+      "after": "살아 돌아온 세이렌 앞에 쪼그려 앉고 떨며 뒷걸음친다",
       "evidence": [{ "scene": "d_main_41_08", "lines": ["9-17", "81-91"] }],
       "reason": "'[살아있어. 물거품이 아니야]'에 '히, 히이… 나는…'.",
       "confidence": "확실",
       "time": "S268",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공포로 망설여 세이렌을 잃고 배신했다며 제 얼굴을 치던 · 후 살아 돌아온 세이렌 앞에 쪼그려 앉고 떨며 뒷걸음치는"
+        }
+      ]
     },
     {
       "id": "D858",
       "person": "person:미세스_미스",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주에 별이 없다며 프로듀싱을 그만두었던",
-      "after": "다시 이 눈으로 방주의 별을 보고 싶어 T.T.STAR를 맡은",
+      "before": "방주에 별이 없다며 프로듀싱을 그만두었다",
+      "after": "다시 이 눈으로 방주의 별을 보고 싶어 T.T.STAR를 맡았다",
       "evidence": [{ "scene": "d_main_41_af_01", "lines": ["63-64"] }],
       "reason": "머스탱이 가진 영상에 흥미가 생겨 '방주의 별을 보고 싶거든'.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주에 별이 없다며 프로듀싱을 그만두었던 · 후 다시 이 눈으로 방주의 별을 보고 싶어 T.T.STAR를 맡은"
+        }
+      ]
     },
     {
       "id": "D859",
@@ -384,71 +497,121 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스", "person:민트", "person:프리카"],
-      "before": "첫날 춤과 노래를 보고 '이쪽별은 아니구나' 했던",
-      "after": "스마일 박스를 겪고도 노래하겠다는 셋을 '훌륭한 새끼별'이라 부르고 다 타지는 말라 이르는",
+      "before": "첫날 춤과 노래를 보고 '이쪽별은 아니구나' 했다",
+      "after": "스마일 박스를 겪고도 노래하겠다는 셋을 '훌륭한 새끼별'이라 부르고 다 타지는 말라 이른다",
       "evidence": [{ "scene": "d_main_41_af_01", "lines": ["65-66", "137-144"] }],
       "reason": "'너흰 이미 훌륭한 새끼별 · 부디 전부 다 타버리지는 말렴'.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 첫날 춤과 노래를 보고 '이쪽별은 아니구나' 했던 · 후 스마일 박스를 겪고도 노래하겠다는 셋을 '훌륭한 새끼별'이라 부르고 다 타지는 말라 이르는"
+        }
+      ]
     },
     {
       "id": "D860",
       "person": "person:민트",
       "aspect": "신념",
       "act": "기준",
-      "text": "한 번 하고 끝낼 무대가 아니라 계속하고 싶다며, 가망이 없다는 말에도 열심히 하겠다는",
+      "text": "한 번 하고 끝낼 무대가 아니라 계속하고 싶다며, 가망이 없다는 말에도 열심히 하겠다고 한다",
       "evidence": [{ "scene": "d_main_41_af_01", "lines": ["25-35"] }],
       "reason": "'저는 계속하고 싶은데요' · 뒤에 '그립기도 하고요. 무대가'(#136).",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "한 번 하고 끝낼 무대가 아니라 계속하고 싶다며, 가망이 없다는 말에도 열심히 하겠다는"
+        }
+      ]
     },
     {
       "id": "D861",
       "person": "person:민트",
       "aspect": "성격",
       "act": "변화",
-      "before": "누가 무슨 짓을 해도 바보같이 웃기만 하던",
-      "after": "'진작 이럴걸' — 세게 나가면 꼬리 말고 도망친다며 후련해하는",
+      "before": "누가 무슨 짓을 해도 바보같이 웃기만 했다",
+      "after": "'진작 이럴걸' — 세게 나가면 꼬리 말고 도망친다며 후련해한다",
       "trigger": [{ "scene": "d_main_41_af_02", "lines": ["105-125"] }],
       "evidence": [{ "scene": "d_main_41_af_02", "lines": ["150-166"] }],
       "reason": "볼 거리 W24. 아니스가 트리키 보이를 위협해 쫓은 뒤.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 누가 무슨 짓을 해도 바보같이 웃기만 하던 · 후 '진작 이럴걸' — 세게 나가면 꼬리 말고 도망친다며 후련해하는"
+        }
+      ]
     },
     {
       "id": "D862",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "좋아해 주는 훨씬 많은 사람들을 위해 노래하겠다던",
-      "after": "웃으며 핸드폰을 들이대는 군중에 혐오가 치밀어 '이게 방주'라 삼키는",
+      "before": "좋아해 주는 훨씬 많은 사람들을 위해 노래하겠다고 했다",
+      "after": "웃으며 핸드폰을 들이대는 군중에 혐오가 치밀어 '이게 방주'라 삼킨다",
       "evidence": [{ "scene": "d_main_41_af_02", "lines": ["84-90", "128-132"] }],
       "reason": "'혐오감이 꾸물대며 올라온다 · 쓰레기 자식들'. 뒤에 '방주에 별은 언제나 있었다'(F2240)로 돌아선다.",
       "confidence": "추정",
       "points": ["F2240"],
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 좋아해 주는 훨씬 많은 사람들을 위해 노래하겠다던 · 후 웃으며 핸드폰을 들이대는 군중에 혐오가 치밀어 '이게 방주'라 삼키는"
+        }
+      ]
     },
     {
       "id": "D863",
       "person": "person:E.H.",
       "aspect": "신념",
       "act": "변화",
-      "before": "아무도 돕지 않으니 아우터 림은 스스로 지켜야 한다던",
-      "after": "이제 혼자 하지 않아도 된다며 믿고 홀로 위험한 추적에 나서는",
+      "before": "아무도 돕지 않으니 아우터 림은 스스로 지켜야 한다고 했다",
+      "after": "이제 혼자 하지 않아도 된다며 믿고 홀로 위험한 추적에 나선다",
       "evidence": [{ "scene": "d_main_41_af_05", "lines": ["6-14"] }],
       "reason": "'이제 혼자서 하지 않아도 되니까. 믿자' — 야광봉을 남기고 터널로 들어간다.",
       "confidence": "추정",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아무도 돕지 않으니 아우터 림은 스스로 지켜야 한다던 · 후 이제 혼자 하지 않아도 된다며 믿고 홀로 위험한 추적에 나서는"
+        }
+      ]
     },
     {
       "id": "D864",
@@ -456,13 +619,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:해머링"],
-      "text": "처음 본 자기를 구하려 목숨까지 건 생명의 은인이라, 그 머리를 열라는 지시에 울며 사죄하는",
+      "text": "처음 본 자기를 구하려 목숨까지 건 생명의 은인이라, 그 머리를 열라는 지시에 울며 사죄한다",
       "evidence": [{ "scene": "d_main_41_af_05", "lines": ["38-46", "69-70"] }],
       "reason": "'해머링 님 … 죄송해요'.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "처음 본 자기를 구하려 목숨까지 건 생명의 은인이라, 그 머리를 열라는 지시에 울며 사죄하는"
+        }
+      ]
     },
     {
       "id": "D865",
@@ -470,14 +643,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:식스오"],
-      "before": "시키는 대로 운반하던 말 잘 듣는 손발",
-      "after": "생명의 은인의 머리 앞에서 처음 '못 하겠다' 버티다 로지를 부르자 굴복하는",
+      "before": "시키는 대로 운반하던 말 잘 듣는 손발이다",
+      "after": "생명의 은인의 머리 앞에서 처음 '못 하겠다' 버티다 로지를 부르자 굴복한다",
       "evidence": [{ "scene": "d_main_41_af_05", "lines": ["34-58", "84-87"] }],
       "reason": "#000000 '평소에는 말을 잘 들어서 좋았는데 지상에 한 번 갔다 오더니'.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 시키는 대로 운반하던 말 잘 듣는 손발 · 후 생명의 은인의 머리 앞에서 처음 '못 하겠다' 버티다 로지를 부르자 굴복하는"
+        }
+      ]
     },
     {
       "id": "D866",
@@ -485,13 +668,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아비스타"],
-      "text": "아비스타의 옛 작업물을 보여 홍보 영상을 맡기고, 원망한 적 없으니 다시는 그런 짓 하지 말라는",
+      "text": "아비스타의 옛 작업물을 보여 홍보 영상을 맡기고, 원망한 적 없으니 다시는 그런 짓 하지 말라고 한다",
       "evidence": [{ "scene": "d_main_41_af_07", "lines": ["20-30"] }],
       "reason": "'우리는, 너 원망한 적 한 번도 없으니까. 힘들었겠다'.",
       "confidence": "확실",
       "time": "S269",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M37" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "아비스타의 옛 작업물을 보여 홍보 영상을 맡기고, 원망한 적 없으니 다시는 그런 짓 하지 말라는"
+        }
+      ]
     }
   ],
   "life": [

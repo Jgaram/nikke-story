@@ -215,20 +215,30 @@
       "person": "person:제인",
       "aspect": "신념",
       "act": "기준",
-      "text": "고아가 행복해지는 길은 입양뿐이라 믿어, 오빠와 같은 곳에 입양되어 행복하게 사는 것을 꿈꾸는",
+      "text": "고아가 행복해지는 길은 입양뿐이라 믿어, 오빠와 같은 곳에 입양되어 행복하게 사는 것을 꿈꾼다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_17", "lines": ["54-64"] }],
       "reason": "#54-55 · #63-64.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "고아가 행복해지는 길은 입양뿐이라 믿어, 오빠와 같은 곳에 입양되어 행복하게 사는 것을 꿈꾸는"
+        }
+      ]
     },
     {
       "id": "D1679",
       "person": "person:제인",
       "aspect": "신념",
       "act": "변화",
-      "before": "입양만을 바라 숙제(살인)를 하던",
-      "after": "사람을 죽이지 않는 법을 알았으니 센터를 떠나 평범한 삶을 살겠다는",
+      "before": "입양만을 바라 숙제(살인)를 했다",
+      "after": "사람을 죽이지 않는 법을 알았으니 센터를 떠나 평범한 삶을 살겠다고 한다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_17", "lines": ["68-81"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["157-161", "170-181"] }],
@@ -236,7 +246,17 @@
       "reason": "치사토의 '사람을 돕는 총'(17) → 26#158-159 '중요한 건 제 마음' · #180-181.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 입양만을 바라 숙제(살인)를 하던 · 후 사람을 죽이지 않는 법을 알았으니 센터를 떠나 평범한 삶을 살겠다는"
+        }
+      ]
     },
     {
       "id": "D1680",
@@ -244,12 +264,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레인"],
-      "text": "쌍둥이 오빠를 정말 좋아해 '맨날 제 걱정만 한다'며 시간표가 안 맞아 함께 못 오는 것을 아쉬워하는",
+      "text": "쌍둥이 오빠를 정말 좋아해 '맨날 제 걱정만 한다'며 시간표가 안 맞아 함께 못 오는 것을 아쉬워한다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_11", "lines": ["1-12"] }],
       "reason": "#4 · #10-12.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "쌍둥이 오빠를 정말 좋아해 '맨날 제 걱정만 한다'며 시간표가 안 맞아 함께 못 오는 것을 아쉬워하는"
+        }
+      ]
     },
     {
       "id": "D1681",
@@ -257,15 +287,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레인"],
-      "before": "오빠가 가지 않으면 자기도 갈 수 없다던",
-      "after": "제 선택으로 오빠를 살렸다며 갇혀 있겠다면 그러라고 하고 혼자 떠나는",
+      "before": "오빠가 가지 않으면 자기도 갈 수 없다고 했다",
+      "after": "제 선택으로 오빠를 살렸다며 갇혀 있겠다면 그러라고 하고 혼자 떠난다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["71-79"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["170-181"] }],
       "reason": "17#62 '오빠가 가지 않으면 저도 갈 수 없어요' → #173-179.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 오빠가 가지 않으면 자기도 갈 수 없다던 · 후 제 선택으로 오빠를 살렸다며 갇혀 있겠다면 그러라고 하고 혼자 떠나는"
+        }
+      ]
     },
     {
       "id": "D1682",
@@ -273,12 +313,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:제니퍼"],
-      "text": "'선생님'의 명령대로 깍듯이 인사하고 지휘관의 일행에게 총을 겨누는",
+      "text": "'선생님'의 명령대로 깍듯이 인사하고 지휘관의 일행에게 총을 겨눈다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_24", "lines": ["47-50", "105-108"] }],
       "reason": "#48-50 · #108 '···네.'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'선생님'의 명령대로 깍듯이 인사하고 지휘관의 일행에게 총을 겨누는" }
+      ]
     },
     {
       "id": "D1683",
@@ -286,8 +329,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:제니퍼"],
-      "before": "가족이라 여겨 따르던 선생님",
-      "after": "'가족도 아닌 저를 키워주셔서 감사했다'며 거짓말로 달아나려는 그를 쏘는",
+      "before": "가족이라 여겨 따르던 선생님이다",
+      "after": "'가족도 아닌 저를 키워주셔서 감사했다'며 거짓말로 달아나려는 그를 쏜다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_25", "lines": ["76-86"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["87-131"] }],
@@ -295,7 +338,17 @@
       "reason": "#94 '이미 가족이니까 괜찮다고' → #99-100 '추해요' · #131.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가족이라 여겨 따르던 선생님 · 후 '가족도 아닌 저를 키워주셔서 감사했다'며 거짓말로 달아나려는 그를 쏘는"
+        }
+      ]
     },
     {
       "id": "D1684",
@@ -303,12 +356,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["org:카페_스위티"],
-      "text": "카페도 초대도 처음이라 쭈뼛거리면서 정말 기뻤다고 거듭 고마워하는",
+      "text": "카페도 초대도 처음이라 쭈뼛거리면서 정말 기뻤다고 거듭 고마워한다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_07", "lines": ["45-64"] }],
       "reason": "#47 · #59-64.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "카페도 초대도 처음이라 쭈뼛거리면서 정말 기뻤다고 거듭 고마워하는" }
+      ]
     },
     {
       "id": "D1685",
@@ -316,8 +372,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["org:카페_스위티"],
-      "before": "초대받아 쭈뼛거리던 꼬마 손님",
-      "after": "감시인과의 외출 때마다 놀러 오고 싶다며 알바로 일하게 된",
+      "before": "초대받아 쭈뼛거리던 꼬마 손님이다",
+      "after": "감시인과의 외출 때마다 놀러 오고 싶다며 알바로 일하게 됐다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["184-186"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_27", "lines": ["89-133"] }],
@@ -325,19 +381,39 @@
       "reason": "#116 · #125-134 — 볼 거리 W41 카페 스위티의 감정선.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 초대받아 쭈뼛거리던 꼬마 손님 · 후 감시인과의 외출 때마다 놀러 오고 싶다며 알바로 일하게 된"
+        }
+      ]
     },
     {
       "id": "D1686",
       "person": "person:레인",
       "aspect": "신념",
       "act": "기준",
-      "text": "고아인 자기들이 즐겁고 평화롭게 살 방법은 입양 하나뿐이라, 동생이 바깥을 따라가려 하면 '배신'이라 다그치는",
+      "text": "고아인 자기들이 즐겁고 평화롭게 살 방법은 입양 하나뿐이라, 동생이 바깥을 따라가려 하면 '배신'이라 다그친다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_17", "lines": ["36-47", "52-58"] }],
       "reason": "#44-47 · #58 — 제인의 신념을 붙드는 쪽.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "고아인 자기들이 즐겁고 평화롭게 살 방법은 입양 하나뿐이라, 동생이 바깥을 따라가려 하면 '배신'이라 다그치는"
+        }
+      ]
     },
     {
       "id": "D1687",
@@ -345,12 +421,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:제니퍼"],
-      "text": "'원장 선생님 이름 함부로 부르지 마'라며 숙제를 못 해 혼난 것을 남 탓하고, 버려지는 순간에도 돌아와 입양시켜 주리라 믿는",
+      "text": "'원장 선생님 이름 함부로 부르지 마'라며 숙제를 못 해 혼난 것을 남 탓하고, 버려지는 순간에도 돌아와 입양시켜 주리라 믿는다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_20", "lines": ["45-52"] }],
       "reason": "#47-52, 25#73-74 '돌아오실 거라 믿어요'까지 이어진다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'원장 선생님 이름 함부로 부르지 마'라며 숙제를 못 해 혼난 것을 남 탓하고, 버려지는 순간에도 돌아와 입양시켜 주리라 믿는"
+        }
+      ]
     },
     {
       "id": "D1688",
@@ -358,8 +444,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "달아난 아이 수색을 맡긴 메신저 의뢰인",
-      "after": "센터를 암살자 훈육소로 바꿀 '계기'를 준 이라 고마워하며 수입 30%로 비즈니스 파트너를 청하는",
+      "before": "달아난 아이 수색을 맡긴 메신저 의뢰인이다",
+      "after": "센터를 암살자 훈육소로 바꿀 '계기'를 준 이라 고마워하며 수입 30%로 비즈니스 파트너를 청한다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_22", "lines": ["43-63"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_22", "lines": ["43-97"] }],
@@ -367,15 +453,25 @@
       "reason": "#70 '전부 지휘관님 덕분' · #83-88. 서브퀘스트 단역의 지휘관 관계 변화.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 달아난 아이 수색을 맡긴 메신저 의뢰인 · 후 센터를 암살자 훈육소로 바꿀 '계기'를 준 이라 고마워하며 수입 30%로 비즈니스 파트너를 청하는"
+        }
+      ]
     },
     {
       "id": "D1689",
       "person": "person:제니퍼",
       "aspect": "소속",
       "act": "변화",
-      "before": "방주 아동 보호 센터 센터장",
-      "after": "엔더슨에게 넘겨져 '살아도 사는 게 아닐' 중죄 처분을 받게 된",
+      "before": "방주 아동 보호 센터 센터장이다",
+      "after": "엔더슨에게 넘겨져 '살아도 사는 게 아닐' 중죄 처분을 받게 됐다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_26", "lines": ["136-141"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_27", "lines": ["70-73"] }],
@@ -383,7 +479,17 @@
       "reason": "처분이 타임라인에 오르게 F2482로 잇는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주 아동 보호 센터 센터장 · 후 엔더슨에게 넘겨져 '살아도 사는 게 아닐' 중죄 처분을 받게 된"
+        }
+      ]
     },
     {
       "id": "D1690",
@@ -402,12 +508,22 @@
       "person": "person:치사토",
       "aspect": "신념",
       "act": "기준",
-      "text": "총은 쓰지만 목숨은 빼앗지 않으려 하고, 총도 쓰기에 따라 사람을 도울 수 있다고 믿는",
+      "text": "총은 쓰지만 목숨은 빼앗지 않으려 하고, 총도 쓰기에 따라 사람을 도울 수 있다고 믿는다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_17", "lines": ["68-73"] }],
       "reason": "25#115 '아이들에게 상처를 입히면 안 돼'로도.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "총은 쓰지만 목숨은 빼앗지 않으려 하고, 총도 쓰기에 따라 사람을 도울 수 있다고 믿는"
+        }
+      ]
     },
     {
       "id": "D1692",
@@ -415,12 +531,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:제인"],
-      "text": "우물쭈물하는 처음 본 아이를 안심할 곳에 데려오려 초대하고, 용의자와 닮았다는 걸 알고도 끝까지 착한 아이라 믿는",
+      "text": "우물쭈물하는 처음 본 아이를 안심할 곳에 데려오려 초대하고, 용의자와 닮았다는 걸 알고도 끝까지 착한 아이라 믿는다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_10", "lines": [19, "26-41"] }],
       "reason": "#33-37 · 26#118-121 '제인은 괜찮을 거야'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "우물쭈물하는 처음 본 아이를 안심할 곳에 데려오려 초대하고, 용의자와 닮았다는 걸 알고도 끝까지 착한 아이라 믿는"
+        }
+      ]
     },
     {
       "id": "D1693",
@@ -453,12 +579,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["org:카페_스위티"],
-      "text": "모르는 세계에 와서 만난 게 카페 스위티라 다행이라며, 노래를 고르고 창고를 해킹 기지로 개조해 뒤를 받치는",
+      "text": "모르는 세계에 와서 만난 게 카페 스위티라 다행이라며, 노래를 고르고 창고를 해킹 기지로 개조해 뒤를 받친다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_04", "lines": ["41-44"] }],
       "reason": "#44 · 13#73-91 '앞으로 서포트 잘 부탁함' '나만 믿거라'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "모르는 세계에 와서 만난 게 카페 스위티라 다행이라며, 노래를 고르고 창고를 해킹 기지로 개조해 뒤를 받치는"
+        }
+      ]
     },
     {
       "id": "D1696",
@@ -466,12 +602,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:치사토", "person:타키나", "person:쿠루미"],
-      "text": "크레디트가 없는 셋을 '손님 아님 · 돈 없음'이라 계산대를 내리치는",
+      "text": "크레디트가 없는 셋을 '손님 아님 · 돈 없음'이라 계산대를 내리친다",
       "evidence": [{ "scene": "fl:lie_cause_recoil_00", "lines": ["86-101"] }],
       "reason": "#99-101.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "크레디트가 없는 셋을 '손님 아님 · 돈 없음'이라 계산대를 내리치는" }
+      ]
     },
     {
       "id": "D1697",
@@ -494,15 +633,25 @@
       "person": "person:프림",
       "aspect": "신념",
       "act": "변화",
-      "before": "아무것도 하지 않고 잠만 자려던",
-      "after": "카페 스위티의 첫 실패를 되풀이하지 않겠다며 센터 조사 · 저격 발견 · 자백 유도에 앞장서는",
+      "before": "아무것도 하지 않고 잠만 자려 했다",
+      "after": "카페 스위티의 첫 실패를 되풀이하지 않겠다며 센터 조사 · 저격 발견 · 자백 유도에 앞장선다",
       "trigger": [{ "scene": "fl:lie_cause_recoil_12", "lines": ["45-72"] }],
       "time": "S299",
       "evidence": [{ "scene": "fl:lie_cause_recoil_13", "lines": ["33-37"] }],
       "reason": "#34 '같은 실수. 반복. 안 됨' · 14#13 '나. 센터. 감'. 앞 기준 D755(fl:boom_the_ghost).",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M71" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아무것도 하지 않고 잠만 자려던 · 후 카페 스위티의 첫 실패를 되풀이하지 않겠다며 센터 조사 · 저격 발견 · 자백 유도에 앞장서는"
+        }
+      ]
     }
   ],
   "life": [],

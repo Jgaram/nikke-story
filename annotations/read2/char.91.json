@@ -26,8 +26,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "친구 사귀는 법을 묻는 상담 상대",
-      "after": "손가락 걸고 약속한 첫 친구 — 해치려는 건 다 죽여 버리겠다며 지켜 주겠다는",
+      "before": "친구 사귀는 법을 묻는 상담 상대였다",
+      "after": "손가락 걸고 약속한 첫 친구 — 해치려는 건 다 죽여 버리겠다며 지켜 주겠다고 한다",
       "trigger": [{ "scene": "ep:d_nikke_vesti_03", "lines": ["81-102"] }],
       "evidence": [{ "scene": "ep:d_nikke_vesti_03", "lines": ["95-111"] }],
       "points": ["F562"],
@@ -35,7 +35,17 @@
       "confidence": "확실",
       "status": "확정",
       "time": "S372",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 친구 사귀는 법을 묻는 상담 상대 · 후 손가락 걸고 약속한 첫 친구 — 해치려는 건 다 죽여 버리겠다며 지켜 주겠다는"
+        }
+      ]
     },
     {
       "id": "D1836",
@@ -43,8 +53,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "손가락 걸고 약속한 친구",
-      "after": "하루 종일 생각나는 마음이 우정이 아니라 사랑일 수 있다는 말에 '거짓말'이라며 울고 마는",
+      "before": "손가락 걸고 약속한 친구였다",
+      "after": "하루 종일 생각나는 마음이 우정이 아니라 사랑일 수 있다는 말에 '거짓말'이라며 울고 만다",
       "trigger": [{ "scene": "ep:d_nikke_vesti_04", "lines": ["79-153"] }],
       "evidence": [{ "scene": "ep:d_nikke_vesti_05", "lines": ["26-39", "66-88"] }],
       "points": ["F562"],
@@ -52,15 +62,25 @@
       "confidence": "확실",
       "status": "확정",
       "time": "S372",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 손가락 걸고 약속한 친구 · 후 하루 종일 생각나는 마음이 우정이 아니라 사랑일 수 있다는 말에 '거짓말'이라며 울고 마는"
+        }
+      ]
     },
     {
       "id": "D1837",
       "person": "person:베스티",
       "aspect": "성격",
       "act": "변화",
-      "before": "괴롭히던 동창들의 조롱에 화내지도 울지도 못하던",
-      "after": "정당방위 명령에 둘을 상처 없이 제압하고 '피라미들이었구나 … 속 시원해'라는",
+      "before": "괴롭히던 동창들의 조롱에 화내지도 울지도 못했다",
+      "after": "정당방위 명령에 둘을 상처 없이 제압하고 '피라미들이었구나 … 속 시원해'라 한다",
       "trigger": [{ "scene": "ep:d_nikke_vesti_04", "lines": ["124-131"] }],
       "evidence": [{ "scene": "ep:d_nikke_vesti_04", "lines": ["134-153"] }],
       "points": ["F559", "F561"],
@@ -68,7 +88,17 @@
       "confidence": "확실",
       "status": "확정",
       "time": "S372",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 괴롭히던 동창들의 조롱에 화내지도 울지도 못하던 · 후 정당방위 명령에 둘을 상처 없이 제압하고 '피라미들이었구나 … 속 시원해'라는"
+        }
+      ]
     }
   ],
   "life": [],

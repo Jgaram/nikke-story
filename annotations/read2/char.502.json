@@ -44,36 +44,23 @@
       "person": "person:일레그",
       "aspect": "신념",
       "act": "변화",
-      "before": "어디나 방주와 다를 바 없는 화면에만 BOOM을 깔아 '사명'을 다할 길이 막힌 슬럼프",
-      "after": "구름에 띄운 BOOM을 보고 트로니와 진짜 하늘을 되찾아 이터널 스카이에 BOOM을 깔겠다는 목표가 확고해진",
-      "trigger": [
-        {
-          "scene": "ep:d_nikke_eleggboomandshock_05",
-          "lines": [
-            "84-91"
-          ]
-        }
-      ],
-      "evidence": [
-        {
-          "scene": "ep:d_nikke_eleggboomandshock_05",
-          "lines": [
-            "156-170"
-          ]
-        }
-      ],
+      "before": "어디나 방주와 다를 바 없는 화면에만 BOOM을 깔아 '사명'을 다할 길이 막힌 슬럼프였다",
+      "after": "구름에 띄운 BOOM을 보고 트로니와 진짜 하늘을 되찾아 이터널 스카이에 BOOM을 깔겠다는 목표가 확고해졌다",
+      "trigger": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["84-91"] }],
+      "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["156-170"] }],
       "time": "S246",
-      "points": [
-        "F1342-2"
-      ],
+      "points": ["F1342-2"],
       "reason": "01#66-85 타성 · 슬럼프 → 05#158 '하고 싶었던 일이 좀 더 확고해진' · #161-164. F1342-2의 드러냄과 같은 장면.",
       "confidence": "확실",
       "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" },
         {
           "decision": "확정",
           "by": "claude",
-          "date": "2026-10-08",
-          "session": "M100"
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 어디나 방주와 다를 바 없는 화면에만 BOOM을 깔아 '사명'을 다할 길이 막힌 슬럼프 · 후 구름에 띄운 BOOM을 보고 트로니와 진짜 하늘을 되찾아 이터널 스카이에 BOOM을 깔겠다는 목표가 확고해진"
         }
       ]
     },
@@ -83,37 +70,23 @@
       "person": "person:일레그",
       "aspect": "관계",
       "act": "변화",
-      "with": [
-        "person:지휘관"
-      ],
-      "before": "BOOM 영업 길에 같이 다니며 놀아 달라 조르는 놀이 친구",
-      "after": "'기회라면 얼마든지 만들어 줄게'라는 말에 불안을 털고, 함께 만든 [작품]을 보며 지상을 되찾을 때까지 도와 달라는",
-      "trigger": [
-        {
-          "scene": "ep:d_nikke_eleggboomandshock_05",
-          "lines": [
-            "69-76"
-          ]
-        }
-      ],
-      "evidence": [
-        {
-          "scene": "ep:d_nikke_eleggboomandshock_05",
-          "lines": [
-            119,
-            "171-173"
-          ]
-        }
-      ],
+      "with": ["person:지휘관"],
+      "before": "BOOM 영업 길에 같이 다니며 놀아 달라 조르는 놀이 친구였다",
+      "after": "'기회라면 얼마든지 만들어 줄게'라는 말에 불안을 털고, 함께 만든 [작품]을 보며 지상을 되찾을 때까지 도와 달라고 한다",
+      "trigger": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": ["69-76"] }],
+      "evidence": [{ "scene": "ep:d_nikke_eleggboomandshock_05", "lines": [119, "171-173"] }],
       "time": "S246",
       "reason": "#73 '기회라면 내가 얼마든지' → #75 '다시 시도하면 되는 거져' · #119 '저희가 만든 [작품]' · #171 '그때까지 도와주실 거져?'. 앞 모습은 D2094.",
       "confidence": "확실",
       "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M100" },
         {
           "decision": "확정",
           "by": "claude",
-          "date": "2026-10-08",
-          "session": "M100"
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 BOOM 영업 길에 같이 다니며 놀아 달라 조르는 놀이 친구 · 후 '기회라면 얼마든지 만들어 줄게'라는 말에 불안을 털고, 함께 만든 [작품]을 보며 지상을 되찾을 때까지 도와 달라는"
         }
       ]
     }

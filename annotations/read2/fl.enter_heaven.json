@@ -146,13 +146,16 @@
       "id": "E1043",
       "act": "암시",
       "points": ["F2490"],
-      "text": "잉그리드가 E.H.를 판단할 '자격이 없다'고 한다 — 둘이 이부 자매라서",
+      "text": "잉그리드가 E.H.를 판단할 '자격이 없다'고 한다 — 둘이 이부 자매이기 때문이다",
       "about": ["person:잉그리드", "person:E.H."],
       "evidence": [{ "scene": "fl:enter_heaven_01", "lines": ["45-48"] }],
       "reason": "#48 '판단할 자격이 없다' → 06#16-20 이부 자매, 지휘관 '그래서 자격이 없다고 한 거구나'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "잉그리드가 E.H.를 판단할 '자격이 없다'고 한다 — 둘이 이부 자매라서" }
+      ]
     },
     {
       "id": "E1044",
@@ -210,14 +213,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "반했음을 깨닫고 자수해 기대려는",
-      "after": "다시는 배신하지 않겠다고 맹세하고, 악수하며 몰래 붙인 추적기로 냉동창고까지 구하러 오는",
+      "before": "반했음을 깨닫고 자수해 기대려 했다",
+      "after": "다시는 배신하지 않겠다고 맹세하고, 악수하며 몰래 붙인 추적기로 냉동창고까지 구하러 온다",
       "trigger": [{ "scene": "fl:enter_heaven_02", "lines": ["37-45"] }],
       "evidence": [{ "scene": "fl:enter_heaven_12", "lines": ["67-77"] }],
       "reason": "02#39-42 '앞으로 다시는 배신하지 않을 거야. 맹세할게' → 12#73-77 추적기로 찾아 '구하러 왔으니까'. 볼 거리 W46.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 반했음을 깨닫고 자수해 기대려는 · 후 다시는 배신하지 않겠다고 맹세하고, 악수하며 몰래 붙인 추적기로 냉동창고까지 구하러 오는"
+        }
+      ]
     },
     {
       "id": "D1074",
@@ -225,13 +238,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:E.H."],
-      "before": "크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 서는",
-      "after": "리더로 따르며 '엔터 헤븐을 다시 일으킬 리 없다'고 감싸는",
+      "before": "크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 섰다",
+      "after": "리더로 따르며 '엔터 헤븐을 다시 일으킬 리 없다'고 감싼다",
       "evidence": [{ "scene": "fl:enter_heaven_03", "lines": ["29-33", "78-81"] }],
       "reason": "#33 '우리 리더가 되니까 알겠더라' · #79-81 리더의 말을 꼭 들어 달라 — D287(ch24) 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 크로우를 가장 죽이고 싶어 하는 둘에게 문자를 보내 E.H. 편에 서는 · 후 리더로 따르며 '엔터 헤븐을 다시 일으킬 리 없다'고 감싸는"
+        }
+      ]
     },
     {
       "id": "D1075",
@@ -239,20 +262,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:E.H."],
-      "text": "E.H.를 '대장'이라 부르며 물지 말라는 게 많아 싫다면서도 '나한테 잘해줘'라 따르는",
+      "text": "E.H.를 '대장'이라 부르며 물지 말라는 게 많아 싫다면서도 '나한테 잘해줘'라며 따른다",
       "evidence": [{ "scene": "fl:enter_heaven_03", "lines": ["34-41"] }],
       "reason": "#34 '대장 나한테 잘해줘' · #38 물어뜯으면 안 된대 · #41 '대장 좋아!'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "E.H.를 '대장'이라 부르며 물지 말라는 게 많아 싫다면서도 '나한테 잘해줘'라 따르는"
+        }
+      ]
     },
     {
       "id": "D1076",
       "person": "person:E.H.",
       "aspect": "신념",
       "act": "변화",
-      "before": "어머니를 따라 아우터 림엔 쓰레기 같은 이들만 산다고 믿던 후계자",
-      "after": "강자가 약자를 도와 함께 강해지는 [인간의 강함]을 증명하겠다는",
+      "before": "어머니를 따라 아우터 림엔 쓰레기 같은 이들만 산다고 믿던 후계자다",
+      "after": "강자가 약자를 도와 함께 강해지는 [인간의 강함]을 증명하겠다고 한다",
       "trigger": [{ "scene": "fl:enter_heaven_06", "lines": ["64-101"] }],
       "time": "S305",
       "evidence": [{ "scene": "fl:enter_heaven_07", "lines": ["60-70"] }],
@@ -260,15 +293,25 @@
       "reason": "06#58 '나 역시 그땐 그런 사람들만 있다고 생각' → 아이들을 만남 → 07#65-69 [인간의 강함]. 회상(S305).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 어머니를 따라 아우터 림엔 쓰레기 같은 이들만 산다고 믿던 후계자 · 후 강자가 약자를 도와 함께 강해지는 [인간의 강함]을 증명하겠다는"
+        }
+      ]
     },
     {
       "id": "D1077",
       "person": "person:E.H.",
       "aspect": "소속",
       "act": "변화",
-      "before": "시험에서 이겨 이름에 [엘리시온]을 받은 엘리시온 후계자",
-      "after": "후계자 자리를 버리고 무장만 지닌 빈털터리로 아우터 림에 들어간",
+      "before": "시험에서 이겨 이름에 [엘리시온]을 받은 엘리시온 후계자다",
+      "after": "후계자 자리를 버리고 무장만 지닌 빈털터리로 아우터 림에 들어갔다",
       "trigger": [{ "scene": "fl:enter_heaven_07", "lines": ["0-38"] }],
       "time": "S305",
       "evidence": [{ "scene": "fl:enter_heaven_07", "lines": ["46-57"] }],
@@ -276,7 +319,17 @@
       "reason": "06#45-46 후계자 · 07#47 '이 자리를 버리겠다' · #56-57 빈털터리. 회상(S305).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 시험에서 이겨 이름에 [엘리시온]을 받은 엘리시온 후계자 · 후 후계자 자리를 버리고 무장만 지닌 빈털터리로 아우터 림에 들어간"
+        }
+      ]
     },
     {
       "id": "D1078",
@@ -299,15 +352,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:크로우"],
-      "before": "방식은 달라도 헌신적인 모습에 동료라 여기던",
-      "after": "매력적인 선동가로 보고 그 테러 계획을 반드시 막아야겠다는",
+      "before": "방식은 달라도 헌신적인 모습에 동료라 여겼다",
+      "after": "매력적인 선동가로 보고 그 테러 계획을 반드시 막아야겠다고 여긴다",
       "trigger": [{ "scene": "fl:enter_heaven_10", "lines": ["16-28"] }],
       "time": "S305",
       "evidence": [{ "scene": "fl:enter_heaven_10", "lines": ["91-109"] }],
       "reason": "#9 '동료라고 생각했었던' → #97 '매력적인 선동가' · #107 '반드시 막아야겠다'. 회상(S305), D288(ch24)보다 작중 앞.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방식은 달라도 헌신적인 모습에 동료라 여기던 · 후 매력적인 선동가로 보고 그 테러 계획을 반드시 막아야겠다는"
+        }
+      ]
     },
     {
       "id": "D1080",
@@ -328,8 +391,8 @@
       "person": "person:E.H.",
       "aspect": "소속",
       "act": "변화",
-      "before": "아우터 림을 빛으로 이끌던 엔터 헤븐의 리더",
-      "after": "이름을 버리고 [E.H.]로만 사는, 원치 않게 테러 조직의 리더가 된",
+      "before": "아우터 림을 빛으로 이끌던 엔터 헤븐의 리더다",
+      "after": "이름을 버리고 [E.H.]로만 살며, 원치 않게 테러 조직의 리더가 됐다",
       "trigger": [{ "scene": "fl:enter_heaven_11", "lines": ["23-39"] }],
       "time": "S305",
       "evidence": [{ "scene": "fl:enter_heaven_11", "lines": ["50-66"] }],
@@ -337,7 +400,17 @@
       "reason": "#54 '원하든 원하지 않든 테러 조직의 리더' · #62 [E.H.]로서만 · #66 위선적 설득. 회상(S305).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아우터 림을 빛으로 이끌던 엔터 헤븐의 리더 · 후 이름을 버리고 [E.H.]로만 사는, 원치 않게 테러 조직의 리더가 된"
+        }
+      ]
     },
     {
       "id": "D1082",
@@ -345,12 +418,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "자기 일에 휘말리게 했다며 거듭 사과하고, 처음으로 속시원히 과거를 털어놓은 뒤 판단을 맡기는",
+      "text": "자기 일에 휘말리게 했다며 거듭 사과하고, 처음으로 속시원히 과거를 털어놓은 뒤 판단을 맡긴다",
       "evidence": [{ "scene": "fl:enter_heaven_12", "lines": ["0-8"] }],
       "reason": "05#60-61 · #77 사과, 12#5 '속시원히 이야기해 본 건 처음' · #8 '어떤 판단을 내리든 맡길게'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "자기 일에 휘말리게 했다며 거듭 사과하고, 처음으로 속시원히 과거를 털어놓은 뒤 판단을 맡기는"
+        }
+      ]
     },
     {
       "id": "D1083",
@@ -358,14 +441,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "판단을 맡기는",
-      "after": "또다시 빛에 눈이 멀면 막아 달라고 부탁하고, 속죄를 응원하겠다는 말에 미소 짓는",
+      "before": "판단을 맡겼다",
+      "after": "또다시 빛에 눈이 멀면 막아 달라고 부탁하고, 속죄를 응원하겠다는 말에 미소 짓는다",
       "evidence": [{ "scene": "fl:enter_heaven_13", "lines": ["52-69"] }],
       "points": ["F2894"],
       "reason": "#56 '날 막아줄 수 있을까' · #66 '속죄를 지켜보고 응원할게' · #68-69 미소 '그것만으로도 충분해'. 볼 거리 W46.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 판단을 맡기는 · 후 또다시 빛에 눈이 멀면 막아 달라고 부탁하고, 속죄를 응원하겠다는 말에 미소 짓는"
+        }
+      ]
     },
     {
       "id": "D1084",
@@ -373,15 +466,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:E.H."],
-      "before": "판단할 자격이 없다며 E.H.의 일을 남에게 맡기는",
-      "after": "처음이자 마지막으로 '동생의 이야기를 들어줘서 고마웠다'며 고개를 숙이는",
+      "before": "판단할 자격이 없다며 E.H.의 일을 남에게 맡겼다",
+      "after": "처음이자 마지막으로 '동생의 이야기를 들어줘서 고마웠다'며 고개를 숙인다",
       "trigger": [{ "scene": "fl:enter_heaven_12", "lines": ["0-8"] }],
       "evidence": [{ "scene": "fl:enter_heaven_14", "lines": ["42-57"] }],
       "points": ["F2506"],
       "reason": "01#48 '자격이 없다' → 14#48-50 고개 숙여 '동생의 이야기' · #44 '잊어라'. 언니로서의 속내가 처음 드러난다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M44", "note": "M44 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 판단할 자격이 없다며 E.H.의 일을 남에게 맡기는 · 후 처음이자 마지막으로 '동생의 이야기를 들어줘서 고마웠다'며 고개를 숙이는"
+        }
+      ]
     }
   ],
   "life": [

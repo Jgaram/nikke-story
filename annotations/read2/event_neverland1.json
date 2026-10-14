@@ -220,15 +220,25 @@
       "person": "person:미카",
       "aspect": "성격",
       "act": "변화",
-      "before": "벨로타를 잃자 체념해 절벽 끝으로 걸어가던",
-      "after": "평소라면 건너지 않았을 무너지는 다리를 달려 벨로타를 지키는",
+      "before": "벨로타를 잃자 체념해 절벽 끝으로 걸어갔다",
+      "after": "평소라면 건너지 않았을 무너지는 다리를 달려 벨로타를 지킨다",
       "trigger": [{ "scene": "event_neverland2_03_s", "lines": ["49-65"] }],
       "time": "S113",
       "evidence": [{ "scene": "event_neverland2_06_s", "lines": ["38-67"] }],
       "reason": "#38-40 '평소라면 절대 건너려 하지 않았을' · #65-67 '내가 지킬 거야'. 계기는 루드밀라의 '체념하지 마라'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 벨로타를 잃자 체념해 절벽 끝으로 걸어가던 · 후 평소라면 건너지 않았을 무너지는 다리를 달려 벨로타를 지키는"
+        }
+      ]
     },
     {
       "id": "D1506",
@@ -236,30 +246,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:벨로타"],
-      "before": "벨로타가 지켜 주고 자기는 곁에서 말리기만 하던",
-      "after": "이번엔 내가 지켰다며 앞으로도 계속 같이 있자는",
+      "before": "벨로타가 지켜 주고 자기는 곁에서 말리기만 했다",
+      "after": "이번엔 내가 지켰다며 앞으로도 계속 같이 있자고 한다",
       "trigger": [{ "scene": "event_neverland2_06_s", "lines": ["56-67"] }],
       "time": "S113",
       "evidence": [{ "scene": "event_neverland2_06_e", "lines": ["12-26", "48-51"] }],
       "reason": "#16-17 '예전에는 벨로타가 날 지켜줬는데 이번에는 내가'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 벨로타가 지켜 주고 자기는 곁에서 말리기만 하던 · 후 이번엔 내가 지켰다며 앞으로도 계속 같이 있자는"
+        }
+      ]
     },
     {
       "id": "D1507",
       "person": "person:미카",
       "aspect": "신념",
       "act": "변화",
-      "before": "크리스마스는 불행한 날이라 밖에 나가지 않으려던",
-      "after": "이제 불행은 없다 — 크리스마스는 행복한 날이고 벨로타가 길을 잃으면 찾으러 가면 된다는",
+      "before": "크리스마스는 불행한 날이라 밖에 나가지 않으려 했다",
+      "after": "이제 불행은 없다며, 크리스마스는 행복한 날이고 벨로타가 길을 잃으면 찾으러 가면 된다고 한다",
       "trigger": [{ "scene": "event_neverland2_06_e", "lines": ["16-23"] }],
       "time": "S113",
       "evidence": [{ "scene": "event_neverland2_epilogue", "lines": ["69-84"] }],
       "reason": "#81-84 — 02_s#11-12의 말(#86-88로 되울림)과 맞선다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 크리스마스는 불행한 날이라 밖에 나가지 않으려던 · 후 이제 불행은 없다 — 크리스마스는 행복한 날이고 벨로타가 길을 잃으면 찾으러 가면 된다는"
+        }
+      ]
     },
     {
       "id": "D1508",
@@ -267,15 +297,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:미카"],
-      "before": "미카를 놀리며 말릴 새도 없이 혼자 뛰쳐나가던",
-      "after": "고생시킨 미카 옆에 꼭 붙어 있기로 했다가, 혼자 가게를 보겠다는 미카의 배웅을 받는",
+      "before": "미카를 놀리며 말릴 새도 없이 혼자 뛰쳐나갔다",
+      "after": "고생시킨 미카 옆에 꼭 붙어 있기로 했다가, 혼자 가게를 보겠다는 미카의 배웅을 받는다",
       "trigger": [{ "scene": "event_neverland2_06_e", "lines": ["42-45"] }],
       "time": "S113",
       "evidence": [{ "scene": "event_neverland2_epilogue", "lines": ["64-75"] }],
       "reason": "#66-67 '이제부터 미카 옆에 꼬옥' → 미카가 '다녀와'(#69-75).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 미카를 놀리며 말릴 새도 없이 혼자 뛰쳐나가던 · 후 고생시킨 미카 옆에 꼭 붙어 있기로 했다가, 혼자 가게를 보겠다는 미카의 배웅을 받는"
+        }
+      ]
     },
     {
       "id": "D1509",
@@ -295,15 +335,25 @@
       "person": "person:루드밀라",
       "aspect": "신념",
       "act": "변화",
-      "before": "가문이 건너건너 고아원을 후원한다고만 듣고 살피지 않았던",
-      "after": "과거의 어른과 현재의 어른은 다르다는 걸 보여 주겠다며 과거의 반복을 막으려는",
+      "before": "가문이 건너건너 고아원을 후원한다고만 듣고 살피지 않았다",
+      "after": "과거의 어른과 현재의 어른은 다르다는 걸 보여 주겠다며 과거의 반복을 막으려 한다",
       "trigger": [{ "scene": "event_neverland1_04_s", "lines": ["97-104"] }],
       "time": "S113",
       "evidence": [{ "scene": "event_neverland2_04_s", "lines": ["6-18"] }],
       "reason": "#10-12 '조금 더 세세하게 살펴봤어야' · #15-17. 계기는 벨로타의 고백.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M61" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가문이 건너건너 고아원을 후원한다고만 듣고 살피지 않았던 · 후 과거의 어른과 현재의 어른은 다르다는 걸 보여 주겠다며 과거의 반복을 막으려는"
+        }
+      ]
     }
   ],
   "life": [],

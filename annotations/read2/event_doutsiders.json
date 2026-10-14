@@ -49,7 +49,7 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'지금은 우리 목줄을 쥔 사람'이라 믿어 주는",
+      "before": "'지금은 우리 목줄을 쥔 사람'이라 믿어 주는 사이",
       "after": "숨긴 폭탄 앱을 따지고 핸드폰을 맞바꿔 '공범자'가 된 — 이용당한 줄 알면서 고맙다는 말에 '어이가 없다'면서 번호를 남기는 사이",
       "trigger": [{ "scene": "event_doutsiders_03", "lines": ["42-46"] }],
       "points": ["F779"],
@@ -57,7 +57,10 @@
       "reason": "#48-52 · 72-75. 끝은 05_e#7-23",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-05", "session": "M05" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 '지금은 우리 목줄을 쥔 사람'이라 믿어 주는" }
+      ]
     }
   ],
   "life": [

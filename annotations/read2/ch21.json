@@ -132,15 +132,25 @@
       "person": "person:노아",
       "aspect": "성격",
       "act": "변화",
-      "before": "혼자 남겨지면 머뭇거리고 다 같이 있어야 안심하는 막내",
-      "after": "스스로 판단해 앵커 와이어를 달려 마더 웨일을 떨어뜨리고 '우리 둘만의 비밀'이라 우쭐대는",
+      "before": "혼자 남겨지면 머뭇거리고 다 같이 있어야 안심하는 막내다",
+      "after": "스스로 판단해 앵커 와이어를 달려 마더 웨일을 떨어뜨리고 '우리 둘만의 비밀'이라 우쭐댄다",
       "trigger": [{ "scene": "d_main_21_09_s", "lines": ["49-58"] }],
       "points": ["F868"],
       "evidence": [{ "scene": "d_main_21_09_s", "lines": ["91-98"] }],
       "reason": "#94 '나 우쭐대고 싶어'. 요한이 '잘했다, 스스로 판단하는 버릇을 들여라'(09_e#33-34)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 혼자 남겨지면 머뭇거리고 다 같이 있어야 안심하는 막내 · 후 스스로 판단해 앵커 와이어를 달려 마더 웨일을 떨어뜨리고 '우리 둘만의 비밀'이라 우쭐대는"
+        }
+      ]
     },
     {
       "id": "D212",
@@ -148,14 +158,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:네온"],
-      "before": "'약골 뒷바라지'나 하라며 투덜대는",
-      "after": "'안경'이라 부르며 '나중에 또 올 거지?' 묻는 둘만의 비밀을 가진 사이",
+      "before": "'약골 뒷바라지'나 하라며 투덜댄다",
+      "after": "'안경'이라 부르며 '나중에 또 올 거지?' 묻는 둘만의 비밀을 가진 사이다",
       "trigger": [{ "scene": "d_main_21_09_s", "lines": ["74-99"] }],
       "evidence": [{ "scene": "d_main_21_10_e", "lines": ["129-133"] }],
       "reason": "앞 모습 07_e#131, #130-132",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '약골 뒷바라지'나 하라며 투덜대는 · 후 '안경'이라 부르며 '나중에 또 올 거지?' 묻는 둘만의 비밀을 가진 사이"
+        }
+      ]
     },
     {
       "id": "D213",
@@ -208,44 +228,74 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'가련한 피식자' · '인간아'라 부르며 시련을 지켜보는",
-      "after": "'낙원의 손님'이자 '함께 싸운 전우'라 하고 '종자야'라 부르는",
+      "before": "'가련한 피식자' · '인간아'라 부르며 시련을 지켜본다",
+      "after": "'낙원의 손님'이자 '함께 싸운 전우'라 하고 '종자야'라 부른다",
       "trigger": [{ "scene": "d_main_20_09", "lines": ["3-63"] }],
       "points": ["F764"],
       "evidence": [{ "scene": "d_main_21_02_e", "lines": ["62-65"] }],
       "reason": "#64-65, 07_s#23 · 10_e#11 · 123-125 '종자야'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '가련한 피식자' · '인간아'라 부르며 시련을 지켜보는 · 후 '낙원의 손님'이자 '함께 싸운 전우'라 하고 '종자야'라 부르는"
+        }
+      ]
     },
     {
       "id": "D217",
       "person": "person:지휘관",
       "aspect": "신념",
       "act": "변화",
-      "before": "니케가 스스로 미래를 고르는 세계의 열쇠로 언체인드를 구하는",
-      "after": "찾은 언체인드를 방주에서 양산해 온전한 자기 힘으로 삼고, 마리안을 되찾을 힘을 키우려는",
+      "before": "니케가 스스로 미래를 고르는 세계의 열쇠로 언체인드를 구한다",
+      "after": "찾은 언체인드를 방주에서 양산해 온전한 자기 힘으로 삼고, 마리안을 되찾을 힘을 키우려 한다",
       "trigger": [{ "scene": "d_main_21_01_s", "lines": ["46-66"] }],
       "points": ["F870"],
       "evidence": [{ "scene": "d_main_21_10_e", "lines": ["76-88"] }],
       "reason": "#79-80 · 84-88. 요한 '그런 것에 관심이 있는 줄은 몰랐군'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케가 스스로 미래를 고르는 세계의 열쇠로 언체인드를 구하는 · 후 찾은 언체인드를 방주에서 양산해 온전한 자기 힘으로 삼고, 마리안을 되찾을 힘을 키우려는"
+        }
+      ]
     },
     {
       "id": "D218",
       "person": "person:파피용",
       "aspect": "소속",
       "act": "변화",
-      "before": "버닝엄의 니케로 카운터스와 지상에 동행",
-      "after": "'임무 수행 중'이라며 에덴에 남아 도로시와 방주행 거래를 하는",
+      "before": "버닝엄의 니케로 카운터스와 지상에 동행했다",
+      "after": "'임무 수행 중'이라며 에덴에 남아 도로시와 방주행 거래를 한다",
       "points": ["F871"],
       "evidence": [{ "scene": "d_main_21af_01", "lines": ["0-16"] }],
       "reason": "#0-3 · 16. 뒤는 #51-60",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M06" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 버닝엄의 니케로 카운터스와 지상에 동행 · 후 '임무 수행 중'이라며 에덴에 남아 도로시와 방주행 거래를 하는"
+        }
+      ]
     }
   ],
   "life": [

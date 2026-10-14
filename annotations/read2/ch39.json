@@ -318,24 +318,37 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "선구자들에게 귀가 닳도록 들은 지휘관을 '대협'이라 부르며 만나 뵈어 영광이라 하는",
+      "text": "선구자들에게 귀가 닳도록 들은 지휘관을 '대협'이라 부르며 만나 뵈어 영광이라 한다",
       "reason": "#71-73 · #86.",
       "evidence": [{ "scene": "d_main_39_05", "lines": ["71-73", 86] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "선구자들에게 귀가 닳도록 들은 지휘관을 '대협'이라 부르며 만나 뵈어 영광이라 하는" }
+      ]
     },
     {
       "id": "D764",
       "person": "person:나유타",
       "aspect": "신념",
       "act": "기준",
-      "text": "진실과 비밀은 힘 있는 이가 짊어져야 빛을 발한다며, 상대의 힘을 보기 전엔 답하지 않는",
+      "text": "진실과 비밀은 힘 있는 이가 짊어져야 빛을 발한다며, 상대의 힘을 보기 전엔 답하지 않는다",
       "reason": "#65-67. 10#52-54에서 싸움을 지켜보겠다고 한다.",
       "evidence": [{ "scene": "d_main_39_07", "lines": ["64-67"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "진실과 비밀은 힘 있는 이가 짊어져야 빛을 발한다며, 상대의 힘을 보기 전엔 답하지 않는"
+        }
+      ]
     },
     {
       "id": "D765",
@@ -343,12 +356,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레비아탄"],
-      "text": "헬레틱을 만난 것을 행운이라 외치고, 소통에 장벽이 없으니 친구가 될 수 있다며 친구가 되어 달라 하는",
+      "text": "헬레틱을 만난 것을 행운이라 외치고, 소통에 장벽이 없으니 친구가 될 수 있다며 친구가 되어 달라 한다",
       "reason": "#36-45. 01#104-106에서 '이런 행운이!'.",
       "evidence": [{ "scene": "d_main_39_02", "lines": ["36-45"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "헬레틱을 만난 것을 행운이라 외치고, 소통에 장벽이 없으니 친구가 될 수 있다며 친구가 되어 달라 하는"
+        }
+      ]
     },
     {
       "id": "D766",
@@ -356,12 +379,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:랩칠리언"],
-      "text": "랩쳐와 친구라는 말을 '믿으라고?' 하며 무슨 속셈인지 보겠다고 따라가는",
+      "text": "랩쳐와 친구라는 말을 '믿으라고?' 하며 무슨 속셈인지 보겠다고 따라간다",
       "reason": "#7 · #60-61. 11#97-100에서도 친구처럼 보였냐는 물음에 답하지 않는다.",
       "evidence": [{ "scene": "d_main_39_02", "lines": [7, "60-61"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "랩쳐와 친구라는 말을 '믿으라고?' 하며 무슨 속셈인지 보겠다고 따라가는" }
+      ]
     },
     {
       "id": "D767",
@@ -383,14 +409,17 @@
       "person": "person:E.H.",
       "aspect": "신체",
       "act": "변화",
-      "before": "테러 끝에 목숨이 끊어지기 직전의 인간",
-      "after": "잉그리드에게 부탁해 니케가 된",
+      "before": "테러 끝에 목숨이 끊어지기 직전의 인간이었다",
+      "after": "잉그리드에게 부탁해 니케가 됐다",
       "points": ["F2057"],
       "reason": "#9-11 · #33-34.",
       "evidence": [{ "scene": "d_main_39_af_02", "lines": ["9-11", "33-34"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 테러 끝에 목숨이 끊어지기 직전의 인간 · 후 잉그리드에게 부탁해 니케가 된" }
+      ]
     },
     {
       "id": "D769",
@@ -398,12 +427,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:바이퍼"],
-      "text": "방주에 구멍을 낸 이그조틱을 좋게 볼 수 없다며 벌을 계속 받기를 바라고, 지금의 마음을 듣고서야 '지켜볼게요' 하는",
+      "text": "방주에 구멍을 낸 이그조틱을 좋게 볼 수 없다며 벌을 계속 받기를 바라고, 지금의 마음을 듣고서야 '지켜볼게요' 한다",
       "reason": "#56-61 · #97-98.",
       "evidence": [{ "scene": "d_main_39_af_02", "lines": ["56-61", "97-98"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "방주에 구멍을 낸 이그조틱을 좋게 볼 수 없다며 벌을 계속 받기를 바라고, 지금의 마음을 듣고서야 '지켜볼게요' 하는"
+        }
+      ]
     },
     {
       "id": "D770",
@@ -426,12 +465,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아니스"],
-      "text": "연습실을 비워 두고 간식을 챙기며, 아니스가 대충 하려는 게 아니라 다행이라 하는",
+      "text": "연습실을 비워 두고 간식을 챙기며, 아니스가 대충 하려는 게 아니라 다행이라 한다",
       "reason": "#6-14 · #29-31 · #91-92.",
       "evidence": [{ "scene": "d_main_39_af_05", "lines": ["6-14", "29-31"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "연습실을 비워 두고 간식을 챙기며, 아니스가 대충 하려는 게 아니라 다행이라 하는" }
+      ]
     },
     {
       "id": "D772",
@@ -439,20 +481,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아니스"],
-      "text": "'슈퍼스타는 당당하게 요구해도 돼'라며 무엇이든 해 주겠다고 노이즈와 서로 제 팀을 붙이려 다투는",
+      "text": "'슈퍼스타는 당당하게 요구해도 돼'라며 무엇이든 해 주겠다고 노이즈와 서로 제 팀을 붙이려 다툰다",
       "reason": "#50-58 · #66-73.",
       "evidence": [{ "scene": "d_main_39_af_05", "lines": ["50-58", "66-73"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'슈퍼스타는 당당하게 요구해도 돼'라며 무엇이든 해 주겠다고 노이즈와 서로 제 팀을 붙이려 다투는"
+        }
+      ]
     },
     {
       "id": "D773",
       "person": "person:아니스",
       "aspect": "신체",
       "act": "변화",
-      "before": "공백기를 이겨 내려 몸을 만들던",
-      "after": "악플을 읽고 토하고 쓰러져, 자기를 알아보는 사람마다 겁에 질리는",
+      "before": "공백기를 이겨 내려 몸을 만들었다",
+      "after": "악플을 읽고 토하고 쓰러져, 자기를 알아보는 사람마다 겁에 질린다",
       "trigger": [{ "scene": "d_main_39_af_05", "lines": ["195-205"] }],
       "time": "S248",
       "points": ["F2063"],
@@ -460,7 +512,17 @@
       "evidence": [{ "scene": "d_main_39_af_06", "lines": ["55-57", 84, "93-99"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공백기를 이겨 내려 몸을 만들던 · 후 악플을 읽고 토하고 쓰러져, 자기를 알아보는 사람마다 겁에 질리는"
+        }
+      ]
     },
     {
       "id": "D774",
@@ -468,20 +530,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아니스"],
-      "text": "핸드폰을 압수하고 '아니스를 살리는 짓'이라며 게시판 글을 좋은 것만 걸러 전하겠다는",
+      "text": "핸드폰을 압수하고 '아니스를 살리는 짓'이라며 게시판 글을 좋은 것만 걸러 전하겠다고 한다",
       "reason": "af_06#35-46 · af_08#34-36.",
       "evidence": [{ "scene": "d_main_39_af_06", "lines": ["35-46"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "핸드폰을 압수하고 '아니스를 살리는 짓'이라며 게시판 글을 좋은 것만 걸러 전하겠다는"
+        }
+      ]
     },
     {
       "id": "D775",
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "빛나는 과거와 예쁘게 이별하는 피날레를 하려던",
-      "after": "아무도 도와주지 않은 방주를 용서할 수 없어 지키기도, 방주의 별이 되기도 싫다는",
+      "before": "빛나는 과거와 예쁘게 이별하는 피날레를 하려 했다",
+      "after": "아무도 도와주지 않은 방주를 용서할 수 없어 지키기도, 방주의 별이 되기도 싫다고 한다",
       "trigger": [{ "scene": "d_main_39_af_05", "lines": ["195-205"] }],
       "time": "S248",
       "points": ["F2065"],
@@ -489,7 +561,17 @@
       "evidence": [{ "scene": "d_main_39_af_07", "lines": ["9-12", "65-75"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 빛나는 과거와 예쁘게 이별하는 피날레를 하려던 · 후 아무도 도와주지 않은 방주를 용서할 수 없어 지키기도, 방주의 별이 되기도 싫다는"
+        }
+      ]
     },
     {
       "id": "D776",
@@ -510,26 +592,46 @@
       "person": "person:아비스타",
       "aspect": "신체",
       "act": "변화",
-      "before": "아이돌을 좋아하던 유복한 집의 인간 팬",
-      "after": "죄책감에 생을 마감하고 유서대로 이름 있는 니케가 된",
+      "before": "아이돌을 좋아하던 유복한 집의 인간 팬이었다",
+      "after": "죄책감에 생을 마감하고 유서대로 이름 있는 니케가 됐다",
       "points": ["F2066"],
       "reason": "#105-111. '그 친구' = 아비스타(#123, 아니스 '너였구나' #103).",
       "evidence": [{ "scene": "d_main_39_af_08", "lines": ["105-111"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아이돌을 좋아하던 유복한 집의 인간 팬 · 후 죄책감에 생을 마감하고 유서대로 이름 있는 니케가 된"
+        }
+      ]
     },
     {
       "id": "D778",
       "person": "person:아비스타",
       "aspect": "신념",
       "act": "기준",
-      "text": "그 아이돌이 다시 별이 되려 하면 모든 것을 바쳐 빛나게 하겠다는 — 방주의 별은 아직 빛을 잃지 않았다고 믿는",
+      "text": "그 아이돌이 다시 별이 되려 하면 모든 것을 바쳐 빛나게 하겠다며, 방주의 별은 아직 빛을 잃지 않았다고 믿는다",
       "reason": "#110-111 · #128-129 · #136-140.",
       "evidence": [{ "scene": "d_main_39_af_08", "lines": ["110-111", "128-129", "136-140"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "그 아이돌이 다시 별이 되려 하면 모든 것을 바쳐 빛나게 하겠다는 — 방주의 별은 아직 빛을 잃지 않았다고 믿는"
+        }
+      ]
     },
     {
       "id": "D779",
@@ -537,15 +639,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아비스타"],
-      "before": "핸드폰을 뺏는 참견꾼이라 뒷조사했냐고 몰아붙이던",
-      "after": "자기 때문에 죽어 니케가 된 그 팬이었음을 알고도 '다른 아이돌을 찾으라'며 혼자 있고 싶다는",
+      "before": "핸드폰을 뺏는 참견꾼이라 뒷조사했냐고 몰아붙였다",
+      "after": "자기 때문에 죽어 니케가 된 그 팬이었음을 알고도 '다른 아이돌을 찾으라'며 혼자 있고 싶다고 한다",
       "trigger": [{ "scene": "d_main_39_af_08", "lines": ["58-111"] }],
       "time": "S248",
       "reason": "#29-30 → #103 · #146-149.",
       "evidence": [{ "scene": "d_main_39_af_08", "lines": ["103-104", "146-149"] }],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M33", "note": "M33 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 핸드폰을 뺏는 참견꾼이라 뒷조사했냐고 몰아붙이던 · 후 자기 때문에 죽어 니케가 된 그 팬이었음을 알고도 '다른 아이돌을 찾으라'며 혼자 있고 싶다는"
+        }
+      ]
     }
   ],
   "life": [

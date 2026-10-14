@@ -415,8 +415,8 @@
       "person": "person:도로시",
       "aspect": "신념",
       "act": "변화",
-      "before": "임무를 마치면 방주에서 승리의 여신으로 추앙받으며 여생을 보내리라 믿고 입구를 지키는",
-      "after": "배신한 방주를 '원래 우리 것이던 낙원'이라며 반드시 빼앗겠다는",
+      "before": "임무를 마치면 방주에서 승리의 여신으로 추앙받으며 여생을 보내리라 믿고 입구를 지켰다",
+      "after": "배신한 방주를 '원래 우리 것이던 낙원'이라며 반드시 빼앗겠다고 한다",
       "trigger": [{ "scene": "event_overzone2_04_e", "lines": ["102-103"] }],
       "time": "S71",
       "points": ["F926"],
@@ -424,22 +424,42 @@
       "reason": "#57-61. 앞 모습 1_01_s#63-65 · 1_06_s#100-103. 계기는 오스왈드의 통보(04_e)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 임무를 마치면 방주에서 승리의 여신으로 추앙받으며 여생을 보내리라 믿고 입구를 지키는 · 후 배신한 방주를 '원래 우리 것이던 낙원'이라며 반드시 빼앗겠다는"
+        }
+      ]
     },
     {
       "id": "D238",
       "person": "person:도로시",
       "aspect": "성격",
       "act": "변화",
-      "before": "남이 하는 것보다 내가 하는 게 빠르다며 '도와달라'는 말을 절대 안 하는",
-      "after": "스노우 화이트에게 '저 좀 도와줘요'라 부탁하는",
+      "before": "남이 하는 것보다 내가 하는 게 빠르다며 '도와달라'는 말을 절대 안 했다",
+      "after": "스노우 화이트에게 '저 좀 도와줘요'라 부탁한다",
       "trigger": [{ "scene": "event_overzone1_intermission_01", "lines": ["73-95"] }],
       "time": "S71",
       "evidence": [{ "scene": "event_overzone1_04_s", "lines": ["14-16", "48-54"] }],
       "reason": "#14-16, #50 '네 입에서 도와달라는 말이 나온 건 처음이다'. 계기는 피나의 '마법의 단어'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 남이 하는 것보다 내가 하는 게 빠르다며 '도와달라'는 말을 절대 안 하는 · 후 스노우 화이트에게 '저 좀 도와줘요'라 부탁하는"
+        }
+      ]
     },
     {
       "id": "D239",
@@ -475,8 +495,8 @@
       "person": "person:도로시",
       "aspect": "신체",
       "act": "변화",
-      "before": "피나를 잃고 탄창 빈 총의 방아쇠를 당기며 무너진",
-      "after": "곁에 있다고 믿는 환각 속 피나와 대화하며 멀쩡한 듯 버티는",
+      "before": "피나를 잃고 탄창 빈 총의 방아쇠를 당기며 무너졌다",
+      "after": "곁에 있다고 믿는 환각 속 피나와 대화하며 멀쩡한 듯 버틴다",
       "trigger": [{ "scene": "event_overzone1_06_e", "lines": ["34-73"] }],
       "time": "S71",
       "points": ["F925"],
@@ -484,7 +504,17 @@
       "reason": "#79-81 '아까부터 계속 있죠'. 피나가 사라질 때까지(06_s#48-60)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 피나를 잃고 탄창 빈 총의 방아쇠를 당기며 무너진 · 후 곁에 있다고 믿는 환각 속 피나와 대화하며 멀쩡한 듯 버티는"
+        }
+      ]
     },
     {
       "id": "D242",
@@ -549,15 +579,25 @@
       "person": "person:피나",
       "aspect": "신체",
       "act": "변화",
-      "before": "도로시의 뒤를 지키던 양산형",
-      "after": "침식 유발 랩쳐를 혼자 잡다 침식되어 도로시의 손에 죽은",
+      "before": "도로시의 뒤를 지키던 양산형이다",
+      "after": "침식 유발 랩쳐를 혼자 잡다 침식되어 도로시의 손에 죽었다",
       "time": "S71",
       "points": ["F924"],
       "evidence": [{ "scene": "event_overzone1_06_e", "lines": ["20-33"] }],
       "reason": "#22-23 '죽여 주…', #34 총성. 06_e#83-88 혼자 큰 놈을 잡았다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 도로시의 뒤를 지키던 양산형 · 후 침식 유발 랩쳐를 혼자 잡다 침식되어 도로시의 손에 죽은"
+        }
+      ]
     },
     {
       "id": "D247",
@@ -609,8 +649,8 @@
       "person": "person:라푼젤",
       "aspect": "신념",
       "act": "변화",
-      "before": "죽은 이들의 목소리에 끌려 기도만 하며 죽음의 고요를 동경하는",
-      "after": "먼저 떠난 이들의 고향을 찾아 주는 것을 자기 할 일로 정한",
+      "before": "죽은 이들의 목소리에 끌려 기도만 하며 죽음의 고요를 동경했다",
+      "after": "먼저 떠난 이들의 고향을 찾아 주는 것을 자기 할 일로 정했다",
       "trigger": [{ "scene": "event_overzone1_05_s", "lines": ["45-77"] }],
       "time": "S71",
       "points": ["F918"],
@@ -618,15 +658,25 @@
       "reason": "#25-26 '그때 들렸던 목소리는 저의 것', #29, #39. 앞 모습 1_03_e#36-39",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 죽은 이들의 목소리에 끌려 기도만 하며 죽음의 고요를 동경하는 · 후 먼저 떠난 이들의 고향을 찾아 주는 것을 자기 할 일로 정한"
+        }
+      ]
     },
     {
       "id": "D251",
       "person": "person:홍련",
       "aspect": "신념",
       "act": "변화",
-      "before": "싸우기 위해 태어났으니 검만 휘두르다 떠나도 나쁘지 않다는",
-      "after": "죽이는 것 말고 살리는 일 — 농사(끝은 술)를 해 보고 싶다는",
+      "before": "싸우기 위해 태어났으니 검만 휘두르다 떠나도 나쁘지 않다고 여겼다",
+      "after": "죽이는 것 말고 살리는 일 — 농사(끝은 술)를 해 보고 싶어 한다",
       "trigger": [{ "scene": "event_overzone1_05_e", "lines": ["103-107"] }],
       "time": "S71",
       "points": ["F917"],
@@ -634,7 +684,17 @@
       "reason": "#36-37 → #47-54. 계기는 흩뿌린 씨앗의 싹(1_05_e#103-107)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 싸우기 위해 태어났으니 검만 휘두르다 떠나도 나쁘지 않다는 · 후 죽이는 것 말고 살리는 일 — 농사(끝은 술)를 해 보고 싶다는"
+        }
+      ]
     },
     {
       "id": "D252",
@@ -670,15 +730,25 @@
       "person": "person:릴리바이스",
       "aspect": "신체",
       "act": "변화",
-      "before": "갓데스 스쿼드의 리더",
-      "after": "방주 밀봉 전에 죽어 초소 근처 석관에 잠든 듯 누운",
+      "before": "갓데스 스쿼드의 리더다",
+      "after": "방주 밀봉 전에 죽어 초소 근처 석관에 잠든 듯 누워 있다",
       "time": "S71",
       "points": ["F907"],
       "evidence": [{ "scene": "event_overzone1_01_e", "lines": [29] }],
       "reason": "#29 '전 리더였던 릴리바이스 소령의 사망'. 1_01_s#84-89 석관",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 갓데스 스쿼드의 리더 · 후 방주 밀봉 전에 죽어 초소 근처 석관에 잠든 듯 누운"
+        }
+      ]
     }
   ],
   "life": [

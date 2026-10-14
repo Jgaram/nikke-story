@@ -256,28 +256,48 @@
       "person": "person:레드_슈즈",
       "aspect": "신념",
       "act": "변화",
-      "before": "니케를 침식시켜 랩쳐를 아군 삼는 [화합 · 공존]을 꿈꾸던",
-      "after": "라푼젤의 몸으로 '이번에야말로 헬레틱이 되고 싶다' — 지금 세계는 랩쳐의 것, 이단은 당신들 쪽이라는",
+      "before": "니케를 침식시켜 랩쳐를 아군 삼는 [화합 · 공존]을 꿈꿨다",
+      "after": "라푼젤의 몸으로 '이번에야말로 헬레틱이 되고 싶다' — 지금 세계는 랩쳐의 것, 이단은 당신들 쪽이라고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_03", "lines": ["96-120"] }],
       "reason": "#96-97 · #115-120. W79('화합' 신념, #116).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케를 침식시켜 랩쳐를 아군 삼는 [화합 · 공존]을 꿈꾸던 · 후 라푼젤의 몸으로 '이번에야말로 헬레틱이 되고 싶다' — 지금 세계는 랩쳐의 것, 이단은 당신들 쪽이라는"
+        }
+      ]
     },
     {
       "id": "D1326",
       "person": "person:레드_슈즈",
       "aspect": "신체",
       "act": "변화",
-      "before": "코어가 꿰뚫려 죽고 다리만 사라진",
-      "after": "무장에 숨긴 인격 데이터마저 황금빛에 삼켜져 사라진",
+      "before": "코어가 꿰뚫려 죽고 다리만 사라졌다",
+      "after": "무장에 숨긴 인격 데이터마저 황금빛에 삼켜져 사라졌다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_03", "lines": ["160-177"] }],
       "reason": "#170-177. F2830.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 코어가 꿰뚫려 죽고 다리만 사라진 · 후 무장에 숨긴 인격 데이터마저 황금빛에 삼켜져 사라진"
+        }
+      ]
     },
     {
       "id": "D1327",
@@ -299,42 +319,72 @@
       "person": "person:라푼젤",
       "aspect": "신념",
       "act": "변화",
-      "before": "먼저 떠난 이들의 고향을 찾아 주는 것을 할 일로 정한",
-      "after": "침식의 대도약이 사람의 손이었음을 알아 침식을 정복할 수 있다는",
+      "before": "먼저 떠난 이들의 고향을 찾아 주는 것을 할 일로 정했다",
+      "after": "침식의 대도약이 사람의 손이었음을 알아 침식을 정복할 수 있다고 믿는다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_03", "lines": ["130-139"] }],
       "reason": "#133 · #137-139. F2829.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 먼저 떠난 이들의 고향을 찾아 주는 것을 할 일로 정한 · 후 침식의 대도약이 사람의 손이었음을 알아 침식을 정복할 수 있다는"
+        }
+      ]
     },
     {
       "id": "D1329",
       "person": "person:라푼젤",
       "aspect": "신체",
       "act": "변화",
-      "before": "두부 일부만 남고 뇌만 보관된",
-      "after": "바디 메이커로 되살아나 레드 슈즈 파츠의 타륜과 초진동 지팡이를 단",
+      "before": "두부 일부만 남고 뇌만 보관됐다",
+      "after": "바디 메이커로 되살아나 레드 슈즈 파츠의 타륜과 초진동 지팡이를 달았다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_06_e", "lines": ["68-71", "83-93"] }],
       "reason": "F2827 · F2840. 03#41-44 바디 메이커.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 두부 일부만 남고 뇌만 보관된 · 후 바디 메이커로 되살아나 레드 슈즈 파츠의 타륜과 초진동 지팡이를 단"
+        }
+      ]
     },
     {
       "id": "D1330",
       "person": "person:장화",
       "aspect": "신체",
       "act": "변화",
-      "before": "에고비스타에게 베여 뇌파만 남은",
-      "after": "부러진 검으로 스스로 머리를 찔러 죽고, 그 바디는 홍련에게",
+      "before": "에고비스타에게 베여 뇌파만 남았다",
+      "after": "부러진 검으로 스스로 머리를 찔러 죽고, 그 바디는 홍련에게 갔다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_04", "lines": ["19-33"] }],
       "reason": "#21-22 · #26-27 · #32 '맡겨줘요'. F2831.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 에고비스타에게 베여 뇌파만 남은 · 후 부러진 검으로 스스로 머리를 찔러 죽고, 그 바디는 홍련에게"
+        }
+      ]
     },
     {
       "id": "D1331",
@@ -342,14 +392,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:홍련"],
-      "before": "자기를 보면 련이가 불행해진다며 나서지 않는",
-      "after": "꿈속에서 함께 가짜 동료를 베고 '행복하게 살아'라는 마지막 주박을 거는",
+      "before": "자기를 보면 련이가 불행해진다며 나서지 않았다",
+      "after": "꿈속에서 함께 가짜 동료를 베고 '행복하게 살아'라는 마지막 주박을 건다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_04", "lines": ["120-135"] }],
       "reason": "#133-135. F2833. W79.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 자기를 보면 련이가 불행해진다며 나서지 않는 · 후 꿈속에서 함께 가짜 동료를 베고 '행복하게 살아'라는 마지막 주박을 거는"
+        }
+      ]
     },
     {
       "id": "D1332",
@@ -357,85 +417,145 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:장화"],
-      "before": "언니를 제 검으로 베고 100년 동안 그리워하는",
-      "after": "'상처를 줬다 말하지 말게' 하고 언니와 등을 맞대 함께 베어 내는",
+      "before": "언니를 제 검으로 베고 100년 동안 그리워했다",
+      "after": "'상처를 줬다 말하지 말게' 하고 언니와 등을 맞대 함께 베어 낸다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_04", "lines": ["81-108"] }],
       "reason": "#87 · #103-107. W79.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 언니를 제 검으로 베고 100년 동안 그리워하는 · 후 '상처를 줬다 말하지 말게' 하고 언니와 등을 맞대 함께 베어 내는"
+        }
+      ]
     },
     {
       "id": "D1333",
       "person": "person:홍련",
       "aspect": "신념",
       "act": "변화",
-      "before": "죽이는 것 말고 살리는 일 — 농사를 해 보고 싶다는",
-      "after": "언니의 마지막 주박대로 '반드시 행복하게 살겠다'는",
+      "before": "죽이는 것 말고 살리는 일 — 농사를 해 보고 싶다고 했다",
+      "after": "언니의 마지막 주박대로 '반드시 행복하게 살겠다'고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_04", "lines": ["138-139"] }],
       "reason": "#138-139 약조. F2833.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 죽이는 것 말고 살리는 일 — 농사를 해 보고 싶다는 · 후 언니의 마지막 주박대로 '반드시 행복하게 살겠다'는"
+        }
+      ]
     },
     {
       "id": "D1334",
       "person": "person:홍련",
       "aspect": "신체",
       "act": "변화",
-      "before": "대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 하는",
-      "after": "장화의 바디로 되살아난",
+      "before": "대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 했다",
+      "after": "장화의 바디로 되살아났다",
       "trigger": [{ "scene": "d_main_48_04", "lines": ["19-22"] }],
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_06_e", "lines": [65, "72-73"] }],
       "reason": "04#143 눈을 뜬다 → 06_e 합류. F2831.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 하는 · 후 장화의 바디로 되살아난"
+        }
+      ]
     },
     {
       "id": "D1335",
       "person": "person:파피용",
       "aspect": "신념",
       "act": "변화",
-      "before": "전파탑에서 '미쳤나 봐 나'라며 에덴으로 돌아간",
-      "after": "스파이 짓부터 에덴에 남은 것까지 '단 하나도 후회 안 해 — 그때의 나는 늘 최선이었다'는",
+      "before": "전파탑에서 '미쳤나 봐 나'라며 에덴으로 돌아갔다",
+      "after": "스파이 짓부터 에덴에 남은 것까지 '단 하나도 후회 안 해 — 그때의 나는 늘 최선이었다'고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_03", "lines": ["26-40"] }],
       "reason": "#32-35 · #39-40 '잘 흔들려야 살아남아'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 전파탑에서 '미쳤나 봐 나'라며 에덴으로 돌아간 · 후 스파이 짓부터 에덴에 남은 것까지 '단 하나도 후회 안 해 — 그때의 나는 늘 최선이었다'는"
+        }
+      ]
     },
     {
       "id": "D1336",
       "person": "person:온리_원",
       "aspect": "신념",
       "act": "변화",
-      "before": "퀸이 될 수 있는 자기는 뭔가 해야 한다며 묻던",
-      "after": "언니들을 구하려 '하늘에서 온 그것'을 죽이고 인자를 빼앗아 퀸이 되겠다 — 싫어도 그것을 이길 수 있는 건 자기뿐이라는",
+      "before": "퀸이 될 수 있는 자기는 뭔가 해야 한다며 물었다",
+      "after": "언니들을 구하려 '하늘에서 온 그것'을 죽이고 인자를 빼앗아 퀸이 되겠다 — 싫어도 그것을 이길 수 있는 건 자기뿐이라고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_05", "lines": ["21-42", "67-70"] }],
       "reason": "F2834. W78.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 퀸이 될 수 있는 자기는 뭔가 해야 한다며 묻던 · 후 언니들을 구하려 '하늘에서 온 그것'을 죽이고 인자를 빼앗아 퀸이 되겠다 — 싫어도 그것을 이길 수 있는 건 자기뿐이라는"
+        }
+      ]
     },
     {
       "id": "D1337",
       "person": "person:온리_원",
       "aspect": "신념",
       "act": "변화",
-      "before": "외로워도 언니들을 위해 퀸이 되어야 한다는",
-      "after": "'퀸 정말 하기 싫어' — 마리안에게 맡기고 안기며 사랑받으며 살겠다는",
+      "before": "외로워도 언니들을 위해 퀸이 되어야 한다고 했다",
+      "after": "'퀸 정말 하기 싫어' — 마리안에게 맡기고 안기며 사랑받으며 살겠다고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_06_e", "lines": ["297-313"] }],
       "reason": "#300 · #313. W78.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 외로워도 언니들을 위해 퀸이 되어야 한다는 · 후 '퀸 정말 하기 싫어' — 마리안에게 맡기고 안기며 사랑받으며 살겠다는"
+        }
+      ]
     },
     {
       "id": "D1338",
@@ -457,49 +577,79 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:온리_원"],
-      "before": "퀸의 일을 묻는 아이에게 답하지 못하고 '욕심쟁이'라 불리던",
-      "after": "퀸에 짓눌린 아이를 끌어안아 '사랑받고 있군요' — 그 짐을 알아보는",
+      "before": "퀸의 일을 묻는 아이에게 답하지 못하고 '욕심쟁이'라 불렸다",
+      "after": "퀸에 짓눌린 아이를 끌어안아 '사랑받고 있군요' — 그 짐을 알아본다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_05", "lines": [53, "72-86"] }],
       "reason": "#53 · #74-79. 06_e#314 '제가 할게요'로 이어진다. W78.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 퀸의 일을 묻는 아이에게 답하지 못하고 '욕심쟁이'라 불리던 · 후 퀸에 짓눌린 아이를 끌어안아 '사랑받고 있군요' — 그 짐을 알아보는"
+        }
+      ]
     },
     {
       "id": "D1340",
       "person": "person:마리안",
       "aspect": "기억",
       "act": "변화",
-      "before": "'기원을 떠올려라'는 말에 두통 · 고열을 앓던",
-      "after": "붕대가 빛나며 모더니아 시절 · 지휘관과의 일 · 소녀의 기억이 되살아난",
+      "before": "'기원을 떠올려라'는 말에 두통 · 고열을 앓았다",
+      "after": "붕대가 빛나며 모더니아 시절 · 지휘관과의 일 · 소녀의 기억이 되살아났다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_05", "lines": ["104-160"] }],
       "reason": "#114 붕대가 빛남. F2837.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '기원을 떠올려라'는 말에 두통 · 고열을 앓던 · 후 붕대가 빛나며 모더니아 시절 · 지휘관과의 일 · 소녀의 기억이 되살아난"
+        }
+      ]
     },
     {
       "id": "D1341",
       "person": "person:마리안",
       "aspect": "신념",
       "act": "변화",
-      "before": "'잘 안됐지만' — 무엇을 해야 할지 모르겠다는",
-      "after": "'하고 싶은 일을 이제 완전히 안다' — 그 누구도 죽지 않고 사랑하고 사랑받는 세계를 만들겠다는",
+      "before": "'잘 안됐지만' — 무엇을 해야 할지 모르겠다고 했다",
+      "after": "'하고 싶은 일을 이제 완전히 안다' — 그 누구도 죽지 않고 사랑하고 사랑받는 세계를 만들겠다고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_05", "lines": ["150-173"] }],
       "reason": "#169-172. 06_e#314-317에서 되풀이. F2838.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '잘 안됐지만' — 무엇을 해야 할지 모르겠다는 · 후 '하고 싶은 일을 이제 완전히 안다' — 그 누구도 죽지 않고 사랑하고 사랑받는 세계를 만들겠다는"
+        }
+      ]
     },
     {
       "id": "D1342",
       "person": "person:마리안",
       "aspect": "신체",
       "act": "변화",
-      "before": "유사 코어로 명줄만 붙잡는",
+      "before": "유사 코어로 명줄만 붙잡는 모습",
       "after": "온리 원의 인자를 받아 '진짜 여왕 같은' 빛나는 모습",
       "trigger": [{ "scene": "d_main_48_06_e", "lines": ["318-321"] }],
       "time": "S342",
@@ -507,7 +657,10 @@
       "reason": "F2847.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 유사 코어로 명줄만 붙잡는" }
+      ]
     },
     {
       "id": "D1343",
@@ -530,42 +683,72 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "감방에서 꺼내 선봉을 요구하던",
-      "after": "침식된 도로시에게 '네 지휘관인 나를 믿어 — 반드시 찾아 되돌려 놓겠다'고 약속하는",
+      "before": "감방에서 꺼내 선봉을 요구했다",
+      "after": "침식된 도로시에게 '네 지휘관인 나를 믿어 — 반드시 찾아 되돌려 놓겠다'고 약속한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_07", "lines": ["110-138"] }],
       "reason": "#126-130 · #138.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 감방에서 꺼내 선봉을 요구하던 · 후 침식된 도로시에게 '네 지휘관인 나를 믿어 — 반드시 찾아 되돌려 놓겠다'고 약속하는"
+        }
+      ]
     },
     {
       "id": "D1345",
       "person": "person:엔더슨",
       "aspect": "신체",
       "act": "변화",
-      "before": "회춘한 듯 몸 상태가 좋아진",
-      "after": "생명 유지 장치가 떨어지고 전설의 지휘관의 생명력이 돌아온",
+      "before": "회춘한 듯 몸 상태가 좋아졌다",
+      "after": "생명 유지 장치가 떨어지고 전설의 지휘관의 생명력이 돌아왔다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_07", "lines": ["141-185"] }],
       "reason": "#162-183. F2845 · Q368.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 회춘한 듯 몸 상태가 좋아진 · 후 생명 유지 장치가 떨어지고 전설의 지휘관의 생명력이 돌아온"
+        }
+      ]
     },
     {
       "id": "D1346",
       "person": "person:도로시",
       "aspect": "신념",
       "act": "변화",
-      "before": "'할게요' — 선봉을 맡는",
-      "after": "침식되자 방주로 데려가지 말라며 '용서할 수 있어서 다행'이라 턱에 총을 겨누는",
+      "before": "'할게요' — 선봉을 맡았다",
+      "after": "침식되자 방주로 데려가지 말라며 '용서할 수 있어서 다행'이라 턱에 총을 겨눈다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_07", "lines": ["98-109"] }],
       "reason": "#98 · #106-109.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '할게요' — 선봉을 맡는 · 후 침식되자 방주로 데려가지 말라며 '용서할 수 있어서 다행'이라 턱에 총을 겨누는"
+        }
+      ]
     },
     {
       "id": "D1347",
@@ -587,14 +770,24 @@
       "person": "person:도로시",
       "aspect": "신체",
       "act": "변화",
-      "before": "환각 속 피나와 대화하며 멀쩡한 듯 버티던",
-      "after": "개량형 침식에 걸려 하늘로 몸을 던져 사라진",
+      "before": "환각 속 피나와 대화하며 멀쩡한 듯 버텼다",
+      "after": "개량형 침식에 걸려 하늘로 몸을 던져 사라졌다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_07", "lines": ["86-102", "135-140"] }],
       "reason": "F2843 · F2844 · Q369.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 환각 속 피나와 대화하며 멀쩡한 듯 버티던 · 후 개량형 침식에 걸려 하늘로 몸을 던져 사라진"
+        }
+      ]
     },
     {
       "id": "D1349",
@@ -602,14 +795,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:홍련", "person:라푼젤"],
-      "before": "홍련은 살아날 수 없느냐며 쓸 수 있는 모든 수단을 찾던",
-      "after": "돌아온 둘에게 '일찍일찍 좀 다녀라' 하고는 '잘 돌아와 줘서 고맙다'는",
+      "before": "홍련은 살아날 수 없느냐며 쓸 수 있는 모든 수단을 찾았다",
+      "after": "돌아온 둘에게 '일찍일찍 좀 다녀라' 하고는 '잘 돌아와 줘서 고맙다'고 한다",
       "time": "S342",
       "evidence": [{ "scene": "d_main_48_06_e", "lines": ["230-293"] }],
       "reason": "#233 · #287-288. 47_04#50 · #22-23에서.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M52" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 홍련은 살아날 수 없느냐며 쓸 수 있는 모든 수단을 찾던 · 후 돌아온 둘에게 '일찍일찍 좀 다녀라' 하고는 '잘 돌아와 줘서 고맙다'는"
+        }
+      ]
     },
     {
       "id": "D1350",

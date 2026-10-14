@@ -62,11 +62,21 @@
       "person": "person:하란",
       "aspect": "신념",
       "act": "기준",
-      "text": "모든 생명은 태어난 순간부터 스스로 살아남아야 하고, 못 하면 포식자의 먹이가 되거나 목숨값을 내야 한다는 자연의 법칙을 따르는",
+      "text": "모든 생명은 태어난 순간부터 스스로 살아남아야 하고, 못 하면 포식자의 먹이가 되거나 목숨값을 내야 한다는 자연의 법칙을 따른다",
       "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["49-55"] }],
       "reason": "#49-55. 출시 첫날 단위라 ch19의 신념 기준(D174)보다 앞선다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "모든 생명은 태어난 순간부터 스스로 살아남아야 하고, 못 하면 포식자의 먹이가 되거나 목숨값을 내야 한다는 자연의 법칙을 따르는"
+        }
+      ]
     },
     {
       "status": "확정",
@@ -75,11 +85,21 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "조난된 그를 구해 준 대가로 '종자'로 삼아 잡일을 시키고, 예쁜 짓을 하면 집에 데려다줄지도 모른다며 놀리는",
+      "text": "조난된 그를 구해 준 대가로 '종자'로 삼아 잡일을 시키고, 예쁜 짓을 하면 집에 데려다줄지도 모른다며 놀린다",
       "evidence": [{ "scene": "ep:d_nikke_harran_01", "lines": ["62-70"] }],
       "reason": "#64-66. 출시 첫날 단위라 ch19의 관계 기준(D175)보다 앞선다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "조난된 그를 구해 준 대가로 '종자'로 삼아 잡일을 시키고, 예쁜 짓을 하면 집에 데려다줄지도 모른다며 놀리는"
+        }
+      ]
     },
     {
       "status": "확정",
@@ -89,12 +109,15 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "장난삼아 삼은 종자",
-      "after": "'제법 즐거워졌다', 남들보다 특별히 예뻐해 줄 만큼 마음에 든",
+      "after": "'제법 즐거워졌다', 남들보다 특별히 예뻐해 줄 만큼 마음에 든 종자",
       "trigger": [{ "scene": "ep:d_nikke_harran_02", "lines": ["160-163"] }],
       "evidence": [{ "scene": "ep:d_nikke_harran_03", "lines": ["59-66", "81-82"] }],
       "reason": "02#162-163 '장난삼아 종자로 삼았던 것인데… 나쁘지 않아' → 03#65-66 · #81-82",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 '제법 즐거워졌다', 남들보다 특별히 예뻐해 줄 만큼 마음에 든" }
+      ]
     },
     {
       "status": "확정",
@@ -103,13 +126,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "마음에 들어 곁에 두려던 종자",
-      "after": "목숨 걸고 돌아가려는 그를 '매정한 것'이라 부르며 구해 주고 '내가 졌다'며 보내 주는",
+      "before": "마음에 들어 곁에 두려던 종자이다",
+      "after": "목숨 걸고 돌아가려는 그를 '매정한 것'이라 부르며 구해 주고 '내가 졌다'며 보내 준다",
       "trigger": [{ "scene": "ep:d_nikke_harran_03", "lines": ["86-94"] }],
       "evidence": [{ "scene": "ep:d_nikke_harran_04", "lines": ["109-134"] }],
       "reason": "03#93-94 '날 떠날 생각만' → 04#121-134. 05에서 입 맞추고 '다시 길을 잃으면 보내지 않겠다'(#88-90)로 이어진다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 마음에 들어 곁에 두려던 종자 · 후 목숨 걸고 돌아가려는 그를 '매정한 것'이라 부르며 구해 주고 '내가 졌다'며 보내 주는"
+        }
+      ]
     }
   ],
   "life": []

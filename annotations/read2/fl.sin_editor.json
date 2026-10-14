@@ -190,14 +190,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "구원자로 떠받들면서도 자기 일은 숨기던",
-      "after": "짐을 털어놓고 '앞으로도 영원히 함께해 줘요' — 집착이 더 심해진",
+      "before": "구원자로 떠받들면서도 자기 일은 숨겼다",
+      "after": "짐을 털어놓고 '앞으로도 영원히 함께해 줘요' — 집착이 더 심해졌다",
       "trigger": [{ "scene": "fl:sin_editor_11", "lines": ["55-57"] }],
       "evidence": [{ "scene": "fl:sin_editor_12", "lines": ["117-126"] }],
       "reason": "'방주 영웅은 쉽게 무너지지 않는다 · 희망을 붙잡아 주겠다'(11) 뒤 고백 · 감사.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 구원자로 떠받들면서도 자기 일은 숨기던 · 후 짐을 털어놓고 '앞으로도 영원히 함께해 줘요' — 집착이 더 심해진"
+        }
+      ]
     },
     {
       "id": "D1000",
@@ -205,12 +215,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아르카나", "person:팬텀"],
-      "text": "처음 따뜻함을 준 두 동료를 자기 탓에 기억 소거당하게 한 죄책감으로 문을 닫고 피해 다니는",
+      "text": "처음 따뜻함을 준 두 동료를 자기 탓에 기억 소거당하게 한 죄책감으로 문을 닫고 피해 다닌다",
       "evidence": [{ "scene": "fl:sin_editor_04", "lines": ["120-131"] }],
       "reason": "아르카나를 보자 문을 닫음 — 08#21-25 '둘에게 무슨 일이라도 생기면'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "처음 따뜻함을 준 두 동료를 자기 탓에 기억 소거당하게 한 죄책감으로 문을 닫고 피해 다니는"
+        }
+      ]
     },
     {
       "id": "D1001",
@@ -218,70 +238,99 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아르카나", "person:팬텀"],
-      "before": "둘을 피해 다니던",
-      "after": "용기를 내 다가가 내민 손을 잡고 다시 모인",
+      "before": "둘을 피해 다녔다",
+      "after": "용기를 내 다가가 내민 손을 잡고 다시 모였다",
       "trigger": [{ "scene": "fl:sin_editor_12", "lines": ["97-101"] }],
       "evidence": [{ "scene": "fl:sin_editor_13", "lines": ["41-72"] }],
       "reason": "F2385. 지휘관의 '가고 싶지 않아? 둘의 곁으로' 뒤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 둘을 피해 다니던 · 후 용기를 내 다가가 내민 손을 잡고 다시 모인" }
+      ]
     },
     {
       "id": "D1002",
       "person": "person:레이블",
       "aspect": "신념",
       "act": "기준",
-      "text": "'저 하나만 나쁘면 모두가 행복해진다 · 누군가는 해야 하는 일' — 지상을 탈환할 날까지 진실을 덮어 사람들의 희망을 지키는",
+      "text": "'저 하나만 나쁘면 모두가 행복해진다 · 누군가는 해야 하는 일' — 지상을 탈환할 날까지 진실을 덮어 사람들의 희망을 지킨다",
       "evidence": [{ "scene": "fl:sin_editor_12", "lines": ["54-63"] }],
       "reason": "F2380의 속뜻 — 레이블의 말로.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'저 하나만 나쁘면 모두가 행복해진다 · 누군가는 해야 하는 일' — 지상을 탈환할 날까지 진실을 덮어 사람들의 희망을 지키는"
+        }
+      ]
     },
     {
       "id": "D1003",
       "person": "person:레이블",
       "aspect": "기억",
       "act": "기준",
-      "text": "니케가 되기 전 기억이 없고, 일 뒤엔 기억 소거를 받지만 판결의 기억만은 홀로 짊어진 — 그것이 가장 큰 벌인",
+      "text": "니케가 되기 전 기억이 없고, 일 뒤엔 기억 소거를 받지만 판결의 기억만은 홀로 짊어졌다 — 그것이 가장 큰 벌이다",
       "evidence": [{ "scene": "fl:sin_editor_00", "lines": ["0-1", "37-43"] }],
       "time": "S290",
       "points": ["F2383"],
       "reason": "10#32 · 12#38-41과 함께.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "니케가 되기 전 기억이 없고, 일 뒤엔 기억 소거를 받지만 판결의 기억만은 홀로 짊어진 — 그것이 가장 큰 벌인"
+        }
+      ]
     },
     {
       "id": "D1004",
       "person": "person:아르카나",
       "aspect": "기억",
       "act": "변화",
-      "before": "레이블과 사진을 찍고 그의 일을 들은",
-      "after": "에닉의 판결로 그 기억을 지운",
+      "before": "레이블과 사진을 찍고 그의 일을 들었다",
+      "after": "에닉의 판결로 그 기억을 지웠다",
       "time": "S290",
       "points": ["F2383"],
       "evidence": [{ "scene": "fl:sin_editor_00", "lines": ["14-15"] }],
       "reason": "08#68 '얼굴도 많이 못 봤는데' — 기억이 없다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 레이블과 사진을 찍고 그의 일을 들은 · 후 에닉의 판결로 그 기억을 지운" }
+      ]
     },
     {
       "id": "D1005",
       "person": "person:팬텀",
       "aspect": "기억",
       "act": "변화",
-      "before": "레이블과 사진을 찍고 그의 일을 들은",
-      "after": "에닉의 판결로 그 기억을 지운",
+      "before": "레이블과 사진을 찍고 그의 일을 들었다",
+      "after": "에닉의 판결로 그 기억을 지웠다",
       "time": "S290",
       "points": ["F2383"],
       "evidence": [{ "scene": "fl:sin_editor_00", "lines": ["14-15"] }],
       "reason": "08#76-86 '누군가 우리의 기억에 손을 댔다거나'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 레이블과 사진을 찍고 그의 일을 들은 · 후 에닉의 판결로 그 기억을 지운" }
+      ]
     },
     {
       "id": "D1006",
@@ -289,12 +338,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:레이블"],
-      "text": "같은 스쿼드인데 얼굴을 안 비춰 섭섭하다며 미끼 작전으로라도 만나 셋이 뭉치고 싶어 하는",
+      "text": "같은 스쿼드인데 얼굴을 안 비춰 섭섭하다며 미끼 작전으로라도 만나 셋이 뭉치고 싶어 한다",
       "evidence": [{ "scene": "fl:sin_editor_03", "lines": ["28-35"] }],
       "reason": "F2383의 뒤 — 기억은 없지만 다가간다(10#105-107 '다시 다가와 주면').",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "같은 스쿼드인데 얼굴을 안 비춰 섭섭하다며 미끼 작전으로라도 만나 셋이 뭉치고 싶어 하는"
+        }
+      ]
     },
     {
       "id": "D1007",
@@ -302,14 +361,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레이블"],
-      "before": "다가가면 문을 닫는 동료를 섭섭해하던",
-      "after": "'저희를 위해 용기 내줘서 고마워요' — 다시 모인 기념사진",
+      "before": "다가가면 문을 닫는 동료를 섭섭해했다",
+      "after": "'저희를 위해 용기 내줘서 고마워요' — 다시 모여 기념사진을 찍었다",
       "trigger": [{ "scene": "fl:sin_editor_13", "lines": ["41-46"] }],
       "evidence": [{ "scene": "fl:sin_editor_13", "lines": ["50-68"] }],
       "reason": "F2385.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 다가가면 문을 닫는 동료를 섭섭해하던 · 후 '저희를 위해 용기 내줘서 고마워요' — 다시 모인 기념사진"
+        }
+      ]
     },
     {
       "id": "D1008",
@@ -330,14 +399,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레이블"],
-      "before": "피해 다니는 까닭을 모르던 동료",
-      "after": "'고맙소 · 어서오시오' — 손을 내밀어 다시 맞아들인",
+      "before": "피해 다니는 까닭을 모르던 동료다",
+      "after": "'고맙소 · 어서오시오' — 손을 내밀어 다시 맞아들였다",
       "trigger": [{ "scene": "fl:sin_editor_13", "lines": ["41-46"] }],
       "evidence": [{ "scene": "fl:sin_editor_13", "lines": ["47-66"] }],
       "reason": "F2385.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M42", "note": "M42 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 피해 다니는 까닭을 모르던 동료 · 후 '고맙소 · 어서오시오' — 손을 내밀어 다시 맞아들인"
+        }
+      ]
     }
   ],
   "life": [

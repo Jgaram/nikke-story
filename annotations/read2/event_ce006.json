@@ -429,8 +429,8 @@
       "person": "person:롬",
       "aspect": "기억",
       "act": "변화",
-      "before": "유물을 모으는 까닭을 기억 못 하던",
-      "after": "추첨권 없던 가족과 '제2의 방주를 만들어 달라'던 딸의 소원을 떠올린",
+      "before": "유물을 모으는 까닭을 기억 못 했다",
+      "after": "추첨권 없던 가족과 '제2의 방주를 만들어 달라'던 딸의 소원을 떠올렸다",
       "trigger": [{ "scene": "event_ce006_2_04_e", "lines": ["31-36"] }],
       "time": "S234",
       "points": ["F1997"],
@@ -438,7 +438,17 @@
       "reason": "낙하 뒤 #59 '이것은 롬의 [기억]' · #143 '롬 가족의 소원'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 유물을 모으는 까닭을 기억 못 하던 · 후 추첨권 없던 가족과 '제2의 방주를 만들어 달라'던 딸의 소원을 떠올린"
+        }
+      ]
     },
     {
       "id": "D720",
@@ -457,15 +467,25 @@
       "person": "person:롬",
       "aspect": "신념",
       "act": "변화",
-      "before": "가족이 없는데 내 일은 무의미한가 묻던",
-      "after": "가족은 없어도 롬이 기억하니 그렇게 이어진다며 제2의 방주를 계속 만드는",
+      "before": "가족이 없는데 내 일은 무의미한가 물었다",
+      "after": "가족은 없어도 롬이 기억하니 그렇게 이어진다며 제2의 방주를 계속 만든다",
       "trigger": [{ "scene": "event_ce006_2_04_e", "lines": ["150-157"] }],
       "time": "S234",
       "evidence": [{ "scene": "event_ce006_2_04_e", "lines": ["144-168"] }],
       "reason": "#148 '무의미한가?' → 이브의 '기억을 이어야' → #159-162.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가족이 없는데 내 일은 무의미한가 묻던 · 후 가족은 없어도 롬이 기억하니 그렇게 이어진다며 제2의 방주를 계속 만드는"
+        }
+      ]
     },
     {
       "id": "D722",
@@ -485,8 +505,8 @@
       "person": "person:롬",
       "aspect": "소속",
       "act": "변화",
-      "before": "지상에서 홀로 유물을 모으던 로봇",
-      "after": "카운터스 명예 대원이 되어 주둔지 01을 베이스캠프로 제2의 방주를 만드는",
+      "before": "지상에서 홀로 유물을 모으던 로봇이었다",
+      "after": "카운터스 명예 대원이 되어 주둔지 01을 베이스캠프로 제2의 방주를 만든다",
       "trigger": [{ "scene": "event_ce006_1_05_s", "lines": ["144-153"] }],
       "time": "S234",
       "points": ["F1999"],
@@ -494,7 +514,17 @@
       "reason": "#154-156 — 1_05_s#145 프리바티의 명예 대원 지정.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지상에서 홀로 유물을 모으던 로봇 · 후 카운터스 명예 대원이 되어 주둔지 01을 베이스캠프로 제2의 방주를 만드는"
+        }
+      ]
     },
     {
       "id": "D724",
@@ -514,36 +544,56 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아트"],
-      "text": "'로봇에게는 마음이 없다'면서 머리에 올라탄 벙커의 아이가 즐거워하는 모습이 '보기에 좋다'는",
+      "text": "'로봇에게는 마음이 없다'면서 머리에 올라탄 벙커의 아이가 즐거워하는 모습이 '보기에 좋다'고 한다",
       "time": "S235",
       "evidence": [{ "scene": "event_ce006_3_01_s", "lines": ["8-41"] }],
       "reason": "#11 · #35-37 · #41 '마음, 있잖아요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'로봇에게는 마음이 없다'면서 머리에 올라탄 벙커의 아이가 즐거워하는 모습이 '보기에 좋다'는"
+        }
+      ]
     },
     {
       "id": "D726",
       "person": "person:콤",
       "aspect": "성격",
       "act": "변화",
-      "before": "'거짓말을 하는 기능이 없다'던 로봇",
-      "after": "울던 아이를 달래려 물에 잠긴 니케 셋이 죽지 않았다고 말하는",
+      "before": "'거짓말을 하는 기능이 없다'던 로봇이었다",
+      "after": "울던 아이를 달래려 물에 잠긴 니케 셋이 죽지 않았다고 말한다",
       "trigger": [{ "scene": "event_ce006_3_02_e", "lines": ["1-7"] }],
       "time": "S235",
       "evidence": [{ "scene": "event_ce006_3_02_e", "lines": ["8-28"] }],
       "reason": "#15-23 — 셋은 죽었다(F1992). 거짓인 줄 알고 했는지는 원문에 없어 추정.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '거짓말을 하는 기능이 없다'던 로봇 · 후 울던 아이를 달래려 물에 잠긴 니케 셋이 죽지 않았다고 말하는"
+        }
+      ]
     },
     {
       "id": "D727",
       "person": "person:콤",
       "aspect": "신념",
       "act": "변화",
-      "before": "엘리베이터로 내려가 파괴될 때까지 방주를 공격하려던",
-      "after": "벙커 사람들의 기억을 잇기 위해 엘리베이터만 부수고 살아남는",
+      "before": "엘리베이터로 내려가 파괴될 때까지 방주를 공격하려 했다",
+      "after": "벙커 사람들의 기억을 잇기 위해 엘리베이터만 부수고 살아남는다",
       "trigger": [{ "scene": "event_ce006_3_03_s", "lines": ["62-77"] }],
       "time": "S234",
       "points": ["F1996"],
@@ -551,7 +601,17 @@
       "reason": "#67-69 원래 계획 → #77 '기억을 이어야 한다' · #116.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 엘리베이터로 내려가 파괴될 때까지 방주를 공격하려던 · 후 벙커 사람들의 기억을 잇기 위해 엘리베이터만 부수고 살아남는"
+        }
+      ]
     },
     {
       "id": "D728",
@@ -559,8 +619,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아트"],
-      "before": "자기를 기억 못 하는 아트에게 '나를 기억하나'만 되풀이하던",
-      "after": "기억해 낸 아트를 끌어안고 '나의 재산, 드디어 돌려받았다'는",
+      "before": "자기를 기억 못 하는 아트에게 '나를 기억하나'만 되풀이했다",
+      "after": "기억해 낸 아트를 끌어안고 '나의 재산, 드디어 돌려받았다'고 한다",
       "trigger": [{ "scene": "event_ce006_3_epilogue", "lines": ["67-75"] }],
       "time": "S234",
       "points": ["F2002"],
@@ -568,7 +628,17 @@
       "reason": "3_03_s#12-36 → #138 '단 한순간도 잊은 적 없다' · #149-150.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 자기를 기억 못 하는 아트에게 '나를 기억하나'만 되풀이하던 · 후 기억해 낸 아트를 끌어안고 '나의 재산, 드디어 돌려받았다'는"
+        }
+      ]
     },
     {
       "id": "D729",
@@ -588,20 +658,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["place:방주"],
-      "text": "대항의 상징으로 써먹고 구하러 오지 않은 방주를 '거짓말쟁이'라며 믿지 못하는",
+      "text": "대항의 상징으로 써먹고 구하러 오지 않은 방주를 '거짓말쟁이'라며 믿지 못한다",
       "evidence": [{ "scene": "event_ce006_2_intermission_01", "lines": ["25-42"] }],
       "reason": "#25-36.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "대항의 상징으로 써먹고 구하러 오지 않은 방주를 '거짓말쟁이'라며 믿지 못하는" }
+      ]
     },
     {
       "id": "D731",
       "person": "person:헤르민",
       "aspect": "신념",
       "act": "변화",
-      "before": "고향이 된 벙커에서 떠나게(죽게) 해 달라던",
-      "after": "지켜 온 예술이 이어진다면 그것과 함께 방주로 가겠다는",
+      "before": "고향이 된 벙커에서 떠나게(죽게) 해 달라고 했다",
+      "after": "지켜 온 예술이 이어진다면 그것과 함께 방주로 가겠다고 한다",
       "trigger": [{ "scene": "event_ce006_2_intermission_01", "lines": ["61-69"] }],
       "time": "S234",
       "points": ["F1988"],
@@ -609,15 +682,25 @@
       "reason": "#40-42 → #71-79.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 고향이 된 벙커에서 떠나게(죽게) 해 달라던 · 후 지켜 온 예술이 이어진다면 그것과 함께 방주로 가겠다는"
+        }
+      ]
     },
     {
       "id": "D732",
       "person": "person:헤르민",
       "aspect": "신념",
       "act": "변화",
-      "before": "생존이 아니라 예술을 지키려 버티자던",
-      "after": "아이가 태어나자 실물 예술을 포기하고 생존을 목적으로 삼은",
+      "before": "생존이 아니라 예술을 지키려 버티자고 했다",
+      "after": "아이가 태어나자 실물 예술을 포기하고 생존을 목적으로 삼았다",
       "trigger": [{ "scene": "event_ce006_2_05_s", "lines": ["61-71"] }],
       "time": "S235",
       "points": ["F1989"],
@@ -625,7 +708,17 @@
       "reason": "#48 → #74-75.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 생존이 아니라 예술을 지키려 버티자던 · 후 아이가 태어나자 실물 예술을 포기하고 생존을 목적으로 삼은"
+        }
+      ]
     },
     {
       "id": "D733",
@@ -633,8 +726,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["place:방주"],
-      "before": "방주가 반드시 구하러 오리라 믿던",
-      "after": "30년쯤 지나 '그들은 오지 않겠구나', '외롭구나'라는",
+      "before": "방주가 반드시 구하러 오리라 믿었다",
+      "after": "30년쯤 지나 '그들은 오지 않겠구나', '외롭구나'라고 한다",
       "trigger": [{ "scene": "event_ce006_2_05_s", "lines": ["153-158"] }],
       "time": "S235",
       "points": ["F1993"],
@@ -642,30 +735,43 @@
       "reason": "#26 · #152 · #158 → #164 · #170.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주가 반드시 구하러 오리라 믿던 · 후 30년쯤 지나 '그들은 오지 않겠구나', '외롭구나'라는"
+        }
+      ]
     },
     {
       "id": "D734",
       "person": "person:헤르민",
       "aspect": "신체",
       "act": "변화",
-      "before": "노쇠한 몸으로 방주에 온",
-      "after": "1주일 뒤 소중한 액자를 끌어안고 숨진",
+      "before": "노쇠한 몸으로 방주에 왔다",
+      "after": "1주일 뒤 소중한 액자를 끌어안고 숨졌다",
       "time": "S234",
       "points": ["F2000"],
       "evidence": [{ "scene": "event_ce006_2_06_e", "lines": ["171-176"] }],
       "reason": "#171-172.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 노쇠한 몸으로 방주에 온 · 후 1주일 뒤 소중한 액자를 끌어안고 숨진" }
+      ]
     },
     {
       "id": "D735",
       "person": "person:아트",
       "aspect": "신체",
       "act": "변화",
-      "before": "벙커에서 태어난 인간 아이",
-      "after": "로드 급 랩쳐에게 크게 다쳐 양산형 니케가 된",
+      "before": "벙커에서 태어난 인간 아이였다",
+      "after": "로드 급 랩쳐에게 크게 다쳐 양산형 니케가 됐다",
       "trigger": [{ "scene": "event_ce006_3_03_s", "lines": ["6-8"] }],
       "time": "S235",
       "points": ["F1994"],
@@ -673,7 +779,10 @@
       "reason": "#8-10.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 벙커에서 태어난 인간 아이 · 후 로드 급 랩쳐에게 크게 다쳐 양산형 니케가 된" }
+      ]
     },
     {
       "id": "D736",
@@ -693,8 +802,8 @@
       "person": "person:아트",
       "aspect": "기억",
       "act": "변화",
-      "before": "벙커와 콤을 잊은",
-      "after": "그림 [집] 앞에서 콤을 알아보고 '내 가장 소중한 보물'을 기억해 낸",
+      "before": "벙커와 콤을 잊었다",
+      "after": "그림 [집] 앞에서 콤을 알아보고 '내 가장 소중한 보물'을 기억해 냈다",
       "trigger": [{ "scene": "event_ce006_3_epilogue", "lines": ["82-85"] }],
       "time": "S234",
       "points": ["F2002"],
@@ -702,7 +811,17 @@
       "reason": "#104-111 떠오르는 기억 → #131-145.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 벙커와 콤을 잊은 · 후 그림 [집] 앞에서 콤을 알아보고 '내 가장 소중한 보물'을 기억해 낸"
+        }
+      ]
     },
     {
       "id": "D738",
@@ -725,8 +844,8 @@
       "person": "person:프리바티",
       "aspect": "신념",
       "act": "변화",
-      "before": "중앙 정부는 방주의 법이자 규칙이니 무조건 믿고 따르던",
-      "after": "반역죄 · 기억 소거를 각오하고 명령을 거슬러, 믿는 중앙 정부가 해야 할 일을 하게 하려는",
+      "before": "중앙 정부는 방주의 법이자 규칙이니 무조건 믿고 따랐다",
+      "after": "반역죄 · 기억 소거를 각오하고 명령을 거슬러, 믿는 중앙 정부가 해야 할 일을 하게 하려 한다",
       "trigger": [{ "scene": "event_ce006_2_03_s", "lines": ["79-88"] }],
       "time": "S234",
       "points": ["F1988"],
@@ -734,7 +853,17 @@
       "reason": "1_04_e#32-37 → #84-86 · #94 · #103 '더 믿고 싶어서'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 중앙 정부는 방주의 법이자 규칙이니 무조건 믿고 따르던 · 후 반역죄 · 기억 소거를 각오하고 명령을 거슬러, 믿는 중앙 정부가 해야 할 일을 하게 하려는"
+        }
+      ]
     },
     {
       "id": "D740",
@@ -742,12 +871,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리바티"],
-      "text": "레버를 쥔 채 굳은 프리바티의 손가락을 하나하나 펴 주며, 굳게 믿는 게 옳지 않다고 느껴지면 다른 선택지를 고르라 일러 주는",
+      "text": "레버를 쥔 채 굳은 프리바티의 손가락을 하나하나 펴 주며, 굳게 믿는 게 옳지 않다고 느껴지면 다른 선택지를 고르라 일러 준다",
       "evidence": [{ "scene": "event_ce006_1_04_e", "lines": ["59-81"] }],
       "reason": "#69-77.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "레버를 쥔 채 굳은 프리바티의 손가락을 하나하나 펴 주며, 굳게 믿는 게 옳지 않다고 느껴지면 다른 선택지를 고르라 일러 주는"
+        }
+      ]
     },
     {
       "id": "D741",
@@ -755,12 +894,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리바티"],
-      "text": "'중앙 정부 직속 스쿼드님'이라 비꼬며 정보를 쥐고 흔든다고 쏘아붙이는",
+      "text": "'중앙 정부 직속 스쿼드님'이라 비꼬며 정보를 쥐고 흔든다고 쏘아붙인다",
       "evidence": [{ "scene": "event_ce006_1_intermission_01", "lines": ["54-63"] }],
       "reason": "#57 · #60 · #62.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'중앙 정부 직속 스쿼드님'이라 비꼬며 정보를 쥐고 흔든다고 쏘아붙이는" }
+      ]
     },
     {
       "id": "D742",
@@ -768,15 +910,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:프리바티"],
-      "before": "헤르민을 두고 가라는 명령 편에 선 그녀에게 '널 더 싫어하게 만들지 말아 줘'라던",
-      "after": "명령을 거스른 그녀에게 '제법이잖아'라 하는",
+      "before": "헤르민을 두고 가라는 명령 편에 선 그녀에게 '널 더 싫어하게 만들지 말아 줘'라고 했다",
+      "after": "명령을 거스른 그녀에게 '제법이잖아'라 한다",
       "trigger": [{ "scene": "event_ce006_2_intermission_01", "lines": ["83-95"] }],
       "time": "S234",
       "evidence": [{ "scene": "event_ce006_2_intermission_01", "lines": ["96-97"] }],
       "reason": "2_03_e#72-74 → #96.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M30", "note": "M30 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헤르민을 두고 가라는 명령 편에 선 그녀에게 '널 더 싫어하게 만들지 말아 줘'라던 · 후 명령을 거스른 그녀에게 '제법이잖아'라 하는"
+        }
+      ]
     }
   ],
   "life": [

@@ -167,14 +167,24 @@
       "person": "person:트로니",
       "aspect": "성격",
       "act": "변화",
-      "before": "몇 년째 방에 틀어박혀 '난 괜찮아'로 문을 닫던",
-      "after": "'도망쳐서 해결되는 건 없다'며 스스로 문을 열고 대정전 속으로 달려 나간",
+      "before": "몇 년째 방에 틀어박혀 '난 괜찮아'로 문을 닫았다",
+      "after": "'도망쳐서 해결되는 건 없다'며 스스로 문을 열고 대정전 속으로 달려 나갔다",
       "trigger": [{ "scene": "event_boomsday_04_e", "lines": ["56-68"] }],
       "evidence": [{ "scene": "event_boomsday_05_s", "lines": [13, "45-53"] }],
       "reason": "#46 '도망쳐서 해결되는 건 없다' · #47 문고리 — 계기는 문 너머 일레그의 진심(04_e).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 몇 년째 방에 틀어박혀 '난 괜찮아'로 문을 닫던 · 후 '도망쳐서 해결되는 건 없다'며 스스로 문을 열고 대정전 속으로 달려 나간"
+        }
+      ]
     },
     {
       "id": "D396",
@@ -195,14 +205,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:일레그"],
-      "before": "문 너머 일레그의 부름을 게임 소리로 밀어내던",
-      "after": "변전소로 달려와 '다시 한번 잘 부탁해' 하고, 혼자 떠안던 동력원을 일레그에게도 보여 주려는",
+      "before": "문 너머 일레그의 부름을 게임 소리로 밀어냈다",
+      "after": "변전소로 달려와 '다시 한번 잘 부탁해' 하고, 혼자 떠안던 동력원을 일레그에게도 보여 주려 한다",
       "trigger": [{ "scene": "event_boomsday_04_e", "lines": ["56-68"] }],
       "evidence": [{ "scene": "event_boomsday_05_e", "lines": ["34-42", 69] }],
       "reason": "#34 · #69 — 06_s#53-54에서 동력원을 보여 주겠다고 한다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M16" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 문 너머 일레그의 부름을 게임 소리로 밀어내던 · 후 변전소로 달려와 '다시 한번 잘 부탁해' 하고, 혼자 떠안던 동력원을 일레그에게도 보여 주려는"
+        }
+      ]
     },
     {
       "id": "D398",

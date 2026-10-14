@@ -131,12 +131,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "'선생니임~' 하며 시도 때도 없이 안기고, 아침부터 만나 너무 좋다는",
+      "text": "'선생니임~' 하며 시도 때도 없이 안기고, 아침부터 만나 너무 좋다고 한다",
       "evidence": [{ "scene": "event_dazzlingcupid_prologue", "lines": ["13-26"] }],
       "reason": "#14 와락 · #26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'선생니임~' 하며 시도 때도 없이 안기고, 아침부터 만나 너무 좋다는" }
+      ]
     },
     {
       "id": "D1473",
@@ -144,12 +147,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "선생님에게 수업받을 수 있어 좋다며 졸업반 선생 기념으로 함께 놀러 가자고 청하는",
+      "text": "선생님에게 수업받을 수 있어 좋다며 졸업반 선생 기념으로 함께 놀러 가자고 청한다",
       "evidence": [{ "scene": "event_dazzlingcupid_01_s", "lines": ["13-23"] }],
       "reason": "#22-23.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "선생님에게 수업받을 수 있어 좋다며 졸업반 선생 기념으로 함께 놀러 가자고 청하는" }
+      ]
     },
     {
       "id": "D1474",
@@ -170,27 +176,47 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:티아"],
-      "before": "티아를 챙겨 주는 단짝",
-      "after": "'선생님에게 선물을 받기 위한 라이벌'을 선언하고 티아를 떼어 내는",
+      "before": "티아를 챙겨 주는 단짝이었다",
+      "after": "'선생님에게 선물을 받기 위한 라이벌'을 선언하고 티아를 떼어 낸다",
       "trigger": [{ "scene": "event_dazzlingcupid_02_e", "lines": ["27-37"] }],
       "evidence": [{ "scene": "event_dazzlingcupid_02_e", "lines": ["43-55"] }],
       "reason": "#48-49 — 지휘관이 '주고 싶은 사람에게 준다'(#34)고 하자.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 티아를 챙겨 주는 단짝 · 후 '선생님에게 선물을 받기 위한 라이벌'을 선언하고 티아를 떼어 내는"
+        }
+      ]
     },
     {
       "id": "D1476",
       "person": "person:티아",
       "aspect": "성격",
       "act": "변화",
-      "before": "나가가 다 챙겨 주던",
-      "after": "나가의 도움 없이 스스로 챙겨 인정받고 정정당당하게 겨루겠다는",
+      "before": "나가가 다 챙겨 줬다",
+      "after": "나가의 도움 없이 스스로 챙겨 인정받고 정정당당하게 겨루겠다고 한다",
       "evidence": [{ "scene": "event_dazzlingcupid_03_s", "lines": ["58-66"] }],
       "reason": "#60-66 — 화살을 조른 일이 부끄러웠다며. 지휘관 독백 #74 '[독립]으로 성장'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 나가가 다 챙겨 주던 · 후 나가의 도움 없이 스스로 챙겨 인정받고 정정당당하게 겨루겠다는"
+        }
+      ]
     },
     {
       "id": "D1477",
@@ -198,13 +224,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:나가"],
-      "before": "멋있다며 따르던 단짝",
-      "after": "자신만만한 나가가 '재수 없다', 진심이 아니면 포기하라고 맞서는",
+      "before": "멋있다며 따르던 단짝이었다",
+      "after": "자신만만한 나가가 '재수 없다', 진심이 아니면 포기하라고 맞선다",
       "evidence": [{ "scene": "event_dazzlingcupid_06_s", "lines": ["16-44"] }],
       "reason": "#26-29 · #34 · #41.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 멋있다며 따르던 단짝 · 후 자신만만한 나가가 '재수 없다', 진심이 아니면 포기하라고 맞서는"
+        }
+      ]
     },
     {
       "id": "D1478",
@@ -212,15 +248,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:티아"],
-      "before": "라이벌로 냉랭하던",
-      "after": "예비 스타킹을 던져 주고 먼저 사과해 화해하며, 마음은 양보 못 해도 싸우지는 않기로 한",
+      "before": "라이벌로 냉랭했다",
+      "after": "예비 스타킹을 던져 주고 먼저 사과해 화해하며, 마음은 양보 못 해도 싸우지는 않기로 했다",
       "points": ["F1083"],
       "trigger": [{ "scene": "event_dazzlingcupid_06_e", "lines": ["184-185"] }],
       "evidence": [{ "scene": "event_dazzlingcupid_epilogue", "lines": ["0-35"] }],
       "reason": "#3 · #16-34. 티아는 #11 '스타킹값'으로 실수를 덮어 준다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 라이벌로 냉랭하던 · 후 예비 스타킹을 던져 주고 먼저 사과해 화해하며, 마음은 양보 못 해도 싸우지는 않기로 한"
+        }
+      ]
     },
     {
       "id": "D1479",
@@ -228,14 +274,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:나가"],
-      "before": "나가에게 포기하라고 맞서던",
-      "after": "'스타킹값'으로 나가의 실수를 덮어 주고 사과해 화해하는",
+      "before": "나가에게 포기하라고 맞섰다",
+      "after": "'스타킹값'으로 나가의 실수를 덮어 주고 사과해 화해한다",
       "points": ["F1083"],
       "evidence": [{ "scene": "event_dazzlingcupid_epilogue", "lines": ["6-35"] }],
       "reason": "#11-12 · #17 · #35.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 나가에게 포기하라고 맞서던 · 후 '스타킹값'으로 나가의 실수를 덮어 주고 사과해 화해하는"
+        }
+      ]
     },
     {
       "id": "D1480",
@@ -243,13 +299,16 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "수업받는 게 좋은 선생님",
-      "after": "선생님을 향한 마음은 티아에게도 양보 못 한다는",
+      "before": "수업받는 게 좋은 선생님이었다",
+      "after": "선생님을 향한 마음은 티아에게도 양보 못 한다고 한다",
       "evidence": [{ "scene": "event_dazzlingcupid_epilogue", "lines": ["30-34"] }],
       "reason": "#30 — 화살을 누구에게 줬든(선택지) 같은 에필로그. 06_e 나가 편의 '[진짜] 선생님'은 선택지라 근거로 쓰지 않음.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 수업받는 게 좋은 선생님 · 후 선생님을 향한 마음은 티아에게도 양보 못 한다는" }
+      ]
     },
     {
       "id": "D1481",
@@ -257,13 +316,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "반기며 안기던 선생님",
-      "after": "'선생님을 좋아하는 마음은 양보 못 해' — 자기들을 어린아이로 보는 게 아쉬운",
+      "before": "반기며 안기던 선생님이었다",
+      "after": "'선생님을 좋아하는 마음은 양보 못 해'라며 자기들을 어린아이로 보는 게 아쉽다",
       "evidence": [{ "scene": "event_dazzlingcupid_epilogue", "lines": ["30-45"] }],
       "reason": "#31 · #39.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M60" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 반기며 안기던 선생님 · 후 '선생님을 좋아하는 마음은 양보 못 해' — 자기들을 어린아이로 보는 게 아쉬운"
+        }
+      ]
     }
   ],
   "life": []

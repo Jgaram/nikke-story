@@ -85,12 +85,22 @@
       "person": "person:브래디",
       "aspect": "성격",
       "act": "기준",
-      "text": "'응'으로 짧게 답하며 상대를 핥아 맛을 보고, 재료를 덤덤히 읊은 뒤 '총평'으로 요리에 담긴 마음까지 짚는",
+      "text": "'응'으로 짧게 답하며 상대를 핥아 맛을 보고, 재료를 덤덤히 읊은 뒤 '총평'으로 요리에 담긴 마음까지 짚는다",
       "reason": "#57 할짝 · #85-89 '총평 … 애정이 듬뿍'. 03_e#40-45에서도 같은 총평.",
       "evidence": [{ "scene": "event_newflavor_02_s", "lines": ["53-61", "84-92"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'응'으로 짧게 답하며 상대를 핥아 맛을 보고, 재료를 덤덤히 읊은 뒤 '총평'으로 요리에 담긴 마음까지 짚는"
+        }
+      ]
     },
     {
       "id": "D622",
@@ -98,12 +108,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "처음 본 지휘관에게 퍼펙트 은폐를 털어놓고 '공범을 만든 거지'라 하는",
+      "text": "처음 본 지휘관에게 퍼펙트 은폐를 털어놓고 '공범을 만든 거지'라 한다",
       "reason": "#12 '공범을 만든 거지'.",
       "evidence": [{ "scene": "event_newflavor_03_s", "lines": ["7-12"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "처음 본 지휘관에게 퍼펙트 은폐를 털어놓고 '공범을 만든 거지'라 하는" }
+      ]
     },
     {
       "id": "D623",
@@ -111,13 +124,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "공범으로 끌어들인 처음 본 지휘관",
-      "after": "'공범이 되고 싶다'는 말에 숨긴 사정을 털어놓고 고마워하는",
+      "before": "공범으로 끌어들인 처음 본 지휘관이다",
+      "after": "'공범이 되고 싶다'는 말에 숨긴 사정을 털어놓고 고마워한다",
       "reason": "#35 '공범이 되고 싶을 뿐' · #98 '공범이 되어줘서 고마워'.",
       "evidence": [{ "scene": "event_newflavor_06_s", "lines": ["32-37", "96-98"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공범으로 끌어들인 처음 본 지휘관 · 후 '공범이 되고 싶다'는 말에 숨긴 사정을 털어놓고 고마워하는"
+        }
+      ]
     },
     {
       "id": "D624",
@@ -125,38 +148,68 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "사정을 털어놓은 공범",
-      "after": "처음 온전한 맛을 준 지휘관을 '미미'라 부르며 자주 맛보게 해 달라 조르는",
+      "before": "사정을 털어놓은 공범이다",
+      "after": "처음 온전한 맛을 준 지휘관을 '미미'라 부르며 자주 맛보게 해 달라 조른다",
       "points": ["F1839"],
       "reason": "#182 '미미라고 부르겠어' · #197. epilogue#47-49 '자주 보자'.",
       "evidence": [{ "scene": "event_newflavor_06_e", "lines": ["175-183", "196-202"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 사정을 털어놓은 공범 · 후 처음 온전한 맛을 준 지휘관을 '미미'라 부르며 자주 맛보게 해 달라 조르는"
+        }
+      ]
     },
     {
       "id": "D625",
       "person": "person:브래디",
       "aspect": "신념",
       "act": "기준",
-      "text": "맛과 정보를 끊임없이 받아야 해 먹는 게 즐겁지 않지만, 언젠가 '온전한 맛'과 '나'의 맛을 보기를 설레며 사는",
+      "text": "맛과 정보를 끊임없이 받아야 해 먹는 게 즐겁지 않지만, 언젠가 '온전한 맛'과 '나'의 맛을 보기를 설레며 산다",
       "reason": "#23 '기대하고, 설레하면서 살고 있지' · #30 '나'.",
       "evidence": [{ "scene": "event_newflavor_05_s", "lines": ["21-36"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "맛과 정보를 끊임없이 받아야 해 먹는 게 즐겁지 않지만, 언젠가 '온전한 맛'과 '나'의 맛을 보기를 설레며 사는"
+        }
+      ]
     },
     {
       "id": "D626",
       "person": "person:크러스트",
       "aspect": "성격",
       "act": "기준",
-      "text": "'헤헤' 웃는 밝고 쉽게 긴장하는 요리사로, 음식 남기기를 싫어해 끔찍한 맛도 싹싹 긁어 먹는",
+      "text": "'헤헤' 웃는 밝고 쉽게 긴장하는 요리사로, 음식 남기기를 싫어해 끔찍한 맛도 싹싹 긁어 먹는다",
       "reason": "#19 '싹싹 긁어 먹었네' · #45 '음식 남기는 걸 별로 안 좋아하잖아'.",
       "evidence": [{ "scene": "event_newflavor_02_e", "lines": ["13-20", "43-45"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'헤헤' 웃는 밝고 쉽게 긴장하는 요리사로, 음식 남기기를 싫어해 끔찍한 맛도 싹싹 긁어 먹는"
+        }
+      ]
     },
     {
       "id": "D627",
@@ -164,12 +217,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "첫 요리에 '미미'라 극찬한 지휘관을 특별히 여겨 '미식가님'이라 부르는",
+      "text": "첫 요리에 '미미'라 극찬한 지휘관을 특별히 여겨 '미식가님'이라 부른다",
       "reason": "#15-16 '미식가님이라 부르겠어요'.",
       "evidence": [{ "scene": "event_newflavor_01_e", "lines": ["12-18"] }],
       "status": "확정",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M26", "note": "M26 자체 검토 — 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "첫 요리에 '미미'라 극찬한 지휘관을 특별히 여겨 '미식가님'이라 부르는" }
+      ]
     },
     {
       "id": "D628",

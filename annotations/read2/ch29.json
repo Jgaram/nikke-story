@@ -193,12 +193,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "새로 투입된 셋만 행방불명인데 특수별동대만 멀쩡하다며 동료를 버리고 온 게 아니냐고 의심하는",
+      "text": "새로 투입된 셋만 행방불명인데 특수별동대만 멀쩡하다며 동료를 버리고 온 게 아니냐고 의심한다",
       "evidence": [{ "scene": "d_main_29_01_s", "lines": ["43-63"] }],
       "reason": "#43 · #63 — 네온의 말에 사과하지만(#91) 언노운을 돕는 지휘관에겐 '쳇'(29_07_e#83)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "새로 투입된 셋만 행방불명인데 특수별동대만 멀쩡하다며 동료를 버리고 온 게 아니냐고 의심하는"
+        }
+      ]
     },
     {
       "id": "D425",
@@ -231,12 +241,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "마이티 툴즈 선배들이 칭찬한 사람이라 지휘관이 구하러 올 거라 믿는",
+      "text": "마이티 툴즈 선배들이 칭찬한 사람이라 지휘관이 구하러 올 거라 믿는다",
       "evidence": [{ "scene": "d_main_29_05_s", "lines": ["81-82"] }],
       "reason": "#82 '선배님들이 믿으니 저도 믿슴다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "마이티 툴즈 선배들이 칭찬한 사람이라 지휘관이 구하러 올 거라 믿는" }
+      ]
     },
     {
       "id": "D428",
@@ -244,24 +257,37 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "'인간은 배신한다'며 수정에 깔린 채로도 지휘관의 도움을 믿지 않고 꺼지라 하는",
+      "text": "'인간은 배신한다'며 수정에 깔린 채로도 지휘관의 도움을 믿지 않고 꺼지라 한다",
       "evidence": [{ "scene": "d_main_29_07_e", "lines": ["29-36", "44-50"] }],
       "reason": "#34-36 · #48-50 — 구해 주자 은혜는 갚는다며 동료가 간 곳을 알려 준다(#110-117)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'인간은 배신한다'며 수정에 깔린 채로도 지휘관의 도움을 믿지 않고 꺼지라 하는" }
+      ]
     },
     {
       "id": "D429",
       "person": "person:그레이브",
       "aspect": "성격",
       "act": "기준",
-      "text": "끊어진 말투로 '나가라'만 되풀이하며 직격하지 않고, 받은 은혜는 원수처럼 반드시 갚는",
+      "text": "끊어진 말투로 '나가라'만 되풀이하며 직격하지 않고, 받은 은혜는 원수처럼 반드시 갚는다",
       "evidence": [{ "scene": "d_main_29_07_e", "lines": ["110-116"] }],
       "reason": "#113 '은혜, 원수. 반드시, 갚는, 다' · 직격 없음은 지휘관의 판단(#64-72)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "끊어진 말투로 '나가라'만 되풀이하며 직격하지 않고, 받은 은혜는 원수처럼 반드시 갚는"
+        }
+      ]
     },
     {
       "id": "D430",

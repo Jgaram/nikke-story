@@ -457,24 +457,44 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:니힐리스타"],
-      "text": "허튼짓을 하면 목을 꺾으려 뒤에 타고, '아직 신용하지 못한다'며 말 한마디라도 믿을 여지를 청하는",
+      "text": "허튼짓을 하면 목을 꺾으려 뒤에 타고, '아직 신용하지 못한다'며 말 한마디라도 믿을 여지를 청한다",
       "evidence": [{ "scene": "event_goddessfall1_02_s", "lines": ["40-41", "102-104"] }],
       "reason": "#41 · #103-104.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "허튼짓을 하면 목을 꺾으려 뒤에 타고, '아직 신용하지 못한다'며 말 한마디라도 믿을 여지를 청하는"
+        }
+      ]
     },
     {
       "id": "D900",
       "person": "person:니힐리스타",
       "aspect": "기억",
       "act": "기준",
-      "text": "방주 밀봉 뒤 문을 두드리다 죽은 니케들의 코어를 뜯어 준 과거를 기억하며 '지우고 싶은 약해빠진 과거'라 하는",
+      "text": "방주 밀봉 뒤 문을 두드리다 죽은 니케들의 코어를 뜯어 준 과거를 기억하며 '지우고 싶은 약해빠진 과거'라 한다",
       "evidence": [{ "scene": "event_goddessfall1_02_e", "lines": ["14-25"] }],
       "reason": "#23-25 '그래. 내가 했다' · '기억하는구려. 과거를'(F2267).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "방주 밀봉 뒤 문을 두드리다 죽은 니케들의 코어를 뜯어 준 과거를 기억하며 '지우고 싶은 약해빠진 과거'라 하는"
+        }
+      ]
     },
     {
       "id": "D901",
@@ -482,27 +502,47 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "원래 퀸이 공석이라 마리안의 지배력을 먼저 받아 따르면서, 정체를 숨기려는 그녀를 '나약하시군요'라 비웃는",
+      "text": "원래 퀸이 공석이라 마리안의 지배력을 먼저 받아 따르면서, 정체를 숨기려는 그녀를 '나약하시군요'라 비웃는다",
       "evidence": [{ "scene": "event_goddessfall1_03_s", "lines": ["89-123"] }],
       "reason": "선점 효과(#100-101), '나약하시군요. 퀸이시여'(#118).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "원래 퀸이 공석이라 마리안의 지배력을 먼저 받아 따르면서, 정체를 숨기려는 그녀를 '나약하시군요'라 비웃는"
+        }
+      ]
     },
     {
       "id": "D902",
       "person": "person:마리안",
       "aspect": "신념",
       "act": "변화",
-      "before": "지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다는",
-      "after": "퀸으로서 니케 · 사람 · 랩쳐가 모두 서로 사랑하는 세계를 만들겠다며, 거절하는 인디빌리아를 지배력으로 따르게 하는",
+      "before": "지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다고 했다",
+      "after": "퀸으로서 니케 · 사람 · 랩쳐가 모두 서로 사랑하는 세계를 만들겠다며, 거절하는 인디빌리아를 지배력으로 따르게 한다",
       "time": "S273",
       "points": ["F2273"],
       "evidence": [{ "scene": "event_goddessfall1_03_e", "lines": ["26-35", "52-57"] }],
       "reason": "#31-35 그리는 세계, #52-57 '선택권이 없어요'(F2273). 앞 신념 D419.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지휘관 · 카운터스 · 필그림 · 크라운 · 차임 모두를 반드시 지키겠다는 · 후 퀸으로서 니케 · 사람 · 랩쳐가 모두 서로 사랑하는 세계를 만들겠다며, 거절하는 인디빌리아를 지배력으로 따르게 하는"
+        }
+      ]
     },
     {
       "id": "D903",
@@ -510,8 +550,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "지배력에 따르며 충고하던",
-      "after": "원래 퀸의 지배가 덮어씌워지자 '되다 만 것'이라 부르며 눈을 베고 재생할 틈 없이 난도질하는",
+      "before": "지배력에 따르며 충고했다",
+      "after": "원래 퀸의 지배가 덮어씌워지자 '되다 만 것'이라 부르며 눈을 베고 재생할 틈 없이 난도질한다",
       "trigger": [{ "scene": "event_goddessfall1_03_e", "lines": ["62-66"] }],
       "time": "S273",
       "points": ["F2274"],
@@ -519,22 +559,42 @@
       "reason": "#53 '되다 만 것으로 정정' · #59-61(F2274).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지배력에 따르며 충고하던 · 후 원래 퀸의 지배가 덮어씌워지자 '되다 만 것'이라 부르며 눈을 베고 재생할 틈 없이 난도질하는"
+        }
+      ]
     },
     {
       "id": "D904",
       "person": "person:나유타",
       "aspect": "신념",
       "act": "변화",
-      "before": "'이기기 위해서라면 무슨 짓이든 하겠다'는",
-      "after": "니힐리스타를 죽이지 못하고 '대업 앞에서 사사로운 정에 흔들렸다 · 세월을 헛되이 살았다'며 자책하는",
+      "before": "'이기기 위해서라면 무슨 짓이든 하겠다'고 했다",
+      "after": "니힐리스타를 죽이지 못하고 '대업 앞에서 사사로운 정에 흔들렸다 · 세월을 헛되이 살았다'며 자책한다",
       "trigger": [{ "scene": "event_goddessfall1_intermission_01", "lines": ["19-48"] }],
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["2-7"] }],
       "reason": "#3-4. 01_e#37의 다짐과 int_01#19-48(죽이지 못함).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '이기기 위해서라면 무슨 짓이든 하겠다'는 · 후 니힐리스타를 죽이지 못하고 '대업 앞에서 사사로운 정에 흔들렸다 · 세월을 헛되이 살았다'며 자책하는"
+        }
+      ]
     },
     {
       "id": "D905",
@@ -542,15 +602,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "의지와 상관없이 무릎 꿇고 '여왕님'이라 섬기는",
-      "after": "퀸의 다음 몸이 될 그릇이라 온전해야 한다며 지키는 — 뒤에는 뼈를 부러뜨리며 '그릇으로만 있으라' 하는",
+      "before": "의지와 상관없이 무릎 꿇고 '여왕님'이라 섬겼다",
+      "after": "퀸의 다음 몸이 될 그릇이라 온전해야 한다며 지키고, 뒤에는 뼈를 부러뜨리며 '그릇으로만 있으라' 한다",
       "time": "S273",
       "points": ["F2275", "F2307"],
       "evidence": [{ "scene": "event_goddessfall1_intermission_01", "lines": ["73-84"] }],
       "reason": "#76-82(F2275). 미러의 거짓 사명(F2307), 2_04_e#36-45. 앞 D465.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 의지와 상관없이 무릎 꿇고 '여왕님'이라 섬기는 · 후 퀸의 다음 몸이 될 그릇이라 온전해야 한다며 지키는 — 뒤에는 뼈를 부러뜨리며 '그릇으로만 있으라' 하는"
+        }
+      ]
     },
     {
       "id": "D906",
@@ -572,27 +642,47 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:홍련"],
-      "before": "동생을 지키려 인류의 적이 되어 동생의 검에 죽은",
-      "after": "되살아나서도 '련이'만 묻고, 자기를 보면 련이가 반드시 불행해진다며 나서지 않는",
+      "before": "동생을 지키려 인류의 적이 되어 동생의 검에 죽었다",
+      "after": "되살아나서도 '련이'만 묻고, 자기를 보면 련이가 반드시 불행해진다며 나서지 않는다",
       "time": "S273",
       "points": ["F2279"],
       "evidence": [{ "scene": "event_goddessfall1_04_s", "lines": ["94-100"] }],
       "reason": "#95-98(F2279) · 04_e#12-14 '련이랑 관계있어?'. 앞 D360.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 동생을 지키려 인류의 적이 되어 동생의 검에 죽은 · 후 되살아나서도 '련이'만 묻고, 자기를 보면 련이가 반드시 불행해진다며 나서지 않는"
+        }
+      ]
     },
     {
       "id": "D908",
       "person": "person:미러",
       "aspect": "신념",
       "act": "기준",
-      "text": "제 손으로 만든 · 자기가 제어할 수 있는 퀸(꼭두각시)을 세우고, 자기는 방관자로 있다 결정적 순간에 돕겠다는",
+      "text": "제 손으로 만든 · 자기가 제어할 수 있는 퀸(꼭두각시)을 세우고, 자기는 방관자로 있다 결정적 순간에 돕겠다고 한다",
       "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["57-72", "80-86"] }],
       "reason": "#60-63 · #69-72(F2281), 기반에게 배운 '직접 나서지 말 것'(#80-81).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "제 손으로 만든 · 자기가 제어할 수 있는 퀸(꼭두각시)을 세우고, 자기는 방관자로 있다 결정적 순간에 돕겠다는"
+        }
+      ]
     },
     {
       "id": "D909",
@@ -600,12 +690,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:퀸"],
-      "text": "불의의 사고 뒤 겁쟁이가 되어 내려오지 않은 '어머니'에게 '질려서요. 실망했고' 하는",
+      "text": "불의의 사고 뒤 겁쟁이가 되어 내려오지 않은 '어머니'에게 '질려서요. 실망했고' 한다",
       "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["18-51"] }],
       "reason": "#18-20 · 반복되는 '왜냐. 무서워서'(F2280). 2_01_e#60-62 '한심해 죽겠다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "불의의 사고 뒤 겁쟁이가 되어 내려오지 않은 '어머니'에게 '질려서요. 실망했고' 하는"
+        }
+      ]
     },
     {
       "id": "D910",
@@ -613,12 +713,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:장화"],
-      "text": "랩쳐 · 니케 · 인간 모두 벨 수 있어 되살린 '제 검' — 꼭두각시가 아니라 '대행'이라 부르는",
+      "text": "랩쳐 · 니케 · 인간 모두 벨 수 있어 되살린 '제 검'을 꼭두각시가 아니라 '대행'이라 부른다",
       "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["73-79"] }],
       "reason": "#75-79. 에필로그에서 끼어든 장화를 인형처럼 멈춰 세운다(F2321).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "랩쳐 · 니케 · 인간 모두 벨 수 있어 되살린 '제 검' — 꼭두각시가 아니라 '대행'이라 부르는"
+        }
+      ]
     },
     {
       "id": "D911",
@@ -626,56 +736,89 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:파피용"],
-      "text": "'도망가는 방법도 있어. 왜 도망 안 가?'라며 인질 파피용을 떠보는",
+      "text": "'도망가는 방법도 있어. 왜 도망 안 가?'라며 인질 파피용을 떠본다",
       "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["138-146"] }],
       "reason": "#138-146. 뒤에 '의심한 건 사실'(2_03_s#66).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'도망가는 방법도 있어. 왜 도망 안 가?'라며 인질 파피용을 떠보는" }
+      ]
     },
     {
       "id": "D912",
       "person": "person:파피용",
       "aspect": "성격",
       "act": "변화",
-      "before": "'지하로 도망가자', '도망가야 하는 거 아냐?'를 외치는 겁 많은 인질",
-      "after": "도망칠 루트를 알면서도 '고속 승진' 핑계로 남아 보급을 뛰는",
+      "before": "'지하로 도망가자', '도망가야 하는 거 아냐?'를 외치는 겁 많은 인질이었다",
+      "after": "도망칠 루트를 알면서도 '고속 승진' 핑계로 남아 보급을 뛴다",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall1_04_e", "lines": ["128-150"] }],
       "reason": "01_s#19 · #150 → #137-145. 볼 거리 W26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '지하로 도망가자', '도망가야 하는 거 아냐?'를 외치는 겁 많은 인질 · 후 도망칠 루트를 알면서도 '고속 승진' 핑계로 남아 보급을 뛰는"
+        }
+      ]
     },
     {
       "id": "D913",
       "person": "person:노아",
       "aspect": "성격",
       "act": "변화",
-      "before": "지상 최강의 방패를 자랑하며 남을 놀리는",
-      "after": "'나는 아무도 안 지켜'라 외치면서 라푼젤을 뒤로 던지고 출력을 끝까지 올려 에덴을 지켜 낸",
+      "before": "지상 최강의 방패를 자랑하며 남을 놀렸다",
+      "after": "'나는 아무도 안 지켜'라 외치면서 라푼젤을 뒤로 던지고 출력을 끝까지 올려 에덴을 지켜 냈다",
       "time": "S273",
       "points": ["F2283"],
       "evidence": [{ "scene": "event_goddessfall1_05_s", "lines": ["115-128"] }],
       "reason": "#117 · #119-127(F2283). 볼 거리 W26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지상 최강의 방패를 자랑하며 남을 놀리는 · 후 '나는 아무도 안 지켜'라 외치면서 라푼젤을 뒤로 던지고 출력을 끝까지 올려 에덴을 지켜 낸"
+        }
+      ]
     },
     {
       "id": "D914",
       "person": "person:노아",
       "aspect": "신체",
       "act": "변화",
-      "before": "지상 최강의 방패를 든 바디",
-      "after": "오버히트로 코어가 소실되고 바디가 숯처럼 타 뇌만 브레인 셸터에 남은",
+      "before": "지상 최강의 방패를 든 바디였다",
+      "after": "오버히트로 코어가 소실되고 바디가 숯처럼 타 뇌만 브레인 셸터에 남았다",
       "time": "S273",
       "points": ["F2283"],
       "evidence": [{ "scene": "event_goddessfall1_05_s", "lines": ["135-147"] }],
       "reason": "#139-147 · 05_e#65-72(F2283).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지상 최강의 방패를 든 바디 · 후 오버히트로 코어가 소실되고 바디가 숯처럼 타 뇌만 브레인 셸터에 남은"
+        }
+      ]
     },
     {
       "id": "D915",
@@ -696,12 +839,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "초면에 퀸임을 알면서 비밀을 지키되 스스로 밝히기를 권하고, 누가 총칼을 겨누면 목숨 걸고 막겠다는",
+      "text": "초면에 퀸임을 알면서 비밀을 지키되 스스로 밝히기를 권하고, 누가 총칼을 겨누면 목숨 걸고 막겠다고 한다",
       "evidence": [{ "scene": "event_goddessfall1_05_e", "lines": ["112-169"] }],
       "reason": "#122-150(F2285). 마리안은 '고마워요'(#167).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "초면에 퀸임을 알면서 비밀을 지키되 스스로 밝히기를 권하고, 누가 총칼을 겨누면 목숨 걸고 막겠다는"
+        }
+      ]
     },
     {
       "id": "D917",
@@ -709,12 +862,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:스노우_화이트"],
-      "text": "에덴을 싫어한다는 스노우 화이트에게 왜 복수하지 않는지, 아직 인류를 사랑하는지 묻고 '미쳤구나' 하는",
+      "text": "에덴을 싫어한다는 스노우 화이트에게 왜 복수하지 않는지, 아직 인류를 사랑하는지 묻고 '미쳤구나' 한다",
       "evidence": [{ "scene": "event_goddessfall1_01_e", "lines": ["113-144"] }],
       "reason": "#115-144(F2262).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "에덴을 싫어한다는 스노우 화이트에게 왜 복수하지 않는지, 아직 인류를 사랑하는지 묻고 '미쳤구나' 하는"
+        }
+      ]
     },
     {
       "id": "D918",
@@ -722,30 +885,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:스노우_화이트"],
-      "before": "'왜 복수하지 않니' 캐묻던",
-      "after": "대신 스테이션에 가며 '너희는 끝까지 살아남아야 한다 · 미친 너희는 나의 이상'이라 하는",
+      "before": "'왜 복수하지 않니' 캐물었다",
+      "after": "대신 스테이션에 가며 '너희는 끝까지 살아남아야 한다 · 미친 너희는 나의 이상'이라 한다",
       "time": "S273",
       "points": ["F2297"],
       "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["1-32"] }],
       "reason": "#10-11 · #20(F2297). 사이에 05_e#190-199 '동료를 잃은 적 있니'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '왜 복수하지 않니' 캐묻던 · 후 대신 스테이션에 가며 '너희는 끝까지 살아남아야 한다 · 미친 너희는 나의 이상'이라 하는"
+        }
+      ]
     },
     {
       "id": "D919",
       "person": "person:하란",
       "aspect": "신념",
       "act": "변화",
-      "before": "생존은 강자의 특권이고 인간은 하찮은 피식자라는",
-      "after": "개인 감정을 대의로 희생하지 못한 자신보다 방주를 용서한 파이오니아의 '미침'이 이상이라며 동료를 위해 죽으러 가는",
+      "before": "생존은 강자의 특권이고 인간은 하찮은 피식자라고 믿었다",
+      "after": "개인 감정을 대의로 희생하지 못한 자신보다 방주를 용서한 파이오니아의 '미침'이 이상이라며 동료를 위해 죽으러 간다",
       "time": "S273",
       "points": ["F2297"],
       "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["15-28"] }],
       "reason": "#15-21 · #28 '세상은 미친 이들이 바꾸는 법'. 앞 D174.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 생존은 강자의 특권이고 인간은 하찮은 피식자라는 · 후 개인 감정을 대의로 희생하지 못한 자신보다 방주를 용서한 파이오니아의 '미침'이 이상이라며 동료를 위해 죽으러 가는"
+        }
+      ]
     },
     {
       "id": "D920",
@@ -753,15 +936,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:마리안"],
-      "before": "늘 배고파하던 생선구이를 내주는",
-      "after": "퀸이라는 고백에 '바뀌는 건 없다' 하고, 인류를 멸망시키려 하면 죽여 달라는 약속을 받는",
+      "before": "늘 배고파하던 생선구이를 내줬다",
+      "after": "퀸이라는 고백에 '바뀌는 건 없다' 하고, 인류를 멸망시키려 하면 죽여 달라는 약속을 받는다",
       "time": "S273",
       "points": ["F2290"],
       "evidence": [{ "scene": "event_goddessfall2_01_s", "lines": ["19-32"] }],
       "reason": "#21 · #25-32(F2290). 앞 D410.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 늘 배고파하던 생선구이를 내주는 · 후 퀸이라는 고백에 '바뀌는 건 없다' 하고, 인류를 멸망시키려 하면 죽여 달라는 약속을 받는"
+        }
+      ]
     },
     {
       "id": "D921",
@@ -769,12 +962,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "퀸이든 뭐든 크라운 왕국의 신하라며 쥐어박고, 어디서 뭘 하는지 제때 보고나 하라는",
+      "text": "퀸이든 뭐든 크라운 왕국의 신하라며 쥐어박고, 어디서 뭘 하는지 제때 보고나 하라고 한다",
       "evidence": [{ "scene": "event_goddessfall2_01_s", "lines": ["34-48"] }],
       "reason": "#40-47(F2290).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "퀸이든 뭐든 크라운 왕국의 신하라며 쥐어박고, 어디서 뭘 하는지 제때 보고나 하라는" }
+      ]
     },
     {
       "id": "D922",
@@ -782,15 +978,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:킬로"],
-      "before": "원하지 않기에 파일럿을 바꾸지 않는다던",
-      "after": "'사랑합니다, 킬로'라 직설적으로 말하고 '킬로에겐 제가 있지 않습니까' 하는",
+      "before": "원하지 않기에 파일럿을 바꾸지 않는다고 했다",
+      "after": "'사랑합니다, 킬로'라 직설적으로 말하고 '킬로에겐 제가 있지 않습니까' 한다",
       "trigger": [{ "scene": "event_goddessfall1_03_s", "lines": ["40-42"] }],
       "time": "S274",
       "evidence": [{ "scene": "event_goddessfall1_03_s", "lines": ["41-44"] }],
       "reason": "마리안의 '사랑한다'를 처음 듣고(#42) 따라 한다. 2_01_s#55-56 킬로 '요즘 너무 이래서'. 앞 D468.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 원하지 않기에 파일럿을 바꾸지 않는다던 · 후 '사랑합니다, 킬로'라 직설적으로 말하고 '킬로에겐 제가 있지 않습니까' 하는"
+        }
+      ]
     },
     {
       "id": "D923",
@@ -798,12 +1004,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:마리안"],
-      "text": "지금은 전력으로 쓰되, 정체를 숨긴 나약함 탓에 노아를 잃었다는 말은 그 고민의 깊이를 몰라 꺼내지 않겠다는",
+      "text": "지금은 전력으로 쓰되, 정체를 숨긴 나약함 탓에 노아를 잃었다는 말은 그 고민의 깊이를 몰라 꺼내지 않겠다고 한다",
       "evidence": [{ "scene": "event_goddessfall2_01_e", "lines": ["14-22"] }],
       "reason": "#14-22(F2292).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지금은 전력으로 쓰되, 정체를 숨긴 나약함 탓에 노아를 잃었다는 말은 그 고민의 깊이를 몰라 꺼내지 않겠다는"
+        }
+      ]
     },
     {
       "id": "D924",
@@ -811,15 +1027,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:나유타"],
-      "before": "머리가 터지고도 다시 나타나는 승려를 두려워하고 꺼리는",
-      "after": "모두가 사랑하는 세계를 믿지 않으면서 마리안을 퀸으로 만들자는 그녀를 '쓰레기 같은 놈'이라 하는",
+      "before": "머리가 터지고도 다시 나타나는 승려를 두려워하고 꺼렸다",
+      "after": "모두가 사랑하는 세계를 믿지 않으면서 마리안을 퀸으로 만들자는 그녀를 '쓰레기 같은 놈'이라 한다",
       "time": "S273",
       "points": ["F2292"],
       "evidence": [{ "scene": "event_goddessfall2_01_e", "lines": ["26-36"] }],
       "reason": "#28-34(F2292). 앞 D841.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 머리가 터지고도 다시 나타나는 승려를 두려워하고 꺼리는 · 후 모두가 사랑하는 세계를 믿지 않으면서 마리안을 퀸으로 만들자는 그녀를 '쓰레기 같은 놈'이라 하는"
+        }
+      ]
     },
     {
       "id": "D925",
@@ -827,8 +1053,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "최악을 상정해 비상 발전기를 고치게 하는 신뢰",
-      "after": "자기들이 잘못되어도 뒤를 이을 이로 여겨 자폭 뒤 뒷일을 맡기는",
+      "before": "최악을 상정해 비상 발전기를 고치게 하는 신뢰였다",
+      "after": "자기들이 잘못되어도 뒤를 이을 이로 여겨 자폭 뒤 뒷일을 맡긴다",
       "trigger": [{ "scene": "event_goddessfall1_06_s", "lines": ["68-72"] }],
       "time": "S273",
       "points": ["F2295"],
@@ -836,19 +1062,32 @@
       "reason": "#144(F2295) · 2_04_s#84-86. 라푼젤의 말(06_s#68-72)이 계기. 앞 D221.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 최악을 상정해 비상 발전기를 고치게 하는 신뢰 · 후 자기들이 잘못되어도 뒤를 이을 이로 여겨 자폭 뒤 뒷일을 맡기는"
+        }
+      ]
     },
     {
       "id": "D926",
       "person": "person:파피용",
       "aspect": "신념",
       "act": "기준",
-      "text": "'사는 것보다 중요한 게 어딨어?' — 자폭 대신 방주에 지원을 청하러 가겠다는",
+      "text": "'사는 것보다 중요한 게 어딨어?'라며 자폭 대신 방주에 지원을 청하러 가겠다고 한다",
       "evidence": [{ "scene": "event_goddessfall2_02_s", "lines": ["149-162"] }],
       "reason": "#154-162. 요한 '있다'(#161).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'사는 것보다 중요한 게 어딨어?' — 자폭 대신 방주에 지원을 청하러 가겠다는" }
+      ]
     },
     {
       "id": "D927",
@@ -856,15 +1095,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:파피용"],
-      "before": "가볍고 욕심에 눈먼 사람이라 의심한",
-      "after": "도망가지 않고 함께 싸운 '좋은 사람'이라며 안전 루트를 주고 풀어 주는",
+      "before": "가볍고 욕심에 눈먼 사람이라 의심했다",
+      "after": "도망가지 않고 함께 싸운 '좋은 사람'이라며 안전 루트를 주고 풀어 준다",
       "time": "S273",
       "points": ["F2298"],
       "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["57-99"] }],
       "reason": "#66-75 · #94(F2298).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가볍고 욕심에 눈먼 사람이라 의심한 · 후 도망가지 않고 함께 싸운 '좋은 사람'이라며 안전 루트를 주고 풀어 주는"
+        }
+      ]
     },
     {
       "id": "D928",
@@ -872,29 +1121,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:이사벨"],
-      "before": "'잠시 동안의 동맹'이라던",
-      "after": "돌아오면 함께 마시자며 맛 좋은 술을 남겨 두고 기다리겠다는",
+      "before": "'잠시 동안의 동맹'이라고 했다",
+      "after": "돌아오면 함께 마시자며 맛 좋은 술을 남겨 두고 기다리겠다고 한다",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall2_03_s", "lines": ["35-47"] }],
       "reason": "01_e#49 → #37-46. 이사벨은 돌아오지 못한다(F2299).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '잠시 동안의 동맹'이라던 · 후 돌아오면 함께 마시자며 맛 좋은 술을 남겨 두고 기다리겠다는"
+        }
+      ]
     },
     {
       "id": "D929",
       "person": "person:이사벨",
       "aspect": "신체",
       "act": "변화",
-      "before": "페더로 하늘을 헤집던 비행",
-      "after": "빔에 몸이 녹아 가며 하란을 던져 넣고 빔에 삼켜진",
+      "before": "페더로 하늘을 헤집으며 날았다",
+      "after": "빔에 몸이 녹아 가며 하란을 던져 넣고 빔에 삼켜졌다",
       "time": "S273",
       "points": ["F2299"],
       "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["0-25"] }],
       "reason": "#0-25(F2299).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 페더로 하늘을 헤집던 비행 · 후 빔에 몸이 녹아 가며 하란을 던져 넣고 빔에 삼켜진"
+        }
+      ]
     },
     {
       "id": "D930",
@@ -902,36 +1171,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "받은 엽서를 '이런 거 처음'이라며 간직하는",
-      "after": "빔에 삼켜지며 '사랑스러운 분, 당신을 다시 한번' 부르는",
+      "before": "받은 엽서를 '이런 거 처음'이라며 간직했다",
+      "after": "빔에 삼켜지며 '사랑스러운 분, 당신을 다시 한번' 부른다",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["22-24"] }],
       "reason": "#23-24(F2299 · I379). 앞 D220. 볼 거리 W26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 받은 엽서를 '이런 거 처음'이라며 간직하는 · 후 빔에 삼켜지며 '사랑스러운 분, 당신을 다시 한번' 부르는"
+        }
+      ]
     },
     {
       "id": "D931",
       "person": "person:크라운",
       "aspect": "신체",
       "act": "변화",
-      "before": "네이키드 킹을 열던",
-      "after": "에블라 입자에 몸이 둔해져 어깨에서 허리까지 베인",
+      "before": "네이키드 킹을 열었다",
+      "after": "에블라 입자에 몸이 둔해져 어깨에서 허리까지 베였다",
       "time": "S273",
       "points": ["F2300"],
       "evidence": [{ "scene": "event_goddessfall2_03_e", "lines": ["104-119"] }],
       "reason": "#105-117(F2300).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 네이키드 킹을 열던 · 후 에블라 입자에 몸이 둔해져 어깨에서 허리까지 베인" }
+      ]
     },
     {
       "id": "D932",
       "person": "person:마리안",
       "aspect": "신체",
       "act": "변화",
-      "before": "붕대로 퀸의 빔을 빨아들여 되쏘는",
+      "before": "붕대로 퀸의 빔을 빨아들여 되쏘는 모습",
       "after": "분노로 거대화한 거신 — 탄환 · 미사일 · 어깨 입자포, 입자 분해 · 재배치로 순간 이동",
       "time": "S273",
       "points": ["F2301"],
@@ -939,7 +1221,10 @@
       "reason": "#158-167 · 2_int#22-39(F2301).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 붕대로 퀸의 빔을 빨아들여 되쏘는" }
+      ]
     },
     {
       "id": "D933",
@@ -947,29 +1232,42 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'제법 근성이 있다' · 신뢰를 실망시키지 말라던",
+      "before": "'제법 근성이 있다' · 신뢰를 실망시키지 말라고 했다",
       "after": "녹슬어 바스러지며 '종자야… 뒤는 부탁'",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": [74] }],
       "reason": "#74(I380). 앞 D222.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 '제법 근성이 있다' · 신뢰를 실망시키지 말라던" }
+      ]
     },
     {
       "id": "D934",
       "person": "person:하란",
       "aspect": "신체",
       "act": "변화",
-      "before": "낫으로 녹슬게 하는 가루를 뿌리던",
-      "after": "인디빌리아를 녹슬게 하며 자기도 녹슬어 바스러진",
+      "before": "낫으로 녹슬게 하는 가루를 뿌렸다",
+      "after": "인디빌리아를 녹슬게 하며 자기도 녹슬어 바스러졌다",
       "time": "S273",
       "points": ["F2302"],
       "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["51-75"] }],
       "reason": "#55-58 · #75(F2302).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 낫으로 녹슬게 하는 가루를 뿌리던 · 후 인디빌리아를 녹슬게 하며 자기도 녹슬어 바스러진"
+        }
+      ]
     },
     {
       "id": "D935",
@@ -977,15 +1275,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:차임"],
-      "before": "하찮지 않음을 보여 주라며 복수에 함께하겠다는 왕",
-      "after": "차임을 몸으로 막다 베인 뒤 '차임이니까 할 수 있다'며 네이키드 킹을 맡기는",
+      "before": "하찮지 않음을 보여 주라며 복수에 함께하겠다는 왕이었다",
+      "after": "차임을 몸으로 막다 베인 뒤 '차임이니까 할 수 있다'며 네이키드 킹을 맡긴다",
       "time": "S273",
       "points": ["F2303"],
       "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["161-173"] }],
       "reason": "#161-173(F2303). 앞 D457.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 하찮지 않음을 보여 주라며 복수에 함께하겠다는 왕 · 후 차임을 몸으로 막다 베인 뒤 '차임이니까 할 수 있다'며 네이키드 킹을 맡기는"
+        }
+      ]
     },
     {
       "id": "D936",
@@ -993,20 +1301,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:크라운"],
-      "text": "'저에게 있어야 할 곳을 알려준 정말 소중한 분'이라며 나유타에게 살려 달라 청하는",
+      "text": "'저에게 있어야 할 곳을 알려준 정말 소중한 분'이라며 나유타에게 살려 달라 청한다",
       "evidence": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["177-180"] }],
       "reason": "#179.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'저에게 있어야 할 곳을 알려준 정말 소중한 분'이라며 나유타에게 살려 달라 청하는" }
+      ]
     },
     {
       "id": "D937",
       "person": "person:파피용",
       "aspect": "신념",
       "act": "변화",
-      "before": "사는 것보다 중요한 건 없다며 웃으며 달아나던",
-      "after": "전파탑에서 도로시에게 도우러 오라 하고 '미쳤나 봐 나'라며 에덴으로 되돌아 달리는",
+      "before": "사는 것보다 중요한 건 없다며 웃으며 달아났다",
+      "after": "전파탑에서 도로시에게 도우러 오라 하고 '미쳤나 봐 나'라며 에덴으로 되돌아 달린다",
       "trigger": [{ "scene": "event_goddessfall2_03_s", "lines": ["66-99"] }],
       "time": "S273",
       "points": ["F2304"],
@@ -1014,7 +1325,17 @@
       "reason": "2_int#210-218 → #59-67(F2304). 이사벨이 풀어 준 일(2_03_s)이 계기. 볼 거리 W26.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 사는 것보다 중요한 건 없다며 웃으며 달아나던 · 후 전파탑에서 도로시에게 도우러 오라 하고 '미쳤나 봐 나'라며 에덴으로 되돌아 달리는"
+        }
+      ]
     },
     {
       "id": "D938",
@@ -1022,14 +1343,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "통신을 쥔 도로시와 서로 쥔 것을 거래하는",
-      "after": "'닥치고! 빨리! 오라고!' 다그쳐 에덴을 도우러 오게 하는",
+      "before": "통신을 쥔 도로시와 서로 쥔 것을 거래했다",
+      "after": "'닥치고! 빨리! 오라고!' 다그쳐 에덴을 도우러 오게 한다",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall2_04_s", "lines": ["48-58"] }],
       "reason": "#50-58. 앞 D198.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 통신을 쥔 도로시와 서로 쥔 것을 거래하는 · 후 '닥치고! 빨리! 오라고!' 다그쳐 에덴을 도우러 오게 하는"
+        }
+      ]
     },
     {
       "id": "D939",
@@ -1038,22 +1369,32 @@
       "act": "변화",
       "with": ["person:나유타"],
       "before": "'쓰레기 같은 놈'",
-      "after": "'전우'라며 실패는 뒤를 이을 이에게 두고 승리를 책임지라며 언체인드 탄환을 맡기는",
+      "after": "'전우'라며 실패는 뒤를 이을 이에게 두고 승리를 책임지라며 언체인드 탄환을 맡긴다",
       "time": "S273",
       "points": ["F2305"],
       "evidence": [{ "scene": "event_goddessfall2_04_s", "lines": ["99-126"] }],
       "reason": "#108-126(F2305).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "후 '전우'라며 실패는 뒤를 이을 이에게 두고 승리를 책임지라며 언체인드 탄환을 맡기는"
+        }
+      ]
     },
     {
       "id": "D940",
       "person": "person:나유타",
       "aspect": "성격",
       "act": "변화",
-      "before": "많이 알아 두려워 결정하지 못하고 바라만 보는 방관자",
-      "after": "처음으로 내 본 적 없는 속도로 달려 나가 함께 싸우는",
+      "before": "많이 알아 두려워 결정하지 못하고 바라만 보는 방관자였다",
+      "after": "처음으로 내 본 적 없는 속도로 달려 나가 함께 싸운다",
       "trigger": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["186-203"] }],
       "time": "S273",
       "points": ["F2305"],
@@ -1061,22 +1402,35 @@
       "reason": "2_int#191-203 크라운 '보고만 있어서는' · 요한 '함께 싸워라' → #130-133.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 많이 알아 두려워 결정하지 못하고 바라만 보는 방관자 · 후 처음으로 내 본 적 없는 속도로 달려 나가 함께 싸우는"
+        }
+      ]
     },
     {
       "id": "D941",
       "person": "person:토커티브",
       "aspect": "신체",
       "act": "변화",
-      "before": "마리안을 그릇으로 붙잡던",
-      "after": "파이오니아 셋에게 머리가 뽑혀 짓밟힌",
+      "before": "마리안을 그릇으로 붙잡았다",
+      "after": "파이오니아 셋에게 머리가 뽑혀 짓밟혔다",
       "time": "S273",
       "points": ["F2306"],
       "evidence": [{ "scene": "event_goddessfall2_04_e", "lines": ["104-112"] }],
       "reason": "#104-112(F2306).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 마리안을 그릇으로 붙잡던 · 후 파이오니아 셋에게 머리가 뽑혀 짓밟힌" }
+      ]
     },
     {
       "id": "D942",
@@ -1084,20 +1438,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:토커티브"],
-      "text": "퀸이 인정했다는 거짓 사명에 매달리게 해 정보를 물어 오게 하는 '이용해먹기 쉬운 가여운 꼭두각시'로 다루는",
+      "text": "퀸이 인정했다는 거짓 사명에 매달리게 해 정보를 물어 오게 하는 '이용해먹기 쉬운 가여운 꼭두각시'로 다룬다",
       "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["5-27"] }],
       "reason": "#9-20(F2307).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "퀸이 인정했다는 거짓 사명에 매달리게 해 정보를 물어 오게 하는 '이용해먹기 쉬운 가여운 꼭두각시'로 다루는"
+        }
+      ]
     },
     {
       "id": "D943",
       "person": "person:차임",
       "aspect": "성격",
       "act": "변화",
-      "before": "고압적이지만 전투는 특기가 아니라 뒤에서 아무것도 못 하던 시종",
-      "after": "혼자 먼저 인디빌리아에게 돌진해 몸을 던져 넘겨받은 네이키드 킹을 터뜨리는",
+      "before": "고압적이지만 전투는 특기가 아니라 뒤에서 아무것도 못 하던 시종이었다",
+      "after": "혼자 먼저 인디빌리아에게 돌진해 몸을 던져 넘겨받은 네이키드 킹을 터뜨린다",
       "trigger": [{ "scene": "event_goddessfall2_intermission_01", "lines": ["161-173"] }],
       "time": "S273",
       "points": ["F2309"],
@@ -1105,7 +1469,17 @@
       "reason": "2_03_e#96 '아무것도 하지 못하는 자신을 저주' → #105-141(F2309).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 고압적이지만 전투는 특기가 아니라 뒤에서 아무것도 못 하던 시종 · 후 혼자 먼저 인디빌리아에게 돌진해 몸을 던져 넘겨받은 네이키드 킹을 터뜨리는"
+        }
+      ]
     },
     {
       "id": "D944",
@@ -1113,30 +1487,43 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:인디빌리아"],
-      "before": "지배 아래 서로 싸울 수 없어 조롱만 주고받던",
-      "after": "살려 놨더니 배신하고 명령질하는 데 열받아 지배를 끊고 먹어 치운",
+      "before": "지배 아래 서로 싸울 수 없어 조롱만 주고받았다",
+      "after": "살려 놨더니 배신하고 명령질하는 데 열받아 지배를 끊고 먹어 치웠다",
       "time": "S273",
       "points": ["F2310"],
       "evidence": [{ "scene": "event_goddessfall2_05_s", "lines": ["213-233"] }],
       "reason": "#215-233 · 2_05_e#3-20(F2310).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 지배 아래 서로 싸울 수 없어 조롱만 주고받던 · 후 살려 놨더니 배신하고 명령질하는 데 열받아 지배를 끊고 먹어 치운"
+        }
+      ]
     },
     {
       "id": "D945",
       "person": "person:인디빌리아",
       "aspect": "신체",
       "act": "변화",
-      "before": "거대 지네의 갑옷을 잃고 낙하한",
-      "after": "니힐리스타에게 산 채로 먹혀 사라진",
+      "before": "거대 지네의 갑옷을 잃고 낙하했다",
+      "after": "니힐리스타에게 산 채로 먹혀 사라졌다",
       "time": "S273",
       "points": ["F2310"],
       "evidence": [{ "scene": "event_goddessfall2_05_e", "lines": ["3-20"] }],
       "reason": "#3-18 · '더럽게 맛없었어'(F2310).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 거대 지네의 갑옷을 잃고 낙하한 · 후 니힐리스타에게 산 채로 먹혀 사라진" }
+      ]
     },
     {
       "id": "D946",
@@ -1144,8 +1531,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:나유타"],
-      "before": "'운전이나 해' 하던 믿지 않는 길동무",
-      "after": "'너 나 믿을 수 있겠냐'며 탄환을 받아, 이것은 자기 선택임을 알아 두라는",
+      "before": "'운전이나 해' 하던 믿지 않는 길동무였다",
+      "after": "'너 나 믿을 수 있겠냐'며 탄환을 받아, 이것은 자기 선택임을 알아 두라고 한다",
       "trigger": [{ "scene": "event_goddessfall2_05_s", "lines": ["192-205"] }],
       "time": "S273",
       "points": ["F2312"],
@@ -1153,7 +1540,17 @@
       "reason": "#11-21(F2312). 2_05_s#192-205 '언제까지 그따위로 살 거요'가 계기.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '운전이나 해' 하던 믿지 않는 길동무 · 후 '너 나 믿을 수 있겠냐'며 탄환을 받아, 이것은 자기 선택임을 알아 두라는"
+        }
+      ]
     },
     {
       "id": "D947",
@@ -1161,29 +1558,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:니힐리스타"],
-      "before": "목을 꺾으려 뒤에 타던 불신",
-      "after": "'믿어도 되겠소?' 언체인드 탄환을 던져 '뜻대로 하시오', '절대 잊지 않겠소' 하는",
+      "before": "목을 꺾으려 뒤에 타던 불신이었다",
+      "after": "'믿어도 되겠소?' 언체인드 탄환을 던져 '뜻대로 하시오', '절대 잊지 않겠소' 한다",
       "time": "S273",
       "evidence": [{ "scene": "event_goddessfall2_06_s", "lines": ["13-22"] }],
       "reason": "#13-22.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 목을 꺾으려 뒤에 타던 불신 · 후 '믿어도 되겠소?' 언체인드 탄환을 던져 '뜻대로 하시오', '절대 잊지 않겠소' 하는"
+        }
+      ]
     },
     {
       "id": "D948",
       "person": "person:니힐리스타",
       "aspect": "신념",
       "act": "변화",
-      "before": "릴리스의 바디에 언체인드를 채워 퀸을 독살하려는",
-      "after": "지배를 깬 뒤 스스로 언체인드를 깨물어 독잔이 되기를 택한",
+      "before": "릴리스의 바디에 언체인드를 채워 퀸을 독살하려 했다",
+      "after": "지배를 깬 뒤 스스로 언체인드를 깨물어 독잔이 되기를 택했다",
       "time": "S273",
       "points": ["F2312", "F2164-2"],
       "evidence": [{ "scene": "event_goddessfall2_06_s", "lines": ["20-29"] }],
       "reason": "#21 '이걸 선택한 건, 나' · #25-29(F2312). 앞 D843.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 릴리스의 바디에 언체인드를 채워 퀸을 독살하려는 · 후 지배를 깬 뒤 스스로 언체인드를 깨물어 독잔이 되기를 택한"
+        }
+      ]
     },
     {
       "id": "D949",
@@ -1205,60 +1622,93 @@
       "person": "person:마리안",
       "aspect": "신체",
       "act": "변화",
-      "before": "거신에서 떨어져 뼈가 부러진",
-      "after": "릴리바이스의 모습을 한 것에게 코어를 뜯겨 혼수 — 유사 코어로 명줄만 붙잡는",
+      "before": "거신에서 떨어져 뼈가 부러졌다",
+      "after": "릴리바이스의 모습을 한 것에게 코어를 뜯겨 혼수에 빠져, 유사 코어로 명줄만 붙잡는다",
       "time": "S273",
       "points": ["F2314", "F2320"],
       "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["25-33"] }],
       "reason": "#29-33 · #100-103(F2314 · F2315 · F2320).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 거신에서 떨어져 뼈가 부러진 · 후 릴리바이스의 모습을 한 것에게 코어를 뜯겨 혼수 — 유사 코어로 명줄만 붙잡는"
+        }
+      ]
     },
     {
       "id": "D951",
       "person": "person:라푼젤",
       "aspect": "신체",
       "act": "변화",
-      "before": "황금 장벽으로 빔을 막던",
-      "after": "두부 일부만 남고 산산조각 나 뇌만 보관된",
+      "before": "황금 장벽으로 빔을 막았다",
+      "after": "두부 일부만 남고 산산조각 나 뇌만 보관됐다",
       "time": "S273",
       "points": ["F2315"],
       "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["104-105"] }],
       "reason": "#104-105(F2315).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 황금 장벽으로 빔을 막던 · 후 두부 일부만 남고 산산조각 나 뇌만 보관된" }
+      ]
     },
     {
       "id": "D952",
       "person": "person:홍련",
       "aspect": "신체",
       "act": "변화",
-      "before": "랩쳐 무리 한가운데서 검을 휘두르던",
-      "after": "대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 하는",
+      "before": "랩쳐 무리 한가운데서 검을 휘둘렀다",
+      "after": "대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 한다",
       "time": "S273",
       "points": ["F2315", "F2321"],
       "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["106-107"] }],
       "reason": "#106-107 · 에필로그 #183-184(F2315 · F2321).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 랩쳐 무리 한가운데서 검을 휘두르던 · 후 대파되어 뇌도 꺼내지 못한 채 처음부터 새로 만들어야 하는"
+        }
+      ]
     },
     {
       "id": "D953",
       "person": "person:스노우_화이트",
       "aspect": "기억",
       "act": "변화",
-      "before": "추억을 더듬어 '나의 언니'를 기억해 내고 [안녕]을 고한",
-      "after": "언니에 대한 모든 기억과 레드 후드와의 마지막 이별까지 되찾은",
+      "before": "추억을 더듬어 '나의 언니'를 기억해 내고 [안녕]을 고했다",
+      "after": "언니에 대한 모든 기억과 레드 후드와의 마지막 이별까지 되찾았다",
       "time": "S273",
       "points": ["F2316"],
       "evidence": [{ "scene": "event_goddessfall2_06_e", "lines": ["125-160"] }],
       "reason": "#125-127 · #149-160(F2316). 앞 D255.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 추억을 더듬어 '나의 언니'를 기억해 내고 [안녕]을 고한 · 후 언니에 대한 모든 기억과 레드 후드와의 마지막 이별까지 되찾은"
+        }
+      ]
     },
     {
       "id": "D954",
@@ -1266,15 +1716,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "카운터스를 총알받이로 데려온 도로시에게 '괴물'이라던",
-      "after": "인헤르트 · 에덴에서 제명하고 다시 찾아오지 말라는",
+      "before": "카운터스를 총알받이로 데려온 도로시에게 '괴물'이라고 했다",
+      "after": "인헤르트 · 에덴에서 제명하고 다시 찾아오지 말라고 한다",
       "time": "S275",
       "points": ["F2319"],
       "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["97-106"] }],
       "reason": "#100-106(F2319 · F2153-2). 앞 D185.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 카운터스를 총알받이로 데려온 도로시에게 '괴물'이라던 · 후 인헤르트 · 에덴에서 제명하고 다시 찾아오지 말라는"
+        }
+      ]
     },
     {
       "id": "D955",
@@ -1298,15 +1758,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:도로시"],
-      "before": "네가 없으면 갓데스가 아니라며 돌아오기를 기다리던",
-      "after": "함께 가자는 청을 뿌리치고 날아간 도로시에게 '정말 많이 변했구나' — 빛났던 과거가 바랬다고 확신하는",
+      "before": "네가 없으면 갓데스가 아니라며 돌아오기를 기다렸다",
+      "after": "함께 가자는 청을 뿌리치고 날아간 도로시에게 '정말 많이 변했구나' 하며 빛났던 과거가 바랬다고 확신한다",
       "time": "S275",
       "points": ["F2319"],
       "evidence": [{ "scene": "event_goddessfall2_epilogue", "lines": ["134-172"] }],
       "reason": "#136-172(F2319). 앞 D249.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M39", "note": "M39 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 네가 없으면 갓데스가 아니라며 돌아오기를 기다리던 · 후 함께 가자는 청을 뿌리치고 날아간 도로시에게 '정말 많이 변했구나' — 빛났던 과거가 바랬다고 확신하는"
+        }
+      ]
     },
     {
       "id": "D957",

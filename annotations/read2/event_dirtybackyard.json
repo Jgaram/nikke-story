@@ -93,27 +93,47 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "'동생'이라 부르며 이마가 땅에 닿게 무릎 꿇고 도와 달라 하고, '나는 널 믿으니까'에 제일 듣고 싶던 말이라며 목숨을 걸고 지키겠다는",
+      "text": "'동생'이라 부르며 이마가 땅에 닿게 무릎 꿇고 도와 달라 하고, '나는 널 믿으니까'에 제일 듣고 싶던 말이라며 목숨을 걸고 지키겠다고 한다",
       "evidence": [{ "scene": "event_dirtybackyard_01_e", "lines": ["6-27"] }],
       "reason": "#9-13 · #18-27 — 03_e#65-66 '내 목숨을 걸고 지켜줄게', epilogue#70 '동생은 항상 날 믿어줬지'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'동생'이라 부르며 이마가 땅에 닿게 무릎 꿇고 도와 달라 하고, '나는 널 믿으니까'에 제일 듣고 싶던 말이라며 목숨을 걸고 지키겠다는"
+        }
+      ]
     },
     {
       "id": "D367",
       "person": "person:목단",
       "aspect": "신념",
       "act": "변화",
-      "before": "의리로 구역 사람들을 지켜 주는 협객",
-      "after": "질서를 어긴 제 구역을 제 손으로 불태우고 '아무것도 해결된 게 없다'며 괴로워하는",
+      "before": "의리로 구역 사람들을 지켜 주는 협객이었다",
+      "after": "질서를 어긴 제 구역을 제 손으로 불태우고 '아무것도 해결된 게 없다'며 괴로워한다",
       "trigger": [{ "scene": "event_dirtybackyard_06_s", "lines": ["14-21"] }],
       "time": "S122",
       "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["82-93"] }],
       "reason": "05_e#88-89 '선택권이 없어, 언더월드 퀸이자 모란회 보스' → epilogue#87-93 '옳은 선택이라 생각했는데'. 앞 기준 D206",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 의리로 구역 사람들을 지켜 주는 협객 · 후 질서를 어긴 제 구역을 제 손으로 불태우고 '아무것도 해결된 게 없다'며 괴로워하는"
+        }
+      ]
     },
     {
       "id": "D368",
@@ -121,12 +141,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:목단"],
-      "text": "파트너를 위험에 빠뜨린 의뢰인이라며 미스트 유통을 의심해 총을 겨누는",
+      "text": "파트너를 위험에 빠뜨린 의뢰인이라며 미스트 유통을 의심해 총을 겨눈다",
       "evidence": [{ "scene": "event_dirtybackyard_02_e", "lines": ["3-18"] }],
       "reason": "#7-12 — intermission#79 '의심이 100퍼센트 다 풀린 게 아니니까'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "파트너를 위험에 빠뜨린 의뢰인이라며 미스트 유통을 의심해 총을 겨누는" }
+      ]
     },
     {
       "id": "D369",
@@ -134,15 +157,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:목단"],
-      "before": "미스트 유통을 의심하던 의뢰인",
-      "after": "목단에게 졌어도 누명을 풀어 주려 식스오를 쫓고 '목단을 잘 부탁해'라는",
+      "before": "미스트 유통을 의심하던 의뢰인이었다",
+      "after": "목단에게 졌어도 누명을 풀어 주려 식스오를 쫓고 '목단을 잘 부탁해'라고 한다",
       "trigger": [{ "scene": "event_dirtybackyard_06_s", "lines": ["30-66"] }],
       "time": "S122",
       "evidence": [{ "scene": "event_dirtybackyard_epilogue", "lines": ["24-43"] }],
       "reason": "#25 '목단이 식스오와 연관 있다 생각했는데 아니었고' · #35 · #42-43",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 미스트 유통을 의심하던 의뢰인 · 후 목단에게 졌어도 누명을 풀어 주려 식스오를 쫓고 '목단을 잘 부탁해'라는"
+        }
+      ]
     },
     {
       "id": "D370",
@@ -165,15 +198,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "농담과 키스로 받아넘기는 '파트너'",
-      "after": "파트너를 지키려 감정적으로 굴었다고 사과하고, 떠올리기 싫은 과거와 식스오의 의뢰까지 털어놓는",
+      "before": "농담과 키스로 받아넘기는 '파트너'였다",
+      "after": "파트너를 지키려 감정적으로 굴었다고 사과하고, 떠올리기 싫은 과거와 식스오의 의뢰까지 털어놓는다",
       "trigger": [{ "scene": "event_dirtybackyard_02_s", "lines": ["86-107"] }],
       "time": "S122",
       "evidence": [{ "scene": "event_dirtybackyard_05_e", "lines": ["192-233"] }],
       "reason": "intermission#75-78 '파트너를 지키기 위해' · 05_e#192-217 숨긴 과거를 밝힘 — 앞 기준 D168",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M14" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 농담과 키스로 받아넘기는 '파트너' · 후 파트너를 지키려 감정적으로 굴었다고 사과하고, 떠올리기 싫은 과거와 식스오의 의뢰까지 털어놓는"
+        }
+      ]
     }
   ],
   "life": [

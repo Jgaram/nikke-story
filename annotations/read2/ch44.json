@@ -324,29 +324,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "피의 비밀을 숨겨 주는 지지자",
-      "after": "받기만 해서는 좋은 관계를 유지할 수 없다며 언체인드 기술과 교환하자는",
+      "before": "피의 비밀을 숨겨 주는 지지자이다",
+      "after": "받기만 해서는 좋은 관계를 유지할 수 없다며 언체인드 기술과 교환하자고 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_06", "lines": ["7-11"] }],
       "reason": "06#7-11 '당신을 위한 일이에요'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 피의 비밀을 숨겨 주는 지지자 · 후 받기만 해서는 좋은 관계를 유지할 수 없다며 언체인드 기술과 교환하자는"
+        }
+      ]
     },
     {
       "id": "D1035",
       "person": "person:파피용",
       "aspect": "소속",
       "act": "변화",
-      "before": "출세하려 에덴에 머무는 방주의 스파이",
-      "after": "'여기 애들 다 좋은 애들'이라며 보고를 미루고 에덴에 남는",
+      "before": "출세하려 에덴에 머무는 방주의 스파이이다",
+      "after": "'여기 애들 다 좋은 애들'이라며 보고를 미루고 에덴에 남는다",
       "time": "S297",
       "points": ["F2425"],
       "evidence": [{ "scene": "d_main_44_06", "lines": ["20-27"] }],
       "reason": "06#21-23 — F2425",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 출세하려 에덴에 머무는 방주의 스파이 · 후 '여기 애들 다 좋은 애들'이라며 보고를 미루고 에덴에 남는"
+        }
+      ]
     },
     {
       "id": "D1036",
@@ -354,42 +374,65 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:라피"],
-      "text": "마주 보며 함께 울고 '거기에 있구나' — 레드 후드를 이어 줘서 고맙다는",
+      "text": "마주 보며 함께 울고 '거기에 있구나' — 레드 후드를 이어 줘서 고맙다고 한다",
       "evidence": [{ "scene": "d_main_44_06", "lines": ["69-80"] }],
       "reason": "06#70 · 80 — 07#96 '그래서 거기 있는 거로군. 레드 후드가'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "마주 보며 함께 울고 '거기에 있구나' — 레드 후드를 이어 줘서 고맙다는" }
+      ]
     },
     {
       "id": "D1037",
       "person": "person:라피",
       "aspect": "기억",
       "act": "변화",
-      "before": "고향에서 레드 후드의 그리움을 느끼던",
-      "after": "스노우 화이트를 보자 영문 모를 눈물이 멈추지 않는",
+      "before": "고향에서 레드 후드의 그리움을 느꼈다",
+      "after": "스노우 화이트를 보자 영문 모를 눈물이 멈추지 않는다",
       "time": "S297",
       "points": ["F2426"],
       "evidence": [{ "scene": "d_main_44_06", "lines": ["64-66", "82-87"] }],
       "reason": "06#84-86 '왜 이러는 거… 안 멈춰' — 07#96이 레드 후드라 잇는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 고향에서 레드 후드의 그리움을 느끼던 · 후 스노우 화이트를 보자 영문 모를 눈물이 멈추지 않는"
+        }
+      ]
     },
     {
       "id": "D1038",
       "person": "person:스노우_화이트",
       "aspect": "기억",
       "act": "변화",
-      "before": "숨진 릴리바이스를 '누구지 이건' 하던",
-      "after": "갓데스 시절부터 도로시와 갈라선 일까지 모든 기억을 되찾은",
+      "before": "숨진 릴리바이스를 '누구지 이건' 했다",
+      "after": "갓데스 시절부터 도로시와 갈라선 일까지 모든 기억을 되찾았다",
       "time": "S297",
       "points": ["F2427"],
       "evidence": [{ "scene": "d_main_44_07", "lines": ["3-11"] }],
       "reason": "07#3 '모든 기억을 되찾았다' — F2427",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 숨진 릴리바이스를 '누구지 이건' 하던 · 후 갓데스 시절부터 도로시와 갈라선 일까지 모든 기억을 되찾은"
+        }
+      ]
     },
     {
       "id": "D1039",
@@ -397,14 +440,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레드_후드"],
-      "before": "함께 싸워 영광이었다며 보내 준",
-      "after": "영상 속 얼굴을 쓰다듬고 '봤으면 좋았을 텐데' 그리워하는",
+      "before": "함께 싸워 영광이었다며 보내 줬다",
+      "after": "영상 속 얼굴을 쓰다듬고 '봤으면 좋았을 텐데' 그리워한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_07", "lines": ["43-47", "98-104"] }],
       "reason": "07#45 · 104",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 함께 싸워 영광이었다며 보내 준 · 후 영상 속 얼굴을 쓰다듬고 '봤으면 좋았을 텐데' 그리워하는"
+        }
+      ]
     },
     {
       "id": "D1040",
@@ -412,12 +465,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:신데렐라"],
-      "text": "인류를 패배시킨 아나키오르였지만 침식 탓이라며, 함께 싸우는 지금은 공격하지 않겠다는",
+      "text": "인류를 패배시킨 아나키오르였지만 침식 탓이라며, 함께 싸우는 지금은 공격하지 않겠다고 한다",
       "evidence": [{ "scene": "d_main_44_07", "lines": ["73-86"] }],
       "reason": "07#73-85",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "인류를 패배시킨 아나키오르였지만 침식 탓이라며, 함께 싸우는 지금은 공격하지 않겠다는"
+        }
+      ]
     },
     {
       "id": "D1041",
@@ -425,14 +488,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "헤어지며 '죽지 마라' 당부하던",
-      "after": "모든 힘이 모여드는 '인류의 희망'이라 부르는",
+      "before": "헤어지며 '죽지 마라' 당부했다",
+      "after": "모든 힘이 모여드는 '인류의 희망'이라 부른다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_07", "lines": ["113-117"] }],
       "reason": "07#115-117",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 헤어지며 '죽지 마라' 당부하던 · 후 모든 힘이 모여드는 '인류의 희망'이라 부르는"
+        }
+      ]
     },
     {
       "id": "D1042",
@@ -440,12 +513,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:그레이브"],
-      "text": "원래 부품을 손대지 않고 무기를 완성한 배려심을 알아보고 꼭 만나 보고 싶다는",
+      "text": "원래 부품을 손대지 않고 무기를 완성한 배려심을 알아보고 꼭 만나 보고 싶다고 한다",
       "evidence": [{ "scene": "d_main_44_07", "lines": ["133-138"] }],
       "reason": "07#136-138",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "원래 부품을 손대지 않고 무기를 완성한 배려심을 알아보고 꼭 만나 보고 싶다는" }
+      ]
     },
     {
       "id": "D1043",
@@ -453,53 +529,72 @@
       "aspect": "신념",
       "act": "변화",
       "before": "'산다. 그리고 랩쳐를 죽인다'",
-      "after": "은퇴하라는 유언을 받고도 '아직 너희는 멀었다'며 은퇴를 미루는",
+      "after": "은퇴하라는 유언을 받고도 '아직 너희는 멀었다'며 은퇴를 미룬다",
       "time": "S297",
       "trigger": [{ "scene": "d_main_44_07", "lines": ["26-41"] }],
       "evidence": [{ "scene": "d_main_44_07", "lines": ["147-151"] }],
       "reason": "07#147-151 — 물려줄 이를 보며 은퇴를 처음 입에 올린다",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 은퇴하라는 유언을 받고도 '아직 너희는 멀었다'며 은퇴를 미루는" }
+      ]
     },
     {
       "id": "D1044",
       "person": "person:스노우_화이트",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주의 힘 없이 퀸을 죽이려는 에덴을 따르는",
-      "after": "새 헬레틱을 보고 요한 · 세실의 긍지를 지키며 방주의 힘을 빌려야 한다는",
+      "before": "방주의 힘 없이 퀸을 죽이려는 에덴을 따른다",
+      "after": "새 헬레틱을 보고 요한 · 세실의 긍지를 지키며 방주의 힘을 빌려야 한다고 한다",
       "time": "S297",
       "points": ["F2434"],
       "evidence": [{ "scene": "d_main_44_08_e", "lines": ["72-83"] }],
       "reason": "08_e#75 '하지만 이젠 아니다' — F2434",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주의 힘 없이 퀸을 죽이려는 에덴을 따르는 · 후 새 헬레틱을 보고 요한 · 세실의 긍지를 지키며 방주의 힘을 빌려야 한다는"
+        }
+      ]
     },
     {
       "id": "D1045",
       "person": "person:앨트루이아",
       "aspect": "성격",
       "act": "기준",
-      "text": "'~하옵니다' 자비로운 경어로 말하다 '헬레틱'이란 말에 이단이라며 격분하는",
+      "text": "'~하옵니다' 자비로운 경어로 말하다 '헬레틱'이란 말에 이단이라며 격분한다",
       "evidence": [{ "scene": "d_main_44_08_s", "lines": ["25-48"] }],
       "reason": "08_s#25-27 · 41-43",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "'~하옵니다' 자비로운 경어로 말하다 '헬레틱'이란 말에 이단이라며 격분하는" }
+      ]
     },
     {
       "id": "D1046",
       "person": "person:앨트루이아",
       "aspect": "신념",
       "act": "기준",
-      "text": "어머니가 명한 인간의 멸종을, 방주에 초대받아 대화한 뒤 평화롭게 제안하겠다는",
+      "text": "어머니가 명한 인간의 멸종을, 방주에 초대받아 대화한 뒤 평화롭게 제안하겠다고 한다",
       "evidence": [{ "scene": "d_main_44_08_s", "lines": ["51-60"] }],
       "reason": "08_s#55-60 — F2431",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "어머니가 명한 인간의 멸종을, 방주에 초대받아 대화한 뒤 평화롭게 제안하겠다는" }
+      ]
     },
     {
       "id": "D1047",
@@ -520,27 +615,40 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:퀸"],
-      "text": "늦은 것을 사죄하고 대화를 간청하며 '사랑해요, 어머니'라 뺨을 맡기는",
+      "text": "늦은 것을 사죄하고 대화를 간청하며 '사랑해요, 어머니'라 뺨을 맡긴다",
       "evidence": [{ "scene": "d_main_44_08_e", "lines": ["131-165"] }],
       "reason": "08_e#135-165",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "늦은 것을 사죄하고 대화를 간청하며 '사랑해요, 어머니'라 뺨을 맡기는" }
+      ]
     },
     {
       "id": "D1049",
       "person": "person:리버렐리오",
       "aspect": "신체",
       "act": "변화",
-      "before": "어머니를 기다려 온 직계 헬레틱",
-      "after": "퀸에게 머리가 뽑혀 죽고 몸은 랩쳐들이 가져간",
+      "before": "어머니를 기다려 온 직계 헬레틱이다",
+      "after": "퀸에게 머리가 뽑혀 죽고 몸은 랩쳐들이 가져갔다",
       "time": "S297",
       "points": ["F2435"],
       "evidence": [{ "scene": "d_main_44_08_e", "lines": ["166-175"] }],
       "reason": "08_e#167 · 172-175 — F2435",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 어머니를 기다려 온 직계 헬레틱 · 후 퀸에게 머리가 뽑혀 죽고 몸은 랩쳐들이 가져간"
+        }
+      ]
     },
     {
       "id": "D1050",
@@ -548,14 +656,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:퀸"],
-      "before": "내려오지 않은 어머니에게 실망한",
-      "after": "대화가 통할 리 없는 진짜 괴물로 확신하는",
+      "before": "내려오지 않은 어머니에게 실망했다",
+      "after": "대화가 통할 리 없는 진짜 괴물로 확신한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_08_e", "lines": ["177-179"] }],
       "reason": "08_e#177-179",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 내려오지 않은 어머니에게 실망한 · 후 대화가 통할 리 없는 진짜 괴물로 확신하는"
+        }
+      ]
     },
     {
       "id": "D1051",
@@ -563,29 +681,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:릴리바이스"],
-      "before": "'릴리스. 사랑한다' 고백하며 헤어진",
-      "after": "몸을 퀸에게 빼앗겼다는 보고에 화가 가라앉지 않아 지상에서 날뛰고 싶은",
+      "before": "'릴리스. 사랑한다' 고백하며 헤어졌다",
+      "after": "몸을 퀸에게 빼앗겼다는 보고에 화가 가라앉지 않아 지상에서 날뛰고 싶어 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_01", "lines": ["2-14"] }],
       "reason": "af_01#3 · 10-14",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '릴리스. 사랑한다' 고백하며 헤어진 · 후 몸을 퀸에게 빼앗겼다는 보고에 화가 가라앉지 않아 지상에서 날뛰고 싶은"
+        }
+      ]
     },
     {
       "id": "D1052",
       "person": "person:엔더슨",
       "aspect": "신체",
       "act": "변화",
-      "before": "내장을 덜어내 정상적인 삶이 어려운",
-      "after": "얼마 전부터 회춘한 듯 몸 상태가 좋아진",
+      "before": "내장을 덜어내 정상적인 삶이 어려웠다",
+      "after": "얼마 전부터 회춘한 듯 몸 상태가 좋아졌다",
       "time": "S297",
       "points": ["F2437"],
       "evidence": [{ "scene": "d_main_44_af_01", "lines": ["63-65"] }],
       "reason": "af_01#64-65 — F2437",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 내장을 덜어내 정상적인 삶이 어려운 · 후 얼마 전부터 회춘한 듯 몸 상태가 좋아진"
+        }
+      ]
     },
     {
       "id": "D1053",
@@ -593,12 +731,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:도로시"],
-      "text": "탈환전을 재촉하는 속내가 '투명하다'며 상상으로 짚고, 자포자기라면 실망하겠다는",
+      "text": "탈환전을 재촉하는 속내가 '투명하다'며 상상으로 짚고, 자포자기라면 실망하겠다고 한다",
       "evidence": [{ "scene": "d_main_44_af_02", "lines": ["21-33", "52-57", "73-74"] }],
       "reason": "af_02#29 · 53 · 74",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "탈환전을 재촉하는 속내가 '투명하다'며 상상으로 짚고, 자포자기라면 실망하겠다는" }
+      ]
     },
     {
       "id": "D1054",
@@ -606,12 +747,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:버닝엄"],
-      "text": "마리안을 실험대에 올리려 한 일을 원망하고, 입장은 이해해도 물러설 수 없는 게 있다는",
+      "text": "마리안을 실험대에 올리려 한 일을 원망하고, 입장은 이해해도 물러설 수 없는 게 있다고 한다",
       "evidence": [{ "scene": "d_main_44_af_02", "lines": ["152-159"] }],
       "reason": "af_02#152-159 · af_01#53",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "마리안을 실험대에 올리려 한 일을 원망하고, 입장은 이해해도 물러설 수 없는 게 있다는"
+        }
+      ]
     },
     {
       "id": "D1055",
@@ -619,15 +770,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'엔더슨 쪽 사람'으로 예의를 따지던",
-      "after": "'내 우상이자 질투의 대상' — 믿고 끝까지 지켜보겠다는",
+      "before": "'엔더슨 쪽 사람'으로 예의를 따졌다",
+      "after": "'내 우상이자 질투의 대상' — 믿고 끝까지 지켜보겠다고 한다",
       "time": "S297",
       "points": ["F2441"],
       "evidence": [{ "scene": "d_main_44_af_02", "lines": ["160-199"] }],
       "reason": "af_02#168 · 193-198 — F2441",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '엔더슨 쪽 사람'으로 예의를 따지던 · 후 '내 우상이자 질투의 대상' — 믿고 끝까지 지켜보겠다는"
+        }
+      ]
     },
     {
       "id": "D1056",
@@ -635,12 +796,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:파피용"],
-      "text": "에덴에 남은 그녀에게 '자기 목숨의 주인을 자기라 생각하는 스파이는 필요 없다'며 사직서를 내러 오라는",
+      "text": "에덴에 남은 그녀에게 '자기 목숨의 주인을 자기라 생각하는 스파이는 필요 없다'며 사직서를 내러 오라고 한다",
       "evidence": [{ "scene": "d_main_44_af_02", "lines": ["209-211"] }],
       "reason": "af_02#210-211 — F2442",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "에덴에 남은 그녀에게 '자기 목숨의 주인을 자기라 생각하는 스파이는 필요 없다'며 사직서를 내러 오라는"
+        }
+      ]
     },
     {
       "id": "D1057",
@@ -648,26 +819,46 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:식스오"],
-      "text": "제 부정적 감정을 잘라 옮기다 생긴 A.I.를 폐기하라 권했고, '버려진 존재'가 자기를 소멸시키려 한다고 보는",
+      "text": "제 부정적 감정을 잘라 옮기다 생긴 A.I.를 폐기하라 권했고, '버려진 존재'가 자기를 소멸시키려 한다고 본다",
       "evidence": [{ "scene": "d_main_44_af_03", "lines": ["25-49", "94-97"] }],
       "reason": "af_03#25 · 52 · 95-97",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "제 부정적 감정을 잘라 옮기다 생긴 A.I.를 폐기하라 권했고, '버려진 존재'가 자기를 소멸시키려 한다고 보는"
+        }
+      ]
     },
     {
       "id": "D1058",
       "person": "person:목단",
       "aspect": "신념",
       "act": "변화",
-      "before": "마을을 부순 것도 후회하지 않고 잘못은 고치면 된다는",
-      "after": "누명도 상관없다 — 잃을 게 없는 자기가 혼자 짊어지고 부하들은 더 떨어지게 두지 않겠다는",
+      "before": "마을을 부순 것도 후회하지 않고 잘못은 고치면 된다고 했다",
+      "after": "누명도 상관없다 — 잃을 게 없는 자기가 혼자 짊어지고 부하들은 더 떨어지게 두지 않겠다고 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_05", "lines": ["79-95"] }],
       "reason": "af_05#86-95",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 마을을 부순 것도 후회하지 않고 잘못은 고치면 된다는 · 후 누명도 상관없다 — 잃을 게 없는 자기가 혼자 짊어지고 부하들은 더 떨어지게 두지 않겠다는"
+        }
+      ]
     },
     {
       "id": "D1059",
@@ -675,41 +866,71 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:목단"],
-      "text": "혼자 가는 '누님'을 몰래 따라와 '우리는 누님 부하'라며 혼자 해결하려 하지 말라 하고 모란회 옷을 건네는",
+      "text": "혼자 가는 '누님'을 몰래 따라와 '우리는 누님 부하'라며 혼자 해결하려 하지 말라 하고 모란회 옷을 건넨다",
       "evidence": [{ "scene": "d_main_44_af_05", "lines": ["103-119", "141-144"] }],
       "reason": "af_05#110-119 · 144",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "혼자 가는 '누님'을 몰래 따라와 '우리는 누님 부하'라며 혼자 해결하려 하지 말라 하고 모란회 옷을 건네는"
+        }
+      ]
     },
     {
       "id": "D1060",
       "person": "person:목단",
       "aspect": "소속",
       "act": "변화",
-      "before": "전통복을 입을 자격이 없다며 개인으로 움직이던",
-      "after": "따라온 부하들에게 옷을 받아 다시 모란회 보스로 앞장서는",
+      "before": "전통복을 입을 자격이 없다며 개인으로 움직였다",
+      "after": "따라온 부하들에게 옷을 받아 다시 모란회 보스로 앞장선다",
       "time": "S297",
       "points": ["F2449"],
       "evidence": [{ "scene": "d_main_44_af_05", "lines": ["141-145"] }],
       "reason": "af_05#145 · 161 — F2449",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 전통복을 입을 자격이 없다며 개인으로 움직이던 · 후 따라온 부하들에게 옷을 받아 다시 모란회 보스로 앞장서는"
+        }
+      ]
     },
     {
       "id": "D1061",
       "person": "person:리버린",
       "aspect": "성격",
       "act": "변화",
-      "before": "굽실대며 실수도 제 탓으로 돌리던",
-      "after": "2년치 보존식을 쌓고 숨어 시간이 모든 걸 정리해 주길 바라는",
+      "before": "굽실대며 실수도 제 탓으로 돌렸다",
+      "after": "2년치 보존식을 쌓고 숨어 시간이 모든 걸 정리해 주길 바란다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_06", "lines": ["86-99"] }],
       "reason": "af_06#88-99",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 굽실대며 실수도 제 탓으로 돌리던 · 후 2년치 보존식을 쌓고 숨어 시간이 모든 걸 정리해 주길 바라는"
+        }
+      ]
     },
     {
       "id": "D1062",
@@ -717,28 +938,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:리버린"],
-      "before": "식스오를 무서워하며 살 바엔 죽자며 다리를 쏘던",
-      "after": "숨은 곳을 알려 주고 '그냥 벌을 받아' — 또 도망치면 자기가 죽을 것 같다는",
+      "before": "식스오를 무서워하며 살 바엔 죽자며 다리를 쐈다",
+      "after": "숨은 곳을 알려 주고 '그냥 벌을 받아' — 또 도망치면 자기가 죽을 것 같다고 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_06", "lines": ["177-192", "253-259"] }],
       "reason": "af_06#192 · 258-259",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 식스오를 무서워하며 살 바엔 죽자며 다리를 쏘던 · 후 숨은 곳을 알려 주고 '그냥 벌을 받아' — 또 도망치면 자기가 죽을 것 같다는"
+        }
+      ]
     },
     {
       "id": "D1063",
       "person": "person:리버린",
       "aspect": "신념",
       "act": "변화",
-      "before": "굽실대느니 지상에서 죽는 게 낫다며 길잡이로 인정받으려던",
-      "after": "사람답게 살려면 어쩔 수 없었다며 벌을 피하다 협조하기로 한",
+      "before": "굽실대느니 지상에서 죽는 게 낫다며 길잡이로 인정받으려 했다",
+      "after": "사람답게 살려면 어쩔 수 없었다며 벌을 피하다 협조하기로 했다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_06", "lines": ["194-199", 250] }],
       "reason": "af_06#196-199 · 250",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 굽실대느니 지상에서 죽는 게 낫다며 길잡이로 인정받으려던 · 후 사람답게 살려면 어쩔 수 없었다며 벌을 피하다 협조하기로 한"
+        }
+      ]
     },
     {
       "id": "D1064",
@@ -746,15 +987,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:목단"],
-      "before": "누명을 풀어 주려 식스오를 쫓던",
-      "after": "식스오 본거지에 데려가며 함부로 의심한 것 · 모란회가 무너진 것을 사과하는",
+      "before": "누명을 풀어 주려 식스오를 쫓았다",
+      "after": "식스오 본거지에 데려가며 함부로 의심한 것 · 모란회가 무너진 것을 사과한다",
       "time": "S297",
       "trigger": [{ "scene": "d_main_44_af_05", "lines": ["223-232"] }],
       "evidence": [{ "scene": "d_main_44_af_08", "lines": ["36-47"] }],
       "reason": "af_08#38-40",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 누명을 풀어 주려 식스오를 쫓던 · 후 식스오 본거지에 데려가며 함부로 의심한 것 · 모란회가 무너진 것을 사과하는"
+        }
+      ]
     },
     {
       "id": "D1065",
@@ -762,26 +1013,39 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:슈가"],
-      "text": "본거지에 함께 가면서도 '아직 네가 한 짓을 용서 못 해' — 알고도 그랬다면 같은 선택을 하겠다는",
+      "text": "본거지에 함께 가면서도 '아직 네가 한 짓을 용서 못 해' — 알고도 그랬다면 같은 선택을 하겠다고 한다",
       "evidence": [{ "scene": "d_main_44_af_08", "lines": ["36-37", "45-46"] }],
       "reason": "af_08#37 · 46",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "본거지에 함께 가면서도 '아직 네가 한 짓을 용서 못 해' — 알고도 그랬다면 같은 선택을 하겠다는"
+        }
+      ]
     },
     {
       "id": "D1066",
       "person": "person:슈가",
       "aspect": "신념",
       "act": "변화",
-      "before": "썩은 데 물든 약자들까지 쳐내는 건 너무하다는",
+      "before": "썩은 데 물든 약자들까지 쳐내는 건 너무하다는 해결사",
       "after": "오물에 빠진 이는 건지되 오물을 만드는 식스오는 없애야 한다는 해결사",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_08", "lines": ["42-51"] }],
       "reason": "af_08#42-50",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 썩은 데 물든 약자들까지 쳐내는 건 너무하다는" }
+      ]
     },
     {
       "id": "D1067",
@@ -789,43 +1053,73 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:해머링"],
-      "before": "그 머리를 열라는 지시에 울며 사죄하던",
-      "after": "무사하다는 말에 만나서 사과하고 싶다는",
+      "before": "그 머리를 열라는 지시에 울며 사죄했다",
+      "after": "무사하다는 말에 만나서 사과하고 싶다고 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_08", "lines": ["173-177"] }],
       "reason": "af_08#174-175",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 그 머리를 열라는 지시에 울며 사죄하던 · 후 무사하다는 말에 만나서 사과하고 싶다는"
+        }
+      ]
     },
     {
       "id": "D1068",
       "person": "person:E.H.",
       "aspect": "신념",
       "act": "변화",
-      "before": "이제 혼자 하지 않아도 된다며 믿는",
-      "after": "용서받지 못해도 평생 피해자에게 사과하며 살아야 한다는",
+      "before": "이제 혼자 하지 않아도 된다며 믿었다",
+      "after": "용서받지 못해도 평생 피해자에게 사과하며 살아야 한다고 한다",
       "time": "S297",
       "evidence": [{ "scene": "d_main_44_af_08", "lines": ["178-195"] }],
       "reason": "af_08#181-193 — 볼 거리 W40 'E.H.의 속죄'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이제 혼자 하지 않아도 된다며 믿는 · 후 용서받지 못해도 평생 피해자에게 사과하며 살아야 한다는"
+        }
+      ]
     },
     {
       "id": "D1069",
       "person": "person:네온",
       "aspect": "신체",
       "act": "변화",
-      "before": "니케가 된 스톨 3세의 바디",
-      "after": "외부 간섭을 막는 침식 면역 바디 네오-네온 — 맨손으로 수정을 부수는",
+      "before": "니케가 된 스톨 3세의 바디이다",
+      "after": "외부 간섭을 막는 침식 면역 바디 네오-네온 — 맨손으로 수정을 부순다",
       "time": "S298",
       "points": ["F2461"],
       "evidence": [{ "scene": "d_main_44_af_09", "lines": ["151-166", "189-199"] }],
       "reason": "af_09#153 · 192-196 — F2461",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 니케가 된 스톨 3세의 바디 · 후 외부 간섭을 막는 침식 면역 바디 네오-네온 — 맨손으로 수정을 부수는"
+        }
+      ]
     },
     {
       "id": "D1070",
@@ -833,14 +1127,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:네온"],
-      "before": "하이리스크 바디 제작을 '해보죠' 한",
-      "after": "설계도가 지워져 버릴 수 없으니 M.M.R.에 머물게 해 주는",
+      "before": "하이리스크 바디 제작을 '해보죠' 했다",
+      "after": "설계도가 지워져 버릴 수 없으니 M.M.R.에 머물게 해 준다",
       "time": "S298",
       "evidence": [{ "scene": "d_main_44_af_09", "lines": ["222-228", "249-252"] }],
       "reason": "af_09#228 · 252 — 에테르가 까닭을 말한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 하이리스크 바디 제작을 '해보죠' 한 · 후 설계도가 지워져 버릴 수 없으니 M.M.R.에 머물게 해 주는"
+        }
+      ]
     },
     {
       "id": "D1071",
@@ -848,24 +1152,30 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:네온"],
-      "text": "설계도가 지워졌다고 일러 주며 인류의 숙원이 걸린 몸이니 꼭 돌아와 협조해 달라는",
+      "text": "설계도가 지워졌다고 일러 주며 인류의 숙원이 걸린 몸이니 꼭 돌아와 협조해 달라고 한다",
       "evidence": [{ "scene": "d_main_44_af_09", "lines": ["245-264"] }],
       "reason": "af_09#247 · 258-262",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "설계도가 지워졌다고 일러 주며 인류의 숙원이 걸린 몸이니 꼭 돌아와 협조해 달라는" }
+      ]
     },
     {
       "id": "D1072",
       "person": "person:아이리",
       "aspect": "성격",
       "act": "기준",
-      "text": "남의 치부를 들출 때가 가장 좋다며 '모든 기록은 어딘가에 반드시 있다'고 파고드는",
+      "text": "남의 치부를 들출 때가 가장 좋다며 '모든 기록은 어딘가에 반드시 있다'고 파고든다",
       "evidence": [{ "scene": "d_main_44_af_10", "lines": ["10-15", "26-27"] }],
       "reason": "af_10#14-15 · 27",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M43" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "남의 치부를 들출 때가 가장 좋다며 '모든 기록은 어딘가에 반드시 있다'고 파고드는" }
+      ]
     }
   ],
   "life": [

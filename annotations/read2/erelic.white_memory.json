@@ -74,8 +74,8 @@
       "person": "person:스노우_화이트",
       "aspect": "기억",
       "act": "변화",
-      "before": "사고 전환으로 릴리스의 얼굴도 이름도 떠올리지 못해 관 앞 한 걸음을 떼지 못하는",
-      "after": "추억을 더듬어 '나의 언니, 나의 우상'을 기억해 내고 관에 꽃을 올려 [안녕]을 고한",
+      "before": "사고 전환으로 릴리스의 얼굴도 이름도 떠올리지 못해 관 앞 한 걸음을 떼지 못했다",
+      "after": "추억을 더듬어 '나의 언니, 나의 우상'을 기억해 내고 관에 꽃을 올려 [안녕]을 고했다",
       "trigger": [{ "scene": "erelic:white_memory_04", "lines": ["0-8"] }],
       "time": "S73",
       "points": ["F929", "F931"],
@@ -83,7 +83,17 @@
       "reason": "#9-26. 앞 모습 06#0 · 11#1-12, 계기는 라푼젤이 알려 준 헤어지는 법(04)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 사고 전환으로 릴리스의 얼굴도 이름도 떠올리지 못해 관 앞 한 걸음을 떼지 못하는 · 후 추억을 더듬어 '나의 언니, 나의 우상'을 기억해 내고 관에 꽃을 올려 [안녕]을 고한"
+        }
+      ]
     },
     {
       "id": "D256",
@@ -103,8 +113,8 @@
       "person": "person:스노우_화이트",
       "aspect": "신념",
       "act": "변화",
-      "before": "'우리는 인류를 지켜냈다'는 긍지로 퀸을 쫓아 지상을 도는",
-      "after": "지상의 모든 랩쳐를 섬멸하고 언니의 머리를 찾아 언니의 소원(인류 구원)을 이루겠다는",
+      "before": "'우리는 인류를 지켜냈다'는 긍지로 퀸을 쫓아 지상을 돌았다",
+      "after": "지상의 모든 랩쳐를 섬멸하고 언니의 머리를 찾아 언니의 소원(인류 구원)을 이루겠다고 한다",
       "trigger": [{ "scene": "erelic:white_memory_20", "lines": ["0-16"] }],
       "time": "S348",
       "points": ["F934", "F2379"],
@@ -112,22 +122,35 @@
       "reason": "#29-30, #40-41. 글자가 깨지는 #34 · #41은 두 번째 큰 사고 전환(F2379)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '우리는 인류를 지켜냈다'는 긍지로 퀸을 쫓아 지상을 도는 · 후 지상의 모든 랩쳐를 섬멸하고 언니의 머리를 찾아 언니의 소원(인류 구원)을 이루겠다는"
+        }
+      ]
     },
     {
       "id": "D258",
       "person": "person:릴리바이스",
       "aspect": "신체",
       "act": "변화",
-      "before": "석관에 잠든 듯 온전히 누운",
-      "after": "관이 부서지고 머리를 빼앗겨 몸통만 남은",
+      "before": "석관에 잠든 듯 온전히 누워 있었다",
+      "after": "관이 부서지고 머리를 빼앗겨 몸통만 남았다",
       "time": "S348",
       "points": ["F933"],
       "evidence": [{ "scene": "erelic:white_memory_20", "lines": ["0-4"] }],
       "reason": "#1-2. 머리는 리버렐리오가 퀸에게 보냈다(Q132 회수 F2268)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 석관에 잠든 듯 온전히 누운 · 후 관이 부서지고 머리를 빼앗겨 몸통만 남은" }
+      ]
     },
     {
       "id": "D259",

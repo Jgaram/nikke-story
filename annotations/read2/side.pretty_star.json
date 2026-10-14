@@ -297,15 +297,25 @@
       "person": "person:오스왈드",
       "aspect": "신념",
       "act": "변화",
-      "before": "갓데스를 영원한 우상으로 남길 [계획]",
-      "after": "'방주에 우상은 필요 없다 · 끌어내려질 뿐' — 방관밖에 없다는",
+      "before": "갓데스를 영원한 우상으로 남길 [계획]이다",
+      "after": "'방주에 우상은 필요 없다 · 끌어내려질 뿐' — 방관밖에 없다고 한다",
       "trigger": [{ "scene": "side:pretty_star_00", "lines": ["137-141"] }],
       "time": "S310",
       "evidence": [{ "scene": "side:pretty_star_00", "lines": ["174-197"] }],
       "reason": "#175-177 · #192 · #197 — 우상이 끌어내려지는 것을 보는 괴로움",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 갓데스를 영원한 우상으로 남길 [계획] · 후 '방주에 우상은 필요 없다 · 끌어내려질 뿐' — 방관밖에 없다는"
+        }
+      ]
     },
     {
       "id": "D1087",
@@ -313,29 +323,49 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:프리티"],
-      "before": "이유도 모른 채 서명해 보호자가 된",
-      "after": "자기혐오에서 수없이 구원해 준 양녀 — 위원회 활동을 막는",
+      "before": "이유도 모른 채 서명해 보호자가 됐다",
+      "after": "자기혐오에서 수없이 구원해 준 양녀 — 위원회 활동을 막는다",
       "time": "S310",
       "evidence": [{ "scene": "side:pretty_star_00", "lines": ["150-152", "156-161"] }],
       "reason": "#152 '아무런 인연이 없었던 소녀 덕에 수도 없이 구원받았다' · #158-161 '하지 마라'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이유도 모른 채 서명해 보호자가 된 · 후 자기혐오에서 수없이 구원해 준 양녀 — 위원회 활동을 막는"
+        }
+      ]
     },
     {
       "id": "D1088",
       "person": "person:프리티",
       "aspect": "신념",
       "act": "변화",
-      "before": "갓데스 같은 니케가 되겠다는 소녀",
-      "after": "니케 언니들이 다시 우상이 되게 하겠다며 위원회 팀장이 된",
+      "before": "갓데스 같은 니케가 되겠다는 소녀다",
+      "after": "니케 언니들이 다시 우상이 되게 하겠다며 위원회 팀장이 됐다",
       "time": "S310",
       "points": ["F2540"],
       "evidence": [{ "scene": "side:pretty_star_00", "lines": ["165-199"] }],
       "reason": "#166 · #168-170 '니케 언니들이 다시 우상이 될 수 있게'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 갓데스 같은 니케가 되겠다는 소녀 · 후 니케 언니들이 다시 우상이 되게 하겠다며 위원회 팀장이 된"
+        }
+      ]
     },
     {
       "id": "D1089",
@@ -411,12 +441,22 @@
       "person": "person:한슨",
       "aspect": "신념",
       "act": "기준",
-      "text": "어릴 때 TV 속 니케를 보고 자라 니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다고 믿는",
+      "text": "어릴 때 TV 속 니케를 보고 자라 니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다고 믿는다",
       "evidence": [{ "scene": "side:pretty_star_03", "lines": ["36-58"] }],
       "reason": "#37-38 · #40-45 · #58 '니케들에게 희망을 주십쇼'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "어릴 때 TV 속 니케를 보고 자라 니케는 핍박받는 존재가 아닌 승리의 여신이어야 한다고 믿는"
+        }
+      ]
     },
     {
       "id": "D1095",
@@ -424,12 +464,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리티"],
-      "text": "오스왈드의 조건대로 테트라 이사이면서 매니저로 붙어 프리시아와 악수하는",
+      "text": "오스왈드의 조건대로 테트라 이사이면서 매니저로 붙어 프리시아와 악수한다",
       "evidence": [{ "scene": "side:pretty_star_03", "lines": ["74-95"] }],
       "reason": "#77 · #79 '애초에 그럴 생각이었고' · #92-95",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "오스왈드의 조건대로 테트라 이사이면서 매니저로 붙어 프리시아와 악수하는" }
+      ]
     },
     {
       "id": "D1096",
@@ -468,12 +511,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:프리티"],
-      "text": "이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려는",
+      "text": "이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려 한다",
       "evidence": [{ "scene": "side:pretty_star_04", "lines": ["67-78"] }],
       "reason": "#71 '어차피 고철이니 … 막 굴려' · #74 · #78",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "이름도 모르는 '노래 부른 고철'을 막 굴리고 축하 파티에 술이나 따르게 하려는" }
+      ]
     },
     {
       "id": "D1099",
@@ -481,12 +527,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:머스탱"],
-      "text": "공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따르는",
+      "text": "공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따른다",
       "evidence": [{ "scene": "side:pretty_star_05", "lines": ["49-70"] }],
       "reason": "#50 · #53 · #68-70 — 미세스 미스 쪽에서 본 머스탱(D797은 머스탱 쪽)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "공들여 키운 니케들을 높으신 분들에게 보낸 그에게 '쓰레기 같은 놈 · 넌 지옥에 떨어질 거야'라 하면서도 따르는"
+        }
+      ]
     },
     {
       "id": "D1100",
@@ -494,14 +550,17 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:프리티"],
-      "before": "조건으로 붙은 매니저",
-      "after": "반말로 투닥이다 '맞으니까'라 마음을 들키는",
+      "before": "조건으로 붙은 매니저다",
+      "after": "반말로 투닥이다 '맞으니까'라 마음을 들킨다",
       "trigger": [{ "scene": "side:pretty_star_03", "lines": ["74-79"] }],
       "evidence": [{ "scene": "side:pretty_star_05", "lines": ["113-127"] }],
       "reason": "#119-127 '맞으니까, 치워' · 06#21-25 '예뻐 예뻐'로 이어진다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 조건으로 붙은 매니저 · 후 반말로 투닥이다 '맞으니까'라 마음을 들키는" }
+      ]
     },
     {
       "id": "D1101",
@@ -509,26 +568,39 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:한슨"],
-      "text": "운전하는 매니저에게 다리를 얹고 놀리며 미세스 미스 · 스태프와 함께 고마워하는",
+      "text": "운전하는 매니저에게 다리를 얹고 놀리며 미세스 미스 · 스태프와 함께 고마워한다",
       "evidence": [{ "scene": "side:pretty_star_05", "lines": ["76-128"] }],
       "reason": "#101 '이사이자 매니저인 누구 씨 덕분' · #114-119",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "운전하는 매니저에게 다리를 얹고 놀리며 미세스 미스 · 스태프와 함께 고마워하는" }
+      ]
     },
     {
       "id": "D1102",
       "person": "person:프리티",
       "aspect": "성격",
       "act": "변화",
-      "before": "실수 하나에 SNS를 보며 미안해하던",
-      "after": "악플을 무던히 넘기고 울음 · 초췌한 메이크업까지 연출하는 '가면'을 쓴 연예인",
+      "before": "실수 하나에 SNS를 보며 미안해했다",
+      "after": "악플을 무던히 넘기고 울음 · 초췌한 메이크업까지 연출하는 '가면'을 쓴 연예인이다",
       "trigger": [{ "scene": "side:pretty_star_06", "lines": ["4-7"] }],
       "evidence": [{ "scene": "side:pretty_star_07", "lines": ["13-24", "39-69"] }],
       "reason": "#15-19 '아주 통곡을 하려고요' · #63-69 '적당한 가면을 쓰는 것 말고는'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 실수 하나에 SNS를 보며 미안해하던 · 후 악플을 무던히 넘기고 울음 · 초췌한 메이크업까지 연출하는 '가면'을 쓴 연예인"
+        }
+      ]
     },
     {
       "id": "D1103",
@@ -549,13 +621,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:오스왈드"],
-      "before": "반대에 맞서 집을 나가는 양녀",
-      "after": "'좋은 아빠'가 되려 애쓴 그에게 자랑스러운 좋은 딸이고 싶어 멈추지 못하는",
+      "before": "반대에 맞서 집을 나가는 양녀다",
+      "after": "'좋은 아빠'가 되려 애쓴 그에게 자랑스러운 좋은 딸이고 싶어 멈추지 못한다",
       "evidence": [{ "scene": "side:pretty_star_07", "lines": ["74-99"] }],
       "reason": "#84-86 '내가 자랑스럽대' · #92-98",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 반대에 맞서 집을 나가는 양녀 · 후 '좋은 아빠'가 되려 애쓴 그에게 자랑스러운 좋은 딸이고 싶어 멈추지 못하는"
+        }
+      ]
     },
     {
       "id": "D1105",
@@ -563,15 +645,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:오스왈드"],
-      "before": "자랑스러운 좋은 딸이고 싶은",
-      "after": "갓데스를 버린 걸 인정하자 '만지지 마 · 최악'이라 손을 쳐내는",
+      "before": "자랑스러운 좋은 딸이고 싶었다",
+      "after": "갓데스를 버린 걸 인정하자 '만지지 마 · 최악'이라 손을 쳐낸다",
       "trigger": [{ "scene": "side:pretty_star_08", "lines": ["61-83"] }],
       "points": ["F2550"],
       "evidence": [{ "scene": "side:pretty_star_08", "lines": ["100-113"] }],
       "reason": "#104-105 '내가 했다' · #109-112",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 자랑스러운 좋은 딸이고 싶은 · 후 갓데스를 버린 걸 인정하자 '만지지 마 · 최악'이라 손을 쳐내는"
+        }
+      ]
     },
     {
       "id": "D1106",
@@ -579,28 +671,41 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:머스탱"],
-      "before": "차여도 '예'라며 떠안던",
+      "before": "차여도 '예'라며 떠안았다",
       "after": "'부녀 사이를 갈라놓을 것까진 없다'며 처음 대들었다 맞고 다시 '예'",
       "trigger": [{ "scene": "side:pretty_star_08", "lines": ["95-115"] }],
       "evidence": [{ "scene": "side:pretty_star_08", "lines": ["118-147"] }],
       "reason": "#118-122 · #123-124 · #147 — 머스탱 '반항이라도 좀 해라'(#150)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 차여도 '예'라며 떠안던" }
+      ]
     },
     {
       "id": "D1107",
       "person": "person:프리티",
       "aspect": "신념",
       "act": "변화",
-      "before": "핍박받는 니케들의 희망이 되려 춤추고 노래하던",
-      "after": "우상이던 아저씨가 가장 쓰레기였다며 힘낼 이유가 없다는",
+      "before": "핍박받는 니케들의 희망이 되려 춤추고 노래했다",
+      "after": "우상이던 아저씨가 가장 쓰레기였다며 힘낼 이유가 없다고 한다",
       "trigger": [{ "scene": "side:pretty_star_08", "lines": ["100-112"] }],
       "evidence": [{ "scene": "side:pretty_star_09", "lines": ["33-57"] }],
       "reason": "#36-37 · #52-57 '내 우상은 가식적인 쓰레기였어'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 핍박받는 니케들의 희망이 되려 춤추고 노래하던 · 후 우상이던 아저씨가 가장 쓰레기였다며 힘낼 이유가 없다는"
+        }
+      ]
     },
     {
       "id": "D1108",
@@ -608,13 +713,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:한슨"],
-      "before": "다리를 얹고 놀리던 매니저",
-      "after": "'너도 머스탱의 꼭두각시'라며 키스를 시험하고 돌아서는",
+      "before": "다리를 얹고 놀리던 매니저다",
+      "after": "'너도 머스탱의 꼭두각시'라며 키스를 시험하고 돌아선다",
       "evidence": [{ "scene": "side:pretty_star_09", "lines": ["58-76"] }],
       "reason": "#61 · #69-74 '정말. 아무것도 못 하는구나, 너'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 다리를 얹고 놀리던 매니저 · 후 '너도 머스탱의 꼭두각시'라며 키스를 시험하고 돌아서는"
+        }
+      ]
     },
     {
       "id": "D1109",
@@ -635,88 +750,127 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:오스왈드"],
-      "before": "'만지지 마'라 손을 쳐낸",
-      "after": "망가진 그를 '아빠'라 부르며 끌어안고 다시 오겠다는",
+      "before": "'만지지 마'라 손을 쳐냈다",
+      "after": "망가진 그를 '아빠'라 부르며 끌어안고 다시 오겠다고 한다",
       "trigger": [{ "scene": "side:pretty_star_11", "lines": ["21-56"] }],
       "points": ["F2553"],
       "evidence": [{ "scene": "side:pretty_star_11", "lines": ["89-117", "155-159"] }],
       "reason": "#89 '아빠' · #115-117 '미안해요. 다녀왔어요' · #157",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '만지지 마'라 손을 쳐낸 · 후 망가진 그를 '아빠'라 부르며 끌어안고 다시 오겠다는"
+        }
+      ]
     },
     {
       "id": "D1111",
       "person": "person:오스왈드",
       "aspect": "신체",
       "act": "변화",
-      "before": "먼지 한 톨 없이 살던",
-      "after": "술병 속에 기침하며 넋이 나간 — 술로 망가진 몸",
+      "before": "먼지 한 톨 없이 살았다",
+      "after": "술병 속에 기침하며 넋이 나간, 술로 망가진 몸이다",
       "trigger": [{ "scene": "side:pretty_star_08", "lines": ["100-114"] }],
       "evidence": [{ "scene": "side:pretty_star_11", "lines": ["68-86", "103-113"] }],
       "reason": "#72-73 · #82 · #110-113 '네가 없을 때부터' — 13#143 '술로 인해 망가진 몸'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 먼지 한 톨 없이 살던 · 후 술병 속에 기침하며 넋이 나간 — 술로 망가진 몸" }
+      ]
     },
     {
       "id": "D1112",
       "person": "person:프리티",
       "aspect": "신념",
       "act": "변화",
-      "before": "힘낼 이유가 없다며 무너진",
-      "after": "최정점의 콘서트에서 죽어 퇴색하지 않는 영원한 우상이 되고, 다음 별을 맡기겠다는",
+      "before": "힘낼 이유가 없다며 무너졌다",
+      "after": "최정점의 콘서트에서 죽어 퇴색하지 않는 영원한 우상이 되고, 다음 별을 맡기겠다고 한다",
       "trigger": [{ "scene": "side:pretty_star_11", "lines": ["139-149"] }],
       "points": ["F2554"],
       "evidence": [{ "scene": "side:pretty_star_13", "lines": ["74-97"] }],
       "reason": "#76-79 · #86-89 · #92-96 — 아니스의 '영원한 우상'(10#178)과 아빠의 고백이 계기",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 힘낼 이유가 없다며 무너진 · 후 최정점의 콘서트에서 죽어 퇴색하지 않는 영원한 우상이 되고, 다음 별을 맡기겠다는"
+        }
+      ]
     },
     {
       "id": "D1113",
       "person": "person:프리티",
       "aspect": "신체",
       "act": "변화",
-      "before": "경량화 바디로 갈아 끼운 방주의 별",
-      "after": "복귀 콘서트에서 총격으로 죽은",
+      "before": "경량화 바디로 갈아 끼운 방주의 별이다",
+      "after": "복귀 콘서트에서 총격으로 죽었다",
       "time": "S310",
       "points": ["F1748-2"],
       "evidence": [{ "scene": "side:pretty_star_13", "lines": ["71-73", "104-132"] }],
       "reason": "#114 · #119-131 '안녕' · #132 '우상이 쓰러진다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 경량화 바디로 갈아 끼운 방주의 별 · 후 복귀 콘서트에서 총격으로 죽은" }
+      ]
     },
     {
       "id": "D1114",
       "person": "person:미세스_미스",
       "aspect": "소속",
       "act": "변화",
-      "before": "테트라의 프로듀서",
-      "after": "'찾을 것'이 있다며 퇴사한",
+      "before": "테트라의 프로듀서다",
+      "after": "'찾을 것'이 있다며 퇴사했다",
       "trigger": [{ "scene": "side:pretty_star_13", "lines": [132] }],
       "points": ["F2557", "F2091-2"],
       "evidence": [{ "scene": "side:pretty_star_13", "lines": ["218-232"] }],
       "reason": "#220-223 '퇴사할 거라고' · #229 '나는 찾을 거야'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 테트라의 프로듀서 · 후 '찾을 것'이 있다며 퇴사한" }
+      ]
     },
     {
       "id": "D1115",
       "person": "person:한슨",
       "aspect": "성격",
       "act": "변화",
-      "before": "위로도 반항도 못 하고 멀리서 지켜보기만 하던",
-      "after": "니케를 탓하는 시민에게 나서서 외치는",
+      "before": "위로도 반항도 못 하고 멀리서 지켜보기만 했다",
+      "after": "니케를 탓하는 시민에게 나서서 외친다",
       "trigger": [{ "scene": "side:pretty_star_13", "lines": [132] }],
       "evidence": [{ "scene": "side:pretty_star_13", "lines": ["199-208"] }],
       "reason": "#203-204 '그녀들이 목숨 걸고 싸워준 덕분에' — #296-297이 앞 모습을 스스로 말한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 위로도 반항도 못 하고 멀리서 지켜보기만 하던 · 후 니케를 탓하는 시민에게 나서서 외치는"
+        }
+      ]
     },
     {
       "id": "D1116",
@@ -739,8 +893,8 @@
       "person": "person:아니스",
       "aspect": "신념",
       "act": "변화",
-      "before": "프리티 노래로 '살자'던 팬",
-      "after": "사람들에게 희망을 주는 별이 되겠다는",
+      "before": "프리티 노래로 '살자'던 팬이다",
+      "after": "사람들에게 희망을 주는 별이 되겠다고 한다",
       "trigger": [{ "scene": "side:pretty_star_13", "lines": ["301-305"] }],
       "time": "S310",
       "points": ["F2556"],
@@ -748,15 +902,18 @@
       "reason": "#307-310 '희망을 주는 별이 되고 싶어요' — 14#28-29로 이어진다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 프리티 노래로 '살자'던 팬 · 후 사람들에게 희망을 주는 별이 되겠다는" }
+      ]
     },
     {
       "id": "D1118",
       "person": "person:오스왈드",
       "aspect": "신념",
       "act": "변화",
-      "before": "우상은 끌어내려질 뿐이라 방관하던",
-      "after": "세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다는",
+      "before": "우상은 끌어내려질 뿐이라 방관했다",
+      "after": "세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다고 한다",
       "trigger": [{ "scene": "side:pretty_star_14", "lines": ["20-32"] }],
       "time": "S311",
       "points": ["F2558"],
@@ -764,7 +921,17 @@
       "reason": "#50-55 '세상을 비춘 이들은 퇴색되어서도, 잊혀져서도 안 됩니다' — 아니스의 말이 위로(#32)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M45", "note": "M45 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 우상은 끌어내려질 뿐이라 방관하던 · 후 세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다는"
+        }
+      ]
     },
     {
       "id": "D1119",

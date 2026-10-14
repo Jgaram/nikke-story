@@ -53,10 +53,7 @@
       "scene": "erelic:unbreakable_sphere_dialog_11",
       "text": "공방 정리 · 밖에 내보낸 친구들의 물거품 · 에이브가 준 능력"
     },
-    {
-      "scene": "erelic:unbreakable_sphere_dialog_12",
-      "text": "기억 — 레비와 생선구이 · 자책하지 않기를"
-    },
+    { "scene": "erelic:unbreakable_sphere_dialog_12", "text": "기억 — 레비와 생선구이 · 자책하지 않기를 바란다" },
     {
       "scene": "erelic:unbreakable_sphere_dialog_13",
       "text": "기억 — 언령을 쓰는 사람은 선해야 한다는 에이브"

@@ -89,12 +89,22 @@
       "person": "person:노라",
       "aspect": "성격",
       "act": "기준",
-      "text": "막차 끝 칸에 버티며 승무원을 '꼬맹이'라 놀리고, 경찰이 오면 기억 흐린 노인 연기로 빠져나가는 꼬장꼬장하고 짓궂은 노인 — 손재주 자랑이 대단한",
+      "text": "막차 끝 칸에 버티며 승무원을 '꼬맹이'라 놀리고, 경찰이 오면 기억 흐린 노인 연기로 빠져나가는 꼬장꼬장하고 짓궂은 노인으로, 손재주 자랑이 대단하다",
       "evidence": [{ "scene": "fl:blank_ticket_01", "lines": ["48-82"] }],
       "reason": "#50 · #72 '교육이 안 된 꼬맹이' · #78-82 자는 척, 03#8-11 '세월의 노련함이 보이는 연기' · 03#53-55.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "막차 끝 칸에 버티며 승무원을 '꼬맹이'라 놀리고, 경찰이 오면 기억 흐린 노인 연기로 빠져나가는 꼬장꼬장하고 짓궂은 노인 — 손재주 자랑이 대단한"
+        }
+      ]
     },
     {
       "id": "D1648",
@@ -102,12 +112,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:솔린"],
-      "text": "막차에서 나가라는 솔린을 '교육이 안 된 꼬맹이'라 몰아세우고 경찰을 부르라며 버티는",
+      "text": "막차에서 나가라는 솔린을 '교육이 안 된 꼬맹이'라 몰아세우고 경찰을 부르라며 버틴다",
       "evidence": [{ "scene": "fl:blank_ticket_01", "lines": ["60-80"] }],
       "reason": "#60-61 '말이 너무 짧은 거 아니냐' · #72 · #77-78.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "막차에서 나가라는 솔린을 '교육이 안 된 꼬맹이'라 몰아세우고 경찰을 부르라며 버티는"
+        }
+      ]
     },
     {
       "id": "D1649",
@@ -115,15 +135,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:솔린"],
-      "before": "'꼬맹이'라 놀리며 막차에서 버티던 승무원",
-      "after": "찾아와 준 것에 처음으로 이름을 불러 고마워하고, 이 나이에 만난 새 친구라 부르는",
+      "before": "'꼬맹이'라 놀리며 막차에서 버티던 승무원이다",
+      "after": "찾아와 준 것에 처음으로 이름을 불러 고마워하고, 이 나이에 만난 새 친구라 부른다",
       "trigger": [{ "scene": "fl:blank_ticket_10", "lines": ["84-92"] }],
       "time": "S281",
       "evidence": [{ "scene": "fl:blank_ticket_11", "lines": [64, "79-83"] }],
       "reason": "10#85-88 슬픈 눈이 신경 쓰였다는 솔린에게 → 11#64 '새로운 친구' · #79 '나를 찾아줘서 고맙다, 솔린'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '꼬맹이'라 놀리며 막차에서 버티던 승무원 · 후 찾아와 준 것에 처음으로 이름을 불러 고마워하고, 이 나이에 만난 새 친구라 부르는"
+        }
+      ]
     },
     {
       "id": "D1650",
@@ -144,57 +174,97 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:노라"],
-      "before": "막차에 버티는 노인을 내쫓으려던 승무원",
-      "after": "며칠 안 오자 걱정돼 집 근처까지 찾아가 울고, 친구가 될 자격을 묻는",
+      "before": "막차에 버티는 노인을 내쫓으려던 승무원이다",
+      "after": "며칠 안 오자 걱정돼 집 근처까지 찾아가 울고, 친구가 될 자격을 묻는다",
       "trigger": [{ "scene": "fl:blank_ticket_07", "lines": ["22-29"] }],
       "time": "S281",
       "evidence": [{ "scene": "fl:blank_ticket_11", "lines": ["65-77"] }],
       "reason": "07#22-29 '무슨 일 있나' → 10#36-41 울음 · 11#67 '할머니의 친구가 될 자격이 있을까' · 14#8 '친구가 됐어'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 막차에 버티는 노인을 내쫓으려던 승무원 · 후 며칠 안 오자 걱정돼 집 근처까지 찾아가 울고, 친구가 될 자격을 묻는"
+        }
+      ]
     },
     {
       "id": "D1652",
       "person": "person:노라",
       "aspect": "신념",
       "act": "기준",
-      "text": "지상에서 눈을 감는 게 꿈이지만 벌이라 여기며 방주에 갇힌 운명에 순응하려 했고, 열차가 데려다주지 않을까 한 마지막 발악도 바보 같았다며 접은",
+      "text": "지상에서 눈을 감는 게 꿈이지만 벌이라 여기며 방주에 갇힌 운명에 순응하려 했고, 열차가 데려다주지 않을까 한 마지막 발악도 바보 같았다며 접었다",
       "evidence": [{ "scene": "fl:blank_ticket_11", "lines": ["27-50"] }],
       "reason": "#29 · #42-43 '벌을 받는구나 · 운명에 순응' · #44-47 · #50 '바보 같은 생각'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지상에서 눈을 감는 게 꿈이지만 벌이라 여기며 방주에 갇힌 운명에 순응하려 했고, 열차가 데려다주지 않을까 한 마지막 발악도 바보 같았다며 접은"
+        }
+      ]
     },
     {
       "id": "D1653",
       "person": "person:노라",
       "aspect": "신념",
       "act": "변화",
-      "before": "방주에 갇힌 운명에 순응하려던",
-      "after": "바늘구멍만 한 가능성이라도 있다면 언제든 기다리겠다며, 더 살아갈 이유를 얻은",
+      "before": "방주에 갇힌 운명에 순응하려 했다",
+      "after": "바늘구멍만 한 가능성이라도 있다면 언제든 기다리겠다며, 더 살아갈 이유를 얻었다",
       "trigger": [{ "scene": "fl:blank_ticket_13", "lines": ["73-81"] }],
       "time": "S281",
       "evidence": [{ "scene": "fl:blank_ticket_13", "lines": ["90-99"] }],
       "reason": "솔린의 빈 티켓 · 약속(#73-89) → #94-95 '언제든 기다릴 수 있어' · #98 '더 살아갈 이유를 선물로'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주에 갇힌 운명에 순응하려던 · 후 바늘구멍만 한 가능성이라도 있다면 언제든 기다리겠다며, 더 살아갈 이유를 얻은"
+        }
+      ]
     },
     {
       "id": "D1654",
       "person": "person:솔린",
       "aspect": "성격",
       "act": "변화",
-      "before": "혼자 할 수 있다고 큰소리치면서도 첫 마지막 열차 방송에 말을 더듬던",
-      "after": "자기 말로 '행복을 싣고 다니는 열차' 방송을 해 승객 칭찬을 받고, 안내 방송을 도맡으며 무엇이든 맡기라는",
+      "before": "혼자 할 수 있다고 큰소리치면서도 첫 마지막 열차 방송에 말을 더듬었다",
+      "after": "자기 말로 '행복을 싣고 다니는 열차' 방송을 해 승객 칭찬을 받고, 안내 방송을 도맡으며 무엇이든 맡기라고 한다",
       "trigger": [{ "scene": "fl:blank_ticket_12", "lines": ["46-54"] }],
       "time": "S281",
       "evidence": [{ "scene": "fl:blank_ticket_14", "lines": ["17-35"] }],
       "reason": "04#62-70 · 05#4 더듬던 방송 → 12#50-53 → 14#23-25 승객 소리함 · #31 '안내 방송은 솔린에게' · #35.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 혼자 할 수 있다고 큰소리치면서도 첫 마지막 열차 방송에 말을 더듬던 · 후 자기 말로 '행복을 싣고 다니는 열차' 방송을 해 승객 칭찬을 받고, 안내 방송을 도맡으며 무엇이든 맡기라는"
+        }
+      ]
     },
     {
       "id": "D1655",
@@ -202,12 +272,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["concept:니케"],
-      "text": "지상에 쉽게 나가는 니케가 부러워 질투하며 싫어하는",
+      "text": "지상에 쉽게 나가는 니케가 부러워 질투하며 싫어한다",
       "evidence": [{ "scene": "fl:blank_ticket_05", "lines": ["42-52"] }],
       "reason": "#48 '···쯧' · #52 '싫어하는 쪽인 듯' — 까닭은 11#20-25 '내가 가지지 못한 것을 너무 쉽게 가진 것 같아서'(F2347).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M70" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "지상에 쉽게 나가는 니케가 부러워 질투하며 싫어하는" }
+      ]
     }
   ],
   "life": [],

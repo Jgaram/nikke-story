@@ -316,13 +316,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:맥스웰"],
-      "text": "몰래 히어로 영화를 보러 맥스웰의 연구실에 숨어들어 '아버님 돈 받고 다니잖아'라 대들다가도 쫓겨날까 겁내는",
+      "text": "몰래 히어로 영화를 보러 맥스웰의 연구실에 숨어들어 '아버님 돈 받고 다니잖아'라 대들다가도 쫓겨날까 겁낸다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_01", "lines": ["29-71"] }],
       "reason": "#55-68 대들다가도 '나 만난 거 후회해? 나가야 해?'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "몰래 히어로 영화를 보러 맥스웰의 연구실에 숨어들어 '아버님 돈 받고 다니잖아'라 대들다가도 쫓겨날까 겁내는"
+        }
+      ]
     },
     {
       "id": "D1273",
@@ -330,13 +340,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:엔메"],
-      "text": "'아버님은 달라, 나를 위해 시킨 일'이라며 라라를 죽인 것까지 자기를 걱정해서라 믿고 칭찬 한 번을 바라는",
+      "text": "'아버님은 달라, 나를 위해 시킨 일'이라며 라라를 죽인 것까지 자기를 걱정해서라 믿고 칭찬 한 번을 바란다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_06", "lines": ["99-106"] }],
       "reason": "#100-106 '아버님은 그 녀석이랑 달라 · 나를 위해서'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'아버님은 달라, 나를 위해 시킨 일'이라며 라라를 죽인 것까지 자기를 걱정해서라 믿고 칭찬 한 번을 바라는"
+        }
+      ]
     },
     {
       "id": "D1274",
@@ -344,8 +364,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:엔메"],
-      "before": "칭찬 한 번을 바라며 믿는",
-      "after": "설계도를 '어린애 장난'이라 짓밟혀 방 밖으로 나오지 않는",
+      "before": "칭찬 한 번을 바라며 믿었다",
+      "after": "설계도를 '어린애 장난'이라 짓밟혀 방 밖으로 나오지 않는다",
       "trigger": [{ "scene": "fl:project_matis_07", "lines": ["63-79"] }],
       "time": "S340",
       "points": ["F2778"],
@@ -353,7 +373,17 @@
       "reason": "#47-49 사랑하지 않는다는 증거일까 두려워하고, 설계도를 짓밟힌 뒤 #146 방 밖으로 나오지 않는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 칭찬 한 번을 바라며 믿는 · 후 설계도를 '어린애 장난'이라 짓밟혀 방 밖으로 나오지 않는"
+        }
+      ]
     },
     {
       "id": "D1275",
@@ -361,13 +391,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지엔"],
-      "text": "아버님과 일하는 이복 언니를 질투하면서도 밥 먹자고 찾아오면 받아 주던 — 라라 일 뒤로 무서워하는",
+      "text": "아버님과 일하는 이복 언니를 질투하면서도 밥 먹자고 찾아오면 받아 주었다 — 라라 일 뒤로 무서워한다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_02", "lines": ["13-30"] }],
       "reason": "#13-14 질투했지만 이렇게까지 싫지는 않았다 · #30 무서워하게 된 건.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "아버님과 일하는 이복 언니를 질투하면서도 밥 먹자고 찾아오면 받아 주던 — 라라 일 뒤로 무서워하는"
+        }
+      ]
     },
     {
       "id": "D1276",
@@ -392,15 +432,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지엔"],
-      "before": "이사회를 함께 친 공범",
-      "after": "맥스웰 일 뒤 '화도 안 나, 그럴 감정조차 아깝다'는",
+      "before": "이사회를 함께 친 공범이다",
+      "after": "맥스웰 일 뒤 '화도 안 나, 그럴 감정조차 아깝다'고 한다",
       "trigger": [{ "scene": "fl:project_matis_25", "lines": ["213-242"] }],
       "time": "S339",
       "evidence": [{ "scene": "fl:project_matis_27", "lines": ["4-11"] }],
       "reason": "#10-11 '너한텐 화도 안 나. 그럴 감정조차 아까워'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 이사회를 함께 친 공범 · 후 맥스웰 일 뒤 '화도 안 나, 그럴 감정조차 아깝다'는"
+        }
+      ]
     },
     {
       "id": "D1278",
@@ -438,45 +488,75 @@
       "person": "person:슈엔",
       "aspect": "성격",
       "act": "변화",
-      "before": "단상 위에서 덜덜 떨던 꼬맹이",
-      "after": "약을 먹였다며 이사회를 협박하고 '잠든 얼굴 옆에 불을 붙이겠다'는",
+      "before": "단상 위에서 덜덜 떨던 꼬맹이다",
+      "after": "약을 먹였다며 이사회를 협박하고 '잠든 얼굴 옆에 불을 붙이겠다'고 한다",
       "time": "S340",
       "points": ["F2790"],
       "evidence": [{ "scene": "fl:project_matis_22", "lines": ["12-66"] }],
       "reason": "#62-65 '단상 위에서 덜덜 떨던 덜떨어진 꼬맹이인 줄 아나 본데'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 단상 위에서 덜덜 떨던 꼬맹이 · 후 약을 먹였다며 이사회를 협박하고 '잠든 얼굴 옆에 불을 붙이겠다'는"
+        }
+      ]
     },
     {
       "id": "D1281",
       "person": "person:슈엔",
       "aspect": "신념",
       "act": "변화",
-      "before": "몰래 히어로 영화를 보는 아이",
-      "after": "아버님께 도움이 되고 칭찬을 한 번 더 받고 싶어 히어로 니케를 만들겠다는",
+      "before": "몰래 히어로 영화를 보는 아이다",
+      "after": "아버님께 도움이 되고 칭찬을 한 번 더 받고 싶어 히어로 니케를 만들겠다고 한다",
       "time": "S340",
       "points": ["F2776"],
       "evidence": [{ "scene": "fl:project_matis_04", "lines": ["37-55"] }],
       "reason": "#40-42 '아버님께 도움이 되고 싶어 · 한 번만 더 칭찬을', #55 히어로 니케.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 몰래 히어로 영화를 보는 아이 · 후 아버님께 도움이 되고 칭찬을 한 번 더 받고 싶어 히어로 니케를 만들겠다는"
+        }
+      ]
     },
     {
       "id": "D1282",
       "person": "person:슈엔",
       "aspect": "신념",
       "act": "변화",
-      "before": "아버님께 도움이 되고 칭찬받고 싶은",
-      "after": "내 것을 지키려면 공포와 무력감으로 상대를 확실히 뭉개야 한다는",
+      "before": "아버님께 도움이 되고 칭찬받고 싶어 했다",
+      "after": "내 것을 지키려면 공포와 무력감으로 상대를 확실히 뭉개야 한다고 여긴다",
       "trigger": [{ "scene": "fl:project_matis_20", "lines": ["7-11"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_21", "lines": ["7-25"] }],
       "reason": "#22-25 '내 걸 지키려면 저쪽을 힘으로 확실히 뭉개놔야 · 공포와 무력감으로'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 아버님께 도움이 되고 칭찬받고 싶은 · 후 내 것을 지키려면 공포와 무력감으로 상대를 확실히 뭉개야 한다는"
+        }
+      ]
     },
     {
       "id": "D1283",
@@ -484,7 +564,7 @@
       "aspect": "신념",
       "act": "변화",
       "before": "기억 없는 라라는 '고철일 뿐'",
-      "after": "진짜 니케는 몸이 바뀌어도 기억을 잃지 않는 귀중한 존재, 그 밖은 고철 — 라플라스 하나만 개발하겠다는",
+      "after": "진짜 니케는 몸이 바뀌어도 기억을 잃지 않는 귀중한 존재, 그 밖은 고철 — 라플라스 하나만 개발하겠다고 한다",
       "trigger": [{ "scene": "fl:project_matis_02", "lines": ["56-60"] }],
       "time": "S340",
       "points": ["F2791"],
@@ -492,22 +572,42 @@
       "reason": "#71-74 진짜 니케는 기억을 잃지 않는 귀중한 존재 — 라라(02#56-60)에서 이어진다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "후 진짜 니케는 몸이 바뀌어도 기억을 잃지 않는 귀중한 존재, 그 밖은 고철 — 라플라스 하나만 개발하겠다는"
+        }
+      ]
     },
     {
       "id": "D1284",
       "person": "person:슈엔",
       "aspect": "신념",
       "act": "변화",
-      "before": "히어로 니케로 소중한 것을 지키겠다는",
-      "after": "맥스웰을 니케로 만든 것까지 CEO 자리와 미실리스를 지키려 '뭐든 해야' 했다고 합리화하는",
+      "before": "히어로 니케로 소중한 것을 지키겠다고 했다",
+      "after": "맥스웰을 니케로 만든 것까지 CEO 자리와 미실리스를 지키려 '뭐든 해야' 했다고 합리화한다",
       "trigger": [{ "scene": "fl:project_matis_26", "lines": ["192-224"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_26", "lines": ["227-251"] }],
       "reason": "#234-247 '이 자리를 지키려고 · 맥스웰을 니케로 만든 것도 전부 이걸 위해서'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 히어로 니케로 소중한 것을 지키겠다는 · 후 맥스웰을 니케로 만든 것까지 CEO 자리와 미실리스를 지키려 '뭐든 해야' 했다고 합리화하는"
+        }
+      ]
     },
     {
       "id": "D1285",
@@ -515,13 +615,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:라플라스"],
-      "text": "병색 가득한 지원자를 '그 몸으로 어떻게 붙겠어, 다신 오지 마'라 내치면서 케이크를 나눠 주는",
+      "text": "병색 가득한 지원자를 '그 몸으로 어떻게 붙겠어, 다신 오지 마'라 내치면서 케이크를 나눠 준다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_15", "lines": ["24-44"] }],
       "reason": "#28 '그 몸으로 어떻게 붙겠어', #44 '다신 여기에 오지 말고'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "병색 가득한 지원자를 '그 몸으로 어떻게 붙겠어, 다신 오지 마'라 내치면서 케이크를 나눠 주는"
+        }
+      ]
     },
     {
       "id": "D1286",
@@ -529,8 +639,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:라플라스"],
-      "before": "일주일을 버틴 끝에 '내 권한으로' 붙여 준 지원자",
-      "after": "부름에 응답한 그녀의 히어로 — 무슨 수를 써서라도 히어로로 완성해 주겠다는",
+      "before": "일주일을 버틴 끝에 '내 권한으로' 붙여 준 지원자다",
+      "after": "부름에 응답한 그녀의 히어로 — 무슨 수를 써서라도 히어로로 완성해 주겠다고 한다",
       "trigger": [{ "scene": "fl:project_matis_20", "lines": ["47-53"] }],
       "time": "S340",
       "points": ["F2789"],
@@ -538,7 +648,17 @@
       "reason": "#108 유일하게 응답해 준 이, #112-118 '히어로로 완성해줄게'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 일주일을 버틴 끝에 '내 권한으로' 붙여 준 지원자 · 후 부름에 응답한 그녀의 히어로 — 무슨 수를 써서라도 히어로로 완성해 주겠다는"
+        }
+      ]
     },
     {
       "id": "D1287",
@@ -546,15 +666,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:라플라스"],
-      "before": "히어로로 완성해 주겠다는",
-      "after": "맥스웰을 잃고 '유일하게 응답해 준 나의 히어로'에게 곁에 있어 달라 매달리는",
+      "before": "히어로로 완성해 주겠다고 했다",
+      "after": "맥스웰을 잃고 '유일하게 응답해 준 나의 히어로'에게 곁에 있어 달라 매달린다",
       "trigger": [{ "scene": "fl:project_matis_26", "lines": ["150-194"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_26", "lines": ["259-279"] }],
       "reason": "#261-268 '나의 히어로 · 변하지 않을 거지? 잊어버리지 않을 거지?'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 히어로로 완성해 주겠다는 · 후 맥스웰을 잃고 '유일하게 응답해 준 나의 히어로'에게 곁에 있어 달라 매달리는"
+        }
+      ]
     },
     {
       "id": "D1288",
@@ -562,15 +692,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["org:메티스"],
-      "before": "히어로 스쿼드로 완성하겠다던",
-      "after": "쫓기듯 성능 좋은 도구처럼 쉴 새 없이 지상 임무에 올려 보내는",
+      "before": "히어로 스쿼드로 완성하겠다고 했다",
+      "after": "쫓기듯 성능 좋은 도구처럼 쉴 새 없이 지상 임무에 올려 보낸다",
       "time": "S340",
       "points": ["F2795"],
       "evidence": [{ "scene": "fl:project_matis_26", "lines": ["289-296"] }],
       "reason": "#291-294 쫓기듯 · 성능 좋은 도구를 부리듯.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 히어로 스쿼드로 완성하겠다던 · 후 쫓기듯 성능 좋은 도구처럼 쉴 새 없이 지상 임무에 올려 보내는"
+        }
+      ]
     },
     {
       "id": "D1289",
@@ -601,15 +741,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:슈엔"],
-      "before": "연구실에 숨어드는 귀찮은 꼬맹이",
-      "after": "'네가 하고 싶은 거 잔뜩 해 봐'라며 연구실에서 함께 지내며 선생처럼 가르치는",
+      "before": "연구실에 숨어드는 귀찮은 꼬맹이다",
+      "after": "'네가 하고 싶은 거 잔뜩 해 봐'라며 연구실에서 함께 지내며 선생처럼 가르친다",
       "trigger": [{ "scene": "fl:project_matis_04", "lines": ["37-50"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_05", "lines": ["42-61"] }],
       "reason": "#43-45 '네 프로젝트, 난 보조', #55 선생님처럼.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 연구실에 숨어드는 귀찮은 꼬맹이 · 후 '네가 하고 싶은 거 잔뜩 해 봐'라며 연구실에서 함께 지내며 선생처럼 가르치는"
+        }
+      ]
     },
     {
       "id": "D1291",
@@ -617,8 +767,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:슈엔"],
-      "before": "'너한테 내 인생을 걸었다'며 곁을 지키던",
-      "after": "괴물로 변해 가는 걸 보기 싫다며 사직서를 내고 떠나는",
+      "before": "'너한테 내 인생을 걸었다'며 곁을 지켰다",
+      "after": "괴물로 변해 가는 걸 보기 싫다며 사직서를 내고 떠난다",
       "trigger": [{ "scene": "fl:project_matis_25", "lines": ["59-66"] }],
       "time": "S340",
       "points": ["F2793"],
@@ -626,7 +776,17 @@
       "reason": "#173 '너한테 내 인생을 걸었던 거야', #176-177 괴물로 변해 가는 걸 보기 싫다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '너한테 내 인생을 걸었다'며 곁을 지키던 · 후 괴물로 변해 가는 걸 보기 싫다며 사직서를 내고 떠나는"
+        }
+      ]
     },
     {
       "id": "D1292",
@@ -667,13 +827,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:슈엔"],
-      "text": "'아가'라 부르며, 라라를 잃고 우는 동생에게 그 뇌로 니케를 만들어 준 것이 '효율적'인 배려라 여기는",
+      "text": "'아가'라 부르며, 라라를 잃고 우는 동생에게 그 뇌로 니케를 만들어 준 것이 '효율적'인 배려라 여긴다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_02", "lines": ["36-75"] }],
       "reason": "#53-54 '실험실에 보관하던 뇌 꺼내 니케로 만들어 준 것뿐', #69-70 효율적 · 다 니를 위한 거.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'아가'라 부르며, 라라를 잃고 우는 동생에게 그 뇌로 니케를 만들어 준 것이 '효율적'인 배려라 여기는"
+        }
+      ]
     },
     {
       "id": "D1295",
@@ -697,13 +867,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:엔메"],
-      "text": "'아버지도 내랑 같은 종류'라며 니케도 인간도 자식도 자원으로 볼 사람이니 믿지 말라는",
+      "text": "'아버지도 내랑 같은 종류'라며 니케도 인간도 자식도 자원으로 볼 사람이니 믿지 말라고 한다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_06", "lines": ["55-74"] }],
       "reason": "#60 '아버지도 내랑 같은 종류', #69 '아버지를 너무 믿지 마요'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'아버지도 내랑 같은 종류'라며 니케도 인간도 자식도 자원으로 볼 사람이니 믿지 말라는"
+        }
+      ]
     },
     {
       "id": "D1297",
@@ -711,44 +891,74 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:엔메"],
-      "before": "믿지 말라 하면서도 곁에서 함께 일하던",
-      "after": "M.M.R.로 쫓겨나며 '언젠가 그 뇌를 실험대에 올리겠다'는",
+      "before": "믿지 말라 하면서도 곁에서 함께 일했다",
+      "after": "M.M.R.로 쫓겨나며 '언젠가 그 뇌를 실험대에 올리겠다'고 한다",
       "time": "S340",
       "points": ["F2779"],
       "evidence": [{ "scene": "fl:project_matis_08", "lines": ["16-49"] }],
       "reason": "#21 버린다고?, #34-35 · #48-49 '실험대 위에 올릴 기다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 믿지 말라 하면서도 곁에서 함께 일하던 · 후 M.M.R.로 쫓겨나며 '언젠가 그 뇌를 실험대에 올리겠다'는"
+        }
+      ]
     },
     {
       "id": "D1298",
       "person": "person:지엔",
       "aspect": "신념",
       "act": "기준",
-      "text": "CEO가 되어 NIMPH · 코어의 정체 · 니케와 랩쳐의 닮은 구조 — '세계의 진실'을 알고 싶은",
+      "text": "CEO가 되어 NIMPH · 코어의 정체 · 니케와 랩쳐의 닮은 구조 — '세계의 진실'을 알고 싶어 한다",
       "time": "S340",
       "points": ["F2777"],
       "evidence": [{ "scene": "fl:project_matis_06", "lines": ["16-33"] }],
       "reason": "#21-28 세계의 진실 · NIMPH · 코어 · 니케와 랩쳐의 구조.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "CEO가 되어 NIMPH · 코어의 정체 · 니케와 랩쳐의 닮은 구조 — '세계의 진실'을 알고 싶은"
+        }
+      ]
     },
     {
       "id": "D1299",
       "person": "person:지엔",
       "aspect": "신념",
       "act": "변화",
-      "before": "세계의 진실을 알려 CEO 자리를 탐하던",
-      "after": "M.M.R.에 내려와 많은 걸 알게 돼 옛날만큼 자리가 탐나지 않는",
+      "before": "세계의 진실을 알려 CEO 자리를 탐했다",
+      "after": "M.M.R.에 내려와 많은 걸 알게 돼 옛날만큼 자리가 탐나지 않는다",
       "trigger": [{ "scene": "fl:project_matis_08", "lines": ["39-41"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_11", "lines": ["53-73"] }],
       "reason": "#69-70 '여 내려온 뒤로 많은 걸 알게 돼가, 지금은 옛날만큼 니 자리가 탐나지 않긴 한데'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 세계의 진실을 알려 CEO 자리를 탐하던 · 후 M.M.R.에 내려와 많은 걸 알게 돼 옛날만큼 자리가 탐나지 않는"
+        }
+      ]
     },
     {
       "id": "D1300",
@@ -770,21 +980,24 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:슈엔"],
-      "text": "딸을 '작은 것'이라 부르며 유약함을 고칠 수 있는지, 쓸모가 있는지를 재 보는",
+      "text": "딸을 '작은 것'이라 부르며 유약함을 고칠 수 있는지, 쓸모가 있는지를 재 본다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_02", "lines": ["113-156"] }],
       "reason": "#119 '아직도 그 고철 메이드에 매여 있냐', #143-149 유약한 성질을 고치지 못하면 쓸모없다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "딸을 '작은 것'이라 부르며 유약함을 고칠 수 있는지, 쓸모가 있는지를 재 보는" }
+      ]
     },
     {
       "id": "D1302",
       "person": "person:라플라스",
       "aspect": "신념",
       "act": "변화",
-      "before": "골목 TV의 히어로만 빛나던, 악당에게 무릎 꿇지 않으려 맞기만 하던 소녀",
-      "after": "도움을 외면한 니케들에게 버려진 뒤 힘을 얻어 '최강의 히어로'가 되겠다고 맹세한",
+      "before": "골목 TV의 히어로만 빛나던, 악당에게 무릎 꿇지 않으려 맞기만 하던 소녀다",
+      "after": "도움을 외면한 니케들에게 버려진 뒤 힘을 얻어 '최강의 히어로'가 되겠다고 맹세했다",
       "trigger": [{ "scene": "fl:project_matis_14", "lines": ["69-88"] }],
       "time": "S340",
       "points": ["F2786"],
@@ -792,21 +1005,41 @@
       "reason": "#96-98 '히어로는 없었어', #103-110 최강의 히어로가 되겠다는 맹세.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 골목 TV의 히어로만 빛나던, 악당에게 무릎 꿇지 않으려 맞기만 하던 소녀 · 후 도움을 외면한 니케들에게 버려진 뒤 힘을 얻어 '최강의 히어로'가 되겠다고 맹세한"
+        }
+      ]
     },
     {
       "id": "D1303",
       "person": "person:라플라스",
       "aspect": "신념",
       "act": "변화",
-      "before": "최강의 히어로가 되겠다는",
-      "after": "모든 니케가 히어로가 되어 약한 이가 도움을 청할 수 있는 세상 — 그것이 [정의]임을 증명해야 한다는",
+      "before": "최강의 히어로가 되겠다고 했다",
+      "after": "모든 니케가 히어로가 되어 약한 이가 도움을 청할 수 있는 세상 — 그것이 [정의]임을 증명해야 한다고 여긴다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_23", "lines": ["27-46"] }],
       "reason": "#40-43 '모든 니케는 히어로가 되어야 한다는 것을 · 그것이 [정의]임을 증명해야' — 기준 D88로 이어진다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 최강의 히어로가 되겠다는 · 후 모든 니케가 히어로가 되어 약한 이가 도움을 청할 수 있는 세상 — 그것이 [정의]임을 증명해야 한다는"
+        }
+      ]
     },
     {
       "id": "D1304",
@@ -830,14 +1063,17 @@
       "act": "변화",
       "with": ["person:슈엔"],
       "before": "이름도 모르는 '히어로 만들어 주는 사람'",
-      "after": "자기를 믿어 준 슈엔을 위해서라도 시련을 이겨 내고 싶은",
+      "after": "자기를 믿어 준 슈엔을 위해서라도 시련을 이겨 내고 싶어 한다",
       "trigger": [{ "scene": "fl:project_matis_15", "lines": ["130-140"] }],
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_16", "lines": ["93-97"] }],
       "reason": "#96-97 자신을 믿어준 슈엔을 위해서라도.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 자기를 믿어 준 슈엔을 위해서라도 시련을 이겨 내고 싶은" }
+      ]
     },
     {
       "id": "D1306",
@@ -845,14 +1081,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:슈엔"],
-      "before": "'날 믿어 준다면 너의 히어로가 되겠다'던",
-      "after": "떨리는 손에 응답해 '네 곁에서 최강의 히어로로서 너의 자랑이 되겠다'는",
+      "before": "'날 믿어 준다면 너의 히어로가 되겠다'고 했다",
+      "after": "떨리는 손에 응답해 '네 곁에서 최강의 히어로로서 너의 자랑이 되겠다'고 한다",
       "time": "S340",
       "evidence": [{ "scene": "fl:project_matis_26", "lines": ["269-277"] }],
       "reason": "#271-273 떨리는 손이 히어로를 찾던 소녀의 손과 닮아 응답, #276 '너의 자랑이 되겠다'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '날 믿어 준다면 너의 히어로가 되겠다'던 · 후 떨리는 손에 응답해 '네 곁에서 최강의 히어로로서 너의 자랑이 되겠다'는"
+        }
+      ]
     },
     {
       "id": "D1307",
@@ -860,15 +1106,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:맥스웰"],
-      "before": "'다신 혼자 위험한 곳으로 가지 마'라던",
-      "after": "맥스웰이 거부해도 '네가 없는 세상을 상상할 수 없다'며 니케로 만드는",
+      "before": "'다신 혼자 위험한 곳으로 가지 마'라고 했다",
+      "after": "맥스웰이 거부해도 '네가 없는 세상을 상상할 수 없다'며 니케로 만든다",
       "time": "S340",
       "points": ["F2794"],
       "evidence": [{ "scene": "fl:project_matis_26", "lines": ["74-83", "124-130"] }],
       "reason": "#76-77 '네가 옆에 없는 것보단', #128-130 '네가 없는 세상을 상상할 수 없어 · 니케가 되어줘'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '다신 혼자 위험한 곳으로 가지 마'라던 · 후 맥스웰이 거부해도 '네가 없는 세상을 상상할 수 없다'며 니케로 만드는"
+        }
+      ]
     },
     {
       "id": "D1308",
@@ -876,8 +1132,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:맥스웰"],
-      "before": "연구실에서 함께 지내며 설계도를 만든",
-      "after": "취임식에 안 온 일을 '잊겠다' 하고 수년 동안 연구실에 가지 않는",
+      "before": "연구실에서 함께 지내며 설계도를 만들었다",
+      "after": "취임식에 안 온 일을 '잊겠다' 하고 수년 동안 연구실에 가지 않는다",
       "trigger": [{ "scene": "fl:project_matis_09", "lines": ["84-100"] }],
       "time": "S340",
       "points": ["F2783"],
@@ -885,7 +1141,17 @@
       "reason": "#160 '일부러 안 온 게 아니면 됐어', #165 '나도 잊을 테니까', #166 그 뒤로 연구실에 가지 않는다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M51" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 연구실에서 함께 지내며 설계도를 만든 · 후 취임식에 안 온 일을 '잊겠다' 하고 수년 동안 연구실에 가지 않는"
+        }
+      ]
     }
   ],
   "life": [

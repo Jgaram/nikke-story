@@ -12,40 +12,70 @@
       "person": "person:길티",
       "aspect": "성격",
       "act": "기준",
-      "text": "말끝을 늘이며 눈을 마주쳤다 황급히 내리깔고, 친절한 말에도 '아직 내 편이 아니다'라며 의심하고 거짓말을 가장 싫어하는",
+      "text": "말끝을 늘이며 눈을 마주쳤다 황급히 내리깔고, 친절한 말에도 '아직 내 편이 아니다'라며 의심하고 거짓말을 가장 싫어한다",
       "evidence": [{ "scene": "ep:d_nikke_guilty_01", "lines": ["58-66", 83, "107-112"] }],
       "reason": "#60 '황급히 눈을 내렸다' · #65 '아직은 내 편이 아니야' · #107 '거짓말하는 사람 싫은데'. 뒤 출시 event_beautyfullshot2 D489(성격 변화)의 앞 모습.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "말끝을 늘이며 눈을 마주쳤다 황급히 내리깔고, 친절한 말에도 '아직 내 편이 아니다'라며 의심하고 거짓말을 가장 싫어하는"
+        }
+      ]
     },
     {
       "id": "D1977",
       "person": "person:길티",
       "aspect": "신념",
       "act": "기준",
-      "text": "남들보다 힘세게 만든 미실리스 연구원들 탓이지 만들어진 대로 산 자기는 죄가 없다며 억울해하는",
+      "text": "남들보다 힘세게 만든 미실리스 연구원들 탓이지 만들어진 대로 산 자기는 죄가 없다며 억울해한다",
       "evidence": [{ "scene": "ep:d_nikke_guilty_01", "lines": ["41-48"] }],
       "points": ["F784"],
       "reason": "#44 '나쁜 건 날 이렇게 만든 미실리스의 연구원들' · #48 '만들어진 대로 살았을 뿐인데'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "남들보다 힘세게 만든 미실리스 연구원들 탓이지 만들어진 대로 산 자기는 죄가 없다며 억울해하는"
+        }
+      ]
     },
     {
       "id": "D1978",
       "person": "person:길티",
       "aspect": "신념",
       "act": "변화",
-      "before": "만들어진 대로 살았을 뿐 죄가 없다는",
-      "after": "'죄를 지었지만 갱생할 수 있다'는 믿음을 받아들여 힘을 쓰지 않고 갱생하기로 하는",
+      "before": "만들어진 대로 살았을 뿐 죄가 없다고 했다",
+      "after": "'죄를 지었지만 갱생할 수 있다'는 믿음을 받아들여 힘을 쓰지 않고 갱생하기로 한다",
       "trigger": [{ "scene": "ep:d_nikke_guilty_04", "lines": ["119-125"] }],
       "evidence": [{ "scene": "ep:d_nikke_guilty_04", "lines": ["126-131", "155-159"] }],
       "points": ["F786"],
       "reason": "#122 '타인을 다치게 한 죄가 있어' · #125 '갱생할 수 있을 거라 믿어' → #130 '내가 달라질 거라고' · #158 '할 수 있을 거 같아… 갱생이라는 거'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 만들어진 대로 살았을 뿐 죄가 없다는 · 후 '죄를 지었지만 갱생할 수 있다'는 믿음을 받아들여 힘을 쓰지 않고 갱생하기로 하는"
+        }
+      ]
     },
     {
       "id": "D1979",
@@ -53,12 +83,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "또 온 새 교관을 '거짓말 · 안 올 거면서'라 의심하면서도, 다음에도 와 주기를 바라는",
+      "text": "또 온 새 교관을 '거짓말 · 안 올 거면서'라 의심하면서도, 다음에도 와 주기를 바란다",
       "evidence": [{ "scene": "ep:d_nikke_guilty_01", "lines": ["37-40", "63-66", "109-113"] }],
       "reason": "#40 '아무도 안 올 줄 알았는데' · #112 '거짓말… 안 올 거면서' · #113 '이제 또 아무도 안 찾아오겠네'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "또 온 새 교관을 '거짓말 · 안 올 거면서'라 의심하면서도, 다음에도 와 주기를 바라는"
+        }
+      ]
     },
     {
       "id": "D1980",
@@ -66,15 +106,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "오지 않을 거라 의심하던 새 교관",
-      "after": "팔이 부러지고도 돌아와 손을 잡아 준 그를 '믿을 수 있을 것 같다'며, 그 손을 '계속 갖고 싶다'는",
+      "before": "오지 않을 거라 의심하던 새 교관이었다",
+      "after": "팔이 부러지고도 돌아와 손을 잡아 준 그를 '믿을 수 있을 것 같다'며, 그 손을 '계속 갖고 싶다'고 한다",
       "trigger": [{ "scene": "ep:d_nikke_guilty_04", "lines": ["49-54", "74-84"] }],
       "evidence": [{ "scene": "ep:d_nikke_guilty_04", "lines": ["129-136"] }],
       "points": ["F786"],
       "reason": "#49 '팔이 부러지고도 다시 찾아오는 교관은 없었는데' → #131 '나를 진심으로… 믿고 있어' · #134 '계속… 갖고 싶다아' · #136 '응… 믿어'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 오지 않을 거라 의심하던 새 교관 · 후 팔이 부러지고도 돌아와 손을 잡아 준 그를 '믿을 수 있을 것 같다'며, 그 손을 '계속 갖고 싶다'는"
+        }
+      ]
     },
     {
       "id": "D1981",
@@ -82,30 +132,50 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "교관을 믿게 된 갱생수",
-      "after": "계속 손을 잡아 달라며, 믿음이 깨지면 그 두 손을 틀어쥐겠다고 웃는 — 흉악범다운 집착이 섞인",
+      "before": "교관을 믿게 된 갱생수였다",
+      "after": "계속 손을 잡아 달라며, 믿음이 깨지면 그 두 손을 틀어쥐겠다고 웃는다 — 흉악범다운 집착이 섞였다",
       "trigger": [{ "scene": "ep:d_nikke_guilty_05", "lines": ["91-96"] }],
       "evidence": [{ "scene": "ep:d_nikke_guilty_05", "lines": ["98-113", "129-139"] }],
       "points": ["F788"],
       "reason": "#102 '꽉. 틀어쥘 수 있으니까' · #113 '…아직까지는' · #115 마나 '그녀는 흉악범입니다' · #130 '교관의 목을 쥐어볼 거 같아…?'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 교관을 믿게 된 갱생수 · 후 계속 손을 잡아 달라며, 믿음이 깨지면 그 두 손을 틀어쥐겠다고 웃는 — 흉악범다운 집착이 섞인"
+        }
+      ]
     },
     {
       "id": "D1982",
       "person": "person:길티",
       "aspect": "소속",
       "act": "변화",
-      "before": "갱생관 독방의 흉악범",
-      "after": "갱생 판결을 받아 지휘관이 책임지는 니케로 갱생관을 나가는",
+      "before": "갱생관 독방의 흉악범이었다",
+      "after": "갱생 판결을 받아 지휘관이 책임지는 니케로 갱생관을 나간다",
       "trigger": [{ "scene": "ep:d_nikke_guilty_05", "lines": ["1-4"] }],
       "evidence": [{ "scene": "ep:d_nikke_guilty_05", "lines": ["36-39", 135] }],
       "points": ["F787"],
       "reason": "#4 '갱생시키는 것에 성공했다고 결론' · #37 '길티를 다루는 건 이제 오로지 지휘관의 몫' · #135 '독방의 문은 열렸고… 갱생 판결도 나서'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M87" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 갱생관 독방의 흉악범 · 후 갱생 판결을 받아 지휘관이 책임지는 니케로 갱생관을 나가는"
+        }
+      ]
     }
   ],
   "life": [],

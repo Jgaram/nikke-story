@@ -38,14 +38,17 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "교섭을 떠맡기는 게임 파트너 '뉴비'",
-      "after": "사람을 싫어하면서도 무릎 위에 앉아 잠들 만큼 무방비하게 붙어 지내는",
+      "after": "사람을 싫어하면서도 무릎 위에 앉아 잠들 만큼 무방비하게 붙어 지낸다",
       "trigger": [{ "scene": "ep:d_nikke_exia_03", "lines": ["160-168"] }],
       "evidence": [{ "scene": "ep:d_nikke_exia_05", "lines": ["110-112", "129-138"] }],
       "points": ["F620"],
       "reason": "03#161 '사람과 직접 만나 이야기하는 게 뉴비 만큼만 편했어도' 뒤 05#110 '무릎 위에 앉았다' · #136-138 노벨 '사람을 정말 정말 싫어하는 … 강아지처럼 찰싹 달라 붙어서는 … 무방비한 모습'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M84", "note": "M84 2회독 — 원문 대조 검토" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 사람을 싫어하면서도 무릎 위에 앉아 잠들 만큼 무방비하게 붙어 지내는" }
+      ]
     }
   ],
   "life": [],

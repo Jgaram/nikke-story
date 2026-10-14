@@ -527,15 +527,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레드_후드"],
-      "before": "마지막 순간엔 함께 있어 달라고 매달리던",
-      "after": "동료를 버리고 간 사람이라며 '절대 용서하지 않는다'는",
+      "before": "마지막 순간엔 함께 있어 달라고 매달렸다",
+      "after": "동료를 버리고 간 사람이라며 '절대 용서하지 않는다'고 한다",
       "trigger": [{ "scene": "event_redash1_06_e", "lines": ["107-184"] }],
       "time": "S103",
       "evidence": [{ "scene": "event_redash2_01_e", "lines": ["13-24"] }],
       "reason": "#19-24. 1_03_e#98-103의 바람이 깨짐(1_06_e#113 '거짓말했어')",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 마지막 순간엔 함께 있어 달라고 매달리던 · 후 동료를 버리고 간 사람이라며 '절대 용서하지 않는다'는"
+        }
+      ]
     },
     {
       "id": "D348",
@@ -543,23 +553,33 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레드_후드"],
-      "before": "버리고 갔다며 미워하던",
-      "after": "심한 말을 사과하고 '함께 싸울 수 있어서 영광이었다'며 보내 주는",
+      "before": "버리고 갔다며 미워했다",
+      "after": "심한 말을 사과하고 '함께 싸울 수 있어서 영광이었다'며 보내 준다",
       "trigger": [{ "scene": "event_redash2_intermission_01", "lines": ["64-87"] }],
       "time": "S103",
       "evidence": [{ "scene": "event_redash2_06_e", "lines": ["150-163", "232-236"] }],
       "reason": "#157-163,236. 계기는 릴리바이스의 \"더 잘 이별할 수 있었다\"",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 버리고 갔다며 미워하던 · 후 심한 말을 사과하고 '함께 싸울 수 있어서 영광이었다'며 보내 주는"
+        }
+      ]
     },
     {
       "id": "D349",
       "person": "person:라푼젤",
       "aspect": "성격",
       "act": "변화",
-      "before": "금서를 처음 읽고 뺨을 때리는, 남이 하라는 대로 살아온 차기 여교황",
-      "after": "'분열' 한마디에 '하악 하악' 하는 — 레드 후드가 '내 죄'라 한",
+      "before": "금서를 처음 읽고 뺨을 때리는, 남이 하라는 대로 살아온 차기 여교황이다",
+      "after": "'분열' 한마디에 '하악 하악' 한다 — 레드 후드가 '내 죄'라 했다",
       "trigger": [{ "scene": "event_redash1_04_e", "lines": ["53-95"] }],
       "time": "S102",
       "evidence": [{ "scene": "event_redash1_06_e", "lines": ["24-28"] }],
@@ -567,15 +587,25 @@
       "reason": "#26,28. 1_05_s#59-61 '흡수가 너무 빠르다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 금서를 처음 읽고 뺨을 때리는, 남이 하라는 대로 살아온 차기 여교황 · 후 '분열' 한마디에 '하악 하악' 하는 — 레드 후드가 '내 죄'라 한"
+        }
+      ]
     },
     {
       "id": "D350",
       "person": "person:레드_후드",
       "aspect": "신념",
       "act": "변화",
-      "before": "동료들이 울며 자기를 쏘는 걸 보기 싫어 고향에서 혼자 조용히 죽겠다던",
-      "after": "도망치듯 헤어진 걸 자책하고 '자랑스러운 동료'로 작별하러 돌아가는",
+      "before": "동료들이 울며 자기를 쏘는 걸 보기 싫어 고향에서 혼자 조용히 죽겠다고 했다",
+      "after": "도망치듯 헤어진 걸 자책하고 '자랑스러운 동료'로 작별하러 돌아간다",
       "trigger": [{ "scene": "event_redash2_03_e", "lines": ["142-151"] }],
       "time": "S103",
       "points": ["F1169"],
@@ -583,7 +613,17 @@
       "reason": "#133-156. 계기는 오스왈드의 경례 · 피난민 · 프리시아(2_04_e#123-129,146-149)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 동료들이 울며 자기를 쏘는 걸 보기 싫어 고향에서 혼자 조용히 죽겠다던 · 후 도망치듯 헤어진 걸 자책하고 '자랑스러운 동료'로 작별하러 돌아가는"
+        }
+      ]
     },
     {
       "id": "D351",
@@ -591,15 +631,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:레드_후드"],
-      "before": "유품도 작별 인사도 받지 않겠다던",
-      "after": "'오래된 사이'니 좋은 거라며 작별을 받아 주는",
+      "before": "유품도 작별 인사도 받지 않겠다고 했다",
+      "after": "'오래된 사이'니 좋은 거라며 작별을 받아 준다",
       "trigger": [{ "scene": "event_redash1_05_s", "lines": ["70-78"] }],
       "time": "S103",
       "evidence": [{ "scene": "event_redash2_06_e", "lines": ["176-185"] }],
       "reason": "#179-184 — 레드 후드의 '오래된 것일수록 좋다'를 받아 준다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M13" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 유품도 작별 인사도 받지 않겠다던 · 후 '오래된 사이'니 좋은 거라며 작별을 받아 주는"
+        }
+      ]
     },
     {
       "id": "D352",

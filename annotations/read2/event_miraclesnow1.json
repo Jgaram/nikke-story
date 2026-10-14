@@ -96,8 +96,8 @@
       "person": "person:앤",
       "aspect": "기억",
       "act": "변화",
-      "before": "매일 기억이 리셋되어 어제를 모르던",
-      "after": "눈 내린 2주의 기억이 블랙박스로 남아 깨어나자 엄마 · 루피 · 지휘관을 알아보는",
+      "before": "매일 기억이 리셋되어 어제를 몰랐다",
+      "after": "눈 내린 2주의 기억이 블랙박스로 남아 깨어나자 엄마 · 루피 · 지휘관을 알아본다",
       "trigger": [{ "scene": "event_miraclesnow2_06_e", "lines": ["68-77"] }],
       "time": "S49",
       "points": ["F730"],
@@ -105,7 +105,17 @@
       "reason": "#20 '엄마랑 루피 언니랑 선생님이 왜 여기 있어요?' — 슈엔 #32-38: 매일 리셋은 그대로지만 2주의 기억은 남는다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 매일 기억이 리셋되어 어제를 모르던 · 후 눈 내린 2주의 기억이 블랙박스로 남아 깨어나자 엄마 · 루피 · 지휘관을 알아보는"
+        }
+      ]
     },
     {
       "id": "D1417",
@@ -113,15 +123,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:안젤리나"],
-      "before": "엄마가 보고 싶어도 곤란해할까 '괜찮다'고만 하던",
-      "after": "엄마 품에 안겨 '포기하지 않아 줘서 고마워요 · 사랑해요'라 하는",
+      "before": "엄마가 보고 싶어도 곤란해할까 '괜찮다'고만 했다",
+      "after": "엄마 품에 안겨 '포기하지 않아 줘서 고마워요 · 사랑해요'라 한다",
       "trigger": [{ "scene": "event_miraclesnow2_06_e", "lines": ["38-43"] }],
       "time": "S49",
       "evidence": [{ "scene": "event_miraclesnow2_06_e", "lines": ["44-72"] }],
       "reason": "앞서 03_s#29-39 '저는 루피 언니랑 선생님만 있어도 좋아요' — 안젤리나가 '이리 오렴' 하자 #45 · #56 · #72",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M57" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 엄마가 보고 싶어도 곤란해할까 '괜찮다'고만 하던 · 후 엄마 품에 안겨 '포기하지 않아 줘서 고마워요 · 사랑해요'라 하는"
+        }
+      ]
     },
     {
       "id": "D1418",

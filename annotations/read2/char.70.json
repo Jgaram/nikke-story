@@ -70,41 +70,71 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "메신저로 하라던 사무적인 담당 니케",
-      "after": "밤마다 커피 자판기 투어로 일상 이야기를 하고 웃는",
+      "before": "메신저로 하라던 사무적인 담당 니케였다",
+      "after": "밤마다 커피 자판기 투어로 일상 이야기를 하고 웃는다",
       "trigger": [{ "scene": "ep:d_nikke_brid_02", "lines": ["94-106"] }],
       "evidence": [{ "scene": "ep:d_nikke_brid_03", "lines": ["8-30", "61-64"] }],
       "reason": "03#26 '일상에 대한 이야기도' · #61-64 피식 웃으며 '2층 화장실 옆 커피가 제일' — 독백 '웃는 모습까지 볼 수 있게 되었다'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 메신저로 하라던 사무적인 담당 니케 · 후 밤마다 커피 자판기 투어로 일상 이야기를 하고 웃는"
+        }
+      ]
     },
     {
       "id": "D1849",
       "person": "person:브리드",
       "aspect": "신념",
       "act": "기준",
-      "text": "자기 일이 무엇보다 중요해, 일과 지휘관과의 일탈 중 하나를 버려야 한다면 일탈을 버리는",
+      "text": "자기 일이 무엇보다 중요해, 일과 지휘관과의 일탈 중 하나를 버려야 한다면 일탈을 버린다",
       "evidence": [{ "scene": "ep:d_nikke_brid_03", "lines": ["139-148"] }],
       "reason": "03#145-147 '제겐 제 일이 무엇보다 중요합니다 … 일탈을 포기하는 것이 맞는'. 출시순으로 D1659(fl:terminus_ticket)보다 앞선다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "자기 일이 무엇보다 중요해, 일과 지휘관과의 일탈 중 하나를 버려야 한다면 일탈을 버리는"
+        }
+      ]
     },
     {
       "id": "D1850",
       "person": "person:브리드",
       "aspect": "신념",
       "act": "변화",
-      "before": "일이 무엇보다 중요해 일탈을 버리려던",
-      "after": "좋아하는 일에 좋아하는 사람이 더해진 행복을 알고, 가끔의 일탈(커피 투어 · 아침 풍경)을 삶에 두는",
+      "before": "일이 무엇보다 중요해 일탈을 버리려 했다",
+      "after": "좋아하는 일에 좋아하는 사람이 더해진 행복을 알고, 가끔의 일탈(커피 투어 · 아침 풍경)을 삶에 둔다",
       "trigger": [{ "scene": "ep:d_nikke_brid_04", "lines": ["26-45"] }],
       "evidence": [{ "scene": "ep:d_nikke_brid_05", "lines": ["47-65"] }],
       "points": ["F569"],
       "reason": "05#51-52 '좋아하는 것에 좋아하는 것이 더해지니 더 큰 행복' · #59-65 가끔 함께하자며 '때로는 삶에 일탈이 필요한 법'을 되돌려준다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 일이 무엇보다 중요해 일탈을 버리려던 · 후 좋아하는 일에 좋아하는 사람이 더해진 행복을 알고, 가끔의 일탈(커피 투어 · 아침 풍경)을 삶에 두는"
+        }
+      ]
     },
     {
       "id": "D1851",

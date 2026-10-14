@@ -140,15 +140,25 @@
       "person": "person:마르차나",
       "aspect": "신념",
       "act": "변화",
-      "before": "커리큘럼대로 가르치고 좌절을 위로하며 지켜만 보는 무력한 선생",
-      "after": "손이 닿는 학생은 반드시 지켜내는 것이 선생의 역할이라 스스로 정의한",
+      "before": "커리큘럼대로 가르치고 좌절을 위로하며 지켜만 보는 무력한 선생이다",
+      "after": "손이 닿는 학생은 반드시 지켜내는 것이 선생의 역할이라 스스로 정의했다",
       "trigger": [{ "scene": "event_schooloflock_05_s", "lines": ["116-123"] }],
       "time": "S94",
       "evidence": [{ "scene": "event_schooloflock_05_e", "lines": ["30-68"] }],
       "reason": "#35-36 'M.M.R.이 제게 기대한 역할' → #66-68 '그게 제가 정의 내린 선생으로서의 역할'. 지휘관의 '용납하지 마'가 계기(06_s#137-140이 되짚는다).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 커리큘럼대로 가르치고 좌절을 위로하며 지켜만 보는 무력한 선생 · 후 손이 닿는 학생은 반드시 지켜내는 것이 선생의 역할이라 스스로 정의한"
+        }
+      ]
     },
     {
       "id": "D1461",
@@ -193,15 +203,25 @@
       "person": "person:트리세라",
       "aspect": "신념",
       "act": "변화",
-      "before": "평생 실험체가 될 바에 엘리베이터와 함께 죽겠다며 시험을 포기한",
-      "after": "'실수해도 된다'는 말에 총을 받아 시험에 나서고 새 학기에 돌아와 파르페 약속을 지키는",
+      "before": "평생 실험체가 될 바에 엘리베이터와 함께 죽겠다며 시험을 포기했다",
+      "after": "'실수해도 된다'는 말에 총을 받아 시험에 나서고 새 학기에 돌아와 파르페 약속을 지킨다",
       "trigger": [{ "scene": "event_schooloflock_05_e", "lines": ["50-75"] }],
       "time": "S94",
       "evidence": [{ "scene": "event_schooloflock_06_s", "lines": ["39-49"] }],
       "reason": "05_s#97-100 → #47-48 '마음껏 실수하고 오십시오' · '다녀올게요' — 06_e#40-45에서 돌아온다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M59" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 평생 실험체가 될 바에 엘리베이터와 함께 죽겠다며 시험을 포기한 · 후 '실수해도 된다'는 말에 총을 받아 시험에 나서고 새 학기에 돌아와 파르페 약속을 지키는"
+        }
+      ]
     },
     {
       "id": "D1465",

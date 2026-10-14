@@ -182,15 +182,25 @@
       "person": "person:트로니",
       "aspect": "신념",
       "act": "변화",
-      "before": "사람들이 바라는 블랙 같은 대단한 히어로가 아니라며 [방주의 히어로]라는 말에 짓눌리던",
-      "after": "[방주의 히어로]로 남기를 거절하고, 남의 기대가 아닌 제 진심으로 친구에게 손 내미는 히어로가 되겠다는",
+      "before": "사람들이 바라는 블랙 같은 대단한 히어로가 아니라며 [방주의 히어로]라는 말에 짓눌렸다",
+      "after": "[방주의 히어로]로 남기를 거절하고, 남의 기대가 아닌 제 진심으로 친구에게 손 내미는 히어로가 되겠다고 한다",
       "trigger": [{ "scene": "event_darkhero_03_e", "lines": ["60-70"] }],
       "time": "S147",
       "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["102-108"] }],
       "reason": "03_e#27-29 '난 그런 대단한 존재가 아닌걸' → 06_s#102-106 블랙의 말을 제 것으로 선언한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 사람들이 바라는 블랙 같은 대단한 히어로가 아니라며 [방주의 히어로]라는 말에 짓눌리던 · 후 [방주의 히어로]로 남기를 거절하고, 남의 기대가 아닌 제 진심으로 친구에게 손 내미는 히어로가 되겠다는"
+        }
+      ]
     },
     {
       "id": "D470",
@@ -198,15 +208,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:일레그"],
-      "before": "받기만 해 와 무언가 해 주고 싶지만 일레그가 좋아하는 것도 모르던",
-      "after": "폐기 · 도망자 신세를 무릅쓰고 갇힌 일레그에게 달려가 '내 손을 잡아' 하는",
+      "before": "받기만 해 와 무언가 해 주고 싶지만 일레그가 좋아하는 것도 몰랐다",
+      "after": "폐기 · 도망자 신세를 무릅쓰고 갇힌 일레그에게 달려가 '내 손을 잡아' 한다",
       "trigger": [{ "scene": "event_darkhero_04_s", "lines": ["45-69"] }],
       "time": "S147",
       "evidence": [{ "scene": "event_darkhero_06_e", "lines": ["15-50"] }],
       "reason": "03_s#27-31 · 73-74 → 06_e#41-50. 일레그가 어릴 적 해 준 것을 되갚는다(#13-14)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 받기만 해 와 무언가 해 주고 싶지만 일레그가 좋아하는 것도 모르던 · 후 폐기 · 도망자 신세를 무릅쓰고 갇힌 일레그에게 달려가 '내 손을 잡아' 하는"
+        }
+      ]
     },
     {
       "id": "D471",
@@ -214,12 +234,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:메이든"],
-      "text": "고맙다며 울고 머리를 쓰다듬는 메이든의 손길을 그만하라고 못 하고 눈을 질끈 감은 채 받아들이는",
+      "text": "고맙다며 울고 머리를 쓰다듬는 메이든의 손길을 그만하라고 못 하고 눈을 질끈 감은 채 받아들인다",
       "evidence": [{ "scene": "event_darkhero_01_e", "lines": ["29-35", "65-69"] }],
       "reason": "#33 '이미 쓰다듬고 있잖아' · #67-69 그만하라는 말을 어려워한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "고맙다며 울고 머리를 쓰다듬는 메이든의 손길을 그만하라고 못 하고 눈을 질끈 감은 채 받아들이는"
+        }
+      ]
     },
     {
       "id": "D472",
@@ -227,15 +257,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:메이든"],
-      "before": "쓰다듬는 손길도 거절 못 하고 받기만 하던",
-      "after": "체포하겠다며 막아선 메이든 앞에 나서 제 진심을 말하고, 우는 메이든의 머리를 까치발로 쓰다듬는",
+      "before": "쓰다듬는 손길도 거절 못 하고 받기만 했다",
+      "after": "체포하겠다며 막아선 메이든 앞에 나서 제 진심을 말하고, 우는 메이든의 머리를 까치발로 쓰다듬는다",
       "trigger": [{ "scene": "event_darkhero_06_s", "lines": ["56-59"] }],
       "time": "S147",
       "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["115-125"] }],
       "reason": "01_e#29-35의 쓰다듬기가 뒤집힌다 — #116-118 '메이든이 우는 걸 보니까 나도 모르게 손이 가서'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 쓰다듬는 손길도 거절 못 하고 받기만 하던 · 후 체포하겠다며 막아선 메이든 앞에 나서 제 진심을 말하고, 우는 메이든의 머리를 까치발로 쓰다듬는"
+        }
+      ]
     },
     {
       "id": "D473",
@@ -243,12 +283,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "내일 시간 있냐 묻고는 '당연히 나한테 내줄 시간은 없겠지' 움츠러들다, 있다는 말에 '다행이다 헤헤' 하는",
+      "text": "내일 시간 있냐 묻고는 '당연히 나한테 내줄 시간은 없겠지' 움츠러들다, 있다는 말에 '다행이다 헤헤' 한다",
       "evidence": [{ "scene": "event_darkhero_01_s", "lines": ["136-146"] }],
       "reason": "#139 · #146. 영화 같이 보자는 말도 못 꺼내 일레그에게 대신 부탁한다(02_s#77-79)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "내일 시간 있냐 묻고는 '당연히 나한테 내줄 시간은 없겠지' 움츠러들다, 있다는 말에 '다행이다 헤헤' 하는"
+        }
+      ]
     },
     {
       "id": "D474",
@@ -256,15 +306,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:트로니"],
-      "before": "몇 년째 날마다 문 앞에 와 불러내던 하나뿐인 친구",
-      "after": "테러를 혼자 꾸몄다고 다 뒤집어써 폐기를 받아들이고 트로니의 혐의만은 벗기려는",
+      "before": "몇 년째 날마다 문 앞에 와 불러내던 하나뿐인 친구였다",
+      "after": "테러를 혼자 꾸몄다고 다 뒤집어써 폐기를 받아들이고 트로니의 혐의만은 벗기려 한다",
       "trigger": [{ "scene": "event_darkhero_intermission_01", "lines": ["36-42"] }],
       "time": "S147",
       "evidence": [{ "scene": "event_darkhero_05_e", "lines": ["25-30", "41-42"] }],
       "reason": "#42 '제가 모든 걸 뒤집어쓰고 트로니 씨의 혐의라도 풀어주는 게 최선'. 기준 D399",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 몇 년째 날마다 문 앞에 와 불러내던 하나뿐인 친구 · 후 테러를 혼자 꾸몄다고 다 뒤집어써 폐기를 받아들이고 트로니의 혐의만은 벗기려는"
+        }
+      ]
     },
     {
       "id": "D475",
@@ -272,12 +332,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:메이든"],
-      "text": "마스크를 벗은 메이든을 두려워하지 않고, 우는 그녀의 눈물을 닦아 주려 먼저 다가가는",
+      "text": "마스크를 벗은 메이든을 두려워하지 않고, 우는 그녀의 눈물을 닦아 주려 먼저 다가간다",
       "evidence": [{ "scene": "event_darkhero_intermission_01", "lines": ["5-8", "34-40"] }],
       "reason": "#38-40 '처음으로 두려워하지 않은, 오히려 먼저 다가와준 일레그'(F1470)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "마스크를 벗은 메이든을 두려워하지 않고, 우는 그녀의 눈물을 닦아 주려 먼저 다가가는"
+        }
+      ]
     },
     {
       "id": "D476",
@@ -299,15 +369,25 @@
       "person": "person:메이든",
       "aspect": "신념",
       "act": "변화",
-      "before": "친구라도 명령이면 울면서 [정지]로 멈춰 넘기는 익스터너",
-      "after": "명령을 어기고 트로니에게 길을 열어 주며 임무 실패를 보고하는",
+      "before": "친구라도 명령이면 울면서 [정지]로 멈춰 넘기는 익스터너였다",
+      "after": "명령을 어기고 트로니에게 길을 열어 주며 임무 실패를 보고한다",
       "trigger": [{ "scene": "event_darkhero_06_s", "lines": ["102-108"] }],
       "time": "S147",
       "evidence": [{ "scene": "event_darkhero_06_s", "lines": ["110-124", "158-160"] }],
       "reason": "intermission_01#36-42 → 06_s#120-124 '손을 내밀어 주세요' · #160 '임무는 실패했습니다'. 대가는 무기한 근신(F1729)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 친구라도 명령이면 울면서 [정지]로 멈춰 넘기는 익스터너 · 후 명령을 어기고 트로니에게 길을 열어 주며 임무 실패를 보고하는"
+        }
+      ]
     },
     {
       "id": "D478",
@@ -315,12 +395,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:트로니"],
-      "text": "트로니의 '고마워' 한마디에 울며 저도 모르게 머리를 쓰다듬고 놓지 못하는",
+      "text": "트로니의 '고마워' 한마디에 울며 저도 모르게 머리를 쓰다듬고 놓지 못한다",
       "evidence": [{ "scene": "event_darkhero_01_e", "lines": ["13-19", "29-34"] }],
       "reason": "#19 '이 게임 시작하길 잘한 것 같아요' · #66 '자꾸만 손이 가는걸요'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "트로니의 '고마워' 한마디에 울며 저도 모르게 머리를 쓰다듬고 놓지 못하는" }
+      ]
     },
     {
       "id": "D479",
@@ -358,12 +441,22 @@
       "person": "person:아크레인저_블랙",
       "aspect": "신념",
       "act": "기준",
-      "text": "히어로란 남의 기대가 아니라 제 신념 · 진심을 관철하는 자 — 레드처럼 누군가를 일으켜 세우는 히어로가 되자는",
+      "text": "히어로란 남의 기대가 아니라 제 신념 · 진심을 관철하는 자라며 레드처럼 누군가를 일으켜 세우는 히어로가 되자고 한다",
       "evidence": [{ "scene": "event_darkhero_03_e", "lines": ["60-75"] }],
       "reason": "#61-63 · #75. 시내를 돌며 사소한 선행을 베푸는 순찰(#40-44)로 보여 준다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M19" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "히어로란 남의 기대가 아니라 제 신념 · 진심을 관철하는 자 — 레드처럼 누군가를 일으켜 세우는 히어로가 되자는"
+        }
+      ]
     }
   ],
   "life": [

@@ -23,28 +23,48 @@
       "person": "person:소다",
       "aspect": "신념",
       "act": "기준",
-      "text": "방주에 갇혀 답답하게 지내는 모두를 조금이라도 행복하게 하려고, 자기가 할 수 있는 메이드 일을 더 열심히 하기로 한",
+      "text": "방주에 갇혀 답답하게 지내는 모두를 조금이라도 행복하게 하려고, 자기가 할 수 있는 메이드 일을 더 열심히 하기로 했다",
       "evidence": [{ "scene": "ep:d_nikke_soda_04", "lines": ["40-45"] }],
       "points": ["F815"],
       "reason": "#40 '모두가 조금이라도 행복해 졌으면' · #41 '다들 방주에 갇혀서 답답하게' · #43 '결국 메이드 일밖에 없더라구요'. event_goldencoinrush1 D1547보다 출시가 앞선다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "방주에 갇혀 답답하게 지내는 모두를 조금이라도 행복하게 하려고, 자기가 할 수 있는 메이드 일을 더 열심히 하기로 한"
+        }
+      ]
     },
     {
       "id": "D2003",
       "person": "person:소다",
       "aspect": "성격",
       "act": "변화",
-      "before": "민폐만 끼친다며 손님 기색만 살피다 실수하고 의기소침해 조퇴하는",
-      "after": "실수는 여전해도 누군가 행복해졌다는 걸 알고 의욕이 넘쳐 홀을 혼자 도맡는",
+      "before": "민폐만 끼친다며 손님 기색만 살피다 실수하고 의기소침해 조퇴한다",
+      "after": "실수는 여전해도 누군가 행복해졌다는 걸 알고 의욕이 넘쳐 홀을 혼자 도맡는다",
       "trigger": [{ "scene": "ep:d_nikke_soda_04", "lines": ["52-81"] }],
       "evidence": [{ "scene": "ep:d_nikke_soda_05", "lines": ["13-14", "63-69"] }],
       "points": ["F815"],
       "reason": "04#14-16 '이제 어떻게 해야 할지 모르겠어요' → 05#14 '며칠 전부터 의욕이 넘쳐써' · #64-69 '실수도 여전히… 뭐든지 해낼 수 있을 것 같은 기분'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 민폐만 끼친다며 손님 기색만 살피다 실수하고 의기소침해 조퇴하는 · 후 실수는 여전해도 누군가 행복해졌다는 걸 알고 의욕이 넘쳐 홀을 혼자 도맡는"
+        }
+      ]
     },
     {
       "id": "D2004",
@@ -52,12 +72,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "지휘관을 '주인님'으로 모시며 덜렁대는 성격을 고치게 도와 달라고 상담을 청하고, 해낼 수 있을지 기대는",
+      "text": "지휘관을 '주인님'으로 모시며 덜렁대는 성격을 고치게 도와 달라고 상담을 청하고, 해낼 수 있을지 기댄다",
       "evidence": [{ "scene": "ep:d_nikke_soda_02", "lines": ["0-23"] }],
       "reason": "#1 '제 덜렁대는 성격을 고치게 도와주세요!' · #18 '저, 잘할 수 있을까요…?' · #21-23 '끝까지 포기하지 않을게' '네, 주인님'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "지휘관을 '주인님'으로 모시며 덜렁대는 성격을 고치게 도와 달라고 상담을 청하고, 해낼 수 있을지 기대는"
+        }
+      ]
     },
     {
       "id": "D2005",
@@ -66,14 +96,17 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "성격을 고치게 도와 달라고 상담을 청한 '주인님'",
-      "after": "지켜봐 준다는 말에 두근거려 '힘을 달라'며 입을 맞추는",
+      "after": "지켜봐 준다는 말에 두근거려 '힘을 달라'며 입을 맞춘다",
       "trigger": [{ "scene": "ep:d_nikke_soda_04", "lines": ["76-81"] }],
       "evidence": [{ "scene": "ep:d_nikke_soda_05", "lines": ["67-76", "89-105"] }],
       "points": ["F815"],
       "reason": "#68-69 '저를 지켜봐 주신다고 하셨을 때' · #75 '엄청 두근거리고 간질간질한 기분' · #91 '힘을… 주실 수 있나요?' · #94 입맞춤.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M88" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 지켜봐 준다는 말에 두근거려 '힘을 달라'며 입을 맞추는" }
+      ]
     }
   ],
   "life": [],

@@ -12,8 +12,8 @@
       "person": "person:프리카",
       "aspect": "성격",
       "act": "변화",
-      "before": "사랑스럽거나 애교 있는 쪽과는 거리가 멀다며 좁은 작업실 세계에 머물던",
-      "after": "파프리카도 달콤하다는 걸 처음 알고, 자기 안의 달콤함으로 사랑 노래 가사를 단숨에 써 내는",
+      "before": "사랑스럽거나 애교 있는 쪽과는 거리가 멀다며 좁은 작업실 세계에 머물렀다",
+      "after": "파프리카도 달콤하다는 걸 처음 알고, 자기 안의 달콤함으로 사랑 노래 가사를 단숨에 써 낸다",
       "trigger": [{ "scene": "ep:d_nikke_prika_02", "lines": ["23-29", "79-87"] }],
       "evidence": [{ "scene": "ep:d_nikke_prika_03", "lines": ["33-46"] }],
       "time": "S330",
@@ -21,7 +21,17 @@
       "reason": "02#28 '사랑스럽거나, 애교가 있지는 않잖아, 나는' → 03#33-38 '파프리카는 달콤한 거였네 … 내 세계는 그렇게 넓지 않으니까' 뒤 가사가 자리잡는다. 은유라 추정.",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 사랑스럽거나 애교 있는 쪽과는 거리가 멀다며 좁은 작업실 세계에 머물던 · 후 파프리카도 달콤하다는 걸 처음 알고, 자기 안의 달콤함으로 사랑 노래 가사를 단숨에 써 내는"
+        }
+      ]
     },
     {
       "id": "D2219",
@@ -30,7 +40,7 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "곡의 영감을 준 '뮤즈'",
-      "after": "절대 남에게 안 맡기던 작사 크레딧을 'Muse'로 올리고, 온전히 자기 마음을 담은 후속곡 [After Sweetness]를 긴장하며 들려주는",
+      "after": "절대 남에게 안 맡기던 작사 크레딧을 'Muse'로 올리고, 온전히 자기 마음을 담은 후속곡 [After Sweetness]를 긴장하며 들려준다",
       "trigger": [{ "scene": "ep:d_nikke_prika_04", "lines": ["54-56", "69-73"] }],
       "evidence": [{ "scene": "ep:d_nikke_prika_05", "lines": ["33-38", "59-88"] }],
       "time": "S330",
@@ -38,7 +48,17 @@
       "reason": "04#54-55 '가사, 절대 남한테 안 맡기거든요' · 05#36 '평범한 감상이 듣고 싶었는데' · #73-74 '온전히 … 내 마음을 담아서'. 앞 모습은 D1740.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "후 절대 남에게 안 맡기던 작사 크레딧을 'Muse'로 올리고, 온전히 자기 마음을 담은 후속곡 [After Sweetness]를 긴장하며 들려주는"
+        }
+      ]
     }
   ],
   "life": [],

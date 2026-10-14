@@ -13,8 +13,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "학교 일을 함께 맡기는 믿음직한 동료 선생님",
-      "after": "다른 이에게 건넨 칭찬에 답답해하던 것이 질투였음을 깨닫고 '평생 당신 곁에 있고 싶다'고 고백하는",
+      "before": "학교 일을 함께 맡기는 믿음직한 동료 선생님이었다",
+      "after": "다른 이에게 건넨 칭찬에 답답해하던 것이 질투였음을 깨닫고 '평생 당신 곁에 있고 싶다'고 고백한다",
       "trigger": [{ "scene": "ep:d_nikke_marciana_marinestudy_04", "lines": ["53-59"] }],
       "evidence": [{ "scene": "ep:d_nikke_marciana_marinestudy_05", "lines": ["77-88", "102-105"] }],
       "time": "S338",
@@ -22,7 +22,17 @@
       "reason": "04#59 '내가 지휘관님을 좋아하고 있었구나' → 05#80 '그건… 질투였어요' · #86-88 '좋아합니다 … 평생 당신 곁에 있고 싶어요'. 앞 모습은 D1461.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M103" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 학교 일을 함께 맡기는 믿음직한 동료 선생님 · 후 다른 이에게 건넨 칭찬에 답답해하던 것이 질투였음을 깨닫고 '평생 당신 곁에 있고 싶다'고 고백하는"
+        }
+      ]
     }
   ],
   "life": [],

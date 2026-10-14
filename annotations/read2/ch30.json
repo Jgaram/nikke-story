@@ -189,14 +189,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:리버린"],
-      "before": "리버린 일은 자기가 해결하겠다던 친구",
-      "after": "약속대로 같이 죽자며 리버린에게 총을 난사하는",
+      "before": "리버린 일은 자기가 해결하겠다던 친구다",
+      "after": "약속대로 같이 죽자며 리버린에게 총을 난사한다",
       "trigger": [{ "scene": "d_main_30_01_e", "lines": ["48-51"] }],
       "evidence": [{ "scene": "d_main_30_01_e", "lines": ["57-93"] }],
       "reason": "#60 '둘 다 죽기로' · #83 '같이 죽자' — F1397",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 리버린 일은 자기가 해결하겠다던 친구 · 후 약속대로 같이 죽자며 리버린에게 총을 난사하는"
+        }
+      ]
     },
     {
       "id": "D432",
@@ -204,14 +214,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:리버린"],
-      "before": "협박에 끌려다니는 건 이해한다며 다시 믿겠다던",
-      "after": "식스오를 무서워하며 살 바엔 죽는 게 낫다며 다리를 쏘고 유리병을 밟아 부수는",
+      "before": "협박에 끌려다니는 건 이해한다며 다시 믿겠다고 했다",
+      "after": "식스오를 무서워하며 살 바엔 죽는 게 낫다며 다리를 쏘고 유리병을 밟아 부순다",
       "trigger": [{ "scene": "d_main_30_09_s", "lines": ["40-48"] }],
       "evidence": [{ "scene": "d_main_30_09_s", "lines": ["45-68"] }],
       "reason": "30_03_s#8 '믿을게' → #66-67 — F1413",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 협박에 끌려다니는 건 이해한다며 다시 믿겠다던 · 후 식스오를 무서워하며 살 바엔 죽는 게 낫다며 다리를 쏘고 유리병을 밟아 부수는"
+        }
+      ]
     },
     {
       "id": "D433",
@@ -232,43 +252,73 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "동료를 버리고 온 게 아니냐 의심하던",
-      "after": "곁에서 수정 더미를 함께 뒤지는 지휘관에게 해머링이 얼마나 소중한지 털어놓고 우는",
+      "before": "동료를 버리고 온 게 아니냐 의심했다",
+      "after": "곁에서 수정 더미를 함께 뒤지는 지휘관에게 해머링이 얼마나 소중한지 털어놓고 운다",
       "trigger": [{ "scene": "d_main_30_05", "lines": [16] }],
       "evidence": [{ "scene": "d_main_30_05", "lines": ["10-46"] }],
       "reason": "#17 '그런 녀석은 다시 찾아볼 수 없을 거야' · #43-46",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 동료를 버리고 온 게 아니냐 의심하던 · 후 곁에서 수정 더미를 함께 뒤지는 지휘관에게 해머링이 얼마나 소중한지 털어놓고 우는"
+        }
+      ]
     },
     {
       "id": "D435",
       "person": "person:해머링",
       "aspect": "신념",
       "act": "변화",
-      "before": "살아 있어야 의미가 있다며 목숨까지 걸 생각은 없는",
-      "after": "제게 창피한 게 싫어 만난 지 얼마 안 된 동료를 위해 목숨을 거는",
+      "before": "살아 있어야 의미가 있다며 목숨까지 걸 생각은 없다",
+      "after": "제게 창피한 게 싫어 만난 지 얼마 안 된 동료를 위해 목숨을 건다",
       "trigger": [{ "scene": "d_main_29_07_e", "lines": ["120-132"] }],
       "evidence": [{ "scene": "d_main_30_05", "lines": ["24-31"] }],
       "reason": "#30-31 드릴리의 말 — 시간을 벌려 언노운에게 돌아간 일(F1388)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 살아 있어야 의미가 있다며 목숨까지 걸 생각은 없는 · 후 제게 창피한 게 싫어 만난 지 얼마 안 된 동료를 위해 목숨을 거는"
+        }
+      ]
     },
     {
       "id": "D436",
       "person": "person:해머링",
       "aspect": "신체",
       "act": "변화",
-      "before": "팔에 수정이 박힌",
-      "after": "몸이 수정에 먹혀 라피가 머리를 떼어 내, 목 끝에 수정이 남은 머리만 남은",
+      "before": "팔에 수정이 박혔다",
+      "after": "몸이 수정에 먹혀 라피가 머리를 떼어 내, 목 끝에 수정이 남은 머리만 남았다",
       "trigger": [{ "scene": "d_main_30_09_s", "lines": ["70-73"] }],
       "points": ["F1414", "F1415"],
       "evidence": [{ "scene": "d_main_30_09_s", "lines": ["70-88"] }],
       "reason": "#82 라피의 수도 · #88 목 끝 수정",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 팔에 수정이 박힌 · 후 몸이 수정에 먹혀 라피가 머리를 떼어 내, 목 끝에 수정이 남은 머리만 남은"
+        }
+      ]
     },
     {
       "id": "D437",
@@ -276,27 +326,40 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "인간은 배신한다며 믿지 않던",
-      "after": "소리치지도 쏘지도 않고 고맙다 한 지휘관을 '아직 인간이 아니다'라며 안내하는",
+      "before": "인간은 배신한다며 믿지 않았다",
+      "after": "소리치지도 쏘지도 않고 고맙다 한 지휘관을 '아직 인간이 아니다'라며 안내한다",
       "trigger": [{ "scene": "d_main_29_07_e", "lines": ["86-116"] }],
       "evidence": [{ "scene": "d_main_30_06_e", "lines": ["64-86"] }],
       "reason": "#70-76 — 앞서 크리스탈 체임버에게서 지휘관을 구한다(30_06_s#38-51)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 인간은 배신한다며 믿지 않던 · 후 소리치지도 쏘지도 않고 고맙다 한 지휘관을 '아직 인간이 아니다'라며 안내하는"
+        }
+      ]
     },
     {
       "id": "D438",
       "person": "person:그레이브",
       "aspect": "기억",
       "act": "기준",
-      "text": "제 이름도, 지상을 다닌 세월도 기억하지 못해 '그레이브'로 불러 달라는",
+      "text": "제 이름도, 지상을 다닌 세월도 기억하지 못해 '그레이브'로 불러 달라고 한다",
       "points": ["F1407"],
       "evidence": [{ "scene": "d_main_30_06_e", "lines": ["1-12"] }],
       "reason": "#1 '이름, 잊었, 다' · 30_07_s#4",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "제 이름도, 지상을 다닌 세월도 기억하지 못해 '그레이브'로 불러 달라는" }
+      ]
     },
     {
       "id": "D439",
@@ -317,27 +380,40 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:라피"],
-      "text": "보물을 모욕하고 레드 후드라는 망자까지 빼앗았다며 라피를 반드시 죽이겠다는",
+      "text": "보물을 모욕하고 레드 후드라는 망자까지 빼앗았다며 라피를 반드시 죽이겠다고 한다",
       "evidence": [{ "scene": "d_main_30_07_e", "lines": ["56-72"] }],
       "reason": "#62-64 · #72 — F1411",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "보물을 모욕하고 레드 후드라는 망자까지 빼앗았다며 라피를 반드시 죽이겠다는" }
+      ]
     },
     {
       "id": "D441",
       "person": "person:라피",
       "aspect": "신체",
       "act": "변화",
-      "before": "레드 후드 발동(비장의 수)이 사라진",
-      "after": "머리가 붉게 타오르며 오버히트 없이 안정된 레드 후드를 다시 쓰는",
+      "before": "레드 후드 발동(비장의 수)이 사라졌다",
+      "after": "머리가 붉게 타오르며 오버히트 없이 안정된 레드 후드를 다시 쓴다",
       "trigger": [{ "scene": "d_main_30_07_e", "lines": ["33-36"] }],
       "points": ["F1411"],
       "evidence": [{ "scene": "d_main_30_07_e", "lines": ["36-41", 79, "88-90"] }],
       "reason": "#79 '예전처럼 오버히트가 발생하진 않은' · #89 '안정된 느낌'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 레드 후드 발동(비장의 수)이 사라진 · 후 머리가 붉게 타오르며 오버히트 없이 안정된 레드 후드를 다시 쓰는"
+        }
+      ]
     },
     {
       "id": "D442",
@@ -345,12 +421,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:그레이브"],
-      "text": "아나키오르를 지키는 그레이브를 '다음엔 놓치지 않겠다'고 노리는",
+      "text": "아나키오르를 지키는 그레이브를 '다음엔 놓치지 않겠다'고 노린다",
       "evidence": [{ "scene": "d_main_30_af_01", "lines": ["61-64"] }],
       "reason": "#64 — 30_07_e#54-55 '그건 존재해서는 안돼'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M17" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "아나키오르를 지키는 그레이브를 '다음엔 놓치지 않겠다'고 노리는" }
+      ]
     }
   ],
   "life": [

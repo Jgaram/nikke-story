@@ -40,14 +40,24 @@
       "act": "변화",
       "with": ["person:지휘관"],
       "before": "장난을 받아 주는 '아저씨'",
-      "after": "사과를 바로 믿어 준 '진짜 어른'에게 입을 맞추고 매일 아저씨만 생각했다고 고백하는",
+      "after": "사과를 바로 믿어 준 '진짜 어른'에게 입을 맞추고 매일 아저씨만 생각했다고 고백한다",
       "trigger": [{ "scene": "ep:d_nikke_belorta_04", "lines": ["5-16", "37-43"] }],
       "evidence": [{ "scene": "ep:d_nikke_belorta_05", "lines": ["86-98", "109-116"] }],
       "points": ["F564"],
       "reason": "04#16 '한 번에 믿어준다는 게 신기해서' · #41-43 '지휘관들이랑은 다른 [진짜 어른]' 뒤 05#111-115 입맞춤 · '좋아해. 아저씨'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M82", "note": "M82 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "후 사과를 바로 믿어 준 '진짜 어른'에게 입을 맞추고 매일 아저씨만 생각했다고 고백하는"
+        }
+      ]
     }
   ],
   "life": [],

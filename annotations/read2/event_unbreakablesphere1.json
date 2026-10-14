@@ -510,12 +510,22 @@
       "person": "person:모리",
       "aspect": "성격",
       "act": "기준",
-      "text": "이유 없는 친절은 위선이라 불편하다며 밀어내고 '믿는 순간 뒤통수를 친다'고 경계하면서도, 물방울이 귀여워 몰래 만져 보고 싶어 하는",
+      "text": "이유 없는 친절은 위선이라 불편하다며 밀어내고 '믿는 순간 뒤통수를 친다'고 경계하면서도, 물방울이 귀여워 몰래 만져 보고 싶어 한다",
       "evidence": [{ "scene": "event_unbreakablesphere1_03_s", "lines": ["53-73"] }],
       "reason": "#55-73 — 02_s#47-49 '…귀여워'와 함께 모리의 첫 모습",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "이유 없는 친절은 위선이라 불편하다며 밀어내고 '믿는 순간 뒤통수를 친다'고 경계하면서도, 물방울이 귀여워 몰래 만져 보고 싶어 하는"
+        }
+      ]
     },
     {
       "id": "D675",
@@ -523,12 +533,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:미하라"],
-      "text": "'여기서만 나가면 다시는 안 볼 테니까'라며 미하라의 다가옴을 '모아 놓은 거 뺏어 가려고?'로 의심하는",
+      "text": "'여기서만 나가면 다시는 안 볼 테니까'라며 미하라의 다가옴을 '모아 놓은 거 뺏어 가려고?'로 의심한다",
       "evidence": [{ "scene": "event_unbreakablesphere1_02_s", "lines": ["60-82"] }],
       "reason": "#61 · #78 · #82",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'여기서만 나가면 다시는 안 볼 테니까'라며 미하라의 다가옴을 '모아 놓은 거 뺏어 가려고?'로 의심하는"
+        }
+      ]
     },
     {
       "id": "D676",
@@ -536,40 +556,63 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:세이렌"],
-      "text": "구해 주고 먹여 주는 세이렌에게 '왜 아무것도 바라지 않는 척 착한 척 구냐 · 위선 떨지 마'라 쏘아붙이는",
+      "text": "구해 주고 먹여 주는 세이렌에게 '왜 아무것도 바라지 않는 척 착한 척 구냐 · 위선 떨지 마'라 쏘아붙인다",
       "evidence": [{ "scene": "event_unbreakablesphere1_03_s", "lines": ["55-73"] }],
       "reason": "#61 · #66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "구해 주고 먹여 주는 세이렌에게 '왜 아무것도 바라지 않는 척 착한 척 구냐 · 위선 떨지 마'라 쏘아붙이는"
+        }
+      ]
     },
     {
       "id": "D677",
       "person": "person:모리",
       "aspect": "성격",
       "act": "변화",
-      "before": "보급을 숨기고 굶겨도 모르는 척 웃어 넘기던",
-      "after": "같은 스쿼드원에게 처음 폭력을 쓰고 '악의에는 악의로' 답하기로 한",
+      "before": "보급을 숨기고 굶겨도 모르는 척 웃어 넘겼다",
+      "after": "같은 스쿼드원에게 처음 폭력을 쓰고 '악의에는 악의로' 답하기로 했다",
       "trigger": [{ "scene": "event_unbreakablesphere1_04_s", "lines": ["107-118"] }],
       "evidence": [{ "scene": "event_unbreakablesphere1_04_s", "lines": ["60-61", "119-120"] }],
       "reason": "모리의 회상 — #60-61 '처음엔 착한 척 웃어보려 했다' → #119-120",
       "time": "S223",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 보급을 숨기고 굶겨도 모르는 척 웃어 넘기던 · 후 같은 스쿼드원에게 처음 폭력을 쓰고 '악의에는 악의로' 답하기로 한"
+        }
+      ]
     },
     {
       "id": "D678",
       "person": "person:모리",
       "aspect": "신념",
       "act": "기준",
-      "text": "악의로 가득한 세상에서 타인의 불행을 제물 삼아서라도 살아남으려 지엔의 손을 잡은",
+      "text": "악의로 가득한 세상에서 타인의 불행을 제물 삼아서라도 살아남으려 지엔의 손을 잡았다",
       "evidence": [{ "scene": "event_unbreakablesphere1_04_s", "lines": ["160-167"] }],
       "reason": "#162 '그럼에도 살아남고 싶어서' · #166-167 — 회상 끝",
       "time": "S223",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "악의로 가득한 세상에서 타인의 불행을 제물 삼아서라도 살아남으려 지엔의 손을 잡은" }
+      ]
     },
     {
       "id": "D679",
@@ -589,14 +632,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "위선이라며 밀어내던",
-      "after": "'태어난 걸 축하해'에 처음 울고, 의심했던 것을 고백하고 내민 손을 잡아 '고마워'라 하는",
+      "before": "위선이라며 밀어냈다",
+      "after": "'태어난 걸 축하해'에 처음 울고, 의심했던 것을 고백하고 내민 손을 잡아 '고마워'라 한다",
       "trigger": [{ "scene": "event_unbreakablesphere1_04_e", "lines": ["69-78"] }],
       "evidence": [{ "scene": "event_unbreakablesphere1_04_e", "lines": ["106-129"] }],
       "reason": "#111-115 고백 · #126-129 손을 맞잡음 (03_e#118-143에서 함께 먹고 자는 것이 익숙해진 뒤)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 위선이라며 밀어내던 · 후 '태어난 걸 축하해'에 처음 울고, 의심했던 것을 고백하고 내민 손을 잡아 '고마워'라 하는"
+        }
+      ]
     },
     {
       "id": "D681",
@@ -604,42 +657,72 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:미하라"],
-      "before": "'다시는 안 볼' 사이로 밀어내던",
-      "after": "무릎 꿇고 용서를 비는 처지임을 알면서 '뭐든 할 테니 한 번만 도와 달라'고 청하는",
+      "before": "'다시는 안 볼' 사이로 밀어냈다",
+      "after": "무릎 꿇고 용서를 비는 처지임을 알면서 '뭐든 할 테니 한 번만 도와 달라'고 청한다",
       "trigger": [{ "scene": "event_unbreakablesphere1_intermission_01", "lines": ["111-115"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_01_e", "lines": ["94-117"] }],
       "reason": "#97-117 — 검은 상자로 유니가 미하라를 졸랐던 일 뒤 (05_s#0-21 사과)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '다시는 안 볼' 사이로 밀어내던 · 후 무릎 꿇고 용서를 비는 처지임을 알면서 '뭐든 할 테니 한 번만 도와 달라'고 청하는"
+        }
+      ]
     },
     {
       "id": "D682",
       "person": "person:모리",
       "aspect": "성격",
       "act": "변화",
-      "before": "랩쳐가 무서워 늘 땅을 파고 숨던",
-      "after": "두려움을 외면하고 삽 대신 총을 잡고 글러트니를 쫓아 뛰는",
+      "before": "랩쳐가 무서워 늘 땅을 파고 숨었다",
+      "after": "두려움을 외면하고 삽 대신 총을 잡고 글러트니를 쫓아 뛴다",
       "trigger": [{ "scene": "event_unbreakablesphere2_01_e", "lines": ["84-92"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_intermission_01", "lines": ["39-58"] }],
       "reason": "#46 '늘 그랬던 것처럼 땅을 파고 숨어들어가고 싶었다' · #55-58 — 2_04_e#33 '사격 많이 늘었네' · #159-164 목구멍으로 뛰어듦",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 랩쳐가 무서워 늘 땅을 파고 숨던 · 후 두려움을 외면하고 삽 대신 총을 잡고 글러트니를 쫓아 뛰는"
+        }
+      ]
     },
     {
       "id": "D683",
       "person": "person:모리",
       "aspect": "신념",
       "act": "변화",
-      "before": "악의에는 악의로, 무슨 수를 써서라도 혼자 살아남으려던",
-      "after": "'선의에 선의로 보답하는 게 맞다'는 걸 증명해 달라며 세이렌을 위해 함께 죽겠다는",
+      "before": "악의에는 악의로, 무슨 수를 써서라도 혼자 살아남으려 했다",
+      "after": "'선의에 선의로 보답하는 게 맞다'는 걸 증명해 달라며 세이렌을 위해 함께 죽겠다고 한다",
       "trigger": [{ "scene": "event_unbreakablesphere1_04_e", "lines": ["69-91"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_05_e", "lines": ["80-107"] }],
       "reason": "#80-95 — 계기는 생일을 축하해 준 04_e",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 악의에는 악의로, 무슨 수를 써서라도 혼자 살아남으려던 · 후 '선의에 선의로 보답하는 게 맞다'는 걸 증명해 달라며 세이렌을 위해 함께 죽겠다는"
+        }
+      ]
     },
     {
       "id": "D684",
@@ -662,40 +745,70 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:모리"],
-      "text": "'아무도 네가 태어난 걸 축하하지 않는다면 내가 축하할게'라며 모리를 만난 날을 모리의 생일로 하자는",
+      "text": "'아무도 네가 태어난 걸 축하하지 않는다면 내가 축하할게'라며 모리를 만난 날을 모리의 생일로 하자고 한다",
       "evidence": [{ "scene": "event_unbreakablesphere1_04_e", "lines": ["65-91"] }],
       "reason": "#69-78 · #87-91",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "'아무도 네가 태어난 걸 축하하지 않는다면 내가 축하할게'라며 모리를 만난 날을 모리의 생일로 하자는"
+        }
+      ]
     },
     {
       "id": "D686",
       "person": "person:세이렌",
       "aspect": "신념",
       "act": "변화",
-      "before": "동료들이 살아 있다는 증거를 찾아 기다리던",
-      "after": "친구들을 기다리는 것을 그만두고 AA 필러의 에너지를 끌어안고 '승리의 여신답게' 마지막 물거품이 되려는",
+      "before": "동료들이 살아 있다는 증거를 찾아 기다렸다",
+      "after": "친구들을 기다리는 것을 그만두고 AA 필러의 에너지를 끌어안고 '승리의 여신답게' 마지막 물거품이 되려 한다",
       "trigger": [{ "scene": "event_unbreakablesphere1_06_s", "lines": ["48-55"] }],
       "evidence": [{ "scene": "event_unbreakablesphere1_06_e", "lines": ["46-69"] }],
       "reason": "#53-54 '이제… 그만 기다려도 되지?' · #66-69 (기준 D642)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 동료들이 살아 있다는 증거를 찾아 기다리던 · 후 친구들을 기다리는 것을 그만두고 AA 필러의 에너지를 끌어안고 '승리의 여신답게' 마지막 물거품이 되려는"
+        }
+      ]
     },
     {
       "id": "D687",
       "person": "person:세이렌",
       "aspect": "신념",
       "act": "변화",
-      "before": "모두를 구하려 홀로 희생하려던",
-      "after": "가능성이 하나라도 있다면 포기하지 않고 '함께 살아남아 해피 엔딩을 만들자'는",
+      "before": "모두를 구하려 홀로 희생하려 했다",
+      "after": "가능성이 하나라도 있다면 포기하지 않고 '함께 살아남아 해피 엔딩을 만들자'고 한다",
       "trigger": [{ "scene": "event_unbreakablesphere2_05_e", "lines": ["83-109"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_05_e", "lines": ["140-148"] }],
       "reason": "#141-148 — 모리의 '나의 승리의 여신이여'와 신데렐라의 약속을 떠올린 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 모두를 구하려 홀로 희생하려던 · 후 가능성이 하나라도 있다면 포기하지 않고 '함께 살아남아 해피 엔딩을 만들자'는"
+        }
+      ]
     },
     {
       "id": "D688",
@@ -703,14 +816,24 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:모리"],
-      "before": "구해 주고 생일을 축하해 준 손님",
-      "after": "'다정하고 똑똑하고 용감한 내 친구'로 손을 내밀어 앞으로 함께 다니자고 청하는",
+      "before": "구해 주고 생일을 축하해 준 손님이다",
+      "after": "'다정하고 똑똑하고 용감한 내 친구'로 손을 내밀어 앞으로 함께 다니자고 청한다",
       "trigger": [{ "scene": "event_unbreakablesphere2_05_s", "lines": ["25-37"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_epilogue", "lines": ["118-160"] }],
       "reason": "#122 '나랑 같이 가는 거 아니었어?' · #151-160",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 구해 주고 생일을 축하해 준 손님 · 후 '다정하고 똑똑하고 용감한 내 친구'로 손을 내밀어 앞으로 함께 다니자고 청하는"
+        }
+      ]
     },
     {
       "id": "D689",
@@ -718,12 +841,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:모리"],
-      "text": "목숨을 걸고 세이렌을 구했다고 들었을 때부터 이미 동료라며 모리를 받아들이는",
+      "text": "목숨을 걸고 세이렌을 구했다고 들었을 때부터 이미 동료라며 모리를 받아들인다",
       "evidence": [{ "scene": "event_unbreakablesphere2_epilogue", "lines": ["146-148", 166] }],
       "reason": "#146-148",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "목숨을 걸고 세이렌을 구했다고 들었을 때부터 이미 동료라며 모리를 받아들이는" }
+      ]
     },
     {
       "id": "D690",
@@ -731,12 +857,15 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:모리"],
-      "text": "방주부터 몰래 따라온 모리를 마음에 안 들어 하며 불만스러운 소리를 내는",
+      "text": "방주부터 몰래 따라온 모리를 마음에 안 들어 하며 불만스러운 소리를 낸다",
       "evidence": [{ "scene": "event_unbreakablesphere1_02_e", "lines": ["56-70"] }],
       "reason": "#60 · #63-66",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "방주부터 몰래 따라온 모리를 마음에 안 들어 하며 불만스러운 소리를 내는" }
+      ]
     },
     {
       "id": "D691",
@@ -744,28 +873,48 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:모리"],
-      "before": "모리를 '원흉'으로 미워하던",
-      "after": "목을 조르다 '제발 부탁해'에 자기를 보고 놓아주고, 함께 울며 감싸 주는",
+      "before": "모리를 '원흉'으로 미워했다",
+      "after": "목을 조르다 '제발 부탁해'에 자기를 보고 놓아주고, 함께 울며 감싸 준다",
       "trigger": [{ "scene": "event_unbreakablesphere2_03_e", "lines": ["31-49"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_03_e", "lines": ["41-110"] }],
       "reason": "#44-53 · #74-92 · #107-110 — 2_04_e#106-112 '힘내'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 모리를 '원흉'으로 미워하던 · 후 목을 조르다 '제발 부탁해'에 자기를 보고 놓아주고, 함께 울며 감싸 주는"
+        }
+      ]
     },
     {
       "id": "D692",
       "person": "person:유니",
       "aspect": "신념",
       "act": "변화",
-      "before": "명령대로 가벼운 말 한마디로 생명을 끊던",
-      "after": "두 사람의 생명을 받치며 그 무게로 자기 죄를 느끼고, 미하라와 함께 누군가를 구하며 속죄하려는",
+      "before": "명령대로 가벼운 말 한마디로 생명을 끊었다",
+      "after": "두 사람의 생명을 받치며 그 무게로 자기 죄를 느끼고, 미하라와 함께 누군가를 구하며 속죄하려 한다",
       "trigger": [{ "scene": "event_unbreakablesphere2_04_e", "lines": ["78-93"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_06_s", "lines": ["18-51"] }],
       "reason": "#24-33 '수많은 생명을 죽일 때 던졌던 말의 가벼움' · #42-51 — 06_e#172-179 처음 누군가를 구해 본 기분 '좋아'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 명령대로 가벼운 말 한마디로 생명을 끊던 · 후 두 사람의 생명을 받치며 그 무게로 자기 죄를 느끼고, 미하라와 함께 누군가를 구하며 속죄하려는"
+        }
+      ]
     },
     {
       "id": "D693",
@@ -773,27 +922,47 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지엔"],
-      "text": "폐기 위기의 모리 · 유니를 위해 거래를 걸고, 그 대가로 평생 지엔의 실험체가 되기로 한",
+      "text": "폐기 위기의 모리 · 유니를 위해 거래를 걸고, 그 대가로 평생 지엔의 실험체가 되기로 했다",
       "evidence": [{ "scene": "event_unbreakablesphere2_03_s", "lines": ["32-56", "150-154"] }],
       "reason": "#39-58 · #151-154 — F1898",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "폐기 위기의 모리 · 유니를 위해 거래를 걸고, 그 대가로 평생 지엔의 실험체가 되기로 한"
+        }
+      ]
     },
     {
       "id": "D694",
       "person": "person:미하라",
       "aspect": "신체",
       "act": "변화",
-      "before": "기대만큼 힘을 끌어내지 못하는 새 바디",
-      "after": "니케 코어 옆에 랩쳐 코어를 품고, 펜듈럼을 꽂아 [사슬]로 이은 상대와 크기 · 힘에 상관없이 고통을 나누는",
+      "before": "기대만큼 힘을 끌어내지 못하는 새 바디다",
+      "after": "니케 코어 옆에 랩쳐 코어를 품고, 펜듈럼을 꽂아 [사슬]로 이은 상대와 크기 · 힘에 상관없이 고통을 나눈다",
       "trigger": [{ "scene": "event_unbreakablesphere2_04_s", "lines": ["91-147"] }],
       "evidence": [{ "scene": "event_unbreakablesphere2_04_s", "lines": ["242-262"] }],
       "reason": "#245-257 — F1900",
       "points": ["F1900"],
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 기대만큼 힘을 끌어내지 못하는 새 바디 · 후 니케 코어 옆에 랩쳐 코어를 품고, 펜듈럼을 꽂아 [사슬]로 이은 상대와 크기 · 힘에 상관없이 고통을 나누는"
+        }
+      ]
     },
     {
       "id": "D695",
@@ -801,12 +970,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:미하라"],
-      "text": "늘 신세만 진다는 미하라에게 '전부를 걸었다면 반드시 성공하라 · 다 같이 살아서 돌아오라, 기다리겠다'는",
+      "text": "늘 신세만 진다는 미하라에게 '전부를 걸었다면 반드시 성공하라 · 다 같이 살아서 돌아오라, 기다리겠다'고 한다",
       "evidence": [{ "scene": "event_unbreakablesphere2_03_e", "lines": ["138-146"] }],
       "reason": "#140-144",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M28", "note": "M28 자체 검토 — 원문 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "늘 신세만 진다는 미하라에게 '전부를 걸었다면 반드시 성공하라 · 다 같이 살아서 돌아오라, 기다리겠다'는"
+        }
+      ]
     }
   ],
   "life": [

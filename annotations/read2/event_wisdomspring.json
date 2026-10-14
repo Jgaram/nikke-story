@@ -150,15 +150,25 @@
       "person": "person:지휘관",
       "aspect": "기억",
       "act": "변화",
-      "before": "방주 출생 · 사관학교 졸업 말고는 흐릿하던",
-      "after": "처음 온 심층부가 익숙하고 수조 속 [프로젝트] 대상자였던 꿈을 떠올려 '나는 인간이야?'라 묻는",
+      "before": "방주 출생 · 사관학교 졸업 말고는 흐릿했다",
+      "after": "처음 온 심층부가 익숙하고 수조 속 [프로젝트] 대상자였던 꿈을 떠올려 '나는 인간이야?'라 묻는다",
       "trigger": [{ "scene": "event_wisdomspring_04_e", "lines": ["0-44"] }],
       "points": ["F1773"],
       "evidence": [{ "scene": "event_wisdomspring_05_e", "lines": ["10-15", "76-93"] }],
       "reason": "#76 '나 여기가 익숙해' · #93. 앞 모습은 F588(char:12).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 방주 출생 · 사관학교 졸업 말고는 흐릿하던 · 후 처음 온 심층부가 익숙하고 수조 속 [프로젝트] 대상자였던 꿈을 떠올려 '나는 인간이야?'라 묻는"
+        }
+      ]
     },
     {
       "id": "D595",
@@ -166,13 +176,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "그간 도움을 많이 준 M.M.R. 연구원",
-      "after": "규칙상 답은 못 해도 연구원이 아닌 한 니케로서 사심 없이 쉬게 지키겠다며 검진 자료도 내주지 않는",
+      "before": "그간 도움을 많이 준 M.M.R. 연구원이다",
+      "after": "규칙상 답은 못 해도 연구원이 아닌 한 니케로서 사심 없이 쉬게 지키겠다며 검진 자료도 내주지 않는다",
       "evidence": [{ "scene": "event_wisdomspring_06_e", "lines": ["36-52"] }],
       "reason": "#46-47 '[살아왔기] 때문' · #51-52. 앞은 01_s#41, 약속을 지킨 것은 epilogue#10-15.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 그간 도움을 많이 준 M.M.R. 연구원 · 후 규칙상 답은 못 해도 연구원이 아닌 한 니케로서 사심 없이 쉬게 지키겠다며 검진 자료도 내주지 않는"
+        }
+      ]
     },
     {
       "id": "D596",
@@ -180,13 +200,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "'7호'라 부르며 실험대에 올리겠다고 농을 거는",
-      "after": "'7호가 건강하면 됐다'며, 실패도 도망도 하지 않은 유일한 성공작이라 그 이름을 아끼는",
+      "before": "'7호'라 부르며 실험대에 올리겠다고 농을 걸었다",
+      "after": "'7호가 건강하면 됐다'며, 실패도 도망도 하지 않은 유일한 성공작이라 그 이름을 아낀다",
       "evidence": [{ "scene": "event_wisdomspring_epilogue", "lines": ["33-43", "92-97"] }],
       "reason": "#43 · #94-95. 꿈속 과거에도 '보다 보니 정이 든'(04_e#37).",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '7호'라 부르며 실험대에 올리겠다고 농을 거는 · 후 '7호가 건강하면 됐다'며, 실패도 도망도 하지 않은 유일한 성공작이라 그 이름을 아끼는"
+        }
+      ]
     },
     {
       "id": "D597",
@@ -206,12 +236,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "보고 싶다며 가짜 초대로 지휘관을 홀로 불러들여 '7호'라 부르고, 방주와 자신에 대해 하나 더 알게 됐다고 속삭이는",
+      "text": "보고 싶다며 가짜 초대로 지휘관을 홀로 불러들여 '7호'라 부르고, 방주와 자신에 대해 하나 더 알게 됐다고 속삭인다",
       "evidence": [{ "scene": "event_wisdomspring_06_s", "lines": ["89-113"] }],
       "reason": "#89 '데려오게 만든 게 저라서요' · #94 · #113.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M24", "note": "M24 자체 검토 — 근거 줄 확인" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "보고 싶다며 가짜 초대로 지휘관을 홀로 불러들여 '7호'라 부르고, 방주와 자신에 대해 하나 더 알게 됐다고 속삭이는"
+        }
+      ]
     }
   ],
   "life": [

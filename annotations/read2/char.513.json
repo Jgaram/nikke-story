@@ -58,15 +58,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:헨젤", "person:그레텔", "person:신데렐라", "person:레드_슈즈"],
-      "before": "언령이 동료를 해칠까 '미안해'만 남기고 위험할 때도 말을 끊은",
-      "after": "'모두 곁에 계속 있고 싶다 · 나는 착해빠진 녀석'이라 털어놓고 친구로 받아들여진",
+      "before": "언령이 동료를 해칠까 '미안해'만 남기고 위험할 때도 말을 끊었다",
+      "after": "'모두 곁에 계속 있고 싶다 · 나는 착해빠진 녀석'이라 털어놓고 친구로 받아들여졌다",
       "trigger": [{ "scene": "ep:d_nikke_littlemermaid_03", "lines": ["63-91"] }],
       "time": "S225",
       "evidence": [{ "scene": "ep:d_nikke_littlemermaid_05", "lines": ["43-49", "58-64"] }],
       "reason": "02#82 '미안해' 뒤 침묵 → 05#44-49 고백, 레드 슈즈 '외롭게 만들었군요' · 신데렐라 '아름다운 마음'.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 언령이 동료를 해칠까 '미안해'만 남기고 위험할 때도 말을 끊은 · 후 '모두 곁에 계속 있고 싶다 · 나는 착해빠진 녀석'이라 털어놓고 친구로 받아들여진"
+        }
+      ]
     },
     {
       "id": "D1639",
@@ -74,15 +84,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:세이렌"],
-      "before": "공격받는 것과 몸을 조종당하는 건 다르다며 언령을 경계한",
-      "after": "'일단 믿어 볼게 · 우린 세이렌의 친구니까' — 세이렌의 말을 알아듣는",
+      "before": "공격받는 것과 몸을 조종당하는 건 다르다며 언령을 경계했다",
+      "after": "'일단 믿어 볼게 · 우린 세이렌의 친구니까' — 세이렌의 말을 알아듣는다",
       "trigger": [{ "scene": "ep:d_nikke_littlemermaid_05", "lines": ["43-49"] }],
       "time": "S225",
       "evidence": [{ "scene": "ep:d_nikke_littlemermaid_05", "lines": ["59-63", "81-84"] }],
       "reason": "02#78 경계 → 05#61 '믿어 볼게' · #83 '우린 세이렌의 친구'. 헨젤이 둘을 묶어 말해 그레텔도 같다.",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M69" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 공격받는 것과 몸을 조종당하는 건 다르다며 언령을 경계한 · 후 '일단 믿어 볼게 · 우린 세이렌의 친구니까' — 세이렌의 말을 알아듣는"
+        }
+      ]
     }
   ],
   "life": [],

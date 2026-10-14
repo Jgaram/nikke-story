@@ -47,27 +47,47 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:지휘관"],
-      "text": "무전으로 용기를 보내 주고 머리를 쓰다듬어 준 지휘관에게 처음 '사랑의 시그널'을 느껴 짝사랑을 시작한",
+      "text": "무전으로 용기를 보내 주고 머리를 쓰다듬어 준 지휘관에게 처음 '사랑의 시그널'을 느껴 짝사랑을 시작했다",
       "evidence": [{ "scene": "ep:d_nikke_signal_01", "lines": ["67-79", "130-142"] }],
       "points": ["F587"],
       "reason": "01#74 '시그널은 유능한 통신병이니까' · #135-142 '소중히 간직해왔던 마음이 제 주인을 찾았다 … 사랑의 시그널이 찾아왔다'. 시그널 → 지휘관 기준이 아직 없다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "무전으로 용기를 보내 주고 머리를 쓰다듬어 준 지휘관에게 처음 '사랑의 시그널'을 느껴 짝사랑을 시작한"
+        }
+      ]
     },
     {
       "id": "D1865",
       "person": "person:시그널",
       "aspect": "성격",
       "act": "변화",
-      "before": "잘못 나온 음료를 말하지 못하던",
-      "after": "마음속 무전을 떠올려 스스로 '음료가 잘못 나왔네요'라 말하는",
+      "before": "잘못 나온 음료를 말하지 못했다",
+      "after": "마음속 무전을 떠올려 스스로 '음료가 잘못 나왔네요'라 말한다",
       "trigger": [{ "scene": "ep:d_nikke_signal_01", "lines": ["86-95"] }],
       "evidence": [{ "scene": "ep:d_nikke_signal_04", "lines": ["53-68"] }],
       "reason": "04#62-63 혼자 '음료가 잘못 나왔네요! 바꿔주실 수 있을까요?' · #66 '이젠 잘못 나왔다고 말할 수 있게 되었네'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 잘못 나온 음료를 말하지 못하던 · 후 마음속 무전을 떠올려 스스로 '음료가 잘못 나왔네요'라 말하는"
+        }
+      ]
     },
     {
       "id": "D1866",
@@ -91,15 +111,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "고백하고 도망쳐 얼굴 볼 일을 걱정하던",
-      "after": "지상의 꽃밭에서 '같은 마음'이라는 무전을 듣고 앞으로 절대 도망가지 않겠다는 연인",
+      "before": "고백하고 도망쳐 얼굴 볼 일을 걱정했다",
+      "after": "지상의 꽃밭에서 '같은 마음'이라는 무전을 듣고 앞으로 절대 도망가지 않겠다는 연인이다",
       "trigger": [{ "scene": "ep:d_nikke_signal_05", "lines": ["71-90"] }],
       "evidence": [{ "scene": "ep:d_nikke_signal_05", "lines": ["112-120"] }],
       "points": ["F587"],
       "reason": "05#87 '나도 시그널과 같은 마음이야' 뒤 #117 '앞으로는 절대 안 도망갈게요' · #120 '사랑의 시그널이에요!'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M83", "note": "M83 2회독 — 원문 대조 검토" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 고백하고 도망쳐 얼굴 볼 일을 걱정하던 · 후 지상의 꽃밭에서 '같은 마음'이라는 무전을 듣고 앞으로 절대 도망가지 않겠다는 연인"
+        }
+      ]
     }
   ],
   "life": [],

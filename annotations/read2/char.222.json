@@ -72,11 +72,21 @@
       "person": "person:홍련",
       "aspect": "신념",
       "act": "기준",
-      "text": "인간 없는 지상이 더 아름답다며 인간이 세상에 도움이 되는지 묻지만, 랩쳐를 모두 죽이고 지상을 인간에게 돌려준다는 '강철 같은 의지'는 변하지 않는다는",
+      "text": "인간 없는 지상이 더 아름답다며 인간이 세상에 도움이 되는지 묻지만, 랩쳐를 모두 죽이고 지상을 인간에게 돌려준다는 '강철 같은 의지'는 변하지 않는다고 한다",
       "evidence": [{ "scene": "ep:d_nikke_hongryeon_03", "lines": ["101-123"] }],
       "reason": "#109 · #117-119. 출시 첫날 단위라 ch17의 신념 기준(D145)보다 앞선다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "인간 없는 지상이 더 아름답다며 인간이 세상에 도움이 되는지 묻지만, 랩쳐를 모두 죽이고 지상을 인간에게 돌려준다는 '강철 같은 의지'는 변하지 않는다는"
+        }
+      ]
     },
     {
       "status": "확정",
@@ -97,11 +107,21 @@
       "person": "person:홍련",
       "aspect": "기억",
       "act": "기준",
-      "text": "사고 전환을 몇 번이나 겪어, 동료들과 목숨 걸고 탈환한 곳들도 라푼젤에게 들어서야 아는",
+      "text": "사고 전환을 몇 번이나 겪어, 동료들과 목숨 걸고 탈환한 곳들도 라푼젤에게 들어서야 안다",
       "evidence": [{ "scene": "ep:d_nikke_hongryeon_03", "lines": ["78-81"] }],
       "reason": "#80-81. 출시 첫날 단위라 NEW YEAR, NEW SWORD의 기억 기준(D363)보다 앞선다",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "사고 전환을 몇 번이나 겪어, 동료들과 목숨 걸고 탈환한 곳들도 라푼젤에게 들어서야 아는"
+        }
+      ]
     },
     {
       "status": "확정",
@@ -110,13 +130,23 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:지휘관"],
-      "before": "술을 얻어 마시러 드나드는 술친구",
-      "after": "'외로운 거야?'에 '아니라곤 말 못 하겠군' 하고, 지상에서의 시간이 그의 기억에 크게 자리 잡길 바라는",
+      "before": "술을 얻어 마시러 드나드는 술친구이다",
+      "after": "'외로운 거야?'에 '아니라곤 말 못 하겠군' 하고, 지상에서의 시간이 그의 기억에 크게 자리 잡길 바란다",
       "trigger": [{ "scene": "ep:d_nikke_hongryeon_03", "lines": [128] }],
       "evidence": [{ "scene": "ep:d_nikke_hongryeon_05", "lines": ["62-70", "105-110"] }],
       "reason": "03#128 '도령과 함께 있는 시간이 즐거워' → 05#69 · #108-109",
       "confidence": "확실",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M56" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 술을 얻어 마시러 드나드는 술친구 · 후 '외로운 거야?'에 '아니라곤 말 못 하겠군' 하고, 지상에서의 시간이 그의 기억에 크게 자리 잡길 바라는"
+        }
+      ]
     }
   ],
   "life": [],

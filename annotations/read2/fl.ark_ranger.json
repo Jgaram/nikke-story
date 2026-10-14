@@ -288,7 +288,7 @@
       "person": "person:아크레인저_블랙",
       "aspect": "신념",
       "act": "변화",
-      "before": "진짜 히어로가 되려 특훈하던",
+      "before": "진짜 히어로가 되려 특훈했다",
       "after": "호프를 못 구해 '나는 TV 속에서만 영웅' — 다짐 · 필살기 모두 히어로 놀이였다",
       "trigger": [{ "scene": "fl:ark_ranger_07", "lines": ["70-74"] }],
       "time": "S332",
@@ -297,7 +297,10 @@
       "reason": "07#89-91 '나는 그저 TV 속에서만 영웅이었구나' · #104 '히어로 놀이일 뿐'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "전 진짜 히어로가 되려 특훈하던" }
+      ]
     },
     {
       "id": "D1245",
@@ -347,15 +350,25 @@
       "person": "person:아크레인저_블랙",
       "aspect": "신체",
       "act": "변화",
-      "before": "변신 · 슈트가 몸에 밴 배우",
-      "after": "슈트를 입는 순간 어지럼 · 구토 — 리페어 센터도 이상을 못 찾아 휴식이 길어진",
+      "before": "변신 · 슈트가 몸에 밴 배우다",
+      "after": "슈트를 입는 순간 어지럼 · 구토 — 리페어 센터도 이상을 못 찾아 휴식이 길어졌다",
       "trigger": [{ "scene": "fl:ark_ranger_07", "lines": ["70-89"] }],
       "points": ["F2730"],
       "evidence": [{ "scene": "fl:ark_ranger_10", "lines": ["8-11", "63-69"] }],
       "reason": "09#91-112 변신을 못 하고 10#64-69 휴식이 길어진다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 변신 · 슈트가 몸에 밴 배우 · 후 슈트를 입는 순간 어지럼 · 구토 — 리페어 센터도 이상을 못 찾아 휴식이 길어진"
+        }
+      ]
     },
     {
       "id": "D1249",
@@ -363,13 +376,23 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아니스"],
-      "text": "격투는 문외한이라 보면서도 일어나 이겨 달라 — '나에게 용기를 줬으면' 하며 홀린 듯 지켜보는",
+      "text": "격투는 문외한이라 보면서도 일어나 이겨 달라 — '나에게 용기를 줬으면' 하며 홀린 듯 지켜본다",
       "time": "S333",
       "evidence": [{ "scene": "fl:ark_ranger_11", "lines": ["39-73"] }],
       "reason": "11#43-73 — 아니스 · 이터니티 싸움을 지켜보는 독백",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "격투는 문외한이라 보면서도 일어나 이겨 달라 — '나에게 용기를 줬으면' 하며 홀린 듯 지켜보는"
+        }
+      ]
     },
     {
       "id": "D1250",
@@ -407,8 +430,8 @@
       "person": "person:아크레인저_블랙",
       "aspect": "신념",
       "act": "변화",
-      "before": "다시 진짜 히어로가 되려 힘을 키우는",
-      "after": "히어로 놀이여도 지켜보는 이가 두려움을 잊는다면 광대가 되겠다 — 히어로란 용기를 주는 존재",
+      "before": "다시 진짜 히어로가 되려 힘을 키웠다",
+      "after": "히어로 놀이여도 지켜보는 이가 두려움을 잊는다면 광대가 되겠다 — 히어로란 용기를 주는 존재다",
       "trigger": [{ "scene": "fl:ark_ranger_13", "lines": ["53-66"] }],
       "time": "S334",
       "points": ["F2732"],
@@ -416,22 +439,42 @@
       "reason": "13#97-106 — 넘어진 소녀의 핸드폰 속 아크레인저와 머스탱의 말(#64-66)이 계기",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 다시 진짜 히어로가 되려 힘을 키우는 · 후 히어로 놀이여도 지켜보는 이가 두려움을 잊는다면 광대가 되겠다 — 히어로란 용기를 주는 존재"
+        }
+      ]
     },
     {
       "id": "D1253",
       "person": "person:아크레인저_블랙",
       "aspect": "신념",
       "act": "변화",
-      "before": "광대여도 지켜보는 이에게 용기를 주며 TV 밖에서 [진짜]가 되려는",
-      "after": "TV 속 세계는 가짜여도 거기서 느끼는 감정은 진짜 — 'TV 속에서 용기를 주는 히어로'로 내면의 영웅을 일깨우는",
+      "before": "광대여도 지켜보는 이에게 용기를 주며 TV 밖에서 [진짜]가 되려 했다",
+      "after": "TV 속 세계는 가짜여도 거기서 느끼는 감정은 진짜 — 'TV 속에서 용기를 주는 히어로'로 내면의 영웅을 일깨운다",
       "trigger": [{ "scene": "fl:ark_ranger_24", "lines": ["122-144"] }],
       "time": "S335",
       "evidence": [{ "scene": "fl:ark_ranger_27", "lines": ["66-91"] }],
       "reason": "27#70-79 마지막 독백 — 머스탱의 'TV 속에 있다고 Fake 아니다 · 사람들은 왜 TV를 보나'(12#50-55)에 대한 답 (W73)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 광대여도 지켜보는 이에게 용기를 주며 TV 밖에서 [진짜]가 되려는 · 후 TV 속 세계는 가짜여도 거기서 느끼는 감정은 진짜 — 'TV 속에서 용기를 주는 히어로'로 내면의 영웅을 일깨우는"
+        }
+      ]
     },
     {
       "id": "D1254",
@@ -455,42 +498,72 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아니스"],
-      "before": "멀리서 지켜보며 응원하던 낯선 니케",
-      "after": "영문 모르는 아니스에게 '고마웠다. 진심으로'를 전하는",
+      "before": "멀리서 지켜보며 응원하던 낯선 니케다",
+      "after": "영문 모르는 아니스에게 '고마웠다. 진심으로'를 전한다",
       "trigger": [{ "scene": "fl:ark_ranger_11", "lines": ["62-107"] }],
       "time": "S335",
       "evidence": [{ "scene": "fl:ark_ranger_26", "lines": ["205-209"] }],
       "reason": "26#207 — 펑크 스트리트에서 받은 용기(F2731)를 갚는 인사, 아니스는 '??'",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 멀리서 지켜보며 응원하던 낯선 니케 · 후 영문 모르는 아니스에게 '고마웠다. 진심으로'를 전하는"
+        }
+      ]
     },
     {
       "id": "D1256",
       "person": "person:아크레인저_레드",
       "aspect": "성격",
       "act": "기준",
-      "text": "팬 사인도 '피곤하다'며 모른 척하는 냉소적인 리더 — 그러면서 블랙을 데리러 오고 '응원한다 항상'이라 하는",
+      "text": "팬 사인도 '피곤하다'며 모른 척하는 냉소적인 리더면서도 블랙을 데리러 오고 '응원한다 항상'이라 한다",
       "time": "S331",
       "evidence": [{ "scene": "fl:ark_ranger_01", "lines": ["28-43", "75-76", "92-94"] }],
       "reason": "01#37-41,76 · #94",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "팬 사인도 '피곤하다'며 모른 척하는 냉소적인 리더 — 그러면서 블랙을 데리러 오고 '응원한다 항상'이라 하는"
+        }
+      ]
     },
     {
       "id": "D1257",
       "person": "person:아크레인저_레드",
       "aspect": "신념",
       "act": "기준",
-      "text": "아이들은 곧 가짜라 손가락질한다 — 우리는 TV 속 영웅일 뿐, TV 밖으로 나오면 평범한 니케라는 현실을 깨달은",
+      "text": "아이들은 곧 가짜라 손가락질한다 — 우리는 TV 속 영웅일 뿐, TV 밖으로 나오면 평범한 니케라는 현실을 깨달았다",
       "time": "S331",
       "points": ["F2727"],
       "evidence": [{ "scene": "fl:ark_ranger_01", "lines": ["80-89"] }],
       "reason": "01#86-89 — 09#51-60 블루: 레드도 진짜가 되려 애쓰다 포기했다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "아이들은 곧 가짜라 손가락질한다 — 우리는 TV 속 영웅일 뿐, TV 밖으로 나오면 평범한 니케라는 현실을 깨달은"
+        }
+      ]
     },
     {
       "id": "D1258",
@@ -527,7 +600,7 @@
       "aspect": "신념",
       "act": "변화",
       "before": "TV 속 히어로로 남기로 — 같이 올라갈 '용기도 없다'(23#60-62)",
-      "after": "루크의 외침 뒤 머스탱에게 출격을 청해 아크 랜더로 TV 밖 실전에 나서는",
+      "after": "루크의 외침 뒤 머스탱에게 출격을 청해 아크 랜더로 TV 밖 실전에 나선다",
       "trigger": [{ "scene": "fl:ark_ranger_24", "lines": ["122-138"] }],
       "time": "S335",
       "points": ["F2743"],
@@ -535,7 +608,10 @@
       "reason": "24#159-165 — 26#32 '우리가 왔다', #94-108 조종석을 박차고 나온다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W18", "note": "끝맺음", "before": "후 루크의 외침 뒤 머스탱에게 출격을 청해 아크 랜더로 TV 밖 실전에 나서는" }
+      ]
     },
     {
       "id": "D1261",
@@ -555,13 +631,23 @@
       "person": "person:아크레인저_블루",
       "aspect": "신념",
       "act": "기준",
-      "text": "TV 속 블루는 가상의 존재 — '블루는 블루, 저는 저', 관심을 먹고 사는 연예인으로 욕심내지 않는",
+      "text": "TV 속 블루는 가상의 존재 — '블루는 블루, 저는 저', 관심을 먹고 사는 연예인으로 욕심내지 않는다",
       "points": ["F2727"],
       "evidence": [{ "scene": "fl:ark_ranger_09", "lines": ["32-38", "61-66"] }],
       "reason": "09#36-38,62-65",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "TV 속 블루는 가상의 존재 — '블루는 블루, 저는 저', 관심을 먹고 사는 연예인으로 욕심내지 않는"
+        }
+      ]
     },
     {
       "id": "D1263",
@@ -569,12 +655,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아크레인저_블랙"],
-      "text": "같은 팀에 캐릭터가 겹치면 안 된다며 '절망에 맞서 다시 일어나는 게 진짜 히어로'라 망설이는 블랙을 북돋는",
+      "text": "같은 팀에 캐릭터가 겹치면 안 된다며 '절망에 맞서 다시 일어나는 게 진짜 히어로'라 망설이는 블랙을 북돋는다",
       "evidence": [{ "scene": "fl:ark_ranger_09", "lines": ["48-73"] }],
       "reason": "09#67-73 — 04#95-100에서도 레드에게 블랙을 '벽창호'라 걱정한다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "같은 팀에 캐릭터가 겹치면 안 된다며 '절망에 맞서 다시 일어나는 게 진짜 히어로'라 망설이는 블랙을 북돋는"
+        }
+      ]
     },
     {
       "id": "D1264",
@@ -598,12 +694,22 @@
       "aspect": "관계",
       "act": "기준",
       "with": ["person:아크레인저_블랙"],
-      "text": "Heavy Body와 무장을 주되 'Body의 Power가 Hero의 자격이라 생각하면 오산'이라 일러두고, 탈퇴는 'TV 속에 있다고 Fake 아니다'로 물리는",
+      "text": "Heavy Body와 무장을 주되 'Body의 Power가 Hero의 자격이라 생각하면 오산'이라 일러두고, 탈퇴는 'TV 속에 있다고 Fake 아니다'로 물린다",
       "evidence": [{ "scene": "fl:ark_ranger_08", "lines": ["0-19"] }],
       "reason": "08#14-19 · 12#38-56 — CEO 머스탱(이름표, I462 = 한슨)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "Heavy Body와 무장을 주되 'Body의 Power가 Hero의 자격이라 생각하면 오산'이라 일러두고, 탈퇴는 'TV 속에 있다고 Fake 아니다'로 물리는"
+        }
+      ]
     },
     {
       "id": "D1266",
@@ -611,8 +717,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아크레인저_블랙"],
-      "before": "힘이 자격은 아니라며 지켜보던 사장",
-      "after": "'You들의 Mind는 이미 Hero' — 그 마음에 걸맞은 힘(아크 머신)을 주며 출격시키는",
+      "before": "힘이 자격은 아니라며 지켜보던 사장이다",
+      "after": "'You들의 Mind는 이미 Hero' — 그 마음에 걸맞은 힘(아크 머신)을 주며 출격시킨다",
       "trigger": [{ "scene": "fl:ark_ranger_21", "lines": ["58-60"] }],
       "time": "S335",
       "points": ["F2741"],
@@ -620,7 +726,17 @@
       "reason": "21#57-65 — 방주 테러 · 수정 테러 · 이번 습격 모든 곳에서 사람들을 위해 움직였다",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 힘이 자격은 아니라며 지켜보던 사장 · 후 'You들의 Mind는 이미 Hero' — 그 마음에 걸맞은 힘(아크 머신)을 주며 출격시키는"
+        }
+      ]
     },
     {
       "id": "D1267",
@@ -643,8 +759,8 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:아크레인저_블랙"],
-      "before": "가짜라며 원망하던",
-      "after": "목숨 걸고 최선을 다한 걸 알았다며 사과하고 '내 히어로가 지는 걸 보고 싶지 않다'고 용기를 주는",
+      "before": "가짜라며 원망했다",
+      "after": "목숨 걸고 최선을 다한 걸 알았다며 사과하고 '내 히어로가 지는 걸 보고 싶지 않다'고 용기를 준다",
       "trigger": [{ "scene": "fl:ark_ranger_24", "lines": ["86-114"] }],
       "time": "S335",
       "points": ["F2739"],
@@ -652,15 +768,25 @@
       "reason": "24#126-138 — 목단의 설득(#86-114) 뒤",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 가짜라며 원망하던 · 후 목숨 걸고 최선을 다한 걸 알았다며 사과하고 '내 히어로가 지는 걸 보고 싶지 않다'고 용기를 주는"
+        }
+      ]
     },
     {
       "id": "D1269",
       "person": "person:루크",
       "aspect": "신념",
       "act": "변화",
-      "before": "'짜고 치는 프로그램이 뭐가 재밌냐'던(20#104)",
-      "after": "용기가 있는 한 뭐든 할 수 있다 — 아크레인저가 되려다 아크버스터를 뛰어넘는 아크 머신 제작으로 진로를 정한",
+      "before": "'짜고 치는 프로그램이 뭐가 재밌냐'고 했다(20#104)",
+      "after": "용기가 있는 한 뭐든 할 수 있다 — 아크레인저가 되려다 아크버스터를 뛰어넘는 아크 머신 제작으로 진로를 정했다",
       "trigger": [{ "scene": "fl:ark_ranger_24", "lines": ["139-153"] }],
       "time": "S335",
       "points": ["F2745"],
@@ -668,7 +794,17 @@
       "reason": "27#25-28,34-35",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 '짜고 치는 프로그램이 뭐가 재밌냐'던(20#104) · 후 용기가 있는 한 뭐든 할 수 있다 — 아크레인저가 되려다 아크버스터를 뛰어넘는 아크 머신 제작으로 진로를 정한"
+        }
+      ]
     },
     {
       "id": "D1270",
@@ -691,15 +827,25 @@
       "aspect": "관계",
       "act": "변화",
       "with": ["person:소라"],
-      "before": "승리의 날개 호를 찾을 때까지 눈감고 날아오를 때 함께하겠다고 약속한(D752)",
-      "after": "약속대로 승리의 날개 호 ver.엘리시온의 캡틴으로 타 '하늘을 나는 기분'이라 하는",
+      "before": "승리의 날개 호를 찾을 때까지 눈감고 날아오를 때 함께하겠다고 약속했다(D752)",
+      "after": "약속대로 승리의 날개 호 ver.엘리시온의 캡틴으로 타 '하늘을 나는 기분'이라 한다",
       "time": "S335",
       "points": ["F2742"],
       "evidence": [{ "scene": "fl:ark_ranger_25", "lines": ["74-82"] }],
       "reason": "25#75-82",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M50" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W18",
+          "note": "끝맺음",
+          "before": "전 승리의 날개 호를 찾을 때까지 눈감고 날아오를 때 함께하겠다고 약속한(D752) · 후 약속대로 승리의 날개 호 ver.엘리시온의 캡틴으로 타 '하늘을 나는 기분'이라 하는"
+        }
+      ]
     }
   ],
   "life": [
