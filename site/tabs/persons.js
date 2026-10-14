@@ -1,7 +1,7 @@
 /**
  * 탭 4 인물(W5) — 화면 5 "인물별 집계"(docs/views.md 5절, 시안 표 data/views/persons/ — X3d).
  * 첫 쓸모: 인물 하나(기본 라피)가 "누구고, 어디 나왔고, 누구와 어떤 사이였고, 어떻게 바뀌었고, 무엇이 아직 풀리지 않았나".
- * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 주역 · 정렬) + 오른쪽 상세(머리 · 접는 칸). 도구줄의 [인물 도감]은 초상 격자를 기업 · 스쿼드로 묶어 보인다.
+ * 화면: 왼쪽 인물 목록(찾기 · 갈래 · 정렬) + 오른쪽 상세(머리 · 접는 칸). 도구줄의 [인물 도감]은 초상 격자를 기업 · 스쿼드로 묶어 보인다.
  *
  * 쓰는 JSON
  *   persons.json          인물 387(사전 person: 전부) — 정적 메타(갈래 kind · common · leads(주역인 떡밥) · same_as · aliases) + 전체 기준 집계(화면은 다시 센다)
@@ -14,8 +14,8 @@
  * URL 파라미터(p.*)
  *   who    고른 인물(person:라피). 없으면 리더에서 연 인물 → 라피 → 목록 첫 인물. 리더에서 인물을 누르면 따라온다
  *   view   dex면 인물 도감(옛 주소의 table도 도감), 없으면 인물별
- *   pl     1이면 실장(그 자리에서 보이는 실장판이 있는 인물)만, 0이면 비실장만(W22)
- *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      lead  1이면 주역만(첫 스토리를 본 떡밥의 주역 — W15b)      sort  목록 · 도감 정렬(없으면 많이 나온 순 | first 처음 등장 순 | name 이름순)
+ *   pl     1이면 실장(그 자리에서 보이는 실장이 있는 인물)만, 0이면 비실장만(W22)
+ *   find   인물 · 다른 이름 찾기      kind  갈래(니케 · 인물 · 랩쳐)      sort  목록 · 도감 정렬(없으면 많이 나온 순 | first 처음 등장 순 | name 이름순)
  *   us     나온 스토리 목록의 정렬(없으면 감상 순서 | speak 많이 말한 순)
  *   fq     사실 · 의문 칸의 탭(q 의문 기본 | f 사실 | k 밝혀짐 · 회수 | e 복선 — 든 것이 있는 탭만 보인다)      chg  release면 변화를 출시순으로(없으면 작중 순)
  *   접힌 칸은 URL이 아니라 localStorage(nikke-story.persons.fold)에 남긴다 — 처음에는 결말 · 떡밥만 접혀 있다.
@@ -29,18 +29,18 @@
  *   작업 흔적은 싣지 않는다: 기록 ID · 작업량 숫자(말한 줄 · 기록 수 · 씬 · 순번) · 판정 용어(시점 확정 · 대략 범위 …) · 만든 방법 설명. 근거는 링크로만(누르면 장면).
  *   종류 · 갈래 · 측면은 회색 글자(색 없음), 스토리 링크는 메인이면 굵은 CH 표기, 그 밖은 제목 + 회색 종류(호감도 제목은 니케 이름뿐이라).
  *   목록: [초상] 이름 + 소속 마크(마크만). 정렬은 많이 나온 순(등장 장면) · 처음 등장 순 · 이름순 — 숫자는 보이지 않는다.
- *   인물 도감: 목록과 같은 인물(찾기 · 갈래 · 주역 · 정렬을 따른다)을 초상 칸으로. 묶음 = 그 자리의 소속(fmt.orgsAt — 공개 자리를 지난 게임 소속 + 확정 소속 기록, 다른 판(via) 소속은 뺀다).
+ *   인물 도감: 목록과 같은 인물(찾기 · 갈래 · 정렬을 따른다)을 초상 칸으로. 묶음 = 그 자리의 소속(fmt.orgsAt — 공개 자리를 지난 게임 소속 + 확정 소속 기록, 다른 실장(via) 소속은 뺀다).
  *     스쿼드는 게임 스쿼드 → 사전 스쿼드 → 그 밖의 무리(정부 · 단체 …) 순으로 하나. 스쿼드 멤버의 기업이 하나면 그 기업 아래, 여럿이면(카운터스 등) 맨 앞 '여러 기업에서 모인 스쿼드'
  *     (멤버 칸에 기업 마크), 기업이 없으면 '기업 밖'. 기업만 드러난 인물은 그 기업 끝 '그 밖', 소속이 안 드러난 인물은 맨 끝(초상 없는 인물은 이름만).
  *     기업 순서는 게임 마크 순(엘리시온 · 미실리스 · 테트라 · 필그림 · 앱노멀), 스쿼드 순서는 정렬 기준으로 가장 앞선 멤버 순. 칸을 누르면 인물별 보기로.
  *   머리: 초상(얼굴이 없으면 이름 첫 글자) · 이름(+ 회색 갈래 — 니케 · 랩쳐만, '인물'은 탭 이름과 같아 쓰지 않는다) · 소속 마크 · 다른 이름 · 같은 인물 ·
  *     "처음 등장 [스토리]" 하나. 그 첫 스토리에서 말이 없을 때만 '이름만 나옴'(이름은 나옴) · '등장만'(이름 없이 모습만)을 덧붙인다(말함은 당연해서 쓰지 않는다).
  *     한 사람 한 카드(W24c, 결정 #12): 같은 인물(정체 연결)은 밝혀지는 단위(근거 첫 씬 — same_as_unit)를 읽었으면 카드 하나로 묶고(fmt.personAt — 등장 · 기록 · 변화 · 관계 상대 ·
- *     초상 · 소속 · 실장판을 합친다), 이름은 기본 이름(최근 10편 표 — targets rank), 묶인 이름은 '다른 이름'. 안 읽었으면 이름마다 따로 카드다(있다는 것 자체를 보이지 않는다).
+ *     초상 · 소속 · 실장을 합친다), 이름은 기본 이름(최근 10편 표 — targets rank), 묶인 이름은 '다른 이름'. 안 읽었으면 이름마다 따로 카드다(있다는 것 자체를 보이지 않는다).
  *     다른 인물(W24a — persons.json imp · 등장 행 pre · rev · as · by)은 드러나는 스토리(rev)를 읽기 전에는 이름 주인의 등장으로(fmt.rowAt), 읽은 뒤에는 실제 사람의 등장으로 센다.
  *     드러난 뒤에만 머리에 '다른 인물' 줄(상대 · 걸린 스토리), 등장 목록 줄에 'OO 이름으로' · '다른 인물'(누구인지는 도움말) 표 — 줄을 다 옮긴 스토리는 이름 주인 목록에 흐린 줄로만 남는다(수 · 히트맵에서 뺀다).
- *   실장판(W22 — targets.json vers): 머리 아래 표 — 판마다 이름 · 등급 · 기업 · 스쿼드 · 출시일(게임 시작 로스터는 '서비스 시작') · 지휘관 호칭(확정 호칭 기록 A, 다른 호칭은 회색).
- *     판은 그 출시 자리(tick)를 지났을 때만 보인다(게임 소속의 공개 자리와 같다). 실장판 이름은 '다른 이름'에서 뺀다. 도감 칸은 판이 둘 이상이면 왼쪽 위에 'N판'.
+ *   실장(W22 — targets.json vers): 머리 아래 표 — 실장마다 이름 · 등급 · 기업 · 스쿼드 · 출시일(게임 시작 로스터는 '서비스 시작') · 지휘관 호칭(확정 호칭 기록 A, 다른 호칭은 회색).
+ *     실장은 그 출시 자리(tick)를 지났을 때만 보인다(게임 소속의 공개 자리와 같다). 실장 이름은 '다른 이름'에서 뺀다. 도감 칸은 실장이 둘 이상이면 왼쪽 위에 '실장 N'.
  *   칸은 든 것이 없으면 통째로 숨긴다(기록이 오기 전에는 기록 칸을 '불러오는 중'으로 둔다). 칸 머리의 수는 등장(N편) · 관계 상대(N명)만.
  *   등장: 히트맵 — 가로 = 읽는 순서(출시순) 481칸을 폭에 맞춰 줄여 그린다, 줄 = 스토리 종류(종류가 축이라 줄 이름은 종류), 칸 색 = 말한 양(파랑 한 색 5단계,
  *     절대 구간 — 인물끼리 견줄 수 있다), 회색 = 이름만 나온 스토리, 빗금 = 아직 안 읽은 부분. 범례는 '말 적음 → 말 많음' 띠(숫자 없음). 칸에 올리면 제목 · 종류, 누르면 리더.
@@ -67,8 +67,6 @@ const LABELS = {
   find: '인물 · 다른 이름 찾기',
   kindLabel: '갈래',
   all: '전체',
-  leadOnly: '주역만',
-  leadHelp: '떡밥의 중심이 되는 인물만',
   leadTag: '이 떡밥의 중심 인물',
   sort: { scenes: '많이 나온 순', first: '처음 등장 순', name: '이름순' },
   sortLabel: '정렬',
@@ -111,11 +109,11 @@ const LABELS = {
   unplaced: '언제인지 모름',
   togetherEnd: '함께 맺음',
   pl: { label: '실장', all: '전체', yes: '실장', no: '비실장', help: '게임에서 쓸 수 있는 니케(실장)인지' },
-  vers: '실장판',
-  verCols: { name: '판', rare: '등급', corp: '기업', squad: '스쿼드', date: '출시', addr: '지휘관 호칭' },
+  vers: '실장',
+  verCols: { name: '이름', rare: '등급', corp: '기업', squad: '스쿼드', date: '출시', addr: '지휘관 호칭' },
   launch: '서비스 시작',
-  verCount: (n) => `${n}판`,
-  verCountHelp: (n) => `실장판 ${n}개`,
+  verCount: (n) => `실장 ${n}`,
+  verCountHelp: (n) => `실장 ${n}개`,
   dex: { label: '인물 도감', mixed: '여러 기업에서 모인 스쿼드', outside: '기업 밖', other: '그 밖', none: '소속이 드러나지 않은 인물' },
 };
 const ASPECTS = ['성격', '관계', '소속', '신체', '신념', '기억'];
@@ -198,7 +196,7 @@ export async function mount(root, ctx) {
     for (const x of ds) for (const r of x.rel ?? []) { const cur = rel.get(r.with) ?? rel.set(r.with, { with: r.with, recs: [] }).get(r.with); for (const id of r.recs) if (!cur.recs.includes(id)) cur.recs.push(id); }
     return { id, units: ds.flatMap((x) => x.units), records: [...new Set(ds.flatMap((x) => x.records))], changes, rel: [...rel.values()] };
   };
-  /** 카드의 대상 — 초상 · 소속 · 실장판은 묶인 이름들의 것을 합친다(기본 이름의 것 먼저) */
+  /** 카드의 대상 — 초상 · 소속 · 실장은 묶인 이름들의 것을 합친다(기본 이름의 것 먼저) */
   const targetMemo = new Map();
   const cardTarget = (id) => {
     if (targetMemo.has(id)) return targetMemo.get(id);
@@ -352,7 +350,7 @@ export async function mount(root, ctx) {
   /** 얼굴 — 그 자리 모습의 초상, 없으면 이름 첫 글자 칸(머리 · 도감) */
   const face = (id, size, cls) => ui.portrait(fmt.iconAt(cardTarget(id), V.T), { size, class: cls })
     ?? el('span', { class: ['pm-noface', cls], style: { width: `${size}px`, height: `${size}px`, fontSize: `${Math.round(size * 0.4)}px` }, 'aria-hidden': 'true' }, [...(nameOf(id) ?? '?')][0]);
-  /** 그 자리에서 보이는 실장판(W22 — targets.json vers): 판이 보이는 자리(tick — 그 판의 출시)를 지났으면. tick이 없으면 전부 보기에서만 */
+  /** 그 자리에서 보이는 실장(W22 — targets.json vers): 판이 보이는 자리(tick — 그 판의 출시)를 지났으면. tick이 없으면 전부 보기에서만 */
   const versAt = (id) => (cardTarget(id)?.vers ?? []).filter((v) => V.R.all || (v.tick != null && v.tick <= V.R.t));
   /** 그 스토리에서 말이 없으면 '이름만 나옴' · '등장만'(말했으면 null — 당연해서 쓰지 않는다) */
   /** 다른 인물 표(W24a) — 드러난 뒤의 등장 행에만 상대가 있다(fmt.rowAt). 실제 사람 쪽은 'OO 이름으로', 이름 주인 쪽은 '다른 인물'(누구인지는 도움말).
@@ -371,8 +369,7 @@ export async function mount(root, ctx) {
   find.addEventListener('input', () => { clearTimeout(findTimer); findTimer = setTimeout(() => state.setParam('persons', 'find', find.value.trim() || null), 180); });
   const kindSeg = ui.segmented({ label: LABELS.kindLabel, options: [{ value: 'all', label: LABELS.all }, ...kinds.map((k) => ({ value: k, label: k }))], value: prm('kind') ?? 'all', onChange: (v) => state.setParam('persons', 'kind', v === 'all' ? null : v) });
   const plSeg = ui.segmented({ label: LABELS.pl.label, options: [{ value: 'all', label: LABELS.pl.all }, { value: '1', label: LABELS.pl.yes, title: LABELS.pl.help }, { value: '0', label: LABELS.pl.no, title: LABELS.pl.help }], value: prm('pl') ?? 'all', onChange: (v) => state.setParam('persons', 'pl', v === 'all' ? null : v) });
-  const leadToggle = ui.toggle({ label: LABELS.leadOnly, checked: prm('lead') === '1', title: LABELS.leadHelp, onChange: (v) => state.setParam('persons', 'lead', v ? '1' : null) });
-  const bar = el('div', { class: 'toolbar pm-bar' }, modeSeg.el, find, kindSeg.el, plSeg.el, leadToggle);
+  const bar = el('div', { class: 'toolbar pm-bar' }, modeSeg.el, find, kindSeg.el, plSeg.el);
   root.append(bar);
 
   // ── 목록 · 도감 ──
@@ -391,12 +388,10 @@ export async function mount(root, ctx) {
   let rowsNow = [];
   let hiddenPersons = 0;
   /** 주역인가 — 주역인 떡밥 가운데 그 자리에서 나왔고(fmt.threadStarted) 그 인물이 든 줄 아는 것이 있으면(W15b · W15d — 그 자리 기준) */
-  const leadNow = (p) => (p.leads ?? []).some((j) => inThread(p.id, j));
   const buildRows = () => {
     const find_ = (prm('find') ?? '').trim().toLowerCase();
     const kind = prm('kind') ?? 'all';
     const pl = prm('pl');
-    const lead = prm('lead') === '1';
     const sort = Object.hasOwn(LABELS.sort, prm('sort')) ? prm('sort') : 'scenes';
     hiddenPersons = 0;
     const rows = [];
@@ -405,7 +400,6 @@ export async function mount(root, ctx) {
       if (!a.visible) { if (a.hasData && (a.cut || a.recCut || a.chCut || !a.met)) hiddenPersons++; continue; }
       if (kind !== 'all' && p.kind !== kind) continue;
       if ((pl === '1' || pl === '0') && (versAt(p.id).length > 0) !== (pl === '1')) continue;
-      if (lead && !leadNow(P.get(p.id))) continue;
       if (find_ && !hayOf(p).includes(find_)) continue;
       rows.push({ id: p.id, p, a, name: nameOf(p.id), scenes: a.scenes, firstOrder: a.firstOrder });
     }
@@ -468,7 +462,7 @@ export async function mount(root, ctx) {
 
   // ── 인물 도감: 그 자리의 소속으로 묶은 초상 칸 ──
   const orgKey = (o) => o.org ?? o.name;
-  /** 묶을 소속 하나씩 — 기업 하나 · 스쿼드 하나(게임 스쿼드 → 사전 스쿼드 → 그 밖의 무리). 다른 판(via) 소속은 뺀다 */
+  /** 묶을 소속 하나씩 — 기업 하나 · 스쿼드 하나(게임 스쿼드 → 사전 스쿼드 → 그 밖의 무리). 다른 실장(via) 소속은 뺀다 */
   const groupOf = (id) => {
     const os = fmt.orgsAt(cardTarget(id), V.R).filter((o) => !o.via);
     const squads = os.filter((o) => o.type === 'squad');
@@ -586,13 +580,13 @@ export async function mount(root, ctx) {
   let recsError = false;
   let disposed = false;
   const recsPending = () => (recsError ? ui.notice(LABELS.pendingFail, 'warn') : ui.spinner(LABELS.pending));
-  /** 실장판 칸(W22) — 판마다 이름 · 등급 · 기업 · 스쿼드 · 출시일 · 지휘관 호칭. 좁은 화면에서는 줄마다 카드로 접힌다(css) */
+  /** 실장 칸(W22) — 실장마다 이름 · 등급 · 기업 · 스쿼드 · 출시일 · 지휘관 호칭. 좁은 화면에서는 줄마다 카드로 접힌다(css) */
   const versTable = (vs) => {
     const C = LABELS.verCols;
     const org = (o, type) => (o ? el('span', { class: 'pm-ver-org' }, ui.orgMarks([{ type, ...o }], { size: 14, bare: true }), o.name) : '');
     const cell = (k, v) => el('td', { 'data-l': C[k] }, v ?? '');
     return el('section', { class: 'pm-vers', 'aria-label': LABELS.vers },
-      el('h4', { class: 'pm-vers-head' }, LABELS.vers, el('span', { class: 'pm-kind' }, LABELS.verCount(vs.length))),
+      el('h4', { class: 'pm-vers-head' }, LABELS.vers, el('span', { class: 'pm-kind' }, String(vs.length))),
       el('table', { class: 'pm-vers-table' },
         el('thead', {}, el('tr', {}, Object.values(C).map((l) => el('th', { scope: 'col' }, l)))),
         el('tbody', {}, vs.map((v) => el('tr', {},
@@ -609,7 +603,7 @@ export async function mount(root, ctx) {
     const facts = [];
     if (a.visible) {
       const verNames = new Set(versAt(p.id).map((v) => v.name));
-      // 다른 이름 — 그 자리에서 아는 것만(W15b). 같은 인물로 묶인 이름(W24c — 드러난 뒤에만 묶인다)과 그 이름들의 다른 이름도. 실장판 이름은 실장판 칸에
+      // 다른 이름 — 그 자리에서 아는 것만(W15b). 같은 인물로 묶인 이름(W24c — 드러난 뒤에만 묶인다)과 그 이름들의 다른 이름도. 실장 이름은 실장 칸에
       const shown = nameOf(p.id);
       const ms = membersOf(p.id).map((m) => idx.targets.get(m)).filter(Boolean);
       const aliases = [...new Set([...ms.slice(1).map((t) => fmt.ownNameAt(t, V.R)), ...ms.flatMap((t) => fmt.aliasesAt(t, V.R).map((x) => x.name))])]
@@ -1140,7 +1134,6 @@ export async function mount(root, ctx) {
     modeSeg.set(dex ? 'dex' : 'person');
     kindSeg.set(prm('kind') ?? 'all');
     plSeg.set(prm('pl') ?? 'all');
-    leadToggle.set(prm('lead') === '1');
     if (find.value !== (prm('find') ?? '') && document.activeElement !== find) find.value = prm('find') ?? '';
   };
   const pickLabel = () => pickBtn.replaceChildren(el('span', { class: 'pm-pick-label muted' }, LABELS.pick), el('strong', {}, whoId() ? nameOf(whoId()) : ''), el('span', { class: 'pm-pick-chev', 'aria-hidden': 'true' }, '▾'));
@@ -1184,7 +1177,7 @@ export async function mount(root, ctx) {
       const was = prevP;
       const diff = (k) => was[k] !== s.p[k];
       prevP = { ...s.p };
-      if (diff('view') || diff('find') || diff('kind') || diff('lead') || diff('sort')) { renderViewMode(); renderRows(); }
+      if (diff('view') || diff('find') || diff('kind') || diff('sort')) { renderViewMode(); renderRows(); }
       if (diff('who')) {
         renderViewMode(); markListSel(); scrollSelIntoView(); pickLabel();
         renderDetail(); rerender = true;
