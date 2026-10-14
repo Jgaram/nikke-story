@@ -93,8 +93,9 @@ export function buildDictInput(subject, file, C, { full = false } = {}) {
   const L = [];
   L.push(`# ${subject} 사전 설명 시점별 판 입력 — ${t.name}${t.kind ? ` (${t.kind})` : ''}`);
   L.push(`분석용 설명(전부 아는 자리에서 쓴 것 — 판 글에 그대로 옮기지 않는다): ${w?.note ?? t.note ?? '(없음)'}`);
-  const first = dictFirst(t);
-  L.push(`처음 나온 자리(첫 판 at): ${first ? unitLine(first, C) : '없음 — 판을 둘 수 없다'}${arr(t.meet).length > 1 ? ` · 그 앞 체크 칸 스토리: ${t.meet.slice(0, -1).map((k) => unitLine(k, C)).join(' · ')}` : ''}`);
+  const first = dictFirst(t, C);
+  const before = arr(t.meet).slice(0, Math.max(0, arr(t.meet).indexOf(first)));
+  L.push(`처음 나온 자리(첫 판 at): ${first ? unitLine(first, C) : '없음 — 판을 둘 수 없다'}${before.length ? ` · 그 앞 체크 칸 스토리: ${before.map((k) => unitLine(k, C)).join(' · ')}` : ''}`);
   if (t.name_meet) L.push(`표준명이 처음 쓰인 자리: ${t.name_meet.map((k) => unitLine(k, C)).join(' · ')} — 그 앞은 먼저 나온 다른 이름으로 부른다`);
   for (const a of arr(t.aliases)) L.push(`다른 이름: ${a.name}${a.how ? ` (${a.how})` : ''} — ${a.never ? '쓰인 곳 없음' : a.meet ? a.meet.map((k) => unitLine(k, C)).join(' · ') : '표준명과 같이'}`);
   const ev = arr(w?.evidence);

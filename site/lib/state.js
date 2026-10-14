@@ -5,9 +5,11 @@
  * 키
  *   tab     order | links | threads | chrono | persons | world
  *   t       컷오프 공개 자리(숫자) · 'all'(끔). 처음 열면 CH.00의 자리(공개 사이트라 기본 켬 — W0). 바꾼 값은 localStorage에 남아 다음 방문에 쓴다
- *   x       체크 칸 스토리(units.json check — 사이드 · 주요 이벤트, W16a 사용자 2026-10-14)의 '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다.
- *           순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10). 이벤트 유실물 · 미니게임은 칸이 따로 없고 딸린 이벤트(parent)의 칸을 따른다.
- *           t가 바뀌면 새 기본과 같아진 예외는 지운다. localStorage에도 남는다
+ *   x       고를 수 있는 스토리(units.json opt — 메인 갈래 밖 전부: 체크 칸 = 사이드 · 주요 이벤트(check, W16a) + 이벤트 · 호감도(W16b), 사용자 2026-10-14)의
+ *           '봤음' 예외 '키,-키'(앞에 -면 안 봄) — 기본은 t를 따르고(tick ≤ t면 봤음), 여기 적힌 것만 다르다. 순서대로 안 보는 사람(뉴비)을 위해(사용자, 2026-10-10).
+ *           이벤트 유실물 · 미니게임은 칸이 따로 없고 딸린 이벤트(parent)의 칸을 따른다.
+ *           압축 형식(W16b — 칸이 260여 개라): 갈래 통째 '@episode' · '-@episode'(그 갈래 전부 봄 · 안 봄 — t와 상관없이, 낱개 키가 이긴다)와 호감도 키 줄임 'c224' = 'char:224'.
+ *           t가 바뀌면 새 기본(갈래 통째가 있으면 그것)과 같아진 낱개 예외는 지운다. localStorage에도 남는다
  *   layers  늘 [1, 2, 3] — 범위 필터는 뺐다(URL의 layers는 무시)
  *   q       검색어
  *   sel     선택 '종류:ID' — unit:ch07 · scene:d_main_07_02 · record:F203 · person:person:라피 · target:place:방주 · thread:J1 · tick:20
@@ -23,12 +25,15 @@
  *   parseSel(sel) → { type, id } | null,  makeSel(type, id)
  *   visible(tick) → boolean          컷오프 안인가(t가 null이면 늘 true) — 단위 · 기록이 아니라 자리만 있을 때(축 · 눈금)
  *   configure({ units })             부팅 때 한 번 — idx.units(키 → { tick, kind, group, check, parent })
- *   seen(unitKey) → boolean          그 스토리를 봤나: 전부 보기면 늘 · 체크 칸 스토리는 x 예외 우선(유실물은 딸린 이벤트의 예외) · 그 밖은 tick ≤ t(모르는 키 · tick 없음은 봤음)
+ *   seen(unitKey) → boolean          그 스토리를 봤나: 전부 보기면 늘 · 고를 수 있는 스토리는 x 낱개 → 갈래 통째 → tick ≤ t(유실물은 딸린 이벤트로) · 메인 갈래는 tick ≤ t(모르는 키 · tick 없음은 봤음)
  *   seenAny(keys) → boolean          하나라도 봤나
  *   known(record) → boolean          그 기록을 아나: 사실 · 의문은 know_units(없으면 [unit]) 중 하나라도 봤으면, 그 밖은 seen(unit)(unit 없으면 visible(tick))
  *   reading(s?) → R                  { all, t, x, seen, seenAny, known } — fmt.stateAt(r, R) · fmt.gradeAt(u, R)에 T 대신 넘긴다
- *   checkExtras() → [{ key, tick, group }]  팝업의 체크 칸 — group 'major'(주요 이벤트) · 'side'(사이드), 출시 시점순. 딸린 유실물은 칸이 없다
- *   checkable(unitKey) → boolean     체크 칸 스토리인가(딸린 유실물 포함) — 메인 챕터와 함께 '본 것'을 사람이 정하는 스토리(감상 순서 ✓ · 지남이 쓴다)
+ *   checkExtras() → [{ key, tick, group }]  팝업의 칸 — group 'major'(주요 이벤트) · 'side'(사이드) · 'event'(이벤트) · 'episode'(호감도), 출시 시점순. 딸린 유실물은 칸이 없다
+ *   checkable(unitKey) → boolean     체크 칸 스토리인가(사이드 · 주요 이벤트, 딸린 유실물 포함) — 메인 챕터와 함께 '본 것'을 사람이 정하는 스토리(감상 순서 ✓ · 지남이 쓴다)
+ *   pickable(unitKey) → boolean      고를 수 있는 스토리인가(체크 칸 + 이벤트 · 호감도)
+ *   decided(unitKey, s?) → boolean   '봤음'을 사람이 정했나 — 체크 칸이거나, x에 그 칸 · 그 갈래 통째가 적혔다(감상 순서 ✓ · 지남 — 출시 시점 짐작은 쓰지 않는다)
+ *   GROUPS                           칸 갈래 ['major', 'side', 'event', 'episode']
  *   askCutoff({ t?, x? })            탭에서 여기까지 읽음을 바꿀 때 — 팝업의 재확인을 거친다(onAskCutoff(fn)로 app.js가 받는다)
  *   normalizeX(x, t)                 x에서 t의 기본과 같은 예외를 뺀 것(set과 같은 정리 — 팝업 초안)
  *   구독자의 changed에 't'가 있으면 t나 x가 바뀐 것이다(여기까지 읽음이 바뀜). x만 바뀌어도 't'와 'x'가 같이 든다
@@ -41,9 +46,11 @@ const STORAGE_X = 'nikke-story.x';
 
 let state = { tab: 'order', t: null, x: {}, layers: ALL_LAYERS, q: '', sel: '', p: {} };
 let units = new Map();
-let extras = []; // 팝업 체크 칸 — 사이드 · 주요 이벤트 [{ key, tick, group }]
+export const GROUPS = ['major', 'side', 'event', 'episode'];
+let extras = []; // 팝업 칸 — 고를 수 있는 스토리 [{ key, tick, group }]
 let extraKeys = new Set();
-let checkOwner = new Map(); // 체크 칸 스토리 → 그 칸의 키(딸린 유실물은 딸린 이벤트, 그 밖은 자기)
+let checkOwner = new Map(); // 고를 수 있는 스토리 → 그 칸의 키(딸린 유실물은 딸린 이벤트, 그 밖은 자기)
+let checkKeys = new Set(); // 체크 칸 스토리(check — 사이드 · 주요 이벤트)
 let defaultCutoff = 1;
 const listeners = new Set();
 
@@ -65,28 +72,39 @@ function writeStorage(t) {
   }
 }
 
-/** 'x' 문자열 'a,-b' ↔ { a: true, b: false }(앞에 '-'면 안 봄, 없으면 봄 — '+'는 URL에서 공백이 되어 안 쓴다). 체크 칸 스토리 키만(units를 받기 전에는 다 받는다) */
+/** 키 줄임(W16b) — 호감도 'char:224' ↔ 'c224'(칸이 많은 갈래). 그 밖은 그대로 */
+const shortKey = (k) => k.replace(/^char:(\d+)$/, 'c$1');
+const longKey = (k) => k.replace(/^c(\d+)$/, 'char:$1');
+const groupKey = (k) => (k.startsWith('@') ? k.slice(1) : null);
+/** 'x' 문자열 'a,-b,-@episode' ↔ { a: true, b: false, '@episode': false }(앞에 '-'면 안 봄, 없으면 봄 — '+'는 URL에서 공백이 되어 안 쓴다). 칸 키 · 갈래만(units를 받기 전에는 다 받는다) */
 function parseX(v) {
   const out = {};
   if (v == null || v === '') return out;
   for (const part of String(v).split(',')) {
     const off = part.startsWith('-');
-    const key = off ? part.slice(1) : part.replace(/^\+/, '');
-    if (!key) continue;
+    const raw = off ? part.slice(1) : part.replace(/^\+/, '');
+    if (!raw) continue;
+    const g = groupKey(raw);
+    if (g != null) { if (GROUPS.includes(g)) out[raw] = !off; continue; }
+    const key = extraKeys.has(raw) || !extras.length ? raw : longKey(raw);
     if (extras.length && !extraKeys.has(key)) continue;
     out[key] = !off;
   }
   return out;
 }
-const xString = (x) => Object.entries(x).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',');
-/** t의 기본과 같은 예외는 지운다 */
+const xString = (x) => Object.entries(x).map(([k, v]) => [groupKey(k) != null ? k : shortKey(k), v]).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${v ? '' : '-'}${k}`).join(',');
+/** 그 칸의 기본 — 갈래 통째가 있으면 그것, 없으면 t(tick ≤ t면 봄) */
+function xDefault(x, key, t) {
+  const u = units.get(key);
+  const g = u?.group != null ? `@${u.group}` : null;
+  if (g && g in x) return x[g];
+  return t == null || u?.tick == null || u.tick <= t;
+}
+/** 기본과 같은 낱개 예외는 지운다(갈래 통째는 사람이 고른 것이라 남긴다) */
 function pruneX(x, t) {
   const out = {};
-  for (const [k, v] of Object.entries(x)) {
-    const u = units.get(k);
-    const dflt = t == null || u?.tick == null || u.tick <= t;
-    if (v !== dflt) out[k] = v;
-  }
+  for (const [k, v] of Object.entries(x)) if (groupKey(k) != null) out[k] = v;
+  for (const [k, v] of Object.entries(x)) if (groupKey(k) == null && v !== xDefault(out, k, t)) out[k] = v;
   return out;
 }
 function readStorageX() {
@@ -244,7 +262,13 @@ export function visible(tick, t = state.t) {
 export function configure({ units: u } = {}) {
   units = u instanceof Map ? u : new Map();
   checkOwner = new Map();
-  for (const x of units.values()) if (x.check) checkOwner.set(x.key, x.parent && units.get(x.parent)?.check ? x.parent : x.key);
+  checkKeys = new Set();
+  for (const x of units.values()) {
+    if (!(x.opt || x.check)) continue;
+    const parent = x.parent ? units.get(x.parent) : null;
+    checkOwner.set(x.key, parent && (parent.opt || parent.check) ? x.parent : x.key);
+    if (x.check) checkKeys.add(x.key);
+  }
   extras = [...units.values()].filter((x) => checkOwner.get(x.key) === x.key)
     .sort((a, b) => (a.tick ?? 0) - (b.tick ?? 0) || (a.order ?? 0) - (b.order ?? 0)).map((x) => ({ key: x.key, tick: x.tick, group: x.group }));
   extraKeys = new Set(extras.map((e) => e.key));
@@ -259,7 +283,15 @@ export function askCutoff(patch) {
 /** x에서 t의 기본과 같은 예외를 뺀 것 — set이 하는 정리와 같다(팝업 초안이 쓴다) */
 export const normalizeX = (x, t) => pruneX(x ?? {}, t);
 export const checkExtras = () => extras.map((e) => ({ ...e }));
-export const checkable = (key) => checkOwner.has(key);
+export const checkable = (key) => checkKeys.has(key);
+export const pickable = (key) => checkOwner.has(key);
+export function decided(key, s = state) {
+  if (checkKeys.has(key)) return true;
+  const own = checkOwner.get(key);
+  if (own == null) return false;
+  const x = s.x ?? {};
+  return own in x || `@${units.get(own)?.group}` in x;
+}
 
 /** 여기까지 읽음 판정 묶음 — s를 주면 그 상태로(구독자가 받은 snapshot) */
 export function reading(s = state) {
@@ -269,7 +301,11 @@ export function reading(s = state) {
   const seen = (key) => {
     if (all) return true;
     const own = checkOwner.get(key);
-    if (own != null && own in x) return x[own];
+    if (own != null) {
+      if (own in x) return x[own];
+      const g = `@${units.get(own)?.group}`;
+      if (g in x) return x[g];
+    }
     const u = units.get(key);
     return u?.tick == null || u.tick <= t;
   };

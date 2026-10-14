@@ -21,7 +21,7 @@ const pairs = read('persons-pairs.json');
 const units = read('units.json');
 const unitByKey = new Map(units.map((u) => [u.key, u]));
 const personIds = new Set(persons.map((p) => p.id));
-const extras = new Set(units.filter((u) => u.check).map((u) => u.key)); // 체크 칸 스토리 — units.json check(사이드 · 주요 이벤트, W16a)
+const extras = new Set(units.filter((u) => u.opt).map((u) => u.key)); // 고를 수 있는 스토리 — units.json opt(메인 갈래 밖, W16b) — 쌍은 이 키로 뗀다
 
 test('persons.json — 인물 386, 중복 없음, 이름 · 집계 칸', () => {
   assert.equal(persons.length, 386);

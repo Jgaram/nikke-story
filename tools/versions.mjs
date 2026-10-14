@@ -82,7 +82,7 @@ function cmdNew() {
   if (!args.length) throw new Error('대상을 준다 — 예: node tools/versions.mjs new J30');
   for (const [i, raw] of args.entries()) {
     const subject = subjectOf(raw);
-    const first = isDict(subject) ? dictFirst(ctx().targetMap.get(subject)) : ctx().threads.get(subject.replace(/^thread:/, ''))?.first_unit;
+    const first = isDict(subject) ? dictFirst(ctx().targetMap.get(subject), ctx()) : ctx().threads.get(subject.replace(/^thread:/, ''))?.first_unit;
     if (isDict(subject) ? !ctx().targetMap.has(subject) : !ctx().threads.has(subject.replace(/^thread:/, ''))) throw new Error(`${isDict(subject) ? '사전 항목' : '떡밥'}이 없다 — ${raw}`);
     if (!first) throw new Error(`처음 나온 자리가 없다 — ${raw} (판을 둘 수 없다)`);
     const p = versionPath(subject, DIR);
@@ -164,7 +164,7 @@ function countFile(f, t) {
 function tallyDict(set) {
   const t = { n: 0, files: 0, done: 0, ok: 0, draft: 0, stale: 0, changed: 0, rejected: 0, none: 0, by: new Map() };
   for (const x of ctx().targets) {
-    if (!DICT_KINDS.has(subjectKind(x.id)) || !x.note || !dictFirst(x)) continue;
+    if (!DICT_KINDS.has(subjectKind(x.id)) || !x.note || !dictFirst(x, ctx())) continue;
     const g = t.by.get(x.type) ?? t.by.set(x.type, { n: 0, done: 0 }).get(x.type);
     t.n++;
     g.n++;

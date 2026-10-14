@@ -158,7 +158,7 @@ test('화면 fmt.versionAt · threadAt — 앞 판들의 at을 다 본 마지막
   assert.equal(fmt.versionAt([], R(5)), null);
 });
 
-// 사전 설명(W15e) — 같은 꼴, 제목 없이 설명만. 첫 판 = 항목이 처음 나온 자리(meet의 마지막), 지문 = at까지 항목을 다룬 기록
+// 사전 설명(W15e) — 같은 꼴, 제목 없이 설명만. 첫 판 = 항목이 처음 나온 자리(meet에서 체크 칸이 아닌 첫 스토리), 지문 = at까지 항목을 다룬 기록
 const DT = [
   ...TARGETS,
   { id: 'item:세븐스_드워프', type: 'item', name: '세븐스 드워프', note: '…', meet: ['char:222', 'ch45'] }, // char:222(체크 칸) 뒤 ch45가 처음 나온 자리
@@ -168,13 +168,14 @@ const DREC = [
   { id: 'F1', kind: 'F', unit: 'ch45', about: ['item:세븐스_드워프'], text: '…' },
   { id: 'F2', kind: 'F', unit: 'ch48', about: ['item:세븐스_드워프', 'person:홍련'], text: '…' },
 ];
-const DC = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: DREC });
+const DUNITS = UNITS.map((u) => (u.key === 'char:222' ? { ...u, check: 1, opt: 1 } : u)); // char:222를 체크 칸으로
+const DC = sourcesFrom({ units: DUNITS, threads: THREADS, flow: FLOW, targets: DT, records: DREC });
 const DS = 'item:세븐스_드워프';
 const dver = (at, text, extra = {}) => ({ at, text, src: srcHash(DS, at, DC), session: 'W15e', by: 'claude', date: '2026-10-10', status: '후보', reviews: [], ...extra });
 
-test('사전 판 — 첫 판은 처음 나온 자리(meet의 마지막) · 제목은 오류 · 뒤 이름 오류 · meet 없는 항목은 판을 둘 수 없다', () => {
+test('사전 판 — 첫 판은 처음 나온 자리(meet에서 체크 칸이 아닌 첫 스토리) · 제목은 오류 · 뒤 이름 오류 · meet 없는 항목은 판을 둘 수 없다', () => {
   assert.equal(isDict(DS), true);
-  assert.equal(dictFirst(DC.targetMap.get(DS)), 'ch45');
+  assert.equal(dictFirst(DC.targetMap.get(DS), DC), 'ch45');
   const ok = { subject: DS, versions: [dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.'), dver('ch48', '홍련이 손본 무기로 드러났다 — 누가 처음 만들었나.')] };
   assert.deepEqual(checkFile(ok, DC), { errors: [], warnings: [] });
   const early = checkFile({ subject: DS, versions: [dver('char:222', '스노우 화이트가 들고 다니는 무기라는 것만 안다.')] }, DC);
@@ -202,16 +203,16 @@ test('이름 검사 — 두 글자 이름은 뒤가 조사 · 낱말 끝일 때�
 
 test('사전 판 지문 — at까지 항목을 다룬 기록이 바뀌면 낡음, 뒤 기록은 상관없다 · 내보내면 { at, text }', async () => {
   const v1 = dver('ch45', '스노우 화이트가 들고 다니는 무기라는 것만 안다.');
-  const more = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F3', kind: 'F', unit: 'ch45', about: [DS], text: '…' }] });
+  const more = sourcesFrom({ units: DUNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F3', kind: 'F', unit: 'ch45', about: [DS], text: '…' }] });
   assert.notEqual(srcHash(DS, 'ch45', more), v1.src);
-  const after = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F4', kind: 'F', unit: 'ch48', about: [DS], text: '…' }] });
+  const after = sourcesFrom({ units: DUNITS, threads: THREADS, flow: FLOW, targets: DT, records: [...DREC, { id: 'F4', kind: 'F', unit: 'ch48', about: [DS], text: '…' }] });
   assert.equal(srcHash(DS, 'ch45', after), v1.src);
   const done = { ...v1, status: '확정', reviews: [{ decision: '확정', by: 'claude', hash: contentHash(v1) }] };
   assert.deepEqual(publishable({ subject: DS, versions: [done] }, DC).list, [{ at: 'ch45', text: v1.text }]);
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'versions-'));
   try {
     fs.writeFileSync(path.join(dir, fileNameFor(DS)), JSON.stringify({ subject: DS, versions: [done] }));
-    const ctx = { versionDir: dir, common: { units: UNITS }, made: { 'units.json': UNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': DT, 'records.json': DREC }, warn: () => {} };
+    const ctx = { versionDir: dir, common: { units: DUNITS }, made: { 'units.json': DUNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': DT, 'records.json': DREC }, warn: () => {} };
     const out = (await exportVersions(ctx)).files['versions.json'];
     assert.deepEqual(out.targets, { [DS]: [{ at: 'ch45', text: v1.text }] });
   } finally {
@@ -259,7 +260,7 @@ test('내보낸 versions.json — 확정 판과 같고, 판마다 그 자리 뒤
     (got ?? []).forEach((v, i) => assert.deepEqual(v.need, versionNeed([v.title, v.text], chain(i), real), `${id} ${v.at} need`));
   }
   for (const [id, list] of Object.entries(out.targets ?? {})) {
-    assert.equal(list.find((v) => !v.side).at, dictFirst(real.targetMap.get(id)), `${id} 첫 판`); // 곁 판(side)은 첫 판 앞 체크 칸에도
+    assert.equal(list.find((v) => !v.side).at, dictFirst(real.targetMap.get(id), real), `${id} 첫 판`); // 곁 판(side)은 첫 판 앞 체크 칸에도
     for (const v of list) assert.deepEqual(lateNames(v.text, real.units.get(v.at).order, real.names, real.units), [], `${id} ${v.at}: ${v.text}`);
   }
   for (const [id, list] of Object.entries(out.threads)) {
@@ -315,10 +316,10 @@ test('실제 판 — 판을 볼 수 있는 가장 덜 본 독자(판의 at들만
   for (const [id, l] of Object.entries(V.threads)) if (threads.has(id)) threads.get(id).v = l;
   for (const [id, l] of Object.entries(V.targets)) if (targets.has(id)) targets.get(id).v = l;
   fmt.use({ units, targets, threads, scenes: new Map(), ticks: new Map() });
-  const checkable = new Set(unitList.filter((u) => u.check).map((u) => u.key));
+  const checkable = new Set(unitList.filter((u) => u.opt || u.check).map((u) => u.key)); // 고를 수 있는 스토리(W16b — 이벤트 · 호감도도 안 볼 수 있다)
   const titled = new Map();
   for (const u of unitList) if (u.kind !== 'main' && /^[A-Z][A-Z0-9 .,'!&:-]{4,}$/.test(u.title ?? '')) (titled.get(u.title) ?? titled.set(u.title, []).get(u.title)).push(u.key);
-  // 판의 at들만 고르고 메인은 그 at들 가운데 체크 칸이 아닌 것의 자리까지 — 게임에서 체크 칸 스토리는 아무 때나 본다
+  // 판의 at들만 고르고 메인 갈래는 그 at들 가운데 고를 수 있는 스토리가 아닌 것의 자리까지 — 게임에서 메인 갈래 밖 스토리는 아무 때나 보고 안 볼 수도 있다
   const minimal = (ats) => {
     const on = new Set(ats);
     const t = Math.max(1, ...ats.filter((k) => !checkable.has(k)).map((k) => units.get(k).tick));

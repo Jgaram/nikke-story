@@ -168,10 +168,10 @@ export async function mount(root, ctx) {
   const listEl = ui.el('ol', { class: 'order-seq' });
   listView.append(listEl);
   /**
-   * 본 것으로 표시해도 되나 — 여기까지 읽음에서 사람이 정하는 것(메인 챕터 = 그 자리까지 · 주요 이벤트 · 사이드 = 팝업 체크)만.
+   * 본 것으로 표시해도 되나 — 여기까지 읽음에서 사람이 정하는 것(메인 챕터 = 그 자리까지 · 주요 이벤트 · 사이드 = 팝업 체크 · 이벤트 · 호감도는 팝업에서 고른 것 — state.decided)만.
    * 그 밖은 출시 시점으로 짐작한 것이라 쓰지 않는다(메인만 보고 뒤늦게 챙기는 사람에게 안 본 이벤트를 ✓로 보이지 않게)
    */
-  const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || state.checkable(k)) && rd.seen(k);
+  const doneSeen = (k, rd) => !rd.all && (idx.units.get(k)?.kind === 'main' || state.decided(k)) && rd.seen(k); // 이벤트 · 호감도는 팝업에서 고른 것만(W16b)
   /** 'CH.27 전까지' — 회색 글자 줄에. 그 스토리를 이미 봤으면 '· 지남'(뒤늦게 챙기는 사람 — 지금 봐도 빈틈이 채워진다). 흐리게 끼운 앞 편은 'X의 앞 편'이 이미 말한다 */
   const dueText = (item, rd) => {
     const d = guide(item.key).due;
@@ -253,8 +253,8 @@ export async function mount(root, ctx) {
     const selKey = sel?.type === 'unit' ? sel.id : null;
     // 여기까지 읽음 구분 줄 — 그 시점 ≤ 이고 본 마지막 척추 줄 아래(이 아래가 다음에 볼 순서)
     const cutAt = cutRowAt(seq, cut, rd);
-    // 구분 줄 위인데 안 봄으로 둔 체크 칸 스토리(주요 이벤트 · 사이드) — 줄에 '안 봄'(예외가 없으면 없다)
-    const lis = seq.map((x, i) => seqRow(x, rd, (x.spine || state.checkable(x.key)) && i < cutAt && !rd.seen(x.key)));
+    // 구분 줄 위인데 안 봄으로 둔 고를 수 있는 스토리(주요 이벤트 · 사이드 · 이벤트 · 호감도) — 줄에 '안 봄'(예외가 없으면 없다)
+    const lis = seq.map((x, i) => seqRow(x, rd, (x.spine || state.pickable(x.key)) && i < cutAt && !rd.seen(x.key)));
     if (cutAt >= 0 && cutAt < seq.length - 1) {
       lis.splice(cutAt + 1, 0, ui.el('li', { class: 'order-cutrow', title: LABELS.cutLineHelp, dataset: { key: '' } }, ui.el('span', {}, LABELS.cutLine(fmt.tickShort(cut)))));
       status.append(' · ', ui.el('button', { type: 'button', class: 'link-btn', onClick: () => listEl.querySelector('.order-cutrow')?.scrollIntoView({ block: 'center', behavior: 'smooth' }) }, LABELS.goCut));

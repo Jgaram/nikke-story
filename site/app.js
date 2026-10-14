@@ -80,9 +80,8 @@ function cutoffControl(idx, firstVisit) {
   const label = (s) => {
     const t = s.t ?? null;
     const base = t == null ? fmt.TERM.showAll : t === latest ? V.latest : fmt.tickLabel(t, { date: false });
-    const R = state.reading(s);
-    const n = extras.filter((e) => R.seen(e.key)).length;
-    return t != null && Object.keys(s.x ?? {}).length ? `${base} ${V.exBadge(n)}` : base;
+    const { plus, minus } = exDiff(s);
+    return t != null && (plus || minus) ? `${base} ${V.exBadge(plus, minus)}` : base;
   };
   const commit = () => {
     const n = newlySeen();
@@ -110,8 +109,8 @@ function cutoffControl(idx, firstVisit) {
   const endSub = latest ? `${fmt.tickShort(lastMain.tick)} 뒤 ${afterMain}편` : fmt.tickShort(last);
   const latestBtn = ui.el('button', { type: 'button', class: 'btn cutoff-latest', title: V.latestHelp(endSub, idx.ticks.get(last)?.date ?? ''), onClick: () => setDraft({ t: last }) },
     V.latest, ui.el('span', { class: 'muted' }, ` · ${endSub}`));
-  // 체크 칸 — 종류로 주요 이벤트(필그림 · 오버스펙 픽업) · 사이드(사용자 2026-10-14, W16a). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다).
-  // 이벤트 유실물 · 미니게임은 칸이 없고 딸린 이벤트를 따른다(state.checkable)
+  // 칸 — 종류로 주요 이벤트(필그림 · 오버스펙 픽업) · 사이드(W16a) · 이벤트 · 호감도(W16b, 사용자 2026-10-14). 메인 위치와 상관없이 고른다(게임에서 아무 때나 볼 수 있다).
+  // 이벤트 유실물 · 미니게임은 칸이 없고 딸린 이벤트를 따른다(state.pickable). 갈래마다 [모두 선택] [모두 해제] — x에 갈래 통째(@갈래)로 적는다
   const box = (e) => {
     const input = ui.el('input', { type: 'checkbox', dataset: { key: e.key } });
     input.addEventListener('change', () => setDraft({ t: draft.t ?? last, x: { ...draft.x, [e.key]: input.checked } }));
@@ -121,12 +120,41 @@ function cutoffControl(idx, firstVisit) {
       ui.el('span', { class: 'cutoff-ex-title' }, u?.title ?? e.key),
       ui.el('span', { class: 'cutoff-ex-sub muted' }, at ? `${fmt.tickShort(idx.mainTicks.find((m) => m.main === at)?.tick)} 뒤` : ''));
   };
-  const majorBoxes = extras.filter((e) => e.group === 'major').map(box);
-  const sideBoxes = extras.filter((e) => e.group === 'side').map(box);
-  const boxes = [...majorBoxes, ...sideBoxes];
-  const exSec = (head, hint, list) => (list.length ? ui.el('section', { class: 'cutoff-sec' },
-    ui.el('h3', {}, head, hint ? ui.el('span', { class: 'cutoff-sec-hint muted' }, hint) : null),
-    ui.el('div', { class: 'cutoff-exs' }, list)) : null);
+  const groupBoxes = new Map(state.GROUPS.map((g) => [g, extras.filter((e) => e.group === g).map(box)]));
+  const boxes = [...groupBoxes.values()].flat();
+  const counts = new Map(); // 갈래 → 본 것 n/N 글
+  const setGroup = (g, on) => {
+    const x = Object.fromEntries(Object.entries(draft.x).filter(([k]) => idx.units.get(k)?.group !== g));
+    setDraft({ t: draft.t ?? last, x: { ...x, [`@${g}`]: on } });
+  };
+  // 이벤트 · 호감도는 칸이 많아 접어 둔다(머리에 본 것 수). 주요 이벤트 · 사이드는 펼친다
+  const exSec = (g) => {
+    const list = groupBoxes.get(g);
+    if (!list.length) return null;
+    const G = V.groups[g];
+    const count = ui.el('span', { class: 'cutoff-sec-count muted' });
+    counts.set(g, count);
+    const acts = ui.el('span', { class: 'cutoff-sec-acts' },
+      ui.el('button', { type: 'button', class: 'link-btn', onClick: () => setGroup(g, true) }, V.allOn),
+      ui.el('button', { type: 'button', class: 'link-btn', onClick: () => setGroup(g, false) }, V.allOff));
+    const grid = ui.el('div', { class: 'cutoff-exs' }, list);
+    if (G.fold) return ui.el('details', { class: 'details cutoff-sec cutoff-fold' }, ui.el('summary', {}, G.head, count), ui.el('div', { class: 'cutoff-fold-acts' }, acts), grid);
+    return ui.el('section', { class: 'cutoff-sec' }, ui.el('h3', {}, G.head, G.hint ? ui.el('span', { class: 'cutoff-sec-hint muted' }, G.hint) : null, count, acts), grid);
+  };
+  /** 메인 위치(t)와 다르게 고른 스토리 수 — 더 본 것(t 뒤인데 봄) · 안 본 것(t 안인데 안 봄) */
+  const exDiff = (s) => {
+    const t = s.t ?? null;
+    if (t == null) return { plus: 0, minus: 0 };
+    const R = state.reading(s);
+    let plus = 0;
+    let minus = 0;
+    for (const e of extras) {
+      const dflt = e.tick == null || e.tick <= t;
+      if (R.seen(e.key) && !dflt) plus++;
+      else if (!R.seen(e.key) && dflt) minus++;
+    }
+    return { plus, minus };
+  };
   const laterBtn = ui.el('button', { type: 'button', class: 'btn btn-quiet', onClick: () => close(false) }, V.later);
   const okBtn = ui.el('button', { type: 'button', class: 'btn btn-guard', onClick: commit }, V.ok);
   const editPane = ui.el('div', { class: 'cutoff-edit' },
@@ -139,8 +167,7 @@ function cutoffControl(idx, firstVisit) {
       ui.el('div', { class: 'cutoff-now' }, prevBtn, ui.el('output', { for: 'cutoff-slider', class: 'cutoff-now-read' }, nowName, nowSub), nextBtn),
       slider, list, ui.el('div', { class: 'cutoff-latest-row' }, latestBtn)),
     ui.el('p', { class: 'cutoff-ex-help muted' }, V.exHint),
-    exSec(V.majorHead, V.majorHint, majorBoxes),
-    exSec(V.sideHead, null, sideBoxes),
+    state.GROUPS.map(exSec),
     ui.el('div', { class: 'cutoff-dlg-foot' }, ui.el('span', { class: 'cutoff-foot-gap' }), laterBtn, okBtn),
     ui.el('p', { class: 'cutoff-ai' }, fmt.AI_NOTE.full));
   dlg.append(editPane, confirmPane);
@@ -180,18 +207,21 @@ function cutoffControl(idx, firstVisit) {
     for (const b of boxes) {
       const input = b.querySelector('input');
       input.checked = R.seen(input.dataset.key);
-      b.classList.toggle('is-diff', input.dataset.key in draft.x);
+      const tick = idx.units.get(input.dataset.key)?.tick;
+      b.classList.toggle('is-diff', t != null && input.checked !== (tick == null || tick <= t)); // 메인 위치와 다르게 고른 칸 — 제목 뒤 점
+    }
+    for (const [g, el] of counts) {
+      const list = extras.filter((e) => e.group === g);
+      el.textContent = V.groupCount(list.filter((e) => R.seen(e.key)).length, list.length);
     }
   }
   // 상단 단추 — 적용된 값을 보인다
   const sync = (s) => {
     const t = s.t;
-    const R = state.reading(s);
-    const diff = Object.keys(s.x ?? {}).length;
     value.textContent = short(t);
-    const seenEx = extras.filter((e) => R.seen(e.key)).length;
-    extraEl.textContent = t != null && diff ? V.exBadge(seenEx) : '';
-    extraEl.title = extraEl.textContent ? V.exBadgeHelp(seenEx, extras.length) : '';
+    const { plus, minus } = exDiff(s);
+    extraEl.textContent = t != null && (plus || minus) ? V.exBadge(plus, minus) : '';
+    extraEl.title = extraEl.textContent ? V.exBadgeHelp(plus, minus) : '';
     dateEl.textContent = t == null ? '' : idx.ticks.get(t)?.date ?? '';
     btn.classList.toggle('is-off', t == null);
     btn.setAttribute('aria-label', `${fmt.TERM.cutoff}: ${t == null ? fmt.TERM.showAll : t === latest ? V.latest : fmt.tickLabel(t)}${extraEl.textContent ? ` (${extraEl.textContent})` : ''} — ${V.open}`);

@@ -16,7 +16,7 @@ globalThis.window = { addEventListener() {} };
 const state = await import('../site/lib/state.js');
 const fmt = await import('../site/lib/format.js');
 
-// 메인 셋(10 · 20 · 30) · 주요 이벤트 둘(15 · 25)과 ev_a에 딸린 유실물 · 그 밖 이벤트 하나(18) · 사이드 하나(22)
+// 메인 셋(10 · 20 · 30) · 주요 이벤트 둘(15 · 25)과 ev_a에 딸린 유실물 · 그 밖 이벤트 하나(18 — opt 없음) · 사이드 하나(22) · 호감도 둘(12 · 28 — 고를 수 있음, W16b)
 const units = new Map([
   ['ch01', { key: 'ch01', kind: 'main', tick: 10 }],
   ['ch02', { key: 'ch02', kind: 'main', tick: 20 }],
@@ -26,6 +26,8 @@ const units = new Map([
   ['ev_b', { key: 'ev_b', kind: 'event', tick: 25, group: 'major', check: 1 }],
   ['ev_c', { key: 'ev_c', kind: 'event', tick: 18, group: 'event', spine: true, grade: '필수' }],
   ['semi', { key: 'semi', kind: 'side', tick: 22, group: 'side', check: 1 }],
+  ['ep_a', { key: 'ep_a', kind: 'episode', tick: 12, group: 'episode', opt: 1 }],
+  ['char:7', { key: 'char:7', kind: 'episode', tick: 28, group: 'episode', opt: 1 }],
 ]);
 state.configure({ units });
 state.init({ defaultCutoff: 10 });
@@ -34,7 +36,7 @@ test('예외가 없으면 출시 자리 규칙과 같다', () => {
   state.set({ t: 20 });
   const R = state.reading();
   for (const [k, u] of units) assert.equal(R.seen(k), u.tick <= 20, k);
-  assert.deepEqual(state.checkExtras().map((e) => [e.key, e.group]), [['ev_a', 'major'], ['semi', 'side'], ['ev_b', 'major']], '딸린 유실물은 칸이 없다');
+  assert.deepEqual(state.checkExtras().map((e) => [e.key, e.group]), [['ep_a', 'episode'], ['ev_a', 'major'], ['semi', 'side'], ['ev_b', 'major'], ['char:7', 'episode']], '딸린 유실물은 칸이 없다');
   assert.deepEqual([...units.keys()].filter(state.checkable), ['ev_a', 'ev_a_lost', 'ev_b', 'semi'], '척추 · 준필수라도 check가 없으면 체크 칸이 아니다(ev_c)');
 });
 
@@ -65,6 +67,27 @@ test('메인 위치를 옮기면 기본과 같아진 예외는 지운다', () =>
   assert.deepEqual(state.get().x, { ev_a: false });
   state.set({ t: null }); // 전부 보기는 늘 본다
   assert.equal(state.reading().seen('ev_a'), true);
+});
+
+test('압축 형식(W16b) — 갈래 통째 -@episode · 호감도 키 줄임 c7, 낱개가 이기고 t를 옮겨도 갈래는 남는다', () => {
+  state.set({ t: 30, x: '-@episode,c7' });
+  let R = state.reading();
+  assert.deepEqual(['ep_a', 'char:7', 'ev_a', 'ch03'].map(R.seen), [false, true, true, true]);
+  assert.deepEqual(state.get().x, { '@episode': false, 'char:7': true });
+  assert.match(location.hash, /x=-(@|%40)episode(,|%2C)c7/);
+  assert.equal(state.decided('ep_a'), true, '갈래 통째로 골랐다');
+  assert.equal(state.decided('ev_c'), false, '고를 수 없는 스토리');
+  assert.equal(state.pickable('ep_a') && !state.checkable('ep_a'), true, '호감도는 고를 수 있지만 체크 칸(판을 다시 쓰는 스토리)은 아니다');
+  state.set({ t: 30, x: { '@episode': false, ep_a: false } });
+  assert.deepEqual(state.get().x, { '@episode': false }, '갈래와 같은 낱개는 지운다');
+  state.set({ t: 10 });
+  assert.deepEqual(state.get().x, { '@episode': false }, 't를 옮겨도 갈래 통째는 남는다');
+  state.set({ t: 30, x: '-char:7,-@nope' });
+  R = state.reading();
+  assert.deepEqual(state.get().x, { 'char:7': false }, '옛 꼴(전체 키)도 받고, 모르는 갈래는 버린다');
+  assert.equal(R.seen('ep_a'), true);
+  state.set({ t: 20, x: {} });
+  assert.equal(state.decided('ep_a'), false, '고르지 않으면 출시 시점 짐작');
 });
 
 test('stateAt · gradeAt이 reading을 받는다', () => {

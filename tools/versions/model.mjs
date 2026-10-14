@@ -11,7 +11,7 @@
  *          기록이 바뀌어(2회독 바로잡기 · 신작) at 앞의 흐름이 달라지면 '낡음' — 내보내기가 그 판부터 빼고 화면은 그 앞 판으로 돌아간다(덜 아는 쪽이라 새지 않는다).
  * 글은 at까지의 스토리 내용만 — 뒤 스토리 이름(laterNames) · at 뒤에 처음 나오는 대상 이름(targets.json meet · name_meet · 다른 이름 meet)은 오류.
  * 사전 설명(W15e)도 같은 꼴 — subject가 비인물 대상 ID(place:방주 · org:… · concept:… · incident:… · item:…)이고 판은 { at, text, … }(제목 없음 —
- *   이름은 W15b fmt.nameAt이 고른다). 첫 판의 at = 항목이 처음 나온 자리(targets.json meet의 마지막 — 체크 칸이 아닌 첫 스토리),
+ *   이름은 W15b fmt.nameAt이 고른다). 첫 판의 at = 항목이 처음 나온 자리(targets.json meet에서 체크 칸이 아닌 첫 스토리 — dictFirst),
  *   src = at까지 항목을 다룬 기록(about)의 [기록, 단위]. 화면은 fmt.noteAt.
  */
 import crypto from 'node:crypto';
@@ -47,8 +47,14 @@ export const versionPath = (subject, dir = VERSION_DIR) => path.join(dir, fileNa
 export const subjectKind = (subject) => String(subject ?? '').split(':')[0];
 export const threadId = (subject) => (subjectKind(subject) === 'thread' ? String(subject).slice('thread:'.length) : null);
 export const isDict = (subject) => DICT_KINDS.has(subjectKind(subject));
-/** 사전 항목이 처음 나온 자리 — meet의 마지막(체크 칸이 아닌 첫 스토리 — 그 앞 체크 칸을 안 골라도 여기서는 만난다). meet가 없으면 null */
-export const dictFirst = (t) => (Array.isArray(t?.meet) && t.meet.length ? t.meet.at(-1) : null);
+/**
+ * 사전 항목이 처음 나온 자리 — meet(읽는 순서) 가운데 체크 칸(C.checkable — 사이드 · 주요 이벤트)이 아닌 첫 스토리. 그 앞 체크 칸을 안 골라도 여기서는 만난다.
+ * meet는 W16b부터 첫 메인 갈래 스토리까지라(이벤트 · 호감도도 안 볼 수 있다) 마지막이 아니라 체크 칸이 아닌 첫 것을 찾는다 — 판은 체크 칸만 곁 판으로 다시 쓴다. 다 체크 칸이면 마지막. meet가 없으면 null
+ */
+export const dictFirst = (t, C) => {
+  if (!Array.isArray(t?.meet) || !t.meet.length) return null;
+  return (C?.checkable && t.meet.find((k) => !C.checkable.has(k))) || t.meet.at(-1);
+};
 
 /** 떡밥이 움직인 자리 — threads-flow.json 줄기의 roots[].points · echoes를 읽는 순서로 [{ r, s, u, o }] */
 export function flowPoints(flow) {
@@ -110,6 +116,8 @@ export function sourcesFrom({ units: unitList, threads, flow, targets, records =
   C.nameUnits = nameUnits(C.targets);
   // 체크 칸 스토리(사이트 state.checkable과 같다 — units.json check: 사이드 · 주요 이벤트, W16a) · 제목으로 불리는 스토리(같은 제목은 묶어서)
   C.checkable = new Set([...units.values()].filter((u) => u.check).map((u) => u.key));
+  // 고를 수 있는 스토리(W16b — units.json opt: 체크 칸 + 이벤트 · 호감도) — 판의 need는 메인 갈래만 '늘 본 것'으로 친다
+  C.optional = new Set([...units.values()].filter((u) => u.opt || u.check).map((u) => u.key));
   C.titled = new Map();
   for (const u of units.values()) if (titledUnit(u)) (C.titled.get(u.title) ?? C.titled.set(u.title, []).get(u.title)).push(u.key);
   C.aboutOf = new Map();
@@ -225,17 +233,19 @@ export function namesIn(text, names) {
 
 /**
  * 판을 보려면 봐야 하는 스토리 묶음(W15f) — 글(제목 · 요약)에 든 대상 이름 · 스토리 이름마다 '그것을 아는 스토리' 묶음, 판의 at들만 보고
- * 체크 칸 스토리(사이드 · 주요 이벤트 — 게임에서 아무 때나 본다)를 안 고른 독자도 늘 아는 묶음은 뺀다.
+ * 고를 수 있는 스토리(사이드 · 주요 이벤트 · 이벤트 · 호감도 — 게임에서 아무 때나 보고, 안 볼 수도 있다 — W16b)를 안 고른 독자도 늘 아는 묶음은 뺀다.
+ * 늘 아는 것 = 이 판의 at들 + 메인 갈래 at의 자리까지 메인 갈래 스토리(메인은 차례로 본다).
  * lateNames는 읽는 순서로만 재서, 앞 체크 칸 스토리에서만 먼저 쓰인 이름(J1 GODDESS FALL 판의 '퀸 인자' ← LAST KINGDOM)을 놓친다 — 화면 fmt.versionAt이 이것으로 멈춘다.
  * @param {string[]} texts 판의 제목 · 요약
  * @param {string[]} ats 이 판을 보는 독자가 늘 본 at들 — 앞 본판들 + 이 판(곁 판은 제 at만 더한다)
- * @param {{ units: Map, nameUnits: Map, checkable: Set }} C
+ * @param {{ units: Map, nameUnits: Map, checkable: Set, optional?: Set }} C
  * @returns {string[][] | undefined} 묶음마다 스토리 키(하나라도 보면 됨) — 없으면 undefined
  */
 export function versionNeed(texts, ats, C) {
   const chain = new Set(ats);
-  const floor = Math.max(1, ...ats.filter((k) => !C.checkable.has(k)).map((k) => C.units.get(k)?.tick ?? 0));
-  const sure = (k) => chain.has(k) || (!C.checkable.has(k) && (C.units.get(k)?.tick ?? Infinity) <= floor);
+  const opt = C.optional ?? C.checkable;
+  const floor = Math.max(1, ...ats.filter((k) => !opt.has(k)).map((k) => C.units.get(k)?.tick ?? 0));
+  const sure = (k) => chain.has(k) || (!opt.has(k) && (C.units.get(k)?.tick ?? Infinity) <= floor);
   const groups = new Map();
   const add = (keys) => {
     const g = [...new Set(keys)].filter((k) => C.units.has(k));
@@ -365,10 +375,10 @@ function specOf(subject, C) {
   if (DICT_KINDS.has(kind)) {
     const t = C.targetMap?.get(subject);
     if (!t) return { error: `사전 항목이 없다 — ${subject}` };
-    const first = dictFirst(t);
+    const first = dictFirst(t, C);
     if (!first) return { error: `처음 나온 자리(meet)가 없는 항목 — 판을 둘 수 없다(전부 보기에서만 분석용 설명) — ${subject}` };
     return {
-      dict: true, first, firstWhat: '항목이 처음 나온 자리(meet의 마지막 — 체크 칸이 아닌 첫 스토리)', lastOrder: Infinity, last: null,
+      dict: true, first, firstWhat: '항목이 처음 나온 자리(meet에서 체크 칸이 아닌 첫 스토리)', lastOrder: Infinity, last: null,
       moved: new Set([...dictRecords(subject, C).map((p) => p.u), ...arr(t.meet)]),
       unmoved: '이 스토리에서 항목을 다룬 기록이 없다 — 판은 항목에 대해 새로 알게 되는 자리에서 나눈다',
       limits: DICT_LIMITS, fields: [['text', DICT_LIMITS.text, DICT_LIMITS.textMax, DICT_LIMITS.sentences]],
