@@ -433,7 +433,7 @@
   원문을 어디서 읽었는지(블라링크 · 금서고)도 화면 · JSON에 싣지 않는다(사용자, 2026-10-09 — `units.json`에 `library` · `replaces` 없음).
 - **소속 마크** (W12, 2026-10-10 — 사용자: 소속도 스토리 정보): 인물 옆에 기업 · 스쿼드 마크와 이름. 마크는 블라링크 CDN의 게임 아이콘(기업 `icn_corp_0N` 5 · 스쿼드 `icon/squad/{resource_id}` 52, docs/data-sources.md 10절)을
   `site/img/orgs/{아이콘}.png`로 **복사**해 둔다(인물 아이콘과 같은 까닭). 57개 · 0.64MB. 투명 바탕 흰 그림이라 어두운 칩(`--mark-bg`) 위에 놓는다.
-  `node tools/blabla/marks.mjs`(실장 니케 소속 모으기 → 없는 마크만 받기 → `site/img/orgs/index.json`) 뒤 `export.mjs --only common` — `targets.json` 인물 `orgs`(게임 데이터: `[{type: corp|squad, org?, name, mark, via?, tick?}]` — `tick` = 공개 자리(출시와 확정 T 가운데 이른 것 — W15b부터 '늘(0)' 없음, 없음 = 판정 못 함 → 전부 보기에서만), 표준 판이 앞 · 다른 판의 다른 소속은 `via` = 판 이름) · `affs`(확정 소속 기록 T: `[{id, org, act, role?, tick, order, from?}]` — `from`은 같은 인물의 대표 ID에서 빌린 기록, 아래) · 조직 행 `mark`.
+  `node tools/blabla/marks.mjs`(실장 니케 소속 모으기 → 없는 마크만 받기 → `site/img/orgs/index.json`) 뒤 `export.mjs --only common` — `targets.json` 인물 `orgs`(게임 데이터: `[{type: corp|squad, org?, name, mark, via?, tick?}]` — `tick` = 공개 자리(출시와 확정 T 가운데 이른 것 — W15b부터 '늘(0)' 없음, 없음 = 판정 못 함 → 전부 보기에서만), 표준 판이 앞 · 다른 판의 다른 소속은 `via` = 판 이름) · `affs`(확정 소속 기록 T: `[{id, org, act, role?, tick, order, from?, imp?}]` — `imp`는 사칭 가림(W23d) — `from`은 같은 인물의 대표 ID에서 빌린 기록, 아래) · 조직 행 `mark`.
   화면은 `fmt.orgsAt(target, R)` → `ui.orgMarks`(R = `state.reading()` — 소속 기록은 그 스토리를 봤을 때만, 게임 소속은 자리로. W16b — 안 본 OLD TALES의 그레이브 V.T.C. 전 소속이 칩으로 샜다) — 규칙은 docs/annotations.md "소속 기록"(W12d 합치기: 게임 소속은 늘 남기고 그 위에 그 자리까지의 확정 T를 쌓으며, 기록이 이탈시킨 조직만 뺀다).
   게임 소속도 스포일러 컷오프를 받는다(사용자, 2026-10-10) — 그 인물의 소속으로 처음 드러난 자리(`tick`) 앞에서는 마크를 **아예 보이지 않는다**(접지 않음 — '같은 인물' 표시 `fmt.sameAsKnown`과 같은 방식). 전부 보기면 다 보인다. 기록은 첫 근거 씬의 공개 자리부터.
   같은 인물(정체 연결)의 다른 이름 가운데 기록도 게임 소속도 없는 것(레비 ↔ 레비아탄, 프리시아 ↔ 프리티, 샛별 ↔ 요한)은 대표의 기록을 빌려 보이되 정체가 밝혀지는 단위(`same_as_unit`)부터 — 툴팁 끝에 '(레비아탄의 기록)'(W12c). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로.
@@ -536,7 +536,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
 | `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다. 둘 다 사칭에 가려지는 기록은 `imp`(W23b — 아래 "사칭") |
 | `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
-| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how, meet?, never?}]` · `meet[]` · `name_meet[]` · `name_never`(처음 나온 자리 — 아래 "처음 나온 자리(W15b)") · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
+| `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `label`(동명이인 화면 이름, W23d) · `imp_name{name, rev}`(드러난 뒤 사칭 이름표 주인의 화면 이름, W23d) · `kind` · `note` · `aliases[{name, how, meet?, never?}]` · `meet[]` · `name_meet[]` · `name_never`(처음 나온 자리 — 아래 "처음 나온 자리(W15b)") · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
 | `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
 | `manifest.json` | | `built_at` · `inputs`(입력 지문) · `db_built_at` · `last_date` · `files{이름: {count, module, bytes}}`(공용 8 + 탭 JSON 11 전부) · `warnings` |
 
@@ -619,6 +619,11 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
   인물 상세(`persons-detail` records · changes · rel)는 가릴 기록을 이름표 주인 쪽에도 싣고(변화 줄은 + `person`(실제) · `imp`), 인물 탭은 `recHas`로 고른다 — 드러나기 전 머스탱 상세는 예전처럼 한 사람,
   뒤에는 한슨 상세에 머스탱 행세 시절의 기록 · 변화 · 관계 상대가 모인다. 리더 기록 패널 '관련' · 대상 기록 목록(`data.recordsAbout`은 b에도 건다) · 떡밥 묶음(`threadBundle` · `threadTies`, threads-flow 뿌리 · 복선에 `imp`) · 세계 탭 생활상도 `recAt`.
 - 점검: 사칭 기록 칸(그 자리 모습으로는 다른 인물 것인 기록이 인물 탭에 보이면) — 점검 인물에 한슨 · 머스탱. 드러나기 전 · 뒤 자리는 t=143 · 144(PRETTY STAR 142 · STAR ANIS 144). 가림을 끈 사본에서 33건을 잡았다.
+- **화면 이름(W23d)** — 드러난 뒤에도 이어지는 사칭의 이름표 주인(진짜 머스탱)은 드러난 스토리를 읽은 뒤(전부 보기 포함) `targets.json` `imp_name { name, rev }`로 보인다('머스탱 (한슨의 아버지)').
+  동명이인은 늘 `label`('사쿠라 (콜라보)'). 한 곳 `fmt.labelAt(t, R)` — `nameAt` · `targetName(id, R?)`(R을 안 주면 묶인 읽기 자리 `useReading`, `.map`의 순번은 R로 치지 않는다)이 쓴다.
+  찾기 · 아는 이름 검사(`namesAt`)는 표준명도 넣는다. 정하는 규칙은 docs/annotations.md "사칭 기록" '화면 이름'.
+- **소속(W23d)** — 실제 인물로 적힌 소속 T가 가려지는 자리면 export가 양쪽 `affs`에 싣고 `imp { rev, rev_tick, side: a|b }` — `fmt.orgsAt`은 드러나기 전 b 쪽, 뒤 a 쪽만(자리 t로 부르면 rev_tick).
+- 점검: '사칭이름' 칸 — 드러나기 전에 imp_name이 보이면(가림을 끈 사본에서 t=143 인물 탭 8건을 잡았다).
 - **연결 탭(대상 공유 선) · 주요 인물 · 주역 · 마무리 사슬 · 판정 시안은 이름표 주인으로 센다**(W23c) — 공개 자리마다 바뀌지 않는 계산이고, 독자가 쌓는 것은 그 이름의 인물이라서(docs/annotations.md "계산은 이름표 주인으로").
 
 ### 상단 바 · 여기까지 읽음 팝업

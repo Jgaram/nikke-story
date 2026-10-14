@@ -32,6 +32,7 @@
  *   이름없음 그 스토리에 이름이 안 쓰인 등장('???'로만 · 암시 언급만 — persons-detail hid)이 리더 '나오는 인물' · 인물 탭 등장 목록(p.who)에 보이는 것(W15f).
  *   사칭     드러나기 전(사칭 W23a — 드러난 스토리 rev를 안 봄) 스토리에서 사칭한 인물을 리더 '나오는 인물' · 인물 탭 등장 목록에 낸 것, 그 인물 탭에 보인 사칭 표 · 머리 '사칭' 줄.
  *            W23b: 사칭에 가려지는 기록(imp)이 그 자리 모습으로는 다른 인물 것인데 인물 탭에 보인 것(사칭 기록).
+ *            W23d: 드러난 뒤에만 쓰는 이름표 주인의 화면 이름(targets imp_name)이 드러나기 전에 보인 것(사칭이름).
  *   장면     안 본 스토리의 장면 제목이 장면 이름 꼴('「제목」' · '7. 제목')로 나온 것(4자 이상) — 게임도 읽기 전에는 안 보인다(사용자, 2026-10-10).
  *   다른 대상의 아는 이름 · 보이는 게임 소속 칩의 조직 이름과 같은 글자는 세지 않고, 대상 · 다른이름 · 시대 · 장면은 공개 글(스토리 제목 — --titles면 남김,
  *   본 스토리의 장면 제목, fmt *_HELP 도움말)을 지우고 본다.
@@ -268,6 +269,13 @@ const PROBE = async (skipMain, titles, focus) => {
         if (!fmt.recHas(r, who, R)) hits.push(`사칭 기록 ${who} ${id}`);
       }
     }
+  }
+  // 사칭이름(W23d) — 드러난 뒤에도 이어지는 사칭의 이름표 주인 화면 이름(targets imp_name — '진짜 머스탱' 등)이 드러나기 전에 보인 것
+  for (const t of targets) {
+    const nm = t.imp_name;
+    if (!nm?.name || fmt.impKnown(nm, R)) continue;
+    const i = all.indexOf(nm.name);
+    if (i >= 0) hits.push(`사칭이름 ${t.id} ${nm.name} … ${around(i, nm.name.length)}`);
   }
   // 대상 · 다른 이름 · 시대(W15b) — 그 자리에서 아는 이름은 다른 대상의 것이라도 세지 않는다. 게임 소속 칩의 조직 이름(출시 = 공개, W12d)도 아는 이름
   const knownNames = new Set(targets.flatMap((t) => fmt.namesAt(t, R)));

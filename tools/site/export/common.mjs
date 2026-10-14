@@ -15,6 +15,7 @@
  *                  사실 · 의문은 단계별 단위(reveals.csv): know_units(처음 밝혀짐 · 보강 · 제기 — 없으면 [unit]) · hint_units · reversed_units · partial_units · solved_units
  *   threads.json   줄기 60 + 관계 44
  *   targets.json   사전 대상(인물 · 장소 · 조직 · 개념 · 사건 · 물건) + 별칭 + 정체 연결 + 인물 아이콘(icon — site/img/people/{icon}.png)
+ *                  화면 이름(W23d): label = 동명이인 구분 이름 · imp_name { name, rev } = 드러난 뒤에도 이어지는 사칭의 이름표 주인이 rev를 읽은 뒤 쓰는 이름
  *                  + 처음 나온 자리(W15b — meet · name_meet · name_never, 다른 이름마다 meet · never: 이름이 처음 쓰인 스토리, 아래 meetsOf)
  *                  + 바뀐 모습(icons — [[공개 자리, 아이콘], …]: 그 메인 챕터부터 이 아이콘, 앞은 icon)
  *                  + 소속 마크(인물 orgs — 실장 니케의 지금 소속(게임 데이터, tick = 공개 자리 — 출시와 확정 T 가운데 이른 것), affs — 확정 소속 기록 T(공개 자리 tick · 근거 단위 unit — '지난 소속'은 화면에서 전 소속), 조직 mark — site/img/orgs/{mark}.png)
@@ -28,7 +29,7 @@ import { ROOT, compact, evidenceOut, firstRef, list, num, pick, publishText } fr
 import { INDEX_FILE as ICONS_FILE, IMG_DIR, episodeIconOf } from '../portraits.mjs';
 import { annivOf, loadMajorEvents } from '../../notices/major-events.mjs';
 import { APRIL_FOOLS_LABEL, isAprilFools } from '../../lib/fools.mjs';
-import { impersonationUnits, masksOf } from '../../records/impersonation.mjs';
+import { continuesAfterReveal, displayNameAfter, homonymLabels, impersonationUnits, masksOf } from '../../records/impersonation.mjs';
 /** 소속 마크 색인 — tools/blabla/marks.mjs가 만든다(게임 데이터를 읽는 쪽은 그 도구, 여기는 색인만) */
 const ORGS_FILE = `${ROOT}/site/img/orgs/index.json`;
 
@@ -394,9 +395,14 @@ export async function run(ctx) {
     const { scene } = firstRef(c.evidence);
     const place = placeOf.get(sceneUnit.get(scene)) ?? {};
     if (place.tick == null) warn({ where: 'orgs', msg: `${c.id}: 근거 씬 ${scene}의 공개 자리가 없다` });
-    (affsOf.get(o.person) ?? affsOf.set(o.person, []).get(o.person)).push(compact({
+    const aff = compact({
       id: c.id, org: o.org, act: o.act, role: o.role ? text(o.role, `${c.id} role`) : undefined, tick: place.tick, order: place.order, unit: sceneUnit.get(scene), confidence: c.confidence,
-    }));
+    });
+    // 사칭(W23d) — 실제 인물(a)로 적힌 소속이 가려지는 자리면 드러나기 전에는 이름표 주인(b) 쪽에 보인다: imp { rev, rev_tick, side } (화면 fmt.orgsAt)
+    const masks = masksOf({ unit: aff.unit, obj: o }, impUnits);
+    const push = (pid, x) => (affsOf.get(pid) ?? affsOf.set(pid, []).get(pid)).push(x);
+    push(o.person, masks.length ? { ...aff, imp: { rev: masks[0].rev, rev_tick: placeOf.get(masks[0].rev)?.tick, side: 'a' } } : aff);
+    for (const m of masks) push(m.b, { ...aff, imp: { rev: m.rev, rev_tick: placeOf.get(m.rev)?.tick, side: 'b' } });
   }
   // 게임 시작 로스터(affiliations.json game.launch — 사용자 확인): 호감도 단위가 없어도 출시 자리를 맨 처음(1)으로 본다
   const launch = new Set(JSON.parse(fs.readFileSync(`${ROOT}/annotations/affiliations.json`, 'utf8')).game?.launch?.resource_ids ?? []);
@@ -472,12 +478,23 @@ export async function run(ctx) {
     if (m && !m.meet) m.meet = meetList(us, units);
   }
   const unmet = [];
-  const targets = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`).map((t) => {
+  // 화면 이름(W23d) — 동명이인은 ID 구분어로(label), 드러난 뒤에도 이어지는 사칭의 이름표 주인은 드러난 뒤 다른 이름(imp_name — 화면은 rev를 읽은 뒤에만)
+  const targetRows = all(`SELECT ${TARGET_COLUMNS.join(', ')} FROM targets ORDER BY type, id`);
+  const labels = homonymLabels(targetRows);
+  const impName = new Map();
+  const unitPos = (u) => placeOf.get(u)?.order ?? undefined;
+  const nameById = new Map(targetRows.map((t) => [t.id, t.name]));
+  for (const L of impUnits) {
+    if (!continuesAfterReveal(L, (s) => sceneUnitOf.get(s) ?? null, unitPos)) continue;
+    const bName = labels.get(L.b) ?? nameById.get(L.b) ?? L.b;
+    impName.set(L.b, { name: displayNameAfter(L, bName), rev: L.revealed });
+  }
+  const targets = targetRows.map((t) => {
     const r = pick(t, TARGET_COLUMNS);
     const m = meets.get(r.id) ?? {};
     if (!m.meet) unmet.push(r.id);
     return compact({
-      id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
+      id: r.id, type: r.type, name: r.name, label: labels.get(r.id), imp_name: impName.get(r.id), kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
       same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
       orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), vers: versOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });

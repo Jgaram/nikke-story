@@ -20,7 +20,7 @@
  *   placeLabel(place)               작중 시점 표기('ch01–ch02 ~', '@랩쳐_침공') → 'CH.01–CH.02 이후', '랩쳐 침공'
  *   ref(scene)                      'CH.07 재회 · 2장면 「…」'(씬 ID · 줄 번호는 안 보인다)   evidence(ev[]) → 장면들을 ' · '로   sceneName(scene) → '2장면 「…」'(스토리 이름 없이)
  *   sceneTitle(scene) · sceneLabel(scene)   장면 제목은 그 스토리를 봤을 때만(안 봤으면 '2장면' — 사용자 2026-10-10). useReading(fn)으로 읽음 판정을 묶는다
- *   targetName(id)                  'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명)
+ *   targetName(id, R?)              'person:스노우_화이트' → '스노우 화이트'(사전에 있으면 표준명 — 화면 이름 labelAt: 동명이인 구분 · 드러난 뒤 사칭 이름표 주인, W23d)
  *   met(target, R) · nameAt(target, R) · aliasesAt(target, R) · namesAt(target, R)   그 자리에서 대상이 나왔나 · 부르는 이름(표준명이 아직이면 먼저 나온 다른 이름, 안 나왔으면 null) ·
  *                                   아는 다른 이름 · 찾기에 쓰는 이름 전부(W15b — docs/views.md "새는 곳 막기")
  *   rowAt(e, R) · recAt(r, R) · recHas(r, pid, R)   사칭(W23a · b) — 등장 행 · 기록의 그 자리 모습(드러나기 전에는 이름표 주인) · 그 모습이 그 인물을 다루나
@@ -426,7 +426,9 @@ export function orgsAt(target, t, { past = false } = {}) {
   const R = t != null && typeof t === 'object' ? t : null;
   if (R) t = R.all ? null : R.t;
   const all = t == null;
-  const affSeen = (a) => all || (R && a.unit ? R.seen(a.unit) : a.tick != null && a.tick <= t);
+  // 사칭(W23d) — 가려지는 소속(imp)은 드러나기 전에는 이름표 주인 쪽(side b), 뒤에는 실제 인물 쪽(side a)에만
+  const impOk = (a) => !a.imp || (a.imp.side === 'a') === (R ? impKnown(a.imp, R) : all || (a.imp.rev_tick != null && a.imp.rev_tick <= t));
+  const affSeen = (a) => impOk(a) && (all || (R && a.unit ? R.seen(a.unit) : a.tick != null && a.tick <= t));
   const now = new Map(); // org → 마지막 기록(이탈이면 나감) — 지난 소속은 지금 소속 계산에 안 든다
   const ago = new Map(); // org → 전 소속 기록(지난 소속 · 이탈)
   const roleOf = new Map(); // org → 마지막으로 적힌 자리(이탈한 조직의 전 소속 칩에)
@@ -603,7 +605,7 @@ const nameKnown = (target, R) => met(target, R) && (!R || R.all || (!target.name
 /** 그 자리에서 부르는 이름 — 표준명을 알면 표준명, 아니면 먼저 나온 다른 이름. 대상이 아직 안 나왔으면 null(화면은 '아직 나오지 않은 인물 · 항목') */
 export function nameAt(target, R) {
   if (!target || !met(target, R)) return null;
-  if (nameKnown(target, R)) return target.name;
+  if (nameKnown(target, R)) return labelAt(target, R);
   const known = (target.aliases ?? []).filter((a) => a.meet && aliasKnown(target, a, R)).sort((a, b) => metOrder(a) - metOrder(b));
   return known[0]?.name ?? target.name;
 }
@@ -643,7 +645,8 @@ export function aliasesAt(target, R) {
 /** 찾기 · 검색에 쓰는 이름 — 그 자리에서 아는 이름만(표준명은 알 때만) */
 export function namesAt(target, R) {
   if (!target || !met(target, R)) return [];
-  return [...new Set([nameAt(target, R), ...(target.aliases ?? []).filter((a) => aliasKnown(target, a, R)).map((a) => a.name)])];
+  // 화면 이름(labelAt — '사쿠라 (콜라보)' · '진짜 머스탱')과 함께 표준명도 — 찾기 · 아는 이름 검사는 표준명으로도 된다(W23d)
+  return [...new Set([nameAt(target, R), ...(nameKnown(target, R) ? [target.name] : []), ...(target.aliases ?? []).filter((a) => aliasKnown(target, a, R)).map((a) => a.name)])];
 }
 
 /** order.json 단위의 T 시점 등급(tools/views/importance.mjs gradeAt과 같다) — null이면 아직 안 나왔다. T가 없으면(전부 보기) 최종 등급 */
@@ -988,10 +991,21 @@ function proseOne(text) {
   return s;
 }
 
-export function targetName(id) {
+/**
+ * 표준명의 화면 이름(W23d) — 드러난 뒤에도 이어지는 사칭의 이름표 주인은 드러난 스토리(imp_name.rev)를 읽은 뒤 imp_name.name('진짜 머스탱' 등),
+ * 동명이인은 label('사쿠라 (콜라보)'), 그 밖은 표준명. 찾기 · 스포일러 검사(namesAt · unknownNameIn)는 표준명 그대로 쓴다.
+ */
+export function labelAt(target, R) {
+  if (!target) return '';
+  if (target.imp_name && impKnown(target.imp_name, R)) return target.imp_name.name;
+  return target.label ?? target.name;
+}
+
+/** 대상 ID → 화면 이름. R(state.reading 모양)을 안 주면 지금 읽은 자리(useReading) — 묶이지 않았으면(도구) 전부 보기. `.map(targetName)`의 순번은 R로 치지 않는다 */
+export function targetName(id, R) {
   if (!id) return '';
   const t = idx?.targets.get(id);
-  if (t) return t.name;
+  if (t) return labelAt(t, R && typeof R === 'object' ? R : readingOf?.());
   return String(id).replace(/^[a-z]+:/, '').replace(/_/g, ' ');
 }
 

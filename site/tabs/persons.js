@@ -1064,7 +1064,7 @@ export async function mount(root, ctx) {
     leadToggle.set(prm('lead') === '1');
     if (find.value !== (prm('find') ?? '') && document.activeElement !== find) find.value = prm('find') ?? '';
   };
-  const pickLabel = () => pickBtn.replaceChildren(el('span', { class: 'pm-pick-label muted' }, LABELS.pick), el('strong', {}, P.get(whoId())?.name ?? ''), el('span', { class: 'pm-pick-chev', 'aria-hidden': 'true' }, '▾'));
+  const pickLabel = () => pickBtn.replaceChildren(el('span', { class: 'pm-pick-label muted' }, LABELS.pick), el('strong', {}, whoId() ? nameOf(whoId()) : ''), el('span', { class: 'pm-pick-chev', 'aria-hidden': 'true' }, '▾'));
   const renderRows = () => {
     const sort = buildRows();
     renderList(sort);

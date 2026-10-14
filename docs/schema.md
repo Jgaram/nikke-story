@@ -170,7 +170,7 @@
 
 `annotations/dictionary/people.json`의 `candidates`. 칸: `id`(후보 ID `L<n>` — 리뷰 도구가 이 ID로 확정 · 기각한다, docs/annotations.md) · `type`(`same_as` 같은 인물 · `impersonates` 사칭 — a가 b의 이름표로 행세, W23a) · `a`(대상 ID, same_as는 대상 없는 이름표 `이름표:곰…?`도) · `b`(대상 ID) ·
 `status`(`후보` · `확정` · `기각`) · `confidence`(`확실` · `추정`) · `reason` · `evidence`(JSON `[{scene, lines}]` — 비면 1회독이 채운다) · `recorder`(기록자).
-사칭의 범위(`spans`) · 드러난 단위(`revealed`)는 DB에 싣지 않는다 — 기록 도구가 people.json을 바로 읽는다(docs/annotations.md "사칭 기록").
+사칭의 범위(`spans`) · 드러난 단위(`revealed`) · 드러난 뒤 화면 이름(`b_name`, W23d)은 DB에 싣지 않는다 — 기록 도구가 people.json을 바로 읽는다(docs/annotations.md "사칭 기록").
 Claude가 후보를 쓰고 확정 · 기각한다. 확정 · 기각은 `node tools/records.mjs set L3 확정`으로 적고(`reviews`에 누가 · 언제가 남는다),
 1회독 기록(사실 · 의문 · 시점 후보, `annotations/read1/`)과 같은 리뷰 도구로 본다 — 형식은 [annotations.md](annotations.md).
 

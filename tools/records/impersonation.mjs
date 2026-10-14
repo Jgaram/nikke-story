@@ -91,3 +91,50 @@ export function faceDataset(ds, ctx, order) {
   if (out !== ds) faceCache.set(out, out);
   return out;
 }
+
+/**
+ * 드러난 뒤에도 이어지는 행세인가(W23d) — 범위에 revealed보다 뒤에 읽는 단위가 있으면 그 뒤로 이야기 속 b의 이름은 a를 가리킨다(이름을 이어받은 한슨).
+ * 그러면 진짜 b는 드러난 뒤 화면에서 그 이름만으로는 a와 구분되지 않으므로 다른 화면 이름(displayNameAfter)을 붙인다. 한때의 행세(슈엔 → 시프티)는 아니다.
+ * @param {{ revealed: string|null, spans: { scene: string }[] }} L impersonations() 항목
+ * @param {(scene: string) => string|null} unitOf 씬 → 단위 키
+ * @param {(unit: string) => number|undefined} posOf 단위 → 읽는 순서
+ */
+export function continuesAfterReveal(L, unitOf, posOf) {
+  const rev = L.revealed ? posOf(L.revealed) : undefined;
+  if (rev === undefined) return false;
+  return L.spans.some((s) => {
+    const u = unitOf(s.scene);
+    const p = u ? posOf(u) : undefined;
+    return p !== undefined && p > rev;
+  });
+}
+
+/** 드러난 뒤 진짜 b의 화면 이름 — L의 b_name, 없으면 '진짜 <b 이름>'(W23d) */
+export const displayNameAfter = (L, bName) => L.b_name ?? `진짜 ${bName}`;
+
+/**
+ * 동명이인 화면 이름(W23d) — 같은 종류(type)에서 표준명이 겹치는 대상은 ID 구분어로 가른다: `person:사쿠라_콜라보` → '사쿠라 (콜라보)'.
+ * ID가 `<종류>:<이름>`인 대상은 이름 그대로. ID가 이름으로 시작하지 않으면 ID 전체를 구분어로. 겹치지 않으면 빈 Map.
+ * @param {{ id: string, type: string, name: string }[]} targets
+ * @returns {Map<string, string>} 대상 ID → 화면 이름(구분어가 붙는 것만)
+ */
+export function homonymLabels(targets) {
+  const groups = new Map();
+  for (const t of targets) {
+    if (!t?.name) continue;
+    const k = `${t.type}\u0000${t.name}`;
+    (groups.get(k) ?? groups.set(k, []).get(k)).push(t);
+  }
+  const out = new Map();
+  for (const g of groups.values()) {
+    if (g.length < 2) continue;
+    for (const t of g) {
+      const bare = String(t.id).replace(/^[a-z]+:/, '');
+      const base = t.name.replace(/ /g, '_');
+      if (bare === base) continue;
+      const tail = bare.startsWith(`${base}_`) ? bare.slice(base.length + 1) : bare;
+      out.set(t.id, `${t.name} (${tail.replace(/_/g, ' ')})`);
+    }
+  }
+  return out;
+}

@@ -438,8 +438,12 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
         if (first < Infinity && pos.get(o.revealed) < first) warn(where, c.id, `revealed ${o.revealed}가 사칭 범위의 첫 단위보다 앞이다 — 드러난 뒤의 행세면 그 단위를 적는다`);
         const evUnits = (Array.isArray(o.evidence) ? o.evidence : []).map((e) => places?.unitOf(e?.scene)).filter(Boolean);
         if (evUnits.length && !evUnits.includes(o.revealed)) warn(where, c.id, `근거(드러나는 줄)가 revealed 단위(${o.revealed}) 밖이다`);
+        // 드러난 뒤 화면 이름(W23d) — 범위가 revealed 뒤까지 이어지면 진짜 b는 드러난 뒤 b_name(없으면 '진짜 <b>')으로 보인다. 이어지지 않으면 b_name은 쓰이지 않는다
+        const continues = spanUnits.some((u) => (pos.get(u) ?? -1) > pos.get(o.revealed));
+        if (o.b_name !== undefined && !continues) warn(where, c.id, 'b_name은 행세가 드러난 뒤에도 이어지는 사칭(범위에 revealed 뒤 단위가 있는 것)에만 쓰인다');
       }
     }
+    if (o.b_name !== undefined && (!isStr(o.b_name) || !o.b_name.trim())) err(where, c.id, 'b_name은 비지 않은 문자열 — 드러난 뒤 진짜 b의 화면 이름(예: "진짜 머스탱")');
   }
 
   function checkEdge(c, where) {
@@ -724,7 +728,7 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
       unknown(o, FIELDS.link, (m) => warn(where, c.id, m));
       if (!LINK_TYPES.includes(o.type)) err(where, c.id, `type "${o.type ?? ''}" — ${LINK_TYPES.join(' · ')} 중 하나`);
       if (o.type === 'impersonates') checkImpersonation(c, where);
-      else if (o.spans !== undefined || o.revealed !== undefined) warn(where, c.id, 'spans · revealed는 사칭(type impersonates)에만 쓴다');
+      else if (o.spans !== undefined || o.revealed !== undefined || o.b_name !== undefined) warn(where, c.id, 'spans · revealed · b_name은 사칭(type impersonates)에만 쓴다');
       checkEvidence(o.evidence, where, c.id, null, null, { required: o.type === 'impersonates' });
       checkCommon(c, where);
     } else if (c.section === 'threads') {
@@ -1252,9 +1256,13 @@ export function checkDataset(ds, ctx, order = null, { order2, readLayers } = {})
   }
 
   // 사칭(W23b) — 기록이 실제 인물로 적혔는지, 드러나기 전 화면에 사칭한 인물이 새지 않는지
+  // 단위 파일 밖 기록(소속 T — W23d)은 첫 근거 씬의 단위로 본다
+  const unitOfCand = (c) => c.unit ?? (c.kind === 'affil' ? places?.unitOf(arr(c.evidence)[0]?.scene) ?? null : null);
   for (const L of impUnitsNow()) {
-    for (const c of ds.candidates) {
-      if (!c.id || !c.unit || c.status === '기각' || c.kind === 'mention' || c.people || c.links) continue;
+    for (const c0 of ds.candidates) {
+      const unit = c0.id ? unitOfCand(c0) : null;
+      if (!c0.id || !unit || c0.status === '기각' || c0.kind === 'mention' || c0.people || c0.links) continue;
+      const c = c0.unit ? c0 : { ...c0, unit };
       const ppl = peopleOf(c.obj);
       const hasA = ppl.includes(L.a);
       const where = c.file;

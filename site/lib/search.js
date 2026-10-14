@@ -74,7 +74,7 @@ export function init({ input, container, state, data, fmt, ui }) {
   };
 
   /** 대상의 찾는 말 — 그 자리에서 아는 이름 · 다른 이름(fmt.namesAt), 표준명을 알 때만 ID까지 */
-  const nameKeys = (t, R) => [...fmt.namesAt(t, R).map(norm), fmt.nameAt(t, R) === t.name ? norm(t.id) : null];
+  const nameKeys = (t, R) => [...fmt.namesAt(t, R).map(norm), fmt.nameAt(t, R) === fmt.labelAt(t, R) ? norm(t.id) : null];
 
   const search = (q) => {
     const n = norm(q);

@@ -168,17 +168,20 @@
     },
     {
       "id": "T6",
-      "person": "person:머스탱",
+      "person": "person:한슨",
       "org": "org:테트라",
       "act": "소속",
       "role": "CEO",
       "evidence": [{ "scene": "d_main_04af_08", "lines": ["14-16"] }],
-      "reason": "'테트라 라인의 C! E! O!' 하며 자기 이름을 댄다(#15-16)",
+      "reason": "'테트라 라인의 C! E! O!' 하며 자기 이름을 댄다(#15-16) — CH.04의 머스탱은 머스탱으로 사는 한슨(사칭 L33, 이 씬은 범위 전체)이라 실제 인물로 적는다. 드러나기 전 화면은 머스탱으로 보인다",
       "confidence": "확실",
       "status": "확정",
       "by": "claude",
       "session": "W12b",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12b", "note": "근거 줄에서 조직 이름 · 자리를 직접 확인(W12b 검토)" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-10", "session": "W12b", "note": "근거 줄에서 조직 이름 · 자리를 직접 확인(W12b 검토)" },
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "person 머스탱 → 한슨 — 근거가 L33 범위 안(W23b 바로잡기에서 소속만 빠졌다). 진짜 머스탱의 CEO는 T140 · 끝은 T141" }
+      ]
     },
     {
       "id": "T7",
@@ -2093,6 +2096,35 @@
           "note": "2세대는 인류연합군 · V.T.C.가 만든 것(제작 주체) — 소속을 말하지 않고 소유를 다툼(U239). 모호해 기각"
         }
       ]
+    },
+    {
+      "id": "T140",
+      "person": "person:머스탱",
+      "org": "org:테트라",
+      "act": "소속",
+      "role": "CEO",
+      "evidence": [{ "scene": "side:pretty_star_05", "lines": [9] }],
+      "reason": "프리티 시절 회상의 서술 '테트라 라인의 CEO 머스탱'(#9) — PRETTY STAR 01–13은 진짜 머스탱(L33 범위 밖)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W23d",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "근거 줄에서 조직 · 자리 확인, 이 줄이 L33 범위 밖(진짜 머스탱)인 것 확인" }]
+    },
+    {
+      "id": "T141",
+      "person": "person:머스탱",
+      "org": "org:테트라",
+      "act": "이탈",
+      "role": "CEO",
+      "records": ["F2700", "F2701"],
+      "evidence": [{ "scene": "event_staranis2_05_s", "lines": ["40-44", 104] }],
+      "reason": "에닉이 '현존하는 머스탱'을 죽이고 아들 한슨이 머스탱이 되는 것으로 정리하고(#43-44), 한슨이 '당신의 회사를 이어받는다'(#104) — 그 뒤 테트라 CEO 머스탱은 한슨이다(F2701 · T39)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "W23d",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W23d", "note": "근거 줄에서 CEO 자리가 아들에게 넘어가는 것 확인 — 아버지의 죽음 자체는 직접 나오지 않아 '자리를 넘김'으로" }]
     }
   ]
 }
