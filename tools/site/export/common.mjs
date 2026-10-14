@@ -417,6 +417,32 @@ export async function run(ctx) {
       }
     }
   }
+  // 실장판(W22 — docs/views.md "실장판") — 니케 목록 한 행 = 한 판. 이름 · 등급 · 게임 기업 · 스쿼드 · 출시일 · 지휘관 호칭(확정 호칭 기록 A — annotations/addresses.json)
+  // 판이 보이는 자리(tick) = 게임 소속의 공개 자리 ①과 같다: 그 판의 호감도 단위(char:<rid>) 자리, 게임 시작 로스터는 1, 둘 다 없으면 칸을 비운다(전부 보기에서만)
+  // 게임이 플레이어 이름으로 바꿔 넣는 자리(@UserName — 호칭 기록은 원문 그대로)는 화면에 '(지휘관 이름)'으로
+  const userName = (x) => (typeof x === 'string' ? x.replace(/@UserName/g, '(지휘관 이름)') : x);
+  const addrOf = new Map();
+  for (const c of (ctx.records.confirmed ?? []).filter((x) => x.kind === 'addr')) addrOf.set(c.obj?.rid, c.obj);
+  const releaseOf = new Map(all("SELECT category_id c, MIN(release_date) d FROM stories WHERE category_id LIKE 'char:%' AND release_date IS NOT NULL GROUP BY category_id").map((r) => [r.c, r.d]));
+  const versOf = new Map();
+  const orgName = new Map(all("SELECT id, name FROM targets WHERE type = 'org'").map((t) => [t.id, t.name]));
+  for (const c of all('SELECT resource_id, name, rarity, target_id FROM characters WHERE target_id IS NOT NULL ORDER BY resource_id')) {
+    const [corp, squad] = marks?.chars?.[String(c.resource_id)] ?? [];
+    const cm = corp ? marks.corporations[corp] : null;
+    const sm = squad ? marks.squads[squad] : null;
+    const a = addrOf.get(c.resource_id);
+    const tick = placeOf.get(`char:${c.resource_id}`)?.tick ?? (launch.has(c.resource_id) ? 1 : undefined);
+    (versOf.get(c.target_id) ?? versOf.set(c.target_id, []).get(c.target_id)).push(compact({
+      rid: c.resource_id, name: c.name, rare: c.rarity ?? undefined,
+      corp: cm ? compact({ name: cm.name, mark: cm.icon, org: cm.org ?? undefined }) : undefined,
+      // 게임 이름이 '-'인 스쿼드(777)는 사전 이름으로
+      squad: sm ? compact({ name: sm.name === '-' ? orgName.get(sm.org) ?? sm.name : sm.name, mark: sm.icon, org: sm.org ?? undefined }) : undefined,
+      date: releaseOf.get(`char:${c.resource_id}`), launch: launch.has(c.resource_id) ? 1 : undefined, tick,
+      addr: a ? userName(text(a.address, `${c.resource_id} address`)) : undefined, also: a?.also?.length ? a.also.map((x) => userName(text(x, `${c.resource_id} also`))) : undefined,
+    }));
+  }
+  // 판 차례 = 출시 순(게임 시작 로스터 → 날짜 → rid)
+  for (const l of versOf.values()) l.sort((x, y) => (x.launch ? 0 : 1) - (y.launch ? 0 : 1) || String(x.date ?? '9').localeCompare(String(y.date ?? '9')) || x.rid - y.rid);
   // 같은 인물(정체 연결)의 다른 이름 — 소속 기록은 대표 ID 하나에만 적는다(docs/annotations.md "소속 기록"). 기록도 게임 소속도 없는 이름(레비 ↔ 레비아탄)은
   // 대표의 기록을 빌려 보이되, 정체가 밝혀지는 단위(same_as_unit)보다 앞서 보이지 않게 그 자리로 늦춘다(from = 기록을 적은 이름). 게임 소속이 있는 판(모더니아)은 게임 데이터 그대로
   for (const [id, others] of sameAs) {
@@ -446,7 +472,7 @@ export async function run(ctx) {
     return compact({
       id: r.id, type: r.type, name: r.name, kind: r.kind, note: text(r.note, `${r.id} note`), aliases: m.aliases ?? names.get(r.id), meet: m.meet, name_meet: m.name_meet, name_never: m.name_never,
       same_as: sameAs.get(r.id), same_as_unit: sameAsUnit.get(r.id), lines: r.lines_in_scope || undefined, stories: r.stories_in_scope || undefined, icon: icons[r.id], icons: iconForms.get(r.id),
-      orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
+      orgs: gameOrgs.get(r.id), affs: affsOf.get(r.id), vers: versOf.get(r.id), mark: r.type === 'org' ? markOfOrg.get(r.id) : undefined,
     });
   });
   if (unmet.length) warn({ where: 'meet', msg: `이름이 쓰인 스토리가 없는 대상 ${unmet.length}(${unmet.slice(0, 8).join(' · ')}${unmet.length > 8 ? ' …' : ''}) — 읽는 중에는 '아직 나오지 않음', 전부 보기에서만` });

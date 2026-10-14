@@ -22,7 +22,9 @@ import { toCsv } from './draft.mjs';
 import { MENTIONS_DIR } from './mentions.mjs';
 import { isAprilFools } from '../lib/fools.mjs';
 
-export const ADDRESS = ['지휘관님', '지휘관', '주인님', '마스터', '오빠', '오라버니', '선배님', '선배', '형님', '아저씨', '선생님', '쌤', '보스', '여보', '당신'];
+// W22에 넓힘(스승님 · 점장님 · 왕자님 …) — 실장판 호칭 후보(addresses.mjs)도 이 목록 + '…님'을 센다
+export const ADDRESS = ['지휘관님', '지휘관', '주인님', '마스터', '오빠', '오라버니', '선배님', '선배', '형님', '아저씨', '선생님', '쌤', '보스', '여보', '당신',
+  '스승님', '점장님', '왕자님', '사장님', '대장님', '도련님', '주군', '달링', '허니', '오너', '매니저님', '동생'];
 export const MIN_SENTENCES = 8;
 export const SHIFT = 0.5;
 export const MIN_ADDRESS = 3;

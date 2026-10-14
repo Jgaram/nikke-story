@@ -253,6 +253,17 @@ async function main() {
     rarity: n.original_rare ?? null,
   }));
   const charByRid = new Map(characters.map((c) => [c.resourceId, c]));
+  // 음성 대사(W22) — roledata `character_dialog_group_list`. 판(resource_id)마다 로비 · 호감도 · 전투 대사. 지휘관 호칭의 근거로 speech_id를 인용한다
+  const voices = [];
+  for (const c of characters) {
+    const j = await readJsonMaybe(`roledata/${c.resourceId}-v2-${LANG}.json`);
+    for (const d of j?.character_dialog_group_list ?? []) {
+      if (!d?.speech_id || typeof d.speech_localkey !== 'string') continue;
+      voices.push({ resourceId: c.resourceId, speechId: d.speech_id, order: d.order ?? 0, kind: d.voice_description ?? null,
+        level: d.condition_attractive_level ?? null, text: d.speech_localkey });
+    }
+  }
+  console.log(`  음성 대사 ${voices.length.toLocaleString('ko-KR')}줄 (판 ${new Set(voices.map((v) => v.resourceId)).size})`);
   const charByCode = new Map();
   for (const c of characters) if (!charByCode.has(c.nameCode)) charByCode.set(c.nameCode, c);
 
@@ -655,6 +666,7 @@ async function main() {
   await write('categories.json', categories);
   await write('stories.json', stories);
   await write('characters.json', characters);
+  await write('voices.json', voices);
   await write('favorites.json', favorites);
   await write('edges.json', edges);
   await write('sheet-rows.json', sheetOut);

@@ -110,6 +110,17 @@ CREATE TABLE characters (
 );
 CREATE INDEX idx_characters_name ON characters(name);
 
+-- 음성 대사(W22) — roledata character_dialog_group_list. 지휘관 호칭(annotations/addresses.json)의 근거 speech_id
+CREATE TABLE character_voices (
+  speech_id     TEXT,               -- c010_Lobby_Touch_2 — 판마다 하나(같은 대사를 두 판이 쓰면 두 줄)
+  resource_id   INTEGER,
+  ord           INTEGER,            -- 게임 안 순서(order)
+  kind          TEXT,               -- voice_description (로비 터치 I · 호감도 대사 …)
+  level         INTEGER,            -- condition_attractive_level — 그 호감도 단계부터 들린다
+  text          TEXT,
+  PRIMARY KEY (resource_id, speech_id)
+) WITHOUT ROWID;
+
 -- 대상 사전 (A1 인물 · A2 비인물). ID는 <종류>:<표준명> — docs/schema.md "대상 ID"
 CREATE TABLE targets (
   id            TEXT PRIMARY KEY,   -- person:라피 · place:… (공백은 _)
@@ -299,6 +310,11 @@ async function main() {
   bulk('characters', characters,
     insert('characters', ['resource_id','name','name_code','corporation','class','rarity','target_id']),
     (c) => [c.resourceId, n(c.name), n(c.nameCode), n(c.corporation), n(c.klass), n(c.rarity), n(c.targetId)]);
+
+  const voices = (await loadMaybe('voices.json')) ?? [];
+  bulk('character_voices', voices,
+    insert('character_voices', ['speech_id','resource_id','ord','kind','level','text']),
+    (v) => [v.speechId, v.resourceId, v.order ?? 0, n(v.kind), n(v.level), v.text]);
 
   const targets = (await loadMaybe('targets.json')) ?? [];
   bulk('targets', targets,

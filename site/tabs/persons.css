@@ -237,3 +237,22 @@
   .tab-persons .pm-dex-blocks { gap: 10px 16px; }
   .tab-persons .pm-dex-card { width: 72px; }
 }
+
+/* 실장판(W22) — 상세 머리 아래 표, 도감 칸의 판 수 */
+.tab-persons .pm-vers { margin: 12px 0 0; }
+.tab-persons .pm-vers-head { display: flex; align-items: baseline; gap: 8px; margin: 0 0 6px; font-size: var(--fs-small); font-weight: 600; color: var(--ink-muted); }
+.tab-persons .pm-vers-table { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.45; }
+.tab-persons .pm-vers-table th, .tab-persons .pm-vers-table td { padding: 4px 8px 4px 0; text-align: left; vertical-align: baseline; border-bottom: 1px solid var(--line); }
+.tab-persons .pm-vers-table thead th { font-size: 12px; font-weight: 500; color: var(--ink-muted); white-space: nowrap; }
+.tab-persons .pm-vers-table tbody th { font-weight: 600; }
+.tab-persons .pm-ver-org { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.tab-persons .pm-dex-vers { position: absolute; top: 4px; left: 4px; padding: 0 4px; font-size: 10.5px; line-height: 1.5; color: var(--ink-muted); background: var(--surface-2); border-radius: 6px; }
+@media (max-width: 640px) {
+  .tab-persons .pm-vers-table thead { display: none; }
+  .tab-persons .pm-vers-table, .tab-persons .pm-vers-table tbody, .tab-persons .pm-vers-table tr { display: block; }
+  .tab-persons .pm-vers-table tr { padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .tab-persons .pm-vers-table th, .tab-persons .pm-vers-table td { display: inline; padding: 0; border: 0; }
+  .tab-persons .pm-vers-table tbody th { display: block; }
+  .tab-persons .pm-vers-table td:not(:empty)::before { content: attr(data-l) ' '; font-size: 12px; color: var(--ink-muted); }
+  .tab-persons .pm-vers-table td:not(:empty) { margin-right: 10px; white-space: nowrap; }
+}
