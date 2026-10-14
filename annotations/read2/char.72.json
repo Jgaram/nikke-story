@@ -47,11 +47,21 @@
       "id": "I497",
       "target": "person:디젤의_동생",
       "speaker": true,
-      "evidence": [{ "scene": "ep:d_nikke_diesel_05", "lines": ["1-5", "7-8", "10-13", "15-17"] }],
+      "evidence": [{ "scene": "ep:d_nikke_diesel_05", "lines": ["1-5", "7-8", 10, "12-13", "15-17"] }],
       "reason": "이름표 '어린 아이' — 테러 직전 열차에서 디젤을 '누나'라 부르며 그날의 계획을 말하는 동생(S38 회상)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" }]
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M53" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-14",
+          "session": "W23c",
+          "note": "W23c: 근거에 디젤 이름표 줄 #11이 섞여 있었다 — 뺐다(이름표 ≠ 암시 언급 인물 점검)",
+          "before": "근거 ep:d_nikke_diesel_05#1-5,7-8,10-13,15-17"
+        }
+      ]
     }
   ],
   "echoes": [

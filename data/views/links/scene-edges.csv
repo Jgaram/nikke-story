@@ -2921,7 +2921,7 @@ keyword,auto,2,event_lionheart_06_s,83,ep:d_nikke_leona_01,19,event_lionheart,ch
 keyword,auto,1,event_lionheart_epilogue,47,ep:d_nikke_leona_02,40,event_lionheart,char:382,263,264,,,,place:지상,129,이름 24줄,이름 12줄,,,흔한 대상
 character,auto,2,event_lionheart_epilogue,47,event_dirtybackyard_06_e,1,event_lionheart,event_dirtybackyard,263,265,,,,person:머스탱,27,기록 4 · 말함 56줄(5%) · 이름 3줄,기록 2 · 이름 3줄,,,
 character,auto,2,event_lionheart_06_e,88,event_secretgarden_01_s,21,event_lionheart,event_secretgarden,263,345,,,,person:비스킷,5,기록 1 · 말함 238줄(23%) · 이름 23줄,기록 3 · 말함 278줄(26%) · 이름 26줄,,,
-character,auto,2,event_lionheart_epilogue,17,event_icedragonsaga1_prologue,14,event_lionheart,event_icedragonsaga1,263,347,,,,person:길로틴,6,기록 3 · 말함 59줄(6%) · 이름 26줄,기록 25 · 말함 902줄(36%) · 이름 205줄,,,
+character,auto,2,event_lionheart_epilogue,17,event_icedragonsaga1_prologue,14,event_lionheart,event_icedragonsaga1,263,347,,,,person:길로틴,6,기록 3 · 말함 59줄(6%) · 이름 26줄,기록 25 · 말함 902줄(37%) · 이름 205줄,,,
 prereq,game-condition,3,ep:d_nikke_leona_01,,ep:d_nikke_leona_02,,char:382,char:382,264,264,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_leona_02,,ep:d_nikke_leona_03,,char:382,char:382,264,264,,,,,,,,,,condition_scenario_group_id
 prereq,game-condition,3,ep:d_nikke_leona_03,,ep:d_nikke_leona_04,,char:382,char:382,264,264,,,,,,,,,,condition_scenario_group_id
@@ -4067,7 +4067,7 @@ setup_payoff,record,3,event_icedragonsaga2_03_e,,event_icedragonsaga2_05_s,,even
 setup_payoff,record,3,event_icedragonsaga2_03_s,,event_icedragonsaga2_epilogue,,event_icedragonsaga1,event_icedragonsaga1,347,347,E1411,암시,F1736,,,,,확실,확정,
 setup_payoff,record,2,event_icedragonsaga1_02_e,,event_icedragonsaga2_05_s,,event_icedragonsaga1,event_icedragonsaga1,347,347,E1414,암시,F1733,,,,,추정,확정,
 character,auto,2,event_icedragonsaga2_epilogue,82,ep:d_nikke_maiden_icerose_01,8,event_icedragonsaga1,char:183,347,348,,,,person:메이든,6,기록 16 · 말함 576줄(23%) · 이름 129줄,말함 205줄(59%) · 이름 9줄,,,
-character,auto,2,event_icedragonsaga2_epilogue,68,ep:d_nikke_guillotine_winterslayer_01,4,event_icedragonsaga1,char:182,347,349,,,,person:길로틴,6,기록 25 · 말함 902줄(36%) · 이름 205줄,기록 2 · 말함 169줄(47%) · 이름 26줄,,,
+character,auto,2,event_icedragonsaga2_epilogue,68,ep:d_nikke_guillotine_winterslayer_01,4,event_icedragonsaga1,char:182,347,349,,,,person:길로틴,6,기록 25 · 말함 902줄(37%) · 이름 205줄,기록 2 · 말함 169줄(47%) · 이름 26줄,,,
 character,auto,2,event_icedragonsaga2_epilogue,14,event_footstepwalkrun2_06_s,21,event_icedragonsaga1,event_footstepwalkrun1,347,350,,,,person:잉그리드,37,기록 13 · 말함 196줄(8%) · 이름 19줄,기록 4 · 말함 119줄(6%) · 이름 1줄,,,
 keyword,auto,1,event_icedragonsaga2_05_e,71,event_footstepwalkrun1_01_s,6,event_icedragonsaga1,event_footstepwalkrun1,347,350,,,,concept:니케,185,이름 29줄,기록 4 · 이름 78줄,,,흔한 대상
 keyword,auto,1,event_icedragonsaga2_06_e,6,event_footstepwalkrun1_01_s,1,event_icedragonsaga1,event_footstepwalkrun1,347,350,,,,concept:랩쳐,140,이름 15줄,기록 1 · 이름 43줄,,,흔한 대상
@@ -5885,7 +5885,7 @@ keyword,auto,2,d_main_46_af_07,94,relic:궤도엘리베이터음모론_01,1,ch46
 keyword,auto,2,d_main_46_af_10,13,relic:궤도엘리베이터음모론_01,1,ch46,relic:궤도엘리베이터음모론,452,453,,,,org:미실리스,32,기록 2 · 이름 3줄,기록 3 · 이름 3줄,,,
 keyword,auto,2,d_main_46_06,98,relic:궤도엘리베이터음모론_00,1,ch46,relic:궤도엘리베이터음모론,452,453,,,,place:궤도_엘리베이터,11,기록 6 · 이름 14줄,기록 7 · 이름 9줄,,,
 character,auto,2,d_main_46_af_08,129,event_staranis1_prologue,38,ch46,event_staranis1,452,454,,,,person:머스탱,27,기록 2 · 말함 21줄(1%) · 이름 1줄,기록 34 · 말함 569줄(17%) · 이름 72줄,,,
-character,auto,1,d_main_46_af_10,61,event_staranis1_prologue,1,ch46,event_staranis1,452,454,,,,person:아니스,119,기록 3 · 말함 42줄(2%) · 이름 18줄,기록 57 · 말함 908줄(27%) · 이름 226줄,,,흔한 대상
+character,auto,1,d_main_46_af_10,61,event_staranis1_prologue,1,ch46,event_staranis1,452,454,,,,person:아니스,119,기록 3 · 말함 42줄(2%) · 이름 18줄,기록 57 · 말함 908줄(28%) · 이름 226줄,,,흔한 대상
 character,auto,2,d_main_46_af_08,99,event_staranis2_03_s,8,ch46,event_staranis1,452,454,,,,person:에닉,22,기록 4 · 말함 23줄(1%) · 이름 4줄,기록 3 · 말함 22줄(1%) · 이름 5줄,,,
 keyword,auto,1,d_main_46_af_10,52,event_staranis1_01_s,107,ch46,event_staranis1,452,454,,,,concept:니케,185,이름 67줄,기록 2 · 이름 43줄,,,흔한 대상
 keyword,auto,2,d_main_46_af_10,12,event_staranis1_prologue,1,ch46,event_staranis1,452,454,,,,org:T.T.STAR,8,기록 2,기록 21 · 이름 1줄,,,
@@ -5982,7 +5982,7 @@ callback,record,3,event_staranis1_03_s,,event_staranis2_03_s,,event_staranis1,ev
 callback,record,3,event_staranis1_05_e,,event_staranis2_04_e,,event_staranis1,event_staranis1,454,454,E1160,재언급,F2895,,,,,확실,확정,
 callback,record,3,event_staranis2_01_e,,event_staranis2_05_s,,event_staranis1,event_staranis1,454,454,E1162,재언급,F2689,,,,,확실,확정,
 callback,record,3,event_staranis2_02_s,,event_staranis2_05_e,,event_staranis1,event_staranis1,454,454,E1164,재언급,F2690,,,,,확실,확정,
-character,auto,1,event_staranis2_epilogue,102,ep:d_nikke_anis_star_01,0,event_staranis1,char:17,454,455,,,,person:아니스,119,기록 57 · 말함 908줄(27%) · 이름 226줄,기록 7 · 말함 279줄(100%) · 이름 60줄,,,흔한 대상
+character,auto,1,event_staranis2_epilogue,102,ep:d_nikke_anis_star_01,0,event_staranis1,char:17,454,455,,,,person:아니스,119,기록 57 · 말함 908줄(28%) · 이름 226줄,기록 7 · 말함 279줄(100%) · 이름 60줄,,,흔한 대상
 keyword,auto,1,event_staranis2_epilogue,85,ep:d_nikke_anis_star_01,25,event_staranis1,char:17,454,455,,,,place:방주,170,기록 8 · 이름 43줄,기록 1 · 이름 11줄,,,흔한 대상
 character,auto,2,event_staranis2_epilogue,46,ep:d_nikke_avistar_01,4,event_staranis1,char:441,454,456,,,,person:아비스타,6,기록 3 · 말함 11줄(0%) · 이름 5줄,기록 3 · 말함 176줄(74%) · 이름 22줄,,,
 keyword,auto,1,event_staranis2_05_e,104,ep:d_nikke_avistar_02,53,event_staranis1,char:441,454,456,,,,concept:니케,185,기록 2 · 이름 43줄,이름 5줄,,,흔한 대상

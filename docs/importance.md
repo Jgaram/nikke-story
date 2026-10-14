@@ -190,6 +190,8 @@
 | 주요 인물 명단(3a — 점수 · from · 끊는 선 · 변형) | [data/views/importance/majors.md](../data/views/importance/majors.md) · `node tools/records.mjs review "주요 인물" --status 전부 --brief` |
 | 척추 목록 · 선정 계산 | `node tools/records.mjs review 척추 --brief` · [data/views/importance/spine.md](../data/views/importance/spine.md) |
 
+사칭(people.json impersonates — 지금의 머스탱 = 한슨 등)은 **이름표 주인으로** 센다: 기록은 실제 인물로 적혀 있어도 주요 인물 · 주역 · 마무리 · 판정 시안 계산은 드러나기 전 모습으로 본다(W23c — docs/annotations.md "계산은 이름표 주인으로").
+
 이 단위와 척추의 기록 파일(`annotations/read1/<키>.json` · `annotations/read2/<키>.json` — 2회독 E가 가리키는 기록 `points`는 여기)은 직접 봐도 된다. `annotations/layers.json`의 판정 줄은 옛 판정이다.
 
 안 보는 것: **원문**(`read.mjs` — 판정은 기록으로) · **외부 참고 표**(`data/raw/imported/` · DB `sheet_*` · `sheet_rows` · `--sheet` — CLAUDE.md "외부 참고 표", 매우 중요) ·

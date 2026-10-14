@@ -39,7 +39,7 @@ person:토커티브,person,토커티브,53,10,3,10,17,ch03,10,event_goddessfall1
 org:포비스트,org,포비스트,56,5,1,10,24,ch31,308,ch48,472,ch31,0
 person:니힐리스타,person,니힐리스타,56,5,1,9,16,ch07,31,event_goddessfall1,418,ch07,0
 org:엘리시온,org,엘리시온,54,5,4,6,35,ch01,2,fl:ark_ranger,462,,0
-person:식스오,person,식스오,53,6,3,10,10,event_dirtybackyard,265,fl:ark_ranger,462,event_dirtybackyard,0
+person:식스오,person,식스오,53,6,3,10,10,event_dirtybackyard,265,fl:ark_ranger,462,event_dirtybackyard,1
 person:버닝엄,person,버닝엄,56,2,2,1,25,sub:세르반_03,65,ch48,472,sub:세르반_03,0
 person:베히모스,person,베히모스,53,5,2,5,23,ch31,308,ch47,470,ch31,0
 person:리버렐리오,person,리버렐리오,51,5,1,11,15,ch20,164,ch48,472,ch20,0
@@ -367,7 +367,7 @@ person:방주_난민,person,방주 난민,5,0,0,0,4,sub:방주_난민_00,74,sub:
 person:시그널,person,시그널,5,0,0,0,4,char:20,90,fl:terminus_ticket,425,,0
 person:에이다,person,에이다,5,0,0,0,2,fl:reborn_evil,407,char:840,408,fl:reborn_evil,0
 person:율리아,person,율리아,5,0,0,0,4,sub:음악_애호가_00,54,fl:terminus_ticket,425,,1
-person:잉크,person,잉크,5,0,0,0,4,ch25,241,ch44,436,,0
+person:잉크,person,잉크,5,0,0,0,4,ch25,241,ch44,436,,1
 person:카밀라,person,카밀라,5,0,0,0,1,event_killthelord,282,event_killthelord,282,event_killthelord,0
 person:콜렉터,person,콜렉터,5,0,0,0,4,sub:콜렉터_00,7,sub:콜렉터_02,216,sub:콜렉터_00,0
 person:타키나,person,타키나,5,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
@@ -402,7 +402,7 @@ person:웬디,person,웬디,4,0,0,1,2,event_footstepwalkrun1,350,side:pretty_sta
 person:조셉,person,조셉,3,1,1,0,1,event_doutsiders,169,event_doutsiders,169,event_doutsiders,0
 person:쿠루미,person,쿠루미,4,0,0,0,1,fl:lie_cause_recoil,438,fl:lie_cause_recoil,438,fl:lie_cause_recoil,0
 person:클레어,person,클레어,4,0,0,0,2,fl:reborn_evil,407,char:842,409,fl:reborn_evil,0
-person:클로이,person,클로이,4,0,0,0,1,event_icedragonsaga1,347,event_icedragonsaga1,347,event_icedragonsaga1,0
+person:클로이,person,클로이,4,0,0,0,1,event_icedragonsaga1,347,event_icedragonsaga1,347,event_icedragonsaga1,1
 person:트리세라,person,트리세라,4,0,0,0,1,event_schooloflock,234,event_schooloflock,234,,0
 person:티미,person,티미,4,0,0,0,2,event_lionheart,263,char:382,264,,0
 place:Sweets_&_Cocoa,place,Sweets & Cocoa,4,0,0,0,2,event_maidinvalentine,175,event_romanticvalentine,355,event_maidinvalentine,0
@@ -460,7 +460,7 @@ org:스컬_헤드,org,스컬 헤드,2,0,0,0,1,event_footstepwalkrun1,350,event_f
 org:정보부,org,정보부,2,0,0,0,2,ch01,2,sub:중앙_정부_공식__00,21,ch01,0
 org:프로토콜,org,프로토콜,2,0,0,0,2,sub:든_셀_00,62,sub:중앙정부_프로토콜_00,222,,0
 org:프리마돈나,org,프리마돈나,2,0,0,0,1,event_goldencoinrush1,300,event_goldencoinrush1,300,event_goldencoinrush1,0
-person:#000000,person,#000000,2,0,0,0,1,ch41,414,ch41,414,,0
+person:#000000,person,#000000,2,0,0,0,1,ch41,414,ch41,414,,1
 person:라라,person,라라,2,0,0,0,1,fl:project_matis,467,fl:project_matis,467,fl:project_matis,0
 person:레오,person,레오,2,0,0,0,1,fl:good_world,448,fl:good_world,448,fl:good_world,0
 person:레이,person,레이,1,1,1,0,2,char:833,321,char:831,323,,0

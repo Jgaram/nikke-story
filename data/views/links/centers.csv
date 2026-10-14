@@ -2292,11 +2292,11 @@ event_icedragonsaga1,347,concept:이레귤러,concept,4,0,,32,3,기록+이름
 event_icedragonsaga1,347,item:백빙룡_대서사시,item,4,0,,4,1,기록
 event_icedragonsaga1,347,org:익스터너,org,4,0,,20,5,기록+이름
 event_icedragonsaga1,347,org:중앙_정부,org,1,0,,18,66,이름
-event_icedragonsaga1,347,person:길로틴,person,25,902,36,205,6,기록+말함
+event_icedragonsaga1,347,person:길로틴,person,25,902,37,205,6,기록+말함
 event_icedragonsaga1,347,person:메이든,person,16,576,23,129,6,기록+말함
 event_icedragonsaga1,347,person:일레그,person,2,0,0,12,14,기록
 event_icedragonsaga1,347,person:잉그리드,person,13,196,8,19,37,기록
-event_icedragonsaga1,347,person:잉크,person,6,114,5,6,1,기록
+event_icedragonsaga1,347,person:잉크,person,6,78,3,6,1,기록
 event_icedragonsaga1,347,person:클로이,person,8,178,7,31,1,기록
 event_icedragonsaga1,347,person:트로니,person,2,0,0,12,11,기록
 event_icedragonsaga1,347,place:방주,place,0,0,,17,170,이름
@@ -3500,11 +3500,11 @@ event_staranis1,454,org:중앙_정부,org,4,0,,14,66,기록+이름
 event_staranis1,454,org:테트라,org,17,0,,113,13,기록+이름
 event_staranis1,454,person:ELYSION_Line._0,person,3,49,1,0,1,기록
 event_staranis1,454,person:MISSILIS_Line._0,person,3,36,1,0,1,기록
-event_staranis1,454,person:리스,person,20,254,8,48,1,기록
+event_staranis1,454,person:리스,person,20,252,8,48,1,기록
 event_staranis1,454,person:머스탱,person,34,569,17,72,27,기록+말함
 event_staranis1,454,person:미세스_미스,person,5,60,2,4,5,기록
 event_staranis1,454,person:민트,person,14,358,11,50,6,기록+말함
-event_staranis1,454,person:아니스,person,57,908,27,226,119,기록+말함
+event_staranis1,454,person:아니스,person,57,908,28,226,119,기록+말함
 event_staranis1,454,person:아비스타,person,3,11,0,5,6,기록
 event_staranis1,454,person:에닉,person,3,22,1,5,22,기록
 event_staranis1,454,person:요요,person,28,205,6,83,1,기록

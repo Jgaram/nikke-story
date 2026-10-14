@@ -50,8 +50,11 @@
       "evidence": [{ "scene": "event_icedragonsaga1_04_e", "lines": ["69-70", 80, 89] }],
       "reason": "촌장 이름표(코드 chloe_v → 클로이)지만 2_06_e#65-69에서 촌장이 클로이 모습을 한 잉크였다고 밝힌다(F1735).",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-14", "session": "W23c", "note": "W23c: 사칭 L34(잉크 → 클로이, ICE DRAGON SAGA 촌장) 범위가 같은 줄을 잉크에 옮겨 센다" }
+      ]
     },
     {
       "id": "I562",
@@ -60,8 +63,11 @@
       "evidence": [{ "scene": "event_icedragonsaga1_05_e", "lines": ["12-18"] }],
       "reason": "촌장 = 클로이 모습의 잉크(2_06_e#65-69, F1735).",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-14", "session": "W23c", "note": "W23c: 사칭 L34(잉크 → 클로이, ICE DRAGON SAGA 촌장) 범위가 같은 줄을 잉크에 옮겨 센다" }
+      ]
     },
     {
       "id": "I563",
@@ -70,8 +76,11 @@
       "evidence": [{ "scene": "event_icedragonsaga2_02_s", "lines": [96, "101-115", "121-129"] }],
       "reason": "촌장 = 클로이 모습의 잉크(2_06_e#65-69, F1735). '클로이가 납득할 결말'을 아는 것도 그래서다.",
       "confidence": "확실",
-      "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" }]
+      "status": "기각",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-08", "session": "M67" },
+        { "decision": "기각", "by": "claude", "date": "2026-10-14", "session": "W23c", "note": "W23c: 사칭 L34(잉크 → 클로이, ICE DRAGON SAGA 촌장) 범위가 같은 줄을 잉크에 옮겨 센다" }
+      ]
     },
     {
       "id": "I564",

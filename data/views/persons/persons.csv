@@ -122,7 +122,7 @@ person:크러스트,크러스트,,6,48,8,1458,1305,153,0,0,300,75,event_goldenco
 person:레드_슈즈,레드 슈즈,,9,46,10,619,485,134,26,4,338,91,event_oldtales1,event_oldtales1_prologue,event_oldtales1,472,154,ch48,3,30,0,0,0,0,0,2,17,0,J6 J12 J20,4,4,관계 1 · 신체 2 · 신념 1,2,0,,,,,0
 person:헨젤,헨젤,,8,46,13,364,279,85,22,4,239,53,event_freezeacpu,event_freezeacpu_06_e,event_oldtales1,464,149,fl:wave_to_you,2,23,1,0,1,0,0,5,4,0,J12,2,3,관계 3,5,0,,,,,0
 person:그레텔,그레텔,,8,45,13,207,24,183,22,4,239,53,event_freezeacpu,event_freezeacpu_06_e,event_oldtales1,464,149,fl:wave_to_you,2,23,1,0,1,0,0,5,3,0,J12,0,0,,5,0,,,,,0
-person:식스오,식스오,,9,44,12,304,71,233,26,4,265,62,event_dirtybackyard,event_dirtybackyard_04_s,ch41,462,148,fl:ark_ranger,3,53,6,3,1,2,0,10,10,0,J8 J16 J17 J18,0,0,,3,0,,,,,0
+person:식스오,식스오,,9,44,12,304,71,233,26,4,265,62,event_dirtybackyard,event_dirtybackyard_04_s,ch41,462,148,fl:ark_ranger,3,53,6,3,1,2,0,10,10,0,J8 J16 J17 J18,0,0,,3,0,,,person:#000000,,0
 person:랩칠리언,랩칠리언,,11,44,19,749,632,117,31,10,13,4,sub:랩칠리언_00,sub:랩칠리언_00,sub:랩칠리언_00,464,149,fl:wave_to_you,3,28,3,1,1,1,0,3,8,2,J26,3,4,관계 2 · 신념 2,3,0,O31 O135,,,,0
 person:아비스타,아비스타,,6,44,15,678,586,92,0,0,360,102,ch36,d_main_36_08_s,ch36,461,147,char:601,3,17,0,0,0,0,0,1,3,2,J7 J24,3,2,소속 1 · 신체 1,3,0,O33,,,,0
 person:센티,센티,,4,44,13,563,490,73,0,0,98,17,char:82,ep:d_nikke_liter_01,char:82,395,117,char:502,3,10,0,0,0,0,0,0,2,0,,3,2,관계 1 · 신념 1,3,0,,,,,0
@@ -185,7 +185,7 @@ person:언노운,언노운,,3,20,6,50,0,50,0,0,275,66,ch28,d_main_28_08_e,,416,1
 person:레이블,레이블,,2,20,3,964,821,143,3,0,383,111,event_arcanearchive,event_arcanearchive_04_e,fl:sin_editor,431,135,char:582,3,6,0,0,0,0,0,0,4,0,,5,4,성격 1 · 관계 3,4,0,,,,,0
 person:트리나,트리나,,2,20,4,576,447,129,5,0,345,93,event_secretgarden,event_secretgarden_prologue,fl:for_rest,458,146,fl:b-side_idol,3,6,0,0,0,0,0,0,3,0,,2,4,관계 2 · 신념 2,1,0,,,,,0
 person:에이다,에이다,,2,20,2,359,302,57,30,3,407,124,fl:reborn_evil,fl:reborn_evil_03,fl:reborn_evil,408,124,char:840,1,5,0,0,0,0,0,0,3,0,,0,1,관계 1,0,0,,,,,0
-person:리스,리스,,1,19,2,340,292,48,59,3,447,142,side:pretty_star,side:pretty_star_05,side:pretty_star,454,144,event_staranis1,2,10,0,0,0,0,0,0,5,0,J24,4,2,관계 1 · 신체 1,2,0,,,,,0
+person:리스,리스,,1,19,2,338,290,48,57,3,447,142,side:pretty_star,side:pretty_star_05,side:pretty_star,454,144,event_staranis1,2,10,0,0,0,0,0,0,5,0,J24,4,2,관계 1 · 신체 1,2,0,,,,,0
 person:제인,제인,,1,19,2,289,190,99,10,1,142,19,relic:니케제작보고서요약본,relic:니케제작보고서요약본_00,fl:lie_cause_recoil,438,138,fl:lie_cause_recoil,3,8,0,0,0,0,0,0,4,0,J45,4,4,관계 3 · 신념 1,1,0,,,,,0
 person:아크레인저_레드,아크레인저 레드,,1,19,2,359,320,39,3,1,298,74,event_darkhero,event_darkhero_03_e,fl:ark_ranger,462,148,fl:ark_ranger,1,7,0,0,0,0,0,1,3,0,,3,2,관계 1 · 신념 1,1,0,,,,,0
 person:에피넬,에피넬,,1,19,7,396,314,82,0,0,102,17,char:32,ep:d_nikke_miranda_02,char:241,332,89,event_lifeagain,1,6,0,0,0,0,0,0,0,0,,3,2,관계 1 · 신념 1,0,0,,,,,0
@@ -200,7 +200,7 @@ person:요요,요요,,1,16,1,287,205,82,0,0,454,144,event_staranis1,event_staran
 person:앨든,앨든,,2,16,3,275,88,187,274,15,404,122,fl:coins_in_rush,fl:coins_in_rush_02,fl:persona_on_frontline,474,154,fl:persona_on_frontline,1,8,1,1,0,0,0,0,10,0,J60,2,3,성격 1 · 관계 2,0,0,,,,,0
 person:나루_3호,나루 3호,,0,16,8,24,18,6,0,0,203,36,char:392,ep:d_nikke_rei_01,char:392,475,154,char:872,0,1,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:루루,루루,,1,16,2,301,140,161,0,0,155,21,char:203,ep:d_nikke_rupee_wintershopper_02,event_nyanyaparadise,212,42,event_nyanyaparadise,0,1,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
-person:잉크,잉크,,1,15,7,175,155,20,59,4,214,43,ch23,d_main_23af_02,erelic:red_ash_mini,436,138,ch44,1,5,0,0,0,0,0,0,2,0,J16 J17,2,0,,0,0,,,,,0
+person:잉크,잉크,,1,15,7,193,171,22,23,1,214,43,ch23,d_main_23af_02,erelic:red_ash_mini,436,138,ch44,1,5,0,0,0,0,0,0,2,0,J16 J17,2,0,,0,0,,,,L34,0
 person:나디아,나디아,,1,15,1,532,366,166,0,0,332,89,event_lifeagain,event_lifeagain_prologue,event_lifeagain,332,89,event_lifeagain,0,1,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:그레그레,그레그레,,0,15,6,34,4,30,0,0,358,101,ch35,d_main_35_01,fl:great_villain_union,478,156,fl:great_villain_union,0,0,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:총사령관,총사령관,,1,14,7,58,0,58,48,5,80,17,ch16,d_main_16_04,,452,144,ch46,0,7,1,1,0,0,0,0,3,0,J3 J18,1,0,,0,0,,,,,0
@@ -225,7 +225,6 @@ person:나루_2호,나루 2호,,0,12,7,17,16,1,0,0,203,36,char:392,ep:d_nikke_re
 person:스톨_3세,스톨 3세,,1,11,1,345,314,31,0,0,434,137,ch43,d_main_43_02,ch43,434,137,ch43,2,10,0,0,0,0,0,0,8,0,J18,2,3,관계 2 · 신체 1,4,0,,,person:네온,,0
 person:아트,아트,,1,11,3,143,96,47,68,5,235,50,char:321,ep:d_nikke_marciana_03,event_ce006,445,141,fl:2x2_love_2ch,1,7,0,0,0,0,0,0,1,0,J57,1,2,신체 1 · 기억 1,2,0,,,,,0
 person:빅_마담,빅 마담,,1,11,1,87,55,32,0,0,434,137,ch43,d_main_43_02,ch43,434,137,ch43,1,4,0,0,0,0,0,0,1,0,,1,1,관계 1,0,0,,,,,0
-person:클로이,클로이,,1,11,1,206,178,28,0,0,347,94,event_icedragonsaga1,event_icedragonsaga1_04_e,event_icedragonsaga1,347,94,event_icedragonsaga1,1,4,0,0,0,0,0,0,4,0,,0,0,,3,0,,,,,0
 person:레이,레이,,1,11,3,65,33,32,0,0,323,84,char:831,ep:d_nikke_ce004_02_01,char:831,431,135,char:582,1,1,1,1,0,0,0,0,0,0,J55,1,0,,1,0,,,,,0
 person:레이븐,레이븐,,1,11,2,341,302,39,0,0,387,113,event_ce006,event_ce006_3_01_s,event_ce006,390,114,char:851,1,2,0,0,0,0,0,0,0,0,,1,1,관계 1,0,0,,,,,0
 person:앨트루이아,앨트루이아,,2,10,3,111,75,36,0,0,436,138,ch44,d_main_44_08_s,ch44,472,154,ch48,2,8,0,0,0,0,0,0,1,0,J13,4,0,,0,0,,,,,0
@@ -249,6 +248,7 @@ person:호프,호프,,1,8,2,90,32,58,0,0,25,6,relic:통화기록028594,relic:통
 person:펭군_3호,펭군 3호,,0,8,1,27,14,13,0,0,464,149,fl:wave_to_you,fl:wave_to_you_07,fl:wave_to_you,464,149,fl:wave_to_you,0,1,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:마오,마오,,1,7,1,32,0,32,13,2,393,116,fl:boom_the_ghost,fl:boom_the_ghost_02,,393,116,fl:boom_the_ghost,0,4,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:조셉,조셉,,1,7,1,136,130,6,14,1,169,26,event_doutsiders,event_doutsiders_prologue,event_doutsiders,169,26,event_doutsiders,0,3,1,1,0,0,0,0,1,0,J14,0,0,,0,0,,,,,0
+person:클로이,클로이,,1,7,1,151,126,25,0,0,347,94,event_icedragonsaga1,event_icedragonsaga2_01_s,event_icedragonsaga1,347,94,event_icedragonsaga1,1,4,0,0,0,0,0,0,4,0,,0,0,,3,0,,,,L34,0
 person:라라,라라,,1,7,3,29,6,23,0,0,116,17,char:432,ep:d_nikke_aria_05,fl:project_matis,467,151,fl:project_matis,0,2,0,0,0,0,0,0,1,0,,0,0,,0,0,,,,,0
 person:레오,레오,,1,7,2,19,0,19,0,0,448,142,fl:good_world,fl:good_world_09,,474,154,fl:persona_on_frontline,0,2,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:모르가나,모르가나,,1,7,2,90,67,23,0,0,474,154,fl:persona_on_frontline,fl:persona_on_frontline_26,fl:persona_on_frontline,476,154,char:870,0,2,0,0,0,0,0,0,0,0,,0,0,,0,0,,,person:모나,,0
@@ -277,7 +277,7 @@ person:파워,파워,,1,5,1,130,109,21,0,0,179,30,char:801,ep:d_nikke_c_2_01,cha
 person:2B,2B,,1,5,1,77,69,8,0,0,231,48,char:810,ep:d_nikke_ce_02_01_01,char:810,231,48,char:810,1,0,0,0,0,0,0,0,0,0,,2,0,,0,0,,,,,0
 person:A2,A2,,1,5,1,70,47,23,0,0,233,49,char:811,ep:d_nikke_ce_02_02_01,char:811,233,49,char:811,0,0,0,0,0,0,0,0,0,0,,1,0,,0,0,,,,,0
 person:T.Rony,T.Rony,,0,5,3,35,30,5,0,0,280,66,event_boomsday,event_boomsday_01_s,event_boomsday,304,77,char:551,0,0,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
-person:디젤의_동생,디젤의 동생,,0,5,2,41,15,26,40,4,93,17,char:72,ep:d_nikke_diesel_01,char:72,425,131,fl:terminus_ticket,0,0,0,0,0,0,0,0,1,0,,0,0,,0,0,,,,,0
+person:디젤의_동생,디젤의 동생,,0,5,2,40,14,26,39,4,93,17,char:72,ep:d_nikke_diesel_01,char:72,425,131,fl:terminus_ticket,0,0,0,0,0,0,0,0,1,0,,0,0,,0,0,,,,,0
 person:에밀리아,에밀리아,,1,5,1,143,112,31,0,0,285,68,char:821,ep:d_nikke_ce_003_02_01,char:821,285,68,char:821,0,0,0,0,0,0,0,0,0,0,,1,1,신념 1,0,0,,,,,0
 person:파스칼,파스칼,,1,5,1,136,120,16,0,0,232,48,char:812,ep:d_nikke_ce_02_03_01,char:812,232,48,char:812,0,0,0,0,0,0,0,0,0,0,,1,0,,0,0,,,,,0
 person:트레저_헌터,트레저 헌터,,4,4,4,223,211,12,0,0,12,4,sub:트레저_헌터_00,sub:트레저_헌터_00,sub:트레저_헌터_00,83,17,sub:트레저_헌터_03,1,5,1,0,0,1,1,3,4,0,J37,1,1,관계 1,0,0,,,,,0
@@ -304,7 +304,7 @@ person:ELYSION_Line._0,ELYSION Line. 0,,1,3,1,49,49,0,0,0,454,144,event_staranis
 person:MISSILIS_Line._0,MISSILIS Line. 0,,1,3,1,36,36,0,0,0,454,144,event_staranis1,event_staranis1_06_s,event_staranis1,454,144,event_staranis1,0,1,2,1,0,1,0,1,0,0,J24,0,0,,0,0,,,,,0
 person:겐조,겐조,,1,3,1,81,74,7,0,0,185,32,char:282,ep:d_nikke_sakura_02,char:282,185,32,char:282,0,3,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:시리얼,시리얼,,2,3,3,97,92,5,0,0,51,11,sub:시리얼_00,sub:시리얼_00,sub:시리얼_00,150,20,sub:시리얼_01,1,3,0,0,0,0,0,0,0,1,,1,0,,0,0,,,,,0
-person:#000000,#000000,,1,3,2,105,104,1,0,0,385,112,event_lordforjustice,event_lordforjustice_04_s,ch41,414,127,ch41,0,2,0,0,0,0,0,0,0,0,J17,0,0,,0,0,,,,,0
+person:#000000,#000000,,1,3,2,105,104,1,0,0,385,112,event_lordforjustice,event_lordforjustice_04_s,ch41,414,127,ch41,0,2,0,0,0,0,0,0,0,0,J17,0,0,,0,0,,,person:식스오,,0
 person:시니스터,시니스터,,1,3,3,12,4,8,0,0,36,8,sub:랩칠리언_04,sub:랩칠리언_04,sub:랩칠리언_04,143,19,sub:랩칠리언_06,0,2,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0
 person:싹싹이,싹싹이,,1,3,1,24,16,8,1,1,393,116,fl:boom_the_ghost,fl:boom_the_ghost_06,fl:boom_the_ghost,393,116,fl:boom_the_ghost,0,2,0,0,0,0,0,0,1,0,,0,0,,0,0,,,,,0
 person:올리버,올리버,,1,3,1,44,32,12,0,0,448,142,fl:good_world,fl:good_world_07,fl:good_world,448,142,fl:good_world,0,2,0,0,0,0,0,0,0,0,,0,0,,0,0,,,,,0

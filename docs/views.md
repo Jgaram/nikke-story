@@ -534,7 +534,7 @@ tests/site.test.mjs     내보내기 → 임시 디렉터리: 파싱 · manifest
 | `ticks.json` | 158 | `tick` · `date` · `main`(그 자리의 메인 챕터 키, 없으면 칸 없음) · `upto`(그 자리까지의 마지막 메인 챕터 — 라벨용) · `count` · `units[]` |
 | `scenes.json` | 3,923 | `id` · `unit` · `seq`(단위 안 1부터) · `title` · `lines` · `has_text`(0일 때만) · `part`(이벤트 파트 이름) · `level`(호감도 레벨). 본문 없음. 금서고로 대신된 블라링크 이벤트의 본문 없는 씬 43은 뺐다 |
 | `records.json` | 4,070 | 1회독 확정 기록 — `kind` F · Q · F-k · Q-k · S |
-| `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다 |
+| `records2.json` | 5,121 | 2회독 · 마무리 확정 기록 — `kind` I · E · D · U · O · H. `data.loadRecords()`가 둘을 합친다. 둘 다 사칭에 가려지는 기록은 `imp`(W23b — 아래 "사칭") |
 | `threads.json` | 60 + 44 | `threads[]`: `id` · `title` · `text` · `weight` · `confidence` · `questions[]` · `facts[]`(곧바로 든 사실) · `about[]` · `owners[]`(주역) · `open` `partial` `solved` `events` `units` · `first_unit` `first_order` `last_unit` `last_order`. `relations[]`: `id` · `type` · `from` · `to` · `text` · `basis[]`(기록 ID) · `confidence` |
 | `targets.json` | 611 | `id` · `type`(person · place · org · concept · incident · item) · `name` · `kind` · `note` · `aliases[{name, how, meet?, never?}]` · `meet[]` · `name_meet[]` · `name_never`(처음 나온 자리 — 아래 "처음 나온 자리(W15b)") · `same_as[]`(확정 정체 연결) · `same_as_unit[]`(같은 순서, 밝혀지는 단위 = 근거 첫 씬의 단위 — 읽는 중에는 그 단위를 읽었을 때만 보이고 아니면 있다는 것도 숨긴다) · `lines` · `stories` |
 | `slips.json` | 7 | `unit` · `tick` · `scenes[]`(문장에서 찾은 씬 ID) · `text` |
@@ -614,7 +614,12 @@ API: `init({ defaultCutoff })` · `get()`(`t`는 number | null, `layers`는 numb
   이름표 주인의 다 옮긴 스토리는 목록에 흐린 줄(빈 점)로만 남고 등장 수 · 히트맵에서 빠진다(양쪽 표시 — 사용자 2026-10-14).
 - 리더 '나오는 인물' · 처음 등장도 `rowAt`으로 — 접은(안 본) 스토리는 그 스토리가 드러나는 자리일 때만 사칭한 인물로.
 - 점검: `spoiler-check.mjs` 사칭 칸 — 드러나기 전에 사칭한 인물을 그 스토리의 등장으로 낸 것 · 사칭 표 · 머리 '사칭' 줄(인물 탭 점검에 시프티를 더했다).
-- 연결 탭(대상 공유 선) · 주요 인물 · 주역 계산은 아직 이름표대로다 — 사칭 기록이 쌓이면(W23b · c) 볼 일.
+- **기록(W23b)** — 기록은 실제 인물로 적고(docs/annotations.md "사칭이 걸린 기록"), 드러나기 전에 가릴 기록은 `records*.json` `imp [{ a, b, rev }]`.
+  `fmt.recAt(r, R)` = 그 자리 모습(a 자리에 b — about · person · with · target), `fmt.recHas(r, 인물, R)` = 그 모습이 그 인물을 다루나.
+  인물 상세(`persons-detail` records · changes · rel)는 가릴 기록을 이름표 주인 쪽에도 싣고(변화 줄은 + `person`(실제) · `imp`), 인물 탭은 `recHas`로 고른다 — 드러나기 전 머스탱 상세는 예전처럼 한 사람,
+  뒤에는 한슨 상세에 머스탱 행세 시절의 기록 · 변화 · 관계 상대가 모인다. 리더 기록 패널 '관련' · 대상 기록 목록(`data.recordsAbout`은 b에도 건다) · 떡밥 묶음(`threadBundle` · `threadTies`, threads-flow 뿌리 · 복선에 `imp`) · 세계 탭 생활상도 `recAt`.
+- 점검: 사칭 기록 칸(그 자리 모습으로는 다른 인물 것인 기록이 인물 탭에 보이면) — 점검 인물에 한슨 · 머스탱. 드러나기 전 · 뒤 자리는 t=143 · 144(PRETTY STAR 142 · STAR ANIS 144). 가림을 끈 사본에서 33건을 잡았다.
+- **연결 탭(대상 공유 선) · 주요 인물 · 주역 · 마무리 사슬 · 판정 시안은 이름표 주인으로 센다**(W23c) — 공개 자리마다 바뀌지 않는 계산이고, 독자가 쌓는 것은 그 이름의 인물이라서(docs/annotations.md "계산은 이름표 주인으로").
 
 ### 상단 바 · 여기까지 읽음 팝업
 
