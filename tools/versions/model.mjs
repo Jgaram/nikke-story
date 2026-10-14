@@ -44,8 +44,8 @@ export const DICT_LIMITS = { text: [10, 100], textMax: 160, sentences: 2, versio
 
 /** 근거로 쓰는 기록 종류(W17) — 사실 · 의문 · 떡밥 암시 · 재언급. 조각 기록(F-k · Q-k)은 그 답 · 부모를 든다 */
 export const REF_KINDS = new Set(['F', 'Q', 'E']);
-/** 확정 판에 refs가 없으면 — false: 파일마다 경고 하나(W17 ② 진행 중), true: 판마다 오류(② 끝에 관리자가 켠다) */
-export const REFS_REQUIRED = false;
+/** 확정 판에 refs가 없으면 — false: 파일마다 경고 하나(W17 ② 진행 중), true: 판마다 오류(② 끝에 켰다). sourcesFrom의 refsRequired로 바꿀 수 있다(W17 앞 판으로 만든 테스트) */
+export const REFS_REQUIRED = true;
 /** 근거 없이 써도 되는 세계 기본 낱말(W17 — '근거 · 앞 판에 없는 말' 경고에서 뺀다). 작품 첫머리부터 늘 쓰여 사실을 더하지 않는다 */
 export const BASIC_WORDS = new Set(['니케', '랩쳐', '방주', '지상', '지휘관', '인류', '인간']);
 /** 원문 줄 근거 — '씬#줄' · '씬#줄-줄'(기록이 없는 마디. 씬은 scenes.json) */
@@ -243,9 +243,9 @@ export function loadSources(dir = SITE_DATA) {
 }
 
 /** records = 확정 기록(records.json + records2.json) — 사전 판의 지문 · 입력에 쓴다(없으면 사전 판은 지문이 빈 목록) */
-export function sourcesFrom({ units: unitList, threads, flow, targets, records = [], scenes = null }) {
+export function sourcesFrom({ units: unitList, threads, flow, targets, records = [], scenes = null, refsRequired = REFS_REQUIRED }) {
   const units = new Map(arr(unitList).map((u) => [u.key, u]));
-  const C = { units, threads: new Map(arr(threads?.threads).map((t) => [t.id, t])), flow: flow ?? {}, targets: arr(targets) };
+  const C = { units, threads: new Map(arr(threads?.threads).map((t) => [t.id, t])), flow: flow ?? {}, targets: arr(targets), refsRequired };
   C.targetMap = new Map(C.targets.map((t) => [t.id, t]));
   C.names = nameIndex(C.targets, units);
   C.nameUnits = nameUnits(C.targets);
@@ -508,7 +508,7 @@ export function checkFile(f, C) {
     }
   }
   if (noRefs.length) {
-    if (REFS_REQUIRED) noRefs.forEach((at) => errors.push(`판 ${at}: 근거(refs)가 없다 — 글이 기대는 기록 ID(W17)`));
+    if (C.refsRequired ?? REFS_REQUIRED) noRefs.forEach((at) => errors.push(`판 ${at}: 근거(refs)가 없다 — 글이 기대는 기록 ID(W17)`));
     else warnings.push(`근거(refs)가 없는 판 ${noRefs.length} — ${noRefs.join(' · ')}(W17 ②)`);
   }
   // 곁 판 후보(W15f) — 첫 본판 앞 체크 칸 스토리에 이 항목의 사실 기록이 있는데 판이 없다: 그 칸을 본 독자는 이름만 보고 설명은 빈다.

@@ -16,11 +16,13 @@ import path from 'node:path';
 import { run as exportVersions } from '../tools/site/export/versions.mjs';
 import { fileNameFor } from '../tools/records/model.mjs';
 import {
-  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, threadFirst, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom, srcHash, stateOf,
+  SITE_DATA, VERSION_DIR, checkFile, contentHash, dictFirst, isDict, lateNames, threadFirst, loadSources, loadVersions, nameIndex, namesIn, nameUnits, publishable, sourcesFrom as sourcesFromModel, srcHash, stateOf,
   versionNeed, refPool, unbackedWords, curSrc,
 } from '../tools/versions/model.mjs';
 
 const fmt = await import('../site/lib/format.js');
+// 작은 세계의 판은 W17 앞 꼴(refs 없음) — 근거 의무는 W17 테스트에서만 켠다
+const sourcesFrom = (o) => sourcesFromModel({ refsRequired: false, ...o });
 
 // 작은 세계 — 홍련 호감도(앞)에서 떡밥이 나오고 뒤 이벤트에서 장화가 처음 나온다
 const UNITS = [
@@ -130,7 +132,7 @@ test('내보내기 모듈 — 디렉터리의 판 파일을 versions.json으로'
     fs.writeFileSync(path.join(dir, fileNameFor(S)), JSON.stringify(file([confirm(GOOD[0]), confirm(GOOD[1])])));
     fs.writeFileSync(path.join(dir, 'thread.J1.json'), JSON.stringify({ subject: 'thread:J30', versions: [] }));
     const warnings = [];
-    const ctx = { versionDir: dir, common: { units: UNITS }, made: { 'units.json': UNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': TARGETS }, warn: (w) => warnings.push(w) };
+    const ctx = { versionDir: dir, refsRequired: false, common: { units: UNITS }, made: { 'units.json': UNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': TARGETS }, warn: (w) => warnings.push(w) };
     const out = (await exportVersions(ctx)).files['versions.json'];
     assert.deepEqual(Object.keys(out.threads), ['J30']);
     assert.deepEqual(out.threads.J30[1], { at: 'event_newyearnewsword', title: GOOD[1].title, text: GOOD[1].text });
@@ -213,7 +215,7 @@ test('사전 판 지문 — at까지 항목을 다룬 기록이 바뀌면 낡음
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'versions-'));
   try {
     fs.writeFileSync(path.join(dir, fileNameFor(DS)), JSON.stringify({ subject: DS, versions: [done] }));
-    const ctx = { versionDir: dir, common: { units: DUNITS }, made: { 'units.json': DUNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': DT, 'records.json': DREC }, warn: () => {} };
+    const ctx = { versionDir: dir, refsRequired: false, common: { units: DUNITS }, made: { 'units.json': DUNITS, 'threads.json': THREADS, 'threads-flow.json': FLOW, 'targets.json': DT, 'records.json': DREC }, warn: () => {} };
     const out = (await exportVersions(ctx)).files['versions.json'];
     assert.deepEqual(out.targets, { [DS]: [{ at: 'ch45', text: v1.text }] });
   } finally {
@@ -458,6 +460,8 @@ test('W17 근거 — 지문: refs가 없으면 옛 지문 그대로, 근거 기�
   const conf = confirm(GOOD[0]);
   assert.ok(checkFile(file([conf]), C).warnings.some((m) => /근거\(refs\)가 없는 판 1/.test(m)));
   assert.ok(!checkFile(file([GOOD[0]]), C).warnings.some((m) => /근거\(refs\)/.test(m)), '후보는 아직');
+  const Creq = sourcesFrom({ units: UNITS, threads: THREADS, flow: FLOW, targets: TARGETS, refsRequired: true });
+  assert.ok(checkFile(file([conf]), Creq).errors.some((m) => /판 char:222: 근거\(refs\)가 없다/.test(m)), 'REFS_REQUIRED면 판마다 오류');
 });
 
 test('W17 근거보다 더 말한 글(경고) — 근거 · 앞 판 · 제 이름 · 본 스토리 제목에 없는 이름 · 숫자, 세계 기본 낱말은 빼고', () => {
