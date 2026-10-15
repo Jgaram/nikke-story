@@ -228,13 +228,13 @@ test('화면 fmt.noteAt — 그 자리 판의 설명, 판이 없으면 전부 �
   const R = (t, x = {}) => ({ all: t == null, seen: (k) => t == null || (k in x ? x[k] : (units.get(k)?.tick ?? 99) <= t) });
   const t = { id: DS, note: '분석용', v: [{ at: 'ch45', text: '첫 설명' }, { at: 'ch48', text: '뒤 설명' }] };
   assert.equal(fmt.noteAt(t, R(3)), null);
-  assert.equal(fmt.noteAt(t, R(4)), '첫 설명');
-  assert.equal(fmt.noteAt(t, R(6)), '뒤 설명');
-  assert.equal(fmt.noteAt(t, R(null)), '뒤 설명');
+  assert.equal(fmt.noteAt(t, R(4)), '첫 설명.');
+  assert.equal(fmt.noteAt(t, R(6)), '뒤 설명.');
+  assert.equal(fmt.noteAt(t, R(null)), '뒤 설명.');
   const bare = { id: DS, note: '분석용' };
   assert.equal(fmt.noteAt(bare, R(6)), null);
-  assert.equal(fmt.noteAt(bare, R(null)), '분석용');
-  assert.equal(fmt.noteAt(bare, R(null), '걷은 설명'), '걷은 설명');
+  assert.equal(fmt.noteAt(bare, R(null)), '분석용.');
+  assert.equal(fmt.noteAt(bare, R(null), '걷은 설명'), '걷은 설명.');
 });
 
 const hasData = fs.existsSync(path.join(SITE_DATA, 'threads-flow.json'));

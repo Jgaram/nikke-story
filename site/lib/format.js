@@ -32,6 +32,7 @@
  *   FIRST_VISIT · AI_NOTE           여기까지 읽음 팝업의 문구 · AI 정리 고지(하단 · 팝업 · 리더 줄거리 머리)
  *   gradeAt(u, T)                   order.json 단위의 T 시점 등급(T < 출시 시점이면 null) — tools/views/importance.mjs gradeAt과 같다
  *   prose(text)                     화면에 내는 자유 문장은 모두 이것을 거친다 — 레포 용어 → 화면 말 · 키 → 이름 · 근거 표시(기록 ID · 씬 ID · #줄) 걷기, 못 바꾸면 ''
+ *   sentence(text, { ask }) · proseLine(text)   문장 칸 끝에 마침표(물음 칸은 물음 꼴이면 물음표 — 2026-10-15) · prose 뒤 sentence. 이름 · 제목 · 시점 칸에는 쓰지 않는다
  *   episodeIcon(unit)              호감도 스토리의 초상 아이콘(감상 순서 줄 · 리더 머리) — 그 니케 판(이격 포함) 그림
  *   reasonText(text)                분류 이유 — prose 뒤 판정 과정 말(잣대 · 문턱 · 등급 이력 · 카드 절 …)이 든 마디를 뺀다(감상 순서 카드 · 리더 분류 칸)
  *   dropClauses(s, bad) 문장 · ' — ' 마디 가운데 bad 정규식에 걸린 마디를 뺀다(분류 이유 · 연대기 추정 이유의 판정 과정 말)
@@ -671,7 +672,7 @@ export function unknownNameIn(text, R) {
   return null;
 }
 /** 떡밥끼리 관계 설명 — 모르는 이름이 들면 ''(관계 종류만 보인다) */
-export const relText = (g, R) => (unknownNameIn(g?.text, R) ? '' : prose(g?.text));
+export const relText = (g, R) => (unknownNameIn(g?.text, R) ? '' : proseLine(g?.text));
 /** 그 자리에서 아는 다른 이름({ name, how, … }) — 부르는 이름(nameAt)은 뺀다 */
 export function aliasesAt(target, R) {
   if (!target || !met(target, R)) return [];
@@ -778,6 +779,19 @@ export function prose(text) {
   return parts.join(' ');
 }
 /**
+ * 문장 맺음(사용자 2026-10-15) — 화면에 내는 문장 칸은 끝에 마침표를 찍는다. "~다" · 명사 맺음 · 인용 끝 · 괄호 끝 모두(기록은 마침표 없이 쓴 것이 많다).
+ * 이미 . ? ! …로 끝나면(닫는 따옴표 · 괄호 안이어도) 그대로, 글자 · 숫자 · 닫는 따옴표 · 괄호로 끝날 때만 찍는다('→ ?' 같은 기호 끝은 그대로).
+ * ask = 물음 칸(떡밥 요약) — 끝 낱말이 물음 꼴(~나 · ~까 · ~가 · ~냐 · ~니 · 왜 · 누구 …)이면 물음표. '물음 — 명사 나열'처럼 명사로 끝나면 마침표.
+ */
+const ASK_END = /(나|까|가|냐|니|왜|누구|무엇|어디|언제|어떻게)$/;
+export function sentence(text, { ask = false } = {}) {
+  const s = String(text ?? '').trimEnd();
+  if (!s || /[.?!…][\s'"’”」』)\]]*$/u.test(s) || !/[\p{L}\p{N}'"’”」』)\]]$/u.test(s)) return s;
+  return s + (ask && ASK_END.test(s.replace(/[\s'"’”」』)\]]+$/u, '')) ? '?' : '.');
+}
+/** prose 뒤 sentence — 문장 칸 하나를 화면 글로 */
+export const proseLine = (text, opts) => sentence(prose(text), opts);
+/**
  * 분류 이유(order.json reason) — prose를 거친 뒤 판정 과정 말이 든 마디를 뺀다(W13b — 팬이 묻는 것만, docs/views.md "화면 문구는 간결하게").
  * 이유 문장은 판정 기록이라 '이 스토리에 무엇이 있나' 마디와 '그래서 이 등급' 마디가 섞여 있다. 뒤쪽(잣대 · 문턱 · about · 판정 카드 절 · 빌드업 ·
  * 기록 묶음 말 · '앞은 참고' 같은 등급 이력 · 남은 판정 ID K12 · Z4)만 ' — ' 마디 · 문장 단위로 걷고, 그런 말만 든 괄호는 괄호째 걷는다. 다 빠지면 ''.
@@ -809,7 +823,7 @@ export function reasonText(text) {
   const s = prose(text).replace(/세계 기록/g, '세계').replace(/곁 기록/g, '곁 이야기').replace(JUDGE_PAREN, '')
     // 감정 기준(X3g) 판정의 머리 '감정 — ' · 카드 절(3a · 4a) · 결정적 순간 단계(①–④)도 판정 과정 말이다 — 등급에 넣되 따로 표시하지 않는다(사용자)
     .replace(/^감정 — /, '').replace(/(?<![A-Za-z0-9])[34]a(?::\s*|\s(?=—))/g, '').replace(/\s?\((?:[①-⑧](?:\s*·\s*)?)+\)/g, '');
-  return dropClauses(s, JUDGE_WORD);
+  return sentence(dropClauses(s, JUDGE_WORD));
 }
 export function blurbText(b, seen) {
   if (!b?.text) return '';
@@ -884,7 +898,7 @@ export function noteAt(t, R, fallback = null) {
   const all = !R || R.all;
   const v = versionAt(list, R);
   const raw = v ? v.text : all ? fallback ?? t?.note ?? null : null;
-  return raw ? prose(raw) || null : null;
+  return raw ? proseLine(raw) || null : null;
 }
 /** 떡밥 자리 글(W15d) — 아직 안 나옴 · 나왔는데 그 자리 제목(판)이 아직 없음 */
 export const THREAD_SLOT = { notYet: '아직 나오지 않은 떡밥', untitled: '제목을 아직 정리하지 않은 떡밥' };
@@ -897,7 +911,7 @@ export function threadLabel(j, R) {
 /** 떡밥 ID로 — 이름 칸(링크 · 칩)에 */
 export const threadLabelOf = (id, R) => (idx?.threads?.get(id) ? threadLabel(idx.threads.get(id), R) : THREAD_SLOT.notYet);
 /** 떡밥 요약 — 그 자리 판의 text(prose를 거친다), 없으면 '' */
-export const threadText = (j, R) => prose(threadAt(j, R)?.text ?? '') || '';
+export const threadText = (j, R) => proseLine(threadAt(j, R)?.text ?? '', { ask: true }) || '';
 
 /**
  * 떡밥 묶음 거르기(W15d — docs/views.md "새는 곳 막기") — 떡밥 줄기에 든 의문 · 사실(threads-flow roots) · 떡밥 전체 복선(echoes) 가운데
@@ -1073,16 +1087,16 @@ export function recordText(r) {
   if (r.kind === 'I') return `${targetName(r.target)} — 이름 없이 등장${r.speaker ? ' · 대사 있음' : ''}`;
   if (r.kind === 'D') {
     const head = `${targetName(r.person)} ${r.aspect ?? ''}${r.with?.length ? ` (${r.with.map(targetName).join(' · ')})` : ''}`.trim();
-    if (r.act === '변화') return `${head}: ${prose(r.before) || '?'} → ${prose(r.after) || '?'}`;
-    return `${head}: ${prose(r.text)}`;
+    if (r.act === '변화') return `${head}: ${proseLine(r.before) || '?'} → ${proseLine(r.after) || '?'}`;
+    return `${head}: ${proseLine(r.text)}`;
   }
   // 회수 · 밝혀짐 줄에 문장이 없으면 답(사실)의 문장, 그것도 없으면 이유 문장 — ID('Q4 회수 — 답 F34')를 문장 자리에 두지 않는다
   if ((r.kind === 'Q-k' || r.kind === 'F-k') && !r.text) {
     const ans = idx?.records?.get(r.answer ?? r.replaced_by);
-    return (ans?.text && prose(ans.text)) || prose(r.reason);
+    return (ans?.text && proseLine(ans.text)) || proseLine(r.reason);
   }
-  if (r.kind === 'H') return r.title ? `${prose(r.title)} — ${prose(r.text)}` : prose(r.text);
-  return prose(r.text);
+  if (r.kind === 'H') return r.title ? `${prose(r.title)} — ${proseLine(r.text)}` : proseLine(r.text);
+  return proseLine(r.text);
 }
 
 /**

@@ -516,7 +516,7 @@ function classPanel(u, idx, hidden) {
   // 감상 순서 카드에 있던 칸(W13 — 카드를 리더 하나로 합쳤다): 장면(등급을 정한 기록의 장면 + 그 기록 문장) · 이어지는 필수 스토리 · 주역 · 결말
   const basisText = ui.el('div', { class: 'rd-basis-text' });
   const sel = current;
-  if (j.basis) loadDetail().then((d) => { const x = d?.units?.[u.key]; if (current === sel && x?.basis_text) basisText.textContent = fmt.prose(x.basis_text); });
+  if (j.basis) loadDetail().then((d) => { const x = d?.units?.[u.key]; if (current === sel && x?.basis_text) basisText.textContent = fmt.proseLine(x.basis_text); });
   const leads = leadsOf(j, idx);
   const endings = endingsOf(j);
   const story = [
@@ -681,7 +681,7 @@ const RENDER = {
     // 장면 — 번호 · 제목(+ 판 · 호감도 Lv) + 씬 한 줄. 줄 수는 싣지 않는다
     root.append(ui.panel(LABELS.scenes, scenes.length ? ui.el('ol', { class: 'scene-list' }, scenes.map((s) =>
       ui.el('li', {}, ui.link(`scene:${s.id}`, fmt.sceneTitle(s.id) ? `${s.seq}. ${fmt.sceneTitle(s.id)}` : fmt.sceneName(s.id)), s.part || s.level ? ui.el('span', { class: 'muted' }, ` ${[s.part, s.level ? `Lv.${s.level}` : null].filter(Boolean).join(' · ')}`) : null,
-        !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, sceneLineMap.get(s.id)) : null))) : ui.empty(LABELS.noScenes)));
+        !hidden && sceneLineMap?.get(s.id) ? ui.el('div', { class: 'rd-scene-line' }, fmt.sentence(sceneLineMap.get(s.id))) : null))) : ui.empty(LABELS.noScenes)));
     if (recs.length) root.append(fold(kindsTitle(recs), (body) => body.append(recordList(recs))));
     slipsPanel(idx.slipsOf.get(key), hidden);
   },
@@ -695,7 +695,7 @@ const RENDER = {
     root.append(head(fmt.sceneLabel(id), [], sub.length ? sub : null));
     const line = sceneLineMap?.get(id);
     if (line) {
-      const p = ui.el('p', { class: 'rd-logline' }, line);
+      const p = ui.el('p', { class: 'rd-logline' }, fmt.sentence(line));
       root.append(u && !state.seen(u.key) ? ui.details(spoilerSummary(), p, { class: 'spoiler' }) : p);
     }
     const siblings = idx.scenesOf.get(s.unit) ?? [];
@@ -723,7 +723,7 @@ const RENDER = {
     const recLinks = (ids) => ids?.length ? ui.el('ul', { class: 'plain' }, ids.map((c) => ui.el('li', {}, recLink(c)))) : null;
     const body = ui.el('div', {});
     body.append(ui.el('p', { class: 'record-full' }, fmt.recordText(r)));
-    if (r.kind === 'D' && r.act === '변화') body.append(kv([row(LABELS.before, fmt.prose(r.before)), row(LABELS.after, fmt.prose(r.after)), row(LABELS.changedAt, r.trigger ? sceneLinks(r.trigger) : null), row(fmt.TERM.chronoPlace, r.time ? recLink(r.time) : null)]));
+    if (r.kind === 'D' && r.act === '변화') body.append(kv([row(LABELS.before, fmt.proseLine(r.before)), row(LABELS.after, fmt.proseLine(r.after)), row(LABELS.changedAt, r.trigger ? sceneLinks(r.trigger) : null), row(fmt.TERM.chronoPlace, r.time ? recLink(r.time) : null)]));
     // 시간 단서 — '때'(기준 스토리 + 관계 + 간격)와 연도만. 기준 · 대상 칸(작업 말)은 싣지 않는다
     if (r.kind === 'S') body.append(kv([row(LABELS.when, Array.isArray(r.at) && r.at.length ? r.at.map(atText).join(' · ') : null), row(LABELS.years, r.years)]));
     if (r.kind === 'Q-k' || r.kind === 'F-k') body.append(kv([row(r.kind === 'Q-k' ? LABELS.question : LABELS.fact, r.parent ? recLink(r.parent) : null), row(LABELS.answer, r.answer ? recLink(r.answer) : null), row(LABELS.replacedBy, r.replaced_by ? recLink(r.replaced_by) : null)]));
@@ -743,7 +743,7 @@ const RENDER = {
     if (r.points?.length) body.append(kv([row(LABELS.points, recLinks(r.points))]));
     if (r.evidence?.length) body.append(ui.panel(LABELS.scene, ui.el('ul', { class: 'plain' }, [...new Set(r.evidence.map((e) => e.scene))].map((sc) => ui.el('li', {}, ui.link(`scene:${sc}`, fmt.ref(sc)))))));
     // 해석 이유는 추정일 때만 — 확실한 기록은 문장만으로 읽힌다. 못 바꾸는 이유 문장은 내지 않는다
-    if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel(LABELS.guessWhy, ui.el('p', { class: 'reason' }, fmt.prose(r.reason))));
+    if (r.confidence === '추정' && fmt.prose(r.reason)) body.append(ui.panel(LABELS.guessWhy, ui.el('p', { class: 'reason' }, fmt.proseLine(r.reason))));
     const about = fmt.recAt(r, state.reading()).about; // 다른 인물 줄을 근거로 한 기록은 드러나기 전 이름 주인으로(W24a)
     if (about?.length) body.append(ui.panel(LABELS.related, ui.el('p', {}, joinNodes(about.map((a) => ui.link(`${a.startsWith('person:') ? 'person' : 'target'}:${a}`, fmt.targetName(a)))))));
     if (r.threads?.length) {
@@ -861,7 +861,7 @@ const RENDER = {
       const ok = (ids ?? []).filter((a) => whole || aboutNow.has(a)).map((a) => [a, idx.targets.get(a)]).filter(([, t]) => !t || fmt.nameAt(t, RN));
       return ok.length ? joinNodes(ok.map(([a, t]) => ui.link(`${type ?? (a.startsWith('person:') ? 'person' : 'target')}:${a}`, t ? fmt.nameAt(t, RN) : fmt.targetName(a)))) : null;
     };
-    const text = fmt.prose(at?.text ?? '');
+    const text = fmt.proseLine(at?.text ?? '', { ask: true });
     out.append(ui.panel(null, [
       text ? ui.el('p', {}, text) : null,
       kv([
@@ -907,7 +907,7 @@ const RENDER = {
 
 /** 설정 오류 의심 — 바꿀 수 있는 문장만(fmt.prose) */
 function slipsPanel(slips, hidden = false) {
-  const texts = (slips ?? []).map((s) => fmt.prose(s.text)).filter(Boolean);
+  const texts = (slips ?? []).map((s) => fmt.proseLine(s.text)).filter(Boolean);
   if (!texts.length) return;
   const list = ui.el('ul', { class: 'plain' }, texts.map((t) => ui.el('li', { class: 'slip' }, t)));
   root.append(ui.panel(LABELS.slips, hidden ? ui.details(spoilerSummary(), list, { class: 'spoiler' }) : list)); // 여기까지 읽음 뒤 스토리면 접는다(W15a)

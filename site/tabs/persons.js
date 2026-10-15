@@ -845,7 +845,7 @@ export async function mount(root, ctx) {
     el('div', { class: 'pm-change-meta' }, storyRef(r.unit)));
   const relEnd = (r) => recRow('pm-closure', `record:${r.id}`,
     el('div', { class: 'pm-change-head' }, el('span', { class: 'pm-tag is-end', title: fmt.help('record', r.kind) }, fmt.RECORD_KIND[r.kind].label), guess(r)),
-    el('div', { class: 'pm-change-text' }, fmt.prose(r.text)),
+    el('div', { class: 'pm-change-text' }, fmt.proseLine(r.text)),
     el('div', { class: 'pm-change-meta' }, storyRef(r.end ?? r.unit)));
   const secRel = makeSection('rel', LABELS.sec.rel, (p, a, sec) => {
     ui.clear(sec.body);
@@ -887,7 +887,7 @@ export async function mount(root, ctx) {
   };
   const changeBody = (c, r) => {
     if (!r) return null;
-    return c.act === '변화' ? `${fmt.prose(r.before) || '?'} → ${fmt.prose(r.after) || '?'}` : fmt.prose(r.text);
+    return c.act === '변화' ? `${fmt.proseLine(r.before) || '?'} → ${fmt.proseLine(r.after) || '?'}` : fmt.proseLine(r.text);
   };
   const withLink = (c) => {
     const w = fmt.recAt(c, V.R).with; // 다른 인물 줄을 근거로 한 상대(W24a — 드러나기 전 모습)
@@ -1028,7 +1028,7 @@ export async function mount(root, ctx) {
     if (os.length) {
       sec.body.append(el('ul', { class: 'pm-closures' }, os.map((r) => recRow('pm-closure', `record:${r.id}`,
         r.type || guess(r) ? el('div', { class: 'pm-change-head' }, r.type ? el('span', { class: 'pm-kind' }, r.type) : null, guess(r)) : null,
-        el('div', { class: 'pm-change-text' }, fmt.prose(r.text)),
+        el('div', { class: 'pm-change-text' }, fmt.proseLine(r.text)),
         el('div', { class: 'pm-change-meta' }, storyRef(r.unit))))));
     }
     if (hs.length) {
@@ -1038,7 +1038,7 @@ export async function mount(root, ctx) {
         for (const oid of h.members ?? []) for (const t of fmt.recAt(R.get(oid), V.R)?.about ?? []) if (t.startsWith('person:') && t !== p.id) others.add(t);
         hl.append(recRow('pm-closure', `record:${h.id}`,
           el('div', { class: 'pm-change-head' }, el('strong', {}, h.title ? fmt.prose(h.title) : LABELS.togetherEnd)),
-          el('div', { class: 'pm-change-text' }, fmt.prose(h.text)),
+          el('div', { class: 'pm-change-text' }, fmt.proseLine(h.text)),
           others.size ? el('div', { class: 'pm-with' }, [...others].map((t, i) => [i ? ' · ' : null, P.has(t) ? personLink(t) : ui.link(`person:${t}`, fmt.targetName(t))])) : null,
           el('div', { class: 'pm-change-meta' }, storyRef(h.unit))));
       }

@@ -782,7 +782,7 @@ export async function mount(root, ctx) {
    * 같은 인물 · 소재는 함께 나온 이름(자주 나오는 인물은 뒤로), 키로 이은 다음 편은 없음(당연하다)
    */
   function edgeWhy(e) {
-    if (e.origin === 'manual') return clip(fmt.prose(e.note), 90) || null;
+    if (e.origin === 'manual') return clip(fmt.proseLine(e.note), 90) || null;
     if (e.type === 'character' || e.type === 'keyword') {
       const ids = [...tgs(F, e)].sort((x, y) => Number(commonSet.has(x)) - Number(commonSet.has(y)));
       const names = [...new Set(ids.map((id) => fmt.targetName(id)))]; // 같은 인물로 묶인 이름은 한 이름으로 부른다(W24c) — 겹치면 하나
@@ -902,7 +902,7 @@ export async function mount(root, ctx) {
   function whyOf(r) {
     const guess = r.confidence === '추정' ? [' ', ui.chip('confidence', '추정')] : null;
     if (r.origin === 'manual') {
-      const t = fmt.prose(r.note);
+      const t = fmt.proseLine(r.note);
       return t ? h('p', { class: 'lk-why' }, t, guess) : null;
     }
     if (r.type === 'character' || r.type === 'keyword') {
@@ -1285,7 +1285,7 @@ export async function mount(root, ctx) {
         flow.append(h('li', { class: 'lk-chain-node' }, chainNode(u)));
       });
     }
-    const why = (e) => (e.origin === 'manual' ? fmt.prose(e.note) : '');
+    const why = (e) => (e.origin === 'manual' ? fmt.proseLine(e.note) : '');
     const noteEdges = ch.linear ? es.filter(why) : es;
     const noteRows = noteEdges.map((e) => h('li', { class: 'lk-chain-note' },
       h('span', { class: 'lk-chain-pair' }, units.get(e.from)?.title, h('span', { class: 'lk-darrow' }, ui.icon('arrow')), units.get(e.to)?.title),

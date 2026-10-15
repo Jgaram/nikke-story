@@ -62,7 +62,7 @@ test('fmt.threadStarted · threadLabel — 판 규칙(첫 판 at · 체크 칸)�
   assert.equal(fmt.threadLabel(bare, mkR(U, 5)), '가람 — 침식 · 다온의 정체');
   assert.equal(fmt.threadLabelOf('J9', mkR(U, 3)), '가람 — 침식 · 나래');
   assert.equal(fmt.threadLabelOf('J404', mkR(U, 3)), fmt.THREAD_SLOT.notYet);
-  assert.equal(fmt.threadText(J, mkR(U, 1)), '가람은 왜');
+  assert.equal(fmt.threadText(J, mkR(U, 1)), '가람은 왜?');
   const a = fmt.threadAt(J, mkR(U, 5));
   assert.equal(a.whole, true, '마지막 스토리를 보고 마지막 판까지면 떡밥 전체를 안다');
   assert.equal(fmt.threadAt(J, mkR(U, 5, { 'side:x': false })).whole, false);
@@ -192,5 +192,5 @@ test('fmt.unknownNameIn · relText — 그 자리에서 모르는 이름이 든 
   assert.equal(fmt.unknownNameIn('다온하다', R1), null, '두 글자 이름은 뒤가 낱말 안이면 아니다');
   assert.equal(fmt.unknownNameIn('나래와 가람', mkR(U, null)), null, '전부 보기');
   assert.equal(fmt.relText({ text: '다온이 가람을 부른다' }, R1), '');
-  assert.equal(fmt.relText({ text: '가람이 침식을 막는다' }, R1), fmt.prose('가람이 침식을 막는다'));
+  assert.equal(fmt.relText({ text: '가람이 침식을 막는다' }, R1), '가람이 침식을 막는다.');
 });

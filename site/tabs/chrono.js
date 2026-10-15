@@ -189,9 +189,9 @@ export async function mount(root, ctx) {
   }).filter(Boolean).join(' · ');
   const atText = (at) => (at ?? []).map(([rel, ref, gap]) => relPhrase(rel, ref, gap ? ` (${gap})` : '')).filter(Boolean).join(' · ');
   /** 자유 문장 — 시대 기준점 ID → 이름, fmt.prose, 모습 코드 걷기(조사가 붙은 코드는 그 마디째 뺀다) */
-  const whyText = (text) => fmt.dropClauses(cprose(text), WHY_JUDGE);
+  const whyText = (text) => fmt.sentence(fmt.dropClauses(cprose(text), WHY_JUDGE));
   /** 회상 · 다른 때 장면 글 — 그 자리에서 아직 모르는 대상 이름이 들면(체크 칸에서만 처음 나온 이름 — W16a) 글 없이(줄은 비우고 카드는 장면 이름표로) */
-  const pieceText = (p) => (fmt.unknownNameIn(p.text, state.reading()) ? '' : cprose(p.text));
+  const pieceText = (p) => (fmt.unknownNameIn(p.text, state.reading()) ? '' : fmt.sentence(cprose(p.text)));
   function cprose(text) {
     const pre = String(text ?? '')
       .replace(/[—~]?\s*(직후|직전|뒤|전|무렵) (@[\p{L}\p{N}_]+)/gu, (m, rel, id) => (pointById.has(id) ? `${pointShort(pointById.get(id))} ${rel}` : m))

@@ -159,9 +159,9 @@ test('reasonText — 분류 이유에서 판정 과정 마디(잣대 · 문턱 �
   assert.equal(fmt.reasonText('남는 것은 코리의 죽음, 스토리 안에서 끝나는 일화. 참고의 문턱 아래'), '남는 것은 코리의 죽음, 스토리 안에서 끝나는 일화.');
   assert.equal(fmt.reasonText('메인과 이어진 기록 · 떡밥에 든 기록 · about으로 걸친 떡밥이 없다'), '');
   assert.equal(fmt.reasonText('중앙 정부의 답신이 여기만 있다. ch19가 앞이라 나온 때부터 보강'), '중앙 정부의 답신이 여기만 있다.');
-  assert.equal(fmt.reasonText('주역 지휘관(Z4)의 첫 이야기 — 수조 장면이 처음 나온다(카드 3절 2)'), '주역 지휘관의 첫 이야기 — 수조 장면이 처음 나온다');
+  assert.equal(fmt.reasonText('주역 지휘관(Z4)의 첫 이야기 — 수조 장면이 처음 나온다(카드 3절 2)'), '주역 지휘관의 첫 이야기 — 수조 장면이 처음 나온다.');
   // 괄호 안의 ' — '는 마디로 가르지 않는다
-  assert.equal(fmt.reasonText('ch12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다'), 'CH.12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다');
+  assert.equal(fmt.reasonText('ch12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다'), 'CH.12가 연 물음(누구 명령인가 — 아직 열림)의 답이 여기 있다.');
   assert.equal(fmt.reasonText(''), '');
   // 감정 기준(X3g) — 머리 '감정 — ' · 카드 절 3a · 4a · 단계 ①–④ · 이해 등급 문장을 걷는다(등급에 넣되 따로 표시하지 않는다)
   assert.equal(fmt.reasonText('감정 — 4a: 목단의 신념이 여기서 선다(①). 이해 등급은 참고'), '목단의 신념이 여기서 선다.');
@@ -185,4 +185,35 @@ test('자리 표기 — CH.17 이후 · 메인은 CH.07(과 함께 출시 없음
   assert.equal(fmt.tickShort(99999), '');
   assert.equal(fmt.tickLabel(99999), '');
   for (const t of ticks) assert.doesNotMatch(`${fmt.tickShort(t.tick)} ${fmt.tickLabel(t.tick)}`, /\+|#|시점 \d/);
+});
+
+test('sentence — 문장 칸 끝에 마침표, 물음 칸은 물음 꼴이면 물음표', () => {
+  assert.equal(fmt.sentence('마리안이 지휘관을 살린다'), '마리안이 지휘관을 살린다.');
+  assert.equal(fmt.sentence('니케를 사람처럼 대하는 상냥한 사람'), '니케를 사람처럼 대하는 상냥한 사람.'); // 명사 맺음
+  assert.equal(fmt.sentence("마리안이 '지키니까요'"), "마리안이 '지키니까요'."); // 인용 끝
+  assert.equal(fmt.sentence('지휘관을 받아들인다(추정)'), '지휘관을 받아들인다(추정).');
+  assert.equal(fmt.sentence('이미 맺었다.'), '이미 맺었다.');
+  assert.equal(fmt.sentence("'저는…'"), "'저는…'");
+  assert.equal(fmt.sentence('누가 쏘았나?'), '누가 쏘았나?');
+  assert.equal(fmt.sentence('바뀜 → ?'), '바뀜 → ?');
+  assert.equal(fmt.sentence(''), '');
+  assert.equal(fmt.sentence('로산나의 부친은 누구인가', { ask: true }), '로산나의 부친은 누구인가?');
+  assert.equal(fmt.sentence('지휘관은 무엇인가 — 7호, [블랙박스]', { ask: true }), '지휘관은 무엇인가 — 7호, [블랙박스].');
+  assert.equal(fmt.sentence('누구인가', { ask: false }), '누구인가.');
+});
+
+test('문장 맺음 — 내보낸 기록 · 씬 한 줄 · 떡밥 요약이 화면에서 마침표 · 물음표로 끝난다', () => {
+  useIdx();
+  const open = (s) => s && !/[.?!…][\s'"’”」』)\]]*$/u.test(s);
+  const recs = [...J('records'), ...J('records2')].filter((r) => r.kind !== 'I');
+  const left = recs.map((r) => fmt.recordText(r)).filter(open);
+  assert.deepEqual(left.slice(0, 5), []);
+  const changes = recs.filter((r) => r.kind === 'D' && r.act === '변화').flatMap((r) => [fmt.proseLine(r.before), fmt.proseLine(r.after)]).filter(open);
+  assert.deepEqual(changes.slice(0, 5), []);
+  const lines = J('synopsis').flatMap((x) => Object.values(x.scenes ?? {})).map((t) => fmt.sentence(t)).filter(open);
+  assert.deepEqual(lines.slice(0, 5), []);
+  const asks = threads.threads.map((j) => fmt.proseLine(j.text, { ask: true })).filter(Boolean);
+  assert.deepEqual(asks.filter(open).slice(0, 5), []);
+  assert.ok(asks.filter((t) => t.endsWith('?')).length > asks.length / 2, '떡밥 요약은 대부분 물음표');
+  assert.deepEqual(recs.map((r) => fmt.recordText(r)).filter((t) => /[.?]\.$|\.\?$/.test(t)).slice(0, 5), []); // 겹친 맺음 없음
 });

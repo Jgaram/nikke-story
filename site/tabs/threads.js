@@ -766,7 +766,7 @@ export async function mount(root, ctx) {
       const pts = r.points.filter((p) => inR(p.u, p.t));
       spoiled += r.points.length - pts.length;
       if (st === '아직' || !pts.length) continue;
-      const text = fmt.prose(r.text) || (r.kind === 'Q' ? LABELS.q : LABELS.f);
+      const text = fmt.proseLine(r.text) || (r.kind === 'Q' ? LABELS.q : LABELS.f);
       if (st === '암시만') { maskedLanes.push({ type: 'root', id: r.id, kind: r.kind, text, state: st, masked: true, root: r, pts }); continue; }
       lanes.push({ type: 'root', id: r.id, kind: r.kind, text, state: st, masked: false, root: r, pts });
     }
@@ -795,7 +795,7 @@ export async function mount(root, ctx) {
       if (!inR(c.end, c.end_tick) || !tiedEnd([c.end, ...(c.built ?? [])])) { spoiled += 1; continue; }
       if (filt !== 'all') continue;
       const built = c.built.filter((u) => Rd.seen(u));
-      shownLanes.push({ type: 'closure', id: c.id, text: fmt.prose(c.text) || LABELS.closure, built, end: c.end, state: null, pts: [] });
+      shownLanes.push({ type: 'closure', id: c.id, text: fmt.proseLine(c.text) || LABELS.closure, built, end: c.end, state: null, pts: [] });
     }
     for (const m of map.merges) {
       if (!m.threads?.includes(j)) continue;
