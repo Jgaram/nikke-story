@@ -234,5 +234,5 @@
 늦게 들어온 단위는 ` — ` 뒤에 ``자리 `키` 앞``을 더 단다 — 줄은 여기(읽은 차례), 출시순 한 줄에서는 그 키 앞에 선다(docs/update.md "늦게 들어온 단위").
 
 - [x] **U01** `fl:coin_rush_show_down` — 패치 2026-09-17 · 자리 `char:404` 앞 · 8만 자 · 5파트
-- [ ] **U02** `fl:little_witch_trick` — 패치 2026-10-08 · 5.3만 자 · 3파트
-- [ ] **U03** `side:gingerbread_house` `char:63` — 패치 2026-10-08 · 9만 자 · 6파트
+- [x] **U02** `fl:little_witch_trick` — 패치 2026-10-08 · 5.3만 자 · 3파트
+- [x] **U03** `side:gingerbread_house` `char:63` — 패치 2026-10-08 · 9만 자 · 6파트

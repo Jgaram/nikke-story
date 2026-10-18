@@ -284,6 +284,14 @@
       "note": "portraits.mjs가 판 아이콘 c063을 새로 받음(호감도 판 그림) — 새 이름표 없음, 모습 코드 해당 없음",
       "session": "N3",
       "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "regen",
+      "note": "records check 오류 0 · release-order · draft · mentions · signals · addresses · handoff · order-snapshot · export · check-quotes 0(최장 38자) · node --test 357 통과(떡밥 지도 라벨 테스트는 site/tabs/threads.js 라벨 자리로 고침) · spoiler-check 세 독자 기본 0건 + 자리 t=158–159 0건",
+      "session": "N3",
+      "date": "2026-10-18"
     }
   ]
 }
