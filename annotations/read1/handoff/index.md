@@ -38,7 +38,7 @@
 | handoff/facts-31.md | 사실 목록 R89–R90 | 18,690 |
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
-| handoff/facts-34.md | 사실 목록 R98–P1 | 19,825 |
+| handoff/facts-34.md | 사실 목록 R98–P1 | 19,833 |
 | handoff/questions-solved.md | 풀린 의문 101건 | 16,243 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
@@ -149,4 +149,4 @@
 | handoff/R98.md | 단위 요약 — fl:persona_on_frontline · char:872 | 9,676 |
 | handoff/R99.md | 단위 요약 — char:870 … char:405 (6단위) | 9,971 |
 | handoff/U01.md | 단위 요약 — fl:coin_rush_show_down | 9,146 |
-| handoff/U02.md | 단위 요약 — fl:little_witch_trick | 5,413 |
+| handoff/U02.md | 단위 요약 — fl:little_witch_trick | 5,421 |

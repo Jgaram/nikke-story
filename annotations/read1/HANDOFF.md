@@ -14,14 +14,14 @@
 
 - 없음
 
-## 먼저 읽을 것 — 합계 56,455자
+## 먼저 읽을 것 — 합계 56,463자
 
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
 | HANDOFF.md | 이 파일 | 1,152 |
 | handoff/questions-1.md | 의문 — 열림 160 · 일부 풀림 117 | 19,458 |
 | handoff/questions-2.md | 의문 — 열림 160 · 일부 풀림 117 | 19,239 |
-| handoff/recent.md | 직전 세션(U02) 사실 12건 | 2,752 |
+| handoff/recent.md | 직전 세션(U02) 사실 12건 | 2,760 |
 | handoff/focus.md | 이번 항목(U03) 원문 대상의 앞 사실 61건 | 13,854 |
 
 ## 필요할 때 여는 것
@@ -30,4 +30,4 @@
 
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
-| handoff/U02.md | 단위 요약 — fl:little_witch_trick | 5,413 |
+| handoff/U02.md | 단위 요약 — fl:little_witch_trick | 5,421 |

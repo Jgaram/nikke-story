@@ -1,0 +1,127 @@
+{
+  "unit": "fl:little_witch_trick",
+  "session": "U02",
+  "by": "claude",
+  "date": "2026-10-18",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1644",
+      "act": "재언급",
+      "points": ["F551"],
+      "text": "벨로타가 핫소스를 더 넣으며 '죽으면 다시 살리면 되지'라고 농담한다 — 한 번 죽고 니케로 되살아난 벨로타의 말",
+      "about": ["person:벨로타"],
+      "evidence": [{ "scene": "fl:little_witch_trick_02", "lines": ["90-91"] }],
+      "reason": "#91 — 미카와 함께 한 번 죽고 니케로 되살아났다는 벨로타(F551)의 말이 장난의 농담으로 돌아온다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1645",
+      "act": "재언급",
+      "points": ["F1212"],
+      "text": "미카가 설온장에서 입었던 옷을 오랜만에 꺼내 입고 온다",
+      "about": ["person:미카", "place:설온장"],
+      "evidence": [{ "scene": "fl:little_witch_trick_01", "lines": ["17-18"] }],
+      "reason": "#17 '설온장에서 입었던 옷' — 설온장(F1212)을 다시 꺼냄",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1646",
+      "act": "재언급",
+      "points": ["F1834"],
+      "text": "크러스트가 [아삭바삭 쿠킹 클래스] 촬영을 마치자마자 할로윈 복장으로 온다",
+      "about": ["person:크러스트"],
+      "evidence": [{ "scene": "fl:little_witch_trick_01", "lines": [82] }],
+      "reason": "#82 — 크러스트가 진행하는 요리 방송(F1834)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1647",
+      "act": "암시",
+      "points": ["F2947"],
+      "text": "매년 인기 부스 1위라는 미스터리 박스 사장이 개장 전 '첫 손님'을 자청해 마녀 인형과 사탕을 사 간다 — 벨로타는 '그런가~?'로 넘긴다",
+      "about": ["place:미스터리_박스"],
+      "evidence": [{ "scene": "fl:little_witch_trick_03", "lines": ["114-134"] }],
+      "reason": "#123-124 — 셋이 사진을 찍어 올린 그 인형이고(12 #72-75), 13 #75 벨로타 '너희가 우리 부스에서 사 간 거 아냐?'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1648",
+      "act": "재언급",
+      "points": ["F545"],
+      "text": "메이든이 길드 채팅의 레이드 공략을 믿고 마녀 인형을 사러 온다",
+      "about": ["person:메이든"],
+      "evidence": [{ "scene": "fl:little_witch_trick_05", "lines": ["44-56"] }],
+      "reason": "#44-50 — 메이든이 소속감을 찾은 파이널 퀘스트 길드(F545)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1649",
+      "act": "암시",
+      "points": ["F2948"],
+      "text": "남자 스태프의 '뒤에 하얀 옷 입은 사람' 장난에 여자 스태프가 굳어 버리고, 지켜보던 벨로타가 '흐응···' 한다",
+      "about": ["person:벨로타", "place:미스터리_박스"],
+      "evidence": [{ "scene": "fl:little_witch_trick_10", "lines": ["33-56"] }],
+      "reason": "#37-54 — 벨로타는 이 겁 많은 여자 스태프를 노려 장난을 꾸민다(11 #26-30)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1650",
+      "act": "재언급",
+      "points": ["F2948"],
+      "text": "축제가 끝나고 벨로타의 선물 상자에서 귀 잘린 마녀 인형이 나와, 버려도 돌아오는 인형 장난을 꾸민 벨로타가 그 장난에 놀란다",
+      "about": ["person:벨로타", "person:미카"],
+      "evidence": [{ "scene": "fl:little_witch_trick_14", "lines": ["28-44"] }],
+      "reason": "#29-43 — 여자 스태프에게 쓴 '돌아오는 인형'(F2948)이 꾸민 벨로타에게 돌아오는 반어",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2239",
+      "person": "person:미카",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "벨로타의 장난에 놀라고 겁먹기만 했다",
+      "after": "벨로타의 선물 상자에 귀 잘린 인형을 몰래 넣어 벨로타까지 속인다",
+      "trigger": [{ "scene": "fl:little_witch_trick_13", "lines": ["114-121"] }],
+      "evidence": [{ "scene": "fl:little_witch_trick_14", "lines": ["45-51"] }],
+      "reason": "13 #114-121 손전등 장난에 비명, 14 #47-49 '벨로타까지 제대로 속였네요'",
+      "confidence": "확실",
+      "time": "S396",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "D2240",
+      "person": "person:벨로타",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "허둥대는 꼴을 보려고 어른들을 골탕 먹이는 장난꾸러기였다",
+      "after": "거짓 글로 다른 부스를 망쳐 온 이들을 장난으로 겁줘 스스로 털어놓게 한다",
+      "trigger": [{ "scene": "fl:little_witch_trick_09", "lines": ["60-63"] }],
+      "evidence": [{ "scene": "fl:little_witch_trick_13", "lines": ["218-219"] }],
+      "reason": "09 #60-63 피해 본 부스들 얘기 뒤 추적을 청함, 13 #219 '자기들이 만든 거짓말이니까, 자기들이 직접 끝내게 해야지'",
+      "confidence": "추정",
+      "time": "S396",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "2층(생활상 없음). 암시 언급 — 이름 없이 가리킨 대상 없음(미스터리 박스 셋 · 행인은 사전 밖 단역). ??? 이름표 없음"
+}

@@ -70,157 +70,471 @@
     {
       "id": "F2940",
       "text": "방주 중앙 공원에서 2주 동안 열리는 할로윈 축제는 신청한 부스가 장사하고 마지막 날 가장 인기 있던 부스를 뽑아, 1등은 상금(올해 오천만 크레디트)과 다음 축제 우선 참가권을 받는다 — 부스 신청은 조금만 늦어도 못 하고 자리는 운영 쪽이 배정한다",
-      "about": ["incident:할로윈_축제", "place:중앙_공원", "concept:크레디트"],
+      "about": [
+        "incident:할로윈_축제",
+        "place:중앙_공원",
+        "concept:크레디트"
+      ],
       "evidence": [
-        { "scene": "fl:little_witch_trick_01", "lines": [6, "48-49", "58-59"] },
-        { "scene": "fl:little_witch_trick_03", "lines": ["0-1", 15] },
-        { "scene": "fl:little_witch_trick_12", "lines": ["4-5"] }
+        {
+          "scene": "fl:little_witch_trick_01",
+          "lines": [
+            6,
+            "48-49",
+            "58-59"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_03",
+          "lines": [
+            "0-1",
+            15
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_12",
+          "lines": [
+            "4-5"
+          ]
+        }
       ],
       "reason": "벨로타 · 미카의 설명(01 #6 · #49 · #58-59), 배정된 구석 자리(03 #15), 사장 '오천만 크레디트'(12 #5)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2941",
       "text": "벨로타는 미카와 이틀 전부터 줄 서 제일 먼저 접수한 할로윈 축제 부스 [리틀 위치 트릭]의 총괄을 맡아 크러스트(디저트) · 미카(장난감) · 지휘관(드라큘라 차림의 만능 담당)을 모으고 인기 부스 1등을 목표로 했다",
-      "about": ["person:벨로타", "person:미카", "person:크러스트", "person:지휘관", "incident:할로윈_축제"],
+      "about": [
+        "person:벨로타",
+        "person:미카",
+        "person:크러스트",
+        "person:지휘관",
+        "incident:할로윈_축제"
+      ],
       "evidence": [
-        { "scene": "fl:little_witch_trick_01", "lines": ["3-6", "30-31", "46-62", "74-78", "87-98", "119-122"] },
-        { "scene": "fl:little_witch_trick_03", "lines": ["24-28"] }
+        {
+          "scene": "fl:little_witch_trick_01",
+          "lines": [
+            "3-6",
+            "30-31",
+            "46-62",
+            "74-78",
+            "87-98",
+            "119-122"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_03",
+          "lines": [
+            "24-28"
+          ]
+        }
       ],
       "reason": "포스터 · 의상(01 #3-6 · #30-31), 접수 · 1등 목표(#46-62), 담당 나누기(#74-98 · #119-122), 현수막(03 #24-28)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2942",
       "text": "벨로타가 핫소스를 넣은 사탕 · 케첩을 뿌린 푸딩 · 붉게 칠한 마녀 인형 · 꿰맨 자국의 가짜 손은 처음엔 손님이 피했지만, 매운 사탕에 빠진 소년과 엑시아 · 노벨의 시식 반응으로 손님이 모였고 축제 게시판 입소문으로 하루 만에 긴 줄이 섰다 — 벨로타는 한 사람에게 인상을 남겨 소문이 퍼지게 노렸다고 했다",
-      "about": ["person:벨로타", "person:크러스트", "person:엑시아", "person:노벨", "incident:할로윈_축제"],
+      "about": [
+        "person:벨로타",
+        "person:크러스트",
+        "person:엑시아",
+        "person:노벨",
+        "incident:할로윈_축제"
+      ],
       "evidence": [
-        { "scene": "fl:little_witch_trick_02", "lines": ["86-137"] },
-        { "scene": "fl:little_witch_trick_04", "lines": ["17-26", "29-62", "92-146"] },
-        { "scene": "fl:little_witch_trick_05", "lines": ["0-17"] }
+        {
+          "scene": "fl:little_witch_trick_02",
+          "lines": [
+            "86-137"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_04",
+          "lines": [
+            "17-26",
+            "29-62",
+            "92-146"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_05",
+          "lines": [
+            "0-17"
+          ]
+        }
       ],
       "reason": "작업실(02 #86-137), 피하는 손님(04 #17-26), 소년 · 엑시아 · 노벨(#29-62 · #92-146), 게시판 · 벨로타 말(05 #0-17)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2943",
       "text": "메이든은 길드 채팅의 '리틀 위치 트릭 마녀 인형을 사면 레이드 보스를 깬다'는 공략을 믿고 간호사 차림으로 와 인형을 전부 두 개씩 샀고, 레이블은 오컬트 연구가로 꾸미고 와 방에 둘 마녀 인형 · 가짜 손을 샀다",
-      "about": ["person:메이든", "person:레이블"],
-      "evidence": [{ "scene": "fl:little_witch_trick_05", "lines": ["34-56", "63-85"] }],
+      "about": [
+        "person:메이든",
+        "person:레이블"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_05",
+          "lines": [
+            "34-56",
+            "63-85"
+          ]
+        }
+      ],
       "reason": "메이든(05 #34-56), 레이블(#63-85)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2944",
       "text": "다음 날 축제 게시판에 리틀 위치 트릭의 마녀 인형 속에서 붉은 글씨 종이와 머리카락 뭉치가 나왔다는 글, 사탕 · 푸딩을 먹고 쓰러지거나 토했다는 글과 댓글이 쏟아져 손님이 끊겼지만 — 남은 인형엔 솜뿐이고 디저트도 정상이었으며 운영 본부에 접수된 피해 신고는 한 건도 없었다",
-      "about": ["person:벨로타", "person:미카", "person:크러스트", "incident:할로윈_축제"],
+      "about": [
+        "person:벨로타",
+        "person:미카",
+        "person:크러스트",
+        "incident:할로윈_축제"
+      ],
       "evidence": [
-        { "scene": "fl:little_witch_trick_06", "lines": ["23-41"] },
-        { "scene": "fl:little_witch_trick_07", "lines": ["1-42", "54-61"] },
-        { "scene": "fl:little_witch_trick_08", "lines": ["13-22"] }
+        {
+          "scene": "fl:little_witch_trick_06",
+          "lines": [
+            "23-41"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_07",
+          "lines": [
+            "1-42",
+            "54-61"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_08",
+          "lines": [
+            "13-22"
+          ]
+        }
       ],
       "reason": "텅 빈 부스(06 #23-41), 게시글(07 #1-42), 다시 확인(#54-61), 운영 본부(08 #13-22)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2945",
       "text": "지난 축제들에도 다른 부스(페이스 오프 · 캔디 하우스 · 호러마스터)를 겨냥한 같은 꼴의 피해 글이 올라왔고 — 운영자가 확인을 청하면 글쓴이는 답하지 않았다 — 그 부스들은 글이 올라온 직후 운영을 중단했다",
-      "about": ["incident:할로윈_축제"],
-      "evidence": [{ "scene": "fl:little_witch_trick_08", "lines": ["47-56", "65-98"] }],
+      "about": [
+        "incident:할로윈_축제"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_08",
+          "lines": [
+            "47-56",
+            "65-98"
+          ]
+        }
+      ],
       "reason": "벨로타의 착안(08 #47-56), 미카가 찾은 지난 글 · 댓글 · 부스 검색(#65-98)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2946",
       "text": "엑시아에 따르면 리틀 위치 트릭 피해 글 · 댓글의 계정 32개는 기기 3대에서 — 한 기기가 글을 쓰면 나머지가 다른 계정으로 댓글 — 번갈아 쓰였고 지난 축제의 피해 글 기기와도 같아 동일 집단의 상습 여론 조작이며, 지휘관이 책임지겠다며 추적시킨 세 기기는 모두 미스터리 박스 부스 안에 있었다",
-      "about": ["person:엑시아", "place:미스터리_박스", "incident:할로윈_축제"],
-      "evidence": [{ "scene": "fl:little_witch_trick_09", "lines": ["6-51", "63-82"] }],
+      "about": [
+        "person:엑시아",
+        "place:미스터리_박스",
+        "incident:할로윈_축제"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_09",
+          "lines": [
+            "6-51",
+            "63-82"
+          ]
+        }
+      ],
       "reason": "엑시아의 대조(09 #6-51), 실시간 위치 추적 · 지휘관 '책임은 내가'(#63-82)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2947",
       "text": "미스터리 박스 사장(점퍼를 입은 남자)과 두 스태프는 해마다 인기 부스 1등 상금을 지키려 — 사장은 1등을 지키면 상금을 나눠 주기로 했다 — 계정 이름 · 접속 경로를 바꿔 가며 경쟁 부스에 거짓 피해 글을 써 왔고, 리틀 위치 트릭 인형 속 종이와 머리카락도 그들이 넣고 찍은 것이다",
-      "about": ["place:미스터리_박스", "incident:할로윈_축제"],
+      "about": [
+        "place:미스터리_박스",
+        "incident:할로윈_축제"
+      ],
       "evidence": [
-        { "scene": "fl:little_witch_trick_03", "lines": ["114-116", "123-125"] },
-        { "scene": "fl:little_witch_trick_12", "lines": ["2-19", "29-32", 42, "72-75"] }
+        {
+          "scene": "fl:little_witch_trick_03",
+          "lines": [
+            "114-116",
+            "123-125"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_12",
+          "lines": [
+            "2-19",
+            "29-32",
+            42,
+            "72-75"
+          ]
+        }
       ],
       "reason": "'매년 인기부스 1위'와 첫 손님(03 #114-125), 셋의 대화(12 #2-19 · #29-32), '종이랑 머리카락을 넣은 게 우린데'(#42), '사진 찍고 버렸는데'(#72-75)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2948",
       "text": "벨로타는 겁 많은 미스터리 박스 여자 스태프가 스스로 털어놓게 하려고 '마녀 인형 장난'을 꾸몄다 — 엑시아가 저주 경험담 댓글을 달고 부스 CCTV를 끊고 '나는 마녀야' 메시지와 뒷모습 사진을 보냈으며, 레이블 · 벨로타 · 지휘관이 버려도 돌아오는 인형(잘린 귀까지 맞춰)을 그녀의 동선에 놓았다",
-      "about": ["person:벨로타", "person:엑시아", "person:레이블", "person:지휘관", "place:미스터리_박스"],
-      "evidence": [
-        { "scene": "fl:little_witch_trick_10", "lines": ["37-50"] },
-        { "scene": "fl:little_witch_trick_11", "lines": ["26-80", "100-133"] },
-        { "scene": "fl:little_witch_trick_12", "lines": ["140-141"] },
-        { "scene": "fl:little_witch_trick_13", "lines": ["146-172", "203-224"] }
+      "about": [
+        "person:벨로타",
+        "person:엑시아",
+        "person:레이블",
+        "person:지휘관",
+        "place:미스터리_박스"
       ],
-      "reason": "장난에 약한 여자 스태프(10 #37-50), 작전 · 댓글(11 #26-80), 레이블(#100-133), 귀(12 #140-141), 메시지 · 굴러온 인형(13 #146-172), 벨로타의 설명(#203-224)",
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_11",
+          "lines": [
+            "26-80",
+            "100-133"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_12",
+          "lines": [
+            "140-141"
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_13",
+          "lines": [
+            "146-172",
+            "203-224"
+          ]
+        }
+      ],
+      "reason": "작전 · 댓글(11 #26-80), 레이블(#100-133), 귀(12 #140-141), 메시지 · 굴러온 인형(13 #146-172), 벨로타의 설명(#203-224)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2949",
       "text": "저주를 받는다고 믿은 여자 스태프가 운영 본부에 자수해 미스터리 박스는 운영이 멈췄고, 그녀가 낸 계정 · 기기 기록이 분석과 맞아 리틀 위치 트릭과 지난 축제 부스들을 겨냥한 글이 모두 세 사람의 조작으로 밝혀져 — 사장과 남자 스태프의 '단독 행동' 주장은 받아들여지지 않았다 — 셋은 축제 참가가 영구 제한되었다",
-      "about": ["place:미스터리_박스", "incident:할로윈_축제"],
-      "evidence": [{ "scene": "fl:little_witch_trick_13", "lines": ["173-197"] }],
+      "about": [
+        "place:미스터리_박스",
+        "incident:할로윈_축제"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_13",
+          "lines": [
+            "173-197"
+          ]
+        }
+      ],
       "reason": "자수 · 접수 · 조사 결과(13 #173-197)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2950",
       "text": "게시판 조작이 있어 공정한 순위를 정하기 어렵다며 운영 본부가 올해 인기 부스 선정을 취소했지만, 손님이 다시 몰린 리틀 위치 트릭의 벨로타 · 미카 · 크러스트 · 지휘관은 내년에도 함께 줄 서 참가해 1등을 노리기로 했다",
-      "about": ["person:벨로타", "person:미카", "person:크러스트", "person:지휘관", "incident:할로윈_축제"],
-      "evidence": [{ "scene": "fl:little_witch_trick_13", "lines": ["226-277"] }],
+      "about": [
+        "person:벨로타",
+        "person:미카",
+        "person:크러스트",
+        "person:지휘관",
+        "incident:할로윈_축제"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_13",
+          "lines": [
+            "226-277"
+          ]
+        }
+      ],
       "reason": "공지(13 #238-240), 내년 약속(#248-277)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     },
     {
       "id": "F2951",
       "text": "축제 뒤 벨로타가 지휘관에게 고맙다며 준 선물 상자(튀어나오는 박쥐 장난)에 미카가 몰래 귀 잘린 마녀 인형을 넣어 두어, 벨로타와 지휘관이 함께 놀라 지휘관실을 뛰쳐나갔다",
-      "about": ["person:벨로타", "person:미카", "person:지휘관"],
-      "evidence": [{ "scene": "fl:little_witch_trick_14", "lines": ["7-51"] }],
+      "about": [
+        "person:벨로타",
+        "person:미카",
+        "person:지휘관"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_14",
+          "lines": [
+            "7-51"
+          ]
+        }
+      ],
       "reason": "선물 · 인형 · 미카 · 크러스트의 말(14 #7-51)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     }
   ],
   "questions": [
     {
       "id": "Q379",
       "text": "누가 왜 리틀 위치 트릭을 겨냥한 거짓 피해 글을 퍼뜨리나?",
-      "about": ["incident:할로윈_축제"],
-      "evidence": [{ "scene": "fl:little_witch_trick_07", "lines": ["12-16", 62] }, { "scene": "fl:little_witch_trick_08", "lines": ["47-56", "119-122"] }],
+      "about": [
+        "incident:할로윈_축제"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_07",
+          "lines": [
+            "12-16",
+            62
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_08",
+          "lines": [
+            "47-56",
+            "119-122"
+          ]
+        }
+      ],
       "reason": "미카 · 벨로타 '넣은 적 없어'(07 #12-16), '누가 일부러 거짓말을'(#62), 신고 없는 피해 글(08 #47-56), 지휘관 '누군가 소문을 퍼뜨린다'(#119-122)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     }
   ],
   "events": [
@@ -229,11 +543,27 @@
       "act": "회수",
       "answer": "F2947",
       "degree": "전부",
-      "evidence": [{ "scene": "fl:little_witch_trick_12", "lines": ["2-19", 42] }],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_12",
+          "lines": [
+            "2-19",
+            42
+          ]
+        }
+      ],
       "reason": "미스터리 박스 셋이 상금을 지키려 조작했다고 스스로 말함(12 #2-19 · #42)",
       "confidence": "확실",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     }
   ],
   "times": [
@@ -242,12 +572,42 @@
       "kind": "기준점",
       "text": "벨로타 · 미카의 설온장 뒤(event_neverland1), 레이블이 지휘관을 따르게 된 뒤(fl:sin_editor)의 어느 할로윈",
       "ref": "incident:할로윈_축제",
-      "at": [["뒤", "event_neverland1"], ["뒤", "fl:sin_editor"]],
-      "evidence": [{ "scene": "fl:little_witch_trick_01", "lines": [17] }, { "scene": "fl:little_witch_trick_05", "lines": ["63-85"] }],
+      "at": [
+        [
+          "뒤",
+          "event_neverland1"
+        ],
+        [
+          "뒤",
+          "fl:sin_editor"
+        ]
+      ],
+      "evidence": [
+        {
+          "scene": "fl:little_witch_trick_01",
+          "lines": [
+            17
+          ]
+        },
+        {
+          "scene": "fl:little_witch_trick_05",
+          "lines": [
+            "63-85"
+          ]
+        }
+      ],
       "reason": "미카 '설온장에서 입었던 옷'(01 #17), 레이블이 지휘관을 '당신'이라 부르며 칭찬을 영구 보존하려 함(05 #63-85). 메인과 잇는 단서 없음",
       "confidence": "추정",
       "status": "확정",
-      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 1회독 — 원문 대조 검토" }]
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U02",
+          "note": "U02 1회독 — 원문 대조 검토"
+        }
+      ]
     }
   ],
   "targets": [

@@ -108,6 +108,38 @@
       "note": "records check 오류 0 · release-order · draft · mentions · signals · addresses · handoff · order-snapshot · export · check-quotes 0 · node --test 354 통과 · spoiler-check 세 독자 기본 0건 + 자리 t=156–158(char:104 뒤 · char:404 앞) 0건 — 감상 순서 · 연결에 출시 자리(157)로 섬",
       "session": "U01",
       "date": "2026-10-14"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "identity",
+      "note": "같은 사람 · 다른 사람 드러남 없음 — 새 이름표 13종(점퍼를 입은 남자 · 운영 본부 남자 직원 · 행인들)은 끝까지 이름이 없는 단역이고, 가린 이름표(???) 없음",
+      "session": "U02",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "foreshadow",
+      "note": "새로 드러난 미스터리 박스의 여론 조작 · 할로윈 축제 · 축제 게시판을 앞 단위에서 찾음(검색 '할로윈 축제' · '미스터리 박스' · '인기 부스' · '축제 게시판') — 앞서 흘린 곳 없음. 중앙 공원의 할로윈 캔디 고스트 파티(F1092, event_freezeacpu)는 다른 행사라 잇지 않음",
+      "session": "U02",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "chronology",
+      "note": "S396은 event_neverland1 · fl:sin_editor 뒤라는 상대 자리뿐 — 시대 기준점을 좁히지 않는다",
+      "session": "U02",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "links",
+      "note": "연작의 다음 편 없음 — 같은 패치의 벨로타 호감도(char:63)와의 관계는 U03이 그 단위를 읽을 때 본다. 수동 엣지는 이벤트 · 사이드 연작만 두어 온 관례(X2)대로",
+      "session": "U02",
+      "date": "2026-10-18"
     }
   ]
 }
