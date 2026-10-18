@@ -3,6 +3,7 @@
   "versions": [
     {
       "at": "fl:wave_to_you",
+      "side": true,
       "text": "등에 섬을 싣고 섬 둘레 수면 아래에 잠겨 있던 거대한 랩쳐. 옛 섬사람들이 구속 장치로 묶어 둔 것으로 보이며, 장치를 부수자 싸우지 않고 섬을 떠났다.",
       "src": "bd41db5df1",
       "session": "W15e",
@@ -18,9 +19,37 @@
           "hash": "d020997013",
           "note": "F2755 · F2760-2762 섬을 실은 랩쳐 · 구속 장치 · 풀려나 떠남, 1판"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "e641cdef72", "note": "근거 — 사실 기록(글 고침 없음)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "e641cdef72", "note": "근거 — 사실 기록(글 고침 없음)" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "hash": "bede36d6cd",
+          "note": "U3 — GINGERBREAD HOUSE(체크 칸)도 meet에 들어 첫 본판 자리가 이리로(dictFirst — 다 체크 칸이면 마지막). WAVE TO YOU 판은 곁 판(until 없음 — 본판이 그 내용을 담을 수 없다), 본판은 이 단위만 본 독자가 아는 것만"
+        }
       ],
       "refs": ["F2755", "F2761", "F2762"]
+    },
+    {
+      "at": "side:gingerbread_house",
+      "text": "세이렌의 물거품이 바다를 건너지 못하게 막았다는 것. 무엇인지는 아직 모른다.",
+      "src": "4106c8771b",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "hash": "ad91feff47",
+          "note": "U3 — GINGERBREAD HOUSE(체크 칸)도 meet에 들어 첫 본판 자리가 이리로(dictFirst — 다 체크 칸이면 마지막). WAVE TO YOU 판은 곁 판(until 없음 — 본판이 그 내용을 담을 수 없다), 본판은 이 단위만 본 독자가 아는 것만"
+        }
+      ],
+      "refs": ["F2958", "side:gingerbread_house_00#183"]
     }
   ]
 }

@@ -3,6 +3,7 @@
   "versions": [
     {
       "at": "event_oldtales1",
+      "side": true,
       "text": "헨젤 · 그레텔이 함께 쓰는 전용 무장. 그레텔이 조합하고 헨젤이 제어하는 만능 조합 · 발사 장치로, 만들지 못하는 것이 없다고 한다.",
       "src": "78d1c01b2c",
       "session": "W15e",
@@ -18,9 +19,37 @@
           "hash": "e3003c4401",
           "note": "OLD TALES 06_s#51-53·F1666(헨젤·그레텔 전용 무장, 조합·발사 장치) — 1판"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "7b36533eb0", "note": "근거 W17 B9 — 판 글은 그대로" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "7b36533eb0", "note": "근거 W17 B9 — 판 글은 그대로" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "hash": "46cc27c071",
+          "note": "U3 — 같은 까닭으로 OLD TALES 판은 곁 판(until 없음), 본판은 GINGERBREAD HOUSE에서 아는 것(F2954 · E1669)만"
+        }
       ],
       "refs": ["F1666", "event_oldtales1_06_s#51-53"]
+    },
+    {
+      "at": "side:gingerbread_house",
+      "text": "헨젤 · 그레텔의 무장. 탄을 만드는 장치로, 그레텔 없이 헨젤 혼자서는 잘 다루지 못해 오작동이 나기도 한다.",
+      "src": "ec5364da6d",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "hash": "4ff495e4fb",
+          "note": "U3 — 같은 까닭으로 OLD TALES 판은 곁 판(until 없음), 본판은 GINGERBREAD HOUSE에서 아는 것(F2954 · E1669)만"
+        }
+      ],
+      "refs": ["F2954", "E1669"]
     }
   ]
 }

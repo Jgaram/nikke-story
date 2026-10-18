@@ -3,7 +3,7 @@
 출처: annotations/read1/ + 2회독 인물 변화 D · 마무리 기록 O · 주요 인물 명단(annotations/majors.json) — 거르기 규칙 tools/views/layers.mjs emotionSignals(판정 입력 ⑧), 기준 docs/importance.md 3절 "결정적 순간".
 결정적인지 · 여기에만 장면으로인지는 판정이 기록 문장으로 본다 — 이 표는 고르지 않는다. 단위 하나: `node tools/records.mjs layers <단위 키> --summary`(⑧ "감정 재료" 줄).
 
-- 결정적 순간 후보가 있는 판정 단위 78 — 상한 필수(주요 인물) 21 · 보강(척추 인물만) 57
+- 결정적 순간 후보가 있는 판정 단위 79 — 상한 필수(주요 인물) 21 · 보강(척추 인물만) 58
 - 후보 55: 오름 51(필수로 16 · 보강으로 35) · 이른 자리 4(같은 등급, 감정 쪽 from이 이르다) · 다시 봄(세션 X3g · N3 · 사용자) 55 · **남음 0**
 - 오름 — 지금 등급 → 상한: 참고 → 보강 26 · 참고 → 필수 9 · 독립 → 보강 9 · 보강 → 필수 6 · 독립 → 필수 1
 - 후보 종류: 호감도 34 · 이벤트 15 · 서브퀘스트 2 · 이벤트 유실물 2 · 유실물 1 · 사이드 1
@@ -73,4 +73,4 @@
 
 `*` = 주요 인물의 것. 결정적 순간 후보가 있지만 상한이 지금 등급 이하인 단위(후보 아님):
 
-`char:190` 보강 · `char:191` 보강 · `erelic:white_memory` 필수 · `char:224` 필수 · `event_newyearnewsword` 보강 · `event_boomsday` 보강 · `event_darkhero` 보강 · `sub:관짝이_00` 보강 · `side:wordless` 보강 · `char:511` 보강 · `char:514` 보강 · `event_icedragonsaga1` 보강 · `event_wisdomspring` 필수 · `event_unbreakablesphere1` 보강 · `char:513` 보강 · `event_arcanearchive` 보강 · `event_lordforjustice` 보강 · `relic:정갈하게쓴기록` 보강 · `event_absolute1` 보강 · `erelic:goddess_fall_mini` 필수 · `fl:enter_heaven` 보강 · `fl:project_matis` 보강 · `fl:great_villain_union` 보강
+`char:190` 보강 · `char:191` 보강 · `erelic:white_memory` 필수 · `char:224` 필수 · `event_newyearnewsword` 보강 · `event_boomsday` 보강 · `event_darkhero` 보강 · `sub:관짝이_00` 보강 · `side:wordless` 보강 · `char:511` 보강 · `char:514` 보강 · `event_icedragonsaga1` 보강 · `event_wisdomspring` 필수 · `event_unbreakablesphere1` 보강 · `char:513` 보강 · `event_arcanearchive` 보강 · `event_lordforjustice` 보강 · `relic:정갈하게쓴기록` 보강 · `event_absolute1` 보강 · `erelic:goddess_fall_mini` 필수 · `fl:enter_heaven` 보강 · `fl:project_matis` 보강 · `fl:great_villain_union` 보강 · `side:gingerbread_house` 보강

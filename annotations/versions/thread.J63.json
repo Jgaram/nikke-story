@@ -1,0 +1,19 @@
+{
+  "subject": "thread:J63",
+  "versions": [
+    {
+      "at": "side:gingerbread_house",
+      "title": "베르누이아 — 바다 건너의 마녀",
+      "text": "V.T.C.를 배신하고 스스로 헬레틱이 된 마녀 베르누이아는 왜 그랬고 누구에게 쫓기나 — 침식도 헬레틱이라는 말도 다르다는 바다 건너는 어떤 곳인가.",
+      "src": "0ba4d233fb",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "hash": "758e0769a6", "note": "U3 — 새 떡밥 · 사전 항목 1판(그 자리 기록 · 원문 줄로)" }
+      ],
+      "refs": ["Q380", "Q381", "F2959", "F2961"]
+    }
+  ]
+}

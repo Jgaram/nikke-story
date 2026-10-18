@@ -1,0 +1,19 @@
+{
+  "subject": "thread:J62",
+  "versions": [
+    {
+      "at": "fl:little_witch_trick",
+      "title": "할로윈 축제 — 리틀 위치 트릭을 노린 거짓 글",
+      "text": "축제 게시판에 리틀 위치 트릭을 겨냥한 거짓 피해 글을 퍼뜨린 것은 해마다 1위를 지켜 온 미스터리 박스 — 상금을 지키려 경쟁 부스마다 글을 꾸며 왔다.",
+      "src": "01b32359cf",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "hash": "4e34f3c069", "note": "U3 — 새 떡밥 · 사전 항목 1판(그 자리 기록 · 원문 줄로)" }
+      ],
+      "refs": ["Q379", "F2947", "F2944"]
+    }
+  ]
+}

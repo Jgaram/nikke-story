@@ -138,6 +138,7 @@ concept:언체인드,org:미실리스,concept,org,4,2,F393 F394 F396 F415
 concept:언체인드,org:포비스트,concept,org,4,3,F1637 F1652 F1658 F1661
 concept:이터널_스카이,place:방주,concept,place,4,4,F589 F881 F1041 F1338
 concept:인식_칩,place:아우터_림,concept,place,4,3,F594 F595 F901 F1499
+concept:침식,concept:헬레틱,concept,concept,4,4,F1676 F1703 F2828 Q381
 concept:헬레틱,place:수정_지역,concept,place,4,3,F1379 F1533 F1624 F1636
 incident:2차_지상_탈환전,place:방주,incident,place,4,3,F994 F2327 U112 U352
 incident:AFX_열차_테러,org:엔터_헤븐,incident,org,4,3,F482 F596 F2500 F2501
@@ -213,16 +214,17 @@ concept:적합자,concept:페어리_테일,concept,concept,3,3,F1145 F1177 F1192
 concept:적합자,org:갓데스,concept,org,3,3,F1145 F1177 F1662
 concept:지상_탈환,place:방주,concept,place,3,3,F592 F662 F2817
 concept:침식,concept:페어리_테일,concept,concept,3,2,F1672 F1682 F1702
-concept:침식,concept:헬레틱,concept,concept,3,3,F1676 F1703 F2828
 concept:퍼펙트,org:쿠킹오일,concept,org,3,2,F1836 F1838 F1853
 concept:퍼펙트,place:에덴,concept,place,3,2,F873 U353 U354
 concept:페어리_테일,org:V.T.C.,concept,org,3,2,F1178 F1663 F1664
+concept:헬레틱,org:V.T.C.,concept,org,3,3,F1670 F2363 F2959
 concept:헬레틱,place:에덴,concept,place,3,2,F754 F765 F769
 incident:3차_지상_탈환전,org:중앙_정부,incident,org,3,2,F2060 F2608 Q268
 incident:AFX_열차_테러,org:엘리시온,incident,org,3,2,F1006 F2500 F2501
 incident:AFX_열차_테러,org:인피니티_레일,incident,org,3,2,F483 F484 F1006
 incident:랩쳐_침공,org:갓데스,incident,org,3,2,F682 F687 F1068
 incident:방주_테러,org:엔터_헤븐,incident,org,3,2,F991 F992 Q124
+incident:할로윈_축제,place:미스터리_박스,incident,place,3,1,F2946 F2947 F2949
 item:유리_구두,item:하모니_큐브,item,item,3,2,F1542 F1553 F1630
 item:유리_구두,org:갓데스,item,org,3,1,F1145 F1152 F1171
 item:하모니_큐브,place:방주,item,place,3,3,F1393 F1395 F1660
@@ -364,7 +366,6 @@ concept:퍼펙트,place:아우터_림,concept,place,2,2,F643 U364
 concept:페어리_테일,item:유리_구두,concept,item,2,1,F1145 F1146
 concept:페어리_테일,org:엘리시온,concept,org,2,1,F1145 F1146
 concept:헬레틱,item:아틀라스_케이지,concept,item,2,2,F341 F1448
-concept:헬레틱,org:V.T.C.,concept,org,2,2,F1670 F2363
 concept:헬레틱,org:갓데스,concept,org,2,2,F682 F2362
 concept:헬레틱,place:궤도_엘리베이터,concept,place,2,2,F2617 F2822
 incident:1차_지상_탈환전,place:방주,incident,place,2,2,F994 F1739

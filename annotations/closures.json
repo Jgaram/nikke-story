@@ -4748,13 +4748,13 @@
       "type": "성장",
       "chain": "성장 person:모리 신념",
       "about": ["person:모리"],
-      "text": "(초안) 성장 person:모리 신념의 끝",
-      "built": ["D678", "D683"],
-      "end": "fl:wave_to_you",
-      "closing": ["D1753"],
-      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1753@fl:wave_to_you",
+      "text": "악의에 선의로 답하겠다며 세이렌 곁에 선 모리가, 모두의 발목을 잡을까 단기간에 강해지려 조바심 내다 GINGERBREAD HOUSE에서 힘이 아니어도 할 수 있는 일로 모두가 돌아올 집을 지키기로 한다",
+      "built": ["D683", "D1753"],
+      "end": "side:gingerbread_house",
+      "closing": ["D2255"],
+      "reason": "UNBREAKABLE SPHERE D683(선의에 선의로) · WAVE TO YOU D1753(혼자서도 괜찮게 강해지려 함) → 이 단위 D2255(남아 집을 지키는 자기 몫) — X3f-1f에서 없던 이룸의 자리가 생겼다",
       "confidence": "추정",
-      "status": "기각",
+      "status": "확정",
       "reviews": [
         {
           "decision": "기각",
@@ -4762,6 +4762,14 @@
           "date": "2026-10-09",
           "session": "X3f-1f",
           "note": "악의에는 악의 → 선의에는 선의의 전환은 UNBREAKABLE SPHERE 안의 경과(D678 → D683)이고, WAVE TO YOU D1753의 '언젠가 혼자서도 괜찮다고 웃으려 강해지려는'은 새 다짐의 걸음 — 이뤄 끝나는 자리가 없다(판례 O54 · O98)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "note": "2026-10-08 U3 — 사슬이 이 단위에서 다시 움직여 기각을 되살림. D678(기준)은 쌓인 자리에서 뺌",
+          "before": "(초안) 성장 person:모리 신념의 끝 · 이유 (초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1753@fl:wave_to_you · 끝 fl:wave_to_you · 닫는 기록 D1753 · 쌓인 자리 D678 D683"
         }
       ]
     },
@@ -4939,6 +4947,71 @@
           "session": "N3",
           "note": "char:401 D1983 → COIN RUSH SHOWDOWN D2236(솔직한 말) → char:405 D2235(감사를 말함) — 말을 무기로만 쓰던 결핍이 풀려 그대로 간다(이룸). 같은 char:405의 O221과 한 이룸",
           "before": "(초안) 성장 person:신 성격의 끝"
+        }
+      ]
+    },
+    {
+      "id": "O223",
+      "type": "연작",
+      "chain": "연작 side:gingerbread_house",
+      "text": "OLD TALES에서 궤도 엘리베이터 빔에 떨어져 흩어진 헨젤 · 그레텔이 GINGERBREAD HOUSE에서 신데렐라 일행과 다시 만나 원망을 풀고 함께 싸우러 가기로 하며, 2세대 다섯이 다시 모인다",
+      "built": ["event_oldtales1", "fl:wave_to_you"],
+      "end": "side:gingerbread_house",
+      "reason": "links Y59(OLD TALES → 이 단위) · Y58(WAVE TO YOU → 이 단위) — 이 단위가 OLD TALES의 Q243-2 · Q207-6(헨젤 · 그레텔의 행방)을 전부 회수(F2956)하고 에필로그에서 다섯이 모인다. SCHOOL OF LOCK · COLORLESS는 P반 갈래(O212의 몫)라 쌓인 자리에서 뺐다(판례 X3f-1g 다른 갈래), RED ASH → OLD TALES는 O15가 닫는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "note": "2026-10-08 U3 — Y58 · Y59로 두 연작 사슬이 이 단위에서 이어짐",
+          "before": "(초안) 연작 event_schooloflock → event_redash → event_colorless → event_oldtales1 → fl:wave_to_you → side:gingerbread_house의 결판 · 이유 (초안) 다음 편 사슬 event_schooloflock → event_redash → event_colorless → event_oldtales1 → fl:wave_to_you → side:gingerbread_house의 마지막 편 · 쌓인 자리 event_schooloflock event_redash event_colorless event_oldtales1 fl:wave_to_you"
+        }
+      ]
+    },
+    {
+      "id": "O224",
+      "type": "관계",
+      "chain": "관계 person:벨로타 ↔ person:지휘관",
+      "about": ["person:벨로타", "person:지휘관"],
+      "text": "(초안) 관계 person:벨로타 ↔ person:지휘관의 끝",
+      "built": ["D1840", "D1841"],
+      "end": "char:63",
+      "closing": ["D2258"],
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D2258@char:63",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        {
+          "decision": "기각",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "note": "char:60 D1841에서 이미 입맞춤 · 매일 아저씨 생각 고백 — char:63 D2258은 같은 사이를 할로윈 사역마 놀이로 다시 보일 뿐(계약 자동 갱신도 장난의 연장), 판례 O140"
+        }
+      ]
+    },
+    {
+      "id": "O225",
+      "type": "관계",
+      "chain": "관계 person:세이렌 ↔ person:헨젤",
+      "about": ["person:세이렌", "person:헨젤"],
+      "text": "언령을 경계하다 친구로 받아 준 헨젤과 세이렌이, 헨젤이 헬레틱 편에 서며 마녀의 아궁이를 겨누던 다툼 끝에 서로 사과하고 함께 싸우지 못해도 가족이라는 사이로 자리 잡는다",
+      "built": ["D1638", "D1639"],
+      "end": "side:gingerbread_house",
+      "closing": ["D2246", "D2250"],
+      "reason": "char:513 D1638 · D1639(친구로 받아들임) → 이 단위 D2246 · D2250(다툼 뒤 사과 · 가족) — 오해가 풀리고 신뢰를 확인(확정 기준 관계 자리 잡음)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "N3",
+          "before": "(초안) 관계 person:세이렌 ↔ person:헨젤의 끝 · 이유 (초안) 4건 · 단위 2 · 변화 4, 마지막 변화 D2246 D2250@side:gingerbread_house"
         }
       ]
     }
@@ -5251,6 +5324,17 @@
       "confidence": "추정",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N3" }]
+    },
+    {
+      "id": "H29",
+      "title": "GINGERBREAD HOUSE — 2세대가 다시 모임",
+      "end": "side:gingerbread_house",
+      "members": ["O223", "O225", "O215"],
+      "text": "OLD TALES 뒤 흩어졌던 헨젤 · 그레텔이 바다 건너 마녀의 집에서 세이렌과 화해하고 함께 가기로 하며, 모리는 남아 모두가 돌아올 집을 지키기로 해 한 집에서 함께 결판난다",
+      "reason": "같은 단위 끝 확정 O 셋이 한 이야기의 한 결판 — 연작의 결판 편과 그 안 인물의 끝(판례 CLAY, MORE! · TERMINUS TICKET)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3" }]
     }
   ]
 }

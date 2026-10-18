@@ -1,0 +1,21 @@
+{
+  "unit": "char:63",
+  "why": {
+    "text": "필수 스토리와 얽히지 않는 이야기.",
+    "src": "42b7c1d6b3",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-10-18",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-10-18",
+        "session": "N3",
+        "hash": "3ecb12298d",
+        "note": "U3 — 쓰는 기준 W14a(독립은 K316 · K295와 같은 잣대로 고정 문장, 추천은 앞 필수 스토리 CH.42의 사정)"
+      }
+    ]
+  }
+}

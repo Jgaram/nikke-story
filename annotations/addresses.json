@@ -4139,6 +4139,20 @@
         "note": "W22 판정 기준(docs/annotations.md 호칭 기록)으로 202판 검토 — 서브에이전트 8개 초안, K · E.H. · 에이다 · 이노센트 데이즈는 기준으로 고침"
       }
     ]
+  },
+  {
+    "id": "A184",
+    "rid": 63,
+    "person": "person:벨로타",
+    "address": "아저씨",
+    "voice": ["c063_Gacha_Get_1", "c063_Field_Touch_1", "c063_Attractive_Up_3"],
+    "evidence": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_01", "lines": [1, 40] }],
+    "reason": "음성 대사와 호감도 스토리 30여 줄 모두 아저씨다. 사역마는 마녀 놀이 속 역할을 가리키는 3인칭(계약서 조항 · 내 사역마)이라 호칭으로 쓰지 않는다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "N3",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "note": "U3 — 2026-10-08 새 실장판(63 벨로타 : 펌킨 위치), W22 판정 기준" }]
   }
  ]
 }

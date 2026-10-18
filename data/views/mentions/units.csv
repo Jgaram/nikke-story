@@ -237,7 +237,7 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 236,event_dazzlingcupid,이벤트,15,9,3,0,0,3
 237,char:450,호감도,5,4,4,0,0,0
 238,char:451,호감도,5,13,2,0,0,0
-239,event_freezeacpu,이벤트,15,13,8,3,0,12
+239,event_freezeacpu,이벤트,15,13,9,3,1,12
 240,char:33,호감도,5,11,6,0,0,0
 241,ch25,메인,16,22,22,0,0,0
 242,relic:마더웨일아종목격보고.wav,유실물,4,0,3,0,0,0
@@ -481,3 +481,6 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 480,fl:coin_rush_show_down,이벤트,28,19,25,1,4,0
 481,char:404,호감도,5,10,7,0,0,0
 482,char:405,호감도,5,7,4,0,0,0
+483,fl:little_witch_trick,이벤트,15,8,6,0,2,0
+484,side:gingerbread_house,사이드,19,15,14,1,0,1
+485,char:63,호감도,5,4,1,0,0,2

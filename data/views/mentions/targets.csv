@@ -1,26 +1,26 @@
 target,type,kind,name,scenes,units,speaks,named,alias,first_order,first_unit,first_scene,first_seq,first_how,first_speaks_unit,first_named_unit,last_order,last_unit,last_scene,excluded_names,unit_names,precision
-concept:니케,concept,존재,니케,1258,318,0,3365,0,1,ch00,d_main_01_01_s,17,named,,ch00,481,char:404,ep:d_nikke_guilty_mightybunny_02,,,
-concept:랩쳐,concept,존재,랩쳐,979,264,0,2852,0,1,ch00,d_main_01_01_s,24,named,,ch00,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,
+concept:니케,concept,존재,니케,1265,319,0,3395,0,1,ch00,d_main_01_01_s,17,named,,ch00,484,side:gingerbread_house,side:gingerbread_house_17,,,
+concept:랩쳐,concept,존재,랩쳐,987,265,0,2885,0,1,ch00,d_main_01_01_s,24,named,,ch00,484,side:gingerbread_house,side:gingerbread_house_17,,,
 org:니케_관리부,org,부서,니케 관리부,2,2,0,2,0,1,ch00,d_main_01_01_s,17,named,,ch00,187,event_ltk,event_ltk_05_s,,,
 org:스쿼드_04-F,org,스쿼드,스쿼드 04-F,2,2,0,2,0,1,ch00,d_main_01_03_s,30,named,,ch00,140,ch17,d_main_17_12,,,
 org:실버건,org,스쿼드,실버건,2,2,0,2,0,1,ch00,d_main_01_03_s,39,named,,ch00,31,ch07,d_main_07_06_e,,,
 org:중앙_정부,org,정부,중앙 정부,336,139,0,610,582,1,ch00,d_main_01_01_s,17,named,,ch00,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,,,정부 9/10
-person:라피,person,니케,라피,961,232,9242,1510,0,1,ch00,d_main_01_03_s,8,speaks,ch00,ch00,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,라피 5/5
+person:라피,person,니케,라피,962,233,9242,1511,0,1,ch00,d_main_01_03_s,8,speaks,ch00,ch00,485,char:63,ep:d_nikke_belorta_pumpkinwitch_02,,,라피 5/5
 person:마리안,person,인물,마리안,165,37,1162,575,0,1,ch00,d_main_01_01_s,0,speaks,ch00,ch00,472,ch48,d_main_48_07,,,마리안 3/3
 person:아니스,person,니케,아니스,891,230,11330,1584,0,1,ch00,d_main_01_03_s,7,speaks,ch00,ch00,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,아니스 3/3
-person:지휘관,person,인물,지휘관,2792,408,34907,4815,0,1,ch00,d_main_01_01_s,4,named,ch00,ch00,482,char:405,ep:d_nikke_sin_swiftbunny_05,,,지휘관 10/10
-place:방주,place,도시,방주,1276,330,0,3939,0,1,ch00,d_main_01_01_s,4,named,,ch00,482,char:405,ep:d_nikke_sin_swiftbunny_03,,,
+person:지휘관,person,인물,지휘관,2811,410,35175,4817,0,1,ch00,d_main_01_01_s,4,named,ch00,ch00,485,char:63,ep:d_nikke_belorta_pumpkinwitch_05,,,지휘관 10/10
+place:방주,place,도시,방주,1282,332,0,3953,0,1,ch00,d_main_01_01_s,4,named,,ch00,484,side:gingerbread_house,side:gingerbread_house_15,,,
 place:사관학교,place,학교,사관학교,28,21,0,35,0,1,ch00,d_main_01_03_e,26,named,,ch00,472,ch48,d_main_48_07,,,
-place:지상,place,지역,지상,895,285,0,1956,0,1,ch00,d_main_01_03_e,2,named,,ch00,482,char:405,ep:d_nikke_sin_swiftbunny_03,,,지상 10/10
+place:지상,place,지역,지상,901,286,0,1964,0,1,ch00,d_main_01_03_e,2,named,,ch00,484,side:gingerbread_house,side:gingerbread_house_10,,,지상 10/10
 concept:로드_급,concept,랩쳐 등급,로드 급,33,26,0,49,0,2,ch01,d_main_01_06_s,0,named,,ch01,407,fl:reborn_evil,fl:reborn_evil_17,,,
 concept:블랙스미스,concept,랩쳐 종류,블랙스미스,12,5,0,27,0,2,ch01,d_main_01_07_s,41,named,,ch01,400,event_absolute1,event_absolute2_epilogue,,,
 concept:이레귤러,concept,존재,이레귤러,25,11,0,55,0,2,ch01,d_main_01_07_e,19,named,,ch01,393,fl:boom_the_ghost,fl:boom_the_ghost_21,,,
-concept:침식,concept,현상,침식,150,48,0,375,0,2,ch01,d_main_01_07_s,31,named,,ch01,472,ch48,d_main_48_07,,,침식 10/10
+concept:침식,concept,현상,침식,153,49,0,386,0,2,ch01,d_main_01_07_s,31,named,,ch01,484,side:gingerbread_house,side:gingerbread_house_17,,,침식 10/10
 concept:콜링_시그널,concept,현상,콜링 시그널,25,15,0,41,0,2,ch01,d_main_01_07_s,36,named,,ch01,472,ch48,d_main_48_06_e,,,
 concept:타일런트_급,concept,랩쳐 등급,타일런트 급,59,37,0,79,88,2,ch01,d_main_01_07_s,44,alias,,ch01,472,ch48,d_main_48_06_s,,,
 org:엘리시온,org,기업,엘리시온,121,66,0,222,0,2,ch01,d_main_01af_03,5,named,,ch01,480,fl:coin_rush_show_down,fl:coin_rush_show_down_24,,,
 org:정보부,org,부서,정보부,14,10,0,15,0,2,ch01,d_main_01_05,19,named,,ch01,377,event_unbreakablesphere1,event_unbreakablesphere2_02_s,,,정보부 8/10
-org:카운터스,org,스쿼드,카운터스,149,81,0,213,0,2,ch01,d_main_01af_03,22,named,,ch01,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,
+org:카운터스,org,스쿼드,카운터스,150,82,0,214,0,2,ch01,d_main_01af_03,22,named,,ch01,484,side:gingerbread_house,side:gingerbread_house_07,,,
 person:네온,person,니케,네온,810,221,6504,781,0,2,ch01,d_main_01af_05,3,speaks,ch01,ch01,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,네온 10/10
 person:시프티,person,인물,시프티,177,42,1328,139,0,2,ch01,d_main_01_05,0,speaks,ch01,ch01,474,fl:persona_on_frontline,fl:persona_on_frontline_21,,,시프티 3/3
 person:엔더슨,person,인물,엔더슨,117,48,1526,118,0,2,ch01,d_main_01af_01,24,speaks,ch01,ch01,474,fl:persona_on_frontline,fl:persona_on_frontline_11,,,엔더슨 3/3
@@ -52,7 +52,7 @@ person:트레저_헌터,person,인물,트레저 헌터,4,4,211,14,0,12,sub:트�
 person:랩칠리언,person,인물,랩칠리언,34,15,631,94,0,13,sub:랩칠리언_00,sub:랩칠리언_00,0,named,sub:랩칠리언_00,sub:랩칠리언_00,464,fl:wave_to_you,fl:wave_to_you_21,,,랩칠리언 3/3
 item:방주_추첨권,item,문서,방주 추첨권,10,7,0,4,13,14,relic:방주추첨권,relic:방주추첨권_00,0,named,,relic:방주추첨권,423,fl:blank_ticket,fl:blank_ticket_14,,,추첨권 10/10
 concept:기억_소거,concept,절차,기억 소거,73,40,0,111,0,15,ch04,d_main_04af_01,16,named,,ch04,467,fl:project_matis,fl:project_matis_06,,,
-concept:크레디트,concept,화폐,크레디트,55,39,0,99,0,15,ch04,d_main_04af_05,5,named,,ch04,458,fl:b-side_idol,fl:b-side_idol_03,,,
+concept:크레디트,concept,화폐,크레디트,57,41,0,101,0,15,ch04,d_main_04af_05,5,named,,ch04,484,side:gingerbread_house,side:gingerbread_house_04,,,
 concept:페어리_테일,concept,니케 모델,페어리 테일,39,16,0,72,0,15,ch04,d_main_04_04_e,38,named,,ch04,472,ch48,d_main_48_03,,,페어리 테일 10/10
 org:앱솔루트,org,스쿼드,앱솔루트,92,35,0,156,0,15,ch04,d_main_04_09_e,18,named,,ch04,477,char:871,ep:d_nikke_ce009_02_04,,,
 org:필그림,org,세력,필그림,114,45,0,174,28,15,ch04,d_main_04_04_e,73,alias,,ch04,478,fl:great_villain_union,fl:great_villain_union_01,,,순례자 10/10
@@ -71,17 +71,17 @@ incident:아크_가디언_작전,incident,작전,아크 가디언 작전,18,9,0,
 org:언리미티드,org,스쿼드,언리미티드,33,11,0,45,0,20,ch05,d_main_05_05,2,named,,ch05,400,event_absolute1,event_absolute2_epilogue,,,
 person:루드밀라,person,니케,루드밀라,89,18,1712,196,0,20,ch05,d_main_05_04_e,30,speaks,ch05,ch05,477,char:871,ep:d_nikke_ce009_02_05,,,루드밀라 3/3
 person:앨리스,person,니케,앨리스,86,13,1041,296,0,20,ch05,d_main_05_04_e,28,speaks,ch05,ch05,400,event_absolute1,event_absolute2_06_e,,,앨리스 10/10
-place:궤도_엘리베이터,place,시설,궤도 엘리베이터,54,22,0,127,0,20,ch05,d_main_05_11_e,5,named,,ch05,473,relic:불길한_소리.wav,relic:불길한_소리.wav_03,,,
+place:궤도_엘리베이터,place,시설,궤도 엘리베이터,62,23,0,143,0,20,ch05,d_main_05_11_e,5,named,,ch05,484,side:gingerbread_house,side:gingerbread_house_15,,,
 person:제인_밀러,person,인물,제인 밀러,3,3,11,9,0,21,sub:중앙_정부_공식__00,sub:중앙_정부_공식__00,35,named,sub:중앙_정부_공식__02,sub:중앙_정부_공식__00,148,sub:중앙_정부_공식__02,sub:중앙_정부_공식__02,,,제인 밀러 3/3
 person:고스트,person,인물,고스트,1,1,36,3,0,22,sub:고스트_00,sub:고스트_00,0,named,sub:고스트_00,sub:고스트_00,22,sub:고스트_00,sub:고스트_00,,고스트,고스트 3/8 · 단위 3/3
 place:미들_시티,place,도시,미들 시티,1,1,0,12,0,22,sub:고스트_00,sub:고스트_00,13,named,,sub:고스트_00,22,sub:고스트_00,sub:고스트_00,,,
-org:갓데스,org,스쿼드,갓데스,164,48,0,449,0,25,relic:통화기록028594,relic:통화기록028594_00,5,named,,relic:통화기록028594,471,relic:승리를_부르는_그림자,relic:승리를_부르는_그림자_01,,,
+org:갓데스,org,스쿼드,갓데스,165,49,0,452,0,25,relic:통화기록028594,relic:통화기록028594_00,5,named,,relic:통화기록028594,484,side:gingerbread_house,side:gingerbread_house_10,,,
 person:레이첼_호프,person,인물,레이첼 호프,2,1,0,2,0,25,relic:통화기록028594,relic:통화기록028594_00,3,named,,relic:통화기록028594,25,relic:통화기록028594,relic:통화기록028594_01,,,레이첼 호프 2/2
 person:호프,person,인물,호프,8,2,32,59,0,25,relic:통화기록028594,relic:통화기록028594_00,4,named,fl:ark_ranger,relic:통화기록028594,462,fl:ark_ranger,fl:ark_ranger_24,,,호프 10/10
-concept:헬레틱,concept,존재,헬레틱,275,70,0,638,0,26,ch06,d_main_06_08_e,24,named,,ch06,478,fl:great_villain_union,fl:great_villain_union_10,,,
+concept:헬레틱,concept,존재,헬레틱,285,71,0,688,0,26,ch06,d_main_06_08_e,24,named,,ch06,484,side:gingerbread_house,side:gingerbread_house_17,,,
 person:모더니아,person,니케,모더니아,27,15,270,51,0,26,ch06,d_main_06_08_e,21,speaks,ch06,ch06,472,ch48,d_main_48_05,,,모더니아 10/10
 person:스노우_화이트,person,니케,스노우 화이트,254,44,3141,637,0,26,ch06,d_main_06_02,38,named,ch06,ch06,472,ch48,d_main_48_07,,,스노우 화이트 10/10
-person:퀸,person,랩쳐,퀸,169,39,0,773,0,26,ch06,d_main_06_08_e,25,named,,ch06,474,fl:persona_on_frontline,fl:persona_on_frontline_26,,,퀸 8/10
+person:퀸,person,랩쳐,퀸,177,40,0,792,0,26,ch06,d_main_06_08_e,25,named,,ch06,484,side:gingerbread_house,side:gingerbread_house_18,,,퀸 8/10
 person:랜드크랩,person,인물,랜드크랩,3,3,3,7,0,27,sub:랩칠리언_03,sub:랩칠리언_03,30,speaks,sub:랩칠리언_03,sub:랩칠리언_03,143,sub:랩칠리언_06,sub:랩칠리언_06,,,랜드크랩 3/3
 person:스퀴드,person,인물,스퀴드,3,3,3,5,0,27,sub:랩칠리언_03,sub:랩칠리언_03,31,speaks,sub:랩칠리언_03,sub:랩칠리언_03,143,sub:랩칠리언_06,sub:랩칠리언_06,,,스퀴드 3/3
 concept:양산형_니케,concept,존재,양산형 니케,152,67,0,197,319,28,sub:세르반_01,sub:세르반_01,67,named,,sub:세르반_01,480,fl:coin_rush_show_down,fl:coin_rush_show_down_03,,,양산형 10/10
@@ -89,7 +89,7 @@ person:코리,person,인물,코리,1,1,36,7,0,30,sub:코리_00,sub:코리_00,0,n
 concept:특수_별동대,concept,지위,특수 별동대,63,34,0,87,0,31,ch07,d_main_07af_03,12,named,,ch07,458,fl:b-side_idol,fl:b-side_idol_04,,,
 incident:랩쳐_침공,incident,전쟁,랩쳐 침공,48,36,0,37,21,31,ch07,d_main_07_02,16,named,,ch07,470,ch47,d_main_47_06,랩쳐의 침공,,랩쳐의 침공 2/6
 person:니힐리스타,person,니케,니힐리스타,72,21,964,235,0,31,ch07,d_main_07_06_e,10,named,ch20,ch07,436,ch44,d_main_44_04,,,니힐리스타 3/3
-person:엑시아,person,니케,엑시아,104,33,1324,257,0,31,ch07,d_main_07af_04,17,named,ch07,ch07,440,char:862,ep:d_nikke_ce008_03_04,,,엑시아 10/10
+person:엑시아,person,니케,엑시아,110,34,1420,286,0,31,ch07,d_main_07af_04,17,named,ch07,ch07,483,fl:little_witch_trick,fl:little_witch_trick_13,,,엑시아 10/10
 org:M.M.R.,org,기관,M.M.R.,74,37,0,143,0,33,sub:세르반_02,sub:세르반_02,51,named,,sub:세르반_02,480,fl:coin_rush_show_down,fl:coin_rush_show_down_23,,,
 org:동식물_관리국,org,부서,동식물 관리국,8,5,0,12,0,33,sub:세르반_02,sub:세르반_02,14,named,,sub:세르반_02,228,char:351,ep:d_nikke_anchor_05,,,
 incident:갓데스_폴,incident,사건,갓데스 폴,7,5,0,7,0,35,d_ex_elevator_01,d_ex_elevator_01,44,named,,d_ex_elevator_01,447,side:pretty_star,side:pretty_star_05,,,
@@ -105,7 +105,7 @@ concept:퍼펙트,concept,식량,퍼펙트,100,65,0,221,0,43,ch09,d_main_09af_05
 org:메티스,org,스쿼드,메티스,138,47,0,322,0,43,ch09,d_main_09af_05,53,named,,ch09,480,fl:coin_rush_show_down,fl:coin_rush_show_down_02,,,
 org:엔터_헤븐,org,단체,엔터 헤븐,51,19,0,135,0,43,ch09,d_main_09af_02,12,named,,ch09,442,fl:enter_heaven,fl:enter_heaven_14,,,
 org:트라이앵글,org,스쿼드,트라이앵글,28,15,0,53,0,43,ch09,d_main_09_04,5,named,,ch09,480,fl:coin_rush_show_down,fl:coin_rush_show_down_13,,,
-person:노벨,person,니케,노벨,36,15,693,115,0,43,ch09,d_main_09af_03,15,speaks,ch09,ch09,369,event_foolburstday,event_foolburstday_02,,,노벨 10/10
+person:노벨,person,니케,노벨,37,16,714,121,0,43,ch09,d_main_09af_03,15,speaks,ch09,ch09,483,fl:little_witch_trick,fl:little_witch_trick_04,,,노벨 10/10
 person:애드미,person,니케,애드미,27,13,446,92,0,43,ch09,d_main_09_04,26,speaks,ch09,ch09,476,char:870,ep:d_nikke_ce009_01_02,,,애드미 3/3
 person:율하,person,니케,율하,42,19,634,116,0,43,ch09,d_main_09_04,24,speaks,ch09,ch09,476,char:870,ep:d_nikke_ce009_01_02,,,율하 10/10
 person:프리바티,person,니케,프리바티,186,31,4728,921,0,43,ch09,d_main_09_04,23,speaks,ch09,ch09,480,fl:coin_rush_show_down,fl:coin_rush_show_down_26,,,프리바티 3/3
@@ -134,7 +134,7 @@ org:익스터너,org,스쿼드,익스터너,21,9,0,34,0,59,ch12,d_main_12_07_e,9
 org:카페_스위티,org,스쿼드,카페 스위티,38,18,0,61,0,59,ch12,d_main_12af_04,15,named,,ch12,480,fl:coin_rush_show_down,fl:coin_rush_show_down_10,,,
 person:길로틴,person,니케,길로틴,60,13,1608,315,0,59,ch12,d_main_12_07_e,98,named,ch12,ch12,450,ch45,d_main_45_09,,,길로틴 10/10
 person:마나,person,니케,마나,117,38,1519,250,0,59,ch12,d_main_12af_03,0,speaks,ch12,ch12,481,char:404,ep:d_nikke_guilty_mightybunny_04,,,마나 10/10
-person:메이든,person,니케,메이든,73,11,1497,290,0,59,ch12,d_main_12_07_e,91,speaks,ch12,ch12,365,fl:for_rest,fl:for_rest_09,,,메이든 10/10
+person:메이든,person,니케,메이든,74,12,1510,295,0,59,ch12,d_main_12_07_e,91,speaks,ch12,ch12,483,fl:little_witch_trick,fl:little_witch_trick_05,,,메이든 10/10
 person:아인,person,니케,아인,125,19,2177,327,0,59,ch12,d_main_12_07_e,103,named,char:392,ch12,475,char:872,ep:d_nikke_ce009_03_05,,,아인 10/10
 person:러블리_드림☆,person,인물,러블리 드림☆,2,2,154,6,0,61,sub:러블리_드림_00,sub:러블리_드림_00,0,named,sub:러블리_드림_00,sub:러블리_드림_00,161,sub:러블리_드림_01,sub:러블리_드림_01,,,러블리 드림☆ 3/3
 person:든?셀,person,인물,든?셀,1,1,7,2,0,62,sub:든_셀_00,sub:든_셀_00,0,named,sub:든_셀_00,sub:든_셀_00,62,sub:든_셀_00,sub:든_셀_00,,,든?셀 2/2
@@ -210,8 +210,8 @@ person:점프만이살길,person,인물,점프만이살길,2,1,2,6,0,101,char:18
 person:총술사상향좀,person,인물,총술사상향좀,2,1,2,5,0,101,char:181,ep:d_nikke_maiden_03,19,named,char:181,char:181,101,char:181,ep:d_nikke_maiden_04,,,총술사상향좀 3/3
 person:치유하는바람,person,인물,치유하는바람,1,1,3,0,0,101,char:181,ep:d_nikke_maiden_04,127,speaks,char:181,,101,char:181,ep:d_nikke_maiden_04,,,
 person:에피넬,person,니케,에피넬,19,7,314,83,0,102,char:32,ep:d_nikke_miranda_02,9,named,char:241,char:32,332,event_lifeagain,event_lifeagain_epilogue,,,에피넬 3/3
-person:미카,person,니케,미카,57,17,1202,381,0,103,char:61,ep:d_nikke_mica_01,10,speaks,char:61,char:61,477,char:871,ep:d_nikke_ce009_02_05,,,미카 5/5
-person:벨로타,person,니케,벨로타,57,15,1030,471,0,103,char:61,ep:d_nikke_mica_01,2,named,char:61,char:61,400,event_absolute1,event_absolute2_epilogue,,,벨로타 3/3
+person:미카,person,니케,미카,72,19,1365,426,0,103,char:61,ep:d_nikke_mica_01,10,speaks,char:61,char:61,485,char:63,ep:d_nikke_belorta_pumpkinwitch_04,,,미카 5/5
+person:벨로타,person,니케,벨로타,77,17,1616,585,0,103,char:61,ep:d_nikke_mica_01,2,named,char:61,char:61,485,char:63,ep:d_nikke_belorta_pumpkinwitch_05,,,벨로타 3/3
 person:루마니,person,니케,루마니,28,8,1020,132,0,104,char:161,ep:d_nikke_mihara_02,24,named,char:161,char:161,369,event_foolburstday,event_foolburstday_05,,,루마니 3/3
 concept:로스트_섹터,concept,구조물,로스트 섹터,7,6,0,5,9,105,char:141,ep:d_nikke_milk_05,28,named,,char:141,377,event_unbreakablesphere1,event_unbreakablesphere1_01_s,,,
 place:언더_아레나,place,시설,언더 아레나,13,2,0,35,0,105,char:141,ep:d_nikke_milk_02,21,named,,char:141,303,event_claymore,event_claymore_epilogue,,,
@@ -237,7 +237,7 @@ person:보라_올빼미,person,인물,보라 올빼미,3,1,14,6,0,127,char:92,ep
 person:빨간_올빼미,person,인물,빨간 올빼미,4,1,13,5,0,127,char:92,ep:d_nikke_eunhwa_01,19,named,char:92,char:92,127,char:92,ep:d_nikke_eunhwa_04,,,빨간 올빼미 3/3
 person:파란_올빼미,person,인물,파란 올빼미,3,1,8,3,0,127,char:92,ep:d_nikke_eunhwa_01,21,named,char:92,char:92,127,char:92,ep:d_nikke_eunhwa_04,,,파란 올빼미 3/3
 person:회색_올빼미,person,인물,회색 올빼미,4,1,23,4,0,127,char:92,ep:d_nikke_eunhwa_01,34,speaks,char:92,char:92,127,char:92,ep:d_nikke_eunhwa_04,,,회색 올빼미 3/3
-person:레비,person,인물,레비,65,18,558,319,0,128,char:231,ep:d_nikke_isabel_02,87,named,side:mudfish,char:231,478,fl:great_villain_union,fl:great_villain_union_04,,,레비 10/10
+person:레비,person,인물,레비,66,19,558,321,0,128,char:231,ep:d_nikke_isabel_02,87,named,side:mudfish,char:231,484,side:gingerbread_house,side:gingerbread_house_00,,,레비 10/10
 person:이사벨,person,니케,이사벨,67,16,780,156,0,128,char:231,ep:d_nikke_isabel_01,7,speaks,char:231,char:231,472,ch48,d_main_48_06_e,,,이사벨 3/3
 incident:데일리_아크_신문사_테러_사건,incident,사건,데일리 아크 신문사 테러 사건,3,1,0,2,3,129,char:110,ep:d_nikke_crow_01,11,named,,char:110,129,char:110,ep:d_nikke_crow_04,,,
 org:데일리_아크,org,신문사,데일리 아크,9,2,0,10,0,129,char:110,ep:d_nikke_crow_01,11,named,,char:110,160,relic:데일리아크기사스크랩,relic:데일리아크기사스크랩_04,,,
@@ -352,7 +352,7 @@ incident:방주_테러,incident,테러,방주 테러,30,17,0,42,0,214,ch23,d_mai
 person:잉크,person,인물,잉크,11,6,96,21,0,214,ch23,d_main_23af_02,38,named,event_icedragonsaga1,ch23,436,ch44,d_main_44_af_03,,,잉크 9/10
 person:프리티,person,니케,프리티,38,13,0,153,0,214,ch23,d_main_23_08_e,11,named,,ch23,467,fl:project_matis,fl:project_matis_12,,,프리티 10/10
 person:모건,person,인물,모건,6,2,11,12,0,224,event_goldenship,event_goldenship_01_s,10,speaks,event_goldenship,event_goldenship,225,char:350,ep:d_nikke_mast_05,,,모건 5/5
-person:세이렌,person,인물,세이렌,108,21,0,353,0,224,event_goldenship,event_goldenship_01_s,64,named,,event_goldenship,478,fl:great_villain_union,fl:great_villain_union_07,,,세이렌 10/10
+person:세이렌,person,인물,세이렌,125,22,0,426,0,224,event_goldenship,event_goldenship_01_s,64,named,,event_goldenship,484,side:gingerbread_house,side:gingerbread_house_18,,,세이렌 10/10
 person:잭_로우,person,인물,잭 로우,4,1,11,24,0,225,char:350,ep:d_nikke_mast_01,5,speaks,char:350,char:350,225,char:350,ep:d_nikke_mast_05,,,잭 로우 3/3
 concept:크라켄,concept,랩쳐 종류,크라켄,23,3,0,105,0,226,event_seayouagain1,event_seayouagain1_05_s,30,named,,event_seayouagain1,393,fl:boom_the_ghost,fl:boom_the_ghost_26,,,
 concept:D-WAVE,concept,현상,D-WAVE,33,10,0,83,0,231,char:810,ep:d_nikke_ce_02_01_01,0,named,,char:810,477,char:871,ep:d_nikke_ce009_02_05,,,
@@ -366,27 +366,28 @@ person:파스칼,person,니케,파스칼,5,1,120,17,0,232,char:812,ep:d_nikke_ce
 person:A2,person,니케,A2,5,1,47,23,0,233,char:811,ep:d_nikke_ce_02_02_01,0,named,char:811,char:811,233,char:811,ep:d_nikke_ce_02_02_05,,,A2 10/10
 person:P-12,person,인물,P-12,5,1,129,18,0,233,char:811,ep:d_nikke_ce_02_02_01,0,named,char:811,char:811,233,char:811,ep:d_nikke_ce_02_02_05,,,P-12 3/3
 person:나가,person,니케,나가,82,15,1227,298,0,234,event_schooloflock,event_schooloflock_01_e,30,speaks,event_schooloflock,event_schooloflock,475,char:872,ep:d_nikke_ce009_03_04,,나가,나가 5/10 · 단위 9/10
-person:마르차나,person,니케,마르차나,76,13,1853,333,0,234,event_schooloflock,event_schooloflock_prologue,4,speaks,event_schooloflock,event_schooloflock,475,char:872,ep:d_nikke_ce009_03_03,,,마르차나 3/3
+person:마르차나,person,니케,마르차나,77,14,1853,334,0,234,event_schooloflock,event_schooloflock_prologue,4,speaks,event_schooloflock,event_schooloflock,484,side:gingerbread_house,side:gingerbread_house_00,,,마르차나 3/3
 person:카르히,person,인물,카르히,5,2,2,5,0,234,event_schooloflock,event_schooloflock_06_e,54,named,event_colorless,event_schooloflock,319,event_colorless,event_colorless_05_e,,,카르히 3/3
 person:트리세라,person,인물,트리세라,12,2,118,49,0,234,event_schooloflock,event_schooloflock_intermission_01,84,named,event_schooloflock,event_schooloflock,319,event_colorless,event_colorless_06_e,,,트리세라 3/3
-person:티아,person,니케,티아,70,16,1341,391,0,234,event_schooloflock,event_schooloflock_01_e,27,speaks,event_schooloflock,event_schooloflock,475,char:872,ep:d_nikke_ce009_03_04,,,티아 5/5
+person:티아,person,니케,티아,71,17,1341,392,0,234,event_schooloflock,event_schooloflock_01_e,27,speaks,event_schooloflock,event_schooloflock,484,side:gingerbread_house,side:gingerbread_house_00,,,티아 5/5
 person:아트,person,인물,아트,6,3,50,26,0,235,char:321,ep:d_nikke_marciana_03,47,named,event_ce006,char:321,445,fl:2x2_love_2ch,fl:2x2_love_2ch_27,,,아트 4/5
-person:그레텔,person,인물,그레텔,41,13,24,161,0,239,event_freezeacpu,event_freezeacpu_06_e,20,named,event_oldtales1,event_freezeacpu,464,fl:wave_to_you,fl:wave_to_you_04,,,그레텔 10/10
+person:그레텔,person,인물,그레텔,60,14,326,517,0,239,event_freezeacpu,event_freezeacpu_06_e,20,named,event_oldtales1,event_freezeacpu,484,side:gingerbread_house,side:gingerbread_house_18,,,그레텔 10/10
 person:키리,person,니케,키리,61,15,961,219,0,239,event_freezeacpu,event_freezeacpu_01_e,3,speaks,event_freezeacpu,event_freezeacpu,474,fl:persona_on_frontline,fl:persona_on_frontline_26,,,키리 5/5
-person:헨젤,person,인물,헨젤,42,13,279,164,0,239,event_freezeacpu,event_freezeacpu_06_e,20,named,event_oldtales1,event_freezeacpu,464,fl:wave_to_you,fl:wave_to_you_04,,,헨젤 10/10
+person:헨젤,person,인물,헨젤,61,14,960,567,0,239,event_freezeacpu,event_freezeacpu_06_e,20,named,event_oldtales1,event_freezeacpu,484,side:gingerbread_house,side:gingerbread_house_18,,,헨젤 10/10
+place:중앙_공원,place,시설,중앙 공원,3,2,0,4,0,239,event_freezeacpu,event_freezeacpu_01_e,37,named,,event_freezeacpu,483,fl:little_witch_trick,fl:little_witch_trick_03,,,
 person:택티컬티택,person,인물,택티컬티택,2,2,98,4,0,244,sub:택틱컬틱택_00,sub:택틱컬틱택_00,0,named,sub:택틱컬틱택_00,sub:택틱컬틱택_00,245,sub:택틱컬틱택_01,sub:택틱컬틱택_01,,,택티컬티택 3/3
 place:크라운_왕국,place,나라,크라운 왕국,20,5,0,45,0,246,ch26,d_main_26_06,13,named,,ch26,436,ch44,d_main_44_04,,,
 person:피라,person,인물,피라,3,3,91,6,0,250,sub:피라_00,sub:피라_00,0,named,sub:피라_00,sub:피라_00,272,sub:피라_02,sub:피라_02,,피라,피라 6/8 · 단위 6/6
 item:울프스_베인,item,무기,울프스 베인,2,1,0,2,0,251,event_redash,event_redash1_05_e,17,named,,event_redash,251,event_redash,event_redash2_05_e,,,
 item:유리_구두,item,무기,유리 구두,46,9,0,97,0,251,event_redash,event_redash1_02_s,36,named,,event_redash,416,ch42,d_main_42_04,,,
-org:V.T.C.,org,단체,V.T.C.,46,14,0,109,0,251,event_redash,event_redash1_02_s,10,named,,event_redash,467,fl:project_matis,fl:project_matis_08,,,
+org:V.T.C.,org,단체,V.T.C.,47,15,0,113,0,251,event_redash,event_redash1_02_s,10,named,,event_redash,484,side:gingerbread_house,side:gingerbread_house_05,,,
 person:마린,person,인물,마린,10,2,35,39,0,251,event_redash,event_redash1_01_e,41,named,event_claymore,event_redash,303,event_claymore,event_claymore_06_e,,,마린 5/5
-person:신데렐라,person,니케,신데렐라,201,35,2719,823,0,251,event_redash,event_redash1_02_s,35,named,ch32,event_redash,478,fl:great_villain_union,fl:great_villain_union_14,,,신데렐라 10/10
+person:신데렐라,person,니케,신데렐라,219,36,3000,899,0,251,event_redash,event_redash1_02_s,35,named,ch32,event_redash,484,side:gingerbread_house,side:gingerbread_house_18,,,신데렐라 10/10
 person:프리시아,person,인물,프리시아,21,3,645,123,0,251,event_redash,event_redash2_03_e,77,named,event_redash,event_redash,447,side:pretty_star,side:pretty_star_14,,,프리시아 3/3
 person:로스트_넘버,person,인물,로스트 넘버,1,1,0,5,0,252,erelic:red_ash_lost,erelic:red_ash_lost_16,25,named,,erelic:red_ash_lost,252,erelic:red_ash_lost,erelic:red_ash_lost_16,,,로스트 넘버 5/5
 person:토브,person,니케,토브,49,8,1232,152,0,256,event_alonesurvivor,event_alonesurvivor_prologue,8,speaks,event_alonesurvivor,event_alonesurvivor,477,char:871,ep:d_nikke_ce009_02_01,,,토브 5/5
 place:글리터_산맥,place,지역,글리터 산맥,4,2,0,9,0,256,event_alonesurvivor,event_alonesurvivor_01_s,32,named,,event_alonesurvivor,400,event_absolute1,event_absolute1_05_s,,,
-place:설온장,place,시설,설온장,23,4,0,64,0,258,event_neverland1,event_neverland1_02_e,108,named,,event_neverland1,477,char:871,ep:d_nikke_ce009_02_05,,,
+place:설온장,place,시설,설온장,24,5,0,65,0,258,event_neverland1,event_neverland1_02_e,108,named,,event_neverland1,483,fl:little_witch_trick,fl:little_witch_trick_01,,,
 place:천사_고아원,place,시설,천사 고아원,5,2,0,5,0,258,event_neverland1,event_neverland2_01_e,2,named,,event_neverland1,259,char:194,ep:d_nikke_ludmilla_winterowner_04,,,
 org:근접_전투_스쿼드,org,스쿼드,근접 전투 스쿼드,3,1,0,5,0,261,event_newyearnewsword,event_newyearnewsword_01_e,43,named,,event_newyearnewsword,261,event_newyearnewsword,event_newyearnewsword_03_s,,,
 person:장화,person,인물,장화,30,6,592,98,0,261,event_newyearnewsword,event_newyearnewsword_01_e,72,speaks,event_newyearnewsword,event_newyearnewsword,472,ch48,d_main_48_04,,,장화 10/10
@@ -408,7 +409,7 @@ person:해머링,person,인물,해머링,63,11,350,147,0,270,ch27,d_main_27_01_s
 place:수정_지역,place,지역,수정 지역,32,21,0,55,0,270,ch27,d_main_26af_02,33,named,,ch27,436,ch44,d_main_44_07,,,
 place:탈환지_01,place,지역,탈환지 01,13,6,0,19,0,270,ch27,d_main_26af_01,1,named,,ch27,293,ch30,d_main_30_af_01,,,
 person:트윙클,person,인물,트윙클,1,1,76,2,0,273,sub:트윙클_00,sub:트윙클_00,0,named,sub:트윙클_00,sub:트윙클_00,273,sub:트윙클_00,sub:트윙클_00,,트윙클,트윙클 1/3 · 단위 2/2
-person:그레이브,person,니케,그레이브,130,26,1939,398,0,275,ch28,d_main_28_08_s,29,speaks,ch28,ch30,478,fl:great_villain_union,fl:great_villain_union_14,,,그레이브 3/3
+person:그레이브,person,니케,그레이브,146,27,2193,483,0,275,ch28,d_main_28_08_s,29,speaks,ch28,ch30,484,side:gingerbread_house,side:gingerbread_house_18,,,그레이브 3/3
 person:언노운,person,인물,언노운,20,6,0,50,0,275,ch28,d_main_28_08_e,8,named,,ch28,416,ch42,d_main_42_af_07,,,언노운 10/10
 person:이안_맥스,person,인물,이안 맥스,2,2,0,3,0,276,sub:핸섬_커맨더_00,sub:핸섬_커맨더_00,45,named,,sub:핸섬_커맨더_00,278,sub:MMR지킴이_00,sub:MMR지킴이_00,,,이안 맥스 3/3
 person:핸섬_커맨더,person,인물,핸섬 커맨더,2,2,143,5,0,276,sub:핸섬_커맨더_00,sub:핸섬_커맨더_00,0,named,sub:핸섬_커맨더_00,sub:핸섬_커맨더_00,277,sub:핸섬_커맨더_01,sub:핸섬_커맨더_01,,,핸섬 커맨더 3/3
@@ -435,12 +436,12 @@ org:헤비그램,org,스쿼드,헤비그램,2,2,0,4,0,295,event_lastkingdom1,eve
 person:T.A.L.O.S.,person,인물,T.A.L.O.S.,34,3,258,1,0,295,event_lastkingdom1,event_lastkingdom1_prologue,2,speaks,event_lastkingdom1,event_lastkingdom1,418,event_goddessfall1,event_goddessfall2_epilogue,,,T.A.L.O.S. 1/1
 person:나유타,person,니케,나유타,70,11,1554,220,0,295,event_lastkingdom1,event_lastkingdom2_epilogue,11,named,ch39,event_lastkingdom1,470,ch47,d_main_47_05,,,나유타 3/3
 person:킬로,person,니케,킬로,50,4,928,146,0,295,event_lastkingdom1,event_lastkingdom1_prologue,1,speaks,event_lastkingdom1,event_lastkingdom1,418,event_goddessfall1,event_goddessfall2_epilogue,,,킬로 10/10
-person:크러스트,person,니케,크러스트,48,8,1305,163,0,300,event_goldencoinrush1,event_goldencoinrush2_b01_s,81,named,event_newflavor,event_goldencoinrush1,461,char:601,ep:d_nikke_prika_03,,,크러스트 3/3
+person:크러스트,person,니케,크러스트,62,9,1414,187,0,300,event_goldencoinrush1,event_goldencoinrush2_b01_s,81,named,event_newflavor,event_goldencoinrush1,483,fl:little_witch_trick,fl:little_witch_trick_14,,,크러스트 3/3
 item:아모르_테트라,item,잡지,아모르 테트라,3,2,0,3,0,305,event_beautyfullshot1,event_beautyfullshot1_02_s,90,named,,event_beautyfullshot1,465,char:515,ep:d_nikke_cinderella_crystalwave_05,,,
 place:코랄_아일랜드,place,섬,코랄 아일랜드,2,2,0,2,0,305,event_beautyfullshot1,event_beautyfullshot1_03_e,12,named,,event_beautyfullshot1,464,fl:wave_to_you,fl:wave_to_you_00,,,
 concept:E2_크리스탈,concept,물질,E2 크리스탈,28,10,0,64,0,308,ch31,d_main_31_01_e,21,named,,ch31,462,fl:ark_ranger,fl:ark_ranger_20,,,
 item:A_필러,item,설비,A 필러,14,7,0,34,0,308,ch31,d_main_31_01_e,3,named,,ch31,400,event_absolute1,event_absolute1_04_e,말뚝,,말뚝 6/10
-org:포비스트,org,헬레틱 무리,포비스트,60,22,0,150,0,308,ch31,d_main_31_06,116,named,,ch31,472,ch48,d_main_48_06_e,,,
+org:포비스트,org,헬레틱 무리,포비스트,62,23,0,153,0,308,ch31,d_main_31_06,116,named,,ch31,484,side:gingerbread_house,side:gingerbread_house_06,,,
 person:베히모스,person,랩쳐,베히모스,110,24,872,465,0,308,ch31,d_main_31_06,113,speaks,ch31,ch31,478,fl:great_villain_union,fl:great_villain_union_07,,,베히모스 3/3
 concept:다크_매터,concept,물질,다크 매터,67,23,0,183,0,310,ch32,d_main_32_09_e,223,named,,ch32,478,fl:great_villain_union,fl:great_villain_union_13,,,
 person:레비아탄,person,랩쳐,레비아탄,94,19,1760,305,0,310,ch32,d_main_32_07,5,speaks,ch32,ch33,478,fl:great_villain_union,fl:great_villain_union_07,,,레비아탄 3/3
@@ -457,14 +458,14 @@ person:나디아,person,인물,나디아,15,1,366,166,0,332,event_lifeagain,even
 item:라이터즈_이레이저,item,무기,라이터즈 이레이저,3,2,0,4,0,334,ch33,d_main_33_05_e,0,named,,ch33,478,fl:great_villain_union,fl:great_villain_union_12,,,
 person:미러,person,인물,미러,29,10,530,46,0,334,ch33,d_main_33_02_e,35,named,event_oldtales1,ch33,472,ch48,d_main_48_07,,,미러 9/10
 item:AA_필러,item,설비,AA 필러,13,3,0,38,0,336,ch34,d_main_34_af_01,82,named,,ch34,378,erelic:unbreakable_sphere_dialog,erelic:unbreakable_sphere_dialog_05,,,
-person:리틀_머메이드,person,니케,리틀 머메이드,126,16,2277,260,0,336,ch34,d_main_34_07_e,30,named,event_oldtales1,ch34,478,fl:great_villain_union,fl:great_villain_union_14,,,리틀 머메이드 3/3
+person:리틀_머메이드,person,니케,리틀 머메이드,139,17,2509,299,0,336,ch34,d_main_34_07_e,30,named,event_oldtales1,ch34,484,side:gingerbread_house,side:gingerbread_house_18,,,리틀 머메이드 3/3
 person:바하무트,person,랩쳐,바하무트,35,13,218,152,0,336,ch34,d_main_34_01_s,21,named,ch41,ch34,478,fl:great_villain_union,fl:great_villain_union_07,,,바하무트 3/3
-person:에이브,person,인물,에이브,67,14,1232,141,0,336,ch34,d_main_34_08,87,named,event_oldtales1,ch34,428,fl:ark_guardian,fl:ark_guardian_19,,,에이브 3/3
+person:에이브,person,인물,에이브,80,15,1260,211,0,336,ch34,d_main_34_08,87,named,event_oldtales1,ch34,484,side:gingerbread_house,side:gingerbread_house_15,,,에이브 3/3
 person:지즈,person,랩쳐,지즈,69,14,765,241,0,336,ch34,d_main_34_01_s,21,named,ch37,ch34,478,fl:great_villain_union,fl:great_villain_union_14,,,지즈 5/5
 place:유사_방주,place,도시,유사 방주,10,6,0,12,0,336,ch34,d_main_34_01_s,48,named,,ch34,470,ch47,d_main_47_03,,,
-item:마녀의_아궁이,item,무기,마녀의 아궁이,2,1,0,3,0,338,event_oldtales1,event_oldtales1_06_s,51,named,,event_oldtales1,338,event_oldtales1,event_oldtales2_06_s,,,
-person:글러트니,person,랩쳐,글러트니,51,10,0,257,0,338,event_oldtales1,event_oldtales1_02_s,22,named,,event_oldtales1,478,fl:great_villain_union,fl:great_villain_union_14,,,글러트니 5/5
-person:레드_슈즈,person,인물,레드 슈즈,42,9,485,108,0,338,event_oldtales1,event_oldtales1_prologue,95,speaks,event_oldtales1,event_oldtales1,472,ch48,d_main_48_03,,,레드 슈즈 3/3
+item:마녀의_아궁이,item,무기,마녀의 아궁이,7,2,0,12,0,338,event_oldtales1,event_oldtales1_06_s,51,named,,event_oldtales1,484,side:gingerbread_house,side:gingerbread_house_17,,,
+person:글러트니,person,랩쳐,글러트니,57,11,0,265,0,338,event_oldtales1,event_oldtales1_02_s,22,named,,event_oldtales1,484,side:gingerbread_house,side:gingerbread_house_17,,,글러트니 5/5
+person:레드_슈즈,person,인물,레드 슈즈,44,10,485,111,0,338,event_oldtales1,event_oldtales1_prologue,95,speaks,event_oldtales1,event_oldtales1,484,side:gingerbread_house,side:gingerbread_house_14,,,레드 슈즈 3/3
 concept:오로라_블룸,concept,식물,오로라 블룸,14,1,0,88,0,345,event_secretgarden,event_secretgarden_01_s,21,named,,event_secretgarden,345,event_secretgarden,event_secretgarden_epilogue,,,
 person:트리나,person,니케,트리나,20,4,442,133,0,345,event_secretgarden,event_secretgarden_prologue,56,named,fl:for_rest,event_secretgarden,458,fl:b-side_idol,fl:b-side_idol_07,,,트리나 3/3
 item:백빙룡_대서사시,item,문서,백빙룡 대서사시,4,2,0,5,0,347,event_icedragonsaga1,event_icedragonsaga2_04_e,170,named,,event_icedragonsaga1,349,char:182,ep:d_nikke_guillotine_winterslayer_05,,,
@@ -495,8 +496,8 @@ person:메카_시프티,person,인물,메카 시프티,16,1,284,68,0,369,event_f
 person:스카이,person,인물,스카이,13,5,88,18,0,373,ch37,d_main_37_08_s,162,named,event_overthehorizon,ch37,472,ch48,d_main_48_07,,,스카이 3/3
 person:민트,person,니케,민트,83,13,1611,349,0,375,ch38,d_main_38_05_s,53,speaks,ch38,ch38,461,char:601,ep:d_nikke_prika_05,,,민트 10/10
 person:프리카,person,니케,프리카,70,12,1116,289,0,375,ch38,d_main_38_05_s,82,named,ch38,ch38,461,char:601,ep:d_nikke_prika_05,,,프리카 3/3
-person:모리,person,니케,모리,72,9,1387,312,0,377,event_unbreakablesphere1,event_unbreakablesphere1_prologue,76,speaks,event_unbreakablesphere1,event_unbreakablesphere1,478,fl:great_villain_union,fl:great_villain_union_07,,,모리 5/5
-person:레이블,person,니케,레이블,20,3,818,218,0,383,event_arcanearchive,event_arcanearchive_04_e,83,named,fl:sin_editor,event_arcanearchive,431,char:582,ep:d_nikke_label_05,,,레이블 3/3
+person:모리,person,니케,모리,85,10,1795,385,0,377,event_unbreakablesphere1,event_unbreakablesphere1_prologue,76,speaks,event_unbreakablesphere1,event_unbreakablesphere1,484,side:gingerbread_house,side:gingerbread_house_18,,,모리 5/5
+person:레이블,person,니케,레이블,23,4,847,238,0,383,event_arcanearchive,event_arcanearchive_04_e,83,named,fl:sin_editor,event_arcanearchive,483,fl:little_witch_trick,fl:little_witch_trick_13,,,레이블 3/3
 person:미친개,person,인물,미친개,2,2,4,2,0,383,event_arcanearchive,event_arcanearchive_05_e,94,named,event_absolute1,event_arcanearchive,400,event_absolute1,event_absolute1_02_e,,,미친개 2/2
 person:아르카나,person,니케,아르카나,120,11,4937,1277,0,383,event_arcanearchive,event_arcanearchive_prologue,1,speaks,event_arcanearchive,event_arcanearchive,452,ch46,d_main_46_af_09,,,아르카나 3/3
 place:금서고,place,시설,금서고,22,10,0,52,5,383,event_arcanearchive,event_arcanearchive_04_e,36,alias,,event_arcanearchive,470,ch47,d_main_47_04,,,금서고 10/10
@@ -591,7 +592,7 @@ person:루크,person,인물,루크,4,1,69,11,0,462,fl:ark_ranger,fl:ark_ranger_2
 person:아크레인저_레드,person,인물,아크레인저 레드,18,1,320,37,0,462,fl:ark_ranger,fl:ark_ranger_00,28,speaks,fl:ark_ranger,fl:ark_ranger,462,fl:ark_ranger,fl:ark_ranger_27,,,아크레인저 레드 3/3
 person:아크레인저_블루,person,인물,아크레인저 블루,18,1,210,8,0,462,fl:ark_ranger,fl:ark_ranger_00,29,speaks,fl:ark_ranger,fl:ark_ranger,462,fl:ark_ranger,fl:ark_ranger_27,,,아크레인저 블루 3/3
 person:애니힐리오,person,인물,애니힐리오,9,3,5,43,0,462,fl:ark_ranger,fl:ark_ranger_25,0,named,fl:ark_ranger,fl:ark_ranger,472,ch48,d_main_48_07,,,애니힐리오 5/5
-concept:아일랜드_이터,concept,랩쳐 종류,아일랜드 이터,10,1,0,33,0,464,fl:wave_to_you,fl:wave_to_you_14,7,named,,fl:wave_to_you,464,fl:wave_to_you,fl:wave_to_you_26,,,
+concept:아일랜드_이터,concept,랩쳐 종류,아일랜드 이터,11,2,0,34,0,464,fl:wave_to_you,fl:wave_to_you_14,7,named,,fl:wave_to_you,484,side:gingerbread_house,side:gingerbread_house_00,,,
 person:펭군_1호,person,인물,펭군 1호,17,2,51,38,0,464,fl:wave_to_you,fl:wave_to_you_07,29,named,fl:wave_to_you,fl:wave_to_you,465,char:515,ep:d_nikke_cinderella_crystalwave_04,,,펭군 1호 3/3
 person:펭군_2호,person,인물,펭군 2호,8,1,17,18,0,464,fl:wave_to_you,fl:wave_to_you_07,31,speaks,fl:wave_to_you,fl:wave_to_you,464,fl:wave_to_you,fl:wave_to_you_26,,,펭군 2호 3/3
 person:펭군_3호,person,인물,펭군 3호,8,1,14,13,0,464,fl:wave_to_you,fl:wave_to_you_07,32,speaks,fl:wave_to_you,fl:wave_to_you,464,fl:wave_to_you,fl:wave_to_you_26,,,펭군 3호 3/3
@@ -613,6 +614,9 @@ concept:테크_웨어,concept,기술,테크 웨어,5,1,0,10,0,480,fl:coin_rush_s
 incident:코인_러시_쇼다운,incident,사건,코인 러시 쇼다운,16,1,0,23,0,480,fl:coin_rush_show_down,fl:coin_rush_show_down_00,82,named,,fl:coin_rush_show_down,480,fl:coin_rush_show_down,fl:coin_rush_show_down_26,,,
 org:대테러부대,org,부대,대테러부대,3,1,0,8,0,480,fl:coin_rush_show_down,fl:coin_rush_show_down_22,95,named,,fl:coin_rush_show_down,480,fl:coin_rush_show_down,fl:coin_rush_show_down_25,,,
 person:경비_팀장,person,인물,경비 팀장,20,1,242,29,0,480,fl:coin_rush_show_down,fl:coin_rush_show_down_03,36,speaks,fl:coin_rush_show_down,fl:coin_rush_show_down,480,fl:coin_rush_show_down,fl:coin_rush_show_down_27,,,경비 팀장 10/10
+incident:할로윈_축제,incident,사건,할로윈 축제,4,2,0,8,0,483,fl:little_witch_trick,fl:little_witch_trick_01,4,named,,fl:little_witch_trick,485,char:63,ep:d_nikke_belorta_pumpkinwitch_03,,,
+place:미스터리_박스,place,가게,미스터리 박스,6,1,0,20,0,483,fl:little_witch_trick,fl:little_witch_trick_03,95,named,,fl:little_witch_trick,483,fl:little_witch_trick,fl:little_witch_trick_13,,,
+person:베르누이아,person,랩쳐,베르누이아,13,1,300,33,0,484,side:gingerbread_house,side:gingerbread_house_02,89,speaks,side:gingerbread_house,side:gingerbread_house,484,side:gingerbread_house,side:gingerbread_house_18,,,베르누이아 5/5
 org:에덴,org,단체,에덴,0,0,0,0,0,,,,,,,,,,,,,
 org:인큐베이터,org,스쿼드,인큐베이터,0,0,0,0,0,,,,,,,,,,,인큐베이터,,인큐베이터 5/10
 org:프로토콜,org,스쿼드,프로토콜,0,0,0,0,0,,,,,,,,,,,프로토콜,,프로토콜 7/10

@@ -8,9 +8,9 @@ J6,뼈대,갓데스 스쿼드와 방주의 배신,26,3,0,15,20,5,ch06 char:222 c
 J7,뼈대,도로시의 복수와 3차 지상 탈환전,26,10,0,15,25,10,ch22 char:233 ch27 event_boomsday event_beautyfullshot1 ch36 ch38 side:eden_spear side:pretty_star ch47
 J8,뼈대,에덴과 요한 — 샛별 · 에덴의 창,10,6,0,19,25,6,char:220 ch17 sub:에덴_Notice_00 char:223 ch45 fl:project_matis
 J9,뼈대,랩쳐의 기원과 목적,2,5,0,15,21,6,char:224 event_goddessfall1 fl:ark_guardian ch44 relic:궤도엘리베이터음모론 fl:project_matis
-J10,뼈대,포비스트와 온리 원,30,13,0,21,30,9,ch02 ch13 event_darkhero event_oldtales1 relic:할일목록 relic:은색액체 erelic:unbreakable_sphere_dialog ch39 fl:great_villain_union
+J10,뼈대,포비스트와 온리 원,30,14,0,21,31,10,ch02 ch13 event_darkhero event_oldtales1 relic:할일목록 relic:은색액체 erelic:unbreakable_sphere_dialog ch39 fl:great_villain_union side:gingerbread_house
 J11,보강,수정 지역과 하모니 큐브,4,5,0,9,11,2,relic:조난일지 fl:ark_ranger
-J12,뼈대,2세대 페어리 테일 — 그레이브 · 신데렐라 · 세이렌 · 미러,18,18,0,22,31,9,sub:거울_공주_00 sub:관짝이_01 char:511 char:514 erelic:unbreakable_sphere_dialog char:590 ch44 fl:wave_to_you fl:project_matis
+J12,뼈대,2세대 페어리 테일 — 그레이브 · 신데렐라 · 세이렌 · 미러,19,20,0,23,32,9,sub:거울_공주_00 sub:관짝이_01 char:511 char:514 erelic:unbreakable_sphere_dialog char:590 ch44 fl:wave_to_you fl:project_matis
 J13,뼈대,퀸 — 릴리스의 바디와 귀환,7,9,0,13,18,5,event_overzone ch40 fl:ark_guardian relic:궤도엘리베이터음모론 fl:project_matis
 J14,보강,니케 제작의 비밀 — NIMPH · 뇌의 출처,7,2,0,8,13,5,relic:니케실험대상자모집 relic:니케실험반대피켓 char:140 event_miraclesnow1 event_ce006
 J15,뼈대,직계 헬레틱 — 토커티브 · 니힐리스타 · 인디빌리아 · 리버렐리오,4,1,0,15,15,0,
@@ -60,3 +60,5 @@ J58,독립,노라의 종착역,3,0,0,2,2,0,
 J59,독립,아일랜드 이터,0,0,0,1,1,0,
 J60,독립,D-WAVE,1,0,0,1,1,0,
 J61,독립,코인 러시 쇼다운 — 경비 팀장의 고객,2,0,0,1,1,0,
+J62,독립,할로윈 축제 — 리틀 위치 트릭을 노린 거짓 피해 글,1,0,0,1,1,0,
+J63,보강,베르누이아 — 바다 건너의 마녀,0,0,0,1,1,0,

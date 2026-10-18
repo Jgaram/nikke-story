@@ -1,0 +1,18 @@
+{
+  "subject": "place:중앙_공원",
+  "versions": [
+    {
+      "at": "event_freezeacpu",
+      "text": "방주 시내의 큰 공원. 할로윈에 공원 전체와 옆 큰길까지 써서 대규모 행사가 열린다.",
+      "src": "60037b2b33",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "hash": "f1dc60b7d6", "note": "U3 — 새 떡밥 · 사전 항목 1판(그 자리 기록 · 원문 줄로)" }
+      ],
+      "refs": ["event_freezeacpu_01_e#37-40"]
+    }
+  ]
+}

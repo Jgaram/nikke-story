@@ -77,6 +77,10 @@ D1754,person:그레이브,그레이브,관계,기준,person:모리,,,"서핑보�
 D1783,person:그레이브,그레이브,관계,기준,person:드레이크,,,"빌런 연합엔 관심 없다며 신데렐라 곁이 더 중요하다 했지만, 드레이크와 함께할 때 눈이 반짝인다는 신데렐라의 말에 지원한",fl:great_villain_union,478,fl:great_villain_union_03,,,,,확실,확정
 D1784,person:그레이브,그레이브,소속,변화,,신데렐라 곁을 지키는 필그림 일행,신 빌런 연합의 두 날개 '빌런 그레그레',,fl:great_villain_union,478,fl:great_villain_union_03,,,S347,F2872,확실,확정
 D1785,person:그레이브,그레이브,관계,변화,person:드레이크,관심 없다며 떠밀려 들어온 부하다,"'바보여도 리더는 리더'라며 물러난 그를 다시 세우고, 해낸 그를 '첫인상과 다르다 — 성장했다'고 인정한다",,fl:great_villain_union,478,fl:great_villain_union_13,fl:great_villain_union_11,fl:great_villain_union,S347,,확실,확정
+D2251,person:그레이브,그레이브,기억,변화,,기억 같은 건 없어도 상관없다고 여기던 그레이브,기억이 없어도 그레이브로서의 진심은 변하지 않는 나라고 받아들인 그레이브,,side:gingerbread_house,484,side:gingerbread_house_15,side:gingerbread_house_12,side:gingerbread_house,S397,,확실,확정
+D2252,person:그레이브,그레이브,관계,변화,person:헨젤 person:그레텔,얼굴을 보아도 아무것도 떠오르지 않는 옛 동료,기다리게 해 미안하다며 살아 있어 줘서 고맙다고 울며 끌어안는 가족,,side:gingerbread_house,484,side:gingerbread_house_15,side:gingerbread_house_11,side:gingerbread_house,S397,,확실,확정
+D2244,person:그레텔,그레텔,성격,변화,,말하기를 싫어해 늘 헨젤이 생각을 대신 말해 주던 쌍둥이,헨젤의 편이라며 그레이브에게 헨젤이 못 할 이야기를 스스로 털어놓는 쌍둥이,,side:gingerbread_house,484,side:gingerbread_house_09,side:gingerbread_house_07,side:gingerbread_house,S397,,확실,확정
+D2243,person:그레텔,그레텔,신체,변화,,헨젤과 같은 얼굴의 쌍둥이 2세대 바디,추락으로 반파됐다가 베르누이아의 다리를 에너지원으로 되살아난 몸,,side:gingerbread_house,484,side:gingerbread_house_11,side:gingerbread_house_09,side:gingerbread_house,S398,,확실,확정
 D1352,person:길로틴,길로틴,성격,기준,,,,"'길로틴 드 메피스토' · [조직] · [협회] · 편익의 마왕 같은 거창한 설정으로 망상 결투를 벌이면서도, 허세가 안 먹히면 힐끔힐끔 눈치를 보는 중2병 니케",char:180,85,ep:d_nikke_guillotine_02,,,,,확실,확정
 D1353,person:길로틴,길로틴,관계,기준,person:지휘관,,,지휘관을 [조직]의 개 · 에이스 요원이라 부르며 가상화 '망상 결투'를 거는 라이벌 놀이 상대로 대한다,char:180,85,ep:d_nikke_guillotine_02,,,,,확실,확정
 D1355,person:길로틴,길로틴,관계,기준,person:잉그리드,,,"자기가 '임시 협회장'을 맡긴 잉그리드에게 안구 사용 허가를 전화로 조르다 잔소리를 듣고 거절당하는, 허가 없이는 힘을 쓰지 못하는 사이",char:180,85,ep:d_nikke_guillotine_02,,,,,확실,확정
@@ -762,6 +766,7 @@ D2162,person:모리,모리,관계,변화,person:지휘관,좋은 점수만 달�
 D887,person:모리,모리,관계,변화,person:지휘관,폐기를 앞두고 평가받던 인큐베이터 니케였다,'평가자님 덕분에' 애정을 주는 사람이 생겼다며 울먹인다,,ch42,416,d_main_42_02,,,S270,,확실,확정
 D888,person:모리,모리,성격,변화,,두려움을 외면하고 총을 잡고 글러트니를 쫓아 뛴다,'아무 쓸모도 없다'며 자신 없어 하다 특훈을 받아들이고 '이제 진짜 괜찮다'고 한다,,ch42,416,d_main_42_af_08,d_main_42_08,ch42,,,확실,확정
 D1753,person:모리,모리,신념,변화,,선의에 선의로 보답하려 세이렌을 위해 함께 죽겠다고 했다,"받아들여진 기쁨 속에, 언젠가 헤어질 때 '혼자서도 괜찮다'고 웃으며 말하려 강해지려 한다",,fl:wave_to_you,464,fl:wave_to_you_22,,,S336,,확실,확정
+D2255,person:모리,모리,신념,변화,,모두의 발목을 잡을까 봐 어떻게든 단기간에 강해지려던 모리,힘이 아니어도 할 수 있는 일로 남아 모두가 돌아올 집을 지키기로 한 모리,,side:gingerbread_house,484,side:gingerbread_house_17,side:gingerbread_house_08,side:gingerbread_house,S397,,확실,확정
 D204,person:목단,목단,성격,기준,,,,"벚꽃 축제를 봄 축제로 착각하고, 무엇이든 '의리'를 들이대며 속이 표정에 다 드러나는 단순하고 시끄러운 협객",event_cherryblossom,183,event_cherryblossom_02_s,,,,,확실,확정
 D205,person:목단,목단,관계,기준,person:사쿠라,,,"복숭아 퍼펙트 공장 앞에서 형제의 잔을 나눈 '누님'을 자처하며 사쿠라의 결혼을 반대하지만, 번번이 사쿠라에게 휘둘리는 사이",event_cherryblossom,183,event_cherryblossom_02_s,,,,,확실,확정
 D206,person:목단,목단,신념,기준,,,,아우터 림 사람도 포멀도 의지만 있으면 협객이 될 수 있다는 것을 보이려 맹약에 든다 — 사람은 당연히 사람으로 본다,event_cherryblossom,183,event_cherryblossom_intermission_01,,,,F831,확실,확정
@@ -818,6 +823,7 @@ D2084,person:미카,미카,성격,변화,,수줍음이 많고 벨로타가 안 �
 D2085,person:미카,미카,관계,변화,person:벨로타,벨로타라는 소중한 것이 또 없어질까 무서워 곁에만 두려 했다,"환경도 곁의 사람도 변했음을 알고 소중한 건 앞으로 자기가 지키면 된다며, 숨은 벨로타를 데리러 가 '내 옆에는 벨로타가 있어야 해'라고 한다",,char:62,260,ep:d_nikke_mica_snowbuddy_04,event_neverland2_06_e,event_neverland1,S116,F1225,확실,확정
 D2088,person:미카,미카,관계,변화,person:지휘관,벨로타와 함께일 때 고마움을 전하던 '두 번째 친구' 아저씨였다,"처음으로 혼자 지휘관실에 찾아와 단둘이 놀자 하고, 볼을 붉히며 하루 종일 손을 잡자고 한다",,char:62,260,ep:d_nikke_mica_snowbuddy_05,ep:d_nikke_mica_snowbuddy_05,char:62,S116,,확실,확정
 D2087,person:미카,미카,신념,변화,,바뀌지 않는 세상에서 누가 이끌고 도와주길 바라는 영원한 어린아이로 남기를 바랐다,소중한 것을 지키려면 그 세상을 나와야 한다며 먼저 나왔으니 과거에 갇힌 벨로타도 꺼내겠다고 한다,,char:62,260,ep:d_nikke_mica_snowbuddy_05,ep:d_nikke_mica_snowbuddy_04,char:62,S116,F1227,확실,확정
+D2239,person:미카,미카,성격,변화,,벨로타의 장난에 놀라고 겁먹기만 했다,벨로타의 선물 상자에 귀 잘린 인형을 몰래 넣어 벨로타까지 속인다,,fl:little_witch_trick,483,fl:little_witch_trick_14,fl:little_witch_trick_13,fl:little_witch_trick,S396,,확실,확정
 D24,person:미하라,미하라,성격,기준,,,,슈엔의 명령에 '네네~' 하고 감각 교환으로 따르면서도 '상대는 인간이에요' · '니케는 인간을 쏠 수 없는걸요'라며 선을 긋는 여유로운 니케,ch02,4,d_main_02af_07,,,,,확실,확정
 D30,person:미하라,미하라,관계,기준,person:지휘관,,,"슈엔이 부리는 '쓸 만한' 지휘관으로 대하며 붕대는 '마음만 받겠다'고 물리지만, 위험해지면 먼저 복귀를 권한다",ch03,10,d_main_03_02,,,,,확실,확정
 D32,person:미하라,미하라,관계,기준,person:유니,,,"유니와는 서로 어쩔 수 없이 붙어 있는, 일그러졌지만 딱 맞물린 톱니바퀴 — 유니가 무릎을 베고 자고 지휘관을 차지해도 '유니만 좋다면야'",ch04,15,d_main_04_01,,,,,확실,확정
@@ -905,6 +911,8 @@ D1056,person:버닝엄,버닝엄,관계,기준,person:파피용,,,에덴에 남�
 D1119,person:버닝엄,버닝엄,관계,기준,person:오스왈드,,,"'할아버님'의 무릎에 앉아 갓데스 이야기를 듣는, 할 말은 다 하는 손자",side:pretty_star,447,side:pretty_star_14,,,,,확실,확정
 D1172,person:버닝엄,버닝엄,관계,변화,person:도로시,탈환전 재촉 속내를 '투명하다' 짚었다,조부 기록 속 승리의 여신이라 지켜봐 왔다며 사과하고 '방주는 너를 돕는다' 경례한다,,ch46,452,d_main_46_af_06,,,S319,F2648 F2651,확실,확정
 D1321,person:버닝엄,버닝엄,관계,변화,person:도로시,사과하고 '방주는 너…'라며 경례했다,선봉을 맡겠다는 녹음을 되풀이 들으며 소리 없이 환호한다,,ch47,470,d_main_47_07,,,S341,,확실,확정
+D2256,person:베르누이아,베르누이아,성격,기준,,,,"'맹랑한 것들' · '망아지들아' 하며 하대하고 비꼬지만, 손님을 안으로 들여 이야기하자는 거만한 헬레틱",side:gingerbread_house,484,side:gingerbread_house_02,,,S397,,확실,확정
+D2257,person:베르누이아,베르누이아,관계,변화,person:헨젤 person:그레텔,평생 내 노예라며 떠나는 것을 막던 주인,마녀의 아궁이를 챙겨 주고 반딧불이로 '멀쩡히 돌아오라'며 돌아올 길을 이어 보내는 주인,,side:gingerbread_house,484,side:gingerbread_house_17,side:gingerbread_house_16,side:gingerbread_house,S397,,확실,확정
 D41,person:베스티,베스티,성격,기준,,,,"말을 더듬고 은화에게 눌려 말끝을 흐리는, 라피를 보고 눈물이 날 것 같다는 여린 앱솔루트 니케",ch04,15,d_main_04_09_e,,,,,확실,확정
 D1834,person:베스티,베스티,관계,기준,person:지휘관,,,부끄러운 고민도 '지휘관님이라면 진지하게 들어줄 것 같아' 친구 사귀는 법을 배우겠다며 무엇이든 명령해 달라는 상담 상대,char:91,106,ep:d_nikke_vesti_01,,,,,확실,확정
 D1835,person:베스티,베스티,관계,변화,person:지휘관,친구 사귀는 법을 묻는 상담 상대였다,손가락 걸고 약속한 첫 친구 — 해치려는 건 다 죽여 버리겠다며 지켜 주겠다고 한다,,char:91,106,ep:d_nikke_vesti_03,ep:d_nikke_vesti_03,char:91,S372,F562,확실,확정
@@ -950,6 +958,8 @@ D1839,person:벨로타,벨로타,성격,기준,,,,"'어린애 주제에, 니케 
 D1841,person:벨로타,벨로타,관계,변화,person:지휘관,장난을 받아 주는 '아저씨',사과를 바로 믿어 준 '진짜 어른'에게 입을 맞추고 매일 아저씨만 생각했다고 고백한다,,char:60,107,ep:d_nikke_belorta_05,ep:d_nikke_belorta_04,char:60,,F564,확실,확정
 D1508,person:벨로타,벨로타,관계,변화,person:미카,미카를 놀리며 말릴 새도 없이 혼자 뛰쳐나갔다,"고생시킨 미카 옆에 꼭 붙어 있기로 했다가, 혼자 가게를 보겠다는 미카의 배웅을 받는다",,event_neverland1,258,event_neverland2_epilogue,event_neverland2_06_e,event_neverland1,S113,,확실,확정
 D2086,person:벨로타,벨로타,관계,변화,person:미카,미카가 어른스러워지길 바라면서도 장난에 허둥대는 '바보 미카'를 제일 재미있어했다,"막상 확 변한 미카를 받아들이지 못해 숨었다가, 자기도 미카보다 더 어른스러워지겠다며 돌아온다",,char:62,260,ep:d_nikke_mica_snowbuddy_04,ep:d_nikke_mica_snowbuddy_02,char:62,S116,F1226,확실,확정
+D2240,person:벨로타,벨로타,성격,변화,,허둥대는 꼴을 보려고 어른들을 골탕 먹이는 장난꾸러기였다,거짓 글로 다른 부스를 망쳐 온 이들을 장난으로 겁줘 스스로 털어놓게 한다,,fl:little_witch_trick,483,fl:little_witch_trick_13,fl:little_witch_trick_09,fl:little_witch_trick,S396,,추정,확정
+D2258,person:벨로타,벨로타,관계,변화,person:지휘관,장난으로 골탕 먹이며 '아저씨'라 따르던 사이,하루 종일 아저씨 생각만 했다며 입을 맞추고 해마다 사역마로 묶어 두려는 사이,,char:63,485,ep:d_nikke_belorta_pumpkinwitch_05,ep:d_nikke_belorta_pumpkinwitch_05,char:63,S400,,추정,확정
 D826,person:벨벳,벨벳,성격,기준,,,,"말끝마다 '♥'를 붙여 유혹하듯 장난치며 속은 내보이지 않고, 보험부터 쥐는 것을 '직업병'이라 한다",fl:coins_in_rush,404,fl:coins_in_rush_17,,,,,확실,확정
 D827,person:벨벳,벨벳,관계,기준,person:지휘관,,,"방주에서 제일 잘 나가는 지휘관과 닿은 '끈'을 원해 '너, 내 거 할래?'라며 쫓고 쫓기는 게임을 건다",fl:coins_in_rush,404,fl:coins_in_rush_17,,,,,확실,확정
 D829,person:벨벳,벨벳,소속,기준,,,,"해체된 테트라 비밀 스쿼드 [쉐이드]의 전 리더로, 은퇴한 지 오래된 채 도망 다니며 숨어 지낸다",fl:coins_in_rush,404,fl:coins_in_rush_17,,,,,확실,확정
@@ -1047,6 +1057,7 @@ D1638,person:세이렌,세이렌,관계,변화,person:헨젤 person:그레텔 pe
 D874,person:세이렌,세이렌,관계,기준,person:지휘관,,,"지휘관 앞에서만 '아으'로 얼버무리고, 남자와 처음 얘기해 본다며 신데렐라에게 '진짜 왕자님 같다'고 귓속말한다",ch42,416,d_main_42_02,,,,,확실,확정
 D873,person:세이렌,세이렌,관계,변화,person:레비아탄,레비의 용기를 믿고 함께 글러트니와 싸우자고 한다,'배신한 적 없어 · 너를 용서해 줘'라 안아 주고 대신 글러트니에 삼켜진다,,ch42,416,d_main_42_04,,,S270,F2221 F2222,확실,확정
 D1752,person:세이렌,세이렌,관계,변화,person:지휘관,지휘관 앞에서만 '아으'로 얼버무렸다,"좋아하는 마음을 친구들에게 털어놓고, 씨 글라스를 건네며 다음엔 눈을 보고 더 많이 이야기하고 싶다고 한다",,fl:wave_to_you,464,fl:wave_to_you_26,fl:wave_to_you_13,fl:wave_to_you,S336,F2764,확실,확정
+D2250,person:세이렌,세이렌,관계,변화,person:헨젤,헬레틱 편을 드는 헨젤이 속고 있다며 헬레틱을 공격하려던 동료,멋대로 단정한 것을 사과하고 함께 싸우지 못해도 가족이라 하는 사이,,side:gingerbread_house,484,side:gingerbread_house_14,side:gingerbread_house_12,side:gingerbread_house,S397,,확실,확정
 D1852,person:센티,센티,관계,기준,person:지휘관,,,"니케의 잠재력을 끌어낸다는 '반장님'의 수수께끼 힘을 믿고, 혼자보다 명령대로가 낫다며 뭐든 빡세게 시켜 달라고 매달린다",char:80,110,ep:d_nikke_centi_01,,,,,확실,확정
 D1853,person:센티,센티,신념,기준,,,,"한번 받은 명령은 목숨 걸고 지키고, 명령을 어기는 건 반장님의 권위를 무시하는 일이라 여긴다",char:80,110,ep:d_nikke_centi_02,,,,F572,확실,확정
 D1854,person:센티,센티,신념,변화,,받은 명령은 목숨 걸고 지켰다,잘못된 명령은 지키지 않아도 된다는 말을 곱씹어 명령마다 스스로 판단해 융통성 있게 보완한다,,char:80,110,ep:d_nikke_centi_05,ep:d_nikke_centi_02,char:80,,F572,확실,확정
@@ -1233,6 +1244,8 @@ D878,person:신데렐라,신데렐라,관계,기준,person:리버렐리오,,,"�
 D889,person:신데렐라,신데렐라,관계,변화,person:모리,세이렌을 구했다 들었을 때부터 이미 동료라며 받아들인다,"쓸모없다는 모리에게 특훈을 선언하고, 스스로 아름답다 느끼게 돕겠다고 한다",,ch42,416,d_main_42_af_08,,,,,확실,확정
 D1755,person:신데렐라,신데렐라,관계,변화,person:헨젤 person:그레텔,'같이 가자'며 함께 싸운 동료다,"이제 적이라 해도 피하지 않고 직접 확인 · 대화하고, 헤어져야 하면 의미 있게 인사하며 헤어지겠다고 한다",,fl:wave_to_you,464,fl:wave_to_you_19,,,S336,F1903,확실,확정
 D2222,person:신데렐라,신데렐라,관계,변화,person:지휘관,"보답이 먼저라며 부탁도 삼가는, 은인 '친절한 나의 왕자님'","손 한 번 제대로 잡아 본 적 없다는 조바심에 먼저 다가가고, 잡지를 덮은 뒤 하고 싶은 대로 입을 맞추며 '점점 더 욕심난다'는 연인",,char:515,465,ep:d_nikke_cinderella_crystalwave_05,ep:d_nikke_cinderella_crystalwave_04,char:515,S337,F2766,확실,확정
+D2253,person:신데렐라,신데렐라,신념,변화,,자기는 니케라며 거대화 같은 랩쳐의 방식을 아름답지 못하다고 거부하던 신데렐라,붉은 눈 · 랩쳐 바디여도 나는 나라고 받아들인 신데렐라,,side:gingerbread_house,484,side:gingerbread_house_12,side:gingerbread_house_08,side:gingerbread_house,S397,,확실,확정
+D2254,person:신데렐라,신데렐라,관계,변화,person:베르누이아,헬레틱이라 경계하며 목적부터 따지던 사이,가족을 구해 아껴 줘 고맙다며 꼭 돌아오겠다고 약속하는 사이,,side:gingerbread_house,484,side:gingerbread_house_17,side:gingerbread_house_17,side:gingerbread_house,S397,,확실,확정
 D3,person:아니스,아니스,성격,기준,,,,투덜대고 의심하며 말을 툭툭 던지지만 결국 상황을 받아들이고 따르는 현실주의자,ch00,1,d_main_01_03_s,,,,,확실,확정
 D7,person:아니스,아니스,관계,기준,person:지휘관,,,살아 돌아온 신임 지휘관을 수상히 여기면서도 '지휘관님'이라 부르며 반말 섞어 따르는 사이,ch00,1,d_main_01_03_s,,,,,확실,확정
 D10,person:아니스,아니스,관계,변화,person:지휘관,살아 돌아온 신임 지휘관을 수상히 여긴다,니케를 쏘지 않겠다 · 믿는다는 지휘관에게 '일단은' 믿어 보겠다,,ch01,2,d_main_01af_04,d_main_01af_04,ch01,S2,,확실,확정
@@ -2128,6 +2141,13 @@ D569,person:헨젤,헨젤,관계,기준,person:신데렐라,,,먼저 나서는 �
 D570,person:헨젤,헨젤,관계,변화,person:신데렐라,건방지다고 받아치던 동료다,레드 슈즈를 죽인 신데렐라를 '저 헬레틱을 죽이자'며 겨눈다,,event_oldtales1,338,event_oldtales2_intermission_01,event_oldtales2_intermission_01,event_oldtales1,,,확실,확정
 D571,person:헨젤,헨젤,관계,변화,person:신데렐라,헬레틱이라며 죽이려 했다,'가족을 또 잃고 싶지 않다'며 사과하고 끌어안고 지켜 주겠다고 한다,,event_oldtales1,338,event_oldtales2_05_e,event_oldtales2_05_e,event_oldtales1,,,확실,확정
 D1639,person:헨젤,헨젤,관계,변화,person:세이렌,공격받는 것과 몸을 조종당하는 건 다르다며 언령을 경계했다,'일단 믿어 볼게 · 우린 세이렌의 친구니까' — 세이렌의 말을 알아듣는다,,char:513,380,ep:d_nikke_littlemermaid_05,ep:d_nikke_littlemermaid_05,char:513,S225,,확실,확정
+D2241,person:헨젤,헨젤,신념,변화,,신데렐라를 지키러 함께 퀸을 치러 간 2세대,인류가 우리를 잊고 버렸다며 더는 인류를 위해 싸우지 않는 헨젤,,side:gingerbread_house,484,side:gingerbread_house_00,side:gingerbread_house_10,side:gingerbread_house,S399,,확실,확정
+D2242,person:헨젤,헨젤,소속,변화,,에이브가 만든 비인가 2세대 페어리 테일,그레텔을 살려 준 헬레틱 베르누이아의 노예,,side:gingerbread_house,484,side:gingerbread_house_03,side:gingerbread_house_10,side:gingerbread_house,S398,,확실,확정
+D2245,person:헨젤,헨젤,관계,변화,person:그레텔,그레텔을 죽일 뻔한 자기가 싫어 그레텔의 눈을 피하던 쌍둥이,같은 걸 두려워했음을 알고 끌어안으며 사랑한다고 말하는 또 다른 나,,side:gingerbread_house,484,side:gingerbread_house_13,side:gingerbread_house_11,side:gingerbread_house,S397,,확실,확정
+D2246,person:헨젤,헨젤,관계,변화,person:세이렌,헬레틱을 공격하려는 세이렌에게 마녀의 아궁이를 겨눈 옛 동료,상처 입혀 미안하다고 사과하고 서로 끌어안는 가족,,side:gingerbread_house,484,side:gingerbread_house_14,side:gingerbread_house_11,side:gingerbread_house,S397,,확실,확정
+D2247,person:헨젤,헨젤,관계,변화,person:모리,방주 출신이라 '그놈들 편'이냐며 경계하고 까칠하게 대하던 사이,충고가 맞았다며 친구가 되고 싶다고 끌어안는 친구,,side:gingerbread_house,484,side:gingerbread_house_14,side:gingerbread_house_11,side:gingerbread_house,S397,,확실,확정
+D2248,person:헨젤,헨젤,관계,변화,person:그레이브,약속을 잊어 오지 않았다며 기억 없는 에이브를 원망하던 사이,그레이브 안에 에이브가 남아 있다며 살아 있어 줘서 고맙다고 끌어안는 가족,,side:gingerbread_house,484,side:gingerbread_house_15,side:gingerbread_house_15,side:gingerbread_house,S397,,확실,확정
+D2249,person:헨젤,헨젤,신념,변화,,인류를 위해서는 더는 싸우지 않는 2세대,인류가 아니라 다친 우리 가족을 위해 다시 퀸과 싸우기로 한 2세대,,side:gingerbread_house,484,side:gingerbread_house_15,side:gingerbread_house_15,side:gingerbread_house,S397,,확실,확정
 D1955,person:헬름,헬름,관계,기준,person:지휘관,,,"'귀관'이라 부르며 파티에 온 지휘관을 로비 · 추파로 의심해 날을 세우다 사과하고, 뒷정리를 도와 달라 하는 사이",char:352,139,ep:d_nikke_helm_01,,,,,확실,확정
 D1954,person:헬름,헬름,성격,기준,,,,'우리는 긍지 높은 해군'이라며 검 끝으로 바닥을 찍어 남은 음식을 버리게 하고 '권리를 부르짖기 전에 책임부터' 다하라는 엄격한 리더 — 연설 뒤엔 예민해져 어깨가 처진다,char:352,139,ep:d_nikke_helm_01,,,,,확실,확정
 D1957,person:헬름,헬름,관계,기준,person:마스트 person:앵커,,,'나는 상관이고 너희는 부하'라며 불평하는 둘에게 금주 · 근신을 내리는 깐깐한 상관,char:352,139,ep:d_nikke_helm_02,,,,,확실,확정

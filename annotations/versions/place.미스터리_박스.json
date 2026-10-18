@@ -1,0 +1,18 @@
+{
+  "subject": "place:미스터리_박스",
+  "versions": [
+    {
+      "at": "fl:little_witch_trick",
+      "text": "할로윈 축제에서 해마다 인기 부스 1위를 해 온 랜덤 박스 부스. 상금을 지키려 경쟁 부스에 거짓 피해 글을 퍼뜨려 왔고, 들통나 축제에서 쫓겨났다.",
+      "src": "1ef28fc2cc",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "hash": "bbf712eb62", "note": "U3 — 새 떡밥 · 사전 항목 1판(그 자리 기록 · 원문 줄로)" }
+      ],
+      "refs": ["E1647", "F2947", "F2949"]
+    }
+  ]
+}

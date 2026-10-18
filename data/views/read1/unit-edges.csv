@@ -223,6 +223,7 @@ sub:거울_공주_01,ch34,setup_payoff,1,0,315,336,서브퀘스트,메인,Q207-2
 sub:거울_공주_01,ch35,setup_payoff,1,0,315,358,서브퀘스트,메인,Q207-3
 sub:거울_공주_01,ch36,setup_payoff,1,0,315,360,서브퀘스트,메인,Q207-4
 sub:거울_공주_01,event_unbreakablesphere1,setup_payoff,1,0,315,377,서브퀘스트,이벤트,Q207-5
+sub:거울_공주_01,side:gingerbread_house,setup_payoff,1,0,315,484,서브퀘스트,사이드,Q207-6
 event_phantomthiefvsdetective,char:580,setup_payoff,1,0,328,330,이벤트,호감도,Q211-2
 char:580,event_arcanearchive,setup_payoff,1,0,330,383,호감도,이벤트,Q212-2
 side:wordless,event_unbreakablesphere1,setup_payoff,1,0,331,377,사이드,이벤트,Q213-2
@@ -237,6 +238,7 @@ event_oldtales1,erelic:old_tales_lost,setup_payoff,1,0,338,340,이벤트,유실�
 event_oldtales1,erelic:old_tales_mini_memory,callback,1,0,338,341,이벤트,유실물,F1686-2
 event_oldtales1,ch35,setup_payoff,1,0,338,358,이벤트,메인,Q219-2
 event_oldtales1,ch48,callback,1,0,338,472,이벤트,메인,F1681-2
+event_oldtales1,side:gingerbread_house,callback,1,0,338,484,이벤트,사이드,F1691-2
 erelic:old_tales_mini_memory,side:mudfish,callback,1,0,341,370,유실물,사이드,F1710-2
 event_footstepwalkrun1,ch39,setup_payoff,1,0,350,396,이벤트,메인,Q223-2
 event_footstepwalkrun1,side:pretty_star,callback,1,0,350,447,이벤트,사이드,F1748-2
@@ -261,6 +263,7 @@ ch37,ch38,setup_payoff,1,0,373,375,메인,메인,Q238-2
 relic:주워갈것들메모,ch38,setup_payoff,1,0,374,375,유실물,메인,Q239-2
 ch38,ch39,setup_payoff,1,0,375,396,메인,메인,Q241-2
 ch38,ch42,setup_payoff,1,0,375,416,메인,메인,Q240-2
+event_unbreakablesphere1,side:gingerbread_house,setup_payoff,1,0,377,484,이벤트,사이드,Q243-2
 erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,0,379,411,유실물,사이드,Q244-2
 event_arcanearchive,fl:ark_guardian,setup_payoff,1,0,383,428,이벤트,이벤트,Q248-2
 event_arcanearchive,side:pretty_star,setup_payoff,1,0,383,447,이벤트,사이드,Q247-2

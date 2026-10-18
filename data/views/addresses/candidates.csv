@@ -237,23 +237,30 @@ rid,name,target,source,word,lines,first
 60,벨로타,person:벨로타,episode,아저씨,53,ep:d_nikke_belorta_01#21
 60,벨로타,person:벨로타,episode,지휘관,4,ep:d_nikke_belorta_04#29
 60,벨로타,person:벨로타,episode,손님,1,ep:d_nikke_belorta_01#41
-60,벨로타,person:벨로타,story,아저씨,33,event_neverland1_01_e#74
+60,벨로타,person:벨로타,story,아저씨,64,fl:little_witch_trick_00#21
+60,벨로타,person:벨로타,story,사장님,5,fl:little_witch_trick_10#70
+60,벨로타,person:벨로타,story,손님,5,fl:little_witch_trick_01#92
 60,벨로타,person:벨로타,story,선생님,1,event_neverland2_01_e#19
 61,미카,person:미카,voice,아저씨,20,c061_Lobby_Touch_1
 61,미카,person:미카,episode,아저씨,26,ep:d_nikke_mica_01#32
 61,미카,person:미카,episode,원장님,3,ep:d_nikke_mica_02#24
 61,미카,person:미카,episode,지휘관님,3,ep:d_nikke_mica_01#36
 61,미카,person:미카,episode,지휘관,1,ep:d_nikke_mica_04#16
-61,미카,person:미카,story,아저씨,23,event_neverland1_01_e#73
+61,미카,person:미카,story,아저씨,26,fl:little_witch_trick_01#94
 61,미카,person:미카,story,선생님,4,event_neverland2_01_e#45
-61,미카,person:미카,story,손님,1,event_neverland1_01_e#75
+61,미카,person:미카,story,손님,3,event_neverland1_01_e#75
+61,미카,person:미카,story,사장님,1,fl:little_witch_trick_11#6
 62,미카 : 스노우 버디,person:미카,voice,아저씨,14,c062_Lobby_Touch_Love_2
 62,미카 : 스노우 버디,person:미카,episode,아저씨,22,ep:d_nikke_mica_snowbuddy_02#7
-62,미카 : 스노우 버디,person:미카,story,아저씨,23,event_neverland1_01_e#73
+62,미카 : 스노우 버디,person:미카,story,아저씨,26,fl:little_witch_trick_01#94
 62,미카 : 스노우 버디,person:미카,story,선생님,4,event_neverland2_01_e#45
-62,미카 : 스노우 버디,person:미카,story,손님,1,event_neverland1_01_e#75
+62,미카 : 스노우 버디,person:미카,story,손님,3,event_neverland1_01_e#75
+62,미카 : 스노우 버디,person:미카,story,사장님,1,fl:little_witch_trick_11#6
 63,벨로타 : 펌킨 위치,person:벨로타,voice,아저씨,13,c063_Lobby_Touch_1
-63,벨로타 : 펌킨 위치,person:벨로타,story,아저씨,33,event_neverland1_01_e#74
+63,벨로타 : 펌킨 위치,person:벨로타,episode,아저씨,30,ep:d_nikke_belorta_pumpkinwitch_01#1
+63,벨로타 : 펌킨 위치,person:벨로타,story,아저씨,64,fl:little_witch_trick_00#21
+63,벨로타 : 펌킨 위치,person:벨로타,story,사장님,5,fl:little_witch_trick_10#70
+63,벨로타 : 펌킨 위치,person:벨로타,story,손님,5,fl:little_witch_trick_01#92
 63,벨로타 : 펌킨 위치,person:벨로타,story,선생님,1,event_neverland2_01_e#19
 70,브리드,person:브리드,voice,지휘관,4,c070_Lobby_Touch_Love_2
 70,브리드,person:브리드,episode,지휘관,28,ep:d_nikke_brid_01#47
@@ -492,10 +499,10 @@ rid,name,target,source,word,lines,first
 181,메이든,person:메이든,episode,사장님,6,ep:d_nikke_maiden_01#51
 181,메이든,person:메이든,episode,당신,2,ep:d_nikke_maiden_01#31
 181,메이든,person:메이든,episode,손님,1,ep:d_nikke_maiden_03#81
-181,메이든,person:메이든,story,지휘관,42,event_darkhero_01_s#38
+181,메이든,person:메이든,story,지휘관,44,event_darkhero_01_s#38
 181,메이든,person:메이든,story,당신,18,event_darkhero_intermission_01#24
 181,메이든,person:메이든,story,사장님,13,event_darkhero_01_e#126
-181,메이든,person:메이든,story,보스,6,event_darkhero_01_s#30
+181,메이든,person:메이든,story,보스,7,event_darkhero_01_s#30
 181,메이든,person:메이든,story,촌장님,2,event_icedragonsaga1_05_s#95
 181,메이든,person:메이든,story,마스터,1,event_icedragonsaga1_04_s#50
 181,메이든,person:메이든,story,재판장님,1,event_icedragonsaga1_intermission_01#25
@@ -505,10 +512,10 @@ rid,name,target,source,word,lines,first
 183,메이든 : 아이스 로즈,person:메이든,voice,지휘관,5,c183_Lobby_Stay_Love_1
 183,메이든 : 아이스 로즈,person:메이든,episode,지휘관,17,ep:d_nikke_maiden_icerose_01#23
 183,메이든 : 아이스 로즈,person:메이든,episode,당신,2,ep:d_nikke_maiden_icerose_03#42
-183,메이든 : 아이스 로즈,person:메이든,story,지휘관,42,event_darkhero_01_s#38
+183,메이든 : 아이스 로즈,person:메이든,story,지휘관,44,event_darkhero_01_s#38
 183,메이든 : 아이스 로즈,person:메이든,story,당신,18,event_darkhero_intermission_01#24
 183,메이든 : 아이스 로즈,person:메이든,story,사장님,13,event_darkhero_01_e#126
-183,메이든 : 아이스 로즈,person:메이든,story,보스,6,event_darkhero_01_s#30
+183,메이든 : 아이스 로즈,person:메이든,story,보스,7,event_darkhero_01_s#30
 183,메이든 : 아이스 로즈,person:메이든,story,촌장님,2,event_icedragonsaga1_05_s#95
 183,메이든 : 아이스 로즈,person:메이든,story,마스터,1,event_icedragonsaga1_04_s#50
 183,메이든 : 아이스 로즈,person:메이든,story,재판장님,1,event_icedragonsaga1_intermission_01#25
@@ -578,8 +585,8 @@ rid,name,target,source,word,lines,first
 210,엑시아,person:엑시아,episode,지휘관,1,ep:d_nikke_exia_03#1
 210,엑시아,person:엑시아,story,당신,5,event_icedragonsaga1_01_s#49
 210,엑시아,person:엑시아,story,손님,3,fl:coins_in_rush_14#38
+210,엑시아,person:엑시아,story,보스,2,event_darkhero_01_s#11
 210,엑시아,person:엑시아,story,동생,1,event_miraclesnow2_01_s#39
-210,엑시아,person:엑시아,story,보스,1,event_darkhero_01_s#11
 210,엑시아,person:엑시아,story,아저씨,1,fl:coins_in_rush_08#41
 212,노벨,person:노벨,episode,당신,10,ep:d_nikke_novel_03#52
 212,노벨,person:노벨,story,재판장님,3,event_icedragonsaga1_intermission_01#0
@@ -1047,26 +1054,26 @@ rid,name,target,source,word,lines,first
 502,일레그 : 붐 앤 쇼크,person:일레그,story,선섕님,1,d_main_29_06_s#2
 511,신데렐라,person:신데렐라,voice,왕자님,26,c511_01_Lobby_Touch_3
 511,신데렐라,person:신데렐라,episode,왕자님,23,ep:d_nikke_cinderella_01#0
-511,신데렐라,person:신데렐라,story,왕자님,43,d_main_33_01#28
+511,신데렐라,person:신데렐라,story,왕자님,45,d_main_33_01#28
+511,신데렐라,person:신데렐라,story,당신,9,event_oldtales1_prologue#60
 511,신데렐라,person:신데렐라,story,기사님,1,fl:wave_to_you_08#69
-511,신데렐라,person:신데렐라,story,당신,1,event_oldtales1_prologue#60
 511,신데렐라,person:신데렐라,story,선배님,1,d_main_36_03_s#20
 511,신데렐라,person:신데렐라,story,선생님,1,fl:wave_to_you_12#144
 513,리틀 머메이드,person:리틀_머메이드,voice,왕자님,10,c513_03_Lobby_Touch_Love_1
-513,리틀 머메이드,person:리틀_머메이드,story,왕자님,12,fl:wave_to_you_03#62
+513,리틀 머메이드,person:리틀_머메이드,story,왕자님,13,side:gingerbread_house_00#194
 513,리틀 머메이드,person:리틀_머메이드,story,손님,1,event_unbreakablesphere1_01_e#16
 515,신데렐라 : 크리스탈 웨이브,person:신데렐라,voice,왕자님,15,c515_Lobby_Touch_2
 515,신데렐라 : 크리스탈 웨이브,person:신데렐라,episode,왕자님,33,ep:d_nikke_cinderella_crystalwave_01#2
-515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,왕자님,43,d_main_33_01#28
+515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,왕자님,45,d_main_33_01#28
+515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,당신,9,event_oldtales1_prologue#60
 515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,기사님,1,fl:wave_to_you_08#69
-515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,당신,1,event_oldtales1_prologue#60
 515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,선배님,1,d_main_36_03_s#20
 515,신데렐라 : 크리스탈 웨이브,person:신데렐라,story,선생님,1,fl:wave_to_you_12#144
 520,브래디,person:브래디,story,지휘관,18,event_trueflavor_prologue#13
 521,크러스트,person:크러스트,voice,미식가님,8,c521_Lobby_Touch_Love_1
 521,크러스트,person:크러스트,episode,미식가님,17,ep:d_nikke_crust_01#46
-521,크러스트,person:크러스트,story,미식가님,51,event_trueflavor_prologue#18
-521,크러스트,person:크러스트,story,손님,5,event_trueflavor_03_s#90
+521,크러스트,person:크러스트,story,미식가님,53,event_trueflavor_prologue#18
+521,크러스트,person:크러스트,story,손님,7,event_trueflavor_03_s#90
 521,크러스트,person:크러스트,story,지휘관님,5,event_newflavor_01_s#35
 521,크러스트,person:크러스트,story,선생님,2,event_trueflavor_01_s#6
 521,크러스트,person:크러스트,story,당신,1,event_trueflavor_04_s#86
@@ -1113,7 +1120,7 @@ rid,name,target,source,word,lines,first
 581,아르카나,person:아르카나,story,주인님,1,fl:2x2_love_2ch_59#54
 582,레이블,person:레이블,voice,당신,19,c582_01_Lobby_Touch_Love_1
 582,레이블,person:레이블,episode,당신,24,ep:d_nikke_label_01#0
-582,레이블,person:레이블,story,당신,51,fl:sin_editor_04#34
+582,레이블,person:레이블,story,당신,57,fl:sin_editor_04#34
 583,아르카나 : 포츈 메이트,person:아르카나,voice,선생님,1,c583_Lobby_Touch_Love_2
 583,아르카나 : 포츈 메이트,person:아르카나,episode,선생님,2,ep:d_nikke_arcana_fortunemate_02#72
 583,아르카나 : 포츈 메이트,person:아르카나,episode,오빠,2,ep:d_nikke_arcana_fortunemate_02#48
@@ -1139,7 +1146,9 @@ rid,name,target,source,word,lines,first
 583,아르카나 : 포츈 메이트,person:아르카나,story,주인님,1,fl:2x2_love_2ch_59#54
 590,모리,person:모리,voice,평가자님,4,c590_Lobby_Touch_2
 590,모리,person:모리,episode,평가자님,9,ep:d_nikke_mori_02#76
-590,모리,person:모리,story,평가자님,13,d_main_42_02#51
+590,모리,person:모리,story,평가자님,14,d_main_42_02#51
+590,모리,person:모리,story,베르누이아님,1,side:gingerbread_house_08#123
+590,모리,person:모리,story,베르님,1,side:gingerbread_house_08#118
 600,민트,person:민트,story,사장님,21,fl:b-side_idol_00#32
 600,민트,person:민트,story,지휘관님,5,fl:b-side_idol_03#16
 600,민트,person:민트,story,지휘관,3,fl:b-side_idol_02#69

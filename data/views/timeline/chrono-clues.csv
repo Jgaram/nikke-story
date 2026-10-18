@@ -432,3 +432,6 @@ order,unit,kind,class,place,narrow,codes,intro,changes
 480,fl:coin_rush_show_down,이벤트,범위,ch22–ch23 ~,,,ch46 리얼_카인드니스(1) · ch27 플로라(181) · ch27 일렉트릭_쇼크(1) · ch22 코인_러시(62) · ch13 슈가(246) · ch12 마나(291),슈엔: ch24 ch25; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 481,char:404,호감도,범위,ch44–ch45 ~,뒤 ch44,anis_i(뒤 ch42) 11줄; neon_v(뒤 ch44) 6줄; rapi_red(뒤 ch34) 7줄,ch22 코인_러시(1) · ch12 마나(17) · ch04 머스탱(1) · ch02 갱생관(2) · ch02 슈엔(1) · ch01 네온(8),네온: ch25 ch43 ch44; 라피: ch09 ch24 ch26 ch30 ch34 ch44; 슈엔: ch24 ch25; 아니스: ch39 ch42 ch45; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
 482,char:405,호감도,범위,ch09–ch10 ~,단서 없음,,ch22 코인_러시(1) · ch02 갱생관(2) · ch00 지휘관(98) · ch00 방주(1) · ch00 지상(1),지휘관: ch01 ch07 ch35 ch37 ch40 ch45
+483,fl:little_witch_trick,이벤트,범위,ch22–ch23 ~,,,ch12 메이든(18) · ch09 노벨(27) · ch07 엑시아(125) · ch04 크레디트(1) · ch00 지휘관(198) · ch00 방주(3),엑시아: ch09; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45
+484,side:gingerbread_house,사이드,범위,ch42–ch43 ~,,,ch34 리틀_머메이드(271) · ch34 에이브(98) · ch31 포비스트(3) · ch28 그레이브(339) · ch06 헬레틱(50) · ch06 퀸(19),그레이브: ch31 ch33 ch34; 레드_슈즈: ch48; 신데렐라: ch32
+485,char:63,호감도,불명,,,,ch00 지휘관(72) · ch00 라피(1),라피: ch09 ch24 ch26 ch30 ch34 ch44; 지휘관: ch01 ch07 ch35 ch37 ch40 ch45

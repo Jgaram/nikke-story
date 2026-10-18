@@ -188,6 +188,102 @@
       "note": "연작의 다음 편 없음 — 같은 패치 fl:little_witch_trick도 벨로타의 할로윈이지만 서로를 딛지 않고, 호감도 단위는 수동 엣지에 두지 않아 온 관례(X2)대로",
       "session": "U03",
       "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "spine",
+      "note": "10월 8일 공지 본문에 주년 · 하프 · 신년 말 없음(LITTLE WITCH TRICK은 할로윈 이벤트, GINGERBREAD HOUSE는 사이드 스토리) — 척추 문 밖, spine.json에 더하지 않음",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "leads",
+      "note": "새 줄기 J62(독립) · J63(보강)뿐 — 뼈대 줄기 · 주인이 새로 생기지 않아 주역 명단 그대로(leads.mjs 명단 20 · 명단에 없음 0)",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "majors",
+      "note": "majors.mjs 다시 셈 — 주요 인물 8 · 띠 21 · 어긋남 0, 문턱 그대로",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "closures",
+      "note": "closures --add 사슬 3: O223 연작(Y58 · Y59로 OLD TALES · WAVE TO YOU 갈래가 이 단위에서 이어짐 — P반 갈래는 O212 몫이라 뺌) 확정 · O225 세이렌 ↔ 헨젤 확정 · O224 벨로타 ↔ 지휘관 기각(O140 판례). 다시 움직인 O215 모리 성장을 되살려 끝을 이 단위로, 합류 H29(GINGERBREAD HOUSE — O223 · O225 · O215). O18 신데렐라는 D2253이 다른 갈래 하나라 그대로",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": null,
+      "item": "versions",
+      "note": "새 떡밥 J62 · J63 1판, 새 사전 3항목(할로윈 축제 · 중앙 공원 · 미스터리 박스) 1판씩 확정. GINGERBREAD HOUSE(체크 칸)가 meet에 들어 첫 본판 자리가 옮겨진 아일랜드 이터 · 마녀의 아궁이는 앞 판을 곁 판(until 없음)으로, 이 단위에 본판. versions.mjs check --all 오류 0",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "affiliations",
+      "note": "새 소속 드러남 없음 — 벨로타 · 미카 · 크러스트 · 엑시아 · 노벨 · 메이든 · 레이블은 게임 소속 그대로, 미스터리 박스 세 사람은 사전 조직이 아닌 부스(place)",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "addresses",
+      "note": "이 단위에 새 실장판 없음 — 나오는 니케는 기존 판(호칭은 판마다라 이벤트로 바뀌지 않음)",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "fl:little_witch_trick",
+      "item": "portraits",
+      "note": "새 이름표(점퍼를 입은 남자 · 스태프 · 행인)는 이름 없는 단역 — portraits.mjs 다시 돌려 이 단위 몫 새 아이콘 0. 메인 밖이라 모습 코드 해당 없음, marks.mjs 새 스쿼드 마크 0",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "side:gingerbread_house",
+      "item": "addresses",
+      "note": "이 단위에 새 실장판 없음 — 신데렐라 · 그레이브 · 세이렌 · 모리 · 헨젤 · 그레텔은 기존 판",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "side:gingerbread_house",
+      "item": "portraits",
+      "note": "새 인물 베르누이아는 nikke-db l2d 이름에 없음(영문 · 이벤트 이름으로도 못 찾음) — 기본 아이콘. 헨젤 · 그레텔은 이미 c980 · c981. 메인 밖이라 모습 코드 해당 없음, 새 스쿼드 마크 0",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "char:63",
+      "item": "affiliations",
+      "note": "새 소속 드러남 없음 — 벨로타 : 펌킨 위치의 소속은 게임 데이터(TETRA)가 계산, 이야기 속 들고 남 없음",
+      "session": "N3",
+      "date": "2026-10-18"
+    },
+    {
+      "patch": "2026-10-08",
+      "unit": "char:63",
+      "item": "portraits",
+      "note": "portraits.mjs가 판 아이콘 c063을 새로 받음(호감도 판 그림) — 새 이름표 없음, 모습 코드 해당 없음",
+      "session": "N3",
+      "date": "2026-10-18"
     }
   ]
 }

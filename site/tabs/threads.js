@@ -218,7 +218,7 @@ function layoutMap(threads, relations) {
     d.x = padX + (d.x - minX) * sc + ((MAP_W - 2 * padX) - (maxX - minX) * sc) / 2;
     d.y = padY + (d.y - minY) * sc;
   }
-  // 라벨: 겹치지 않는 자리 하나(오른쪽 → 왼쪽 → 아래 → 위 → 대각선), 안 되면 줄인 이름, 그래도 안 되면 이름 없이(툴팁)
+  // 라벨: 겹치지 않는 자리 하나(오른쪽 → 왼쪽 → 아래 → 위 → 대각선 → 옆 한 줄 비켜서), 안 되면 줄인 이름, 그래도 안 되면 이름 없이(툴팁)
   const boxes = nodes.map((d) => ({ id: d.id, x0: d.x - d.r - 1, y0: d.y - d.r - 1, x1: d.x + d.r + 1, y1: d.y + d.r + 1 }));
   const placed = [];
   const overlap = (a, b) => !(a.x1 < b.x0 || a.x0 > b.x1 || a.y1 < b.y0 || a.y0 > b.y1);
@@ -240,6 +240,11 @@ function layoutMap(threads, relations) {
         { x: d.x - g * 0.7, y: d.y + d.r + h - 2, anchor: 'end', x0: d.x - g * 0.7 - w, x1: d.x - g * 0.7, y0: d.y + d.r * 0.4, y1: d.y + d.r + h },
         { x: d.x + g * 0.7, y: d.y - d.r - 1, anchor: 'start', x0: d.x + g * 0.7, x1: d.x + g * 0.7 + w, y0: d.y - d.r - h, y1: d.y - d.r * 0.4 },
         { x: d.x - g * 0.7, y: d.y - d.r - 1, anchor: 'end', x0: d.x - g * 0.7 - w, x1: d.x - g * 0.7, y0: d.y - d.r - h, y1: d.y - d.r * 0.4 },
+        // 붙은 자리가 다 막히면 옆으로 한 줄 비켜서(오른쪽 · 왼쪽의 위 · 아래)
+        { x: d.x + g, y: d.y + h / 3 - h, anchor: 'start', x0: d.x + g, x1: d.x + g + w, y0: d.y - h / 2 - 1 - h, y1: d.y + h / 2 + 1 - h },
+        { x: d.x + g, y: d.y + h / 3 + h, anchor: 'start', x0: d.x + g, x1: d.x + g + w, y0: d.y - h / 2 - 1 + h, y1: d.y + h / 2 + 1 + h },
+        { x: d.x - g, y: d.y + h / 3 - h, anchor: 'end', x0: d.x - g - w, x1: d.x - g, y0: d.y - h / 2 - 1 - h, y1: d.y + h / 2 + 1 - h },
+        { x: d.x - g, y: d.y + h / 3 + h, anchor: 'end', x0: d.x - g - w, x1: d.x - g, y0: d.y - h / 2 - 1 + h, y1: d.y + h / 2 + 1 + h },
       ];
       for (const c of cands) {
         const b = { x0: c.x0 - 1, x1: c.x1 + 1, y0: c.y0, y1: c.y1 };

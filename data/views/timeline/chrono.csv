@@ -481,3 +481,6 @@ order,tick,unit,kind,class,place,lo,hi,via,records,pieces,flashbacks,relations,n
 480,157,fl:coin_rush_show_down,이벤트,범위,ch22–ch23 ~,62,,단위,S395,,,뒤 char:400; 뒤 char:401; 뒤 event_beautyfullshot1,,,ch48,걸침,
 481,157,char:404,호감도,범위,ch44–ch45 ~,106,,단위 · 좁힘,S393,,,뒤 char:400,뒤 ch44,추정,ch48,걸침,
 482,158,char:405,호감도,범위,ch09–ch10 ~,36,,단위,S394,,,뒤 char:401; 뒤 event_romanticvalentine,단서 없음,추정,ch48,걸침,
+483,159,fl:little_witch_trick,이벤트,범위,ch22–ch23 ~,62,,단위,S396,,,뒤 event_neverland1; 뒤 fl:sin_editor,,,ch48,걸침,
+484,159,side:gingerbread_house,사이드,범위,ch42–ch43 ~,102,,단위,S397 S398 S399,,S398 S399,뒤 fl:wave_to_you (며칠),,,ch48,걸침,
+485,159,char:63,호감도,불명,,,,,S400,,,,,,ch48,,

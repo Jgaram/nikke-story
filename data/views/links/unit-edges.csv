@@ -732,6 +732,7 @@ char:181,event_darkhero,callback,2,3,record,0,E416 E420,,101,298,호감도,이�
 char:181,event_darkhero,character,1,2,auto,0,,person:메이든,101,298,호감도,이벤트
 char:181,event_beautyfullshot1,callback,1,3,record,0,E431,,101,305,호감도,이벤트
 char:181,event_icedragonsaga1,keyword,1,2,auto,0,,concept:이레귤러,101,347,호감도,이벤트
+char:181,fl:little_witch_trick,callback,1,3,record,0,E1648,,101,483,호감도,이벤트
 char:32,char:141,keyword,1,1,auto,0,,concept:니케,102,105,호감도,호감도
 char:32,char:30,character,1,2,auto,0,,person:폴리,102,131,호감도,호감도
 char:32,char:30,keyword,1,2,auto,0,,org:A.C.P.U.,102,131,호감도,호감도
@@ -741,6 +742,7 @@ char:61,char:60,character,2,2,auto,0,,person:미카 person:벨로타,103,107,호
 char:61,char:60,keyword,1,2,auto,0,,concept:퍼펙트,103,107,호감도,호감도
 char:61,char:150,keyword,1,2,auto,0,,place:전초기지,103,125,호감도,호감도
 char:61,event_neverland1,callback,3,3,record,0,E1348 F550-2 F551-2,,103,258,호감도,이벤트
+char:61,fl:little_witch_trick,callback,1,2,record,0,E1644,,103,483,호감도,이벤트
 char:161,char:160,character,1,2,auto,0,,person:미하라,104,124,호감도,호감도
 char:161,char:162,callback,1,3,record,0,E1432,,104,382,호감도,호감도
 char:141,char:91,keyword,1,1,auto,0,,concept:니케,105,106,호감도,호감도
@@ -1823,6 +1825,7 @@ event_neverland1,ch30,character,1,2,auto,0,,person:잉그리드,258,293,이벤�
 event_neverland1,event_goldencoinrush1,character,2,2,auto,0,,person:누아르 person:블랑,258,300,이벤트,이벤트
 event_neverland1,ch31,keyword,1,2,auto,0,,org:앱솔루트,258,308,이벤트,메인
 event_neverland1,event_absolute1,keyword,2,2,auto,0,,org:스카우팅 place:북부,258,400,이벤트,이벤트
+event_neverland1,fl:little_witch_trick,callback,1,3,record,0,E1645,,258,483,이벤트,이벤트
 char:194,char:62,character,2,2,auto,0,,person:미카 person:벨로타,259,260,호감도,호감도
 char:194,char:62,keyword,1,2,auto,0,,place:설온장,259,260,호감도,호감도
 char:194,event_newyearnewsword,keyword,1,1,auto,0,,concept:니케,259,261,호감도,이벤트
@@ -1830,6 +1833,7 @@ char:194,event_killthelord,keyword,1,2,auto,0,,concept:로열,259,282,호감도,
 char:194,event_goldencoinrush1,character,1,2,auto,0,,person:루드밀라,259,300,호감도,이벤트
 char:62,char:871,character,1,2,auto,0,,person:미카,260,477,호감도,호감도
 char:62,char:871,keyword,1,2,auto,0,,place:설온장,260,477,호감도,호감도
+char:62,fl:little_witch_trick,character,1,2,auto,0,,person:벨로타,260,483,호감도,이벤트
 event_newyearnewsword,char:225,callback,1,3,record,0,F1241-2,,261,262,이벤트,호감도
 event_newyearnewsword,char:225,character,1,2,auto,0,,person:홍련,261,262,이벤트,호감도
 event_newyearnewsword,char:225,keyword,2,2,auto,0,,org:갓데스 org:근접_전투_스쿼드,261,262,이벤트,호감도
@@ -2284,6 +2288,7 @@ sub:거울_공주_01,event_oldtales1,character,3,2,auto,0,,person:거울_공주 
 sub:거울_공주_01,ch35,setup_payoff,1,3,record,0,Q207-3,,315,358,서브퀘스트,메인
 sub:거울_공주_01,ch36,setup_payoff,1,3,record,0,Q207-4,,315,360,서브퀘스트,메인
 sub:거울_공주_01,event_unbreakablesphere1,setup_payoff,1,3,record,0,Q207-5,,315,377,서브퀘스트,이벤트
+sub:거울_공주_01,side:gingerbread_house,setup_payoff,1,3,record,0,Q207-6,,315,484,서브퀘스트,사이드
 relic:수정지역깊은곳어딘가,ch33,keyword,1,2,auto,0,,item:유리_구두,316,334,유실물,메인
 event_juveniledays,char:391,setup_payoff,1,2,record,0,E1381,,317,318,이벤트,호감도
 event_juveniledays,char:391,character,2,2,auto,0,,person:루피 person:아인,317,318,이벤트,호감도
@@ -2469,6 +2474,8 @@ event_oldtales1,fl:wave_to_you,callback,1,3,record,0,E1553,,338,464,이벤트,�
 event_oldtales1,fl:project_matis,keyword,1,2,auto,0,,concept:페어리_테일,338,467,이벤트,이벤트
 event_oldtales1,ch48,setup_payoff,3,3,record,0,E540 E542 E547,,338,472,이벤트,메인
 event_oldtales1,ch48,callback,1,3,record,0,F1681-2,,338,472,이벤트,메인
+event_oldtales1,side:gingerbread_house,sequel,1,2,manual,0,Y59,,338,484,이벤트,사이드
+event_oldtales1,side:gingerbread_house,callback,7,3,record,0,E1651 E1655 E1659 E1661 E1664 E1669 F1691-2,,338,484,이벤트,사이드
 erelic:old_tales_dialog,erelic:old_tales_lost,character,1,2,auto,0,,person:신데렐라,339,340,유실물,유실물
 erelic:old_tales_dialog,erelic:old_tales_mini_memory,setup_payoff,1,2,record,0,E550,,339,341,유실물,유실물
 erelic:old_tales_dialog,erelic:old_tales_mini_memory,character,1,2,auto,0,,person:에이브,339,341,유실물,유실물
@@ -2521,6 +2528,7 @@ event_icedragonsaga1,event_romanticvalentine,character,1,2,auto,0,,person:트로
 event_icedragonsaga1,event_arcanearchive,keyword,1,2,auto,0,,concept:기억_소거,347,383,이벤트,이벤트
 event_icedragonsaga1,event_ce006,character,1,2,auto,0,,person:일레그,347,387,이벤트,이벤트
 char:183,ch35,character,1,2,auto,0,,person:맥스웰,348,358,호감도,메인
+char:183,fl:little_witch_trick,character,1,2,auto,0,,person:메이든,348,483,호감도,이벤트
 char:182,ch35,character,1,2,auto,0,,person:라플라스,349,358,호감도,메인
 char:182,event_absolute1,character,1,2,auto,0,,person:베스티,349,400,호감도,이벤트
 event_footstepwalkrun1,char:16,character,2,1,auto,0,,person:라피 person:아니스,350,352,이벤트,호감도
@@ -2673,6 +2681,7 @@ event_newflavor,ch37,keyword,1,1,auto,0,,place:방주,367,373,이벤트,메인
 event_newflavor,fl:reborn_evil,character,1,2,auto,0,,person:엔더슨,367,407,이벤트,이벤트
 event_newflavor,fl:sin_editor,callback,1,2,record,0,E999,,367,430,이벤트,이벤트
 event_newflavor,fl:2x2_love_2ch,callback,1,3,record,0,E1508,,367,445,이벤트,이벤트
+event_newflavor,fl:little_witch_trick,callback,1,3,record,0,E1646,,367,483,이벤트,이벤트
 char:520,event_trueflavor,character,2,2,auto,0,,person:브래디 person:크러스트,368,371,호감도,이벤트
 side:mudfish,char:521,keyword,1,1,auto,0,,place:지상,370,372,사이드,호감도
 side:mudfish,ch37,setup_payoff,1,2,record,0,E643,,370,373,사이드,메인
@@ -2689,6 +2698,7 @@ side:mudfish,event_unbreakablesphere1,character,4,2,auto,0,,person:그레이브 
 side:mudfish,erelic:unbreakable_sphere_dialog,callback,1,3,record,0,E711,,370,378,사이드,유실물
 side:mudfish,erelic:unbreakable_sphere_dialog,character,1,2,auto,0,,person:레비,370,378,사이드,유실물
 side:mudfish,ch42,callback,1,3,record,0,E910,,370,416,사이드,메인
+side:mudfish,side:gingerbread_house,callback,1,3,record,0,E1652,,370,484,사이드,사이드
 event_trueflavor,char:521,character,2,2,auto,0,,person:브래디 person:크러스트,371,372,이벤트,호감도
 event_trueflavor,char:521,keyword,1,2,auto,0,,org:쿠킹오일,371,372,이벤트,호감도
 char:521,ch37,keyword,1,1,auto,0,,place:지상,372,373,호감도,메인
@@ -2767,6 +2777,8 @@ event_unbreakablesphere1,ch42,character,1,2,auto,0,,person:글러트니,377,416,
 event_unbreakablesphere1,fl:2x2_love_2ch,keyword,1,2,auto,0,,org:미실리스,377,445,이벤트,이벤트
 event_unbreakablesphere1,fl:wave_to_you,callback,1,3,record,0,E1555,,377,464,이벤트,이벤트
 event_unbreakablesphere1,fl:project_matis,character,1,2,auto,0,,person:슈엔,377,467,이벤트,이벤트
+event_unbreakablesphere1,side:gingerbread_house,setup_payoff,1,3,record,0,Q243-2,,377,484,이벤트,사이드
+event_unbreakablesphere1,side:gingerbread_house,callback,1,3,record,0,E1667,,377,484,이벤트,사이드
 erelic:unbreakable_sphere_dialog,erelic:unbreakable_sphere_lost,character,1,2,auto,0,,person:세이렌,378,379,유실물,유실물
 erelic:unbreakable_sphere_dialog,char:513,callback,1,3,record,0,E1430,,378,380,유실물,호감도
 erelic:unbreakable_sphere_dialog,char:513,character,6,2,auto,0,,person:그레이브 person:그레텔 person:리틀_머메이드 person:신데렐라 person:에이브 person:헨젤,378,380,유실물,호감도
@@ -2774,6 +2786,8 @@ erelic:unbreakable_sphere_dialog,char:590,character,1,2,auto,0,,person:모리,37
 erelic:unbreakable_sphere_dialog,char:162,character,1,2,auto,0,,person:미하라,378,382,유실물,호감도
 erelic:unbreakable_sphere_dialog,ch39,character,1,2,auto,0,,person:레비 person:레비아탄,378,396,유실물,메인
 erelic:unbreakable_sphere_dialog,fl:wave_to_you,callback,1,3,record,0,E1558,,378,464,유실물,이벤트
+erelic:unbreakable_sphere_dialog,side:gingerbread_house,callback,1,3,record,0,E1662,,378,484,유실물,사이드
+erelic:unbreakable_sphere_dialog,side:gingerbread_house,character,1,2,auto,0,,person:레비,378,484,유실물,사이드
 erelic:unbreakable_sphere_lost,char:513,character,1,2,auto,0,,person:세이렌,379,380,유실물,호감도
 erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,3,record,0,Q244-2,,379,411,유실물,사이드
 char:513,char:162,character,1,2,auto,0,,person:리틀_머메이드,380,382,호감도,호감도
@@ -2784,6 +2798,7 @@ char:590,event_arcanearchive,keyword,1,1,auto,0,,concept:니케,381,383,호감�
 char:590,char:581,keyword,1,1,auto,0,,place:지상,381,384,호감도,호감도
 char:590,event_ce006,character,2,1,auto,0,,person:라피 person:아니스,381,387,호감도,이벤트
 char:590,ch42,character,1,2,auto,0,,person:모리,381,416,호감도,메인
+char:590,side:gingerbread_house,callback,1,3,record,0,E1660,,381,484,호감도,사이드
 char:162,ch42,character,1,2,auto,0,,person:리틀_머메이드,382,416,호감도,메인
 event_arcanearchive,char:581,character,1,2,auto,0,,person:아르카나,383,384,이벤트,호감도
 event_arcanearchive,event_lordforjustice,setup_payoff,4,2,record,0,E718 E721 E723 E727,,383,385,이벤트,이벤트
@@ -3091,6 +3106,7 @@ ch42,fl:great_villain_union,setup_payoff,1,3,record,0,E926,,416,478,메인,이�
 ch42,fl:great_villain_union,callback,4,3,record,0,E1587 E1588 E1589 E1591,,416,478,메인,이벤트
 ch42,fl:great_villain_union,character,1,2,auto,0,,person:글러트니,416,478,메인,이벤트
 ch42,fl:great_villain_union,keyword,1,2,auto,0,,org:빌런_연합,416,478,메인,이벤트
+ch42,side:gingerbread_house,callback,1,3,record,0,E1653,,416,484,메인,사이드
 relic:주의용광로사용법,ch44,keyword,1,2,auto,0,,org:포비스트,417,436,유실물,메인
 relic:주의용광로사용법,ch46,keyword,1,2,auto,0,,concept:다크_매터,417,452,유실물,메인
 event_goddessfall1,erelic:goddess_fall_mini,sequel,1,3,auto,0,,,418,419,이벤트,유실물
@@ -3171,6 +3187,7 @@ fl:ark_guardian,fl:ark_ranger,keyword,1,2,auto,0,,place:승리의_날개_호,428
 fl:ark_guardian,fl:wave_to_you,character,2,2,auto,0,,person:아나키오르 person:신데렐라 person:에이브 person:그레이브,428,464,이벤트,이벤트
 fl:ark_guardian,fl:project_matis,keyword,1,2,auto,0,,concept:타일런트_급,428,467,이벤트,이벤트
 fl:ark_guardian,ch48,callback,1,3,record,0,E1238,,428,472,이벤트,메인
+fl:ark_guardian,side:gingerbread_house,character,1,2,auto,0,,person:에이브,428,484,이벤트,사이드
 char:471,ch44,character,2,2,auto,0,,person:릴리바이스 person:스노우_화이트,429,436,호감도,메인
 char:471,ch44,keyword,2,2,auto,0,,concept:랩쳐 org:갓데스,429,436,호감도,메인
 char:471,event_staranis1,keyword,1,2,auto,0,,concept:사고_전환,429,454,호감도,이벤트
@@ -3185,6 +3202,7 @@ fl:sin_editor,side:pretty_star,keyword,1,2,auto,0,,org:베스트셀러,430,447,�
 fl:sin_editor,ch45,setup_payoff,1,3,record,0,Q313-2,,430,450,이벤트,메인
 fl:sin_editor,fl:persona_on_frontline,character,1,2,auto,0,,person:팬텀,430,474,이벤트,이벤트
 char:582,fl:fatal_maid,keyword,1,1,auto,0,,place:방주,431,432,호감도,이벤트
+char:582,fl:little_witch_trick,character,1,2,auto,0,,person:레이블,431,483,호감도,이벤트
 fl:fatal_maid,char:316,character,1,2,auto,0,,person:벨벳,432,433,이벤트,호감도
 fl:fatal_maid,ch43,keyword,1,1,auto,0,,place:방주,432,434,이벤트,메인
 fl:fatal_maid,side:pretty_star,character,1,2,auto,0,,person:머스탱,432,447,이벤트,사이드
@@ -3242,6 +3260,7 @@ fl:lie_cause_recoil,ch46,character,1,2,auto,0,,person:엔더슨,438,452,이벤�
 fl:lie_cause_recoil,char:405,character,1,2,auto,0,,person:마스트,438,482,이벤트,호감도
 char:860,fl:coin_rush_show_down,character,1,2,auto,0,,person:슈가,439,480,호감도,이벤트
 char:862,ch45,character,1,2,auto,0,,person:트로니,440,450,호감도,메인
+char:862,fl:little_witch_trick,character,1,2,auto,0,,person:엑시아,440,483,호감도,이벤트
 fl:enter_heaven,char:113,callback,1,3,record,0,E1630,,442,443,이벤트,호감도
 fl:enter_heaven,char:113,character,3,2,auto,0,,person:E.H. person:바이퍼 person:자칼,442,443,이벤트,호감도
 fl:enter_heaven,char:113,keyword,1,2,auto,0,,place:아우터_림,442,443,이벤트,호감도
@@ -3288,6 +3307,7 @@ fl:good_world,relic:신에게닿기위한탑,keyword,1,2,auto,0,,org:V.T.C.,448,
 fl:good_world,ch46,setup_payoff,1,2,record,0,E1077,,448,452,이벤트,메인
 fl:good_world,event_staranis1,character,1,2,auto,0,,person:프리티,448,454,이벤트,이벤트
 fl:good_world,fl:project_matis,keyword,2,2,auto,0,,item:이터널_라이프 org:M.M.R.,448,467,이벤트,이벤트
+char:620,fl:little_witch_trick,character,1,2,auto,0,,person:크러스트,449,483,호감도,이벤트
 ch45,relic:신에게닿기위한탑,keyword,1,2,auto,0,,org:미실리스,450,451,메인,유실물
 ch45,ch46,sequel,1,3,auto,0,,,450,452,메인,메인
 ch45,ch46,setup_payoff,5,3,record,0,E1084 E1088 Q335-2 Q336-2 Q340-2,,450,452,메인,메인
@@ -3338,6 +3358,7 @@ event_staranis1,fl:ark_ranger,keyword,4,2,auto,0,,org:엘리시온 org:중앙_�
 event_staranis1,fl:project_matis,keyword,1,2,auto,0,,org:미실리스,454,467,이벤트,이벤트
 event_staranis1,fl:persona_on_frontline,callback,2,2,record,0,E1561 E1578,,454,474,이벤트,이벤트
 event_staranis1,fl:coin_rush_show_down,keyword,1,2,auto,0,,org:3대_기업,454,480,이벤트,이벤트
+event_staranis1,side:gingerbread_house,keyword,1,2,auto,0,,org:V.T.C.,454,484,이벤트,사이드
 char:17,char:18,keyword,1,1,auto,0,,place:방주,455,457,호감도,호감도
 char:17,fl:b-side_idol,character,1,1,auto,0,,person:아니스,455,458,호감도,이벤트
 char:441,fl:ark_ranger,character,1,1,auto,0,,person:라피,456,462,호감도,이벤트
@@ -3373,6 +3394,9 @@ fl:wave_to_you,fl:project_matis,keyword,3,1,auto,0,,concept:랩쳐 place:방주 
 fl:wave_to_you,ch48,character,1,1,auto,0,,person:라피,464,472,이벤트,메인
 fl:wave_to_you,char:872,character,1,2,auto,0,,person:라이,464,475,이벤트,호감도
 fl:wave_to_you,fl:great_villain_union,character,1,2,auto,0,,person:그레이브,464,478,이벤트,이벤트
+fl:wave_to_you,side:gingerbread_house,sequel,1,3,manual,0,Y58,,464,484,이벤트,사이드
+fl:wave_to_you,side:gingerbread_house,character,4,2,auto,0,,person:그레텔 person:리틀_머메이드 person:모리 person:헨젤,464,484,이벤트,사이드
+char:515,side:gingerbread_house,character,1,2,auto,0,,person:신데렐라,465,484,호감도,사이드
 fl:project_matis,char:103,character,1,2,auto,0,,person:라플라스,467,468,이벤트,호감도
 fl:project_matis,char:105,character,1,2,auto,0,,person:맥스웰,467,469,이벤트,호감도
 fl:project_matis,char:105,keyword,2,2,auto,0,,concept:니케 org:메티스,467,469,이벤트,호감도
@@ -3398,6 +3422,9 @@ ch48,fl:persona_on_frontline,character,1,2,auto,0,,person:엔더슨,472,474,메�
 ch48,fl:persona_on_frontline,keyword,3,1,auto,0,,concept:니케 place:방주 place:지상,472,474,메인,이벤트
 ch48,fl:great_villain_union,character,1,2,auto,0,,person:온리_원,472,478,메인,이벤트
 ch48,fl:great_villain_union,keyword,1,1,auto,0,,concept:랩쳐,472,478,메인,이벤트
+ch48,side:gingerbread_house,character,3,2,auto,0,,person:레드_슈즈 person:레비아탄 person:레비 person:퀸,472,484,메인,사이드
+ch48,side:gingerbread_house,keyword,2,2,auto,0,,concept:침식 concept:헬레틱,472,484,메인,사이드
+relic:불길한_소리.wav,side:gingerbread_house,keyword,1,2,auto,0,,place:궤도_엘리베이터,473,484,유실물,사이드
 fl:persona_on_frontline,char:872,setup_payoff,1,3,record,0,E1581,,474,475,이벤트,호감도
 fl:persona_on_frontline,char:872,character,1,2,auto,0,,person:아이기스,474,475,이벤트,호감도
 fl:persona_on_frontline,char:872,keyword,2,1,auto,0,,concept:니케 place:방주,474,475,이벤트,호감도
@@ -3412,8 +3439,13 @@ char:872,char:870,keyword,1,1,auto,0,,place:방주,475,476,호감도,호감도
 char:872,fl:coin_rush_show_down,keyword,1,1,auto,0,,concept:니케,475,480,호감도,이벤트
 char:870,char:104,keyword,1,1,auto,0,,place:방주,476,479,호감도,호감도
 char:870,fl:coin_rush_show_down,keyword,1,1,auto,0,,org:중앙_정부,476,480,호감도,이벤트
+char:871,fl:little_witch_trick,character,1,2,auto,0,,person:미카,477,483,호감도,이벤트
 fl:great_villain_union,char:104,character,1,2,auto,0,,person:드레이크,478,479,이벤트,호감도
 fl:great_villain_union,char:104,keyword,1,2,auto,0,,org:빌런_연합,478,479,이벤트,호감도
+fl:great_villain_union,side:gingerbread_house,character,2,2,auto,0,,person:그레이브 person:글러트니,478,484,이벤트,사이드
+fl:great_villain_union,side:gingerbread_house,keyword,2,1,auto,0,,concept:랩쳐 place:지상,478,484,이벤트,사이드
 char:104,fl:coin_rush_show_down,keyword,1,1,auto,0,,place:방주,479,480,호감도,이벤트
 fl:coin_rush_show_down,char:404,character,1,2,auto,0,,person:길티,480,481,이벤트,호감도
 fl:coin_rush_show_down,char:405,character,1,2,auto,0,,person:신,480,482,이벤트,호감도
+fl:coin_rush_show_down,side:gingerbread_house,keyword,2,1,auto,0,,concept:니케 place:방주,480,484,이벤트,사이드
+fl:little_witch_trick,char:63,character,1,2,auto,0,,person:벨로타,483,485,이벤트,호감도

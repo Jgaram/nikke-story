@@ -65,6 +65,7 @@ callback,F1543-2,F1543,d_main_32_03,erelic:old_tales_dialog_18,ch32,erelic:old_t
 callback,F1654-2,F1654,d_main_34_07_e,event_oldtales1_06_s,ch34,event_oldtales1,336,338,,,확실,확정
 callback,F1681-2,F1681,event_oldtales2_03_e,d_main_48_03,event_oldtales1,ch48,338,472,,,확실,확정
 callback,F1686-2,F1686,event_oldtales2_05_e,erelic:old_tales_mini_memory_25,event_oldtales1,erelic:old_tales_mini_memory,338,341,,,확실,확정
+callback,F1691-2,F1691,event_oldtales2_06_e,side:gingerbread_house_10,event_oldtales1,side:gingerbread_house,338,484,,,확실,확정
 callback,F1710-2,F1710,erelic:old_tales_mini_memory_30,side:mudfish_08,erelic:old_tales_mini_memory,side:mudfish,341,370,,,확실,확정
 callback,F1748-2,F1748,event_footstepwalkrun1_06_s,side:pretty_star_13,event_footstepwalkrun1,side:pretty_star,350,447,,,확실,확정
 callback,F1755-2,F1755,event_footstepwalkrun2_intermission_01,d_main_45_04,event_footstepwalkrun1,ch45,350,450,,,확실,확정
@@ -292,6 +293,7 @@ setup_payoff,Q207-2,Q207,sub:거울_공주_01,d_main_34_07_e,sub:거울_공주_0
 setup_payoff,Q207-3,Q207,sub:거울_공주_01,d_main_35_05_s,sub:거울_공주_01,ch35,315,358,일부,F1803,확실,확정
 setup_payoff,Q207-4,Q207,sub:거울_공주_01,d_main_36_07_s,sub:거울_공주_01,ch36,315,360,일부,F1815,확실,확정
 setup_payoff,Q207-5,Q207,sub:거울_공주_01,event_unbreakablesphere2_epilogue,sub:거울_공주_01,event_unbreakablesphere1,315,377,일부,F1903,확실,확정
+setup_payoff,Q207-6,Q207,sub:거울_공주_01,side:gingerbread_house_02,sub:거울_공주_01,side:gingerbread_house,315,484,전부,F2956,확실,확정
 setup_payoff,Q211-2,Q211,event_phantomthiefvsdetective_01_s,ep:d_nikke_phantom_04,event_phantomthiefvsdetective,char:580,328,330,전부,F1612,확실,확정
 setup_payoff,Q212-2,Q212,ep:d_nikke_phantom_01,event_arcanearchive_06_s,char:580,event_arcanearchive,330,383,전부,F1926,확실,확정
 setup_payoff,Q213-2,Q213,side:wordless_03,event_unbreakablesphere2_03_s,side:wordless,event_unbreakablesphere1,331,377,일부,F1898,추정,확정
@@ -320,6 +322,7 @@ setup_payoff,Q238-2,Q238,d_main_37_06_e,d_main_38_04,ch37,ch38,373,375,일부,F1
 setup_payoff,Q239-2,Q239,relic:주워갈것들메모_02,d_main_38_02,relic:주워갈것들메모,ch38,374,375,일부,F1872,추정,확정
 setup_payoff,Q240-2,Q240,d_main_38_02,d_main_42_02,ch38,ch42,375,416,전부,F2214,확실,확정
 setup_payoff,Q241-2,Q241,d_main_38_09_e,d_main_39_01,ch38,ch39,375,396,전부,F2042,확실,확정
+setup_payoff,Q243-2,Q243,event_unbreakablesphere2_epilogue,side:gingerbread_house_10,event_unbreakablesphere1,side:gingerbread_house,377,484,전부,F2956,확실,확정
 setup_payoff,Q244-2,Q244,erelic:unbreakable_sphere_lost_03,side:eden_spear_12,erelic:unbreakable_sphere_lost,side:eden_spear,379,411,전부,F2173,확실,확정
 setup_payoff,Q246-2,Q246,ep:d_nikke_mihara_bondingchain_04,ep:d_nikke_mihara_bondingchain_04,char:162,char:162,382,382,일부,F2898,확실,확정
 setup_payoff,Q247-2,Q247,event_arcanearchive_06_e,side:pretty_star_14,event_arcanearchive,side:pretty_star,383,447,전부,F2559,추정,확정
@@ -403,3 +406,4 @@ setup_payoff,Q364-3,Q364,d_main_47_02,d_main_48_06_e,ch47,ch48,470,472,일부,F2
 setup_payoff,Q373-2,Q373,fl:coin_rush_show_down_02,fl:coin_rush_show_down_26,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2936,확실,확정
 setup_payoff,Q374-2,Q374,fl:coin_rush_show_down_13,fl:coin_rush_show_down_18,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2924,확실,확정
 setup_payoff,Q375-2,Q375,fl:coin_rush_show_down_11,fl:coin_rush_show_down_25,fl:coin_rush_show_down,fl:coin_rush_show_down,480,480,전부,F2935,확실,확정
+setup_payoff,Q379-2,Q379,fl:little_witch_trick_07,fl:little_witch_trick_12,fl:little_witch_trick,fl:little_witch_trick,483,483,전부,F2947,확실,확정

@@ -27,7 +27,6 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:루드밀라 신념,성장,char:194,57,50,1,,ch06 event_neverland1 char:194,D61 D1510 D2082,D2082,O10,확정
 관계 person:미카 ↔ person:벨로타,관계,char:62,58,41,,,char:61 event_neverland1 char:62,D1826 D1838 D1827 D1506 D1508 D2086 D2085,D2086 D2085,O127,확정
 관계 person:미카 ↔ person:지휘관,관계,char:62,58,41,,,char:61 char:62,D1828 D1829 D2088,D2088,O128,기각
-성장 person:미카 성격,성장,char:62,58,41,,,char:61 event_neverland1 char:62,D1824 D1825 D1505 D2084,D2084,O129,확정
 성장 person:미카 신념,성장,char:62,58,1,,,event_neverland1 char:62,D1507 D2087,D2087,O130,확정
 관계 person:노이즈 ↔ person:지휘관,관계,event_newyearnewsword,59,42,,,char:430 event_newyearnewsword,D1788 D1789 D365,D365,O131,확정
 관계 person:지휘관 ↔ person:홍련,관계,event_newyearnewsword,59,42,,,char:222 event_newyearnewsword,D1413 D1415 D364,D364,O132,확정
@@ -53,10 +52,8 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:루주 신념,성장,char:272,86,0,,,event_jinxplayer char:272,D2128 D2130,D2130,O150,확정
 관계 person:미하라 ↔ person:유니,관계,side:wordless,89,85,1,,ch03 ch04 ch12 ch24 side:wordless,D29 D32 D98 D283 D282 D525 D527,D525 D527,O13,확정
 관계 person:슈엔 ↔ person:유니,관계,side:wordless,89,72,1,,ch16 ch17 side:wordless,D138 D151 D531,D531,O14,확정
-연작 event_oldtales1,연작,event_oldtales1,91,36,1,1,event_redash event_oldtales1,,,O15,확정
 관계 person:그레이브 ↔ person:라피,관계,ch34,91,18,1,1,ch30 ch31 ch32 ch33 ch34,D440 D442 D498 D501 D534 D551 D549,D551 D549,O16,확정
 관계 person:라피 ↔ person:은화,관계,ch34,91,86,1,1,ch04 ch32 ch34,D39 D516 D517 D550,D550,O17,확정
-성장 person:신데렐라 신념,성장,char:511,91,10,1,,sub:거울_공주_00 ch34 event_oldtales1 char:511,D521 D555 D577 D578 D2136,D2136,O18,확정
 관계 person:그레이브 ↔ person:신데렐라,관계,char:514,92,11,1,,ch32 sub:관짝이_01 ch34 char:511 char:514,D512 D511 D519 D553 D2135 D1599,D1599,O19,확정
 관계 person:지휘관 ↔ person:플로라,관계,char:411,93,0,,,event_secretgarden char:411,D1603 D1604 D2137,D2137,O151,기각
 연작 event_icedragonsaga1,연작,event_icedragonsaga1,94,28,,,event_boomsday event_darkhero event_icedragonsaga1,,,O152,확정
@@ -183,13 +180,11 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:프리카 신념,성장,fl:bitter_spice,147,38,1,,ch38 event_staranis1 fl:bitter_spice,D663 D1213 D1223 D1741,D1741,O83,확정
 관계 person:소라 ↔ person:지휘관,관계,fl:ark_ranger,148,33,,,event_overthehorizon char:532 fl:ark_ranger,D744 D752 D745 D2172 D2173 D1271,D1271,O210,확정
 성장 person:아크레인저_블랙 신념,성장,fl:ark_ranger,148,74,,,event_darkhero fl:ark_ranger,D481 D1243 D1244 D1245 D1246 D1250 D1252 D1253,D1243 D1244 D1245 D1246 D1250 D1252 D1253,O211,확정
-연작 fl:wave_to_you,연작,fl:wave_to_you,149,99,,,event_schooloflock event_colorless fl:wave_to_you,,,O212,확정
 관계 person:그레텔 ↔ person:신데렐라,관계,fl:wave_to_you,149,58,1,,event_oldtales1 fl:wave_to_you,D574 D575 D576 D1755,D1755,O84,기각
 관계 person:신데렐라 ↔ person:지휘관,관계,char:515,149,68,1,,ch32 sub:거울_공주_00 ch35 char:515,D514 D522 D612 D2222,D2222,O85,확정
 관계 person:신데렐라 ↔ person:헨젤,관계,fl:wave_to_you,149,58,1,,event_oldtales1 fl:wave_to_you,D569 D574 D570 D575 D576 D571 D1755,D1755,O86,기각
 성장 person:나가 신념,성장,fl:wave_to_you,149,98,,,char:450 fl:wave_to_you,D2069 D2070 D1751,D1751,O213,확정
 성장 person:마르차나 신념,성장,fl:wave_to_you,149,99,,,event_schooloflock event_colorless char:833 fl:wave_to_you,D1459 D1460 D1579 D2119 D1750,D1750,O214,확정
-성장 person:모리 신념,성장,fl:wave_to_you,149,40,,,event_unbreakablesphere1 fl:wave_to_you,D678 D683 D1753,D1753,O215,기각
 관계 org:메티스 ↔ person:슈엔,관계,fl:project_matis,151,139,1,,ch11 ch17 fl:project_matis,D92 D152 D1288,D1288,O87,기각
 관계 person:라플라스 ↔ person:슈엔,관계,fl:project_matis,151,131,1,,ch18 ch36 fl:project_matis,D155 D156 D618 D1285 D1305 D1286 D1287 D1306,D1305 D1286 D1287 D1306,O88,기각
 관계 person:맥스웰 ↔ person:슈엔,관계,fl:project_matis,151,134,1,,char:102 ch35 ch37 fl:project_matis,D1383 D611 D645 D1272 D1290 D1308 D1291 D1307 D1292,D1290 D1308 D1291 D1307 D1292,O89,기각
@@ -221,3 +216,9 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:길티 성격,성장,char:404,157,131,,,char:400 event_beautyfullshot1 char:404,D1976 D489 D2231,D2231,O220,확정
 관계 person:신 ↔ person:지휘관,관계,char:405,158,132,,,char:401 event_romanticvalentine fl:coin_rush_show_down char:405,D1985 D1986 D1628 D2237 D2234,D2234,O221,확정
 성장 person:신 성격,성장,char:405,158,132,,,char:401 fl:coin_rush_show_down char:405,D1983 D2236 D2235,D2235,O222,확정
+연작 side:gingerbread_house,연작,side:gingerbread_house,159,109,1,,event_schooloflock event_redash event_colorless event_oldtales1 fl:wave_to_you side:gingerbread_house,,,O223,확정
+관계 person:벨로타 ↔ person:지휘관,관계,char:63,159,142,,,char:60 char:63,D1840 D1841 D2258,D2258,O224,기각
+관계 person:세이렌 ↔ person:헨젤,관계,side:gingerbread_house,159,50,,,char:513 side:gingerbread_house,D1638 D1639 D2246 D2250,D2246 D2250,O225,확정
+성장 person:모리 신념,성장,side:gingerbread_house,159,50,,,event_unbreakablesphere1 fl:wave_to_you side:gingerbread_house,D678 D683 D1753 D2255,D2255,O215,확정
+성장 person:미카 성격,성장,fl:little_witch_trick,159,142,,,char:61 event_neverland1 char:62 fl:little_witch_trick,D1824 D1825 D1505 D2084 D2239,D2239,O129,확정
+성장 person:신데렐라 신념,성장,side:gingerbread_house,159,78,1,,sub:거울_공주_00 ch34 event_oldtales1 char:511 side:gingerbread_house,D521 D555 D577 D578 D2136 D2253,D2253,O18,확정

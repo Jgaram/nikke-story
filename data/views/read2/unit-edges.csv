@@ -245,8 +245,10 @@ char:130,event_bluewaterisland,callback,2,1,1,100,209,호감도,이벤트,F537-2
 char:130,event_bluewaterisland,setup_payoff,2,1,1,100,209,호감도,이벤트,Q85-2 E1268
 char:181,event_darkhero,callback,2,0,2,101,298,호감도,이벤트,E416 E420
 char:181,event_beautyfullshot1,callback,1,0,1,101,305,호감도,이벤트,E431
+char:181,fl:little_witch_trick,callback,1,0,1,101,483,호감도,이벤트,E1648
 char:32,fl:persona_on_frontline,callback,1,0,1,102,474,호감도,이벤트,E1574
 char:61,event_neverland1,callback,3,2,1,103,258,호감도,이벤트,F550-2 F551-2 E1348
+char:61,fl:little_witch_trick,callback,1,0,1,103,483,호감도,이벤트,E1644
 char:161,char:162,callback,1,0,1,104,382,호감도,호감도,E1432
 char:141,event_claymore,callback,2,0,2,105,303,호감도,이벤트,E1373 E1375
 char:141,fl:coins_in_rush,callback,1,0,1,105,404,호감도,이벤트,E865
@@ -575,6 +577,7 @@ erelic:red_ash_mini,event_oldtales1,setup_payoff,1,0,1,253,338,유실물,이벤�
 char:470,char:224,callback,1,0,1,254,255,호감도,호감도,E1339
 char:470,ch27,callback,1,0,1,254,270,호감도,메인,E324
 event_neverland1,char:194,callback,2,0,2,258,259,이벤트,호감도,E1610 E1611
+event_neverland1,fl:little_witch_trick,callback,1,0,1,258,483,이벤트,이벤트,E1645
 event_newyearnewsword,char:225,callback,1,1,0,261,262,이벤트,호감도,F1241-2
 event_newyearnewsword,event_lastkingdom1,callback,1,0,1,261,295,이벤트,이벤트,E404
 event_newyearnewsword,ch46,callback,1,0,1,261,452,이벤트,메인,E1097
@@ -735,6 +738,7 @@ sub:거울_공주_01,ch34,setup_payoff,1,1,0,315,336,서브퀘스트,메인,Q207
 sub:거울_공주_01,ch35,setup_payoff,1,1,0,315,358,서브퀘스트,메인,Q207-3
 sub:거울_공주_01,ch36,setup_payoff,1,1,0,315,360,서브퀘스트,메인,Q207-4
 sub:거울_공주_01,event_unbreakablesphere1,setup_payoff,1,1,0,315,377,서브퀘스트,이벤트,Q207-5
+sub:거울_공주_01,side:gingerbread_house,setup_payoff,1,1,0,315,484,서브퀘스트,사이드,Q207-6
 event_juveniledays,char:391,setup_payoff,1,0,1,317,318,이벤트,호감도,E1381
 event_juveniledays,event_colorless,setup_payoff,2,0,2,317,319,이벤트,이벤트,E1382
 char:391,char:833,setup_payoff,1,0,1,318,321,호감도,호감도,E1612
@@ -806,6 +810,7 @@ event_oldtales1,fl:ark_guardian,callback,5,0,5,338,428,이벤트,이벤트,E977 
 event_oldtales1,fl:wave_to_you,callback,1,0,1,338,464,이벤트,이벤트,E1553
 event_oldtales1,ch48,callback,1,1,0,338,472,이벤트,메인,F1681-2
 event_oldtales1,ch48,setup_payoff,3,0,3,338,472,이벤트,메인,E540 E542 E547
+event_oldtales1,side:gingerbread_house,callback,7,1,6,338,484,이벤트,사이드,F1691-2 E1651 E1655 E1659 E1661 E1664 E1669
 erelic:old_tales_dialog,erelic:old_tales_mini_memory,setup_payoff,1,0,1,339,341,유실물,유실물,E550
 erelic:old_tales_lost,char:226,callback,1,0,1,340,342,유실물,호감도,E1395
 erelic:old_tales_lost,ch35,callback,1,0,1,340,358,유실물,메인,E610
@@ -873,6 +878,7 @@ relic:할일목록,ch38,setup_payoff,1,0,1,361,375,유실물,메인,E632
 event_newflavor,event_trueflavor,setup_payoff,1,0,1,367,371,이벤트,이벤트,E639
 event_newflavor,fl:sin_editor,callback,1,0,1,367,430,이벤트,이벤트,E999
 event_newflavor,fl:2x2_love_2ch,callback,1,0,1,367,445,이벤트,이벤트,E1508
+event_newflavor,fl:little_witch_trick,callback,1,0,1,367,483,이벤트,이벤트,E1646
 side:mudfish,ch37,setup_payoff,1,0,1,370,373,사이드,메인,E643
 side:mudfish,ch38,callback,3,0,3,370,375,사이드,메인,E672 E673 E674
 side:mudfish,ch38,setup_payoff,1,0,1,370,375,사이드,메인,E644
@@ -880,6 +886,7 @@ side:mudfish,event_unbreakablesphere1,callback,3,0,3,370,377,사이드,이벤트
 side:mudfish,event_unbreakablesphere1,setup_payoff,3,2,1,370,377,사이드,이벤트,Q236-2 Q237-2 E645
 side:mudfish,erelic:unbreakable_sphere_dialog,callback,1,0,1,370,378,사이드,유실물,E711
 side:mudfish,ch42,callback,1,0,1,370,416,사이드,메인,E910
+side:mudfish,side:gingerbread_house,callback,1,0,1,370,484,사이드,사이드,E1652
 ch37,ch38,callback,4,2,2,373,375,메인,메인,F1864-2 F1867-2 E660 E663
 ch37,ch38,setup_payoff,2,1,1,373,375,메인,메인,Q238-2 E652
 ch37,fl:boom_the_ghost,setup_payoff,1,0,1,373,393,메인,이벤트,E648
@@ -909,9 +916,13 @@ event_unbreakablesphere1,char:590,callback,1,0,1,377,381,이벤트,호감도,E16
 event_unbreakablesphere1,char:162,callback,1,0,1,377,382,이벤트,호감도,E1434
 event_unbreakablesphere1,ch42,callback,1,0,1,377,416,이벤트,메인,E927
 event_unbreakablesphere1,fl:wave_to_you,callback,1,0,1,377,464,이벤트,이벤트,E1555
+event_unbreakablesphere1,side:gingerbread_house,callback,1,0,1,377,484,이벤트,사이드,E1667
+event_unbreakablesphere1,side:gingerbread_house,setup_payoff,1,1,0,377,484,이벤트,사이드,Q243-2
 erelic:unbreakable_sphere_dialog,char:513,callback,1,0,1,378,380,유실물,호감도,E1430
 erelic:unbreakable_sphere_dialog,fl:wave_to_you,callback,1,0,1,378,464,유실물,이벤트,E1558
+erelic:unbreakable_sphere_dialog,side:gingerbread_house,callback,1,0,1,378,484,유실물,사이드,E1662
 erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,1,0,379,411,유실물,사이드,Q244-2
+char:590,side:gingerbread_house,callback,1,0,1,381,484,호감도,사이드,E1660
 event_arcanearchive,event_lordforjustice,callback,2,0,2,383,385,이벤트,이벤트,E734 E739
 event_arcanearchive,event_lordforjustice,setup_payoff,4,0,4,383,385,이벤트,이벤트,E718 E721 E723 E727
 event_arcanearchive,event_absolute1,callback,1,0,1,383,400,이벤트,이벤트,E852
@@ -1011,6 +1022,7 @@ ch42,ch46,setup_payoff,1,0,1,416,452,메인,메인,E930
 ch42,fl:ark_ranger,callback,2,1,1,416,462,메인,이벤트,F2235-2 E1179
 ch42,fl:great_villain_union,callback,4,0,4,416,478,메인,이벤트,E1587 E1588 E1589 E1591
 ch42,fl:great_villain_union,setup_payoff,1,0,1,416,478,메인,이벤트,E926
+ch42,side:gingerbread_house,callback,1,0,1,416,484,메인,사이드,E1653
 event_goddessfall1,erelic:goddess_fall_mini,callback,6,0,6,418,419,이벤트,유실물,E959 E960 E965 E966 E967 E968
 event_goddessfall1,erelic:goddess_fall_mini,setup_payoff,1,0,1,418,419,이벤트,유실물,E942
 event_goddessfall1,char:223,callback,2,0,2,418,420,이벤트,호감도,E1621 E1623

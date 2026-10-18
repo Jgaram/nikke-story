@@ -2162,6 +2162,20 @@
       "by": "claude",
       "session": "N3",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "N3", "note": "근거 줄 확인 — 실장 밖 인물, 이 단위에서 처음 드러남" }]
+    },
+    {
+      "id": "T143",
+      "person": "person:베르누이아",
+      "org": "org:V.T.C.",
+      "act": "지난 소속",
+      "records": ["F2959"],
+      "evidence": [{ "scene": "side:gingerbread_house_05", "lines": [109, 110] }],
+      "reason": "베르누이아가 스스로 V.T.C.를 배신한 이단자, 현상금 이름 마녀라 밝힌다(#109-110) — 배신해 나왔으니 이야기의 지금보다 앞서 끝난 소속(F2959)",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "session": "N3",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "note": "근거 줄 확인 — 실장 밖 인물, 이 단위에서 처음 드러남(배신 = 앞서 끝난 소속)" }]
     }
   ]
 }

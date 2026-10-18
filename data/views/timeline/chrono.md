@@ -100,6 +100,8 @@
 - erelic:old_tales_dialog — 유실물 · 판별 · 공개 91(2024-10-31) ⌛
 - ↺ S196 event_footstepwalkrun1 [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~ @2차_지상_탈환전–ch00) · 라피의 과거 — 1차 지상 탈환전 무렵의 어린 시절부터 2차 지상 탈환전 · 앱솔루트 시절…
 - ↺ S348 erelic:white_memory [구간] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~ ch05–ch06) · event_overzone 2부 뒤 — 갓데스가 흩어진 뒤 홀로 떠돌던 스노우 화이트가 다…
+- ↺ S398 side:gingerbread_house [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~) · 2세대가 궤도 엘리베이터에서 떨어진 뒤 헨젤이 2년을 걸어 연구소에 닿고 몇 해를 기다리다…
+- ↺ S399 side:gingerbread_house [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~) · 세이렌이 바다에서 깨어 떠돌다 해안 절벽에서 헨젤을 찾은 때 — 그레텔은 베르누이아의 치료…
 
 ### @1차_지상_탈환전–@갓데스_폴
 
@@ -445,6 +447,7 @@
 - char:870 — 호감도 · 범위 (ch22–ch23 ~) · 공개 154(2026-08-13)
 - char:871 — 호감도 · 범위 (ch22–ch23 ~) · 공개 155(2026-08-20)
 - fl:coin_rush_show_down — 이벤트 · 범위 (ch22–ch23 ~) · 공개 157(2026-09-17)
+- fl:little_witch_trick — 이벤트 · 범위 (ch22–ch23 ~) · 공개 159(2026-10-08)
 
 ## ch23 — 공개 43(2023-07-20)
 
@@ -680,6 +683,7 @@
 - char:515 — 호감도 · 범위 (ch42–ch43 ~) · 공개 149(2026-07-02)
 - char:322 — 호감도 · 범위 (ch42–ch43 ~) · 공개 150(2026-07-09)
 - fl:great_villain_union — 이벤트 · 범위 (ch42–ch43 ~) · 공개 156(2026-09-03)
+- side:gingerbread_house — 사이드 · 범위 (ch42–ch43 ~) · 공개 159(2026-10-08)
 
 ## ch43 — 공개 137(2026-02-12)
 
@@ -732,9 +736,9 @@
 - 조각(회상) 15: S44 char:30 · S58 event_cherryblossom · S80 char:380 · S95 char:450 · S114 event_neverland1 · S144 event_lastkingdom1 · S150 event_goldencoinrush1 · S155 event_claymore · S175 side:wordless · S192 event_icedragonsaga1 · S216 side:mudfish · S232 event_lordforjustice · S258 fl:reborn_evil · S290 fl:sin_editor · S300 fl:lie_cause_recoil
 - 이벤트 3: event_ltk · event_schooloflock · fl:sin_editor
 
-## 시점 불명 51
+## 시점 불명 52
 
 - 서브퀘스트 9: sub:이례의_기록자_00 · sub:고스트_00 · sub:코리_00 · sub:김작가_00 · sub:스페이드_00 · sub:저스틴_00 · sub:테디_00 · sub:제니퍼f_00 · sub:데이파라_00
-- 호감도 23: char:82 · char:32 · char:61 · char:141 · char:60 · char:150 · char:312 · char:381 · char:282 · char:40 · char:380 · char:350 · char:812 · char:811 · char:321 · char:450 · char:451 · char:382 · char:310 · char:822 · char:821 · char:820 · char:570
+- 호감도 24: char:82 · char:32 · char:61 · char:141 · char:60 · char:150 · char:312 · char:381 · char:282 · char:40 · char:380 · char:350 · char:812 · char:811 · char:321 · char:450 · char:451 · char:382 · char:310 · char:822 · char:821 · char:820 · char:570 · char:63
 - 이벤트 3: event_nocallerid · event_bowwowparadise · event_goldenship
 - 유실물 16: relic:jonathan_report · relic:특이랩쳐보고서-전 · relic:특이랩쳐보고서-후 · relic:에닉탄핵포스터 · relic:필그림조우보고서 · relic:저주받은보석 · relic:조난일지 · relic:반드시사수하라 · relic:충격다크매터란무엇인가 · relic:알관련전달사항 · relic:할일목록 · relic:주워갈것들메모 · relic:은색액체 · relic:거꾸로적힌기록 · relic:아무한테나말해주는거아니야.wav · relic:거인을찾아서

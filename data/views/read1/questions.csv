@@ -205,7 +205,7 @@ Q203,ch32,310,d_main_32_07,일부,Q203-2:일부,side:eden_spear,F2167,101,person
 Q204,ch32,310,d_main_32_09_e,풀림,Q204-2:일부 Q204-3:일부 Q204-4:전부,ch33 ch34 event_oldtales1,F1632 F1651 F1684,28,person:그레이브 person:신데렐라,확정,"그레이브는 원래 누구였기에 깨어난 신데렐라가 부서진 얼굴만 보고 알아보고 '내 최고의 관객'이라 부르며, 100년 넘게 그녀를 지켜 왔나?"
 Q205,ch32,310,d_main_32_af_02,풀림,Q205-2:전부,ch34,F1644,26,org:앱솔루트 person:잉그리드 person:은화,확정,잉그리드가 준비했고 은화가 라피의 자리 때문에 미뤄 온 앱솔루트의 [택티컬 업] 플랜은 무엇인가?
 Q206,sub:관짝이_02,314,sub:관짝이_02,풀림,Q206-2:일부 Q206-3:전부,ch34 ch44,F1656 F2430,122,person:스노우_화이트 item:세븐스_드워프,확정,"스노우 화이트가 다른 무기 개발을 멈추고 비밀 공방에서 그것만 만들었다는 [어떤 무기]는 무엇이고, 공방에 함께 남은 테스트용 드릴은 어디에 쓰는 것인가?"
-Q207,sub:거울_공주_01,315,sub:거울_공주_01,일부,Q207-2:일부 Q207-3:일부 Q207-4:일부 Q207-5:일부,ch34 ch35 ch36 event_unbreakablesphere1,F1654 F1803 F1815 F1903,62,person:헨젤 person:그레텔 person:세이렌 person:신데렐라,확정,"신데렐라와 같은 스쿼드였던 2세대 페어리 테일 니케들 — 헨젤 · 그레텔 · 세이렌 — 은 어떻게 되었고, 지금 어디에 있나?"
+Q207,sub:거울_공주_01,315,sub:거울_공주_01,풀림,Q207-2:일부 Q207-3:일부 Q207-4:일부 Q207-5:일부 Q207-6:전부,ch34 ch35 ch36 event_unbreakablesphere1 side:gingerbread_house,F1654 F1803 F1815 F1903 F2956,169,person:헨젤 person:그레텔 person:세이렌 person:신데렐라,확정,"신데렐라와 같은 스쿼드였던 2세대 페어리 테일 니케들 — 헨젤 · 그레텔 · 세이렌 — 은 어떻게 되었고, 지금 어디에 있나?"
 Q208,event_colorless,319,event_colorless_intermission_01,열림,,,,,org:M.M.R. place:미미르_부속_고등학교,확정,M.M.R.에 통합 P반의 [필드 트립]을 요청해 커리큘럼을 바꾸게 한 '손님들'은 누구인가?
 Q209,event_colorless,319,event_colorless_epilogue,열림,,,,,person:마르차나 person:에테르 place:미미르_부속_고등학교,확정,"마르차나가 들고 오겠다는, 미미르 부속고(M.M.R.)를 '부술 열쇠'는 무엇인가?"
 Q210,char:833,321,ep:d_nikke_ce004_04_01,열림,,,,,person:미사토 person:아스카 person:레이 place:미미르_부속_고등학교,확정,"다른 세계에서 온 미사토 · 아스카 · 레이는 어떻게 방주에 와서 미미르 부속고의 임시 교사 · 학생(버디 팀)으로 지내게 되었고, 함께 상대한 '적'은 무엇인가?"
@@ -240,7 +240,7 @@ Q239,relic:주워갈것들메모,374,relic:주워갈것들메모_02,일부,Q239-
 Q240,ch38,375,d_main_38_02,풀림,Q240-2:전부,ch42,F2214,41,,확정,"지즈가 땅속 깊이에서 찾아낸, 라피의 복장을 한 코어 두 개의 목 없는 니케는 무엇인가 — 라피가 지금 바디로 바뀌기 전의 옛 몸인가, 왜 땅속에 묻혀 있었나?"
 Q241,ch38,375,d_main_38_09_e,풀림,Q241-2:전부,ch39,F2042,21,,확정,"레비아탄 · 지즈 · 베히모스의 알을 통째로 삼킨, 색이 다른 마더 웨일은 무엇이고 셋은 어떻게 되나 — 랩칠리언의 웨일리인가?"
 Q242,event_unbreakablesphere1,377,event_unbreakablesphere2_04_s,열림,,,,,,확정,미하라의 코어 융합을 연 해제 코드 [UNLOCK CODE : D.E.E.P.]는 무엇인가 — 니케 코어의 [방어벽]을 끄는 지엔의 '영업 비밀'은 D.E.E.P.('방주의 수호자')와 어떤 관계인가?
-Q243,event_unbreakablesphere1,377,event_unbreakablesphere2_epilogue,열림,,,,,,확정,"세이렌이 '더 이상 인류의 편이 아니다'라 한 헨젤과 그레텔에게는 무슨 일이 있었고, 지금 어디서 무엇을 하나?"
+Q243,event_unbreakablesphere1,377,event_unbreakablesphere2_epilogue,풀림,Q243-2:전부,side:gingerbread_house,F2956,107,,확정,"세이렌이 '더 이상 인류의 편이 아니다'라 한 헨젤과 그레텔에게는 무슨 일이 있었고, 지금 어디서 무엇을 하나?"
 Q244,erelic:unbreakable_sphere_lost,379,erelic:unbreakable_sphere_lost_03,풀림,Q244-2:전부,side:eden_spear,F2173,32,,확정,"세이렌이 70년 가까이 지상으로 쏘아 올린 물거품들 가운데 아무도 만나지 못해 부서진 것들은 [물거품 구름]이 되어, 정말 [퀸]의 시야를 가리는 거대한 막이 되었나?"
 Q245,char:590,381,ep:d_nikke_mori_05,열림,,,,,person:모리,확정,모리와 헤어지고 긴 시간이 흐른 뒤 지휘관이 연락을 받고 '아쉽네'라면서도 아주 기쁜 소식이라 한 것은 무엇인가 — 모리가 인큐베이터 스쿼드를 벗어났다는 소식인가?
 Q246,char:162,382,ep:d_nikke_mihara_bondingchain_04,일부,Q246-2:일부,char:162,F2898,0,person:미하라 person:리틀_머메이드,확정,"기억 소거로 잃은 기억 속에서 미하라가 그리워하는 '그 사람'(■■■) — 함께 작전을 하고 '도와주겠다'며 사과한 다정한 성인 남자 — 은 누구이고, 세이렌이 그와 닮았다며 떠올린 '전설의 그분'은 누구인가?"
@@ -376,3 +376,7 @@ Q375,fl:coin_rush_show_down,480,fl:coin_rush_show_down_11,풀림,Q375-2:전부,f
 Q376,fl:coin_rush_show_down,480,fl:coin_rush_show_down_25,열림,,,,,person:경비_팀장,확정,"경비 팀장이 기술을 팔려던 '고객' — 방주 밖 넓은 세계의 누구 — 는 누구이고, 왜 방주가 망한다고 하나?"
 Q377,fl:coin_rush_show_down,480,fl:coin_rush_show_down_27,열림,,,,,person:경비_팀장 place:갱생관,확정,"갱생관의 경비 팀장 앞에 허공에서 일렁이며 나타나 총을 쏜 '괴물'은 누구이고, 경비 팀장은 죽었나?"
 Q378,fl:coin_rush_show_down,480,fl:coin_rush_show_down_25,열림,,,,,place:코인_러시 person:머스탱,확정,머스탱이 말하길 꺼린 코인 러시 지하 구역의 '더러운 일'은 무엇이었나?
+Q379,fl:little_witch_trick,483,fl:little_witch_trick_07,풀림,Q379-2:전부,fl:little_witch_trick,F2947,0,incident:할로윈_축제,확정,누가 왜 리틀 위치 트릭을 겨냥한 거짓 피해 글을 퍼뜨리나?
+Q380,side:gingerbread_house,484,side:gingerbread_house_05,열림,,,,,person:베르누이아 org:V.T.C.,확정,"V.T.C.를 배신하고 스스로 헬레틱이 된 '마녀' 베르누이아는 왜 그랬고, 에너지를 숨기며 피해 다니는 '추적자'는 누구인가?"
+Q381,side:gingerbread_house,484,side:gingerbread_house_05,열림,,,,,person:베르누이아 concept:헬레틱 concept:침식,확정,"베르누이아가 말하는 바다 건너 '이쪽'은 어떤 곳이고, 왜 헬레틱이라는 말을 다르게 쓰며 레드 슈즈의 침식 같은 것이 없나?"
+Q382,side:gingerbread_house,484,side:gingerbread_house_08,열림,,,,,person:신데렐라 person:퀸,확정,"신데렐라는 베르누이아의 말대로 퀸과 싸우며 거대화를 택하게 되고, 그때 자아를 지킬 수 있을까?"

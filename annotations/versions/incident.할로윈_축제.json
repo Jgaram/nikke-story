@@ -1,0 +1,18 @@
+{
+  "subject": "incident:할로윈_축제",
+  "versions": [
+    {
+      "at": "fl:little_witch_trick",
+      "text": "방주 중앙 공원에서 2주 동안 열리는 할로윈 축제. 부스마다 장사해 마지막 날 가장 인기 있던 부스가 상금과 다음 축제 우선 참가권을 받는다.",
+      "src": "e5e2f3a02a",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-10-18",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "hash": "ae5bbaee3a", "note": "U3 — 새 떡밥 · 사전 항목 1판(그 자리 기록 · 원문 줄로)" }
+      ],
+      "refs": ["F2940"]
+    }
+  ]
+}
