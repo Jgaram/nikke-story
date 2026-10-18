@@ -24,7 +24,7 @@
 | handoff/facts-17.md | 사실 목록 R44–R46 | 9,566 |
 | handoff/facts-18.md | 사실 목록 R47–R49 | 18,210 |
 | handoff/facts-19.md | 사실 목록 R50–R51 | 10,518 |
-| handoff/facts-20.md | 사실 목록 R52–R54 | 17,404 |
+| handoff/facts-20.md | 사실 목록 R52–R54 | 17,441 |
 | handoff/facts-21.md | 사실 목록 R55–R57 | 18,827 |
 | handoff/facts-22.md | 사실 목록 R58–R61 | 18,983 |
 | handoff/facts-23.md | 사실 목록 R62–R64 | 19,833 |
@@ -38,8 +38,9 @@
 | handoff/facts-31.md | 사실 목록 R89–R90 | 18,690 |
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
-| handoff/facts-34.md | 사실 목록 R98–P1 | 19,833 |
-| handoff/questions-solved.md | 풀린 의문 101건 | 16,243 |
+| handoff/facts-34.md | 사실 목록 R98–M26 | 19,937 |
+| handoff/facts-35.md | 사실 목록 M30–P1 | 4,775 |
+| handoff/questions-solved.md | 풀린 의문 103건 | 16,715 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
 | handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 19,109 |
@@ -150,3 +151,4 @@
 | handoff/R99.md | 단위 요약 — char:870 … char:405 (6단위) | 9,971 |
 | handoff/U01.md | 단위 요약 — fl:coin_rush_show_down | 9,146 |
 | handoff/U02.md | 단위 요약 — fl:little_witch_trick | 5,421 |
+| handoff/U03.md | 단위 요약 — side:gingerbread_house · char:63 | 8,840 |

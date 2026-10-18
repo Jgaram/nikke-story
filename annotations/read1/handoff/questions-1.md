@@ -1,7 +1,7 @@
 # 의문 목록 — 1회독 (열림 · 일부 풀림) (1/2)
 
 자동으로 만든 파일이다 — 손으로 고치지 않는다(node tools/records.mjs handoff). 형식 · 규칙은 docs/annotations.md.
-의문 378건 — 열림 160 · 일부 풀림 117 · 풀림 101 (기각 뺌). `✓` 확정. 풀린 의문은 questions-solved.md(필요할 때).
+의문 381건 — 열림 162 · 일부 풀림 116 · 풀림 103 (기각 뺌). `✓` 확정. 풀린 의문은 questions-solved.md(필요할 때).
 `일부 → F7 (Q3-2 단위)`: 회수 기록과 답이 된 사실. 새로 풀리는 것을 보면 events에 회수를 적는다.
 
 ## 열린 의문 — R01
@@ -171,7 +171,6 @@
 
 ## 열린 의문 — R61
 - Q242 ✓ 미하라의 코어 융합을 연 해제 코드 [UNLOCK CODE : D.E.E.P.]는 무엇인가 — 니케 코어의 [방어벽]을 끄는 지엔의 '영업 비밀'은 D.E.E.P.('방주의 수호자')와 어떤 관계인가? · event_unbreakablesphere1 event_unbreakablesphere2_04_s#76-83,135-147
-- Q243 ✓ 세이렌이 '더 이상 인류의 편이 아니다'라 한 헨젤과 그레텔에게는 무슨 일이 있었고, 지금 어디서 무엇을 하나? · event_unbreakablesphere1 event_unbreakablesphere2_epilogue#199-212
 
 ## 열린 의문 — R62
 - Q245 ✓ 모리와 헤어지고 긴 시간이 흐른 뒤 지휘관이 연락을 받고 '아쉽네'라면서도 아주 기쁜 소식이라 한 것은 무엇인가 — 모리가 인큐베이터 스쿼드를 벗어났다는 소식인가? · char:590 ep:d_nikke_mori_05#93-106
@@ -299,3 +298,8 @@
 - Q376 ✓ 경비 팀장이 기술을 팔려던 '고객' — 방주 밖 넓은 세계의 누구 — 는 누구이고, 왜 방주가 망한다고 하나? · fl:coin_rush_show_down fl:coin_rush_show_down_25#32-41,65-71
 - Q377 ✓ 갱생관의 경비 팀장 앞에 허공에서 일렁이며 나타나 총을 쏜 '괴물'은 누구이고, 경비 팀장은 죽었나? · fl:coin_rush_show_down fl:coin_rush_show_down_27#53-61
 - Q378 ✓ 머스탱이 말하길 꺼린 코인 러시 지하 구역의 '더러운 일'은 무엇이었나? · fl:coin_rush_show_down fl:coin_rush_show_down_25#45-47,62-63
+
+## 열린 의문 — U03
+- Q380 ✓ V.T.C.를 배신하고 스스로 헬레틱이 된 '마녀' 베르누이아는 왜 그랬고, 에너지를 숨기며 피해 다니는 '추적자'는 누구인가? · side:gingerbread_house side:gingerbread_house_05#29-31,108-110
+- Q381 ✓ 베르누이아가 말하는 바다 건너 '이쪽'은 어떤 곳이고, 왜 헬레틱이라는 말을 다르게 쓰며 레드 슈즈의 침식 같은 것이 없나? · side:gingerbread_house side:gingerbread_house_05#37-42,71
+- Q382 ✓ 신데렐라는 베르누이아의 말대로 퀸과 싸우며 거대화를 택하게 되고, 그때 자아를 지킬 수 있을까? · side:gingerbread_house side:gingerbread_house_08#30-55

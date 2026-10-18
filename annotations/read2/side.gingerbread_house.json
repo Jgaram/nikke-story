@@ -1,0 +1,1506 @@
+{
+  "unit": "side:gingerbread_house",
+  "session": "U03",
+  "by": "claude",
+  "date": "2026-10-18",
+  "mentions": [
+    {
+      "id": "I693",
+      "target": "person:베르누이아",
+      "speaker": true,
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            100
+          ]
+        }
+      ],
+      "reason": "??? '아가씨는 누구니?' 뒤 양산을 든 여성이 나타나 이어 말한다(#100-105, L37)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I694",
+      "target": "person:지휘관",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            194,
+            213
+          ]
+        }
+      ],
+      "reason": "세이렌 · 신데렐라의 '왕자님'(#194 · #213) — 신데렐라가 지휘관을 부르는 말(F1558)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I695",
+      "target": "person:지휘관",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_03",
+          "lines": [
+            "109-111"
+          ]
+        }
+      ],
+      "reason": "그레이브의 '탈인간'과 신데렐라의 '왕자님'(#109-111) — 지휘관(A149 · F1558)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I696",
+      "target": "person:레드_슈즈",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_05",
+          "lines": [
+            26,
+            "65-66"
+          ]
+        }
+      ],
+      "reason": "'못된 것에게 당해 [침식]으로'(#26), '발원지가 V.T.C.의 사제 중 하나'(#65) — 침식을 키운 레드 슈즈(F1681)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I697",
+      "target": "person:베르누이아",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_06",
+          "lines": [
+            46,
+            52,
+            120,
+            129
+          ]
+        }
+      ],
+      "reason": "헨젤 · 그레텔이 집주인을 줄여 부르는 '베르'(#46 · #52 · #120 · #129) — 이 씬에 베르누이아는 나오지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I698",
+      "target": "person:니힐리스타",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_08",
+          "lines": [
+            13
+          ]
+        }
+      ],
+      "reason": "'다른 헬레틱에게 무장 자체를 빼앗긴 적'(#13) — 유리 구두를 빼앗은 화룡(니힐리스타, F1543)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I699",
+      "target": "person:지휘관",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            21
+          ]
+        }
+      ],
+      "reason": "그레이브의 지난 이야기 속 '탈인간'(#21) — 지휘관(A149)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "I700",
+      "target": "person:지휘관",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "86-87"
+          ]
+        }
+      ],
+      "reason": "헨젤의 '왕자님'과 그레이브의 '탈인간'(#86-87) — 지휘관",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1651",
+      "act": "재언급",
+      "points": [
+        "F1681"
+      ],
+      "text": "세이렌이 헬레틱을 감싸는 헨젤을 보며 연기로 모두를 속이고 신데렐라를 헬레틱으로 만든 레드 슈즈를 떠올린다",
+      "about": [
+        "person:레드_슈즈"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            "88-97"
+          ]
+        }
+      ],
+      "reason": "'신데렐라를 헬레틱으로 만들고, 우리의 이야기를 망친 존재'(#90-91) — 침식을 키운 레드 슈즈(F1681)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1652",
+      "act": "재언급",
+      "points": [
+        "F1849"
+      ],
+      "text": "세이렌이 지쳐 쓰러진 자기를 레비가 구해 줬고 글러트니에게 먹혔다고 지난 일을 잇는다",
+      "about": [
+        "person:레비",
+        "person:글러트니"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            "184-186"
+          ]
+        }
+      ],
+      "reason": "'레비가 구해줬고 · 글러트니에게 잡아먹혀서'(#184-186) — side:mudfish의 일(F1849)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1653",
+      "act": "재언급",
+      "points": [
+        "F2250"
+      ],
+      "text": "그레이브 · 신데렐라가 퀸이 내려온다며 왕자님(지휘관)이 그것과 싸울 테니 힘이 되어야 한다고 서두른다",
+      "about": [
+        "person:퀸"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            "204-218"
+          ]
+        }
+      ],
+      "reason": "'랩쳐 퀸이 내려오고 있다'(#206), '왕자님은 분명 그것과 싸우게'(#213) — 헨젤 · 그레텔을 찾기로 한 까닭(F2250)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1654",
+      "act": "암시",
+      "points": [
+        "F2965"
+      ],
+      "text": "악몽에서 깬 헨젤이 그레텔과 눈을 마주쳤다 금세 피하고, 빨래 내내 눈을 돌린다",
+      "about": [
+        "person:헨젤",
+        "person:그레텔"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_01",
+          "lines": [
+            "53-55",
+            "80-85"
+          ]
+        }
+      ],
+      "reason": "'헨젤이 금세 눈을 돌린다'(#55 · #80-85) — 그레텔을 죽일 뻔한 자기가 싫어 피한 것(F2965, 13)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1655",
+      "act": "재언급",
+      "points": [
+        "Q219"
+      ],
+      "text": "신데렐라가 궤도 엘리베이터에서 퀸을 죽이는 데는 실패했고 대신 다른 일을 했다며 이야기를 미룬다",
+      "about": [
+        "person:신데렐라",
+        "person:퀸"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_02",
+          "lines": [
+            "17-22"
+          ]
+        }
+      ],
+      "reason": "'퀸을 죽이는 것엔 실패했어 … 대신 다른 일을'(#20-22) — 스테이션의 신데렐라(Q219)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1656",
+      "act": "암시",
+      "points": [
+        "F2974"
+      ],
+      "text": "베르누이아가 절뚝이며 집 안으로 들어가고 그레이브가 '왜…' 하고 의아해한다",
+      "about": [
+        "person:베르누이아"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_02",
+          "lines": [
+            "102-104"
+          ]
+        }
+      ],
+      "reason": "절뚝임(#102)과 그레이브의 의문(#103-104) — 다리 하나로 그레텔을 살린 의족(F2974, 11)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1657",
+      "act": "암시",
+      "points": [
+        "F2963"
+      ],
+      "text": "긴장이 터지는 순간 꽃병이 저절로 깨지고, 그레텔이 '온다'고 하자마자 베르누이아가 들이닥쳐 모리를 지목한다",
+      "about": [
+        "person:베르누이아",
+        "person:모리"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_03",
+          "lines": [
+            "139-158"
+          ]
+        }
+      ],
+      "reason": "깨진 꽃병(#139-147), '…온다'(#151) 직후 '너니?'(#157) — 베르누이아가 일부러 깬 것(F2963, 08)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1658",
+      "act": "암시",
+      "points": [
+        "F2974"
+      ],
+      "text": "신데렐라가 헬레틱이라면 고칠 수 있을 의족을 왜 수복하지 않느냐 묻자 베르누이아가 특별한 사정이 있다고만 한다",
+      "about": [
+        "person:베르누이아"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_05",
+          "lines": [
+            "8-15"
+          ]
+        }
+      ],
+      "reason": "'수복할 수 있다는 걸 부정하진 않으마 … 특별한 사정'(#14-15) — 다리를 그레텔의 에너지원으로 씀(F2974)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1659",
+      "act": "재언급",
+      "points": [
+        "F1680"
+      ],
+      "text": "베르누이아가 침식은 풀렸어도 신데렐라의 눈이 아직 붉게 물들어 있다며 바디는 랩쳐라고 짚는다",
+      "about": [
+        "person:신데렐라"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_05",
+          "lines": [
+            "59-61"
+          ]
+        }
+      ],
+      "reason": "'네 눈 색깔이 아직 붉게 물들어 있지 않니?'(#61) — 눈만 붉은 채 남은 신데렐라(F1680)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1660",
+      "act": "재언급",
+      "points": [
+        "F1917"
+      ],
+      "text": "모리가 예전엔 평가자와 카운터스의 호의도 제대로 받지 못했다고 돌아본다",
+      "about": [
+        "person:모리"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_07",
+          "lines": [
+            "41-45"
+          ]
+        }
+      ],
+      "reason": "'평가자님이랑 카운터스 애들이 보여줬던 호의'(#43) — 모리의 평가자 지휘관과 카운터스 특훈(F1917)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1661",
+      "act": "재언급",
+      "points": [
+        "F1687"
+      ],
+      "text": "물거품 속 옛 기억 — 에이브는 신데렐라가 오명을 뒤집는 순간을 지켜봐야 한다 하고, 헨젤은 신데렐라가 살았으면 좋겠으니 지켜 주겠다고 한다",
+      "about": [
+        "person:에이브",
+        "person:헨젤",
+        "person:신데렐라"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_09",
+          "lines": [
+            "7-12"
+          ]
+        }
+      ],
+      "reason": "'오명을 한 번에 뒤집는 순간'(#8), '헨젤과 그레텔이 지켜줘야 해'(#12) — 신데렐라를 지키러 함께 간 일(F1687)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1662",
+      "act": "재언급",
+      "points": [
+        "F1905"
+      ],
+      "text": "모리가 글러트니 안에서 세이렌이 물거품으로 헨젤 · 그레텔을 만들어 많이 보았다고 헨젤에게 말한다",
+      "about": [
+        "person:모리",
+        "person:리틀_머메이드"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "79-90"
+          ]
+        }
+      ],
+      "reason": "'세이렌이 물거품으로 너희를 만들었거든'(#84) — 친구들을 닮은 물거품(F1905)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1663",
+      "act": "재언급",
+      "points": [
+        "F2962"
+      ],
+      "text": "신데렐라가 베르누이아의 과제('스스로를 정의하는 게 뭐냐')를 떠올리고 그 뜻을 깨닫는다",
+      "about": [
+        "person:신데렐라",
+        "person:베르누이아"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_12",
+          "lines": [
+            "26-31"
+          ]
+        }
+      ],
+      "reason": "베르누이아의 말이 되살아나고(#27-29) '그런 의미였구나'(#31) — 08의 과제(F2962)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1664",
+      "act": "재언급",
+      "points": [
+        "F1692"
+      ],
+      "text": "그레이브가 헨젤 · 그레텔에게 신데렐라를 찾아 지킨 일, 방주 사람들의 실험, 수정지역, 탈인간 · 세이렌을 만나기까지를 모두 들려준다",
+      "about": [
+        "person:그레이브"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "17-24"
+          ]
+        }
+      ],
+      "reason": "'신데렐라를 발견하고 보호했던 일 · 끔찍한 실험'(#18-19) — 에이브의 그 뒤(F1692)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1665",
+      "act": "암시",
+      "points": [
+        "F2968"
+      ],
+      "text": "헨젤 · 그레텔을 내보낸 베르누이아가 서랍에서 환하게 웃는 둘의 사진을 꺼내 보며 '결국'이라 한다",
+      "about": [
+        "person:베르누이아",
+        "person:헨젤",
+        "person:그레텔"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_16",
+          "lines": [
+            "58-63"
+          ]
+        }
+      ],
+      "reason": "사진(#62) · '…결국'(#63) — 둘이 떠날 것을 알고 아궁이를 챙겨 보냄(F2968, 17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1666",
+      "act": "암시",
+      "points": [
+        "F2970"
+      ],
+      "text": "가출을 말하며 헨젤 · 그레텔이 모리와 눈을 맞추고 '믿고 있으니까 괜찮을 것'이라 한다",
+      "about": [
+        "person:모리",
+        "person:헨젤"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_16",
+          "lines": [
+            "93-101"
+          ]
+        }
+      ],
+      "reason": "모리와 눈을 마주치고 '믿고 있으니까'(#95-100) — 모리가 남아 베르누이아를 돕기로 함(F2970, 17)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1667",
+      "act": "재언급",
+      "points": [
+        "F1901"
+      ],
+      "text": "남겠다는 모리의 눈에서 세이렌이 글러트니의 목구멍에 다시 들어와 손을 내밀던 그때의 눈을 본다",
+      "about": [
+        "person:모리",
+        "person:리틀_머메이드"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "54-60"
+          ]
+        }
+      ],
+      "reason": "'글러트니의 목구멍 속에 다시 들어와 … 손을 내밀었던 그때의 눈'(#56) — 모리가 목구멍에 뛰어든 일(F1901)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1668",
+      "act": "암시",
+      "points": [
+        "Q382"
+      ],
+      "text": "신데렐라가 베르누이아에게 바디가 헬레틱이든 랩쳐든 니케든 나는 [나]라고 말하고, 베르누이아도 자기를 정의할 수 있는 건 자기뿐이라 한다",
+      "about": [
+        "person:신데렐라",
+        "person:베르누이아"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "134-142"
+          ]
+        }
+      ],
+      "reason": "'나는 [나]이듯'(#136-137) — 거대화해도 자아를 지킬 수 있을지(Q382)의 실마리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "E1669",
+      "act": "재언급",
+      "points": ["F1666"],
+      "text": "그레텔 없이 싸우는 헨젤이 마녀의 아궁이로 탄을 만들 에너지를 얼마나 넣을지 몰라 그레텔이 얼마나 대단했는지 안다고 한다",
+      "about": ["item:마녀의_아궁이", "person:그레텔"],
+      "evidence": [{ "scene": "side:gingerbread_house_10", "lines": ["22-26"] }],
+      "reason": "'탄을 만들어야 하는데 … 모르겠어'(#24-25) — 그레텔이 조합하고 헨젤이 제어하는 아궁이(F1666)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 2회독 — 복선 거슬러 찾기에서 더함" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2241",
+      "person": "person:헨젤",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "신데렐라를 지키러 함께 퀸을 치러 간 2세대",
+      "after": "인류가 우리를 잊고 버렸다며 더는 인류를 위해 싸우지 않는 헨젤",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_10",
+          "lines": [
+            "182-190"
+          ]
+        }
+      ],
+      "time": "S399",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_00",
+          "lines": [
+            "62-81"
+          ]
+        }
+      ],
+      "reason": "'헨젤은 더는 인류를 위해 싸우지 않기로'(#80) — 방주가 2세대를 모른다는 절망(10 #182-190)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2242",
+      "person": "person:헨젤",
+      "aspect": "소속",
+      "act": "변화",
+      "before": "에이브가 만든 비인가 2세대 페어리 테일",
+      "after": "그레텔을 살려 준 헬레틱 베르누이아의 노예",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_10",
+          "lines": [
+            "237-259"
+          ]
+        }
+      ],
+      "time": "S398",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_03",
+          "lines": [
+            "24-28"
+          ]
+        }
+      ],
+      "reason": "'베르의 노예로 살기로 했어 … 헨젤이 선택한 거니까'(#26-28) — 10의 거래",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2243",
+      "person": "person:그레텔",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "헨젤과 같은 얼굴의 쌍둥이 2세대 바디",
+      "after": "추락으로 반파됐다가 베르누이아의 다리를 에너지원으로 되살아난 몸",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_09",
+          "lines": [
+            "80-89"
+          ]
+        }
+      ],
+      "time": "S398",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "0-8"
+          ]
+        }
+      ],
+      "reason": "반파(09 #80-85), 베르누이아의 다리로 살림(11 #8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2244",
+      "person": "person:그레텔",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "말하기를 싫어해 늘 헨젤이 생각을 대신 말해 주던 쌍둥이",
+      "after": "헨젤의 편이라며 그레이브에게 헨젤이 못 할 이야기를 스스로 털어놓는 쌍둥이",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_07",
+          "lines": [
+            "101-126"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_09",
+          "lines": [
+            "40-52"
+          ]
+        }
+      ],
+      "reason": "'원래 말하는 거 안 좋아해 … 지금은 해야 해'(#41-45) — 모리의 말(07)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2245",
+      "person": "person:헨젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:그레텔"
+      ],
+      "before": "그레텔을 죽일 뻔한 자기가 싫어 그레텔의 눈을 피하던 쌍둥이",
+      "after": "같은 걸 두려워했음을 알고 끌어안으며 사랑한다고 말하는 또 다른 나",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "64-70"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_13",
+          "lines": [
+            "29-77",
+            "110-115"
+          ]
+        }
+      ],
+      "reason": "'도망쳐선 안 돼'(#29), '같은 걸 무서워하고 있었던'(#74), '사랑해'(#112-113) — 모리의 충고(11)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2246",
+      "person": "person:헨젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:세이렌"
+      ],
+      "before": "헬레틱을 공격하려는 세이렌에게 마녀의 아궁이를 겨눈 옛 동료",
+      "after": "상처 입혀 미안하다고 사과하고 서로 끌어안는 가족",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "79-93"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_14",
+          "lines": [
+            "2-58"
+          ]
+        }
+      ],
+      "reason": "'상처 입혀서 미안해'(#7), '가족이 아닌 건 아니니까'(#38), 포옹(#45-57)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2247",
+      "person": "person:헨젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:모리"
+      ],
+      "before": "방주 출신이라 '그놈들 편'이냐며 경계하고 까칠하게 대하던 사이",
+      "after": "충고가 맞았다며 친구가 되고 싶다고 끌어안는 친구",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "64-93"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_14",
+          "lines": [
+            "105-140"
+          ]
+        }
+      ],
+      "reason": "경계(06 #5-10) → '친구가 되고 싶어'(14 #113), '취소는 없는 거야'(#138)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2248",
+      "person": "person:헨젤",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:그레이브"
+      ],
+      "before": "약속을 잊어 오지 않았다며 기억 없는 에이브를 원망하던 사이",
+      "after": "그레이브 안에 에이브가 남아 있다며 살아 있어 줘서 고맙다고 끌어안는 가족",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "43-90"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "91-151"
+          ]
+        }
+      ],
+      "reason": "원망(03 #115-137) → '아직 그레이브 안에 남아 있어'(15 #94), '고마워, 에이브'(#149)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2249",
+      "person": "person:헨젤",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "인류를 위해서는 더는 싸우지 않는 2세대",
+      "after": "인류가 아니라 다친 우리 가족을 위해 다시 퀸과 싸우기로 한 2세대",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "71-79"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "111-127"
+          ]
+        }
+      ],
+      "reason": "'싸우자 … 인류를 위해서가 아니야, 우리를 위해서'(#123-127) — 그레이브의 말(#71-79)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2250",
+      "person": "person:세이렌",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:헨젤"
+      ],
+      "before": "헬레틱 편을 드는 헨젤이 속고 있다며 헬레틱을 공격하려던 동료",
+      "after": "멋대로 단정한 것을 사과하고 함께 싸우지 못해도 가족이라 하는 사이",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_12",
+          "lines": [
+            "0-2"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_14",
+          "lines": [
+            "9-41"
+          ]
+        }
+      ],
+      "reason": "'내 멋대로 … 단정지어서 공격하려고 했어'(#13-14), '가족이 아닌 건 아니니까'(#38)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2251",
+      "person": "person:그레이브",
+      "aspect": "기억",
+      "act": "변화",
+      "before": "기억 같은 건 없어도 상관없다고 여기던 그레이브",
+      "after": "기억이 없어도 그레이브로서의 진심은 변하지 않는 나라고 받아들인 그레이브",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_12",
+          "lines": [
+            "36-83"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "43-82"
+          ]
+        }
+      ],
+      "reason": "'기억 같은 게 없어도 상관없다고'(04 #130) → '이게 변하지 않는 [나]다'(15 #82) — 신데렐라의 말(12)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2252",
+      "person": "person:그레이브",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:헨젤",
+        "person:그레텔"
+      ],
+      "before": "얼굴을 보아도 아무것도 떠오르지 않는 옛 동료",
+      "after": "기다리게 해 미안하다며 살아 있어 줘서 고맙다고 울며 끌어안는 가족",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_11",
+          "lines": [
+            "0-40"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_15",
+          "lines": [
+            "129-161"
+          ]
+        }
+      ],
+      "reason": "기억 없음(00 #225-230) → '살아 있어 줘서 … 고맙다'(15 #139 · #159), 눈물(#154)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2253",
+      "person": "person:신데렐라",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "자기는 니케라며 거대화 같은 랩쳐의 방식을 아름답지 못하다고 거부하던 신데렐라",
+      "after": "붉은 눈 · 랩쳐 바디여도 나는 나라고 받아들인 신데렐라",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_08",
+          "lines": [
+            "30-55"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_12",
+          "lines": [
+            "26-31",
+            "68-83"
+          ]
+        }
+      ],
+      "reason": "거부(05 #56-58 · #84-85) → '그런 의미였구나'(12 #31), '붉은 눈의 나도, 푸른 눈의 나도'(#80)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2254",
+      "person": "person:신데렐라",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:베르누이아"
+      ],
+      "before": "헬레틱이라 경계하며 목적부터 따지던 사이",
+      "after": "가족을 구해 아껴 줘 고맙다며 꼭 돌아오겠다고 약속하는 사이",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "104-131"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "132-166"
+          ]
+        }
+      ],
+      "reason": "'네 목적은 뭐지?'(05 #0) → '아껴줘서 고마워'(17 #151), '꼭 돌아올게'(#166)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2255",
+      "person": "person:모리",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "모두의 발목을 잡을까 봐 어떻게든 단기간에 강해지려던 모리",
+      "after": "힘이 아니어도 할 수 있는 일로 남아 모두가 돌아올 집을 지키기로 한 모리",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_08",
+          "lines": [
+            "138-161"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "25-53"
+          ]
+        }
+      ],
+      "reason": "'단기간에 강해질 수 있는 방법'(08 #116), '힘이 강하지 않아도 할 수 있는 일'(#152) → '이 집을 지킬 거야'(17 #49)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2256",
+      "person": "person:베르누이아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "'맹랑한 것들' · '망아지들아' 하며 하대하고 비꼬지만, 손님을 안으로 들여 이야기하자는 거만한 헬레틱",
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_02",
+          "lines": [
+            "73-99"
+          ]
+        }
+      ],
+      "reason": "'맹랑한 것들'(#73), '왜 그리 단어에 집착해 열을 내니'(#97), 안으로 초대(#91 · #98)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "D2257",
+      "person": "person:베르누이아",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:헨젤",
+        "person:그레텔"
+      ],
+      "before": "평생 내 노예라며 떠나는 것을 막던 주인",
+      "after": "마녀의 아궁이를 챙겨 주고 반딧불이로 '멀쩡히 돌아오라'며 돌아올 길을 이어 보내는 주인",
+      "trigger": [
+        {
+          "scene": "side:gingerbread_house_16",
+          "lines": [
+            "58-63"
+          ]
+        }
+      ],
+      "time": "S397",
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_17",
+          "lines": [
+            "167-188"
+          ]
+        }
+      ],
+      "reason": "'너흰 평생 내 노예로'(16 #39) → 반딧불이 메시지(17 #173-174)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U450",
+      "topic": "지상",
+      "text": "바다 건너 베르누이아의 집은 추적을 피해 에너지를 아끼느라 기계 없이 청소 · 빨래 · 요리를 손으로 한다 — 이불도 발로 밟아 빤다",
+      "about": [
+        "person:베르누이아"
+      ],
+      "points": [
+        "F2974"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_06",
+          "lines": [
+            "45-57"
+          ]
+        }
+      ],
+      "reason": "'베르는 기계를 이용해서 집안일 하는 걸 싫어해서'(#46), '에너지를 최대한 적게 써야'(#52) — 01 #77의 발 빨래",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    },
+    {
+      "id": "U451",
+      "topic": "방주 사회",
+      "text": "밀봉 몇 해 뒤 방주는 지상 생존자를 0명으로 여겼고, 랩쳐의 이상한 이동을 쫓는 정찰 부대만 지상에 내보냈다",
+      "about": [
+        "place:방주"
+      ],
+      "points": [
+        "F2955"
+      ],
+      "evidence": [
+        {
+          "scene": "side:gingerbread_house_10",
+          "lines": [
+            "116-131"
+          ]
+        }
+      ],
+      "reason": "'랩쳐의 급작스런 이동을 수상히 여기고'(#116), '지상에 생존자는 0명'(#120)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)"
+        }
+      ]
+    }
+  ]
+}

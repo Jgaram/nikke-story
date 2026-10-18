@@ -1295,6 +1295,32 @@
           "session": "X2"
         }
       ]
+    },
+    {
+      "id": "Y58",
+      "type": "sequel",
+      "from": "fl:wave_to_you",
+      "to": "side:gingerbread_house",
+      "strength": 3,
+      "records": ["F2764", "S397"],
+      "reason": "wave_to_you 끝에 신데렐라 일행이 세이렌의 물거품으로 헨젤 · 그레텔에게 바다를 건너가고(F2764), GINGERBREAD HOUSE는 그 물거품 위에서 시작해 헨젤 · 그레텔을 만난다(S397) — 바로 다음 편",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 links — 연작의 다음 편" }]
+    },
+    {
+      "id": "Y59",
+      "type": "sequel",
+      "from": "event_oldtales1",
+      "to": "side:gingerbread_house",
+      "strength": 2,
+      "records": ["F1690", "F2952", "Q243-2"],
+      "reason": "OLD TALES에서 궤도 엘리베이터 빔에 떨어진 헨젤 · 그레텔 · 세이렌(F1690)의 그 뒤를 이 단위가 잇고(F2952), 끝의 연출도 OLD TALES [ACTION]: Rewrite다 — 2세대 이야기의 다음 편",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 links — 연작의 다음 편" }]
     }
   ]
 }

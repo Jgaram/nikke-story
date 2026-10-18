@@ -1,0 +1,38 @@
+{
+  "unit": "char:63",
+  "session": "U03",
+  "by": "claude",
+  "date": "2026-10-18",
+  "mentions": [
+    {
+      "id": "I701",
+      "target": "person:미카",
+      "speaker": true,
+      "evidence": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_04", "lines": ["80-81"] }],
+      "reason": "??? '아야야… 아저씨…? 벨로타…?' 뒤 넘어진 미카가 보인다(#85-87)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)" }]
+    }
+  ],
+  "echoes": [],
+  "changes": [
+    {
+      "id": "D2258",
+      "person": "person:벨로타",
+      "aspect": "관계",
+      "act": "변화",
+      "with": ["person:지휘관"],
+      "before": "장난으로 골탕 먹이며 '아저씨'라 따르던 사이",
+      "after": "하루 종일 아저씨 생각만 했다며 입을 맞추고 해마다 사역마로 묶어 두려는 사이",
+      "trigger": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_05", "lines": ["13-33"] }],
+      "time": "S400",
+      "evidence": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_05", "lines": ["31-59"] }],
+      "reason": "'하루 종일 아저씨 옆에서 아저씨 생각만'(#32), 입맞춤(#50-52), '계~속 내 사역마'(#58)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 2회독 — 원문 대조 검토(1층 · 3층 기준)" }]
+    }
+  ],
+  "life": []
+}

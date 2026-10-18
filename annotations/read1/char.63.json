@@ -1,0 +1,83 @@
+{
+  "unit": "char:63",
+  "session": "U03",
+  "by": "claude",
+  "date": "2026-10-18",
+  "summary": "벨로타 : 펌킨 위치 호감도 스토리 5편 — 할로윈 축제 무렵. 상담 대신 놀아 달라며 [마녀 이야기]를 보고 진짜 마녀가 되고 싶어진 벨로타가 지휘관에게 고양이 귀 · 꼬리를 씌우고 불평등한 [사역마 계약서](보수 ■■는 비밀)에 서명시킨다(01-02). 마법약 재료 — 사탕 · 초콜릿 · 호박에 '사역마의 한숨 · 눈물 · 심장 소리 · 비명' — 를 모으러 공원에서 '사탕을 주지 않으면 장난칠 거야'를 하고(지휘관은 실업 청년 취급을 받음, 03), 울음 참기 영상으로 눈물을, 예전에 미카와 장난감 가게를 꾸몄던 귀신의 집 창고에서 비명을 모은다 — 정체 모를 소리는 넘어진 미카였다(04). 완성한 [사랑의 마법약](하루 종일 상대 생각만 하게 됨)을 벨로타가 먼저 마시고 '오늘 내내 아저씨 생각만 해서 모르겠다'고 하고, 보수는 볼 뽀뽀, 계약은 보수가 마음에 들면 다음 할로윈에 자동 갱신된다(05).",
+  "scenes": [
+    {
+      "scene": "ep:d_nikke_belorta_pumpkinwitch_01",
+      "text": "벨로타가 [마녀 이야기]를 보고 마녀 놀이 — 지휘관에게 검은 고양이 귀 · 꼬리(사역마)"
+    },
+    {
+      "scene": "ep:d_nikke_belorta_pumpkinwitch_02",
+      "text": "[사역마 계약서] 서명 — 보수 ■■는 비밀"
+    },
+    {
+      "scene": "ep:d_nikke_belorta_pumpkinwitch_03",
+      "text": "마법약 재료 목록 · 공원에서 사탕과 초콜릿 얻기"
+    },
+    {
+      "scene": "ep:d_nikke_belorta_pumpkinwitch_04",
+      "text": "울음 참기 영상의 눈물 · 장난감 가게 창고 귀신의 집에서 비명 — 넘어진 미카"
+    },
+    {
+      "scene": "ep:d_nikke_belorta_pumpkinwitch_05",
+      "text": "[사랑의 마법약] · 보수는 뽀뽀 · 계약은 다음 할로윈 자동 갱신"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F2972",
+      "text": "벨로타는 할로윈 축제 무렵 지휘관을 [사역마 계약]으로 하루 마녀 놀이에 끌어들여 '사랑의 마법약'을 만들었고, 보수로 입을 맞춘 뒤 보수가 마음에 들면 계약이 다음 할로윈에 자동 갱신된다고 했다",
+      "about": ["person:벨로타", "person:지휘관", "incident:할로윈_축제"],
+      "evidence": [
+        { "scene": "ep:d_nikke_belorta_pumpkinwitch_01", "lines": ["13-56"] },
+        { "scene": "ep:d_nikke_belorta_pumpkinwitch_02", "lines": ["5-47"] },
+        { "scene": "ep:d_nikke_belorta_pumpkinwitch_03", "lines": ["26-27"] },
+        { "scene": "ep:d_nikke_belorta_pumpkinwitch_05", "lines": ["13-64"] }
+      ],
+      "reason": "마녀 놀이 · 사역마(01 #13-56), 계약서(02 #5-47), 축제 중(03 #27), 마법약 · 보수 · 자동 갱신(05 #13-64)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-10-18",
+          "session": "U03",
+          "note": "U03 1회독 — 원문 대조 검토(볼이라는 말은 원문에 없어 뺌)",
+          "before": "벨로타는 할로윈 축제 무렵 지휘관을 [사역마 계약]으로 하루 마녀 놀이에 끌어들여 '사랑의 마법약'을 만들었고, 보수로 볼에 입을 맞춘 뒤 보수가 마음에 들면 계약이 다음 할로윈에 자동 갱신된다고 했다"
+        }
+      ]
+    },
+    {
+      "id": "F2973",
+      "text": "벨로타 · 미카는 예전에 장난감 가게를 귀신의 집으로 꾸민 적이 있고, 그때 쓴 소품으로 가게 옆 창고를 귀신의 집처럼 다시 꾸며 두었다",
+      "about": ["person:벨로타", "person:미카"],
+      "evidence": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_04", "lines": ["20-28"] }],
+      "reason": "벨로타의 말(04 #23-27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S400",
+      "kind": "기준점",
+      "text": "어느 할로윈 축제 기간 — 공원에서 사탕을 나눠 주는 때",
+      "ref": "incident:할로윈_축제",
+      "at": [],
+      "evidence": [{ "scene": "ep:d_nikke_belorta_pumpkinwitch_03", "lines": ["26-27", "33-40"] }],
+      "reason": "'마침 할로윈 축제 중'(03 #27), 공원의 사탕(#34-40). fl:little_witch_trick의 축제와 같은지 · 다른 단위와의 앞뒤는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U03", "note": "U03 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "targets": [],
+  "revisit": []
+}

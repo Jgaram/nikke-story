@@ -8,8 +8,7 @@
 
 업데이트 절차(N2a–N2e)는 다 만들었다 — 새 패치는 사용자가 "업데이트"라고 하면 docs/update.md대로(아래 "나중에 할 일" N3). 지금: 10월 8일 패치(2026-10-18 원문 다 들어옴).
 
-- [ ] **N3 2026-10-08 U2** 읽기 U03 — 10월 8일 업데이트 공지 · GINGERBREAD HOUSE(`side:gingerbread_house`) · 벨로타 : 펌킨 위치(`char:63`)
-- [ ] **N3 2026-10-08 U3+U4** 판정 · 화면 글 · 마감 — 10월 8일 업데이트 공지 · main 테스트 실패 7(U03 · U3+U4 몫 — reading-order · site-world · site · speakers · views)
+- [ ] **N3 2026-10-08 U3+U4** 판정 · 화면 글 · 마감 — 10월 8일 업데이트 공지 · main 테스트 실패 5(U3+U4 몫 — closures · reading-order · site-world · site 2)
 
 ## 물을 것
 
