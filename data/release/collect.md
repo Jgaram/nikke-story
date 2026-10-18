@@ -1,6 +1,6 @@
 # 증분 수집 리포트
 
-`node tools/blabla/update.mjs` 마지막 실행: 2026-10-14 17:52 UTC. 원문은 싣지 않는다(키 · 개수만).
+`node tools/blabla/update.mjs` 마지막 실행: 2026-10-18 13:31 UTC. 원문은 싣지 않는다(키 · 개수만).
 
 ## 블라링크
 
@@ -12,16 +12,16 @@
 
 ## 금서고
 
-- 사이트 배포 2026-10-12T15:10:36.668Z — 그대로
-- 받은 파일 0
+- 사이트 배포 2026-10-15T00:29:32.974Z — 그대로
+- 받은 파일 1 — `event_stories/little_witch_trick.txt`
 
 ## 들이지 않은 원문에 넣은 것
 
-- 없음.
+- annotations/hold.json 1 — `event_stories/little_witch_trick.txt`(업데이트 전)
 
 ## 금서고 → 블라링크 전환
 
-매핑 null 21건(전환 대기 포함). 후보는 Claude가 두 원문을 대조해 확정하고 매핑의 null을 블라링크 키로 바꾼다(SESSIONS.md N2a).
+매핑 null 22건(전환 대기 포함). 후보는 Claude가 두 원문을 대조해 확정하고 매핑의 null을 블라링크 키로 바꾼다(SESSIONS.md N2a).
 
 - 전환 후보 없음.
 - 매핑에 안 든 블라링크 이벤트(본문 있음) 6 — `event_firstaffection` · `event_fullfoolday` · `event_liarsend` · `event_nonsensered` · `event_outofuniform` · `event_foolburstday`
