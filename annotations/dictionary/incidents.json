@@ -89,6 +89,7 @@
       "evidence": [{ "scene": "ep:d_nikke_crow_01", "lines": [11] }],
       "names": [{ "name": "데일리 아크 신문사 테러", "how": "약칭" }]
     },
-    { "id": "incident:코인_러시_쇼다운", "name": "코인 러시 쇼다운", "kind": "사건", "note": "1회 기업 박람회 기념으로 코인 러시에서 열린 3대 기업 니케 대항전(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_03", "lines": [38] }], "names": [{ "name": "COIN RUSH SHOWDOWN", "how": "표기" }] }
+    { "id": "incident:코인_러시_쇼다운", "name": "코인 러시 쇼다운", "kind": "사건", "note": "1회 기업 박람회 기념으로 코인 러시에서 열린 3대 기업 니케 대항전(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_03", "lines": [38] }], "names": [{ "name": "COIN RUSH SHOWDOWN", "how": "표기" }] },
+    { "id": "incident:할로윈_축제", "name": "할로윈 축제", "kind": "사건", "note": "중앙 공원에서 2주 동안 열리는 방주의 할로윈 축제 — 신청한 부스가 장사하고 마지막 날 인기 부스 1등을 뽑는다(U02 fl:little_witch_trick에서 더함)", "evidence": [{ "scene": "fl:little_witch_trick_01", "lines": [6] }] }
   ]
 }

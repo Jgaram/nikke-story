@@ -233,6 +233,8 @@
     { "id": "place:유사_방주", "name": "유사 방주", "kind": "도시", "note": "포비스트가 만든, 방주의 일부를 흉내 낸 하얀 도시 — 불 켜진 건물도 없이 모습만 흉내 낸 껍데기로, 레비아탄은 효과가 입증되지 않은 \u0027의식\u0027이라 했다. 지하 쪽에 다크 매터 [용광로]가 있다 (R72 ch41에서 더함)", "evidence": [{"scene": "d_main_41_02", "lines": [10]}] },
     { "id": "place:펑크_스트리트", "name": "펑크 스트리트", "kind": "거리", "note": "아우터 림 격벽과 이어진 방주 시내 거리(통칭) — 식스오가 던진 E2 크리스탈이 번져 에닉이 격벽으로 고립시켰고, 뒤에 에블라 입자로 수정을 걷어 냈다(R73 ch42에서 더함)", "evidence": [{"scene": "d_main_42_af_02", "lines": [30]}] },
     { "id": "place:언더_그레이스", "name": "언더 그레이스", "kind": "가게", "note": "로열 로드 백화점 지하 1층의 카페 — 재단의 후원을 받은 사라가 운영한다(R88 fl:good_world에서 더함)", "evidence": [{"scene": "fl:good_world_04", "lines": [12]}] },
-    { "id": "place:아크리온_홀", "name": "아크리온 홀", "kind": "시설", "note": "방주에서 가장 큰 무대(공연장) — 프리티의 복귀 콘서트, T.T.STAR의 은퇴 · 복귀 공연이 열렸다(R91 event_staranis1에서 더함)", "evidence": [{"scene": "event_staranis1_prologue", "lines": [1]}] }
+    { "id": "place:아크리온_홀", "name": "아크리온 홀", "kind": "시설", "note": "방주에서 가장 큰 무대(공연장) — 프리티의 복귀 콘서트, T.T.STAR의 은퇴 · 복귀 공연이 열렸다(R91 event_staranis1에서 더함)", "evidence": [{"scene": "event_staranis1_prologue", "lines": [1]}] },
+    { "id": "place:중앙_공원", "name": "중앙 공원", "kind": "시설", "note": "방주 시내의 공원 — 할로윈 행사(캔디 고스트 파티 · 할로윈 축제)가 열린다(U02 fl:little_witch_trick에서 더함)", "evidence": [{"scene": "fl:little_witch_trick_03", "lines": [0]}] },
+    { "id": "place:미스터리_박스", "name": "미스터리 박스", "kind": "가게", "note": "할로윈 축제 큰길 쪽 부스 — 할로윈 랜덤 박스를 팔며 해마다 인기 부스 1위였다(U02 fl:little_witch_trick에서 더함)", "evidence": [{"scene": "fl:little_witch_trick_03", "lines": [95]}] }
   ]
 }

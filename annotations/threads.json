@@ -886,6 +886,19 @@
       "status": "확정",
       "by": "claude",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "U01", "note": "U01 — 새 의문 6건을 한 줄기로" }]
+    },
+    {
+      "id": "J62",
+      "title": "할로윈 축제 — 리틀 위치 트릭을 노린 거짓 피해 글",
+      "text": "할로윈 축제 게시판에 리틀 위치 트릭을 겨냥한 거짓 피해 글을 퍼뜨린 것은 누구이고 왜인가",
+      "weight": "독립",
+      "questions": ["Q379"],
+      "about": ["incident:할로윈_축제", "place:미스터리_박스"],
+      "reason": "이벤트 안에서 던지고 같은 이벤트에서 풀린다(Q379-2 → F2947) — 미스터리 박스의 상금 지키기",
+      "confidence": "확실",
+      "status": "확정",
+      "by": "claude",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "U02", "note": "U02 — 새 의문 1건을 새 줄기로" }]
     }
   ],
   "relations": [
