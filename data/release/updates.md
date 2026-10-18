@@ -1,6 +1,6 @@
 # 업데이트 확인
 
-`node tools/update.mjs` — 기준일 2026-10-18. 손으로 고치지 않는다. 원문은 싣지 않는다.
+`node tools/update.mjs` — 기준일 2026-10-18 · 받지 않고 판정(--no-fetch). 손으로 고치지 않는다. 원문은 싣지 않는다.
 
 패치 98 — 처리됨 97 · 준비 1 · 보류 0
 
@@ -12,9 +12,9 @@
 
 | 종류 | 단위 | 원문 | 읽기 | 날짜 · 메모 |
 |---|---|---|---|---|
-| 이벤트 | `fl:little_witch_trick` LITTLE WITCH TRICK | 들이지 않음 |  | 2026-10-08~2026-10-28 · hold 업데이트 전 |
-| 사이드 | `side:gingerbread_house` GINGERBREAD HOUSE | 들이지 않음 |  | 2026-10-08 · hold 업데이트 전 |
-| 호감도 | `char:63` 벨로타 : 펌킨 위치 | 들이지 않음 |  | 2026-10-08 · hold 업데이트 전 |
+| 이벤트 | `fl:little_witch_trick` LITTLE WITCH TRICK | 있음 | 읽는 중 | 2026-10-08~2026-10-28 |
+| 사이드 | `side:gingerbread_house` GINGERBREAD HOUSE | 있음 | 읽는 중 | 2026-10-08 |
+| 호감도 | `char:63` 벨로타 : 펌킨 위치 | 있음 | 읽는 중 | 2026-10-08 |
 
 ## 처리된 패치
 
