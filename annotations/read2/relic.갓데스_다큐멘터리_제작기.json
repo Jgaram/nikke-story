@@ -1,0 +1,24 @@
+{
+  "unit": "relic:갓데스_다큐멘터리_제작기",
+  "session": "U04",
+  "by": "claude",
+  "date": "2026-11-16",
+  "mentions": [],
+  "echoes": [],
+  "changes": [],
+  "life": [
+    {
+      "id": "U457",
+      "topic": "구시대",
+      "text": "랩쳐 전쟁 때 피난민 대피소의 아이 · 노인 · 부부와 양산형 니케가 저마다 갓데스 덕에 살았다며 같은 이름을 말하고, 방송국은 갓데스 취재를 프로파간다 의심으로 시작하는 기획까지 낸다",
+      "about": ["org:갓데스"],
+      "points": ["F3016"],
+      "evidence": [{ "scene": "relic:갓데스_다큐멘터리_제작기_01", "lines": ["0-11"] }],
+      "reason": "답사 일지",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "note": "U04 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    }
+  ],
+  "revisit": []
+}
