@@ -1,0 +1,86 @@
+{
+  "unit": "relic:신임_장교의_일지",
+  "session": "U06",
+  "by": "claude",
+  "date": "2026-11-16",
+  "mentions": [
+    {
+      "id": "I712",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "relic:신임_장교의_일지_00", "lines": [4] }],
+      "reason": "'갓데스 스쿼드를 통솔하는 분이 인간 지휘관' — 이름 없이 가리킨 갓데스의 지휘관 엔더슨(F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    },
+    {
+      "id": "I713",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "relic:신임_장교의_일지_01", "lines": [1] }],
+      "reason": "'갓데스 지휘관님' — 이름 없이 가리킨 갓데스의 지휘관 엔더슨(F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    },
+    {
+      "id": "I714",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "relic:신임_장교의_일지_02", "lines": [0, 1] }],
+      "reason": "'갓데스 스쿼드의 지휘관님' — 릴리바이스 소령과 걷는다 — 이름 없이 가리킨 갓데스의 지휘관 엔더슨(F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    },
+    {
+      "id": "I715",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "relic:신임_장교의_일지_03", "lines": [2, 8] }],
+      "reason": "'지휘관님과 갓데스 스쿼드' — 이름 없이 가리킨 갓데스의 지휘관 엔더슨(F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1705",
+      "act": "재언급",
+      "points": ["F1231"],
+      "text": "장교가 니케 부대에 인간 지휘관을 배속하는 갓데스의 방식이 보편화될 수 있다는 말을 듣는다 — 갓데스 사례로 스쿼드마다 지휘관이 붙게 된 일(F1231)을 다시 꺼낸다",
+      "about": ["org:갓데스"],
+      "evidence": [{ "scene": "relic:신임_장교의_일지_01", "lines": [3, 4] }],
+      "reason": "_01#3",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    },
+    {
+      "id": "E1706",
+      "act": "재언급",
+      "points": ["F1149"],
+      "text": "평가 문서에 갓데스 지휘관이 상부 명령을 어기고도 더 큰 전과를 올렸다고 적혀 있다 — 상부 명령을 무시하던 갓데스의 지휘관(F1149)을 다시 꺼낸다",
+      "about": ["person:엔더슨"],
+      "evidence": [{ "scene": "relic:신임_장교의_일지_02", "lines": ["6-8"] }],
+      "reason": "_02#7-8",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    }
+  ],
+  "changes": [],
+  "life": [
+    {
+      "id": "U462",
+      "topic": "구시대",
+      "text": "방주 밀봉 전 본부 장교들은 패전 소식만 듣다 갓데스 지휘관을 우상으로 삼아, 젊은 장교들이 그의 선글라스를 따라 쓰다 상관에게 뒤통수를 맞았다",
+      "about": ["org:갓데스"],
+      "points": ["F3114"],
+      "evidence": [{ "scene": "relic:신임_장교의_일지_01", "lines": ["0-7"] }],
+      "reason": "_00#6 · _01#1-2 · _01#6-7",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "N3", "note": "U06 2회독 자체 검토 — 근거 줄 · 가리킨 기록 확인" }]
+    }
+  ],
+  "note": "정체 볼 줄 — 없음. 일지를 쓴 신임 장교는 이름 없는 단역이라 사전에 두지 않았다"
+}
