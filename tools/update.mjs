@@ -73,6 +73,12 @@ const addDays = (day, n) => new Date(Date.parse(day) + n * 86400_000).toISOStrin
 
 /** 정기 업데이트 공지인가 — "9월 17일 업데이트 공지", "만우절 이벤트 업데이트 공지". 개선사항 · 점검 안내는 아니다. */
 export const isPatchNotice = (n) => /업데이트\s*공지/.test(n.title) && !/개선\s*사항/.test(n.title);
+/**
+ * "N월 N일 업데이트 사전 공지" — 그 날짜의 패치를 미리 알린다. 같은 날 본 공지가 있으면 그 패치에 합치고, 없으면(본 공지 전 ·
+ * 2024-01-11처럼 본 공지 없이 개선사항만 나온 패치) 사전 공지가 패치다. 안 치면 사전 공지의 새 단위가 직전 패치에 든다
+ * (2026-11-16 — 11/19 사전 공지의 SKY ON THE ROCK · 스카이가 10/29 패치에 들었다. 사용자: 다음 패치).
+ */
+export const isPreNotice = (n) => /업데이트\s*사전\s*공지/.test(n.title);
 
 /** 들이지 않은 원문(hold.json)을 단위 모양으로 — 금서고 파일은 금서고 단위 ID, 블라링크 이벤트는 아카이브 이름. */
 export function heldUnits(hold, { libraryTitles = new Map(), archiveNames = new Map() } = {}) {
@@ -113,8 +119,15 @@ export function buildPatches({ notices, categories, storyHasText, characters, al
   const patchNotices = notices.filter(isPatchNotice);
   const patches = [{ id: 'launch', day: launch.day, title: launch.notice.title, notice: launch.notice, units: [] }];
   for (const n of patchNotices) patches.push({ id: n.id, day: updateDay(n), title: n.title, notice: n, units: [] });
-  patches.sort((a, b) => a.day.localeCompare(b.day) || a.notice.publishedAt - b.notice.publishedAt);
   const byNotice = new Map(patches.map((p) => [p.notice.id, p]));
+  // 사전 공지 — 같은 날 본 공지 패치에 합치고, 없으면 사전 공지가 패치
+  for (const n of notices.filter(isPreNotice)) {
+    const day = updateDay(n);
+    let p = patches.find((x) => x.day === day && x.id !== 'launch');
+    if (!p) patches.push((p = { id: n.id, day, title: n.title, notice: n, units: [] }));
+    byNotice.set(n.id, p);
+  }
+  patches.sort((a, b) => a.day.localeCompare(b.day) || a.notice.publishedAt - b.notice.publishedAt);
   /** 공지 · 날짜 → 패치: 패치 공지면 그것, 아니면 그 날짜 직전(같은 날 포함)의 패치 */
   const patchOf = (notice, day) => byNotice.get(notice?.id) ?? patches.filter((p) => p.day <= day).at(-1) ?? patches[0];
   const overrideOf = new Map(overrides.map((o) => [o.key, o]));

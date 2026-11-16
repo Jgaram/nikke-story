@@ -8,7 +8,7 @@
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPatches, heldUnits, storyMarked, isPatchNotice, loadInputs, NO_SOURCE_OK, GRACE_DAYS } from '../tools/update.mjs';
+import { buildPatches, heldUnits, storyMarked, isPatchNotice, isPreNotice, loadInputs, NO_SOURCE_OK, GRACE_DAYS } from '../tools/update.mjs';
 import { holdNewUnits } from '../tools/blabla/update.mjs';
 import { parseOrder } from '../tools/records/order.mjs';
 import { ensureDb } from '../tools/normalize/ensure-db.mjs';
@@ -67,6 +67,23 @@ test('패치는 정기 업데이트 공지 하나 — 개선사항 공지는 아
   assert.deepEqual(patches.map((p) => p.id), ['launch', 'p1', 'p2']);
   assert.deepEqual(patches[0].units.filter((u) => u.kind === 'main').map((u) => u.key), ['ch00', 'ch01', 'ch02']);
   assert.equal(patches[0].status, '처리됨');
+});
+
+test('사전 공지 — 같은 날 본 공지가 있으면 그 패치, 없으면 사전 공지가 패치(새 단위가 직전 패치에 들지 않는다)', () => {
+  const pre = (id, title, day) => notice(id, title, day, [
+    '1. 신규 이벤트', '1.1 신규 스토리 이벤트 : NEXT ONE', '*이벤트 기간: 2022년 12월 22일 서버 점검 종료 이후 ~ 2023년 1월 5일 4:59:59 (UTC+9)',
+  ]);
+  assert.equal(isPreNotice(pre('a', '12월 22일 업데이트 사전 공지', '2022-12-19')), true);
+  assert.equal(isPatchNotice(pre('a', '12월 22일 업데이트 사전 공지', '2022-12-19')), false);
+  // 본 공지 전 — 사전 공지가 패치
+  const alone = run({ notices: [...NOTICES, pre('pre22', '12월 22일 업데이트 사전 공지', '2022-12-19')] }).patches;
+  assert.deepEqual(alone.map((p) => p.id), ['launch', 'p1', 'p2', 'pre22']);
+  assert.ok(alone[3].units.some((u) => u.name === 'NEXT ONE'));
+  assert.ok(!alone[2].units.some((u) => u.name === 'NEXT ONE'));
+  // 본 공지가 나오면 합친다
+  const both = run({ notices: [...NOTICES, pre('pre22', '12월 22일 업데이트 사전 공지', '2022-12-19'), notice('p3', '12월 22일 업데이트 공지', '2022-12-20', ['고침'])] }).patches;
+  assert.deepEqual(both.map((p) => p.id), ['launch', 'p1', 'p2', 'p3']);
+  assert.ok(both[3].units.some((u) => u.name === 'NEXT ONE'));
 });
 
 test('단위 상태 — 읽는 중이면 준비, 표지 없는 이벤트는 끝나고 기한 전이면 기다림(보류)', () => {
