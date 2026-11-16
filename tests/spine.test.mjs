@@ -90,7 +90,7 @@ test('척추 자리 — 판정 K · 주역 Z의 from · arcs에 척추 키, 척�
 test('같은 인물 묶음 — 확정 same_as의 인물 쌍을 묶는다', () => {
   const g = sameAsGroups(ds);
   assert.deepEqual(g.get('person:아나키오르'), ['person:거울_공주', 'person:신데렐라', 'person:아나키오르']);
-  assert.deepEqual(g.get('person:모더니아'), ['person:마리안', 'person:모더니아']);
+  assert.deepEqual(g.get('person:모더니아'), ['person:마리아-n', 'person:마리안', 'person:모더니아']); // L39(U07) 마리아-n = 마리안
   assert.equal(g.get('person:지휘관'), undefined);
 });
 

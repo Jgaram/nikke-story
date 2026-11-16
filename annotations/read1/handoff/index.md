@@ -39,9 +39,9 @@
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
 | handoff/facts-34.md | 사실 목록 R98–U03 | 19,147 |
-| handoff/facts-35.md | 사실 목록 U04–U05 | 12,773 |
-| handoff/facts-36.md | 사실 목록 U06–M39 | 19,878 |
-| handoff/facts-37.md | 사실 목록 M41–P1 | 3,462 |
+| handoff/facts-35.md | 사실 목록 U04–U05 | 12,798 |
+| handoff/facts-36.md | 사실 목록 U06–M41 | 19,990 |
+| handoff/facts-37.md | 사실 목록 M42–P1 | 3,292 |
 | handoff/questions-solved.md | 풀린 의문 119건 | 19,230 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
@@ -157,4 +157,4 @@
 | handoff/U04.md | 단위 요약 — ch49 … ch50 파트 1-3 (3단위) | 10,819 |
 | handoff/U05.md | 단위 요약 — ch50 파트 4-9 | 8,191 |
 | handoff/U06.md | 단위 요약 — ch50 파트 10-15 … relic:하지_말아야_할_일 (3단위) | 13,303 |
-| handoff/U07.md | 단위 요약 — fl:maria-n 파트 1-5 | 12,371 |
+| handoff/U07.md | 단위 요약 — fl:maria-n 파트 1-5 | 12,423 |

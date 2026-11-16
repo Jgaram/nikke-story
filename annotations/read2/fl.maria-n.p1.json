@@ -1,0 +1,1141 @@
+{
+  "_comment": "2회독 — 한 기록 = 한 씬. 근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N. 1회독 바로잡기는 annotations/read1/의 이 단위 파일에 항목마다 \"session\": \"U07\"을 달아 적는다(docs/annotations.md \"2회독 기록\")",
+  "unit": "fl:maria-n",
+  "parts": "1-5",
+  "session": "U07",
+  "by": "claude",
+  "date": "2026-11-16",
+  "mentions": [
+    {
+      "id": "I716",
+      "target": "person:마리아-n",
+      "speaker": true,
+      "evidence": [
+        {
+          "scene": "fl:maria-n_00",
+          "lines": [
+            1,
+            3
+          ]
+        }
+      ],
+      "reason": "침대에서 눈뜬 '그녀'(#0)가 곧 '마리아-2'라 불리고 대답한다(#5-7)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "I717",
+      "target": "person:닥터_마리아",
+      "speaker": true,
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "209-276"
+          ]
+        }
+      ],
+      "reason": "이름표 '소녀'(호칭) — 자기 이름을 마리아라 하고 뇌의 병 · 꿈에 바쁜 엄마를 말한다. 닥터 마리아의 어린 시절(F3139, 추정)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "I718",
+      "target": "person:리버렐리오",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "141-145"
+          ]
+        }
+      ],
+      "reason": "물줄기로 덩어리를 꿰뚫은 '인자 살해자' — 리버렐리오(F2888)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1708",
+      "act": "재언급",
+      "points": [
+        "F391"
+      ],
+      "text": "CH.15 쓰레기장 일기의 '에블라'와 그가 만든 A.I '에바'를 에닉이 다시 꺼낸다 — 에바와 일곱 조율자의 창조자",
+      "about": [
+        "person:에블라",
+        "person:에바"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_05",
+          "lines": [
+            "104-110"
+          ]
+        }
+      ],
+      "reason": "'A.I. 에바와 일곱 조율자의 창조자'(#108) — 일기의 필자 에블라 · 에바(F391)와 같은 이름",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1709",
+      "act": "재언급",
+      "points": [
+        "F2054"
+      ],
+      "text": "지휘관이 다들 자기를 '7호'라 부른다고 한다 — 나유타에게 7호라 불렸다고 한 그 이름",
+      "about": [
+        "person:지휘관"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "124-129"
+          ]
+        }
+      ],
+      "reason": "'다들 7호라고 부르던데'(#127) — F2054의 '7호'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1710",
+      "act": "재언급",
+      "points": [
+        "F2837"
+      ],
+      "text": "CH.48 마리안에게 되살아난 소녀의 기억('내가 니케가 된다면 네가 내 지휘관이면')이 마리아-n의 기억으로 다시 나온다",
+      "about": [
+        "person:마리아-n"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "243-246"
+          ]
+        }
+      ],
+      "reason": "#245-246 — F2837의 같은 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1711",
+      "act": "재언급",
+      "points": [
+        "F2880"
+      ],
+      "text": "니케에겐 소용없다는 붕대를 감아 주며 마음이 치유될 것이라 한다 — CH.48 처분되던 마리안에게 감아 준 붕대와 같은 그림",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "163-171"
+          ]
+        }
+      ],
+      "reason": "'니케에게 이런건 아무 소용이 없어요' · '마음이 치유될걸'(#169-170) — F2880의 붕대 모티프",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1712",
+      "act": "재언급",
+      "points": [
+        "F3116",
+        "Q395"
+      ],
+      "text": "7호가 마리안에게 파란 장미 한 송이를 건넨다 — '하지 말아야 할 일' 쪽지의 '파란 장미를 봐도 아는 척하지 않기'",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "66-73"
+          ]
+        }
+      ],
+      "reason": "쪽지 항목(F3116)과 겹치는 장면 — 쪽지를 쓴 이와 이 일을 원문이 잇지는 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1713",
+      "act": "재언급",
+      "points": [
+        "F3116",
+        "Q395"
+      ],
+      "text": "마리안이 무조건 가위를 낸다며 가위바위보로 도시락통을 정한다 — 쪽지의 '가위바위보로 정하자고 하지 않기'",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_18",
+          "lines": [
+            "72-90"
+          ]
+        }
+      ],
+      "reason": "가위바위보(#72-80)가 쪽지 항목과 겹친다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1714",
+      "act": "재언급",
+      "points": [
+        "F3116",
+        "Q395"
+      ],
+      "text": "물놀이 끝에 둘이 마주 보며 처음으로 큰 소리로 웃는다 — 쪽지의 '마주 보고 웃지 않기'",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_15",
+          "lines": [
+            "84-95"
+          ]
+        }
+      ],
+      "reason": "'저 처음이에요. 그렇게 큰 소리로 웃어본 거'(#91) — 쪽지 항목과 겹친다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1715",
+      "act": "암시",
+      "points": [
+        "Q392"
+      ],
+      "text": "죽어 가는 7호가 마리안이 자기를 잊을까 봐 그게 죽음보다 무섭다고 한다 — 마리안이 '이번에는' 잊지 말라 한 말과 거꾸로 맞물린다",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_19",
+          "lines": [
+            "79-86"
+          ]
+        }
+      ],
+      "reason": "#84-86 — CH.50의 '이번에는 절대 잊지 말라'(F3076 · Q392)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1716",
+      "act": "재언급",
+      "points": [
+        "F3076"
+      ],
+      "text": "7호의 손 · 마리안의 머리에 나비가 앉는다 — 마리안이 지휘관에게 건넨 검은 나비",
+      "about": [
+        "person:지휘관",
+        "person:마리안"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_15",
+          "lines": [
+            "0-11"
+          ]
+        }
+      ],
+      "reason": "나비 모티프 — F3076의 검은 나비",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1717",
+      "act": "암시",
+      "points": [
+        "F3163"
+      ],
+      "text": "마리아-n이 새 지휘관 2호가 앞 지휘관을 닮았다며 형제가 있느냐 묻는다 — 지휘관들은 같은 엔더슨 클론",
+      "about": [
+        "person:2호"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            "139-148"
+          ]
+        }
+      ],
+      "reason": "'닮았어' · '혹시 형제가 있으신가요?'(#144-146) — 클론 일곱 타입(F3163)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1718",
+      "act": "재언급",
+      "points": [
+        "F2581"
+      ],
+      "text": "엔더슨 클론들이 방주의 수명을 담당했다며 닥터 마리아가 '사람을 잡아먹는 괴물' 초거대 코어를 말한다 — 시신을 먹이로 주입하는 동력원",
+      "about": [
+        "person:닥터_마리아"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_17",
+          "lines": [
+            "169-171"
+          ]
+        }
+      ],
+      "reason": "#171 — 초거대 코어의 [먹이](F2581)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1719",
+      "act": "재언급",
+      "points": [
+        "F2364"
+      ],
+      "text": "아크 가디언 때 혼수 상태의 엔더슨에게서 언체인드를 추출했다 — V.T.C.가 갓데스의 지휘관을 가둬 피를 뽑은 일",
+      "about": [
+        "person:엔더슨"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_17",
+          "lines": [
+            "150-155"
+          ]
+        }
+      ],
+      "reason": "#153-155 — F2364",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1720",
+      "act": "재언급",
+      "points": [
+        "F3135"
+      ],
+      "text": "미러가 방주에 거래를 전하라며 토커티브에게 '오랜만에 고향에 연락'이라 비꼰다 — 방주에 버림받은 남자 니케 실패작이라는 그의 출신",
+      "about": [
+        "person:토커티브",
+        "person:미러"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_10",
+          "lines": [
+            24
+          ]
+        }
+      ],
+      "reason": "'오랜만에 고향에 연락도 하고'(#24) — 앞 씬의 F3135",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "E1721",
+      "act": "재언급",
+      "points": ["F2543"],
+      "text": "에닉이 포스트 릴리바이스는 지금 아무 의미가 없다며 소수 정예로는 판도를 뒤집지 못한다고 한다 — 오스왈드가 프리시아의 포스트 릴리바이스급 데이터를 숨기며 한 말과 같은 결",
+      "about": ["person:에닉", "person:닥터_마리아"],
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["78-85"] }],
+      "reason": "'현 시점에서 포스트 릴리바이스는 아무런 의미가 없습니다'(#82) — PRETTY STAR의 F2543",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2325",
+      "person": "person:마리아-n",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "죽음에 익숙해져 '죽을만하다'며 소모품으로 써 달라 했다",
+      "after": "동료의 참혹한 죽음을 본 뒤 죽는 것이 무서워 방아쇠를 못 당긴다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_07",
+          "lines": [
+            "42-52"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_07",
+          "lines": [
+            "60-95"
+          ]
+        }
+      ],
+      "reason": "'죽을만해요'(03 #33) 하던 마리아가 제 죽음을 보고 '죽는 게 무서워요'(#74)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2326",
+      "person": "person:마리아-n",
+      "aspect": "관계",
+      "act": "기준",
+      "with": [
+        "person:닥터_마리아"
+      ],
+      "text": "자기 이름을 나눠 주고 죽음을 괴로워해 주는 상냥한 창조주를 위해 뭐든 하겠다며 릴리바이스 도달을 약속한다",
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_02",
+          "lines": [
+            "116-123"
+          ]
+        }
+      ],
+      "reason": "잠든 닥터 마리아에게 '그렇기에 당신을 위해 뭐든 할 수 있어요'(#120)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2327",
+      "person": "person:마리아-n",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:닥터_마리아"
+      ],
+      "before": "처음 본 얼굴 · 따스함만 바라보았다",
+      "after": "원망섞인 말 · 노려보는 눈만 남아 외로워하며 말을 삼킨다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "161-164"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "194-206"
+          ]
+        }
+      ],
+      "reason": "'이제는 외로워' · '원망섞인 말, 노려보는 눈'(#199-202)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2328",
+      "person": "person:닥터_마리아",
+      "aspect": "성격",
+      "act": "기준",
+      "text": "마리아들의 죽음을 하나하나 괴로워하며 술로 잊으려 하고, 그만두자고 권하는 상냥한 창조주",
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_02",
+          "lines": [
+            "45-108"
+          ]
+        }
+      ],
+      "reason": "101번의 죽음에 '그만할까' · '괴롭지 않아?'(#83 · #103)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2329",
+      "person": "person:닥터_마리아",
+      "aspect": "성격",
+      "act": "변화",
+      "before": "마리아들의 죽음을 하나하나 괴로워했다",
+      "after": "지휘관이 죽어도 '목숨은 소모품'이라며 마리아-n을 내몬다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_07",
+          "lines": [
+            "110-131"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            "127-134"
+          ]
+        }
+      ],
+      "reason": "'박사님은 목숨을 뭐라고 생각하시나요?' — '소모품.'(#133-134)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2330",
+      "person": "person:닥터_마리아",
+      "aspect": "신념",
+      "act": "기준",
+      "text": "포스트 릴리바이스로 지상을 되찾아 어머니 에블라 박사의 오명을 벗기려 한다",
+      "points": [
+        "F3128"
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_06",
+          "lines": [
+            "10-13"
+          ]
+        }
+      ],
+      "reason": "'그래. 그럴 예정이야'(#13) — 어머니 에블라 박사의 오명을 지우려 한다(F3128)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2331",
+      "person": "person:닥터_마리아",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "포스트 릴리바이스로 인류를 이기려 했다",
+      "after": "에닉의 헬레틱 프로젝트를 할 수밖에 없다며 받아들인다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_10",
+          "lines": [
+            "103-151"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_10",
+          "lines": [
+            "175-182"
+          ]
+        }
+      ],
+      "reason": "'할 수밖에 없는 거잖아'(#181) — 릴리바이스 재현을 접고 에닉의 헬레틱 프로젝트를 받는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2332",
+      "person": "person:마리안",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "어떻게 꽃밭을 아느냐며 처음 보는 지휘관의 정체를 의심했다",
+      "after": "'마리안'이란 이름을 받고 그를 '지휘관'이라 부른다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "88-113"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "146-162"
+          ]
+        }
+      ],
+      "reason": "정체를 따지던 마리아-n(#36-39)이 '마리안' 이름을 받고 '지휘관'이라 부른다(#157-162)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2333",
+      "person": "person:마리안",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:지휘관"
+      ],
+      "before": "다시 살아난 7호를 없는 사람 취급하며 대꾸하지 않았다",
+      "after": "서로에게 거짓말쟁이가 되어 주자며 손을 잡고 함께 살아남기로 한다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_14",
+          "lines": [
+            "113-135"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_14",
+          "lines": [
+            "136-164"
+          ]
+        }
+      ],
+      "reason": "대꾸 없이 죽어 가던 마리안(#4-34)이 떨리는 손을 잡는다(#158-163)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2334",
+      "person": "person:마리안",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "7호를 업고 수송기로 달렸다",
+      "after": "식은 7호 곁에 누워 코어의 동력을 끈다",
+      "points": [
+        "F3166"
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_19",
+          "lines": [
+            "118-130"
+          ]
+        }
+      ],
+      "reason": "'조용히 코어의 동력을 끈다'(#128)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2335",
+      "person": "person:지휘관",
+      "aspect": "관계",
+      "act": "변화",
+      "with": [
+        "person:마리안"
+      ],
+      "before": "지친 마리아-n을 꽃밭에 데려가 기분을 풀어 주려 했다",
+      "after": "마리안이 죽는 것 · 자기를 잊는 것이 제 죽음보다 무섭다고 한다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_14",
+          "lines": [
+            "113-135"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_19",
+          "lines": [
+            "59-90"
+          ]
+        }
+      ],
+      "reason": "'내가 죽는 것 보다··· 네가 죽는 게 더 무서워'(#81-82)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2336",
+      "person": "person:지휘관",
+      "aspect": "신체",
+      "act": "변화",
+      "before": "한 번 죽으면 끝인 인간 지휘관이었다",
+      "after": "죽어도 다시 만들어져 기억을 이어 가는 7호다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_13",
+          "lines": [
+            "195-212"
+          ]
+        }
+      ],
+      "points": [
+        "F3151",
+        "F3153"
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_14",
+          "lines": [
+            "38-61"
+          ]
+        }
+      ],
+      "reason": "'분명 죽었었는데, 눈을 떠보니 수송기 안'(#42) · '다 기억해'(#61)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2337",
+      "person": "person:토커티브",
+      "aspect": "관계",
+      "act": "기준",
+      "with": [
+        "person:미러"
+      ],
+      "text": "퀸과 가까운 미러에게 재밌는 것을 보이며 비위를 맞추다가, 퀸의 허가 없이 헬레틱을 늘리는 명령에 '빌어먹을' 하며 따른다",
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "56-73"
+          ]
+        }
+      ],
+      "reason": "'여왕님의 허가 없이 정예를 늘리는 것은 용납할 수 없다'(#62)며 맞서다 '빌어먹을'(#73) 하며 따른다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "D2338",
+      "person": "person:에닉",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "인간을 소모품으로 여기게 된다며 포스트 릴리바이스 정보를 지웠다",
+      "after": "인류의 미래를 위해 7호 · 마리안의 목숨을 거듭 쓴다",
+      "trigger": [
+        {
+          "scene": "fl:maria-n_10",
+          "lines": [
+            "77-102"
+          ]
+        }
+      ],
+      "time": "S406",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_16",
+          "lines": [
+            "29-31"
+          ]
+        }
+      ],
+      "reason": "'인간을 소모품으로만 여기게 됩니다'(05 #95) — '인류의 미래를 위해서입니다'(16 #31)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "id": "U463",
+      "topic": "방주 사회",
+      "text": "사관학교를 갓 나온 지휘관이 '니케 주제에'라며 질문을 금하고 총살을 들먹이지만, 소리가 랩쳐를 부른다는 것조차 배운 적이 없다",
+      "about": [
+        "place:사관학교",
+        "person:1호"
+      ],
+      "points": [
+        "F500"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            "32-37",
+            "41-43",
+            "72-77"
+          ]
+        }
+      ],
+      "reason": "1호의 말 — 사관학교의 정신 교육(F500)이 실전과 어긋나는 모습",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "U464",
+      "topic": "방주 사회",
+      "text": "지휘관은 박봉에 위험하고 평균 수명이 30세라 엄청 빨리 죽는다는 말이 병원 아이들에게까지 돌았다",
+      "about": [
+        "place:사관학교"
+      ],
+      "points": [
+        "F500"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_09",
+          "lines": [
+            "233-236"
+          ]
+        }
+      ],
+      "reason": "소녀의 말 — 지휘관 사망률(F500)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "U465",
+      "topic": "방주 사회",
+      "text": "출세를 바라는 신참 지휘관은 니케의 공을 제 것으로 돌려 부사령관 자리까지 오르려 하고, 높이 오르면 일반 니케와 엮일 일이 없다고 여긴다",
+      "about": [
+        "person:2호"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            "165-176"
+          ]
+        }
+      ],
+      "reason": "2호의 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    },
+    {
+      "id": "U466",
+      "topic": "방주 사회",
+      "text": "니케를 '승리의 여신'이라 부르는 데에 인간 지휘관은 하인이냐며 열등감을 품는다",
+      "about": [
+        "person:3호",
+        "concept:니케"
+      ],
+      "evidence": [
+        {
+          "scene": "fl:maria-n_12",
+          "lines": [
+            "21-35"
+          ]
+        }
+      ],
+      "reason": "3호의 말 — '사람은 뭔데. 승리의 여신의 하인이야?'(#28)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "U07",
+          "note": "U07 2회독 — 원문 대조 검토"
+        }
+      ]
+    }
+  ]
+}
