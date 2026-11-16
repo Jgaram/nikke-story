@@ -276,6 +276,7 @@
     { "id": "concept:일곱의_조율자", "name": "일곱의 조율자", "kind": "랩쳐 질서", "note": "온리 원에 따르면 퀸이 함께 세상을 만들어 나가야 하는 일곱 — 정체는 나오지 않았다(R97 ch48에서 더함)", "evidence": [{"scene": "d_main_48_05", "lines": [60]}] },
     { "id": "concept:테크_웨어", "name": "테크 웨어", "kind": "기술", "note": "입기만 해도 완력 · 시야 · 반사신경 같은 신체 능력을 키워 주는 미실리스의 옷(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_07", "lines": [62] }], "names": [{ "name": "테크-웨어", "how": "표기" }] },
     { "id": "concept:바니_슈트", "name": "바니 슈트", "kind": "기술", "note": "미실리스 테크 웨어 최신 모델(가칭) — 길티 · 신에게 지급된 바니걸 복장, 인게이지 모드로 충격파 · 가속(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_06", "lines": [106] }] },
-    { "id": "concept:유사_세계", "name": "유사 세계", "kind": "랩쳐 능력", "note": "거대화한 퀸급 존재가 펼치는 공간 — 그 안의 법칙은 펼친 이가 정하고 들어온 것은 몸을 마음대로 못 쓴다. 마리안이 다크 매터의 검은 달로 여신상을 가두었다(U04 ch49에서 더함)", "evidence": [{ "scene": "d_main_49_05", "lines": [85] }] }
+    { "id": "concept:유사_세계", "name": "유사 세계", "kind": "랩쳐 능력", "note": "거대화한 퀸급 존재가 펼치는 공간 — 그 안의 법칙은 펼친 이가 정하고 들어온 것은 몸을 마음대로 못 쓴다. 마리안이 다크 매터의 검은 달로 여신상을 가두었다(U04 ch49에서 더함)", "evidence": [{ "scene": "d_main_49_05", "lines": [85] }] },
+    { "id": "concept:무위", "name": "무위", "kind": "니케 능력", "note": "나유타의 비장의 수 — 대량의 NIMPH를 연소시켜 그 에너지를 몸에 둘러 잠시 초월적인 힘을 얻는다. 허용량을 넘는 NIMPH가 들어올 때 머리를 지키는 안전장치이기도 하고, 연소된 NIMPH는 되돌릴 수 없다(U05 ch50에서 더함)", "evidence": [{ "scene": "d_main_50_05", "lines": [50] }] }
   ]
 }
