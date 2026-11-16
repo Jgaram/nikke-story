@@ -1,0 +1,89 @@
+{
+  "_comment": "U08 2회독",
+  "unit": "erelic:maria-n_dialog",
+  "session": "U08",
+  "by": "claude",
+  "date": "2026-11-16",
+  "mentions": [
+    {
+      "id": "I723",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_00", "lines": ["7-12"] }],
+      "reason": "'박사님만을 생각하자 · 나를 만들어준 사람'(#7-8) — 이름 없이 닥터 마리아",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I724",
+      "target": "org:실버건",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_08", "lines": ["1-12"] }],
+      "reason": "'겨우겨우 찾아냈더니' · '시설의 공정'(#2,4) — 실버건 연구소(F3190)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I725",
+      "target": "person:마리안",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": ["0-15"] }],
+      "reason": "'죽어도 NIMPH의 데이터는 계승되는 특이 체질의 니케'(#0) — 이름 없이 마리안",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I726",
+      "target": "person:크라운",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": [6] }],
+      "reason": "'왕국 놀이를 하는 것들'(#6) — 라스트 킹덤의 크라운 일행",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1733",
+      "act": "재언급",
+      "points": ["F2278"],
+      "text": "미러가 마리안이 리버렐리오의 눈을 피하려 퀸 인자를 뿜지 않게 진화했다고 한다 — 인자 살해자를 피해 몰래 발현하는 퀸 인자",
+      "about": ["person:마리안", "person:리버렐리오"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": [9] }],
+      "reason": "#9 — F2278과 같은 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1734",
+      "act": "재언급",
+      "points": ["Q392"],
+      "text": "마리안이 지휘관이 눈을 뜨면 자기만은, 이름만이라도 기억하길 바라다 그래도 살아 달라 한다 — 잊혀질 기억과 '이번에는' 잊지 말라는 말",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_11", "lines": ["0-20"] }],
+      "reason": "#2-12 · #19-20 — Q392",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2351",
+      "person": "person:미러",
+      "aspect": "관계",
+      "act": "기준",
+      "text": "기적 같은 존재인 마리안을 반드시 자기만의 퀸으로 만들려 한다",
+      "with": ["person:마리안"],
+      "points": ["F3191"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": ["11-15"] }],
+      "reason": "'나만의, 퀸으로'(#15) — 미러와 마리안의 관계 첫 모습",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "life": [],
+  "note": "생활상 — 그릴 만한 사는 모습 없음(실버건 연구소 안의 짧은 대화들)"
+}

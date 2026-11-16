@@ -8,10 +8,9 @@
 
 업데이트 절차(N2a–N2e)는 다 만들었다 — 새 패치는 사용자가 "업데이트"라고 하면 docs/update.md대로(아래 "나중에 할 일" N3). 2026-11-16 업데이트 진행 중 — 아래 단계 항목을 관리자가 차례로 연다.
 
-- [ ] **N3 2026-10-29 U2** 읽기 U08 — 10월 29일 업데이트 공지 · MARIA-n 파트 6–8 · MARIA-n 필드 대화 · FADING AFFECTION 파트 1–2
 - [ ] **N3 2026-10-29 U2** 읽기 U09 — 10월 29일 업데이트 공지 · FADING AFFECTION 파트 3–7
 - [ ] **N3 2026-10-29 U2** 읽기 U10 — 10월 29일 업데이트 공지 · 라푼젤 : 생츄어리 · 마리안 : 퀸 · 홍련 : 신살
-- [ ] **N3 2026-10-29 U3+U4** 판정 · 화면 글 · 마감 — 10월 29일 업데이트 공지 · main 테스트 실패 11(U3+U4 몫 — closures · links · majors · reading-order · site-world · site 2 · spine · views / 아직 안 읽은 단위 몫 — speakers 2(MARIA-n 이름표))
+- [ ] **N3 2026-10-29 U3+U4** 판정 · 화면 글 · 마감 — 10월 29일 업데이트 공지 · main 테스트 실패 9(U3+U4 몫 — closures · links · majors · reading-order · site-world · site 2 · spine · views)
 - [ ] **N3 WHITE MEMORY 보충** 금서고가 `event_lost_relics/white_memory.txt`를 탐색형으로 다시 올림(씬 21 → 117, 42,941자) — 옛 21씬 기록은 새 씬으로 옮겼다(N3 전환, 2026-11-16).
   늘어난 96씬(탐색 페이지 · 힌트 · 수집품)은 안 읽은 원문 — 1회독 · 2회독 보충(자기 단위 `erelic:white_memory` 파일에 덧붙임, 자리는 ARK GUARDIAN 뒤 그대로) → 판정 · 개요 영향 확인. 읽는 법은 docs/update.md "늦게 들어온 단위"의 "그 자리까지 아는 것으로"를 따른다.
 

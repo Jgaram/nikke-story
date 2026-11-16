@@ -1,0 +1,65 @@
+{
+  "_comment": "U08 2회독",
+  "unit": "erelic:fading_affection",
+  "parts": "1-2",
+  "session": "U08",
+  "by": "claude",
+  "date": "2026-11-16",
+  "mentions": [
+    {
+      "id": "I727",
+      "target": "person:마리아-n",
+      "evidence": [{ "scene": "erelic:fading_affection_001", "lines": [1] }],
+      "reason": "'마리아는 임무를 위해'(#1) — 마리아 기록의 주인(마리아-n)이 이름표 · 자동 언급으로 안 잡힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I728",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:fading_affection_066", "lines": ["3-9"] }],
+      "reason": "'마리아 박사의 목소리'(#4) — 닥터 마리아(이름표 '마리아 박사'와 같은 사람)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I729",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:fading_affection_068", "lines": ["6-12"] }],
+      "reason": "'1은 나니까' · '나의 창조주. 나의 어머니'(#7,11) — 이름 없이 닥터 마리아",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1735",
+      "act": "재언급",
+      "points": ["F3117"],
+      "text": "마리아가 박사가 '1은 나니까'라며 마리아-2라 이름 지은 날을 떠올린다",
+      "about": ["person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:fading_affection_068", "lines": ["6-10"] }],
+      "reason": "#6-7 — '1은 자기'(F3117)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1736",
+      "act": "재언급",
+      "points": ["F3133"],
+      "text": "블랙스미스와 싸우던 마리아가 '잡아야 해'만 되뇌다 붉은 눈으로 랩쳐에게 실려 간다 — 미러가 블랙스미스를 시켜 마리아-n에게 침식을 건 일",
+      "about": ["person:마리아-n", "concept:블랙스미스"],
+      "evidence": [{ "scene": "erelic:fading_affection_082", "lines": ["1-13"] }],
+      "reason": "#4 · #13 — 침식(F3133)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [],
+  "note": "2층 — 생활상 뺌. 인물 변화 없음: 마리아 · 마리안 기록은 고른 선택지에 따라 갈리는 분기형 기록이라 한 갈래의 전 → 후를 인물 변화로 세우지 않는다. 암시 언급은 각 기록의 첫 씬 · 박사가 나오는 씬만 — 마리아 기록의 서술 '마리아'(person:마리아-n)는 거의 모든 씬에 나와 씬마다 적지 않는다"
+}
