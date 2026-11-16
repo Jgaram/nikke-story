@@ -4,11 +4,11 @@
 
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
-| handoff/threads-1.md | 떡밥 줄기 J1–J5 — 든 의문 · 곧바로 든 사실 | 17,272 |
-| handoff/threads-2.md | 떡밥 줄기 J6–J10 — 든 의문 · 곧바로 든 사실 | 19,312 |
-| handoff/threads-3.md | 떡밥 줄기 J11–J16 — 든 의문 · 곧바로 든 사실 | 18,500 |
-| handoff/threads-4.md | 떡밥 줄기 J17–J23 — 든 의문 · 곧바로 든 사실 | 19,360 |
-| handoff/threads-5.md | 떡밥 줄기 J24–J54 — 든 의문 · 곧바로 든 사실 | 19,621 |
+| handoff/threads-1.md | 떡밥 줄기 J1–J5 — 든 의문 · 곧바로 든 사실 | 18,817 |
+| handoff/threads-2.md | 떡밥 줄기 J6–J10 — 든 의문 · 곧바로 든 사실 | 19,868 |
+| handoff/threads-3.md | 떡밥 줄기 J11–J16 — 든 의문 · 곧바로 든 사실 | 18,791 |
+| handoff/threads-4.md | 떡밥 줄기 J17–J23 — 든 의문 · 곧바로 든 사실 | 19,502 |
+| handoff/threads-5.md | 떡밥 줄기 J24–J54 — 든 의문 · 곧바로 든 사실 | 19,830 |
 | handoff/threads-6.md | 떡밥 줄기 J55–줄기 관계 — 든 의문 · 곧바로 든 사실 · 줄기 관계 | 8,941 |
 
 1회독 인계 파일도 그대로 쓴다 — annotations/read1/handoff/index.md: 사실 목록 전체(facts*.md) · 풀린 의문 · 열린 의문(questions*.md) · 1회독 세션 요약(R01*.md …).

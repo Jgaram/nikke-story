@@ -1,0 +1,996 @@
+{
+  "_comment": "근거 예: \"evidence\": [{ \"scene\": \"씬 ID\", \"lines\": [12, \"20-25\"] }] — 줄 하나는 숫자, 범위만 문자열. 줄 번호는 read.mjs --num의 #N",
+  "unit": "fl:maria-n",
+  "parts": "1-5",
+  "session": "U07",
+  "by": "claude",
+  "date": "2026-11-16",
+  "summary": "방주 밀봉 뒤, 실버건 스쿼드의 책임자 닥터 마리아는 자기 뇌를 복사한 NIMPH로 니케 마리아 모델을 만들어 지상의 '목표 지점'으로 보낸다. 마리아는 죽을 때마다 기억 · 전투 데이터를 이어받아 다시 만들어지고(마리아-2, -3 … -331), 최강의 니케 릴리바이스를 재현하려는 연구다(_00–_04). 방주 관리 A.I. 에닉은 닥터 마리아가 머신 메사이어 총책임자 · 퀸을 만든 에블라 박사의 딸이라 유배되었음을 짚으며 한 달 안에 릴리바이스 30%를 못 내면 폐기하라 한다(_05–_06). 마리아들로 스쿼드를 꾸리자 동료의 죽음을 본 마리아에게 죽음의 공포가 생겨 지울 수 없게 되고, 번호는 마리아-n으로 바뀐다(_07). 지상에서는 토커티브와 미러가 마리아-n을 발견해 침식을 걸고 헬레틱으로 만들다 인자를 감지하고, 인자 살해자가 그 덩어리를 죽인다(_08–_09). 미러가 침식된 한 종류 니케를 올려보내라는 거래를 걸자, 에닉은 퀸 제작 의도를 읽고 프로젝트 A.D.를 재가동해 공멸 인자 제작에 들어가, 침식을 넣은 마리아-n을 방주가 보낸 지휘관 1–7호와 동행시킨다(_10–_12). 7호는 마리아-n에게 파란 장미를 주고 '마리안'이라 이름 붙이며, 죽어도 기억을 이은 채 다시 만들어져 마리안과 함께 죽고 살기를 되풀이한다(_13–_15). 나유타가 넘긴 V.T.C. 자료로 에닉은 퀸과 반려의 공멸 계획을 세웠고, 프로젝트 A.D.는 언체인드를 견디는 엔더슨의 클론을 만든 Andersen Duplicate이며 7호는 마리안의 반려가 되도록 거듭 투입된다(_16–_17). 마리안과 7호는 끝나면 소풍을 가자 약속하지만, 로드 급과 싸우다 7호가 죽고 마리안은 식은 그의 곁에 누워 코어를 끈다(_18–_19).",
+  "facts": [
+    {
+      "id": "F3117",
+      "text": "실버건 스쿼드의 책임자 닥터 마리아는 자기를 오리지널로 한 니케 마리아-2(1은 자기)를 깨워 자료 학습 · 실습을 시킨 뒤 무인 수송기 BA-01로 지상의 목표 지점까지 보냈고, 목표 지점에 무엇이 있는지는 가 보면 안다고만 했다",
+      "about": ["person:닥터_마리아", "person:마리아-n", "org:실버건"],
+      "evidence": [{ "scene": "fl:maria-n_00", "lines": ["2-11", "35-48", "61-72", "107-108"] }, { "scene": "fl:maria-n_09", "lines": ["186-189"] }],
+      "reason": "닥터 마리아 · 마리아-3 말(00 #9-11 · #107-108), 수송기 설명(#65-68), 이름 까닭(09 #187-189)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3118",
+      "text": "마리아 모델은 죽으면 그때까지의 기억 · 전투 데이터를 이어받아 다시 만들어진다 — 지상에 내리자마자 포탄에 죽은 마리아-2 뒤로 마리아-3이 기억을 이은 채 깨어났다",
+      "about": ["person:마리아-n"],
+      "evidence": [
+        { "scene": "fl:maria-n_00", "lines": ["86-119"] },
+        { "scene": "fl:maria-n_03", "lines": [16] },
+        { "scene": "fl:maria-n_01", "lines": ["41-46"] }
+      ],
+      "reason": "마리아-3이 닥터 마리아를 알고(#105-108) '기억은 잘 이어지나 보네'(#113), 마리아-102 '모든 기억을 가진 채 다시 만들어져요'(03 #16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3119",
+      "text": "마리아 모델은 데이터 수집을 위해 통각 센서를 끌 수 없는 사양이고, 죽은 몸은 이틀 안에 완전히 부식되어 사라진다",
+      "about": ["person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_03", "lines": ["18-23"] }, { "scene": "fl:maria-n_10", "lines": [165] }, { "scene": "fl:maria-n_08", "lines": [53] }],
+      "reason": "닥터 마리아(03 #20-23) · 에닉(10 #165), 토커티브는 5일이라 함(08 #53)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3120",
+      "text": "마리아들은 랩쳐 · 사고로 수없이 죽으며 데이터를 쌓았지만 101번 죽고도 목표 지점까지 최고 달성률이 2.4%였다",
+      "about": ["person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "fl:maria-n_02", "lines": ["39-52", "85-88"] }],
+      "reason": "사망 원인 목록(#40-46) · 화면 표기(#48) · 닥터 마리아(#85-88)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3121",
+      "text": "그만두자는 닥터 마리아에게 마리아-102는 가고 싶은 스쿼드가 실버건이라며 거절했고, 이름을 나눠 주고 자기 죽음을 괴로워하는 창조주를 위해 반드시 릴리바이스에 도달하겠다고 약속했다",
+      "about": ["person:마리아-n", "person:닥터_마리아", "person:릴리바이스"],
+      "evidence": [{ "scene": "fl:maria-n_02", "lines": ["89-123"] }],
+      "reason": "#92-96 · #116-123",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3122",
+      "text": "죽음에 익숙해진 마리아-102는 82번째부터 죽을 것 같으면 포기한다며 자기를 원래 목적대로 소모품처럼 써 달라 했고, 마리아들은 100번 남짓 죽으며 로드 급 한 기를 잡았다",
+      "about": ["person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "fl:maria-n_03", "lines": ["5-47", "64-74"] }],
+      "reason": "#25-41 · #71-74(100대 1)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3123",
+      "text": "에닉에 따르면 실버건 스쿼드의 목적은 최강의 니케 릴리바이스의 재현이다 — 닥터 마리아의 뇌에 NIMPH를 안착시켜 정보를 복사 · 개조한 뒤 불특정 여성의 뇌에 덮어써 니케로 생산하고, 죽을 때마다 전투 데이터를 NIMPH에 갱신해 다시 생산하기를 되풀이한다 — 닥터 마리아는 맞다 했다",
+      "about": ["person:에닉", "person:닥터_마리아", "org:실버건", "person:릴리바이스", "concept:NIMPH"],
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["31-74"] }],
+      "reason": "에닉의 설명(#31-43 · #62-69)에 닥터 마리아 '맞아'(#71 · #74)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3124",
+      "text": "닥터 마리아의 궁극 목표는 포스트 릴리바이스의 NIMPH를 복사해 수백 수천을 양산하는 것이었다 — 에닉은 그러면 랩쳐와의 전면전 승률이 40%까지 오르지만 인간을 소모품으로만 여기게 되어 방주가 지옥이 된다며 그 정보와 사고 알고리즘을 지우겠다 했다",
+      "about": ["person:닥터_마리아", "person:에닉"],
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["78-101"] }],
+      "reason": "#88-99",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3125",
+      "text": "NIMPH는 자아가 남은 인간의 뇌에 쓸 수 없지만 닥터 마리아는 가능했다 — 머신 메사이어 프로젝트의 총책임자인 어머니 에블라 박사가 자기 지식을 NIMPH로 딸에게 계승하려 NIMPH 친화도를 극도로 높이도록 키웠고, 뇌 기능이 압도적인 돌연변이인 그녀가 유일한 성공 사례다",
+      "about": ["person:닥터_마리아", "person:에블라", "concept:NIMPH"],
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["53-59"] }, { "scene": "fl:maria-n_16", "lines": ["8-15"] }],
+      "reason": "에닉 · 닥터 마리아(05 #53-56 · 16 #10-15)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3126",
+      "text": "에닉에 따르면 에블라 박사는 인류 최고의 두뇌로 머신 메사이어 프로젝트의 총책임자이자 A.I. 에바와 일곱 조율자의 창조자이고 랩쳐 퀸을 만들어 낸 자다 — 닥터 마리아는 사고라 했지만 에닉은 오만에서 비롯한 사고로 인류를 멸종 직전까지 몰아 지하로 숨게 한 원인 제공자라 했다",
+      "about": ["person:에블라", "person:에바", "concept:일곱의_조율자", "concept:머신_메사이어", "person:퀸"],
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["104-110"] }, { "scene": "fl:maria-n_06", "lines": ["1-8"] }],
+      "reason": "에닉 말(05 #106-110 · 06 #2-8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3127",
+      "text": "에블라 박사가 인류를 멸망 직전까지 몬 장본인이 되자 그 딸이자 지식을 이은 닥터 마리아도 혐의를 벗지 못해, 결과가 나오기 전엔 방주로 돌아오지 말라는 명으로 아무도 없는 곳에서 홀로 연구하는 사실상의 유배를 받았다",
+      "about": ["person:닥터_마리아", "person:에블라"],
+      "evidence": [{ "scene": "fl:maria-n_16", "lines": ["17-21"] }],
+      "reason": "에닉 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3128",
+      "text": "닥터 마리아는 에블라 박사로 무너진 지상을 딸인 자기가 되돌려 어머니의 오명을 지우려 했다",
+      "about": ["person:닥터_마리아", "person:에블라"],
+      "evidence": [{ "scene": "fl:maria-n_06", "lines": ["10-13"] }, { "scene": "fl:maria-n_07", "lines": ["157-158"] }],
+      "reason": "에닉의 물음에 '그럴 예정이야'(06 #13), 독백(07 #157-158)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3129",
+      "text": "에닉은 방주 관리 A.I.로서 닥터 마리아에게 한 달 안에 릴리바이스의 30% 전투력을 갖추지 못하면 프로젝트를 모두 폐기하라, 거절하면 직접 폐기하겠다고 했다 — 발각 위험 때문에 니케 마리아 모델 한 종류로만 허용했다",
+      "about": ["person:에닉", "person:닥터_마리아"],
+      "evidence": [{ "scene": "fl:maria-n_06", "lines": ["22-54"] }],
+      "reason": "#23-25 · #39-49",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3130",
+      "text": "닥터 마리아는 마리아들로만 스쿼드를 꾸려 로드 급을 잡고 달성률 14.3%까지 갔지만, 로드 급 둘에게 동료가 참혹하게 죽는 것을 본 마리아에게 죽음에 대한 공포가 생겼다 — 지워도 사망 뒤 100% 다시 생겨났다",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_06", "lines": ["81-82"] }, { "scene": "fl:maria-n_07", "lines": ["0-52", "74-95", "138-139"] }],
+      "reason": "#39-52 · 마리아-331(#84-95) · 서술(#138-139)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3131",
+      "text": "닥터 마리아는 방아쇠를 당기지 못하는 마리아-331을 직접 쏘아 죽였다 — 마리아-714부터는 죽음에 대한 공포가 기본 사양이 되었고, 999 뒤로 번호가 무의미해 마리아-n으로 통칭했으며 최고 달성률은 15%에 그쳤다",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_07", "lines": ["100-153"] }],
+      "reason": "#110-117 · #143-151",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3132",
+      "text": "토커티브는 수송기로 거듭 와서 죽는 똑같은 유사 인간(마리아-n)을 미러에게 보였고 — 수송기는 광학미채로 출발지를 숨겼다 — 이틀 동안 지켜본 미러는 '재밌다'고 했다",
+      "about": ["person:토커티브", "person:미러", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_08", "lines": ["3-64"] }, { "scene": "fl:maria-n_09", "lines": ["0-5"] }],
+      "reason": "#36-64 · 09 #0-3",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3133",
+      "text": "미러는 블랙스미스를 시켜 마리아-n에게 침식을 걸어 갓데스도 두 수 접을 만큼 교전 횟수가 많지만 재능이 없다는 것을 알아냈고, 토커티브에게 궤도 엘리베이터로 데려가 헬레틱으로 만들게 했다",
+      "about": ["person:미러", "person:토커티브", "person:마리아-n", "concept:블랙스미스", "concept:침식"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["9-58"] }],
+      "reason": "#14-16 · #29-35 · #56-58",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3134",
+      "text": "미러에 따르면 헬레틱은 침식된 NIMPH에서 뽑은 랩쳐의 이상향을 바탕으로 몸에 넣은 대량의 나노머신이 원래 몸을 찢고 녹이며 신체를 구축해 만들어지고, 본체가 비범할수록 성공률이 높다 — 유사 인간을 만드는 것과 크게 다르지 않다",
+      "about": ["person:미러", "concept:헬레틱"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["88-96"] }],
+      "reason": "미러 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3135",
+      "text": "미러에 따르면 토커티브는 남자 니케라는 프로젝트의 희생양으로, 실패작이 되어 방주에 버림받았다",
+      "about": ["person:토커티브", "person:미러"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["101-108"] }],
+      "reason": "헬레틱이 될 수 있느냐는 토커티브에게 미러(#103-104)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3136",
+      "text": "헬레틱이 되다 만 마리아-n의 덩어리에서 미러는 인자를 감지하고 — 객체가 가지기엔 터무니없는 기억량이 일곱 조율자에게 강대한 힘으로 여겨진 것이라 보고 — 달아났고, 인자 살해자가 궤도 엘리베이터 벽을 뚫고 물줄기로 그 덩어리를 죽였다",
+      "about": ["person:미러", "person:마리아-n", "concept:퀸_인자", "person:리버렐리오", "concept:일곱의_조율자"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["109-145"] }],
+      "reason": "#125-133 · 서술(#141-145) — 인자 살해자 = 리버렐리오(F2888)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3137",
+      "text": "마리아-n은 침식에 걸리면 데이터 갱신이 멈춰 그 일을 기억하지 못한다 — 침식이 잇따르자 닥터 마리아는 마리아-n을 몰아세웠고, 따스함을 잃은 마리아-n은 외로움과 죽음의 지겨움 · 두려움에 무너질 것 같았다",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["146-206"] }],
+      "reason": "#148-154 · #161-164 · 서술 #173-206",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3138",
+      "text": "마리아-n에게는 병원에서 만난 '지휘관'이라 불린 또래 아이와 친구가 된 소녀 마리아의 기억이 있다 — 뇌에 병이 있던 소녀는 지휘관이 되려는 그 아이의 꿈을 응원하며 '내가 니케가 되면 네가 내 지휘관이면 좋겠다' 했고, 아이는 소녀에게 붕대를 감아 주고 붕대로 꽃을 만들어 주었다",
+      "about": ["person:마리아-n", "person:지휘관"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["209-276"] }],
+      "reason": "소녀 말(#209-276) — 마리아-n이 지닌 기억의 편린(#277-283)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3139",
+      "text": "병원의 소녀 마리아는 닥터 마리아의 어린 시절이다 — 마리아-n의 NIMPH는 닥터 마리아의 뇌를 복사한 것이고, 소녀는 뇌에 병이 있으며 엄마가 꿈을 이루려 바빠 못 봤다고 했다",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": [215, "225-229"] }, { "scene": "fl:maria-n_05", "lines": [39] }],
+      "reason": "NIMPH가 닥터 마리아의 뇌 복사본(05 #39) · 소녀의 병(09 #215) · 꿈에 바쁜 엄마(#227-229)와 NIMPH 친화도로 키워진 닥터 마리아(16 #10-14)를 이어 읽음 — 원문이 직접 잇지 않음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3140",
+      "text": "그 티끌 같은 기억 덕분에 마리아-n은 언젠가 그 아이를 다시 만나는 미래를 꿈꾸며 죽음의 반복을 견뎠다",
+      "about": ["person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["207-208", "277-284"] }],
+      "reason": "서술",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3141",
+      "text": "미러는 토커티브를 시켜 방주에 '침식에 걸린 유사 인간을 가능하면 한 종류로 주기적으로 올려보내라 — 방주의 위치는 안다, 아니면 방주를 부수겠다'는 거래를 걸었다 — 마리아 모델로 헬레틱을 40개쯤 만들어 2개에서 인자가 발현했기 때문이다",
+      "about": ["person:미러", "person:토커티브", "place:방주"],
+      "evidence": [{ "scene": "fl:maria-n_10", "lines": ["0-28"] }],
+      "reason": "#3-8 · #13-21 · '우리의 미래를 위한 준비'(#27-28)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3142",
+      "text": "에닉은 그 '한 종류'가 실버건의 마리아 모델이고 궤도 엘리베이터 인근의 미지의 파장 둘이 (나유타가 준 정보와 대조해) 퀸 인자라 확정해, 퀸이 부재 중이며 토커티브가 마리아 모델로 퀸을 만들려 한다고 결론짓고 동결된 프로젝트 A.D.를 재가동해 공멸 인자 제작에 들어갔다",
+      "about": ["person:에닉", "concept:퀸_인자", "concept:PROJECT_A.D.", "concept:공멸_인자", "person:나유타"],
+      "evidence": [{ "scene": "fl:maria-n_10", "lines": ["77-102"] }],
+      "reason": "에닉의 추론",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3143",
+      "text": "닥터 마리아는 마리아-n에게 1187번의 죽음이 개죽음이라며 프로젝트 끝을 알렸지만, 다음 날 에닉은 니케 마리아 모델을 헬레틱으로 만드는 프로젝트로 바꿔 계속하라 했다 — 침식을 건 채 출동시키고 방주가 보낸 인간 지휘관과 동행시키며 닥터 마리아의 현장 개입은 막는다",
+      "about": ["person:닥터_마리아", "person:마리아-n", "person:에닉"],
+      "evidence": [{ "scene": "fl:maria-n_10", "lines": ["29-54", "103-182"] }],
+      "reason": "#43-44 · #110-151 · 승낙(#178-182)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3144",
+      "text": "닥터 마리아는 침식 투입을 NIMPH 기능을 일시 강화하는 '강화 시술'이라 둘러대 출동 직전 마리아-n에게 받게 했다",
+      "about": ["person:닥터_마리아", "person:마리아-n", "concept:침식"],
+      "evidence": [{ "scene": "fl:maria-n_11", "lines": ["4-8", "21-25"] }, { "scene": "fl:maria-n_10", "lines": [149, 166] }],
+      "reason": "에닉의 공정(10 #149 · #166)과 닥터 마리아의 머뭇거린 설명(11 #5-8)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3145",
+      "text": "방주가 보낸 지휘관 1호는 니케를 깔보며 수송기 안에서 총을 쏘아 랩쳐를 불러들였다가 머리가 터져 죽었고(달성률 0.3%), 사람이 죽었다고 항의하는 마리아-n에게 닥터 마리아는 목숨은 소모품이라 했다",
+      "about": ["person:1호", "person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "fl:maria-n_11", "lines": ["29-134"] }, { "scene": "fl:maria-n_12", "lines": ["3-4"] }],
+      "reason": "#60-65 · #105-108 · #122-134",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3146",
+      "text": "지휘관 1–6호는 닮은 얼굴이었다 — 출세해 부사령관이 되고 싶다던 2호는 미확인 동물형 랩쳐에게 산 채로 먹혔고, 3호는 니케의 총을 빼앗아 마리아-n을 쏜 뒤 죽었으며, 4호는 폭행 끝에 침식이 발현한 마리아-n에게 사살되었다",
+      "about": ["person:2호", "person:3호", "person:4호", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_11", "lines": ["139-178"] }, { "scene": "fl:maria-n_12", "lines": ["5-66", "137-140"] }],
+      "reason": "마리아-n '닮았어'(11 #144) · 에닉 기록(12 #15-17 · #36-37 · #64-66) · '몇 번이나 봐 왔던 비슷한 얼굴'(12 #138)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3147",
+      "text": "5호는 수송기에서 내리자 달아나 행방 · 생사 불명이 되었고, 자기가 목적을 위해 만들어진 물체임을 안 6호는 숨을 곳에 앉아 움직이지 않다 10일 뒤 굶어 죽었다",
+      "about": ["person:5호", "person:6호"],
+      "evidence": [{ "scene": "fl:maria-n_12", "lines": ["67-116"] }],
+      "reason": "에닉 기록 · 6호 말(#82-101)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3148",
+      "text": "7호(지휘관)는 지친 마리아-n을 꽃밭으로 데려가 파란 장미 한 송이를 주었고, 싸움을 피하며 위험을 무릅쓰고 수류탄으로 마리아-n을 도왔다 — 지휘관이 되는 것이 꿈이었고 '그 아이'와 약속했지만 누군지 기억나지 않는다 했다",
+      "about": ["person:지휘관", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_12", "lines": ["141-143"] }, { "scene": "fl:maria-n_13", "lines": ["1-145"] }],
+      "reason": "#30-43 · #66-70 · #88-113 · #118-137 — 다들 7호라 부른다(#127)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3149",
+      "text": "7호는 마리아-n을 '마리안'이라 부르기로 했고 마리아-n은 그 이름을 받았다 — 7호는 마리안의 발목에 붕대를 감아 주며 마음이 치유될 것이라 했다",
+      "about": ["person:지휘관", "person:마리안", "person:마리아-n"],
+      "evidence": [{ "scene": "fl:maria-n_13", "lines": ["146-172"] }],
+      "reason": "이름표가 #157부터 마리안(L39)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3150",
+      "text": "7호는 자폭한 랩쳐에게서 마리안을 감싸다 폭사했고, 홀로 간 마리안은 달성률 48.2%에서 침식이 발발해 20시간 뒤 궤도 엘리베이터 인근에서 퀸 인자가 생겼다 사라졌다 — 에닉은 7호와의 동행이 결정적이라 보고 8호 제작을 철회해 7호를 거듭 투입했다",
+      "about": ["person:지휘관", "person:마리안", "person:에닉", "concept:퀸_인자"],
+      "evidence": [{ "scene": "fl:maria-n_13", "lines": ["173-219"] }],
+      "reason": "#180-192 · 에닉 기록(#195-201 · #211-212) · 다시 나타난 7호(#208-210)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3151",
+      "text": "다시 살아난 7호는 기억이 이어져 마리안과의 일을 다 기억했다 — 둘은 죽기를 되풀이했고, 7호도 죽음이 무서워 손을 떨면서 끝까지 가면 '다음'이 있을 것이라며 함께 살아남자 했고 마리안은 서로 거짓말쟁이가 되어 주자는 뜻으로 그 손을 잡았다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "fl:maria-n_14", "lines": ["0-164"] }],
+      "reason": "#42-61 · #93-135 · 서술 #136-163",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3152",
+      "text": "에닉에 따르면 7호와 마리안의 친밀도가 높아질수록 달성률이 오르고(마리안 홀로 75.7%까지) 퀸 인자 발생 확률도 높아진다",
+      "about": ["person:에닉", "person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "fl:maria-n_15", "lines": ["151-159"] }],
+      "reason": "에닉 기록",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3153",
+      "text": "에닉에 따르면 7호는 생물학적으로 인간과 같고 몇 가지 특수 기능이 있으며, 몸 밖 장치의 NIMPH에 기억을 백업해 회상할 때만 뇌에 작용시킨다 — 닥터 마리아는 기억이 쌓일수록 뇌가 망가진다 했다",
+      "about": ["person:지휘관", "person:에닉", "person:닥터_마리아", "concept:NIMPH"],
+      "evidence": [{ "scene": "fl:maria-n_16", "lines": ["1-31"] }],
+      "reason": "에닉 · 닥터 마리아 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3154",
+      "text": "닥터 마리아는 에닉이 마리안을 퀸으로 만들고 7호를 퀸에게만 반응하는 무기처럼 쓰려 한다고 추리했고, 에닉은 맞다며 '여왕의 마음을 이용해 여왕을 죽이는' 인자를 말했다",
+      "about": ["person:닥터_마리아", "person:에닉"],
+      "evidence": [{ "scene": "fl:maria-n_16", "lines": ["41-65"] }],
+      "reason": "#43-65",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3155",
+      "text": "나유타는 V.T.C.의 '깊은 것'이라 불린 기술 특화 니케 출신으로, V.T.C.의 오랜 숙원 자료를 에닉에게 넘겼다",
+      "about": ["person:나유타", "org:V.T.C."],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["0-6"] }],
+      "reason": "나유타 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3156",
+      "text": "에닉에 따르면 머신 메사이어는 A.I. 에바가 일곱 조율자(랩쳐 01–07)를 제어해 행성을 되살리는 프로젝트였고, 에닉은 에바의 카운터로 개발되었으며 방주는 에닉의 학습을 위한 장소로 지어졌다 — 인류는 일찍 에바의 위험을 알고 있었다",
+      "about": ["person:에닉", "person:에바", "concept:머신_메사이어", "concept:일곱의_조율자", "place:방주"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["7-16"] }],
+      "reason": "에닉 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3157",
+      "text": "나유타에 따르면 성하만을 구세주로 여긴 V.T.C.는 A.I.에게 인류의 미래를 맡기는 것을 인정하지 않아, 나노머신 인간형 신체인 에바를 없앨 나노머신 킬러 언체인드를 혈액의 형태로 개발했고(성하의 피만이 기계 구세주를 쓰러뜨린다는 연출), 성하에게 넣으려 대규모 임상 실험을 했다",
+      "about": ["person:나유타", "org:V.T.C.", "concept:언체인드", "person:에바"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["18-31", 42] }],
+      "reason": "나유타 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3158",
+      "text": "나유타 · 에닉에 따르면 그 사이 A.I. 에바가 총책임자 에블라 박사와 융합해 퀸이 되었고, 인류연합군이 스페이스 스테이션을 쳤지만 퀸이 만든 신병기 랩쳐에 괴멸 직전까지 몰렸다(1차 랩쳐 침공) — 그때 언체인드 자료는 퀸의 개입으로 모두 사라졌다",
+      "about": ["person:에바", "person:에블라", "person:퀸", "incident:랩쳐_침공", "concept:언체인드"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["32-40"] }],
+      "reason": "에닉 · 나유타 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3159",
+      "text": "나유타에 따르면 퀸 인자는 일곱 조율자가 강대한 랩쳐를 감지해 주는 것으로 퀸이 있으면 생기지 않고, 퀸의 기원은 외로움이라 외로움을 채울 대상에게 평생을 함께하자는 뜻의 초월적 재생 · 신체 능력을 주는 반려 인자를 준다 — 그 능력의 기원은 모른다",
+      "about": ["person:나유타", "concept:퀸_인자", "concept:일곱의_조율자"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["47-68"] }],
+      "reason": "나유타 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3160",
+      "text": "나유타는 퀸을 만들려는 이(니케들을 헬레틱으로 만들어 온 자)와 동맹해 함께 퀸을 만들고 있다며, 언체인드 보유자를 새 퀸의 반려로 만들어 달라 청했다 — 에닉은 조건을 갖춘 객체가 방주에 없으면 만들면 된다며 극비 프로젝트 둘을 쓰기로 했고, 강대한 니케로 닥터 마리아의 실버건을 골랐다",
+      "about": ["person:나유타", "person:에닉", "org:실버건"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["51-75", "104-145"] }],
+      "reason": "#55-70 · #104-106 · #127-138",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3161",
+      "text": "에닉에 따르면 프로젝트 A.D.는 프로젝트 Andersen Duplicate다 — 방주 완전 밀봉 작전 아크 가디언 때 혼수 상태의 엔더슨에게서 찾은 언체인드를 양산해 이식하자 받은 이가 모두 죽었고, V.T.C.는 언체인드를 자연 치유력으로 버티는 엔더슨을 복제하기로 했다",
+      "about": ["person:에닉", "person:엔더슨", "concept:PROJECT_A.D.", "concept:언체인드", "org:V.T.C."],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["150-168"] }],
+      "reason": "에닉 · 닥터 마리아(#160)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3162",
+      "text": "엔더슨 클론 연구에서 수많은 시체가 나왔고 그 클론들이 방주의 수명(초거대 코어의 먹이)을 전면 담당할 정도였다 — 뒤에 클론 소비는 총사령관이 홀로 대체했다",
+      "about": ["person:에닉", "person:총사령관", "concept:PROJECT_A.D."],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["169-173"] }],
+      "reason": "에닉 · 닥터 마리아('역겨운 초거대 코어. 사람을 잡아먹는 괴물' #171)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3163",
+      "text": "V.T.C.가 괴멸하자 에닉은 프로젝트 A.D.의 전권을 쥐고 M.M.R.로 옮겨 언체인드를 담은 퀸의 반려가 될 클론 일곱 타입을 완성했다 — 클론은 그 연구소에서 20대 중반까지 실험과 함께 자라 사관학교를 나온 뒤 언제든 꺼내 쓰도록 동면하고, 원하는 나이대로 얼마든지 재생산된다 — 7호가 그 반려다",
+      "about": ["person:에닉", "concept:PROJECT_A.D.", "org:M.M.R.", "person:지휘관", "person:엔더슨"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["147-149", "174-196"] }],
+      "reason": "에닉 말 · '반려가 될 언체인드 보유자 — 그게 7호겠네' '예'(#147-149)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3164",
+      "text": "에닉은 마리안과 동행 성과가 가장 좋고 마리안에게 '사랑의 전조'가 보인 7호만 재생산했고 기억 유지까지 동원했다 — 닥터 마리아는 서로 사랑하게 되면 둘 다 죽는다며 지독하다 했다",
+      "about": ["person:에닉", "person:닥터_마리아", "person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["197-215"] }],
+      "reason": "에닉 · 닥터 마리아 말",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3165",
+      "text": "마리안과 7호는 이 일이 끝나면 함께 요리를 배워 도시락을 싸 호수 공원으로 소풍을 가자 약속하고 가위바위보로 노란 귀여운 도시락통을 정했다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "fl:maria-n_18", "lines": ["22-95"] }],
+      "reason": "대화",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3166",
+      "text": "로드 급과 싸우다 충격파를 맞은 7호는 마리안이 죽는 것 · 자기를 잊는 것이 자기 죽음보다 무섭다 했고, 마리안은 그를 업고 수송기로 달렸지만 수송기는 없었다 — 마리안은 식은 7호 곁에 누워 코어의 동력을 껐다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "fl:maria-n_19", "lines": ["43-130"] }],
+      "reason": "#79-86 · #113 · #126-128",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q396",
+      "text": "닥터 마리아가 숨긴 마리아들의 '목표 지점'에는 무엇이 있고, 닿으면 무슨 일이 일어나나?",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [
+        { "scene": "fl:maria-n_00", "lines": ["67-68"] },
+        { "scene": "fl:maria-n_04", "lines": ["77-84"] },
+        { "scene": "fl:maria-n_11", "lines": ["151-155"] }
+      ],
+      "reason": "마리아-311의 물음에 답하지 않음(04 #78-84), 브리핑도 숨김(11 #155)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q397",
+      "text": "에닉의 계획대로 마리안이 퀸이 되고 인자를 가진 7호와 공멸하게 되나 — 7호와 마리안은 끝내 목표 지점에 닿나?",
+      "about": ["person:에닉", "person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["207-215"] }, { "scene": "fl:maria-n_14", "lines": ["93-99"] }],
+      "reason": "닥터 마리아의 정리(17 #207-212) · 7호의 '다음'(14 #93-99)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q398",
+      "text": "수송기에서 내려 달아난 5호는 어떻게 되었나 — 살아 있나?",
+      "about": ["person:5호"],
+      "evidence": [{ "scene": "fl:maria-n_12", "lines": ["67-69"] }],
+      "reason": "행방 · 생사 불명(에닉 기록)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q399",
+      "text": "동면 상태로 언제든 꺼내 쓰도록 둔 엔더슨 클론 일곱 타입(1–6호 타입)은 그 뒤 재생산되었나 — 지금 어디서 무엇이 되었나?",
+      "about": ["person:에닉", "concept:PROJECT_A.D."],
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["185-196"] }],
+      "reason": "에닉 말 — 재생산 가능, 7호만 재생산했다(#195-199)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "events": [
+    {
+      "id": "Q71-2",
+      "act": "회수",
+      "answer": "F3126",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_05", "lines": ["104-110"] }, { "scene": "fl:maria-n_17", "lines": ["9-15", 33] }],
+      "reason": "일기 속 A.I 에바와 그를 만든 에블라 — 에블라 박사는 머신 메사이어 총책임자로 에바 · 일곱 조율자를 만들었고 에바와 융합해 퀸이 되었다. 에블라 입자와의 관계는 아직 없다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q63-3",
+      "act": "회수",
+      "answer": "F3138",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["209-276"] }],
+      "reason": "'내가 니케가 된다면 네가 내 지휘관이 되면 좋겠네'(#245-246)라 한 소녀는 병원의 마리아 — 그 기억을 마리아-n(마리안)이 지녔다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q20-2",
+      "act": "회수",
+      "answer": "F3138",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["209-221"] }],
+      "reason": "병원에서 지휘관이 만난 소녀는 마리아(ch05의 병원 소녀와 같은 이로 봄). 지휘관의 병은 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q367-3",
+      "act": "회수",
+      "answer": "F3149",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:maria-n_13", "lines": ["146-162"] }, { "scene": "fl:maria-n_13", "lines": ["131-137"] }],
+      "reason": "'마리아-'는 마리아-n — 7호가 마리안이라 이름 붙였다. '그 아이'는 7호가 약속했다는 병원의 소녀 마리아(F3138)로 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q225-4",
+      "act": "회수",
+      "answer": "F3163",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["147-196"] }, { "scene": "fl:maria-n_16", "lines": ["3-4"] }],
+      "reason": "프로젝트 A.D.는 Andersen Duplicate — 언체인드를 담은 엔더슨 클론 일곱 타입, 7호가 그 하나. 생물학적으로 인간과 같다(16 #3)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q64-3",
+      "act": "회수",
+      "answer": "F3163",
+      "degree": "전부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["147-196"] }],
+      "reason": "지휘관(7호)은 언체인드를 견디는 엔더슨을 복제한 클론이라 같은 피다 — 우연이 아니다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q86-3",
+      "act": "회수",
+      "answer": "F3163",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["185-193"] }, { "scene": "fl:maria-n_15", "lines": ["45-49"] }],
+      "reason": "7호는 연구소에서 실험과 함께 20대 중반까지 자라 사관학교를 나온 뒤 동면했다 — 병원에만 있었다는 흐릿한 어린 기억(15 #45-49)과 잇닿음. 기억이 흐린 까닭 자체는 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q309-4",
+      "act": "회수",
+      "answer": "F3157",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["26-43"] }, { "scene": "fl:maria-n_17", "lines": [153] }],
+      "reason": "언체인드는 V.T.C.가 에바를 없애려 피의 형태로 만든 것이고 성하에게 넣으려 대규모 임상 실험을 했다 — 엔더슨이 그 실험에서 살아남은 이인지는 나유타의 짐작(#41-43)뿐",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q333-2",
+      "act": "회수",
+      "answer": "F3162",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["169-173"] }],
+      "reason": "엔더슨 클론이 맡던 방주의 수명(초거대 코어의 먹이) 소비를 총사령관이 홀로 대체했다 — 총사령관의 희생이 그것으로 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q70-2",
+      "act": "회수",
+      "answer": "F3141",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_10", "lines": ["13-28"] }],
+      "reason": "방주 위치를 안 랩쳐(토커티브)가 방주를 치지 않고 침식된 니케를 받는 거래를 건 것은 미러가 퀸을 만들 재료를 얻으려던 것 — CH.14 에닉이 말한 거래가 이 거래라고 원문이 잇지는 않는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q190-2",
+      "act": "회수",
+      "answer": "F3135",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["103-104"] }],
+      "reason": "토커티브는 원래 남자 니케 프로젝트의 실패작으로 방주에 버림받은 존재 — 빼앗긴 사명 · 꿈의 내용은 아직",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q57-3",
+      "act": "회수",
+      "answer": "F3156",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["12-15"] }],
+      "reason": "방주는 머신 메사이어 때 에바의 카운터 에닉의 학습 장소로 지어졌고, 인류는 일찍 에바의 위험을 알았다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q116-2",
+      "act": "회수",
+      "answer": "F3134",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_09", "lines": ["88-96"] }],
+      "reason": "헬레틱은 침식된 NIMPH의 랩쳐 이상향으로 나노머신이 몸을 구축해 만든다 — 유사 인간 만드는 것과 크게 다르지 않다(미러). 누가 누구를 베꼈는지는 아직",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q366-2",
+      "act": "회수",
+      "answer": "F3151",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_14", "lines": ["28-34"] }, { "scene": "fl:maria-n_15", "lines": ["12-13", "33-44"] }],
+      "reason": "마리안이 견딘 긴 시간 · 굴레 — 7호와 함께 죽고 다시 만들어지기를 되풀이한 일로 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q46-6",
+      "act": "회수",
+      "answer": "F3158",
+      "degree": "일부",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["33-36"] }],
+      "reason": "랩쳐는 에바와 에블라가 융합한 퀸이 스페이스 스테이션에서 만든 신병기 — 1차 랩쳐 침공",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3048-3",
+      "act": "드러냄",
+      "text": "언체인드를 가진 반려와 퀸의 공멸 — 일곱 조율자가 퀸이 아직 있다고 착각한다",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["78-91"] }],
+      "reason": "나유타가 에닉에게 공멸의 원리를 설명 — 언체인드를 가진 반려가 퀸과 닿으면 둘 다 소멸하고 인자만 남아 다시는 퀸이 생기지 않는다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3096-2",
+      "act": "드러냄",
+      "text": "머신 메사이어는 일곱 조율자로 행성을 되살리는 프로젝트",
+      "evidence": [{ "scene": "fl:maria-n_17", "lines": ["7-10"] }],
+      "reason": "에닉의 머신 메사이어 설명 — 일곱 조율자로 행성을 되살리는 프로젝트(제어는 에바)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S406",
+      "kind": "기준점",
+      "text": "방주 밀봉 · V.T.C. 괴멸 뒤, CH.00 전 — 7호 지휘관이 사관학교를 갓 졸업한 무렵",
+      "ref": "fl:maria-n",
+      "at": [["뒤", "@방주_밀봉"], ["전", "ch00"]],
+      "evidence": [
+        { "scene": "fl:maria-n_05", "lines": ["83-84"] },
+        { "scene": "fl:maria-n_13", "lines": [142] },
+        { "scene": "fl:maria-n_17", "lines": [153, "174-191"] }
+      ],
+      "reason": "인류는 방주 이주를 끝냈고(05 #84), 아크 가디언 뒤 · V.T.C. 괴멸 뒤의 프로젝트 A.D. 클론(17 #153 · #174-191), 7호는 어제 사관학교를 졸업(13 #142) — 지금의 지휘관이 마리안과 만나기 전",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U07", "note": "U07 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "targets": [
+    {
+      "target": "person:닥터_마리아",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_00",
+          "lines": [
+            2
+          ]
+        }
+      ],
+      "note": "실버건 스쿼드 책임자 · 에블라 박사의 딸, 니케 마리아 모델의 오리지널",
+      "new": true
+    },
+    {
+      "target": "person:마리아-n",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_00",
+          "lines": [
+            5
+          ]
+        }
+      ],
+      "note": "죽을 때마다 기억을 이어 다시 만들어지는 니케 마리아 모델 — 마리안(L39)",
+      "new": true
+    },
+    {
+      "target": "person:에블라",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_05",
+          "lines": [
+            51
+          ]
+        }
+      ],
+      "note": "머신 메사이어 총책임자 — 에바 · 일곱 조율자 · 퀸을 만든 이",
+      "new": true
+    },
+    {
+      "target": "person:에바",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_05",
+          "lines": [
+            108
+          ]
+        }
+      ],
+      "note": "머신 메사이어의 A.I. — 에블라 박사와 융합해 퀸이 되었다",
+      "new": true
+    },
+    {
+      "target": "person:1호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            32
+          ]
+        }
+      ],
+      "note": "프로젝트 A.D. 엔더슨 클론 지휘관 1호",
+      "new": true
+    },
+    {
+      "target": "person:2호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_11",
+          "lines": [
+            141
+          ]
+        }
+      ],
+      "note": "엔더슨 클론 지휘관 2호 — 부사령관을 꿈꿈",
+      "new": true
+    },
+    {
+      "target": "person:3호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_12",
+          "lines": [
+            19
+          ]
+        }
+      ],
+      "note": "엔더슨 클론 지휘관 3호",
+      "new": true
+    },
+    {
+      "target": "person:4호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_12",
+          "lines": [
+            39
+          ]
+        }
+      ],
+      "note": "엔더슨 클론 지휘관 4호",
+      "new": true
+    },
+    {
+      "target": "person:5호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_12",
+          "lines": [
+            67
+          ]
+        }
+      ],
+      "note": "엔더슨 클론 지휘관 5호 — 달아나 행방 불명",
+      "new": true
+    },
+    {
+      "target": "person:6호",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_12",
+          "lines": [
+            72
+          ]
+        }
+      ],
+      "note": "엔더슨 클론 지휘관 6호",
+      "new": true
+    },
+    {
+      "target": "concept:공멸_인자",
+      "evidence": [
+        {
+          "scene": "fl:maria-n_10",
+          "lines": [
+            102
+          ]
+        }
+      ],
+      "note": "언체인드를 가진 퀸의 반려가 받아 퀸과 함께 소멸하는 인자",
+      "new": true
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "fl:maria-n_00",
+      "text": "닥터 마리아가 마리아-2를 깨워 훈련시켜 지상으로 보내고, 포탄에 죽은 뒤 마리아-3이 기억을 이어 깨어난다"
+    },
+    {
+      "scene": "fl:maria-n_01",
+      "text": "마리아-3이 중갑형 랩쳐에게 죽고 데이터가 갱신되며, 마리아-4가 큰 뜻을 위해 괜찮다고 한다"
+    },
+    {
+      "scene": "fl:maria-n_02",
+      "text": "수없이 죽어도 달성률 2.4% — 닥터 마리아가 그만두자 하지만 마리아-102는 릴리바이스에 도달하겠다고 약속한다"
+    },
+    {
+      "scene": "fl:maria-n_03",
+      "text": "마리아-102가 자신을 소모품처럼 써 달라며 로드 급과 100번 남짓 싸워 마리아-202가 잡는다"
+    },
+    {
+      "scene": "fl:maria-n_04",
+      "text": "지뢰밭 개척 · 달성률 10.2%, 마리아-311이 목표 지점에 무엇이 있느냐 묻자 닥터 마리아가 피한다"
+    },
+    {
+      "scene": "fl:maria-n_05",
+      "text": "에닉이 닥터 마리아의 연구(실버건 — 릴리바이스 재현)와 에블라 박사의 딸임을 짚는다"
+    },
+    {
+      "scene": "fl:maria-n_06",
+      "text": "에닉이 한 달 안에 릴리바이스 30%를 못 내면 폐기하라 하고, 닥터 마리아는 마리아만의 스쿼드를 꾸리기로 한다"
+    },
+    {
+      "scene": "fl:maria-n_07",
+      "text": "마리아 셋의 스쿼드가 로드 급 둘에게 무너지고 죽음의 공포가 생겨 — 닥터 마리아가 331을 쏜다, 번호는 마리아-n으로"
+    },
+    {
+      "scene": "fl:maria-n_08",
+      "text": "토커티브가 미러에게 거듭 와서 죽는 마리아-n을 보여 준다"
+    },
+    {
+      "scene": "fl:maria-n_09",
+      "text": "미러가 마리아-n을 헬레틱으로 만들다 인자를 보고 달아나고, 인자 살해자가 덩어리를 죽인다 · 마리아-n의 병원 소녀 기억"
+    },
+    {
+      "scene": "fl:maria-n_10",
+      "text": "미러가 방주에 거래를 걸고, 에닉이 퀸 제작 의도를 읽어 프로젝트 A.D.를 재가동 · 헬레틱 프로젝트로 바꾼다"
+    },
+    {
+      "scene": "fl:maria-n_11",
+      "text": "강화 시술(침식)을 받은 마리아-n이 지휘관 1호 · 2호와 동행한다"
+    },
+    {
+      "scene": "fl:maria-n_12",
+      "text": "지휘관 2–6호가 저마다 죽거나 사라지고, 마리아-n이 7호를 만난다"
+    },
+    {
+      "scene": "fl:maria-n_13",
+      "text": "7호가 꽃밭 · 파란 장미 · 붕대로 마리아-n을 돕고 '마리안'이라 이름 붙인 뒤 폭사 — 7호를 거듭 투입하기로"
+    },
+    {
+      "scene": "fl:maria-n_14",
+      "text": "다시 살아난 7호와 마리안이 죽음을 되풀이하다 서로 거짓말쟁이가 되어 주며 손을 잡는다"
+    },
+    {
+      "scene": "fl:maria-n_15",
+      "text": "나비 · 독성 과일 · 물놀이 · 손잡고 잠들기 — 친밀도가 오를수록 달성률과 퀸 인자 발생이 오른다"
+    },
+    {
+      "scene": "fl:maria-n_16",
+      "text": "닥터 마리아가 에닉에게 7호의 정체와 의도를 묻고, 에닉이 '여왕의 마음으로 여왕을 죽이는' 인자를 말한다"
+    },
+    {
+      "scene": "fl:maria-n_17",
+      "text": "나유타가 넘긴 V.T.C. 자료 — 에바 · 언체인드 · 공멸, 프로젝트 A.D.(엔더슨 클론)와 7호를 고른 까닭"
+    },
+    {
+      "scene": "fl:maria-n_18",
+      "text": "마리안과 7호가 끝나면 갈 소풍 도시락 · 장소 · 도시락통을 정한다"
+    },
+    {
+      "scene": "fl:maria-n_19",
+      "text": "로드 급과 싸우다 7호가 죽고, 수송기 없는 자리에서 마리안이 그 곁에 누워 코어를 끈다"
+    }
+  ],
+  "slips": [
+    "fl:maria-n_07 #111은 닥터 마리아가 '마리아-311'의 머리에 권총을 겨눈다고 적지만 앞뒤(#110 · #113 — 마리아-331의 권총, 331의 말)로 331이다 — 오기로 보고 331을 따른다"
+  ]
+}

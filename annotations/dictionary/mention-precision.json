@@ -403,6 +403,10 @@
   {"target":"place:지상","name":"지상","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-05"},
   {"target":"person:경비_팀장","name":"경비 팀장","sample":10,"correct":10,"auto":"all","by":"claude","date":"2026-10-14"},
   {"target":"person:베르누이아","name":"베르누이아","sample":5,"correct":5,"auto":"all","by":"claude","date":"2026-10-18"},
-  {"target":"person:뷰티","name":"뷰티","sample":4,"correct":4,"auto":"all","note":"걸린 줄 4줄 전부 — 온리 원이 받은 새 이름(L38)","by":"claude","date":"2026-11-16"}
+  {"target":"person:뷰티","name":"뷰티","sample":4,"correct":4,"auto":"all","note":"걸린 줄 4줄 전부 — 온리 원이 받은 새 이름(L38)","by":"claude","date":"2026-11-16"},
+  {"target":"person:닥터_마리아","name":"닥터 마리아","sample":5,"correct":5,"auto":"all","by":"claude","date":"2026-11-16"},
+  {"target":"person:마리아-n","name":"마리아-n","sample":5,"correct":5,"auto":"all","note":"번호 이름표(마리아-2 …)도 같은 대상 — 서술 속 '마리아-n'은 모두 그 니케","by":"claude","date":"2026-11-16"},
+  {"target":"person:에블라","name":"에블라 박사","sample":5,"correct":5,"auto":"all","by":"claude","date":"2026-11-16"},
+  {"target":"person:에바","name":"에바","sample":5,"correct":5,"auto":"all","note":"걸린 줄 8줄 — 모두 A.I. 에바(CH.15 일기 포함)","by":"claude","date":"2026-11-16"}
  ]
 }
