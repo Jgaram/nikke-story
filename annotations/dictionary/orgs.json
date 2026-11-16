@@ -517,6 +517,7 @@
     { "id": "org:마음의_괴도단", "name": "마음의 괴도단", "kind": "단체", "note": "콜라보 인물들의 단체 — 게임 스쿼드 CE009_01(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [99] }] },
     { "id": "org:특별과외활동부", "name": "특별과외활동부", "kind": "단체", "note": "아이기스의 단체(콜라보) — 게임 스쿼드 CE009_03(소속 마크 1단계에서 더함)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [123] }] },
     { "id": "org:정의_괴도단", "name": "정의 괴도단", "kind": "단체", "note": "팬텀이 콜라보 안에서 꾸린 괴도단 — 유키코 · 곰 · 아이기스 · 퀸(마코토)이 함께함(소속 마크 W12d에서 더함, T127)", "evidence": [{ "scene": "fl:persona_on_frontline_23", "lines": [119] }] },
-    { "id": "org:대테러부대", "name": "대테러부대", "kind": "부대", "note": "방주의 대테러 무장 부대 — 머스탱의 요청으로 코인 러시에 출동(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_22", "lines": [95] }] }
+    { "id": "org:대테러부대", "name": "대테러부대", "kind": "부대", "note": "방주의 대테러 무장 부대 — 머스탱의 요청으로 코인 러시에 출동(U01 fl:coin_rush_show_down에서 더함)", "evidence": [{ "scene": "fl:coin_rush_show_down_22", "lines": [95] }] },
+    { "id": "org:올드_테일즈", "name": "올드 테일즈", "kind": "스쿼드", "note": "기록 없는 2세대 페어리 테일 다섯(신데렐라 · 리틀 머메이드 · 그레이브 · 헨젤 · 그레텔)을 버닝엄이 정식 등록한 지휘관 직속 스쿼드(U06 ch50에서 더함)", "evidence": [{ "scene": "d_main_50_af_12", "lines": [23] }] }
   ]
 }

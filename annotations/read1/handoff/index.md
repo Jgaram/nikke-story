@@ -39,8 +39,9 @@
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
 | handoff/facts-34.md | 사실 목록 R98–U03 | 19,147 |
-| handoff/facts-35.md | 사실 목록 U04–P1 | 18,018 |
-| handoff/questions-solved.md | 풀린 의문 109건 | 17,610 |
+| handoff/facts-35.md | 사실 목록 U04–U05 | 12,748 |
+| handoff/facts-36.md | 사실 목록 U06–P1 | 14,821 |
+| handoff/questions-solved.md | 풀린 의문 115건 | 18,462 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
 | handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 19,109 |
@@ -154,3 +155,4 @@
 | handoff/U03.md | 단위 요약 — side:gingerbread_house · char:63 | 8,840 |
 | handoff/U04.md | 단위 요약 — ch49 … ch50 파트 1-3 (3단위) | 10,819 |
 | handoff/U05.md | 단위 요약 — ch50 파트 4-9 | 8,191 |
+| handoff/U06.md | 단위 요약 — ch50 파트 10-15 … relic:하지_말아야_할_일 (3단위) | 13,303 |
