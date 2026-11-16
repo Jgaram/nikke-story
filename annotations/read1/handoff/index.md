@@ -5,7 +5,7 @@
 
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
-| handoff/facts-1.md | 사실 목록 R01 | 11,464 |
+| handoff/facts-1.md | 사실 목록 R01 | 11,532 |
 | handoff/facts-2.md | 사실 목록 R02 | 11,064 |
 | handoff/facts-3.md | 사실 목록 R03 | 10,856 |
 | handoff/facts-4.md | 사실 목록 R04–R05 | 15,609 |
@@ -31,7 +31,7 @@
 | handoff/facts-24.md | 사실 목록 R65–R67 | 18,586 |
 | handoff/facts-25.md | 사실 목록 R68–R71 | 17,302 |
 | handoff/facts-26.md | 사실 목록 R72–R73 | 14,577 |
-| handoff/facts-27.md | 사실 목록 R74–R75 | 19,919 |
+| handoff/facts-27.md | 사실 목록 R74–R75 | 19,944 |
 | handoff/facts-28.md | 사실 목록 R76–R79 | 14,488 |
 | handoff/facts-29.md | 사실 목록 R80–R83 | 19,212 |
 | handoff/facts-30.md | 사실 목록 R84–R88 | 12,887 |
@@ -40,9 +40,10 @@
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
 | handoff/facts-34.md | 사실 목록 R98–U03 | 19,147 |
 | handoff/facts-35.md | 사실 목록 U04–U05 | 12,798 |
-| handoff/facts-36.md | 사실 목록 U06–M41 | 19,990 |
-| handoff/facts-37.md | 사실 목록 M42–P1 | 3,292 |
-| handoff/questions-solved.md | 풀린 의문 119건 | 19,230 |
+| handoff/facts-36.md | 사실 목록 U06–U07 | 17,731 |
+| handoff/facts-37.md | 사실 목록 U08–P1 | 10,007 |
+| handoff/questions-solved-1.md | 풀린 의문 124건 | 19,948 |
+| handoff/questions-solved-2.md | 풀린 의문 124건 | 293 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
 | handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 19,109 |
@@ -158,3 +159,4 @@
 | handoff/U05.md | 단위 요약 — ch50 파트 4-9 | 8,191 |
 | handoff/U06.md | 단위 요약 — ch50 파트 10-15 … relic:하지_말아야_할_일 (3단위) | 13,303 |
 | handoff/U07.md | 단위 요약 — fl:maria-n 파트 1-5 | 12,423 |
+| handoff/U08.md | 단위 요약 — fl:maria-n 파트 6-8 … erelic:fading_affection 파트 1-2 (3단위) | 8,649 |

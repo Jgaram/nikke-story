@@ -1,0 +1,151 @@
+{
+  "_comment": "U08 1회독",
+  "unit": "erelic:maria-n_dialog",
+  "session": "U08",
+  "by": "claude",
+  "date": "2026-11-16",
+  "summary": "MARIA-n 이벤트의 필드 대화 12편. 죽음을 두려워하는 마리아-5, 번호가 헷갈리는 마리아들, 표적판 앞에서 고장 난 마리아-n 같은 실버건 연구소의 짧은 장면(_00–_03)에 더해, 마리안의 NIMPH가 보통 침식을 이겨 박사가 더 큰 침식을 요청하려는 장면(_04), 7호의 고유 파장 · 언체인드 · 부활을 보며 박사가 '인간인가' 묻는 장면(_05)이 있다. 박사 사후 봉쇄된 연구소의 마리아들(_07 · _09), 연구소를 찾아낸 미러가 NIMPH 복사 자료가 없어 헛걸음하는 장면(_08), 미러가 마리안이 퀸 인자를 받고 '왕국 놀이' 속에서 목적을 얻어 각성했으며 리버렐리오를 피해 인자를 숨기도록 진화했다고 짚는 장면(_10), 지휘관이 자기를 기억하길 바라는 마리안의 독백(_11)이 이어진다.",
+  "scenes": [
+    {
+      "scene": "erelic:maria-n_dialog_00",
+      "text": "마리아-5가 죽음을 두려워하며 박사만 생각하자고 다짐한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_01",
+      "text": "마리아-446–449가 누가 누군지 모르겠다며 웃는다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_02",
+      "text": "표적판 앞에 선 마리아-n이 고장 나 처분된다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_03",
+      "text": "마리아-n이 지휘관과의 동행을 꺼리자 박사가 성과가 우선이라 한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_04",
+      "text": "마리안의 NIMPH가 침식을 이겨, 박사가 더 큰 침식을 요청하려 한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_05",
+      "text": "박사가 7호의 파장 · 언체인드 · 부활을 보며 인간인가 묻는다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_06",
+      "text": "박사가 마리안에게 7호의 뭐가 좋냐 묻고 나보다 낫다 한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_07",
+      "text": "봉쇄된 연구소의 마리아들이 열면 안 되는 문을 두고 다툰다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_08",
+      "text": "미러가 실버건 연구소를 찾았지만 NIMPH 복사 자료는 없다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_09",
+      "text": "마리아-n이 다 같이 출구로 — 죽으러 — 가자고 한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_10",
+      "text": "미러가 마리안이 퀸이 된 과정을 짚고 자기만의 퀸으로 만들려 한다"
+    },
+    {
+      "scene": "erelic:maria-n_dialog_11",
+      "text": "마리안이 지휘관이 자기를 기억하길 바라다 그래도 살아 달라 한다"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F3188",
+      "text": "마리안에게 쌓인 NIMPH 용량이 커서 보통의 침식은 체급으로 눌려 먹히지 않았고, 닥터 마리아는 에닉에게 더 큰 용량의 침식을 요청하려 했다",
+      "about": ["person:마리안", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_04", "lines": ["1-16"] }],
+      "reason": "독백(#1-11)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3189",
+      "text": "닥터 마리아에 따르면 7호의 고유 파장은 니케의 능력을 올려 마리안의 전투력이 경험과 별개로 눈에 띄게 올랐고, 7호의 피(언체인드)가 마리안에게 닿으면 기억이 날아간다",
+      "about": ["person:지휘관", "person:마리안", "concept:언체인드"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_05", "lines": ["0-14"] }],
+      "reason": "#9-11",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3190",
+      "text": "미러는 겨우 찾아낸 실버건 연구소에 NIMPH 복사 자료가 하나도 남지 않아 헛걸음했고, 그곳엔 자기가 누구인지 모르는 빈껍데기 유사 인간들만 있었다",
+      "about": ["person:미러", "org:실버건"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_08", "lines": ["0-12"] }],
+      "reason": "'아무것도 안 남았네'(#1-4) · 빈껍데기(#9-11) — CH.50 '그곳에는 아무것도 남아 있지 않았는데'(Q385)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3191",
+      "text": "미러에 따르면 마리안은 헬레틱이 되어 방대한 기억으로 일곱 조율자에게 퀸 인자를 받았지만 목적이 없어 발현되지 않다가, '왕국 놀이'를 하는 이들과 지내며 목적이 생겨 퀸으로 각성했고 리버렐리오의 눈을 피하려 퀸 인자를 뿜지 않게 진화했다 — 미러는 그녀를 자기만의 퀸으로 만들려 했다",
+      "about": ["person:마리안", "person:미러", "concept:퀸_인자", "person:리버렐리오"],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": ["0-15"] }],
+      "reason": "미러 독백(#0-15) — '왕국 놀이'는 라스트 킹덤의 크라운 일행으로 읽는다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "Q6-4",
+      "act": "회수",
+      "answer": "F3189",
+      "degree": "일부",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_05", "lines": ["9-10"] }],
+      "reason": "지휘관(7호)의 고유 파장이 니케 능력을 올린다 — 실전에서 압도적인 까닭의 하나",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q385-2",
+      "act": "회수",
+      "answer": "F3190",
+      "degree": "일부",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_08", "lines": ["0-12"] }],
+      "reason": "'그곳' = 실버건 연구소 — 나유타의 복제 기술 출처는 아직",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "Q189-3",
+      "act": "회수",
+      "answer": "F3191",
+      "degree": "전부",
+      "evidence": [{ "scene": "erelic:maria-n_dialog_10", "lines": ["0-15"] }],
+      "reason": "헬레틱이 마리안의 퀸 인자를 느끼지 못한 것은 리버렐리오를 피해 인자를 뿜지 않게 진화했기 때문 — 가짜가 아니라 퀸",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "times": [
+    {
+      "id": "S409",
+      "kind": "기준점",
+      "text": "MARIA-n 본편과 같은 시기 — 실버건 연구소의 마리아들(필드 대화)",
+      "ref": "fl:maria-n",
+      "at": [["동시", "fl:maria-n"]],
+      "evidence": [{ "scene": "erelic:maria-n_dialog_00", "lines": ["0-12"] }, { "scene": "erelic:maria-n_dialog_05", "lines": ["0-7"] }],
+      "reason": "마리아-5 · 마리아-446 … · 7호 동행 — 본편 시기의 짧은 대화들",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "targets": []
+}

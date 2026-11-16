@@ -1,0 +1,48 @@
+{
+  "_comment": "U08 1회독",
+  "unit": "erelic:fading_affection",
+  "parts": "1-2",
+  "session": "U08",
+  "by": "claude",
+  "date": "2026-11-16",
+  "summary": "'오래된 프로젝트의 기록'을 고르는 탐색형 유실물 — 마리아 · 마리안 · 7호의 기록 세 갈래와 메모리 · 엔딩 회상이 있고, 고른 선택지마다 죽음(DEATH END)과 메모리 저장이 쌓인다(_000–_003). 파트 1–2는 마리아의 기록: 구도심 편의점 창고의 덫과 숨어 죽은 사냥꾼의 해골 · 고양이(_012–_022), 랩쳐 순찰 · 블랙스미스 · 큰 도로, 밤의 외로움과 자살 시도에서 고양이의 온기로 삶의 의미를 찾는 갈래(_035–_044), 호수의 새 · 블랙스미스(_057–_064), 임무 지역 밖으로 달아나는 갈래 — 박사의 목소리에 멈추거나(_066), 운명공동체라는 말에 스스로 쏘거나(TRUE END _083), 자유를 향해 넘어간다(HIDDEN END _084). 끝에 마리안의 기록이 시작되어 7호와 함께 구도심을 다시 가며 선택마다 침식도가 오른다(_085–_101).",
+  "facts": [
+    {
+      "id": "F3192",
+      "text": "FADING AFFECTION의 마리아 기록에서 닥터 마리아는 첫 니케를 '1은 나'라며 마리아-2라 이름 짓고 둘은 운명공동체라 했고, 임무 지역 밖으로 달아나려던 마리아는 박사가 여전히 운명공동체라 하자 배신하려던 기억을 지워 달라며 스스로 머리를 쐈다(TRUE END)",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [{ "scene": "erelic:fading_affection_068", "lines": ["6-12"] }, { "scene": "erelic:fading_affection_083", "lines": ["0-17"] }],
+      "reason": "떠오른 기억(_068 #6-10) · TRUE END(_083) — 분기형 기록의 한 끝이라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3193",
+      "text": "구도심 편의점 창고에서 마리아는 '나는 왜 살고 싶어 하는 거지?'라 바닥에 적고 숨어 죽은 사냥꾼의 해골과 고양이를 만났고, 그 고양이의 온기에서 삶의 의미를 찾았다",
+      "about": ["person:마리아-n"],
+      "evidence": [{ "scene": "erelic:fading_affection_019", "lines": ["3-14"] }, { "scene": "erelic:fading_affection_042", "lines": ["0-17"] }],
+      "reason": "사냥꾼의 글(_019 #8-14) · '이 삶에 의미가 있었어'(_042 #14-15) — 분기형 기록의 한 갈래",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [],
+  "times": [
+    {
+      "id": "S410",
+      "kind": "기준점",
+      "text": "MARIA-n 본편과 같은 시기 — 마리아 · 마리안 · 7호의 탐색 기록",
+      "ref": "fl:maria-n",
+      "at": [["동시", "fl:maria-n"]],
+      "evidence": [{ "scene": "erelic:fading_affection_000", "lines": ["0-8"] }],
+      "reason": "'오래된 프로젝트의 기록'(#0) — 마리아 · 마리안 · 7호의 기록",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-16", "session": "U08", "note": "U08 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "targets": []
+}
