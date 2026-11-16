@@ -199,7 +199,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 198,sub:할아범_01,서브퀘스트,3,4,2,1,2,6,,,,0,1,ch45,person:할아범 org:중앙_정부 person:아니스 place:방주,할아범 · 할아범 2
 199,relic:에닉탄핵포스터,유실물,2,3,3,0,1,4,,,,0,1,ch25,person:에닉 place:방주,에닉 탄핵 포스터
 200,event_overzone,이벤트,17,23,37,1,25,21,,,,4,9,ch07 ch19 ch20 ch21 ch39 ch46 ch48,person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 person:릴리바이스,OVER ZONE
-201,erelic:white_memory,유실물,3,11,13,1,8,8,,,,0,0,,person:릴리스 person:라푼젤 person:레드_후드 person:스노우_화이트 concept:랩쳐,WHITE MEMORY
+201,erelic:white_memory,유실물,3,11,13,1,8,8,,,,0,0,,person:릴리스 person:라푼젤 person:레드_후드 person:스노우_화이트 concept:랩쳐 place:방주,WHITE MEMORY
 202,char:233,호감도,3,8,8,0,3,9,,,,0,0,,person:피나 incident:아크_가디언_작전 person:노아 place:에덴 org:갓데스 person:도로시,도로시
 203,char:392,호감도,0,6,6,0,4,3,,,,0,0,,person:라이 person:아인 place:미미르_부속_고등학교,라이
 204,event_BunnyX777,이벤트,1,3,4,0,2,4,,,,0,0,,org:777 person:루주 person:블랑 person:누아르 place:코인_러시,Bunny x 777
@@ -410,7 +410,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 409,char:842,호감도,1,3,4,0,1,4,,,,0,0,,org:엄브렐러 person:클레어 place:라쿤_시티 person:키리 place:아우터_림,클레어
 410,char:841,호감도,5,2,6,0,1,6,,,,1,0,ch21,person:질 concept:NEO_바이러스 place:라쿤_시티 org:구원의_성화 person:미란다 concept:랩쳐,질
 411,side:eden_spear,사이드,23,9,28,1,20,19,,,,15,2,ch20 ch21 ch22 ch24 ch25 ch26 ch32 ch39 ch40 ch44 ch46,item:아틀라스_케이지 item:에덴의_창 concept:릴리스의_바디 org:인헤르트 org:파이오니아 person:나유타,EDEN SPEAR
-412,fl:go_ninja_thief,이벤트,9,2,11,1,4,9,,,,0,0,,org:정의_괴도단 person:델타 person:키리 person:퀀시 person:미란다 person:팬텀,GO! NINJA THIEF!
+412,event_goninjathief,이벤트,9,2,11,1,4,9,,,,0,0,,org:정의_괴도단 person:델타 person:키리 person:퀀시 person:미란다 person:팬텀,GO! NINJA THIEF!
 413,char:23,호감도,2,3,3,0,0,5,,,고립,0,0,,person:델타 person:퀀시 person:미란다 person:팬텀 place:방주,델타 : 닌자 시프
 414,ch41,메인,21,14,33,2,24,22,,,,,,,person:#000000 person:로지 person:트리키_보이 concept:스마일_박스 concept:용광로 place:유사_방주,CHAPTER.41 탄생
 415,relic:거꾸로적힌기록,유실물,1,1,2,0,1,2,,,,2,0,ch41,person:바하무트 person:레비아탄,거꾸로 적힌 기록
@@ -426,7 +426,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 425,fl:terminus_ticket,이벤트,10,4,12,1,4,12,,,,0,0,,person:루시안 person:노라 incident:AFX_열차_테러 person:율리아 org:인피니티_레일 person:브리드,TERMINUS TICKET
 426,char:75,호감도,1,0,1,0,0,1,,,고립,0,0,,person:디젤 person:솔린,디젤 : 윈터 스위츠
 427,char:73,호감도,1,0,1,0,0,1,,,고립,0,0,,person:브리드,브리드 : 사일런트 트랙
-428,fl:ark_guardian,이벤트,30,12,41,1,25,27,,,,10,16,ch04 ch17 ch18 ch19 ch25 ch26 ch35 ch43 ch44 ch45 ch46 ch48,concept:머신_메사이어 concept:스톰_브링어 person:프리시아 place:리페어_센터 place:승리의_날개_호 incident:아크_가디언_작전,ARK GUARDIAN
+428,event_arkguardian1,이벤트,30,12,41,1,25,27,,,,10,16,ch04 ch17 ch18 ch19 ch25 ch26 ch35 ch43 ch44 ch45 ch46 ch48,concept:머신_메사이어 concept:스톰_브링어 person:프리시아 place:리페어_센터 place:승리의_날개_호 incident:아크_가디언_작전,ARK GUARDIAN
 429,char:471,호감도,3,2,5,0,2,3,,,,0,0,,concept:사고_전환 person:릴리바이스 person:스노우_화이트 org:갓데스 concept:랩쳐,스노우 화이트 : 헤비암즈
 430,fl:sin_editor,이벤트,13,7,20,0,8,13,,,,1,1,ch03 ch45,person:레이블 org:베스트셀러 org:자원_채집_부대 person:아르카나 person:팬텀 concept:기억_소거,SIN EDITOR
 431,char:582,호감도,1,2,2,0,0,3,,,고립,0,0,,person:레이블 place:방주,레이블

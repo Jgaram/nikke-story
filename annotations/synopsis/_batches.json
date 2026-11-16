@@ -190,7 +190,7 @@
         "fl:coins_in_rush",
         "fl:reborn_evil",
         "side:eden_spear",
-        "fl:go_ninja_thief",
+        "event_goninjathief",
         "event_goddessfall1"
       ]
     },
@@ -205,7 +205,7 @@
         "erelic:goddess_fall_mini",
         "fl:blank_ticket",
         "fl:terminus_ticket",
-        "fl:ark_guardian",
+        "event_arkguardian1",
         "fl:sin_editor",
         "fl:fatal_maid",
         "fl:lie_cause_recoil",

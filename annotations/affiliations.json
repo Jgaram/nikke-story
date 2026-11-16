@@ -1969,7 +1969,7 @@
       "act": "지난 소속",
       "role": "지휘관",
       "records": ["F2373"],
-      "evidence": [{ "scene": "fl:ark_guardian_26", "lines": ["23-26"] }, { "scene": "d_main_43_11", "lines": ["85-86"] }],
+      "evidence": [{ "scene": "event_arkguardian2_06_e", "lines": ["23-26"] }, { "scene": "d_main_43_11", "lines": ["85-86"] }],
       "reason": "릴리바이스가 갓데스의 지휘관을 '엔더슨!!'이라 부르고 이름표가 엔더슨이 된다(ark_guardian_26 #25-26), 프린세스가 '엔더슨…! 갓데스의 지휘관…!'(43_11 #86) — 지금은 중앙 정부 부사령관(T16)",
       "confidence": "확실",
       "status": "확정",

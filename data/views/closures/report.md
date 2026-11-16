@@ -152,9 +152,9 @@
 | O174 | 관계 | 확정 | `char:143` | char:141 · fl:coins_in_rush | 106 |  |  | 함께 의뢰를 뛰는 '형씨'에게 고백해 곁에 붙은 밀크가, 이상형에 못 미칠까 남을 연기하다 '밀크라서' 다 좋다는 말에 귀찮은 자기 그대로 다가간다 |
 | O175 | 성장 | 기각 | `char:143` | char:11 · char:141 | 106 |  |  | (초안) 성장 person:밀크 성격의 끝 |
 | O177 | 관계 | 확정 | `fl:reborn_evil` | event_ltk · char:40 · event_killthelord · char:43 | 90 |  |  | 위장 신혼부부로 잠입하고 암살 타겟으로 며칠을 지켜본 지휘관을 '선한 길'로 믿게 된 D가, 함께해 준 데 고마워하다 REBORN EVIL에서 정체를 숨기고 죽어도 상관없다 — 이젠 기억해 줄 사람이 있다고 한다 |
-| O178 | 연작 | 기각 | `fl:go_ninja_thief` | event_phantomthiefvsdetective | 39 |  |  | (초안) 연작 event_phantomthiefvsdetective → fl:go_ninja_thief의 결판 |
+| O178 | 연작 | 기각 | `event_goninjathief` | event_phantomthiefvsdetective | 39 |  |  | (초안) 연작 event_phantomthiefvsdetective → event_goninjathief의 결판 |
 | O179 | 관계 | 확정 | `char:23` | char:20 | 109 |  |  | 깍듯한 부하에서 '완벽한 콤비'가 된 델타가 '존경하는 상관'에게 배운 로맨스대로 조심스레 다가가다, 호감도에서 24시간 감시를 자청해 한 침대에 눕는다 |
-| O180 | 성장 | 기각 | `fl:go_ninja_thief` | char:20 | 109 |  |  | (초안) 성장 person:델타 신념의 끝 |
+| O180 | 성장 | 기각 | `event_goninjathief` | char:20 | 109 |  |  | (초안) 성장 person:델타 신념의 끝 |
 | O36 | 관계 | 기각 | `ch41` | ch32 · ch33 · ch34 · ch35 | 46 | ○ |  | (초안) 관계 person:레비아탄 ↔ person:베히모스의 끝 |
 | O38 | 관계 | 확정 | `event_goddessfall1` | event_lastkingdom1 | 55 | ○ | H5 | 왕국의 칭찬이 탈로스 몫이라 질투하던 킬로가 사과하고 서로 포기하지 않기로 한 뒤, 탈로스가 '사랑합니다, 킬로'라 말하는 사이로 자리 잡는다 |
 | O39 | 관계 | 확정 | `event_goddessfall1` | side:eden_spear | 2 | ○ | H5 | 머리가 터져도 돌아오는 나유타를 꺼리고 '쓰레기 같은 놈'이라던 요한이, 그녀를 '전우'라 부르며 승리를 책임지라고 언체인드 탄환을 맡긴다 |
@@ -183,14 +183,14 @@
 | O189 | 성장 | 확정 | `fl:terminus_ticket` | fl:blank_ticket | 1 |  | H23 | 방주에 갇힌 운명을 벌로 여기며 순응하던 노라가, 바늘구멍만 한 가능성이라도 기다리겠다며 살아갈 이유를 얻고, TERMINUS TICKET에서 절벽에서 내리려다 집으로 갈 수 있다는 말에 조금만 더 살아 보기로 해 끝내 집에 닿는다 |
 | O190 | 성장 | 확정 | `fl:terminus_ticket` | char:70 | 114 |  | H23 | 일이 무엇보다 중요해 일탈을 버리려던 기관사 브리드가, 좋아하는 사람이 더해진 행복을 알고 가끔의 일탈을 삶에 둔 뒤, TERMINUS TICKET에서 승객이 원하면 어디든 모시는 것이 기관사라며 선로를 벗어나 노라의 집으로 달린다 |
 | O191 | 관계 | 확정 | `char:73` | char:70 | 115 |  |  | 메신저로 하라던 사무적인 담당 니케 브리드가 커피 자판기 투어 끝에 지휘관을 '자기의 일탈'이라 부르는 연인이 되고, 호감도에서 함께한 시간이 쌓여 그가 자기 '일상'이 되었다고 한다 |
-| O56 | 관계 | 확정 | `fl:ark_guardian` | event_redash · erelic:red_ash_lost | 78 | ○ |  | 명령을 무시하는 지휘관을 믿던 릴리바이스와 '죽지 마라'며 서로 살아남기로 한 엔더슨이, 아크 가디언 작전에서 '사랑한다'를 주고받으며 헤어진다 |
+| O56 | 관계 | 확정 | `event_arkguardian1` | event_redash · erelic:red_ash_lost | 78 | ○ |  | 명령을 무시하는 지휘관을 믿던 릴리바이스와 '죽지 마라'며 서로 살아남기로 한 엔더슨이, 아크 가디언 작전에서 '사랑한다'를 주고받으며 헤어진다 |
 | O192 | 관계 | 확정 | `char:471` | erelic:white_memory · char:224 | 98 |  |  | 빛나는 우상이던 언니 릴리바이스에게 처음 '언니'라 부르며 무기가 되겠다 약속했던 스노우 화이트가, 짐이었고 마지막도 지키지 못했다는 자책 끝에 관 속 언니의 얼굴을 떠올려 언니가 동생들을 믿고 소원을 맡겼다고 받아들인다 |
 | O193 | 관계 | 기각 | `char:582` | fl:sin_editor | 0 |  |  | (초안) 관계 person:레이블 ↔ person:지휘관의 끝 |
 | O194 | 관계 | 확정 | `char:316` | fl:coins_in_rush · fl:fatal_maid | 14 |  |  | 방주에서 제일 잘 나가는 지휘관과 '끈'을 원해 메이드로 눌러앉은 괴도 벨벳이, FATAL MAID에서 '주인님만의 메이드'로 남겠다며 진심의 초콜릿을 내밀고, 호감도에서 쓸모와 상관없이 곁에 있어 달라는 말에 오래오래 옆에 있고 싶다고 한다 |
 | O54 | 관계 | 기각 | `ch44` | ch43 | 1 | ○ |  | (초안) 관계 person:네온 ↔ person:지엔의 끝 |
 | O55 | 관계 | 확정 | `ch44` | event_redash · char:470 | 83 | ○ | H8 | 레드 후드를 '버리고 간 사람'이라 미워하다 사과하고 보내 준 스노우 화이트가, 영상 속 레드 후드의 얼굴을 쓰다듬으며 '봤으면 좋았을 텐데' 그리워한다 |
 | O57 | 관계 | 확정 | `ch44` | ch06 · ch07 · char:220 · ch17 · char:471 | 131 | ○ | H8 | 본 것을 잊으라던 낯선 구원자 스노우 화이트가 빚을 갚고 선을 긋던 끝에, '함께 싸우는 동료'인 지휘관에게 언니 이야기를 털어놓고 도움을 청하며 그를 '인류의 희망'이라 부른다 |
-| O58 | 성장 | 확정 | `ch44` | ch06 · erelic:white_memory · char:224 · fl:ark_guardian · char:471 | 131 | ○ | H8 | 퀸을 쫓던 긍지가 언니의 소원과 분노로 바뀌었던 스노우 화이트가, 살아남은 자기가 언니의 소원을 이뤄야 한다며 은퇴를 미루고 방주의 힘을 빌리기로 한다 |
+| O58 | 성장 | 확정 | `ch44` | ch06 · erelic:white_memory · char:224 · event_arkguardian1 · char:471 | 131 | ○ | H8 | 퀸을 쫓던 긍지가 언니의 소원과 분노로 바뀌었던 스노우 화이트가, 살아남은 자기가 언니의 소원을 이뤄야 한다며 은퇴를 미루고 방주의 힘을 빌리기로 한다 |
 | O195 | 갈등 | 기각 | `ch44` | event_dirtybackyard | 76 |  |  | (초안) 관계 person:목단 ↔ person:슈가의 끝 |
 | O59 | 관계 | 기각 | `fl:enter_heaven` | ch24 | 96 | ○ |  | (초안) 관계 person:E.H. ↔ person:크로우의 끝 |
 | O60 | 관계 | 확정 | `fl:enter_heaven` | ch16 · event_doutsiders · char:112 · ch24 | 123 | ○ |  | '목줄을 쥔 사람'이라 지휘관을 믿어 주던 바이퍼가 공범자 · 데이트로 엇갈린 끝에 반했음을 깨닫고 자수하고, 다시는 배신하지 않겠다 맹세하며 그를 구하러 온다 |
@@ -201,7 +201,7 @@
 | O202 | 성장 | 기각 | `fl:2x2_love_2ch` | event_arcanearchive · fl:2x2_love_1ch | 30 |  |  | (초안) 성장 person:아르카나 성격의 끝 |
 | O203 | 성장 | 기각 | `fl:2x2_love_2ch` | fl:2x2_love_1ch | 0 |  |  | (초안) 성장 person:에이미 신념의 끝 |
 | O205 | 성장 | 확정 | `char:583` | char:581 · fl:2x2_love_1ch | 30 |  | H24 | 남들의 절반뿐인 시간을 아끼려 쫓기듯 살던 아르카나가, 좋은 사람과 시간을 그냥 써 보고 싶어 하고 학생답게 지내 본 뒤, 호감도에서 하고 싶던 것을 찾아 보육교사 자격증을 따 어린이집 봉사로 그 시간을 의미 있게 쓴다 |
-| O62 | 성장 | 확정 | `side:pretty_star` | fl:ark_guardian | 9 | ○ |  | 상부 명령이면 지저분한 일도 하던 헬하운드 오스왈드가 갓데스를 우상으로 남길 [계획]과 방관을 거쳐, 세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다는 데 이른다 |
+| O62 | 성장 | 확정 | `side:pretty_star` | event_arkguardian1 | 9 | ○ |  | 상부 명령이면 지저분한 일도 하던 헬하운드 오스왈드가 갓데스를 우상으로 남길 [계획]과 방관을 거쳐, 세상이 거부해도 갓데스를 기록으로 남겨 잊히지 않게 하겠다는 데 이른다 |
 | O204 | 관계 | 확정 | `char:620` | fl:good_world | 0 |  |  | TV로 알아본 '그 어렸던 아이'를 쓰다듬던 백학이, GOOD WORLD에서 속셈을 털어놓은 지휘관을 좋은 사람이라 믿고 그 세계를 곁에서 지켜보기로 한 뒤, 호감도에서 아이처럼 챙겨도 된다는 허락을 받아 핑계를 만들어 찾아온다 |
 | O63 | 갈등 | 확정 | `ch45` | ch29 · ch30 · ch44 | 71 | ○ |  | 운반책 일을 숨기던 리버린과 같이 죽자며 총을 쏘던 프레자일이, 벌을 받으라 한 뒤에도 또 죄를 쥔 리버린을 말없이 쏘아 상자에 가두고 소리 없이 오열한다 |
 | O64 | 성장 | 확정 | `ch45` | ch22 · ch24 · ch41 · ch44 · fl:enter_heaven · char:113 | 107 | ○ |  | 앉아서 죽기보다 무기를 들겠다던 E.H.가 속죄로 니케가 되어 평생 사과하며 살겠다던 끝에, 에닉의 인정에 울며 한 걸음 나아갔다 하고 용서받을 때까지 아우터 림을 빛으로 이끌겠다는 데 이른다 |
@@ -251,9 +251,9 @@
 | O99 | 성장 | 확정 | `ch47` | ch22 · ch25 · ch45 | 117 | ○ |  | 인간만 쉘터로 지키고 아우터 림은 방주가 아니라던 에닉이, 자체 판단으로 방주를 운용하고 아우터 림의 협조를 인정한 끝에 그 사람들까지 쉘터로 지키기로 한다 |
 | O100 | 성장 | 기각 | `ch47` | ch42 · ch46 | 25 | ○ |  | (초안) 성장 person:온리_원 성격의 끝 |
 | O101 | 관계 | 확정 | `ch48` | ch46 · ch47 | 10 | ○ | H12 | 살아 있던 옛 '지휘관' 엔더슨에게 울음을 터뜨린 도로시가 감방에서 끌려 나와 선봉을 맡은 끝에, 침식된 채 '믿을게요, 꼭 되돌려 주세요'라며 총을 버리고 '예, 지휘관'이라 한다 |
-| O102 | 관계 | 확정 | `ch48` | fl:ark_guardian | 21 | ○ | H12 | 실의에 빠진 아이로 여겨지던 스노우 화이트가 뇌만 남은 홍련을 살릴 수단을 찾던 끝에, 돌아온 홍련 · 라푼젤에게 '일찍일찍 좀 다녀라' 하고 '잘 돌아와 줘서 고맙다'고 한다 |
+| O102 | 관계 | 확정 | `ch48` | event_arkguardian1 | 21 | ○ | H12 | 실의에 빠진 아이로 여겨지던 스노우 화이트가 뇌만 남은 홍련을 살릴 수단을 찾던 끝에, 돌아온 홍련 · 라푼젤에게 '일찍일찍 좀 다녀라' 하고 '잘 돌아와 줘서 고맙다'고 한다 |
 | O103 | 관계 | 확정 | `ch48` | event_newyearnewsword · event_goddessfall1 | 95 | ○ | H12 | 100년 전 동생을 지키려 인류의 적이 되어 홍련의 검에 죽은 장화와 그 언니를 그리워하던 홍련이, 꿈속에서 등을 맞대 함께 벤 뒤 장화가 '행복하게 살아'라는 마지막 주박을 남긴다 |
-| O104 | 성장 | 확정 | `ch48` | ch19 · event_overzone · char:233 · fl:ark_guardian · ch45 · ch46 | 129 | ○ | H12 | 배신한 방주를 빼앗겠다던 도로시가 사과와 경의에 복수심이 무너져 선봉을 맡은 끝에, 침식되자 '용서할 수 있어서 다행'이라 하는 데 이른다 |
+| O104 | 성장 | 확정 | `ch48` | ch19 · event_overzone · char:233 · event_arkguardian1 · ch45 · ch46 | 129 | ○ | H12 | 배신한 방주를 빼앗겠다던 도로시가 사과와 경의에 복수심이 무너져 선봉을 맡은 끝에, 침식되자 '용서할 수 있어서 다행'이라 하는 데 이른다 |
 | O105 | 성장 | 기각 | `ch48` | char:221 · event_overzone · char:226 | 137 | ○ |  | (초안) 성장 person:라푼젤 신념의 끝 |
 | O106 | 성장 | 확정 | `ch48` | ch14 · side:second_affection · event_goddessfall1 · ch47 | 139 | ○ | H12 | 쓰러진 랩쳐조차 불쌍하다던 마리안이 모두를 지키겠다는 데서 퀸으로 사랑의 세계를 만들려다 '잘 안됐다'며 길을 잃은 끝에, 누구도 죽지 않고 사랑하고 사랑받는 세계를 만들겠다고 '이제 완전히 안다' |
 | O107 | 성장 | 확정 | `ch48` | ch47 | 1 | ○ | H12 | 퀸이 될 수 있는 자기는 뭔가 해야 한다며 언니들을 위해 퀸이 되려던 온리 원이 '퀸 정말 하기 싫어'라며 마리안에게 맡기고 안겨 사랑받으며 살기로 한다 |
@@ -354,7 +354,7 @@
 - `char:143` — 긴 회수 0 · 복선의 답 1: F2124(← E857@fl:coins_in_rush)
 - `char:840` — 긴 회수 1: Q108(sub:데이파라_00, 98칸 뒤 Q108-4) · 복선의 답 0
 - `fl:reborn_evil` — 긴 회수 0 · 복선의 답 2: F2134(← E182@sub:2호_쉘터_관리계정_00) · F2142(← E741@event_lordforjustice)
-- `fl:go_ninja_thief` — 긴 회수 0 · 복선의 답 1: F2176(← E1392@event_phantomthiefvsdetective E729@event_arcanearchive)
+- `event_goninjathief` — 긴 회수 0 · 복선의 답 1: F2176(← E1392@event_phantomthiefvsdetective E729@event_arcanearchive)
 - `side:eden_spear` (척추) — 긴 회수 0 · 복선의 답 2: F2163(← E1302@char:261) · F2166(← E148@ch20)
 - `ch41` (척추) — 긴 회수 0 · 복선의 답 7: F2180(← E453@ch32) · F2181(← E440@ch31) · F2184(← E509@ch34 E671@ch38 외 1) · F2185(← E820@ch40) · F2204(← E568@event_footstepwalkrun1 E581@event_wisdomspring) · F2205(← E337@ch28 E826@ch40) · F2209(← E381@ch30)
 - `ch42` (척추) — 긴 회수 0 · 복선의 답 6: F2214(← E10@ch02 E656@relic:주워갈것들메모) · F2218(← E510@ch34) · F2240(← E807@ch39 E809@ch39 외 1) · F2242(← E481@ch33) · F2246(← E813@relic:정갈하게쓴기록) · F2249(← E511@ch34 E618@ch36)
@@ -362,16 +362,16 @@
 - `event_goddessfall1` (척추) — 긴 회수 1: Q132(erelic:white_memory, 92칸 뒤 Q132-3) · 복선의 답 8: F2260(← E815@ch40) · F2268(← E1301@char:261) · F2271(← E412@event_lastkingdom1) · F2277(← E366@side:second_affection) · F2290(← E361@side:second_affection) · F2297(← E1286@char:222) · F2300(← E413@event_lastkingdom1) · F2307(← E398@event_lastkingdom1)
 - `relic:주의용광로사용법` — 긴 회수 1: Q199(ch31·척추, 48칸 뒤 Q199-2) · 복선의 답 0
 - `fl:terminus_ticket` — 긴 회수 0 · 복선의 답 4: F2353(← E1447@fl:blank_ticket) · F2354(← E1443@fl:blank_ticket) · F2355(← E93@sub:철도로GO_00) · F2356(← E1448@fl:blank_ticket)
-- `fl:ark_guardian` (척추) — 긴 회수 4: Q83(char:221, 116칸 뒤 Q83-3) · Q104(ch19·척추, 108칸 뒤 Q104-2) · Q131(erelic:white_memory, 97칸 뒤 Q131-2) · Q159(erelic:red_ash_lost, 78칸 뒤 Q159-2) · 복선의 답 6: F2358(← E293@event_redash E297@event_redash) · F2364(← E119@ch17) · F2368(← E1309@char:233) · F2369(← E778@event_overthehorizon) · F2373(← E26@ch04 E1256@char:72 외 6) · F2375(← E123@ch17 E198@event_overzone)
+- `event_arkguardian1` (척추) — 긴 회수 4: Q83(char:221, 116칸 뒤 Q83-3) · Q104(ch19·척추, 108칸 뒤 Q104-2) · Q131(erelic:white_memory, 97칸 뒤 Q131-2) · Q159(erelic:red_ash_lost, 78칸 뒤 Q159-2) · 복선의 답 6: F2358(← E293@event_redash E297@event_redash) · F2364(← E119@ch17) · F2368(← E1309@char:233) · F2369(← E778@event_overthehorizon) · F2373(← E26@ch04 E1256@char:72 외 6) · F2375(← E123@ch17 E198@event_overzone)
 - `fl:sin_editor` — 긴 회수 0 · 복선의 답 1: F2383(← E722@event_arcanearchive)
 - `fl:fatal_maid` — 긴 회수 0 · 복선의 답 1: F2389(← E862@fl:coins_in_rush E867@fl:coins_in_rush)
-- `ch43` (척추) — 긴 회수 1: Q165(ch27·척추, 72칸 뒤 Q165-3) · 복선의 답 6: F2399(← E805@ch39 E825@ch40) · F2403(← E986@fl:ark_guardian) · F2409(← E1592@char:11) · F2410(← E103@relic:종말의서 E984@fl:ark_guardian) · F2412(← E581@event_wisdomspring) · F2893(← E1593@char:11)
+- `ch43` (척추) — 긴 회수 1: Q165(ch27·척추, 72칸 뒤 Q165-3) · 복선의 답 6: F2399(← E805@ch39 E825@ch40) · F2403(← E986@event_arkguardian1) · F2409(← E1592@char:11) · F2410(← E103@relic:종말의서 E984@event_arkguardian1) · F2412(← E581@event_wisdomspring) · F2893(← E1593@char:11)
 - `ch44` (척추) — 긴 회수 2: Q141(ch23·척추, 95칸 뒤 Q141-5) · Q206(sub:관짝이_02, 57칸 뒤 Q206-3) · 복선의 답 8: F2429(← E464@sub:관짝이_02) · F2430(← E296@event_redash E300@event_redash 외 1) · F2435(← E891@side:eden_spear E929@ch42) · F2443(← E380@ch30) · F2449(← E226@ch23) · F2450(← E319@event_dirtybackyard) · F2451(← E377@ch29) · F2461(← E1009@ch43 E1017@ch43)
 - `fl:lie_cause_recoil` — 긴 회수 0 · 복선의 답 1: F2479(← E126@sub:제니퍼f_00)
 - `fl:enter_heaven` — 긴 회수 1: Q125(ch22·척추, 104칸 뒤 Q125-4) · 복선의 답 3: F2489(← E602@ch35) · F2490(← E240@ch24) · F2499(← E110@ch16)
 - `side:pretty_star` (척추) — 긴 회수 1: Q247(event_arcanearchive, 31칸 뒤 Q247-2) · 복선의 답 5: F2543(← E295@event_redash) · F2546(← E479@ch33) · F2552(← E480@ch33) · F2556(← E1276@char:12 E479@ch33 외 1) · F2558(← E1602@char:800 E205@erelic:white_memory 외 3)
 - `ch45` (척추) — 긴 회수 0 · 복선의 답 7: F2576(← E925@ch42) · F2581(← E348@event_boomsday E419@event_darkhero 외 1) · F2596(← E738@event_lordforjustice) · F2599(← E1051@side:pretty_star) · F2604(← E383@ch30) · F2606(← E425@event_beautyfullshot1 E793@fl:boom_the_ghost) · F2609(← E650@ch37)
-- `ch46` (척추) — 긴 회수 2: Q248(event_arcanearchive, 33칸 뒤 Q248-3) · Q261(fl:boom_the_ghost, 28칸 뒤 Q261-2) · 복선의 답 12: F2619(← E315@event_newyearnewsword) · F2624(← E621@ch36 E662@ch38) · F2633(← E1624@char:223) · F2642(← E794@fl:boom_the_ghost E795@fl:boom_the_ghost 외 1) · F2643(← E177@ch22 E204@event_overzone 외 4) · F2646(← E1034@ch44) · F2649(← E58@ch07 E201@event_overzone 외 1) · F2651(← E193@event_overzone E1066@side:pretty_star) · F2654(← E27@ch04 E985@fl:ark_guardian 외 1) · F2657(← E352@event_boomsday E425@event_beautyfullshot1 외 1) · F2660(← E1077@fl:good_world) · F2663(← E930@ch42 E1018@ch44)
+- `ch46` (척추) — 긴 회수 2: Q248(event_arcanearchive, 33칸 뒤 Q248-3) · Q261(fl:boom_the_ghost, 28칸 뒤 Q261-2) · 복선의 답 12: F2619(← E315@event_newyearnewsword) · F2624(← E621@ch36 E662@ch38) · F2633(← E1624@char:223) · F2642(← E794@fl:boom_the_ghost E795@fl:boom_the_ghost 외 1) · F2643(← E177@ch22 E204@event_overzone 외 4) · F2646(← E1034@ch44) · F2649(← E58@ch07 E201@event_overzone 외 1) · F2651(← E193@event_overzone E1066@side:pretty_star) · F2654(← E27@ch04 E985@event_arkguardian1 외 1) · F2657(← E352@event_boomsday E425@event_beautyfullshot1 외 1) · F2660(← E1077@fl:good_world) · F2663(← E930@ch42 E1018@ch44)
 - `event_staranis1` (척추) — 긴 회수 3: Q19(ch04·척추, 139칸 뒤 Q19-4) · Q43(ch08·척추, 135칸 뒤 Q43-4) · Q269(ch39·척추, 26칸 뒤 Q269-3) · 복선의 답 9: F2674(← E1054@side:pretty_star) · F2679(← E1062@side:pretty_star) · F2690(← E61@sub:러블리_드림_00 E901@ch41) · F2694(← E1050@side:pretty_star) · F2698(← E630@ch36 E900@ch41) · F2700(← E1058@side:pretty_star) · F2701(← E898@ch41 E1049@side:pretty_star) · F2705(← E503@ch34 E576@event_footstepwalkrun1 외 6) · F2708(← E666@ch38)
 - `fl:bitter_spice` — 긴 회수 0 · 복선의 답 2: F2721(← E1530@fl:b-side_idol) · F2723(← E1532@fl:b-side_idol)
 - `fl:ark_ranger` — 긴 회수 0 · 복선의 답 2: F2734(← E1283@char:230) · F2742(← E776@event_overthehorizon)

@@ -1012,7 +1012,7 @@
       "session": "X1c-1"
     },
     {
-      "unit": "fl:go_ninja_thief",
+      "unit": "event_goninjathief",
       "at": [],
       "reason": "더 좁힐 단서 없음 — ARCANE ARCHIVE 뒤에서 더 좁힐 것이 없다",
       "confidence": "추정",
@@ -2154,7 +2154,7 @@
       "at": [
         [
           "전",
-          "fl:ark_guardian"
+          "event_arkguardian1"
         ]
       ],
       "basis": [
@@ -2162,7 +2162,7 @@
         "D72",
         "D973"
       ],
-      "reason": "스노우 화이트가 지상에는 정비받을 곳이 없다며 랩쳐 부품으로 몸을 고친다(몸의 3할) — 수십 년 정비 없이 버틴 몸(D72)을 세실이 고친 것은 event_goddessfall1 뒤 2주, fl:ark_guardian 첫 장면 전이다(D973 · S287). 고치기 전 모습으로 본다",
+      "reason": "스노우 화이트가 지상에는 정비받을 곳이 없다며 랩쳐 부품으로 몸을 고친다(몸의 3할) — 수십 년 정비 없이 버틴 몸(D72)을 세실이 고친 것은 event_goddessfall1 뒤 2주, event_arkguardian1 첫 장면 전이다(D973 · S287). 고치기 전 모습으로 본다",
       "confidence": "추정",
       "session": "X1c-2b"
     },
@@ -2566,7 +2566,7 @@
     {
       "unit": "char:471",
       "at": [],
-      "reason": "새 무장 · 기억을 되찾은 스노우 화이트 — 언니에 대한 기억은 event_goddessfall1에서 되찾은 것이라(D953) CH.44의 모든 기억 회복(D1038) 뒤라 할 수 없다. fl:ark_guardian 뒤 말고 단서가 없다",
+      "reason": "새 무장 · 기억을 되찾은 스노우 화이트 — 언니에 대한 기억은 event_goddessfall1에서 되찾은 것이라(D953) CH.44의 모든 기억 회복(D1038) 뒤라 할 수 없다. event_arkguardian1 뒤 말고 단서가 없다",
       "confidence": "추정",
       "session": "X1c-2b"
     },

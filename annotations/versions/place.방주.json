@@ -46,7 +46,7 @@
     {
       "at": "ch46",
       "text": "인류가 사는 지하 도시. 동력원 출력이 떨어져 꺼져 가는 가운데, 처음부터 지상으로 올릴 수 있게 셈해 만들어졌다는 것이 드러났다.",
-      "src": "c8ab28d3b9",
+      "src": "4418df70ee",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -60,7 +60,15 @@
           "hash": "b02b54f496",
           "note": "ch00은 원문(d_main_01_01_s 연락 두절)만 — 본거지로만, ch02는 F23 방호벽 · U4 인공 하늘 · U10 에너지로 무엇인지 드러남, ch46은 F2606/F2656 동력원 · F2659(d_main_46_af_08#90) 지상으로 올릴 수 있게 만들어짐 — 기원이 바뀜. ch14 에닉 내통은 에닉 · 토커티브 항목 몫이라 판을 안 둠"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "efef24bf07", "note": "W17 ① 근거(refs) 시험" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "efef24bf07", "note": "W17 ① 근거(refs) 시험" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "6b7332255f",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        }
       ],
       "refs": ["F2656", "F2659"]
     }

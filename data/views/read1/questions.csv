@@ -81,7 +81,7 @@ Q79,char:232,88,ep:d_nikke_noah_02,일부,Q79-2:일부,ch19,F745,71,,확정,지�
 Q80,char:232,88,ep:d_nikke_noah_05,일부,Q80-2:일부,erelic:goddess_fall_mini,F2330,331,,확정,어린 노아는 왜 연구원 · 다른 니케들과 떨어져 지상에 홀로 버려졌나?
 Q81,char:202,91,ep:d_nikke_dolla_03,열림,,,,,,확정,미실리스 관계자는 왜 도라에게 사람 신체 50구를 급히 주문했나?
 Q82,char:221,94,ep:d_nikke_rapunzel_04,일부,Q82-2:일부 Q82-3:일부,ch25 event_footstepwalkrun1,F1109 F1763,256,,확정,갓데스 스쿼드의 레드 후드와 라피 안의 '레드 후드'(시크릿 바디)는 어떤 관계인가?
-Q83,char:221,94,ep:d_nikke_rapunzel_04,풀림,Q83-2:일부 Q83-3:전부,ch17 fl:ark_guardian,F683 F2373,334,,확정,"갓데스 스쿼드의 지휘관은 누구이고, 방주로 피난한 뒤 어떻게 되었나?"
+Q83,char:221,94,ep:d_nikke_rapunzel_04,풀림,Q83-2:일부 Q83-3:전부,ch17 event_arkguardian1,F683 F2373,334,,확정,"갓데스 스쿼드의 지휘관은 누구이고, 방주로 피난한 뒤 어떻게 되었나?"
 Q84,char:221,94,ep:d_nikke_rapunzel_04,풀림,Q84-2:일부 Q84-3:전부,ch17 event_overzone,F681 F907,106,,확정,갓데스 스쿼드의 리더 릴리스와 도로시는 지금 어떻게 되었나?
 Q85,char:130,100,ep:d_nikke_mary_03,일부,Q85-2:일부,event_bluewaterisland,F971,109,,확정,"인간 메어리에게 동의 없는 뇌로 니케를 만들자고 한 '한 무리의 사람들'은 누구이고, D에게 입막음을 시킨 '위'는 누구인가?"
 Q86,char:12,115,ep:d_nikke_anis_01,일부,Q86-2:일부,event_wisdomspring,F1773,238,person:지휘관,확정,"지휘관은 왜 방주 출생 · 사관학교 졸업 말고는 기억이 흐릿한가 — 기억 상실인가 기억 소거인가, 입원은 무엇 때문이었나?"
@@ -96,13 +96,13 @@ Q94,ch17,140,d_main_17_11,열림,,,,,,확정,갓데스가 지상에서 다시 �
 Q95,ch17,140,d_main_17_11,열림,,,,,,확정,"갓데스가 1차 침공 전쟁에서 함께 한 약속은 무엇이고, 그것을 지키지 못한 라푼젤이 속죄로 해야 한다는 일은 무엇인가?"
 Q96,sub:제니퍼f_00,79,sub:제니퍼f_00,일부,Q96-2:일부,fl:lie_cause_recoil,F2478,359,,확정,방주 아동 보호 센터는 정말 아이들을 가둬 두고 성인이 되면 강제로 뇌를 기증시켜 니케로 만드는가 — 제니퍼의 계정은 왜 곧바로 이용 제한되었나?
 Q97,ch18,146,d_main_18af_06,일부,Q97-2:일부,ch23,F995,68,,확정,"크로우가 유니와 함께 방주에 짜려는 '거대한 감옥'은 무엇이고, 크로우가 예고한 '화려한 불꽃놀이'는 어떻게 찾아오나?"
-Q98,ch18,146,d_main_18af_03,일부,Q98-2:일부,fl:ark_guardian,F2364,282,,확정,"엔더슨은 언체인드 연구소를 어떻게 알고 있으며, 왜 그곳을 '사지'라 하나?"
+Q98,ch18,146,d_main_18af_03,일부,Q98-2:일부,event_arkguardian1,F2364,282,,확정,"엔더슨은 언체인드 연구소를 어떻게 알고 있으며, 왜 그곳을 '사지'라 하나?"
 Q99,sub:중앙_정부_공식__02,148,sub:중앙_정부_공식__02,열림,,,,,,확정,제인 밀러는 왜 누군가 자기(지휘관)를 니케로 만들 것이라 믿고 목숨까지 걸며 방주로 돌아가기를 거부하나?
 Q100,event_miraclesnow1,153,event_miraclesnow2_epilogue,열림,,,,,,확정,"앤의 기억이 눈 내리는 2주 동안만 이어지고, 그 기억이 NIMPH와 하나가 되어 블랙박스로 남은 까닭은 무엇인가?"
 Q101,event_brandnewyear,157,event_brandnewyear_05_e,열림,,,,,person:버닝엄,확정,"새해에 방주가 사람 하나 없는 지상 좌표로 올려 보내 쌓아 둔 물품 상자들은 무엇이고, 누구를 위한 것인가?"
 Q102,event_brandnewyear,157,event_brandnewyear_06_e,열림,,,,,person:마리안 org:바이스리터,확정,"지상 바다 언덕에서 지휘관이 본 형체는 정말 마리안이었나 — 백기사에게 맡겨진 마리안이 왜 그곳에 있었고, 붕대를 남기고 사라졌나?"
 Q103,char:260,158,ep:d_nikke_marian_p_04,열림,,,,,concept:니케 concept:랩쳐 person:마리안,확정,니케의 구성물과 랩쳐의 구성물은 왜 서로의 빈 곳을 메우듯 완벽하게 융합되나 — 에테르의 말처럼 처음부터 그렇게 만들어진 것인가?
-Q104,ch19,159,d_main_19_04,풀림,Q104-2:전부,fl:ark_guardian,F2363,269,concept:언체인드,확정,언체인드의 원료가 된 Rh X(가칭) 혈액형 보유자 1인은 누구인가 — 갓데스의 지휘관인가?
+Q104,ch19,159,d_main_19_04,풀림,Q104-2:전부,event_arkguardian1,F2363,269,concept:언체인드,확정,언체인드의 원료가 된 Rh X(가칭) 혈액형 보유자 1인은 누구인가 — 갓데스의 지휘관인가?
 Q105,ch19,159,d_main_19af_01,일부,Q105-2:일부,event_overzone,F928,41,person:도로시,확정,"에덴의 도로시는 누구인가 — 지휘관의 기적을 전해 준 도로시의 '옛 친구들'은 누구이고, 도로시는 갓데스의 도로시인가?"
 Q106,ch19,159,d_main_19af_01,열림,,,,,person:도로시 person:세실,확정,지휘관 일행이 에덴에 오게 된 것은 도로시가 꾸민 일인가 — 세실이 말한 '도로시의 장난'은 무엇인가?
 Q107,ch19,159,d_main_19_01,일부,Q107-2:일부,event_ce006,F1987,228,place:방주,확정,방주 고위 간부들은 지상의 인간 거주지(실낙원)를 옛날부터 알면서 왜 '지상 생존자 0명'이라고 발표했나?
@@ -129,8 +129,8 @@ Q127,sub:할아범_01,198,sub:할아범_01,일부,Q127-2:일부,ch45,F2581,252,o
 Q128,event_overzone,200,event_overzone2_epilogue,풀림,Q128-2:일부 Q128-3:전부,erelic:red_ash_mini erelic:goddess_fall_mini,F1190 F2332,219,place:방주 person:도로시,확정,"방주가 관리 A.I.를 위험하다고 보아 방주의 두뇌들을 포섭하며 비밀리에 준비한 '카운터'는 무엇이고, 도로시가 지상으로 끌어올리려던 '방주 최고의 두뇌'는 누구인가?"
 Q129,event_overzone,200,event_overzone2_04_e,일부,Q129-2:일부 Q129-3:일부 Q129-4:일부,event_redash side:pretty_star ch46,F1161 F2558 F2649,252,person:오스왈드 person:도로시,확정,"도로시가 그와 가족 · 후손까지 가장 고통스럽게 죽이겠다고 한 방주 밀봉 총책임자 오스왈드는 누구이고, 그 뒤 어떻게 되었나?"
 Q130,event_overzone,200,event_overzone2_02_e,일부,Q130-2:일부,ch48,F2830,272,person:라푼젤,확정,무덤에서 솟아 라푼젤의 로사리오로 들어간 황금색 입자 — 먼저 떠난 이들의 기억 — 는 무엇인가?
-Q131,erelic:white_memory,201,erelic:white_memory_19,풀림,Q131-2:전부,fl:ark_guardian,F2373,227,,확정,릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가?
-Q132,erelic:white_memory,201,erelic:white_memory_20,풀림,Q132-2:일부 Q132-3:전부,side:eden_spear event_goddessfall1,F2163 F2268,217,,확정,릴리스의 관에서 사라진 머리는 누가 가져갔고 어디로 갔나?
+Q131,erelic:white_memory,201,erelic:white_memory_113,풀림,Q131-2:전부,event_arkguardian1,F2373,227,,확정,릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가?
+Q132,erelic:white_memory,201,erelic:white_memory_115,풀림,Q132-2:일부 Q132-3:전부,side:eden_spear event_goddessfall1,F2163 F2268,217,,확정,릴리스의 관에서 사라진 머리는 누가 가져갔고 어디로 갔나?
 Q133,char:270,205,ep:d_nikke_blanc_05,열림,,,,,,확정,"블랑이 스킨십으로 나눠 주는 행운은 무엇이고, 지휘관과 나눌 때만 블랑의 스태미나가 크게 떨어지는 까닭은 무엇인가 — 반쪽인 누아르와 관계있나?"
 Q134,char:280,208,ep:d_nikke_rosanna_04,열림,,,,,person:로산나,확정,로산나의 부친 — 배드 드림의 여자와 사이에 로산나를 낳고 떠난 무책임한 로열 남자 — 은 누구인가?
 Q135,event_bluewaterisland,209,event_bluewaterisland2_epilogue,풀림,Q135-2:전부,event_seayouagain1,F1050,17,place:블루워터_아일랜드 concept:랩쳐,확정,"블루워터 아일랜드 해저에서 움직이는 건물 몇 채만 한 거대 물체는 무엇인가 — 100년 넘게 보고되지 않은 해상 랩쳐인가, 구시대 해군의 장치인가?"
@@ -147,7 +147,7 @@ Q145,ch24,219,d_main_24af_01,풀림,Q145-2:일부 Q145-3:전부,ch26 event_foots
 Q146,event_goldenship,224,event_goldenship_06_e,열림,,,,,person:마스트,확정,지상 바다의 해무 속을 유영하다 사라진 거대한 함선의 황금빛 그림자는 무엇인가 — 정말 캡틴 앨리게이터의 황금 배인가?
 Q147,event_seayouagain1,226,event_seayouagain2_05_e,열림,,,,,place:어드마이어_호 person:헬름 org:이지스,확정,"바닷속에 가라앉던 헬름을 '이지스 스쿼드의 리더'라 부르며 깨운 목소리와, 한 발뿐이던 이지스 캐논을 저절로 200%까지 충전한 힘은 무엇인가 — 스스로를 이지스 스쿼드의 네 번째 멤버라 말하는 어드마이어 호에게 의지가 있나?"
 Q148,event_freezeacpu,239,event_freezeacpu_intermission_01,열림,,,,,person:키리 person:지휘관,확정,흐릿하게만 보는 키리의 눈에 왜 지휘관과 — 할로윈에 사탕을 준 분장한 여자와 그 사탕만 — 선명하게 보이나?
-Q149,ch25,241,d_main_24af_04,일부,Q149-2:일부,fl:ark_guardian,F2364,187,,확정,엔더슨은 어쩌다 생명유지 장치 없이는 살 수 없는 몸이 되었나?
+Q149,ch25,241,d_main_24af_04,일부,Q149-2:일부,event_arkguardian1,F2364,187,,확정,엔더슨은 어쩌다 생명유지 장치 없이는 살 수 없는 몸이 되었나?
 Q150,ch25,241,d_main_25_07_e,일부,Q150-2:일부 Q150-3:일부 Q150-4:일부 Q150-5:일부 Q150-6:일부,ch26 ch37 fl:boom_the_ghost event_goddessfall1 ch44,F1128 F1859 F2037 F2317 F2439,195,,확정,"도로시가 방주에서 한 일 · 준비하는 것은 무엇이고, 정말 '거짓된 낙원' 방주를 파멸시키려 하나?"
 Q151,ch25,241,d_main_25_08_e,일부,Q151-2:일부,ch26,F1116,5,,확정,"도로시가 알던 레드 후드는 죽었다는데 어떻게 라피 안에 있다가 라피의 몸으로 살아 있고, 도로시는 왜 그녀를 끌어안았다가 '누구냐'며 물러났나?"
 Q152,relic:마더웨일아종목격보고.wav,242,relic:마더웨일아종목격보고.wav_03,풀림,Q152-2:전부,ch27,F1285,28,,확정,색과 형태가 다른 마더 웨일 '아종'과 거기서 내려 보고자를 쳐다본 어설프고 작은 랩쳐는 무엇인가?
@@ -157,7 +157,7 @@ Q155,ch26,246,d_main_26_12_e,일부,Q155-2:일부,ch27,F1284,24,,확정,"랩쳐 
 Q156,relic:저주받은보석,248,relic:저주받은보석_04,일부,Q156-2:일부,ch27,F1297,22,,확정,"특이 랩쳐에 박혀 있던 수정은 무엇이고, 어떻게 니케들을 갑자기 죽이고 몸 안을 수정으로 채워 다시 일으켰나?"
 Q157,event_redash,251,event_redash2_epilogue,일부,Q157-2:일부,event_footstepwalkrun1,F1756,99,person:레드_후드 concept:침식,확정,"레드 후드는 어떻게 민가에서 30년 동안 잠들었다 깨어났고, 그사이 침식(두통)은 어떻게 된 것인가?"
 Q158,event_redash,251,event_redash1_intermission_01,열림,,,,,concept:랩쳐 concept:침식,확정,이미 이기고 있는 랩쳐는 왜 침식 · 니케와의 융합 같은 짓을 하나 — 라푼젤 · 도로시의 말처럼 인류를 가지고 노는 것인가?
-Q159,erelic:red_ash_lost,252,erelic:red_ash_lost_19,풀림,Q159-2:전부,fl:ark_guardian,F2358,176,person:릴리바이스 org:갓데스,확정,"상부가 지휘관과 릴리스만 불러야 했던 ‘별것 아닌 이유가 아닌’ 사정은 무엇이고, 영상 메시지 끝에 릴리스에게 무슨 일이 일어났나?"
+Q159,erelic:red_ash_lost,252,erelic:red_ash_lost_19,풀림,Q159-2:전부,event_arkguardian1,F2358,176,person:릴리바이스 org:갓데스,확정,"상부가 지휘관과 릴리스만 불러야 했던 ‘별것 아닌 이유가 아닌’ 사정은 무엇이고, 영상 메시지 끝에 릴리스에게 무슨 일이 일어났나?"
 Q160,erelic:red_ash_mini,253,erelic:red_ash_mini_07,열림,,,,,,확정,"카운터로 개발되던 이름 없는 A.I.(???)는 누구인가 — 시뮬레이션 룸의 잉크인가, 모체가 될 재료는 무엇이고 남긴 선물은 무엇인가?"
 Q161,event_dirtybackyard,265,event_dirtybackyard_04_e,일부,Q161-2:일부 Q161-3:일부 Q161-4:일부 Q161-5:일부 Q161-6:일부,ch30 event_lordforjustice ch41 ch44 ch45,F1400 F1962 F2209 F2443 F2596,185,person:식스오 place:블랙넷 person:목단,확정,"블랙넷의 마스터일지도 모른다는 식스오는 누구이고, 어디에 숨어 무엇을 노리나 — 왜 굳이 목단에게 누명을 씌웠나?"
 Q162,event_dirtybackyard,265,event_dirtybackyard_05_e,열림,,,,,person:슈가 person:식스오 place:아우터_림,확정,"슈가가 예전에 몸담은 '다른 스쿼드'는 무엇이고, 슈가가 식스오의 일을 하다 일으킨 '큰일' — 목단이 말한, 뿌리 뽑지 않아 일대가 작살난 아우터 림의 비슷한 일 — 은 무엇이었나?"
@@ -245,7 +245,7 @@ Q244,erelic:unbreakable_sphere_lost,379,erelic:unbreakable_sphere_lost_03,풀림
 Q245,char:590,381,ep:d_nikke_mori_05,열림,,,,,person:모리,확정,모리와 헤어지고 긴 시간이 흐른 뒤 지휘관이 연락을 받고 '아쉽네'라면서도 아주 기쁜 소식이라 한 것은 무엇인가 — 모리가 인큐베이터 스쿼드를 벗어났다는 소식인가?
 Q246,char:162,382,ep:d_nikke_mihara_bondingchain_04,일부,Q246-2:일부,char:162,F2898,0,person:미하라 person:리틀_머메이드,확정,"기억 소거로 잃은 기억 속에서 미하라가 그리워하는 '그 사람'(■■■) — 함께 작전을 하고 '도와주겠다'며 사과한 다정한 성인 남자 — 은 누구이고, 세이렌이 그와 닮았다며 떠올린 '전설의 그분'은 누구인가?"
 Q247,event_arcanearchive,383,event_arcanearchive_06_e,풀림,Q247-2:전부,side:pretty_star,F2559,64,org:베스트셀러 person:오스왈드,확정,"베스트셀러 스쿼드의 창립자 [O] — 아크 가디언 작전 때 사람으로 은퇴 뒤 도서관 관장이 되어 갓데스의 기록을 직접 쓴 이 — 는 누구인가, 갓데스의 팬이던 오스왈드인가?"
-Q248,event_arcanearchive,383,event_arcanearchive_06_e,풀림,Q248-2:일부 Q248-3:전부,fl:ark_guardian ch46,F2375 F2649,69,org:갓데스 org:베스트셀러,확정,"베스트셀러 창립자와 당시 방주 고위층이 숨기고 싶었던, 갓데스의 행적 · 구성원을 외부에 알리지 않게 한 비밀은 무엇이고, 사실과 다르게 남은 기록은 어떤 것인가?"
+Q248,event_arcanearchive,383,event_arcanearchive_06_e,풀림,Q248-2:일부 Q248-3:전부,event_arkguardian1 ch46,F2375 F2649,69,org:갓데스 org:베스트셀러,확정,"베스트셀러 창립자와 당시 방주 고위층이 숨기고 싶었던, 갓데스의 행적 · 구성원을 외부에 알리지 않게 한 비밀은 무엇이고, 사실과 다르게 남은 기록은 어떤 것인가?"
 Q249,event_lordforjustice,385,event_lordforjustice_04_s,일부,Q249-2:일부,ch44,F2444,51,,확정,"VII-1 안이 견제하려 한, 강력한 도구이지만 저지스의 정의를 이해하지 못할 위험이 있다는 [-검열됨-]은 무엇이고, 최근 연구와 협력으로 찾은 '우회 루트'는 무엇인가?"
 Q250,event_lordforjustice,385,event_lordforjustice_04_s,풀림,Q250-2:전부,fl:reborn_evil,F2142,22,,확정,"VII-1 안에 따라 저지스가 배후에서 지원한 '랩쳐에게 호의적인 급진 집단'은 무엇이고, 통제 불능이 된 지금 무엇을 하나 — D가 조사하는 사이비와 데이파라는 이와 관계있나?"
 Q251,event_lordforjustice,385,event_lordforjustice_06_s,열림,,,,,,확정,"살날이 얼마 남지 않았다며 지휘관을 후계자로 삼으려는 저지스 윗줄의 노인 X는 누구이고, 무엇을 노리나?"
@@ -254,7 +254,7 @@ Q253,event_ce006,387,event_ce006_3_epilogue,열림,,,,,,확정,"에닉은 아트
 Q254,event_ce006,387,event_ce006_2_06_s,열림,,,,,,확정,동력원 고유 파장만 확인해 랩쳐를 겨누도록 설정한 프로비던스가 왜 랩쳐를 전멸시킨 뒤 카운터스에게 총구를 겨눴나?
 Q255,char:852,388,ep:d_nikke_ce006_03_05,열림,,,,,,확정,니케가 자기가 어떻게 만들어졌는지 알고 있다는 일레그의 말은 무엇을 아는 것인가 — 니케 생성의 비밀을 니케들은 알고 있나?
 Q256,event_overthehorizon,391,event_overthehorizon_06_e,열림,,,,,,확정,"중앙 정부는 왜 잉그리드까지 나선 오버 더 호라이즌의 승리의 날개 호 수색 요청을 이상하리만큼 완강하게 거부하고, 그 뒤 지원 임무를 급격히 늘렸나?"
-Q257,event_overthehorizon,391,event_overthehorizon_epilogue,일부,Q257-2:일부,fl:ark_guardian,F2369,37,,확정,"콜렉터가 사진으로 보낸, 땅에 반쯤 박힌 거대한 비행선은 승리의 날개 호인가 — 어디에 있고, 다시 날아오를 수 있나?"
+Q257,event_overthehorizon,391,event_overthehorizon_epilogue,일부,Q257-2:일부,event_arkguardian1,F2369,37,,확정,"콜렉터가 사진으로 보낸, 땅에 반쯤 박힌 거대한 비행선은 승리의 날개 호인가 — 어디에 있고, 다시 날아오를 수 있나?"
 Q258,fl:boom_the_ghost,393,fl:boom_the_ghost_01,열림,,,,,person:라피 org:엘리시온,확정,"라피가 엘리시온에서 오기를 기다리는, 엘리시온도 처음 만들어 보는 신중히 다룰 '중요한 것'의 결과는 무엇인가?"
 Q259,fl:boom_the_ghost,393,fl:boom_the_ghost_26,열림,,,,,concept:크라켄 person:일레그 place:방주,확정,크라켄의 코어 출력은 왜 동체에 비해 비대해졌나 — 일레그가 말한 전의 비슷한 일과 '방주에 남은 시간'은 무엇인가?
 Q260,fl:boom_the_ghost,393,fl:boom_the_ghost_11,열림,,,,,person:라피 person:도로시,확정,"라피가 도로시에게 들으면 리스크가 너무 높다며 말하지 않은, 지상에서 만난 '동료'는 누구인가?"
@@ -306,10 +306,10 @@ Q305,event_goddessfall1,418,event_goddessfall1_02_e,풀림,Q305-2:전부,event_g
 Q306,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_07,일부,Q306-2:일부,ch46,F2649,33,person:도로시,확정,도로시가 '오래전 그날' 그곳에 그어져 있던 '얇은 실선 하나조차 넘지 못했다'는 것은 무엇인가 — 방주의 문이 닫힌 날의 일인가?
 Q307,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_01,열림,,,,,place:에덴 person:도로시,확정,"에덴의 기반이 된, 지상에 오래 방치되었지만 큰 동력원이 살아 있던 연구소는 어떤 곳이었고, 도로시는 그곳을 어떻게 알았나?"
 Q308,fl:blank_ticket,423,fl:blank_ticket_00,풀림,Q308-2:전부,fl:terminus_ticket,F2356,2,person:노라,확정,"노라가 티켓에 쓴 목적지 [TERMINUS]는 어디이고, 노라가 '반드시 돌아가야만 하는 곳'에서 기다렸을지 모를 이는 누구인가?"
-Q309,fl:ark_guardian,428,fl:ark_guardian_16,일부,Q309-2:일부,ch43,F2410,6,concept:머신_메사이어 person:엔더슨 concept:언체인드,확정,"오래전의 [머신 메사이어] 프로젝트는 무엇이고, 엔더슨의 피에는 어떻게 언체인드가 흐르게 되었나?"
-Q310,fl:ark_guardian,428,fl:ark_guardian_26,풀림,Q310-2:일부 Q310-3:전부,ch43 ch46,F2400 F2654,24,person:엔더슨 org:V.T.C. org:갓데스,확정,"V.T.C.가 혼수상태로 두던 엔더슨은 어떻게 깨어나 지금 자리에 올랐고, 동생들을 방주로 데려오라던 릴리바이스의 부탁은 어떻게 되었나?"
-Q311,fl:ark_guardian,428,fl:ark_guardian_26,열림,,,,,person:리버렐리오 person:미러,확정,리버렐리오의 재료가 된 '자아가 강한 유사 인간'은 누구인가?
-Q312,fl:ark_guardian,428,fl:ark_guardian_00,일부,Q312-2:일부 Q312-3:일부,ch44 ch46,F2440 F2663,24,place:에덴 place:방주 person:홍련 person:라푼젤 person:노아,확정,방주는 에덴의 요구대로 니케 제작 기술을 넘겨 홍련 · 라푼젤 · 노아가 새 바디를 얻게 될까?
+Q309,event_arkguardian1,428,event_arkguardian2_02_s,일부,Q309-2:일부,ch43,F2410,6,concept:머신_메사이어 person:엔더슨 concept:언체인드,확정,"오래전의 [머신 메사이어] 프로젝트는 무엇이고, 엔더슨의 피에는 어떻게 언체인드가 흐르게 되었나?"
+Q310,event_arkguardian1,428,event_arkguardian2_06_e,풀림,Q310-2:일부 Q310-3:전부,ch43 ch46,F2400 F2654,24,person:엔더슨 org:V.T.C. org:갓데스,확정,"V.T.C.가 혼수상태로 두던 엔더슨은 어떻게 깨어나 지금 자리에 올랐고, 동생들을 방주로 데려오라던 릴리바이스의 부탁은 어떻게 되었나?"
+Q311,event_arkguardian1,428,event_arkguardian2_06_e,열림,,,,,person:리버렐리오 person:미러,확정,리버렐리오의 재료가 된 '자아가 강한 유사 인간'은 누구인가?
+Q312,event_arkguardian1,428,event_arkguardian1_prologue,일부,Q312-2:일부 Q312-3:일부,ch44 ch46,F2440 F2663,24,place:에덴 place:방주 person:홍련 person:라푼젤 person:노아,확정,방주는 에덴의 요구대로 니케 제작 기술을 넘겨 홍련 · 라푼젤 · 노아가 새 바디를 얻게 될까?
 Q313,fl:sin_editor,430,fl:sin_editor_14,일부,Q313-2:일부,ch45,F2606,20,place:방주 person:잉그리드 person:에닉,확정,"모자란 수급과 늘어나는 요구치로 남은 자원을 깎아 먹어 온 방주는 언제까지 버틸 수 있고, 수뇌부는 이 위기에 어떻게 대비하고 있나?"
 Q314,fl:fatal_maid,432,fl:fatal_maid_10,열림,,,,,person:벨벳 org:쉐이드 person:머스탱,확정,국장의 폭로대로 벨벳은 쉐이드 시절 암살까지 했고 살아남으려 스쿼드를 팔아먹었나 — 쉐이드가 해체될 때 벨벳과 스쿼드원들에게 무슨 일이 있었나?
 Q315,ch43,434,d_main_43_15,일부,Q315-2:일부,ch44,F2443,2,person:D.E.E.P. person:지엔,확정,"D.E.E.P.이 원래 자리를 되찾으려 죽여 확장 무장으로 만든 '방주의 상징'은 누구(무엇)이고, 지엔이 알면 당장 죽이라 할 것이라던 그들의 짓은 무엇인가?"

@@ -110,7 +110,7 @@
       "at": "event_overzone",
       "title": "갓데스 스쿼드 — 닫힌 방주의 문",
       "text": "갓데스는 방주로 옮겨 가는 인류를 지키고 밀봉 때까지 입구를 지켰지만 문은 그들을 들이지 않고 닫혔다 — 총책임자 오스왈드가 '모두의 선택'이라 한 까닭은 무엇인가.",
-      "src": "9b7eb52ad7",
+      "src": "b5788e942d",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -131,15 +131,23 @@
           "session": "W17",
           "hash": "46f3ebbf82",
           "note": "근거 — 기록 + 기록에 없는 마디는 원문 줄(유실물 보고 · '모두의 선택' · 오스왈드의 계획 · 증거 없음)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "ff2e2cbaf1",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
         }
       ],
       "refs": ["F909", "E201", "Q129", "event_overzone2_04_e#126-127"]
     },
     {
-      "at": "fl:ark_guardian",
+      "at": "event_arkguardian1",
       "title": "갓데스 스쿼드 — 말살 계획 · 오스왈드",
       "text": "중앙 정부는 돌아올 갓데스가 제 영향력을 넘어설까 봐 밀봉 마무리를 맡긴 뒤 정치 · 사회적으로 말살하기로 했다 — 그 회의록을 본 오스왈드가 세운 계획은 무엇인가.",
-      "src": "1a0c6edac3",
+      "src": "4b892bd784",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -158,17 +166,25 @@
           "by": "claude",
           "date": "2026-10-14",
           "session": "W17",
-          "hash": "d54685f635",
+          "hash": "892e715158",
           "note": "근거 — 기록 + 기록에 없는 마디는 원문 줄(유실물 보고 · '모두의 선택' · 오스왈드의 계획 · 증거 없음)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "d8a106e056",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
         }
       ],
-      "refs": ["F2375", "fl:ark_guardian_26#302-304"]
+      "refs": ["F2375", "event_arkguardian2_06_e#302-304"]
     },
     {
       "at": "ch46",
       "title": "갓데스 스쿼드 — 오스왈드의 거짓말",
       "text": "버닝엄에 따르면 방주가 갓데스를 추락시키려 하자 광팬이던 조부 오스왈드가 일부러 그들을 버리고, 방주로 오지 않게 증오를 살 거짓말을 했다 — 증거 없는 그 말을 도로시는 믿을 수 있나.",
-      "src": "92bc8aa35b",
+      "src": "9e4533acc6",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -189,6 +205,14 @@
           "session": "W17",
           "hash": "98f3758fcf",
           "note": "근거 — 기록 + 기록에 없는 마디는 원문 줄(유실물 보고 · '모두의 선택' · 오스왈드의 계획 · 증거 없음)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "3725e980c3",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
         }
       ],
       "refs": ["F2649", "d_main_46_af_06#49-55"]

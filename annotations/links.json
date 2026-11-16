@@ -753,7 +753,7 @@
       "id": "Y34",
       "type": "sequel",
       "from": "event_phantomthiefvsdetective",
-      "to": "fl:go_ninja_thief",
+      "to": "event_goninjathief",
       "strength": 2,
       "records": [
         "S364",
@@ -956,7 +956,7 @@
       "id": "Y43",
       "type": "sequel",
       "from": "event_arcanearchive",
-      "to": "fl:go_ninja_thief",
+      "to": "event_goninjathief",
       "records": [
         "S266",
         "F2176"
@@ -1136,7 +1136,7 @@
       "id": "Y51",
       "type": "sequel",
       "from": "event_goddessfall1",
-      "to": "fl:ark_guardian",
+      "to": "event_arkguardian1",
       "strength": 3,
       "records": [
         "S287",

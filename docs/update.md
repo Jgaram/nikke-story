@@ -38,10 +38,12 @@
      씬은 순서대로(씬 수가 같고 줄이 반 넘게 맞을 때), 줄은 대사 텍스트로 맞춘다(태그 · 문장부호 걷고 LCS — 첫 사례 ABSOLUTE는 2,786줄 모두 맞고 한 씬만 뒤쪽 99줄이 한 칸 밀림).
      annotations/의 키 · 씬 · 줄(근거 `{scene, lines}` · `씬#줄` · 그 단위 기록 문장의 줄임 표기 `13 #30-33` · `(03)`, 씬 없이 쓴 `#N`은 바로 앞 씬 · 근거 씬으로)과
      파일 이름을 옮기고, hold 줄을 지우고 매핑 null을 키로, 개요 · 판 · 한 줄의 확정 지문을 옮긴 내용으로 바꾼다. 씬을 모르는 `#N`이 줄이 바뀐 씬에 걸리면 알린다 — 손으로.
-     그 뒤 `release-order.mjs` → "고친 뒤 다시 뽑기"(docs/operations.md "지시 세션" 4 — `draft.mjs` · `views/mentions` · `signals` · `addresses` · `records.mjs handoff` · `order-snapshot.mjs write` · 사이트 내보내기)
+     그 뒤 `release-order.mjs` → `notices/major-events.mjs`(픽업 이벤트 표의 키 — 안 돌리면 체크 칸이 옛 키에 남아 판 검사가 '곁 판으로' 오류) → "고친 뒤 다시 뽑기"(docs/operations.md "지시 세션" 4 — `draft.mjs` · `views/mentions` · `signals` · `addresses` · `records.mjs handoff` · `order-snapshot.mjs write` · 사이트 내보내기)
      → 낡은 판(`versions.mjs check`)은 `new … --refresh` 뒤 `set … 확정`(키만 바뀌었다는 메모) → `node --test`.
      매핑에 키가 있는 금서고 이벤트(BOOM! THE GHOST! 등 56건)에 블라링크 본문이 들어오면 수집이 그 키를 hold "전환 대기"(`금서고` 칸)로 넣는다 — 같은 도구로 옮긴다.
    - 금서고가 받아 둔 파일을 고쳐 올리면(배포 시각 · 파일 버전이 바뀜) 줄 번호가 밀릴 수 있다 — `node --test`의 "없는 줄"이 잡는다. 텍스트로 옛 줄 → 새 줄을 맞춰 근거를 옮긴다.
+     씬 구성까지 바뀌면(2026-11-16 WHITE MEMORY — 탐색형으로 씬 21 → 117, 씬 키가 파일 안 순서라 다 바뀜) 옛 씬을 같은 `@@@SCRIPT_ID`의 새 씬에 짝짓고 줄은 `convert.mjs`의 `alignLines`로 맞춰 `rewriteText` · `remapBare`로 옮긴다(키가 같아 `--write`는 못 쓴다).
+     새로 늘어난 씬은 아직 안 읽은 원문이다 — 보충 읽기 항목을 SESSIONS.md에. 낡은 판은 옛 키로 되돌린 데이터의 지문이 저장 지문과 같은지 보고 확정한다.
 3. **단위마다 있음 · 없음**
    - 이벤트는 공지의 이벤트 기간이 끝나고(에필로그까지) 원문이 들어와야 있음. 금서고는 이벤트를 에필로그 뒤에 올린다 — 출시에서 몇 주(docs/data-sources.md "운영자가 밝힌 것").
    - 공지에 스토리 표지(`STORY I` · `스토리 라인에 … 추가` · `스토리 이벤트`)가 없는 이벤트(스페셜 이벤트 · 이벤트 미션)는 스토리가 있는지 **모른다** —

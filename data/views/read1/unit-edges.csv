@@ -84,7 +84,7 @@ char:221,ch17,setup_payoff,2,0,94,140,호감도,메인,Q83-2 Q84-2
 char:221,event_overzone,setup_payoff,1,0,94,200,호감도,이벤트,Q84-3
 char:221,ch25,setup_payoff,1,0,94,241,호감도,메인,Q82-2
 char:221,event_footstepwalkrun1,setup_payoff,1,0,94,350,호감도,이벤트,Q82-3
-char:221,fl:ark_guardian,setup_payoff,1,0,94,428,호감도,이벤트,Q83-3
+char:221,event_arkguardian1,setup_payoff,1,0,94,428,호감도,이벤트,Q83-3
 char:190,char:194,callback,1,0,96,259,호감도,호감도,F513-2
 char:82,fl:for_rest,callback,1,0,98,365,호감도,이벤트,F523-2
 char:102,char:105,callback,1,0,99,469,호감도,호감도,F529-2
@@ -103,11 +103,11 @@ char:222,event_newyearnewsword,callback,1,0,136,261,호감도,이벤트,F660-2
 char:222,event_newyearnewsword,setup_payoff,1,0,136,261,호감도,이벤트,Q90-3
 sub:숲속요정_00,ch21,callback,1,0,144,189,서브퀘스트,메인,F326-2
 ch18,ch23,setup_payoff,1,0,146,214,메인,메인,Q97-2
-ch18,fl:ark_guardian,setup_payoff,1,0,146,428,메인,이벤트,Q98-2
+ch18,event_arkguardian1,setup_payoff,1,0,146,428,메인,이벤트,Q98-2
 ch19,event_overzone,setup_payoff,1,0,159,200,메인,이벤트,Q105-2
 ch19,event_oldtales1,callback,1,0,159,338,메인,이벤트,F744-2
 ch19,event_ce006,setup_payoff,1,0,159,387,메인,이벤트,Q107-2
-ch19,fl:ark_guardian,setup_payoff,1,0,159,428,메인,이벤트,Q104-2
+ch19,event_arkguardian1,setup_payoff,1,0,159,428,메인,이벤트,Q104-2
 relic:데일리아크기사스크랩,ch20,setup_payoff,1,0,160,164,유실물,메인,Q109-2
 relic:데일리아크기사스크랩,erelic:goddess_fall_mini,setup_payoff,1,0,160,419,유실물,유실물,Q109-3
 ch20,char:261,setup_payoff,1,0,164,184,메인,호감도,Q111-2
@@ -137,13 +137,13 @@ event_overzone,erelic:red_ash_lost,callback,1,0,200,252,이벤트,유실물,F908
 event_overzone,erelic:red_ash_mini,setup_payoff,1,0,200,253,이벤트,유실물,Q128-2
 event_overzone,event_newyearnewsword,callback,1,0,200,261,이벤트,이벤트,F915-2
 event_overzone,erelic:goddess_fall_mini,setup_payoff,1,0,200,419,이벤트,유실물,Q128-3
-event_overzone,fl:ark_guardian,callback,2,0,200,428,이벤트,이벤트,F909-2 F914-2
+event_overzone,event_arkguardian1,callback,2,0,200,428,이벤트,이벤트,F909-2 F914-2
 event_overzone,side:pretty_star,setup_payoff,1,0,200,447,이벤트,사이드,Q129-3
 event_overzone,ch46,setup_payoff,1,0,200,452,이벤트,메인,Q129-4
 event_overzone,ch48,setup_payoff,1,0,200,472,이벤트,메인,Q130-2
 erelic:white_memory,side:eden_spear,setup_payoff,1,0,201,411,유실물,사이드,Q132-2
 erelic:white_memory,event_goddessfall1,setup_payoff,1,0,201,418,유실물,이벤트,Q132-3
-erelic:white_memory,fl:ark_guardian,setup_payoff,1,0,201,428,유실물,이벤트,Q131-2
+erelic:white_memory,event_arkguardian1,setup_payoff,1,0,201,428,유실물,이벤트,Q131-2
 erelic:white_memory,char:471,callback,1,0,201,429,유실물,호감도,F930-2
 event_queensorder,char:280,callback,1,0,207,208,이벤트,호감도,F950-2
 event_queensorder,event_dirtybackyard,callback,1,0,207,265,이벤트,이벤트,F953-2
@@ -162,7 +162,7 @@ ch25,ch37,setup_payoff,1,0,241,373,메인,메인,Q150-3
 ch25,fl:boom_the_ghost,setup_payoff,1,0,241,393,메인,이벤트,Q150-4
 ch25,side:eden_spear,callback,1,0,241,411,메인,사이드,F1103-2
 ch25,event_goddessfall1,setup_payoff,1,0,241,418,메인,이벤트,Q150-5
-ch25,fl:ark_guardian,setup_payoff,1,0,241,428,메인,이벤트,Q149-2
+ch25,event_arkguardian1,setup_payoff,1,0,241,428,메인,이벤트,Q149-2
 ch25,ch44,setup_payoff,1,0,241,436,메인,메인,Q150-6
 relic:마더웨일아종목격보고.wav,ch27,setup_payoff,1,0,242,270,유실물,메인,Q152-2
 ch26,ch27,setup_payoff,1,0,246,270,메인,메인,Q155-2
@@ -171,7 +171,7 @@ relic:저주받은보석,ch27,setup_payoff,1,0,248,270,유실물,메인,Q156-2
 event_redash,event_oldtales1,callback,3,0,251,338,이벤트,이벤트,F1146-2 F1152-2 F1158-2
 event_redash,event_footstepwalkrun1,setup_payoff,1,0,251,350,이벤트,이벤트,Q157-2
 erelic:red_ash_lost,event_newyearnewsword,callback,1,0,252,261,유실물,이벤트,F1181-2
-erelic:red_ash_lost,fl:ark_guardian,setup_payoff,1,0,252,428,유실물,이벤트,Q159-2
+erelic:red_ash_lost,event_arkguardian1,setup_payoff,1,0,252,428,유실물,이벤트,Q159-2
 event_newyearnewsword,char:225,callback,1,0,261,262,이벤트,호감도,F1241-2
 event_dirtybackyard,ch30,setup_payoff,1,0,265,293,이벤트,메인,Q161-2
 event_dirtybackyard,event_lordforjustice,setup_payoff,1,0,265,385,이벤트,이벤트,Q161-3
@@ -265,13 +265,13 @@ ch38,ch39,setup_payoff,1,0,375,396,메인,메인,Q241-2
 ch38,ch42,setup_payoff,1,0,375,416,메인,메인,Q240-2
 event_unbreakablesphere1,side:gingerbread_house,setup_payoff,1,0,377,484,이벤트,사이드,Q243-2
 erelic:unbreakable_sphere_lost,side:eden_spear,setup_payoff,1,0,379,411,유실물,사이드,Q244-2
-event_arcanearchive,fl:ark_guardian,setup_payoff,1,0,383,428,이벤트,이벤트,Q248-2
+event_arcanearchive,event_arkguardian1,setup_payoff,1,0,383,428,이벤트,이벤트,Q248-2
 event_arcanearchive,side:pretty_star,setup_payoff,1,0,383,447,이벤트,사이드,Q247-2
 event_arcanearchive,ch46,setup_payoff,1,0,383,452,이벤트,메인,Q248-3
 event_lordforjustice,fl:reborn_evil,setup_payoff,1,0,385,407,이벤트,이벤트,Q250-2
 event_lordforjustice,ch44,setup_payoff,1,0,385,436,이벤트,메인,Q249-2
 event_ce006,char:852,callback,1,0,387,388,이벤트,호감도,F1979-2
-event_overthehorizon,fl:ark_guardian,setup_payoff,1,0,391,428,이벤트,이벤트,Q257-2
+event_overthehorizon,event_arkguardian1,setup_payoff,1,0,391,428,이벤트,이벤트,Q257-2
 event_overthehorizon,fl:ark_ranger,callback,1,0,391,462,이벤트,이벤트,F2017-2
 fl:boom_the_ghost,ch46,setup_payoff,1,0,393,452,이벤트,메인,Q261-2
 ch39,ch40,callback,1,0,396,398,메인,메인,F2058-2
@@ -306,11 +306,11 @@ ch42,fl:ark_ranger,callback,1,0,416,462,메인,이벤트,F2235-2
 event_goddessfall1,ch46,setup_payoff,2,0,418,452,이벤트,메인,Q300-2 Q303-2
 erelic:goddess_fall_mini,ch46,setup_payoff,1,0,419,452,유실물,메인,Q306-2
 fl:blank_ticket,fl:terminus_ticket,setup_payoff,1,0,423,425,이벤트,이벤트,Q308-2
-fl:ark_guardian,ch43,setup_payoff,2,0,428,434,이벤트,메인,Q309-2 Q310-2
-fl:ark_guardian,ch44,callback,1,0,428,436,이벤트,메인,F2357-2
-fl:ark_guardian,ch44,setup_payoff,1,0,428,436,이벤트,메인,Q312-2
-fl:ark_guardian,ch46,callback,1,0,428,452,이벤트,메인,F2377-2
-fl:ark_guardian,ch46,setup_payoff,2,0,428,452,이벤트,메인,Q310-3 Q312-3
+event_arkguardian1,ch43,setup_payoff,2,0,428,434,이벤트,메인,Q309-2 Q310-2
+event_arkguardian1,ch44,callback,1,0,428,436,이벤트,메인,F2357-2
+event_arkguardian1,ch44,setup_payoff,1,0,428,436,이벤트,메인,Q312-2
+event_arkguardian1,ch46,callback,1,0,428,452,이벤트,메인,F2377-2
+event_arkguardian1,ch46,setup_payoff,2,0,428,452,이벤트,메인,Q310-3 Q312-3
 fl:sin_editor,ch45,setup_payoff,1,0,430,450,이벤트,메인,Q313-2
 ch43,ch44,setup_payoff,1,0,434,436,메인,메인,Q315-2
 ch43,relic:신에게닿기위한탑,callback,1,0,434,451,메인,유실물,F2410-2

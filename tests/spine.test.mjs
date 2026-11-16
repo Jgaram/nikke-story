@@ -26,7 +26,7 @@ test('척추 집합 — spine.json 확정 11(이벤트 8 · 사이드 3), 모두
   const spine = spineUnits(ds);
   assert.equal(spine.size, 11);
   assert.deepEqual([...spine].filter((u) => u.startsWith('side:')).sort(), ['side:eden_spear', 'side:mudfish', 'side:pretty_star']);
-  assert.ok(['event_overzone', 'event_redash', 'event_lastkingdom1', 'event_oldtales1', 'event_goddessfall1', 'event_staranis1', 'event_footstepwalkrun1', 'fl:ark_guardian'].every((u) => spine.has(u)));
+  assert.ok(['event_overzone', 'event_redash', 'event_lastkingdom1', 'event_oldtales1', 'event_goddessfall1', 'event_staranis1', 'event_footstepwalkrun1', 'event_arkguardian1'].every((u) => spine.has(u)));
   assert.ok(ds.candidates.filter((c) => c.kind === 'spine').every((c) => /^B\d+$/.test(c.id) && c.spineUnit && c.obj.gate));
   // 층 — 척추 단위는 1층, 판정 K는 남는다
   const lay = computeLayers(ds, order);
@@ -50,7 +50,7 @@ test('척추 선정 계산 — X3f-1b가 손으로 센 수와 같다 · 어긋�
   assert.deepEqual(m('event_staranis1'), [0, 3, 9, 18]);
   assert.deepEqual(m('event_newyearnewsword'), [0, 1, 1, 5]);
   assert.deepEqual(m('event_footstepwalkrun1'), [14, 3, 2, 22]);
-  assert.deepEqual(m('fl:ark_guardian'), [19, 4, 6, 26]);
+  assert.deepEqual(m('event_arkguardian1'), [19, 4, 6, 26]);
   assert.deepEqual(m('side:mudfish'), [4, 0, 2, 11]);
   assert.deepEqual(m('side:pretty_star'), [4, 1, 5, 10]);
   const gate = v.units.filter((u) => u.judgment);
@@ -66,11 +66,11 @@ test('척추 선정 계산 — X3f-1b가 손으로 센 수와 같다 · 어긋�
 
 test('척추 자리 — 판정 K · 주역 Z의 from · arcs에 척추 키, 척추 단위의 판정은 자리 경고 없음', () => {
   const spine = spineUnits(ds);
-  const keys = new Set(['ch20', 'ch29', 'event_redash', 'fl:ark_guardian', 'side:eden_spear']);
+  const keys = new Set(['ch20', 'ch29', 'event_redash', 'event_arkguardian1', 'side:eden_spear']);
   assert.deepEqual(splitArc('ch20-ch29', keys), ['ch20', 'ch29']);
   assert.deepEqual(splitArc('ch19', new Set(['ch19'])), ['ch19', null]);
   assert.deepEqual(splitArc('event_redash-ch29', keys), ['event_redash', 'ch29']);
-  assert.deepEqual(splitArc('side:eden_spear-fl:ark_guardian', keys), ['side:eden_spear', 'fl:ark_guardian']);
+  assert.deepEqual(splitArc('side:eden_spear-event_arkguardian1', keys), ['side:eden_spear', 'event_arkguardian1']);
   assert.equal(splitArc('ch05-ch99', keys), null);
   // 실제 명단 — 주역의 from · arcs에 척추 키가 있고 검증기는 오류 0
   const live = ds.candidates.filter((c) => c.kind === 'lead' && c.status !== '기각');

@@ -81,7 +81,7 @@ person:네온,네온,398,ch40,호칭,스승님,사장님,ch39
 person:루주,루주,404,fl:coins_in_rush,호칭,마스터,사장님,char:272
 person:D,D,407,fl:reborn_evil,호칭,여보,지휘관,event_arcanearchive
 person:이사벨,이사벨,411,side:eden_spear,말투,100%,26%,sub:에덴_Notice_02
-person:라피,라피,414,ch41,말투,92%,0%,fl:go_ninja_thief
+person:라피,라피,414,ch41,말투,82%,0%,event_goninjathief
 person:미러,미러,418,event_goddessfall1,말투,0%,78%,erelic:old_tales_dialog
 person:노라,노라,425,fl:terminus_ticket,이름표,노라,어린 노라,
 person:디젤,디젤,425,fl:terminus_ticket,호칭,동생,지휘관,char:821

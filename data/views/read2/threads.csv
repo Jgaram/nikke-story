@@ -7,11 +7,11 @@ J5,뼈대,엔더슨 — 갓데스의 지휘관,15,2,0,12,18,6,ch04 ch14 char:72 
 J6,뼈대,갓데스 스쿼드와 방주의 배신,26,3,0,15,20,5,ch06 char:222 char:800 erelic:white_memory ch25
 J7,뼈대,도로시의 복수와 3차 지상 탈환전,26,10,0,15,25,10,ch22 char:233 ch27 event_boomsday event_beautyfullshot1 ch36 ch38 side:eden_spear side:pretty_star ch47
 J8,뼈대,에덴과 요한 — 샛별 · 에덴의 창,10,6,0,19,25,6,char:220 ch17 sub:에덴_Notice_00 char:223 ch45 fl:project_matis
-J9,뼈대,랩쳐의 기원과 목적,2,5,0,15,21,6,char:224 event_goddessfall1 fl:ark_guardian ch44 relic:궤도엘리베이터음모론 fl:project_matis
+J9,뼈대,랩쳐의 기원과 목적,2,5,0,15,21,6,char:224 event_goddessfall1 event_arkguardian1 ch44 relic:궤도엘리베이터음모론 fl:project_matis
 J10,뼈대,포비스트와 온리 원,30,14,0,21,31,10,ch02 ch13 event_darkhero event_oldtales1 relic:할일목록 relic:은색액체 erelic:unbreakable_sphere_dialog ch39 fl:great_villain_union side:gingerbread_house
 J11,보강,수정 지역과 하모니 큐브,4,5,0,9,11,2,relic:조난일지 fl:ark_ranger
 J12,뼈대,2세대 페어리 테일 — 그레이브 · 신데렐라 · 세이렌 · 미러,19,20,0,23,32,9,sub:거울_공주_00 sub:관짝이_01 char:511 char:514 erelic:unbreakable_sphere_dialog char:590 ch44 fl:wave_to_you fl:project_matis
-J13,뼈대,퀸 — 릴리스의 바디와 귀환,7,9,0,13,18,5,event_overzone ch40 fl:ark_guardian relic:궤도엘리베이터음모론 fl:project_matis
+J13,뼈대,퀸 — 릴리스의 바디와 귀환,7,9,0,13,18,5,event_overzone ch40 event_arkguardian1 relic:궤도엘리베이터음모론 fl:project_matis
 J14,보강,니케 제작의 비밀 — NIMPH · 뇌의 출처,7,2,0,8,13,5,relic:니케실험대상자모집 relic:니케실험반대피켓 char:140 event_miraclesnow1 event_ce006
 J15,뼈대,직계 헬레틱 — 토커티브 · 니힐리스타 · 인디빌리아 · 리버렐리오,4,1,0,15,15,0,
 J16,뼈대,에닉 — 거래 · 판결 · 카운터,4,3,0,14,17,3,ch01 ch04 relic:에닉탄핵포스터
@@ -54,7 +54,7 @@ J52,독립,AREA F-031의 점액질,0,0,0,2,2,0,
 J53,독립,맨손의 니케,0,0,0,1,1,0,
 J54,독립,말뚝 프로젝트,0,0,0,1,1,0,
 J55,독립,미미르 부속고,2,3,0,4,5,1,event_juveniledays
-J56,독립,팬텀과 베스트셀러 스쿼드,2,3,0,3,6,3,fl:go_ninja_thief fl:2x2_love_1ch char:870
+J56,독립,팬텀과 베스트셀러 스쿼드,2,3,0,3,6,3,event_goninjathief fl:2x2_love_1ch char:870
 J57,독립,지상의 생존자 — 롬 · 콤 · 벙커,9,2,0,2,4,2,sub:롬_01 sub:롬_02
 J58,독립,노라의 종착역,3,0,0,2,2,0,
 J59,독립,아일랜드 이터,0,0,0,1,1,0,

@@ -221,7 +221,7 @@
 - Q307 ✓ 에덴의 기반이 된, 지상에 오래 방치되었지만 큰 동력원이 살아 있던 연구소는 어떤 곳이었고, 도로시는 그곳을 어떻게 알았나? · erelic:goddess_fall_mini erelic:goddess_fall_mini_01#25-45
 
 ## 열린 의문 — R77
-- Q311 ✓ 리버렐리오의 재료가 된 '자아가 강한 유사 인간'은 누구인가? · fl:ark_guardian fl:ark_guardian_26#256-266
+- Q311 ✓ 리버렐리오의 재료가 된 '자아가 강한 유사 인간'은 누구인가? · event_arkguardian1 event_arkguardian2_06_e#256-266
 
 ## 열린 의문 — R78
 - Q314 ✓ 국장의 폭로대로 벨벳은 쉐이드 시절 암살까지 했고 살아남으려 스쿼드를 팔아먹었나 — 쉐이드가 해체될 때 벨벳과 스쿼드원들에게 무슨 일이 있었나? · fl:fatal_maid fl:fatal_maid_10#69-76

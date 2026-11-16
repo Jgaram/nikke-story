@@ -21,7 +21,7 @@
 | 370 | `side:mudfish` MUDFISH | 사이드 | 사이드 | B15 | K333 필수 → 척추 | 1 |
 | 411 | `side:eden_spear` EDEN SPEAR | 사이드 | 사이드 | B16 | K370 필수 → 척추 | 1 |
 | 418 | `event_goddessfall1` GODDESS FALL | 이벤트 | 3주년 | B6 | K375 필수 → 척추 | 1 |
-| 428 | `fl:ark_guardian` ARK GUARDIAN | 이벤트 | 신년 | B12 | K385 필수 → 척추 | 1 |
+| 428 | `event_arkguardian1` ARK GUARDIAN | 이벤트 | 신년 | B12 | K385 필수 → 척추 | 1 |
 | 447 | `side:pretty_star` PRETTY STAR | 사이드 | 사이드 | B17 | K402 보강 → 척추 | 1 |
 | 454 | `event_staranis1` STAR ANIS | 이벤트 | 3.5주년 | B7 | K407 보강 → 척추 | 1 |
 
@@ -69,8 +69,8 @@ annotations/april-fools.json의 단위 — 숫자 집계에서 뺀다. 판정 K�
 | 143 | `sub:랩칠리언_06` 랩칠리언 · 랩칠리언 7 | K22 | 참고 → ch27 보강 | 19 → 65 |
 | 160 | `relic:데일리아크기사스크랩` 데일리아크 기사 스크랩 | K147 | 참고 → ch20 보강 | 25 → 26 |
 | 183 | `event_cherryblossom` CHERRY BLOSSOM | K164 | 참고 → ch21 보강 | 32 → 35 |
-| 201 | `erelic:white_memory` WHITE MEMORY | K181 | 보강 → fl:ark_guardian 필수 | 36 → 133 |
-| 255 | `char:224` 스노우 화이트 : 이노센트 데이즈 | K225 | 보강 → fl:ark_guardian 필수 | 55 → 133 |
+| 201 | `erelic:white_memory` WHITE MEMORY | K181 | 보강 → event_arkguardian1 필수 | 36 → 133 |
+| 255 | `char:224` 스노우 화이트 : 이노센트 데이즈 | K225 | 보강 → event_arkguardian1 필수 | 55 → 133 |
 | 265 | `event_dirtybackyard` DIRTY BACKYARD | K235 | 참고 → ch30 보강 | 62 → 73 |
 | 288 | `side:second_affection` SECOND AFFECTION | K259 | 보강 → ch48 필수 | 71 → 154 |
 | 294 | `relic:하모니큐브관찰일지` 하모니 큐브 관찰 일지 | K263 | 참고 → ch31 보강 | 73 → 80 |

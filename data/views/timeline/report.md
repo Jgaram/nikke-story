@@ -108,8 +108,8 @@
 
 ## 이벤트 메타데이터 (T1-5)
 
-- 이벤트 85: 아카이브 63(스토리 57 · 특별 6) · 금서고에만 22. 아카이브 씬 1172 · 본문 없는 씬 43.
-- 파트: STORY 39 · STORY I · STORY II 16 · (파트 없음) 6 · STORY I 2. 금서고가 본문을 대신하는 아카이브 이벤트: event_forrest → fl:for_rest · event_boomtheghost1 → fl:boom_the_ghost.
+- 이벤트 85: 아카이브 65(스토리 59 · 특별 6) · 금서고에만 20. 아카이브 씬 1215 · 본문 없는 씬 43.
+- 파트: STORY 40 · STORY I · STORY II 16 · (파트 없음) 6 · STORY I 3. 금서고가 본문을 대신하는 아카이브 이벤트: event_forrest → fl:for_rest · event_boomtheghost1 → fl:boom_the_ghost.
 - 아카이브 순서(`archive_order`)는 앨범 순서라 공개 순서와 다르다 — 공개 순서는 `order` · `tick`(공지).
 
 ## 작중 연대기 — 시점 기록 구조화 (X1b)
@@ -168,7 +168,7 @@
 | 합 | 436 | 38 | 27 | 10 | 252 | 5 | 104 |
 
 - 앞(프리퀄) 27 — 사이 챕터 1 10 · 2 6 · 3–9 5 · 10+ 6:
-  erelic:white_memory(@아크_가디언_작전–@방주_밀봉 ~ @방주_밀봉–@1차_지상_탈환전 / @방주_밀봉–@1차_지상_탈환전 ~ ch05–ch06 · 공개 당시 ch22 · 17) · char:331(ch26 · 공개 당시 ch42 · 16) · char:10(ch01–ch02 ~ ch02–ch03 · 공개 당시 ch16 · 14) · char:12(ch01–ch02 ~ ch02–ch03 · 공개 당시 ch16 · 14) · side:second_affection(ch14–ch15 ~ ch15 · 공개 당시 ch28 · 13) · char:532(~ ch25–ch26 · 공개 당시 ch38 · 13) · char:260(ch13–ch14 · 공개 당시 ch18 · 5) · char:590(~ ch33–ch34 · 공개 당시 ch38 · 5) · char:330(ch25–ch26 ~ ch26–ch27 · 공개 당시 ch30 · 4) · event_darkhero(ch26 ~ ch26–ch27 · 공개 당시 ch30 · 4) · char:223(ch39 · 공개 당시 ch42 · 3) · event_boomsday(ch07–ch08 ~ ch26–ch27 · 공개 당시 ch28 · 2) · relic:어떤소녀의그림일기(ch02–ch03 ~ ch38–ch39 · 공개 당시 ch40 · 2) · relic:주의용광로사용법(~ ch40–ch41 · 공개 당시 ch42 · 2) · event_goddessfall1(ch40–ch41 · 공개 당시 ch42 · 2) · erelic:goddess_fall_mini(ch40–ch41 · 공개 당시 ch42 · 2) · relic:불길한_소리.wav(ch45–ch46 ~ ch46–ch47 · 공개 당시 ch48 · 2) · char:233(ch20–ch21 ~ ch21–ch22 · 공개 당시 ch22 · 1) · sub:중앙정부_트라이앵글_00(ch22 · 공개 당시 ch23 · 1) · relic:하모니큐브관찰일지(~ ch29–ch30 · 공개 당시 ch30 · 1) · relic:말뚝프로젝트보고서(~ ch30–ch31 · 공개 당시 ch31 · 1) · relic:수정지역깊은곳어딘가(~ ch31–ch32 · 공개 당시 ch32 · 1) · relic:소녀의일기-절망편-(~ ch32–ch33 · 공개 당시 ch33 · 1) · relic:정갈하게쓴기록(ch02–ch03 ~ ch38–ch39 · 공개 당시 ch39 · 1) · side:eden_spear(ch21–ch22 ~ ch22–ch23 / ch24–ch25 ~ ch25 / ch25–ch26 ~ ch39 / ch39 · 공개 당시 ch40 · 1) · char:262(ch41 · 공개 당시 ch42 · 1) · fl:ark_guardian(ch40–ch41 ~ ch41 · 공개 당시 ch42 · 1).
+  erelic:white_memory(@아크_가디언_작전–@방주_밀봉 ~ @방주_밀봉–@1차_지상_탈환전 / @방주_밀봉–@1차_지상_탈환전 ~ ch05–ch06 · 공개 당시 ch22 · 17) · char:331(ch26 · 공개 당시 ch42 · 16) · char:10(ch01–ch02 ~ ch02–ch03 · 공개 당시 ch16 · 14) · char:12(ch01–ch02 ~ ch02–ch03 · 공개 당시 ch16 · 14) · side:second_affection(ch14–ch15 ~ ch15 · 공개 당시 ch28 · 13) · char:532(~ ch25–ch26 · 공개 당시 ch38 · 13) · char:260(ch13–ch14 · 공개 당시 ch18 · 5) · char:590(~ ch33–ch34 · 공개 당시 ch38 · 5) · char:330(ch25–ch26 ~ ch26–ch27 · 공개 당시 ch30 · 4) · event_darkhero(ch26 ~ ch26–ch27 · 공개 당시 ch30 · 4) · char:223(ch39 · 공개 당시 ch42 · 3) · event_boomsday(ch07–ch08 ~ ch26–ch27 · 공개 당시 ch28 · 2) · relic:어떤소녀의그림일기(ch02–ch03 ~ ch38–ch39 · 공개 당시 ch40 · 2) · relic:주의용광로사용법(~ ch40–ch41 · 공개 당시 ch42 · 2) · event_goddessfall1(ch40–ch41 · 공개 당시 ch42 · 2) · erelic:goddess_fall_mini(ch40–ch41 · 공개 당시 ch42 · 2) · relic:불길한_소리.wav(ch45–ch46 ~ ch46–ch47 · 공개 당시 ch48 · 2) · char:233(ch20–ch21 ~ ch21–ch22 · 공개 당시 ch22 · 1) · sub:중앙정부_트라이앵글_00(ch22 · 공개 당시 ch23 · 1) · relic:하모니큐브관찰일지(~ ch29–ch30 · 공개 당시 ch30 · 1) · relic:말뚝프로젝트보고서(~ ch30–ch31 · 공개 당시 ch31 · 1) · relic:수정지역깊은곳어딘가(~ ch31–ch32 · 공개 당시 ch32 · 1) · relic:소녀의일기-절망편-(~ ch32–ch33 · 공개 당시 ch33 · 1) · relic:정갈하게쓴기록(ch02–ch03 ~ ch38–ch39 · 공개 당시 ch39 · 1) · side:eden_spear(ch21–ch22 ~ ch22–ch23 / ch24–ch25 ~ ch25 / ch25–ch26 ~ ch39 / ch39 · 공개 당시 ch40 · 1) · char:262(ch41 · 공개 당시 ch42 · 1) · event_arkguardian1(ch40–ch41 ~ ch41 · 공개 당시 ch42 · 1).
 - 과거 38 — 유실물 28 · 이벤트 4 · 호감도 5 · 사이드 1(유실물 문서 · 옛이야기 · 갓데스 시절): relic:어느남자의수기 · relic:통화기록017515 · relic:방주추첨권 · relic:갓데스스쿼드리포트 · relic:통화기록028594 · relic:채팅로그_얼리어답터 · relic:광고팜플렛 · relic:UFO챈.zip · relic:지휘관모집공고 · relic:어느소녀의수기 · relic:기업-랩쳐음모론 · relic:어느의사의수기 · relic:여자친구의편지 · relic:기후변화보고서 · relic:인터넷BJ라이브방송녹화분 · relic:장보기목록 · relic:모바일_보이스피싱_광고_모음.zip · relic:XX중학교가정통신문 · relic:데일리아크기사스크랩 · event_overzone · char:810 · event_redash · erelic:red_ash_lost · erelic:red_ash_mini · char:224 · char:225 · relic:잘지내라친구 · event_nonsensered · event_oldtales1 · erelic:old_tales_dialog · erelic:old_tales_lost · char:226 · erelic:unbreakable_sphere_lost · char:513 · side:pretty_star · relic:신에게닿기위한탑 · relic:궤도엘리베이터음모론 · relic:승리를_부르는_그림자.
 - 뒤 5 — 공개 당시 아직 안 나온 챕터 뒤의 일(앞질러 간 이야기 — 메인이 풀린 뒤에야 상황을 알게 된다. 공개일이 추정이면 그것부터 의심한다): char:232(ch19–ch20 ~ ch40–ch41 · 공개 당시 ch16 · 3) · char:231(ch21–ch22 ~ ch40–ch41 · 공개 당시 ch16 · 5) · char:230(ch19–ch20 ~ ch40–ch41 · 공개 당시 ch16 · 3) · char:222(ch17–ch18 ~ ch40–ch41 · 공개 당시 ch16 · 1) · char:500(ch30–ch31 ~ · 공개 당시 ch28 · 2).
 - 걸침 252 — 한쪽만 아는 범위(앞 끝 모름 9 · 뒤 끝 모름 215) · 양쪽을 아는 넓은 범위 28. 어긋났는지 모른다.
@@ -208,7 +208,7 @@
 | 라피 | 43 | 43 | 5 | D586 event_footstepwalkrun1 → D9 D1379 … / D587 event_footstepwalkrun1 → D9 D1379 … |
 | 프리카 | 12 | 12 | 5 | D1180 event_staranis1 → D801 / D1209 event_staranis1 → D801 |
 | 홍련 | 13 | 13 | 5 | D1511 char:225 → D362 D364 … / D1516 char:225 → D362 D364 … |
-| 릴리바이스 | 6 | 6 | 4 | D984 fl:ark_guardian → D258 / D985 fl:ark_guardian → D258 |
+| 릴리바이스 | 6 | 6 | 4 | D984 event_arkguardian1 → D258 / D985 event_arkguardian1 → D258 |
 | 그레이브 | 23 | 23 | 3 | D580 event_oldtales1 → D437 D499 … / D584 erelic:old_tales_dialog → D437 D499 … |
 | 도로시 | 26 | 26 | 3 | D1515 char:225 → D242 D243 … / D351 event_redash → D242 D243 … |
 | 라푼젤 | 8 | 8 | 3 | D349 event_redash → D250 D1375 / D1594 char:226 → D250 D1375 |

@@ -162,12 +162,16 @@ rid,name,target,source,word,lines,first
 18,네온 : 비전 아이,person:네온,story,선배,1,d_main_04af_04#67
 18,네온 : 비전 아이,person:네온,story,선배님,1,d_main_21_02_e#24
 18,네온 : 비전 아이,person:네온,story,손님,1,event_seayouagain1_intermission_01#22
+19,마리안 : 퀸,person:마리안,voice,지휘관,23,c019_01_Lobby_Touch_2
+19,마리안 : 퀸,person:마리안,story,지휘관,72,d_main_01_01_s#4
+19,마리안 : 퀸,person:마리안,story,당신,15,d_main_01_01_s#31
+19,마리안 : 퀸,person:마리안,story,손님,1,event_lastkingdom1_01_e#0
 20,델타,person:델타,voice,지휘관,4,c020_Lobby_Touch_Love_1
 20,델타,person:델타,episode,지휘관,26,ep:d_nikke_delta_01#1
 20,델타,person:델타,episode,당신,1,ep:d_nikke_delta_02#6
-20,델타,person:델타,story,지휘관,5,fl:go_ninja_thief_01#6
-20,델타,person:델타,story,당신,1,fl:go_ninja_thief_12#121
-20,델타,person:델타,story,선배님,1,fl:go_ninja_thief_00#37
+20,델타,person:델타,story,지휘관,5,event_goninjathief_01_s#6
+20,델타,person:델타,story,당신,1,event_goninjathief_06_s#121
+20,델타,person:델타,story,선배님,1,event_goninjathief_prologue#37
 22,시그널,person:시그널,voice,지휘관,6,c022_Lobby_Touch_Love_1
 22,시그널,person:시그널,episode,지휘관,28,ep:d_nikke_signal_01#39
 22,시그널,person:시그널,episode,사장님,1,ep:d_nikke_signal_01#109
@@ -176,14 +180,14 @@ rid,name,target,source,word,lines,first
 23,델타 : 닌자 시프,person:델타,voice,지휘관,6,c023_Lobby_Touch_Love_1
 23,델타 : 닌자 시프,person:델타,episode,지휘관,15,ep:d_nikke_delta_ninjathief_01#59
 23,델타 : 닌자 시프,person:델타,episode,당신,8,ep:d_nikke_delta_ninjathief_01#26
-23,델타 : 닌자 시프,person:델타,story,지휘관,5,fl:go_ninja_thief_01#6
-23,델타 : 닌자 시프,person:델타,story,당신,1,fl:go_ninja_thief_12#121
-23,델타 : 닌자 시프,person:델타,story,선배님,1,fl:go_ninja_thief_00#37
+23,델타 : 닌자 시프,person:델타,story,지휘관,5,event_goninjathief_01_s#6
+23,델타 : 닌자 시프,person:델타,story,당신,1,event_goninjathief_06_s#121
+23,델타 : 닌자 시프,person:델타,story,선배님,1,event_goninjathief_prologue#37
 30,폴리,person:폴리,voice,지휘관,9,c030_Lobby_Touch_1
 30,폴리,person:폴리,episode,사장님,34,ep:d_nikke_poli_01#73
 30,폴리,person:폴리,episode,지휘관,22,ep:d_nikke_poli_01#60
 30,폴리,person:폴리,story,지휘관,29,d_main_23_01_s#10
-30,폴리,person:폴리,story,당신,1,fl:go_ninja_thief_13#19
+30,폴리,person:폴리,story,당신,1,event_goninjathief_06_e#19
 30,폴리,person:폴리,story,도로시님,1,d_main_24_12#0
 30,폴리,person:폴리,story,부사령관님,1,d_main_24_11#111
 30,폴리,person:폴리,story,사장님,1,d_main_22_05_s#4
@@ -607,7 +611,7 @@ rid,name,target,source,word,lines,first
 221,라푼젤,person:라푼젤,story,보스,1,event_redash1_01_s#59
 221,라푼젤,person:라푼젤,story,손님,1,d_main_17_05_s#46
 222,홍련,person:홍련,episode,지휘관,1,ep:d_nikke_hongryeon_03#112
-222,홍련,person:홍련,story,지휘관,8,fl:ark_guardian_01#0
+222,홍련,person:홍련,story,지휘관,8,event_arkguardian1_01_s#0
 222,홍련,person:홍련,story,손님,3,d_main_48_04#38
 222,홍련,person:홍련,story,아님,1,event_overzone2_03_e#50
 223,나유타,person:나유타,episode,지휘관,1,ep:d_nikke_nayuta_03#38
@@ -615,7 +619,7 @@ rid,name,target,source,word,lines,first
 224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,episode,당신,2,ep:d_nikke_snowwhite_young_01#53
 224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,episode,지휘관,1,ep:d_nikke_snowwhite_young_05#177
 224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,story,지휘관,13,erelic:red_ash_mini_00#9
-225,홍련 : 흑영,person:홍련,story,지휘관,8,fl:ark_guardian_01#0
+225,홍련 : 흑영,person:홍련,story,지휘관,8,event_arkguardian1_01_s#0
 225,홍련 : 흑영,person:홍련,story,손님,3,d_main_48_04#38
 225,홍련 : 흑영,person:홍련,story,아님,1,event_overzone2_03_e#50
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,episode,자매님,16,ep:d_nikke_rapunzel_puregrace_01#60
@@ -952,14 +956,14 @@ rid,name,target,source,word,lines,first
 402,퀀시,person:퀀시,story,교관님,25,event_phantomthiefvsdetective_prologue#93
 402,퀀시,person:퀀시,story,팬텀님,6,event_phantomthiefvsdetective_01_e#3
 402,퀀시,person:퀀시,story,경찰님,1,event_phantomthiefvsdetective_03_s#21
-402,퀀시,person:퀀시,story,닌자님,1,fl:go_ninja_thief_13#32
+402,퀀시,person:퀀시,story,닌자님,1,event_goninjathief_06_e#32
 403,퀀시 : 이스케이프 퀸,person:퀀시,voice,교관님,17,c403_Lobby_Touch_1
 403,퀀시 : 이스케이프 퀸,person:퀀시,episode,교관님,22,ep:d_nikke_quency_escapequeen_01#17
 403,퀀시 : 이스케이프 퀸,person:퀀시,episode,퀀시님,1,ep:d_nikke_quency_escapequeen_02#129
 403,퀀시 : 이스케이프 퀸,person:퀀시,story,교관님,25,event_phantomthiefvsdetective_prologue#93
 403,퀀시 : 이스케이프 퀸,person:퀀시,story,팬텀님,6,event_phantomthiefvsdetective_01_e#3
 403,퀀시 : 이스케이프 퀸,person:퀀시,story,경찰님,1,event_phantomthiefvsdetective_03_s#21
-403,퀀시 : 이스케이프 퀸,person:퀀시,story,닌자님,1,fl:go_ninja_thief_13#32
+403,퀀시 : 이스케이프 퀸,person:퀀시,story,닌자님,1,event_goninjathief_06_e#32
 404,길티 : 마이티 바니,person:길티,episode,지휘관,1,ep:d_nikke_guilty_mightybunny_03#29
 405,신 : 스위프트 바니,person:신,episode,주인님,4,ep:d_nikke_sin_swiftbunny_01#22
 405,신 : 스위프트 바니,person:신,story,인님,7,event_romanticvalentine_01_e#104
@@ -1036,6 +1040,21 @@ rid,name,target,source,word,lines,first
 470,레드 후드,person:레드_후드,story,아저씨,1,event_redash2_02_e#2
 471,스노우 화이트 : 헤비암즈,person:스노우_화이트,episode,지휘관,2,ep:d_nikke_snowwhite_heavyarms_04#18
 471,스노우 화이트 : 헤비암즈,person:스노우_화이트,story,지휘관,13,erelic:red_ash_mini_00#9
+472,홍련 : 신살,person:홍련,voice,동생,1,c472_Win_1
+472,홍련 : 신살,person:홍련,story,지휘관,8,event_arkguardian1_01_s#0
+472,홍련 : 신살,person:홍련,story,손님,3,d_main_48_04#38
+472,홍련 : 신살,person:홍련,story,아님,1,event_overzone2_03_e#50
+473,라푼젤 : 생츄어리,person:라푼젤,voice,형제님,10,c473_Lobby_Touch_1
+473,라푼젤 : 생츄어리,person:라푼젤,voice,자매님,2,c473_Lobby_Touch_3
+473,라푼젤 : 생츄어리,person:라푼젤,voice,형제자매님,1,c473_Lobby_Touch_2
+473,라푼젤 : 생츄어리,person:라푼젤,story,형제님,41,d_main_17_01_s#4
+473,라푼젤 : 생츄어리,person:라푼젤,story,자매님,28,side:second_affection_01#1
+473,라푼젤 : 생츄어리,person:라푼젤,story,지휘관,15,event_redash_prologue#78
+473,라푼젤 : 생츄어리,person:라푼젤,story,당신,13,erelic:red_ash_lost_00#32
+473,라푼젤 : 생츄어리,person:라푼젤,story,동생,1,event_redash1_02_s#29
+473,라푼젤 : 생츄어리,person:라푼젤,story,마스터,1,side:second_affection_07#43
+473,라푼젤 : 생츄어리,person:라푼젤,story,보스,1,event_redash1_01_s#59
+473,라푼젤 : 생츄어리,person:라푼젤,story,손님,1,d_main_17_05_s#46
 500,일레그,person:일레그,voice,지휘관,2,c500_Gift_2
 500,일레그,person:일레그,episode,지휘관,7,ep:d_nikke_elegg_01#48
 500,일레그,person:일레그,story,지휘관,62,event_darkhero_01_s#66

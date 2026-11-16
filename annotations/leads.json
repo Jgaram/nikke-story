@@ -243,10 +243,10 @@
       "id": "Z6",
       "person": "person:엔더슨",
       "from": "ch01",
-      "arcs": ["ch01-ch04", "ch13-ch18", "ch23-ch27", "fl:ark_guardian-ch48"],
-      "origin": "fl:ark_guardian",
+      "arcs": ["ch01-ch04", "ch13-ch18", "ch23-ch27", "event_arkguardian1-ch48"],
+      "origin": "event_arkguardian1",
       "records": ["J5", "D43", "D304", "D986"],
-      "reason": "ch01부터(첫 고른 구간의 처음 중심) 걸린 자리 17/59(고른 구간 ch01-ch04 3 · ch13-ch18 4 · ch23-ch27 4 · fl:ark_guardian-ch48 6) · 말한 줄 1032 · 이름이 나온 씬 117 — J5의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 5)",
+      "reason": "ch01부터(첫 고른 구간의 처음 중심) 걸린 자리 17/59(고른 구간 ch01-ch04 3 · ch13-ch18 4 · ch23-ch27 4 · event_arkguardian1-ch48 6) · 말한 줄 1032 · 이름이 나온 씬 117 — J5의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 5)",
       "confidence": "추정",
       "status": "확정",
       "reviews": [
@@ -1356,11 +1356,11 @@
     {
       "id": "Z47",
       "person": "person:릴리스",
-      "from": "fl:ark_guardian",
-      "arcs": ["fl:ark_guardian-ch47"],
-      "origin": "fl:ark_guardian",
+      "from": "event_arkguardian1",
+      "arcs": ["event_arkguardian1-ch47"],
+      "origin": "event_arkguardian1",
       "records": ["J6", "D254", "D344", "D978"],
-      "reason": "fl:ark_guardian부터(첫 고른 구간의 처음 중심) 걸린 자리 4/9(고른 구간 fl:ark_guardian-ch47 4) · 말한 줄 409 · 이름이 나온 씬 35 — J6의 주인 · 인물 변화 10(신념 · 기억 · 소속 · 신체 6) · 같은 인물 합침: 릴리바이스",
+      "reason": "event_arkguardian1부터(첫 고른 구간의 처음 중심) 걸린 자리 4/9(고른 구간 event_arkguardian1-ch47 4) · 말한 줄 409 · 이름이 나온 씬 35 — J6의 주인 · 인물 변화 10(신념 · 기억 · 소속 · 신체 6) · 같은 인물 합침: 릴리바이스",
       "confidence": "추정",
       "status": "확정",
       "reviews": [
@@ -1370,7 +1370,7 @@
           "date": "2026-10-09",
           "session": "X3f-1c",
           "note": "새 기준으로 다시 봄 — J6의 주인. from · 범위는 기계 그대로(손으로 앞당기지 않는다) · 같은 인물 합침: 릴리바이스",
-          "before": "이유 (초안) fl:ark_guardian부터(첫 고른 구간의 처음 중심) 걸린 자리 4/9(고른 구간 fl:ark_guardian-ch47 4) · 말한 줄 409 · 이름이 나온 씬 35 — J6의 주인 · 인물 변화 10(신념 · 기억 · 소속 · 신체 6)"
+          "before": "이유 (초안) event_arkguardian1부터(첫 고른 구간의 처음 중심) 걸린 자리 4/9(고른 구간 event_arkguardian1-ch47 4) · 말한 줄 409 · 이름이 나온 씬 35 — J6의 주인 · 인물 변화 10(신념 · 기억 · 소속 · 신체 6)"
         },
         {
           "decision": "확정",
@@ -1385,11 +1385,11 @@
     {
       "id": "Z48",
       "person": "person:오스왈드",
-      "from": "fl:ark_guardian",
-      "arcs": ["fl:ark_guardian-ch46"],
-      "origin": "fl:ark_guardian",
+      "from": "event_arkguardian1",
+      "arcs": ["event_arkguardian1-ch46"],
+      "origin": "event_arkguardian1",
       "records": ["J6", "D979", "D996", "D1085"],
-      "reason": "fl:ark_guardian부터(첫 고른 구간의 처음 중심) 걸린 자리 3/9(고른 구간 fl:ark_guardian-ch46 3) · 말한 줄 437 · 이름이 나온 씬 19 — J6의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 6)",
+      "reason": "event_arkguardian1부터(첫 고른 구간의 처음 중심) 걸린 자리 3/9(고른 구간 event_arkguardian1-ch46 3) · 말한 줄 437 · 이름이 나온 씬 19 — J6의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 6)",
       "confidence": "추정",
       "status": "확정",
       "reviews": [
@@ -1399,7 +1399,7 @@
           "date": "2026-10-09",
           "session": "X3f-1c",
           "note": "새 기준으로 다시 봄 — J6의 주인. from · 범위는 기계 그대로(손으로 앞당기지 않는다)",
-          "before": "이유 (초안) fl:ark_guardian부터(첫 고른 구간의 처음 중심) 걸린 자리 3/9(고른 구간 fl:ark_guardian-ch46 3) · 말한 줄 437 · 이름이 나온 씬 19 — J6의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 6)"
+          "before": "이유 (초안) event_arkguardian1부터(첫 고른 구간의 처음 중심) 걸린 자리 3/9(고른 구간 event_arkguardian1-ch46 3) · 말한 줄 437 · 이름이 나온 씬 19 — J6의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 6)"
         },
         {
           "decision": "확정",

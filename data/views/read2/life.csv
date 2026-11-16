@@ -149,7 +149,7 @@ U150,방주 사회,event_overzone,200,event_overzone2_03_s,place:방주,,"밀봉
 U152,일상 · 문화,event_overzone,200,event_overzone2_04_s,concept:퍼펙트,F922,방주의 주식 퍼펙트는 처음부터 회반죽 같고 맛이 끔찍하지만 이론상 완벽해 그것만 먹어도 장수할 수 있는 식품으로 만들어졌다,확실,확정
 U151,방주 사회,event_overzone,200,event_overzone2_04_e,org:갓데스 place:방주,F920,방주는 갓데스를 들이는 대신 초대형 승리의 여신상을 세우고 갓데스를 신격화한 서적 · 광고를 퍼뜨려 모두가 우러러보게 하겠다고 했다,확실,확정
 U153,방주 사회,event_overzone,200,event_overzone2_epilogue,org:필그림 org:갓데스,F927,"밀봉 50년쯤 뒤 지상에 오른 방주의 니케들 사이엔 갓데스 이야기가 유일한 낙이고, '필그림'이라는 이름이 거의 공식처럼 쓰인다",확실,확정
-U154,구시대,erelic:white_memory,201,erelic:white_memory_02,place:지상,,밀봉 무렵 지상의 니케들은 사슴 사냥 · 덫 · 맨손 낚시 · 버려진 공장에서 통조림 깡통 요리로 먹을 것을 구하며 초소로 돌아왔다,확실,확정
+U154,구시대,erelic:white_memory,201,erelic:white_memory_049,place:지상,,밀봉 무렵 지상의 니케들은 사슴 사냥 · 덫 · 맨손 낚시 · 버려진 공장에서 통조림 깡통 요리로 먹을 것을 구하며 초소로 돌아왔다,확실,확정
 U155,일상 · 문화,event_bluewaterisland,209,event_bluewaterisland1_intermission_01,place:방주,,"밀물 · 썰물은 구시대엔 널리 알려진 현상이었지만 지금은 서적 속 구시대 상식이라, 의사도 눈앞의 바닷길과 잇지 못한다",확실,확정
 U156,방주 사회,event_bluewaterisland,209,event_bluewaterisland2_04_s,place:방주,,"방주엔 인공 태양과 수영장뿐이라, 진짜 햇빛 · 진짜 바다가 있는 지상의 섬은 '누가 더 안 있고 싶어하겠냐'는 곳이다",확실,확정
 U157,일상 · 문화,event_bluewaterisland,209,event_bluewaterisland2_05_s,place:방주,,"방주에는 강아지가 드물어, 개를 산책시키며 마음이 치유되는 일을 겪어 본 사람이 거의 없다",확실,확정
@@ -354,9 +354,9 @@ U352,방주 사회,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_03,inci
 U353,지상,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_06,place:에덴 concept:퍼펙트,,"에덴 초기의 끼니는 매번 같은 통조림이다 — 심어 둔 열매가 자라기 전까진 어쩔 수 없고, 그래도 퍼펙트보단 낫다는 말을 듣는다",확실,확정
 U354,지상,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_08,place:에덴 concept:퍼펙트,,에덴이 처음 수확한 사과를 여섯 조각으로 똑같이 나눠 맛보고 '퍼펙트랑은 비교도 안 된다 · 이건 진짜'라 한다,확실,확정
 U355,방주 사회,erelic:goddess_fall_mini,419,erelic:goddess_fall_mini_09,incident:2차_지상_탈환전 org:중앙_정부 person:요한,F2334,"2차 지상 탈환전은 '1차 대비 100배 규모 · 전설의 지휘관 샛별'로 선전되고, 실패하자 돈을 들였다며 후퇴를 막은 뒤 방송은 '샛별의 무모한 작전' 탓으로 돌린다",확실,확정
-U358,구시대,fl:ark_guardian,428,fl:ark_guardian_04,org:갓데스 org:중앙_정부,,"병사들은 갓데스를 '종교도 아니고' 싶을 만큼 우러르고, 중앙 정부 인트라넷에는 익명으로 릴리바이스의 별명 · 이모티콘이 돈다",확실,확정
-U356,구시대,fl:ark_guardian,428,fl:ark_guardian_05,place:방주,F2359 F2360,"방주 입구로 끝없이 이어지는 피난 행렬 — 들어갈 수 있는 이는 전체 인구의 한 자릿수 % 아래이고, 사람용 입구는 선별을 위해 하나뿐이다",확실,확정
-U357,구시대,fl:ark_guardian,428,fl:ark_guardian_06,place:방주,F2361,"피난민은 가족 단위로 오고, 보호자 없는 아이는 고아원으로 가며 성인 남성 혼자서는 원칙상 보호자가 될 수 없다",확실,확정
+U358,구시대,event_arkguardian1,428,event_arkguardian1_02_e,org:갓데스 org:중앙_정부,,"병사들은 갓데스를 '종교도 아니고' 싶을 만큼 우러르고, 중앙 정부 인트라넷에는 익명으로 릴리바이스의 별명 · 이모티콘이 돈다",확실,확정
+U356,구시대,event_arkguardian1,428,event_arkguardian1_03_s,place:방주,F2359 F2360,"방주 입구로 끝없이 이어지는 피난 행렬 — 들어갈 수 있는 이는 전체 인구의 한 자릿수 % 아래이고, 사람용 입구는 선별을 위해 하나뿐이다",확실,확정
+U357,구시대,event_arkguardian1,428,event_arkguardian1_03_e,place:방주,F2361,"피난민은 가족 단위로 오고, 보호자 없는 아이는 고아원으로 가며 성인 남성 혼자서는 원칙상 보호자가 될 수 없다",확실,확정
 U359,방주 사회,fl:sin_editor,430,fl:sin_editor_02,place:방주,F2381,뉴스 앱 헤드라인은 '지상 자원 회수 목표치 90% 달성 · 방주의 지휘관이 빚어낸 경이로운 성과'처럼 지상 작전을 늘 성공으로 알린다,확실,확정
 U361,일상 · 문화,fl:sin_editor,430,fl:sin_editor_03,place:금서고,,수위가 너무 높은 신간은 방주에서 금서로 지정되어 도서관 금서고로 간다,확실,확정
 U360,방주 사회,fl:sin_editor,430,fl:sin_editor_12,place:방주,F2380 F2382,"보도되는 숫자는 고쳐 쓰여, 지상에서 돌아오지 못한 이들은 죽은 것이 아니라 아무 일도 없었던 것처럼 방주 사람들의 기억에서 사라진다 — 오늘 먹을 식량 · 내일 전기를 걱정하느라 미래를 생각할 여유도 없는 사람이 많다",확실,확정

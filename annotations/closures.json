@@ -1140,7 +1140,7 @@
     {
       "id": "O53",
       "type": "연작",
-      "chain": "연작 fl:ark_guardian",
+      "chain": "연작 event_arkguardian1",
       "text": "마리안이 머문 크라운 왕국(SECOND AFFECTION · LAST KINGDOM)과 에덴(EDEN SPEAR)의 이야기가, 장막이 걷혀 퀸이 내려온 결전 GODDESS FALL에서 한데 모여 결판난다",
       "built": ["side:second_affection", "event_lastkingdom1", "side:eden_spear"],
       "end": "event_goddessfall1",
@@ -1153,7 +1153,7 @@
           "by": "claude",
           "date": "2026-10-09",
           "session": "X3f-1e",
-          "before": "(초안) 연작 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → fl:ark_guardian의 결판 · 이유 (초안) 다음 편 사슬 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → fl:ark_guardian의 마지막 편 · 끝 fl:ark_guardian · 쌓인 자리 side:second_affection event_lastkingdom1 side:eden_spear event_goddessfall1"
+          "before": "(초안) 연작 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → event_arkguardian1의 결판 · 이유 (초안) 다음 편 사슬 side:second_affection → event_lastkingdom1 → side:eden_spear → event_goddessfall1 → event_arkguardian1의 마지막 편 · 끝 event_arkguardian1 · 쌓인 자리 side:second_affection event_lastkingdom1 side:eden_spear event_goddessfall1"
         }
       ]
     },
@@ -1208,7 +1208,7 @@
       "about": ["person:릴리바이스", "person:엔더슨"],
       "text": "명령을 무시하는 지휘관을 믿던 릴리바이스와 '죽지 마라'며 서로 살아남기로 한 엔더슨이, 아크 가디언 작전에서 '사랑한다'를 주고받으며 헤어진다",
       "built": ["D342", "D356"],
-      "end": "fl:ark_guardian",
+      "end": "event_arkguardian1",
       "closing": ["D991", "D992"],
       "reason": "RED ASH D342 · 이벤트 유실물 D356 → ARK GUARDIAN D991 · D992 이별 — ch44 D1051(퀸이 몸을 빼앗았다는 분노)은 새 국면이라 끝을 ARK GUARDIAN으로",
       "confidence": "확실",
@@ -3924,11 +3924,11 @@
     {
       "id": "O178",
       "type": "연작",
-      "chain": "연작 fl:go_ninja_thief",
-      "text": "(초안) 연작 event_phantomthiefvsdetective → fl:go_ninja_thief의 결판",
+      "chain": "연작 event_goninjathief",
+      "text": "(초안) 연작 event_phantomthiefvsdetective → event_goninjathief의 결판",
       "built": ["event_phantomthiefvsdetective"],
-      "end": "fl:go_ninja_thief",
-      "reason": "(초안) 다음 편 사슬 event_phantomthiefvsdetective → fl:go_ninja_thief의 마지막 편",
+      "end": "event_goninjathief",
+      "reason": "(초안) 다음 편 사슬 event_phantomthiefvsdetective → event_goninjathief의 마지막 편",
       "confidence": "추정",
       "status": "기각",
       "reviews": [
@@ -3977,9 +3977,9 @@
       "about": ["person:델타"],
       "text": "(초안) 성장 person:델타 신념의 끝",
       "built": ["D1793", "D1794"],
-      "end": "fl:go_ninja_thief",
+      "end": "event_goninjathief",
       "closing": ["D1645"],
-      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1645@fl:go_ninja_thief",
+      "reason": "(초안) 3건 · 단위 2 · 변화 2, 마지막 변화 D1645@event_goninjathief",
       "confidence": "추정",
       "status": "기각",
       "reviews": [

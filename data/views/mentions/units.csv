@@ -199,7 +199,7 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 198,sub:할아범_01,서브퀘스트,1,5,3,0,0,0
 199,relic:에닉탄핵포스터,유실물,5,1,3,0,0,0
 200,event_overzone,이벤트,28,12,17,3,1,89
-201,erelic:white_memory,유실물,21,6,4,0,0,0
+201,erelic:white_memory,유실물,117,8,7,0,0,0
 202,char:233,호감도,5,8,10,0,0,0
 203,char:392,호감도,5,11,6,5,0,0
 204,event_BunnyX777,이벤트,15,17,6,0,0,0
@@ -410,7 +410,7 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 409,char:842,호감도,5,6,6,0,0,0
 410,char:841,호감도,5,4,9,0,0,0
 411,side:eden_spear,사이드,13,26,15,0,0,0
-412,fl:go_ninja_thief,이벤트,15,9,8,0,0,0
+412,event_goninjathief,이벤트,15,9,8,0,0,0
 413,char:23,호감도,5,5,4,0,0,6
 414,ch41,메인,16,47,38,3,2,0
 415,relic:거꾸로적힌기록,유실물,4,4,0,0,0,0
@@ -426,7 +426,7 @@ order,unit,kind,scenes,persons,terms,new_persons,new_terms,unknown_lines
 425,fl:terminus_ticket,이벤트,28,14,7,1,0,0
 426,char:75,호감도,5,7,3,0,0,11
 427,char:73,호감도,5,4,3,0,0,0
-428,fl:ark_guardian,이벤트,28,28,34,0,1,0
+428,event_arkguardian1,이벤트,28,28,34,0,1,0
 429,char:471,호감도,5,8,6,0,0,0
 430,fl:sin_editor,이벤트,15,6,10,0,0,14
 431,char:582,호감도,5,4,3,0,0,1

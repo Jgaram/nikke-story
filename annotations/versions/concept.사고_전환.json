@@ -1,7 +1,7 @@
 {
   "subject": "concept:사고_전환",
   "no_side": {
-    "char:10": "인격이 바뀌어 대개 미친다는 것 — char:221 곁 판(뇌 정보가 바뀌는 일) · fl:ark_guardian 본판(재조립 · 대개 미침)이 핵심을 담고, 이레귤러는 세부",
+    "char:10": "인격이 바뀌어 대개 미친다는 것 — char:221 곁 판(뇌 정보가 바뀌는 일) · event_arkguardian1 본판(재조립 · 대개 미침)이 핵심을 담고, 이레귤러는 세부",
     "char:220": "스노우 화이트가 몇 번 겪었다는 인물 세부 — 기억을 잃는다는 것은 ch17 본판이 담는다",
     "char:92": "양산형 훈련 · 폐기 이야기라 이 항목이 무엇인지와 무관한 세부",
     "char:142": "니케 몸이 정신 상태의 영향을 받는다는 곁 이야기 — 이 항목이 무엇인지는 바꾸지 않는다",
@@ -23,7 +23,7 @@
           "date": "2026-10-10",
           "session": "W15e",
           "hash": "96b0e964b5",
-          "note": "char:221 F492 정의, fl:ark_guardian F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
+          "note": "char:221 F492 정의, event_arkguardian1 F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
         },
         {
           "decision": "확정",
@@ -31,19 +31,19 @@
           "date": "2026-10-14",
           "session": "W16b",
           "hash": "6254902cbd",
-          "note": "메인만 본 독자는 ch17 d_main_17_07#21-22(홍련 — 인간이 이것이 일어나면 총구가 자기들에게 올까 두려워 니케를 통제) · d_main_17_08#29(스노우 화이트 — 겪어 기억을 많이 잃음)에서 처음 만난다 — 뇌 정보가 바뀐다는 정의는 아직 없어 그 둘만으로. char:221(호감도 — 뇌 정보가 바뀌는 일 · 노화 과부하)은 곁 판, ch17은 그 정의를 담지 못해 재조립 정의로 이를 넘어서는 fl:ark_guardian 본판을 until로"
+          "note": "메인만 본 독자는 ch17 d_main_17_07#21-22(홍련 — 인간이 이것이 일어나면 총구가 자기들에게 올까 두려워 니케를 통제) · d_main_17_08#29(스노우 화이트 — 겪어 기억을 많이 잃음)에서 처음 만난다 — 뇌 정보가 바뀐다는 정의는 아직 없어 그 둘만으로. char:221(호감도 — 뇌 정보가 바뀌는 일 · 노화 과부하)은 곁 판, ch17은 그 정의를 담지 못해 재조립 정의로 이를 넘어서는 event_arkguardian1 본판을 until로"
         },
         {
           "decision": "확정",
           "by": "claude",
           "date": "2026-10-14",
           "session": "W17",
-          "hash": "0de0c7cac1",
-          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, fl:ark_guardian F2370"
+          "hash": "fbe36c28f0",
+          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, event_arkguardian1 F2370"
         }
       ],
       "side": true,
-      "until": "fl:ark_guardian",
+      "until": "event_arkguardian1",
       "refs": ["F492"]
     },
     {
@@ -61,7 +61,7 @@
           "date": "2026-10-14",
           "session": "W16b",
           "hash": "0764a8c217",
-          "note": "메인만 본 독자는 ch17 d_main_17_07#21-22(홍련 — 인간이 이것이 일어나면 총구가 자기들에게 올까 두려워 니케를 통제) · d_main_17_08#29(스노우 화이트 — 겪어 기억을 많이 잃음)에서 처음 만난다 — 뇌 정보가 바뀐다는 정의는 아직 없어 그 둘만으로. char:221(호감도 — 뇌 정보가 바뀌는 일 · 노화 과부하)은 곁 판, ch17은 그 정의를 담지 못해 재조립 정의로 이를 넘어서는 fl:ark_guardian 본판을 until로"
+          "note": "메인만 본 독자는 ch17 d_main_17_07#21-22(홍련 — 인간이 이것이 일어나면 총구가 자기들에게 올까 두려워 니케를 통제) · d_main_17_08#29(스노우 화이트 — 겪어 기억을 많이 잃음)에서 처음 만난다 — 뇌 정보가 바뀐다는 정의는 아직 없어 그 둘만으로. char:221(호감도 — 뇌 정보가 바뀌는 일 · 노화 과부하)은 곁 판, ch17은 그 정의를 담지 못해 재조립 정의로 이를 넘어서는 event_arkguardian1 본판을 until로"
         },
         {
           "decision": "확정",
@@ -69,15 +69,15 @@
           "date": "2026-10-14",
           "session": "W17",
           "hash": "9ce0a87fe4",
-          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, fl:ark_guardian F2370"
+          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, event_arkguardian1 F2370"
         }
       ],
       "refs": ["F684", "F679"]
     },
     {
-      "at": "fl:ark_guardian",
+      "at": "event_arkguardian1",
       "text": "극한 상황에서 NIMPH가 니케 뇌의 정보 · 감정을 필요한 것만 남겨 극대화해 재조립하는 일 — 대개는 정보가 꼬여 미치지만, 드물게 아귀가 맞는다.",
-      "src": "adc0a9604a",
+      "src": "e826a3fdb4",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -89,15 +89,23 @@
           "date": "2026-10-10",
           "session": "W15e",
           "hash": "121b242124",
-          "note": "char:221 F492 정의, fl:ark_guardian F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
+          "note": "char:221 F492 정의, event_arkguardian1 F2370 내막(NIMPH의 재조립)이 체크 칸에서만 드러나 그 자리에 판"
         },
         {
           "decision": "확정",
           "by": "claude",
           "date": "2026-10-14",
           "session": "W17",
-          "hash": "88118bdd3b",
-          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, fl:ark_guardian F2370"
+          "hash": "3579db2b11",
+          "note": "W17 ② 근거 — 곁 판 F492, ch17 F684 · F679, event_arkguardian1 F2370"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "d0c7de63b9",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
         }
       ],
       "refs": ["F2370"]

@@ -60,7 +60,7 @@ person:그레이브,side:eden_spear,0,0.000,0,0.000,J12,,
 person:그레이브,ch41,4,0.002,1,0.063,,,
 person:그레이브,ch42,33,0.016,9,0.529,J12,,1
 person:그레이브,event_goddessfall1,0,0.000,0,0.000,J12,,
-person:그레이브,fl:ark_guardian,0,0.000,1,0.036,,,
+person:그레이브,event_arkguardian1,0,0.000,1,0.036,,,
 person:그레이브,ch44,0,0.000,1,0.053,,,
 person:그레이브,ch46,0,0.000,1,0.048,,,
 person:그레텔,ch28,0,0.000,0,0.000,J12,,
@@ -153,7 +153,7 @@ person:노아,ch20,22,0.029,7,0.467,,,1
 person:노아,ch21,72,0.059,9,0.429,,D211 D212,1
 person:노아,side:eden_spear,64,0.047,7,0.538,,D844,1
 person:노아,event_goddessfall1,67,0.020,9,0.321,,D913 D914,1
-person:노아,fl:ark_guardian,0,0.000,1,0.036,,,
+person:노아,event_arkguardian1,0,0.000,1,0.036,,,
 person:노아,ch44,0,0.000,4,0.211,,,
 person:노아,ch46,0,0.000,1,0.048,,,
 person:노아,ch47,0,0.000,1,0.143,,,
@@ -188,7 +188,7 @@ person:니힐리스타,side:eden_spear,145,0.107,12,0.923,J15,,1
 person:니힐리스타,ch41,0,0.000,0,0.000,J15,,
 person:니힐리스타,ch42,0,0.000,0,0.000,J15,,
 person:니힐리스타,event_goddessfall1,230,0.070,13,0.464,,D898 D900 D944 D946 D948 D949,1
-person:니힐리스타,fl:ark_guardian,0,0.000,0,0.000,J15,,
+person:니힐리스타,event_arkguardian1,0,0.000,0,0.000,J15,,
 person:니힐리스타,ch44,0,0.000,1,0.053,,,
 person:도라,ch15,64,0.124,9,0.643,,D120,1
 person:도라,ch22,33,0.032,1,0.059,,,
@@ -213,7 +213,7 @@ person:도로시,ch39,0,0.000,1,0.053,J7,,1
 person:도로시,side:eden_spear,0,0.000,5,0.385,,,
 person:도로시,ch42,0,0.000,1,0.059,,,
 person:도로시,event_goddessfall1,59,0.018,5,0.179,J7,,1
-person:도로시,fl:ark_guardian,289,0.123,18,0.643,,D983 D987,1
+person:도로시,event_arkguardian1,289,0.123,18,0.643,,D983 D987,1
 person:도로시,ch44,35,0.014,4,0.211,J7,,1
 person:도로시,ch45,87,0.062,5,0.455,J7,D1139,1
 person:도로시,ch46,210,0.106,8,0.381,J7,D1168 D1173 D1175,1
@@ -260,7 +260,7 @@ person:라푼젤,event_oldtales1,24,0.008,3,0.107,,,
 person:라푼젤,ch39,0,0.000,2,0.105,,,
 person:라푼젤,ch40,0,0.000,1,0.053,,,
 person:라푼젤,event_goddessfall1,110,0.033,16,0.571,,D951,1
-person:라푼젤,fl:ark_guardian,135,0.057,18,0.643,,,1
+person:라푼젤,event_arkguardian1,135,0.058,18,0.643,,,1
 person:라푼젤,ch44,0,0.000,5,0.263,,,
 person:라푼젤,ch45,0,0.000,1,0.091,,,
 person:라푼젤,ch46,0,0.000,1,0.048,,,
@@ -354,7 +354,7 @@ person:레드_슈즈,side:mudfish,0,0.000,0,0.000,J12,,
 person:레드_슈즈,side:eden_spear,0,0.000,0,0.000,J12,,
 person:레드_슈즈,ch42,0,0.000,0,0.000,J12,,
 person:레드_슈즈,event_goddessfall1,0,0.000,0,0.000,J12,,
-person:레드_슈즈,fl:ark_guardian,0,0.000,2,0.071,,,
+person:레드_슈즈,event_arkguardian1,0,0.000,2,0.071,,,
 person:레드_슈즈,ch46,0,0.000,2,0.095,,,
 person:레드_슈즈,ch47,0,0.000,2,0.286,,,
 person:레드_슈즈,ch48,46,0.049,1,0.125,,D1325 D1326,1
@@ -384,7 +384,7 @@ person:레드_후드,ch36,0,0.000,1,0.077,,,
 person:레드_후드,ch38,0,0.000,0,0.000,J2,,
 person:레드_후드,ch42,0,0.000,0,0.000,J2,,
 person:레드_후드,event_goddessfall1,0,0.000,1,0.036,,,
-person:레드_후드,fl:ark_guardian,4,0.002,9,0.321,,,
+person:레드_후드,event_arkguardian1,4,0.002,9,0.321,,,
 person:레드_후드,ch44,14,0.006,2,0.105,J2,,1
 person:레드_후드,side:pretty_star,0,0.000,4,0.267,,,
 person:레드_후드,ch45,0,0.000,0,0.000,J2,,
@@ -439,7 +439,7 @@ person:리버렐리오,side:eden_spear,59,0.043,4,0.308,J15,,1
 person:리버렐리오,ch41,122,0.076,5,0.313,J15,D850 D851,1
 person:리버렐리오,ch42,145,0.068,10,0.588,J15,D877 D879,1
 person:리버렐리오,event_goddessfall1,0,0.000,3,0.107,,,
-person:리버렐리오,fl:ark_guardian,0,0.000,1,0.036,J15,,1
+person:리버렐리오,event_arkguardian1,0,0.000,1,0.036,J15,,1
 person:리버렐리오,ch44,31,0.013,4,0.211,,D1048 D1049,1
 person:리버렐리오,ch45,4,0.003,1,0.091,,,
 person:리버렐리오,ch46,0,0.000,4,0.190,,,
@@ -465,7 +465,7 @@ person:리타,ch29,0,0.000,1,0.050,,,
 person:리타,ch30,0,0.000,1,0.056,,,
 person:릴리,event_redash,0,0.000,1,0.036,,,
 person:릴리,event_goddessfall1,0,0.000,2,0.071,,,
-person:릴리,fl:ark_guardian,0,0.000,2,0.071,,,
+person:릴리,event_arkguardian1,0,0.000,2,0.071,,,
 person:릴리스,ch07,0,0.000,0,0.000,J6,,
 person:릴리스,ch17,0,0.000,1,0.053,J6,,1
 person:릴리스,event_overzone,28,0.013,12,0.429,J6,D254,1
@@ -473,7 +473,7 @@ person:릴리스,ch23,0,0.000,0,0.000,J6,,
 person:릴리스,event_redash,275,0.118,20,0.714,J6,D341 D342 D343 D344,1
 person:릴리스,event_oldtales1,25,0.009,3,0.107,,,
 person:릴리스,event_goddessfall1,0,0.000,4,0.143,,,
-person:릴리스,fl:ark_guardian,409,0.174,22,0.786,J6,D978 D984 D985 D992 D993,1
+person:릴리스,event_arkguardian1,409,0.174,22,0.786,J6,D978 D984 D985 D992 D993,1
 person:릴리스,ch44,0,0.000,5,0.263,,,
 person:릴리스,side:pretty_star,0,0.000,2,0.133,J6,,1
 person:릴리스,ch45,0,0.000,1,0.091,,,
@@ -594,7 +594,7 @@ person:미러,ch40,0,0.000,1,0.053,,,
 person:미러,side:eden_spear,0,0.000,0,0.000,J12,,
 person:미러,ch42,0,0.000,0,0.000,J12,,
 person:미러,event_goddessfall1,244,0.074,8,0.286,J12,D908 D909 D910 D942 D957,1
-person:미러,fl:ark_guardian,12,0.005,1,0.036,,,
+person:미러,event_arkguardian1,12,0.005,1,0.036,,,
 person:미러,ch44,0,0.000,1,0.053,,D1050,1
 person:미러,ch46,201,0.102,7,0.333,,D1155 D1156,1
 person:미러,ch47,0,0.000,3,0.429,,,1
@@ -675,7 +675,7 @@ person:베스티,ch32,67,0.055,10,0.667,,D502 D503,1
 person:베스티,ch33,1,0.001,1,0.077,,,
 person:베스티,ch34,53,0.033,9,0.600,,,1
 person:베이,side:eden_spear,0,0.000,1,0.077,,,
-person:베이,fl:ark_guardian,0,0.000,1,0.036,,,
+person:베이,event_arkguardian1,0,0.000,1,0.036,,,
 person:베히모스,ch12,0,0.000,0,0.000,J10,,
 person:베히모스,ch31,120,0.123,5,0.385,J10,D493 D494 D495,1
 person:베히모스,ch32,151,0.123,12,0.800,J10,D504 D509,1
@@ -723,7 +723,7 @@ person:세실,ch40,0,0.000,0,0.000,J8,,
 person:세실,side:eden_spear,165,0.122,12,0.923,J8,,1
 person:세실,ch42,0,0.000,0,0.000,J8,,
 person:세실,event_goddessfall1,127,0.039,14,0.500,J8,,1
-person:세실,fl:ark_guardian,74,0.032,3,0.107,J8,D975,1
+person:세실,event_arkguardian1,74,0.032,3,0.107,J8,D975,1
 person:세실,ch44,53,0.022,5,0.263,J8,D1034,1
 person:세실,ch45,11,0.008,1,0.091,,,
 person:세실,ch46,38,0.019,5,0.238,J8,,1
@@ -803,7 +803,7 @@ person:스노우_화이트,event_oldtales1,11,0.004,2,0.071,,,
 person:스노우_화이트,ch39,0,0.000,2,0.105,,,
 person:스노우_화이트,ch40,0,0.000,1,0.053,,,
 person:스노우_화이트,event_goddessfall1,167,0.051,19,0.679,,D920 D953 D956,1
-person:스노우_화이트,fl:ark_guardian,321,0.137,20,0.714,,D973 D974 D988 D989 D994,1
+person:스노우_화이트,event_arkguardian1,319,0.136,20,0.714,,D973 D974 D988 D989 D994,1
 person:스노우_화이트,ch44,140,0.058,4,0.211,,D1036 D1038 D1039 D1040 D1041 D1042 D1043 D1044,1
 person:스노우_화이트,ch45,10,0.007,2,0.182,,,
 person:스노우_화이트,ch46,153,0.077,11,0.524,,D1148 D1150,1
@@ -858,7 +858,7 @@ person:신데렐라,side:eden_spear,12,0.009,1,0.077,J12,,1
 person:신데렐라,ch41,4,0.002,2,0.125,,,
 person:신데렐라,ch42,95,0.045,10,0.588,J12,D878 D889,1
 person:신데렐라,event_goddessfall1,0,0.000,1,0.036,J12,,1
-person:신데렐라,fl:ark_guardian,0,0.000,7,0.250,,,
+person:신데렐라,event_arkguardian1,0,0.000,7,0.250,,,
 person:신데렐라,ch44,0,0.000,1,0.053,,,
 person:신데렐라,ch48,0,0.000,1,0.125,,,
 person:아니스,ch00,33,0.234,2,0.400,,D3 D7,1
@@ -993,7 +993,7 @@ person:에닉,ch40,0,0.000,1,0.053,,,
 person:에닉,side:eden_spear,0,0.000,1,0.077,,,
 person:에닉,ch41,0,0.000,2,0.125,,,
 person:에닉,ch42,137,0.065,7,0.412,J16,D890 D891,1
-person:에닉,fl:ark_guardian,0,0.000,1,0.036,,,
+person:에닉,event_arkguardian1,0,0.000,1,0.036,,,
 person:에닉,ch43,0,0.000,1,0.067,,,
 person:에닉,ch44,106,0.044,5,0.263,J16,D1057,1
 person:에닉,side:pretty_star,0,0.000,2,0.133,,,
@@ -1032,7 +1032,7 @@ person:엔더슨,event_oldtales1,0,0.000,2,0.071,,,
 person:엔더슨,event_footstepwalkrun1,0,0.000,1,0.036,,,
 person:엔더슨,ch35,85,0.052,5,0.263,,,
 person:엔더슨,ch41,0,0.000,1,0.063,,,
-person:엔더슨,fl:ark_guardian,6,0.003,21,0.750,J5,D986 D991,1
+person:엔더슨,event_arkguardian1,6,0.003,21,0.750,J5,D986 D991,1
 person:엔더슨,ch43,0,0.000,2,0.133,J5,,1
 person:엔더슨,ch44,52,0.021,4,0.211,,D1051 D1052,1
 person:엔더슨,ch45,13,0.009,2,0.182,,,
@@ -1067,7 +1067,7 @@ person:오스왈드,event_overzone,104,0.048,5,0.179,J6,D252 D253,1
 person:오스왈드,ch23,0,0.000,0,0.000,J6,,
 person:오스왈드,event_redash,105,0.045,5,0.179,J6,D352,1
 person:오스왈드,event_oldtales1,181,0.063,8,0.286,,D579,1
-person:오스왈드,fl:ark_guardian,127,0.054,5,0.179,J6,D979 D980 D982 D995 D996,1
+person:오스왈드,event_arkguardian1,127,0.054,5,0.179,J6,D979 D980 D982 D995 D996,1
 person:오스왈드,side:pretty_star,310,0.151,12,0.800,J6,D1085 D1086 D1087 D1111 D1118,1
 person:오스왈드,ch46,0,0.000,2,0.095,J6,,1
 person:온리_원,ch12,0,0.000,0,0.000,J10,,
@@ -1105,7 +1105,7 @@ person:요한,ch40,0,0.000,0,0.000,J8,,
 person:요한,side:eden_spear,317,0.233,13,1.000,J8,D840 D841,1
 person:요한,ch42,0,0.000,1,0.059,J8,,1
 person:요한,event_goddessfall1,308,0.094,18,0.643,J8,D915 D923 D924 D925 D939 D954 D955,1
-person:요한,fl:ark_guardian,0,0.000,1,0.036,J8,,1
+person:요한,event_arkguardian1,0,0.000,1,0.036,J8,,1
 person:요한,ch44,37,0.015,3,0.158,J8,D1033,1
 person:요한,ch45,12,0.009,2,0.182,,,
 person:요한,ch46,103,0.052,5,0.238,J8,D1163,1
@@ -1142,7 +1142,7 @@ person:이사벨,ch20,17,0.022,7,0.467,,D191 D192,1
 person:이사벨,ch21,50,0.041,7,0.333,,,
 person:이사벨,side:eden_spear,67,0.049,7,0.538,,,1
 person:이사벨,event_goddessfall1,144,0.044,18,0.643,,D911 D927 D929 D930,1
-person:이사벨,fl:ark_guardian,0,0.000,1,0.036,,,
+person:이사벨,event_arkguardian1,0,0.000,1,0.036,,,
 person:이사벨,ch44,0,0.000,1,0.053,,,
 person:이사벨,ch46,0,0.000,2,0.095,,,
 person:이사벨,ch47,0,0.000,1,0.143,,,
@@ -1180,7 +1180,7 @@ person:인디빌리아,side:eden_spear,0,0.000,2,0.154,J15,,1
 person:인디빌리아,ch41,0,0.000,0,0.000,J15,,
 person:인디빌리아,ch42,0,0.000,0,0.000,J15,,
 person:인디빌리아,event_goddessfall1,220,0.067,13,0.464,,D901 D903 D945,1
-person:인디빌리아,fl:ark_guardian,0,0.000,0,0.000,J15,,
+person:인디빌리아,event_arkguardian1,0,0.000,0,0.000,J15,,
 person:인디빌리아,ch46,0,0.000,1,0.048,,,
 person:일레그,ch27,252,0.186,13,0.813,,D377,1
 person:일레그,ch28,242,0.195,17,0.944,,D389 D390,1
@@ -1245,7 +1245,7 @@ person:자칼,ch45,12,0.009,1,0.091,,,
 person:장화,event_overzone,0,0.000,2,0.071,,,
 person:장화,event_lastkingdom1,0,0.000,1,0.026,,,
 person:장화,event_goddessfall1,58,0.018,8,0.286,,D906 D907,1
-person:장화,fl:ark_guardian,2,0.001,2,0.071,,,
+person:장화,event_arkguardian1,2,0.001,2,0.071,,,
 person:장화,ch46,79,0.040,6,0.286,,D1147 D1149 D1157,1
 person:장화,ch47,0,0.000,2,0.286,,,
 person:장화,ch48,38,0.041,2,0.250,,D1330 D1331,1
@@ -1321,7 +1321,7 @@ person:지휘관,side:eden_spear,0,0.000,5,0.385,,,1
 person:지휘관,ch41,101,0.063,7,0.438,J3,,1
 person:지휘관,ch42,196,0.092,14,0.824,,,1
 person:지휘관,event_goddessfall1,0,0.000,10,0.357,J3,,1
-person:지휘관,fl:ark_guardian,0,0.000,18,0.643,,,1
+person:지휘관,event_arkguardian1,0,0.000,17,0.607,,,1
 person:지휘관,ch43,0,0.000,1,0.067,,,1
 person:지휘관,ch44,245,0.101,16,0.842,J3,D1054,1
 person:지휘관,ch45,112,0.080,9,0.818,,D1131 D1132,1
@@ -1373,7 +1373,7 @@ person:퀸,side:eden_spear,0,0.000,6,0.462,J13,,1
 person:퀸,ch41,0,0.000,6,0.375,,,
 person:퀸,ch42,0,0.000,8,0.471,J13,,1
 person:퀸,event_goddessfall1,0,0.000,28,1.000,J13,,1
-person:퀸,fl:ark_guardian,0,0.000,4,0.143,,,
+person:퀸,event_arkguardian1,0,0.000,4,0.143,,,
 person:퀸,ch44,0,0.000,8,0.421,J13,,1
 person:퀸,ch45,0,0.000,4,0.364,J13,,1
 person:퀸,ch46,0,0.000,15,0.714,J13,D1146,1
@@ -1421,7 +1421,7 @@ person:토커티브,side:eden_spear,0,0.000,2,0.154,J15,,1
 person:토커티브,ch41,0,0.000,0,0.000,J15,,
 person:토커티브,ch42,0,0.000,0,0.000,J15,,
 person:토커티브,event_goddessfall1,60,0.018,12,0.429,,D905 D941,1
-person:토커티브,fl:ark_guardian,0,0.000,0,0.000,J15,,
+person:토커티브,event_arkguardian1,0,0.000,0,0.000,J15,,
 person:트로니,ch29,92,0.074,14,0.700,,,1
 person:트로니,ch30,39,0.033,6,0.333,,,
 person:트로니,ch45,39,0.028,2,0.182,,,
@@ -1464,7 +1464,7 @@ person:프리시아,ch39,0,0.000,2,0.105,,D776,1
 person:프리시아,ch40,0,0.000,2,0.105,,,
 person:프리시아,ch41,0,0.000,1,0.063,,,
 person:프리시아,ch42,0,0.000,1,0.059,,,
-person:프리시아,fl:ark_guardian,96,0.041,5,0.179,,D981,1
+person:프리시아,event_arkguardian1,96,0.041,5,0.179,,D981,1
 person:프리시아,ch43,0,0.000,1,0.067,,,
 person:프리시아,ch44,0,0.000,1,0.053,,,
 person:프리시아,side:pretty_star,523,0.254,14,0.933,,D1088 D1089 D1090 D1096 D1101 D1102 D1104 D1105 D1107 D1108 D1110 D1112 D1113,1
@@ -1483,13 +1483,13 @@ person:프린세스,event_footstepwalkrun1,0,0.000,0,0.000,J18,,
 person:프린세스,ch39,0,0.000,0,0.000,J18,,
 person:프린세스,ch40,0,0.000,0,0.000,J18,,
 person:프린세스,ch41,0,0.000,0,0.000,J18,,
-person:프린세스,fl:ark_guardian,0,0.000,1,0.036,,,
+person:프린세스,event_arkguardian1,0,0.000,1,0.036,,,
 person:프린세스,ch43,426,0.330,13,0.867,J18,D1010 D1011 D1012 D1013 D1014 D1015 D1016 D1017,1
 person:프린세스,ch44,0,0.000,0,0.000,J18,,
 person:프린세스,ch45,0,0.000,0,0.000,J18,,
 person:플로라,ch27,29,0.021,1,0.063,,,
 person:피나,event_overzone,207,0.096,16,0.571,,D244 D245 D246,1
-person:피나,fl:ark_guardian,10,0.004,2,0.071,,,
+person:피나,event_arkguardian1,10,0.004,2,0.071,,,
 person:피나,ch46,0,0.000,4,0.190,,,
 person:피노키오,ch40,27,0.016,4,0.211,,D782 D783,1
 person:피노키오,ch41,12,0.007,1,0.063,,,
@@ -1502,7 +1502,7 @@ person:하란,ch28,0,0.000,1,0.056,,,
 person:하란,event_oldtales1,0,0.000,1,0.036,,,
 person:하란,side:eden_spear,114,0.084,6,0.462,,D845,1
 person:하란,event_goddessfall1,150,0.046,18,0.643,,D917 D918 D919 D933 D934,1
-person:하란,fl:ark_guardian,0,0.000,1,0.036,,,
+person:하란,event_arkguardian1,0,0.000,1,0.036,,,
 person:하란,ch44,0,0.000,1,0.053,,,
 person:해머링,ch27,158,0.117,13,0.813,,D378 D379,1
 person:해머링,ch28,129,0.104,16,0.889,,D387,1
@@ -1539,7 +1539,7 @@ person:홍련,event_oldtales1,2,0.001,2,0.071,,,
 person:홍련,ch39,0,0.000,2,0.105,,,
 person:홍련,ch40,0,0.000,1,0.053,,,
 person:홍련,event_goddessfall1,95,0.029,19,0.679,,D928 D952,1
-person:홍련,fl:ark_guardian,264,0.112,19,0.679,,D976 D990,1
+person:홍련,event_arkguardian1,264,0.113,19,0.679,,D976 D990,1
 person:홍련,ch44,0,0.000,3,0.158,,,
 person:홍련,ch45,0,0.000,1,0.091,,,
 person:홍련,ch46,0,0.000,3,0.143,,,

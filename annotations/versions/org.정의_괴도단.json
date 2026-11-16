@@ -16,16 +16,16 @@
           "date": "2026-10-10",
           "session": "W15e",
           "hash": "c2d6bbc4d7",
-          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), fl:go_ninja_thief_00 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
+          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), event_goninjathief_prologue 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
         },
         { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "f48ecfcc00", "note": "근거 refs 붙임" }
       ],
       "refs": ["event_phantomthiefvsdetective_01_e#1-19", "event_phantomthiefvsdetective_01_e#34-39"]
     },
     {
-      "at": "fl:go_ninja_thief",
+      "at": "event_goninjathief",
       "text": "괴도 팬텀이 이끄는 괴도단. 한 임무를 위해 잠시 모였던 것이 이어져, 넷이던 단원에 델타가 들어와 다섯이 되었다.",
-      "src": "753ec6ee28",
+      "src": "b85ef2f47d",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -37,11 +37,19 @@
           "date": "2026-10-10",
           "session": "W15e",
           "hash": "9227623a5c",
-          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), fl:go_ninja_thief_00 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
+          "note": "기록 없음 — event_phantomthiefvsdetective_01_e 원문(팬텀·퀀시·미란다가 임무로 잠시 결성), event_goninjathief_prologue 원문(이어져 델타가 들어와 다섯 — '잠시'가 뒤집혀 판)"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "1615fa5ce0", "note": "근거 refs 붙임" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "93b20381eb", "note": "근거 refs 붙임" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "534e180c12",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        }
       ],
-      "refs": ["fl:go_ninja_thief_00#27-41", "fl:go_ninja_thief_01#73-79"]
+      "refs": ["event_goninjathief_prologue#27-41", "event_goninjathief_01_s#73-79"]
     }
   ]
 }

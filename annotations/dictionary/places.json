@@ -114,7 +114,7 @@
       "id": "place:승리의_날개_호",
       "name": "승리의 날개 호",
       "kind": "탈것",
-      "evidence": [{ "scene": "fl:ark_guardian_22", "lines": [117] }],
+      "evidence": [{ "scene": "event_arkguardian2_04_e", "lines": [117] }],
       "names": [{ "name": "승리의 날개", "how": "약칭" }]
     },
     {

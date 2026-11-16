@@ -93,14 +93,14 @@
 
 **지금 시안 (1회독만)** — `report.md` "메인 밖 단위", `units.csv`의 `main_in` · `main_out` · `main_records`
 - 메인과 기록으로 직접 이어진 메인 밖 단위는 **57/432** — 서브퀘스트 9/86 · 유실물 16/64 · 사이드 3/5 · 이벤트 23/83 · 호감도 6/193.
-  필수 후보가 여기서 나온다: `fl:ark_guardian`(메인 의문 Q104 전부 회수 · 메인 ch43–46에서 이 이벤트의 의문이 풀림) · `event_footstepwalkrun1`(Q2 · Q145 · Q171 전부 회수) ·
+  필수 후보가 여기서 나온다: `event_arkguardian1`(메인 의문 Q104 전부 회수 · 메인 ch43–46에서 이 이벤트의 의문이 풀림) · `event_footstepwalkrun1`(Q2 · Q145 · Q171 전부 회수) ·
   `event_staranis1`(Q19 · Q43 · Q269 전부 회수) · `side:eden_spear`(메인 사실 5건을 다시 드러냄) · `fl:enter_heaven`(Q125 전부 회수).
 - 나머지 375단위는 메인과 직접 선이 없다. 그중 세계관 설명(입력 ③)이나 메인 줄기에 걸린 사실(입력 ②)로 보강 이상이 될 단위가 있다 — B0b-2가 줄기(`units.csv` `threads`)로 가린다.
 - 기록이 하나도 없는 단위 13(호감도 11 · `event_fullfoolday` · `sub:김작가_00`) · 이어진 단위가 없는 호감도 165/193 — 독립 후보가 뚜렷하다.
 
 **첫 시안 (B0b-2, 1회독 + 줄기)** — `annotations/layers.json`, 시안 표 `units.csv`의 `grade` · `layer` · `layer_basis`, report.md "2회독 층", 훑어보는 표 [layers.md](../data/views/read1/layers.md)
 - 메인 밖 432: **필수 13 · 보강 104 · 독립 315**. 필수는 이벤트 10(`event_overzone` · `event_redash` · `event_lastkingdom1` · `event_oldtales1` · `event_footstepwalkrun1` ·
-  `event_wisdomspring` · `fl:boom_the_ghost` · `event_goddessfall1` · `fl:ark_guardian` · `fl:good_world`) · 사이드 1(`side:eden_spear`) · 서브퀘스트 2(`sub:관짝이_00` · `_02`). 호감도 필수는 없다.
+  `event_wisdomspring` · `fl:boom_the_ghost` · `event_goddessfall1` · `event_arkguardian1` · `fl:good_world`) · 사이드 1(`side:eden_spear`) · 서브퀘스트 2(`sub:관짝이_00` · `_02`). 호감도 필수는 없다.
 - B0a의 필수 후보 가운데 `event_staranis1`(아니스의 과거) · `fl:enter_heaven`(E.H.)은 보강으로 확정했다 — 메인이 던진 의문을 회수하지만 줄기가 보강(메인 인물의 배경)이다.
 
 **지금 (X3a, 2회독 입력)** — [data/views/importance/](../data/views/importance/report.md)(`node tools/views/importance.mjs`, `draft.mjs`가 같이 부른다), 단위 하나는 `node tools/records.mjs layers <단위>`
@@ -194,7 +194,7 @@
   그중 289는 `about` 대상을 다른 단위와 나눈다(드문 대상 — 10단위 이하 — 로만 따져도 219). 고립은 "관계가 없어서"가 아니라 "떡밥이 없어서"다
   → `character` · `keyword`(X2)가 채운다. `about`은 기록이 다룬 대상만이라 언급 DB(B2)가 더 넓다.
 - 종류 → 종류: 메인 → 메인 128 · 메인 → 이벤트 42 · 이벤트 → 메인 31 · 이벤트 → 이벤트 27 · 호감도 → 이벤트 16 · 사이드 → 이벤트 12 — 메인과 이벤트가 떡밥을 주고받는다.
-- 이어짐이 많은 이벤트 · 사이드: `event_overzone`(앞 4 · 뒤 9) · `event_footstepwalkrun1`(9 · 4) · `fl:ark_guardian`(9 · 3) · `side:eden_spear`(9 · 1) · `event_oldtales1`(5 · 4).
+- 이어짐이 많은 이벤트 · 사이드: `event_overzone`(앞 4 · 뒤 9) · `event_footstepwalkrun1`(9 · 4) · `event_arkguardian1`(9 · 3) · `side:eden_spear`(9 · 1) · `event_oldtales1`(5 · 4).
 
 **빈 곳**: 1회독은 드러낸 회수만이라 재언급이 거의 없다(`callback` 96) — 앞 사건을 다시 꺼내는 대목이 2회독 재언급으로 들어와야 연결 화면이 촘촘해진다(B1).
 `sequel` 0 — 키 규칙으로 X2가 만든다. 근거가 여러 단위에 걸친 정의 6건은 사건 없이 숨은 연결인데 수가 작아 그대로 둔다.
@@ -205,7 +205,7 @@
 - **고립 155 → 130(+ 다음 편) → 4(+ 대상 공유)** — 남은 4는 다른 단위와 중심 대상을 나누지 않는 유실물 문서 3(`채팅로그_얼리어답터` · `광고팜플렛` · `지휘관모집공고`)과 콜라보 `char:811`(A2).
   세기 2 이상만 보면 고립 20(유실물 10 · 서브퀘스트 6 · 호감도 4) — 흔한 대상(니케 · 방주 · 랩쳐 · 지상 · 아니스 · 라피 · 중앙 정부 · 네온)만 나누는 단위다. 화면 기본값은 세기 2 이상이 알맞다.
 - 연작(수동 28 — 기각 29도 판정 기록으로 남김): 세기 3(곧바로 이어짐) 7 — `event_bluewaterisland` → `event_seayouagain1` · `event_schooloflock` → `event_colorless` · `event_newflavor` → `event_trueflavor` ·
-  `side:eden_spear` → `event_goddessfall1` → `fl:ark_guardian` · `fl:blank_ticket` → `fl:terminus_ticket` · `fl:2x2_love_1ch` → `fl:2x2_love_2ch`.
+  `side:eden_spear` → `event_goddessfall1` → `event_arkguardian1` · `fl:blank_ticket` → `fl:terminus_ticket` · `fl:2x2_love_1ch` → `fl:2x2_love_2ch`.
   세기 2(같은 줄, 사이가 떨어짐 · 사이드 전사) 21 — `event_ltk` · `event_dirtybackyard` → `event_killthelord` → `event_lordforjustice` → `fl:reborn_evil`,
   `fl:coins_in_rush` → `fl:fatal_maid` → `fl:persona_on_frontline`, `side:pretty_star` → `event_staranis1` → `fl:b-side_idol` → `fl:bitter_spice` 등. 판정 기준은 `links.json` `note`.
 - 중심 대상 사슬: 중심(단위 × 대상) 3,760 — 대상 537, 두 단위 이상 380. 인물로 거르면 그 인물이 중심인 단위를 출시순으로 잇는 궤적이 된다(화면 5와 같이 쓴다).
@@ -347,7 +347,7 @@
 호감도는 판별 14 · 범위 141 · 상대 15 · 불명 23 — 남은 상대는 단서 없는 묶음(에반게리온 콜라보 4 · 갱생관 신 · 퀀시 · 이지스 둘 · 노이즈 · 볼륨 · 아리아 …)이다. 원칙 더하기는 docs/annotations.md "좁힘".
 
 **지금 (X1c-2b, 2026-10-08)** — 호감도 스토리 가운데 한쪽만 아는 범위 133을 검토했다(X1c-2a가 하한을 고른 40은 상한만, 나머지 93은 양쪽). 관계 17 — 상한 11(돌아오지 않는 메인의 변화 전:
-크로우가 자유로움 4 · 유니가 말함 2 → CH.24 전, 파피용이 방주에서 일함 → CH.21 전, 테러 조직 엔터 헤븐이 활동함 2 → CH.39 전, 그레이브가 세이렌을 찾아 떠나기 전 → CH.37 전, 스노우 화이트가 랩쳐 부품으로 몸을 고침 → fl:ark_guardian 전)
+크로우가 자유로움 4 · 유니가 말함 2 → CH.24 전, 파피용이 방주에서 일함 → CH.21 전, 테러 조직 엔터 헤븐이 활동함 2 → CH.39 전, 그레이브가 세이렌을 찾아 떠나기 전 → CH.37 전, 스노우 화이트가 랩쳐 부품으로 몸을 고침 → event_arkguardian1 전)
 · 더 높은 하한 6(맥스웰 · 슈가 · 트로니 · 앵커 편이 CH.11 · 15에 처음 만난 인물을 이미 앎 → CH.15 뒤, 네오-네온 바디 → CH.44 뒤, 맥스웰 새 무장 → CH.37 뒤) · 78은 단서 없음.
 가르기 수는 그대로다(단위 481: **판별 96 · 범위 240 · 상대 21 · 불명 124**, 모순 · 순환 0) — 한쪽 범위가 양쪽 범위로 바뀌었을 뿐 폭 2칸 이하(판별)가 된 것은 없다. 호감도 한쪽 범위는 122가 남았다(대부분 이벤트 · 콜라보에 딸려 이벤트의 자리를 따르거나 일상극이라 단서가 없다).
 

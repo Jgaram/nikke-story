@@ -174,7 +174,7 @@
       "at": "ch46",
       "title": "에덴과 요한 — 샛별 · 에덴의 창",
       "text": "지휘관은 니케 제작 기술을 미실리스에게서 받아 일부를 에덴에 먼저 보냈고, 카운터스는 T.T.STAR 공연을 본 뒤 에덴에 가기로 했다 — 퀸을 겨눈 에덴의 창과 샛별 요한은 어디로 가나.",
-      "src": "17b3b867bc",
+      "src": "56e65a0518",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -188,7 +188,15 @@
           "hash": "50af5a3e6b",
           "note": "판마다 at까지의 흐름 줄 · 근거 씬만으로 씀 — 뒤 이름 없음, 체크 칸 스토리(eden_spear · goddessfall1 · ark_guardian) 내용은 쓰지 않고 goddess_fall_mini는 그 자리에 판을 둠"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "0dcfa6cc75", "note": "근거 — 글 마디마다 사실 · 의문 · 암시 기록(고친 글 없음)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "0dcfa6cc75", "note": "근거 — 글 마디마다 사실 · 의문 · 암시 기록(고친 글 없음)" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "93b07c7fdb",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        }
       ],
       "refs": ["F2663", "F2337"]
     }

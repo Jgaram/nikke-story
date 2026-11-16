@@ -181,10 +181,10 @@
     { "id": "W33", "unit": "char:73", "kind": "변화", "text": "브리드의 감정선 · 관계 변화 — '일탈'이 '일상'이 되기까지(줄거리에 새로 드러난 사실은 없다)", "from": "char.73.json 요약 (R76)" },
     {
       "id": "W34",
-      "unit": "fl:ark_guardian",
+      "unit": "event_arkguardian1",
       "kind": "변화",
       "text": "도로시의 자기혐오 · 릴리바이스의 '죽기 싫다' · 스노우 화이트의 분노",
-      "evidence": [{ "scene": "fl:ark_guardian_09" }],
+      "evidence": [{ "scene": "event_arkguardian1_04_e" }],
       "from": "R77 인계"
     },
     { "id": "W35", "unit": "char:471", "kind": "변화", "text": "릴리바이스가 시작한 소원 쪽지와 스노우 화이트의 감정선(줄거리 사실은 F2379 · F930-2뿐)", "from": "R77 인계 · char.471.json 요약" },

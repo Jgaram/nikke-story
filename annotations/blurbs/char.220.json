@@ -21,7 +21,7 @@
   "when": {
     "text": "지상엔 정비받을 곳이 없다며 스노우 화이트가 랩쳐 부품으로 몸의 3할을 고쳐 쓴다 — 수십 년 정비 없이 버텨 온 몸을 손수 고치는 이 모습으로 때를 가늠한다.",
     "later": "ARK GUARDIAN에서는 세실이 이미 그 몸을 고쳐 두었으니, 그 전이다.",
-    "gate": "fl:ark_guardian",
+    "gate": "event_arkguardian1",
     "src": "ab631f9274",
     "session": "W14c",
     "by": "claude",
@@ -33,7 +33,7 @@
         "by": "claude",
         "date": "2026-10-10",
         "session": "W14c",
-        "hash": "e0963e8378",
+        "hash": "4763bc3c19",
         "note": "추정 이유 · 근거 기록 대조, 뒤 스토리 이름 · 암시 없음 확인, 뒤 상한 · 이름은 later로"
       }
     ]

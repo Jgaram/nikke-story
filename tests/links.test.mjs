@@ -161,5 +161,5 @@ test('화면 4 · 화면 1 — 줄기 ↔ 대상 · 대상 ↔ 대상은 비인�
     if (u.kind === '메인') assert.equal(u.main_in, '');
     else assert.equal(typeof u.main_in, 'number');
   }
-  assert.ok(v.units.some((u) => u.unit === 'fl:ark_guardian' && u.main_in > 0 && u.main_out > 0));
+  assert.ok(v.units.some((u) => u.unit === 'event_arkguardian1' && u.main_in > 0 && u.main_out > 0));
 });

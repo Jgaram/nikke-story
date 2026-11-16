@@ -124,14 +124,14 @@ tick,date,main,count,units
 123,2025-09-11,,1,char:143
 124,2025-09-24,,3,fl:reborn_evil char:840 char:842
 125,2025-10-02,,1,char:841
-126,2025-10-16,,3,side:eden_spear fl:go_ninja_thief char:23
+126,2025-10-16,,3,side:eden_spear event_goninjathief char:23
 127,2025-10-30,ch41,2,ch41 relic:거꾸로적힌기록
 128,2025-10-30,ch42,6,ch42 relic:주의용광로사용법 event_goddessfall1 erelic:goddess_fall_mini char:223 char:331
 129,2025-11-06,,1,char:262
 130,2025-11-20,,2,fl:blank_ticket char:74
 131,2025-12-04,,2,fl:terminus_ticket char:75
 132,2025-12-11,,1,char:73
-133,2025-12-30,,1,fl:ark_guardian
+133,2025-12-30,,1,event_arkguardian1
 134,2026-01-01,,1,char:471
 135,2026-01-15,,2,fl:sin_editor char:582
 136,2026-01-29,,2,fl:fatal_maid char:316

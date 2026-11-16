@@ -13,11 +13,11 @@
 | `callback` 다시 드러냄 · 재언급 | 0 | 0 | 856 | 0 | 856 | 567 | 0 |
 | `reversal` 뒤집힘 | 0 | 0 | 8 | 0 | 8 | 7 | 0 |
 | `character` 같은 인물 | 21 | 1670 | 0 | 0 | 1691 | 1111 | 0 |
-| `keyword` 같은 대상 | 0 | 1620 | 0 | 0 | 1620 | 1110 | 0 |
+| `keyword` 같은 대상 | 0 | 1621 | 0 | 0 | 1621 | 1110 | 0 |
 
-- 씬 엣지 6372 · 단위 쌍(타입별) 3450 · 같은 단위 안 1298(단위 그래프에서 뺌 — 호감도 스토리 조건은 모두 한 인물 안) · 읽기 단위 밖 끝점 21(애장품 `fav:` 등) · 만우절 단위와 다른 단위 사이라 뺀 엣지 1(결정 #11).
+- 씬 엣지 6373 · 단위 쌍(타입별) 3450 · 같은 단위 안 1298(단위 그래프에서 뺌 — 호감도 스토리 조건은 모두 한 인물 안) · 읽기 단위 밖 끝점 21(애장품 `fav:` 등) · 만우절 단위와 다른 단위 사이라 뺀 엣지 1(결정 #11).
 - 확정 전 후보로 만든 엣지 0 — 기록 · 수동 엣지가 모두 확정이다.
-- 세기: 3 = 2310 · 2 = 3113 · 1 = 949 — 3 게임 조건 · 다음 편 · 확실한 기록, 2 추정 기록 · 대상 공유, 1 흔한 대상 공유.
+- 세기: 3 = 2310 · 2 = 3113 · 1 = 950 — 3 게임 조건 · 다음 편 · 확실한 기록, 2 추정 기록 · 대상 공유, 1 흔한 대상 공유.
 
 ## 고립 — 이어진 단위가 없는 단위
 
@@ -34,8 +34,8 @@
 
 ## 대상 공유 — 중심 · 사슬
 
-- 중심(단위 × 대상) 3811 — 기록 1348 · 이름 740 · 기록+이름 716 · 기록+말함 682 · 말함 325. 대상 549(인물 328 · 비인물 221), 두 단위 이상 383.
-- 흔한 대상(중심인 단위 48 넘음 — 읽기 단위의 10%, 세기 1 · note '흔한 대상') 8: 니케 187 · 방주 172 · 랩쳐 141 · 지상 130 · 아니스 119 · 라피 85 · 중앙_정부 67 · 네온 56.
+- 중심(단위 × 대상) 3812 — 기록 1347 · 이름 741 · 기록+이름 717 · 기록+말함 682 · 말함 325. 대상 549(인물 328 · 비인물 221), 두 단위 이상 383.
+- 흔한 대상(중심인 단위 48 넘음 — 읽기 단위의 10%, 세기 1 · note '흔한 대상') 8: 니케 187 · 방주 173 · 랩쳐 141 · 지상 130 · 아니스 119 · 라피 85 · 중앙_정부 67 · 네온 56.
 - 그 밖 두 단위 이상에서 중심인 대상 375(세기 2) — 사슬 엣지 2313. 한 단위에서만 중심인 대상 166은 엣지가 없다.
 
 ## 개념 · 떡밥 지도 (화면 4)
@@ -59,7 +59,7 @@
 |---:|---|---|---:|---:|---:|---|
 | 350 | `event_footstepwalkrun1` | 이벤트 | 45 | 25 | 30 | incident:1차_지상_탈환전 org:스컬_헤드 person:리오 person:웬디 item:초거대_코어 person:D.E.E.P. |
 | 338 | `event_oldtales1` | 이벤트 | 41 | 25 | 28 | concept:콜링_시그널 item:유리_구두 concept:페어리_테일 incident:아크_가디언_작전 org:인류연합군 person:미러 |
-| 428 | `fl:ark_guardian` | 이벤트 | 41 | 25 | 27 | concept:머신_메사이어 concept:스톰_브링어 person:프리시아 place:리페어_센터 place:승리의_날개_호 incident:아크_가디언_작전 |
+| 428 | `event_arkguardian1` | 이벤트 | 41 | 25 | 27 | concept:머신_메사이어 concept:스톰_브링어 person:프리시아 place:리페어_센터 place:승리의_날개_호 incident:아크_가디언_작전 |
 | 418 | `event_goddessfall1` | 이벤트 | 40 | 28 | 23 | item:네이키드_킹 item:에덴의_창 concept:릴리스의_바디 concept:스톰_브링어 concept:퀸_인자 org:인헤르트 |
 | 200 | `event_overzone` | 이벤트 | 37 | 25 | 21 | person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 person:릴리바이스 |
 | 377 | `event_unbreakablesphere1` | 이벤트 | 33 | 17 | 27 | item:AA_필러 org:인큐베이터 concept:은색_액체 concept:콜링_시그널 person:글러트니 person:모리 |
@@ -87,7 +87,7 @@
   - Y27 `event_lastkingdom1` → `event_goddessfall1` (세기 2)
   - Y28 `event_darkhero` → `event_icedragonsaga1` (세기 2)
   - Y33 `event_colorless` → `fl:wave_to_you` (세기 2)
-  - Y34 `event_phantomthiefvsdetective` → `fl:go_ninja_thief` (세기 2)
+  - Y34 `event_phantomthiefvsdetective` → `event_goninjathief` (세기 2)
   - Y35 `side:wordless` → `side:mudfish` (세기 2)
   - Y59 `event_oldtales1` → `side:gingerbread_house` (세기 2)
   - Y40 `event_newflavor` → `event_trueflavor` (세기 3)
@@ -95,7 +95,7 @@
   - Y45 `event_lordforjustice` → `fl:reborn_evil` (세기 2)
   - Y48 `fl:coins_in_rush` → `fl:fatal_maid` (세기 2)
   - Y50 `side:eden_spear` → `event_goddessfall1` (세기 3)
-  - Y51 `event_goddessfall1` → `fl:ark_guardian` (세기 3)
+  - Y51 `event_goddessfall1` → `event_arkguardian1` (세기 3)
   - Y52 `fl:blank_ticket` → `fl:terminus_ticket` (세기 3)
   - Y53 `fl:fatal_maid` → `fl:persona_on_frontline` (세기 2)
   - Y54 `fl:2x2_love_1ch` → `fl:2x2_love_2ch` (세기 3)

@@ -107,7 +107,7 @@
     {
       "id": "C6",
       "person": "person:스노우_화이트",
-      "from": "fl:ark_guardian",
+      "from": "event_arkguardian1",
       "scenes": 140,
       "changes": 13,
       "score": 42.7,

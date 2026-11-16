@@ -4843,7 +4843,7 @@
       "unit": "erelic:white_memory",
       "grade": "필수",
       "basis": "D257",
-      "from": "fl:ark_guardian",
+      "from": "event_arkguardian1",
       "before": "보강",
       "reason": "감정 — 스노우 화이트(주요 인물)가 부서진 관에서 언니의 머리가 사라진 것을 보고 '랩쳐를 섬멸하고 언니의 머리를 찾아 언니의 소원을 이루겠다'는 목표를 세운다(D257, 20#0-16). 척추 ARK GUARDIAN D974가 이 목표를 앞 상태로 딛고 가 그 뒤 그것으로 산다(①). 척추 D988(산다 · 랩쳐를 죽인다)에는 언니의 머리 · 소원이 없고, 척추는 이 순간을 결과로만 쓴다(②) — 3a. 그 앞은 척추 인물이라 4a 보강. D255(언니를 기억해 냄)는 GODDESS FALL D953 · ch44 D1038이 같은 후를 그린다",
       "confidence": "확실",
@@ -5999,7 +5999,7 @@
       "unit": "char:224",
       "grade": "필수",
       "basis": "D1489",
-      "from": "fl:ark_guardian",
+      "from": "event_arkguardian1",
       "before": "보강",
       "reason": "감정 — 스노우 화이트(주요 인물)가 홀로 랩쳐 대부대를 쓸어버린 릴리바이스를 처음 '언니'라 부르고 언니의 무기가 되겠다고 약속한다(D1489, 05#61-75) — 큰 관계(언니 · 원점의 인물)가 맺어지는 순간(①). 척추는 둘을 처음부터 언니와 동생으로 쓰고(RED ASH D345 · ARK GUARDIAN D994) 맺어지는 장면은 여기에만 있다(②) — 3a. 그 앞은 척추 인물이라 4a 보강. D1490(신념)은 05의 다짐 — 그 뒤 사는 기록 없음",
       "confidence": "확실",
@@ -9482,7 +9482,7 @@
           "by": "claude",
           "date": "2026-10-09",
           "session": "X3f-4c",
-          "before": "등급 보강 · 근거 Q257 · 이유 승리의 날개 호와 중앙 정부의 거부(J6) — fl:ark_guardian이 일부 답한다"
+          "before": "등급 보강 · 근거 Q257 · 이유 승리의 날개 호와 중앙 정부의 거부(J6) — event_arkguardian1이 일부 답한다"
         },
         { "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-4c", "note": "2회독은 1층에서 읽음", "before": "층 규칙" }
       ],
@@ -9959,7 +9959,7 @@
     },
     {
       "id": "K371",
-      "unit": "fl:go_ninja_thief",
+      "unit": "event_goninjathief",
       "grade": "독립",
       "reason": "델타가 정의 괴도단의 수습이 되는 이벤트 안 이야기(F2177 · F2178) — 델타 · 정의 괴도단(팬텀 · 퀀시 · 미란다)은 척추 인물이 아니고, 라피 · A.C.P.U.(폴리 · 키리)는 수습 · 출동으로 지나갈 뿐 새 배경 · 관계가 아니다. 앞 편 PHANTOM THIEF VS DETECTIVE(K295)와 같은 잣대",
       "confidence": "추정",
@@ -10314,7 +10314,7 @@
     },
     {
       "id": "K385",
-      "unit": "fl:ark_guardian",
+      "unit": "event_arkguardian1",
       "grade": "필수",
       "basis": "Q104-2",
       "reason": "메인 ch19 의문(언체인드의 원료)을 전부 회수 — 갓데스 지휘관의 피(J4 · J5), 메인 ch43–46이 이 이벤트의 의문을 잇는다",

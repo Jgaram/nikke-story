@@ -14,7 +14,7 @@
 | handoff/facts-7.md | 사실 목록 R14–R16 | 15,649 |
 | handoff/facts-8.md | 사실 목록 R17–R19 | 17,285 |
 | handoff/facts-9.md | 사실 목록 R20–R21 | 11,203 |
-| handoff/facts-10.md | 사실 목록 R22–R25 | 19,460 |
+| handoff/facts-10.md | 사실 목록 R22–R25 | 19,473 |
 | handoff/facts-11.md | 사실 목록 R26–R28 | 16,482 |
 | handoff/facts-12.md | 사실 목록 R29–R31 | 15,269 |
 | handoff/facts-13.md | 사실 목록 R32–R34 | 18,691 |
@@ -29,18 +29,18 @@
 | handoff/facts-22.md | 사실 목록 R58–R61 | 18,983 |
 | handoff/facts-23.md | 사실 목록 R62–R64 | 19,833 |
 | handoff/facts-24.md | 사실 목록 R65–R67 | 18,586 |
-| handoff/facts-25.md | 사실 목록 R68–R71 | 17,279 |
+| handoff/facts-25.md | 사실 목록 R68–R71 | 17,302 |
 | handoff/facts-26.md | 사실 목록 R72–R73 | 14,577 |
 | handoff/facts-27.md | 사실 목록 R74–R75 | 19,919 |
-| handoff/facts-28.md | 사실 목록 R76–R79 | 14,286 |
+| handoff/facts-28.md | 사실 목록 R76–R79 | 14,488 |
 | handoff/facts-29.md | 사실 목록 R80–R83 | 19,212 |
 | handoff/facts-30.md | 사실 목록 R84–R88 | 12,887 |
 | handoff/facts-31.md | 사실 목록 R89–R90 | 18,690 |
 | handoff/facts-32.md | 사실 목록 R91–R94 | 16,714 |
 | handoff/facts-33.md | 사실 목록 R95–R97 | 18,465 |
 | handoff/facts-34.md | 사실 목록 R98–M26 | 19,937 |
-| handoff/facts-35.md | 사실 목록 M30–P1 | 4,775 |
-| handoff/questions-solved.md | 풀린 의문 103건 | 16,715 |
+| handoff/facts-35.md | 사실 목록 M30–P1 | 4,787 |
+| handoff/questions-solved.md | 풀린 의문 103건 | 16,740 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
 | handoff/R02-1.md | 단위 요약 — relic:어느남자의수기 … sub:세르반_02 (21단위) | 19,109 |
@@ -68,7 +68,7 @@
 | handoff/R20.md | 단위 요약 — char:381 … event_fullfoolday (5단위) | 12,240 |
 | handoff/R21.md | 단위 요약 — event_ltk … relic:특이랩쳐보고서-후 (8단위) | 14,125 |
 | handoff/R22-1.md | 단위 요약 — ch22 … event_overzone (6단위) | 18,558 |
-| handoff/R22-2.md | 단위 요약 — erelic:white_memory · sub:중앙정부_트라이앵글_00 | 3,817 |
+| handoff/R22-2.md | 단위 요약 — erelic:white_memory · sub:중앙정부_트라이앵글_00 | 4,025 |
 | handoff/R23.md | 단위 요약 — char:233 … char:271 (5단위) | 8,171 |
 | handoff/R24.md | 단위 요약 — event_queensorder · char:280 | 6,576 |
 | handoff/R25.md | 단위 요약 — event_bluewaterisland … char:14 (3단위) | 8,805 |
@@ -96,7 +96,7 @@
 | handoff/R47-1.md | 단위 요약 — ch31 … sub:거울_공주_01 (8단위) | 19,285 |
 | handoff/R47-2.md | 단위 요약 — relic:수정지역깊은곳어딘가 | 683 |
 | handoff/R48.md | 단위 요약 — event_juveniledays … char:831 (7단위) | 13,412 |
-| handoff/R49.md | 단위 요약 — char:832 … event_phantomthiefvsdetective (5단위) | 9,642 |
+| handoff/R49.md | 단위 요약 — char:832 … event_phantomthiefvsdetective (5단위) | 9,643 |
 | handoff/R50.md | 단위 요약 — char:403 … event_lifeagain (4단위) | 10,276 |
 | handoff/R51.md | 단위 요약 — char:240 … relic:충격다크매터란무엇인가 (5단위) | 14,185 |
 | handoff/R52.md | 단위 요약 — event_oldtales1 … erelic:old_tales_mini_memory (4단위) | 18,256 |
@@ -119,15 +119,15 @@
 | handoff/R68.md | 단위 요약 — event_absolute1 … char:94 (4단위) | 10,640 |
 | handoff/R69.md | 단위 요약 — fl:coins_in_rush … char:143 (3단위) | 8,058 |
 | handoff/R70.md | 단위 요약 — fl:reborn_evil … char:841 (4단위) | 12,306 |
-| handoff/R71.md | 단위 요약 — side:eden_spear … char:23 (3단위) | 10,841 |
+| handoff/R71.md | 단위 요약 — side:eden_spear … char:23 (3단위) | 11,261 |
 | handoff/R72.md | 단위 요약 — ch41 · relic:거꾸로적힌기록 | 10,923 |
 | handoff/R73.md | 단위 요약 — ch42 · relic:주의용광로사용법 | 11,626 |
 | handoff/R74.md | 단위 요약 — event_goddessfall1 | 18,177 |
 | handoff/R75.md | 단위 요약 — erelic:goddess_fall_mini … char:74 (6단위) | 13,949 |
 | handoff/R76.md | 단위 요약 — fl:terminus_ticket … char:73 (3단위) | 6,687 |
-| handoff/R77.md | 단위 요약 — fl:ark_guardian · char:471 | 10,612 |
+| handoff/R77.md | 단위 요약 — event_arkguardian1 · char:471 | 11,024 |
 | handoff/R78.md | 단위 요약 — fl:sin_editor … char:316 (4단위) | 8,473 |
-| handoff/R79.md | 단위 요약 — ch43 · relic:아무한테나말해주는거아니야.wav | 8,777 |
+| handoff/R79.md | 단위 요약 — ch43 · relic:아무한테나말해주는거아니야.wav | 8,780 |
 | handoff/R80.md | 단위 요약 — ch44 · relic:거인을찾아서 | 12,769 |
 | handoff/R81.md | 단위 요약 — fl:lie_cause_recoil … char:861 (4단위) | 8,991 |
 | handoff/R82.md | 단위 요약 — fl:enter_heaven · char:113 | 9,560 |

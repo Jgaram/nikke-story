@@ -2,9 +2,9 @@
   "subject": "concept:머신_메사이어",
   "versions": [
     {
-      "at": "fl:ark_guardian",
+      "at": "event_arkguardian1",
       "text": "오래전에 있었다는 프로젝트 — V.T.C. 여사제에 따르면 엔더슨의 피에 NIMPH와 헬레틱을 무너뜨리는 언체인드가 흐르는 것이 그 일환이다. 무엇을 하려던 것인지는 아직 모른다.",
-      "src": "13009f0cd7",
+      "src": "b5ae3de48b",
       "session": "W15f",
       "by": "claude",
       "date": "2026-10-10",
@@ -18,7 +18,15 @@
           "hash": "c02714df1c",
           "note": "곁 판 — F2363 · Q309(ARK GUARDIAN)로 엔더슨 피의 언체인드가 그 일환. 본판 CH.43은 무엇인지 모름이라 until 없음"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "1c6017f17b", "note": "근거 — 사실 · 의문 기록(고친 글 없음)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "d4743ce4d0", "note": "근거 — 사실 · 의문 기록(고친 글 없음)" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "8fb9ca8b66",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        }
       ],
       "side": true,
       "refs": ["F2363", "Q309"]
@@ -26,7 +34,7 @@
     {
       "at": "ch43",
       "text": "V.T.C.가 진행했다는, 인류의 명운을 건 프로젝트 하나 — 무엇을 하려던 것인지는 아직 모른다.",
-      "src": "4335d6f2f7",
+      "src": "29c54c6912",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -38,9 +46,17 @@
           "date": "2026-10-10",
           "session": "W15e",
           "hash": "abee370edb",
-          "note": "ch43 F2410만. 앞 체크 칸 fl:ark_guardian(언체인드와의 관계)은 넣지 않음, 1판"
+          "note": "ch43 F2410만. 앞 체크 칸 event_arkguardian1(언체인드와의 관계)은 넣지 않음, 1판"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "82b9fdc92b", "note": "근거 — 사실 · 의문 기록(고친 글 없음)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "82b9fdc92b", "note": "근거 — 사실 · 의문 기록(고친 글 없음)" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-16",
+          "session": "N3",
+          "hash": "38df099bfb",
+          "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        }
       ],
       "refs": ["F2410"]
     }

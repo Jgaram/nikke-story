@@ -80,9 +80,9 @@
     {
       "id": "S364",
       "kind": "기준점",
-      "text": "char:402 뒤 · fl:go_ninja_thief 전 — 정의 괴도단이 처음 모인다. 퀀시는 갱생관에서 탈옥을 되풀이하며 지휘관을 '교관님'이라 부르고, 키리가 A.C.P.U.에 있다(event_freezeacpu 뒤)",
+      "text": "char:402 뒤 · event_goninjathief 전 — 정의 괴도단이 처음 모인다. 퀀시는 갱생관에서 탈옥을 되풀이하며 지휘관을 '교관님'이라 부르고, 키리가 A.C.P.U.에 있다(event_freezeacpu 뒤)",
       "ref": "char:402",
-      "at": [["뒤", "char:402"], ["전", "fl:go_ninja_thief"], ["뒤", "event_freezeacpu"]],
+      "at": [["뒤", "char:402"], ["전", "event_goninjathief"], ["뒤", "event_freezeacpu"]],
       "evidence": [{ "scene": "event_phantomthiefvsdetective_01_s", "lines": ["86-90"] }],
       "reason": "#87 탈옥으로 갱생관까지 — char:402에서 만난 퀀시. 괴도단 결성(01_e#16-19)은 GO! NINJA THIEF!(F2176)의 기존 단원보다 앞선다.",
       "confidence": "추정",

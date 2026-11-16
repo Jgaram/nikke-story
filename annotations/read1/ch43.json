@@ -1233,7 +1233,7 @@
       "id": "S296",
       "kind": "기준점",
       "text": "엔더슨의 V.T.C. 괴멸 — 아크 가디언(갓데스 지휘관 혼수) 뒤, 네온이 니케가 되기 약 3년 전, 엔더슨의 부사령관 취임 무렵",
-      "ref": "fl:ark_guardian",
+      "ref": "event_arkguardian1",
       "subject": "구간",
       "at": [["뒤", "@아크_가디언_작전"], ["전", "ch00"]],
       "evidence": [{ "scene": "d_main_43_11", "lines": ["61-92"] }],

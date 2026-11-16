@@ -35,9 +35,9 @@
     {
       "id": "S289",
       "kind": "기준점",
-      "text": "fl:ark_guardian 뒤 — 새 무장의 스노우 화이트가 지휘관과 지상에서 야영하던 때, '본격적으로 일이 시작되기 전'",
-      "ref": "fl:ark_guardian",
-      "at": [["뒤", "fl:ark_guardian"]],
+      "text": "event_arkguardian1 뒤 — 새 무장의 스노우 화이트가 지휘관과 지상에서 야영하던 때, '본격적으로 일이 시작되기 전'",
+      "ref": "event_arkguardian1",
+      "at": [["뒤", "event_arkguardian1"]],
       "evidence": [
         { "scene": "ep:d_nikke_snowwhite_heavyarms_01", "lines": [0, "43-44", "66-71"] },
         { "scene": "ep:d_nikke_snowwhite_heavyarms_02", "lines": ["76-77"] }

@@ -22,7 +22,7 @@
 
 | 이벤트 8 | 사이드 3 |
 |---|---|
-| `event_overzone` OVER ZONE · `event_redash` RED ASH · `event_lastkingdom1` LAST KINGDOM · `event_oldtales1` OLD TALES · `event_goddessfall1` GODDESS FALL · `event_staranis1` STAR ANIS · `event_footstepwalkrun1` FOOTSTEP, WALK, RUN · `fl:ark_guardian` ARK GUARDIAN | `side:mudfish` MUDFISH · `side:eden_spear` EDEN SPEAR · `side:pretty_star` PRETTY STAR |
+| `event_overzone` OVER ZONE · `event_redash` RED ASH · `event_lastkingdom1` LAST KINGDOM · `event_oldtales1` OLD TALES · `event_goddessfall1` GODDESS FALL · `event_staranis1` STAR ANIS · `event_footstepwalkrun1` FOOTSTEP, WALK, RUN · `event_arkguardian1` ARK GUARDIAN | `side:mudfish` MUDFISH · `side:eden_spear` EDEN SPEAR · `side:pretty_star` PRETTY STAR |
 
 - 척추 단위는 **채점하지 않는다**. 지금 판정(K)은 기각하지 않고 "척추" 표시로 남긴다(도구 — X3f-1c).
 - **만우절 단위**(결정 #11 — `annotations/april-fools.json`)도 채점하지 않는다 — 척추가 아니라 판정 밖이다. 판정(K)은 기각하지 않고 "만우절" 표시로 남는다(`importance.mjs` fools).

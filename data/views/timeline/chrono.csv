@@ -111,7 +111,7 @@ order,tick,unit,kind,class,place,lo,hi,via,records,pieces,flashbacks,relations,n
 110,17,char:80,호감도,범위,ch15–ch16 ~,48,,좁힘,,,,,뒤 ch15,추정,ch16,걸침,
 111,17,char:71,호감도,범위,ch13–ch14 ~,44,,좁힘,,,,,뒤 ch13,추정,ch16,걸침,
 112,17,char:140,호감도,범위,ch15–ch16 ~,48,,단위 · 좁힘,S355,,,뒤 ch13,뒤 ch15,추정,ch16,걸침,
-113,17,char:220,호감도,범위,ch06–ch07 ~ ch41,30,99,단위 · 좁힘,S356,,,뒤 ch06,전 fl:ark_guardian,추정,ch16,걸침,
+113,17,char:220,호감도,범위,ch06–ch07 ~ ch41,30,99,단위 · 좁힘,S356,,,뒤 ch06,전 event_arkguardian1,추정,ch16,걸침,
 114,17,char:22,호감도,범위,ch04–ch05 ~,26,,좁힘,,,,,뒤 ch04,추정,ch16,걸침,
 115,17,char:12,호감도,판별,ch01–ch02 ~ ch02–ch03,20,22,단위,S43,,,무렵 ch02,,,ch16,앞,14
 116,17,char:432,호감도,상대,,,,단위,,,,,단서 없음,추정,ch16,,
@@ -326,7 +326,7 @@ order,tick,unit,kind,class,place,lo,hi,via,records,pieces,flashbacks,relations,n
 325,86,event_jinxplayer,이벤트,범위,ch22–ch23 ~,62,,좁힘,,,,,뒤 ch22,추정,ch32,걸침,
 326,86,event_nonsensered,이벤트,판별,@갓데스_투입–@궤도_엘리베이터_강습 ~ @궤도_엘리베이터_강습–@아크_가디언_작전,,,회상,S171,,S171,,,,ch32,과거,33
 327,86,char:272,호감도,범위,ch22–ch23 ~,62,,단위 · 좁힘,S389,,,전 event_jinxplayer,뒤 ch22,추정,ch32,걸침,
-328,87,event_phantomthiefvsdetective,이벤트,범위,ch15–ch16 ~,48,,단위,S364,,,뒤 char:402; 전 fl:go_ninja_thief; 뒤 event_freezeacpu,단서 없음,추정,ch32,걸침,
+328,87,event_phantomthiefvsdetective,이벤트,범위,ch15–ch16 ~,48,,단위,S364,,,뒤 char:402; 전 event_goninjathief; 뒤 event_freezeacpu,단서 없음,추정,ch32,걸침,
 329,87,char:403,호감도,범위,ch15–ch16 ~,48,,단위,S172,,,뒤 event_phantomthiefvsdetective,단서 없음,추정,ch32,걸침,
 330,88,char:580,호감도,상대,,,,단위,S173,,,전 event_phantomthiefvsdetective,단서 없음,추정,ch32,,
 331,89,side:wordless,사이드,범위,ch24–ch25 ~,66,,단위,S174 S175,,S175,뒤 ch24,단서 없음,추정,ch32,걸침,
@@ -410,8 +410,8 @@ order,tick,unit,kind,class,place,lo,hi,via,records,pieces,flashbacks,relations,n
 409,124,char:842,호감도,범위,ch26–ch27 ~,70,,단위,S260,,,중 fl:reborn_evil,단서 없음,추정,ch40,걸침,
 410,125,char:841,호감도,범위,ch26–ch27 ~,70,,단위,S261,,,중 fl:reborn_evil,단서 없음,추정,ch40,걸침,
 411,126,side:eden_spear,사이드,범위,ch21–ch22 ~ ch22–ch23 / ch24–ch25 ~ ch25 / ch25–ch26 ~ ch39 / ch39,,,조각,S262 S263 S264 S265,S262 S263 S264 S265,,,,,ch40,앞,1
-412,126,fl:go_ninja_thief,이벤트,범위,ch26–ch27 ~,70,,단위,S266,,,뒤 event_arcanearchive,단서 없음,추정,ch40,걸침,
-413,126,char:23,호감도,범위,ch26–ch27 ~,70,,단위,S267,,,뒤 fl:go_ninja_thief,단서 없음,추정,ch40,걸침,
+412,126,event_goninjathief,이벤트,범위,ch26–ch27 ~,70,,단위,S266,,,뒤 event_arcanearchive,단서 없음,추정,ch40,걸침,
+413,126,char:23,호감도,범위,ch26–ch27 ~,70,,단위,S267,,,뒤 event_goninjathief,단서 없음,추정,ch40,걸침,
 414,127,ch41,메인,판별,ch41,99,99,메인,S268 S269,S269,,직후 ch40,,,ch41,,
 415,127,relic:거꾸로적힌기록,유실물,불명,,,,,,,,,단서 없음,추정,ch41,,
 416,128,ch42,메인,판별,ch42,101,101,메인,S270 S271 S272,S271 S272,,직후 ch41,,,ch42,,
@@ -426,8 +426,8 @@ order,tick,unit,kind,class,place,lo,hi,via,records,pieces,flashbacks,relations,n
 425,131,fl:terminus_ticket,이벤트,범위,ch13–ch14 ~,44,,단위,S283 S284,,S284,직후 fl:blank_ticket,단서 없음,추정,ch42,걸침,
 426,131,char:75,호감도,범위,ch13–ch14 ~,44,,단위,S285,,,뒤 char:72,단서 없음,추정,ch42,걸침,
 427,132,char:73,호감도,범위,ch13–ch14 ~,44,,단위,S286,,,뒤 char:70,단서 없음,추정,ch42,걸침,
-428,133,fl:ark_guardian,이벤트,판별,ch40–ch41 ~ ch41,98,99,단위,S287 S288,,S288,직후 event_goddessfall1 (2주),,,ch42,앞,1
-429,134,char:471,호감도,범위,ch40–ch41 ~,98,,단위,S289,,,뒤 fl:ark_guardian,단서 없음,추정,ch42,걸침,
+428,133,event_arkguardian1,이벤트,판별,ch40–ch41 ~ ch41,98,99,단위,S287 S288,,S288,직후 event_goddessfall1 (2주),,,ch42,앞,1
+429,134,char:471,호감도,범위,ch40–ch41 ~,98,,단위,S289,,,뒤 event_arkguardian1,단서 없음,추정,ch42,걸침,
 430,135,fl:sin_editor,이벤트,상대,,,,단위,S290,,S290,,단서 없음,추정,ch42,,
 431,135,char:582,호감도,상대,,,,단위,S291,,,뒤 fl:sin_editor,단서 없음,추정,ch42,,
 432,136,fl:fatal_maid,이벤트,범위,ch22–ch23 ~,62,,단위,S292,,,뒤 fl:coins_in_rush,단서 없음,추정,ch42,걸침,
