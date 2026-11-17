@@ -99,6 +99,9 @@
 - ↺ S183 event_oldtales1 [구간] — 판별 · 방주 밀봉 · 엘리베이터 추락 5년 뒤부터 약 17년 뒤까지 — 에이브의 기다림(5년 → …
 - erelic:old_tales_dialog — 유실물 · 판별 · 공개 91(2024-10-31) ⌛
 - ↺ S196 event_footstepwalkrun1 [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~ @2차_지상_탈환전–ch00) · 라피의 과거 — 1차 지상 탈환전 무렵의 어린 시절부터 2차 지상 탈환전 · 앱솔루트 시절…
+- fl:maria-n — 이벤트 · 범위 (@방주_밀봉–@1차_지상_탈환전 ~ @2차_지상_탈환전–ch00) · 공개 161(2026-10-29) ⌛
+- erelic:maria-n_dialog — 유실물 · 범위 (@방주_밀봉–@1차_지상_탈환전 ~ @2차_지상_탈환전–ch00) · 공개 161(2026-10-29) ⌛
+- erelic:fading_affection — 유실물 · 범위 (@방주_밀봉–@1차_지상_탈환전 ~ @2차_지상_탈환전–ch00) · 공개 161(2026-10-29) ⌛
 - ↺ S348 erelic:white_memory [구간] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~ ch05–ch06) · event_overzone 2부 뒤 — 갓데스가 흩어진 뒤 홀로 떠돌던 스노우 화이트가 다…
 - ↺ S398 side:gingerbread_house [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~) · 2세대가 궤도 엘리베이터에서 떨어진 뒤 헨젤이 2년을 걸어 연구소에 닿고 몇 해를 기다리다…
 - ↺ S399 side:gingerbread_house [회상] — 범위 (@방주_밀봉–@1차_지상_탈환전 ~) · 세이렌이 바다에서 깨어 떠돌다 해안 절벽에서 헨젤을 찾은 때 — 그레텔은 베르누이아의 치료…
@@ -144,6 +147,10 @@
 ## ch00 — 공개 1(2022-11-04)
 
 - ↺ S3 ch01 [구간] — 판별 · 선발대의 통신 두절은 CH.01 작전 브리핑보다 46시간 전이다
+
+### ch00–ch01
+
+- ↺ S407 fl:maria-n [구간] — 판별 · 수송기 추락 · 04-F 합류 · 블랙스미스 — CH.00–01을 마리안 쪽에서 다시 본 …
 
 ## ch01 — 공개 2(2022-11-04)
 
@@ -728,6 +735,19 @@
 
 ## ch48 — 공개 154(2026-08-13)
 
+- char:473 — 호감도 · 판별 · 공개 161(2026-10-29) ◀2
+- char:472 — 호감도 · 판별 · 공개 162(2026-11-05) ◀2
+
+## ch49 — 공개 160(2026-10-29)
+
+
+## ch50 — 공개 161(2026-10-29)
+
+
+### ch50 뒤
+
+- ↺ S408 fl:maria-n [구간] — 범위 (ch50 뒤 ~) · CH.50 뒤 — 검은 달 안의 마리안
+- char:19 — 호감도 · 범위 (ch50 뒤 ~) · 공개 161(2026-10-29)
 
 ## 작중 축에 닿지 않음 — 상대(다른 단위와의 앞뒤만) 67
 
@@ -736,9 +756,10 @@
 - 조각(회상) 15: S44 char:30 · S58 event_cherryblossom · S80 char:380 · S95 char:450 · S114 event_neverland1 · S144 event_lastkingdom1 · S150 event_goldencoinrush1 · S155 event_claymore · S175 side:wordless · S192 event_icedragonsaga1 · S216 side:mudfish · S232 event_lordforjustice · S258 fl:reborn_evil · S290 fl:sin_editor · S300 fl:lie_cause_recoil
 - 이벤트 3: event_ltk · event_schooloflock · fl:sin_editor
 
-## 시점 불명 52
+## 시점 불명 58
 
 - 서브퀘스트 9: sub:이례의_기록자_00 · sub:고스트_00 · sub:코리_00 · sub:김작가_00 · sub:스페이드_00 · sub:저스틴_00 · sub:테디_00 · sub:제니퍼f_00 · sub:데이파라_00
 - 호감도 24: char:82 · char:32 · char:61 · char:141 · char:60 · char:150 · char:312 · char:381 · char:282 · char:40 · char:380 · char:350 · char:812 · char:811 · char:321 · char:450 · char:451 · char:382 · char:310 · char:822 · char:821 · char:820 · char:570 · char:63
 - 이벤트 3: event_nocallerid · event_bowwowparadise · event_goldenship
-- 유실물 16: relic:jonathan_report · relic:특이랩쳐보고서-전 · relic:특이랩쳐보고서-후 · relic:에닉탄핵포스터 · relic:필그림조우보고서 · relic:저주받은보석 · relic:조난일지 · relic:반드시사수하라 · relic:충격다크매터란무엇인가 · relic:알관련전달사항 · relic:할일목록 · relic:주워갈것들메모 · relic:은색액체 · relic:거꾸로적힌기록 · relic:아무한테나말해주는거아니야.wav · relic:거인을찾아서
+- 유실물 19: relic:jonathan_report · relic:특이랩쳐보고서-전 · relic:특이랩쳐보고서-후 · relic:에닉탄핵포스터 · relic:필그림조우보고서 · relic:저주받은보석 · relic:조난일지 · relic:반드시사수하라 · relic:충격다크매터란무엇인가 · relic:알관련전달사항 · relic:할일목록 · relic:주워갈것들메모 · relic:은색액체 · relic:거꾸로적힌기록 · relic:아무한테나말해주는거아니야.wav · relic:거인을찾아서 · relic:갓데스_다큐멘터리_제작기 · relic:신임_장교의_일지 · relic:하지_말아야_할_일
+- 조각(회상) 3: S403 relic:갓데스_다큐멘터리_제작기 · S405 relic:신임_장교의_일지 · S415 char:19

@@ -245,7 +245,7 @@
   },
   "OldTales": {
    "name": "올드 테일즈",
-   "org": null,
+   "org": "org:올드_테일즈",
    "icon": "icn_oldtales"
   },
   "Overseer": {
@@ -385,6 +385,10 @@
   ],
   "18": [
    "MISSILIS",
+   "Counters"
+  ],
+  "19": [
+   "PILGRIM",
    "Counters"
   ],
   "20": [
@@ -968,6 +972,14 @@
    "Goddess"
   ],
   "471": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "472": [
+   "PILGRIM",
+   "Goddess"
+  ],
+  "473": [
    "PILGRIM",
    "Goddess"
   ],

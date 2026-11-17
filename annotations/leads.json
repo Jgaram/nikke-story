@@ -102,7 +102,7 @@
       "id": "Z2",
       "person": "person:마리안",
       "from": "ch00",
-      "arcs": ["ch00-ch07", "ch13-ch14", "event_lastkingdom1", "side:eden_spear-event_goddessfall1", "ch47-ch48"],
+      "arcs": ["ch00-ch07", "ch13-ch14", "event_lastkingdom1", "side:eden_spear-event_goddessfall1", "ch47-fl:maria-n"],
       "origin": "메인",
       "records": ["J1", "D8", "D68", "D70"],
       "reason": "ch00부터(첫 고른 구간의 처음 중심) 걸린 자리 12/60(고른 구간 ch00-ch07 5) · 말한 줄 941 · 이름이 나온 씬 145 — J1의 주인 · 인물 변화 27(신념 · 기억 · 소속 · 신체 19) · 같은 인물 합침: 모더니아",
@@ -131,6 +131,14 @@
           "session": "X3f-3a",
           "note": "J1이 묻는 일 — 침식(ch00 장면, 누가: ch14 에닉 · 토커티브 코드 F376) · 퀸 인자 각성(척추 LAST KINGDOM F1452) — 이 모두 척추 안. 모더니아가 된 경위(Q37)는 아직 어디에도 장면이 없다. 처음 · 가장 온전히 나오는 곳은 메인(ch00 · ch14). SECOND AFFECTION · char:260 · First Affection · char:330은 쫓겨난 뒤 · 뇌세척 뒤의 조각 — 3) 이하로",
           "before": "원점 없음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — ch49 · ch50(· MARIA-n)에 연달아 걸려 아크를 늘림(한 자리만 걸린 주역은 그대로)",
+          "before": "범위 ch00-ch07 ch13-ch14 event_lastkingdom1 side:eden_spear-event_goddessfall1 ch47-ch48"
         }
       ]
     },
@@ -243,7 +251,7 @@
       "id": "Z6",
       "person": "person:엔더슨",
       "from": "ch01",
-      "arcs": ["ch01-ch04", "ch13-ch18", "ch23-ch27", "event_arkguardian1-ch48"],
+      "arcs": ["ch01-ch04", "ch13-ch18", "ch23-ch27", "event_arkguardian1-ch50"],
       "origin": "event_arkguardian1",
       "records": ["J5", "D43", "D304", "D986"],
       "reason": "ch01부터(첫 고른 구간의 처음 중심) 걸린 자리 17/59(고른 구간 ch01-ch04 3 · ch13-ch18 4 · ch23-ch27 4 · event_arkguardian1-ch48 6) · 말한 줄 1032 · 이름이 나온 씬 117 — J5의 주인 · 인물 변화 14(신념 · 기억 · 소속 · 신체 5)",
@@ -272,6 +280,14 @@
           "session": "X3f-3a",
           "note": "J5가 묻는 엔더슨 = 갓데스의 지휘관이 어떻게 살아남았나 — 3차 밀봉 전투 끝에 릴리바이스가 그를 엘리베이터로 방주에 보내며 헤어진 장면, V.T.C.의 감금(F2373 · F2364, Q83 · Q131 회수)이 척추 ARK GUARDIAN에 나온다. 깨어나 V.T.C.를 죽인 일은 메인 ch43 · ch46. 메인 밖 후보(이벤트 · char:190)는 엔더슨이 명령만 내리는 곁 등장 — 3) 이하로",
           "before": "원점 없음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — ch49 · ch50(· MARIA-n)에 연달아 걸려 아크를 늘림(한 자리만 걸린 주역은 그대로)",
+          "before": "범위 ch01-ch04 ch13-ch18 ch23-ch27 event_arkguardian1-ch48"
         }
       ]
     },
@@ -530,7 +546,7 @@
       "id": "Z17",
       "person": "person:도로시",
       "from": "ch19",
-      "arcs": ["ch19-event_redash", "ch37-ch39", "event_goddessfall1-ch48"],
+      "arcs": ["ch19-event_redash", "ch37-ch39", "event_goddessfall1-ch50"],
       "origin": "event_overzone",
       "records": ["J7", "D177", "D237", "D241"],
       "reason": "ch19부터(첫 고른 구간의 처음 중심) 걸린 자리 18/41(고른 구간 ch19-event_redash 9 · event_goddessfall1-ch48 7) · 말한 줄 2926 · 이름이 나온 씬 160 — J7의 주인 · 인물 변화 26(신념 · 기억 · 소속 · 신체 11)",
@@ -559,6 +575,14 @@
           "session": "X3f-3a",
           "note": "J7이 묻는 '도로시는 왜 방주를 증오하나'가 정해진 사건 — 밀봉 뒤 오스왈드가 갓데스를 들이지 않고 통신을 끊은 배신과, 오스왈드 · 후손에게 한 복수의 맹세 · '원래 우리 것인 낙원'을 빼앗겠다는 다짐(F920 · F921 · F926 · F928)이 척추 OVER ZONE에 처음부터 끝까지 나온다. char:233 · BOOM! THE GHOST! · GODDESS FALL 유실물 · char:225 · RED ASH 유실물은 그 뒤 · 곁 조각 — 3) 이하로",
           "before": "원점 없음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — ch49 · ch50(· MARIA-n)에 연달아 걸려 아크를 늘림(한 자리만 걸린 주역은 그대로)",
+          "before": "범위 ch19-event_redash ch37-ch39 event_goddessfall1-ch48"
         }
       ]
     },
@@ -658,7 +682,7 @@
       "id": "Z21",
       "person": "person:에닉",
       "from": "ch22",
-      "arcs": ["ch22-ch25", "ch39", "ch42", "ch44-ch47"],
+      "arcs": ["ch22-ch25", "ch39", "ch42", "ch44-ch47", "ch49-fl:maria-n"],
       "origin": "메인",
       "records": ["J16", "D223", "D310", "D1141"],
       "reason": "ch22부터(첫 고른 구간의 처음 중심) 걸린 자리 10/38(고른 구간 ch22-ch25 5 · ch44-ch47 3) · 말한 줄 816 · 이름이 나온 씬 61 — J16의 주인 · 인물 변화 11(신념 · 기억 · 소속 · 신체 4)",
@@ -687,6 +711,14 @@
           "session": "X3f-3b",
           "note": "J16이 묻는 에닉이 해 온 일이 정해진 사건 — 토커티브와의 거래(F376, ch14)와 자기 판결 · 자체 판단 운용 선언(F1100, ch25)이 메인에 장면으로 나온다. 에닉이 만들어진 일은 어디에도 장면이 없다. 메인 밖 후보(PROJECT MATIS 엔메와의 거래 · SIN EDITOR 판결 · char:110 판례 · ARK RANGER)는 에닉이 움직인 뒤 조각 — 3) 이하로",
           "before": "원점 없음"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — ch49 · ch50(· MARIA-n)에 연달아 걸려 아크를 늘림(한 자리만 걸린 주역은 그대로)",
+          "before": "범위 ch22-ch25 ch39 ch42 ch44-ch47"
         }
       ]
     },

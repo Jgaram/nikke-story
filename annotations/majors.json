@@ -127,7 +127,7 @@
     {
       "id": "C7",
       "person": "person:마리안",
-      "from": "ch48",
+      "from": "ch47",
       "scenes": 70,
       "changes": 18,
       "score": 35.5,
@@ -141,13 +141,21 @@
           "date": "2026-10-10",
           "session": "X3g-1b",
           "before": "이유 (계산) 말한 씬 70(메인 34 · 척추 이벤트 · 사이드 36) · 변화 줄 18(신념 3 · 소속 4 · 신체 5 · 기억 4 · 관계 2 — 기록 20) · 점수 35.5 ≥ 32"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — 척추 씬이 늘어(CH.49 · CH.50 · MARIA-n 척추) 자리별 비례 문턱이 내려가 계산 from이 ch48 → ch47. 마리아-n을 합쳐 점수 49.7",
+          "before": "메인 자리 ch48"
         }
       ]
     },
     {
       "id": "C8",
       "person": "person:레비아탄",
-      "from": "ch41",
+      "from": "ch40",
       "scenes": 74,
       "changes": 17,
       "score": 35.5,
@@ -161,6 +169,14 @@
           "date": "2026-10-10",
           "session": "X3g-1b",
           "before": "이유 (계산) 말한 씬 74(메인 62 · 척추 이벤트 · 사이드 12) · 변화 줄 17(신념 4 · 소속 1 · 신체 4 · 관계 8 — 기록 21) · 점수 35.5 ≥ 32"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "note": "N3 2026-10-29 — 척추 씬이 늘어 자리별 비례 문턱이 내려가 계산 from이 ch41 → ch40. 점수 39.5, 명단 그대로",
+          "before": "메인 자리 ch41"
         }
       ]
     },
@@ -415,6 +431,32 @@
       "confidence": "확실",
       "status": "기각",
       "reviews": [{ "decision": "기각", "by": "claude", "date": "2026-10-14", "session": "W24a", "note": "계산 선 아래(21 < 32) — 같은 인물 묶음이 바뀌어 띠에 새로 든 인물" }]
+    },
+    {
+      "id": "C22",
+      "person": "person:에닉",
+      "from": "fl:maria-n",
+      "scenes": 57,
+      "changes": 6,
+      "score": 18.5,
+      "reason": "(계산) 말한 씬 57(메인 45 · 척추 이벤트 · 사이드 12) · 변화 줄 6(신념 4 · 기억 1 · 관계 1 — 기록 6) · 점수 18.5 < 32",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [
+        { "decision": "기각", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "계산 선 아래(18.5 < 32) — MARIA-n이 척추가 되어 띠에 새로 든 인물, 어느 변형에서도 위 8명 밖" }
+      ]
+    },
+    {
+      "id": "C23",
+      "person": "person:크라운",
+      "from": "ch50",
+      "scenes": 55,
+      "changes": 5,
+      "score": 16.6,
+      "reason": "(계산) 말한 씬 55(메인 11 · 척추 이벤트 · 사이드 44) · 변화 줄 5(소속 1 · 신체 3 · 관계 1 — 기록 5) · 점수 16.6 < 32",
+      "confidence": "추정",
+      "status": "기각",
+      "reviews": [{ "decision": "기각", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "계산 선 아래(16.6 < 32) — CH.50 · MARIA-n으로 띠에 새로 든 인물" }]
     }
   ]
 }

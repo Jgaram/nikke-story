@@ -133,6 +133,16 @@
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-09", "session": "X3f-1b", "note": "문 + ⓐ + ⓒ + ⓑ 모두 넘는다" }]
     },
     {
+      "id": "B18",
+      "unit": "fl:maria-n",
+      "gate": "4주년",
+      "notice": "2026-10-29 「10월 29일 업데이트 공지」 — \"신규 풀 보이스 스토리 이벤트: MARIA-n\" · 같은 공지의 \"4TH ANNIVERSARY\" 이벤트 · 4주년 배포 니케",
+      "reason": "문 4주년 · ⓐ 51(J1×20 J3×10 J9×7 J4×6 J15×2 J16×2 J18×2 J13×1 J19×1) · ⓒ 5 · 0 · ⓑ 29 — 마리아-n(= 마리안)과 엔더슨 · 닥터 마리아의 방주 밀봉 뒤 이야기: J1 · J3. 메인 CH.50이 이 단위의 일을 잇는다. 금서고 원문",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "문 + ⓐ + ⓒ + ⓑ 모두 넘는다(N3 2026-10-29 U3)" }]
+    },
+    {
       "id": "B13",
       "unit": "side:second_affection",
       "gate": "사이드",

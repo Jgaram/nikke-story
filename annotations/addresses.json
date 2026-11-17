@@ -4153,6 +4153,49 @@
     "by": "claude",
     "session": "N3",
     "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-18", "session": "N3", "note": "U3 — 2026-10-08 새 실장판(63 벨로타 : 펌킨 위치), W22 판정 기준" }]
+  },
+  {
+    "id": "A185",
+    "rid": 19,
+    "person": "person:마리안",
+    "address": "지휘관",
+    "voice": ["c019_01_Field_Touch_1", "c019_01_Field_Go_1", "c019_01_Attractive_Up_1"],
+    "evidence": [{ "scene": "ep:d_nikke_marian_queen_01", "lines": [3] }],
+    "reason": "음성 대사와 호감도 스토리 모두 지휘관이다(기본판 마리안과 같다).",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "N3",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "U3 — 2026-10-29 새 실장판, W22 판정 기준" }]
+  },
+  {
+    "id": "A186",
+    "rid": 472,
+    "person": "person:홍련",
+    "address": "도령",
+    "also": ["자네"],
+    "voice": ["c472_Lobby_Stay_1", "c472_Attractive_Up_2", "c472_Battle_Ready_1"],
+    "evidence": [{ "scene": "ep:d_nikke_hongryeon_goddeath_01", "lines": [48] }],
+    "reason": "음성 대사와 호감도 스토리에서 도령으로 부르고, 2인칭은 자네를 쓴다(기본판 A78과 같다).",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "N3",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "U3 — 2026-10-29 새 실장판, W22 판정 기준" }]
+  },
+  {
+    "id": "A187",
+    "rid": 473,
+    "person": "person:라푼젤",
+    "address": "형제님",
+    "voice": ["c473_Lobby_Touch_1", "c473_Attractive_Up_2", "c473_Gift_3"],
+    "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_04", "lines": [43] }],
+    "reason": "음성 대사와 호감도 스토리 모두 형제님이다(기본판 A77과 같다). 형제자매님은 여럿을 가리킨다.",
+    "confidence": "확실",
+    "status": "확정",
+    "by": "claude",
+    "session": "N3",
+    "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "U3 — 2026-10-29 새 실장판, W22 판정 기준" }]
   }
  ]
 }

@@ -66,7 +66,11 @@
     "person:6000-D": { "icon": "c964", "conf": "확실", "why": "Product 12: 6000-D" },
     "person:B-0006": { "icon": "c962", "conf": "확실", "why": "Product 12: B-0006" },
     "person:C-1002": { "icon": "c963", "conf": "확실", "why": "Product 12: C-1002" },
-    "person:로지": { "icon": "c482", "conf": "확실", "why": "#000000 - Logey — 사전 메모: #000000이 부리는 니케" }
+    "person:로지": { "icon": "c482", "conf": "확실", "why": "#000000 - Logey — 사전 메모: #000000이 부리는 니케" },
+    "person:마리안": { "icon": "c013", "conf": "확실", "why": "Marian — 기본 모습. DB 실장판이 마리안 : 퀸(19)뿐이 되어 resource_id로는 퀸 그림이 기본이 되므로 고정(N3 2026-10-29, 스포일러)" },
+    "person:닥터_마리아": { "icon": "c9041", "conf": "확실", "why": "Doctor Maria — MARIA-n의 닥터 마리아(N3 2026-10-29)" },
+    "person:베르누이아": { "icon": "c9042", "conf": "확실", "why": "Bernoullia — GINGERBREAD HOUSE · CH.50의 베르누이아(N3 2026-10-29)" },
+    "person:온리_원": { "icon": null, "conf": "확실", "why": "Only One(c997) — nikke-db에 이름표는 있지만 아이콘 그림이 없다(404, N3 2026-10-29) — 이름만" }
   },
   "forms": {
     "rapi_red": {"icon": "c016", "conf": "확실", "why": "라피 : 레드 후드 — CH.34 각성 뒤 모습"},
