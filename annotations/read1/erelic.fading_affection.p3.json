@@ -1,0 +1,146 @@
+{
+  "_comment": "U09 1회독",
+  "unit": "erelic:fading_affection",
+  "parts": "3-7",
+  "session": "U09",
+  "by": "claude",
+  "date": "2026-11-17",
+  "summary": "파트 3–5 앞부분은 마리안의 기록: 7호와 호수 오솔길에서 파란 장미를 받고 손을 잡으며(_105–_106), 호수 · 북쪽 숲 · 남쪽 산책로를 지나며 블랙스미스에게 쫓기고, 선택마다 침식도가 쌓여 시간이 지나면 눈이 붉어져 7호를 쏘거나 블랙스미스에게 가는 침식 엔딩(404 ERROR, _211–_215)으로 떨어진다. 둘은 서로 지키고 싶었다는 마음을 확인하고(_162–_163), 쓰러진 빌딩의 침수 구역에 전력을 흘려 블랙스미스를 감전시켜 코어를 부순다(_166–_173). 신도시 입구에서 기시감을 느낀 마리안은 기억의 공백 · 지휘관의 두려운 표정 · '아직인가'라는 말을 되짚어 자기가 침식에 걸려 지휘관을 죽였다는 진실에 닿고(_187–_193), 그래도 사랑하느냐는 물음에 7호는 '사랑하니까'라 답한다(_195–_196). 갈래 끝은 흰머리가 될 때까지 살고 교회에서 결혼하자는 TRUE END(_216)와, 임무 지역 밖으로 달아났다가 앞서 달아났던 마리아에게 둘 다 쏘이는 HIDDEN END(_217). 파트 5–6은 7호의 기록: 기억이 사라져 가는 7호가 수송기를 몰래 타고 지상으로 가 고양이 · 파란 장미 · 블랙스미스와 싸운 빌딩 같은 추억의 장소를 되짚으며 교회로 가지만 마리안의 이름을 잊는다(_219–_259). 웨딩드레스를 입은 그녀가 와 '돌아가요' 하고, TRUE END에서 수송기에서 깨어난 그에게 이름을 대지 않은 니케가 인사하고 재운다(_260–_268). 파트 6–7 끝은 메모리 46편(_269–_314) — 박사가 지운 마리아의 기억(먹힌 공포 · 낙하 · 자유 · 배신, _286–_289) — 과 엔딩 회상(_315).",
+  "facts": [
+    {
+      "id": "F3194",
+      "text": "FADING AFFECTION 마리안의 기록에서 7호는 마리안이 언제 침식에 걸려 자기를 또 죽일지 모르는 것을 알면서도 함께 미래를 맞이하고 싶다며 '사랑하니까'라 답했다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_195", "lines": ["6-26"] }, { "scene": "erelic:fading_affection_196", "lines": ["0-7"] }],
+      "reason": "'역시 알고 계셨군요'(#6-7) · '제가 지휘관을 또 죽일지 모르는데도요?'(#21) · '사랑하니까'(#26) — 분기형 기록의 한 갈래라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3195",
+      "text": "마리안과 7호는 호수의 쓰러진 빌딩에서 마리안이 미끼가 되고 7호가 레버를 당겨 침수 구역에 전력을 흘려 블랙스미스를 감전시킨 뒤 코어를 부숴 쓰러뜨렸다 — 수많은 마리아 · 마리안 · 지휘관을 죽인 블랙스미스에게 한 복수였다",
+      "about": ["person:마리안", "person:지휘관", "concept:블랙스미스"],
+      "evidence": [
+        { "scene": "erelic:fading_affection_166", "lines": ["0-23"] },
+        { "scene": "erelic:fading_affection_168", "lines": ["0-10"] },
+        { "scene": "erelic:fading_affection_172", "lines": ["0-7"] },
+        { "scene": "erelic:fading_affection_173", "lines": ["0-10"] },
+        { "scene": "erelic:fading_affection_311", "lines": ["1-4"] }
+      ],
+      "reason": "감전 작전(_166) · 미끼 · 레버(_168) · '블랙스미스 침묵 확인'(_173 #4) · 메모리 '복수'(_311 #2) — 7호의 기록도 같은 일을 떠올린다(_249)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3196",
+      "text": "마리안의 기록 TRUE END에서 마리안은 흰머리가 될 때까지 7호와 살고 싶다며 결혼식을 하자 했고, 멀리 보이는 교회를 예식장으로 골랐다 — 7호는 예쁜 반지를 준비하겠다고 했다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_216", "lines": ["0-34"] }],
+      "reason": "TRUE END(_216 #0) · 흰머리(#1) · 결혼식(#11-13) · 반지(#17-20) · 교회(#25-26) — 7호의 기록이 이 대화를 떠올려 교회로 간다(_223)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3197",
+      "text": "마리안의 기록 HIDDEN END에서 임무 지역 밖으로 달아난 7호와 마리안은, 먼저 자유를 찾아 달아났던 마리아에게 쏘여 죽었다 — 마리아는 아직도 계속되고 있었다며 자유로워지겠다고 더 먼 곳으로 떠났다",
+      "about": ["person:마리안", "person:지휘관", "person:마리아-n"],
+      "evidence": [
+        { "scene": "erelic:fading_affection_197", "lines": ["0-18"] },
+        { "scene": "erelic:fading_affection_199", "lines": ["0-13"] },
+        { "scene": "erelic:fading_affection_217", "lines": ["0-17"] }
+      ],
+      "reason": "도망치자(_197) · 선을 넘어 임무 지역 밖으로(_199 #13) · HIDDEN END '아직도 계속되고 있었군요' '전 자유로워질 거예요'(_217 #9-13) — 마리아 기록의 HIDDEN END(_084, 자유를 향해 넘어감)와 이어진다고 읽음. 분기 끝이라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3198",
+      "text": "7호의 기록에서 7호는 마리안과의 기억이 사라져 가는 채 연구소 숙소에서 깨어나, 잊지 않으려고 열린 수송기에 올라 막는 닥터 마리아를 두고 임무 지역으로 갔다",
+      "about": ["person:지휘관", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:fading_affection_219", "lines": ["0-10"] }, { "scene": "erelic:fading_affection_220", "lines": ["0-29"] }],
+      "reason": "기억나지 않는다(_219 #3) · 추억이 기억나지 않는다(_220 #19) · 수송기 출발, 박사 '멈춰!'(#26-29)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3199",
+      "text": "7호는 고양이 · 파란 장미 · 호수 · 블랙스미스와 싸운 빌딩 같은 추억의 자리를 되짚으며 교회로 갔지만 끝내 마리안의 이름을 잊었고, 손가락을 물어뜯어 단상에 그 이름을 적으려 했다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [
+        { "scene": "erelic:fading_affection_233", "lines": ["0-16"] },
+        { "scene": "erelic:fading_affection_249", "lines": ["0-10"] },
+        { "scene": "erelic:fading_affection_255", "lines": ["0-7"] },
+        { "scene": "erelic:fading_affection_259", "lines": ["0-12"] }
+      ],
+      "reason": "고양이를 따라 오솔길 · 파란 장미를 품에(_233) · 블랙스미스였어(_249 #9) · 이름이 기억나지 않는다(_255 #1) · 손가락으로 단상에(_259 #2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3200",
+      "text": "교회에 웨딩드레스를 입은 마리안이 와 '이제 돌아가요' 했고, 7호는 NIMPH가 끊어진 충격의 부작용으로 의식을 잃으며 그녀에게 사랑한다고 했다 — 수송기에서 깨어난 그에게 그녀는 이름을 대지 않고 오늘 임무를 함께할 니케라 인사한 뒤 다시 재우며 깨어나면 모든 게 끝나 있을 것이라 했다(TRUE END)",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [
+        { "scene": "erelic:fading_affection_260", "lines": ["0-5"] },
+        { "scene": "erelic:fading_affection_263", "lines": ["9-10"] },
+        { "scene": "erelic:fading_affection_264", "lines": [7] },
+        { "scene": "erelic:fading_affection_265", "lines": [2] },
+        { "scene": "erelic:fading_affection_268", "lines": ["0-31"] }
+      ],
+      "reason": "웨딩드레스 · '지휘관'(_260) · NIMPH가 끊어진 충격 · 부작용(_263 #9-10) · 사랑해(_265) · TRUE END 수송기 · '니케예요'(_268 #8-10) · '깨어나면 모든 게 끝나있을 거예요'(#28)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3201",
+      "text": "닥터 마리아는 마리아의 NIMPH 메모리에서 블랙스미스에게 먹힌 공포 · 스스로 택한 죽음 · 자유에 대한 동경 · 배신하려던 기억을 지웠다 — 자유를 동경하면 임무를 계속할 수 없다며 지웠고, 그러는 자기도 지독한 구속이라며 마리아에게 미안해했다",
+      "about": ["person:닥터_마리아", "person:마리아-n"],
+      "evidence": [
+        { "scene": "erelic:fading_affection_286", "lines": ["0-6"] },
+        { "scene": "erelic:fading_affection_287", "lines": ["0-6"] },
+        { "scene": "erelic:fading_affection_288", "lines": ["0-9"] },
+        { "scene": "erelic:fading_affection_289", "lines": ["0-9"] }
+      ],
+      "reason": "'삭제된 메모리' 넷(저장 창고 · 낙하 · 자유 · 배신) — '이건 지우자'(_286 #5) · '이런 감정이 있으면 임무를 계속할 수 없을 거야'(_288 #6) · '정말 미안해. 마리아'(_289 #9). 지우는 이가 박사라고는 문맥으로 읽음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "questions": [],
+  "events": [
+    {
+      "id": "F3175-2",
+      "act": "드러냄",
+      "text": "마리안은 기억의 공백 · 지휘관의 두려운 표정 · '아직인가'라는 말을 되짚어, 시간이 지나면 침식에 걸려 그사이 지휘관을 죽였다는 것을 스스로 깨달았다",
+      "evidence": [
+        { "scene": "erelic:fading_affection_191", "lines": ["0-9"] },
+        { "scene": "erelic:fading_affection_192", "lines": ["0-12"] },
+        { "scene": "erelic:fading_affection_193", "lines": ["9-14"] }
+      ],
+      "reason": "침식에 걸리면 데이터 갱신이 멈춘다는 박사의 말(_192 #3-5) · '마리안이 침식에 걸려 지휘관을 죽였다'(_193 #14) — F3175(침식임을 알고 있었다)를 기록 쪽에서 다시 보인다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "F3182-2",
+      "act": "드러냄",
+      "text": "모든 것을 잊고 수송기에서 깨어난 지휘관에게 마리안은 이름을 대지 않고 오늘 임무를 함께할 니케라 인사했다",
+      "evidence": [{ "scene": "erelic:fading_affection_268", "lines": ["2-30"] }],
+      "reason": "'전··· 오늘 임무를 함께하게 된··· 니케예요'(#8-10) — F3182(끝까지 정체를 숨겼다)의 수송기 장면. TRUE END 갈래라 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 1회독 — 원문 대조 검토" }]
+    }
+  ],
+  "times": [],
+  "targets": []
+}

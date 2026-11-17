@@ -41,7 +41,7 @@
 | handoff/facts-34.md | 사실 목록 R98–U03 | 19,147 |
 | handoff/facts-35.md | 사실 목록 U04–U05 | 12,798 |
 | handoff/facts-36.md | 사실 목록 U06–U07 | 17,731 |
-| handoff/facts-37.md | 사실 목록 U08–P1 | 10,007 |
+| handoff/facts-37.md | 사실 목록 U08–P1 | 11,588 |
 | handoff/questions-solved-1.md | 풀린 의문 124건 | 19,948 |
 | handoff/questions-solved-2.md | 풀린 의문 124건 | 293 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
@@ -160,3 +160,4 @@
 | handoff/U06.md | 단위 요약 — ch50 파트 10-15 … relic:하지_말아야_할_일 (3단위) | 13,303 |
 | handoff/U07.md | 단위 요약 — fl:maria-n 파트 1-5 | 12,423 |
 | handoff/U08.md | 단위 요약 — fl:maria-n 파트 6-8 … erelic:fading_affection 파트 1-2 (3단위) | 8,649 |
+| handoff/U09.md | 단위 요약 — erelic:fading_affection 파트 3-7 | 2,664 |
