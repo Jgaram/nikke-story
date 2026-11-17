@@ -160,4 +160,4 @@
 | handoff/U06.md | 단위 요약 — ch50 파트 10-15 … relic:하지_말아야_할_일 (3단위) | 13,303 |
 | handoff/U07.md | 단위 요약 — fl:maria-n 파트 1-5 | 12,423 |
 | handoff/U08.md | 단위 요약 — fl:maria-n 파트 6-8 … erelic:fading_affection 파트 1-2 (3단위) | 8,649 |
-| handoff/U09.md | 단위 요약 — erelic:fading_affection 파트 3-7 | 2,664 |
+| handoff/U09.md | 단위 요약 — erelic:fading_affection 파트 3-7 | 2,775 |

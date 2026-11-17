@@ -1,0 +1,215 @@
+{
+  "_comment": "U09 2회독",
+  "unit": "erelic:fading_affection",
+  "parts": "3-7",
+  "session": "U09",
+  "by": "claude",
+  "date": "2026-11-17",
+  "mentions": [
+    {
+      "id": "I730",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:fading_affection_192", "lines": ["2-5"] }],
+      "reason": "'마리아 박사와의 기억'(#2) — 서술 속 '마리아 박사'는 자동 언급으로 안 잡힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I731",
+      "target": "person:마리아-n",
+      "evidence": [{ "scene": "erelic:fading_affection_217", "lines": ["8-13"] }],
+      "reason": "'마리안이 마리아를 바라본다'(#8) — 먼저 달아난 마리아(마리아 모델)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I732",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "erelic:fading_affection_219", "lines": ["0-10"] }],
+      "reason": "'7호의 기록' — 7호(지휘관)는 사전 별칭이 아니라 자동 언급으로 안 잡힌다",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I733",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:fading_affection_220", "lines": ["26-28"] }],
+      "reason": "'마리아 박사가 놀라 달려오지만'(#27)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "I734",
+      "target": "person:닥터_마리아",
+      "evidence": [{ "scene": "erelic:fading_affection_289", "lines": ["2-9"] }],
+      "reason": "삭제된 메모리의 '나' — '정말 미안해. 마리아'(#9), 기억을 지우는 이 = 박사로 읽음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1737",
+      "act": "재언급",
+      "points": ["F3148"],
+      "text": "호수 오솔길에서 7호가 길가에 핀 파란 장미를 마리안에게 내민다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_105", "lines": ["6-12"] }],
+      "reason": "#7 — 꽃밭의 파란 장미(F3148)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1738",
+      "act": "암시",
+      "points": ["F3175-2"],
+      "text": "7호가 마리안의 눈을 걱정스레 보며 '아직··· 인가' 한다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_134", "lines": ["2-8"] }],
+      "reason": "#3 — 뒤에 마리안이 이 말로 자기 침식을 깨닫는다(_191 #3-9)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1739",
+      "act": "암시",
+      "points": ["F3175-2"],
+      "text": "블랙스미스 촉수에 맞은 뒤를 기억 못 하는 마리안을 7호가 필사적으로 빌딩 위로 이끈다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_158", "lines": ["1-6"] }],
+      "reason": "#3-4 — 기억의 공백이 침식이었다(_189 #1-4)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1740",
+      "act": "재언급",
+      "points": ["F3137"],
+      "text": "마리안이 '침식에 걸리는 순간 데이터 갱신이 멈춘다'던 박사의 말을 떠올린다",
+      "about": ["person:마리안", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:fading_affection_192", "lines": ["2-9"] }],
+      "reason": "#3-5 — 침식 중 기억 없음(F3137)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1741",
+      "act": "재언급",
+      "points": ["F20"],
+      "text": "침식 엔딩의 힌트 '침식이 되면 콜링시그널을 일으킬 수 있다' — 붉은 눈의 마리안이 블랙스미스 촉수로 손을 뻗는다",
+      "about": ["person:마리안", "concept:블랙스미스"],
+      "evidence": [{ "scene": "erelic:fading_affection_212", "lines": ["4-21"] }],
+      "reason": "#21 — 블랙스미스로 데려가는 침식 코드(F20)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1742",
+      "act": "재언급",
+      "points": ["F3171"],
+      "text": "TRUE END에서 마리안이 멀리 보이는 교회를 예식장으로 고른다 — 목표 지점 앞 교회의 웨딩드레스와 반지",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_216", "lines": ["11-27"] }],
+      "reason": "#25-26 — 교회 · 반지(F3171)와 같은 약속으로 읽음",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1743",
+      "act": "재언급",
+      "points": ["F3178"],
+      "text": "7호가 연구소 숙소에서 깨어나 마리안과의 추억이 기억나지 않는 것에 놀란다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "erelic:fading_affection_220", "lines": ["13-22"] }],
+      "reason": "#19 — 쇄골 장치를 쏘면 마리안과의 기억이 사라진다(F3178)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1744",
+      "act": "재언급",
+      "points": ["F3165"],
+      "text": "쓰러진 7호가 소풍 · 가위바위보로 정한 귀여운 도시락통을 떠올리려 애쓴다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "erelic:fading_affection_241", "lines": ["0-24"] }],
+      "reason": "#0 · #9 — 소풍 약속과 가위바위보 도시락통(F3165)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1745",
+      "act": "재언급",
+      "points": ["F3170"],
+      "text": "7호가 무심코 '마리아-n'이라 하고는 얼굴이 부을 때까지 제 얼굴을 때린다",
+      "about": ["person:지휘관", "person:마리안"],
+      "evidence": [{ "scene": "erelic:fading_affection_251", "lines": ["0-7"] }],
+      "reason": "#1-5 — 마리아-n이라 부르고 제 얼굴을 때린 일(F3170)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1746",
+      "act": "재언급",
+      "points": ["F3177"],
+      "text": "쓰러지는 7호의 귓가에 'NIMPH가 끊어진 충격으로 일시적으로 생기는 부작용'이라는 목소리가 들린다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_263", "lines": ["7-10"] }],
+      "reason": "#9-10 — 7호 몸의 NIMPH를 지워야 한다(F3177)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1747",
+      "act": "재언급",
+      "points": ["F14"],
+      "text": "수송기에서 지휘관을 재우며 마리안이 '깨어나면 모든 게 끝나있을 거예요'라 한다",
+      "about": ["person:마리안", "person:지휘관"],
+      "evidence": [{ "scene": "erelic:fading_affection_268", "lines": ["23-31"] }],
+      "reason": "#28 — 곧 기내 폭탄이 터져 수송기가 추락한다(F14 · F3182)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1748",
+      "act": "재언급",
+      "points": ["F3130"],
+      "text": "지운 기억 '낙하'에서 '왜 공포가 사라지지 않지?' — 지워도 되살아나는 죽음의 공포",
+      "about": ["person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:fading_affection_287", "lines": ["1-6"] }],
+      "reason": "_287 #3 — 지워도 다시 생긴 공포(F3130)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    },
+    {
+      "id": "E1749",
+      "act": "재언급",
+      "points": ["F3192"],
+      "text": "지운 기억 '배신' — 잠시 일탈을 원한 것만으로 박사를 배신했다고 한 마리아",
+      "about": ["person:마리아-n", "person:닥터_마리아"],
+      "evidence": [{ "scene": "erelic:fading_affection_289", "lines": ["1-9"] }],
+      "reason": "#2-4 — 배신하려던 기억을 지워 달라던 TRUE END(F3192)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U09", "note": "U09 2회독 — 원문 대조 검토" }]
+    }
+  ],
+  "changes": [],
+  "note": "2층 — 생활상 뺌. 인물 변화 없음: 마리안 · 7호 기록도 고른 선택지에 따라 갈리는 분기형 기록이라 한 갈래의 전 → 후를 인물 변화로 세우지 않는다(U08과 같은 기준). 암시 언급은 각 기록의 첫 씬 · 박사 · 마리아가 나오는 씬만. 메모리 글(_270–_314)은 앞 씬을 되풀이하므로 새 뜻이 있는 것(삭제된 메모리 넷)만 봤다. '하지 말아야 할 일' 쪽지(Q395)와 파란 장미 · 가위바위보 · 이름을 숨긴 수송기 인사가 겹치지만 이번에도 잇는 말이 없어 회수로 세우지 않았다"
+}
