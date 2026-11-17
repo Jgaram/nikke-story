@@ -1,0 +1,131 @@
+{
+  "unit": "char:473",
+  "session": "U10",
+  "by": "claude",
+  "date": "2026-11-17",
+  "mentions": [
+    {
+      "id": "I735",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_02", "lines": [64] }],
+      "reason": "'그 사람'이 선전포고하러 궤도 엘리베이터로 — CH.47 선공에 지휘관 · 카운터스가 나섬(F2804). 원문이 이름을 대지 않아 추정",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "I736",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_04", "lines": ["43-44"] }],
+      "reason": "'기다려 주세요. 형제님' — 라푼젤이 지휘관을 부르는 호칭(D1374)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "I737",
+      "target": "person:지휘관",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_05", "lines": [9] }],
+      "reason": "홍련의 '도령에게 손을 보태러' — 홍련이 지휘관을 부르는 호칭(D1413)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    }
+  ],
+  "echoes": [
+    {
+      "id": "E1750",
+      "act": "재언급",
+      "points": ["F2804"],
+      "text": "세실이 '그 사람'이 선전포고하러 궤도 엘리베이터로 떠났다며 CH.47의 선공 계획을 다시 꺼낸다",
+      "about": ["place:궤도_엘리베이터"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_02", "lines": ["62-64"] }],
+      "reason": "#62-64 — 요한이 제안한 선전포고(F2804)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "E1751",
+      "act": "재언급",
+      "points": ["F2315"],
+      "text": "시뮬레이션 속 노아 · 이사벨 · 하란의 외침에 라푼젤이 분노한다 — 갓데스 폴에 쓰러진 인헤르트를 다시 꺼낸다",
+      "about": ["org:인헤르트"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_03", "lines": ["11-20"] }],
+      "reason": "세 사람의 목소리(#11-18) 뒤 '모독'(#19-20). 목소리가 기억인지 모조품인지는 원문에 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "E1752",
+      "act": "재언급",
+      "points": ["F2828"],
+      "text": "라푼젤이 세실에게 NIMPH 속 레드 슈즈 인격 데이터와의 일을 털어놓는다",
+      "about": ["person:레드_슈즈"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_04", "lines": ["1-7"] }],
+      "reason": "#1-3 이야기, #6 '무장의 깊은 곳에 인격 데이터' — F2828",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "E1753",
+      "act": "재언급",
+      "points": ["F2830"],
+      "text": "레드 슈즈가 침식으로 뒤덮으려 할 때 지켜 준 것이 짊어진 자매들의 힘이었다고 되짚는다",
+      "about": ["person:라푼젤"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_04", "lines": ["33-36"] }],
+      "reason": "#33-36 — 1만 2천 자매의 NIMPH가 버텨 준 일(F2830)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "E1754",
+      "act": "재언급",
+      "points": ["F2339"],
+      "text": "에덴을 나서며 '모두가 보고 싶던 그 경치'를 향한다 — 인헤르트가 녹화로 남긴 지상의 낙원을 다시 꺼낸다",
+      "about": ["org:인헤르트"],
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_05", "lines": ["53-54"] }],
+      "reason": "#54 '모두가 보고 싶던 그 경치' — 하란의 '지상의 낙원'(F2339)과 같은 것이라는 말은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2352",
+      "person": "person:라푼젤",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "자매들의 NIMPH를 붙잡아 두는 게 욕심이 아닌가 늘 마음이 무거웠다",
+      "after": "그 힘이 자기를 지켜 준 것으로 답을 얻어 이제 흔들리지 않겠다고 한다",
+      "trigger": [{ "scene": "d_main_48_03", "lines": ["57-98"] }],
+      "time": "S412",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_04", "lines": ["24-48"] }],
+      "reason": "물음(#24-30) · 답(#32-38) · '흔들리지 않을게요'(#48). 계기는 레드 슈즈 침입(F2828)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "D2353",
+      "person": "person:세실",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:라푼젤"],
+      "text": "인헤르트는 자기에게도 소중한 동료였다며, 그들이 지킨 것을 '저와 함께' 이어 가자고 청하는 사이",
+      "time": "S412",
+      "evidence": [{ "scene": "ep:d_nikke_rapunzel_sanctuary_03", "lines": ["41-57"] }],
+      "reason": "#45-53 '인헤르트는 제게도 소중한 동료' · '이어가 주실 수 있으신가요. 저와 함께'",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    }
+  ],
+  "life": [],
+  "revisit": [],
+  "note": "정체 볼 줄 없음(미상 이름표 없음)."
+}

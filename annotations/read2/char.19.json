@@ -1,0 +1,53 @@
+{
+  "unit": "char:19",
+  "session": "U10",
+  "by": "claude",
+  "date": "2026-11-17",
+  "mentions": [],
+  "echoes": [
+    {
+      "id": "E1759",
+      "act": "재언급",
+      "points": ["F3178", "Q401"],
+      "text": "'내가 마리안을 잊을 리… 없잖아' — 머뭇거리는 지휘관, 기억이 지워질 7호의 처지를 떠올리게 한다",
+      "about": ["person:지휘관"],
+      "evidence": [{ "scene": "ep:d_nikke_marian_queen_05", "lines": ["32-36"] }],
+      "reason": "#34 말줄임과 마리안의 '그, 그렇… 겠죠?'(#36). 이 여정이 7호 때라는 말은 원문에 없다(Q401)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    },
+    {
+      "id": "E1760",
+      "act": "재언급",
+      "points": ["F3076"],
+      "text": "홀로 깨어 대답 없는 가운데 기다림 끝의 필연을 믿는다 — 검은 달에서 기다려 달라던 마리안을 다시 꺼낸다",
+      "about": ["person:마리안"],
+      "evidence": [{ "scene": "ep:d_nikke_marian_queen_05", "lines": ["61-67"] }],
+      "reason": "#65-66 '대답은 들리지 않는다 · 기다림의 끝' — F3076. 깨어난 자리가 검은 달이라는 말은 없다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    }
+  ],
+  "changes": [
+    {
+      "id": "D2356",
+      "person": "person:마리안",
+      "aspect": "신념",
+      "act": "변화",
+      "before": "'기적이라도 일어난다면' 하고 지휘관이 자기를 기억할까 불안해한다",
+      "after": "만남이 필연이니 기적이 아니어도 언젠가 추억을 떠올릴 수 있다고 믿으며 기다린다",
+      "trigger": [{ "scene": "ep:d_nikke_marian_queen_05", "lines": ["49-58"] }],
+      "time": "S414",
+      "evidence": [{ "scene": "ep:d_nikke_marian_queen_05", "lines": ["61-67"] }],
+      "reason": "불안(01 #3-7) → 지휘관의 '필연'(05 #49-58)을 되뇌어 믿음(05 #62-67)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "U10", "note": "U10 2회독 — 원문 대조 검토(2층 기준)" }]
+    }
+  ],
+  "life": [],
+  "revisit": [],
+  "note": "정체 볼 줄 없음(미상 이름표 없음)."
+}
