@@ -27,6 +27,22 @@
           "session": "N3",
           "hash": "46cc27c071",
           "note": "U3 — 같은 까닭으로 OLD TALES 판은 곁 판(until 없음), 본판은 GINGERBREAD HOUSE에서 아는 것(F2954 · E1669)만"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "46cc27c071",
+          "note": "N3 — 같은 까닭으로 GINGERBREAD HOUSE 판도 곁 판, CH.50 본판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "46cc27c071",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
         }
       ],
       "refs": ["F1666", "event_oldtales1_06_s#51-53"]
@@ -47,9 +63,46 @@
           "session": "N3",
           "hash": "4ff495e4fb",
           "note": "U3 — 같은 까닭으로 OLD TALES 판은 곁 판(until 없음), 본판은 GINGERBREAD HOUSE에서 아는 것(F2954 · E1669)만"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "165a4b8267",
+          "note": "N3 — 같은 까닭으로 GINGERBREAD HOUSE 판도 곁 판, CH.50 본판"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "165a4b8267",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
         }
       ],
-      "refs": ["F2954", "E1669"]
+      "refs": ["F2954", "E1669"],
+      "side": true
+    },
+    {
+      "at": "ch50",
+      "text": "헨젤 · 그레텔이 함께 마주 잡고 쓰는 무장. 퀸과의 싸움에서 거대한 광탄을 쏟아 낸다.",
+      "src": "52926448e0",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "0dcb1ef93f",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
+      ],
+      "refs": ["d_main_50_10#74", "d_main_50_10#268"]
     }
   ]
 }

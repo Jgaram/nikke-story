@@ -1,0 +1,21 @@
+{
+  "unit": "relic:갓데스_다큐멘터리_제작기",
+  "why": {
+    "text": "중앙 정부가 갓데스를 선전에 썼다는 것, 그래도 갓데스가 피난민들의 진짜 희망이었다는 것을 바깥 사람의 눈으로 본다.",
+    "src": "e93cfe4227",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "1483006fad",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}

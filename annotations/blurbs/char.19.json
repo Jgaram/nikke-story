@@ -1,0 +1,21 @@
+{
+  "unit": "char:19",
+  "why": {
+    "text": "홀로 깨어난 마리안이 떠올리는 지휘관과의 지상 여정 — 그것이 언제였는지, 지휘관이 왜 그토록 기억되길 바랐는지는 열린 채 남는다.",
+    "src": "b258dda32c",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "aba32b08ae",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}

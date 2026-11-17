@@ -1,0 +1,18 @@
+{
+  "subject": "concept:공멸_인자",
+  "versions": [
+    {
+      "at": "ch50",
+      "text": "언체인드를 지닌 이와 퀸 인자를 지닌 이가 몸이 닿으면 둘 다 사라지고, 다시는 퀸이 생겨나지 않게 된다는 짝의 힘.",
+      "src": "734e94a8b9",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "df4299b95d", "note": "N3 2026-10-29 U3 — 새 사전 항목, 그 자리 기록으로 씀" }
+      ],
+      "refs": ["F3048"]
+    }
+  ]
+}

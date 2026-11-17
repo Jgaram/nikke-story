@@ -1,0 +1,33 @@
+{
+  "unit": "erelic:maria-n_dialog",
+  "session": "N3",
+  "by": "claude",
+  "date": "2026-11-17",
+  "logline": "MARIA-n의 필드에서 오가는 짧은 대화 — 실버건 연구소의 마리아들과 박사, 그 뒤의 이야기.",
+  "synopsis": "MARIA-n 이벤트의 맵 곳곳에서 들을 수 있는 짧은 대화 열두 편. 실버건 연구소에서는 죽음을 두려워하는 마리아, 번호가 헷갈려 웃는 마리아들, 표적판 앞에서 고장 나 처분되는 마리아의 모습이 스친다. 박사는 지휘관과의 동행을 꺼리는 마리아-n에게 성과가 우선이라 하고, 마리안의 NIMPH가 침식을 이겨 내자 더 큰 침식을 요청하려 한다. 7호의 파장과 언체인드, 되살아남을 지켜보던 박사는 그가 정말 인간인지 묻는다.\n\n박사가 떠난 뒤 봉쇄된 연구소에서 남은 마리아들은 열면 안 되는 문을 두고 다투고, 연구소를 찾아낸 미러는 원하던 자료를 얻지 못한 채 마리안이 퀸이 되어 간 과정을 짚는다. 마지막에는 지휘관이 자기를 기억해 주길 바라면서도 그래도 살아 달라는 마리안의 혼잣말이 남는다.",
+  "scenes": [
+    { "scene": "erelic:maria-n_dialog_00", "text": "죽음을 두려워하는 마리아가 박사만 생각하자고 다짐한다." },
+    { "scene": "erelic:maria-n_dialog_01", "text": "번호가 이어진 마리아들이 누가 누군지 모르겠다며 웃는다." },
+    { "scene": "erelic:maria-n_dialog_02", "text": "표적판 앞에 선 마리아가 고장 나 처분된다." },
+    { "scene": "erelic:maria-n_dialog_03", "text": "지휘관과의 동행을 꺼리는 마리아-n에게 박사는 성과가 먼저라 한다." },
+    { "scene": "erelic:maria-n_dialog_04", "text": "마리안의 NIMPH가 침식을 이기자 박사가 더 큰 침식을 요청하려 한다." },
+    { "scene": "erelic:maria-n_dialog_05", "text": "7호를 지켜보던 박사가 그가 인간인지 묻는다." },
+    { "scene": "erelic:maria-n_dialog_06", "text": "박사가 마리안에게 7호의 무엇이 좋은지 묻는다." },
+    { "scene": "erelic:maria-n_dialog_07", "text": "봉쇄된 연구소의 마리아들이 열면 안 되는 문을 두고 다툰다." },
+    { "scene": "erelic:maria-n_dialog_08", "text": "연구소를 찾아낸 미러가 원하던 자료를 찾지 못한다." },
+    { "scene": "erelic:maria-n_dialog_09", "text": "남은 마리아들이 함께 출구로 가자고 한다." },
+    { "scene": "erelic:maria-n_dialog_10", "text": "미러가 마리안이 퀸이 된 과정을 짚고 제 것으로 삼으려 한다." },
+    { "scene": "erelic:maria-n_dialog_11", "text": "지휘관이 기억해 주길 바라면서도 살아 달라는 마리안의 혼잣말." }
+  ],
+  "status": "확정",
+  "reviews": [
+    {
+      "decision": "확정",
+      "by": "claude",
+      "date": "2026-11-17",
+      "session": "N3",
+      "hash": "e351bee17e",
+      "note": "U3 — 1회독 요약 · 사실로 씀, 그 자리까지 드러난 것만(열린 의문은 열린 채)"
+    }
+  ]
+}

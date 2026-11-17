@@ -1,0 +1,26 @@
+{
+  "subject": "thread:J65",
+  "versions": [
+    {
+      "at": "relic:하지_말아야_할_일",
+      "title": "반쯤 불탄 쪽지",
+      "text": "하지 말아야 할 일을 적은 반쯤 불탄 쪽지는 누가 누구를 두고 썼고, 왜 불탔나.",
+      "src": "b9817fe990",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "3a3be0fd7c",
+          "note": "N3 — 새 떡밥(독립) 1판, MARIA-n의 재언급은 쪽지와 잇는 말이 없어 판을 두지 않음"
+        }
+      ],
+      "refs": ["Q395"]
+    }
+  ]
+}

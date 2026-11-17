@@ -85,8 +85,8 @@ test('실제 기록 — 타입 · 세기 · 방향 · 기록 엣지 수가 맞�
   const droppedRecs = v.dropped.filter((d) => d.origin === 'record').length;
   // 수동 엣지가 기록 엣지를 이기면 그만큼 manual로 넘어간다 — 그런 수동 엣지가 없을 때만 딱 맞춘다
   if (!v.edges.some((e) => e.origin === 'manual' && ['setup_payoff', 'callback', 'reversal'].includes(e.type))) assert.equal(recs + droppedRecs, n1 + n2);
-  // 메인 다음 챕터 48 · 게임 조건(호감도 스토리 772)은 모두 같은 단위 안
-  assert.equal(v.edges.filter((e) => e.type === 'sequel' && e.note === '다음 챕터').length, 48);
+  // 메인 다음 챕터 50(ch00–ch50, N3 2026-10-29) · 게임 조건(호감도 스토리 772)은 모두 같은 단위 안
+  assert.equal(v.edges.filter((e) => e.type === 'sequel' && e.note === '다음 챕터').length, 50);
   assert.ok(v.edges.filter((e) => e.type === 'prereq').every((e) => e.from_unit === e.to_unit));
 });
 

@@ -19,9 +19,40 @@
           "hash": "9354b241f9",
           "note": "F1460 시험용 스쿼드 · 파견 운용 · 폐기 조건 — 앞 체크 칸(LAST KINGDOM)에서만 나온 세부는 안 씀, 1판"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "30ad2d9265", "note": "근거 F1460(글 그대로)" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "30ad2d9265", "note": "근거 F1460(글 그대로)" },
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "1d698aad15", "note": "N3 — CH.50이 첫 메인 자리(이름으로만 나옴), 앞 판은 곁 판" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "1d698aad15",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
       ],
-      "refs": ["F1460"]
+      "refs": ["F1460"],
+      "side": true
+    },
+    {
+      "at": "ch50",
+      "text": "킬로를 부르는 이름으로 나오는 스쿼드. 무엇인지는 이 자리에서 따로 말하지 않는다.",
+      "src": "f12749335e",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "4c0d61a901",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "33f35268ab", "note": "근거에 킬로의 대답 줄을 더함" }
+      ],
+      "refs": ["d_main_50_af_08#160", "d_main_50_af_08#161"]
     }
   ]
 }

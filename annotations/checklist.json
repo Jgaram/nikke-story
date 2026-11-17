@@ -700,6 +700,254 @@
       "note": "수동 엣지 없음 — 이어지는 단위가 원문에 없다(Q401)",
       "session": "N3",
       "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch49",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — 2회독 소속 D 0. 앱솔루트 귀환 · 갓데스 재집결은 이미 있는 소속",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch50",
+      "item": "affiliations",
+      "note": "새 T 없음 — 2세대 다섯의 올드 테일즈 등록(F3107)은 실장 니케 게임 소속(OldTales → org:올드_테일즈로 대응을 채움)이 보이고, 마리안의 퀸 자리(D2305)는 조직이 아니다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "fl:maria-n",
+      "item": "affiliations",
+      "note": "새 T 없음 — 마리아-n · 닥터 마리아의 실버건은 사전 메모 · 기존 마리안 소속(실버건)과 같고, 7호(지휘관)의 지휘관 1–7호는 조직이 아니다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:maria-n_dialog",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — MARIA-n 본편과 같은 실버건 연구소 장면",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:fading_affection",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — 분기형 기록, MARIA-n 본편 소속 그대로",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:19",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — 게임 소속(필그림 · 카운터스)이 마크를 맡는다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:472",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — 게임 소속(필그림 · 갓데스)이 마크를 맡는다, 갓데스는 지난 소속 T(W12f) 그대로",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:473",
+      "item": "affiliations",
+      "note": "소속 이동 없음 — 게임 소속(필그림)이 마크를 맡는다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:갓데스_다큐멘터리_제작기",
+      "item": "affiliations",
+      "note": "새 T 없음 — 이름 없는 방송 제작자, 갓데스 소속은 이미 있음",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:신임_장교의_일지",
+      "item": "affiliations",
+      "note": "새 T 없음 — 이름 없는 장교, 엔더슨 · 릴리바이스의 갓데스 소속은 이미 있음",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:하지_말아야_할_일",
+      "item": "affiliations",
+      "note": "인물 · 조직이 나오지 않는다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch49",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch50",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "fl:maria-n",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:maria-n_dialog",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:fading_affection",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:갓데스_다큐멘터리_제작기",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:신임_장교의_일지",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:하지_말아야_할_일",
+      "item": "addresses",
+      "note": "실장판의 호감도 단위가 아니다 — 호칭 기록은 실장판(rid)마다. 새 실장판 셋(19 · 472 · 473)은 A185–A187",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch49",
+      "item": "portraits",
+      "note": "새 모습 코드 — 라푼젤 rapunzel_s · 홍련 hongryeon_g가 forms.csv에 바뀜으로 들어옴(기존 forms 대응). 새 스쿼드 마크 없음",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "ch50",
+      "item": "portraits",
+      "note": "NPC 초상 — 베르누이아 c9042 더함, 온리 원은 nikke-db 그림이 없어(c997 404) 이름만으로 둠. 올드 테일즈는 게임 스쿼드 마크가 있다(orgs index)",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "fl:maria-n",
+      "item": "portraits",
+      "note": "NPC 초상 — 닥터 마리아 c9041 더함. 마리아-n · 번호 이름표는 마리안 묶음(L39), 에블라 · 에바 · 1–6호는 nikke-db에 그림이 없다",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:maria-n_dialog",
+      "item": "portraits",
+      "note": "새 초상 없음 — MARIA-n 본편 인물",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "erelic:fading_affection",
+      "item": "portraits",
+      "note": "새 초상 없음 — MARIA-n 본편 인물",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:19",
+      "item": "portraits",
+      "note": "호감도 판 그림 c019 받음. 마리안 기본 아이콘은 c013으로 고정(실장판이 퀸 하나라 resource_id로는 퀸 그림이 기본이 되는 스포일러)",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:472",
+      "item": "portraits",
+      "note": "호감도 판 그림 c472 받음",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "char:473",
+      "item": "portraits",
+      "note": "호감도 판 그림 c473 받음",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:갓데스_다큐멘터리_제작기",
+      "item": "portraits",
+      "note": "초상 없는 문서 단위",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:신임_장교의_일지",
+      "item": "portraits",
+      "note": "초상 없는 문서 단위",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": "relic:하지_말아야_할_일",
+      "item": "portraits",
+      "note": "초상 없는 문서 단위",
+      "session": "N3",
+      "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": null,
+      "item": "leads",
+      "note": "새 뼈대 줄기 없음(J64 보강 · J65 독립) — 주인 더할 것 없음. 범위가 늘어난 주역 넷의 아크를 늘림(Z2 · Z6 · Z17 · Z21 — ch49 · ch50에 연달아 걸림), 원점은 그대로",
+      "session": "N3",
+      "date": "2026-11-17"
     }
   ]
 }

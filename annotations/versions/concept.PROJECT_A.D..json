@@ -3,7 +3,7 @@
   "versions": [
     {
       "at": "event_wisdomspring",
-      "text": "M.M.R. 심층부에서 총사령관 등 극소수의 승인만으로 비밀리에 진행된 인간 신체 강화 프로젝트 — 지휘관은 실패하거나 달아난 1–6호와 달리 유일한 성공작 '7호'다.",
+      "text": "M.M.R. 심층부에서 총사령관 등 극소수의 승인만으로 비밀리에 진행된 인간 신체 강화 프로젝트 — 지휘관은 실패하거나 달아난 앞선 실험체들과 달리 유일한 성공작 '7호'다.",
       "src": "002deb15d9",
       "session": "W16a",
       "by": "claude",
@@ -26,7 +26,15 @@
           "hash": "bea1d30107",
           "note": "W16a 체크 칸을 종류로(사이드 · 주요 이벤트) — 체크 칸이 바뀌어 다시 판정: WISDOM SPRING이 체크 칸에서 빠져 곁 판 → 첫 본판, GOOD WORLD 판은 그 내용 위에 쓴다(7호 · 신체 강화를 이어 씀)"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "571a13b8f9", "note": "근거 W17 B9 — good_world 판 글을 100자 안으로 줄임" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "571a13b8f9", "note": "근거 W17 B9 — good_world 판 글을 100자 안으로 줄임" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "62f45dada8",
+          "note": "N3 — '1–6호'가 MARIA-n에서 처음 쓰이는 이름 6호로 걸려 '앞선 실험체들'로 고침"
+        }
       ],
       "refs": ["F1773", "F1776"]
     },

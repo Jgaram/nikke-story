@@ -2,7 +2,7 @@
   "unit": "side:gingerbread_house",
   "why": {
     "text": "CH.42에서 신데렐라가 퀸과의 싸움에 필요하다며 찾아 나선 헨젤 · 그레텔이 왜 인류 편이 아니게 되었고, 어떻게 다시 함께 싸우기로 하는지가 여기 있다.",
-    "src": "a6033b3879",
+    "src": "545265d05d",
     "session": "N3",
     "by": "claude",
     "date": "2026-10-18",
@@ -15,7 +15,17 @@
         "session": "N3",
         "hash": "ccb63c3fcc",
         "note": "U3 — 쓰는 기준 W14a(독립은 K316 · K295와 같은 잣대로 고정 문장, 추천은 앞 필수 스토리 CH.42의 사정)"
+      },
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "1cfc6837da",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
       }
-    ]
+    ],
+    "later": "CH.50에서 헨젤 · 그레텔이 2세대와 함께 싸우는 사정이 여기 있다.",
+    "gate": "ch50"
   }
 }

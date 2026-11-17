@@ -22,11 +22,11 @@ const order = loadOrder();
 const ds = loadDataset();
 const node = (args) => spawnSync(process.execPath, args, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 << 20 });
 
-test('척추 집합 — spine.json 확정 11(이벤트 8 · 사이드 3), 모두 읽기 순서의 이벤트 · 사이드', () => {
+test('척추 집합 — spine.json 확정 12(이벤트 9 · 사이드 3), 모두 읽기 순서의 이벤트 · 사이드', () => {
   const spine = spineUnits(ds);
-  assert.equal(spine.size, 11);
+  assert.equal(spine.size, 12);
   assert.deepEqual([...spine].filter((u) => u.startsWith('side:')).sort(), ['side:eden_spear', 'side:mudfish', 'side:pretty_star']);
-  assert.ok(['event_overzone', 'event_redash', 'event_lastkingdom1', 'event_oldtales1', 'event_goddessfall1', 'event_staranis1', 'event_footstepwalkrun1', 'event_arkguardian1'].every((u) => spine.has(u)));
+  assert.ok(['event_overzone', 'event_redash', 'event_lastkingdom1', 'event_oldtales1', 'event_goddessfall1', 'event_staranis1', 'event_footstepwalkrun1', 'event_arkguardian1', 'fl:maria-n'].every((u) => spine.has(u)));
   assert.ok(ds.candidates.filter((c) => c.kind === 'spine').every((c) => /^B\d+$/.test(c.id) && c.spineUnit && c.obj.gate));
   // 층 — 척추 단위는 1층, 판정 K는 남는다
   const lay = computeLayers(ds, order);
@@ -40,26 +40,27 @@ test('척추 선정 계산 — X3f-1b가 손으로 센 수와 같다 · 어긋�
     const x = v.byUnit.get(u);
     return [x.skeleton, x.payoffs, x.answers, x.main];
   };
-  // data/views/importance/spine-candidates.md 선정 결과 표(ⓐ · ⓒ 긴 회수 · 복선의 답 · ⓑ)
+  // data/views/importance/spine-candidates.md 선정 결과 표(ⓐ · ⓒ 긴 회수 · 복선의 답 · ⓑ) — ⓑ는 신작 메인 챕터의 연결로 늘어난다(N3 2026-10-29: CH.49 · CH.50, 통과 · 미달은 그대로)
   assert.deepEqual(m('event_overzone'), [9, 1, 1, 11]);
   assert.deepEqual(m('event_redash'), [8, 0, 5, 9]);
-  assert.deepEqual(m('event_lastkingdom1'), [6, 0, 4, 5]);
-  assert.deepEqual(m('event_oldtales1'), [6, 0, 3, 16]);
+  assert.deepEqual(m('event_lastkingdom1'), [6, 0, 4, 6]);
+  assert.deepEqual(m('event_oldtales1'), [6, 0, 3, 17]);
   assert.deepEqual(m('event_unbreakablesphere1'), [7, 0, 2, 2]);
-  assert.deepEqual(m('event_goddessfall1'), [26, 1, 8, 29]);
+  assert.deepEqual(m('event_goddessfall1'), [26, 1, 8, 35]);
   assert.deepEqual(m('event_staranis1'), [0, 3, 9, 18]);
-  assert.deepEqual(m('event_newyearnewsword'), [0, 1, 1, 5]);
-  assert.deepEqual(m('event_footstepwalkrun1'), [14, 3, 2, 22]);
-  assert.deepEqual(m('event_arkguardian1'), [19, 4, 6, 26]);
+  assert.deepEqual(m('event_newyearnewsword'), [0, 1, 1, 6]);
+  assert.deepEqual(m('event_footstepwalkrun1'), [14, 3, 2, 23]);
+  assert.deepEqual(m('event_arkguardian1'), [19, 4, 6, 30]);
+  assert.deepEqual(m('fl:maria-n'), [51, 5, 0, 29]); // B18(N3 2026-10-29 — 4주년)
   assert.deepEqual(m('side:mudfish'), [4, 0, 2, 11]);
   assert.deepEqual(m('side:pretty_star'), [4, 1, 5, 10]);
   const gate = v.units.filter((u) => u.judgment);
-  assert.equal(gate.length, 17);
+  assert.equal(gate.length, 18);
   assert.deepEqual(gate.filter((u) => u.mismatch), [], '판정(B)과 계산이 어긋나지 않는다');
   assert.ok(gate.every((u) => u.pass === (u.status === '확정')));
   assert.ok(!v.byUnit.get('event_wisdomspring').judgment && v.byUnit.get('event_wisdomspring').skeleton >= 3, '문 밖 이벤트는 넘어도 척추가 아니다');
   const rep = renderSpineReport(v);
-  assert.match(rep, /척추 11\(이벤트 8 · 사이드 3\) · 문 안이지만 미달 6 · 계산과 어긋남 0/);
+  assert.match(rep, /척추 12\(이벤트 9 · 사이드 3\) · 문 안이지만 미달 6 · 계산과 어긋남 0/);
   assert.match(rep, /ⓑ를 빼면.*`event_unbreakablesphere1`\(들어옴\)/);
   assert.match(rep, /ⓐ · ⓒ를 빼면.*`event_newyearnewsword`\(들어옴\)/);
 });

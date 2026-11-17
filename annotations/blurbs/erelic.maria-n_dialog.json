@@ -1,0 +1,21 @@
+{
+  "unit": "erelic:maria-n_dialog",
+  "why": {
+    "text": "LAST KINGDOM부터 헬레틱들이 마리안의 퀸 인자를 알아채지 못한 까닭을, 연구소를 찾아낸 미러의 혼잣말이 짚는다.",
+    "src": "cdeafdee65",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "71ca3b3a76",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}

@@ -18,11 +18,11 @@
 
 ## 1. 척추 — 채점하지 않는 기준
 
-척추 = **메인 ch00–ch48** + 이벤트 8 + 사이드 3(X3f-1b — 선정 기준 · 근거 표 · 조율 손잡이는 [data/views/importance/spine-candidates.md](../data/views/importance/spine-candidates.md)).
+척추 = **메인 챕터 전부**(지금 ch00–ch50) + 이벤트 9 + 사이드 3(X3f-1b, MARIA-n은 N3 2026-10-29에 더함 — 선정 기준 · 근거 표 · 조율 손잡이는 [data/views/importance/spine-candidates.md](../data/views/importance/spine-candidates.md)).
 
-| 이벤트 8 | 사이드 3 |
+| 이벤트 9 | 사이드 3 |
 |---|---|
-| `event_overzone` OVER ZONE · `event_redash` RED ASH · `event_lastkingdom1` LAST KINGDOM · `event_oldtales1` OLD TALES · `event_goddessfall1` GODDESS FALL · `event_staranis1` STAR ANIS · `event_footstepwalkrun1` FOOTSTEP, WALK, RUN · `event_arkguardian1` ARK GUARDIAN | `side:mudfish` MUDFISH · `side:eden_spear` EDEN SPEAR · `side:pretty_star` PRETTY STAR |
+| `event_overzone` OVER ZONE · `event_redash` RED ASH · `event_lastkingdom1` LAST KINGDOM · `event_oldtales1` OLD TALES · `event_goddessfall1` GODDESS FALL · `event_staranis1` STAR ANIS · `event_footstepwalkrun1` FOOTSTEP, WALK, RUN · `event_arkguardian1` ARK GUARDIAN · `fl:maria-n` MARIA-n | `side:mudfish` MUDFISH · `side:eden_spear` EDEN SPEAR · `side:pretty_star` PRETTY STAR |
 
 - 척추 단위는 **채점하지 않는다**. 지금 판정(K)은 기각하지 않고 "척추" 표시로 남긴다(도구 — X3f-1c).
 - **만우절 단위**(결정 #11 — `annotations/april-fools.json`)도 채점하지 않는다 — 척추가 아니라 판정 밖이다. 판정(K)은 기각하지 않고 "만우절" 표시로 남는다(`importance.mjs` fools).
@@ -30,8 +30,8 @@
 - 척추 이벤트 · 사이드와 이어진 기록(1회독 in · out, 2회독 떡밥 E)은 메인 챕터와 이어진 기록과 **같은 무게**다. 아래의 "척추"는 늘 메인 챕터 + 이 11을 뜻한다.
 - 이벤트 유실물(척추 이벤트 것도)과 연작의 다른 편(SECOND AFFECTION · WORDLESS · UNBREAKABLE SPHERE 등)은 척추가 **아니다** — 판정 단위다(5절).
 - 신작의 주년 · 신년 이벤트 · 사이드는 Claude가 같은 선정 기준으로 척추인지 정하고 알린다.
-- 척추 목록은 [annotations/spine.json](../annotations/spine.json)(B — 문 안 17: 척추 11 확정 · 미달 6 기각, 사용자는 기준(`criteria`)에 피드백을 준다). 계산은 `node tools/views/spine.mjs` → [data/views/importance/spine.md](../data/views/importance/spine.md).
-  판정 입력(`records.mjs layers`)의 "척추 연결"은 메인 챕터 + 척추 11을 센다. 척추 단위에 `layers`를 치면 "척추 — 채점하지 않는다"가 머리에 뜬다(X3f-1c).
+- 척추 목록은 [annotations/spine.json](../annotations/spine.json)(B — 문 안 18: 척추 12 확정 · 미달 6 기각, 사용자는 기준(`criteria`)에 피드백을 준다). 계산은 `node tools/views/spine.mjs` → [data/views/importance/spine.md](../data/views/importance/spine.md).
+  판정 입력(`records.mjs layers`)의 "척추 연결"은 메인 챕터 + 척추 12를 센다. 척추 단위에 `layers`를 치면 "척추 — 채점하지 않는다"가 머리에 뜬다(X3f-1c).
 
 ## 2. 네 등급
 
@@ -179,7 +179,7 @@
 | 보는 것 | 명령 |
 |---|---|
 | 판정 입력 · 시안 · 1회독 요약 · 사실 문장 | `node tools/records.mjs layers <단위> --summary` |
-| 척추가 말했는지(1회독 사실 · 의문 · 요약 검색) | `node tools/records.mjs find <낱말> --spine`(척추 안 기록만 — 메인 챕터 + 척추 11, 떡밥 E는 가리킨 기록을 함께 보인다) |
+| 척추가 말했는지(1회독 사실 · 의문 · 요약 검색) | `node tools/records.mjs find <낱말> --spine`(척추 안 기록만 — 메인 챕터 + 척추 12, 떡밥 E는 가리킨 기록을 함께 보인다) |
 | 이 단위보다 뒤의 척추 의문 가운데 대상이 겹치는 것(4의 방향 규칙 — 어디를 볼지의 단서) | `layers <단위>`의 "뒤 척추 의문" 줄 → `find`로 문장을 맞댄다 |
 | 척추가 쌓은 것이 여기서 끝나는지(4의 빌드업의 끝) | `layers <단위>`의 "빌드업 마무리" 줄(⑦) · `node tools/records.mjs closures <단위>`(사슬의 기록 문장) |
 | 결정적 순간 후보(3a · 4a) — 주인 · 상한 · `from` · 척추 같은 줄 · 척추의 둘 | `layers <단위>`의 "감정 재료" 줄(⑧) · 후보 표 [data/views/importance/emotion.md](../data/views/importance/emotion.md)(공개 자리 순) |

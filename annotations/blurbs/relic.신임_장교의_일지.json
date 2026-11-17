@@ -1,0 +1,21 @@
+{
+  "unit": "relic:신임_장교의_일지",
+  "why": {
+    "text": "니케 부대에 인간 지휘관을 붙이는 방식이 갓데스의 지휘관에게서 퍼지기 시작했고, 1차 방주 밀봉은 사망자 없이 끝났다.",
+    "src": "b10f8666bc",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "31d1b6ce0b",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}

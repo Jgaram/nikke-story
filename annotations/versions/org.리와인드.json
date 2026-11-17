@@ -1,5 +1,10 @@
 {
   "subject": "org:리와인드",
+  "no_side": {
+    "char:550": "곁 판 event_onemoretime이 팀의 내막(베이 · 클레이 둘의 팀)을 담는다 — 호감도는 같은 팀의 세부(N3 2026-10-29)",
+    "event_claymore": "ONE MORE TIME 곁 판이 담은 팀의 이어지는 이야기 — 무엇인지가 바뀌지 않는다(N3 2026-10-29)",
+    "char:551": "같은 팀의 세부 — 곁 판 event_onemoretime이 담는다(N3 2026-10-29)"
+  },
   "versions": [
     {
       "at": "event_onemoretime",
@@ -18,9 +23,39 @@
           "hash": "e57a8d1fbb",
           "note": "F1372 · F1375 · F1376 베이의 팀 · 구설수 · 클레이와 재기 — 뒤 CLAY, MORE!는 일화라 1판"
         },
-        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "cf12e3f9f0", "note": "근거 F1372 F1376" }
+        { "decision": "확정", "by": "claude", "date": "2026-10-14", "session": "W17", "hash": "cf12e3f9f0", "note": "근거 F1372 F1376" },
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "3f0037b7cd", "note": "N3 — CH.49가 첫 메인 자리, 앞 판은 곁 판" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "3f0037b7cd",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
       ],
-      "refs": ["F1372", "F1376"]
+      "refs": ["F1372", "F1376"],
+      "side": true
+    },
+    {
+      "at": "ch49",
+      "text": "방주의 공연 팀. 결전을 앞둔 개전 축하 무대에 프리마돈나 · T.T. STAR와 함께 오른다.",
+      "src": "b39547ba24",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "b04d3e4783",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
+      ],
+      "refs": ["d_main_49_03#18"]
     }
   ]
 }

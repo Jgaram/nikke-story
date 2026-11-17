@@ -1,0 +1,18 @@
+{
+  "subject": "concept:유사_세계",
+  "versions": [
+    {
+      "at": "ch49",
+      "text": "거대한 힘을 지닌 존재가 펼치는 공간. 안의 법칙은 펼친 이가 정해, 들어온 것은 몸을 마음대로 쓰지 못한다.",
+      "src": "9c8d634558",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "a673d7fe69", "note": "N3 2026-10-29 U3 — 새 사전 항목, 그 자리 기록으로 씀" }
+      ],
+      "refs": ["F2985", "F2984"]
+    }
+  ]
+}

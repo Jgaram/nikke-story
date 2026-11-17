@@ -1,5 +1,6 @@
 {
   "subject": "org:세라핌",
+  "no_side": { "char:836": "곁 판 char:91 · event_bluewaterisland가 의료 스쿼드임을 담는다 — 세부뿐(N3 2026-10-29)" },
   "versions": [
     {
       "at": "char:91",
@@ -25,9 +26,19 @@
           "session": "W17",
           "hash": "055368b097",
           "note": "근거 — 원문 줄과 사실 기록, 블루워터 판 '어디든 달려가고'는 근거가 없어 원문대로 '현장 진료소'로"
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "ef108301bb", "note": "N3 — CH.50이 첫 메인 자리, 앞 판은 곁 판" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "ef108301bb",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
         }
       ],
-      "refs": ["ep:d_nikke_vesti_04#119-120"]
+      "refs": ["ep:d_nikke_vesti_04#119-120"],
+      "side": true
     },
     {
       "at": "event_bluewaterisland",
@@ -53,9 +64,39 @@
           "session": "W17",
           "hash": "f1bfc10b78",
           "note": "근거 — 원문 줄과 사실 기록, 블루워터 판 '어디든 달려가고'는 근거가 없어 원문대로 '현장 진료소'로"
+        },
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "f3c052653a", "note": "N3 — CH.50이 첫 메인 자리, 앞 판은 곁 판" },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "f3c052653a",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
         }
       ],
-      "refs": ["F968", "F966", "event_bluewaterisland1_03_s#25", "event_bluewaterisland1_06_s#41-45"]
+      "refs": ["F968", "F966", "event_bluewaterisland1_03_s#25", "event_bluewaterisland1_06_s#41-45"],
+      "side": true
+    },
+    {
+      "at": "ch50",
+      "text": "치료를 전공으로 하는 쪽. 다친 동료를 고치려면 세라핌을 데려왔을 것이라는 말로 나온다.",
+      "src": "caeb015617",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "91a1172b32",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
+      ],
+      "refs": ["d_main_50_af_07#103"]
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "unit": "char:473",
+  "why": {
+    "text": "CH.48에서 되살아난 라푼젤이 자매들의 힘을 짊어지는 것이 욕심이 아닌가 하던 망설임에 답을 얻는 속마음이 여기 있다.",
+    "src": "8b06c08cb7",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "b72aa1d5ff",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}

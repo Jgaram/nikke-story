@@ -206,20 +206,20 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:신데렐라 신념,성장,side:gingerbread_house,159,78,1,,sub:거울_공주_00 ch34 event_oldtales1 char:511 side:gingerbread_house,D521 D555 D577 D578 D2136 D2253,D2253,O18,확정
 관계 person:도로시 ↔ person:스노우_화이트,관계,ch49,160,124,1,1,event_overzone event_goddessfall1 ch47 ch49,D248 D249 D243 D956 D1311 D2263,D2263,O95,확정
 관계 person:도로시 ↔ person:엔더슨,관계,ch49,160,16,1,1,ch46 ch47 ch48 ch49,D1174 D1175 D1320 D1344 D1347 D2262 D2261,D2262 D2261,O101,확정
-관계 person:도로시 ↔ person:홍련,관계,ch49,160,105,,1,erelic:red_ash_lost char:225 ch49,D354 D355 D1515 D2264,D2264,,
-관계 person:스노우_화이트 ↔ person:엔더슨,관계,ch49,160,105,,1,char:224 ch49,D1487 D1488 D1491 D2266,D2266,,
-성장 person:라푼젤 성격,성장,ch49,160,143,1,1,char:221 event_redash ch49,D1373 D349 D2269,D2269,,
-성장 person:버닝엄 성격,성장,ch49,160,117,1,1,ch23 ch26 ch49,D278 D333 D2273,D2273,,
-성장 person:스노우_화이트 성격,성장,ch49,160,153,1,1,ch06 event_overzone ch49,D62 D247 D2267,D2267,,
-관계 person:나유타 ↔ person:미러,관계,ch50,161,17,1,1,ch46 ch50,D1155 D2283,D2283,,
-관계 person:나유타 ↔ person:지휘관,관계,ch50,161,43,1,1,ch39 char:223 ch50,D763 D2189 D2284 D2311,D2284 D2311,,
-관계 person:네온 ↔ person:노아,관계,ch50,161,126,1,1,ch21 ch50,D212 D2289,D2289,,
+관계 person:도로시 ↔ person:홍련,관계,ch49,160,105,,1,erelic:red_ash_lost char:225 ch49,D354 D355 D1515 D2264,D2264,O234,확정
+관계 person:스노우_화이트 ↔ person:엔더슨,관계,ch49,160,105,,1,char:224 ch49,D1487 D1488 D1491 D2266,D2266,O235,기각
+성장 person:라푼젤 성격,성장,ch49,160,143,1,1,char:221 event_redash ch49,D1373 D349 D2269,D2269,O226,기각
+성장 person:버닝엄 성격,성장,ch49,160,117,1,1,ch23 ch26 ch49,D278 D333 D2273,D2273,O227,기각
+성장 person:스노우_화이트 성격,성장,ch49,160,153,1,1,ch06 event_overzone ch49,D62 D247 D2267,D2267,O228,기각
+관계 person:나유타 ↔ person:미러,관계,ch50,161,17,1,1,ch46 ch50,D1155 D2283,D2283,O229,확정
+관계 person:나유타 ↔ person:지휘관,관계,ch50,161,43,1,1,ch39 char:223 ch50,D763 D2189 D2284 D2311,D2284 D2311,O230,확정
+관계 person:네온 ↔ person:노아,관계,ch50,161,126,1,1,ch21 ch50,D212 D2289,D2289,O231,기각
 관계 person:릴리바이스 ↔ person:스노우_화이트,관계,ch50,161,125,,1,erelic:white_memory char:224 char:471 ch50,D256 D1486 D1489 D2199 D2303,D2303,O192,확정
 관계 person:릴리바이스 ↔ person:엔더슨,관계,ch50,161,106,1,1,event_redash erelic:red_ash_lost event_arkguardian1 ch44 ch50,D342 D356 D991 D992 D1051 D2302 D2298,D2302 D2298,O56,확정
 관계 person:마리안 ↔ person:지휘관,관계,fl:maria-n,161,114,1,1,event_firstaffection ch48 ch49 ch50 fl:maria-n,D2060 D1343 D2271 D2307 D2306 D2332 D2333 D2335 D2340 D2347,D2332 D2333 D2335 D2340 D2347,O218,확정
-관계 person:버닝엄 ↔ person:지휘관,관계,ch50,161,147,1,1,sub:세르반_03 ch44 ch50,D107 D1054 D1055 D2320,D2320,,
+관계 person:버닝엄 ↔ person:지휘관,관계,ch50,161,147,1,1,sub:세르반_03 ch44 ch50,D107 D1054 D1055 D2320,D2320,O232,확정
 관계 person:슈엔 ↔ person:지휘관,관계,ch50,161,148,1,1,ch12 ch15 sub:랩칠리언_05 ch18 ch25 ch26 ch35 ch50,D100 D127 D50 D157 D308 D334 D605 D2323,D2323,O23,기각
-관계 person:엔더슨 ↔ person:지휘관,관계,ch50,161,156,1,1,ch04 ch25 ch27 ch50,D44 D305 D374 D2299,D2299,O11,기각
+관계 person:엔더슨 ↔ person:지휘관,관계,ch50,161,156,1,1,ch04 ch25 ch27 ch50,D44 D305 D374 D2299,D2299,O11,확정
 관계 person:요한 ↔ person:지휘관,관계,ch50,161,136,1,1,ch19 ch20 ch21 sub:에덴_Notice_02 event_goddessfall1 ch44 ch47 ch50,D171 D187 D184 D188 D210 D221 D925 D1033 D1309 D2322,D2322,O97,확정
 관계 person:차임 ↔ person:크라운,관계,ch50,161,107,1,1,ch25 event_lastkingdom1 event_goddessfall1 ch50,D320 D457 D454 D935 D2314,D2314,O48,확정
 성장 person:도로시 신념,성장,ch50,161,136,1,1,ch19 event_overzone char:233 event_arkguardian1 ch45 ch46 ch47 ch48 ch49 ch50,D177 D237 D1434 D987 D1139 D1168 D1173 D1319 D1346 D2260 D2278,D2278,O104,확정
@@ -228,7 +228,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:마리안 신념,성장,char:19,161,146,1,,ch14 side:second_affection event_goddessfall1 ch47 ch48 fl:maria-n char:19,D110 D419 D902 D1316 D1341 D2341 D2343 D2356,D2356,O106,확정
 성장 person:에닉 신념,성장,fl:maria-n,161,125,1,1,ch22 ch25 ch45 ch47 fl:maria-n,D223 D310 D1141 D1324 D2338,D2338,O99,확정
 성장 person:온리_원 신념,성장,ch50,161,8,1,1,ch47 ch48 ch50,D1314 D1336 D1337 D2318,D2318,O107,확정
-성장 person:킬로 성격,성장,ch50,161,88,1,1,event_lastkingdom1 ch50,D443 D446 D2281,D2281,,
+성장 person:킬로 성격,성장,ch50,161,88,1,1,event_lastkingdom1 ch50,D443 D446 D2281,D2281,O233,확정
 성장 person:파피용 신념,성장,ch50,161,33,1,1,event_goddessfall1 ch48 ch50,D926 D937 D1335 D2291,D2291,O108,확정
 성장 person:헬름 신념,성장,ch50,161,143,,1,char:352 event_seayouagain1 char:353 ch50,D1956 D1456 D2057 D2288,D2288,O121,확정
 관계 person:장화 ↔ person:홍련,관계,char:472,162,103,1,,event_newyearnewsword event_goddessfall1 ch48 char:472,D361 D359 D360 D362 D907 D1332 D1331 D2354,D2354,O103,확정

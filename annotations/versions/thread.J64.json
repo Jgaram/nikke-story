@@ -1,0 +1,29 @@
+{
+  "subject": "thread:J64",
+  "versions": [
+    {
+      "at": "ch49",
+      "title": "앱솔루트의 극비 임무",
+      "text": "결전 직전까지 자리를 비웠던 앱솔루트가 마치고 돌아온 극비 임무는 무엇인가.",
+      "src": "686260f53a",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "8d6f554f5c", "note": "N3 — 새 떡밥(보강), 제기 · 처음 밝혀짐 두 자리" }],
+      "refs": ["Q384"]
+    },
+    {
+      "at": "ch50",
+      "src": "a1db6341ec",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "3420beabbb", "note": "N3 — 새 떡밥(보강), 제기 · 처음 밝혀짐 두 자리" }],
+      "title": "앱솔루트가 호위한 VVIP",
+      "text": "극비 임무는 북부에서 방주까지 VVIP를 호위하는 일이었다 — 지휘관과 반드시 엮인다는 그 VVIP는 누구인가.",
+      "refs": ["F3085", "Q390"]
+    }
+  ]
+}

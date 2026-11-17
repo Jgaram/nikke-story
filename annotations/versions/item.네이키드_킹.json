@@ -26,9 +26,46 @@
           "session": "W17",
           "hash": "25ebb41aa4",
           "note": "근거 E948 · F2303 · F2309 · goddessfall2_intermission_01#114(크라운의 무장)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "9592b42f69",
+          "note": "N3 — CH.50이 첫 메인 자리가 되어 앞 판을 곁 판(until 없음)으로, CH.50에 메인만으로 아는 본판(10/08 판례)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "9592b42f69",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
         }
       ],
-      "refs": ["E948", "F2303", "F2309", "event_goddessfall2_intermission_01#114"]
+      "refs": ["E948", "F2303", "F2309", "event_goddessfall2_intermission_01#114"],
+      "side": true
+    },
+    {
+      "at": "ch50",
+      "text": "크라운이 쓰는 단독 섬멸 무장. 퀸과의 마지막 싸움에서 크라운이 망가진 다리로 이것을 들고 홀로 맞서 퀸의 팔을 묶어 둔다.",
+      "src": "fbd0177ade",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "83c1eb48f3",
+          "note": "N3 — CH.49/50이 첫 메인 자리가 되어 앞 판은 곁 판(until 없음), 메인 자리에 메인만으로 아는 본판(10/08 판례)"
+        }
+      ],
+      "refs": ["F3061"]
     }
   ]
 }

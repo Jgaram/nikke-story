@@ -1,0 +1,18 @@
+{
+  "subject": "concept:무위",
+  "versions": [
+    {
+      "at": "ch50",
+      "text": "나유타의 비장의 수. 많은 NIMPH를 태워 그 힘을 몸에 둘러 잠시 넘어선 힘을 얻고, 태운 NIMPH는 되돌릴 수 없다.",
+      "src": "a37244a077",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "07d2700773", "note": "N3 2026-10-29 U3 — 새 사전 항목, 그 자리 기록으로 씀" }
+      ],
+      "refs": ["F3022"]
+    }
+  ]
+}

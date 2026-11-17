@@ -224,9 +224,9 @@ test('주년 · 반주년(anniv) — 출시일(2022-11-04)에서 반년 자리 �
   assert.equal(annivOf('2025-07-17'), null, '여름');
   assert.equal(annivOf('2024-12-26'), null, '신년');
   for (const u of unitsJson) if (u.anniv != null) assert.ok(u.pickup?.length, `${u.key}: anniv는 픽업 이벤트만`);
-  // 공지가 주년 · 하프 애니버서리로 소개하는 7편(2026-10-14 확인)
+  // 공지가 주년 · 하프 애니버서리로 소개하는 8편(2026-10-14 확인 · MARIA-n 4주년은 N3 2026-10-29)
   const got = Object.fromEntries(unitsJson.filter((u) => u.anniv).map((u) => [u.key, u.anniv]));
-  assert.deepEqual(got, { event_overzone: 0.5, event_redash: 1, event_lastkingdom1: 1.5, event_oldtales1: 2, event_unbreakablesphere1: 2.5, event_goddessfall1: 3, event_staranis1: 3.5 });
+  assert.deepEqual(got, { event_overzone: 0.5, event_redash: 1, event_lastkingdom1: 1.5, event_oldtales1: 2, event_unbreakablesphere1: 2.5, event_goddessfall1: 3, event_staranis1: 3.5, 'fl:maria-n': 4 });
 });
 
 test('체크 칸(W16a) — units.json check = 사이드 · 픽업 이벤트(유실물 포함), 팝업 칸은 픽업 이벤트 · 사이드 단위만(유실물은 딸린 이벤트를 따른다)', () => {
@@ -258,8 +258,8 @@ test('guideOf — 실제 데이터: 짚었던 줄(B-SIDE IDOL · 길로틴 · �
   assert.deepEqual(guideOf('fl:bitter_spice', ctx).must, ['event_staranis1', 'fl:b-side_idol'], 'BITTER SPICE는 STAR ANIS(판정 자리) · B-SIDE IDOL(앞 편) 먼저');
   assert.ok(guideOf(byTitle('길로틴'), ctx).must.includes('ch12'), '길로틴은 CH.12 먼저');
   assert.equal(guideOf(byTitle('랩칠리언 1'), ctx).due?.key, 'ch27', '랩칠리언 1은 CH.27 전까지');
-  // 메인 챕터도 같은 기준(필수 선행만) — CH.48은 SECOND AFFECTION(준필수), CH.27의 추천(권장 선행)은 먼저 볼 것이 아니다
-  assert.deepEqual(guideOf('ch48', ctx).must, [byTitle('SECOND AFFECTION')]);
+  // 메인 챕터도 같은 기준(필수 선행만) — CH.47은 SECOND AFFECTION(준필수 — 마리안 주요 인물 from이 N3 2026-10-29에 ch48 → ch47), CH.27의 추천(권장 선행)은 먼저 볼 것이 아니다
+  assert.deepEqual(guideOf('ch47', ctx).must, [byTitle('SECOND AFFECTION')]);
   assert.deepEqual(guideOf('ch27', ctx).must, []);
   assert.equal(guideOf(byTitle('ARK GUARDIAN'), ctx).due?.key, 'ch43', '척추 이벤트도 기한 — ARK GUARDIAN은 CH.43 전까지');
   for (const j of order.units) {

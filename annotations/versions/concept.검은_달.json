@@ -1,0 +1,31 @@
+{
+  "subject": "concept:검은_달",
+  "versions": [
+    {
+      "at": "ch49",
+      "text": "마리안이 다크 매터를 끌어모아 만든 검은 구체. 이것으로 여신상을 삼켜 그 안에 가둔다.",
+      "src": "b1a8b6eab3",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "0e12356c93", "note": "N3 2026-10-29 U3 — 새 사전 항목, 그 자리 기록으로 씀" }
+      ],
+      "refs": ["F2984"]
+    },
+    {
+      "at": "ch50",
+      "src": "e7c533945a",
+      "session": "N3",
+      "by": "claude",
+      "date": "2026-11-17",
+      "status": "확정",
+      "reviews": [
+        { "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "hash": "fa6874c4da", "note": "N3 2026-10-29 U3 — 새 사전 항목, 그 자리 기록으로 씀" }
+      ],
+      "text": "퀸이 된 마리안이 펼친 커다란 검은 구체. 마리안은 그 안에 홀로 남아 세계를 되살리는 일을 맡는다.",
+      "refs": ["F3074", "F3076"]
+    }
+  ]
+}

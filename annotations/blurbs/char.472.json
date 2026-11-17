@@ -1,0 +1,21 @@
+{
+  "unit": "char:472",
+  "why": {
+    "text": "CH.48에서 다시 깨어난 홍련이 떠나기 전, 언니 장화에게 장미 씨앗과 팻말로 작별을 고하는 장면이 여기 있다.",
+    "src": "0cae3731bf",
+    "session": "N3",
+    "by": "claude",
+    "date": "2026-11-17",
+    "status": "확정",
+    "reviews": [
+      {
+        "decision": "확정",
+        "by": "claude",
+        "date": "2026-11-17",
+        "session": "N3",
+        "hash": "84df0e825e",
+        "note": "N3 2026-10-29 U3 — 새 단위 why · 다시 판정으로 낡은 칸(키가 event_arkguardian1로 바뀜 · from · 이유 바뀜) 다시 봄"
+      }
+    ]
+  }
+}
