@@ -481,9 +481,15 @@ export async function run(ctx) {
   }
   for (const l of affsOf.values()) l.sort((a, b) => (a.order ?? 1e9) - (b.order ?? 1e9) || a.id.localeCompare(b.id, 'en', { numeric: true }));
   const meets = meetsOf({ all, units, placeOf, sceneUnit, names });
-  // 인물 아닌 항목인데 이름 자리가 없으면(흔한 말이라 자동 줄에서 뺀 이름 — 쉘터) 그 항목을 다룬 확정 기록의 스토리로 대신한다. 인물은 대신하지 않는다('???'로만 말한 인물)
+  // 이름 자리가 없으면(흔한 말이라 자동 줄에서 뺀 이름 — 쉘터 · 5호) 그 항목을 다룬 확정 기록의 스토리로 대신한다.
+  // 인물은 기록 문장에 그 이름이 든 것만 센다 — '???'로만 말한 인물은 이름이 문장에 없어 대신하지 않는다(N3 2026-10-29 — MARIA-n의 5호)
+  const targetName = new Map(all('SELECT id, name FROM targets').map((t) => [t.id, t.name]));
   const aboutUnits = new Map();
-  for (const r of [...records1, ...records2]) for (const id of r.about ?? []) if (r.unit && !String(id).startsWith('person:')) (aboutUnits.get(id) ?? aboutUnits.set(id, new Set()).get(id)).add(r.unit);
+  for (const r of [...records1, ...records2]) for (const id of r.about ?? []) {
+    if (!r.unit) continue;
+    if (String(id).startsWith('person:') && !(targetName.get(id) && String(r.text ?? '').includes(targetName.get(id)))) continue;
+    (aboutUnits.get(id) ?? aboutUnits.set(id, new Set()).get(id)).add(r.unit);
+  }
   for (const [id, us] of aboutUnits) {
     const m = meets.get(id);
     if (m && !m.meet) m.meet = meetList(us, units);

@@ -948,6 +948,14 @@
       "note": "새 뼈대 줄기 없음(J64 보강 · J65 독립) — 주인 더할 것 없음. 범위가 늘어난 주역 넷의 아크를 늘림(Z2 · Z6 · Z17 · Z21 — ch49 · ch50에 연달아 걸림), 원점은 그대로",
       "session": "N3",
       "date": "2026-11-17"
+    },
+    {
+      "patch": "2026-10-29",
+      "unit": null,
+      "item": "regen",
+      "note": "다시 뽑기(draft · handoff · export · order-snapshot · major-events — MARIA-n 픽업 이벤트) · check-quotes 0 · node --test 358 통과 · spoiler-check 세 독자 기본 0 · t=159–161 2건(5호 — 검색 이름이 없어 처음 나온 자리가 비었다, export가 인물도 이름이 든 확정 기록으로 대신하게 고친 뒤 t=161 0)",
+      "session": "N3",
+      "date": "2026-11-17"
     }
   ]
 }
