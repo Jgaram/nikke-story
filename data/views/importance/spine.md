@@ -11,7 +11,7 @@
 |---|---|---|---:|---:|---:|---|---|---|---|
 | B8 | `event_brandnewyear` BRAND NEW YEAR | 신년 | 1 (J1×1) | 0 · 0 | 1 (0 · 1) | 미달 | 빼고 판정 |  | 문 신년 · ⓐ 1(J1×1) · ⓒ 0 · 0 · ⓑ 1 — 일상극(신년 선상 파티), 마리안 줄기 한 조각 |
 | B1 | `event_overzone` OVER ZONE | 하프(0.5주년) | 9 (J6×5 J7×3 J16×1) | 1 · 1 | 11 (2 · 9) | 넘음 | **척추** |  | 문 하프 · ⓐ 뼈대 9(J6×5 J7×3 J16×1) · ⓒ 1 · 1 · ⓑ 메인 연결 11 — 갓데스 스쿼드와 방주의 배신(J6) · 도로시의 복수(J7)를 움직이고 메인 ch39 · ch46 · ch48이 딛는다 |
-| B2 | `event_redash` RED ASH | 1주년 | 8 (J2×3 J6×2 J9×3) | 0 · 5 | 9 (4 · 5) | 넘음 | **척추** |  | 문 1주년 · ⓐ 8(J9×3 J2×3 J6×2) · ⓒ 0 · 5 · ⓑ 9 — 1차 침공기: 랩쳐의 기원(J9) · 라피와 레드 후드(J2) · J6. 메인 ch26의 물음을 풀고 ch31 · ch32 · ch34가 딛는다 |
+| B2 | `event_redash` RED ASH | 1주년 | 8 (J2×3 J6×2 J9×3) | 0 · 6 | 9 (4 · 5) | 넘음 | **척추** |  | 문 1주년 · ⓐ 8(J9×3 J2×3 J6×2) · ⓒ 0 · 5 · ⓑ 9 — 1차 침공기: 랩쳐의 기원(J9) · 라피와 레드 후드(J2) · J6. 메인 ch26의 물음을 풀고 ch31 · ch32 · ch34가 딛는다 |
 | B9 | `event_newyearnewsword` NEW YEAR, NEW SWORD | 연말 · 신년 | 0 | 1 · 1 | 6 (0 · 6) | 미달 | 빼고 판정 |  | 문 연말 · 신년 · ⓐ 0 · ⓒ 1 · 1 · ⓑ 5 — ⓐ · ⓒ 미달: 홍련의 1차 침공기 회상을 메인 ch46–48이 다시 꺼내지만 뼈대 기록도 마무리도 없다. 판정이 "메인이 설명 없이 전제하는가"로 본다 |
 | B13 | `side:second_affection` SECOND AFFECTION | 사이드 | 2 (J1×2) | 0 · 0 | 0 (0 · 0) | 미달 | 빼고 판정 |  | 문 사이드 · ⓐ 2 · ⓒ 0 · 0 · ⓑ 0 — ⓐ · ⓑ 미달: 크라운 왕국에서 자란 마리안. LAST KINGDOM(척추)의 앞편으로 판정한다(카드 5절) |
 | B3 | `event_lastkingdom1` LAST KINGDOM | 1.5주년 | 6 (J1×5 J15×1) | 0 · 4 | 6 (1 · 5) | 넘음 | **척추** |  | 문 1.5주년 · ⓐ 6(J1×5 J15×1) · ⓒ 0 · 4 · ⓑ 5 — 마리안이 여왕으로 받들어지는 J1의 장면. 메인 ch46–47은 그 결과만 전제한다 |
@@ -51,7 +51,7 @@
 ## ⓒ 빌드업 마무리 — 척추 단위마다 긴 회수 · 복선의 답 (X3f-1d가 판정 입력 · 화면에 띄운다)
 
 - `event_overzone` — 긴 회수 1: Q33(relic:갓데스스쿼드리포트, 31칸 뒤 Q33-3) · 복선의 답 1: F914(← E1272@char:220)
-- `event_redash` — 긴 회수 0 · 복선의 답 5: F1142(← E38@relic:갓데스스쿼드리포트) · F1148(← E39@relic:갓데스스쿼드리포트) · F1161(← E206@erelic:white_memory) · F1163(← E194@event_overzone) · F1172(← E192@event_overzone)
+- `event_redash` — 긴 회수 0 · 복선의 답 6: F1142(← E38@relic:갓데스스쿼드리포트) · F1143(← E1761@erelic:white_memory) · F1148(← E39@relic:갓데스스쿼드리포트) · F1161(← E206@erelic:white_memory) · F1163(← E194@event_overzone) · F1172(← E192@event_overzone)
 - `event_newyearnewsword` — 긴 회수 1: Q90(char:222, 42칸 뒤 Q90-3) · 복선의 답 1: F1238(← E1284@char:222 E282@event_redash 외 1)
 - `event_lastkingdom1` — 긴 회수 0 · 복선의 답 4: F1435(← E202@event_overzone) · F1436(← E365@side:second_affection) · F1438(← E364@side:second_affection) · F1452(← E1297@char:260)
 - `side:wordless` — 긴 회수 0 · 복선의 답 1: F1618(← E24@ch04)

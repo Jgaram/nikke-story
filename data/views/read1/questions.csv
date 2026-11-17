@@ -129,7 +129,7 @@ Q127,sub:할아범_01,198,sub:할아범_01,일부,Q127-2:일부,ch45,F2581,252,o
 Q128,event_overzone,200,event_overzone2_epilogue,풀림,Q128-2:일부 Q128-3:전부,erelic:red_ash_mini erelic:goddess_fall_mini,F1190 F2332,219,place:방주 person:도로시,확정,"방주가 관리 A.I.를 위험하다고 보아 방주의 두뇌들을 포섭하며 비밀리에 준비한 '카운터'는 무엇이고, 도로시가 지상으로 끌어올리려던 '방주 최고의 두뇌'는 누구인가?"
 Q129,event_overzone,200,event_overzone2_04_e,일부,Q129-2:일부 Q129-3:일부 Q129-4:일부,event_redash side:pretty_star ch46,F1161 F2558 F2649,252,person:오스왈드 person:도로시,확정,"도로시가 그와 가족 · 후손까지 가장 고통스럽게 죽이겠다고 한 방주 밀봉 총책임자 오스왈드는 누구이고, 그 뒤 어떻게 되었나?"
 Q130,event_overzone,200,event_overzone2_02_e,일부,Q130-2:일부,ch48,F2830,272,person:라푼젤,확정,무덤에서 솟아 라푼젤의 로사리오로 들어간 황금색 입자 — 먼저 떠난 이들의 기억 — 는 무엇인가?
-Q131,erelic:white_memory,201,erelic:white_memory_113,풀림,Q131-2:전부,event_arkguardian1,F2373,227,,확정,릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가?
+Q131,erelic:white_memory,201,erelic:white_memory_113,풀림,Q131-2:전부 Q131-3:일부,event_arkguardian1 erelic:white_memory,F2373 F3219,227,,확정,릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가?
 Q132,erelic:white_memory,201,erelic:white_memory_115,풀림,Q132-2:일부 Q132-3:전부,side:eden_spear event_goddessfall1,F2163 F2268,217,,확정,릴리스의 관에서 사라진 머리는 누가 가져갔고 어디로 갔나?
 Q133,char:270,205,ep:d_nikke_blanc_05,열림,,,,,,확정,"블랑이 스킨십으로 나눠 주는 행운은 무엇이고, 지휘관과 나눌 때만 블랑의 스태미나가 크게 떨어지는 까닭은 무엇인가 — 반쪽인 누아르와 관계있나?"
 Q134,char:280,208,ep:d_nikke_rosanna_04,열림,,,,,person:로산나,확정,로산나의 부친 — 배드 드림의 여자와 사이에 로산나를 낳고 떠난 무책임한 로열 남자 — 은 누구인가?

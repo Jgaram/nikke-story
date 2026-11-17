@@ -198,14 +198,14 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 197,sub:2호_쉘터_관리계정_00,서브퀘스트,2,4,5,0,3,5,,,,0,0,,person:데이파라 org:구원의_성화 place:쉘터 person:라피,2호 쉘터 관리계정 · 2호 쉘터 관리계정 1
 198,sub:할아범_01,서브퀘스트,3,4,2,1,2,6,,,,0,1,ch45,person:할아범 org:중앙_정부 person:아니스 place:방주,할아범 · 할아범 2
 199,relic:에닉탄핵포스터,유실물,2,3,3,0,1,4,,,,0,1,ch25,person:에닉 place:방주,에닉 탄핵 포스터
-200,event_overzone,이벤트,17,23,37,1,25,21,,,,4,9,ch07 ch19 ch20 ch21 ch39 ch46 ch48,person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 concept:퍼펙트,OVER ZONE
-201,erelic:white_memory,유실물,3,11,13,1,8,8,,,,0,0,,person:릴리스 person:라푼젤 person:레드_후드 person:스노우_화이트 concept:랩쳐 place:방주,WHITE MEMORY
-202,char:233,호감도,3,8,8,0,3,9,,,,0,0,,person:피나 incident:아크_가디언_작전 person:노아 place:에덴 person:도로시 org:갓데스,도로시
+200,event_overzone,이벤트,17,23,37,1,26,21,,,,4,9,ch07 ch19 ch20 ch21 ch39 ch46 ch48,person:피나 incident:아크_가디언_작전 person:오스왈드 concept:사고_전환 concept:에블라_입자 concept:퍼펙트,OVER ZONE
+201,erelic:white_memory,유실물,3,13,15,1,10,9,,,,0,0,,person:릴리스 person:릴리바이스 person:라푼젤 person:홍련 person:레드_후드 person:스노우_화이트,WHITE MEMORY
+202,char:233,호감도,3,8,9,0,3,9,,,,0,0,,person:피나 incident:아크_가디언_작전 person:노아 place:에덴 person:도로시 org:갓데스,도로시
 203,char:392,호감도,0,6,6,0,4,3,,,,0,0,,person:라이 person:아인 place:미미르_부속_고등학교,라이
 204,event_BunnyX777,이벤트,1,3,4,0,2,4,,,,0,0,,org:777 person:루주 person:블랑 person:누아르 place:코인_러시,Bunny x 777
 205,char:270,호감도,2,7,7,0,5,6,,,,0,0,,org:777 person:블랑 person:누아르 place:방주,블랑
 206,char:271,호감도,1,2,3,0,1,2,,,,0,0,,person:누아르,누아르
-207,event_queensorder,이벤트,4,5,6,0,3,7,,,,0,0,,org:헤도니아 org:언더월드_퀸 person:로산나 person:목단 person:사쿠라 person:머스탱,Queen's Order
+207,event_queensorder,이벤트,5,5,6,0,3,8,,,,0,0,,org:헤도니아 org:언더월드_퀸 person:로산나 person:목단 person:사쿠라 person:머스탱,Queen's Order
 208,char:280,호감도,1,2,3,0,1,3,,,,0,0,,org:헤도니아 org:언더월드_퀸 person:로산나,로산나
 209,event_bluewaterisland,이벤트,11,10,16,1,7,18,,,,0,0,,org:세라핌 place:블루워터_아일랜드 person:페퍼 concept:크라켄 place:리페어_센터 person:얀,BLUEWATER ISLAND
 210,char:132,호감도,1,2,2,0,0,3,,,고립,0,0,,person:메어리 person:네온,메어리 : 베이 갓데스
@@ -259,7 +259,7 @@ order,unit,kind,in_units,out_units,strong_units,sequel,records_units,shared_unit
 258,event_neverland1,이벤트,12,8,17,0,4,17,,,,0,0,,org:스카우팅 place:천사_고아원 place:설온장 person:블랑 concept:로열 person:누아르,NEVERLAND
 259,char:194,호감도,2,4,5,0,2,5,,,,0,0,,place:천사_고아원 place:설온장 concept:로열 person:미카 person:벨로타 person:루드밀라,루드밀라 : 윈터 오너
 260,char:62,호감도,1,2,3,0,0,3,,,고립,0,0,,place:설온장 person:미카 person:벨로타,미카 : 스노우 버디
-261,event_newyearnewsword,이벤트,9,16,20,0,12,16,,,,0,6,ch46 ch47 ch48 ch50,item:화무십일홍 org:근접_전투_스쿼드 person:노이즈 person:장화 concept:페어리_테일 org:인류연합군,"NEW YEAR, NEW SWORD"
+261,event_newyearnewsword,이벤트,10,16,21,0,13,16,,,,0,6,ch46 ch47 ch48 ch50,item:화무십일홍 org:근접_전투_스쿼드 person:노이즈 person:장화 concept:페어리_테일 org:인류연합군,"NEW YEAR, NEW SWORD"
 262,char:225,호감도,5,5,10,0,2,9,,,,0,0,,org:근접_전투_스쿼드 person:릴리바이스 person:홍련 person:레드_후드 person:도로시 org:갓데스,홍련 : 흑영
 263,event_lionheart,이벤트,3,4,6,0,0,7,,,고립,0,0,,org:동물권_단체 person:티미 org:해피_주 person:레오나 person:비스킷 person:길로틴,LION HEART
 264,char:382,호감도,1,3,3,0,0,4,,,고립,0,0,,person:티미 org:해피_주 person:레오나 place:지상,레오나

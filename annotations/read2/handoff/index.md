@@ -5,7 +5,7 @@
 | 파일 | 내용 | 글자 수 |
 |---|---|---:|
 | handoff/threads-1.md | 떡밥 줄기 J1–J4 — 든 의문 · 곧바로 든 사실 | 18,169 |
-| handoff/threads-2.md | 떡밥 줄기 J5–J9 — 든 의문 · 곧바로 든 사실 | 16,857 |
+| handoff/threads-2.md | 떡밥 줄기 J5–J9 — 든 의문 · 곧바로 든 사실 | 17,053 |
 | handoff/threads-3.md | 떡밥 줄기 J10–J14 — 든 의문 · 곧바로 든 사실 | 19,315 |
 | handoff/threads-4.md | 떡밥 줄기 J15–J20 — 든 의문 · 곧바로 든 사실 | 18,296 |
 | handoff/threads-5.md | 떡밥 줄기 J21–J33 — 든 의문 · 곧바로 든 사실 | 19,934 |

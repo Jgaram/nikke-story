@@ -436,6 +436,7 @@ sub:문구점_00,ch30,setup_payoff,1,0,1,196,293,서브퀘스트,메인,E179
 sub:2호_쉘터_관리계정_00,fl:reborn_evil,setup_payoff,1,0,1,197,407,서브퀘스트,이벤트,E182
 sub:할아범_01,ch45,setup_payoff,1,1,0,198,450,서브퀘스트,메인,Q127-2
 relic:에닉탄핵포스터,ch25,setup_payoff,1,0,1,199,241,유실물,메인,E184
+event_overzone,erelic:white_memory,callback,1,0,1,200,201,이벤트,유실물,E1763
 event_overzone,char:233,callback,3,0,3,200,202,이벤트,호감도,E1310 E1311 E1312
 event_overzone,event_redash,setup_payoff,3,1,2,200,251,이벤트,이벤트,Q129-2 E192 E194
 event_overzone,erelic:red_ash_lost,callback,1,1,0,200,252,이벤트,유실물,F908-2
@@ -456,9 +457,10 @@ event_overzone,side:pretty_star,setup_payoff,2,1,1,200,447,이벤트,사이드,Q
 event_overzone,ch46,callback,1,0,1,200,452,이벤트,메인,E1114
 event_overzone,ch46,setup_payoff,5,1,4,200,452,이벤트,메인,Q129-4 E193 E201 E203 E204
 event_overzone,ch48,setup_payoff,2,1,1,200,472,이벤트,메인,Q130-2 E191
-erelic:white_memory,event_redash,setup_payoff,1,0,1,201,251,유실물,이벤트,E206
+erelic:white_memory,event_redash,setup_payoff,2,0,2,201,251,유실물,이벤트,E206 E1761
 erelic:white_memory,erelic:red_ash_lost,callback,1,0,1,201,252,유실물,유실물,E305
 erelic:white_memory,erelic:red_ash_mini,callback,1,0,1,201,253,유실물,유실물,E306
+erelic:white_memory,event_newyearnewsword,setup_payoff,1,0,1,201,261,유실물,이벤트,E1762
 erelic:white_memory,side:eden_spear,setup_payoff,1,1,0,201,411,유실물,사이드,Q132-2
 erelic:white_memory,event_goddessfall1,setup_payoff,1,1,0,201,418,유실물,이벤트,Q132-3
 erelic:white_memory,event_arkguardian1,setup_payoff,1,1,0,201,428,유실물,이벤트,Q131-2

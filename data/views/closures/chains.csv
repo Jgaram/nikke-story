@@ -191,7 +191,7 @@ key,type,end,end_tick,span,spine_built,end_spine,units,records,closing,closure,s
 성장 person:에닉 성격,성장,ch47,153,117,1,1,ch22 ch42 ch47,D224 D890 D891 D1323,D1323,O98,기각
 성장 person:온리_원 성격,성장,ch47,153,25,1,1,ch42 ch46 ch47,D883 D884 D1161 D1312,D1312,O100,기각
 연작 fl:persona_on_frontline,연작,fl:persona_on_frontline,154,32,,,fl:coins_in_rush fl:fatal_maid fl:persona_on_frontline,,,O217,확정
-관계 person:스노우_화이트 ↔ person:홍련,관계,ch48,154,21,1,1,event_arkguardian1 ch48,D976 D1349,D1349,O102,확정
+관계 person:스노우_화이트 ↔ person:홍련,관계,ch48,154,118,1,1,erelic:white_memory event_arkguardian1 ch48,D2357 D976 D1349,D1349,O102,확정
 성장 person:홍련 신념,성장,ch48,154,137,1,1,char:222 event_overzone char:225 ch48,D1412 D251 D1516 D1333,D1333,O109,확정
 관계 person:드레이크 ↔ person:지즈,관계,fl:great_villain_union,156,28,1,,ch42 fl:great_villain_union,D876 D1780 D1776 D1782 D1779,D1776 D1782 D1779,O110,확정
 관계 person:길티 ↔ person:지휘관,관계,char:404,157,131,,,char:400 fl:coin_rush_show_down char:404,D1979 D1980 D1981 D2238 D2232,D2232,O219,확정

@@ -247,6 +247,7 @@ setup_payoff,Q129-3,Q129,event_overzone2_04_e,side:pretty_star_00,event_overzone
 setup_payoff,Q129-4,Q129,event_overzone2_04_e,d_main_46_af_06,event_overzone,ch46,200,452,일부,F2649,확실,확정
 setup_payoff,Q130-2,Q130,event_overzone2_02_e,d_main_48_03,event_overzone,ch48,200,472,일부,F2830,확실,확정
 setup_payoff,Q131-2,Q131,erelic:white_memory_113,event_arkguardian2_06_s,erelic:white_memory,event_arkguardian1,201,428,전부,F2373,확실,확정
+setup_payoff,Q131-3,Q131,erelic:white_memory_113,erelic:white_memory_113,erelic:white_memory,erelic:white_memory,201,201,일부,F3219,확실,확정
 setup_payoff,Q132-2,Q132,erelic:white_memory_115,side:eden_spear_08,erelic:white_memory,side:eden_spear,201,411,일부,F2163,확실,확정
 setup_payoff,Q132-3,Q132,erelic:white_memory_115,event_goddessfall1_02_e,erelic:white_memory,event_goddessfall1,201,418,전부,F2268,확실,확정
 setup_payoff,Q135-2,Q135,event_bluewaterisland2_epilogue,event_seayouagain1_05_s,event_bluewaterisland,event_seayouagain1,209,226,전부,F1050,확실,확정

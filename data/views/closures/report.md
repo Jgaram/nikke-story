@@ -2,7 +2,7 @@
 
 출처: annotations/read1/(1회독 · 2회독 기록 · annotations/closures.json · links.json) — 규칙 tools/views/closures.mjs 머리말, 형식 docs/annotations.md "마무리 기록", 쓰는 곳 docs/views.md 화면 1 · 3 · 5.
 
-- (가) 긴 회수(제기 뒤 20칸 이상 지나 전부 회수) 36줄 · 복선의 답 275줄 — 단위 113. 척추가 쌓은 것 185줄.
+- (가) 긴 회수(제기 뒤 20칸 이상 지나 전부 회수) 36줄 · 복선의 답 276줄 — 단위 113. 척추가 쌓은 것 185줄.
 - (나) · (다) 사슬(초안) 233 — 연작 15 · 관계 136 · 성장 82 · 척추가 쌓음 119 · 기록 없음 0
 - 마무리 기록(O) 235 — 확정 180 · 기각 55 · 후보 0. 확정 · 후보 가운데 척추가 쌓고 척추 밖에서 끝남 31.
 - 합류 기록(H) 31 — 확정 31 · 기각 0 · 후보 0. 묶인 마무리 96.
@@ -322,7 +322,7 @@
 - `char:451` — 긴 회수 0 · 복선의 답 1: F1090(← E1333@event_dazzlingcupid)
 - `ch25` (척추) — 긴 회수 0 · 복선의 답 2: F1100(← E184@relic:에닉탄핵포스터 E241@ch24) · F1109(← E243@ch24)
 - `ch26` (척추) — 긴 회수 0 · 복선의 답 2: F1116(← E251@ch25) · F1128(← E259@ch25 E260@ch25)
-- `event_redash` (척추) — 긴 회수 0 · 복선의 답 5: F1142(← E38@relic:갓데스스쿼드리포트) · F1148(← E39@relic:갓데스스쿼드리포트) · F1161(← E206@erelic:white_memory) · F1163(← E194@event_overzone) · F1172(← E192@event_overzone)
+- `event_redash` (척추) — 긴 회수 0 · 복선의 답 6: F1142(← E38@relic:갓데스스쿼드리포트) · F1143(← E1761@erelic:white_memory) · F1148(← E39@relic:갓데스스쿼드리포트) · F1161(← E206@erelic:white_memory) · F1163(← E194@event_overzone) · F1172(← E192@event_overzone)
 - `sub:로망티스트_01` — 긴 회수 0 · 복선의 답 1: F1136(← E149@sub:로망티스트_00)
 - `event_newyearnewsword` — 긴 회수 1: Q90(char:222, 42칸 뒤 Q90-3) · 복선의 답 1: F1238(← E1284@char:222 E282@event_redash 외 1)
 - `ch27` (척추) — 긴 회수 0 · 복선의 답 3: F1284(← E37@sub:랩칠리언_06) · F1285(← E263@relic:마더웨일아종목격보고.wav) · F1297(← E278@relic:저주받은보석 E279@relic:저주받은보석)

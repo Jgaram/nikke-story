@@ -1,30 +1,30 @@
 target,type,name,facts,questions,open_questions,events,units,first_unit,first_order,last_unit,last_order,introduced_in,links
 person:지휘관,person,지휘관,603,29,9,51,260,ch00,1,char:19,495,ch00,0
-place:방주,place,방주,263,18,2,39,136,ch01,2,fl:maria-n,491,,0
+place:방주,place,방주,264,18,2,39,137,ch01,2,fl:maria-n,491,,0
 person:라피,person,라피,205,16,4,27,74,ch00,1,erelic:fading_affection,493,ch00,1
 person:마리안,person,마리안,178,18,5,27,35,ch00,1,char:19,495,ch00,2
-person:도로시,person,도로시,165,11,4,13,38,char:221,94,ch50,488,,0
+person:도로시,person,도로시,166,11,4,13,39,char:221,94,ch50,488,,0
 person:퀸,person,퀸,150,17,3,25,38,ch06,26,char:473,494,ch06,0
 org:중앙_정부,org,중앙 정부,155,4,1,8,88,ch00,1,fl:coin_rush_show_down,480,,0
 concept:니케,concept,니케,145,4,3,7,101,ch00,1,fl:project_matis,467,,0
-org:갓데스,org,갓데스,138,4,0,12,47,relic:갓데스스쿼드리포트,19,relic:신임_장교의_일지,489,relic:갓데스스쿼드리포트,0
+org:갓데스,org,갓데스,139,4,0,12,48,relic:갓데스스쿼드리포트,19,relic:신임_장교의_일지,489,relic:갓데스스쿼드리포트,0
 concept:랩쳐,concept,랩쳐,126,13,5,18,85,ch01,2,fl:maria-n,491,,0
 person:에닉,person,에닉,126,10,4,12,41,ch04,15,fl:maria-n,491,ch04,0
 person:잉그리드,person,잉그리드,127,8,4,9,61,ch01,2,ch50,488,ch01,1
 person:슈엔,person,슈엔,127,6,3,5,49,ch02,4,ch50,488,ch02,1
 person:신데렐라,person,신데렐라,126,7,1,22,33,event_redash,251,ch50,488,event_redash,2
+person:스노우_화이트,person,스노우 화이트,128,4,0,14,44,ch06,26,ch50,488,ch06,0
 person:아니스,person,아니스,123,6,0,17,53,ch00,1,erelic:fading_affection,493,ch00,1
-person:스노우_화이트,person,스노우 화이트,122,4,0,14,44,ch06,26,ch50,488,ch06,0
 person:나유타,person,나유타,114,8,1,19,18,event_lastkingdom1,295,erelic:maria-n_dialog,492,ch39,0
 place:아우터_림,place,아우터 림,116,2,2,6,52,sub:콜렉터_00,7,ch50,488,sub:콜렉터_00,0
+person:레드_후드,person,레드 후드,108,8,1,13,36,ch13,64,ch48,472,,0
 person:엔더슨,person,엔더슨,105,10,3,14,43,ch01,2,fl:maria-n,491,ch01,0
-person:레드_후드,person,레드 후드,106,8,1,13,36,ch13,64,ch48,472,,0
 org:카운터스,org,카운터스,98,5,0,8,76,ch01,2,erelic:maria-n_dialog,492,ch01,0
+person:라푼젤,person,라푼젤,95,2,0,4,32,ch14,69,char:472,496,ch14,0
 person:머스탱,person,머스탱,90,7,2,12,47,ch04,15,fl:coin_rush_show_down,480,ch04,2
+person:홍련,person,홍련,92,4,0,11,30,ch14,69,char:472,496,ch14,0
 concept:언체인드,concept,언체인드,88,7,3,12,38,ch09,43,erelic:maria-n_dialog,492,ch09,0
-person:라푼젤,person,라푼젤,93,2,0,4,32,ch14,69,char:472,496,ch14,0
 place:에덴,place,에덴,88,7,4,9,32,char:232,88,ch50,488,,0
-person:홍련,person,홍련,90,4,0,11,29,ch14,69,char:472,496,ch14,0
 org:미실리스,org,미실리스,85,5,2,6,53,ch02,4,fl:maria-n,491,ch02,0
 concept:침식,concept,침식,79,6,3,10,31,ch01,2,fl:maria-n,491,ch01,0
 person:레비아탄,person,레비아탄,80,5,1,11,26,ch32,310,ch50,488,ch32,1
@@ -39,7 +39,7 @@ person:토커티브,person,토커티브,59,10,2,11,18,ch03,10,fl:maria-n,491,ch0
 concept:헬레틱,concept,헬레틱,64,4,2,10,40,ch06,26,fl:maria-n,491,ch06,0
 org:포비스트,org,포비스트,63,5,1,10,26,ch31,308,ch50,488,ch31,0
 person:버닝엄,person,버닝엄,65,3,3,1,27,sub:세르반_03,65,ch50,488,sub:세르반_03,0
-person:릴리바이스,person,릴리바이스,64,2,0,10,21,event_overzone,200,fl:maria-n,491,event_overzone,1
+person:릴리바이스,person,릴리바이스,65,2,0,10,22,event_overzone,200,fl:maria-n,491,event_overzone,1
 person:세실,person,세실,61,3,3,1,22,ch19,159,char:472,496,ch19,0
 person:리버렐리오,person,리버렐리오,57,5,1,11,19,ch20,164,erelic:maria-n_dialog,492,ch20,0
 person:니힐리스타,person,니힐리스타,56,5,1,9,16,ch07,31,event_goddessfall1,418,ch07,0

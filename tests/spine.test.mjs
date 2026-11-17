@@ -42,7 +42,7 @@ test('척추 선정 계산 — X3f-1b가 손으로 센 수와 같다 · 어긋�
   };
   // data/views/importance/spine-candidates.md 선정 결과 표(ⓐ · ⓒ 긴 회수 · 복선의 답 · ⓑ) — ⓑ는 신작 메인 챕터의 연결로 늘어난다(N3 2026-10-29: CH.49 · CH.50, 통과 · 미달은 그대로)
   assert.deepEqual(m('event_overzone'), [9, 1, 1, 11]);
-  assert.deepEqual(m('event_redash'), [8, 0, 5, 9]);
+  assert.deepEqual(m('event_redash'), [8, 0, 6, 9]); // 복선의 답 +1 — WHITE MEMORY 보충 E1761 → F1143(N3 2026-11-17)
   assert.deepEqual(m('event_lastkingdom1'), [6, 0, 4, 6]);
   assert.deepEqual(m('event_oldtales1'), [6, 0, 3, 17]);
   assert.deepEqual(m('event_unbreakablesphere1'), [7, 0, 2, 2]);

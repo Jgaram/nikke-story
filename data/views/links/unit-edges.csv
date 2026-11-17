@@ -1381,18 +1381,19 @@ relic:에닉탄핵포스터,event_overzone,keyword,1,1,auto,0,,place:방주,199,
 relic:에닉탄핵포스터,ch23,character,1,2,auto,0,,person:에닉,199,214,유실물,메인
 relic:에닉탄핵포스터,ch25,setup_payoff,1,2,record,0,E184,,199,241,유실물,메인
 event_overzone,erelic:white_memory,sequel,1,3,auto,0,,,200,201,이벤트,유실물
-event_overzone,erelic:white_memory,character,3,2,auto,0,,person:라푼젤 person:릴리바이스 person:릴리스 person:스노우_화이트,200,201,이벤트,유실물
-event_overzone,erelic:white_memory,keyword,2,1,auto,0,,concept:랩쳐 place:방주,200,201,이벤트,유실물
+event_overzone,erelic:white_memory,callback,1,2,record,0,E1763,,200,201,이벤트,유실물
+event_overzone,erelic:white_memory,character,4,2,auto,0,,person:라푼젤 person:릴리바이스 person:스노우_화이트 person:홍련,200,201,이벤트,유실물
+event_overzone,erelic:white_memory,keyword,4,2,auto,0,,concept:랩쳐 org:갓데스 place:방주 place:지상,200,201,이벤트,유실물
 event_overzone,char:233,callback,3,3,record,0,E1310 E1311 E1312,,200,202,이벤트,호감도
 event_overzone,char:233,character,2,2,auto,0,,person:도로시 person:피나,200,202,이벤트,호감도
-event_overzone,char:233,keyword,3,2,auto,0,,concept:니케 incident:아크_가디언_작전 org:갓데스,200,202,이벤트,호감도
-event_overzone,event_queensorder,keyword,2,1,auto,0,,org:중앙_정부 place:지상,200,207,이벤트,이벤트
+event_overzone,char:233,keyword,2,2,auto,0,,concept:니케 incident:아크_가디언_작전,200,202,이벤트,호감도
+event_overzone,event_queensorder,keyword,1,1,auto,0,,org:중앙_정부,200,207,이벤트,이벤트
 event_overzone,ch23,keyword,2,2,auto,0,,concept:양산형_니케 org:필그림,200,214,이벤트,메인
 event_overzone,ch24,keyword,1,2,auto,0,,concept:에블라_입자,200,219,이벤트,메인
 event_overzone,ch25,keyword,1,2,auto,0,,concept:퍼펙트,200,241,이벤트,메인
 event_overzone,ch26,character,1,2,auto,0,,person:퀸,200,246,이벤트,메인
 event_overzone,event_redash,setup_payoff,3,3,record,0,E192 E194 Q129-2,,200,251,이벤트,이벤트
-event_overzone,event_redash,character,3,2,auto,0,,person:릴리바이스 person:오스왈드 person:홍련,200,251,이벤트,이벤트
+event_overzone,event_redash,character,1,2,auto,0,,person:오스왈드,200,251,이벤트,이벤트
 event_overzone,event_redash,keyword,1,2,auto,0,,concept:침식,200,251,이벤트,이벤트
 event_overzone,erelic:red_ash_lost,callback,1,3,record,0,F908-2,,200,252,이벤트,유실물
 event_overzone,erelic:red_ash_mini,setup_payoff,1,2,record,0,Q128-2,,200,253,이벤트,유실물
@@ -1413,13 +1414,15 @@ event_overzone,side:pretty_star,setup_payoff,2,3,record,0,E200 Q129-3,,200,447,�
 event_overzone,ch46,setup_payoff,5,3,record,0,E193 E201 E203 E204 Q129-4,,200,452,이벤트,메인
 event_overzone,ch46,callback,1,3,record,0,E1114,,200,452,이벤트,메인
 event_overzone,ch48,setup_payoff,2,3,record,0,E191 Q130-2,,200,472,이벤트,메인
-erelic:white_memory,char:233,keyword,2,1,auto,0,,concept:랩쳐 place:방주,201,202,유실물,호감도
+erelic:white_memory,char:233,keyword,3,2,auto,0,,concept:랩쳐 org:갓데스 place:방주,201,202,유실물,호감도
+erelic:white_memory,event_queensorder,keyword,1,1,auto,0,,place:지상,201,207,유실물,이벤트
 erelic:white_memory,ch24,character,1,2,auto,0,,person:레드_후드,201,219,유실물,메인
 erelic:white_memory,ch26,character,2,2,auto,0,,person:라푼젤 person:스노우_화이트,201,246,유실물,메인
-erelic:white_memory,event_redash,setup_payoff,1,2,record,0,E206,,201,251,유실물,이벤트
-erelic:white_memory,event_redash,character,1,2,auto,0,,person:릴리스 person:릴리바이스,201,251,유실물,이벤트
+erelic:white_memory,event_redash,setup_payoff,2,3,record,0,E206 E1761,,201,251,유실물,이벤트
+erelic:white_memory,event_redash,character,2,2,auto,0,,person:릴리바이스 person:홍련,201,251,유실물,이벤트
 erelic:white_memory,erelic:red_ash_lost,callback,1,2,record,0,E305,,201,252,유실물,유실물
 erelic:white_memory,erelic:red_ash_mini,callback,1,2,record,0,E306,,201,253,유실물,유실물
+erelic:white_memory,event_newyearnewsword,setup_payoff,1,2,record,0,E1762,,201,261,유실물,이벤트
 erelic:white_memory,side:eden_spear,setup_payoff,1,3,record,0,Q132-2,,201,411,유실물,사이드
 erelic:white_memory,event_goddessfall1,setup_payoff,1,3,record,0,Q132-3,,201,418,유실물,이벤트
 erelic:white_memory,event_goddessfall1,character,1,2,auto,0,,person:릴리스,201,418,유실물,이벤트

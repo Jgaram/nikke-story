@@ -1,6 +1,6 @@
 a,b,a_type,b_type,records,units,sample
 org:중앙_정부,place:방주,org,place,29,19,E249 E1602 F407 F591 F818 F820
-org:갓데스,place:방주,org,place,26,9,E123 F687 F909 F910 F919 F920
+org:갓데스,place:방주,org,place,27,10,E123 E1763 F687 F909 F910 F919
 org:중앙_정부,place:아우터_림,org,place,24,17,E13 E1569 F136 F577 F596 F643
 org:이그조틱,place:아우터_림,org,place,20,13,E1279 F139 F258 F403 F408 F642
 concept:니케,place:방주,concept,place,19,15,F230 F407 F432 F437 F503 F592
@@ -28,6 +28,7 @@ concept:언체인드,concept:헬레틱,concept,concept,9,7,F324 F682 F744 F746 F
 org:M.M.R.,org:미실리스,org,org,9,8,F445 F1071 F1460 F1613 F1616 F2412
 org:미실리스,place:방주,org,place,9,7,F301 F591 F689 F2659 F2736 F2818
 org:언더월드_퀸,place:아우터_림,org,place,9,8,F829 F832 F884 F953 F990 F1020
+place:방주,place:지상,place,place,9,9,F611 F1046 U4 U82 U96 U108
 concept:E2_크리스탈,place:방주,concept,place,8,4,F2210 F2232 F2576 F2583 F2590 F2591
 concept:니케,concept:사고_전환,concept,concept,8,8,E1561 F492 F506 F655 F725 F1060
 concept:랩쳐,place:궤도_엘리베이터,concept,place,8,5,F246 F1140 F1153 F1690 F2612 F2664
@@ -43,7 +44,6 @@ org:메티스,place:방주,org,place,8,6,F689 F697 F896 F993 F2241 F2252
 org:엔터_헤븐,org:이그조틱,org,org,8,5,F403 F416 F886 F992 F2059 F2484
 org:엘리시온,org:중앙_정부,org,org,8,6,F591 F669 F2408 F2492 F2501 F2539
 org:중앙_정부,org:트라이앵글,org,org,8,8,F250 F365 F627 F651 F658 F820
-place:방주,place:지상,place,place,8,8,F611 F1046 U4 U82 U96 U108
 concept:NEO_바이러스,org:구원의_성화,concept,org,7,3,E876 F2130 F2131 F2134 F2145 F2149
 concept:미스트,place:아우터_림,concept,place,7,3,F1258 F1265 F1268 F2209 F2603 U191
 concept:방주_동력원,place:방주,concept,place,7,4,F1339 F1342 F2581 F2606 F2818 U401

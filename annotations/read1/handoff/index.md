@@ -14,8 +14,8 @@
 | handoff/facts-7.md | 사실 목록 R14–R16 | 15,649 |
 | handoff/facts-8.md | 사실 목록 R17–R19 | 17,285 |
 | handoff/facts-9.md | 사실 목록 R20–R21 | 11,203 |
-| handoff/facts-10.md | 사실 목록 R22–R25 | 19,473 |
-| handoff/facts-11.md | 사실 목록 R26–R28 | 16,482 |
+| handoff/facts-10.md | 사실 목록 R22–R24 | 17,251 |
+| handoff/facts-11.md | 사실 목록 R25–R28 | 19,905 |
 | handoff/facts-12.md | 사실 목록 R29–R31 | 15,269 |
 | handoff/facts-13.md | 사실 목록 R32–R34 | 18,691 |
 | handoff/facts-14.md | 사실 목록 R35–R37 | 17,316 |
@@ -42,7 +42,7 @@
 | handoff/facts-35.md | 사실 목록 U04–U05 | 12,798 |
 | handoff/facts-36.md | 사실 목록 U06–U07 | 17,731 |
 | handoff/facts-37.md | 사실 목록 U08–P1 | 14,289 |
-| handoff/questions-solved-1.md | 풀린 의문 124건 | 19,948 |
+| handoff/questions-solved-1.md | 풀린 의문 124건 | 19,972 |
 | handoff/questions-solved-2.md | 풀린 의문 124건 | 293 |
 | handoff/R01-1.md | 단위 요약 — ch00 … sub:세르반_00 (7단위) | 16,239 |
 | handoff/R01-2.md | 단위 요약 — ch04 … ch06 (4단위) | 13,670 |
@@ -71,7 +71,7 @@
 | handoff/R20.md | 단위 요약 — char:381 … event_fullfoolday (5단위) | 12,240 |
 | handoff/R21.md | 단위 요약 — event_ltk … relic:특이랩쳐보고서-후 (8단위) | 14,125 |
 | handoff/R22-1.md | 단위 요약 — ch22 … event_overzone (6단위) | 18,558 |
-| handoff/R22-2.md | 단위 요약 — erelic:white_memory · sub:중앙정부_트라이앵글_00 | 4,025 |
+| handoff/R22-2.md | 단위 요약 — erelic:white_memory · sub:중앙정부_트라이앵글_00 | 6,125 |
 | handoff/R23.md | 단위 요약 — char:233 … char:271 (5단위) | 8,171 |
 | handoff/R24.md | 단위 요약 — event_queensorder · char:280 | 6,576 |
 | handoff/R25.md | 단위 요약 — event_bluewaterisland … char:14 (3단위) | 8,805 |

@@ -2261,6 +2261,7 @@ D1414,person:홍련,홍련,기억,기준,,,,"사고 전환을 몇 번이나 겪�
 D1412,person:홍련,홍련,신념,기준,,,,"인간 없는 지상이 더 아름답다며 인간이 세상에 도움이 되는지 묻지만, 랩쳐를 모두 죽이고 지상을 인간에게 돌려준다는 '강철 같은 의지'는 변하지 않는다고 한다",char:222,136,ep:d_nikke_hongryeon_03,,,,,확실,확정
 D1415,person:홍련,홍련,관계,변화,person:지휘관,술을 얻어 마시러 드나드는 술친구이다,"'외로운 거야?'에 '아니라곤 말 못 하겠군' 하고, 지상에서의 시간이 그의 기억에 크게 자리 잡길 바란다",,char:222,136,ep:d_nikke_hongryeon_05,ep:d_nikke_hongryeon_03,char:222,,,확실,확정
 D251,person:홍련,홍련,신념,변화,,싸우기 위해 태어났으니 검만 휘두르다 떠나도 나쁘지 않다고 여겼다,죽이는 것 말고 살리는 일 — 농사(끝은 술)를 해 보고 싶어 한다,,event_overzone,200,event_overzone2_03_e,event_overzone1_05_e,event_overzone,S71,F917,확실,확정
+D2357,person:홍련,홍련,관계,기준,person:스노우_화이트,,,"굶주린 막내에게 새를 잡아 건네며 죽음의 경중에 연연하지 말라 하고, '열흘 붉은 꽃은 없다'를 가르치는 선배",erelic:white_memory,201,erelic:white_memory_056,,,,,확실,확정
 D354,person:홍련,홍련,관계,기준,person:도로시,,,청결과 전략에 집착하는 도로시의 콧대를 언젠가 정면에서 꺾어 주겠다며 매일 한 판 붙자고 덤비는 앙숙,erelic:red_ash_lost,252,erelic:red_ash_lost_04,,,,,확실,확정
 D361,person:홍련,홍련,관계,기준,person:장화,,,"985번 대련에 한 번도 못 이기고 '그 여유, 언젠간 꼭 꺾어 보이겠다'며 언니를 좇는 동생",event_newyearnewsword,261,event_newyearnewsword_02_s,,,,,확실,확정
 D364,person:홍련,홍련,관계,변화,person:지휘관,'도령'을 시험한다,100년 동안 못 연 언니의 술을 함께 열어 준 '참 좋은 도령',,event_newyearnewsword,261,event_newyearnewsword_epilogue,event_newyearnewsword_06_e,event_newyearnewsword,S117,,확실,확정

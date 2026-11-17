@@ -54,7 +54,7 @@
 - Q125 ✓ E.H.는 왜 '엘리시온 하퍼'라는 이름을 버렸고, 잉그리드와 익스터너를 어떻게 아나 — '결국 완성했구나, 잉그리드'는 무슨 뜻인가? · ch22 d_main_22_09#4-7 · 일부 → F2490 ✓ (Q125-2 fl:enter_heaven) · 일부 → F2502 ✓ (Q125-3 fl:enter_heaven) · 풀림 → F2495 ✓ (Q125-4 fl:enter_heaven)
 - Q126 ✓ 니힐리스타가 방주 안에서 느낀 토커티브와 인디빌리아는 무엇이고 방주 어디에 있나? · ch22 d_main_22_12_s#69-74 · 풀림 → F1032 ✓ (Q126-2 ch24)
 - Q128 ✓ 방주가 관리 A.I.를 위험하다고 보아 방주의 두뇌들을 포섭하며 비밀리에 준비한 '카운터'는 무엇이고, 도로시가 지상으로 끌어올리려던 '방주 최고의 두뇌'는 누구인가? · event_overzone event_overzone2_epilogue#17-22,35-36 · 일부 → F1190 ✓ (Q128-2 erelic:red_ash_mini) · 풀림 → F2332 ✓ (Q128-3 erelic:goddess_fall_mini)
-- Q131 ✓ 릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가? · erelic:white_memory erelic:white_memory_113#0-4 · 풀림 → F2373 ✓ (Q131-2 event_arkguardian1)
+- Q131 ✓ 릴리스의 관 근처에 떨어져 있던 군번줄의 주인 — 릴리스와 서로 사랑한 '그' — 는 누구인가? · erelic:white_memory erelic:white_memory_113#0-4 · 일부 → F3219 ✓ (Q131-3) · 풀림 → F2373 ✓ (Q131-2 event_arkguardian1)
 - Q132 ✓ 릴리스의 관에서 사라진 머리는 누가 가져갔고 어디로 갔나? · erelic:white_memory erelic:white_memory_115#1-2,24-29 · 일부 → F2163 ✓ (Q132-2 side:eden_spear) · 풀림 → F2268 ✓ (Q132-3 event_goddessfall1)
 
 ## 풀린 의문 — R25

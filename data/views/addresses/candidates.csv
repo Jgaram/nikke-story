@@ -2,13 +2,13 @@ rid,name,target,source,word,lines,first
 10,라피,person:라피,voice,지휘관,7,c010_Lobby_Touch_2
 10,라피,person:라피,episode,지휘관,47,ep:d_nikke_rapi_01#1
 10,라피,person:라피,episode,당신,7,ep:d_nikke_rapi_05#47
-10,라피,person:라피,story,지휘관,602,d_ex_elevator_01#5
-10,라피,person:라피,story,당신,7,d_main_01_04_s#6
+10,라피,person:라피,story,지휘관,627,d_ex_elevator_01#5
+10,라피,person:라피,story,당신,9,d_main_01_04_s#6
 10,라피,person:라피,story,선생님,3,event_footstepwalkrun1_01_e#42
 10,라피,person:라피,story,손님,3,d_main_14_03#48
+10,라피,person:라피,story,공주님,2,fl:boom_the_ghost_04#123
 10,라피,person:라피,story,사장님,2,fl:ark_ranger_22#35
 10,라피,person:라피,story,여보,2,fl:great_villain_union_07#32
-10,라피,person:라피,story,공주님,1,fl:boom_the_ghost_04#123
 10,라피,person:라피,story,부사령관님,1,d_main_44_01#25
 10,라피,person:라피,story,선배,1,sub:핸섬_커맨더_00#40
 10,라피,person:라피,story,아저씨,1,d_main_40_04#36
@@ -17,13 +17,14 @@ rid,name,target,source,word,lines,first
 11,네온,person:네온,voice,스승님,10,c011_Lobby_Touch_1
 11,네온,person:네온,episode,스승님,21,ep:d_nikke_neon_01#9
 11,네온,person:네온,episode,사장님,11,ep:d_nikke_neon_03#39
-11,네온,person:네온,story,스승님,215,d_main_04_01#69
+11,네온,person:네온,story,스승님,222,d_main_04_01#69
 11,네온,person:네온,story,사장님,32,d_main_08_01#13
 11,네온,person:네온,story,마스터,8,event_bluewaterisland1_01_s#96
 11,네온,person:네온,story,당신,7,d_main_45_07#134
 11,네온,person:네온,story,지휘관,7,sub:테디_00#52
 11,네온,person:네온,story,대스승님,3,d_main_21_02_e#28
 11,네온,person:네온,story,공주님,2,d_main_43_15#3
+11,네온,person:네온,story,보스,2,d_main_49_01#48
 11,네온,person:네온,story,선생님,2,event_overthehorizon_01_e#13
 11,네온,person:네온,story,다님,1,d_main_25_05_e#19
 11,네온,person:네온,story,동생,1,d_main_23_03_s#19
@@ -38,9 +39,9 @@ rid,name,target,source,word,lines,first
 12,아니스,person:아니스,episode,지휘관님,21,ep:d_nikke_anis_01#8
 12,아니스,person:아니스,episode,도련님,2,ep:d_nikke_anis_01#20
 12,아니스,person:아니스,episode,지휘관,2,ep:d_nikke_anis_02#89
-12,아니스,person:아니스,story,지휘관님,294,d_main_01_04_s#14
+12,아니스,person:아니스,story,지휘관님,307,d_main_01_04_s#14
 12,아니스,person:아니스,story,사장님,69,d_main_10_01#32
-12,아니스,person:아니스,story,지휘관,29,d_main_01_04_s#13
+12,아니스,person:아니스,story,지휘관,33,d_main_01_04_s#13
 12,아니스,person:아니스,story,아저씨,6,d_main_14_04#17
 12,아니스,person:아니스,story,샛별님,4,d_main_47_01#85
 12,아니스,person:아니스,story,선생님,4,side:pretty_star_02#77
@@ -63,13 +64,14 @@ rid,name,target,source,word,lines,first
 14,네온 : 블루 오션,person:네온,episode,장인님,2,ep:d_nikke_neon_blueocean_03#88
 14,네온 : 블루 오션,person:네온,episode,당신,1,ep:d_nikke_neon_blueocean_05#85
 14,네온 : 블루 오션,person:네온,episode,승님,1,ep:d_nikke_neon_blueocean_05#123
-14,네온 : 블루 오션,person:네온,story,스승님,215,d_main_04_01#69
+14,네온 : 블루 오션,person:네온,story,스승님,222,d_main_04_01#69
 14,네온 : 블루 오션,person:네온,story,사장님,32,d_main_08_01#13
 14,네온 : 블루 오션,person:네온,story,마스터,8,event_bluewaterisland1_01_s#96
 14,네온 : 블루 오션,person:네온,story,당신,7,d_main_45_07#134
 14,네온 : 블루 오션,person:네온,story,지휘관,7,sub:테디_00#52
 14,네온 : 블루 오션,person:네온,story,대스승님,3,d_main_21_02_e#28
 14,네온 : 블루 오션,person:네온,story,공주님,2,d_main_43_15#3
+14,네온 : 블루 오션,person:네온,story,보스,2,d_main_49_01#48
 14,네온 : 블루 오션,person:네온,story,선생님,2,event_overthehorizon_01_e#13
 14,네온 : 블루 오션,person:네온,story,다님,1,d_main_25_05_e#19
 14,네온 : 블루 오션,person:네온,story,동생,1,d_main_23_03_s#19
@@ -85,9 +87,9 @@ rid,name,target,source,word,lines,first
 15,아니스 : 스파클링 서머,person:아니스,episode,지휘관님,39,ep:d_nikke_anis_sparklingsummer_01#8
 15,아니스 : 스파클링 서머,person:아니스,episode,관님,1,ep:d_nikke_anis_sparklingsummer_01#7
 15,아니스 : 스파클링 서머,person:아니스,episode,손님,1,ep:d_nikke_anis_sparklingsummer_05#48
-15,아니스 : 스파클링 서머,person:아니스,story,지휘관님,294,d_main_01_04_s#14
+15,아니스 : 스파클링 서머,person:아니스,story,지휘관님,307,d_main_01_04_s#14
 15,아니스 : 스파클링 서머,person:아니스,story,사장님,69,d_main_10_01#32
-15,아니스 : 스파클링 서머,person:아니스,story,지휘관,29,d_main_01_04_s#13
+15,아니스 : 스파클링 서머,person:아니스,story,지휘관,33,d_main_01_04_s#13
 15,아니스 : 스파클링 서머,person:아니스,story,아저씨,6,d_main_14_04#17
 15,아니스 : 스파클링 서머,person:아니스,story,샛별님,4,d_main_47_01#85
 15,아니스 : 스파클링 서머,person:아니스,story,선생님,4,side:pretty_star_02#77
@@ -106,13 +108,13 @@ rid,name,target,source,word,lines,first
 15,아니스 : 스파클링 서머,person:아니스,story,지지지지휘관님,1,d_main_47_02#87
 16,라피 : 레드 후드,person:라피,voice,지휘관,45,c016_02_Lobby_Touch_1
 16,라피 : 레드 후드,person:라피,episode,지휘관,37,ep:d_nikke_rapi_redhood_01#1
-16,라피 : 레드 후드,person:라피,story,지휘관,602,d_ex_elevator_01#5
-16,라피 : 레드 후드,person:라피,story,당신,7,d_main_01_04_s#6
+16,라피 : 레드 후드,person:라피,story,지휘관,627,d_ex_elevator_01#5
+16,라피 : 레드 후드,person:라피,story,당신,9,d_main_01_04_s#6
 16,라피 : 레드 후드,person:라피,story,선생님,3,event_footstepwalkrun1_01_e#42
 16,라피 : 레드 후드,person:라피,story,손님,3,d_main_14_03#48
+16,라피 : 레드 후드,person:라피,story,공주님,2,fl:boom_the_ghost_04#123
 16,라피 : 레드 후드,person:라피,story,사장님,2,fl:ark_ranger_22#35
 16,라피 : 레드 후드,person:라피,story,여보,2,fl:great_villain_union_07#32
-16,라피 : 레드 후드,person:라피,story,공주님,1,fl:boom_the_ghost_04#123
 16,라피 : 레드 후드,person:라피,story,부사령관님,1,d_main_44_01#25
 16,라피 : 레드 후드,person:라피,story,선배,1,sub:핸섬_커맨더_00#40
 16,라피 : 레드 후드,person:라피,story,아저씨,1,d_main_40_04#36
@@ -122,9 +124,9 @@ rid,name,target,source,word,lines,first
 17,아니스 : 스타,person:아니스,episode,지휘관님,36,ep:d_nikke_anis_star_01#8
 17,아니스 : 스타,person:아니스,episode,사장님,1,ep:d_nikke_anis_star_04#15
 17,아니스 : 스타,person:아니스,episode,지휘관,1,ep:d_nikke_anis_star_01#30
-17,아니스 : 스타,person:아니스,story,지휘관님,294,d_main_01_04_s#14
+17,아니스 : 스타,person:아니스,story,지휘관님,307,d_main_01_04_s#14
 17,아니스 : 스타,person:아니스,story,사장님,69,d_main_10_01#32
-17,아니스 : 스타,person:아니스,story,지휘관,29,d_main_01_04_s#13
+17,아니스 : 스타,person:아니스,story,지휘관,33,d_main_01_04_s#13
 17,아니스 : 스타,person:아니스,story,아저씨,6,d_main_14_04#17
 17,아니스 : 스타,person:아니스,story,샛별님,4,d_main_47_01#85
 17,아니스 : 스타,person:아니스,story,선생님,4,side:pretty_star_02#77
@@ -145,13 +147,14 @@ rid,name,target,source,word,lines,first
 18,네온 : 비전 아이,person:네온,episode,스승님,23,ep:d_nikke_neon_visioneye_01#5
 18,네온 : 비전 아이,person:네온,episode,공주님,15,ep:d_nikke_neon_visioneye_03#82
 18,네온 : 비전 아이,person:네온,episode,아저씨,1,ep:d_nikke_neon_visioneye_02#31
-18,네온 : 비전 아이,person:네온,story,스승님,215,d_main_04_01#69
+18,네온 : 비전 아이,person:네온,story,스승님,222,d_main_04_01#69
 18,네온 : 비전 아이,person:네온,story,사장님,32,d_main_08_01#13
 18,네온 : 비전 아이,person:네온,story,마스터,8,event_bluewaterisland1_01_s#96
 18,네온 : 비전 아이,person:네온,story,당신,7,d_main_45_07#134
 18,네온 : 비전 아이,person:네온,story,지휘관,7,sub:테디_00#52
 18,네온 : 비전 아이,person:네온,story,대스승님,3,d_main_21_02_e#28
 18,네온 : 비전 아이,person:네온,story,공주님,2,d_main_43_15#3
+18,네온 : 비전 아이,person:네온,story,보스,2,d_main_49_01#48
 18,네온 : 비전 아이,person:네온,story,선생님,2,event_overthehorizon_01_e#13
 18,네온 : 비전 아이,person:네온,story,다님,1,d_main_25_05_e#19
 18,네온 : 비전 아이,person:네온,story,동생,1,d_main_23_03_s#19
@@ -163,8 +166,10 @@ rid,name,target,source,word,lines,first
 18,네온 : 비전 아이,person:네온,story,선배님,1,d_main_21_02_e#24
 18,네온 : 비전 아이,person:네온,story,손님,1,event_seayouagain1_intermission_01#22
 19,마리안 : 퀸,person:마리안,voice,지휘관,23,c019_01_Lobby_Touch_2
-19,마리안 : 퀸,person:마리안,story,지휘관,72,d_main_01_01_s#4
-19,마리안 : 퀸,person:마리안,story,당신,15,d_main_01_01_s#31
+19,마리안 : 퀸,person:마리안,episode,지휘관,41,ep:d_nikke_marian_queen_01#3
+19,마리안 : 퀸,person:마리안,story,지휘관,184,d_main_01_01_s#4
+19,마리안 : 퀸,person:마리안,story,당신,43,d_main_01_01_s#31
+19,마리안 : 퀸,person:마리안,story,박사님,37,erelic:maria-n_dialog_06#5
 19,마리안 : 퀸,person:마리안,story,손님,1,event_lastkingdom1_01_e#0
 20,델타,person:델타,voice,지휘관,4,c020_Lobby_Touch_Love_1
 20,델타,person:델타,episode,지휘관,26,ep:d_nikke_delta_01#1
@@ -186,7 +191,7 @@ rid,name,target,source,word,lines,first
 30,폴리,person:폴리,voice,지휘관,9,c030_Lobby_Touch_1
 30,폴리,person:폴리,episode,사장님,34,ep:d_nikke_poli_01#73
 30,폴리,person:폴리,episode,지휘관,22,ep:d_nikke_poli_01#60
-30,폴리,person:폴리,story,지휘관,29,d_main_23_01_s#10
+30,폴리,person:폴리,story,지휘관,34,d_main_23_01_s#10
 30,폴리,person:폴리,story,당신,1,event_goninjathief_06_e#19
 30,폴리,person:폴리,story,도로시님,1,d_main_24_12#0
 30,폴리,person:폴리,story,부사령관님,1,d_main_24_11#111
@@ -271,9 +276,10 @@ rid,name,target,source,word,lines,first
 70,브리드,person:브리드,episode,손님,1,ep:d_nikke_brid_03#22
 70,브리드,person:브리드,story,노라님,1,fl:terminus_ticket_16#10
 70,브리드,person:브리드,story,당신,1,fl:terminus_ticket_14#68
+70,브리드,person:브리드,story,지휘관,1,d_main_50_af_04#3
 71,솔린,person:솔린,voice,지휘관,5,c071_Lobby_Touch_Love_3
 71,솔린,person:솔린,episode,지휘관,28,ep:d_nikke_soline_01#5
-71,솔린,person:솔린,story,지휘관,18,fl:terminus_ticket_02#14
+71,솔린,person:솔린,story,지휘관,20,fl:terminus_ticket_02#14
 71,솔린,person:솔린,story,사장님,1,fl:blank_ticket_07#90
 71,솔린,person:솔린,story,아저씨,1,fl:blank_ticket_12#4
 72,디젤,person:디젤,voice,지휘관,10,c072_Lobby_Touch_Love_1
@@ -283,7 +289,7 @@ rid,name,target,source,word,lines,first
 72,디젤,person:디젤,episode,부사령관님,2,ep:d_nikke_diesel_03#68
 72,디젤,person:디젤,episode,엔더슨님,1,ep:d_nikke_diesel_05#32
 72,디젤,person:디젤,episode,오빠,1,ep:d_nikke_diesel_03#9
-72,디젤,person:디젤,story,지휘관,14,fl:terminus_ticket_01#15
+72,디젤,person:디젤,story,지휘관,18,fl:terminus_ticket_01#15
 72,디젤,person:디젤,story,당신,5,d_main_24_02#17
 72,디젤,person:디젤,story,동생,4,d_main_24_02#36
 72,디젤,person:디젤,story,사장님,2,fl:blank_ticket_03#102
@@ -291,9 +297,10 @@ rid,name,target,source,word,lines,first
 73,브리드 : 사일런트 트랙,person:브리드,episode,지휘관,22,ep:d_nikke_brid_silenttrack_01#3
 73,브리드 : 사일런트 트랙,person:브리드,story,노라님,1,fl:terminus_ticket_16#10
 73,브리드 : 사일런트 트랙,person:브리드,story,당신,1,fl:terminus_ticket_14#68
+73,브리드 : 사일런트 트랙,person:브리드,story,지휘관,1,d_main_50_af_04#3
 74,솔린 : 프로스트 티켓,person:솔린,voice,지휘관,12,c074_Lobby_Touch_3
 74,솔린 : 프로스트 티켓,person:솔린,episode,지휘관,33,ep:d_nikke_soline_frostticket_01#8
-74,솔린 : 프로스트 티켓,person:솔린,story,지휘관,18,fl:terminus_ticket_02#14
+74,솔린 : 프로스트 티켓,person:솔린,story,지휘관,20,fl:terminus_ticket_02#14
 74,솔린 : 프로스트 티켓,person:솔린,story,사장님,1,fl:blank_ticket_07#90
 74,솔린 : 프로스트 티켓,person:솔린,story,아저씨,1,fl:blank_ticket_12#4
 75,디젤 : 윈터 스위츠,person:디젤,voice,지휘관,7,c075_Lobby_Touch_Love_2
@@ -301,7 +308,7 @@ rid,name,target,source,word,lines,first
 75,디젤 : 윈터 스위츠,person:디젤,episode,동생,7,ep:d_nikke_diesel_wintersweets_05#4
 75,디젤 : 윈터 스위츠,person:디젤,episode,당신,1,ep:d_nikke_diesel_wintersweets_03#74
 75,디젤 : 윈터 스위츠,person:디젤,episode,마스터,1,ep:d_nikke_diesel_wintersweets_02#85
-75,디젤 : 윈터 스위츠,person:디젤,story,지휘관,14,fl:terminus_ticket_01#15
+75,디젤 : 윈터 스위츠,person:디젤,story,지휘관,18,fl:terminus_ticket_01#15
 75,디젤 : 윈터 스위츠,person:디젤,story,당신,5,d_main_24_02#17
 75,디젤 : 윈터 스위츠,person:디젤,story,동생,4,d_main_24_02#36
 75,디젤 : 윈터 스위츠,person:디젤,story,사장님,2,fl:blank_ticket_03#102
@@ -322,7 +329,7 @@ rid,name,target,source,word,lines,first
 82,리타,person:리타,story,지휘관,1,event_bluewaterisland2_04_s#92
 90,엠마,person:엠마,voice,지휘관,30,c090_01_Lobby_Touch_1
 90,엠마,person:엠마,episode,지휘관,32,ep:d_nikke_emma_01#31
-90,엠마,person:엠마,story,지휘관,23,d_main_34_01_e#95
+90,엠마,person:엠마,story,지휘관,27,d_main_34_01_e#95
 90,엠마,person:엠마,story,용사님,7,event_icedragonsaga1_02_s#42
 90,엠마,person:엠마,story,손님,2,event_icedragonsaga1_02_s#54
 90,엠마,person:엠마,story,당신,1,d_main_13_03#13
@@ -332,18 +339,18 @@ rid,name,target,source,word,lines,first
 91,베스티,person:베스티,episode,지휘관님,29,ep:d_nikke_vesti_01#37
 91,베스티,person:베스티,episode,지휘관,3,ep:d_nikke_vesti_02#17
 91,베스티,person:베스티,episode,사장님,2,ep:d_nikke_vesti_02#71
-91,베스티,person:베스티,story,지휘관님,11,d_main_32_02_s#22
+91,베스티,person:베스티,story,지휘관님,15,d_main_32_02_s#22
 91,베스티,person:베스티,story,마스터,1,event_icedragonsaga1_04_s#27
 91,베스티,person:베스티,story,촌장님,1,event_icedragonsaga1_04_e#85
 92,은화,person:은화,voice,지휘관,1,c092_Outpost_Touch_1
 92,은화,person:은화,episode,지휘관,11,ep:d_nikke_eunhwa_01#106
 92,은화,person:은화,episode,선배,1,ep:d_nikke_eunhwa_03#114
 92,은화,person:은화,episode,후배님,1,ep:d_nikke_eunhwa_03#142
-92,은화,person:은화,story,지휘관,5,d_main_32_02_s#7
+92,은화,person:은화,story,지휘관,6,d_main_32_02_s#7
 92,은화,person:은화,story,후배님,1,d_main_31_09_s#26
 93,엠마 : 택티컬 업,person:엠마,voice,지휘관,11,c093_Lobby_Touch_2
 93,엠마 : 택티컬 업,person:엠마,episode,지휘관,33,ep:d_nikke_emma_tactical_01#10
-93,엠마 : 택티컬 업,person:엠마,story,지휘관,23,d_main_34_01_e#95
+93,엠마 : 택티컬 업,person:엠마,story,지휘관,27,d_main_34_01_e#95
 93,엠마 : 택티컬 업,person:엠마,story,용사님,7,event_icedragonsaga1_02_s#42
 93,엠마 : 택티컬 업,person:엠마,story,손님,2,event_icedragonsaga1_02_s#54
 93,엠마 : 택티컬 업,person:엠마,story,당신,1,d_main_13_03#13
@@ -353,15 +360,16 @@ rid,name,target,source,word,lines,first
 94,베스티 : 택티컬 업,person:베스티,voice,선배,1,c094_01_Attractive_Up_3
 94,베스티 : 택티컬 업,person:베스티,episode,지휘관님,80,ep:d_nikke_vesti_tactical_01#2
 94,베스티 : 택티컬 업,person:베스티,episode,관님,1,ep:d_nikke_vesti_tactical_01#81
-94,베스티 : 택티컬 업,person:베스티,story,지휘관님,11,d_main_32_02_s#22
+94,베스티 : 택티컬 업,person:베스티,story,지휘관님,15,d_main_32_02_s#22
 94,베스티 : 택티컬 업,person:베스티,story,마스터,1,event_icedragonsaga1_04_s#27
 94,베스티 : 택티컬 업,person:베스티,story,촌장님,1,event_icedragonsaga1_04_e#85
 95,은화 : 택티컬 업,person:은화,voice,선배,1,c095_Lobby_Touch_Love_2
 95,은화 : 택티컬 업,person:은화,episode,지휘관,1,ep:d_nikke_eunhwa_tactical_03#59
-95,은화 : 택티컬 업,person:은화,story,지휘관,5,d_main_32_02_s#7
+95,은화 : 택티컬 업,person:은화,story,지휘관,6,d_main_32_02_s#7
 95,은화 : 택티컬 업,person:은화,story,후배님,1,d_main_31_09_s#26
 100,라플라스,person:라플라스,story,지휘관,4,d_main_11_05#24
 101,드레이크,person:드레이크,episode,손님,3,ep:d_nikke_drake_02#26
+101,드레이크,person:드레이크,story,손님,1,d_main_50_af_06#49
 101,드레이크,person:드레이크,story,아님,1,event_perfectmaid_05_e#112
 101,드레이크,person:드레이크,story,지휘관,1,fl:great_villain_union_09#43
 102,맥스웰,person:맥스웰,episode,지휘관,15,ep:d_nikke_maxwell_01#0
@@ -376,6 +384,7 @@ rid,name,target,source,word,lines,first
 103,라플라스 : 얼티밋 히어로,person:라플라스,episode,선배,1,ep:d_nikke_laplace_ultimatehero_05#13
 103,라플라스 : 얼티밋 히어로,person:라플라스,story,지휘관,4,d_main_11_05#24
 104,드레이크 : 그레이트 빌런,person:드레이크,episode,드레이크님,2,ep:d_nikke_drake_greatvillain_01#6
+104,드레이크 : 그레이트 빌런,person:드레이크,story,손님,1,d_main_50_af_06#49
 104,드레이크 : 그레이트 빌런,person:드레이크,story,아님,1,event_perfectmaid_05_e#112
 104,드레이크 : 그레이트 빌런,person:드레이크,story,지휘관,1,fl:great_villain_union_09#43
 105,맥스웰 : 오디너리 미케닉,person:맥스웰,episode,지휘관,1,ep:d_nikke_maxwell_mechanic_02#78
@@ -393,7 +402,7 @@ rid,name,target,source,word,lines,first
 110,크로우,person:크로우,story,영웅님,1,d_main_18af_06#66
 111,자칼,person:자칼,voice,지휘관,8,c111_Lobby_Touch_Love_2
 111,자칼,person:자칼,episode,지휘관,30,ep:d_nikke_jackal_01#82
-111,자칼,person:자칼,story,지휘관,26,event_doutsiders_01_e#1
+111,자칼,person:자칼,story,지휘관,27,event_doutsiders_01_e#1
 112,바이퍼,person:바이퍼,episode,지휘관,2,ep:d_nikke_viper_02#6
 112,바이퍼,person:바이퍼,story,보스,3,event_beautyfullshot1_02_s#139
 112,바이퍼,person:바이퍼,story,사장님,2,event_beautyfullshot1_02_s#90
@@ -480,7 +489,7 @@ rid,name,target,source,word,lines,first
 170,프리바티,person:프리바티,voice,선생님,1,c170_04_Gift_2
 170,프리바티,person:프리바티,episode,지휘관,11,ep:d_nikke_privaty_02#0
 170,프리바티,person:프리바티,episode,당신,4,ep:d_nikke_privaty_01#12
-170,프리바티,person:프리바티,story,지휘관,175,fl:2x2_love_1ch_00#110
+170,프리바티,person:프리바티,story,지휘관,178,fl:2x2_love_1ch_00#110
 170,프리바티,person:프리바티,story,선생님,93,fl:2x2_love_2ch_00#192
 170,프리바티,person:프리바티,story,당신,50,event_icedragonsaga1_01_s#63
 170,프리바티,person:프리바티,story,주인님,33,event_perfectmaid_intermission_01#31
@@ -597,15 +606,15 @@ rid,name,target,source,word,lines,first
 212,노벨,person:노벨,story,당신,2,event_freezeacpu_02_s#73
 212,노벨,person:노벨,story,사장님,1,event_goldencoinrush2_b01_s#28
 220,스노우 화이트,person:스노우_화이트,episode,지휘관,1,ep:d_nikke_snowwhite_01#90
-220,스노우 화이트,person:스노우_화이트,story,지휘관,13,erelic:red_ash_mini_00#9
+220,스노우 화이트,person:스노우_화이트,story,지휘관,16,erelic:red_ash_mini_00#9
 221,라푼젤,person:라푼젤,voice,형제님,7,c221_Lobby_Touch_3
 221,라푼젤,person:라푼젤,episode,형제님,36,ep:d_nikke_rapunzel_01#47
 221,라푼젤,person:라푼젤,episode,자매님,18,ep:d_nikke_rapunzel_03#16
 221,라푼젤,person:라푼젤,episode,지휘관,4,ep:d_nikke_rapunzel_01#38
-221,라푼젤,person:라푼젤,story,형제님,41,d_main_17_01_s#4
-221,라푼젤,person:라푼젤,story,자매님,28,side:second_affection_01#1
-221,라푼젤,person:라푼젤,story,지휘관,15,event_redash_prologue#78
-221,라푼젤,person:라푼젤,story,당신,13,erelic:red_ash_lost_00#32
+221,라푼젤,person:라푼젤,story,형제님,45,d_main_17_01_s#4
+221,라푼젤,person:라푼젤,story,자매님,33,side:second_affection_01#1
+221,라푼젤,person:라푼젤,story,지휘관,20,event_redash_prologue#78
+221,라푼젤,person:라푼젤,story,당신,14,erelic:red_ash_lost_00#32
 221,라푼젤,person:라푼젤,story,동생,1,event_redash1_02_s#29
 221,라푼젤,person:라푼젤,story,마스터,1,side:second_affection_07#43
 221,라푼젤,person:라푼젤,story,보스,1,event_redash1_01_s#59
@@ -618,16 +627,16 @@ rid,name,target,source,word,lines,first
 223,나유타,person:나유타,story,손님,2,d_main_39_06#46
 224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,episode,당신,2,ep:d_nikke_snowwhite_young_01#53
 224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,episode,지휘관,1,ep:d_nikke_snowwhite_young_05#177
-224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,story,지휘관,13,erelic:red_ash_mini_00#9
+224,스노우 화이트 : 이노센트 데이즈,person:스노우_화이트,story,지휘관,16,erelic:red_ash_mini_00#9
 225,홍련 : 흑영,person:홍련,story,지휘관,8,event_arkguardian1_01_s#0
 225,홍련 : 흑영,person:홍련,story,손님,3,d_main_48_04#38
 225,홍련 : 흑영,person:홍련,story,아님,1,event_overzone2_03_e#50
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,episode,자매님,16,ep:d_nikke_rapunzel_puregrace_01#60
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,episode,지휘관,1,ep:d_nikke_rapunzel_puregrace_05#108
-226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,형제님,41,d_main_17_01_s#4
-226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,자매님,28,side:second_affection_01#1
-226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,지휘관,15,event_redash_prologue#78
-226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,당신,13,erelic:red_ash_lost_00#32
+226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,형제님,45,d_main_17_01_s#4
+226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,자매님,33,side:second_affection_01#1
+226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,지휘관,20,event_redash_prologue#78
+226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,당신,14,erelic:red_ash_lost_00#32
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,동생,1,event_redash1_02_s#29
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,마스터,1,side:second_affection_07#43
 226,라푼젤 : 퓨어 그레이스,person:라푼젤,story,보스,1,event_redash1_01_s#59
@@ -646,18 +655,20 @@ rid,name,target,source,word,lines,first
 232,노아,person:노아,episode,연구원님,1,ep:d_nikke_noah_05#43
 232,노아,person:노아,episode,용사님,1,ep:d_nikke_noah_04#59
 232,노아,person:노아,story,지휘관,6,event_goddessfall1_prologue#37
+232,노아,person:노아,story,노아님,1,d_main_50_af_11#96
+232,노아,person:노아,story,방패님,1,d_main_50_01#134
 233,도로시,person:도로시,voice,당신,3,c233_Outpost_Touch_1
 233,도로시,person:도로시,episode,당신,17,ep:d_nikke_dorothy_01#23
-233,도로시,person:도로시,story,당신,161,d_main_26_01_s#69
-233,도로시,person:도로시,story,지휘관,36,d_main_20_02#28
-233,도로시,person:도로시,story,기장님,2,d_main_47_06#94
+233,도로시,person:도로시,story,당신,164,d_main_26_01_s#69
+233,도로시,person:도로시,story,지휘관,38,d_main_20_02#28
+233,도로시,person:도로시,story,기장님,4,d_main_50_02#62
 233,도로시,person:도로시,story,부사령관님,2,d_main_23_01_e#40
 233,도로시,person:도로시,story,손님,1,d_main_19af_01#158
 233,도로시,person:도로시,story,조부님,1,d_main_46_af_06#94
 234,도로시 : 세렌디피티,person:도로시,episode,당신,27,ep:d_nikke_dorothy_serendipity_01#21
-234,도로시 : 세렌디피티,person:도로시,story,당신,161,d_main_26_01_s#69
-234,도로시 : 세렌디피티,person:도로시,story,지휘관,36,d_main_20_02#28
-234,도로시 : 세렌디피티,person:도로시,story,기장님,2,d_main_47_06#94
+234,도로시 : 세렌디피티,person:도로시,story,당신,164,d_main_26_01_s#69
+234,도로시 : 세렌디피티,person:도로시,story,지휘관,38,d_main_20_02#28
+234,도로시 : 세렌디피티,person:도로시,story,기장님,4,d_main_50_02#62
 234,도로시 : 세렌디피티,person:도로시,story,부사령관님,2,d_main_23_01_e#40
 234,도로시 : 세렌디피티,person:도로시,story,손님,1,d_main_19af_01#158
 234,도로시 : 세렌디피티,person:도로시,story,조부님,1,d_main_46_af_06#94
@@ -728,7 +739,7 @@ rid,name,target,source,word,lines,first
 281,목단,person:목단,episode,손님,3,ep:d_nikke_moran_02#63
 281,목단,person:목단,episode,누님,1,ep:d_nikke_moran_02#94
 281,목단,person:목단,episode,지휘관,1,ep:d_nikke_moran_03#22
-281,목단,person:목단,story,동생,61,event_dirtybackyard_01_s#23
+281,목단,person:목단,story,동생,62,event_dirtybackyard_01_s#23
 281,목단,person:목단,story,누님,7,d_main_24_04#37
 281,목단,person:목단,story,보스,3,event_beautyfullshot1_02_s#62
 282,사쿠라,person:사쿠라,episode,지휘관,2,ep:d_nikke_sakura_01#6
@@ -791,7 +802,7 @@ rid,name,target,source,word,lines,first
 313,프리바티 : 언카인드 메이드,person:프리바티,episode,인님,1,ep:d_nikke_privaty_unkindmaid_03#2
 313,프리바티 : 언카인드 메이드,person:프리바티,episode,쥐인님,1,ep:d_nikke_privaty_unkindmaid_04#35
 313,프리바티 : 언카인드 메이드,person:프리바티,episode,지인님,1,ep:d_nikke_privaty_unkindmaid_03#61
-313,프리바티 : 언카인드 메이드,person:프리바티,story,지휘관,175,fl:2x2_love_1ch_00#110
+313,프리바티 : 언카인드 메이드,person:프리바티,story,지휘관,178,fl:2x2_love_1ch_00#110
 313,프리바티 : 언카인드 메이드,person:프리바티,story,선생님,93,fl:2x2_love_2ch_00#192
 313,프리바티 : 언카인드 메이드,person:프리바티,story,당신,50,event_icedragonsaga1_01_s#63
 313,프리바티 : 언카인드 메이드,person:프리바티,story,주인님,33,event_perfectmaid_intermission_01#31
@@ -847,7 +858,7 @@ rid,name,target,source,word,lines,first
 322,마르차나 : 마린 스터디,person:마르차나,story,왕자님,1,fl:wave_to_you_06#56
 330,크라운,person:크라운,voice,당신,37,c330_Lobby_Touch_1
 330,크라운,person:크라운,episode,당신,18,ep:d_nikke_crown_01#68
-330,크라운,person:크라운,story,당신,22,event_lastkingdom1_prologue#103
+330,크라운,person:크라운,story,당신,23,event_lastkingdom1_prologue#103
 330,크라운,person:크라운,story,지휘관,2,event_lastkingdom1_b02_e#8
 330,크라운,person:크라운,story,후드님,1,d_main_25_08_e#30
 331,차임,person:차임,story,지휘관,2,event_lastkingdom1_05_s#6
@@ -888,7 +899,7 @@ rid,name,target,source,word,lines,first
 361,킬로,person:킬로,voice,지휘관,3,c361_Gift_3
 361,킬로,person:킬로,episode,사장님,1,ep:d_nikke_kilo_05#91
 361,킬로,person:킬로,episode,지휘관,1,ep:d_nikke_kilo_01#55
-361,킬로,person:킬로,story,지휘관,1,event_lastkingdom1_b02_e#12
+361,킬로,person:킬로,story,지휘관,5,d_main_50_03#117
 380,네로,person:네로,voice,아님,1,c380_Gift_1
 380,네로,person:네로,story,사장님,1,event_secretgarden_06_e#114
 381,비스킷,person:비스킷,voice,훈련사님,13,c381_Lobby_Touch_3
@@ -1039,7 +1050,7 @@ rid,name,target,source,word,lines,first
 470,레드 후드,person:레드_후드,story,스승님,1,event_footstepwalkrun2_04_e#64
 470,레드 후드,person:레드_후드,story,아저씨,1,event_redash2_02_e#2
 471,스노우 화이트 : 헤비암즈,person:스노우_화이트,episode,지휘관,2,ep:d_nikke_snowwhite_heavyarms_04#18
-471,스노우 화이트 : 헤비암즈,person:스노우_화이트,story,지휘관,13,erelic:red_ash_mini_00#9
+471,스노우 화이트 : 헤비암즈,person:스노우_화이트,story,지휘관,16,erelic:red_ash_mini_00#9
 472,홍련 : 신살,person:홍련,voice,동생,1,c472_Win_1
 472,홍련 : 신살,person:홍련,story,지휘관,8,event_arkguardian1_01_s#0
 472,홍련 : 신살,person:홍련,story,손님,3,d_main_48_04#38
@@ -1047,28 +1058,31 @@ rid,name,target,source,word,lines,first
 473,라푼젤 : 생츄어리,person:라푼젤,voice,형제님,10,c473_Lobby_Touch_1
 473,라푼젤 : 생츄어리,person:라푼젤,voice,자매님,2,c473_Lobby_Touch_3
 473,라푼젤 : 생츄어리,person:라푼젤,voice,형제자매님,1,c473_Lobby_Touch_2
-473,라푼젤 : 생츄어리,person:라푼젤,story,형제님,41,d_main_17_01_s#4
-473,라푼젤 : 생츄어리,person:라푼젤,story,자매님,28,side:second_affection_01#1
-473,라푼젤 : 생츄어리,person:라푼젤,story,지휘관,15,event_redash_prologue#78
-473,라푼젤 : 생츄어리,person:라푼젤,story,당신,13,erelic:red_ash_lost_00#32
+473,라푼젤 : 생츄어리,person:라푼젤,episode,자매님,11,ep:d_nikke_rapunzel_sanctuary_01#54
+473,라푼젤 : 생츄어리,person:라푼젤,episode,당신,2,ep:d_nikke_rapunzel_sanctuary_01#3
+473,라푼젤 : 생츄어리,person:라푼젤,episode,형제님,1,ep:d_nikke_rapunzel_sanctuary_04#43
+473,라푼젤 : 생츄어리,person:라푼젤,story,형제님,45,d_main_17_01_s#4
+473,라푼젤 : 생츄어리,person:라푼젤,story,자매님,33,side:second_affection_01#1
+473,라푼젤 : 생츄어리,person:라푼젤,story,지휘관,20,event_redash_prologue#78
+473,라푼젤 : 생츄어리,person:라푼젤,story,당신,14,erelic:red_ash_lost_00#32
 473,라푼젤 : 생츄어리,person:라푼젤,story,동생,1,event_redash1_02_s#29
 473,라푼젤 : 생츄어리,person:라푼젤,story,마스터,1,side:second_affection_07#43
 473,라푼젤 : 생츄어리,person:라푼젤,story,보스,1,event_redash1_01_s#59
 473,라푼젤 : 생츄어리,person:라푼젤,story,손님,1,d_main_17_05_s#46
 500,일레그,person:일레그,voice,지휘관,2,c500_Gift_2
 500,일레그,person:일레그,episode,지휘관,7,ep:d_nikke_elegg_01#48
-500,일레그,person:일레그,story,지휘관,62,event_darkhero_01_s#66
+500,일레그,person:일레그,story,지휘관,63,event_darkhero_01_s#66
 500,일레그,person:일레그,story,당신,1,d_main_28_08_s#52
 500,일레그,person:일레그,story,선섕님,1,d_main_29_06_s#2
 501,트로니,person:트로니,voice,지휘관,4,c501_Lobby_Touch_3
 501,트로니,person:트로니,episode,지휘관,10,ep:d_nikke_trony_02#22
-501,트로니,person:트로니,story,지휘관,25,d_main_28_af_02#63
+501,트로니,person:트로니,story,지휘관,26,d_main_28_af_02#63
 501,트로니,person:트로니,story,주인님,3,event_romanticvalentine_intermission_01#139
 501,트로니,person:트로니,story,손님,1,event_romanticvalentine_02_s#152
 501,트로니,person:트로니,story,아저씨,1,event_romanticvalentine_intermission_01#119
 502,일레그 : 붐 앤 쇼크,person:일레그,voice,지휘관,3,c502_Lobby_Touch_Love_2
 502,일레그 : 붐 앤 쇼크,person:일레그,episode,지휘관,22,ep:d_nikke_eleggboomandshock_01#4
-502,일레그 : 붐 앤 쇼크,person:일레그,story,지휘관,62,event_darkhero_01_s#66
+502,일레그 : 붐 앤 쇼크,person:일레그,story,지휘관,63,event_darkhero_01_s#66
 502,일레그 : 붐 앤 쇼크,person:일레그,story,당신,1,d_main_28_08_s#52
 502,일레그 : 붐 앤 쇼크,person:일레그,story,선섕님,1,d_main_29_06_s#2
 511,신데렐라,person:신데렐라,voice,왕자님,26,c511_01_Lobby_Touch_3

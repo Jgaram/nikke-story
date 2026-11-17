@@ -63,7 +63,7 @@
       "at": "ch25",
       "title": "엔더슨 — 생명유지 장치에 묶인 몸",
       "text": "엔더슨은 생명유지 장치 없이는 30분도 버티지 못하고, 지휘관에게 수혈한 뒤로 그 시간이 크게 줄었다 — 지휘관 출신이라는 그는 어쩌다 이런 몸이 되었나.",
-      "src": "1e18fdbbf7",
+      "src": "f4106aaa06",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -84,6 +84,14 @@
           "session": "W17",
           "hash": "a81c3f7059",
           "note": "W17 ② 근거 — ch02 F38 · F40, ch14 F365–F367 · E96, ch25 F1095, event_arkguardian1 F2373 · F2364, ch46 F2654, ch48 F2845 + 원문 d_main_48_07#184-185(지상으로)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "5d6c512eff",
+          "note": "WHITE MEMORY 탐색형 보충(F3219 · Q131-3 등)이 입력에 더해졌지만 체크 칸 스토리 몫이라 글은 그대로"
         }
       ],
       "refs": ["F1095", "Q149"]
@@ -92,7 +100,7 @@
       "at": "event_arkguardian1",
       "title": "엔더슨 — 갓데스의 지휘관",
       "text": "엔더슨은 갓데스의 지휘관이었다 — 쓰러진 그를 릴리바이스가 방주로 보냈고 V.T.C.는 그를 가둬 피를 뽑으려 했다. 그는 어떻게 깨어나 부사령관이 되었고, 동생들을 구해 달라는 부탁은 어떻게 되었나.",
-      "src": "e2e41d508e",
+      "src": "70e02106f7",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -121,6 +129,14 @@
           "session": "N3",
           "hash": "2a82cb7fb5",
           "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "88588675c4",
+          "note": "WHITE MEMORY 탐색형 보충(F3219 · Q131-3 등)이 입력에 더해졌지만 체크 칸 스토리 몫이라 글은 그대로"
         }
       ],
       "refs": ["F2373", "F2364", "Q310"]
@@ -129,7 +145,7 @@
       "at": "ch46",
       "title": "엔더슨 — 갓데스의 지휘관 · 부사령관이 된 길",
       "text": "깨어난 엔더슨은 갓데스가 필그림이라 불리게 된 원흉이 V.T.C.임을 캐내 그들을 죽이고 부사령관에 올랐다 — 치료 시설 없이 하루도 못 버티는 몸으로 그는 필그림이 된 동생들을 되찾을 수 있나.",
-      "src": "d12dde11e1",
+      "src": "adf4ef4bd6",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -158,6 +174,14 @@
           "session": "N3",
           "hash": "fe82609bd9",
           "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "71c84b5158",
+          "note": "WHITE MEMORY 탐색형 보충(F3219 · Q131-3 등)이 입력에 더해졌지만 체크 칸 스토리 몫이라 글은 그대로"
         }
       ],
       "refs": ["F2654"]
@@ -166,7 +190,7 @@
       "at": "ch48",
       "title": "엔더슨 — 되찾은 생명력",
       "text": "생명 유지 장치 없이는 버티지 못하던 엔더슨이 장치가 떨어져도 이제 필요 없다며 지상으로 올라가자 한다 — 갓데스의 지휘관의 몸에 무슨 일이 일어났나.",
-      "src": "f57a601467",
+      "src": "6027c22f05",
       "session": "W15d",
       "by": "claude",
       "date": "2026-10-10",
@@ -195,6 +219,14 @@
           "session": "N3",
           "hash": "ef73c045e5",
           "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "0ea1cf3443",
+          "note": "WHITE MEMORY 탐색형 보충(F3219 · Q131-3 등)이 입력에 더해졌지만 체크 칸 스토리 몫이라 글은 그대로"
         }
       ],
       "refs": ["F2845", "d_main_48_07#184-185", "Q368"]

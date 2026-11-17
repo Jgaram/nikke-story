@@ -299,7 +299,7 @@ annotations/april-fools.json의 단위 — 숫자 집계에서 뺀다. 판정 K�
 - `sub:2호_쉘터_관리계정_00` K177: B0b-2 보강 · X3c 그대로 → X3f-5b 참고
 - `sub:할아범_01` K178: B0b-2 보강 · X3c 그대로 → X3f-4a 참고
 - `relic:에닉탄핵포스터` K179: B0b-2 독립 → X3c 보강 → X3f-5b 참고
-- `erelic:white_memory` K181: B0b-2 보강 · X3c 그대로 → X3f-4b 참고 → X3g-3a 필수
+- `erelic:white_memory` K181: B0b-2 보강 · X3c 그대로 → X3f-4b 참고 → X3g-3a 필수 · N3 그대로
 - `char:233` K182: B0b-2 보강 · X3c 그대로 → X3f-5b 참고 · X3g-3a 그대로
 - `char:392` K183: B0b-2 독립 · X3c 그대로 → X3f-6g 참고
 - `event_queensorder` K187: B0b-2 독립 · X3c 그대로 → X3f-6d 참고 · X3g-3a 그대로

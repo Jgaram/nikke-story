@@ -40,6 +40,78 @@
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "I741",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_013", "lines": ["1-4"] }],
+      "reason": "#3 안갯속의 '그리운 얼굴'이 이름을 부른다 — 뒤에 같은 환각 속 얼굴이 릴리스(F929)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I742",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_022", "lines": ["0-2"] }],
+      "reason": "#1 '보고 싶다면, 보러 와야겠지?' — 얼굴 없는 하얀 실루엣, 관이 있는 초원으로 이끈다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I743",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_024", "lines": ["1-6"] }],
+      "reason": "#1 타임캡슐을 가져온 [그녀] — 다음 씬에서 [그녀]의 쪽지와 관(erelic:white_memory_025#10,16)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I744",
+      "target": "person:레드_후드",
+      "evidence": [{ "scene": "erelic:white_memory_019", "lines": ["0-1"] }],
+      "reason": "#1 레트로 음악 · 고향을 그리며 흥얼거리는 목소리 — 레드 후드의 노래(erelic:white_memory_026)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I745",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_087", "lines": ["2-4"] }],
+      "reason": "#3 꽃을 닮은 [그녀] — 다음 씬에서 그 꽃의 이름이 릴리바이스(erelic:white_memory_088#20)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I746",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_098", "lines": ["0-2"] }],
+      "reason": "#1–2 '이 꽃은 나보다 널 더 닮은 것 같아' — 꽃밭에서 릴리바이스가 한 말(erelic:white_memory_088#8-10)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I747",
+      "target": "person:릴리바이스",
+      "evidence": [{ "scene": "erelic:white_memory_107", "lines": ["2-4"] }],
+      "reason": "#4 '나는 릴···' — 처음 만난 날의 인사",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "I748",
+      "target": "person:엔더슨",
+      "evidence": [{ "scene": "erelic:white_memory_112", "lines": ["0-10"] }],
+      "reason": "#3 [지휘관], 용병 출신 — 갓데스의 지휘관 엔더슨(Q131 회수 F2373)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
     }
   ],
   "echoes": [
@@ -66,6 +138,54 @@
       "confidence": "추정",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "E1761",
+      "act": "암시",
+      "points": ["F1143"],
+      "text": "레드 후드가 라디오로 들려준 고향을 그리는 올드 팝 — 뒤에 레드 후드가 즐겨 듣던 [고향은 먼 곳]으로 그려진다",
+      "about": ["person:레드_후드"],
+      "evidence": [{ "scene": "erelic:white_memory_026", "lines": ["10-14"] }],
+      "reason": "#13 '[고향]을 그리는 노래'. 같은 노래 가사에 '고향은 먼 곳'(erelic:white_memory_027#15)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "E1762",
+      "act": "암시",
+      "points": ["F915-2"],
+      "text": "홍련이 '언니가 나의 검이 되며' 알려 준 교훈이라 한다 — 언니 장화는 홍련의 검에 죽으며 화무십일홍을 남겼다",
+      "about": ["person:홍련"],
+      "evidence": [{ "scene": "erelic:white_memory_056", "lines": ["18-21"] }],
+      "reason": "#21. 언니가 검을 남긴 일(F915)보다 더 나아간 말 — 홍련이 언니를 베었다(F915-2)",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "E1763",
+      "act": "재언급",
+      "points": ["F920"],
+      "text": "방주가 니케의 낙원이 될지, 인류가 니케를 양산 아래 함께 두어 줄지 스노우 화이트가 의심한다 — 밀봉이 끝나자 방주는 처음부터 갓데스를 들일 생각이 없었다(F920)",
+      "about": ["place:방주", "org:갓데스"],
+      "evidence": [{ "scene": "erelic:white_memory_065", "lines": ["9-15"] }],
+      "reason": "#11–12. 앞서 OVER ZONE이 밝힌 배신(F920)을 회상 속 의심으로 다시 꺼낸다",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "E1764",
+      "act": "재언급",
+      "points": ["F931"],
+      "text": "처음 만난 날 릴리바이스가 '안녕' 하고 인사한다 — 헤어짐도 만남처럼 얼굴을 보고 [안녕]이라 말하는 것(F931)",
+      "about": ["person:릴리바이스", "person:스노우_화이트"],
+      "evidence": [{ "scene": "erelic:white_memory_107", "lines": ["2-4"] }],
+      "reason": "#3. 라푼젤의 '만남이랑 똑같아요'(erelic:white_memory_085#7)의 메아리",
+      "confidence": "추정",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
     }
   ],
   "changes": [
@@ -164,6 +284,19 @@
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "D2357",
+      "person": "person:홍련",
+      "aspect": "관계",
+      "act": "기준",
+      "with": ["person:스노우_화이트"],
+      "text": "굶주린 막내에게 새를 잡아 건네며 죽음의 경중에 연연하지 말라 하고, '열흘 붉은 꽃은 없다'를 가르치는 선배",
+      "evidence": [{ "scene": "erelic:white_memory_056", "lines": ["4-21"] }],
+      "reason": "#7, #13, #18–19. 스노우 화이트가 그 말을 기억한 데 놀란다(erelic:white_memory_057#2)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
     }
   ],
   "life": [
@@ -177,6 +310,40 @@
       "confidence": "확실",
       "status": "확정",
       "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-10-07", "session": "M08" }]
+    },
+    {
+      "id": "U468",
+      "topic": "구시대",
+      "text": "숲의 사냥꾼은 오두막에 '사냥당하고 싶지 않아'를 남겼고, 활 · 위장복 차림의 사냥꾼은 철조망에 걸린 시체로 남아 그 짐이 니케의 사냥 도구가 된다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "erelic:white_memory_028", "lines": ["0-2"] }],
+      "reason": "#1–2. 철조망 시체 erelic:white_memory_029#0, '사냥꾼은 사냥감이 되어' erelic:white_memory_032#5",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "U469",
+      "topic": "구시대",
+      "text": "랩쳐가 휩쓴 교외의 공장은 한때 피난처여서 담요 · 통조림이 널려 있고, 커튼 친 방에는 죽은 이들의 사진 · 양초와 '부디 그곳에서는 평안하길' 같은 애도의 글귀가 남았다",
+      "about": ["place:지상"],
+      "evidence": [{ "scene": "erelic:white_memory_073", "lines": ["1-4"] }],
+      "reason": "#1–3. 피난처 erelic:white_memory_069#0",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
+    },
+    {
+      "id": "U470",
+      "topic": "구시대",
+      "text": "교외 민가에는 방주 포스터와 '낙첨'만 적힌 추첨권이 수북이 흩어져 있다 — 떨어진 사람들은 남겨졌다",
+      "about": ["place:지상", "place:방주"],
+      "points": ["F132"],
+      "evidence": [{ "scene": "erelic:white_memory_090", "lines": ["0-1"] }],
+      "reason": "#0–1. 방주 시민 추첨(F132)",
+      "confidence": "확실",
+      "status": "확정",
+      "reviews": [{ "decision": "확정", "by": "claude", "date": "2026-11-17", "session": "N3", "note": "WHITE MEMORY 탐색형 보충(늘어난 96씬)" }]
     }
   ]
 }

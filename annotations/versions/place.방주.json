@@ -46,7 +46,7 @@
     {
       "at": "ch46",
       "text": "인류가 사는 지하 도시. 동력원 출력이 떨어져 꺼져 가는 가운데, 처음부터 지상으로 올릴 수 있게 셈해 만들어졌다는 것이 드러났다.",
-      "src": "4418df70ee",
+      "src": "d5ecab0c63",
       "session": "W15e",
       "by": "claude",
       "date": "2026-10-10",
@@ -68,6 +68,14 @@
           "session": "N3",
           "hash": "6b7332255f",
           "note": "키 · 씬 ID만 바뀜 — 금서고 → 블라링크 전환(event_goninjathief · event_arkguardian1) · WHITE MEMORY 금서고 다시 올림 씬 번호. 옛 키로 되돌린 지문이 저장 지문과 같다(N3 전환)"
+        },
+        {
+          "decision": "확정",
+          "by": "claude",
+          "date": "2026-11-17",
+          "session": "N3",
+          "hash": "3cc60d6489",
+          "note": "WHITE MEMORY 탐색형 보충(F3219 · Q131-3 등)이 입력에 더해졌지만 체크 칸 스토리 몫이라 글은 그대로"
         }
       ],
       "refs": ["F2656", "F2659"]

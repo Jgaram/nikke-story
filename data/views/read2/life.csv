@@ -149,7 +149,10 @@ U150,방주 사회,event_overzone,200,event_overzone2_03_s,place:방주,,"밀봉
 U152,일상 · 문화,event_overzone,200,event_overzone2_04_s,concept:퍼펙트,F922,방주의 주식 퍼펙트는 처음부터 회반죽 같고 맛이 끔찍하지만 이론상 완벽해 그것만 먹어도 장수할 수 있는 식품으로 만들어졌다,확실,확정
 U151,방주 사회,event_overzone,200,event_overzone2_04_e,org:갓데스 place:방주,F920,방주는 갓데스를 들이는 대신 초대형 승리의 여신상을 세우고 갓데스를 신격화한 서적 · 광고를 퍼뜨려 모두가 우러러보게 하겠다고 했다,확실,확정
 U153,방주 사회,event_overzone,200,event_overzone2_epilogue,org:필그림 org:갓데스,F927,"밀봉 50년쯤 뒤 지상에 오른 방주의 니케들 사이엔 갓데스 이야기가 유일한 낙이고, '필그림'이라는 이름이 거의 공식처럼 쓰인다",확실,확정
+U468,구시대,erelic:white_memory,201,erelic:white_memory_028,place:지상,,"숲의 사냥꾼은 오두막에 '사냥당하고 싶지 않아'를 남겼고, 활 · 위장복 차림의 사냥꾼은 철조망에 걸린 시체로 남아 그 짐이 니케의 사냥 도구가 된다",확실,확정
 U154,구시대,erelic:white_memory,201,erelic:white_memory_049,place:지상,,밀봉 무렵 지상의 니케들은 사슴 사냥 · 덫 · 맨손 낚시 · 버려진 공장에서 통조림 깡통 요리로 먹을 것을 구하며 초소로 돌아왔다,확실,확정
+U469,구시대,erelic:white_memory,201,erelic:white_memory_073,place:지상,,"랩쳐가 휩쓴 교외의 공장은 한때 피난처여서 담요 · 통조림이 널려 있고, 커튼 친 방에는 죽은 이들의 사진 · 양초와 '부디 그곳에서는 평안하길' 같은 애도의 글귀가 남았다",확실,확정
+U470,구시대,erelic:white_memory,201,erelic:white_memory_090,place:지상 place:방주,F132,교외 민가에는 방주 포스터와 '낙첨'만 적힌 추첨권이 수북이 흩어져 있다 — 떨어진 사람들은 남겨졌다,확실,확정
 U155,일상 · 문화,event_bluewaterisland,209,event_bluewaterisland1_intermission_01,place:방주,,"밀물 · 썰물은 구시대엔 널리 알려진 현상이었지만 지금은 서적 속 구시대 상식이라, 의사도 눈앞의 바닷길과 잇지 못한다",확실,확정
 U156,방주 사회,event_bluewaterisland,209,event_bluewaterisland2_04_s,place:방주,,"방주엔 인공 태양과 수영장뿐이라, 진짜 햇빛 · 진짜 바다가 있는 지상의 섬은 '누가 더 안 있고 싶어하겠냐'는 곳이다",확실,확정
 U157,일상 · 문화,event_bluewaterisland,209,event_bluewaterisland2_05_s,place:방주,,"방주에는 강아지가 드물어, 개를 산책시키며 마음이 치유되는 일을 겪어 본 사람이 거의 없다",확실,확정

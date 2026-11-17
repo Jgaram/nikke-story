@@ -1865,3 +1865,7 @@ callback,E1758,재언급,F2808,d_main_47_04,ep:d_nikke_hongryeon_goddeath_02,ch4
 callback,E1759,재언급,F3178,fl:maria-n_24,ep:d_nikke_marian_queen_05,fl:maria-n,char:19,491,495,추정,확정
 callback,E1759,재언급,Q401,ep:d_nikke_marian_queen_01,ep:d_nikke_marian_queen_05,char:19,char:19,495,495,추정,확정
 callback,E1760,재언급,F3076,d_main_50_12,ep:d_nikke_marian_queen_05,ch50,char:19,488,495,추정,확정
+setup_payoff,E1761,암시,F1143,erelic:white_memory_026,event_redash_prologue,erelic:white_memory,event_redash,201,251,확실,확정
+setup_payoff,E1762,암시,F915-2,erelic:white_memory_056,event_newyearnewsword_06_e,erelic:white_memory,event_newyearnewsword,201,261,추정,확정
+callback,E1763,재언급,F920,event_overzone2_04_e,erelic:white_memory_065,event_overzone,erelic:white_memory,200,201,추정,확정
+callback,E1764,재언급,F931,erelic:white_memory_085,erelic:white_memory_107,erelic:white_memory,erelic:white_memory,201,201,추정,확정
